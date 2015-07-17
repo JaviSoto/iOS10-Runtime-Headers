@@ -3,15 +3,15 @@
  */
 
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable> {
-    CPCluster *cluster;
-    BOOL disposed;
-    struct { unsigned int x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } *groupInfoArray;
-    unsigned int groupInfoCount;
-    double pageSpread;
-    CPChunk *parentChunk;
-    unsigned int shapeCount;
-    id *shapes;
-    BOOL shapesAreVectorGraphics;
+    CPCluster * cluster;
+    BOOL  disposed;
+    struct { unsigned int x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } * groupInfoArray;
+    unsigned int  groupInfoCount;
+    double  pageSpread;
+    CPChunk * parentChunk;
+    unsigned int  shapeCount;
+    id * shapes;
+    BOOL  shapesAreVectorGraphics;
 }
 
 + (BOOL)makeCompoundGraphicsInZonesOf:(id)arg1;

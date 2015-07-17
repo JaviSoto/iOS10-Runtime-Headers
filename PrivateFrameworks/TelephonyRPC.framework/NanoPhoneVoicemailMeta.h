@@ -3,23 +3,23 @@
  */
 
 @interface NanoPhoneVoicemailMeta : PBCodable <NSCopying, SYObject> {
-    NSString *_callbackNumber;
-    NSString *_dataPath;
-    double _date;
-    int _duration;
-    int _flags;
+    NSString * _callbackNumber;
+    NSString * _dataPath;
+    double  _date;
+    int  _duration;
+    int  _flags;
     struct { 
         unsigned int date : 1; 
         unsigned int identifier : 1; 
         unsigned int remoteUID : 1; 
         unsigned int duration : 1; 
         unsigned int flags : 1; 
-    } _has;
-    long long _identifier;
-    long long _remoteUID;
-    NSString *_sender;
-    NanoPhoneVoicemailBody *_voicemailBody;
-    long long _voicemailNumber;
+    }  _has;
+    long long  _identifier;
+    long long  _remoteUID;
+    NSString * _sender;
+    NanoPhoneVoicemailBody * _voicemailBody;
+    long long  _voicemailNumber;
 }
 
 @property (nonatomic, retain) NSString *callbackNumber;
@@ -63,7 +63,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentation;
-- (id)displayLabelFromAddressBook:(void*)arg1;
+- (id)displayLabelFromAddressBook:(void*)arg1 withUpdateBlock:(id /* block */)arg2;
 - (id)displayNameFromAddressBook:(void*)arg1;
 - (int)duration;
 - (int)flags;

@@ -3,17 +3,17 @@
  */
 
 @interface MKPlaceReviewsViewCell : UITableViewCell {
-    UILabel *_authorLabel;
-    NSLayoutConstraint *_authorLabelBaselineConstraint;
-    NSDate *_date;
-    UILabel *_dateLabel;
-    NSLayoutConstraint *_dateLabelBaselineConstraint;
-    UIImageView *_pictureView;
-    UILabel *_reviewLabel;
-    NSLayoutConstraint *_reviewLabelBaselineConstraint;
-    NSLayoutConstraint *_reviewLabelHeightConstraint;
-    NSLayoutConstraint *_reviewLabelToBottomConstraint;
-    MKStarRatingAndLabelView *_starView;
+    UILabel * _authorLabel;
+    NSLayoutConstraint * _authorLabelBaselineConstraint;
+    NSDate * _date;
+    UILabel * _dateLabel;
+    NSLayoutConstraint * _dateLabelBaselineConstraint;
+    UIImageView * _pictureView;
+    UILabel * _reviewLabel;
+    NSLayoutConstraint * _reviewLabelBaselineConstraint;
+    NSLayoutConstraint * _reviewLabelHeightConstraint;
+    NSLayoutConstraint * _reviewLabelToBottomConstraint;
+    MKStarRatingAndLabelView * _starView;
 }
 
 @property (nonatomic) NSString *author;

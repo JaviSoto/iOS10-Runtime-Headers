@@ -3,8 +3,8 @@
  */
 
 @interface _UILegibilityImageSet : NSObject {
-    UIImage *_image;
-    UIImage *_shadowImage;
+    UIImage * _image;
+    UIImage * _shadowImage;
 }
 
 @property (nonatomic, retain) UIImage *image;
@@ -14,6 +14,7 @@
 
 - (void)dealloc;
 - (id)image;
+- (id)imageSetFlippedForRightToLeft;
 - (id)initWithImage:(id)arg1 shadowImage:(id)arg2;
 - (void)setImage:(id)arg1;
 - (void)setShadowImage:(id)arg1;

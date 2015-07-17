@@ -3,7 +3,7 @@
  */
 
 @interface SKUIArtworkList : NSObject <NSCopying, SKUICacheCoding> {
-    NSMutableArray *_artworks;
+    NSMutableArray * _artworks;
 }
 
 @property (getter=_lookupArray, nonatomic, readonly) NSArray *_lookupArray;

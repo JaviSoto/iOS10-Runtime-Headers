@@ -3,12 +3,12 @@
  */
 
 @interface _UIDocumentPickerAuxiliaryOption : NSObject <NSSecureCoding> {
-    id /* block */ _handler;
-    NSString *_identifier;
-    UIImage *_image;
-    BOOL _newlyAdded;
-    unsigned int _order;
-    NSString *_title;
+    id /* block */  _handler;
+    NSString * _identifier;
+    UIImage * _image;
+    BOOL  _newlyAdded;
+    unsigned int  _order;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) id /* block */ handler;
@@ -20,7 +20,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id /* block */)handler;
 - (id)identifier;

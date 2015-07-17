@@ -3,8 +3,8 @@
  */
 
 @interface ABMultiCell : ABChameleonCell {
-    ABMultiCellContentView *_abMultiCellContentView;
-    BOOL _editingDisabled;
+    ABMultiCellContentView * _abMultiCellContentView;
+    BOOL  _editingDisabled;
 }
 
 @property (getter=isEditingDisabled, nonatomic) BOOL editingDisabled;

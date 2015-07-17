@@ -3,11 +3,11 @@
  */
 
 @interface MSCLAttachmentAlertController : UIAlertController <MSCLPhotoPickerDelegate> {
-    <MSCLAttachmentAlertDelegate> *_MSCLDelegate;
-    UIAlertAction *_action0;
-    SKUIClientContext *_clientContext;
-    MSCLConfiguration *_configuration;
-    MSCLPhotoPickerShelfViewController *_photoPickerViewController;
+    <MSCLAttachmentAlertDelegate> * _MSCLDelegate;
+    UIAlertAction * _action0;
+    SKUIClientContext * _clientContext;
+    MSCLConfiguration * _configuration;
+    MSCLPhotoPickerShelfViewController * _photoPickerViewController;
 }
 
 @property (nonatomic) <MSCLAttachmentAlertDelegate> *MSCLDelegate;

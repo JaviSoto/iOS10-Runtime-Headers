@@ -3,14 +3,14 @@
  */
 
 @interface PUBadgeView : UIView {
-    UIImageView *__backgroundImageView;
-    UIImage *__badgeImage;
-    UIImageView *__badgeImageView;
-    NSString *__bannerText;
-    UILabel *__textLabel;
-    int _badgeType;
-    BOOL _flattensSubviews;
-    double _videoDuration;
+    UIImageView * __backgroundImageView;
+    UIImage * __badgeImage;
+    UIImageView * __badgeImageView;
+    NSString * __bannerText;
+    UILabel * __textLabel;
+    int  _badgeType;
+    BOOL  _flattensSubviews;
+    double  _videoDuration;
 }
 
 @property (setter=_setBackgroundImageView:, nonatomic, retain) UIImageView *_backgroundImageView;

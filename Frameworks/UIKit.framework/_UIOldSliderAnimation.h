@@ -3,9 +3,9 @@
  */
 
 @interface _UIOldSliderAnimation : UIAnimation {
-    float _endValue;
-    BOOL _sendAction;
-    float _startValue;
+    float  _endValue;
+    BOOL  _sendAction;
+    float  _startValue;
 }
 
 - (void)setProgress:(float)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface MSCLTokenTextView : UITextView {
-    <MSCLTokenTextViewDelegate> *_changeDelegate;
-    int _maximumTagLength;
-    NSString *_tagDelimeter;
-    NSMutableArray *_tokenViews;
+    <MSCLTokenTextViewDelegate> * _changeDelegate;
+    int  _maximumTagLength;
+    NSString * _tagDelimeter;
+    NSMutableArray * _tokenViews;
 }
 
 @property (nonatomic) <MSCLTokenTextViewDelegate> *changeDelegate;

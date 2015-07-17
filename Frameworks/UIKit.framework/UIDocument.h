@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDocument : NSObject <NSFilePresenter> {
-    NSLock *_activityContinuationLock;
-    id _alertPresenter;
-    NSTimer *_autosavingTimer;
-    NSUserActivity *_currentUserActivity;
-    id _differenceDueToRecentChanges;
-    id _differenceSincePreservingPreviousVersion;
-    id _differenceSinceSaving;
+@interface UIDocument : NSObject <NSFilePresenter, NSProgressReporting> {
+    NSLock * _activityContinuationLock;
+    id  _alertPresenter;
+    NSTimer * _autosavingTimer;
+    NSUserActivity * _currentUserActivity;
+    id  _differenceDueToRecentChanges;
+    id  _differenceSincePreservingPreviousVersion;
+    id  _differenceSinceSaving;
     struct __docFlags { 
         unsigned int inClose : 1; 
         unsigned int isOpen : 1; 
@@ -23,21 +23,23 @@
         unsigned int savingError : 1; 
         unsigned int inConflict : 1; 
         unsigned int needToStopAccessingSecurityScopedResource : 1; 
-    } _docFlags;
-    NSLock *_documentPropertyLock;
-    NSObject<OS_dispatch_queue> *_fileAccessQueue;
-    NSObject<OS_dispatch_semaphore> *_fileAccessSemaphore;
-    NSDate *_fileModificationDate;
-    NSOperationQueue *_filePresenterQueue;
-    NSString *_fileType;
-    NSURL *_fileURL;
-    double _lastPreservationTime;
-    double _lastSaveTime;
-    NSString *_localizedName;
-    NSObject<OS_dispatch_queue> *_openingQueue;
-    NSUndoManager *_undoManager;
-    id _versionWithoutRecentChanges;
-    NSMutableArray *_versions;
+    }  _docFlags;
+    NSLock * _documentPropertyLock;
+    NSObject<OS_dispatch_queue> * _fileAccessQueue;
+    NSObject<OS_dispatch_semaphore> * _fileAccessSemaphore;
+    NSDate * _fileModificationDate;
+    NSOperationQueue * _filePresenterQueue;
+    NSString * _fileType;
+    NSURL * _fileURL;
+    double  _lastPreservationTime;
+    double  _lastSaveTime;
+    NSString * _localizedName;
+    NSObject<OS_dispatch_queue> * _openingQueue;
+    NSProgress * _progress;
+    id  _progressSubscriber;
+    NSUndoManager * _undoManager;
+    id  _versionWithoutRecentChanges;
+    NSMutableArray * _versions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -55,6 +57,7 @@
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (retain) NSProgress *progress;
 @property (readonly) Class superclass;
 @property (retain) NSUndoManager *undoManager;
 
@@ -63,8 +66,10 @@
 + (id)_fileModificationDateForURL:(id)arg1;
 + (void)_finishWritingToURL:(id)arg1 withTemporaryDirectoryURL:(id)arg2 newContentsURL:(id)arg3 afterSuccess:(BOOL)arg4;
 + (id)_typeForContentsOfURL:(id)arg1 error:(id*)arg2;
++ (BOOL)_url:(id)arg1 matchesURL:(id)arg2;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (id)_activityTypeIdentifierForCloudDocument:(BOOL*)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
@@ -91,6 +96,8 @@
 - (void)_performBlock:(id /* block */)arg1 synchronouslyOnQueue:(id)arg2;
 - (void)_performBlockSynchronouslyOnMainThread:(id /* block */)arg1;
 - (id)_presentableFileNameForSaveOperation:(int)arg1 url:(id)arg2;
+- (void)_progressPublished:(id)arg1;
+- (void)_progressUnpublished;
 - (void)_reallyManageUserActivity;
 - (void)_registerAsFilePresenterIfNecessary;
 - (void)_releaseUndoManager;
@@ -105,6 +112,7 @@
 - (void)_setInConflict:(BOOL)arg1;
 - (void)_setInOpen:(BOOL)arg1;
 - (void)_setOpen:(BOOL)arg1;
+- (void)_setProgress:(id)arg1;
 - (void)_setUserActivity:(id)arg1;
 - (BOOL)_shouldAllowWritingInResponseToPresenterMessage;
 - (id)_titleForActivityContinuation;
@@ -147,6 +155,7 @@
 - (void)presentedItemDidLoseVersion:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 - (void)presentedItemDidResolveConflictVersion:(id)arg1;
+- (void)presentedItemHasUnsavedChangesWithCompletionHandler:(id /* block */)arg1;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (void)presentedSubitemAtURL:(id)arg1 didGainVersion:(id)arg2;
@@ -155,6 +164,7 @@
 - (void)presentedSubitemAtURL:(id)arg1 didResolveConflictVersion:(id)arg2;
 - (void)presentedSubitemDidAppearAtURL:(id)arg1;
 - (void)presentedSubitemDidChangeAtURL:(id)arg1;
+- (id)progress;
 - (BOOL)readFromURL:(id)arg1 error:(id*)arg2;
 - (void)relinquishPresentedItemToReader:(id /* block */)arg1;
 - (void)relinquishPresentedItemToWriter:(id /* block */)arg1;

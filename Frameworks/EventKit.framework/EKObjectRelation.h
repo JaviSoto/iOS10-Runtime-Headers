@@ -3,11 +3,11 @@
  */
 
 @interface EKObjectRelation : NSObject {
-    BOOL _dirty;
-    NSString *_inverseName;
-    BOOL _loaded;
-    EKObject *_owner;
-    NSString *_relationName;
+    BOOL  _dirty;
+    NSString * _inverseName;
+    BOOL  _loaded;
+    EKObject * _owner;
+    NSString * _relationName;
 }
 
 @property (nonatomic, readonly) NSString *inverseName;

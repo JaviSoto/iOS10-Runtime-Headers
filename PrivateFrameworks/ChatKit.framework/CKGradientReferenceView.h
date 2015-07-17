@@ -12,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } _gradientFrame;
+    }  _gradientFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;

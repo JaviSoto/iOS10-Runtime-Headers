@@ -5,9 +5,9 @@
 @interface GEOPDReverseGeocodingParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int placeTypeLimit : 1; 
-    } _has;
-    NSMutableArray *_locations;
-    int _placeTypeLimit;
+    }  _has;
+    NSMutableArray * _locations;
+    int  _placeTypeLimit;
 }
 
 @property (nonatomic) BOOL hasPlaceTypeLimit;

@@ -3,12 +3,12 @@
  */
 
 @interface RadioHistoryCategory : NSObject <NSCopying, NSMutableCopying> {
-    NSString *_categoryDescription;
-    NSArray *_items;
-    NSString *_name;
-    NSString *_stationHash;
-    long long _stationID;
-    int _type;
+    NSString * _categoryDescription;
+    NSArray * _items;
+    NSString * _name;
+    NSString * _stationHash;
+    long long  _stationID;
+    int  _type;
 }
 
 @property (nonatomic, readonly, copy) NSString *categoryDescription;

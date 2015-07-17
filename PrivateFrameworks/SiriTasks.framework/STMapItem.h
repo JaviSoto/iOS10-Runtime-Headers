@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STMapItem : AFSiriModelObject {
-    NSNumber *_businessID;
-    BOOL _isCurrentLocation;
-    NSNumber *_localSearchProviderID;
-    CLLocation *_location;
-    NSData *_placeData;
-    NSString *_title;
+@interface STMapItem : STSiriModelObject {
+    NSNumber * _businessID;
+    BOOL  _isCurrentLocation;
+    NSNumber * _localSearchProviderID;
+    CLLocation * _location;
+    NSData * _placeData;
+    NSString * _title;
 }
 
 + (BOOL)supportsSecureCoding;

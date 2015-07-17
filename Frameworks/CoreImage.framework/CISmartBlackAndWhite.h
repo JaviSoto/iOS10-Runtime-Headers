@@ -3,13 +3,13 @@
  */
 
 @interface CISmartBlackAndWhite : CIFilter {
-    NSNumber *inputGrain;
-    NSNumber *inputHue;
-    CIImage *inputImage;
-    NSNumber *inputNeutralGamma;
-    NSNumber *inputScaleFactor;
-    NSNumber *inputStrength;
-    NSNumber *inputTone;
+    NSNumber * inputGrain;
+    NSNumber * inputHue;
+    CIImage * inputImage;
+    NSNumber * inputNeutralGamma;
+    NSNumber * inputScaleFactor;
+    NSNumber * inputStrength;
+    NSNumber * inputTone;
 }
 
 @property (nonatomic, copy) NSNumber *inputGrain;

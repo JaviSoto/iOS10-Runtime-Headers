@@ -3,10 +3,10 @@
  */
 
 @interface AXUIElement : NSObject <UIElementProtocol> {
-    struct __AXUIElement { } *_axElement;
-    struct __CFDictionary { } *_cachedAttributes;
-    int _cachedRefCount;
-    BOOL _isValid;
+    struct __AXUIElement { } * _axElement;
+    struct __CFDictionary { } * _cachedAttributes;
+    int  _cachedRefCount;
+    BOOL  _isValid;
 }
 
 @property (nonatomic, readonly) struct __AXUIElement { }*axElement;

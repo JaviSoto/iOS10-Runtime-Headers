@@ -3,15 +3,15 @@
  */
 
 @interface ISDataProvider : NSObject <NSCopying> {
-    NSNumber *_authenticatedAccountDSID;
-    SSAuthenticationContext *_authenticationContext;
-    SSURLBagContext *_bagContext;
-    long long _contentLength;
-    NSString *_contentType;
-    int _errorHandlerResponseType;
-    id _output;
-    ISOperation *_parentOperation;
-    NSURL *_redirectURL;
+    NSNumber * _authenticatedAccountDSID;
+    SSAuthenticationContext * _authenticationContext;
+    SSURLBagContext * _bagContext;
+    long long  _contentLength;
+    NSString * _contentType;
+    int  _errorHandlerResponseType;
+    id  _output;
+    ISOperation * _parentOperation;
+    NSURL * _redirectURL;
 }
 
 @property (retain) NSNumber *authenticatedAccountDSID;

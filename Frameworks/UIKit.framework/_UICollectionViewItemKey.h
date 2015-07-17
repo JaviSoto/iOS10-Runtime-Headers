@@ -3,10 +3,10 @@
  */
 
 @interface _UICollectionViewItemKey : NSObject <NSCopying> {
-    NSString *_identifier;
-    NSIndexPath *_indexPath;
-    BOOL _isClone;
-    unsigned int _type;
+    NSString * _identifier;
+    NSIndexPath * _indexPath;
+    BOOL  _isClone;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly, retain) NSString *identifier;
@@ -19,9 +19,9 @@
 + (id)collectionItemKeyForLayoutAttributes:(id)arg1;
 + (id)collectionItemKeyForSupplementaryViewOfKind:(id)arg1 andIndexPath:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)copyAsClone:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)identifier;

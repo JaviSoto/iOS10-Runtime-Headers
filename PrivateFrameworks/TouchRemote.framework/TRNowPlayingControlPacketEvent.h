@@ -3,7 +3,7 @@
  */
 
 @interface TRNowPlayingControlPacketEvent : TRPacketEvent {
-    int _controlCommand;
+    int  _controlCommand;
 }
 
 @property (nonatomic, readonly) int controlCommand;

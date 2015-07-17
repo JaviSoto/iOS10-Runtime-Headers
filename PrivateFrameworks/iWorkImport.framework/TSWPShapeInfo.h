@@ -3,7 +3,7 @@
  */
 
 @interface TSWPShapeInfo : TSDShapeInfo <TSDContainerInfo, TSDMixing, TSDSelectionStatisticsContributor, TSWPStorageParent> {
-    TSWPStorage *_containedStorage;
+    TSWPStorage * _containedStorage;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

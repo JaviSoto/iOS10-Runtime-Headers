@@ -3,14 +3,14 @@
  */
 
 @interface MusicSearchRecentsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    UIBarButtonItem *_clearBarButtonItem;
-    <MusicSearchRecentsViewControllerDelegate> *_delegate;
-    UIImageView *_emptyRecentsImageView;
-    UILabel *_emptyRecentsLabel;
-    UIView *_emptyRecentsView;
-    NSArray *_recentSearches;
-    MusicSearchRecentsStorage *_storage;
-    UITableView *_tableView;
+    UIBarButtonItem * _clearBarButtonItem;
+    <MusicSearchRecentsViewControllerDelegate> * _delegate;
+    UIImageView * _emptyRecentsImageView;
+    UILabel * _emptyRecentsLabel;
+    UIView * _emptyRecentsView;
+    NSArray * _recentSearches;
+    MusicSearchRecentsStorage * _storage;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

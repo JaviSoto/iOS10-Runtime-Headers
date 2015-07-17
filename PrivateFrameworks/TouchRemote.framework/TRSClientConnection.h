@@ -3,10 +3,10 @@
  */
 
 @interface TRSClientConnection : TRTCPConnection {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _authorized;
-    NSString *_deviceIdentifier;
-    NSObject<OS_dispatch_queue> *_packetEventQueue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _authorized;
+    NSString * _deviceIdentifier;
+    NSObject<OS_dispatch_queue> * _packetEventQueue;
 }
 
 - (void).cxx_destruct;

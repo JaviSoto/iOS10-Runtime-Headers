@@ -3,11 +3,11 @@
  */
 
 @interface _NSCallStackArray : NSArray {
-    unsigned int _cnt;
-    void **_frames;
-    unsigned int _ignore;
-    char **_pcstrs;
-    BOOL _wantSyms;
+    unsigned int  _cnt;
+    void ** _frames;
+    unsigned int  _ignore;
+    char ** _pcstrs;
+    BOOL  _wantSyms;
 }
 
 + (id)arrayWithFrames:(void**)arg1 count:(unsigned int)arg2 symbols:(BOOL)arg3;

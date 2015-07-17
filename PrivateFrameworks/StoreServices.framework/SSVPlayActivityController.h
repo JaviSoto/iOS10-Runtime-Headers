@@ -3,18 +3,18 @@
  */
 
 @interface SSVPlayActivityController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    SSXPCConnection *_connection;
-    NSMutableDictionary *_endpointIdentifierToEndpointRevisionInformation;
-    int _endpointRevisionInformationDidChangeNotifyToken;
-    BOOL _hasAttemptedTableCreation;
-    BOOL _hasLoadedEndpointRevisionInformation;
-    BOOL _hasSetupEndpointRevisionInformationDidChangeNotifyToken;
-    BOOL _hasValidEndpointRevisionInformationDidChangeNotifyToken;
-    NSMutableArray *_pendingFlushingSessions;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    SSVPlayActivityTable *_table;
-    unsigned int _writingStyle;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    SSXPCConnection * _connection;
+    NSMutableDictionary * _endpointIdentifierToEndpointRevisionInformation;
+    int  _endpointRevisionInformationDidChangeNotifyToken;
+    BOOL  _hasAttemptedTableCreation;
+    BOOL  _hasLoadedEndpointRevisionInformation;
+    BOOL  _hasSetupEndpointRevisionInformationDidChangeNotifyToken;
+    BOOL  _hasValidEndpointRevisionInformationDidChangeNotifyToken;
+    NSMutableArray * _pendingFlushingSessions;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    SSVPlayActivityTable * _table;
+    unsigned int  _writingStyle;
 }
 
 @property (nonatomic, readonly) unsigned int writingStyle;

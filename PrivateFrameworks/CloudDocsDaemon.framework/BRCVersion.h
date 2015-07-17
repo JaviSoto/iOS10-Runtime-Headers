@@ -3,19 +3,19 @@
  */
 
 @interface BRCVersion : NSObject <NSCopying, NSSecureCoding> {
-    BRFieldCKInfo *_ckInfo;
-    NSSet *_conflictLoserEtags;
-    NSData *_contentSignature;
-    NSString *_lastEditorDeviceName;
-    NSNumber *_lastEditorDeviceOrOwnerKey;
-    NSData *_lazyXattr;
-    long long _mtime;
-    NSString *_originalPOSIXName;
-    NSData *_quarantineInfo;
-    long long _size;
-    NSData *_thumbnailSignature;
-    long long _thumbnailSize;
-    NSData *_xattrSignature;
+    BRFieldCKInfo * _ckInfo;
+    NSSet * _conflictLoserEtags;
+    NSData * _contentSignature;
+    NSString * _lastEditorDeviceName;
+    NSNumber * _lastEditorDeviceOrOwnerKey;
+    NSData * _lazyXattr;
+    long long  _mtime;
+    NSString * _originalPOSIXName;
+    NSData * _quarantineInfo;
+    long long  _size;
+    NSData * _thumbnailSignature;
+    long long  _thumbnailSize;
+    NSData * _xattrSignature;
 }
 
 @property (nonatomic, retain) BRFieldCKInfo *ckInfo;

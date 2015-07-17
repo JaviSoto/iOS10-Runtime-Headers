@@ -3,9 +3,9 @@
  */
 
 @interface _UILegibilityLabel : _UILegibilityView {
-    UIFont *_font;
-    NSString *_string;
-    BOOL _usesSecondaryColor;
+    UIFont * _font;
+    NSString * _string;
+    BOOL  _usesSecondaryColor;
 }
 
 @property (nonatomic, readonly) float baselineOffset;

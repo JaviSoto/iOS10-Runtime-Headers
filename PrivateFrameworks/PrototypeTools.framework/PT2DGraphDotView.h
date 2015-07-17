@@ -3,11 +3,11 @@
  */
 
 @interface PT2DGraphDotView : UIView {
-    PT2DGraphView *_graph;
+    PT2DGraphView * _graph;
     struct CGPoint { 
         float x; 
         float y; 
-    } _graphPoint;
+    }  _graphPoint;
 }
 
 @property (nonatomic) PT2DGraphView *graph;

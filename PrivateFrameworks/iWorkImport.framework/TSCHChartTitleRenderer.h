@@ -12,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } mStartingEditingFrame;
+    }  mStartingEditingFrame;
 }
 
 - (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;

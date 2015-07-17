@@ -6,9 +6,7 @@
 
 @property (nonatomic) double clearDepth;
 
-- (double)clearDepth;
-- (id)description;
-- (id)init;
-- (void)setClearDepth:(double)arg1;
++ (id)alloc;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 @end

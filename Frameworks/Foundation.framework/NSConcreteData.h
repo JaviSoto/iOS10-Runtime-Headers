@@ -3,18 +3,19 @@
  */
 
 @interface NSConcreteData : NSData {
-    void *_bytes;
-    unsigned int _capacity;
-    unsigned int _isInline;
-    unsigned int _length;
-    unsigned int _retainCount;
+    void * _bytes;
+    unsigned int  _capacity;
+    unsigned int  _isInline;
+    unsigned int  _length;
+    unsigned int  _retainCount;
     union { 
         unsigned char _space[12]; 
         id /* block */ _deallocator; 
-    } _u;
+    }  _u;
 }
 
 - (BOOL)_copyWillRetain;
+- (id)_createDispatchData;
 - (BOOL)_isCompact;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

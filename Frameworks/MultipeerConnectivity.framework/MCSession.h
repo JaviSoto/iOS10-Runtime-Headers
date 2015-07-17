@@ -3,19 +3,19 @@
  */
 
 @interface MCSession : NSObject {
-    struct OpaqueAGPSession { } *_agpSession;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSMutableDictionary *_connectionPendingPeerEvents;
-    <MCSessionDelegate> *_delegate;
-    int _encryptionPreference;
-    unsigned int _gckPID;
-    struct OpaqueGCKSession { } *_gckSession;
-    MCPeerID *_myPeerID;
-    NSMutableDictionary *_peerIDMap;
-    NSMutableDictionary *_peerStates;
-    <MCSessionPrivateDelegate> *_privateDelegate;
-    NSArray *_securityIdentity;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    struct OpaqueAGPSession { } * _agpSession;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSMutableDictionary * _connectionPendingPeerEvents;
+    <MCSessionDelegate> * _delegate;
+    int  _encryptionPreference;
+    unsigned int  _gckPID;
+    struct OpaqueGCKSession { } * _gckSession;
+    MCPeerID * _myPeerID;
+    NSMutableDictionary * _peerIDMap;
+    NSMutableDictionary * _peerStates;
+    <MCSessionPrivateDelegate> * _privateDelegate;
+    NSArray * _securityIdentity;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 @property (nonatomic) struct OpaqueAGPSession { }*agpSession;
@@ -51,6 +51,7 @@
 - (int)encryptionPreference;
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
+- (id)init;
 - (id)initWithPeer:(id)arg1;
 - (id)initWithPeer:(id)arg1 securityIdentity:(id)arg2 encryptionPreference:(int)arg3;
 - (BOOL)isEncryptionPreferenceCompatible:(int)arg1;

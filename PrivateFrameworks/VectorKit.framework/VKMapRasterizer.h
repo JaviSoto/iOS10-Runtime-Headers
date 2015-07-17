@@ -5,52 +5,52 @@
 @interface VKMapRasterizer : VKModelObject {
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
-    } _backgroundColor;
-    unsigned int _canvasPointSize;
+    }  _backgroundColor;
+    unsigned int  _canvasPointSize;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
         struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
             struct RenderBuffer {} *__first_; 
         } __ptr_; 
-    } _depthStencilBuffer;
+    }  _depthStencilBuffer;
     struct VKTileKey { 
         unsigned int z; 
         int x; 
         int y; 
         unsigned int pointSize; 
-    } _keyToRasterize;
-    VKMapModel *_mapModel;
-    VKCamera *_rasterizeCamera;
-    MDTextureCanvas *_rasterizeCanvas;
-    VKLayoutContext *_rasterizeLayoutContext;
-    VKScene *_rasterizeScene;
-    NSMutableSet *_rasterizeTilesToRender;
-    unsigned int _rasterizingScaleFactor;
+    }  _keyToRasterize;
+    VKMapModel * _mapModel;
+    VKCamera * _rasterizeCamera;
+    MDTextureCanvas * _rasterizeCanvas;
+    VKLayoutContext * _rasterizeLayoutContext;
+    VKScene * _rasterizeScene;
+    NSMutableSet * _rasterizeTilesToRender;
+    unsigned int  _rasterizingScaleFactor;
     struct shared_ptr<ggl::Texture2D> { 
         struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _renderTexture;
+    }  _renderTexture;
     struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
         struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
             struct RenderTarget {} *__first_; 
         } __ptr_; 
-    } _renderToTextureTarget;
-    VKMapRasterizerRoot *_root;
+    }  _renderToTextureTarget;
+    VKMapRasterizerRoot * _root;
     struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
         struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
             struct RenderQueue {} *__first_; 
         } __ptr_; 
-    } _rttQueue;
+    }  _rttQueue;
     struct unique_ptr<ggl::TextureBuffer, std::__1::default_delete<ggl::TextureBuffer> > { 
         struct __compressed_pair<ggl::TextureBuffer *, std::__1::default_delete<ggl::TextureBuffer> > { 
             struct TextureBuffer {} *__first_; 
         } __ptr_; 
-    } _textureBuffer;
+    }  _textureBuffer;
     struct unique_ptr<ggl::TexturePool, std::__1::default_delete<ggl::TexturePool> > { 
         struct __compressed_pair<ggl::TexturePool *, std::__1::default_delete<ggl::TexturePool> > { 
             struct TexturePool {} *__first_; 
         } __ptr_; 
-    } _texturePool;
-    VKTileProvider *_tileProvider;
+    }  _texturePool;
+    VKTileProvider * _tileProvider;
 }
 
 @property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */

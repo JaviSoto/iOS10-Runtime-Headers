@@ -3,24 +3,24 @@
  */
 
 @interface BRCFSEventsMonitor : NSObject <BRCLowDiskDelegate, BRCModule> {
-    PQLConnection *_db;
-    <BRCFSEventsDelegate> *_delegate;
-    NSString *_devicePath;
-    BOOL _drainEvents;
-    NSObject<OS_dispatch_source> *_historicalEventSource;
-    BRCFSEventsPersistedState *_persistedState;
-    BRCFSEventsPersistedState *_rendezVous;
-    int _resetCount;
-    BRCRelativePath *_root;
-    NSString *_rootPathRelativeToDevice;
-    NSObject<OS_dispatch_source> *_rootVnodeWatcher;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
-    BRCAccountSession *_session;
-    struct __FSEventStream { } *_stream;
-    NSObject<OS_dispatch_queue> *_streamQueue;
-    int _suspendCount;
-    BOOL _volumeHasLowDiskSpace;
-    BOOL _volumeIsCaseSensitive;
+    PQLConnection * _db;
+    <BRCFSEventsDelegate> * _delegate;
+    NSString * _devicePath;
+    BOOL  _drainEvents;
+    NSObject<OS_dispatch_source> * _historicalEventSource;
+    BRCFSEventsPersistedState * _persistedState;
+    BRCFSEventsPersistedState * _rendezVous;
+    int  _resetCount;
+    BRCRelativePath * _root;
+    NSString * _rootPathRelativeToDevice;
+    NSObject<OS_dispatch_source> * _rootVnodeWatcher;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
+    BRCAccountSession * _session;
+    struct __FSEventStream { } * _stream;
+    NSObject<OS_dispatch_queue> * _streamQueue;
+    int  _suspendCount;
+    BOOL  _volumeHasLowDiskSpace;
+    BOOL  _volumeIsCaseSensitive;
 }
 
 @property (setter=setDB:, nonatomic, retain) PQLConnection *db;

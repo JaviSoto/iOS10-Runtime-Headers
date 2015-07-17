@@ -3,20 +3,20 @@
  */
 
 @interface MCDNowPlayingViewController : UIViewController {
-    UITapGestureRecognizer *_backPressRecognizer;
-    <MCDNowPlayingViewControllerDataSource> *_dataSource;
-    <MCDNowPlayingViewControllerDelegate> *_delegate;
-    int _heldAction;
-    BOOL _highTouchMode;
-    BOOL _isScrubbing;
-    UITapGestureRecognizer *_knobPressRecognizer;
-    UIColor *_navbarColor;
-    BOOL _navbarHidesShadow;
-    MCDNowPlayingView *_nowPlayingView;
-    MCDPlayModeControlView *_playModeControlView;
-    UIViewController *_playModeViewController;
-    MCDTransportControlView *_transportControlView;
-    UIViewController *_transportViewController;
+    UITapGestureRecognizer * _backPressRecognizer;
+    <MCDNowPlayingViewControllerDataSource> * _dataSource;
+    <MCDNowPlayingViewControllerDelegate> * _delegate;
+    int  _heldAction;
+    BOOL  _highTouchMode;
+    BOOL  _isScrubbing;
+    UITapGestureRecognizer * _knobPressRecognizer;
+    UIColor * _navbarColor;
+    BOOL  _navbarHidesShadow;
+    MCDNowPlayingView * _nowPlayingView;
+    MCDPlayModeControlView * _playModeControlView;
+    UIViewController * _playModeViewController;
+    MCDTransportControlView * _transportControlView;
+    UIViewController * _transportViewController;
 }
 
 @property (nonatomic, readonly) UITapGestureRecognizer *backPressRecognizer;

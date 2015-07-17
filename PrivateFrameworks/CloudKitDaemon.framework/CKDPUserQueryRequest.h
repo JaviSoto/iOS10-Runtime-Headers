@@ -3,9 +3,9 @@
  */
 
 @interface CKDPUserQueryRequest : PBRequest <NSCopying> {
-    CKDPUserAlias *_alias;
-    NSString *_pcsServiceType;
-    NSMutableArray *_sortedBys;
+    CKDPUserAlias * _alias;
+    NSString * _pcsServiceType;
+    NSMutableArray * _sortedBys;
 }
 
 @property (nonatomic, retain) CKDPUserAlias *alias;

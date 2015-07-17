@@ -3,11 +3,11 @@
  */
 
 @interface RadioTrack : NSObject <NSSecureCoding, RURadioItemIdentifier> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSDictionary *_bestOfferDictionary;
-    NSDate *_expirationDate;
-    BOOL _isPreorderAlbum;
-    NSMutableDictionary *_trackDictionary;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSDictionary * _bestOfferDictionary;
+    NSDate * _expirationDate;
+    BOOL  _isPreorderAlbum;
+    NSMutableDictionary * _trackDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSData *adData;

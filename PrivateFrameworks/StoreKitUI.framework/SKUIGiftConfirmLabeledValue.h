@@ -3,11 +3,11 @@
  */
 
 @interface SKUIGiftConfirmLabeledValue : UIView {
-    SKUIGiftDashView *_dashView;
-    UILabel *_labelLabel;
-    int _style;
-    UILabel *_subtitleLabel;
-    UILabel *_valueLabel;
+    SKUIGiftDashView * _dashView;
+    UILabel * _labelLabel;
+    int  _style;
+    UILabel * _subtitleLabel;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, readonly) int giftConfirmLabelStyle;

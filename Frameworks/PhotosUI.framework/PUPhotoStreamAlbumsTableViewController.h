@@ -3,10 +3,10 @@
  */
 
 @interface PUPhotoStreamAlbumsTableViewController : UITableViewController {
-    NSOrderedSet *_albumsOrderedSet;
-    BOOL _allowsMutlipleSelection;
-    <PUPhotoStreamsAlbumsTableViewControllerDelegate> *_pickerDelegate;
-    NSMutableSet *_selectedAlbumGuids;
+    NSOrderedSet * _albumsOrderedSet;
+    BOOL  _allowsMutlipleSelection;
+    <PUPhotoStreamsAlbumsTableViewControllerDelegate> * _pickerDelegate;
+    NSMutableSet * _selectedAlbumGuids;
 }
 
 @property (nonatomic) BOOL allowsMutlipleSelection;

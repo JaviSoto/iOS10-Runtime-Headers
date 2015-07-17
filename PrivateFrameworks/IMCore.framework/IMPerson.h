@@ -3,8 +3,8 @@
  */
 
 @interface IMPerson : NSObject {
-    int _recordID;
-    BOOL _registered;
+    int  _recordID;
+    BOOL  _registered;
 }
 
 @property (nonatomic, readonly) int _recordID;
@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) BOOL _registered;
 @property (nonatomic, readonly, retain) NSString *abbreviatedName;
 @property (nonatomic, readonly) NSArray *allEmails;
+@property (nonatomic, readonly, copy) NSString *cnContactID;
 @property (nonatomic, readonly) NSString *companyName;
 @property (nonatomic, readonly, retain) NSString *displayName;
 @property (nonatomic, copy) NSArray *emails;
@@ -53,6 +54,7 @@
 - (id)allEmails;
 - (id)allHandlesForProperty:(id)arg1;
 - (void)appendID:(id)arg1 toProperty:(id)arg2;
+- (id)cnContactID;
 - (id)companyName;
 - (BOOL)containsHandle:(id)arg1 forServiceProperty:(id)arg2;
 - (void)dealloc;

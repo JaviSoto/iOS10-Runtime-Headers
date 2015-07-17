@@ -2,30 +2,30 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryPlaylistsOverviewViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLibraryBrowseCollectionViewControllerDelegate, MusicNoContentViewDelegate, MusicSwitcherButtonContainerViewDelegate, SKUITabBarItemRootViewController> {
-    UISwitch *_alertShowOfflineSwitch;
-    MusicClientContext *_clientContext;
-    NSDictionary *_curatorsByID;
-    UIBarButtonItem *_editButtonItem;
-    UIAlertController *_filterAlertController;
-    MusicHairlineView *_hairlineView;
-    BOOL _hasSubscribedPlaylistsCapability;
-    MusicSwitcherButtonContainerView *_librarySwitcherButtonContainerView;
-    MusicMatchLoadingViewController *_matchLoadingViewController;
-    UIBarButtonItem *_newButtonItem;
-    UIViewController *_noContentViewController;
-    unsigned int _playlistsConfigurationOptions;
-    MusicActionableHeaderView *_playlistsHeaderView;
-    MusicLibraryPlaylistsViewConfiguration *_playlistsViewConfiguration;
-    UIViewController *_playlistsViewController;
-    MusicActionableHeaderView *_recentlyPlayedPlaylistsHeaderView;
-    MusicLibraryBrowseCollectionViewController *_recentlyPlayedPlaylistsViewController;
-    NSString *_selectedFilter;
-    BOOL _selectedFilterIsCuratorID;
-    MusicLibraryPlaylistsViewConfiguration *_selectedPlaylistsViewConfiguration;
-    BOOL _shouldShowMatchLoadingView;
-    BOOL _shouldShowNoContentView;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+@interface MusicLibraryPlaylistsOverviewViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLibraryBrowseCollectionViewControllerDelegate, MusicNoContentViewDelegate, MusicSwitcherButtonContainerViewDelegate, SKUITabBarItemRootViewController, UIViewControllerRestoration> {
+    UISwitch * _alertShowOfflineSwitch;
+    MusicClientContext * _clientContext;
+    NSDictionary * _curatorsByID;
+    UIBarButtonItem * _editButtonItem;
+    UIAlertController * _filterAlertController;
+    MusicHairlineView * _hairlineView;
+    BOOL  _hasSubscribedPlaylistsCapability;
+    MusicSwitcherButtonContainerView * _librarySwitcherButtonContainerView;
+    MusicMatchLoadingViewController * _matchLoadingViewController;
+    UIBarButtonItem * _newButtonItem;
+    UIViewController * _noContentViewController;
+    unsigned int  _playlistsConfigurationOptions;
+    MusicActionableHeaderView * _playlistsHeaderView;
+    MusicLibraryPlaylistsViewConfiguration * _playlistsViewConfiguration;
+    UIViewController * _playlistsViewController;
+    MusicActionableHeaderView * _recentlyPlayedPlaylistsHeaderView;
+    MusicLibraryBrowseCollectionViewController * _recentlyPlayedPlaylistsViewController;
+    NSString * _selectedFilter;
+    BOOL  _selectedFilterIsCuratorID;
+    MusicLibraryPlaylistsViewConfiguration * _selectedPlaylistsViewConfiguration;
+    BOOL  _shouldShowMatchLoadingView;
+    BOOL  _shouldShowNoContentView;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -33,6 +33,9 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+
++ (id)_newRecentlyAddedViewControllerWithClientContext:(id)arg1;
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_alertShowOfflineSwitchValueChangedAction:(id)arg1;

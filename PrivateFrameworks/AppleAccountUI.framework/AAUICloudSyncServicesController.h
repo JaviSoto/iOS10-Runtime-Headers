@@ -3,16 +3,16 @@
  */
 
 @interface AAUICloudSyncServicesController : NSObject <DAValidityCheckConsumer> {
-    ACAccount *_account;
-    DAAccount *_accountBeingValidated;
-    ACAccountStore *_accountStore;
-    NSMutableArray *_dataclassesRequiringMergeDecision;
-    BOOL _didUserConsentToMerge;
-    id /* block */ _handler;
-    BOOL _isVerifyingExistingEmailAccount;
-    NSMutableDictionary *_queuedDataclassActions;
-    MFAccountValidator *_validator;
-    AAAutoAccountVerifier *_verifier;
+    ACAccount * _account;
+    DAAccount * _accountBeingValidated;
+    ACAccountStore * _accountStore;
+    NSMutableArray * _dataclassesRequiringMergeDecision;
+    BOOL  _didUserConsentToMerge;
+    id /* block */  _handler;
+    BOOL  _isVerifyingExistingEmailAccount;
+    NSMutableDictionary * _queuedDataclassActions;
+    MFAccountValidator * _validator;
+    AAAutoAccountVerifier * _verifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

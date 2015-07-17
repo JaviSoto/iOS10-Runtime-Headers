@@ -3,7 +3,7 @@
  */
 
 @interface CKDZonePCSData : CKDPCSData {
-    CKRecordZoneID *_zoneID;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) CKRecordZoneID *zoneID;

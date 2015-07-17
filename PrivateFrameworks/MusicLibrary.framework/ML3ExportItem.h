@@ -3,10 +3,10 @@
  */
 
 @interface ML3ExportItem : NSObject {
-    Class _entityClass;
-    ML3MusicLibrary *_library;
-    long long _persistentId;
-    NSDictionary *_properties;
+    Class  _entityClass;
+    ML3MusicLibrary * _library;
+    long long  _persistentId;
+    NSDictionary * _properties;
 }
 
 @property (nonatomic, readonly) Class entityClass;

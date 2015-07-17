@@ -3,17 +3,17 @@
  */
 
 @interface GKAsyncSocketInternal : GKAsyncSocket {
-    id /* block */ _connectedHandler;
-    int _connectionSocket;
-    NSMutableData *_dataToSend;
-    BOOL _invalidated;
-    id /* block */ _receiveDataHandler;
-    NSObject<OS_dispatch_source> *_receiveSource;
-    NSObject<OS_dispatch_source> *_sendSource;
-    BOOL _sendSourceSuspended;
-    NSString *_socketName;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    NSObject<OS_dispatch_queue> *_targetQueue;
+    id /* block */  _connectedHandler;
+    int  _connectionSocket;
+    NSMutableData * _dataToSend;
+    BOOL  _invalidated;
+    id /* block */  _receiveDataHandler;
+    NSObject<OS_dispatch_source> * _receiveSource;
+    NSObject<OS_dispatch_source> * _sendSource;
+    BOOL  _sendSourceSuspended;
+    NSString * _socketName;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
 - (void)closeConnectionNow;

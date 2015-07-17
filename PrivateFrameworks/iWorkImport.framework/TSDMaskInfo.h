@@ -3,7 +3,7 @@
  */
 
 @interface TSDMaskInfo : TSDDrawableInfo <TSDInfoWithPathSource, TSDMixing> {
-    TSDPathSource *mPathSource;
+    TSDPathSource * mPathSource;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

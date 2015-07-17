@@ -3,7 +3,7 @@
  */
 
 @interface EKEventTravelTimeEditItem : EKEventEditItem {
-    BOOL _isHidden;
+    BOOL  _isHidden;
 }
 
 - (void)_updateHiddenState;

@@ -3,21 +3,21 @@
  */
 
 @interface MFStream : NSObject <NSStreamDelegate> {
-    char *_buffer;
-    unsigned int _bytesRead;
-    unsigned int _bytesWritten;
-    id /* block */ _callback;
-    unsigned long _capacity;
-    BOOL _dispatchedBytesAvailable;
-    BOOL _enableThroughputMonitoring;
-    NSError *_error;
-    unsigned long _length;
-    NSObject<OS_dispatch_queue> *_location;
-    NSMutableDictionary *_properties;
-    NSInputStream *_rStream;
-    BOOL _streamCanRead;
-    BOOL _streamCanWrite;
-    NSOutputStream *_wStream;
+    char * _buffer;
+    unsigned int  _bytesRead;
+    unsigned int  _bytesWritten;
+    id /* block */  _callback;
+    unsigned long  _capacity;
+    BOOL  _dispatchedBytesAvailable;
+    BOOL  _enableThroughputMonitoring;
+    NSError * _error;
+    unsigned long  _length;
+    NSObject<OS_dispatch_queue> * _location;
+    NSMutableDictionary * _properties;
+    NSInputStream * _rStream;
+    BOOL  _streamCanRead;
+    BOOL  _streamCanWrite;
+    NSOutputStream * _wStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

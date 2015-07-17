@@ -3,20 +3,20 @@
  */
 
 @interface PBBridgeGizmoController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, PBBridgeGizmoProtocol> {
-    id /* block */ _activationCompletion;
-    unsigned short _activationState;
-    NSTimer *_activationTimeout;
-    BOOL _canBeginActivation;
-    UIAlertView *_confirmationAlert;
-    <PBBridgeConnectionDelegate> *_delegate;
-    id /* block */ _enableSiriCompletion;
-    NSString *_internalLastSendMessageID;
-    NSString *_languageIdentifer;
-    BOOL _readyToCreatePasscode;
-    NSString *_regionIdentifer;
-    id /* block */ _siriStateCompletion;
-    id /* block */ _updateLanguageCompletion;
-    id /* block */ _updateRegionCompletion;
+    id /* block */  _activationCompletion;
+    unsigned short  _activationState;
+    NSTimer * _activationTimeout;
+    BOOL  _canBeginActivation;
+    UIAlertView * _confirmationAlert;
+    <PBBridgeConnectionDelegate> * _delegate;
+    id /* block */  _enableSiriCompletion;
+    NSString * _internalLastSendMessageID;
+    NSString * _languageIdentifer;
+    BOOL  _readyToCreatePasscode;
+    NSString * _regionIdentifer;
+    id /* block */  _siriStateCompletion;
+    id /* block */  _updateLanguageCompletion;
+    id /* block */  _updateRegionCompletion;
 }
 
 @property (nonatomic, copy) id /* block */ activationCompletion;

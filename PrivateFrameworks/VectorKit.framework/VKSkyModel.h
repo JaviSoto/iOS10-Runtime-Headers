@@ -3,43 +3,43 @@
  */
 
 @interface VKSkyModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::Sky::Style> > { 
+        struct ConstantDataTyped<ggl::Sky::Style> {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _constantData;
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
-    } _fillColor;
+    }  _fillColor;
     struct shared_ptr<ggl::RenderState> { 
         struct RenderState {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _gglRenderState;
+    }  _gglRenderState;
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
-    } _horizonColor;
+    }  _horizonColor;
     struct shared_ptr<ggl::IndexDataTyped<unsigned short> > { 
         struct IndexDataTyped<unsigned short> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _indexData;
-    VKMapModel *_mapModel;
+    }  _indexData;
+    VKMapModel * _mapModel;
     struct shared_ptr<ggl::Sky::SkyMesh> { 
         struct SkyMesh {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _mesh;
-    BOOL _needsNewStyle;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_renderItem;
+    }  _mesh;
+    BOOL  _needsNewStyle;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } * _renderItem;
     struct shared_ptr<ggl::Sky::Shader::Setup> { 
         struct Setup {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _shaderSetup;
-    float _skyStartOffset;
-    struct shared_ptr<ggl::Sky::SkyUniformData> { 
-        struct SkyUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _uniformData;
+    }  _shaderSetup;
+    float  _skyStartOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) VKMapModel *mapModel;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
@@ -57,7 +57,7 @@
 - (void)setHorizonColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setMapModel:(id)arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
 - (void)updateStyle;
 

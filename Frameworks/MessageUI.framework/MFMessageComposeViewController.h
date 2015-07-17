@@ -3,15 +3,15 @@
  */
 
 @interface MFMessageComposeViewController : UINavigationController {
-    NSArray *_attachments;
-    NSString *_body;
-    unsigned int _currentAttachedAudioCount;
-    unsigned int _currentAttachedImageCount;
-    unsigned int _currentAttachedVideoCount;
-    <MFMessageComposeViewControllerDelegate> *_messageComposeDelegate;
-    NSMutableArray *_mutableAttachmentURLs;
-    NSArray *_recipients;
-    NSString *_subject;
+    NSArray * _attachments;
+    NSString * _body;
+    unsigned int  _currentAttachedAudioCount;
+    unsigned int  _currentAttachedImageCount;
+    unsigned int  _currentAttachedVideoCount;
+    <MFMessageComposeViewControllerDelegate> * _messageComposeDelegate;
+    NSMutableArray * _mutableAttachmentURLs;
+    NSArray * _recipients;
+    NSString * _subject;
 }
 
 @property (nonatomic, readonly, copy) NSArray *attachments;
@@ -25,6 +25,7 @@
 @property (nonatomic, copy) NSString *subject;
 
 + (BOOL)_canSendText;
++ (id)_chatKitBundle;
 + (void)_serviceAvailabilityChanged:(id)arg1;
 + (void)_setupAccountMonitor;
 + (void)_startListeningForAvailabilityNotifications;
@@ -77,6 +78,7 @@
 - (void)smsComposeControllerCancelled:(id)arg1;
 - (void)smsComposeControllerSendStarted:(id)arg1;
 - (id)subject;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

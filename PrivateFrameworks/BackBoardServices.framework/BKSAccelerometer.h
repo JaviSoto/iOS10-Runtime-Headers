@@ -3,21 +3,21 @@
  */
 
 @interface BKSAccelerometer : NSObject {
-    struct __CFRunLoop { } *_accelerometerEventsRunLoop;
-    struct __CFRunLoopSource { } *_accelerometerEventsSource;
-    <BKSAccelerometerDelegate> *_delegate;
-    double _interval;
-    NSLock *_lock;
-    int _orientationCheckToken;
-    BOOL _orientationEventsEnabled;
-    NSThread *_orientationEventsThread;
-    int _orientationNotificationsToken;
-    unsigned int _orientationPort;
-    BOOL _passiveOrientationEvents;
-    double _updateInterval;
-    float _xThreshold;
-    float _yThreshold;
-    float _zThreshold;
+    struct __CFRunLoop { } * _accelerometerEventsRunLoop;
+    struct __CFRunLoopSource { } * _accelerometerEventsSource;
+    <BKSAccelerometerDelegate> * _delegate;
+    double  _interval;
+    NSLock * _lock;
+    int  _orientationCheckToken;
+    BOOL  _orientationEventsEnabled;
+    NSThread * _orientationEventsThread;
+    int  _orientationNotificationsToken;
+    unsigned int  _orientationPort;
+    BOOL  _passiveOrientationEvents;
+    double  _updateInterval;
+    float  _xThreshold;
+    float  _yThreshold;
+    float  _zThreshold;
 }
 
 @property (nonatomic) BOOL accelerometerEventsEnabled;

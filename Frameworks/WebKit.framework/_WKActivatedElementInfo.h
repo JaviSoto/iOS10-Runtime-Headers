@@ -5,7 +5,7 @@
 @interface _WKActivatedElementInfo : NSObject {
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
-    } _URL;
+    }  _URL;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,21 +15,21 @@
             float width; 
             float height; 
         } size; 
-    } _boundingRect;
+    }  _boundingRect;
     struct RefPtr<WebKit::ShareableBitmap> { 
         struct ShareableBitmap {} *m_ptr; 
-    } _image;
+    }  _image;
     struct CGPoint { 
         float x; 
         float y; 
-    } _interactionLocation;
+    }  _interactionLocation;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    } _title;
-    int _type;
+    }  _title;
+    int  _type;
     struct RetainPtr<UIImage> { 
         void *m_ptr; 
-    } _uiImage;
+    }  _uiImage;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

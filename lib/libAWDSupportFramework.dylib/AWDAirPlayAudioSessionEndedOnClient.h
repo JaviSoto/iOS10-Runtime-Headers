@@ -3,8 +3,8 @@
  */
 
 @interface AWDAirPlayAudioSessionEndedOnClient : PBCodable <NSCopying> {
-    unsigned int _duration;
-    unsigned int _futileRetransmits;
+    unsigned int  _duration;
+    unsigned int  _futileRetransmits;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
@@ -12,12 +12,12 @@
         unsigned int reason : 1; 
         unsigned int retransmits : 1; 
         unsigned int slowKeepAlives : 1; 
-    } _has;
-    int _reason;
-    unsigned int _retransmits;
-    NSString *_sessionUUID;
-    unsigned int _slowKeepAlives;
-    unsigned long long _timestamp;
+    }  _has;
+    int  _reason;
+    unsigned int  _retransmits;
+    NSString * _sessionUUID;
+    unsigned int  _slowKeepAlives;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int duration;

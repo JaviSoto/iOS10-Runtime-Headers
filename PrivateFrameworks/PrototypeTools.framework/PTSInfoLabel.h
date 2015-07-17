@@ -3,15 +3,15 @@
  */
 
 @interface PTSInfoLabel : UILabel <PTSHUDControl, _UISettingsKeyPathObserver> {
-    int _alignment;
-    _UISettings *_settings;
-    NSString *_valueKeyPath;
+    int  _alignment;
+    _UISettings * _settings;
+    NSString * _valueKeyPath;
 }
 
 @property (nonatomic) int alignment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic) _UISettings *settings;
 @property (readonly) Class superclass;

@@ -3,14 +3,14 @@
  */
 
 @interface SFWirelessSettingsController : NSObject {
-    BOOL _bluetoothEnabled;
-    id _delegate;
-    BOOL _deviceSupportsWAPI;
-    NSObject<OS_dispatch_semaphore> *_firstCallBackSemaphore;
-    BOOL _firstCallbackCompleted;
-    struct __SFOperation { } *_information;
-    BOOL _wifiEnabled;
-    BOOL _wirelessAccessPointEnabled;
+    BOOL  _bluetoothEnabled;
+    id  _delegate;
+    BOOL  _deviceSupportsWAPI;
+    NSObject<OS_dispatch_semaphore> * _firstCallBackSemaphore;
+    BOOL  _firstCallbackCompleted;
+    struct __SFOperation { } * _information;
+    BOOL  _wifiEnabled;
+    BOOL  _wirelessAccessPointEnabled;
 }
 
 @property (getter=isBluetoothEnabled) BOOL bluetoothEnabled;

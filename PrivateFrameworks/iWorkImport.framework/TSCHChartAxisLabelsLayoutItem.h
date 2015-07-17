@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartAxisLabelsLayoutItem : TSCHChartLayoutItem {
-    float mAngleInDegrees;
-    float mAngleInRadians;
-    unsigned int mStride;
+    float  mAngleInDegrees;
+    float  mAngleInRadians;
+    unsigned int  mStride;
 }
 
 @property (nonatomic, readonly) unsigned int stride;

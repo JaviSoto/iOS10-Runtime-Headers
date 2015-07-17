@@ -3,18 +3,18 @@
  */
 
 @interface UITableViewIndexOverlayIndicatorView : UIView {
-    UILabel *_label;
-    UITableView *_table;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    UILabel * _label;
+    UITableView * _table;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic, copy) NSString *currentText;
 
+- (void).cxx_destruct;
 - (void)_invalidateTable;
 - (void)_tapGestureChanged:(id)arg1;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (id)currentText;
-- (void)dealloc;
 - (id)initWithTable:(id)arg1;
 - (void)layoutSubviews;
 - (void)setCurrentText:(id)arg1;

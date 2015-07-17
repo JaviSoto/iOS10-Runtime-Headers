@@ -3,9 +3,9 @@
  */
 
 @interface OITSUCGImage : OITSUImage {
-    struct CGImage { } *mCGImage;
-    int mOrientation;
-    float mScale;
+    struct CGImage { } * mCGImage;
+    int  mOrientation;
+    float  mScale;
 }
 
 - (struct CGImage { }*)CGImage;

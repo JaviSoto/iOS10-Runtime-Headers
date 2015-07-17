@@ -3,8 +3,8 @@
  */
 
 @interface CKPassbookMediaObject : CKMediaObject {
-    UIImage *_icon;
-    PKPass *_pass;
+    UIImage * _icon;
+    PKPass * _pass;
 }
 
 @property (nonatomic, retain) UIImage *icon;

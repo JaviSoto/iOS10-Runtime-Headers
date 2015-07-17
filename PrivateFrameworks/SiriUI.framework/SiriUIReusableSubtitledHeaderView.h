@@ -3,8 +3,8 @@
  */
 
 @interface SiriUIReusableSubtitledHeaderView : SiriUIReusableHeaderView {
-    NSAttributedString *_attributedSubtitleText;
-    UILabel *_subtitleLabel;
+    NSAttributedString * _attributedSubtitleText;
+    UILabel * _subtitleLabel;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedSubtitleText;

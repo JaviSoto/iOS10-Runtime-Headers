@@ -3,7 +3,7 @@
  */
 
 @interface MPNondurableMediaItem : MPMediaItem {
-    unsigned long long _persistentID;
+    unsigned long long  _persistentID;
 }
 
 + (BOOL)canFilterByProperty:(id)arg1;

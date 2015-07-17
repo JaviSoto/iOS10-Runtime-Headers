@@ -3,9 +3,9 @@
  */
 
 @interface NSISVariable : NSObject {
-    <NSISVariableDelegate> *_delegate;
-    unsigned int _ident;
-    int _refCount;
+    <NSISVariableDelegate> * _delegate;
+    unsigned int  _ident;
+    int  _refCount;
 }
 
 @property <NSISVariableDelegate> *delegate;

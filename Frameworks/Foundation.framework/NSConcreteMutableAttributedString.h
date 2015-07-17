@@ -6,9 +6,9 @@
     struct { 
         unsigned int attributeFixingDisabled : 8; 
         unsigned int  : 24; 
-    } fields;
-    NSMutableRLEArray *mutableAttributes;
-    NSMutableString *mutableString;
+    }  fields;
+    NSMutableRLEArray * mutableAttributes;
+    NSMutableString * mutableString;
 }
 
 + (Class)_mutableStringClass;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUITabBarController : UITabBarController <SKUIMoreNavigationControllerDelegate> {
-    SKUIFloatingOverlayView *_floatingOverlayView;
-    UIViewController *_floatingOverlayViewController;
-    SKUITabBarBackgroundView *_tabBarBackgroundView;
+    SKUIFloatingOverlayView * _floatingOverlayView;
+    UIViewController * _floatingOverlayViewController;
+    SKUITabBarBackgroundView * _tabBarBackgroundView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

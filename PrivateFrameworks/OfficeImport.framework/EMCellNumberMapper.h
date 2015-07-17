@@ -3,9 +3,9 @@
  */
 
 @interface EMCellNumberMapper : CMMapper {
-    EDStyle *edStyle;
-    double edValue;
-    EDWorkbook *workbook;
+    EDStyle * edStyle;
+    double  edValue;
+    EDWorkbook * workbook;
 }
 
 - (id)formatValueAsNumber;

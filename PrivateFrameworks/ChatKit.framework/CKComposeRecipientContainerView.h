@@ -3,8 +3,8 @@
  */
 
 @interface CKComposeRecipientContainerView : UIView {
-    _UIBackdropView *_backdropView;
-    UIView *_separatorView;
+    _UIBackdropView * _backdropView;
+    UIView * _separatorView;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backdropView;

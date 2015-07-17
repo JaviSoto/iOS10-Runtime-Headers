@@ -3,8 +3,8 @@
  */
 
 @interface AFContextManager : NSObject {
-    CPDistributedMessagingCenter *_center;
-    struct __CFArray { } *_contextProviders;
+    CPDistributedMessagingCenter * _center;
+    struct __CFArray { } * _contextProviders;
 }
 
 + (id)defaultContextManager;

@@ -6,29 +6,29 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _anchor;
-    TSWPColumnStyle *_columnStyle;
-    NSMutableArray *_columns;
-    NSObject<TSWPTextDelegate> *_delegate;
-    int _flags;
-    TSWPListStyle *_listStyle;
+    }  _anchor;
+    TSWPColumnStyle * _columnStyle;
+    NSMutableArray * _columns;
+    NSObject<TSWPTextDelegate> * _delegate;
+    int  _flags;
+    TSWPListStyle * _listStyle;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxSize;
+    }  _maxSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _minSize;
-    int _naturalAlignment;
-    int _naturalDirection;
-    unsigned int _pageCount;
-    unsigned int _pageNumber;
-    TSWPParagraphStyle *_paragraphStyle;
-    TSWPTextParentInfo *_parentInfo;
-    TSWPTextParentLayout *_parentLayout;
-    TSWPStorage *_storage;
-    TSUColor *_textColorOverride;
+    }  _minSize;
+    int  _naturalAlignment;
+    int  _naturalDirection;
+    unsigned int  _pageCount;
+    unsigned int  _pageNumber;
+    TSWPParagraphStyle * _paragraphStyle;
+    TSWPTextParentInfo * _parentInfo;
+    TSWPTextParentLayout * _parentLayout;
+    TSWPStorage * _storage;
+    TSUColor * _textColorOverride;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
@@ -49,6 +49,7 @@
 @property (nonatomic, readonly) struct __CFLocale { }*hyphenationLocale;
 @property (nonatomic, readonly) BOOL layoutIsValid;
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic, readonly) TSULocale *locale;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } maskRect;
 @property (nonatomic, readonly) float maxAnchorY;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } maxSize;
@@ -74,7 +75,6 @@
 @property (nonatomic, readonly) int verticalAlignment;
 @property (nonatomic, readonly) BOOL wantsLineFragments;
 
-- (id).cxx_construct;
 - (void)addAttachmentLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;
@@ -113,6 +113,7 @@
 - (id)layoutText:(id)arg1 minSize:(struct CGSize { float x1; float x2; })arg2 maxSize:(struct CGSize { float x1; float x2; })arg3 anchor:(struct CGPoint { float x1; float x2; })arg4 flags:(int)arg5;
 - (id)layoutTextStorage:(id)arg1 minSize:(struct CGSize { float x1; float x2; })arg2 maxSize:(struct CGSize { float x1; float x2; })arg3 anchor:(struct CGPoint { float x1; float x2; })arg4 flags:(int)arg5;
 - (id)layoutTextStorage:(id)arg1 minSize:(struct CGSize { float x1; float x2; })arg2 maxSize:(struct CGSize { float x1; float x2; })arg3 anchor:(struct CGPoint { float x1; float x2; })arg4 pageNumber:(unsigned int)arg5 pageCount:(unsigned int)arg6 flags:(int)arg7;
+- (id)locale;
 - (float)maxAnchorY;
 - (struct CGSize { float x1; float x2; })maxSize;
 - (struct CGSize { float x1; float x2; })measureText:(id)arg1;

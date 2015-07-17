@@ -3,11 +3,11 @@
  */
 
 @interface SSUpdatableAsset : NSObject {
-    NSURL *_cacheURL;
-    NSString *_md5;
-    NSString *_name;
-    NSURL *_serverURL;
-    NSString *_version;
+    NSURL * _cacheURL;
+    NSString * _md5;
+    NSString * _name;
+    NSURL * _serverURL;
+    NSString * _version;
 }
 
 @property (nonatomic, retain) NSURL *cacheURL;

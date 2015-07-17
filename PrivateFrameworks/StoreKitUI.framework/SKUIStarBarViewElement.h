@@ -3,9 +3,9 @@
  */
 
 @interface SKUIStarBarViewElement : SKUIViewElement {
-    int _numberOfRatings;
-    int _numberOfStars;
-    float _value;
+    int  _numberOfRatings;
+    int  _numberOfStars;
+    float  _value;
 }
 
 @property (nonatomic, readonly) int numberOfRatings;

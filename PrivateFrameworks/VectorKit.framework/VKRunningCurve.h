@@ -5,8 +5,8 @@
 @interface VKRunningCurve : NSObject {
     struct { 
         double mb[4][3]; 
-    } _mb;
-    BOOL _mbValid;
+    }  _mb;
+    BOOL  _mbValid;
     struct { 
         struct VKPoint { 
             double x; 
@@ -17,7 +17,7 @@
             double _e[3]; 
         } tangent; 
         BOOL tangentValid; 
-    } _p0;
+    }  _p0;
     struct { 
         struct VKPoint { 
             double x; 
@@ -28,7 +28,7 @@
             double _e[3]; 
         } tangent; 
         BOOL tangentValid; 
-    } _p1;
+    }  _p1;
     struct { 
         struct VKPoint { 
             double x; 
@@ -39,10 +39,10 @@
             double _e[3]; 
         } tangent; 
         BOOL tangentValid; 
-    } _pu;
-    double _t0;
-    double _t1;
-    double _tu;
+    }  _pu;
+    double  _t0;
+    double  _t1;
+    double  _tu;
 }
 
 - (id).cxx_construct;

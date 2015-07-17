@@ -6,11 +6,11 @@
     struct { 
         unsigned int speed : 1; 
         unsigned int width : 1; 
-    } _has;
-    int _speed;
-    int _vertexCount;
-    int _vertexOffset;
-    int _width;
+    }  _has;
+    int  _speed;
+    int  _vertexCount;
+    int  _vertexOffset;
+    int  _width;
 }
 
 @property (nonatomic) BOOL hasSpeed;

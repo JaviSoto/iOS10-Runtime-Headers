@@ -3,15 +3,15 @@
  */
 
 @interface MPUExtrasListTemplateViewController : MPUExtrasTemplateViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSIndexPath *_autohighlightIndexPath;
-    NSArray *_detailViewConstraints;
-    NSArray *_masterViewConstraints;
-    BOOL _relatedContentEmbedded;
-    MPUExtrasViewElementViewController *_relatedContentViewController;
-    NSMapTable *_relatedContentViewControllerMap;
-    UITableView *_tableView;
-    BOOL _tableViewLeft;
-    UIImageView *_vignetteView;
+    NSIndexPath * _autohighlightIndexPath;
+    NSArray * _detailViewConstraints;
+    NSArray * _masterViewConstraints;
+    BOOL  _relatedContentEmbedded;
+    MPUExtrasViewElementViewController * _relatedContentViewController;
+    NSMapTable * _relatedContentViewControllerMap;
+    UITableView * _tableView;
+    BOOL  _tableViewLeft;
+    UIImageView * _vignetteView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface CKMultiDict : NSObject {
-    unsigned int _count;
-    NSMutableDictionary *_dictionary;
-    NSObject<OS_dispatch_queue> *_lockQueue;
+    unsigned int  _count;
+    NSMutableDictionary * _dictionary;
+    NSObject<OS_dispatch_queue> * _lockQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *dictionary;

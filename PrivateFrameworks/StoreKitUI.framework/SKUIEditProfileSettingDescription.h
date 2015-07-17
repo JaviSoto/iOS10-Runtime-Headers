@@ -3,13 +3,13 @@
  */
 
 @interface SKUIEditProfileSettingDescription : SKUISettingDescription <SKUIProfileImagePickerDelegate, SKUISuggestedHandlesSettingsHeaderFooterDescriptionDelegate> {
-    id /* block */ _commitBlock;
-    BOOL _editing;
-    BOOL _handleValid;
-    NSRegularExpression *_handleValidation;
-    NSOperationQueue *_operationQueue;
-    BOOL _suggestedHandlesDisplayed;
-    SKUISettingValueStore *_valueStore;
+    id /* block */  _commitBlock;
+    BOOL  _editing;
+    BOOL  _handleValid;
+    NSRegularExpression * _handleValidation;
+    NSOperationQueue * _operationQueue;
+    BOOL  _suggestedHandlesDisplayed;
+    SKUISettingValueStore * _valueStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

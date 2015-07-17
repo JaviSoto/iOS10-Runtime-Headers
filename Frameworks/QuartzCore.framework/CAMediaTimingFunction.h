@@ -3,7 +3,7 @@
  */
 
 @interface CAMediaTimingFunction : NSObject <NSCoding> {
-    struct CAMediaTimingFunctionPrivate { float x1[2]; float x2[2]; } *_priv;
+    struct CAMediaTimingFunctionPrivate { float x1[2]; float x2[2]; } * _priv;
 }
 
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore

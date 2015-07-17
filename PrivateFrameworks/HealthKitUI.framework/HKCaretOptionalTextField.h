@@ -3,7 +3,7 @@
  */
 
 @interface HKCaretOptionalTextField : UITextField {
-    BOOL _allowsSelection;
+    BOOL  _allowsSelection;
 }
 
 @property (nonatomic) BOOL allowsSelection;

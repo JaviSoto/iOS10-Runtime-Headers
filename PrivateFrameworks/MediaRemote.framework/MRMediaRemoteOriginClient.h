@@ -3,23 +3,21 @@
  */
 
 @interface MRMediaRemoteOriginClient : NSObject {
-    BOOL _canBeNowPlayingApp;
-    id /* block */ _commandHandlerBlock;
-    NSMutableDictionary *_commandHandlerBlocks;
-    BOOL _isOverrideApp;
-    BOOL _keepAlive;
-    int _notifyDidLaunchToken;
-    int _notifyRestoreClientStateForLaunch;
-    MRNowPlayingArtwork *_nowPlayingArtwork;
-    NSDictionary *_nowPlayingInfo;
-    struct _MROrigin { } *_origin;
-    unsigned int _routeDiscoveryMode;
+    BOOL  _canBeNowPlayingApp;
+    id /* block */  _commandHandlerBlock;
+    NSMutableDictionary * _commandHandlerBlocks;
+    BOOL  _isOverrideApp;
+    int  _notifyDidLaunchToken;
+    int  _notifyRestoreClientStateForLaunch;
+    MRNowPlayingArtwork * _nowPlayingArtwork;
+    NSDictionary * _nowPlayingInfo;
+    struct _MROrigin { } * _origin;
+    unsigned int  _routeDiscoveryMode;
 }
 
 @property (nonatomic) BOOL canBeNowPlayingApp;
 @property (nonatomic, readonly, copy) NSArray *commandHandlerBlocks;
 @property (nonatomic) BOOL isOverrideApp;
-@property (nonatomic) BOOL keepAlive;
 @property (nonatomic, retain) MRNowPlayingArtwork *nowPlayingArtwork;
 @property (nonatomic, retain) NSDictionary *nowPlayingInfo;
 @property (nonatomic, readonly) struct _MROrigin { }*origin;
@@ -32,7 +30,6 @@
 - (void)dealloc;
 - (id)initWithOrigin:(struct _MROrigin { }*)arg1;
 - (BOOL)isOverrideApp;
-- (BOOL)keepAlive;
 - (id)nowPlayingArtwork;
 - (id)nowPlayingInfo;
 - (struct _MROrigin { }*)origin;
@@ -40,7 +37,6 @@
 - (unsigned int)routeDiscoveryMode;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setIsOverrideApp:(BOOL)arg1;
-- (void)setKeepAlive:(BOOL)arg1;
 - (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;

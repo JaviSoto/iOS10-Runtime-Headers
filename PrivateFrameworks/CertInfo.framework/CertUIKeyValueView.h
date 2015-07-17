@@ -3,11 +3,11 @@
  */
 
 @interface CertUIKeyValueView : UIView {
-    UILabel *_keyLabel;
-    float _preferredValueLabelOriginX;
-    UILabel *_valueLabel;
-    UIImageView *_verifiedImageView;
-    UILabel *_verifiedLabel;
+    UILabel * _keyLabel;
+    float  _preferredValueLabelOriginX;
+    UILabel * _valueLabel;
+    UIImageView * _verifiedImageView;
+    UILabel * _verifiedLabel;
 }
 
 @property (nonatomic, retain) UILabel *keyLabel;

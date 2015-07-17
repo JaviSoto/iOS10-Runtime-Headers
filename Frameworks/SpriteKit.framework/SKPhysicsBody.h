@@ -3,31 +3,31 @@
  */
 
 @interface SKPhysicsBody : NSObject <NSCoding, NSCopying> {
-    BOOL _affectedByGravity;
-    BOOL _allowsRotation;
-    float _angularDamping;
-    float _angularVelocity;
-    float _area;
-    unsigned int _categoryBitMask;
-    float _charge;
-    unsigned int _collisionBitMask;
-    unsigned int _contactTestBitMask;
-    float _density;
-    BOOL _dynamic;
-    unsigned int _fieldBitMask;
-    float _friction;
-    NSArray *_joints;
-    float _linearDamping;
-    float _mass;
-    SKNode *_node;
-    BOOL _pinned;
-    BOOL _resting;
-    float _restitution;
-    BOOL _usesPreciseCollisionDetection;
+    BOOL  _affectedByGravity;
+    BOOL  _allowsRotation;
+    float  _angularDamping;
+    float  _angularVelocity;
+    float  _area;
+    unsigned int  _categoryBitMask;
+    float  _charge;
+    unsigned int  _collisionBitMask;
+    unsigned int  _contactTestBitMask;
+    float  _density;
+    BOOL  _dynamic;
+    unsigned int  _fieldBitMask;
+    float  _friction;
+    NSArray * _joints;
+    float  _linearDamping;
+    float  _mass;
+    SKNode * _node;
+    BOOL  _pinned;
+    BOOL  _resting;
+    float  _restitution;
+    BOOL  _usesPreciseCollisionDetection;
     struct CGVector { 
         float dx; 
         float dy; 
-    } _velocity;
+    }  _velocity;
 }
 
 @property (nonatomic) BOOL affectedByGravity;
@@ -65,10 +65,10 @@
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize { float x1; float x2; })arg3 accuracy:(float)arg4;
 + (id)bodyWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)affectedByGravity;
 - (id)allContactedBodies;

@@ -3,8 +3,8 @@
  */
 
 @interface SBUISizeObservingView : UIView {
-    <SBUISizeObservingViewDelegate> *_delegate;
-    BOOL _delegateInterestedInSizeChanges;
+    <SBUISizeObservingViewDelegate> * _delegate;
+    BOOL  _delegateInterestedInSizeChanges;
 }
 
 @property (nonatomic) <SBUISizeObservingViewDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface CKDPPkiRegisterResponse : PBCodable <NSCopying> {
-    CKDPPublicKey *_publicKey;
+    CKDPPublicKey * _publicKey;
 }
 
 @property (nonatomic, readonly) BOOL hasPublicKey;

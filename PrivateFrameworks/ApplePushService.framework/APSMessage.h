@@ -3,9 +3,9 @@
  */
 
 @interface APSMessage : NSObject <NSCoding> {
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    NSMutableDictionary *_plist;
-    void *_xpcMessage;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    NSMutableDictionary * _plist;
+    void * _xpcMessage;
 }
 
 @property (nonatomic) unsigned int identifier;

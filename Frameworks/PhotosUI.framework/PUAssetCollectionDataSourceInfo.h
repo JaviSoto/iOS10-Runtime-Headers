@@ -3,8 +3,8 @@
  */
 
 @interface PUAssetCollectionDataSourceInfo : NSObject {
-    BOOL _UUIDFilterHidesSomeAssets;
-    BOOL _explicitlyDisableFilters;
+    BOOL  _UUIDFilterHidesSomeAssets;
+    BOOL  _explicitlyDisableFilters;
 }
 
 @property (nonatomic) BOOL UUIDFilterHidesSomeAssets;

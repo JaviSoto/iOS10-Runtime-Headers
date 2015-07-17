@@ -3,13 +3,13 @@
  */
 
 @interface TSAImageRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
-    float mCompressionFactor;
-    unsigned int mHeight;
-    NSString *mImageType;
-    TSARenderingExporter<TSKImageExporter> *mRenderingExporter;
-    BOOL mScaleToFit;
-    NSURL *mURL;
-    unsigned int mWidth;
+    float  mCompressionFactor;
+    unsigned int  mHeight;
+    NSString * mImageType;
+    TSARenderingExporter<TSKImageExporter> * mRenderingExporter;
+    BOOL  mScaleToFit;
+    NSURL * mURL;
+    unsigned int  mWidth;
 }
 
 @property (nonatomic) float compressionFactor;

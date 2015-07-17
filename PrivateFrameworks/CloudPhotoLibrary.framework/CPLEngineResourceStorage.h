@@ -3,10 +3,10 @@
  */
 
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject> {
-    CPLEngineFileStorage *_fileStorage;
-    NSMutableSet *_identitiesToCommit;
-    NSMutableSet *_identitiesToDelete;
-    NSURL *_tempFolderURL;
+    CPLEngineFileStorage * _fileStorage;
+    NSMutableSet * _identitiesToCommit;
+    NSMutableSet * _identitiesToDelete;
+    NSURL * _tempFolderURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

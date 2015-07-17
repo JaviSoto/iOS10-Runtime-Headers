@@ -6,12 +6,12 @@
     struct shared_ptr<PKCField> { 
         struct PKCField {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _field;
-    BOOL _override;
-    void_position;
-    PKRegion *_region;
-    float _rotation;
-    void_scale;
+    }  _field;
+    BOOL  _override;
+    void _position;
+    PKRegion * _region;
+    float  _rotation;
+    void _scale;
 }
 
 @property (nonatomic) unsigned int categoryBitMask;

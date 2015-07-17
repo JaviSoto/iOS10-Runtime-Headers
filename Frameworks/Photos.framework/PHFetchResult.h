@@ -3,16 +3,16 @@
  */
 
 @interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration> {
-    unsigned int _audiosCount;
-    int _chunkSizeForFetch;
-    _PHFetchRequestWrapper *_fetchRequestWrapper;
-    PHBatchFetchingArray *_fetchedObjects;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    unsigned int _photosCount;
-    PHQuery *_query;
-    BOOL _registeredForChangeNotificationDeltas;
-    NSArray *_seedOIDs;
-    unsigned int _videosCount;
+    unsigned int  _audiosCount;
+    int  _chunkSizeForFetch;
+    _PHFetchRequestWrapper * _fetchRequestWrapper;
+    PHBatchFetchingArray * _fetchedObjects;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    unsigned int  _photosCount;
+    PHQuery * _query;
+    BOOL  _registeredForChangeNotificationDeltas;
+    NSArray * _seedOIDs;
+    unsigned int  _videosCount;
 }
 
 @property int chunkSizeForFetch;
@@ -63,7 +63,6 @@
 - (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithQuery:(id)arg1;
 - (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(BOOL)arg3 usingManagedObjectContext:(id)arg4;
-- (BOOL)interestedInChange:(id)arg1;
 - (BOOL)isRegisteredForChangeNotificationDeltas;
 - (id)lastObject;
 - (id)objectAtIndex:(unsigned int)arg1;
@@ -72,6 +71,7 @@
 - (id)objectsAtIndexes:(id)arg1;
 - (id)photoLibrary;
 - (id)pl_photoLibraryObject;
+- (unsigned int)possibleChangesForChange:(id)arg1;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
 - (id)query;
 - (void)setChunkSizeForFetch:(int)arg1;

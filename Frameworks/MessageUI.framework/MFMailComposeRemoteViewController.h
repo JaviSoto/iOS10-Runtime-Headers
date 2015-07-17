@@ -3,7 +3,7 @@
  */
 
 @interface MFMailComposeRemoteViewController : _UIRemoteViewController <MFMailComposeRemoteHost> {
-    <MFMailComposeRemoteViewControllerDelegate> *_delegate;
+    <MFMailComposeRemoteViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <MFMailComposeRemoteViewControllerDelegate> *delegate;

@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardCandidatePocketShadow : UIView {
-    BOOL _drawsShadow;
-    BOOL _shadowFadesToBottom;
-    float _shadowHeightGrowthFactor;
+    BOOL  _drawsShadow;
+    BOOL  _shadowFadesToBottom;
+    float  _shadowHeightGrowthFactor;
 }
 
 @property (nonatomic) BOOL drawsShadow;

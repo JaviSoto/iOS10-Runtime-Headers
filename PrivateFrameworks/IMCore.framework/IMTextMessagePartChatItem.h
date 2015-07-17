@@ -3,7 +3,7 @@
  */
 
 @interface IMTextMessagePartChatItem : IMMessagePartChatItem {
-    NSAttributedString *_subject;
+    NSAttributedString * _subject;
 }
 
 @property (nonatomic, readonly, copy) NSAttributedString *subject;

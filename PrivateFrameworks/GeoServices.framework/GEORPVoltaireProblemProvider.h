@@ -3,15 +3,12 @@
  */
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
-    id /* block */ _notificationAvailabilityErrorHandler;
-    id /* block */ _notificationAvailabilityFinishedHandler;
-    GEORequester *_notificationAvailabilityRequester;
-    id /* block */ _statusErrorHandler;
-    id /* block */ _statusFinishedHandler;
-    GEORequester *_statusRequester;
-    id /* block */ _submissionErrorHandler;
-    id /* block */ _submissionFinishedHandler;
-    GEORequester *_submissionRequester;
+    id /* block */  _statusErrorHandler;
+    id /* block */  _statusFinishedHandler;
+    GEORequester * _statusRequester;
+    id /* block */  _submissionErrorHandler;
+    id /* block */  _submissionFinishedHandler;
+    GEORequester * _submissionRequester;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +21,6 @@
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
 - (void)startStatusRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
 - (void)startSubmissionRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
 

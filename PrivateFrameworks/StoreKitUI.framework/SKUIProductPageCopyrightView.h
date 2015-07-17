@@ -3,8 +3,8 @@
  */
 
 @interface SKUIProductPageCopyrightView : UIView {
-    SKUIColorScheme *_colorScheme;
-    UILabel *_copyrightLabel;
+    SKUIColorScheme * _colorScheme;
+    UILabel * _copyrightLabel;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

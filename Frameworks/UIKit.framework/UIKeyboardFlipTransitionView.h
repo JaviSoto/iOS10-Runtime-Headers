@@ -3,22 +3,22 @@
  */
 
 @interface UIKeyboardFlipTransitionView : UIKeyboardSplitTransitionView {
-    CALayer *_backDarkening;
-    CALayer *_backDarkeningLeft;
-    CALayer *_backDarkeningRight;
-    CALayer *_backFace;
-    CALayer *_container;
-    NSMutableDictionary *_controlKeys;
-    UIKBCacheToken *_endKeyplaneToken;
-    CALayer *_frontDarkening;
-    CALayer *_frontFace;
+    CALayer * _backDarkening;
+    CALayer * _backDarkeningLeft;
+    CALayer * _backDarkeningRight;
+    CALayer * _backFace;
+    CALayer * _container;
+    NSMutableDictionary * _controlKeys;
+    UIKBCacheToken * _endKeyplaneToken;
+    CALayer * _frontDarkening;
+    CALayer * _frontFace;
     struct { 
         unsigned int shiftKeys : 1; 
         unsigned int returnKeys : 1; 
         unsigned int moreIntlKeys : 1; 
-    } _rebuildFlags;
-    BOOL _showingFrontFace;
-    UIKBCacheToken *_startKeyplaneToken;
+    }  _rebuildFlags;
+    BOOL  _showingFrontFace;
+    UIKBCacheToken * _startKeyplaneToken;
 }
 
 @property (getter=isShowingFrontFace, nonatomic) BOOL showingFrontFace;

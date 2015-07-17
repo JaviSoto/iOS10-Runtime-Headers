@@ -3,8 +3,8 @@
  */
 
 @interface CKDBackingiOSAccount : CKDBackingAccount {
-    ACAccountStore *_accountStore;
-    ACAccount *_parentAppleAccount;
+    ACAccountStore * _accountStore;
+    ACAccount * _parentAppleAccount;
 }
 
 @property (nonatomic, readonly) ACAccountStore *accountStore;

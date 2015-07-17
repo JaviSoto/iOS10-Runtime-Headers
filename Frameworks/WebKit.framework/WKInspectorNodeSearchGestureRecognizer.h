@@ -5,7 +5,7 @@
 @interface WKInspectorNodeSearchGestureRecognizer : UIGestureRecognizer {
     struct RetainPtr<UITouch> { 
         void *m_ptr; 
-    } _touch;
+    }  _touch;
 }
 
 - (id).cxx_construct;

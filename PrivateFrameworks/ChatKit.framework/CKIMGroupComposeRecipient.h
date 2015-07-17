@@ -3,13 +3,12 @@
  */
 
 @interface CKIMGroupComposeRecipient : MFComposeRecipient {
-    NSArray *_composeRecipients;
-    NSString *_conversationGUID;
-    NSString *_detailsString;
-    NSString *_displayString;
-    NSArray *_handles;
-    NSDate *_lastMessageDate;
-    CKIMComposeRecipient *_matchingRecipient;
+    NSArray * _composeRecipients;
+    NSString * _conversationGUID;
+    NSString * _detailsString;
+    NSArray * _handles;
+    NSDate * _lastMessageDate;
+    CKIMComposeRecipient * _matchingRecipient;
 }
 
 @property (nonatomic, retain) NSArray *composeRecipients;
@@ -28,7 +27,6 @@
 - (id)conversationGUID;
 - (void)dealloc;
 - (id)detailsString;
-- (id)displayString;
 - (id)handles;
 - (id)initWithGUID:(id)arg1 displayString:(id)arg2 detailsString:(id)arg3 handles:(id)arg4 lastMessageDate:(id)arg5 searchTerm:(id)arg6 matchingRecipient:(id)arg7;
 - (BOOL)isRemovableFromSearchResults;

@@ -3,11 +3,15 @@
  */
 
 @interface PRSFeedback : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    NSString *_input;
-    int _timestamp;
+    NSDictionary * _attributes;
+    NSString * _input;
+    NSData * _thumbnailData;
+    int  _timestamp;
 }
 
+@property (nonatomic, retain) NSDictionary *attributes;
 @property (nonatomic, readonly) NSString *input;
+@property (nonatomic, retain) NSData *thumbnailData;
 @property (nonatomic) int timestamp;
 @property (nonatomic, readonly) NSString *type;
 
@@ -15,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)attributes;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -25,7 +30,10 @@
 - (id)initWithInput:(id)arg1 timestamp:(int)arg2;
 - (id)input;
 - (id)plist;
+- (void)setAttributes:(id)arg1;
+- (void)setThumbnailData:(id)arg1;
 - (void)setTimestamp:(int)arg1;
+- (id)thumbnailData;
 - (int)timestamp;
 - (id)type;
 - (void)validate;

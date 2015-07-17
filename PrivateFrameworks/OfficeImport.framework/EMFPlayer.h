@@ -3,11 +3,11 @@
  */
 
 @interface EMFPlayer : NSObject {
-    EMFPlusPlayer *m_emfPlusPlayer;
-    MFGraphicsDevice *m_gdi;
-    BOOL m_headerDone;
-    BOOL m_ignoreEMFPlusRecords;
-    BOOL m_ignoreEMFRecords;
+    EMFPlusPlayer * m_emfPlusPlayer;
+    MFGraphicsDevice * m_gdi;
+    BOOL  m_headerDone;
+    BOOL  m_ignoreEMFPlusRecords;
+    BOOL  m_ignoreEMFRecords;
 }
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInLogicalUnits:(id)arg1;
@@ -19,6 +19,7 @@
 - (id)initWithGraphicsDevice:(id)arg1;
 - (int)play:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAbortPath:(unsigned int)arg1 :(const char *)arg2;
+- (int)playAlphaBlend:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAngleArc:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
 - (int)playArc:(unsigned int)arg1 :(const char *)arg2;
 - (int)playArcTo:(unsigned int)arg1 :(const char *)arg2;
@@ -48,6 +49,7 @@
 - (int)playMaskBlt:(unsigned int)arg1 :(const char *)arg2;
 - (int)playModifyWorldTransform:(unsigned int)arg1 :(const char *)arg2;
 - (int)playMoveToEx:(unsigned int)arg1 :(const char *)arg2;
+- (int)playOffsetClipRegion:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPaintRgn:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPie:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPlgBlt:(unsigned int)arg1 :(const char *)arg2;

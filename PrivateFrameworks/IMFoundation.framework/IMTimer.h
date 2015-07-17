@@ -3,13 +3,13 @@
  */
 
 @interface IMTimer : NSObject {
-    NSString *_name;
-    SEL _selector;
-    id _target;
-    double _timeInterval;
-    id _timer;
-    NSDictionary *_userInfo;
-    BOOL _wakeDevice;
+    NSString * _name;
+    SEL  _selector;
+    id  _target;
+    double  _timeInterval;
+    id  _timer;
+    NSDictionary * _userInfo;
+    BOOL  _wakeDevice;
 }
 
 @property (nonatomic, readonly, retain) NSDate *fireDate;

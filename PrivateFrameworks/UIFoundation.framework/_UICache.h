@@ -3,17 +3,18 @@
  */
 
 @interface _UICache : NSObject {
-    NSMutableDictionary *_cache;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    BOOL _clearsCacheOnApplicationBackground;
-    BOOL _clearsCacheOnLowMemoryWarnings;
-    NSObject<OS_dispatch_source> *_memoryWarningsSource;
-    id _noteObserver;
+    NSMutableDictionary * _cache;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    BOOL  _clearsCacheOnApplicationBackground;
+    BOOL  _clearsCacheOnLowMemoryWarnings;
+    NSObject<OS_dispatch_source> * _memoryWarningsSource;
+    id  _noteObserver;
 }
 
 @property (nonatomic) BOOL clearsCacheOnApplicationBackground;
 @property (nonatomic) BOOL clearsCacheOnLowMemoryWarnings;
 
+- (id)cacheKeys;
 - (BOOL)clearsCacheOnApplicationBackground;
 - (BOOL)clearsCacheOnLowMemoryWarnings;
 - (void)dealloc;

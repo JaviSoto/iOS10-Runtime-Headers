@@ -3,9 +3,9 @@
  */
 
 @interface BBBehaviorOverrideFixedEffectivePeriod : NSObject <BBBehaviorOverrideEffectivePeriod> {
-    double _effectiveInterval;
-    NSUUID *_identifier;
-    NSDate *_startDate;
+    double  _effectiveInterval;
+    NSUUID * _identifier;
+    NSDate * _startDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface _HKStartDateFilter : _HKFilter {
-    NSDate *_comparisonDate;
-    unsigned int _operatorType;
+    NSDate * _comparisonDate;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) NSDate *comparisonDate;

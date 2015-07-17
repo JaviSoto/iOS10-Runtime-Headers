@@ -3,15 +3,15 @@
  */
 
 @interface UIWebPlugInView : WAKView {
-    CALayer *_hostingLayer;
-    BOOL _isFullScreen;
-    BOOL _isMapViewPlugIn;
-    BOOL _isQuickTimePlugIn;
-    BOOL _isiAdPlugIn;
-    struct __CFRunLoopObserver { } *_mainRunLoopDrawObserver;
-    BOOL _parentedInLayer;
-    UIView *_uiView;
-    UIWebDocumentView *_webView;
+    CALayer * _hostingLayer;
+    BOOL  _isFullScreen;
+    BOOL  _isMapViewPlugIn;
+    BOOL  _isQuickTimePlugIn;
+    BOOL  _isiAdPlugIn;
+    struct __CFRunLoopObserver { } * _mainRunLoopDrawObserver;
+    BOOL  _parentedInLayer;
+    UIView * _uiView;
+    UIWebDocumentView * _webView;
 }
 
 @property (nonatomic) BOOL isMapViewPlugIn;

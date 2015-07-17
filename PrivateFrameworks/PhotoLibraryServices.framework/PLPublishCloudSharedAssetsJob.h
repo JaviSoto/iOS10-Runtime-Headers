@@ -3,11 +3,11 @@
  */
 
 @interface PLPublishCloudSharedAssetsJob : PLCloudSharingJob {
-    NSString *_batchCommentText;
-    BOOL _isNewAlbum;
-    NSArray *_originalAssetUUIDs;
-    NSString *_publishAlbumCloudGUID;
-    NSDictionary *_trimmedVideoPathInfo;
+    NSString * _batchCommentText;
+    BOOL  _isNewAlbum;
+    NSArray * _originalAssetUUIDs;
+    NSString * _publishAlbumCloudGUID;
+    NSDictionary * _trimmedVideoPathInfo;
 }
 
 @property (nonatomic, retain) NSString *batchCommentText;

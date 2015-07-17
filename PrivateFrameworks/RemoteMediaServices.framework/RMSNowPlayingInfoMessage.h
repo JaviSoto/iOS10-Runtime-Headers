@@ -3,12 +3,12 @@
  */
 
 @interface RMSNowPlayingInfoMessage : PBCodable <NSCopying> {
-    NSString *_albumName;
-    NSString *_artistName;
-    BOOL _canSkipNext;
-    BOOL _canSkipPrevious;
-    BOOL _canWishlist;
-    unsigned long long _databaseID;
+    NSString * _albumName;
+    NSString * _artistName;
+    BOOL  _canSkipNext;
+    BOOL  _canSkipPrevious;
+    BOOL  _canWishlist;
+    unsigned long long  _databaseID;
     struct { 
         unsigned int databaseID : 1; 
         unsigned int itemID : 1; 
@@ -25,19 +25,19 @@
         unsigned int canWishlist : 1; 
         unsigned int hasChapterData : 1; 
         unsigned int likeable : 1; 
-    } _has;
-    BOOL _hasChapterData;
-    unsigned long long _itemID;
-    BOOL _likeable;
-    int _likedState;
-    int _mediaKind;
-    int _playbackState;
-    unsigned int _revisionNumber;
-    int _scrubbableState;
-    double _timeRemaining;
-    double _timestamp;
-    double _totalDuration;
-    NSString *_trackName;
+    }  _has;
+    BOOL  _hasChapterData;
+    unsigned long long  _itemID;
+    BOOL  _likeable;
+    int  _likedState;
+    int  _mediaKind;
+    int  _playbackState;
+    unsigned int  _revisionNumber;
+    int  _scrubbableState;
+    double  _timeRemaining;
+    double  _timestamp;
+    double  _totalDuration;
+    NSString * _trackName;
 }
 
 @property (nonatomic, retain) NSString *albumName;

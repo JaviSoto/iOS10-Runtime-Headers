@@ -3,7 +3,7 @@
  */
 
 @interface MusicShowCompleteCollectionEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    NSString *_localizedTitle;
+    NSString * _localizedTitle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

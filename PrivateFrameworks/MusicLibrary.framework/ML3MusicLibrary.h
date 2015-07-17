@@ -3,25 +3,25 @@
  */
 
 @interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
-    ML3AccountCacheDatabase *_accountCacheDatabase;
-    ML3DatabaseConnectionPool *_connectionPool;
-    NSString *_databasePath;
-    <ML3MusicLibraryDelegate> *_delegate;
-    BOOL _isHomeSharingLibrary;
-    BOOL _isHomeSharingLibraryLoaded;
-    NSArray *_libraryContainerFilterPredicates;
-    NSArray *_libraryEntityFilterPredicates;
-    NSArray *_libraryPublicContainerFilterPredicates;
-    NSArray *_libraryPublicEntityFilterPredicates;
-    NSString *_libraryUID;
-    ML3LibraryNotificationManager *_notificationManager;
-    NSMutableDictionary *_optimizedLibraryContainerFilterPredicatesByContainerClass;
-    NSMutableDictionary *_optimizedLibraryEntityFilterPredicatesByEntityClass;
-    NSMutableDictionary *_optimizedLibraryPublicContainerFilterPredicatesByContainerClass;
-    NSMutableDictionary *_optimizedLibraryPublicEntityFilterPredicatesByEntityClass;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
-    NSString *_syncLibraryUID;
+    ML3AccountCacheDatabase * _accountCacheDatabase;
+    ML3DatabaseConnectionPool * _connectionPool;
+    NSString * _databasePath;
+    <ML3MusicLibraryDelegate> * _delegate;
+    BOOL  _isHomeSharingLibrary;
+    BOOL  _isHomeSharingLibraryLoaded;
+    NSArray * _libraryContainerFilterPredicates;
+    NSArray * _libraryEntityFilterPredicates;
+    NSArray * _libraryPublicContainerFilterPredicates;
+    NSArray * _libraryPublicEntityFilterPredicates;
+    NSString * _libraryUID;
+    ML3LibraryNotificationManager * _notificationManager;
+    NSMutableDictionary * _optimizedLibraryContainerFilterPredicatesByContainerClass;
+    NSMutableDictionary * _optimizedLibraryEntityFilterPredicatesByEntityClass;
+    NSMutableDictionary * _optimizedLibraryPublicContainerFilterPredicatesByContainerClass;
+    NSMutableDictionary * _optimizedLibraryPublicEntityFilterPredicatesByEntityClass;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    struct iPhoneSortKeyBuilder { } * _sortKeyBuilder;
+    NSString * _syncLibraryUID;
 }
 
 @property (nonatomic, readonly) long long autoFilledTracksTotalSize;

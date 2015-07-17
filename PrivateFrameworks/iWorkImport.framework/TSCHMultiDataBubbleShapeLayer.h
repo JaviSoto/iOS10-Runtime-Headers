@@ -3,12 +3,12 @@
  */
 
 @interface TSCHMultiDataBubbleShapeLayer : CATransformLayer <TSCHMultiDataElementShapeLayer> {
-    float _viewScale;
-    TSDFill *mFill;
-    CALayer *mImageLayer;
-    CAShapeLayer *mMaskLayer;
-    CAShapeLayer *mStrokeLayer;
-    float mViewScale;
+    float  _viewScale;
+    TSDFill * mFill;
+    CALayer * mImageLayer;
+    CAShapeLayer * mMaskLayer;
+    CAShapeLayer * mStrokeLayer;
+    float  mViewScale;
 }
 
 @property (nonatomic, retain) TSDFill *fill;

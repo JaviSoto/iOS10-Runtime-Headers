@@ -3,15 +3,15 @@
  */
 
 @interface MusicLibrarySplitViewController : MusicSplitViewController <MusicClientContextConsuming, MusicNoContentViewDelegate, MusicSwitcherButtonContainerViewDelegate, SKUITabBarItemRootViewController> {
-    UISwitch *_alertShowOfflineSwitch;
-    MusicClientContext *_clientContext;
-    UIAlertController *_filterAlertController;
-    MusicSwitcherButtonContainerView *_librarySwitcherButtonContainerView;
-    MusicLibraryViewController *_musicLibraryViewController;
-    MusicNoContentView *_noContentView;
-    BOOL _shouldShowMatchLoadingViewController;
-    BOOL _shouldShowNoContentViewController;
-    BOOL _shouldShowTurnOnCloudMediaSwitchInNoContentView;
+    UISwitch * _alertShowOfflineSwitch;
+    MusicClientContext * _clientContext;
+    UIAlertController * _filterAlertController;
+    MusicSwitcherButtonContainerView * _librarySwitcherButtonContainerView;
+    MusicLibraryViewController * _musicLibraryViewController;
+    MusicNoContentView * _noContentView;
+    BOOL  _shouldShowMatchLoadingViewController;
+    BOOL  _shouldShowNoContentViewController;
+    BOOL  _shouldShowTurnOnCloudMediaSwitchInNoContentView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

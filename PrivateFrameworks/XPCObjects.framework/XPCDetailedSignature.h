@@ -3,8 +3,8 @@
  */
 
 @interface XPCDetailedSignature : NSObject {
-    unsigned int _argumentCount;
-    Class *_classes;
+    unsigned int  _argumentCount;
+    Class * _classes;
 }
 
 + (id)signatureWithArgumentCount:(unsigned int)arg1 classes:(Class)arg2;

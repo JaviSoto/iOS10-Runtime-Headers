@@ -3,23 +3,22 @@
  */
 
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge, IKStyleMediaQueryEvaluator> {
-    IKAppContext *_appContext;
-    <IKAppDocumentDelegate> *_delegate;
-    NSError *_error;
-    IKHeadElement *_headElement;
-    NSString *_identifier;
-    double _impressionThreshold;
-    NSMutableSet *_impressions;
-    NSMutableDictionary *_impressionsDict;
-    IKDOMDocument *_jsDocument;
-    JSManagedValue *_jsManagedDocument;
-    IKViewElement *_navigationBarElement;
-    IKJSObject *_owner;
-    IKViewElementStyleFactory *_styleFactory;
-    BOOL _subtreeUpdated;
-    IKViewElement *_templateElement;
-    IKViewElement *_toolbarElement;
-    BOOL _updated;
+    IKAppContext * _appContext;
+    <IKAppDocumentDelegate> * _delegate;
+    NSError * _error;
+    IKHeadElement * _headElement;
+    NSString * _identifier;
+    double  _impressionThreshold;
+    NSMutableSet * _impressions;
+    NSMutableDictionary * _impressionsDict;
+    IKDOMDocument * _jsDocument;
+    IKViewElement * _navigationBarElement;
+    IKJSObject * _owner;
+    IKViewElementStyleFactory * _styleFactory;
+    BOOL  _subtreeUpdated;
+    IKViewElement * _templateElement;
+    IKViewElement * _toolbarElement;
+    BOOL  _updated;
 }
 
 @property (readonly) IKAppContext *appContext;
@@ -34,7 +33,6 @@
 @property (nonatomic, retain) NSMutableSet *impressions;
 @property (nonatomic, retain) NSMutableDictionary *impressionsDict;
 @property (nonatomic, readonly) IKDOMDocument *jsDocument;
-@property (nonatomic, retain) JSManagedValue *jsManagedDocument;
 @property (nonatomic, retain) IKViewElement *navigationBarElement;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) IKJSObject *owner;
@@ -63,7 +61,6 @@
 - (BOOL)isSubtreeUpdated;
 - (BOOL)isUpdated;
 - (id)jsDocument;
-- (id)jsManagedDocument;
 - (id)navigationBarElement;
 - (id)navigationDocument;
 - (void)onAppear;
@@ -86,7 +83,6 @@
 - (void)setImpressionThreshold:(double)arg1;
 - (void)setImpressions:(id)arg1;
 - (void)setImpressionsDict:(id)arg1;
-- (void)setJsManagedDocument:(id)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (void)setNeedsUpdateForDocument:(id)arg1;
 - (void)setStyleFactory:(id)arg1;

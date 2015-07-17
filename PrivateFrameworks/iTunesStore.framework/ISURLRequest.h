@@ -3,8 +3,8 @@
  */
 
 @interface ISURLRequest : NSObject <NSCoding, NSCopying> {
-    NSLock *_lock;
-    SSMutableURLRequestProperties *_properties;
+    NSLock * _lock;
+    SSMutableURLRequestProperties * _properties;
 }
 
 @property (retain) NSData *HTTPBody;

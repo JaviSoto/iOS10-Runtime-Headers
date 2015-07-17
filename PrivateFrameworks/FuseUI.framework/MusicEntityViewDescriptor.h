@@ -3,17 +3,17 @@
  */
 
 @interface MusicEntityViewDescriptor : NSObject <NSCopying> {
-    BOOL _defaultAllowsSectionHeaders;
-    MusicEntityViewContentDescriptor *_defaultContentDescriptor;
-    MusicEntityViewContentDescriptor *_defaultSectionHeaderContentDescriptor;
-    <MusicEntityProviding> *_entityProvider;
-    BOOL _rightSeparatorInsetFollowsLayoutMargin;
-    int _scrollIndicatorStyle;
-    int _sectionHeaderHairlineStyleForNonFloatingState;
-    UIColor *_sectionHeaderTextColorForNonFloatingState;
-    float _sectionHeaderTopContentInset;
-    BOOL _sectionHeaderViewsFloat;
-    BOOL _usesUppercaseLettersForSectionHeaderTitles;
+    BOOL  _defaultAllowsSectionHeaders;
+    MusicEntityViewContentDescriptor * _defaultContentDescriptor;
+    MusicEntityViewContentDescriptor * _defaultSectionHeaderContentDescriptor;
+    <MusicEntityProviding> * _entityProvider;
+    BOOL  _rightSeparatorInsetFollowsLayoutMargin;
+    int  _scrollIndicatorStyle;
+    int  _sectionHeaderHairlineStyleForNonFloatingState;
+    UIColor * _sectionHeaderTextColorForNonFloatingState;
+    float  _sectionHeaderTopContentInset;
+    BOOL  _sectionHeaderViewsFloat;
+    BOOL  _usesUppercaseLettersForSectionHeaderTitles;
 }
 
 @property (nonatomic) BOOL defaultAllowsSectionHeaders;

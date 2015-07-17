@@ -3,9 +3,9 @@
  */
 
 @interface PTIcon : UIView {
-    _UILegibilityView *_iconLegibilityView;
-    PTIconSettings *_iconSettings;
-    UIImage *_image;
+    _UILegibilityView * _iconLegibilityView;
+    PTIconSettings * _iconSettings;
+    UIImage * _image;
     struct { 
         float meanRed; 
         float meanGreen; 
@@ -16,11 +16,11 @@
         float meanAlpha; 
         float standardDeviationBrightness; 
         float standardDeviationSaturation; 
-    } _imageStatistics;
-    UIImageView *_imageView;
-    _UILegibilityLabel *_label;
-    struct __CFRunLoopObserver { } *_runLoopObserver;
-    NSString *_title;
+    }  _imageStatistics;
+    UIImageView * _imageView;
+    _UILegibilityLabel * _label;
+    struct __CFRunLoopObserver { } * _runLoopObserver;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) _UILegibilityView *iconLegibilityView;

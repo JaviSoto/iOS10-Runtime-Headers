@@ -3,20 +3,20 @@
  */
 
 @interface PUFeedSectionInfo : NSObject <PLAssetContainer> {
-    NSString *_albumTitle;
-    PLCloudFeedEntry *_cloudFeedEntry;
-    NSDate *_date;
-    NSIndexSet *_excludedAssetIndexes;
-    PLCloudSharedAlbumInvitationRecord *_invitationRecord;
-    PLManagedAsset *_keyAsset;
-    BOOL _loaded;
-    int _numberOfItems;
-    PLManagedAsset *_secondaryKeyAsset;
-    int _sectionType;
-    <PLCloudSharedAlbumProtocol> *_sharedAlbum;
-    BOOL _shouldBeVisibleWhenEmpty;
-    PLManagedAsset *_tertiaryKeyAsset;
-    NSString *_transientIdentifier;
+    NSString * _albumTitle;
+    PLCloudFeedEntry * _cloudFeedEntry;
+    NSDate * _date;
+    NSIndexSet * _excludedAssetIndexes;
+    PLCloudSharedAlbumInvitationRecord * _invitationRecord;
+    PLManagedAsset * _keyAsset;
+    BOOL  _loaded;
+    int  _numberOfItems;
+    PLManagedAsset * _secondaryKeyAsset;
+    int  _sectionType;
+    <PLCloudSharedAlbumProtocol> * _sharedAlbum;
+    BOOL  _shouldBeVisibleWhenEmpty;
+    PLManagedAsset * _tertiaryKeyAsset;
+    NSString * _transientIdentifier;
 }
 
 @property (nonatomic, copy) NSString *albumTitle;
@@ -77,6 +77,7 @@
 - (void)getCommentCount:(out unsigned int*)arg1 likeCount:(out unsigned int*)arg2;
 - (void)getPhotoCount:(out unsigned int*)arg1 videoCount:(out unsigned int*)arg2;
 - (BOOL)hasMultipleAssetsForItemAtIndex:(int)arg1;
+- (BOOL)hasPlayableAssetForItemAtIndex:(int)arg1;
 - (int)indexOfItemWithAsset:(id)arg1;
 - (int)indexOfItemWithComment:(id)arg1;
 - (id)initWithCloudFeedEntry:(id)arg1;

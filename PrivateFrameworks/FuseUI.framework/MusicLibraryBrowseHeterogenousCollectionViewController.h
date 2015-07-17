@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryBrowseHeterogenousCollectionViewController : MusicLibraryBrowseCollectionViewController {
-    MusicEntityValueContext *_itemEntityValueContext;
-    NSMutableDictionary *_layoutMetricsPerSection;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
+    MusicEntityValueContext * _itemEntityValueContext;
+    NSMutableDictionary * _layoutMetricsPerSection;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
 }
 
 @property (nonatomic, readonly) MusicLibraryBrowseHeterogenousCollectionViewConfiguration *libraryViewConfiguration;

@@ -3,10 +3,10 @@
  */
 
 @interface IMTranscriptChatItem : IMChatItem {
-    unsigned char _attachmentContiguousType;
-    unsigned int _contiguousLoaded;
-    unsigned char _contiguousType;
-    NSString *_guid;
+    unsigned char  _attachmentContiguousType;
+    unsigned int  _contiguousLoaded;
+    unsigned char  _contiguousType;
+    NSString * _guid;
 }
 
 @property (nonatomic, readonly) unsigned char attachmentContiguousType;

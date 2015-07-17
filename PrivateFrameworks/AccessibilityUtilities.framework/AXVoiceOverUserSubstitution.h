@@ -3,15 +3,15 @@
  */
 
 @interface AXVoiceOverUserSubstitution : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _active;
-    BOOL _appliesToAllApps;
-    NSSet *_bundleIdentifiers;
-    BOOL _ignoreCase;
-    BOOL _isReplacementTextAllPunctuation;
-    BOOL _isReplacementTextSurroundedByPunctuation;
-    NSString *_originalString;
-    NSString *_replacementString;
-    NSUUID *_uuid;
+    BOOL  _active;
+    BOOL  _appliesToAllApps;
+    NSSet * _bundleIdentifiers;
+    BOOL  _ignoreCase;
+    BOOL  _isReplacementTextAllPunctuation;
+    BOOL  _isReplacementTextSurroundedByPunctuation;
+    NSString * _originalString;
+    NSString * _replacementString;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic) BOOL active;

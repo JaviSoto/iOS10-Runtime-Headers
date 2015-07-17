@@ -3,28 +3,28 @@
  */
 
 @interface EKDayTimeView : UIView <EKCurrentTimeMarkerViewUpdating> {
-    NSMutableArray *_contentViews;
-    <EKDayTimeViewDelegate> *_delegate;
-    float _designatorSize;
-    double _highlightedHour;
-    float _hourHeight;
-    float _hourHeightScale;
-    float _hourSize;
-    float _hoursToPad;
+    NSMutableArray * _contentViews;
+    <EKDayTimeViewDelegate> * _delegate;
+    float  _designatorSize;
+    double  _highlightedHour;
+    float  _hourHeight;
+    float  _hourHeightScale;
+    float  _hourSize;
+    float  _hoursToPad;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _hoursToRender;
-    unsigned int _leftBorder;
-    int _orientation;
-    unsigned int _rightBorder;
-    BOOL _showsTimeMarker;
-    BOOL _showsTimeMarkerExtension;
-    UIColor *_timeColor;
-    EKCurrentTimeMarkerView *_timeMarker;
-    UIView *_timeMarkerExtension;
-    float _timeWidth;
-    BOOL _usesLightText;
+    }  _hoursToRender;
+    unsigned int  _leftBorder;
+    int  _orientation;
+    unsigned int  _rightBorder;
+    BOOL  _showsTimeMarker;
+    BOOL  _showsTimeMarkerExtension;
+    UIColor * _timeColor;
+    EKCurrentTimeMarkerView * _timeMarker;
+    UIView * _timeMarkerExtension;
+    float  _timeWidth;
+    BOOL  _usesLightText;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -74,6 +74,7 @@
 - (void)_invalidateTimeWidth;
 - (void)_localeChanged;
 - (float)_positionOfSecond:(int)arg1;
+- (void)_sizeClassChanged;
 - (float)_timeWidth;
 - (void)dealloc;
 - (float)defaultHeight;

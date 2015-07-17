@@ -3,10 +3,10 @@
  */
 
 @interface CKDJSONResponseBodyParser : NSObject <CKDResponseBodyParser> {
-    id /* block */ _objectParsedBlock;
-    NSObject<OS_dispatch_queue> *_parseQueue;
-    NSMutableData *_parserData;
-    NSError *_parserError;
+    id /* block */  _objectParsedBlock;
+    NSObject<OS_dispatch_queue> * _parseQueue;
+    NSMutableData * _parserData;
+    NSError * _parserError;
 }
 
 @property (readonly, copy) NSString *debugDescription;

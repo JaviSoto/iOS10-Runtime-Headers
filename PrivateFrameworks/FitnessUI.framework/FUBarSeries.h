@@ -3,21 +3,21 @@
  */
 
 @interface FUBarSeries : FUChartSeries {
-    UIColor *_backgroundStrokeColor;
-    float _backgroundStrokeWidth;
-    UIColor *_barColor;
-    NSArray *_barColors;
-    struct CGGradient { } *_barGradient;
-    NSArray *_barLabels;
-    float _barSpacing;
-    float _barWidth;
-    BOOL _fadeZeroBars;
-    UIColor *_fadedBarColor;
-    NSArray *_labelAttributes;
-    NSArray *_plotPoints;
-    float _roundedCornerRadius;
-    UIColor *_strokeColor;
-    float _strokeWidth;
+    UIColor * _backgroundStrokeColor;
+    float  _backgroundStrokeWidth;
+    UIColor * _barColor;
+    NSArray * _barColors;
+    struct CGGradient { } * _barGradient;
+    NSArray * _barLabels;
+    float  _barSpacing;
+    float  _barWidth;
+    BOOL  _fadeZeroBars;
+    UIColor * _fadedBarColor;
+    NSArray * _labelAttributes;
+    NSArray * _plotPoints;
+    float  _roundedCornerRadius;
+    UIColor * _strokeColor;
+    float  _strokeWidth;
 }
 
 @property (nonatomic, retain) UIColor *backgroundStrokeColor;

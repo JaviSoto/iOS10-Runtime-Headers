@@ -3,33 +3,33 @@
  */
 
 @interface TSDMovieRep : TSDMediaRep {
-    struct CGImage { } *mAlternatePosterImage;
-    AVAsset *mAssetForPlayability;
-    BOOL mCurrentlyObservingPlayerLayer;
-    BOOL mDelayTearingDownPlayerController;
-    BOOL mDidCancelUpdatingPlayButtonVisibility;
-    BOOL mDidCheckPlayability;
-    BOOL mDirectlyManagesLayerContent;
-    float mDynamicVolume;
-    BOOL mInReadMode;
-    unsigned int mIsChangingDynamicVisibleTimeCount;
-    BOOL mIsChangingDynamicVolume;
-    BOOL mIsPlayable;
-    CALayer *mLayerToStroke;
-    CALayer *mMovieReflectionLayer;
-    CALayer *mMovieReflectionMaskLayer;
-    BOOL mNeedsTeardownPlayerController;
-    TSDButtonKnob *mPlayButtonKnob;
-    BOOL mPlayButtonKnobVisible;
-    NSObject<TSKMediaPlayerController> *mPlayerController;
-    CALayer *mPlayerLayer;
-    BOOL mPlayerLayerShouldBeDisplayed;
-    CALayer *mPlayerStrokeLayer;
-    CALayer *mReflectionFrameMaskLayer;
-    TSDFrameRep *mReflectionFrameRep;
-    CALayer *mReflectionPlayerLayer;
-    CALayer *mReflectionPlayerStrokeLayer;
-    CALayer *mReflectionPlayerStrokeMaskLayer;
+    struct CGImage { } * mAlternatePosterImage;
+    AVAsset * mAssetForPlayability;
+    BOOL  mCurrentlyObservingPlayerLayer;
+    BOOL  mDelayTearingDownPlayerController;
+    BOOL  mDidCancelUpdatingPlayButtonVisibility;
+    BOOL  mDidCheckPlayability;
+    BOOL  mDirectlyManagesLayerContent;
+    float  mDynamicVolume;
+    BOOL  mInReadMode;
+    unsigned int  mIsChangingDynamicVisibleTimeCount;
+    BOOL  mIsChangingDynamicVolume;
+    BOOL  mIsPlayable;
+    CALayer * mLayerToStroke;
+    CALayer * mMovieReflectionLayer;
+    CALayer * mMovieReflectionMaskLayer;
+    BOOL  mNeedsTeardownPlayerController;
+    TSDButtonKnob * mPlayButtonKnob;
+    BOOL  mPlayButtonKnobVisible;
+    NSObject<TSKMediaPlayerController> * mPlayerController;
+    CALayer * mPlayerLayer;
+    BOOL  mPlayerLayerShouldBeDisplayed;
+    CALayer * mPlayerStrokeLayer;
+    CALayer * mReflectionFrameMaskLayer;
+    TSDFrameRep * mReflectionFrameRep;
+    CALayer * mReflectionPlayerLayer;
+    CALayer * mReflectionPlayerStrokeLayer;
+    CALayer * mReflectionPlayerStrokeMaskLayer;
 }
 
 @property (nonatomic) struct CGImage { }*alternatePosterImage;
@@ -53,5 +53,6 @@
 - (void)p_drawReflectionGradientIntoMovieReflectionLayer:(struct CGContext { }*)arg1 reflectionSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)p_updateMovieReflectionMaskLayer;
 - (void)setAlternatePosterImage:(struct CGImage { }*)arg1;
+- (BOOL)shouldShowCheckerboard;
 
 @end

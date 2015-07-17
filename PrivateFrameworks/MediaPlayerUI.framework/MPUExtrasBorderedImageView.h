@@ -10,10 +10,10 @@
         float d; 
         float tx; 
         float ty; 
-    } _deferredTransform;
-    BOOL _shouldDeferSettingTransform;
-    BOOL _shouldSkipImageWhenReplicatingState;
-    BOOL _shouldUseTransformWhenReplicatingState;
+    }  _deferredTransform;
+    BOOL  _shouldDeferSettingTransform;
+    BOOL  _shouldSkipImageWhenReplicatingState;
+    BOOL  _shouldUseTransformWhenReplicatingState;
 }
 
 @property (nonatomic, copy) UIColor *borderColor;

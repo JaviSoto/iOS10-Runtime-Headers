@@ -3,22 +3,22 @@
  */
 
 @interface CIBurstImageFaceAnalysisContext : NSObject {
-    int _version;
-    NSMutableDictionary *curConfig;
-    FCRFaceDetector *faceDetector;
-    int faceIdCounter;
-    NSMutableDictionary *faceIdMapping;
-    NSMutableArray *faceInfoArray;
-    NSMutableArray *faceTimestampArray;
-    BOOL forceFaceDetectionEnable;
-    int lastFaceIndex;
-    double latestFaceTimestamp;
-    double latestImageTimestamp;
-    int numFramesNoFaces;
-    int numFramesSinceFullFaceCore;
-    NSMutableDictionary *renameMapping;
-    double timeBlinkDetectionDone;
-    double timeFaceDetectionDone;
+    int  _version;
+    NSMutableDictionary * curConfig;
+    FCRFaceDetector * faceDetector;
+    int  faceIdCounter;
+    NSMutableDictionary * faceIdMapping;
+    NSMutableArray * faceInfoArray;
+    NSMutableArray * faceTimestampArray;
+    BOOL  forceFaceDetectionEnable;
+    int  lastFaceIndex;
+    double  latestFaceTimestamp;
+    double  latestImageTimestamp;
+    int  numFramesNoFaces;
+    int  numFramesSinceFullFaceCore;
+    NSMutableDictionary * renameMapping;
+    double  timeBlinkDetectionDone;
+    double  timeFaceDetectionDone;
 }
 
 @property BOOL forceFaceDetectionEnable;
@@ -37,6 +37,7 @@
 - (void)dumpFaceInfoArray;
 - (void)extractFacesFromMetadata:(id)arg1;
 - (int)findFacesInImage:(id)arg1 imageStat:(id)arg2;
+- (id)findOverlappingFaceStat:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageStat:(id)arg2;
 - (BOOL)forceFaceDetectionEnable;
 - (id)initWithVersion:(id)arg1;
 - (BOOL)isSmallFace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

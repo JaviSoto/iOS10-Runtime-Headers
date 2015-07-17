@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    UILabel *_loadingText;
-    UIActivityIndicatorView *_progressIndicator;
+    }  _edgeInsets;
+    UILabel * _loadingText;
+    UIActivityIndicatorView * _progressIndicator;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;

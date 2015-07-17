@@ -3,14 +3,14 @@
  */
 
 @interface CKModifyRecordZonesOperation : CKDatabaseOperation {
-    NSMutableArray *_deletedRecordZoneIDs;
-    BOOL _markZonesAsUserPurged;
-    id /* block */ _modifyRecordZonesCompletionBlock;
-    NSMutableDictionary *_recordZoneErrors;
-    NSArray *_recordZoneIDsToDelete;
-    NSMutableDictionary *_recordZonesByZoneIDs;
-    NSArray *_recordZonesToSave;
-    NSMutableArray *_savedRecordZones;
+    NSMutableArray * _deletedRecordZoneIDs;
+    BOOL  _markZonesAsUserPurged;
+    id /* block */  _modifyRecordZonesCompletionBlock;
+    NSMutableDictionary * _recordZoneErrors;
+    NSArray * _recordZoneIDsToDelete;
+    NSMutableDictionary * _recordZonesByZoneIDs;
+    NSArray * _recordZonesToSave;
+    NSMutableArray * _savedRecordZones;
 }
 
 @property (nonatomic, retain) NSMutableArray *deletedRecordZoneIDs;
@@ -26,6 +26,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)deletedRecordZoneIDs;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

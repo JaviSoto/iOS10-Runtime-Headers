@@ -3,7 +3,7 @@
  */
 
 @interface SKUIRowViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

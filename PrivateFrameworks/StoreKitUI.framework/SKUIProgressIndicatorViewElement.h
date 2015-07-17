@@ -3,7 +3,7 @@
  */
 
 @interface SKUIProgressIndicatorViewElement : SKUIViewElement {
-    float _value;
+    float  _value;
 }
 
 @property (nonatomic, readonly) float value;

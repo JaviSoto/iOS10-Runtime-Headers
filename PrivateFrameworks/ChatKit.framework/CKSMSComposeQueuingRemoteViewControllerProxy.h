@@ -3,8 +3,8 @@
  */
 
 @interface CKSMSComposeQueuingRemoteViewControllerProxy : NSObject {
-    NSMutableArray *_queuedInvocations;
-    <CKSMSCompose> *_serviceViewControllerProxy;
+    NSMutableArray * _queuedInvocations;
+    <CKSMSCompose> * _serviceViewControllerProxy;
 }
 
 @property (nonatomic, retain) NSMutableArray *queuedInvocations;

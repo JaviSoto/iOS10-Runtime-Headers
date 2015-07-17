@@ -3,9 +3,9 @@
  */
 
 @interface _HKPropertyComparisonFilter : _HKFilter {
-    NSString *_lhPropertyName;
-    unsigned int _operatorType;
-    NSString *_rhPropertyName;
+    NSString * _lhPropertyName;
+    unsigned int  _operatorType;
+    NSString * _rhPropertyName;
 }
 
 @property (nonatomic, readonly) NSString *lhPropertyName;

@@ -3,10 +3,10 @@
  */
 
 @interface UIDocumentPasswordView : UIView <UITextFieldDelegate> {
-    UIImageView *_iconView;
-    UILabel *_label;
-    UIDocumentPasswordField *_passwordTextField;
-    NSObject<UIDocumentPasswordViewDelegate> *passwordDelegate;
+    UIImageView * _iconView;
+    UILabel * _label;
+    UIDocumentPasswordField * _passwordTextField;
+    NSObject<UIDocumentPasswordViewDelegate> * passwordDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

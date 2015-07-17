@@ -3,13 +3,13 @@
  */
 
 @interface SKUIEditorialCardLayout : NSObject {
-    NSMutableArray *_allLockups;
-    SKUILockupViewElement *_primaryLockup;
+    NSMutableArray * _allLockups;
+    SKUILockupViewElement * _primaryLockup;
     struct CGSize { 
         float width; 
         float height; 
-    } _primaryLockupSize;
-    float _secondaryLockupWidth;
+    }  _primaryLockupSize;
+    float  _secondaryLockupWidth;
 }
 
 @property (nonatomic, readonly) NSArray *allLockups;

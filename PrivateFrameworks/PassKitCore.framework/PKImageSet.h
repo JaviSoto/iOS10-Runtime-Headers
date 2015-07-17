@@ -3,8 +3,8 @@
  */
 
 @interface PKImageSet : NSObject <NSSecureCoding> {
-    NSURL *_originCacheURL;
-    int _version;
+    NSURL * _originCacheURL;
+    int  _version;
 }
 
 @property (nonatomic, copy) NSURL *originCacheURL;

@@ -3,26 +3,26 @@
  */
 
 @interface CKDFetchRecordsOperation : CKDDatabaseOperation {
-    unsigned int _URLOptions;
-    NSSet *_assetFieldNamesToPublishURLs;
-    CKDRecordCache *_cache;
-    NSMutableDictionary *_cachedRecords;
-    NSSet *_desiredKeySet;
-    NSDictionary *_desiredPackageFileIndices;
-    NSMapTable *_downloadTasksByRecordID;
-    NSMutableDictionary *_errorsByRecordID;
-    NSObject<OS_dispatch_group> *_fetchRecordsGroup;
-    BOOL _forcePCSDecrypt;
-    NSArray *_fullRecordsToFetch;
-    id /* block */ _recordFetchCompletionBlock;
-    id /* block */ _recordFetchProgressBlock;
-    NSArray *_recordIDsToFetch;
-    NSDictionary *_recordIDsToVersionETags;
-    unsigned int _requestedTTL;
-    BOOL _shouldFetchAssetContent;
-    NSDictionary *_signaturesOfAssetsByRecordIDAndKey;
-    BOOL _useCachedEtags;
-    NSDictionary *_webSharingIdentityDataByRecordID;
+    unsigned int  _URLOptions;
+    NSSet * _assetFieldNamesToPublishURLs;
+    CKDRecordCache * _cache;
+    NSMutableDictionary * _cachedRecords;
+    NSSet * _desiredKeySet;
+    NSDictionary * _desiredPackageFileIndices;
+    NSMapTable * _downloadTasksByRecordID;
+    NSMutableDictionary * _errorsByRecordID;
+    NSObject<OS_dispatch_group> * _fetchRecordsGroup;
+    BOOL  _forcePCSDecrypt;
+    NSArray * _fullRecordsToFetch;
+    id /* block */  _recordFetchCompletionBlock;
+    id /* block */  _recordFetchProgressBlock;
+    NSArray * _recordIDsToFetch;
+    NSDictionary * _recordIDsToVersionETags;
+    unsigned int  _requestedTTL;
+    BOOL  _shouldFetchAssetContent;
+    NSDictionary * _signaturesOfAssetsByRecordIDAndKey;
+    BOOL  _useCachedEtags;
+    NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
 @property (nonatomic) unsigned int URLOptions;
@@ -58,6 +58,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(BOOL)arg3 responseCode:(id)arg4;
 - (BOOL)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 signature:(id)arg4;
+- (unsigned long long)activityStart;
 - (id)assetFieldNamesToPublishURLs;
 - (id)cache;
 - (id)cachedRecords;

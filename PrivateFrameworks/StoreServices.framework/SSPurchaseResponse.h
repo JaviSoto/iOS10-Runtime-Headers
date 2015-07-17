@@ -3,15 +3,15 @@
  */
 
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
-    BOOL _cancelsPurchaseBatch;
-    NSArray *_downloadIdentifiers;
-    NSError *_error;
-    SSPurchase *_purchase;
-    double _requestStartTime;
-    SSURLConnectionResponse *_response;
-    double _responseEndTime;
-    double _responseStartTime;
-    NSMutableDictionary *_transactionIdentifiers;
+    BOOL  _cancelsPurchaseBatch;
+    NSArray * _downloadIdentifiers;
+    NSError * _error;
+    SSPurchase * _purchase;
+    double  _requestStartTime;
+    SSURLConnectionResponse * _response;
+    double  _responseEndTime;
+    double  _responseStartTime;
+    NSMutableDictionary * _transactionIdentifiers;
 }
 
 @property (nonatomic, retain) SSURLConnectionResponse *URLResponse;

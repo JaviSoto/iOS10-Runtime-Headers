@@ -3,8 +3,8 @@
  */
 
 @interface EKPersistentRecurrenceRule : EKPersistentObject <NSCopying> {
-    id _helper;
-    EKRecurrenceEnd *_recurrenceEnd;
+    id  _helper;
+    EKRecurrenceEnd * _recurrenceEnd;
 }
 
 @property (nonatomic, readonly) NSString *UUID;

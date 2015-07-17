@@ -3,15 +3,15 @@
  */
 
 @interface MusicArtworkView : UIImageView {
-    NSMutableSet *_activeTouches;
-    <MusicArtworkViewDelegate> *_delegate;
-    int _externalContentMode;
-    unsigned int _highlightTransactionCount;
-    UIView *_highlightView;
-    float _idealAspectRatio;
-    BOOL _overallHighlighted;
-    BOOL _shouldRespectHighlightProperty;
-    BOOL _touchHighlighted;
+    NSMutableSet * _activeTouches;
+    <MusicArtworkViewDelegate> * _delegate;
+    int  _externalContentMode;
+    unsigned int  _highlightTransactionCount;
+    UIView * _highlightView;
+    float  _idealAspectRatio;
+    BOOL  _overallHighlighted;
+    BOOL  _shouldRespectHighlightProperty;
+    BOOL  _touchHighlighted;
 }
 
 @property (nonatomic) <MusicArtworkViewDelegate> *delegate;

@@ -3,10 +3,10 @@
  */
 
 @interface TSTTableRep : TSWPTextHostRep <UITextFieldDelegate> {
-    BOOL _settingSelection;
-    <TSTTableAnimationController> *mAnimationController;
-    NSMutableArray *mAnimationStack;
-    <TSTCanvasReferenceController> *mCanvasReferenceController;
+    BOOL  _settingSelection;
+    <TSTTableAnimationController> * mAnimationController;
+    NSMutableArray * mAnimationStack;
+    <TSTCanvasReferenceController> * mCanvasReferenceController;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,13 +16,13 @@
             float width; 
             float height; 
         } size; 
-    } mCanvasVisibleRect;
-    TSTSelectionDragController *mCellDragController;
-    CAShapeLayer *mCellEditingMaskLayer;
-    NSMutableDictionary *mChildTextReps;
-    TSTTableCellTextEditingRep *mContainedTextEditingRep;
-    float mCurrentScreenScale;
-    <TSTTableRepDelegate> *mDelegate;
+    }  mCanvasVisibleRect;
+    TSTSelectionDragController * mCellDragController;
+    CAShapeLayer * mCellEditingMaskLayer;
+    NSMutableDictionary * mChildTextReps;
+    TSTTableCellTextEditingRep * mContainedTextEditingRep;
+    float  mCurrentScreenScale;
+    <TSTTableRepDelegate> * mDelegate;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -33,29 +33,29 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mDirtyCellRange;
-    BOOL mDragByHandleOnly;
+    }  mDirtyCellRange;
+    BOOL  mDragByHandleOnly;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mEditingHyperlinkCellID;
-    CAShapeLayer *mFindSelectionHighlightLayer;
-    CAShapeLayer *mHighlightedHyperlinkLayer;
-    TSWPHyperlinkField *mHyperlinkField;
-    BOOL mHyperlinkModified;
-    TSWPStorage *mHyperlinkParentStorage;
-    BOOL mInspectingHyperlinkInEditingStorage;
-    BOOL mIsAspectOperationInProgress;
-    BOOL mIsZoomOperationInProgress;
-    BOOL mIsZoomToEditOperationInProgress;
+    }  mEditingHyperlinkCellID;
+    CAShapeLayer * mFindSelectionHighlightLayer;
+    CAShapeLayer * mHighlightedHyperlinkLayer;
+    TSWPHyperlinkField * mHyperlinkField;
+    BOOL  mHyperlinkModified;
+    TSWPStorage * mHyperlinkParentStorage;
+    BOOL  mInspectingHyperlinkInEditingStorage;
+    BOOL  mIsAspectOperationInProgress;
+    BOOL  mIsZoomOperationInProgress;
+    BOOL  mIsZoomToEditOperationInProgress;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mRatingsDragCellID;
-    BOOL mRecursivelyDrawingInContext;
-    TSTTableReferences *mReferences;
+    }  mRatingsDragCellID;
+    BOOL  mRecursivelyDrawingInContext;
+    TSTTableReferences * mReferences;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -65,18 +65,18 @@
             float width; 
             float height; 
         } size; 
-    } mSearchSelectionBounds;
-    BOOL mSelectionUsesBezierPath;
-    BOOL mSelectsCellOnInitialTap;
-    TSTCellSelection *mSourceFillSelection;
-    <TSTTableChromeProvider> *mTableChrome;
-    CALayer *mTableCollaboratorCursorLayer;
-    BOOL mTableNameValid;
-    TSTCellSelection *mTargetFillSelection;
-    BOOL mUsesWholeChromeResizer;
-    NSSet *mVisibleFillKnobs;
-    TSDKnobTracker<TSTTableKnobTrackerVisitorProtocol> *mVisitorKnobTracker;
-    BOOL mWPEndedTableNameEditing;
+    }  mSearchSelectionBounds;
+    BOOL  mSelectionUsesBezierPath;
+    BOOL  mSelectsCellOnInitialTap;
+    TSTCellSelection * mSourceFillSelection;
+    <TSTTableChromeProvider> * mTableChrome;
+    CALayer * mTableCollaboratorCursorLayer;
+    BOOL  mTableNameValid;
+    TSTCellSelection * mTargetFillSelection;
+    BOOL  mUsesWholeChromeResizer;
+    NSSet * mVisibleFillKnobs;
+    TSDKnobTracker<TSTTableKnobTrackerVisitorProtocol> * mVisitorKnobTracker;
+    BOOL  mWPEndedTableNameEditing;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -87,7 +87,7 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mZoomToEditVisibleCellRange;
+    }  mZoomToEditVisibleCellRange;
 }
 
 @property (nonatomic, retain) TSTSearchReference *activeSearchReference;
@@ -115,9 +115,10 @@
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromCanvas;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToCanvas;
 
++ (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
++ (unsigned int)p_countOfIdenticalCellsBetweenOutgoingTableModel:(id)arg1 incomingTableModel:(id)arg2;
 + (Class)tableRepDelegateClass;
 
-- (id).cxx_construct;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (id)animationController;
@@ -176,10 +177,12 @@
 - (void)setChildTextReps:(id)arg1;
 - (void)setRatingsDragCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setTableNameValid:(BOOL)arg1;
+- (void)setTextureStage:(unsigned int)arg1;
 - (id)tableChrome;
 - (id)tableInfo;
 - (id)tableLayout;
 - (id)tableModel;
+- (id)textureForContext:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromCanvas;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToCanvas;
 - (void)updateChildrenFromLayout;

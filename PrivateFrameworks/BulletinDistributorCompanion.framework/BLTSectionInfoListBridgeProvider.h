@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSectionInfoListBridgeProvider : NSObject <LSApplicationWorkspaceObserverProtocol> {
-    <BLTSectionInfoListProviderDelegate> *_delegate;
-    NSDate *_lastKnownBridgeSettingsChangeDate;
+@interface BLTSectionInfoListBridgeProvider : NSObject <BLTSectionInfoListProvider, LSApplicationWorkspaceObserverProtocol> {
+    <BLTSectionInfoListProviderDelegate> * _delegate;
+    NSDate * _lastKnownBridgeSettingsChangeDate;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
+    }  _lock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -27,6 +27,7 @@
 - (void)clientTokenRequestedByServer;
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (NSDictionary *)customConnectionProperties;
+- (AKAppleIDSession *)getAppleIDSession;
 - (BOOL)handleAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg1;
 - (BOOL)handleAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg1 withConnection:(NSURLConnection *)arg2;
 - (BOOL)handleShouldUseCredentialStorage;

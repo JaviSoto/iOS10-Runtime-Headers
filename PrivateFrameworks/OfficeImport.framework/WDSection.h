@@ -3,14 +3,14 @@
  */
 
 @interface WDSection : NSObject {
-    WDDocument *mDocument;
-    WDText *mEvenPageFooter;
-    WDText *mEvenPageHeader;
-    WDText *mFirstPageFooter;
-    WDText *mFirstPageHeader;
-    WDText *mOddPageFooter;
-    WDText *mOddPageHeader;
-    unsigned int mOriginal;
+    WDDocument * mDocument;
+    WDText * mEvenPageFooter;
+    WDText * mEvenPageHeader;
+    WDText * mFirstPageFooter;
+    WDText * mFirstPageHeader;
+    WDText * mOddPageFooter;
+    WDText * mOddPageHeader;
+    unsigned int  mOriginal;
     struct { 
         WDBorder *topBorder; 
         WDBorder *leftBorder; 
@@ -90,10 +90,10 @@
         unsigned int indexToAuthorIDOfFormattingChangeOverridden : 1; 
         unsigned int formattingChangeDateOverridden : 1; 
         unsigned int bidiOverridden : 1; 
-    } mOriginalProperties;
-    unsigned int mResolved;
-    WDText *mText;
-    unsigned int mTracked;
+    }  mOriginalProperties;
+    unsigned int  mResolved;
+    WDText * mText;
+    unsigned int  mTracked;
     struct { 
         WDBorder *topBorder; 
         WDBorder *leftBorder; 
@@ -173,10 +173,9 @@
         unsigned int indexToAuthorIDOfFormattingChangeOverridden : 1; 
         unsigned int formattingChangeDateOverridden : 1; 
         unsigned int bidiOverridden : 1; 
-    } mTrackedProperties;
+    }  mTrackedProperties;
 }
 
-- (id).cxx_construct;
 - (void)appendColumnSpace:(long)arg1;
 - (void)appendColumnWidth:(long)arg1;
 - (BOOL)bidi;
@@ -193,6 +192,7 @@
 - (long)columnWidthAt:(unsigned int)arg1;
 - (BOOL)columnsEqualWidth;
 - (void)dealloc;
+- (id)description;
 - (id)document;
 - (id)evenPageFooter;
 - (id)evenPageHeader;

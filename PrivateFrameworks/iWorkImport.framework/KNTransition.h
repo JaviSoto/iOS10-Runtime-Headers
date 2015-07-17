@@ -3,7 +3,7 @@
  */
 
 @interface KNTransition : TSPContainedObject <KNInspectableAnimation> {
-    KNTransitionAttributes *mAttributes;
+    KNTransitionAttributes * mAttributes;
 }
 
 @property (nonatomic, readonly) KNAnimationInfo *animationInfo;

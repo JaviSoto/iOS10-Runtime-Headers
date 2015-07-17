@@ -3,13 +3,13 @@
  */
 
 @interface AWDNFCTSMConnectivityExceptionEvent : PBCodable <NSCopying> {
-    unsigned int _errorCode;
+    unsigned int  _errorCode;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int errorCode : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic) unsigned int errorCode;

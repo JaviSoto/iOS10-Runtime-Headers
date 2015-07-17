@@ -3,8 +3,8 @@
  */
 
 @interface NSMatchingPredicateOperator : NSStringPredicateOperator {
-    int _contextLock;
-    struct { id x1; void x2; } *_regexContext;
+    int  _contextLock;
+    struct { id x1; void x2; } * _regexContext;
 }
 
 - (void)_clearContext;

@@ -3,30 +3,30 @@
  */
 
 @interface SSDevice : NSObject <SSRequestDelegate> {
-    NSString *_appleTVProductVersion;
-    double _batteryLevel;
-    unsigned int _batteryMonitorNotification;
-    struct IONotificationPort { } *_batteryMonitorPort;
-    id _cloudMediaLibraryIdentifier;
-    int _deviceType;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSKeyValueStore *_keyValueStore;
-    NSString *_legacyUserAgent;
-    NSString *_localStoreFrontIdentifier;
-    BOOL _localStoreFrontIsTransient;
-    id _mediaLibraryIdentifier;
-    NSString *_phoneNumber;
-    BOOL _pluggedIn;
-    int _pluggedInToken;
-    int _powerMonitorCount;
-    NSString *_productType;
-    NSString *_productVersion;
-    id _softwareLibraryIdentifier;
-    NSString *_synchedStoreFrontIdentifier;
-    int _telephonyCapability;
-    NSString *_udid;
-    SSURLBag *_urlBag;
-    NSString *_userAgent;
+    NSString * _appleTVProductVersion;
+    double  _batteryLevel;
+    unsigned int  _batteryMonitorNotification;
+    struct IONotificationPort { } * _batteryMonitorPort;
+    id  _cloudMediaLibraryIdentifier;
+    int  _deviceType;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSKeyValueStore * _keyValueStore;
+    NSString * _legacyUserAgent;
+    NSString * _localStoreFrontIdentifier;
+    BOOL  _localStoreFrontIsTransient;
+    id  _mediaLibraryIdentifier;
+    NSString * _phoneNumber;
+    BOOL  _pluggedIn;
+    int  _pluggedInToken;
+    int  _powerMonitorCount;
+    NSString * _productType;
+    NSString * _productVersion;
+    id  _softwareLibraryIdentifier;
+    NSString * _synchedStoreFrontIdentifier;
+    int  _telephonyCapability;
+    NSString * _udid;
+    SSURLBag * _urlBag;
+    NSString * _userAgent;
 }
 
 @property (readonly) NSSet *automaticDownloadKinds;
@@ -49,6 +49,7 @@
 @property (getter=isStoreFrontIdentifierTransient, readonly) BOOL storeFrontIdentifierTransient;
 @property (readonly) Class superclass;
 @property (readonly) NSString *synchedStoreFrontIdentifier;
+@property (readonly) NSString *thinnedApplicationVariantIdentifier;
 @property (readonly) NSString *uniqueDeviceIdentifier;
 @property (readonly) NSString *userAgent;
 
@@ -133,6 +134,7 @@
 - (BOOL)supportsDeviceCapability:(int)arg1;
 - (id)synchedStoreFrontIdentifier;
 - (void)synchronizeAutomaticDownloadKinds;
+- (id)thinnedApplicationVariantIdentifier;
 - (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)uniqueDeviceIdentifier;
 - (id)userAgent;

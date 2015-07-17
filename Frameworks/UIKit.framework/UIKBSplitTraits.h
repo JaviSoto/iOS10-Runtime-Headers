@@ -3,7 +3,7 @@
  */
 
 @interface UIKBSplitTraits : NSObject {
-    int _corners;
+    int  _corners;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _leftFrame;
+    }  _leftFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,7 +23,7 @@
             float width; 
             float height; 
         } size; 
-    } _rightFrame;
+    }  _rightFrame;
 }
 
 @property (nonatomic, readonly) int corners;

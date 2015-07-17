@@ -3,19 +3,19 @@
  */
 
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView {
-    unsigned int _arrowDirection;
-    float _arrowOffset;
-    UIView *_arrowView;
-    BOOL _arrowVisible;
-    int _backgroundStyle;
-    _UIBackdropView *_blurView;
-    BOOL _debugMode;
-    float _dimmingViewTopEdgeInset;
-    NSArray *_dimmingViews;
-    UIView *_leftCapView;
-    UIColor *_popoverBackgroundColor;
-    UIView *_rightCapView;
-    BOOL useShortMode;
+    unsigned int  _arrowDirection;
+    float  _arrowOffset;
+    UIView * _arrowView;
+    BOOL  _arrowVisible;
+    int  _backgroundStyle;
+    _UIBackdropView * _blurView;
+    BOOL  _debugMode;
+    float  _dimmingViewTopEdgeInset;
+    NSArray * _dimmingViews;
+    UIView * _leftCapView;
+    UIColor * _popoverBackgroundColor;
+    UIView * _rightCapView;
+    BOOL  useShortMode;
 }
 
 @property (getter=isArrowVisible, nonatomic) BOOL arrowVisible;
@@ -29,6 +29,7 @@
 + (float)arrowHeight;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 
+- (void).cxx_destruct;
 - (void)_layoutArrowViewsLeftOrRight;
 - (void)_layoutArrowViewsNone;
 - (void)_layoutArrowViewsUpOrDown;
@@ -41,7 +42,6 @@
 - (unsigned int)arrowDirection;
 - (float)arrowOffset;
 - (int)backgroundStyle;
-- (void)dealloc;
 - (void)didMoveToWindow;
 - (float)dimmingViewTopEdgeInset;
 - (BOOL)hasComponentViews;

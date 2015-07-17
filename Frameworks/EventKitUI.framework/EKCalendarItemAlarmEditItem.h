@@ -3,14 +3,16 @@
  */
 
 @interface EKCalendarItemAlarmEditItem : EKCalendarItemEditItem {
-    CalendarEventAlarmTable *_alarmTable;
-    NSArray *_alarms;
-    BOOL _canHaveLeaveNowAlarm;
-    unsigned int _disclosedSubitem;
-    BOOL _hasLeaveNowAlarm;
-    int _lastSeenAllDayState;
-    BOOL _userChangedAlarm;
+    CalendarEventAlarmTable * _alarmTable;
+    NSArray * _alarms;
+    BOOL  _canHaveLeaveNowAlarm;
+    unsigned int  _disclosedSubitem;
+    BOOL  _hasLeaveNowAlarm;
+    int  _lastSeenAllDayState;
+    BOOL  _userChangedAlarm;
 }
+
++ (id)_labelTextForIndex:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_alarmsMatchCalendarItem;

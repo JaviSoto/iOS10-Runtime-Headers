@@ -3,22 +3,22 @@
  */
 
 @interface MusicEntityTracklistItemView : MusicEntityAbstractLockupView <MPUTextDrawingCacheInvalidationObserver, MusicEntityContentDescriptorViewConfiguring> {
-    MPButton *_contextualActionsButton;
-    <MusicEntityTracklistItemViewDelegate> *_delegate;
+    UIButton * _contextualActionsButton;
+    <MusicEntityTracklistItemViewDelegate> * _delegate;
     struct { 
         unsigned int didSelectContextualActionsButton : 1; 
         unsigned int didSelectPlayButton : 1; 
         unsigned int shouldLayoutAsEditing : 1; 
-    } _delegateRespondsToSelector;
-    MusicDownloadStatusSashView *_downloadStatusSashView;
-    UIImageView *_explicitBadgeImageView;
-    MPUNowPlayingIndicatorView *_indicatorView;
-    float _leadingTextColumnWidth;
-    UIImageView *_mediaTypeImageView;
-    NSMapTable *_textDescriptorToTextDrawingView;
-    NSMutableArray *_textDrawingViewReusePool;
-    UIImageView *_trailingAccessoryImageView;
-    float _trailingTextColumnWidth;
+    }  _delegateRespondsToSelector;
+    MusicDownloadStatusSashView * _downloadStatusSashView;
+    UIImageView * _explicitBadgeImageView;
+    MPUNowPlayingIndicatorView * _indicatorView;
+    float  _leadingTextColumnWidth;
+    UIImageView * _mediaTypeImageView;
+    NSMapTable * _textDescriptorToTextDrawingView;
+    NSMutableArray * _textDrawingViewReusePool;
+    UIImageView * _trailingAccessoryImageView;
+    float  _trailingTextColumnWidth;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

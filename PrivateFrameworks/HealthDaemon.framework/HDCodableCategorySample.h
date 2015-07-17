@@ -5,9 +5,9 @@
 @interface HDCodableCategorySample : PBCodable <NSCopying> {
     struct { 
         unsigned int value : 1; 
-    } _has;
-    HDCodableSample *_sample;
-    long long _value;
+    }  _has;
+    HDCodableSample * _sample;
+    long long  _value;
 }
 
 @property (nonatomic, readonly) BOOL hasSample;

@@ -3,8 +3,8 @@
  */
 
 @interface CKPhotoPickerBadgeCell : UICollectionReusableView {
-    UIImageView *_checkmarkImageView;
-    BOOL _selected;
+    UIImageView * _checkmarkImageView;
+    BOOL  _selected;
 }
 
 @property (nonatomic, retain) UIImageView *checkmarkImageView;

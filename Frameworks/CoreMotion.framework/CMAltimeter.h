@@ -3,7 +3,7 @@
  */
 
 @interface CMAltimeter : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 + (void)dummySelector:(id)arg1;

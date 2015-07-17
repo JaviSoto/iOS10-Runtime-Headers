@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonTableTinyActionCell : UITableViewCell {
-    ABPersonTableActionDataSource *_actionDataSource;
-    <ABPersonTableTinyActionDelegate> *_delegate;
-    <ABStyleProvider> *_styleProvider;
-    UIView *_tinyActionContentView;
+    ABPersonTableActionDataSource * _actionDataSource;
+    <ABPersonTableTinyActionDelegate> * _delegate;
+    <ABStyleProvider> * _styleProvider;
+    UIView * _tinyActionContentView;
 }
 
 @property (nonatomic, retain) ABPersonTableActionDataSource *actionDataSource;

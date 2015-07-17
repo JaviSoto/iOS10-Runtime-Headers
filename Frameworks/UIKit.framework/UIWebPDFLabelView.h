@@ -3,10 +3,10 @@
  */
 
 @interface UIWebPDFLabelView : UIView {
-    _UIBackdropView *_backdropView;
-    UILabel *_label;
-    NSTimer *_timer;
-    unsigned int currentPageIndex;
+    _UIBackdropView * _backdropView;
+    UILabel * _label;
+    NSTimer * _timer;
+    unsigned int  currentPageIndex;
 }
 
 @property (nonatomic) unsigned int currentPageIndex;

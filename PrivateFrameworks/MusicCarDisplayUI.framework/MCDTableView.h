@@ -3,7 +3,7 @@
  */
 
 @interface MCDTableView : UITableView {
-    BOOL _shouldShowHeadersAndFooters;
+    BOOL  _shouldShowHeadersAndFooters;
 }
 
 @property (nonatomic) BOOL shouldShowHeadersAndFooters;

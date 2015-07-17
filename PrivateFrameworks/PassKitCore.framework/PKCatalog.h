@@ -3,14 +3,14 @@
  */
 
 @interface PKCatalog : NSObject <NSSecureCoding> {
-    NSMutableArray *_groups;
-    NSDate *_timestamp;
+    NSMutableArray * _groups;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *groups;
 @property (nonatomic, retain) NSDate *timestamp;
 
-+ (id)catalogWithContentsOfURL:(id)arg1;
++ (id)catalogWithContentsOfURL:(id)arg1 nonUbiquitousCatalogURL:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)allGroupIDs;
@@ -26,6 +26,6 @@
 - (void)setTimestamp:(id)arg1;
 - (void)shuffle:(int)arg1;
 - (id)timestamp;
-- (void)writeToURL:(id)arg1 atomically:(BOOL)arg2;
+- (void)writeToURL:(id)arg1 nonUbiquitousCatalogURL:(id)arg2 atomically:(BOOL)arg3;
 
 @end

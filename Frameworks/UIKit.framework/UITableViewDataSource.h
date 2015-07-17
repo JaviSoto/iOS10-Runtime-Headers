@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewDataSource : NSObject <NSCoding, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_sections;
+    NSArray * _sections;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +14,7 @@
 
 + (id)staticDataSourceWithSections:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;

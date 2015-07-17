@@ -3,9 +3,9 @@
  */
 
 @interface CertInfoCertificateListCellContentView : UIView {
-    UILabel *_expirationLabel;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    UILabel * _expirationLabel;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

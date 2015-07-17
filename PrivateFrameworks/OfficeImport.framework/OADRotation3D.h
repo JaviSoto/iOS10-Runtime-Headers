@@ -3,9 +3,9 @@
  */
 
 @interface OADRotation3D : NSObject <NSCopying> {
-    float mLatitude;
-    float mLongitude;
-    float mRevolution;
+    float  mLatitude;
+    float  mLongitude;
+    float  mRevolution;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -3,18 +3,18 @@
  */
 
 @interface SSOperationProgress : NSObject <NSCopying, SSXPCCoding> {
-    BOOL _canPause;
-    double _changeRate;
-    long long _currentValue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    double _estimatedTimeRemaining;
-    long long _maxValue;
-    long long _normalizedCurrentValue;
-    long long _normalizedMaxValue;
-    int _operationType;
-    NSMutableArray *_snapshotTimes;
-    NSMutableArray *_snapshotValues;
-    int _units;
+    BOOL  _canPause;
+    double  _changeRate;
+    long long  _currentValue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    double  _estimatedTimeRemaining;
+    long long  _maxValue;
+    long long  _normalizedCurrentValue;
+    long long  _normalizedMaxValue;
+    int  _operationType;
+    NSMutableArray * _snapshotTimes;
+    NSMutableArray * _snapshotValues;
+    int  _units;
 }
 
 @property BOOL canPause;

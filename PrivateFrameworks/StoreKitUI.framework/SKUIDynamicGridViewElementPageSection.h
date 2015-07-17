@@ -3,27 +3,27 @@
  */
 
 @interface SKUIDynamicGridViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUICollectionDOMFeatureTargetting, SKUIGridViewElementPageSectionConfigurationDataSource> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    SKUIGridViewElementPageSectionConfiguration *_configuration;
-    SKUIDynamicPageSectionIndexMapper *_dynamicPageSectionIndexMapper;
-    BOOL _editing;
-    <SKUIEntityProviding> *_entityProvider;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    SKUIGridViewElementPageSectionConfiguration * _configuration;
+    SKUIDynamicPageSectionIndexMapper * _dynamicPageSectionIndexMapper;
+    BOOL  _editing;
+    <SKUIEntityProviding> * _entityProvider;
     struct { 
         unsigned int respondsToSectionEntityValueProviderAtIndex : 1; 
-    } _entityProviderFlags;
-    CPLRUDictionary *_globalIndexToEntityValueProviderValueCache;
-    CPLRUDictionary *_globalIndexToTemplateViewElementCache;
-    SKUIViewElement *_independentlySizedViewElement;
-    SKUIViewElementTextLayoutCache *_labelLayoutCache;
-    int _minimumEntityCountForSections;
-    unsigned int _numberOfSections;
-    SKUIMutableIntegerValue *_reusableGlobalIndexIntegerValue;
-    _SKUIDynamicGridSizeCacheKey *_reusableSizeCacheKey;
-    unsigned int *_sectionHeaderGlobalIndices;
-    BOOL _showsSectionHeaders;
-    NSMutableDictionary *_sizeCacheKeyToCachedCellSize;
-    NSMutableDictionary *_templateViewElementsCache;
-    BOOL _usesSizingEntityValueProvider;
+    }  _entityProviderFlags;
+    CPLRUDictionary * _globalIndexToEntityValueProviderValueCache;
+    CPLRUDictionary * _globalIndexToTemplateViewElementCache;
+    SKUIViewElement * _independentlySizedViewElement;
+    SKUIViewElementTextLayoutCache * _labelLayoutCache;
+    int  _minimumEntityCountForSections;
+    unsigned int  _numberOfSections;
+    SKUIMutableIntegerValue * _reusableGlobalIndexIntegerValue;
+    _SKUIDynamicGridSizeCacheKey * _reusableSizeCacheKey;
+    unsigned int * _sectionHeaderGlobalIndices;
+    BOOL  _showsSectionHeaders;
+    NSMutableDictionary * _sizeCacheKeyToCachedCellSize;
+    NSMutableDictionary * _templateViewElementsCache;
+    BOOL  _usesSizingEntityValueProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

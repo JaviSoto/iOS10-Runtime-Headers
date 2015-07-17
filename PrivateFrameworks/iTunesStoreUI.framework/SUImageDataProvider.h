@@ -3,13 +3,13 @@
  */
 
 @interface SUImageDataProvider : ISDataProvider <NSCopying> {
-    UIColor *_fillColor;
+    UIColor * _fillColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _finalSize;
-    float _inputImageScale;
-    SUImageModifier *_modifier;
+    }  _finalSize;
+    float  _inputImageScale;
+    SUImageModifier * _modifier;
 }
 
 @property (retain) UIColor *fillColor;

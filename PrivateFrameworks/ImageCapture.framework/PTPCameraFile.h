@@ -3,8 +3,8 @@
  */
 
 @interface PTPCameraFile : ICCameraFile {
-    NSString *_path;
-    void *_ptpCameraFileProperties;
+    NSString * _path;
+    void * _ptpCameraFileProperties;
 }
 
 @property (copy) id info;

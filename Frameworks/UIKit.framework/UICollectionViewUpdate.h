@@ -3,22 +3,22 @@
  */
 
 @interface UICollectionViewUpdate : NSObject {
-    id *_animatedFooters;
-    id *_animatedHeaders;
-    id *_animatedItems;
-    UICollectionView *_collectionView;
-    NSMutableIndexSet *_deletedSections;
-    NSMutableArray *_deletedSupplementaryIndexesSectionArray;
-    NSMutableDictionary *_deletedSupplementaryTopLevelIndexesDict;
-    NSMutableArray *_gaps;
-    NSMutableIndexSet *_insertedSections;
-    NSMutableArray *_insertedSupplementaryIndexesSectionArray;
-    NSMutableDictionary *_insertedSupplementaryTopLevelIndexesDict;
-    NSMutableIndexSet *_movedItems;
-    NSMutableIndexSet *_movedSections;
-    int *_newGlobalItemMap;
-    UICollectionViewData *_newModel;
-    int *_newSectionMap;
+    id * _animatedFooters;
+    id * _animatedHeaders;
+    id * _animatedItems;
+    UICollectionView * _collectionView;
+    NSMutableIndexSet * _deletedSections;
+    NSMutableArray * _deletedSupplementaryIndexesSectionArray;
+    NSMutableDictionary * _deletedSupplementaryTopLevelIndexesDict;
+    NSMutableArray * _gaps;
+    NSMutableIndexSet * _insertedSections;
+    NSMutableArray * _insertedSupplementaryIndexesSectionArray;
+    NSMutableDictionary * _insertedSupplementaryTopLevelIndexesDict;
+    NSMutableIndexSet * _movedItems;
+    NSMutableIndexSet * _movedSections;
+    int * _newGlobalItemMap;
+    UICollectionViewData * _newModel;
+    int * _newSectionMap;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,10 +28,10 @@
             float width; 
             float height; 
         } size; 
-    } _newVisibleBounds;
-    int *_oldGlobalItemMap;
-    UICollectionViewData *_oldModel;
-    int *_oldSectionMap;
+    }  _newVisibleBounds;
+    int * _oldGlobalItemMap;
+    UICollectionViewData * _oldModel;
+    int * _oldSectionMap;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -41,11 +41,12 @@
             float width; 
             float height; 
         } size; 
-    } _oldVisibleBounds;
-    NSArray *_updateItems;
-    NSMutableArray *_viewAnimations;
+    }  _oldVisibleBounds;
+    NSArray * _updateItems;
+    NSMutableArray * _viewAnimations;
 }
 
+- (void).cxx_destruct;
 - (void)_computeGaps;
 - (void)_computeItemUpdates;
 - (void)_computeSectionUpdates;

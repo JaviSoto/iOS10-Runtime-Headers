@@ -3,7 +3,7 @@
  */
 
 @interface CAWindowServer : NSObject {
-    struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; } *_impl;
+    struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; } * _impl;
 }
 
 @property (readonly) NSArray *displays;
@@ -34,6 +34,7 @@
 - (void)removeAllDisplays;
 - (void)removeDisplay:(id)arg1;
 - (unsigned int)rendererFlags;
+- (id)secureModeViolations;
 - (void)setMirroringEnabled:(BOOL)arg1;
 - (void)setRendererFlags:(unsigned int)arg1;
 - (void)setSecure:(BOOL)arg1;

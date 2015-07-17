@@ -3,10 +3,10 @@
  */
 
 @interface EKDirectorySearchResultSet : NSObject {
-    NSSet *_groups;
-    NSSet *_locations;
-    NSSet *_people;
-    NSSet *_resources;
+    NSSet * _groups;
+    NSSet * _locations;
+    NSSet * _people;
+    NSSet * _resources;
 }
 
 @property (nonatomic, retain) NSSet *groups;

@@ -3,9 +3,9 @@
  */
 
 @interface _GEORPOptInTicket : NSObject <GEOMapServiceFixNotificationTicket> {
-    BOOL _canceled;
-    GEORPProblemOptInRequest *_request;
-    GEOMapServiceTraits *_traits;
+    BOOL  _canceled;
+    GEORPProblemOptInRequest * _request;
+    GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithSubmissionID:(id)arg1 allowNotificationsAtPushToken:(id)arg2 allowContactBackAtEmailAddress:(id)arg3 traits:(id)arg4;
+- (id)initWithSubmissionID:(id)arg1 allowContactBackAtEmailAddress:(id)arg2 traits:(id)arg3;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (id)traits;
 

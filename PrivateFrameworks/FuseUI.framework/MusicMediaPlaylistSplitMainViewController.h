@@ -3,10 +3,10 @@
  */
 
 @interface MusicMediaPlaylistSplitMainViewController : MusicMediaProductSplitMainViewController <MusicMediaPickerDelegate> {
-    NSString *_curatorStoreID;
-    MusicProductDescription *_editedPlaylistDescription;
-    NSNumber *_editedPlaylistPublicState;
-    NSNumber *_editedPlaylistVisibleState;
+    NSString * _curatorStoreID;
+    MusicProductDescription * _editedPlaylistDescription;
+    NSNumber * _editedPlaylistPublicState;
+    NSNumber * _editedPlaylistVisibleState;
 }
 
 @property (readonly, copy) NSString *debugDescription;

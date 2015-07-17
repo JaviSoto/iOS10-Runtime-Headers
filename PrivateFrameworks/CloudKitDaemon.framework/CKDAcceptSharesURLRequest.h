@@ -3,9 +3,9 @@
  */
 
 @interface CKDAcceptSharesURLRequest : CKDURLRequest {
-    id /* block */ _shareAcceptedBlock;
-    NSMutableDictionary *_shareInfoByRequestID;
-    NSArray *_shareInfosToAccept;
+    id /* block */  _shareAcceptedBlock;
+    NSMutableDictionary * _shareInfoByRequestID;
+    NSArray * _shareInfosToAccept;
 }
 
 @property (nonatomic, copy) id /* block */ shareAcceptedBlock;

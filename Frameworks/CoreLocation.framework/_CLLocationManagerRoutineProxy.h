@@ -3,11 +3,11 @@
  */
 
 @interface _CLLocationManagerRoutineProxy : NSObject <CLLocationManagerRoutineClientInterface> {
-    NSXPCConnection *_connection;
-    <CLLocationManagerDelegate> *_delegate;
-    CLLocationManagerRoutine *_locationManagerRoutine;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _updating;
+    NSXPCConnection * _connection;
+    <CLLocationManagerDelegate> * _delegate;
+    CLLocationManagerRoutine * _locationManagerRoutine;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _updating;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

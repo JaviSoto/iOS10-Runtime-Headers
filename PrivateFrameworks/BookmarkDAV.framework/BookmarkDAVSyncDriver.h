@@ -3,23 +3,23 @@
  */
 
 @interface BookmarkDAVSyncDriver : NSObject <CoreDAVContainerInfoTaskGroupDelegate, CoreDAVDeleteTaskDelegate, CoreDAVGetAccountPropertiesTaskGroupDelegate, CoreDAVLocalDBTreeInfoProvider> {
-    <CoreDAVAccountInfoProvider> *_accountInfoProvider;
-    void *_changeToken;
-    id /* block */ _closeDBBlock;
-    BOOL _forceSafariOrdering;
-    BOOL _forceSave;
-    id /* block */ _getAccountPropertiesHandler;
-    id /* block */ _getDBBlock;
-    NSURL *_homeURL;
-    id /* block */ _openDBBlock;
-    NSMutableSet *_outstandingTaskGroups;
-    NSString *_pushKey;
-    NSDictionary *_pushTransport;
-    id /* block */ _registerForPush;
-    id /* block */ _saveDBBlock;
-    id /* block */ _syncHandler;
-    <CoreDAVTaskManager> *_taskManager;
-    BookmarkDAVSyncData *_topLevelSyncData;
+    <CoreDAVAccountInfoProvider> * _accountInfoProvider;
+    void * _changeToken;
+    id /* block */  _closeDBBlock;
+    BOOL  _forceSafariOrdering;
+    BOOL  _forceSave;
+    id /* block */  _getAccountPropertiesHandler;
+    id /* block */  _getDBBlock;
+    NSURL * _homeURL;
+    id /* block */  _openDBBlock;
+    NSMutableSet * _outstandingTaskGroups;
+    NSString * _pushKey;
+    NSDictionary * _pushTransport;
+    id /* block */  _registerForPush;
+    id /* block */  _saveDBBlock;
+    id /* block */  _syncHandler;
+    <CoreDAVTaskManager> * _taskManager;
+    BookmarkDAVSyncData * _topLevelSyncData;
 }
 
 @property (nonatomic, readonly) <CoreDAVAccountInfoProvider> *accountInfoProvider;

@@ -3,8 +3,7 @@
  */
 
 @interface SCNEventHandler : NSObject {
-    id _reserved;
-    SCNView *_view;
+    SCNView * _view;
 }
 
 @property (readonly) SCNView *view;

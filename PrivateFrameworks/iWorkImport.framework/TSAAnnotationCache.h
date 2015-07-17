@@ -3,7 +3,7 @@
  */
 
 @interface TSAAnnotationCache : TSPObject {
-    NSArray *_annotations;
+    NSArray * _annotations;
 }
 
 @property (nonatomic, copy) NSArray *annotations;

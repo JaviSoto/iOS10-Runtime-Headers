@@ -3,7 +3,7 @@
  */
 
 @interface NoteAccountObject : NoteCollectionObject {
-    NSDictionary *_constraints;
+    NSDictionary * _constraints;
 }
 
 @property (nonatomic, retain) NSString *accountIdentifier;
@@ -15,6 +15,8 @@
 @property (nonatomic, retain) NSString *pathToConstraintsPlist;
 @property (nonatomic, retain) NSSet *stores;
 @property (nonatomic, retain) NSNumber *type;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
 - (void).cxx_destruct;
 - (int)accountType;
@@ -30,5 +32,9 @@
 - (BOOL)shouldMarkNotesAsDeleted;
 - (id)storeForExternalId:(id)arg1;
 - (BOOL)validateDefaultStore:(id*)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)noteVisibilityTestingForSearchingAccount;
 
 @end

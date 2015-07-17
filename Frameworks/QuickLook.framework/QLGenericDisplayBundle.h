@@ -3,8 +3,8 @@
  */
 
 @interface QLGenericDisplayBundle : QLDisplayBundle <QLGenericViewDelegate> {
-    QLGenericView *_airplayView;
-    NSError *_error;
+    QLGenericView * _airplayView;
+    NSError * _error;
 }
 
 @property (readonly, copy) NSString *debugDescription;

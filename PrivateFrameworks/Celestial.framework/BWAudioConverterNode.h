@@ -3,8 +3,8 @@
  */
 
 @interface BWAudioConverterNode : BWNode {
-    struct OpaqueFigSampleBufferProcessor { } *_audioCompressionSBP;
-    NSDictionary *_settings;
+    struct OpaqueFigSampleBufferProcessor { } * _audioCompressionSBP;
+    NSDictionary * _settings;
 }
 
 @property (nonatomic, readonly) NSDictionary *gaplessPlaybackInfo;

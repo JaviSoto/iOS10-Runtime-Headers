@@ -3,20 +3,20 @@
  */
 
 @interface SKUIStorePageSectionContext : NSObject {
-    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
-    float _activePageWidth;
-    UICollectionView *_collectionView;
-    SKUIColorScheme *_colorScheme;
-    int _defaultPinningTransitionStyle;
-    SKUIItemOfferButtonAppearance *_itemOfferButtonAppearance;
-    float _landscapePageWidth;
-    int _layoutStyle;
-    SKUIMetricsController *_metricsController;
-    SKUIStorePageSectionsViewController *_parentViewController;
-    UIColor *_placeholderColor;
-    float _portraitPageWidth;
-    SKUIResourceLoader *_resourceLoader;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIMetricsImpressionSession * _activeMetricsImpressionSession;
+    float  _activePageWidth;
+    UICollectionView * _collectionView;
+    SKUIColorScheme * _colorScheme;
+    int  _defaultPinningTransitionStyle;
+    SKUIItemOfferButtonAppearance * _itemOfferButtonAppearance;
+    float  _landscapePageWidth;
+    int  _layoutStyle;
+    SKUIMetricsController * _metricsController;
+    SKUIStorePageSectionsViewController * _parentViewController;
+    UIColor * _placeholderColor;
+    float  _portraitPageWidth;
+    SKUIResourceLoader * _resourceLoader;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (nonatomic, readonly) SKUIMetricsImpressionSession *activeMetricsImpressionSession;

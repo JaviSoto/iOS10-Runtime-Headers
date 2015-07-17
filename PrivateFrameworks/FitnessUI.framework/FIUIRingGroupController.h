@@ -3,22 +3,22 @@
  */
 
 @interface FIUIRingGroupController : FIUIAnimatableObject {
-    float _additionalSpacingAtIndex;
-    <FIUIRingGroupAnimationStatusDelegate> *_animationStatusDelegate;
-    float _backingOrigin;
+    float  _additionalSpacingAtIndex;
+    <FIUIRingGroupAnimationStatusDelegate> * _animationStatusDelegate;
+    float  _backingOrigin;
     struct CGPoint { 
         float x; 
         float y; 
-    } _center;
-    int *_iconAnimationFrameNumbers;
-    int _numberOfRings;
-    float _ringDiameter;
-    float _ringIconSize;
-    float _ringInterspacing;
-    float _ringScale;
-    BOOL _ringStartingStateIsDirty;
-    float _ringThickness;
-    NSArray *_rings;
+    }  _center;
+    int * _iconAnimationFrameNumbers;
+    int  _numberOfRings;
+    float  _ringDiameter;
+    float  _ringIconSize;
+    float  _ringInterspacing;
+    float  _ringScale;
+    BOOL  _ringStartingStateIsDirty;
+    float  _ringThickness;
+    NSArray * _rings;
 }
 
 @property (nonatomic) float additionalSpacingAtIndex;
@@ -58,6 +58,7 @@
 - (struct CGPoint { float x1; float x2; })center;
 - (void)dealloc;
 - (int)indexOfRingAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)init;
 - (id)initWithNumberOfRings:(int)arg1;
 - (int)numberOfRings;
 - (float)ringDiameter;

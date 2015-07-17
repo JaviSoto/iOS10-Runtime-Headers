@@ -3,17 +3,17 @@
  */
 
 @interface SKPhysicsContact : NSObject {
-    SKPhysicsBody *_bodyA;
-    SKPhysicsBody *_bodyB;
-    float _collisionImpulse;
+    SKPhysicsBody * _bodyA;
+    SKPhysicsBody * _bodyB;
+    float  _collisionImpulse;
     struct CGVector { 
         float dx; 
         float dy; 
-    } _contactNormal;
+    }  _contactNormal;
     struct CGPoint { 
         float x; 
         float y; 
-    } _contactPoint;
+    }  _contactPoint;
 }
 
 @property (nonatomic, readonly) SKPhysicsBody *bodyA;
@@ -25,7 +25,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)bodyA;
 - (id)bodyB;

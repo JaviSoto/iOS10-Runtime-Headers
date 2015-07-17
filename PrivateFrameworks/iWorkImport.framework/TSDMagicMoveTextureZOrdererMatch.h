@@ -3,13 +3,13 @@
  */
 
 @interface TSDMagicMoveTextureZOrdererMatch : NSObject {
-    TSDMagicMoveAnimationMatch *_animationMatch;
-    TSDTextureSet *_incomingTexture;
-    int _incomingZIndex;
-    BOOL _isIncomingZIndexUnmatched;
-    BOOL _isOutgoingZIndexUnmatched;
-    TSDTextureSet *_outgoingTexture;
-    int _outgoingZIndex;
+    TSDMagicMoveAnimationMatch * _animationMatch;
+    TSDTextureSet * _incomingTexture;
+    int  _incomingZIndex;
+    BOOL  _isIncomingZIndexUnmatched;
+    BOOL  _isOutgoingZIndexUnmatched;
+    TSDTextureSet * _outgoingTexture;
+    int  _outgoingZIndex;
 }
 
 @property (nonatomic, readonly) TSDMagicMoveAnimationMatch *animationMatch;

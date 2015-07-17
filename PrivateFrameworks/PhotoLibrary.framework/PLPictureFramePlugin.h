@@ -3,19 +3,19 @@
  */
 
 @interface PLPictureFramePlugin : PLSlideshowPlugin <PLImageLoadingQueueDelegate> {
-    PLCroppedImageView *_currentImageView;
-    unsigned int _currentIndex;
-    unsigned int _didLoadFirstImage;
-    PLImageCache *_imageCache;
-    struct __CFArray { } *_imageIndexes;
-    PLImageLoadingQueue *_imageLoadingQueue;
-    PLImageSource *_imageSource;
-    PLCachedImage *_nextImage;
-    PLCroppedImageView *_nextImageView;
-    unsigned int _paused;
-    PLManagedAsset *_requestedImage;
-    unsigned int _slideshowTimerDidFire;
-    unsigned int _slideshowTimerIsScheduled;
+    PLCroppedImageView * _currentImageView;
+    unsigned int  _currentIndex;
+    unsigned int  _didLoadFirstImage;
+    PLImageCache * _imageCache;
+    struct __CFArray { } * _imageIndexes;
+    PLImageLoadingQueue * _imageLoadingQueue;
+    PLImageSource * _imageSource;
+    PLCachedImage * _nextImage;
+    PLCroppedImageView * _nextImageView;
+    unsigned int  _paused;
+    PLManagedAsset * _requestedImage;
+    unsigned int  _slideshowTimerDidFire;
+    unsigned int  _slideshowTimerIsScheduled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

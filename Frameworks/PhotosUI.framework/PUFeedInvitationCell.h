@@ -3,13 +3,13 @@
  */
 
 @interface PUFeedInvitationCell : PUFeedCell {
-    UIButton *__acceptButon;
-    UIView *__bottomSeparatorView;
-    UIButton *__declineButton;
-    UILabel *__subtitleLabel;
-    UILabel *__titleLabel;
-    NSString *_subtitle;
-    NSString *_title;
+    UIButton * __acceptButon;
+    UIView * __bottomSeparatorView;
+    UIButton * __declineButton;
+    UILabel * __subtitleLabel;
+    UILabel * __titleLabel;
+    NSString * _subtitle;
+    NSString * _title;
 }
 
 @property (setter=_setAcceptButton:, nonatomic, retain) UIButton *_acceptButon;

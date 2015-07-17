@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardBehaviors_Handwriting : TIKeyboardBehaviors {
-    BOOL _usesCandidateSelection;
+    BOOL  _usesCandidateSelection;
 }
 
 @property (nonatomic) BOOL usesCandidateSelection;

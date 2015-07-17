@@ -3,13 +3,13 @@
  */
 
 @interface TRServer : NSObject <NSNetServiceDelegate> {
-    TRAdvertisingInfo *_advertisingInfo;
-    <TRServerDelegate> *_delegate;
-    NSObject<OS_tcp_listener> *_listener;
-    NSObject<OS_dispatch_queue> *_listenerQueue;
-    NSString *_name;
-    NSNetService *_netService;
-    unsigned short _port;
+    TRAdvertisingInfo * _advertisingInfo;
+    <TRServerDelegate> * _delegate;
+    NSObject<OS_tcp_listener> * _listener;
+    NSObject<OS_dispatch_queue> * _listenerQueue;
+    NSString * _name;
+    NSNetService * _netService;
+    unsigned short  _port;
 }
 
 @property (nonatomic, copy) TRAdvertisingInfo *advertisingInfo;

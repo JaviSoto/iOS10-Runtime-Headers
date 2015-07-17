@@ -3,14 +3,14 @@
  */
 
 @interface CAStateControllerTransition : NSObject {
-    NSMutableArray *_animations;
-    double _beginTime;
-    CAStateController *_controller;
-    double _duration;
-    CALayer *_layer;
-    NSString *_masterKey;
-    float _speed;
-    CAStateTransition *_transition;
+    NSMutableArray * _animations;
+    double  _beginTime;
+    CAStateController * _controller;
+    double  _duration;
+    CALayer * _layer;
+    NSString * _masterKey;
+    float  _speed;
+    CAStateTransition * _transition;
 }
 
 @property (nonatomic, readonly) double beginTime;

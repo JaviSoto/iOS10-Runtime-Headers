@@ -3,9 +3,9 @@
  */
 
 @interface TSPDataRepReadChannel : NSObject <TSUStreamReadChannel> {
-    <SFUInputStream> *_inputStream;
-    NSObject<OS_dispatch_queue> *_readQueue;
-    SFUDataRepresentation *_representation;
+    <SFUInputStream> * _inputStream;
+    NSObject<OS_dispatch_queue> * _readQueue;
+    SFUDataRepresentation * _representation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

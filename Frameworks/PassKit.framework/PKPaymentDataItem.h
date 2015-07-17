@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentDataItem : NSObject <PKPaymentValidating> {
-    PKPaymentAuthorizationDataModel *_model;
-    int _status;
-    int _type;
+    PKPaymentAuthorizationDataModel * _model;
+    int  _status;
+    int  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;

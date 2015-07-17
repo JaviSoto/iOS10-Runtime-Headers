@@ -3,19 +3,21 @@
  */
 
 @interface _RKResponse : NSObject {
-    NSString *_text;
-    unsigned int _type;
+    NSString * _speechAct;
+    NSString * _text;
 }
 
-@property (retain) NSString *text;
-@property unsigned int type;
+@property (readonly) NSString *speechAct;
+@property (readonly) NSString *text;
+@property (readonly) unsigned int type;
 
 - (void).cxx_destruct;
 - (id)description;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithText:(id)arg1 type:(unsigned int)arg2;
-- (void)setText:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (id)initWithSpeechAct:(id)arg1 text:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (id)speechAct;
 - (id)text;
 - (unsigned int)type;
 

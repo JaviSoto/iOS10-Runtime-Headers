@@ -3,16 +3,16 @@
  */
 
 @interface SKUIGridViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUICollectionDOMFeatureTargetting, SKUIGridViewElementPageSectionConfigurationDataSource> {
-    IKColor *_backgroundColor;
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    float _cellPaddingInteriorHorizontal;
-    float _cellPaddingLeftEdgeHorizontal;
-    float _cellPaddingRightEdgeHorizontal;
-    SKUIGridViewElementPageSectionConfiguration *_configuration;
-    BOOL _editing;
-    NSArray *_indexPathsForBackgroundItems;
-    int _lastNeedsMoreCount;
-    NSArray *_viewElements;
+    IKColor * _backgroundColor;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    float  _cellPaddingInteriorHorizontal;
+    float  _cellPaddingLeftEdgeHorizontal;
+    float  _cellPaddingRightEdgeHorizontal;
+    SKUIGridViewElementPageSectionConfiguration * _configuration;
+    BOOL  _editing;
+    NSArray * _indexPathsForBackgroundItems;
+    int  _lastNeedsMoreCount;
+    NSArray * _viewElements;
 }
 
 @property (readonly, copy) NSString *debugDescription;

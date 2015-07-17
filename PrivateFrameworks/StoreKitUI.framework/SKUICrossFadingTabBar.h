@@ -3,8 +3,8 @@
  */
 
 @interface SKUICrossFadingTabBar : UIView {
-    SKUIScrollingTabBarBackgroundView *_backgroundView;
-    NSArray *_tabBarButtons;
+    SKUIScrollingTabBarBackgroundView * _backgroundView;
+    NSArray * _tabBarButtons;
 }
 
 @property (nonatomic, readonly) SKUIScrollingTabBarBackgroundView *backgroundView;

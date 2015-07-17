@@ -3,39 +3,39 @@
  */
 
 @interface GEODBWriter : NSObject {
-    BOOL _closed;
-    unsigned long long _databaseSize;
-    struct sqlite3 { } *_db;
-    BOOL _defunct;
-    struct sqlite3_stmt { } *_editionDelete;
-    struct sqlite3_stmt { } *_editionInvalidate;
-    struct sqlite3_stmt { } *_editionInvalidateAll;
-    void *_editionMap;
-    struct sqlite3_stmt { } *_editionQuery;
-    struct sqlite3_stmt { } *_editionUpdate;
-    long long _evictionRowsThreshold;
-    unsigned int _expirationRecordCount;
-    struct { unsigned int x1; double x2; } *_expirationRecords;
-    double _lastCheckedGeneralExpiration;
-    long long _lastRowID;
-    unsigned long long _maxDatabaseSize;
-    NSString *_path;
-    unsigned int _pendingWriteBytes;
-    BOOL _preloading;
-    struct sqlite3_stmt { } *_sizeQuery;
-    unsigned int _tileCacheMaximumWriteBytes;
-    unsigned int _tileCacheMaximumWriteCount;
-    unsigned int _tileCacheMinimumWriteBytes;
-    unsigned int _tileCacheMinimumWriteCount;
-    struct sqlite3_stmt { } *_tileDelete;
-    struct sqlite3_stmt { } *_tileInsert;
-    struct sqlite3_stmt { } *_tileSize;
-    NSMutableSet *_uncommitedWriteSet;
-    struct sqlite3_stmt { } *_versionInsert;
-    struct sqlite3_stmt { } *_versionQuery;
-    NSMutableArray *_writeList;
-    NSLock *_writeListLock;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    BOOL  _closed;
+    unsigned long long  _databaseSize;
+    struct sqlite3 { } * _db;
+    BOOL  _defunct;
+    struct sqlite3_stmt { } * _editionDelete;
+    struct sqlite3_stmt { } * _editionInvalidate;
+    struct sqlite3_stmt { } * _editionInvalidateAll;
+    void * _editionMap;
+    struct sqlite3_stmt { } * _editionQuery;
+    struct sqlite3_stmt { } * _editionUpdate;
+    long long  _evictionRowsThreshold;
+    unsigned int  _expirationRecordCount;
+    struct { unsigned int x1; double x2; } * _expirationRecords;
+    double  _lastCheckedGeneralExpiration;
+    long long  _lastRowID;
+    unsigned long long  _maxDatabaseSize;
+    NSString * _path;
+    unsigned int  _pendingWriteBytes;
+    BOOL  _preloading;
+    struct sqlite3_stmt { } * _sizeQuery;
+    unsigned int  _tileCacheMaximumWriteBytes;
+    unsigned int  _tileCacheMaximumWriteCount;
+    unsigned int  _tileCacheMinimumWriteBytes;
+    unsigned int  _tileCacheMinimumWriteCount;
+    struct sqlite3_stmt { } * _tileDelete;
+    struct sqlite3_stmt { } * _tileInsert;
+    struct sqlite3_stmt { } * _tileSize;
+    NSMutableSet * _uncommitedWriteSet;
+    struct sqlite3_stmt { } * _versionInsert;
+    struct sqlite3_stmt { } * _versionQuery;
+    NSMutableArray * _writeList;
+    NSLock * _writeListLock;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property BOOL closed;
@@ -84,7 +84,7 @@
 - (void)setClosed:(BOOL)arg1;
 - (void)setExpirationRecords:(struct { unsigned int x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (void)setMaxDatabaseSize:(unsigned long long)arg1;
+- (void)shrinkBySize:(unsigned long long)arg1 callback:(id /* block */)arg2 onQueue:(id)arg3;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2 onQueue:(id)arg3;
 
 @end

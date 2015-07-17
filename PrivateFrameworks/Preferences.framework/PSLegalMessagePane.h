@@ -3,7 +3,7 @@
  */
 
 @interface PSLegalMessagePane : PSEditingPane <UIWebViewDelegate> {
-    UIWebView *_webView;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -11,6 +11,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)handlesDoneButton;
 - (id)htmlFileLocation;

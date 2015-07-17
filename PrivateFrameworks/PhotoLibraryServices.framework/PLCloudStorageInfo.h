@@ -3,10 +3,10 @@
  */
 
 @interface PLCloudStorageInfo : NSObject {
-    long long _availableBytes;
-    long long _cameraRollBackupBytes;
-    long long _totalBytes;
-    long long _usedBytes;
+    long long  _availableBytes;
+    long long  _cameraRollBackupBytes;
+    long long  _totalBytes;
+    long long  _usedBytes;
 }
 
 @property (nonatomic) long long availableBytes;

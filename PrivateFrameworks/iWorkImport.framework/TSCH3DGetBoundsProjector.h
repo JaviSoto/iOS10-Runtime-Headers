@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DGetBoundsProjector : NSObject {
-    struct ChartScenePropertyAccessor { id x1; } *mAccessor;
-    TSCH3DCamera *mCamera;
+    struct ChartScenePropertyAccessor { id x1; } * mAccessor;
+    TSCH3DCamera * mCamera;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -28,7 +28,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mConstantDepthModelView;
+    }  mConstantDepthModelView;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -52,7 +52,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mMVP;
+    }  mMVP;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -76,7 +76,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mModelView;
+    }  mModelView;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -100,8 +100,8 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mProjection;
-    BOOL mUseAggressiveBackProjection;
+    }  mProjection;
+    BOOL  mUseAggressiveBackProjection;
 }
 
 - (id).cxx_construct;

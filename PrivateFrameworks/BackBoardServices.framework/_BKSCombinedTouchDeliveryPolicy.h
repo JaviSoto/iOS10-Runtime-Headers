@@ -3,10 +3,10 @@
  */
 
 @interface _BKSCombinedTouchDeliveryPolicy : BKSTouchDeliveryPolicy {
-    NSArray *_policies;
+    NSArray * _policies;
 }
 
-@property (nonatomic, readonly) NSArray *policies;
+@property (nonatomic, readonly, retain) NSArray *policies;
 
 + (BOOL)supportsSecureCoding;
 

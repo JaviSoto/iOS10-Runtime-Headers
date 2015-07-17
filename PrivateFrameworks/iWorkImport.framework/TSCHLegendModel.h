@@ -3,7 +3,7 @@
  */
 
 @interface TSCHLegendModel : NSObject <NSCopying, TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
-    TSCHChartInfo *mChartInfo;
+    TSCHChartInfo * mChartInfo;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } mLegendFrame;
+    }  mLegendFrame;
 }
 
 @property (nonatomic) TSCHChartInfo *chartInfo;

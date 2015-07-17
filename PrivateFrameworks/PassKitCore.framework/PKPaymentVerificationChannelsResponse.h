@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentVerificationChannelsResponse : PKPaymentWebServiceResponse {
-    NSArray *_verificationChannels;
+    NSArray * _verificationChannels;
 }
 
 @property (nonatomic, retain) NSArray *verificationChannels;

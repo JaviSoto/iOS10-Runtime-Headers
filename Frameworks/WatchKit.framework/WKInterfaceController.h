@@ -12,10 +12,10 @@
             float width; 
             float height; 
         } size; 
-    } _contentFrame;
-    NSArray *_properties;
-    NSArray *_topLevelObjects;
-    NSString *_viewControllerID;
+    }  _contentFrame;
+    NSArray * _properties;
+    NSArray * _topLevelObjects;
+    NSString * _viewControllerID;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
@@ -36,6 +36,7 @@
 - (void)addMenuItemWithImage:(id)arg1 title:(id)arg2 action:(SEL)arg3;
 - (void)addMenuItemWithImageNamed:(id)arg1 title:(id)arg2 action:(SEL)arg3;
 - (void)addMenuItemWithItemIcon:(int)arg1 title:(id)arg2 action:(SEL)arg3;
+- (void)animateWithDuration:(double)arg1 animations:(id /* block */)arg2;
 - (void)awakeWithContext:(id)arg1;
 - (void)becomeCurrentPage;
 - (void)clearAllMenuItems;
@@ -44,8 +45,12 @@
 - (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (id)contextsForSegueWithIdentifier:(id)arg1;
 - (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
+- (void)didAppear;
 - (void)didDeactivate;
+- (void)dismissAddPassesController;
+- (void)dismissAudioRecordingController;
 - (void)dismissController;
+- (void)dismissMediaPlayerController;
 - (void)dismissTextInputController;
 - (void)handleActionWithIdentifier:(id)arg1 forLocalNotification:(id)arg2;
 - (void)handleActionWithIdentifier:(id)arg1 forRemoteNotification:(id)arg2;
@@ -55,8 +60,11 @@
 - (void)invalidateUserActivity;
 - (void)popController;
 - (void)popToRootController;
+- (void)presentAddPassesControllerWithPasses:(id)arg1 completion:(id /* block */)arg2;
+- (void)presentAudioRecordingControllerWithOutputURL:(id)arg1 preset:(int)arg2 maximumDuration:(double)arg3 actionTitle:(id)arg4 completion:(id /* block */)arg5;
 - (void)presentControllerWithName:(id)arg1 context:(id)arg2;
 - (void)presentControllerWithNames:(id)arg1 contexts:(id)arg2;
+- (void)presentMediaPlayerControllerWithURL:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 completion:(id /* block */)arg3;
 - (id)properties;
 - (void)pushControllerWithName:(id)arg1 context:(id)arg2;
@@ -71,5 +79,6 @@
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
 - (id)viewControllerID;
 - (void)willActivate;
+- (void)willDisappear;
 
 @end

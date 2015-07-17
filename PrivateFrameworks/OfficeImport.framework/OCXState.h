@@ -3,14 +3,13 @@
  */
 
 @interface OCXState : NSObject {
-    CXNamespace *mOCXDrawingNamespace;
-    CXNamespace *mOCXRelationshipsNamespace;
-    int mXMLFormat;
+    CXNamespace * mOCXDrawingNamespace;
+    CXNamespace * mOCXRelationshipsNamespace;
+    int  mXMLFormat;
 }
 
 @property (nonatomic, retain) CXNamespace *OCXDrawingNamespace;
 @property (nonatomic, retain) CXNamespace *OCXRelationshipsNamespace;
-@property (nonatomic, readonly, copy) NSString *OCXThemeRelationshipType;
 @property (nonatomic, readonly) int xmlFormat;
 
 - (id)OCXCommentAuthorsRelationshipType;
@@ -32,6 +31,8 @@
 - (id)OCXSettingsRelationshipType;
 - (id)OCXSharedStringsRelationshipType;
 - (id)OCXSlideLayoutRelationshipType;
+- (id)OCXSlideMasterRelationshipType;
+- (id)OCXSlideRelationshipType;
 - (id)OCXStylesRelationshipType;
 - (id)OCXTableRelationshipType;
 - (id)OCXTableStylesRelationshipType;

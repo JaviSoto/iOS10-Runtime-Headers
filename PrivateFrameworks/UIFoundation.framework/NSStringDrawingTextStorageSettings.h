@@ -14,7 +14,7 @@
             unsigned int typesetterBehavior : 8; 
             unsigned int reserved : 20; 
         } _flags; 
-    } _settings;
+    }  _settings;
 }
 
 + (id)threadSpecificStringDrawingTextStorageSettings:(BOOL)arg1;

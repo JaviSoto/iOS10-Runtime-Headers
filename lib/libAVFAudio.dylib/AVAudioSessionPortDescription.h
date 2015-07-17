@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioSessionPortDescription : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (readonly) NSString *UID;
@@ -13,6 +13,8 @@
 @property (readonly) NSString *portType;
 @property (readonly) AVAudioSessionDataSourceDescription *preferredDataSource;
 @property (readonly) AVAudioSessionDataSourceDescription *selectedDataSource;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
 
 + (id)privateCreateOrConfigureArray:(id)arg1 withRawPortArray:(id)arg2;
 + (BOOL)privateMatchesInputs:(id)arg1 toRawInputs:(id)arg2;
@@ -37,5 +39,9 @@
 - (BOOL)privateMatchesRawDescription:(id)arg1;
 - (id)selectedDataSource;
 - (BOOL)setPreferredDataSource:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (BOOL)rc_shouldExpectFaceContact;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DLightShaderEffect : TSCH3DShaderEffect {
-    unsigned int mLightCount;
+    unsigned int  mLightCount;
 }
 
 + (void)createStateInEffectsStates:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface PKContent : NSObject <NSSecureCoding> {
-    NSURL *_appLaunchURL;
-    PKBarcode *_barcode;
-    NSString *_localizedDescription;
-    NSArray *_storeIdentifiers;
+    NSURL * _appLaunchURL;
+    PKBarcode * _barcode;
+    NSString * _localizedDescription;
+    NSArray * _storeIdentifiers;
 }
 
 @property (nonatomic, copy) NSURL *appLaunchURL;

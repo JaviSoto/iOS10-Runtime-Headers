@@ -3,7 +3,7 @@
  */
 
 @interface PLPlacesMapKitSupport : NSObject {
-    Class _annotationViewClass;
+    Class  _annotationViewClass;
     struct { 
         struct { 
             double x; 
@@ -13,7 +13,7 @@
             double width; 
             double height; 
         } size; 
-    } _mapRectNull;
+    }  _mapRectNull;
     struct { 
         struct { 
             double x; 
@@ -23,21 +23,21 @@
             double width; 
             double height; 
         } size; 
-    } _mapRectWorld;
-    Class _mapViewClass;
-    int (*_mkCoordinateForMapPoint;
-    int (*_mkCoordinateRegionForMapRect;
-    int (*_mkMapPointForCoordinate;
-    int (*_mkMapPointsPerMeterAtLatitude;
-    int (*_mkMapRectForCoordinateRegion;
-    int (*_mkMapRectIntersectsMapRectWrappingMeridian;
-    int (*_mkMapRectIntersectsRect;
-    int (*_mkMapRectMakeWithRadialDistance;
-    int (*_mkMapRectUnion;
-    int (*_mkMetersPerMapPointAtLatitude;
-    Class _pinAnnotationViewClass;
-    Class _polylineClass;
-    Class _polylineViewClass;
+    }  _mapRectWorld;
+    Class  _mapViewClass;
+    int (* _mkCoordinateForMapPoint;
+    int (* _mkCoordinateRegionForMapRect;
+    int (* _mkMapPointForCoordinate;
+    int (* _mkMapPointsPerMeterAtLatitude;
+    int (* _mkMapRectForCoordinateRegion;
+    int (* _mkMapRectIntersectsMapRectWrappingMeridian;
+    int (* _mkMapRectIntersectsRect;
+    int (* _mkMapRectMakeWithRadialDistance;
+    int (* _mkMapRectUnion;
+    int (* _mkMetersPerMapPointAtLatitude;
+    Class  _pinAnnotationViewClass;
+    Class  _polylineClass;
+    Class  _polylineViewClass;
 }
 
 + (id)sharedInstance;

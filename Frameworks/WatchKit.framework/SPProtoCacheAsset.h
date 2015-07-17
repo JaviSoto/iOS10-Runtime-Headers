@@ -3,10 +3,10 @@
  */
 
 @interface SPProtoCacheAsset : PBCodable <NSCopying> {
-    double _accessDate;
-    NSString *_key;
-    unsigned long long _size;
-    unsigned int _state;
+    double  _accessDate;
+    NSString * _key;
+    unsigned long long  _size;
+    unsigned int  _state;
 }
 
 @property (nonatomic) double accessDate;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUITracklistHeaderCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    UIView *_bottomSeparatorView;
-    SKUITracklistColumnData *_columnData;
-    NSMutableDictionary *_columnViews;
-    UIView *_topSeparatorView;
+    UIView * _bottomSeparatorView;
+    SKUITracklistColumnData * _columnData;
+    NSMutableDictionary * _columnViews;
+    UIView * _topSeparatorView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

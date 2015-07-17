@@ -3,13 +3,13 @@
  */
 
 @interface MCDTableViewController : MPUTableViewController {
-    AVExternalDevice *_externalDevice;
-    BOOL _limitedUI;
-    BOOL _limiting;
-    UIView *_nowPlayingButton;
-    BOOL _shouldHideIndexTitles;
-    BOOL _showMore;
-    UIView *_snapshotView;
+    AVExternalDevice * _externalDevice;
+    BOOL  _limitedUI;
+    BOOL  _limiting;
+    UIView * _nowPlayingButton;
+    BOOL  _shouldHideIndexTitles;
+    BOOL  _showMore;
+    UIView * _snapshotView;
 }
 
 @property (nonatomic) BOOL limitedUI;

@@ -3,15 +3,15 @@
  */
 
 @interface PKPaymentRegistrationResponse : PKPaymentWebServiceResponse {
-    NSURL *_brokerURL;
-    NSNumber *_cardsOnFile;
-    NSArray *_certificates;
-    NSString *_deviceIdentifier;
-    NSNumber *_maxCards;
-    NSURL *_paymentServicesURL;
-    NSString *_primaryRegion;
-    NSDictionary *_regions;
-    NSURL *_trustedServiceManagerURL;
+    NSURL * _brokerURL;
+    NSNumber * _cardsOnFile;
+    NSArray * _certificates;
+    NSString * _deviceIdentifier;
+    NSNumber * _maxCards;
+    NSURL * _paymentServicesURL;
+    NSString * _primaryRegion;
+    NSDictionary * _regions;
+    NSURL * _trustedServiceManagerURL;
 }
 
 @property (nonatomic, retain) NSURL *brokerURL;

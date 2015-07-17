@@ -3,8 +3,8 @@
  */
 
 @interface PTSHUDRow : NSObject {
-    NSArray *_controls;
-    float _height;
+    NSArray * _controls;
+    float  _height;
 }
 
 @property (nonatomic, retain) NSArray *controls;

@@ -3,12 +3,12 @@
  */
 
 @interface CKAudioProgressView : CKBalloonImageView {
-    BOOL _color;
-    IMManualUpdater *_displayUpdater;
-    BOOL _played;
-    BOOL _playing;
-    float _progress;
-    int _style;
+    BOOL  _color;
+    IMManualUpdater * _displayUpdater;
+    BOOL  _played;
+    BOOL  _playing;
+    float  _progress;
+    int  _style;
 }
 
 @property (nonatomic) BOOL color;

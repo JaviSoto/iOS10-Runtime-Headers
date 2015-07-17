@@ -3,19 +3,19 @@
  */
 
 @interface PLInteractiveNavigationControllerView : UIView <UINavigationBarDelegate> {
-    UIView *_bottom;
+    UIView * _bottom;
     struct { 
         unsigned int transitioning : 1; 
         unsigned int headerViewIsVisible : 1; 
         unsigned int footerViewIsVisible : 1; 
-    } _controllerViewFlags;
-    UIView *_footer;
-    UIView *_header;
-    UIView *_interactive;
-    UINavigationBar *_navBar;
-    int _orientation;
-    UIView *_overlay;
-    UIView *_top;
+    }  _controllerViewFlags;
+    UIView * _footer;
+    UIView * _header;
+    UIView * _interactive;
+    UINavigationBar * _navBar;
+    int  _orientation;
+    UIView * _overlay;
+    UIView * _top;
 }
 
 @property (nonatomic, retain) UIView *bottomView;
@@ -26,7 +26,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *headerView;
 @property (getter=headerViewIsHidden, nonatomic) BOOL headerViewHidden;
-@property (nonatomic, readonly) UINavigationBar *navigationBar;
+@property (nonatomic, readonly, retain) UINavigationBar *navigationBar;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *topView;
 

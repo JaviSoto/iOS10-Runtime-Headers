@@ -3,7 +3,7 @@
  */
 
 @interface BRCZonePurgeOperation : _BRCOperation <BRCOperationSubclass> {
-    BRCPrivateServerZone *_serverZone;
+    BRCPrivateServerZone * _serverZone;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,5 +15,6 @@
 - (id)initWithServerZone:(id)arg1;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

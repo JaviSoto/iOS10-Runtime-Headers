@@ -3,11 +3,11 @@
  */
 
 @interface CHDData : NSObject {
-    unsigned int mContentFormatId;
-    unsigned int mDataValueIndexCount;
-    CHDDataValuesCollection *mDataValues;
-    CHDFormula *mFormula;
-    EDResources *mResources;
+    unsigned int  mContentFormatId;
+    unsigned int  mDataValueIndexCount;
+    CHDDataValuesCollection * mDataValues;
+    CHDFormula * mFormula;
+    EDResources * mResources;
 }
 
 + (id)dataWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
@@ -20,6 +20,7 @@
 - (unsigned int)dataValueIndexCount;
 - (id)dataValues;
 - (void)dealloc;
+- (id)description;
 - (id)firstValueContentFormatWithWorkbook:(id)arg1;
 - (id)formula;
 - (id)initWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;

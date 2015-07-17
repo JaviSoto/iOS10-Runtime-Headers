@@ -3,10 +3,10 @@
  */
 
 @interface _GEONSURLConnectionWaiter : NSObject <NSURLConnectionDelegate> {
-    id /* block */ _callback;
-    NSURLConnection *_conn;
-    NSMutableData *_data;
-    NSURLResponse *_response;
+    id /* block */  _callback;
+    NSURLConnection * _conn;
+    NSMutableData * _data;
+    NSURLResponse * _response;
 }
 
 @property (nonatomic, copy) id /* block */ callback;

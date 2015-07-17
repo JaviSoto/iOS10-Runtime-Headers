@@ -3,13 +3,13 @@
  */
 
 @interface SKUIMenuPageSection : SKUIStorePageSection <SKUIMenuViewControllerDelegate, SKUIPopupMenuDelegate, SKUISortDataRequestDelegate, UIPopoverControllerDelegate> {
-    UIBarButtonItem *_cancelMenuItem;
-    SKUIMenuViewController *_moreListMenuViewController;
-    UIPopoverController *_moreListPopoverController;
-    SKUIPillsControl *_pillsControl;
-    SKUIPopupMenuHeaderView *_popupHeaderView;
-    int _selectedIndex;
-    NSMutableIndexSet *_sortRequestIndexSet;
+    UIBarButtonItem * _cancelMenuItem;
+    SKUIMenuViewController * _moreListMenuViewController;
+    UIPopoverController * _moreListPopoverController;
+    SKUIPillsControl * _pillsControl;
+    SKUIPopupMenuHeaderView * _popupHeaderView;
+    int  _selectedIndex;
+    NSMutableIndexSet * _sortRequestIndexSet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

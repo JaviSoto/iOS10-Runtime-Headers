@@ -3,28 +3,28 @@
  */
 
 @interface _MKResultView : UIView <MKLocationManagerObserver> {
-    BOOL _alwaysUsesBusinessLayout;
-    <_MKResultViewDelegate> *_delegate;
-    double _fallbackDistance;
-    int _iconFormat;
-    UIImageView *_imageView;
-    int _layoutType;
-    MKLocationManager *_locManager;
-    NSArray *_mapItems;
-    UILabel *_nameLabel;
-    NSString *_primaryLabelText;
-    UIColor *_primaryTextColor;
-    NSTimer *_refLocationTimer;
-    CLLocation *_referenceLocation;
-    NSMutableArray *_resultConstraints;
-    UILabel *_secondaryLabel;
-    NSString *_secondaryLabelText;
-    UIColor *_secondaryTextColor;
-    BOOL _selected;
-    BOOL _showsDistance;
-    UILabel *_tertiaryLabel;
-    BOOL _useSpotlightVibrancy;
-    <_MKResultViewDelegate> *delegate;
+    BOOL  _alwaysUsesBusinessLayout;
+    <_MKResultViewDelegate> * _delegate;
+    double  _fallbackDistance;
+    int  _iconFormat;
+    UIImageView * _imageView;
+    int  _layoutType;
+    MKLocationManager * _locManager;
+    NSArray * _mapItems;
+    UILabel * _nameLabel;
+    NSString * _primaryLabelText;
+    UIColor * _primaryTextColor;
+    NSTimer * _refLocationTimer;
+    CLLocation * _referenceLocation;
+    NSMutableArray * _resultConstraints;
+    UILabel * _secondaryLabel;
+    NSString * _secondaryLabelText;
+    UIColor * _secondaryTextColor;
+    BOOL  _selected;
+    BOOL  _showsDistance;
+    UILabel * _tertiaryLabel;
+    BOOL  _useSpotlightVibrancy;
+    <_MKResultViewDelegate> * delegate;
 }
 
 @property (nonatomic) BOOL alwaysUsesBusinessLayout;
@@ -83,6 +83,7 @@
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
+- (id)initWithIndexableFavorite:(id)arg1;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
@@ -111,6 +112,7 @@
 - (void)setFallbackDistance:(double)arg1;
 - (void)setIconFormat:(int)arg1;
 - (void)setImageView:(id)arg1;
+- (void)setIndexableFavorite:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMapItems:(id)arg1;
 - (void)setNameLabel:(id)arg1;

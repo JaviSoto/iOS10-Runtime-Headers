@@ -3,10 +3,10 @@
  */
 
 @interface ObjectTracker : NSObject {
-    void *_context;
-    unsigned int _flags;
-    id _obj;
-    int (*_release_f;
+    void * _context;
+    unsigned int  _flags;
+    id  _obj;
+    int (* _release_f;
 }
 
 - (void)dealloc;

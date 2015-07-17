@@ -3,25 +3,25 @@
  */
 
 @interface PUHorizontalCollectionViewLayout : UICollectionViewLayout {
-    NSArray *_cachedItemLayoutAttributes;
-    NSArray *_cachedSectionFrames;
+    NSArray * _cachedItemLayoutAttributes;
+    NSArray * _cachedSectionFrames;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    <PUHorizontalCollectionViewLayoutDelegate> *_delegate;
-    float _interitemSpacing;
+    }  _contentSize;
+    <PUHorizontalCollectionViewLayoutDelegate> * _delegate;
+    float  _interitemSpacing;
     struct CGSize { 
         float width; 
         float height; 
-    } _itemSize;
+    }  _itemSize;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _itemsContentInset;
-    NSArray *_lastRequestedLayoutAttributesInRect;
+    }  _itemsContentInset;
+    NSArray * _lastRequestedLayoutAttributesInRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,7 +31,7 @@
             float width; 
             float height; 
         } size; 
-    } _lastRequestedRect;
+    }  _lastRequestedRect;
 }
 
 @property (nonatomic) <PUHorizontalCollectionViewLayoutDelegate> *delegate;

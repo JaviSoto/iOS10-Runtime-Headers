@@ -6,15 +6,15 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _acceleration;
+    }  _acceleration;
     struct CGPoint { 
         float x; 
         float y; 
-    } _referenceAcceleration;
+    }  _referenceAcceleration;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _referenceOffset;
+    }  _referenceOffset;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } acceleration;

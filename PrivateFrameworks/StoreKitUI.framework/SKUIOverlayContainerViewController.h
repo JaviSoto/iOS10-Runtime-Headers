@@ -3,13 +3,13 @@
  */
 
 @interface SKUIOverlayContainerViewController : UIViewController <UIGestureRecognizerDelegate> {
-    UIControl *_backstopView;
-    <SKUIOverlayContainerDelegate> *_delegate;
-    BOOL _isAdjustingViewsForDismiss;
-    int _popViewControllerCount;
-    int _selectedViewControllerIndex;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    NSMutableArray *_viewControllers;
+    UIControl * _backstopView;
+    <SKUIOverlayContainerDelegate> * _delegate;
+    BOOL  _isAdjustingViewsForDismiss;
+    int  _popViewControllerCount;
+    int  _selectedViewControllerIndex;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    NSMutableArray * _viewControllers;
 }
 
 @property (nonatomic, readonly) UIControl *backstopControl;

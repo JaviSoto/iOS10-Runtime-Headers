@@ -3,16 +3,16 @@
  */
 
 @interface PUCroppingImageView : UIView {
-    UIView *_accessoryView;
+    UIView * _accessoryView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _accessoryViewInsets;
-    UIImage *_image;
-    unsigned int _imageFillMode;
-    UIImageView *_imageView;
+    }  _accessoryViewInsets;
+    UIImage * _image;
+    unsigned int  _imageFillMode;
+    UIImageView * _imageView;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;

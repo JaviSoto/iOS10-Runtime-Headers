@@ -3,9 +3,9 @@
  */
 
 @interface _UIQueueingServiceWebViewControllerProxy : NSObject {
-    <_UIQueueingServiceWebViewControllerProxyDelegate> *_delegate;
-    NSMutableArray *_queuedInvocations;
-    id _serviceViewControllerProxy;
+    <_UIQueueingServiceWebViewControllerProxyDelegate> * _delegate;
+    NSMutableArray * _queuedInvocations;
+    id  _serviceViewControllerProxy;
 }
 
 @property (nonatomic) <_UIQueueingServiceWebViewControllerProxyDelegate> *delegate;

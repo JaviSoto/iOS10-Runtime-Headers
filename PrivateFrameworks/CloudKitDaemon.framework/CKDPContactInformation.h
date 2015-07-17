@@ -3,10 +3,10 @@
  */
 
 @interface CKDPContactInformation : PBCodable <NSCopying> {
-    NSString *_containerScopedUserId;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    NSString *_lastName;
+    NSString * _containerScopedUserId;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    NSString * _lastName;
 }
 
 @property (nonatomic, retain) NSString *containerScopedUserId;

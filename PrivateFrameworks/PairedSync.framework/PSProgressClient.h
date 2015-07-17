@@ -3,8 +3,8 @@
  */
 
 @interface PSProgressClient : NSObject <PSYProgressClient> {
-    PSYProgressObserver *_progressObserver;
-    NSObject<OS_dispatch_queue> *_queue;
+    PSYProgressObserver * _progressObserver;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoEditToolControllerSpec : PUViewControllerSpec <PUPhotoEditLayoutDynamicAdaptable> {
-    int _layoutOrientation;
+    int  _layoutOrientation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface _UITextDocumentInterface : UIInputViewControllerInterface <UITextDocumentProxy> {
-    _UIInputViewControllerOutput *_controllerOutput;
-    _UIInputViewControllerState *_controllerState;
-    <_UITextDocumentInterfaceDelegate> *_delegate;
-    TIKeyboardOutput *_keyboardOutput;
+    _UIInputViewControllerOutput * _controllerOutput;
+    _UIInputViewControllerState * _controllerState;
+    <_UITextDocumentInterfaceDelegate> * _delegate;
+    TIKeyboardOutput * _keyboardOutput;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -24,6 +24,7 @@
 @property (nonatomic) int keyboardAppearance;
 @property (getter=_keyboardOutput, nonatomic, readonly) TIKeyboardOutput *keyboardOutput;
 @property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;

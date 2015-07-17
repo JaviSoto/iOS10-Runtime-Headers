@@ -3,8 +3,8 @@
  */
 
 @interface MPUBlurEffectView : MPUEffectView {
-    UIImageView *_blurImageView;
-    MPUPinningView *_blurView;
+    UIImageView * _blurImageView;
+    MPUPinningView * _blurView;
 }
 
 @property (nonatomic, retain) UIImageView *blurImageView;

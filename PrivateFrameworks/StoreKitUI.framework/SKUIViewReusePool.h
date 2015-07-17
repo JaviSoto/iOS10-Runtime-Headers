@@ -3,9 +3,9 @@
  */
 
 @interface SKUIViewReusePool : NSObject {
-    UIView *_parentView;
-    NSMutableDictionary *_reuseClasses;
-    NSMutableArray *_viewPool;
+    UIView * _parentView;
+    NSMutableDictionary * _reuseClasses;
+    NSMutableArray * _viewPool;
 }
 
 - (void).cxx_destruct;

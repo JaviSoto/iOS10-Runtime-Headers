@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarItem : NSObject {
-    int _idiom;
-    int _type;
+    int  _idiom;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *indicatorName;

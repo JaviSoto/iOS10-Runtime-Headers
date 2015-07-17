@@ -3,12 +3,12 @@
  */
 
 @interface CKDAcceptShareInfo : NSObject {
-    NSString *_etag;
-    NSData *_publicKey;
-    NSData *_publicPCSData;
-    NSString *_publicPCSEtag;
-    CKShareID *_shareID;
-    NSURL *_shareURL;
+    NSString * _etag;
+    NSData * _publicKey;
+    NSData * _publicPCSData;
+    NSString * _publicPCSEtag;
+    CKShareID * _shareID;
+    NSURL * _shareURL;
 }
 
 @property (nonatomic, retain) NSString *etag;

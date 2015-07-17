@@ -3,14 +3,14 @@
  */
 
 @interface AWDNFCSEAIDSelectEvent : PBCodable <NSCopying> {
-    NSData *_aid;
+    NSData * _aid;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic, retain) NSData *aid;

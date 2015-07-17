@@ -3,18 +3,18 @@
  */
 
 @interface BRCServerItem : NSObject <BRCItem> {
-    BRCLocalContainer *_container;
-    BRCItemID *_itemID;
-    BRCVersion *_latestVersion;
-    BOOL _needsInsert;
-    NSString *_originalName;
-    NSNumber *_ownerKey;
-    long long _rank;
-    BRCServerZone *_serverZone;
-    BRCAccountSession *_session;
-    unsigned int _sharingOptions;
-    BRCStatInfo *_st;
-    BRCServerZone *_zone;
+    BRCLocalContainer * _container;
+    BRCItemID * _itemID;
+    BRCVersion * _latestVersion;
+    BOOL  _needsInsert;
+    NSString * _originalName;
+    NSNumber * _ownerKey;
+    long long  _rank;
+    BRCServerZone * _serverZone;
+    BRCAccountSession * _session;
+    unsigned int  _sharingOptions;
+    BRCStatInfo * _st;
+    BRCServerZone * _zone;
 }
 
 @property (nonatomic, readonly) BRCLocalContainer *container;

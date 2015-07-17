@@ -3,12 +3,12 @@
  */
 
 @interface GEOPDAutocompleteResultSection : PBCodable <NSCopying> {
-    NSMutableArray *_entries;
+    NSMutableArray * _entries;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    NSString *_name;
-    int _type;
+    }  _has;
+    NSString * _name;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;

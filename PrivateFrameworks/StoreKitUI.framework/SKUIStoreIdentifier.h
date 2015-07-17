@@ -3,9 +3,9 @@
  */
 
 @interface SKUIStoreIdentifier : NSObject <NSCopying> {
-    int _identiferType;
-    NSNumber *_itemIdentifier;
-    NSString *_podcastFeedURLIdentifier;
+    int  _identiferType;
+    NSNumber * _itemIdentifier;
+    NSString * _podcastFeedURLIdentifier;
 }
 
 @property (nonatomic, readonly) int identiferType;

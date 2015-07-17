@@ -3,13 +3,13 @@
  */
 
 @interface AVAssetReaderInternal : NSObject {
-    AVWeakKeyValueObserverProxy *KVOProxy;
-    AVAsset *asset;
-    NSError *error;
-    struct OpaqueFigAssetReader { } *figAssetReader;
-    NSMutableArray *outputs;
-    int status;
-    NSObject<OS_dispatch_queue> *statusReadWriteQueue;
+    AVAsset * asset;
+    NSError * error;
+    struct OpaqueFigAssetReader { } * figAssetReader;
+    NSMutableSet * outputFinishedCallbackInvokers;
+    NSMutableArray * outputs;
+    int  status;
+    NSObject<OS_dispatch_queue> * statusReadWriteQueue;
     struct { 
         struct { 
             long long value; 
@@ -23,8 +23,8 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
-    } timeRange;
-    AVWeakReference *weakReference;
+    }  timeRange;
+    AVWeakReference * weakReference;
 }
 
 @end

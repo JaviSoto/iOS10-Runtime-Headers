@@ -3,17 +3,19 @@
  */
 
 @interface SBFMappedImageCache : NSObject {
-    NSMutableSet *_allKeys;
-    NSMutableDictionary *_images;
-    NSString *_path;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet * _allKeys;
+    NSMutableDictionary * _images;
+    NSString * _path;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
++ (id)systemAppPersistenteCache;
 + (id)wallpaperCache;
 
 - (id)allKeys;
 - (void)dealloc;
 - (id)imageForKey:(id)arg1;
+- (id)imageForKey:(id)arg1 cacheOptions:(unsigned int)arg2 generateImageWithBlockIfNecessary:(id /* block */)arg3;
 - (id)imageForKey:(id)arg1 generateImageWithBlockIfNecessary:(id /* block */)arg2;
 - (id)imageForKey:(id)arg1 options:(int)arg2;
 - (id)imageForKey:(id)arg1 options:(int)arg2 generateImageWithBlockIfNecessary:(id /* block */)arg3;

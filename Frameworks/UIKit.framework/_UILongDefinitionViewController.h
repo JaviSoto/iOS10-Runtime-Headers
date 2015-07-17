@@ -3,10 +3,10 @@
  */
 
 @interface _UILongDefinitionViewController : UIViewController {
-    _UIDefinitionValue *_definitionValue;
+    _UIDefinitionValue * _definitionValue;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithDefinitionValue:(id)arg1;
 - (void)viewDidLoad;
 

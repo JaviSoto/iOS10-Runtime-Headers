@@ -3,10 +3,11 @@
  */
 
 @interface UIGestureRecognizerTarget : NSObject {
-    SEL _action;
-    id _target;
+    SEL  _action;
+    id  _target;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 
 @end

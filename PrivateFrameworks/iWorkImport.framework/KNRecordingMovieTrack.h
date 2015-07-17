@@ -3,7 +3,7 @@
  */
 
 @interface KNRecordingMovieTrack : TSPObject {
-    NSArray *mMovieSegments;
+    NSArray * mMovieSegments;
 }
 
 @property (nonatomic, readonly) NSArray *movieSegments;

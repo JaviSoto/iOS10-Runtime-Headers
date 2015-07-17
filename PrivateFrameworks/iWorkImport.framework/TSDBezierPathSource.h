@@ -3,12 +3,12 @@
  */
 
 @interface TSDBezierPathSource : TSDPathSource <TSDMixing> {
-    BOOL mIsRectangular;
+    BOOL  mIsRectangular;
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
-    TSUBezierPath *mPath;
+    }  mNaturalSize;
+    TSUBezierPath * mPath;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;

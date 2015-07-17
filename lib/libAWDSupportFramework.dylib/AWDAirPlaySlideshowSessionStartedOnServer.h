@@ -3,23 +3,23 @@
  */
 
 @interface AWDAirPlaySlideshowSessionStartedOnServer : PBCodable <NSCopying> {
-    NSString *_clientModel;
-    NSString *_clientVersion;
+    NSString * _clientModel;
+    NSString * _clientVersion;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int repeat : 1; 
         unsigned int slideMs : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
-    } _has;
-    unsigned int _repeat;
-    NSString *_sessionUUID;
-    unsigned int _slideMs;
-    int _status;
-    NSString *_theme;
-    unsigned long long _timestamp;
-    NSString *_transition;
-    unsigned int _transportType;
+    }  _has;
+    unsigned int  _repeat;
+    NSString * _sessionUUID;
+    unsigned int  _slideMs;
+    int  _status;
+    NSString * _theme;
+    unsigned long long  _timestamp;
+    NSString * _transition;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic, retain) NSString *clientModel;

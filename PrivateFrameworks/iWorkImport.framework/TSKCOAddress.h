@@ -3,8 +3,8 @@
  */
 
 @interface TSKCOAddress : NSObject {
-    NSArray *mAllPathElements;
-    TSKCOAddress *mParent;
+    NSArray * mAllPathElements;
+    TSKCOAddress * mParent;
 }
 
 @property (nonatomic, readonly) NSArray *allPathElements;

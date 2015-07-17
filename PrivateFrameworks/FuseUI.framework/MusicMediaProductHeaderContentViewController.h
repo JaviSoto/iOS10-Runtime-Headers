@@ -3,28 +3,28 @@
  */
 
 @interface MusicMediaProductHeaderContentViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicEntityProductHeaderLockupViewDelegate, MusicMediaDetailHeaderContentViewController> {
-    MusicContextualLibraryUpdateAlertAction *_addRemoveLibraryAlertAction;
-    NSArray *_addRemoveNotificationObservers;
-    BOOL _allowsEditing;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    <MusicEntityProviding> *_contextualActionsOverrideTracklistEntityProvider;
-    <MusicMediaProductHeaderContentViewControllerDelegate> *_delegate;
-    UIImage *_editedContentArtworkImage;
-    MusicHairlineView *_hairlineView;
-    BOOL _hairlineVisible;
-    NSString *_lockupArtworkProperty;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    BOOL _needToMakeTitleFirstResponder;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    int _presentationSource;
-    MusicEntityViewProductHeaderLockupContentDescriptor *_productHeaderLockupContentDecriptor;
-    MusicEntityProductHeaderLockupView *_productHeaderLockupView;
-    BOOL _shouldDelayTransitionProgress;
-    float _transitionProgress;
-    BOOL _wantsRefreshActivityIndicator;
+    MusicContextualLibraryUpdateAlertAction * _addRemoveLibraryAlertAction;
+    NSArray * _addRemoveNotificationObservers;
+    BOOL  _allowsEditing;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    <MusicEntityProviding> * _contextualActionsOverrideTracklistEntityProvider;
+    <MusicMediaProductHeaderContentViewControllerDelegate> * _delegate;
+    UIImage * _editedContentArtworkImage;
+    MusicHairlineView * _hairlineView;
+    BOOL  _hairlineVisible;
+    NSString * _lockupArtworkProperty;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    BOOL  _needToMakeTitleFirstResponder;
+    MusicEntityPlaybackStatusController * _playbackStatusController;
+    MPAVController * _player;
+    int  _presentationSource;
+    MusicEntityViewProductHeaderLockupContentDescriptor * _productHeaderLockupContentDecriptor;
+    MusicEntityProductHeaderLockupView * _productHeaderLockupView;
+    BOOL  _shouldDelayTransitionProgress;
+    float  _transitionProgress;
+    BOOL  _wantsRefreshActivityIndicator;
 }
 
 @property (nonatomic, readonly) MusicEntityValueContext *_containerEntityValueContext;

@@ -3,27 +3,27 @@
  */
 
 @interface CKAudioAnalyzer : NSObject <Endpointer> {
-    struct OpaqueAudioComponentInstance { } *_audioUnitEPVAD;
-    float _decoderLatency;
-    BOOL _detectedMusic;
-    double _endWaitTime;
-    int _endpointMode;
-    NSMutableData *_floatSampleBuffer;
+    struct OpaqueAudioComponentInstance { } * _audioUnitEPVAD;
+    float  _decoderLatency;
+    BOOL  _detectedMusic;
+    double  _endWaitTime;
+    int  _endpointMode;
+    NSMutableData * _floatSampleBuffer;
     struct { 
         float rms; 
         unsigned int zc; 
-    } _frameAnalysisArray;
-    unsigned long _frameRate;
-    unsigned int _framesSeen;
-    float _heuristicTransitionRatio;
-    float _heuristicWindowSec;
-    unsigned long _inMaxSamplesPerBuffer;
-    double _interspeechWaitTime;
-    NSDictionary *_modelDict;
-    double _sampleRate;
-    double _samplesSeen;
-    float _speechPaddingFactor;
-    double _startWaitTime;
+    }  _frameAnalysisArray;
+    unsigned long  _frameRate;
+    unsigned int  _framesSeen;
+    float  _heuristicTransitionRatio;
+    float  _heuristicWindowSec;
+    unsigned long  _inMaxSamplesPerBuffer;
+    double  _interspeechWaitTime;
+    NSDictionary * _modelDict;
+    double  _sampleRate;
+    double  _samplesSeen;
+    float  _speechPaddingFactor;
+    double  _startWaitTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;

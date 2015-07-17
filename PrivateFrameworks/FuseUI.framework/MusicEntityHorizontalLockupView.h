@@ -3,21 +3,21 @@
  */
 
 @interface MusicEntityHorizontalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, RUTrackDownloadViewDelegate> {
-    MPUHalfTintedTransportButton *_addButton;
-    RUTrackDownloadView *_buyButton;
-    UIButton *_contextualActionsButton;
-    <MusicEntityHorizontalLockupViewDelegate> *_delegate;
+    MPUHalfTintedTransportButton * _addButton;
+    RUTrackDownloadView * _buyButton;
+    UIButton * _contextualActionsButton;
+    <MusicEntityHorizontalLockupViewDelegate> * _delegate;
     struct { 
         unsigned int didSelectAddButton : 1; 
         unsigned int didSelectContextualActionsButton : 1; 
         unsigned int didSelectPlayButton : 1; 
         unsigned int didLayoutSubviews : 1; 
         unsigned int shouldLayoutAsEditing : 1; 
-    } _delegateRespondsToSelector;
-    UIImageView *_explicitBadgeImageView;
-    MusicEntityViewHorizontalLockupContentDescriptor *_horizontalContentDescriptor;
-    BOOL _isContainedWithinSplitViewPrimary;
-    float _textContentLeftInset;
+    }  _delegateRespondsToSelector;
+    UIImageView * _explicitBadgeImageView;
+    MusicEntityViewHorizontalLockupContentDescriptor * _horizontalContentDescriptor;
+    BOOL  _isContainedWithinSplitViewPrimary;
+    float  _textContentLeftInset;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

@@ -3,12 +3,12 @@
  */
 
 @interface PUCloudPhotoWelcomeViewController : UIViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeViewDelegate> {
-    BOOL _enableOnAppear;
-    PSCloudStorageOffersManager *_offersManager;
-    BOOL _requireStorageUpgrade;
-    UIBarButtonItem *_skipBarButtonItem;
-    AAUIGenericTermsRemoteUI *_termsManager;
-    PUCloudPhotoWelcomeView *_welcomeView;
+    BOOL  _enableOnAppear;
+    PSCloudStorageOffersManager * _offersManager;
+    BOOL  _requireStorageUpgrade;
+    UIBarButtonItem * _skipBarButtonItem;
+    AAUIGenericTermsRemoteUI * _termsManager;
+    PUCloudPhotoWelcomeView * _welcomeView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUCloudPhotoWelcomeView *welcomeView;
 
-+ (void)_enablePhotoStream;
 + (BOOL)_isPhotoStreamEnabled;
 + (void)showIfNecessaryWithPresentingViewController:(id)arg1;
 + (void)showWithPresentingViewController:(id)arg1;

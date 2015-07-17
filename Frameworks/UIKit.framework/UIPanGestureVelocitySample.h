@@ -3,15 +3,15 @@
  */
 
 @interface UIPanGestureVelocitySample : NSObject {
-    double dt;
+    double  dt;
     struct CGPoint { 
         float x; 
         float y; 
-    } end;
+    }  end;
     struct CGPoint { 
         float x; 
         float y; 
-    } start;
+    }  start;
 }
 
 @property double dt;

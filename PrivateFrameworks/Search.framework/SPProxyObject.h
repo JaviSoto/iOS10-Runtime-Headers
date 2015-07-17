@@ -3,7 +3,7 @@
  */
 
 @interface SPProxyObject : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, retain) NSDictionary *dictionary;

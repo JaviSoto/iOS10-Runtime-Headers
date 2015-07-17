@@ -3,9 +3,9 @@
  */
 
 @interface CUIThemeSchemaLayer : NSObject {
-    unsigned int _index;
-    NSString *_name;
-    NSArray *_renditions;
+    unsigned int  _index;
+    NSString * _name;
+    NSArray * _renditions;
 }
 
 @property (nonatomic) unsigned int index;

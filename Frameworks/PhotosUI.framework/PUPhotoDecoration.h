@@ -3,9 +3,9 @@
  */
 
 @interface PUPhotoDecoration : NSObject <NSCopying> {
-    UIColor *_borderColor;
-    float _borderWidth;
-    UIColor *_foregroundColor;
+    UIColor * _borderColor;
+    float  _borderWidth;
+    UIColor * _foregroundColor;
 }
 
 @property (nonatomic, copy) UIColor *borderColor;

@@ -3,26 +3,26 @@
  */
 
 @interface KNAnimatedBuild : NSObject {
-    BOOL _animateAtEndOfPreviousBuild;
-    KNBuildAttributes *_attributes;
-    BOOL _automatic;
-    int _buildType;
-    unsigned int _deliveryOption;
-    unsigned int _deliveryStyle;
-    unsigned int _direction;
-    double _duration;
-    double _endTime;
-    double _eventEndTime;
-    int _eventIndex;
-    double _eventStartTime;
-    NSDictionary *_finalAttributes;
-    BOOL _isMovieStartBuild;
-    BOOL _isVisibleAtBeginning;
-    BOOL _isVisibleAtEnd;
-    Class _pluginClass;
-    NSDictionary *_previousAttributes;
-    int _stageIndex;
-    double _startTime;
+    BOOL  _animateAtEndOfPreviousBuild;
+    KNBuildAttributes * _attributes;
+    BOOL  _automatic;
+    int  _buildType;
+    unsigned int  _deliveryOption;
+    unsigned int  _deliveryStyle;
+    unsigned int  _direction;
+    double  _duration;
+    double  _endTime;
+    double  _eventEndTime;
+    int  _eventIndex;
+    double  _eventStartTime;
+    NSDictionary * _finalAttributes;
+    BOOL  _isMovieStartBuild;
+    BOOL  _isVisibleAtBeginning;
+    BOOL  _isVisibleAtEnd;
+    Class  _pluginClass;
+    NSDictionary * _previousAttributes;
+    int  _stageIndex;
+    double  _startTime;
 }
 
 @property (nonatomic) BOOL animateAtEndOfPreviousBuild;

@@ -3,13 +3,13 @@
  */
 
 @interface SKUIDynamicShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIObservableScrollViewDelegate, SKUIShelfPageSection, SKUIShelfPageSectionConfigurationDataSource, UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    SKUIShelfPageSectionConfiguration *_configuration;
-    SKUIDynamicPageSectionIndexMapper *_dynamicPageSectionIndexMapper;
-    SKUIShelfViewElement<SKUIDynamicShelfViewElement> *_dynamicShelfViewElement;
-    <SKUIEntityProviding> *_entityProvider;
-    SKUIViewElementTextLayoutCache *_labelLayoutCache;
-    <SKUIScrollViewDelegateObserver> *_scrollViewDelegateObserver;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    SKUIShelfPageSectionConfiguration * _configuration;
+    SKUIDynamicPageSectionIndexMapper * _dynamicPageSectionIndexMapper;
+    SKUIShelfViewElement<SKUIDynamicShelfViewElement> * _dynamicShelfViewElement;
+    <SKUIEntityProviding> * _entityProvider;
+    SKUIViewElementTextLayoutCache * _labelLayoutCache;
+    <SKUIScrollViewDelegateObserver> * _scrollViewDelegateObserver;
 }
 
 @property (nonatomic, readonly) SKUIShelfPageSectionConfiguration *configuration;

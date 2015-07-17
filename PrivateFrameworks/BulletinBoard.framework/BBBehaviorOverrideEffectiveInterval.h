@@ -3,12 +3,12 @@
  */
 
 @interface BBBehaviorOverrideEffectiveInterval : NSObject <BBBehaviorOverrideEffectivePeriod> {
-    NSCalendar *_calendar;
-    NSString *_calendarIdentifier;
-    NSDateComponents *_endComponents;
-    NSUUID *_identifier;
-    unsigned int _repeatInterval;
-    NSDateComponents *_startComponents;
+    NSCalendar * _calendar;
+    NSString * _calendarIdentifier;
+    NSDateComponents * _endComponents;
+    NSUUID * _identifier;
+    unsigned int  _repeatInterval;
+    NSDateComponents * _startComponents;
 }
 
 @property (nonatomic, copy) NSCalendar *calendar;

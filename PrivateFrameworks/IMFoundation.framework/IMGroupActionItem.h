@@ -3,10 +3,10 @@
  */
 
 @interface IMGroupActionItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    long long _actionType;
-    NSString *_otherCountryCode;
-    NSString *_otherHandle;
-    NSString *_otherUnformattedID;
+    long long  _actionType;
+    NSString * _otherCountryCode;
+    NSString * _otherHandle;
+    NSString * _otherUnformattedID;
 }
 
 @property (nonatomic) long long actionType;

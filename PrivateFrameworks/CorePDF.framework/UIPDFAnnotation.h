@@ -3,25 +3,25 @@
  */
 
 @interface UIPDFAnnotation : NSObject {
-    UIPDFAnnotationController *_annotationController;
-    NSString *_annotationID;
-    UIPDFAnnotationView *_annotationView;
-    void *_appearanceStream;
-    NSString *_associatedAnnotationID;
-    struct CGColor { } *_color;
-    NSString *_contents;
-    struct CGPDFDictionary { } *_dictionary;
-    CALayer *_drawingLayer;
-    BOOL _hidden;
-    int _index;
-    UIPDFPage *_page;
-    struct CGPDFString { } *_pdfContents;
-    UIPDFPopupAnnotation *_popup;
-    NSMutableArray *_quadPoints;
-    UIPDFSelection *_selection;
-    unsigned int _tag;
-    id data;
-    BOOL editable;
+    UIPDFAnnotationController * _annotationController;
+    NSString * _annotationID;
+    UIPDFAnnotationView * _annotationView;
+    void * _appearanceStream;
+    NSString * _associatedAnnotationID;
+    struct CGColor { } * _color;
+    NSString * _contents;
+    struct CGPDFDictionary { } * _dictionary;
+    CALayer * _drawingLayer;
+    BOOL  _hidden;
+    int  _index;
+    UIPDFPage * _page;
+    struct CGPDFString { } * _pdfContents;
+    UIPDFPopupAnnotation * _popup;
+    NSMutableArray * _quadPoints;
+    UIPDFSelection * _selection;
+    unsigned int  _tag;
+    id  data;
+    BOOL  editable;
 }
 
 @property (nonatomic) UIPDFAnnotationController *annotationController;

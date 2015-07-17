@@ -3,15 +3,15 @@
  */
 
 @interface RMSAudioRouteMessage : PBCodable <NSCopying> {
-    NSString *_displayName;
+    NSString * _displayName;
     struct { 
         unsigned int macAddress : 1; 
         unsigned int selected : 1; 
         unsigned int supportsVideo : 1; 
-    } _has;
-    long long _macAddress;
-    BOOL _selected;
-    BOOL _supportsVideo;
+    }  _has;
+    long long  _macAddress;
+    BOOL  _selected;
+    BOOL  _supportsVideo;
 }
 
 @property (nonatomic, retain) NSString *displayName;

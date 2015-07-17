@@ -3,8 +3,8 @@
  */
 
 @interface NSPersistentStoreCache : NSObject {
-    unsigned int _capacity;
-    id _externalData;
+    unsigned int  _capacity;
+    id  _externalData;
 }
 
 + (void)initialize;

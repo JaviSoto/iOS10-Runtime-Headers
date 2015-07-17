@@ -3,9 +3,9 @@
  */
 
 @interface MPUExtrasElementViewController : UIViewController {
-    MPUExtrasBackgroundViewController *_backgroundViewController;
-    NSMapTable *_bannerButtonMap;
-    BOOL _wide;
+    MPUExtrasBackgroundViewController * _backgroundViewController;
+    NSMapTable * _bannerButtonMap;
+    BOOL  _wide;
 }
 
 @property (getter=isWide, nonatomic) BOOL wide;

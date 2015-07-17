@@ -3,10 +3,10 @@
  */
 
 @interface NSConcreteMapTable : NSMapTable {
-    unsigned int capacity;
-    unsigned int count;
-    int growLock;
-    unsigned int keyOptions;
+    unsigned int  capacity;
+    unsigned int  count;
+    int  growLock;
+    unsigned int  keyOptions;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -32,10 +32,10 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } keys;
-    unsigned int mutations;
-    bool shouldRehash;
-    unsigned int valueOptions;
+    }  keys;
+    unsigned int  mutations;
+    bool  shouldRehash;
+    unsigned int  valueOptions;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -61,7 +61,7 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } values;
+    }  values;
 }
 
 - (void)_initBlock;

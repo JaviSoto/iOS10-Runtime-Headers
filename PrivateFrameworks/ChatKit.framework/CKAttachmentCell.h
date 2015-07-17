@@ -3,10 +3,10 @@
  */
 
 @interface CKAttachmentCell : UICollectionViewCell {
-    UIImageView *_checkmarkView;
-    NSObject<CKAttachmentCellDelegate> *_delegate;
-    BOOL _editing;
-    CKAttachmentItem *_representedObject;
+    UIImageView * _checkmarkView;
+    NSObject<CKAttachmentCellDelegate> * _delegate;
+    BOOL  _editing;
+    CKAttachmentItem * _representedObject;
 }
 
 @property (nonatomic, retain) UIImageView *checkmarkView;
@@ -22,6 +22,7 @@
 - (BOOL)isEditing;
 - (void)layoutSubviews;
 - (void)more:(id)arg1;
+- (void)prepareForReuse;
 - (id)representedObject;
 - (void)saveAttachment:(id)arg1;
 - (void)setCheckmarkView:(id)arg1;

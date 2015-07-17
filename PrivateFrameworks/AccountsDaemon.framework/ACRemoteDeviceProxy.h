@@ -3,11 +3,11 @@
  */
 
 @interface ACRemoteDeviceProxy : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_completionHandlersByInternalMessageID;
-    NSLock *_completionHandlersLock;
-    NSMutableDictionary *_internalMessageIDsByTransportID;
-    IDSService *_messageSendingService;
-    ACRemoteCommandHandler *_remoteCommandHandler;
+    NSMutableDictionary * _completionHandlersByInternalMessageID;
+    NSLock * _completionHandlersLock;
+    NSMutableDictionary * _internalMessageIDsByTransportID;
+    IDSService * _messageSendingService;
+    ACRemoteCommandHandler * _remoteCommandHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

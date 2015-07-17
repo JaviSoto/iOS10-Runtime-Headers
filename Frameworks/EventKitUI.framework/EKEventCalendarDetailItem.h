@@ -3,8 +3,8 @@
  */
 
 @interface EKEventCalendarDetailItem : EKEventDetailItem {
-    EKCalendar *_calendar;
-    UITableViewCell *_cell;
+    EKCalendar * _calendar;
+    UITableViewCell * _cell;
 }
 
 - (void).cxx_destruct;

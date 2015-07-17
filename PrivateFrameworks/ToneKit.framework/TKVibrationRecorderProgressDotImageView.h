@@ -3,11 +3,11 @@
  */
 
 @interface TKVibrationRecorderProgressDotImageView : UIImageView {
-    float _accessibilityFrameAdditionalHeight;
-    double _duration;
-    double _previousPauseDuration;
-    double _previousPauseTimeInterval;
-    double _timeInterval;
+    float  _accessibilityFrameAdditionalHeight;
+    double  _duration;
+    double  _previousPauseDuration;
+    double  _previousPauseTimeInterval;
+    double  _timeInterval;
 }
 
 @property (nonatomic) float accessibilityFrameAdditionalHeight;

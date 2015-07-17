@@ -3,17 +3,17 @@
  */
 
 @interface _HKActiveWorkout : HKWorkout <_HKActiveWorkoutClient> {
-    NSMutableData *_associatedObjectUUIDData;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <_HKActiveWorkoutDelegate> *_delegate;
-    NSDate *_lastObservedDate;
-    <_HKActiveWorkoutLifecycleDelegate> *_lifecycleDelegate;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSMutableDictionary *_resumeDataByType;
-    <NSXPCProxyCreating> *_serverProxy;
-    int _serverState;
-    BOOL _shouldUseDeviceData;
-    int _workoutState;
+    NSMutableData * _associatedObjectUUIDData;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <_HKActiveWorkoutDelegate> * _delegate;
+    NSDate * _lastObservedDate;
+    <_HKActiveWorkoutLifecycleDelegate> * _lifecycleDelegate;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSMutableDictionary * _resumeDataByType;
+    <NSXPCProxyCreating> * _serverProxy;
+    int  _serverState;
+    BOOL  _shouldUseDeviceData;
+    int  _workoutState;
 }
 
 @property (getter=_associatedObjectUUIDData, readonly) NSData *associatedObjectUUIDData;
@@ -77,8 +77,10 @@
 - (void)pauseWorkoutWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)resumeDataByType;
 - (void)resumeWorkoutFromDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)serverFailedWithError:(id)arg1;
 - (void)serverPausedWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (int)serverState;
+- (void)serverStoppedWithDate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)totalDistance;
 - (id)totalEnergyBurned;

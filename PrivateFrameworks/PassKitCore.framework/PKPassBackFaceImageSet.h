@@ -3,7 +3,7 @@
  */
 
 @interface PKPassBackFaceImageSet : PKPassImageSet {
-    PKImage *_faceImage;
+    PKImage * _faceImage;
 }
 
 @property (nonatomic, retain) PKImage *faceImage;

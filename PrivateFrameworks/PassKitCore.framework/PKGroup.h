@@ -3,11 +3,11 @@
  */
 
 @interface PKGroup : NSObject {
-    PKCatalogGroup *_catalogGroup;
-    <PKGroupDelegate> *_delegate;
-    unsigned int _frontmostPassIndex;
-    BOOL _local;
-    NSMutableDictionary *_passesByUniqueID;
+    PKCatalogGroup * _catalogGroup;
+    <PKGroupDelegate> * _delegate;
+    unsigned int  _frontmostPassIndex;
+    BOOL  _local;
+    NSMutableDictionary * _passesByUniqueID;
 }
 
 @property (nonatomic) <PKGroupDelegate> *delegate;

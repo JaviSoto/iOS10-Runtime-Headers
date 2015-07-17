@@ -3,14 +3,14 @@
  */
 
 @interface GEOMapItemAddressBookAttributes : PBCodable <NSCopying> {
-    int _addressType;
+    int  _addressType;
     struct { 
         unsigned int addressType : 1; 
         unsigned int isMe : 1; 
-    } _has;
-    BOOL _isMe;
-    NSString *_name;
-    NSString *_spokenName;
+    }  _has;
+    BOOL  _isMe;
+    NSString * _name;
+    NSString * _spokenName;
 }
 
 @property (nonatomic) int addressType;

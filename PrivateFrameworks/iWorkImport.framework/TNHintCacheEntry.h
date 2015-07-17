@@ -3,12 +3,12 @@
  */
 
 @interface TNHintCacheEntry : NSObject {
-    <TSDHint> *mHint;
-    BOOL mIsValid;
+    <TSDHint> * mHint;
+    BOOL  mIsValid;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOrigin;
+    }  mOrigin;
 }
 
 @property (retain) <TSDHint> *hint;

@@ -3,20 +3,20 @@
  */
 
 @interface MRMediaRemoteServiceClient : NSObject {
-    NSArray *_externalScreenTypeNotificationObservers;
-    NSArray *_nowPlayingNotificationObservers;
-    NSArray *_originNotificationObservers;
-    BOOL _receivesExternalScreenTypeChangedNotifications;
-    BOOL _receivesOriginChangedNotifications;
-    BOOL _receivesPlaybackErrorNotifications;
-    BOOL _receivesRoutesChangedNotifications;
-    BOOL _receivesSupportedCommandsNotifications;
-    unsigned int _registeredNowPlayingObservers;
-    NSMutableArray *_registeredOrigins;
-    MRAVRoutingClientController *_routingClientController;
-    NSArray *_routingNotificationObservers;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    struct MRMediaRemoteService { } *_service;
+    NSArray * _externalScreenTypeNotificationObservers;
+    NSArray * _nowPlayingNotificationObservers;
+    NSArray * _originNotificationObservers;
+    BOOL  _receivesExternalScreenTypeChangedNotifications;
+    BOOL  _receivesOriginChangedNotifications;
+    BOOL  _receivesPlaybackErrorNotifications;
+    BOOL  _receivesRoutesChangedNotifications;
+    BOOL  _receivesSupportedCommandsNotifications;
+    unsigned int  _registeredNowPlayingObservers;
+    NSMutableArray * _registeredOrigins;
+    MRAVRoutingClientController * _routingClientController;
+    NSArray * _routingNotificationObservers;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    struct MRMediaRemoteService { } * _service;
 }
 
 @property (nonatomic, retain) NSArray *externalScreenTypeNotificationObservers;

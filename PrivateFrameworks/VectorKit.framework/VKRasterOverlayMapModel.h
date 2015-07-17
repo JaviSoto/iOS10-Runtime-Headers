@@ -7,19 +7,19 @@
         struct __compressed_pair<ggl::ClearItem *, std::__1::default_delete<ggl::ClearItem> > { 
             struct ClearItem {} *__first_; 
         } __ptr_; 
-    } _clearItem;
+    }  _clearItem;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
-    } _gglRenderState;
-    unsigned int _level;
-    NSMutableArray *_sortedTiles;
+    }  _gglRenderState;
+    unsigned int  _level;
+    NSMutableArray * _sortedTiles;
     struct unique_ptr<ggl::Mesh, std::__1::default_delete<ggl::Mesh> > { 
         struct __compressed_pair<ggl::Mesh *, std::__1::default_delete<ggl::Mesh> > { 
             struct Mesh {} *__first_; 
         } __ptr_; 
-    } _unitMesh;
+    }  _unitMesh;
 }
 
 @property (readonly, copy) NSString *debugDescription;

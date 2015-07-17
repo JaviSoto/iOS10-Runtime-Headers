@@ -3,13 +3,13 @@
  */
 
 @interface NMSIncomingResponse : NSObject <NMSObfuscatableDescriptionProviding> {
-    NSData *_data;
-    NSString *_idsIdentifier;
-    unsigned short _messageID;
-    id _pbResponse;
-    NSString *_requestIDSIdentifier;
-    NSDictionary *_requestPersistentUserInfo;
-    NSDate *_requestSent;
+    NSData * _data;
+    NSString * _idsIdentifier;
+    unsigned short  _messageID;
+    id  _pbResponse;
+    NSString * _requestIDSIdentifier;
+    NSDictionary * _requestPersistentUserInfo;
+    NSDate * _requestSent;
 }
 
 @property (nonatomic, retain) NSData *data;

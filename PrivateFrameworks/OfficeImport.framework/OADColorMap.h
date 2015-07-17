@@ -3,13 +3,15 @@
  */
 
 @interface OADColorMap : NSObject {
-    NSMutableDictionary *mMappings;
+    NSMutableDictionary * mMappings;
 }
 
 - (void)addDefaultMappings:(BOOL)arg1;
 - (void)addMapping:(int)arg1 index:(int)arg2;
 - (void)dealloc;
+- (id)description;
 - (id)init;
+- (bool)isEmpty;
 - (BOOL)isEqual:(id)arg1;
 - (int)mappingForIndex:(int)arg1;
 

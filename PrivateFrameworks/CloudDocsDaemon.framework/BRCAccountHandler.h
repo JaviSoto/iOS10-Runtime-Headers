@@ -3,22 +3,22 @@
  */
 
 @interface BRCAccountHandler : NSObject {
-    NSString *_currentAccountID;
-    <BRCAccountHandlerDelegate> *_delegate;
-    BOOL _hasSetMigrationComplete;
-    NSObject<OS_dispatch_queue> *_migrationStatusSetterQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    BRCAccountSession *_session;
+    NSString * _currentAccountID;
+    <BRCAccountHandlerDelegate> * _delegate;
+    BOOL  _hasSetMigrationComplete;
+    NSObject<OS_dispatch_queue> * _migrationStatusSetterQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    BRCAccountSession * _session;
 }
 
 @property (nonatomic) <BRCAccountHandlerDelegate> *delegate;
 @property (nonatomic, readonly) BRCAccountSession *session;
 
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
-+ (id)inSystemStoreAccountIDForUbiquityDataclass;
-+ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1;
-+ (id)inSystemStoreAccountIDWithServiceValidation:(BOOL)arg1 isServiceEnabled:(BOOL*)arg2 didCompleteMigration:(BOOL*)arg3;
 + (BOOL)isAccountStillUsingUbiquity;
++ (id)primaryiCloudAccount;
++ (id)primaryiCloudAccountID;
++ (id)ubiquityAccountID;
 
 - (void).cxx_destruct;
 - (void)_cleanupPushAndActivitiesStatesWhenNoSessionExists;

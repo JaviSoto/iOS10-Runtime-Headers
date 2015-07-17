@@ -3,8 +3,8 @@
  */
 
 @interface CKAnimatedImage : NSObject {
-    NSArray *_durations;
-    UIImage *_image;
+    NSArray * _durations;
+    UIImage * _image;
 }
 
 @property (nonatomic, copy) NSArray *durations;

@@ -3,16 +3,16 @@
  */
 
 @interface _UIModalItemsPresentingViewController : UIViewController {
-    UIView *_backgroundView;
-    _UIModalItem *_currentItem;
-    UIView *_currentItemView;
-    UIView *_dimmingView;
-    BOOL _isInTransition;
-    _UIModalItem *_itemBeingDismissed;
-    _UIModalItem *_itemBeingPresented;
-    NSMutableArray *_items;
-    id /* block */ _itemsTransitionCompletion;
-    NSMutableArray *_itemsViews;
+    UIView * _backgroundView;
+    _UIModalItem * _currentItem;
+    UIView * _currentItemView;
+    UIView * _dimmingView;
+    BOOL  _isInTransition;
+    _UIModalItem * _itemBeingDismissed;
+    _UIModalItem * _itemBeingPresented;
+    NSMutableArray * _items;
+    id /* block */  _itemsTransitionCompletion;
+    NSMutableArray * _itemsViews;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,10 +22,10 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    float _keyboardHeight;
-    NSMutableArray *_occludedWindows;
-    UIWindow *_rotationDelegate;
+    }  _keyboardFrame;
+    float  _keyboardHeight;
+    NSMutableArray * _occludedWindows;
+    UIWindow * _rotationDelegate;
 }
 
 @property (nonatomic, retain) _UIModalItem *currentItem;

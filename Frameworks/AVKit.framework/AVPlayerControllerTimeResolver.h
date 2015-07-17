@@ -3,11 +3,11 @@
  */
 
 @interface AVPlayerControllerTimeResolver : NSObject <NSCoding> {
-    double _currentTime;
-    double _interval;
-    AVPlayerController *_playerController;
-    double _resolution;
-    NSTimer *_timer;
+    double  _currentTime;
+    double  _interval;
+    AVPlayerController * _playerController;
+    double  _resolution;
+    NSTimer * _timer;
 }
 
 @property double currentTime;

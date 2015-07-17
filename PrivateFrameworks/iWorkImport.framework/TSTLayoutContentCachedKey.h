@@ -3,20 +3,20 @@
  */
 
 @interface TSTLayoutContentCachedKey : NSObject <NSCopying> {
-    BOOL mCellWraps;
-    float mHeight;
+    BOOL  mCellWraps;
+    float  mHeight;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } mPaddingInsets;
-    TSWPParagraphStyle *mParagraphStyle;
-    NSString *mString;
-    int mValueType;
-    int mVerticalAlignment;
-    float mWidth;
-    int mWritingDirection;
+    }  mPaddingInsets;
+    TSWPParagraphStyle * mParagraphStyle;
+    NSString * mString;
+    int  mValueType;
+    int  mVerticalAlignment;
+    float  mWidth;
+    int  mWritingDirection;
 }
 
 @property (nonatomic, readonly) BOOL cellWraps;

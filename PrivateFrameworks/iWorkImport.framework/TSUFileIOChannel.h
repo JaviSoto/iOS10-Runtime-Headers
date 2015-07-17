@@ -3,9 +3,9 @@
  */
 
 @interface TSUFileIOChannel : NSObject <TSURandomWriteChannel, TSUReadChannel, TSUStreamWriteChannel> {
-    NSObject<OS_dispatch_io> *_channel;
-    BOOL _isClosed;
-    NSObject<OS_dispatch_queue> *_readQueue;
+    NSObject<OS_dispatch_io> * _channel;
+    BOOL  _isClosed;
+    NSObject<OS_dispatch_queue> * _readQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

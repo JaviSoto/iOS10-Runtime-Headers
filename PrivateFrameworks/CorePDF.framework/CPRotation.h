@@ -3,7 +3,7 @@
  */
 
 @interface CPRotation : CPZone {
-    float rotationAngle;
+    float  rotationAngle;
 }
 
 - (void)accept:(id)arg1;

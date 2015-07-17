@@ -3,9 +3,9 @@
  */
 
 @interface PUCloudSharedBackdropView : UIView {
-    UIView *_backdropView;
-    BOOL _hasRoundedCorners;
-    BOOL _isMask;
+    UIView * _backdropView;
+    BOOL  _hasRoundedCorners;
+    BOOL  _isMask;
 }
 
 @property (nonatomic) BOOL hasRoundedCorners;

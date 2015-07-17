@@ -3,21 +3,21 @@
  */
 
 @interface MusicVerticalScrollingContainerViewController : UIViewController <MusicClientContextConsuming, MusicVerticalScrollingContainerCollectionViewCellDelegate, MusicVerticalScrollingContainerCollectionViewDelegate, MusicVerticalScrollingContainerItemContextDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    MusicClientContext *_clientContext;
-    MusicVerticalScrollingContainerCollectionView *_containerCollectionView;
-    <MusicVerticalScrollingContainerViewControllerDelegate> *_delegate;
+    MusicClientContext * _clientContext;
+    MusicVerticalScrollingContainerCollectionView * _containerCollectionView;
+    <MusicVerticalScrollingContainerViewControllerDelegate> * _delegate;
     struct { 
         unsigned int contentOffsetProxyingPolicyForItem : 1; 
         unsigned int didLayoutSubviews : 1; 
         unsigned int didScroll : 1; 
         unsigned int contentSizeDidChange : 1; 
         unsigned int willEndDraggingWithVelocity : 1; 
-    } _delegateRespondsToSelector;
-    NSMapTable *_itemToItemContext;
-    int _keyboardDismissMode;
-    unsigned int _numberOfRunningAnimatedInvalidations;
-    BOOL _shouldUpdateLayoutOfVisibleCollectionViewCellsUponCompletingAnimatedInvalidations;
-    NSArray *_verticalScrollingContainerItems;
+    }  _delegateRespondsToSelector;
+    NSMapTable * _itemToItemContext;
+    int  _keyboardDismissMode;
+    unsigned int  _numberOfRunningAnimatedInvalidations;
+    BOOL  _shouldUpdateLayoutOfVisibleCollectionViewCellsUponCompletingAnimatedInvalidations;
+    NSArray * _verticalScrollingContainerItems;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -51,7 +51,9 @@
 - (struct CGPoint { float x1; float x2; })contentOffsetForVerticalScrollingContainerItem:(id)arg1;
 - (int)contentOffsetProxyingPolicyForVerticalScrollingContainerItemContext:(id)arg1;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)endOverridingContentHeightOfVerticalScrollingContainerItem:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)invalidateLayoutForVerticalScrollingContainerItems:(id)arg1;

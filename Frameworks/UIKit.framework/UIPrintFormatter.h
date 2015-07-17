@@ -8,19 +8,19 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    float _maximumContentHeight;
-    float _maximumContentWidth;
-    BOOL _needsRecalc;
-    int _pageCount;
+    }  _contentInsets;
+    float  _maximumContentHeight;
+    float  _maximumContentWidth;
+    BOOL  _needsRecalc;
+    int  _pageCount;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _perPageContentInsets;
-    UIPrintPageRenderer *_printPageRenderer;
-    int _startPage;
+    }  _perPageContentInsets;
+    UIPrintPageRenderer * _printPageRenderer;
+    int  _startPage;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
@@ -31,6 +31,7 @@
 @property (nonatomic) UIPrintPageRenderer *printPageRenderer;
 @property (nonatomic) int startPage;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageContentRect:(BOOL)arg1;
 - (void)_recalcIfNecessary;
 - (int)_recalcPageCount;

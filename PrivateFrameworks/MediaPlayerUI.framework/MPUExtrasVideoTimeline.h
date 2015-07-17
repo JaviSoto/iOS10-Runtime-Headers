@@ -3,8 +3,8 @@
  */
 
 @interface MPUExtrasVideoTimeline : NSObject {
-    NSArray *_events;
-    NSArray *_timelineElements;
+    NSArray * _events;
+    NSArray * _timelineElements;
 }
 
 @property (nonatomic, readonly) NSArray *events;

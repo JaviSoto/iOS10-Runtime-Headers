@@ -3,16 +3,16 @@
  */
 
 @interface CIFlashTransition : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor;
-    CIVector *inputExtent;
-    NSNumber *inputFadeThreshold;
-    CIImage *inputImage;
-    NSNumber *inputMaxStriationRadius;
-    NSNumber *inputStriationContrast;
-    NSNumber *inputStriationStrength;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
+    CIVector * inputCenter;
+    CIColor * inputColor;
+    CIVector * inputExtent;
+    NSNumber * inputFadeThreshold;
+    CIImage * inputImage;
+    NSNumber * inputMaxStriationRadius;
+    NSNumber * inputStriationContrast;
+    NSNumber * inputStriationStrength;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;
@@ -41,7 +41,6 @@
 - (id)inputTargetImage;
 - (id)inputTime;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputColor:(id)arg1;
 - (void)setInputExtent:(id)arg1;

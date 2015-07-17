@@ -3,23 +3,23 @@
  */
 
 @interface PUStackedAlbumLayout : UICollectionViewLayout {
-    PUAlbumListTransitionContext *_albumListTransitionContext;
+    PUAlbumListTransitionContext * _albumListTransitionContext;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSizeAdjust;
-    NSMutableDictionary *_derivedLayoutAttributesByIndexPath;
-    UICollectionViewLayoutAttributes *_globalHeaderAttributes;
-    BOOL _isInteractive;
+    }  _contentSizeAdjust;
+    NSMutableDictionary * _derivedLayoutAttributesByIndexPath;
+    UICollectionViewLayoutAttributes * _globalHeaderAttributes;
+    BOOL  _isInteractive;
     struct CGPoint { 
         float x; 
         float y; 
-    } _referenceCenter;
-    UICollectionViewLayoutAttributes *_referenceItemLayoutAttributes;
-    NSMutableDictionary *_visibleLayoutAttributesByIndexPath;
-    NSArray *_visibleStackedItemLayoutAttributes;
-    float _yAdjust;
-    NSMutableDictionary *_zIndexByIndexPath;
+    }  _referenceCenter;
+    UICollectionViewLayoutAttributes * _referenceItemLayoutAttributes;
+    NSMutableDictionary * _visibleLayoutAttributesByIndexPath;
+    NSArray * _visibleStackedItemLayoutAttributes;
+    float  _yAdjust;
+    NSMutableDictionary * _zIndexByIndexPath;
 }
 
 @property (nonatomic, retain) PUAlbumListTransitionContext *albumListTransitionContext;

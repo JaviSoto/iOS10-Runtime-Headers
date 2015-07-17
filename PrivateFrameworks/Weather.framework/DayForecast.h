@@ -3,11 +3,11 @@
  */
 
 @interface DayForecast : NSObject {
-    unsigned int _dayNumber;
-    unsigned int _dayOfWeek;
-    NSString *_high;
-    unsigned int _icon;
-    NSString *_low;
+    unsigned int  _dayNumber;
+    unsigned int  _dayOfWeek;
+    NSString * _high;
+    unsigned int  _icon;
+    NSString * _low;
 }
 
 @property (nonatomic) unsigned int dayNumber;
@@ -16,10 +16,10 @@
 @property (nonatomic) unsigned int icon;
 @property (nonatomic, copy) NSString *low;
 
+- (void).cxx_destruct;
 - (int)compareDayNumberToDayForecast:(id)arg1;
 - (unsigned int)dayNumber;
 - (unsigned int)dayOfWeek;
-- (void)dealloc;
 - (id)description;
 - (id)high;
 - (unsigned int)icon;

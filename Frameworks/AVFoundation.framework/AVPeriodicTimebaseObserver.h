@@ -3,38 +3,38 @@
  */
 
 @interface AVPeriodicTimebaseObserver : AVTimebaseObserver {
-    id /* block */ _block;
+    id /* block */  _block;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _intervalRequested;
+    }  _intervalRequested;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastIntervalUsed;
+    }  _lastIntervalUsed;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastNonperiodicFireTime;
+    }  _lastNonperiodicFireTime;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastPeriodicFireTime;
+    }  _lastPeriodicFireTime;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastStopTime;
-    unsigned int _sequenceNum;
+    }  _lastStopTime;
+    unsigned int  _sequenceNum;
 }
 
 - (void)_effectiveRateChanged;

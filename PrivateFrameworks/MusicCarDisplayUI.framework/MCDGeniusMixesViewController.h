@@ -3,7 +3,7 @@
  */
 
 @interface MCDGeniusMixesViewController : MCD_OLD_TableViewController {
-    NSMutableDictionary *_geniusImages;
+    NSMutableDictionary * _geniusImages;
 }
 
 - (void).cxx_destruct;

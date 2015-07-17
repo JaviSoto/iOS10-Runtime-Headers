@@ -3,8 +3,8 @@
  */
 
 @interface TSDSpecSetFill : TSDSpecFill {
-    TSDFill *_fill;
-    BOOL _unset;
+    TSDFill * _fill;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

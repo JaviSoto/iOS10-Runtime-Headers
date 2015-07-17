@@ -3,11 +3,13 @@
  */
 
 @interface EKEventAlarmDetailItem : EKEventDetailItem {
-    NSArray *_alarms;
-    BOOL _canHaveLeaveNowAlarm;
-    unsigned int _disclosedSubitem;
-    BOOL _hasLeaveNowAlarm;
+    NSArray * _alarms;
+    BOOL  _canHaveLeaveNowAlarm;
+    unsigned int  _disclosedSubitem;
+    BOOL  _hasLeaveNowAlarm;
 }
+
++ (id)_textLabelForIndex:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_alarmsAreCreatable;

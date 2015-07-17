@@ -3,7 +3,7 @@
  */
 
 @interface _MFMessageFlags : NSObject <NSCoding> {
-    unsigned long long realFlags;
+    unsigned long long  realFlags;
 }
 
 - (void)encodeWithCoder:(id)arg1;

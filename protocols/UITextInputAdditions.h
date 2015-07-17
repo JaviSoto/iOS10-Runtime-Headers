@@ -15,6 +15,7 @@
 
 @optional
 
+- (UITextInputAssistantItem *)_inputAssistantItem;
 - (UIView *)_textInputViewForAddingGestureRecognizers;
 - (BOOL)_useGesturesForEditableContent;
 

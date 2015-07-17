@@ -3,14 +3,14 @@
  */
 
 @interface CKMovieMediaObject : CKAVMediaObject {
-    AVURLAsset *_asset;
-    BOOL _checkedVideoInfo;
-    BOOL _hasVideoTrack;
+    AVURLAsset * _asset;
+    BOOL  _checkedVideoInfo;
+    BOOL  _hasVideoTrack;
     struct CGSize { 
         float width; 
         float height; 
-    } _pxSize;
-    UIImage *_thumbnail;
+    }  _pxSize;
+    UIImage * _thumbnail;
 }
 
 @property (nonatomic, retain) AVURLAsset *asset;
@@ -47,6 +47,7 @@
 - (void)setHasVideoTrack:(BOOL)arg1;
 - (void)setPxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setThumbnail:(id)arg1;
+- (BOOL)shouldBeQuickLookedFromEntryView;
 - (id)thumbnail;
 - (void)updateVideoInfo;
 

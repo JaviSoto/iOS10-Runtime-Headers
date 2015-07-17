@@ -3,12 +3,12 @@
  */
 
 @interface SSXPCServer : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_entitlementName;
-    NSObject<OS_xpc_object> *_listener;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSMutableDictionary *_observers;
-    NSString *_serviceName;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _entitlementName;
+    NSObject<OS_xpc_object> * _listener;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSMutableDictionary * _observers;
+    NSString * _serviceName;
 }
 
 + (id)mainServer;

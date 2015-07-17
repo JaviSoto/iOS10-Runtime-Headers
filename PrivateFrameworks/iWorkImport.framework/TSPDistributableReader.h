@@ -3,10 +3,10 @@
  */
 
 @interface TSPDistributableReader : NSObject <TSPStreamingDistributableUnarchiver> {
-    TSPDatabase *_database;
-    TSPDistributableFileManager *_fileManager;
-    BOOL _hasReadTangierVersionRoot;
-    BOOL _isCancelled;
+    TSPDatabase * _database;
+    TSPDistributableFileManager * _fileManager;
+    BOOL  _hasReadTangierVersionRoot;
+    BOOL  _isCancelled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

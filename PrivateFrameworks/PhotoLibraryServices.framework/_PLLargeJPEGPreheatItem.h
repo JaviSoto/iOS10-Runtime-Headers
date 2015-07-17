@@ -3,11 +3,11 @@
  */
 
 @interface _PLLargeJPEGPreheatItem : PLJPEGPreheatItem {
-    BOOL _forceBGRA;
+    BOOL  _forceBGRA;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
+    }  _imageSize;
 }
 
 - (struct __CFDictionary { }*)decodeSessionOptions;

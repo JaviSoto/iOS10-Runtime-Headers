@@ -3,10 +3,10 @@
  */
 
 @interface RMSDAAPControlSessionProxy : RMSSessionProxy <RMSDAAPControlSession> {
-    <RMSDAAPControlSessionDelegate> *_delegate;
-    RMSIDSClient *_idsClient;
-    RMSNowPlayingInfo *_nowPlayingInfo;
-    RMSService *_service;
+    <RMSDAAPControlSessionDelegate> * _delegate;
+    RMSIDSClient * _idsClient;
+    RMSNowPlayingInfo * _nowPlayingInfo;
+    RMSService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface IMServiceChatItem : IMTranscriptChatItem {
-    IMHandle *_handle;
-    IMServiceImpl *_service;
+    IMHandle * _handle;
+    IMServiceImpl * _service;
 }
 
 @property (nonatomic, readonly, retain) IMHandle *handle;

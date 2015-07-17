@@ -3,8 +3,8 @@
  */
 
 @interface UIMovieClosedCaptionData : NSObject {
-    NSMutableArray *_data;
-    NSString *_language;
+    NSMutableArray * _data;
+    NSString * _language;
 }
 
 @property (nonatomic, retain) NSString *language;

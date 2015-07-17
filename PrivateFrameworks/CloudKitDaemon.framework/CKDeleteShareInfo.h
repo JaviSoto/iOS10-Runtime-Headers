@@ -3,8 +3,8 @@
  */
 
 @interface CKDeleteShareInfo : NSObject {
-    CKDSharePCSData *_pcsData;
-    CKShareID *_shareID;
+    CKDSharePCSData * _pcsData;
+    CKShareID * _shareID;
 }
 
 @property (nonatomic, retain) CKDSharePCSData *pcsData;

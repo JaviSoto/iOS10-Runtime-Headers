@@ -3,9 +3,9 @@
  */
 
 @interface CKDPlistResponseBodyParser : NSObject <CKDResponseBodyParser> {
-    id /* block */ _objectParsedBlock;
-    NSMutableData *_parserData;
-    NSError *_parserError;
+    id /* block */  _objectParsedBlock;
+    NSMutableData * _parserData;
+    NSError * _parserError;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface TSUZipWriterEntry : NSObject {
-    unsigned int _CRC;
-    NSString *_name;
-    unsigned long long _offset;
-    unsigned long long _size;
+    unsigned int  _CRC;
+    NSString * _name;
+    unsigned long long  _offset;
+    unsigned long long  _size;
 }
 
 @property (nonatomic) unsigned int CRC;

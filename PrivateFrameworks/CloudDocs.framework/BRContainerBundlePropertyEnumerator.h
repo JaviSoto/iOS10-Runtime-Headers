@@ -3,10 +3,10 @@
  */
 
 @interface BRContainerBundlePropertyEnumerator : NSEnumerator {
-    NSEnumerator *_enumerator;
-    NSDictionary *_plist;
-    NSString *_propertyKey;
-    Class _valueClass;
+    NSEnumerator * _enumerator;
+    NSDictionary * _plist;
+    NSString * _propertyKey;
+    Class  _valueClass;
 }
 
 - (void)dealloc;

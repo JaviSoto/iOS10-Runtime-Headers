@@ -3,8 +3,8 @@
  */
 
 @interface ADDefaults : NSObject {
-    struct __CFString { } *_defaultsBundleID;
-    NSMutableDictionary *_factoryDefaults;
+    struct __CFString { } * _defaultsBundleID;
+    NSMutableDictionary * _factoryDefaults;
 }
 
 @property (nonatomic) struct __CFString { }*defaultsBundleID;

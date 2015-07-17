@@ -3,8 +3,8 @@
  */
 
 @interface EKUnknownIdentityViewController : UIViewController <ABUnknownPersonViewControllerDelegate> {
-    <EKIdentityProtocol> *_identity;
-    ABUnknownPersonViewController *_unknownPersonViewController;
+    <EKIdentityProtocol> * _identity;
+    ABUnknownPersonViewController * _unknownPersonViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

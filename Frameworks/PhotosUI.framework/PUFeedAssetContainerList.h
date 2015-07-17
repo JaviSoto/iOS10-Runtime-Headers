@@ -3,8 +3,8 @@
  */
 
 @interface PUFeedAssetContainerList : NSObject <PLAssetContainerList> {
-    NSOrderedSet *_sectionInfos;
-    NSString *_transientIdentifier;
+    NSOrderedSet * _sectionInfos;
+    NSString * _transientIdentifier;
 }
 
 @property (nonatomic, readonly) unsigned int containersCount;
@@ -20,7 +20,9 @@
 - (id)containers;
 - (unsigned int)containersCount;
 - (id)containersRelationshipName;
+- (unsigned int)hash;
 - (BOOL)isEmpty;
+- (BOOL)isEqual:(id)arg1;
 - (id)managedObjectContext;
 - (id)photoLibrary;
 - (id)sectionInfos;

@@ -3,16 +3,16 @@
  */
 
 @interface PHBatchFetchingArray : NSArray {
-    unsigned int _batchSize;
-    NSCache *_cache;
-    unsigned int _count;
-    NSArray *_firstBatch;
-    unsigned int _firstBatchIndex;
-    NSObject<OS_dispatch_queue> *_firstBatchQueue;
-    NSArray *_oids;
-    NSSet *_oidsSet;
-    PHPhotoLibrary *_photoLibrary;
-    unsigned int _propertyHint;
+    unsigned int  _batchSize;
+    NSCache * _cache;
+    unsigned int  _count;
+    NSArray * _firstBatch;
+    unsigned int  _firstBatchIndex;
+    NSObject<OS_dispatch_queue> * _firstBatchQueue;
+    NSArray * _oids;
+    NSSet * _oidsSet;
+    PHPhotoLibrary * _photoLibrary;
+    unsigned int  _propertyHint;
 }
 
 @property (readonly) NSArray *oids;

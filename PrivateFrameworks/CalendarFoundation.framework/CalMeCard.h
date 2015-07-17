@@ -3,10 +3,10 @@
  */
 
 @interface CalMeCard : NSObject <NSSecureCoding> {
-    NSString *_displayName;
-    NSArray *_emailAddresses;
-    NSString *_uniqueID;
-    int _version;
+    NSString * _displayName;
+    NSArray * _emailAddresses;
+    NSString * _uniqueID;
+    int  _version;
 }
 
 @property (readonly, retain) NSString *displayName;

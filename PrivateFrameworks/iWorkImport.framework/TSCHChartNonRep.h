@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartNonRep : NSObject <TSCHSupportsRendering> {
-    TSCHChartInfo *mChartInfo;
-    TSCHChartLayout *mChartLayout;
-    NSArray *mRenderers;
+    TSCHChartInfo * mChartInfo;
+    TSCHChartLayout * mChartLayout;
+    NSArray * mRenderers;
 }
 
 @property (nonatomic, retain) TSCHChartInfo *chartInfo;
@@ -27,6 +27,7 @@
 - (BOOL)forceRenderBlankBackground;
 - (id)geometry;
 - (id)initWithChartInfo:(id)arg1;
+- (BOOL)is2DRepFor3DChartRep;
 - (BOOL)isDrawingIntoPDF;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })outerShadowFrame;
 - (BOOL)renderElements;

@@ -3,31 +3,31 @@
  */
 
 @interface SKUIStyledButton : UIControl <SKUIViewElementOfferButton> {
-    SKUIAttributedStringView *_attributedStringView;
+    SKUIAttributedStringView * _attributedStringView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _bigHitInsets;
-    SKUIButtonBorderStyle *_borderStyle;
-    SKUIShapeView *_borderView;
+    }  _bigHitInsets;
+    SKUIButtonBorderStyle * _borderStyle;
+    SKUIShapeView * _borderView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _buttonPadding;
-    int _buttonType;
-    BOOL _didInitialHighlightForTouch;
-    UIImageView *_disclosureImageView;
-    float _imageTextPaddingInterior;
-    SKUIImageView *_imageView;
-    float _imageYAdjustment;
-    SKUIItemOfferButton *_itemOfferButton;
-    <SKUIItemOfferButtonDelegate> *_itemOfferDelegate;
-    BOOL _useBigHitTarget;
-    BOOL _usesTintColor;
+    }  _buttonPadding;
+    int  _buttonType;
+    BOOL  _didInitialHighlightForTouch;
+    UIImageView * _disclosureImageView;
+    float  _imageTextPaddingInterior;
+    SKUIImageView * _imageView;
+    float  _imageYAdjustment;
+    SKUIItemOfferButton * _itemOfferButton;
+    <SKUIItemOfferButtonDelegate> * _itemOfferDelegate;
+    BOOL  _useBigHitTarget;
+    BOOL  _usesTintColor;
 }
 
 @property (nonatomic, readonly) float baselineOffset;

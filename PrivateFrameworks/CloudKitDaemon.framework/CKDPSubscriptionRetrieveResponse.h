@@ -3,7 +3,7 @@
  */
 
 @interface CKDPSubscriptionRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_subscriptions;
+    NSMutableArray * _subscriptions;
 }
 
 @property (nonatomic, retain) NSMutableArray *subscriptions;

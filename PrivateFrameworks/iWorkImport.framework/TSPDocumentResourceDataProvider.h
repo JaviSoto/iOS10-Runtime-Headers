@@ -3,16 +3,16 @@
  */
 
 @interface TSPDocumentResourceDataProvider : NSObject <TSPDocumentResourceDownloadNotificationProtocol, TSPDocumentResourceDownloader> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    TSPObjectContext *_context;
-    BOOL _didCancelDownloads;
-    BOOL _didNotifyObjectContext;
-    NSMutableArray *_downloadItems;
-    long long _estimatedDownloadSize;
-    NSMutableSet *_infosToDownload;
-    BOOL _isEstimatedDownloadSizePrecise;
-    TSPDocumentResourceManager *_manager;
-    NSHashTable *_storagesCache;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    TSPObjectContext * _context;
+    BOOL  _didCancelDownloads;
+    BOOL  _didNotifyObjectContext;
+    NSMutableArray * _downloadItems;
+    long long  _estimatedDownloadSize;
+    NSMutableSet * _infosToDownload;
+    BOOL  _isEstimatedDownloadSizePrecise;
+    TSPDocumentResourceManager * _manager;
+    NSHashTable * _storagesCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

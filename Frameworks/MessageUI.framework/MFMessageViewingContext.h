@@ -3,32 +3,33 @@
  */
 
 @interface MFMessageViewingContext : NSObject {
-    MFAttachmentManager *_attachmentManager;
-    MFMessageBody *_body;
-    id _content;
-    MFLock *_contentLock;
-    unsigned int _contentOffset;
-    NSObject<MFMessageViewingContextDelegate> *_delegate;
-    unsigned int _failedToLoad;
-    unsigned int _hasNoContent;
-    unsigned int _isDraftMessage;
-    unsigned int _isEditableMessage;
-    unsigned int _isOutgoingMessage;
-    int _loadAlternative;
-    unsigned int _loadIncrement;
-    MFActivityMonitor *_loadTask;
-    unsigned int _loadedFullData;
-    MFMimePart *_loadedPart;
-    MFMailMessage *_message;
-    NSError *_messageAnalysisError;
-    MFError *_secureMIMEError;
-    unsigned int _shouldAnalyzeMessage;
-    unsigned int _showMailboxName;
-    NSArray *_signers;
-    NSArray *_suggestions;
-    NSConditionLock *_suggestionsLock;
-    NSObject<OS_dispatch_queue> *_suggestionsQueue;
-    SGSuggestionsService *_suggestionsService;
+    MFAttachmentManager * _attachmentManager;
+    MFMessageBody * _body;
+    id  _content;
+    MFLock * _contentLock;
+    unsigned int  _contentOffset;
+    NSObject<MFMessageViewingContextDelegate> * _delegate;
+    unsigned int  _failedToLoad;
+    unsigned int  _hasNoContent;
+    unsigned int  _isDraftMessage;
+    unsigned int  _isEditableMessage;
+    unsigned int  _isOutgoingMessage;
+    BOOL  _isReload;
+    int  _loadAlternative;
+    unsigned int  _loadIncrement;
+    MFActivityMonitor * _loadTask;
+    unsigned int  _loadedFullData;
+    MFMimePart * _loadedPart;
+    MFMailMessage * _message;
+    NSError * _messageAnalysisError;
+    MFError * _secureMIMEError;
+    unsigned int  _shouldAnalyzeMessage;
+    unsigned int  _showMailboxName;
+    NSArray * _signers;
+    NSArray * _suggestions;
+    NSConditionLock * _suggestionsLock;
+    NSObject<OS_dispatch_queue> * _suggestionsQueue;
+    SGSuggestionsService * _suggestionsService;
 }
 
 @property (nonatomic, readonly, retain) MFAttachmentManager *attachmentManager;
@@ -56,7 +57,7 @@
 @property (nonatomic, copy) NSArray *signers;
 @property (nonatomic, copy) NSArray *suggestions;
 
-+ (BOOL)isAttachmentTooLarge:(id)arg1;
++ (BOOL)isAttachmentTooLargeToDownload:(id)arg1;
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 
 - (void)_notifyAttachmentComplete:(id)arg1 data:(id)arg2;
@@ -81,7 +82,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)failedToLoad;
-- (id)fileWrappersForImageAttachments;
+- (void)forceReload;
 - (BOOL)hasAnalyzedMessage;
 - (BOOL)hasAnalyzedMessageWithTimeout:(id)arg1;
 - (BOOL)hasLoaded;

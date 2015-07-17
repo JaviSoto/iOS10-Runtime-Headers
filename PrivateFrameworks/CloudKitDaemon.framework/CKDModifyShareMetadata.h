@@ -3,12 +3,12 @@
  */
 
 @interface CKDModifyShareMetadata : NSObject {
-    CKDeleteShareInfo *_deleteInfo;
-    NSError *_error;
-    BOOL _isDelete;
-    CKShare *_share;
-    CKShareID *_shareID;
-    unsigned int _state;
+    CKDeleteShareInfo * _deleteInfo;
+    NSError * _error;
+    BOOL  _isDelete;
+    CKShare * _share;
+    CKShareID * _shareID;
+    unsigned int  _state;
 }
 
 @property (nonatomic, retain) CKDeleteShareInfo *deleteInfo;

@@ -3,15 +3,15 @@
  */
 
 @interface SFPeerDevice : NSObject <NSSecureCoding> {
-    BOOL _defaultPairedDevice;
-    NSString *_deviceColor;
-    NSString *_enclosureColor;
-    NSString *_modelIdentifier;
-    NSString *_name;
-    NSString *_productBuildVersion;
-    NSString *_productName;
-    NSString *_productVersion;
-    NSString *_uniqueID;
+    BOOL  _defaultPairedDevice;
+    NSString * _deviceColor;
+    NSString * _enclosureColor;
+    NSString * _modelIdentifier;
+    NSString * _name;
+    NSString * _productBuildVersion;
+    NSString * _productName;
+    NSString * _productVersion;
+    NSString * _uniqueID;
 }
 
 @property (getter=isDefaultPairedDevice) BOOL defaultPairedDevice;

@@ -3,8 +3,8 @@
  */
 
 @interface BRCSyncBudgetThrottle : NSObject <NSSecureCoding> {
-    double _t0;
-    float _values;
+    double  _t0;
+    float  _values;
 }
 
 @property (nonatomic, readonly) float lastDay;

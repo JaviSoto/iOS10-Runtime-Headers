@@ -3,31 +3,31 @@
  */
 
 @interface PLPhotoEditRenderer : NSObject {
-    NSObject<OS_dispatch_queue> *__renderingQueue;
-    NSDictionary *__smartBWAdjustments;
-    NSDictionary *__smartColorAdjustments;
-    NSDictionary *__smartToneAdjustments;
-    CIImage *_cachedEditedImage;
-    CIContext *_drawingCIContext;
-    CIFilter *_effectFilter;
-    CIFilter *_faceBalanceFilter;
-    CIContext *_generatingCIContext;
-    EAGLContext *_lastUsedEAGLContext;
-    CIImage *_originalImage;
-    PLPhotoEditModel *_photoEditModel;
-    PLPhotoEditModel *_photoEditModelInCachedEditedImage;
-    CIFilter *_redEyeFilter;
-    unsigned int _renderMode;
-    CIFilter *_smartBWFilter;
-    float _smartBWLevelInCachedAdjustments;
-    NSDictionary *_smartBWStatisticsInCachedAdjustments;
-    CIFilter *_smartColorFilter;
-    float _smartColorLevelInCachedAdjustments;
-    NSDictionary *_smartColorStatisticsInCachedAdjustments;
-    int _smartFiltersCubeSize;
-    CIFilter *_smartToneFilter;
-    float _smartToneLevelInCachedAdjustments;
-    NSDictionary *_smartToneStatisticsInCachedAdjustments;
+    NSObject<OS_dispatch_queue> * __renderingQueue;
+    NSDictionary * __smartBWAdjustments;
+    NSDictionary * __smartColorAdjustments;
+    NSDictionary * __smartToneAdjustments;
+    CIImage * _cachedEditedImage;
+    CIContext * _drawingCIContext;
+    CIFilter * _effectFilter;
+    CIFilter * _faceBalanceFilter;
+    CIContext * _generatingCIContext;
+    EAGLContext * _lastUsedEAGLContext;
+    CIImage * _originalImage;
+    PLPhotoEditModel * _photoEditModel;
+    PLPhotoEditModel * _photoEditModelInCachedEditedImage;
+    CIFilter * _redEyeFilter;
+    unsigned int  _renderMode;
+    CIFilter * _smartBWFilter;
+    float  _smartBWLevelInCachedAdjustments;
+    NSDictionary * _smartBWStatisticsInCachedAdjustments;
+    CIFilter * _smartColorFilter;
+    float  _smartColorLevelInCachedAdjustments;
+    NSDictionary * _smartColorStatisticsInCachedAdjustments;
+    int  _smartFiltersCubeSize;
+    CIFilter * _smartToneFilter;
+    float  _smartToneLevelInCachedAdjustments;
+    NSDictionary * _smartToneStatisticsInCachedAdjustments;
 }
 
 @property (nonatomic, retain) CIImage *originalImage;
@@ -52,7 +52,7 @@
 @property (nonatomic, readonly) double smartToneBaseShadows;
 
 + (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(BOOL)arg2;
-+ (id)createImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(float)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(BOOL)arg4;
++ (id)newImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(float)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(BOOL)arg4;
 
 - (id)_editedGeometryImageWithBaseImage:(id)arg1;
 - (id)_editedImage;

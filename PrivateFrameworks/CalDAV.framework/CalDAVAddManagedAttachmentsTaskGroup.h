@@ -3,19 +3,19 @@
  */
 
 @interface CalDAVAddManagedAttachmentsTaskGroup : CoreDAVTaskGroup {
-    NSDictionary *_attachments;
-    NSDictionary *_contentTypes;
-    NSMutableDictionary *_filenamesToServerLocation;
-    BOOL _hadPreconditionFailure;
-    NSDictionary *_postFailureSizes;
-    NSURL *_postURLWithQuery;
-    NSString *_previousETag;
-    NSString *_previousScheduleTag;
-    NSURL *_resourceURL;
-    int _state;
-    NSString *_updatedETag;
-    NSData *_updatedResourcePayload;
-    NSString *_updatedScheduleTag;
+    NSDictionary * _attachments;
+    NSDictionary * _contentTypes;
+    NSMutableDictionary * _filenamesToServerLocation;
+    BOOL  _hadPreconditionFailure;
+    NSDictionary * _postFailureSizes;
+    NSURL * _postURLWithQuery;
+    NSString * _previousETag;
+    NSString * _previousScheduleTag;
+    NSURL * _resourceURL;
+    int  _state;
+    NSString * _updatedETag;
+    NSData * _updatedResourcePayload;
+    NSString * _updatedScheduleTag;
 }
 
 @property (nonatomic, retain) NSDictionary *attachments;
@@ -31,6 +31,7 @@
 @property (nonatomic, retain) NSData *updatedResourcePayload;
 @property (nonatomic, retain) NSString *updatedScheduleTag;
 
+- (void).cxx_destruct;
 - (void)_fetchUpdatedContent;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_handlePostResponse:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)_sendAttachments;
 - (id)attachments;
 - (id)contentTypes;
-- (void)dealloc;
 - (id)filenamesToServerLocation;
 - (BOOL)hadPreconditionFailure;
 - (id)initWithAccountInfoProvider:(id)arg1 resourceURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 taskManager:(id)arg5;

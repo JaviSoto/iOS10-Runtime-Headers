@@ -3,8 +3,8 @@
  */
 
 @interface _UIServiceWebView : UIWebView {
-    _UIServiceWebViewController *_serviceWebViewController;
-    BOOL _shouldDecidePolicyRemotely;
+    _UIServiceWebViewController * _serviceWebViewController;
+    BOOL  _shouldDecidePolicyRemotely;
 }
 
 @property (nonatomic) _UIServiceWebViewController *serviceWebViewController;

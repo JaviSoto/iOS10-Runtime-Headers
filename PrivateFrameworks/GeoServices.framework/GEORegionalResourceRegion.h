@@ -3,12 +3,12 @@
  */
 
 @interface GEORegionalResourceRegion : PBCodable <NSCopying> {
-    NSMutableArray *_attributions;
-    NSMutableArray *_iconChecksums;
-    NSMutableArray *_icons;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
-    unsigned int _tileRangesCount;
-    unsigned int _tileRangesSpace;
+    NSMutableArray * _attributions;
+    NSMutableArray * _iconChecksums;
+    NSMutableArray * _icons;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * _tileRanges;
+    unsigned int  _tileRangesCount;
+    unsigned int  _tileRangesSpace;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributions;

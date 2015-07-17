@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptButtonNativeObject : SUScriptNativeObject {
-    BOOL _loading;
-    NSString *_styleString;
-    NSString *_subtitle;
-    NSString *_systemItemString;
+    BOOL  _loading;
+    NSString * _styleString;
+    NSString * _subtitle;
+    NSString * _systemItemString;
 }
 
 @property (getter=isBackButton, nonatomic, readonly) BOOL backButton;

@@ -3,47 +3,73 @@
  */
 
 @interface TSCECalculationEngine : TSPObject {
-    TSKAccessController *_accessController;
-    unsigned int _batchingGroupCellDirtyingLevel;
-    BOOL _blockingUntilRecalcIsComplete;
-    int _calculationPauseCount;
-    NSMutableArray *_calculationStateObservers;
-    TSKChangeNotifier *_changeNotifier;
-    NSDate *_currentDate;
-    <TSKMultiTableRemapping> *_currentTableIDRemapper;
-    <TSKMultiTableRemapping> *_currentTableIdRemapper;
-    NSTimeZone *_currentTimeZone;
-    struct TSCEDependencyTracker { struct _opaque_pthread_mutex_t { long x_1_1_1; BOOL x_1_1_2[40]; } x1; id x2; /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x3; in out const double x4; void*x5; const void*x6; double x7; void*x8; void*x9; void*x10; void*x11; void*x12; BOOL x13; out in short x14; void*x15; void*x16; void*x17; void*x18; unsigned char x19; void*x20; void*x21; void*x22; unsigned int x23; long doublex24; void*x25; char *x26; void*x27; void*x28; void*x29; unsigned short x30; unsigned char x31; void*x32; long doublex33; void*x34; void*x35; void*x36; in double x37; void*x38; in BOOL x39; void*x40; void*x41; const void*x42; BOOL x43; void*x44; void*x45; const void*x46; out const void*x47; void*x48; long x49; void*x50; bycopy void*x51; in void*x52; const unsigned int x53; in float x54; out void*x55; void*x56; void*x57; unsigned short x58; unsigned char x59; void*x60; void*x61; out const void*x62; void*x63; long x64; void*x65; bycopy void*x66; in void*x67; const unsigned int x68; long doublex69; void*x70; void*x71; short x72; void*x73; void*x74; void*x75; void*x76; unsigned short x77; unsigned char x78; void*x79; void*x80; out const void*x81; void*x82; long x83; void*x84; bycopy void*x85; in void*x86; const unsigned int x87; long doublex88; void*x89; long long x90; void*x91; void*x92; long x93; void*x94; void*x95; short x96; void*x97; double x98; SEL x99; SEL x100; void*x101; void*x102; void*x103; SEL x104; SEL x105; void*x106; long x107; long x108; out BOOL x109; void*x110; void*x111; out const void*x112; short x113; void*x114; double x115; SEL x116; SEL x117; void*x118; void*x119; void*x120; SEL x121; SEL x122; void*x123; void*x124; int x125; const void*x126; BOOL x127; out in short x128; void*x129; void*x130; void*x131; void*x132; unsigned char x133; void*x134; void*x135; void*x136; unsigned int x137; long doublex138; void*x139; char *x140; BOOL x141; out in short x142; void*x143; void*x144; void*x145; void*x146; unsigned short x147; unsigned char x148; void*x149; long doublex150; void*x151; void*x152; void*x153; in double x154; void*x155; in BOOL x156; void*x157; void*x158; const void*x159; BOOL x160; void*x161; void*x162; const void*x163; out const void*x164; void*x165; long x166; void*x167; bycopy void*x168; in void*x169; const unsigned int x170; in float x171; out void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; struct __hash_table<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, std::__1::__unordered_map_hasher<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDHash, true>, std::__1::__unordered_map_equal<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDEqual, true>, std::__1::allocator<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo> > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_178_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> { struct __hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> {} *x_1_3_1; } x_2_2_1; } x_178_1_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDHash, true> > { unsigned long x_3_2_1; } x_178_1_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDEqual, true> > { float x_4_2_1; } x_178_1_4; } x178; } *_dependencyTracker;
-    BOOL _dirtyAllFormulasInDocumentDidLoad;
-    BOOL _dirtyRandomVolatileFunctionsAtEndOfDirtyBatching;
-    unsigned long long _documentRandSeed;
-    struct __CFDictionary { } *_legacyGlobalIDStringToOwnerIDDictionary;
-    unsigned long long _loadFromFileVersion;
-    struct __CFSet { } *_modifiedOwnersInThisRecalcCycle;
-    NSObject<OS_dispatch_semaphore> *_modifiedOwnersSem;
-    TSCENamedReferenceManager *_namedReferenceManager;
-    unsigned int _numberOfFormulas;
-    TSKChangeGroup *_pendingChangesForAsyncNotification;
-    NSString *_previousLocaleIdentifier;
-    NSObject<OS_dispatch_group> *_recalcDispatchGroup;
-    int _recalcDispatchGroupSize;
-    NSObject<OS_dispatch_queue> *_recalcHighPriorityQueue;
-    NSObject<OS_dispatch_group> *_recalcLoopGroup;
-    NSObject<OS_dispatch_queue> *_recalcLowPriorityQueue;
-    int _recalculationThreadState;
+    TSKAccessController * _accessController;
+    unsigned int  _batchingGroupCellDirtyingLevel;
+    BOOL  _blockingUntilRecalcIsComplete;
+    int  _calculationPauseCount;
+    NSMutableArray * _calculationStateObservers;
+    TSKChangeNotifier * _changeNotifier;
+    NSDate * _currentDate;
+    <TSKMultiTableRemapping> * _currentTableIDRemapper;
+    <TSKMultiTableRemapping> * _currentTableIdRemapper;
+    NSTimeZone * _currentTimeZone;
+    struct TSCEDependencyTracker { struct _opaque_pthread_mutex_t { long x_1_1_1; BOOL x_1_1_2[40]; } x1; id x2; /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*x3; in out const double x4; void*x5; const void*x6; double x7; void*x8; void*x9; void*x10; void*x11; void*x12; BOOL x13; out in short x14; void*x15; void*x16; void*x17; void*x18; unsigned char x19; void*x20; void*x21; void*x22; unsigned int x23; long doublex24; void*x25; char *x26; void*x27; void*x28; void*x29; unsigned short x30; unsigned char x31; void*x32; long doublex33; void*x34; void*x35; void*x36; in double x37; void*x38; in BOOL x39; void*x40; void*x41; const void*x42; BOOL x43; void*x44; void*x45; const void*x46; out const void*x47; void*x48; long x49; void*x50; bycopy void*x51; in void*x52; const unsigned int x53; in float x54; out void*x55; void*x56; void*x57; unsigned short x58; unsigned char x59; void*x60; void*x61; out const void*x62; void*x63; long x64; void*x65; bycopy void*x66; in void*x67; const unsigned int x68; long doublex69; void*x70; void*x71; short x72; void*x73; void*x74; void*x75; void*x76; unsigned short x77; unsigned char x78; void*x79; void*x80; out const void*x81; void*x82; long x83; void*x84; bycopy void*x85; in void*x86; const unsigned int x87; long doublex88; void*x89; long long x90; void*x91; void*x92; long x93; void*x94; void*x95; short x96; void*x97; double x98; SEL x99; SEL x100; void*x101; void*x102; void*x103; SEL x104; SEL x105; void*x106; long x107; long x108; out BOOL x109; void*x110; void*x111; out const void*x112; short x113; void*x114; double x115; SEL x116; SEL x117; void*x118; void*x119; void*x120; SEL x121; SEL x122; void*x123; void*x124; int x125; const void*x126; BOOL x127; out in short x128; void*x129; void*x130; void*x131; void*x132; unsigned char x133; void*x134; void*x135; void*x136; unsigned int x137; long doublex138; void*x139; char *x140; BOOL x141; out in short x142; void*x143; void*x144; void*x145; void*x146; unsigned short x147; unsigned char x148; void*x149; long doublex150; void*x151; void*x152; void*x153; in double x154; void*x155; in BOOL x156; void*x157; void*x158; const void*x159; BOOL x160; void*x161; void*x162; const void*x163; out const void*x164; void*x165; long x166; void*x167; bycopy void*x168; in void*x169; const unsigned int x170; in float x171; out void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; struct __hash_table<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, std::__1::__unordered_map_hasher<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDHash, true>, std::__1::__unordered_map_equal<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDEqual, true>, std::__1::allocator<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo> > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_178_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> *> { struct __hash_node<std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, void *> {} *x_1_3_1; } x_2_2_1; } x_178_1_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDHash, true> > { unsigned long x_3_2_1; } x_178_1_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<const __CFUUID *, std::__1::__hash_value_type<const __CFUUID *, TSCEDependencyTrackerFormulaOwnerInfo>, TSCEFormulaOwnerIDEqual, true> > { float x_4_2_1; } x_178_1_4; } x178; } * _dependencyTracker;
+    BOOL  _dirtyAllFormulasInDocumentDidLoad;
+    BOOL  _dirtyRandomVolatileFunctionsAtEndOfDirtyBatching;
+    unsigned long long  _documentRandSeed;
+    struct __CFDictionary { } * _legacyGlobalIDStringToOwnerIDDictionary;
+    unsigned long long  _loadFromFileVersion;
+    struct __CFSet { } * _modifiedOwnersInThisRecalcCycle;
+    NSObject<OS_dispatch_semaphore> * _modifiedOwnersSem;
+    TSCENamedReferenceManager * _namedReferenceManager;
+    unsigned int  _numberOfFormulas;
+    TSKChangeGroup * _pendingChangesForAsyncNotification;
+    NSString * _previousLocaleIdentifier;
+    NSObject<OS_dispatch_group> * _recalcDispatchGroup;
+    int  _recalcDispatchGroupSize;
+    NSObject<OS_dispatch_queue> * _recalcHighPriorityQueue;
+    NSObject<OS_dispatch_group> * _recalcLoopGroup;
+    NSObject<OS_dispatch_queue> * _recalcLowPriorityQueue;
+    int  _recalculationThreadState;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _recalculationThreadStateMutex;
-    struct __CFDictionary { } *_referenceResolvers;
-    BOOL _shouldCancelRecalculation;
-    BOOL _shouldRefillRecalcQueue;
-    unsigned int _suppressWillModifyCallsLevel;
-    TSCERewriteTableIDInfo *_tableIDHistory;
-    struct __CFUUID { } *_transposingTableID;
-    TSCEUUidReferenceMap *_uuidReferenceMap;
-    NSObject<OS_dispatch_queue> *_writeMutualExclusionQueue;
-    int _xlImportDateMode;
+    }  _recalculationThreadStateMutex;
+    struct __CFDictionary { } * _referenceResolvers;
+    BOOL  _shouldCancelRecalculation;
+    BOOL  _shouldRefillRecalcQueue;
+    unsigned int  _suppressWillModifyCallsLevel;
+    TSCERewriteTableIDInfo * _tableIDHistory;
+    TSCETransaction * _transaction;
+    struct __CFUUID { } * _transposingTableID;
+    struct unordered_set<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
+        struct __hash_table<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
+            struct unique_ptr<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> > > { 
+                    struct __hash_node<TSU::UUIDData<TSP::UUIDData>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *>, std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> { 
+                    struct __hash_node<TSU::UUIDData<TSP::UUIDData>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::hash<TSUUUID> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> > > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    }  _unregisterIOUs;
+    TSCEUUidReferenceMap * _uuidReferenceMap;
+    NSObject<OS_dispatch_queue> * _writeMutualExclusionQueue;
+    int  _xlImportDateMode;
 }
 
 @property (retain) NSDate *currentDate;
@@ -62,9 +88,10 @@
 + (void)splitRandomSeed:(unsigned long long)arg1 intoLo:(int*)arg2 hi:(int*)arg3;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)accessController;
 - (void)addCalculationStateObserver:(id)arg1;
-- (void)addFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)arg3 userData:(void*)arg4 hasRandomVolatileFunctions:(BOOL*)arg5;
+- (void)addFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)arg3 userData:(void*)arg4;
 - (id)allCellDependenciesAsString;
 - (BOOL)allCellsAreClean;
 - (void)allFunctionsAreDirty;
@@ -87,16 +114,22 @@
 - (BOOL)cellIsInACycle:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg1;
 - (void)cellReferenceIsDirty:(const struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg1;
 - (BOOL)clearCellIsDirtyAfterRecalc:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
+- (void)clearErrorForCell:(const struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg1;
 - (void)clearLegacyGlobalIDs;
+- (void)commitTransaction:(id)arg1;
 - (void)compassVolatileFunctionsAreDirty;
 - (id)currentDate;
 - (id)currentTableIdRemapper;
 - (id)currentTimeZone;
+- (id)currentTransaction;
 - (void)dealloc;
 - (unsigned int)delayedArchivingPriority;
 - (void)detectAndRepairConsistencyViolations;
 - (unsigned int)dirtyCellCount;
 - (unsigned int)dirtyCellCountInOwner:(struct __CFUUID { }*)arg1;
+- (void)dirtyCellsForInsertionOfColumns:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 forTable:(struct __CFUUID { }*)arg2 tableRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg3 headerRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg4;
+- (void)dirtyCellsForInsertionOfRows:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 forTable:(struct __CFUUID { }*)arg2 tableRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg3 headerRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg4;
+- (void)dirtyCellsForMergingRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 forTable:(struct __CFUUID { }*)arg2 headerRowRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg3 headerColumnRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg4;
 - (void)dirtyCellsForRemovalOfColumns:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 fromTable:(struct __CFUUID { }*)arg2 tableRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg3;
 - (void)dirtyCellsForRemovalOfRows:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 fromTable:(struct __CFUUID { }*)arg2 tableRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg3;
 - (void)dirtyCellsForUpgrade;
@@ -112,6 +145,7 @@
 - (void)executeBlockWhileCalculationEngineIsNotWriting:(id /* block */)arg1;
 - (id)extendTableIDHistoryWithRewrite:(id)arg1;
 - (void)foreachFormulaInOwner:(struct __CFUUID { }*)arg1 block:(id /* block */)arg2;
+- (struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x_3_1_1; } x3; })formulaCoordsInRange:(const struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; }*)arg1 inOwner:(struct __CFUUID { }*)arg2;
 - (struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x_3_1_1; } x3; })formulaCoordsReferringToRange:(const struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; }*)arg1 fromOwner:(struct __CFUUID { }*)arg2;
 - (struct __CFUUID { }*)formulaOwnerIDForFormulaOwnerID:(struct __CFUUID { }*)arg1;
 - (struct __CFUUID { }*)formulaOwnerIDForFormulaOwnerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1;
@@ -134,9 +168,11 @@
 - (void)notifyObserversOfRecalcProgress;
 - (unsigned int)numFormulaCellsInOwner:(struct __CFUUID { }*)arg1;
 - (unsigned int)numberOfCellsWithFormulas;
+- (id)openTransaction;
 - (struct __CFUUID { }*)ownerIDForLegacyGlobalID:(id)arg1 registeringIfNeeded:(BOOL)arg2;
 - (void)ownerIsDirty:(struct __CFUUID { }*)arg1;
 - (BOOL)ownerIsRegistered:(struct __CFUUID { }*)arg1;
+- (BOOL)ownerOwesAnUnregister:(struct __CFUUID { }*)arg1;
 - (BOOL)ownerUidIsRegisterd:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1;
 - (void)p_addApplicationNotification;
 - (void)p_blockUntilRecalcIsCompleteOnNewThreadWithTimeout:(id)arg1;
@@ -157,6 +193,7 @@
 - (struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReferenceComponentIntersection:(id)arg1 inResolver:(id)arg2 inTableNamed:(id)arg3 preferredGeometricResolver:(id)arg4 defaultResolver:(id)arg5 outStickyBits:(char *)arg6 gettingReferencesMatchingInputAsPrefix:(id*)arg7 requireFullMatches:(BOOL)arg8 filterColons:(BOOL)arg9 outNamesUsed:(BOOL*)arg10 abortObject:(id)arg11;
 - (void)pauseRecalculation;
 - (void)pauseRecalculationForBlock:(id /* block */)arg1;
+- (void)pauseRecalculationSometimeSoon;
 - (struct unordered_set<TSCECReference, TSCECReferenceHash, TSCECReferenceEqual, std::__1::allocator<TSCECReference> > { struct __hash_table<TSCECReference, TSCECReferenceHash, TSCECReferenceEqual, std::__1::allocator<TSCECReference> > { struct unique_ptr<std::__1::__hash_node<TSCECReference, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<TSCECReference, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > > { struct __hash_node<TSCECReference, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCECReference, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCECReference, void *> *> { struct __hash_node<TSCECReference, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSCECReferenceHash> { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, TSCECReferenceEqual> { float x_4_2_1; } x_1_1_4; } x1; })precedentsOfCell:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
 - (int)preferredDispatchQueueSize;
 - (id)previousLocaleIdentifier;
@@ -169,26 +206,28 @@
 - (void)recalculateWithTimeout:(double)arg1;
 - (BOOL)recalculationIsPaused;
 - (BOOL)referenceIsValid:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
-- (BOOL)referenceWasGuaranteedCleanAtRecalcCycleStart:(struct { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })arg1;
+- (BOOL)referenceWasGuaranteedCleanAtRecalcCycleStart:(struct TSCECReference { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })arg1;
 - (int)registerOwnerWithOwnerID:(struct __CFUUID { }*)arg1 owner:(id)arg2 referenceResolver:(id)arg3;
 - (int)registerOwnerWithOwnerID:(struct __CFUUID { }*)arg1 owner:(id)arg2 referenceResolver:(id)arg3 mergeOwner:(BOOL)arg4;
 - (void)removeAllFormulasFromOwner:(struct __CFUUID { }*)arg1;
 - (void)removeCalculationStateObserver:(id)arg1;
 - (void)removeFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2;
 - (void)removeFormulasFromRange:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
-- (void)replaceFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)arg3 userData:(void*)arg4 hasRandomVolatileFunctions:(BOOL*)arg5;
-- (void)replaceFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)arg3 userData:(void*)arg4 hasRandomVolatileFunctions:(BOOL*)arg5 clearCycle:(BOOL)arg6;
+- (void)replaceFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)arg3 userData:(void*)arg4;
+- (void)replaceFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)arg3 userData:(void*)arg4 clearCycle:(BOOL)arg5;
 - (id)resolverForTableID:(struct __CFUUID { }*)arg1;
 - (id)resolverForTableUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1;
 - (void)resumeRecalculation;
 - (id)retain;
 - (void)rollbackTableIDHistoryWithRewrite:(id)arg1;
+- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })rootCauseForErrorInCell:(const struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg1 atRootCell:(BOOL*)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAccessController:(id)arg1;
 - (void)setCurrentDate:(id)arg1;
 - (void)setCurrentTableIdRemapper:(id)arg1;
 - (void)setCurrentTimeZone:(id)arg1;
 - (void)setDocumentRandomSeed:(unsigned long long)arg1;
+- (void)setError:(id)arg1 forCell:(const struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg2;
 - (void)setLoadFromFileVersion:(unsigned long long)arg1;
 - (void)setOwnerIDForLegacyGlobalID:(id)arg1 ownerID:(struct __CFUUID { }*)arg2;
 - (void)setTransposingTableID:(struct __CFUUID { }*)arg1;

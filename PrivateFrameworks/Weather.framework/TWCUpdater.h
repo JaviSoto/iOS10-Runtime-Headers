@@ -3,15 +3,16 @@
  */
 
 @interface TWCUpdater : WeatherJSONHTTPRequest {
-    <WeatherUpdaterDelegate> *_delegate;
-    NSMutableArray *_pendingCities;
-    NSMutableArray *_updatingCities;
-    id /* block */ _weatherCompletionUpdaterHandler;
+    <WeatherUpdaterDelegate> * _delegate;
+    NSMutableArray * _pendingCities;
+    NSMutableArray * _updatingCities;
+    id /* block */  _weatherCompletionUpdaterHandler;
 }
 
 @property (nonatomic) <WeatherUpdaterDelegate> *delegate;
 @property (nonatomic, copy) id /* block */ weatherCompletionUpdaterHandler;
 
+- (void).cxx_destruct;
 - (id)_GMTOffsetRegularExpression;
 - (id)_ISO8601Calendar;
 - (id)_ISO8601DateFormatter;

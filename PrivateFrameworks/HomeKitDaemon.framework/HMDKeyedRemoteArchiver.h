@@ -3,8 +3,8 @@
  */
 
 @interface HMDKeyedRemoteArchiver : NSObject {
-    NSKeyedArchiver *_archiver;
-    NSString *_transportType;
+    NSKeyedArchiver * _archiver;
+    NSString * _transportType;
 }
 
 @property (nonatomic, retain) NSKeyedArchiver *archiver;

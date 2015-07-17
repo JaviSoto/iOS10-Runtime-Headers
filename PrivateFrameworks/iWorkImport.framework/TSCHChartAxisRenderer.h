@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartAxisRenderer : TSCHRenderer <TSCHCompositeRendering> {
-    TSCHSelectionPath *mAxisTitleSelectionPath;
-    NSString *mEditingString;
+    TSCHSelectionPath * mAxisTitleSelectionPath;
+    NSString * mEditingString;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +14,7 @@
             float width; 
             float height; 
         } size; 
-    } mStartingEditingFrame;
+    }  mStartingEditingFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;

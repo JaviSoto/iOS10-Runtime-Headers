@@ -3,11 +3,11 @@
  */
 
 @interface AXLanguageManager : NSObject {
-    NSCharacterSet *_commonCharacters;
-    AXDialectMap *_dialectForCurrentLocale;
-    AXDialectMap *_dialectForSystemLanguage;
-    NSArray *_langMaps;
-    NSLocale *_userLocale;
+    NSCharacterSet * _commonCharacters;
+    AXDialectMap * _dialectForCurrentLocale;
+    AXDialectMap * _dialectForSystemLanguage;
+    NSArray * _langMaps;
+    NSLocale * _userLocale;
 }
 
 @property (nonatomic, retain) NSCharacterSet *commonCharacters;
@@ -19,7 +19,6 @@
 
 + (id)commonPunctuationCharacters;
 + (id)dialectForAlternativeVoiceIdentifier:(id)arg1;
-+ (BOOL)isDialectIdentifierAlternativeVoice:(id)arg1;
 + (id)nameForAlternativeVoiceIdentifier:(id)arg1;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
 + (id)sharedInstance;

@@ -3,14 +3,14 @@
  */
 
 @interface MusicTermsVerificationOperation : NSOperation <MusicTermsAgreementViewControllerDelegate> {
-    SSVFairPlaySAPSession *_SAPSession;
-    unsigned long long _acceptingTermsVersion;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    id /* block */ _additionalPresentationHandler;
-    NSError *_error;
-    BOOL _executing;
-    BOOL _finished;
-    MusicTermsAgreementViewController *_termsAgreementViewController;
+    SSVFairPlaySAPSession * _SAPSession;
+    unsigned long long  _acceptingTermsVersion;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    id /* block */  _additionalPresentationHandler;
+    NSError * _error;
+    BOOL  _executing;
+    BOOL  _finished;
+    MusicTermsAgreementViewController * _termsAgreementViewController;
 }
 
 @property (retain) SSVFairPlaySAPSession *SAPSession;

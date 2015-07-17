@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptPopOver : SUScriptObject {
-    UIViewController *_contentViewController;
-    BOOL _ignoreDismiss;
+    UIViewController * _contentViewController;
+    BOOL  _ignoreDismiss;
 }
 
 @property (readonly) UIViewController *activeViewController;

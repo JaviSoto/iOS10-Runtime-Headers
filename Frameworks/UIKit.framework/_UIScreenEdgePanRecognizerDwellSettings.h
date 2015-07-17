@@ -3,13 +3,13 @@
  */
 
 @interface _UIScreenEdgePanRecognizerDwellSettings : _UISettings {
-    double _longPressFlatPermittedHorizontalMovement;
-    double _longPressFlatPermittedVerticalMovement;
-    double _longPressPermittedHorizontalMovement;
-    double _longPressPermittedVerticalMovement;
-    double _longPressRequiredDuration;
-    double _longPressTipPermittedHorizontalMovement;
-    double _longPressTipPermittedVerticalMovement;
+    double  _longPressFlatPermittedHorizontalMovement;
+    double  _longPressFlatPermittedVerticalMovement;
+    double  _longPressPermittedHorizontalMovement;
+    double  _longPressPermittedVerticalMovement;
+    double  _longPressRequiredDuration;
+    double  _longPressTipPermittedHorizontalMovement;
+    double  _longPressTipPermittedVerticalMovement;
 }
 
 @property (nonatomic) double longPressFlatPermittedHorizontalMovement;

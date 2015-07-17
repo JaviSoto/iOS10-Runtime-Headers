@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKBarcodeStickerView : UIView {
-    UILabel *_altTextLabel;
-    PKBarcode *_barcode;
-    UIImageView *_barcodeView;
-    BOOL _drawBarcode;
-    int _layoutMode;
-    NSMutableArray *_matteConstraints;
-    UIImageView *_matteView;
-    NSMutableArray *_stickerConstraints;
-    int _validity;
+@interface PKBarcodeStickerView : UIButton {
+    UILabel * _altTextLabel;
+    PKBarcode * _barcode;
+    UIImageView * _barcodeView;
+    BOOL  _drawBarcode;
+    int  _layoutMode;
+    NSMutableArray * _matteConstraints;
+    UIImageView * _matteView;
+    NSMutableArray * _stickerConstraints;
+    int  _validity;
 }
 
 @property (nonatomic, readonly) UIView *matteView;

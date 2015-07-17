@@ -3,10 +3,10 @@
  */
 
 @interface CKDModifyShareTokenInfo : NSObject {
-    NSString *_baseToken;
-    NSData *_encryptedFullTokenData;
-    CKShareID *_shareID;
-    NSData *_shortSharingTokenHashData;
+    NSString * _baseToken;
+    NSData * _encryptedFullTokenData;
+    CKShareID * _shareID;
+    NSData * _shortSharingTokenHashData;
 }
 
 @property (nonatomic, retain) NSString *baseToken;

@@ -3,19 +3,19 @@
  */
 
 @interface QLServicePreviewContentController : UIViewController <QLPreviewContentDataSource, QLPreviewContentDelegate, QLRemotePreviewContentControllerProtocol> {
-    BOOL _blockRemoteImages;
+    BOOL  _blockRemoteImages;
     struct CGSize { 
         float width; 
         float height; 
-    } _clientSize;
-    _UIHostedWindow *_hostedWindow;
-    int _numberOfPreviewItems;
-    QLPreviewContentController *_previewContentController;
-    NSMutableDictionary *_previewItemCache;
-    int _previewMode;
-    <QLRemotePrintPageHelper> *_printPageHelper;
-    BOOL _remoteInstantiationFinished;
-    int _sourceUUID;
+    }  _clientSize;
+    _UIHostedWindow * _hostedWindow;
+    int  _numberOfPreviewItems;
+    QLPreviewContentController * _previewContentController;
+    NSMutableDictionary * _previewItemCache;
+    int  _previewMode;
+    <QLRemotePrintPageHelper> * _printPageHelper;
+    BOOL  _remoteInstantiationFinished;
+    int  _sourceUUID;
 }
 
 @property <QLPreviewContentDataSource> *dataSource;
@@ -30,6 +30,7 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
+- (void)_dismissTransitionIsReadyToFinish;
 - (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id /* block */)arg2;
 - (void)_getPDFPageAtIndex:(int)arg1 handler:(id /* block */)arg2;
 - (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
@@ -51,6 +52,8 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
+- (void)dismissTransitionIsReadyToFinishSynchronizedWithBlock:(id /* block */)arg1;
+- (void)dismissalGestureDidUpdateInPreviewContentController:(id)arg1 state:(int)arg2 trackingInformation:(id)arg3;
 - (void)endScrubbing;
 - (void)enterBackground;
 - (void)forceResignFirstResponder;
@@ -89,6 +92,7 @@
 - (int)sourceUUID;
 - (void)stopLoadingCurrentPreviewItem;
 - (void)togglePlayState;
+- (void)viewDidLayoutSubviews;
 - (void)willChangeContentFrame;
 
 @end

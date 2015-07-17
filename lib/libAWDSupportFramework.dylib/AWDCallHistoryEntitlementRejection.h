@@ -6,10 +6,10 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int pid : 1; 
-    } _has;
-    unsigned int _pid;
-    NSString *_procname;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _pid;
+    NSString * _procname;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasPid;

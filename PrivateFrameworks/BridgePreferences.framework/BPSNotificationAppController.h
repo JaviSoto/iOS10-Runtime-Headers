@@ -3,16 +3,16 @@
  */
 
 @interface BPSNotificationAppController : PSListController <BPSInternalGlanceObserverDelegate> {
-    NPSDomainAccessor *_bbAppsSettings;
-    BBSectionInfo *_bbSectionInfo;
-    NSString *_bundleIdentifier;
-    NGSGlance *_glance;
-    BPSInternalGlanceManager *_manager;
-    BOOL _mirrorSettings;
-    NSMutableArray *_notificationApplicationSpecifiers;
-    NSMutableArray *_notificationSpecifiers;
-    NSMutableDictionary *_sectionInfo;
-    unsigned int _settingsMode;
+    NPSDomainAccessor * _bbAppsSettings;
+    BBSectionInfo * _bbSectionInfo;
+    NSString * _bundleIdentifier;
+    NGSGlance * _glance;
+    BPSInternalGlanceManager * _manager;
+    BOOL  _mirrorSettings;
+    NSMutableArray * _notificationApplicationSpecifiers;
+    NSMutableArray * _notificationSpecifiers;
+    NSMutableDictionary * _sectionInfo;
+    unsigned int  _settingsMode;
 }
 
 @property (nonatomic, retain) NPSDomainAccessor *bbAppsSettings;
@@ -52,6 +52,8 @@
 - (id)localizedMirroringDetailFooter;
 - (id)localizedPaneTitle;
 - (id)localizedPreviewChoiceTitle;
+- (id)localizedPreviewGroupFooter;
+- (id)localizedPreviewGroupLabel;
 - (id)manager;
 - (BOOL)mirrorSettings;
 - (void)mirrorSettingsChanged:(BOOL)arg1;
@@ -93,6 +95,7 @@
 - (void)updateSubsections;
 - (id)vibrationValue:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)wantsPreviewChoice;
 - (void)writeSectionState;
 
 @end

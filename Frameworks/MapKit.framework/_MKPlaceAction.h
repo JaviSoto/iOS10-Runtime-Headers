@@ -3,8 +3,8 @@
  */
 
 @interface _MKPlaceAction : NSObject {
-    SEL _action;
-    NSString *_title;
+    SEL  _action;
+    NSString * _title;
 }
 
 @property (nonatomic) SEL action;

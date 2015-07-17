@@ -3,8 +3,8 @@
  */
 
 @interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate, MusicEntityViewPlaybackStatusObserving> {
-    float _leadingTextColumnWidth;
-    MusicEntityTracklistItemView *_tracklistItemView;
+    float  _leadingTextColumnWidth;
+    MusicEntityTracklistItemView * _tracklistItemView;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

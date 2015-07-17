@@ -3,9 +3,9 @@
  */
 
 @interface SGContactDetailKey : NSObject <SGEntityKey> {
-    SGIdentityKey *_identityKey;
-    NSString *_label;
-    NSString *_value;
+    SGIdentityKey * _identityKey;
+    NSString * _label;
+    NSString * _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;

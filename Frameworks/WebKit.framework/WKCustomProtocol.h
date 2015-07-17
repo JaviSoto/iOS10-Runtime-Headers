@@ -3,7 +3,7 @@
  */
 
 @interface WKCustomProtocol : NSURLProtocol {
-    unsigned long long _customProtocolID;
+    unsigned long long  _customProtocolID;
 }
 
 @property (nonatomic, readonly) unsigned long long customProtocolID;

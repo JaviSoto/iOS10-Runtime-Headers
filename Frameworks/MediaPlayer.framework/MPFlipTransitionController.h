@@ -3,7 +3,7 @@
  */
 
 @interface MPFlipTransitionController : MPTransitionController {
-    UIView *_fromView;
+    UIView * _fromView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +13,8 @@
             float width; 
             float height; 
         } size; 
-    } _toFrame;
-    float _topMargin;
+    }  _toFrame;
+    float  _topMargin;
 }
 
 @property (nonatomic, retain) UIView *fromView;

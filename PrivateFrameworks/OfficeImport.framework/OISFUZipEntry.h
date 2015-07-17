@@ -3,17 +3,17 @@
  */
 
 @interface OISFUZipEntry : OISFUDataRepresentation {
-    OISFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;
-    unsigned long long mCompressedSize;
-    int mCompressionMethod;
-    unsigned int mCrc;
-    OISFUCryptoKey *mCryptoKey;
-    unsigned long long mDataOffset;
-    unsigned long long mEncodedLength;
-    BOOL mHasDataOffset;
-    BOOL mHasEncodedLength;
-    unsigned long long mOffset;
-    unsigned long long mUncompressedSize;
+    OISFUDataRepresentation<SFUZipArchiveDataRepresentation> * mArchiveDataRepresentation;
+    unsigned long long  mCompressedSize;
+    int  mCompressionMethod;
+    unsigned int  mCrc;
+    OISFUCryptoKey * mCryptoKey;
+    unsigned long long  mDataOffset;
+    unsigned long long  mEncodedLength;
+    BOOL  mHasDataOffset;
+    BOOL  mHasEncodedLength;
+    unsigned long long  mOffset;
+    unsigned long long  mUncompressedSize;
 }
 
 - (unsigned long long)backingFileDataOffset;

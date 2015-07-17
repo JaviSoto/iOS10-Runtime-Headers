@@ -3,8 +3,8 @@
  */
 
 @interface _GKImageSpeechBalloonBackgroundView : UIImageView {
-    UIImage *_templateImage;
-    unsigned char _tipDirection;
+    UIImage * _templateImage;
+    unsigned char  _tipDirection;
 }
 
 @property (nonatomic, retain) UIImage *templateImage;

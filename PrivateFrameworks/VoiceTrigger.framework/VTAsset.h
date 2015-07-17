@@ -3,7 +3,7 @@
  */
 
 @interface VTAsset : NSObject {
-    ASAsset *_asset;
+    ASAsset * _asset;
 }
 
 @property (getter=isInstalled, nonatomic, readonly) BOOL installed;

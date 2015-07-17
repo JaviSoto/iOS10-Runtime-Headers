@@ -3,8 +3,8 @@
  */
 
 @interface _WBUDynamicMeCard : NSObject {
-    NSMutableArray *_blocksPendingMeCard;
-    void *_me;
+    NSMutableArray * _blocksPendingMeCard;
+    void * _me;
 }
 
 + (int)_ABPropertyIDForString:(id)arg1;

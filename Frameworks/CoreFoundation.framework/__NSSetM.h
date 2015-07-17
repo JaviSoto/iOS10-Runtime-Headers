@@ -3,10 +3,10 @@
  */
 
 @interface __NSSetM : NSMutableSet {
-    unsigned long _mutations;
-    id *_objs;
-    unsigned int _size;
-    unsigned int _used;
+    unsigned long  _mutations;
+    id * _objs;
+    unsigned int  _size;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;

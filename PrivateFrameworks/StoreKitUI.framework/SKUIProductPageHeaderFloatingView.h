@@ -3,12 +3,12 @@
  */
 
 @interface SKUIProductPageHeaderFloatingView : UIView {
-    UIView *_backdropAlphaView;
-    _UIBackdropView *_backdropView;
-    SKUIColorScheme *_colorScheme;
-    BOOL _isPad;
-    UISegmentedControl *_sectionControl;
-    UIView *_separatorView;
+    UIView * _backdropAlphaView;
+    _UIBackdropView * _backdropView;
+    SKUIColorScheme * _colorScheme;
+    BOOL  _isPad;
+    UISegmentedControl * _sectionControl;
+    UIView * _separatorView;
 }
 
 @property (nonatomic) float backdropAlpha;

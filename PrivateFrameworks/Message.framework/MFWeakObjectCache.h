@@ -3,9 +3,9 @@
  */
 
 @interface MFWeakObjectCache : NSObject {
-    id /* block */ _block;
-    NSMutableDictionary *_dictionary;
-    NSLock *_lock;
+    id /* block */  _block;
+    NSMutableDictionary * _dictionary;
+    NSLock * _lock;
 }
 
 - (void)dealloc;

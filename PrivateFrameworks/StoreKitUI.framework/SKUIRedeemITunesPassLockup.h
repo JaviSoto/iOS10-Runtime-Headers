@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRedeemITunesPassLockup : UIControl {
-    SKUIClientContext *_clientContext;
-    SKUIITunesPassConfiguration *_configuration;
-    UILabel *_descriptionLabel;
-    UIView *_horizontalSeparatorView;
-    UIImageView *_iconImageView;
-    UILabel *_titleLabel;
+    SKUIClientContext * _clientContext;
+    SKUIITunesPassConfiguration * _configuration;
+    UILabel * _descriptionLabel;
+    UIView * _horizontalSeparatorView;
+    UIImageView * _iconImageView;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

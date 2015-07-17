@@ -3,8 +3,8 @@
  */
 
 @interface NSWeakPointerValue : NSValue {
-    void *_value;
-    void *_weakValue;
+    void * _value;
+    void * _weakValue;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

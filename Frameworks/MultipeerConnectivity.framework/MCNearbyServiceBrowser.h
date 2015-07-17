@@ -3,18 +3,18 @@
  */
 
 @interface MCNearbyServiceBrowser : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    <MCNearbyServiceBrowserDelegate> *_delegate;
-    NSString *_formattedServiceType;
-    NSMutableDictionary *_invites;
-    BOOL _isBrowsing;
-    MCPeerID *_myPeerID;
-    NSMutableDictionary *_netServices;
-    NSNetServiceBrowser *_networkBrowser;
-    int _outgoingInviteID;
-    NSMutableDictionary *_peers;
-    NSString *_serviceType;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    BOOL _wasBrowsing;
+    <MCNearbyServiceBrowserDelegate> * _delegate;
+    NSString * _formattedServiceType;
+    NSMutableDictionary * _invites;
+    BOOL  _isBrowsing;
+    MCPeerID * _myPeerID;
+    NSMutableDictionary * _netServices;
+    NSNetServiceBrowser * _networkBrowser;
+    int  _outgoingInviteID;
+    NSMutableDictionary * _peers;
+    NSString * _serviceType;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    BOOL  _wasBrowsing;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,16 +3,17 @@
  */
 
 @interface OADShadowEffect : OADEffect {
-    float mAngle;
-    float mBlurRadius;
-    OADColor *mColor;
-    float mDistance;
+    float  mAngle;
+    float  mBlurRadius;
+    OADColor * mColor;
+    float  mDistance;
 }
 
 - (float)angle;
 - (float)blurRadius;
 - (id)color;
 - (void)dealloc;
+- (id)description;
 - (float)distance;
 - (unsigned int)hash;
 - (id)initWithShadowEffect:(id)arg1 type:(int)arg2;

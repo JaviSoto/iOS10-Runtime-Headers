@@ -3,10 +3,10 @@
  */
 
 @interface SSDistributedNotificationCenter : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableArray *_observers;
-    NSString *_portName;
-    SSXPCServer *_server;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableArray * _observers;
+    NSString * _portName;
+    SSXPCServer * _server;
 }
 
 @property (readonly) NSString *namedPort;

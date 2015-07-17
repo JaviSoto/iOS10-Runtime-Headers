@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartFeature : NSObject <TSCHUnretainedParent> {
-    NSArray *mCategoryAxisIDs;
-    TSCHChartType *mChartType;
-    NSArray *mValueAxisIDs;
+    NSArray * mCategoryAxisIDs;
+    TSCHChartType * mChartType;
+    NSArray * mValueAxisIDs;
 }
 
 @property (nonatomic, readonly, retain) NSArray *categoryAxisIDs;

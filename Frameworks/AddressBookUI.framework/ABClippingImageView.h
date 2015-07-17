@@ -3,10 +3,10 @@
  */
 
 @interface ABClippingImageView : UIView {
-    UIImage *_clippingImage;
-    UIImage *_image;
-    NSArray *_labelLines;
-    <ABStyleProvider> *_styleProvider;
+    UIImage * _clippingImage;
+    UIImage * _image;
+    NSArray * _labelLines;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) UIImage *image;

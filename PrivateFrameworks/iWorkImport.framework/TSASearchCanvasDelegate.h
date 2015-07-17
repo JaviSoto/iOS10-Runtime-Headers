@@ -3,8 +3,8 @@
  */
 
 @interface TSASearchCanvasDelegate : NSObject <TSDCanvasDelegate, TSKSearchCanvasDelegate> {
-    TSDCanvas *mCanvas;
-    TSKDocumentRoot *mDocumentRoot;
+    TSDCanvas * mCanvas;
+    TSKDocumentRoot * mDocumentRoot;
 }
 
 @property (nonatomic, readonly) TSDCanvas *canvas;

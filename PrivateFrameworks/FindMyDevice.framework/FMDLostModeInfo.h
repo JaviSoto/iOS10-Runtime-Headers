@@ -3,9 +3,9 @@
  */
 
 @interface FMDLostModeInfo : NSObject <NSSecureCoding> {
-    BOOL _lostModeEnabled;
-    NSString *_message;
-    NSString *_phoneNumber;
+    BOOL  _lostModeEnabled;
+    NSString * _message;
+    NSString * _phoneNumber;
 }
 
 @property (nonatomic) BOOL lostModeEnabled;

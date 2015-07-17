@@ -3,24 +3,24 @@
  */
 
 @interface SKUIHorizontalScrollingContainerViewController : SKUIViewController <SKUIProxyScrollViewDelegate, SKUIScrollViewDelegateObserver, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    UICollectionView *_contentCollectionView;
+    UICollectionView * _contentCollectionView;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentCollectionViewItemSize;
-    <SKUIHorizontalScrollingContainerViewControllerDelegate> *_delegate;
-    BOOL _initialScrollWasPerformed;
-    BOOL _isHandlingScrollViewDidScroll;
-    UICollectionView *_menuBarCollectionView;
-    SKUIProxyScrollView *_proxyScrollView;
+    }  _contentCollectionViewItemSize;
+    <SKUIHorizontalScrollingContainerViewControllerDelegate> * _delegate;
+    BOOL  _initialScrollWasPerformed;
+    BOOL  _isHandlingScrollViewDidScroll;
+    UICollectionView * _menuBarCollectionView;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _proxyScrollViewContentInsetAdjustment;
-    NSMapTable *_viewControllerToExistingContentInsetAdjustment;
-    NSArray *_viewControllers;
+    }  _proxyScrollViewContentInsetAdjustment;
+    NSMapTable * _viewControllerToExistingContentInsetAdjustment;
+    NSArray * _viewControllers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -6,15 +6,15 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _hardQueueRange;
-    MusicEntityViewHorizontalLockupContentDescriptor *_horizontalLockupContentDescriptor;
-    BOOL _ignoreQueueChanges;
-    MusicEntityViewHorizontalLockupContentDescriptor *_radioStationHorizontalLockupContentDescriptor;
-    BOOL _showsRadioQueue;
+    }  _hardQueueRange;
+    MusicEntityViewHorizontalLockupContentDescriptor * _horizontalLockupContentDescriptor;
+    BOOL  _ignoreQueueChanges;
+    MusicEntityViewHorizontalLockupContentDescriptor * _radioStationHorizontalLockupContentDescriptor;
+    BOOL  _showsRadioQueue;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _softQueueRange;
+    }  _softQueueRange;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface MPiTunesStoreTracklistPlaybackQueue : MPRemotePlaybackQueue {
-    unsigned int _shuffleType;
-    NSArray *_storeIDs;
+    unsigned int  _shuffleType;
+    NSArray * _storeIDs;
 }
 
 @property (nonatomic, readonly) unsigned int shuffleType;

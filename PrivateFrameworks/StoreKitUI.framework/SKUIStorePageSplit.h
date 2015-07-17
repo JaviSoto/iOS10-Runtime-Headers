@@ -3,11 +3,11 @@
  */
 
 @interface SKUIStorePageSplit : NSObject <NSCopying> {
-    UIColor *_dividerColor;
-    int _numberOfPageSections;
-    NSArray *_pageComponents;
-    SKUIStorePageSectionContext *_sectionContext;
-    float _widthFraction;
+    UIColor * _dividerColor;
+    int  _numberOfPageSections;
+    NSArray * _pageComponents;
+    SKUIStorePageSectionContext * _sectionContext;
+    float  _widthFraction;
 }
 
 @property (nonatomic, copy) UIColor *dividerColor;

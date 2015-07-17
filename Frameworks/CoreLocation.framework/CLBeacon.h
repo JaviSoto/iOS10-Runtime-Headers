@@ -3,12 +3,12 @@
  */
 
 @interface CLBeacon : NSObject <NSCopying, NSSecureCoding> {
-    double _accuracy;
-    NSNumber *_major;
-    NSNumber *_minor;
-    int _proximity;
-    NSUUID *_proximityUUID;
-    int _rssi;
+    double  _accuracy;
+    NSNumber * _major;
+    NSNumber * _minor;
+    int  _proximity;
+    NSUUID * _proximityUUID;
+    int  _rssi;
 }
 
 @property (nonatomic, readonly) double accuracy;

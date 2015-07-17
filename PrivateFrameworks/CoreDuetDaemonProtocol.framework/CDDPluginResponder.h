@@ -3,7 +3,7 @@
  */
 
 @interface CDDPluginResponder : NSObject {
-    CDDebug *_debug;
+    CDDebug * _debug;
 }
 
 @property (readonly) CDDebug *debug;

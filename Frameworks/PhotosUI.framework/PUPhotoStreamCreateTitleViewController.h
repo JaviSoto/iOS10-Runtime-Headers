@@ -3,14 +3,15 @@
  */
 
 @interface PUPhotoStreamCreateTitleViewController : UIViewController <UITextViewDelegate> {
-    UILabel *_descriptionLabel;
-    UILabel *_instructionLabel;
-    UINavigationItem *_navItem;
-    UIColor *_placeholderColor;
-    UILabel *_textPlaceholderLabel;
-    UITextView *_textView;
-    <PUPhotoStreamCreateTitleDelegate> *_titleDelegate;
-    UITextField *_titleField;
+    NSArray * _constraints;
+    UILabel * _descriptionLabel;
+    UILabel * _instructionLabel;
+    UINavigationItem * _navItem;
+    UIColor * _placeholderColor;
+    UILabel * _textPlaceholderLabel;
+    UITextView * _textView;
+    <PUPhotoStreamCreateTitleDelegate> * _titleDelegate;
+    UITextField * _titleField;
 }
 
 @property (readonly, copy) NSString *debugDescription;

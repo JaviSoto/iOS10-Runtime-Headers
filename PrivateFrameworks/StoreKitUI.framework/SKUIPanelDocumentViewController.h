@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPanelDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
-    UIImageView *_backgroundImageView;
-    BOOL _didAttemptBecomeFirstResponder;
+    UIImageView * _backgroundImageView;
+    BOOL  _didAttemptBecomeFirstResponder;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,14 +14,14 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    int _lastContentWidth;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIMetricsImpressionSession *_metricsImpressionSession;
-    SKUIPanelView *_panelView;
-    UIScrollView *_scrollView;
-    SKUIPanelTemplateViewElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    }  _keyboardFrame;
+    int  _lastContentWidth;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIMetricsImpressionSession * _metricsImpressionSession;
+    SKUIPanelView * _panelView;
+    UIScrollView * _scrollView;
+    SKUIPanelTemplateViewElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

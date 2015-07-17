@@ -3,7 +3,7 @@
  */
 
 @interface WebDownloadInternal : NSObject <NSURLDownloadDelegate> {
-    id realDelegate;
+    id  realDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

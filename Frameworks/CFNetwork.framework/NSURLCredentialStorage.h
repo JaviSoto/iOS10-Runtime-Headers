@@ -3,10 +3,12 @@
  */
 
 @interface NSURLCredentialStorage : NSObject {
-    NSURLCredentialStorageInternal *_internal;
+    NSURLCredentialStorageInternal * _internal;
 }
 
 @property (readonly, copy) NSDictionary *allCredentials;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (id)sharedCredentialStorage;
 
@@ -27,5 +29,9 @@
 - (void)setCredential:(id)arg1 forProtectionSpace:(id)arg2 task:(id)arg3;
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2 task:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
+- (void)safari_setSynchronizableCredential:(id)arg1 forHTMLFormProtectionSpace:(id)arg2;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
-    NSURL *_URL;
-    SEL _action;
+    NSURL * _URL;
+    SEL  _action;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _linkRange;
-    id _target;
-    NSString *_text;
-    UITextView *_textView;
+    }  _linkRange;
+    id  _target;
+    NSString * _text;
+    UITextView * _textView;
 }
 
 @property (retain) NSURL *URL;
@@ -24,10 +24,10 @@
 @property id target;
 @property (retain) NSString *text;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (void)_linkify;
 - (SEL)action;
-- (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })linkRange;

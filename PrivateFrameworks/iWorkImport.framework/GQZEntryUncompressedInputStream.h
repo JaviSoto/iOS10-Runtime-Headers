@@ -3,9 +3,9 @@
  */
 
 @interface GQZEntryUncompressedInputStream : NSObject <GQZEntryInputStream> {
-    long long mEnd;
-    <GQZArchiveInputStream> *mInput;
-    long long mOffset;
+    long long  mEnd;
+    <GQZArchiveInputStream> * mInput;
+    long long  mOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

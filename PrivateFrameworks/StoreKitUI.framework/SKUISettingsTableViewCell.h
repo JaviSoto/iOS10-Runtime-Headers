@@ -8,10 +8,10 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIImageView *_disclosureChevron;
-    BOOL _hasDisclosureChevron;
-    SKUISettingDescriptionView *_settingDescriptionView;
+    }  _contentInset;
+    UIImageView * _disclosureChevron;
+    BOOL  _hasDisclosureChevron;
+    SKUISettingDescriptionView * _settingDescriptionView;
 }
 
 @property (nonatomic, readonly) SKUISettingDescriptionView *settingDescriptionView;

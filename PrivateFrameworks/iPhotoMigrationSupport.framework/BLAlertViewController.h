@@ -3,26 +3,26 @@
  */
 
 @interface BLAlertViewController : UIViewController {
-    UIActivityIndicatorView *_activityIndicator;
-    UIButton *_cancelButton;
-    NSString *_cancelButtonTitle;
-    <BLAlertViewControllerDelegate> *_delegate;
-    UIButton *_firstOtherButton;
-    NSString *_firstOtherButtonTitle;
+    UIActivityIndicatorView * _activityIndicator;
+    UIButton * _cancelButton;
+    NSString * _cancelButtonTitle;
+    <BLAlertViewControllerDelegate> * _delegate;
+    UIButton * _firstOtherButton;
+    NSString * _firstOtherButtonTitle;
     struct CGSize { 
         float width; 
         float height; 
-    } _formSize;
-    BOOL _hasActivity;
-    NSString *_message;
-    UILabel *_messageLabel;
-    float _progress;
-    UIProgressView *_progressView;
-    UIButton *_secondOtherButton;
-    NSString *_secondOtherButtonTitle;
-    BOOL _showsActivityIndicator;
-    BOOL _showsProgressIndicator;
-    UILabel *_titleLabel;
+    }  _formSize;
+    BOOL  _hasActivity;
+    NSString * _message;
+    UILabel * _messageLabel;
+    float  _progress;
+    UIProgressView * _progressView;
+    UIButton * _secondOtherButton;
+    NSString * _secondOtherButtonTitle;
+    BOOL  _showsActivityIndicator;
+    BOOL  _showsProgressIndicator;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;

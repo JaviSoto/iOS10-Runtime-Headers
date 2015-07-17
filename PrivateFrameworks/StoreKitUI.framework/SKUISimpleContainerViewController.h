@@ -3,7 +3,7 @@
  */
 
 @interface SKUISimpleContainerViewController : UIViewController {
-    UIViewController *_contentViewController;
+    UIViewController * _contentViewController;
 }
 
 @property (nonatomic, retain) UIViewController *contentViewController;

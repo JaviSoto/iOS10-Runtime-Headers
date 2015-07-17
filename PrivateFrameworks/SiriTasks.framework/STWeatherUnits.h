@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STWeatherUnits : AFSiriModelObject {
-    int _temperatureUnits;
+@interface STWeatherUnits : STSiriModelObject {
+    int  _temperatureUnits;
 }
 
 + (BOOL)supportsSecureCoding;

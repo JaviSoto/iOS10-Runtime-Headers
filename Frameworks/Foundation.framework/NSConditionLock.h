@@ -3,7 +3,7 @@
  */
 
 @interface NSConditionLock : NSObject <NSLocking> {
-    void *_priv;
+    void * _priv;
 }
 
 @property (readonly) int condition;

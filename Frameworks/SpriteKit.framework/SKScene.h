@@ -3,10 +3,12 @@
  */
 
 @interface SKScene : SKEffectNode {
-    BOOL __needsRender;
-    BOOL __needsUpdate;
-    PKPhysicsWorld *__pkPhysicsWorld;
-    NSMutableArray *_allChildenWithConstraints;
+    BOOL  __needsRender;
+    BOOL  __needsUpdate;
+    PKPhysicsWorld * __pkPhysicsWorld;
+    NSMutableArray * _allChildenWithConstraints;
+    AVAudioEngine * _audioEngine;
+    AVAudioEnvironmentNode * _avAudioEnvironmentNode;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,18 +18,20 @@
             float width; 
             float height; 
         } size; 
-    } _bounds;
-    <SKSceneDelegate> *_delegate;
-    BOOL _isSetup;
-    double _lastUpdate;
-    double _pausedTime;
-    SKPhysicsWorld *_physicsWorld;
-    int _scaleMode;
-    SKPhysicsBody *_scenePinBody;
-    NSMutableDictionary *_touchMap;
-    BOOL _usesExplicitRender;
-    BOOL _usesExplicitUpdate;
-    id _view;
+    }  _bounds;
+    SKCameraNode * _camera;
+    <SKSceneDelegate> * _delegate;
+    BOOL  _isSetup;
+    double  _lastUpdate;
+    SKNode * _listener;
+    double  _pausedTime;
+    SKPhysicsWorld * _physicsWorld;
+    SKPhysicsBody * _scenePinBody;
+    struct SKCSceneNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; id x22; id x23; short x24; void*x25; void*x26; const void*x27; double x28; void*x29; void*x30; void*x31; const void*x32; void*x33; void*x34; void*x35; void*x36; float x37; const void*x38; void*x39; void*x40; unsigned int x41/* : ? */; void*x42; float x43; float x44; void*x45; const void*x46; void*x47; struct jet_framebuffer {} *x48; struct __shared_weak_count {} *x49; } * _skcSceneNode;
+    NSMapTable * _touchMap;
+    BOOL  _usesExplicitRender;
+    BOOL  _usesExplicitUpdate;
+    id  _view;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -37,7 +41,7 @@
             float width; 
             float height; 
         } size; 
-    } _visibleRect;
+    }  _visibleRect;
 }
 
 @property BOOL _needsRender;
@@ -46,8 +50,12 @@
 @property BOOL _usesExplicitRender;
 @property BOOL _usesExplicitUpdate;
 @property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic, readonly, retain) AVAudioEngine *audioEngine;
+@property (nonatomic, retain) AVAudioEnvironmentNode *avAudioEnvironmentNode;
 @property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic) SKCameraNode *camera;
 @property (nonatomic) <SKSceneDelegate> *delegate;
+@property (nonatomic) SKNode *listener;
 @property (nonatomic, readonly) SKPhysicsWorld *physicsWorld;
 @property (nonatomic) int scaleMode;
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
@@ -60,10 +68,11 @@
 + (id)sceneWithContentsOfFile:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)sceneWithSize:(struct CGSize { float x1; float x2; })arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_didMakeBackingNode;
 - (void)_didMoveToView:(id)arg1;
 - (BOOL)_hasConstraints;
+- (struct SKCNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; }*)_makeBackingNode;
 - (BOOL)_needsRender;
 - (BOOL)_needsUpdate;
 - (id)_pkPhysicsWorld;
@@ -74,11 +83,18 @@
 - (void)_update:(double)arg1;
 - (BOOL)_usesExplicitRender;
 - (BOOL)_usesExplicitUpdate;
+- (void)_willMoveFromView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
+- (id)audioEngine;
+- (id)avAudioEnvironmentNode;
 - (id)backgroundColor;
+- (id)camera;
+- (struct CGPoint { float x1; float x2; })convertPointFromParent:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointFromView:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertPointToParent:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointToView:(struct CGPoint { float x1; float x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)didApplyConstraints;
@@ -89,15 +105,20 @@
 - (void)didMoveToView:(id)arg1;
 - (void)didSimulatePhysics;
 - (void)encodeWithCoder:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)listener;
 - (id)physicsWorld;
 - (struct CGPoint { float x1; float x2; })position;
 - (int)scaleMode;
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setAvAudioEnvironmentNode:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setCamera:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setListener:(id)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScale:(float)arg1;
@@ -110,6 +131,7 @@
 - (void)setYScale:(float)arg1;
 - (void)setZPosition:(float)arg1;
 - (void)setZRotation:(float)arg1;
+- (void)set_anchorPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)set_needsRender:(BOOL)arg1;
 - (void)set_needsUpdate:(BOOL)arg1;
 - (void)set_pkPhysicsWorld:(id)arg1;
@@ -122,6 +144,7 @@
 - (struct CGPoint { float x1; float x2; })visibleRectCenter;
 - (struct CGSize { float x1; float x2; })visibleRectSize;
 - (void)willMoveFromView:(id)arg1;
+- (void)willRenderContent;
 - (float)xScale;
 - (float)yScale;
 - (float)zPosition;

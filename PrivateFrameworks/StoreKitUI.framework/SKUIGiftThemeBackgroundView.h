@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftThemeBackgroundView : UIView {
-    UIScrollView *_scrollView;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic, retain) UIScrollView *scrollView;

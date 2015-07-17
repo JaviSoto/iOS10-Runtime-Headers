@@ -3,8 +3,8 @@
  */
 
 @interface TCDumpNumeric : TCDumpType {
-    TCDumpEnum *mEnumType;
-    int mType;
+    TCDumpEnum * mEnumType;
+    int  mType;
 }
 
 - (void)dealloc;

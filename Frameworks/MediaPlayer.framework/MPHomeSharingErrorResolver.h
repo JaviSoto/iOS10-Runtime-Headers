@@ -3,17 +3,17 @@
  */
 
 @interface MPHomeSharingErrorResolver : MPAVErrorResolver <SSAuthorizationRequestDelegate> {
-    unsigned long long _accountID;
-    NSData *_accountTokenData;
-    SSAuthorizationRequest *_activeRequest;
-    BOOL _atLeastOneAuthorizationRequestSuccessful;
-    MPHomeSharingML3DataProvider *_dataProvider;
-    unsigned long long _downloaderAccountID;
-    NSData *_downloaderAccountTokenData;
-    NSError *_error;
-    unsigned long long _familyAccountID;
-    NSURL *_keybagURL;
-    NSMutableArray *_requests;
+    unsigned long long  _accountID;
+    NSData * _accountTokenData;
+    SSAuthorizationRequest * _activeRequest;
+    BOOL  _atLeastOneAuthorizationRequestSuccessful;
+    MPHomeSharingML3DataProvider * _dataProvider;
+    unsigned long long  _downloaderAccountID;
+    NSData * _downloaderAccountTokenData;
+    NSError * _error;
+    unsigned long long  _familyAccountID;
+    NSURL * _keybagURL;
+    NSMutableArray * _requests;
 }
 
 @property (nonatomic, retain) MPHomeSharingML3DataProvider *dataProvider;

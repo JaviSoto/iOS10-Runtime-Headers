@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetListStyleFloatArray : TSWPSpecListStyleFloatArray {
-    NSArray *_listStyleFloatArray;
-    BOOL _unset;
+    NSArray * _listStyleFloatArray;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

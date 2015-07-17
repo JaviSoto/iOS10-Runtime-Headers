@@ -3,13 +3,13 @@
  */
 
 @interface CKModifySubscriptionsOperation : CKDatabaseOperation {
-    NSMutableArray *_deletedSubscriptionIDs;
-    id /* block */ _modifySubscriptionsCompletionBlock;
-    NSMutableArray *_savedSubscriptions;
-    NSMutableDictionary *_subscriptionErrors;
-    NSArray *_subscriptionIDsToDelete;
-    NSMutableDictionary *_subscriptionsBySubscriptionIDs;
-    NSArray *_subscriptionsToSave;
+    NSMutableArray * _deletedSubscriptionIDs;
+    id /* block */  _modifySubscriptionsCompletionBlock;
+    NSMutableArray * _savedSubscriptions;
+    NSMutableDictionary * _subscriptionErrors;
+    NSArray * _subscriptionIDsToDelete;
+    NSMutableDictionary * _subscriptionsBySubscriptionIDs;
+    NSArray * _subscriptionsToSave;
 }
 
 @property (nonatomic, retain) NSMutableArray *deletedSubscriptionIDs;
@@ -24,6 +24,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)deletedSubscriptionIDs;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

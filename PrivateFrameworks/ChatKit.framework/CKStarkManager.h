@@ -3,10 +3,10 @@
  */
 
 @interface CKStarkManager : NSObject {
-    BOOL _isStarkConnected;
-    UIViewController *_starkRootViewController;
-    UIScreen *_starkScreen;
-    UIWindow *_starkWindow;
+    BOOL  _isStarkConnected;
+    UIViewController * _starkRootViewController;
+    UIScreen * _starkScreen;
+    UIWindow * _starkWindow;
 }
 
 @property (nonatomic, readonly) BOOL isStarkConnected;

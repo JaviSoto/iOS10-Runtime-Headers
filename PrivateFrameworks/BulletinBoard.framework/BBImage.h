@@ -3,10 +3,10 @@
  */
 
 @interface BBImage : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    NSString *_bundlePath;
-    NSData *_data;
-    NSString *_name;
-    NSString *_path;
+    NSString * _bundlePath;
+    NSData * _data;
+    NSString * _name;
+    NSString * _path;
 }
 
 @property (nonatomic, copy) NSString *bundlePath;

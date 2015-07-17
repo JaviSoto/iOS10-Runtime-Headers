@@ -3,13 +3,13 @@
  */
 
 @interface BLRedEyeBrushTap : AutoEncodeDecodeObject {
-    int _destinationWidth;
-    NSDictionary *_eyeRepairData;
+    int  _destinationWidth;
+    NSDictionary * _eyeRepairData;
     struct CGPoint { 
         float x; 
         float y; 
-    } _point;
-    double _timestamp;
+    }  _point;
+    double  _timestamp;
 }
 
 @property (nonatomic) int destinationWidth;

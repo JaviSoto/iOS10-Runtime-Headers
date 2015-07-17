@@ -3,8 +3,8 @@
  */
 
 @interface ABPersonCellLayoutManager : UITableViewCellLayoutManager {
-    <ABPersonCellLayoutManagerDelegate> *_delegate;
-    <ABStyleProvider> *_styleProvider;
+    <ABPersonCellLayoutManagerDelegate> * _delegate;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) <ABPersonCellLayoutManagerDelegate> *delegate;

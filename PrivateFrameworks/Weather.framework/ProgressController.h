@@ -3,13 +3,14 @@
  */
 
 @interface ProgressController : NSObject {
-    NSTimer *_hideSpinnerTimer;
-    int _loadingCount;
-    BOOL _progressShowing;
+    NSTimer * _hideSpinnerTimer;
+    int  _loadingCount;
+    BOOL  _progressShowing;
 }
 
 + (id)sharedProgressController;
 
+- (void).cxx_destruct;
 - (void)_hideSpinner;
 - (void)_setHideSpinnerTimer:(id)arg1;
 - (void)_showSpinner;

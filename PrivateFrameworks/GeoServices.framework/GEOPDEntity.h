@@ -3,23 +3,23 @@
  */
 
 @interface GEOPDEntity : PBCodable <NSCopying> {
-    NSMutableArray *_altFaxs;
-    NSMutableArray *_altTelephones;
-    NSMutableArray *_altUrls;
-    NSString *_fax;
+    NSMutableArray * _altFaxs;
+    NSMutableArray * _altTelephones;
+    NSMutableArray * _altUrls;
+    NSString * _fax;
     struct { 
         unsigned int type : 1; 
         unsigned int isDisputed : 1; 
         unsigned int isPermanentlyClosed : 1; 
-    } _has;
-    BOOL _isDisputed;
-    BOOL _isPermanentlyClosed;
-    NSMutableArray *_localizedCategorys;
-    NSMutableArray *_names;
-    NSMutableArray *_spokenNames;
-    NSString *_telephone;
-    int _type;
-    NSString *_url;
+    }  _has;
+    BOOL  _isDisputed;
+    BOOL  _isPermanentlyClosed;
+    NSMutableArray * _localizedCategorys;
+    NSMutableArray * _names;
+    NSMutableArray * _spokenNames;
+    NSString * _telephone;
+    int  _type;
+    NSString * _url;
 }
 
 @property (nonatomic, retain) NSMutableArray *altFaxs;

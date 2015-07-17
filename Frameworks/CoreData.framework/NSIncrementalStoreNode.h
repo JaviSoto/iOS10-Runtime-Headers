@@ -3,10 +3,10 @@
  */
 
 @interface NSIncrementalStoreNode : NSObject {
-    NSManagedObjectID *_objectID;
-    id _propertyCache;
-    void *_reserved1;
-    unsigned long long _versionNumber;
+    NSManagedObjectID * _objectID;
+    id  _propertyCache;
+    void * _reserved1;
+    unsigned long long  _versionNumber;
 }
 
 @property (nonatomic, readonly) NSManagedObjectID *objectID;

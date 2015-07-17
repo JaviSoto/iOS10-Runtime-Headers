@@ -3,14 +3,14 @@
  */
 
 @interface MPUQueryDataSource : MPUDataSource {
-    NSMutableSet *_additionalUniqueItemPropertiesToFetch;
-    NSArray *_entities;
-    BOOL _hasValidRepresentativeCollection;
-    BOOL _ignoringInvalidationDueToBackgroundApplicationState;
-    BOOL _invalidateWhenEnteringForeground;
-    MPMediaQuery *_query;
-    MPMediaItemCollection *_representativeCollection;
-    MPMediaQuerySectionInfo *_sectionInfo;
+    NSMutableSet * _additionalUniqueItemPropertiesToFetch;
+    NSArray * _entities;
+    BOOL  _hasValidRepresentativeCollection;
+    BOOL  _ignoringInvalidationDueToBackgroundApplicationState;
+    BOOL  _invalidateWhenEnteringForeground;
+    MPMediaQuery * _query;
+    MPMediaItemCollection * _representativeCollection;
+    MPMediaQuerySectionInfo * _sectionInfo;
 }
 
 @property (nonatomic) BOOL ignoringInvalidationDueToBackgroundApplicationState;

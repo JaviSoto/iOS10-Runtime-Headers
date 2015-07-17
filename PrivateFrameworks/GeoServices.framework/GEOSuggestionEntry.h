@@ -3,16 +3,16 @@
  */
 
 @interface GEOSuggestionEntry : PBCodable <NSCopying> {
-    NSString *_calloutTitle;
-    NSMutableArray *_displayLines;
-    NSString *_iconID;
-    GEOLatLng *_latlng;
-    NSMutableArray *_namedFeatures;
-    NSString *_searchQueryDisplayString;
-    NSData *_suggestionEntryMetadata;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_textHighlights;
-    unsigned int _textHighlightsCount;
-    unsigned int _textHighlightsSpace;
+    NSString * _calloutTitle;
+    NSMutableArray * _displayLines;
+    NSString * _iconID;
+    GEOLatLng * _latlng;
+    NSMutableArray * _namedFeatures;
+    NSString * _searchQueryDisplayString;
+    NSData * _suggestionEntryMetadata;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _textHighlights;
+    unsigned int  _textHighlightsCount;
+    unsigned int  _textHighlightsSpace;
 }
 
 @property (nonatomic, retain) NSString *calloutTitle;

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKPlaceActionCell : UITableViewCell {
-    NSArray *_marginConstraints;
-    NSMutableArray *_scaledConstraints;
-    UILabel *_titleLabel;
+@interface _MKPlaceActionCell : MKTableViewCell {
+    NSArray * _marginConstraints;
+    NSMutableArray * _scaledConstraints;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSArray *marginConstraints;

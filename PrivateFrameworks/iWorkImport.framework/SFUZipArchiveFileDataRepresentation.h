@@ -3,8 +3,8 @@
  */
 
 @interface SFUZipArchiveFileDataRepresentation : SFUDataRepresentation <SFUZipArchiveDataRepresentation> {
-    int mFd;
-    SFUFileDataRepresentation *mFileRepresentation;
+    int  mFd;
+    SFUFileDataRepresentation * mFileRepresentation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

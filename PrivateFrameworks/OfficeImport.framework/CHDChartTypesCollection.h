@@ -3,10 +3,11 @@
  */
 
 @interface CHDChartTypesCollection : EDCollection {
-    CHDChart *mChart;
+    CHDChart * mChart;
 }
 
 - (unsigned int)addObject:(id)arg1;
 - (id)initWithChart:(id)arg1;
+- (void)resetSeriesOrder;
 
 @end

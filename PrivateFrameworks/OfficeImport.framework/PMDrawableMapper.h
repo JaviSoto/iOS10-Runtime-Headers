@@ -3,9 +3,9 @@
  */
 
 @interface PMDrawableMapper : CMDrawableMapper {
-    CMDrawingContext *mDrawingContext;
-    OADShape *mShape;
-    BOOL mTopLevelMapper;
+    CMDrawingContext * mDrawingContext;
+    OADShape * mShape;
+    BOOL  mTopLevelMapper;
 }
 
 - (void)dealloc;

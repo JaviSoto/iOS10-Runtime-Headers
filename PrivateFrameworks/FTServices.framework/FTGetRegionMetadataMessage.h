@@ -3,8 +3,8 @@
  */
 
 @interface FTGetRegionMetadataMessage : IDSBaseMessage <NSCopying> {
-    NSString *_language;
-    NSDictionary *_responseRegionInformation;
+    NSString * _language;
+    NSDictionary * _responseRegionInformation;
 }
 
 @property (copy) NSString *language;
@@ -28,5 +28,6 @@
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsHTTPGet;
 - (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsIDSServer;
 
 @end

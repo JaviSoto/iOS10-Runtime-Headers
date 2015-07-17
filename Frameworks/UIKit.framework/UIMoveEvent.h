@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIMoveEvent : UIInternalEvent {
-    unsigned int _focusHeading;
-    int _moveDirection;
+@interface UIMoveEvent : UIEvent {
+    unsigned int  _focusHeading;
+    int  _moveDirection;
 }
 
 @property (setter=_setFocusHeading:, nonatomic) unsigned int _focusHeading;

@@ -3,8 +3,8 @@
  */
 
 @interface TSPObjectContainer : TSPObject {
-    NSArray *_childObjects;
-    unsigned char _packageIdentifier;
+    NSArray * _childObjects;
+    unsigned char  _packageIdentifier;
 }
 
 + (long long)objectIdentifierForPackageIdentifier:(unsigned char)arg1;

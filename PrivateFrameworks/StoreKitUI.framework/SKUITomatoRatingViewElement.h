@@ -3,9 +3,9 @@
  */
 
 @interface SKUITomatoRatingViewElement : SKUIViewElement {
-    int _freshness;
-    SKUIViewElementText *_ratingText;
-    float _tomatoRating;
+    int  _freshness;
+    SKUIViewElementText * _ratingText;
+    float  _tomatoRating;
 }
 
 @property (nonatomic, readonly) int freshness;

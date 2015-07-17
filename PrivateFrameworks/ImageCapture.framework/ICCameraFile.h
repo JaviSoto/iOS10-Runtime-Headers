@@ -3,7 +3,7 @@
  */
 
 @interface ICCameraFile : ICCameraItem {
-    void *_fileProperties;
+    void * _fileProperties;
 }
 
 @property (readonly) BOOL burstFavorite;

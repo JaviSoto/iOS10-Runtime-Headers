@@ -3,15 +3,15 @@
  */
 
 @interface TSPDocumentResourceManager : NSObject {
-    NSURL *_appDocumentResourcesMetadataURL;
-    NSURL *_appDocumentResourcesURL;
-    TSPDocumentResourceCache *_cache;
-    NSDictionary *_documentResourcesConfiguration;
-    NSObject<OS_dispatch_queue> *_documentResourcesConfigurationQueue;
-    long _documentResourcesConfigurationToken;
-    TSUDownloadManager *_downloadManager;
-    NSMutableDictionary *_sageDocumentResourcesConfiguration;
-    long _sageDocumentResourcesConfigurationToken;
+    NSURL * _appDocumentResourcesMetadataURL;
+    NSURL * _appDocumentResourcesURL;
+    TSPDocumentResourceCache * _cache;
+    NSDictionary * _documentResourcesConfiguration;
+    NSObject<OS_dispatch_queue> * _documentResourcesConfigurationQueue;
+    long  _documentResourcesConfigurationToken;
+    TSUDownloadManager * _downloadManager;
+    NSMutableDictionary * _sageDocumentResourcesConfiguration;
+    long  _sageDocumentResourcesConfigurationToken;
 }
 
 @property (nonatomic, readonly) TSPDocumentResourceCache *cache;
@@ -32,6 +32,7 @@
 - (id)cachedDocumentResourceDataStorageForInfo:(id)arg1 isValidated:(BOOL)arg2;
 - (void)clearCache;
 - (id)dataStorageForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 infoToDownload:(id*)arg4;
+- (id)documentResourceRelativePathWithDigestString:(id)arg1 extension:(id)arg2;
 - (id)documentResourcesConfiguration;
 - (id)downloadManager;
 - (id)findDocumentResourceUsingDigestString:(id)arg1 locator:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface GQUFileOutputBundle : NSObject <GQUOutputBundle> {
-    struct __CFURL { } *mOutputUrl;
+    struct __CFURL { } * mOutputUrl;
 }
 
 @property (readonly, copy) NSString *debugDescription;

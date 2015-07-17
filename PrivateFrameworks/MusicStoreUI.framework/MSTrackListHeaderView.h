@@ -3,17 +3,17 @@
  */
 
 @interface MSTrackListHeaderView : UIView {
-    UILabel *_albumLabel;
-    UILabel *_artistLabel;
-    UIImage *_artworkImage;
-    SUReflectionImageView *_artworkView;
-    <MSTrackListHeaderDelegate> *_delegate;
-    UILabel *_disclaimerLabel;
-    SUItem *_item;
-    UILabel *_itemCountLabel;
-    SUItemOfferButton *_offerButton;
-    UILabel *_releaseDateLabel;
-    SUTouchCaptureView *_touchCaptureView;
+    UILabel * _albumLabel;
+    UILabel * _artistLabel;
+    UIImage * _artworkImage;
+    SUReflectionImageView * _artworkView;
+    <MSTrackListHeaderDelegate> * _delegate;
+    UILabel * _disclaimerLabel;
+    SUItem * _item;
+    UILabel * _itemCountLabel;
+    SUItemOfferButton * _offerButton;
+    UILabel * _releaseDateLabel;
+    SUTouchCaptureView * _touchCaptureView;
 }
 
 @property (nonatomic, retain) UIImage *artworkImage;

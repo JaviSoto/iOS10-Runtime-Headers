@@ -3,7 +3,7 @@
  */
 
 @interface GLKBaseEffect : NSObject <GLKNamedEffect> {
-    unsigned char _colorMaterialEnabled;
+    unsigned char  _colorMaterialEnabled;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -24,16 +24,16 @@
             float q; 
         } ; 
         float v[4]; 
-    } _constantColor;
-    GLKEffectPropertyConstantColor *_constantColorProp;
-    GLKEffect *_effect;
-    unsigned char _effectStale;
-    GLKEffectPropertyFog *_fog;
-    unsigned char _fogEnabled;
-    NSString *_label;
-    GLKEffectPropertyLight *_light0;
-    GLKEffectPropertyLight *_light1;
-    GLKEffectPropertyLight *_light2;
+    }  _constantColor;
+    GLKEffectPropertyConstantColor * _constantColorProp;
+    GLKEffect * _effect;
+    unsigned char  _effectStale;
+    GLKEffectPropertyFog * _fog;
+    unsigned char  _fogEnabled;
+    NSString * _label;
+    GLKEffectPropertyLight * _light0;
+    GLKEffectPropertyLight * _light1;
+    GLKEffectPropertyLight * _light2;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -54,18 +54,18 @@
             float q; 
         } ; 
         float v[4]; 
-    } _lightModelAmbientColor;
-    unsigned char _lightModelTwoSided;
-    int _lightingType;
-    GLKEffectPropertyMaterial *_material;
-    unsigned int _programName;
-    NSMutableArray *_propertyArray;
-    unsigned char _propertyArrayStale;
-    GLKEffectPropertyTexture *_texture2d0;
-    GLKEffectPropertyTexture *_texture2d1;
-    NSArray *_textureOrder;
-    GLKEffectPropertyTransform *_transform;
-    unsigned char _useConstantColor;
+    }  _lightModelAmbientColor;
+    unsigned char  _lightModelTwoSided;
+    int  _lightingType;
+    GLKEffectPropertyMaterial * _material;
+    unsigned int  _programName;
+    NSMutableArray * _propertyArray;
+    unsigned char  _propertyArrayStale;
+    GLKEffectPropertyTexture * _texture2d0;
+    GLKEffectPropertyTexture * _texture2d1;
+    NSArray * _textureOrder;
+    GLKEffectPropertyTransform * _transform;
+    unsigned char  _useConstantColor;
 }
 
 @property (nonatomic) unsigned char colorMaterialEnabled;

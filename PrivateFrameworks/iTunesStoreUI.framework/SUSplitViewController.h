@@ -3,17 +3,17 @@
  */
 
 @interface SUSplitViewController : SUViewController {
-    NSURL *_displayedURL;
-    UIViewController *_firstViewController;
-    NSString *_mainTitle;
-    SUGradient *_placeholderGradient;
-    SUPlaceholderViewController *_placeholderViewController;
-    UIViewController *_secondViewController;
-    SUShadow *_splitShadow;
-    SUSplitView *_splitView;
-    SUStructuredPage *_structuredPage;
-    BOOL _usesSharedPlaceholder;
-    BOOL _viewIsReady;
+    NSURL * _displayedURL;
+    UIViewController * _firstViewController;
+    NSString * _mainTitle;
+    SUGradient * _placeholderGradient;
+    SUPlaceholderViewController * _placeholderViewController;
+    UIViewController * _secondViewController;
+    SUShadow * _splitShadow;
+    SUSplitView * _splitView;
+    SUStructuredPage * _structuredPage;
+    BOOL  _usesSharedPlaceholder;
+    BOOL  _viewIsReady;
 }
 
 @property (nonatomic, retain) NSURL *displayedURL;

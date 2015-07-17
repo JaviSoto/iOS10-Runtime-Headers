@@ -3,10 +3,10 @@
  */
 
 @interface HKDataUnitGroupController : NSObject {
-    NSArray *_dataUnitGroups;
-    NSDictionary *_dataUnitGroupsByCategoryID;
-    NSDictionary *_dataUnitGroupsByGroupID;
-    NSDictionary *_dataUnitGroupsByType;
+    NSArray * _dataUnitGroups;
+    NSDictionary * _dataUnitGroupsByCategoryID;
+    NSDictionary * _dataUnitGroupsByGroupID;
+    NSDictionary * _dataUnitGroupsByType;
 }
 
 + (id)sharedInstance;

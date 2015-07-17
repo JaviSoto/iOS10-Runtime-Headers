@@ -3,13 +3,13 @@
  */
 
 @interface PLUIEditVideoViewController : PLUIImageViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    unsigned int _canCreateMetadata;
-    id _delegate;
-    UIImagePickerController *_imagePicker;
-    UINavigationItem *_navItem;
-    NSDictionary *_options;
-    BOOL _parentInPopoverException;
-    Class _viewClass;
+    unsigned int  _canCreateMetadata;
+    id  _delegate;
+    UIImagePickerController * _imagePicker;
+    UINavigationItem * _navItem;
+    NSDictionary * _options;
+    BOOL  _parentInPopoverException;
+    Class  _viewClass;
 }
 
 @property (readonly, copy) NSString *debugDescription;

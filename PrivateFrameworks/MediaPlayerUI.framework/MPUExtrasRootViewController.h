@@ -3,16 +3,16 @@
  */
 
 @interface MPUExtrasRootViewController : UIViewController <IKAppContextDelegate, IKAppDeviceConfig, IKApplication, MPVideoOverlayDelegate, UICollectionViewDelegate, UINavigationControllerDelegate> {
-    IKAppContext *_applicationContext;
-    MPUExtrasArtworkDataSource *_artworkDataSource;
-    MPUExtrasContext *_context;
-    BOOL _didAttemptRestartAfterAppContextFailure;
-    MPUExtrasFeatureContainerViewController *_featureContainer;
-    NSObject<OS_dispatch_queue> *_imageRequestQueue;
-    <IKAppDataStoring> *_localStorage;
-    MPUExtrasMainTemplateViewController *_mainTemplateViewController;
-    MPUExtrasNavigationController *_navigationController;
-    <IKAppDataStoring> *_vendorStorage;
+    IKAppContext * _applicationContext;
+    MPUExtrasArtworkDataSource * _artworkDataSource;
+    MPUExtrasContext * _context;
+    BOOL  _didAttemptRestartAfterAppContextFailure;
+    MPUExtrasFeatureContainerViewController * _featureContainer;
+    NSObject<OS_dispatch_queue> * _imageRequestQueue;
+    <IKAppDataStoring> * _localStorage;
+    MPUExtrasMainTemplateViewController * _mainTemplateViewController;
+    MPUExtrasNavigationController * _navigationController;
+    <IKAppDataStoring> * _vendorStorage;
 }
 
 @property (nonatomic, retain) IKAppContext *applicationContext;

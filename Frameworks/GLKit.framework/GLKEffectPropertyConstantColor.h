@@ -23,8 +23,8 @@
             float q; 
         } ; 
         float v[4]; 
-    } _color;
-    unsigned char _enabled;
+    }  _color;
+    unsigned char  _enabled;
 }
 
 @property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } color;

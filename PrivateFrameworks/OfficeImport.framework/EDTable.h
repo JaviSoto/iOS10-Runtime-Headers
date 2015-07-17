@@ -3,27 +3,27 @@
  */
 
 @interface EDTable : NSObject {
-    EDCollection *mColumnFilters;
-    unsigned int mDataAreaBorderDxfIndex;
-    unsigned int mDataAreaDxfIndex;
-    NSString *mDisplayName;
-    unsigned int mHeaderRowBorderDxfIndex;
-    unsigned int mHeaderRowCount;
-    unsigned int mHeaderRowDxfIndex;
-    NSString *mName;
-    EDResources *mResources;
-    bool mShowColumnStripes;
-    bool mShowFirstColumn;
-    bool mShowLastColumn;
-    bool mShowRowStripes;
-    unsigned int mStyleIndex;
-    NSString *mStyleName;
-    unsigned int mTableBorderDxfIndex;
-    EDCollection *mTableColumns;
-    EDReference *mTableRange;
-    unsigned int mTotalsRowBorderDxfIndex;
-    unsigned int mTotalsRowCount;
-    unsigned int mTotalsRowDxfIndex;
+    EDCollection * mColumnFilters;
+    unsigned int  mDataAreaBorderDxfIndex;
+    unsigned int  mDataAreaDxfIndex;
+    NSString * mDisplayName;
+    unsigned int  mHeaderRowBorderDxfIndex;
+    unsigned int  mHeaderRowCount;
+    unsigned int  mHeaderRowDxfIndex;
+    NSString * mName;
+    EDResources * mResources;
+    bool  mShowColumnStripes;
+    bool  mShowFirstColumn;
+    bool  mShowLastColumn;
+    bool  mShowRowStripes;
+    unsigned int  mStyleIndex;
+    NSString * mStyleName;
+    unsigned int  mTableBorderDxfIndex;
+    EDCollection * mTableColumns;
+    EDReference * mTableRange;
+    unsigned int  mTotalsRowBorderDxfIndex;
+    unsigned int  mTotalsRowCount;
+    unsigned int  mTotalsRowDxfIndex;
 }
 
 + (id)tableWithResources:(id)arg1;
@@ -34,6 +34,7 @@
 - (id)dataAreaDxf;
 - (unsigned int)dataAreaDxfIndex;
 - (void)dealloc;
+- (id)description;
 - (id)displayName;
 - (id)headerRowBorderDxf;
 - (unsigned int)headerRowBorderDxfIndex;

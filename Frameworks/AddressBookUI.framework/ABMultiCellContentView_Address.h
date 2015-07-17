@@ -3,14 +3,14 @@
  */
 
 @interface ABMultiCellContentView_Address : ABMultiCellContentView_DisplayAlternate {
-    unsigned int _entryFieldIndexOfFirstStreetField;
-    NSArray *_lineInfos;
-    NSMutableArray *_lineSubviews;
+    unsigned int  _entryFieldIndexOfFirstStreetField;
+    NSArray * _lineInfos;
+    NSMutableArray * _lineSubviews;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _streetRange;
-    NSMutableArray *_verticalDividers;
+    }  _streetRange;
+    NSMutableArray * _verticalDividers;
 }
 
 + (int)calculateStreetRowsForText:(id)arg1;

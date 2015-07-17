@@ -3,11 +3,11 @@
  */
 
 @interface RMSTouchRemoteSocket : NSObject <NSStreamDelegate> {
-    <RMSTouchRemoteSocketDelegate> *_delegate;
-    unsigned int _encryptionKey;
-    NSString *_host;
-    NSOutputStream *_outputStream;
-    unsigned int _port;
+    <RMSTouchRemoteSocketDelegate> * _delegate;
+    unsigned int  _encryptionKey;
+    NSString * _host;
+    NSOutputStream * _outputStream;
+    unsigned int  _port;
 }
 
 @property (readonly, copy) NSString *debugDescription;

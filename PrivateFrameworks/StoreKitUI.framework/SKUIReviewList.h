@@ -3,8 +3,8 @@
  */
 
 @interface SKUIReviewList : NSObject <SKUICacheCoding> {
-    NSDictionary *_dictionary;
-    NSMutableArray *_reviews;
+    NSDictionary * _dictionary;
+    NSMutableArray * _reviews;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;

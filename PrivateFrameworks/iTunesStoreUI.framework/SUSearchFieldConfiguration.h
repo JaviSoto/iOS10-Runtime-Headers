@@ -3,17 +3,17 @@
  */
 
 @interface SUSearchFieldConfiguration : NSObject <NSCopying> {
-    NSString *_cancelString;
-    SUClientInterface *_clientInterface;
-    struct __CFDictionary { } *_hintURLs;
-    int _location;
-    NSString *_placeholder;
-    BOOL _rootViewOnly;
-    struct __CFDictionary { } *_searchURLs;
-    NSString *_userDefaultsKey;
-    float _width;
-    float _widthLandscape;
-    float _widthPortrait;
+    NSString * _cancelString;
+    SUClientInterface * _clientInterface;
+    struct __CFDictionary { } * _hintURLs;
+    int  _location;
+    NSString * _placeholder;
+    BOOL  _rootViewOnly;
+    struct __CFDictionary { } * _searchURLs;
+    NSString * _userDefaultsKey;
+    float  _width;
+    float  _widthLandscape;
+    float  _widthPortrait;
 }
 
 @property (nonatomic, readonly) NSString *cancelString;

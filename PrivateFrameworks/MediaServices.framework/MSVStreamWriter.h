@@ -3,18 +3,18 @@
  */
 
 @interface MSVStreamWriter : NSObject <NSStreamDelegate> {
-    unsigned long long _bytesWritten;
-    id /* block */ _canWriteDataBlock;
-    BOOL _closeOnStop;
-    BOOL _compressed;
-    id /* block */ _didEncounterErrorBlock;
-    id /* block */ _didFinishWritingBlock;
-    NSInputStream *_inputStream;
-    unsigned int _maximumBufferSize;
-    NSOutputStream *_outputStream;
-    NSObject<OS_dispatch_queue> *_queue;
-    double _timestamp;
-    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_zstreamp;
+    unsigned long long  _bytesWritten;
+    id /* block */  _canWriteDataBlock;
+    BOOL  _closeOnStop;
+    BOOL  _compressed;
+    id /* block */  _didEncounterErrorBlock;
+    id /* block */  _didFinishWritingBlock;
+    NSInputStream * _inputStream;
+    unsigned int  _maximumBufferSize;
+    NSOutputStream * _outputStream;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _timestamp;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } * _zstreamp;
 }
 
 @property (nonatomic) unsigned long long bytesWritten;

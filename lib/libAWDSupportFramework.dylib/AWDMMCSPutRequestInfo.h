@@ -3,17 +3,17 @@
  */
 
 @interface AWDMMCSPutRequestInfo : PBCodable <NSCopying> {
-    NSMutableArray *_authHttpInfos;
-    NSMutableArray *_cancelErrors;
-    int _cancelledErrorCode;
-    NSString *_cancelledErrorDomain;
-    NSMutableArray *_chunkingInfos;
-    int _chunksUploaded;
-    NSString *_clientId;
-    NSMutableArray *_completeHttpInfos;
-    NSMutableArray *_containerHttpInfos;
-    long long _duration;
-    NSMutableArray *_errors;
+    NSMutableArray * _authHttpInfos;
+    NSMutableArray * _cancelErrors;
+    int  _cancelledErrorCode;
+    NSString * _cancelledErrorDomain;
+    NSMutableArray * _chunkingInfos;
+    int  _chunksUploaded;
+    NSString * _clientId;
+    NSMutableArray * _completeHttpInfos;
+    NSMutableArray * _containerHttpInfos;
+    long long  _duration;
+    NSMutableArray * _errors;
     struct { 
         unsigned int duration : 1; 
         unsigned int startTime : 1; 
@@ -25,15 +25,15 @@
         unsigned int itemsNotPresentCount : 1; 
         unsigned int itemsPartiallyPresentCount : 1; 
         unsigned int requestErrorCode : 1; 
-    } _has;
-    int _itemCount;
-    int _itemsAlreadyPresentCount;
-    int _itemsNotPresentCount;
-    int _itemsPartiallyPresentCount;
-    int _requestErrorCode;
-    NSString *_requestErrorDomain;
-    long long _startTime;
-    long long _timestamp;
+    }  _has;
+    int  _itemCount;
+    int  _itemsAlreadyPresentCount;
+    int  _itemsNotPresentCount;
+    int  _itemsPartiallyPresentCount;
+    int  _requestErrorCode;
+    NSString * _requestErrorDomain;
+    long long  _startTime;
+    long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *authHttpInfos;

@@ -3,9 +3,9 @@
  */
 
 @interface CKDPCSCache : NSObject {
-    id /* block */ _fetchPCSItemForCacheBlock;
-    NSMutableDictionary *_itemIDToPCSCacheItem;
-    NSObject<OS_dispatch_queue> *_itemPCSFetchQueue;
+    id /* block */  _fetchPCSItemForCacheBlock;
+    NSMutableDictionary * _itemIDToPCSCacheItem;
+    NSObject<OS_dispatch_queue> * _itemPCSFetchQueue;
 }
 
 @property (nonatomic, copy) id /* block */ fetchPCSItemForCacheBlock;

@@ -3,35 +3,35 @@
  */
 
 @interface AVAssetWriterInputConfigurationState : NSObject {
-    short _alternateGroupID;
-    BOOL _attachedToPixelBufferAdaptor;
-    int _chunkAlignment;
+    short  _alternateGroupID;
+    BOOL  _attachedToPixelBufferAdaptor;
+    int  _chunkAlignment;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _chunkDuration;
-    int _chunkSize;
-    BOOL _expectsMediaDataInRealTime;
-    NSString *_extendedLanguageTag;
-    NSString *_languageCode;
-    int _layer;
-    BOOL _marksOutputTrackAsEnabled;
-    int _mediaTimeScale;
-    NSString *_mediaType;
-    NSArray *_metadataItems;
+    }  _chunkDuration;
+    int  _chunkSize;
+    BOOL  _expectsMediaDataInRealTime;
+    NSString * _extendedLanguageTag;
+    NSString * _languageCode;
+    int  _layer;
+    BOOL  _marksOutputTrackAsEnabled;
+    int  _mediaTimeScale;
+    NSString * _mediaType;
+    NSArray * _metadataItems;
     struct CGSize { 
         float width; 
         float height; 
-    } _naturalSize;
-    AVOutputSettings *_outputSettings;
-    BOOL _performsMultiPassEncodingIfSupported;
-    float _preferredVolume;
-    NSURL *_sampleReferenceBaseURL;
-    struct opaqueCMFormatDescription { } *_sourceFormatHint;
-    NSDictionary *_sourcePixelBufferAttributes;
-    NSDictionary *_trackReferences;
+    }  _naturalSize;
+    AVOutputSettings * _outputSettings;
+    BOOL  _performsMultiPassEncodingIfSupported;
+    float  _preferredVolume;
+    NSURL * _sampleReferenceBaseURL;
+    struct opaqueCMFormatDescription { } * _sourceFormatHint;
+    NSDictionary * _sourcePixelBufferAttributes;
+    NSDictionary * _trackReferences;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -39,7 +39,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _transform;
+    }  _transform;
 }
 
 @property (nonatomic) short alternateGroupID;

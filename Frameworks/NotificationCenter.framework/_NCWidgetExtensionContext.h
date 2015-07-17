@@ -3,7 +3,7 @@
  */
 
 @interface _NCWidgetExtensionContext : NSExtensionContext {
-    _NCWidgetViewController *_hostViewController;
+    _NCWidgetViewController * _hostViewController;
 }
 
 @property (nonatomic) _NCWidgetViewController *hostViewController;

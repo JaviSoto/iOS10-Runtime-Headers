@@ -3,21 +3,21 @@
  */
 
 @interface _UIDelayedPresentationContext : NSObject {
-    id /* block */ _cancellationHandler;
-    BOOL _enableUserInteraction;
-    NSInvocation *_presentInvocation;
-    int _reqcnt;
-    double _timeout;
-    NSObject<OS_dispatch_source> *_timerSource;
+    id /* block */  _cancellationHandler;
+    BOOL  _enableUserInteraction;
+    NSInvocation * _presentInvocation;
+    int  _reqcnt;
+    double  _timeout;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property (nonatomic, copy) id /* block */ cancellationHandler;
 @property (nonatomic, retain) NSInvocation *presentInvocation;
 
+- (void).cxx_destruct;
 - (void)beginDelayedPresentation;
 - (void)cancelDelayedPresentation:(BOOL)arg1;
 - (id /* block */)cancellationHandler;
-- (void)dealloc;
 - (int)decrementRequestCount;
 - (id)delayingController;
 - (void)finishDelayedPresentation:(id)arg1;

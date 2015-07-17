@@ -3,18 +3,18 @@
  */
 
 @interface MPArtworkCatalog : NSObject {
-    NSString *_cacheIdentifier;
-    id /* block */ _configurationBlock;
-    <MPArtworkDataSource> *_dataSource;
-    id _destination;
-    float _destinationScale;
+    NSString * _cacheIdentifier;
+    id /* block */  _configurationBlock;
+    <MPArtworkDataSource> * _dataSource;
+    id  _destination;
+    float  _destinationScale;
     struct CGSize { 
         float width; 
         float height; 
-    } _fittingSize;
-    BOOL _loadingRepresentation;
-    id _requestingContext;
-    id _token;
+    }  _fittingSize;
+    BOOL  _loadingRepresentation;
+    id  _requestingContext;
+    id  _token;
 }
 
 @property (nonatomic, readonly) int MP_artworkType;

@@ -3,7 +3,7 @@
  */
 
 @interface PMBackgroundMapper : CMMapper {
-    OADBackground *mBackground;
+    OADBackground * mBackground;
 }
 
 - (id)initWithOadBackground:(id)arg1 parent:(id)arg2;

@@ -3,16 +3,16 @@
  */
 
 @interface TSPEncoderWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPObjectModifyDelegate, TSPProxyObjectMapping> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    TSPArchiverManager *_archiverManager;
-    TSPObjectContext *_context;
-    NSMutableArray *_dataFinalizeHandlers;
-    NSHashTable *_delayedObjects;
-    <TSPEncoderWriteCoordinatorDelegate> *_delegate;
-    BOOL _didStopCapturingSnapshots;
-    <TSPEncoder> *_encoder;
-    BOOL _hasProxyObjects;
-    TSURetainedPointerKeyDictionary *_proxyObjectMap;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    TSPArchiverManager * _archiverManager;
+    TSPObjectContext * _context;
+    NSMutableArray * _dataFinalizeHandlers;
+    NSHashTable * _delayedObjects;
+    <TSPEncoderWriteCoordinatorDelegate> * _delegate;
+    BOOL  _didStopCapturingSnapshots;
+    <TSPEncoder> * _encoder;
+    BOOL  _hasProxyObjects;
+    TSURetainedPointerKeyDictionary * _proxyObjectMap;
 }
 
 @property (nonatomic, readonly) TSPObjectContext *context;
@@ -42,7 +42,7 @@
 - (BOOL)shouldDelayArchivingObject:(id)arg1;
 - (void)skipArchivingObject:(id)arg1;
 - (void)stopCapturingSnapshots;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
 - (void)writeRootObject:(id)arg1 completion:(id /* block */)arg2;
 
 @end

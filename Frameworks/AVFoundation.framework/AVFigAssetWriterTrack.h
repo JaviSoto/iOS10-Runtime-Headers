@@ -3,20 +3,20 @@
  */
 
 @interface AVFigAssetWriterTrack : NSObject {
-    BOOL _aboveHighWaterLevel;
-    NSObject<OS_dispatch_queue> *_aboveHighWaterLevelQueue;
-    AVAssetWriterInputFigAssetWriterEndPassOperation *_endPassOperation;
-    struct OpaqueFigAssetWriter { } *_figAssetWriter;
-    AVMediaFileType *_mediaFileType;
-    NSString *_mediaType;
+    BOOL  _aboveHighWaterLevel;
+    NSObject<OS_dispatch_queue> * _aboveHighWaterLevelQueue;
+    struct OpaqueFigAssetWriter { } * _figAssetWriter;
+    AVMediaFileType * _mediaFileType;
+    NSString * _mediaType;
+    NSOperationQueue * _operationQueue;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _sampleBufferCoalescingInterval;
-    int _trackID;
-    AVWeakReference *_weakReference;
+    }  _sampleBufferCoalescingInterval;
+    int  _trackID;
+    AVWeakReference * _weakReference;
 }
 
 @property (getter=isAboveHighWaterLevel, readonly) BOOL aboveHighWaterLevel;

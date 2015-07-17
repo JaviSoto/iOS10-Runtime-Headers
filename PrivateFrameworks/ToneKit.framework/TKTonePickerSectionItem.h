@@ -3,10 +3,10 @@
  */
 
 @interface TKTonePickerSectionItem : TKPickerSectionItem <TKPickerContainerItem> {
-    int _numberOfChildren;
-    TKTonePickerController *_parentTonePickerController;
-    unsigned int _regularToneSectionIndex;
-    unsigned int _sectionHeader;
+    int  _numberOfChildren;
+    TKTonePickerController * _parentTonePickerController;
+    unsigned int  _regularToneSectionIndex;
+    unsigned int  _sectionHeader;
 }
 
 @property (setter=_setParentTonePickerController:, nonatomic) TKTonePickerController *_parentTonePickerController;

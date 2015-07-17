@@ -3,12 +3,12 @@
  */
 
 @interface MIPMovie : PBCodable <NSCopying> {
-    MIPArtist *_artist;
-    int _audioLanguage;
-    int _audioTrackId;
-    int _audioTrackIndex;
-    NSString *_extendedContentName;
-    NSData *_flattenedChapterData;
+    MIPArtist * _artist;
+    int  _audioLanguage;
+    int  _audioTrackId;
+    int  _audioTrackIndex;
+    NSString * _extendedContentName;
+    NSData * _flattenedChapterData;
     struct { 
         unsigned int rentalDuration : 1; 
         unsigned int rentalPlaybackDuration : 1; 
@@ -24,19 +24,19 @@
         unsigned int hasChapterData : 1; 
         unsigned int hasSubtitles : 1; 
         unsigned int rental : 1; 
-    } _has;
-    BOOL _hasAlternateAudio;
-    BOOL _hasChapterData;
-    BOOL _hasSubtitles;
-    NSString *_movieInfo;
-    BOOL _rental;
-    long long _rentalDuration;
-    long long _rentalPlaybackDuration;
-    long long _rentalPlaybackStartedDateTime;
-    long long _rentalStartedDateTime;
-    int _subtitleLanguage;
-    int _subtitleTrackIndex;
-    int _videoQuality;
+    }  _has;
+    BOOL  _hasAlternateAudio;
+    BOOL  _hasChapterData;
+    BOOL  _hasSubtitles;
+    NSString * _movieInfo;
+    BOOL  _rental;
+    long long  _rentalDuration;
+    long long  _rentalPlaybackDuration;
+    long long  _rentalPlaybackStartedDateTime;
+    long long  _rentalStartedDateTime;
+    int  _subtitleLanguage;
+    int  _subtitleTrackIndex;
+    int  _videoQuality;
 }
 
 @property (nonatomic, retain) MIPArtist *artist;

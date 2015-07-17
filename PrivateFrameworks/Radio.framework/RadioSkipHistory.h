@@ -3,13 +3,13 @@
  */
 
 @interface RadioSkipHistory : NSObject <RadioManagedObjectWrapperProtocol> {
-    BOOL _databaseBacked;
-    NSManagedObject *_managedObject;
-    RadioModel *_model;
-    NSString *_skipIdentifier;
-    NSArray *_skipTimestamps;
-    NSString *_stationHash;
-    long long _stationID;
+    BOOL  _databaseBacked;
+    NSManagedObject * _managedObject;
+    RadioModel * _model;
+    NSString * _skipIdentifier;
+    NSArray * _skipTimestamps;
+    NSString * _stationHash;
+    long long  _stationID;
 }
 
 @property (getter=isDatabaseBacked, nonatomic, readonly) BOOL databaseBacked;

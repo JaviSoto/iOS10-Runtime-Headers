@@ -3,12 +3,12 @@
  */
 
 @interface AAResponse : NSObject {
-    NSData *_data;
-    NSError *_error;
-    NSHTTPURLResponse *_httpResponse;
-    NSNumber *_maxAge;
-    NSDictionary *_responseDictionary;
-    int _statusCode;
+    NSData * _data;
+    NSError * _error;
+    NSHTTPURLResponse * _httpResponse;
+    NSNumber * _maxAge;
+    NSDictionary * _responseDictionary;
+    int  _statusCode;
 }
 
 @property (nonatomic, readonly) NSData *data;

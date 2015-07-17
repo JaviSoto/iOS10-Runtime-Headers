@@ -3,10 +3,10 @@
  */
 
 @interface CKDGetRecordZonesURLRequest : CKDURLRequest {
-    id /* block */ _recordZoneFetchedBlock;
-    NSArray *_recordZones;
-    NSMutableDictionary *_zoneIDByRequestID;
-    NSArray *_zoneIDs;
+    id /* block */  _recordZoneFetchedBlock;
+    NSArray * _recordZones;
+    NSMutableDictionary * _zoneIDByRequestID;
+    NSArray * _zoneIDs;
 }
 
 @property (nonatomic, copy) id /* block */ recordZoneFetchedBlock;

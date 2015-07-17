@@ -3,9 +3,9 @@
  */
 
 @interface MPFloatingAirPlayDebugViewController : UINavigationController <AirPlayDiagnosticsFullscreenControllerDelegate> {
-    AirPlayDiagnosticsFullscreenController *_airPlayDiagsController;
-    UIWindow *_floatingWindow;
-    BOOL _presentedAnimated;
+    AirPlayDiagnosticsFullscreenController * _airPlayDiagsController;
+    UIWindow * _floatingWindow;
+    BOOL  _presentedAnimated;
 }
 
 @property (nonatomic, readonly) AirPlayDiagnosticsFullscreenController *airPlayDiagsController;

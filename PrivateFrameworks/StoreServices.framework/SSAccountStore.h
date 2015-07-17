@@ -3,10 +3,10 @@
  */
 
 @interface SSAccountStore : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSKeyValueStore *_keyValueStore;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    NSMutableArray *_notifyTokens;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSKeyValueStore * _keyValueStore;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    NSMutableArray * _notifyTokens;
 }
 
 @property (readonly, copy) NSArray *accounts;

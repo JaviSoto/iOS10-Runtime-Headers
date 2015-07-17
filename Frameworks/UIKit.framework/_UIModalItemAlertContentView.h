@@ -3,14 +3,14 @@
  */
 
 @interface _UIModalItemAlertContentView : _UIModalItemContentView {
-    UIView *_2ButtonsSeparators;
-    BOOL _alertViewIsSetup;
-    BOOL _itemNeedsTwoTableViews;
-    BOOL _itemWantsVerticalButtons;
-    UIScrollView *_labelsScrollView;
-    UITableView *_otherTableView;
-    UIView *_tableViewTopSeparator;
-    _UIModalItemTextFiledBGView *_textFieldBGView;
+    UIView * _2ButtonsSeparators;
+    BOOL  _alertViewIsSetup;
+    BOOL  _itemNeedsTwoTableViews;
+    BOOL  _itemWantsVerticalButtons;
+    UIScrollView * _labelsScrollView;
+    UITableView * _otherTableView;
+    UIView * _tableViewTopSeparator;
+    _UIModalItemTextFiledBGView * _textFieldBGView;
 }
 
 - (void)_prepareViewIfNeeded;

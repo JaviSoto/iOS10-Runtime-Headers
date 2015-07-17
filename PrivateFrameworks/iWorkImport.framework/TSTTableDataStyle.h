@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataStyle : TSTTableDataObject {
-    TSSStyle *mStyle;
+    TSSStyle * mStyle;
 }
 
 - (void)dealloc;

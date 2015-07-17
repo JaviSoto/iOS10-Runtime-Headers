@@ -3,10 +3,10 @@
  */
 
 @interface VKIconArtwork : NSObject {
-    NSMutableArray *_completionHandlers;
-    float _contentScale;
-    BOOL _hasIcon;
-    VKImage *_image;
+    NSMutableArray * _completionHandlers;
+    float  _contentScale;
+    BOOL  _hasIcon;
+    VKImage * _image;
 }
 
 @property (nonatomic, readonly) float contentScale;

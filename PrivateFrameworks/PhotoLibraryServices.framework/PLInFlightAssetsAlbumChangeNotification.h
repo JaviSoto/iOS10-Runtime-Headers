@@ -3,11 +3,11 @@
  */
 
 @interface PLInFlightAssetsAlbumChangeNotification : PLAssetContainerChangeNotification {
-    PLInFlightAssetsAlbum *_album;
-    PLAssetContainerChangeNotification *_backingNotification;
-    BOOL _keyAssetDidChange;
-    NSOrderedSet *_oldOIDs;
-    NSMutableSet *_uniquedOIDs;
+    PLInFlightAssetsAlbum * _album;
+    PLAssetContainerChangeNotification * _backingNotification;
+    BOOL  _keyAssetDidChange;
+    NSOrderedSet * _oldOIDs;
+    NSMutableSet * _uniquedOIDs;
 }
 
 @property (nonatomic, readonly, retain) PLInFlightAssetsAlbum *album;

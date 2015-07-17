@@ -3,8 +3,8 @@
  */
 
 @interface SKUIRedeemResultMessageView : UIView {
-    UILabel *_messageLabel;
-    UILabel *_titleLabel;
+    UILabel * _messageLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *message;

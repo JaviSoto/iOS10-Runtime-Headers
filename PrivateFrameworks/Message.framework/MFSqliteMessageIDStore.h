@@ -3,9 +3,9 @@
  */
 
 @interface MFSqliteMessageIDStore : NSObject {
-    MFMailMessageLibrary *_library;
-    int _mailboxRowid;
-    NSString *_url;
+    MFMailMessageLibrary * _library;
+    int  _mailboxRowid;
+    NSString * _url;
 }
 
 - (void)_loadMailboxRowidIfNecessary:(struct sqlite3 { }*)arg1;

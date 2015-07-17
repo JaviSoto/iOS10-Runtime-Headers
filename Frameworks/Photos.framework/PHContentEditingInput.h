@@ -3,23 +3,24 @@
  */
 
 @interface PHContentEditingInput : NSObject {
-    PHAdjustmentData *_adjustmentData;
-    AVAsset *_avAsset;
-    NSObject<OS_dispatch_queue> *_avAssetIsolationQueue;
-    int _baseVersion;
-    NSDate *_creationDate;
-    UIImage *_displaySizeImage;
-    int _fullSizeImageOrientation;
-    NSURL *_fullSizeImageURL;
-    CLLocation *_location;
-    unsigned int _mediaSubtypes;
-    int _mediaType;
-    long long _sandboxExtensionHandle;
-    NSString *_uniformTypeIdentifier;
-    NSURL *_videoURL;
+    PHAdjustmentData * _adjustmentData;
+    AVAsset * _avAsset;
+    NSObject<OS_dispatch_queue> * _avAssetIsolationQueue;
+    int  _baseVersion;
+    NSDate * _creationDate;
+    UIImage * _displaySizeImage;
+    int  _fullSizeImageOrientation;
+    NSURL * _fullSizeImageURL;
+    CLLocation * _location;
+    unsigned int  _mediaSubtypes;
+    int  _mediaType;
+    long long  _sandboxExtensionHandle;
+    NSString * _uniformTypeIdentifier;
+    NSURL * _videoURL;
 }
 
 @property (retain) PHAdjustmentData *adjustmentData;
+@property (readonly) AVAsset *audiovisualAsset;
 @property (readonly) AVAsset *avAsset;
 @property (nonatomic) int baseVersion;
 @property (copy) NSDate *creationDate;
@@ -36,6 +37,7 @@
 - (void)_invalidateAVAsset;
 - (id)adjustmentData;
 - (id)audioMix;
+- (id)audiovisualAsset;
 - (id)avAsset;
 - (int)baseVersion;
 - (void)consumeSandboxExtensionToken:(id)arg1;

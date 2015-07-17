@@ -3,8 +3,8 @@
  */
 
 @interface ODIHorizonalList3 : NSObject {
-    unsigned int mMaxPointCount;
-    ODIState *mState;
+    unsigned int  mMaxPointCount;
+    ODIState * mState;
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;

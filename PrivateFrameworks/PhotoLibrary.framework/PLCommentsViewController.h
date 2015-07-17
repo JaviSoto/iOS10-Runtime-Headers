@@ -3,7 +3,7 @@
  */
 
 @interface PLCommentsViewController : UIViewController <PLCloudCommentsChangeObserver, PLDismissableViewController, PLPhotoCommentEntryViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    PLManagedAsset *_asset;
+    PLManagedAsset * _asset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,30 +13,32 @@
             float width; 
             float height; 
         } size; 
-    } _availableBounds;
-    _UIBackdropView *_backdropView;
-    UIBarButtonItem *_cancelButton;
-    <PLCommentsViewControllerDelegate> *_commentsControllerDelegate;
-    NSCache *_commentsHeightCache;
-    UIView *_containerView;
-    BOOL _editMode;
-    PLPhotoCommentEntryView *_entryView;
-    UIImageView *_gradientView;
-    BOOL _isCompact;
-    PLCloudSharedComment *_justInsertedComment;
-    BOOL _justTappedSmileButton;
-    float _keyboardOverlap;
-    CAGradientLayer *_maskLayer;
-    BOOL _shouldAdjustInitialScrollPosition;
-    UIView *_tableContainerView;
-    UITableView *_tableView;
-    BOOL _temporaryKeyboardHideReshow;
+    }  _availableBounds;
+    _UIBackdropView * _backdropView;
+    UIBarButtonItem * _cancelButton;
+    <PLCommentsViewControllerDelegate> * _commentsControllerDelegate;
+    NSCache * _commentsHeightCache;
+    UIView * _containerView;
+    BOOL  _editMode;
+    PLPhotoCommentEntryView * _entryView;
+    UIImageView * _gradientView;
+    BOOL  _isCompact;
+    PLCloudSharedComment * _justInsertedComment;
+    BOOL  _justTappedSmileButton;
+    float  _keyboardOverlap;
+    CAGradientLayer * _maskLayer;
+    BOOL  _shouldAdjustInitialScrollPosition;
+    BOOL  _shouldUseCompactCommentSeparators;
+    UIView * _tableContainerView;
+    UITableView * _tableView;
+    BOOL  _temporaryKeyboardHideReshow;
 }
 
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } availableBounds;
 @property (nonatomic, readonly) UIBarButtonItem *cancelButton;
 @property (nonatomic) <PLCommentsViewControllerDelegate> *commentsControllerDelegate;
+@property (nonatomic, readonly) UITableView *commentsTableView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *draftComment;
@@ -44,6 +46,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isCompact;
 @property (nonatomic, retain) PLCloudSharedComment *justInsertedComment;
+@property (nonatomic) BOOL shouldUseCompactCommentSeparators;
 @property (readonly) Class superclass;
 
 - (void)_addCommentButtonTapped:(id)arg1;
@@ -51,6 +54,7 @@
 - (BOOL)_adjustTextEntrySize;
 - (BOOL)_checkAndAlertMaxCommentsReachedWhenFinalizing:(BOOL)arg1;
 - (id)_firstUnreadCloudComment;
+- (void)_fontSizesDidChange:(id)arg1;
 - (float)_heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
@@ -69,7 +73,10 @@
 - (void)cancelDeleteMode:(id)arg1;
 - (BOOL)checkAndAlertMaxLikesReached;
 - (void)cloudCommentsDidChange:(id)arg1;
+- (float)commentCellHeightForWidth:(float)arg1;
 - (id)commentsControllerDelegate;
+- (id)commentsTableView;
+- (id)currentEntryView;
 - (void)dealloc;
 - (id)draftComment;
 - (BOOL)editMode;
@@ -78,10 +85,13 @@
 - (id)justInsertedComment;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)photoCommentEntryViewDidEndEditing:(id)arg1;
 - (void)photoCommentEntryViewHeightDidChange:(id)arg1;
+- (void)photoCommentEntryViewWillBeginEditing:(id)arg1;
 - (int)postCommentSection;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)scrollToComment:(id)arg1 animated:(BOOL)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setAvailableBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -92,8 +102,11 @@
 - (void)setIsCompact:(BOOL)arg1;
 - (void)setJustInsertedComment:(id)arg1;
 - (void)setRasterization:(BOOL)arg1;
+- (void)setShouldUseCompactCommentSeparators:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowCommentPostingUI;
+- (BOOL)shouldUseCompactCommentSeparators;
+- (BOOL)shouldUseTextEntryCell;
 - (BOOL)showAssetOwnerSection;
 - (int)smileCommentSection;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;

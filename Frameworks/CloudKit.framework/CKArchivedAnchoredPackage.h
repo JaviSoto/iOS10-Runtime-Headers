@@ -3,10 +3,10 @@
  */
 
 @interface CKArchivedAnchoredPackage : NSObject <NSSecureCoding> {
-    NSString *_UUID;
-    NSString *_anchorPath;
-    NSArray *_assets;
-    NSString *_packagePath;
+    NSString * _UUID;
+    NSString * _anchorPath;
+    NSArray * _assets;
+    NSString * _packagePath;
 }
 
 @property (nonatomic, retain) NSString *UUID;

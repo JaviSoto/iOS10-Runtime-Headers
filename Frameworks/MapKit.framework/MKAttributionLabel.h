@@ -3,8 +3,8 @@
  */
 
 @interface MKAttributionLabel : UILabel {
-    unsigned int _mapType;
-    BOOL _useDarkText;
+    unsigned int  _mapType;
+    BOOL  _useDarkText;
 }
 
 @property (nonatomic) unsigned int mapType;

@@ -7,7 +7,7 @@
         double x; 
         double y; 
         double z; 
-    } _corners;
+    }  _corners;
 }
 
 @property (nonatomic, readonly) const struct VKPoint { double x1; double x2; double x3; }*corners;

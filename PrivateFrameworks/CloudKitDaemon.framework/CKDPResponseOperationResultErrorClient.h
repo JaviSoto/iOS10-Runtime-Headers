@@ -5,10 +5,10 @@
 @interface CKDPResponseOperationResultErrorClient : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPOplockFailure *_oplockFailure;
-    int _type;
-    CKDPUniqueFieldFailure *_uniqueFieldFailure;
+    }  _has;
+    CKDPOplockFailure * _oplockFailure;
+    int  _type;
+    CKDPUniqueFieldFailure * _uniqueFieldFailure;
 }
 
 @property (nonatomic, readonly) BOOL hasOplockFailure;

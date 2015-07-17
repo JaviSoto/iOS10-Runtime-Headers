@@ -3,25 +3,25 @@
  */
 
 @interface RCUIConfiguration : NSObject <NSCopying> {
-    float _acousticAnnotationVerticalMargin;
-    UIColor *_acousticGradientMaskEndColor;
-    UIColor *_acousticValueColor;
-    UIColor *_backgroundColor;
-    NSString *_debugIdentifier;
-    float _maximumDecibelDisplayRange;
-    float _minimumDecibelDisplayRange;
-    UIColor *_playbackPositionBarColor;
-    UIColor *_playbackPositionTimeColor;
-    UIColor *_selectionOverlayColor;
-    UIColor *_selectionOverlayEndpointBarColor;
-    UIColor *_selectionOverlayEndpointTimeColor;
-    BOOL _showsWaveformCenterline;
-    UIColor *_timeLineMarkerColor;
-    UIColor *_timeLineTimeColor;
-    UIColor *_waveformBoundaryLineColor;
-    BOOL _waveformBoundaryLineDimInSelectionMode;
-    UIColor *_waveformColor;
-    UIColor *_waveformHighlightColor;
+    float  _acousticAnnotationVerticalMargin;
+    UIColor * _acousticGradientMaskEndColor;
+    UIColor * _acousticValueColor;
+    UIColor * _backgroundColor;
+    NSString * _debugIdentifier;
+    float  _maximumDecibelDisplayRange;
+    float  _minimumDecibelDisplayRange;
+    UIColor * _playbackPositionBarColor;
+    UIColor * _playbackPositionTimeColor;
+    UIColor * _selectionOverlayColor;
+    UIColor * _selectionOverlayEndpointBarColor;
+    UIColor * _selectionOverlayEndpointTimeColor;
+    BOOL  _showsWaveformCenterline;
+    UIColor * _timeLineMarkerColor;
+    UIColor * _timeLineTimeColor;
+    UIColor * _waveformBoundaryLineColor;
+    BOOL  _waveformBoundaryLineDimInSelectionMode;
+    UIColor * _waveformColor;
+    UIColor * _waveformHighlightColor;
 }
 
 @property (nonatomic) float acousticAnnotationVerticalMargin;

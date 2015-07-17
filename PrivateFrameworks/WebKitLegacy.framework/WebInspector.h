@@ -3,8 +3,8 @@
  */
 
 @interface WebInspector : NSObject {
-    WebInspectorFrontend *_frontend;
-    WebView *_webView;
+    WebInspectorFrontend * _frontend;
+    WebView * _webView;
 }
 
 - (void)attach:(id)arg1;

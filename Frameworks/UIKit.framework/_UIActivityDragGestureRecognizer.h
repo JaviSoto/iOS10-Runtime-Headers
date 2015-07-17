@@ -3,14 +3,14 @@
  */
 
 @interface _UIActivityDragGestureRecognizer : UILongPressGestureRecognizer <UIAutoscrollDelegate, _UIScrollNotification> {
-    UIAutoscroll *_autoscroll;
+    UIAutoscroll * _autoscroll;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _draggingInsets;
-    UIScrollView *_targetScrollView;
+    }  _draggingInsets;
+    UIScrollView * _targetScrollView;
 }
 
 @property (nonatomic, retain) UIAutoscroll *autoscroll;
@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIScrollView *targetScrollView;
 
+- (void).cxx_destruct;
 - (void)_didScroll;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (id)autoscroll;

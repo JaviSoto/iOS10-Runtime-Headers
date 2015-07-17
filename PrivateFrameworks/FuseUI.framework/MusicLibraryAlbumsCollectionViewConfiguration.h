@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryAlbumsCollectionViewConfiguration : MusicLibraryBrowseCollectionViewConfiguration {
-    NSMutableSet *_additionalQueryFilterPredicates;
-    BOOL _forMainAlbumsList;
-    BOOL _includeCompilations;
+    NSMutableSet * _additionalQueryFilterPredicates;
+    BOOL  _forMainAlbumsList;
+    BOOL  _includeCompilations;
 }
 
 - (void).cxx_destruct;

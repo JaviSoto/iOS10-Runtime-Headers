@@ -3,11 +3,11 @@
  */
 
 @interface NSGZipDecoder : NSObject <NSURLDownloadDecoder> {
-    BOOL _decodedHeader;
-    NSString *_filename;
-    BOOL _finishedInflating;
-    unsigned int _modificationTime;
-    BOOL _pad;
+    BOOL  _decodedHeader;
+    NSString * _filename;
+    BOOL  _finishedInflating;
+    unsigned int  _modificationTime;
+    BOOL  _pad;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -23,8 +23,8 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } _stream;
-    BOOL _streamInitialized;
+    }  _stream;
+    BOOL  _streamInitialized;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,7 +36,6 @@
 + (BOOL)canDecodeDownloadHeaderData:(id)arg1;
 + (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)decodeData:(id)arg1;
 - (BOOL)decodeDownloadData:(id)arg1 dataForkData:(id*)arg2 resourceForkData:(id*)arg3;

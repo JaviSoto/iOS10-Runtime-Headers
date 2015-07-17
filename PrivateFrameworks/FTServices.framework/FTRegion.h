@@ -3,9 +3,9 @@
  */
 
 @interface FTRegion : NSObject {
-    NSDictionary *_dictionary;
-    FTRegion *_parentRegion;
-    NSArray *_subRegions;
+    NSDictionary * _dictionary;
+    FTRegion * _parentRegion;
+    NSArray * _subRegions;
 }
 
 @property (retain) NSDictionary *_dictionary;
@@ -15,7 +15,7 @@
 @property (readonly) NSString *label;
 @property (readonly) FTRegion *parentRegion;
 @property (readonly) NSString *regionID;
-@property (readonly) NSArray *subRegions;
+@property (readonly, retain) NSArray *subRegions;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 

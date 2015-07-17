@@ -7,26 +7,25 @@
         unsigned int alignment : 4; 
         unsigned int refCount : 24; 
         unsigned int unused : 4; 
-    } _flags;
-    float _location;
-    id _reserved;
+    }  _flags;
+    float  _location;
+    id  _reserved;
 }
 
-@property (readonly) int alignment;
-@property (readonly) float location;
-@property (readonly) NSDictionary *options;
+@property (nonatomic, readonly) int alignment;
+@property (nonatomic, readonly) float location;
+@property (nonatomic, readonly) NSDictionary *options;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)columnTerminatorsForLocale:(id)arg1;
 + (void)initialize;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (int)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTextAlignment:(int)arg1 location:(float)arg2 options:(id)arg3;
 - (id)initWithType:(unsigned int)arg1 location:(float)arg2;
@@ -34,8 +33,6 @@
 - (float)location;
 - (id)options;
 - (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
 - (unsigned int)tabStopType;
 
 @end

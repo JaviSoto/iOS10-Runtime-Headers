@@ -3,16 +3,16 @@
  */
 
 @interface UINibCoderValue : NSObject {
-    NSString *key;
-    unsigned long length;
-    unsigned int scope;
-    BOOL type;
+    NSString * key;
+    unsigned long  length;
+    unsigned int  scope;
+    BOOL  type;
     union { 
         float floatValue; 
         double doubleValue; 
         unsigned long long integerValue; 
         void *bytesValue; 
-    } value;
+    }  value;
 }
 
 + (id)nibValueForBoolean:(BOOL)arg1 key:(id)arg2 scope:(unsigned int)arg3;

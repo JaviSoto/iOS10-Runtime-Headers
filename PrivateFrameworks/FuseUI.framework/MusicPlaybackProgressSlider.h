@@ -3,23 +3,23 @@
  */
 
 @interface MusicPlaybackProgressSlider : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing, MPUVibrantContentDisabling, MusicPlaybackProgressScrubbing> {
-    BOOL _alwaysLive;
-    double _currentTime;
-    double _currentTimeSetTimeInterval;
-    MPDetailScrubController *_detailScrubController;
-    BOOL _displayScaleHasBeenSet;
-    UIView *_knobView;
-    BOOL _needsAnimationUpdate;
+    BOOL  _alwaysLive;
+    double  _currentTime;
+    double  _currentTimeSetTimeInterval;
+    MPDetailScrubController * _detailScrubController;
+    BOOL  _displayScaleHasBeenSet;
+    UIView * _knobView;
+    BOOL  _needsAnimationUpdate;
     struct CGSize { 
         float width; 
         float height; 
-    } _previousKnownSize;
-    float _rate;
-    <MusicPlaybackProgressScrubberDelegate> *_scrubberDelegate;
-    BOOL _scrubbingEnabled;
-    UIImage *_thumbImage;
-    double _totalDuration;
-    BOOL _tracking;
+    }  _previousKnownSize;
+    float  _rate;
+    <MusicPlaybackProgressScrubberDelegate> * _scrubberDelegate;
+    BOOL  _scrubbingEnabled;
+    UIImage * _thumbImage;
+    double  _totalDuration;
+    BOOL  _tracking;
 }
 
 @property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;

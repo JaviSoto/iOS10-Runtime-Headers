@@ -6,8 +6,8 @@
     struct shared_ptr<PKCGrid> { 
         struct PKCGrid {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } grid;
-    PKQuadTree *quadTree;
+    }  grid;
+    PKQuadTree * quadTree;
 }
 
 @property (nonatomic) struct shared_ptr<PKCGrid> { struct PKCGrid {} *x1; struct __shared_weak_count {} *x2; } gridPtr;

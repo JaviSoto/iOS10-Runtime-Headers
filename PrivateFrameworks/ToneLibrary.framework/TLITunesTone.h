@@ -3,17 +3,17 @@
  */
 
 @interface TLITunesTone : NSObject {
-    NSString *_artworkFile;
-    unsigned int _duration;
-    NSString *_filePath;
-    NSString *_identifier;
-    NSString *_name;
-    NSNumber *_pid;
-    NSDictionary *_playbackProperties;
-    BOOL _private;
-    BOOL _protected;
-    BOOL _purchased;
-    BOOL _ringtone;
+    NSString * _artworkFile;
+    unsigned int  _duration;
+    NSString * _filePath;
+    NSString * _identifier;
+    NSString * _name;
+    NSNumber * _pid;
+    NSDictionary * _playbackProperties;
+    BOOL  _private;
+    BOOL  _protected;
+    BOOL  _purchased;
+    BOOL  _ringtone;
 }
 
 @property (nonatomic, copy) NSString *artworkFile;

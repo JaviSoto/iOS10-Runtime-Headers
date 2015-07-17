@@ -3,26 +3,26 @@
  */
 
 @interface PKPaymentOptionGroup : NSObject {
-    BOOL _editable;
-    NSString *_groupDisplayMode;
-    NSString *_groupDisplayName;
-    NSString *_groupType;
-    int _indexForSelectedItem;
-    NSArray *_items;
-    NSString *_readOnlyDisplayName;
-    id /* block */ _selectionChangedHandler;
+    BOOL  _editable;
+    NSString * _groupDisplayMode;
+    NSString * _groupDisplayName;
+    NSString * _groupType;
+    int  _indexForSelectedItem;
+    NSArray * _items;
+    NSString * _readOnlyDisplayName;
+    id /* block */  _selectionChangedHandler;
 }
 
 @property (nonatomic, readonly) NSString *abTitleDisplayName;
 @property (nonatomic, readonly) NSString *addExistingDisplayName;
 @property (nonatomic, readonly) NSString *addNewDisplayName;
 @property (getter=isEditable, nonatomic) BOOL editable;
-@property (nonatomic, retain) NSString *groupDisplayMode;
-@property (nonatomic, retain) NSString *groupDisplayName;
+@property (nonatomic, copy) NSString *groupDisplayMode;
+@property (nonatomic, copy) NSString *groupDisplayName;
 @property (nonatomic, copy) NSString *groupType;
 @property (nonatomic) int indexForSelectedItem;
-@property (nonatomic, retain) NSArray *items;
-@property (nonatomic, retain) NSString *readOnlyDisplayName;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) NSString *readOnlyDisplayName;
 @property (nonatomic, copy) id /* block */ selectionChangedHandler;
 
 - (id)abTitleDisplayName;

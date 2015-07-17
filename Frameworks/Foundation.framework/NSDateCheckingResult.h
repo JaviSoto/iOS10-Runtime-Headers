@@ -3,18 +3,18 @@
  */
 
 @interface NSDateCheckingResult : NSTextCheckingResult {
-    NSDate *_date;
-    double _duration;
+    NSDate * _date;
+    double  _duration;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSDate *_referenceDate;
-    BOOL _timeIsApproximate;
-    BOOL _timeIsPast;
-    BOOL _timeIsSignificant;
-    NSTimeZone *_timeZone;
-    id _underlyingResult;
+    }  _range;
+    NSDate * _referenceDate;
+    BOOL  _timeIsApproximate;
+    BOOL  _timeIsPast;
+    BOOL  _timeIsSignificant;
+    NSTimeZone * _timeZone;
+    id  _underlyingResult;
 }
 
 @property (readonly) double duration;

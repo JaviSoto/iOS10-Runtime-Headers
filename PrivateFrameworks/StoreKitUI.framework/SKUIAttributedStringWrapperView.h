@@ -3,7 +3,7 @@
  */
 
 @interface SKUIAttributedStringWrapperView : SKUIAttributedStringView {
-    SKUIAttributedStringView *_delegateView;
+    SKUIAttributedStringView * _delegateView;
 }
 
 @property (nonatomic, readonly) SKUIAttributedStringView *delegateView;

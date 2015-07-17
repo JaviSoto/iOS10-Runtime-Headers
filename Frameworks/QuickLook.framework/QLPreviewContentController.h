@@ -3,29 +3,35 @@
  */
 
 @interface QLPreviewContentController : UIViewController <QLPreviewContentControllerProtocol, QLPreviewItemInteractionDelegate> {
-    QLAirPlayController *_airPlayController;
-    UIColor *_backgroundColor;
-    BOOL _blockRemoteImages;
-    int _currentPreviewItemIndex;
-    UISegmentedControl *_customToolbarSegmentedArrowControl;
-    <QLPreviewContentDataSource> *_dataSource;
-    <QLPreviewContentDelegate> *_delegate;
-    NSMutableSet *_gestureRecognizersForFullScreenDisplay;
-    BOOL _isForeground;
-    NSMutableSet *_loadingItems;
-    NSString *_loadingTextForMissingFiles;
-    UILongPressGestureRecognizer *_longPressRecognizer;
-    float _navigationBarVerticalOffset;
-    int _numberOfPreviewItems;
-    BOOL _overlayHidden;
-    UIPageViewController *_pageViewController;
-    int _previewMode;
-    NSMutableDictionary *_previewViewControllerCache;
-    NSMutableArray *_previewViewControllerCacheOrdering;
-    NSMutableOrderedSet *_scheduledLoads;
-    BOOL _swiping;
-    UITapGestureRecognizer *_tapRecognizer;
-    BOOL _transitioning;
+    QLAirPlayController * _airPlayController;
+    BOOL  _allowPan;
+    UIColor * _backgroundColor;
+    BOOL  _blockRemoteImages;
+    int  _currentPreviewItemIndex;
+    UISegmentedControl * _customToolbarSegmentedArrowControl;
+    <QLPreviewContentDataSource> * _dataSource;
+    <QLPreviewContentDelegate> * _delegate;
+    UIPanGestureRecognizer * _dismissGesture;
+    NSMutableSet * _gestureRecognizersForFullScreenDisplay;
+    BOOL  _isForeground;
+    NSMutableSet * _loadingItems;
+    NSString * _loadingTextForMissingFiles;
+    UILongPressGestureRecognizer * _longPressRecognizer;
+    float  _navigationBarVerticalOffset;
+    int  _numberOfPreviewItems;
+    BOOL  _overlayHidden;
+    UIGestureRecognizer * _pagePanGesture;
+    UIGestureRecognizer * _pageSwipeGesture;
+    UIPageViewController * _pageViewController;
+    UIView * _panViewBackground;
+    int  _previewMode;
+    NSMutableDictionary * _previewViewControllerCache;
+    NSMutableArray * _previewViewControllerCacheOrdering;
+    NSMutableOrderedSet * _scheduledLoads;
+    PHSwipeDownTracker * _swipeDownTracker;
+    BOOL  _swiping;
+    UITapGestureRecognizer * _tapRecognizer;
+    BOOL  _transitioning;
     struct { 
         int pid; 
         struct { 
@@ -41,7 +47,7 @@
                 float height; 
             } size; 
         } contentFrame; 
-    } clientContext;
+    }  clientContext;
 }
 
 @property (copy) UIColor *backgroundColor;
@@ -64,6 +70,7 @@
 - (void)_hideMenuController;
 - (void)_leftSwipeRecognized:(id)arg1;
 - (void)_longPressGestureRecognized:(id)arg1;
+- (void)_panGestureRecognized:(id)arg1;
 - (id)_previewControllerForPreviewItem:(id)arg1 createIfNeeded:(BOOL)arg2 withIndex:(int)arg3;
 - (id)_previewViewControllerForPreviewItemIndex:(unsigned int)arg1;
 - (void)_removeNonCachedPreviewViewControllers;
@@ -95,12 +102,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
+- (void)dismissTransitionIsReadyToFinishSynchronizedWithBlock:(id /* block */)arg1;
 - (void)endScrubbing;
 - (void)enterBackground;
 - (void)forceResignFirstResponder;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
+- (void)invalidate;
 - (void)overlayWasInteractedWithOnPreviewItem:(id)arg1;
 - (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;

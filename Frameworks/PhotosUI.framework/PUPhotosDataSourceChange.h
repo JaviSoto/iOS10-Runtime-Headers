@@ -3,19 +3,19 @@
  */
 
 @interface PUPhotosDataSourceChange : NSObject {
-    NSDictionary *_assetCollectionChangeDetails;
-    NSDictionary *_assetCollectionToSectionCache;
-    NSArray *_changedIndexPaths;
-    NSIndexSet *_changedSections;
-    PHFetchResultChangeDetails *_collectionListChangeDetails;
-    NSArray *_contentChangedIndexPaths;
-    NSArray *_deletedIndexPaths;
-    NSIndexSet *_deletedSections;
-    NSArray *_insertedIndexPaths;
-    NSIndexSet *_insertedSections;
-    PHChange *_originatingPhotoLibraryChange;
-    BOOL _prepared;
-    int _previousCollectionsCount;
+    NSDictionary * _assetCollectionChangeDetails;
+    NSDictionary * _assetCollectionToSectionCache;
+    NSArray * _changedIndexPaths;
+    NSIndexSet * _changedSections;
+    PHFetchResultChangeDetails * _collectionListChangeDetails;
+    NSArray * _contentChangedIndexPaths;
+    NSArray * _deletedIndexPaths;
+    NSIndexSet * _deletedSections;
+    NSArray * _insertedIndexPaths;
+    NSIndexSet * _insertedSections;
+    PHChange * _originatingPhotoLibraryChange;
+    BOOL  _prepared;
+    int  _previousCollectionsCount;
 }
 
 @property (readonly, copy) NSArray *changedIndexPaths;
@@ -39,7 +39,9 @@
 - (id)deletedSections;
 - (id)description;
 - (BOOL)hasIncrementalChanges;
+- (id)indexPathAfterApplyingIncrementalChangesToIndexPath:(id)arg1;
 - (id)init;
+- (id)initWithDeletedIndexPaths:(id)arg1 changedIndexPaths:(id)arg2;
 - (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 previousCollectionsCount:(int)arg3 assetCollectionToSectionCache:(id)arg4 originatingPhotoLibraryChange:(id)arg5;
 - (id)insertedIndexPaths;
 - (id)insertedSections;

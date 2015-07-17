@@ -3,28 +3,28 @@
  */
 
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending> {
-    id /* block */ _boostReply;
-    BRCXPCClient *_client;
-    NSMutableSet *_externalContainers;
-    BRCNotificationGatherer *_gatherer;
-    BOOL _hasUpdatesInFlight;
-    BRCNotificationManager *_manager;
-    BRNotificationQueue *_notifs;
-    BRCItemID *_oldWatchedAncestorItemID;
-    NSObject<OS_dispatch_queue> *_queue;
-    <BRItemNotificationReceiving> *_receiver;
-    BRCRelativePath *_root;
-    BOOL _volumeIsCaseSensitive;
-    NSString *_watchForBundleID;
-    unsigned short _watchItemOptions;
-    int _watchKind;
-    NSString *_watchNamePrefix;
-    NSNumber *_watchedAncestorFileObjectID;
-    NSString *_watchedAncestorFilenameToItem;
-    BRCItemID *_watchedAncestorItemID;
-    NSSet *_watchedContainerIDs;
-    NSSet *_watchedContainers;
-    unsigned int _watchedContainersFlags;
+    id /* block */  _boostReply;
+    BRCXPCClient * _client;
+    NSMutableSet * _externalContainers;
+    BRCNotificationGatherer * _gatherer;
+    BOOL  _hasUpdatesInFlight;
+    BRCNotificationManager * _manager;
+    BRNotificationQueue * _notifs;
+    BRCItemID * _oldWatchedAncestorItemID;
+    NSObject<OS_dispatch_queue> * _queue;
+    <BRItemNotificationReceiving> * _receiver;
+    BRCRelativePath * _root;
+    BOOL  _volumeIsCaseSensitive;
+    NSString * _watchForBundleID;
+    unsigned short  _watchItemOptions;
+    int  _watchKind;
+    NSString * _watchNamePrefix;
+    NSNumber * _watchedAncestorFileObjectID;
+    NSString * _watchedAncestorFilenameToItem;
+    BRCItemID * _watchedAncestorItemID;
+    NSSet * _watchedContainerIDs;
+    NSSet * _watchedContainers;
+    unsigned int  _watchedContainersFlags;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,15 +3,15 @@
  */
 
 @interface PKTableHeaderView : UIView {
-    UIButton *_actionButton;
-    UIActivityIndicatorView *_activityIndicator;
-    float _bottomPadding;
-    BOOL _buddyPad;
-    UIImageView *_checkmarkView;
-    UIImageView *_imageView;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    float _topPadding;
+    UIButton * _actionButton;
+    UIActivityIndicatorView * _activityIndicator;
+    float  _bottomPadding;
+    BOOL  _buddyPad;
+    UIImageView * _checkmarkView;
+    UIImageView * _imageView;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    float  _topPadding;
 }
 
 @property (nonatomic, readonly, retain) UIButton *actionButton;
@@ -40,6 +40,7 @@
 - (void)setTopPadding:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subtitleLabel;
+- (void)tintColorDidChange;
 - (id)titleLabel;
 - (float)topPadding;
 

@@ -3,14 +3,15 @@
  */
 
 @interface _NSProgressWithRemoteParent : NSProgress {
-    NSXPCConnection *_parentConnection;
-    unsigned long long _sequence;
+    NSXPCConnection * _parentConnection;
+    unsigned long long  _sequence;
 }
 
 @property (retain) NSXPCConnection *parentConnection;
 @property unsigned long long sequence;
 
-- (void)_updateFractionCompletedFromOldFraction:(id)arg1 toNewFraction:(id)arg2;
+- (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2 fromChild:(BOOL)arg3;
+- (void)_updateFractionCompleted:(id)arg1;
 - (void)dealloc;
 - (id)parentConnection;
 - (unsigned long long)sequence;

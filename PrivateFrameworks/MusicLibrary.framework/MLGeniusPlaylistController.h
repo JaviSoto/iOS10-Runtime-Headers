@@ -3,10 +3,10 @@
  */
 
 @interface MLGeniusPlaylistController : NSObject {
-    void *_echo;
-    void *_echo_cluster_playlist;
-    void *_echo_library;
-    NSMutableData *_sharedBlobMutableData;
+    void * _echo;
+    void * _echo_cluster_playlist;
+    void * _echo_library;
+    NSMutableData * _sharedBlobMutableData;
 }
 
 + (unsigned int)defaultMinTrackCount;

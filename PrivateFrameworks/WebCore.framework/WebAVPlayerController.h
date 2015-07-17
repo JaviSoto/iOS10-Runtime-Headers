@@ -3,35 +3,36 @@
  */
 
 @interface WebAVPlayerController : NSObject <AVPlayerViewControllerDelegate> {
-    NSArray *_audioMediaSelectionOptions;
-    BOOL _canPause;
-    BOOL _canPlay;
-    BOOL _canScanBackward;
-    BOOL _canSeek;
-    BOOL _canTogglePlayback;
+    NSArray * _audioMediaSelectionOptions;
+    BOOL  _canPause;
+    BOOL  _canPlay;
+    BOOL  _canScanBackward;
+    BOOL  _canSeek;
+    BOOL  _canTogglePlayback;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentDimensions;
-    double _contentDuration;
-    double _contentDurationWithinEndTimes;
-    WebAVMediaSelectionOption *_currentAudioMediaSelectionOption;
-    WebAVMediaSelectionOption *_currentLegibleMediaSelectionOption;
-    struct WebVideoFullscreenModel { int (**x1)(); } *_delegate;
-    BOOL _externalPlaybackActive;
-    NSString *_externalPlaybackAirPlayDeviceLocalizedName;
-    int _externalPlaybackType;
-    BOOL _hasEnabledAudio;
-    BOOL _hasEnabledVideo;
-    NSArray *_legibleMediaSelectionOptions;
-    NSArray *_loadedTimeRanges;
-    double _maxTime;
-    double _minTime;
-    AVPlayerController *_playerControllerProxy;
-    double _rate;
-    NSArray *_seekableTimeRanges;
-    int _status;
-    AVValueTiming *_timing;
+    }  _contentDimensions;
+    double  _contentDuration;
+    double  _contentDurationWithinEndTimes;
+    WebAVMediaSelectionOption * _currentAudioMediaSelectionOption;
+    WebAVMediaSelectionOption * _currentLegibleMediaSelectionOption;
+    struct WebVideoFullscreenModel { int (**x1)(); } * _delegate;
+    BOOL  _externalPlaybackActive;
+    NSString * _externalPlaybackAirPlayDeviceLocalizedName;
+    int  _externalPlaybackType;
+    struct WebVideoFullscreenInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct RetainPtr<AVPlayerViewController> { void *x_4_1_1; } x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct RetainPtr<WebAVVideoLayer> { void *x_6_1_1; } x6; struct RetainPtr<WebCALayerHostWrapper> { void *x_7_1_1; } x7; struct WebVideoFullscreenModel {} *x8; struct WebVideoFullscreenChangeObserver {} *x9; struct RetainPtr<UIWindow> { void *x_10_1_1; } x10; struct RetainPtr<UIViewController> { void *x_11_1_1; } x11; struct RetainPtr<UIView> { void *x_12_1_1; } x12; struct RetainPtr<UIWindow> { void *x_13_1_1; } x13; unsigned int x14; struct function<void (bool)>={type=[12C] {} x15; struct __base<void (bool)> {} *x16; } * _fullscreenInterface;
+    BOOL  _hasEnabledAudio;
+    BOOL  _hasEnabledVideo;
+    NSArray * _legibleMediaSelectionOptions;
+    NSArray * _loadedTimeRanges;
+    double  _maxTime;
+    double  _minTime;
+    AVPlayerController * _playerControllerProxy;
+    double  _rate;
+    NSArray * _seekableTimeRanges;
+    int  _status;
+    AVValueTiming * _timing;
 }
 
 @property (retain) NSArray *audioMediaSelectionOptions;
@@ -54,6 +55,7 @@
 @property (getter=isExternalPlaybackActive) BOOL externalPlaybackActive;
 @property (retain) NSString *externalPlaybackAirPlayDeviceLocalizedName;
 @property int externalPlaybackType;
+@property struct WebVideoFullscreenInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct RetainPtr<AVPlayerViewController> { void *x_4_1_1; } x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct RetainPtr<WebAVVideoLayer> { void *x_6_1_1; } x6; struct RetainPtr<WebCALayerHostWrapper> { void *x_7_1_1; } x7; struct WebVideoFullscreenModel {} *x8; struct WebVideoFullscreenChangeObserver {} *x9; struct RetainPtr<UIWindow> { void *x_10_1_1; } x10; struct RetainPtr<UIViewController> { void *x_11_1_1; } x11; struct RetainPtr<UIView> { void *x_12_1_1; } x12; struct RetainPtr<UIWindow> { void *x_13_1_1; } x13; unsigned int x14; struct function<void (bool)>={type=[12C] {} x15; struct __base<void (bool)> {} *x16; }*fullscreenInterface;
 @property (readonly) BOOL hasAudioMediaSelectionOptions;
 @property BOOL hasEnabledAudio;
 @property BOOL hasEnabledVideo;
@@ -83,7 +85,6 @@
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingPlayingOnExternalScreen;
 
-- (id).cxx_construct;
 - (id)audioMediaSelectionOptions;
 - (void)beginScanningBackward:(id)arg1;
 - (void)beginScanningForward:(id)arg1;
@@ -109,6 +110,7 @@
 - (id)externalPlaybackAirPlayDeviceLocalizedName;
 - (int)externalPlaybackType;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (struct WebVideoFullscreenInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct RetainPtr<AVPlayerViewController> { void *x_4_1_1; } x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct RetainPtr<WebAVVideoLayer> { void *x_6_1_1; } x6; struct RetainPtr<WebCALayerHostWrapper> { void *x_7_1_1; } x7; struct WebVideoFullscreenModel {} *x8; struct WebVideoFullscreenChangeObserver {} *x9; struct RetainPtr<UIWindow> { void *x_10_1_1; } x10; struct RetainPtr<UIViewController> { void *x_11_1_1; } x11; struct RetainPtr<UIView> { void *x_12_1_1; } x12; struct RetainPtr<UIWindow> { void *x_13_1_1; } x13; unsigned int x14; struct function<void (bool)>={type=[12C] {} x15; struct __base<void (bool)> {} *x16; }*)fullscreenInterface;
 - (void)gotoEndOfSeekableRanges:(id)arg1;
 - (BOOL)hasAudioMediaSelectionOptions;
 - (BOOL)hasEnabledAudio;
@@ -118,6 +120,7 @@
 - (BOOL)hasMediaSelectionOptions;
 - (id)init;
 - (BOOL)isExternalPlaybackActive;
+- (BOOL)isPictureInPicturePossible;
 - (BOOL)isPlaying;
 - (BOOL)isPlayingOnExternalScreen;
 - (id)legibleMediaSelectionOptions;
@@ -126,8 +129,15 @@
 - (double)minTime;
 - (void)pause:(id)arg1;
 - (void)play:(id)arg1;
+- (id)player;
 - (id)playerControllerProxy;
+- (void)playerViewController:(id)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(id /* block */)arg2;
 - (BOOL)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(int)arg2;
+- (void)playerViewControllerDidStartPictureInPicture:(id)arg1;
+- (void)playerViewControllerDidStopPictureInPicture:(id)arg1;
+- (void)playerViewControllerFailedToStartPictureInPicture:(id)arg1 withError:(id)arg2;
+- (void)playerViewControllerWillStartPictureInPicture:(id)arg1;
+- (void)playerViewControllerWillStopPictureInPicture:(id)arg1;
 - (double)rate;
 - (void)resetState;
 - (void)seekChapterBackward:(id)arg1;
@@ -151,6 +161,7 @@
 - (void)setExternalPlaybackActive:(BOOL)arg1;
 - (void)setExternalPlaybackAirPlayDeviceLocalizedName:(id)arg1;
 - (void)setExternalPlaybackType:(int)arg1;
+- (void)setFullscreenInterface:(struct WebVideoFullscreenInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct RetainPtr<AVPlayerViewController> { void *x_4_1_1; } x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct RetainPtr<WebAVVideoLayer> { void *x_6_1_1; } x6; struct RetainPtr<WebCALayerHostWrapper> { void *x_7_1_1; } x7; struct WebVideoFullscreenModel {} *x8; struct WebVideoFullscreenChangeObserver {} *x9; struct RetainPtr<UIWindow> { void *x_10_1_1; } x10; struct RetainPtr<UIViewController> { void *x_11_1_1; } x11; struct RetainPtr<UIView> { void *x_12_1_1; } x12; struct RetainPtr<UIWindow> { void *x_13_1_1; } x13; unsigned int x14; struct function<void (bool)>={type=[12C] {} x15; struct __base<void (bool)> {} *x16; }*)arg1;
 - (void)setHasEnabledAudio:(BOOL)arg1;
 - (void)setHasEnabledVideo:(BOOL)arg1;
 - (void)setLegibleMediaSelectionOptions:(id)arg1;
@@ -167,5 +178,6 @@
 - (int)status;
 - (id)timing;
 - (void)togglePlayback:(id)arg1;
+- (void)togglePlaybackEvenWhenInBackground:(id)arg1;
 
 @end

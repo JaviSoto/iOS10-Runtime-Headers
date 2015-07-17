@@ -3,12 +3,12 @@
  */
 
 @interface SKUIProductImageDataConsumer : SKUIImageDataConsumer <NSCopying> {
-    UIColor *_backgroundColor;
-    SKUIColorScheme *_colorScheme;
+    UIColor * _backgroundColor;
+    SKUIColorScheme * _colorScheme;
     struct CGSize { 
         float width; 
         float height; 
-    } _iconSize;
+    }  _iconSize;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

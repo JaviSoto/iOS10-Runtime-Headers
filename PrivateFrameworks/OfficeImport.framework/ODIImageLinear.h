@@ -3,7 +3,7 @@
  */
 
 @interface ODIImageLinear : ODILinear {
-    NSString *mImagePresentationName;
+    NSString * mImagePresentationName;
 }
 
 - (void)dealloc;

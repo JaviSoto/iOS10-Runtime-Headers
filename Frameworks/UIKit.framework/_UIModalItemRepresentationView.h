@@ -3,8 +3,8 @@
  */
 
 @interface _UIModalItemRepresentationView : UIView {
-    UIView *_fakeEffectSourceView;
-    BOOL _useFakeEffectSource;
+    UIView * _fakeEffectSourceView;
+    BOOL  _useFakeEffectSource;
 }
 
 @property (nonatomic) BOOL useFakeEffectSource;

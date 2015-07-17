@@ -3,21 +3,23 @@
  */
 
 @interface SKPaymentQueueClient : NSObject <NSCopying> {
-    BOOL _allowsBootstrapCellularData;
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    BOOL _hidesConfirmationDialogs;
-    BOOL _ignoresInAppPurchaseRestriction;
-    NSString *_receiptDirectoryPath;
-    BOOL _requiresAuthenticationForPayment;
-    NSNumber *_storeExternalVersion;
-    NSNumber *_storeItemIdentifier;
-    NSString *_vendorIdentifier;
+    BOOL  _allowsBootstrapCellularData;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    int  _environmentType;
+    BOOL  _hidesConfirmationDialogs;
+    BOOL  _ignoresInAppPurchaseRestriction;
+    NSString * _receiptDirectoryPath;
+    BOOL  _requiresAuthenticationForPayment;
+    NSNumber * _storeExternalVersion;
+    NSNumber * _storeItemIdentifier;
+    NSString * _vendorIdentifier;
 }
 
 @property (nonatomic) BOOL allowsBootstrapCellularData;
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic) int environmentType;
 @property (nonatomic) BOOL hidesConfirmationDialogs;
 @property (nonatomic) BOOL ignoresInAppPurchaseRestriction;
 @property (nonatomic, copy) NSString *receiptDirectoryPath;
@@ -32,6 +34,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
+- (int)environmentType;
 - (BOOL)hidesConfirmationDialogs;
 - (BOOL)ignoresInAppPurchaseRestriction;
 - (id)initWithXPCEncoding:(id)arg1;
@@ -40,6 +43,7 @@
 - (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
+- (void)setEnvironmentType:(int)arg1;
 - (void)setHidesConfirmationDialogs:(BOOL)arg1;
 - (void)setIgnoresInAppPurchaseRestriction:(BOOL)arg1;
 - (void)setReceiptDirectoryPath:(id)arg1;

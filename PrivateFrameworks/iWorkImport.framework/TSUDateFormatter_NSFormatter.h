@@ -3,10 +3,10 @@
  */
 
 @interface TSUDateFormatter_NSFormatter : NSFormatter {
-    BOOL isDateOnly;
-    BOOL isTimeOnly;
-    TSULocale *locale;
-    NSString *mPreferredFormat;
+    BOOL  isDateOnly;
+    BOOL  isTimeOnly;
+    TSULocale * locale;
+    NSString * mPreferredFormat;
 }
 
 @property (nonatomic) BOOL isDateOnly;

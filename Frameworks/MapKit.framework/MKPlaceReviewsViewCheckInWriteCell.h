@@ -3,11 +3,11 @@
  */
 
 @interface MKPlaceReviewsViewCheckInWriteCell : UITableViewCell {
-    UILabel *_checkInLabel;
-    <MKPlaceReviewsViewCheckInWriteCellDelegate> *_delegate;
-    NSArray *_marginConstraints;
-    NSMutableArray *_scaledConstraints;
-    UILabel *_writeReviewLabel;
+    UILabel * _checkInLabel;
+    <MKPlaceReviewsViewCheckInWriteCellDelegate> * _delegate;
+    NSArray * _marginConstraints;
+    NSMutableArray * _scaledConstraints;
+    UILabel * _writeReviewLabel;
 }
 
 @property (nonatomic, retain) NSAttributedString *checkInTitle;

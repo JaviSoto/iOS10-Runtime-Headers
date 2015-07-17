@@ -3,11 +3,11 @@
  */
 
 @interface ML3AlbumGroupingIdentifier : NSObject <NSCopying> {
-    long long _albumArtistPersistentID;
-    BOOL _compilation;
-    NSString *_feedURL;
-    NSData *_groupingKey;
-    int _seasonNumber;
+    long long  _albumArtistPersistentID;
+    BOOL  _compilation;
+    NSString * _feedURL;
+    NSData * _groupingKey;
+    int  _seasonNumber;
 }
 
 @property (nonatomic, readonly) long long albumArtistPersistentID;

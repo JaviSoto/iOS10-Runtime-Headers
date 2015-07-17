@@ -3,11 +3,11 @@
  */
 
 @interface SKUIProductPageTableExpandableHeaderView : UIControl {
-    UILabel *_actionLabel;
-    UIView *_bottomBorderView;
-    SKUIColorScheme *_colorScheme;
-    UILabel *_titleLabel;
-    UIView *_topBorderView;
+    UILabel * _actionLabel;
+    UIView * _bottomBorderView;
+    SKUIColorScheme * _colorScheme;
+    UILabel * _titleLabel;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic, copy) NSString *actionString;

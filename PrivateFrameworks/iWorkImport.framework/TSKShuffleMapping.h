@@ -3,14 +3,14 @@
  */
 
 @interface TSKShuffleMapping : NSObject <NSCopying> {
-    unsigned short mDestinationIndexForMove;
-    unsigned short mEndIndex;
-    unsigned short mFirstMovedIndex;
-    BOOL mIsMoveOperation;
-    BOOL mIsVertical;
-    unsigned short *mMapping;
-    unsigned short mNumberOfIndicesMoved;
-    unsigned short mStartIndex;
+    unsigned short  mDestinationIndexForMove;
+    unsigned short  mEndIndex;
+    unsigned short  mFirstMovedIndex;
+    BOOL  mIsMoveOperation;
+    BOOL  mIsVertical;
+    unsigned short * mMapping;
+    unsigned short  mNumberOfIndicesMoved;
+    unsigned short  mStartIndex;
 }
 
 @property (nonatomic, readonly) unsigned short endIndex;

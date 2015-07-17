@@ -3,10 +3,10 @@
  */
 
 @interface SKVideoNode : SKNode {
-    BOOL _isLoaded;
-    AVPlayer *_player;
-    NSString *_videoFileName;
-    NSURL *_videoFileURL;
+    AVPlayer * _player;
+    struct SKCVideoNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; bool x22; id x23; struct shared_ptr<jet_texture> { struct jet_texture {} *x_24_1_1; struct __shared_weak_count {} *x_24_1_2; } x24; struct shared_ptr<jet_texture> { struct jet_texture {} *x_25_1_1; struct __shared_weak_count {} *x_25_1_2; } x25; id x26; struct __CVBuffer {} x27; struct __CVBuffer {} *x28; id x29; } * _skcVideoNode;
+    NSString * _videoFileName;
+    NSURL * _videoFileURL;
 }
 
 @property (nonatomic, retain) AVPlayer *_player;
@@ -14,10 +14,14 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
 
 + (id)videoNodeWithAVPlayer:(id)arg1;
++ (id)videoNodeWithFileNamed:(id)arg1;
++ (id)videoNodeWithURL:(id)arg1;
 + (id)videoNodeWithVideoFileNamed:(id)arg1;
 + (id)videoNodeWithVideoURL:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_didMakeBackingNode;
+- (struct SKCNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; }*)_makeBackingNode;
 - (id)_player;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (id)description;
@@ -25,10 +29,11 @@
 - (id)init;
 - (id)initWithAVPlayer:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFileNamed:(id)arg1;
+- (id)initWithURL:(id)arg1;
 - (id)initWithVideoFileNamed:(id)arg1;
 - (id)initWithVideoURL:(id)arg1;
 - (BOOL)isEqualToNode:(id)arg1;
-- (BOOL)isPaused;
 - (void)pause;
 - (void)play;
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;

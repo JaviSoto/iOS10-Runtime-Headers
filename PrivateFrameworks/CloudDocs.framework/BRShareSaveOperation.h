@@ -3,8 +3,8 @@
  */
 
 @interface BRShareSaveOperation : BROperation {
-    CKShare *_share;
-    id /* block */ _shareSaveCompletionBlock;
+    CKShare * _share;
+    id /* block */  _shareSaveCompletionBlock;
 }
 
 @property (nonatomic, retain) CKShare *share;

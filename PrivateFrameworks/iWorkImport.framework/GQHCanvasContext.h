@@ -3,11 +3,11 @@
  */
 
 @interface GQHCanvasContext : NSObject <GQHContext> {
-    struct __CFString { } *mBezierStr;
-    NSMutableString *mFunctionName;
-    GQDAffineGeometry *mGeometry;
-    BOOL mHasFill;
-    BOOL mHasStroke;
+    struct __CFString { } * mBezierStr;
+    NSMutableString * mFunctionName;
+    GQDAffineGeometry * mGeometry;
+    BOOL  mHasFill;
+    BOOL  mHasStroke;
 }
 
 @property (readonly, copy) NSString *debugDescription;

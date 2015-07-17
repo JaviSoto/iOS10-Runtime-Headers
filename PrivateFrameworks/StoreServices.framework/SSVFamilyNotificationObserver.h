@@ -3,10 +3,10 @@
  */
 
 @interface SSVFamilyNotificationObserver : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    id /* block */ _notificationHandler;
-    BOOL _observing;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    id /* block */  _notificationHandler;
+    BOOL  _observing;
 }
 
 + (id)familyNotificationObserverWithNotificationHandler:(id /* block */)arg1;

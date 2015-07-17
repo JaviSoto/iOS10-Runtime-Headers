@@ -3,7 +3,7 @@
  */
 
 @interface ICCameraDevice : ICDevice {
-    void *_cameraProperties;
+    void * _cameraProperties;
 }
 
 @property (getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice;

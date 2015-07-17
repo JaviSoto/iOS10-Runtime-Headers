@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _fromRect;
-    UIImage *_image;
+    }  _fromRect;
+    UIImage * _image;
 }
 
 - (void)dealloc;

@@ -3,9 +3,9 @@
  */
 
 @interface CMDiagramArrowMapper : CMDiagramShapeMapper {
-    BOOL mIsOutward;
-    BOOL mIsVertical;
-    float mRadius;
+    BOOL  mIsOutward;
+    BOOL  mIsVertical;
+    float  mRadius;
 }
 
 + (void)initialize;

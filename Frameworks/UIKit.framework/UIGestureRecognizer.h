@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIGestureRecognizer : NSObject {
-    NSMutableArray *_delayedTouches;
-    <UIGestureRecognizerDelegate> *_delegate;
-    NSMutableSet *_dynamicFailureDependents;
-    NSMutableSet *_dynamicFailureRequirements;
-    NSMutableSet *_failureDependents;
-    id _failureMap;
-    NSMutableSet *_failureRequirements;
-    NSMutableSet *_friends;
+@interface UIGestureRecognizer : NSObject <_UIGestureRecognizerFailureRequirementDelegate, _UITouchable> {
+    NSArray * _allowedPressTypes;
+    int  _allowedTouchTypes;
+    NSMutableArray * _delayedTouches;
+    <UIGestureRecognizerDelegate> * _delegate;
+    NSMutableSet * _dynamicFailureDependents;
+    NSMutableSet * _dynamicFailureRequirements;
+    NSMutableSet * _failureDependents;
+    NSMutableSet * _failureRequirements;
+    NSMutableSet * _friends;
     struct { 
         unsigned int delegateShouldBegin : 1; 
         unsigned int delegateCanPrevent : 1; 
@@ -25,6 +26,7 @@
         unsigned int privateDelegateCanBePrevented : 1; 
         unsigned int privateDelegateShouldRecognizeSimultaneously : 1; 
         unsigned int privateDelegateShouldReceiveTouch : 1; 
+        unsigned int privateDelegateShouldReceivePress : 1; 
         unsigned int privateDelegateShouldRequireFailure : 1; 
         unsigned int privateDelegateShouldBeRequiredToFail : 1; 
         unsigned int subclassShouldRequireFailure : 1; 
@@ -46,26 +48,37 @@
         unsigned int willBeginAfterSatisfyingFailureRequirements : 1; 
         unsigned int requiresSystemGesturesToFail : 1; 
         unsigned int acceptsFailureRequirements : 1; 
-    } _gestureFlags;
-    int _state;
-    NSMutableArray *_targets;
-    UIPhysicalButtonsEvent *_updateButtonEvent;
-    UITouchesEvent *_updateEvent;
-    UIView *_view;
+    }  _gestureFlags;
+    double  _lastTouchTimestamp;
+    _UIGestureRecognizerFailureRequirement * _relationshipFailureRequirement;
+    int  _state;
+    NSMutableArray * _targets;
+    UIPressesEvent * _updateButtonEvent;
+    UITouchesEvent * _updateEvent;
+    UIView * _view;
 }
 
+@property (readonly) unsigned int akNumberOfTouches;
+@property (nonatomic, copy) NSArray *allowedPressTypes;
+@property (nonatomic, copy) NSArray *allowedTouchTypes;
 @property (nonatomic) BOOL cancelsTouchesInView;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL delaysTouchesBegan;
 @property (nonatomic) BOOL delaysTouchesEnded;
 @property (nonatomic) <UIGestureRecognizerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int state;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
++ (BOOL)_shouldDefaultToTouches;
 + (BOOL)_touchesBeganWasDelayedForTouch:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_acceptsFailureRequirements;
 - (id)_activeTouchesForEvent:(id)arg1;
 - (void)_addDynamicFailureDependent:(id)arg1;
@@ -73,6 +86,7 @@
 - (void)_addFailureDependent:(id)arg1;
 - (void)_addFriendGesture:(id)arg1;
 - (BOOL)_affectedByGesture:(id)arg1;
+- (void)_allFailureRequirementsCompletedRelatedToFailureRequirement:(id)arg1;
 - (void)_appendDescription:(id)arg1 forDependencies:(id)arg2 toString:(id)arg3 atLevel:(int)arg4;
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2 includingDependencies:(BOOL)arg3;
 - (void)_appendSubclassDescription:(id)arg1;
@@ -88,44 +102,58 @@
 - (id)_delayedTouches;
 - (void)_delayedUpdateGesture;
 - (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
+- (id)_delegateDescriptionForFailureRequirement:(id)arg1;
+- (BOOL)_delegateShouldReceivePress:(id)arg1;
 - (BOOL)_delegateShouldReceiveTouch:(id)arg1;
+- (id)_dependentFailureRequirementsForFailureRequirement:(id)arg1;
 - (int)_depthFirstViewCompare:(id)arg1;
 - (void)_detach;
 - (float)_distanceBetweenTouches:(id)arg1;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
 - (void)_enqueueDelayedTouchesToSend;
 - (void)_exclude;
-- (id)_failureMap;
-- (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (void)_failureRequirement:(id)arg1 requiredFailureRequirement:(id)arg2 completedWithEvent:(id)arg3;
+- (id)_gestureRecognizerForFailureRequirement:(id)arg1;
 - (BOOL)_hasTargets;
-- (void)_ignorePhysicalButton:(id)arg1 forEvent:(id)arg2;
+- (id)_installedFailureRequirements;
 - (void)_invalidate;
 - (BOOL)_isDirty;
 - (BOOL)_isExcludedByGesture:(id)arg1;
+- (BOOL)_isFailureRequirementEnabled:(id)arg1;
 - (BOOL)_isFriendWithGesture:(id)arg1;
 - (BOOL)_isRecognized;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_queueForResetIfFinished;
+- (id)_relationshipFailureRequirement;
 - (void)_removeFailureDependent:(id)arg1;
+- (id)_requiredFailureRequirementsForFailureRequirement:(id)arg1;
 - (BOOL)_requiresGestureRecognizerToFail:(id)arg1;
 - (BOOL)_requiresSystemGesturesToFail;
 - (void)_resetGestureRecognizer;
 - (void)_resetIfFinished;
 - (void)_setAcceptsFailureRequiments:(BOOL)arg1;
 - (void)_setDirty;
-- (void)_setFailureMap:(id)arg1;
 - (void)_setRequiresSystemGesturesToFail:(BOOL)arg1;
 - (BOOL)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (BOOL)_shouldBegin;
+- (BOOL)_shouldDependentFailureRequirementsOfFailureRequirementFail:(id)arg1;
+- (BOOL)_shouldReceivePress:(id)arg1;
 - (BOOL)_shouldReceiveTouch:(id)arg1;
 - (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
 - (void)_touchWasCancelled:(id)arg1;
+- (void)_touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)_touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_updateGestureStateWithEvent:(id)arg1 buttonEvent:(id)arg2 afterDelay:(BOOL)arg3;
 - (void)_updateGestureWithEvent:(id)arg1 buttonEvent:(id)arg2;
+- (BOOL)_wantsPartialTouchSequences;
 - (void)_willBeginAfterSatisfyingFailureRequirements;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
+- (id)allowedPressTypes;
+- (id)allowedTouchTypes;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (BOOL)cancelsTouchesInView;
@@ -135,19 +163,27 @@
 - (id)delegate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (void)ignorePress:(id)arg1 forEvent:(id)arg2;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isEnabled;
+- (double)lastTouchTimestamp;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (unsigned int)numberOfTouches;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)removeFailureRequirement:(id)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)requireGestureRecognizerToFail:(id)arg1;
 - (void)requireOtherGestureToFail:(id)arg1;
 - (void)reset;
+- (void)setAllowedPressTypes:(id)arg1;
+- (void)setAllowedTouchTypes:(id)arg1;
 - (void)setCancelsTouchesInView:(BOOL)arg1;
 - (void)setDelaysTouchesBegan:(BOOL)arg1;
 - (void)setDelaysTouchesEnded:(BOOL)arg1;
@@ -161,11 +197,21 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEstimatedPropertiesUpdated:(id)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (id)view;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 - (void)pu_cancel;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (struct CGPoint { float x1; float x2; })akLocationInWindow;
+- (unsigned int)akNumberOfTouches;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (void)cancel;
 
 @end

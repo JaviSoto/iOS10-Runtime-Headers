@@ -3,11 +3,11 @@
  */
 
 @interface RURadioArtworkDataSource : NSObject <MPArtworkDataSource> {
-    unsigned int _backgroundCacheSize;
-    unsigned int _cacheSize;
-    CPLRUDictionary *_cachedArtworkRepresentations;
-    NSObject<OS_dispatch_queue> *_cachedArtworkRepresentationsAccessQueue;
-    int _resumeToForegroundCacheSize;
+    unsigned int  _backgroundCacheSize;
+    unsigned int  _cacheSize;
+    CPLRUDictionary * _cachedArtworkRepresentations;
+    NSObject<OS_dispatch_queue> * _cachedArtworkRepresentationsAccessQueue;
+    int  _resumeToForegroundCacheSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

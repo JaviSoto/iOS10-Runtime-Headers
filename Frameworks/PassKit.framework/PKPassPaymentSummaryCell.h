@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassPaymentSummaryCell : UITableViewCell {
-    UILabel *_amountLabel;
-    <PKPassPaymentSummaryCellDelegate> *_delegate;
-    UIButton *_detailsButton;
+@interface PKPassPaymentSummaryCell : PKTableViewCell {
+    UILabel * _amountLabel;
+    <PKPassPaymentSummaryCellDelegate> * _delegate;
+    UIButton * _detailsButton;
 }
 
 @property (nonatomic, retain) NSString *amountText;

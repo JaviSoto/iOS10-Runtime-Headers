@@ -3,7 +3,7 @@
  */
 
 @interface AFSpeechInterpretation : NSObject <NSSecureCoding> {
-    NSArray *_tokens;
+    NSArray * _tokens;
 }
 
 @property (nonatomic, copy) NSArray *tokens;

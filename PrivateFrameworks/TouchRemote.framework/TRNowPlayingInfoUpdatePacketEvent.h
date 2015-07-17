@@ -3,7 +3,7 @@
  */
 
 @interface TRNowPlayingInfoUpdatePacketEvent : TRPacketEvent {
-    NSDictionary *_nowPlayingInfo;
+    NSDictionary * _nowPlayingInfo;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *nowPlayingInfo;

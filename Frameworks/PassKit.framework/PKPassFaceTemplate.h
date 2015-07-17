@@ -6,10 +6,10 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _barcodeMaxSize;
-    float _barcodeVerticalInset;
-    NSMutableArray *_bucketTemplates;
-    PKPassFieldTemplate *_defaultFieldTemplate;
+    }  _barcodeMaxSize;
+    float  _barcodeVerticalInset;
+    NSMutableArray * _bucketTemplates;
+    PKPassFieldTemplate * _defaultFieldTemplate;
 }
 
 @property (nonatomic) float barcodeBottomInset;

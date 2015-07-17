@@ -3,9 +3,9 @@
  */
 
 @interface SCROBrailleDisplayAutoDetector : NSObject {
-    BOOL _isDetectingDisplays;
-    NSMutableDictionary *_iteratorDict;
-    struct IONotificationPort { } *_notificationPort;
+    BOOL  _isDetectingDisplays;
+    NSMutableDictionary * _iteratorDict;
+    struct IONotificationPort { } * _notificationPort;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

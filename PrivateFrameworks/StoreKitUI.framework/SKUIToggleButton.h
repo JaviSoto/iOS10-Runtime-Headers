@@ -3,22 +3,22 @@
  */
 
 @interface SKUIToggleButton : SKUIStyledButton <SKUIToggleItemStateCenterObserver> {
-    BOOL _autoIncrement;
-    int _autoIncrementCount;
-    int _count;
-    <SKUIToggleButtonDelegate> *_delegate;
-    SKUIButtonViewElement *_element;
-    NSString *_itemIdentifier;
-    UIImage *_nonToggledImage;
-    SKUIAttributedStringLayout *_nonToggledLayout;
-    NSString *_nonToggledTitle;
-    NSString *_titleToggleString;
-    int _toggleButtonType;
-    NSString *_toggleItemIdentifier;
-    BOOL _toggled;
-    UIImage *_toggledImage;
-    SKUIAttributedStringLayout *_toggledLayout;
-    NSString *_toggledTitle;
+    BOOL  _autoIncrement;
+    int  _autoIncrementCount;
+    int  _count;
+    <SKUIToggleButtonDelegate> * _delegate;
+    SKUIButtonViewElement * _element;
+    NSString * _itemIdentifier;
+    UIImage * _nonToggledImage;
+    SKUIAttributedStringLayout * _nonToggledLayout;
+    NSString * _nonToggledTitle;
+    NSString * _titleToggleString;
+    int  _toggleButtonType;
+    NSString * _toggleItemIdentifier;
+    BOOL  _toggled;
+    UIImage * _toggledImage;
+    SKUIAttributedStringLayout * _toggledLayout;
+    NSString * _toggledTitle;
 }
 
 @property (nonatomic) BOOL autoIncrement;

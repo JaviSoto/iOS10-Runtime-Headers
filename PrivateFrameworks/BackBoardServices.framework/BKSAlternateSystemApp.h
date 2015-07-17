@@ -3,13 +3,13 @@
  */
 
 @interface BKSAlternateSystemApp : NSObject <BKSAlternateSystemAppClientProtocol> {
-    NSString *_bundleId;
-    NSXPCConnection *_connection;
-    <BKSAlternateSystemAppDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
-    NSObject<OS_dispatch_semaphore> *_stateChangeSemaphore;
-    BOOL _stateChangeWaiter;
+    NSString * _bundleId;
+    NSXPCConnection * _connection;
+    <BKSAlternateSystemAppDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
+    NSObject<OS_dispatch_semaphore> * _stateChangeSemaphore;
+    BOOL  _stateChangeWaiter;
 }
 
 @property (nonatomic, copy) NSString *bundleId;

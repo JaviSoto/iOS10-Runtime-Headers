@@ -3,15 +3,15 @@
  */
 
 @interface UILexicon : NSObject <NSCopying> {
-    NSArray *_entries;
+    NSArray * _entries;
 }
 
 @property (nonatomic, readonly) NSArray *entries;
 
 + (id)_lexiconWithTILexicon:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)entries;
 - (BOOL)isEqual:(id)arg1;
 

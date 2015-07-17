@@ -12,12 +12,12 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUISignInTemplateView *_loginView;
-    UIScrollView *_scrollView;
-    SKUISignInTemplateViewElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    }  _keyboardFrame;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUISignInTemplateView * _loginView;
+    UIScrollView * _scrollView;
+    SKUISignInTemplateViewElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

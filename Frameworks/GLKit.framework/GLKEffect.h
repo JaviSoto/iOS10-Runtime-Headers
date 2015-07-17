@@ -3,7 +3,7 @@
  */
 
 @interface GLKEffect : NSObject {
-    int _aColorLoc;
+    int  _aColorLoc;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -24,16 +24,16 @@
             float q; 
         } ; 
         float v[4]; 
-    } _baseLightingColor;
-    int _baseLightingColorLoc;
-    unsigned char _colorMaterialEnabled;
-    unsigned long long _dirtyUniforms;
-    id *_effectShaderArray;
-    struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } *_fshMask;
-    unsigned int _fshName;
-    GLKShaderBlockNode *_fshRootNode;
-    char **_fshStrings;
-    NSString *_label;
+    }  _baseLightingColor;
+    int  _baseLightingColorLoc;
+    unsigned char  _colorMaterialEnabled;
+    unsigned long long  _dirtyUniforms;
+    id * _effectShaderArray;
+    struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } * _fshMask;
+    unsigned int  _fshName;
+    GLKShaderBlockNode * _fshRootNode;
+    char ** _fshStrings;
+    NSString * _label;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -54,37 +54,37 @@
             float q; 
         } ; 
         float v[4]; 
-    } _lightModelAmbientColor;
-    int _lightModelAmbientColorLoc;
-    unsigned char _lightModelTwoSided;
-    NSMutableArray *_lightProperties;
-    unsigned char _masksInitialized;
-    float *_materialAmbientColor;
-    float *_materialDiffuseColor;
-    unsigned int _numFshStrings;
-    unsigned int _numLights;
-    unsigned int _numTextures;
-    unsigned int _numVshStrings;
-    unsigned char _perPixelLightingEnabled;
-    unsigned char _perVertexLightingEnabled;
+    }  _lightModelAmbientColor;
+    int  _lightModelAmbientColorLoc;
+    unsigned char  _lightModelTwoSided;
+    NSMutableArray * _lightProperties;
+    unsigned char  _masksInitialized;
+    float * _materialAmbientColor;
+    float * _materialDiffuseColor;
+    unsigned int  _numFshStrings;
+    unsigned int  _numLights;
+    unsigned int  _numTextures;
+    unsigned int  _numVshStrings;
+    unsigned char  _perPixelLightingEnabled;
+    unsigned char  _perVertexLightingEnabled;
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
-    } _prevFshMask;
+    }  _prevFshMask;
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
-    } _prevVshMask;
-    NSMutableDictionary *_programHash;
-    unsigned int _programName;
-    NSMutableArray *_properties;
-    NSArray *_textureOrder;
-    bool _textureOrderStale;
-    unsigned char _texturingEnabled;
-    struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } *_vshMask;
-    unsigned int _vshName;
-    GLKShaderBlockNode *_vshRootNode;
-    char **_vshStrings;
+    }  _prevVshMask;
+    NSMutableDictionary * _programHash;
+    unsigned int  _programName;
+    NSMutableArray * _properties;
+    NSArray * _textureOrder;
+    bool  _textureOrderStale;
+    unsigned char  _texturingEnabled;
+    struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } * _vshMask;
+    unsigned int  _vshName;
+    GLKShaderBlockNode * _vshRootNode;
+    char ** _vshStrings;
 }
 
 @property (nonatomic) int aColorLoc;

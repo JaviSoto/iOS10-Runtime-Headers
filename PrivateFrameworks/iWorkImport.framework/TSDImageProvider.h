@@ -3,12 +3,12 @@
  */
 
 @interface TSDImageProvider : NSObject {
-    TSUFlushingManager *mFlushingManager;
-    TSPData *mImageData;
-    int mInterest;
-    int mLoadState;
-    int mOwnerCount;
-    int mRetainCount;
+    TSUFlushingManager * mFlushingManager;
+    TSPData * mImageData;
+    int  mInterest;
+    int  mLoadState;
+    int  mOwnerCount;
+    int  mRetainCount;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface BluetoothDevice : NSObject {
-    NSString *_address;
-    struct BTDeviceImpl { } *_device;
-    NSString *_name;
+    NSString * _address;
+    struct BTDeviceImpl { } * _device;
+    NSString * _name;
 }
 
 - (void)_clearName;

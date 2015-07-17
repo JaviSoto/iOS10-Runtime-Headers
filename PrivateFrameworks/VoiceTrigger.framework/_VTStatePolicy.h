@@ -3,10 +3,10 @@
  */
 
 @interface _VTStatePolicy : NSObject {
-    id /* block */ _callback;
-    NSMutableSet *_dependentOnMe;
-    NSMutableSet *_dependentUpon;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _callback;
+    NSMutableSet * _dependentOnMe;
+    NSMutableSet * _dependentUpon;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;

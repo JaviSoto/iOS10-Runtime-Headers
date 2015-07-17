@@ -3,9 +3,9 @@
  */
 
 @interface BBAssertion : NSObject {
-    BBZeroingWeakReference *_delegate;
-    NSString *_identifier;
-    unsigned int _transactionID;
+    BBZeroingWeakReference * _delegate;
+    NSString * _identifier;
+    unsigned int  _transactionID;
 }
 
 - (void)dealloc;

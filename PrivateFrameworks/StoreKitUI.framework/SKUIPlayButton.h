@@ -3,12 +3,13 @@
  */
 
 @interface SKUIPlayButton : SKUIPlayButtonControl {
-    long long _itemIdentifier;
-    NSString *_mediaURLString;
-    NSString *_playItemIdentifier;
-    BOOL _radio;
-    BOOL _showOnDemand;
-    BOOL _useLargeButton;
+    long long  _itemIdentifier;
+    NSString * _mediaURLString;
+    NSString * _playItemIdentifier;
+    BOOL  _radio;
+    BOOL  _showOnDemand;
+    BOOL  _showStop;
+    BOOL  _useLargeButton;
 }
 
 @property (nonatomic) long long itemIdentifier;
@@ -33,7 +34,9 @@
 - (id)playImage;
 - (void)playIndicatorDidChange:(BOOL)arg1;
 - (id)playItemIdentifier;
+- (void)refresh;
 - (void)reloadWithItemStatus:(id)arg1 animated:(BOOL)arg2;
+- (void)setBackgroundType:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setItemIdentifier:(long long)arg1;
 - (void)setMediaURLString:(id)arg1;

@@ -6,5 +6,6 @@
 @required
 
 - (void)queueFeeder:(MPQueueFeeder *)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(NSError *)arg3;
+- (void)queueFeederDidInvalidateAssets:(MPQueueFeeder *)arg1;
 
 @end

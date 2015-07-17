@@ -3,9 +3,9 @@
  */
 
 @interface IKPlayerStateChangeInfo : NSObject {
-    NSDictionary *_jsonValue;
-    int _oldState;
-    int _state;
+    NSDictionary * _jsonValue;
+    int  _oldState;
+    int  _state;
 }
 
 @property (nonatomic) double duration;
@@ -14,8 +14,9 @@
 @property (nonatomic, readonly) int oldState;
 @property (nonatomic, readonly) int state;
 
++ (id)stateNameForState:(int)arg1;
+
 - (void).cxx_destruct;
-- (id)_stateNameForState:(int)arg1;
 - (double)duration;
 - (double)elapsedTime;
 - (id)initWithState:(int)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface BBObserverBulletinUpdateAdd : BBObserverBulletinUpdate {
-    BOOL _shouldPlayLightsAndSirens;
+    BOOL  _shouldPlayLightsAndSirens;
 }
 
 @property (nonatomic, readonly) BOOL shouldPlayLightsAndSirens;

@@ -3,11 +3,11 @@
  */
 
 @interface CKDiscoverUserInfosOperation : CKOperation {
-    id /* block */ _discoverUserInfosCompletionBlock;
-    NSArray *_emailAddresses;
-    NSMutableDictionary *_emailsToUserInfos;
-    NSArray *_userRecordIDs;
-    NSMutableDictionary *_userRecordIDsToUserInfos;
+    id /* block */  _discoverUserInfosCompletionBlock;
+    NSArray * _emailAddresses;
+    NSMutableDictionary * _emailsToUserInfos;
+    NSArray * _userRecordIDs;
+    NSMutableDictionary * _userRecordIDsToUserInfos;
 }
 
 @property (nonatomic, copy) id /* block */ discoverUserInfosCompletionBlock;

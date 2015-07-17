@@ -3,9 +3,9 @@
  */
 
 @interface TRKeyboardUserEntryPacketEvent : TRPacketEvent {
-    int _commandType;
-    unsigned long long _sessionID;
-    NSString *_text;
+    int  _commandType;
+    unsigned long long  _sessionID;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) int commandType;

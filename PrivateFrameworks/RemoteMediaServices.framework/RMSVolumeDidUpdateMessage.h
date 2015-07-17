@@ -6,9 +6,9 @@
     struct { 
         unsigned int sessionIdentifier : 1; 
         unsigned int volume : 1; 
-    } _has;
-    int _sessionIdentifier;
-    float _volume;
+    }  _has;
+    int  _sessionIdentifier;
+    float  _volume;
 }
 
 @property (nonatomic) BOOL hasSessionIdentifier;

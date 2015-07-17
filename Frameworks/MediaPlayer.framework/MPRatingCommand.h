@@ -3,8 +3,8 @@
  */
 
 @interface MPRatingCommand : MPRemoteCommand {
-    float _maximumRating;
-    float _minimumRating;
+    float  _maximumRating;
+    float  _minimumRating;
 }
 
 @property (nonatomic) float maximumRating;

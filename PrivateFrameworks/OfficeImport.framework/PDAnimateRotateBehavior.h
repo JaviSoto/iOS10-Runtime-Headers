@@ -3,13 +3,19 @@
  */
 
 @interface PDAnimateRotateBehavior : PDAnimateBehavior {
-    double mBy;
-    double mFrom;
-    double mTo;
+    double  mBy;
+    double  mFrom;
+    BOOL  mHasBy;
+    BOOL  mHasFrom;
+    BOOL  mHasTo;
+    double  mTo;
 }
 
 - (double)by;
 - (double)from;
+- (BOOL)hasBy;
+- (BOOL)hasFrom;
+- (BOOL)hasTo;
 - (id)init;
 - (void)setBy:(double)arg1;
 - (void)setFrom:(double)arg1;

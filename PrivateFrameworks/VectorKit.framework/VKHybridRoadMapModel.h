@@ -7,8 +7,8 @@
         struct __compressed_pair<md::OffscreenQueue *, std::__1::default_delete<md::OffscreenQueue> > { 
             struct OffscreenQueue {} *__first_; 
         } __ptr_; 
-    } _offscreenQueue;
-    float _roadAlpha;
+    }  _offscreenQueue;
+    float  _roadAlpha;
 }
 
 - (id).cxx_construct;

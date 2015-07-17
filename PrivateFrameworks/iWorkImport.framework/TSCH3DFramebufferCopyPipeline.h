@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DFramebufferCopyPipeline : TSCH3DFramebufferTransformPipeline {
-    NSArray *mEffects;
+    NSArray * mEffects;
     struct RenderState { 
         bool mBlend; 
         int blendMode; 
@@ -19,7 +19,7 @@
                 BOOL __elems_[8]; 
             } states; 
         } enableClipDistances; 
-    } mRenderState;
+    }  mRenderState;
     struct box<glm::detail::tvec2<int> > { 
         struct tvec2<int> { 
             union { 
@@ -45,8 +45,8 @@
                 int t; 
             } ; 
         } mMax; 
-    } mTargetViewport;
-    TSCH3DResource *mTexcoords;
+    }  mTargetViewport;
+    TSCH3DResource * mTexcoords;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -70,9 +70,9 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mTransform;
-    id /* block */ mUpdateShaderEffectsStatesBlock;
-    TSCH3DResource *mVertices;
+    }  mTransform;
+    id /* block */  mUpdateShaderEffectsStatesBlock;
+    TSCH3DResource * mVertices;
     struct tvec4<float> { 
         union { 
             float x; 
@@ -94,8 +94,8 @@
             float a; 
             float q; 
         } ; 
-    } mWipeColor;
-    BOOL mWipeTarget;
+    }  mWipeColor;
+    BOOL  mWipeTarget;
 }
 
 @property (nonatomic, copy) NSArray *effects;

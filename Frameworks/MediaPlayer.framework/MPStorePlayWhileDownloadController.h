@@ -3,15 +3,15 @@
  */
 
 @interface MPStorePlayWhileDownloadController : NSObject <MPStoreDownloadManagerObserver, SSDownloadHandlerDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    SSDownloadHandler *_downloadHandler;
-    NSMapTable *_downloadToActiveSessions;
-    NSMapTable *_downloadToDownloadTokenPendingCompletionHandlers;
-    NSMapTable *_downloadToObservationTransactionCount;
-    NSMapTable *_downloadToProcessingDownloadHandlerSessions;
-    NSMapTable *_downloadToValidStatePendingCompletionHandlers;
-    NSMutableArray *_pausedDownloads;
-    NSMutableArray *_prioritizedDownloads;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    SSDownloadHandler * _downloadHandler;
+    NSMapTable * _downloadToActiveSessions;
+    NSMapTable * _downloadToDownloadTokenPendingCompletionHandlers;
+    NSMapTable * _downloadToObservationTransactionCount;
+    NSMapTable * _downloadToProcessingDownloadHandlerSessions;
+    NSMapTable * _downloadToValidStatePendingCompletionHandlers;
+    NSMutableArray * _pausedDownloads;
+    NSMutableArray * _prioritizedDownloads;
 }
 
 @property (readonly, copy) NSString *debugDescription;

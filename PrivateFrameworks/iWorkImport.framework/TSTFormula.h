@@ -3,20 +3,20 @@
  */
 
 @interface TSTFormula : NSObject <NSCopying> {
-    TSCECalculationEngine *mCalculationEngine;
-    BOOL mEmpty;
-    TSTExpressionNode *mExpressionTree;
-    BOOL mFixupFormulas;
-    BOOL mFormulaFixupsShouldStick;
-    BOOL mFormulaWasFixable;
+    TSCECalculationEngine * mCalculationEngine;
+    BOOL  mEmpty;
+    TSTExpressionNode * mExpressionTree;
+    BOOL  mFixupFormulas;
+    BOOL  mFormulaFixupsShouldStick;
+    BOOL  mFormulaWasFixable;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mHostCell;
-    TSTTableInfo *mHostInfo;
-    NSString *mInitialWhitespace;
-    BOOL mSyntaxError;
+    }  mHostCell;
+    TSTTableInfo * mHostInfo;
+    NSString * mInitialWhitespace;
+    BOOL  mSyntaxError;
 }
 
 @property (nonatomic, retain) TSCECalculationEngine *calculationEngine;
@@ -42,7 +42,6 @@
 + (id)rightParenCharacters;
 + (id)singleQuoteCharacters;
 
-- (id).cxx_construct;
 - (id)calculationEngine;
 - (BOOL)canSimplify;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

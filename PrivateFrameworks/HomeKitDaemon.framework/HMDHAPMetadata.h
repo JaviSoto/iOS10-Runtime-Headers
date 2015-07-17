@@ -3,18 +3,19 @@
  */
 
 @interface HMDHAPMetadata : NSObject <NSSecureCoding> {
-    NSArray *_assistantCharacteristics;
-    NSDictionary *_assistantServices;
-    NSDictionary *_assistantUnits;
-    NSArray *_hapCharacteristics;
-    HAPMetadata *_hapMetadata;
-    NSArray *_hapProperties;
-    NSArray *_hapServices;
-    NSArray *_hapSupportsAuthDataTuples;
-    NSArray *_hapValueUnits;
-    NSArray *_hmRequiresDeviceUnlockTuples;
-    NSNumber *_schemaVersion;
-    NSNumber *_version;
+    NSArray * _assistantCharacteristics;
+    NSDictionary * _assistantServices;
+    NSDictionary * _assistantUnits;
+    NSArray * _hapCharacteristics;
+    HAPMetadata * _hapMetadata;
+    NSArray * _hapProperties;
+    NSArray * _hapServices;
+    NSArray * _hapSupportsAuthDataTuples;
+    NSArray * _hapValueUnits;
+    NSArray * _hmAccessoryCategories;
+    NSArray * _hmRequiresDeviceUnlockTuples;
+    NSNumber * _schemaVersion;
+    NSNumber * _version;
 }
 
 @property (nonatomic, retain) NSArray *assistantCharacteristics;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSArray *hapServices;
 @property (nonatomic, retain) NSArray *hapSupportsAuthDataTuples;
 @property (nonatomic, retain) NSArray *hapValueUnits;
+@property (nonatomic, retain) NSArray *hmAccessoryCategories;
 @property (nonatomic, retain) NSArray *hmRequiresDeviceUnlockTuples;
 @property (nonatomic, retain) NSNumber *schemaVersion;
 @property (nonatomic, retain) NSNumber *version;
@@ -40,10 +42,14 @@
 - (id)assistantCharacteristics;
 - (id)assistantServices;
 - (id)assistantUnits;
+- (id)categoryForIdentifier:(id)arg1;
+- (id)categoryForOther;
 - (BOOL)checkTuples:(id)arg1 forCharacteristic:(id)arg2 service:(id)arg3;
 - (id)createHAPMetadata:(id)arg1;
+- (void)createHMDContainersForHAPMetadata;
 - (void)encodeWithCoder:(id)arg1;
 - (id)generateAssistantDictionary;
+- (id)generateCategoriesDictionary:(id)arg1;
 - (id)generateDictionary;
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
 - (id)generateHMDictionary;
@@ -53,14 +59,17 @@
 - (id)hapServices;
 - (id)hapSupportsAuthDataTuples;
 - (id)hapValueUnits;
+- (id)hmAccessoryCategories;
 - (id)hmRequiresDeviceUnlockTuples;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 hapMetadata:(id)arg2 error:(id*)arg3;
 - (id)parseAssistantCharacteristics:(id)arg1;
 - (BOOL)parseAssistantMetadata:(id)arg1;
 - (id)parseAssistantUnits:(id)arg1;
+- (BOOL)parseCategories:(id)arg1;
 - (id)parseHAPAssistantServices:(id)arg1;
 - (BOOL)parseHMMetadata:(id)arg1;
+- (BOOL)parseRequiresDeviceUnlockMetadata:(id)arg1;
 - (BOOL)requiresDeviceUnlock:(id)arg1 forService:(id)arg2;
 - (id)schemaVersion;
 - (void)setAssistantCharacteristics:(id)arg1;
@@ -72,6 +81,7 @@
 - (void)setHapServices:(id)arg1;
 - (void)setHapSupportsAuthDataTuples:(id)arg1;
 - (void)setHapValueUnits:(id)arg1;
+- (void)setHmAccessoryCategories:(id)arg1;
 - (void)setHmRequiresDeviceUnlockTuples:(id)arg1;
 - (void)setSchemaVersion:(id)arg1;
 - (void)setVersion:(id)arg1;

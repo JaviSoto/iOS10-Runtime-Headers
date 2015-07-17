@@ -3,28 +3,28 @@
  */
 
 @interface UIWindowController : NSObject {
-    BOOL __interactiveTransition;
+    BOOL  __interactiveTransition;
     struct CGPoint { 
         float x; 
         float y; 
-    } _beginOriginForToView;
-    int _currentTransition;
-    SEL _didEndSelector;
+    }  _beginOriginForToView;
+    int  _currentTransition;
+    SEL  _didEndSelector;
     struct CGPoint { 
         float x; 
         float y; 
-    } _endOriginForToView;
-    UIViewController *_fromViewController;
-    <UIViewControllerInteractiveTransitioning> *_interactionController;
-    BOOL _needsDidAppear;
-    BOOL _needsDidDisappear;
-    BOOL _presenting;
-    id _target;
-    int _toModalStyle;
-    UIViewController *_toViewController;
-    <UIViewControllerAnimatedTransitioning> *_transitionController;
-    UITransitionView *_transitionView;
-    UIWindow *_window;
+    }  _endOriginForToView;
+    UIViewController * _fromViewController;
+    <UIViewControllerInteractiveTransitioning> * _interactionController;
+    BOOL  _needsDidAppear;
+    BOOL  _needsDidDisappear;
+    BOOL  _presenting;
+    id  _target;
+    int  _toModalStyle;
+    UIViewController * _toViewController;
+    <UIViewControllerAnimatedTransitioning> * _transitionController;
+    UITransitionView * _transitionView;
+    UIWindow * _window;
 }
 
 @property (setter=_setInteractionController:, nonatomic, retain) <UIViewControllerInteractiveTransitioning> *_interactionController;
@@ -37,6 +37,7 @@
 + (id)windowControllerForWindow:(id)arg1;
 + (void)windowWillBeDeallocated:(id)arg1;
 
+- (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_adjustOrigin:(struct CGPoint { float x1; float x2; })arg1 givenOtherOrigin:(struct CGPoint { float x1; float x2; })arg2 forTransition:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForViewController:(id)arg1 transition:(int)arg2 orientation:(int)arg3 fullScreenLayout:(BOOL)arg4 inWindow:(id)arg5;
 - (struct CGSize { float x1; float x2; })_flipSize:(struct CGSize { float x1; float x2; })arg1;

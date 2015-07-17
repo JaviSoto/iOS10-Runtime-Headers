@@ -3,8 +3,7 @@
  */
 
 @interface MFComposeRecipientGroup : MFComposeRecipient {
-    NSArray *_children;
-    NSString *_displayString;
+    NSArray * _children;
 }
 
 - (void)_populateSortedChildren;

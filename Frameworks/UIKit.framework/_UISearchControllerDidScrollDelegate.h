@@ -3,8 +3,8 @@
  */
 
 @interface _UISearchControllerDidScrollDelegate : NSObject <_UIScrollNotification> {
-    <_UIScrollNotification> *_controller;
-    UIScrollView *_scrollView;
+    <_UIScrollNotification> * _controller;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic) <_UIScrollNotification> *controller;
@@ -14,10 +14,10 @@
 @property (nonatomic) UIScrollView *scrollView;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_didScroll;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (id)controller;
-- (void)dealloc;
 - (id)scrollView;
 - (void)setController:(id)arg1;
 - (void)setScrollView:(id)arg1;

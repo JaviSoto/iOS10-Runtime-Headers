@@ -3,9 +3,9 @@
  */
 
 @interface SiriUIMapDetailsContainerView : UIView {
-    BOOL _autoCenteringDisabled;
-    UIView *_detailsView;
-    UIView *_mapView;
+    BOOL  _autoCenteringDisabled;
+    UIView * _detailsView;
+    UIView * _mapView;
 }
 
 @property (nonatomic) BOOL autoCenteringDisabled;

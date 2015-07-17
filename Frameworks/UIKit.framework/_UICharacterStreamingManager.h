@@ -3,18 +3,18 @@
  */
 
 @interface _UICharacterStreamingManager : NSObject {
-    BOOL _committingFinalResults;
-    BOOL _discardNextHypothesis;
-    double _lastAnimationUpdateTimeStamp;
-    NSString *_lastHypothesis;
-    double _minDurationBetweenHypotheses;
-    NSMutableArray *_pendingEdits;
-    NSString *_previousHypothesis;
-    BOOL _streamingAnimationActive;
-    CADisplayLink *_streamingAnimationDisplayLink;
-    double _streamingCharacterInsertionRate;
-    NSString *_targetHypothesis;
-    UITextView *_textView;
+    BOOL  _committingFinalResults;
+    BOOL  _discardNextHypothesis;
+    double  _lastAnimationUpdateTimeStamp;
+    NSString * _lastHypothesis;
+    double  _minDurationBetweenHypotheses;
+    NSMutableArray * _pendingEdits;
+    NSString * _previousHypothesis;
+    BOOL  _streamingAnimationActive;
+    CADisplayLink * _streamingAnimationDisplayLink;
+    double  _streamingCharacterInsertionRate;
+    NSString * _targetHypothesis;
+    UITextView * _textView;
 }
 
 @property (nonatomic) BOOL discardNextHypothesis;
@@ -25,11 +25,11 @@
 @property (nonatomic) double streamingCharacterInsertionRate;
 @property (nonatomic, copy) NSString *targetHypothesis;
 
+- (void).cxx_destruct;
 - (void)_displayLinkFired:(id)arg1;
 - (void)_startStreamingAnimations;
 - (void)_stopStreamingAnimation;
 - (void)commitFinalResults;
-- (void)dealloc;
 - (BOOL)discardNextHypothesis;
 - (id)initWithTextView:(id)arg1;
 - (id)lastHypothesis;

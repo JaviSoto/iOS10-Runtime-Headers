@@ -3,8 +3,8 @@
  */
 
 @interface _NMRClient : NSObject {
-    NSXPCConnection *_serverConnection;
-    NSObject<OS_dispatch_queue> *_serverConnectionQueue;
+    NSXPCConnection * _serverConnection;
+    NSObject<OS_dispatch_queue> * _serverConnectionQueue;
 }
 
 + (id)sharedClient;

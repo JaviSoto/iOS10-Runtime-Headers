@@ -3,9 +3,9 @@
  */
 
 @interface asn1ReceiptToken : NSObject {
-    asn1Token *mContentToken;
-    unsigned int mType;
-    unsigned int mTypeVersion;
+    asn1Token * mContentToken;
+    unsigned int  mType;
+    unsigned int  mTypeVersion;
 }
 
 @property (readonly) asn1Token *contentToken;

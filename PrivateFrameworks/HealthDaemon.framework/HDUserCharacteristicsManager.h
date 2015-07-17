@@ -3,13 +3,13 @@
  */
 
 @interface HDUserCharacteristicsManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver> {
-    <HDHealthDaemon> *_healthDaemon;
-    NSDictionary *_lastUserProfile;
-    BOOL _needsUpdateAfterUnlock;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _shouldUpdateQuantityCharacteristics;
-    BOOL _shouldUpdateUserProfile;
-    NSDate *_userProfileLastUpdated;
+    <HDHealthDaemon> * _healthDaemon;
+    NSDictionary * _lastUserProfile;
+    BOOL  _needsUpdateAfterUnlock;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _shouldUpdateQuantityCharacteristics;
+    BOOL  _shouldUpdateUserProfile;
+    NSDate * _userProfileLastUpdated;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +31,7 @@
 - (void)_queue_updateUserProfile;
 - (BOOL)_setUserCharacteristic:(id)arg1 forType:(id)arg2 shouldInsertSample:(BOOL)arg3 updateProfileAndSync:(BOOL)arg4 error:(id*)arg5;
 - (void)_updateQuantityCharacteristicsAndUserProfile;
+- (void)_updateUserProfileForRestoreCompletion:(id)arg1;
 - (id)_userCharacteristicForType:(id)arg1 entity:(id*)arg2 error:(id*)arg3;
 - (void)_userCharacteristicsDidChangeShouldUpdateUserProfile:(BOOL)arg1 shouldSync:(BOOL)arg2;
 - (void)daemonReady:(id)arg1;

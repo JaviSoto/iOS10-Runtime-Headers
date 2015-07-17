@@ -14,7 +14,7 @@
             float g; 
             float t; 
         } ; 
-    } mXlimits;
+    }  mXlimits;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -26,7 +26,7 @@
             float g; 
             float t; 
         } ; 
-    } mYlimits;
+    }  mYlimits;
 }
 
 @property (nonatomic) struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } xlimits;

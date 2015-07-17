@@ -3,7 +3,7 @@
  */
 
 @interface PACSSymbolOwnerWrapper : PACSRefWrapper {
-    NSString *_path;
+    NSString * _path;
 }
 
 @property (readonly) NSString *path;

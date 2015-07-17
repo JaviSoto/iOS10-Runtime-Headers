@@ -3,15 +3,15 @@
  */
 
 @interface GEORPCorrectedField : PBCodable <NSCopying> {
-    NSString *_correctedValue;
-    int _field;
-    NSString *_fieldName;
+    NSString * _correctedValue;
+    int  _field;
+    NSString * _fieldName;
     struct { 
         unsigned int field : 1; 
         unsigned int isMarkedIncorrect : 1; 
-    } _has;
-    BOOL _isMarkedIncorrect;
-    NSString *_originalValue;
+    }  _has;
+    BOOL  _isMarkedIncorrect;
+    NSString * _originalValue;
 }
 
 @property (nonatomic, retain) NSString *correctedValue;

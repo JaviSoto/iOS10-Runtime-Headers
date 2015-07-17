@@ -3,8 +3,8 @@
  */
 
 @interface PLTimeReferenceBaseband : PLTimeReferenceDynamic {
-    PLNSNotificationOperatorComposition *_basebandTimeNotification;
-    BOOL _followupCurrentTimeRunning;
+    PLNSNotificationOperatorComposition * _basebandTimeNotification;
+    BOOL  _followupCurrentTimeRunning;
 }
 
 @property (retain) PLNSNotificationOperatorComposition *basebandTimeNotification;
@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)basebandTimeNotification;
-- (id)currentBasebandTimeAndLatency;
 - (id)currentTime;
 - (void)dealloc;
 - (BOOL)followupCurrentTimeRunning;

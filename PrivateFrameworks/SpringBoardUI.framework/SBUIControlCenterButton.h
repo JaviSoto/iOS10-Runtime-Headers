@@ -3,26 +3,26 @@
  */
 
 @interface SBUIControlCenterButton : SBFButton <SBUIControlCenterControl, _UISettingsKeyObserver> {
-    UIVisualEffectView *_backgroundEffectView;
-    UIImageView *_backgroundImageView;
+    UIVisualEffectView * _backgroundEffectView;
+    UIImageView * _backgroundImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _bgCapInsets;
-    <SBUIControlCenterButtonDelegate> *_delegate;
-    UIVisualEffect *_disabledStateEffect;
-    UIImageView *_glyphImageView;
-    UIVisualEffect *_highlightedStateEffect;
-    BOOL _isCircleButton;
-    BOOL _isRectButton;
-    float _naturalHeight;
-    UIImage *_normalBGImage;
-    UIVisualEffect *_normalStateEffect;
-    UIImage *_sourceGlyphImage;
-    UIImage *_sourceSelectedGlyphImage;
-    BOOL _useSmallButton;
+    }  _bgCapInsets;
+    <SBUIControlCenterButtonDelegate> * _delegate;
+    UIVisualEffect * _disabledStateEffect;
+    UIImageView * _glyphImageView;
+    UIVisualEffect * _highlightedStateEffect;
+    BOOL  _isCircleButton;
+    BOOL  _isRectButton;
+    float  _naturalHeight;
+    UIImage * _normalBGImage;
+    UIVisualEffect * _normalStateEffect;
+    UIImage * _sourceGlyphImage;
+    UIImage * _sourceSelectedGlyphImage;
+    BOOL  _useSmallButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;

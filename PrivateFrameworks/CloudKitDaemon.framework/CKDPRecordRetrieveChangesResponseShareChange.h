@@ -3,12 +3,12 @@
  */
 
 @interface CKDPRecordRetrieveChangesResponseShareChange : PBCodable <NSCopying> {
-    int _changeType;
+    int  _changeType;
     struct { 
         unsigned int changeType : 1; 
-    } _has;
-    CKDPShare *_share;
-    CKDPShareIdentifier *_shareIdentifier;
+    }  _has;
+    CKDPShare * _share;
+    CKDPShareIdentifier * _shareIdentifier;
 }
 
 @property (nonatomic) int changeType;

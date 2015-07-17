@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DGridlineResource : TSCH3DResource {
-    TSCH3DAxisGridEnumerator *mAxis;
+    TSCH3DAxisGridEnumerator * mAxis;
 }
 
 @property (nonatomic, readonly) BOOL enabled;

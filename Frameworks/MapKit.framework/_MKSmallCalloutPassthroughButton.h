@@ -3,9 +3,9 @@
  */
 
 @interface _MKSmallCalloutPassthroughButton : UIControl {
-    UIView *_highlightView;
-    float _leftHighlightInset;
-    UIControl *_targetControl;
+    UIView * _highlightView;
+    float  _leftHighlightInset;
+    UIControl * _targetControl;
 }
 
 @property (nonatomic) float leftHighlightInset;

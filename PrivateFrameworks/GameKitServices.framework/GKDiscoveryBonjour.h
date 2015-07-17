@@ -3,18 +3,17 @@
  */
 
 @interface GKDiscoveryBonjour : NSObject {
-    struct _DNSServiceRef_t { } *_advertiseRef;
-    id /* block */ _browseCallback;
-    struct _DNSServiceRef_t { } *_browseRef;
-    BOOL _checkedInWithLaunchd;
-    id /* block */ _connectionCallback;
-    NSMutableArray *_launchdSources;
-    int _listeningPort;
-    NSMutableDictionary *_resolveContainers;
-    NSObject<OS_dispatch_queue> *_resolveContainersSyncQueue;
-    NSString *_serviceDomain;
-    id /* block */ _serviceNameCollisionCallback;
-    NSString *_serviceType;
+    struct _DNSServiceRef_t { } * _advertiseRef;
+    id /* block */  _browseCallback;
+    struct _DNSServiceRef_t { } * _browseRef;
+    id /* block */  _connectionCallback;
+    NSMutableArray * _launchdSources;
+    int  _listeningPort;
+    NSMutableDictionary * _resolveContainers;
+    NSObject<OS_dispatch_queue> * _resolveContainersSyncQueue;
+    NSString * _serviceDomain;
+    id /* block */  _serviceNameCollisionCallback;
+    NSString * _serviceType;
 }
 
 @property (nonatomic) struct _DNSServiceRef_t { }*advertiseRef;
@@ -39,6 +38,7 @@
 - (id)initWithDomain:(id)arg1 type:(id)arg2;
 - (int)ipV4Socket;
 - (int)ipV6Socket;
+- (BOOL)isAppleTV;
 - (id)launchdSources;
 - (id)resolveContainers;
 - (id)resolveContainersSyncQueue;

@@ -3,11 +3,11 @@
  */
 
 @interface HAPService : NSObject {
-    HAPAccessory *_accessory;
-    NSArray *_characteristics;
-    NSArray *_includedServices;
-    NSNumber *_instanceID;
-    NSString *_type;
+    HAPAccessory * _accessory;
+    NSArray * _characteristics;
+    NSArray * _includedServices;
+    NSNumber * _instanceID;
+    NSString * _type;
 }
 
 @property (nonatomic) HAPAccessory *accessory;
@@ -23,6 +23,7 @@
 - (BOOL)_validateServiceCharacteristics;
 - (id)accessory;
 - (id)characteristics;
+- (id)characteristicsOfType:(id)arg1;
 - (id)description;
 - (id)includedServices;
 - (id)initWithType:(id)arg1 instanceID:(id)arg2;

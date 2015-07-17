@@ -3,12 +3,12 @@
  */
 
 @interface HMDZone : NSObject <HMMessageReceiver, NSSecureCoding> {
-    NSMutableArray *_currentRooms;
-    HMDHome *_home;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSMutableArray * _currentRooms;
+    HMDHome * _home;
+    HMMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSMutableArray *currentRooms;

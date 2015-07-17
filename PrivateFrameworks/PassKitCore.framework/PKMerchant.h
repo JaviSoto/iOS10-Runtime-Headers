@@ -3,16 +3,18 @@
  */
 
 @interface PKMerchant : NSObject <NSSecureCoding> {
-    NSString *_industryCategory;
-    int _industryCode;
-    double _locationLatitude;
-    double _locationLongitude;
-    unsigned long long _mapsIdentifier;
-    NSString *_mapsName;
-    NSString *_name;
-    NSString *_phoneNumber;
-    NSString *_rawName;
-    NSURL *_url;
+    NSString * _displayName;
+    NSString * _industryCategory;
+    int  _industryCode;
+    double  _locationLatitude;
+    double  _locationLongitude;
+    unsigned long long  _mapsIdentifier;
+    NSString * _mapsName;
+    NSString * _name;
+    NSString * _phoneNumber;
+    NSString * _rawName;
+    int  _resultProviderIdentifier;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *displayName;
@@ -26,10 +28,12 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *rawName;
+@property (nonatomic) int resultProviderIdentifier;
 @property (setter=setURL:, nonatomic, copy) NSURL *url;
 
 + (BOOL)supportsSecureCoding;
 
+- (void)_regenerateDisplayName;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
@@ -48,6 +52,7 @@
 - (id)name;
 - (id)phoneNumber;
 - (id)rawName;
+- (int)resultProviderIdentifier;
 - (void)setIndustryCategory:(id)arg1;
 - (void)setIndustryCode:(int)arg1;
 - (void)setLocation:(id)arg1;
@@ -58,6 +63,7 @@
 - (void)setName:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setRawName:(id)arg1;
+- (void)setResultProviderIdentifier:(int)arg1;
 - (void)setURL:(id)arg1;
 - (id)url;
 

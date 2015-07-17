@@ -3,31 +3,31 @@
  */
 
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
-    EDWorkbook *edWorkbook;
-    CMArchiveManager *mArchiver;
-    OIXMLElement *mBodyElement;
-    NSString *mFileName;
-    BOOL mHasPushedFirstSheet;
-    BOOL mHasPushedHeader;
-    int mHeight;
-    bool mIsFirstMappedSheet;
-    bool mIsFrameset;
-    BOOL mLoadingMessageVisible;
-    unsigned int mNumberOfMappedSheets;
-    unsigned int mRealSheetCount;
-    NSString *mResourceUrlPrefix;
-    NSString *mResourceUrlProtocol;
-    unsigned int mSheetIndex;
-    NSMutableArray *mSheetURLs;
-    NSString *mStyleSheetGuid;
-    OIXMLDocument *mTabBarDoc;
-    NSString *mTabBarURL;
-    float mTabPosition;
-    int mWidth;
-    NSMutableArray *mWorksheetGuids;
-    NSMutableArray *mWorksheetNames;
-    NSMutableArray *mWorksheetUrls;
-    OIXMLDocument *mXhtmlDoc;
+    EDWorkbook * edWorkbook;
+    CMArchiveManager * mArchiver;
+    OIXMLElement * mBodyElement;
+    NSString * mFileName;
+    BOOL  mHasPushedFirstSheet;
+    BOOL  mHasPushedHeader;
+    int  mHeight;
+    bool  mIsFirstMappedSheet;
+    bool  mIsFrameset;
+    BOOL  mLoadingMessageVisible;
+    unsigned int  mNumberOfMappedSheets;
+    unsigned int  mRealSheetCount;
+    NSString * mResourceUrlPrefix;
+    NSString * mResourceUrlProtocol;
+    unsigned int  mSheetIndex;
+    NSMutableArray * mSheetURLs;
+    NSString * mStyleSheetGuid;
+    OIXMLDocument * mTabBarDoc;
+    NSString * mTabBarURL;
+    float  mTabPosition;
+    int  mWidth;
+    NSMutableArray * mWorksheetGuids;
+    NSMutableArray * mWorksheetNames;
+    NSMutableArray * mWorksheetUrls;
+    OIXMLDocument * mXhtmlDoc;
 }
 
 + (id)borderStyleCache;

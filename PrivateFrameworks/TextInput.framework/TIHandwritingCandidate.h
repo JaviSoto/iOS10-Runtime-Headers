@@ -3,8 +3,8 @@
  */
 
 @interface TIHandwritingCandidate : TIKeyboardCandidateSingle {
-    unsigned long long _completionUniqueID;
-    unsigned long long _uniqueID;
+    unsigned long long  _completionUniqueID;
+    unsigned long long  _uniqueID;
 }
 
 @property (nonatomic, readonly) unsigned long long completionUniqueID;

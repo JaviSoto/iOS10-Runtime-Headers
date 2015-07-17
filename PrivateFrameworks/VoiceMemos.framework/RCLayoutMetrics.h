@@ -3,8 +3,8 @@
  */
 
 @interface RCLayoutMetrics : NSObject <NSCopying> {
-    float _hPresentedRecordMemoHeight;
-    NSString *_label;
+    float  _hPresentedRecordMemoHeight;
+    NSString * _label;
     struct { 
         float scale; 
         float vDeltaWaveformToTimeBaseline; 
@@ -26,7 +26,7 @@
         float vDeltaLockAbsoluteTopToWaveformTop; 
         float vDeltaLockNotificationListBottom; 
         float vDeltaLockNotificationListBottomToRecordingTimeBaseline; 
-    } _metricInfo;
+    }  _metricInfo;
 }
 
 @property (nonatomic, readonly) float hDeltaAcousticAnnotationLabelToWaveformRight;

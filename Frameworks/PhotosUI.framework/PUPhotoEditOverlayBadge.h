@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _insets;
-    UILabel *_label;
-    NSString *_text;
+    }  _insets;
+    UILabel * _label;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;

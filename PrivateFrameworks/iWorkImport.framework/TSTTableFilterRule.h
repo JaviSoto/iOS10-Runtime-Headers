@@ -3,8 +3,8 @@
  */
 
 @interface TSTTableFilterRule : NSObject <NSCopying> {
-    BOOL mDoesNotNeedFormulaRewriteForImport;
-    TSTFormulaPredicate *mPredicate;
+    BOOL  mDoesNotNeedFormulaRewriteForImport;
+    TSTFormulaPredicate * mPredicate;
 }
 
 + (id)ruleWhereValuesInTable:(id)arg1 inColumn:(unsigned char)arg2 matchCell:(id)arg3;

@@ -3,10 +3,10 @@
  */
 
 @interface GEODirectionsProvider : NSObject {
-    id /* block */ _errorHandler;
-    id /* block */ _finishedHandler;
-    BOOL _isLoading;
-    int _requestType;
+    id /* block */  _errorHandler;
+    id /* block */  _finishedHandler;
+    BOOL  _isLoading;
+    int  _requestType;
 }
 
 @property (nonatomic, copy) id /* block */ errorHandler;

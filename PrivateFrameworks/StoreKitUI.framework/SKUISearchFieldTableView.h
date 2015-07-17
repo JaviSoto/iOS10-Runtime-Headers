@@ -3,13 +3,13 @@
  */
 
 @interface SKUISearchFieldTableView : UITableView {
-    SKUIClientContext *_clientContext;
-    SKUILoadTrendingSearchPageOperation *_loadOperation;
-    NSOperationQueue *_operationQueue;
-    SKUITrendingSearchPage *_page;
-    SKUITrendingSearchPageView *_pageView;
-    <SKUITrendingSearchPageViewDelegate> *_trendingSearchDelegate;
-    BOOL _trendingSearchesVisible;
+    SKUIClientContext * _clientContext;
+    SKUILoadTrendingSearchPageOperation * _loadOperation;
+    NSOperationQueue * _operationQueue;
+    SKUITrendingSearchPage * _page;
+    SKUITrendingSearchPageView * _pageView;
+    <SKUITrendingSearchPageViewDelegate> * _trendingSearchDelegate;
+    BOOL  _trendingSearchesVisible;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

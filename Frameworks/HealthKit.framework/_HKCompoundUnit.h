@@ -3,9 +3,9 @@
  */
 
 @interface _HKCompoundUnit : HKUnit {
-    _HKFactorization *_baseUnits;
-    _HKDimension *_dimension;
-    int _dimensionLock;
+    _HKFactorization * _baseUnits;
+    _HKDimension * _dimension;
+    int  _dimensionLock;
 }
 
 + (BOOL)supportsSecureCoding;

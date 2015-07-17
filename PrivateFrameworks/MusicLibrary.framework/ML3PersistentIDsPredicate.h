@@ -3,8 +3,8 @@
  */
 
 @interface ML3PersistentIDsPredicate : ML3Predicate {
-    NSArray *_persistentIDs;
-    BOOL _shouldContain;
+    NSArray * _persistentIDs;
+    BOOL  _shouldContain;
 }
 
 @property (nonatomic, readonly) BOOL shouldContain;

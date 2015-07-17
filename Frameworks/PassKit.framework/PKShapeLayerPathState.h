@@ -3,13 +3,14 @@
  */
 
 @interface PKShapeLayerPathState : NSObject {
-    float _strokeEndT0;
-    float _strokeEndT1;
-    float _strokeStartT0;
-    float _strokeStartT1;
+    float  _strokeEndT0;
+    float  _strokeEndT1;
+    float  _strokeStartT0;
+    float  _strokeStartT1;
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)initWithShapeLayer:(id)arg1;
 - (id)initWithShapeLayer:(id)arg1 reverse:(BOOL)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface NSXPCListenerEndpoint : NSObject <NSSecureCoding> {
-    void *_internal;
+    void * _internal;
 }
 
 + (BOOL)supportsSecureCoding;

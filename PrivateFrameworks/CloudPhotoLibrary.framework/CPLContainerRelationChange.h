@@ -3,8 +3,8 @@
  */
 
 @interface CPLContainerRelationChange : CPLRecordChange {
-    NSString *_itemIdentifier;
-    CPLContainerRelation *_relation;
+    NSString * _itemIdentifier;
+    CPLContainerRelation * _relation;
 }
 
 @property (nonatomic, copy) NSString *itemIdentifier;

@@ -3,10 +3,10 @@
  */
 
 @interface EKEventAvailabilityEditItem : EKEventEditItem {
-    int _availability;
-    unsigned int _availabilityIndexInChoices;
-    NSArray *_choices;
-    unsigned int _supportedAvailabilities;
+    int  _availability;
+    unsigned int  _availabilityIndexInChoices;
+    NSArray * _choices;
+    unsigned int  _supportedAvailabilities;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface ESDContainer : ESDObject {
-    NSMutableArray *mChildren;
+    NSMutableArray * mChildren;
 }
 
 + (void)pbReadChildrenOfObject:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1 toArray:(id)arg2 state:(id)arg3;

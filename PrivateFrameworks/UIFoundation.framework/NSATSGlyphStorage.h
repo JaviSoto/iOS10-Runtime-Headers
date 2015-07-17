@@ -3,12 +3,12 @@
  */
 
 @interface NSATSGlyphStorage : CTGlyphStorageInterface {
-    long _bufferSize;
+    long  _bufferSize;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _characterRange;
-    struct __CFSet { } *_children;
+    }  _characterRange;
+    struct __CFSet { } * _children;
     struct { 
         unsigned int _hasNonNominalGlyph : 1; 
         unsigned int _hasPositionalStake : 1; 
@@ -18,25 +18,25 @@
         unsigned int _isUnordered : 1; 
         unsigned int _hasTotalAbsorbedCount : 1; 
         unsigned int _reserved : 25; 
-    } _gFlags;
+    }  _gFlags;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _glyphRange;
-    struct __CTGlyphStorage { } *_glyphStorage;
-    const struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; } *_lastElasticRun;
-    long _lastElasticRunLocation;
-    struct __CFArray { } *_masterRuns;
-    long _numRuns;
-    long _paraEndElasticCharIndex;
-    float _paraEndElasticCharWidth;
-    NSATSGlyphStorage *_parent;
-    long _runBufferSize;
-    struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; } *_runs;
-    struct { int x1; struct { unsigned short x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; int x_2_1_5; } x2[0]; } *_stack;
-    NSString *_textString;
-    long _totalAbsorbedCount;
-    NSATSTypesetter *_typesetter;
+    }  _glyphRange;
+    struct __CTGlyphStorage { } * _glyphStorage;
+    const struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; } * _lastElasticRun;
+    long  _lastElasticRunLocation;
+    struct __CFArray { } * _masterRuns;
+    long  _numRuns;
+    long  _paraEndElasticCharIndex;
+    float  _paraEndElasticCharWidth;
+    NSATSGlyphStorage * _parent;
+    long  _runBufferSize;
+    struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; } * _runs;
+    struct { int x1; struct { unsigned short x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; int x_2_1_5; } x2[0]; } * _stack;
+    NSString * _textString;
+    long  _totalAbsorbedCount;
+    NSATSTypesetter * _typesetter;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

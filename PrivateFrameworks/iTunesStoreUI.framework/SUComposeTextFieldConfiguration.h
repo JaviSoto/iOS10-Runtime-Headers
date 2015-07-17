@@ -8,12 +8,12 @@
         float left; 
         float bottom; 
         float right; 
-    } _borderInsets;
-    BOOL _isRequired;
-    NSString *_label;
-    unsigned int _maxLength;
-    NSString *_placeholder;
-    NSString *_value;
+    }  _borderInsets;
+    BOOL  _isRequired;
+    NSString * _label;
+    unsigned int  _maxLength;
+    NSString * _placeholder;
+    NSString * _value;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;

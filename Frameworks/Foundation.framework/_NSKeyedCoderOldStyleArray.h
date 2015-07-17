@@ -3,12 +3,12 @@
  */
 
 @interface _NSKeyedCoderOldStyleArray : NSObject {
-    void *_addr;
-    unsigned int _count;
-    BOOL _decoded;
-    BOOL _padding;
-    unsigned int _size;
-    BOOL _type;
+    void * _addr;
+    unsigned int  _count;
+    BOOL  _decoded;
+    BOOL  _padding;
+    unsigned int  _size;
+    BOOL  _type;
 }
 
 - (void)dealloc;

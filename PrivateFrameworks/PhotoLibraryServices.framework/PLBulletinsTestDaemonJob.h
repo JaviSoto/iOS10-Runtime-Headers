@@ -3,10 +3,10 @@
  */
 
 @interface PLBulletinsTestDaemonJob : PLDaemonJob {
-    NSArray *_addedAssetUUIDs;
-    NSString *_albumUUID;
-    long long _bulletinType;
-    PLPhotoLibrary *_photoLibrary;
+    NSArray * _addedAssetUUIDs;
+    NSString * _albumUUID;
+    long long  _bulletinType;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic, retain) NSArray *addedAssetUUIDs;

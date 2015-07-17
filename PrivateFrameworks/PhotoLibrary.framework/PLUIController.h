@@ -3,9 +3,9 @@
  */
 
 @interface PLUIController : NSObject {
-    NSDictionary *_configuration;
-    id _delegate;
-    UITransitionView *_fullScreenTransitionView;
+    NSDictionary * _configuration;
+    id  _delegate;
+    UITransitionView * _fullScreenTransitionView;
 }
 
 + (id)sharedInstance;

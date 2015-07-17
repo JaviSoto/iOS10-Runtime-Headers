@@ -6,11 +6,11 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _centerCoordinate;
-    double _pitch;
-    int _tileSize;
-    double _yaw;
-    float _zoomLevel;
+    }  _centerCoordinate;
+    double  _pitch;
+    int  _tileSize;
+    double  _yaw;
+    float  _zoomLevel;
 }
 
 @property (nonatomic) struct { double x1; double x2; } centerCoordinate;
@@ -20,7 +20,6 @@
 @property (nonatomic) double yaw;
 @property (nonatomic) float zoomLevel;
 
-- (id).cxx_construct;
 - (struct { double x1; double x2; })centerCoordinate;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

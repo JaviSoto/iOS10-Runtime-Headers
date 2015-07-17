@@ -3,10 +3,10 @@
  */
 
 @interface WPAWDL : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WPAWDLDelegate> *_delegate;
-    NSObject<OS_xpc_object> *_server;
-    int _state;
+    XPCClient * _connection;
+    <WPAWDLDelegate> * _delegate;
+    NSObject<OS_xpc_object> * _server;
+    int  _state;
 }
 
 @property (nonatomic, retain) XPCClient *connection;

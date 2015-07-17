@@ -3,19 +3,20 @@
  */
 
 @interface UITableViewCellEditControl : UIControl {
-    UITableViewCell *_cell;
-    unsigned int _hiding;
-    UIImageView *_imageView;
-    _UITableViewCellEditControlMinusView *_minusView;
-    unsigned int _reserved;
-    unsigned int _rotated;
-    unsigned int _rotating;
-    UIImageView *_shadowView;
-    unsigned int _style;
+    UITableViewCell * _cell;
+    unsigned int  _hiding;
+    UIImageView * _imageView;
+    _UITableViewCellEditControlMinusView * _minusView;
+    unsigned int  _reserved;
+    unsigned int  _rotated;
+    unsigned int  _rotating;
+    UIImageView * _shadowView;
+    unsigned int  _style;
 }
 
 @property (getter=isHiding, nonatomic) BOOL hiding;
 @property (getter=isRotated, nonatomic) BOOL rotated;
+@property (nonatomic, readonly) BOOL wantsMaskingWhileAnimatingDisabled;
 
 + (id)_deleteImage:(float)arg1;
 + (id)_deleteImageBackground:(float)arg1;
@@ -26,6 +27,8 @@
 + (id)_multiSelectSelectedImage;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (void).cxx_destruct;
+- (unsigned int)_controlEventsForActionTriggered;
 - (id)_currentImage;
 - (id)_minusView;
 - (void)_multiselectColorChanged;
@@ -33,7 +36,6 @@
 - (void)_toggleRotate;
 - (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)_updateImageView;
-- (void)dealloc;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (BOOL)isHiding;
 - (BOOL)isRotated;
@@ -45,5 +47,6 @@
 - (void)setRotated:(BOOL)arg1;
 - (void)setRotated:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (BOOL)wantsMaskingWhileAnimatingDisabled;
 
 @end

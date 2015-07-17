@@ -3,7 +3,7 @@
  */
 
 @interface PKPassFrontFaceImageSet : PKPassImageSet {
-    PKImage *_faceImage;
+    PKImage * _faceImage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _logoRect;
+    }  _logoRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,7 +23,7 @@
             float width; 
             float height; 
         } size; 
-    } _stripRect;
+    }  _stripRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -33,7 +33,7 @@
             float width; 
             float height; 
         } size; 
-    } _thumbnailRect;
+    }  _thumbnailRect;
 }
 
 @property (nonatomic, retain) PKImage *faceImage;

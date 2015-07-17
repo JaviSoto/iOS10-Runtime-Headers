@@ -3,9 +3,9 @@
  */
 
 @interface _MFAtomTextAttachment : NSTextAttachment {
-    MFModernComposeRecipientAtom *_atomView;
-    NSAttributedString *_attributedString;
-    BOOL _isPlaceholder;
+    MFModernComposeRecipientAtom * _atomView;
+    NSAttributedString * _attributedString;
+    BOOL  _isPlaceholder;
 }
 
 @property (nonatomic, retain) MFModernComposeRecipientAtom *atomView;

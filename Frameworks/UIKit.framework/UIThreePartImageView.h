@@ -3,7 +3,7 @@
  */
 
 @interface UIThreePartImageView : UIView {
-    UIImage *_image;
+    UIImage * _image;
     struct { 
         struct CGRect { 
             struct CGPoint { 
@@ -35,7 +35,7 @@
                 float height; 
             } size; 
         } right; 
-    } _slices;
+    }  _slices;
 }
 
 - (void)dealloc;

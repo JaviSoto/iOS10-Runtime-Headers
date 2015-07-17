@@ -3,9 +3,9 @@
  */
 
 @interface CommunicationsFilterBlockListCache : NSObject {
-    BOOL _listIsEmpty;
-    int _notifyEmptyListToken;
-    NSMutableArray *_recentItems;
+    BOOL  _listIsEmpty;
+    int  _notifyEmptyListToken;
+    NSMutableArray * _recentItems;
 }
 
 - (void)_blockListChanged:(id)arg1;

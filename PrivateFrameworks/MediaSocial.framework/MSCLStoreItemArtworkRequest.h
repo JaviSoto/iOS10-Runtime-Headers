@@ -3,11 +3,11 @@
  */
 
 @interface MSCLStoreItemArtworkRequest : SKUIArtworkRequest {
-    MPArtworkCatalog *_artworkCatalog;
+    MPArtworkCatalog * _artworkCatalog;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
+    }  _imageSize;
 }
 
 - (void).cxx_destruct;

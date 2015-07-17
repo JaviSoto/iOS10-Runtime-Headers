@@ -3,16 +3,16 @@
  */
 
 @interface SKUIItemBrowseCellLayout : SKUIItemCellLayout {
-    _SKUIItemBrowseCellContentView *_cellContentView;
+    _SKUIItemBrowseCellContentView * _cellContentView;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageBoundingSize;
-    BOOL _largeSpacing;
-    int _numberOfUserRatings;
-    UIColor *_primaryTextColor;
-    UIColor *_secondaryTextColor;
-    float _userRating;
+    }  _imageBoundingSize;
+    BOOL  _largeSpacing;
+    int  _numberOfUserRatings;
+    UIColor * _primaryTextColor;
+    UIColor * _secondaryTextColor;
+    float  _userRating;
 }
 
 @property (nonatomic, copy) NSString *category;

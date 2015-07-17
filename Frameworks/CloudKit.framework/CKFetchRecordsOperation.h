@@ -3,19 +3,19 @@
  */
 
 @interface CKFetchRecordsOperation : CKDatabaseOperation {
-    NSArray *_desiredKeys;
-    NSDictionary *_desiredPackageFileIndices;
-    id /* block */ _fetchRecordsCompletionBlock;
-    BOOL _isFetchCurrentUserOperation;
-    id /* block */ _perRecordCompletionBlock;
-    id /* block */ _perRecordProgressBlock;
-    NSMutableDictionary *_recordErrors;
-    NSArray *_recordIDs;
-    NSMutableDictionary *_recordIDsToRecords;
-    NSDictionary *_recordIDsToVersionETags;
-    BOOL _shouldFetchAssetContent;
-    NSMutableDictionary *_signaturesOfAssetsByRecordIDAndKey;
-    NSDictionary *_webSharingIdentityDataByRecordID;
+    NSArray * _desiredKeys;
+    NSDictionary * _desiredPackageFileIndices;
+    id /* block */  _fetchRecordsCompletionBlock;
+    BOOL  _isFetchCurrentUserOperation;
+    id /* block */  _perRecordCompletionBlock;
+    id /* block */  _perRecordProgressBlock;
+    NSMutableDictionary * _recordErrors;
+    NSArray * _recordIDs;
+    NSMutableDictionary * _recordIDsToRecords;
+    NSDictionary * _recordIDsToVersionETags;
+    BOOL  _shouldFetchAssetContent;
+    NSMutableDictionary * _signaturesOfAssetsByRecordIDAndKey;
+    NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
 @property (nonatomic, copy) NSArray *desiredKeys;
@@ -32,12 +32,15 @@
 @property (nonatomic, retain) NSMutableDictionary *signaturesOfAssetsByRecordIDAndKey;
 @property (nonatomic, retain) NSDictionary *webSharingIdentityDataByRecordID;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 + (id)fetchCurrentUserRecordOperation;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (id)desiredPackageFileIndices;
 - (id /* block */)fetchRecordsCompletionBlock;
@@ -68,5 +71,9 @@
 - (BOOL)shouldFetchAssetContent;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (id)webSharingIdentityDataByRecordID;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (void)ic_removeAllCompletionBlocks;
 
 @end

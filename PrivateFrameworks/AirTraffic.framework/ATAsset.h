@@ -3,34 +3,34 @@
  */
 
 @interface ATAsset : NSObject <NSSecureCoding> {
-    NSString *_assetType;
-    BOOL _bypassStore;
-    unsigned long long _bytesRemaining;
-    unsigned int _completedAssetParts;
-    id /* block */ _completionBlock;
-    NSString *_dataclass;
-    float _downloadProgress;
-    NSError *_error;
-    NSURL *_icon;
-    NSString *_identifier;
-    NSString *_infoPlist;
-    BOOL _installOnly;
-    float _installProgress;
-    BOOL _installStarted;
-    BOOL _installed;
-    BOOL _isDownload;
-    BOOL _isRestore;
-    BOOL _legacy;
-    NSString *_localPath;
-    NSString *_prettyName;
-    unsigned int _priority;
-    id /* block */ _progressBlock;
-    BOOL _readyForStore;
-    ATStoreInfo *_storeInfo;
-    long long _storePID;
-    NSString *_storePlist;
-    unsigned long long _totalBytes;
-    NSDictionary *_variantOptions;
+    NSString * _assetType;
+    BOOL  _bypassStore;
+    unsigned long long  _bytesRemaining;
+    unsigned int  _completedAssetParts;
+    id /* block */  _completionBlock;
+    NSString * _dataclass;
+    float  _downloadProgress;
+    NSError * _error;
+    NSURL * _icon;
+    NSString * _identifier;
+    NSString * _infoPlist;
+    BOOL  _installOnly;
+    float  _installProgress;
+    BOOL  _installStarted;
+    BOOL  _installed;
+    BOOL  _isDownload;
+    BOOL  _isRestore;
+    BOOL  _legacy;
+    NSString * _localPath;
+    NSString * _prettyName;
+    unsigned int  _priority;
+    id /* block */  _progressBlock;
+    BOOL  _readyForStore;
+    ATStoreInfo * _storeInfo;
+    long long  _storePID;
+    NSString * _storePlist;
+    unsigned long long  _totalBytes;
+    NSDictionary * _variantOptions;
 }
 
 @property (nonatomic, retain) NSString *assetType;

@@ -3,31 +3,31 @@
  */
 
 @interface SKUIImageViewElement : SKUIViewElement {
-    NSString *_alt;
-    BOOL _enabled;
-    NSString *_entityResourceName;
-    NSURL *_entityURL;
-    BOOL _hasValidEntityValues;
+    NSString * _alt;
+    BOOL  _enabled;
+    NSString * _entityResourceName;
+    NSURL * _entityURL;
+    BOOL  _hasValidEntityValues;
     struct CGSize { 
         float width; 
         float height; 
-    } _layerShadowOffset;
-    float _layerShadowOpacity;
-    float _layerShadowRadius;
-    SKUIImageViewElementCacheKey *_resourceCacheKey;
-    NSString *_resourceName;
-    UIColor *_shadowColor;
+    }  _layerShadowOffset;
+    float  _layerShadowOpacity;
+    float  _layerShadowRadius;
+    SKUIImageViewElementCacheKey * _resourceCacheKey;
+    NSString * _resourceName;
+    UIColor * _shadowColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _shadowOffset;
-    float _shadowRadius;
+    }  _shadowOffset;
+    float  _shadowRadius;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    SKUIImageViewElementCacheKey *_transientResourceCacheKey;
-    NSURL *_url;
+    }  _size;
+    SKUIImageViewElementCacheKey * _transientResourceCacheKey;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

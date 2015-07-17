@@ -12,16 +12,16 @@
             float width; 
             float height; 
         } size; 
-    } __fittingRegion;
-    PLImageGeometry *__imageGeometry;
-    UIImageView *__imageView;
-    float __preferredZoomScale;
-    UIScrollView *__scrollView;
-    UIView *__scrollViewReference;
-    BOOL __scrollViewTracking;
-    BOOL __updatingForCrop;
-    BOOL __updatingForFit;
-    BOOL __updatingForStraighten;
+    }  __fittingRegion;
+    PLImageGeometry * __imageGeometry;
+    UIImageView * __imageView;
+    float  __preferredZoomScale;
+    UIScrollView * __scrollView;
+    UIView * __scrollViewReference;
+    BOOL  __scrollViewTracking;
+    BOOL  __updatingForCrop;
+    BOOL  __updatingForFit;
+    BOOL  __updatingForStraighten;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,7 +31,7 @@
             float width; 
             float height; 
         } size; 
-    } _canvasFrame;
+    }  _canvasFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -41,12 +41,12 @@
             float width; 
             float height; 
         } size; 
-    } _cropRect;
-    <PUCropAndStraightenViewDelegate> *_delegate;
-    UIImage *_image;
-    int _orientation;
-    float _straightenAngle;
-    BOOL _tracking;
+    }  _cropRect;
+    <PUCropAndStraightenViewDelegate> * _delegate;
+    UIImage * _image;
+    int  _orientation;
+    float  _straightenAngle;
+    BOOL  _tracking;
 }
 
 @property (setter=_setFittingRegion:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _fittingRegion;

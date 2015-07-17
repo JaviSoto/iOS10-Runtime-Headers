@@ -3,10 +3,10 @@
  */
 
 @interface PHCollection : PHObject {
-    BOOL _customSortAscending;
-    int _customSortKey;
-    unsigned int _estimatedPhotosCount;
-    unsigned int _estimatedVideosCount;
+    BOOL  _customSortAscending;
+    int  _customSortKey;
+    unsigned int  _estimatedPhotosCount;
+    unsigned int  _estimatedVideosCount;
 }
 
 @property (nonatomic, readonly) BOOL canContainAssets;

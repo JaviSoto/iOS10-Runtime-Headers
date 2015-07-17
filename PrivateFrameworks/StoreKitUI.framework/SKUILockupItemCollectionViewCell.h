@@ -3,7 +3,7 @@
  */
 
 @interface SKUILockupItemCollectionViewCell : SKUIItemCollectionViewCell {
-    SKUILockupItemCellLayout *_layout;
+    SKUILockupItemCellLayout * _layout;
 }
 
 @property (nonatomic, readonly) SKUILockupItemCellLayout *layout;

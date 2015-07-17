@@ -3,23 +3,23 @@
  */
 
 @interface UISwipeGestureRecognizer : UIGestureRecognizer {
-    unsigned int _direction;
-    unsigned int _failed;
-    double _maximumDuration;
-    float _maximumPrimaryMovement;
-    float _maximumSecondaryMovement;
-    float _minimumPrimaryMovement;
-    float _minimumSecondaryMovement;
-    unsigned int _numberOfTouchesRequired;
-    float _rateOfMaximumMovementDecay;
-    float _rateOfMinimumMovementDecay;
+    unsigned int  _direction;
+    BOOL  _failed;
+    double  _maximumDuration;
+    float  _maximumPrimaryMovement;
+    float  _maximumSecondaryMovement;
+    float  _minimumPrimaryMovement;
+    float  _minimumSecondaryMovement;
+    unsigned int  _numberOfTouchesRequired;
+    float  _rateOfMaximumMovementDecay;
+    float  _rateOfMinimumMovementDecay;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startLocation;
-    struct CGPoint { float x1; float x2; } *_startLocations;
-    double _startTime;
-    NSMutableArray *_touches;
+    }  _startLocation;
+    struct CGPoint { float x1; float x2; } * _startLocations;
+    double  _startTime;
+    NSMutableArray * _touches;
 }
 
 @property (nonatomic) unsigned int direction;
@@ -33,6 +33,9 @@
 @property (nonatomic) float rateOfMinimumMovementDecay;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
 
++ (BOOL)_shouldDefaultToTouches;
+
+- (void).cxx_destruct;
 - (void)_appendSubclassDescription:(id)arg1;
 - (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
 - (void)_resetGestureRecognizer;

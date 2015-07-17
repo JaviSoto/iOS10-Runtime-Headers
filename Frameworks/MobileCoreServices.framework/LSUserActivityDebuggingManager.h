@@ -3,13 +3,13 @@
  */
 
 @interface LSUserActivityDebuggingManager : NSObject {
-    int _additionalLogFile;
-    struct __asl_object_s { } *_client;
-    unsigned long long _lastLogRotationTime;
-    NSString *_logFileDirectoryPath;
-    NSString *_logFilePath;
-    NSObject<OS_dispatch_source> *_logRotationTimerSource;
-    NSUserDefaults *_userDefaults;
+    int  _additionalLogFile;
+    struct __asl_object_s { } * _client;
+    unsigned long long  _lastLogRotationTime;
+    NSString * _logFileDirectoryPath;
+    NSString * _logFilePath;
+    NSObject<OS_dispatch_source> * _logRotationTimerSource;
+    NSUserDefaults * _userDefaults;
 }
 
 @property int additionalLogFile;
@@ -53,6 +53,7 @@
 - (void)setLogFileDirectoryPath:(id)arg1;
 - (void)setLogFilePath:(id)arg1;
 - (void)setLogRotationTimerSource:(id)arg1;
+- (void)setLoggingLevel:(int)arg1;
 - (void)setUserDefaults:(id)arg1;
 - (BOOL)shouldLog:(int)arg1;
 - (BOOL)shouldLogCommon:(unsigned int)arg1;

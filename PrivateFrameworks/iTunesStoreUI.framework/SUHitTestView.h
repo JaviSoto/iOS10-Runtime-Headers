@@ -3,7 +3,7 @@
  */
 
 @interface SUHitTestView : UIView {
-    NSMutableArray *_hitTestTargets;
+    NSMutableArray * _hitTestTargets;
 }
 
 - (void)addHitTestTarget:(id)arg1;

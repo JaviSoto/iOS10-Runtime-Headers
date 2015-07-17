@@ -3,13 +3,13 @@
  */
 
 @interface PLAWDCpuAP : PLAWDAuxMetrics {
-    long _apSubmitCnt;
-    long _cpuLoadSubmitCnt;
-    PLEntryNotificationOperatorComposition *_ioreportEnergyEventCallback;
-    BOOL _isIoreportEnergy;
-    PLEntryNotificationOperatorComposition *_monitorEventCallback;
-    NSDate *_sleepStartTime;
-    PLEntryNotificationOperatorComposition *_wakeEventCallback;
+    long  _apSubmitCnt;
+    long  _cpuLoadSubmitCnt;
+    PLEntryNotificationOperatorComposition * _ioreportEnergyEventCallback;
+    BOOL  _isIoreportEnergy;
+    PLEntryNotificationOperatorComposition * _monitorEventCallback;
+    NSDate * _sleepStartTime;
+    PLEntryNotificationOperatorComposition * _wakeEventCallback;
 }
 
 @property long apSubmitCnt;
@@ -17,8 +17,6 @@
 @property (retain) PLEntryNotificationOperatorComposition *ioreportEnergyEventCallback;
 @property BOOL isIoreportEnergy;
 @property (retain) PLEntryNotificationOperatorComposition *monitorEventCallback;
-@property PLOperator *operator;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property (retain) NSDate *sleepStartTime;
 @property (retain) PLEntryNotificationOperatorComposition *wakeEventCallback;
 

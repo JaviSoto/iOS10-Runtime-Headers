@@ -3,22 +3,22 @@
  */
 
 @interface PUPhotoStreamComposeServiceViewController : SLComposeServiceViewController <PUCloudSharedCreateAlbumViewControllerDelegate, PUPhotoStreamCreateTitleDelegate, PUPhotoStreamsAlbumsTableViewControllerDelegate, SLSheetViewHostProtocol> {
-    NSArray *_actions;
-    BOOL _addToExistingWorkflow;
-    struct NSObject { Class x1; } *_albumList;
-    NSString *_albumTitle;
-    id /* block */ _completion;
-    <PUPhotoStreamComposeServiceDelegate> *_delegate;
+    NSArray * _actions;
+    BOOL  _addToExistingWorkflow;
+    struct NSObject { Class x1; } * _albumList;
+    NSString * _albumTitle;
+    id /* block */  _completion;
+    <PUPhotoStreamComposeServiceDelegate> * _delegate;
     struct { 
         unsigned int hasDidPost : 1; 
         unsigned int hasDidCancel : 1; 
-    } _delegateFlags;
-    BOOL _inCreateNewAlbum;
-    NSString *_itemCountString;
-    NSArray *_recipients;
-    struct NSObject { Class x1; } *_selectedAlbum;
-    BOOL _shouldAllowAlbumPicking;
-    BOOL _shouldShowPost;
+    }  _delegateFlags;
+    BOOL  _inCreateNewAlbum;
+    NSString * _itemCountString;
+    NSArray * _recipients;
+    struct NSObject { Class x1; } * _selectedAlbum;
+    BOOL  _shouldAllowAlbumPicking;
+    BOOL  _shouldShowPost;
 }
 
 @property (nonatomic) BOOL addToExistingWorkflow;
@@ -63,6 +63,7 @@
 - (void)userDidCancel;
 - (void)userDidCancelWithoutAnimation;
 - (void)userDidPost;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

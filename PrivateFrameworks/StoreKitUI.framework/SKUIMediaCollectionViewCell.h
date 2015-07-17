@@ -8,8 +8,8 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIEmbeddedMediaView *_mediaView;
+    }  _contentInset;
+    SKUIEmbeddedMediaView * _mediaView;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

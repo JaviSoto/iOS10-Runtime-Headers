@@ -3,18 +3,18 @@
  */
 
 @interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, SKUIGiftViewControllerDelegate, SKUIModalDocumentController, SKUIOverlayContainerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    NSMutableArray *_composeReviewViewControllers;
-    <SKUIModalDocumentDataSource> *_dataSource;
-    <SKUIModalDocumentDelegate> *_delegate;
-    NSMutableArray *_giftViewControllers;
-    <SKUIModalSourceViewProvider> *_modalSourceViewProvider;
-    <UINavigationControllerDelegate> *_navigationControllerDelegate;
-    UINavigationController *_overlayNavigationController;
-    SKUIOverlayContainerViewController *_overlayViewController;
-    UIPopoverController *_popoverController;
-    UIViewController *_rootViewController;
-    NSMutableArray *_stackItems;
+    SKUIClientContext * _clientContext;
+    NSMutableArray * _composeReviewViewControllers;
+    <SKUIModalDocumentDataSource> * _dataSource;
+    <SKUIModalDocumentDelegate> * _delegate;
+    NSMutableArray * _giftViewControllers;
+    <SKUIModalSourceViewProvider> * _modalSourceViewProvider;
+    <UINavigationControllerDelegate> * _navigationControllerDelegate;
+    UINavigationController * _overlayNavigationController;
+    SKUIOverlayContainerViewController * _overlayViewController;
+    UIPopoverController * _popoverController;
+    UIViewController * _rootViewController;
+    NSMutableArray * _stackItems;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

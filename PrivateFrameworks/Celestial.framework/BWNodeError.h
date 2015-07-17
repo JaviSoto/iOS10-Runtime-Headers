@@ -3,11 +3,11 @@
  */
 
 @interface BWNodeError : NSObject {
-    long _errorCode;
-    FigCaptureRecordingSettings *_recordingSettings;
-    NSString *_sourceNodeDescription;
-    FigCaptureStillImageSettings *_stillImageSettings;
-    int _uniqueID;
+    long  _errorCode;
+    FigCaptureRecordingSettings * _recordingSettings;
+    NSString * _sourceNodeDescription;
+    FigCaptureStillImageSettings * _stillImageSettings;
+    int  _uniqueID;
 }
 
 @property (readonly) long errorCode;

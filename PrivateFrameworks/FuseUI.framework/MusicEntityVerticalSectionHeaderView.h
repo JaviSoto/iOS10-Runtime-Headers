@@ -3,12 +3,12 @@
  */
 
 @interface MusicEntityVerticalSectionHeaderView : UICollectionReusableView <MusicActionableHeaderViewDelegate> {
-    MusicActionableHeaderView *_actionableHeaderView;
-    BOOL _alignsHairlineWithTitle;
-    float _bottomContentInset;
-    <MusicEntityVerticalSectionHeaderViewDelegate> *_delegate;
-    UIView *_hairlineView;
-    float _topContentInset;
+    MusicActionableHeaderView * _actionableHeaderView;
+    BOOL  _alignsHairlineWithTitle;
+    float  _bottomContentInset;
+    <MusicEntityVerticalSectionHeaderViewDelegate> * _delegate;
+    UIView * _hairlineView;
+    float  _topContentInset;
 }
 
 @property (nonatomic, readonly) MusicActionableHeaderView *actionableHeaderView;

@@ -3,27 +3,27 @@
  */
 
 @interface PLEmptyAlbumView : UIView {
-    struct NSObject { Class x1; } *_album;
-    int _currentOrientation;
+    struct NSObject { Class x1; } * _album;
+    int  _currentOrientation;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    int _filter;
-    BOOL _filterInUse;
-    UIImage *_image;
-    UIImageView *_imageView;
-    BOOL _isCameraAlbum;
-    BOOL _isSharedPhotoStreamList;
-    UIImage *_landscapeImage;
-    UILongPressGestureRecognizer *_longPressRecognizer;
-    NSString *_message;
-    UILabel *_messageLabel;
-    NSString *_title;
-    UILabel *_titleLabel;
-    BOOL _useLargeImages;
+    }  _edgeInsets;
+    int  _filter;
+    BOOL  _filterInUse;
+    UIImage * _image;
+    UIImageView * _imageView;
+    BOOL  _isCameraAlbum;
+    BOOL  _isSharedPhotoStreamList;
+    UIImage * _landscapeImage;
+    UILongPressGestureRecognizer * _longPressRecognizer;
+    NSString * _message;
+    UILabel * _messageLabel;
+    NSString * _title;
+    UILabel * _titleLabel;
+    BOOL  _useLargeImages;
 }
 
 @property (nonatomic, retain) NSObject<PLAlbumProtocol> *album;

@@ -3,32 +3,32 @@
  */
 
 @interface PLMomentClustering : NSObject {
-    NSMutableDictionary *__clustersByNodeObjectID;
-    NSMutableDictionary *__clustersByObjectID;
-    CLGeocoder *__geocoder;
-    NSMutableDictionary *__markedNodesByObjectID;
-    unsigned int __minimumNumberOfNodes;
-    PLMomentNodeCache *__nodeCache;
-    unsigned int __numberOfVisitedNodes;
-    unsigned int __totalNumberOfNodes;
-    BOOL _accumulatesSmallClusters;
-    double _accumulationJoinThreshold;
-    double _accumulationRejectionThreshold;
-    double _accumulationRejectionTimeInterval;
-    unsigned int _accumulationSize;
-    double _accumulationTimeInterval;
-    NSArray *_clusters;
-    NSSet *_deletedClusters;
-    BOOL _dirty;
-    NSSet *_insertedClusters;
-    id /* block */ _progressBlock;
-    BOOL _shouldApplyUserInfluenceBeforeClustering;
-    double _sigma;
-    double _spatialJoinThreshold;
-    double _spatialJoinTimeInterval;
-    BOOL _spatialJoinsAdjacentClusters;
-    double _theta;
-    NSSet *_updatedClusters;
+    NSMutableDictionary * __clustersByNodeObjectID;
+    NSMutableDictionary * __clustersByObjectID;
+    CLGeocoder * __geocoder;
+    NSMutableDictionary * __markedNodesByObjectID;
+    unsigned int  __minimumNumberOfNodes;
+    PLMomentNodeCache * __nodeCache;
+    unsigned int  __numberOfVisitedNodes;
+    unsigned int  __totalNumberOfNodes;
+    BOOL  _accumulatesSmallClusters;
+    double  _accumulationJoinThreshold;
+    double  _accumulationRejectionThreshold;
+    double  _accumulationRejectionTimeInterval;
+    unsigned int  _accumulationSize;
+    double  _accumulationTimeInterval;
+    NSArray * _clusters;
+    NSSet * _deletedClusters;
+    BOOL  _dirty;
+    NSSet * _insertedClusters;
+    id /* block */  _progressBlock;
+    BOOL  _shouldApplyUserInfluenceBeforeClustering;
+    double  _sigma;
+    double  _spatialJoinThreshold;
+    double  _spatialJoinTimeInterval;
+    BOOL  _spatialJoinsAdjacentClusters;
+    double  _theta;
+    NSSet * _updatedClusters;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_clustersByNodeObjectID;

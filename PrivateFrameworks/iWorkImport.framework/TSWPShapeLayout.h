@@ -3,10 +3,10 @@
  */
 
 @interface TSWPShapeLayout : TSDShapeLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
-    TSDWrapSegments *_cachedInteriorWrapSegments;
-    TSWPLayout *_containedLayout;
-    <TSWPShapeLayoutDelegate> *_delegate;
-    BOOL _observingStorage;
+    TSDWrapSegments * _cachedInteriorWrapSegments;
+    TSWPLayout * _containedLayout;
+    <TSWPShapeLayoutDelegate> * _delegate;
+    BOOL  _observingStorage;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;

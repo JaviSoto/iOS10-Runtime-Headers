@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptNotificationObserver : NSObject {
-    NSLock *_lock;
-    struct __CFSet { } *_receivers;
+    NSLock * _lock;
+    struct __CFSet { } * _receivers;
 }
 
 - (void)_accessibilityPerformEscape;

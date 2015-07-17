@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLThreadgroupMemoryArgument : MTLArgument {
-    unsigned short _alignment;
-    unsigned int _dataSize;
+@interface MTLThreadgroupMemoryArgument : MTLArgumentInternal {
+    unsigned short  _alignment;
+    unsigned int  _dataSize;
 }
 
 - (id)describe;

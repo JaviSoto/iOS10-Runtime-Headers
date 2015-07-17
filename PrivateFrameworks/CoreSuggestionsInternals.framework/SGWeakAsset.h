@@ -3,7 +3,7 @@
  */
 
 @interface SGWeakAsset : NSObject {
-    SGAsset *_asset;
+    SGAsset * _asset;
 }
 
 @property (readonly) SGAsset *asset;

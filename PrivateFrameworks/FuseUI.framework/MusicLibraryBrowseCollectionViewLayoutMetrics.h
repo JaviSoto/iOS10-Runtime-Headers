@@ -8,27 +8,27 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
+    }  _contentInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _headerSize;
+    }  _headerSize;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _headerViewContentInsets;
-    float _itemHeight;
-    float _itemWidth;
-    float _minimumInteritemSpacing;
+    }  _headerViewContentInsets;
+    float  _itemHeight;
+    float  _itemWidth;
+    float  _minimumInteritemSpacing;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _sectionInsets;
-    BOOL _wantsEdgeToEdgeLayout;
+    }  _sectionInsets;
+    BOOL  _wantsEdgeToEdgeLayout;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;

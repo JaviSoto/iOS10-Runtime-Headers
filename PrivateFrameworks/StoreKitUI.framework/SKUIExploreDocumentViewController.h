@@ -3,16 +3,16 @@
  */
 
 @interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
-    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
-    NSArray *_contentOffsets;
-    SKUIContentInsetScrollView *_contentScrollView;
-    SKUIExploreTemplateElement *_exploreTemplate;
-    UINavigationController *_leftVC;
-    CLLocationManager *_locationManager;
-    UINavigationController *_navigationController;
-    BOOL _nearMeEnabled;
-    SKUIStorePageSectionsViewController *_rightVC;
-    UISplitViewController *_splitVC;
+    SKUIMetricsImpressionSession * _activeMetricsImpressionSession;
+    NSArray * _contentOffsets;
+    SKUIContentInsetScrollView * _contentScrollView;
+    SKUIExploreTemplateElement * _exploreTemplate;
+    UINavigationController * _leftVC;
+    CLLocationManager * _locationManager;
+    UINavigationController * _navigationController;
+    BOOL  _nearMeEnabled;
+    SKUIStorePageSectionsViewController * _rightVC;
+    UISplitViewController * _splitVC;
 }
 
 @property (readonly, copy) NSString *debugDescription;

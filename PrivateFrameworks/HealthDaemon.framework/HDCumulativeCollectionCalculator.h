@@ -3,8 +3,8 @@
  */
 
 @interface HDCumulativeCollectionCalculator : NSObject {
-    unsigned int _bucketIndex;
-    NSArray *_bucketPeriods;
+    unsigned int  _bucketIndex;
+    NSArray * _bucketPeriods;
     struct map<long long, double, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, double> > > { 
         struct __tree<std::__1::__value_type<long long, double>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, double>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, double> > > { 
             struct __tree_node<std::__1::__value_type<long long, double>, void *> {} *__begin_node_; 
@@ -17,9 +17,9 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _bySource;
-    unsigned int _currPeriod;
-    long long _currentAligned;
+    }  _bySource;
+    unsigned int  _currPeriod;
+    long long  _currentAligned;
     struct map<long long, double, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, double> > > { 
         struct __tree<std::__1::__value_type<long long, double>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, double>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, double> > > { 
             struct __tree_node<std::__1::__value_type<long long, double>, void *> {} *__begin_node_; 
@@ -32,15 +32,15 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _currentInterval;
-    <HDHealthDaemon> *_daemon;
-    unsigned int _dataCount;
-    BOOL _detailBySource;
-    NSMutableArray *_futureBuckets;
-    NSMutableArray *_futureCounts;
-    NSMutableArray *_futureIntervals;
-    BOOL _lastBucket;
-    HDLastIntervalInfo *_lastIntervalInfo;
+    }  _currentInterval;
+    <HDHealthDaemon> * _daemon;
+    unsigned int  _dataCount;
+    BOOL  _detailBySource;
+    NSMutableArray * _futureBuckets;
+    NSMutableArray * _futureCounts;
+    NSMutableArray * _futureIntervals;
+    BOOL  _lastBucket;
+    HDLastIntervalInfo * _lastIntervalInfo;
     struct map<long long, double, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, double> > > { 
         struct __tree<std::__1::__value_type<long long, double>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, double>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, double> > > { 
             struct __tree_node<std::__1::__value_type<long long, double>, void *> {} *__begin_node_; 
@@ -53,9 +53,10 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _lastIntervalSources;
-    unsigned int _mergeStrategy;
-    NSArray *_orderedSourceIds;
+    }  _lastIntervalSources;
+    unsigned int  _mergeStrategy;
+    double  _mergedSum;
+    NSArray * _orderedSourceIds;
 }
 
 @property (nonatomic) unsigned int bucketIndex;
@@ -71,6 +72,7 @@
 @property (nonatomic) BOOL lastBucket;
 @property (nonatomic, readonly) HDLastIntervalInfo *lastIntervalInfo;
 @property (nonatomic) unsigned int mergeStrategy;
+@property (nonatomic, readonly) double mergedSum;
 @property (nonatomic, retain) NSArray *orderedSourceIds;
 @property (nonatomic, readonly) NSDictionary *sumsBySource;
 
@@ -80,6 +82,7 @@
 - (double)addCurrentBucket;
 - (void)addCurrentValue:(double)arg1 sourceId:(long long)arg2;
 - (void)addSumsBySource:(id)arg1 lastInterval:(id)arg2 currentAligned:(long long)arg3 unit:(id)arg4;
+- (void)addValue:(double)arg1 startDate:(double)arg2 endDate:(double)arg3 valuePerSecond:(double)arg4 seconds:(double)arg5 sourceId:(long long)arg6 sum:(double*)arg7 bucketLength:(double)arg8 bucketStartTime:(double)arg9 bucketEndTime:(double)arg10;
 - (void)advanceBucket;
 - (double)advanceUntilInterval:(long long)arg1;
 - (unsigned int)bucketIndex;
@@ -99,6 +102,7 @@
 - (BOOL)lastBucket;
 - (id)lastIntervalInfo;
 - (unsigned int)mergeStrategy;
+- (double)mergedSum;
 - (id)orderedSourceIds;
 - (void)setBucketIndex:(unsigned int)arg1;
 - (void)setBucketPeriods:(id)arg1;

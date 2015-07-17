@@ -3,22 +3,22 @@
  */
 
 @interface CKDMMCSEngineContext : NSObject {
-    CKDMMCS *_MMCS;
-    struct __MMCSEngine { } *_MMCSEngine;
-    NSString *_applicationBundleID;
-    unsigned long _maxChunkCountForSection;
-    NSString *_path;
-    NSString *_protocolVersion;
-    long _refCount;
-    NSRunLoop *_runLoop;
-    NSString *_runLoopMode;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
-    int _state;
-    BOOL _stopMMCSThread;
+    CKDMMCS * _MMCS;
+    struct _mmcs_engine { } * _MMCSEngine;
+    NSString * _applicationBundleID;
+    unsigned long  _maxChunkCountForSection;
+    NSString * _path;
+    NSString * _protocolVersion;
+    long  _refCount;
+    NSRunLoop * _runLoop;
+    NSString * _runLoopMode;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
+    int  _state;
+    BOOL  _stopMMCSThread;
 }
 
 @property (nonatomic) CKDMMCS *MMCS;
-@property (nonatomic) struct __MMCSEngine { }*MMCSEngine;
+@property (nonatomic) struct _mmcs_engine { }*MMCSEngine;
 @property (nonatomic, retain) NSString *applicationBundleID;
 @property (nonatomic) unsigned long maxChunkCountForSection;
 @property (nonatomic, retain) NSString *path;
@@ -32,14 +32,14 @@
 
 + (id)_appID;
 + (id)setupMMCSEngineWithApplicationBundleID:(id)arg1 path:(id)arg2 error:(id*)arg3;
-+ (id)sharedContextsByBundleID;
++ (id)sharedContextsByPath;
 + (id)sharedContextsQueue;
 + (void)tearDownMMCSEngineWithContext:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)MMCS;
-- (struct __MMCSEngine { }*)MMCSEngine;
+- (struct _mmcs_engine { }*)MMCSEngine;
 - (void)_MMCSThread;
 - (void)_MMCSTreadAbort;
 - (BOOL)_setupMMCSEngineWithError:(id*)arg1;
@@ -50,7 +50,6 @@
 - (void)dealloc;
 - (long)decRefCount;
 - (id)description;
-- (int)fdForItemID:(unsigned long long)arg1 itemType:(id*)arg2 error:(id*)arg3;
 - (long)incRefCount;
 - (id)initWithApplicationBundleID:(id)arg1 path:(id)arg2;
 - (unsigned long)maxChunkCountForSection;
@@ -63,7 +62,7 @@
 - (id)semaphore;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setMMCS:(id)arg1;
-- (void)setMMCSEngine:(struct __MMCSEngine { }*)arg1;
+- (void)setMMCSEngine:(struct _mmcs_engine { }*)arg1;
 - (void)setMaxChunkCountForSection:(unsigned long)arg1;
 - (void)setPath:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;

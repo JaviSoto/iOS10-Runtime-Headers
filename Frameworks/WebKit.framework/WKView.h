@@ -3,36 +3,36 @@
  */
 
 @interface WKView : UIView <UIScrollViewDelegate> {
-    BOOL _allowsBackForwardNavigationGestures;
+    BOOL  _allowsBackForwardNavigationGestures;
     struct RetainPtr<WKContentView> { 
         void *m_ptr; 
-    } _contentView;
-    WKViewData *_data;
-    BOOL _drawsBackground;
-    BOOL _drawsTransparentBackground;
+    }  _contentView;
+    WKViewData * _data;
+    BOOL  _drawsBackground;
+    BOOL  _drawsTransparentBackground;
     struct unique_ptr<WebKit::ViewGestureController, std::__1::default_delete<WebKit::ViewGestureController> > { 
         struct __compressed_pair<WebKit::ViewGestureController *, std::__1::default_delete<WebKit::ViewGestureController> > { 
             struct ViewGestureController {} *__first_; 
         } __ptr_; 
-    } _gestureController;
-    BOOL _hasStaticMinimumLayoutSize;
-    bool _isChangingObscuredInsetsInteractively;
-    BOOL _isWaitingForNewLayerTreeAfterDidCommitLoad;
-    float _lastAdjustmentForScroller;
+    }  _gestureController;
+    BOOL  _hasStaticMinimumLayoutSize;
+    bool  _isChangingObscuredInsetsInteractively;
+    BOOL  _isWaitingForNewLayerTreeAfterDidCommitLoad;
+    float  _lastAdjustmentForScroller;
     struct CGSize { 
         float width; 
         float height; 
-    } _minimumLayoutSizeOverride;
+    }  _minimumLayoutSizeOverride;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _obscuredInsets;
+    }  _obscuredInsets;
     struct RetainPtr<WKScrollView> { 
         void *m_ptr; 
-    } _scrollView;
-    unsigned int _unused;
+    }  _scrollView;
+    unsigned int  _unused;
 }
 
 @property (setter=_setBackgroundExtendsBeyondPage:, nonatomic) BOOL _backgroundExtendsBeyondPage;
@@ -55,6 +55,7 @@
 - (void)_beginInteractiveObscuredInsetsChange;
 - (void)_commonInitializationWithContextRef:(struct OpaqueWKContext { }*)arg1 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg2 relatedToPage:(struct OpaqueWKPage { }*)arg3;
 - (void)_didFinishScrolling;
+- (void)_didRelaunchProcess;
 - (void)_endInteractiveObscuredInsetsChange;
 - (void)_frameOrBoundsChanged;
 - (void)_keyboardChangedWithInfo:(id)arg1 adjustScrollView:(BOOL)arg2;
@@ -70,6 +71,7 @@
 - (BOOL)allowsBackForwardNavigationGestures;
 - (id)browsingContextController;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (BOOL)drawsBackground;
 - (BOOL)drawsTransparentBackground;
 - (id)initWithCoder:(id)arg1;

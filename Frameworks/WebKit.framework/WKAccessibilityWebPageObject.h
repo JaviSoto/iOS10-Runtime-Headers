@@ -3,7 +3,7 @@
  */
 
 @interface WKAccessibilityWebPageObject : WKAccessibilityWebPageObjectBase {
-    NSData *_remoteTokenData;
+    NSData * _remoteTokenData;
 }
 
 @property (nonatomic, retain) NSData *remoteTokenData;

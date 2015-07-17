@@ -3,11 +3,11 @@
  */
 
 @interface MFRecipientTableViewCellTitleView : UIView <MFTinting> {
-    NSAttributedString *_deselectedAttributedString;
-    BOOL _highlighted;
-    BOOL _shouldDim;
-    UIColor *_tintColor;
-    UILabel *_titleLabel;
+    NSAttributedString * _deselectedAttributedString;
+    BOOL  _highlighted;
+    BOOL  _shouldDim;
+    UIColor * _tintColor;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

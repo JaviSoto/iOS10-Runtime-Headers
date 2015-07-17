@@ -3,8 +3,8 @@
  */
 
 @interface CKDFetchUserIdentitiesOperation : CKDOperation {
-    id /* block */ _fetchUserIdentityProgressBlock;
-    NSArray *_identityInfos;
+    id /* block */  _fetchUserIdentityProgressBlock;
+    NSArray * _identityInfos;
 }
 
 @property (nonatomic, copy) id /* block */ fetchUserIdentityProgressBlock;
@@ -14,6 +14,7 @@
 - (void)_fetchInfoFromCache;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleFetchedInfo:(id)arg1 withIdentity:(id)arg2 error:(id)arg3;
+- (unsigned long long)activityStart;
 - (id /* block */)fetchUserIdentityProgressBlock;
 - (id)identityInfos;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

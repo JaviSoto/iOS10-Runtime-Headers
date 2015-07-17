@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DPrefilteredLineSetting : NSObject {
-    BOOL mCullBackfaces;
-    BOOL mDisableColorOutput;
+    BOOL  mCullBackfaces;
+    BOOL  mDisableColorOutput;
     struct tvec4<float> { 
         union { 
             float x; 
@@ -26,9 +26,9 @@
             float a; 
             float q; 
         } ; 
-    } mFilterRadius;
-    float mLineWidth;
-    TSDStroke *mStroke;
+    }  mFilterRadius;
+    float  mLineWidth;
+    TSDStroke * mStroke;
     struct tvec4<float> { 
         union { 
             float x; 
@@ -50,8 +50,8 @@
             float a; 
             float q; 
         } ; 
-    } mStrokeColor;
-    BOOL mUseNormals;
+    }  mStrokeColor;
+    BOOL  mUseNormals;
 }
 
 @property (nonatomic) BOOL cullBackfaces;

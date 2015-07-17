@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableNanoSyncChangeSet : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
-    NSMutableArray *_changes;
+    NSMutableArray * _changes;
 }
 
 @property (nonatomic, retain) NSMutableArray *changes;

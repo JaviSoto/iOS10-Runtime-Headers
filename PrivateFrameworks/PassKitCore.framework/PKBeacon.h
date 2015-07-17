@@ -3,11 +3,11 @@
  */
 
 @interface PKBeacon : NSObject <NSSecureCoding> {
-    NSNumber *_major;
-    NSNumber *_minor;
-    NSString *_name;
-    NSUUID *_proximityUUID;
-    NSString *_relevantText;
+    NSNumber * _major;
+    NSNumber * _minor;
+    NSString * _name;
+    NSUUID * _proximityUUID;
+    NSString * _relevantText;
 }
 
 @property (nonatomic, retain) NSNumber *major;

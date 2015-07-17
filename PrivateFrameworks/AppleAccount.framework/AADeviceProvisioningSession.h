@@ -3,15 +3,15 @@
  */
 
 @interface AADeviceProvisioningSession : NSObject {
-    struct OpaqueCFHTTPCookieStorage { } *_cookieStorageRef;
-    NSString *_dsid;
-    unsigned long long _dsidNumber;
+    struct OpaqueCFHTTPCookieStorage { } * _cookieStorageRef;
+    NSString * _dsid;
+    unsigned long long  _dsidNumber;
 }
 
 - (void).cxx_destruct;
 - (void)addProvisioningInfoToAARequest:(id)arg1;
 - (void)addProvisioningInfoToAARequest:(id)arg1 withFallback:(BOOL)arg2;
-- (void)addProvisioningInfoToURLRequest:(id)arg1;
+- (void)addProvisioningInfoToURLRequest:(id)arg1 sendEmptyValues:(BOOL)arg2;
 - (id)deviceProvisioningInfo;
 - (long)eraseProvisioning;
 - (id)init;

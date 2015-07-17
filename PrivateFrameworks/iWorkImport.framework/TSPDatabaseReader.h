@@ -3,10 +3,10 @@
  */
 
 @interface TSPDatabaseReader : TSPReader <TSPDatabaseUnarchiverDelegate> {
-    TSPDatabase *_database;
-    NSObject<OS_dispatch_queue> *_databaseQueue;
-    unsigned long long _databaseVersion;
-    NSHashTable *_datas;
+    TSPDatabase * _database;
+    NSObject<OS_dispatch_queue> * _databaseQueue;
+    unsigned long long  _databaseVersion;
+    NSHashTable * _datas;
     struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
         struct __hash_table<std::__1::pair<const long long, bool>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > > { 
@@ -31,7 +31,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _readIdentifiers;
+    }  _readIdentifiers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

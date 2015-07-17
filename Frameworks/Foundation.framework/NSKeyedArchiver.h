@@ -3,27 +3,28 @@
  */
 
 @interface NSKeyedArchiver : NSCoder {
-    void *_cache;
-    unsigned int _cacheSize;
-    id _classNameMap;
-    id _classes;
-    id _conditionals;
-    id _containers;
-    id _delegate;
-    unsigned int _estimatedCount;
-    unsigned int _flags;
-    unsigned int _genericKey;
-    id _objRefMap;
-    id _objects;
-    id _replacementMap;
-    void *_reserved0;
-    void *_reserved2;
-    void *_stream;
-    id _visited;
+    void * _cache;
+    unsigned int  _cacheSize;
+    id  _classNameMap;
+    id  _classes;
+    id  _conditionals;
+    id  _containers;
+    id  _delegate;
+    unsigned int  _estimatedCount;
+    unsigned int  _flags;
+    unsigned int  _genericKey;
+    id  _objRefMap;
+    id  _objects;
+    id  _replacementMap;
+    void * _reserved0;
+    void * _reserved2;
+    void * _stream;
+    id  _visited;
 }
 
 @property <NSKeyedArchiverDelegate> *delegate;
 @property unsigned int outputFormat;
+@property BOOL requiresSecureCoding;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 

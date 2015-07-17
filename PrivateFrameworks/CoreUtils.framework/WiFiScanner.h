@@ -3,19 +3,19 @@
  */
 
 @interface WiFiScanner : NSObject {
-    BOOL _autoPoweredOn;
-    NSMutableSet *_devices;
-    id /* block */ _handler;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _scanActive;
-    struct __CFArray { } *_scanChannels;
-    unsigned int _scanFlags;
-    NSObject<OS_dispatch_source> *_scanTimer;
-    BOOL _started;
-    long _stopErr;
-    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } *_ucat;
-    struct __WiFiDeviceClient { } *_wifiDevice;
-    struct __WiFiManagerClient { } *_wifiManager;
+    BOOL  _autoPoweredOn;
+    NSMutableSet * _devices;
+    id /* block */  _handler;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _scanActive;
+    struct __CFArray { } * _scanChannels;
+    unsigned int  _scanFlags;
+    NSObject<OS_dispatch_source> * _scanTimer;
+    BOOL  _started;
+    long  _stopErr;
+    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } * _ucat;
+    struct __WiFiDeviceClient { } * _wifiDevice;
+    struct __WiFiManagerClient { } * _wifiManager;
 }
 
 @property (readonly, copy) NSSet *devices;

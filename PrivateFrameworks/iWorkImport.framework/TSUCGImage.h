@@ -3,9 +3,9 @@
  */
 
 @interface TSUCGImage : TSUImage {
-    struct CGImage { } *mCGImage;
-    int mOrientation;
-    float mScale;
+    struct CGImage { } * mCGImage;
+    int  mOrientation;
+    float  mScale;
 }
 
 - (struct CGImage { }*)CGImage;

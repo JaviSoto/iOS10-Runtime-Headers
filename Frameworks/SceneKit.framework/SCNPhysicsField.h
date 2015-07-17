@@ -3,33 +3,32 @@
  */
 
 @interface SCNPhysicsField : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _active;
-    unsigned int _categoryBitMask;
+    BOOL  _active;
+    unsigned int  _categoryBitMask;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
-    } _direction;
-    BOOL _exclusive;
-    float _falloffExponent;
-    struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; } *_field;
+    }  _direction;
+    BOOL  _exclusive;
+    float  _falloffExponent;
+    struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; } * _field;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
-    } _halfExtent;
-    float _minimumDistance;
-    SCNNode *_node;
+    }  _halfExtent;
+    float  _minimumDistance;
+    SCNNode * _node;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
-    } _offset;
-    void *_reserved;
-    int _scope;
-    float _strength;
-    BOOL _usesEllipsoidalExtent;
-    SCNPhysicsWorld *_world;
+    }  _offset;
+    int  _scope;
+    float  _strength;
+    BOOL  _usesEllipsoidalExtent;
+    SCNPhysicsWorld * _world;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
@@ -44,7 +43,8 @@
 @property (nonatomic) float strength;
 @property (nonatomic) BOOL usesEllipsoidalExtent;
 
-+ (id)SCNJSExportProtocol;
++ (float)_displayScaleFactor;
++ (void)_setDisplayScaleFactor:(float)arg1;
 + (id)customFieldWithEvaluationBlock:(id /* block */)arg1;
 + (id)dragField;
 + (id)electricField;
@@ -58,7 +58,6 @@
 + (id)turbulenceFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
 + (id)vortexField;
 
-- (id).cxx_construct;
 - (void)_commonInit;
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_createField;
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_handle;
@@ -73,6 +72,7 @@
 - (void)dealloc;
 - (struct SCNVector3 { float x1; float x2; float x3; })direction;
 - (void)encodeWithCoder:(id)arg1;
+- (struct SCNVector3 { float x1; float x2; float x3; })evalAtLocation:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (float)falloffExponent;
 - (struct SCNVector3 { float x1; float x2; float x3; })halfExtent;
 - (id)init;
@@ -94,6 +94,8 @@
 - (void)setStrength:(float)arg1;
 - (void)setUsesEllipsoidalExtent:(BOOL)arg1;
 - (float)strength;
+- (BOOL)supportsDirection;
+- (BOOL)supportsOffset;
 - (BOOL)usesEllipsoidalExtent;
 
 @end

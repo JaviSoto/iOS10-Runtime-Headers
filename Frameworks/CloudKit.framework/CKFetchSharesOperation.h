@@ -3,12 +3,12 @@
  */
 
 @interface CKFetchSharesOperation : CKDatabaseOperation {
-    id /* block */ _fetchSharesCompletionBlock;
-    NSMutableDictionary *_shareIDErrors;
-    NSArray *_shareIDs;
-    NSMutableDictionary *_sharesByShareID;
-    NSMutableDictionary *_zoneIDErrors;
-    NSArray *_zoneIDs;
+    id /* block */  _fetchSharesCompletionBlock;
+    NSMutableDictionary * _shareIDErrors;
+    NSArray * _shareIDs;
+    NSMutableDictionary * _sharesByShareID;
+    NSMutableDictionary * _zoneIDErrors;
+    NSArray * _zoneIDs;
 }
 
 @property (nonatomic, copy) id /* block */ fetchSharesCompletionBlock;
@@ -22,6 +22,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)fetchSharesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

@@ -3,18 +3,18 @@
  */
 
 @interface OADPath : NSObject {
-    NSMutableArray *mElements;
-    int mFillMode;
+    NSMutableArray * mElements;
+    int  mFillMode;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
-    BOOL mStroked;
+    }  mSize;
+    BOOL  mStroked;
 }
 
-- (id).cxx_construct;
 - (void)addElement:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)elementAtIndex:(unsigned int)arg1;
 - (unsigned int)elementCount;
 - (int)fillMode;

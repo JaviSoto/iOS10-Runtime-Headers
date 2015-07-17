@@ -3,8 +3,9 @@
  */
 
 @interface _NMRCommandOptionsProtobuf : PBCodable <NSCopying> {
-    NSString *_destinationAppDisplayID;
-    BOOL _externalPlayerCommand;
+    NSString * _contextID;
+    NSString * _destinationAppDisplayID;
+    BOOL  _externalPlayerCommand;
     struct { 
         unsigned int playbackPosition : 1; 
         unsigned int radioStationID : 1; 
@@ -18,26 +19,28 @@
         unsigned int externalPlayerCommand : 1; 
         unsigned int negative : 1; 
         unsigned int requestDefermentToPlaybackQueuePosition : 1; 
-    } _has;
-    NSString *_mediaType;
-    BOOL _negative;
-    double _playbackPosition;
-    float _playbackRate;
-    NSString *_radioStationHash;
-    long long _radioStationID;
-    float _rating;
-    int _repeatMode;
-    BOOL _requestDefermentToPlaybackQueuePosition;
-    unsigned int _sendOptions;
-    int _shuffleMode;
-    float _skipInterval;
-    NSString *_sourceID;
-    NSData *_systemAppPlaybackQueueData;
-    unsigned long long _trackID;
+    }  _has;
+    NSString * _mediaType;
+    BOOL  _negative;
+    double  _playbackPosition;
+    float  _playbackRate;
+    NSString * _radioStationHash;
+    long long  _radioStationID;
+    float  _rating;
+    int  _repeatMode;
+    BOOL  _requestDefermentToPlaybackQueuePosition;
+    unsigned int  _sendOptions;
+    int  _shuffleMode;
+    float  _skipInterval;
+    NSString * _sourceID;
+    NSData * _systemAppPlaybackQueueData;
+    unsigned long long  _trackID;
 }
 
+@property (nonatomic, retain) NSString *contextID;
 @property (nonatomic, retain) NSString *destinationAppDisplayID;
 @property (nonatomic) BOOL externalPlayerCommand;
+@property (nonatomic, readonly) BOOL hasContextID;
 @property (nonatomic, readonly) BOOL hasDestinationAppDisplayID;
 @property (nonatomic) BOOL hasExternalPlayerCommand;
 @property (nonatomic, readonly) BOOL hasMediaType;
@@ -72,12 +75,14 @@
 @property (nonatomic) unsigned long long trackID;
 
 - (void).cxx_destruct;
+- (id)contextID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)destinationAppDisplayID;
 - (id)dictionaryRepresentation;
 - (BOOL)externalPlayerCommand;
+- (BOOL)hasContextID;
 - (BOOL)hasDestinationAppDisplayID;
 - (BOOL)hasExternalPlayerCommand;
 - (BOOL)hasMediaType;
@@ -109,6 +114,7 @@
 - (int)repeatMode;
 - (BOOL)requestDefermentToPlaybackQueuePosition;
 - (unsigned int)sendOptions;
+- (void)setContextID:(id)arg1;
 - (void)setDestinationAppDisplayID:(id)arg1;
 - (void)setExternalPlayerCommand:(BOOL)arg1;
 - (void)setHasExternalPlayerCommand:(BOOL)arg1;

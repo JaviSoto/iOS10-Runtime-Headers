@@ -3,21 +3,21 @@
  */
 
 @interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPTransportControlsTarget, MPVideoOverlayDelegate, MPVolumeControllerDelegate> {
-    int _activeOverlayUserEvents;
-    BOOL _disableTaps;
-    UITapGestureRecognizer *_doubleTapGestureRecognizer;
-    MPWeakTimer *_idleTimer;
-    BOOL _isAnimatingOverlay;
-    MPAVItem *_item;
-    UIActivityIndicatorView *_loadingIndicator;
-    MPInlineVideoController *_masterController;
-    MPVideoPlaybackOverlayView *_overlayView;
-    UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    BOOL _shouldForwardRotationEvents;
-    BOOL _statusBarWasHidden;
-    MPSwipableView *_swipableView;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    MPVolumeController *_volumeController;
+    int  _activeOverlayUserEvents;
+    BOOL  _disableTaps;
+    UITapGestureRecognizer * _doubleTapGestureRecognizer;
+    MPWeakTimer * _idleTimer;
+    BOOL  _isAnimatingOverlay;
+    MPAVItem * _item;
+    UIActivityIndicatorView * _loadingIndicator;
+    MPInlineVideoController * _masterController;
+    MPVideoPlaybackOverlayView * _overlayView;
+    UIPinchGestureRecognizer * _pinchGestureRecognizer;
+    BOOL  _shouldForwardRotationEvents;
+    BOOL  _statusBarWasHidden;
+    MPSwipableView * _swipableView;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    MPVolumeController * _volumeController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

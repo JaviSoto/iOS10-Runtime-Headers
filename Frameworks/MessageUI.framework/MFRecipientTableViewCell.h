@@ -3,14 +3,14 @@
  */
 
 @interface MFRecipientTableViewCell : UITableViewCell {
-    UIImageView *_cellImageView;
-    MFRecipientTableViewCellDetailView *_detailView;
-    MFComposeRecipient *_recipient;
-    BOOL _shouldDimIrrelevantInformation;
-    BOOL _shouldHighlightCompleteMatches;
-    BOOL _shouldVerticallyCenterTitleLabel;
-    UIColor *_tintColor;
-    MFRecipientTableViewCellTitleView *_titleView;
+    UIImageView * _cellImageView;
+    MFRecipientTableViewCellDetailView * _detailView;
+    MFComposeRecipient * _recipient;
+    BOOL  _shouldDimIrrelevantInformation;
+    BOOL  _shouldHighlightCompleteMatches;
+    BOOL  _shouldVerticallyCenterTitleLabel;
+    UIColor * _tintColor;
+    MFRecipientTableViewCellTitleView * _titleView;
 }
 
 @property (nonatomic) BOOL shouldDimIrrelevantInformation;

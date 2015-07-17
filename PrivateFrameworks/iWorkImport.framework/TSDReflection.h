@@ -3,8 +3,8 @@
  */
 
 @interface TSDReflection : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    float mFadeAcceleration;
-    float mOpacity;
+    float  mFadeAcceleration;
+    float  mOpacity;
 }
 
 @property (nonatomic, readonly) float fadeAcceleration;

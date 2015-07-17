@@ -13,10 +13,10 @@
         struct __CFDictionary {} *metadataDict; 
         short useCount; 
         short age; 
-    } _cache;
-    struct OpaqueFigSimpleMutex { } *_lock;
-    int _numberOfExpectedSampleBuffersForEachPTS;
-    struct OpaqueFigCaptureStream { } *_stream;
+    }  _cache;
+    struct OpaqueFigSimpleMutex { } * _lock;
+    int  _numberOfExpectedSampleBuffersForEachPTS;
+    struct OpaqueFigCaptureStream { } * _stream;
 }
 
 @property (nonatomic) int numberOfExpectedSampleBuffersForEachPTS;

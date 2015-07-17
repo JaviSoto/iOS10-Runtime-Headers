@@ -3,8 +3,8 @@
  */
 
 @interface CKDPPackage : PBCodable <NSCopying> {
-    CKDPAsset *_manifest;
-    NSMutableArray *_sections;
+    CKDPAsset * _manifest;
+    NSMutableArray * _sections;
 }
 
 @property (nonatomic, readonly) BOOL hasManifest;

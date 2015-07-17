@@ -3,7 +3,7 @@
  */
 
 @interface AVController : NSObject {
-    struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; float x6; float x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; } *_priv;
+    struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; float x6; float x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; } * _priv;
 }
 
 + (id)avController;

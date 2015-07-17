@@ -3,9 +3,9 @@
  */
 
 @interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol> {
-    id /* block */ _activeBehaviorOverridesChangeHandler;
-    NSXPCConnection *_connection;
-    id /* block */ _filteringStateChangeHandler;
+    id /* block */  _activeBehaviorOverridesChangeHandler;
+    NSXPCConnection * _connection;
+    id /* block */  _filteringStateChangeHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -10,7 +10,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _endTransform;
+    }  _endTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -18,7 +18,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _startTransform;
+    }  _startTransform;
 }
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformWithMultiplier:(float)arg1;

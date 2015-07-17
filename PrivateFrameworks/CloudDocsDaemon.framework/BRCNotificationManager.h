@@ -3,16 +3,16 @@
  */
 
 @interface BRCNotificationManager : NSObject <BRCModule> {
-    unsigned int _activeAliasQueries;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    BRCXPCClient *_client;
-    BOOL _isCancelled;
-    BRNotificationQueue *_notifs;
-    NSHashTable *_pipes;
-    NSObject<OS_dispatch_queue> *_queue;
-    BRCAccountSession *_session;
-    BRCClientRanksPersistedState *_state;
-    NSMutableDictionary *_transferCache;
+    unsigned int  _activeAliasQueries;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    BRCXPCClient * _client;
+    BOOL  _isCancelled;
+    BRNotificationQueue * _notifs;
+    NSHashTable * _pipes;
+    NSObject<OS_dispatch_queue> * _queue;
+    BRCAccountSession * _session;
+    BRCClientRanksPersistedState * _state;
+    NSMutableDictionary * _transferCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

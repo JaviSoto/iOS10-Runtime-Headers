@@ -3,9 +3,9 @@
  */
 
 @interface NPSDomainAccessorFilePresenter : NSObject <NSFilePresenter> {
-    <NPSDomainAccessorFilePresenterDelegate> *_delegate;
-    NSURL *_domainURL;
-    NSOperationQueue *_presenterOperationQueue;
+    <NPSDomainAccessorFilePresenterDelegate> * _delegate;
+    NSURL * _domainURL;
+    NSOperationQueue * _presenterOperationQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

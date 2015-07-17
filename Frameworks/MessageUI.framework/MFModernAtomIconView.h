@@ -6,9 +6,9 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _drawingOffset;
-    NSArray *_iconImages;
-    float _iconPadding;
+    }  _drawingOffset;
+    NSArray * _iconImages;
+    float  _iconPadding;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } drawingOffset;

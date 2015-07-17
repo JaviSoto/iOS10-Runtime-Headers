@@ -3,7 +3,7 @@
  */
 
 @interface CHDAutomaticObject : NSObject {
-    NSString *mName;
+    NSString * mName;
 }
 
 + (id)automaticEffects;
@@ -12,6 +12,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithName:(id)arg1;
 
 @end

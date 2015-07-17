@@ -3,9 +3,9 @@
  */
 
 @interface CKDFetchShareInfoOperation : CKDOperation {
-    id /* block */ _shareInfoFetchedBlock;
-    NSMutableDictionary *_shareTokenInfosToFetchByURL;
-    NSMutableArray *_shareURLsToFetch;
+    id /* block */  _shareInfoFetchedBlock;
+    NSMutableDictionary * _shareTokenInfosToFetchByURL;
+    NSMutableArray * _shareURLsToFetch;
 }
 
 @property (nonatomic, copy) id /* block */ shareInfoFetchedBlock;
@@ -18,6 +18,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_performCallbackForURL:(id)arg1 withInfo:(id)arg2 error:(id)arg3;
 - (void)_prepareShortTokens;
+- (unsigned long long)activityStart;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)makeStateTransition;

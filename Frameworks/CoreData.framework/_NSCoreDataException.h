@@ -3,8 +3,8 @@
  */
 
 @interface _NSCoreDataException : NSException {
-    long _code;
-    NSString *_domain;
+    long  _code;
+    NSString * _domain;
 }
 
 + (id)exceptionWithName:(id)arg1 code:(long)arg2 reason:(id)arg3 userInfo:(id)arg4;

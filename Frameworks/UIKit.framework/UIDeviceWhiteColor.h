@@ -3,10 +3,10 @@
  */
 
 @interface UIDeviceWhiteColor : UIColor {
-    float alphaComponent;
-    struct CGColor { } *cachedColor;
-    long cachedColorOnceToken;
-    float whiteComponent;
+    float  alphaComponent;
+    struct CGColor { } * cachedColor;
+    long  cachedColorOnceToken;
+    float  whiteComponent;
 }
 
 - (struct CGColor { }*)CGColor;

@@ -3,11 +3,11 @@
  */
 
 @interface RUPreviewSession : NSObject {
-    MPAVItem *_currentItem;
-    double _customTrackPreviewDuration;
-    NSArray *_items;
-    MPAVController *_player;
-    NSHashTable *_sessionObservers;
+    MPAVItem * _currentItem;
+    double  _customTrackPreviewDuration;
+    NSArray * _items;
+    MPAVController * _player;
+    NSHashTable * _sessionObservers;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentItem;

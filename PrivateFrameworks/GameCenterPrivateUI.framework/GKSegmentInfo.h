@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKSegmentInfo : NSObject <GKStateMachineDelegate> {
-    GKCollectionViewDataSource *_dataSource;
-    <GKSegmentInfoDelegagte> *_delegateWeak;
-    GKPlaceholderContentStateMachine *_loadingMatchine;
-    NSString *_title;
+@interface GKSegmentInfo : NSObject <_GKStateMachineDelegate> {
+    GKCollectionViewDataSource * _dataSource;
+    <GKSegmentInfoDelegagte> * _delegateWeak;
+    GKPlaceholderContentStateMachine * _loadingMatchine;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) GKCollectionViewDataSource *dataSource;

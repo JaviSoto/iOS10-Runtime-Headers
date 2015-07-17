@@ -3,14 +3,14 @@
  */
 
 @interface MusicPlaybackProgressScrubberController : NSObject <MusicPlaybackProgressScrubberDelegate> {
-    MPAVItem *_currentItem;
-    float _currentRate;
-    double _lastSeekedTime;
-    id _periodicTimeObserver;
-    <MusicPlaybackProgressScrubbing> *_playbackProgressScrubber;
-    <MusicPlaybackProgressScrubberDelegate> *_playbackProgressScrubberDelegate;
-    MPAVController *_player;
-    int _scrubbingTransactionCount;
+    MPAVItem * _currentItem;
+    float  _currentRate;
+    double  _lastSeekedTime;
+    id  _periodicTimeObserver;
+    <MusicPlaybackProgressScrubbing> * _playbackProgressScrubber;
+    <MusicPlaybackProgressScrubberDelegate> * _playbackProgressScrubberDelegate;
+    MPAVController * _player;
+    int  _scrubbingTransactionCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

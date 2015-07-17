@@ -3,10 +3,10 @@
  */
 
 @interface NRDeviceDiscoveryController : NSObject <NRDeviceDiscoveryControllerXPCFrameworkDelegate, NSXPCConnectionDelegate> {
-    unsigned int _counter;
-    NSArray *_devices;
-    NSMutableArray *_mutableDevices;
-    NSXPCConnection *_xpcConnection;
+    unsigned int  _counter;
+    NSArray * _devices;
+    NSMutableArray * _mutableDevices;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic) unsigned int counter;
@@ -36,6 +36,6 @@
 - (id)xpcConnection;
 - (void)xpcDidDiscoverDevice:(id)arg1 deviceID:(id)arg2 advertisedName:(id)arg3;
 - (void)xpcDidRestartDiscovery;
-- (void)xpcSetValue:(id)arg1 forProperty:(id)arg2 deviceID:(id)arg3;
+- (void)xpcSetValue:(id)arg1 forProperty:(id)arg2 deviceID:(id)arg3 withSequenceNumber:(unsigned long long)arg4;
 
 @end

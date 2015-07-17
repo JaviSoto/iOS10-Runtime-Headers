@@ -3,8 +3,8 @@
  */
 
 @interface MPUExtrasNavigationBar : UINavigationBar {
-    UIColor *_dodgeColor;
-    UILabel *_titleLabel;
+    UIColor * _dodgeColor;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

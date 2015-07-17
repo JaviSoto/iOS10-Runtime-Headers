@@ -3,14 +3,14 @@
  */
 
 @interface MPUArtworkView : UIImageView {
-    NSLayoutConstraint *_aspectConstraint;
-    BOOL _automaticallyApplyAspectConstraints;
-    BOOL _dimsWhenHighlighted;
-    BOOL _displayingPlaceholder;
-    UIImage *_externalImage;
-    BOOL _forcesAnimatedUnhighlighting;
-    UIView *_highlightView;
-    UIImage *_placeholderImage;
+    NSLayoutConstraint * _aspectConstraint;
+    BOOL  _automaticallyApplyAspectConstraints;
+    BOOL  _dimsWhenHighlighted;
+    BOOL  _displayingPlaceholder;
+    UIImage * _externalImage;
+    BOOL  _forcesAnimatedUnhighlighting;
+    UIView * _highlightView;
+    UIImage * _placeholderImage;
 }
 
 @property (nonatomic, readonly) UIImage *_externalImage;

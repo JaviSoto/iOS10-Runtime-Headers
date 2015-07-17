@@ -3,7 +3,7 @@
  */
 
 @interface MPUExtrasActivityIndicatorElementViewController : MPUExtrasViewElementViewController {
-    MPUExtrasActivityIndicator *_activityView;
+    MPUExtrasActivityIndicator * _activityView;
 }
 
 - (void).cxx_destruct;

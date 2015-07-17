@@ -6,12 +6,12 @@
     struct { 
         double latitude; 
         double longitude; 
-    } fMatchCoordinate;
-    double fMatchCourse;
-    int fMatchFormOfWay;
-    int fMatchQuality;
-    int fMatchRoadClass;
-    BOOL fMatchShifted;
+    }  fMatchCoordinate;
+    double  fMatchCourse;
+    int  fMatchFormOfWay;
+    int  fMatchQuality;
+    int  fMatchRoadClass;
+    BOOL  fMatchShifted;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

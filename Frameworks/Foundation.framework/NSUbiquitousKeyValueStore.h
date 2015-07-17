@@ -3,12 +3,12 @@
  */
 
 @interface NSUbiquitousKeyValueStore : NSObject {
-    int _daemonWakeToken;
-    id _private1;
-    id _private2;
-    id _private3;
-    void *_private4;
-    void *_reserved;
+    int  _daemonWakeToken;
+    id  _private1;
+    id  _private2;
+    id  _private3;
+    void * _private4;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSDictionary *dictionaryRepresentation;
@@ -30,6 +30,7 @@
 - (void)_registerToDaemon;
 - (void)_rethrowException:(id)arg1;
 - (void)_scheduleRemoteSynchronization;
+- (void)_sendPingToDaemon;
 - (void)_setHasPendingSynchronize:(BOOL)arg1;
 - (void)_setShouldAvoidSynchronize:(BOOL)arg1;
 - (BOOL)_shouldAvoidSynchronize;

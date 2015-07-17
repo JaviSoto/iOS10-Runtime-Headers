@@ -3,9 +3,9 @@
  */
 
 @interface CKTextBalloonView : CKColoredBalloonView {
-    NSAttributedString *_attributedText;
-    BOOL _centerTextWhenSkinny;
-    CKBalloonTextView *_textView;
+    NSAttributedString * _attributedText;
+    BOOL  _centerTextWhenSkinny;
+    CKBalloonTextView * _textView;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

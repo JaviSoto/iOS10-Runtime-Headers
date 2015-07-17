@@ -3,11 +3,11 @@
  */
 
 @interface TPRingView : UIView {
-    CALayer *_dodgeRingLayer;
-    CALayer *_highlightDodgeLayer;
-    CALayer *_highlightLuminanceLayer;
-    CALayer *_luminanceRingLayer;
-    CALayer *_selectionLayer;
+    CALayer * _dodgeRingLayer;
+    CALayer * _highlightDodgeLayer;
+    CALayer * _highlightLuminanceLayer;
+    CALayer * _luminanceRingLayer;
+    CALayer * _selectionLayer;
 }
 
 @property (retain) CALayer *dodgeRingLayer;
@@ -25,7 +25,7 @@
 + (struct CGSize { float x1; float x2; })ringSize;
 + (float)ringStroke;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dodgeRingLayer;
 - (id)highlightDodgeLayer;
 - (id)highlightLuminanceLayer;

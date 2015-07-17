@@ -3,15 +3,15 @@
  */
 
 @interface _UIQueuingScrollViewState : _UITransitionState {
-    BOOL _manual;
-    UIView *_view;
-    UIViewController *_viewController;
+    BOOL  _manual;
+    UIView * _view;
+    UIViewController * _viewController;
 }
 
 @property (getter=isManual, nonatomic, readonly) BOOL manual;
 @property (nonatomic, readonly) UIView *view;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTransitionDirection:(int)arg1 view:(id)arg2 manual:(BOOL)arg3 completion:(id /* block */)arg4;
 - (BOOL)isCompatibleWithTransitionInDirection:(int)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface _GEOPlaceSearchCompletion : NSObject <GEOCompletion> {
-    NSArray *_groups;
+    NSArray * _groups;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,6 @@
 
 - (void)dealloc;
 - (id)groups;
-- (id)initWithResponse:(id)arg1 traits:(id)arg2;
+- (id)initWithResponse:(id)arg1 traits:(id)arg2 mapItems:(id)arg3;
 
 @end

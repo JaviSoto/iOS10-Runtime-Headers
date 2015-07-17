@@ -3,9 +3,9 @@
  */
 
 @interface SSVFairPlaySubscriptionController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasValidSubscriptionStatusDidChangeNotifyToken;
-    int _subscriptionStatusDidChangeNotifyToken;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasValidSubscriptionStatusDidChangeNotifyToken;
+    int  _subscriptionStatusDidChangeNotifyToken;
 }
 
 - (void).cxx_destruct;

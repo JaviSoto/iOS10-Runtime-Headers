@@ -3,10 +3,12 @@
  */
 
 @interface CKQLPreviewController : QLPreviewController <QLPreviewControllerDataSource> {
-    NSArray *_previewItems;
+    NSArray * _previewItems;
+    UIView * _sourceView;
 }
 
 @property (nonatomic, copy) NSArray *previewItems;
+@property (nonatomic) UIView *sourceView;
 
 - (id)currentPreviewItem;
 - (void)dealloc;
@@ -16,6 +18,8 @@
 - (id)previewItems;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItems:(id)arg1;
+- (void)setSourceView:(id)arg1;
+- (id)sourceView;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

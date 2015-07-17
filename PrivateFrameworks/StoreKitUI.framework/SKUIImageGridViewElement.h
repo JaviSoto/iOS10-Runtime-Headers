@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, readonly) int columnCount;

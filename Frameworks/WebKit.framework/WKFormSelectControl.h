@@ -5,7 +5,7 @@
 @interface WKFormSelectControl : NSObject <WKFormPeripheral> {
     struct RetainPtr<id<WKFormControl> > { 
         void *m_ptr; 
-    } _control;
+    }  _control;
 }
 
 + (id)createPeripheralWithView:(id)arg1;

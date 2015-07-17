@@ -3,11 +3,11 @@
  */
 
 @interface OISFUFileInputStream : NSObject <SFUInputStream> {
-    long long mCurrentOffset;
-    long long mEndOffset;
-    int mFd;
-    BOOL mIsCachingDisabled;
-    long long mStartOffset;
+    long long  mCurrentOffset;
+    long long  mEndOffset;
+    int  mFd;
+    BOOL  mIsCachingDisabled;
+    long long  mStartOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

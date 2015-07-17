@@ -3,11 +3,11 @@
  */
 
 @interface FMFRefreshBarButtonItem : UIBarButtonItem {
-    FMFTintedActivityIndicatorView *_aiv;
-    UIImageView *_imageView;
-    id _locateNotification;
-    NSSet *_locations;
-    FMFRefreshWrapperButton *_wrapperButton;
+    FMFTintedActivityIndicatorView * _aiv;
+    UIImageView * _imageView;
+    id  _locateNotification;
+    NSSet * _locations;
+    FMFRefreshWrapperButton * _wrapperButton;
 }
 
 @property (nonatomic, retain) FMFTintedActivityIndicatorView *aiv;

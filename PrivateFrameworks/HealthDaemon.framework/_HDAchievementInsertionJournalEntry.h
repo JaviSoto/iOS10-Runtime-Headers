@@ -3,7 +3,7 @@
  */
 
 @interface _HDAchievementInsertionJournalEntry : HDJournalEntry {
-    HKAchievement *_achievement;
+    HKAchievement * _achievement;
 }
 
 @property (nonatomic, readonly) HKAchievement *achievement;

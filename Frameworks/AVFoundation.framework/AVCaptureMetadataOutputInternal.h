@@ -3,9 +3,9 @@
  */
 
 @interface AVCaptureMetadataOutputInternal : NSObject {
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    NSArray *metadataObjectTypes;
-    NSObject<OS_dispatch_queue> *objectQueue;
+    AVWeakReferencingDelegateStorage * delegateStorage;
+    NSArray * metadataObjectTypes;
+    NSObject<OS_dispatch_queue> * objectQueue;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,10 +15,10 @@
             float width; 
             float height; 
         } size; 
-    } rectOfInterest;
-    struct OpaqueFigSimpleMutex { } *remoteQueueMutex;
-    struct remoteQueueReceiverOpaque { } *remoteReceiverQueue;
-    AVWeakReference *weakReference;
+    }  rectOfInterest;
+    struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
+    struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;
+    AVWeakReference * weakReference;
 }
 
 - (void)dealloc;

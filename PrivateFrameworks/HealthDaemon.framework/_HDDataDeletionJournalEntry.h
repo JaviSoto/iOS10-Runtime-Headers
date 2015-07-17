@@ -3,8 +3,8 @@
  */
 
 @interface _HDDataDeletionJournalEntry : HDJournalEntry {
-    HKObject *_dataObject;
-    BOOL _restrictSource;
+    HKObject * _dataObject;
+    BOOL  _restrictSource;
 }
 
 @property (nonatomic, readonly) HKObject *dataObject;

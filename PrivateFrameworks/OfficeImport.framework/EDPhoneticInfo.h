@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDPhoneticInfo : NSObject <EDImmutableObject> {
-    int mAlign;
-    bool mDoNotModify;
-    unsigned int mFontIndex;
-    EDResources *mResources;
-    EDCollection *mRuns;
-    NSString *mString;
-    int mType;
+@interface EDPhoneticInfo : NSObject <EDImmutableObject, NSCopying> {
+    int  mAlign;
+    bool  mDoNotModify;
+    unsigned int  mFontIndex;
+    EDResources * mResources;
+    EDCollection * mRuns;
+    NSString * mString;
+    int  mType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,9 @@
 
 - (int)align;
 - (void)appendString:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)font;
 - (unsigned int)fontIndex;
 - (unsigned int)hash;

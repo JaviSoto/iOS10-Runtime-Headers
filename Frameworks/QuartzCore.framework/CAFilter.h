@@ -3,11 +3,11 @@
  */
 
 @interface CAFilter : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    void *_attr;
-    void *_cache;
-    unsigned int _flags;
-    NSString *_name;
-    unsigned int _type;
+    void * _attr;
+    void * _cache;
+    unsigned int  _flags;
+    NSString * _name;
+    unsigned int  _type;
 }
 
 @property BOOL cachesInputImage;

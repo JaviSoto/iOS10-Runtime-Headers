@@ -3,11 +3,11 @@
  */
 
 @interface BRCFileProvider : NSObject <NSFileProvider> {
-    NSMutableDictionary *_presentersIDsByURL;
-    NSObject<OS_dispatch_queue> *_privQueue;
-    NSOperationQueue *_queue;
-    BRCAccountSession *_session;
-    NSURL *_url;
+    NSMutableDictionary * _presentersIDsByKey;
+    NSObject<OS_dispatch_queue> * _privQueue;
+    NSOperationQueue * _queue;
+    BRCAccountSession * _session;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *_fileReactorID;
@@ -31,7 +31,7 @@
 - (id)_providedItemsOperationQueue;
 - (id)_providedItemsURL;
 - (void)_registerPresenterForItemAtURL:(id)arg1 key:(id)arg2 session:(id)arg3;
-- (void)_unregisterPresenterForItemAtURL:(id)arg1 key:(id)arg2;
+- (void)_unregisterPresenterForKey:(id)arg1;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithURL:(id)arg1 name:(id)arg2;
 - (void)resume;

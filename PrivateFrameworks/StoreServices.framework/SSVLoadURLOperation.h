@@ -3,30 +3,32 @@
  */
 
 @interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
-    NSMutableData *_dataBuffer;
-    SSVURLDataConsumer *_dataConsumer;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _iTunesStoreRequest;
-    NSData *_inputData;
-    int _machineDataRetryCount;
-    int _machineDataStyle;
-    SSMetricsPageEvent *_metricsPageEvent;
-    id /* block */ _outputBlock;
-    id /* block */ _prepareRequestBlock;
-    NSMutableSet *_protocolRedirectURLs;
-    BOOL _recordsMetrics;
-    NSURL *_redirectURL;
-    NSString *_referrerApplicationName;
-    NSString *_referrerURLString;
-    NSHTTPURLResponse *_response;
-    NSRunLoop *_runLoop;
-    SSVFairPlaySAPSession *_sapSession;
-    SSVSAPSignaturePolicy *_sapSignaturePolicy;
-    BOOL _stopped;
-    NSString *_storeFrontSuffix;
-    SSURLBag *_urlBag;
-    SSVURLBagInterpreter *_urlBagInterpreter;
-    NSURLRequest *_urlRequest;
+    AKAppleIDSession * _authKitSession;
+    NSMutableData * _dataBuffer;
+    SSVURLDataConsumer * _dataConsumer;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _iTunesStoreRequest;
+    NSData * _inputData;
+    int  _machineDataRetryCount;
+    int  _machineDataStyle;
+    SSMetricsPageEvent * _metricsPageEvent;
+    id /* block */  _outputBlock;
+    id /* block */  _prepareRequestBlock;
+    NSMutableSet * _protocolRedirectURLs;
+    BOOL  _recordsMetrics;
+    NSURL * _redirectURL;
+    NSString * _referrerApplicationName;
+    NSString * _referrerURLString;
+    NSHTTPURLResponse * _response;
+    NSRunLoop * _runLoop;
+    SSVFairPlaySAPSession * _sapSession;
+    SSVSAPSignaturePolicy * _sapSignaturePolicy;
+    BOOL  _shouldRetry;
+    BOOL  _stopped;
+    NSString * _storeFrontSuffix;
+    SSURLBag * _urlBag;
+    SSVURLBagInterpreter * _urlBagInterpreter;
+    NSURLRequest * _urlRequest;
 }
 
 @property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
@@ -61,6 +63,7 @@
 - (void)_addSAPSignatureToRequest:(id)arg1;
 - (void)_applyResponseToMetrics:(id)arg1;
 - (void)_configureWithURLBagInterpreter:(id)arg1;
+- (void)_createAuthKitSession;
 - (id)_dataForCachedResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (void)_finishWithData:(id)arg1;
 - (void)_finishWithOutput:(id)arg1 error:(id)arg2;

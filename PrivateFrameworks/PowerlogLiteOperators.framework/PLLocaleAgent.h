@@ -3,7 +3,7 @@
  */
 
 @interface PLLocaleAgent : PLAgent {
-    PLNSNotificationOperatorComposition *_timeNotifications;
+    PLNSNotificationOperatorComposition * _timeNotifications;
 }
 
 @property (retain) PLNSNotificationOperatorComposition *timeNotifications;

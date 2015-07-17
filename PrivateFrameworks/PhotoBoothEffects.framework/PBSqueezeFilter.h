@@ -3,16 +3,16 @@
  */
 
 @interface PBSqueezeFilter : PBFilter {
-    float _inputAmount;
-    bool firstTime;
+    float  _inputAmount;
+    bool  firstTime;
     struct CGPoint { 
         float x; 
         float y; 
-    } inputPoint;
-    float lastInputRadius;
-    float lastInputScale;
-    float lastInputX;
-    float lastInputY;
+    }  inputPoint;
+    float  lastInputRadius;
+    float  lastInputScale;
+    float  lastInputX;
+    float  lastInputY;
 }
 
 @property float inputAmount;

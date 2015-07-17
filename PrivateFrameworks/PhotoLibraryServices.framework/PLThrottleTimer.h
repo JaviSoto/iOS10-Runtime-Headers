@@ -3,16 +3,16 @@
  */
 
 @interface PLThrottleTimer : NSObject {
-    SEL _action;
-    BOOL _isInvalid;
-    BOOL _isPaused;
-    BOOL _isPingedSinceLastFire;
-    double _maxTimeout;
-    unsigned int _maxTimeoutId;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _target;
-    double _timeout;
-    unsigned int _timeoutId;
+    SEL  _action;
+    BOOL  _isInvalid;
+    BOOL  _isPaused;
+    BOOL  _isPingedSinceLastFire;
+    double  _maxTimeout;
+    unsigned int  _maxTimeoutId;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _target;
+    double  _timeout;
+    unsigned int  _timeoutId;
 }
 
 @property (nonatomic, readonly) SEL action;

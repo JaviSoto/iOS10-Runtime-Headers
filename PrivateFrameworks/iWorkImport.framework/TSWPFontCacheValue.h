@@ -3,7 +3,7 @@
  */
 
 @interface TSWPFontCacheValue : NSObject {
-    struct __CTFont { } *_ctFont;
+    struct __CTFont { } * _ctFont;
 }
 
 @property (nonatomic, readonly) struct __CTFont { }*ctFont;

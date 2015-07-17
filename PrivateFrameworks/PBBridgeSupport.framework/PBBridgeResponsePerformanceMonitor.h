@@ -3,12 +3,12 @@
  */
 
 @interface PBBridgeResponsePerformanceMonitor : NSObject {
-    NSMutableDictionary *_macroActivities;
-    NSMutableArray *_measurements;
-    NSMutableDictionary *_milestones;
-    NSDictionary *_remoteMacroActivities;
-    NSArray *_remoteMeasurements;
-    NSDictionary *_remoteMilestones;
+    NSMutableDictionary * _macroActivities;
+    NSMutableArray * _measurements;
+    NSMutableDictionary * _milestones;
+    NSDictionary * _remoteMacroActivities;
+    NSArray * _remoteMeasurements;
+    NSDictionary * _remoteMilestones;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *macroActivities;

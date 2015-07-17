@@ -3,8 +3,8 @@
  */
 
 @interface SKUITabularLockupView : SKUIViewReuseView <SKUIViewElementView> {
-    SKUITabularLockupLayout *_layout;
-    NSMapTable *_viewElementViews;
+    SKUITabularLockupLayout * _layout;
+    NSMapTable * _viewElementViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

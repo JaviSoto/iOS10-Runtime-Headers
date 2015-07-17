@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerView : UIView {
-    int _viewWindowState;
+    int  _viewWindowState;
 }
 
 @property (nonatomic, readonly) int viewWindowState;

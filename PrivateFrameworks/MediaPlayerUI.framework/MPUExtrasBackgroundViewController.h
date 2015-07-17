@@ -3,13 +3,13 @@
  */
 
 @interface MPUExtrasBackgroundViewController : UIViewController {
-    NSArray *_backgroundElements;
-    IKImageElement *_displayedImageElement;
-    NSArray *_imageConstraints;
-    MPUArtworkView *_imageView;
-    NSTimer *_updateTimer;
-    unsigned int _vignetteType;
-    UIImageView *_vignetteView;
+    NSArray * _backgroundElements;
+    IKImageElement * _displayedImageElement;
+    NSArray * _imageConstraints;
+    MPUArtworkView * _imageView;
+    NSTimer * _updateTimer;
+    unsigned int  _vignetteType;
+    UIImageView * _vignetteView;
 }
 
 @property (nonatomic, readonly) NSArray *backgroundElements;

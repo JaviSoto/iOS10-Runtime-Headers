@@ -3,7 +3,7 @@
  */
 
 @interface MPUExtrasJSITunesStore : IKJSITunesStore <IKJSITunesStore, MPUExtrasJSITunesStore, SKStoreProductViewControllerDelegatePrivate> {
-    UIViewController *_formPresentationViewController;
+    UIViewController * _formPresentationViewController;
 }
 
 @property (nonatomic, readonly) NSString *DSID;

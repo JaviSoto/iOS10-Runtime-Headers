@@ -3,8 +3,8 @@
  */
 
 @interface KNSlideCollectionSelection : TSKSelection {
-    KNSlideNode *mSlideNodeToEdit;
-    NSOrderedSet *mSlideNodes;
+    KNSlideNode * mSlideNodeToEdit;
+    NSOrderedSet * mSlideNodes;
 }
 
 @property (getter=isEmpty, nonatomic, readonly) BOOL empty;

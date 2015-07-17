@@ -8,10 +8,10 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _cachedDuration;
-    struct OpaqueFigPlaybackItem { } *_playbackItem;
-    BOOL _shouldCacheDuration;
-    NSArray *_trackIDs;
+    }  _cachedDuration;
+    struct OpaqueFigPlaybackItem { } * _playbackItem;
+    BOOL  _shouldCacheDuration;
+    NSArray * _trackIDs;
 }
 
 @property (getter=_playbackItem, nonatomic, readonly) struct OpaqueFigPlaybackItem { }*playbackItem;

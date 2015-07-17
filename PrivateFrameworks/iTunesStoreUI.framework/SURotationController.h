@@ -3,7 +3,7 @@
  */
 
 @interface SURotationController : NSObject {
-    SUViewController *_viewController;
+    SUViewController * _viewController;
 }
 
 @property (nonatomic) SUViewController *viewController;

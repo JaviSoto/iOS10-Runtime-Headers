@@ -3,7 +3,7 @@
  */
 
 @interface IMServiceAgent : NSObject {
-    NSDictionary *_currentAVChatInfo;
+    NSDictionary * _currentAVChatInfo;
 }
 
 @property (nonatomic, readonly) NSDictionary *currentAVChatInfo;

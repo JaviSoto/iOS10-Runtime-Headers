@@ -3,27 +3,27 @@
  */
 
 @interface KNRenderingExporter : TSARenderingExporter <TSDCanvasDelegate> {
-    unsigned int mCurrentBuildIndex;
-    unsigned int mCurrentPage;
-    KNSlideNode *mCurrentSlideNode;
-    NSMutableArray *mCurrentSlidesOnPage;
-    KNPdfHyperlinkController *mHyperlinkController;
-    KNOffscreenController *mOffscreenController;
-    float mPageMargin;
-    int mPrintLayout;
-    NSString *mPrintTitle;
-    id mPrintView;
-    BOOL mPrintingBackgrounds;
-    BOOL mPrintingBorders;
-    BOOL mPrintingBuilds;
-    BOOL mPrintingDate;
-    BOOL mPrintingDraftQuality;
-    BOOL mPrintingPageMargins;
-    BOOL mPrintingSelectedSlides;
-    BOOL mPrintingSkippedSlides;
-    BOOL mPrintingSlideNumbers;
-    NSOrderedSet *mSelectedSlideNodes;
-    unsigned int mSlidesPerPage;
+    unsigned int  mCurrentBuildIndex;
+    unsigned int  mCurrentPage;
+    KNSlideNode * mCurrentSlideNode;
+    NSMutableArray * mCurrentSlidesOnPage;
+    KNPdfHyperlinkController * mHyperlinkController;
+    KNOffscreenController * mOffscreenController;
+    float  mPageMargin;
+    int  mPrintLayout;
+    NSString * mPrintTitle;
+    id  mPrintView;
+    BOOL  mPrintingBackgrounds;
+    BOOL  mPrintingBorders;
+    BOOL  mPrintingBuilds;
+    BOOL  mPrintingDate;
+    BOOL  mPrintingDraftQuality;
+    BOOL  mPrintingPageMargins;
+    BOOL  mPrintingSelectedSlides;
+    BOOL  mPrintingSkippedSlides;
+    BOOL  mPrintingSlideNumbers;
+    NSOrderedSet * mSelectedSlideNodes;
+    unsigned int  mSlidesPerPage;
 }
 
 @property (nonatomic, readonly) unsigned int currentBuildIndex;

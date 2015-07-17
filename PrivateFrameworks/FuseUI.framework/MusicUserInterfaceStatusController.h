@@ -3,18 +3,18 @@
  */
 
 @interface MusicUserInterfaceStatusController : NSObject <MCProfileConnectionObserver> {
-    ISSSURLBag *_URLBag;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _canShowConnect;
-    BOOL _canShowRadio;
-    BOOL _canShowSubscriptionContent;
-    BOOL _hasSuccessfullyLoadedBag;
-    unsigned int _observersCount;
-    RadioAvailabilityController *_radioAvailabilityController;
-    MusicStoreBag *_storeBag;
-    NSArray *_supportedTabIdentifiers;
-    NSDictionary *_tabConfigurations;
-    int _tabState;
+    ISSSURLBag * _URLBag;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _canShowConnect;
+    BOOL  _canShowRadio;
+    BOOL  _canShowSubscriptionContent;
+    BOOL  _hasSuccessfullyLoadedBag;
+    unsigned int  _observersCount;
+    RadioAvailabilityController * _radioAvailabilityController;
+    MusicStoreBag * _storeBag;
+    NSArray * _supportedTabIdentifiers;
+    NSDictionary * _tabConfigurations;
+    int  _tabState;
 }
 
 @property (nonatomic, readonly) BOOL canShowConnect;
@@ -34,7 +34,7 @@
 - (void)_didCompleteLoadingBagDictionary:(id)arg1 withError:(id)arg2;
 - (void)_handleAccountStoreDidChangeNotification:(id)arg1;
 - (void)_handleDefaultsDidChangeNotification:(id)arg1;
-- (void)_handleNetworkReachabilityDidChangeNotification:(id)arg1;
+- (void)_handleNetworkReachabilityFlagsDidChangeNotification:(id)arg1;
 - (void)_handleRadioAvailabilityDidChangeNotification:(id)arg1;
 - (void)_handleStoreFrontDidChangeNotification:(id)arg1;
 - (void)_handleSubscriptionAvailabilityDidChangeNotification:(id)arg1;

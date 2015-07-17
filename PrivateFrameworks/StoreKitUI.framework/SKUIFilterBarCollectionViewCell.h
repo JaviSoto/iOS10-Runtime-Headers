@@ -3,7 +3,7 @@
  */
 
 @interface SKUIFilterBarCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    SKUIFilterBarView *_filterBarView;
+    SKUIFilterBarView * _filterBarView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

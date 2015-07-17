@@ -3,7 +3,7 @@
  */
 
 @interface ACDAccountStoreFilter : NSObject <ACDAccountStoreProtocol> {
-    ACDAccountStore *_backingAccountStore;
+    ACDAccountStore * _backingAccountStore;
 }
 
 @property (nonatomic, retain) ACDAccountStore *backingAccountStore;
@@ -48,6 +48,7 @@
 - (void)dataclassActionsForAccountDeletion:(id)arg1 completion:(id /* block */)arg2;
 - (void)dataclassActionsForAccountSave:(id)arg1 completion:(id /* block */)arg2;
 - (void)dataclassesWithHandler:(id /* block */)arg1;
+- (void)discoverPropertiesForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (void)displayAccountTypeForAccountWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)enabledDataclassesForAccountWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)grantedPermissionsForAccountType:(id)arg1 withHandler:(id /* block */)arg2;
@@ -74,6 +75,7 @@
 - (void)saveAccount:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)setBackingAccountStore:(id)arg1;
 - (void)setClientBundleID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)setCredential:(id)arg1 forAccount:(id)arg2 serviceID:(id)arg3 completion:(id /* block */)arg4;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (void)setPermissionGranted:(id)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3 withHandler:(id /* block */)arg4;
 - (void)supportedDataclassesForAccountType:(id)arg1 handler:(id /* block */)arg2;

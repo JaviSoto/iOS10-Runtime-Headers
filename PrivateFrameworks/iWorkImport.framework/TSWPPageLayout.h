@@ -12,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } _headerFooterBorderRects;
+    }  _headerFooterBorderRects;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,8 +22,8 @@
             float width; 
             float height; 
         } size; 
-    } _headerFooterClipRects;
-    TSWPLayout *_headerFooterLayouts;
+    }  _headerFooterClipRects;
+    TSWPLayout * _headerFooterLayouts;
 }
 
 @property (nonatomic, readonly) BOOL allowsHeaderFooter;
@@ -35,7 +35,6 @@
 @property (nonatomic, readonly) BOOL headerFooterProviderValid;
 @property (nonatomic, readonly) float headerHeight;
 
-- (id).cxx_construct;
 - (BOOL)allowsHeaderFooter;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bodyRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })borderRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;

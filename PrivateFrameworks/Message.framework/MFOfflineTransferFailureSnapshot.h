@@ -3,9 +3,9 @@
  */
 
 @interface MFOfflineTransferFailureSnapshot : NSObject <NSCoding> {
-    NSString *_originalMailboxID;
-    unsigned long long _originalMessageFlags;
-    NSString *_originalRemoteID;
+    NSString * _originalMailboxID;
+    unsigned long long  _originalMessageFlags;
+    NSString * _originalRemoteID;
 }
 
 @property (nonatomic, readonly) NSString *originalMailboxID;

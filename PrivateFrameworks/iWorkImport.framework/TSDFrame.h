@@ -6,15 +6,15 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mAdornmentSize;
-    float mAssetScale;
-    float mBottomHeight;
-    NSString *mFrameName;
-    float mLeftWidth;
-    float mRightWidth;
-    BOOL mScaledSizesValid;
-    TSDFrameSpec *mSpec;
-    float mTopHeight;
+    }  mAdornmentSize;
+    float  mAssetScale;
+    float  mBottomHeight;
+    NSString * mFrameName;
+    float  mLeftWidth;
+    float  mRightWidth;
+    BOOL  mScaledSizesValid;
+    TSDFrameSpec * mSpec;
+    float  mTopHeight;
 }
 
 @property (nonatomic, readonly) float assetScale;

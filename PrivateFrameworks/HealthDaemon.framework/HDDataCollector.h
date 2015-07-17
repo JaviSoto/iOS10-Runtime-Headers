@@ -3,14 +3,15 @@
  */
 
 @interface HDDataCollector : NSObject <HDHealthDataCollector> {
-    double _collectionInterval;
-    BOOL _disabled;
-    int _failureRetryCount;
-    <HDHealthDaemon> *_healthDaemon;
-    HKObjectType *_observedType;
-    NSObject<OS_dispatch_queue> *_queue;
-    HDSourceEntity *_sourceEntity;
-    int _state;
+    double  _collectionInterval;
+    HDDeviceEntity * _deviceEntity;
+    BOOL  _disabled;
+    int  _failureRetryCount;
+    <HDHealthDaemon> * _healthDaemon;
+    HKObjectType * _observedType;
+    NSObject<OS_dispatch_queue> * _queue;
+    HDSourceEntity * _sourceEntity;
+    int  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,13 +37,13 @@
 - (BOOL)_persistSecondaryContext:(id)arg1;
 - (void)_queue_beginStreaming;
 - (void)_queue_beginStreamingIfNecessary;
+- (id)_queue_deviceEntity;
 - (BOOL)_queue_disabled;
 - (void)_queue_incrementFailureRetryCounter;
 - (void)_queue_receivedData;
 - (void)_queue_resetFailureRetryCounter;
 - (void)_queue_retryFromFailure;
 - (BOOL)_queue_shouldRetryFromFailure;
-- (id)_queue_sourceEntity;
 - (BOOL)_queue_streaming;
 - (void)_queue_transitionToFailure;
 - (void)_queue_transitionToIdle;
@@ -56,6 +57,7 @@
 - (void)collectionStartedForType:(id)arg1 collectionInterval:(double)arg2;
 - (void)collectionStoppedForType:(id)arg1;
 - (id)dataCollectorDiagnosticDescription;
+- (id)deviceEntity;
 - (BOOL)disabled;
 - (id)initWithHealthDaemon:(id)arg1;
 - (void)setCollectionInterval:(double)arg1;

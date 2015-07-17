@@ -3,25 +3,25 @@
  */
 
 @interface _FIUIRing : FIUIAnimatableObject {
-    UIColor *_bottomColor;
-    float _bottomColorBlue;
-    float _bottomColorGreen;
-    float _bottomColorRed;
-    _FIUIIcon *_dotIcon;
-    float _dotPercentage;
-    _FIUIIcon *_icon;
-    float _opacity;
-    float _percentage;
+    UIColor * _bottomColor;
+    float  _bottomColorBlue;
+    float  _bottomColorGreen;
+    float  _bottomColorRed;
+    _FIUIIcon * _dotIcon;
+    float  _dotPercentage;
+    _FIUIIcon * _icon;
+    float  _opacity;
+    float  _percentage;
     struct CGPoint { 
         float x; 
         float y; 
-    } _position;
-    float _size;
-    float _thickness;
-    UIColor *_topColor;
-    float _topColorBlue;
-    float _topColorGreen;
-    float _topColorRed;
+    }  _position;
+    float  _size;
+    float  _thickness;
+    UIColor * _topColor;
+    float  _topColorBlue;
+    float  _topColorGreen;
+    float  _topColorRed;
 }
 
 @property (nonatomic, retain) UIColor *bottomColor;

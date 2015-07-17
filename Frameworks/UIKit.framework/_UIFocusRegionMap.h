@@ -3,41 +3,66 @@
  */
 
 @interface _UIFocusRegionMap : NSObject <NSSecureCoding> {
-    BOOL _builtRegionMap;
-    UIView *_containingView;
-    NSMutableArray *_mapEntries;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _windowSize;
+    BOOL  _builtRegionMap;
+    UIView * _containingView;
+    NSMutableArray * _focusContainerGuideMapEntries;
+    NSMutableArray * _focusableMapEntries;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    }  _maxPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    }  _minPoint;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    }  _minimumSearchArea;
 }
 
 @property (nonatomic, retain) UIView *containingView;
-@property (nonatomic, retain) NSMutableArray *mapEntries;
-@property (nonatomic) struct CGSize { float x1; float x2; } windowSize;
+@property (nonatomic, retain) NSMutableArray *focusContainerGuideMapEntries;
+@property (nonatomic, retain) NSMutableArray *focusableMapEntries;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } minimumSearchArea;
 
 + (BOOL)supportsSecureCoding;
 
-- (void)_buildRegionMap;
+- (void).cxx_destruct;
+- (void)_addFocusContainerGuide:(id)arg1;
+- (void)_addFocusableRegion:(id)arg1;
+- (void)_buildRegionMapDownFromView:(id)arg1 consideringRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 focusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)_debugColorForRegion:(id)arg1;
+- (id)_nearestFocusCandidateFromFocusedView:(id)arg1 withFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inDirection:(struct CGVector { float x1; float x2; })arg3 includingFocusedView:(BOOL)arg4 favoredView:(id)arg5;
+- (void)_occludeFocusInRegion:(id)arg1;
 - (void)_punchHoleInMapAtFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)addFocusableView:(id)arg1 withFrameInWindow:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)addUnfocusableView:(id)arg1 withFrameInWindow:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)closestFocusableViewFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDirection:(struct CGSize { float x1; float x2; })arg2;
-- (id)closestFocusableViewFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDirection:(struct CGSize { float x1; float x2; })arg2 includeCurrentlyFocused:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectThatJustBarelyIntersectsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 startingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_resetMinAndMaxPoints;
 - (id)containingView;
-- (void)dealloc;
 - (id)debugQuickLookObject;
 - (id)debuggingImage;
 - (void)encodeWithCoder:(id)arg1;
+- (id)focusContainerGuideMapEntries;
+- (id)focusableMapEntries;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContainingView:(id)arg1;
-- (id)linearlyOrderedFocusRegionMaps;
-- (id)linearlyOrderedFocusViews;
-- (id)mapEntries;
+- (id)linearlyOrderedFocusCandidatesFromView:(id)arg1 usingHeading:(unsigned int)arg2;
+- (id)linearlyOrderedFocusCandidatesFromView:(id)arg1 usingHeading:(unsigned int)arg2 indexForFocusedView:(unsigned int*)arg3;
+- (id)linearlyOrderedFocusRegionMapEntriesFromView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumSearchArea;
+- (id)nearestFocusCandidateFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDirection:(struct CGVector { float x1; float x2; })arg2;
+- (id)nearestFocusCandidateFromView:(id)arg1 inDirection:(struct CGVector { float x1; float x2; })arg2;
+- (id)nearestFocusCandidateFromView:(id)arg1 inDirection:(struct CGVector { float x1; float x2; })arg2 favoredView:(id)arg3;
 - (void)setContainingView:(id)arg1;
-- (void)setMapEntries:(id)arg1;
-- (void)setWindowSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })windowSize;
+- (void)setFocusContainerGuideMapEntries:(id)arg1;
+- (void)setFocusableMapEntries:(id)arg1;
+- (void)setMinimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

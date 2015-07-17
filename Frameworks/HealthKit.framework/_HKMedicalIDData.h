@@ -3,21 +3,21 @@
  */
 
 @interface _HKMedicalIDData : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_allergyInfo;
-    NSDate *_birthdate;
-    int _bloodType;
-    NSDate *_dateSaved;
-    NSArray *_emergencyContacts;
-    HKQuantity *_height;
-    BOOL _isDisabled;
-    NSNumber *_isOrganDonor;
-    NSString *_medicalConditions;
-    NSString *_medicalNotes;
-    NSString *_medicationInfo;
-    NSString *_name;
-    NSData *_pictureData;
-    int _schemaVersion;
-    HKQuantity *_weight;
+    NSString * _allergyInfo;
+    NSDate * _birthdate;
+    int  _bloodType;
+    NSDate * _dateSaved;
+    NSArray * _emergencyContacts;
+    HKQuantity * _height;
+    BOOL  _isDisabled;
+    NSNumber * _isOrganDonor;
+    NSString * _medicalConditions;
+    NSString * _medicalNotes;
+    NSString * _medicationInfo;
+    NSString * _name;
+    NSData * _pictureData;
+    int  _schemaVersion;
+    HKQuantity * _weight;
 }
 
 @property (nonatomic, retain) NSString *allergyInfo;
@@ -59,6 +59,7 @@
 - (id)medicationInfo;
 - (id)name;
 - (id)pictureData;
+- (void)recordFieldPresenceStatistics;
 - (int)schemaVersion;
 - (void)setAllergyInfo:(id)arg1;
 - (void)setBirthdate:(id)arg1;
@@ -79,6 +80,8 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
 
-- (void)loadDataFromABPerson:(void*)arg1;
++ (id)contactKeysToLoadForMedicalID;
+
+- (void)loadDataFromCNContact:(id)arg1;
 
 @end

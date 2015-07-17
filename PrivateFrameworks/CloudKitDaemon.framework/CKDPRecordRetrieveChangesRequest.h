@@ -6,12 +6,12 @@
     struct { 
         unsigned int maxChanges : 1; 
         unsigned int requestedChangeTypes : 1; 
-    } _has;
-    unsigned int _maxChanges;
-    int _requestedChangeTypes;
-    CKDPRequestedFields *_requestedFields;
-    NSData *_syncContinuationToken;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _has;
+    unsigned int  _maxChanges;
+    int  _requestedChangeTypes;
+    CKDPRequestedFields * _requestedFields;
+    NSData * _syncContinuationToken;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic) BOOL hasMaxChanges;

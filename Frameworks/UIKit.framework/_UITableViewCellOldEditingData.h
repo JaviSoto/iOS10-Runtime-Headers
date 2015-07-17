@@ -3,16 +3,16 @@
  */
 
 @interface _UITableViewCellOldEditingData : NSObject {
-    UIControl *_grabber;
-    UIRemoveControl *_removeControl;
-    UIView *_separator;
+    UIControl * _grabber;
+    UIRemoveControl * _removeControl;
+    UIView * _separator;
 }
 
 @property (nonatomic, retain) UIControl *reorderControl;
 @property (nonatomic, retain) UIView *separatorView;
 
+- (void).cxx_destruct;
 - (BOOL)dataRequired;
-- (void)dealloc;
 - (id)reorderControl;
 - (id)separatorView;
 - (void)setReorderControl:(id)arg1;

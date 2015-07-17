@@ -3,8 +3,8 @@
  */
 
 @interface OISFUOffsetOutputStream : NSObject <SFUOutputStream> {
-    long long mInitialOffset;
-    <SFUOutputStream> *mOutputStream;
+    long long  mInitialOffset;
+    <SFUOutputStream> * mOutputStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

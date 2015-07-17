@@ -8,23 +8,23 @@
         float left; 
         float bottom; 
         float right; 
-    } _alignmentEdgeInsets;
-    int _blendMode;
+    }  _alignmentEdgeInsets;
+    int  _blendMode;
     struct { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    int _exifOrientation;
-    int _idiom;
-    int _imageType;
-    int _resizingMode;
-    float _scale;
-    int _sizeClassHorizontal;
-    int _sizeClassVertical;
-    int _subtype;
-    int _templateRenderingMode;
+    }  _edgeInsets;
+    int  _exifOrientation;
+    int  _idiom;
+    int  _imageType;
+    int  _resizingMode;
+    float  _scale;
+    int  _sizeClassHorizontal;
+    int  _sizeClassVertical;
+    int  _subtype;
+    int  _templateRenderingMode;
 }
 
 @property (nonatomic) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;

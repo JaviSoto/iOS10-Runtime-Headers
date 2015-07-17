@@ -3,8 +3,8 @@
  */
 
 @interface GQDSLPageMargins : GQDWPPadding {
-    float mFooter;
-    float mHeader;
+    float  mFooter;
+    float  mHeader;
 }
 
 - (float)footer;

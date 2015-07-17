@@ -3,12 +3,12 @@
  */
 
 @interface MPArtworkRepresentation : NSObject {
-    UIImage *_image;
+    UIImage * _image;
     struct CGSize { 
         float width; 
         float height; 
-    } _representationSize;
-    id _representationToken;
+    }  _representationSize;
+    id  _representationToken;
 }
 
 @property (nonatomic, retain) UIImage *image;

@@ -3,22 +3,22 @@
  */
 
 @interface CRRecentContact : NSObject <NSSecureCoding> {
-    NSString *_address;
-    long long _contactID;
-    NSNumber *_decayedWeight;
-    NSString *_displayName;
-    unsigned int _groupKind;
-    NSString *_groupName;
-    NSString *_kind;
-    NSString *_lastSendingAddress;
-    NSArray *_members;
-    NSDictionary *_metadata;
-    NSString *_originalSource;
-    NSString *_rawAddress;
-    NSMutableArray *_recentDates;
-    long long _recentID;
-    NSString *_recentsDomain;
-    NSNumber *_weight;
+    NSString * _address;
+    long long  _contactID;
+    NSNumber * _decayedWeight;
+    NSString * _displayName;
+    unsigned int  _groupKind;
+    NSString * _groupName;
+    NSString * _kind;
+    NSString * _lastSendingAddress;
+    NSArray * _members;
+    NSDictionary * _metadata;
+    NSString * _originalSource;
+    NSString * _rawAddress;
+    NSMutableArray * _recentDates;
+    long long  _recentID;
+    NSString * _recentsDomain;
+    NSNumber * _weight;
 }
 
 @property (nonatomic, copy) NSString *address;
@@ -46,6 +46,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void)_enumerateWordsInString:(id)arg1 usingBlock:(id /* block */)arg2;
+- (struct __CFStringTokenizer { }*)_wordTokenizerForString:(id)arg1 locale:(id)arg2;
 - (id)address;
 - (void)applyWeight:(id)arg1;
 - (id)archivableContactID;
@@ -117,9 +119,5 @@
 - (int)matchedIdentifier;
 - (void*)person;
 - (int)property;
-
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
-
-- (id)contactForPropertyID:(int)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface IMGroupTitleChangeChatItem : IMTranscriptChatItem {
-    IMHandle *_sender;
+    IMHandle * _sender;
 }
 
 @property (nonatomic, readonly, retain) IMHandle *sender;

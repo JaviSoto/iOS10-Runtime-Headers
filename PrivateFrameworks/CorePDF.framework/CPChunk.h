@@ -12,11 +12,11 @@
             float width; 
             float height; 
         } size; 
-    } bounds;
-    BOOL dirtyBounds;
-    long insertionOrder;
-    unsigned int position;
-    BOOL shrinksWithChildren;
+    }  bounds;
+    BOOL  dirtyBounds;
+    long  insertionOrder;
+    unsigned int  position;
+    BOOL  shrinksWithChildren;
 }
 
 + (float)chooseReferenceFontSizeFrom:(float)arg1 and:(float)arg2;

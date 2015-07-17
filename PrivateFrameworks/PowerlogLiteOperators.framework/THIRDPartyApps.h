@@ -3,11 +3,11 @@
  */
 
 @interface THIRDPartyApps : NSObject {
-    int cellIn;
-    int cellOut;
-    NSString *processName;
-    int wifiIn;
-    int wifiOut;
+    int  cellIn;
+    int  cellOut;
+    NSString * processName;
+    int  wifiIn;
+    int  wifiOut;
 }
 
 @property (nonatomic) int cellIn;

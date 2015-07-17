@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGridComponent : SKUIPageComponent {
-    NSMutableArray *_children;
+    NSMutableArray * _children;
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
@@ -12,15 +12,15 @@
         int titleFontWeight; 
         float titleFontSize; 
         float titleSpacing; 
-    } _editorialStyle;
-    int _gridType;
+    }  _editorialStyle;
+    int  _gridType;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    } _lockupStyle;
-    int _missingItemCount;
-    BOOL _showsIndexNumbers;
+    }  _lockupStyle;
+    int  _missingItemCount;
+    BOOL  _showsIndexNumbers;
 }
 
 @property (nonatomic, readonly) NSArray *children;

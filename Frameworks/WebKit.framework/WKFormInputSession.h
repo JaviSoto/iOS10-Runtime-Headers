@@ -3,10 +3,10 @@
  */
 
 @interface WKFormInputSession : NSObject <_WKFormInputSession> {
-    WKContentView *_contentView;
+    WKContentView * _contentView;
     struct RetainPtr<NSObject<NSSecureCoding> > { 
         void *m_ptr; 
-    } _userObject;
+    }  _userObject;
 }
 
 @property (nonatomic, copy) NSString *accessoryViewCustomButtonTitle;

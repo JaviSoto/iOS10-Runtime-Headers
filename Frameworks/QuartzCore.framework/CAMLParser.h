@@ -3,7 +3,7 @@
  */
 
 @interface CAMLParser : NSObject {
-    struct _CAMLParserData { } *_data;
+    struct _CAMLParserData { } * _data;
 }
 
 @property (retain) NSURL *baseURL;

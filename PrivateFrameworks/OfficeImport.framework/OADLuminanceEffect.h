@@ -3,8 +3,8 @@
  */
 
 @interface OADLuminanceEffect : OADBlipEffect {
-    float mBrightness;
-    float mContrast;
+    float  mBrightness;
+    float  mContrast;
 }
 
 - (float)brightness;

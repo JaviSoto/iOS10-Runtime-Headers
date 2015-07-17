@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartCategoryAxisLayoutItem : TSCHChartAxisLayoutItem {
-    TSCHChartCategoryAxisLabelsLayoutItem *mCategoryLabels;
-    TSCHChartAxisSeriesLabelsLayoutItem *mSeriesLabels;
+    TSCHChartCategoryAxisLabelsLayoutItem * mCategoryLabels;
+    TSCHChartAxisSeriesLabelsLayoutItem * mSeriesLabels;
 }
 
 @property (nonatomic, readonly) TSCHChartCategoryAxisLabelsLayoutItem *axisCategoryLabelsLayoutItem;

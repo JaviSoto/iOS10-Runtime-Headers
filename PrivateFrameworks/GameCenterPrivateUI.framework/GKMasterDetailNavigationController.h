@@ -3,7 +3,7 @@
  */
 
 @interface GKMasterDetailNavigationController : GKNavigationController <UISplitViewControllerDelegate> {
-    GKMasterDetailViewController *_parentMasterDetailVC;
+    GKMasterDetailViewController * _parentMasterDetailVC;
 }
 
 @property (nonatomic) GKMasterDetailViewController *parentMasterDetailVC;
@@ -13,5 +13,6 @@
 - (id)primaryViewControllerForExpandingSplitViewController:(id)arg1;
 - (id)separateSecondaryViewControllerForSplitViewController:(id)arg1;
 - (void)setParentMasterDetailVC:(id)arg1;
+- (BOOL)splitViewShouldCollapseToDetailViewForPad;
 
 @end

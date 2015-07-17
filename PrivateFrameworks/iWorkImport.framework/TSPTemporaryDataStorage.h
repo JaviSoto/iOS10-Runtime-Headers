@@ -3,11 +3,11 @@
  */
 
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
-    NSURL *_URL;
-    <TSPCryptoInfo> *_decryptionInfo;
-    BOOL _gilligan_isRemote;
-    BOOL _isMissingData;
-    BOOL _isMissingOriginalData;
+    NSURL * _URL;
+    <TSPCryptoInfo> * _decryptionInfo;
+    BOOL  _gilligan_isRemote;
+    BOOL  _isMissingData;
+    BOOL  _isMissingOriginalData;
 }
 
 @property (nonatomic) BOOL isMissingData;

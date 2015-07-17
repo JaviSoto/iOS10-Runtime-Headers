@@ -3,7 +3,7 @@
  */
 
 @interface CLHeading : NSObject <NSCopying, NSSecureCoding> {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly, retain) NSString *compactDescription;

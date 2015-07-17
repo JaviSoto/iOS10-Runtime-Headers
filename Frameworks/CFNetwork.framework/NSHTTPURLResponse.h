@@ -3,7 +3,7 @@
  */
 
 @interface NSHTTPURLResponse : NSURLResponse {
-    NSHTTPURLResponseInternal *_httpInternal;
+    NSHTTPURLResponseInternal * _httpInternal;
 }
 
 @property (readonly, copy) NSDictionary *allHeaderFields;

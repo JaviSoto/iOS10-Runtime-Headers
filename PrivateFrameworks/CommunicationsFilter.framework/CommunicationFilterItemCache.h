@@ -3,8 +3,8 @@
  */
 
 @interface CommunicationFilterItemCache : NSObject {
-    CommunicationFilterItem *_filterItem;
-    long long _isInList;
+    CommunicationFilterItem * _filterItem;
+    long long  _isInList;
 }
 
 @property (nonatomic) long long isInList;

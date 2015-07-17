@@ -3,39 +3,39 @@
  */
 
 @interface SKUIStyledImageDataConsumer : SKUIImageDataConsumer {
-    UIColor *_backgroundColor;
-    UIColor *_borderColor;
+    UIColor * _backgroundColor;
+    UIColor * _borderColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _borderRadii;
+    }  _borderRadii;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _borderWidths;
-    IKColor *_iKBackgroundColor;
-    int _imageContentMode;
+    }  _borderWidths;
+    IKColor * _iKBackgroundColor;
+    int  _imageContentMode;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _imagePadding;
+    }  _imagePadding;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    int _imageTreatment;
-    UIColor *_shadowColor;
+    }  _imageSize;
+    int  _imageTreatment;
+    UIColor * _shadowColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _shadowOffset;
-    float _shadowRadius;
+    }  _shadowOffset;
+    float  _shadowRadius;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

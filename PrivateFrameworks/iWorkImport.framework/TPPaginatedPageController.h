@@ -3,7 +3,7 @@
  */
 
 @interface TPPaginatedPageController : TPPageController {
-    TPTextWrapController *_wrapController;
+    TPTextWrapController * _wrapController;
 }
 
 - (unsigned int)calculatePageIndexFromCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;

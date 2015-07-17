@@ -3,7 +3,7 @@
  */
 
 @interface PLAirPlayBackgroundView : PLPlayingExternallyBackgroundView {
-    NSString *_deviceName;
+    NSString * _deviceName;
 }
 
 @property (nonatomic, retain) NSString *deviceName;

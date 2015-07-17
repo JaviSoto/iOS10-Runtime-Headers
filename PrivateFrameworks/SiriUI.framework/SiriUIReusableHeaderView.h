@@ -3,19 +3,19 @@
  */
 
 @interface SiriUIReusableHeaderView : UICollectionReusableView <SiriUIReusableView, SiriUISizableHeaderView> {
-    UIImageView *_chevronView;
+    UIImageView * _chevronView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UIButton *_headerAreaButton;
-    UILabel *_headerLabel;
-    SiriUIKeyline *_keyline;
-    int _keylineType;
-    SiriUISnippetViewController *_snippetViewController;
-    NSString *_titleText;
+    }  _contentInsets;
+    UIButton * _headerAreaButton;
+    UILabel * _headerLabel;
+    SiriUIKeyline * _keyline;
+    int  _keylineType;
+    SiriUISnippetViewController * _snippetViewController;
+    NSString * _titleText;
 }
 
 @property (readonly, copy) NSString *debugDescription;

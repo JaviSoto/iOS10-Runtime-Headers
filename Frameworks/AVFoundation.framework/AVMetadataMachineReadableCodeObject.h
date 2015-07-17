@@ -3,7 +3,7 @@
  */
 
 @interface AVMetadataMachineReadableCodeObject : AVMetadataObject {
-    AVMetadataMachineReadableCodeObjectInternal *_internal;
+    AVMetadataMachineReadableCodeObjectInternal * _internal;
 }
 
 @property (readonly) NSArray *corners;

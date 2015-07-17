@@ -3,15 +3,15 @@
  */
 
 @interface RURadioAVItem : MPAVItem {
-    NSArray *_buyOffers;
-    BOOL _heartbeatInvalid;
-    BOOL _isInWishList;
-    RadioTrack *_radioTrack;
-    RadioStation *_station;
-    NSString *_stationHash;
-    long long _stationID;
-    NSString *_stationName;
-    NSString *_stationStringID;
+    NSArray * _buyOffers;
+    BOOL  _heartbeatInvalid;
+    BOOL  _isInWishList;
+    RadioTrack * _radioTrack;
+    RadioStation * _station;
+    NSString * _stationHash;
+    long long  _stationID;
+    NSString * _stationName;
+    NSString * _stationStringID;
 }
 
 @property (nonatomic, readonly) BOOL _canUseStoreAdamIDForSubscriptionAdamID;
@@ -28,9 +28,12 @@
 - (void)_applyLoudnessInfoForVolumeNormalization;
 - (void)_beginUsingPlaybackLease;
 - (BOOL)_canUseStoreAdamIDForSubscriptionAdamID;
+- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
 - (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
+- (int)_persistedLikedState;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
+- (void)_sendLikeOrBanRequestWithStatus:(int)arg1 completion:(id /* block */)arg2;
 - (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)aggregateDictionaryItemType;
 - (id)album;

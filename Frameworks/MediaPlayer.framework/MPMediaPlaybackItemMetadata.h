@@ -3,33 +3,33 @@
  */
 
 @interface MPMediaPlaybackItemMetadata : NSObject {
-    NSString *_albumArtistName;
-    long long _albumStoreAdamID;
-    NSString *_albumTitle;
-    BOOL _allowsInitiatingPlayWhileDownload;
-    NSString *_artistName;
-    NSString *_buyParameters;
-    NSString *_composerName;
-    NSString *_contentTitle;
-    unsigned int _contentType;
-    NSString *_copyrightText;
-    int _endpointType;
-    double _expectedDuration;
-    NSString *_genreTitle;
-    NSNumber *_iTunesStoreContentDSID;
-    NSNumber *_iTunesStoreContentID;
-    BOOL _isExplicitTrack;
-    NSURL *_localNetworkContentURL;
-    MPMediaItem *_mediaItem;
-    long long _mediaLibraryPersistentID;
-    NSURL *_protectedContentSupportStorageURL;
-    BOOL _requiresPlayWhileDownload;
-    BOOL _shouldReportPlayEventsToStore;
-    unsigned long long _storeAccountID;
-    long long _storeAdamID;
-    unsigned long long _storeSagaID;
-    long long _storeSubscriptionAdamID;
-    float _volumeNormalization;
+    NSString * _albumArtistName;
+    long long  _albumStoreAdamID;
+    NSString * _albumTitle;
+    BOOL  _allowsInitiatingPlayWhileDownload;
+    NSString * _artistName;
+    NSString * _buyParameters;
+    NSString * _composerName;
+    NSString * _contentTitle;
+    unsigned int  _contentType;
+    NSString * _copyrightText;
+    int  _endpointType;
+    double  _expectedDuration;
+    NSString * _genreTitle;
+    NSNumber * _iTunesStoreContentDSID;
+    NSNumber * _iTunesStoreContentID;
+    BOOL  _isExplicitTrack;
+    NSURL * _localNetworkContentURL;
+    MPMediaItem * _mediaItem;
+    long long  _mediaLibraryPersistentID;
+    NSURL * _protectedContentSupportStorageURL;
+    BOOL  _requiresPlayWhileDownload;
+    BOOL  _shouldReportPlayEventsToStore;
+    unsigned long long  _storeAccountID;
+    long long  _storeAdamID;
+    unsigned long long  _storeSagaID;
+    long long  _storeSubscriptionAdamID;
+    float  _volumeNormalization;
 }
 
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;

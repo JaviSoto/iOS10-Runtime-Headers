@@ -3,8 +3,8 @@
  */
 
 @interface AFSpeechPhrase : NSObject <NSSecureCoding> {
-    NSArray *_interpretations;
-    BOOL _isLowConfidence;
+    NSArray * _interpretations;
+    BOOL  _isLowConfidence;
 }
 
 @property (nonatomic, copy) NSArray *interpretations;

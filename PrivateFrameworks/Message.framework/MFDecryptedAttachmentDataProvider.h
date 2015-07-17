@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFDecryptedAttachmentDataProvider : NSObject <MFAttachmentDataProvider> {
-    MFMailMessage *_message;
+@interface MFDecryptedAttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
+    MFMailMessage * _message;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,36 +3,41 @@
  */
 
 @interface SKTextureCache : NSObject {
-    unsigned int *alphaMap;
+    struct shared_ptr<jet_texture> { 
+        struct jet_texture {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _backingTexture;
+    unsigned int * alphaMap;
     struct CGSize { 
         float width; 
         float height; 
-    } alphaMapSize;
-    struct CGImage { } *collisionMask;
-    int filteringMode;
-    BOOL hasAlpha;
-    BOOL isLoaded;
-    BOOL isPOT;
-    int lock;
-    char *pixelData;
+    }  alphaMapSize;
+    struct CGImage { } * collisionMask;
+    int  filteringMode;
+    BOOL  hasAlpha;
+    BOOL  isLoaded;
+    BOOL  isPOT;
+    int  lock;
+    char * pixelData;
     struct CGSize { 
         float width; 
         float height; 
-    } pixelSize;
+    }  pixelSize;
     struct CGSize { 
         float width; 
         float height; 
-    } size;
-    int state;
-    unsigned int texFormat;
-    unsigned int texId;
-    int texInternalFormat;
-    unsigned int texType;
-    int wrapMode;
+    }  size;
+    int  state;
+    unsigned int  texFormat;
+    unsigned int  texId;
+    int  texInternalFormat;
+    unsigned int  texType;
+    int  wrapMode;
 }
 
 @property (nonatomic) unsigned int*alphaMap;
 @property (nonatomic) struct CGSize { float x1; float x2; } alphaMapSize;
+@property (nonatomic) struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; } backingTexture;
 @property (nonatomic) int filteringMode;
 @property (nonatomic) BOOL hasAlpha;
 @property (nonatomic) BOOL isLoaded;
@@ -49,8 +54,10 @@
 @property (nonatomic) int wrapMode;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (unsigned int*)alphaMap;
 - (struct CGSize { float x1; float x2; })alphaMapSize;
+- (struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })backingTexture;
 - (void)dealloc;
 - (int)filteringMode;
 - (int*)getLock;
@@ -62,6 +69,7 @@
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)setAlphaMap:(unsigned int*)arg1;
 - (void)setAlphaMapSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBackingTexture:(struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setFilteringMode:(int)arg1;
 - (void)setHasAlpha:(BOOL)arg1;
 - (void)setIsLoaded:(BOOL)arg1;

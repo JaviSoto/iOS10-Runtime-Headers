@@ -3,10 +3,10 @@
  */
 
 @interface EKEventAvailabilityEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
-    int _availability;
-    NSMutableArray *_choices;
-    unsigned int _supportedAvailabilities;
-    UITableView *_table;
+    int  _availability;
+    NSMutableArray * _choices;
+    unsigned int  _supportedAvailabilities;
+    UITableView * _table;
 }
 
 @property (nonatomic) int availability;

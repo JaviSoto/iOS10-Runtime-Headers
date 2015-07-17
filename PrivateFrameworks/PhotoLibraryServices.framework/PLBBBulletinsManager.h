@@ -3,19 +3,17 @@
  */
 
 @interface PLBBBulletinsManager : NSObject <PLBBPendingBulletinsBatchDelegate> {
-    void *_addressBook;
-    int _alertFiltrationEnabled;
-    BOOL _badgeCountIsInvalid;
-    NSMutableDictionary *_dirtyPlist;
-    BOOL _enableTemporaryDebugMode;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSMutableArray *_pendingBatches;
-    NSMutableArray *_pendingBulletins;
-    NSObject<OS_dispatch_source> *_pendingChangesTimerSource;
-    PLXPCTransaction *_pendingChangesTimerTransaction;
-    NSMutableIndexSet *_pendingDeleteRecordIDs;
-    NSObject<OS_dispatch_source> *_saveTimerSource;
-    PLXPCTransaction *_saveTimerTransaction;
+    void * _addressBook;
+    int  _alertFiltrationEnabled;
+    BOOL  _badgeCountIsInvalid;
+    NSMutableDictionary * _dirtyPlist;
+    BOOL  _enableTemporaryDebugMode;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSMutableArray * _pendingBatches;
+    NSMutableArray * _pendingBulletins;
+    NSObject<OS_dispatch_source> * _pendingChangesTimerSource;
+    NSMutableIndexSet * _pendingDeleteRecordIDs;
+    NSObject<OS_dispatch_source> * _saveTimerSource;
 }
 
 @property (readonly) NSArray *currentBulletinDictionaries;

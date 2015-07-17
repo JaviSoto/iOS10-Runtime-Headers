@@ -3,10 +3,10 @@
  */
 
 @interface PKPassDeleteSheet : NSObject <UIActionSheetDelegate> {
-    UIActionSheet *_actionSheet;
-    <PKPassDeleteDelegate> *_delegate;
-    PKPassGroupView *_groupView;
-    PKPassView *_passView;
+    UIActionSheet * _actionSheet;
+    <PKPassDeleteDelegate> * _delegate;
+    PKPassGroupView * _groupView;
+    PKPassView * _passView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

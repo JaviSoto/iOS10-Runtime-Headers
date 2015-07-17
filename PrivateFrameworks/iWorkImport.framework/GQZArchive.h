@@ -3,10 +3,10 @@
  */
 
 @interface GQZArchive : NSObject {
-    NSMutableDictionary *mEntries;
-    NSString *mFilename;
-    <GQZArchiveInputStream> *mInput;
-    BOOL mIsEncrypted;
+    NSMutableDictionary * mEntries;
+    NSString * mFilename;
+    <GQZArchiveInputStream> * mInput;
+    BOOL  mIsEncrypted;
 }
 
 - (void)collapseCommonRootDirectory;

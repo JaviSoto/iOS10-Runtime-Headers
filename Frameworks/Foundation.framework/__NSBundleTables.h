@@ -3,12 +3,12 @@
  */
 
 @interface __NSBundleTables : NSObject {
-    struct __CFDictionary { } *_bundleForClassMap;
-    NSMutableSet *_loadedBundles;
-    NSMutableSet *_loadedFrameworks;
-    NSLock *_lock;
-    NSMutableDictionary *_resolvedPathToBundles;
-    NSMutableSet *_staticFrameworks;
+    struct __CFDictionary { } * _bundleForClassMap;
+    NSMutableSet * _loadedBundles;
+    NSMutableSet * _loadedFrameworks;
+    NSLock * _lock;
+    NSMutableDictionary * _resolvedPathToBundles;
+    NSMutableSet * _staticFrameworks;
 }
 
 + (id)bundleTables;

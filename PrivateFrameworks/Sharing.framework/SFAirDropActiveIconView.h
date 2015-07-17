@@ -3,8 +3,8 @@
  */
 
 @interface SFAirDropActiveIconView : UIImageView {
-    UIView *_circleMaskView;
-    BOOL _masked;
+    UIView * _circleMaskView;
+    BOOL  _masked;
 }
 
 @property (getter=isMasked, nonatomic) BOOL masked;

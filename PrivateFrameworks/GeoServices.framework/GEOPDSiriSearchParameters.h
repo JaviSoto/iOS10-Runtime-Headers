@@ -3,23 +3,23 @@
  */
 
 @interface GEOPDSiriSearchParameters : PBCodable <NSCopying> {
-    GEOAddress *_address;
-    NSMutableArray *_businessCategoryFilters;
+    GEOAddress * _address;
+    NSMutableArray * _businessCategoryFilters;
     struct { 
         unsigned int maxResultCount : 1; 
         unsigned int sortOrder : 1; 
         unsigned int isStrictMapRegion : 1; 
         unsigned int structuredSearch : 1; 
-    } _has;
-    GEOPDIndexQueryNode *_indexFilter;
-    BOOL _isStrictMapRegion;
-    unsigned int _maxResultCount;
-    NSString *_searchString;
-    NSMutableArray *_searchSubstringDescriptors;
-    int _sortOrder;
-    BOOL _structuredSearch;
-    GEOPDViewportInfo *_viewportInfo;
-    NSData *_zilchPoints;
+    }  _has;
+    GEOPDIndexQueryNode * _indexFilter;
+    BOOL  _isStrictMapRegion;
+    unsigned int  _maxResultCount;
+    NSString * _searchString;
+    NSMutableArray * _searchSubstringDescriptors;
+    int  _sortOrder;
+    BOOL  _structuredSearch;
+    GEOPDViewportInfo * _viewportInfo;
+    NSData * _zilchPoints;
 }
 
 @property (nonatomic, retain) GEOAddress *address;

@@ -6,14 +6,14 @@
     struct { 
         unsigned int maxResults : 1; 
         unsigned int sortOrder : 1; 
-    } _has;
-    unsigned int _maxResults;
-    NSString *_searchString;
-    int _sortOrder;
-    GEOPDAutocompleteEntry *_suggestionEntry;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    NSString * _searchString;
+    int  _sortOrder;
+    GEOPDAutocompleteEntry * _suggestionEntry;
+    NSData * _suggestionEntryMetadata;
+    NSData * _suggestionMetadata;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;

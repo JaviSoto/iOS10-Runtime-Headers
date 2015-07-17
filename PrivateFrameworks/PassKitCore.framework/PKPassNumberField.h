@@ -3,8 +3,8 @@
  */
 
 @interface PKPassNumberField : PKPassField {
-    NSString *_currencyCode;
-    int _numberStyle;
+    NSString * _currencyCode;
+    int  _numberStyle;
 }
 
 @property (nonatomic, copy) NSString *currencyCode;

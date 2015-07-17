@@ -3,25 +3,25 @@
  */
 
 @interface UITableViewRowData : NSObject <NSCopying> {
-    BOOL _estimatesRowHeights;
-    NSIndexPath *_gapIndexPath;
-    float _heightForTableHeaderViewHiding;
-    float _minimumRowHeight;
-    int _numSections;
-    NSIndexPath *_reorderedIndexPath;
-    float _reorderedRowHeight;
-    id *_sectionRowData;
-    int _sectionRowDataCapacity;
-    float _tableBottomPadding;
-    float _tableFooterHeight;
-    BOOL _tableFooterHeightValid;
-    float _tableHeaderHeight;
-    BOOL _tableHeaderHeightValid;
-    float _tableSidePadding;
-    BOOL _tableSidePaddingValid;
-    float _tableTopPadding;
-    UITableView *_tableView;
-    float _tableViewWidth;
+    BOOL  _estimatesRowHeights;
+    NSIndexPath * _gapIndexPath;
+    float  _heightForTableHeaderViewHiding;
+    float  _minimumRowHeight;
+    int  _numSections;
+    NSIndexPath * _reorderedIndexPath;
+    float  _reorderedRowHeight;
+    id * _sectionRowData;
+    int  _sectionRowDataCapacity;
+    float  _tableBottomPadding;
+    float  _tableFooterHeight;
+    BOOL  _tableFooterHeightValid;
+    float  _tableHeaderHeight;
+    BOOL  _tableHeaderHeightValid;
+    float  _tableSidePadding;
+    BOOL  _tableSidePaddingValid;
+    float  _tableTopPadding;
+    UITableView * _tableView;
+    float  _tableViewWidth;
 }
 
 @property (nonatomic) BOOL estimatesRowHeights;
@@ -34,7 +34,11 @@
 @property (nonatomic) float tableSidePadding;
 @property (nonatomic) float tableTopPadding;
 
+- (void).cxx_destruct;
+- (void)_assertValidIndexPath:(id)arg1 allowEmptySection:(BOOL)arg2;
 - (void)_ensureSectionOffsetIsValidForSection:(int)arg1;
+- (id)_nextIndexPathOrSectionHeader:(id)arg1;
+- (id)_previousIndexPathOrSectionHeader:(id)arg1;
 - (int)_sectionForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithSection:(int)arg2 numberOfSections:(int)arg3;
 - (int)_sectionRowForGlobalRow:(int)arg1 inSection:(int*)arg2;
 - (void)_updateNumSections;
@@ -45,6 +49,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)ensureAllSectionsAreValid;
+- (BOOL)ensureHeightsFaultedInForIndexPath:(id)arg1 availHeight:(float)arg2 edgeInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 scrollPosition:(int)arg4;
 - (BOOL)estimatesRowHeights;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })floatingRectForFooterInSection:(int)arg1 visibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })floatingRectForHeaderInSection:(int)arg1 visibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -66,6 +71,7 @@
 - (float)heightForTableHeaderViewHiding;
 - (id)indexPathForRowAtGlobalRow:(int)arg1;
 - (id)indexPathsForRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)indexPathsForRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 extraHitSpaceBetweenRows:(float)arg2;
 - (id)initWithTableView:(id)arg1;
 - (void)invalidateAllSectionOffsetsAndUpdatePadding;
 - (void)invalidateAllSections;

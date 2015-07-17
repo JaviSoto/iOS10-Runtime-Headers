@@ -3,17 +3,18 @@
  */
 
 @interface PUPhotosGridSettings : PUSettings {
-    BOOL _badgeAllItemsAsVideos;
-    float _defaultItemSideSize;
-    BOOL _displayAllItemsAsBursts;
-    BOOL _flashDegradedImages;
-    BOOL _forceJPEGThumbnailsInDefaultGrid;
-    float _maximumSpacing;
-    float _minimumSpacing;
-    int _numberColumnsInDefaultGrid;
-    int _numberOfColumnsInWideGrid;
-    float _sideMargins;
-    BOOL _slowBackgroundFetch;
+    BOOL  _badgeAllItemsAsVideos;
+    float  _defaultItemSideSize;
+    BOOL  _displayAllItemsAsBursts;
+    BOOL  _flashDegradedImages;
+    BOOL  _forceJPEGThumbnailsInDefaultGrid;
+    float  _maximumSpacing;
+    float  _minimumSpacing;
+    int  _numberColumnsInDefaultGrid;
+    int  _numberOfColumnsInWideGrid;
+    float  _sideMargins;
+    BOOL  _swipeSelectionEnabled;
+    BOOL  _useFloatingHeaders;
 }
 
 @property (nonatomic) BOOL badgeAllItemsAsVideos;
@@ -26,7 +27,8 @@
 @property (nonatomic) int numberColumnsInDefaultGrid;
 @property (nonatomic) int numberOfColumnsInWideGrid;
 @property (nonatomic) float sideMargins;
-@property (nonatomic) BOOL slowBackgroundFetch;
+@property (getter=isSwipeSelectionEnabled, nonatomic) BOOL swipeSelectionEnabled;
+@property (nonatomic) BOOL useFloatingHeaders;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
@@ -36,6 +38,7 @@
 - (BOOL)displayAllItemsAsBursts;
 - (BOOL)flashDegradedImages;
 - (BOOL)forceJPEGThumbnailsInDefaultGrid;
+- (BOOL)isSwipeSelectionEnabled;
 - (float)maximumSpacing;
 - (float)minimumSpacing;
 - (int)numberColumnsInDefaultGrid;
@@ -51,8 +54,9 @@
 - (void)setNumberColumnsInDefaultGrid:(int)arg1;
 - (void)setNumberOfColumnsInWideGrid:(int)arg1;
 - (void)setSideMargins:(float)arg1;
-- (void)setSlowBackgroundFetch:(BOOL)arg1;
+- (void)setSwipeSelectionEnabled:(BOOL)arg1;
+- (void)setUseFloatingHeaders:(BOOL)arg1;
 - (float)sideMargins;
-- (BOOL)slowBackgroundFetch;
+- (BOOL)useFloatingHeaders;
 
 @end

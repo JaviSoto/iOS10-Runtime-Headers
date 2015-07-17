@@ -3,9 +3,9 @@
  */
 
 @interface QLProgressView : UIView {
-    int _backgroundColorType;
-    UILabel *_loadingTextLabel;
-    UIActivityIndicatorView *_progressIndicator;
+    int  _backgroundColorType;
+    UILabel * _loadingTextLabel;
+    UIActivityIndicatorView * _progressIndicator;
 }
 
 @property int backgroundColorType;

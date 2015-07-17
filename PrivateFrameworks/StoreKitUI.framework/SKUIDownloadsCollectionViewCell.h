@@ -3,9 +3,9 @@
  */
 
 @interface SKUIDownloadsCollectionViewCell : UICollectionViewCell {
-    int _cellState;
-    SKUIDownloadsCellView *_cellView;
-    UIImageView *_editIndicator;
+    int  _cellState;
+    SKUIDownloadsCellView * _cellView;
+    UIImageView * _editIndicator;
 }
 
 @property (nonatomic) int cellState;

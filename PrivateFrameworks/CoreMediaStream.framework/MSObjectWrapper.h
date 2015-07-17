@@ -3,10 +3,10 @@
  */
 
 @interface MSObjectWrapper : NSObject {
-    int _errorCount;
-    <NSObject><NSCoding> *_object;
-    long long _size;
-    long long _uniqueID;
+    int  _errorCount;
+    <NSObject><NSCoding> * _object;
+    long long  _size;
+    long long  _uniqueID;
 }
 
 @property (nonatomic) int errorCount;

@@ -3,8 +3,8 @@
  */
 
 @interface NSSUsageBundleCategory : NSObject <NSSecureCoding> {
-    NSString *_name;
-    unsigned long long _size;
+    NSString * _name;
+    unsigned long long  _size;
 }
 
 @property (nonatomic, retain) NSString *name;

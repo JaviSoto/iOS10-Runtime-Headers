@@ -3,25 +3,27 @@
  */
 
 @interface AXEventPathInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
-    float _pathDensity;
-    unsigned int _pathEventMask;
-    unsigned char _pathIdentity;
-    unsigned char _pathIndex;
+    float  _orbValue;
+    float  _pathDensity;
+    unsigned int  _pathEventMask;
+    unsigned char  _pathIdentity;
+    unsigned char  _pathIndex;
     struct CGPoint { 
         float x; 
         float y; 
-    } _pathLocation;
-    float _pathMajorRadius;
-    float _pathMajorRadiusTolerance;
-    float _pathMinorRadius;
-    float _pathPressure;
-    unsigned char _pathProximity;
-    float _pathQuality;
-    float _pathTwist;
-    void *_pathWindow;
-    unsigned long _pathWindowContextID;
+    }  _pathLocation;
+    float  _pathMajorRadius;
+    float  _pathMajorRadiusTolerance;
+    float  _pathMinorRadius;
+    float  _pathPressure;
+    unsigned char  _pathProximity;
+    float  _pathQuality;
+    float  _pathTwist;
+    void * _pathWindow;
+    unsigned long  _pathWindowContextID;
 }
 
+@property (nonatomic) float orbValue;
 @property (nonatomic) float pathDensity;
 @property (nonatomic) unsigned int pathEventMask;
 @property (nonatomic) unsigned char pathIdentity;
@@ -40,10 +42,12 @@
 + (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)_tabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (float)orbValue;
 - (float)pathDensity;
 - (unsigned int)pathEventMask;
 - (unsigned char)pathIdentity;
@@ -58,6 +62,7 @@
 - (float)pathTwist;
 - (void*)pathWindow;
 - (unsigned long)pathWindowContextID;
+- (void)setOrbValue:(float)arg1;
 - (void)setPathDensity:(float)arg1;
 - (void)setPathEventMask:(unsigned int)arg1;
 - (void)setPathIdentity:(unsigned char)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface NRPBPairingModeRequest : PBRequest <NSCopying> {
-    int _pairingMode;
+    int  _pairingMode;
 }
 
 @property (nonatomic) int pairingMode;

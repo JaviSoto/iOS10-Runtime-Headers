@@ -3,11 +3,11 @@
  */
 
 @interface SiriUIAceObjectControllerCell : SiriUIClearBackgroundCell {
-    SiriUIAceObjectViewController *_aceViewController;
-    UIView *_animationView;
-    int _insertionAnimationType;
-    UIView *_replacedView;
-    int _replacementAnimationType;
+    SiriUIAceObjectViewController * _aceViewController;
+    UIView * _animationView;
+    int  _insertionAnimationType;
+    UIView * _replacedView;
+    int  _replacementAnimationType;
 }
 
 @property (nonatomic, retain) SiriUIAceObjectViewController *aceViewController;

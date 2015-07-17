@@ -3,14 +3,23 @@
  */
 
 @interface SPFeedbackRender : SPFeedback {
-    double _triggerTimestamp;
+    NSDictionary * _renderedZKW;
+    NSArray * _renderedZKWMaps;
+    double  _triggerTimestamp;
 }
 
+@property (nonatomic, retain) NSDictionary *renderedZKW;
+@property (nonatomic, retain) NSArray *renderedZKWMaps;
 @property (nonatomic) double triggerTimestamp;
 
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)parsecFeedbackFromSession:(id)arg1;
+- (id)renderedZKW;
+- (id)renderedZKWMaps;
+- (void)setRenderedZKW:(id)arg1;
+- (void)setRenderedZKWMaps:(id)arg1;
 - (void)setTriggerTimestamp:(double)arg1;
 - (double)triggerTimestamp;
 

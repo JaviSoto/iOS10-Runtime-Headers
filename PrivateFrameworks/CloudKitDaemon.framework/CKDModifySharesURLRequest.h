@@ -3,11 +3,11 @@
  */
 
 @interface CKDModifySharesURLRequest : CKDURLRequest {
-    NSMutableDictionary *_participantIDByRequestID;
-    NSMutableDictionary *_shareIDByRequestID;
-    id /* block */ _shareModifiedBlock;
-    NSArray *_sharesToDelete;
-    NSMutableDictionary *_sharesToSaveByID;
+    NSMutableDictionary * _participantIDByRequestID;
+    NSMutableDictionary * _shareIDByRequestID;
+    id /* block */  _shareModifiedBlock;
+    NSArray * _sharesToDelete;
+    NSMutableDictionary * _sharesToSaveByID;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *participantIDByRequestID;

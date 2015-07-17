@@ -3,40 +3,40 @@
  */
 
 @interface KNUIState : NSObject <NSCopying> {
-    NSMutableDictionary *mChartUIState;
-    NSSet *mCollapsedSlideNodes;
+    NSMutableDictionary * mChartUIState;
+    NSSet * mCollapsedSlideNodes;
     struct CGPoint { 
         float x; 
         float y; 
-    } mDesktopCanvasOffset;
-    float mDesktopCanvasViewScale;
+    }  mDesktopCanvasOffset;
+    float  mDesktopCanvasViewScale;
     struct CGSize { 
         float width; 
         float height; 
-    } mDesktopMainContentSize;
+    }  mDesktopMainContentSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } mDesktopMainWindowOrigin;
-    float mDesktopNavigatorViewWidth;
-    float mDesktopOutlineViewWidth;
-    float mDesktopPresenterNotesViewHeight;
-    KNMacUILayout *mDocumentUILayout;
-    BOOL mLightTableHidesSkippedSlides;
-    float mLightTableZoomScale;
+    }  mDesktopMainWindowOrigin;
+    float  mDesktopNavigatorViewWidth;
+    float  mDesktopOutlineViewWidth;
+    float  mDesktopPresenterNotesViewHeight;
+    KNMacUILayout * mDocumentUILayout;
+    BOOL  mLightTableHidesSkippedSlides;
+    float  mLightTableZoomScale;
     struct CGPoint { 
         float x; 
         float y; 
-    } mMobileCanvasOffset;
-    float mMobileCanvasViewScale;
-    NSSet *mOutlineCollapsedSlideNodes;
-    NSSet *mOutlineHasBodySlideNodes;
-    TSKSelectionPath *mSelectionPath;
-    BOOL mShowMasterGuides;
-    BOOL mShowSlideGuides;
-    BOOL mShowsComments;
-    BOOL mShowsRuler;
-    BOOL mSlideViewFitsContentInWindow;
+    }  mMobileCanvasOffset;
+    float  mMobileCanvasViewScale;
+    NSSet * mOutlineCollapsedSlideNodes;
+    NSSet * mOutlineHasBodySlideNodes;
+    TSKSelectionPath * mSelectionPath;
+    BOOL  mShowMasterGuides;
+    BOOL  mShowSlideGuides;
+    BOOL  mShowsComments;
+    BOOL  mShowsRuler;
+    BOOL  mSlideViewFitsContentInWindow;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } canvasOffset;
@@ -60,7 +60,6 @@
 @property (nonatomic, readonly) KNSlideCollectionSelection *slideTreeSelection;
 @property (nonatomic) BOOL slideViewFitsContentInWindow;
 
-- (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
 - (id)archivedUIStateInContext:(id)arg1;
 - (struct CGPoint { float x1; float x2; })canvasOffset;

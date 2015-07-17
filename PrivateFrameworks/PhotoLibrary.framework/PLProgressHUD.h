@@ -3,11 +3,11 @@
  */
 
 @interface PLProgressHUD : UIView {
-    UIActivityIndicatorView *_activityIndicatorView;
-    _UIBackdropView *_backdropView;
-    UIImageView *_checkmarkView;
-    BOOL _isShowing;
-    UILabel *_label;
+    UIActivityIndicatorView * _activityIndicatorView;
+    _UIBackdropView * _backdropView;
+    UIImageView * _checkmarkView;
+    BOOL  _isShowing;
+    UILabel * _label;
 }
 
 - (void)dealloc;

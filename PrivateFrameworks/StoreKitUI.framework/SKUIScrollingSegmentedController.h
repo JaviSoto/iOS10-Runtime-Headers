@@ -3,40 +3,40 @@
  */
 
 @interface SKUIScrollingSegmentedController : SKUIViewController <SKUIProxyScrollViewDelegate, SKUIScrollingSegmentedControllerCollectionViewDelegate, SKUIScrollingSegmentedControllerItemContextDelegate, SKUIScrollingTabAppearanceStatusObserver, SKUIScrollingTabNestedPagedScrolling, SKUIViewControllerWithFocusedViewController, UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIScrollingSegmentedControllerCollectionView *_contentCollectionView;
+    SKUIScrollingSegmentedControllerCollectionView * _contentCollectionView;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentCollectionViewItemSize;
-    <SKUIScrollingSegmentedControllerDelegate> *_delegate;
-    unsigned int _focusedViewControllerIndex;
-    SKUIScrollingSegmentedControllerNavigationBarTitleView *_navigationBarTitleView;
-    SKUIProxyScrollView *_proxyScrollView;
+    }  _contentCollectionViewItemSize;
+    <SKUIScrollingSegmentedControllerDelegate> * _delegate;
+    unsigned int  _focusedViewControllerIndex;
+    SKUIScrollingSegmentedControllerNavigationBarTitleView * _navigationBarTitleView;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _proxyScrollViewContentInsetAdjustment;
+    }  _proxyScrollViewContentInsetAdjustment;
     struct { 
         float progress; 
         BOOL isBouncingOffTheEdge; 
-    } _scrollingTabAppearanceStatus;
+    }  _scrollingTabAppearanceStatus;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _segmentedControlContentEdgeInsets;
-    float _segmentedControlHeight;
-    int _segmentedControlLayoutStyle;
-    NSMutableArray *_titleObservingViewControllers;
-    SKUIInteractiveSegmentedControl *_titlesSegmentedControl;
-    BOOL _viewBackgroundIsWhite;
-    NSMapTable *_viewControllerToItemContext;
-    NSArray *_viewControllers;
-    BOOL _wantsWhiteBackgroundBeyondLeftEdgeWhenBouncing;
-    BOOL _wantsWhiteBackgroundBeyondRightEdgeWhenBouncing;
+    }  _segmentedControlContentEdgeInsets;
+    float  _segmentedControlHeight;
+    int  _segmentedControlLayoutStyle;
+    NSMutableArray * _titleObservingViewControllers;
+    SKUIInteractiveSegmentedControl * _titlesSegmentedControl;
+    BOOL  _viewBackgroundIsWhite;
+    NSMapTable * _viewControllerToItemContext;
+    NSArray * _viewControllers;
+    BOOL  _wantsWhiteBackgroundBeyondLeftEdgeWhenBouncing;
+    BOOL  _wantsWhiteBackgroundBeyondRightEdgeWhenBouncing;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -83,7 +83,9 @@
 - (id)contentScrollView;
 - (void)contentScrollViewDidChangeForScrollingSegmentedControllerItemContext:(id)arg1;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)focusedViewController;
 - (unsigned int)focusedViewControllerIndex;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

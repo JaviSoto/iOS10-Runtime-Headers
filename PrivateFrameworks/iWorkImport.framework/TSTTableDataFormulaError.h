@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataFormulaError : TSTTableDataObject {
-    TSWPStorage *mFormulaError;
+    TSWPStorage * mFormulaError;
 }
 
 - (void)dealloc;

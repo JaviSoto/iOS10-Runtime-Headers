@@ -6,13 +6,13 @@
     struct { 
         unsigned int transactionLocationAge : 1; 
         unsigned int transactionTimestamp : 1; 
-    } _has;
-    NSString *_merchantCode;
-    NSString *_paymentNetwork;
-    NSString *_rawMerchantCode;
-    GEOLocation *_transactionLocation;
-    double _transactionLocationAge;
-    double _transactionTimestamp;
+    }  _has;
+    NSString * _merchantCode;
+    NSString * _paymentNetwork;
+    NSString * _rawMerchantCode;
+    GEOLocation * _transactionLocation;
+    double  _transactionLocationAge;
+    double  _transactionTimestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasMerchantCode;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIVerticalInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    float _columnHeight;
-    float _columnWidth;
-    NSMutableArray *_columns;
-    SKUIInfoListViewElement *_infoList;
-    int _numberOfColumns;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    float  _columnHeight;
+    float  _columnWidth;
+    NSMutableArray * _columns;
+    SKUIInfoListViewElement * _infoList;
+    int  _numberOfColumns;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,30 +3,30 @@
  */
 
 @interface MusicMediaProductSplitMainViewController : UIViewController <MusicClientContextConsuming, MusicLibraryBrowseTableViewControllerDelegate, MusicMediaDetailSplitViewController, MusicProductAdditionalMetadataViewControllerDelegate, MusicVerticalScrollingContainerViewControllerDelegate> {
-    <MusicEntityProviding> *__contextualActionsOverrideTracklistEntityProvider;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    unsigned int _editableComponents;
-    UIImage *_editedContentArtworkImage;
-    NSString *_editedContentTitle;
-    BOOL _forContentCreation;
-    UIViewController *_headerContentViewController;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    <MusicMediaDetailSplitViewControllerDelegate> *_mediaSplitViewControllerDelegate;
-    int _presentationSource;
-    MusicProductAdditionalMetadataViewController *_productAdditionalMetadataViewController;
-    UIViewController *_relatedContentViewController;
-    <MusicEntityProviding> *_tracklistEntityProvider;
-    MusicProductTracklistTableViewConfiguration *_tracklistTableViewConfiguration;
-    MusicProductTracklistTableViewController *_tracklistTableViewController;
+    <MusicEntityProviding> * __contextualActionsOverrideTracklistEntityProvider;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    unsigned int  _editableComponents;
+    UIImage * _editedContentArtworkImage;
+    NSString * _editedContentTitle;
+    BOOL  _forContentCreation;
+    UIViewController * _headerContentViewController;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    <MusicMediaDetailSplitViewControllerDelegate> * _mediaSplitViewControllerDelegate;
+    int  _presentationSource;
+    MusicProductAdditionalMetadataViewController * _productAdditionalMetadataViewController;
+    UIViewController * _relatedContentViewController;
+    <MusicEntityProviding> * _tracklistEntityProvider;
+    MusicProductTracklistTableViewConfiguration * _tracklistTableViewConfiguration;
+    MusicProductTracklistTableViewController * _tracklistTableViewController;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _verticalScrollingContainerContentInsetAdditions;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+    }  _verticalScrollingContainerContentInsetAdditions;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, readonly) MusicEntityValueContext *_containerEntityValueContext;

@@ -2,42 +2,42 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetCollection : PHCollection {
-    unsigned int _approximateCount;
-    CLLocation *_approximateLocation;
-    unsigned int _approximatePhotosCount;
-    unsigned int _approximateVideosCount;
-    int _assetCollectionSubtype;
-    int _assetCollectionType;
-    NSArray *_assets;
-    BOOL _canContributeToCloudSharedAlbum;
-    BOOL _canShowCloudComments;
-    NSDate *_endDate;
-    NSURL *_groupURL;
-    BOOL _hasUnseenContentBoolValue;
-    NSString *_importSessionID;
-    BOOL _isCameraRoll;
-    BOOL _isCloudSharedAlbum;
-    BOOL _isLibrary;
-    BOOL _isMultipleContributorCloudSharedAlbum;
-    BOOL _isOwnedCloudSharedAlbum;
-    BOOL _isPanoramasCollection;
-    BOOL _isPendingPhotoStreamAlbum;
-    BOOL _isPhotoStreamCollection;
-    BOOL _isSmartCollection;
-    BOOL _isStandInCollection;
-    BOOL _isWallpaperCollection;
-    NSArray *_localizedLocationNames;
-    NSString *_localizedTitle;
-    int _pendingItemsCount;
-    int _pendingItemsType;
-    int _plAlbumKind;
-    PHQuery *_query;
-    BOOL _shouldDeleteWhenEmpty;
-    id /* block */ _sortingComparator;
-    NSDate *_startDate;
-    NSString *_title;
-    NSString *_transientIdentifier;
+@interface PHAssetCollection : PHCollection <PUDisplayAssetCollection> {
+    unsigned int  _approximateCount;
+    CLLocation * _approximateLocation;
+    unsigned int  _approximatePhotosCount;
+    unsigned int  _approximateVideosCount;
+    int  _assetCollectionSubtype;
+    int  _assetCollectionType;
+    NSArray * _assets;
+    BOOL  _canContributeToCloudSharedAlbum;
+    BOOL  _canShowCloudComments;
+    NSDate * _endDate;
+    NSURL * _groupURL;
+    BOOL  _hasUnseenContentBoolValue;
+    NSString * _importSessionID;
+    BOOL  _isCameraRoll;
+    BOOL  _isCloudSharedAlbum;
+    BOOL  _isLibrary;
+    BOOL  _isMultipleContributorCloudSharedAlbum;
+    BOOL  _isOwnedCloudSharedAlbum;
+    BOOL  _isPanoramasCollection;
+    BOOL  _isPendingPhotoStreamAlbum;
+    BOOL  _isPhotoStreamCollection;
+    BOOL  _isSmartCollection;
+    BOOL  _isStandInCollection;
+    BOOL  _isWallpaperCollection;
+    NSArray * _localizedLocationNames;
+    NSString * _localizedTitle;
+    int  _pendingItemsCount;
+    int  _pendingItemsType;
+    int  _plAlbumKind;
+    PHQuery * _query;
+    BOOL  _shouldDeleteWhenEmpty;
+    id /* block */  _sortingComparator;
+    NSDate * _startDate;
+    NSString * _title;
+    NSString * _transientIdentifier;
 }
 
 @property (getter=_canShowCloudComments, setter=_setCanShowCloudComments:, nonatomic) BOOL _canShowCloudComments;
@@ -52,10 +52,13 @@
 @property (nonatomic, readonly) BOOL canContributeToCloudSharedAlbum;
 @property (nonatomic, readonly) BOOL canShowAvalancheStacks;
 @property (nonatomic, readonly) BOOL canShowComments;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) unsigned int estimatedAssetCount;
 @property (nonatomic, readonly) NSURL *groupURL;
 @property (nonatomic, readonly) BOOL hasUnseenContentBoolValue;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *importSessionID;
 @property (nonatomic, readonly) BOOL isCameraRoll;
 @property (nonatomic, readonly) BOOL isCloudSharedAlbum;
@@ -68,9 +71,11 @@
 @property (nonatomic, readonly) BOOL isPhotoStreamCollection;
 @property (nonatomic, readonly) BOOL isSmartCollection;
 @property (nonatomic, readonly) BOOL isStandInCollection;
+@property (nonatomic, readonly) BOOL isTrashBin;
 @property (nonatomic, readonly) BOOL isWallpaperCollection;
 @property (nonatomic, readonly) BOOL keyAssetsAtEnd;
 @property (nonatomic, readonly) NSArray *localizedLocationNames;
+@property (nonatomic, readonly) NSString *localizedTitle;
 @property (nonatomic, readonly) int pendingItemsCount;
 @property (nonatomic, readonly) int pendingItemsType;
 @property (nonatomic, readonly) int plAlbumKind;
@@ -78,6 +83,7 @@
 @property (nonatomic, readonly) BOOL shouldDeleteWhenEmpty;
 @property (nonatomic, readonly, copy) id /* block */ sortingComparator;
 @property (nonatomic, readonly) NSDate *startDate;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *transientIdentifier;
 
@@ -148,6 +154,7 @@
 - (BOOL)isPhotoStreamCollection;
 - (BOOL)isSmartCollection;
 - (BOOL)isStandInCollection;
+- (BOOL)isTrashBin;
 - (BOOL)isWallpaperCollection;
 - (BOOL)keyAssetsAtEnd;
 - (id)localizedLocationNames;

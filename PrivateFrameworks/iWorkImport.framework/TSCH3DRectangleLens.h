@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DRectangleLens : TSCH3DLens {
-    float mBottom;
-    float mLeft;
-    float mRight;
-    float mTop;
+    float  mBottom;
+    float  mLeft;
+    float  mRight;
+    float  mTop;
 }
 
 @property (nonatomic) float bottom;

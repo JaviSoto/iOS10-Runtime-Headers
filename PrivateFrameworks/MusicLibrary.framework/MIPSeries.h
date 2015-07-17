@@ -5,10 +5,10 @@
 @interface MIPSeries : PBCodable <NSCopying> {
     struct { 
         unsigned int storeId : 1; 
-    } _has;
-    NSString *_name;
-    NSString *_sortName;
-    long long _storeId;
+    }  _has;
+    NSString * _name;
+    NSString * _sortName;
+    long long  _storeId;
 }
 
 @property (nonatomic, readonly) BOOL hasName;

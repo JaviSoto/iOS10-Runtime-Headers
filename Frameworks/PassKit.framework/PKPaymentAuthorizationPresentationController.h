@@ -3,15 +3,15 @@
  */
 
 @interface PKPaymentAuthorizationPresentationController : UIPresentationController {
-    UIView *_dimmingView;
-    NSLayoutConstraint *_leftConstraint;
-    struct __CFArray { } *_observers;
+    UIView * _dimmingView;
+    NSLayoutConstraint * _leftConstraint;
+    struct __CFArray { } * _observers;
     struct CGSize { 
         float width; 
         float height; 
-    } _preferredContentSize;
-    NSLayoutConstraint *_rightConstraint;
-    NSLayoutConstraint *_topConstraint;
+    }  _preferredContentSize;
+    NSLayoutConstraint * _rightConstraint;
+    NSLayoutConstraint * _topConstraint;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;

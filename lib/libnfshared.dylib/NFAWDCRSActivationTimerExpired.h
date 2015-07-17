@@ -3,8 +3,8 @@
  */
 
 @interface NFAWDCRSActivationTimerExpired : NSObject <NFAWDEventProtocol> {
-    unsigned int _status;
-    unsigned int _version;
+    unsigned int  _status;
+    unsigned int  _version;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +17,7 @@
 - (void)setStatus:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (unsigned int)status;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
 - (unsigned int)version;
 
 @end

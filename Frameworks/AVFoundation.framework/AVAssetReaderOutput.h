@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderOutput : NSObject {
-    AVAssetReaderOutputInternal *_internal;
+    AVAssetReaderOutputInternal * _internal;
 }
 
 @property (nonatomic) BOOL alwaysCopiesSampleData;

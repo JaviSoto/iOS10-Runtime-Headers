@@ -3,14 +3,14 @@
  */
 
 @interface _NSCachedAttributedString : NSMutableAttributedString {
-    long _allocedRunsSize;
-    NSAttributeDictionary *_baseAttributes;
-    id _contents;
-    unsigned long _hashValue;
-    long _length;
-    long _numHits;
-    long _numRuns;
-    struct { id x1; } *_runs;
+    long  _allocedRunsSize;
+    NSAttributeDictionary * _baseAttributes;
+    id  _contents;
+    unsigned long  _hashValue;
+    long  _length;
+    long  _numHits;
+    long  _numRuns;
+    struct { id x1; } * _runs;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

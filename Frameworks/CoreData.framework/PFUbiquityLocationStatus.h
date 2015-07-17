@@ -3,21 +3,21 @@
  */
 
 @interface PFUbiquityLocationStatus : NSObject {
-    NSError *_error;
-    unsigned int _hash;
-    BOOL _isDeleted;
-    BOOL _isDownloaded;
-    BOOL _isDownloading;
-    BOOL _isExported;
-    BOOL _isFailed;
-    BOOL _isImported;
-    BOOL _isLive;
-    BOOL _isScheduled;
-    BOOL _isUploaded;
-    BOOL _isUploading;
-    PFUbiquityLocation *_location;
-    long long _numBytes;
-    int _numNotifications;
+    NSError * _error;
+    unsigned int  _hash;
+    BOOL  _isDeleted;
+    BOOL  _isDownloaded;
+    BOOL  _isDownloading;
+    BOOL  _isExported;
+    BOOL  _isFailed;
+    BOOL  _isImported;
+    BOOL  _isLive;
+    BOOL  _isScheduled;
+    BOOL  _isUploaded;
+    BOOL  _isUploading;
+    PFUbiquityLocation * _location;
+    long long  _numBytes;
+    int  _numNotifications;
 }
 
 @property (nonatomic, readonly) NSError *error;

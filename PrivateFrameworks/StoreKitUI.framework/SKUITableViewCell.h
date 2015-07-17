@@ -3,16 +3,16 @@
  */
 
 @interface SKUITableViewCell : UITableViewCell {
-    float _borderPaddingLeft;
-    SKUIBorderView *_bottomBorderView;
+    float  _borderPaddingLeft;
+    SKUIBorderView * _bottomBorderView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _textLabelInsets;
-    float _titlePaddingLeft;
-    SKUIBorderView *_topBorderView;
+    }  _textLabelInsets;
+    float  _titlePaddingLeft;
+    SKUIBorderView * _topBorderView;
 }
 
 @property (nonatomic) float borderPaddingLeft;

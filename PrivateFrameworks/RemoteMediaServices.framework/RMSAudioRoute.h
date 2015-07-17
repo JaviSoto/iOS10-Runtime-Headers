@@ -3,10 +3,10 @@
  */
 
 @interface RMSAudioRoute : NSObject {
-    NSString *_displayName;
-    unsigned long long _macAddress;
-    BOOL _selected;
-    BOOL _supportsVideo;
+    NSString * _displayName;
+    unsigned long long  _macAddress;
+    BOOL  _selected;
+    BOOL  _supportsVideo;
 }
 
 @property (nonatomic, retain) NSString *displayName;

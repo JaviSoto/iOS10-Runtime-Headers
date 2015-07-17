@@ -3,7 +3,7 @@
  */
 
 @interface MusicProductActionsTemplateViewElement : SKUIViewElement {
-    NSArray *_customJSActionTitles;
+    NSArray * _customJSActionTitles;
 }
 
 @property (nonatomic, readonly) NSArray *customJSActionTitles;

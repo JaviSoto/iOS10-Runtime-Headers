@@ -3,10 +3,10 @@
  */
 
 @interface SKUIStackView : UIView {
-    UIImage *_image;
-    int _stackViewStyle;
-    NSMutableArray *_stackViews;
-    UIWindow *_window;
+    UIImage * _image;
+    int  _stackViewStyle;
+    NSMutableArray * _stackViews;
+    UIWindow * _window;
 }
 
 @property (nonatomic, retain) UIImage *image;

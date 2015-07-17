@@ -3,11 +3,11 @@
  */
 
 @interface ATLockdownSocket : ATSocket {
-    struct _lockdown_connection { } *_connection;
-    void *_lockdownInfo;
-    BOOL _readBuffer;
-    NSObject<OS_dispatch_source> *_recvSource;
-    NSObject<OS_dispatch_queue> *_socketRWQueue;
+    struct _lockdown_connection { } * _connection;
+    void * _lockdownInfo;
+    BOOL  _readBuffer;
+    NSObject<OS_dispatch_source> * _recvSource;
+    NSObject<OS_dispatch_queue> * _socketRWQueue;
 }
 
 @property (nonatomic, readonly) BOOL isWifi;

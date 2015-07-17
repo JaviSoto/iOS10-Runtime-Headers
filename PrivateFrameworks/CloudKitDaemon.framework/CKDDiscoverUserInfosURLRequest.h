@@ -3,12 +3,12 @@
  */
 
 @interface CKDDiscoverUserInfosURLRequest : CKDURLRequest {
-    NSMutableDictionary *_emailAliasToEmailAddress;
-    NSArray *_emailsToDiscover;
-    NSMutableDictionary *_hashedEmailByRequestID;
-    id /* block */ _progressBlock;
-    NSArray *_userRecordIDsToDiscover;
-    BOOL _wantsProtectionInfo;
+    NSMutableDictionary * _emailAliasToEmailAddress;
+    NSArray * _emailsToDiscover;
+    NSMutableDictionary * _hashedEmailByRequestID;
+    id /* block */  _progressBlock;
+    NSArray * _userRecordIDsToDiscover;
+    BOOL  _wantsProtectionInfo;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *emailAliasToEmailAddress;

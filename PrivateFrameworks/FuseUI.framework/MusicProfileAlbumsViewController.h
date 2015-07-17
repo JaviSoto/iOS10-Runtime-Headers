@@ -3,20 +3,12 @@
  */
 
 @interface MusicProfileAlbumsViewController : MusicProductTracklistTableViewController {
-    MusicLibraryAlbumsViewConfiguration *_libraryAlbumsViewConfiguration;
-    UIView *_pinnedHeaderViewTopPaddingMaskingView;
-    MPAVController *_player;
+    MusicLibraryAlbumsViewConfiguration * _libraryAlbumsViewConfiguration;
+    MPAVController * _player;
 }
 
 - (void).cxx_destruct;
-- (void)_layoutPinnedHeaderViewTopPaddingMaskingView;
-- (void)dealloc;
-- (void)handleContentDescriptorDidInvalidate;
 - (int)handleSelectionOfSectionHeaderForSectionEntityValueContext:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)tableViewDidLayoutSubviews:(id)arg1;
-- (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
 
 @end

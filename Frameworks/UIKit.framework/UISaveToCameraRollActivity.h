@@ -3,8 +3,8 @@
  */
 
 @interface UISaveToCameraRollActivity : UIActivity {
-    int _imageCount;
-    int _videoCount;
+    int  _imageCount;
+    int  _videoCount;
 }
 
 @property (nonatomic) int imageCount;

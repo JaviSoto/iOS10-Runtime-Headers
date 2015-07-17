@@ -3,15 +3,15 @@
  */
 
 @interface EMWorksheetMapper : EMSheetMapper {
-    EDWorksheet *edWorksheet;
-    double *mColumnGrid;
-    ECColumnWidthConvertor *mColumnWidthConvertor;
-    int mHeight;
-    int mMaxPopulatedColumn;
-    int mMaxPopulatedRow;
-    double *mRowGrid;
-    CMStyle *mStyle;
-    int mWidth;
+    EDWorksheet * edWorksheet;
+    double * mColumnGrid;
+    ECColumnWidthConvertor * mColumnWidthConvertor;
+    int  mHeight;
+    int  mMaxPopulatedColumn;
+    int  mMaxPopulatedRow;
+    double * mRowGrid;
+    CMStyle * mStyle;
+    int  mWidth;
 }
 
 - (void)_initWithState:(id)arg1;
@@ -36,6 +36,7 @@
 - (int)preprocessHeightWithState:(id)arg1;
 - (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
 - (int)preprocessWidthWithState:(id)arg1;
+- (void)readHyperlinksWithState:(id)arg1;
 - (double*)rowGrid;
 - (void)setRowGrid;
 - (int)width;

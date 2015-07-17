@@ -3,17 +3,17 @@
  */
 
 @interface SUTableHeaderView : UIView {
-    UIColor *_bottomBorderColor;
+    UIColor * _bottomBorderColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    int _index;
-    int _style;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    }  _edgeInsets;
+    int  _index;
+    int  _style;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIColor *bottomBorderColor;

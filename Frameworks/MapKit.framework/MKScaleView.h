@@ -3,35 +3,35 @@
  */
 
 @interface MKScaleView : UIView {
-    UIColor *_borderColorRegular;
-    UIColor *_borderColorSatellite;
-    UIColor *_darkSegmentColorRegular;
-    UIColor *_darkSegmentColorSatellite;
-    UIView *_displayedOutline;
-    double _distanceInMeters;
-    NSString *_feetAbbreviation;
-    NSNumberFormatter *_floatNumberFormatter;
-    NSMutableDictionary *_formattedNumberCache;
-    int _grQuality;
-    NSString *_kilometersAbbreviation;
-    int _layoutCounter;
-    UIColor *_lightSegmentColorRegular;
-    UIColor *_lightSegmentColorSatellite;
-    double _magicNumbers;
-    NSString *_metersAbbreviation;
-    NSString *_milesAbbreviation;
-    int _oldNumberOfSegments;
-    UIView *_outlineViewA;
-    UIView *_outlineViewB;
-    double _resultSegmentLength;
-    double _resultSegmentLengthInMeters;
-    float _segmentLengthInPixels;
-    NSMutableArray *_segments;
-    _MKScaleUnitsView *_unitsView;
-    BOOL _useLightText;
-    BOOL _useMetric;
-    BOOL _useYardsForShortDistances;
-    NSString *_yardAbbreviation;
+    UIColor * _borderColorRegular;
+    UIColor * _borderColorSatellite;
+    UIColor * _darkSegmentColorRegular;
+    UIColor * _darkSegmentColorSatellite;
+    UIView * _displayedOutline;
+    double  _distanceInMeters;
+    NSString * _feetAbbreviation;
+    NSNumberFormatter * _floatNumberFormatter;
+    NSMutableDictionary * _formattedNumberCache;
+    int  _grQuality;
+    NSString * _kilometersAbbreviation;
+    int  _layoutCounter;
+    UIColor * _lightSegmentColorRegular;
+    UIColor * _lightSegmentColorSatellite;
+    double  _magicNumbers;
+    NSString * _metersAbbreviation;
+    NSString * _milesAbbreviation;
+    int  _oldNumberOfSegments;
+    UIView * _outlineViewA;
+    UIView * _outlineViewB;
+    double  _resultSegmentLength;
+    double  _resultSegmentLengthInMeters;
+    float  _segmentLengthInPixels;
+    NSMutableArray * _segments;
+    _MKScaleUnitsView * _unitsView;
+    BOOL  _useLightText;
+    BOOL  _useMetric;
+    BOOL  _useYardsForShortDistances;
+    NSString * _yardAbbreviation;
 }
 
 @property (nonatomic) double distanceInMeters;

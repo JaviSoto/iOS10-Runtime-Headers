@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentAuthorizationItemCell : UITableViewCell {
-    UIImageView *_alertView;
-    UIImageView *_arrowView;
-    NSMutableArray *_constraints;
-    NSString *_label;
-    UILabel *_labelView;
-    PKPaymentAuthorizationLayout *_layout;
-    UIView *_separatorView;
-    NSString *_value;
-    NSMutableArray *_valueViews;
+@interface PKPaymentAuthorizationItemCell : PKTableViewCell {
+    UIImageView * _alertView;
+    UIImageView * _arrowView;
+    NSMutableArray * _constraints;
+    NSString * _label;
+    UILabel * _labelView;
+    PKPaymentAuthorizationLayout * _layout;
+    UIView * _separatorView;
+    NSString * _value;
+    NSMutableArray * _valueViews;
 }
 
 @property (nonatomic, copy) NSString *label;

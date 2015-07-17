@@ -3,15 +3,15 @@
  */
 
 @interface MSPSyncManager : NSObject <SYStoreDelegate> {
-    NSMutableArray *_bookmarks;
-    NSMutableDictionary *_bookmarksMap;
-    NSMutableArray *_history;
-    NSMutableDictionary *_historyMap;
-    BOOL _inUpdate;
-    NSMutableArray *_pins;
-    NSMutableDictionary *_pinsMap;
-    NSObject<OS_dispatch_queue> *_saveQueue;
-    SYStore *_store;
+    NSMutableArray * _bookmarks;
+    NSMutableDictionary * _bookmarksMap;
+    NSMutableArray * _history;
+    NSMutableDictionary * _historyMap;
+    BOOL  _inUpdate;
+    NSMutableArray * _pins;
+    NSMutableDictionary * _pinsMap;
+    NSObject<OS_dispatch_queue> * _saveQueue;
+    SYStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;

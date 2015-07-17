@@ -3,9 +3,9 @@
  */
 
 @interface UITableViewRow : NSObject <NSCoding> {
-    UITableViewCell *_cell;
-    float _height;
-    int _indentationLevel;
+    UITableViewCell * _cell;
+    float  _height;
+    int  _indentationLevel;
 }
 
 @property (nonatomic, retain) UITableViewCell *cell;
@@ -13,8 +13,8 @@
 
 + (id)row;
 
+- (void).cxx_destruct;
 - (id)cell;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (float)height;
 - (int)indentationLevel;

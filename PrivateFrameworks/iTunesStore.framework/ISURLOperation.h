@@ -3,21 +3,21 @@
  */
 
 @interface ISURLOperation : ISOperation {
-    NSURLRequest *_activeURLRequest;
-    SSAuthenticationContext *_authenticationContext;
-    NSURLConnection *_connection;
-    NSMutableData *_dataBuffer;
-    ISDataProvider *_dataProvider;
-    BOOL _loadsHTTPFailures;
-    int _networkRetryCount;
-    NSArray *_passThroughErrors;
-    ISURLRequestPerformance *_performanceMetrics;
-    NSCountedSet *_redirectURLs;
-    SSMutableURLRequestProperties *_requestProperties;
-    NSURLResponse *_response;
-    BOOL _shouldSetCookies;
-    BOOL _uploadProgressRequested;
-    BOOL _usesPrivateCookieStore;
+    NSURLRequest * _activeURLRequest;
+    SSAuthenticationContext * _authenticationContext;
+    NSURLConnection * _connection;
+    NSMutableData * _dataBuffer;
+    ISDataProvider * _dataProvider;
+    BOOL  _loadsHTTPFailures;
+    int  _networkRetryCount;
+    NSArray * _passThroughErrors;
+    ISURLRequestPerformance * _performanceMetrics;
+    NSCountedSet * _redirectURLs;
+    SSMutableURLRequestProperties * _requestProperties;
+    NSURLResponse * _response;
+    BOOL  _shouldSetCookies;
+    BOOL  _uploadProgressRequested;
+    BOOL  _usesPrivateCookieStore;
 }
 
 @property (getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) BOOL _loadsHTTPFailures;

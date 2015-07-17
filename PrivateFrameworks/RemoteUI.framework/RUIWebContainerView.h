@@ -3,10 +3,10 @@
  */
 
 @interface RUIWebContainerView : UIView <UIWebViewDelegate> {
-    <RUIWebContainerViewDelegate> *_delegate;
-    BOOL _highlighted;
-    BOOL _reallyHighlighted;
-    UIWebView *_webView;
+    <RUIWebContainerViewDelegate> * _delegate;
+    BOOL  _highlighted;
+    BOOL  _reallyHighlighted;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

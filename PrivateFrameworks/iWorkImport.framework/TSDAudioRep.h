@@ -3,13 +3,13 @@
  */
 
 @interface TSDAudioRep : TSDMediaRep {
-    <TSDAudioHUDController> *mAudioHUDController;
-    CALayer *mAudioImageLayer;
-    float mDynamicVolume;
-    BOOL mIsChangingDynamicVolume;
-    CALayer *mPlayPauseButtonLayer;
-    TSKAVPlayerController *mPlayerController;
-    CALayer *mSpinnerLayer;
+    <TSDAudioHUDController> * mAudioHUDController;
+    CALayer * mAudioImageLayer;
+    float  mDynamicVolume;
+    BOOL  mIsChangingDynamicVolume;
+    CALayer * mPlayPauseButtonLayer;
+    TSKAVPlayerController * mPlayerController;
+    CALayer * mSpinnerLayer;
 }
 
 @property (nonatomic, readonly) TSDMovieInfo *movieInfo;

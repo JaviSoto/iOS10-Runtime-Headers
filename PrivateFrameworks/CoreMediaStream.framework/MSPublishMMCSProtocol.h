@@ -3,13 +3,13 @@
  */
 
 @interface MSPublishMMCSProtocol : MSMMCSProtocol <MSPublishStorageProtocol> {
-    char **_authTokens;
-    <MSPublishStorageProtocolDelegate> *_delegate;
-    unsigned int *_itemFlags;
-    NSMutableDictionary *_itemIDToAssetDict;
-    unsigned long long *_itemIDs;
-    int _itemsInFlight;
-    const char **_signatures;
+    char ** _authTokens;
+    <MSPublishStorageProtocolDelegate> * _delegate;
+    unsigned int * _itemFlags;
+    NSMutableDictionary * _itemIDToAssetDict;
+    unsigned long long * _itemIDs;
+    int  _itemsInFlight;
+    const char ** _signatures;
 }
 
 @property (readonly, copy) NSString *debugDescription;

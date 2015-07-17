@@ -3,9 +3,9 @@
  */
 
 @interface MBMessage : NSObject {
-    NSMutableDictionary *_messageInfo;
-    NSMutableDictionary *_replyInfo;
-    NSObject<OS_xpc_object> *_xpcObject;
+    NSMutableDictionary * _messageInfo;
+    NSMutableDictionary * _replyInfo;
+    NSObject<OS_xpc_object> * _xpcObject;
 }
 
 @property (nonatomic, readonly) NSArray *arguments;

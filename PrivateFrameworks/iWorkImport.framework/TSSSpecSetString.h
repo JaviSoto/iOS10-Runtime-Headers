@@ -3,8 +3,8 @@
  */
 
 @interface TSSSpecSetString : TSSSpecString {
-    BOOL _unset;
-    NSString *_value;
+    BOOL  _unset;
+    NSString * _value;
 }
 
 - (id)apply:(id)arg1;

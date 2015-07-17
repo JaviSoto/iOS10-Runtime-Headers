@@ -3,12 +3,12 @@
  */
 
 @interface PLSlideshowPlugin : NSObject {
-    struct NSObject { Class x1; } *_album;
-    NSArray *_albumAssets;
-    <PLSlideshowPluginDelegate> *_delegate;
-    double _secondsPerSlide;
-    BOOL _shouldRepeat;
-    BOOL _shuffleAlbum;
+    struct NSObject { Class x1; } * _album;
+    NSArray * _albumAssets;
+    <PLSlideshowPluginDelegate> * _delegate;
+    double  _secondsPerSlide;
+    BOOL  _shouldRepeat;
+    BOOL  _shuffleAlbum;
 }
 
 @property (nonatomic, retain) NSObject<PLAlbumProtocol> *album;

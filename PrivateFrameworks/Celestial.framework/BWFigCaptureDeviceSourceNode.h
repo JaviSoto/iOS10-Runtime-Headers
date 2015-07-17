@@ -3,59 +3,59 @@
  */
 
 @interface BWFigCaptureDeviceSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    float _aeMaxGain;
-    BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
-    BWFigVideoCaptureDevice *_captureDevice;
-    BOOL _chromaNoiseReductionEnabled;
-    BWNodeOutput *_detectedFacesOutput;
-    BOOL _detectedFacesOutputEnabled;
-    BOOL _lowLightBoostSupportedForFormat;
-    float _maxFrameRate;
-    int _maxIntegrationTimeOverride;
-    float _minFrameRate;
+    float  _aeMaxGain;
+    BOOL  _automaticallyEnablesLowLightBoostWhenAvailable;
+    BWFigVideoCaptureDevice * _captureDevice;
+    BOOL  _chromaNoiseReductionEnabled;
+    BWNodeOutput * _detectedFacesOutput;
+    BOOL  _detectedFacesOutputEnabled;
+    BOOL  _lowLightBoostSupportedForFormat;
+    float  _maxFrameRate;
+    int  _maxIntegrationTimeOverride;
+    float  _minFrameRate;
     struct { 
         int width; 
         int height; 
-    } _minOutputDimensions;
-    int _minOutputDimensionsSensorFormatIndex;
-    int _motionAttachmentsSource;
-    int _offlineConfigurationSeed;
+    }  _minOutputDimensions;
+    int  _minOutputDimensionsSensorFormatIndex;
+    int  _motionAttachmentsSource;
+    int  _offlineConfigurationSeed;
     struct { 
         int width; 
         int height; 
-    } _outputDimensions;
-    BOOL _requiresOverscan;
-    int _resolvedOfflineConfigurationSeed;
-    int _resolvedSensorFormatIndex;
+    }  _outputDimensions;
+    BOOL  _requiresOverscan;
+    int  _resolvedOfflineConfigurationSeed;
+    int  _resolvedSensorFormatIndex;
     struct { 
         int width; 
         int height; 
-    } _sensorDimensions;
-    int _sensorFormatIndex;
+    }  _sensorDimensions;
+    int  _sensorFormatIndex;
     struct { 
         int width; 
         int height; 
-    } _sensorOverscanDimensions;
-    unsigned long _sensorPixelFormat;
-    BWNodeOutput *_stillImageOutput;
-    id /* block */ _stillImageSBufHandler;
-    NSObject<OS_dispatch_queue> *_streamEventDispatchQueue;
-    NSObject<OS_dispatch_group> *_streamEventNotificationGroup;
-    BOOL _streamFormatChangeInFlight;
+    }  _sensorOverscanDimensions;
+    unsigned long  _sensorPixelFormat;
+    BWNodeOutput * _stillImageOutput;
+    id /* block */  _stillImageSBufHandler;
+    NSObject<OS_dispatch_queue> * _streamEventDispatchQueue;
+    NSObject<OS_dispatch_group> * _streamEventNotificationGroup;
+    BOOL  _streamFormatChangeInFlight;
     struct { 
         int width; 
         int height; 
-    } _streamOutputDimensions;
+    }  _streamOutputDimensions;
     struct { 
         int width; 
         int height; 
-    } _streamOutputDimensionsAfterFormatChange;
-    int _streamSensorFormatIndex;
-    unsigned long _streamSensorPixelFormat;
-    unsigned long _streamSensorPixelFormatAfterFormatChange;
-    BOOL _temporalNoiseReductionEnabled;
-    BWNodeOutput *_videoCaptureOutput;
-    id /* block */ _videoSBufHandler;
+    }  _streamOutputDimensionsAfterFormatChange;
+    int  _streamSensorFormatIndex;
+    unsigned long  _streamSensorPixelFormat;
+    unsigned long  _streamSensorPixelFormatAfterFormatChange;
+    BOOL  _temporalNoiseReductionEnabled;
+    BWNodeOutput * _videoCaptureOutput;
+    id /* block */  _videoSBufHandler;
 }
 
 @property (readonly) BWFigVideoCaptureDevice *captureDevice;

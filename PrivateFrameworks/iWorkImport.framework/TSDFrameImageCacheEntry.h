@@ -3,14 +3,14 @@
  */
 
 @interface TSDFrameImageCacheEntry : NSObject {
-    float mAssetScale;
-    TSDFrameSpec *mFrameSpec;
-    struct CGImage {} *mImages;
+    float  mAssetScale;
+    TSDFrameSpec * mFrameSpec;
+    struct CGImage {} * mImages;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
-    float mViewScale;
+    }  mSize;
+    float  mViewScale;
 }
 
 @property (nonatomic) float assetScale;

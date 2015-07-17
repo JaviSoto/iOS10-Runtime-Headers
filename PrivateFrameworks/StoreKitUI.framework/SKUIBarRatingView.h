@@ -3,9 +3,9 @@
  */
 
 @interface SKUIBarRatingView : UIView {
-    int _barRatingStyle;
-    int _numberOfBars;
-    float _ratingValue;
+    int  _barRatingStyle;
+    int  _numberOfBars;
+    float  _ratingValue;
 }
 
 @property (nonatomic) int barRatingStyle;

@@ -3,8 +3,8 @@
  */
 
 @interface _VKNamedIconKey : NSObject {
-    NSString *_name;
-    int _size;
+    NSString * _name;
+    int  _size;
 }
 
 - (void)dealloc;

@@ -3,16 +3,16 @@
  */
 
 @interface CISmartToneFilter : CIFilter {
-    CIContext *_cubeContext;
-    CIImage *_cubeImage;
-    NSNumber *inputBlack;
-    NSNumber *inputBrightness;
-    NSNumber *inputContrast;
-    NSNumber *inputExposure;
-    NSNumber *inputHighlights;
-    CIImage *inputImage;
-    NSNumber *inputShadows;
-    NSNumber *inputUseCube;
+    CIContext * _cubeContext;
+    CIImage * _cubeImage;
+    NSNumber * inputBlack;
+    NSNumber * inputBrightness;
+    NSNumber * inputContrast;
+    NSNumber * inputExposure;
+    NSNumber * inputHighlights;
+    CIImage * inputImage;
+    NSNumber * inputShadows;
+    NSNumber * inputUseCube;
 }
 
 @property (nonatomic, retain) NSNumber *inputBlack;

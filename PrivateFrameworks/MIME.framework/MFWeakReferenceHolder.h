@@ -3,7 +3,7 @@
  */
 
 @interface MFWeakReferenceHolder : NSObject {
-    <NSObject> *_reference;
+    <NSObject> * _reference;
 }
 
 + (id)weakReferenceWithObject:(id)arg1;

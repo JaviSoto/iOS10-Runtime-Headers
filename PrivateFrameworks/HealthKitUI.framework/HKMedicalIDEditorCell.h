@@ -3,12 +3,12 @@
  */
 
 @interface HKMedicalIDEditorCell : UITableViewCell <UITextFieldDelegate> {
-    <HKMedicalIDEditorCellEditDelegate> *_editDelegate;
-    UIView *_horizontalSeparatorView;
-    HKCaretOptionalTextField *_inputTextField;
-    UILabel *_labelLabel;
-    float _minimumLabelWidth;
-    UIView *_verticalSeparatorView;
+    <HKMedicalIDEditorCellEditDelegate> * _editDelegate;
+    UIView * _horizontalSeparatorView;
+    HKCaretOptionalTextField * _inputTextField;
+    UILabel * _labelLabel;
+    float  _minimumLabelWidth;
+    UIView * _verticalSeparatorView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

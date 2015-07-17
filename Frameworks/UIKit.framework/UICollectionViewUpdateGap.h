@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _beginningRect;
-    NSMutableArray *_deleteItems;
+    }  _beginningRect;
+    NSMutableArray * _deleteItems;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,10 +23,10 @@
             float width; 
             float height; 
         } size; 
-    } _endingRect;
-    UICollectionViewUpdateItem *_firstUpdateItem;
-    NSMutableArray *_insertItems;
-    UICollectionViewUpdateItem *_lastUpdateItem;
+    }  _endingRect;
+    UICollectionViewUpdateItem * _firstUpdateItem;
+    NSMutableArray * _insertItems;
+    UICollectionViewUpdateItem * _lastUpdateItem;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginningRect;
@@ -42,9 +42,9 @@
 
 + (id)gapWithUpdateItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addUpdateItem:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginningRect;
-- (void)dealloc;
 - (id)deleteItems;
 - (id)description;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endingRect;

@@ -3,7 +3,7 @@
  */
 
 @interface _HKCorrelationFilter : _HKFilter {
-    unsigned int _operatorType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;

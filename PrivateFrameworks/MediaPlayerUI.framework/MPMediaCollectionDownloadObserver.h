@@ -3,8 +3,8 @@
  */
 
 @interface MPMediaCollectionDownloadObserver : MPUMediaDownloadObserver {
-    BOOL _callingProgressHandler;
-    NSMutableArray *_downloadObservers;
+    BOOL  _callingProgressHandler;
+    NSMutableArray * _downloadObservers;
 }
 
 - (void).cxx_destruct;

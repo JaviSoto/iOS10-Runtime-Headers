@@ -3,20 +3,20 @@
  */
 
 @interface NSXPCDecoder : NSXPCCoder {
-    int _allowedClassesIndex;
-    /* Warning: unhandled array encoding: '[128@]' */ id _allowedClassesList;
-    unsigned int _collectionPointer;
-    struct { /* ? */ } *_collections;
-    NSXPCConnection *_connection;
-    void **_decoder;
-    unsigned long long _genericIndex;
-    NSXPCInterface *_interface;
-    NSObject<OS_xpc_object> *_oolObjects;
-    SEL _replyToSelector;
+    int  _allowedClassesIndex;
+    /* Warning: unhandled array encoding: '[128@]' */ id  _allowedClassesList;
+    unsigned int  _collectionPointer;
+    struct { /* ? */ } * _collections;
+    NSXPCConnection * _connection;
+    void ** _decoder;
+    unsigned long long  _genericIndex;
+    NSXPCInterface * _interface;
+    NSObject<OS_xpc_object> * _oolObjects;
+    SEL  _replyToSelector;
     struct { 
         unsigned int offset; 
         int type; 
-    } _rootObject;
+    }  _rootObject;
 }
 
 @property NSXPCConnection *_connection;

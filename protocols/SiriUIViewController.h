@@ -15,7 +15,7 @@
 
 - (float)desiredHeight;
 - (float)desiredHeightForWidth:(float)arg1;
+- (void)endEditingAndCorrect:(BOOL)arg1;
 - (NSString *)navigationTitle;
-- (void)transcriptViewControllerTappedOutsideEditingView;
 
 @end

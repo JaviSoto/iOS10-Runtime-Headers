@@ -3,8 +3,8 @@
  */
 
 @interface EDLinksCollection : NSObject {
-    NSMutableArray *mLinks;
-    NSMutableArray *mReferences;
+    NSMutableArray * mLinks;
+    NSMutableArray * mReferences;
 }
 
 - (unsigned int)addLink:(id)arg1;
@@ -14,6 +14,7 @@
 - (unsigned int)addReference:(id)arg1;
 - (bool)convertLinkReferenceIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int*)arg2 lastSheetIndex:(unsigned int*)arg3;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)indexOfFirstLinkWithType:(int)arg1;
 - (unsigned int)indexOfReference:(id)arg1;
 - (id)init;

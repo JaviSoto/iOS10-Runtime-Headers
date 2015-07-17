@@ -3,15 +3,15 @@
  */
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
-    NSArray *_albumObjectIDs;
-    NSSet *_availableAssetIDs;
-    NSObject<PhotoLibraryPTPDelegate> *_delegate;
-    NSString *_firstDCIMFolderServiced;
-    int _libraryStatus;
-    PLPhotoLibrary *_photoLibrary;
-    NSMutableSet *_ptpDeletedAssets;
-    NSObject<OS_dispatch_queue> *availableAssetsQueue;
-    NSFileManager *fileManager;
+    NSArray * _albumObjectIDs;
+    NSSet * _availableAssetIDs;
+    NSObject<PhotoLibraryPTPDelegate> * _delegate;
+    NSString * _firstDCIMFolderServiced;
+    int  _libraryStatus;
+    PLPhotoLibrary * _photoLibrary;
+    NSMutableSet * _ptpDeletedAssets;
+    NSObject<OS_dispatch_queue> * availableAssetsQueue;
+    NSFileManager * fileManager;
 }
 
 @property (nonatomic, readonly, retain) NSArray *albumObjectIDs;

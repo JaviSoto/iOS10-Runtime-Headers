@@ -3,8 +3,8 @@
  */
 
 @interface GEOAttributionApp : PBCodable <NSCopying> {
-    NSString *_appBundleIdentifier;
-    NSMutableArray *_handledSchemes;
+    NSString * _appBundleIdentifier;
+    NSMutableArray * _handledSchemes;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;

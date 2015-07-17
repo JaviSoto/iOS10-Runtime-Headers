@@ -3,8 +3,8 @@
  */
 
 @interface SSSQLiteComparisonPredicate : SSSQLitePropertyPredicate <NSCopying> {
-    int _comparisonType;
-    id _value;
+    int  _comparisonType;
+    id  _value;
 }
 
 @property (nonatomic, readonly) int comparisonType;

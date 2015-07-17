@@ -3,26 +3,26 @@
  */
 
 @interface SKUIHorizontalListView : SKUIViewReuseView <SKUIMenuPopoverDelegate, SKUIViewElementView> {
-    NSMutableArray *_artworkRequestPassthroughViews;
+    NSMutableArray * _artworkRequestPassthroughViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _bigHitInsets;
+    }  _bigHitInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    float _elementSpacing;
-    UIControl *_focusedMenuButton;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    NSArray *_lines;
-    SKUIListViewElement *_listElement;
-    SKUIMenuPopoverController *_popoverController;
-    BOOL _useBigHitTarget;
+    }  _contentInset;
+    float  _elementSpacing;
+    UIControl * _focusedMenuButton;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    NSArray * _lines;
+    SKUIListViewElement * _listElement;
+    SKUIMenuPopoverController * _popoverController;
+    BOOL  _useBigHitTarget;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,19 +3,19 @@
  */
 
 @interface SKUIImageGridView : UIView <SKUIViewElementView> {
-    int _columnCount;
+    int  _columnCount;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSArray *_imageViews;
-    SKUIImageGridViewReuseView *_reuseView;
+    }  _contentInset;
+    NSArray * _imageViews;
+    SKUIImageGridViewReuseView * _reuseView;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic) int columnCount;

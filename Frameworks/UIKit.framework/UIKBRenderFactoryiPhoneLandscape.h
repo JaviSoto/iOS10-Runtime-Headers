@@ -14,6 +14,7 @@
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (float)emojiPopupDividerKeyOffset;
+- (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (BOOL)isTallPopup;
 - (id)leftArrowKeyImageName;

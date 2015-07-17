@@ -3,9 +3,9 @@
  */
 
 @interface _UILegibilityCachedShadow : NSObject {
-    _UILegibilitySettings *_settings;
-    UIImage *_shadow;
-    float _strength;
+    _UILegibilitySettings * _settings;
+    UIImage * _shadow;
+    float  _strength;
 }
 
 @property (nonatomic, retain) _UILegibilitySettings *settings;

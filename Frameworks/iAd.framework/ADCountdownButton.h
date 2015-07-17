@@ -3,13 +3,13 @@
  */
 
 @interface ADCountdownButton : UIControl {
-    UIImageView *_backgroundView;
-    BOOL _dimmed;
-    UIImage *_dimmedIconImage;
-    UIImage *_iconImage;
-    UIImageView *_iconView;
-    CAShapeLayer *_outlineProgressLayer;
-    UIView *_outlineView;
+    UIImageView * _backgroundView;
+    BOOL  _dimmed;
+    UIImage * _dimmedIconImage;
+    UIImage * _iconImage;
+    UIImageView * _iconView;
+    CAShapeLayer * _outlineProgressLayer;
+    UIView * _outlineView;
 }
 
 @property (nonatomic, retain) UIImageView *backgroundView;

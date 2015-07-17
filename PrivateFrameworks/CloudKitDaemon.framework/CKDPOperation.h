@@ -7,11 +7,11 @@
         unsigned int type : 1; 
         unsigned int last : 1; 
         unsigned int synchronousMode : 1; 
-    } _has;
-    BOOL _last;
-    NSString *_operationUUID;
-    BOOL _synchronousMode;
-    int _type;
+    }  _has;
+    BOOL  _last;
+    NSString * _operationUUID;
+    BOOL  _synchronousMode;
+    int  _type;
 }
 
 @property (nonatomic) BOOL hasLast;

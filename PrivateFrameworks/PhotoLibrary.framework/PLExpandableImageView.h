@@ -6,12 +6,12 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _anchorPoint;
+    }  _anchorPoint;
     struct CGSize { 
         float width; 
         float height; 
-    } _centerOffset;
-    float _currentAngle;
+    }  _centerOffset;
+    float  _currentAngle;
     struct { 
         unsigned int isRotating : 1; 
         unsigned int didTrack : 1; 
@@ -20,10 +20,10 @@
         unsigned int alwaysDoLayout : 1; 
         unsigned int didComputeCenterOffset : 1; 
         unsigned int imageIsFullScreen : 1; 
-    } _exImageFlags;
-    int _imageID;
-    float _imageRotationAngle;
-    PLImageView *_imageView;
+    }  _exImageFlags;
+    int  _imageID;
+    float  _imageRotationAngle;
+    PLImageView * _imageView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -33,8 +33,8 @@
             float width; 
             float height; 
         } size; 
-    } _initialExpandingFrame;
-    float _originalAngle;
+    }  _initialExpandingFrame;
+    float  _originalAngle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -44,16 +44,16 @@
             float width; 
             float height; 
         } size; 
-    } _originalBounds;
+    }  _originalBounds;
     struct CGSize { 
         float width; 
         float height; 
-    } _originalSize;
-    float _originalWidth;
-    PLManagedAsset *_photo;
-    float _pinchAngle;
-    float _pinchScale;
-    float _pinchWidth;
+    }  _originalSize;
+    float  _originalWidth;
+    PLManagedAsset * _photo;
+    float  _pinchAngle;
+    float  _pinchScale;
+    float  _pinchWidth;
 }
 
 @property (getter=isBorderAndAccessoriesVisible, nonatomic) BOOL borderAndAccessoriesVisible;

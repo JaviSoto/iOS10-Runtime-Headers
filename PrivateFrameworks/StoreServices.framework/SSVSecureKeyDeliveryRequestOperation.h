@@ -3,12 +3,12 @@
  */
 
 @interface SSVSecureKeyDeliveryRequestOperation : NSOperation {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSURL *_certificateURL;
-    BOOL _iTunesStoreRequest;
-    NSURL *_keyServerURL;
-    AVAssetResourceLoadingRequest *_resourceLoadingRequest;
-    id /* block */ _responseBlock;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSURL * _certificateURL;
+    BOOL  _iTunesStoreRequest;
+    NSURL * _keyServerURL;
+    AVAssetResourceLoadingRequest * _resourceLoadingRequest;
+    id /* block */  _responseBlock;
 }
 
 @property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;

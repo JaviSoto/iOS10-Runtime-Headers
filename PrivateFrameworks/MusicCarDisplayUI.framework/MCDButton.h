@@ -3,9 +3,9 @@
  */
 
 @interface MCDButton : UIButton {
-    CALayer *_focusColorLayer;
-    NSString *_labelTemplateString;
-    BOOL _showBezelInTouch;
+    CALayer * _focusColorLayer;
+    NSString * _labelTemplateString;
+    BOOL  _showBezelInTouch;
 }
 
 @property (nonatomic, copy) NSString *labelTemplateString;

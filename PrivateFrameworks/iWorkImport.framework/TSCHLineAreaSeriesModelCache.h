@@ -3,24 +3,24 @@
  */
 
 @interface TSCHLineAreaSeriesModelCache : NSObject {
-    float mDataPointSize;
-    TSCHChartAxis *mGroupAxis;
-    unsigned int mLabelPosition;
-    int mLineType;
-    float mOpacity;
-    TSWPParagraphStyle *mParagraphStyle;
-    TSCHChartSeries *mSeries;
-    id mSeriesFill;
-    unsigned int mSeriesIndex;
-    TSDShadow *mSeriesShadow;
-    TSDStroke *mSeriesStroke;
-    BOOL mShowLabelsInFront;
-    BOOL mShowValueLabels;
-    id mSymbolFill;
-    TSDStroke *mSymbolStroke;
-    int mSymbolType;
-    struct CGPath { } *mUnitSymbolPath;
-    TSCHChartValueAxis *mValueAxis;
+    float  mDataPointSize;
+    TSCHChartAxis * mGroupAxis;
+    unsigned int  mLabelPosition;
+    int  mLineType;
+    float  mOpacity;
+    TSWPParagraphStyle * mParagraphStyle;
+    TSCHChartSeries * mSeries;
+    id  mSeriesFill;
+    unsigned int  mSeriesIndex;
+    TSDShadow * mSeriesShadow;
+    TSDStroke * mSeriesStroke;
+    BOOL  mShowLabelsInFront;
+    BOOL  mShowValueLabels;
+    id  mSymbolFill;
+    TSDStroke * mSymbolStroke;
+    int  mSymbolType;
+    struct CGPath { } * mUnitSymbolPath;
+    TSCHChartValueAxis * mValueAxis;
 }
 
 @property (readonly) float dataPointSize;

@@ -3,7 +3,7 @@
  */
 
 @interface SBNumberPadWithDelegate : TPNumberPad {
-    <SBNumberPadDelegate> *_delegate;
+    <SBNumberPadDelegate> * _delegate;
 }
 
 @property (nonatomic) <SBNumberPadDelegate> *delegate;

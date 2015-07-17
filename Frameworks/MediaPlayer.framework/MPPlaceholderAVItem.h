@@ -3,13 +3,13 @@
  */
 
 @interface MPPlaceholderAVItem : MPAVItem <RURadioItemIdentifier> {
-    NSString *_album;
-    NSString *_artist;
-    double _durationFromExternalMetadata;
-    BOOL _explicitTrack;
-    BOOL _likeStateEnabled;
-    NSString *_mainTitle;
-    BOOL _supportsLikedState;
+    NSString * _album;
+    NSString * _artist;
+    double  _durationFromExternalMetadata;
+    BOOL  _explicitTrack;
+    BOOL  _likeStateEnabled;
+    NSString * _mainTitle;
+    BOOL  _supportsLikedState;
 }
 
 @property (nonatomic, retain) NSString *album;

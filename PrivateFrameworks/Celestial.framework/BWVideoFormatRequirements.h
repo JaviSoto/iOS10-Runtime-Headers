@@ -3,15 +3,15 @@
  */
 
 @interface BWVideoFormatRequirements : BWFormatRequirements {
-    unsigned long _bytesPerRowAlignment;
-    unsigned long _height;
-    unsigned long _heightAlignment;
-    unsigned long _planeAlignment;
-    BOOL _prewireBuffers;
-    NSArray *_supportedCacheModes;
-    NSArray *_supportedPixelFormats;
-    unsigned long _width;
-    unsigned long _widthAlignment;
+    unsigned long  _bytesPerRowAlignment;
+    unsigned long  _height;
+    unsigned long  _heightAlignment;
+    unsigned long  _planeAlignment;
+    BOOL  _prewireBuffers;
+    NSArray * _supportedCacheModes;
+    NSArray * _supportedPixelFormats;
+    unsigned long  _width;
+    unsigned long  _widthAlignment;
 }
 
 @property (nonatomic) unsigned long bytesPerRowAlignment;

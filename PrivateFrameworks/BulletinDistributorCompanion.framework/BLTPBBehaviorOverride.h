@@ -3,13 +3,13 @@
  */
 
 @interface BLTPBBehaviorOverride : PBCodable <NSCopying> {
-    unsigned long long _behaviorOverrideMode;
-    unsigned long long _behaviorOverrideType;
-    NSMutableArray *_effectiveIntervals;
+    unsigned long long  _behaviorOverrideMode;
+    unsigned long long  _behaviorOverrideType;
+    NSMutableArray * _effectiveIntervals;
     struct { 
         unsigned int behaviorOverrideMode : 1; 
         unsigned int behaviorOverrideType : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned long long behaviorOverrideMode;

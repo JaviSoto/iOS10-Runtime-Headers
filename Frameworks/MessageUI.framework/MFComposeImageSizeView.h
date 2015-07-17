@@ -3,7 +3,7 @@
  */
 
 @interface MFComposeImageSizeView : MFComposeHeaderView {
-    UISegmentedControl *_segmentedControl;
+    UISegmentedControl * _segmentedControl;
 }
 
 - (unsigned long)_segmentIndexForScale:(unsigned int)arg1;

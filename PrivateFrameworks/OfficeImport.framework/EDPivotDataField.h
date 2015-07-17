@@ -3,12 +3,12 @@
  */
 
 @interface EDPivotDataField : NSObject {
-    long mBaseField;
-    unsigned long mBaseItem;
-    unsigned long mFieldId;
-    int mFormat;
-    NSString *mName;
-    unsigned long mNumFmtId;
+    long  mBaseField;
+    unsigned long  mBaseItem;
+    unsigned long  mFieldId;
+    int  mFormat;
+    NSString * mName;
+    unsigned long  mNumFmtId;
 }
 
 + (id)pivotDataField;
@@ -16,6 +16,7 @@
 - (long)baseField;
 - (unsigned long)baseItem;
 - (void)dealloc;
+- (id)description;
 - (unsigned long)fieldId;
 - (id)init;
 - (id)name;

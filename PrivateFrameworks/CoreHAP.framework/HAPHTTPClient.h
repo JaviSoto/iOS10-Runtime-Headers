@@ -3,15 +3,15 @@
  */
 
 @interface HAPHTTPClient : NSObject {
-    <HAPHTTPClientDebugDelegate> *_debugDelegate;
-    NSObject<OS_dispatch_queue> *_debugDelegateQueue;
-    <HAPHTTPClientDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSString *_dnsName;
-    struct HTTPClientPrivate { } *_httpClient;
-    BOOL _invalidateRequested;
-    unsigned int _port;
-    NSObject<OS_dispatch_queue> *_queue;
+    <HAPHTTPClientDebugDelegate> * _debugDelegate;
+    NSObject<OS_dispatch_queue> * _debugDelegateQueue;
+    <HAPHTTPClientDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSString * _dnsName;
+    struct HTTPClientPrivate { } * _httpClient;
+    BOOL  _invalidateRequested;
+    unsigned int  _port;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) <HAPHTTPClientDebugDelegate> *debugDelegate;

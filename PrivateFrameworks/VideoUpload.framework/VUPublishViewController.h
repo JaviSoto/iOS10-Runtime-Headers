@@ -3,24 +3,24 @@
  */
 
 @interface VUPublishViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    long long _HDSize;
-    long long _SDSize;
-    NSArray *_accessCells;
-    unsigned int _accessRow;
-    UIAlertView *_accountAlert;
-    UITableViewCell *_accountCell;
-    UIAlertView *_authenticationAlert;
-    UIAlertView *_authenticationFailedAlert;
-    VUCategoryCell *_categoryCell;
-    <VUPublishViewControllerDelegate> *_delegate;
-    PLTableViewEditableCell *_descriptionCell;
-    float _descriptionHeight;
-    BOOL _enableHDSection;
-    VUFooterContainerView *_footerContainer;
-    UIImageView *_headerImageView;
-    PLTableViewEditableCell *_optionCells;
-    UIPickerView *_picker;
-    UIView *_pickerContainer;
+    long long  _HDSize;
+    long long  _SDSize;
+    NSArray * _accessCells;
+    unsigned int  _accessRow;
+    UIAlertView * _accountAlert;
+    UITableViewCell * _accountCell;
+    UIAlertView * _authenticationAlert;
+    UIAlertView * _authenticationFailedAlert;
+    VUCategoryCell * _categoryCell;
+    <VUPublishViewControllerDelegate> * _delegate;
+    PLTableViewEditableCell * _descriptionCell;
+    float  _descriptionHeight;
+    BOOL  _enableHDSection;
+    VUFooterContainerView * _footerContainer;
+    UIImageView * _headerImageView;
+    PLTableViewEditableCell * _optionCells;
+    UIPickerView * _picker;
+    UIView * _pickerContainer;
     struct { 
         int title; 
         int hd; 
@@ -28,14 +28,14 @@
         int category; 
         int access; 
         int account; 
-    } _sectionIndices;
-    int _selectedOption;
-    BOOL _showHDSection;
-    BOOL _showingPicker;
-    UITableView *_tableView;
-    NSMutableArray *_tagCells;
-    PLTableViewEditableCell *_titleCell;
-    BOOL _viewShrunk;
+    }  _sectionIndices;
+    int  _selectedOption;
+    BOOL  _showHDSection;
+    BOOL  _showingPicker;
+    UITableView * _tableView;
+    NSMutableArray * _tagCells;
+    PLTableViewEditableCell * _titleCell;
+    BOOL  _viewShrunk;
 }
 
 @property (nonatomic) long long HDSize;

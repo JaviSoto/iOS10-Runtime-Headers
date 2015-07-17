@@ -3,10 +3,10 @@
  */
 
 @interface BLTSectionInfoListItem : NSObject {
-    NSString *_displayName;
-    NSDictionary *_overrides;
-    BBSectionInfo *_sectionInfo;
-    NSString *_universalSectionID;
+    NSString * _displayName;
+    NSDictionary * _overrides;
+    BBSectionInfo * _sectionInfo;
+    NSString * _universalSectionID;
 }
 
 @property (nonatomic, copy) NSString *displayName;

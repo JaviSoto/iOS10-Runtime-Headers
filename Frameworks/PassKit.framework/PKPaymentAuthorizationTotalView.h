@@ -3,14 +3,14 @@
  */
 
 @interface PKPaymentAuthorizationTotalView : UIView {
-    NSLayoutConstraint *_labelBaselineConstraint;
-    UILabel *_labelView;
-    PKPaymentAuthorizationLayout *_layout;
-    NSLayoutConstraint *_leftMarginConstraint;
-    NSLayoutConstraint *_rightMarginConstraint;
-    UIView *_separatorView;
-    int _style;
-    UILabel *_valueView;
+    NSLayoutConstraint * _labelBaselineConstraint;
+    UILabel * _labelView;
+    PKPaymentAuthorizationLayout * _layout;
+    NSLayoutConstraint * _leftMarginConstraint;
+    NSLayoutConstraint * _rightMarginConstraint;
+    UIView * _separatorView;
+    int  _style;
+    UILabel * _valueView;
 }
 
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;

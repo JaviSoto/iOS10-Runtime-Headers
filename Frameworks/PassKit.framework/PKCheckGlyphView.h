@@ -3,7 +3,7 @@
  */
 
 @interface PKCheckGlyphView : PKMicaView {
-    BOOL _covered;
+    BOOL  _covered;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -21,11 +21,11 @@
         float m42; 
         float m43; 
         float m44; 
-    } _coveredTransform;
-    CAGradientLayer *_maskLayer;
-    UIColor *_primaryColor;
-    BOOL _revealed;
-    CAShapeLayer *_shapeLayer;
+    }  _coveredTransform;
+    CAGradientLayer * _maskLayer;
+    UIColor * _primaryColor;
+    BOOL  _revealed;
+    CAShapeLayer * _shapeLayer;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -43,7 +43,7 @@
         float m42; 
         float m43; 
         float m44; 
-    } _uncoveredTransform;
+    }  _uncoveredTransform;
 }
 
 @property (nonatomic, copy) UIColor *primaryColor;

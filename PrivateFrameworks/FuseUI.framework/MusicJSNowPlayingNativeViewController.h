@@ -3,7 +3,7 @@
  */
 
 @interface MusicJSNowPlayingNativeViewController : MusicJSNativeViewController <MusicJSNowPlayingViewController> {
-    <MusicJSNowPlayingNativeViewControllerDelegate> *_delegate;
+    <MusicJSNowPlayingNativeViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <MusicJSNowPlayingNativeViewControllerDelegate> *delegate;

@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardCandidateInlineFloatingView : UIView <UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
-    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    TIKeyboardCandidateResultSet *_candidateSet;
-    UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    TIKeyboardCandidateResultSet * _candidateSet;
+    UIKeyboardCandidateGridCollectionViewController * _collectionViewController;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,10 +15,10 @@
             float width; 
             float height; 
         } size; 
-    } _inlineRect;
-    NSString *_inlineText;
-    float _maxX;
-    int _position;
+    }  _inlineRect;
+    NSString * _inlineText;
+    float  _maxX;
+    int  _position;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,10 +28,10 @@
             float width; 
             float height; 
         } size; 
-    } _previousCollapsedFrame;
-    BOOL _reducedWidth;
-    BOOL _showHiddenCandidatesOnly;
-    UIKeyboardCandidateSortControl *_sortSelectionBar;
+    }  _previousCollapsedFrame;
+    BOOL  _reducedWidth;
+    BOOL  _showHiddenCandidatesOnly;
+    UIKeyboardCandidateSortControl * _sortSelectionBar;
 }
 
 @property (nonatomic) <UIKeyboardCandidateListDelegate> *candidateListDelegate;

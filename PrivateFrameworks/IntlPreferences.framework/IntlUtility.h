@@ -3,18 +3,23 @@
  */
 
 @interface IntlUtility : NSObject {
-    NSMutableArray *mBidiLanguagesArray;
-    NSMutableArray *mBidiTestedLanguagesArray;
-    void *mDisplayLanguageCachePtr;
-    int mDisplayLanguageCacheUsed;
-    NSDictionary *mLanguageList;
-    NSDictionary *mLocalizedLanguageList;
+    NSMutableArray * mBidiLanguagesArray;
+    NSMutableArray * mBidiTestedLanguagesArray;
+    void * mDisplayLanguageCachePtr;
+    int  mDisplayLanguageCacheUsed;
+    NSDictionary * mLanguageList;
+    NSDictionary * mLocalizedLanguageList;
 }
 
 + (int)UDisplayContextForIUDisplayNameContext:(unsigned int)arg1;
 + (id)alternateContinentOfRegion:(id)arg1;
++ (id)baseLanguageIdentifierFromIdentifier:(id)arg1;
++ (id)baseSystemLanguages;
 + (id)capitalizeFirstWordOfName:(id)arg1 accordingToLanguage:(id)arg2;
 + (id)defaultCalendarForLocaleID:(id)arg1;
++ (id)defaultNumberingSystemForLocaleID:(id)arg1;
++ (id)displayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2;
++ (id)displayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2 short:(BOOL)arg3;
 + (void)enumeratePreferredCalendarsForLocaleID:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)filterLanguageList:(id)arg1 forRegion:(id)arg2 fromLanguages:(id)arg3;
 + (id)importAppleLanguages;
@@ -24,19 +29,23 @@
 + (BOOL)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
 + (BOOL)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
 + (id)languageCharSetList;
++ (id)languageIdentifierFromIdentifier:(id)arg1 withRegion:(id)arg2;
 + (id)localeForCalendarID:(id)arg1;
 + (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)lunarCalendarsForLocaleID:(id)arg1;
 + (id)nativeNameForLanguage:(id)arg1 context:(unsigned int)arg2;
 + (id)normalizedLanguageIDFromString:(id)arg1;
++ (id)numberingSystemsForLocaleID:(id)arg1;
 + (id)parentLocaleIdentifierForIdentifier:(id)arg1;
 + (BOOL)performMigration;
 + (id)preferredLanguagesForRegion:(id)arg1;
 + (id)preferredLanguagesForRegionWithoutFiltering:(id)arg1;
++ (id)preferredLanguagesFromLanguages:(id)arg1 byAddingFallbacksForRegion:(id)arg2;
 + (id)preferredLunarCalendarForLocaleID:(id)arg1;
 + (id)restrictedCountryCodes;
 + (void)setYearlessYear:(id)arg1 forCalendar:(id)arg2;
 + (id)sharedIntlUtility;
++ (id)shortDisplayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2;
 + (id)stdLanguageIDs;
 + (id)stdLanguageIDsAndNativeNames;
 + (id)supportedCalendars;

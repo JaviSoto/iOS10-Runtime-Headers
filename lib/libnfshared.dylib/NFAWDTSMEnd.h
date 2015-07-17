@@ -3,14 +3,14 @@
  */
 
 @interface NFAWDTSMEnd : NSObject <NFAWDEventProtocol> {
-    AWDNFCTSMEndEvent *_metric;
-    NSData *aid;
-    BOOL authEnabled;
-    NSData *discretionaryData;
-    unsigned int lifeCycleState;
-    BOOL mfdEnabled;
-    BOOL restrictedModeExit;
-    unsigned int status;
+    AWDNFCTSMEndEvent * _metric;
+    NSData * aid;
+    BOOL  authEnabled;
+    NSData * discretionaryData;
+    unsigned int  lifeCycleState;
+    BOOL  mfdEnabled;
+    BOOL  restrictedModeExit;
+    unsigned int  status;
 }
 
 @property (nonatomic, retain) NSData *aid;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSData *discretionaryData;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int lifeCycleState;
-@property AWDNFCTSMEndEvent *metric;
+@property (nonatomic, retain) AWDNFCTSMEndEvent *metric;
 @property (nonatomic) BOOL mfdEnabled;
 @property (nonatomic) BOOL restrictedModeExit;
 @property (nonatomic) unsigned int status;
@@ -46,6 +46,6 @@
 - (void)setRestrictedModeExit:(BOOL)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (unsigned int)status;
-- (void)updateTSMTransactionStateWithUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface SSPreorder : NSObject <SSXPCCoding> {
-    NSNumber *_accountID;
-    NSString *_artistName;
-    SSItemImageCollection *_imageCollection;
-    unsigned long long _itemID;
-    NSString *_itemKind;
-    long long _pid;
-    unsigned long long _preorderID;
-    double _releaseDate;
-    NSString *_releaseDateString;
-    NSString *_title;
+    NSNumber * _accountID;
+    NSString * _artistName;
+    SSItemImageCollection * _imageCollection;
+    unsigned long long  _itemID;
+    NSString * _itemKind;
+    long long  _pid;
+    unsigned long long  _preorderID;
+    double  _releaseDate;
+    NSString * _releaseDateString;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *artistName;

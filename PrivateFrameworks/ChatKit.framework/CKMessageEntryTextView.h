@@ -3,10 +3,10 @@
  */
 
 @interface CKMessageEntryTextView : UITextView {
-    NSString *_autocorrectionContext;
-    UILabel *_placeholderLabel;
-    NSString *_responseContext;
-    BOOL _showingDictationPlaceholder;
+    NSString * _autocorrectionContext;
+    UILabel * _placeholderLabel;
+    NSString * _responseContext;
+    BOOL  _showingDictationPlaceholder;
 }
 
 @property (nonatomic, copy) NSString *autocorrectionContext;

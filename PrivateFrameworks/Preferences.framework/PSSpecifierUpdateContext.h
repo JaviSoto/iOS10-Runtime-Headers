@@ -3,9 +3,9 @@
  */
 
 @interface PSSpecifierUpdateContext : NSObject <NSCopying> {
-    BOOL _animated;
-    BOOL _updateModelOnly;
-    NSDictionary *_userInfo;
+    BOOL  _animated;
+    BOOL  _updateModelOnly;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic) BOOL animated;
@@ -15,9 +15,9 @@
 + (id)context;
 + (id)contextWithUserInfo:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)animated;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)setAnimated:(BOOL)arg1;
 - (void)setUpdateModelOnly:(BOOL)arg1;

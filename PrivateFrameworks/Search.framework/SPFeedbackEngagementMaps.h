@@ -3,7 +3,7 @@
  */
 
 @interface SPFeedbackEngagementMaps : SPFeedbackEngagement {
-    int _feedbackType;
+    int  _feedbackType;
 }
 
 @property (nonatomic) int feedbackType;

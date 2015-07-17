@@ -24,7 +24,7 @@
             int allocated_size_; 
             int total_size_; 
         } external_object_uuid_map_entries_; 
-    } _message;
+    }  _message;
 }
 
 - (id).cxx_construct;

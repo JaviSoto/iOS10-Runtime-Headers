@@ -3,14 +3,14 @@
  */
 
 @interface NSURLConnectionInternal : NSObject <NSURLAuthenticationChallengeSender, NSURLConnectionRequired> {
-    NSURLConnection *_connection;
-    BOOL _connectionActive;
-    NSDictionary *_connectionProperties;
-    NSURLRequest *_currentRequest;
-    id _delegate;
-    NSOperationQueue *_delegateQueue;
-    NSURLRequest *_originalRequest;
-    NSURL *_url;
+    NSURLConnection * _connection;
+    BOOL  _connectionActive;
+    NSDictionary * _connectionProperties;
+    NSURLRequest * _currentRequest;
+    id  _delegate;
+    NSOperationQueue * _delegateQueue;
+    NSURLRequest * _originalRequest;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +20,7 @@
 
 - (id)_connectionProperties;
 - (void)_invalidate;
+- (void)_reportTimingDataToAWD;
 - (void)_setDelegateQueue:(id)arg1;
 - (id)_timingData;
 - (void)_withActiveConnectionAndDelegate:(id /* block */)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MusicStreamingItemDescriptor : NSObject {
-    NSArray *_assetDescriptors;
-    long long _storeID;
+    NSArray * _assetDescriptors;
+    long long  _storeID;
 }
 
 @property (nonatomic, readonly, copy) NSArray *assetDescriptors;

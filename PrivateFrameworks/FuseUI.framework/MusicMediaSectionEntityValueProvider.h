@@ -3,8 +3,8 @@
  */
 
 @interface MusicMediaSectionEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    <MusicEntityValueProviding> *_mediaEntityValueProvider;
-    NSString *_sectionTitle;
+    <MusicEntityValueProviding> * _mediaEntityValueProvider;
+    NSString * _sectionTitle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,27 +3,27 @@
  */
 
 @interface PLMomentListClustering : NSObject {
-    NSMutableDictionary *__cachedCollectionTagByMomentID;
-    NSMapTable *__cachedLocationsByMoment;
-    NSMutableDictionary *__clustersByYearAndMonth;
-    NSDateFormatter *__debugDateFormatter;
-    unsigned int __defaultMaxFailuresForExpansion;
-    unsigned int __defaultNumberOfAssetsRequiredForSeeding;
-    double __maximumDistanceBetweenAccumulatedMoments;
-    double __maximumDistanceThresholdBetweenMoments;
-    double __maximumDistanceThresholdFromPeak;
-    double __maximumTimeThreshold;
-    double __maximumTimeThresholdBetweenMomentsWithLocation;
-    double __maximumTimeThresholdBetweenMomentsWithoutLocation;
-    double __maximumTimeThresholdFromPeakMatch;
-    double __maximumTimeThresholdFromPeakWithoutLocation;
-    double __megamomentAccumulationMaximumTimeThreshold;
-    unsigned int __minimumNumberOfAssetsToAvoidMegamomentAccumulation;
-    unsigned int __minimumNumberOfAssetsToAvoidYearAccumulation;
-    NSMutableSet *__visitedMoments;
-    BOOL _allowsCollectionAccumulation;
-    BOOL _allowsCollectionInfluencing;
-    BOOL _allowsYearAccumulation;
+    NSMutableDictionary * __cachedCollectionTagByMomentID;
+    NSMapTable * __cachedLocationsByMoment;
+    NSMutableDictionary * __clustersByYearAndMonth;
+    NSDateFormatter * __debugDateFormatter;
+    unsigned int  __defaultMaxFailuresForExpansion;
+    unsigned int  __defaultNumberOfAssetsRequiredForSeeding;
+    double  __maximumDistanceBetweenAccumulatedMoments;
+    double  __maximumDistanceThresholdBetweenMoments;
+    double  __maximumDistanceThresholdFromPeak;
+    double  __maximumTimeThreshold;
+    double  __maximumTimeThresholdBetweenMomentsWithLocation;
+    double  __maximumTimeThresholdBetweenMomentsWithoutLocation;
+    double  __maximumTimeThresholdFromPeakMatch;
+    double  __maximumTimeThresholdFromPeakWithoutLocation;
+    double  __megamomentAccumulationMaximumTimeThreshold;
+    unsigned int  __minimumNumberOfAssetsToAvoidMegamomentAccumulation;
+    unsigned int  __minimumNumberOfAssetsToAvoidYearAccumulation;
+    NSMutableSet * __visitedMoments;
+    BOOL  _allowsCollectionAccumulation;
+    BOOL  _allowsCollectionInfluencing;
+    BOOL  _allowsYearAccumulation;
 }
 
 @property (setter=_setCachedCollectionTagByMomentID:, nonatomic, retain) NSMutableDictionary *_cachedCollectionTagByMomentID;
@@ -77,6 +77,7 @@
 - (void)_setCachedLocationsByMoment:(id)arg1;
 - (BOOL)_shouldMegaMomentList:(id)arg1 includeMoment:(id)arg2 withPeakMoment:(id)arg3 recentMoment:(id)arg4 recentMomentWithLocation:(id)arg5 forwards:(BOOL)arg6 haveRejectedMomentsForDistance:(BOOL)arg7;
 - (BOOL)_updateMegaMomentList:(id)arg1 withRejectedMoments:(id)arg2;
+- (void)_updateMomentList:(id)arg1 withStartDate:(id)arg2 endDate:(id)arg3;
 - (void)_verifyMomentsAreSorted:(id)arg1;
 - (id)_visitedMoments;
 - (BOOL)allowsCollectionAccumulation;

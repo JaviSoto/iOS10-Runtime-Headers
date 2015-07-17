@@ -3,10 +3,10 @@
  */
 
 @interface SSItemOffer : NSObject <NSCopying> {
-    SSItem *_item;
-    NSMutableDictionary *_offerDictionary;
-    NSString *_offerIdentifier;
-    NSArray *_supportedDevices;
+    SSItem * _item;
+    NSMutableDictionary * _offerDictionary;
+    NSString * _offerIdentifier;
+    NSArray * _supportedDevices;
 }
 
 @property (getter=_offerItem, setter=_setOfferItem:, nonatomic) SSItem *_offerItem;

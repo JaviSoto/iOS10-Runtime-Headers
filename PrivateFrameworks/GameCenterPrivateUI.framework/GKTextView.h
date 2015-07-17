@@ -3,9 +3,9 @@
  */
 
 @interface GKTextView : UITextView {
-    GKTextStyle *__baseStyle;
-    GKTextStyle *_appliedStyle;
-    GKLabel *_placeholderLabel;
+    GKTextStyle * __baseStyle;
+    GKTextStyle * _appliedStyle;
+    GKLabel * _placeholderLabel;
 }
 
 @property (nonatomic, retain) GKTextStyle *_baseStyle;

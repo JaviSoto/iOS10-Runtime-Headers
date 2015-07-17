@@ -52,16 +52,16 @@
                 float t; 
             } ; 
         } sampledAlignmentPadding; 
-    } mInfo;
-    TSCH3DLabelResource *mLabel;
-    TSCH3DCamera *mLabelCamera;
-    TSCH3DResource *mLabelQuad;
-    TSCH3DDataBufferResource *mMesh;
-    TSCH3DLabelsMeshRenderer *mMeshRenderer;
-    TSCH3DSceneRenderPipeline *mPipeline;
-    TSCH3DLabelResources *mResources;
-    TSCH3DLabelsRendererTransforms *mTransforms;
-    BOOL mUseLabelBounds;
+    }  mInfo;
+    TSCH3DLabelResource * mLabel;
+    TSCH3DCamera * mLabelCamera;
+    TSCH3DResource * mLabelQuad;
+    TSCH3DDataBufferResource * mMesh;
+    TSCH3DLabelsMeshRenderer * mMeshRenderer;
+    TSCH3DSceneRenderPipeline * mPipeline;
+    TSCH3DLabelResources * mResources;
+    TSCH3DLabelsRendererTransforms * mTransforms;
+    BOOL  mUseLabelBounds;
 }
 
 @property (nonatomic, retain) TSCH3DLabelResource *label;

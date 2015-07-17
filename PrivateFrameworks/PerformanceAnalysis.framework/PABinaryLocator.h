@@ -3,9 +3,9 @@
  */
 
 @interface PABinaryLocator : NSObject {
-    BOOL _dirty;
-    BOOL _enabled;
-    NSMutableDictionary *_mappings;
+    BOOL  _dirty;
+    BOOL  _enabled;
+    NSMutableDictionary * _mappings;
 }
 
 @property BOOL enabled;

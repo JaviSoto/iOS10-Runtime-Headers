@@ -3,8 +3,8 @@
  */
 
 @interface SKUITomatoRatingView : UIView <SKUIViewElementView> {
-    UIImageView *_imageView;
-    SKUIAttributedStringView *_labelView;
+    UIImageView * _imageView;
+    SKUIAttributedStringView * _labelView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

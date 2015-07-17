@@ -3,16 +3,16 @@
  */
 
 @interface _MPAudioAndSubtitlesController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    MPAVItem *_avItem;
-    _UIBackdropView *_backdropView;
-    id /* block */ _completionHandler;
-    BOOL _hasAudio;
-    BOOL _hasSubtitles;
-    MPAlternateTrack *_newAudioTrack;
-    MPAlternateTrack *_newSubtitleTrack;
-    MPAlternateTrack *_originalAudioTrack;
-    MPAlternateTrack *_originalSubtitleTrack;
-    UITableView *_tableView;
+    MPAVItem * _avItem;
+    _UIBackdropView * _backdropView;
+    id /* block */  _completionHandler;
+    BOOL  _hasAudio;
+    BOOL  _hasSubtitles;
+    MPAlternateTrack * _newAudioTrack;
+    MPAlternateTrack * _newSubtitleTrack;
+    MPAlternateTrack * _originalAudioTrack;
+    MPAlternateTrack * _originalSubtitleTrack;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,16 +3,12 @@
  */
 
 @interface HSCloudClient : NSObject <HSCloudAvailability> {
-    BOOL _active;
-    HSConnectionConfiguration *_configuration;
-    unsigned long long _daemonConfiguration;
-    NSMutableSet *_knownArtworkIDs;
-    NSObject<OS_dispatch_queue> *_knownArtworkIDsQueue;
-    NSXPCConnection *_nsxpcConnection;
-    NSMutableSet *_pendingArtworkRequests;
-    NSObject<OS_dispatch_queue> *_pendingArtworkRequestsQueue;
-    long long _preferredVideoQuality;
-    id /* block */ _updateInProgressChangedHandler;
+    BOOL  _active;
+    HSConnectionConfiguration * _configuration;
+    unsigned long long  _daemonConfiguration;
+    NSXPCConnection * _nsxpcConnection;
+    long long  _preferredVideoQuality;
+    id /* block */  _updateInProgressChangedHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -61,8 +57,6 @@
 - (BOOL)isCellularDataRestricted;
 - (void)isExpiredWithCompletionHandler:(id /* block */)arg1;
 - (void)jaliscoAppsImageDataForStoreID:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)loadArtworkDataForPurchaseHistoryIDs:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)loadArtworkDataForSagaID:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadArtworkInfoForContainerSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadArtworkInfoForPurchaseHistoryIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadArtworkInfoForSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;

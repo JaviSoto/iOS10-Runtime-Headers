@@ -3,18 +3,18 @@
  */
 
 @interface MCDBrowsableContentModel : NSObject {
-    NSObject<OS_dispatch_queue> *_backgroundQueue;
-    NSString *_bundleID;
-    NSCache *_fetchedItems;
-    NSMutableDictionary *_identifiersToIndexPaths;
-    NSObject<OS_dispatch_queue> *_imageProcessQueue;
+    NSObject<OS_dispatch_queue> * _backgroundQueue;
+    NSString * _bundleID;
+    NSCache * _fetchedItems;
+    NSMutableDictionary * _identifiersToIndexPaths;
+    NSObject<OS_dispatch_queue> * _imageProcessQueue;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    NSMapTable *_indexPathsToViewControllers;
-    NSCache *_resizedImages;
-    NSObject<OS_dispatch_queue> *_serialAccessQueue;
+    }  _imageSize;
+    NSMapTable * _indexPathsToViewControllers;
+    NSCache * _resizedImages;
+    NSObject<OS_dispatch_queue> * _serialAccessQueue;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleID;

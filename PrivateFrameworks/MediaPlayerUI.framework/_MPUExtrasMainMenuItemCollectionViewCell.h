@@ -3,7 +3,7 @@
  */
 
 @interface _MPUExtrasMainMenuItemCollectionViewCell : UICollectionViewCell {
-    UILabel *_textLabel;
+    UILabel * _textLabel;
 }
 
 @property (nonatomic, readonly) UILabel *textLabel;

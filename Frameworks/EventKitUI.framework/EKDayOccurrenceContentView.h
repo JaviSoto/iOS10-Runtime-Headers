@@ -3,21 +3,21 @@
  */
 
 @interface EKDayOccurrenceContentView : UIView {
-    BOOL _allDay;
-    BOOL _allDayDrawingStyle;
-    NSAttributedString *_attributedContentString;
-    BOOL _birthday;
-    float _cachedLineHeight;
-    UIFont *_cachedPrimaryFont;
-    float _cachedPrimaryFontBottomOutset;
-    float _cachedPrimaryFontTopOutset;
-    UIFont *_cachedSecondaryFont;
-    float _cachedSecondaryLineHeight;
-    BOOL _cancelled;
-    UIColor *_color;
-    BOOL _declined;
-    BOOL _facebook;
-    unsigned int _fontCompressionDegree;
+    BOOL  _allDay;
+    BOOL  _allDayDrawingStyle;
+    NSAttributedString * _attributedContentString;
+    BOOL  _birthday;
+    float  _cachedLineHeight;
+    UIFont * _cachedPrimaryFont;
+    float  _cachedPrimaryFontBottomOutset;
+    float  _cachedPrimaryFontTopOutset;
+    UIFont * _cachedSecondaryFont;
+    float  _cachedSecondaryLineHeight;
+    BOOL  _cancelled;
+    UIColor * _color;
+    BOOL  _declined;
+    BOOL  _facebook;
+    unsigned int  _fontCompressionDegree;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,27 +27,27 @@
             float width; 
             float height; 
         } size; 
-    } _fullTextRect;
-    BOOL _hideText;
-    NSString *_location;
-    float _minimumCachedLineHeight;
-    BOOL _needsReply;
-    int _occurrenceBackgroundStyle;
-    BOOL _reduceProcessingForAnimation;
-    UIColor *_secondaryTextColor;
-    BOOL _selected;
-    UIColor *_statusTextColor;
-    BOOL _tentative;
-    UIColor *_textBackgroundColor;
-    float _textEndY;
-    NSString *_time;
-    UIColor *_timeTextColor;
-    NSString *_title;
+    }  _fullTextRect;
+    BOOL  _hideText;
+    NSString * _location;
+    float  _minimumCachedLineHeight;
+    BOOL  _needsReply;
+    int  _occurrenceBackgroundStyle;
+    BOOL  _reduceProcessingForAnimation;
+    UIColor * _secondaryTextColor;
+    BOOL  _selected;
+    UIColor * _statusTextColor;
+    BOOL  _tentative;
+    UIColor * _textBackgroundColor;
+    float  _textEndY;
+    NSString * _time;
+    UIColor * _timeTextColor;
+    NSString * _title;
     struct CGPoint { 
         float x; 
         float y; 
-    } _titleEndPoint;
-    NSIndexSet *_titleMetrics;
+    }  _titleEndPoint;
+    NSIndexSet * _titleMetrics;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -57,9 +57,9 @@
             float width; 
             float height; 
         } size; 
-    } _titleRect;
-    UIColor *_titleTextColor;
-    BOOL _usesSmallText;
+    }  _titleRect;
+    UIColor * _titleTextColor;
+    BOOL  _usesSmallText;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;

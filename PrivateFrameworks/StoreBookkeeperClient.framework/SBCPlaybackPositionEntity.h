@@ -3,13 +3,13 @@
  */
 
 @interface SBCPlaybackPositionEntity : NSObject <NSCopying, NSSecureCoding> {
-    double _bookmarkTime;
-    double _bookmarkTimestamp;
-    long long _foreignDatabaseEntityID;
-    BOOL _hasBeenPlayed;
-    SBCPlaybackPositionDomain *_playbackPositionDomain;
-    NSString *_ubiquitousIdentifier;
-    unsigned int _userPlayCount;
+    double  _bookmarkTime;
+    double  _bookmarkTimestamp;
+    long long  _foreignDatabaseEntityID;
+    BOOL  _hasBeenPlayed;
+    SBCPlaybackPositionDomain * _playbackPositionDomain;
+    NSString * _ubiquitousIdentifier;
+    unsigned int  _userPlayCount;
 }
 
 @property (nonatomic) double bookmarkTime;

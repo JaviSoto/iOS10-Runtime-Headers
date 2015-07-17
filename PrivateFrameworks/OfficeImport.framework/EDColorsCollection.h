@@ -3,7 +3,7 @@
  */
 
 @interface EDColorsCollection : EDCollection <OADColorPalette> {
-    unsigned int mDefaultColorsCount;
+    unsigned int  mDefaultColorsCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +23,7 @@
 - (id)colorWithIndex:(unsigned int)arg1;
 - (unsigned int)defaultColorsCount;
 - (const unsigned int*)defaultPalette;
+- (id)description;
 - (id)initWithDefaultSetup:(bool)arg1;
 - (void)setupDefaults;
 

@@ -3,11 +3,11 @@
  */
 
 @interface NSSUsageBundle : NSObject <NSSecureCoding> {
-    NSString *_bundleIdentifier;
-    NSArray *_categories;
-    NSString *_name;
-    BOOL _purgeable;
-    unsigned long long _totalSize;
+    NSString * _bundleIdentifier;
+    NSArray * _categories;
+    NSString * _name;
+    BOOL  _purgeable;
+    unsigned long long  _totalSize;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;

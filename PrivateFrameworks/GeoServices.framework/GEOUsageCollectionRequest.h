@@ -3,17 +3,19 @@
  */
 
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
-    NSMutableArray *_abExperimentAssignments;
-    NSMutableArray *_directionsFeedbackCollections;
-    NSMutableArray *_leaveNowFeedbackCollections;
-    NSMutableArray *_mapsLaunchFeedbackCollections;
-    NSMutableArray *_mapsUsageFeedbackCollections;
-    NSMutableArray *_placeDataCacheFeedbackCollections;
-    NSMutableArray *_stateTimingFeedbackCollections;
-    NSMutableArray *_suggestionsFeedbackCollections;
-    NSMutableArray *_tileSetStateFeedbackCollections;
-    NSMutableArray *_transitAppLaunchFeedbackCollections;
-    NSMutableArray *_usageCollections;
+    NSMutableArray * _abExperimentAssignments;
+    NSMutableArray * _directionsFeedbackCollections;
+    NSMutableArray * _leaveNowFeedbackCollections;
+    NSMutableArray * _mapsLaunchFeedbackCollections;
+    NSMutableArray * _mapsUsageFeedbackCollections;
+    NSMutableArray * _placeDataCacheFeedbackCollections;
+    NSMutableArray * _stateTimingFeedbackCollections;
+    NSMutableArray * _suggestionsFeedbackCollections;
+    NSMutableArray * _tileSetStateFeedbackCollections;
+    NSMutableArray * _timeToLeaveHypothesisFeedbackCollections;
+    NSMutableArray * _timeToLeaveInitialTravelTimeFeedbackCollections;
+    NSMutableArray * _transitAppLaunchFeedbackCollections;
+    NSMutableArray * _usageCollections;
 }
 
 @property (nonatomic, retain) NSMutableArray *abExperimentAssignments;
@@ -25,6 +27,8 @@
 @property (nonatomic, retain) NSMutableArray *stateTimingFeedbackCollections;
 @property (nonatomic, retain) NSMutableArray *suggestionsFeedbackCollections;
 @property (nonatomic, retain) NSMutableArray *tileSetStateFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *timeToLeaveHypothesisFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *timeToLeaveInitialTravelTimeFeedbackCollections;
 @property (nonatomic, retain) NSMutableArray *transitAppLaunchFeedbackCollections;
 @property (nonatomic, retain) NSMutableArray *usageCollections;
 
@@ -40,6 +44,8 @@
 - (void)addStateTimingFeedbackCollection:(id)arg1;
 - (void)addSuggestionsFeedbackCollection:(id)arg1;
 - (void)addTileSetStateFeedbackCollection:(id)arg1;
+- (void)addTimeToLeaveHypothesisFeedbackCollection:(id)arg1;
+- (void)addTimeToLeaveInitialTravelTimeFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (void)clearAbExperimentAssignments;
@@ -51,6 +57,8 @@
 - (void)clearStateTimingFeedbackCollections;
 - (void)clearSuggestionsFeedbackCollections;
 - (void)clearTileSetStateFeedbackCollections;
+- (void)clearTimeToLeaveHypothesisFeedbackCollections;
+- (void)clearTimeToLeaveInitialTravelTimeFeedbackCollections;
 - (void)clearTransitAppLaunchFeedbackCollections;
 - (void)clearUsageCollections;
 - (void)copyTo:(id)arg1;
@@ -88,6 +96,8 @@
 - (void)setStateTimingFeedbackCollections:(id)arg1;
 - (void)setSuggestionsFeedbackCollections:(id)arg1;
 - (void)setTileSetStateFeedbackCollections:(id)arg1;
+- (void)setTimeToLeaveHypothesisFeedbackCollections:(id)arg1;
+- (void)setTimeToLeaveInitialTravelTimeFeedbackCollections:(id)arg1;
 - (void)setTransitAppLaunchFeedbackCollections:(id)arg1;
 - (void)setUsageCollections:(id)arg1;
 - (id)stateTimingFeedbackCollectionAtIndex:(unsigned int)arg1;
@@ -99,6 +109,12 @@
 - (id)tileSetStateFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (id)tileSetStateFeedbackCollections;
 - (unsigned int)tileSetStateFeedbackCollectionsCount;
+- (id)timeToLeaveHypothesisFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (id)timeToLeaveHypothesisFeedbackCollections;
+- (unsigned int)timeToLeaveHypothesisFeedbackCollectionsCount;
+- (id)timeToLeaveInitialTravelTimeFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (id)timeToLeaveInitialTravelTimeFeedbackCollections;
+- (unsigned int)timeToLeaveInitialTravelTimeFeedbackCollectionsCount;
 - (id)transitAppLaunchFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (id)transitAppLaunchFeedbackCollections;
 - (unsigned int)transitAppLaunchFeedbackCollectionsCount;

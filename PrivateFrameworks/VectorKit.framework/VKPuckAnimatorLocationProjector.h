@@ -3,14 +3,14 @@
  */
 
 @interface VKPuckAnimatorLocationProjector : NSObject {
-    double _projectedCourse;
+    double  _projectedCourse;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _projectedPosition;
-    GEORouteMatch *_projectedRouteMatch;
-    GEORouteMatch *_routeMatch;
+    }  _projectedPosition;
+    GEORouteMatch * _projectedRouteMatch;
+    GEORouteMatch * _routeMatch;
 }
 
 @property (nonatomic, readonly) double projectedCourse;

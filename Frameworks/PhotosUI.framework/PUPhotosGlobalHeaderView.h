@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotosGlobalHeaderView : UICollectionReusableView {
-    NSString *_title;
-    UILabel *_titleLabel;
+    NSString * _title;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *title;

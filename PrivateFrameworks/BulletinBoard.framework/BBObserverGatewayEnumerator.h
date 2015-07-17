@@ -3,12 +3,12 @@
  */
 
 @interface BBObserverGatewayEnumerator : NSObject {
-    BBBulletin *_bulletin;
-    BOOL _cancelled;
-    unsigned int _feeds;
-    double _gatewayTimeout;
-    NSArray *_gateways;
-    NSMutableSet *_gatewaysPlayedLightsAndSirens;
+    BBBulletin * _bulletin;
+    BOOL  _cancelled;
+    unsigned int  _feeds;
+    double  _gatewayTimeout;
+    NSArray * _gateways;
+    NSMutableSet * _gatewaysPlayedLightsAndSirens;
 }
 
 @property (nonatomic, retain) BBBulletin *bulletin;

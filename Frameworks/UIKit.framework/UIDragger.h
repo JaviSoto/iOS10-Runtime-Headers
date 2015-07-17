@@ -3,29 +3,30 @@
  */
 
 @interface UIDragger : NSObject {
-    SEL _action;
-    id _delegate;
-    double _duration;
-    UIImageView *_fingerView;
-    int (*_interpolator;
-    unsigned long long _lastTimestamp;
-    NSArray *_modes;
-    unsigned int _port;
-    BOOL _showFinger;
+    SEL  _action;
+    id  _delegate;
+    double  _duration;
+    UIImageView * _fingerView;
+    int (* _interpolator;
+    unsigned long long  _lastTimestamp;
+    NSArray * _modes;
+    unsigned int  _port;
+    BOOL  _showFinger;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startLocation;
-    unsigned long long _startTimestamp;
+    }  _startLocation;
+    unsigned long long  _startTimestamp;
     struct CGPoint { 
         float x; 
         float y; 
-    } _stopLocation;
-    unsigned long long _stopTimestamp;
-    UIView *_target;
-    BOOL _waitingForSmoothScrolling;
+    }  _stopLocation;
+    unsigned long long  _stopTimestamp;
+    UIView * _target;
+    BOOL  _waitingForSmoothScrolling;
 }
 
+- (void).cxx_destruct;
 - (void)_continueDrag:(id)arg1;
 - (double)_delayUntilNextEvent;
 - (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;

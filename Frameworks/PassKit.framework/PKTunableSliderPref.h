@@ -3,10 +3,10 @@
  */
 
 @interface PKTunableSliderPref : PKTunablePref {
-    float _maxVal;
-    float _minVal;
-    UISlider *_slider;
-    UIView *_view;
+    float  _maxVal;
+    float  _minVal;
+    UISlider * _slider;
+    UIView * _view;
 }
 
 @property float maxVal;

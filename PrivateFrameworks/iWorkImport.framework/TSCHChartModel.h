@@ -3,19 +3,19 @@
  */
 
 @interface TSCHChartModel : NSObject <NSCopying, TSCHNotifyOnModify, TSCHUnretainedParent, TSDMixing> {
-    NSMutableArray *mAxisList;
-    TSCHChartGrid *mGrid;
-    NSMutableDictionary *mGridIndexesBySeriesDimension;
-    TSCHChartInfo *mInfo;
-    BOOL mIsTransient;
-    BOOL mModelInvalid;
-    NSMutableDictionary *mModelManagedCaches;
-    unsigned int mMultiDataSetIndex;
-    unsigned int mNumberOfSeriesForCalculatingBarWidth;
-    NSMutableDictionary *mRefLinesMap;
-    int mScatterFormat;
-    NSMutableDictionary *mSeriesDimensionsByGridIndex;
-    NSMutableArray *mSeriesList;
+    NSMutableArray * mAxisList;
+    TSCHChartGrid * mGrid;
+    NSMutableDictionary * mGridIndexesBySeriesDimension;
+    TSCHChartInfo * mInfo;
+    BOOL  mIsTransient;
+    BOOL  mModelInvalid;
+    NSMutableDictionary * mModelManagedCaches;
+    unsigned int  mMultiDataSetIndex;
+    unsigned int  mNumberOfSeriesForCalculatingBarWidth;
+    NSMutableDictionary * mRefLinesMap;
+    int  mScatterFormat;
+    NSMutableDictionary * mSeriesDimensionsByGridIndex;
+    NSMutableArray * mSeriesList;
 }
 
 @property (nonatomic, readonly, retain) NSArray *axisList;

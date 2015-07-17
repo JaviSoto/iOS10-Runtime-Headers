@@ -3,17 +3,18 @@
  */
 
 @interface _UITextViewRestorableScrollPosition : NSObject <NSCoding> {
-    float _offsetInLine;
+    float  _offsetInLine;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 + (id)restorableScrollPositionForTextView:(id)arg1;
 + (id)restorableScrollPositionWithDictionary:(id)arg1;
 + (id)restorableScrollPositionWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
+- (id)debugDescription;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

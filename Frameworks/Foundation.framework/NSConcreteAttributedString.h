@@ -3,8 +3,8 @@
  */
 
 @interface NSConcreteAttributedString : NSAttributedString {
-    NSRLEArray *attributes;
-    NSString *string;
+    NSRLEArray * attributes;
+    NSString * string;
 }
 
 - (id)_runArrayHoldingAttributes;

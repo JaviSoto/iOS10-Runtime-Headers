@@ -3,9 +3,9 @@
  */
 
 @interface UIGradient : NSObject {
-    float _height;
-    struct CGShading { } *_shader;
-    struct { float x1; float x2; float x3; float x4; float x5; } *_values;
+    float  _height;
+    struct CGShading { } * _shader;
+    struct { float x1; float x2; float x3; float x4; float x5; } * _values;
 }
 
 - (void)dealloc;

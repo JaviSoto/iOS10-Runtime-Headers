@@ -3,10 +3,10 @@
  */
 
 @interface GKFriendRequestCell : GKBasePlayerCell {
-    GKButton *_acceptButton;
-    GKButton *_declineButton;
-    UILabel *_messageLabel;
-    UILabel *_whenLabel;
+    GKButton * _acceptButton;
+    GKButton * _declineButton;
+    UILabel * _messageLabel;
+    UILabel * _whenLabel;
 }
 
 @property (nonatomic, retain) GKButton *acceptButton;

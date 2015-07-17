@@ -3,9 +3,9 @@
  */
 
 @interface TSCH2DChartAbstractAreaLayoutItem : TSCHChartAbstractAreaLayoutItem {
-    TSCHChartBodyLayoutItem *mChartBody;
-    TSCHChartDataSetNameLayoutItem *mDataSetNameElement;
-    TSCHChartTitleLayoutItem *mTitleElement;
+    TSCHChartBodyLayoutItem * mChartBody;
+    TSCHChartDataSetNameLayoutItem * mDataSetNameElement;
+    TSCHChartTitleLayoutItem * mTitleElement;
 }
 
 @property (nonatomic, readonly) TSCHChartBodyLayoutItem *bodyLayoutItem;

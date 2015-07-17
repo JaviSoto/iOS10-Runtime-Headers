@@ -3,7 +3,7 @@
  */
 
 @interface SUReflectionView : UIView {
-    UIImage *_image;
+    UIImage * _image;
 }
 
 - (void)dealloc;

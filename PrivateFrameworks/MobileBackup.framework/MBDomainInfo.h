@@ -3,12 +3,12 @@
  */
 
 @interface MBDomainInfo : NSObject <NSCoding, NSCopying> {
-    NSString *_domainName;
-    BOOL _enabled;
-    unsigned long long _localSize;
-    unsigned long long _remoteSize;
-    BOOL _restricted;
-    BOOL _systemApp;
+    NSString * _domainName;
+    BOOL  _enabled;
+    unsigned long long  _localSize;
+    unsigned long long  _remoteSize;
+    BOOL  _restricted;
+    BOOL  _systemApp;
 }
 
 @property (getter=isAppDomain, nonatomic, readonly) BOOL appDomain;

@@ -3,13 +3,13 @@
  */
 
 @interface CKFlowControl : NSObject {
-    double _budget;
-    unsigned int _budgetCap;
-    NSDate *_lastExpenditure;
-    double _maximumThrottleTime;
-    double _regenerationPerSecond;
-    double _totalCost;
-    unsigned int _totalSamples;
+    double  _budget;
+    unsigned int  _budgetCap;
+    NSDate * _lastExpenditure;
+    double  _maximumThrottleTime;
+    double  _regenerationPerSecond;
+    double  _totalCost;
+    unsigned int  _totalSamples;
 }
 
 @property double budget;

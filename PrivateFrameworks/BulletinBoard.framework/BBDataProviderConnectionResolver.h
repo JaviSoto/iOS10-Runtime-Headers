@@ -3,11 +3,11 @@
  */
 
 @interface BBDataProviderConnectionResolver : NSObject <BBDataProviderConnectionClientEndpoint, NSXPCListenerDelegate> {
-    BBDataProviderConnection *__dataProviderConnection;
-    NSXPCConnection *_connectionToServer;
-    int _listeningToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSXPCListener *_wakeupListener;
+    BBDataProviderConnection * __dataProviderConnection;
+    NSXPCConnection * _connectionToServer;
+    int  _listeningToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSXPCListener * _wakeupListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,6 +17,7 @@
 
 + (id)resolverForConnection:(id)arg1;
 
+- (void)_invalidate;
 - (void)_queue_registerWithServer:(id /* block */)arg1;
 - (void)_registerForPublicationNotification;
 - (id)dataProviderConnection;

@@ -3,7 +3,7 @@
  */
 
 @interface UIAccessibilityAggregateElement : UIAccessibilityElement {
-    NSArray *_representedElements;
+    NSArray * _representedElements;
 }
 
 @property (nonatomic, retain) NSArray *representedElements;

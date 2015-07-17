@@ -3,14 +3,14 @@
  */
 
 @interface VSVoiceAsset : NSObject <NSSecureCoding> {
-    NSNumber *_contentVersion;
-    int _footprint;
-    int _gender;
-    BOOL _isBuiltInVoice;
-    BOOL _isInstalled;
-    NSArray *_languages;
-    NSString *_masteredVersion;
-    NSString *_name;
+    NSNumber * _contentVersion;
+    int  _footprint;
+    int  _gender;
+    BOOL  _isBuiltInVoice;
+    BOOL  _isInstalled;
+    NSArray * _languages;
+    NSString * _masteredVersion;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSNumber *contentVersion;

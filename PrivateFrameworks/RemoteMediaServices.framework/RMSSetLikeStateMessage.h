@@ -3,16 +3,16 @@
  */
 
 @interface RMSSetLikeStateMessage : PBCodable <NSCopying> {
-    unsigned long long _databaseID;
+    unsigned long long  _databaseID;
     struct { 
         unsigned int databaseID : 1; 
         unsigned int itemID : 1; 
         unsigned int likeState : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    unsigned long long _itemID;
-    int _likeState;
-    int _sessionIdentifier;
+    }  _has;
+    unsigned long long  _itemID;
+    int  _likeState;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) unsigned long long databaseID;

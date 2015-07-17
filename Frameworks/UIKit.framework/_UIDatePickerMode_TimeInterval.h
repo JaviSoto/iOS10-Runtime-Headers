@@ -3,7 +3,7 @@
  */
 
 @interface _UIDatePickerMode_TimeInterval : _UIDatePickerMode {
-    float _componentWidth;
+    float  _componentWidth;
 }
 
 + (int)datePickerMode;

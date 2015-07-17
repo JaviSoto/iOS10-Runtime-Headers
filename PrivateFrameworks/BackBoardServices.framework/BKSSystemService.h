@@ -3,7 +3,7 @@
  */
 
 @interface BKSSystemService : NSObject {
-    FBSSystemService *_fbsSystemService;
+    FBSSystemService * _fbsSystemService;
 }
 
 - (BOOL)canOpenApplication:(id)arg1 reason:(int*)arg2;

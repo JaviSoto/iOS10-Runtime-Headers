@@ -3,16 +3,16 @@
  */
 
 @interface ATRestoreAssetLink : NSObject <ATAssetLink, ATEnvironmentMonitorObserver, MBManagerDelegate> {
-    ATAsset *_activeAsset;
-    NSArray *_allowedDataClasses;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    <ATAssetLinkDelegate> *_delegate;
-    BOOL _didEnqueueAsset;
-    MBManager *_mbManager;
-    BOOL _open;
-    NSObject<OS_dispatch_queue> *_queue;
-    <ATRestoreAssetLinkDelegate> *_restoreDelegate;
-    int _restoreState;
+    ATAsset * _activeAsset;
+    NSArray * _allowedDataClasses;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <ATAssetLinkDelegate> * _delegate;
+    BOOL  _didEnqueueAsset;
+    MBManager * _mbManager;
+    BOOL  _open;
+    NSObject<OS_dispatch_queue> * _queue;
+    <ATRestoreAssetLinkDelegate> * _restoreDelegate;
+    int  _restoreState;
 }
 
 @property (nonatomic, copy) NSArray *allowedDataClasses;

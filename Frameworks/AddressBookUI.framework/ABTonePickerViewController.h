@@ -3,7 +3,7 @@
  */
 
 @interface ABTonePickerViewController : ABPickerViewController {
-    TKTonePickerViewController *_tonePickerViewController;
+    TKTonePickerViewController * _tonePickerViewController;
 }
 
 @property (nonatomic, readonly, retain) TKTonePickerViewController *tonePickerViewController;

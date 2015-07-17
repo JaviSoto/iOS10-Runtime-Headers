@@ -3,15 +3,14 @@
  */
 
 @interface CalDAVCalendarServerChangedParameterItem : CoreDAVItemWithNoChildren {
-    NSString *_nameAttribute;
-    NSString *_typeAttribute;
+    NSString * _nameAttribute;
+    NSString * _typeAttribute;
 }
 
 @property (nonatomic, retain) NSString *nameAttribute;
 @property (nonatomic, retain) NSString *typeAttribute;
 
-- (void)dealloc;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (void).cxx_destruct;
 - (id)nameAttribute;
 - (void)parserFoundAttributes:(id)arg1;
 - (void)setNameAttribute:(id)arg1;

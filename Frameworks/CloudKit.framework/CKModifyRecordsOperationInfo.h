@@ -3,14 +3,14 @@
  */
 
 @interface CKModifyRecordsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL _atomic;
-    NSData *_clientChangeTokenData;
-    NSDictionary *_conflictLosersToResolveByRecordID;
-    NSArray *_recordIDsToDelete;
-    NSDictionary *_recordIDsToDeleteToEtags;
-    NSArray *_recordsToSave;
-    int _savePolicy;
-    BOOL _shouldOnlySaveAssetContent;
+    BOOL  _atomic;
+    NSData * _clientChangeTokenData;
+    NSDictionary * _conflictLosersToResolveByRecordID;
+    NSArray * _recordIDsToDelete;
+    NSDictionary * _recordIDsToDeleteToEtags;
+    NSArray * _recordsToSave;
+    int  _savePolicy;
+    BOOL  _shouldOnlySaveAssetContent;
 }
 
 @property (nonatomic) BOOL atomic;

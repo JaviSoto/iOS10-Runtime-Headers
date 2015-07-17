@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DMipmaps : NSObject {
-    unsigned int mComponents;
-    NSData *mData;
-    int mHeight;
-    int mWidth;
+    unsigned int  mComponents;
+    NSData * mData;
+    int  mHeight;
+    int  mWidth;
 }
 
 @property (nonatomic, readonly) unsigned int components;

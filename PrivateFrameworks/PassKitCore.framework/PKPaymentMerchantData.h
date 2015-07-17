@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentMerchantData : NSObject {
-    NSData *_applicationData;
-    NSString *_merchantIdentifier;
+    NSData * _applicationData;
+    NSString * _merchantIdentifier;
 }
 
 @property (nonatomic, retain) NSData *applicationData;

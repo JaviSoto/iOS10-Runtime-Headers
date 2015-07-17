@@ -3,14 +3,14 @@
  */
 
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
-    int _activeClientPID;
-    NSMutableArray *_clientPorts;
-    NSMutableDictionary *_clientPortsForPIDs;
-    NSMutableDictionary *_clientStateForPIDs;
-    <MPMusicPlayerControllerServerDelegate> *_delegate;
-    MPMusicPlayerControllerServer *_musicPlayerServer;
-    unsigned int _queuePrepared;
-    MPVideoViewController *_videoViewController;
+    int  _activeClientPID;
+    NSMutableArray * _clientPorts;
+    NSMutableDictionary * _clientPortsForPIDs;
+    NSMutableDictionary * _clientStateForPIDs;
+    <MPMusicPlayerControllerServerDelegate> * _delegate;
+    MPMusicPlayerControllerServer * _musicPlayerServer;
+    unsigned int  _queuePrepared;
+    MPVideoViewController * _videoViewController;
 }
 
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;

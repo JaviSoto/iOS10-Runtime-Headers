@@ -3,8 +3,8 @@
  */
 
 @interface CMStyle : NSObject <NSCopying> {
-    NSMutableString *mStyleString;
-    NSMutableDictionary *properties;
+    NSMutableString * mStyleString;
+    NSMutableDictionary * properties;
 }
 
 - (void)addPropertiesToCSSStyleString:(id)arg1;

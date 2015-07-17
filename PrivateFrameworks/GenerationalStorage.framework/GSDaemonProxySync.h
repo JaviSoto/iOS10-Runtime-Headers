@@ -3,11 +3,11 @@
  */
 
 @interface GSDaemonProxySync : NSProxy <GSProtocol> {
-    NSError *_error;
-    NSObject<OS_dispatch_group> *_group;
-    NSObject<GSProtocol> *_proxy;
-    int _recursive;
-    id _result;
+    NSError * _error;
+    NSObject<OS_dispatch_group> * _group;
+    NSObject<GSProtocol> * _proxy;
+    int  _recursive;
+    id  _result;
 }
 
 @property (nonatomic, retain) NSError *error;

@@ -3,9 +3,9 @@
  */
 
 @interface SUUserRatingView : UIView {
-    UIImageView *_backgroundImageView;
-    UIImageView *_foregroundImageView;
-    float _value;
+    UIImageView * _backgroundImageView;
+    UIImageView * _foregroundImageView;
+    float  _value;
 }
 
 + (id)copyImageForRating:(float)arg1 backgroundColor:(id)arg2 style:(int)arg3;

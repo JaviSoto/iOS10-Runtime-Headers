@@ -3,11 +3,11 @@
  */
 
 @interface PUTiltWheel : UIView {
-    NSDictionary *__dotsByDegree;
-    NSDictionary *__labelsByDegree;
-    unsigned int __numericIndicatorDegreeStep;
-    int __tiltWheelOrientation;
-    <PUTiltWheelDataSource> *_dataSource;
+    NSDictionary * __dotsByDegree;
+    NSDictionary * __labelsByDegree;
+    unsigned int  __numericIndicatorDegreeStep;
+    int  __tiltWheelOrientation;
+    <PUTiltWheelDataSource> * _dataSource;
 }
 
 @property (setter=_setDotsByDegree:, nonatomic, copy) NSDictionary *_dotsByDegree;

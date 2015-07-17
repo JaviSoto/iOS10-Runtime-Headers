@@ -3,13 +3,13 @@
  */
 
 @interface AAUIFamilyCreditCard : NSObject {
-    NSDate *_expirationDate;
-    UIImage *_image;
-    NSURL *_imageURL;
-    NSString *_lastFourDigits;
-    NSString *_providerDescription;
-    NSString *_type;
-    NSString *_usageNotice;
+    NSDate * _expirationDate;
+    UIImage * _image;
+    NSURL * _imageURL;
+    NSString * _lastFourDigits;
+    NSString * _providerDescription;
+    NSString * _type;
+    NSString * _usageNotice;
 }
 
 @property (nonatomic, copy) NSDate *expirationDate;

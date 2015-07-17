@@ -3,20 +3,20 @@
  */
 
 @interface SiriUIReviewItemCell : SiriUIContentCollectionViewCell {
-    UILabel *_authorLabel;
-    int _characterLimit;
-    UILabel *_commentLabel;
+    UILabel * _authorLabel;
+    int  _characterLimit;
+    UILabel * _commentLabel;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
+    }  _contentInsets;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _ratingOffset;
-    UIView *_ratingView;
+    }  _ratingOffset;
+    UIView * _ratingView;
 }
 
 @property (nonatomic) int characterLimit;

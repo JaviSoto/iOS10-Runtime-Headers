@@ -3,9 +3,9 @@
  */
 
 @interface PKVerificationRequestRecord : NSObject <NSSecureCoding> {
-    PKVerificationChannel *_channel;
-    NSDate *_date;
-    NSString *_passUniqueID;
+    PKVerificationChannel * _channel;
+    NSDate * _date;
+    NSString * _passUniqueID;
 }
 
 @property (nonatomic, copy) PKVerificationChannel *channel;

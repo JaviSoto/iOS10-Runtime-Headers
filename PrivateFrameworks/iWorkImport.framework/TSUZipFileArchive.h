@@ -3,10 +3,10 @@
  */
 
 @interface TSUZipFileArchive : TSUZipArchive {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long long _archiveLength;
-    TSUZipFileDescriptorWrapper *_fdWrapper;
-    NSURL *_temporaryDirectoryURL;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned long long  _archiveLength;
+    TSUZipFileDescriptorWrapper * _fdWrapper;
+    NSURL * _temporaryDirectoryURL;
 }
 
 + (BOOL)isZipArchiveAtFD:(int)arg1;

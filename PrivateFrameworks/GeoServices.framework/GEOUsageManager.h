@@ -3,15 +3,15 @@
  */
 
 @interface GEOUsageManager : NSObject <PBRequesterDelegate> {
-    id /* block */ _backgroundTaskEnd;
-    id /* block */ _backgroundTaskStart;
-    GEOUsageCollectionRequest *_request;
-    NSLock *_requestLock;
-    GEORequester *_requester;
-    NSMapTable *_requesterToBackgroundTask;
-    NSMutableDictionary *_stateData;
-    NSMutableDictionary *_stateTimingData;
-    NSTimer *_updateTimer;
+    id /* block */  _backgroundTaskEnd;
+    id /* block */  _backgroundTaskStart;
+    GEOUsageCollectionRequest * _request;
+    NSLock * _requestLock;
+    GEORequester * _requester;
+    NSMapTable * _requesterToBackgroundTask;
+    NSMutableDictionary * _stateData;
+    NSMutableDictionary * _stateTimingData;
+    NSTimer * _updateTimer;
 }
 
 @property (nonatomic, copy) id /* block */ backgroundTaskEnd;
@@ -24,6 +24,7 @@
 + (id)sharedManager;
 
 - (void)_applicationDeactivating;
+- (void)_captureUsageCollection:(id)arg1;
 - (void)_cleanupRequester;
 - (void)_cleanupTimer;
 - (void)_endBackgroundTaskForRequester:(id)arg1;
@@ -32,6 +33,8 @@
 - (void)_sendUsageToServer;
 - (void)_startBackgroundTaskForRequester:(id)arg1;
 - (void)_updateTimerFired:(id)arg1;
+- (id)_usageCollectionForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestErrorDescription:(id)arg6;
+- (id)_usageCollectionForRequestToService:(int)arg1 requestType:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5 requestDataSize:(int)arg6 responseDataSize:(int)arg7 responseTime:(int)arg8;
 - (id)_usageURL;
 - (id /* block */)backgroundTaskEnd;
 - (id /* block */)backgroundTaskStart;
@@ -45,11 +48,18 @@
 - (void)captureSuggestionsFeedbackCollection:(id)arg1;
 - (void)captureTileStateForGridCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
 - (void)captureTileStateForLoadCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
+- (void)captureTimeToLeaveHypothesisFeedbackCollection:(id)arg1;
+- (void)captureTimeToLeaveInitialTravelTimeFeedbackCollection:(id)arg1;
 - (void)captureTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
-- (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
+- (void)captureTraits:(id)arg1 placeActionDetails:(id)arg2 routeDetails:(id)arg3;
+- (void)captureTraits:(id)arg1 suggestionEntryMetadatasDisplayed:(id)arg2 suggestionEntryMetadataSelected:(id)arg3;
+- (void)captureTransitAppLaunchSource:(struct { double x1; double x2; })arg1 destination:(struct { double x1; double x2; })arg2 bundleIdentifier:(id)arg3;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
+- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3;
+- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestErrorDescription:(id)arg6;
+- (void)captureUsageDataForRequestToService:(int)arg1 requestErrorDomain:(id)arg2 requestErrorCode:(long long)arg3 requestErrorDescription:(id)arg4 responseSize:(unsigned int)arg5 responseTime:(unsigned int)arg6;
 - (void)captureUsageDataForTiles:(id)arg1;
 - (void)clearStateTimingData;
 - (id)createTileSetStateForType:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;

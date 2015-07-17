@@ -3,10 +3,10 @@
  */
 
 @interface CIPhotoGrain : CIFilter {
-    NSNumber *inputAmount;
-    NSNumber *inputISO;
-    CIImage *inputImage;
-    NSNumber *inputSeed;
+    NSNumber * inputAmount;
+    NSNumber * inputISO;
+    CIImage * inputImage;
+    NSNumber * inputSeed;
 }
 
 @property (nonatomic, copy) NSNumber *inputAmount;
@@ -14,10 +14,11 @@
 @property (nonatomic, retain) CIImage *inputImage;
 @property (nonatomic, copy) NSNumber *inputSeed;
 
++ (id)customAttributes;
+
 - (id)_grainBlendAndMixKernel;
 - (id)_interpolateGrainKernel;
 - (id)_paddedTileKernel;
-- (id)customAttributes;
 - (id)inputAmount;
 - (id)inputISO;
 - (id)inputImage;

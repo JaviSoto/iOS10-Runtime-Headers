@@ -3,10 +3,10 @@
  */
 
 @interface UIKBRenderFactoryLayoutSegment : NSObject {
-    NSString *_cachedKeyNames;
-    int _edgeCount;
-    unsigned int _edges;
-    int _rectCount;
+    NSString * _cachedKeyNames;
+    int  _edgeCount;
+    unsigned int  _edges;
+    int  _rectCount;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,11 +16,11 @@
             float width; 
             float height; 
         } size; 
-    } _rects;
-    BOOL _requireAllMatches;
-    int _states;
-    UIKBRenderTraits *_traits;
-    int _triangleCorners;
+    }  _rects;
+    BOOL  _requireAllMatches;
+    int  _states;
+    UIKBRenderTraits * _traits;
+    int  _triangleCorners;
 }
 
 @property (nonatomic) int keyStates;

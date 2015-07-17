@@ -3,12 +3,13 @@
  */
 
 @interface CHDLegendEntry : NSObject {
-    unsigned int mEntryIndex;
-    unsigned int mFontIndex;
-    EDResources *mResources;
+    unsigned int  mEntryIndex;
+    unsigned int  mFontIndex;
+    EDResources * mResources;
 }
 
 - (void)dealloc;
+- (id)description;
 - (unsigned int)entryIndex;
 - (id)font;
 - (unsigned int)fontIndex;

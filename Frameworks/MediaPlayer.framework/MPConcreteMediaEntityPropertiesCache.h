@@ -3,12 +3,12 @@
  */
 
 @interface MPConcreteMediaEntityPropertiesCache : NSObject {
-    <MPMediaLibraryDataProvider> *_dataProvider;
-    Class _dataProviderEntityClass;
-    long long _identifier;
-    NSMutableDictionary *_properties;
-    NSObject<OS_dispatch_queue> *_propertiesQueue;
-    NSMutableDictionary *_valuePersistenceBlocks;
+    <MPMediaLibraryDataProvider> * _dataProvider;
+    Class  _dataProviderEntityClass;
+    long long  _identifier;
+    NSMutableDictionary * _properties;
+    NSObject<OS_dispatch_queue> * _propertiesQueue;
+    NSMutableDictionary * _valuePersistenceBlocks;
 }
 
 @property (nonatomic, readonly) <MPMediaLibraryDataProvider> *dataProvider;

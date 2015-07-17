@@ -3,7 +3,7 @@
  */
 
 @interface SKUIQuicklinkCollectionViewCell : SKUICollectionViewCell {
-    UIButton *_linkButton;
+    UIButton * _linkButton;
 }
 
 - (void).cxx_destruct;

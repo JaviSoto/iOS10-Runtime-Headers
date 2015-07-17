@@ -3,11 +3,11 @@
  */
 
 @interface EKUIInviteesViewAddInviteeCell : UITableViewCell {
-    float _leftInset;
-    NSLayoutConstraint *_leftInsetConstraint;
-    NSArray *_persistentConstraints;
-    NSString *_simpleText;
-    UILabel *_simpleTextLabel;
+    float  _leftInset;
+    NSLayoutConstraint * _leftInsetConstraint;
+    NSArray * _persistentConstraints;
+    NSString * _simpleText;
+    UILabel * _simpleTextLabel;
 }
 
 @property (nonatomic) float leftInset;

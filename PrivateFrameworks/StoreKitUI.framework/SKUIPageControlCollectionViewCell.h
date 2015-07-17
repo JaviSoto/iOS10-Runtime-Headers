@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIPageControl *_pageControl;
-    unsigned int _pageControlPosition;
+    }  _contentInset;
+    UIPageControl * _pageControl;
+    unsigned int  _pageControlPosition;
 }
 
 @property (nonatomic) int currentPage;

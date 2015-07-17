@@ -3,23 +3,23 @@
  */
 
 @interface SBUISound : NSObject {
-    NSString *_accountIdentifier;
-    int _alertType;
-    AVItem *_avItem;
-    id /* block */ _completionBlock;
-    NSDictionary *_controllerAttributes;
-    double _maxDuration;
-    BOOL _repeats;
-    unsigned long _resolvedSystemSoundID;
-    NSString *_resolvedToneIdentifier;
-    NSString *_ringtoneName;
-    NSString *_songPath;
-    unsigned int _soundBehavior;
-    int _soundType;
-    unsigned long _systemSoundID;
-    NSString *_toneIdentifier;
-    NSString *_vibrationIdentifier;
-    NSDictionary *_vibrationPattern;
+    NSString * _accountIdentifier;
+    int  _alertType;
+    AVItem * _avItem;
+    id /* block */  _completionBlock;
+    NSDictionary * _controllerAttributes;
+    double  _maxDuration;
+    BOOL  _repeats;
+    unsigned long  _resolvedSystemSoundID;
+    NSString * _resolvedToneIdentifier;
+    NSString * _ringtoneName;
+    NSString * _songPath;
+    unsigned int  _soundBehavior;
+    int  _soundType;
+    unsigned long  _systemSoundID;
+    NSString * _toneIdentifier;
+    NSString * _vibrationIdentifier;
+    NSDictionary * _vibrationPattern;
 }
 
 @property (setter=_setResolvedSoundID:, nonatomic) unsigned long _resolvedSystemSoundID;

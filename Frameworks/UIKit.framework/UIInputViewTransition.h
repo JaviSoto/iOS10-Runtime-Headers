@@ -3,10 +3,10 @@
  */
 
 @interface UIInputViewTransition : NSObject {
-    int activeClippingModes;
-    double animationStartTime;
-    int animationState;
-    UIInputViewAnimationStyle *animationStyle;
+    int  activeClippingModes;
+    double  animationStartTime;
+    int  animationState;
+    UIInputViewAnimationStyle * animationStyle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,7 +16,7 @@
             float width; 
             float height; 
         } size; 
-    } beginFloatingFrame;
+    }  beginFloatingFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,7 +26,7 @@
             float width; 
             float height; 
         } size; 
-    } beginFloatingFrameScreen;
+    }  beginFloatingFrameScreen;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -36,7 +36,7 @@
             float width; 
             float height; 
         } size; 
-    } beginFrame;
+    }  beginFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -46,8 +46,8 @@
             float width; 
             float height; 
         } size; 
-    } beginFrameScreen;
-    BOOL cancelled;
+    }  beginFrameScreen;
+    BOOL  cancelled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -57,7 +57,7 @@
             float width; 
             float height; 
         } size; 
-    } endFloatingFrame;
+    }  endFloatingFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -67,7 +67,7 @@
             float width; 
             float height; 
         } size; 
-    } endFloatingFrameScreen;
+    }  endFloatingFrameScreen;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -77,7 +77,7 @@
             float width; 
             float height; 
         } size; 
-    } endFrame;
+    }  endFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -87,12 +87,12 @@
             float width; 
             float height; 
         } size; 
-    } endFrameScreen;
-    UIInputViewSet *newSet;
-    UIInputViewSet *oldSet;
-    BOOL skipFencing;
-    BOOL skipNotifications;
-    UISnapshotView *snapshotView;
+    }  endFrameScreen;
+    UIInputViewSet * newSet;
+    UIInputViewSet * oldSet;
+    BOOL  skipFencing;
+    BOOL  skipNotifications;
+    UISnapshotView * snapshotView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -102,7 +102,7 @@
             float width; 
             float height; 
         } size; 
-    } snapshotViewBeginFrame;
+    }  snapshotViewBeginFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -112,7 +112,7 @@
             float width; 
             float height; 
         } size; 
-    } snapshotViewEndFrame;
+    }  snapshotViewEndFrame;
 }
 
 @property (nonatomic) int activeClippingModes;

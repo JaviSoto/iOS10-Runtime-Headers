@@ -3,8 +3,8 @@
  */
 
 @interface VMUSymbol : NSObject {
-    NSString *_name;
-    VMUSourceInfo *_sourceInfo;
+    NSString * _name;
+    VMUSourceInfo * _sourceInfo;
 }
 
 - (void)dealloc;

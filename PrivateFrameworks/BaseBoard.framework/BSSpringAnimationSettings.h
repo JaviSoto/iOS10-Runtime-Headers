@@ -3,11 +3,11 @@
  */
 
 @interface BSSpringAnimationSettings : BSAnimationSettings {
-    float _damping;
-    float _epsilon;
-    BOOL _hasCalculatedDuration;
-    float _mass;
-    float _stiffness;
+    float  _damping;
+    float  _epsilon;
+    BOOL  _hasCalculatedDuration;
+    float  _mass;
+    float  _stiffness;
 }
 
 @property (nonatomic, readonly) float damping;

@@ -3,14 +3,14 @@
  */
 
 @interface SBLaunchAppListener : NSObject {
-    id /* block */ _block;
-    NSString *_bundleIdentifier;
-    BOOL _launched;
-    NSLock *_lock;
-    unsigned int _notifyAppExitedStatus;
-    int _notifyAppExitedToken;
-    unsigned int _notifyRegisterStatus;
-    int _notifyToken;
+    id /* block */  _block;
+    NSString * _bundleIdentifier;
+    BOOL  _launched;
+    NSLock * _lock;
+    unsigned int  _notifyAppExitedStatus;
+    int  _notifyAppExitedToken;
+    unsigned int  _notifyRegisterStatus;
+    int  _notifyToken;
 }
 
 + (BOOL)waitForLaunchThatSpringBoardKnowsAbout:(id)arg1 timeout:(double)arg2;

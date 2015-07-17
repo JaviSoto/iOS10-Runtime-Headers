@@ -3,19 +3,19 @@
  */
 
 @interface MCAdvertiserAssistant : NSObject <MCNearbyServiceAdvertiserDelegate, UIAlertViewDelegate> {
-    MCNearbyServiceAdvertiser *_advertiser;
-    UIAlertView *_alertView;
-    NSString *_appName;
-    <MCAdvertiserAssistantDelegate> *_delegate;
-    NSDictionary *_discoveryInfo;
-    NSBundle *_frameworkBundle;
-    id /* block */ _invitationHandlerForPresentedAlert;
-    NSMutableArray *_invitationsBuffer;
-    BOOL _isAdvertising;
-    MCPeerID *_myPeerID;
-    NSString *_serviceType;
-    MCSession *_session;
-    BOOL _wasAdvertising;
+    MCNearbyServiceAdvertiser * _advertiser;
+    UIAlertView * _alertView;
+    NSString * _appName;
+    <MCAdvertiserAssistantDelegate> * _delegate;
+    NSDictionary * _discoveryInfo;
+    NSBundle * _frameworkBundle;
+    id /* block */  _invitationHandlerForPresentedAlert;
+    NSMutableArray * _invitationsBuffer;
+    BOOL  _isAdvertising;
+    MCPeerID * _myPeerID;
+    NSString * _serviceType;
+    MCSession * _session;
+    BOOL  _wasAdvertising;
 }
 
 @property (nonatomic, retain) MCNearbyServiceAdvertiser *advertiser;

@@ -3,39 +3,40 @@
  */
 
 @interface TUAudioSystemController : TUAudioController {
-    NSObject<OS_dispatch_queue> *_downlinkMutedQueue;
-    NSNumber *_isDownlinkMutedCached;
-    BOOL _isRequestingDownlinkMuted;
-    BOOL _isRequestingPickableRoutesForPhoneCall;
-    BOOL _isRequestingPickableRoutesForPlayAndRecordRemoteVoice;
-    BOOL _isRequestingPickableRoutesForPlayAndRecordVideo;
-    BOOL _isRequestingPickableRoutesForPlayAndRecordVoice;
-    BOOL _isRequestingPickableRoutesForTTY;
-    BOOL _isRequestingTTY;
-    BOOL _isRequestingUplinkMuted;
-    NSNumber *_isTTYCached;
-    NSNumber *_isUplinkMutedCached;
-    unsigned long long _lastDownlinkMutedRequestScheduleTime;
-    unsigned long long _lastPhoneCallCategoryRoutesScheduleTime;
-    unsigned long long _lastPlayAndRecordRemoteVoiceRoutesScheduleTime;
-    unsigned long long _lastPlayAndRecordVideoRoutesScheduleTime;
-    unsigned long long _lastPlayAndRecordVoiceRoutesScheduleTime;
-    unsigned long long _lastTTYPickableRoutesScheduleTime;
-    unsigned long long _lastTTYRequestScheduleTime;
-    unsigned long long _lastUplinkMutedRequestScheduleTime;
-    NSArray *_pickableRoutesForPhoneCall;
-    NSArray *_pickableRoutesForPlayAndRecordRemoteVoice;
-    NSArray *_pickableRoutesForPlayAndRecordVideo;
-    NSArray *_pickableRoutesForPlayAndRecordVoice;
-    NSArray *_pickableRoutesForTTY;
-    NSObject<OS_dispatch_queue> *_pickableRoutesQueue;
-    NSObject<OS_dispatch_queue> *_ttyQueue;
-    NSObject<OS_dispatch_queue> *_uplinkMutedQueue;
+    NSObject<OS_dispatch_queue> * _downlinkMutedQueue;
+    NSNumber * _isDownlinkMutedCached;
+    BOOL  _isRequestingDownlinkMuted;
+    BOOL  _isRequestingPickableRoutesForPhoneCall;
+    BOOL  _isRequestingPickableRoutesForPlayAndRecordRemoteVoice;
+    BOOL  _isRequestingPickableRoutesForPlayAndRecordVideo;
+    BOOL  _isRequestingPickableRoutesForPlayAndRecordVoice;
+    BOOL  _isRequestingPickableRoutesForTTY;
+    BOOL  _isRequestingTTY;
+    BOOL  _isRequestingUplinkMuted;
+    NSNumber * _isTTYCached;
+    NSNumber * _isUplinkMutedCached;
+    unsigned long long  _lastDownlinkMutedRequestScheduleTime;
+    unsigned long long  _lastPhoneCallCategoryRoutesScheduleTime;
+    unsigned long long  _lastPlayAndRecordRemoteVoiceRoutesScheduleTime;
+    unsigned long long  _lastPlayAndRecordVideoRoutesScheduleTime;
+    unsigned long long  _lastPlayAndRecordVoiceRoutesScheduleTime;
+    unsigned long long  _lastTTYPickableRoutesScheduleTime;
+    unsigned long long  _lastTTYRequestScheduleTime;
+    unsigned long long  _lastUplinkMutedRequestScheduleTime;
+    NSArray * _pickableRoutesForPhoneCall;
+    NSArray * _pickableRoutesForPlayAndRecordRemoteVoice;
+    NSArray * _pickableRoutesForPlayAndRecordVideo;
+    NSArray * _pickableRoutesForPlayAndRecordVoice;
+    NSArray * _pickableRoutesForTTY;
+    NSObject<OS_dispatch_queue> * _pickableRoutesQueue;
+    NSObject<OS_dispatch_queue> * _ttyQueue;
+    NSObject<OS_dispatch_queue> * _uplinkMutedQueue;
 }
 
 + (id)sharedAudioSystemController;
 + (id)sharedSystemController;
 
+- (void).cxx_destruct;
 - (void)_handleCallStatusChanged;
 - (void)_handleDownlinkMuteDidChangeNotification:(id)arg1;
 - (void)_handleUplinkMuteDidChangeNotification:(id)arg1;
@@ -45,15 +46,13 @@
 - (id)_pickableRoutesForPlayAndRecordVideoWithForceNewRequest:(BOOL)arg1;
 - (id)_pickableRoutesForPlayAndRecordVoiceWithForceNewRequest:(BOOL)arg1;
 - (id)_pickableRoutesForTTYWithForceNewRequest:(BOOL)arg1;
+- (id)bestGuessPickableRoutesForAnyCall;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isDownlinkMuted;
 - (BOOL)isTTY;
 - (BOOL)isUplinkMuted;
 - (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
-- (id)pickableRoutesForFaceTimeAudioCategory;
-- (id)pickableRoutesForFaceTimeVideoCategory;
-- (id)pickableRoutesForPhoneCallCategory;
 - (id)pickableRoutesForTTY;
 - (BOOL)setDownlinkMuted:(BOOL)arg1;
 - (BOOL)setUplinkMuted:(BOOL)arg1;

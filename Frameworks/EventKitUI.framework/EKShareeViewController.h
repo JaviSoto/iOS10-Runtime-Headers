@@ -3,12 +3,12 @@
  */
 
 @interface EKShareeViewController : UITableViewController {
-    BOOL _allowEditing;
-    BOOL _allowResendInvitations;
-    BOOL _allowStopSharing;
-    <EKShareeViewControllerDelegate> *_delegate;
-    UIAlertController *_removeAlertController;
-    EKSharee *_sharee;
+    BOOL  _allowEditing;
+    BOOL  _allowResendInvitations;
+    BOOL  _allowStopSharing;
+    <EKShareeViewControllerDelegate> * _delegate;
+    UIAlertController * _removeAlertController;
+    EKSharee * _sharee;
 }
 
 @property (nonatomic) BOOL allowEditing;

@@ -3,9 +3,9 @@
  */
 
 @interface ACUIDataclassActionPicker : NSObject {
-    NSArray *_actions;
-    ACAccount *_affectedAccount;
-    NSMutableArray *_affectedDataclasses;
+    NSArray * _actions;
+    ACAccount * _affectedAccount;
+    NSMutableArray * _affectedDataclasses;
 }
 
 @property (nonatomic, readonly) NSArray *actions;

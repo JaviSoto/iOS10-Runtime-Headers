@@ -3,7 +3,7 @@
  */
 
 @interface HDMetadataValueStatement : HDSQLiteQueryStatement {
-    NSDictionary *_propertySetters;
+    NSDictionary * _propertySetters;
 }
 
 - (void).cxx_destruct;

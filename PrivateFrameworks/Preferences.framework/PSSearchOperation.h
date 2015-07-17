@@ -3,21 +3,22 @@
  */
 
 @interface PSSearchOperation : NSOperation {
-    PSSearchResults *_currentResults;
-    <PSSearchOperationDelegate> *_delegate;
-    BOOL _newQuery;
-    NSString *_query;
-    NSSet *_rootEntries;
+    PSSearchResults * _currentResults;
+    <PSSearchOperationDelegate> * _delegate;
+    BOOL  _newQuery;
+    NSString * _query;
+    NSSet * _rootEntries;
 }
 
 @property (readonly, copy) PSSearchResults *currentResults;
-@property (nonatomic) <PSSearchOperationDelegate> *delegate;
+@property <PSSearchOperationDelegate> *delegate;
 @property (getter=isNewQuery, nonatomic) BOOL newQuery;
 @property (nonatomic, readonly, copy) NSString *query;
 @property (nonatomic, readonly, copy) NSSet *rootEntries;
 
 + (struct __CFStringTokenizer { }*)_wordBoundaryTokenizer;
 
+- (void).cxx_destruct;
 - (void)_didCancel;
 - (id)_filterEntriesMatchingQuery:(id)arg1 forQuery:(id)arg2;
 - (BOOL)_searchEntries:(id)arg1 forQuery:(id)arg2;

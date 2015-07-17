@@ -3,12 +3,12 @@
  */
 
 @interface MusicStoreStreamingPlaybackItemMetadata : MPMediaLibraryPlaybackItemMetadata {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasLoadedMediaItem;
-    BOOL _isLoadingMediaItem;
-    NSMutableArray *_mediaItemLoadCompletionHandlers;
-    MPStoreItemMetadata *_storeItemMetadata;
-    MusicStoreItemMetadataContext *_storeItemMetadataContext;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasLoadedMediaItem;
+    BOOL  _isLoadingMediaItem;
+    NSMutableArray * _mediaItemLoadCompletionHandlers;
+    MPStoreItemMetadata * _storeItemMetadata;
+    MusicStoreItemMetadataContext * _storeItemMetadataContext;
 }
 
 @property (nonatomic, retain) MusicStoreItemMetadataContext *storeItemMetadataContext;

@@ -15,13 +15,13 @@
         } minimumSize; 
         BOOL hasCaption; 
         BOOL isBatchStart; 
-    } _enqueuedCaptionTileInfo;
+    }  _enqueuedCaptionTileInfo;
     struct CGPoint { 
         float x; 
         float y; 
-    } _origin;
-    float _referenceWidth;
-    BOOL _shouldDisplayCaptionsBelowBatches;
+    }  _origin;
+    float  _referenceWidth;
+    BOOL  _shouldDisplayCaptionsBelowBatches;
 }
 
 @property (nonatomic) float referenceWidth;

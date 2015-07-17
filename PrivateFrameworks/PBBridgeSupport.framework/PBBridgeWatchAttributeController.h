@@ -3,11 +3,11 @@
  */
 
 @interface PBBridgeWatchAttributeController : NSObject {
-    NRDevice *_device;
-    unsigned int _edition;
-    int _material;
-    unsigned int _size;
-    NSCache *_stringCache;
+    NRDevice * _device;
+    unsigned int  _edition;
+    int  _material;
+    unsigned int  _size;
+    NSCache * _stringCache;
 }
 
 @property (nonatomic, retain) NRDevice *device;

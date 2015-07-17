@@ -3,18 +3,18 @@
  */
 
 @interface MMCSSimpleFile : NSObject {
-    NSString *_authToken;
-    int _encryptionBehavior;
-    int _fd;
-    NSData *_fileHash;
-    NSString *_guid;
-    unsigned long long _itemID;
-    NSString *_localPath;
-    double _progress;
-    unsigned long long _protocolFileSize;
-    NSURL *_requestURL;
-    NSString *_requestorID;
-    NSData *_signature;
+    NSString * _authToken;
+    int  _encryptionBehavior;
+    int  _fd;
+    NSData * _fileHash;
+    NSString * _guid;
+    unsigned long long  _itemID;
+    NSString * _localPath;
+    double  _progress;
+    unsigned long long  _protocolFileSize;
+    NSURL * _requestURL;
+    NSString * _requestorID;
+    NSData * _signature;
 }
 
 @property (retain) NSString *authToken;

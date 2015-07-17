@@ -3,8 +3,8 @@
  */
 
 @interface SKRange : NSObject <NSCoding, NSCopying> {
-    float _lowerLimit;
-    float _upperLimit;
+    float  _lowerLimit;
+    float  _upperLimit;
 }
 
 @property float lowerLimit;

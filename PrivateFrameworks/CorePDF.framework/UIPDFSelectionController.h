@@ -6,19 +6,19 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _adjustedPoint;
-    BOOL _cancelled;
-    long _firstIndex;
-    BOOL _hiding;
-    BOOL _instantHighlightMode;
-    BOOL _instantModeIsSuspended;
-    BOOL _isTracking;
-    long _lastIndex;
-    BOOL _needsLayout;
-    UIPDFPageView *_pageView;
-    BOOL _preceeds;
-    BOOL _rangeMode;
-    BOOL _resizingWidget;
+    }  _adjustedPoint;
+    BOOL  _cancelled;
+    long  _firstIndex;
+    BOOL  _hiding;
+    BOOL  _instantHighlightMode;
+    BOOL  _instantModeIsSuspended;
+    BOOL  _isTracking;
+    long  _lastIndex;
+    BOOL  _needsLayout;
+    UIPDFPageView * _pageView;
+    BOOL  _preceeds;
+    BOOL  _rangeMode;
+    BOOL  _resizingWidget;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,16 +28,16 @@
             float width; 
             float height; 
         } size; 
-    } _selectionBounds;
+    }  _selectionBounds;
     struct CGPoint { 
         float x; 
         float y; 
-    } _selectionFixedPoint;
-    <UIPDFSelectionWidget><NSObject> *_selectionWidget;
+    }  _selectionFixedPoint;
+    <UIPDFSelectionWidget><NSObject> * _selectionWidget;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPoint;
+    }  _startPoint;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } adjustedPoint;

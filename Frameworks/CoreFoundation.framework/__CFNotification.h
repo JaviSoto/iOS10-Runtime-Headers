@@ -3,11 +3,11 @@
  */
 
 @interface __CFNotification : NSNotification <NSCopying> {
-    BOOL _dyingObject;
-    BOOL _fouSemantics;
-    id _name;
-    id _object;
-    id _userInfo;
+    BOOL  _dyingObject;
+    BOOL  _fouSemantics;
+    id  _name;
+    id  _object;
+    id  _userInfo;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

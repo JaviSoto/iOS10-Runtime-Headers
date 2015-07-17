@@ -3,7 +3,7 @@
  */
 
 @interface CKFetchUserQuotaOperationResult : CKOperationResult <NSSecureCoding> {
-    unsigned long long _quotaAvailable;
+    unsigned long long  _quotaAvailable;
 }
 
 @property (nonatomic) unsigned long long quotaAvailable;

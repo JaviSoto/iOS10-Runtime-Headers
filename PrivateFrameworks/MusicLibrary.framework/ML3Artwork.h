@@ -3,13 +3,13 @@
  */
 
 @interface ML3Artwork : NSObject {
-    NSString *_artworkToken;
-    int _artworkType;
-    NSDictionary *_interestDictionary;
-    ML3MusicLibrary *_musicLibrary;
-    NSURL *_originalFileURL;
-    NSString *_relativePath;
-    int _sourceType;
+    NSString * _artworkToken;
+    int  _artworkType;
+    NSDictionary * _interestDictionary;
+    ML3MusicLibrary * _musicLibrary;
+    NSURL * _originalFileURL;
+    NSString * _relativePath;
+    int  _sourceType;
 }
 
 @property (nonatomic, readonly) NSString *artworkToken;

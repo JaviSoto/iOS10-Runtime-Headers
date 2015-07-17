@@ -27,7 +27,6 @@
 - (void)setRoom:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setZone:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)zone;
 
 @end

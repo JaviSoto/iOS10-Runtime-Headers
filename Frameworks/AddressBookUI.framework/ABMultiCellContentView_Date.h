@@ -3,7 +3,7 @@
  */
 
 @interface ABMultiCellContentView_Date : ABMultiCellContentView <ABDateFieldDelegate> {
-    ABDateField *_dateField;
+    ABDateField * _dateField;
 }
 
 @property (nonatomic, readonly) NSDate *date;

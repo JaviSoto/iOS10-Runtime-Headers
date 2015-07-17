@@ -3,24 +3,25 @@
  */
 
 @interface _UISegmentedControlAppearanceStorage : NSObject {
-    NSMutableDictionary *_backgroundImages;
-    NSMutableDictionary *_backgroundPositionAdjustmentsForBarMetrics;
-    NSMutableDictionary *_contentPositionOffsets;
-    NSMutableDictionary *_dividerImages;
-    BOOL _isTiled;
-    unsigned int _leftCapWidth;
-    BOOL _legacyDontHighlight;
-    BOOL _legacySuppressOptionsBackground;
-    NSMutableDictionary *_miniBackgroundImages;
-    NSMutableDictionary *_miniContentPositionOffsets;
-    NSMutableDictionary *_miniDividerImages;
-    UIImage *_optionsBackgroundImage;
-    unsigned int _rightCapWidth;
-    NSMutableDictionary *_textAttributesForState;
+    NSMutableDictionary * _backgroundImages;
+    NSMutableDictionary * _backgroundPositionAdjustmentsForBarMetrics;
+    NSMutableDictionary * _contentPositionOffsets;
+    NSMutableDictionary * _dividerImages;
+    BOOL  _isTiled;
+    unsigned int  _leftCapWidth;
+    BOOL  _legacyDontHighlight;
+    BOOL  _legacySuppressOptionsBackground;
+    NSMutableDictionary * _miniBackgroundImages;
+    NSMutableDictionary * _miniContentPositionOffsets;
+    NSMutableDictionary * _miniDividerImages;
+    UIImage * _optionsBackgroundImage;
+    unsigned int  _rightCapWidth;
+    NSMutableDictionary * _textAttributesForState;
 }
 
 @property (nonatomic, retain) UIImage *optionsBackgroundImage;
 
+- (void).cxx_destruct;
 - (id)anyDividerImage;
 - (id)anyDividerImageForMini:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
@@ -28,7 +29,6 @@
 - (float)backgroundPositionAdjustmentForBarMetrics:(int)arg1;
 - (id)contentPositionOffsetForSegment:(int)arg1 inMiniBar:(BOOL)arg2;
 - (id)contentPositionOffsetForSegment:(int)arg1 inMiniBar:(BOOL)arg2 noFallback:(BOOL)arg3;
-- (void)dealloc;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 isMini:(BOOL)arg3 withFallback:(BOOL)arg4;
 - (id)init;

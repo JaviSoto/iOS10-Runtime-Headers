@@ -3,9 +3,9 @@
  */
 
 @interface HDMetadataValueResult : NSObject {
-    NSNumber *_keyID;
-    NSNumber *_objectID;
-    id _value;
+    NSNumber * _keyID;
+    NSNumber * _objectID;
+    id  _value;
 }
 
 @property (nonatomic, retain) NSNumber *keyID;
@@ -13,6 +13,7 @@
 @property (nonatomic, retain) id value;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)keyID;
 - (id)objectID;
 - (void)setKeyID:(id)arg1;

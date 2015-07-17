@@ -3,14 +3,14 @@
  */
 
 @interface HDIDSIncomingRequest : NSObject {
-    NSData *_data;
-    BOOL _expectsResponse;
-    NSString *_idsIdentifier;
-    HDIDSMessageCenter *_messageCenter;
-    unsigned short _messageID;
-    id _pbRequest;
-    unsigned int _priority;
-    HDIDSOutgoingResponse *_response;
+    NSData * _data;
+    BOOL  _expectsResponse;
+    NSString * _idsIdentifier;
+    HDIDSMessageCenter * _messageCenter;
+    unsigned short  _messageID;
+    id  _pbRequest;
+    unsigned int  _priority;
+    HDIDSOutgoingResponse * _response;
 }
 
 @property (nonatomic, retain) NSData *data;

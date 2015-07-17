@@ -3,12 +3,12 @@
  */
 
 @interface NSRunLoop : NSObject {
-    id _dperf;
-    id _info;
-    id _perft;
-    id _ports;
-    void *_reserved;
-    id _rl;
+    id  _dperf;
+    id  _info;
+    id  _perft;
+    id  _ports;
+    void * _reserved;
+    id  _rl;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -54,5 +54,9 @@
 
 + (id)_mapkit_networkIORunLoop;
 + (void)set_mapkit_networkIORunLoop:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (BOOL)rc_runUntilNextDisplayLinkEventWithTimeout:(double)arg1;
 
 @end

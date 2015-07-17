@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreItemMetadata : NSObject <NSCopying> {
-    NSDictionary *_downloadAssetDictionary;
-    NSDictionary *_downloadMetadataDictionary;
-    BOOL _hasOverrideChildStorePlatformDictionaries;
-    NSArray *_overrideChildStorePlatformDictionaries;
-    MPStoreItemMetadata *_parentStoreItemMetadata;
-    NSDictionary *_storePlatformDictionary;
+@interface MPStoreItemMetadata : NSObject <NSCopying, NSSecureCoding> {
+    NSDictionary * _downloadAssetDictionary;
+    NSDictionary * _downloadMetadataDictionary;
+    BOOL  _hasOverrideChildStorePlatformDictionaries;
+    NSArray * _overrideChildStorePlatformDictionaries;
+    MPStoreItemMetadata * _parentStoreItemMetadata;
+    NSDictionary * _storePlatformDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSString *artistName;
@@ -40,6 +40,8 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_artworkRequestTokenForStorePlatformDictionary:(id)arg1 artworkKey:(id)arg2;
 - (id)_storePlatformDateFormatter;
@@ -63,7 +65,9 @@
 - (double)duration;
 - (id)editorNotes;
 - (id)effectiveStorePlatformDictionary;
+- (void)encodeWithCoder:(id)arg1;
 - (id)genreNames;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDownloadAssetDictionary:(id)arg1;
 - (id)initWithStorePlatformDictionary:(id)arg1;
 - (id)initWithStorePlatformDictionary:(id)arg1 parentStoreItemMetadata:(id)arg2;

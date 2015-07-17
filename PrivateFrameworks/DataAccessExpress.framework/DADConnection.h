@@ -3,19 +3,19 @@
  */
 
 @interface DADConnection : NSObject {
-    NSMutableSet *_accountIdsWithAlreadyResetCerts;
-    NSMutableSet *_accountIdsWithAlreadyResetThrottleTimers;
-    NSObject<OS_xpc_object> *_conn;
-    NSMutableDictionary *_inFlightAttachmentDownloads;
-    NSMutableDictionary *_inFlightCalendarAvailabilityRequests;
-    NSMutableDictionary *_inFlightCalendarDirectorySearches;
-    NSMutableDictionary *_inFlightFolderChanges;
-    NSMutableDictionary *_inFlightOofSettingsRequests;
-    NSMutableDictionary *_inFlightSearchQueries;
-    NSMutableDictionary *_inFlightShareRequests;
-    NSObject<OS_dispatch_queue> *_muckingWithConn;
-    NSObject<OS_dispatch_queue> *_muckingWithInFlightCollections;
-    id /* block */ _statusReportBlock;
+    NSMutableSet * _accountIdsWithAlreadyResetCerts;
+    NSMutableSet * _accountIdsWithAlreadyResetThrottleTimers;
+    NSObject<OS_xpc_object> * _conn;
+    NSMutableDictionary * _inFlightAttachmentDownloads;
+    NSMutableDictionary * _inFlightCalendarAvailabilityRequests;
+    NSMutableDictionary * _inFlightCalendarDirectorySearches;
+    NSMutableDictionary * _inFlightFolderChanges;
+    NSMutableDictionary * _inFlightOofSettingsRequests;
+    NSMutableDictionary * _inFlightSearchQueries;
+    NSMutableDictionary * _inFlightShareRequests;
+    NSObject<OS_dispatch_queue> * _muckingWithConn;
+    NSObject<OS_dispatch_queue> * _muckingWithInFlightCollections;
+    id /* block */  _statusReportBlock;
 }
 
 + (void)setShouldIgnoreAccountChanges;

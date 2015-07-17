@@ -3,16 +3,16 @@
  */
 
 @interface RCCompositionFragment : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
-    NSURL *_AVOutputURL;
-    double _contentDuration;
+    NSURL * _AVOutputURL;
+    double  _contentDuration;
     struct { 
         double beginTime; 
         double endTime; 
-    } _timeRangeInComposition;
+    }  _timeRangeInComposition;
     struct { 
         double beginTime; 
         double endTime; 
-    } _timeRangeInContentToUse;
+    }  _timeRangeInContentToUse;
 }
 
 @property (nonatomic, retain) NSURL *AVOutputURL;

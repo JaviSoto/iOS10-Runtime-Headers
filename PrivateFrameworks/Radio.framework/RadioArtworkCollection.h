@@ -3,7 +3,7 @@
  */
 
 @interface RadioArtworkCollection : NSObject <NSCopying> {
-    NSArray *_artworks;
+    NSArray * _artworks;
 }
 
 @property (nonatomic, readonly) NSArray *artworks;

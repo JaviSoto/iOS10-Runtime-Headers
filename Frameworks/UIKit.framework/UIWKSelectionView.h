@@ -3,15 +3,15 @@
  */
 
 @interface UIWKSelectionView : UIWebSelectionView {
-    UIWebSelectionHandle *_handle;
-    UIView<UIWKInteractionViewProtocol> *_interactionView;
+    UIWebSelectionHandle * _handle;
+    UIView<UIWKInteractionViewProtocol> * _interactionView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastTouchPoint;
-    BOOL _selectionIsBlock;
-    BOOL _thresholdIsValid;
-    BOOL _usingGesture;
+    }  _lastTouchPoint;
+    BOOL  _selectionIsBlock;
+    BOOL  _thresholdIsValid;
+    BOOL  _usingGesture;
 }
 
 - (void)blockSelectionChangedWithTouch:(int)arg1 withFlags:(int)arg2 growThreshold:(float)arg3 shrinkThreshold:(float)arg4;

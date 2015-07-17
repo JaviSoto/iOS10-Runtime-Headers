@@ -3,16 +3,16 @@
  */
 
 @interface EKCalendarItemRecurrenceEditItem : EKCalendarItemEditItem <EKCellShortener, EKRecurrenceTypeEditItemViewControllerDelegate> {
-    NSString *_customRepeatDescription;
-    unsigned int _disclosedSubitem;
-    NSDate *_originalRepeatEnd;
-    int _originalRepeatType;
-    EKRecurrenceTypeEditItemViewController *_recurrenceTypeVC;
-    NSDate *_repeatEnd;
-    PreferencesValueCell *_repeatEndDateCell;
-    EKCalendarItemRecurrenceEndCell *_repeatEndPickerCell;
-    int _repeatType;
-    int _shorteningStatus;
+    NSString * _customRepeatDescription;
+    unsigned int  _disclosedSubitem;
+    NSDate * _originalRepeatEnd;
+    int  _originalRepeatType;
+    EKRecurrenceTypeEditItemViewController * _recurrenceTypeVC;
+    NSDate * _repeatEnd;
+    PreferencesValueCell * _repeatEndDateCell;
+    EKCalendarItemRecurrenceEndCell * _repeatEndPickerCell;
+    int  _repeatType;
+    int  _shorteningStatus;
 }
 
 @property (readonly, copy) NSString *debugDescription;

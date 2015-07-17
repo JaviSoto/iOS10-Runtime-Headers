@@ -3,8 +3,8 @@
  */
 
 @interface TSKCOIdPlacementAddOperation : TSKCOIdPlacementBaseOperation <TSKCOObjectCountConstraint> {
-    int mObjectCount;
-    int mObjectCounterSpace;
+    int  mObjectCount;
+    int  mObjectCounterSpace;
 }
 
 @property (readonly, copy) NSString *debugDescription;

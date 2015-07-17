@@ -3,26 +3,26 @@
  */
 
 @interface PUPhotoStreamRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, IDSBatchIDQueryControllerDelegate, MFComposeRecipientViewDelegate, MFContactsSearchConsumer, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    float _bottomTableOffset;
-    NSNumber *_currentSearchTaskID;
-    id _delegate;
-    IDSBatchIDQueryController *_idsBatchIDQueryController;
-    float _lastHeight;
-    ABPeoplePickerNavigationController *_peoplePickerPresentedController;
-    NSArray *_properties;
-    UIScrollView *_recipientContainerView;
-    MFComposeRecipientView *_recipientView;
+    float  _bottomTableOffset;
+    NSNumber * _currentSearchTaskID;
+    id  _delegate;
+    IDSBatchIDQueryController * _idsBatchIDQueryController;
+    float  _lastHeight;
+    ABPeoplePickerNavigationController * _peoplePickerPresentedController;
+    NSArray * _properties;
+    UIScrollView * _recipientContainerView;
+    MFComposeRecipientView * _recipientView;
     struct CGSize { 
         float width; 
         float height; 
-    } _recipientViewSize;
-    MFContactsSearchManager *_searchManager;
-    NSArray *_searchResults;
-    MFContactsSearchResultsModel *_searchResultsModel;
-    UITableView *_searchResultsTable;
-    BOOL _showingPeoplePicker;
-    NSMutableSet *_validPhoneNumbers;
-    BOOL _wasFirstResponder;
+    }  _recipientViewSize;
+    MFContactsSearchManager * _searchManager;
+    NSArray * _searchResults;
+    MFContactsSearchResultsModel * _searchResultsModel;
+    UITableView * _searchResultsTable;
+    BOOL  _showingPeoplePicker;
+    NSMutableSet * _validPhoneNumbers;
+    BOOL  _wasFirstResponder;
 }
 
 @property (nonatomic) float bottomTableOffset;

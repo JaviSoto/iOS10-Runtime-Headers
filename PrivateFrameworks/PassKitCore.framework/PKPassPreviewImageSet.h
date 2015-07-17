@@ -3,7 +3,7 @@
  */
 
 @interface PKPassPreviewImageSet : PKPassImageSet {
-    PKImage *_iconImage;
+    PKImage * _iconImage;
 }
 
 @property (nonatomic, retain) PKImage *iconImage;

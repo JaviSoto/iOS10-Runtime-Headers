@@ -3,17 +3,17 @@
  */
 
 @interface KNOffscreenController : NSObject {
-    CALayer *_baseLayer;
-    KNAnimatedSlideView *mAnimator;
-    BOOL mFirstEvent;
-    BOOL mIsImageGenerationCancelled;
+    CALayer * _baseLayer;
+    KNAnimatedSlideView * mAnimator;
+    BOOL  mFirstEvent;
+    BOOL  mIsImageGenerationCancelled;
     struct CGSize { 
         float width; 
         float height; 
-    } mOutputSize;
-    KNPlaybackSession *mSession;
-    KNShow *mShow;
-    unsigned int mSlideIndex;
+    }  mOutputSize;
+    KNPlaybackSession * mSession;
+    KNShow * mShow;
+    unsigned int  mSlideIndex;
 }
 
 @property (nonatomic, readonly) KNAnimatedSlideView *animatedSlideView;

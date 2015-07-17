@@ -3,7 +3,7 @@
  */
 
 @interface CHDOfficeArtClient : NSObject <OADClient> {
-    CHDAnchor *mAnchor;
+    CHDAnchor * mAnchor;
 }
 
 @property (readonly, copy) NSString *debugDescription;

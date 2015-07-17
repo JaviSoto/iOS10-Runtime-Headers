@@ -3,11 +3,10 @@
  */
 
 @interface BWMRCNode : BWNode {
-    int (*_createSampleBufferProcessorFunction;
-    int _lastMRCCount;
-    NSDictionary *_metadataIdentifierToSymbologyDictionary;
-    int _metadataOutputRate;
-    NSArray *_mrcIdentifiers;
+    int (* _createSampleBufferProcessorFunction;
+    int  _lastMRCCount;
+    NSDictionary * _metadataIdentifierToSymbologyDictionary;
+    NSArray * _mrcIdentifiers;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,9 +16,9 @@
             float width; 
             float height; 
         } size; 
-    } _rectOfInterest;
-    struct OpaqueFigSampleBufferProcessor { } *_sampleBufferProcessor;
-    NSArray *_symbologiesArray;
+    }  _rectOfInterest;
+    struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
+    NSArray * _symbologiesArray;
 }
 
 + (void)initialize;

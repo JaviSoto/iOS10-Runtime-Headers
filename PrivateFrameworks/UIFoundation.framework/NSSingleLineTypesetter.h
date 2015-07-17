@@ -3,18 +3,18 @@
  */
 
 @interface NSSingleLineTypesetter : NSATSTypesetter {
-    unsigned int *_charIndexes;
+    unsigned int * _charIndexes;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _currentBufferRange;
-    unsigned short *_glyphs;
-    float _lineWidth;
-    int *_props;
+    }  _currentBufferRange;
+    unsigned short * _glyphs;
+    float  _lineWidth;
+    int * _props;
     struct { 
         unsigned int _usesScreenFonts : 1; 
         unsigned int _reserved : 31; 
-    } _slFlags;
+    }  _slFlags;
 }
 
 + (bool)_validateAttributes:(id)arg1 measuringOnly:(bool)arg2;

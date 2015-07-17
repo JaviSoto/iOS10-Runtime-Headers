@@ -3,12 +3,12 @@
  */
 
 @interface TRDBrowser : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    NSMapTable *_XPCConnectionToBrowsingCount;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSNetServiceBrowser *_browser;
-    unsigned int _browsingCount;
-    NSMapTable *_netServiceToResolvingCompletionHandlers;
-    NSMapTable *_netServiceToService;
+    NSMapTable * _XPCConnectionToBrowsingCount;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSNetServiceBrowser * _browser;
+    unsigned int  _browsingCount;
+    NSMapTable * _netServiceToResolvingCompletionHandlers;
+    NSMapTable * _netServiceToService;
 }
 
 @property (getter=isBrowsing, nonatomic, readonly) BOOL browsing;

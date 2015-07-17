@@ -3,7 +3,7 @@
  */
 
 @interface _HKHeartRateQuery : HKQuery {
-    id /* block */ _updateHandler;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, copy) id /* block */ updateHandler;

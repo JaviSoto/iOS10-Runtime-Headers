@@ -3,7 +3,7 @@
  */
 
 @interface SCNSpriteKitSource : SCNImageSource {
-    SKScene *_scene;
+    SKScene * _scene;
 }
 
 @property (nonatomic, retain) SKScene *scene;
@@ -12,6 +12,6 @@
 - (BOOL)isOpaque;
 - (id)scene;
 - (void)setScene:(id)arg1;
-- (id)textureSourceForContext:(void*)arg1;
+- (id)textureSource;
 
 @end

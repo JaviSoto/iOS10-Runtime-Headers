@@ -5,8 +5,8 @@
 @interface NACHapticIntensityMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int intensity : 1; 
-    } _has;
-    float _intensity;
+    }  _has;
+    float  _intensity;
 }
 
 @property (nonatomic) BOOL hasIntensity;

@@ -3,19 +3,17 @@
  */
 
 @interface SCNSceneSource : NSObject {
-    NSOperationQueue *_downloadingQueue;
-    struct __C3DScene { } *_lastLoadedScene;
-    NSDictionary *_lastOptions;
-    id _reserved;
-    BOOL _sceneLoaded;
-    struct __C3DSceneSource { } *_sceneSource;
-    NSDictionary *_sceneSourceOptions;
+    NSOperationQueue * _downloadingQueue;
+    struct __C3DScene { } * _lastLoadedScene;
+    NSDictionary * _lastOptions;
+    BOOL  _sceneLoaded;
+    struct __C3DSceneSource { } * _sceneSource;
+    NSDictionary * _sceneSourceOptions;
 }
 
 @property (readonly) NSData *data;
 @property (readonly) NSURL *url;
 
-+ (id)SCNJSExportProtocol;
 + (void)_cacheSceneSource:(id)arg1 forURL:(id)arg2 options:(id)arg3;
 + (id)_cachedSceneSourceForURL:(id)arg1 options:(id)arg2;
 + (void)_removeCachedSceneSourceIfNeededForURL:(id)arg1;

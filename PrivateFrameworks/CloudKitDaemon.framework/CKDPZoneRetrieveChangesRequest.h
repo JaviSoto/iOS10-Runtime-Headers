@@ -5,9 +5,9 @@
 @interface CKDPZoneRetrieveChangesRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int maxChangedZones : 1; 
-    } _has;
-    unsigned int _maxChangedZones;
-    NSData *_syncContinuationToken;
+    }  _has;
+    unsigned int  _maxChangedZones;
+    NSData * _syncContinuationToken;
 }
 
 @property (nonatomic) BOOL hasMaxChangedZones;

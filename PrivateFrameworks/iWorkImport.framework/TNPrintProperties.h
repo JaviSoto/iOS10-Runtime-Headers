@@ -3,18 +3,18 @@
  */
 
 @interface TNPrintProperties : NSObject {
-    float _footerInset;
-    float _headerInset;
+    float  _footerInset;
+    float  _headerInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _printMargins;
+    }  _printMargins;
     struct CGSize { 
         float width; 
         float height; 
-    } _unscaledPageSize;
+    }  _unscaledPageSize;
 }
 
 @property (nonatomic) float footerInset;

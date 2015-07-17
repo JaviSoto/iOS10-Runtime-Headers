@@ -3,20 +3,20 @@
  */
 
 @interface GKCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    BOOL _allSectionItemsVisible;
-    unsigned int _currentTotalItemCount;
-    unsigned int _currentVisibleItemCount;
-    <UICollectionViewDataSource> *_dataSource;
-    BOOL _doesAbutLeftOfCollectionView;
-    unsigned int _gridLayoutLocation;
-    BOOL _isPartOfGlobalPinningGroup;
-    BOOL _isPinned;
-    float _leadingMargin;
-    unsigned int _maxTotalItemCount;
-    GKSectionMetrics *_sectionMetrics;
-    GKSupplementaryViewMetrics *_supplementaryMetrics;
-    float _trailingMargin;
-    float _unpinnedY;
+    BOOL  _allSectionItemsVisible;
+    unsigned int  _currentTotalItemCount;
+    unsigned int  _currentVisibleItemCount;
+    <UICollectionViewDataSource> * _dataSource;
+    BOOL  _doesAbutLeftOfCollectionView;
+    unsigned int  _gridLayoutLocation;
+    BOOL  _isPartOfGlobalPinningGroup;
+    BOOL  _isPinned;
+    float  _leadingMargin;
+    unsigned int  _maxTotalItemCount;
+    GKSectionMetrics * _sectionMetrics;
+    GKSupplementaryViewMetrics * _supplementaryMetrics;
+    float  _trailingMargin;
+    float  _unpinnedY;
 }
 
 @property (nonatomic) BOOL allSectionItemsVisible;

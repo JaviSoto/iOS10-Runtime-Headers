@@ -3,14 +3,14 @@
  */
 
 @interface EKDirectorySearchOperation : NSOperation {
-    NSString *_accountID;
-    NSError *_error;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    BOOL _numberOfMatchesExceededLimit;
-    EKDirectorySearchQuery *_query;
-    id /* block */ _resultsBlock;
-    id _searchID;
+    NSString * _accountID;
+    NSError * _error;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    BOOL  _numberOfMatchesExceededLimit;
+    EKDirectorySearchQuery * _query;
+    id /* block */  _resultsBlock;
+    id  _searchID;
 }
 
 @property (nonatomic, retain) NSError *error;

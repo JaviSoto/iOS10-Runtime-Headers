@@ -5,7 +5,7 @@
 @interface WKDOMRange : NSObject {
     struct RefPtr<WebCore::Range> { 
         struct Range {} *m_ptr; 
-    } _impl;
+    }  _impl;
 }
 
 @property (readonly, retain) WKDOMNode *endContainer;

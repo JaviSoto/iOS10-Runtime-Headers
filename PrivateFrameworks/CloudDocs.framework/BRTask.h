@@ -3,12 +3,12 @@
  */
 
 @interface BRTask : NSObject {
-    NSArray *_argv;
-    NSString *_redirectStderrToFileAtPath;
-    int _redirectStderrToFileDescriptor;
-    NSString *_redirectStdoutToFileAtPath;
-    int _redirectStdoutToFileDescriptor;
-    int _waitStatus;
+    NSArray * _argv;
+    NSString * _redirectStderrToFileAtPath;
+    int  _redirectStderrToFileDescriptor;
+    NSString * _redirectStdoutToFileAtPath;
+    int  _redirectStdoutToFileDescriptor;
+    int  _waitStatus;
 }
 
 @property (nonatomic, retain) NSArray *argv;

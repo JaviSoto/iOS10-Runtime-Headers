@@ -3,9 +3,9 @@
  */
 
 @interface ABMultiCellContentView_Rows : ABMultiCellContentView <UITextFieldDelegate> {
-    NSMutableArray *_entryFields;
-    NSMutableArray *_horizontalDividers;
-    BOOL _isAttemptingFirstResponder;
+    NSMutableArray * _entryFields;
+    NSMutableArray * _horizontalDividers;
+    BOOL  _isAttemptingFirstResponder;
 }
 
 @property (readonly, copy) NSString *debugDescription;

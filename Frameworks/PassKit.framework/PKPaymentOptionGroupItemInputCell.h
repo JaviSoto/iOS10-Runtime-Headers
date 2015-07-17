@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentOptionGroupItemInputCell : PKPaymentOptionGroupItemCell {
-    UITextField *_textField;
+    UITextField * _textField;
 }
 
 @property (nonatomic, retain) UITextField *textField;

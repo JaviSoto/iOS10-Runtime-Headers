@@ -3,14 +3,14 @@
  */
 
 @interface MCLDAPAccountPayload : MCPayload {
-    NSString *_accountDescription;
-    NSString *_accountPersistentUUID;
-    NSString *_hostname;
-    NSString *_password;
-    NSArray *_searchSettings;
-    BOOL _useSSL;
-    NSNumber *_useSSLNum;
-    NSString *_username;
+    NSString * _accountDescription;
+    NSString * _accountPersistentUUID;
+    NSString * _hostname;
+    NSString * _password;
+    NSArray * _searchSettings;
+    BOOL  _useSSL;
+    NSNumber * _useSSLNum;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly, retain) NSString *accountDescription;

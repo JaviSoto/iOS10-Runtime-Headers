@@ -3,7 +3,7 @@
  */
 
 @interface NMRMediaRemoteSetStateMessage : NSObject <NMRMediaRemoteProtobufCodable> {
-    _NMRMediaRemoteSetStateMessageProfobuf *_protobuf;
+    _NMRMediaRemoteSetStateMessageProfobuf * _protobuf;
 }
 
 @property (nonatomic, readonly) NSData *applicationInfoData;

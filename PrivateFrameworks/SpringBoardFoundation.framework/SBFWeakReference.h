@@ -3,7 +3,7 @@
  */
 
 @interface SBFWeakReference : NSObject {
-    id _object;
+    id  _object;
 }
 
 + (id)weakReferenceWithObject:(id)arg1;

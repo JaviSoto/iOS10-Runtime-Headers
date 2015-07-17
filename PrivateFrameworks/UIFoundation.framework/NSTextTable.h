@@ -3,11 +3,11 @@
  */
 
 @interface NSTextTable : NSTextBlock {
-    id _lcache;
-    unsigned int _numCols;
-    unsigned int _tableFlags;
-    void *_tablePrimary;
-    void *_tableSecondary;
+    id  _lcache;
+    unsigned int  _numCols;
+    unsigned int  _tableFlags;
+    void * _tablePrimary;
+    void * _tableSecondary;
 }
 
 + (void)initialize;

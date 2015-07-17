@@ -3,7 +3,7 @@
  */
 
 @interface TSDDrawableSelection : TSKSelection {
-    NSSet *mInfos;
+    NSSet * mInfos;
 }
 
 @property (nonatomic, readonly) unsigned int infoCount;

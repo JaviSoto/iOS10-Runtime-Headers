@@ -3,12 +3,12 @@
  */
 
 @interface MSVArtworkServiceResizeRequestDestination : NSObject <NSSecureCoding> {
-    float _destinationCompressionQuality;
+    float  _destinationCompressionQuality;
     struct CGSize { 
         float width; 
         float height; 
-    } _destinationSize;
-    NSURL *_destinationURL;
+    }  _destinationSize;
+    NSURL * _destinationURL;
 }
 
 @property (nonatomic, readonly) float destinationCompressionQuality;

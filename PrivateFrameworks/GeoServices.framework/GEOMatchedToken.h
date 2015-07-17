@@ -7,12 +7,12 @@
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
-    } _geoIds;
-    int _geoType;
+    }  _geoIds;
+    int  _geoType;
     struct { 
         unsigned int geoType : 1; 
-    } _has;
-    NSString *_matchedToken;
+    }  _has;
+    NSString * _matchedToken;
 }
 
 @property (nonatomic, readonly) unsigned long long*geoIds;

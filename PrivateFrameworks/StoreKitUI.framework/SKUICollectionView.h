@@ -3,13 +3,13 @@
  */
 
 @interface SKUICollectionView : UICollectionView {
-    BOOL _delegateWantsWillLayoutSubviews;
-    BOOL _externalShowsHorizontalScrollIndicator;
-    BOOL _externalShowsVerticalScrollIndicator;
-    SKUIIndexBarControl *_indexBarControl;
-    float _overrideBoundsWidth;
-    UICollectionViewLayout *_pendingCollectionViewLayout;
-    UIRefreshControl *_refreshControl;
+    BOOL  _delegateWantsWillLayoutSubviews;
+    BOOL  _externalShowsHorizontalScrollIndicator;
+    BOOL  _externalShowsVerticalScrollIndicator;
+    SKUIIndexBarControl * _indexBarControl;
+    float  _overrideBoundsWidth;
+    UICollectionViewLayout * _pendingCollectionViewLayout;
+    UIRefreshControl * _refreshControl;
 }
 
 @property (nonatomic, retain) SKUIIndexBarControl *indexBarControl;

@@ -3,25 +3,25 @@
  */
 
 @interface MCDBrowsableContentTableViewController : UIViewController <MCDBrowsableContentModelListener, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIActivityIndicatorView *_activityIndicator;
-    NSIndexPath *_containerIndexPath;
-    int _count;
-    _UIFilteredDataSource *_dataSource;
-    AVExternalDevice *_externalDevice;
-    NSMutableSet *_indexesToUpdate;
-    BOOL _isFetchingGuard;
-    NSArray *_items;
-    BOOL _limited;
-    MCDBrowsableContentModel *_model;
-    UIView *_nowPlayingButton;
-    NSIndexPath *_reselectIndexPath;
-    NSIndexPath *_selectedNextIndexPath;
-    _MCDBrowsableContentTableViewPreloader *_selectionPreloader;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _shouldReloadOnAppear;
-    UITableView *_tableView;
-    BOOL _visible;
-    BOOL _wasPreloaded;
+    UIActivityIndicatorView * _activityIndicator;
+    NSIndexPath * _containerIndexPath;
+    int  _count;
+    _UIFilteredDataSource * _dataSource;
+    AVExternalDevice * _externalDevice;
+    NSMutableSet * _indexesToUpdate;
+    BOOL  _isFetchingGuard;
+    NSArray * _items;
+    BOOL  _limited;
+    MCDBrowsableContentModel * _model;
+    UIView * _nowPlayingButton;
+    NSIndexPath * _reselectIndexPath;
+    NSIndexPath * _selectedNextIndexPath;
+    _MCDBrowsableContentTableViewPreloader * _selectionPreloader;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    BOOL  _shouldReloadOnAppear;
+    UITableView * _tableView;
+    BOOL  _visible;
+    BOOL  _wasPreloaded;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -54,7 +54,9 @@
 - (void)model:(id)arg1 didUpdateContentItemsAtIndexPaths:(id)arg2;
 - (id)preferredFocusedItem;
 - (void)setVisible:(BOOL)arg1;
+- (void)showActivity:(BOOL)arg1 inCell:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didFocusRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface _MKJunctionElement : NSObject {
-    float _angle;
+    float  _angle;
     struct CGPoint { 
         float x; 
         float y; 
-    } _leftBasePoint;
+    }  _leftBasePoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _rightBasePoint;
+    }  _rightBasePoint;
 }
 
 @property float angle;

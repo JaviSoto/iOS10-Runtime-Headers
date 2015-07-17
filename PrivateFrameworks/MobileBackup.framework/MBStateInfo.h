@@ -3,11 +3,11 @@
  */
 
 @interface MBStateInfo : NSObject <NSCoding, NSCopying> {
-    NSDate *_date;
-    NSError *_error;
-    unsigned int _estimatedTimeRemaining;
-    float _progress;
-    int _state;
+    NSDate * _date;
+    NSError * _error;
+    unsigned int  _estimatedTimeRemaining;
+    float  _progress;
+    int  _state;
 }
 
 @property (nonatomic, readonly) NSDate *date;

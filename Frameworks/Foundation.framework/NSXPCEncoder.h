@@ -3,14 +3,14 @@
  */
 
 @interface NSXPCEncoder : NSXPCCoder {
-    BOOL _askForReplacement;
-    NSXPCConnection *_connection;
-    <NSXPCEncoderDelegate> *_delegate;
-    void **_encoder;
-    unsigned long long _genericIndex;
-    NSObject<OS_xpc_object> *_oolObjects;
-    struct __CFDictionary { } *_replacedByDelegateObjects;
-    struct __CFDictionary { } *_replacedObjects;
+    BOOL  _askForReplacement;
+    NSXPCConnection * _connection;
+    <NSXPCEncoderDelegate> * _delegate;
+    void ** _encoder;
+    unsigned long long  _genericIndex;
+    NSObject<OS_xpc_object> * _oolObjects;
+    struct __CFDictionary { } * _replacedByDelegateObjects;
+    struct __CFDictionary { } * _replacedObjects;
 }
 
 @property NSXPCConnection *_connection;

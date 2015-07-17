@@ -3,12 +3,12 @@
  */
 
 @interface SUSplitView : UIView {
-    UIView *_firstView;
-    int _layoutType;
-    float _minimumPaneSize;
-    UIView *_secondView;
-    float _splitPosition;
-    BOOL _vertical;
+    UIView * _firstView;
+    int  _layoutType;
+    float  _minimumPaneSize;
+    UIView * _secondView;
+    float  _splitPosition;
+    BOOL  _vertical;
 }
 
 @property (nonatomic, retain) UIView *firstView;

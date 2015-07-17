@@ -3,7 +3,7 @@
  */
 
 @interface VKTrafficDynamicTileSource : VKTileSetBackedTileSource {
-    VKTileCache *_recentTrafficDynamicTiles;
+    VKTileCache * _recentTrafficDynamicTiles;
 }
 
 - (void)clearCaches;

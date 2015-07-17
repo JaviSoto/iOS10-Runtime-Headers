@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetTabs : TSWPSpecTabs {
-    TSWPTabs *_tabs;
-    BOOL _unset;
+    TSWPTabs * _tabs;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

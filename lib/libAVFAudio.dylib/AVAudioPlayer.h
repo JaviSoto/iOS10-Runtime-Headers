@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioPlayer : NSObject {
-    id _impl;
+    id  _impl;
 }
 
 @property (nonatomic, copy) NSArray *channelAssignments;

@@ -8,10 +8,10 @@
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    BOOL _fitToImage;
-    UIColor *_strokeColor;
-    BOOL _strokeCurrentPath;
+    }  _edgeInsets;
+    BOOL  _fitToImage;
+    UIColor * _strokeColor;
+    BOOL  _strokeCurrentPath;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;

@@ -3,7 +3,7 @@
  */
 
 @interface TSPPasteboard : NSObject <TSPDecoder> {
-    id _pasteboard;
+    id  _pasteboard;
 }
 
 @property (nonatomic, readonly) NSArray *URLs;

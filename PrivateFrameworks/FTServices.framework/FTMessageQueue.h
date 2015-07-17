@@ -3,9 +3,9 @@
  */
 
 @interface FTMessageQueue : NSObject {
-    NSMutableArray *_addDates;
-    <FTMessageQueueDelegate> *_delegate;
-    NSMutableArray *_queue;
+    NSMutableArray * _addDates;
+    <FTMessageQueueDelegate> * _delegate;
+    NSMutableArray * _queue;
 }
 
 @property (retain) NSMutableArray *_addDates;

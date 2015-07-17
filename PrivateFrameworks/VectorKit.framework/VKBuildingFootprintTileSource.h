@@ -3,9 +3,9 @@
  */
 
 @interface VKBuildingFootprintTileSource : VKVectorTileSource {
-    BOOL _makeFacades;
-    int _minimumZoomLevel;
-    BOOL _prepareExtrusion;
+    BOOL  _makeFacades;
+    int  _minimumZoomLevel;
+    BOOL  _prepareExtrusion;
 }
 
 @property (nonatomic) BOOL makeFacades;

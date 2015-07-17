@@ -3,8 +3,8 @@
  */
 
 @interface RankElement : NSObject {
-    double score;
-    unsigned long long timeIndex;
+    double  score;
+    unsigned long long  timeIndex;
 }
 
 @property (nonatomic) double score;

@@ -3,10 +3,10 @@
  */
 
 @interface CADisplayMode : NSObject {
-    CADisplay *_dpy;
-    unsigned long _height;
-    void *_priv;
-    unsigned long _width;
+    CADisplay * _dpy;
+    unsigned long  _height;
+    void * _priv;
+    unsigned long  _width;
 }
 
 @property (nonatomic, readonly) unsigned long height;

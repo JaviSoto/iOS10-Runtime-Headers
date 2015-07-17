@@ -3,8 +3,8 @@
  */
 
 @interface PRSDecoder : NSObject {
-    NSMapTable *_converters;
-    <PRSDecoderDelegate> *_delegate;
+    NSMapTable * _converters;
+    <PRSDecoderDelegate> * _delegate;
 }
 
 @property <PRSDecoderDelegate> *delegate;

@@ -3,13 +3,13 @@
  */
 
 @interface CUIOuterBevelEmbossFilter : CIFilter {
-    NSNumber *inputAngle;
-    CIColor *inputHighlightColor;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    CIColor *inputShadowColor;
-    NSNumber *inputSize;
-    NSNumber *inputSoften;
+    NSNumber * inputAngle;
+    CIColor * inputHighlightColor;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    CIColor * inputShadowColor;
+    NSNumber * inputSize;
+    NSNumber * inputSoften;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;
@@ -32,7 +32,6 @@
 - (id)inputSize;
 - (id)inputSoften;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputHighlightColor:(id)arg1;
 - (void)setInputImage:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface EDCollection : NSObject <NSCopying> {
-    NSMutableArray *mObjects;
+    NSMutableArray * mObjects;
 }
 
 + (id)collection;
@@ -14,6 +14,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)hash;
 - (unsigned int)indexOfObject:(id)arg1;
 - (id)init;

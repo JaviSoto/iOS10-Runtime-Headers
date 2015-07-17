@@ -3,10 +3,10 @@
  */
 
 @interface MSImageScalingSpecification : NSObject {
-    int _assetTypeFlags;
-    float _maximumLongSideLength;
-    float _minimumLongSideLength;
-    float _nominalShortSideLength;
+    int  _assetTypeFlags;
+    float  _maximumLongSideLength;
+    float  _minimumLongSideLength;
+    float  _nominalShortSideLength;
 }
 
 @property (nonatomic) int assetTypeFlags;

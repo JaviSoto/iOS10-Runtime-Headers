@@ -3,28 +3,28 @@
  */
 
 @interface TKVibrationRecorderRippleView : UIView {
-    BOOL _animating;
-    float _currentSpeedCoefficient;
+    BOOL  _animating;
+    float  _currentSpeedCoefficient;
     struct CGPoint { 
         float x; 
         float y; 
-    } _currentTouchLocation;
-    double _currentTouchStartTime;
-    float _fadeOutRadius;
-    float _fingerMovingSpeed;
-    float _fingerStillSpeed;
-    float _firstRippleInitialRadius;
-    unsigned int _lastRingLayerIdentifier;
-    BOOL _needsCurrentSpeedRefresh;
-    unsigned int _numberOfRipplesForCurrentTouch;
-    NSMutableArray *_recentTouchesContextQueue;
-    NSMutableArray *_reusableRingLayers;
-    NSMutableArray *_reusableTouchContexts;
-    CAAnimation *_ringEnlargementAnimation;
-    NSMutableDictionary *_ringLayersByIdentifiers;
-    NSMutableArray *_ringLayersQueue;
-    <TKVibrationRecorderStyleProvider> *_styleProvider;
-    BOOL _trackingTouch;
+    }  _currentTouchLocation;
+    double  _currentTouchStartTime;
+    float  _fadeOutRadius;
+    float  _fingerMovingSpeed;
+    float  _fingerStillSpeed;
+    float  _firstRippleInitialRadius;
+    unsigned int  _lastRingLayerIdentifier;
+    BOOL  _needsCurrentSpeedRefresh;
+    unsigned int  _numberOfRipplesForCurrentTouch;
+    NSMutableArray * _recentTouchesContextQueue;
+    NSMutableArray * _reusableRingLayers;
+    NSMutableArray * _reusableTouchContexts;
+    CAAnimation * _ringEnlargementAnimation;
+    NSMutableDictionary * _ringLayersByIdentifiers;
+    NSMutableArray * _ringLayersQueue;
+    <TKVibrationRecorderStyleProvider> * _styleProvider;
+    BOOL  _trackingTouch;
 }
 
 @property (getter=_isAnimating, setter=_setAnimating:, nonatomic) BOOL _animating;

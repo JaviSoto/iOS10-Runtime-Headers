@@ -3,11 +3,11 @@
  */
 
 @interface BudgetPool : NSObject <DuetLoggerProtocol> {
-    int budgetMode;
-    long long currentGlobalPool;
-    long long globalPoolLimit;
-    long long itemPoolLimit;
-    NSMutableDictionary *itemsDictionary;
+    int  budgetMode;
+    long long  currentGlobalPool;
+    long long  globalPoolLimit;
+    long long  itemPoolLimit;
+    NSMutableDictionary * itemsDictionary;
 }
 
 - (void).cxx_destruct;

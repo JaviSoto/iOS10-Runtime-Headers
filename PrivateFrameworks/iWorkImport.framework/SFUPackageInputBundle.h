@@ -3,7 +3,7 @@
  */
 
 @interface SFUPackageInputBundle : NSObject <SFUInputBundle> {
-    NSString *_rootPath;
+    NSString * _rootPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,31 +3,31 @@
  */
 
 @interface TNPageController : NSObject {
-    TNPrintProperties *_printProperties;
-    NSMutableDictionary *mCachedAutoFitContentScaleDictionary;
-    int mCachedPageCountDuringDynamicContentScaleChange;
-    BOOL mComputingPageCounts;
-    NSObject<TNPageControllerDelegate> *mDelegate;
-    TNDocumentRoot *mDocumentRoot;
-    TNPageCoordinateDictionary *mFooterLayerCache;
-    float mFooterTextHeight;
-    TNPageCoordinateDictionary *mHeaderLayerCache;
-    float mHeaderTextHeight;
-    TSUPointerKeyDictionary *mHintCacheDictionary;
-    BOOL mInDynamicContentScaleChange;
+    TNPrintProperties * _printProperties;
+    NSMutableDictionary * mCachedAutoFitContentScaleDictionary;
+    int  mCachedPageCountDuringDynamicContentScaleChange;
+    BOOL  mComputingPageCounts;
+    NSObject<TNPageControllerDelegate> * mDelegate;
+    TNDocumentRoot * mDocumentRoot;
+    TNPageCoordinateDictionary * mFooterLayerCache;
+    float  mFooterTextHeight;
+    TNPageCoordinateDictionary * mHeaderLayerCache;
+    float  mHeaderTextHeight;
+    TSUPointerKeyDictionary * mHintCacheDictionary;
+    BOOL  mInDynamicContentScaleChange;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mMaxPageCoordinate;
-    BOOL mMaxPageCoordinateValid;
-    BOOL mPageCountsValid;
-    TNPageCoordinateDictionary *mPageLayoutCache;
-    int mPriorPageCount;
-    TNSheet *mSheet;
-    TSUPointerKeyDictionary *mSheetPageCountCache;
-    int mSubsequentPageCount;
-    float mUserViewScale;
+    }  mMaxPageCoordinate;
+    BOOL  mMaxPageCoordinateValid;
+    BOOL  mPageCountsValid;
+    TNPageCoordinateDictionary * mPageLayoutCache;
+    int  mPriorPageCount;
+    TNSheet * mSheet;
+    TSUPointerKeyDictionary * mSheetPageCountCache;
+    int  mSubsequentPageCount;
+    float  mUserViewScale;
 }
 
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
@@ -49,7 +49,6 @@
 + (id)p_cachedAutoFitContentScaleDictionary;
 + (float)p_contentScaleAutoFitForSheet:(id)arg1;
 
-- (id).cxx_construct;
 - (void)canvasViewScaleDidChange:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
 - (float)contentScale;
@@ -93,6 +92,7 @@
 - (id)p_pageLayoutAtCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (float)p_printViewDefaultUserViewScale;
 - (int)p_priorPageCount;
+- (BOOL)p_shouldSkipFormSheets;
 - (int)p_updateCachedPageCountForCurrentSheet;
 - (void)p_updateVisiblePageRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 forLayoutController:(id)arg2;
 - (void)p_willBeginDynamicContentScaleChange:(id)arg1;

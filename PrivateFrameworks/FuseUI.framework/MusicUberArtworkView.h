@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _focusRect;
-    NSArray *_focusRegions;
+    }  _focusRect;
+    NSArray * _focusRegions;
 }
 
 @property (nonatomic, copy) NSArray *focusRegions;

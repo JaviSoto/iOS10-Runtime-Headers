@@ -3,7 +3,7 @@
  */
 
 @interface _UIDebugAlignmentRectView : UIView {
-    float _baselineOffset;
+    float  _baselineOffset;
 }
 
 - (id)_alignmentDebuggingOverlayCreateIfNecessary:(BOOL)arg1;

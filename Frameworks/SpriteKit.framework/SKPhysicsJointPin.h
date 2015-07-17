@@ -6,12 +6,12 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _anchor;
-    float _frictionTorque;
-    float _lowerAngleLimit;
-    float _rotationSpeed;
-    BOOL _shouldEnableLimits;
-    float _upperAngleLimit;
+    }  _anchor;
+    float  _frictionTorque;
+    float  _lowerAngleLimit;
+    float  _rotationSpeed;
+    BOOL  _shouldEnableLimits;
+    float  _upperAngleLimit;
 }
 
 @property (readonly) struct CGPoint { float x1; float x2; } anchor;
@@ -24,7 +24,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })anchor;
 - (float)frictionTorque;
 - (float)lowerAngleLimit;

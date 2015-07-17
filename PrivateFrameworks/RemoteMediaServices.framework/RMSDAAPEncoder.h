@@ -3,7 +3,7 @@
  */
 
 @interface RMSDAAPEncoder : NSObject {
-    NSMutableData *_data;
+    NSMutableData * _data;
 }
 
 @property (nonatomic, readonly) NSData *data;

@@ -3,8 +3,11 @@
  */
 
 @interface AVAssetTrackInternal : NSObject {
-    AVWeakReference *assetWeakReference;
-    AVAssetTrackInspector *trackInspector;
+    AVWeakReference * assetWeakReference;
+    AVWeakReference * figAssetTrackNotificationListenerWeakReference;
+    struct OpaqueFigAssetTrack { } * figAssetTrackNotificationSource;
+    AVAssetTrackInspector * trackInspector;
+    AVWeakReference * weakReferenceToSelf;
 }
 
 @end

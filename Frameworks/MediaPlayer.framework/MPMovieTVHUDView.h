@@ -3,9 +3,9 @@
  */
 
 @interface MPMovieTVHUDView : UIView {
-    int _currentState;
-    UIImageView *_playbackMode;
-    MPAVController *_player;
+    int  _currentState;
+    UIImageView * _playbackMode;
+    MPAVController * _player;
 }
 
 @property (nonatomic, retain) MPAVController *player;

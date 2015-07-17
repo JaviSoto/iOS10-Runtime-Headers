@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartAddRotationBoundsSceneObjectMode : TSCH3DChartAddBoundsSceneObjectMode {
-    int mRotationType;
+    int  mRotationType;
 }
 
 @property (nonatomic) int rotationType;

@@ -3,9 +3,9 @@
  */
 
 @interface BLRetouchImageLayer : BLRetouchLayer {
-    UIImage *_image;
-    BLPixelImageBuffer *_imageBuffer;
-    float _imageScaleFactor;
+    UIImage * _image;
+    BLPixelImageBuffer * _imageBuffer;
+    float  _imageScaleFactor;
 }
 
 @property (nonatomic, retain) UIImage *image;

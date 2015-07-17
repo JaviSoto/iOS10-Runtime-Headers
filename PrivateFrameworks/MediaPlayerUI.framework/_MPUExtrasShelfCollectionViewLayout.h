@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    NSDictionary *_rects;
+    }  _contentSize;
+    NSDictionary * _rects;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } calculatedContentSize;

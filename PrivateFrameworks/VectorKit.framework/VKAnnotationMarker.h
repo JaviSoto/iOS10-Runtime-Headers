@@ -3,50 +3,58 @@
  */
 
 @interface VKAnnotationMarker : VKAnnotationMarkerLayer <MKCalloutSource, VKAnchorDelegate, VKTrackableAnnotationPresentation> {
-    VKAnchor *_anchor;
-    BOOL _animatingToCoordinate;
-    <VKAnnotation> *_annotation;
+    VKAnchor * _anchor;
+    BOOL  _animatingToCoordinate;
+    <VKAnnotation> * _annotation;
     struct CGPoint { 
         float x; 
         float y; 
-    } _calloutOffset;
-    BOOL _canShowCallout;
-    VKAnimation *_coordinateAnimation;
-    <VKAnnotationMarkerDelegate> *_delegate;
-    int _dragState;
-    BOOL _draggable;
-    float _dropFraction;
-    BOOL _followsTerrain;
-    BOOL _hidden;
+    }  _calloutOffset;
+    BOOL  _canShowCallout;
+    VKTimedAnimation * _coordinateAnimation;
+    <VKAnnotationMarkerDelegate> * _delegate;
+    int  _dragState;
+    BOOL  _draggable;
+    float  _dropFraction;
+    BOOL  _followsTerrain;
+    BOOL  _hidden;
     struct { 
         double latitude; 
         double longitude; 
-    } _presentationCoordinate;
+    }  _presentationCoordinate;
     struct CGPoint { 
         float x; 
         float y; 
-    } _presentationPoint;
+    }  _presentationPoint;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _projectedGroundPoint;
+    }  _projectedGroundPoint;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _projectedPoint;
-    NSString *_reuseIdentifier;
-    BOOL _selected;
+    }  _projectedPoint;
+    NSString * _reuseIdentifier;
+    BOOL  _selected;
     struct { 
         int from; 
         int to; 
-        unsigned int fromDisplayStyle; 
-        unsigned int toDisplayStyle; 
+        struct { 
+            unsigned char timePeriod; 
+            unsigned char overlayType; 
+            unsigned char applicationState; 
+        } fromDisplayStyle; 
+        struct { 
+            unsigned char timePeriod; 
+            unsigned char overlayType; 
+            unsigned char applicationState; 
+        } toDisplayStyle; 
         float fraction; 
-    } _styleTransitionState;
-    BOOL _tracking;
-    BOOL _useScreenSpacePoint;
+    }  _styleTransitionState;
+    BOOL  _tracking;
+    BOOL  _useScreenSpacePoint;
 }
 
 @property (nonatomic) BOOL animatingToCoordinate;
@@ -72,7 +80,7 @@
 @property (nonatomic, readonly) NSString *reuseIdentifier;
 @property (nonatomic, retain) UIView *rightCalloutAccessoryView;
 @property (getter=isSelected, nonatomic) BOOL selected;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; } styleTransitionState;
+@property (nonatomic) struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; } styleTransitionState;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
@@ -136,11 +144,11 @@
 - (void)setProjectedGroundPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (void)setProjectedPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)setStyleTransitionState:(struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; })arg1;
+- (void)setStyleTransitionState:(struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; })arg1;
 - (void)setTracking:(BOOL)arg1;
 - (void)setUseScreenSpacePoint:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })significantFrameWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; })styleTransitionState;
+- (struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; })styleTransitionState;
 - (id)subtitle;
 - (id)title;
 - (BOOL)useScreenSpacePoint;

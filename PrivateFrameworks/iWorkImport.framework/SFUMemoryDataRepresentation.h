@@ -3,7 +3,7 @@
  */
 
 @interface SFUMemoryDataRepresentation : SFUDataRepresentation {
-    NSData *mData;
+    NSData * mData;
 }
 
 - (id)bufferedInputStream;

@@ -3,38 +3,38 @@
  */
 
 @interface MPVideoViewController : MPViewController <MPSwipableViewDelegate, MPVideoControllerProtocol, UIModalViewDelegate> {
-    UIAlertView *_alertSheet;
-    unsigned int _allowsDetailScrubbing;
-    unsigned int _allowsTVOutInBackground;
-    unsigned int _allowsWirelessPlayback;
-    unsigned int _alwaysAllowHidingControlsOverlay;
-    int _artworkImageStyle;
-    unsigned int _attemptAutoPlayWhenControlsHidden;
-    unsigned int _backgroundTaskId;
-    MPVideoBackgroundView *_backgroundView;
-    UIColor *_backstopColor;
-    MPSwipableView *_backstopView;
-    BOOL _batteryMonitoringWasEnabled;
-    unsigned int _canAnimateControlsOverlay;
-    unsigned int _canShowControlsOverlay;
-    MPClosedCaptionDisplay *_captionView;
-    unsigned long long _desiredParts;
-    unsigned int _disableAutoRotation;
-    unsigned int _disableControlsAutohide;
-    unsigned long long _disabledParts;
-    unsigned int _displayPlaybackErrorAlerts;
-    unsigned int _hasShownFirstVideoFrame;
-    unsigned int _inlinePlaybackUsesTVOut;
-    unsigned int _itemTypeOverride;
-    UIActivityIndicatorView *_loadingIndicator;
-    unsigned int _playAfterPop;
-    UIImage *_posterImage;
-    unsigned int _scaleMode;
-    unsigned int _scaleModeOverride;
-    unsigned int _scheduledLoadingIndicator;
-    unsigned int _tvOutEnabled;
-    MPTVOutWindow *_tvOutWindow;
-    unsigned long long _visibleParts;
+    UIAlertController * _alertController;
+    unsigned int  _allowsDetailScrubbing;
+    unsigned int  _allowsTVOutInBackground;
+    unsigned int  _allowsWirelessPlayback;
+    unsigned int  _alwaysAllowHidingControlsOverlay;
+    int  _artworkImageStyle;
+    unsigned int  _attemptAutoPlayWhenControlsHidden;
+    unsigned int  _backgroundTaskId;
+    MPVideoBackgroundView * _backgroundView;
+    UIColor * _backstopColor;
+    MPSwipableView * _backstopView;
+    BOOL  _batteryMonitoringWasEnabled;
+    unsigned int  _canAnimateControlsOverlay;
+    unsigned int  _canShowControlsOverlay;
+    MPClosedCaptionDisplay * _captionView;
+    unsigned long long  _desiredParts;
+    unsigned int  _disableAutoRotation;
+    unsigned int  _disableControlsAutohide;
+    unsigned long long  _disabledParts;
+    unsigned int  _displayPlaybackErrorAlerts;
+    unsigned int  _hasShownFirstVideoFrame;
+    unsigned int  _inlinePlaybackUsesTVOut;
+    unsigned int  _itemTypeOverride;
+    UIActivityIndicatorView * _loadingIndicator;
+    unsigned int  _playAfterPop;
+    UIImage * _posterImage;
+    unsigned int  _scaleMode;
+    unsigned int  _scaleModeOverride;
+    unsigned int  _scheduledLoadingIndicator;
+    unsigned int  _tvOutEnabled;
+    MPTVOutWindow * _tvOutWindow;
+    unsigned long long  _visibleParts;
 }
 
 @property (nonatomic) BOOL TVOutEnabled;
@@ -123,7 +123,6 @@
 - (void)_videoView_sizeChangedNotification:(id)arg1;
 - (void)_videoView_timedImageMetadataAvailableNotification:(id)arg1;
 - (void)_videoView_validityChangedNotification:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)allowsTVOutInBackground;
 - (BOOL)allowsWirelessPlayback;

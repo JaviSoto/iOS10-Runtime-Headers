@@ -3,18 +3,18 @@
  */
 
 @interface _UIActivityUserDefaultsViewController : UITableViewController {
-    NSArray *_activities;
-    UIImage *_placeholderImage;
-    _UIActivityUserDefaults *_userDefaults;
+    NSArray * _activities;
+    UIImage * _placeholderImage;
+    _UIActivityUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, copy) NSArray *activities;
 @property (nonatomic, retain) UIImage *placeholderImage;
 @property (nonatomic, retain) _UIActivityUserDefaults *userDefaults;
 
+- (void).cxx_destruct;
 - (id)activities;
 - (id)activityForRowAtIndexPath:(id)arg1;
-- (void)dealloc;
 - (id)initWithActivities:(id)arg1 userDefaults:(id)arg2;
 - (id)placeholderImage;
 - (int)preferredActivityCategory;

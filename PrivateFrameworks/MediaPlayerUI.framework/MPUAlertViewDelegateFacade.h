@@ -3,7 +3,7 @@
  */
 
 @interface MPUAlertViewDelegateFacade : NSObject <UIAlertViewDelegate> {
-    id /* block */ _completionHandler;
+    id /* block */  _completionHandler;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

@@ -3,9 +3,9 @@
  */
 
 @interface CDDPluginConnection : NSObject {
-    unsigned long long _clientId;
-    CDDXPCConnection *_connection;
-    CDDebug *_debug;
+    unsigned long long  _clientId;
+    CDDXPCConnection * _connection;
+    CDDebug * _debug;
 }
 
 @property (readonly) unsigned long long clientId;

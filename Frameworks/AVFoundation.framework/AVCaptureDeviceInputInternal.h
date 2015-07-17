@@ -3,12 +3,12 @@
  */
 
 @interface AVCaptureDeviceInputInternal : NSObject {
-    AVWeakKeyValueObserverProxy *KVOProxy;
-    BOOL authorizedForCamera;
-    AVCaptureDevice *device;
-    NSArray *ports;
-    BOOL ready;
-    AVWeakReference *weakReference;
+    BOOL  authorizedForCamera;
+    AVCaptureDevice * device;
+    <AVCallbackCancellation> * deviceOpenCallbackInvoker;
+    NSArray * ports;
+    BOOL  ready;
+    AVWeakReference * weakReference;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicMiniPlayerBackgroundView : UIView {
-    int _highlightCount;
+    int  _highlightCount;
 }
 
 - (void)beginHighlighting;

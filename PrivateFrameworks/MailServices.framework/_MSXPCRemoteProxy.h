@@ -3,12 +3,12 @@
  */
 
 @interface _MSXPCRemoteProxy : NSObject <NSXPCProxyCreating> {
-    id ____nsxpc_remoteObjectProxy;
-    MSXPCConnection *_connection;
-    id /* block */ _errorHandler;
-    struct __CFDictionary { } *_knownSelectors;
-    NSXPCInterface *_remoteInterface;
-    int _selectorLock;
+    id  ____nsxpc_remoteObjectProxy;
+    MSXPCConnection * _connection;
+    id /* block */  _errorHandler;
+    struct __CFDictionary { } * _knownSelectors;
+    NSXPCInterface * _remoteInterface;
+    int  _selectorLock;
 }
 
 @property (setter=___setNSXPCRemoteObjectProxy:, nonatomic, retain) id ___nsxpc_remoteObjectProxy;

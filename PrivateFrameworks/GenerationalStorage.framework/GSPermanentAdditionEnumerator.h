@@ -3,15 +3,15 @@
  */
 
 @interface GSPermanentAdditionEnumerator : NSEnumerator <GSAdditionEnumerating> {
-    NSArray *_array;
-    NSError *_error;
-    NSString *_nameSpace;
-    unsigned int _pos;
-    GSDaemonProxySync *_proxy;
-    GSPermanentStorage *_storage;
-    id _token;
-    unsigned long long _withOptions;
-    unsigned long long _withoutOptions;
+    NSArray * _array;
+    NSError * _error;
+    NSString * _nameSpace;
+    unsigned int  _pos;
+    GSDaemonProxySync * _proxy;
+    GSPermanentStorage * _storage;
+    id  _token;
+    unsigned long long  _withOptions;
+    unsigned long long  _withoutOptions;
 }
 
 @property (nonatomic, readonly) NSError *error;

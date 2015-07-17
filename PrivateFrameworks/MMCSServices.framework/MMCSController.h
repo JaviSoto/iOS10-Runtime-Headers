@@ -3,23 +3,23 @@
  */
 
 @interface MMCSController : NSObject {
-    struct __CFURL { } *_chunkStoreURL;
-    int _connectionBehavior;
-    unsigned long long _currentItemID;
-    struct __MMCSEngine { } *_engine;
-    id _powerAssertion;
-    NSTimer *_powerAssertionTimer;
-    NSMutableDictionary *_requestIDToBlockMap;
-    NSMutableDictionary *_requestIDToRemainingTransfersMap;
-    NSMutableDictionary *_requestIDToTransfersMap;
-    NSMutableDictionary *_transferToRequestIDsMap;
-    NSMutableDictionary *_transfers;
+    struct __CFURL { } * _chunkStoreURL;
+    int  _connectionBehavior;
+    unsigned long long  _currentItemID;
+    struct _mmcs_engine { } * _engine;
+    id  _powerAssertion;
+    NSTimer * _powerAssertionTimer;
+    NSMutableDictionary * _requestIDToBlockMap;
+    NSMutableDictionary * _requestIDToRemainingTransfersMap;
+    NSMutableDictionary * _requestIDToTransfersMap;
+    NSMutableDictionary * _transferToRequestIDsMap;
+    NSMutableDictionary * _transfers;
 }
 
 @property int connectionBehavior;
 @property (readonly) BOOL isActive;
 
-- (struct __MMCSEngine { }*)_engine;
+- (struct _mmcs_engine { }*)_engine;
 - (void)_getItemCompleted:(id)arg1 path:(id)arg2 error:(id)arg3;
 - (void)_getItemUpdated:(id)arg1 progress:(double)arg2 state:(int)arg3 error:(id)arg4;
 - (BOOL)_getTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id*)arg5;

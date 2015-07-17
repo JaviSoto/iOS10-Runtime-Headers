@@ -3,16 +3,16 @@
  */
 
 @interface IMPingStatistics : NSObject {
-    double _averageRoundtripTime;
-    double _maxRoundtripTime;
-    double _medianRoundtripTime;
-    double _minRoundtripTime;
-    int _numPacketsSuccessfullySent;
-    int _numPingsReceived;
-    int _numPingsTransmitted;
-    double _packetLossRate;
-    double _standardDeviationRoundtripTime;
-    double _sumRoundtripTimes;
+    double  _averageRoundtripTime;
+    double  _maxRoundtripTime;
+    double  _medianRoundtripTime;
+    double  _minRoundtripTime;
+    int  _numPacketsSuccessfullySent;
+    int  _numPingsReceived;
+    int  _numPingsTransmitted;
+    double  _packetLossRate;
+    double  _standardDeviationRoundtripTime;
+    double  _sumRoundtripTimes;
 }
 
 @property (nonatomic, readonly) double averageRoundtripTime;

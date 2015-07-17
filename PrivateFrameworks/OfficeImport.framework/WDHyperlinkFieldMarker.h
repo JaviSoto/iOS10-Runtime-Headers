@@ -3,9 +3,9 @@
  */
 
 @interface WDHyperlinkFieldMarker : WDFieldMarker {
-    NSString *mFragment;
-    unsigned int mInternalLink;
-    NSString *mLink;
+    NSString * mFragment;
+    unsigned int  mInternalLink;
+    NSString * mLink;
 }
 
 @property (nonatomic, retain) NSString *fragment;
@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSString *link;
 
 - (void)dealloc;
+- (id)description;
 - (id)fragment;
 - (BOOL)internalLink;
 - (id)link;

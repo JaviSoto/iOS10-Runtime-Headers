@@ -12,12 +12,12 @@
             float width; 
             float height; 
         } size; 
-    } _bounds;
-    NSArray *_cells;
-    unsigned int _triangleCount;
-    unsigned int *_triangleIndexToCellIndexMappingTable;
-    unsigned int _triangleIndexToCellMappingTableCount;
-    unsigned int *_triangleIndexToCellTriangleIndexMappingTable;
+    }  _bounds;
+    NSArray * _cells;
+    unsigned int  _triangleCount;
+    unsigned int * _triangleIndexToCellIndexMappingTable;
+    unsigned int  _triangleIndexToCellMappingTableCount;
+    unsigned int * _triangleIndexToCellTriangleIndexMappingTable;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
@@ -25,7 +25,6 @@
 @property (nonatomic, readonly) NSArray *cells;
 @property (nonatomic, readonly) unsigned int triangleCount;
 
-- (id).cxx_construct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (unsigned int)cellCount;
 - (id)cellFromTriangleIndex:(unsigned int)arg1;

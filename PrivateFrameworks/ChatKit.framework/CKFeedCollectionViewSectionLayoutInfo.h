@@ -3,39 +3,39 @@
  */
 
 @interface CKFeedCollectionViewSectionLayoutInfo : NSObject {
-    int _firstJoinedSection;
-    NSArray *_fixedLayoutAttributes;
-    NSArray *_floatingLayoutAttributes;
+    int  _firstJoinedSection;
+    NSArray * _fixedLayoutAttributes;
+    NSArray * _floatingLayoutAttributes;
     struct CGSize { 
         float width; 
         float height; 
-    } _footerSize;
-    id _groupID;
+    }  _footerSize;
+    id  _groupID;
     struct CGSize { 
         float width; 
         float height; 
-    } _headerSize;
-    BOOL _hidden;
-    int _lastJoinedSection;
+    }  _headerSize;
+    BOOL  _hidden;
+    int  _lastJoinedSection;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _margins;
-    int _nextVisibleSection;
-    int _numberOfTilesOmitted;
+    }  _margins;
+    int  _nextVisibleSection;
+    int  _numberOfTilesOmitted;
     struct CGPoint { 
         float x; 
         float y; 
-    } _origin;
-    int _previousVisibleSection;
-    int _sectionType;
+    }  _origin;
+    int  _previousVisibleSection;
+    int  _sectionType;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSArray *_tileLayoutAttributes;
+    }  _size;
+    NSArray * _tileLayoutAttributes;
 }
 
 @property (nonatomic) int firstJoinedSection;

@@ -3,7 +3,7 @@
  */
 
 @interface CKDPPkiRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_publicKeys;
+    NSMutableArray * _publicKeys;
 }
 
 @property (nonatomic, retain) NSMutableArray *publicKeys;

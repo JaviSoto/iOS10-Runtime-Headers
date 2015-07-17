@@ -3,7 +3,7 @@
  */
 
 @interface XPCMachSendRight : NSObject <NSSecureCoding> {
-    unsigned int _sendRight;
+    unsigned int  _sendRight;
 }
 
 + (BOOL)supportsSecureCoding;

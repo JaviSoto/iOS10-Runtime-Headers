@@ -3,9 +3,9 @@
  */
 
 @interface GEOURLConnectionSession : NSObject {
-    NSMapTable *_connectionDelegates;
-    struct __CFURLConnectionSession { } *_connectionSession;
-    NSLock *_delegateMapLock;
+    NSMapTable * _connectionDelegates;
+    struct __CFURLConnectionSession { } * _connectionSession;
+    NSLock * _delegateMapLock;
 }
 
 - (void)_createConnectionSessionWithPurgeTimeout:(int)arg1 loadWidth:(int)arg2;

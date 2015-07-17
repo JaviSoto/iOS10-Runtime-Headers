@@ -3,18 +3,17 @@
  */
 
 @interface PUPhotoViewContentHelper : NSObject {
-    UIImageView *__crossfadeImageView;
-    float _avalancheMaxPixelSize;
-    struct CGColor { } *_avalancheStackBackgroundColor;
-    PUAvalancheStackView *_avalancheStackView;
-    BOOL _avoidsImageViewIfPossible;
-    BOOL _avoidsPhotoDecoration;
-    int _badgeType;
-    PUBadgeView *_badgeView;
-    UIView *_contentView;
-    int _fillMode;
-    BOOL _flattensBadgeView;
-    BOOL _hasTransform;
+    UIImageView * __crossfadeImageView;
+    struct CGColor { } * _avalancheStackBackgroundColor;
+    PUAvalancheStackView * _avalancheStackView;
+    BOOL  _avoidsImageViewIfPossible;
+    BOOL  _avoidsPhotoDecoration;
+    int  _badgeType;
+    PUBadgeView * _badgeView;
+    UIView * _contentView;
+    int  _fillMode;
+    BOOL  _flattensBadgeView;
+    BOOL  _hasTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -22,24 +21,24 @@
         float d; 
         float tx; 
         float ty; 
-    } _imageTransform;
-    BOOL _isTextBannerVisible;
-    BOOL _needsAvalancheStack;
-    PUPhotoDecoration *_photoDecoration;
-    PUBackgroundColorView *_photoDecorationBorderView;
-    PUBackgroundColorView *_photoDecorationOverlayView;
-    UIImage *_photoImage;
-    UIImageView *_photoImageView;
+    }  _imageTransform;
+    BOOL  _isTextBannerVisible;
+    BOOL  _needsAvalancheStack;
+    PUPhotoDecoration * _photoDecoration;
+    PUBackgroundColorView * _photoDecorationBorderView;
+    PUBackgroundColorView * _photoDecorationOverlayView;
+    UIImage * _photoImage;
+    UIImageView * _photoImageView;
     struct CGSize { 
         float width; 
         float height; 
-    } _photoSize;
-    PUTextBannerView *_textBannerView;
-    double _videoDuration;
+    }  _photoSize;
+    UIImage * _placeHolderImage;
+    PUTextBannerView * _textBannerView;
+    double  _videoDuration;
 }
 
 @property (nonatomic, retain) UIImageView *_crossfadeImageView;
-@property (nonatomic) float avalancheMaxPixelSize;
 @property (nonatomic) struct CGColor { }*avalancheStackBackgroundColor;
 @property (nonatomic, retain) PUAvalancheStackView *avalancheStackView;
 @property (nonatomic) BOOL avoidsImageViewIfPossible;
@@ -56,6 +55,8 @@
 @property (nonatomic, retain) UIImage *photoImage;
 @property (nonatomic, retain) UIImageView *photoImageView;
 @property (nonatomic) struct CGSize { float x1; float x2; } photoSize;
+@property (nonatomic, retain) UIImage *placeHolderImage;
+@property (nonatomic, readonly) BOOL providesVisualFeedbackOnPress;
 @property (nonatomic, readonly) PUTextBannerView *textBannerView;
 @property (getter=isTextBannerVisible, nonatomic) BOOL textBannerVisible;
 @property (nonatomic, readonly) double videoDuration;
@@ -64,7 +65,10 @@
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
 
 - (void).cxx_destruct;
+- (void)_addAvalancheStackViewIfNecessary;
 - (id)_crossfadeImageView;
+- (void)_removeAvalancheStackViewIfNecessary;
+- (void)_removePhotoImageViewIfNecessary;
 - (void)_updateBadgeView;
 - (void)_updateContentViewClipsToBounds;
 - (void)_updateImageView;
@@ -72,7 +76,6 @@
 - (void)_updateSubviewOrdering;
 - (void)_updateTextBannerView;
 - (void)animateCrossfadeToImage:(id)arg1;
-- (float)avalancheMaxPixelSize;
 - (struct CGColor { }*)avalancheStackBackgroundColor;
 - (id)avalancheStackView;
 - (BOOL)avoidsImageViewIfPossible;
@@ -81,21 +84,25 @@
 - (int)badgeType;
 - (id)contentView;
 - (struct CGSize { float x1; float x2; })contentViewSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
 - (int)fillMode;
 - (BOOL)flattensBadgeView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransform;
+- (id)init;
 - (id)initWithContentView:(id)arg1;
 - (BOOL)isTextBannerVisible;
 - (void)layoutSubviewsOfContentView;
 - (BOOL)needsAvalancheStack;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)photoDecoration;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photoDecorationBorderViewFrameForImageContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)photoImage;
 - (id)photoImageView;
 - (struct CGSize { float x1; float x2; })photoSize;
-- (void)setAvalancheMaxPixelSize:(float)arg1;
+- (id)placeHolderImage;
+- (BOOL)providesVisualFeedbackOnPress;
 - (void)setAvalancheStackBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setAvalancheStackView:(id)arg1;
 - (void)setAvoidsImageViewIfPossible:(BOOL)arg1;
@@ -109,6 +116,7 @@
 - (void)setPhotoImage:(id)arg1;
 - (void)setPhotoImageView:(id)arg1;
 - (void)setPhotoSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPlaceHolderImage:(id)arg1;
 - (void)setTextBannerVisible:(BOOL)arg1;
 - (void)set_crossfadeImageView:(id)arg1;
 - (id)textBannerView;

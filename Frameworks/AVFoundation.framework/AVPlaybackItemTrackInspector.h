@@ -3,10 +3,10 @@
  */
 
 @interface AVPlaybackItemTrackInspector : AVAssetTrackInspector {
-    unsigned long _mediaType;
-    struct OpaqueFigPlaybackItem { } *_playbackItem;
-    int _trackID;
-    AVWeakReference *_weakReferenceToAsset;
+    unsigned long  _mediaType;
+    struct OpaqueFigPlaybackItem { } * _playbackItem;
+    int  _trackID;
+    AVWeakReference * _weakReferenceToAsset;
 }
 
 - (unsigned long)_figMediaType;

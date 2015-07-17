@@ -3,10 +3,10 @@
  */
 
 @interface ML3EntityReplacer : NSObject {
-    ML3DatabaseConnection *_connection;
-    ML3MusicLibrary *_library;
-    NSMutableArray *_naturalStatements;
-    struct __CFDictionary { } *_propertyToIndexPair;
+    ML3DatabaseConnection * _connection;
+    ML3MusicLibrary * _library;
+    NSMutableArray * _naturalStatements;
+    struct __CFDictionary { } * _propertyToIndexPair;
 }
 
 @property (getter=isOpen, nonatomic, readonly) BOOL open;

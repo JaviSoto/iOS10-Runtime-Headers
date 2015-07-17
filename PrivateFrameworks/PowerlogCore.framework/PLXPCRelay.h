@@ -3,9 +3,9 @@
  */
 
 @interface PLXPCRelay : NSObject {
-    BOOL _relayActive;
-    NSObject<OS_xpc_object> *_relayConnection;
-    NSObject<OS_xpc_object> *_xpcConnection;
+    BOOL  _relayActive;
+    NSObject<OS_xpc_object> * _relayConnection;
+    NSObject<OS_xpc_object> * _xpcConnection;
 }
 
 @property BOOL relayActive;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUISuggestedHandlesSettingsHeaderFooterDescriptionView : SKUISettingsHeaderFooterDescriptionView {
-    NSMutableArray *_buttons;
-    SKUISuggestedHandlesSettingsHeaderFooterDescription *_description;
-    UILabel *_label;
+    NSMutableArray * _buttons;
+    SKUISuggestedHandlesSettingsHeaderFooterDescription * _description;
+    UILabel * _label;
 }
 
 + (id)_helpLabelWithDescription:(id)arg1 forWidth:(float)arg2;

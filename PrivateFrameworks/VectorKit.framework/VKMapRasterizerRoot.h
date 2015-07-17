@@ -21,8 +21,8 @@
                 unsigned int _e[2]; 
             } _maximum; 
         } scissorRect; 
-    } _clearItem;
-    VKMapRasterizer *_mapRasterizer;
+    }  _clearItem;
+    VKMapRasterizer * _mapRasterizer;
 }
 
 @property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */

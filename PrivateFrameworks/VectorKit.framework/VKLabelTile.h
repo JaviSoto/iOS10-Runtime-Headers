@@ -6,7 +6,7 @@
     struct shared_ptr<vk::LabelTile> { 
         struct LabelTile {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _labelTile;
+    }  _labelTile;
 }
 
 @property (nonatomic, readonly) struct shared_ptr<vk::LabelTile> { struct LabelTile {} *x1; struct __shared_weak_count {} *x2; } labelTile;

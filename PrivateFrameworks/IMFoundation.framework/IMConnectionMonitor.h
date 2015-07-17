@@ -3,14 +3,14 @@
  */
 
 @interface IMConnectionMonitor : NSObject {
-    <IMConnectionMonitorDelegate> *_delegate;
-    NSString *_remoteHost;
+    <IMConnectionMonitorDelegate> * _delegate;
+    NSString * _remoteHost;
 }
 
 @property (nonatomic) <IMConnectionMonitorDelegate> *delegate;
 @property (setter=setDataConnectionActive:, nonatomic) BOOL isDataConnectionActive;
 @property (nonatomic, readonly) BOOL isImmediatelyReachable;
-@property (nonatomic, readonly) NSString *remoteHost;
+@property (nonatomic, readonly, retain) NSString *remoteHost;
 @property (nonatomic, readonly) BOOL requiresDataConnectionActivation;
 
 + (id)alloc;

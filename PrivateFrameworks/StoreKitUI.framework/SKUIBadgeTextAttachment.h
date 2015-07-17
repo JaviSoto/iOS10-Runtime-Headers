@@ -3,8 +3,8 @@
  */
 
 @interface SKUIBadgeTextAttachment : NSTextAttachment <NSCopying> {
-    NSObject<OS_dispatch_semaphore> *_imageLoadingSemaphore;
-    NSURL *_imageURL;
+    NSObject<OS_dispatch_semaphore> * _imageLoadingSemaphore;
+    NSURL * _imageURL;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } badgeSize;

@@ -6,14 +6,14 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    unsigned int _hash;
-    PUMapItem *_mapItem;
+    }  _coordinate;
+    unsigned int  _hash;
+    PUMapItem * _mapItem;
     struct { 
         double latitude; 
         double longitude; 
-    } _originalCoordinate;
-    unsigned int _relativeOrder;
+    }  _originalCoordinate;
+    unsigned int  _relativeOrder;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;

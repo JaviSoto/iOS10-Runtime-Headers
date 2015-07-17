@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DLabelsRendererTransforms : NSObject {
-    struct ChartScenePropertyAccessor { id x1; } *mAccessor;
-    TSCH3DCamera *mCamera;
+    struct ChartScenePropertyAccessor { id x1; } * mAccessor;
+    TSCH3DCamera * mCamera;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -28,8 +28,8 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mProjector;
-    TSCH3DScene *mScene;
+    }  mProjector;
+    TSCH3DScene * mScene;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -53,7 +53,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mStageToWorld;
+    }  mStageToWorld;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -77,10 +77,10 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mUnitToWorld;
+    }  mUnitToWorld;
     struct bitset<5> { 
         unsigned int __first_; 
-    } mValidBits;
+    }  mValidBits;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -104,7 +104,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mWorldToStage;
+    }  mWorldToStage;
 }
 
 @property (nonatomic, retain) TSCH3DCamera *camera;

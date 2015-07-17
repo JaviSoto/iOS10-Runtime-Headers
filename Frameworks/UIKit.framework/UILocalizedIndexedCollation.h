@@ -3,15 +3,15 @@
  */
 
 @interface UILocalizedIndexedCollation : NSObject {
-    NSString *_firstSectionStartString;
-    NSString *_lastSectionStartString;
-    NSLocale *_locale;
-    NSArray *_sectionIndexMapping;
-    NSArray *_sectionIndexTitles;
-    NSArray *_sectionStartStrings;
-    NSArray *_sectionTitles;
-    struct __CFStringTokenizer { } *_tokenizer;
-    NSString *_transform;
+    NSString * _firstSectionStartString;
+    NSString * _lastSectionStartString;
+    NSLocale * _locale;
+    NSArray * _sectionIndexMapping;
+    NSArray * _sectionIndexTitles;
+    NSArray * _sectionStartStrings;
+    NSArray * _sectionTitles;
+    struct __CFStringTokenizer { } * _tokenizer;
+    NSString * _transform;
 }
 
 @property (nonatomic, readonly) NSArray *sectionIndexTitles;
@@ -20,6 +20,7 @@
 + (id)collationWithDictionary:(id)arg1;
 + (id)currentCollation;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 - (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;

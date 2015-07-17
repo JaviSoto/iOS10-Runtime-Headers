@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetListStyle : TSWPSpecListStyle {
-    TSWPListStyle *_listStyle;
-    BOOL _unset;
+    TSWPListStyle * _listStyle;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface BRCSyncThrottle : BRCThrottle {
-    NSPredicate *_predicate;
+    NSPredicate * _predicate;
 }
 
 @property (nonatomic, retain) NSPredicate *predicate;

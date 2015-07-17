@@ -3,13 +3,13 @@
  */
 
 @interface TPStarkInCallButton : UIButton {
-    UILabel *_buttonLabel;
-    NSLayoutConstraint *_horizontalPositioningConstraint;
-    int _inCallButtonType;
-    TPStarkInCallButtonRing *_ringView;
-    int _specialLayoutType;
-    BOOL _toggledOn;
-    UIColor *_unhighlightedBackgroundColor;
+    UILabel * _buttonLabel;
+    NSLayoutConstraint * _horizontalPositioningConstraint;
+    int  _inCallButtonType;
+    TPStarkInCallButtonRing * _ringView;
+    int  _specialLayoutType;
+    BOOL  _toggledOn;
+    UIColor * _unhighlightedBackgroundColor;
 }
 
 @property (retain) UILabel *buttonLabel;
@@ -20,8 +20,8 @@
 @property (nonatomic) BOOL toggledOn;
 @property (retain) UIColor *unhighlightedBackgroundColor;
 
+- (void).cxx_destruct;
 - (id)buttonLabel;
-- (void)dealloc;
 - (id)horizontalPositioningConstraint;
 - (int)inCallButtonType;
 - (id)initForButtonType:(int)arg1;

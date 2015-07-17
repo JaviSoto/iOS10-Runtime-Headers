@@ -3,20 +3,20 @@
  */
 
 @interface MPStreamingDownloadSessionController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMapTable *_assetDownloadSessionToDownloadSessions;
-    NSMapTable *_assetDownloadSessionToPlaybackMetadata;
-    NSMutableArray *_assetDownloadSessionsPendingStart;
-    unsigned int _pausingAllDownloadsTransactionCount;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMapTable * _assetDownloadSessionToDownloadSessions;
+    NSMapTable * _assetDownloadSessionToPlaybackMetadata;
+    NSMutableArray * _assetDownloadSessionsPendingStart;
+    unsigned int  _pausingAllDownloadsTransactionCount;
     struct vector<unsigned long long, std::__1::allocator<unsigned long long> > { 
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long> > { 
             unsigned long long *__first_; 
         } __end_cap_; 
-    } _prioritizedDownloadTokens;
-    NSOperationQueue *_streamingOperationQueue;
-    NSMapTable *_uniqueKeyToDownloadSessions;
+    }  _prioritizedDownloadTokens;
+    NSOperationQueue * _streamingOperationQueue;
+    NSMapTable * _uniqueKeyToDownloadSessions;
 }
 
 + (id)sharedDownloadSessionController;

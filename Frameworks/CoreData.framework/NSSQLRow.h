@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLRow : NSExternalRefCountedData {
-    _CDSnapshot *_snapshot;
+    _CDSnapshot * _snapshot;
 }
 
 + (id)allocForSQLEntity:(id)arg1;

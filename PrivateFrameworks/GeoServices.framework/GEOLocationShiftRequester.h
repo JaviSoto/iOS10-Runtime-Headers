@@ -3,9 +3,9 @@
  */
 
 @interface GEOLocationShiftRequester : NSObject {
-    NSMapTable *_pendingRequests;
-    NSLock *_pendingRequestsLock;
-    NSMapTable *_providers;
+    NSMapTable * _pendingRequests;
+    NSLock * _pendingRequestsLock;
+    NSMapTable * _providers;
 }
 
 + (id)sharedRequester;

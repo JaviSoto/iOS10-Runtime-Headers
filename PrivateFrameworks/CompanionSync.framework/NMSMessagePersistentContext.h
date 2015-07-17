@@ -3,14 +3,14 @@
  */
 
 @interface NMSMessagePersistentContext : NSObject <NSSecureCoding> {
-    NSDictionary *_customIDSFlags;
-    NSDate *_date;
-    BOOL _fromRequest;
-    NSString *_idsIdentifier;
-    unsigned short _messageID;
-    BOOL _processAcked;
-    BOOL _sendAcked;
-    NSDictionary *_userInfo;
+    NSDictionary * _customIDSFlags;
+    NSDate * _date;
+    BOOL  _fromRequest;
+    NSString * _idsIdentifier;
+    unsigned short  _messageID;
+    BOOL  _processAcked;
+    BOOL  _sendAcked;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSDictionary *customIDSFlags;

@@ -3,11 +3,11 @@
  */
 
 @interface _UIViewControllerTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator> {
-    NSMutableArray *__alongsideAnimationViews;
-    NSMutableArray *__alongsideAnimations;
-    NSMutableArray *__alongsideCompletions;
-    NSMutableArray *__interactiveChangeHandlers;
-    _UIViewControllerTransitionContext *__mainContext;
+    NSMutableArray * __alongsideAnimationViews;
+    NSMutableArray * __alongsideAnimations;
+    NSMutableArray * __alongsideCompletions;
+    NSMutableArray * __interactiveChangeHandlers;
+    _UIViewControllerTransitionContext * __mainContext;
 }
 
 @property (setter=_setAlongsideAnimationViews:, nonatomic, retain) NSMutableArray *_alongsideAnimationViews;
@@ -20,6 +20,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_alongsideAnimationViews;
 - (id)_alongsideAnimations;
 - (id)_alongsideAnimations:(BOOL)arg1;
@@ -40,7 +41,6 @@
 - (int)completionCurve;
 - (float)completionVelocity;
 - (id)containerView;
-- (void)dealloc;
 - (void)handlerToInvokeOnInteractivityChanges:(id /* block */)arg1;
 - (id)initWithMainContext:(id)arg1;
 - (BOOL)initiallyInteractive;

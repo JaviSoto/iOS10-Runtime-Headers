@@ -3,35 +3,35 @@
  */
 
 @interface VKScreenCameraController : VKCameraController <VKCameraControllerDelegate> {
-    VKAnnotationTrackingCameraController *_annotationTrackingCameraController;
-    int _annotationTrackingHeadingAnimationDisplayRate;
-    int _annotationTrackingZoomStyle;
-    double _beganDoublePanPitch;
+    VKAnnotationTrackingCameraController * _annotationTrackingCameraController;
+    int  _annotationTrackingHeadingAnimationDisplayRate;
+    int  _annotationTrackingZoomStyle;
+    double  _beganDoublePanPitch;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    BOOL _isPitchIncreasing;
-    BOOL _isPitchable;
-    double _lastRotation;
+    }  _edgeInsets;
+    BOOL  _isPitchIncreasing;
+    BOOL  _isPitchable;
+    double  _lastRotation;
     struct CGPoint { 
         float x; 
         float y; 
-    } _panLastScreenPoint;
+    }  _panLastScreenPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _panStartScreenPoint;
-    VKAnimation *_pitchAnimation;
-    VKAnimation *_regionAnimation;
-    VKAnimation *_rotationAnimation;
-    BOOL _rotationLowZoomSnappingEnabled;
-    BOOL _shouldRotationRubberband;
-    BOOL _staysCenteredDuringPinch;
-    BOOL _staysCenteredDuringRotation;
-    VKAnimation *_zoomAnimation;
+    }  _panStartScreenPoint;
+    VKTimedAnimation * _pitchAnimation;
+    VKTimedAnimation * _regionAnimation;
+    VKTimedAnimation * _rotationAnimation;
+    BOOL  _rotationLowZoomSnappingEnabled;
+    BOOL  _shouldRotationRubberband;
+    BOOL  _staysCenteredDuringPinch;
+    BOOL  _staysCenteredDuringRotation;
+    VKTimedAnimation * _zoomAnimation;
 }
 
 @property (getter=isAnimatingToTrackAnnotation, nonatomic, readonly) BOOL animatingToTrackAnnotation;
@@ -48,7 +48,6 @@
 @property (nonatomic, readonly) <VKTrackableAnnotation> *trackingAnnotation;
 @property (getter=isTrackingHeading, nonatomic, readonly) BOOL trackingHeading;
 
-- (id).cxx_construct;
 - (int)annotationTrackingHeadingAnimationDisplayRate;
 - (int)annotationTrackingZoomStyle;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
@@ -56,6 +55,8 @@
 - (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
+- (void)cameraController:(id)arg1 flyoverModeDidChange:(int)arg2;
+- (void)cameraController:(id)arg1 flyoverModeWillChange:(int)arg2;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
 - (void)cameraController:(id)arg1 requestsDisplayRate:(int)arg2;
 - (void)cameraController:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;

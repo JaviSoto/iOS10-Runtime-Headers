@@ -3,8 +3,8 @@
  */
 
 @interface TSDConnectionLineLayout : TSDConnectionLineAbstractLayout {
-    float mEndClipT;
-    float mStartClipT;
+    float  mEndClipT;
+    float  mStartClipT;
 }
 
 - (struct CGPoint { float x1; float x2; })controlPointForPointA:(struct CGPoint { float x1; float x2; })arg1 pointB:(struct CGPoint { float x1; float x2; })arg2 andOriginalA:(struct CGPoint { float x1; float x2; })arg3 originalB:(struct CGPoint { float x1; float x2; })arg4;

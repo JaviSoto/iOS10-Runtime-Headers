@@ -3,14 +3,14 @@
  */
 
 @interface UIPDFSearchHighlightsController : NSObject {
-    struct CGColor { } *_borderColor;
-    struct CGColor { } *_highlightColor;
-    BOOL _pageRendered;
-    UIPDFPageView *_pageView;
-    NSMutableArray *_rectangles;
-    NSMutableArray *_searchHighlightLayers;
-    UIPDFSelection *_selection;
-    struct CGColor { } *_shadowColor;
+    struct CGColor { } * _borderColor;
+    struct CGColor { } * _highlightColor;
+    BOOL  _pageRendered;
+    UIPDFPageView * _pageView;
+    NSMutableArray * _rectangles;
+    NSMutableArray * _searchHighlightLayers;
+    UIPDFSelection * _selection;
+    struct CGColor { } * _shadowColor;
 }
 
 - (void)_addAnimation2:(id)arg1;

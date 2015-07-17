@@ -3,10 +3,10 @@
  */
 
 @interface EKEventNotesDetailItem : EKEventDetailItem {
-    UITableViewCell *_cell;
-    BOOL _cellNeedsUpdate;
-    UITableViewCell *_moreButtonCell;
-    UITextView *_notesView;
+    UITableViewCell * _cell;
+    BOOL  _cellNeedsUpdate;
+    UITableViewCell * _moreButtonCell;
+    UITextView * _notesView;
 }
 
 - (void).cxx_destruct;

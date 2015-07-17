@@ -3,7 +3,7 @@
  */
 
 @interface CMAttitude : NSObject <NSCopying, NSSecureCoding> {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) double pitch;

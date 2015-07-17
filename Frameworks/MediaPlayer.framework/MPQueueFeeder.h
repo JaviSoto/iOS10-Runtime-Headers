@@ -3,18 +3,18 @@
  */
 
 @interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, MusicEntityValueProviding, NSCoding> {
-    unsigned int _activeShuffleType;
-    <MPQueueFeederDelegate> *_delegate;
-    NSMutableDictionary *_nextStartTimes;
-    unsigned int _repeatType;
-    BOOL _requiresQueueChangeVerification;
-    unsigned int _shuffleType;
+    unsigned int  _activeShuffleType;
+    <MPQueueFeederDelegate> * _delegate;
+    NSMutableDictionary * _nextStartTimes;
+    unsigned int  _repeatType;
+    BOOL  _requiresQueueChangeVerification;
+    unsigned int  _shuffleType;
     struct { 
         int numberOfAvailableSkips; 
         int skipFrequency; 
         double skipInterval; 
-    } _skipLimit;
-    unsigned int _state;
+    }  _skipLimit;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
@@ -71,6 +71,7 @@
 - (unsigned int)indexOfMediaItem:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)initialPlaybackQueueDepthForStartingIndex:(unsigned int)arg1;
+- (void)invalidateAssets;
 - (Class)itemClass;
 - (unsigned int)itemCount;
 - (id)itemForIdentifier:(id)arg1;

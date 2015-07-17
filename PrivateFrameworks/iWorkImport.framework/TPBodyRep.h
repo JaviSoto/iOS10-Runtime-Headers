@@ -3,7 +3,7 @@
  */
 
 @interface TPBodyRep : TSWPRep {
-    NSSet *_lastSelectedInfos;
+    NSSet * _lastSelectedInfos;
 }
 
 - (id)colorBehindLayer:(id)arg1;

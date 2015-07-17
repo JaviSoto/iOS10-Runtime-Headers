@@ -3,14 +3,14 @@
  */
 
 @interface MPUVibrantContentEffectView : MPUEffectView {
-    UIImageView *_blurImageView;
-    UIView *_contentView;
-    NSMapTable *_layerPinningViewMap;
-    MPUPinningView *_maskedView;
-    UIView *_plusDView;
-    UIView *_tintingView;
-    BOOL _vibrancyEnabled;
-    UIView *_vibrantContainer;
+    UIImageView * _blurImageView;
+    UIView * _contentView;
+    NSMapTable * _layerPinningViewMap;
+    MPUPinningView * _maskedView;
+    UIView * _plusDView;
+    UIView * _tintingView;
+    BOOL  _vibrancyEnabled;
+    UIView * _vibrantContainer;
 }
 
 @property (nonatomic, retain) UIImageView *blurImageView;

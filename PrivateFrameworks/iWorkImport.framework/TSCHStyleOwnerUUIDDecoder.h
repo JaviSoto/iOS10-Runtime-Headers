@@ -3,8 +3,8 @@
  */
 
 @interface TSCHStyleOwnerUUIDDecoder : NSObject {
-    unsigned int mIndex;
-    unsigned char mUUID;
+    unsigned int  mIndex;
+    unsigned char  mUUID;
 }
 
 + (id)UUIDDecoderWithUUID:(id)arg1;

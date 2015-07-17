@@ -3,11 +3,11 @@
  */
 
 @interface PKPassContent : PKContent <NSSecureCoding> {
-    NSArray *_backFieldBuckets;
-    PKImage *_footerImage;
-    NSArray *_frontFieldBuckets;
-    NSString *_logoText;
-    int _transitType;
+    NSArray * _backFieldBuckets;
+    PKImage * _footerImage;
+    NSArray * _frontFieldBuckets;
+    NSString * _logoText;
+    int  _transitType;
 }
 
 @property (nonatomic, copy) NSArray *backFieldBuckets;

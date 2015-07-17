@@ -3,8 +3,9 @@
  */
 
 @interface EMState : CMState {
-    EDSheet *_currentSheet;
-    EDWorkbook *_workbook;
+    EDSheet * _currentSheet;
+    NSMutableDictionary * _hyperlinks;
+    EDWorkbook * _workbook;
 }
 
 @property EDSheet *currentSheet;
@@ -12,7 +13,9 @@
 
 - (id)currentSheet;
 - (void)dealloc;
+- (id)hyperlinkForRow:(unsigned int)arg1 column:(unsigned int)arg2;
 - (void)setCurrentSheet:(id)arg1;
+- (void)setHyperlink:(id)arg1 forRow:(unsigned int)arg2 column:(unsigned int)arg3;
 - (void)setWorkbook:(id)arg1;
 - (id)workbook;
 

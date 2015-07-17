@@ -3,7 +3,7 @@
  */
 
 @interface TIHandwritingCompositionCandidate : TIKeyboardCandidateSingle {
-    unsigned int _deleteCount;
+    unsigned int  _deleteCount;
 }
 
 + (BOOL)supportsSecureCoding;

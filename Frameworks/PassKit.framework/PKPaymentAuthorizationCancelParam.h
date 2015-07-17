@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentAuthorizationCancelParam : PKPaymentAuthorizationParam {
-    BOOL _sendCallback;
+    BOOL  _sendCallback;
 }
 
 @property (nonatomic) BOOL sendCallback;

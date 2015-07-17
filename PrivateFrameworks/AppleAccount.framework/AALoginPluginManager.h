@@ -3,12 +3,12 @@
  */
 
 @interface AALoginPluginManager : NSObject {
-    BOOL _hasStashedLoginResponse;
-    <AASetupAssistantDelegateService> *_idsPlugin;
-    NSObject<OS_dispatch_queue> *_pluginNotificationQueue;
-    NSArray *_plugins;
-    BOOL _shouldSkipiTunesPlugin;
-    BOOL _shouldStashLoginResponse;
+    BOOL  _hasStashedLoginResponse;
+    <AASetupAssistantDelegateService> * _idsPlugin;
+    NSObject<OS_dispatch_queue> * _pluginNotificationQueue;
+    NSArray * _plugins;
+    BOOL  _shouldSkipiTunesPlugin;
+    BOOL  _shouldStashLoginResponse;
 }
 
 @property (nonatomic) BOOL shouldSkipiTunesPlugin;

@@ -3,20 +3,20 @@
  */
 
 @interface SBUIPasscodeLockNumberPad : UIView <SBNumberPadDelegate> {
-    SBUIButton *_backspaceButton;
-    UIView *_bottomPaddingView;
-    SBUIButton *_cancelButton;
-    UIColor *_customBackgroundColor;
-    <SBUIPasscodeLockNumberPadDelegate> *_delegate;
-    UIControl<SBUIPasscodeNumberPadButton> *_downButton;
-    SBUIButton *_emergencyCallButton;
-    UIView *_leftPaddingView;
-    SBNumberPadWithDelegate *_numberPad;
-    UIView *_rightPaddingView;
-    BOOL _showsBackspaceButton;
-    BOOL _showsCancelButton;
-    BOOL _showsEmergencyCallButton;
-    BOOL _useLightStyle;
+    SBUIButton * _backspaceButton;
+    UIView * _bottomPaddingView;
+    SBUIButton * _cancelButton;
+    UIColor * _customBackgroundColor;
+    <SBUIPasscodeLockNumberPadDelegate> * _delegate;
+    UIControl<SBUIPasscodeNumberPadButton> * _downButton;
+    SBUIButton * _emergencyCallButton;
+    UIView * _leftPaddingView;
+    SBNumberPadWithDelegate * _numberPad;
+    UIView * _rightPaddingView;
+    BOOL  _showsBackspaceButton;
+    BOOL  _showsCancelButton;
+    BOOL  _showsEmergencyCallButton;
+    BOOL  _useLightStyle;
 }
 
 @property (nonatomic, readonly) NSArray *buttons;

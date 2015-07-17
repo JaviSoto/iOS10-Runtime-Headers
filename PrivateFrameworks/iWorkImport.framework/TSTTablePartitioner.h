@@ -3,16 +3,16 @@
  */
 
 @interface TSTTablePartitioner : NSObject <TSDPartitioner> {
-    float mFirstPartitionWidth;
-    TSUPointerKeyDictionary *mHintMatricesByCanvas;
-    TSDInfoGeometry *mInfoGeometry;
-    NSMutableDictionary *mPartitioningPassCache;
+    float  mFirstPartitionWidth;
+    TSUPointerKeyDictionary * mHintMatricesByCanvas;
+    TSDInfoGeometry * mInfoGeometry;
+    NSMutableDictionary * mPartitioningPassCache;
     struct CGSize { 
         float width; 
         float height; 
-    } mScaleToFit;
-    TSTLayout *mScaledLayout;
-    TSTTableInfo *mTableInfo;
+    }  mScaleToFit;
+    TSTLayout * mScaledLayout;
+    TSTTableInfo * mTableInfo;
 }
 
 @property (nonatomic, copy) TSDInfoGeometry *infoGeometry;

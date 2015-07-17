@@ -3,16 +3,16 @@
  */
 
 @interface SKUIProductPageInAppPurchaseTableCell : SKUITableViewCell {
-    SKUIColorScheme *_colorScheme;
+    SKUIColorScheme * _colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UILabel *_indexLabel;
-    UILabel *_nameLabel;
-    UILabel *_priceLabel;
+    }  _contentInsets;
+    UILabel * _indexLabel;
+    UILabel * _nameLabel;
+    UILabel * _priceLabel;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

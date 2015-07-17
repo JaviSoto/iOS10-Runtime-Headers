@@ -3,20 +3,20 @@
  */
 
 @interface NNMKProtoAttachmentMetadata : PBCodable <NSCopying> {
-    NSString *_contentId;
-    NSString *_fileName;
-    unsigned int _fileSize;
+    NSString * _contentId;
+    NSString * _fileName;
+    unsigned int  _fileSize;
     struct { 
         unsigned int fileSize : 1; 
         unsigned int imageHeight : 1; 
         unsigned int imageWidth : 1; 
         unsigned int type : 1; 
         unsigned int renderOnClient : 1; 
-    } _has;
-    float _imageHeight;
-    float _imageWidth;
-    BOOL _renderOnClient;
-    unsigned int _type;
+    }  _has;
+    float  _imageHeight;
+    float  _imageWidth;
+    BOOL  _renderOnClient;
+    unsigned int  _type;
 }
 
 @property (nonatomic, retain) NSString *contentId;

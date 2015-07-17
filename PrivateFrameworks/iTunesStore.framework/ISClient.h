@@ -3,12 +3,12 @@
  */
 
 @interface ISClient : NSObject {
-    NSString *_appleClientApplication;
-    NSString *_appleClientVersions;
-    NSString *_identifier;
-    NSLock *_lock;
-    NSString *_partnerHeader;
-    NSString *_userAgent;
+    NSString * _appleClientApplication;
+    NSString * _appleClientVersions;
+    NSString * _identifier;
+    NSLock * _lock;
+    NSString * _partnerHeader;
+    NSString * _userAgent;
 }
 
 @property (copy) NSString *appleClientApplication;

@@ -3,22 +3,23 @@
  */
 
 @interface _UIAppearanceCustomizableClassInfo : NSObject {
-    NSString *_appearanceNodeKey;
-    Class _customizableViewClass;
-    Class _guideClass;
-    unsigned int _hash;
-    BOOL _isCustomizableViewClassRoot;
-    BOOL _isGuideClassRoot;
+    NSString * _classReferenceKey;
+    Class  _customizableViewClass;
+    Class  _guideClass;
+    unsigned int  _hash;
+    BOOL  _isCustomizableViewClassRoot;
+    BOOL  _isGuideClassRoot;
 }
 
-@property (nonatomic, readonly) NSString *_appearanceNodeKey;
+@property (nonatomic, readonly) NSString *_classReferenceKey;
 @property (nonatomic, readonly) Class _customizableViewClass;
 @property (nonatomic, readonly) Class _guideClass;
 @property (nonatomic, readonly) unsigned int _hash;
 
++ (id)_cachedClassInfoForViewClass:(Class)arg1 withGuideClass:(Class)arg2;
 + (id)_customizableClassInfoForViewClass:(Class)arg1 withGuideClass:(Class)arg2;
 
-- (id)_appearanceNodeKey;
+- (id)_classReferenceKey;
 - (Class)_customizableViewClass;
 - (Class)_guideClass;
 - (unsigned int)_hash;

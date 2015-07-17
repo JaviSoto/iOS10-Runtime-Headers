@@ -3,13 +3,13 @@
  */
 
 @interface MusicHairlineView : UIImageView {
-    UIColor *_lineColor;
+    UIColor * _lineColor;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _lineOffset;
-    UIView *_lineView;
-    BOOL _rightInsetIgnoresLayoutMargin;
+    }  _lineOffset;
+    UIView * _lineView;
+    BOOL  _rightInsetIgnoresLayoutMargin;
 }
 
 @property (nonatomic, retain) UIColor *lineColor;

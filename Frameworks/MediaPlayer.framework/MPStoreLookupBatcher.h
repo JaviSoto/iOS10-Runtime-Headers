@@ -3,14 +3,14 @@
  */
 
 @interface MPStoreLookupBatcher : NSObject {
-    unsigned int _batchSize;
-    NSMutableDictionary *_completeResponseDictionary;
-    NSMutableDictionary *_completeResponseResultsDictionary;
-    id /* block */ _completionHandler;
-    NSError *_error;
-    SSLookupRequest *_lookupRequest;
-    NSOperationQueue *_operationQueue;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    unsigned int  _batchSize;
+    NSMutableDictionary * _completeResponseDictionary;
+    NSMutableDictionary * _completeResponseResultsDictionary;
+    id /* block */  _completionHandler;
+    NSError * _error;
+    SSLookupRequest * _lookupRequest;
+    NSOperationQueue * _operationQueue;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic) unsigned int batchSize;

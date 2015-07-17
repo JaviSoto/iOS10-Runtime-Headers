@@ -3,8 +3,8 @@
  */
 
 @interface PoolResource : NSObject {
-    long long currentItemPoolDiff;
-    long long currentItemPoolValue;
+    long long  currentItemPoolDiff;
+    long long  currentItemPoolValue;
 }
 
 @property (nonatomic) long long currentItemPoolDiff;

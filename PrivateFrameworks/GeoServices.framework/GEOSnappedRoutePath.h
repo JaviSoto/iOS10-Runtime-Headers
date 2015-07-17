@@ -3,21 +3,21 @@
  */
 
 @interface GEOSnappedRoutePath : NSObject {
-    GEOMapRequest *_edgeSearchRequest;
-    NSArray *_edges;
-    BOOL _hasCompletedMapMatching;
+    GEOMapRequest * _edgeSearchRequest;
+    NSArray * _edges;
+    BOOL  _hasCompletedMapMatching;
     struct unique_ptr<geo::RouteMapMatchingSection, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
         struct __compressed_pair<geo::RouteMapMatchingSection *, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
             struct RouteMapMatchingSection {} *__first_; 
         } __ptr_; 
-    } _mapMatchingSection;
-    struct __CFSet { } *_observers;
-    GEOComposedRoute *_route;
-    unsigned int _routeEndIndex;
-    unsigned int _routeStartIndex;
-    GEOComposedRouteSection *_section;
-    unsigned int _unsnappedPointCount;
-    struct { float x1; float x2; } *_unsnappedPoints;
+    }  _mapMatchingSection;
+    struct __CFSet { } * _observers;
+    GEOComposedRoute * _route;
+    unsigned int  _routeEndIndex;
+    unsigned int  _routeStartIndex;
+    GEOComposedRouteSection * _section;
+    unsigned int  _unsnappedPointCount;
+    struct { float x1; float x2; } * _unsnappedPoints;
 }
 
 @property (readonly) NSArray *edges;

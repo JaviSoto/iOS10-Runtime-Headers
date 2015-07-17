@@ -3,7 +3,7 @@
  */
 
 @interface OISFUMemoryDataRepresentation : OISFUDataRepresentation {
-    NSData *mData;
+    NSData * mData;
 }
 
 - (id)bufferedInputStream;

@@ -3,7 +3,7 @@
  */
 
 @interface CKAutoupdatingDateFormatter : NSDateFormatter {
-    NSString *_template;
+    NSString * _template;
 }
 
 @property (nonatomic, copy) NSString *template;

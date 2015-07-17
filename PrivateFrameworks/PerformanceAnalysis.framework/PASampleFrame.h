@@ -3,9 +3,9 @@
  */
 
 @interface PASampleFrame : NSObject <PASerializable> {
-    unsigned long long _address;
-    NSMutableSet *_childFrames;
-    PASampleFrame *_parentFrame;
+    unsigned long long  _address;
+    NSMutableSet * _childFrames;
+    PASampleFrame * _parentFrame;
 }
 
 @property unsigned long long address;

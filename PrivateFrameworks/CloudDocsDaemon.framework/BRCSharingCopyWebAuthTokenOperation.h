@@ -3,7 +3,7 @@
  */
 
 @interface BRCSharingCopyWebAuthTokenOperation : _BRCFrameworkOperation <BRCOperationSubclass> {
-    NSString *_ckContainerID;
+    NSString * _ckContainerID;
 }
 
 @property (nonatomic, retain) NSString *ckContainerID;
@@ -18,5 +18,6 @@
 - (void)main;
 - (void)setCkContainerID:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

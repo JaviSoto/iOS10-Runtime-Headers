@@ -3,7 +3,7 @@
  */
 
 @interface CKTranscriptDNDCell : UITableViewCell {
-    UISwitch *_muteSwitch;
+    UISwitch * _muteSwitch;
 }
 
 @property (nonatomic, retain) UISwitch *muteSwitch;

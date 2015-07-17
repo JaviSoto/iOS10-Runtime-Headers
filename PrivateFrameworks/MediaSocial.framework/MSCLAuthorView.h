@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAuthorView : UIView {
-    UIButton *_authorNameButton;
-    UIView *_bottomSeparatorView;
-    UILabel *_label;
+    UIButton * _authorNameButton;
+    UIView * _bottomSeparatorView;
+    UILabel * _label;
 }
 
 @property (nonatomic, copy) NSString *authorName;

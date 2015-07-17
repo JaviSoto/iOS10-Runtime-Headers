@@ -3,10 +3,10 @@
  */
 
 @interface SSLookupResponse : NSObject <SSXPCCoding> {
-    NSDate *_expirationDate;
-    NSMutableArray *_itemOrder;
-    SSMetricsPageEvent *_metricsPageEvent;
-    NSDictionary *_response;
+    NSDate * _expirationDate;
+    NSMutableArray * _itemOrder;
+    SSMetricsPageEvent * _metricsPageEvent;
+    NSDictionary * _response;
 }
 
 @property (nonatomic, readonly) NSArray *allItems;

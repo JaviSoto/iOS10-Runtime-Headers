@@ -3,9 +3,9 @@
  */
 
 @interface PAMountSnapshot : NSObject <PASerializable> {
-    NSArray *_blockedThreadIDs;
-    double _machTimestampOfLastResponse;
-    double _machTimestampWhenMeasured;
+    NSArray * _blockedThreadIDs;
+    double  _machTimestampOfLastResponse;
+    double  _machTimestampWhenMeasured;
 }
 
 @property (readonly) NSArray *blockedThreadIDs;

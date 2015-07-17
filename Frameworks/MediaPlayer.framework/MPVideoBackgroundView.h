@@ -3,17 +3,17 @@
  */
 
 @interface MPVideoBackgroundView : UIView {
-    UIImageView *_backgroundPlaceholderImageView;
-    UIView *_backgroundPlaceholderPosterImageView;
-    UIView *_backgroundPlaceholderView;
-    UIImageView *_customBackgroundImageView;
-    NSString *_destinationName;
-    int _destinationPlaceholderStyle;
-    UIImageView *_iconView;
-    UIView *_imageView;
-    int _interfaceOrientation;
-    id /* block */ _layoutSubviewsPostflightHandler;
-    BOOL _showDestinationPlaceholder;
+    UIImageView * _backgroundPlaceholderImageView;
+    UIView * _backgroundPlaceholderPosterImageView;
+    UIView * _backgroundPlaceholderView;
+    UIImageView * _customBackgroundImageView;
+    NSString * _destinationName;
+    int  _destinationPlaceholderStyle;
+    UIImageView * _iconView;
+    UIView * _imageView;
+    int  _interfaceOrientation;
+    id /* block */  _layoutSubviewsPostflightHandler;
+    BOOL  _showDestinationPlaceholder;
 }
 
 @property (nonatomic, retain) UIImage *backgroundPlaceholderImage;

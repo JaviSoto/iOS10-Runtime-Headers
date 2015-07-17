@@ -3,9 +3,9 @@
  */
 
 @interface EDPatternFill : EDFill {
-    EDColorReference *mBackColorReference;
-    EDColorReference *mForeColorReference;
-    int mType;
+    EDColorReference * mBackColorReference;
+    EDColorReference * mForeColorReference;
+    int  mType;
 }
 
 + (id)patternFillWithType:(int)arg1 foreColor:(id)arg2 backColor:(id)arg3 resources:(id)arg4;
@@ -17,6 +17,7 @@
 - (id)backColorReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)foreColor;
 - (id)foreColorReference;
 - (unsigned int)hash;

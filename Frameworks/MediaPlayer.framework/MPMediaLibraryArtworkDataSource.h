@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaLibraryArtworkDataSource : NSObject <MPArtworkDataSource> {
-    MPArtworkResizeUtility *_artworkResizeUtility;
-    NSCache *_fallbackCache;
-    BOOL _usesFallbackCache;
+    MPArtworkResizeUtility * _artworkResizeUtility;
+    NSCache * _fallbackCache;
+    BOOL  _usesFallbackCache;
 }
 
 @property (nonatomic, retain) MPArtworkResizeUtility *artworkResizeUtility;

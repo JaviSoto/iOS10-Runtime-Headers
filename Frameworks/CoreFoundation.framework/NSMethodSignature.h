@@ -3,8 +3,8 @@
  */
 
 @interface NSMethodSignature : NSObject {
-    void *_private;
-    void *_reserved;
+    void * _private;
+    void * _reserved;
 }
 
 @property (readonly) unsigned int frameLength;

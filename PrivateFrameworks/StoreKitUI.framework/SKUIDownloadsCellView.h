@@ -3,15 +3,15 @@
  */
 
 @interface SKUIDownloadsCellView : UIView {
-    NSAttributedString *_attributedTitle;
-    UIButton *_button;
-    int _buttonType;
-    UIImageView *_imageView;
-    BOOL _isPad;
-    UISlider *_progressSlider;
-    NSString *_subtitle;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    NSAttributedString * _attributedTitle;
+    UIButton * _button;
+    int  _buttonType;
+    UIImageView * _imageView;
+    BOOL  _isPad;
+    UISlider * _progressSlider;
+    NSString * _subtitle;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedTitle;

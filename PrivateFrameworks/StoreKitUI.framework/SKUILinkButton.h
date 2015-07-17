@@ -3,7 +3,7 @@
  */
 
 @interface SKUILinkButton : UIButton {
-    int _arrowStyle;
+    int  _arrowStyle;
 }
 
 @property (nonatomic, readonly) int arrowStyle;

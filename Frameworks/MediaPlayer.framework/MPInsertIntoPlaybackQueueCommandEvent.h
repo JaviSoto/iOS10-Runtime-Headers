@@ -3,8 +3,8 @@
  */
 
 @interface MPInsertIntoPlaybackQueueCommandEvent : MPRemoteCommandEvent {
-    int _insertionPosition;
-    MPRemotePlaybackQueue *_playbackQueue;
+    int  _insertionPosition;
+    MPRemotePlaybackQueue * _playbackQueue;
 }
 
 @property (nonatomic, readonly) int insertionPosition;

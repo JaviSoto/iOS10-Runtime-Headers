@@ -3,7 +3,7 @@
  */
 
 @interface UIAccessibilityMathNavigationBar : UINavigationBar {
-    UIView *_titleView;
+    UIView * _titleView;
 }
 
 + (id)_uiaxBundle;

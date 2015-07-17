@@ -3,10 +3,10 @@
  */
 
 @interface BRCDeadlineToken : NSObject {
-    long long _deadline;
-    BOOL _isResumed;
-    NSObject<OS_dispatch_source> *_latch;
-    BRCDeadlineScheduler *_scheduler;
+    long long  _deadline;
+    BOOL  _isResumed;
+    NSObject<OS_dispatch_source> * _latch;
+    BRCDeadlineScheduler * _scheduler;
 }
 
 - (void).cxx_destruct;

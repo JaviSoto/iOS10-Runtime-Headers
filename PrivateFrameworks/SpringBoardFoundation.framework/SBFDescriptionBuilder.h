@@ -3,8 +3,8 @@
  */
 
 @interface SBFDescriptionBuilder : NSObject {
-    NSMutableString *_description;
-    NSObject *_object;
+    NSMutableString * _description;
+    NSObject * _object;
 }
 
 + (id)componentSeparator;

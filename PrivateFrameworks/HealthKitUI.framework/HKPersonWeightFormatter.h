@@ -3,7 +3,7 @@
  */
 
 @interface HKPersonWeightFormatter : NSObject {
-    NSMassFormatter *_massFormatter;
+    NSMassFormatter * _massFormatter;
 }
 
 + (id)sharedFormatter;

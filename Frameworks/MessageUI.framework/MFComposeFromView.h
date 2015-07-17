@@ -3,9 +3,9 @@
  */
 
 @interface MFComposeFromView : MFComposeHeaderView {
-    BOOL _accountHasUnsafeDomain;
-    UILabel *_accountLabel;
-    UIView *_background;
+    BOOL  _accountHasUnsafeDomain;
+    UILabel * _accountLabel;
+    UIView * _background;
 }
 
 @property (nonatomic) BOOL accountHasUnsafeDomain;

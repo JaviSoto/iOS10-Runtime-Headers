@@ -3,7 +3,7 @@
  */
 
 @interface NSProxy <NSObject> {
-    Class isa;
+    Class  isa;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -107,5 +107,11 @@
 - (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
 - (unsigned int)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
 - (id)_accessibilityValueForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
+
+- (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
 
 @end

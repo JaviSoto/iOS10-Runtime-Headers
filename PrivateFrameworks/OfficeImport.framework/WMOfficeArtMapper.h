@@ -3,11 +3,11 @@
  */
 
 @interface WMOfficeArtMapper : CMDrawableMapper {
-    WDAContent *mContent;
-    unsigned int mCurrentPage;
-    BOOL mFloating;
-    BOOL mIsInsideGroup;
-    BOOL mIsMapped;
+    WDAContent * mContent;
+    unsigned int  mCurrentPage;
+    BOOL  mFloating;
+    BOOL  mIsInsideGroup;
+    BOOL  mIsMapped;
 }
 
 - (id)blipAtIndex:(unsigned int)arg1;

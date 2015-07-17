@@ -3,10 +3,10 @@
  */
 
 @interface HDCodableWorkout : PBCodable <NSCopying> {
-    double _duration;
-    NSMutableArray *_events;
-    double _goal;
-    long long _goalType;
+    double  _duration;
+    NSMutableArray * _events;
+    double  _goal;
+    long long  _goalType;
     struct { 
         unsigned int duration : 1; 
         unsigned int goal : 1; 
@@ -14,11 +14,11 @@
         unsigned int totalDistanceInCanonicalUnit : 1; 
         unsigned int totalEnergyBurnedInCanonicalUnit : 1; 
         unsigned int type : 1; 
-    } _has;
-    HDCodableSample *_sample;
-    double _totalDistanceInCanonicalUnit;
-    double _totalEnergyBurnedInCanonicalUnit;
-    long long _type;
+    }  _has;
+    HDCodableSample * _sample;
+    double  _totalDistanceInCanonicalUnit;
+    double  _totalEnergyBurnedInCanonicalUnit;
+    long long  _type;
 }
 
 @property (nonatomic) double duration;

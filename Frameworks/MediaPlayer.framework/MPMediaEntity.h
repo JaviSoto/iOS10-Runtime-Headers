@@ -3,7 +3,7 @@
  */
 
 @interface MPMediaEntity : NSObject <MusicEntityValueProviding, NSCopying, NSSecureCoding> {
-    MIPMultiverseIdentifier *_multiverseIdentifier;
+    MIPMultiverseIdentifier * _multiverseIdentifier;
 }
 
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;

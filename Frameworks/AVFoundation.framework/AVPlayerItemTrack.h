@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemTrack : NSObject {
-    AVPlayerItemTrackInternal *_playerItemTrack;
+    AVPlayerItemTrackInternal * _playerItemTrack;
 }
 
 @property (nonatomic, readonly) AVAssetTrack *assetTrack;

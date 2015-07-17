@@ -3,11 +3,11 @@
  */
 
 @interface TSWPTrackedDeletion : NSObject <TSWPReplaceAction> {
-    TSWPChangeSession *_changeSession;
+    TSWPChangeSession * _changeSession;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (int)delta;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeSession:(id)arg2;

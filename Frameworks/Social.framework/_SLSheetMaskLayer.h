@@ -3,8 +3,8 @@
  */
 
 @interface _SLSheetMaskLayer : CALayer {
-    UIColor *_clipBackgroundColor;
-    float _clipCornerRadius;
+    UIColor * _clipBackgroundColor;
+    float  _clipCornerRadius;
 }
 
 @property (nonatomic, retain) UIColor *clipBackgroundColor;

@@ -3,8 +3,8 @@
  */
 
 @interface _UIInputViewControllerState : NSObject <NSCopying, NSSecureCoding> {
-    TIDocumentState *_documentState;
-    TITextInputTraits *_textInputTraits;
+    TIDocumentState * _documentState;
+    TITextInputTraits * _textInputTraits;
 }
 
 @property (nonatomic, retain) TIDocumentState *documentState;

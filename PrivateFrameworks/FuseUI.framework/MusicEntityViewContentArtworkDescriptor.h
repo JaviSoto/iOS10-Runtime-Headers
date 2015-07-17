@@ -3,28 +3,28 @@
  */
 
 @interface MusicEntityViewContentArtworkDescriptor : NSObject <NSCopying> {
-    NSSet *_artworkAdditionalPropertiesToPrefetch;
-    NSString *_artworkAllowsUserInteractionProperty;
-    float _artworkAspectRatio;
-    UIColor *_artworkBackgoundColor;
-    UIColor *_artworkBorderColor;
-    int _artworkContentMode;
+    NSSet * _artworkAdditionalPropertiesToPrefetch;
+    NSString * _artworkAllowsUserInteractionProperty;
+    float  _artworkAspectRatio;
+    UIColor * _artworkBackgoundColor;
+    UIColor * _artworkBorderColor;
+    int  _artworkContentMode;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _artworkEdgeInsets;
-    UIColor *_artworkHighlightedBackgoundColor;
-    int _artworkPlaceholderStyle;
-    NSString *_artworkProperty;
+    }  _artworkEdgeInsets;
+    UIColor * _artworkHighlightedBackgoundColor;
+    int  _artworkPlaceholderStyle;
+    NSString * _artworkProperty;
     struct CGSize { 
         float width; 
         float height; 
-    } _artworkSize;
-    NSMutableDictionary *_cachedArtworkPlaceholderImages;
-    MusicArtworkPlaceholderKey *_lastUsedArtworkPlaceholderKey;
-    NSString *_wantsToHideBorderProperty;
+    }  _artworkSize;
+    NSMutableDictionary * _cachedArtworkPlaceholderImages;
+    MusicArtworkPlaceholderKey * _lastUsedArtworkPlaceholderKey;
+    NSString * _wantsToHideBorderProperty;
 }
 
 @property (nonatomic, copy) NSSet *artworkAdditionalPropertiesToPrefetch;

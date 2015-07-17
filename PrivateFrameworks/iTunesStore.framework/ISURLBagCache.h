@@ -3,8 +3,8 @@
  */
 
 @interface ISURLBagCache : NSObject {
-    NSMutableDictionary *_cachedBags;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSMutableDictionary * _cachedBags;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
 }
 
 + (id)URLWithBagContext:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface CPLEngineSyncEmergencyTask : CPLEngineSyncTask <NSCoding> {
-    CPLEngineLibrary *_readwriteEngineLibrary;
-    NSString *_taskIdentifier;
+    CPLEngineLibrary * _readwriteEngineLibrary;
+    NSString * _taskIdentifier;
 }
 
 @property (retain) <CPLEngineSyncEmergencyTaskDelegate> *delegate;

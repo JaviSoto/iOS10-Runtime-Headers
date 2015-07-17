@@ -3,15 +3,15 @@
  */
 
 @interface NSISLinearExpression : NSObject <NSFastEnumeration, NSISRowBody> {
-    double constant;
+    double  constant;
     union { 
         /* Warning: unhandled struct encoding: '{?="stored_extern_marker"@"slab"^{?}"capacity"I}"inline_slab"{?="aligner"L}"padding"[36C]"_workaround13455311"^v)' */ struct { 
             id stored_extern_marker; 
         } extern_data; 
         unsigned int capacity; 
-    } data;
-    unsigned int inline_capacity;
-    unsigned int var_count;
+    }  data;
+    unsigned int  inline_capacity;
+    unsigned int  var_count;
 }
 
 @property double constant;

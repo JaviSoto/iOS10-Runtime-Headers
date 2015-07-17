@@ -3,10 +3,10 @@
  */
 
 @interface RUAddStationEpilogueContext : NSObject {
-    RadioStation *_addedStation;
-    MPAVItem *_prefixItem;
-    BOOL _shouldBeginPlayback;
-    BOOL _shouldKeepPlayingCurrentItem;
+    RadioStation * _addedStation;
+    MPAVItem * _prefixItem;
+    BOOL  _shouldBeginPlayback;
+    BOOL  _shouldKeepPlayingCurrentItem;
 }
 
 @property (nonatomic, readonly) RadioStation *addedStation;

@@ -3,9 +3,9 @@
  */
 
 @interface HKEmergencyCardTableItem : NSObject {
-    _HKMedicalIDData *_data;
-    BOOL _isInEditMode;
-    UIViewController *_owningViewController;
+    _HKMedicalIDData * _data;
+    BOOL  _isInEditMode;
+    UIViewController * _owningViewController;
 }
 
 @property (nonatomic, retain) _HKMedicalIDData *data;

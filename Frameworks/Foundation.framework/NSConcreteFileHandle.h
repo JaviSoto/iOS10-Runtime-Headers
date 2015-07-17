@@ -3,25 +3,26 @@
  */
 
 @interface NSConcreteFileHandle : NSFileHandle {
-    unsigned short _activity;
-    NSObject<OS_dispatch_source> *_dsrc;
-    int _error;
-    int _fd;
-    NSObject<OS_dispatch_queue> *_fhQueue;
-    unsigned short _flags;
-    NSObject<OS_dispatch_queue> *_monitoringQueue;
-    NSObject<OS_dispatch_io> *_readChannel;
-    NSObject<OS_dispatch_source> *_readMonitoringSource;
-    id /* block */ _readabilityHandler;
-    NSObject<OS_dispatch_data> *_resultData;
-    int _resultSocket;
-    struct __CFRunLoop { } *_rl;
-    struct __CFRunLoopSource { } *_source;
-    NSObject<OS_dispatch_source> *_writeMonitoringSource;
-    id /* block */ _writeabilityHandler;
+    unsigned short  _activity;
+    NSObject<OS_dispatch_source> * _dsrc;
+    int  _error;
+    int  _fd;
+    NSObject<OS_dispatch_queue> * _fhQueue;
+    unsigned short  _flags;
+    NSObject<OS_dispatch_queue> * _monitoringQueue;
+    NSObject<OS_dispatch_io> * _readChannel;
+    NSObject<OS_dispatch_source> * _readMonitoringSource;
+    id /* block */  _readabilityHandler;
+    NSObject<OS_dispatch_data> * _resultData;
+    int  _resultSocket;
+    struct __CFRunLoop { } * _rl;
+    struct __CFRunLoopSource { } * _source;
+    NSObject<OS_dispatch_source> * _writeMonitoringSource;
+    id /* block */  _writeabilityHandler;
 }
 
 - (void)_cancelDispatchSources;
+- (void)_closeOnDealloc;
 - (void)_commonDealloc;
 - (void)_locked_clearHandler:(id /* block */*)arg1 forSource:(id*)arg2;
 - (id)_monitor:(int)arg1;

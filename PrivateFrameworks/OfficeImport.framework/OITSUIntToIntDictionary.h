@@ -3,7 +3,7 @@
  */
 
 @interface OITSUIntToIntDictionary : NSObject <NSCopying, NSMutableCopying> {
-    struct __CFDictionary { } *mDictionary;
+    struct __CFDictionary { } * mDictionary;
 }
 
 - (id)allKeys;
@@ -15,6 +15,7 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
+- (void)enumerateKeysAndValuesUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (int)intForKey:(int)arg1;

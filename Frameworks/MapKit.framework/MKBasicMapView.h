@@ -3,11 +3,11 @@
  */
 
 @interface MKBasicMapView : UIView {
-    BOOL _changingViewSize;
-    UIView *_hostView;
-    double _mapModeStartTime;
-    VKMapView *_mapView;
-    double _trafficStartTime;
+    BOOL  _changingViewSize;
+    UIView * _hostView;
+    double  _mapModeStartTime;
+    VKMapView * _mapView;
+    double  _trafficStartTime;
 }
 
 @property (getter=isChangingViewSize, nonatomic, readonly) BOOL changingViewSize;

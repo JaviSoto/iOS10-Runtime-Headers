@@ -3,15 +3,15 @@
  */
 
 @interface PHImageRequest : PHImageManagerRequest {
-    int _bestFormat;
-    int _contentMode;
-    int _degradedFormat;
-    PHImageRequestOptions *_options;
-    id /* block */ _resultHandler;
+    int  _bestFormat;
+    int  _contentMode;
+    int  _degradedFormat;
+    PHImageRequestOptions * _options;
+    id /* block */  _resultHandler;
     struct CGSize { 
         float width; 
         float height; 
-    } _targetSize;
+    }  _targetSize;
 }
 
 @property int bestFormat;

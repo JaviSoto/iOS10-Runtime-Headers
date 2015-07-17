@@ -3,7 +3,7 @@
  */
 
 @interface TRResendPacketEvent : TRPacketEvent {
-    NSArray *_resendPacketEventClasses;
+    NSArray * _resendPacketEventClasses;
 }
 
 @property (nonatomic, readonly) NSArray *resendPacketEventClasses;

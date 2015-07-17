@@ -3,7 +3,7 @@
  */
 
 @interface TSDAngleGradient : TSDGradient <TSDMixing> {
-    float mAngle;
+    float  mAngle;
 }
 
 @property (nonatomic) float gradientAngle;

@@ -3,9 +3,9 @@
  */
 
 @interface CKDPShareDeleteRequest : PBRequest <NSCopying> {
-    NSString *_etag;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
+    NSString * _etag;
+    CKDPProtectionInfo * _selfAddedPcs;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic, retain) NSString *etag;

@@ -3,8 +3,8 @@
  */
 
 @interface TSWPStorageStyler : NSObject {
-    int _attributeArrayKind;
-    TSWPStorage *_storage;
+    int  _attributeArrayKind;
+    TSWPStorage * _storage;
 }
 
 @property (nonatomic, readonly, retain) TSWPStorage *storage;

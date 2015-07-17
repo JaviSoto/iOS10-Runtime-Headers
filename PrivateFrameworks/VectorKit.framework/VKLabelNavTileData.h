@@ -3,19 +3,19 @@
  */
 
 @interface VKLabelNavTileData : NSObject {
-    BOOL _foundTileEdgeJunctions;
-    NSMapTable *_geoJunctionToJunctionMap;
+    BOOL  _foundTileEdgeJunctions;
+    NSMapTable * _geoJunctionToJunctionMap;
     struct vector<LabelNavJunctionInfo, std::__1::allocator<LabelNavJunctionInfo> > { 
         struct LabelNavJunctionInfo {} *__begin_; 
         struct LabelNavJunctionInfo {} *__end_; 
         struct __compressed_pair<LabelNavJunctionInfo *, std::__1::allocator<LabelNavJunctionInfo> > { 
             struct LabelNavJunctionInfo {} *__first_; 
         } __end_cap_; 
-    } _junctionInfos;
-    NSMutableArray *_oppositeCarriagewayJunctions;
-    BOOL _oppositeCarriagewayJunctionsValid;
-    VKLabelTile *_tile;
-    NSMutableArray *_tileEdgeJunctions;
+    }  _junctionInfos;
+    NSMutableArray * _oppositeCarriagewayJunctions;
+    BOOL  _oppositeCarriagewayJunctionsValid;
+    VKLabelTile * _tile;
+    NSMutableArray * _tileEdgeJunctions;
 }
 
 @property (nonatomic, readonly, retain) NSMutableArray *oppositeCarriagewayJunctions;
@@ -33,7 +33,7 @@
 - (id)initWithTile:(id)arg1;
 - (void)initializeJunctionInfos;
 - (id)junctionAtCoordinate:(struct Matrix<float, 2, 1> { float x1[2]; })arg1;
-- (id)junctionForGeoJunction:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)arg1;
+- (id)junctionForGeoJunction:(struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)arg1;
 - (id)oppositeCarriagewayJunctions;
 - (BOOL)oppositeCarriagewayJunctionsValid;
 - (void)setOppositeCarriagewayJunctionsValid:(BOOL)arg1;

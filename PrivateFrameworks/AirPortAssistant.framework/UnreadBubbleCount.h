@@ -3,12 +3,12 @@
  */
 
 @interface UnreadBubbleCount : UIView {
-    int _count;
-    BOOL _isSelected;
+    int  _count;
+    BOOL  _isSelected;
     struct CGSize { 
         float width; 
         float height; 
-    } _textSize;
+    }  _textSize;
 }
 
 @property (nonatomic) int count;

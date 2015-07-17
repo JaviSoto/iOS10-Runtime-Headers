@@ -3,8 +3,8 @@
  */
 
 @interface DataClassMigrator : NSObject {
-    NSDictionary *_context;
-    BOOL _didUpgrade;
+    NSDictionary * _context;
+    BOOL  _didUpgrade;
 }
 
 @property (nonatomic, retain) NSDictionary *context;

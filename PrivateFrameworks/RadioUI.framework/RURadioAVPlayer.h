@@ -3,11 +3,11 @@
  */
 
 @interface RURadioAVPlayer : MPUAVPlayer {
-    BOOL _banningCurrentItemShouldSkipToNextItem;
-    BOOL _checkedDefaultsForLastPlayedStation;
-    RURadioStationPlaybackMetadata *_lastPlayedStationMetadata;
-    NSObject<OS_dispatch_queue> *_lastPlayedStationSaveQueue;
-    NSObject<OS_dispatch_queue> *_radioUIAccessQueue;
+    BOOL  _banningCurrentItemShouldSkipToNextItem;
+    BOOL  _checkedDefaultsForLastPlayedStation;
+    RURadioStationPlaybackMetadata * _lastPlayedStationMetadata;
+    NSObject<OS_dispatch_queue> * _lastPlayedStationSaveQueue;
+    NSObject<OS_dispatch_queue> * _radioUIAccessQueue;
 }
 
 @property (nonatomic) BOOL banningCurrentItemShouldSkipToNextItem;

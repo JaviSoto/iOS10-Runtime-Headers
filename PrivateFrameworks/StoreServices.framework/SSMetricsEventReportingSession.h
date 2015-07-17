@@ -3,11 +3,11 @@
  */
 
 @interface SSMetricsEventReportingSession : NSObject {
-    SSMetricsEventController *_eventController;
-    long long _insertTimestamp;
-    NSURL *_reportingURL;
-    NSMutableArray *_unreportedEventPIDs;
-    NSArray *_unreportedEvents;
+    SSMetricsEventController * _eventController;
+    long long  _insertTimestamp;
+    NSURL * _reportingURL;
+    NSMutableArray * _unreportedEventPIDs;
+    NSArray * _unreportedEvents;
 }
 
 - (id)_unreportedEvents;

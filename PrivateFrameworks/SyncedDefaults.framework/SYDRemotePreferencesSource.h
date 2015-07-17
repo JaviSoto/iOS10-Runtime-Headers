@@ -3,24 +3,24 @@
  */
 
 @interface SYDRemotePreferencesSource : NSObject {
-    BOOL _forceNextSynchronization;
-    long _generationCount;
-    double _lastAccess;
-    long _lastGenerationFromDisk;
-    NSObject<OS_dispatch_source> *_memoryWarningSource;
-    NSObject<OS_dispatch_queue> *_protectionQueue;
-    struct __CFDictionary { } *cache;
-    SYDClient *client;
-    struct __CFDictionary { } *configurationDictionary;
-    struct __CFSet { } *dirtyKeys;
-    NSMutableDictionary *externalChanges;
-    long long initialSyncChangeCount;
-    unsigned char isInitialSync;
-    struct __CFString { } *preferenceID;
-    id /* block */ registrationBlock;
-    NSObject<OS_dispatch_queue> *registrationQueue;
-    long long storageChangeCount;
-    struct __CFURL { } *urlOnDisk;
+    BOOL  _forceNextSynchronization;
+    long  _generationCount;
+    double  _lastAccess;
+    long  _lastGenerationFromDisk;
+    NSObject<OS_dispatch_source> * _memoryWarningSource;
+    NSObject<OS_dispatch_queue> * _protectionQueue;
+    struct __CFDictionary { } * cache;
+    SYDClient * client;
+    struct __CFDictionary { } * configurationDictionary;
+    struct __CFSet { } * dirtyKeys;
+    NSMutableDictionary * externalChanges;
+    long long  initialSyncChangeCount;
+    unsigned char  isInitialSync;
+    struct __CFString { } * preferenceID;
+    id /* block */  registrationBlock;
+    NSObject<OS_dispatch_queue> * registrationQueue;
+    long long  storageChangeCount;
+    struct __CFURL { } * urlOnDisk;
 }
 
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
@@ -56,6 +56,7 @@
 - (long)maximumKeyCount;
 - (long)maximumKeyLength;
 - (long)maximumTotalDataLength;
+- (void)ping;
 - (void)registerForSynchronizedDefaults;
 - (void)scheduleRemoteSynchronization;
 - (id)serverSideDebugDescription;

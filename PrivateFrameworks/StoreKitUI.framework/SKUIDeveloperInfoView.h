@@ -3,11 +3,11 @@
  */
 
 @interface SKUIDeveloperInfoView : UIView {
-    SKUIClientContext *_clientContext;
-    SKUIDeveloperInfo *_developerInfo;
-    UIView *_infoSeparatorView;
-    SKUIProductInformationView *_infoView;
-    NSMutableArray *_lineViews;
+    SKUIClientContext * _clientContext;
+    SKUIDeveloperInfo * _developerInfo;
+    UIView * _infoSeparatorView;
+    SKUIProductInformationView * _infoView;
+    NSMutableArray * _lineViews;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

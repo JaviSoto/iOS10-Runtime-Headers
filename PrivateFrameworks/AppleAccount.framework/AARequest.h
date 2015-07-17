@@ -3,12 +3,12 @@
  */
 
 @interface AARequest : NSObject <NSURLSessionDataDelegate> {
-    struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
-    BOOL _flushCache;
-    id /* block */ _handler;
-    NSString *_initialURLString;
-    NSString *_machineId;
-    NSString *_oneTimePassword;
+    struct OpaqueCFHTTPCookieStorage { } * _cookieStorage;
+    BOOL  _flushCache;
+    id /* block */  _handler;
+    NSString * _initialURLString;
+    NSString * _machineId;
+    NSString * _oneTimePassword;
 }
 
 @property (readonly, copy) NSString *debugDescription;

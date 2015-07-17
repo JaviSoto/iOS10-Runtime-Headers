@@ -3,7 +3,7 @@
  */
 
 @interface PLTile : NSObject {
-    struct __IOSurface { } *_decodedSurface;
+    struct __IOSurface { } * _decodedSurface;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,9 +13,9 @@
             float width; 
             float height; 
         } size; 
-    } _imageRect;
-    id _tileId;
-    BOOL _visible;
+    }  _imageRect;
+    id  _tileId;
+    BOOL  _visible;
 }
 
 - (void)dealloc;

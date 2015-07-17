@@ -3,10 +3,10 @@
  */
 
 @interface UIKeyboardCandidateGridHeader : UIView {
-    UIKBBackdropView *_backdropView;
-    UILabel *_inlineTextLabel;
-    float _inlineTextRightMargin;
-    UIButton *_toggleButton;
+    UIKBBackdropView * _backdropView;
+    UILabel * _inlineTextLabel;
+    float  _inlineTextRightMargin;
+    UIButton * _toggleButton;
 }
 
 @property (nonatomic, retain) UIKBBackdropView *backdropView;

@@ -3,35 +3,35 @@
  */
 
 @interface AXOrator : NSObject <AVSpeechSynthesizerDelegate> {
-    BOOL _contentIsSpeakable;
-    <AXOratorDelegate> *_delegate;
-    BOOL _didRequestPauseSpeakingDuringAudioInterruption;
-    BOOL _didRequestResumeSpeakingDuringAudioInterruption;
-    BOOL _didRequestStartSpeakingDuringAudioInterruption;
-    BOOL _isAudioSessionActive;
-    BOOL _isInAudioInterruption;
+    BOOL  _contentIsSpeakable;
+    <AXOratorDelegate> * _delegate;
+    BOOL  _didRequestPauseSpeakingDuringAudioInterruption;
+    BOOL  _didRequestResumeSpeakingDuringAudioInterruption;
+    BOOL  _didRequestStartSpeakingDuringAudioInterruption;
+    BOOL  _isAudioSessionActive;
+    BOOL  _isInAudioInterruption;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _lastSpokenSubstringRange;
-    AVSpeechUtterance *_lastUtterance;
-    NSString *_lastUtteranceLanguageCode;
-    AXLanguageTag *_lastUtteranceLanguageTag;
+    }  _lastSpokenSubstringRange;
+    AVSpeechUtterance * _lastUtterance;
+    NSString * _lastUtteranceLanguageCode;
+    AXLanguageTag * _lastUtteranceLanguageTag;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _lastUtteranceSubstringRange;
-    unsigned int _numberOfTokensToSkip;
-    NSString *_requestedLanguageCodeDuringAudioInterruption;
-    AXLanguageTaggedContent *_selectedContent;
-    BOOL _shouldSpeakNextItemOnResume;
-    AXLanguageTaggedContent *_speakingContent;
-    NSArray *_speakingContentTokenRanges;
-    NSMutableArray *_speechSequenceItems;
-    AVSpeechSynthesizer *_speechSynthesizer;
-    AVSpeechUtterance *_statusUtterance;
-    NSString *_voiceIdentifier;
-    BOOL _wasSpeakingBeforeAudioInterruption;
+    }  _lastUtteranceSubstringRange;
+    unsigned int  _numberOfTokensToSkip;
+    NSString * _requestedLanguageCodeDuringAudioInterruption;
+    AXLanguageTaggedContent * _selectedContent;
+    BOOL  _shouldSpeakNextItemOnResume;
+    AXLanguageTaggedContent * _speakingContent;
+    NSArray * _speakingContentTokenRanges;
+    NSMutableArray * _speechSequenceItems;
+    AVSpeechSynthesizer * _speechSynthesizer;
+    AVSpeechUtterance * _statusUtterance;
+    NSString * _voiceIdentifier;
+    BOOL  _wasSpeakingBeforeAudioInterruption;
 }
 
 @property (nonatomic, copy) NSString *content;
@@ -103,6 +103,7 @@
 - (BOOL)pauseSpeaking:(id*)arg1;
 - (id)requestedLanguageCodeDuringAudioInterruption;
 - (BOOL)resumeSpeaking:(id*)arg1;
+- (BOOL)resumeSpeakingAfterDelay:(double)arg1 error:(id*)arg2;
 - (BOOL)rewindWithBoundary:(unsigned int)arg1;
 - (id)selectedContent;
 - (void)setContent:(id)arg1;
@@ -142,6 +143,7 @@
 - (void)speechSynthesizer:(id)arg1 didPauseSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 utterance:(id)arg3;
+- (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 alternativeVoiceId:(id)arg2 delayBeforeStart:(double)arg3 error:(id*)arg4;
 - (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 alternativeVoiceId:(id)arg2 error:(id*)arg3;
 - (BOOL)stopSpeaking:(id*)arg1;
 - (id)voiceIdentifier;

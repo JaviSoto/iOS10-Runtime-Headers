@@ -3,22 +3,22 @@
  */
 
 @interface CKDPRecordFieldValue : PBCodable <NSCopying> {
-    CKDPAsset *_assetValue;
-    NSData *_bytesValue;
-    CKDPDate *_dateValue;
-    double _doubleValue;
+    CKDPAsset * _assetValue;
+    NSData * _bytesValue;
+    CKDPDate * _dateValue;
+    double  _doubleValue;
     struct { 
         unsigned int doubleValue : 1; 
         unsigned int signedValue : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSMutableArray *_listValues;
-    CKDPLocationCoordinate *_locationValue;
-    CKDPPackage *_packageValue;
-    CKDPRecordReference *_referenceValue;
-    long long _signedValue;
-    NSString *_stringValue;
-    int _type;
+    }  _has;
+    NSMutableArray * _listValues;
+    CKDPLocationCoordinate * _locationValue;
+    CKDPPackage * _packageValue;
+    CKDPRecordReference * _referenceValue;
+    long long  _signedValue;
+    NSString * _stringValue;
+    int  _type;
 }
 
 @property (nonatomic, retain) CKDPAsset *assetValue;

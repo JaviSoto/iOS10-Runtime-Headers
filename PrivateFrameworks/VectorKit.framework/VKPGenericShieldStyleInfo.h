@@ -3,8 +3,8 @@
  */
 
 @interface VKPGenericShieldStyleInfo : PBCodable <NSCopying> {
-    unsigned int _backgroundColor;
-    unsigned int _borderColor;
+    unsigned int  _backgroundColor;
+    unsigned int  _borderColor;
     struct { 
         unsigned int backgroundColor : 1; 
         unsigned int borderColor : 1; 
@@ -14,18 +14,18 @@
         unsigned int textDropShadowSize : 1; 
         unsigned int textStrokeColor : 1; 
         unsigned int textStrokeSize : 1; 
-    } _has;
-    int _style;
-    unsigned int _textColor;
-    unsigned int _textDropShadowColor;
+    }  _has;
+    int  _style;
+    unsigned int  _textColor;
+    unsigned int  _textDropShadowColor;
     struct { 
         float *list; 
         unsigned int count; 
         unsigned int size; 
-    } _textDropShadowOffsets;
-    float _textDropShadowSize;
-    unsigned int _textStrokeColor;
-    float _textStrokeSize;
+    }  _textDropShadowOffsets;
+    float  _textDropShadowSize;
+    unsigned int  _textStrokeColor;
+    float  _textStrokeSize;
 }
 
 @property (nonatomic) unsigned int backgroundColor;

@@ -3,11 +3,11 @@
  */
 
 @interface MusicUpNextPlaybackHistoryDataSource : MusicUpNextCompositeDataSource <MusicLocalPlaybackEventDelegate, MusicLocalPlaybackHistoryItemDataSource> {
-    MusicEntityViewHorizontalLockupContentDescriptor *_horizontalLockupContentDescriptor;
-    BOOL _ignoreDataSourceChanges;
-    MusicLocalPlaybackEventDataSource *_localPlaybackEventDataSource;
-    int _playbackEventsCount;
-    unsigned long long _subscriptionCapabilities;
+    MusicEntityViewHorizontalLockupContentDescriptor * _horizontalLockupContentDescriptor;
+    BOOL  _ignoreDataSourceChanges;
+    MusicLocalPlaybackEventDataSource * _localPlaybackEventDataSource;
+    int  _playbackEventsCount;
+    unsigned long long  _subscriptionCapabilities;
 }
 
 @property (readonly, copy) NSString *debugDescription;

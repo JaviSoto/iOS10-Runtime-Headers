@@ -3,7 +3,7 @@
  */
 
 @interface CKDGlobalConfigurationURLRequest : CKDURLRequest {
-    CKDServerConfiguration *_configuration;
+    CKDServerConfiguration * _configuration;
 }
 
 @property (nonatomic, retain) CKDServerConfiguration *configuration;

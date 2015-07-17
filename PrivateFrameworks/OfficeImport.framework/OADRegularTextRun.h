@@ -3,13 +3,14 @@
  */
 
 @interface OADRegularTextRun : OADTextRun {
-    NSMutableString *mText;
+    NSMutableString * mText;
 }
 
 - (unsigned int)characterCount;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isEmpty;
+- (BOOL)isSimilarToTextRun:(id)arg1;
 - (id)text;
 
 @end

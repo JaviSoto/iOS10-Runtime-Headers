@@ -3,11 +3,14 @@
  */
 
 @interface OADShapeStyle : NSObject <NSCopying> {
-    OADStyleMatrixReference *mEffectReference;
-    OADStyleMatrixReference *mFillReference;
-    OADFontReference *mFontReference;
-    OADStyleMatrixReference *mLineReference;
+    OADStyleMatrixReference * mEffectReference;
+    OADStyleMatrixReference * mFillReference;
+    OADFontReference * mFontReference;
+    OADStyleMatrixReference * mLineReference;
 }
+
++ (id)defaultOfficeShapeStyle;
++ (id)defaultShapeStyle;
 
 - (void)applyToGraphicProperties:(id)arg1 styleMatrix:(id)arg2;
 - (void)applyToGraphicProperties:(id)arg1 styleMatrix:(id)arg2 useNull:(BOOL)arg3 strokeWidthMultiplier:(float)arg4;
@@ -16,6 +19,7 @@
 - (void)applyToTextListStyle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)effectReference;
 - (id)fillReference;
 - (id)fontReference;

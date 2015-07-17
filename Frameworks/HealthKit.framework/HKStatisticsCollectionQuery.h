@@ -3,14 +3,14 @@
  */
 
 @interface HKStatisticsCollectionQuery : HKQuery {
-    NSDate *_anchorDate;
-    id /* block */ _initialResultsHandler;
-    NSDateComponents *_intervalComponents;
-    NSNumber *_lastAnchor;
-    unsigned int _mergeStrategy;
-    unsigned int _options;
-    HKStatisticsCollection *_statisticsCollection;
-    id /* block */ _statisticsUpdateHandler;
+    NSDate * _anchorDate;
+    id /* block */  _initialResultsHandler;
+    NSDateComponents * _intervalComponents;
+    NSNumber * _lastAnchor;
+    unsigned int  _mergeStrategy;
+    unsigned int  _options;
+    HKStatisticsCollection * _statisticsCollection;
+    id /* block */  _statisticsUpdateHandler;
 }
 
 @property (readonly) NSDate *anchorDate;
@@ -21,6 +21,8 @@
 @property (readonly) unsigned int options;
 @property (retain) HKStatisticsCollection *statisticsCollection;
 @property (nonatomic, copy) id /* block */ statisticsUpdateHandler;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
 
@@ -51,5 +53,9 @@
 - (void)setStatisticsUpdateHandler:(id /* block */)arg1;
 - (id)statisticsCollection;
 - (id /* block */)statisticsUpdateHandler;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

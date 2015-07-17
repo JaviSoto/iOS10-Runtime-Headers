@@ -3,10 +3,10 @@
  */
 
 @interface UIStoryboardPopoverPresentationSegueTemplate : UIStoryboardSegueTemplate {
-    UIBarButtonItem *_anchorBarButtonItem;
-    UIView *_anchorView;
-    NSArray *_passthroughViews;
-    unsigned int _permittedArrowDirections;
+    UIBarButtonItem * _anchorBarButtonItem;
+    UIView * _anchorView;
+    NSArray * _passthroughViews;
+    unsigned int  _permittedArrowDirections;
 }
 
 @property (nonatomic, retain) UIBarButtonItem *anchorBarButtonItem;
@@ -14,15 +14,15 @@
 @property (nonatomic, copy) NSArray *passthroughViews;
 @property (nonatomic) unsigned int permittedArrowDirections;
 
+- (void).cxx_destruct;
 - (id)anchorBarButtonItem;
 - (id)anchorView;
-- (void)dealloc;
-- (id)defaultSegueClassName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
+- (id /* block */)newDefaultPrepareHandlerForSegue:(id)arg1;
 - (id)passthroughViews;
 - (unsigned int)permittedArrowDirections;
-- (id)segueWithDestinationViewController:(id)arg1;
 - (void)setAnchorBarButtonItem:(id)arg1;
 - (void)setAnchorView:(id)arg1;
 - (void)setPassthroughViews:(id)arg1;

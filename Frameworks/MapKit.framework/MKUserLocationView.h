@@ -3,22 +3,24 @@
  */
 
 @interface MKUserLocationView : MKAnnotationView <VKPuckAnimatorTarget> {
-    CALayer *_accuracyLayer;
-    BOOL _allowsAccuracyRing;
-    BOOL _allowsHeadingIndicator;
-    BOOL _allowsPulse;
-    BOOL _effectsEnabled;
-    double _headingAccuracy;
-    CALayer *_headingLayer;
-    CLLocation *_lastLocation;
-    double _locationAccuracy;
-    VKAnnotationMarker *_marker;
-    double _presentationCourse;
-    CALayer *_pulseLayer;
-    BOOL _shouldDisplayHeading;
-    BOOL _shouldPulse;
-    BOOL _stale;
-    int _zoomDirection;
+    CALayer * _accuracyLayer;
+    BOOL  _allowsAccuracyRing;
+    BOOL  _allowsHeadingIndicator;
+    BOOL  _allowsPulse;
+    BOOL  _effectsEnabled;
+    double  _heading;
+    double  _headingAccuracy;
+    MKUserLocationHeadingLayer * _headingLayer;
+    CLLocation * _lastLocation;
+    double  _locationAccuracy;
+    VKAnnotationMarker * _marker;
+    float  _maxRadiusToShowAccuracyRing;
+    double  _presentationCourse;
+    CALayer * _pulseLayer;
+    BOOL  _shouldDisplayHeading;
+    BOOL  _shouldPulse;
+    BOOL  _stale;
+    int  _zoomDirection;
 }
 
 @property (nonatomic) BOOL allowsAccuracyRing;
@@ -28,8 +30,10 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEffectsEnabled, nonatomic) BOOL effectsEnabled;
 @property (readonly) unsigned int hash;
+@property (nonatomic) double heading;
 @property (nonatomic) double headingAccuracy;
 @property (nonatomic, readonly) double locationAccuracy;
+@property (nonatomic) float maxRadiusToShowAccuracyRing;
 @property (nonatomic) float opacity;
 @property (nonatomic) double presentationCourse;
 @property (nonatomic) BOOL shouldDisplayHeading;
@@ -46,29 +50,34 @@
 - (id)_accuracyAnimation:(float)arg1;
 - (id)_animationToSynchronizePulse:(id*)arg1;
 - (id)_baseLayer;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
+- (struct UIImage { Class x1; }*)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
+- (BOOL)_hideLargeAccuracyRing;
 - (id)_layerToMatchAccuracyRing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
 - (void)_pausePulse;
 - (id)_pulseAnimation;
 - (id)_pulseLayer;
-- (id)_pulseTintColor;
+- (void)_removePulse;
 - (void)_resetLayerToMatchAccuracyRing;
 - (void)_resumePulse;
 - (void)_setAnimatingToCoordinate:(BOOL)arg1;
 - (void)_setMapPitchRadians:(float)arg1;
 - (void)_setPresentationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_setTracking:(BOOL)arg1;
+- (BOOL)_shouldPulseForLocation:(id)arg1;
+- (BOOL)_shouldShowAccuracyRing;
 - (BOOL)_tracking;
 - (void)_updateFromMap;
-- (void)_updateHeadingLayer;
+- (void)_updateHideLargeAccuracyRing;
 - (void)_updateLayers;
 - (void)_updatePulse;
+- (void)_updateShowHeadingLayer;
 - (id)_vkMarker;
 - (BOOL)allowsAccuracyRing;
 - (BOOL)allowsHeadingIndicator;
 - (BOOL)allowsPulse;
 - (void)didMoveToWindow;
+- (double)heading;
 - (double)headingAccuracy;
 - (id)init;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
@@ -77,6 +86,7 @@
 - (void)layoutSubviews;
 - (double)locationAccuracy;
 - (void)locationManagerFailedToUpdateLocation;
+- (float)maxRadiusToShowAccuracyRing;
 - (float)opacity;
 - (double)presentationCourse;
 - (void)setAllowsAccuracyRing:(BOOL)arg1;
@@ -84,8 +94,10 @@
 - (void)setAllowsPulse:(BOOL)arg1;
 - (void)setAnimatingToCoordinate:(BOOL)arg1;
 - (void)setEffectsEnabled:(BOOL)arg1;
+- (void)setHeading:(double)arg1;
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setLocationAccuracy:(double)arg1 duration:(double)arg2;
+- (void)setMaxRadiusToShowAccuracyRing:(float)arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setPresentationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setPresentationCourse:(double)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface FBPreferences : NSObject {
-    NSMutableSet *_enabledLogNames;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet * _enabledLogNames;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;

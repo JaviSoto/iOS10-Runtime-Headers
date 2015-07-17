@@ -3,13 +3,13 @@
  */
 
 @interface SSFamilyMember : NSObject <SSXPCCoding> {
-    NSString *_firstName;
-    NSString *_iCloudAccountName;
-    NSNumber *_iCloudIdentifier;
-    NSNumber *_iTunesIdentifier;
-    NSString *_lastName;
-    BOOL _me;
-    BOOL _sharingPurchases;
+    NSString * _firstName;
+    NSString * _iCloudAccountName;
+    NSNumber * _iCloudIdentifier;
+    NSNumber * _iTunesIdentifier;
+    NSString * _lastName;
+    BOOL  _me;
+    BOOL  _sharingPurchases;
 }
 
 @property (readonly, copy) NSString *debugDescription;

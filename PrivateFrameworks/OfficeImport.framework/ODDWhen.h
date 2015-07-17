@@ -3,10 +3,11 @@
  */
 
 @interface ODDWhen : ODDLayoutObjectList {
-    ODDIteratorSpecification *mIteratorSpecification;
+    ODDIteratorSpecification * mIteratorSpecification;
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)iteratorSpecification;
 

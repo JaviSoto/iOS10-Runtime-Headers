@@ -3,7 +3,7 @@
  */
 
 @interface _VTSiriEnabledPolicy : _VTStatePolicy {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
 - (void)_registerForSiriEnabledUpdates;

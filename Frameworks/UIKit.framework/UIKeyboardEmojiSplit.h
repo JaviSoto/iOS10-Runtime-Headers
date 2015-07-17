@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardEmojiSplit : UIKBKeyView <UITableViewDataSource, UITableViewDelegate> {
-    UITableView *_picker;
+    UITableView * _picker;
 }
 
 @property (readonly, copy) NSString *debugDescription;

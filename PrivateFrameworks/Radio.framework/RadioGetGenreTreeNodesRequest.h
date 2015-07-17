@@ -3,10 +3,10 @@
  */
 
 @interface RadioGetGenreTreeNodesRequest : RadioRequest {
-    SSMetricsConfiguration *_metricsConfiguration;
-    SSMetricsPageEvent *_metricsPageEvent;
-    unsigned long long _parentNodeID;
-    SSURLConnectionRequest *_request;
+    SSMetricsConfiguration * _metricsConfiguration;
+    SSMetricsPageEvent * _metricsPageEvent;
+    unsigned long long  _parentNodeID;
+    SSURLConnectionRequest * _request;
 }
 
 @property (nonatomic, readonly, retain) SSMetricsConfiguration *metricsConfiguration;

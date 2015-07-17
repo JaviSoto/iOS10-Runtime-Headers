@@ -3,11 +3,11 @@
  */
 
 @interface PASymbolSourceInfo : NSObject <PASerializable> {
-    unsigned int _columnNumber;
-    NSString *_fileName;
-    unsigned long long _length;
-    unsigned int _lineNumber;
-    unsigned long long _offsetIntoSymbolOwner;
+    unsigned int  _columnNumber;
+    NSString * _fileName;
+    unsigned long long  _length;
+    unsigned int  _lineNumber;
+    unsigned long long  _offsetIntoSymbolOwner;
 }
 
 @property (readonly, copy) NSString *debugDescription;

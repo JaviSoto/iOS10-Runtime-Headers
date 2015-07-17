@@ -3,12 +3,12 @@
  */
 
 @interface ISProtocolDataProvider : ISDataProvider <NSCopying> {
-    BOOL _shouldPostFooterSectionChanged;
-    BOOL _shouldProcessAccount;
-    BOOL _shouldProcessAuthenticationDialogs;
-    BOOL _shouldProcessDialogs;
-    BOOL _shouldProcessProtocol;
-    BOOL _shouldTriggerDownloads;
+    BOOL  _shouldPostFooterSectionChanged;
+    BOOL  _shouldProcessAccount;
+    BOOL  _shouldProcessAuthenticationDialogs;
+    BOOL  _shouldProcessDialogs;
+    BOOL  _shouldProcessProtocol;
+    BOOL  _shouldTriggerDownloads;
 }
 
 @property BOOL shouldPostFooterSectionChanged;

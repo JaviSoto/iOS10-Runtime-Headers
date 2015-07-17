@@ -3,29 +3,29 @@
  */
 
 @interface PLCameraImportItem : NSObject {
-    NSString *_basePath;
-    NSString *_identifier;
-    NSError *_importError;
-    BOOL _metadataRequested;
-    NSString *_parentFolder;
-    NSMutableDictionary *_representationsMapping;
-    BOOL _shouldImport;
-    UIImage *_thumbnail;
-    NSData *_thumbnailData;
-    BOOL _thumbnailRequested;
-    int _thumbnailState;
-    NSString *eventName;
-    PLManagedAsset *importedAsset;
+    NSString * _basePath;
+    NSString * _identifier;
+    NSError * _importError;
+    BOOL  _metadataRequested;
+    NSString * _parentFolder;
+    NSMutableDictionary * _representationsMapping;
+    BOOL  _shouldImport;
+    UIImage * _thumbnail;
+    NSData * _thumbnailData;
+    BOOL  _thumbnailRequested;
+    int  _thumbnailState;
+    NSString * eventName;
+    PLManagedAsset * importedAsset;
 }
 
 @property (nonatomic, retain) NSString *basePath;
 @property (nonatomic, retain) NSString *eventName;
-@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, retain) NSError *importError;
 @property (nonatomic, retain) PLManagedAsset *importedAsset;
-@property (nonatomic, readonly) NSString *parentFolder;
+@property (nonatomic, readonly, copy) NSString *parentFolder;
 @property (nonatomic) BOOL shouldImport;
-@property (nonatomic, readonly) UIImage *thumbnail;
+@property (nonatomic, readonly, retain) UIImage *thumbnail;
 @property (nonatomic, retain) NSData *thumbnailData;
 
 - (void)_addRepresentation:(id)arg1;

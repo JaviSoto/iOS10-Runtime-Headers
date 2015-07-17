@@ -3,12 +3,12 @@
  */
 
 @interface SKUIResourceLoader : NSObject <NSCacheDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUIResourceLoaderDelegate> *_delegate;
-    NSOperationQueue *_operationQueue;
-    NSMutableDictionary *_operationsByRequestID;
-    NSMapTable *_requestsByCacheKey;
-    NSCache *_resourcesByRequestID;
+    SKUIClientContext * _clientContext;
+    <SKUIResourceLoaderDelegate> * _delegate;
+    NSOperationQueue * _operationQueue;
+    NSMutableDictionary * _operationsByRequestID;
+    NSMapTable * _requestsByCacheKey;
+    NSCache * _resourcesByRequestID;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

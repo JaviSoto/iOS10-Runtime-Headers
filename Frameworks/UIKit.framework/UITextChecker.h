@@ -3,8 +3,8 @@
  */
 
 @interface UITextChecker : NSObject {
-    id _reserved;
-    int _usdt;
+    id  _reserved;
+    int  _usdt;
 }
 
 + (BOOL)_forgetWord:(id)arg1 inDictionary:(id)arg2;

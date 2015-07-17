@@ -3,9 +3,9 @@
  */
 
 @interface EKEventDetailOrganizerCell : EKEventDetailCell {
-    NSString *_organizerName;
-    UILabel *_organizerView;
-    UILabel *_titleView;
+    NSString * _organizerName;
+    UILabel * _organizerView;
+    UILabel * _titleView;
 }
 
 - (void).cxx_destruct;

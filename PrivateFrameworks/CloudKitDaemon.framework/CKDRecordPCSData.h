@@ -3,9 +3,9 @@
  */
 
 @interface CKDRecordPCSData : CKDPCSData {
-    CKRecordID *_recordID;
-    CKDPCSData *_sharePCSData;
-    CKDPCSData *_zonePCSData;
+    CKRecordID * _recordID;
+    CKDPCSData * _sharePCSData;
+    CKDPCSData * _zonePCSData;
 }
 
 @property (nonatomic, retain) CKRecordID *recordID;

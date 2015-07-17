@@ -3,20 +3,20 @@
  */
 
 @interface _NSSQLGenerator : NSObject {
-    NSSQLAdapter *_adapter;
-    NSMutableDictionary *_aliasMap;
-    NSSQLStoreMappingGenerator *_aliasNamer;
-    BOOL _allowToManyKeyPath;
-    BOOL _autoDistinct;
-    NSMutableArray *_comparisonPredicateScopedItem;
-    NSMutableString *_joinClause;
-    NSMutableString *_orderByClause;
-    unsigned int _scopedByORPredicate;
-    NSMutableString *_selectList;
-    NSMutableString *_sqlString;
-    NSSQLStatement *_statement;
-    BOOL _useDistinct;
-    NSMutableString *_whereClause;
+    NSSQLAdapter * _adapter;
+    NSMutableDictionary * _aliasMap;
+    NSSQLStoreMappingGenerator * _aliasNamer;
+    BOOL  _allowToManyKeyPath;
+    BOOL  _autoDistinct;
+    NSMutableArray * _comparisonPredicateScopedItem;
+    NSMutableString * _joinClause;
+    NSMutableString * _orderByClause;
+    unsigned int  _scopedByORPredicate;
+    NSMutableString * _selectList;
+    NSMutableString * _sqlString;
+    NSSQLStatement * _statement;
+    BOOL  _useDistinct;
+    NSMutableString * _whereClause;
 }
 
 + (void)initialize;

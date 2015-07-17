@@ -3,7 +3,7 @@
  */
 
 @interface ML3DatabaseCachedRow : ML3DatabaseRow {
-    NSArray *_arrayRepresentation;
+    NSArray * _arrayRepresentation;
 }
 
 - (void).cxx_destruct;

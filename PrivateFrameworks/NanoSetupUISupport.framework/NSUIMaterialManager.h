@@ -3,7 +3,7 @@
  */
 
 @interface NSUIMaterialManager : NSObject {
-    unsigned int _material;
+    unsigned int  _material;
 }
 
 @property (nonatomic) unsigned int material;

@@ -3,8 +3,8 @@
  */
 
 @interface SKThreadSafeMutableArray : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
-    NSMutableArray *_storage;
-    int _storageLock;
+    NSMutableArray * _storage;
+    int  _storageLock;
 }
 
 @property (readonly) NSArray *arrayRepresentation;

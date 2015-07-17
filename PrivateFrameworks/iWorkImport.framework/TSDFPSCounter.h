@@ -3,10 +3,10 @@
  */
 
 @interface TSDFPSCounter : NSObject {
-    NSMutableArray *_dateArray;
-    double _endTimeInterval;
-    unsigned int _frameCount;
-    double _startTimeInterval;
+    NSMutableArray * _dateArray;
+    double  _endTimeInterval;
+    unsigned int  _frameCount;
+    double  _startTimeInterval;
 }
 
 - (void)addFrame;

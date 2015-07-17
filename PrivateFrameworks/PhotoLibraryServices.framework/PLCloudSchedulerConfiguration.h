@@ -3,9 +3,9 @@
  */
 
 @interface PLCloudSchedulerConfiguration : NSObject {
-    unsigned int _concurrencyLevel;
-    NSArray *_scenarioProducers;
-    NSArray *_triggers;
+    unsigned int  _concurrencyLevel;
+    NSArray * _scenarioProducers;
+    NSArray * _triggers;
 }
 
 @property (nonatomic) unsigned int concurrencyLevel;

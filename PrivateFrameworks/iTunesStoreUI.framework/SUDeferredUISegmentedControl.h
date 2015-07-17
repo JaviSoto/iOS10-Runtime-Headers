@@ -12,14 +12,14 @@
             float width; 
             float height; 
         } size; 
-    } _deferredFrame;
-    float _deferredMaxTotalWidth;
-    float _deferredMinSegmentWidth;
-    int _deferredSegmentedControlStyle;
-    NSMutableArray *_deferredSegments;
-    unsigned int _deferredSelectedSegmentIndex;
-    BOOL _deferredSizeToFit;
-    BOOL _isDeferringInterfaceUpdates;
+    }  _deferredFrame;
+    float  _deferredMaxTotalWidth;
+    float  _deferredMinSegmentWidth;
+    int  _deferredSegmentedControlStyle;
+    NSMutableArray * _deferredSegments;
+    unsigned int  _deferredSelectedSegmentIndex;
+    BOOL  _deferredSizeToFit;
+    BOOL  _isDeferringInterfaceUpdates;
 }
 
 @property (readonly, copy) NSString *debugDescription;

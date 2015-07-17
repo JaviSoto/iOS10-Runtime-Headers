@@ -6,14 +6,13 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mPoint;
+    }  mPoint;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
+    }  mSize;
 }
 
-- (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
 - (struct CGPoint { float x1; float x2; })point;
 - (struct CGSize { float x1; float x2; })size;

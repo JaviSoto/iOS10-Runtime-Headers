@@ -3,23 +3,23 @@
  */
 
 @interface CKDPShareTokenRetrieveResponse : PBCodable <NSCopying> {
-    NSString *_container;
-    int _containerEnvironment;
-    NSString *_etag;
+    NSString * _container;
+    int  _containerEnvironment;
+    NSString * _etag;
     struct { 
         unsigned int containerEnvironment : 1; 
         unsigned int participantState : 1; 
         unsigned int participantType : 1; 
         unsigned int permission : 1; 
-    } _has;
-    NSString *_ownerFirstName;
-    NSString *_ownerLastName;
-    int _participantState;
-    int _participantType;
-    int _permission;
-    NSData *_protectedFullToken;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
+    }  _has;
+    NSString * _ownerFirstName;
+    NSString * _ownerLastName;
+    int  _participantState;
+    int  _participantType;
+    int  _permission;
+    NSData * _protectedFullToken;
+    CKDPProtectionInfo * _selfAddedPcs;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic, retain) NSString *container;

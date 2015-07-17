@@ -3,12 +3,14 @@
  */
 
 @interface IKJSObject : NSObject {
-    IKAppContext *_appContext;
-    NSMutableDictionary *_managedProperties;
+    IKAppContext * _appContext;
+    NSMutableDictionary * _managedProperties;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, retain) NSMutableDictionary *managedProperties;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (id)appContext;

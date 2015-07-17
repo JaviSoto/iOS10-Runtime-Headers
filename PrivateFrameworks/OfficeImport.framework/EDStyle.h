@@ -3,22 +3,22 @@
  */
 
 @interface EDStyle : NSObject <EDImmutableObject, NSCopying> {
-    unsigned int mAlignmentInfoIndex;
-    bool mAlignmentInfoOverridden;
-    unsigned int mBordersIndex;
-    bool mBordersOverridden;
-    unsigned int mContentFormatId;
-    bool mContentFormatOverridden;
-    bool mDoNotModify;
-    unsigned int mFillIndex;
-    bool mFillOverridden;
-    unsigned int mFontIndex;
-    bool mFontOverridden;
-    unsigned int mIndex;
-    unsigned int mParentIndex;
-    EDProtection *mProtection;
-    bool mProtectionOverridden;
-    EDResources *mResources;
+    unsigned int  mAlignmentInfoIndex;
+    bool  mAlignmentInfoOverridden;
+    unsigned int  mBordersIndex;
+    bool  mBordersOverridden;
+    unsigned int  mContentFormatId;
+    bool  mContentFormatOverridden;
+    bool  mDoNotModify;
+    unsigned int  mFillIndex;
+    bool  mFillOverridden;
+    unsigned int  mFontIndex;
+    bool  mFontOverridden;
+    unsigned int  mIndex;
+    unsigned int  mParentIndex;
+    EDProtection * mProtection;
+    bool  mProtectionOverridden;
+    EDResources * mResources;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,6 +36,7 @@
 - (unsigned int)contentFormatId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)fill;
 - (unsigned int)fillIndex;
 - (id)font;
@@ -45,6 +46,7 @@
 - (id)initWithResources:(id)arg1;
 - (bool)isAlignmentInfoOverridden;
 - (bool)isBordersOverridden;
+- (bool)isCenterAcrossAligned;
 - (bool)isContentFormatOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToStyle:(id)arg1;

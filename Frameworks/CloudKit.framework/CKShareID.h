@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKShareID : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_shareName;
-    CKRecordZoneID *_zoneID;
+@interface CKShareID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
+    NSString * _shareName;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, copy) NSString *shareName;
@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)CKXPCSuitableString;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

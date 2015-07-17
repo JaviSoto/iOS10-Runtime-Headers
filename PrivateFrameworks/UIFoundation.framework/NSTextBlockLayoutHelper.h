@@ -3,10 +3,10 @@
  */
 
 @interface NSTextBlockLayoutHelper : NSObject {
-    float _bBorder;
-    float _bMargin;
-    float _bPadding;
-    NSTextTableBlock *_block;
+    float  _bBorder;
+    float  _bMargin;
+    float  _bPadding;
+    NSTextTableBlock * _block;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,19 +16,19 @@
             float width; 
             float height; 
         } size; 
-    } _boundsRect;
+    }  _boundsRect;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _charRange;
+    }  _charRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _glyphRange;
-    float _height;
-    float _lBorder;
-    float _lMargin;
-    float _lPadding;
+    }  _glyphRange;
+    float  _height;
+    float  _lBorder;
+    float  _lMargin;
+    float  _lPadding;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -38,14 +38,14 @@
             float width; 
             float height; 
         } size; 
-    } _layoutRect;
-    float _rBorder;
-    float _rMargin;
-    float _rPadding;
-    float _tBorder;
-    float _tMargin;
-    float _tPadding;
-    float _width;
+    }  _layoutRect;
+    float  _rBorder;
+    float  _rMargin;
+    float  _rPadding;
+    float  _tBorder;
+    float  _tMargin;
+    float  _tPadding;
+    float  _width;
 }
 
 @property (readonly) NSTextTableBlock *block;

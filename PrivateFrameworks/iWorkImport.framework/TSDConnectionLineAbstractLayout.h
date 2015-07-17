@@ -6,38 +6,38 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mAcumulatedDrag;
-    float mCachedFromOutset;
-    TSUBezierPath *mCachedFromOutsetWrapPath;
-    TSUBezierPath *mCachedFromWrapPath;
-    float mCachedToOutset;
-    TSUBezierPath *mCachedToOutsetWrapPath;
-    TSUBezierPath *mCachedToWrapPath;
-    TSUBezierPath *mClippedBezierPath;
-    TSDLayout *mConnectedFrom;
-    NSObject<TSDInfo> *mConnectedFromInfo;
-    TSDInfoGeometry *mConnectedInfoGeometry;
-    TSDConnectionLinePathSource *mConnectedPathSource;
-    TSDLayout *mConnectedTo;
-    NSObject<TSDInfo> *mConnectedToInfo;
-    float mDynamicOutsetFrom;
-    float mDynamicOutsetTo;
+    }  mAcumulatedDrag;
+    float  mCachedFromOutset;
+    TSUBezierPath * mCachedFromOutsetWrapPath;
+    TSUBezierPath * mCachedFromWrapPath;
+    float  mCachedToOutset;
+    TSUBezierPath * mCachedToOutsetWrapPath;
+    TSUBezierPath * mCachedToWrapPath;
+    TSUBezierPath * mClippedBezierPath;
+    TSDLayout * mConnectedFrom;
+    NSObject<TSDInfo> * mConnectedFromInfo;
+    TSDInfoGeometry * mConnectedInfoGeometry;
+    TSDConnectionLinePathSource * mConnectedPathSource;
+    TSDLayout * mConnectedTo;
+    NSObject<TSDInfo> * mConnectedToInfo;
+    float  mDynamicOutsetFrom;
+    float  mDynamicOutsetTo;
     struct CGPoint { 
         float x; 
         float y; 
-    } mLooseEndPosition;
-    TSDLayout *mOldConnectedFrom;
-    TSDLayout *mOldConnectedTo;
-    TSDConnectionLinePathSource *mOriginalPathSource;
+    }  mLooseEndPosition;
+    TSDLayout * mOldConnectedFrom;
+    TSDLayout * mOldConnectedTo;
+    TSDConnectionLinePathSource * mOriginalPathSource;
     struct CGPoint { 
         float x; 
         float y; 
-    } mResizeControlPoints;
-    BOOL mUseDynamicOutsets;
-    BOOL mUseResizePoints;
-    BOOL mValidConnections;
-    BOOL mValidLine;
-    BOOL mVisibleLine;
+    }  mResizeControlPoints;
+    BOOL  mUseDynamicOutsets;
+    BOOL  mUseResizePoints;
+    BOOL  mValidConnections;
+    BOOL  mValidLine;
+    BOOL  mVisibleLine;
 }
 
 @property (nonatomic) TSDLayout *connectedFrom;

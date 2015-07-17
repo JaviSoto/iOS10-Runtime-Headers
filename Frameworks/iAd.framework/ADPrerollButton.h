@@ -8,13 +8,13 @@
         float left; 
         float bottom; 
         float right; 
-    } _alignmentRectInsets;
+    }  _alignmentRectInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _hitRectInsets;
+    }  _hitRectInsets;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;

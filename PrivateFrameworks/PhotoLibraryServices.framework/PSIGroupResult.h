@@ -3,18 +3,18 @@
  */
 
 @interface PSIGroupResult : NSObject {
-    struct __CFArray { } *_assetIds;
-    NSMutableArray *_assetUUIDs;
-    struct __CFArray { } *_categories;
-    NSArray *_contentStrings;
-    BOOL _didFetchOwningContentString;
-    PSIDatabase *_heldIdx;
-    PSIDatabase *_idx;
-    NSArray *_matchRanges;
-    NSString *_owningContentString;
-    struct __CFArray { } *_owningGroupIds;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _score;
+    struct __CFArray { } * _assetIds;
+    NSMutableArray * _assetUUIDs;
+    struct __CFArray { } * _categories;
+    NSArray * _contentStrings;
+    BOOL  _didFetchOwningContentString;
+    PSIDatabase * _heldIdx;
+    PSIDatabase * _idx;
+    NSArray * _matchRanges;
+    NSString * _owningContentString;
+    struct __CFArray { } * _owningGroupIds;
+    NSObject<OS_dispatch_queue> * _queue;
+    float  _score;
 }
 
 @property (nonatomic, retain) struct __CFArray { }*assetIds;

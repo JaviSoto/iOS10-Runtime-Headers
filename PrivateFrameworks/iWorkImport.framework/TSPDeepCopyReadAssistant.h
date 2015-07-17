@@ -3,10 +3,11 @@
  */
 
 @interface TSPDeepCopyReadAssistant : NSObject <TSPDecoderReadCoordinatorDelegate> {
-    NSDictionary *_cachedDataMap;
-    TSPObject *_cachedMetadataObject;
-    TSPComponent *_component;
-    TSPObjectContext *_context;
+    NSDictionary * _cachedDataMap;
+    TSPObject * _cachedMetadataObject;
+    TSPComponent * _component;
+    TSPObjectContext * _context;
+    TSPDeepCopyObjectMap * _objectMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +24,7 @@
 - (unsigned long long)fileFormatVersion;
 - (BOOL)hasDocumentVersionUUID;
 - (id)init;
-- (id)initWithContext:(id)arg1 cachedMetadataObject:(id)arg2 cachedDataMap:(id)arg3;
+- (id)initWithContext:(id)arg1 objectMap:(id)arg2 cachedMetadataObject:(id)arg3 cachedDataMap:(id)arg4;
 - (BOOL)isCrossAppPaste;
 - (BOOL)isCrossDocumentPaste;
 - (BOOL)isFromCopy;

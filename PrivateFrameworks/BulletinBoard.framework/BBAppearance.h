@@ -3,12 +3,12 @@
  */
 
 @interface BBAppearance : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    BBColor *_color;
-    BBImage *_image;
-    int _style;
-    NSString *_title;
-    BBColor *_titleColor;
-    NSString *_viewClassName;
+    BBColor * _color;
+    BBImage * _image;
+    int  _style;
+    NSString * _title;
+    BBColor * _titleColor;
+    NSString * _viewClassName;
 }
 
 @property (nonatomic, copy) BBColor *color;

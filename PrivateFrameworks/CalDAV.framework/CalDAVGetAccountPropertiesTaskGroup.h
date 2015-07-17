@@ -3,16 +3,16 @@
  */
 
 @interface CalDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup {
-    NSSet *_calendarHomes;
-    NSURL *_delegatePrincipalURL;
-    NSURL *_dropboxURL;
-    NSURL *_inboxURL;
-    NSURL *_notificationURL;
-    NSURL *_outboxURL;
-    CalDAVServerVersion *_serverVersion;
-    BOOL _supportsCalendarUserSearch;
-    NSURL *_updatedPrincipalURL;
-    NSSet *_userAddresses;
+    NSSet * _calendarHomes;
+    NSURL * _delegatePrincipalURL;
+    NSURL * _dropboxURL;
+    NSURL * _inboxURL;
+    NSURL * _notificationURL;
+    NSURL * _outboxURL;
+    CalDAVServerVersion * _serverVersion;
+    BOOL  _supportsCalendarUserSearch;
+    NSURL * _updatedPrincipalURL;
+    NSSet * _userAddresses;
 }
 
 @property (nonatomic, readonly) NSSet *calendarHomes;
@@ -26,10 +26,10 @@
 @property (nonatomic, readonly) NSURL *updatedPrincipalURL;
 @property (nonatomic, readonly) NSSet *userAddresses;
 
+- (void).cxx_destruct;
 - (id)_copyAccountPropertiesPropFindElements;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)calendarHomes;
-- (void)dealloc;
 - (id)delegatePrincipalURL;
 - (id)description;
 - (id)dropboxURL;

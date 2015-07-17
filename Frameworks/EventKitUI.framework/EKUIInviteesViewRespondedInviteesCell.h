@@ -3,13 +3,13 @@
  */
 
 @interface EKUIInviteesViewRespondedInviteesCell : UITableViewCell {
-    UILabel *_commentLabel;
-    NSLayoutConstraint *_minimumHeightConstraint;
-    NSLayoutConstraint *_nameBaselineToTopConstraint;
-    UILabel *_nameLabel;
-    UIImageView *_participationStatusImageView;
-    NSArray *_persistentConstraints;
-    NSArray *_removableConstraints;
+    UILabel * _commentLabel;
+    NSLayoutConstraint * _minimumHeightConstraint;
+    NSLayoutConstraint * _nameBaselineToTopConstraint;
+    UILabel * _nameLabel;
+    UIImageView * _participationStatusImageView;
+    NSArray * _persistentConstraints;
+    NSArray * _removableConstraints;
 }
 
 @property (nonatomic, retain) UILabel *commentLabel;

@@ -3,29 +3,23 @@
  */
 
 @interface AVPlayerConnection : NSObject {
-    NSError *_error;
-    AVWeakReference *_playerItemReference;
-    AVWeakReference *_playerReference;
-    AVPlayerItem *_previousPlayerItem;
-    BOOL _shouldAppendItem;
-    int _status;
+    NSError * _error;
+    AVWeakReference * _playerItemReference;
+    AVWeakReference * _playerReference;
+    AVPlayerItem * _previousPlayerItem;
+    int  _status;
 }
 
-@property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) AVPlayer *player;
-@property (nonatomic, readonly) AVPlayerItem *playerItem;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serializationQueue;
 @property (nonatomic, readonly) int status;
 
-- (BOOL)addItemToPlayQueue;
+- (BOOL)addItemToPlayQueueAfterPlaybackItemOfItem:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(BOOL)arg3;
+- (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2;
 - (id)player;
 - (id)playerItem;
 - (void)removeItemFromPlayQueue;
-- (id)serializationQueue;
 - (int)status;
 
 @end

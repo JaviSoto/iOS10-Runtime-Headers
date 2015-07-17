@@ -3,7 +3,7 @@
  */
 
 @interface BRCDesiredVersion : BRCVersion <PQLBindable> {
-    NSError *_downloadError;
+    NSError * _downloadError;
     union { 
         unsigned int value; 
         struct { 
@@ -11,8 +11,8 @@
             unsigned int startDownload : 1; 
             unsigned int userInitiated : 1; 
         } ; 
-    } _flags;
-    NSString *_serverName;
+    }  _flags;
+    NSString * _serverName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate> {
-    PSSpecifier *_addCardButtonSpecifier;
-    PSSpecifier *_cardsGroupSpecifier;
-    int _context;
-    <PKPassbookSettingsDataSource> *_dataSource;
-    NSString *_defaultCardIdentifier;
-    PSSpecifier *_defaultContactEmailSpecifier;
-    PSSpecifier *_defaultContactPhoneSpecifier;
-    PSSpecifier *_defaultPaymentSpecifier;
-    PSSpecifier *_defaultShippingAddressSpecifier;
-    <PKPassbookSettingsDelegate> *_delegate;
-    <PKPassbookSettingsOptionsDelegate> *_optionsDelegate;
-    <PKPassLibraryDataProvider> *_passLibraryDataProvider;
-    NSArray *_passes;
-    PKPaymentSetupAboutViewController *_privacyController;
+@interface PKPassbookSettingsController : NSObject <PKPaymentPassTableCellDelegate, PKPaymentServiceDelegate> {
+    PSSpecifier * _addCardButtonSpecifier;
+    PSSpecifier * _cardsGroupSpecifier;
+    PSSpecifier * _companionCardsGroupSpecifier;
+    NSMutableArray * _companionPassSpecifiers;
+    NSArray * _companionPasses;
+    int  _context;
+    <PKPassbookSettingsDataSource> * _dataSource;
+    NSString * _defaultCardIdentifier;
+    PSSpecifier * _defaultContactEmailSpecifier;
+    PSSpecifier * _defaultContactPhoneSpecifier;
+    PSSpecifier * _defaultPaymentSpecifier;
+    PSSpecifier * _defaultShippingAddressSpecifier;
+    <PKPassbookSettingsDelegate> * _delegate;
+    <PKPassbookSettingsOptionsDelegate> * _optionsDelegate;
+    <PKPassLibraryDataProvider> * _passLibraryDataProvider;
+    NSArray * _passes;
+    <PKPaymentDataProvider> * _paymentDataProvider;
+    PKPaymentSetupAboutViewController * _privacyController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,9 +29,11 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)_addCardButtonSpecifier;
 - (void)_addPaymentCard;
+- (id)_bridgeSpecifiers;
 - (id)_cardListSpecifiers;
+- (id)_companionCardListSpecifiers;
+- (id)_currentDefaultPaymentPass;
 - (id)_defaultContactEmailSpecifier;
 - (id)_defaultContactPhoneSpecifier;
 - (id)_defaultPaymentSpecifier;
@@ -38,16 +44,25 @@
 - (id)_getDefaultContactPhone;
 - (id)_getDefaultPaymentCard;
 - (id)_getDefaultShippingAddress;
+- (void)_handleDefaultPaymentPassChangedTo:(id)arg1 withSender:(id)arg2 optionsController:(id)arg3 canPrompt:(BOOL)arg4;
 - (void)_openPrivacyLink;
+- (id)_restrictedModeSpecifier;
+- (id)_settingsSpecifiers;
 - (void)_showCardDetails:(id)arg1;
 - (void)_showDefaultContactEmailOptions:(id)arg1;
 - (void)_showDefaultContactPhoneOptions:(id)arg1;
 - (void)_showDefaultPaymentOptions:(id)arg1;
 - (void)_showDefaultShippingAddressOptions:(id)arg1;
+- (id)_specifierForPassUniqueID:(id)arg1;
+- (void)_updateAddButtonSpecifier;
+- (void)_updateCardsGroupSpecifier;
+- (void)_updateCompanionGroupSpecifier;
+- (void)_updateCompanionPassesAddButton;
+- (void)addButtonPressedForPaymentPass:(id)arg1;
 - (void)addCardTapped;
+- (void)addCardTappedForPaymentPassWithUniqueID:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)done:(id)arg1;
 - (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(int)arg3;
 - (void)refreshDefaultCard;
 - (void)refreshPasses;

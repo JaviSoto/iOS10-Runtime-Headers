@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudSharedUpdateAlbumMetadataJob : PLCloudSharingJob {
-    NSDictionary *_metadata;
+    NSDictionary * _metadata;
 }
 
 @property (nonatomic, retain) NSDictionary *metadata;

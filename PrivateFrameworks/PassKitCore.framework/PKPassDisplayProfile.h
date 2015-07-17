@@ -3,18 +3,18 @@
  */
 
 @interface PKPassDisplayProfile : PKDisplayProfile <NSCopying, NSSecureCoding> {
-    PKColor *_backgroundColor;
-    NSData *_backgroundHash;
-    PKColor *_foregroundColor;
-    NSData *_iconHash;
-    PKColor *_labelColor;
-    NSData *_logoHash;
-    int _passStyle;
-    NSData *_paymentAssetsHash;
-    PKColor *_stripColor;
-    NSData *_stripHash;
-    BOOL _tallCode;
-    NSData *_thumbnailHash;
+    PKColor * _backgroundColor;
+    NSData * _backgroundHash;
+    PKColor * _foregroundColor;
+    NSData * _iconHash;
+    PKColor * _labelColor;
+    NSData * _logoHash;
+    int  _passStyle;
+    NSData * _paymentAssetsHash;
+    PKColor * _stripColor;
+    NSData * _stripHash;
+    BOOL  _tallCode;
+    NSData * _thumbnailHash;
 }
 
 @property (nonatomic, retain) PKColor *backgroundColor;

@@ -3,13 +3,13 @@
  */
 
 @interface NLArcLayer : CAShapeLayer {
-    float _arcStart;
+    float  _arcStart;
     struct CGPoint { 
         float x; 
         float y; 
-    } _center;
-    BOOL _needsRegeneration;
-    float _radius;
+    }  _center;
+    BOOL  _needsRegeneration;
+    float  _radius;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } center;

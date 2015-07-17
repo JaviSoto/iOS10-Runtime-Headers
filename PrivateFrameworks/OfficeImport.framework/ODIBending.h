@@ -3,12 +3,12 @@
  */
 
 @interface ODIBending : NSObject {
-    unsigned int mMaxColumnCount;
-    unsigned int mMaxNodeCount;
-    float mRectHeight;
-    float mSpaceHeight;
-    float mSpaceWidth;
-    BOOL mWithArrows;
+    unsigned int  mMaxColumnCount;
+    unsigned int  mMaxNodeCount;
+    float  mRectHeight;
+    float  mSpaceHeight;
+    float  mSpaceWidth;
+    BOOL  mWithArrows;
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;

@@ -3,18 +3,18 @@
  */
 
 @interface _PFUbiquityRecordsExporter : NSObject {
-    BOOL _allowTempLogStorage;
-    NSDate *_lastTransactionDate;
-    NSString *_localPeerID;
-    PFUbiquityLocation *_localRootLocation;
-    BOOL _pendingTempLogMove;
-    NSMutableDictionary *_pendingTransactionsToStoreNameAndTransactionNumber;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    NSString *_storeName;
-    BOOL _throwOptimisticLockingException;
-    NSLock *_transactionLock;
-    PFUbiquityLocation *_ubiquityRootLocation;
-    BOOL _useLocalStorage;
+    BOOL  _allowTempLogStorage;
+    NSDate * _lastTransactionDate;
+    NSString * _localPeerID;
+    PFUbiquityLocation * _localRootLocation;
+    BOOL  _pendingTempLogMove;
+    NSMutableDictionary * _pendingTransactionsToStoreNameAndTransactionNumber;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    NSString * _storeName;
+    BOOL  _throwOptimisticLockingException;
+    NSLock * _transactionLock;
+    PFUbiquityLocation * _ubiquityRootLocation;
+    BOOL  _useLocalStorage;
 }
 
 @property (nonatomic) BOOL allowTempLogStorage;

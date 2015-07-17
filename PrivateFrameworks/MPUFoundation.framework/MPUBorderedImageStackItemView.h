@@ -3,9 +3,9 @@
  */
 
 @interface MPUBorderedImageStackItemView : MPUImageStackItemView {
-    MPUBorderConfiguration *_borderConfiguration;
-    MPUBorderDrawingCache *_borderDrawingCache;
-    UIImageView *_borderImageView;
+    MPUBorderConfiguration * _borderConfiguration;
+    MPUBorderDrawingCache * _borderDrawingCache;
+    UIImageView * _borderImageView;
 }
 
 @property (nonatomic, copy) MPUBorderConfiguration *borderConfiguration;

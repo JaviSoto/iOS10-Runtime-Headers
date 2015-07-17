@@ -3,8 +3,8 @@
  */
 
 @interface GKDynamicColumnSectionMetrics : GKSectionMetrics {
-    unsigned int _columnsInLandscape;
-    unsigned int _columnsInPortrait;
+    unsigned int  _columnsInLandscape;
+    unsigned int  _columnsInPortrait;
 }
 
 @property (nonatomic) unsigned int columnsInLandscape;
@@ -20,5 +20,6 @@
 - (struct CGSize { float x1; float x2; })itemSizeForCollectionView:(id)arg1;
 - (void)setColumnsInLandscape:(unsigned int)arg1;
 - (void)setColumnsInPortrait:(unsigned int)arg1;
+- (void)updateColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2;
 
 @end

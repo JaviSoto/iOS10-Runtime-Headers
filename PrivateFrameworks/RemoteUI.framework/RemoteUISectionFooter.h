@@ -3,12 +3,12 @@
  */
 
 @interface RemoteUISectionFooter : UIView <RemoteUITableFooter> {
-    <RUITableFooterDelegate> *_delegate;
-    UIButton *_linkButton;
-    NSURL *_linkURL;
-    int _textAlignment;
-    UILabel *_textLabel;
-    BOOL _usesCustomTextAlignment;
+    <RUITableFooterDelegate> * _delegate;
+    UIButton * _linkButton;
+    NSURL * _linkURL;
+    int  _textAlignment;
+    UILabel * _textLabel;
+    BOOL  _usesCustomTextAlignment;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,5 +32,6 @@
 - (void)setText:(id)arg1 attributes:(id)arg2;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

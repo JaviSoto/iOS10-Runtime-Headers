@@ -3,7 +3,7 @@
  */
 
 @interface ASClientController : SUClientController {
-    BOOL _shouldExitAfterPurchases;
+    BOOL  _shouldExitAfterPurchases;
 }
 
 @property (nonatomic) BOOL shouldExitAfterPurchases;

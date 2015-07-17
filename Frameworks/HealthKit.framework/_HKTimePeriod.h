@@ -3,12 +3,12 @@
  */
 
 @interface _HKTimePeriod : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
-@property (nonatomic, readonly) NSDate *endDate;
-@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 + (id)timePeriodWithStartDate:(id)arg1 endDate:(id)arg2;
@@ -28,6 +28,8 @@
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)overlapsTimePeriod:(id)arg1;
+- (void)setEndDate:(id)arg1;
+- (void)setStartDate:(id)arg1;
 - (id)startDate;
 - (BOOL)startsAfterDate:(id)arg1;
 

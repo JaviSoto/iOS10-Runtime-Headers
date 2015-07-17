@@ -3,20 +3,20 @@
  */
 
 @interface SCROBrailleFormatter : NSObject <NSCopying> {
-    BOOL _anyUnread;
-    id _appToken;
-    struct __CFArray { } *_chunkArray;
-    struct __CFDictionary { } *_chunkDictionary;
-    int _contractionMode;
-    BOOL _currentUnread;
-    int _displayMode;
-    int _firstToken;
-    int _lastToken;
-    int _lineFocus;
-    BOOL _showDotsSevenAndEight;
-    BOOL _showEightDot;
-    NSAttributedString *_statusText;
-    struct __CFDictionary { } *_tokenDictionary;
+    BOOL  _anyUnread;
+    id  _appToken;
+    struct __CFArray { } * _chunkArray;
+    struct __CFDictionary { } * _chunkDictionary;
+    int  _contractionMode;
+    BOOL  _currentUnread;
+    int  _displayMode;
+    int  _firstToken;
+    int  _lastToken;
+    int  _lineFocus;
+    BOOL  _showDotsSevenAndEight;
+    BOOL  _showEightDot;
+    NSAttributedString * _statusText;
+    struct __CFDictionary { } * _tokenDictionary;
 }
 
 @property (nonatomic) int lineFocus;
@@ -35,6 +35,7 @@
 - (BOOL)currentUnread;
 - (void)dealloc;
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (int)displayMode;
 - (int)firstToken;
 - (id)initWithContractionMode:(int)arg1 showEightDot:(BOOL)arg2 showDotsSevenAndEight:(BOOL)arg3;

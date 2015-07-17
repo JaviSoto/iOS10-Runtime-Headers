@@ -3,8 +3,8 @@
  */
 
 @interface EKUIRecurrenceAlertController : NSObject <UIActionSheetDelegate> {
-    UIAlertController *_alertController;
-    id /* block */ _completionHandler;
+    UIAlertController * _alertController;
+    id /* block */  _completionHandler;
 }
 
 @property (copy) id /* block */ completionHandler;

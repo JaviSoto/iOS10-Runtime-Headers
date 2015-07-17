@@ -3,11 +3,11 @@
  */
 
 @interface MusicVerticalScrollingContainerCollectionViewCell : UICollectionViewCell {
-    <MusicVerticalScrollingContainerCollectionViewCellDelegate> *_delegate;
+    <MusicVerticalScrollingContainerCollectionViewCellDelegate> * _delegate;
     struct { 
         unsigned int didUpdateBounds : 1; 
-    } _delegateRespondsToSelector;
-    MusicVerticalScrollingContainerItem *_verticalScrollingContainerItem;
+    }  _delegateRespondsToSelector;
+    MusicVerticalScrollingContainerItem * _verticalScrollingContainerItem;
 }
 
 @property (nonatomic) <MusicVerticalScrollingContainerCollectionViewCellDelegate> *delegate;

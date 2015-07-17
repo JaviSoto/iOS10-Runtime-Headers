@@ -3,10 +3,10 @@
  */
 
 @interface IMGroupTitleChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    NSString *_otherCountryCode;
-    NSString *_otherHandle;
-    NSString *_otherUnformattedID;
-    NSString *_title;
+    NSString * _otherCountryCode;
+    NSString * _otherHandle;
+    NSString * _otherUnformattedID;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *otherCountryCode;

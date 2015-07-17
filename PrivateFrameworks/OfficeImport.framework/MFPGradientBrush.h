@@ -3,11 +3,11 @@
  */
 
 @interface MFPGradientBrush : MFPBrush {
-    NSArray *mBlend;
-    NSArray *mColorBlend;
-    struct CGShading { } *mShading;
-    struct CGFunction { } *mShadingFunction;
-    NSArray *mStops;
+    NSArray * mBlend;
+    NSArray * mColorBlend;
+    struct CGShading { } * mShading;
+    struct CGFunction { } * mShadingFunction;
+    NSArray * mStops;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -15,11 +15,10 @@
         float d; 
         float tx; 
         float ty; 
-    } mTransform;
-    int mWrapMode;
+    }  mTransform;
+    int  mWrapMode;
 }
 
-- (id).cxx_construct;
 - (id)color;
 - (id)colorAtPosition:(float)arg1;
 - (void)createPhoneBrush;

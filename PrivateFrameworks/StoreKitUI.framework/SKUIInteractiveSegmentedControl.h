@@ -3,11 +3,11 @@
  */
 
 @interface SKUIInteractiveSegmentedControl : UIControl {
-    id /* block */ _dividerCreationBlock;
-    NSMutableArray *_dividerViews;
-    float _dividerWidth;
-    NSArray *_segments;
-    float _selectionProgress;
+    id /* block */  _dividerCreationBlock;
+    NSMutableArray * _dividerViews;
+    float  _dividerWidth;
+    NSArray * _segments;
+    float  _selectionProgress;
 }
 
 @property (nonatomic, copy) id /* block */ dividerCreationBlock;

@@ -3,18 +3,18 @@
  */
 
 @interface CSLUIPBNumber : PBCodable <NSCopying> {
-    BOOL _boolValue;
-    double _doubleValue;
-    float _floatValue;
+    BOOL  _boolValue;
+    double  _doubleValue;
+    float  _floatValue;
     struct { 
         unsigned int doubleValue : 1; 
         unsigned int int64Value : 1; 
         unsigned int floatValue : 1; 
         unsigned int int32Value : 1; 
         unsigned int boolValue : 1; 
-    } _has;
-    int _int32Value;
-    long long _int64Value;
+    }  _has;
+    int  _int32Value;
+    long long  _int64Value;
 }
 
 @property (nonatomic) BOOL boolValue;

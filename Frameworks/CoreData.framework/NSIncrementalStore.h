@@ -3,10 +3,10 @@
  */
 
 @interface NSIncrementalStore : NSPersistentStore {
-    unsigned long long _lastIdentifier;
-    void *_reserveda;
-    void *_reservedb;
-    NSDictionary *_storeMetadata;
+    unsigned long long  _lastIdentifier;
+    void * _reserveda;
+    void * _reservedb;
+    NSDictionary * _storeMetadata;
 }
 
 + (id)identifierForNewStoreAtURL:(id)arg1;

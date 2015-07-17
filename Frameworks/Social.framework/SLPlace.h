@@ -3,13 +3,13 @@
  */
 
 @interface SLPlace : NSObject <MKAnnotation, NSSecureCoding> {
-    NSString *_category;
-    double _distance;
-    NSString *_identifier;
-    double _latitude;
-    double _longitude;
-    NSString *_name;
-    NSURL *_pictureURL;
+    NSString * _category;
+    double  _distance;
+    NSString * _identifier;
+    double  _latitude;
+    double  _longitude;
+    NSString * _name;
+    NSURL * _pictureURL;
 }
 
 @property (retain) NSString *category;

@@ -3,16 +3,16 @@
  */
 
 @interface TZVersionInfo : NSObject {
-    NSArray *_alertZones;
-    NSString *_bundleVersion;
-    NSArray *_changedFiles;
-    NSURL *_diskLocation;
-    NSString *_icuChecksumBaseline;
-    NSString *_icuChecksumCurrent;
-    NSString *_icuNameBaseline;
-    NSString *_icuNameCurrent;
-    NSNumber *_shouldAlertAll;
-    NSString *_tzDataVersion;
+    NSArray * _alertZones;
+    NSString * _bundleVersion;
+    NSArray * _changedFiles;
+    NSURL * _diskLocation;
+    NSString * _icuChecksumBaseline;
+    NSString * _icuChecksumCurrent;
+    NSString * _icuNameBaseline;
+    NSString * _icuNameCurrent;
+    NSNumber * _shouldAlertAll;
+    NSString * _tzDataVersion;
 }
 
 @property (retain) NSArray *alertZones;

@@ -3,7 +3,7 @@
  */
 
 @interface PHCachingImageManager : PHImageManager {
-    BOOL _allowsCachingHighQualityImages;
+    BOOL  _allowsCachingHighQualityImages;
 }
 
 @property (nonatomic) BOOL allowsCachingHighQualityImages;

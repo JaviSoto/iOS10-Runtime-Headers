@@ -3,14 +3,14 @@
  */
 
 @interface QLWebViewPrintPageHelper : NSObject <QLRemotePrintPageHelper> {
-    UIWebBrowserView *_browserView;
-    NSString *_documentType;
-    QLPreviewConverter *_previewConverter;
+    UIWebBrowserView * _browserView;
+    NSString * _documentType;
+    QLPreviewConverter * _previewConverter;
     struct CGSize { 
         float width; 
         float height; 
-    } _printableSize;
-    NSURLRequest *_request;
+    }  _printableSize;
+    NSURLRequest * _request;
 }
 
 @property (readonly, copy) NSString *debugDescription;

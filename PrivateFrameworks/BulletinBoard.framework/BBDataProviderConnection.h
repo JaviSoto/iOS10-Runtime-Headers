@@ -3,16 +3,16 @@
  */
 
 @interface BBDataProviderConnection : NSObject <NSXPCListenerDelegate> {
-    NSString *_bundleID;
-    NSObject<OS_dispatch_queue> *_clientCalloutQueue;
-    BOOL _connected;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    BBDataProviderConnectionResolver *_connectionResolver;
-    NSMutableDictionary *_dataProvidersBySectionID;
-    NSMutableDictionary *_parentFactoriesBySectionID;
-    NSObject<OS_dispatch_queue> *_queue;
-    <BBDataProviderConnectionServerProxy> *_serverProxy;
-    NSString *_serviceName;
+    NSString * _bundleID;
+    NSObject<OS_dispatch_queue> * _clientCalloutQueue;
+    BOOL  _connected;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    BBDataProviderConnectionResolver * _connectionResolver;
+    NSMutableDictionary * _dataProvidersBySectionID;
+    NSMutableDictionary * _parentFactoriesBySectionID;
+    NSObject<OS_dispatch_queue> * _queue;
+    <BBDataProviderConnectionServerProxy> * _serverProxy;
+    NSString * _serviceName;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,9 +22,12 @@
 
 + (void)initialize;
 
+- (id)_addDataProvider:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_invalidate;
 - (id)addDataProvider:(id)arg1;
+- (void)addDataProvider:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
+- (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 universalSectionID:(id)arg4;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 unversalSectionID:(id)arg4;
 - (id)bundleID;
 - (void)dealloc;

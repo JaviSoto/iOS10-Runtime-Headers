@@ -3,7 +3,7 @@
  */
 
 @interface GKComposeHeaderField : GKBaseComposeHeaderField {
-    GKLabel *_valueLabel;
+    GKLabel * _valueLabel;
 }
 
 @property (nonatomic, retain) GKLabel *valueLabel;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIRedeemItem : SKUIItem {
-    SKUIArtworkList *artworks;
-    long long itemIdentifier;
-    int itemKind;
-    NSString *title;
+    SKUIArtworkList * artworks;
+    long long  itemIdentifier;
+    int  itemKind;
+    NSString * title;
 }
 
 @property (nonatomic, retain) SKUIArtworkList *artworks;

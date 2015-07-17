@@ -3,10 +3,10 @@
  */
 
 @interface MPStorePlayWhileDownloadProperties : NSObject {
-    unsigned long long _downloadToken;
-    NSString *_localFilePath;
-    NSArray *_sinfs;
-    NSURL *_sourceURL;
+    unsigned long long  _downloadToken;
+    NSString * _localFilePath;
+    NSArray * _sinfs;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic) unsigned long long downloadToken;

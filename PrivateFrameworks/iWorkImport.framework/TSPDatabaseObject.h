@@ -3,8 +3,8 @@
  */
 
 @interface TSPDatabaseObject : NSObject {
-    int _classType;
-    long long _identifier;
+    int  _classType;
+    long long  _identifier;
 }
 
 @property (nonatomic, readonly) int classType;

@@ -3,11 +3,11 @@
  */
 
 @interface NGSInternalSettingsManager : NSObject {
-    NSMutableArray *_glanceDefinitions;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_selectedGlanceIdentifier;
-    NSArray *_storedSettings;
-    NPSManager *_syncManager;
+    NSMutableArray * _glanceDefinitions;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _selectedGlanceIdentifier;
+    NSArray * _storedSettings;
+    NPSManager * _syncManager;
 }
 
 @property (nonatomic, readonly) BOOL hasSettings;
@@ -15,15 +15,20 @@
 @property (nonatomic, copy) NSString *selectedGlanceIdentifier;
 
 - (void).cxx_destruct;
-- (id)_localizedNameForGlance:(id)arg1;
+- (void)_mergeAdditionalGlanceDefinitionsIntoArray:(id)arg1;
 - (unsigned int)_numberOfActiveGlances;
 - (void)_saveSettings;
+- (void)_saveSettings:(id)arg1;
+- (void)_sortGlanceDefinitions:(id)arg1;
+- (id)_storedSettingsRepresentationFromGlanceDefinitions:(id)arg1;
 - (void)addGlanceDefinition:(id)arg1;
+- (void)didLoadGlanceDefinitions;
 - (void)enumerateAllGlanceDefinitionsUsingBlock:(id /* block */)arg1;
 - (void)enumerateGlanceDefinitionsUsingBlock:(id /* block */)arg1;
 - (id)glanceDefinitionForAppBundleIdentifier:(id)arg1;
 - (id)glanceDefinitionForGlanceIdentifier:(id)arg1;
 - (id)glanceDefinitionForWatchKitIdentifier:(id)arg1;
+- (id)glanceDefinitions;
 - (id)glanceIdentifierForGlanceDefinitionAtIndex:(unsigned int)arg1;
 - (BOOL)hasMaximumNumberOfActiveGlances;
 - (BOOL)hasSettings;
@@ -35,5 +40,7 @@
 - (void)saveSettings;
 - (id)selectedGlanceIdentifier;
 - (void)setSelectedGlanceIdentifier:(id)arg1;
+- (void)sortGlanceDefinitions;
+- (void)willSaveGlanceDefinitions;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface TSDMagicMoveMatch : NSObject <TSDMatchingAlgorithmMatch> {
-    float _attributeMatchPercent;
-    float _distance;
-    TSDMagicMoveMatchObject *_incomingObject;
-    int _matchCost;
-    int _matchType;
-    NSString *_name;
-    TSDMagicMoveMatchObject *_outgoingObject;
-    TSDTextureContext *_textureContext;
-    float _zOrderDistance;
+    float  _attributeMatchPercent;
+    float  _distance;
+    TSDMagicMoveMatchObject * _incomingObject;
+    int  _matchCost;
+    int  _matchType;
+    NSString * _name;
+    TSDMagicMoveMatchObject * _outgoingObject;
+    TSDTextureContext * _textureContext;
+    float  _zOrderDistance;
 }
 
 @property (nonatomic) float attributeMatchPercent;

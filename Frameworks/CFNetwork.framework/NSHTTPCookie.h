@@ -3,7 +3,7 @@
  */
 
 @interface NSHTTPCookie : NSObject {
-    NSHTTPCookieInternal *_cookiePrivate;
+    NSHTTPCookieInternal * _cookiePrivate;
 }
 
 @property (getter=isHTTPOnly, readonly) BOOL HTTPOnly;
@@ -54,7 +54,6 @@
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiresDate;
-- (void)finalize;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;

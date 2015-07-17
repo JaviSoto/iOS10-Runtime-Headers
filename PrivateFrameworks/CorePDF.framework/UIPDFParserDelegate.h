@@ -6,9 +6,9 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _p;
-    BOOL _parserError;
-    struct CGPath { } *_path;
+    }  _p;
+    BOOL  _parserError;
+    struct CGPath { } * _path;
 }
 
 @property (readonly, copy) NSString *debugDescription;

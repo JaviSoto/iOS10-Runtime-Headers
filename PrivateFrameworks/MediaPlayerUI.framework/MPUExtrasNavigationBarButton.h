@@ -3,8 +3,8 @@
  */
 
 @interface MPUExtrasNavigationBarButton : UIButton {
-    UIView *_backdropView;
-    UIColor *_dodgeColor;
+    UIView * _backdropView;
+    UIColor * _dodgeColor;
 }
 
 + (id)extrasBackButton;

@@ -3,8 +3,8 @@
  */
 
 @interface _MKStackView : UIView {
-    NSArray *_stackConstraints;
-    NSArray *_stackedSubviews;
+    NSArray * _stackConstraints;
+    NSArray * _stackedSubviews;
 }
 
 @property (nonatomic, copy) NSArray *stackedSubviews;

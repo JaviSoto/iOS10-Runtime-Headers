@@ -3,14 +3,14 @@
  */
 
 @interface TSPDistributableFileManager : NSObject {
-    TSUPathSet *_claimedPaths;
-    NSMutableSet *_deletedIdentifiers;
-    NSString *_directoryPath;
-    BOOL _isCullingDisabled;
-    TSUTemporaryDirectory *_modifiedFilesDirectory;
-    NSMutableSet *_modifiedIdentifiers;
-    NSMutableSet *_newIdentifiers;
-    BOOL _shouldCreate;
+    TSUPathSet * _claimedPaths;
+    NSMutableSet * _deletedIdentifiers;
+    NSString * _directoryPath;
+    BOOL  _isCullingDisabled;
+    TSUTemporaryDirectory * _modifiedFilesDirectory;
+    NSMutableSet * _modifiedIdentifiers;
+    NSMutableSet * _newIdentifiers;
+    BOOL  _shouldCreate;
 }
 
 - (void).cxx_destruct;

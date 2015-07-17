@@ -3,14 +3,14 @@
  */
 
 @interface SKUIGiftContactSearchController : NSObject <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
-    void *_addressBook;
-    <SKUIGiftContactSearchDelegate> *_delegate;
-    NSArray *_results;
-    MFContactsSearchResultsModel *_resultsModel;
-    MFContactsSearchManager *_searchManager;
-    UIView *_searchResultsView;
-    NSNumber *_searchTaskIdentifier;
-    UITableView *_tableView;
+    void * _addressBook;
+    <SKUIGiftContactSearchDelegate> * _delegate;
+    NSArray * _results;
+    MFContactsSearchResultsModel * _resultsModel;
+    MFContactsSearchManager * _searchManager;
+    UIView * _searchResultsView;
+    NSNumber * _searchTaskIdentifier;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

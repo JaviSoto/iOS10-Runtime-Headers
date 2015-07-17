@@ -3,15 +3,15 @@
  */
 
 @interface CalDAVCalendarServerResourceChangeElement : CoreDAVItemWithHrefChildItem {
-    CalDAVUpdateOwnerItem *_changedBy;
+    CalDAVUpdateOwnerItem * _changedBy;
 }
 
 @property (nonatomic, retain) CalDAVUpdateOwnerItem *changedBy;
 @property (nonatomic, readonly) NSURL *fullHrefURL;
 
+- (void).cxx_destruct;
 - (id)changedBy;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)fullHrefURL;
 - (id)init;
 - (void)setChangedBy:(id)arg1;

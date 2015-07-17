@@ -3,12 +3,12 @@
  */
 
 @interface SBUIPasscodeEntryField : UIView <UITextFieldDelegate> {
-    UIColor *_customBackgroundColor;
-    <SBUIPasscodeEntryFieldDelegate> *_delegate;
-    BOOL _ignoreCallbacks;
-    NSMutableCharacterSet *_numericTrimmingSet;
-    BOOL _resigningFirstResponder;
-    UITextField *_textField;
+    UIColor * _customBackgroundColor;
+    <SBUIPasscodeEntryFieldDelegate> * _delegate;
+    BOOL  _ignoreCallbacks;
+    NSMutableCharacterSet * _numericTrimmingSet;
+    BOOL  _resigningFirstResponder;
+    UITextField * _textField;
 }
 
 @property (nonatomic, retain) UIColor *customBackgroundColor;
@@ -18,12 +18,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *stringValue;
 @property (readonly) Class superclass;
-@property (getter=_textField, nonatomic, readonly) UITextField *textField;
+@property (getter=_textField, nonatomic, readonly, retain) UITextField *textField;
+
++ (BOOL)_usesTextFieldForFirstResponder;
 
 - (void)_appendString:(id)arg1;
 - (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
-- (BOOL)_baseBecomeFirstResponder;
-- (BOOL)_baseResignFirstResponder;
 - (void)_deleteLastCharacter;
 - (void)_handleKeyUIEvent:(id)arg1 source:(int)arg2;
 - (BOOL)_hasAnyCharacters;

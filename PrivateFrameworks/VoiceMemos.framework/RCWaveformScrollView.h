@@ -3,7 +3,7 @@
  */
 
 @interface RCWaveformScrollView : UIScrollView {
-    unsigned int _ignoreContentOffsetChangesCount;
+    unsigned int  _ignoreContentOffsetChangesCount;
 }
 
 - (void)beginIgnoringContentOffsetChanges;

@@ -3,12 +3,12 @@
  */
 
 @interface CTGlyphStorageInterface : NSObject {
-    int *_absorbedCounts;
-    struct CGSize { float x1; float x2; } *_advances;
-    long _glyphCount;
-    unsigned short *_glyphs;
-    unsigned int *_props;
-    int *_stringIndexes;
+    int * _absorbedCounts;
+    struct CGSize { float x1; float x2; } * _advances;
+    long  _glyphCount;
+    unsigned short * _glyphs;
+    unsigned int * _props;
+    int * _stringIndexes;
 }
 
 - (struct __CTGlyphStorage { }*)createCopy:(struct { int x1; int x2; })arg1;

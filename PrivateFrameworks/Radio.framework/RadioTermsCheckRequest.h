@@ -3,8 +3,8 @@
  */
 
 @interface RadioTermsCheckRequest : RadioRequest {
-    unsigned long long _acceptedTermsVersion;
-    SSURLConnectionRequest *_request;
+    unsigned long long  _acceptedTermsVersion;
+    SSURLConnectionRequest * _request;
 }
 
 @property (nonatomic) unsigned long long acceptedTermsVersion;

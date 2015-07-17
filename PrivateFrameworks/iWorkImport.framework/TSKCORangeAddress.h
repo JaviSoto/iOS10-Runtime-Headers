@@ -3,7 +3,7 @@
  */
 
 @interface TSKCORangeAddress : TSKCOAddress {
-    TSURangeList *mRangeList;
+    TSURangeList * mRangeList;
 }
 
 @property (nonatomic, readonly) TSURangeList *rangeList;

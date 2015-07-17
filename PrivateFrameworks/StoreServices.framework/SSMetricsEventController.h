@@ -3,7 +3,7 @@
  */
 
 @interface SSMetricsEventController : SSMetricsController {
-    SSMetricsEventTable *_table;
+    SSMetricsEventTable * _table;
 }
 
 - (id)_collectUnreportedPIDsFromDatabase:(id)arg1 matchingReportURLString:(id)arg2 since:(long long)arg3;

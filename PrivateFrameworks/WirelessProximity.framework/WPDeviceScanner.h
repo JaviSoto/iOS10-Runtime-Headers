@@ -3,12 +3,12 @@
  */
 
 @interface WPDeviceScanner : NSObject <XPCClientDelegate> {
-    NSMutableDictionary *_activeScans;
-    <WPDeviceScannerDelegate> *_delegate;
-    NSMutableArray *_liveDevices;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
-    XPCClient *_xpcClient;
+    NSMutableDictionary * _activeScans;
+    <WPDeviceScannerDelegate> * _delegate;
+    NSMutableArray * _liveDevices;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
+    XPCClient * _xpcClient;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *activeScans;

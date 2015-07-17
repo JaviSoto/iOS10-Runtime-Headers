@@ -3,8 +3,8 @@
  */
 
 @interface PKDiff : NSObject <NSSecureCoding> {
-    NSMutableArray *_hunks;
-    NSString *_passUniqueID;
+    NSMutableArray * _hunks;
+    NSString * _passUniqueID;
 }
 
 @property (nonatomic, copy) NSString *passUniqueID;

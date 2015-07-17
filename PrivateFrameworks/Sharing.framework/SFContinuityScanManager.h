@@ -3,9 +3,9 @@
  */
 
 @interface SFContinuityScanManager : NSObject <SFCompanionXPCManagerObserver, SFContinuityScannerClient> {
-    <SFContinuityScannerProtocol><NSXPCProxyCreating> *_connectionProxy;
-    NSMutableSet *_foundDevices;
-    NSHashTable *_observers;
+    <SFContinuityScannerProtocol><NSXPCProxyCreating> * _connectionProxy;
+    NSMutableSet * _foundDevices;
+    NSHashTable * _observers;
 }
 
 @property (retain) <SFContinuityScannerProtocol><NSXPCProxyCreating> *connectionProxy;
@@ -30,6 +30,7 @@
 - (void)receivedAdvertisement:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)setConnectionProxy:(id)arg1;
+- (void)setForceScanningEnabled:(BOOL)arg1;
 - (void)setFoundDevices:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setupXPCConnection;

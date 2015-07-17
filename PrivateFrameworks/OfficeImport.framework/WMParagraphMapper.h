@@ -3,10 +3,10 @@
  */
 
 @interface WMParagraphMapper : CMMapper {
-    OIXMLElement *mActiveNode;
-    WMParagraphMapper *mCurrentMapper;
-    BOOL mIsDeleted;
-    WDParagraph *wdParagraph;
+    OIXMLElement * mActiveNode;
+    WMParagraphMapper * mCurrentMapper;
+    BOOL  mIsDeleted;
+    WDParagraph * wdParagraph;
 }
 
 + (void)mapPlaceholderAt:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withState:(id)arg3;

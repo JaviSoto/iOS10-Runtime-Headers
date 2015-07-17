@@ -3,23 +3,23 @@
  */
 
 @interface SKUICarouselPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    UICollectionView *_carouselCollectionView;
-    int _cellCount;
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    NSObject<OS_dispatch_source> *_cycleTimer;
+    UICollectionView * _carouselCollectionView;
+    int  _cellCount;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    NSObject<OS_dispatch_source> * _cycleTimer;
     struct CGSize { 
         float width; 
         float height; 
-    } _itemSize;
-    float _itemSpacing;
-    float _itemWidth;
-    SKUIMissingItemLoader *_missingItemLoader;
-    NSArray *_modelObjects;
-    BOOL _needsHeightCalculation;
-    BOOL _needsReload;
-    int _progressIndicatorCellIndex;
-    SKUIProgressIndicatorViewElement *_progressIndicatorElement;
-    NSIndexPath *_reloadIndexPath;
+    }  _itemSize;
+    float  _itemSpacing;
+    float  _itemWidth;
+    SKUIMissingItemLoader * _missingItemLoader;
+    NSArray * _modelObjects;
+    BOOL  _needsHeightCalculation;
+    BOOL  _needsReload;
+    int  _progressIndicatorCellIndex;
+    SKUIProgressIndicatorViewElement * _progressIndicatorElement;
+    NSIndexPath * _reloadIndexPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIAccountButtonsSection : SKUIStorePageSection <SKUIAccountButtonsDelegate> {
-    SKUIAccountButtonsViewController *_accountButtonsViewController;
+    SKUIAccountButtonsViewController * _accountButtonsViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

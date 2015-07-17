@@ -3,22 +3,22 @@
  */
 
 @interface UIPageController : UIViewController {
-    <UIPageControllerDelegate> *_delegate;
-    int _notificationState;
-    UIPageControl *_pageControl;
+    <UIPageControllerDelegate> * _delegate;
+    int  _notificationState;
+    UIPageControl * _pageControl;
     struct { 
         unsigned int delegateViewControllerAtIndex : 1; 
         unsigned int delegateWillBeginPaging : 1; 
         unsigned int delegateDidEndPaging : 1; 
         unsigned int displaysPageControl : 1; 
         unsigned int wraps : 1; 
-    } _pageControllerFlags;
-    int _pageCount;
-    int _pageSpacing;
-    UIScrollView *_scrollView;
-    NSMutableArray *_viewControllers;
-    int _visibleIndex;
-    UIView *_wrapperViews;
+    }  _pageControllerFlags;
+    int  _pageCount;
+    int  _pageSpacing;
+    UIScrollView * _scrollView;
+    NSMutableArray * _viewControllers;
+    int  _visibleIndex;
+    UIView * _wrapperViews;
 }
 
 @property (nonatomic) <UIPageControllerDelegate> *delegate;

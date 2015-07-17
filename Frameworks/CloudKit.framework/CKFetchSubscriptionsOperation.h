@@ -3,12 +3,12 @@
  */
 
 @interface CKFetchSubscriptionsOperation : CKDatabaseOperation {
-    id /* block */ _fetchSubscriptionCompletionBlock;
-    BOOL _isFetchAllSubscriptionsOperation;
-    NSMutableDictionary *_subscriptionErrors;
-    NSArray *_subscriptionIDs;
-    NSArray *_subscriptions;
-    NSMutableDictionary *_subscriptionsBySubscriptionID;
+    id /* block */  _fetchSubscriptionCompletionBlock;
+    BOOL  _isFetchAllSubscriptionsOperation;
+    NSMutableDictionary * _subscriptionErrors;
+    NSArray * _subscriptionIDs;
+    NSArray * _subscriptions;
+    NSMutableDictionary * _subscriptionsBySubscriptionID;
 }
 
 @property (nonatomic, copy) id /* block */ fetchSubscriptionCompletionBlock;
@@ -24,6 +24,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)fetchSubscriptionCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

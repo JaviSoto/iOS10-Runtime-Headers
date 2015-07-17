@@ -3,12 +3,12 @@
  */
 
 @interface KNMasterSlide : KNAbstractSlide <TSKTransformableObject> {
-    NSArray *mBodyListStyles;
-    NSArray *mBodyParagraphStyles;
-    BOOL mCalculatedHasBug16580905;
-    KNClassicStylesheetRecord *mClassicStylesheetRecord;
-    BOOL mHasBug16580905;
-    NSString *mName;
+    NSArray * mBodyListStyles;
+    NSArray * mBodyParagraphStyles;
+    BOOL  mCalculatedHasBug16580905;
+    KNClassicStylesheetRecord * mClassicStylesheetRecord;
+    BOOL  mHasBug16580905;
+    NSString * mName;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,10 +18,10 @@
             float width; 
             float height; 
         } size; 
-    } mObjectRect;
-    BOOL mSlideObjectsLayerWithMaster;
-    NSString *mThumbnailTextForBodyPlaceholder;
-    NSString *mThumbnailTextForTitlePlaceholder;
+    }  mObjectRect;
+    BOOL  mSlideObjectsLayerWithMaster;
+    NSString * mThumbnailTextForBodyPlaceholder;
+    NSString * mThumbnailTextForTitlePlaceholder;
 }
 
 @property (nonatomic, copy) NSArray *bodyListStyles;

@@ -5,14 +5,14 @@
 @interface FontAssetDownloadManager : NSObject {
     struct TCFRef<const __CFArray *> { 
         struct __CFArray {} *fRef; 
-    } fDescriptors;
-    NSMutableDictionary *fDownloadOptions;
+    }  fDescriptors;
+    NSMutableDictionary * fDownloadOptions;
     struct TCFRef<const __CFSet *> { 
         struct __CFSet {} *fRef; 
-    } fMandatoryAttributes;
-    NSSet *fPreciousFontLanguages;
-    id /* block */ fProgressCallbackBlock;
-    NSMutableDictionary *fProgressParams;
+    }  fMandatoryAttributes;
+    NSSet * fPreciousFontLanguages;
+    id /* block */  fProgressCallbackBlock;
+    NSMutableDictionary * fProgressParams;
 }
 
 + (id)availableFontAttributesArray;

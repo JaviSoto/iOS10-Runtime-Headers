@@ -3,11 +3,11 @@
  */
 
 @interface MobileActivationNSXMLParserDelegate : NSObject <NSXMLParserDelegate> {
-    NSMutableDictionary *_activationTicket;
-    NSMutableString *_currentPlist;
-    bool _recertifying;
-    bool _renderHTML;
-    int _state;
+    NSMutableDictionary * _activationTicket;
+    NSMutableString * _currentPlist;
+    bool  _recertifying;
+    bool  _renderHTML;
+    int  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;

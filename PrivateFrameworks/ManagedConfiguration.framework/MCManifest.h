@@ -3,9 +3,9 @@
  */
 
 @interface MCManifest : NSObject {
-    NSMutableDictionary *_manifest;
-    NSString *_path;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    NSMutableDictionary * _manifest;
+    NSString * _path;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 + (void)_setManifestPath:(id)arg1;

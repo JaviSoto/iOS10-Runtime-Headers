@@ -3,10 +3,10 @@
  */
 
 @interface TSUZipReadChannel : NSObject <TSUReadChannel> {
-    TSUZipArchive *_archive;
-    <TSUReadChannel> *_archiveReadChannel;
-    TSUZipEntry *_entry;
-    BOOL _validateCRC;
+    TSUZipArchive * _archive;
+    <TSUReadChannel> * _archiveReadChannel;
+    TSUZipEntry * _entry;
+    BOOL  _validateCRC;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -10,8 +10,10 @@
 - (void)_setNavigationPalette:(id)arg1 hidesPaletteShadow:(BOOL)arg2;
 - (BOOL)_topViewControllerPrefersNavigationBarBackgroundViewHidden;
 - (void)_viewControllerNeedsNavigationBarAppearanceUpdate:(id)arg1;
+- (void)attachPalette:(id)arg1 isPinned:(BOOL)arg2;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
+- (id)description;
 - (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;

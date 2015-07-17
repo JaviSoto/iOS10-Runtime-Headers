@@ -3,7 +3,7 @@
  */
 
 @interface RCGLKView : GLKView {
-    BOOL _isCreatingSnapshot;
+    BOOL  _isCreatingSnapshot;
 }
 
 @property (nonatomic, readonly) BOOL isCreatingSnapshot;

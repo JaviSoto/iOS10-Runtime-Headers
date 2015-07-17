@@ -3,7 +3,7 @@
  */
 
 @interface MusicStatusBar : UIStatusBar {
-    <MusicNowPlayingAtmosphericStatusBarDelegate> *__music_statusBarDelegate;
+    <MusicNowPlayingAtmosphericStatusBarDelegate> * __music_statusBarDelegate;
 }
 
 @property (nonatomic) <MusicNowPlayingAtmosphericStatusBarDelegate> *_music_statusBarDelegate;

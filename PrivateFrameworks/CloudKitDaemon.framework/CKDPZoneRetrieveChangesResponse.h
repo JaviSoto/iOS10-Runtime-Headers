@@ -3,12 +3,12 @@
  */
 
 @interface CKDPZoneRetrieveChangesResponse : PBCodable <NSCopying> {
-    NSMutableArray *_changedZones;
+    NSMutableArray * _changedZones;
     struct { 
         unsigned int status : 1; 
-    } _has;
-    int _status;
-    NSData *_syncContinuationToken;
+    }  _has;
+    int  _status;
+    NSData * _syncContinuationToken;
 }
 
 @property (nonatomic, retain) NSMutableArray *changedZones;

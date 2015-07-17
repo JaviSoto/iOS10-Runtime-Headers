@@ -3,18 +3,18 @@
  */
 
 @interface TSPDatabaseReadCoordinator : TSPReadCoordinatorBase <TSPDatabaseReaderDelegate, TSPReadCoordinator> {
-    NSMutableDictionary *_appRelativeDataDictionary;
-    NSObject<OS_dispatch_queue> *_appRelativeDataQueue;
-    NSUUID *_baseObjectUUID;
-    TSPObjectContext *_context;
-    NSMapTable *_dataDictionary;
-    NSObject<OS_dispatch_queue> *_dataQueue;
-    TSPDatabase *_database;
-    unsigned long long _databaseVersion;
-    TSPDocumentResourceDataProvider *_documentResourceDataProvider;
-    TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
-    NSMapTable *_objects;
-    NSURL *_packageURL;
+    NSMutableDictionary * _appRelativeDataDictionary;
+    NSObject<OS_dispatch_queue> * _appRelativeDataQueue;
+    NSUUID * _baseObjectUUID;
+    TSPObjectContext * _context;
+    NSMapTable * _dataDictionary;
+    NSObject<OS_dispatch_queue> * _dataQueue;
+    TSPDatabase * _database;
+    unsigned long long  _databaseVersion;
+    TSPDocumentResourceDataProvider * _documentResourceDataProvider;
+    TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
+    NSMapTable * _objects;
+    NSURL * _packageURL;
 }
 
 @property (nonatomic, readonly) NSUUID *baseObjectUUID;

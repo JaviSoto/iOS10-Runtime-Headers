@@ -3,11 +3,11 @@
  */
 
 @interface HMDRoom : NSObject <HMMessageReceiver, NSSecureCoding> {
-    HMDHome *_home;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    HMDHome * _home;
+    HMMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

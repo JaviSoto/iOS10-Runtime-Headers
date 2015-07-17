@@ -2,36 +2,36 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProfileDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProfileNativeViewControllerDelegate, MusicMediaProfileHeaderContentViewControllerDelegate> {
-    MPMediaItemCollection *_artistMediaItemCollection;
-    MPArtworkCatalog *_artworkCatalog;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    BOOL _didDispatchLoadEvent;
-    NSString *_followerCountText;
-    NSString *_followersText;
-    BOOL _hasDetailTintInformation;
-    BOOL _isAdminEnabled;
-    BOOL _isAlbumArtist;
-    BOOL _isExpectingRelatedContentDocument;
-    BOOL _isUsingHeaderLockupProfileImage;
-    BOOL _isUsingUberArtistHeroImage;
-    BOOL _isWaitingToPushMoreRelatedContentView;
-    NSArray *_jsVisibleSegments;
-    BOOL _needsArtworkCatalogUpdate;
-    BOOL _needsColorAnalysisUpdate;
-    int _numberOfFollowers;
-    NSMutableArray *_pendingTintInformationDispatchEvents;
+@interface MusicMediaProfileDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProfileNativeViewControllerDelegate, MusicMediaProfileHeaderContentViewControllerDelegate, SKUIModalSourceViewProvider, UIViewControllerRestoration> {
+    MPMediaItemCollection * _artistMediaItemCollection;
+    MPArtworkCatalog * _artworkCatalog;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    BOOL  _didDispatchLoadEvent;
+    NSString * _followerCountText;
+    NSString * _followersText;
+    BOOL  _hasDetailTintInformation;
+    BOOL  _isAdminEnabled;
+    BOOL  _isAlbumArtist;
+    BOOL  _isExpectingRelatedContentDocument;
+    BOOL  _isUsingHeaderLockupProfileImage;
+    BOOL  _isUsingUberArtistHeroImage;
+    BOOL  _isWaitingToPushMoreRelatedContentView;
+    NSArray * _jsVisibleSegments;
+    BOOL  _needsArtworkCatalogUpdate;
+    BOOL  _needsColorAnalysisUpdate;
+    int  _numberOfFollowers;
+    NSMutableArray * _pendingTintInformationDispatchEvents;
     struct CGSize { 
         float width; 
         float height; 
-    } _previousMaximumHeaderSize;
-    unsigned int _profileType;
-    UIViewController *_relatedContentViewController;
-    NSString *_segmentIdentifierNeedingContent;
-    BOOL _socialHidden;
-    NSNumber *_storeAdamID;
+    }  _previousMaximumHeaderSize;
+    unsigned int  _profileType;
+    UIViewController * _relatedContentViewController;
+    NSString * _segmentIdentifierNeedingContent;
+    BOOL  _socialHidden;
+    NSNumber * _storeAdamID;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;
@@ -45,8 +45,11 @@
 @property (nonatomic, retain) MusicMediaProfileSplitMainViewController *splitMainViewController;
 @property (readonly) Class superclass;
 
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
+
 - (void).cxx_destruct;
 - (void)_accessMoreRelatedContentDocumentUsingBlock:(id /* block */)arg1;
+- (id)_activeDocumentContainerViewController;
 - (void)_checkAdminPermission;
 - (void)_checkAdminPermissionForCurrentProfile;
 - (void)_containerEntityValueProviderDidInvalidateNotification:(id)arg1;
@@ -66,6 +69,8 @@
 - (BOOL)allowsShowingSplitDetailViewController;
 - (id)clientContext;
 - (void)dealloc;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
+- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithContainerEntityProvider:(id)arg1 clientContext:(id)arg2 existingJSProfileNativeViewController:(id)arg3 profileType:(unsigned int)arg4;
 - (void)jsProfileNativeViewController:(id)arg1 presentBiographyEditorDocument:(id)arg2 options:(id)arg3;
 - (void)jsProfileNativeViewController:(id)arg1 presentShareDocument:(id)arg2 options:(id)arg3;

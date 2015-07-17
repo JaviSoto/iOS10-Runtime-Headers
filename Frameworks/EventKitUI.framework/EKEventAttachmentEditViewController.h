@@ -3,9 +3,9 @@
  */
 
 @interface EKEventAttachmentEditViewController : EKEditItemViewController <EKEventAttachmentCellControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_cellControllers;
-    <EKEventAttachmentEditViewControllerDelegate> *_delegate;
-    UITableView *_table;
+    NSArray * _cellControllers;
+    <EKEventAttachmentEditViewControllerDelegate> * _delegate;
+    UITableView * _table;
 }
 
 @property (readonly, copy) NSString *debugDescription;

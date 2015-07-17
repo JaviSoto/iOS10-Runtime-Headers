@@ -9,7 +9,7 @@
         float fillGreen; 
         float fillBlue; 
         float fillOpacity; 
-    } colorOverlay;
+    }  colorOverlay;
     struct { 
         float embossSize; 
         float embossSoften; 
@@ -23,7 +23,7 @@
         float shadowGreen; 
         float shadowBlue; 
         float shadowOpacity; 
-    } emboss;
+    }  emboss;
     struct { 
         float engraveRed; 
         float engraveGreen; 
@@ -37,7 +37,7 @@
             float x; 
             float y; 
         } engraveOffset; 
-    } engraveShadow;
+    }  engraveShadow;
     struct { 
         float engraveRed; 
         float engraveGreen; 
@@ -51,15 +51,15 @@
             float x; 
             float y; 
         } engraveOffset; 
-    } extraShadow;
-    bool hasBevelEmboss;
-    bool hasColorOverlay;
-    bool hasEngraveShadow;
-    bool hasExtraShadow;
-    bool hasInnerGlow;
-    bool hasInnerGradient;
-    bool hasInnerShadow;
-    bool hasOuterGlow;
+    }  extraShadow;
+    bool  hasBevelEmboss;
+    bool  hasColorOverlay;
+    bool  hasEngraveShadow;
+    bool  hasExtraShadow;
+    bool  hasInnerGlow;
+    bool  hasInnerGradient;
+    bool  hasInnerShadow;
+    bool  hasOuterGlow;
     struct { 
         unsigned int blendMode; 
         float glowRed; 
@@ -67,7 +67,7 @@
         float glowBlue; 
         float glowOpacity; 
         float glowSize; 
-    } innerGlow;
+    }  innerGlow;
     struct { 
         float beginRed; 
         float beginGreen; 
@@ -76,7 +76,7 @@
         float endGreen; 
         float endBlue; 
         float gradientOpacity; 
-    } innerGradient;
+    }  innerGradient;
     struct { 
         unsigned int blendMode; 
         float shadowRed; 
@@ -90,7 +90,7 @@
             float x; 
             float y; 
         } shadowOffset; 
-    } insideShadow;
+    }  insideShadow;
     struct { 
         float glowRed; 
         float glowGreen; 
@@ -98,12 +98,12 @@
         float glowOpacity; 
         float glowSize; 
         float glowSpread; 
-    } outerGlow;
-    unsigned int outputBlendMode;
-    float outputOpacity;
-    int renderStrategy;
-    float scalefactor;
-    float shapeOpacity;
+    }  outerGlow;
+    unsigned int  outputBlendMode;
+    float  outputOpacity;
+    int  renderStrategy;
+    float  scalefactor;
+    float  shapeOpacity;
 }
 
 @property (readonly) unsigned int outputBlendMode;

@@ -3,8 +3,8 @@
  */
 
 @interface CUIPSDLayerBaseRef : NSObject {
-    CUIPSDImageRef *_imageRef;
-    unsigned int _layerIndex;
+    CUIPSDImageRef * _imageRef;
+    unsigned int  _layerIndex;
 }
 
 @property (readonly) int blendMode;

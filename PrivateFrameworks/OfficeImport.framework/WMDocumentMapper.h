@@ -3,9 +3,9 @@
  */
 
 @interface WMDocumentMapper : CMMapper <CMMapperRoot> {
-    CMArchiveManager *mArchiver;
-    NSString *mFileName;
-    WDDocument *wDom;
+    CMArchiveManager * mArchiver;
+    NSString * mFileName;
+    WDDocument * wDom;
 }
 
 - (id)archiver;

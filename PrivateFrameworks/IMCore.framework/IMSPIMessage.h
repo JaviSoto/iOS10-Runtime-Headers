@@ -3,20 +3,20 @@
  */
 
 @interface IMSPIMessage : NSObject {
-    NSAttributedString *_attributedText;
-    NSArray *_chatGUIDs;
-    NSArray *_chatGuids;
-    NSDate *_date;
-    NSString *_guid;
-    BOOL _isAudioMessage;
-    BOOL _isOutgoing;
-    BOOL _isRead;
-    long long _messageID;
-    NSArray *_recipients;
-    IMSPIHandle *_sender;
-    NSString *_subject;
-    NSString *_text;
-    NSURL *_url;
+    NSAttributedString * _attributedText;
+    NSArray * _chatGUIDs;
+    NSArray * _chatGuids;
+    NSDate * _date;
+    NSString * _guid;
+    BOOL  _isAudioMessage;
+    BOOL  _isOutgoing;
+    BOOL  _isRead;
+    long long  _messageID;
+    NSArray * _recipients;
+    IMSPIHandle * _sender;
+    NSString * _subject;
+    NSString * _text;
+    NSURL * _url;
 }
 
 @property (retain) NSAttributedString *attributedText;

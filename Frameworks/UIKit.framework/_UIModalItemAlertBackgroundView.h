@@ -3,8 +3,8 @@
  */
 
 @interface _UIModalItemAlertBackgroundView : _UIModalItemBackgroundView {
-    _UIBackdropView *_effectView;
-    UIImageView *_fillingView;
+    _UIBackdropView * _effectView;
+    UIImageView * _fillingView;
 }
 
 - (id)_gradientImageForBoundsSize:(struct CGSize { float x1; float x2; })arg1 withInnerColor:(id)arg2 outerColor:(id)arg3;

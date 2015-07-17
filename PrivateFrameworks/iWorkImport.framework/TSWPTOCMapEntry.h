@@ -3,13 +3,14 @@
  */
 
 @interface TSWPTOCMapEntry : NSObject {
-    BOOL _showInTOC;
-    TSWPTOCEntryStyle *_tocEntryStyle;
+    BOOL  _showInTOC;
+    TSWPTOCEntryStyle * _tocEntryStyle;
 }
 
 @property (nonatomic) BOOL showInTOC;
 @property (nonatomic, retain) TSWPTOCEntryStyle *tocEntryStyle;
 
+- (id)copyWithContext:(id)arg1;
 - (id)initWithTOCEntryStyle:(id)arg1 showInTOC:(BOOL)arg2;
 - (void)setShowInTOC:(BOOL)arg1;
 - (void)setTocEntryStyle:(id)arg1;

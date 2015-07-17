@@ -3,18 +3,18 @@
  */
 
 @interface CKDFetchRecordChangesURLRequest : CKDURLRequest {
-    int _changeTypes;
-    CKRecordZoneID *_recordZoneID;
-    NSArray *_requestedFields;
-    NSMutableArray *_resultChangedRecords;
-    NSMutableArray *_resultChangedShares;
-    NSData *_resultClientChangeTokenData;
-    NSMutableArray *_resultDeletedRecordIdentifiers;
-    NSMutableArray *_resultDeletedShareIdentifiers;
-    NSData *_resultServerChangeTokenData;
-    unsigned int _resultsLimit;
-    NSData *_serverChangeTokenData;
-    int _status;
+    int  _changeTypes;
+    CKRecordZoneID * _recordZoneID;
+    NSArray * _requestedFields;
+    NSMutableArray * _resultChangedRecords;
+    NSMutableArray * _resultChangedShares;
+    NSData * _resultClientChangeTokenData;
+    NSMutableArray * _resultDeletedRecordIdentifiers;
+    NSMutableArray * _resultDeletedShareIdentifiers;
+    NSData * _resultServerChangeTokenData;
+    unsigned int  _resultsLimit;
+    NSData * _serverChangeTokenData;
+    int  _status;
 }
 
 @property (nonatomic) int changeTypes;

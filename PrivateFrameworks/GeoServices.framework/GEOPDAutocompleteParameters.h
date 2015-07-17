@@ -3,18 +3,21 @@
  */
 
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying> {
-    GEOPDAutocompleteParametersAllEntries *_allEntries;
-    GEOPDAutocompleteParametersFullEntriesOnly *_fullEntries;
+    GEOPDAutocompleteParametersAllEntries * _allEntries;
+    GEOPDAutocompleteParametersAllEntriesWithBrowse * _allEntriesWithBrowse;
+    GEOPDAutocompleteParametersFullEntriesOnly * _fullEntries;
     struct { 
         unsigned int requestType : 1; 
-    } _has;
-    GEOPDAutocompleteParametersLocalitiesAndLandmarks *_localitiesAndLandmarks;
-    int _requestType;
+    }  _has;
+    GEOPDAutocompleteParametersLocalitiesAndLandmarks * _localitiesAndLandmarks;
+    int  _requestType;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteParametersAllEntries *allEntries;
+@property (nonatomic, retain) GEOPDAutocompleteParametersAllEntriesWithBrowse *allEntriesWithBrowse;
 @property (nonatomic, retain) GEOPDAutocompleteParametersFullEntriesOnly *fullEntries;
 @property (nonatomic, readonly) BOOL hasAllEntries;
+@property (nonatomic, readonly) BOOL hasAllEntriesWithBrowse;
 @property (nonatomic, readonly) BOOL hasFullEntries;
 @property (nonatomic, readonly) BOOL hasLocalitiesAndLandmarks;
 @property (nonatomic) BOOL hasRequestType;
@@ -22,6 +25,7 @@
 @property (nonatomic) int requestType;
 
 - (id)allEntries;
+- (id)allEntriesWithBrowse;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -29,6 +33,7 @@
 - (id)dictionaryRepresentation;
 - (id)fullEntries;
 - (BOOL)hasAllEntries;
+- (BOOL)hasAllEntriesWithBrowse;
 - (BOOL)hasFullEntries;
 - (BOOL)hasLocalitiesAndLandmarks;
 - (BOOL)hasRequestType;
@@ -39,6 +44,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
 - (void)setAllEntries:(id)arg1;
+- (void)setAllEntriesWithBrowse:(id)arg1;
 - (void)setFullEntries:(id)arg1;
 - (void)setHasRequestType:(BOOL)arg1;
 - (void)setLocalitiesAndLandmarks:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIJSColor : IKJSObject <SKUIJSColor> {
-    float _alpha;
-    unsigned int _blue;
-    unsigned int _green;
-    unsigned int _red;
+    float  _alpha;
+    unsigned int  _blue;
+    unsigned int  _green;
+    unsigned int  _red;
 }
 
 @property (nonatomic, readonly) float alpha;

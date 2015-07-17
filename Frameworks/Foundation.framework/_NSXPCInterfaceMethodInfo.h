@@ -3,10 +3,10 @@
  */
 
 @interface _NSXPCInterfaceMethodInfo : NSObject {
-    NSMutableArray *_arguments;
-    NSMutableArray *_replyArguments;
-    int _replyPosition;
-    char *_replySignature;
+    NSMutableArray * _arguments;
+    NSMutableArray * _replyArguments;
+    int  _replyPosition;
+    char * _replySignature;
 }
 
 @property (retain) NSMutableArray *arguments;

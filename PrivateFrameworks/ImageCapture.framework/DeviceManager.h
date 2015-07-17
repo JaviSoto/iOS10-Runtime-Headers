@@ -3,9 +3,9 @@
  */
 
 @interface DeviceManager : NSObject <ICDeviceManagerProtocol> {
-    NSDictionary *_deviceMatchingInfo;
-    NSMutableDictionary *_devices;
-    DeviceManagerThread *_thread;
+    NSDictionary * _deviceMatchingInfo;
+    NSMutableDictionary * _devices;
+    DeviceManagerThread * _thread;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface CKDPQuerySort : PBCodable <NSCopying> {
-    CKDPLocationCoordinate *_coordinate;
-    CKDPRecordFieldIdentifier *_fieldName;
+    CKDPLocationCoordinate * _coordinate;
+    CKDPRecordFieldIdentifier * _fieldName;
     struct { 
         unsigned int order : 1; 
-    } _has;
-    int _order;
+    }  _has;
+    int  _order;
 }
 
 @property (nonatomic, retain) CKDPLocationCoordinate *coordinate;

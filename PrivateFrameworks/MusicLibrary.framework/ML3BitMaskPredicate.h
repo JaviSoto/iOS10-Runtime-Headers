@@ -3,8 +3,8 @@
  */
 
 @interface ML3BitMaskPredicate : ML3PropertyPredicate {
-    long long _mask;
-    long long _value;
+    long long  _mask;
+    long long  _value;
 }
 
 @property (nonatomic) long long mask;

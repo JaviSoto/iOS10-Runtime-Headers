@@ -3,10 +3,10 @@
  */
 
 @interface SKUIRedeemTextField : UITextField {
-    BOOL _backdropBackground;
-    UIView *_backdropView;
-    UIView *_bottomBorderView;
-    UIView *_topBorderView;
+    BOOL  _backdropBackground;
+    UIView * _backdropView;
+    UIView * _bottomBorderView;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic) BOOL backdropBackground;

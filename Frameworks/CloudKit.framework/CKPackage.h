@@ -3,25 +3,28 @@
  */
 
 @interface CKPackage : NSObject <CKRecordValue, NSSecureCoding> {
-    NSString *_UUID;
-    NSString *_anchorPath;
-    NSString *_applicationBundleID;
-    NSArray *_assets;
-    BOOL _downloaded;
-    NSURL *_fileURL;
-    BOOL _hasSize;
-    unsigned int _nextItemIndex;
-    BOOL _open;
-    BOOL _ownsTheAnchor;
-    int _packageID;
-    CKRecord *_record;
-    NSString *_recordKey;
-    struct _OpaquePCSShareProtection { } *_recordPCS;
-    unsigned long long _size;
-    CKSQLite *_sqlite;
-    BOOL _transaction;
-    BOOL _uploaded;
-    BOOL _wasCached;
+    NSString * _UUID;
+    NSString * _anchorPath;
+    NSString * _applicationBundleID;
+    NSArray * _assets;
+    BOOL  _downloaded;
+    NSURL * _fileURL;
+    BOOL  _hasSize;
+    unsigned int  _nextItemIndex;
+    BOOL  _open;
+    BOOL  _ownsTheAnchor;
+    int  _packageID;
+    CKRecord * _record;
+    NSString * _recordKey;
+    struct _OpaquePCSShareProtection { } * _recordPCS;
+    BOOL  _shouldReadRawEncryptedData;
+    unsigned long long  _size;
+    CKSQLite * _sqlite;
+    int  _storageGroupingPolicy;
+    BOOL  _transaction;
+    int  _uploadRank;
+    BOOL  _uploaded;
+    BOOL  _wasCached;
 }
 
 @property (nonatomic, retain) NSString *UUID;
@@ -41,19 +44,22 @@
 @property (nonatomic) CKRecord *record;
 @property (nonatomic, copy) NSString *recordKey;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*recordPCS;
+@property (nonatomic) BOOL shouldReadRawEncryptedData;
 @property (nonatomic, copy) NSData *signature;
 @property (nonatomic) unsigned long long size;
 @property (nonatomic, retain) CKSQLite *sqlite;
+@property (nonatomic) int storageGroupingPolicy;
 @property (readonly) Class superclass;
 @property (getter=inTransaction, nonatomic) BOOL transaction;
+@property (nonatomic) int uploadRank;
 @property (nonatomic) BOOL uploaded;
 @property (nonatomic) BOOL wasCached;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-+ (id)BRBundleID;
 + (id)_packagesPathForBundleID:(id)arg1;
 + (void)destroyPackageAnchoredAtURL:(id)arg1;
++ (id)packageUploadDirectoryName;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -116,19 +122,25 @@
 - (void)setRecord:(id)arg1;
 - (void)setRecordKey:(id)arg1;
 - (void)setRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1;
+- (void)setShouldReadRawEncryptedData:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
 - (void)setSqlite:(id)arg1;
+- (void)setStorageGroupingPolicy:(int)arg1;
 - (void)setTransaction:(BOOL)arg1;
 - (void)setUUID:(id)arg1;
+- (void)setUploadRank:(int)arg1;
 - (void)setUploaded:(BOOL)arg1;
 - (void)setWasCached:(BOOL)arg1;
+- (BOOL)shouldReadRawEncryptedData;
 - (id)signature;
 - (unsigned long long)size;
 - (id)sqlite;
+- (int)storageGroupingPolicy;
 - (void)updateItemAtIndex:(int)arg1 withFileURL:(id)arg2;
 - (void)updateItemAtIndex:(int)arg1 withSignature:(id)arg2 size:(unsigned long long)arg3 itemID:(unsigned long long)arg4 sectionIndex:(unsigned int)arg5;
 - (void)updateItemsAtIndexes:(id)arg1 fileURLs:(id)arg2;
+- (int)uploadRank;
 - (BOOL)uploaded;
 - (BOOL)wasCached;
 

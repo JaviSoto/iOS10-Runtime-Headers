@@ -3,12 +3,12 @@
  */
 
 @interface CKDPlaceholderOperation : NSOperation {
-    NSObject<OS_dispatch_group> *_group;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    CKDOperation *_realOperation;
-    NSDate *_startDate;
-    NSOperationQueue *_targetOperationQueue;
+    NSObject<OS_dispatch_group> * _group;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    CKDOperation * _realOperation;
+    NSDate * _startDate;
+    NSOperationQueue * _targetOperationQueue;
 }
 
 @property (nonatomic, readonly) CKDClientContext *context;

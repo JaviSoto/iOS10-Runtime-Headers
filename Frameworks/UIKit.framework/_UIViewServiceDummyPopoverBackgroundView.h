@@ -3,8 +3,8 @@
  */
 
 @interface _UIViewServiceDummyPopoverBackgroundView : UIPopoverBackgroundView {
-    unsigned int arrowDirection;
-    float arrowOffset;
+    unsigned int  arrowDirection;
+    float  arrowOffset;
 }
 
 + (float)arrowBase;

@@ -3,7 +3,7 @@
  */
 
 @interface GKColumnDividerView : UICollectionReusableView {
-    GKHairlineView *_hairlineView;
+    GKHairlineView * _hairlineView;
 }
 
 @property (nonatomic, retain) GKHairlineView *hairlineView;

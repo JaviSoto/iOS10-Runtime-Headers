@@ -3,8 +3,8 @@
  */
 
 @interface HMDCharacteristicWriteRequest : HMDCharacteristicRequest {
-    NSData *_authorizationData;
-    id _value;
+    NSData * _authorizationData;
+    id  _value;
 }
 
 @property (nonatomic, readonly) NSData *authorizationData;

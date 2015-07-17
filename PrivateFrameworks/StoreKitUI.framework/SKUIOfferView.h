@@ -3,21 +3,21 @@
  */
 
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
-    unsigned int _alignment;
-    NSMapTable *_buttonElements;
-    NSMapTable *_buyButtonDescriptorToButton;
+    unsigned int  _alignment;
+    NSMapTable * _buttonElements;
+    NSMapTable * _buyButtonDescriptorToButton;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    <SKUIOfferViewDelegate> *_delegate;
-    BOOL _isShowingConfirmation;
-    int _metadataPosition;
-    NSMutableArray *_metadataViews;
-    NSMapTable *_notices;
-    NSMutableArray *_offerButtonViews;
+    }  _contentInset;
+    <SKUIOfferViewDelegate> * _delegate;
+    BOOL  _isShowingConfirmation;
+    int  _metadataPosition;
+    NSMutableArray * _metadataViews;
+    NSMapTable * _notices;
+    NSMutableArray * _offerButtonViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

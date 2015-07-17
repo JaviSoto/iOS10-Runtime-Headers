@@ -3,9 +3,9 @@
  */
 
 @interface PKAuthenticatorEvaluationRequest : NSObject {
-    NSNumber *_PINLength;
-    NSString *_PINTitle;
-    int _policy;
+    NSNumber * _PINLength;
+    NSString * _PINTitle;
+    int  _policy;
 }
 
 @property (nonatomic, copy) NSNumber *PINLength;

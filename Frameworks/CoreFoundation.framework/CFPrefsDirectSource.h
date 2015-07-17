@@ -3,9 +3,9 @@
  */
 
 @interface CFPrefsDirectSource : CFPrefsPlistSource {
-    unsigned long long _inode;
-    BOOL _managed;
-    CFPDSource *_underlyingSource;
+    unsigned long long  _inode;
+    BOOL  _managed;
+    CFPDSource * _underlyingSource;
 }
 
 - (unsigned char)alreadylocked_requestNewData;

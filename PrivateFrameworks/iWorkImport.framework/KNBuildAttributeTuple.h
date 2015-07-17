@@ -3,13 +3,13 @@
  */
 
 @interface KNBuildAttributeTuple : TSPObject <NSCopying> {
-    KNBuildAttributeValue *_attributeValue;
-    KNBuildChunkIdentifier *_buildChunkIdentifier;
-    NSUUID *_buildId;
-    BOOL _definedAttributeValue;
-    BOOL _definedBuildChunkIdentifier;
-    BOOL _definedBuildId;
-    NSString *_property;
+    KNBuildAttributeValue * _attributeValue;
+    KNBuildChunkIdentifier * _buildChunkIdentifier;
+    NSUUID * _buildId;
+    BOOL  _definedAttributeValue;
+    BOOL  _definedBuildChunkIdentifier;
+    BOOL  _definedBuildId;
+    NSString * _property;
 }
 
 @property (nonatomic, readonly) KNBuild *build;
@@ -32,6 +32,7 @@
 - (id)initWithChunk:(id)arg1 property:(id)arg2 value:(id)arg3;
 - (BOOL)isBuildTuple;
 - (BOOL)isChunkTuple;
+- (BOOL)isValidForSlide:(id)arg1;
 - (id)property;
 - (id)value;
 

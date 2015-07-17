@@ -3,21 +3,21 @@
  */
 
 @interface _UIMotionAnalyzerSettings : _UISettings {
-    float _delayBeforeIdle;
-    BOOL _directionalLockEnabled;
-    float _directionalLockSharpness;
-    float _directionalLockStickiness;
-    float _directionalLockThreshold;
-    float _idleLeeway;
-    float _inputSmoothingFactor;
-    BOOL _jumpEnabled;
-    float _jumpThreshold;
-    BOOL _playJumpSound;
-    float _referenceShiftDistanceDependence;
-    BOOL _referenceShiftEnabled;
-    float _referenceShiftSpeed;
-    BOOL _showDirectionalLockIndicators;
-    BOOL _showIdleIndicator;
+    float  _delayBeforeIdle;
+    BOOL  _directionalLockEnabled;
+    float  _directionalLockSharpness;
+    float  _directionalLockStickiness;
+    float  _directionalLockThreshold;
+    float  _idleLeeway;
+    float  _inputSmoothingFactor;
+    BOOL  _jumpEnabled;
+    float  _jumpThreshold;
+    BOOL  _playJumpSound;
+    float  _referenceShiftDistanceDependence;
+    BOOL  _referenceShiftEnabled;
+    float  _referenceShiftSpeed;
+    BOOL  _showDirectionalLockIndicators;
+    BOOL  _showIdleIndicator;
 }
 
 @property float delayBeforeIdle;

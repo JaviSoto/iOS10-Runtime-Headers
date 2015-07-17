@@ -3,7 +3,7 @@
  */
 
 @interface _UIAlertExternalViewControllerButton : UIButton {
-    int _index;
+    int  _index;
 }
 
 @property int index;

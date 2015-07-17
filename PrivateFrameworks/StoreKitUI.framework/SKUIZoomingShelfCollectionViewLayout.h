@@ -6,14 +6,14 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _cachedCollectionViewContentSize;
-    NSMutableDictionary *_cachedLayoutAttributes;
-    float _focusedItemHorizontalCenterOffset;
-    float _interItemSpacing;
-    BOOL _invalidateGeometryOnlyOfExistingLayoutAttributes;
-    float _itemWidth;
-    SKUIShelfLayoutData *_layoutData;
-    float _scaledItemWidth;
+    }  _cachedCollectionViewContentSize;
+    NSMutableDictionary * _cachedLayoutAttributes;
+    float  _focusedItemHorizontalCenterOffset;
+    float  _interItemSpacing;
+    BOOL  _invalidateGeometryOnlyOfExistingLayoutAttributes;
+    float  _itemWidth;
+    SKUIShelfLayoutData * _layoutData;
+    float  _scaledItemWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;

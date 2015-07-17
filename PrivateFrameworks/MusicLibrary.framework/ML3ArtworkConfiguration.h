@@ -3,9 +3,9 @@
  */
 
 @interface ML3ArtworkConfiguration : NSObject {
-    NSMutableDictionary *_artworkConfigurationDictionary;
-    float _mainScreenScale;
-    NSMutableDictionary *_supportedSizesCache;
+    NSMutableDictionary * _artworkConfigurationDictionary;
+    float  _mainScreenScale;
+    NSMutableDictionary * _supportedSizesCache;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *artworkConfigurationDictionary;

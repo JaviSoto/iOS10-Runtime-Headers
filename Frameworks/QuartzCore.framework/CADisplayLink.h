@@ -3,7 +3,7 @@
  */
 
 @interface CADisplayLink : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (nonatomic, readonly) CADisplay *display;
@@ -33,8 +33,13 @@
 - (double)timestamp;
 - (id)userInfo;
 
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
++ (id)naui_displayLinkWithWeakTarget:(id)arg1 selector:(SEL)arg2;
+
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 + (id)rc_displayLinkWithWeakTarget:(id)arg1 selector:(SEL)arg2;
++ (id)rc_displayWithFrameInterval:(int)arg1 handlerBlock:(id /* block */)arg2;
 
 @end

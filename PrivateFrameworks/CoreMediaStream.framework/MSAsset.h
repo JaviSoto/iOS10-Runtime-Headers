@@ -3,25 +3,25 @@
  */
 
 @interface MSAsset : NSObject <MMCSAsset, NSCopying, NSSecureCoding> {
-    NSString *_GUID;
-    NSString *_MMCSAccessHeader;
-    NSDate *_MMCSAccessHeaderTimeStamp;
-    NSString *_MMCSReceipt;
-    NSURL *_MMCSURL;
-    NSString *_assetCollectionGUID;
-    BOOL _assetDataAvailableOnServer;
-    NSDate *_batchCreationDate;
-    NSError *_error;
-    NSData *_fileData;
-    NSData *_fileHash;
-    NSData *_masterAssetHash;
-    unsigned int _mediaAssetType;
-    NSDictionary *_metadata;
-    NSString *_path;
-    NSDate *_photoCreationDate;
-    unsigned long long _protocolFileSize;
-    NSString *_type;
-    <NSCoding> *_userInfo;
+    NSString * _GUID;
+    NSString * _MMCSAccessHeader;
+    NSDate * _MMCSAccessHeaderTimeStamp;
+    NSString * _MMCSReceipt;
+    NSURL * _MMCSURL;
+    NSString * _assetCollectionGUID;
+    BOOL  _assetDataAvailableOnServer;
+    NSDate * _batchCreationDate;
+    NSError * _error;
+    NSData * _fileData;
+    NSData * _fileHash;
+    NSData * _masterAssetHash;
+    unsigned int  _mediaAssetType;
+    NSDictionary * _metadata;
+    NSString * _path;
+    NSDate * _photoCreationDate;
+    unsigned long long  _protocolFileSize;
+    NSString * _type;
+    <NSCoding> * _userInfo;
 }
 
 @property (nonatomic, retain) NSString *GUID;

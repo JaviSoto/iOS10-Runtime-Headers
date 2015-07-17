@@ -3,12 +3,12 @@
  */
 
 @interface _CUIThemeFacetCacheKey : NSObject {
-    unsigned long long hashPrecalc;
+    unsigned long long  hashPrecalc;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } keyList;
-    int themeIndex;
+    }  keyList;
+    int  themeIndex;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

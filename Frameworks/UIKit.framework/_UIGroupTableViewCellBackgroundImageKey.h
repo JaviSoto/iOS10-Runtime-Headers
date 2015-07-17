@@ -3,30 +3,30 @@
  */
 
 @interface _UIGroupTableViewCellBackgroundImageKey : NSObject <NSCopying> {
-    UIColor *_backgroundColor;
-    UIColor *_bottomShadowColor;
-    UIColor *_fillColor;
-    float _leftPhase;
-    BOOL _opaque;
-    float _rightPhase;
-    UIColor *_sectionBorderColor;
-    float _sectionBorderWidth;
-    int _sectionLocation;
-    BOOL _selected;
-    UIColor *_selectionColor;
-    int _selectionStyle;
-    UIColor *_separatorColor;
+    UIColor * _backgroundColor;
+    UIColor * _bottomShadowColor;
+    UIColor * _fillColor;
+    float  _leftPhase;
+    BOOL  _opaque;
+    float  _rightPhase;
+    UIColor * _sectionBorderColor;
+    float  _sectionBorderWidth;
+    int  _sectionLocation;
+    BOOL  _selected;
+    UIColor * _selectionColor;
+    int  _selectionStyle;
+    UIColor * _separatorColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorInset;
+    }  _separatorInset;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    UIColor *_topShadowColor;
+    }  _size;
+    UIColor * _topShadowColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

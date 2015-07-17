@@ -3,7 +3,7 @@
  */
 
 @interface _UIScreenFixedCoordinateSpace : NSObject <UICoordinateSpace> {
-    UIScreen *_screen;
+    UIScreen * _screen;
 }
 
 @property (setter=_setScreen:, nonatomic) UIScreen *_screen;

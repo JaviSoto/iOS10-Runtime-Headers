@@ -3,23 +3,24 @@
  */
 
 @interface CPLEngineScheduler : NSObject <CPLAbstractObject, CPLEngineComponent> {
-    unsigned int _currentRequestGeneration;
-    unsigned int _currentSyncState;
-    unsigned int _disablingMinglingCount;
-    NSCountedSet *_disablingReasons;
-    CPLEngineLibrary *_engineLibrary;
-    unsigned int _foregroundCalls;
-    double _intervalForRetry;
-    unsigned int _lastRequestGeneration;
-    NSDate *_lastSyncSessionDateCausedByForeground;
-    NSDate *_nextScheduledDate;
-    BOOL _opened;
-    CPLPlatformObject *_platformObject;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _requiredFirstState;
-    BOOL _shouldDoSecondNormalPullPhase;
-    BOOL _shouldRetryASyncSessionForResourcesUpload;
-    NSDate *_unavailabilityLimitDate;
+    unsigned int  _currentRequestGeneration;
+    unsigned int  _currentSyncState;
+    BOOL  _didStartFirstSync;
+    unsigned int  _disablingMinglingCount;
+    NSCountedSet * _disablingReasons;
+    CPLEngineLibrary * _engineLibrary;
+    unsigned int  _foregroundCalls;
+    double  _intervalForRetry;
+    unsigned int  _lastRequestGeneration;
+    NSDate * _lastSyncSessionDateCausedByForeground;
+    NSDate * _nextScheduledDate;
+    BOOL  _opened;
+    CPLPlatformObject * _platformObject;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _requiredFirstState;
+    BOOL  _shouldDoSecondNormalPullPhase;
+    BOOL  _shouldRetryASyncSessionForResourcesUpload;
+    NSDate * _unavailabilityLimitDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -39,14 +40,18 @@
 - (void)_enableSynchronizationWithReasonLocked:(id)arg1;
 - (void)_handleResetClientCacheWithError:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleResetCloudCacheWithError:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_minimalDateForFirstSync;
 - (void)_noteServerIsUnavailableWithErrorLocked:(id)arg1;
 - (void)_noteSyncSessionNeededFromState:(unsigned int)arg1;
+- (id)_pathToFirstSynchronizationMarker;
 - (void)_reallyStartSyncSession;
 - (void)_reallyUnscheduleSession;
 - (void)_scheduleNextSyncSession;
 - (void)_startRequiredSyncSession;
+- (void)_startSyncSessionWithMinimalPhase:(unsigned int)arg1;
 - (BOOL)_syncSessionIsPossible;
 - (void)_unscheduleNextSyncSession;
+- (void)_writeFirstSynchronizationMarker;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)componentName;
 - (void)disableMingling;

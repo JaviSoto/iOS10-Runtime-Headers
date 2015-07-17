@@ -3,7 +3,7 @@
  */
 
 @interface NCBannerAccessoryViewController : UIViewController <NCBannerAccessoryServiceInterface> {
-    NSDictionary *_context;
+    NSDictionary * _context;
 }
 
 @property (nonatomic, copy) NSDictionary *context;

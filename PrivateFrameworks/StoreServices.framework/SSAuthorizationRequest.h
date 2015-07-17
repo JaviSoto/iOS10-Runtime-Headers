@@ -3,10 +3,10 @@
  */
 
 @interface SSAuthorizationRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    NSString *_keybagPath;
-    NSString *_reason;
-    id _token;
+    NSNumber * _accountIdentifier;
+    NSString * _keybagPath;
+    NSString * _reason;
+    id  _token;
 }
 
 @property (readonly) NSNumber *accountIdentifier;

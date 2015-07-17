@@ -3,10 +3,10 @@
  */
 
 @interface TSPDatabaseInputStream : NSObject <SFUInputStream, TSUStreamReadChannel> {
-    struct sqlite3_blob { } *_blob;
-    int _length;
-    int _offset;
-    NSObject<OS_dispatch_queue> *_readQueue;
+    struct sqlite3_blob { } * _blob;
+    int  _length;
+    int  _offset;
+    NSObject<OS_dispatch_queue> * _readQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

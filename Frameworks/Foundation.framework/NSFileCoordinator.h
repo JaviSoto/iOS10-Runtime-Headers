@@ -3,13 +3,13 @@
  */
 
 @interface NSFileCoordinator : NSObject {
-    id _accessArbiter;
-    id _accessClaimIDOrIDs;
-    id _fileReactor;
-    BOOL _isCancelled;
-    NSMutableDictionary *_movedItems;
-    id _purposeID;
-    NSURL *_recentFilePresenterURL;
+    id  _accessArbiter;
+    id  _accessClaimIDOrIDs;
+    id  _fileReactor;
+    BOOL  _isCancelled;
+    NSMutableDictionary * _movedItems;
+    id  _purposeID;
+    NSURL * _recentFilePresenterURL;
 }
 
 @property (copy) NSString *purposeIdentifier;
@@ -34,9 +34,10 @@
 + (id)_fileProviders;
 + (void)_printDebugInfo;
 + (int)_processIdentifierForID:(id)arg1;
-+ (int)_processIdentifierForPresenterWithID:(id)arg1;
++ (BOOL)_provideRecursively;
 + (void)_removeFileProvider:(id)arg1;
 + (void)_removeProcessIdentifierForID:(id)arg1;
++ (void)_setProvideRecursively:(BOOL)arg1;
 + (BOOL)_skipCoordinationWork;
 + (void)addFilePresenter:(id)arg1;
 + (id)filePresenters;

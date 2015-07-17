@@ -3,21 +3,21 @@
  */
 
 @interface SKUIAttributedStringLayout : NSObject <SKUICachedLayout> {
-    NSAttributedString *_attributedString;
+    NSAttributedString * _attributedString;
     struct CGSize { 
         float width; 
         float height; 
-    } _boundingSize;
-    NSStringDrawingContext *_context;
+    }  _boundingSize;
+    NSStringDrawingContext * _context;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsetsForShadow;
-    NSShadow *_shadow;
-    float _topInset;
-    BOOL _usesTallCharacterSet;
+    }  _edgeInsetsForShadow;
+    NSShadow * _shadow;
+    float  _topInset;
+    BOOL  _usesTallCharacterSet;
 }
 
 @property (nonatomic, readonly) NSAttributedString *attributedString;

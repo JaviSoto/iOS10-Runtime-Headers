@@ -3,15 +3,15 @@
  */
 
 @interface MPUbiquitousPlaybackPositionController : NSObject {
-    BOOL _applicationBecomingActive;
-    BOOL _beganUsingPlaybackPositionMetadata;
-    BOOL _databaseHasBookmarkableContents;
-    BOOL _externallyActive;
-    BOOL _isServiceActive;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_serviceQueue;
-    SBCPlaybackPositionDomain *_uppDomain;
-    SBCPlaybackPositionSyncService *_uppServiceProxy;
+    BOOL  _applicationBecomingActive;
+    BOOL  _beganUsingPlaybackPositionMetadata;
+    BOOL  _databaseHasBookmarkableContents;
+    BOOL  _externallyActive;
+    BOOL  _isServiceActive;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _serviceQueue;
+    SBCPlaybackPositionDomain * _uppDomain;
+    SBCPlaybackPositionSyncService * _uppServiceProxy;
 }
 
 @property (nonatomic, readonly) BOOL applicationBecomingActive;

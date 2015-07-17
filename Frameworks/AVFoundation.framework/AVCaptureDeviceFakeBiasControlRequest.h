@@ -3,13 +3,13 @@
  */
 
 @interface AVCaptureDeviceFakeBiasControlRequest : AVCaptureDeviceControlRequest {
-    float _fakeBias;
+    float  _fakeBias;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _fakeBiasCompletionTime;
+    }  _fakeBiasCompletionTime;
 }
 
 @property (nonatomic) float fakeBias;

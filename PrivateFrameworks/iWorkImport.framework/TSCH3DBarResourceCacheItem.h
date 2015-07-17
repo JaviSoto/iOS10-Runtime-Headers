@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DBarResourceCacheItem : NSObject {
-    TSCH3DBarExtrusionGeometry *mBarGeometry;
-    TSCH3DBarNormalResource *mNormalResource;
-    TSCH3DBarTexCoordResource *mTexCoordResource;
-    TSCH3DBarVertexResource *mVertexResource;
+    TSCH3DBarExtrusionGeometry * mBarGeometry;
+    TSCH3DBarNormalResource * mNormalResource;
+    TSCH3DBarTexCoordResource * mTexCoordResource;
+    TSCH3DBarVertexResource * mVertexResource;
 }
 
 @property (nonatomic, readonly) TSCH3DBarNormalResource *normalResource;

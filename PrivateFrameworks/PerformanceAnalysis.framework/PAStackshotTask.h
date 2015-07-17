@@ -3,13 +3,13 @@
  */
 
 @interface PAStackshotTask : NSObject {
-    long _bytesAvailableForThreads;
-    long _bytesUsedByThreads;
-    int *_donationReceivingPids;
-    void *_imageInfos;
-    void *_mainBinary;
-    PAStackshot *_stackshot;
-    struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; } *_task_snap;
+    long  _bytesAvailableForThreads;
+    long  _bytesUsedByThreads;
+    int * _donationReceivingPids;
+    void * _imageInfos;
+    void * _mainBinary;
+    PAStackshot * _stackshot;
+    struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; } * _task_snap;
 }
 
 @property (readonly) BOOL isDarwinBG;

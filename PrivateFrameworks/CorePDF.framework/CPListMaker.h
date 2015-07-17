@@ -3,11 +3,11 @@
  */
 
 @interface CPListMaker : NSObject <CPDisposable> {
-    CPLayoutArea *area;
-    CPList *list;
-    NSArray *spacers;
-    unsigned int textLineCount;
-    id *textLines;
+    CPLayoutArea * area;
+    CPList * list;
+    NSArray * spacers;
+    unsigned int  textLineCount;
+    id * textLines;
 }
 
 + (void)makeListsInChunk:(id)arg1;

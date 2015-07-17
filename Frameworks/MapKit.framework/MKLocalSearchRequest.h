@@ -3,16 +3,16 @@
  */
 
 @interface MKLocalSearchRequest : NSObject <NSCopying> {
-    BOOL _allowPhoneNumberLookupUsingCellular;
-    NSString *_canonicalSearchString;
-    NSString *_contactsDataString;
-    CLLocation *_deviceLocation;
-    <GEOCompletionItem> *_geoCompletionItem;
-    BOOL _hasRegion;
-    _MKLocalSearchMerchantParameters *_merchantParameters;
-    NSArray *_muids;
-    NSString *_naturalLanguageQuery;
-    NSArray *_phoneNumbers;
+    BOOL  _allowPhoneNumberLookupUsingCellular;
+    NSString * _canonicalSearchString;
+    NSString * _contactsDataString;
+    CLLocation * _deviceLocation;
+    <GEOCompletionItem> * _geoCompletionItem;
+    BOOL  _hasRegion;
+    _MKLocalSearchMerchantParameters * _merchantParameters;
+    NSArray * _muids;
+    NSString * _naturalLanguageQuery;
+    NSArray * _phoneNumbers;
     struct { 
         struct { 
             double latitude; 
@@ -22,8 +22,8 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    } _region;
-    int _resultProviderID;
+    }  _region;
+    int  _resultProviderID;
 }
 
 @property (nonatomic, readonly) BOOL _hasRegion;
@@ -64,6 +64,7 @@
 - (id)description;
 - (id)geoCompletionItem;
 - (id)initWithCompletion:(id)arg1;
+- (id)initWithMapsURL:(id)arg1;
 - (id)naturalLanguageQuery;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)setNaturalLanguageQuery:(id)arg1;

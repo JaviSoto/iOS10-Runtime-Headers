@@ -3,9 +3,9 @@
  */
 
 @interface MPUExtrasGalleryTemplateViewController : MPUExtrasTemplateViewController {
-    MPUExtrasBannerController *_bannerController;
-    MPUExtrasGridElementViewController *_gridViewController;
-    unsigned int _selectedItemIndex;
+    MPUExtrasBannerController * _bannerController;
+    MPUExtrasGridElementViewController * _gridViewController;
+    unsigned int  _selectedItemIndex;
 }
 
 @property (nonatomic) unsigned int selectedItemIndex;

@@ -3,9 +3,9 @@
  */
 
 @interface TLSound : NSObject {
-    NSString *_filePath;
-    BOOL _shouldDisposeOfSoundID;
-    unsigned long _soundID;
+    NSString * _filePath;
+    BOOL  _shouldDisposeOfSoundID;
+    unsigned long  _soundID;
 }
 
 @property (setter=_setShouldDisposeOfSoundID:, nonatomic) BOOL _shouldDisposeOfSoundID;

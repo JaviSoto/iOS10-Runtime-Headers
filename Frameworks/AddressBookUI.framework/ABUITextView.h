@@ -3,22 +3,22 @@
  */
 
 @interface ABUITextView : UITextView {
-    BOOL _disallowsSetContentOffset;
-    UIColor *_highlightedTextColor;
-    BOOL _informParentOfContentSizeChange;
-    BOOL _isHighlighted;
-    float _lastContentHeight;
-    ABSwellTextView *_parent;
+    BOOL  _disallowsSetContentOffset;
+    UIColor * _highlightedTextColor;
+    BOOL  _informParentOfContentSizeChange;
+    BOOL  _isHighlighted;
+    float  _lastContentHeight;
+    ABSwellTextView * _parent;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _pinnedCursorPosition;
-    UIColor *_savedTextColor;
-    UIColor *_shadowColor;
+    }  _pinnedCursorPosition;
+    UIColor * _savedTextColor;
+    UIColor * _shadowColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _shadowOffset;
+    }  _shadowOffset;
 }
 
 @property (nonatomic) BOOL disallowsSetContentOffset;

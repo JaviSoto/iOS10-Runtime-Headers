@@ -3,14 +3,14 @@
  */
 
 @interface TSCH3DGetSelectionKnobsPositionsPipelineDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate, TSCH3DChartElementSceneObjectGeometryDelegate, TSCH3DSceneDelegate, TSCHUnretainedParent> {
-    int mCurrentLabelType;
-    TSCH3DGeometry *mGeometry;
-    int mKnobsMode;
-    NSMutableDictionary *mLabelsBoundsForMerging;
-    NSMutableArray *mProjectedPoints;
-    TSCH3DChartRep *mRep;
-    TSCH3DScene *mScene;
-    NSArray *mSelection;
+    int  mCurrentLabelType;
+    TSCH3DGeometry * mGeometry;
+    int  mKnobsMode;
+    NSMutableDictionary * mLabelsBoundsForMerging;
+    NSMutableArray * mProjectedPoints;
+    TSCH3DChartRep * mRep;
+    TSCH3DScene * mScene;
+    NSArray * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

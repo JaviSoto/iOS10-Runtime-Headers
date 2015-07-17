@@ -3,13 +3,13 @@
  */
 
 @interface NSSUsageApp : NSObject <NSSecureCoding> {
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    unsigned long long _dataSize;
-    unsigned long long _dynamicSize;
-    NSString *_name;
-    unsigned long long _staticSize;
-    unsigned long long _totalSize;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    unsigned long long  _dataSize;
+    unsigned long long  _dynamicSize;
+    NSString * _name;
+    unsigned long long  _staticSize;
+    unsigned long long  _totalSize;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;

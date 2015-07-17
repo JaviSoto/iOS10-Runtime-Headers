@@ -3,7 +3,7 @@
  */
 
 @interface IMDirectlyObservableObject : NSObject {
-    NSArray *_observers;
+    NSArray * _observers;
 }
 
 @property (retain) NSArray *observers;

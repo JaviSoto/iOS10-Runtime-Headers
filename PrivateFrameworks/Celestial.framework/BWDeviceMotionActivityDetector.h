@@ -3,10 +3,10 @@
  */
 
 @interface BWDeviceMotionActivityDetector : NSObject {
-    BWMotionSampleRingBuffer *_motionDataRingBuffer;
-    BOOL _newMotionDataAvailable;
-    struct OpaqueFigSimpleMutex { } *_ringMutex;
-    BOOL _stationary;
+    BWMotionSampleRingBuffer * _motionDataRingBuffer;
+    BOOL  _newMotionDataAvailable;
+    struct OpaqueFigSimpleMutex { } * _ringMutex;
+    BOOL  _stationary;
 }
 
 @property (getter=isStationary, nonatomic, readonly) BOOL stationary;

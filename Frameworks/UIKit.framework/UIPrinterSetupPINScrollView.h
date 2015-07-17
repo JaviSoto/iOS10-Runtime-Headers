@@ -3,13 +3,14 @@
  */
 
 @interface UIPrinterSetupPINScrollView : UIScrollView {
-    UIView *_contentView;
-    float _visibleHeight;
+    UIView * _contentView;
+    float  _visibleHeight;
 }
 
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic) float visibleHeight;
 
+- (void).cxx_destruct;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (id)contentView;
 - (void)dealloc;

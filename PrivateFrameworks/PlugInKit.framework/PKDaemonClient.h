@@ -3,9 +3,9 @@
  */
 
 @interface PKDaemonClient : NSObject {
-    NSObject<OS_xpc_object> *_pkd;
-    long long _protocolVersion;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    NSObject<OS_xpc_object> * _pkd;
+    long long  _protocolVersion;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 @property (retain) NSObject<OS_xpc_object> *pkd;

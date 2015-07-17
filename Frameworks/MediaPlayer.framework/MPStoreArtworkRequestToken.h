@@ -3,11 +3,11 @@
  */
 
 @interface MPStoreArtworkRequestToken : NSObject <NSCopying> {
-    NSURL *_artworkURL;
-    NSString *_cropStyle;
-    NSArray *_lookupItemArtworks;
-    BOOL _shouldIgnoreImage;
-    NSString *_sourceEditorialArtworkKind;
+    NSURL * _artworkURL;
+    NSString * _cropStyle;
+    NSArray * _lookupItemArtworks;
+    BOOL  _shouldIgnoreImage;
+    NSString * _sourceEditorialArtworkKind;
 }
 
 @property (nonatomic, copy) NSURL *artworkURL;

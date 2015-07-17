@@ -3,13 +3,13 @@
  */
 
 @interface WLOHomeKitResult : NSObject {
-    NSArray *_characteristicTypes;
-    unsigned int _duration;
-    unsigned int _isClient;
-    int _resultCode;
-    unsigned int _resultType;
-    NSArray *_serviceTypes;
-    unsigned int _transportType;
+    NSArray * _characteristicTypes;
+    unsigned int  _duration;
+    unsigned int  _isClient;
+    int  _resultCode;
+    unsigned int  _resultType;
+    NSArray * _serviceTypes;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic, retain) NSArray *characteristicTypes;

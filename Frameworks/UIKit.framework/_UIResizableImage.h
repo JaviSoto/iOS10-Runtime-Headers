@@ -3,20 +3,20 @@
  */
 
 @interface _UIResizableImage : UIImage {
-    BOOL _alwaysStretches;
+    BOOL  _alwaysStretches;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _capInsets;
-    BOOL _isSubimage;
+    }  _capInsets;
+    BOOL  _isSubimage;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _subimageInsets;
+    }  _subimageInsets;
 }
 
 + (BOOL)supportsSecureCoding;

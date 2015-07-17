@@ -3,13 +3,13 @@
  */
 
 @interface SKUITextLayoutRequest : NSObject <SKUILayoutRequest> {
-    NSAttributedString *_attributedText;
-    float _fontSize;
-    int _fontWeight;
-    int _numberOfLines;
-    NSString *_text;
-    unsigned char _textAlignment;
-    float _width;
+    NSAttributedString * _attributedText;
+    float  _fontSize;
+    int  _fontWeight;
+    int  _numberOfLines;
+    NSString * _text;
+    unsigned char  _textAlignment;
+    float  _width;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

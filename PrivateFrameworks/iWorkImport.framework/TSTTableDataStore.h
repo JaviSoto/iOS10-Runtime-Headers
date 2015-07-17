@@ -3,29 +3,29 @@
  */
 
 @interface TSTTableDataStore : TSPContainedObject {
-    unsigned long mCellCount;
-    BOOL mCellCountValid;
-    TSPLazyReference *mColumnHeaderStorageReference;
-    struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; } *mColumnTileIndex;
-    TSPLazyReference *mCommentStorageTableReference;
-    TSPLazyReference *mConditionalStyleSetTableReference;
-    TSPLazyReference *mFormatTableReference;
-    TSPLazyReference *mFormulaErrorTableReference;
-    TSPLazyReference *mFormulaTableReference;
-    TSPLazyReference *mImportWarningSetTableReference;
-    TSTMergeRegionMap *mMergedCellRanges;
-    TSPLazyReference *mMultipleChoiceListFormatTableReference;
-    unsigned short mNextColumnStripID;
-    unsigned short mNextRowStripID;
-    TSKCustomFormatList *mPasteboardCustomFormatList;
-    NSMutableDictionary *mPasteboardCustomFormatMap;
-    TSPLazyReference *mRichTextPayloadTableReference;
-    TSTTableHeaderStorage *mRowHeaderStorage;
-    struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; } *mRowTileIndex;
-    unsigned char mStorageVersion;
-    TSPLazyReference *mStringTableReference;
-    TSPLazyReference *mStyleTableReference;
-    TSTTileIDKeyDict *mTileStorage;
+    unsigned long  mCellCount;
+    BOOL  mCellCountValid;
+    TSPLazyReference * mColumnHeaderStorageReference;
+    struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; } * mColumnTileIndex;
+    TSPLazyReference * mCommentStorageTableReference;
+    TSPLazyReference * mConditionalStyleSetTableReference;
+    TSPLazyReference * mFormatTableReference;
+    TSPLazyReference * mFormulaErrorTableReference;
+    TSPLazyReference * mFormulaTableReference;
+    TSPLazyReference * mImportWarningSetTableReference;
+    TSTMergeRegionMap * mMergedCellRanges;
+    TSTTableDataList * mMultipleChoiceListFormatTableList;
+    unsigned short  mNextColumnStripID;
+    unsigned short  mNextRowStripID;
+    TSKCustomFormatList * mPasteboardCustomFormatList;
+    NSMutableDictionary * mPasteboardCustomFormatMap;
+    TSPLazyReference * mRichTextPayloadTableReference;
+    TSTTableHeaderStorage * mRowHeaderStorage;
+    struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; } * mRowTileIndex;
+    unsigned char  mStorageVersion;
+    TSPLazyReference * mStringTableReference;
+    TSPLazyReference * mStyleTableReference;
+    TSTTileIDKeyDict * mTileStorage;
 }
 
 @property (nonatomic, readonly) BOOL hasPasteboardCustomFormats;

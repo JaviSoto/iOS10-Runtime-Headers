@@ -8,21 +8,21 @@
         float left; 
         float bottom; 
         float right; 
-    } _appliedEdgeInsets;
-    MusicClientContext *_clientContext;
-    MusicUpNextAggregateDataSource *_dataSource;
-    BOOL _didMutateWhileLoading;
-    BOOL _hidesNowPlaying;
-    BOOL _ignoreUpdates;
-    NSIndexPath *_indexPathForNowPlayingFrame;
-    BOOL _isReordering;
-    UIView *_itemContentViewContainerView;
-    BOOL _loadingCells;
-    MusicUpNextNowPlayingLockupView *_nowPlayingView;
-    MusicAVPlayer *_player;
-    BOOL _shouldDismissImmediately;
-    BOOL _shouldDismissOnItemChange;
-    MusicUpNextTableView *_tableView;
+    }  _appliedEdgeInsets;
+    MusicClientContext * _clientContext;
+    MusicUpNextAggregateDataSource * _dataSource;
+    BOOL  _didMutateWhileLoading;
+    BOOL  _hidesNowPlaying;
+    BOOL  _ignoreUpdates;
+    NSIndexPath * _indexPathForNowPlayingFrame;
+    BOOL  _isReordering;
+    UIView * _itemContentViewContainerView;
+    BOOL  _loadingCells;
+    MusicUpNextNowPlayingLockupView * _nowPlayingView;
+    MusicAVPlayer * _player;
+    BOOL  _shouldDismissImmediately;
+    BOOL  _shouldDismissOnItemChange;
+    MusicUpNextTableView * _tableView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

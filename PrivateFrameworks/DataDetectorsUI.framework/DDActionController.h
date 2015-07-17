@@ -3,15 +3,14 @@
  */
 
 @interface DDActionController : NSObject <DDActionDelegate, UIPopoverPresentationControllerDelegate> {
-    UIAlertController *_alertController;
-    UIView *_baseView;
-    DDAction *_currentAction;
-    UIViewController *_currentBaseViewController;
-    UIPopoverController *_currentPopoverController;
-    NSString *_idsListenerID;
-    <DDDetectionControllerInteractionDelegate> *_interactionDelegate;
-    UIWindow *_originalWindow;
-    UIViewController *_presentedViewController;
+    UIAlertController * _alertController;
+    UIView * _baseView;
+    DDAction * _currentAction;
+    UIViewController * _currentBaseViewController;
+    NSString * _idsListenerID;
+    <DDDetectionControllerInteractionDelegate> * _interactionDelegate;
+    UIWindow * _originalWindow;
+    UIViewController * _presentedViewController;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;
@@ -21,12 +20,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) <DDDetectionControllerInteractionDelegate> *interactionDelegate;
-@property (nonatomic, retain) UIPopoverController *popoverController;
 @property (readonly) Class superclass;
 
 - (void)_cleanup;
 - (void)_dismissCurrentViewControllerOurselves;
-- (void)_legacyPresentController:(id)arg1;
 - (void)_presentController:(id)arg1;
 - (void)_presentCurrentViewControllerOurselves;
 - (void)action:(id)arg1 viewControllerReady:(id)arg2;
@@ -44,14 +41,11 @@
 - (id)interactionDelegate;
 - (BOOL)isPresentingInPopover;
 - (void)performAction:(id)arg1;
-- (id)popoverController;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)setAlertController:(id)arg1;
 - (void)setBaseView:(id)arg1;
 - (void)setCurrentAction:(id)arg1;
 - (void)setInteractionDelegate:(id)arg1;
-- (void)setPopoverController:(id)arg1;
 - (void)tellDelegateActionDidFinish;
 
 @end

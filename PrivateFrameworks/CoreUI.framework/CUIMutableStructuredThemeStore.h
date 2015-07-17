@@ -3,10 +3,10 @@
  */
 
 @interface CUIMutableStructuredThemeStore : CUIStructuredThemeStore {
-    NSString *_identifier;
-    int _maxNameIdentifier;
-    NSMutableDictionary *_memoryStore;
-    NSMutableDictionary *_nameIdentifierStore;
+    NSString * _identifier;
+    int  _maxNameIdentifier;
+    NSMutableDictionary * _memoryStore;
+    NSMutableDictionary * _nameIdentifierStore;
 }
 
 - (id)allImageNames;

@@ -3,20 +3,20 @@
  */
 
 @interface SBFParallaxSettings : _UISettings {
-    int _distanceFromScreen;
-    BOOL _increaseEnabled;
-    int _slideDirectionX;
-    int _slideDirectionY;
-    BOOL _slideEnabled;
-    float _slideIncreaseX;
-    float _slideIncreaseY;
-    float _slidePixelsX;
-    float _slidePixelsY;
-    float _tiltDegreesX;
-    float _tiltDegreesY;
-    int _tiltDirectionX;
-    int _tiltDirectionY;
-    BOOL _tiltEnabled;
+    int  _distanceFromScreen;
+    BOOL  _increaseEnabled;
+    int  _slideDirectionX;
+    int  _slideDirectionY;
+    BOOL  _slideEnabled;
+    float  _slideIncreaseX;
+    float  _slideIncreaseY;
+    float  _slidePixelsX;
+    float  _slidePixelsY;
+    float  _tiltDegreesX;
+    float  _tiltDegreesY;
+    int  _tiltDirectionX;
+    int  _tiltDirectionY;
+    BOOL  _tiltEnabled;
 }
 
 @property int distanceFromScreen;

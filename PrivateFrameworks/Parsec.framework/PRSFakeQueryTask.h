@@ -3,7 +3,7 @@
  */
 
 @interface PRSFakeQueryTask : PRSQueryTask {
-    PRSSearchCompletionResultSet *_results;
+    PRSSearchCompletionResultSet * _results;
 }
 
 @property (nonatomic, retain) PRSSearchCompletionResultSet *results;

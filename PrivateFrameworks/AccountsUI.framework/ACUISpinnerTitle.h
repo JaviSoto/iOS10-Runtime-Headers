@@ -3,8 +3,8 @@
  */
 
 @interface ACUISpinnerTitle : UIView {
-    UIActivityIndicatorView *_spinner;
-    UILabel *_titleView;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _titleView;
 }
 
 - (void).cxx_destruct;

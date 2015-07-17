@@ -3,21 +3,20 @@
  */
 
 @interface SGEmailAddress : SGLabeledObject {
-    NSString *_emailAddress;
+    NSString * _emailAddress;
 }
 
 @property (nonatomic, readonly) NSString *emailAddress;
 
-+ (id)emailAddress:(id)arg1 label:(id)arg2;
++ (id)emailAddress:(id)arg1 label:(id)arg2 extractionType:(unsigned int)arg3 withRecordId:(id)arg4 origin:(id)arg5;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)description;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEmailAddress:(id)arg1 label:(id)arg2;
+- (id)initWithEmailAddress:(id)arg1 label:(id)arg2 extractionType:(unsigned int)arg3 recordId:(id)arg4 origin:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEmailAddress:(id)arg1;
 

@@ -3,9 +3,9 @@
  */
 
 @interface PAAggregatedInstruction : PACountedFrame {
-    NSUUID *_binaryUuid;
-    NSMutableSet *_children;
-    unsigned long long _offsetInBinary;
+    NSUUID * _binaryUuid;
+    NSMutableSet * _children;
+    unsigned long long  _offsetInBinary;
 }
 
 @property (readonly) NSUUID *binaryUuid;

@@ -3,14 +3,14 @@
  */
 
 @interface CKDPRecordRetrieveChangesResponseRecordChange : PBCodable <NSCopying> {
-    NSString *_etag;
+    NSString * _etag;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPRecord *_record;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPRecordType *_recordType;
-    int _type;
+    }  _has;
+    CKDPRecord * _record;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPRecordType * _recordType;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *etag;

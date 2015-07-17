@@ -3,11 +3,11 @@
  */
 
 @interface AceObject : NSObject <AceObject> {
-    NSString *_aceId;
-    NSNumber *_deserializationDuration;
-    NSMutableDictionary *_dict;
-    NSData *_plistData;
-    NSString *_refId;
+    NSString * _aceId;
+    NSNumber * _deserializationDuration;
+    NSMutableDictionary * _dict;
+    NSData * _plistData;
+    NSString * _refId;
 }
 
 @property (nonatomic, copy) NSString *aceId;
@@ -76,6 +76,6 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (BOOL)_afui_isUsefulUserResultCommand;
+- (int)_afui_usefulUserResultType;
 
 @end

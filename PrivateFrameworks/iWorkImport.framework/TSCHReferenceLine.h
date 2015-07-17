@@ -3,12 +3,12 @@
  */
 
 @interface TSCHReferenceLine : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
-    TSCHChartAxisID *mAxisID;
-    TSCHChartModel *mModel;
-    TSCHReferenceLineNonStyle *mNonStyle;
-    TSCHReferenceLineStyle *mStyle;
-    unsigned int mStyleSwapIndex;
-    NSUUID *mUUID;
+    TSCHChartAxisID * mAxisID;
+    TSCHChartModel * mModel;
+    TSCHReferenceLineNonStyle * mNonStyle;
+    TSCHReferenceLineStyle * mStyle;
+    unsigned int  mStyleSwapIndex;
+    NSUUID * mUUID;
 }
 
 @property (nonatomic, readonly) TSCHChartAxis *axis;
@@ -18,14 +18,16 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL labelShowing;
 @property (nonatomic, readonly) BOOL lineShowing;
+@property (nonatomic, readonly) unsigned int refLineType;
 @property (nonatomic, readonly) unsigned int styleSwapIndex;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, readonly, copy) NSUUID *uuid;
 @property (nonatomic, readonly) BOOL valueLabelShowing;
 
 + (id)axisIDFromStyleSwapOrStyleOwnerIndex:(unsigned int)arg1;
 + (id)defaultNonStyleWithContext:(id)arg1 referenceLineType:(unsigned int)arg2 axis:(id)arg3;
 + (unsigned int)maxNumberOfReferenceLines;
++ (unsigned int)maxNumberOfReferenceLinesOfType:(unsigned int)arg1;
 + (id)p_lineLabelForType:(unsigned int)arg1;
 + (unsigned int)refLineIndexFromStyleSwapOrStyleOwnerIndex:(unsigned int)arg1;
 + (unsigned char)styleOwnerPathType;
@@ -56,6 +58,7 @@
 - (id)objectValueForProperty:(int)arg1;
 - (id)operationPropertyNameFromGenericProperty:(int)arg1;
 - (id)p_genericToDefaultPropertyMap;
+- (unsigned int)refLineType;
 - (double)referenceLineAxisValue;
 - (void)setStyle:(id)arg1 nonStyle:(id)arg2;
 - (int)specificPropertyForGeneric:(int)arg1;

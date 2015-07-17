@@ -3,7 +3,7 @@
  */
 
 @interface SSDownloadPhase : NSObject <NSCopying, SSXPCCoding> {
-    SSOperationProgress *_operationProgress;
+    SSOperationProgress * _operationProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;

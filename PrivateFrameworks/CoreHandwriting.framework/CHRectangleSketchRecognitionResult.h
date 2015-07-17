@@ -6,19 +6,19 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _lowerLeftPoint;
+    }  _lowerLeftPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lowerRightPoint;
+    }  _lowerRightPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _upperLeftPoint;
+    }  _upperLeftPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _upperRightPoint;
+    }  _upperRightPoint;
 }
 
 @property (readonly) struct CGPoint { float x1; float x2; } lowerLeftPoint;
@@ -26,7 +26,6 @@
 @property (readonly) struct CGPoint { float x1; float x2; } upperLeftPoint;
 @property (readonly) struct CGPoint { float x1; float x2; } upperRightPoint;
 
-- (id).cxx_construct;
 - (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 upperLeftPoint:(struct CGPoint { float x1; float x2; })arg4 upperRightPoint:(struct CGPoint { float x1; float x2; })arg5 lowerLeftPoint:(struct CGPoint { float x1; float x2; })arg6 lowerRightPoint:(struct CGPoint { float x1; float x2; })arg7;
 - (struct CGPoint { float x1; float x2; })lowerLeftPoint;
 - (struct CGPoint { float x1; float x2; })lowerRightPoint;

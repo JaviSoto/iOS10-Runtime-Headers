@@ -3,10 +3,10 @@
  */
 
 @interface IKFormatting : NSObject {
-    NSMutableDictionary *_dateFormatters;
-    NSNumberFormatter *_durationFormatter;
-    NSNumberFormatter *_durationPaddedFormatter;
-    NSMutableDictionary *_numberFormatters;
+    NSMutableDictionary * _dateFormatters;
+    NSNumberFormatter * _durationFormatter;
+    NSNumberFormatter * _durationPaddedFormatter;
+    NSMutableDictionary * _numberFormatters;
 }
 
 + (id)isoDateFormatter;

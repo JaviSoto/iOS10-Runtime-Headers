@@ -3,34 +3,33 @@
  */
 
 @interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, InterfaceListenerDelegate, VideoConferenceSpeakingDelegate> {
-    unsigned int _conferenceID;
-    NSMutableArray *_connectedFocusPeers;
-    NSMutableArray *_connectedPeers;
-    NSMutableArray *_connectedVoicePeers;
-    BOOL _currentWifiState;
-    NSMutableArray *_focusPausedPeers;
-    GKSessionInternal *_gkSession;
-    NSMutableArray *_mutedPeers;
-    NSMutableArray *_myPausedList;
-    NSMutableDictionary *_peerChannelQuality;
-    NSString *_peerID;
-    id _publicWrapper;
-    VoiceChatSessionRoster *_roster;
-    GKRWLock *_rwLock;
-    NSObject<OS_dispatch_queue> *_sendQueue;
-    NSString *_sessionName;
-    unsigned int _sessionState;
-    GKVoiceChatServiceFocus *_vcService;
-    GKInterfaceListener *_wifiListener;
-    BOOL activeSession;
-    unsigned int congestionState;
-    <GKVoiceChatSessionDelegate> *delegate;
-    BOOL focusCallbacks;
-    int goodChannels;
-    BOOL isUsingSuppression;
-    BOOL needsRecalculateGoodChannels;
-    float sessionVolume;
-    unsigned int talkingPeersLimit;
+    unsigned int  _conferenceID;
+    NSMutableArray * _connectedFocusPeers;
+    NSMutableArray * _connectedPeers;
+    NSMutableArray * _connectedVoicePeers;
+    BOOL  _currentWifiState;
+    GKSessionInternal * _gkSession;
+    NSMutableArray * _mutedPeers;
+    NSMutableArray * _myPausedList;
+    NSMutableDictionary * _peerChannelQuality;
+    NSString * _peerID;
+    id  _publicWrapper;
+    VoiceChatSessionRoster * _roster;
+    GKRWLock * _rwLock;
+    NSObject<OS_dispatch_queue> * _sendQueue;
+    NSString * _sessionName;
+    unsigned int  _sessionState;
+    GKVoiceChatServiceFocus * _vcService;
+    GKInterfaceListener * _wifiListener;
+    BOOL  activeSession;
+    unsigned int  congestionState;
+    <GKVoiceChatSessionDelegate> * delegate;
+    BOOL  focusCallbacks;
+    int  goodChannels;
+    BOOL  isUsingSuppression;
+    BOOL  needsRecalculateGoodChannels;
+    float  sessionVolume;
+    unsigned int  talkingPeersLimit;
 }
 
 @property (getter=isActiveSession) BOOL activeSession;

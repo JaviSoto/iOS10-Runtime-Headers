@@ -3,8 +3,8 @@
  */
 
 @interface HMDIdentityRegistry : NSObject {
-    NSMutableDictionary *_registry;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSMutableDictionary * _registry;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *registry;

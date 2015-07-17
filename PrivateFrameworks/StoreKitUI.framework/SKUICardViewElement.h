@@ -3,7 +3,7 @@
  */
 
 @interface SKUICardViewElement : SKUIViewElement {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
 @property (nonatomic, readonly) int cardType;

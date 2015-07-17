@@ -3,10 +3,10 @@
  */
 
 @interface MSCLWaveformImageProducer : NSObject {
-    float _powerBarSpacing;
-    float _powerBarWidth;
-    NSMutableArray *_powerLevels;
-    int _waveformMode;
+    float  _powerBarSpacing;
+    float  _powerBarWidth;
+    NSMutableArray * _powerLevels;
+    int  _waveformMode;
 }
 
 @property (nonatomic) float powerBarSpacing;

@@ -3,13 +3,13 @@
  */
 
 @interface ASAsset : NSObject {
-    NSString *_assetType;
-    NSDictionary *_attributes;
-    struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; } *_cfAsset;
-    NSString *_clientName;
-    NSDictionary *_downloadOptions;
-    NSString *_identifier;
-    id /* block */ _progressHandler;
+    NSString * _assetType;
+    NSDictionary * _attributes;
+    struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; } * _cfAsset;
+    NSString * _clientName;
+    NSDictionary * _downloadOptions;
+    NSString * _identifier;
+    id /* block */  _progressHandler;
 }
 
 @property (nonatomic, readonly) NSString *assetType;

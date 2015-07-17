@@ -3,14 +3,14 @@
  */
 
 @interface PKPassField : NSObject <NSSecureCoding> {
-    NSString *_changeMessage;
-    unsigned int _dataDetectorTypes;
-    NSString *_key;
-    NSString *_label;
-    int _textAlignment;
-    int _type;
-    id _unformattedValue;
-    NSString *_value;
+    NSString * _changeMessage;
+    unsigned int  _dataDetectorTypes;
+    NSString * _key;
+    NSString * _label;
+    int  _textAlignment;
+    int  _type;
+    id  _unformattedValue;
+    NSString * _value;
 }
 
 @property (nonatomic, copy) NSString *changeMessage;

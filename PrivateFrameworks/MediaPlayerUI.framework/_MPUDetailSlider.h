@@ -3,7 +3,7 @@
  */
 
 @interface _MPUDetailSlider : UISlider <MPDetailedScrubbing, _MPUSliderScrubForwarding> {
-    MPDetailScrubController *_scrubController;
+    MPDetailScrubController * _scrubController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

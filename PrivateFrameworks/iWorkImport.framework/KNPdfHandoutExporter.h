@@ -3,10 +3,10 @@
  */
 
 @interface KNPdfHandoutExporter : KNPdfExporter {
-    BOOL mIsPrintingNote;
-    BOOL mPrintingDivider;
-    BOOL mPrintingNotes;
-    BOOL mPrintingRuledLines;
+    BOOL  mIsPrintingNote;
+    BOOL  mPrintingDivider;
+    BOOL  mPrintingNotes;
+    BOOL  mPrintingRuledLines;
 }
 
 @property (getter=isPrintingDivider, nonatomic) BOOL printingDivider;

@@ -6,15 +6,15 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _containerSize;
-    WebDataSource *_dataSource;
-    NSObject<WebPDFViewPlaceholderDelegate> *_delegate;
-    BOOL _didCompleteLayout;
-    BOOL _didFinishLoadAndMemoryMap;
-    struct CGPDFDocument { } *_document;
-    NSArray *_pageRects;
-    NSArray *_pageYOrigins;
-    NSString *_title;
+    }  _containerSize;
+    WebDataSource * _dataSource;
+    NSObject<WebPDFViewPlaceholderDelegate> * _delegate;
+    BOOL  _didCompleteLayout;
+    BOOL  _didFinishLoad;
+    struct CGPDFDocument { } * _document;
+    NSArray * _pageRects;
+    NSArray * _pageYOrigins;
+    NSString * _title;
 }
 
 @property struct CGSize { float x1; float x2; } containerSize;
@@ -35,7 +35,6 @@
 + (void)setAsPDFDocRepAndView;
 + (id)supportedMIMETypes;
 
-- (id).cxx_construct;
 - (struct CGSize { float x1; float x2; })_computePageRects:(struct CGPDFDocument { }*)arg1;
 - (void)_doPostLoadOrUnlockTasks;
 - (void)_evaluateJSForDocument:(struct CGPDFDocument { }*)arg1;
@@ -46,8 +45,6 @@
 - (BOOL)canProvideDocumentSource;
 - (void)clearDocument;
 - (struct CGSize { float x1; float x2; })containerSize;
-- (void)dataSourceMemoryMapFailed;
-- (void)dataSourceMemoryMapped;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

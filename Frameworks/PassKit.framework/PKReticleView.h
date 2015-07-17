@@ -3,12 +3,12 @@
  */
 
 @interface PKReticleView : UIView {
-    struct CGPath { } *_bouncePathRectangle;
-    struct CGPath { } *_bouncePathSquare;
-    struct CGColor { } *_shadowColorDefault;
-    struct CGColor { } *_shadowColorFailure;
-    struct CGColor { } *_shadowColorSuccess;
-    CAShapeLayer *_shapeLayer;
+    struct CGPath { } * _bouncePathRectangle;
+    struct CGPath { } * _bouncePathSquare;
+    struct CGColor { } * _shadowColorDefault;
+    struct CGColor { } * _shadowColorFailure;
+    struct CGColor { } * _shadowColorSuccess;
+    CAShapeLayer * _shapeLayer;
 }
 
 + (Class)layerClass;

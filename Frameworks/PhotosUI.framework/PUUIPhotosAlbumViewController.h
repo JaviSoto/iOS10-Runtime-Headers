@@ -3,11 +3,11 @@
  */
 
 @interface PUUIPhotosAlbumViewController : PUPhotosAlbumViewController {
-    int __albumFilter;
-    PUUIImagePickerControllerHelper *__imagePickerControllerHelper;
-    NSArray *__imagePickerMediaTypes;
-    UIBarButtonItem *_imagePickerCancelButton;
-    UIBarButtonItem *_imagePickerMultipleSelectionDoneButton;
+    int  __albumFilter;
+    PUUIImagePickerControllerHelper * __imagePickerControllerHelper;
+    NSArray * __imagePickerMediaTypes;
+    UIBarButtonItem * _imagePickerCancelButton;
+    UIBarButtonItem * _imagePickerMultipleSelectionDoneButton;
 }
 
 @property (setter=_setAlbumFilter:, nonatomic) int _albumFilter;
@@ -33,6 +33,7 @@
 - (void)loadView;
 - (BOOL)pu_wantsNavigationBarVisible;
 - (void)setAlbum:(id)arg1 existingFetchResults:(id)arg2;
+- (BOOL)shouldShowMenu;
 - (void)viewDidLoad;
 
 @end

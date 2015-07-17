@@ -3,8 +3,8 @@
  */
 
 @interface SBSCardItemsController : NSObject <SBSCardItemsControllerRemoteInterface> {
-    NSXPCConnection *_connection;
-    NSString *_identifier;
+    NSXPCConnection * _connection;
+    NSString * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface VKOverlayTile : VKTile {
-    float _maximumStyleZ;
-    NSMutableArray *_overlays;
-    VKVectorTile *_roadTile;
-    NSMapTable *_tileForOverlay;
+    float  _maximumStyleZ;
+    NSMutableArray * _overlays;
+    VKVectorTile * _roadTile;
+    NSMapTable * _tileForOverlay;
 }
 
 @property (nonatomic, readonly) float maximumStyleZ;

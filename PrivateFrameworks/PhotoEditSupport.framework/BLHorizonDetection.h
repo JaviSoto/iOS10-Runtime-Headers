@@ -3,19 +3,19 @@
  */
 
 @interface BLHorizonDetection : NSObject {
-    char *_bwLabelSceneMap;
-    int _cols;
-    struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1[2]; float x2; BOOL x3; } *_detectedHorPointerH;
-    struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; float *x3; float x4; int x5; int x6; float x7; float x8; float x9; float x10; float x11; float x12; struct CGPoint { float x_13_1_1; float x_13_1_2; } x13; struct CGPoint { float x_14_1_1; float x_14_1_2; } x14; float x15; int x16; int x17; int x18; int x19; } *_detectedLinePointer;
-    float *_edgeAngle;
-    char *_grayScale;
-    int _isHor;
-    int _numLines;
-    char *_orgEdge;
-    char *_processedEdge;
-    char *_rgb;
-    int _rows;
-    float _scaleFactor;
+    char * _bwLabelSceneMap;
+    int  _cols;
+    struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1[2]; float x2; BOOL x3; } * _detectedHorPointerH;
+    struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; float *x3; float x4; int x5; int x6; float x7; float x8; float x9; float x10; float x11; float x12; struct CGPoint { float x_13_1_1; float x_13_1_2; } x13; struct CGPoint { float x_14_1_1; float x_14_1_2; } x14; float x15; int x16; int x17; int x18; int x19; } * _detectedLinePointer;
+    float * _edgeAngle;
+    char * _grayScale;
+    int  _isHor;
+    int  _numLines;
+    char * _orgEdge;
+    char * _processedEdge;
+    char * _rgb;
+    int  _rows;
+    float  _scaleFactor;
 }
 
 + (void)findHorizonForImage:(id)arg1 horizonLineH:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1[2]; float x2; BOOL x3; }*)arg2;

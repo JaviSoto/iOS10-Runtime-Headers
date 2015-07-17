@@ -3,21 +3,21 @@
  */
 
 @interface SKUIStorePageViewController : UIViewController <SKUIMetricsViewController, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting, UIViewControllerRestoration> {
-    SKUIClientContext *_clientContext;
-    <SKUIStorePageDelegate> *_delegate;
-    NSString *_lastDataConsumerClassName;
-    SSMetricsPageEvent *_lastPageEvent;
-    NSURLRequest *_lastRequest;
-    BOOL _loadOnAppear;
-    SSVLoadURLOperation *_loadOperation;
-    SKUIMetricsController *_metricsController;
-    NSOperationQueue *_operationQueue;
-    NSString *_performanceTestName;
-    NSDictionary *_performanceTestOptions;
-    SKUIColorScheme *_placeholderColorScheme;
-    UIRefreshControl *_refreshControl;
-    SKUIStorePageSectionsViewController *_sectionsViewController;
-    SKUIStorePage *_storePage;
+    SKUIClientContext * _clientContext;
+    <SKUIStorePageDelegate> * _delegate;
+    NSString * _lastDataConsumerClassName;
+    SSMetricsPageEvent * _lastPageEvent;
+    NSURLRequest * _lastRequest;
+    BOOL  _loadOnAppear;
+    SSVLoadURLOperation * _loadOperation;
+    SKUIMetricsController * _metricsController;
+    NSOperationQueue * _operationQueue;
+    NSString * _performanceTestName;
+    NSDictionary * _performanceTestOptions;
+    SKUIColorScheme * _placeholderColorScheme;
+    UIRefreshControl * _refreshControl;
+    SKUIStorePageSectionsViewController * _sectionsViewController;
+    SKUIStorePage * _storePage;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

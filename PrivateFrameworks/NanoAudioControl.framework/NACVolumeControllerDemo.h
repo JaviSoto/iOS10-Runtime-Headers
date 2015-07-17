@@ -3,12 +3,12 @@
  */
 
 @interface NACVolumeControllerDemo : NSObject <NACVolumeController> {
-    NSString *_audioCategory;
-    NACEventThrottler *_defaultsThrottler;
-    <NACVolumeControllerDelegate> *_delegate;
-    float _hapticIntensity;
-    BOOL _systemMuted;
-    NSNumber *_volumeValue;
+    NSString * _audioCategory;
+    NACEventThrottler * _defaultsThrottler;
+    <NACVolumeControllerDelegate> * _delegate;
+    float  _hapticIntensity;
+    BOOL  _systemMuted;
+    NSNumber * _volumeValue;
 }
 
 @property (nonatomic, readonly) float EUVolumeLimit;

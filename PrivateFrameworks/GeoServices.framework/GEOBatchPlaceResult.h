@@ -5,9 +5,9 @@
 @interface GEOBatchPlaceResult : PBCodable <NSCopying> {
     struct { 
         unsigned int statusCode : 1; 
-    } _has;
-    GEOPlaceResult *_placeResult;
-    int _statusCode;
+    }  _has;
+    GEOPlaceResult * _placeResult;
+    int  _statusCode;
 }
 
 @property (nonatomic, readonly) BOOL hasPlaceResult;

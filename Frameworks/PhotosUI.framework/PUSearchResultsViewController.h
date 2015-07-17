@@ -3,7 +3,7 @@
  */
 
 @interface PUSearchResultsViewController : PUPhotosGridViewController <PUPhotosSectionHeaderViewDelegate, PUSearchResultDelegate> {
-    PUSearchResultDataSource *_searchResultDataSource;
+    PUSearchResultDataSource * _searchResultDataSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +23,6 @@
 - (id)searchResultDataSource;
 - (void)searchResultHasPendingChanges:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPhotosDataSource:(id)arg1;
 - (void)setSearchResultDataSource:(id)arg1;
 - (void)setSelected:(BOOL)arg1 itemsAtIndexes:(id)arg2 inSection:(int)arg3 animated:(BOOL)arg4;
 - (void)viewDidLoad;

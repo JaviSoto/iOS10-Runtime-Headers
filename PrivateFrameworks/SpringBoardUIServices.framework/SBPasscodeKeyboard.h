@@ -3,7 +3,7 @@
  */
 
 @interface SBPasscodeKeyboard : UIKeyboard {
-    SBUIPasscodeLockViewWithKeyboard *_lockView;
+    SBUIPasscodeLockViewWithKeyboard * _lockView;
 }
 
 - (BOOL)canDismiss;

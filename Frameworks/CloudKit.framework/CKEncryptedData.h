@@ -3,8 +3,8 @@
  */
 
 @interface CKEncryptedData : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
-    NSData *_data;
-    NSData *_encryptedData;
+    NSData * _data;
+    NSData * _encryptedData;
 }
 
 @property (nonatomic, copy) NSData *data;
@@ -37,5 +37,11 @@
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (id)_prettyDictionaryRepresentation;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)ic_encryptedDataWithString:(id)arg1;
+
+- (id)ic_stringValue;
 
 @end

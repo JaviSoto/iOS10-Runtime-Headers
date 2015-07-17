@@ -3,12 +3,12 @@
  */
 
 @interface TSCHChartUIState : NSObject <NSCopying> {
-    unsigned int _lastColCountInCDE;
-    unsigned int _lastColSelectedInCDE;
-    unsigned int _lastRowCountInCDE;
-    unsigned int _lastRowSelectedInCDE;
-    unsigned int _multiDataSetIndex;
-    BOOL _useFullKeyboard;
+    unsigned int  _lastColCountInCDE;
+    unsigned int  _lastColSelectedInCDE;
+    unsigned int  _lastRowCountInCDE;
+    unsigned int  _lastRowSelectedInCDE;
+    unsigned int  _multiDataSetIndex;
+    BOOL  _useFullKeyboard;
 }
 
 @property (nonatomic, readonly) unsigned int lastColCountInCDE;

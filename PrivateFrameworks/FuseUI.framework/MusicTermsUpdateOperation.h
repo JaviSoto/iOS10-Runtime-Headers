@@ -3,12 +3,12 @@
  */
 
 @interface MusicTermsUpdateOperation : SSVComplexOperation {
-    unsigned long long _acceptedStoreTermsVersion;
-    NSError *_error;
-    BOOL _hasAcceptedLatestTerms;
-    unsigned long long _latestStoreTermsVersion;
-    NSString *_termsContentText;
-    NSString *_termsContext;
+    unsigned long long  _acceptedStoreTermsVersion;
+    NSError * _error;
+    BOOL  _hasAcceptedLatestTerms;
+    unsigned long long  _latestStoreTermsVersion;
+    NSString * _termsContentText;
+    NSString * _termsContext;
 }
 
 @property (nonatomic, readonly) unsigned long long acceptedStoreTermsVersion;

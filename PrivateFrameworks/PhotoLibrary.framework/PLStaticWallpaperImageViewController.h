@@ -6,6 +6,8 @@
 
 @property (nonatomic) BOOL colorSamplingEnabled;
 
+- (void)_fetchImageForWallPaperAsset:(id)arg1 resultHandler:(id /* block */)arg2;
+- (id)_wallPaperPreviewControllerForAsset:(id)arg1;
 - (BOOL)colorSamplingEnabled;
 - (id)initWithPhoto:(id)arg1;
 - (id)initWithUIImage:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface PHObjectDeleteRequest : NSObject <PHDeleteChangeRequest> {
-    NSString *_clientName;
-    int _clientProcessID;
-    BOOL _entitled;
-    NSManagedObjectID *_objectID;
-    NSString *_uuid;
+    NSString * _clientName;
+    int  _clientProcessID;
+    BOOL  _entitled;
+    NSManagedObjectID * _objectID;
+    NSString * _uuid;
 }
 
 @property (nonatomic, readonly) NSString *clientName;

@@ -3,23 +3,23 @@
  */
 
 @interface GKBubbleView : UIView {
-    BOOL _animating;
-    float _animationAngle;
-    float _animationRadiansPerSecond;
-    BOOL _animationReversed;
-    float _animationScale;
-    int _bubbleType;
-    UIImageView *_highlightView;
-    UIImageView *_imageView;
-    float _moveAnimationAngle;
-    float _moveAnimationRadiansPerSecond;
-    float _moveAnimationScale;
-    int _numFaces;
-    int _numVertices;
-    float _touchAnimationAngle;
-    BOOL _touchAnimationCanEnd;
-    float _touchAnimationElapsed;
-    BOOL _touchAnimationRunning;
+    BOOL  _animating;
+    float  _animationAngle;
+    float  _animationRadiansPerSecond;
+    BOOL  _animationReversed;
+    float  _animationScale;
+    int  _bubbleType;
+    UIImageView * _highlightView;
+    UIImageView * _imageView;
+    float  _moveAnimationAngle;
+    float  _moveAnimationRadiansPerSecond;
+    float  _moveAnimationScale;
+    int  _numFaces;
+    int  _numVertices;
+    float  _touchAnimationAngle;
+    BOOL  _touchAnimationCanEnd;
+    float  _touchAnimationElapsed;
+    BOOL  _touchAnimationRunning;
 }
 
 @property (nonatomic) BOOL animating;

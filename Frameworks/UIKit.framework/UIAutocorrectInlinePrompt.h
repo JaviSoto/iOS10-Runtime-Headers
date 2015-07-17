@@ -3,17 +3,17 @@
  */
 
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
-    TIKeyboardCandidateResultSet *_candidateResultSet;
-    BOOL _showHiddenCandidatesOnly;
-    NSString *m_correction;
-    UIView *m_correctionAnimationView;
-    UIView *m_correctionShadowView;
-    UIView *m_correctionView;
-    id m_delegate;
-    BOOL m_fits;
-    int m_index;
-    float m_maxX;
-    BOOL m_mouseDown;
+    TIKeyboardCandidateResultSet * _candidateResultSet;
+    BOOL  _showHiddenCandidatesOnly;
+    NSString * m_correction;
+    UIView * m_correctionAnimationView;
+    UIView * m_correctionShadowView;
+    UIView * m_correctionView;
+    id  m_delegate;
+    BOOL  m_fits;
+    int  m_index;
+    float  m_maxX;
+    BOOL  m_mouseDown;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,14 +23,14 @@
             float width; 
             float height; 
         } size; 
-    } m_originalTypedTextRect;
-    float m_originalTypedTextRectCorrectionAmount;
-    int m_promptTextType;
-    NSString *m_typedText;
-    UIView *m_typedTextAnimationView;
-    NSMutableArray *m_typedTextViews;
-    unsigned int m_usageTrackingMask;
-    NSArray *m_usageTrackingTypes;
+    }  m_originalTypedTextRect;
+    float  m_originalTypedTextRectCorrectionAmount;
+    int  m_promptTextType;
+    NSString * m_typedText;
+    UIView * m_typedTextAnimationView;
+    NSMutableArray * m_typedTextViews;
+    unsigned int  m_usageTrackingMask;
+    NSArray * m_usageTrackingTypes;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidateResultSet *candidateResultSet;

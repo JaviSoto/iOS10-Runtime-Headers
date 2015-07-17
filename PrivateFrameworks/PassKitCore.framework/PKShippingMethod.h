@@ -3,8 +3,8 @@
  */
 
 @interface PKShippingMethod : PKPaymentSummaryItem <NSCopying, NSSecureCoding> {
-    NSString *_detail;
-    NSString *_identifier;
+    NSString * _detail;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSString *detail;

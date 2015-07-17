@@ -3,10 +3,10 @@
  */
 
 @interface UIKeyboardSplitTransitionView : UIView {
-    BOOL _centerFilled;
-    id /* block */ _completionBlock;
-    float _currentProgress;
-    CADisplayLink *_displayLink;
+    BOOL  _centerFilled;
+    id /* block */  _completionBlock;
+    float  _currentProgress;
+    CADisplayLink * _displayLink;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,14 +16,14 @@
             float width; 
             float height; 
         } size; 
-    } _endFrame;
-    double _finalTransitionStartTime;
-    float _finishDuration;
-    float _finishProgress;
-    BOOL _isRebuilding;
-    BOOL _isSplitTranslation;
-    float _liftOffProgress;
-    UIKeyboardSliceSet *_sliceSet;
+    }  _endFrame;
+    double  _finalTransitionStartTime;
+    float  _finishDuration;
+    float  _finishProgress;
+    BOOL  _isRebuilding;
+    BOOL  _isSplitTranslation;
+    float  _liftOffProgress;
+    UIKeyboardSliceSet * _sliceSet;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -33,9 +33,9 @@
             float width; 
             float height; 
         } size; 
-    } _startFrame;
-    <UIKeyboardSplitTransitionDataSource> *_transitionDataSource;
-    <UIKeyboardKeyplaneTransitionDelegate> *_transitionDelegate;
+    }  _startFrame;
+    <UIKeyboardSplitTransitionDataSource> * _transitionDataSource;
+    <UIKeyboardKeyplaneTransitionDelegate> * _transitionDelegate;
 }
 
 @property (readonly) NSArray *backgroundLayers;

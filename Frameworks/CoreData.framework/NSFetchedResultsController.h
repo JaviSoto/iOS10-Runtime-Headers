@@ -3,11 +3,11 @@
  */
 
 @interface NSFetchedResultsController : NSObject {
-    void *_cache;
-    NSString *_cacheName;
-    id _delegate;
-    NSFetchRequest *_fetchRequest;
-    id _fetchedObjects;
+    void * _cache;
+    NSString * _cacheName;
+    id  _delegate;
+    NSFetchRequest * _fetchRequest;
+    id  _fetchedObjects;
     struct _fetchResultsControllerFlags { 
         unsigned int _sendObjectChangeNotifications : 1; 
         unsigned int _sendSectionChangeNotifications : 1; 
@@ -21,15 +21,15 @@
         unsigned int _usesNonpersistedProperties : 1; 
         unsigned int _includesSubentities : 1; 
         unsigned int _reservedFlags : 21; 
-    } _flags;
-    NSManagedObjectContext *_managedObjectContext;
-    id _sectionIndexTitles;
-    id _sectionIndexTitlesSections;
-    NSString *_sectionNameKey;
-    NSString *_sectionNameKeyPath;
-    id _sections;
-    id _sectionsByName;
-    id _sortKeys;
+    }  _flags;
+    NSManagedObjectContext * _managedObjectContext;
+    id  _sectionIndexTitles;
+    id  _sectionIndexTitlesSections;
+    NSString * _sectionNameKey;
+    NSString * _sectionNameKeyPath;
+    id  _sections;
+    id  _sectionsByName;
+    id  _sortKeys;
 }
 
 @property (nonatomic, readonly) NSString *cacheName;

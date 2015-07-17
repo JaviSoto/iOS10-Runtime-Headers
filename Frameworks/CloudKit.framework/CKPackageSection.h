@@ -3,9 +3,9 @@
  */
 
 @interface CKPackageSection : NSObject {
-    int _index;
-    NSData *_signature;
-    unsigned long long _size;
+    int  _index;
+    NSData * _signature;
+    unsigned long long  _size;
 }
 
 @property (nonatomic, readonly) int index;

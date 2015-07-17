@@ -3,21 +3,21 @@
  */
 
 @interface TSDThumbnailController : NSObject <TSDThumbnailConsumer> {
-    BOOL _callbackScheduled;
-    double _delayBeforeRedraw;
-    int _delayHandlingStatus;
-    <TSDThumbnailControllerDelegate> *_delegate;
-    NSMutableSet *_dirtySet;
-    TSKDocumentRoot *_documentRoot;
-    NSDate *_drawingStartDate;
-    TSDThumbnailGenerator *_generator;
-    <TSDThumbnailProducer> *_producer;
-    TSULRUCache *_thumbnailCache;
-    NSObject<OS_dispatch_queue> *_thumbnailGenerationQueue;
-    BOOL _thumbnailRequested;
-    unsigned int _thumbnailSuspendCount;
-    BOOL _thumbnailerEnabled;
-    BOOL _tornDown;
+    BOOL  _callbackScheduled;
+    double  _delayBeforeRedraw;
+    int  _delayHandlingStatus;
+    <TSDThumbnailControllerDelegate> * _delegate;
+    NSMutableSet * _dirtySet;
+    TSKDocumentRoot * _documentRoot;
+    NSDate * _drawingStartDate;
+    TSDThumbnailGenerator * _generator;
+    <TSDThumbnailProducer> * _producer;
+    TSULRUCache * _thumbnailCache;
+    NSObject<OS_dispatch_queue> * _thumbnailGenerationQueue;
+    BOOL  _thumbnailRequested;
+    unsigned int  _thumbnailSuspendCount;
+    BOOL  _thumbnailerEnabled;
+    BOOL  _tornDown;
 }
 
 @property (nonatomic) struct CGColor { }*backgroundColor;
@@ -33,7 +33,7 @@
 
 - (struct CGColor { }*)backgroundColor;
 - (id)cachedThumbnail:(id)arg1;
-- (void)commitThumbnail:(id)arg1 identifier:(id)arg2;
+- (void)commitThumbnail:(id)arg1 identifier:(id)arg2 datasThatNeedDownload:(id)arg3;
 - (void)dealloc;
 - (double)delayBeforeRedraw;
 - (id)delegate;

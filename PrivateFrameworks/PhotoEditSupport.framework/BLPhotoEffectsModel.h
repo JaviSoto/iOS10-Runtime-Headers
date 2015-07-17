@@ -3,12 +3,12 @@
  */
 
 @interface BLPhotoEffectsModel : NSObject {
-    NSMutableDictionary *_adjustments;
-    NSDictionary *_analysis;
-    int _effectGroupIndex;
-    float _effectValue;
-    BOOL _hasAdjustments;
-    BLPEModel *_model;
+    NSMutableDictionary * _adjustments;
+    NSDictionary * _analysis;
+    int  _effectGroupIndex;
+    float  _effectValue;
+    BOOL  _hasAdjustments;
+    BLPEModel * _model;
 }
 
 - (BOOL)canRenderCI;

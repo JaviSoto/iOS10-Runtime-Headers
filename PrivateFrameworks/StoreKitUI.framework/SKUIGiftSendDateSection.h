@@ -3,17 +3,17 @@
  */
 
 @interface SKUIGiftSendDateSection : SKUIGiftTableViewSection {
-    NSString *_dateString;
-    SKUIItem *_giftItem;
+    NSString * _dateString;
+    SKUIItem * _giftItem;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _headerInsets;
-    SKUIGiftTableSectionHeaderView *_headerView;
-    NSDate *_sendDate;
-    int _sendDateStyle;
+    }  _headerInsets;
+    SKUIGiftTableSectionHeaderView * _headerView;
+    NSDate * _sendDate;
+    int  _sendDateStyle;
 }
 
 @property (nonatomic, retain) SKUIItem *giftItem;

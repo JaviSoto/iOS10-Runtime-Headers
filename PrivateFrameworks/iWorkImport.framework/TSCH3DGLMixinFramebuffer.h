@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DGLMixinFramebuffer : TSCH3DGLFramebuffer {
-    TSCH3DGLFramebuffer *mOriginal;
+    TSCH3DGLFramebuffer * mOriginal;
 }
 
 @property (nonatomic, retain) TSCH3DGLFramebuffer *original;

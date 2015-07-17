@@ -3,15 +3,15 @@
  */
 
 @interface TSUDownloadManager : NSObject <NSURLSessionDownloadDelegate> {
-    NSMutableDictionary *_activeTasks;
-    NSObject<OS_dispatch_queue> *_activeTasksQueue;
-    NSMutableArray *_completionHandlers;
-    NSURLSession *_defaultURLSession;
-    NSMapTable *_downloadResults;
-    NSHashTable *_downloadSessions;
-    NSOperationQueue *_downloadSessionsQueue;
-    NSMutableArray *_inProcessDownloadQueue;
-    NSMutableDictionary *_inProgressDownloadItems;
+    NSMutableDictionary * _activeTasks;
+    NSObject<OS_dispatch_queue> * _activeTasksQueue;
+    NSMutableArray * _completionHandlers;
+    NSURLSession * _defaultURLSession;
+    NSMapTable * _downloadResults;
+    NSHashTable * _downloadSessions;
+    NSOperationQueue * _downloadSessionsQueue;
+    NSMutableArray * _inProcessDownloadQueue;
+    NSMutableDictionary * _inProgressDownloadItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;

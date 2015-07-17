@@ -3,7 +3,7 @@
  */
 
 @interface PTXParallaxImageView : PTXParallaxView {
-    UIImageView *_imageView;
+    UIImageView * _imageView;
 }
 
 @property (nonatomic, retain) UIImage *image;

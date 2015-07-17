@@ -3,10 +3,10 @@
  */
 
 @interface PLIOReportAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChangedNotifications;
-    NSMutableDictionary *_sampleChannelsDaily;
-    NSMutableDictionary *_sampleChannelsHalfHour;
-    NSMutableDictionary *_sampleChannelsSignificantBattery;
+    PLEntryNotificationOperatorComposition * _batteryLevelChangedNotifications;
+    NSMutableDictionary * _sampleChannelsDaily;
+    NSMutableDictionary * _sampleChannelsHalfHour;
+    NSMutableDictionary * _sampleChannelsSignificantBattery;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications;
@@ -14,6 +14,9 @@
 @property (nonatomic, retain) NSMutableDictionary *sampleChannelsHalfHour;
 @property (nonatomic, retain) NSMutableDictionary *sampleChannelsSignificantBattery;
 
++ (double)SOCCorrectionFactor;
++ (id)defaults;
++ (id)energyKeyToRootNodeID;
 + (id)entryEventBackwardDefinitionAmcStatsPerfCounters;
 + (id)entryEventBackwardDefinitionAppleEmbeddedPcieLinkStates;
 + (id)entryEventBackwardDefinitionCLPCStatsControlEffort;
@@ -26,6 +29,7 @@
 + (id)entryEventBackwardDefinitionCPUStatsIdleTimeHistogram;
 + (id)entryEventBackwardDefinitionCPUStatsVoltageDomainPerformanceStates;
 + (id)entryEventBackwardDefinitionClpcStatsMetricHistograms;
++ (id)entryEventBackwardDefinitionCorePerformanceLevel;
 + (id)entryEventBackwardDefinitionCpuStatsCpuFeatures;
 + (id)entryEventBackwardDefinitionEnergyModel;
 + (id)entryEventBackwardDefinitionGPUStatsActiveTimeHistogram;
@@ -61,21 +65,20 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitions;
 + (void)load;
-+ (id)railDefinitions;
 
 - (void).cxx_destruct;
+- (int)addReportSample:(struct __CFDictionary { }*)arg1 toEntry:(id)arg2;
+- (void)addReportingGroup:(id)arg1 toEntry:(id)arg2;
 - (id)batteryLevelChangedNotifications;
 - (id)chanelDictionaryWithChannelSet:(id)arg1 withMinProcessTime:(double)arg2;
-- (void)combineDISP0ChannelsWithChannels:(struct __CFDictionary { }*)arg1;
-- (id)entryForReportingGroup:(id)arg1 withEntry:(id)arg2;
-- (id)entryForReportingGroup:(id)arg1 withKey:(id)arg2 withChannelGroup:(id)arg3;
+- (id)entryForReportingGroup:(id)arg1 withKey:(id)arg2 withChannelGroup:(id)arg3 withEntryDate:(id)arg4;
 - (id)entryKeyForEventWithGroupName:(id)arg1 withSubGroupName:(id)arg2;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
 - (void)logEventBackwardIOReport;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
-- (double)mJtomWinTime:(double)arg1 withmJ:(double)arg2;
+- (void)mergeServiceName:(id)arg1 withID:(unsigned long long)arg2 toChannels:(struct __CFDictionary { }*)arg3;
 - (void)modelAPSoCPower:(id)arg1;
 - (BOOL)processNotificationForChannelGroup:(id)arg1;
 - (void)pruneAllChannelsWithChannels:(struct __CFDictionary { }*)arg1;

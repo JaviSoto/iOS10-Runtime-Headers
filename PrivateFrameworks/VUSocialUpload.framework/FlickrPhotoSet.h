@@ -3,13 +3,13 @@
  */
 
 @interface FlickrPhotoSet : NSObject {
-    long long _farmID;
-    long long _identifier;
-    NSString *_photoSetDescription;
-    long long _primaryPhotoID;
-    NSString *_secret;
-    long long _serverID;
-    NSString *_title;
+    long long  _farmID;
+    long long  _identifier;
+    NSString * _photoSetDescription;
+    long long  _primaryPhotoID;
+    NSString * _secret;
+    long long  _serverID;
+    NSString * _title;
 }
 
 @property (nonatomic) long long farmID;

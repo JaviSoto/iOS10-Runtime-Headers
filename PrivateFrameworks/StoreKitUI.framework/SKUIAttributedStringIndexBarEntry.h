@@ -3,10 +3,10 @@
  */
 
 @interface SKUIAttributedStringIndexBarEntry : SKUIIndexBarEntry {
-    NSAttributedString *_attributedString;
-    NSDictionary *_defaultTextAttributes;
-    BOOL _hasValidSynthesizedAttributedString;
-    NSAttributedString *_synthesizedAttributedString;
+    NSAttributedString * _attributedString;
+    NSDictionary * _defaultTextAttributes;
+    BOOL  _hasValidSynthesizedAttributedString;
+    NSAttributedString * _synthesizedAttributedString;
 }
 
 @property (nonatomic, readonly, copy) NSAttributedString *attributedString;

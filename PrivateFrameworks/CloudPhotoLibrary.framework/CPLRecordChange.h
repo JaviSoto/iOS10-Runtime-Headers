@@ -3,17 +3,17 @@
  */
 
 @interface CPLRecordChange : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _alterationTypeFlags;
-    unsigned int _changeType;
-    NSDate *_dateDeleted;
-    NSString *_identifier;
-    BOOL _inExpunged;
-    BOOL _inTrash;
-    BOOL _isSparseFullChange;
-    NSString *_realIdentifier;
-    NSData *_recordChangeData;
-    NSDate *_recordModificationDate;
-    BOOL _shouldFilterDefaultValuesForNewProperties;
+    unsigned int  _alterationTypeFlags;
+    unsigned int  _changeType;
+    NSDate * _dateDeleted;
+    NSString * _identifier;
+    BOOL  _inExpunged;
+    BOOL  _inTrash;
+    BOOL  _isSparseFullChange;
+    NSString * _realIdentifier;
+    NSData * _recordChangeData;
+    NSDate * _recordModificationDate;
+    BOOL  _shouldFilterDefaultValuesForNewProperties;
 }
 
 @property (nonatomic) unsigned int changeType;

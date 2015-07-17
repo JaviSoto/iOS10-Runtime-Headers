@@ -3,14 +3,14 @@
  */
 
 @interface ATMessageLinkProxyListener : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener *_listener;
-    <ATMessageLink> *_messageLink;
+    NSXPCListener * _listener;
+    ATMessageLink * _messageLink;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) <ATMessageLink> *messageLink;
+@property (nonatomic, retain) ATMessageLink *messageLink;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

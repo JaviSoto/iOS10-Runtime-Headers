@@ -3,9 +3,9 @@
  */
 
 @interface __NSOrderedSetM : NSMutableOrderedSet {
-    NSMutableArray *_array;
-    struct __CFBasicHash { } *_set;
-    unsigned int _used;
+    NSMutableArray * _array;
+    struct __CFBasicHash { } * _set;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;

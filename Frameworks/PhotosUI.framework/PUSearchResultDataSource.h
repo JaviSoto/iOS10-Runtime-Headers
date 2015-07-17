@@ -3,15 +3,15 @@
  */
 
 @interface PUSearchResultDataSource : NSObject <PLDiagnosticsProvider> {
-    NSSet *_assetUUIDs;
-    NSOrderedSet *_containers;
-    <PUSearchResultDelegate> *_delegate;
-    BOOL _finished;
-    BOOL _hasPendingChanges;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _taskId;
-    NSSet *_uncommittedAssetUUIDs;
-    NSMutableOrderedSet *_uncommittedContainers;
+    NSSet * _assetUUIDs;
+    NSOrderedSet * _containers;
+    <PUSearchResultDelegate> * _delegate;
+    BOOL  _finished;
+    BOOL  _hasPendingChanges;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _taskId;
+    NSSet * _uncommittedAssetUUIDs;
+    NSMutableOrderedSet * _uncommittedContainers;
 }
 
 @property (nonatomic, readonly) NSSet *assetUUIDs;

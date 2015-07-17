@@ -3,10 +3,10 @@
  */
 
 @interface PLAirTunesServicePickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_availableRoutes;
-    id _delegate;
-    NSDictionary *_selectedRoute;
-    UITableView *_table;
+    NSArray * _availableRoutes;
+    id  _delegate;
+    NSDictionary * _selectedRoute;
+    UITableView * _table;
 }
 
 @property (nonatomic, retain) NSArray *availableRoutes;

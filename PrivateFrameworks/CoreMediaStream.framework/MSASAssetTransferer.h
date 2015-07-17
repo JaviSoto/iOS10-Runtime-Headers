@@ -3,20 +3,20 @@
  */
 
 @interface MSASAssetTransferer : NSObject <MMCSEngineDelegate> {
-    MSBackoffManager *_backoffManager;
-    MSAlbumSharingDaemon *_daemon;
-    id _delegate;
-    MMCSEngine *_engine;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    NSString *_focusAlbumGUID;
-    NSString *_focusAssetCollectionGUID;
-    BOOL _hasShutDown;
-    int _maxBatchCount;
-    double _maxMMCSTokenValidityTimeInterval;
-    int _maxRetryCount;
-    MSASPersonModel *_model;
-    NSString *_personID;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    MSBackoffManager * _backoffManager;
+    MSAlbumSharingDaemon * _daemon;
+    id  _delegate;
+    MMCSEngine * _engine;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    NSString * _focusAlbumGUID;
+    NSString * _focusAssetCollectionGUID;
+    BOOL  _hasShutDown;
+    int  _maxBatchCount;
+    double  _maxMMCSTokenValidityTimeInterval;
+    int  _maxRetryCount;
+    MSASPersonModel * _model;
+    NSString * _personID;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic) MSBackoffManager *backoffManager;

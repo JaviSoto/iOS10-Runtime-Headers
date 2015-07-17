@@ -3,14 +3,14 @@
  */
 
 @interface MPStoreDownload : NSObject {
-    SSDownload *_SSDownload;
-    SSPurchase *_SSPurchase;
-    SSPurchaseResponse *_SSPurchaseResponse;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSDictionary *_attributes;
-    BOOL _canceled;
-    NSMutableArray *_overridePhaseIdentifiers;
-    int _type;
+    SSDownload * _SSDownload;
+    SSPurchase * _SSPurchase;
+    SSPurchaseResponse * _SSPurchaseResponse;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSDictionary * _attributes;
+    BOOL  _canceled;
+    NSMutableArray * _overridePhaseIdentifiers;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;

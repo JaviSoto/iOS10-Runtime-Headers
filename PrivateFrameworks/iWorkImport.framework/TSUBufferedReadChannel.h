@@ -3,21 +3,21 @@
  */
 
 @interface TSUBufferedReadChannel : NSObject <TSUReadChannel> {
-    NSArray *_blockInfos;
-    NSObject<OS_dispatch_data> *_currentStreamOutputData;
-    BOOL _isStreamOutputDone;
-    NSObject<OS_dispatch_queue> *_readQueue;
-    unsigned long _sourceLength;
-    long long _sourceOffset;
-    unsigned long _sourceReadBufferSize;
-    <TSUReadChannel> *_sourceReadChannel;
-    NSError *_sourceReadChannelError;
-    unsigned long _streamOutputLength;
-    long long _streamOutputOffset;
-    unsigned long _streamOutputOutstandingLength;
-    <TSUStreamReadChannel> *_streamReadChannel;
-    id /* block */ _streamReadChannelBlock;
-    id /* block */ _streamReadChannelSourceHandler;
+    NSArray * _blockInfos;
+    NSObject<OS_dispatch_data> * _currentStreamOutputData;
+    BOOL  _isStreamOutputDone;
+    NSObject<OS_dispatch_queue> * _readQueue;
+    unsigned long  _sourceLength;
+    long long  _sourceOffset;
+    unsigned long  _sourceReadBufferSize;
+    <TSUReadChannel> * _sourceReadChannel;
+    NSError * _sourceReadChannelError;
+    unsigned long  _streamOutputLength;
+    long long  _streamOutputOffset;
+    unsigned long  _streamOutputOutstandingLength;
+    <TSUStreamReadChannel> * _streamReadChannel;
+    id /* block */  _streamReadChannelBlock;
+    id /* block */  _streamReadChannelSourceHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

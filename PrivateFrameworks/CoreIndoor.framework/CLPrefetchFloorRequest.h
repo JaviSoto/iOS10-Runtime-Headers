@@ -3,15 +3,16 @@
  */
 
 @interface CLPrefetchFloorRequest : NSObject <NSSecureCoding> {
-    NSString *_floorUuid;
-    NSDate *_relevancy;
-    NSString *_venueUuid;
+    NSString * _floorUuid;
+    NSDate * _relevancy;
+    NSString * _venueUuid;
 }
 
 @property (nonatomic, retain) NSString *floorUuid;
 @property (nonatomic, retain) NSDate *relevancy;
 @property (nonatomic, retain) NSString *venueUuid;
 
++ (id)prefetchRequestForFloor:(id)arg1 inVenue:(id)arg2 lastRelevant:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -20,6 +21,7 @@
 - (id)floorUid;
 - (id)floorUuid;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFloor:(id)arg1 inVenue:(id)arg2 lastRelevant:(id)arg3;
 - (id)initWithFloor:(id)arg1 lastRelevant:(id)arg2;

@@ -3,21 +3,23 @@
  */
 
 @interface PKPhoneGlyphView : PKMicaView {
-    CALayer *_highlightLayer;
+    CALayer * _highlightLayer;
     struct CGPoint { 
         float x; 
         float y; 
-    } _highlightOffscreenPosition;
+    }  _highlightOffscreenPosition;
     struct CGPoint { 
         float x; 
         float y; 
-    } _highlightOnscreenPosition;
-    NSString *_phoneWiggleAnimationKey;
+    }  _highlightOnscreenPosition;
+    NSString * _phoneWiggleAnimationKey;
 }
 
 - (void)_endPhoneWiggle;
+- (void)_restartPhoneWiggleIfNecessary;
 - (void)_startPhoneWiggle;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 package:(id)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;

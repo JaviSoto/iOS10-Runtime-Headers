@@ -3,13 +3,13 @@
  */
 
 @interface PBStretchFilter : PBFilter {
-    bool firstTime;
+    bool  firstTime;
     struct CGPoint { 
         float x; 
         float y; 
-    } inputPoint;
-    float lastInputX;
-    float lastInputY;
+    }  inputPoint;
+    float  lastInputX;
+    float  lastInputY;
 }
 
 @property struct CGPoint { float x1; float x2; } inputPoint;

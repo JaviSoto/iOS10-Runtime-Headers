@@ -3,7 +3,7 @@
  */
 
 @interface BLTMessageDigest : NSObject <NSCoding> {
-    NSData *_messageDigest;
+    NSData * _messageDigest;
 }
 
 @property (nonatomic, retain) NSData *messageDigest;

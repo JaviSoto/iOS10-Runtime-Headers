@@ -3,8 +3,8 @@
  */
 
 @interface PUAdjustmentsModeBadge : UIView {
-    BOOL _filled;
-    BOOL _stroked;
+    BOOL  _filled;
+    BOOL  _stroked;
 }
 
 @property (getter=isFilled, nonatomic) BOOL filled;

@@ -6,8 +6,8 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _editRange;
-    NSString *_replacementText;
+    }  _editRange;
+    NSString * _replacementText;
 }
 
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } editRange;
@@ -15,7 +15,7 @@
 
 + (id)atomWithEditRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })editRange;
 - (id)initWithEditRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;

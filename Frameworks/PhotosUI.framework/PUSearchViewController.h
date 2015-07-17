@@ -3,30 +3,30 @@
  */
 
 @interface PUSearchViewController : UIViewController <PUSearchResultsDelegate, PUSuggestedSearchResultsDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    _UIBackdropView *_backdropView;
-    UIView *_backgroundView;
-    UIBarButtonItem *_cancelButton;
-    UIView *_cellSelectedBackgroundView;
-    <UITableViewDataSource><UITableViewDelegate> *_dataSource;
-    BOOL _debug_showMatchScores;
-    <PUSearchViewControllerDelegate> *_delegate;
-    NSMutableDictionary *_headerViews;
-    UIPanGestureRecognizer *_horizontalPanGestureRecognizer;
-    _UIDynamicValueAnimation *_horizontalPanResetAnimation;
-    PHImageManager *_imageManager;
-    BOOL _inCustomTransition;
-    UISearchBar *_searchBar;
-    PSIDatabase *_searchIndex;
-    PUSearchResultsDataSource *_searchResultsDataSource;
-    PUPingTimer *_searchResultsPingTimer;
-    UITableView *_searchResultsTableView;
-    UITableView *_searchSuggestionsTableView;
-    NSString *_searchText;
-    NSString *_selectedDisplayTitle;
-    BOOL _showsSearchBarInNavigationBar;
-    BOOL _showsSectionHeaderForSearchResults;
-    PUSuggestedSearchResultsDataSource *_suggestedSearchResultsDataSource;
-    PUPingTimer *_suggestedSearchResultsPingTimer;
+    _UIBackdropView * _backdropView;
+    UIView * _backgroundView;
+    UIBarButtonItem * _cancelButton;
+    UIView * _cellSelectedBackgroundView;
+    <UITableViewDataSource><UITableViewDelegate> * _dataSource;
+    BOOL  _debug_showMatchScores;
+    <PUSearchViewControllerDelegate> * _delegate;
+    NSMutableDictionary * _headerViews;
+    UIPanGestureRecognizer * _horizontalPanGestureRecognizer;
+    _UIDynamicValueAnimation * _horizontalPanResetAnimation;
+    PHImageManager * _imageManager;
+    BOOL  _inCustomTransition;
+    UISearchBar * _searchBar;
+    PSIDatabase * _searchIndex;
+    PUSearchResultsDataSource * _searchResultsDataSource;
+    PUPingTimer * _searchResultsPingTimer;
+    UITableView * _searchResultsTableView;
+    UITableView * _searchSuggestionsTableView;
+    NSString * _searchText;
+    NSString * _selectedDisplayTitle;
+    BOOL  _showsSearchBarInNavigationBar;
+    BOOL  _showsSectionHeaderForSearchResults;
+    PUSuggestedSearchResultsDataSource * _suggestedSearchResultsDataSource;
+    PUPingTimer * _suggestedSearchResultsPingTimer;
 }
 
 @property (nonatomic, retain) UIView *backgroundView;
@@ -52,7 +52,6 @@
 - (void)_DEBUG_rebuildSearchIndex:(id)arg1;
 - (void)_applyHorizontalOffsetX:(float)arg1;
 - (void)_applyHorizontalPanResetAnimationWithVelocity:(float)arg1;
-- (void)_cancelButtonTapped:(id)arg1;
 - (void)_cancelHorizontalPanResetAnimation;
 - (void)_configureCell:(id)arg1 inTableView:(id)arg2 atIndexAPath:(id)arg3;
 - (void)_configureTableView:(id)arg1;
@@ -63,10 +62,12 @@
 - (void)_mergeSuggestedSearchResultsAnimated:(BOOL)arg1;
 - (unsigned int)_numberOfTableViewSectionsOutSuggestionsSection:(unsigned int*)arg1 outRecentsSection:(unsigned int*)arg2;
 - (void)_pingTimerFire:(id)arg1;
+- (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_pushGridForAlbum:(struct NSObject { Class x1; }*)arg1 completion:(id /* block */)arg2;
 - (void)_pushGridForAlbumWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)_pushMomentsGridForPhotoCollections:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
 - (void)_pushMomentsGridForPhotosWithUUIDs:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
+- (float)_rowHeightForCurrentFont;
 - (void)_scheduleUpdateTableFooterView;
 - (void)_searchFieldTextDidChange:(id)arg1;
 - (id)_searchResultsTableView;
@@ -83,6 +84,7 @@
 - (void)_updateTableFooterViewWithProgress:(unsigned int)arg1;
 - (id)backgroundView;
 - (void)cancelActiveSearches;
+- (void)cancelButtonTapped:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
@@ -111,7 +113,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

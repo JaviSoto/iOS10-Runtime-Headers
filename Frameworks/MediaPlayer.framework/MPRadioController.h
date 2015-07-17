@@ -3,9 +3,9 @@
  */
 
 @interface MPRadioController : NSObject <MPClientRadioController> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSXPCConnection *_connection;
-    BOOL _isRadioAvailable;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSXPCConnection * _connection;
+    BOOL  _isRadioAvailable;
 }
 
 @property (readonly, copy) NSString *debugDescription;

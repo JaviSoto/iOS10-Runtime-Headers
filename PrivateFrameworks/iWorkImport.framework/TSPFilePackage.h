@@ -3,10 +3,10 @@
  */
 
 @interface TSPFilePackage : TSPPackage {
-    NSObject<OS_dispatch_queue> *_bookmarkDataQueue;
-    TSUZipArchive *_componentZipArchive;
-    TSUTemporaryDirectory *_dataDirectory;
-    NSMutableDictionary *_dataURLMap;
+    NSObject<OS_dispatch_queue> * _bookmarkDataQueue;
+    TSUZipArchive * _componentZipArchive;
+    TSUTemporaryDirectory * _dataDirectory;
+    NSMutableDictionary * _dataURLMap;
 }
 
 + (BOOL)isValidPackageAtURL:(id)arg1;

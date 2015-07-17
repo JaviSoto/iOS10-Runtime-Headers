@@ -3,8 +3,8 @@
  */
 
 @interface CKPreviewDispatchCache : NSObject <IMSystemMonitorListener> {
-    CKDispatchCache *_dispatchCache;
-    CKMultiDict *_pendingBlocks;
+    CKDispatchCache * _dispatchCache;
+    CKMultiDict * _pendingBlocks;
 }
 
 @property (nonatomic, retain) CKDispatchCache *dispatchCache;

@@ -3,11 +3,12 @@
  */
 
 @interface WDRun : NSObject {
-    WDParagraph *mParagraph;
+    WDParagraph * mParagraph;
 }
 
 - (void)clearProperties;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)initWithParagraph:(id)arg1;
 - (BOOL)isEmpty;

@@ -3,8 +3,8 @@
  */
 
 @interface AVExportSettingsOutputSettingsAssistantVideoSettingsAdjuster : NSObject <AVOutputSettingsAssistantVideoSettingsAdjuster> {
-    NSDictionary *_exportSettings;
-    NSString *_outputSettingsPresetIdentifier;
+    NSDictionary * _exportSettings;
+    NSString * _outputSettingsPresetIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

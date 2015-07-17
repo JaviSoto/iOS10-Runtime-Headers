@@ -3,18 +3,18 @@
  */
 
 @interface PLVideoRemaker : NSObject {
-    PFVideoAVObjectBuilder *__videoAVObjectBuilder;
-    id _delegate;
-    double _duration;
-    AVAssetExportSession *_exportSession;
-    int _mode;
-    float _percentComplete;
-    id /* block */ _progressHandler;
-    NSTimer *_progressTimer;
-    PLProgressView *_progressView;
-    double _trimEndTime;
-    double _trimStartTime;
-    NSString *_trimmedPath;
+    PFVideoAVObjectBuilder * __videoAVObjectBuilder;
+    id  _delegate;
+    double  _duration;
+    AVAssetExportSession * _exportSession;
+    int  _mode;
+    float  _percentComplete;
+    id /* block */  _progressHandler;
+    NSTimer * _progressTimer;
+    PLProgressView * _progressView;
+    double  _trimEndTime;
+    double  _trimStartTime;
+    NSString * _trimmedPath;
 }
 
 @property (nonatomic, readonly, retain) PFVideoAVObjectBuilder *_videoAVObjectBuilder;

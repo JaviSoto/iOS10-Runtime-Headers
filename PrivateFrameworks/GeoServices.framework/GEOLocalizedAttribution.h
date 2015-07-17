@@ -3,10 +3,10 @@
  */
 
 @interface GEOLocalizedAttribution : PBCodable <NSCopying> {
-    NSString *_displayName;
-    NSString *_language;
-    NSMutableArray *_logoURLs;
-    NSMutableArray *_snippetLogoURLs;
+    NSString * _displayName;
+    NSString * _language;
+    NSMutableArray * _logoURLs;
+    NSMutableArray * _snippetLogoURLs;
 }
 
 @property (nonatomic, retain) NSString *displayName;

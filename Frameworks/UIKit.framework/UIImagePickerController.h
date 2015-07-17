@@ -12,19 +12,19 @@
             float width; 
             float height; 
         } size; 
-    } _cropRect;
-    id _image;
+    }  _cropRect;
+    id  _image;
     struct { 
         unsigned int visible : 1; 
         unsigned int isCleaningUp : 1; 
         unsigned int savingOptions : 3; 
         unsigned int didRevertStatusBar : 1; 
-    } _imagePickerFlags;
-    NSArray *_mediaTypes;
-    BOOL _previousStatusBarHidden;
-    int _previousStatusBarStyle;
-    NSMutableDictionary *_properties;
-    int _sourceType;
+    }  _imagePickerFlags;
+    NSArray * _mediaTypes;
+    BOOL  _previousStatusBarHidden;
+    int  _previousStatusBarStyle;
+    NSMutableDictionary * _properties;
+    int  _sourceType;
 }
 
 @property (nonatomic) BOOL allowsEditing;
@@ -51,6 +51,7 @@
 + (BOOL)isFlashAvailableForCameraDevice:(int)arg1;
 + (BOOL)isSourceTypeAvailable:(int)arg1;
 
+- (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_allowsImageEditing;
 - (BOOL)_allowsMultipleSelection;
@@ -86,7 +87,6 @@
 - (int)cameraFlashMode;
 - (id)cameraOverlayView;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })cameraViewTransform;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

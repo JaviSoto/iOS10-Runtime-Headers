@@ -3,14 +3,16 @@
  */
 
 @interface CMNatalimeter : NSObject {
-    CMNatalimeterInternal *_internal;
+    CMNatalimeterInternal * _internal;
 }
 
 @property (nonatomic, readonly) CMNatalimeterInternal *_internal;
 
++ (double)briskMinuteMetsThreshold;
 + (id)defaultUserProfile;
 + (BOOL)isNatalimeterAvailable;
 + (id)maxNatalieEntries;
++ (double)sedentaryActivityMetsThreshold;
 + (BOOL)setUserProfile:(id)arg1 error:(id*)arg2;
 + (id)userProfile;
 

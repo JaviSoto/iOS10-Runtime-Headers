@@ -3,7 +3,7 @@
  */
 
 @interface PUActivityProgressViewController : UIViewController {
-    PLRoundProgressView *_progressView;
+    PLRoundProgressView * _progressView;
 }
 
 - (void).cxx_destruct;

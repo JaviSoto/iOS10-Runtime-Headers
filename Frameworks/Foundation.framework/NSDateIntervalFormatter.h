@@ -3,18 +3,18 @@
  */
 
 @interface NSDateIntervalFormatter : NSFormatter {
-    NSCalendar *_calendar;
-    unsigned int _dateStyle;
-    NSString *_dateTemplate;
-    NSString *_dateTemplateFromStyles;
-    void *_formatter;
-    NSLocale *_locale;
-    NSObject<OS_dispatch_semaphore> *_lock;
-    BOOL _modified;
-    void *_reserved;
-    unsigned int _timeStyle;
-    NSTimeZone *_timeZone;
-    BOOL _useTemplate;
+    NSCalendar * _calendar;
+    unsigned int  _dateStyle;
+    NSString * _dateTemplate;
+    NSString * _dateTemplateFromStyles;
+    void * _formatter;
+    NSLocale * _locale;
+    NSObject<OS_dispatch_semaphore> * _lock;
+    BOOL  _modified;
+    void * _reserved;
+    unsigned int  _timeStyle;
+    NSTimeZone * _timeZone;
+    BOOL  _useTemplate;
 }
 
 @property (copy) NSCalendar *calendar;
@@ -32,6 +32,7 @@
 - (void)dealloc;
 - (id)editingStringForObjectValue:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)finalize;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface GEOExperimentServerLocalProxy : NSObject <GEOExperimentServerProxy, GEOResourceManifestTileGroupObserver> {
-    GEOABExperimentRequest *_currentRequest;
-    NSLock *_currentRequestLock;
-    <GEOExperimentServerProxyDelegate> *_delegate;
-    GEOABExperimentResponse *_experimentsInfo;
-    NSLock *_experimentsInfoLock;
-    NSObject<OS_dispatch_source> *_updateTimer;
-    NSLock *_updateTimerLock;
+    GEOABExperimentRequest * _currentRequest;
+    NSLock * _currentRequestLock;
+    <GEOExperimentServerProxyDelegate> * _delegate;
+    GEOABExperimentResponse * _experimentsInfo;
+    NSLock * _experimentsInfoLock;
+    NSObject<OS_dispatch_source> * _updateTimer;
+    NSLock * _updateTimerLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface MPConcreteMediaPlaylist : MPMediaPlaylist <NSCoding, NSCopying> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    void *_clusterPlaylist;
-    MPMediaQuery *_itemsQuery;
-    NSMutableDictionary *_properties;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    void * _clusterPlaylist;
+    MPMediaQuery * _itemsQuery;
+    NSMutableDictionary * _properties;
 }
 
 - (void).cxx_destruct;

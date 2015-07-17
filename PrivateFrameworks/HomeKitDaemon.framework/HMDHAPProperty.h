@@ -3,7 +3,7 @@
  */
 
 @interface HMDHAPProperty : NSObject <NSSecureCoding> {
-    HAPMetadataProperty *_hapPropertyMetadata;
+    HAPMetadataProperty * _hapPropertyMetadata;
 }
 
 @property (nonatomic, retain) HAPMetadataProperty *hapPropertyMetadata;
@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hapPropertyMetadata;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHAPProperty:(id)arg1;
 - (void)setHapPropertyMetadata:(id)arg1;

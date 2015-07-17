@@ -3,8 +3,8 @@
  */
 
 @interface MCDRadioStationListViewController : MCD_OLD_TableViewController {
-    NSMutableDictionary *_stationArtworkRequests;
-    NSArray *_stations;
+    NSMutableDictionary * _stationArtworkRequests;
+    NSArray * _stations;
 }
 
 @property (nonatomic, retain) NSArray *stations;

@@ -3,17 +3,17 @@
  */
 
 @interface SSUpdatableAssetManifest : NSObject <SKUIExternalResourceManager> {
-    NSArray *_assets;
-    NSDictionary *_assetsByName;
-    SSUpdatableAsset *_bootstrapAsset;
-    NSURL *_cacheURL;
-    NSDictionary *_extraInfo;
-    NSCache *_imageCache;
-    double _lastModifiedTimestamp;
-    NSString *_name;
-    int _reloadUrgencyType;
-    NSURL *_serverURL;
-    NSString *_version;
+    NSArray * _assets;
+    NSDictionary * _assetsByName;
+    SSUpdatableAsset * _bootstrapAsset;
+    NSURL * _cacheURL;
+    NSDictionary * _extraInfo;
+    NSCache * _imageCache;
+    double  _lastModifiedTimestamp;
+    NSString * _name;
+    int  _reloadUrgencyType;
+    NSURL * _serverURL;
+    NSString * _version;
 }
 
 @property (nonatomic, copy) NSArray *assets;

@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentPassesResponse : PKPaymentWebServiceResponse {
-    NSArray *_devicePassSerialNumbers;
-    NSString *_lastUpdatedTag;
-    NSArray *_passURLs;
+    NSArray * _devicePassSerialNumbers;
+    NSString * _lastUpdatedTag;
+    NSArray * _passURLs;
 }
 
 @property (nonatomic, retain) NSArray *devicePassSerialNumbers;

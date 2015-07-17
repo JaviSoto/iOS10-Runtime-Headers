@@ -3,7 +3,7 @@
  */
 
 @interface MSCLFacebookServiceHelper : NSObject <MSCLExternalServiceHelper> {
-    ACAccountStore *_accountStore;
+    ACAccountStore * _accountStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

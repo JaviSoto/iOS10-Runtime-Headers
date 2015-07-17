@@ -3,12 +3,12 @@
  */
 
 @interface TRDConnectionManager : NSObject <TRTCPConnectionDelegate> {
-    NSMapTable *_XPCConnectionToConnectionToPacketEventClasses;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_queue> *_connectionDelegateQueue;
-    NSMapTable *_connectionToXPCConnectionOwners;
-    NSMapTable *_serviceToConnection;
-    NSMapTable *_serviceToConnectionCompletionHandlers;
+    NSMapTable * _XPCConnectionToConnectionToPacketEventClasses;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _connectionDelegateQueue;
+    NSMapTable * _connectionToXPCConnectionOwners;
+    NSMapTable * _serviceToConnection;
+    NSMapTable * _serviceToConnectionCompletionHandlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

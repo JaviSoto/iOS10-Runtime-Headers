@@ -3,7 +3,7 @@
  */
 
 @interface PURedEyeIndicatorView : UIView {
-    unsigned int _animationType;
+    unsigned int  _animationType;
 }
 
 @property (nonatomic) unsigned int animationType;

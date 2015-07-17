@@ -3,8 +3,8 @@
  */
 
 @interface _HKCompoundFilter : _HKFilter {
-    unsigned int _compoundType;
-    NSArray *_subfilters;
+    unsigned int  _compoundType;
+    NSArray * _subfilters;
 }
 
 @property (nonatomic, readonly) unsigned int compoundType;

@@ -3,8 +3,8 @@
  */
 
 @interface CertUIItemDetailsSummaryCell : UITableViewCell {
-    float _detailLabelOriginX;
-    NSArray *_detailViews;
+    float  _detailLabelOriginX;
+    NSArray * _detailViews;
 }
 
 @property (nonatomic) float detailLabelOriginX;

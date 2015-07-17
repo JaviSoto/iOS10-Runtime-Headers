@@ -3,7 +3,7 @@
  */
 
 @interface OADTableColumn : NSObject {
-    float mWidth;
+    float  mWidth;
 }
 
 - (id)description;

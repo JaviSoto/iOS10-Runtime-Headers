@@ -3,8 +3,8 @@
  */
 
 @interface SKUIGallerySwooshPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIGallerySwooshViewControllerDelegate> {
-    NSMapTable *_componentArtworkRequests;
-    SKUIGallerySwooshViewController *_swooshViewController;
+    NSMapTable * _componentArtworkRequests;
+    SKUIGallerySwooshViewController * _swooshViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface PKLocation : NSObject <NSSecureCoding> {
-    NSNumber *_altitude;
-    NSNumber *_latitude;
-    NSNumber *_longitude;
-    NSNumber *_maxDistance;
-    NSString *_name;
-    NSString *_relevantText;
+    NSNumber * _altitude;
+    NSNumber * _latitude;
+    NSNumber * _longitude;
+    NSNumber * _maxDistance;
+    NSString * _name;
+    NSString * _relevantText;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;

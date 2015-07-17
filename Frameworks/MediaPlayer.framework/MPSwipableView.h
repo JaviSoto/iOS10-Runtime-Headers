@@ -3,13 +3,13 @@
  */
 
 @interface MPSwipableView : UIView <UIGestureRecognizerDelegate> {
-    MPActivityGestureRecognizer *_activityGestureRecognizer;
-    int _enabledGestureTypes;
-    UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    int _simultaneousGestureTypes;
-    <MPSwipableViewDelegate> *_swipeDelegate;
-    MPSwipeGestureRecognizer *_swipeGestureRecognizer;
-    MPTapGestureRecognizer *_tapGestureRecognizer;
+    MPActivityGestureRecognizer * _activityGestureRecognizer;
+    int  _enabledGestureTypes;
+    UIPinchGestureRecognizer * _pinchGestureRecognizer;
+    int  _simultaneousGestureTypes;
+    <MPSwipableViewDelegate> * _swipeDelegate;
+    MPSwipeGestureRecognizer * _swipeGestureRecognizer;
+    MPTapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

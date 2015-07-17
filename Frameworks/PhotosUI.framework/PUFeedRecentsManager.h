@@ -3,12 +3,12 @@
  */
 
 @interface PUFeedRecentsManager : NSObject <PLAssetChangeObserver, PLCloudFeedEntriesObserver, PLPhotoLibraryShouldReloadObserver> {
-    NSOrderedSet *__cachedRecentAssets;
-    int _count;
-    <PUFeedRecentsManagerDelegate> *_delegate;
-    NSMutableArray *_pendingAssetsChangeNotifications;
-    NSMutableArray *_pendingFeedEntriesChangeNotifications;
-    PLPhotoLibrary *_photoLibrary;
+    NSOrderedSet * __cachedRecentAssets;
+    int  _count;
+    <PUFeedRecentsManagerDelegate> * _delegate;
+    NSMutableArray * _pendingAssetsChangeNotifications;
+    NSMutableArray * _pendingFeedEntriesChangeNotifications;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (setter=_setCachedRecentAssets:, nonatomic, copy) NSOrderedSet *_cachedRecentAssets;

@@ -5,7 +5,7 @@
 @interface WebQuickLookHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
     struct RefPtr<WebCore::SynchronousResourceHandleCFURLConnectionDelegate> { 
         struct SynchronousResourceHandleCFURLConnectionDelegate {} *m_ptr; 
-    } m_connectionDelegate;
+    }  m_connectionDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

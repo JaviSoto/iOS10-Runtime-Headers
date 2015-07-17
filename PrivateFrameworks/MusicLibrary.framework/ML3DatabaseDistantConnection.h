@@ -3,10 +3,10 @@
  */
 
 @interface ML3DatabaseDistantConnection : ML3DatabaseConnection {
-    BOOL _connectionOpen;
-    NSUUID *_currentTransactionID;
-    <ML3DatabaseDistantConnectionDelegate> *_distantDelegate;
-    MLMediaLibraryService *_mediaLibraryService;
+    BOOL  _connectionOpen;
+    NSUUID * _currentTransactionID;
+    <ML3DatabaseDistantConnectionDelegate> * _distantDelegate;
+    MLMediaLibraryService * _mediaLibraryService;
 }
 
 @property (nonatomic) <ML3DatabaseDistantConnectionDelegate> *distantDelegate;

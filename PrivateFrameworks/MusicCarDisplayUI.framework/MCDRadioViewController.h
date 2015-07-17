@@ -3,13 +3,13 @@
  */
 
 @interface MCDRadioViewController : MCD_OLD_TableViewController <RURadioDataSourceDelegate> {
-    UIView *_MCD_tableView;
-    RURadioDataSource *_dataSource;
-    NSString *_featuredStationNamesBrief;
-    NSArray *_featuredStations;
-    NSArray *_myStations;
-    MCDNoContentView *_placeholderView;
-    RadioRecentStationsController *_recentStationsController;
+    UIView * _MCD_tableView;
+    RURadioDataSource * _dataSource;
+    NSString * _featuredStationNamesBrief;
+    NSArray * _featuredStations;
+    NSArray * _myStations;
+    MCDNoContentView * _placeholderView;
+    RadioRecentStationsController * _recentStationsController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

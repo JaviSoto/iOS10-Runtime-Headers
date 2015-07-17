@@ -3,7 +3,7 @@
  */
 
 @interface CKConversationListFilterCell : UITableViewCell {
-    UISegmentedControl *_filterControl;
+    UISegmentedControl * _filterControl;
 }
 
 @property (nonatomic, retain) UISegmentedControl *filterControl;

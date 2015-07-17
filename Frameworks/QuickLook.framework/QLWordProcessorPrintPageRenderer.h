@@ -3,7 +3,7 @@
  */
 
 @interface QLWordProcessorPrintPageRenderer : QLWebViewPrintPageHelper {
-    UIWebPaginationInfo *_paginationInfo;
+    UIWebPaginationInfo * _paginationInfo;
 }
 
 - (id)_paginationInfo;

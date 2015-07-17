@@ -3,10 +3,11 @@
  */
 
 @interface AVAudioMixInputParametersInternal : NSObject {
-    NSString *audioTimePitchAlgorithm;
-    AVMutableScheduledAudioParameters *scheduledAudioParameters;
-    struct opaqueMTAudioProcessingTap { } *tap;
-    int trackID;
+    NSString * audioTimePitchAlgorithm;
+    AVAudioMixEffectParameters * effectParameters;
+    AVMutableScheduledAudioParameters * scheduledAudioParameters;
+    struct opaqueMTAudioProcessingTap { } * tap;
+    int  trackID;
 }
 
 @end

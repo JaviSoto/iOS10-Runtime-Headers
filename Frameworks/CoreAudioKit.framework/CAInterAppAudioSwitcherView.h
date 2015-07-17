@@ -3,13 +3,13 @@
  */
 
 @interface CAInterAppAudioSwitcherView : UIView <UIScrollViewDelegate> {
-    CAIAANodeInfo *info;
-    BOOL isHostConnected;
-    CAIAANodeContainer *nodeView;
-    struct OpaqueAudioComponentInstance { } *outputUnit;
-    UIPageControl *pageControl;
-    NSTimer *refreshTimer;
-    BOOL showingAppNames;
+    CAIAANodeInfo * info;
+    BOOL  isHostConnected;
+    CAIAANodeContainer * nodeView;
+    struct OpaqueAudioComponentInstance { } * outputUnit;
+    UIPageControl * pageControl;
+    NSTimer * refreshTimer;
+    BOOL  showingAppNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;

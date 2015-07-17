@@ -3,9 +3,9 @@
  */
 
 @interface SKUIJSTabBar : IKJSObject <SKUIJSTabBar> {
-    SKUIApplicationController *_applicationController;
-    NSMutableArray *_tabBarItems;
-    SKUIJSTabBarItem *_transientTabBarItem;
+    SKUIApplicationController * _applicationController;
+    NSMutableArray * _tabBarItems;
+    SKUIJSTabBarItem * _transientTabBarItem;
 }
 
 @property (nonatomic, retain) SKUIJSTabBarItem *selectedTab;

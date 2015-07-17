@@ -3,8 +3,8 @@
  */
 
 @interface PAFanSpeed : NSObject <PASerializable> {
-    int _fanSpeed;
-    double _machTimestamp;
+    int  _fanSpeed;
+    double  _machTimestamp;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface SSRestoreContentItem : NSObject {
-    NSNumber *_accountID;
-    NSString *_appleID;
-    NSString *_bundleID;
-    NSNumber *_cloudMatchStatus;
-    BOOL _isRestore;
-    NSNumber *_originalPurchaserAccountID;
-    NSMutableDictionary *_properties;
+    NSNumber * _accountID;
+    NSString * _appleID;
+    NSString * _bundleID;
+    NSNumber * _cloudMatchStatus;
+    BOOL  _isRestore;
+    NSNumber * _originalPurchaserAccountID;
+    NSMutableDictionary * _properties;
 }
 
 @property (getter=isDRMFree, nonatomic) BOOL DRMFree;

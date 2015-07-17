@@ -6,11 +6,11 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _endPoint;
+    }  _endPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPoint;
+    }  _startPoint;
 }
 
 - (void)setEndPoint:(struct CGPoint { float x1; float x2; })arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface CPLResourceIdentity : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _available;
-    unsigned int _fileSize;
-    NSURL *_fileURL;
-    NSString *_fileUTI;
-    NSString *_fingerPrint;
+    BOOL  _available;
+    unsigned int  _fileSize;
+    NSURL * _fileURL;
+    NSString * _fileUTI;
+    NSString * _fingerPrint;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageDimensions;
+    }  _imageDimensions;
 }
 
 @property (getter=isAvailable, nonatomic) BOOL available;

@@ -3,16 +3,16 @@
  */
 
 @interface C3DIONSZipFileArchive : NSObject {
-    NSMutableDictionary *_cachedContents;
-    NSDictionary *_contents;
-    NSData *_data;
-    int _desc;
-    NSArray *_names;
-    NSString *_path;
-    NSDictionary *_properties;
-    id _provider;
-    void *_reserved;
-    void *_reserved2;
+    NSMutableDictionary * _cachedContents;
+    NSDictionary * _contents;
+    NSData * _data;
+    int  _desc;
+    NSArray * _names;
+    NSString * _path;
+    NSDictionary * _properties;
+    id  _provider;
+    void * _reserved;
+    void * _reserved2;
     struct __zFlags { 
         unsigned int providerSuppliesContents : 1; 
         unsigned int providerSuppliesStreams : 1; 
@@ -20,7 +20,7 @@
         unsigned int noContentsCaching : 1; 
         unsigned int fileOpen : 1; 
         unsigned int reserved : 27; 
-    } _zFlags;
+    }  _zFlags;
 }
 
 - (id)archiveData;

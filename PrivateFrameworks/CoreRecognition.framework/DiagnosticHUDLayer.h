@@ -3,14 +3,14 @@
  */
 
 @interface DiagnosticHUDLayer : CALayer {
-    CAShapeLayer *_cameraAreaLayer;
-    CAShapeLayer *_focusIndicatorLayer;
-    CAShapeLayer *_focusPointLayer;
-    CAShapeLayer *_frameIndicator;
-    CRColor *_freshPointColor;
-    NSMutableArray *_pointLayers;
-    AVCaptureVideoPreviewLayer *_previewLayer;
-    CRColor *_stalePointColor;
+    CAShapeLayer * _cameraAreaLayer;
+    CAShapeLayer * _focusIndicatorLayer;
+    CAShapeLayer * _focusPointLayer;
+    CAShapeLayer * _frameIndicator;
+    CRColor * _freshPointColor;
+    NSMutableArray * _pointLayers;
+    AVCaptureVideoPreviewLayer * _previewLayer;
+    CRColor * _stalePointColor;
 }
 
 @property (retain) CAShapeLayer *cameraAreaLayer;

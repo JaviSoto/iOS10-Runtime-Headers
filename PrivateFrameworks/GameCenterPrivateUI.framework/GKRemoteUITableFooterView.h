@@ -3,13 +3,13 @@
  */
 
 @interface GKRemoteUITableFooterView : UIView <RUIPageAccessory, RemoteUITableFooter> {
-    NSDictionary *_attributes;
-    GKButton *_button;
-    float _buttonBaselineOffset;
-    <GKRemoteUIAuxiliaryViewDelegate> *_delegate;
-    int _layoutStyle;
-    BOOL _pinToBottom;
-    NSArray *_replaceableConstraints;
+    NSDictionary * _attributes;
+    GKButton * _button;
+    float  _buttonBaselineOffset;
+    <GKRemoteUIAuxiliaryViewDelegate> * _delegate;
+    int  _layoutStyle;
+    BOOL  _pinToBottom;
+    NSArray * _replaceableConstraints;
 }
 
 @property (nonatomic, retain) NSDictionary *attributes;

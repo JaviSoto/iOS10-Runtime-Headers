@@ -3,7 +3,7 @@
  */
 
 @interface TRAuthorizedDeviceManager : NSObject {
-    NSMutableDictionary *_authorizationList;
+    NSMutableDictionary * _authorizationList;
 }
 
 @property (nonatomic, readonly) NSArray *deviceIdentifiers;

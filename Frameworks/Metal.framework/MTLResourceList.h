@@ -14,7 +14,7 @@
             id *tqe_prev; 
             unsigned long long time_added; 
         } entry; 
-    } _listPriv;
+    }  _listPriv;
 }
 
 - (void)dealloc;

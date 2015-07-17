@@ -3,19 +3,19 @@
  */
 
 @interface ML3DatabaseImport : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSFileHandle *_fileHandle;
-    unsigned int _homeSharingBasePlaylistID;
-    NSString *_libraryPath;
-    BOOL _pendingMatch;
-    NSData *_playlistData;
-    BOOL _playlistsAreLibraryOwnedContent;
-    long long _preferredVideoQuality;
-    BOOL _resetSync;
-    BOOL _sagaEnabled;
-    long long _storeAccountID;
-    NSString *_syncAnchor;
-    NSData *_trackData;
-    BOOL _tracksAreLibraryOwnedContent;
+    NSFileHandle * _fileHandle;
+    unsigned int  _homeSharingBasePlaylistID;
+    NSString * _libraryPath;
+    BOOL  _pendingMatch;
+    NSData * _playlistData;
+    BOOL  _playlistsAreLibraryOwnedContent;
+    long long  _preferredVideoQuality;
+    BOOL  _resetSync;
+    BOOL  _sagaEnabled;
+    long long  _storeAccountID;
+    NSString * _syncAnchor;
+    NSData * _trackData;
+    BOOL  _tracksAreLibraryOwnedContent;
 }
 
 @property (nonatomic, readonly) NSFileHandle *fileHandle;

@@ -3,16 +3,16 @@
  */
 
 @interface SKUIStackDocumentViewController : SKUIViewController <SKUICollectionViewPullToRefreshDelegate, SKUIDocumentViewController, SKUIIndexBarControlControllerDataSource, SKUIIndexBarControlControllerDelegate, SKUIIndexBarEntryListControllerDelegate, SKUIModalSourceViewProvider, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting> {
-    IKAppDocument *_document;
-    NSArray *_entryListControllers;
-    BOOL _hasResetState;
-    SKUIIndexBarControlController *_indexBarControlController;
-    int _lastNeedsMoreCount;
-    int _layoutStyle;
-    SKUIResourceLoader *_resourceLoader;
-    SKUIStorePageSectionsViewController *_sectionsViewController;
-    SKUIStackTemplateElement *_templateElement;
-    NSMapTable *_viewElementToEntryListController;
+    IKAppDocument * _document;
+    NSArray * _entryListControllers;
+    BOOL  _hasResetState;
+    SKUIIndexBarControlController * _indexBarControlController;
+    int  _lastNeedsMoreCount;
+    int  _layoutStyle;
+    SKUIResourceLoader * _resourceLoader;
+    SKUIStorePageSectionsViewController * _sectionsViewController;
+    SKUIStackTemplateElement * _templateElement;
+    NSMapTable * _viewElementToEntryListController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,26 +3,28 @@
  */
 
 @interface MFMailboxUid : NSObject <NSCopying> {
-    MFWeakReferenceHolder *_account;
-    unsigned int _attributes;
-    NSMutableArray *_children;
-    MFMessageCriterion *_criterion;
-    NSArray *_extraAttributes;
-    unsigned int _mailboxID;
-    MFWeakReferenceHolder *_parent;
-    NSString *_pathComponent;
-    NSNumber *_pendingLevel;
-    NSString *_permanentTag;
-    NSString *_realFullPath;
-    MailAccount *_representedAccount;
-    int _type;
-    NSMutableDictionary *_userInfo;
-    BOOL allCriteriaMustBeSatisfied;
-    NSString *uniqueId;
+    MFWeakReferenceHolder * _account;
+    unsigned int  _attributes;
+    NSMutableArray * _children;
+    MFMessageCriterion * _criterion;
+    NSArray * _extraAttributes;
+    unsigned int  _mailboxID;
+    MFWeakReferenceHolder * _parent;
+    NSString * _pathComponent;
+    NSNumber * _pendingLevel;
+    NSString * _permanentTag;
+    NSString * _realFullPath;
+    MailAccount * _representedAccount;
+    int  _type;
+    NSMutableDictionary * _userInfo;
+    BOOL  allCriteriaMustBeSatisfied;
+    NSString * uniqueId;
 }
 
 @property (nonatomic, retain) NSArray *extraAttributes;
 @property (nonatomic, retain) NSString *permanentTag;
+@property (nonatomic, readonly) unsigned int suggestionsLostMessageSearchResultCount;
+@property (nonatomic, readonly) double suggestionsLostMessageSearchTimestamp;
 
 + (BOOL)isDraftsMailboxType:(int)arg1;
 + (BOOL)isOutgoingMailboxType:(int)arg1;
@@ -117,12 +119,15 @@
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
 - (void)sortChildren;
 - (id)store;
+- (unsigned int)suggestionsLostMessageSearchResultCount;
+- (double)suggestionsLostMessageSearchTimestamp;
 - (id)tildeAbbreviatedPath;
 - (id)topMailbox;
 - (int)type;
 - (id)uniqueId;
 - (unsigned int)unreadCount;
 - (unsigned int)unreadCountMatchingCriterion:(id)arg1;
+- (void)updateSuggestionsLostMessageSearchResultCount:(unsigned int)arg1;
 - (BOOL)userInfoBoolForKey:(id)arg1;
 - (id)userInfoDictionary;
 - (id)userInfoForSerialization;

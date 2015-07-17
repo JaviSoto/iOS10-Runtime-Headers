@@ -3,22 +3,25 @@
  */
 
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying> {
-    GEOPDAutocompleteEntryAddress *_address;
-    GEOPDAutocompleteEntryBusiness *_business;
+    GEOPDAutocompleteEntryAddress * _address;
+    GEOPDAutocompleteEntryBusiness * _business;
+    GEOPDAutocompleteEntryCategory * _category;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    GEOPDAutocompleteEntryHighlightLine *_highlightExtra;
-    GEOPDAutocompleteEntryHighlightLine *_highlightMain;
-    GEOPDAutocompleteEntryQuery *_query;
-    int _type;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    GEOPDAutocompleteEntryHighlightLine * _highlightExtra;
+    GEOPDAutocompleteEntryHighlightLine * _highlightMain;
+    GEOPDAutocompleteEntryQuery * _query;
+    int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntryAddress *address;
 @property (nonatomic, retain) GEOPDAutocompleteEntryBusiness *business;
+@property (nonatomic, retain) GEOPDAutocompleteEntryCategory *category;
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic, readonly) BOOL hasBusiness;
+@property (nonatomic, readonly) BOOL hasCategory;
 @property (nonatomic, readonly) BOOL hasHighlightExtra;
 @property (nonatomic, readonly) BOOL hasHighlightMain;
 @property (nonatomic, readonly) BOOL hasQuery;
@@ -31,6 +34,7 @@
 
 - (id)address;
 - (id)business;
+- (id)category;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -38,6 +42,7 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasAddress;
 - (BOOL)hasBusiness;
+- (BOOL)hasCategory;
 - (BOOL)hasHighlightExtra;
 - (BOOL)hasHighlightMain;
 - (BOOL)hasQuery;
@@ -51,6 +56,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setBusiness:(id)arg1;
+- (void)setCategory:(id)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHighlightExtra:(id)arg1;
 - (void)setHighlightMain:(id)arg1;

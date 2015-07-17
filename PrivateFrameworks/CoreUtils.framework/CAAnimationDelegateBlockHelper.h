@@ -3,8 +3,8 @@
  */
 
 @interface CAAnimationDelegateBlockHelper : NSObject {
-    id /* block */ _animationDidStartBlock;
-    id /* block */ _animationDidStopBlock;
+    id /* block */  _animationDidStartBlock;
+    id /* block */  _animationDidStopBlock;
 }
 
 @property (nonatomic, copy) id /* block */ animationDidStartBlock;

@@ -3,14 +3,14 @@
  */
 
 @interface MusicUpNextSectionHeaderView : UITableViewHeaderFooterView {
-    UIButton *_addButton;
-    UIButton *_clearButton;
-    <MusicUpNextSectionHeaderDelegate> *_delegate;
-    MusicUpNextPunchOutView *_punchOutView;
-    int _section;
-    BOOL _showsAddButton;
-    BOOL _showsClearButton;
-    UILabel *_titleLabel;
+    UIButton * _addButton;
+    UIButton * _clearButton;
+    <MusicUpNextSectionHeaderDelegate> * _delegate;
+    MusicUpNextPunchOutView * _punchOutView;
+    int  _section;
+    BOOL  _showsAddButton;
+    BOOL  _showsClearButton;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) <MusicUpNextSectionHeaderDelegate> *delegate;
@@ -28,7 +28,7 @@
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (id)headerText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (void)invalidateIntrinsicContentSize;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

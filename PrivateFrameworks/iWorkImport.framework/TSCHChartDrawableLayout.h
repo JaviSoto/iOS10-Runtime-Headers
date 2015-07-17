@@ -6,19 +6,19 @@
     struct { 
         unsigned int chartLayoutState : 1; 
         unsigned int chartLayoutStructure : 1; 
-    } mChartInvalidFlags;
-    TSCHChartLayout *mChartLayout;
-    BOOL mInResize;
-    TSDLayoutGeometry *mLastChartAreaGeometry;
-    TSDLayoutGeometry *mLastPureGeometry;
-    TSDLayoutGeometry *mLayoutGeometryWhileCallingSuperComputeLayoutGeometry;
-    TSDLayoutGeometry *mLegendGeometryForResize;
-    TSCHChartDrawableLayoutLegendResizer *mLegendResizer;
+    }  mChartInvalidFlags;
+    TSCHChartLayout * mChartLayout;
+    BOOL  mInResize;
+    TSDLayoutGeometry * mLastChartAreaGeometry;
+    TSDLayoutGeometry * mLastPureGeometry;
+    TSDLayoutGeometry * mLayoutGeometryWhileCallingSuperComputeLayoutGeometry;
+    TSDLayoutGeometry * mLegendGeometryForResize;
+    TSCHChartDrawableLayoutLegendResizer * mLegendResizer;
     struct CGSize { 
         float width; 
         float height; 
-    } mMinSizeCache;
-    BOOL mSuppressChartLayoutInvalidation;
+    }  mMinSizeCache;
+    BOOL  mSuppressChartLayoutInvalidation;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chartInfo;
@@ -115,7 +115,6 @@
 - (BOOL)supportsParentRotation;
 - (void)take3DDepth;
 - (void)validate;
-- (float)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(float)arg2;
 - (id)visibleGeometries;
 - (int)wrapFitType;
 

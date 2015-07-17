@@ -3,9 +3,9 @@
  */
 
 @interface PSTextEditingPane : PSEditingPane <UITableViewDataSource, UITableViewDelegate> {
-    PSTextEditingCell *_cell;
-    UITableView *_table;
-    UITextField *_textField;
+    PSTextEditingCell * _cell;
+    UITableView * _table;
+    UITextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

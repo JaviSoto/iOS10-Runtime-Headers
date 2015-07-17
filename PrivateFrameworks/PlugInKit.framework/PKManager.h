@@ -3,7 +3,7 @@
  */
 
 @interface PKManager : NSObject {
-    PKDaemonClient *_client;
+    PKDaemonClient * _client;
 }
 
 @property (retain) PKDaemonClient *client;

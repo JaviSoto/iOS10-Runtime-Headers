@@ -3,19 +3,19 @@
  */
 
 @interface BRCNonLocalVersionsSender : _BRCOperation <BRCOperationSubclass, BRNonLocalVersionSending> {
-    BRCXPCClient *_client;
-    NSString *_currentEtag;
-    BOOL _includeCachedVersions;
-    BRCItemID *_itemID;
-    NSURL *_logicalURL;
-    NSURL *_physicalURL;
-    <BRNonLocalVersionReceiving> *_receiver;
-    CKRecordID *_recordID;
-    id /* block */ _reply;
-    BRCServerZone *_serverZone;
-    BRCStatInfo *_st;
-    struct NSObject { Class x1; } *_storage;
-    NSString *_storagePathPrefix;
+    BRCXPCClient * _client;
+    NSString * _currentEtag;
+    BOOL  _includeCachedVersions;
+    BRCItemID * _itemID;
+    NSURL * _logicalURL;
+    NSURL * _physicalURL;
+    <BRNonLocalVersionReceiving> * _receiver;
+    CKRecordID * _recordID;
+    id /* block */  _reply;
+    BRCServerZone * _serverZone;
+    BRCStatInfo * _st;
+    struct NSObject { Class x1; } * _storage;
+    NSString * _storagePathPrefix;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -42,5 +42,6 @@
 - (id)physicalURL;
 - (void)setIncludeCachedVersions:(BOOL)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

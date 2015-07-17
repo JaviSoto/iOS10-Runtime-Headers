@@ -3,14 +3,14 @@
  */
 
 @interface BRCFileCoordinator : NSFileCoordinator {
-    BOOL _cancelled;
-    id /* block */ _doneHandler;
-    BOOL _isUpdateForReconnecting;
-    BRCAccountSession *_session;
-    unsigned long long _startStamp;
-    NSObject<OS_dispatch_source> *_timer;
-    NSURL *_url1;
-    NSURL *_url2;
+    BOOL  _cancelled;
+    id /* block */  _doneHandler;
+    BOOL  _isUpdateForReconnecting;
+    BRCAccountSession * _session;
+    unsigned long long  _startStamp;
+    NSObject<OS_dispatch_source> * _timer;
+    NSURL * _url1;
+    NSURL * _url2;
 }
 
 @property (nonatomic) BOOL isUpdateForReconnecting;

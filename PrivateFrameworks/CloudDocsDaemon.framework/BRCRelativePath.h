@@ -3,53 +3,54 @@
  */
 
 @interface BRCRelativePath : NSObject <NSSecureCoding> {
-    NSString *_absolutePath;
-    BRCRelativePath *_basePath;
+    NSString * _absolutePath;
+    BRCRelativePath * _basePath;
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
-    } _birthtime;
-    BRCBookmark *_bookmark;
-    NSDirectoryEnumerator *_descendantsEnumerator;
-    int _deviceID;
-    struct { int x1; long x2; long x3; char *x4; int x5; long x6; long x7; int x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct _telldir {} *x10; } *_dir;
-    unsigned int _documentID;
-    int _fd;
-    unsigned long long _fileID;
-    unsigned char _finderInfo;
-    unsigned int _flags;
-    unsigned int _fsGenerationID;
-    BRCGenerationID *_generationID;
-    unsigned int _hasFinderTags;
-    unsigned int _isAlias;
-    unsigned int _isBusy;
-    unsigned int _isExcluded;
-    unsigned int _isInPackage;
-    unsigned int _isPackageRoot;
-    unsigned short _mode;
+    }  _birthtime;
+    BRCBookmark * _bookmark;
+    NSDirectoryEnumerator * _descendantsEnumerator;
+    int  _deviceID;
+    struct { int x1; long x2; long x3; char *x4; int x5; long x6; long x7; int x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct _telldir {} *x10; } * _dir;
+    unsigned int  _documentID;
+    int  _fd;
+    unsigned long long  _fileID;
+    unsigned char  _finderInfo;
+    unsigned int  _flags;
+    unsigned int  _fsGenerationID;
+    BRCGenerationID * _generationID;
+    unsigned int  _hasFinderTags;
+    unsigned int  _isAlias;
+    unsigned int  _isBundle;
+    unsigned int  _isBusy;
+    unsigned int  _isExcluded;
+    unsigned int  _isInPackage;
+    unsigned int  _isPackageRoot;
+    unsigned char  _itemScope;
+    unsigned short  _mode;
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
-    } _mtime;
+    }  _mtime;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } _mutex;
-    unsigned int _nlink;
-    int _openRefCount;
-    unsigned long long _parentFileID;
-    unsigned int _qtnResolved;
-    NSData *_quarantineInfo;
-    unsigned int _readFault;
-    NSString *_relativePath;
-    BRCServerZone *_serverZone;
-    BRCAccountSession *_session;
-    BRCItemID *_sharedItemID;
-    NSString *_sharedOwnerName;
-    long long _size;
-    NSString *_symlinkContent;
-    unsigned short _type;
-    NSNumber *_volumeID;
+    }  _mutex;
+    unsigned int  _nlink;
+    int  _openRefCount;
+    unsigned long long  _parentFileID;
+    unsigned int  _qtnResolved;
+    NSData * _quarantineInfo;
+    unsigned int  _readFault;
+    NSString * _relativePath;
+    BRCServerZone * _serverZone;
+    BRCAccountSession * _session;
+    BRCItemID * _sharedItemID;
+    NSString * _sharedOwnerName;
+    long long  _size;
+    NSString * _symlinkContent;
+    unsigned short  _type;
 }
 
 @property (nonatomic, readonly) NSString *absolutePath;
@@ -70,6 +71,7 @@
 @property (nonatomic, readonly) BOOL hasFinderTags;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isAlias;
+@property (nonatomic, readonly) BOOL isBundle;
 @property (nonatomic, readonly) BOOL isBusy;
 @property (nonatomic, readonly) BOOL isDocument;
 @property (nonatomic, readonly) BOOL isExcluded;
@@ -84,6 +86,8 @@
 @property (nonatomic, readonly) BOOL isSymLink;
 @property (nonatomic, readonly) BOOL isUnixDir;
 @property (nonatomic, readonly) BOOL isWritable;
+@property (nonatomic, readonly) unsigned char itemScope;
+@property (nonatomic, readonly) NSString *logicalName;
 @property (nonatomic, readonly) long modificationTime;
 @property (nonatomic, readonly) unsigned long long parentFileID;
 @property (readonly) unsigned int parentHash;
@@ -99,7 +103,6 @@
 @property (nonatomic, readonly) NSString *symlinkContent;
 @property (nonatomic, readonly) unsigned short type;
 @property (nonatomic, readonly) NSURL *url;
-@property (nonatomic, readonly) NSNumber *volumeID;
 
 + (int)locateByFileID:(unsigned long long)arg1 zone:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -144,6 +147,7 @@
 - (id)initWithPath:(id)arg1 zone:(id)arg2;
 - (id)initWithRootPath:(id)arg1 session:(id)arg2;
 - (BOOL)isAlias;
+- (BOOL)isBundle;
 - (BOOL)isBusy;
 - (BOOL)isDocument;
 - (BOOL)isEqual:(id)arg1;
@@ -161,6 +165,8 @@
 - (BOOL)isSymLink;
 - (BOOL)isUnixDir;
 - (BOOL)isWritable;
+- (unsigned char)itemScope;
+- (id)logicalName;
 - (id)logicalURLWithLogicalName:(id)arg1;
 - (long)modificationTime;
 - (id)nextChild;
@@ -188,6 +194,5 @@
 - (id)symlinkContent;
 - (unsigned short)type;
 - (id)url;
-- (id)volumeID;
 
 @end

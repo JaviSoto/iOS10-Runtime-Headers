@@ -6,10 +6,10 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _bestSize;
-    BOOL _precomposed;
-    BOOL _siteWide;
-    NSURL *_url;
+    }  _bestSize;
+    BOOL  _precomposed;
+    BOOL  _siteWide;
+    NSURL * _url;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } bestSize;
@@ -17,9 +17,9 @@
 @property (getter=isSiteWide, nonatomic) BOOL siteWide;
 @property (nonatomic, retain) NSURL *url;
 
+- (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })bestSize;
 - (int)compare:(id)arg1 preferringDeviceIconSizes:(BOOL)arg2;
-- (void)dealloc;
 - (BOOL)isPrecomposed;
 - (BOOL)isSiteWide;
 - (void)setBestSize:(struct CGSize { float x1; float x2; })arg1;

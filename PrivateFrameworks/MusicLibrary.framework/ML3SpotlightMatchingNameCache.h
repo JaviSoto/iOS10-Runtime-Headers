@@ -3,9 +3,9 @@
  */
 
 @interface ML3SpotlightMatchingNameCache : NSObject {
-    BOOL _idle;
-    ML3MusicLibrary *_library;
-    NSString *_matchString;
+    BOOL  _idle;
+    ML3MusicLibrary * _library;
+    NSString * _matchString;
     struct unordered_set<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { 
         struct __hash_table<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { 
             struct unique_ptr<std::__1::__hash_node<long long, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { 
@@ -30,7 +30,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _matchingSet;
+    }  _matchingSet;
 }
 
 + (void)initialize;

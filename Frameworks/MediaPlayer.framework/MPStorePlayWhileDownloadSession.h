@@ -3,10 +3,10 @@
  */
 
 @interface MPStorePlayWhileDownloadSession : NSObject <NSCopying> {
-    NSURL *_destinationURL;
-    unsigned long long _downloadToken;
-    NSDictionary *_purchaseBundle;
-    NSURL *_sourceURL;
+    NSURL * _destinationURL;
+    unsigned long long  _downloadToken;
+    NSDictionary * _purchaseBundle;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic, copy) NSURL *destinationURL;

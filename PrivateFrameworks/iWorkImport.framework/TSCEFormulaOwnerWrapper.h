@@ -3,7 +3,7 @@
  */
 
 @interface TSCEFormulaOwnerWrapper : NSObject <NSCopying> {
-    struct __CFUUID { } *mOwner;
+    struct __CFUUID { } * mOwner;
 }
 
 @property (readonly) struct __CFUUID { }*ownerID;

@@ -3,8 +3,8 @@
  */
 
 @interface AVAssetWriterInputGroupInternal : NSObject {
-    AVAssetWriterInput *defaultInput;
-    NSArray *inputs;
+    AVAssetWriterInput * defaultInput;
+    NSArray * inputs;
 }
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CKDPPkiRetrieveRequest : PBRequest <NSCopying> {
-    NSMutableArray *_userIds;
+    NSMutableArray * _userIds;
 }
 
 @property (nonatomic, retain) NSMutableArray *userIds;

@@ -3,35 +3,39 @@
  */
 
 @interface BLTRemoteObject : NSObject <IDSServiceDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    IDSDevice *_defaultPairedDevice;
-    BOOL _full;
-    NSObject<OS_dispatch_queue> *_idsQueue;
-    NSMutableDictionary *_idsRequestMessageTypeToSelector;
-    NSMutableDictionary *_idsSendIDToCompletionHandler;
-    NSMutableDictionary *_idsSendIDToResponseHandler;
-    BLTPBProtobufSequenceNumberManager *_sequenceNumberManager;
-    NSLock *_sequenceNumberSendLock;
-    IDSService *_service;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <BLTAbstractIDSDevice> * _defaultPairedDevice;
+    BOOL  _full;
+    NSObject<OS_dispatch_queue> * _idsQueue;
+    NSMutableDictionary * _idsRequestMessageTypeToSelector;
+    NSMutableDictionary * _idsSendIDToCompletionHandler;
+    NSMutableDictionary * _idsSendIDToResponseHandler;
+    BLTPBProtobufSequenceNumberManager * _sequenceNumberManager;
+    NSLock * _sequenceNumberSendLock;
+    <BLTAbstractIDSService> * _service;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) IDSDevice *defaultPairedDevice;
+@property (nonatomic, readonly) <BLTAbstractIDSDevice> *defaultPairedDevice;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BLTPBProtobufSequenceNumberManager *sequenceNumberManager;
-@property (nonatomic, readonly) IDSService *service;
+@property (nonatomic, readonly) <BLTAbstractIDSService> *service;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
 - (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
+- (void)_setStandaloneTestModeEnabled:(BOOL)arg1;
 - (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(int)arg3;
 - (id)clientQueue;
 - (unsigned int)connectionStatus;
 - (void)dealloc;
 - (id)defaultPairedDevice;
+- (void)disableStandaloneTestMode;
+- (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned int)arg1 maximumSendDelay:(unsigned int)arg2 minimumResponseDelay:(unsigned int)arg3 maximumResponseDelay:(unsigned int)arg4;
 - (void)handleAckInitialSequenceNumberRequest:(id)arg1;
 - (void)handleIncomingMessage:(id)arg1;
 - (bool)hasSentUDID;

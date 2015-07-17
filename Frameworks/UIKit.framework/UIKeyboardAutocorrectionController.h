@@ -3,10 +3,10 @@
  */
 
 @interface UIKeyboardAutocorrectionController : NSObject {
-    TIAutocorrectionList *_autocorrectionList;
-    BOOL _deferredAutocorrection;
-    BOOL _needsAutocorrection;
-    BOOL _requestedAutocorrection;
+    TIAutocorrectionList * _autocorrectionList;
+    BOOL  _deferredAutocorrection;
+    BOOL  _needsAutocorrection;
+    BOOL  _requestedAutocorrection;
 }
 
 @property (nonatomic, readonly) TIKeyboardCandidate *autocorrection;

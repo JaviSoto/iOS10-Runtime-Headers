@@ -3,7 +3,7 @@
  */
 
 @interface CUIImage : NSObject <NSCopying> {
-    struct CGImage { } *_cgImage;
+    struct CGImage { } * _cgImage;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*image;

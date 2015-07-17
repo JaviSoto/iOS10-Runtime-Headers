@@ -3,13 +3,13 @@
  */
 
 @interface BBActionResponse : NSObject <NSSecureCoding> {
-    NSString *_actionID;
-    int _actionType;
-    NSString *_bulletinButtonID;
-    NSDictionary *_bulletinContext;
-    NSString *_bulletinPublisherID;
-    NSString *_bulletinRecordID;
-    NSDictionary *_context;
+    NSString * _actionID;
+    int  _actionType;
+    NSString * _bulletinButtonID;
+    NSDictionary * _bulletinContext;
+    NSString * _bulletinPublisherID;
+    NSString * _bulletinRecordID;
+    NSDictionary * _context;
 }
 
 @property (nonatomic, copy) NSString *actionID;

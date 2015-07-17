@@ -3,8 +3,8 @@
  */
 
 @interface TRAdvertisingInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSData *_pairingPublicKey;
-    NSData *_wirelessProximityIdentifier;
+    NSData * _pairingPublicKey;
+    NSData * _wirelessProximityIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSData *pairingPublicKey;

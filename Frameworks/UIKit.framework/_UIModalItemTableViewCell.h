@@ -3,11 +3,11 @@
  */
 
 @interface _UIModalItemTableViewCell : UITableViewCell {
-    UIView *_fullWidthSeparatorView;
-    UIColor *_fullWitdhSeparatorColor;
-    BOOL _isEnabled;
-    BOOL _showFullWidthSeparator;
-    UIView *_topSeparatorView;
+    UIView * _fullWidthSeparatorView;
+    UIColor * _fullWitdhSeparatorColor;
+    BOOL  _isEnabled;
+    BOOL  _showFullWidthSeparator;
+    UIView * _topSeparatorView;
 }
 
 @property (nonatomic, retain) UIColor *fullWidthSeparatorColor;

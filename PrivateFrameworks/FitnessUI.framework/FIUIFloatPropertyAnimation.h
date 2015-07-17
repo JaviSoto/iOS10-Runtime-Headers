@@ -3,15 +3,16 @@
  */
 
 @interface FIUIFloatPropertyAnimation : FIUIPropertyAnimation {
-    float _currentValue;
-    float _endValue;
-    float _startValue;
+    float  _currentValue;
+    float  _endValue;
+    float  _startValue;
 }
 
 @property (nonatomic, readonly) float currentValue;
 @property (nonatomic, readonly) float endValue;
 @property (nonatomic, readonly) float startValue;
 
++ (id)animationWithEndingFloatValue:(float)arg1 duration:(double)arg2 customTimingFunction:(id /* block */)arg3 completion:(id /* block */)arg4;
 + (id)animationWithEndingFloatValue:(float)arg1 duration:(double)arg2 timingFunction:(id)arg3 completion:(id /* block */)arg4;
 
 - (id)_currentValue;

@@ -3,11 +3,11 @@
  */
 
 @interface FudInternalConnection : NSObject <FudConnection> {
-    NSString *clientIdentifier;
-    BOOL didStop;
-    NSObject<OS_dispatch_queue> *handlerQueue;
-    id /* block */ messageHandler;
-    NSMutableDictionary *pendingRequests;
+    NSString * clientIdentifier;
+    BOOL  didStop;
+    NSObject<OS_dispatch_queue> * handlerQueue;
+    id /* block */  messageHandler;
+    NSMutableDictionary * pendingRequests;
 }
 
 @property (readonly, copy) NSString *debugDescription;

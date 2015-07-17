@@ -3,17 +3,17 @@
  */
 
 @interface SKUISearchFieldController : NSObject <SKUITrendingSearchPageViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSString *_baseHintsURLString;
-    SKUIClientContext *_clientContext;
-    SKUICompletionList *_completionList;
-    <SKUISearchFieldDelegate> *_delegate;
-    SSVLoadURLOperation *_loadOperation;
-    int _numberOfSearchResults;
-    NSOperationQueue *_operationQueue;
-    SKUISearchBar *_searchBar;
-    NSString *_searchBarAccessoryText;
-    SKUISearchDisplayController *_searchDisplayController;
-    NSString *_trendingSearchURLString;
+    NSString * _baseHintsURLString;
+    SKUIClientContext * _clientContext;
+    SKUICompletionList * _completionList;
+    <SKUISearchFieldDelegate> * _delegate;
+    SSVLoadURLOperation * _loadOperation;
+    int  _numberOfSearchResults;
+    NSOperationQueue * _operationQueue;
+    SKUISearchBar * _searchBar;
+    NSString * _searchBarAccessoryText;
+    SKUISearchDisplayController * _searchDisplayController;
+    NSString * _trendingSearchURLString;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

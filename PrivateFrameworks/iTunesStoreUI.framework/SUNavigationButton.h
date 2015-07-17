@@ -3,13 +3,13 @@
  */
 
 @interface SUNavigationButton : UINavigationButton {
-    UIView *_accessoryView;
+    UIView * _accessoryView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _accessoryViewInsets;
+    }  _accessoryViewInsets;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;

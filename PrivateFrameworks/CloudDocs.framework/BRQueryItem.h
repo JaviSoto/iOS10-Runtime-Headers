@@ -3,10 +3,11 @@
  */
 
 @interface BRQueryItem : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableDictionary *_attrs;
-    NSString *_containerID;
-    unsigned short _diffs;
-    NSNumber *_fileObjectID;
+    NSMutableDictionary * _attrs;
+    NSNumber * _btime;
+    NSString * _containerID;
+    unsigned short  _diffs;
+    NSNumber * _fileObjectID;
     union { 
         struct { 
             unsigned int downloadStatus : 2; 
@@ -20,22 +21,24 @@
             unsigned int isDownloadRequested : 1; 
             unsigned int isAlias : 1; 
             unsigned int shareOptions : 3; 
+            unsigned int isHiddenExt : 1; 
         } ; 
-        unsigned short value; 
-    } _flags;
-    BOOL _isNetworkOffline;
-    NSURL *_localRepresentationURL;
-    long long _logicalHandle;
-    NSString *_logicalName;
-    NSNumber *_mtime;
-    NSString *_parentPath;
-    long long _physicalHandle;
-    NSString *_physicalName;
-    id _replacement;
-    NSNumber *_size;
-    NSURL *_url;
+        unsigned int value; 
+    }  _flags;
+    BOOL  _isNetworkOffline;
+    NSURL * _localRepresentationURL;
+    long long  _logicalHandle;
+    NSString * _logicalName;
+    NSNumber * _mtime;
+    NSString * _parentPath;
+    long long  _physicalHandle;
+    NSString * _physicalName;
+    id  _replacement;
+    NSNumber * _size;
+    NSURL * _url;
 }
 
+@property (nonatomic, readonly) NSNumber *btime;
 @property (nonatomic, readonly) NSString *containerID;
 @property (nonatomic, readonly) unsigned short diffs;
 @property (nonatomic, readonly) unsigned int downloadStatus;
@@ -77,6 +80,7 @@
 - (id)attributeForName:(id)arg1;
 - (id)attributeNames;
 - (id)attributesForNames:(id)arg1;
+- (id)btime;
 - (BOOL)canMerge:(id)arg1;
 - (void)clearDiffs;
 - (id)containerID;
@@ -88,6 +92,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileObjectID;
 - (BOOL)hasTransferStatuses;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithQueryItem:(id)arg1;
 - (BOOL)isAlias;
@@ -98,6 +103,7 @@
 - (BOOL)isDownloadRequested;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToQueryItem:(id)arg1;
+- (BOOL)isHiddenExt;
 - (BOOL)isInTransfer;
 - (BOOL)isLive;
 - (BOOL)isNetworkOffline;

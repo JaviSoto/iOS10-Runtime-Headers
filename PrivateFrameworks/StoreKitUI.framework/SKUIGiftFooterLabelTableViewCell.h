@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftFooterLabelTableViewCell : UITableViewCell {
-    UILabel *_footerLabel;
+    UILabel * _footerLabel;
 }
 
 @property (nonatomic, copy) NSString *footerLabel;

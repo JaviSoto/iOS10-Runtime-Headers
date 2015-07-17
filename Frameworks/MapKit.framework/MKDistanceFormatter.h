@@ -3,9 +3,9 @@
  */
 
 @interface MKDistanceFormatter : NSFormatter {
-    NSLocale *_locale;
-    unsigned int _unitStyle;
-    unsigned int _units;
+    NSLocale * _locale;
+    unsigned int  _unitStyle;
+    unsigned int  _units;
 }
 
 @property (nonatomic, copy) NSLocale *locale;

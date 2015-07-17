@@ -3,9 +3,9 @@
  */
 
 @interface SUItemList : NSObject <NSCopying> {
-    NSMutableArray *_groups;
-    NSDictionary *_hintText;
-    BOOL _ignoresEmptySections;
+    NSMutableArray * _groups;
+    NSDictionary * _hintText;
+    BOOL  _ignoresEmptySections;
 }
 
 @property (nonatomic) BOOL ignoresEmptySections;

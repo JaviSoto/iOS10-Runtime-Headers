@@ -3,7 +3,7 @@
  */
 
 @interface _UIAttributedStringView : UIView {
-    NSAttributedString *_string;
+    NSAttributedString * _string;
 }
 
 + (Class)layerClass;

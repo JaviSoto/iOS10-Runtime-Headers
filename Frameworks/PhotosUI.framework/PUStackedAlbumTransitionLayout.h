@@ -6,31 +6,31 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _currentCollapsedStackCenter;
-    PUCollectionViewLayoutCache *_currentLayoutCache;
-    BOOL _didPrepareLayout;
+    }  _currentCollapsedStackCenter;
+    PUCollectionViewLayoutCache * _currentLayoutCache;
+    BOOL  _didPrepareLayout;
     struct CGPoint { 
         float x; 
         float y; 
-    } _expandedStackDelta;
+    }  _expandedStackDelta;
     struct CGPoint { 
         float x; 
         float y; 
-    } _expandedStackFinalDelta;
+    }  _expandedStackFinalDelta;
     struct CGPoint { 
         float x; 
         float y; 
-    } _finalCollapsedStackCenter;
+    }  _finalCollapsedStackCenter;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialCollapsedStackCenter;
+    }  _initialCollapsedStackCenter;
     struct CGPoint { 
         float x; 
         float y; 
-    } _interactionOffset;
-    BOOL _isExpanding;
-    PUCollectionViewLayoutCache *_nextLayoutCache;
+    }  _interactionOffset;
+    BOOL  _isExpanding;
+    PUCollectionViewLayoutCache * _nextLayoutCache;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } currentCollapsedStackCenter;

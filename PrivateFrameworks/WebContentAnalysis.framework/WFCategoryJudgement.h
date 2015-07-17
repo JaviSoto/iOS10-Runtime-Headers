@@ -3,8 +3,8 @@
  */
 
 @interface WFCategoryJudgement : NSObject {
-    long category;
-    float score;
+    long  category;
+    float  score;
 }
 
 + (id)categoryJudgementWithCategory:(long)arg1 score:(float)arg2;

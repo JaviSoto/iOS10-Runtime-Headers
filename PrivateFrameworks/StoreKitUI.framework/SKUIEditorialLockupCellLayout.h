@@ -8,16 +8,16 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    SKUIEditorialCellLayout *_editorialCellLayout;
-    UIView *_editorialContainerView;
-    float _editorialHeight;
-    int _layoutStyle;
-    SKUILockupItemCellLayout *_lockupLayout;
-    SKUICellLayoutView *_lockupView;
-    UIColor *_offerNoticeTextColor;
-    SKUITextBoxView *_textBoxView;
-    unsigned int _visibleFields;
+    }  _contentInsets;
+    SKUIEditorialCellLayout * _editorialCellLayout;
+    UIView * _editorialContainerView;
+    float  _editorialHeight;
+    int  _layoutStyle;
+    SKUILockupItemCellLayout * _lockupLayout;
+    SKUICellLayoutView * _lockupView;
+    UIColor * _offerNoticeTextColor;
+    SKUITextBoxView * _textBoxView;
+    unsigned int  _visibleFields;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;

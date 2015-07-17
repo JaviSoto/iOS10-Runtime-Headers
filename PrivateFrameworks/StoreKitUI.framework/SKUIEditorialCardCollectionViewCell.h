@@ -3,12 +3,12 @@
  */
 
 @interface SKUIEditorialCardCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIPerspectiveView, SKUIViewElementView> {
-    NSMutableArray *_allLockupViews;
+    NSMutableArray * _allLockupViews;
     struct CGSize { 
         float width; 
         float height; 
-    } _primaryLockupSize;
-    SKUIVerticalLockupView *_primaryLockupView;
+    }  _primaryLockupSize;
+    SKUIVerticalLockupView * _primaryLockupView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface VKCameraController : NSObject {
-    VKCamera *_camera;
-    <MDRenderTarget> *_canvas;
-    <VKCameraControllerDelegate> *_delegate;
-    BOOL _gesturing;
-    BOOL _inProgressRegionChangeIsAnimated;
-    unsigned int _regionChangeCount;
+    VKCamera * _camera;
+    <MDRenderTarget> * _canvas;
+    <VKCameraControllerDelegate> * _delegate;
+    BOOL  _gesturing;
+    BOOL  _inProgressRegionChangeIsAnimated;
+    unsigned int  _regionChangeCount;
 }
 
 @property (getter=isAnimating, nonatomic, readonly) BOOL animating;

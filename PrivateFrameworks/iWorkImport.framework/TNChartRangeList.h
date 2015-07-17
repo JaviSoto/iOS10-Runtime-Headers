@@ -3,8 +3,8 @@
  */
 
 @interface TNChartRangeList : NSObject {
-    struct TNChartRangeNode { struct TNChartRangeNode {} *x1; struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_2_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_2_1_2; } x2; } *mNodeList;
-    struct __CFUUID { } *mTableID;
+    struct TNChartRangeNode { struct TNChartRangeNode {} *x1; struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_2_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_2_1_2; } x2; } * mNodeList;
+    struct __CFUUID { } * mTableID;
     struct TSCERangeCoordinate { 
         struct { 
             unsigned short row; 
@@ -16,8 +16,8 @@
             unsigned char column; 
             unsigned char reserved; 
         } mBottomRight; 
-    } mUnionRange;
-    BOOL mUnionRangeValid;
+    }  mUnionRange;
+    BOOL  mUnionRangeValid;
 }
 
 @property (nonatomic, readonly) struct __CFUUID { }*tableID;

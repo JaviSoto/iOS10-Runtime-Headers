@@ -6,9 +6,9 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int transactionLogCount : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    unsigned int _transactionLogCount;
+    }  _has;
+    unsigned long long  _timestamp;
+    unsigned int  _transactionLogCount;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

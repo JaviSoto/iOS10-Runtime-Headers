@@ -3,10 +3,10 @@
  */
 
 @interface KeychainSyncCountryInfo : NSObject <NSCopying> {
-    NSString *_countryCode;
-    NSString *_countryName;
-    NSString *_dialingPrefix;
-    NSString *_localizedCountryName;
+    NSString * _countryCode;
+    NSString * _countryName;
+    NSString * _dialingPrefix;
+    NSString * _localizedCountryName;
 }
 
 @property (nonatomic, retain) NSString *countryCode;
@@ -19,10 +19,10 @@
 + (id)countryInfoForCountryCode:(id)arg1 dialingPrefix:(id)arg2;
 + (id)countryInfoWithDictionary:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)countryCode;
 - (id)countryName;
-- (void)dealloc;
 - (id)description;
 - (id)dialingPrefix;
 - (BOOL)isEqual:(id)arg1;

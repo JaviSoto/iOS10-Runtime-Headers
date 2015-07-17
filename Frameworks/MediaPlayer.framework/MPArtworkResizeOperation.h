@@ -3,16 +3,16 @@
  */
 
 @interface MPArtworkResizeOperation : NSOperation {
-    NSURL *_destinationURL;
-    NSError *_error;
-    UIImage *_image;
-    NSObject<OS_dispatch_group> *_operationGroup;
-    UIImage *_resizedImage;
+    NSURL * _destinationURL;
+    NSError * _error;
+    UIImage * _image;
+    NSObject<OS_dispatch_group> * _operationGroup;
+    UIImage * _resizedImage;
     struct CGSize { 
         float width; 
         float height; 
-    } _scaledFittingSize;
-    BOOL _usesExactFittingSizeAsDestinationSize;
+    }  _scaledFittingSize;
+    BOOL  _usesExactFittingSizeAsDestinationSize;
 }
 
 @property (nonatomic, readonly) NSURL *destinationURL;
@@ -28,6 +28,7 @@
 - (id)destinationURL;
 - (id)error;
 - (id)image;
+- (id)init;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 destinationURL:(id)arg3;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 useExactFittingSizeAsDestinationSize:(BOOL)arg3 destinationURL:(id)arg4;

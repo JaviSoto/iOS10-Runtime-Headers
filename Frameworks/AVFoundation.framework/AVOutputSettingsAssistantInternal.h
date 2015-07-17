@@ -3,22 +3,22 @@
  */
 
 @interface AVOutputSettingsAssistantInternal : NSObject {
-    <AVOutputSettingsAssistantBaseSettingsProvider> *baseSettingsProvider;
-    struct opaqueCMFormatDescription { } *sourceAudioFormat;
+    <AVOutputSettingsAssistantBaseSettingsProvider> * baseSettingsProvider;
+    struct opaqueCMFormatDescription { } * sourceAudioFormat;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } sourceVideoAverageFrameDuration;
-    struct opaqueCMFormatDescription { } *sourceVideoFormat;
+    }  sourceVideoAverageFrameDuration;
+    struct opaqueCMFormatDescription { } * sourceVideoFormat;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } sourceVideoMinFrameDuration;
-    <AVOutputSettingsAssistantVideoSettingsAdjuster> *videoSettingsAdjuster;
+    }  sourceVideoMinFrameDuration;
+    <AVOutputSettingsAssistantVideoSettingsAdjuster> * videoSettingsAdjuster;
 }
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DPrefilteredLineRendererRenderCacheObject : TSCH3DSceneRenderCacheObject {
-    BOOL mDidRenderOnce;
-    TSCH3DStrokePatternTexture *mStrokeTexture;
+    BOOL  mDidRenderOnce;
+    TSCH3DStrokePatternTexture * mStrokeTexture;
 }
 
 @property (nonatomic) BOOL didRenderOnce;

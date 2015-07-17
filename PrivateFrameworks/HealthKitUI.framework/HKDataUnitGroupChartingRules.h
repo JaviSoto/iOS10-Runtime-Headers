@@ -3,21 +3,23 @@
  */
 
 @interface HKDataUnitGroupChartingRules : NSObject {
-    int _defaultChartStyle;
-    int _defaultStyle;
-    NSArray *_defaultYAxisChartBoundsRules;
-    NSDictionary *_defaultYAxisChartBoundsRulesByUnit;
-    NSMutableDictionary *_rulesByTimeScope;
-    BOOL _shouldAllowDecimalPrecision;
-    BOOL _shouldHideAverageLine;
-    BOOL _shouldOverrideMinYValue;
-    BOOL _shouldPadMinMaxValues;
-    BOOL _shouldStartDayAtNoon;
+    int  _defaultChartStyle;
+    int  _defaultStyle;
+    NSArray * _defaultYAxisChartBoundsRules;
+    NSDictionary * _defaultYAxisChartBoundsRulesByUnit;
+    HKQuantity * _interactiveChartsMinimumAxisRange;
+    NSMutableDictionary * _rulesByTimeScope;
+    BOOL  _shouldAllowDecimalPrecision;
+    BOOL  _shouldHideAverageLine;
+    BOOL  _shouldOverrideMinYValue;
+    BOOL  _shouldPadMinMaxValues;
+    BOOL  _shouldStartDayAtNoon;
 }
 
 @property (nonatomic, readonly) int defaultChartStyle;
 @property (nonatomic, retain) NSArray *defaultYAxisChartBoundsRules;
 @property (nonatomic, retain) NSDictionary *defaultYAxisChartBoundsRulesByUnit;
+@property (nonatomic, retain) HKQuantity *interactiveChartsMinimumAxisRange;
 @property (nonatomic) BOOL shouldAllowDecimalPrecision;
 @property (nonatomic) BOOL shouldHideAverageLine;
 @property (nonatomic) BOOL shouldOverrideMinYValue;
@@ -36,12 +38,14 @@
 - (id)defaultYAxisChartBoundsRulesByUnit;
 - (id)defaultYAxisChartBoundsRulesForUnit:(id)arg1;
 - (id)initWithDefaultChartStyle:(int)arg1;
+- (id)interactiveChartsMinimumAxisRange;
 - (id)intervalComponentsForTimeScope:(int)arg1;
 - (void)setChartPointLineWidth:(float)arg1 forTimeScope:(int)arg2;
 - (void)setChartPointRadius:(float)arg1 forTimeScope:(int)arg2;
 - (void)setChartStyle:(int)arg1 forTimeScope:(int)arg2;
 - (void)setDefaultYAxisChartBoundsRules:(id)arg1;
 - (void)setDefaultYAxisChartBoundsRulesByUnit:(id)arg1;
+- (void)setInteractiveChartsMinimumAxisRange:(id)arg1;
 - (void)setIntervalComponents:(id)arg1 forTimeScope:(int)arg2;
 - (void)setShouldAllowDecimalPrecision:(BOOL)arg1;
 - (void)setShouldHideAverageLine:(BOOL)arg1;

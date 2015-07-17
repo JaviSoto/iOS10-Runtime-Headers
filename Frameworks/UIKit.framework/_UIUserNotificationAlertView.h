@@ -3,15 +3,17 @@
  */
 
 @interface _UIUserNotificationAlertView : UIAlertView {
-    BOOL _runningModal;
-    BOOL _runsModal;
-    id _strongDelegate;
-    struct __CFUserNotification { } *_userNotification;
-    struct __CFRunLoopSource { } *_userNotificationRunLoopSource;
+    id  _retainedSelf;
+    BOOL  _runningModal;
+    BOOL  _runsModal;
+    id  _strongDelegate;
+    struct __CFUserNotification { } * _userNotification;
+    struct __CFRunLoopSource { } * _userNotificationRunLoopSource;
 }
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_cancelUserNotification;
 - (void)_removeObservervations;
 - (int)addButtonWithTitle:(id)arg1;

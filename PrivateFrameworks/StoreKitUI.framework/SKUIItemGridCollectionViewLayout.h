@@ -3,9 +3,9 @@
  */
 
 @interface SKUIItemGridCollectionViewLayout : UICollectionViewFlowLayout {
-    UIColor *_evenColor;
-    int _numberOfColumns;
-    UIColor *_oddColor;
+    UIColor * _evenColor;
+    int  _numberOfColumns;
+    UIColor * _oddColor;
 }
 
 @property (nonatomic, copy) UIColor *evenRowBackgroundColor;

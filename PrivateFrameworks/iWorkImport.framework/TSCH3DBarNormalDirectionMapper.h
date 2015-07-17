@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DBarNormalDirectionMapper : TSCH3DNormalDirectionMapper {
-    int mBeginLimit;
-    int mCrossSectionCount;
-    int mEndLimit;
-    int mSpineCount;
-    int mWallOffset;
+    int  mBeginLimit;
+    int  mCrossSectionCount;
+    int  mEndLimit;
+    int  mSpineCount;
+    int  mWallOffset;
 }
 
 - (id)initWithWallOffset:(int)arg1 crossSectionCount:(int)arg2 spineCount:(int)arg3 beginLimit:(int)arg4 endLimit:(int)arg5;

@@ -3,13 +3,13 @@
  */
 
 @interface _UISearchPresentationController : UIPresentationController <_UISearchControllerPresenting> {
-    _UISearchPresentationAssistant *_assistant;
+    _UISearchPresentationAssistant * _assistant;
     struct { 
         unsigned int searchBarWasTableHeaderView : 1; 
         unsigned int excisedSearchBarDuringPresentation : 1; 
         unsigned int searchBarWantedAutolayoutBeforeExcision : 1; 
-    } _controllerFlags;
-    NSMapTable *_excisedSearchBarConstraitMap;
+    }  _controllerFlags;
+    NSMapTable * _excisedSearchBarConstraitMap;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,9 +19,9 @@
             float width; 
             float height; 
         } size; 
-    } _finalFrameForContainerView;
-    NSMapTable *_placeholderConstraitMap;
-    UIView *_placeholderView;
+    }  _finalFrameForContainerView;
+    NSMapTable * _placeholderConstraitMap;
+    UIView * _placeholderView;
 }
 
 @property (nonatomic, readonly) UIPresentationController<_UISearchControllerPresenting> *adaptivePresentationController;
@@ -30,7 +30,10 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float resultsControllerContentOffset;
+@property (nonatomic, readonly) BOOL resultsUnderlapsSearchBar;
+@property (nonatomic, readonly) BOOL searchBarCanContainScopeBar;
 @property (nonatomic, readonly, retain) UIView *searchBarContainerView;
+@property (nonatomic, readonly) BOOL searchBarShouldClipToBounds;
 @property (nonatomic, readonly) BOOL searchBarToBecomeTopAttached;
 @property (nonatomic, readonly) BOOL shouldAccountForStatusBar;
 @property (nonatomic, readonly) float statusBarAdjustment;
@@ -63,7 +66,10 @@
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 - (float)resultsControllerContentOffset;
+- (BOOL)resultsUnderlapsSearchBar;
+- (BOOL)searchBarCanContainScopeBar;
 - (id)searchBarContainerView;
+- (BOOL)searchBarShouldClipToBounds;
 - (BOOL)searchBarToBecomeTopAttached;
 - (void)setContentVisible:(BOOL)arg1;
 - (BOOL)shouldAccountForStatusBar;

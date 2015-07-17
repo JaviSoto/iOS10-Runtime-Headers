@@ -3,7 +3,7 @@
  */
 
 @interface GKFriendRecommendationCell : GKBasePlayerCell {
-    UILabel *_reasonLabel;
+    UILabel * _reasonLabel;
 }
 
 @property (nonatomic, retain) UILabel *reasonLabel;

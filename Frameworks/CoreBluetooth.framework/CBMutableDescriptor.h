@@ -3,7 +3,7 @@
  */
 
 @interface CBMutableDescriptor : CBDescriptor {
-    NSNumber *_ID;
+    NSNumber * _ID;
 }
 
 @property (retain) NSNumber *ID;

@@ -3,8 +3,8 @@
  */
 
 @interface TSPDirectoryPackageWriter : TSPPackageWriter {
-    NSObject<OS_dispatch_queue> *_componentFileIOQueue;
-    TSPDirectoryPackageDataWriter *_dataWriter;
+    NSObject<OS_dispatch_queue> * _componentFileIOQueue;
+    TSPDirectoryPackageDataWriter * _dataWriter;
 }
 
 - (void).cxx_destruct;

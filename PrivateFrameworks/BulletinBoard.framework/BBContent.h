@@ -3,9 +3,9 @@
  */
 
 @interface BBContent : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_message;
-    NSString *_subtitle;
-    NSString *_title;
+    NSString * _message;
+    NSString * _subtitle;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *message;

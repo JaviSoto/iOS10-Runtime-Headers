@@ -5,9 +5,9 @@
 @interface GEOGeoServiceTag : PBCodable <NSCopying> {
     struct { 
         unsigned int serviceType : 1; 
-    } _has;
-    int _serviceType;
-    NSString *_tag;
+    }  _has;
+    int  _serviceType;
+    NSString * _tag;
 }
 
 @property (nonatomic) BOOL hasServiceType;

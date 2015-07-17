@@ -3,7 +3,7 @@
  */
 
 @interface BRContainerBundleIdentifiersEnumerator : NSEnumerator {
-    NSEnumerator *_enumerator;
+    NSEnumerator * _enumerator;
 }
 
 - (void)dealloc;

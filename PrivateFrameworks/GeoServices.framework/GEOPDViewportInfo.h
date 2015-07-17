@@ -6,10 +6,10 @@
     struct { 
         unsigned int mapMode : 1; 
         unsigned int timeSinceMapViewportChanged : 1; 
-    } _has;
-    int _mapMode;
-    GEOMapRegion *_mapRegion;
-    unsigned int _timeSinceMapViewportChanged;
+    }  _has;
+    int  _mapMode;
+    GEOMapRegion * _mapRegion;
+    unsigned int  _timeSinceMapViewportChanged;
 }
 
 @property (nonatomic) BOOL hasMapMode;

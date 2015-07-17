@@ -3,10 +3,10 @@
  */
 
 @interface SiriUIReusableConfirmationFooterView : SiriUIReusableFooterView {
-    UIButton *_cancelButton;
-    UIButton *_confirmButton;
-    SAUIConfirmationOptions *_confirmationOptions;
-    SiriUIKeyline *_verticalKeyline;
+    UIButton * _cancelButton;
+    UIButton * _confirmButton;
+    SAUIConfirmationOptions * _confirmationOptions;
+    SiriUIKeyline * _verticalKeyline;
 }
 
 @property (nonatomic, readonly) UIButton *cancelButton;

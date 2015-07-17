@@ -3,7 +3,7 @@
  */
 
 @interface SUDialogManager : NSObject <ISSingleton, SUDialogDelegate> {
-    NSMutableArray *_dialogs;
+    NSMutableArray * _dialogs;
 }
 
 @property (readonly, copy) NSString *debugDescription;

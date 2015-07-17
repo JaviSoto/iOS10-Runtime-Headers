@@ -3,8 +3,8 @@
  */
 
 @interface EKEventOrganizerDetailItem : EKEventDetailItem {
-    UITableViewCell *_cell;
-    BOOL _cellNeedsUpdate;
+    UITableViewCell * _cell;
+    BOOL  _cellNeedsUpdate;
 }
 
 - (void).cxx_destruct;

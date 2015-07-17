@@ -3,16 +3,16 @@
  */
 
 @interface UIWebBrowserFindOnPageHighlighter : NSObject <UIWebFindOnPageHighlighter> {
-    UIWebBrowserView *_browserView;
-    <UIWebFindOnPageHighlighterDelegate> *_delegate;
-    NSMutableArray *_highlightBubbleViews;
-    UIView *_highlightHostView;
-    unsigned int _highlightedMatchIndex;
-    unsigned int _numberOfMatches;
-    UIWebPDFViewHandler *_pdfHandler;
-    NSArray *_pdfHighlightViews;
-    NSString *_searchText;
-    BOOL _zoomToHighlightSelection;
+    UIWebBrowserView * _browserView;
+    <UIWebFindOnPageHighlighterDelegate> * _delegate;
+    NSMutableArray * _highlightBubbleViews;
+    UIView * _highlightHostView;
+    unsigned int  _highlightedMatchIndex;
+    unsigned int  _numberOfMatches;
+    UIWebPDFViewHandler * _pdfHandler;
+    NSArray * _pdfHighlightViews;
+    NSString * _searchText;
+    BOOL  _zoomToHighlightSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

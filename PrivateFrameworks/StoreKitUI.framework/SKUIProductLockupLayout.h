@@ -3,14 +3,14 @@
  */
 
 @interface SKUIProductLockupLayout : NSObject {
-    int _bottomLeftLayoutStyle;
-    NSMutableArray *_bottomLeftViewElements;
-    NSMutableArray *_bottomRightViewElements;
-    SKUIViewElementLayoutContext *_layoutContext;
-    NSMutableArray *_middleLeftViewElements;
-    SKUIViewElement *_productImageElement;
-    NSMutableArray *_topLeftViewElements;
-    NSMutableArray *_topRightViewElements;
+    int  _bottomLeftLayoutStyle;
+    NSMutableArray * _bottomLeftViewElements;
+    NSMutableArray * _bottomRightViewElements;
+    SKUIViewElementLayoutContext * _layoutContext;
+    NSMutableArray * _middleLeftViewElements;
+    SKUIViewElement * _productImageElement;
+    NSMutableArray * _topLeftViewElements;
+    NSMutableArray * _topRightViewElements;
 }
 
 @property (nonatomic, readonly) int bottomLeftLayoutStyle;

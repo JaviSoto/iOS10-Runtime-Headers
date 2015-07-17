@@ -3,7 +3,7 @@
  */
 
 @interface GKPlayerInternal : GKInternalRepresentation {
-    NSString *_alias;
+    NSString * _alias;
     union { 
         struct { 
             unsigned int _unused : 8; 
@@ -14,15 +14,15 @@
             unsigned int _reserved : 18; 
         } ; 
         unsigned int _value; 
-    } _flags;
-    unsigned int _numberOfAchievementPoints;
-    unsigned int _numberOfAchievements;
-    unsigned short _numberOfFriends;
-    unsigned short _numberOfFriendsInCommon;
-    unsigned short _numberOfGames;
-    unsigned short _numberOfGamesInCommon;
-    NSDictionary *_photos;
-    NSString *_playerID;
+    }  _flags;
+    unsigned int  _numberOfAchievementPoints;
+    unsigned int  _numberOfAchievements;
+    unsigned short  _numberOfFriends;
+    unsigned short  _numberOfFriendsInCommon;
+    unsigned short  _numberOfGames;
+    unsigned short  _numberOfGamesInCommon;
+    NSDictionary * _photos;
+    NSString * _playerID;
 }
 
 @property (nonatomic, retain) NSString *accountName;
@@ -34,10 +34,12 @@
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, retain) NSArray *friends;
+@property (nonatomic, retain) NSString *guestIdentifier;
 @property (nonatomic, retain) NSNumber *iCloudUserID;
 @property (nonatomic, readonly) BOOL isAnonymousPlayer;
 @property (nonatomic, readonly) BOOL isAutomatchPlayer;
 @property (nonatomic, readonly) BOOL isFriend;
+@property (nonatomic, readonly) BOOL isGuestPlayer;
 @property (nonatomic, readonly) BOOL isLoaded;
 @property (nonatomic, readonly) BOOL isLocalPlayer;
 @property (nonatomic, readonly) BOOL isUnknownPlayer;
@@ -79,6 +81,7 @@
 - (id)firstName;
 - (unsigned int)flags;
 - (id)friends;
+- (id)guestIdentifier;
 - (unsigned int)hash;
 - (id)iCloudUserID;
 - (BOOL)isAnonymousPlayer;
@@ -86,6 +89,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFindable;
 - (BOOL)isFriend;
+- (BOOL)isGuestPlayer;
 - (BOOL)isLoaded;
 - (BOOL)isLocalPlayer;
 - (BOOL)isPhotoPending;

@@ -3,18 +3,18 @@
  */
 
 @interface PUCloudPhotoWelcomeView : UIView {
-    UILabel *_bodyLabel;
-    <PUCloudPhotoWelcomeViewDelegate> *_delegate;
+    UILabel * _bodyLabel;
+    <PUCloudPhotoWelcomeViewDelegate> * _delegate;
     struct { 
         unsigned int delegateRespondsToGoButtonTapped : 1; 
         unsigned int delegateRespondsToLearnMoreTapped : 1; 
-    } _delegateFlags;
-    UILabel *_finePrintLabel;
-    UIButton *_goButton;
-    BOOL _goButtonEnabled;
-    NSLayoutConstraint *_goButtonWidthConstraint;
-    UIImageView *_graphicImageView;
-    UILabel *_titleLabel;
+    }  _delegateFlags;
+    UILabel * _finePrintLabel;
+    UIButton * _goButton;
+    BOOL  _goButtonEnabled;
+    NSLayoutConstraint * _goButtonWidthConstraint;
+    UIImageView * _graphicImageView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UILabel *bodyLabel;
@@ -39,7 +39,6 @@
 - (BOOL)goButtonIsEnabled;
 - (id)graphicImageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setBodyLabel:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface MSPMediaSyncOperation : PBCodable <NSCopying> {
-    MIPAlbum *_album;
-    MIPArtist *_artist;
-    MIPGenre *_genre;
+    MIPAlbum * _album;
+    MIPArtist * _artist;
+    MIPGenre * _genre;
     struct { 
         unsigned int operationType : 1; 
-    } _has;
-    MIPMediaItem *_mediaItem;
-    MIPMultiverseIdentifier *_multiverseId;
-    int _operationType;
-    MIPPlaylist *_playlist;
-    MIPSeries *_series;
+    }  _has;
+    MIPMediaItem * _mediaItem;
+    MIPMultiverseIdentifier * _multiverseId;
+    int  _operationType;
+    MIPPlaylist * _playlist;
+    MIPSeries * _series;
 }
 
 @property (nonatomic, retain) MIPAlbum *album;

@@ -3,8 +3,9 @@
  */
 
 @interface VKGGLTextureManager : NSObject <GEOResourceManifestTileGroupObserver> {
-    struct Device { int (**x1)(); int x2; } *_device;
-    VKResourceManager *_resourceManager;
+    struct Device { int (**x1)(); int x2; } * _device;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    VKResourceManager * _resourceManager;
     struct map<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> > > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> > > > { 
             struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> >, void *> {} *__begin_node_; 
@@ -17,13 +18,12 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _textureDictionary;
-    NSObject<OS_dispatch_queue> *_textureQueue;
-    unsigned int _tileGroupIdentifier;
+    }  _textureDictionary;
+    NSObject<OS_dispatch_queue> * _textureQueue;
     struct shared_ptr<ggl::Texture2D> { 
         struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _whiteTexture;
+    }  _whiteTexture;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,7 +35,7 @@
 - (void).cxx_destruct;
 - (id)dataWithName:(id)arg1 fromResourceManager:(id)arg2;
 - (void)dealloc;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2 device:(struct Device { int (**x1)(); int x2; }*)arg3;
+- (id)initWithConfiguration:(id)arg1 resourceManager:(id)arg2 device:(struct Device { int (**x1)(); int x2; }*)arg3;
 - (void)purge;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

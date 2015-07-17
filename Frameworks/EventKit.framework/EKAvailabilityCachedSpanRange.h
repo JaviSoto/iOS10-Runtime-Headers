@@ -3,7 +3,7 @@
  */
 
 @interface EKAvailabilityCachedSpanRange : NSObject {
-    NSMutableArray *_cachedSpans;
+    NSMutableArray * _cachedSpans;
 }
 
 + (id)_clampDateRangeForSpans:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;

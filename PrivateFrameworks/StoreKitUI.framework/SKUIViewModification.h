@@ -3,9 +3,9 @@
  */
 
 @interface SKUIViewModification : NSObject {
-    NSMapTable *_allViewTextProperties;
-    SKUIViewReusePool *_viewPool;
-    NSMutableArray *_views;
+    NSMapTable * _allViewTextProperties;
+    SKUIViewReusePool * _viewPool;
+    NSMutableArray * _views;
 }
 
 @property (nonatomic, readonly, copy) NSMapTable *allViewTextProperties;

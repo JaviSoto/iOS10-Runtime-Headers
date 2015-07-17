@@ -3,14 +3,14 @@
  */
 
 @interface MusicClientContext : SKUIClientContext {
-    MusicJSNativeViewEventRegistry *_jsNativeViewEventRegistry;
-    MusicJSNowPlayingController *_jsNowPlayingController;
-    MusicJSPlaybackCoordinator *_jsPlaybackCoordinator;
-    MusicJSRecentStationsManager *_jsRecentStationsManager;
-    MusicJSUserInterfaceStatusController *_jsUserInterfaceStatusController;
-    SKUILocalizedStringDictionary *_localizedStrings;
-    RadioRecentStationsController *_recentStationsController;
-    NSDictionary *_updatableLocalizedStrings;
+    MusicJSNativeViewEventRegistry * _jsNativeViewEventRegistry;
+    MusicJSNowPlayingController * _jsNowPlayingController;
+    MusicJSPlaybackCoordinator * _jsPlaybackCoordinator;
+    MusicJSRecentStationsManager * _jsRecentStationsManager;
+    MusicJSUserInterfaceStatusController * _jsUserInterfaceStatusController;
+    SKUILocalizedStringDictionary * _localizedStrings;
+    RadioRecentStationsController * _recentStationsController;
+    NSDictionary * _updatableLocalizedStrings;
 }
 
 @property (nonatomic, readonly) MusicJSNativeViewEventRegistry *jsNativeViewEventRegistry;

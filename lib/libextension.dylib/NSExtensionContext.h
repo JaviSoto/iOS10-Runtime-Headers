@@ -3,15 +3,15 @@
  */
 
 @interface NSExtensionContext : NSObject <NSCopying, NSSecureCoding, NSXPCListenerDelegate, _NSExtensionAuxHostingBase> {
-    NSUUID *__UUID;
-    NSXPCConnection *__auxiliaryConnection;
-    NSXPCListener *__auxiliaryListener;
-    BOOL __dummyExtension;
-    <_NSExtensionContextHosting> *__extensionHostProxy;
-    <_NSExtensionContextVending> *__extensionVendorProxy;
-    id __principalObject;
-    id /* block */ __requestCleanUpBlock;
-    NSArray *_inputItems;
+    NSUUID * __UUID;
+    NSXPCConnection * __auxiliaryConnection;
+    NSXPCListener * __auxiliaryListener;
+    BOOL  __dummyExtension;
+    <_NSExtensionContextHosting> * __extensionHostProxy;
+    <_NSExtensionContextVending> * __extensionVendorProxy;
+    id  __principalObject;
+    id /* block */  __requestCleanUpBlock;
+    NSArray * _inputItems;
 }
 
 @property (nonatomic, copy) NSUUID *_UUID;

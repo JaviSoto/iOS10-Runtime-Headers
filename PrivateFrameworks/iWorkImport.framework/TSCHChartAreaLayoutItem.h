@@ -3,12 +3,12 @@
  */
 
 @interface TSCHChartAreaLayoutItem : TSCH2DChartAbstractAreaLayoutItem {
-    TSCHChartAxisLayoutItem *mBottomHorizontalAxis;
-    BOOL mInOutwardLayout;
-    TSCHChartAxisLayoutItem *mLeftVerticalAxis;
-    unsigned int mRelayoutDepth;
-    TSCHChartAxisLayoutItem *mRightVerticalAxis;
-    TSCHChartAxisLayoutItem *mTopHorizontalAxis;
+    TSCHChartAxisLayoutItem * mBottomHorizontalAxis;
+    BOOL  mInOutwardLayout;
+    TSCHChartAxisLayoutItem * mLeftVerticalAxis;
+    unsigned int  mRelayoutDepth;
+    TSCHChartAxisLayoutItem * mRightVerticalAxis;
+    TSCHChartAxisLayoutItem * mTopHorizontalAxis;
 }
 
 @property (nonatomic, readonly) TSCHChartReferenceLineLabelsLayoutItem *rightRefLineLabels;

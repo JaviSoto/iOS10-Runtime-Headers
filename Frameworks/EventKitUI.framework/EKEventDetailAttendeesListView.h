@@ -3,15 +3,15 @@
  */
 
 @interface EKEventDetailAttendeesListView : UIView {
-    NSArray *_acceptedNames;
-    NSArray *_declinedNames;
-    BOOL _groupsNames;
-    BOOL _highlighted;
-    UIColor *_highlightedTextColor;
-    NSArray *_maybeNames;
-    NSArray *_noReplyNames;
-    UIColor *_textColor;
-    NSArray *_ungroupedNames;
+    NSArray * _acceptedNames;
+    NSArray * _declinedNames;
+    BOOL  _groupsNames;
+    BOOL  _highlighted;
+    UIColor * _highlightedTextColor;
+    NSArray * _maybeNames;
+    NSArray * _noReplyNames;
+    UIColor * _textColor;
+    NSArray * _ungroupedNames;
 }
 
 @property (nonatomic, retain) NSArray *acceptedNames;

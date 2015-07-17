@@ -3,11 +3,11 @@
  */
 
 @interface TSUImage : NSObject {
-    long mCachedImageLock;
-    struct CGImage { } *mCachedSliceableImage;
-    id mCachedSystemImage;
-    long mImageSliceCacheLock;
-    struct __CFDictionary { } *mImageSlices;
+    long  mCachedImageLock;
+    struct CGImage { } * mCachedSliceableImage;
+    id  mCachedSystemImage;
+    long  mImageSliceCacheLock;
+    struct __CFDictionary { } * mImageSlices;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*CGImage;

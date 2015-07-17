@@ -3,32 +3,32 @@
  */
 
 @interface IDSDaemonController : NSObject <IDSDaemonProtocol> {
-    BOOL _acquiringDaemonConnection;
-    BOOL _autoReconnect;
-    unsigned int _cachedCapabilities;
-    NSSet *_cachedCommands;
-    NSSet *_cachedServices;
-    NSSet *_commands;
-    unsigned int _connectionID;
-    int _curXPCMessagePriority;
-    NSObject<OS_dispatch_group> *_daemonConnectedGroup;
-    IDSDaemonListener *_daemonListener;
-    id _delegate;
-    BOOL _hasBeenSuspended;
-    BOOL _hasCheckedForDaemon;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    unsigned int _lastUpdateCaps;
-    NSMutableDictionary *_listenerCapabilities;
-    NSMutableDictionary *_listenerCommands;
-    NSString *_listenerID;
-    NSMutableDictionary *_listenerServices;
-    IMLocalObject *_localObject;
-    NSMutableSet *_notificationServices;
-    BOOL _preventReconnect;
-    NSProtocolChecker *_protocol;
-    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
-    IMRemoteObject<IDSDaemonProtocol> *_remoteObject;
-    NSSet *_services;
+    BOOL  _acquiringDaemonConnection;
+    BOOL  _autoReconnect;
+    unsigned int  _cachedCapabilities;
+    NSSet * _cachedCommands;
+    NSSet * _cachedServices;
+    NSSet * _commands;
+    unsigned int  _connectionID;
+    int  _curXPCMessagePriority;
+    NSObject<OS_dispatch_group> * _daemonConnectedGroup;
+    IDSDaemonListener * _daemonListener;
+    id  _delegate;
+    BOOL  _hasBeenSuspended;
+    BOOL  _hasCheckedForDaemon;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    unsigned int  _lastUpdateCaps;
+    NSMutableDictionary * _listenerCapabilities;
+    NSMutableDictionary * _listenerCommands;
+    NSString * _listenerID;
+    NSMutableDictionary * _listenerServices;
+    IMLocalObject * _localObject;
+    NSMutableSet * _notificationServices;
+    BOOL  _preventReconnect;
+    NSProtocolChecker * _protocol;
+    NSObject<OS_dispatch_queue> * _remoteMessageQueue;
+    IMRemoteObject<IDSDaemonProtocol> * _remoteObject;
+    NSSet * _services;
 }
 
 @property (setter=_setAutoReconnect:) BOOL _autoReconnect;
@@ -39,7 +39,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isConnecting;
-@property (nonatomic, readonly) IDSDaemonListener *listener;
+@property (nonatomic, readonly, retain) IDSDaemonListener *listener;
 @property (nonatomic, readonly) NSString *listenerID;
 @property (readonly) Class superclass;
 

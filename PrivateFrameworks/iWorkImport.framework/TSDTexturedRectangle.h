@@ -3,23 +3,23 @@
  */
 
 @interface TSDTexturedRectangle : NSObject <NSCopying> {
-    BOOL _isVerticalText;
+    BOOL  _isVerticalText;
     struct CGSize { 
         float width; 
         float height; 
-    } _singleTextureSize;
-    NSString *_text;
-    float _textBaseline;
-    TSUColor *_textColor;
+    }  _singleTextureSize;
+    NSString * _text;
+    float  _textBaseline;
+    TSUColor * _textColor;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _textRange;
-    float _textXHeight;
-    NSMutableDictionary *mAttributes;
-    struct CGImage { } *mBakedImage;
-    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
-    struct CGColorSpace { } *mColorSpace;
+    }  _textRange;
+    float  _textXHeight;
+    NSMutableDictionary * mAttributes;
+    struct CGImage { } * mBakedImage;
+    TSDBitmapRenderingQualityInfo * mBitmapRenderingQualityInfo;
+    struct CGColorSpace { } * mColorSpace;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -29,14 +29,14 @@
             float width; 
             float height; 
         } size; 
-    } mContentRect;
-    BOOL mDidInitFromGLTexture;
-    BOOL mIsFlattened;
-    CALayer *mLayer;
+    }  mContentRect;
+    BOOL  mDidInitFromGLTexture;
+    BOOL  mIsFlattened;
+    CALayer * mLayer;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOffset;
+    }  mOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -46,23 +46,23 @@
             float width; 
             float height; 
         } size; 
-    } mOriginalFrame;
+    }  mOriginalFrame;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOriginalPosition;
-    TSDTextureSet *mParent;
-    id /* block */ mRenderBlock;
-    BOOL mSingleTextureContainsMipmaps;
-    unsigned int mSingleTextureName;
+    }  mOriginalPosition;
+    TSDTextureSet * mParent;
+    id /* block */  mRenderBlock;
+    BOOL  mSingleTextureContainsMipmaps;
+    unsigned int  mSingleTextureName;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
-    struct CGImage { } *mSourceImage;
-    NSMutableArray *mTags;
-    float mTextureOpacity;
-    int mTextureType;
+    }  mSize;
+    struct CGImage { } * mSourceImage;
+    NSMutableArray * mTags;
+    float  mTextureOpacity;
+    int  mTextureType;
 }
 
 @property (nonatomic, retain) TSDBitmapRenderingQualityInfo *bitmapRenderingQualityInfo;
@@ -129,6 +129,7 @@
 - (id)parentLayer;
 - (void)releaseSingleTexture;
 - (void)renderIntoContext:(struct CGContext { }*)arg1;
+- (void)renderIntoContext:(struct CGContext { }*)arg1 shouldApplyAlpha:(BOOL)arg2;
 - (void)renderLayerContentsIfNeeded;
 - (void)resetAnchorPoint;
 - (void)resetToSourceImage;

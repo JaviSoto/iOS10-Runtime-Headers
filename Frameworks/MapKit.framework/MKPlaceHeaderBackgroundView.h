@@ -3,10 +3,10 @@
  */
 
 @interface MKPlaceHeaderBackgroundView : UIView <MKPlaceHeaderViewCinematics> {
-    int _backgroundType;
-    <MKPlaceHeaderBackgroundViewDelegate> *_delegate;
-    MKMapItem *_mapItem;
-    int _preparationState;
+    int  _backgroundType;
+    <MKPlaceHeaderBackgroundViewDelegate> * _delegate;
+    MKMapItem * _mapItem;
+    int  _preparationState;
 }
 
 @property (nonatomic) int backgroundType;

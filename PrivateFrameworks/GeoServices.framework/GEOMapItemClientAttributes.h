@@ -3,8 +3,8 @@
  */
 
 @interface GEOMapItemClientAttributes : PBCodable <NSCopying> {
-    GEOMapItemAddressBookAttributes *_addressBookAttributes;
-    GEOMapItemRoutineAttributes *_routineAttributes;
+    GEOMapItemAddressBookAttributes * _addressBookAttributes;
+    GEOMapItemRoutineAttributes * _routineAttributes;
 }
 
 @property (nonatomic, retain) GEOMapItemAddressBookAttributes *addressBookAttributes;
@@ -13,8 +13,6 @@
 @property (nonatomic, retain) GEOMapItemRoutineAttributes *routineAttributes;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
-+ (id)clientAttributesCopyForSharing:(id)arg1;
 
 - (id)addressBookAttributes;
 - (void)copyTo:(id)arg1;

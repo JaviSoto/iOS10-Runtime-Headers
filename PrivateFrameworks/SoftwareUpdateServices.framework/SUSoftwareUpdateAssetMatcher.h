@@ -3,12 +3,12 @@
  */
 
 @interface SUSoftwareUpdateAssetMatcher : SUAssetStateMatcher {
-    BOOL _checkTatsu;
-    NSString *_fromBuild;
-    NSString *_fromProductType;
-    NSString *_fromReleaseType;
-    NSString *_fromVersion;
-    SUPreferences *_preferences;
+    BOOL  _checkTatsu;
+    NSString * _fromBuild;
+    NSString * _fromProductType;
+    NSString * _fromReleaseType;
+    NSString * _fromVersion;
+    SUPreferences * _preferences;
 }
 
 @property (nonatomic) BOOL compareWithTatsuForEligibility;

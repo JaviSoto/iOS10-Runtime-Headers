@@ -3,12 +3,12 @@
  */
 
 @interface UIDeviceRGBColor : UIColor {
-    float alphaComponent;
-    float blueComponent;
-    struct CGColor { } *cachedColor;
-    long cachedColorOnceToken;
-    float greenComponent;
-    float redComponent;
+    float  alphaComponent;
+    float  blueComponent;
+    struct CGColor { } * cachedColor;
+    long  cachedColorOnceToken;
+    float  greenComponent;
+    float  redComponent;
 }
 
 - (struct CGColor { }*)CGColor;

@@ -6,7 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } drawingOffset;
+    }  drawingOffset;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } drawingOffset;

@@ -3,11 +3,11 @@
  */
 
 @interface GKTextBubbleControl : GKBaseBubbleWithTextControl {
-    GKTextStyle *_overrideTextStyle;
-    BOOL _smallText;
-    NSString *_text;
-    GKLabel *_textLabel;
-    GKLabel *_textStyle;
+    GKTextStyle * _overrideTextStyle;
+    BOOL  _smallText;
+    NSString * _text;
+    GKLabel * _textLabel;
+    GKLabel * _textStyle;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedText;

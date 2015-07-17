@@ -3,10 +3,10 @@
  */
 
 @interface SLSheetURLPreviewView : SLSheetImagePreviewView {
-    UIImageView *_placeholderGlyphView;
-    UIView *_placeholderPreviewView;
-    UIImage *_shadowImage;
-    SLURLPreviewGenerator *_webPreviewGenerator;
+    UIImageView * _placeholderGlyphView;
+    UIView * _placeholderPreviewView;
+    UIImage * _shadowImage;
+    SLURLPreviewGenerator * _webPreviewGenerator;
 }
 
 - (void).cxx_destruct;

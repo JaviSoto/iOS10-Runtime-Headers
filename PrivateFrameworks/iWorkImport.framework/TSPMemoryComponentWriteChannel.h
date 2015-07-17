@@ -3,9 +3,9 @@
  */
 
 @interface TSPMemoryComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
-    BOOL _isClosed;
-    TSUDispatchData *_streamData;
-    NSObject<OS_dispatch_queue> *_streamQueue;
+    BOOL  _isClosed;
+    TSUDispatchData * _streamData;
+    NSObject<OS_dispatch_queue> * _streamQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

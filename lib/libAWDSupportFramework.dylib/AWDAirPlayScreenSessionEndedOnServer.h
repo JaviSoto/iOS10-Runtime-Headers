@@ -3,19 +3,19 @@
  */
 
 @interface AWDAirPlayScreenSessionEndedOnServer : PBCodable <NSCopying> {
-    unsigned int _audioLate;
-    unsigned int _audioLost;
-    unsigned int _audioUnrecovered;
-    int _avgAhead;
-    unsigned int _avgRTT;
-    int _avgReceiveMs;
-    unsigned int _caDrops;
-    unsigned int _caFrames;
-    unsigned int _clearScreens;
-    unsigned int _configChanges;
-    unsigned int _duration;
-    unsigned int _forcedRefreshes;
-    unsigned int _framesReceived;
+    unsigned int  _audioLate;
+    unsigned int  _audioLost;
+    unsigned int  _audioUnrecovered;
+    int  _avgAhead;
+    unsigned int  _avgRTT;
+    int  _avgReceiveMs;
+    unsigned int  _caDrops;
+    unsigned int  _caFrames;
+    unsigned int  _clearScreens;
+    unsigned int  _configChanges;
+    unsigned int  _duration;
+    unsigned int  _forcedRefreshes;
+    unsigned int  _framesReceived;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioLate : 1; 
@@ -36,14 +36,14 @@
         unsigned int resumes : 1; 
         unsigned int suspends : 1; 
         unsigned int unclearScreens : 1; 
-    } _has;
-    unsigned int _negativeAheadFrames;
-    int _reason;
-    unsigned int _resumes;
-    NSString *_sessionUUID;
-    unsigned int _suspends;
-    unsigned long long _timestamp;
-    unsigned int _unclearScreens;
+    }  _has;
+    unsigned int  _negativeAheadFrames;
+    int  _reason;
+    unsigned int  _resumes;
+    NSString * _sessionUUID;
+    unsigned int  _suspends;
+    unsigned long long  _timestamp;
+    unsigned int  _unclearScreens;
 }
 
 @property (nonatomic) unsigned int audioLate;

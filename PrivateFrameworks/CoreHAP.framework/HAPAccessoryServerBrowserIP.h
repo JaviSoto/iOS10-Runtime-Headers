@@ -3,10 +3,10 @@
  */
 
 @interface HAPAccessoryServerBrowserIP : HAPAccessoryServerBrowser {
-    struct BonjourBrowser { } *_bonjourBrowser;
-    <HAPAccessoryServerBrowserDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSMutableSet *_discoveredAccessoryServers;
+    struct BonjourBrowser { } * _bonjourBrowser;
+    <HAPAccessoryServerBrowserDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSMutableSet * _discoveredAccessoryServers;
 }
 
 @property (nonatomic) <HAPAccessoryServerBrowserDelegate> *delegate;
@@ -26,6 +26,7 @@
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (id)discoveredAccessoryServers;
 - (id)initWithQueue:(id)arg1;
+- (int)linkType;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;

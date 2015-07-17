@@ -3,33 +3,33 @@
  */
 
 @interface PUPhotoEditLevelSlider : UIView <PUPhotoEditLayoutStaticAdaptable> {
-    UIView *__sliderContentView;
-    PUAdjustmentsMode *_adjustmentsMode;
-    float _baseValue;
-    BOOL _baseValueIndicatorHidden;
-    UIView *_baseValueIndicatorView;
-    NSArray *_baseValueIndicatorViewConstraints;
-    NSLayoutConstraint *_baseValueIndicatorViewPositionConstraint;
+    UIView * __sliderContentView;
+    PUAdjustmentsMode * _adjustmentsMode;
+    float  _baseValue;
+    BOOL  _baseValueIndicatorHidden;
+    UIView * _baseValueIndicatorView;
+    NSArray * _baseValueIndicatorViewConstraints;
+    NSLayoutConstraint * _baseValueIndicatorViewPositionConstraint;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    NSArray *_contentViewConstraints;
-    NSLayoutConstraint *_contentViewOffsetConstraint;
-    float _currentValue;
-    BOOL _directionReversed;
-    float _identityOffset;
-    float _identityValue;
-    int _layoutOrientation;
-    UIView *_levelIndicatorView;
-    NSArray *_levelIndicatorViewConstraints;
-    NSLayoutConstraint *_levelIndicatorViewOffsetConstraint;
-    NSLayoutConstraint *_levelIndicatorViewSpanConstraint;
-    float _maxValue;
-    float _minValue;
-    float _pointsPerUnitAboveIdentity;
-    float _pointsPerUnitBelowIdentity;
-    BOOL _scaleFactorsAreValid;
+    }  _contentSize;
+    NSArray * _contentViewConstraints;
+    NSLayoutConstraint * _contentViewOffsetConstraint;
+    float  _currentValue;
+    BOOL  _directionReversed;
+    float  _identityOffset;
+    float  _identityValue;
+    int  _layoutOrientation;
+    UIView * _levelIndicatorView;
+    NSArray * _levelIndicatorViewConstraints;
+    NSLayoutConstraint * _levelIndicatorViewOffsetConstraint;
+    NSLayoutConstraint * _levelIndicatorViewSpanConstraint;
+    float  _maxValue;
+    float  _minValue;
+    float  _pointsPerUnitAboveIdentity;
+    float  _pointsPerUnitBelowIdentity;
+    BOOL  _scaleFactorsAreValid;
 }
 
 @property (nonatomic, retain) PUAdjustmentsMode *adjustmentsMode;

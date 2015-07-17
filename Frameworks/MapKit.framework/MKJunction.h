@@ -3,10 +3,10 @@
  */
 
 @interface MKJunction : NSObject {
-    unsigned long _count;
-    struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_elements;
-    struct { /* ? */ } *_snapped;
-    int _type;
+    unsigned long  _count;
+    struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _elements;
+    struct { /* ? */ } * _snapped;
+    int  _type;
 }
 
 @property (nonatomic, readonly) int type;

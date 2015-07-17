@@ -3,9 +3,9 @@
  */
 
 @interface SUDOMElement : NSObject {
-    DOMElement *_element;
-    UIImage *_image;
-    UIWebView *_webView;
+    DOMElement * _element;
+    UIImage * _image;
+    UIWebView * _webView;
 }
 
 @property (nonatomic, readonly) DOMElement *element;

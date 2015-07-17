@@ -3,22 +3,22 @@
  */
 
 @interface MCDMusicNowPlayingViewController : UIViewController <AFContextProvider, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate> {
-    UIAlertController *_actionSheetAlertController;
-    MPMediaQuery *_albumQuery;
-    NSArray *_controlPages;
-    unsigned int _currentPageIndex;
-    BOOL _isExplicitTrack;
-    BOOL _isLive;
-    NSString *_nowPlayingAlbum;
-    UIImage *_nowPlayingAlbumArt;
-    NSString *_nowPlayingArtist;
-    NSString *_nowPlayingTitle;
-    MCDNowPlayingViewController *_nowPlayingViewController;
-    MPAVController *_player;
-    UILabel *_rightTitleLabel;
-    <MCDCarDisplayServiceProvider> *_serviceProvider;
-    NSTimer *_updateTimer;
-    int _viewMode;
+    UIAlertController * _actionSheetAlertController;
+    MPMediaQuery * _albumQuery;
+    NSArray * _controlPages;
+    unsigned int  _currentPageIndex;
+    BOOL  _isExplicitTrack;
+    BOOL  _isLive;
+    NSString * _nowPlayingAlbum;
+    UIImage * _nowPlayingAlbumArt;
+    NSString * _nowPlayingArtist;
+    NSString * _nowPlayingTitle;
+    MCDNowPlayingViewController * _nowPlayingViewController;
+    MPAVController * _player;
+    UILabel * _rightTitleLabel;
+    <MCDCarDisplayServiceProvider> * _serviceProvider;
+    NSTimer * _updateTimer;
+    int  _viewMode;
 }
 
 @property (nonatomic, retain) NSArray *controlPages;

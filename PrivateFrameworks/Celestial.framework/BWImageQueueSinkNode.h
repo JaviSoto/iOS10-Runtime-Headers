@@ -3,15 +3,16 @@
  */
 
 @interface BWImageQueueSinkNode : BWSinkNode {
-    struct _CAImageQueue { } *_imageQueue;
-    unsigned int _imageQueueCapacity;
-    unsigned int _imageQueueFreeSlots;
-    unsigned int _imageQueueHeight;
-    unsigned int _imageQueueSlot;
-    unsigned int _imageQueueWidth;
-    struct OpaqueFigPreviewSynchronizer { } *_previewSynchronizer;
-    <BWImageQueueSinkNodePreviewTapDelegate> *_previewTapDelegate;
-    BOOL _syncedWithDisplay;
+    NSObject<OS_os_transaction> * _holdingBuffersForClientAssertion;
+    struct _CAImageQueue { } * _imageQueue;
+    unsigned int  _imageQueueCapacity;
+    unsigned int  _imageQueueFreeSlots;
+    unsigned int  _imageQueueHeight;
+    unsigned int  _imageQueueSlot;
+    unsigned int  _imageQueueWidth;
+    struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
+    <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;
+    BOOL  _syncedWithDisplay;
 }
 
 @property (nonatomic, readonly) struct _CAImageQueue { }*imageQueue;

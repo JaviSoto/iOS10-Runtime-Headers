@@ -3,18 +3,18 @@
  */
 
 @interface UIDropShadowView : UIView {
-    UIView *_backgroundImage;
-    UIView *_contentView;
-    float _cornerRadius;
-    NSDictionary *_preservedLayerValues;
+    UIView * _backgroundImage;
+    UIView * _contentView;
+    float  _cornerRadius;
+    NSDictionary * _preservedLayerValues;
 }
 
 @property (nonatomic) UIView *contentView;
-@property float cornerRadius;
+@property (nonatomic) float cornerRadius;
 
+- (void).cxx_destruct;
 - (id)contentView;
 - (float)cornerRadius;
-- (void)dealloc;
 - (void)didFinishRotation;
 - (id)init;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

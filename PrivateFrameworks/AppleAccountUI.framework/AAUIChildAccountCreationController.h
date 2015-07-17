@@ -3,22 +3,22 @@
  */
 
 @interface AAUIChildAccountCreationController : NSObject <RUIObjectModelDelegate> {
-    NSHTTPURLResponse *_currentResponse;
-    <AAUIChildAccountCreationDelegate> *_delegate;
-    AAGrandSlamSigner *_grandSlamSigner;
-    BOOL _isPendingDismissal;
-    BOOL _isShowingSpinner;
-    NSURL *_launchingURL;
-    RUILoader *_loader;
-    UINavigationController *_navigationController;
-    UINavigationItem *_navigationItemShowingSpinner;
-    NSMutableArray *_objectModels;
-    NSArray *_originalEnabledToolbarItems;
-    UIBarButtonItem *_originalRightBarButtonItem;
-    UIToolbar *_originalToolbar;
-    NSArray *_originalToolbarItems;
-    AASetupAssistantService *_setupService;
-    UIActivityIndicatorView *_spinnerView;
+    NSHTTPURLResponse * _currentResponse;
+    <AAUIChildAccountCreationDelegate> * _delegate;
+    AAGrandSlamSigner * _grandSlamSigner;
+    BOOL  _isPendingDismissal;
+    BOOL  _isShowingSpinner;
+    NSURL * _launchingURL;
+    RUILoader * _loader;
+    UINavigationController * _navigationController;
+    UINavigationItem * _navigationItemShowingSpinner;
+    NSMutableArray * _objectModels;
+    NSArray * _originalEnabledToolbarItems;
+    UIBarButtonItem * _originalRightBarButtonItem;
+    UIToolbar * _originalToolbar;
+    NSArray * _originalToolbarItems;
+    AASetupAssistantService * _setupService;
+    UIActivityIndicatorView * _spinnerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,6 +38,7 @@
 - (void)_popObjectModelAnimated:(BOOL)arg1;
 - (BOOL)_pressedLink:(id)arg1 comesFromBarButtonItem:(id)arg2 objectModel:(id)arg3;
 - (void)_renewCredentialsWithCompletionHandler:(id /* block */)arg1;
+- (void)_sendUserToiTunesSettings;
 - (void)_showActivitySpinnerInNavigationBar;
 - (void)_showActivitySpinnerInToolbar:(id)arg1;
 - (id)_spinnerView;

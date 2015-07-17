@@ -9,14 +9,14 @@
         struct __compressed_pair<std::__1::pair<TSUColumnRowCoordinate, float> *, std::__1::allocator<std::__1::pair<TSUColumnRowCoordinate, float> > > { 
             struct pair<TSUColumnRowCoordinate, float> {} *__first_; 
         } __end_cap_; 
-    } mFittingHeights;
+    }  mFittingHeights;
     struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } mResetHeights;
+    }  mResetHeights;
 }
 
 - (id).cxx_construct;

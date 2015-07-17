@@ -3,10 +3,10 @@
  */
 
 @interface MSCLLockupView : UIView <SKUIArtworkRequestDelegate> {
-    SKUIArtworkRequest *_artworkRequest;
-    UIImageView *_imageView;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    SKUIArtworkRequest * _artworkRequest;
+    UIImageView * _imageView;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

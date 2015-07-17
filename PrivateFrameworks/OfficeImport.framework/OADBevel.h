@@ -3,12 +3,13 @@
  */
 
 @interface OADBevel : NSObject <NSCopying> {
-    float mHeight;
-    int mType;
-    float mWidth;
+    float  mHeight;
+    int  mType;
+    float  mWidth;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned int)hash;
 - (float)height;
 - (id)init;

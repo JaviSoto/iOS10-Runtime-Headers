@@ -3,21 +3,21 @@
  */
 
 @interface MPAVRoutingController : NSObject {
-    NSMutableArray *_asyncFetchingCompletionHandlers;
-    BOOL _asyncFetchingRoutes;
-    MPAVRoute *_cachedPickedRoute;
-    NSArray *_cachedRoutes;
-    NSString *_category;
-    <MPAVRoutingControllerDelegate> *_delegate;
-    int _deviceAvailabilityNotifyToken;
-    BOOL _deviceAvailabilityOverrideState;
-    int _discoveryMode;
-    int _externalScreenType;
-    BOOL _hasExternalScreenType;
-    BOOL _hasVolumeControlInfoForPickedRoute;
-    NSString *_name;
-    BOOL _pickedRouteHasVolumeControl;
-    BOOL _scheduledSendDelegateRoutesChanged;
+    NSMutableArray * _asyncFetchingCompletionHandlers;
+    BOOL  _asyncFetchingRoutes;
+    MPAVRoute * _cachedPickedRoute;
+    NSArray * _cachedRoutes;
+    NSString * _category;
+    <MPAVRoutingControllerDelegate> * _delegate;
+    int  _deviceAvailabilityNotifyToken;
+    BOOL  _deviceAvailabilityOverrideState;
+    int  _discoveryMode;
+    int  _externalScreenType;
+    BOOL  _hasExternalScreenType;
+    BOOL  _hasVolumeControlInfoForPickedRoute;
+    NSString * _name;
+    BOOL  _pickedRouteHasVolumeControl;
+    BOOL  _scheduledSendDelegateRoutesChanged;
 }
 
 @property (nonatomic, readonly, copy) NSArray *availableRoutes;

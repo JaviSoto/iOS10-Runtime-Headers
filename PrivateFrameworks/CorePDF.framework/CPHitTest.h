@@ -3,9 +3,9 @@
  */
 
 @interface CPHitTest : NSObject {
-    float mapTemp;
-    NSMutableArray *objectsOnPage;
-    CPPage *page;
+    float  mapTemp;
+    NSMutableArray * objectsOnPage;
+    CPPage * page;
 }
 
 - (id)column:(struct CGPoint { float x1; float x2; })arg1;

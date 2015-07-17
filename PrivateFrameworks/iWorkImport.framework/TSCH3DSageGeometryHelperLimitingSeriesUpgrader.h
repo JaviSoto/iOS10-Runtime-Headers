@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DSageGeometryHelperLimitingSeriesUpgrader : TSCH3DAbstractLimitingSeriesUpgrader {
-    TSCH3DChartBoundsLayout *mBoundsLayout;
-    TSCH3DChartResizerHelper *mResizerHelper;
+    TSCH3DChartBoundsLayout * mBoundsLayout;
+    TSCH3DChartResizerHelper * mResizerHelper;
 }
 
 @property (nonatomic, readonly) TSCH3DChartBoundsLayout *boundsLayout;

@@ -3,9 +3,9 @@
  */
 
 @interface TSDPathStroker : NSObject {
-    TSUColor *mColor;
-    TSDPathStroker *mPrecedingStroker;
-    float mWidth;
+    TSUColor * mColor;
+    TSDPathStroker * mPrecedingStroker;
+    float  mWidth;
 }
 
 @property (nonatomic) float width;

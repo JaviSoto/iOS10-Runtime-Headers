@@ -3,14 +3,14 @@
  */
 
 @interface UINavigationItemButtonView : UINavigationItemView <UIGestureRecognizerDelegate> {
-    unsigned int _abbreviatedTitleIndex;
-    _UIBarButtonItemAppearanceStorage *_appearanceStorage;
-    UIImageView *_backgroundImageView;
-    BOOL _customBackgroundImageChangedToOrFromNil;
-    UIImageView *_imageView;
-    BOOL _pressed;
-    int _style;
-    BOOL _wantsBlendModeForAccessibilityBackgrounds;
+    unsigned int  _abbreviatedTitleIndex;
+    _UIBarButtonItemAppearanceStorage * _appearanceStorage;
+    UIImageView * _backgroundImageView;
+    BOOL  _customBackgroundImageChangedToOrFromNil;
+    UIImageView * _imageView;
+    BOOL  _pressed;
+    int  _style;
+    BOOL  _wantsBlendModeForAccessibilityBackgrounds;
 }
 
 @property (setter=_setAbbreviatedTitleIndex:, nonatomic) unsigned int _abbreviatedTitleIndex;
@@ -21,6 +21,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;

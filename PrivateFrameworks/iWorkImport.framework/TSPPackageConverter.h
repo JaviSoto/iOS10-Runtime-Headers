@@ -3,10 +3,10 @@
  */
 
 @interface TSPPackageConverter : NSObject {
-    NSURL *_URL;
-    <TSPFileCoordinatorDelegate> *_fileCoordinatorDelegate;
-    BOOL _isCancelled;
-    TSPPackage *_package;
+    NSURL * _URL;
+    <TSPFileCoordinatorDelegate> * _fileCoordinatorDelegate;
+    BOOL  _isCancelled;
+    TSPPackage * _package;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

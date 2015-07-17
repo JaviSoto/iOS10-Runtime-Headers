@@ -3,17 +3,17 @@
  */
 
 @interface SiriUIReviewsHeaderView : SiriUIReusableSubtitledHeaderView {
-    UIView *_providerView;
+    UIView * _providerView;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _providerViewOffset;
-    UIView *_ratingView;
+    }  _providerViewOffset;
+    UIView * _ratingView;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _ratingViewOffset;
-    float _verticalSpaceNeededForRatingsView;
+    }  _ratingViewOffset;
+    float  _verticalSpaceNeededForRatingsView;
 }
 
 @property (nonatomic, retain) UIView *providerView;

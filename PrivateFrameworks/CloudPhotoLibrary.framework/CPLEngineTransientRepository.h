@@ -3,9 +3,9 @@
  */
 
 @interface CPLEngineTransientRepository : CPLEngineStorage <CPLAbstractObject> {
-    unsigned int _maximumCountOfRecordsInBatches;
-    unsigned int _popState;
-    NSMutableArray *_remainingClassesToBePopped;
+    unsigned int  _maximumCountOfRecordsInBatches;
+    unsigned int  _popState;
+    NSMutableArray * _remainingClassesToBePopped;
 }
 
 @property (readonly, copy) NSString *debugDescription;

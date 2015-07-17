@@ -3,8 +3,8 @@
  */
 
 @interface BBZeroingWeakReference : NSObject {
-    NSString *_debug;
-    id _object;
+    NSString * _debug;
+    id  _object;
 }
 
 + (id)referenceWithObject:(id)arg1;

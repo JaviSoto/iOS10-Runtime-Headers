@@ -3,14 +3,14 @@
  */
 
 @interface TIKeyboardOutput : NSObject <NSSecureCoding> {
-    TIKeyboardCandidate *_acceptedCandidate;
-    unsigned int _deletionCount;
-    unsigned int _forwardDeletionCount;
-    NSIndexSet *_handwritingStrokesToDelete;
-    NSString *_insertionText;
-    NSString *_insertionTextAfterSelection;
-    TIKeyboardCandidate *_shortcutConversion;
-    NSString *_textToCommit;
+    TIKeyboardCandidate * _acceptedCandidate;
+    unsigned int  _deletionCount;
+    unsigned int  _forwardDeletionCount;
+    NSIndexSet * _handwritingStrokesToDelete;
+    NSString * _insertionText;
+    NSString * _insertionTextAfterSelection;
+    TIKeyboardCandidate * _shortcutConversion;
+    NSString * _textToCommit;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;

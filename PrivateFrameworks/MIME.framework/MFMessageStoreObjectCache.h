@@ -3,11 +3,11 @@
  */
 
 @interface MFMessageStoreObjectCache : NSObject {
-    struct __CFDictionary { } *_cache;
-    long _capacity;
-    id /* block */ _comparator;
-    id /* block */ _keyGenerator;
-    NSLock *_lock;
+    struct __CFDictionary { } * _cache;
+    long  _capacity;
+    id /* block */  _comparator;
+    id /* block */  _keyGenerator;
+    NSLock * _lock;
 }
 
 @property (nonatomic, copy) id /* block */ comparator;
@@ -24,6 +24,7 @@
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id /* block */)keyGenerator;
 - (id)objectForMessage:(id)arg1 kind:(int)arg2;
+- (void)removeObjectForMessage:(id)arg1 kind:(int)arg2;
 - (void)setComparator:(id /* block */)arg1;
 - (void)setKeyGenerator:(id /* block */)arg1;
 - (void)setObject:(id)arg1 forMessage:(id)arg2 kind:(int)arg3;

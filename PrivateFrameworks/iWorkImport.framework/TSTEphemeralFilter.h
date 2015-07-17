@@ -3,9 +3,9 @@
  */
 
 @interface TSTEphemeralFilter : NSObject {
-    unsigned char mColumnIndex;
-    unsigned int mFilterIndex;
-    NSArray *mRules;
+    unsigned char  mColumnIndex;
+    unsigned int  mFilterIndex;
+    NSArray * mRules;
 }
 
 @property (nonatomic, readonly) unsigned char columnIndex;

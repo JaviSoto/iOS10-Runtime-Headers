@@ -3,9 +3,9 @@
  */
 
 @interface CKDirectoryPurger : NSObject {
-    NSArray *_paths;
-    id /* block */ _shouldRemoveFileBlock;
-    id /* block */ _shouldSkipFileBlock;
+    NSArray * _paths;
+    id /* block */  _shouldRemoveFileBlock;
+    id /* block */  _shouldSkipFileBlock;
 }
 
 @property (nonatomic, retain) NSArray *paths;

@@ -3,7 +3,7 @@
  */
 
 @interface CKDPTokenRegistrationRequest : PBRequest <NSCopying> {
-    CKDPTokenRegistrationBody *_tokenRegistrationBody;
+    CKDPTokenRegistrationBody * _tokenRegistrationBody;
 }
 
 @property (nonatomic, readonly) BOOL hasTokenRegistrationBody;

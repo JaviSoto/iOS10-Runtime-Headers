@@ -3,8 +3,8 @@
  */
 
 @interface UILexiconEntry : NSObject <NSCopying> {
-    NSString *_documentText;
-    NSString *_userInput;
+    NSString * _documentText;
+    NSString * _userInput;
 }
 
 @property (nonatomic, readonly) NSString *documentText;
@@ -12,8 +12,8 @@
 
 + (id)_entryWithTILexiconEntry:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)documentText;
 - (BOOL)isEqual:(id)arg1;
 - (id)userInput;

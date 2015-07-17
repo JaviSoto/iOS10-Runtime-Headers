@@ -3,10 +3,10 @@
  */
 
 @interface FigCaptureSessionProxy : NSObject {
-    long long _identifier;
-    <FigCaptureSessionPreviewTapDelegate> *_previewTapDelegate;
-    BOOL _previewTapOpened;
-    struct OpaqueFigCaptureSession { } *_session;
+    long long  _identifier;
+    <FigCaptureSessionPreviewTapDelegate> * _previewTapDelegate;
+    BOOL  _previewTapOpened;
+    struct OpaqueFigCaptureSession { } * _session;
 }
 
 @property (readonly) long long identifier;

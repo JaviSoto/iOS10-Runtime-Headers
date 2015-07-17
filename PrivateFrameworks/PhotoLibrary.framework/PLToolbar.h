@@ -3,9 +3,9 @@
  */
 
 @interface PLToolbar : UIToolbar {
-    unsigned int _backgroundAlwaysVisible;
-    unsigned int _backgroundHidden;
-    UIToolbar *_persistentToolbar;
+    unsigned int  _backgroundAlwaysVisible;
+    unsigned int  _backgroundHidden;
+    UIToolbar * _persistentToolbar;
 }
 
 @property (getter=isBackgroundAlwaysVisible, nonatomic) BOOL backgroundAlwaysVisible;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIBrowseHeaderCollectionViewCell : SKUICollectionViewCell {
-    SKUIGroupedHeaderView *_headerView;
+    SKUIGroupedHeaderView * _headerView;
 }
 
 @property (nonatomic, retain) NSString *title;

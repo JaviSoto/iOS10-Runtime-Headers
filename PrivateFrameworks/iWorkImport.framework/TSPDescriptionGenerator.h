@@ -3,11 +3,11 @@
  */
 
 @interface TSPDescriptionGenerator : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableOrderedSet *_components;
-    TSPObjectContext *_context;
-    NSMutableDictionary *_dataMap;
-    NSMutableDictionary *_inverseUUIDMap;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableOrderedSet * _components;
+    TSPObjectContext * _context;
+    NSMutableDictionary * _dataMap;
+    NSMutableDictionary * _inverseUUIDMap;
     struct map<long long, TSP::DescriptionPrinterMessage, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, TSP::DescriptionPrinterMessage> > > { 
         struct __tree<std::__1::__value_type<long long, TSP::DescriptionPrinterMessage>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, TSP::DescriptionPrinterMessage>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, TSP::DescriptionPrinterMessage> > > { 
             struct __tree_node<std::__1::__value_type<long long, TSP::DescriptionPrinterMessage>, void *> {} *__begin_node_; 
@@ -20,10 +20,10 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _messageMap;
-    NSMutableDictionary *_objects;
-    unsigned int _options;
-    NSMutableDictionary *_uuidMap;
+    }  _messageMap;
+    NSMutableDictionary * _objects;
+    unsigned int  _options;
+    NSMutableDictionary * _uuidMap;
 }
 
 + (id)directoryForDocumentUUID:(id)arg1 versionUUID:(id)arg2;

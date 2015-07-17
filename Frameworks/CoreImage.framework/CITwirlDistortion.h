@@ -3,10 +3,10 @@
  */
 
 @interface CITwirlDistortion : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;
@@ -22,7 +22,6 @@
 - (id)inputImage;
 - (id)inputRadius;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputImage:(id)arg1;

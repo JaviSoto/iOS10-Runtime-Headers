@@ -3,8 +3,8 @@
  */
 
 @interface TKPickerDividerTableViewCell : UITableViewCell {
-    int _contentBackdropOverlayBlendMode;
-    UIView *_dividerView;
+    int  _contentBackdropOverlayBlendMode;
+    UIView * _dividerView;
 }
 
 @property (setter=_setContentBackdropOverlayBlendMode:, nonatomic) int _contentBackdropOverlayBlendMode;

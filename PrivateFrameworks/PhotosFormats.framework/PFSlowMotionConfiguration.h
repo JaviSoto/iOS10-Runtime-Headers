@@ -3,10 +3,10 @@
  */
 
 @interface PFSlowMotionConfiguration : NSObject {
-    PFSlowMotionRampConfiguration *_rampDown;
-    PFSlowMotionRampConfiguration *_rampUp;
-    float _volumeDuringRampToSlowMotion;
-    float _volumeDuringSlowMotion;
+    PFSlowMotionRampConfiguration * _rampDown;
+    PFSlowMotionRampConfiguration * _rampUp;
+    float  _volumeDuringRampToSlowMotion;
+    float  _volumeDuringSlowMotion;
 }
 
 @property (nonatomic, readonly, retain) PFSlowMotionRampConfiguration *rampDown;

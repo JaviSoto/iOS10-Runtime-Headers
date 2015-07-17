@@ -3,7 +3,7 @@
  */
 
 @interface XPCEndpoint : NSObject <NSCoding> {
-    NSObject<OS_xpc_object> *_endpoint;
+    NSObject<OS_xpc_object> * _endpoint;
 }
 
 @property (nonatomic) NSObject<OS_xpc_object> *endpoint;

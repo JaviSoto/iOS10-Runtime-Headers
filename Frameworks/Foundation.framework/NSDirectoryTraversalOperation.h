@@ -3,16 +3,16 @@
  */
 
 @interface NSDirectoryTraversalOperation : NSOperation {
-    id _delegate;
-    NSMutableArray *_deviceEntryPoints;
-    NSMutableArray *_deviceNumbers;
-    NSError *_error;
-    int _lastDeviceInode;
-    int _optionsFlags;
-    BOOL _shouldFilterUnderbars;
-    NSString *_sourcePath;
-    BOOL _stopped;
-    void *_stream;
+    id  _delegate;
+    NSMutableArray * _deviceEntryPoints;
+    NSMutableArray * _deviceNumbers;
+    NSError * _error;
+    int  _lastDeviceInode;
+    int  _optionsFlags;
+    BOOL  _shouldFilterUnderbars;
+    NSString * _sourcePath;
+    BOOL  _stopped;
+    void * _stream;
 }
 
 + (id)_errorWithErrno:(int)arg1 atPath:(id)arg2;

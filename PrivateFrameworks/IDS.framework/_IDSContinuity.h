@@ -3,10 +3,10 @@
  */
 
 @interface _IDSContinuity : NSObject <IDSDaemonListenerProtocol> {
-    CUTWeakReference *_delegate;
-    id _delegateContext;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
+    CUTWeakReference * _delegate;
+    id  _delegateContext;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;

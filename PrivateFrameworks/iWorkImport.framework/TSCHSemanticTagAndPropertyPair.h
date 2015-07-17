@@ -3,8 +3,8 @@
  */
 
 @interface TSCHSemanticTagAndPropertyPair : NSObject <NSCopying> {
-    int mProperty;
-    TSCHStyleSemanticTag *mSemanticTag;
+    int  mProperty;
+    TSCHStyleSemanticTag * mSemanticTag;
 }
 
 + (id)pairWithSemanticTag:(id)arg1 property:(int)arg2;

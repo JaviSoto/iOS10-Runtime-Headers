@@ -3,13 +3,13 @@
  */
 
 @interface CKDProgressTracker : NSObject {
-    unsigned long long _cachedCompletedBytes;
-    unsigned long long _cachedTotalBytes;
-    NSMapTable *_completedBytesByItems;
-    BOOL _hasCachedCompletedBytes;
-    BOOL _hasCachedTotalBytes;
-    double _lastItemPercentage;
-    NSString *_trackingID;
+    unsigned long long  _cachedCompletedBytes;
+    unsigned long long  _cachedTotalBytes;
+    NSMapTable * _completedBytesByItems;
+    BOOL  _hasCachedCompletedBytes;
+    BOOL  _hasCachedTotalBytes;
+    double  _lastItemPercentage;
+    NSString * _trackingID;
 }
 
 @property (nonatomic) unsigned long long cachedCompletedBytes;

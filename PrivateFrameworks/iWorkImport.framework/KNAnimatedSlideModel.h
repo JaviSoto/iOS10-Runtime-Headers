@@ -3,14 +3,14 @@
  */
 
 @interface KNAnimatedSlideModel : NSObject {
-    KNAnimatedSlideView *_ASV;
-    TSUNoCopyDictionary *_animatedBuildToRendererMap;
-    NSMutableArray *_animatedBuilds;
-    NSMutableArray *_buildEvents;
-    TSUNoCopyDictionary *_infoToAnimatedBuildMap;
-    NSArray *_infos;
-    unsigned int _numberOfAddedEvents;
-    KNPlaybackSession *_session;
+    KNAnimatedSlideView * _ASV;
+    TSUNoCopyDictionary * _animatedBuildToRendererMap;
+    NSMutableArray * _animatedBuilds;
+    NSMutableArray * _buildEvents;
+    TSUNoCopyDictionary * _infoToAnimatedBuildMap;
+    NSArray * _infos;
+    unsigned int  _numberOfAddedEvents;
+    KNPlaybackSession * _session;
 }
 
 @property (nonatomic, readonly) NSArray *animatedBuilds;

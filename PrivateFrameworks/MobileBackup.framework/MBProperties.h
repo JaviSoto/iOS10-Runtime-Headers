@@ -3,9 +3,9 @@
  */
 
 @interface MBProperties : NSObject {
-    NSMutableDictionary *_plist;
-    BOOL _protect;
-    BOOL _protected;
+    id  _plist;
+    BOOL  _protect;
+    BOOL  _protected;
 }
 
 @property (nonatomic, retain) NSString *activeAppleID;
@@ -45,6 +45,7 @@
 - (id)buildVersion;
 - (id)containerWithIdentifier:(id)arg1;
 - (id)containers;
+- (id)dataWithError:(id*)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;

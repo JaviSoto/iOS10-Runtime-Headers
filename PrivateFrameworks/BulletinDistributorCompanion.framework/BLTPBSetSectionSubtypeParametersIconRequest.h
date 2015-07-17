@@ -3,14 +3,14 @@
  */
 
 @interface BLTPBSetSectionSubtypeParametersIconRequest : PBRequest <NSCopying> {
-    BOOL _defaultSubtype;
+    BOOL  _defaultSubtype;
     struct { 
         unsigned int subtypeID : 1; 
         unsigned int defaultSubtype : 1; 
-    } _has;
-    BLTPBSectionIcon *_icon;
-    NSString *_sectionID;
-    unsigned long long _subtypeID;
+    }  _has;
+    BLTPBSectionIcon * _icon;
+    NSString * _sectionID;
+    unsigned long long  _subtypeID;
 }
 
 @property (nonatomic) BOOL defaultSubtype;

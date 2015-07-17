@@ -3,14 +3,14 @@
  */
 
 @interface CKAudioController : NSObject <CKAudioPlayerDelegate> {
-    CKAudioPlayer *_audioPlayer;
-    unsigned int _currentIndex;
-    <CKAudioControllerDelegate> *_delegate;
-    BOOL _interrupted;
-    NSMutableArray *_mediaObjects;
-    BOOL _paused;
-    BOOL _playing;
-    BOOL _shouldUseSpeaker;
+    CKAudioPlayer * _audioPlayer;
+    unsigned int  _currentIndex;
+    <CKAudioControllerDelegate> * _delegate;
+    BOOL  _interrupted;
+    NSMutableArray * _mediaObjects;
+    BOOL  _paused;
+    BOOL  _playing;
+    BOOL  _shouldUseSpeaker;
 }
 
 @property (setter=_setMediaObjects:, nonatomic, retain) NSMutableArray *_mediaObjects;
@@ -49,6 +49,7 @@
 - (id)mediaObjects;
 - (void)pause;
 - (void)play;
+- (void)playAfterDelay:(double)arg1;
 - (void)playListenEndSound:(id /* block */)arg1;
 - (void)playListenSound:(id /* block */)arg1;
 - (void)setAudioPlayer:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface IMDMessageStore : NSObject {
-    NSNumber *_cachedLastFailedMessageID;
-    NSNumber *_cachedUnreadMessageCount;
-    NSString *_modificationStamp;
-    BOOL _pendingDBUpdatePost;
-    BOOL _suppressedUpdates;
-    NSTimer *_suppressedUpdatesTimer;
+    NSNumber * _cachedLastFailedMessageID;
+    NSNumber * _cachedUnreadMessageCount;
+    NSString * _modificationStamp;
+    BOOL  _pendingDBUpdatePost;
+    BOOL  _suppressedUpdates;
+    NSTimer * _suppressedUpdatesTimer;
 }
 
 @property (retain) NSString *modificationStamp;

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKBackFieldTableCell : UITableViewCell {
-    PKPassField *_field;
-    BOOL _showLinks;
-    UITextView *_valueTextView;
+@interface PKBackFieldTableCell : PKTableViewCell {
+    PKPassField * _field;
+    BOOL  _showLinks;
+    UITextView * _valueTextView;
 }
 
 @property (nonatomic, retain) PKPassField *field;

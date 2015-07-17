@@ -3,11 +3,11 @@
  */
 
 @interface HDCodableNanoSyncStatus : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, HDSyncAnchorMap, NSCopying> {
-    NSMutableArray *_anchors;
+    NSMutableArray * _anchors;
     struct { 
         unsigned int statusCode : 1; 
-    } _has;
-    int _statusCode;
+    }  _has;
+    int  _statusCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *anchors;

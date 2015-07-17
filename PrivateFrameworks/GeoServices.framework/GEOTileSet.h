@@ -3,20 +3,20 @@
  */
 
 @interface GEOTileSet : PBCodable <NSCopying> {
-    NSString *_baseURL;
+    NSString * _baseURL;
     struct { 
         unsigned int updateBehavior : 1; 
         unsigned int multiTileURLUsesStatusCodes : 1; 
-    } _has;
-    NSString *_localizationURL;
-    NSString *_multiTileURL;
-    BOOL _multiTileURLUsesStatusCodes;
-    int _scale;
-    int _size;
-    int _style;
-    NSMutableArray *_supportedLanguages;
-    int _updateBehavior;
-    NSMutableArray *_validVersions;
+    }  _has;
+    NSString * _localizationURL;
+    NSString * _multiTileURL;
+    BOOL  _multiTileURLUsesStatusCodes;
+    int  _scale;
+    int  _size;
+    int  _style;
+    NSMutableArray * _supportedLanguages;
+    int  _updateBehavior;
+    NSMutableArray * _validVersions;
 }
 
 @property (nonatomic, retain) NSString *baseURL;

@@ -3,7 +3,7 @@
  */
 
 @interface GEOMapRequestManager : NSObject {
-    NSMutableSet *_requests;
+    NSMutableSet * _requests;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface TRAuthorizationStatusPacketEvent : TRPacketEvent {
-    int _authorizationStatus;
+    int  _authorizationStatus;
 }
 
 @property (nonatomic, readonly) int authorizationStatus;

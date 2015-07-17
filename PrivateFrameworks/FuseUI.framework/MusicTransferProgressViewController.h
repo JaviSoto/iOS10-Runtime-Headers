@@ -3,15 +3,15 @@
  */
 
 @interface MusicTransferProgressViewController : UIViewController <MusicTransferObserver, SKUIArtworkRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
-    SKUIStyledImageDataConsumer *_artworkDataConsumer;
-    NSMutableDictionary *_artworkResouceIdentifiers;
-    <MusicTransferProgressViewControllerDelegate> *_delegate;
-    NSNumberFormatter *_numberFormatter;
-    UIImage *_placeholderImage;
-    SKUIResourceLoader *_resourceLoader;
-    BOOL _showsDoneButton;
-    UITableView *_tableView;
-    MusicTransferAggregator *_transferAggregator;
+    SKUIStyledImageDataConsumer * _artworkDataConsumer;
+    NSMutableDictionary * _artworkResouceIdentifiers;
+    <MusicTransferProgressViewControllerDelegate> * _delegate;
+    NSNumberFormatter * _numberFormatter;
+    UIImage * _placeholderImage;
+    SKUIResourceLoader * _resourceLoader;
+    BOOL  _showsDoneButton;
+    UITableView * _tableView;
+    MusicTransferAggregator * _transferAggregator;
 }
 
 @property (readonly, copy) NSString *debugDescription;

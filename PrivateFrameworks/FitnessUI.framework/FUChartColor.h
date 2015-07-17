@@ -3,10 +3,10 @@
  */
 
 @interface FUChartColor : NSObject {
-    float _chartYValue;
-    struct CGColor { } *_color;
-    struct CGGradient { } *_gradient;
-    double _threshold;
+    float  _chartYValue;
+    struct CGColor { } * _color;
+    struct CGGradient { } * _gradient;
+    double  _threshold;
 }
 
 @property (nonatomic) float chartYValue;

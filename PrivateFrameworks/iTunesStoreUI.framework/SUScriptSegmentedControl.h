@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptSegmentedControl : SUScriptObject {
-    NSArray *_segments;
-    int _style;
+    NSArray * _segments;
+    int  _style;
 }
 
 @property (nonatomic, readonly) SUSegmentedControl *activeSegmentedControl;

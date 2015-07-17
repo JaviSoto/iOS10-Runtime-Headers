@@ -3,32 +3,32 @@
  */
 
 @interface _UINavigationInteractiveTransitionBase : UIPercentDrivenInteractiveTransition <UIGestureRecognizerDelegate> {
-    BOOL __completesTransitionOnEnd;
-    int __interactionState;
-    UIViewController *__parent;
-    BOOL __stoppedTransitionWasCancelled;
-    BOOL __transitionWasStopped;
-    BOOL __useAugmentedShouldPopDecisionProcedure;
-    float _accelerations;
-    _UINavigationParallaxTransition *_animationController;
-    float _averageAcceleration;
-    float _averageVelocity;
-    <_UINavigationInteractiveTransitionBaseDelegate> *_delegate;
-    CADisplayLink *_displayLink;
-    UIPanGestureRecognizer *_gestureRecognizer;
-    UIView *_gestureRecognizerView;
-    BOOL _inSpringAnimation;
-    float _previousAcceleration;
-    float _previousDisplacement;
-    double _previousTimeStamp;
-    float _previousVelocity;
-    unsigned int _sampleCount;
-    BOOL _shouldReverseTranslation;
-    double _skipTimeStamp;
-    BOOL _springAnimationIsPending;
-    float _timestamps;
-    float _totalDistance;
-    float _velocities;
+    BOOL  __completesTransitionOnEnd;
+    int  __interactionState;
+    UIViewController * __parent;
+    BOOL  __stoppedTransitionWasCancelled;
+    BOOL  __transitionWasStopped;
+    BOOL  __useAugmentedShouldPopDecisionProcedure;
+    float  _accelerations;
+    _UINavigationParallaxTransition * _animationController;
+    float  _averageAcceleration;
+    float  _averageVelocity;
+    <_UINavigationInteractiveTransitionBaseDelegate> * _delegate;
+    CADisplayLink * _displayLink;
+    UIPanGestureRecognizer * _gestureRecognizer;
+    UIView * _gestureRecognizerView;
+    BOOL  _inSpringAnimation;
+    float  _previousAcceleration;
+    float  _previousDisplacement;
+    double  _previousTimeStamp;
+    float  _previousVelocity;
+    unsigned int  _sampleCount;
+    BOOL  _shouldReverseTranslation;
+    double  _skipTimeStamp;
+    BOOL  _springAnimationIsPending;
+    float  _timestamps;
+    float  _totalDistance;
+    float  _velocities;
 }
 
 @property (setter=_setCompletesTransitionOnEnd:, nonatomic) BOOL _completesTransitionOnEnd;
@@ -58,6 +58,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) float totalDistance;
 
+- (void).cxx_destruct;
 - (void)_completeStoppedInteractiveTransition;
 - (BOOL)_completesTransitionOnEnd;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;

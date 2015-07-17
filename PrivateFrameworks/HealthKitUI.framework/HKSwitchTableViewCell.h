@@ -3,12 +3,12 @@
  */
 
 @interface HKSwitchTableViewCell : UITableViewCell {
-    BOOL _centersIcon;
-    <HKSwitchTableViewCellDelegate> *_delegate;
-    UILabel *_displayLabel;
-    BOOL _enabled;
-    UIImageView *_iconImageView;
-    UISwitch *_switch;
+    BOOL  _centersIcon;
+    <HKSwitchTableViewCellDelegate> * _delegate;
+    UILabel * _displayLabel;
+    BOOL  _enabled;
+    UIImageView * _iconImageView;
+    UISwitch * _switch;
 }
 
 @property (nonatomic) BOOL centersIcon;
@@ -18,8 +18,11 @@
 @property (getter=isOn, nonatomic) BOOL on;
 
 - (void).cxx_destruct;
+- (void)_contextSizeCategoryChanged;
+- (id)_displayLabelFont;
 - (void)_setupUI;
 - (BOOL)centersIcon;
+- (void)dealloc;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })iconSize;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

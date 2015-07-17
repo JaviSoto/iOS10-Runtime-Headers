@@ -3,12 +3,12 @@
  */
 
 @interface HDCodableNanoSyncAnchor : PBCodable <NSCopying> {
-    long long _anchor;
+    long long  _anchor;
     struct { 
         unsigned int anchor : 1; 
         unsigned int objectType : 1; 
-    } _has;
-    int _objectType;
+    }  _has;
+    int  _objectType;
 }
 
 @property (nonatomic) long long anchor;

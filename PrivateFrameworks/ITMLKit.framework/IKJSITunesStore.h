@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSITunesStore : IKJSObject <IKJSITunesStore> {
-    int _bagOperationLock;
-    NSString *_cookieURL;
-    id _isURLBagDidLoadToken;
-    NSNumber *_lastAccountDSID;
-    SSMetricsController *_metricsController;
-    ISLoadURLBagOperation *_pendingBagOperation;
-    id _ssAccountStoreChangedToken;
-    NSString *_storeFrontSuffix;
+@interface IKJSITunesStore : IKJSObject <IKJSITunesStore, JSExport> {
+    int  _bagOperationLock;
+    NSString * _cookieURL;
+    id  _isURLBagDidLoadToken;
+    NSNumber * _lastAccountDSID;
+    SSMetricsController * _metricsController;
+    ISLoadURLBagOperation * _pendingBagOperation;
+    id  _ssAccountStoreChangedToken;
+    NSString * _storeFrontSuffix;
 }
 
 @property (nonatomic, readonly) NSString *DSID;

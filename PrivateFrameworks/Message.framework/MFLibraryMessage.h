@@ -3,19 +3,19 @@
  */
 
 @interface MFLibraryMessage : MFMailMessage {
-    unsigned long long _conversationFlags;
-    id /* block */ _deallocationHandler;
-    unsigned int _libraryID;
-    unsigned int _mailboxID;
-    NSString *_messageID;
-    NSMutableDictionary *_metadata;
-    NSMutableSet *_metadataChangedKeys;
-    MFLock *_metadataLock;
-    unsigned int _originalMailboxID;
-    NSString *_remoteID;
-    unsigned int _size;
-    unsigned long _uid;
-    unsigned long long _uniqueRemoteId;
+    unsigned long long  _conversationFlags;
+    id /* block */  _deallocationHandler;
+    unsigned int  _libraryID;
+    unsigned int  _mailboxID;
+    NSString * _messageID;
+    NSMutableDictionary * _metadata;
+    NSMutableSet * _metadataChangedKeys;
+    MFLock * _metadataLock;
+    unsigned int  _originalMailboxID;
+    NSString * _remoteID;
+    unsigned int  _size;
+    unsigned long  _uid;
+    unsigned long long  _uniqueRemoteId;
 }
 
 @property (nonatomic, copy) id /* block */ deallocationHandler;

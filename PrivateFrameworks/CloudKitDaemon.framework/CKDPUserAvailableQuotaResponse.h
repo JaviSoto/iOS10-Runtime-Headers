@@ -5,8 +5,8 @@
 @interface CKDPUserAvailableQuotaResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int storageAvailableBytes : 1; 
-    } _has;
-    unsigned long long _storageAvailableBytes;
+    }  _has;
+    unsigned long long  _storageAvailableBytes;
 }
 
 @property (nonatomic) BOOL hasStorageAvailableBytes;

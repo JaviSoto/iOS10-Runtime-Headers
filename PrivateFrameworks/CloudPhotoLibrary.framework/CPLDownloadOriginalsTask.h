@@ -3,16 +3,16 @@
  */
 
 @interface CPLDownloadOriginalsTask : CPLEngineSyncEmergencyTask {
-    NSMutableDictionary *_cloudIdentifierForLocalIdentifier;
-    NSMutableArray *_cloudResources;
-    NSURL *_destinationURL;
-    <CPLEngineTransportResourceDownloadTask> *_downloadTask;
-    NSMutableArray *_failedIdentifiers;
-    NSArray *_localIdentifiers;
-    NSProgress *_progress;
-    NSString *_progressIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_typeIdentifier;
+    NSMutableDictionary * _cloudIdentifierForLocalIdentifier;
+    NSMutableArray * _cloudResources;
+    NSURL * _destinationURL;
+    <CPLEngineTransportResourceDownloadTask> * _downloadTask;
+    NSMutableArray * _failedIdentifiers;
+    NSArray * _localIdentifiers;
+    NSProgress * _progress;
+    NSString * _progressIdentifier;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _typeIdentifier;
 }
 
 @property (nonatomic, copy) NSURL *destinationURL;

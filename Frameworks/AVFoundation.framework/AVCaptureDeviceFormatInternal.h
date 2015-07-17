@@ -8,15 +8,15 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } defaultActiveMaxFrameDuration;
+    }  defaultActiveMaxFrameDuration;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } defaultActiveMinFrameDuration;
-    FigCaptureSourceFormat *sourceFormat;
-    NSArray *videoSupportedFrameRateRanges;
+    }  defaultActiveMinFrameDuration;
+    FigCaptureSourceFormat * sourceFormat;
+    NSArray * videoSupportedFrameRateRanges;
 }
 
 @end

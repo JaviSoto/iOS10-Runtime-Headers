@@ -3,12 +3,12 @@
  */
 
 @interface TSDDefaultPartitioner : NSObject <TSDCanvasDelegate, TSDPartitioner> {
-    TSUPointerKeyDictionary *mCachedImagesByCanvas;
-    TSDCanvas *mCanvas;
-    NSObject<TSDInfo> *mInfo;
-    TSDLayout *mLayout;
-    TSUPointerKeyDictionary *mMainRepsByCanvas;
-    TSUPointerKeyDictionary *mPartialRepsByCanvas;
+    TSUPointerKeyDictionary * mCachedImagesByCanvas;
+    TSDCanvas * mCanvas;
+    NSObject<TSDInfo> * mInfo;
+    TSDLayout * mLayout;
+    TSUPointerKeyDictionary * mMainRepsByCanvas;
+    TSUPointerKeyDictionary * mPartialRepsByCanvas;
 }
 
 @property (readonly, copy) NSString *debugDescription;

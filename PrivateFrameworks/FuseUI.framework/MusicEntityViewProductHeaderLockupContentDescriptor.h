@@ -3,22 +3,22 @@
  */
 
 @interface MusicEntityViewProductHeaderLockupContentDescriptor : MusicEntityViewContentDescriptor {
-    MusicEntityViewContentArtworkDescriptor *_backgroundArtworkDescriptor;
-    UIColor *_backgroundOverlayTintColor;
-    int _buttonsBackdropOverlayBlendMode;
-    UIColor *_buttonsTintColor;
-    MusicEntityViewContentTextDescriptor *_editableTextDescriptor;
-    MusicEntityViewContentTextDescriptor *_editableTextHeaderDescriptor;
-    BOOL _wantsAddSongsButton;
-    BOOL _wantsAddToLibraryButton;
-    BOOL _wantsBackgroundBlur;
-    BOOL _wantsBackgroundImage;
-    BOOL _wantsCameraButtonWhenEditing;
-    BOOL _wantsEditButton;
-    BOOL _wantsLikeDislikeButton;
-    BOOL _wantsRefreshActivityIndicator;
-    BOOL _wantsRefreshButton;
-    NSString *_wantsShareButtonProperty;
+    MusicEntityViewContentArtworkDescriptor * _backgroundArtworkDescriptor;
+    UIColor * _backgroundOverlayTintColor;
+    int  _buttonsBackdropOverlayBlendMode;
+    UIColor * _buttonsTintColor;
+    MusicEntityViewContentTextDescriptor * _editableTextDescriptor;
+    MusicEntityViewContentTextDescriptor * _editableTextHeaderDescriptor;
+    BOOL  _wantsAddSongsButton;
+    BOOL  _wantsAddToLibraryButton;
+    BOOL  _wantsBackgroundBlur;
+    BOOL  _wantsBackgroundImage;
+    BOOL  _wantsCameraButtonWhenEditing;
+    BOOL  _wantsEditButton;
+    BOOL  _wantsLikeDislikeButton;
+    BOOL  _wantsRefreshActivityIndicator;
+    BOOL  _wantsRefreshButton;
+    NSString * _wantsShareButtonProperty;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentArtworkDescriptor *backgroundArtworkDescriptor;

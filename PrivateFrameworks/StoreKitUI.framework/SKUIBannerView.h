@@ -3,20 +3,20 @@
  */
 
 @interface SKUIBannerView : UIView {
-    UILabel *_artistNameLabel;
-    UIView *_bottomBorderView;
-    SKUIClientContext *_clientContext;
-    UIButton *_closeButton;
-    UIImageView *_iconImageView;
-    SSLookupItemOffer *_itemOffer;
-    UIButton *_itemOfferButton;
-    SKUIItemState *_itemState;
-    UILabel *_itemStateLabel;
-    NSMutableArray *_screenshotImageViews;
-    UIView *_separatorView;
-    UILabel *_titleLabel;
-    float _userRating;
-    UIImageView *_userRatingStarImageView;
+    UILabel * _artistNameLabel;
+    UIView * _bottomBorderView;
+    SKUIClientContext * _clientContext;
+    UIButton * _closeButton;
+    UIImageView * _iconImageView;
+    SSLookupItemOffer * _itemOffer;
+    UIButton * _itemOfferButton;
+    SKUIItemState * _itemState;
+    UILabel * _itemStateLabel;
+    NSMutableArray * _screenshotImageViews;
+    UIView * _separatorView;
+    UILabel * _titleLabel;
+    float  _userRating;
+    UIImageView * _userRatingStarImageView;
 }
 
 @property (nonatomic, copy) NSString *artistName;

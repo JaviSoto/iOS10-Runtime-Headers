@@ -3,12 +3,12 @@
  */
 
 @interface SFUBufferedInputStream : NSObject <SFUBufferedInputStream> {
-    char *mBuffer;
-    long long mBufferEnd;
-    long long mBufferOffset;
-    unsigned long mBufferSize;
-    long long mBufferStart;
-    <SFUInputStream> *mStream;
+    char * mBuffer;
+    long long  mBufferEnd;
+    long long  mBufferOffset;
+    unsigned long  mBufferSize;
+    long long  mBufferStart;
+    <SFUInputStream> * mStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

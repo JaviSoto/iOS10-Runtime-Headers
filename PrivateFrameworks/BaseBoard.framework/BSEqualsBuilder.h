@@ -3,7 +3,7 @@
  */
 
 @interface BSEqualsBuilder : NSObject {
-    BOOL _equal;
+    BOOL  _equal;
 }
 
 + (id)builder;

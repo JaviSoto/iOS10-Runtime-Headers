@@ -3,8 +3,8 @@
  */
 
 @interface TSPDatabaseDataRepresentation : SFUDataRepresentation {
-    TSPDatabase *_database;
-    long long _identifier;
+    TSPDatabase * _database;
+    long long  _identifier;
 }
 
 - (void).cxx_destruct;

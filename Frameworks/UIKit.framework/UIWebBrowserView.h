@@ -3,9 +3,9 @@
  */
 
 @interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, WBUFormAutoFillWebView, _UIWebRotationDelegate> {
-    UIWebFormAccessory *_accessory;
-    unsigned int _accessoryEnabled;
-    NSHashTable *_activeHighlighters;
+    UIWebFormAccessory * _accessory;
+    unsigned int  _accessoryEnabled;
+    NSHashTable * _activeHighlighters;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,21 +15,22 @@
             float width; 
             float height; 
         } size; 
-    } _addressViewBounds;
-    unsigned int _allowDOMFocusRedirects;
-    unsigned int _alwaysDispatchesScrollEvents;
-    DOMNode *_assistedNodeStartingFocusRedirects;
-    unsigned int _audioSessionCategoryOverride;
-    <UIWebAutoFillDelegate> *_autoFillDelegate;
-    DOMNode *_currentAssistedNode;
-    NSMutableArray *_deferredTouchEvents;
-    unsigned int _dispatchedTouchEvents;
-    UIResponder *_editingDelegateForEverythingExceptForms;
-    unsigned int _forceInputView;
-    UIWebFormDelegate *_formDelegate;
-    unsigned int _formIsAutoFilling;
-    unsigned int _hasEditedTextField;
-    NSObject<UIFormPeripheral> *_input;
+    }  _addressViewBounds;
+    unsigned int  _allowDOMFocusRedirects;
+    unsigned int  _allowsPictureInPictureVideo;
+    unsigned int  _alwaysDispatchesScrollEvents;
+    DOMNode * _assistedNodeStartingFocusRedirects;
+    unsigned int  _audioSessionCategoryOverride;
+    <UIWebAutoFillDelegate> * _autoFillDelegate;
+    DOMNode * _currentAssistedNode;
+    NSMutableArray * _deferredTouchEvents;
+    unsigned int  _dispatchedTouchEvents;
+    UIResponder * _editingDelegateForEverythingExceptForms;
+    unsigned int  _forceInputView;
+    UIWebFormDelegate * _formDelegate;
+    unsigned int  _formIsAutoFilling;
+    unsigned int  _hasEditedTextField;
+    NSObject<UIFormPeripheral> * _input;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -39,9 +40,9 @@
             float width; 
             float height; 
         } size; 
-    } _inputViewBounds;
-    unsigned int _inputViewObeysDOMFocus;
-    float _lastAdjustmentForScroller;
+    }  _inputViewBounds;
+    unsigned int  _inputViewObeysDOMFocus;
+    float  _lastAdjustmentForScroller;
     struct { 
         NSMutableArray *all; 
         NSMutableArray *html; 
@@ -51,18 +52,18 @@
         NSMutableArray *warning; 
         NSMutableArray *tip; 
         NSMutableArray *log; 
-    } _messages;
-    NSMutableSet *_overflowScrollViews;
-    NSMutableSet *_overflowScrollViewsPendingDeletion;
-    NSMutableSet *_overflowScrollViewsPendingInsertion;
+    }  _messages;
+    NSMutableSet * _overflowScrollViews;
+    NSMutableSet * _overflowScrollViewsPendingDeletion;
+    NSMutableSet * _overflowScrollViewsPendingInsertion;
     struct { 
         UIWebPDFView *view; 
         NSTimer *timer; 
-    } _pdf;
-    BOOL _pendingGeometryChangeAfterOverflowScroll;
-    NSLock *_pendingOverflowDataLock;
-    NSMutableArray *_pendingOverflowScrolls;
-    UIWebTouchEventsGestureRecognizer *_webTouchEventsGestureRecognizer;
+    }  _pdf;
+    BOOL  _pendingGeometryChangeAfterOverflowScroll;
+    NSLock * _pendingOverflowDataLock;
+    NSMutableArray * _pendingOverflowScrolls;
+    UIWebTouchEventsGestureRecognizer * _webTouchEventsGestureRecognizer;
 }
 
 @property (nonatomic, retain) UIWebFormAccessory *_accessory;
@@ -72,6 +73,7 @@
 @property (getter=isAccessoryEnabled, nonatomic) BOOL accessoryEnabled;
 @property (nonatomic) BOOL allowDOMFocusRedirects;
 @property (nonatomic) BOOL allowsInlineMediaPlayback;
+@property (nonatomic) BOOL allowsPictureInPictureVideo;
 @property (nonatomic) BOOL alwaysDispatchesScrollEvents;
 @property (nonatomic) unsigned int audioSessionCategoryOverride;
 @property (nonatomic) <UIWebAutoFillDelegate> *autoFillDelegate;
@@ -84,6 +86,7 @@
 @property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
 @property (nonatomic) NSString *networkInterfaceName;
 @property (readonly) Class superclass;
+@property (setter=webui_setLastGeneratedPasswordForCurrentBackForwardItem:, nonatomic, copy) NSString *webui_lastGeneratedPasswordForCurrentBackForwardItem;
 @property (nonatomic, readonly) BOOL webui_privateBrowsingEnabled;
 @property (nonatomic, readonly) UIView *webui_viewForAutoFillPrompt;
 
@@ -179,6 +182,7 @@
 - (id)addFindOnPageHighlighter;
 - (BOOL)allowDOMFocusRedirects;
 - (BOOL)allowsInlineMediaPlayback;
+- (BOOL)allowsPictureInPictureVideo;
 - (BOOL)alwaysDispatchesScrollEvents;
 - (BOOL)appendOverflowScrollForNode:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 whileScrolling:(BOOL)arg3;
 - (void)assistFormNode:(id)arg1;
@@ -197,6 +201,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithWebView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)inputAccessoryView;
+- (id)inputAssistantItem;
 - (id)inputView;
 - (BOOL)inputViewObeysDOMFocus;
 - (void)installGestureRecognizers;
@@ -220,6 +225,7 @@
 - (void)setAccessoryEnabled:(BOOL)arg1;
 - (void)setAllowDOMFocusRedirects:(BOOL)arg1;
 - (void)setAllowsInlineMediaPlayback:(BOOL)arg1;
+- (void)setAllowsPictureInPictureVideo:(BOOL)arg1;
 - (void)setAlwaysDispatchesScrollEvents:(BOOL)arg1;
 - (void)setAudioSessionCategoryOverride:(unsigned int)arg1;
 - (void)setAutoFillDelegate:(id)arg1;
@@ -257,10 +263,12 @@
 - (void)enumerateUnsubmittedFormsUsingBlock:(id /* block */)arg1;
 - (id)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
 - (id)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
+- (id)webui_lastGeneratedPasswordForCurrentBackForwardItem;
 - (id /* block */)webui_preventNavigationDuringAutoFillPrompt;
 - (BOOL)webui_privateBrowsingEnabled;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
 - (void)webui_setFormMetadata:(id)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
+- (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(id)arg1;
 - (id)webui_viewForAutoFillPrompt;
 
 @end

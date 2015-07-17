@@ -3,20 +3,20 @@
  */
 
 @interface SKUIFilterBarView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIMenuPopoverDelegate, SKUIViewElementView> {
-    SKUIDividerView *_bottomDividerView;
-    NSMutableArray *_centerElementViews;
+    SKUIDividerView * _bottomDividerView;
+    NSMutableArray * _centerElementViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMutableArray *_elementControllers;
-    UIControl *_focusedMenuButton;
-    NSMutableArray *_leftElementViews;
-    SKUIMenuPopoverController *_popoverController;
-    NSMutableArray *_rightElementViews;
-    NSMapTable *_viewElementViews;
+    }  _contentInset;
+    NSMutableArray * _elementControllers;
+    UIControl * _focusedMenuButton;
+    NSMutableArray * _leftElementViews;
+    SKUIMenuPopoverController * _popoverController;
+    NSMutableArray * _rightElementViews;
+    NSMapTable * _viewElementViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

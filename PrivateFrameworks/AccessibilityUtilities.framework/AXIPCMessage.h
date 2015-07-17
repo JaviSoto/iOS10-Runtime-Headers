@@ -5,10 +5,10 @@
 @interface AXIPCMessage : NSObject <NSSecureCoding> {
     struct { 
         unsigned int val[8]; 
-    } _auditToken;
-    unsigned int _clientPort;
-    int _key;
-    NSDictionary *_payload;
+    }  _auditToken;
+    unsigned int  _clientPort;
+    int  _key;
+    NSDictionary * _payload;
 }
 
 @property (nonatomic) struct { unsigned int x1[8]; } auditToken;

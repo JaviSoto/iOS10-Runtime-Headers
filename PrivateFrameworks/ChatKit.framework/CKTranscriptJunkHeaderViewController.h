@@ -3,7 +3,7 @@
  */
 
 @interface CKTranscriptJunkHeaderViewController : CKTranscriptHeaderViewController <UIPopoverPresentationControllerDelegate> {
-    <CKTranscriptJunkHeaderDelegate> *_delegate;
+    <CKTranscriptJunkHeaderDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface PHAssetDuplicateProperties : NSObject {
-    PHAsset *_asset;
-    NSData *_originalHash;
-    NSString *_publicGlobalUUID;
+    PHAsset * _asset;
+    NSData * _originalHash;
+    NSString * _publicGlobalUUID;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

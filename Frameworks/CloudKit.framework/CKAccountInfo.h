@@ -3,10 +3,10 @@
  */
 
 @interface CKAccountInfo : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _accountWantsPushRegistration;
-    NSString *_email;
-    BOOL _isUnitTestingAccount;
-    NSString *_password;
+    BOOL  _accountWantsPushRegistration;
+    NSString * _email;
+    BOOL  _isUnitTestingAccount;
+    NSString * _password;
 }
 
 @property (nonatomic) BOOL accountWantsPushRegistration;

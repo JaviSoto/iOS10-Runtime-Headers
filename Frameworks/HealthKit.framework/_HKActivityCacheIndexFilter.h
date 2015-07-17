@@ -3,8 +3,8 @@
  */
 
 @interface _HKActivityCacheIndexFilter : _HKFilter {
-    long long _cacheIndex;
-    unsigned int _operatorType;
+    long long  _cacheIndex;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) long long cacheIndex;

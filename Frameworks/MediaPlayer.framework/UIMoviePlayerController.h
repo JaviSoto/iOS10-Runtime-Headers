@@ -3,18 +3,18 @@
  */
 
 @interface UIMoviePlayerController : NSObject {
-    <MPVideoControllerProtocol> *_activeVideoController;
-    unsigned int _audioControlsStyle;
-    unsigned int _autoRotationMask;
-    NSArray *_closedCaptionData;
-    id _delegate;
-    unsigned int _desiredParts;
-    unsigned int _displayableParts;
-    struct __CFBag { } *_ignoredChangeTypes;
-    int _interfaceOrientation;
-    int _interfaceOrientationFromDevice;
-    MPAVItem *_item;
-    int _lastSetUIInterfaceOrientation;
+    <MPVideoControllerProtocol> * _activeVideoController;
+    unsigned int  _audioControlsStyle;
+    unsigned int  _autoRotationMask;
+    NSArray * _closedCaptionData;
+    id  _delegate;
+    unsigned int  _desiredParts;
+    unsigned int  _displayableParts;
+    struct __CFBag { } * _ignoredChangeTypes;
+    int  _interfaceOrientation;
+    int  _interfaceOrientationFromDevice;
+    MPAVItem * _item;
+    int  _lastSetUIInterfaceOrientation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,8 +24,8 @@
             float width; 
             float height; 
         } size; 
-    } _layoutRect;
-    NSString *_moviePath;
+    }  _layoutRect;
+    NSString * _moviePath;
     struct { 
         unsigned int canShowControlsOverlay : 1; 
         unsigned int wantsControlsOverlayVis : 1; 
@@ -53,24 +53,24 @@
         unsigned int usingDebugTestPath : 1; 
         unsigned int allowsWirelessPlayback : 1; 
         unsigned int useHostedWindowWhenFullscreen : 1; 
-    } _mpcBitfield;
-    MPNowPlayingObserver *_nowPlayingController;
-    int _pendingInterfaceOrientation;
-    MPAVItem *_pendingItem;
-    MPAVItem *_pendingItemWithDifferentType;
-    unsigned int _playableContentTypeOverride;
-    NSString *_playbackErrorDescription;
-    MPAVController *_player;
-    UINavigationController *_portraitNavigationController;
-    UIImage *_posterImage;
-    double _timeToSnapshot;
-    double _timeWhenResignedActive;
-    UIViewController *_topViewController;
-    MPTransitionController *_transitionController;
-    int _transitionCount;
-    unsigned int _unmodifiedDisplayableParts;
-    MPVideoView *_videoView;
-    NSString *_youTubeVideoID;
+    }  _mpcBitfield;
+    MPNowPlayingObserver * _nowPlayingController;
+    int  _pendingInterfaceOrientation;
+    MPAVItem * _pendingItem;
+    MPAVItem * _pendingItemWithDifferentType;
+    unsigned int  _playableContentTypeOverride;
+    NSString * _playbackErrorDescription;
+    MPAVController * _player;
+    UINavigationController * _portraitNavigationController;
+    UIImage * _posterImage;
+    double  _timeToSnapshot;
+    double  _timeWhenResignedActive;
+    UIViewController * _topViewController;
+    MPTransitionController * _transitionController;
+    int  _transitionCount;
+    unsigned int  _unmodifiedDisplayableParts;
+    MPVideoView * _videoView;
+    NSString * _youTubeVideoID;
 }
 
 @property (nonatomic, readonly) MPMovieAccessLog *accessLog;

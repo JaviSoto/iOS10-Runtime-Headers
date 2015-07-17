@@ -3,7 +3,7 @@
  */
 
 @interface MPVolumeViewController : UIViewController {
-    MPVolumeView *_volumeView;
+    MPVolumeView * _volumeView;
 }
 
 @property (nonatomic, readonly) MPVolumeView *volumeView;

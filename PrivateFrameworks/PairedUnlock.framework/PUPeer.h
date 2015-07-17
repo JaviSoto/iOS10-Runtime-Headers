@@ -3,12 +3,12 @@
  */
 
 @interface PUPeer : NSObject <IDSServiceDelegate> {
-    <PUPeerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_idsQueue;
-    PUKeyStore *_keyStore;
-    NSMutableDictionary *_responseHandlers;
-    IDSService *_service;
-    BOOL _unlockEnabled;
+    <PUPeerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _idsQueue;
+    PUKeyStore * _keyStore;
+    NSMutableDictionary * _responseHandlers;
+    IDSService * _service;
+    BOOL  _unlockEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

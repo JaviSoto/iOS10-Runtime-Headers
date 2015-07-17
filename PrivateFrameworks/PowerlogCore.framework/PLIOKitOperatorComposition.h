@@ -3,12 +3,12 @@
  */
 
 @interface PLIOKitOperatorComposition : NSObject {
-    struct IONotificationPort { } *_ioNotifyPort;
-    unsigned int _notificationRef;
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    unsigned int _service;
-    NSString *_serviceName;
+    struct IONotificationPort { } * _ioNotifyPort;
+    unsigned int  _notificationRef;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    unsigned int  _service;
+    NSString * _serviceName;
 }
 
 @property struct IONotificationPort { }*ioNotifyPort;

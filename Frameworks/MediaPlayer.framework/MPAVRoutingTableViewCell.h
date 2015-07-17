@@ -3,13 +3,13 @@
  */
 
 @interface MPAVRoutingTableViewCell : UITableViewCell {
-    BOOL _debugCell;
-    <MPAVRoutingTableViewCellDelegate> *_delegate;
-    UILabel *_mirroringLabel;
-    UIView *_mirroringSeparatorView;
-    UISwitch *_mirroringSwitch;
-    BOOL _mirroringSwitchVisible;
-    MPAVRoute *_route;
+    BOOL  _debugCell;
+    <MPAVRoutingTableViewCellDelegate> * _delegate;
+    UILabel * _mirroringLabel;
+    UIView * _mirroringSeparatorView;
+    UISwitch * _mirroringSwitch;
+    BOOL  _mirroringSwitchVisible;
+    MPAVRoute * _route;
 }
 
 @property (getter=isDebugCell, nonatomic) BOOL debugCell;

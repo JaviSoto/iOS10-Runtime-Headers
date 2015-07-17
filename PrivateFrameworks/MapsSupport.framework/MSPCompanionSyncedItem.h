@@ -3,11 +3,11 @@
  */
 
 @interface MSPCompanionSyncedItem : PBCodable <NSCopying, SYObject> {
-    MSPBookmarkStorage *_bookmark;
-    MSPPinStorage *_pin;
-    MSPSearchRequestStorage *_searchRequest;
-    NSString *_syncId;
-    PBUnknownFields *_unknownFields;
+    MSPBookmarkStorage * _bookmark;
+    MSPPinStorage * _pin;
+    MSPHistoryEntryStorage * _searchRequest;
+    NSString * _syncId;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) MSPBookmarkStorage *bookmark;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) BOOL hasSyncId;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MSPPinStorage *pin;
-@property (nonatomic, retain) MSPSearchRequestStorage *searchRequest;
+@property (nonatomic, retain) MSPHistoryEntryStorage *searchRequest;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *syncId;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -36,6 +36,7 @@
 - (BOOL)hasSyncId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)pin;
 - (BOOL)readFrom:(id)arg1;
 - (id)searchRequest;

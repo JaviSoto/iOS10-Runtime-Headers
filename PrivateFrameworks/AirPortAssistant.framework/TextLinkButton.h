@@ -3,8 +3,8 @@
  */
 
 @interface TextLinkButton : UIButton {
-    <TextLinkButtonDelegate> *_delegate;
-    NSString *_urlString;
+    <TextLinkButtonDelegate> * _delegate;
+    NSString * _urlString;
 }
 
 @property (nonatomic) <TextLinkButtonDelegate> *delegate;

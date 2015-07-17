@@ -6,9 +6,9 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _expectedImageSize;
-    BOOL _layoutNeedsLayout;
-    UIView *_separatorView;
+    }  _expectedImageSize;
+    BOOL  _layoutNeedsLayout;
+    UIView * _separatorView;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } expectedImageSize;

@@ -3,8 +3,8 @@
  */
 
 @interface FUHourlySedentaryActivityInfo : NSObject <NSSecureCoding> {
-    int _sedentaryState;
-    NSDate *_startDate;
+    int  _sedentaryState;
+    NSDate * _startDate;
 }
 
 @property (nonatomic) int sedentaryState;

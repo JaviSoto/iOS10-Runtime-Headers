@@ -3,11 +3,11 @@
  */
 
 @interface RCWaveformSegment : NSObject <NSCoding> {
-    NSData *_averagePowerLevelData;
+    NSData * _averagePowerLevelData;
     struct { 
         double beginTime; 
         double endTime; 
-    } _timeRange;
+    }  _timeRange;
 }
 
 @property (nonatomic, readonly) const float*averagePowerLevels;
@@ -25,7 +25,6 @@
 + (id)segmentsByReparingDiscontinuitiesInSegments:(id)arg1;
 + (id)segmentsByShiftingSegments:(id)arg1 byTimeOffset:(double)arg2;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelData:(id)arg2;
 - (id)_segmentWithValuesInContainedTimeRange:(struct { double x1; double x2; })arg1;

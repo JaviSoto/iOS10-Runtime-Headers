@@ -3,22 +3,22 @@
  */
 
 @interface SSVSubscriptionStatus : NSObject <NSCopying, SSXPCCoding> {
-    unsigned long long _acceptedStoreTermsVersion;
-    NSNumber *_accountIdentifier;
-    NSArray *_accountPermissions;
-    int _accountStatus;
-    int _carrierBundlingStatus;
-    NSString *_cellularOperatorName;
-    BOOL _discoveryModeEligible;
-    BOOL _familyOrganizer;
-    BOOL _familySubscription;
-    BOOL _hasFamily;
-    BOOL _hasFamilyMembers;
-    unsigned long long _latestStoreTermsVersion;
-    NSString *_phoneNumber;
-    NSString *_sessionIdentifier;
-    double _subscriptionExpirationTime;
-    BOOL _subscriptionPurchaser;
+    unsigned long long  _acceptedStoreTermsVersion;
+    NSNumber * _accountIdentifier;
+    NSArray * _accountPermissions;
+    int  _accountStatus;
+    int  _carrierBundlingStatus;
+    NSString * _cellularOperatorName;
+    BOOL  _discoveryModeEligible;
+    BOOL  _familyOrganizer;
+    BOOL  _familySubscription;
+    BOOL  _hasFamily;
+    BOOL  _hasFamilyMembers;
+    unsigned long long  _latestStoreTermsVersion;
+    NSString * _phoneNumber;
+    NSString * _sessionIdentifier;
+    double  _subscriptionExpirationTime;
+    BOOL  _subscriptionPurchaser;
 }
 
 @property (nonatomic, readonly) unsigned long long MP_capabilities;

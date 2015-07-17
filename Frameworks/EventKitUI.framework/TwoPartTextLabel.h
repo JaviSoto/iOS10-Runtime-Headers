@@ -3,14 +3,14 @@
  */
 
 @interface TwoPartTextLabel : UILabel {
-    float _minPart2Width;
+    float  _minPart2Width;
     struct CGSize { 
         float width; 
         float height; 
-    } _part2Size;
-    NSString *_secondTextPart;
-    BOOL _strikethroughPart1;
-    BOOL _strikethroughPart2;
+    }  _part2Size;
+    NSString * _secondTextPart;
+    BOOL  _strikethroughPart1;
+    BOOL  _strikethroughPart2;
 }
 
 @property (nonatomic) BOOL strikethroughPart1;

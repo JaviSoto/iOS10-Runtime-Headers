@@ -3,21 +3,21 @@
  */
 
 @interface PTSRow : NSObject <_UISettingsKeyPathObserver> {
-    PTSRowAction *_action;
-    int _allowedEditingTypes;
-    NSPredicate *_condition;
-    _UISettings *_groupChild;
-    NSString *_groupKeyPath;
-    NSString *_imageKeyPath;
-    NSHashTable *_observers;
-    PTSSection *_section;
-    _UISettings *_settings;
-    UIImage *_staticImage;
-    NSString *_staticTitle;
-    NSString *_titleKeyPath;
-    id /* block */ _valueFormatter;
-    NSString *_valueKeyPath;
-    id /* block */ _valueValidatator;
+    PTSRowAction * _action;
+    int  _allowedEditingTypes;
+    NSPredicate * _condition;
+    _UISettings * _groupChild;
+    NSString * _groupKeyPath;
+    NSString * _imageKeyPath;
+    NSHashTable * _observers;
+    PTSSection * _section;
+    _UISettings * _settings;
+    UIImage * _staticImage;
+    NSString * _staticTitle;
+    NSString * _titleKeyPath;
+    id /* block */  _valueFormatter;
+    NSString * _valueKeyPath;
+    id /* block */  _valueValidatator;
 }
 
 @property (nonatomic, copy) PTSRowAction *action;

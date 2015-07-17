@@ -3,10 +3,10 @@
  */
 
 @interface SSVMediaContentTasteItem : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, SSXPCCoding> {
-    unsigned int _contentType;
-    NSString *_playlistGlobalID;
-    long long _storeAdamID;
-    unsigned int _tasteType;
+    unsigned int  _contentType;
+    NSString * _playlistGlobalID;
+    long long  _storeAdamID;
+    unsigned int  _tasteType;
 }
 
 @property (nonatomic, readonly) unsigned int contentType;

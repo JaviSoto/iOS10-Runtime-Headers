@@ -3,11 +3,11 @@
  */
 
 @interface PLImageTableSegment : NSObject {
-    BOOL _dying;
-    PLImageTable *_imageTable;
-    unsigned long _index;
-    unsigned long _length;
-    void *_ptr;
+    BOOL  _dying;
+    PLImageTable * _imageTable;
+    unsigned long  _index;
+    unsigned long  _length;
+    void * _ptr;
 }
 
 - (void*)bytes;

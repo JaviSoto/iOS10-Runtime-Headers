@@ -3,11 +3,11 @@
  */
 
 @interface NSSQLChannel : NSObject {
-    NSSQLConnection *_connection;
-    NSSQLEntity *_currentEntity;
-    NSManagedObjectContext *_currentMOCon;
-    NSMutableArray *_fetchProperties;
-    NSSQLCore *_sqlCore;
+    NSSQLConnection * _connection;
+    NSSQLEntity * _currentEntity;
+    NSManagedObjectContext * _currentMOCon;
+    NSMutableArray * _fetchProperties;
+    NSSQLCore * _sqlCore;
 }
 
 - (void)_closeChannel;
@@ -23,6 +23,8 @@
 - (void)finalize;
 - (id)initWithSQLCore:(id)arg1;
 - (BOOL)isFetchInProgress;
+- (BOOL)prepareAndExecuteStatement:(id)arg1;
+- (int)rowsChangedByLastStatement;
 - (BOOL)selectCountWithFetchRequest:(id)arg1;
 - (void)selectRowsWithCachedStatement:(id)arg1;
 - (void)selectRowsWithFetchRequest:(id)arg1;

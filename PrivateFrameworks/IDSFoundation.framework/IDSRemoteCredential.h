@@ -3,9 +3,9 @@
  */
 
 @interface IDSRemoteCredential : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    int _retries;
-    BOOL _wantsRetries;
+    NSObject<OS_xpc_object> * _connection;
+    int  _retries;
+    BOOL  _wantsRetries;
 }
 
 @property (nonatomic) BOOL wantsRetries;

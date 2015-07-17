@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetCharacterStyle : TSWPSpecCharacterStyle {
-    TSWPCharacterStyle *_characterStyle;
-    BOOL _unset;
+    TSWPCharacterStyle * _characterStyle;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

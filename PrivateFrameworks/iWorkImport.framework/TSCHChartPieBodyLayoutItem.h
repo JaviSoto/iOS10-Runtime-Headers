@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartPieBodyLayoutItem : TSCHChartBodyLayoutItem {
-    TSCHPieBodyLayoutItemPathCache *mPathCache;
+    TSCHPieBodyLayoutItemPathCache * mPathCache;
 }
 
 @property (retain) TSCHPieBodyLayoutItemPathCache *p_pathCache;

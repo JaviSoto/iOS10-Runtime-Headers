@@ -3,15 +3,15 @@
  */
 
 @interface ABFavoritesListManager : NSObject {
-    void *_addressBook;
+    void * _addressBook;
     struct { 
         unsigned int dirty : 1; 
         unsigned int postCount : 1; 
         unsigned int needsReload : 1; 
         unsigned int unused : 29; 
-    } _flags;
-    NSMutableArray *_list;
-    struct __CFDictionary { } *_uidToEntry;
+    }  _flags;
+    NSMutableArray * _list;
+    struct __CFDictionary { } * _uidToEntry;
 }
 
 + (id)sharedInstance;

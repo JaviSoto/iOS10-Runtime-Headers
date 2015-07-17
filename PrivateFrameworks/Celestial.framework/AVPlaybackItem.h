@@ -3,28 +3,28 @@
  */
 
 @interface AVPlaybackItem : NSObject {
-    AVItem *_avItem;
-    double _bookmarkTime;
+    AVItem * _avItem;
+    double  _bookmarkTime;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _currentDuration;
+    }  _currentDuration;
     struct CGSize { 
         float width; 
         float height; 
-    } _currentSize;
-    BOOL _currentSizeIsValid;
-    id _delegate;
-    struct OpaqueFigPlaybackItem { } *_fpItem;
-    NSDictionary *_inspectionNotificationInfo;
-    BOOL _isInPlayQueue;
-    BOOL _isPreparingForInspectionAccurateDuration;
-    BOOL _isPreparingForInspectionInitialSamples;
-    NSDictionary *_lyricsNotificationInfo;
-    NSDictionary *_playToEndNotificationInfo;
-    NSDictionary *_streamStateNotificationInfo;
+    }  _currentSize;
+    BOOL  _currentSizeIsValid;
+    id  _delegate;
+    struct OpaqueFigPlaybackItem { } * _fpItem;
+    NSDictionary * _inspectionNotificationInfo;
+    BOOL  _isInPlayQueue;
+    BOOL  _isPreparingForInspectionAccurateDuration;
+    BOOL  _isPreparingForInspectionInitialSamples;
+    NSDictionary * _lyricsNotificationInfo;
+    NSDictionary * _playToEndNotificationInfo;
+    NSDictionary * _streamStateNotificationInfo;
 }
 
 @property (retain) NSDictionary *inspectionNotificationInfo;

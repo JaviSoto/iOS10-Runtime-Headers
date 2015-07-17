@@ -3,8 +3,8 @@
  */
 
 @interface CalDateRange : NSObject <CalDateRangeProtocol, NSCopying, NSSecureCoding> {
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,6 +15,7 @@
 @property (retain) NSDate *startDate;
 @property (readonly) Class superclass;
 
++ (id)rangeByExpandingRange:(id)arg1 direction:(int)arg2 components:(id)arg3 calendar:(id)arg4;
 + (id)rangeByExpandingRange:(id)arg1 direction:(int)arg2 duration:(double)arg3;
 + (id)rangeByExpandingRange:(id)arg1 direction:(int)arg2 multiplier:(unsigned int)arg3;
 + (id)rangeWithRange:(id)arg1;

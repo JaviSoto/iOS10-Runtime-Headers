@@ -3,14 +3,14 @@
  */
 
 @interface MusicAlertActionAccessoryViewController : UIViewController {
-    UIView *_accessoryView;
-    UILabel *_actionDescriptiveLabel;
-    NSString *_actionDescriptiveText;
-    NSString *_actionTitle;
-    UILabel *_actionTitleLabel;
-    UIColor *_actionTitleTextColor;
-    NSString *_shortActionTitle;
-    UIAlertControllerVisualStyle *_visualStyle;
+    UIView * _accessoryView;
+    UILabel * _actionDescriptiveLabel;
+    NSString * _actionDescriptiveText;
+    NSString * _actionTitle;
+    UILabel * _actionTitleLabel;
+    UIColor * _actionTitleTextColor;
+    NSString * _shortActionTitle;
+    UIAlertControllerVisualStyle * _visualStyle;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;

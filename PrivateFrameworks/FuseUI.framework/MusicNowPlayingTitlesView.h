@@ -3,24 +3,24 @@
  */
 
 @interface MusicNowPlayingTitlesView : UIView {
-    NSArray *_attributedTexts;
-    BOOL _clampLabels;
+    NSArray * _attributedTexts;
+    BOOL  _clampLabels;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMutableArray *_labels;
-    BOOL _marqueeEnabled;
+    }  _contentInset;
+    NSMutableArray * _labels;
+    BOOL  _marqueeEnabled;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _marqueeFadeEdgeInsets;
-    NSMutableArray *_marqueeViews;
-    BOOL _needsViewUpdate;
+    }  _marqueeFadeEdgeInsets;
+    NSMutableArray * _marqueeViews;
+    BOOL  _needsViewUpdate;
 }
 
 @property (nonatomic, copy) NSArray *attributedTexts;

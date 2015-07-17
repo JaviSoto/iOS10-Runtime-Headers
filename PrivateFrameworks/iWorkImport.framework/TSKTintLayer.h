@@ -3,7 +3,7 @@
  */
 
 @interface TSKTintLayer : CAReplicatorLayer {
-    CALayer *_contentsLayer;
+    CALayer * _contentsLayer;
 }
 
 @property (nonatomic, retain) CALayer *contentsLayer;

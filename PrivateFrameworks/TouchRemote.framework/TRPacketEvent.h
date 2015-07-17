@@ -3,9 +3,9 @@
  */
 
 @interface TRPacketEvent : NSObject <NSSecureCoding> {
-    unsigned int _packetEventType;
-    NSDictionary *_payloadDictionary;
-    unsigned int _version;
+    unsigned int  _packetEventType;
+    NSDictionary * _payloadDictionary;
+    unsigned int  _version;
 }
 
 @property (nonatomic, readonly) NSData *networkRepresentation;

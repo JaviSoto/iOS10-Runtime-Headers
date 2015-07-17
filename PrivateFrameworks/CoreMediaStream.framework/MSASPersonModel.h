@@ -3,7 +3,7 @@
  */
 
 @interface MSASPersonModel : MSASModelBase {
-    BOOL _shouldDownloadEarliestPhotosFirst;
+    BOOL  _shouldDownloadEarliestPhotosFirst;
 }
 
 @property (nonatomic) BOOL shouldDownloadEarliestPhotosFirst;

@@ -3,8 +3,8 @@
  */
 
 @interface WAKClipView : WAKView {
-    BOOL _copiesOnScroll;
-    WAKView *_documentView;
+    BOOL  _copiesOnScroll;
+    WAKView * _documentView;
 }
 
 @property (nonatomic) BOOL copiesOnScroll;

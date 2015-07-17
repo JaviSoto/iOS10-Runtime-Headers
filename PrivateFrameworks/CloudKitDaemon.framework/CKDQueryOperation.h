@@ -3,14 +3,14 @@
  */
 
 @interface CKDQueryOperation : CKDDatabaseOperation {
-    CKQueryCursor *_cursor;
-    NSSet *_desiredKeySet;
-    CKQuery *_query;
-    id /* block */ _recordFetchedBlock;
-    CKQueryCursor *_resultsCursor;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContent;
-    CKRecordZoneID *_zoneID;
+    CKQueryCursor * _cursor;
+    NSSet * _desiredKeySet;
+    CKQuery * _query;
+    id /* block */  _recordFetchedBlock;
+    CKQueryCursor * _resultsCursor;
+    unsigned int  _resultsLimit;
+    BOOL  _shouldFetchAssetContent;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, readonly) CKQueryCursor *cursor;
@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleQueryRequestFinished:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)cursor;
 - (id)desiredKeySet;
 - (void)fillOutOperationResult:(id)arg1;

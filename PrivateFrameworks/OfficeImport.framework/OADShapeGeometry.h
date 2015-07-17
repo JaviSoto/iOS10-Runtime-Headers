@@ -3,8 +3,8 @@
  */
 
 @interface OADShapeGeometry : NSObject {
-    NSMutableDictionary *mAdjustValues;
-    BOOL mIsEscher;
+    NSMutableDictionary * mAdjustValues;
+    BOOL  mIsEscher;
 }
 
 - (long)adjustValueAtIndex:(unsigned int)arg1;
@@ -12,10 +12,12 @@
 - (id)adjustValues;
 - (void)dealloc;
 - (id)description;
+- (id)equivalentCustomGeometry;
 - (BOOL)hasAdjustValueAtIndex:(unsigned int)arg1;
 - (id)init;
 - (BOOL)isEscher;
 - (void)setAdjustValue:(long)arg1 atIndex:(unsigned int)arg2;
 - (void)setIsEscher:(BOOL)arg1;
+- (int)type;
 
 @end

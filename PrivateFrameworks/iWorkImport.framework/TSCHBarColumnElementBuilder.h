@@ -3,7 +3,7 @@
  */
 
 @interface TSCHBarColumnElementBuilder : TSCHElementBuilder {
-    BOOL mVertical;
+    BOOL  mVertical;
 }
 
 + (void)calculateGapsForChartModel:(id)arg1 forTotalWidth:(float)arg2 outBarWidth:(float*)arg3 outBarGroupGap:(float*)arg4 outBarGap:(float*)arg5;

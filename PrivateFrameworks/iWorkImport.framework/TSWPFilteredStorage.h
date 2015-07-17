@@ -3,10 +3,10 @@
  */
 
 @interface TSWPFilteredStorage : NSObject <TSWPTextSource> {
-    unsigned int _length;
-    TSWPDeletionRangeMap *_rangeMap;
-    TSWPStorage *_storage;
-    unsigned int _storageLength;
+    unsigned int  _length;
+    TSWPDeletionRangeMap * _rangeMap;
+    TSWPStorage * _storage;
+    unsigned int  _storageLength;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +14,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (BOOL)adjustRangesByDelta:(int)arg1;
+- (BOOL)adjustRangesByDelta:(int)arg1 startingAt:(unsigned int)arg2;
 - (id)attachmentAtCharIndex:(unsigned int)arg1;
 - (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
 - (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL)arg2 attributesTable:(/* Warning: unhandled array encoding: '[19@]' */ id)arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;

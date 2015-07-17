@@ -3,7 +3,7 @@
  */
 
 @interface QLArchiveTableViewController : UITableViewController {
-    QLArchiveViewer *_archiveViewer;
+    QLArchiveViewer * _archiveViewer;
 }
 
 @property QLArchiveViewer *archiveViewer;

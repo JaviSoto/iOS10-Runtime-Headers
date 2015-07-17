@@ -5,14 +5,14 @@
 @interface WKActionSheetAssistant : NSObject <DDDetectionControllerInteractionDelegate, WKActionSheetDelegate> {
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKActionSheetAssistantDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKActionSheetAssistantDelegate> > { 
         id m_weakReference; 
-    } _delegate;
+    }  _delegate;
     struct RetainPtr<_WKActivatedElementInfo> { 
         void *m_ptr; 
-    } _elementInfo;
+    }  _elementInfo;
     struct RetainPtr<WKActionSheet> { 
         void *m_ptr; 
-    } _interactionSheet;
-    UIView *_view;
+    }  _interactionSheet;
+    UIView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;

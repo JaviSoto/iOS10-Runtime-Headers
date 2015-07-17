@@ -3,12 +3,12 @@
  */
 
 @interface MusicNowPlayingLyricsTransitionController : NSObject <UIViewControllerAnimatedTransitioning> {
-    MusicNowPlayingLyricsViewController *_lyricsViewController;
-    MusicNowPlayingViewController *_nowPlayingViewController;
-    BOOL _presenting;
-    id /* block */ _transitionEndBlock;
-    id /* block */ _transitionFinishBlock;
-    id /* block */ _transitionStartBlock;
+    MusicNowPlayingLyricsViewController * _lyricsViewController;
+    MusicNowPlayingViewController * _nowPlayingViewController;
+    BOOL  _presenting;
+    id /* block */  _transitionEndBlock;
+    id /* block */  _transitionFinishBlock;
+    id /* block */  _transitionStartBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

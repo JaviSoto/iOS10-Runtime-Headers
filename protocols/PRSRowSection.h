@@ -16,10 +16,12 @@
 - (void)setKey_weight:(int)arg1;
 - (void)setValue:(NSString *)arg1;
 - (void)setValue_image:(PRSImage *)arg1;
+- (void)setValue_image_align:(NSString *)arg1;
 - (void)setValue_nowrap:(BOOL)arg1;
 - (void)setValue_weight:(int)arg1;
 - (NSString *)value;
 - (PRSImage *)value_image;
+- (NSString *)value_image_align;
 - (BOOL)value_nowrap;
 - (int)value_weight;
 

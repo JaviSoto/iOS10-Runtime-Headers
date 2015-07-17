@@ -3,18 +3,18 @@
  */
 
 @interface BluetoothManager : NSObject {
-    struct BTAccessoryManagerImpl { } *_accessoryManager;
-    BOOL _audioConnected;
-    int _available;
-    NSMutableDictionary *_btAddrDict;
-    NSMutableDictionary *_btDeviceDict;
-    struct BTDiscoveryAgentImpl { } *_discoveryAgent;
-    struct BTLocalDeviceImpl { } *_localDevice;
-    struct BTPairingAgentImpl { } *_pairingAgent;
-    BOOL _scanningEnabled;
-    BOOL _scanningInProgress;
-    unsigned int _scanningServiceMask;
-    struct BTSessionImpl { } *_session;
+    struct BTAccessoryManagerImpl { } * _accessoryManager;
+    BOOL  _audioConnected;
+    int  _available;
+    NSMutableDictionary * _btAddrDict;
+    NSMutableDictionary * _btDeviceDict;
+    struct BTDiscoveryAgentImpl { } * _discoveryAgent;
+    struct BTLocalDeviceImpl { } * _localDevice;
+    struct BTPairingAgentImpl { } * _pairingAgent;
+    BOOL  _scanningEnabled;
+    BOOL  _scanningInProgress;
+    unsigned int  _scanningServiceMask;
+    struct BTSessionImpl { } * _session;
 }
 
 // Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
@@ -26,7 +26,7 @@
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (void)_advertisingChanged;
 - (BOOL)_attach:(id)arg1;
-- (void)_cleanup;
+- (void)_cleanup:(BOOL)arg1;
 - (void)_connectabilityChanged;
 - (void)_connectedStatusChanged;
 - (void)_discoveryStateChanged;
@@ -54,6 +54,7 @@
 - (BOOL)devicePairingEnabled;
 - (BOOL)deviceScanningEnabled;
 - (BOOL)deviceScanningInProgress;
+- (void)disconnectDevice:(id)arg1;
 - (void)enableTestMode;
 - (BOOL)enabled;
 - (void)endVoiceCommand:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface _MFMailComposeAttachmentLoader : NSObject {
-    id /* block */ _completionBlock;
-    id _content;
-    BOOL _isDraft;
-    MFMailMessage *_message;
+    id /* block */  _completionBlock;
+    id  _content;
+    BOOL  _isDraft;
+    MFMailMessage * _message;
 }
 
 - (void)dealloc;

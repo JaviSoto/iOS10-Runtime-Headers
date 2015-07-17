@@ -3,10 +3,10 @@
  */
 
 @interface FTRegAccountServiceDelegate : NSObject <AAAppleIDLoginPlugin, AASetupAssistantDelegateService> {
-    IDSAccountController *_accountController;
-    id /* block */ _completionHandler;
-    CNFRegController *_regController;
-    NSDictionary *_responseDictionary;
+    IDSAccountController * _accountController;
+    id /* block */  _completionHandler;
+    CNFRegController * _regController;
+    NSDictionary * _responseDictionary;
 }
 
 @property (nonatomic, retain) IDSAccountController *accountController;
@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSDictionary *responseDictionary;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)_account:(id)arg1 matchesSetupParameters:(id)arg2;
 - (void)_cleanup;
 - (id)_defaultSetupRequestParameters;
@@ -33,7 +34,6 @@
 - (id)accountSetupRequestParameters;
 - (void)completeSetupWithResponseParameters:(id)arg1 handler:(id /* block */)arg2;
 - (id /* block */)completionHandler;
-- (void)dealloc;
 - (id)delegateServiceIdentifier;
 - (id)displayName;
 - (void)handleLoginResponse:(id)arg1 completion:(id /* block */)arg2;

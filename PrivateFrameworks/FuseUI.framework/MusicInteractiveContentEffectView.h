@@ -3,10 +3,10 @@
  */
 
 @interface MusicInteractiveContentEffectView : UIImageView {
-    _UIBackdropViewSettings *_backdropSettings;
-    CAFilter *_colorMatrixFilter;
-    CAFilter *_colorSaturateFilter;
-    CAFilter *_gaussianBlurFilter;
+    _UIBackdropViewSettings * _backdropSettings;
+    CAFilter * _colorMatrixFilter;
+    CAFilter * _colorSaturateFilter;
+    CAFilter * _gaussianBlurFilter;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,9 +16,9 @@
             float width; 
             float height; 
         } size; 
-    } _inputBounds;
-    NSValue *_inputBoundsValue;
-    float _transitionProgress;
+    }  _inputBounds;
+    NSValue * _inputBoundsValue;
+    float  _transitionProgress;
 }
 
 @property (nonatomic, retain) _UIBackdropViewSettings *backdropSettings;

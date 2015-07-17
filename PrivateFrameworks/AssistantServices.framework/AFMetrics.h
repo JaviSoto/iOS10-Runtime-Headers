@@ -3,9 +3,9 @@
  */
 
 @interface AFMetrics : NSObject <NSSecureCoding> {
-    int _category;
-    NSNumber *_duration;
-    NSString *_originalCommandId;
+    int  _category;
+    NSNumber * _duration;
+    NSString * _originalCommandId;
 }
 
 @property (nonatomic) int category;
@@ -23,6 +23,7 @@
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithOriginalCommandId:(id)arg1 category:(int)arg2 duration:(id)arg3;
 - (id)originalCommandId;
 - (void)setCategory:(int)arg1;
 - (void)setDuration:(id)arg1;

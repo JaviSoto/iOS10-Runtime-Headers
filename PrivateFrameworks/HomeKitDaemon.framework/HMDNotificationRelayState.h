@@ -3,11 +3,11 @@
  */
 
 @interface HMDNotificationRelayState : NSObject {
-    NSString *_destination;
-    NSDictionary *_response;
-    NSError *_responseError;
-    id /* block */ _responseHandler;
-    NSObject<OS_dispatch_queue> *_responseQueue;
+    NSString * _destination;
+    NSDictionary * _response;
+    NSError * _responseError;
+    id /* block */  _responseHandler;
+    NSObject<OS_dispatch_queue> * _responseQueue;
 }
 
 @property (nonatomic, retain) NSString *destination;

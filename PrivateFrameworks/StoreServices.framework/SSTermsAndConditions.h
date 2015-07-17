@@ -3,10 +3,10 @@
  */
 
 @interface SSTermsAndConditions : NSObject <NSCopying> {
-    BOOL _requiresAuthentication;
-    NSString *_text;
-    BOOL _userAccepted;
-    long long _versionID;
+    BOOL  _requiresAuthentication;
+    NSString * _text;
+    BOOL  _userAccepted;
+    long long  _versionID;
 }
 
 @property (nonatomic) NSString *currentText;

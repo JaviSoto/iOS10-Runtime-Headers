@@ -3,16 +3,16 @@
  */
 
 @interface SUScriptWindow : SUScriptObject {
-    SUScriptViewController *_backViewController;
-    BOOL _canSwipeToDismiss;
-    SUScriptWindowContext *_context;
-    SUScriptViewController *_frontViewController;
-    id _height;
-    SUScriptCanvasFunction *_maskFunction;
-    id _shadowOpacity;
-    id _shadowRadius;
-    SUScriptFunction *_shouldDismissFunction;
-    id _width;
+    SUScriptViewController * _backViewController;
+    BOOL  _canSwipeToDismiss;
+    SUScriptWindowContext * _context;
+    SUScriptViewController * _frontViewController;
+    id  _height;
+    SUScriptCanvasFunction * _maskFunction;
+    id  _shadowOpacity;
+    id  _shadowRadius;
+    SUScriptFunction * _shouldDismissFunction;
+    id  _width;
 }
 
 @property (retain) SUScriptViewController *backViewController;

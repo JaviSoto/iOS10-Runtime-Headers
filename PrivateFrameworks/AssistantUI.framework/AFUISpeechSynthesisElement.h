@@ -3,17 +3,17 @@
  */
 
 @interface AFUISpeechSynthesisElement : NSObject {
-    NSString *_animationIdentifier;
-    id /* block */ _completion;
-    <AFUISpeechSynthesisElementDelegate> *_delegate;
-    BOOL _durationHasElapsed;
-    BOOL _eligibleForSynthesis;
-    BOOL _isPhonetic;
-    BOOL _preprationBlockCompleted;
-    BOOL _provisional;
-    VSSpeechRequest *_speechRequest;
-    int _synthesisResult;
-    NSString *_text;
+    NSString * _animationIdentifier;
+    id /* block */  _completion;
+    <AFUISpeechSynthesisElementDelegate> * _delegate;
+    BOOL  _durationHasElapsed;
+    BOOL  _eligibleForSynthesis;
+    BOOL  _isPhonetic;
+    BOOL  _preprationBlockCompleted;
+    BOOL  _provisional;
+    VSSpeechRequest * _speechRequest;
+    int  _synthesisResult;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) NSString *animationIdentifier;

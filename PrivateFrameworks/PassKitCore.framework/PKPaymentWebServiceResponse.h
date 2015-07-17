@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentWebServiceResponse : NSObject {
-    id _JSONObject;
+    id  _JSONObject;
 }
 
 @property (nonatomic, readonly) id JSONObject;

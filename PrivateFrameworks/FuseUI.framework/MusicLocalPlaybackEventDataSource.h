@@ -3,15 +3,15 @@
  */
 
 @interface MusicLocalPlaybackEventDataSource : NSObject <ADBannerViewDelegate, ADBannerViewDelegatePrivate> {
-    unsigned int _adIndex;
-    ADBannerView *_bannerView;
-    <MusicLocalPlaybackEventDelegate> *_delegate;
-    BOOL _hasNetworkConditionsToFetchOffers;
-    NSMutableArray *_historyMediaItems;
-    MPMediaPlaylist *_playbackHistoryPlaylist;
-    BOOL _shouldFetchOffers;
-    NSMutableSet *_storeIDsToFetchOffers;
-    NSMutableDictionary *_storeIDsToOffers;
+    unsigned int  _adIndex;
+    ADBannerView * _bannerView;
+    <MusicLocalPlaybackEventDelegate> * _delegate;
+    BOOL  _hasNetworkConditionsToFetchOffers;
+    NSMutableArray * _historyMediaItems;
+    MPMediaPlaylist * _playbackHistoryPlaylist;
+    BOOL  _shouldFetchOffers;
+    NSMutableSet * _storeIDsToFetchOffers;
+    NSMutableDictionary * _storeIDsToOffers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

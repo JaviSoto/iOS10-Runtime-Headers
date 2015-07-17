@@ -3,17 +3,17 @@
  */
 
 @interface PKPaymentAuthorizationFooterView : UIView {
-    PKGlyphView *_glyphView;
-    UILabel *_labelView;
-    PKPaymentAuthorizationLayout *_layout;
-    NSLayoutConstraint *_overallHeightConstraint;
-    UILabel *_passbookPaymentDetailsView;
-    UIButton *_payWithPasscodeButton;
-    NSLayoutConstraint *_payWithPasscodeCenterYConstraint;
-    NSLayoutConstraint *_separatorLeftConstraint;
-    UIView *_separatorView;
-    int _state;
-    NSString *_title;
+    PKGlyphView * _glyphView;
+    UILabel * _labelView;
+    PKPaymentAuthorizationLayout * _layout;
+    NSLayoutConstraint * _overallHeightConstraint;
+    UILabel * _passbookPaymentDetailsView;
+    UIButton * _payWithPasscodeButton;
+    NSLayoutConstraint * _payWithPasscodeCenterYConstraint;
+    NSLayoutConstraint * _separatorLeftConstraint;
+    UIView * _separatorView;
+    int  _state;
+    NSString * _title;
 }
 
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;

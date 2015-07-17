@@ -3,21 +3,21 @@
  */
 
 @interface SGFlightData : NSObject {
-    SGOffsetDictionary *_airportDataOffsets;
-    SGOffsetDictionary *_airportUpdateDataOffsets;
-    <SGSeekable> *_airportsFh;
-    SGAsset *_airportsUpdateAsset;
-    <SGSeekable> *_airportsUpdateFh;
-    NSDictionary *_carrierCodesByName;
-    NSDictionary *_carrierNames;
-    SGAsset *_carrierUpdateAsset;
-    NSDictionary *_carrierUpdateCodesByName;
-    NSDictionary *_carrierUpdateNames;
-    SGOffsetDictionary *_flightDataOffsets;
-    SGOffsetDictionary *_flightUpdateDataOffsets;
-    <SGSeekable> *_flightsFh;
-    SGAsset *_flightsUpdateAsset;
-    <SGSeekable> *_flightsUpdateFh;
+    SGOffsetDictionary * _airportDataOffsets;
+    SGOffsetDictionary * _airportUpdateDataOffsets;
+    <SGSeekable> * _airportsFh;
+    SGAsset * _airportsUpdateAsset;
+    <SGSeekable> * _airportsUpdateFh;
+    NSDictionary * _carrierCodesByName;
+    NSDictionary * _carrierNames;
+    SGAsset * _carrierUpdateAsset;
+    NSDictionary * _carrierUpdateCodesByName;
+    NSDictionary * _carrierUpdateNames;
+    SGOffsetDictionary * _flightDataOffsets;
+    SGOffsetDictionary * _flightUpdateDataOffsets;
+    <SGSeekable> * _flightsFh;
+    SGAsset * _flightsUpdateAsset;
+    <SGSeekable> * _flightsUpdateFh;
 }
 
 + (id)sharedInstance;

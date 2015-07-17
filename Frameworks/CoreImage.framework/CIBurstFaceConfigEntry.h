@@ -3,7 +3,7 @@
  */
 
 @interface CIBurstFaceConfigEntry : NSObject {
-    int faceId;
+    int  faceId;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +13,8 @@
             float width; 
             float height; 
         } size; 
-    } faceRect;
-    int framesSinceLast;
+    }  faceRect;
+    int  framesSinceLast;
 }
 
 @property int faceId;

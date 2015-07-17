@@ -7,11 +7,11 @@
         BOOL applicationExists; 
         BOOL oldPluginExists; 
         BOOL currentPluginExists; 
-    } _availability;
-    BOOL _checkedEndNoteAvailability;
-    NSArray *_defaultFormats;
-    unsigned int _failedPluginLoadingAttempts;
-    NSString *_format;
+    }  _availability;
+    BOOL  _checkedEndNoteAvailability;
+    NSArray * _defaultFormats;
+    unsigned int  _failedPluginLoadingAttempts;
+    NSString * _format;
 }
 
 @property (retain) NSString *format;
@@ -20,7 +20,6 @@
 + (id)currentPluginDownloadURL;
 + (id)sharedEndNoteConnection;
 
-- (id).cxx_construct;
 - (BOOL)anyOpenLibraries;
 - (BOOL)anyOpenNonEmptyLibraries;
 - (struct { BOOL x1; BOOL x2; BOOL x3; })availability;

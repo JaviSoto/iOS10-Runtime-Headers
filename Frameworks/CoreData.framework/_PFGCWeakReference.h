@@ -3,7 +3,7 @@
  */
 
 @interface _PFGCWeakReference : NSObject {
-    void *_weakValue;
+    void * _weakValue;
 }
 
 - (id)initWithPointer:(void*)arg1;

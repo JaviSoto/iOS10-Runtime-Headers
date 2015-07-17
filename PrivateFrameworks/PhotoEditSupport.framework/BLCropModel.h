@@ -3,8 +3,8 @@
  */
 
 @interface BLCropModel : NSObject {
-    float _angle;
-    float _cropConstrain;
+    float  _angle;
+    float  _cropConstrain;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,15 +14,15 @@
             float width; 
             float height; 
         } size; 
-    } _cropRect;
+    }  _cropRect;
     struct CGSize { 
         float width; 
         float height; 
-    } _nsqPhotoSize;
+    }  _nsqPhotoSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _photoSize;
+    }  _photoSize;
 }
 
 @property float angle;

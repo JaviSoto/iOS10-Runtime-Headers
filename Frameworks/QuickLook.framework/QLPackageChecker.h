@@ -3,7 +3,7 @@
  */
 
 @interface QLPackageChecker : NSObject {
-    int _fd;
+    int  _fd;
 }
 
 - (void)dealloc;

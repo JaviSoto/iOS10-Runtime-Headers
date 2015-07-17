@@ -3,9 +3,9 @@
  */
 
 @interface NFMDataLogger : NSObject {
-    NSOperationQueue *_accelerationQueue;
-    NSOperationQueue *_activityQueue;
-    BOOL _recordingTelemetry;
+    NSOperationQueue * _accelerationQueue;
+    NSOperationQueue * _activityQueue;
+    BOOL  _recordingTelemetry;
 }
 
 @property (nonatomic, retain) NSOperationQueue *accelerationQueue;

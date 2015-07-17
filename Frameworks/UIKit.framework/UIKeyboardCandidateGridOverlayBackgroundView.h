@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardCandidateGridOverlayBackgroundView : UICollectionReusableView {
-    unsigned int _highlightedRowIndex;
-    float _rowHeight;
+    unsigned int  _highlightedRowIndex;
+    float  _rowHeight;
 }
 
 @property (nonatomic) unsigned int highlightedRowIndex;

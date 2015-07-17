@@ -3,17 +3,17 @@
  */
 
 @interface DDOperation : NSOperation <NSCopying> {
-    id _container;
-    int _containerNotReadyTryCount;
-    NSDictionary *_context;
-    int _generationNumber;
-    BOOL _isCurrentlyUsingTheScanner;
-    BOOL _isDiscarded;
-    BOOL _needContinuation;
-    struct __DDScanQuery { } *_query;
-    NSArray *_results;
-    int _tryCount;
-    unsigned int _types;
+    id  _container;
+    int  _containerNotReadyTryCount;
+    NSDictionary * _context;
+    int  _generationNumber;
+    BOOL  _isCurrentlyUsingTheScanner;
+    BOOL  _isDiscarded;
+    BOOL  _needContinuation;
+    struct __DDScanQuery { } * _query;
+    NSArray * _results;
+    int  _tryCount;
+    unsigned int  _types;
 }
 
 @property (nonatomic, retain) id container;

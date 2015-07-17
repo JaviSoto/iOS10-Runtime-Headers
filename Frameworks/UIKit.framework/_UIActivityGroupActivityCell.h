@@ -3,15 +3,16 @@
  */
 
 @interface _UIActivityGroupActivityCell : UICollectionViewCell {
-    UIImageView *_highlightedImageView;
-    UIImageView *_imageView;
-    UILabel *_titleLabel;
+    UIImageView * _highlightedImageView;
+    UIImageView * _imageView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImageView *highlightedImageView;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UILabel *titleLabel;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)draggingView;
 - (id)highlightedImageView;

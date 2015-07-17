@@ -3,8 +3,8 @@
  */
 
 @interface AVOccasionalTimebaseObserver : AVTimebaseObserver {
-    id /* block */ _block;
-    NSArray *_times;
+    id /* block */  _block;
+    NSArray * _times;
 }
 
 - (void)_effectiveRateChanged;

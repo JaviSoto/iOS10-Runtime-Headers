@@ -3,25 +3,25 @@
  */
 
 @interface PTSSlider : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
-    int _alignment;
-    NSTimer *_buttonRepeatTimer;
-    UIButton *_downIncrementButton;
-    BOOL _enabled;
-    float _increment;
-    _UISettings *_settings;
-    BOOL _showsValueLabel;
-    UISlider *_sliderControl;
-    NSArray *_subviewConstraints;
-    UILabel *_titleLabel;
-    UIButton *_upIncrementButton;
+    int  _alignment;
+    NSTimer * _buttonRepeatTimer;
+    UIButton * _downIncrementButton;
+    BOOL  _enabled;
+    float  _increment;
+    _UISettings * _settings;
+    BOOL  _showsValueLabel;
+    UISlider * _sliderControl;
+    NSArray * _subviewConstraints;
+    UILabel * _titleLabel;
+    UIButton * _upIncrementButton;
     struct { 
         double mark; 
         double limit; 
-    } _valueChangePublishTTL;
-    NSString *_valueKeyPath;
-    UILabel *_valueLabel;
-    NSNumberFormatter *_valueLabelFormatter;
-    NSArray *_valueLabelStrings;
+    }  _valueChangePublishTTL;
+    NSString * _valueKeyPath;
+    UILabel * _valueLabel;
+    NSNumberFormatter * _valueLabelFormatter;
+    NSArray * _valueLabelStrings;
 }
 
 @property (nonatomic) int alignment;
@@ -29,7 +29,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIButton *downIncrementButton;
-@property (nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic) float increment;
 @property (nonatomic) float maximumValue;
@@ -60,11 +60,11 @@
 - (void)downIncrement;
 - (void)downIncrementAction:(id)arg1;
 - (id)downIncrementButton;
-- (BOOL)enabled;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (float)increment;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (id)makeIncrementButtonWithAction:(SEL)arg1 imageName:(id)arg2;
 - (id)makeSliderControl;

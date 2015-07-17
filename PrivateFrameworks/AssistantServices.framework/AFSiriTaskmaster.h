@@ -3,11 +3,11 @@
  */
 
 @interface AFSiriTaskmaster : NSObject <AFSiriRequestHandling, AFSiriUsageResultHandling, NSXPCListenerDelegate> {
-    <AFSiriTaskmasterDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    <AFSiriTaskDelivering> *_taskDeliverer;
-    NSMutableSet *_taskExecutions;
-    NSXPCListener *_usageResultListener;
+    <AFSiriTaskmasterDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    <AFSiriTaskDelivering> * _taskDeliverer;
+    NSMutableSet * _taskExecutions;
+    NSXPCListener * _usageResultListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

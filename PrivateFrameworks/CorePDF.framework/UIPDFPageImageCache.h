@@ -3,15 +3,15 @@
  */
 
 @interface UIPDFPageImageCache : NSObject {
-    UIPDFDocument *_document;
-    unsigned int _jobCount;
-    id *_jobsByPage;
-    id *_jobsPrioritized;
-    int _lock;
-    unsigned int _lookAhead;
-    unsigned int _nextJobIndex;
-    unsigned int _pageCount;
-    NSOperationQueue *_renderQueue;
+    UIPDFDocument * _document;
+    unsigned int  _jobCount;
+    id * _jobsByPage;
+    id * _jobsPrioritized;
+    int  _lock;
+    unsigned int  _lookAhead;
+    unsigned int  _nextJobIndex;
+    unsigned int  _pageCount;
+    NSOperationQueue * _renderQueue;
 }
 
 @property (readonly) UIPDFDocument *document;

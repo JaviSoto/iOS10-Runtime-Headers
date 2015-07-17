@@ -3,10 +3,10 @@
  */
 
 @interface PUMultiOrientationImageView : UIView {
-    BOOL _allowsEdgeAntialiasing;
-    UIView *_currentOrientedSubview;
-    UIImage *_image;
-    NSArray *_orientedSubviews;
+    BOOL  _allowsEdgeAntialiasing;
+    UIView * _currentOrientedSubview;
+    UIImage * _image;
+    NSArray * _orientedSubviews;
 }
 
 @property (nonatomic) BOOL allowsEdgeAntialiasing;

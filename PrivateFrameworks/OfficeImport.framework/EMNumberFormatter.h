@@ -3,18 +3,18 @@
  */
 
 @interface EMNumberFormatter : NSObject {
-    NSString *_baseICUFormatString;
-    struct __CFNumberFormatter { } *_bigNumberFormatter;
-    struct __CFNumberFormatter { } *_currencyFormatter;
-    unsigned short _currencySymbol;
-    struct __CFDateFormatter { } *_dateFormatter;
-    struct __CFNumberFormatter { } *_doubleFormatter;
-    NSString *_excelFormatString;
-    int _formatType;
-    struct __CFNumberFormatter { } *_genericFormatter;
-    bool _isNegativeRed;
-    struct __CFNumberFormatter { } *_percentFormatter;
-    struct __CFNumberFormatter { } *_smallNumberFormatter;
+    NSString * _baseICUFormatString;
+    struct __CFNumberFormatter { } * _bigNumberFormatter;
+    struct __CFNumberFormatter { } * _currencyFormatter;
+    unsigned short  _currencySymbol;
+    struct __CFDateFormatter { } * _dateFormatter;
+    struct __CFNumberFormatter { } * _doubleFormatter;
+    NSString * _excelFormatString;
+    int  _formatType;
+    struct __CFNumberFormatter { } * _genericFormatter;
+    bool  _isNegativeRed;
+    struct __CFNumberFormatter { } * _percentFormatter;
+    struct __CFNumberFormatter { } * _smallNumberFormatter;
 }
 
 + (id)formatterForFormat:(id)arg1;

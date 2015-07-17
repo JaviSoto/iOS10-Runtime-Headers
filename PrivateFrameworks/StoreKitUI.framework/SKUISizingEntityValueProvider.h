@@ -3,7 +3,7 @@
  */
 
 @interface SKUISizingEntityValueProvider : NSObject <IKEntityValueProviding> {
-    NSMutableDictionary *_tallestValues;
+    NSMutableDictionary * _tallestValues;
 }
 
 @property (readonly, copy) NSString *debugDescription;

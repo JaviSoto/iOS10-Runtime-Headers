@@ -3,11 +3,11 @@
  */
 
 @interface PLPhotoTileBadgeView : UIView {
-    UIView *__backgroundView;
-    UIImageView *__badgeImageView;
-    UILabel *__textLabel;
-    int _numberOfPhotos;
-    int _style;
+    UIView * __backgroundView;
+    UIImageView * __badgeImageView;
+    UILabel * __textLabel;
+    int  _numberOfPhotos;
+    int  _style;
 }
 
 @property (nonatomic, readonly) UIView *_backgroundView;

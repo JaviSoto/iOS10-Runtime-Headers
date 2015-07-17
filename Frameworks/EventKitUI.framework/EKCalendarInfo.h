@@ -3,12 +3,12 @@
  */
 
 @interface EKCalendarInfo : NSObject {
-    EKCalendar *_calendar;
-    UIColor *_color;
-    int _customGroupType;
-    EKGroupInfo *_group;
-    BOOL _selected;
-    NSString *_title;
+    EKCalendar * _calendar;
+    UIColor * _color;
+    int  _customGroupType;
+    EKGroupInfo * _group;
+    BOOL  _selected;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) EKCalendar *calendar;

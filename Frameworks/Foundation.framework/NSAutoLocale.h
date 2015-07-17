@@ -3,7 +3,7 @@
  */
 
 @interface NSAutoLocale : NSLocale {
-    NSLocale *loc;
+    NSLocale * loc;
 }
 
 + (BOOL)supportsSecureCoding;

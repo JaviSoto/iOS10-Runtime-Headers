@@ -3,29 +3,30 @@
  */
 
 @interface VMUClassInfo : NSObject <NSCoding> {
-    const char *_extendedLayout;
-    BOOL _hasSpecificLayout;
-    unsigned int _instanceSize;
-    unsigned int _ivarCount;
-    int *_ivarScanSizes;
-    struct objc_ivar {} **_localIvarList;
-    id /* block */ _reader;
-    NSString *_remoteBinaryName;
-    NSString *_remoteClassName;
-    unsigned long long _remoteIsa;
-    unsigned int _remotePointerSize;
-    unsigned int _remoteType;
-    unsigned int _ro_flags;
-    unsigned int _rw_flags;
-    char *_scanMap;
-    unsigned long long _specificInstance;
-    const char *_strongLayout;
-    VMUClassInfo *_superclassLayout;
-    unsigned int _superclassOffset;
-    const char *_weakLayout;
+    const char * _extendedLayout;
+    BOOL  _hasSpecificLayout;
+    unsigned int  _instanceSize;
+    unsigned int  _ivarCount;
+    int * _ivarScanSizes;
+    struct objc_ivar {} ** _localIvarList;
+    id /* block */  _reader;
+    NSString * _remoteBinaryPath;
+    NSString * _remoteClassName;
+    unsigned long long  _remoteIsa;
+    unsigned int  _remotePointerSize;
+    unsigned int  _remoteType;
+    unsigned int  _ro_flags;
+    unsigned int  _rw_flags;
+    char * _scanMap;
+    unsigned long long  _specificInstance;
+    const char * _strongLayout;
+    VMUClassInfo * _superclassLayout;
+    unsigned int  _superclassOffset;
+    const char * _weakLayout;
 }
 
 @property (readonly) NSString *binaryName;
+@property (readonly) NSString *binaryPath;
 @property (readonly) NSString *className;
 @property (readonly) NSString *fullIvarDescription;
 @property (readonly) BOOL hasCppConstructorOrDestructor;
@@ -43,12 +44,15 @@
 @property (readonly) NSString *typeName;
 
 + (id)classInfoWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
++ (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(int)arg3;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
 + (void)initialize;
 
 - (struct objc_ivar { }*)_copyRemoteIvarAt:(unsigned long long)arg1;
 - (const char *)_copyRemoteLayout:(unsigned long long)arg1;
-- (const char *)_copyRemoteStringAt:(unsigned long long)arg1;
+- (const char *)_copyRemoteNameAt:(unsigned long long)arg1;
+- (const char *)_copyRemoteTypeAt:(unsigned long long)arg1;
+- (void)_demangleClassName;
 - (void)_faultScanMap;
 - (id)_initWithClass:(unsigned long long)arg1 realizedOnly:(BOOL)arg2 infoMap:(id)arg3 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg4 type:(int)arg5 memoryReader:(id /* block */)arg6;
 - (id)_instanceSpecificInfoForObject:(unsigned long long)arg1 pointerSize:(unsigned int)arg2 reader:(id /* block */)arg3;
@@ -61,8 +65,10 @@
 - (unsigned long long)_readRemotePointerAt:(unsigned long long)arg1;
 - (void)_setClassNameWithAddress:(unsigned long long)arg1;
 - (void)_setExtendedLayout:(const char *)arg1;
+- (void)_setIsa:(unsigned long long)arg1;
 - (id)_specificCopy:(unsigned long long)arg1 instanceSize:(unsigned int)arg2 superclassOffset:(unsigned int)arg3;
 - (id)binaryName;
+- (id)binaryPath;
 - (id)className;
 - (void)dealloc;
 - (id)debugDescription;
@@ -78,9 +84,11 @@
 - (int)infoType;
 - (id)initWithClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg3 type:(int)arg4 memoryReader:(id /* block */)arg5;
 - (id)initWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
+- (id)initWithClassName:(id)arg1 binaryPath:(id)arg2 type:(int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIsaPointer:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithRealizedClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg3 type:(int)arg4 memoryReader:(id /* block */)arg5;
+- (id)initWithSerializer:(id)arg1 classMap:(id)arg2 version:(int)arg3;
 - (unsigned int)instanceSize;
 - (id)instanceSpecificInfoForObject:(unsigned long long)arg1;
 - (BOOL)isARR;
@@ -91,6 +99,7 @@
 - (struct objc_ivar { }*)ivarWithOffset:(unsigned long long)arg1;
 - (unsigned long long)remoteIsa;
 - (void)scanObject:(unsigned long long)arg1 ofSize:(unsigned int)arg2 withBlock:(id /* block */)arg3;
+- (void)serializeWithClassMap:(id)arg1 simpleSerializer:(id)arg2;
 - (void)setMemoryReader:(id /* block */)arg1;
 - (id)shortIvarDescription;
 - (unsigned long long)specificInstance;

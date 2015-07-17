@@ -3,16 +3,16 @@
  */
 
 @interface AAUIFamilySetupViewController : AAUIBleachedNavigationController <AAUIFamilySetupPageDelegate, RemoteUIControllerDelegate> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    NSMutableURLRequest *_currentRemoteUIRequest;
-    AAGrandSlamSigner *_grandSlamSigner;
-    BOOL _isShowingSpinner;
-    UINavigationItem *_navigationItemShowingSpinner;
-    UIBarButtonItem *_originalRightBarButtonItem;
-    RemoteUIController *_remoteUIController;
-    UIActivityIndicatorView *_spinnerView;
-    NSMutableURLRequest *_startRemoteUIRequest;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    NSMutableURLRequest * _currentRemoteUIRequest;
+    AAGrandSlamSigner * _grandSlamSigner;
+    BOOL  _isShowingSpinner;
+    UINavigationItem * _navigationItemShowingSpinner;
+    UIBarButtonItem * _originalRightBarButtonItem;
+    RemoteUIController * _remoteUIController;
+    UIActivityIndicatorView * _spinnerView;
+    NSMutableURLRequest * _startRemoteUIRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;

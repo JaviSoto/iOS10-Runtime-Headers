@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptModalDialog : NSObject {
-    UIAlertView *_alert;
-    int _buttonIndex;
-    ISDialog *_dialog;
+    UIAlertView * _alert;
+    int  _buttonIndex;
+    ISDialog * _dialog;
 }
 
 + (id)titleForURL:(id)arg1;

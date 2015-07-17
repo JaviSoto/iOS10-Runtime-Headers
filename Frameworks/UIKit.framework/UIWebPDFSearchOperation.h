@@ -3,18 +3,18 @@
  */
 
 @interface UIWebPDFSearchOperation : NSOperation {
-    BOOL _complete;
-    unsigned int _currentPageResultCount;
-    unsigned int _numberOfResultsToSkip;
-    unsigned int _pageIndex;
-    NSMutableArray *_results;
-    unsigned int _totalResultsCount;
-    float documentScale;
-    UIPDFDocument *documentToSearch;
-    unsigned int resultLimit;
-    NSObject<UIWebPDFSearchOperationDelegate> *searchDelegate;
-    NSString *searchString;
-    unsigned int startingPageIndex;
+    BOOL  _complete;
+    unsigned int  _currentPageResultCount;
+    unsigned int  _numberOfResultsToSkip;
+    unsigned int  _pageIndex;
+    NSMutableArray * _results;
+    unsigned int  _totalResultsCount;
+    float  documentScale;
+    UIPDFDocument * documentToSearch;
+    unsigned int  resultLimit;
+    NSObject<UIWebPDFSearchOperationDelegate> * searchDelegate;
+    NSString * searchString;
+    unsigned int  startingPageIndex;
 }
 
 @property (nonatomic, readonly) unsigned int currentPageIndex;

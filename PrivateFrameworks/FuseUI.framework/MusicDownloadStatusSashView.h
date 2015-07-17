@@ -3,9 +3,9 @@
  */
 
 @interface MusicDownloadStatusSashView : UIView {
-    UIImageView *_deviceImageView;
-    int _deviceType;
-    UIImageView *_sashImageView;
+    UIImageView * _deviceImageView;
+    int  _deviceType;
+    UIImageView * _sashImageView;
 }
 
 @property (nonatomic, retain) UIColor *deviceTintColor;

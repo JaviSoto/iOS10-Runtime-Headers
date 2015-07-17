@@ -3,8 +3,8 @@
  */
 
 @interface TSPDatabaseObjectWithFileState : TSPDatabaseObject {
-    NSString *_fileState;
-    NSURL *_packageURL;
+    NSString * _fileState;
+    NSURL * _packageURL;
 }
 
 - (void).cxx_destruct;

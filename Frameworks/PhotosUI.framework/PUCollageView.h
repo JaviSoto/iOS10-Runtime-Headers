@@ -3,15 +3,15 @@
  */
 
 @interface PUCollageView : UIView {
-    NSPointerArray *__imageSizes;
-    NSArray *__imageViews;
-    int __numberOfImageViews;
+    NSPointerArray * __imageSizes;
+    NSArray * __imageViews;
+    int  __numberOfImageViews;
     struct CGSize { 
         float width; 
         float height; 
-    } _collageSize;
-    int _numberOfItems;
-    float _spacing;
+    }  _collageSize;
+    int  _numberOfItems;
+    float  _spacing;
 }
 
 @property (nonatomic, readonly) NSPointerArray *_imageSizes;

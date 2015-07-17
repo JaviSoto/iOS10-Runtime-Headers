@@ -3,13 +3,13 @@
  */
 
 @interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate> {
-    BOOL __isCurrentContext;
-    BOOL __shouldRespectNearestCurrentContextPresenter;
-    BOOL _chromeHidden;
-    UIView *_dimmingView;
-    BOOL constraintsPrepared;
-    UIView *keyboardLayoutAlignmentAvailableSpaceView;
-    _UIKeyboardLayoutAlignmentView *keyboardLayoutAlignmentView;
+    BOOL  __isCurrentContext;
+    BOOL  __shouldRespectNearestCurrentContextPresenter;
+    BOOL  _chromeHidden;
+    UIView * _dimmingView;
+    BOOL  constraintsPrepared;
+    UIView * keyboardLayoutAlignmentAvailableSpaceView;
+    _UIKeyboardLayoutAlignmentView * keyboardLayoutAlignmentView;
 }
 
 @property (getter=_isChromeHidden, setter=_setChromeHidden:, nonatomic) BOOL _chromeHidden;
@@ -21,14 +21,16 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)_containerViewWillLayoutSubviews;
+- (void).cxx_destruct;
 - (id)_dimmingView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
 - (BOOL)_isChromeHidden;
 - (BOOL)_isCurrentContext;
 - (void)_occludePresentingWindow:(BOOL)arg1;
 - (void)_prepareConstraintsIfNecessary;
 - (void)_prepareDimmingViewIfNecessary;
 - (id)_presentedAlertController;
+- (void)_presentedAlertControllerDidAdapt;
 - (BOOL)_preserveResponderAcrossWindows;
 - (void)_setChromeHidden:(BOOL)arg1;
 - (void)_setIsCurrentContext:(BOOL)arg1;
@@ -36,19 +38,15 @@
 - (BOOL)_shouldChangeStatusBarViewController;
 - (BOOL)_shouldRespectDefinesPresentationContext;
 - (BOOL)_shouldRespectNearestCurrentContextPresenter;
+- (void)_willRunTransitionForCurrentStateDeferred:(BOOL)arg1;
 - (int)adaptivePresentationStyle;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (int)attributeToAlignAlertControllerViewBy;
-- (float)constantForAligningAlertControllerToAvailableSpace;
 - (void)containerViewWillLayoutSubviews;
-- (void)dealloc;
 - (void)dismissalTransitionWillBegin;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(int)arg2;
-- (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
-- (id)presentedView;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;

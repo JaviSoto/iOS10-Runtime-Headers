@@ -3,9 +3,9 @@
  */
 
 @interface UITableViewIndexOverlaySelectionView : UIView <UICollectionViewDataSource, UICollectionViewDelegate> {
-    UICollectionView *_collectionView;
-    UITableViewIndexOverlaySelectionViewCollectionViewFlowLayout *_flowLayout;
-    UITableView *_table;
+    UICollectionView * _collectionView;
+    UITableViewIndexOverlaySelectionViewCollectionViewFlowLayout * _flowLayout;
+    UITableView * _table;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_cellTapped:(id)arg1;
 - (void)_doneTapped;
 - (void)_invalidateTable;

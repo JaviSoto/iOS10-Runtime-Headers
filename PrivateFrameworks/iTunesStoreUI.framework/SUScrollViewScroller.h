@@ -3,9 +3,9 @@
  */
 
 @interface SUScrollViewScroller : NSObject <UIScrollViewDelegate> {
-    NSObject<UIScrollViewDelegate> *_originalDelegate;
-    NSMutableArray *_scrollRequests;
-    UIScrollView *_scrollView;
+    NSObject<UIScrollViewDelegate> * _originalDelegate;
+    NSMutableArray * _scrollRequests;
+    UIScrollView * _scrollView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

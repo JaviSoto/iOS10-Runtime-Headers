@@ -3,14 +3,14 @@
  */
 
 @interface QLPrintPageRenderer : UIPrintPageRenderer {
-    int _cachedNumberOfPages;
-    <QLPrintPageRendererDataSource> *_dataSource;
-    int _numberOfPrintedPages;
-    BOOL _printingDone;
+    int  _cachedNumberOfPages;
+    <QLPrintPageRendererDataSource> * _dataSource;
+    int  _numberOfPrintedPages;
+    BOOL  _printingDone;
     struct CGSize { 
         float width; 
         float height; 
-    } _sizeWhenNumberOfPagesWasCached;
+    }  _sizeWhenNumberOfPagesWasCached;
 }
 
 @property <QLPrintPageRendererDataSource> *dataSource;

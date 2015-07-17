@@ -3,9 +3,9 @@
  */
 
 @interface GEOPDAmenities : PBCodable <NSCopying> {
-    struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_amenitys;
-    unsigned int _amenitysCount;
-    unsigned int _amenitysSpace;
+    struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _amenitys;
+    unsigned int  _amenitysCount;
+    unsigned int  _amenitysSpace;
 }
 
 @property (nonatomic, readonly) struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*amenitys;

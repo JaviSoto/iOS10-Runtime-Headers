@@ -3,11 +3,11 @@
  */
 
 @interface PBDataReader : NSObject {
-    const char *_bytes;
-    NSData *_data;
-    BOOL _error;
-    unsigned int _length;
-    unsigned int _pos;
+    const char * _bytes;
+    NSData * _data;
+    BOOL  _error;
+    unsigned int  _length;
+    unsigned int  _pos;
 }
 
 @property unsigned int length;

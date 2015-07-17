@@ -12,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } _activeFrame;
+    }  _activeFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,7 +22,7 @@
             float width; 
             float height; 
         } size; 
-    } _baseFrame;
+    }  _baseFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -32,22 +32,22 @@
             float width; 
             float height; 
         } size; 
-    } _collapsedFrame;
-    BOOL _isAutocorrection;
-    BOOL _isCenter;
-    BOOL _isLongCandidate;
-    BOOL _isTypedString;
-    TIKeyboardCandidate *_prediction;
-    int _state;
-    UIKBKeyView *m_activeKeyView;
-    UIKBKeyView *m_enabledKeyView;
+    }  _collapsedFrame;
+    BOOL  _isAutocorrection;
+    BOOL  _isCenter;
+    BOOL  _isLongCandidate;
+    BOOL  _isTypedString;
+    TIKeyboardCandidate * _prediction;
+    int  _state;
+    UIKBKeyView * m_activeKeyView;
+    UIKBKeyView * m_enabledKeyView;
     struct CGSize { 
         float width; 
         float height; 
-    } m_keyViewSize;
-    UIMorphingLabel *m_label;
-    BOOL m_lightKeyboard;
-    UIView *m_maskView;
+    }  m_keyViewSize;
+    UIMorphingLabel * m_label;
+    BOOL  m_lightKeyboard;
+    UIView * m_maskView;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } activeFrame;
@@ -60,7 +60,7 @@
 @property (nonatomic, readonly, retain) TIKeyboardCandidate *prediction;
 @property (nonatomic) int state;
 
-+ (id)initKeyViewWithSize:(struct CGSize { float x1; float x2; })arg1 state:(int)arg2 needsBackground:(BOOL)arg3;
++ (id)newKeyViewWithSize:(struct CGSize { float x1; float x2; })arg1 state:(int)arg2 needsBackground:(BOOL)arg3;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })activeFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })baseFrame;

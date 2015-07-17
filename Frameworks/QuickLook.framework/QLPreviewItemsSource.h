@@ -3,26 +3,26 @@
  */
 
 @interface QLPreviewItemsSource : NSObject <UIDocumentInteractionControllerDelegatePrivate> {
-    int _UUID;
-    int _archiveDataSourceIndex;
-    NSMutableArray *_archiveItems;
-    int _currentPreviewItemIndex;
-    int _currentUIItemIndex;
-    <QLPreviewControllerDataSource> *_dataSource;
-    unsigned int _numberOfPreviewItems;
-    BOOL _prepared;
-    QLPreviewController *_previewController;
-    <QLPreviewItem> *_previewItem;
-    NSMutableDictionary *_previewItemCache;
-    NSMapTable *_uiItems;
-    NSURL *_unzippingURL;
+    int  _UUID;
+    int  _archiveDataSourceIndex;
+    NSMutableArray * _archiveItems;
+    int  _currentPreviewItemIndex;
+    int  _currentUIItemIndex;
+    <QLPreviewControllerDataSource> * _dataSource;
+    unsigned int  _numberOfPreviewItems;
+    BOOL  _prepared;
+    QLPreviewController * _previewController;
+    <QLPreviewItem> * _previewItem;
+    NSMutableDictionary * _previewItemCache;
+    NSMutableDictionary * _uiItems;
+    NSURL * _unzippingURL;
 }
 
 @property (readonly) int UUID;
 @property (readonly) <QLPreviewItem> *currentPreviewItem;
 @property int currentPreviewItemIndex;
 @property (readonly) int currentUIItemIndex;
-@property <QLPreviewControllerDataSource> *dataSource;
+@property (nonatomic) <QLPreviewControllerDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -37,6 +37,7 @@
 @property (readonly) Class superclass;
 @property (getter=isViewingArchive, readonly) BOOL viewingArchive;
 
+- (void).cxx_destruct;
 - (id)UIItemAtIndex:(int)arg1;
 - (int)UUID;
 - (id)_UIItemAtIndex:(int)arg1;
@@ -46,7 +47,6 @@
 - (int)currentPreviewItemIndex;
 - (int)currentUIItemIndex;
 - (id)dataSource;
-- (void)dealloc;
 - (id)documentInteractionControllerURLOfDirectoryForUnzippedDocument:(id)arg1;
 - (id)initWithPreviewController:(id)arg1;
 - (BOOL)isViewingArchive;

@@ -3,9 +3,9 @@
  */
 
 @interface EKEventNotesEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
-    CalendarNotesCell *_cell;
-    UITableView *_table;
-    NSString *_text;
+    CalendarNotesCell * _cell;
+    UITableView * _table;
+    NSString * _text;
 }
 
 @property (readonly, copy) NSString *debugDescription;

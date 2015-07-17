@@ -3,24 +3,24 @@
  */
 
 @interface MusicPlaybackProgressSliderView : UIView <MusicPlaybackProgressScrubberDelegate, MusicPlaybackProgressScrubbing> {
-    BOOL _isTracking;
-    NSObject<OS_dispatch_source> *_labelAdjustTimerSource;
-    BOOL _needsUpdateTimeLabelText;
-    MusicPlaybackProgressSlider *_playbackProgressSlider;
-    BOOL _preventsTimerStart;
+    BOOL  _isTracking;
+    NSObject<OS_dispatch_source> * _labelAdjustTimerSource;
+    BOOL  _needsUpdateTimeLabelText;
+    MusicPlaybackProgressSlider * _playbackProgressSlider;
+    BOOL  _preventsTimerStart;
     struct CGSize { 
         float width; 
         float height; 
-    } _previousKnownSize;
-    <MusicPlaybackProgressScrubberDelegate> *_scrubberDelegate;
+    }  _previousKnownSize;
+    <MusicPlaybackProgressScrubberDelegate> * _scrubberDelegate;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _textLabelEdgeInsets;
-    UILabel *_timePlayedLabel;
-    UILabel *_timeRemainingLabel;
+    }  _textLabelEdgeInsets;
+    UILabel * _timePlayedLabel;
+    UILabel * _timeRemainingLabel;
 }
 
 @property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;

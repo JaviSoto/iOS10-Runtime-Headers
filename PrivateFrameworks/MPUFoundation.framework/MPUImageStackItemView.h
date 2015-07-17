@@ -3,8 +3,8 @@
  */
 
 @interface MPUImageStackItemView : MPUStackItemView {
-    UIImage *_image;
-    float _imageAlpha;
+    UIImage * _image;
+    float  _imageAlpha;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +14,7 @@
             float width; 
             float height; 
         } size; 
-    } _imageContentsRect;
+    }  _imageContentsRect;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -22,8 +22,8 @@
         float d; 
         float tx; 
         float ty; 
-    } _imageTransform;
-    UIImageView *_imageView;
+    }  _imageTransform;
+    UIImageView * _imageView;
 }
 
 @property (nonatomic, retain) UIImage *image;

@@ -3,7 +3,7 @@
  */
 
 @interface NSURLCredential : NSObject <NSCopying, NSSecureCoding> {
-    NSURLCredentialInternal *_internal;
+    NSURLCredentialInternal * _internal;
 }
 
 @property (readonly) unsigned int persistence;

@@ -3,11 +3,11 @@
  */
 
 @interface TSAPdfDestination : NSObject {
-    NSString *_name;
+    NSString * _name;
     struct CGPoint { 
         float x; 
         float y; 
-    } _point;
+    }  _point;
 }
 
 @property (nonatomic, readonly) NSString *name;

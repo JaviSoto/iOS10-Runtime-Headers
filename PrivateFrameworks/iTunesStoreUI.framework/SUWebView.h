@@ -3,15 +3,15 @@
  */
 
 @interface SUWebView : UIWebView {
-    BOOL _isPinned;
-    UIColor *_originalBackgroundColor;
-    BOOL _originalShowsBackgroundShadow;
-    float _pinnedHeaderInsetAdjustment;
-    UIView *_pinnedHeaderView;
-    unsigned int _scrollingDisabled;
-    BOOL _showsTopBackgroundShadow;
-    int _synchronousLayoutCount;
-    UIColor *_topBackgroundColor;
+    BOOL  _isPinned;
+    UIColor * _originalBackgroundColor;
+    BOOL  _originalShowsBackgroundShadow;
+    float  _pinnedHeaderInsetAdjustment;
+    UIView * _pinnedHeaderView;
+    unsigned int  _scrollingDisabled;
+    BOOL  _showsTopBackgroundShadow;
+    int  _synchronousLayoutCount;
+    UIColor * _topBackgroundColor;
 }
 
 @property (nonatomic) <SUWebViewDelegate> *delegate;

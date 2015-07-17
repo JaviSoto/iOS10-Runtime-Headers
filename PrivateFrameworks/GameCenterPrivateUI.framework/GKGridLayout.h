@@ -3,60 +3,64 @@
  */
 
 @interface GKGridLayout : UICollectionViewLayout {
-    GKCollectionViewLayoutAttributes *_clipViewAttributes;
-    NSArray *_currentUpdateItems;
-    GKCollectionViewDataSource *_dataSourceForUpdate;
-    GKDataSourceMetrics *_dataSourceMetrics;
-    GKSectionMetrics *_defaultSectionMetricsInternal;
-    BOOL _displayClipView;
-    BOOL _displayingOverlay;
-    float _hiddenSearchBarOffset;
-    BOOL _hideAboveSegmentOnAppear;
-    BOOL _hideSearchBarOnAppear;
-    NSIndexPath *_indexPathOfTouchedShowMore;
-    NSMutableDictionary *_indexPathToDecoration;
-    NSMutableDictionary *_indexPathToItem;
-    NSMutableDictionary *_indexPathToMetrics;
-    NSMutableDictionary *_indexPathToSupplementary;
-    unsigned long long _invalidationFlags;
-    NSMutableDictionary *_keyToMetricData;
-    NSMutableSet *_knownSupplementaryKinds;
-    NSMutableArray *_laidOutAttributes;
+    float  _bottomContentPadding;
+    GKCollectionViewLayoutAttributes * _clipViewAttributes;
+    NSArray * _currentUpdateItems;
+    GKCollectionViewDataSource * _dataSourceForUpdate;
+    GKDataSourceMetrics * _dataSourceMetrics;
+    GKSectionMetrics * _defaultSectionMetricsInternal;
+    BOOL  _displayClipView;
+    BOOL  _displayingOverlay;
+    float  _hiddenSearchBarOffset;
+    BOOL  _hideAboveSegmentOnAppear;
+    BOOL  _hideSearchBarOnAppear;
+    BOOL  _ignoreBoundsForSizeCalculation;
+    NSIndexPath * _indexPathOfTouchedShowMore;
+    NSMutableDictionary * _indexPathToDecoration;
+    NSMutableDictionary * _indexPathToItem;
+    NSMutableDictionary * _indexPathToMetrics;
+    NSMutableDictionary * _indexPathToSupplementary;
+    unsigned long long  _invalidationFlags;
+    NSMutableDictionary * _keyToMetricData;
+    NSMutableSet * _knownSupplementaryKinds;
+    NSMutableArray * _laidOutAttributes;
     struct CGSize { 
         float width; 
         float height; 
-    } _laidOutContentSize;
-    NSMutableOrderedSet *_laidOutPinnableAttributes;
-    unsigned int _landscapeInterleavedSectionsCount;
-    float _leftLayoutGuideOffset;
-    int _metricsInvalidationCount;
+    }  _laidOutContentSize;
+    NSMutableOrderedSet * _laidOutPinnableAttributes;
+    unsigned int  _landscapeInterleavedSectionsCount;
+    float  _leftLayoutGuideOffset;
+    int  _metricsInvalidationCount;
     struct CGSize { 
         float width; 
         float height; 
-    } _minimumLaidOutContentSize;
-    BOOL _movedItemsInUpdateCarrySections;
-    BOOL _noMoreShowMore;
-    NSMutableDictionary *_oldIndexPathToDecoration;
-    NSMutableDictionary *_oldIndexPathToItem;
-    NSMutableDictionary *_oldIndexPathToSupplementary;
+    }  _minimumLaidOutContentSize;
+    BOOL  _movedItemsInUpdateCarrySections;
+    BOOL  _noMoreShowMore;
+    NSMutableDictionary * _oldIndexPathToDecoration;
+    NSMutableDictionary * _oldIndexPathToItem;
+    NSMutableDictionary * _oldIndexPathToSupplementary;
     struct CGSize { 
         float width; 
         float height; 
-    } _oldLaidOutContentSize;
-    NSMutableDictionary *_oldSectionToMetricKeys;
-    unsigned int _portraitInterleavedSectionsCount;
-    NSMutableSet *_revealedIndexPaths;
-    float _rightLayoutGuideOffset;
-    NSPointerArray *_sectionToMetricData;
-    NSPointerArray *_sectionToPresentationData;
-    NSMutableIndexSet *_sectionsWithPinnedHeaders;
-    float _segmentedBoxY;
-    float _segmentedHeaderPinningOffset;
-    BOOL _showPlaceholder;
-    unsigned int _updateType;
-    NSSet *_visibleIndexPathsFilter;
+    }  _oldLaidOutContentSize;
+    NSMutableDictionary * _oldSectionToMetricKeys;
+    unsigned int  _portraitInterleavedSectionsCount;
+    NSMutableSet * _revealedIndexPaths;
+    float  _rightLayoutGuideOffset;
+    NSPointerArray * _sectionToMetricData;
+    NSPointerArray * _sectionToPresentationData;
+    NSMutableIndexSet * _sectionsWithPinnedHeaders;
+    float  _segmentedBoxY;
+    float  _segmentedHeaderPinningOffset;
+    BOOL  _shouldLayoutRTL;
+    BOOL  _showPlaceholder;
+    unsigned int  _updateType;
+    NSSet * _visibleIndexPathsFilter;
 }
 
+@property (nonatomic) float bottomContentPadding;
 @property (nonatomic, retain) GKCollectionViewLayoutAttributes *clipViewAttributes;
 @property (nonatomic, retain) NSArray *currentUpdateItems;
 @property (nonatomic, retain) GKCollectionViewDataSource *dataSourceForUpdate;
@@ -67,6 +71,7 @@
 @property (nonatomic) float hiddenSearchBarOffset;
 @property (nonatomic) BOOL hideAboveSegmentOnAppear;
 @property (nonatomic) BOOL hideSearchBarOnAppear;
+@property (nonatomic) BOOL ignoreBoundsForSizeCalculation;
 @property (nonatomic, retain) NSIndexPath *indexPathOfTouchedShowMore;
 @property (nonatomic, retain) NSMutableDictionary *indexPathToDecoration;
 @property (nonatomic, retain) NSMutableDictionary *indexPathToItem;
@@ -97,9 +102,10 @@
 @property (nonatomic, retain) NSMutableIndexSet *sectionsWithPinnedHeaders;
 @property (nonatomic) float segmentedBoxY;
 @property (nonatomic) float segmentedHeaderPinningOffset;
+@property (nonatomic) BOOL shouldLayoutRTL;
 @property (nonatomic) BOOL showPlaceholder;
 @property (nonatomic) unsigned int updateType;
-@property (nonatomic) NSSet *visibleIndexPathsFilter;
+@property (nonatomic, retain) NSSet *visibleIndexPathsFilter;
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
@@ -118,6 +124,7 @@
 - (float)applyBottomPinningToAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
 - (float)applyTopPinningToAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
 - (id)attributesForSupplementaryIndexPath:(id)arg1;
+- (float)bottomContentPadding;
 - (void)calculateCollectionViewContentSize;
 - (float)calculatedBottomPaddingForSection:(int)arg1;
 - (id)clipViewAttributes;
@@ -147,6 +154,7 @@
 - (float)hiddenSearchBarOffset;
 - (BOOL)hideAboveSegmentOnAppear;
 - (BOOL)hideSearchBarOnAppear;
+- (BOOL)ignoreBoundsForSizeCalculation;
 - (int)indexOfSupplementaryMetricsOfKind:(id)arg1 inList:(id)arg2;
 - (id)indexPathOfTouchedShowMore;
 - (id)indexPathToDecoration;
@@ -207,6 +215,7 @@
 - (id)sectionsWithPinnedHeaders;
 - (float)segmentedBoxY;
 - (float)segmentedHeaderPinningOffset;
+- (void)setBottomContentPadding:(float)arg1;
 - (void)setClipViewAttributes:(id)arg1;
 - (void)setCurrentUpdateItems:(id)arg1;
 - (void)setDataSourceForUpdate:(id)arg1;
@@ -217,6 +226,7 @@
 - (void)setHiddenSearchBarOffset:(float)arg1;
 - (void)setHideAboveSegmentOnAppear:(BOOL)arg1;
 - (void)setHideSearchBarOnAppear:(BOOL)arg1;
+- (void)setIgnoreBoundsForSizeCalculation:(BOOL)arg1;
 - (void)setIndexPathOfTouchedShowMore:(id)arg1;
 - (void)setIndexPathToDecoration:(id)arg1;
 - (void)setIndexPathToItem:(id)arg1;
@@ -248,10 +258,12 @@
 - (void)setSectionsWithPinnedHeaders:(id)arg1;
 - (void)setSegmentedBoxY:(float)arg1;
 - (void)setSegmentedHeaderPinningOffset:(float)arg1;
+- (void)setShouldLayoutRTL:(BOOL)arg1;
 - (void)setShowPlaceholder:(BOOL)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
 - (void)setVisibleIndexPathsFilter:(id)arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)shouldLayoutRTL;
 - (BOOL)shouldSlideInSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)shouldSlideOutSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)shouldUpdateVisibleCellLayoutAttributes;

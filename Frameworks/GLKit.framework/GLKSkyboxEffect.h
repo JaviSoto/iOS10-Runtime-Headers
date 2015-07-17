@@ -20,21 +20,21 @@
             float p; 
         } ; 
         float v[3]; 
-    } _center;
-    unsigned char _centerChanged;
-    GLKEffect *_effect;
-    unsigned char _effectStale;
-    NSString *_label;
-    unsigned int _positionVBO;
-    unsigned int _programName;
-    NSMutableArray *_propertyArray;
-    unsigned int _texCoordVBO;
-    GLKEffectPropertyTexture *_textureCubeMap;
-    GLKEffectPropertyTransform *_transform;
-    unsigned int _vao;
-    float _xSize;
-    float _ySize;
-    float _zSize;
+    }  _center;
+    unsigned char  _centerChanged;
+    GLKEffect * _effect;
+    unsigned char  _effectStale;
+    NSString * _label;
+    unsigned int  _positionVBO;
+    unsigned int  _programName;
+    NSMutableArray * _propertyArray;
+    unsigned int  _texCoordVBO;
+    GLKEffectPropertyTexture * _textureCubeMap;
+    GLKEffectPropertyTransform * _transform;
+    unsigned int  _vao;
+    float  _xSize;
+    float  _ySize;
+    float  _zSize;
 }
 
 @property (nonatomic) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } center;

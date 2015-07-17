@@ -3,17 +3,17 @@
  */
 
 @interface MPUJinglePlayActivityReportingController : MPUReportingController {
-    NSObject<OS_dispatch_queue> *_accessSerialQueue;
-    double _nonCatalogAggregatePlayDuration;
-    double _nonCatalogAggregateStartTime;
-    NSString *_nonCatalogDeviceName;
-    BOOL _nonCatalogOffline;
-    BOOL _nonCatalogSBEnabled;
-    unsigned int _nonCatalogSourceType;
-    unsigned long long _nonCatalogStoreAccountID;
-    SSVPlayActivityController *_playActivityController;
-    BOOL _shouldReportAggregateTimePlayActivityEvents;
-    BOOL _shouldReportPlayActivityEvents;
+    NSObject<OS_dispatch_queue> * _accessSerialQueue;
+    double  _nonCatalogAggregatePlayDuration;
+    double  _nonCatalogAggregateStartTime;
+    NSString * _nonCatalogDeviceName;
+    BOOL  _nonCatalogOffline;
+    BOOL  _nonCatalogSBEnabled;
+    unsigned int  _nonCatalogSourceType;
+    unsigned long long  _nonCatalogStoreAccountID;
+    SSVPlayActivityController * _playActivityController;
+    BOOL  _shouldReportAggregateTimePlayActivityEvents;
+    BOOL  _shouldReportPlayActivityEvents;
 }
 
 @property (nonatomic, readonly) SSVPlayActivityController *playActivityController;

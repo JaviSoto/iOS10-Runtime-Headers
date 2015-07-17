@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutTotalEnergyBurnedFilter : _HKFilter {
-    unsigned int _operatorType;
-    HKQuantity *_totalEnergyBurned;
+    unsigned int  _operatorType;
+    HKQuantity * _totalEnergyBurned;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;

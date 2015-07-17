@@ -3,15 +3,15 @@
  */
 
 @interface SKUIDefaultSettingDescriptionView : SKUISettingDescriptionView {
-    BOOL _hasDisclosureChevron;
+    BOOL  _hasDisclosureChevron;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _padding;
-    UIView *_viewElementView;
-    SKUIViewReuseView *_viewReuseView;
+    }  _padding;
+    UIView * _viewElementView;
+    SKUIViewReuseView * _viewReuseView;
 }
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_paddingForStyle:(id)arg1;

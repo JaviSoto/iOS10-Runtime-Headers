@@ -3,12 +3,12 @@
  */
 
 @interface CMDrawingContext : NSObject {
-    NSMutableArray *_actions;
-    struct CGContext { } *_cgContext;
-    NSAffineTransform *_currentTransform;
-    struct __CFData { } *_data;
-    struct CGDataConsumer { } *_dataConsumer;
-    struct CGImage { } *_fillImage;
+    NSMutableArray * _actions;
+    struct CGContext { } * _cgContext;
+    NSAffineTransform * _currentTransform;
+    struct __CFData { } * _data;
+    struct CGDataConsumer { } * _dataConsumer;
+    struct CGImage { } * _fillImage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,7 +18,7 @@
             float width; 
             float height; 
         } size; 
-    } _finalFrame;
+    }  _finalFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,12 +28,11 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
-    CMDrawableMapper *_mapper;
-    NSMutableArray *_transforms;
+    }  _frame;
+    CMDrawableMapper * _mapper;
+    NSMutableArray * _transforms;
 }
 
-- (id).cxx_construct;
 - (void)_addTransform:(id)arg1;
 - (void)_applyTransform:(id)arg1;
 - (struct CGContext { }*)_cgContext;

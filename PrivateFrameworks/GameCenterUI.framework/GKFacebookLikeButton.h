@@ -3,16 +3,16 @@
  */
 
 @interface GKFacebookLikeButton : UIView {
-    GKButton *_button;
-    UIView *_containerSpacerLeft;
-    UIView *_containerSpacerRight;
-    UIView *_containerView;
-    GKLabel *_labelView;
-    UIImageView *_logoView;
-    GKOpenGraphNode *_openGraphNode;
-    NSArray *_replaceableConstraints;
-    UIActivityIndicatorView *_spinner;
-    GKStoreItemInternal *_storeItem;
+    GKButton * _button;
+    UIView * _containerSpacerLeft;
+    UIView * _containerSpacerRight;
+    UIView * _containerView;
+    GKLabel * _labelView;
+    UIImageView * _logoView;
+    GKOpenGraphNode * _openGraphNode;
+    NSArray * _replaceableConstraints;
+    UIActivityIndicatorView * _spinner;
+    GKStoreItemInternal * _storeItem;
 }
 
 @property (nonatomic, retain) GKButton *button;

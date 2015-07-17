@@ -3,25 +3,25 @@
  */
 
 @interface SKUICollectionViewCell : UICollectionViewCell {
-    UIView *_bottomBorderView;
-    UIView *_leftBorderView;
-    int _position;
-    UIView *_rightBorderView;
-    UIColor *_separatorColor;
+    UIView * _bottomBorderView;
+    UIView * _leftBorderView;
+    int  _position;
+    UIView * _rightBorderView;
+    UIColor * _separatorColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorInsets;
-    int _separatorStyle;
+    }  _separatorInsets;
+    int  _separatorStyle;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorWidths;
-    UIView *_topBorderView;
+    }  _separatorWidths;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic, retain) UIColor *separatorColor;

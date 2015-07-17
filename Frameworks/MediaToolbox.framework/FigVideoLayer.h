@@ -3,10 +3,13 @@
  */
 
 @interface FigVideoLayer : CALayer {
-    FigVideoLayerInternal *_videoLayer;
+    FigVideoLayerInternal * _videoLayer;
 }
 
++ (id)defaultActionForKey:(id)arg1;
+
 - (void)_sendVideoLayerIsBeingServicedNotification;
+- (id)actionForKey:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;

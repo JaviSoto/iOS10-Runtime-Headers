@@ -3,32 +3,35 @@
  */
 
 @interface CalDAVServerVersion : NSObject <NSCopying> {
-    NSSet *_complianceClasses;
-    NSString *_serverHeader;
-    NSString *_supportedCalendarComponentSets;
-    BOOL _supportsAutoSchedule;
-    BOOL _supportsCalendarHomeSync;
-    BOOL _supportsCalendarNoTimezone;
-    BOOL _supportsCalendarProxy;
-    BOOL _supportsCheckForValidEmail;
-    BOOL _supportsChecksumming;
-    BOOL _supportsExtendedCalendarQuery;
-    BOOL _supportsInboxAvailability;
-    BOOL _supportsManagedAttachments;
-    BOOL _supportsPrincipalPropertySearch;
-    BOOL _supportsPrivateComments;
-    BOOL _supportsPrivateEvents;
-    BOOL _supportsRequestCompression;
-    BOOL _supportsSharing;
-    BOOL _supportsSharingNoScheduling;
-    BOOL _supportsSubscriptionCalendars;
-    BOOL _supportsTimeRangeFilter;
-    BOOL _supportsTimeRangeFilterOnInbox;
-    BOOL _supportsTimeRangeFilterWithoutEndDate;
-    BOOL _supportsTodoTimeRangeFilter;
-    double _version;
+    BOOL  _alwaysSupportsFreebusyOnOutbox;
+    NSSet * _complianceClasses;
+    NSString * _serverHeader;
+    NSString * _supportedCalendarComponentSets;
+    BOOL  _supportsAutoSchedule;
+    BOOL  _supportsCalendarHomeSync;
+    BOOL  _supportsCalendarNoTimezone;
+    BOOL  _supportsCalendarProxy;
+    BOOL  _supportsCalendarRecurrenceSplit;
+    BOOL  _supportsCheckForValidEmail;
+    BOOL  _supportsChecksumming;
+    BOOL  _supportsExtendedCalendarQuery;
+    BOOL  _supportsInboxAvailability;
+    BOOL  _supportsManagedAttachments;
+    BOOL  _supportsPrincipalPropertySearch;
+    BOOL  _supportsPrivateComments;
+    BOOL  _supportsPrivateEvents;
+    BOOL  _supportsRequestCompression;
+    BOOL  _supportsSharing;
+    BOOL  _supportsSharingNoScheduling;
+    BOOL  _supportsSubscriptionCalendars;
+    BOOL  _supportsTimeRangeFilter;
+    BOOL  _supportsTimeRangeFilterOnInbox;
+    BOOL  _supportsTimeRangeFilterWithoutEndDate;
+    BOOL  _supportsTodoTimeRangeFilter;
+    double  _version;
 }
 
+@property (nonatomic) BOOL alwaysSupportsFreebusyOnOutbox;
 @property (nonatomic, retain) NSSet *complianceClasses;
 @property (nonatomic, copy) NSString *serverHeader;
 @property (nonatomic, copy) NSString *supportedCalendarComponentSets;
@@ -36,6 +39,7 @@
 @property (nonatomic) BOOL supportsCalendarHomeSync;
 @property (nonatomic) BOOL supportsCalendarNoTimezone;
 @property (nonatomic) BOOL supportsCalendarProxy;
+@property (nonatomic) BOOL supportsCalendarRecurrenceSplit;
 @property (nonatomic) BOOL supportsCheckForValidEmail;
 @property (nonatomic) BOOL supportsChecksumming;
 @property (nonatomic) BOOL supportsExtendedCalendarQuery;
@@ -59,19 +63,21 @@
 + (id)versionWithHTTPHeaders:(id)arg1;
 + (id)versionWithPropertyValue:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_additionalFlagKeys;
 - (id)_allFlagKeys;
 - (id)_propertiesToComplianceClasses;
 - (void)_setPropertiesFromComplianceClasses:(id)arg1;
+- (BOOL)alwaysSupportsFreebusyOnOutbox;
 - (id)complianceClasses;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)propertyValue;
 - (id)serverHeader;
+- (void)setAlwaysSupportsFreebusyOnOutbox:(BOOL)arg1;
 - (void)setComplianceClasses:(id)arg1;
 - (void)setServerHeader:(id)arg1;
 - (void)setSupportedCalendarComponentSets:(id)arg1;
@@ -79,6 +85,7 @@
 - (void)setSupportsCalendarHomeSync:(BOOL)arg1;
 - (void)setSupportsCalendarNoTimezone:(BOOL)arg1;
 - (void)setSupportsCalendarProxy:(BOOL)arg1;
+- (void)setSupportsCalendarRecurrenceSplit:(BOOL)arg1;
 - (void)setSupportsCheckForValidEmail:(BOOL)arg1;
 - (void)setSupportsChecksumming:(BOOL)arg1;
 - (void)setSupportsExtendedCalendarQuery:(BOOL)arg1;
@@ -101,6 +108,7 @@
 - (BOOL)supportsCalendarHomeSync;
 - (BOOL)supportsCalendarNoTimezone;
 - (BOOL)supportsCalendarProxy;
+- (BOOL)supportsCalendarRecurrenceSplit;
 - (BOOL)supportsCheckForValidEmail;
 - (BOOL)supportsChecksumming;
 - (BOOL)supportsExtendedCalendarQuery;

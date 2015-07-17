@@ -3,7 +3,7 @@
  */
 
 @interface MKCompassView : UIView {
-    CALayer *_imageLayer;
+    CALayer * _imageLayer;
 }
 
 @property (nonatomic) float yaw;

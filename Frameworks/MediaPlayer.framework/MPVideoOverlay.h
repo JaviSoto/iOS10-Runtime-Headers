@@ -3,19 +3,19 @@
  */
 
 @interface MPVideoOverlay : UIView <MPDetailSliderDelegate, MPVideoOverlay> {
-    BOOL _controlsAutohideDisabled;
-    <MPVideoOverlayDelegate> *_delegate;
-    unsigned long long _desiredParts;
-    unsigned long long _disabledParts;
-    int _interfaceOrientation;
-    MPAVItem *_item;
-    double _lastTickTime;
-    MPAVController *_player;
-    MPDetailSlider *_scrubControl;
-    NSMutableDictionary *_tickTimeEvents;
-    <MPVideoControllerProtocol> *_videoViewController;
-    unsigned long long _visibleParts;
-    BOOL _wantsTick;
+    BOOL  _controlsAutohideDisabled;
+    <MPVideoOverlayDelegate> * _delegate;
+    unsigned long long  _desiredParts;
+    unsigned long long  _disabledParts;
+    int  _interfaceOrientation;
+    MPAVItem * _item;
+    double  _lastTickTime;
+    MPAVController * _player;
+    MPDetailSlider * _scrubControl;
+    NSMutableDictionary * _tickTimeEvents;
+    <MPVideoControllerProtocol> * _videoViewController;
+    unsigned long long  _visibleParts;
+    BOOL  _wantsTick;
 }
 
 @property (nonatomic) BOOL allowsWirelessPlayback;

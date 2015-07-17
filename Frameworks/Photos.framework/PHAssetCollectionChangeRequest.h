@@ -3,12 +3,12 @@
  */
 
 @interface PHAssetCollectionChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
-    PHCollectionChangeRequestHelper *_assetsHelper;
-    NSString *_clientName;
-    int _clientProcessID;
-    BOOL _entitled;
-    PHChangeRequestHelper *_helper;
-    PHAssetCollection *_originalAssetCollection;
+    PHCollectionChangeRequestHelper * _assetsHelper;
+    NSString * _clientName;
+    int  _clientProcessID;
+    BOOL  _entitled;
+    PHChangeRequestHelper * _helper;
+    PHAssetCollection * _originalAssetCollection;
 }
 
 @property (nonatomic, readonly) PHCollectionChangeRequestHelper *assetsHelper;
@@ -29,10 +29,12 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, readonly) NSString *uuid;
 
++ (id)_changeRequestForAssetCollection:(id)arg1 optionalAssets:(id)arg2;
 + (id)changeRequestForAssetCollection:(id)arg1;
 + (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2;
 + (id)creationRequestForAssetCollectionWithTitle:(id)arg1;
 + (void)deleteAssetCollections:(id)arg1;
++ (id)validateAssetCollectionTitle:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
 - (id)_mutableObjectIDsAndUUIDs;
@@ -65,6 +67,7 @@
 - (id)mutations;
 - (id)objectID;
 - (id)originalAssetCollection;
+- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedAssetCollection;
 - (void)removeAsset:(id)arg1;
 - (void)removeAssetFromAssetsAtIndex:(unsigned int)arg1;

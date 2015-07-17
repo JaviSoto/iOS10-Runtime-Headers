@@ -3,8 +3,8 @@
  */
 
 @interface SFInternalAdvertisement : NSObject {
-    NSData *_advertisementPayload;
-    NSDictionary *_options;
+    NSData * _advertisementPayload;
+    NSDictionary * _options;
 }
 
 @property (copy) NSData *advertisementPayload;

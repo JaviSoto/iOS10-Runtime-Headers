@@ -3,7 +3,7 @@
  */
 
 @interface KNNoteInfo : TSPObject <TSDContainerInfo, TSKDocumentObject, TSKTransformableObject, TSWPStorageParent> {
-    TSWPStorage *mContainedStorage;
+    TSWPStorage * mContainedStorage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,9 +13,9 @@
             float width; 
             float height; 
         } size; 
-    } mFrameForPrinting;
-    NSObject<TSDContainerInfo> *mParentInfo;
-    BOOL mShrinkTextForPrinting;
+    }  mFrameForPrinting;
+    NSObject<TSDContainerInfo> * mParentInfo;
+    BOOL  mShrinkTextForPrinting;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

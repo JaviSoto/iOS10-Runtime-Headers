@@ -3,24 +3,24 @@
  */
 
 @interface SKUIChartColumnsView : UIView <SKUIFlexibleSegmentedControlDelegate> {
-    NSArray *_allViewControllers;
-    int _animatingToNumberOfVisibleColumns;
-    _UIBackdropView *_backdropView;
-    UIView *_borderView0;
-    UIView *_borderView1;
-    int _columnChangeAnimationCount;
-    NSArray *_columnViews;
+    NSArray * _allViewControllers;
+    int  _animatingToNumberOfVisibleColumns;
+    _UIBackdropView * _backdropView;
+    UIView * _borderView0;
+    UIView * _borderView1;
+    int  _columnChangeAnimationCount;
+    NSArray * _columnViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIView *_headerBackgroundBottomBorder;
-    UIView *_headerBackgroundView;
-    NSArray *_headerViews;
-    int _numberOfVisibleColumns;
-    SKUIFlexibleSegmentedControl *_segmentedControl;
+    }  _contentInset;
+    UIView * _headerBackgroundBottomBorder;
+    UIView * _headerBackgroundView;
+    NSArray * _headerViews;
+    int  _numberOfVisibleColumns;
+    SKUIFlexibleSegmentedControl * _segmentedControl;
 }
 
 @property (nonatomic, readonly) _UIBackdropView *backdropView;

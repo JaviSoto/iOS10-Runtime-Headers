@@ -3,7 +3,7 @@
  */
 
 @interface MPUExtrasCarouselCollectionView : UICollectionView {
-    <MPUExtrasCarouselCollectionViewDelegate> *_carouselCollectionViewDelegate;
+    <MPUExtrasCarouselCollectionViewDelegate> * _carouselCollectionViewDelegate;
 }
 
 @property (nonatomic) <MPUExtrasCarouselCollectionViewDelegate> *carouselCollectionViewDelegate;

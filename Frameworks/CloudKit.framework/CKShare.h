@@ -3,24 +3,24 @@
  */
 
 @interface CKShare : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableArray *_addedParticipants;
-    NSString *_baseToken;
-    CKContainerID *_containerID;
-    NSString *_etag;
-    BOOL _isKnownToServer;
-    NSMutableArray *_participants;
-    NSString *_previousProtectionEtag;
-    NSString *_previousPublicProtectionEtag;
-    NSData *_protectionData;
-    NSString *_protectionEtag;
-    int _publicPermission;
-    NSData *_publicProtectionData;
-    NSString *_publicProtectionEtag;
-    NSData *_publicSharingIdentity;
-    NSMutableArray *_removedParticipants;
-    NSString *_routingKey;
-    CKShareID *_shareID;
-    NSURL *_shareURL;
+    NSMutableArray * _addedParticipants;
+    NSString * _baseToken;
+    CKContainerID * _containerID;
+    NSString * _etag;
+    BOOL  _isKnownToServer;
+    NSMutableArray * _participants;
+    NSString * _previousProtectionEtag;
+    NSString * _previousPublicProtectionEtag;
+    NSData * _protectionData;
+    NSString * _protectionEtag;
+    int  _publicPermission;
+    NSData * _publicProtectionData;
+    NSString * _publicProtectionEtag;
+    NSData * _publicSharingIdentity;
+    NSMutableArray * _removedParticipants;
+    NSString * _routingKey;
+    CKShareID * _shareID;
+    NSURL * _shareURL;
 }
 
 @property (nonatomic, retain) NSMutableArray *addedParticipants;

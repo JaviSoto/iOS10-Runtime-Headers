@@ -3,10 +3,10 @@
  */
 
 @interface GQUIglooOutputBundle : NSObject <GQUOutputBundle> {
-    struct __CFDictionary { } *mAttachments;
-    struct __CFData { } *mMainHtmlData;
-    struct __CFString { } *mUriPrefix;
-    struct __CFString { } *mUuidStr;
+    struct __CFDictionary { } * mAttachments;
+    struct __CFData { } * mMainHtmlData;
+    struct __CFString { } * mUriPrefix;
+    struct __CFString { } * mUuidStr;
 }
 
 @property (readonly, copy) NSString *debugDescription;

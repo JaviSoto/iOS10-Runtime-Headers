@@ -3,7 +3,7 @@
  */
 
 @interface CLLocationManagerRoutine : NSObject {
-    _CLLocationManagerRoutineProxy *_locationManagerRoutineProxy;
+    _CLLocationManagerRoutineProxy * _locationManagerRoutineProxy;
 }
 
 @property (nonatomic) <CLLocationManagerDelegate> *delegate;

@@ -3,30 +3,30 @@
  */
 
 @interface SSPurchase : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    NSString *_affiliateIdentifier;
-    BOOL _backgroundPurchase;
-    int _batchIdentifier;
-    NSString *_buyParameters;
-    BOOL _createsDownloads;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _displaysOnLockScreen;
-    SSDownloadPolicy *_downloadPolicy;
-    NSMutableDictionary *_downloadProperties;
-    NSNumber *_enabledServiceType;
-    long long _expectedDownloadFileSize;
-    NSArray *_filteredAssetTypes;
-    NSArray *_gratisIdentifiers;
-    BOOL _ignoresForcedPasswordRestriction;
-    SSItem *_item;
-    SSItemOffer *_itemOffer;
-    SSNetworkConstraints *_networkConstraints;
-    long long _placeholderDownloadIdentifier;
-    BOOL _preauthenticated;
-    SSURLRequestProperties *_requestProperties;
-    id _requiredDeviceCapabilities;
-    long long _uniqueIdentifier;
-    BOOL _usesLocalRedownloadParametersIfPossible;
+    NSNumber * _accountIdentifier;
+    NSString * _affiliateIdentifier;
+    BOOL  _backgroundPurchase;
+    int  _batchIdentifier;
+    NSString * _buyParameters;
+    BOOL  _createsDownloads;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _displaysOnLockScreen;
+    SSDownloadPolicy * _downloadPolicy;
+    NSMutableDictionary * _downloadProperties;
+    NSNumber * _enabledServiceType;
+    long long  _expectedDownloadFileSize;
+    NSArray * _filteredAssetTypes;
+    NSArray * _gratisIdentifiers;
+    BOOL  _ignoresForcedPasswordRestriction;
+    SSItem * _item;
+    SSItemOffer * _itemOffer;
+    SSNetworkConstraints * _networkConstraints;
+    long long  _placeholderDownloadIdentifier;
+    BOOL  _preauthenticated;
+    SSURLRequestProperties * _requestProperties;
+    id  _requiredDeviceCapabilities;
+    long long  _uniqueIdentifier;
+    BOOL  _usesLocalRedownloadParametersIfPossible;
 }
 
 @property (retain) NSNumber *accountIdentifier;

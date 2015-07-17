@@ -3,15 +3,15 @@
  */
 
 @interface PUPhotoBrowserZoomTransition : PUNavigationTransition <PUTransitionViewAnimatorDelegate> {
-    PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
-    PUTransitionViewAnimator *__transitionViewAnimator;
-    <PUPhotoBrowserZoomTransitionDelegate> *_delegate;
-    BOOL _didFinish;
-    UIImageView *_impostorImageView;
-    id /* block */ _individualAnimationCompletion;
-    BOOL _shouldEnd;
-    BOOL _useFallbackAnimation;
-    id _userInteractionDisabledToken;
+    PUPhotoPinchGestureRecognizer * __photoPinchGestureRecognizer;
+    PUTransitionViewAnimator * __transitionViewAnimator;
+    <PUPhotoBrowserZoomTransitionDelegate> * _delegate;
+    BOOL  _didFinish;
+    UIImageView * _impostorImageView;
+    id /* block */  _individualAnimationCompletion;
+    BOOL  _shouldEnd;
+    BOOL  _useFallbackAnimation;
+    id  _userInteractionDisabledToken;
 }
 
 @property (setter=_setPhotoPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;

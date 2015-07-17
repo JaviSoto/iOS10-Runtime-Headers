@@ -3,30 +3,31 @@
  */
 
 @interface EDWorksheet : EDSheet {
-    EDColumnInfoCollection *mColumnInfos;
-    EDCollection *mConditionalFormattings;
-    double mDefaultColumnWidth;
-    unsigned short mDefaultRowHeight;
-    bool mFitToPage;
-    EDCollection *mHyperlinks;
-    EDReference *mImplicitCellArea;
-    EDReference *mMaxCellReferencedInFormulas;
-    unsigned long mMaxColumnOutlineLevel;
-    unsigned long mMaxRowOutlineLevel;
-    EDMergedCellCollection *mMergedCells;
-    OITSUPointerKeyDictionary *mMergedCols;
-    OITSUPointerKeyDictionary *mMergedRows;
-    EDPane *mPane;
-    EDCollection *mPivotTables;
-    EDRowBlocks *mRowBlocks;
-    EDCollection *mTables;
-    EDWarnings *mWorksheetWarnings;
+    EDColumnInfoCollection * mColumnInfos;
+    EDCollection * mConditionalFormattings;
+    double  mDefaultColumnWidth;
+    unsigned short  mDefaultRowHeight;
+    bool  mFitToPage;
+    EDCollection * mHyperlinks;
+    EDReference * mImplicitCellArea;
+    EDReference * mMaxCellReferencedInFormulas;
+    unsigned long  mMaxColumnOutlineLevel;
+    unsigned long  mMaxRowOutlineLevel;
+    EDMergedCellCollection * mMergedCells;
+    OITSUPointerKeyDictionary * mMergedCols;
+    OITSUPointerKeyDictionary * mMergedRows;
+    EDPane * mPane;
+    EDCollection * mPivotTables;
+    EDRowBlocks * mRowBlocks;
+    EDCollection * mTables;
+    EDWarnings * mWorksheetWarnings;
 }
 
 - (id)columnInfos;
 - (id)conditionalFormattings;
 - (double)defaultColumnWidth;
 - (unsigned short)defaultRowHeight;
+- (id)description;
 - (bool)fitToPage;
 - (bool)hasMergedCells;
 - (BOOL)hasMergedCol;

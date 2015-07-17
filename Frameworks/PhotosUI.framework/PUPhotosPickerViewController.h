@@ -3,11 +3,11 @@
  */
 
 @interface PUPhotosPickerViewController : UIViewController <PLAssetContainerListChangeObserver, PUSessionInfoObserver, UITabBarControllerDelegate> {
-    PUTabbedLibraryViewController *__tabbedLibraryViewController;
-    id /* block */ _completionHandler;
-    int _currentContentMode;
-    PUPhotosPickerSessionInfo *_photosPickerSessionInfo;
-    PUPhotosPickerViewControllerSpec *_spec;
+    PUTabbedLibraryViewController * __tabbedLibraryViewController;
+    id /* block */  _completionHandler;
+    int  _currentContentMode;
+    PUPhotosPickerSessionInfo * _photosPickerSessionInfo;
+    PUPhotosPickerViewControllerSpec * _spec;
 }
 
 @property (setter=_setTabbedLibraryViewController:, nonatomic, retain) PUTabbedLibraryViewController *_tabbedLibraryViewController;

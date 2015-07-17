@@ -3,7 +3,7 @@
  */
 
 @interface _UIStepperButton : UIButton {
-    BOOL _left;
+    BOOL  _left;
 }
 
 @property (getter=isLeft, nonatomic) BOOL left;

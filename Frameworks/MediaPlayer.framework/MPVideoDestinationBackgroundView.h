@@ -3,11 +3,11 @@
  */
 
 @interface MPVideoDestinationBackgroundView : UIView {
-    NSString *_destinationName;
-    UILabel *_destinationSubtitleLabel;
-    UILabel *_destinationTitleLabel;
-    int _style;
-    UIImageView *_videosImageView;
+    NSString * _destinationName;
+    UILabel * _destinationSubtitleLabel;
+    UILabel * _destinationTitleLabel;
+    int  _style;
+    UIImageView * _videosImageView;
 }
 
 @property (nonatomic, copy) NSString *destinationName;

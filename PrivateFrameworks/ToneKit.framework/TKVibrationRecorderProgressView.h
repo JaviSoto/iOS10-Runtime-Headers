@@ -3,18 +3,18 @@
  */
 
 @interface TKVibrationRecorderProgressView : UIView {
-    double _currentTimeInterval;
-    double _currentVibrationComponentDidBeginTimeInterval;
-    TKVibrationRecorderProgressDotImageView *_dotForCurrentVibrationComponent;
-    NSLayoutConstraint *_dotForCurrentVibrationComponentLeftConstraint;
-    NSLayoutConstraint *_dotForCurrentVibrationComponentRightConstraint;
-    NSMutableArray *_dots;
-    double _maximumTimeInterval;
-    double _previousPauseDidBeginTimeInterval;
-    UIView *_progressView;
-    NSLayoutConstraint *_progressViewWidthConstraint;
-    int _roundedCornersCompensationDelayMode;
-    <TKVibrationRecorderStyleProvider> *_styleProvider;
+    double  _currentTimeInterval;
+    double  _currentVibrationComponentDidBeginTimeInterval;
+    TKVibrationRecorderProgressDotImageView * _dotForCurrentVibrationComponent;
+    NSLayoutConstraint * _dotForCurrentVibrationComponentLeftConstraint;
+    NSLayoutConstraint * _dotForCurrentVibrationComponentRightConstraint;
+    NSMutableArray * _dots;
+    double  _maximumTimeInterval;
+    double  _previousPauseDidBeginTimeInterval;
+    UIView * _progressView;
+    NSLayoutConstraint * _progressViewWidthConstraint;
+    int  _roundedCornersCompensationDelayMode;
+    <TKVibrationRecorderStyleProvider> * _styleProvider;
 }
 
 @property (setter=_setCurrentTimeInterval:, nonatomic) double _currentTimeInterval;

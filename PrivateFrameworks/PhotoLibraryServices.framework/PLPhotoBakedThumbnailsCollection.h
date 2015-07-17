@@ -3,8 +3,8 @@
  */
 
 @interface PLPhotoBakedThumbnailsCollection : NSObject {
-    NSMutableDictionary *_bakedThumbnails;
-    NSData *_data;
+    NSMutableDictionary * _bakedThumbnails;
+    NSData * _data;
 }
 
 + (void)setTesting:(BOOL)arg1;

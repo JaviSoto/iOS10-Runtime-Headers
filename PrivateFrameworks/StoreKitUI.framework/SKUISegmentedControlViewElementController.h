@@ -3,15 +3,15 @@
  */
 
 @interface SKUISegmentedControlViewElementController : NSObject <SKUIFlexibleSegmentedControlDelegate, SKUIMenuPopoverDelegate, SKUIMenuViewControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    int _defaultMaximumNumberOfVisibleItems;
-    float _desiredSegmentWidth;
-    UIBarButtonItem *_menuSheetCancelButtonItem;
-    SKUIMenuViewController *_menuSheetViewController;
-    UIViewController *_parentViewController;
-    SKUIMenuPopoverController *_popoverMenuViewController;
-    SKUIFlexibleSegmentedControl *_segmentedControl;
-    SKUISegmentedControlViewElement *_viewElement;
+    SKUIClientContext * _clientContext;
+    int  _defaultMaximumNumberOfVisibleItems;
+    float  _desiredSegmentWidth;
+    UIBarButtonItem * _menuSheetCancelButtonItem;
+    SKUIMenuViewController * _menuSheetViewController;
+    UIViewController * _parentViewController;
+    SKUIMenuPopoverController * _popoverMenuViewController;
+    SKUIFlexibleSegmentedControl * _segmentedControl;
+    SKUISegmentedControlViewElement * _viewElement;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

@@ -3,21 +3,21 @@
  */
 
 @interface NSSQLiteConnection : NSSQLConnection {
-    NSSQLiteStatement *_beginStatement;
-    struct __CFDictionary { } *_cachedEntityUpdateStatements;
-    NSMutableDictionary *_cachedFetchStatements;
-    NSSQLiteStatement *_commitStatement;
-    struct sqlite3 { } *_db;
-    NSString *_dbPathRegisteredWithBackupd;
-    unsigned long long _debugInode;
-    void *_extraBuffersForRegisteredFunctions;
-    struct sqlite3_stmt { } *_fetchPKStatement;
-    NSSQLEntity *_finalEntity;
-    NSSQLEntity *_lastEntity;
-    unsigned int _lastEntityKey;
-    NSMutableDictionary *_pragmaSettings;
-    NSSQLiteStatement *_rollbackStatement;
-    int _rowsProcessedCount;
+    NSSQLiteStatement * _beginStatement;
+    struct __CFDictionary { } * _cachedEntityUpdateStatements;
+    NSMutableDictionary * _cachedFetchStatements;
+    NSSQLiteStatement * _commitStatement;
+    struct sqlite3 { } * _db;
+    NSString * _dbPathRegisteredWithBackupd;
+    unsigned long long  _debugInode;
+    void * _extraBuffersForRegisteredFunctions;
+    struct sqlite3_stmt { } * _fetchPKStatement;
+    NSSQLEntity * _finalEntity;
+    NSSQLEntity * _lastEntity;
+    unsigned int  _lastEntityKey;
+    NSMutableDictionary * _pragmaSettings;
+    NSSQLiteStatement * _rollbackStatement;
+    int  _rowsProcessedCount;
     struct __sqliteConnectionFlags { 
         unsigned int _readyToBind : 1; 
         unsigned int _fetchInProgress : 1; 
@@ -27,14 +27,14 @@
         unsigned int _usingWAL : 1; 
         unsigned int _disallowReconnect : 1; 
         unsigned int _reserved : 24; 
-    } _sqliteConnectionFlags;
-    NSMutableArray *_temporaryTables;
-    double _timeOutIncrement;
-    double _timeOutOption;
-    struct sqlite3_stmt { } *_updatePKStatement;
-    long long _vacuumTracker;
-    NSMutableSet *_vmCachedStatements;
-    struct sqlite3_stmt { } *_vmstatement;
+    }  _sqliteConnectionFlags;
+    NSMutableArray * _temporaryTables;
+    double  _timeOutIncrement;
+    double  _timeOutOption;
+    struct sqlite3_stmt { } * _updatePKStatement;
+    long long  _vacuumTracker;
+    NSMutableSet * _vmCachedStatements;
+    struct sqlite3_stmt { } * _vmstatement;
 }
 
 + (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
@@ -86,9 +86,9 @@
 - (void)beginTransaction;
 - (void)bindTempTableForBindIntarray:(id)arg1;
 - (void)cacheCurrentDBStatementOn:(id)arg1;
-- (void)cacheStatement:(id)arg1 forRequestWithIdentifier:(id)arg2;
+- (void)cacheStatement:(id)arg1 forRequest:(id)arg2;
 - (void)cacheUpdateStatement:(id)arg1 forEntity:(id)arg2 andDeltasMask:(struct __CFBitVector { }*)arg3;
-- (id)cachedStatementForRequestWithIdentifier:(id)arg1;
+- (id)cachedStatementForRequest:(id)arg1;
 - (id)cachedUpdateStatementForEntity:(id)arg1 andDeltasMask:(struct __CFBitVector { }*)arg2;
 - (BOOL)canConnect;
 - (void)clearCachedStatementForRequestWithIdentifier:(id)arg1;
@@ -99,17 +99,16 @@
 - (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
 - (BOOL)databaseIsEmpty;
 - (void)dealloc;
-- (void)deleteCorrelation:(id)arg1;
 - (void)deleteRow:(id)arg1;
-- (id)deleteTransactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2;
-- (id)describeResults;
 - (void)didCreateSchema;
 - (void)disconnect;
 - (void)dropUbiquityTables;
 - (void)endFetch;
 - (void)endPrimaryKeyGeneration;
 - (void)execute;
+- (id)executeAttributeUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
 - (void)executeCorrelationChangesForValue1:(unsigned long long)arg1 value2:(unsigned long long)arg2 value3:(unsigned long long)arg3 value4:(unsigned long long)arg4;
+- (id)executeMulticolumnUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
@@ -117,11 +116,15 @@
 - (id)fetchUbiquityKnowledgeVector;
 - (void)finalize;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
+- (id)generateStatementForCheckingMulticolumnConstraint:(id)arg1 onObjects:(id)arg2;
+- (id)generateStatementForCheckingUniqueAttributesOnObjects:(id)arg1;
+- (id)generateSubselectForColumn:(id)arg1 givenObjects:(id)arg2;
 - (void)handleCorruptedDB:(id)arg1;
+- (BOOL)hasCachedModelTable;
 - (BOOL)hasMetadataTable;
 - (BOOL)hasPrimaryKeyTable;
+- (void)incrementInUseCounterForCachedStatementForRequest:(id)arg1;
 - (id)initWithAdapter:(id)arg1;
-- (void)insertCorrelation:(id)arg1;
 - (void)insertRow:(id)arg1;
 - (BOOL)isFetchInProgress;
 - (BOOL)isLocalFS;
@@ -133,13 +136,14 @@
 - (void)prepareSQLStatement:(id)arg1;
 - (struct __CFArray { }*)rawIntegerRowsForSQL:(id)arg1;
 - (void)releaseSQLStatement;
+- (void)replaceUbiquityKnowledgeVector:(id)arg1;
 - (void)resetSQLStatement;
 - (void)rollbackTransaction;
+- (int)rowsChangedByLastStatement;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
 - (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
-- (void)updateCorrelation:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (void)updateUbiquityKnowledgeVector:(id)arg1;

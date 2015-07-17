@@ -3,9 +3,9 @@
  */
 
 @interface GKLeaderboardHeaderView : UICollectionReusableView {
-    GKButton *_leaderboardsButton;
-    int _timeScope;
-    GKButton *_timeScopeButton;
+    GKButton * _leaderboardsButton;
+    int  _timeScope;
+    GKButton * _timeScopeButton;
 }
 
 @property (nonatomic, copy) NSString *currentLeaderboardTitle;

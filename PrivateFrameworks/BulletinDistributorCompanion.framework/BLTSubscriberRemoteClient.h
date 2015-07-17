@@ -3,7 +3,7 @@
  */
 
 @interface BLTSubscriberRemoteClient : NSObject <BLTPingSubscribing> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
+- (id)init;
 - (id)initWithConnection:(id)arg1;
 - (void)pingSubscriberDidLoad;
 - (void)pingWithBulletin:(id)arg1;

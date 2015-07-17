@@ -3,9 +3,9 @@
  */
 
 @interface SSSoftwareUpdate : NSObject {
-    NSDictionary *_dictionary;
-    NSDate *_installDate;
-    int _updateState;
+    NSDictionary * _dictionary;
+    NSDate * _installDate;
+    int  _updateState;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;

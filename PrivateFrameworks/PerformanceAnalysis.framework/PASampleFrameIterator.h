@@ -3,9 +3,9 @@
  */
 
 @interface PASampleFrameIterator : NSObject {
-    PASampleKernelFrame *_kernel;
-    PAStackshotThread *_stackshotThread;
-    PASampleUserFrame *_user;
+    PASampleKernelFrame * _kernel;
+    PAStackshotThread * _stackshotThread;
+    PASampleUserFrame * _user;
 }
 
 @property PAStackshotThread *stackshotThread;

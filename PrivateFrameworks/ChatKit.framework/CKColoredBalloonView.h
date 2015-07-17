@@ -3,10 +3,10 @@
  */
 
 @interface CKColoredBalloonView : CKBalloonView {
-    BOOL _color;
-    CKGradientView *_gradientView;
-    CKBalloonImageView *_mask;
-    BOOL _wantsGradient;
+    BOOL  _color;
+    CKGradientView * _gradientView;
+    CKBalloonImageView * _mask;
+    BOOL  _wantsGradient;
 }
 
 @property (nonatomic) BOOL color;

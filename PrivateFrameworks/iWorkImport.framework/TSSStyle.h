@@ -3,21 +3,22 @@
  */
 
 @interface TSSStyle : TSPObject <NSCopying, TSKModel, TSKTransformableObject, TSSPropertySource, TSSPropertyValueValidator, TSSStyleClient, TSSStyleObject> {
-    BOOL mIsVariation;
-    NSString *mName;
-    TSSPropertyMap *mOverridePropertyMap;
-    TSSStyle *mParent;
-    NSString *mStyleIdentifier;
-    TSSStylesheet *mStylesheet;
+    BOOL  mIsVariation;
+    NSString * mName;
+    TSSPropertyMap * mOverridePropertyMap;
+    TSSStyle * mParent;
+    NSString * mStyleIdentifier;
+    TSSStylesheet * mStylesheet;
 }
 
 @property (nonatomic, readonly) TSSStyle *baseStyleForVariation;
-@property (nonatomic, readonly) NSSet *children;
+@property (nonatomic, readonly) TSURetainedPointerSet *children;
 @property (nonatomic, readonly) NSString *contentTag;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) NSSet *descendants;
+@property (nonatomic, readonly) TSURetainedPointerSet *descendants;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSSStyle *firstIdentifiedAncestor;
+@property (nonatomic, readonly) TSSStyle *firstNamedAncestor;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isIdentified;
 @property (nonatomic, readonly) BOOL isNamed;
@@ -72,6 +73,7 @@
 - (id)copyFlattenedWithContext:(id)arg1;
 - (id)copyPropertyMap;
 - (id)copyWithContext:(id)arg1;
+- (id)copyWithContext:(id)arg1 includeParentProperties:(BOOL)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1 context:(id)arg2;
 - (void)dealloc;
@@ -80,6 +82,7 @@
 - (double)doubleValueForProperty:(int)arg1;
 - (void)fadeReflectionForSwatchGeneration;
 - (id)firstIdentifiedAncestor;
+- (id)firstNamedAncestor;
 - (float)floatValueForProperty:(int)arg1;
 - (id)fullPropertyMap;
 - (BOOL)hasEqualPropertyValues:(id)arg1;

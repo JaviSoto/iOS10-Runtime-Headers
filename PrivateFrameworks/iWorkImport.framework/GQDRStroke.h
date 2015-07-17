@@ -3,12 +3,12 @@
  */
 
 @interface GQDRStroke : NSObject <GQDNameMappable> {
-    int mCap;
-    GQDColor *mColor;
-    int mJoin;
-    float mMiterLimit;
-    GQDRStrokePattern *mPattern;
-    float mWidth;
+    int  mCap;
+    GQDColor * mColor;
+    int  mJoin;
+    float  mMiterLimit;
+    GQDRStrokePattern * mPattern;
+    float  mWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,14 +3,14 @@
  */
 
 @interface CKAudioBalloonView : CKColoredBalloonView <CKAudioBalloonView> {
-    double _duration;
-    BOOL _played;
-    BOOL _playing;
-    CKAudioProgressView *_progressView;
-    double _time;
-    NSString *_timeFormat;
-    UILabel *_timeLabel;
-    CKWaveformProgressView *_waveformProgressView;
+    double  _duration;
+    BOOL  _played;
+    BOOL  _playing;
+    CKAudioProgressView * _progressView;
+    double  _time;
+    NSString * _timeFormat;
+    UILabel * _timeLabel;
+    CKWaveformProgressView * _waveformProgressView;
 }
 
 @property (getter=isControlHidden, nonatomic) BOOL controlHidden;

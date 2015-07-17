@@ -3,24 +3,24 @@
  */
 
 @interface TSKAnimatedGIFController : NSObject <TSKMediaPlayerController> {
-    BOOL fastForwarding;
-    BOOL fastReversing;
-    double mAbsoluteCurrentTime;
-    <TSKMediaPlayerControllerDelegate> *mDelegate;
-    CADisplayLink *mDisplayLink;
-    unsigned int mDisplayLinkCounter;
-    double mEndTime;
-    NSArray *mFrames;
-    double mLastDisplayUpdateTime;
-    NSMutableSet *mLayers;
-    BOOL mPlaying;
-    float mRate;
-    float mRateBeforeScrubbing;
-    int mRepeatMode;
-    unsigned int mScrubbingCount;
-    struct CGImageSource { } *mSource;
-    double mStartTime;
-    float mVolume;
+    BOOL  fastForwarding;
+    BOOL  fastReversing;
+    double  mAbsoluteCurrentTime;
+    <TSKMediaPlayerControllerDelegate> * mDelegate;
+    CADisplayLink * mDisplayLink;
+    unsigned int  mDisplayLinkCounter;
+    double  mEndTime;
+    NSArray * mFrames;
+    double  mLastDisplayUpdateTime;
+    NSMutableSet * mLayers;
+    BOOL  mPlaying;
+    float  mRate;
+    float  mRateBeforeScrubbing;
+    int  mRepeatMode;
+    unsigned int  mScrubbingCount;
+    struct CGImageSource { } * mSource;
+    double  mStartTime;
+    float  mVolume;
 }
 
 @property (nonatomic, readonly) double absoluteCurrentTime;
@@ -102,6 +102,7 @@
 - (void)setStartTime:(double)arg1;
 - (void)setVolume:(float)arg1;
 - (double)startTime;
+- (void)stopSynchronously;
 - (void)teardown;
 - (float)volume;
 

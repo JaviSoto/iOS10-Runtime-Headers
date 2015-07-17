@@ -3,14 +3,14 @@
  */
 
 @interface UIPDFHighlighter : NSObject {
-    struct CGColor { } *_borderColor;
-    float _enlargeFactor;
-    NSMutableArray *_highLightLayers;
-    struct CGColor { } *_highlightColor;
-    struct CGPDFPage { } *_page;
-    float _pdfToViewScale;
-    struct CGColor { } *_whiteColor;
-    float inset;
+    struct CGColor { } * _borderColor;
+    float  _enlargeFactor;
+    NSMutableArray * _highLightLayers;
+    struct CGColor { } * _highlightColor;
+    struct CGPDFPage { } * _page;
+    float  _pdfToViewScale;
+    struct CGColor { } * _whiteColor;
+    float  inset;
 }
 
 @property (nonatomic) float inset;

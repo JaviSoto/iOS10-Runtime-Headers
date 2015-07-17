@@ -3,8 +3,8 @@
  */
 
 @interface TSTWPLayout : TSWPLayout {
-    BOOL _cacheIsValid;
-    unsigned int _cachedAutoSizeFlags;
+    BOOL  _cacheIsValid;
+    unsigned int  _cachedAutoSizeFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,14 +14,14 @@
             float width; 
             float height; 
         } size; 
-    } _cachedAutosizedFrame;
+    }  _cachedAutosizedFrame;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } _cachedCellID;
-    TSTCellStyle *_cachedCellStyle;
-    BOOL _cachedCellWraps;
+    }  _cachedCellID;
+    TSTCellStyle * _cachedCellStyle;
+    BOOL  _cachedCellWraps;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,7 +31,7 @@
             float width; 
             float height; 
         } size; 
-    } _cachedMaskRect;
+    }  _cachedMaskRect;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -42,7 +42,7 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } _cachedMaskSpillRange;
+    }  _cachedMaskSpillRange;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -53,11 +53,11 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } _cachedMergeRange;
-    TSWPPadding *_cachedPadding;
-    int _cachedParagraphAlignment;
-    TSWPParagraphStyle *_cachedTextStyle;
-    int _cachedVerticalAlignment;
+    }  _cachedMergeRange;
+    TSWPPadding * _cachedPadding;
+    int  _cachedParagraphAlignment;
+    TSWPParagraphStyle * _cachedTextStyle;
+    int  _cachedVerticalAlignment;
 }
 
 @property (nonatomic) BOOL cacheIsValid;
@@ -74,7 +74,6 @@
 @property (nonatomic, retain) TSWPParagraphStyle *cachedTextStyle;
 @property (nonatomic) int cachedVerticalAlignment;
 
-- (id).cxx_construct;
 - (BOOL)cacheIsValid;
 - (unsigned int)cachedAutoSizeFlags;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cachedAutosizedFrame;

@@ -3,8 +3,8 @@
  */
 
 @interface ABVCardRecord : NSObject {
-    struct __CFArray { } *_properties;
-    void *_record;
+    struct __CFArray { } * _properties;
+    void * _record;
 }
 
 + (void)clearPrivateFields;

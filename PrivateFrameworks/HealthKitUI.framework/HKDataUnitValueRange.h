@@ -3,8 +3,8 @@
  */
 
 @interface HKDataUnitValueRange : NSObject {
-    NSNumber *_maximum;
-    NSNumber *_minimum;
+    NSNumber * _maximum;
+    NSNumber * _minimum;
 }
 
 @property (nonatomic, readonly) NSNumber *maximum;

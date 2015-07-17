@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMInitializer : NSObject {
-    NSMutableDictionary *_nodeDeregisterObservers;
+    NSMutableDictionary * _nodeDeregisterObservers;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *nodeDeregisterObservers;

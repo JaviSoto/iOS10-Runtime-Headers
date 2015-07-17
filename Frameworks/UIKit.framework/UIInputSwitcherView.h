@@ -3,10 +3,11 @@
  */
 
 @interface UIInputSwitcherView : UIKeyboardMenuView {
-    int m_currentInputModeIndex;
-    NSMutableArray *m_inputModes;
-    BOOL m_keyboardSettingsFromSwitcher;
-    UISwitch *m_predictiveSwitch;
+    UISwitch * m_assistantSwitch;
+    int  m_currentInputModeIndex;
+    NSMutableArray * m_inputModes;
+    BOOL  m_keyboardSettingsFromSwitcher;
+    UISwitch * m_predictiveSwitch;
 }
 
 @property (nonatomic, retain) NSArray *inputModes;
@@ -15,6 +16,7 @@
 + (id)activeInstance;
 + (id)sharedInstance;
 
+- (id)assistantSwitch;
 - (void)dealloc;
 - (int)defaultSelectedIndex;
 - (void)didSelectItemAtIndex:(int)arg1;
@@ -41,6 +43,7 @@
 - (id)subtitleForItemAtIndex:(int)arg1;
 - (void)switchAction;
 - (id)titleForItemAtIndex:(int)arg1;
+- (void)toggleKeyboardAssistantPreference;
 - (void)toggleKeyboardPredictionPreference;
 
 @end

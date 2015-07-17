@@ -3,20 +3,23 @@
  */
 
 @interface NSProgressValues : NSObject <NSSecureCoding> {
-    _NSProgressFraction *_childFraction;
-    BOOL _isCancellable;
-    BOOL _isCancelled;
-    BOOL _isPausable;
-    BOOL _isPaused;
-    BOOL _isPrioritizable;
-    NSString *_kind;
-    NSString *_localizedAdditionalDescription;
-    NSString *_localizedDescription;
-    _NSProgressFraction *_selfFraction;
-    NSMutableDictionary *_userInfo;
+    _NSProgressFraction * _childFraction;
+    BOOL  _isCancellable;
+    BOOL  _isCancelled;
+    BOOL  _isPausable;
+    BOOL  _isPaused;
+    BOOL  _isPrioritizable;
+    NSString * _kind;
+    NSString * _localizedAdditionalDescription;
+    NSString * _localizedDescription;
+    long long  _portionOfParent;
+    _NSProgressFraction * _selfFraction;
+    NSMutableDictionary * _userInfo;
+    BOOL  _usingChildUserInfo;
 }
 
 + (id)_derivedKeys;
++ (id)_importantKeys;
 + (id)decodableClasses;
 + (BOOL)supportsSecureCoding;
 

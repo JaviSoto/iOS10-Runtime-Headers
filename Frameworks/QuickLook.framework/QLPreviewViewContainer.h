@@ -3,7 +3,7 @@
  */
 
 @interface QLPreviewViewContainer : UIView {
-    QLPreviewViewController *_controller;
+    QLPreviewViewController * _controller;
 }
 
 @property QLPreviewViewController *controller;

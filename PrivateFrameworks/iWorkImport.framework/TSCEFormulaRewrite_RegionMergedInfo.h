@@ -3,18 +3,17 @@
  */
 
 @interface TSCEFormulaRewrite_RegionMergedInfo : NSObject {
-    TSCEFormulaRewrite_RegionInfo *_mergeRegion;
+    TSCEFormulaRewrite_RegionInfo * _mergeRegion;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } _mergeSource;
+    }  _mergeSource;
 }
 
 @property (nonatomic, readonly) TSCEFormulaRewrite_RegionInfo *mergeRegion;
 @property (nonatomic) const struct { unsigned short x1; unsigned char x2; unsigned char x3; }*mergeSource;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithMergeRegion:(id)arg1;
 - (id)mergeRegion;

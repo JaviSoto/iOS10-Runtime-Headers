@@ -3,14 +3,14 @@
  */
 
 @interface MPStreamingDownloadSession : NSObject <NSCopying> {
-    NSString *_assetFlavor;
-    unsigned int _assetQuality;
-    BOOL _didStartLeaseSession;
-    unsigned long long _downloadToken;
-    unsigned int _protectionType;
-    NSDictionary *_purchaseBundle;
-    NSDictionary *_responseAssetDictionary;
-    NSURL *_sourceURL;
+    NSString * _assetFlavor;
+    unsigned int  _assetQuality;
+    BOOL  _didStartLeaseSession;
+    unsigned long long  _downloadToken;
+    unsigned int  _protectionType;
+    NSDictionary * _purchaseBundle;
+    NSDictionary * _responseAssetDictionary;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic, copy) NSString *assetFlavor;

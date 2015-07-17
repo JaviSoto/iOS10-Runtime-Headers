@@ -3,10 +3,10 @@
  */
 
 @interface CKBalloonTextView : UITextView <NSLayoutManagerDelegate> {
-    NSAttributedString *_attributedText;
-    float _capOffsetFromBoundsTop;
-    float _lastLineBaselineOffsetFromBoundsTop;
-    BOOL _singleLine;
+    NSAttributedString * _attributedText;
+    float  _capOffsetFromBoundsTop;
+    float  _lastLineBaselineOffsetFromBoundsTop;
+    BOOL  _singleLine;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

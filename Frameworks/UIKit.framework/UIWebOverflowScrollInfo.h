@@ -3,12 +3,12 @@
  */
 
 @interface UIWebOverflowScrollInfo : NSObject {
-    BOOL _isUserScroll;
-    DOMNode *_node;
+    BOOL  _isUserScroll;
+    DOMNode * _node;
     struct CGPoint { 
         float x; 
         float y; 
-    } _offset;
+    }  _offset;
 }
 
 @property (nonatomic) BOOL isUserScroll;

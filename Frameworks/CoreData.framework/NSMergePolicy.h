@@ -3,9 +3,9 @@
  */
 
 @interface NSMergePolicy : NSObject {
-    void *_reserved2;
-    void *_reserved3;
-    unsigned int _type;
+    void * _reserved2;
+    void * _reserved3;
+    unsigned int  _type;
 }
 
 @property (readonly) unsigned int mergeType;
@@ -13,9 +13,16 @@
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)load;
 
+- (BOOL)_byPropertyObjectTrumpResolveConstraintConflict:(id)arg1;
+- (BOOL)_byPropertyStoreTrumpResolveConstraintConflict:(id)arg1;
+- (BOOL)_didSomethingElseResolveConflict:(id)arg1;
 - (void)_mergeChangesObjectUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
 - (void)_mergeChangesStoreUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
 - (void)_mergeDeletionWithStoreChangesForObject:(id)arg1 withRecord:(id)arg2;
+- (void)_mergeToManyRelationshipsForConstraintConflict:(id)arg1;
+- (void)_mergeToManyUnionRelationshipsForConstraintConflict:(id)arg1;
+- (BOOL)_overwriteResolveConstraintConflict:(id)arg1;
+- (BOOL)_rollbackResolveConstraintConflict:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -27,6 +34,9 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)resolveConflict:(id)arg1;
 - (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveConstraintConflict:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveConstraintConflicts:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveOptimisticLockingVersionConflicts:(id)arg1 error:(id*)arg2;
 - (unsigned int)type;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface TSUMutableLinkedPointerSet : NSObject <NSFastEnumeration> {
-    struct __CFDictionary { } *mDictionary;
-    TSULinkedPointerSetEntry *mHead;
-    TSULinkedPointerSetEntry *mTail;
+    struct __CFDictionary { } * mDictionary;
+    TSULinkedPointerSetEntry * mHead;
+    TSULinkedPointerSetEntry * mTail;
 }
 
 - (void)addObject:(id)arg1;

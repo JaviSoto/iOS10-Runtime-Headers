@@ -3,21 +3,21 @@
  */
 
 @interface SiriUIURLSessionImageDownload : NSObject {
-    UIColor *_backgroundFillColor;
-    id _client;
-    NSMutableData *_downloadedData;
-    BOOL _finished;
+    UIColor * _backgroundFillColor;
+    id  _client;
+    NSMutableData * _downloadedData;
+    BOOL  _finished;
     struct CGSize { 
         float width; 
         float height; 
-    } _fitToSize;
-    BOOL _hasSentFinished;
-    struct CGImageSource { } *_imageSource;
-    unsigned int _lastUpdatedLength;
-    BOOL _newDataAvailableToRender;
-    id /* block */ _progressHandler;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_renderTimer;
+    }  _fitToSize;
+    BOOL  _hasSentFinished;
+    struct CGImageSource { } * _imageSource;
+    unsigned int  _lastUpdatedLength;
+    BOOL  _newDataAvailableToRender;
+    id /* block */  _progressHandler;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _renderTimer;
 }
 
 - (void).cxx_destruct;

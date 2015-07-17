@@ -3,7 +3,7 @@
  */
 
 @interface NSTypesetter : NSObject {
-    void *_reserved;
+    void * _reserved;
 }
 
 + (BOOL)_usesATSTypesetter;

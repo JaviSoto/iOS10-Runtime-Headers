@@ -3,17 +3,17 @@
  */
 
 @interface PSIGroup : PSIReusableObject {
-    struct __CFArray { } *_assetIds;
-    short _category;
-    unsigned long long _compressedRanges;
-    NSMutableString *_contentString;
-    unsigned long long _groupId;
-    unsigned long long _owningGroupId;
+    struct __CFArray { } * _assetIds;
+    short  _category;
+    unsigned long long  _compressedRanges;
+    NSMutableString * _contentString;
+    unsigned long long  _groupId;
+    unsigned long long  _owningGroupId;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _tokenRanges;
-    unsigned int _tokenRangesCount;
+    }  _tokenRanges;
+    unsigned int  _tokenRangesCount;
 }
 
 @property (nonatomic, retain) struct __CFArray { }*assetIds;

@@ -3,10 +3,10 @@
  */
 
 @interface BRCFSDownloaderBatchEnumerator : NSObject {
-    long long _now;
-    long long *_retryQueueKick;
-    PQLResultSet *_rs;
-    BRCSyncContext *_syncContext;
+    long long  _now;
+    long long * _retryQueueKick;
+    PQLResultSet * _rs;
+    BRCSyncContext * _syncContext;
 }
 
 @property (nonatomic, readonly) BRCSyncContext *syncContext;

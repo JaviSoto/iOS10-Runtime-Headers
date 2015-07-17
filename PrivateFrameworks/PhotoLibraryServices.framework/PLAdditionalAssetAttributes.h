@@ -4,9 +4,11 @@
 
 @interface PLAdditionalAssetAttributes : PLManagedObject
 
+@property (nonatomic, copy) NSString *adjustedFingerPrint;
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) PLAssetDescription *assetDescription;
-@property (nonatomic, retain) NSManagedObject *cloudMaster;
+@property (nonatomic) short cameraCaptureDevice;
+@property (nonatomic, retain) PLCloudMaster *cloudMaster;
 @property (nonatomic, retain) NSSet *cloudResources;
 @property (nonatomic, retain) NSString *creatorBundleID;
 @property (nonatomic, retain) NSString *customCollectionName;
@@ -14,6 +16,10 @@
 @property (nonatomic, retain) NSString *customMomentName;
 @property (nonatomic, retain) NSString *customMomentUUID;
 @property (nonatomic, retain) NSString *editorBundleID;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailHeight;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailLength;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailOffset;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailWidth;
 @property (nonatomic, retain) NSString *exifTimestampString;
 @property (nonatomic, retain) NSNumber *externalUsageIntent;
 @property (nonatomic, retain) NSData *faceRegions;
@@ -22,6 +28,7 @@
 @property (nonatomic, retain) NSDate *lastUploadAttemptDate;
 @property (nonatomic, retain) NSNumber *locationHash;
 @property (nonatomic, retain) NSString *longDescription;
+@property (nonatomic, copy) NSString *masterFingerPrint;
 @property (nonatomic, retain) id originalAssetsUUID;
 @property (nonatomic, retain) NSString *originalFilename;
 @property (nonatomic, retain) NSNumber *originalFilesize;
@@ -38,7 +45,7 @@
 @property (nonatomic, retain) NSString *timeZoneName;
 @property (nonatomic, retain) NSNumber *timeZoneOffset;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSManagedObject *unmanagedAdjustment;
+@property (nonatomic, retain) PLUnmanagedAdjustment *unmanagedAdjustment;
 @property (nonatomic, retain) NSNumber *uploadAttempts;
 
 + (id)listOfSyncedProperties;

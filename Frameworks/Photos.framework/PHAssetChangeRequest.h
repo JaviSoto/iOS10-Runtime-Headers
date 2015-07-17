@@ -2,22 +2,18 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
-    NSString *_clientName;
-    int _clientProcessID;
-    PHContentEditingOutput *_contentEditingOutput;
-    BOOL _didChangeAdjustments;
-    NSString *_editorBundleID;
-    NSURL *_editorBundleURL;
-    BOOL _entitled;
-    PHChangeRequestHelper *_helper;
-    NSData *_imageDataForInsertion;
-    UIImage *_imageForInsertion;
-    NSString *_imageTypeForInsertion;
-    NSURL *_imageURLForInsertion;
-    NSIndexSet *_supportedEditOperations;
-    CLLocation *_updatedLocation;
-    NSURL *_videoURLForInsertion;
+@interface PHAssetChangeRequest : NSObject <PHUpdateChangeRequest> {
+    NSString * _clientName;
+    int  _clientProcessID;
+    PHContentEditingOutput * _contentEditingOutput;
+    BOOL  _didChangeAdjustments;
+    BOOL  _didSetVisibilityState;
+    NSString * _editorBundleID;
+    NSURL * _editorBundleURL;
+    BOOL  _entitled;
+    PHChangeRequestHelper * _helper;
+    NSIndexSet * _supportedEditOperations;
+    CLLocation * _updatedLocation;
 }
 
 @property (nonatomic, readonly) NSString *clientName;
@@ -26,59 +22,45 @@
 @property (nonatomic, retain) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL didChangeAdjustments;
+@property (nonatomic, readonly, copy) NSString *editorBundleID;
 @property (getter=isEntitled, nonatomic, readonly) BOOL entitled;
 @property (getter=isFavorite, nonatomic) BOOL favorite;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
 @property (getter=isHidden, nonatomic) BOOL hidden;
-@property (nonatomic, retain) NSData *imageDataForInsertion;
-@property (nonatomic, retain) UIImage *imageForInsertion;
-@property (nonatomic, retain) NSString *imageTypeForInsertion;
-@property (nonatomic, retain) NSURL *imageURLForInsertion;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, readonly) NSString *managedEntityName;
 @property (nonatomic, retain) NSDate *modificationDate;
 @property (getter=isMutated, readonly) BOOL mutated;
-@property (getter=isNew, readonly) BOOL new;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
 @property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedAsset;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSIndexSet *supportedEditOperations;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic, retain) NSURL *videoURLForInsertion;
 
 + (id)_allAssetEditOperations;
-+ (void)_createAssetFromImageData:(id)arg1 imageType:(id)arg2 uuid:(id)arg3 creationDate:(id)arg4;
-+ (void)_createAssetFromVideoURL:(id)arg1 uuid:(id)arg2;
 + (id)changeRequestForAsset:(id)arg1;
 + (id)creationRequestForAssetFromImage:(id)arg1;
 + (id)creationRequestForAssetFromImageAtFileURL:(id)arg1;
-+ (id)creationRequestForAssetFromImageData:(id)arg1;
-+ (id)creationRequestForAssetFromImageData:(id)arg1 usingUUID:(id)arg2;
 + (id)creationRequestForAssetFromVideoAtFileURL:(id)arg1;
 + (void)deleteAssets:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)_mediaTypeForCreatedAsset;
-- (BOOL)_validateContentEditingOutput:(id)arg1 error:(id*)arg2;
-- (BOOL)_validateContentURL:(id)arg1 error:(id*)arg2 writeAccessRequired:(BOOL)arg3;
+- (BOOL)_validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
 - (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
 - (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (BOOL)canGenerateUUIDLocally;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)contentEditingOutput;
-- (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (id)creationDate;
+- (BOOL)didChangeAdjustments;
 - (void)didMutate;
+- (id)editorBundleID;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)helper;
-- (id)imageDataForInsertion;
-- (id)imageForInsertion;
-- (id)imageTypeForInsertion;
-- (id)imageURLForInsertion;
-- (id)initForNewObject;
-- (id)initForNewObjectWithUUID:(id)arg1;
+- (id)init;
+- (id)initWithHelper:(id)arg1;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initWithXPCDict:(id)arg1 entitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (BOOL)isEntitled;
@@ -86,10 +68,10 @@
 - (BOOL)isHidden;
 - (BOOL)isHiding;
 - (BOOL)isMutated;
-- (BOOL)isNew;
 - (BOOL)isRevertingContentToOriginal;
 - (id)location;
 - (id)managedEntityName;
+- (void)markDidChangeAdjustments;
 - (id)modificationDate;
 - (id)mutations;
 - (id)objectID;
@@ -100,23 +82,16 @@
 - (void)setCreationDate:(id)arg1;
 - (void)setFavorite:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setImageDataForInsertion:(id)arg1;
-- (void)setImageForInsertion:(id)arg1;
-- (void)setImageTypeForInsertion:(id)arg1;
-- (void)setImageURLForInsertion:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setSupportedEditOperations:(id)arg1;
-- (void)setVideoURLForInsertion:(id)arg1;
 - (id)supportedEditOperations;
 - (id)uuid;
 - (BOOL)validateAdjustmentDataForAssetMutation:(id)arg1 error:(id*)arg2;
-- (BOOL)validateImageDataForAssetCreation:(id)arg1 error:(id*)arg2;
-- (BOOL)validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
-- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
+- (BOOL)validateContentEditingOutput:(id)arg1 error:(id*)arg2;
+- (BOOL)validateContentURL:(id)arg1 error:(id*)arg2 writeAccessRequired:(BOOL)arg3;
 - (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (BOOL)validateVideoURLForAssetCreation:(id)arg1 error:(id*)arg2;
+- (BOOL)validateVideoURL:(id)arg1 error:(id*)arg2;
 - (BOOL)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
-- (id)videoURLForInsertion;
 
 @end

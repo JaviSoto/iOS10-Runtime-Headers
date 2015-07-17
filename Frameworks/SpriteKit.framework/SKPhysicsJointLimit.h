@@ -3,7 +3,7 @@
  */
 
 @interface SKPhysicsJointLimit : SKPhysicsJoint {
-    float _maxLength;
+    float  _maxLength;
 }
 
 @property (nonatomic) float maxLength;

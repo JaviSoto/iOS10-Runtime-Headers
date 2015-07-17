@@ -3,9 +3,9 @@
  */
 
 @interface BBAttachments : NSObject <NSCopying, NSSecureCoding> {
-    NSCountedSet *_additionalAttachments;
-    NSMutableDictionary *_clientSideComposedImageInfos;
-    int primaryType;
+    NSCountedSet * _additionalAttachments;
+    NSMutableDictionary * _clientSideComposedImageInfos;
+    int  primaryType;
 }
 
 @property (nonatomic, retain) NSCountedSet *additionalAttachments;

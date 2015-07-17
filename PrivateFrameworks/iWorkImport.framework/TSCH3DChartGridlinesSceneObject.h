@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartGridlinesSceneObject : TSCH3DSceneObject {
-    TSCH3DPrefilteredLineRenderer *mRenderer;
+    TSCH3DPrefilteredLineRenderer * mRenderer;
 }
 
 + (struct TSCH3DScenePart { id x1; })partWithAxes:(id)arg1;

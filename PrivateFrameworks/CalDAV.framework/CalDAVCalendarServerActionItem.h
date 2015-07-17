@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVCalendarServerActionItem : CoreDAVItem {
-    CalDAVCalendarServerCancelItem *_cancel;
-    CoreDAVItemWithNoChildren *_create;
-    CalDAVCalendarServerReplyItem *_reply;
-    CalDAVCalendarServerUpdateItem *_update;
+    CalDAVCalendarServerCancelItem * _cancel;
+    CoreDAVItemWithNoChildren * _create;
+    CalDAVCalendarServerReplyItem * _reply;
+    CalDAVCalendarServerUpdateItem * _update;
 }
 
 @property (nonatomic, retain) CalDAVCalendarServerCancelItem *cancel;
@@ -14,13 +14,11 @@
 @property (nonatomic, retain) CalDAVCalendarServerReplyItem *reply;
 @property (nonatomic, retain) CalDAVCalendarServerUpdateItem *update;
 
+- (void).cxx_destruct;
 - (id)cancel;
 - (id)copyParseRules;
 - (id)create;
-- (void)dealloc;
-- (id)description;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)reply;
 - (void)setCancel:(id)arg1;
 - (void)setCreate:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface ADOptInManager : NSObject <ADAdSheetConnectionDelegate, ADAdSheetProxyDelegate> {
-    ADAdSheetConnection *_connection;
+    ADAdSheetConnection * _connection;
 }
 
 @property (nonatomic, retain) ADAdSheetConnection *connection;

@@ -3,11 +3,11 @@
  */
 
 @interface CKDClientInfo : NSObject {
-    Class _CKDUITextInputModeClass;
-    NSString *_cachedHostname;
-    NSArray *_enabledKeyboards;
-    NSObject<OS_dispatch_queue> *_hostCallbackQueue;
-    struct MGNotificationTokenStruct { } *_hostNotificationToken;
+    Class  _CKDUITextInputModeClass;
+    NSString * _cachedHostname;
+    NSArray * _enabledKeyboards;
+    NSObject<OS_dispatch_queue> * _hostCallbackQueue;
+    struct MGNotificationTokenStruct { } * _hostNotificationToken;
 }
 
 @property (nonatomic) Class CKDUITextInputModeClass;

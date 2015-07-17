@@ -3,12 +3,12 @@
  */
 
 @interface _FIUIAnimatableProperty : NSObject {
-    NSMutableArray *_animations;
-    id _currentValue;
-    id _endValue;
-    id /* block */ _getter;
-    id /* block */ _setter;
-    id _startValue;
+    NSMutableArray * _animations;
+    id  _currentValue;
+    id  _endValue;
+    id /* block */  _getter;
+    id /* block */  _setter;
+    id  _startValue;
 }
 
 @property (nonatomic, retain) id currentValue;

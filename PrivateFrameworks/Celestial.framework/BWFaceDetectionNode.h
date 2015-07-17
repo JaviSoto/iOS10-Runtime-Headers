@@ -3,37 +3,37 @@
  */
 
 @interface BWFaceDetectionNode : BWFanOutNode {
-    struct opaqueCMFormatDescription { } *_boxedFormatDescription;
-    BWNodeOutput *_boxedMetadataOutput;
-    BOOL _boxedMetadataOutputEnabled;
-    struct OpaqueCMBlockBuffer { } *_emptyMetadataSampleData;
-    BOOL _lastBoxedFaceCount;
-    int _lastObjectFaceCount;
-    unsigned long _localIDOfDetectedFace;
-    unsigned long _localIDOfDetectedFaceBounds;
-    unsigned long _localIDOfDetectedFaceFaceID;
-    unsigned long _localIDOfDetectedFaceRoll;
-    unsigned long _localIDOfDetectedFaceYaw;
-    BWNodeOutput *_metadataObjectOutput;
-    BOOL _metadataObjectOutputEnabled;
+    struct opaqueCMFormatDescription { } * _boxedFormatDescription;
+    BWNodeOutput * _boxedMetadataOutput;
+    BOOL  _boxedMetadataOutputEnabled;
+    struct OpaqueCMBlockBuffer { } * _emptyMetadataSampleData;
+    int  _lastBoxedFaceCount;
+    int  _lastObjectFaceCount;
+    unsigned long  _localIDOfDetectedFaceBounds_BE;
+    unsigned long  _localIDOfDetectedFaceFaceID_BE;
+    unsigned long  _localIDOfDetectedFaceRoll_BE;
+    unsigned long  _localIDOfDetectedFaceYaw_BE;
+    unsigned long  _localIDOfDetectedFace_BE;
+    BWNodeOutput * _metadataObjectOutput;
+    BOOL  _metadataObjectOutputEnabled;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _prevBoxedFaceDur;
+    }  _prevBoxedFaceDur;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _prevBoxedFacePTS;
+    }  _prevBoxedFacePTS;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _prevBoxedNoFacePTS;
+    }  _prevBoxedNoFacePTS;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -43,7 +43,7 @@
             float width; 
             float height; 
         } size; 
-    } _rectOfInterest;
+    }  _rectOfInterest;
 }
 
 @property (readonly) BWNodeOutput *boxedMetadataOutput;

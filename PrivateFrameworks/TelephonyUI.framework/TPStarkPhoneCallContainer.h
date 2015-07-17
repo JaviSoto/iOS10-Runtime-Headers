@@ -3,11 +3,11 @@
  */
 
 @interface TPStarkPhoneCallContainer : UIView {
-    <TPStarkPhoneCallContainerDataSource> *_dataSource;
-    <TPStarkPhoneCallContainerDelegate> *_delegate;
-    BOOL _merging;
-    BOOL _shouldMerge;
-    NSMutableArray *_visibleCells;
+    <TPStarkPhoneCallContainerDataSource> * _dataSource;
+    <TPStarkPhoneCallContainerDelegate> * _delegate;
+    BOOL  _merging;
+    BOOL  _shouldMerge;
+    NSMutableArray * _visibleCells;
 }
 
 @property (nonatomic) <TPStarkPhoneCallContainerDataSource> *dataSource;
@@ -16,6 +16,7 @@
 @property BOOL shouldMerge;
 @property (retain) NSMutableArray *visibleCells;
 
+- (void).cxx_destruct;
 - (id)_reloadQueue;
 - (void)addConstraintsForNewCell:(id)arg1;
 - (void)addRelationForLeftOfCell:(id)arg1;

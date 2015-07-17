@@ -3,7 +3,7 @@
  */
 
 @interface MusicLibrarySongsViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    NSMutableSet *_additionalQueryFilterPredicates;
+    NSMutableSet * _additionalQueryFilterPredicates;
 }
 
 - (void).cxx_destruct;

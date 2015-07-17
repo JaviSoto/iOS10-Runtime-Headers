@@ -3,7 +3,7 @@
  */
 
 @interface AVMediaSelectionGroup : NSObject <NSCopying> {
-    AVMediaSelectionGroupInternal *_mediaSelectionGroup;
+    AVMediaSelectionGroupInternal * _mediaSelectionGroup;
 }
 
 @property (nonatomic, readonly) BOOL allowsEmptySelection;
@@ -18,6 +18,7 @@
 + (id)playableMediaSelectionOptionsFromArray:(id)arg1;
 
 - (id)_groupID;
+- (id)_groupMediaCharacteristics;
 - (id)_groupMediaType;
 - (BOOL)_isStreamingGroup;
 - (BOOL)_matchesGroupID:(id)arg1 mediaType:(id)arg2;

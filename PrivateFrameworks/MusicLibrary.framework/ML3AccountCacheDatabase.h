@@ -3,7 +3,7 @@
  */
 
 @interface ML3AccountCacheDatabase : NSObject {
-    ML3DatabaseConnection *_databaseConnection;
+    ML3DatabaseConnection * _databaseConnection;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface PLCloudBackgroundTransferMonitor : NSObject {
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSMutableDictionary *_pendingBGTransfers;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSMutableDictionary * _pendingBGTransfers;
 }
 
 + (id)identifierForResource:(id)arg1;

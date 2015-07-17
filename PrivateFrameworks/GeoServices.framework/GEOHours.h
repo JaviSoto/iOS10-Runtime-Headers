@@ -7,8 +7,8 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _days;
-    NSMutableArray *_timeRanges;
+    }  _days;
+    NSMutableArray * _timeRanges;
 }
 
 @property (nonatomic, readonly) int*days;

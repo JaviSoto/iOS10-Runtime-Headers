@@ -3,11 +3,11 @@
  */
 
 @interface MPUPinningView : UIView {
-    UIView *_containerView;
-    UIView *_contentView;
-    CALayer *_effectivePinningSourceLayer;
-    CALayer *_pinningSourceLayer;
-    UIView *_pinningSourceView;
+    UIView * _containerView;
+    UIView * _contentView;
+    CALayer * _effectivePinningSourceLayer;
+    CALayer * _pinningSourceLayer;
+    UIView * _pinningSourceView;
 }
 
 @property (nonatomic, retain) UIView *contentView;

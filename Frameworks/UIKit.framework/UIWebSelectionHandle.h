@@ -6,16 +6,16 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _centerToSelectionPointOffset;
-    UIImageView *_dragDotView;
-    int _position;
-    UIWebSelectionView *_selectionView;
-    int _textPosition;
-    UITouch *_touch;
+    }  _centerToSelectionPointOffset;
+    UIImageView * _dragDotView;
+    int  _position;
+    UIWebSelectionView * _selectionView;
+    int  _textPosition;
+    UITouch * _touch;
     struct CGSize { 
         float width; 
         float height; 
-    } _touchToCenterOffset;
+    }  _touchToCenterOffset;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } centerToSelectionPointOffset;

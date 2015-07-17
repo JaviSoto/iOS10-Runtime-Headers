@@ -3,8 +3,8 @@
  */
 
 @interface NPKProtoRemoteAdminPerformResponse : PBCodable <NSCopying> {
-    NSData *_responseDictionary;
-    unsigned int _resultCode;
+    NSData * _responseDictionary;
+    unsigned int  _resultCode;
 }
 
 @property (nonatomic, readonly) BOOL hasResponseDictionary;

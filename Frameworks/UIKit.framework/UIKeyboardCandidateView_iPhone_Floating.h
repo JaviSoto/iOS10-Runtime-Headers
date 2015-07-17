@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _collapsedRect;
-    BOOL _withKeyboard;
+    }  _collapsedRect;
+    BOOL  _withKeyboard;
 }
 
 @property (readonly, copy) NSString *debugDescription;

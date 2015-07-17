@@ -3,7 +3,7 @@
  */
 
 @interface _UIModalItemAppViewController : UIViewController {
-    UIWindow *_rotationDelegate;
+    UIWindow * _rotationDelegate;
 }
 
 @property (nonatomic, retain) UIWindow *rotationDelegate;

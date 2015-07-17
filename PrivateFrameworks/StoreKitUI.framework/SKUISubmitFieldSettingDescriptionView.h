@@ -3,10 +3,10 @@
  */
 
 @interface SKUISubmitFieldSettingDescriptionView : SKUIFieldSettingDescriptionView {
-    float _aggregateLabelWidth;
-    SKUIInputViewElement *_inputViewElement;
-    UILabel *_label;
-    SKUIFieldSettingDescription *_settingDescription;
+    float  _aggregateLabelWidth;
+    SKUIInputViewElement * _inputViewElement;
+    UILabel * _label;
+    SKUIFieldSettingDescription * _settingDescription;
 }
 
 + (struct CGSize { float x1; float x2; })preferredSizeForSettingDescription:(id)arg1 context:(id)arg2;

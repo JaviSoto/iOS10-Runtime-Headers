@@ -3,33 +3,33 @@
  */
 
 @interface SKUIStandardInteractiveSegment : UIControl <SKUIInteractiveSegmenting> {
-    NSAttributedString *_attributedTitle;
-    UIImage *_backgroundImage;
-    UIView *_borderAndBackgroundContainerView;
-    UIImage *_borderImage;
-    UIImageView *_borderImageView;
+    NSAttributedString * _attributedTitle;
+    UIImage * _backgroundImage;
+    UIView * _borderAndBackgroundContainerView;
+    UIImage * _borderImage;
+    UIImageView * _borderImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentEdgeInsets;
-    BOOL _hasDirtyTitleLabelSize;
-    BOOL _hasSetRelativeSelectionProgress;
-    BOOL _hasValidCorneredImages;
-    int _highlightTransactionCount;
-    UIImageView *_highlightedBackgroundImageView;
-    CAMediaTimingFunction *_inverseProgressTimingFunction;
-    CAMediaTimingFunction *_progressTimingFunction;
-    float _relativeSelectionProgress;
-    int _segmentPosition;
-    UIImageView *_selectedBackgroundImageView;
-    UILabel *_titleLabel;
-    NSAttributedString *_titleLabelAttributedString;
+    }  _contentEdgeInsets;
+    BOOL  _hasDirtyTitleLabelSize;
+    BOOL  _hasSetRelativeSelectionProgress;
+    BOOL  _hasValidCorneredImages;
+    int  _highlightTransactionCount;
+    UIImageView * _highlightedBackgroundImageView;
+    CAMediaTimingFunction * _inverseProgressTimingFunction;
+    CAMediaTimingFunction * _progressTimingFunction;
+    float  _relativeSelectionProgress;
+    int  _segmentPosition;
+    UIImageView * _selectedBackgroundImageView;
+    UILabel * _titleLabel;
+    NSAttributedString * _titleLabelAttributedString;
     struct CGSize { 
         float width; 
         float height; 
-    } _titleLabelSize;
+    }  _titleLabelSize;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedTitle;

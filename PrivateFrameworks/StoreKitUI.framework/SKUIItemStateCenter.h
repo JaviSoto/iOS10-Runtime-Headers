@@ -3,24 +3,24 @@
  */
 
 @interface SKUIItemStateCenter : NSObject <SSDownloadManagerObserver> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _appInstallRestricted;
-    SSSoftwareUpdatesStore *_appUpdatesStore;
-    BOOL _canAccessAppUpdates;
-    BOOL _canAccessPurchaseHistory;
-    SSDownloadManager *_downloadManager;
-    NSMutableArray *_finishLoadBlocks;
-    int _gratisState;
-    NSMutableDictionary *_itemStates;
-    int _loadCount;
-    NSMutableArray *_mediaLibraries;
-    NSObject<OS_dispatch_queue> *_mediaLibraryQueue;
-    NSCountedSet *_observedLibraryItems;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSHashTable *_observers;
-    int _parentalControlsRank;
-    SSAppPurchaseHistoryDatabase *_purchaseHistoryDatabase;
-    BOOL _runningInStoreDemoMode;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _appInstallRestricted;
+    SSSoftwareUpdatesStore * _appUpdatesStore;
+    BOOL  _canAccessAppUpdates;
+    BOOL  _canAccessPurchaseHistory;
+    SSDownloadManager * _downloadManager;
+    NSMutableArray * _finishLoadBlocks;
+    int  _gratisState;
+    NSMutableDictionary * _itemStates;
+    int  _loadCount;
+    NSMutableArray * _mediaLibraries;
+    NSObject<OS_dispatch_queue> * _mediaLibraryQueue;
+    NSCountedSet * _observedLibraryItems;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    int  _parentalControlsRank;
+    SSAppPurchaseHistoryDatabase * _purchaseHistoryDatabase;
+    BOOL  _runningInStoreDemoMode;
 }
 
 @property (readonly) SSSoftwareUpdatesStore *appUpdatesStore;

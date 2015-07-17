@@ -3,46 +3,35 @@
  */
 
 @interface PSKeychainSyncManager : NSObject <KeychainSyncViewControllerDelegate> {
-    KeychainSyncAdvancedSecurityCodeController *_advancedSecurityCodeChoiceController;
-    NSString *_appleIDPassword;
-    NSString *_appleIDUsername;
-    PSRootController *_buddyNavigationController;
-    id /* block */ _changeSecurityCodeCompletion;
-    id /* block */ _circleJoinCompletion;
-    int _circleNotificationToken;
-    BOOL _circleWasReset;
-    id /* block */ _completion;
-    KeychainSyncSecurityCodeController *_complexSecurityCodeController;
-    NSTimer *_credentialExpirationTimer;
-    UIAlertView *_deleteSafariPasswordsAlert;
-    UIAlertView *_devicePINChoiceAlert;
-    UIAlertView *_devicePasscodeChangeAlert;
-    UIAlertView *_devicePasscodeTooWeakAlert;
-    KeychainSyncDevicePINController *_devicePinController;
-    UIAlertView *_enableWithExistingBackupAlert;
-    int _flow;
-    UIAlertView *_genericErrorAlert;
-    UIAlertView *_iCSCHardLimitAlert;
-    UIAlertView *_iCSCHardLimitWithApprovalAlert;
-    UIAlertView *_iCSCSoftLimitAlert;
-    UIAlertView *_incorrectRecoveryCodesAlert;
-    BOOL _joiningCircle;
-    BOOL _joiningCircleAfterRecovery;
-    id /* block */ _passwordPromptCompletion;
-    KeychainSyncPhoneNumberController *_phoneNumberController;
-    id /* block */ _resetCompletion;
-    UIAlertView *_resetConfirmationAlert;
-    UIViewController *_resetPromptControllerHost;
-    NSString *_securityCodeRecoveryAttempt;
-    KeychainSyncSecurityCodeController *_securityCodeRecoveryController;
-    PSSetupController *_settingsSetupController;
-    KeychainSyncSecurityCodeController *_simpleSecurityCodeController;
-    KeychainSyncSMSVerificationController *_smsValidationController;
-    unsigned int _spinnerCount;
-    UIView *_spinningView;
-    NSString *_stagedSecurityCode;
-    int _stagedSecurityCodeType;
-    UIAlertView *_verificationCodeLimitAlert;
+    KeychainSyncAdvancedSecurityCodeController * _advancedSecurityCodeChoiceController;
+    NSString * _appleIDPassword;
+    NSString * _appleIDUsername;
+    PSRootController * _buddyNavigationController;
+    id /* block */  _changeSecurityCodeCompletion;
+    id /* block */  _circleJoinCompletion;
+    int  _circleNotificationToken;
+    BOOL  _circleWasReset;
+    id /* block */  _completion;
+    KeychainSyncSecurityCodeController * _complexSecurityCodeController;
+    NSTimer * _credentialExpirationTimer;
+    KeychainSyncDevicePINController * _devicePinController;
+    int  _flow;
+    UIViewController * _hostViewController;
+    BOOL  _joiningCircle;
+    BOOL  _joiningCircleAfterRecovery;
+    id /* block */  _passwordPromptCompletion;
+    KeychainSyncPhoneNumberController * _phoneNumberController;
+    id /* block */  _resetCompletion;
+    UIViewController * _resetPromptControllerHost;
+    NSString * _securityCodeRecoveryAttempt;
+    KeychainSyncSecurityCodeController * _securityCodeRecoveryController;
+    PSSetupController * _settingsSetupController;
+    KeychainSyncSecurityCodeController * _simpleSecurityCodeController;
+    KeychainSyncSMSVerificationController * _smsValidationController;
+    unsigned int  _spinnerCount;
+    UIView * _spinningView;
+    NSString * _stagedSecurityCode;
+    int  _stagedSecurityCodeType;
 }
 
 @property (nonatomic, retain) NSString *appleIDPassword;
@@ -55,19 +44,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) UIViewController *hostViewController;
 @property (nonatomic, copy) id /* block */ passwordPromptCompletion;
 @property (nonatomic, copy) id /* block */ resetCompletion;
 @property (nonatomic, retain) UIViewController *resetPromptControllerHost;
 @property (getter=isRunningInBuddy, nonatomic, readonly) BOOL runningInBuddy;
 @property (nonatomic, retain) NSString *securityCodeRecoveryAttempt;
 @property (nonatomic, retain) PSSetupController *settingsSetupController;
-@property (nonatomic, readonly, retain) NSString *stagedSecurityCode;
+@property (nonatomic, readonly) NSString *stagedSecurityCode;
 @property (nonatomic, readonly) int stagedSecurityCodeType;
 @property (readonly) Class superclass;
 
 + (void)getStatusWithCompletion:(id /* block */)arg1;
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (void)_autoVetSMSValidationWithToken:(id)arg1;
 - (void)_callCompletionWithStatus:(int)arg1 error:(id)arg2;
 - (BOOL)_changeSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4 username:(id)arg5 password:(id)arg6 error:(id*)arg7;
@@ -82,12 +73,12 @@
 - (void)_recoverWithSecurityCode:(id)arg1 verificationCode:(id)arg2;
 - (void)_registerForCircleChangeNotifications;
 - (void)_registerForCircleChangeNotificationsWithCompletion:(id /* block */)arg1;
+- (BOOL)_registerUserCredentialsName:(id)arg1 password:(id)arg2 error:(id*)arg3;
 - (BOOL)_resetCircleAndDisableBackupWithError:(id*)arg1;
 - (void)_resetFromRecoveryFlow;
 - (void)_showGenericFlowErrorAlert;
 - (void)_showInvalidPhoneNumberAlertWithDigits:(id)arg1 countryInfo:(id)arg2;
 - (void)_showResetFlowOverController:(id)arg1 withEnableBackupText:(BOOL)arg2 withCompletion:(id /* block */)arg3;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)appleIDPassword;
 - (id)appleIDUsername;
 - (id)buddyNavigationController;
@@ -96,9 +87,10 @@
 - (BOOL)circleWasReset;
 - (id /* block */)completion;
 - (void)dealloc;
-- (void)disableKeychainSyncWithCompletion:(id /* block */)arg1;
+- (void)disableKeychainSyncOverController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dismissAppleSupportPane:(id)arg1;
 - (void)handleCircleChangedNotification;
+- (id)hostViewController;
 - (id)init;
 - (BOOL)isRunningInBuddy;
 - (void)joinCircleAfterRecovery:(BOOL)arg1 withCompletion:(id /* block */)arg2;
@@ -107,18 +99,17 @@
 - (void)keychainSyncController:(id)arg1 didFinishWithResult:(id)arg2 error:(id)arg3;
 - (void)keychainSyncControllerCancel:(id)arg1;
 - (void)keychainSyncPhoneNumberController:(id)arg1 didCompleteWithPhoneNumber:(id)arg2 countryInfo:(id)arg3;
-- (void)makeSettingsSetupController;
+- (void)makeSettingsSetupControllerWithSpecifier:(id)arg1 parent:(id)arg2 initialController:(id)arg3;
 - (id)navigationController;
 - (id /* block */)passwordPromptCompletion;
 - (void)pinChoiceAlertDidChooseToUseDevicePasscode:(BOOL)arg1;
 - (id)preferencesApp;
-- (void)promptForDevicePasscodeChangeToPasscode:(id)arg1;
+- (void)promptForDevicePasscodeChangeToPasscode:(id)arg1 overController:(id)arg2;
 - (void)promptForPasswordIfCredentialsNotCachedOverController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)promptForPasswordIfNeededForWritingOverController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)promptForPasswordIfNeededOverController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)promptForPasswordIfNeededWithCompletion:(id /* block */)arg1;
 - (void)promptForPasswordOverController:(id)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)registerUserCredentialsName:(id)arg1 password:(id)arg2 error:(id*)arg3;
 - (id /* block */)resetCompletion;
 - (id)resetPromptControllerHost;
 - (id)securityCodeRecoveryAttempt;
@@ -129,6 +120,7 @@
 - (void)setCircleJoinCompletion:(id /* block */)arg1;
 - (void)setCircleWasReset:(BOOL)arg1;
 - (void)setCompletion:(id /* block */)arg1;
+- (void)setHostViewController:(id)arg1;
 - (void)setPasswordPromptCompletion:(id /* block */)arg1;
 - (void)setResetCompletion:(id /* block */)arg1;
 - (void)setResetPromptControllerHost:(id)arg1;
@@ -136,6 +128,7 @@
 - (void)setSettingsSetupController:(id)arg1;
 - (void)setStagedSecurityCode:(id)arg1 type:(int)arg2;
 - (id)settingsSetupController;
+- (void)showAlert:(id)arg1;
 - (void)showChangeSecurityCodeFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id /* block */)arg3;
 - (void)showContactAppleSupportPane;
 - (void)showController:(id)arg1;
@@ -146,11 +139,12 @@
 - (void)showPinChoiceAlert;
 - (void)showRecoveryFlowWithNavigationController:(id)arg1 completion:(id /* block */)arg2;
 - (void)showRecoveryFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id /* block */)arg3;
-- (void)showResetAcknowledgementIfNeeded;
+- (void)showResetAcknowledgementIfNeededWithCompletion:(id /* block */)arg1;
 - (void)showResetAndJoinFlowOverController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)stagedSecurityCode;
 - (int)stagedSecurityCodeType;
 - (void)startNavigationSpinnerInViewController:(id)arg1;
 - (void)stopNavigationSpinner;
+- (id)viewControllerForPresentingAlerts;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface OISFUZipRecordInputStream : NSObject {
-    const char *mBuffer;
-    long long mBufferEnd;
-    long long mBufferStart;
-    <OISFUBufferedInputStream> *mInput;
+    const char * mBuffer;
+    long long  mBufferEnd;
+    long long  mBufferStart;
+    <OISFUBufferedInputStream> * mInput;
 }
 
 - (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3;

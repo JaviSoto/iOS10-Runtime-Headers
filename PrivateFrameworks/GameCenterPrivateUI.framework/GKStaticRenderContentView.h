@@ -3,7 +3,7 @@
  */
 
 @interface GKStaticRenderContentView : UIView {
-    UIView *_contentView;
+    UIView * _contentView;
 }
 
 @property (nonatomic, retain) UIView *contentView;

@@ -3,16 +3,16 @@
  */
 
 @interface PUCollectionView : UICollectionView <UIGestureRecognizerDelegate> {
-    PUAutoScroller *_autoScroller;
-    UILongPressGestureRecognizer *_dragGestureRecognizer;
-    NSIndexPath *_dragSourceIndexPath;
-    NSIndexPath *_dragTargetIndexPath;
-    UIView *_draggedView;
+    PUAutoScroller * _autoScroller;
+    UILongPressGestureRecognizer * _dragGestureRecognizer;
+    NSIndexPath * _dragSourceIndexPath;
+    NSIndexPath * _dragTargetIndexPath;
+    UIView * _draggedView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _draggedViewCenterOffset;
-    <PUCollectionViewReorderDelegate> *_reorderDelegate;
+    }  _draggedViewCenterOffset;
+    <PUCollectionViewReorderDelegate> * _reorderDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

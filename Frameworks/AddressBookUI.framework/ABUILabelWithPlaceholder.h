@@ -3,11 +3,11 @@
  */
 
 @interface ABUILabelWithPlaceholder : UIView {
-    NSString *_actualText;
-    UIColor *_actualTextColor;
-    BOOL _isPlaceholderActive;
-    UILabel *_label;
-    NSString *_placeholder;
+    NSString * _actualText;
+    UIColor * _actualTextColor;
+    BOOL  _isPlaceholderActive;
+    UILabel * _label;
+    NSString * _placeholder;
 }
 
 @property (nonatomic) UIFont *font;

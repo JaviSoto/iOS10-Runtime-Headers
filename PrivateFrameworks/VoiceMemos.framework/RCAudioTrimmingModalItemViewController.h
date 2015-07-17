@@ -3,21 +3,21 @@
  */
 
 @interface RCAudioTrimmingModalItemViewController : UIViewController <RCAVWaveformViewControllerDelegate> {
-    NSURL *_audioURL;
-    RCUIConfiguration *_defaultUIConfiguration;
-    RCUIConfiguration *_disabledUIConfiguration;
-    BOOL _enabled;
-    double _maximumDuration;
-    UIView *_nonWaveformContentView;
-    UIButton *_playPauseButton;
-    AVPlayerItem *_playerItem;
-    RCPreviewController *_previewController;
-    float _progress;
-    RCUIConfiguration *_progressUIConfiguration;
-    BOOL _showsProgress;
-    UILabel *_timeDisplayLabel;
-    RCFileInputWaveformDataSource *_waveformDataSource;
-    RCAVWaveformViewController *_waveformViewController;
+    NSURL * _audioURL;
+    RCUIConfiguration * _defaultUIConfiguration;
+    RCUIConfiguration * _disabledUIConfiguration;
+    BOOL  _enabled;
+    double  _maximumDuration;
+    UIView * _nonWaveformContentView;
+    UIButton * _playPauseButton;
+    AVPlayerItem * _playerItem;
+    RCPreviewController * _previewController;
+    float  _progress;
+    RCUIConfiguration * _progressUIConfiguration;
+    BOOL  _showsProgress;
+    UILabel * _timeDisplayLabel;
+    RCFileInputWaveformDataSource * _waveformDataSource;
+    RCAVWaveformViewController * _waveformViewController;
 }
 
 @property (nonatomic, readonly, copy) NSURL *audioURL;
@@ -42,6 +42,8 @@
 - (void)audioWaveformControllerDidChangeAVTimes:(id)arg1;
 - (void)audioWaveformControllerDidChangeWaveformDataSource:(id)arg1;
 - (id)initWithAudioURL:(id)arg1 maximumDuration:(double)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isEnabled;
 - (void)loadView;
 - (double)maximumDuration;
@@ -53,6 +55,7 @@
 - (void)setShowsProgress:(BOOL)arg1;
 - (BOOL)showsProgress;
 - (void)updateViewConstraints;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

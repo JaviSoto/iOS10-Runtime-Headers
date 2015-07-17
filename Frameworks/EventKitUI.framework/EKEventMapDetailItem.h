@@ -3,10 +3,10 @@
  */
 
 @interface EKEventMapDetailItem : EKEventDetailItem <MKMapViewDelegate> {
-    UITableViewCell *_cell;
-    UIView *_loadingView;
-    MKMapView *_mapView;
-    UIView *_overlayView;
+    UITableViewCell * _cell;
+    UIView * _loadingView;
+    MKMapView * _mapView;
+    UIView * _overlayView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (float)_mapHeight;
+- (id)_mapRelatedViewConstraintsForMapRelatedView:(id)arg1 inCell:(id)arg2;
 - (void)_setAnnotationForEventLocation;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
@@ -25,5 +26,6 @@
 - (void)eventViewController:(id)arg1 didUnhighlightSubitem:(unsigned int)arg2;
 - (void)mapViewDidFinishRenderingMap:(id)arg1 fullyRendered:(BOOL)arg2;
 - (void)mapViewWillStartRenderingMap:(id)arg1;
+- (void)reset;
 
 @end

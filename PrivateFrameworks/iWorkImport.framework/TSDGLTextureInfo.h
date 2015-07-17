@@ -3,11 +3,11 @@
  */
 
 @interface TSDGLTextureInfo : NSObject {
-    BOOL _containsMipmaps;
-    unsigned int _height;
-    unsigned int _name;
-    unsigned int _target;
-    unsigned int _width;
+    BOOL  _containsMipmaps;
+    unsigned int  _height;
+    unsigned int  _name;
+    unsigned int  _target;
+    unsigned int  _width;
 }
 
 @property (nonatomic, readonly) BOOL containsMipmaps;

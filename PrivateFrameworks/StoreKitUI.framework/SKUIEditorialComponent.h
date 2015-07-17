@@ -3,9 +3,9 @@
  */
 
 @interface SKUIEditorialComponent : SKUIPageComponent {
-    NSString *_bodyText;
-    NSArray *_links;
-    int _maximumBodyLines;
+    NSString * _bodyText;
+    NSArray * _links;
+    int  _maximumBodyLines;
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
@@ -14,9 +14,9 @@
         int titleFontWeight; 
         float titleFontSize; 
         float titleSpacing; 
-    } _style;
-    NSString *_titleText;
-    BOOL _usesLockupTitle;
+    }  _style;
+    NSString * _titleText;
+    BOOL  _usesLockupTitle;
 }
 
 @property (getter=_usesLockupTitle, nonatomic, readonly) BOOL _usesLockupTitle;

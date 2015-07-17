@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentOptionGroupItemCell : UITableViewCell {
-    PKPaymentOptionGroupItem *_optionGroupItem;
+@interface PKPaymentOptionGroupItemCell : PKTableViewCell {
+    PKPaymentOptionGroupItem * _optionGroupItem;
 }
 
 @property (nonatomic, retain) PKPaymentOptionGroupItem *optionGroupItem;

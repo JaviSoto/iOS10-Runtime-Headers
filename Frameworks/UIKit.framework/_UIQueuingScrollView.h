@@ -3,7 +3,7 @@
  */
 
 @interface _UIQueuingScrollView : UIScrollView {
-    NSMutableArray *_completionStateQueue;
+    NSMutableArray * _completionStateQueue;
     struct { 
         unsigned int delegateInterestedInPendingScrolls : 1; 
         unsigned int delegateInterestedInCommittedScrolls : 1; 
@@ -14,7 +14,7 @@
         unsigned int dataSourceSuppliesBeforeView : 1; 
         unsigned int dataSourceSuppliesAfterView : 1; 
         unsigned int dataSourceInterestedInFlushedViews : 1; 
-    } _delegateFlags;
+    }  _delegateFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,16 +24,16 @@
             float width; 
             float height; 
         } size; 
-    } _disabledScrollingRegion;
-    BOOL _manualScrollInProgress;
-    int _navigationOrientation;
-    float _pageSpacing;
-    UIView *_pendingVisibleView;
-    <_UIQueuingScrollViewDataSource> *_qDataSource;
-    <_UIQueuingScrollViewDelegate> *_qDelegate;
-    NSMutableArray *_viewStateQueue;
-    NSArray *_views;
-    NSArray *_wrapperViews;
+    }  _disabledScrollingRegion;
+    BOOL  _manualScrollInProgress;
+    int  _navigationOrientation;
+    float  _pageSpacing;
+    UIView * _pendingVisibleView;
+    <_UIQueuingScrollViewDataSource> * _qDataSource;
+    <_UIQueuingScrollViewDelegate> * _qDelegate;
+    NSMutableArray * _viewStateQueue;
+    NSArray * _views;
+    NSArray * _wrapperViews;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } disabledScrollingRegion;
@@ -42,6 +42,7 @@
 @property (nonatomic) <_UIQueuingScrollViewDelegate> *qDelegate;
 @property (nonatomic, readonly) UIView *visibleView;
 
+- (void).cxx_destruct;
 - (unsigned int)_abuttedPagingEdges;
 - (void)_adjustContentInsets;
 - (void)_boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg1;
@@ -80,7 +81,7 @@
 - (id)_viewBefore:(BOOL)arg1 view:(id)arg2;
 - (id)_viewBeforeView:(id)arg1;
 - (id)_visibleView;
-- (void)dealloc;
+- (BOOL)canBecomeFocused;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })disabledScrollingRegion;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 navigationOrientation:(int)arg2;
 - (BOOL)isManualScrollInProgress;

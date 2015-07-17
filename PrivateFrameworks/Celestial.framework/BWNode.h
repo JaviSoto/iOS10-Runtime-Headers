@@ -3,18 +3,18 @@
  */
 
 @interface BWNode : NSObject {
-    long long _configurationID;
-    BWGraph *_graph;
-    BWNodeInput *_input;
-    NSMutableArray *_inputs;
-    NSString *_name;
-    BWNodeOutput *_output;
-    NSMutableArray *_outputs;
-    <BWNodeRenderDelegate> *_renderDelegate;
-    BOOL _singleInput;
-    BOOL _singleOutput;
-    BOOL _supportsConcurrentLiveInputCallbacks;
-    BOOL _supportsLiveReconfiguration;
+    long long  _configurationID;
+    BWGraph * _graph;
+    BWNodeInput * _input;
+    NSMutableArray * _inputs;
+    NSString * _name;
+    BWNodeOutput * _output;
+    NSMutableArray * _outputs;
+    <BWNodeRenderDelegate> * _renderDelegate;
+    BOOL  _singleInput;
+    BOOL  _singleOutput;
+    BOOL  _supportsConcurrentLiveInputCallbacks;
+    BOOL  _supportsLiveReconfiguration;
 }
 
 @property (nonatomic) BWGraph *graph;

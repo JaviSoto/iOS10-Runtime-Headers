@@ -3,13 +3,13 @@
  */
 
 @interface ADPlayer : NSObject <ADBannerViewInternalDelegate> {
-    AVPlayer *_avPlayer;
-    AVPlayerItem *_avPlayerItem;
-    <ADPlayerDelegate> *_delegate;
-    BOOL _playbackHasBegun;
-    unsigned int _playbackState;
-    id _timeObserver;
-    ADBannerView *_videoAd;
+    AVPlayer * _avPlayer;
+    AVPlayerItem * _avPlayerItem;
+    <ADPlayerDelegate> * _delegate;
+    BOOL  _playbackHasBegun;
+    unsigned int  _playbackState;
+    id  _timeObserver;
+    ADBannerView * _videoAd;
 }
 
 @property (nonatomic, retain) AVPlayer *avPlayer;

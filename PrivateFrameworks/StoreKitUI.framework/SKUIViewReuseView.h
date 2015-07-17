@@ -3,8 +3,8 @@
  */
 
 @interface SKUIViewReuseView : UIView {
-    SKUIViewReusePool *_viewReusePool;
-    NSArray *_views;
+    SKUIViewReusePool * _viewReusePool;
+    NSArray * _views;
 }
 
 @property (nonatomic, readonly) NSArray *allExistingViews;

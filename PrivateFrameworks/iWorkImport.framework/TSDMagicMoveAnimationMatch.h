@@ -3,20 +3,20 @@
  */
 
 @interface TSDMagicMoveAnimationMatch : NSObject {
-    BOOL _didUseMorphTexture;
-    BOOL _hasBeenTornDown;
-    TSDTextureSet *_incomingTexture;
-    BOOL _isMorphMatch;
-    BOOL _isTextStyleIdenticalExceptSize;
-    BOOL _isUsingMorphTexture;
-    int _matchType;
-    TSDTextureSet *_morphQueuedForDeletionTexture;
-    TSDTextureSet *_morphQueuedTexture;
-    TSDTextureSet *_morphTexture;
-    NSLock *_morphTextureUpdateLock;
-    TSDTextureSet *_outgoingTexture;
-    float _outgoingTextureActionBuildFinalAngle;
-    BOOL _shouldDisableTextMorphing;
+    BOOL  _didUseMorphTexture;
+    BOOL  _hasBeenTornDown;
+    TSDTextureSet * _incomingTexture;
+    BOOL  _isMorphMatch;
+    BOOL  _isTextStyleIdenticalExceptSize;
+    BOOL  _isUsingMorphTexture;
+    int  _matchType;
+    TSDTextureSet * _morphQueuedForDeletionTexture;
+    TSDTextureSet * _morphQueuedTexture;
+    TSDTextureSet * _morphTexture;
+    NSLock * _morphTextureUpdateLock;
+    TSDTextureSet * _outgoingTexture;
+    float  _outgoingTextureActionBuildFinalAngle;
+    BOOL  _shouldDisableTextMorphing;
 }
 
 @property (nonatomic, retain) TSDTextureSet *incomingTexture;

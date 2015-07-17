@@ -3,30 +3,30 @@
  */
 
 @interface MPTransportControls : UIView {
-    BOOL _allowsWirelessPlayback;
-    MPButton *_alternatesButton;
-    MPButton *_bookmarkButton;
-    MPButton *_chaptersButton;
-    unsigned long long _desiredParts;
-    unsigned long long _disabledParts;
-    MPButton *_emailButton;
-    MPButton *_fastForward15SecondsButton;
-    NSMutableIndexSet *_heldParts;
-    MPAVItem *_item;
-    MPButton *_likeOrBanButton;
-    MPButton *_nextButton;
-    MPButton *_playButton;
-    MPAVController *_player;
-    unsigned int _playing;
-    MPButton *_previousButton;
-    BOOL _registeredForPlayerNotifications;
-    MPButton *_rewind15SecondsButton;
-    MPButton *_rewind30SecondsButton;
-    MPButton *_scaleButton;
-    id _target;
-    MPButton *_toggleFullscreenButton;
-    unsigned long long _visibleParts;
-    id _volumeSlider;
+    BOOL  _allowsWirelessPlayback;
+    MPButton * _alternatesButton;
+    MPButton * _bookmarkButton;
+    MPButton * _chaptersButton;
+    unsigned long long  _desiredParts;
+    unsigned long long  _disabledParts;
+    MPButton * _emailButton;
+    MPButton * _fastForward15SecondsButton;
+    NSMutableIndexSet * _heldParts;
+    MPAVItem * _item;
+    MPButton * _likeOrBanButton;
+    MPButton * _nextButton;
+    MPButton * _playButton;
+    MPAVController * _player;
+    unsigned int  _playing;
+    MPButton * _previousButton;
+    BOOL  _registeredForPlayerNotifications;
+    MPButton * _rewind15SecondsButton;
+    MPButton * _rewind30SecondsButton;
+    MPButton * _scaleButton;
+    id  _target;
+    MPButton * _toggleFullscreenButton;
+    unsigned long long  _visibleParts;
+    id  _volumeSlider;
 }
 
 @property (nonatomic) BOOL allowsWirelessPlayback;

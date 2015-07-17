@@ -3,10 +3,10 @@
  */
 
 @interface ChartUpdater : YQLRequest {
-    StockChartData *_currentChartData;
-    <ChartUpdaterDelegate> *_delegate;
-    int _interval;
-    Stock *_stock;
+    StockChartData * _currentChartData;
+    <ChartUpdaterDelegate> * _delegate;
+    int  _interval;
+    Stock * _stock;
 }
 
 @property (nonatomic) <ChartUpdaterDelegate> *delegate;

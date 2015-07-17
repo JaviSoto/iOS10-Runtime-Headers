@@ -3,11 +3,11 @@
  */
 
 @interface AVFigAssetInspector : AVAssetInspector {
-    struct OpaqueFigAsset { } *_figAsset;
-    struct OpaqueFigFormatReader { } *_formatReader;
-    long _formatReaderOnce;
-    BOOL didCheckForSaveRestriction;
-    BOOL hasSaveRestriction;
+    struct OpaqueFigAsset { } * _figAsset;
+    struct OpaqueFigFormatReader { } * _formatReader;
+    long  _formatReaderOnce;
+    BOOL  didCheckForSaveRestriction;
+    BOOL  hasSaveRestriction;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -25,13 +25,15 @@
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)_hasQTSaveRestriction;
+- (id)_instanceIdentifier;
 - (BOOL)_isStreaming;
+- (id)_mediaSelectionGroupDictionaries;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
-- (BOOL)canContainMovieFragments;
+- (BOOL)canContainFragments;
 - (id)commonMetadata;
-- (BOOL)containsMovieFragments;
+- (BOOL)containsFragments;
 - (id)creationDate;
 - (void)dealloc;
 - (unsigned long long)downloadToken;
@@ -41,7 +43,9 @@
 - (void)finalize;
 - (BOOL)hasProtectedContent;
 - (unsigned int)hash;
+- (id)identifyingTagClass;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1;
+- (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isEqual:(id)arg1;
@@ -49,7 +53,6 @@
 - (BOOL)isPlayable;
 - (BOOL)isReadable;
 - (id)lyrics;
-- (id)mediaSelectionGroups;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;

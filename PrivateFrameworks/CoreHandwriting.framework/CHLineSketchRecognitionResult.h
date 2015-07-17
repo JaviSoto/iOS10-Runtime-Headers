@@ -6,36 +6,43 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _controlPoint;
-    int _endEndpointType;
+    }  _controlPoint;
+    BOOL  _cornerLine;
+    int  _endEndpointType;
     struct CGPoint { 
         float x; 
         float y; 
-    } _endLocation;
+    }  _endLocation;
     struct CGPoint { 
         float x; 
         float y; 
-    } _midpointLocation;
-    int _startEndpointType;
+    }  _midpointLocation;
+    NSArray * _pathPoints;
+    int  _startEndpointType;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startLocation;
+    }  _startLocation;
 }
 
 @property (readonly) struct CGPoint { float x1; float x2; } controlPoint;
+@property (readonly) BOOL cornerLine;
 @property (readonly) int endEndpointType;
 @property (readonly) struct CGPoint { float x1; float x2; } endLocation;
 @property (readonly) struct CGPoint { float x1; float x2; } midpointLocation;
+@property (readonly) NSArray *pathPoints;
 @property (readonly) int startEndpointType;
 @property (readonly) struct CGPoint { float x1; float x2; } startLocation;
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })controlPoint;
+- (BOOL)cornerLine;
+- (void)dealloc;
 - (int)endEndpointType;
 - (struct CGPoint { float x1; float x2; })endLocation;
 - (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 startLocation:(struct CGPoint { float x1; float x2; })arg4 startEndpointType:(int)arg5 endLocation:(struct CGPoint { float x1; float x2; })arg6 endEndpointType:(int)arg7 midPointLocation:(struct CGPoint { float x1; float x2; })arg8 controlPointLocation:(struct CGPoint { float x1; float x2; })arg9;
+- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 startLocation:(struct CGPoint { float x1; float x2; })arg4 startEndpointType:(int)arg5 endLocation:(struct CGPoint { float x1; float x2; })arg6 endEndpointType:(int)arg7 midPointLocation:(struct CGPoint { float x1; float x2; })arg8 controlPointLocation:(struct CGPoint { float x1; float x2; })arg9 pathPoints:(id)arg10;
 - (struct CGPoint { float x1; float x2; })midpointLocation;
+- (id)pathPoints;
 - (int)startEndpointType;
 - (struct CGPoint { float x1; float x2; })startLocation;
 

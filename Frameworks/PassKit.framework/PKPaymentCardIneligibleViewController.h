@@ -3,41 +3,41 @@
  */
 
 @interface PKPaymentCardIneligibleViewController : UIViewController <UIWebViewDelegate> {
-    PKPaymentCredential *_credential;
-    id /* block */ _learnMorePresentationHandler;
-    id /* block */ _preflightCompletion;
-    BOOL _preloadLearnMoreWebView;
-    int _setupContext;
-    <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
-    UIWebView *_webView;
+    int  _context;
+    int  _eligibilityStatus;
+    id /* block */  _learnMorePresentationHandler;
+    id /* block */  _preflightCompletion;
+    BOOL  _preloadLearnMoreWebView;
+    <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
+    UIWebView * _webView;
 }
 
-@property (nonatomic, retain) PKPaymentCredential *credential;
+@property (nonatomic) int context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) int eligibilityStatus;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) id /* block */ learnMorePresentationHandler;
 @property BOOL preloadLearnMoreWebView;
-@property (nonatomic) int setupContext;
 @property (nonatomic) <PKPaymentSetupViewControllerDelegate> *setupDelegate;
 @property (readonly) Class superclass;
 
 - (id)_alertWithLearnMoreURL:(id)arg1 isPreloaded:(BOOL)arg2;
 - (id)_learnMoreURLForEligibiltyStatus:(int)arg1;
 - (void)_webViewDidLoad:(BOOL)arg1 withError:(id)arg2;
-- (id)credential;
+- (int)context;
 - (void)dealloc;
+- (int)eligibilityStatus;
 - (void)handleDone:(id)arg1;
-- (id)initWithCredential:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
+- (id)initWithEligibilityStatus:(int)arg1 context:(int)arg2 setupDelegate:(id)arg3;
 - (id /* block */)learnMorePresentationHandler;
 - (void)preflightWithCompletion:(id /* block */)arg1;
 - (BOOL)preloadLearnMoreWebView;
-- (void)setCredential:(id)arg1;
+- (void)setContext:(int)arg1;
+- (void)setEligibilityStatus:(int)arg1;
 - (void)setLearnMorePresentationHandler:(id /* block */)arg1;
 - (void)setPreloadLearnMoreWebView:(BOOL)arg1;
-- (void)setSetupContext:(int)arg1;
 - (void)setSetupDelegate:(id)arg1;
-- (int)setupContext;
 - (id)setupDelegate;
 - (void)viewDidLoad;
 - (id)webView;

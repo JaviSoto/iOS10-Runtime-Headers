@@ -3,7 +3,7 @@
  */
 
 @interface SUBezierPathMaskProvider : SUMaskProvider {
-    UIBezierPath *_bezierPath;
+    UIBezierPath * _bezierPath;
 }
 
 @property (nonatomic, retain) UIBezierPath *bezierPath;

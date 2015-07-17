@@ -3,8 +3,8 @@
  */
 
 @interface _MKStackingContentView : _MKUIViewControllerRootView {
-    NSLayoutConstraint *_heightConstraint;
-    UIView *_referenceView;
+    NSLayoutConstraint * _heightConstraint;
+    UIView * _referenceView;
 }
 
 - (void).cxx_destruct;

@@ -3,14 +3,14 @@
  */
 
 @interface TSPDatabaseArchiverWriter : NSObject {
-    long long _dataStateIdentifier;
-    TSPDatabase *_database;
-    TSPDistributableFileManager *_fileManager;
-    NSString *_fileStateIdentifier;
-    NSString *_filenameHint;
-    BOOL _forceFileStorage;
-    BOOL _hasDataState;
-    BOOL _hasFileState;
+    long long  _dataStateIdentifier;
+    TSPDatabase * _database;
+    TSPDistributableFileManager * _fileManager;
+    NSString * _fileStateIdentifier;
+    NSString * _filenameHint;
+    BOOL  _forceFileStorage;
+    BOOL  _hasDataState;
+    BOOL  _hasFileState;
 }
 
 @property (nonatomic) long long dataStateIdentifier;

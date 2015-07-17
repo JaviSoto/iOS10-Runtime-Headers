@@ -3,12 +3,12 @@
  */
 
 @interface UITabBarButtonLabel : UILabel {
-    Class _appearanceGuideClass;
-    _UITabBarItemAppearanceStorage *_appearanceStorage;
-    float _boundsWidth;
-    BOOL _isHighlighted;
-    BOOL _isSelected;
-    UIColor *_unselectedTintColor;
+    Class  _appearanceGuideClass;
+    _UITabBarItemAppearanceStorage * _appearanceStorage;
+    float  _boundsWidth;
+    BOOL  _isHighlighted;
+    BOOL  _isSelected;
+    UIColor * _unselectedTintColor;
 }
 
 @property (setter=_setAppearanceGuideClass:, nonatomic) Class _appearanceGuideClass;

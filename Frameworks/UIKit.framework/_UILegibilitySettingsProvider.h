@@ -3,19 +3,19 @@
  */
 
 @interface _UILegibilitySettingsProvider : NSObject {
-    float _accumulatedBrightness;
-    float _accumulatedContrast;
-    float _accumulatedLuminance;
-    float _accumulatedSaturation;
-    BOOL _accumulatorIsPrimed;
-    UIColor *_contentColor;
-    int _currentStyle;
-    BOOL _hasContrast;
-    float _mostRecentBrightness;
-    float _mostRecentContrast;
-    float _mostRecentLuminance;
-    float _mostRecentSaturation;
-    double _nextChangeBarrier;
+    float  _accumulatedBrightness;
+    float  _accumulatedContrast;
+    float  _accumulatedLuminance;
+    float  _accumulatedSaturation;
+    BOOL  _accumulatorIsPrimed;
+    UIColor * _contentColor;
+    int  _currentStyle;
+    BOOL  _hasContrast;
+    float  _mostRecentBrightness;
+    float  _mostRecentContrast;
+    float  _mostRecentLuminance;
+    float  _mostRecentSaturation;
+    double  _nextChangeBarrier;
 }
 
 @property (nonatomic) float accumulatedBrightness;
@@ -72,6 +72,10 @@
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 
 - (void)pl_primeForUseWithCameraOverlays;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (void)cam_primeForUseWithCameraOverlays;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 

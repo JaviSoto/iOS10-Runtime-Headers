@@ -3,20 +3,20 @@
  */
 
 @interface TIKeyboardCandidateResultSet : NSObject <NSCopying, NSSecureCoding> {
-    TIKeyboardCandidate *_acceptedCandidate;
-    unsigned int _batchCandidateLocation;
-    NSArray *_candidates;
-    TIKeyboardCandidate *_defaultCandidate;
-    BOOL _excludedExtensionCandidates;
-    unsigned int _generatedCandidateCount;
-    NSDictionary *_indexTitles;
-    unsigned int _initialSelectedIndex;
-    NSArray *_initiallyHiddenCandidates;
-    unsigned int _selectedHiddenCandidateIndex;
-    NSDictionary *_showExtensionCandidates;
-    NSDictionary *_sortMethodGroups;
-    NSArray *_sortMethods;
-    TIKeyboardIntermediateText *_uncommittedText;
+    TIKeyboardCandidate * _acceptedCandidate;
+    unsigned int  _batchCandidateLocation;
+    NSArray * _candidates;
+    TIKeyboardCandidate * _defaultCandidate;
+    BOOL  _excludedExtensionCandidates;
+    unsigned int  _generatedCandidateCount;
+    NSDictionary * _indexTitles;
+    unsigned int  _initialSelectedIndex;
+    NSArray * _initiallyHiddenCandidates;
+    unsigned int  _selectedHiddenCandidateIndex;
+    NSDictionary * _showExtensionCandidates;
+    NSDictionary * _sortMethodGroups;
+    NSArray * _sortMethods;
+    TIKeyboardIntermediateText * _uncommittedText;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
@@ -42,7 +42,7 @@
 
 + (id)dummySet;
 + (id)setWithCandidates:(id)arg1;
-+ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 excludedExtensionCandidates:(BOOL)arg10;
++ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9;
 + (BOOL)supportsSecureCoding;
 
 - (id)acceptedCandidate;
@@ -58,7 +58,7 @@
 - (BOOL)hasCandidates;
 - (BOOL)hasMetadata;
 - (id)indexTitles;
-- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 excludedExtensionCandidates:(BOOL)arg10;
+- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)initialSelectedIndex;
 - (id)initiallyHiddenCandidates;

@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _snapshotSize;
-    UIView *_snapshotView;
+    }  _snapshotSize;
+    UIView * _snapshotView;
 }
 
 @property (nonatomic, readonly) UIView *snapshotView;

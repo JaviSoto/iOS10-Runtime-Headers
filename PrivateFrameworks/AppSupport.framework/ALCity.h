@@ -3,20 +3,20 @@
  */
 
 @interface ALCity : NSObject {
-    NSString *_countryName;
-    NSString *_countryOverride;
-    int _identifier;
-    NSString *_identifierForCPCity;
-    float _latitude;
-    NSString *_localeCode;
-    BOOL _localizationAttempted;
-    float _longitude;
-    NSString *_name;
-    NSString *_timeZone;
-    NSString *_unlocalizedCountryName;
-    NSString *_unlocalizedCountryOverride;
-    NSString *_unlocalizedName;
-    NSString *_yahooCode;
+    NSString * _countryName;
+    NSString * _countryOverride;
+    int  _identifier;
+    NSString * _identifierForCPCity;
+    float  _latitude;
+    NSString * _localeCode;
+    BOOL  _localizationAttempted;
+    float  _longitude;
+    NSString * _name;
+    NSString * _timeZone;
+    NSString * _unlocalizedCountryName;
+    NSString * _unlocalizedCountryOverride;
+    NSString * _unlocalizedName;
+    NSString * _yahooCode;
 }
 
 @property (nonatomic, readonly) NSString *classicIdentifier;

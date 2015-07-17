@@ -3,17 +3,17 @@
  */
 
 @interface SKUIActivityIndicatorView : SKUIViewReuseView <SKUIViewElementView> {
-    unsigned int _alignment;
-    BOOL _animating;
+    unsigned int  _alignment;
+    BOOL  _animating;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIImageView *_imageView;
-    UIActivityIndicatorView *_indicatorView;
-    double _period;
+    }  _contentInset;
+    UIImageView * _imageView;
+    UIActivityIndicatorView * _indicatorView;
+    double  _period;
 }
 
 @property (readonly, copy) NSString *debugDescription;

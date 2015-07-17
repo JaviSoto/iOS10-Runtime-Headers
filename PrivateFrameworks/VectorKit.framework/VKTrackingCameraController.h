@@ -3,8 +3,8 @@
  */
 
 @interface VKTrackingCameraController : VKCameraController {
-    BOOL _animatingIn;
-    VKAnimation *_animation;
+    BOOL  _animatingIn;
+    VKTimedAnimation * _animation;
     struct VKNavigationCameraModel { 
         double _halfVerticalFov; 
         double _horizontalFov; 
@@ -53,59 +53,59 @@
             double _boomLength; 
         } _targetState; 
         double _previousUpdateTime; 
-    } _cameraModel;
-    BOOL _canZoomIn;
-    BOOL _canZoomOut;
-    id /* block */ _completionHandler;
-    double _cruiseHeight;
-    double _cruiseHeightOverride;
-    double _cruisePhi;
-    double _cruisePhiOverride;
-    int _desiredMapMode;
-    double _endZoomScale;
+    }  _cameraModel;
+    BOOL  _canZoomIn;
+    BOOL  _canZoomOut;
+    id /* block */  _completionHandler;
+    double  _cruiseHeight;
+    double  _cruiseHeightOverride;
+    double  _cruisePhi;
+    double  _cruisePhiOverride;
+    int  _desiredMapMode;
+    double  _endZoomScale;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _farthestPoi;
-    int _focusStyle;
-    float _halfPuckSize;
+    }  _farthestPoi;
+    int  _focusStyle;
+    float  _halfPuckSize;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _insets;
-    BOOL _insetsAnimating;
-    VKCameraContext *_lastCameraContext;
+    }  _insets;
+    BOOL  _insetsAnimating;
+    VKCameraContext * _lastCameraContext;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _lastRouteLinePanPuckPosition;
-    VKMapCanvas *_mapCanvas;
-    double _mapModeTransitionZoomScale;
-    VKMapModel *_mapModel;
+    }  _lastRouteLinePanPuckPosition;
+    VKMapCanvas * _mapCanvas;
+    double  _mapModeTransitionZoomScale;
+    VKMapModel * _mapModel;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _matchedIndex;
+    }  _matchedIndex;
     struct fast_shared_ptr<vk::RouteLineSection> { 
         struct _fast_shared_ptr_control {} *_control; 
-    } _matchedSection;
-    double _maxBoomLength;
-    double _maxDistanceScale;
-    VKAnimation *_panAnimation;
-    double _panBoomLength;
+    }  _matchedSection;
+    double  _maxBoomLength;
+    double  _maxDistanceScale;
+    VKTimedAnimation * _panAnimation;
+    double  _panBoomLength;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
-    } _panCameraOffset;
-    double _panCourseOffset;
-    int _panDirection;
-    double _panPitch;
-    double _panReturnStartTime;
-    double _panRouteOffset;
-    double _panStartBoomLength;
+    }  _panCameraOffset;
+    double  _panCourseOffset;
+    int  _panDirection;
+    double  _panPitch;
+    double  _panReturnStartTime;
+    double  _panRouteOffset;
+    double  _panStartBoomLength;
     struct State { 
         struct State { 
             double _course; 
@@ -118,24 +118,24 @@
             double y; 
             double z; 
         } puckPosition; 
-    } _panStartCameraState;
-    double _panStartPitch;
-    int _panStyle;
-    BOOL _panning;
-    VKAnimation *_pitchAnimation;
-    double _pitchOffset;
-    BOOL _pitching;
-    double _previousCourse;
-    double _previousOffset;
+    }  _panStartCameraState;
+    double  _panStartPitch;
+    int  _panStyle;
+    BOOL  _panning;
+    VKTimedAnimation * _pitchAnimation;
+    double  _pitchOffset;
+    BOOL  _pitching;
+    double  _previousCourse;
+    double  _previousOffset;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _previousReference;
-    double _previousStepTime;
-    BOOL _puckAnimatorRunning;
-    double _puckOffset;
-    double _puckOffsetDelta;
+    }  _previousReference;
+    double  _previousStepTime;
+    BOOL  _puckAnimatorRunning;
+    double  _puckOffset;
+    double  _puckOffsetDelta;
     struct { 
         struct VKPoint { 
             double x; 
@@ -144,44 +144,44 @@
         } position; 
         double course; 
         BOOL onRoute; 
-    } _puckPosition;
+    }  _puckPosition;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _puckTargetPosition;
-    BOOL _receivedFirstUpdate;
-    struct VKCircularBuffer<double> { struct vector<double, std::__1::allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; bool x3; double x4; } *_rotationRateBuffer;
-    bool _shouldAllowMapModeTransition;
-    BOOL _shouldLimitTopDownHeight;
-    double _startCourse;
-    double _startDistance;
+    }  _puckTargetPosition;
+    BOOL  _receivedFirstUpdate;
+    struct VKCircularBuffer<double> { struct vector<double, std::__1::allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; bool x3; double x4; } * _rotationRateBuffer;
+    bool  _shouldAllowMapModeTransition;
+    BOOL  _shouldLimitTopDownHeight;
+    double  _startCourse;
+    double  _startDistance;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPanPoint;
-    double _startPinchScale;
-    double _startPitch;
+    }  _startPanPoint;
+    double  _startPinchScale;
+    double  _startPitch;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _startPuckScreenPosition;
-    double _startTime;
-    double _startZoomScale;
-    BOOL _successfullyStartedRouteLinePan;
-    VKAnimation *_tapZoomAnimation;
-    double _tracePlaybackSpeedMultiplier;
-    <VKTrackingCameraControllerDelegate> *_trackingDelegate;
-    double _userZoomFocusStyleMaxZoomScale;
-    double _userZoomFocusStyleMinZoomScale;
-    double _userZoomFocusStyleZoomScale;
-    double _verticalGroundspan;
-    double _verticalGroundspanScale;
-    int _viewStyle;
-    double _zoomScale;
-    VKAnimation *_zoomScaleAnimation;
-    BOOL _zooming;
+    }  _startPuckScreenPosition;
+    double  _startTime;
+    double  _startZoomScale;
+    BOOL  _successfullyStartedRouteLinePan;
+    VKTimedAnimation * _tapZoomAnimation;
+    double  _tracePlaybackSpeedMultiplier;
+    <VKTrackingCameraControllerDelegate> * _trackingDelegate;
+    double  _userZoomFocusStyleMaxZoomScale;
+    double  _userZoomFocusStyleMinZoomScale;
+    double  _userZoomFocusStyleZoomScale;
+    double  _verticalGroundspan;
+    double  _verticalGroundspanScale;
+    int  _viewStyle;
+    double  _zoomScale;
+    VKTimedAnimation * _zoomScaleAnimation;
+    BOOL  _zooming;
 }
 
 @property (nonatomic, readonly) BOOL canZoomIn;

@@ -3,13 +3,14 @@
  */
 
 @interface VMAccount : NSObject {
-    NSMutableDictionary *_cache;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    NSMutableArray *_voicemailSummaries;
+    NSMutableDictionary * _cache;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    NSMutableArray * _voicemailSummaries;
 }
 
 @property (readonly) NSString *identifier;
 
+- (void).cxx_destruct;
 - (id)_bucketSummary;
 - (void)_forceUpdateCache;
 - (unsigned int)_lockedCountOfVoicemailsWithFlags:(unsigned int)arg1 withoutFlags:(unsigned int)arg2;
@@ -53,6 +54,7 @@
 - (BOOL)passwordChangeRequiresEnteringOldPassword;
 - (void)progressiveDataLengthsForVoicemail:(id)arg1 expected:(unsigned int*)arg2 current:(unsigned int*)arg3;
 - (id)provisionalPassword;
+- (unsigned int)recentUnreadCount;
 - (void)retrieveDataForVoicemail:(id)arg1;
 - (void)retrieveGreeting;
 - (void)setGreetingType:(int)arg1 withData:(id)arg2 duration:(unsigned int)arg3;

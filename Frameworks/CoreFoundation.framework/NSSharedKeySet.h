@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSSharedKeySet : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
-    unsigned int _M;
-    double _c;
-    unsigned int _factor;
-    char *_g;
-    id *_keys;
-    unsigned int _numKey;
-    void *_rankTable;
-    unsigned int *_seeds;
-    unsigned char _select;
-    NSSharedKeySet *_subSharedKeySet;
+@interface NSSharedKeySet : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding> {
+    unsigned int  _M;
+    double  _c;
+    unsigned int  _factor;
+    char * _g;
+    id * _keys;
+    unsigned int  _numKey;
+    void * _rankTable;
+    unsigned int * _seeds;
+    unsigned char  _select;
+    NSSharedKeySet * _subSharedKeySet;
 }
 
 @property unsigned int M;
@@ -27,6 +27,7 @@
 @property (retain) NSSharedKeySet *subSharedKeySet;
 
 + (id)keySetWithKeys:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (unsigned int)M;
 - (id)allKeys;
@@ -39,7 +40,6 @@
 - (unsigned int)factor;
 - (void)finalize;
 - (char *)g;
-- (id)generateSubclassCode:(id)arg1 printChainOfKeySetIfPossible:(BOOL)arg2 printSpecialCode:(unsigned int)arg3;
 - (unsigned int)hash;
 - (unsigned int)indexForKey:(id)arg1;
 - (id)init;

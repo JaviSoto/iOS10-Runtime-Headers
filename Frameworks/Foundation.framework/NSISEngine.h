@@ -3,32 +3,33 @@
  */
 
 @interface NSISEngine : NSObject <NSISVariableDelegate> {
-    BOOL _accumulatingRemovals;
-    int _automaticOptimizationDisabledCount;
-    NSMapTable *_brokenConstraintNegativeErrors;
-    NSMapTable *_brokenConstraintPositiveErrors;
-    unsigned int _changeCountAtLastOptimization;
-    <NSISEngineDelegate> *_delegate;
-    int _engineDelegateCallsDisabledCount;
+    BOOL  _accumulatingRemovals;
+    int  _automaticOptimizationDisabledCount;
+    NSMapTable * _brokenConstraintNegativeErrors;
+    NSMapTable * _brokenConstraintPositiveErrors;
+    unsigned int  _changeCountAtLastOptimization;
+    <NSISEngineDelegate> * _delegate;
+    int  _engineDelegateCallsDisabledCount;
     struct CGSize { 
         float width; 
         float height; 
-    } _engineScalingCoefficients;
-    NSISVariable *_headForObjectiveRow;
-    struct __CFDictionary { } *_integralizationAdjustmentsForConstraintMarkers;
-    BOOL _lastOptimizationInvolvedIntegralization;
-    NSMutableArray *_pendingRemovals;
-    unsigned int _pivotCount;
-    NSMutableDictionary *_recordedOperations;
-    BOOL _revertsAfterUnsatisfiabilityHandler;
-    NSMapTable *_rows;
-    NSMapTable *_rowsCrossIndex;
-    BOOL _shouldIntegralize;
-    unsigned int _totalChangeCount;
-    id /* block */ _unsatisfiabilityHandler;
-    int _variableDelegateCallsDisabledCount;
-    NSMutableSet *_variablesWithIntegralizationViolations;
-    NSMutableArray *_variablesWithValueRestrictionViolations;
+    }  _engineScalingCoefficients;
+    NSISVariable * _headForObjectiveRow;
+    struct __CFDictionary { } * _integralizationAdjustmentsForConstraintMarkers;
+    BOOL  _lastOptimizationInvolvedIntegralization;
+    NSMutableArray * _pendingMarkerDelegates;
+    NSMutableArray * _pendingRemovals;
+    unsigned int  _pivotCount;
+    NSMutableDictionary * _recordedOperations;
+    BOOL  _revertsAfterUnsatisfiabilityHandler;
+    NSMapTable * _rows;
+    NSMapTable * _rowsCrossIndex;
+    BOOL  _shouldIntegralize;
+    unsigned int  _totalChangeCount;
+    id /* block */  _unsatisfiabilityHandler;
+    int  _variableDelegateCallsDisabledCount;
+    NSMutableSet * _variablesWithIntegralizationViolations;
+    NSMutableArray * _variablesWithValueRestrictionViolations;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -67,6 +68,7 @@
 - (void)constraintDidChangeSuchThatMarker:(id)arg1 shouldBeReplacedByMarkerPlusDelta:(float)arg2;
 - (id)constraints;
 - (id)constraintsAffectingValueOfVariable:(id)arg1;
+- (BOOL)containsConstraintWithMarker:(id)arg1;
 - (id)createExpressionBySubstitutingForRowHeadVariablesInExpression:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

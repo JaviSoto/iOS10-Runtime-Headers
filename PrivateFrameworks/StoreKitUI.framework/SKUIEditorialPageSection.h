@@ -3,11 +3,11 @@
  */
 
 @interface SKUIEditorialPageSection : SKUIStorePageSection {
-    SKUIColorScheme *_colorScheme;
-    SKUIEditorialLayout *_editorialLayout;
-    BOOL _hasValidColorScheme;
-    BOOL _isExpanded;
-    SKUIViewElementLayoutContext *_layoutContext;
+    SKUIColorScheme * _colorScheme;
+    SKUIEditorialLayout * _editorialLayout;
+    BOOL  _hasValidColorScheme;
+    BOOL  _isExpanded;
+    SKUIViewElementLayoutContext * _layoutContext;
 }
 
 @property (nonatomic, readonly) SKUIEditorialComponent *pageComponent;

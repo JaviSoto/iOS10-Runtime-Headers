@@ -6,9 +6,9 @@
     struct { 
         unsigned int macAddress : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    long long _macAddress;
-    int _sessionIdentifier;
+    }  _has;
+    long long  _macAddress;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasMacAddress;

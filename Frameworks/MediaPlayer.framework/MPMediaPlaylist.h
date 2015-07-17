@@ -3,8 +3,8 @@
  */
 
 @interface MPMediaPlaylist : MPMediaItemCollection {
-    NSArray *_representativeArtists;
-    MPMediaQuery *_seedTracksQuery;
+    NSArray * _representativeArtists;
+    MPMediaQuery * _seedTracksQuery;
 }
 
 @property (nonatomic, readonly) NSString *name;

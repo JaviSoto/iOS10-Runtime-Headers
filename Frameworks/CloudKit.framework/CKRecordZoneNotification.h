@@ -3,7 +3,7 @@
  */
 
 @interface CKRecordZoneNotification : CKNotification <NSSecureCoding> {
-    CKRecordZoneID *_recordZoneID;
+    CKRecordZoneID * _recordZoneID;
 }
 
 @property (nonatomic, copy) CKRecordZoneID *recordZoneID;

@@ -3,25 +3,26 @@
  */
 
 @interface AFUIRequestOptions : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _acousticIdEnabled;
-    NSString *_appBundleIdentifier;
-    NSString *_bluetoothDeviceAddress;
-    AFBulletin *_bulletin;
-    NSDictionary *_continuityInfo;
-    int _directActionEvent;
-    double _expectedTimestamp;
-    NSNumber *_homeButtonUpFromBeep;
-    BOOL _initialBringUp;
-    NSDictionary *_messagesDirectActionContext;
-    SASPronunciationContext *_pronunciationContext;
-    BOOL _pronunciationRequest;
-    int _requestSource;
-    NSString *_serverCommandId;
-    NSURL *_speechFileURL;
-    NSString *_text;
-    double _timestamp;
-    BOOL _useAutomaticEndpointing;
-    BOOL _useStreamingDictation;
+    BOOL  _acousticIdEnabled;
+    NSString * _appBundleIdentifier;
+    NSString * _bluetoothDeviceAddress;
+    AFBulletin * _bulletin;
+    NSDictionary * _continuityInfo;
+    int  _directActionEvent;
+    double  _expectedTimestamp;
+    NSNumber * _homeButtonUpFromBeep;
+    BOOL  _initialBringUp;
+    NSDictionary * _messagesDirectActionContext;
+    SASPronunciationContext * _pronunciationContext;
+    BOOL  _pronunciationRequest;
+    AFRequestInfo * _requestInfo;
+    int  _requestSource;
+    NSString * _serverCommandId;
+    NSURL * _speechFileURL;
+    NSString * _text;
+    double  _timestamp;
+    BOOL  _useAutomaticEndpointing;
+    BOOL  _useStreamingDictation;
 }
 
 @property (nonatomic) BOOL acousticIdEnabled;
@@ -38,6 +39,7 @@
 @property (nonatomic, copy) NSDictionary *messagesDirectActionContext;
 @property (nonatomic, retain) SASPronunciationContext *pronunciationContext;
 @property (getter=isPronunciationRequest, nonatomic) BOOL pronunciationRequest;
+@property (nonatomic, retain) AFRequestInfo *requestInfo;
 @property (nonatomic) int requestSource;
 @property (nonatomic, copy) NSString *serverCommandId;
 @property (nonatomic, copy) NSURL *speechFileURL;
@@ -70,6 +72,7 @@
 - (BOOL)isPronunciationRequest;
 - (id)messagesDirectActionContext;
 - (id)pronunciationContext;
+- (id)requestInfo;
 - (int)requestSource;
 - (id)serverCommandId;
 - (void)setAcousticIdEnabled:(BOOL)arg1;
@@ -84,6 +87,7 @@
 - (void)setMessagesDirectActionContext:(id)arg1;
 - (void)setPronunciationContext:(id)arg1;
 - (void)setPronunciationRequest:(BOOL)arg1;
+- (void)setRequestInfo:(id)arg1;
 - (void)setRequestSource:(int)arg1;
 - (void)setServerCommandId:(id)arg1;
 - (void)setSpeechFileURL:(id)arg1;

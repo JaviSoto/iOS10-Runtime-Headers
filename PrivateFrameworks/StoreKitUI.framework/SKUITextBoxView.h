@@ -3,31 +3,31 @@
  */
 
 @interface SKUITextBoxView : UIControl {
-    SKUIColorScheme *_colorScheme;
+    SKUIColorScheme * _colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UILabel *_moreButtonLabel;
-    int _numberOfVisibleLines;
-    float _rating;
-    UIImageView *_ratingImageView;
-    UILabel *_ratingLabel;
-    UILabel *_subtitleLabel;
-    struct __CTFrame { } *_textFrame;
+    }  _contentInsets;
+    UILabel * _moreButtonLabel;
+    int  _numberOfVisibleLines;
+    float  _rating;
+    UIImageView * _ratingImageView;
+    UILabel * _ratingLabel;
+    UILabel * _subtitleLabel;
+    struct __CTFrame { } * _textFrame;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _titleInsets;
-    UILabel *_titleLabel;
-    struct __CTFrame { } *_titleTextFrame;
-    int _truncationStyle;
-    struct __CTLine { } *_truncationToken;
-    NSString *_underlyingText;
+    }  _titleInsets;
+    UILabel * _titleLabel;
+    struct __CTFrame { } * _titleTextFrame;
+    int  _truncationStyle;
+    struct __CTLine { } * _truncationToken;
+    NSString * _underlyingText;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

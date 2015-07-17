@@ -3,24 +3,24 @@
  */
 
 @interface TSUDownloadSession : NSObject {
-    NSProgress *_NSProgress;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_group> *_completionGroup;
-    <TSUDownloadSessionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _didFinishInitialization;
-    NSError *_error;
-    NSObject<OS_dispatch_group> *_initializationGroup;
-    BOOL _isCancelled;
-    double _lastProgressValue;
-    NSURLResponse *_lastResponse;
-    TSUDownloadManager *_manager;
-    TSUBasicProgress *_progress;
-    NSMutableSet *_remainingTasks;
-    NSString *_sessionDescription;
-    NSMutableDictionary *_taskProgress;
-    long long _totalBytesDownloaded;
-    long long _totalBytesExpectedToBeDownloaded;
+    NSProgress * _NSProgress;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_group> * _completionGroup;
+    <TSUDownloadSessionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _didFinishInitialization;
+    NSError * _error;
+    NSObject<OS_dispatch_group> * _initializationGroup;
+    BOOL  _isCancelled;
+    double  _lastProgressValue;
+    NSURLResponse * _lastResponse;
+    TSUDownloadManager * _manager;
+    TSUBasicProgress * _progress;
+    NSMutableSet * _remainingTasks;
+    NSString * _sessionDescription;
+    NSMutableDictionary * _taskProgress;
+    long long  _totalBytesDownloaded;
+    long long  _totalBytesExpectedToBeDownloaded;
 }
 
 @property (nonatomic, readonly) NSProgress *NSProgress;

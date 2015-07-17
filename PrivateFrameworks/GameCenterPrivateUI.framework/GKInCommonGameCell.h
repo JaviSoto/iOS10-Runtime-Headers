@@ -3,7 +3,7 @@
  */
 
 @interface GKInCommonGameCell : GKPlayerGameCell {
-    GKGameRecord *_localPlayerGameRecord;
+    GKGameRecord * _localPlayerGameRecord;
 }
 
 @property (nonatomic, retain) GKGameRecord *localPlayerGameRecord;

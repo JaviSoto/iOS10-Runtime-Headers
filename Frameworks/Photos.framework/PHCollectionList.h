@@ -3,19 +3,19 @@
  */
 
 @interface PHCollectionList : PHCollection {
-    id /* block */ _childCollectionsSortingComparator;
-    int _collectionListSubtype;
-    int _collectionListType;
-    NSArray *_collections;
-    NSDate *_endDate;
-    unsigned int _estimatedChildCollectionCount;
-    NSArray *_localizedLocationNames;
-    NSString *_localizedTitle;
-    int _plAlbumKind;
-    PHQuery *_query;
-    NSDate *_startDate;
-    NSString *_transientIdentifier;
-    unsigned int _unreadAssetCollectionsCount;
+    id /* block */  _childCollectionsSortingComparator;
+    int  _collectionListSubtype;
+    int  _collectionListType;
+    NSArray * _collections;
+    NSDate * _endDate;
+    unsigned int  _estimatedChildCollectionCount;
+    NSArray * _localizedLocationNames;
+    NSString * _localizedTitle;
+    int  _plAlbumKind;
+    PHQuery * _query;
+    NSDate * _startDate;
+    NSString * _transientIdentifier;
+    unsigned int  _unreadAssetCollectionsCount;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ childCollectionsSortingComparator;

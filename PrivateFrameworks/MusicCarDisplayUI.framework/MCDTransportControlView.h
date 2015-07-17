@@ -3,12 +3,12 @@
  */
 
 @interface MCDTransportControlView : UIView {
-    UIButton *_fastForwardButton;
-    UIButton *_leftButton;
-    int _mode;
-    UIImage *_pauseImage;
-    UIButton *_playPauseButton;
-    BOOL _progressActive;
+    UIButton * _fastForwardButton;
+    UIButton * _leftButton;
+    int  _mode;
+    UIImage * _pauseImage;
+    UIButton * _playPauseButton;
+    BOOL  _progressActive;
 }
 
 @property (nonatomic, readonly) UIImage *defaultFastForwardButtonImage;

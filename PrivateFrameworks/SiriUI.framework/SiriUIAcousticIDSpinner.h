@@ -3,10 +3,10 @@
  */
 
 @interface SiriUIAcousticIDSpinner : UIView {
-    <SiriUIAcousticIDSpinnerDelegate> *_delegate;
-    UIImageView *_musicNoteView;
-    UIImageView *_spinnerView;
-    UIVisualEffectView *_vibrancyView;
+    <SiriUIAcousticIDSpinnerDelegate> * _delegate;
+    UIImageView * _musicNoteView;
+    UIImageView * _spinnerView;
+    UIVisualEffectView * _vibrancyView;
 }
 
 @property (nonatomic) <SiriUIAcousticIDSpinnerDelegate> *delegate;

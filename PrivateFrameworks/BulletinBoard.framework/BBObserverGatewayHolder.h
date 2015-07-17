@@ -3,14 +3,14 @@
  */
 
 @interface BBObserverGatewayHolder : NSObject {
-    unsigned int _feed;
-    BBObserverClientProxy *_gateway;
-    unsigned int _gatewayPriority;
-    NSString *_name;
-    NSMutableSet *_observersByFeed;
-    NSObject<OS_dispatch_queue> *_queue;
-    PCPersistentTimer *_timeoutTimer;
-    NSMutableArray *_timeouts;
+    unsigned int  _feed;
+    BBObserverClientProxy * _gateway;
+    unsigned int  _gatewayPriority;
+    NSString * _name;
+    NSMutableSet * _observersByFeed;
+    NSObject<OS_dispatch_queue> * _queue;
+    PCPersistentTimer * _timeoutTimer;
+    NSMutableArray * _timeouts;
 }
 
 @property (nonatomic) unsigned int feed;

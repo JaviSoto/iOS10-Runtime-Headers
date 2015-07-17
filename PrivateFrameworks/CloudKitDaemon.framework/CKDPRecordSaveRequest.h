@@ -3,21 +3,21 @@
  */
 
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying> {
-    CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
-    NSMutableArray *_conflictLosersToResolves;
-    NSString *_etag;
-    NSMutableArray *_fieldsToDeleteIfExistOnMerges;
+    CKDPRecordSaveRequestConflictLoserUpdate * _conflictLoserUpdate;
+    NSMutableArray * _conflictLosersToResolves;
+    NSString * _etag;
+    NSMutableArray * _fieldsToDeleteIfExistOnMerges;
     struct { 
         unsigned int saveSemantics : 1; 
         unsigned int merge : 1; 
-    } _has;
-    BOOL _merge;
-    CKDPRecord *_record;
-    NSString *_recordProtectionInfoTag;
-    int _saveSemantics;
-    NSString *_shareEtag;
-    CKDPRecordSaveRequestShareIdUpdate *_shareIDUpdate;
-    NSString *_zoneProtectionInfoTag;
+    }  _has;
+    BOOL  _merge;
+    CKDPRecord * _record;
+    NSString * _recordProtectionInfoTag;
+    int  _saveSemantics;
+    NSString * _shareEtag;
+    CKDPRecordSaveRequestShareIdUpdate * _shareIDUpdate;
+    NSString * _zoneProtectionInfoTag;
 }
 
 @property (nonatomic, retain) CKDPRecordSaveRequestConflictLoserUpdate *conflictLoserUpdate;

@@ -3,8 +3,8 @@
  */
 
 @interface DATrustHandler : NSObject {
-    <DATrustHandlerDelegate> *_delegate;
-    NSMutableDictionary *_haveWarnedAboutCertDict;
+    <DATrustHandlerDelegate> * _delegate;
+    NSMutableDictionary * _haveWarnedAboutCertDict;
 }
 
 @property (nonatomic) <DATrustHandlerDelegate> *delegate;

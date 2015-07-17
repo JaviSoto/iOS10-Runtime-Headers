@@ -3,12 +3,15 @@
  */
 
 @interface UIInputViewController : UIViewController <UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
-    BOOL _alignsToContentViewController;
-    NSString *_primaryLanguage;
-    NSObject<UITextDocumentProxy> *_textDocumentProxy;
+    BOOL  __isExtension;
+    BOOL  _alignsToContentViewController;
+    NSString * _primaryLanguage;
+    <UITextDocumentProxy> * _textDocumentProxy;
 }
 
 @property (nonatomic) BOOL _alignsToContentViewController;
+@property (nonatomic) BOOL _isExtension;
+@property (nonatomic, readonly) BOOL _isPlaceholder;
 @property (nonatomic, readonly) UIKeyboard *_keyboard;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -16,7 +19,7 @@
 @property (nonatomic, retain) UIInputView *inputView;
 @property (nonatomic, copy) NSString *primaryLanguage;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSObject<UITextDocumentProxy> *textDocumentProxy;
+@property (nonatomic, readonly) <UITextDocumentProxy> *textDocumentProxy;
 
 + (BOOL)_requiresProxyInterface;
 
@@ -24,6 +27,8 @@
 - (id)_compatibilityController;
 - (void)_didResetDocumentState;
 - (id)_extensionContext;
+- (BOOL)_isExtension;
+- (BOOL)_isPlaceholder;
 - (id)_keyboard;
 - (id)_proxyInterface;
 - (void)_setExtensionContext:(id)arg1;
@@ -50,6 +55,7 @@
 - (void)setPrimaryLanguage:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)set_alignsToContentViewController:(BOOL)arg1;
+- (void)set_isExtension:(BOOL)arg1;
 - (void)textDidChange:(id)arg1;
 - (id)textDocumentProxy;
 - (void)textWillChange:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartLayoutItem : NSObject <TSCHUnretainedParent> {
-    NSArray *mChildren;
+    NSArray * mChildren;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,22 +13,22 @@
             float width; 
             float height; 
         } size; 
-    } mDrawingRectCache;
-    BOOL mDrawingRectCacheValid;
+    }  mDrawingRectCache;
+    BOOL  mDrawingRectCacheValid;
     struct CGSize { 
         float width; 
         float height; 
-    } mLayoutSize;
-    BOOL mLayoutSizeSet;
+    }  mLayoutSize;
+    BOOL  mLayoutSizeSet;
     struct CGSize { 
         float width; 
         float height; 
-    } mMinSizeCache;
-    BOOL mMinSizeCacheValid;
+    }  mMinSizeCache;
+    BOOL  mMinSizeCacheValid;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOffset;
+    }  mOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -38,10 +38,10 @@
             float width; 
             float height; 
         } size; 
-    } mOverhangRectCache;
-    BOOL mOverhangRectCacheValid;
-    TSCHChartLayoutItem *mParent;
-    BOOL mTreeBuilt;
+    }  mOverhangRectCache;
+    BOOL  mOverhangRectCacheValid;
+    TSCHChartLayoutItem * mParent;
+    BOOL  mTreeBuilt;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chartInfo;

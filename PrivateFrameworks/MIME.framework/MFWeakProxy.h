@@ -3,9 +3,9 @@
  */
 
 @interface MFWeakProxy : NSProxy {
-    unsigned int _hash;
-    Class _objectClass;
-    MFWeakReferenceHolder *_weakRef;
+    unsigned int  _hash;
+    Class  _objectClass;
+    MFWeakReferenceHolder * _weakRef;
 }
 
 + (id)weakProxyForObject:(id)arg1;

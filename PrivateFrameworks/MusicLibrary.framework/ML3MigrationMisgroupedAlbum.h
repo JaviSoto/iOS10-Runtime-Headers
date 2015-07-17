@@ -3,9 +3,9 @@
  */
 
 @interface ML3MigrationMisgroupedAlbum : NSObject {
-    long long _albumArtistPID;
-    long long _albumPID;
-    NSMutableArray *_misgroupedTracks;
+    long long  _albumArtistPID;
+    long long  _albumPID;
+    NSMutableArray * _misgroupedTracks;
 }
 
 @property (nonatomic, readonly) long long albumArtistPID;

@@ -3,29 +3,29 @@
  */
 
 @interface MPDetailScrubController : NSObject {
-    float _accumulatedDelta;
+    float  _accumulatedDelta;
     struct CGPoint { 
         float x; 
         float y; 
-    } _beginLocationInView;
-    int _currentScrubSpeed;
-    float _currentValue;
-    <MPDetailScrubControllerDelegate> *_delegate;
-    BOOL _detailedScrubbingEnabled;
-    BOOL _didBeginTracking;
-    double _duration;
-    BOOL _isTracking;
+    }  _beginLocationInView;
+    int  _currentScrubSpeed;
+    float  _currentValue;
+    <MPDetailScrubControllerDelegate> * _delegate;
+    BOOL  _detailedScrubbingEnabled;
+    BOOL  _didBeginTracking;
+    double  _duration;
+    BOOL  _isTracking;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastCommittedLocationInView;
-    BOOL _needsCommit;
+    }  _lastCommittedLocationInView;
+    BOOL  _needsCommit;
     struct CGPoint { 
         float x; 
         float y; 
-    } _previousLocationInView;
-    UIControl<MPDetailedScrubbing> *_scrubbingControl;
-    float _scrubbingVerticalRange;
+    }  _previousLocationInView;
+    UIControl<MPDetailedScrubbing> * _scrubbingControl;
+    float  _scrubbingVerticalRange;
 }
 
 @property (nonatomic, readonly) int currentScrubSpeed;

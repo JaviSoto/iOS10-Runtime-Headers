@@ -3,10 +3,10 @@
  */
 
 @interface BWThumbnailGeneratorNode : BWNode {
-    struct OpaqueVTImageRotationSession { } *_imageRotationSession;
-    struct OpaqueVTPixelTransferSession { } *_pixelTransferSession;
-    BOOL _rotateIfPortrait;
-    int _rotationDegrees;
+    struct OpaqueVTImageRotationSession { } * _imageRotationSession;
+    struct OpaqueVTPixelTransferSession { } * _pixelTransferSession;
+    BOOL  _rotateIfPortrait;
+    int  _rotationDegrees;
 }
 
 + (void)initialize;

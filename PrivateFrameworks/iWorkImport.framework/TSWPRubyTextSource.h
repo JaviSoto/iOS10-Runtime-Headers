@@ -9,25 +9,25 @@
         struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
             unsigned int *__first_; 
         } __end_cap_; 
-    } _bidiCharIndexes;
+    }  _bidiCharIndexes;
     struct vector<bool, std::__1::allocator<bool> > { 
         unsigned long *__begin_; 
         unsigned int __size_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
             unsigned long __first_; 
         } __cap_alloc_; 
-    } _bidiDirectionMarkIsRTLVector;
-    unsigned int _length;
-    TSWPRangeMap *_rangeMap;
-    <TSWPTextSource> *_source;
+    }  _bidiDirectionMarkIsRTLVector;
+    unsigned int  _length;
+    TSWPRangeMap * _rangeMap;
+    <TSWPTextSource> * _source;
     struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
         unsigned int *__begin_; 
         unsigned int *__end_; 
         struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
             unsigned int *__first_; 
         } __end_cap_; 
-    } _spaceCharIndexes;
-    unsigned int _storageLength;
+    }  _spaceCharIndexes;
+    unsigned int  _storageLength;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,7 +37,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)adjustRangesByDelta:(int)arg1;
+- (BOOL)adjustRangesByDelta:(int)arg1 startingAt:(unsigned int)arg2;
 - (id)attachmentAtCharIndex:(unsigned int)arg1;
 - (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
 - (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL)arg2 attributesTable:(/* Warning: unhandled array encoding: '[19@]' */ id)arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;

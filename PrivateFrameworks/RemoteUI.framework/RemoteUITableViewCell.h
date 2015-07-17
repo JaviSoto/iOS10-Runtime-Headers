@@ -3,14 +3,14 @@
  */
 
 @interface RemoteUITableViewCell : UITableViewCell {
-    UIColor *_accessoryColor;
-    UIButton *_detailLinkButton;
-    id /* block */ _detailLinkHandler;
-    BOOL _forceFullSizeDetailLabel;
-    UIImageView *_invalidRowView;
-    BOOL _leftAlignDetailLabel;
-    int _remoteUIAccessoryType;
-    UIView *_remoteUIAccessoryView;
+    UIColor * _accessoryColor;
+    UIButton * _detailLinkButton;
+    id /* block */  _detailLinkHandler;
+    BOOL  _forceFullSizeDetailLabel;
+    UIImageView * _invalidRowView;
+    BOOL  _leftAlignDetailLabel;
+    int  _remoteUIAccessoryType;
+    UIView * _remoteUIAccessoryView;
 }
 
 @property (nonatomic) BOOL forceFullSizeDetailLabel;

@@ -3,8 +3,8 @@
  */
 
 @interface BRCFSDownloader : BRCFSSchedulerBase <BRCModule> {
-    BRCDeadlineScheduler *_downloadsDeadlineScheduler;
-    BOOL _initialKickDone;
+    BRCDeadlineScheduler * _downloadsDeadlineScheduler;
+    BOOL  _initialKickDone;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,15 +19,18 @@
 - (void)_close;
 - (void)_deleteThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)_fetchStamps:(struct throttle_stamps { unsigned int x1; int x2; long long x3; long long x4; long long x5; }*)arg1 now:(long long)arg2 throttle:(id)arg3 throttleID:(long long)arg4 kind:(int)arg5 etag:(id)arg6;
-- (void)_finishedDownloading:(id)arg1 kind:(int)arg2 operationID:(id)arg3 error:(id)arg4;
+- (void)_finishDownloadCleanup:(id)arg1;
+- (void)_finishedDownload:(id)arg1 kind:(int)arg2 operationID:(id)arg3 error:(id)arg4;
 - (BOOL)_hasLosersToDelete:(id)arg1 serverItem:(id)arg2;
-- (void)_retriedEntry:(id)arg1 throttle:(id)arg2 operationID:(id)arg3 skipRetry:(BOOL)arg4;
+- (void)_postponeLoserForWinner:(long long)arg1 etag:(id)arg2;
+- (void)_retriedDownload:(id)arg1 throttle:(id)arg2 operationID:(id)arg3 skipRetry:(BOOL)arg4;
 - (id)_sanitizeRecord:(id)arg1;
 - (void)_schedule;
 - (void)_sendContentsBatch:(id)arg1 maxRecordsCount:(unsigned int)arg2;
 - (void)_sendLosersBatch:(id)arg1 maxRecordsCount:(unsigned int)arg2;
 - (void)_sendThumbnailsBatch:(id)arg1 maxRecordsCount:(unsigned int)arg2;
-- (id)_zoneForEntry:(id)arg1 kind:(int)arg2 operationID:(id)arg3;
+- (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3;
+- (id)_zoneForDownload:(id)arg1 kind:(int)arg2 operationID:(id)arg3;
 - (void)addAliasItem:(id)arg1 toDownloadingItem:(id)arg2;
 - (BOOL)applyLosersToItem:(id)arg1 serverItem:(id)arg2 atURL:(id)arg3 applySchedulerState:(int*)arg4;
 - (BOOL)applyThumbnailToItem:(id)arg1 serverItem:(id)arg2 atURL:(id)arg3 applySchedulerState:(int*)arg4;
@@ -44,14 +47,16 @@
 - (id)initWithAccountSession:(id)arg1;
 - (BOOL)isDownloadingItem:(id)arg1;
 - (BOOL)makeContentLive:(id)arg1;
+- (void)rescheduleThrottlesForPendingDiskSpaceWithAvailableSpace:(unsigned long long)arg1;
 - (void)rescheduleThrottlesPendingInitialSyncInZone:(id)arg1;
+- (void)rescheduleThrottlesPendingWinnerForItem:(id)arg1;
 - (void)resume;
 - (void)scheduleContentDownloadForItem:(id)arg1 serverItem:(id)arg2;
 - (void)scheduleLosersDownloadForItem:(id)arg1 serverItem:(id)arg2 purgeStaleEntries:(BOOL)arg3 applySchedulerState:(int*)arg4;
 - (void)scheduleThumbnailDownloadForItem:(id)arg1 serverItem:(id)arg2 applySchedulerState:(int*)arg3;
-- (void)sendBatchForSyncContext:(id)arg1 maxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (BOOL)shouldScheduleLosersEvictionForItem:(id)arg1;
 - (void)suspend;
+- (void)transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completionBlock:(id /* block */)arg4;
 - (void)updateContentDownloadForMetaOnlyChange:(id)arg1 fromEtag:(id)arg2 toEtag:(id)arg3;
 
 @end

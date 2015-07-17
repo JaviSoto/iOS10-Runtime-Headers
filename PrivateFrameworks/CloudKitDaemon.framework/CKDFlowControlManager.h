@@ -3,10 +3,10 @@
  */
 
 @interface CKDFlowControlManager : NSObject {
-    unsigned int _defaultBudget;
-    double _defaultRegeneration;
-    double _maximumThrottleTime;
-    NSMutableDictionary *_operationFlowControls;
+    unsigned int  _defaultBudget;
+    double  _defaultRegeneration;
+    double  _maximumThrottleTime;
+    NSMutableDictionary * _operationFlowControls;
 }
 
 @property (nonatomic) unsigned int defaultBudget;

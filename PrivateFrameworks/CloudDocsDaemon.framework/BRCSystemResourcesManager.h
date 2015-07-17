@@ -3,24 +3,24 @@
  */
 
 @interface BRCSystemResourcesManager : NSObject <BRReachabilityObserver> {
-    NSHashTable *_appListObservers;
-    BOOL _invalidated;
-    BOOL _isNetworkReachable;
-    NSObject<OS_dispatch_source> *_isNetworkReachableTimer;
-    NSMutableDictionary *_lowDiskDict;
-    NSMutableSet *_lowDiskSet;
-    NSObject<OS_dispatch_source> *_lowDiskSource;
-    NSObject<OS_dispatch_source> *_lowDiskTimer;
-    NSHashTable *_lowMemoryObservers;
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    BOOL _powerLevelOK;
-    NSObject<OS_dispatch_source> *_powerLevelOKTimer;
-    int _powerNotifyToken;
-    NSHashTable *_powerObservers;
-    NSMapTable *_processObservers;
-    BRReachabilityMonitor *_reachabilityMonitor;
-    NSHashTable *_reachabilityObservers;
+    NSHashTable * _appListObservers;
+    BOOL  _invalidated;
+    BOOL  _isNetworkReachable;
+    NSObject<OS_dispatch_source> * _isNetworkReachableTimer;
+    NSMutableDictionary * _lowDiskDict;
+    NSMutableSet * _lowDiskSet;
+    NSObject<OS_dispatch_source> * _lowDiskSource;
+    NSObject<OS_dispatch_source> * _lowDiskTimer;
+    NSHashTable * _lowMemoryObservers;
+    NSObject<OS_dispatch_source> * _memoryNotificationEventSource;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    BOOL  _powerLevelOK;
+    NSObject<OS_dispatch_source> * _powerLevelOKTimer;
+    int  _powerNotifyToken;
+    NSHashTable * _powerObservers;
+    NSMapTable * _processObservers;
+    BRReachabilityMonitor * _reachabilityMonitor;
+    NSHashTable * _reachabilityObservers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

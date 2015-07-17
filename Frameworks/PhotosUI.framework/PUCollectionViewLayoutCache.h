@@ -3,15 +3,15 @@
  */
 
 @interface PUCollectionViewLayoutCache : UICollectionViewLayout {
-    BOOL _cachesResults;
-    NSMutableDictionary *_decorationViewLayoutAttributesByKind;
-    NSMutableDictionary *_itemLayoutAttributesByIndexPath;
-    <PUCollectionViewLayoutProvider> *_layoutProvider;
+    BOOL  _cachesResults;
+    NSMutableDictionary * _decorationViewLayoutAttributesByKind;
+    NSMutableDictionary * _itemLayoutAttributesByIndexPath;
+    <PUCollectionViewLayoutProvider> * _layoutProvider;
     struct { 
         unsigned int hasSupplementaryLayoutAttributes : 1; 
         unsigned int hasDecorationLayoutAttributes : 1; 
-    } _layoutProviderFlags;
-    NSMutableDictionary *_supplementaryViewLayoutAttributesByKind;
+    }  _layoutProviderFlags;
+    NSMutableDictionary * _supplementaryViewLayoutAttributesByKind;
 }
 
 @property (nonatomic) BOOL cachesResults;

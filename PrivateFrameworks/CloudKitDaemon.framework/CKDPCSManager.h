@@ -3,25 +3,27 @@
  */
 
 @interface CKDPCSManager : NSObject <CKDProtocolTranslatorIdentityDelegate> {
-    NSMutableDictionary *_backgroundRecordCacheByPrivateZoneID;
-    CKDPCSCache *_backgroundShareCache;
-    CKDPCSCache *_backgroundZoneCache;
-    CKDClientContext *_context;
-    NSString *_currentAccountIdentifier;
-    NSOperationQueue *_operationQueue;
-    CKDPCSFetchAggregator *_pcsFetchAggregator;
-    NSMutableDictionary *_recordCacheByPrivateZoneID;
-    NSString *_serviceName;
-    CKDPCSCache *_shareCache;
-    struct _PCSIdentityData { } *_sharingIdentity;
-    NSData *_userIdentityFingerprint;
-    CKDPCSCache *_zoneCache;
+    NSMutableDictionary * _backgroundRecordCacheByPrivateZoneID;
+    CKDPCSCache * _backgroundShareCache;
+    CKDPCSCache * _backgroundZoneCache;
+    CKDClientContext * _context;
+    <NSObject> * _contextObserver;
+    NSString * _currentAccountIdentifier;
+    NSOperationQueue * _operationQueue;
+    CKDPCSFetchAggregator * _pcsFetchAggregator;
+    NSMutableDictionary * _recordCacheByPrivateZoneID;
+    NSString * _serviceName;
+    CKDPCSCache * _shareCache;
+    struct _PCSIdentityData { } * _sharingIdentity;
+    NSData * _userIdentityFingerprint;
+    CKDPCSCache * _zoneCache;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *backgroundRecordCacheByPrivateZoneID;
 @property (nonatomic, retain) CKDPCSCache *backgroundShareCache;
 @property (nonatomic, retain) CKDPCSCache *backgroundZoneCache;
 @property (nonatomic, readonly) CKDClientContext *context;
+@property (nonatomic, retain) <NSObject> *contextObserver;
 @property (retain) NSString *currentAccountIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -38,6 +40,9 @@
 
 - (void).cxx_destruct;
 - (struct _OpaquePCSShareProtection { }*)_addPublicSharingIdentityToSharePCS:(struct _OpaquePCSShareProtection { }*)arg1 withError:(id*)arg2;
+- (id)_addServiceIdentitiesOfType:(id)arg1 toSet:(struct _PCSIdentitySetData { }*)arg2 fromSet:(struct _PCSIdentitySetData { }*)arg3 markCurrent:(BOOL)arg4;
+- (struct _PCSIdentitySetData { }*)_createIdentitySetByAddingLiverpoolIdentity:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
+- (struct _PCSIdentitySetData { }*)_createInMemoryIdentitySetForService:(id)arg1 error:(id*)arg2;
 - (void)_fetchPCSForRecordWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
 - (void)_fetchPCSForShareWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
 - (void)_fetchPCSForZoneWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
@@ -47,7 +52,9 @@
 - (void)_handleShareFetchedFromServer:(id)arg1 withID:(id)arg2 forCache:(id)arg3 operation:(id)arg4 error:(id)arg5;
 - (id)_newPCSRecordCache;
 - (void)_saveNewPCSOnDefaultZone:(id)arg1 operation:(id)arg2 cache:(id)arg3;
+- (BOOL)_saveZoneToServer:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 operation:(id)arg3 completion:(id /* block */)arg4;
 - (id)_serviceNameForContainerID:(id)arg1;
+- (BOOL)_zonePCSNeedsUpdate:(struct _OpaquePCSShareProtection { }*)arg1;
 - (id)addSelfIdentityToPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (BOOL)addSharePCS:(struct _OpaquePCSShareProtection { }*)arg1 toRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2 error:(id*)arg3;
 - (BOOL)addSharePCS:(struct _OpaquePCSShareProtection { }*)arg1 toRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2 permission:(unsigned int)arg3 error:(id*)arg4;
@@ -57,6 +64,7 @@
 - (id)backgroundZoneCache;
 - (void)clearPCSCaches;
 - (id)context;
+- (id)contextObserver;
 - (id)copyCurrentPublicIdentityWithError:(id*)arg1;
 - (struct _PCSIdentitySetData { }*)copyServiceIdentityWithError:(id*)arg1;
 - (struct _PCSPublicIdentityData { }*)createPublicIdentityFromData:(id)arg1 error:(id*)arg2;
@@ -107,6 +115,7 @@
 - (void)setBackgroundRecordCacheByPrivateZoneID:(id)arg1;
 - (void)setBackgroundShareCache:(id)arg1;
 - (void)setBackgroundZoneCache:(id)arg1;
+- (void)setContextObserver:(id)arg1;
 - (void)setCurrentAccountIdentifier:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setPCSData:(id)arg1 forFetchedRecordID:(id)arg2 withScope:(int)arg3;
@@ -123,6 +132,8 @@
 - (struct _PCSIdentityData { }*)sharingIdentity;
 - (id)sharingIdentityDataFromPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)unwrapAssetKey:(id)arg1 withRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2 withError:(id*)arg3;
+- (id)updatePCSIdentityAndRollKey:(struct _OpaquePCSShareProtection { }*)arg1;
+- (void)updateZonePCSIfNeeded:(id)arg1 operation:(id)arg2 completion:(id /* block */)arg3;
 - (id)userIdentityFingerprint;
 - (id)wrapAssetKey:(id)arg1 withRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2 withError:(id*)arg3;
 - (id)zoneCache;

@@ -3,18 +3,18 @@
  */
 
 @interface PUMapAnnotationQuadtree : NSObject {
-    PUMapAnnotationQuadtree *_00;
-    PUMapAnnotationQuadtree *_01;
-    PUMapAnnotationQuadtree *_10;
-    PUMapAnnotationQuadtree *_11;
-    PUMapAnnotationQuadtreeAddress *_address;
-    <MKAnnotation><NSCopying> *_aggregateAnnotation;
-    int _aggregationCount;
-    <PUMapAnnotationQuadtreeDataSource> *_dataSource;
-    double _latitudeSum;
-    NSMutableArray *_leafAnnotations;
-    double _longitudeSum;
-    <MKAnnotation><NSCopying> *_primaryAnnotation;
+    PUMapAnnotationQuadtree * _00;
+    PUMapAnnotationQuadtree * _01;
+    PUMapAnnotationQuadtree * _10;
+    PUMapAnnotationQuadtree * _11;
+    PUMapAnnotationQuadtreeAddress * _address;
+    <MKAnnotation><NSCopying> * _aggregateAnnotation;
+    int  _aggregationCount;
+    <PUMapAnnotationQuadtreeDataSource> * _dataSource;
+    double  _latitudeSum;
+    NSMutableArray * _leafAnnotations;
+    double  _longitudeSum;
+    <MKAnnotation><NSCopying> * _primaryAnnotation;
 }
 
 @property (nonatomic) <PUMapAnnotationQuadtreeDataSource> *dataSource;

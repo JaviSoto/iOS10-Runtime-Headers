@@ -3,8 +3,8 @@
  */
 
 @interface IDSAutoFileDeletion : NSObject {
-    int _accessedCount;
-    NSURL *_fileURL;
+    int  _accessedCount;
+    NSURL * _fileURL;
 }
 
 - (void)dealloc;

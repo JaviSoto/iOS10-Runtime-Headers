@@ -3,7 +3,8 @@
  */
 
 @interface UIKeyboardCandidateView_iPad : UIKeyboardCandidateView <UICollectionViewDelegate, UIKeyboardCandidateBarDelegate> {
-    UIKeyboardCandidatePageControl *_pageControl;
+    UIKBInputBackdropView * _backdropView;
+    UIKeyboardCandidatePageControl * _pageControl;
 }
 
 @property (readonly, copy) NSString *debugDescription;

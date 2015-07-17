@@ -3,18 +3,18 @@
  */
 
 @interface MSXPCConnection : NSXPCConnection {
-    MFFuture *_connectionFuture;
-    NSXPCInterface *_exportedInterface;
-    id _exportedObject;
-    id /* block */ _interruptionHandler;
-    id /* block */ _invalidationHandler;
-    NSLock *_lock;
-    Protocol *_protocol;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSXPCInterface *_remoteObjectInterface;
-    int _resumeCount;
-    BOOL _shouldLaunchMobileMail;
-    unsigned int _state;
+    MFFuture * _connectionFuture;
+    NSXPCInterface * _exportedInterface;
+    id  _exportedObject;
+    id /* block */  _interruptionHandler;
+    id /* block */  _invalidationHandler;
+    NSLock * _lock;
+    Protocol * _protocol;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSXPCInterface * _remoteObjectInterface;
+    int  _resumeCount;
+    BOOL  _shouldLaunchMobileMail;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly, retain) Protocol *protocol;

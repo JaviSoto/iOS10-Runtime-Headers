@@ -3,15 +3,15 @@
  */
 
 @interface PUSearchResultsValue : NSObject <PUSearchResult> {
-    id _albumUUID;
-    unsigned int _approximateCount;
-    NSAttributedString *_attributedDisplayTitle;
-    <PUSearchResultsValueDelegate> *_delegate;
-    NSString *_displaySubtitle;
-    PSIGroupResult *_groupResult;
-    NSObject<OS_dispatch_queue> *_queue;
-    double _score;
-    NSArray *_uuids;
+    id  _albumUUID;
+    unsigned int  _approximateCount;
+    NSAttributedString * _attributedDisplayTitle;
+    <PUSearchResultsValueDelegate> * _delegate;
+    NSString * _displaySubtitle;
+    PSIGroupResult * _groupResult;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _score;
+    NSArray * _uuids;
 }
 
 @property (retain) id albumUUID;

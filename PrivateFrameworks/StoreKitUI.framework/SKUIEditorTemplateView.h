@@ -3,9 +3,9 @@
  */
 
 @interface SKUIEditorTemplateView : SKUIViewReuseView <SKUIViewElementView, UITextViewDelegate> {
-    float _bottomInset;
-    <SKUIEditorTemplateViewDelegate> *_delegate;
-    BOOL _disabled;
+    float  _bottomInset;
+    <SKUIEditorTemplateViewDelegate> * _delegate;
+    BOOL  _disabled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,9 +15,9 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    UIColor *_textColor;
-    UITextView *_textView;
+    }  _keyboardFrame;
+    UIColor * _textColor;
+    UITextView * _textView;
 }
 
 @property (nonatomic) float bottomInset;

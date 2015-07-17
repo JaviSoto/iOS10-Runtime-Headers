@@ -3,15 +3,15 @@
  */
 
 @interface PUEditPluginSession : NSObject <PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate, UIActivityGroupViewControllerDelegate, UINavigationControllerDelegate> {
-    UIViewController *__hostViewController;
-    int _adjustmentType;
-    PHAsset *_asset;
-    PUEditPlugin *_currentPlugin;
-    <PUEditPluginSessionDataSource> *_dataSource;
-    <PUEditPluginSessionDelegate> *_delegate;
-    BOOL _isAvailable;
-    PUEditPluginManager *_pluginManager;
-    UINavigationController *_pluginNavigationController;
+    UIViewController * __hostViewController;
+    int  _adjustmentType;
+    PHAsset * _asset;
+    PUEditPlugin * _currentPlugin;
+    <PUEditPluginSessionDataSource> * _dataSource;
+    <PUEditPluginSessionDelegate> * _delegate;
+    BOOL  _isAvailable;
+    PUEditPluginManager * _pluginManager;
+    UINavigationController * _pluginNavigationController;
 }
 
 @property (setter=_setHostViewController:, nonatomic) UIViewController *_hostViewController;
@@ -44,7 +44,7 @@
 - (id)delegate;
 - (void)dismissSession;
 - (void)editPluginHostViewController:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)editPluginHostViewController:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)editPluginHostViewController:(id)arg1 didFinishWithCompletionType:(unsigned int)arg2;
 - (void)editPluginHostViewController:(id)arg1 loadItemProviderWithHandler:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isAvailable;

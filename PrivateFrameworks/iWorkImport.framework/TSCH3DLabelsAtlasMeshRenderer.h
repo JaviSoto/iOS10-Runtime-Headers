@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DLabelsAtlasMeshRenderer : TSCH3DLabelsMeshRenderer {
-    TSCH3DTextureAtlas *mAtlas;
-    TSUNoCopyDictionary *mExternalAttributeVariables;
+    TSCH3DTextureAtlas * mAtlas;
+    TSUNoCopyDictionary * mExternalAttributeVariables;
 }
 
 - (void)allocateDynamicResourcesIntoArray:(id)arg1;

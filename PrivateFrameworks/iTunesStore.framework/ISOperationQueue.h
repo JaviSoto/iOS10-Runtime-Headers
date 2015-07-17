@@ -3,7 +3,7 @@
  */
 
 @interface ISOperationQueue : NSObject {
-    NSOperationQueue *_queue;
+    NSOperationQueue * _queue;
 }
 
 @property BOOL adjustsMaxConcurrentOperationCount;

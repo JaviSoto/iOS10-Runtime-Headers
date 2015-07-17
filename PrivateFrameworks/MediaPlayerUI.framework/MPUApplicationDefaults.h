@@ -3,9 +3,9 @@
  */
 
 @interface MPUApplicationDefaults : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSString *_applicationIdentifier;
-    NSDictionary *_defaultValues;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSString * _applicationIdentifier;
+    NSDictionary * _defaultValues;
 }
 
 - (void).cxx_destruct;

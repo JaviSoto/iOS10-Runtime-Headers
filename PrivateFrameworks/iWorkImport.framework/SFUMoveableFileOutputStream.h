@@ -3,8 +3,8 @@
  */
 
 @interface SFUMoveableFileOutputStream : NSObject <SFUOutputStream> {
-    int mFd;
-    NSString *mPath;
+    int  mFd;
+    NSString * mPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

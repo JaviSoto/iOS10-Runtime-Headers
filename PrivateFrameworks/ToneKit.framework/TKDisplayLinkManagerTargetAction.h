@@ -3,11 +3,11 @@
  */
 
 @interface TKDisplayLinkManagerTargetAction : NSObject {
-    SEL _actionSelector;
-    NSString *_actionSelectorName;
-    unsigned int _displayDidRefreshCount;
-    unsigned int _frameInterval;
-    id _target;
+    SEL  _actionSelector;
+    NSString * _actionSelectorName;
+    unsigned int  _displayDidRefreshCount;
+    unsigned int  _frameInterval;
+    id  _target;
 }
 
 @property (setter=_setActionSelector:, nonatomic) SEL _actionSelector;

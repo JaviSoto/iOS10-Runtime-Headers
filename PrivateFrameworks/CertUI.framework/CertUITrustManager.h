@@ -3,7 +3,7 @@
  */
 
 @interface CertUITrustManager : NSObject {
-    NSString *_access;
+    NSString * _access;
 }
 
 + (void)_migrateVersionZeroFromAccessGroup:(id)arg1 toGroup:(id)arg2;

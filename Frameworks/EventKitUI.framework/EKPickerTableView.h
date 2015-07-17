@@ -3,11 +3,11 @@
  */
 
 @interface EKPickerTableView : UIView {
-    UIDatePicker *_datePicker;
-    <EKPickerTableViewDelegate> *_delegate;
-    BOOL _showsDatePicker;
-    UITableView *_tableView;
-    BOOL _usesKeyboard;
+    UIDatePicker * _datePicker;
+    <EKPickerTableViewDelegate> * _delegate;
+    BOOL  _showsDatePicker;
+    UITableView * _tableView;
+    BOOL  _usesKeyboard;
 }
 
 @property (nonatomic, readonly) UIDatePicker *datePicker;

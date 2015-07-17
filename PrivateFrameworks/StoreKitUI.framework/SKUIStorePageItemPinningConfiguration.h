@@ -3,17 +3,17 @@
  */
 
 @interface SKUIStorePageItemPinningConfiguration : NSObject {
-    BOOL _hasValidPinningContentInset;
-    BOOL _hasValidPinningStyle;
-    BOOL _hasValidPinningTransitionStyle;
+    BOOL  _hasValidPinningContentInset;
+    BOOL  _hasValidPinningStyle;
+    BOOL  _hasValidPinningTransitionStyle;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _pinningContentInset;
-    int _pinningStyle;
-    int _pinningTransitionStyle;
+    }  _pinningContentInset;
+    int  _pinningStyle;
+    int  _pinningTransitionStyle;
 }
 
 @property (nonatomic, readonly) BOOL hasValidPinningContentInset;

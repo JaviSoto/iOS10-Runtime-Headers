@@ -3,18 +3,18 @@
  */
 
 @interface HDSQLiteDatabase : NSObject {
-    NSMutableDictionary *_attachedDatabaseURLsByName;
-    struct sqlite3 { } *_db;
-    NSURL *_fileURL;
-    BOOL _isInTransaction;
-    struct __CFDictionary { } *_statementCache;
-    int _transactionType;
+    NSMutableDictionary * _attachedDatabaseURLsByName;
+    struct sqlite3 { } * _db;
+    NSURL * _fileURL;
+    BOOL  _isInTransaction;
+    struct __CFDictionary { } * _statementCache;
+    int  _transactionType;
 }
 
 @property (nonatomic, readonly) NSURL *fileURL;
 
 + (BOOL)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 resultCode:(int*)arg3 error:(id*)arg4;
-+ (BOOL)deleteDatabaseAtPath:(id)arg1;
++ (BOOL)deleteDatabaseAtPath:(id)arg1 reason:(id)arg2;
 + (void)resetStatement:(struct sqlite3_stmt { }*)arg1 finalize:(BOOL)arg2;
 + (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1 error:(id*)arg2;
 + (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1 resultCode:(int*)arg2 error:(id*)arg3;
@@ -23,37 +23,46 @@
 + (id)virtualFilesystemModule;
 
 - (void).cxx_destruct;
-- (int)_integerValueForPragma:(id)arg1 databaseName:(id)arg2;
-- (int)_openWithPath:(id)arg1;
-- (BOOL)_setPragma:(id)arg1 integerValue:(int)arg2 withDatabaseName:(id)arg3;
+- (BOOL)_integerValueForPragma:(id)arg1 databaseName:(id)arg2 value:(long long*)arg3 error:(id*)arg4;
+- (id)_schemaForDatabaseWithName:(id)arg1 error:(id*)arg2;
+- (id)_schemaForIndexWithName:(id)arg1 database:(id)arg2 error:(id*)arg3;
+- (id)_schemaForTableWithName:(id)arg1 database:(id)arg2 error:(id*)arg3;
+- (BOOL)_setPragma:(id)arg1 integerValue:(int)arg2 withDatabaseName:(id)arg3 error:(id*)arg4;
 - (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3;
 - (void)accessDatabaseUsingBlock:(id /* block */)arg1;
-- (BOOL)addColumnInTable:(id)arg1 columnSQL:(id)arg2;
-- (BOOL)alterTable:(id)arg1 removeColumns:(id)arg2 renameColumns:(id)arg3;
+- (BOOL)addColumnInTable:(id)arg1 columnSQL:(id)arg2 error:(id*)arg3;
+- (BOOL)alterTable:(id)arg1 removeColumns:(id)arg2 renameColumns:(id)arg3 error:(id*)arg4;
 - (BOOL)attachDatabaseWithName:(id)arg1 fileURL:(id)arg2 error:(id*)arg3;
+- (BOOL)columnIsNullable:(id)arg1 inTable:(id)arg2 error:(id*)arg3;
 - (void)dealloc;
-- (void)detachDatabaseWithName:(id)arg1;
-- (BOOL)dropTable:(id)arg1;
-- (BOOL)executeSQL:(id)arg1;
+- (BOOL)detachDatabaseWithName:(id)arg1 error:(id*)arg2;
+- (BOOL)dropTable:(id)arg1 error:(id*)arg2;
+- (id)dumpSchemaWithError:(id*)arg1;
+- (BOOL)enableIncrementalAutovacuumWithError:(id*)arg1;
+- (BOOL)enumerateResultsForSQL:(id)arg1 error:(id*)arg2 block:(id /* block */)arg3;
 - (BOOL)executeSQL:(id)arg1 argument:(id)arg2 error:(id*)arg3;
 - (BOOL)executeSQL:(id)arg1 error:(id*)arg2;
 - (BOOL)executeSQL:(id)arg1 error:(id*)arg2 retryIfBusy:(BOOL)arg3;
 - (id)fileURL;
+- (BOOL)foreignKeyExistsFromTable:(id)arg1 column:(id)arg2 toTable:(id)arg3 column:(id)arg4 error:(id*)arg5;
 - (id)getLastErrorWithResultCode:(int)arg1;
+- (BOOL)incrementalVacuumDatabaseIfNeeded:(id)arg1 error:(id*)arg2;
 - (id)initWithDatabaseURL:(id)arg1;
-- (BOOL)insertColumns:(id)arg1 fromTableNamed:(id)arg2 toTableNamed:(id)arg3;
+- (BOOL)insertColumns:(id)arg1 fromTableNamed:(id)arg2 toTableNamed:(id)arg3 error:(id*)arg4;
 - (BOOL)isDatabaseWithNameAttached:(id)arg1;
+- (id)lastInsertRowID;
 - (int)open;
 - (BOOL)performTransactionWithType:(int)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
 - (void)performTransactionWithType:(int)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
 - (struct sqlite3_stmt { }*)preparedStatementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)removeColumnInTable:(id)arg1 name:(id)arg2;
-- (BOOL)renameColumnInTable:(id)arg1 oldName:(id)arg2 newName:(id)arg3;
-- (BOOL)renameTable:(id)arg1 newName:(id)arg2;
-- (int)schemaVersionWithDatabaseName:(id)arg1;
-- (BOOL)setSchemaVersion:(int)arg1 withDatabaseName:(id)arg2;
-- (BOOL)setUserVersion:(int)arg1 withDatabaseName:(id)arg2;
-- (int)userVersionWithDatabaseName:(id)arg1;
+- (BOOL)removeColumnInTable:(id)arg1 name:(id)arg2 error:(id*)arg3;
+- (BOOL)renameColumnInTable:(id)arg1 oldName:(id)arg2 newName:(id)arg3 error:(id*)arg4;
+- (BOOL)renameTable:(id)arg1 newName:(id)arg2 error:(id*)arg3;
+- (BOOL)setUserVersion:(int)arg1 withDatabaseName:(id)arg2 error:(id*)arg3;
+- (BOOL)table:(id)arg1 hasColumnWithName:(id)arg2 error:(id*)arg3;
+- (id)typeOfColumn:(id)arg1 inTable:(id)arg2 error:(id*)arg3;
+- (int)userVersionWithDatabaseName:(id)arg1 error:(id*)arg2;
+- (BOOL)validateForeignKeysForTable:(id)arg1 databaseName:(id)arg2 error:(id*)arg3;
 
 @end

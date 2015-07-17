@@ -3,13 +3,13 @@
  */
 
 @interface PHCloudSharedAlbum : PHAssetCollection {
-    short _cloudAlbumSubtype;
-    BOOL _cloudMultipleContributorsEnabled;
-    NSNumber *_cloudOwnerEmailKey;
-    NSString *_cloudOwnerFirstName;
-    NSString *_cloudOwnerFullName;
-    NSString *_cloudOwnerLastName;
-    BOOL _owned;
+    short  _cloudAlbumSubtype;
+    BOOL  _cloudMultipleContributorsEnabled;
+    NSNumber * _cloudOwnerEmailKey;
+    NSString * _cloudOwnerFirstName;
+    NSString * _cloudOwnerFullName;
+    NSString * _cloudOwnerLastName;
+    BOOL  _owned;
 }
 
 @property (nonatomic, readonly) short cloudAlbumSubtype;

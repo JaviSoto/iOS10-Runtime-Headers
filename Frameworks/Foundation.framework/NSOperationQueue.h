@@ -3,8 +3,8 @@
  */
 
 @interface NSOperationQueue : NSObject {
-    id _private;
-    void *_reserved;
+    id  _private;
+    void * _reserved;
 }
 
 @property int maxConcurrentOperationCount;
@@ -48,5 +48,18 @@
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
 - (void)cancelAllOperationsWithError:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (BOOL)containsOperationToDeleteRecordID:(id)arg1;
+- (BOOL)containsOperationToFetchRecordID:(id)arg1;
+- (BOOL)containsOperationToSaveRecordID:(id)arg1;
+- (id)existingOperationToDeleteRecordID:(id)arg1;
+- (id)existingOperationToFetchRecordID:(id)arg1;
+- (id)existingOperationToSaveRecordID:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
+
+- (void)logStateOperationCountGreaterThan:(int)arg1;
 
 @end

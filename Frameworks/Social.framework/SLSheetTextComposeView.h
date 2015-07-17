@@ -3,9 +3,9 @@
  */
 
 @interface SLSheetTextComposeView : UIView {
-    UILabel *_placeholderLabel;
-    float _textRightInset;
-    UITextView *_textView;
+    UILabel * _placeholderLabel;
+    float  _textRightInset;
+    UITextView * _textView;
 }
 
 @property (nonatomic, retain) UILabel *placeholderLabel;

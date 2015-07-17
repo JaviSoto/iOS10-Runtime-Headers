@@ -3,23 +3,23 @@
  */
 
 @interface PKPaymentWebServiceContext : NSObject <NSSecureCoding> {
-    NSArray *_certificates;
-    PKPaymentWebServiceConfiguration *_configuration;
-    NSDate *_configurationDate;
-    int _consistencyCheckBackoffLevel;
-    BOOL _devSigned;
-    NSString *_deviceID;
-    NSString *_lastUpdatedTag;
-    BOOL _messageServiceDisabled;
-    NSString *_primaryRegionIdentifier;
-    NSString *_pushToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_regions;
-    NSDate *_registrationDate;
-    NSString *_secureElementID;
-    BOOL _transactionServiceDisabled;
-    NSMutableDictionary *_verificationRequestsByPassUniqueID;
-    int _version;
+    NSArray * _certificates;
+    PKPaymentWebServiceConfiguration * _configuration;
+    NSDate * _configurationDate;
+    int  _consistencyCheckBackoffLevel;
+    BOOL  _devSigned;
+    NSString * _deviceID;
+    NSString * _lastUpdatedTag;
+    BOOL  _messageServiceDisabled;
+    NSString * _primaryRegionIdentifier;
+    NSString * _pushToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _regions;
+    NSDate * _registrationDate;
+    NSString * _secureElementID;
+    BOOL  _transactionServiceDisabled;
+    NSMutableDictionary * _verificationRequestsByPassUniqueID;
+    int  _version;
 }
 
 @property (readonly) NSDictionary *TSMURLStringByPushTopic;

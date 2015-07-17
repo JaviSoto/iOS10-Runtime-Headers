@@ -3,11 +3,11 @@
  */
 
 @interface PUPhotosDataSourceSectionCache : NSObject {
-    NSDictionary *_assetCollectionToSection;
-    PHFetchResult *_collectionListFetchResult;
-    int _estimatedOtherCount;
-    int _estimatedPhotosCount;
-    int _estimatedVideosCount;
+    NSDictionary * _assetCollectionToSection;
+    PHFetchResult * _collectionListFetchResult;
+    int  _estimatedOtherCount;
+    int  _estimatedPhotosCount;
+    int  _estimatedVideosCount;
 }
 
 @property (nonatomic, readonly) NSDictionary *assetCollectionToSection;

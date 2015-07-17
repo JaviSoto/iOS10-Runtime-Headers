@@ -3,9 +3,9 @@
  */
 
 @interface MusicContextualLibraryUpdateAlertAction : UIAlertAction {
-    BOOL _isAddAction;
-    BOOL _isDeleteLibraryUpdate;
-    id /* block */ _libraryUpdateActionHandler;
+    BOOL  _isAddAction;
+    BOOL  _isDeleteLibraryUpdate;
+    id /* block */  _libraryUpdateActionHandler;
 }
 
 @property (nonatomic, readonly) BOOL isAddAction;

@@ -3,11 +3,11 @@
  */
 
 @interface PUPhotoFilterThumbnailRenderer : NSObject {
-    CIContext *__ciContext;
-    EAGLContext *__eaglContext;
-    NSObject<OS_dispatch_queue> *__renderQueue;
-    UIImage *__thumbnailImage;
-    UIImage *_inputImage;
+    CIContext * __ciContext;
+    EAGLContext * __eaglContext;
+    NSObject<OS_dispatch_queue> * __renderQueue;
+    UIImage * __thumbnailImage;
+    UIImage * _inputImage;
 }
 
 @property (setter=_setCiContext:, nonatomic, retain) CIContext *_ciContext;

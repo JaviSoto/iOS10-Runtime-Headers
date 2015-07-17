@@ -3,8 +3,8 @@
  */
 
 @interface MusicPlaylistEditingEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    UIImage *_artworkImage;
-    NSMutableDictionary *_properties;
+    UIImage * _artworkImage;
+    NSMutableDictionary * _properties;
 }
 
 @property (nonatomic, retain) UIImage *artworkImage;

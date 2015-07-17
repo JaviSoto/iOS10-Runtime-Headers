@@ -3,10 +3,10 @@
  */
 
 @interface VKTileSelection : NSObject {
-    BOOL _bootstrap;
-    double _lodBias;
-    unsigned int _maxZ;
-    int _tileSize;
+    BOOL  _bootstrap;
+    double  _lodBias;
+    unsigned int  _maxZ;
+    int  _tileSize;
 }
 
 @property (nonatomic) BOOL bootstrap;

@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetListStyleListLabelGeometryArray : TSWPSpecListStyleListLabelGeometryArray {
-    NSArray *_listStyleListLabelGeometryArray;
-    BOOL _unset;
+    NSArray * _listStyleListLabelGeometryArray;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

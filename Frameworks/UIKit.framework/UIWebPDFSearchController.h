@@ -3,17 +3,17 @@
  */
 
 @interface UIWebPDFSearchController : NSObject <UIWebPDFSearchOperationDelegate> {
-    UIPDFDocument *_documentToSearch;
-    BOOL _notifiedThatSearchBegin;
-    unsigned int _pageIndexWhenLimitHit;
-    unsigned int _resultIndexWhenLimitHit;
-    NSMutableArray *_results;
-    NSOperationQueue *_searchQueue;
-    NSString *_searchString;
-    float documentScale;
-    unsigned int resultLimit;
-    NSObject<UIWebPDFSearchControllerDelegate> *searchDelegate;
-    unsigned int startingPageIndex;
+    UIPDFDocument * _documentToSearch;
+    BOOL  _notifiedThatSearchBegin;
+    unsigned int  _pageIndexWhenLimitHit;
+    unsigned int  _resultIndexWhenLimitHit;
+    NSMutableArray * _results;
+    NSOperationQueue * _searchQueue;
+    NSString * _searchString;
+    float  documentScale;
+    unsigned int  resultLimit;
+    NSObject<UIWebPDFSearchControllerDelegate> * searchDelegate;
+    unsigned int  startingPageIndex;
 }
 
 @property (nonatomic) float documentScale;

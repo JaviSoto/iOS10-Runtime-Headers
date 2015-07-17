@@ -3,20 +3,20 @@
  */
 
 @interface PLPhotoBakedThumbnails : NSObject {
-    unsigned int _count;
-    BOOL _dataIsMutable;
-    int _format;
-    BOOL _missingHeader;
-    NSMutableDictionary *_options;
-    BOOL _optionsAccessed;
-    NSData *_optionsData;
-    int _singleThumbnailImageLength;
+    unsigned int  _count;
+    BOOL  _dataIsMutable;
+    int  _format;
+    BOOL  _missingHeader;
+    NSMutableDictionary * _options;
+    BOOL  _optionsAccessed;
+    NSData * _optionsData;
+    int  _singleThumbnailImageLength;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSData *_thumbnailData;
-    NSMutableArray *_thumbnailImages;
+    }  _size;
+    NSData * _thumbnailData;
+    NSMutableArray * _thumbnailImages;
 }
 
 @property (nonatomic, readonly) unsigned int bitmapInfo;

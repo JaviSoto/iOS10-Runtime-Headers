@@ -3,13 +3,13 @@
  */
 
 @interface GEOCategory : PBCodable <NSCopying> {
-    NSString *_alias;
-    long long _geoOntologyId;
+    NSString * _alias;
+    long long  _geoOntologyId;
     struct { 
         unsigned int geoOntologyId : 1; 
-    } _has;
-    int _level;
-    NSMutableArray *_localizedNames;
+    }  _has;
+    int  _level;
+    NSMutableArray * _localizedNames;
 }
 
 @property (nonatomic, retain) NSString *alias;

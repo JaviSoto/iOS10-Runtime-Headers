@@ -3,8 +3,8 @@
  */
 
 @interface TPVisibleColumnProxy : NSObject <TSWPOffscreenColumn> {
-    TPPageController *_pageController;
-    unsigned int _pageIndex;
+    TPPageController * _pageController;
+    unsigned int  _pageIndex;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;

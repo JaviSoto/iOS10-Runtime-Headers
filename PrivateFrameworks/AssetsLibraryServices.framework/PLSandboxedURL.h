@@ -3,7 +3,7 @@
  */
 
 @interface PLSandboxedURL : NSURL {
-    long long _sandboxExtensionHandle;
+    long long  _sandboxExtensionHandle;
 }
 
 - (void)dealloc;

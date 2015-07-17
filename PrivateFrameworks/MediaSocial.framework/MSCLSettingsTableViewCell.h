@@ -3,16 +3,16 @@
  */
 
 @interface MSCLSettingsTableViewCell : UITableViewCell {
-    BOOL _disabled;
+    BOOL  _disabled;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    BOOL _titleUsesTintColor;
-    NSObject<NSCopying> *_value;
-    UILabel *_valueLabel;
-    UISwitch *_valueSwitch;
-    int _valueType;
+    }  _imageSize;
+    BOOL  _titleUsesTintColor;
+    NSObject<NSCopying> * _value;
+    UILabel * _valueLabel;
+    UISwitch * _valueSwitch;
+    int  _valueType;
 }
 
 @property (getter=isDisabled, nonatomic) BOOL disabled;

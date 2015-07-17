@@ -3,11 +3,11 @@
  */
 
 @interface SKUIProductPageOverlayController : NSObject <SKStoreProductViewControllerDelegate, SKUIIPadProductPageDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUIProductPageOverlayDelegate> *_delegate;
-    SKUIItem *_initialItem;
-    SKUIOverlayContainerViewController *_overlayViewController;
-    UIViewController *_parentViewController;
+    SKUIClientContext * _clientContext;
+    <SKUIProductPageOverlayDelegate> * _delegate;
+    SKUIItem * _initialItem;
+    SKUIOverlayContainerViewController * _overlayViewController;
+    UIViewController * _parentViewController;
 }
 
 @property (nonatomic, readonly) NSArray *URLs;

@@ -3,20 +3,20 @@
  */
 
 @interface GEOVFeature : PBCodable <NSCopying> {
-    unsigned long long _businessID;
-    unsigned int _centerlineCount;
-    unsigned int _centerlineStart;
-    GEOVCharacteristics *_characteristics;
-    float _endLaneWidth;
-    float _endOffset;
-    float _endRoadOffset;
-    unsigned int _entryPointMask;
+    unsigned long long  _businessID;
+    unsigned int  _centerlineCount;
+    unsigned int  _centerlineStart;
+    GEOVCharacteristics * _characteristics;
+    float  _endLaneWidth;
+    float  _endOffset;
+    float  _endRoadOffset;
+    unsigned int  _entryPointMask;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _extrusionHeights;
-    int _formOfWay;
+    }  _extrusionHeights;
+    int  _formOfWay;
     struct { 
         unsigned int businessID : 1; 
         unsigned int uID : 1; 
@@ -40,41 +40,41 @@
         unsigned int travelDirection : 1; 
         unsigned int type : 1; 
         unsigned int polyIsConvex : 1; 
-    } _has;
+    }  _has;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _labelOffsets;
-    float _minzoomRank;
-    NSData *_oBSOLETECenterlines;
-    NSData *_oBSOLETEShieldLabelPositions;
-    NSData *_oBSOLETEVertexLabelPositions;
-    int _placeType;
-    NSData *_pointLabelPosition;
-    BOOL _polyIsConvex;
-    int _roadClass;
-    int _sectionCount;
-    int _sectionStart;
+    }  _labelOffsets;
+    float  _minzoomRank;
+    NSData * _oBSOLETECenterlines;
+    NSData * _oBSOLETEShieldLabelPositions;
+    NSData * _oBSOLETEVertexLabelPositions;
+    int  _placeType;
+    NSData * _pointLabelPosition;
+    BOOL  _polyIsConvex;
+    int  _roadClass;
+    int  _sectionCount;
+    int  _sectionStart;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _shieldLabelOffsets;
+    }  _shieldLabelOffsets;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _shieldLabelTypes;
-    int _speedLimit;
-    float _startLaneWidth;
-    float _startOffset;
-    float _startRoadOffset;
-    NSMutableArray *_styleAttributes;
-    unsigned int _styleGroup;
-    int _travelDirection;
-    int _type;
-    long long _uID;
+    }  _shieldLabelTypes;
+    int  _speedLimit;
+    float  _startLaneWidth;
+    float  _startOffset;
+    float  _startRoadOffset;
+    NSMutableArray * _styleAttributes;
+    unsigned int  _styleGroup;
+    int  _travelDirection;
+    int  _type;
+    long long  _uID;
 }
 
 @property (nonatomic) unsigned long long businessID;

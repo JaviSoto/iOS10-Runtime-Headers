@@ -3,8 +3,8 @@
  */
 
 @interface RDDaemonConnection : NSObject {
-    NSString *_lastAppLaunchBundleID;
-    NSXPCConnection *_xpcConnection;
+    NSString * _lastAppLaunchBundleID;
+    NSXPCConnection * _xpcConnection;
 }
 
 + (id)sharedConnection;

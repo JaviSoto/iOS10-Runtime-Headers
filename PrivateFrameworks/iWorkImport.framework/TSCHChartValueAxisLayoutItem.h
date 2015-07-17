@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartValueAxisLayoutItem : TSCHChartAxisLayoutItem {
-    TSCHChartValueAxisLabelsLayoutItem *mValueLabels;
+    TSCHChartValueAxisLabelsLayoutItem * mValueLabels;
 }
 
 @property (nonatomic, readonly) TSCHChartValueAxisLabelsLayoutItem *axisValueLabelsLayoutItem;

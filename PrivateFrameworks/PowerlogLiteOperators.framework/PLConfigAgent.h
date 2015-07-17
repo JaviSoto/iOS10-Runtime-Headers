@@ -3,10 +3,10 @@
  */
 
 @interface PLConfigAgent : PLAgent {
-    PLNSTimerOperatorComposition *_timedTrigger;
+    PLTimer * _timedTrigger;
 }
 
-@property (retain) PLNSTimerOperatorComposition *timedTrigger;
+@property (retain) PLTimer *timedTrigger;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitions;
@@ -34,6 +34,5 @@
 - (BOOL)noWatchdogs;
 - (void)setTimedTrigger:(id)arg1;
 - (id)timedTrigger;
-- (id)trimmingConditionsForRolloverAtDate:(id)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface PFVideoAVObjectBuilder : NSObject {
-    AVAsset *__finalAsset;
-    AVAudioMix *__finalAudioMix;
-    AVVideoComposition *__finalVideoComposition;
-    PFSlowMotionTimeRangeMapper *__timeRangeMapperForExport;
-    PFSlowMotionTimeRangeMapper *__timeRangeMapperForPlayback;
-    PFVideoAdjustments *_videoAdjustments;
-    AVAsset *_videoAsset;
+    AVAsset * __finalAsset;
+    AVAudioMix * __finalAudioMix;
+    AVVideoComposition * __finalVideoComposition;
+    PFSlowMotionTimeRangeMapper * __timeRangeMapperForExport;
+    PFSlowMotionTimeRangeMapper * __timeRangeMapperForPlayback;
+    PFVideoAdjustments * _videoAdjustments;
+    AVAsset * _videoAsset;
 }
 
 @property (nonatomic, readonly) AVAsset *_finalAsset;

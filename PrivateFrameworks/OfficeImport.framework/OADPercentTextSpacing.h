@@ -3,7 +3,7 @@
  */
 
 @interface OADPercentTextSpacing : OADTextSpacing {
-    float mPercent;
+    float  mPercent;
 }
 
 - (unsigned int)hash;

@@ -3,25 +3,26 @@
  */
 
 @interface NSKeyedUnarchiver : NSCoder {
-    const char *_bytes;
-    id _containers;
-    id _data;
-    id _delegate;
-    unsigned int _flags;
-    int _genericKey;
-    id _helper;
-    unsigned long long _len;
-    id _nameClassMap;
-    id _objRefMap;
-    id _objects;
-    void *_offsetData;
-    id _refObjMap;
-    id _replacementMap;
-    void *_reserved0;
-    id _tmpRefObjMap;
+    const char * _bytes;
+    id  _containers;
+    id  _data;
+    id  _delegate;
+    unsigned int  _flags;
+    int  _genericKey;
+    id  _helper;
+    unsigned long long  _len;
+    id  _nameClassMap;
+    id  _objRefMap;
+    id  _objects;
+    void * _offsetData;
+    id  _refObjMap;
+    id  _replacementMap;
+    void * _reserved0;
+    id  _tmpRefObjMap;
 }
 
 @property <NSKeyedUnarchiverDelegate> *delegate;
+@property BOOL requiresSecureCoding;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -29,7 +30,9 @@
 + (void)initialize;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
++ (id)unarchiveObjectWithData:(id)arg1 error:(id*)arg2;
 + (id)unarchiveObjectWithFile:(id)arg1;
++ (id)unarchiveTopLevelObjectWithData:(id)arg1 error:(id*)arg2;
 
 - (id)_allowedClassNames;
 - (id)_blobForCurrentObject;

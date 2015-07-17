@@ -6,17 +6,17 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rangeOfNextToken;
-    unsigned int _startOfUnclassifiedRangeBeforeNextToken;
-    NSString *_string;
-    unsigned int _stringLength;
-    TIWordTokenizer *_wordTokenizer;
+    }  _rangeOfNextToken;
+    unsigned int  _startOfUnclassifiedRangeBeforeNextToken;
+    NSString * _string;
+    unsigned int  _stringLength;
+    TIWordTokenizer * _wordTokenizer;
 }
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })advanceToNextToken;
-- (void)dealloc;
 - (id)init;
 - (void)setString:(id)arg1;
 

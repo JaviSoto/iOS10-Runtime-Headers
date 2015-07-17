@@ -3,9 +3,9 @@
  */
 
 @interface MPAVDestinationBrowser : NSObject {
-    BOOL _isScanning;
-    MPAVRoutingController *_routingController;
-    BOOL _scansForDestinationsWhenEnteringForeground;
+    BOOL  _isScanning;
+    MPAVRoutingController * _routingController;
+    BOOL  _scansForDestinationsWhenEnteringForeground;
 }
 
 @property (nonatomic) BOOL scansForDestinationsWhenEnteringForeground;

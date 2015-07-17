@@ -3,13 +3,13 @@
  */
 
 @interface SSUpdatableAssetController : NSObject <SKUIExternalResourceManager> {
-    SSUpdatableAssetManifest *_bundledManifest;
-    NSURL *_bundledManifestURL;
-    SSUpdatableAssetCacheManager *_cacheManager;
-    SSXPCConnection *_connection;
-    SSUpdatableAssetManifest *_currentManifest;
-    NSURL *_manifestURL;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    SSUpdatableAssetManifest * _bundledManifest;
+    NSURL * _bundledManifestURL;
+    SSUpdatableAssetCacheManager * _cacheManager;
+    SSXPCConnection * _connection;
+    SSUpdatableAssetManifest * _currentManifest;
+    NSURL * _manifestURL;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, readonly) NSURL *bundledManifestURL;

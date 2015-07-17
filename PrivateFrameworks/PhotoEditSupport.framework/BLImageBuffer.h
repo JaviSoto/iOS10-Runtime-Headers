@@ -3,13 +3,13 @@
  */
 
 @interface BLImageBuffer : NSObject {
-    CIContext *_ciContext;
-    int _colorManagement;
-    struct CGColorSpace { } *_colorSpace;
+    CIContext * _ciContext;
+    int  _colorManagement;
+    struct CGColorSpace { } * _colorSpace;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;

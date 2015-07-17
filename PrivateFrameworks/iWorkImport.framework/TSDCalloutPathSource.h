@@ -3,17 +3,17 @@
  */
 
 @interface TSDCalloutPathSource : TSDPathSource <TSDMixing, TSDSmartPathSource> {
-    float mCornerRadius;
-    BOOL mIsTailAtCenter;
+    float  mCornerRadius;
+    BOOL  mIsTailAtCenter;
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
+    }  mNaturalSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } mTailPosition;
-    float mTailSize;
+    }  mTailPosition;
+    float  mTailSize;
 }
 
 @property (nonatomic) float cornerRadius;

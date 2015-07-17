@@ -3,10 +3,10 @@
  */
 
 @interface SKUIScreenshot : NSObject <NSCopying, SKUICacheCoding> {
-    NSString *_orientation;
-    NSMutableDictionary *_sizes;
-    long long _uniqueIdentifier;
-    NSMutableDictionary *_urls;
+    NSString * _orientation;
+    NSMutableDictionary * _sizes;
+    long long  _uniqueIdentifier;
+    NSMutableDictionary * _urls;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;

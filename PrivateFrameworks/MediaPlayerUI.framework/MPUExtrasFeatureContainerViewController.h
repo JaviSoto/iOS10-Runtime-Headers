@@ -3,11 +3,11 @@
  */
 
 @interface MPUExtrasFeatureContainerViewController : UIViewController {
-    float _collectionViewHeight;
-    MPUExtrasContext *_context;
-    UIView *_menuBarView;
-    NSLayoutConstraint *_overlayViewAdjustmentConstraint;
-    UIViewController<MPUExtrasVideoPlaybackViewController> *_videoPlaybackViewController;
+    float  _collectionViewHeight;
+    MPUExtrasContext * _context;
+    UIView * _menuBarView;
+    NSLayoutConstraint * _overlayViewAdjustmentConstraint;
+    UIViewController<MPUExtrasVideoPlaybackViewController> * _videoPlaybackViewController;
 }
 
 @property (nonatomic) float collectionViewHeight;

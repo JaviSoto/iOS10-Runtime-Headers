@@ -3,17 +3,17 @@
  */
 
 @interface TSWPShapeRepMagicMoveTextChunk : NSObject {
-    BOOL _hasListLabel;
-    BOOL _isVisible;
-    float _opacityFromRenderer;
+    BOOL  _hasListLabel;
+    BOOL  _isVisible;
+    float  _opacityFromRenderer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    TSWPShapeRep *_rep;
-    int _stageIndex;
-    NSString *_stringValue;
-    NSMutableIndexSet *_unhandledIndexSet;
+    }  _range;
+    TSWPShapeRep * _rep;
+    int  _stageIndex;
+    NSString * _stringValue;
+    NSMutableIndexSet * _unhandledIndexSet;
 }
 
 @property (nonatomic) BOOL hasListLabel;
@@ -25,7 +25,6 @@
 @property (nonatomic, copy) NSString *stringValue;
 @property (nonatomic, retain) NSMutableIndexSet *unhandledIndexSet;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasListLabel;

@@ -3,10 +3,10 @@
  */
 
 @interface GEOLeaveNowFeedbackCollection : PBCodable <NSCopying> {
-    int _actionType;
-    int _alertType;
-    double _currentTimestamp;
-    double _eventTimestamp;
+    int  _actionType;
+    int  _alertType;
+    double  _currentTimestamp;
+    double  _eventTimestamp;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int currentTimestamp : 1; 
@@ -15,13 +15,13 @@
         unsigned int actionType : 1; 
         unsigned int alertType : 1; 
         unsigned int travelState : 1; 
-    } _has;
+    }  _has;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionID;
-    double _travelDuration;
-    int _travelState;
+    }  _sessionID;
+    double  _travelDuration;
+    int  _travelState;
 }
 
 @property (nonatomic) int actionType;

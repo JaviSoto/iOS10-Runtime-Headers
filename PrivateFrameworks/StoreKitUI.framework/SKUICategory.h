@@ -3,12 +3,12 @@
  */
 
 @interface SKUICategory : NSObject {
-    SKUIArtworkList *_artworkList;
-    long long _categoryIdentifier;
-    NSArray *_children;
-    NSString *_name;
-    NSString *_parentLabel;
-    NSURL *_url;
+    SKUIArtworkList * _artworkList;
+    long long  _categoryIdentifier;
+    NSArray * _children;
+    NSString * _name;
+    NSString * _parentLabel;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

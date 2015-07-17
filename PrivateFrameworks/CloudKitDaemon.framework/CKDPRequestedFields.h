@@ -3,7 +3,7 @@
  */
 
 @interface CKDPRequestedFields : PBCodable <NSCopying> {
-    NSMutableArray *_fields;
+    NSMutableArray * _fields;
 }
 
 @property (nonatomic, retain) NSMutableArray *fields;

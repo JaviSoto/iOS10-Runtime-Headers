@@ -3,12 +3,12 @@
  */
 
 @interface SKUILoadingDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
-    SKUIActivityIndicatorViewElement *_activityIndicatorElement;
-    SKUIActivityIndicatorView *_activityIndicatorView;
-    NSObject<OS_dispatch_source> *_delayTimer;
-    SKUILayoutCache *_layoutCache;
-    SKUILoadingTemplateViewElement *_templateElement;
-    SKUIViewElementLayoutContext *_viewLayoutContext;
+    SKUIActivityIndicatorViewElement * _activityIndicatorElement;
+    SKUIActivityIndicatorView * _activityIndicatorView;
+    NSObject<OS_dispatch_source> * _delayTimer;
+    SKUILayoutCache * _layoutCache;
+    SKUILoadingTemplateViewElement * _templateElement;
+    SKUIViewElementLayoutContext * _viewLayoutContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

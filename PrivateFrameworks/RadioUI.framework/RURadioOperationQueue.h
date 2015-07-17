@@ -3,9 +3,9 @@
  */
 
 @interface RURadioOperationQueue : NSObject {
-    NSOperationQueue *_operationQueue;
-    RadioRequestContext *_requestContext;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSOperationQueue * _operationQueue;
+    RadioRequestContext * _requestContext;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, copy) RadioRequestContext *requestContext;

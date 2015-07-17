@@ -3,19 +3,19 @@
  */
 
 @interface MPUExtrasCollectionReusableView : UICollectionReusableView {
-    NSArray *_borderConstraints;
-    UIView *_borderView;
+    NSArray * _borderConstraints;
+    UIView * _borderView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _labelInsets;
-    MPUContentSizeLayoutConstraint *_textBottomConstraint;
-    UILabel *_textLabel;
-    NSLayoutConstraint *_textLeftConstraint;
-    NSLayoutConstraint *_textRightConstraint;
-    MPUContentSizeLayoutConstraint *_textTopConstraint;
+    }  _labelInsets;
+    MPUContentSizeLayoutConstraint * _textBottomConstraint;
+    UILabel * _textLabel;
+    NSLayoutConstraint * _textLeftConstraint;
+    NSLayoutConstraint * _textRightConstraint;
+    MPUContentSizeLayoutConstraint * _textTopConstraint;
 }
 
 - (void).cxx_destruct;

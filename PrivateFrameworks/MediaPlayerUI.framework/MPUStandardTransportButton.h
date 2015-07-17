@@ -3,7 +3,7 @@
  */
 
 @interface MPUStandardTransportButton : MPTransportButton <MPUTransportButton> {
-    MPUTransportButtonEventHandler *_transportButtonEventHandler;
+    MPUTransportButtonEventHandler * _transportButtonEventHandler;
 }
 
 @property (nonatomic) BOOL adjustsImageWhenHighlighted;

@@ -3,8 +3,8 @@
  */
 
 @interface HSCloudItemIDList : NSObject <NSSecureCoding> {
-    NSMutableArray *_idTypes;
-    NSMutableArray *_itemIDs;
+    NSMutableArray * _idTypes;
+    NSMutableArray * _itemIDs;
 }
 
 @property (nonatomic, readonly) unsigned int count;

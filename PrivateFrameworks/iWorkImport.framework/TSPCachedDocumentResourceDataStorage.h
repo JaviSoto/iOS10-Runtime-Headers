@@ -3,7 +3,7 @@
  */
 
 @interface TSPCachedDocumentResourceDataStorage : TSPDocumentResourceDataStorage {
-    BOOL _isValidated;
+    BOOL  _isValidated;
 }
 
 - (void)addDownloadObserver:(id)arg1 forData:(id)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;

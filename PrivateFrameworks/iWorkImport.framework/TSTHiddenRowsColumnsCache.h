@@ -3,12 +3,12 @@
  */
 
 @interface TSTHiddenRowsColumnsCache : NSObject <TSTTableHiddenRowColumnProviding> {
-    NSMutableIndexSet *_columnsInvalid;
-    TSTHiddenStateIndexSet *_columnsVisible;
-    unsigned int _rowMarkIndex;
-    NSMutableIndexSet *_rowsInvalid;
-    TSTHiddenStateIndexSet *_rowsUserVisible;
-    TSTHiddenStateIndexSet *_rowsVisible;
+    NSMutableIndexSet * _columnsInvalid;
+    TSTHiddenStateIndexSet * _columnsVisible;
+    unsigned int  _rowMarkIndex;
+    NSMutableIndexSet * _rowsInvalid;
+    TSTHiddenStateIndexSet * _rowsUserVisible;
+    TSTHiddenStateIndexSet * _rowsVisible;
 }
 
 @property (nonatomic, retain) NSMutableIndexSet *columnsInvalid;

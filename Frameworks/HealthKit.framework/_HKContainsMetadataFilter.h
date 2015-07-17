@@ -3,7 +3,7 @@
  */
 
 @interface _HKContainsMetadataFilter : _HKMetadataFilter {
-    NSSet *_allowedValues;
+    NSSet * _allowedValues;
 }
 
 @property (nonatomic, readonly) NSSet *allowedValues;

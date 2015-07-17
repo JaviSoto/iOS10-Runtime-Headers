@@ -3,13 +3,13 @@
  */
 
 @interface CRAlignmentLayer : CALayer {
-    CATextLayer *_cardNumberLayer;
-    CATextLayer *_cardholderNameLayer;
-    CATextLayer *_expirationDateLayer;
-    CALayer *_infoLayer;
-    CATextLayer *_instructionLayer;
-    CAShapeLayer *_maskLayer;
-    CAShapeLayer *_outlineLayer;
+    CATextLayer * _cardNumberLayer;
+    CATextLayer * _cardholderNameLayer;
+    CATextLayer * _expirationDateLayer;
+    CALayer * _infoLayer;
+    CATextLayer * _instructionLayer;
+    CAShapeLayer * _maskLayer;
+    CAShapeLayer * _outlineLayer;
 }
 
 @property (retain) CATextLayer *cardNumberLayer;
@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (void)animateFoundCardRect:(id)arg1;
-- (void)animateFoundCode:(id)arg1 cardHolder:(id)arg2 cardholderPosition:(struct CGPoint { float x1; float x2; })arg3 expDate:(id)arg4 expdatePosition:(struct CGPoint { float x1; float x2; })arg5 completionBlock:(id /* block */)arg6;
+- (void)animateFoundCode:(id)arg1 codePosition:(struct CGPoint { float x1; float x2; })arg2 cardHolder:(id)arg3 cardholderPosition:(struct CGPoint { float x1; float x2; })arg4 expDate:(id)arg5 expdatePosition:(struct CGPoint { float x1; float x2; })arg6 completionBlock:(id /* block */)arg7;
 - (id)cardNumberLayer;
 - (id)cardholderNameLayer;
 - (id)expirationDateLayer;
@@ -36,6 +36,7 @@
 - (void)layoutSublayers;
 - (id)maskLayer;
 - (id)outlineLayer;
+- (void)propogateMaskColor:(id)arg1 outlineColor:(id)arg2 placementTextColor:(id)arg3 capturedTextColor:(id)arg4;
 - (void)resetLayer;
 - (void)setCardNumberLayer:(id)arg1;
 - (void)setCardholderNameLayer:(id)arg1;

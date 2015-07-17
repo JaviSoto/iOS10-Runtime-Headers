@@ -3,7 +3,7 @@
  */
 
 @interface CKAttachmentMessagePartChatItem : CKMessagePartChatItem {
-    CKMediaObject *_mediaObject;
+    CKMediaObject * _mediaObject;
 }
 
 @property (nonatomic, retain) CKMediaObject *mediaObject;

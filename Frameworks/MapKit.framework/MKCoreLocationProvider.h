@@ -3,21 +3,21 @@
  */
 
 @interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, CLLocationManagerVehicleDelegate, MKLocationProvider> {
-    NSLock *_authorizationLock;
-    id /* block */ _authorizationRequestBlock;
-    int _authorizationStatus;
-    CLLocationManager *_clLocationManager;
-    <MKLocationProviderDelegate> *_delegate;
-    NSBundle *_effectiveBundle;
-    NSString *_effectiveBundleIdentifier;
-    BOOL _hasQueriedAuthorization;
-    BOOL _locationServicesPreferencesDialogEnabled;
-    BOOL _waitingForAuthorization;
+    BOOL  _alternate;
+    NSLock * _authorizationLock;
+    id /* block */  _authorizationRequestBlock;
+    int  _authorizationStatus;
+    CLLocationManager * _clLocationManager;
+    <MKLocationProviderDelegate> * _delegate;
+    NSBundle * _effectiveBundle;
+    NSString * _effectiveBundleIdentifier;
+    BOOL  _hasQueriedAuthorization;
+    BOOL  _locationServicesPreferencesDialogEnabled;
+    BOOL  _waitingForAuthorization;
 }
 
 @property (nonatomic, readonly) CLLocationManager *_clLocationManager;
 @property (nonatomic) int activityType;
-@property (nonatomic, readonly) BOOL airplaneModeBlocksLocation;
 @property (nonatomic, copy) id /* block */ authorizationRequestBlock;
 @property (nonatomic, readonly) int authorizationStatus;
 @property (readonly, copy) NSString *debugDescription;
@@ -35,6 +35,7 @@
 @property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) BOOL locationServicesPreferencesDialogEnabled;
 @property (nonatomic) BOOL matchInfoEnabled;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) double timeScale;
 @property (nonatomic, readonly) BOOL usesCLMapCorrection;
 
 - (void).cxx_destruct;
@@ -43,7 +44,6 @@
 - (void)_resetForNewEffectiveBundle;
 - (void)_updateAuthorizationStatus;
 - (int)activityType;
-- (BOOL)airplaneModeBlocksLocation;
 - (id /* block */)authorizationRequestBlock;
 - (int)authorizationStatus;
 - (void)dealloc;
@@ -89,6 +89,7 @@
 - (void)stopUpdatingLocation;
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
+- (double)timeScale;
 - (BOOL)usesCLMapCorrection;
 
 @end

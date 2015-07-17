@@ -3,8 +3,8 @@
  */
 
 @interface SSItemArtworkImage : NSObject <NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_dictionary;
-    NSString *_imageKind;
+    NSMutableDictionary * _dictionary;
+    NSString * _imageKind;
 }
 
 @property (nonatomic, retain) NSURL *URL;

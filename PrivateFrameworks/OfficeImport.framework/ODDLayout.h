@@ -3,10 +3,11 @@
  */
 
 @interface ODDLayout : NSObject {
-    ODDLayoutNode *mRootNode;
+    ODDLayoutNode * mRootNode;
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)rootNode;
 

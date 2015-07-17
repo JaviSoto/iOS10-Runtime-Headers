@@ -3,9 +3,9 @@
  */
 
 @interface AVSpeechSynthesizer : NSObject {
-    <AVSpeechSynthesizerDelegate> *delegate;
-    BOOL paused;
-    BOOL speaking;
+    <AVSpeechSynthesizerDelegate> * delegate;
+    BOOL  paused;
+    BOOL  speaking;
 }
 
 @property (nonatomic) <AVSpeechSynthesizerDelegate> *delegate;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIStarRatingView : UIView {
-    float _elementSpacing;
-    UIImageView *_ratingStarsImageView;
-    UILabel *_textLabel;
+    float  _elementSpacing;
+    UIImageView * _ratingStarsImageView;
+    UILabel * _textLabel;
 }
 
 @property (nonatomic) float elementSpacing;

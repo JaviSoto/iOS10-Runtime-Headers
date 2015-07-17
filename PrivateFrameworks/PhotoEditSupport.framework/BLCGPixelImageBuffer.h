@@ -3,9 +3,9 @@
  */
 
 @interface BLCGPixelImageBuffer : BLPixelImageBuffer {
-    struct CGContext { } *_bitmapContext;
-    NSMutableData *_bitmapData;
-    unsigned long _rowBytes;
+    struct CGContext { } * _bitmapContext;
+    NSMutableData * _bitmapData;
+    unsigned long  _rowBytes;
 }
 
 @property (nonatomic, retain) NSMutableData *bitmapData;

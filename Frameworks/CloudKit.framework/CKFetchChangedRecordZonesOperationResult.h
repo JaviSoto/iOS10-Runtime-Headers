@@ -3,8 +3,8 @@
  */
 
 @interface CKFetchChangedRecordZonesOperationResult : CKOperationResult <NSSecureCoding> {
-    CKServerChangeToken *_serverChangeToken;
-    NSNumber *_status;
+    CKServerChangeToken * _serverChangeToken;
+    NSNumber * _status;
 }
 
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;

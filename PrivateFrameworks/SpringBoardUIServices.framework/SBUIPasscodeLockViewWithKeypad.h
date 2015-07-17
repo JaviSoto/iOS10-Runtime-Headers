@@ -3,18 +3,18 @@
  */
 
 @interface SBUIPasscodeLockViewWithKeypad : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate, SBUIPasscodeLockNumberPadDelegate> {
-    UIView *_bottomToNumberPadFiller;
-    UIView *_entryFieldToNumberPadFiller;
-    NSString *_lastCharacterBeforeBackspace;
-    UIView *_leftToNumberPadFiller;
-    SBUIPasscodeLockNumberPad *_numberPad;
-    UIView *_rightToNumberPadFiller;
-    UIView *_statusBackgroundView;
-    UILabel *_statusSubtitleView;
-    UILabel *_statusTitleView;
-    UIView *_topToStatusFieldOrEntryFieldFiller;
-    BOOL _undoInputOnTouchCancellation;
-    BOOL _useLightStyle;
+    UIView * _bottomToNumberPadFiller;
+    UIView * _entryFieldToNumberPadFiller;
+    NSString * _lastCharacterBeforeBackspace;
+    UIView * _leftToNumberPadFiller;
+    SBUIPasscodeLockNumberPad * _numberPad;
+    UIView * _rightToNumberPadFiller;
+    UIView * _statusBackgroundView;
+    UILabel * _statusSubtitleView;
+    UILabel * _statusTitleView;
+    UIView * _topToStatusFieldOrEntryFieldFiller;
+    BOOL  _undoInputOnTouchCancellation;
+    BOOL  _useLightStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

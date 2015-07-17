@@ -5,9 +5,9 @@
 @interface GEOPhotoInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int size : 1; 
-    } _has;
-    int _size;
-    NSString *_url;
+    }  _has;
+    int  _size;
+    NSString * _url;
 }
 
 @property (nonatomic) BOOL hasSize;

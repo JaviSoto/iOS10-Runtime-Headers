@@ -3,19 +3,19 @@
  */
 
 @interface PUAdjustmentsModeSliderCell : UICollectionViewCell <PUPhotoEditLayoutStaticAdaptable> {
-    PUAdjustmentsMode *_adjustmentsMode;
-    BOOL _enabled;
-    int _layoutOrientation;
-    PUPhotoEditLevelSlider *_levelSlider;
-    NSArray *_levelSliderConstraints;
-    float _sliderShortSideLength;
-    NSString *_title;
-    PUAdjustmentsModeBadge *_titleBackground;
-    NSArray *_titleBackgroundConstraints;
-    UILabel *_titleLabel;
-    NSArray *_titleLabelConstraints;
-    int _titleLabelPosition;
-    BOOL _toggleable;
+    PUAdjustmentsMode * _adjustmentsMode;
+    BOOL  _enabled;
+    int  _layoutOrientation;
+    PUPhotoEditLevelSlider * _levelSlider;
+    NSArray * _levelSliderConstraints;
+    float  _sliderShortSideLength;
+    NSString * _title;
+    PUAdjustmentsModeBadge * _titleBackground;
+    NSArray * _titleBackgroundConstraints;
+    UILabel * _titleLabel;
+    NSArray * _titleLabelConstraints;
+    int  _titleLabelPosition;
+    BOOL  _toggleable;
 }
 
 @property (nonatomic, retain) PUAdjustmentsMode *adjustmentsMode;

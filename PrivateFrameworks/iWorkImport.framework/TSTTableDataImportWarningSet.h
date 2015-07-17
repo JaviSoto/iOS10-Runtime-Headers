@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataImportWarningSet : TSTTableDataObject {
-    TSTImportWarningSet *mImportWarningSet;
+    TSTImportWarningSet * mImportWarningSet;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface TopoProgressBar : CALayer {
-    id _owningView;
-    float _progressValue;
+    id  _owningView;
+    float  _progressValue;
 }
 
 @property (nonatomic) id owningView;

@@ -3,14 +3,15 @@
  */
 
 @interface SBFPasscodeLockDisableAssertion : NSObject {
-    NSString *_identifier;
-    int _type;
-    SBFWeakReference *_weakController;
+    NSString * _identifier;
+    int  _type;
+    SBFWeakReference * _weakController;
 }
 
 - (void)dealloc;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 type:(int)arg2 withController:(id)arg3;
+- (BOOL)isValid;
 - (int)type;
 
 @end

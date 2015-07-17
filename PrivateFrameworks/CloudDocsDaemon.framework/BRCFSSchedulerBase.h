@@ -3,15 +3,15 @@
  */
 
 @interface BRCFSSchedulerBase : NSObject <BRCLifeCycle> {
-    BOOL _hasActiveWork;
-    BOOL _hasWork;
-    NSObject<OS_dispatch_group> *_hasWorkGroup;
-    BOOL _isCancelled;
-    NSString *_name;
-    NSObject<OS_dispatch_queue> *_schedulerQueue;
-    BRCDeadlineToken *_schedulerToken;
-    BRCAccountSession *_session;
-    PQLNameInjection *_tableName;
+    BOOL  _hasActiveWork;
+    BOOL  _hasWork;
+    NSObject<OS_dispatch_group> * _hasWorkGroup;
+    BOOL  _isCancelled;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _schedulerQueue;
+    BRCDeadlineToken * _schedulerToken;
+    BRCAccountSession * _session;
+    PQLNameInjection * _tableName;
 }
 
 @property (readonly) BOOL closed;

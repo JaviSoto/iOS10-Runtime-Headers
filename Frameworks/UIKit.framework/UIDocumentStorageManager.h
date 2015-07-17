@@ -3,12 +3,12 @@
  */
 
 @interface UIDocumentStorageManager : NSObject {
-    NSURL *_defaultURL;
-    NSDictionary *_identifiersToURLMap;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    NSMutableSet *_observers;
-    NSMetadataQuery *_query;
-    _UIDocumentStorage *_storage;
+    NSURL * _defaultURL;
+    NSDictionary * _identifiersToURLMap;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    NSMutableSet * _observers;
+    NSMetadataQuery * _query;
+    _UIDocumentStorage * _storage;
 }
 
 @property (readonly) NSURL *dataStorageURL;

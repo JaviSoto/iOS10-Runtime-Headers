@@ -3,9 +3,9 @@
  */
 
 @interface MPAlternateTrackCellBackgroundView : UIView {
-    UIBezierPath *_fillPath;
-    int _sectionLocation;
-    UIBezierPath *_strokePath;
+    UIBezierPath * _fillPath;
+    int  _sectionLocation;
+    UIBezierPath * _strokePath;
 }
 
 @property (nonatomic) int sectionLocation;

@@ -3,11 +3,11 @@
  */
 
 @interface MusicEntityPlaybackStatus : NSObject <NSCopying, NSMutableCopying> {
-    double _playbackCurrentTime;
-    double _playbackCurrentTimeOriginatingTime;
-    int _playbackDisplayState;
-    double _playbackDuration;
-    float _playbackRate;
+    double  _playbackCurrentTime;
+    double  _playbackCurrentTimeOriginatingTime;
+    int  _playbackDisplayState;
+    double  _playbackDuration;
+    float  _playbackRate;
 }
 
 @property (nonatomic, readonly) double playbackCurrentTime;

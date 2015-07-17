@@ -3,16 +3,16 @@
  */
 
 @interface TSPComponentManager : NSObject <TSPComponentDelegate, TSPObjectModifyDelegate> {
-    NSCache *_componentCache;
-    NSMapTable *_componentDictionary;
-    NSObject<OS_dispatch_queue> *_componentQueue;
-    NSHashTable *_components;
-    TSPObjectContext *_context;
-    int _ignoreCachedObjectEvictionCount;
-    BOOL _isTornDown;
-    TSPComponent *_packageMetadataComponent;
-    NSObject<OS_dispatch_queue> *_readFlushedComponentQueue;
-    TSPComponent *_viewStateComponent;
+    NSCache * _componentCache;
+    NSMapTable * _componentDictionary;
+    NSObject<OS_dispatch_queue> * _componentQueue;
+    NSHashTable * _components;
+    TSPObjectContext * _context;
+    int  _ignoreCachedObjectEvictionCount;
+    BOOL  _isTornDown;
+    TSPComponent * _packageMetadataComponent;
+    NSObject<OS_dispatch_queue> * _readFlushedComponentQueue;
+    TSPComponent * _viewStateComponent;
 }
 
 @property (nonatomic, readonly) TSPObjectContext *context;
@@ -74,6 +74,6 @@
 - (void)tearDown;
 - (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id /* block */)arg2;
 - (id)viewStateComponent;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
 
 @end

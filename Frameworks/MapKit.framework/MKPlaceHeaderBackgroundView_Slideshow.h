@@ -3,16 +3,16 @@
  */
 
 @interface MKPlaceHeaderBackgroundView_Slideshow : MKPlaceHeaderBackgroundView {
-    NSMutableArray *_images;
-    unsigned int _iteration;
-    int _nextImageIndex;
+    NSMutableArray * _images;
+    unsigned int  _iteration;
+    int  _nextImageIndex;
     struct { 
         unsigned int hasMultiplePhotos; 
         unsigned int isFirstImageRequested; 
         unsigned int isFirstImagePreloaded; 
-    } _slideShowFlags;
-    NSArray *_slides;
-    NSTimer *_timer;
+    }  _slideShowFlags;
+    NSArray * _slides;
+    NSTimer * _timer;
 }
 
 + (BOOL)canDisplayImagesForMapItem:(id)arg1;

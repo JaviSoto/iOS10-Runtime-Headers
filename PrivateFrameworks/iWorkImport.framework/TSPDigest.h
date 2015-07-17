@@ -5,7 +5,7 @@
 @interface TSPDigest : NSObject <NSCopying> {
     struct array<unsigned char, 20> { 
         unsigned char __elems_[20]; 
-    } _digestData;
+    }  _digestData;
 }
 
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{array<unsigned char' */ struct *digestData; /* unknown property attribute:  20>=[20C]} */
@@ -14,7 +14,6 @@
 + (id)digestFromNSData:(id)arg1;
 + (id)digestWithDigestString:(id)arg1;
 
-- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (const struct array<unsigned char, 20> { unsigned char x1[20]; }*)digestData;

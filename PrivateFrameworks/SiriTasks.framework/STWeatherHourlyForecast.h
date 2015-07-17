@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STWeatherHourlyForecast : AFSiriModelObject {
-    NSNumber *_chanceOfPrecipitation;
-    int _conditionCode;
-    NSNumber *_temperature;
-    int _timeIndex;
+@interface STWeatherHourlyForecast : STSiriModelObject {
+    NSNumber * _chanceOfPrecipitation;
+    int  _conditionCode;
+    NSNumber * _temperature;
+    int  _timeIndex;
 }
 
 + (BOOL)supportsSecureCoding;

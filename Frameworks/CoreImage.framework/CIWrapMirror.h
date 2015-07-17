@@ -3,7 +3,7 @@
  */
 
 @interface CIWrapMirror : CIFilter {
-    CIImage *inputImage;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -13,7 +13,6 @@
 - (id)_kernel;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 
 @end

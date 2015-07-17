@@ -3,16 +3,16 @@
  */
 
 @interface MPUNowPlayingIndicatorView : UIControl {
-    float _interLevelSpacing;
-    float _levelCornerRadius;
-    UIColor *_levelGuttersColor;
-    NSMutableArray *_levelViews;
-    float _levelWidth;
-    float _maximumLevelHeight;
-    float _minimumLevelHeight;
-    int _numberOfLevels;
-    int _playbackState;
-    BOOL _showsLevelGutters;
+    float  _interLevelSpacing;
+    float  _levelCornerRadius;
+    UIColor * _levelGuttersColor;
+    NSMutableArray * _levelViews;
+    float  _levelWidth;
+    float  _maximumLevelHeight;
+    float  _minimumLevelHeight;
+    int  _numberOfLevels;
+    int  _playbackState;
+    BOOL  _showsLevelGutters;
 }
 
 @property (nonatomic) float interLevelSpacing;

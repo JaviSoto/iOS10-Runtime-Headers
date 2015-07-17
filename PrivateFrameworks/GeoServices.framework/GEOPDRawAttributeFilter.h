@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDRawAttributeFilter : PBCodable <NSCopying> {
-    NSMutableArray *_keys;
+    NSMutableArray * _keys;
 }
 
 @property (nonatomic, retain) NSMutableArray *keys;

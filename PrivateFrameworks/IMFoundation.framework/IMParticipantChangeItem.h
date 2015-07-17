@@ -3,10 +3,10 @@
  */
 
 @interface IMParticipantChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    long long _changeType;
-    NSString *_otherCountryCode;
-    NSString *_otherHandle;
-    NSString *_otherUnformattedID;
+    long long  _changeType;
+    NSString * _otherCountryCode;
+    NSString * _otherHandle;
+    NSString * _otherUnformattedID;
 }
 
 @property (nonatomic) long long changeType;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicContextualPlaylistPickerViewConfiguration : MusicLibraryPlaylistsViewConfiguration {
-    <MusicContextualPlaylistPickerDelegate> *_playlistPickerDelegate;
+    <MusicContextualPlaylistPickerDelegate> * _playlistPickerDelegate;
 }
 
 @property (nonatomic) <MusicContextualPlaylistPickerDelegate> *playlistPickerDelegate;

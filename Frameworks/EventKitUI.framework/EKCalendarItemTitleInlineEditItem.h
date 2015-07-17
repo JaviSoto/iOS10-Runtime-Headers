@@ -3,18 +3,18 @@
  */
 
 @interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <EKCalendarItemInlineEditItem, EKEditItemViewControllerDelegate, UITextFieldDelegate> {
-    EKRequestAvailabilityOperation *_availabilityRequest;
-    NSArray *_availabilitySpansForLocation;
-    UIView *_clearButtonView;
-    EKUILocationEditItemCell *_conferenceLocationCell;
-    EKParticipant *_conferenceRoom;
-    int _conferenceRoomAvailabilityType;
-    UITableViewCell *_mapCell;
-    int _mostRecentStringLengthDelta;
-    UITableViewCell *_nonConferenceLocationCell;
-    BOOL _showsLocation;
-    BOOL _sourceSupportsAvailabilityRequests;
-    UITableViewCell *_titleCell;
+    EKRequestAvailabilityOperation * _availabilityRequest;
+    NSArray * _availabilitySpansForLocation;
+    UIView * _clearButtonView;
+    EKUILocationEditItemCell * _conferenceLocationCell;
+    EKParticipant * _conferenceRoom;
+    int  _conferenceRoomAvailabilityType;
+    UITableViewCell * _mapCell;
+    int  _mostRecentStringLengthDelta;
+    UITableViewCell * _nonConferenceLocationCell;
+    BOOL  _showsLocation;
+    BOOL  _sourceSupportsAvailabilityRequests;
+    UITableViewCell * _titleCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;

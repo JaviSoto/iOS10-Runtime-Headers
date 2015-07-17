@@ -3,9 +3,9 @@
  */
 
 @interface SKSoundContext : NSObject {
-    struct ALCcontext_struct { } *_context;
-    struct ALCdevice_struct { } *_device;
-    BOOL _suspended;
+    struct ALCcontext_struct { } * _context;
+    struct ALCdevice_struct { } * _device;
+    BOOL  _suspended;
 }
 
 @property (nonatomic) double gain;

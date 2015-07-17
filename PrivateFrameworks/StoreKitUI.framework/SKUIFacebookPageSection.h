@@ -3,12 +3,12 @@
  */
 
 @interface SKUIFacebookPageSection : SKUIStorePageSection {
-    ACAccountStore *_accountStore;
-    BOOL _facebookAccountsExist;
-    SKUIReviewsFacebookView *_facebookView;
-    BOOL _isLoadingLikeStatus;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIFacebookLikeStatus *_likeStatus;
+    ACAccountStore * _accountStore;
+    BOOL  _facebookAccountsExist;
+    SKUIReviewsFacebookView * _facebookView;
+    BOOL  _isLoadingLikeStatus;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIFacebookLikeStatus * _likeStatus;
 }
 
 @property (nonatomic, readonly) SKUIFacebookPageComponent *pageComponent;

@@ -3,12 +3,12 @@
  */
 
 @interface UIPickerContentView : UIView {
-    UIImageView *_checkView;
+    UIImageView * _checkView;
     struct { 
         unsigned int checked : 1; 
         unsigned int highlighted : 1; 
-    } _pickerContentViewFlags;
-    UILabel *_titleLabel;
+    }  _pickerContentViewFlags;
+    UILabel * _titleLabel;
 }
 
 @property (getter=isChecked, nonatomic) BOOL checked;
@@ -16,9 +16,9 @@
 
 + (float)_checkmarkOffset;
 
+- (void).cxx_destruct;
 - (BOOL)_isSelectable;
 - (id)checkedColor;
-- (void)dealloc;
 - (BOOL)isChecked;
 - (BOOL)isHighlighted;
 - (float)labelWidthForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

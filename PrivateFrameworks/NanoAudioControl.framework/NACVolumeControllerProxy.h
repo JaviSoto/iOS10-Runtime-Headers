@@ -3,23 +3,23 @@
  */
 
 @interface NACVolumeControllerProxy : NSObject <NACVolumeController> {
-    float _EUVolumeLimit;
-    NSString *_category;
-    <NACVolumeControllerDelegate> *_delegate;
-    float _hapticIntensity;
-    NACEventThrottler *_hapticThrottler;
-    BOOL _isObserving;
-    float _lastReceivedVolumeValue;
-    float _lastRecievedHapticIntensity;
-    BOOL _muted;
-    NSObject<OS_dispatch_source> *_setHapticTimer;
-    NSObject<OS_dispatch_source> *_setVolumeTimer;
-    BOOL _systemMuted;
-    BOOL _volumeControlAvailable;
-    NACEventThrottler *_volumeThrottler;
-    float _volumeValue;
-    BOOL _volumeWarningEnabled;
-    NACXPCClient *_xpcClient;
+    float  _EUVolumeLimit;
+    NSString * _category;
+    <NACVolumeControllerDelegate> * _delegate;
+    NSNumber * _hapticIntensity;
+    NACEventThrottler * _hapticThrottler;
+    BOOL  _isObserving;
+    float  _lastReceivedVolumeValue;
+    float  _lastRecievedHapticIntensity;
+    BOOL  _muted;
+    NSObject<OS_dispatch_source> * _setHapticTimer;
+    NSObject<OS_dispatch_source> * _setVolumeTimer;
+    BOOL  _systemMuted;
+    BOOL  _volumeControlAvailable;
+    NACEventThrottler * _volumeThrottler;
+    NSNumber * _volumeValue;
+    BOOL  _volumeWarningEnabled;
+    NACXPCClient * _xpcClient;
 }
 
 @property (nonatomic, readonly) float EUVolumeLimit;

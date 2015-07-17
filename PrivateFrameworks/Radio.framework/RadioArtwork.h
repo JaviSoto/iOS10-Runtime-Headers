@@ -3,11 +3,11 @@
  */
 
 @interface RadioArtwork : NSObject <NSCopying> {
-    NSURL *_URL;
+    NSURL * _URL;
     struct CGSize { 
         float width; 
         float height; 
-    } _pixelSize;
+    }  _pixelSize;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

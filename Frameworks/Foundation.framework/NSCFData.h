@@ -3,16 +3,17 @@
  */
 
 @interface NSCFData : NSMutableData {
-    char *_bytes;
-    struct __CFAllocator { } *_bytesDeallocator;
-    long _capacity;
-    unsigned char _cfinfo;
-    long _length;
+    char * _bytes;
+    struct __CFAllocator { } * _bytesDeallocator;
+    long  _capacity;
+    unsigned char  _cfinfo;
+    long  _length;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (BOOL)_compact;
+- (id)_createDispatchData;
 - (BOOL)allowsWeakReference;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

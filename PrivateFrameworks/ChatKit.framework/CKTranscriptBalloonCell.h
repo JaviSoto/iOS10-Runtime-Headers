@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptBalloonCell : CKTranscriptMessageCell {
-    CKBalloonView *_balloonView;
-    UILabel *_drawerLabel;
-    NSAttributedString *_drawerText;
-    BOOL _drawerTextChanged;
+@interface CKTranscriptBalloonCell : CKPhoneTranscriptMessageCell {
+    CKBalloonView * _balloonView;
+    UILabel * _drawerLabel;
+    NSAttributedString * _drawerText;
+    BOOL  _drawerTextChanged;
     struct CGSize { 
         float width; 
         float height; 
-    } _drawerTextSize;
-    BOOL _drawerWasVisible;
+    }  _drawerTextSize;
+    BOOL  _drawerWasVisible;
 }
 
 @property (nonatomic, retain) CKBalloonView *balloonView;

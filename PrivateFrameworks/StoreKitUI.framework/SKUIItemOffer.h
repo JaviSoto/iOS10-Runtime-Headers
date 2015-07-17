@@ -3,14 +3,14 @@
  */
 
 @interface SKUIItemOffer : NSObject <SKUICacheCoding> {
-    NSString *_actionParameters;
-    NSString *_buttonText;
-    NSString *_confirmationText;
-    long long _fileSize;
-    NSString *_fileSizeText;
-    NSString *_offerTypeString;
-    float _price;
-    NSString *_variantIdentifier;
+    NSString * _actionParameters;
+    NSString * _buttonText;
+    NSString * _confirmationText;
+    long long  _fileSize;
+    NSString * _fileSizeText;
+    NSString * _offerTypeString;
+    float  _price;
+    NSString * _variantIdentifier;
 }
 
 @property (nonatomic, readonly) NSString *actionParameters;

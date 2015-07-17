@@ -13,10 +13,10 @@
 - (BOOL)openURL:(id)arg1;
 - (BOOL)openURL:(id)arg1 bundleIdentifier:(id)arg2;
 - (BOOL)overrideBlurStyle;
+- (BOOL)reduceMotionEnabled;
 - (BOOL)requiresRTT;
 - (float)screenScale;
 - (struct CGSize { float x1; float x2; })screenSize;
-- (BOOL)shouldRateLimitSearchCompletions;
 - (BOOL)supports3DImagery;
 - (BOOL)supports3DMaps;
 - (BOOL)supportsPitchAPI;

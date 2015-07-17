@@ -3,13 +3,13 @@
  */
 
 @interface UIDictationLandingViewSettings : NSObject {
-    float _circleRPM;
-    float _colorTransitionInDuration;
-    float _colorTransitionOutDuration;
-    float _fadeInDuration;
-    float _fadeOutDuration;
-    float _shrinkDuration;
-    BOOL _useBlackWave;
+    float  _circleRPM;
+    float  _colorTransitionInDuration;
+    float  _colorTransitionOutDuration;
+    float  _fadeInDuration;
+    float  _fadeOutDuration;
+    float  _shrinkDuration;
+    BOOL  _useBlackWave;
 }
 
 @property (nonatomic) float circleRPM;

@@ -3,8 +3,8 @@
  */
 
 @interface EKCalendarColorEditItem : EKCalendarEditItem {
-    NSMutableArray *_cells;
-    unsigned int _checkedRow;
+    NSMutableArray * _cells;
+    unsigned int  _checkedRow;
 }
 
 @property (nonatomic, readonly) NSMutableArray *cells;

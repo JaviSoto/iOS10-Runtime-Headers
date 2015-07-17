@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataString : TSTTableDataObject {
-    NSString *mString;
+    NSString * mString;
 }
 
 - (void)dealloc;

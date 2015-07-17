@@ -3,21 +3,21 @@
  */
 
 @interface TSDInfoGeometry : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    float mAngle;
+    float  mAngle;
     struct { 
         unsigned int widthValid : 1; 
         unsigned int heightValid : 1; 
         unsigned int horizontalFlip : 1; 
         unsigned int verticalFlip : 1; 
-    } mFlags;
+    }  mFlags;
     struct CGPoint { 
         float x; 
         float y; 
-    } mPosition;
+    }  mPosition;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
+    }  mSize;
 }
 
 @property (nonatomic, readonly) float angle;

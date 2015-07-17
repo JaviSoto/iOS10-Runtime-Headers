@@ -3,12 +3,12 @@
  */
 
 @interface MPUExtrasImageBrowserViewController : UIViewController <MPUExtrasZoomingImageInteractiveTransitionSource, MPUExtrasZoomingImageTransitionParticipant, UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
-    BOOL _allowsPinchingImageForInteractiveZoomingImageTransition;
-    <MPUExtrasImageBrowserViewControllerDataSource> *_dataSource;
-    <MPUExtrasImageBrowserViewControllerDelegate> *_delegate;
-    UIPageViewController *_pageViewController;
-    unsigned int _visibleImageIndex;
-    <MPUExtrasZoomingImageInteractiveTransitionSource> *_zoomingImageInteractiveTransitionSource;
+    BOOL  _allowsPinchingImageForInteractiveZoomingImageTransition;
+    <MPUExtrasImageBrowserViewControllerDataSource> * _dataSource;
+    <MPUExtrasImageBrowserViewControllerDelegate> * _delegate;
+    UIPageViewController * _pageViewController;
+    unsigned int  _visibleImageIndex;
+    <MPUExtrasZoomingImageInteractiveTransitionSource> * _zoomingImageInteractiveTransitionSource;
 }
 
 @property (nonatomic) BOOL allowsPinchingImageForInteractiveZoomingImageTransition;

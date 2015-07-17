@@ -3,13 +3,13 @@
  */
 
 @interface RadioGetStationsRequest : RadioRequest {
-    SSMetricsConfiguration *_metricsConfiguration;
-    SSMetricsPageEvent *_metricsPageEvent;
-    int _nodeType;
-    int _numberOfResults;
-    long long _parentNodeID;
-    SSURLConnectionRequest *_request;
-    int _resultsOffset;
+    SSMetricsConfiguration * _metricsConfiguration;
+    SSMetricsPageEvent * _metricsPageEvent;
+    int  _nodeType;
+    int  _numberOfResults;
+    long long  _parentNodeID;
+    SSURLConnectionRequest * _request;
+    int  _resultsOffset;
 }
 
 @property (nonatomic, readonly) SSMetricsConfiguration *metricsConfiguration;

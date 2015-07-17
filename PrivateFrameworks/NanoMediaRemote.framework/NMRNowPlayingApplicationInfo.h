@@ -3,7 +3,7 @@
  */
 
 @interface NMRNowPlayingApplicationInfo : NSObject <NMRMediaRemoteProtobufCodable> {
-    _NMRNowPlayingApplicationStateProtobuf *_protobuf;
+    _NMRNowPlayingApplicationStateProtobuf * _protobuf;
 }
 
 @property (nonatomic, copy) NSString *companionBundleIdentifier;

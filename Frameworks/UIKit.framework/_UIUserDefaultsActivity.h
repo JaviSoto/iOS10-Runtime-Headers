@@ -3,10 +3,10 @@
  */
 
 @interface _UIUserDefaultsActivity : UIActivity {
-    NSArray *_availableActivities;
-    UINavigationController *_navigationController;
-    _UIActivityUserDefaults *_userDefaults;
-    UIViewController *_userDefaultsViewController;
+    NSArray * _availableActivities;
+    UINavigationController * _navigationController;
+    _UIActivityUserDefaults * _userDefaults;
+    UIViewController * _userDefaultsViewController;
 }
 
 @property (nonatomic, copy) NSArray *availableActivities;
@@ -14,6 +14,7 @@
 @property (nonatomic, retain) _UIActivityUserDefaults *userDefaults;
 @property (nonatomic, retain) UIViewController *userDefaultsViewController;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (void)_cleanup;
 - (void)_prepareActivityViewControllerIfNeeded;
@@ -24,7 +25,6 @@
 - (id)activityViewController;
 - (id)availableActivities;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (void)dealloc;
 - (id)initWithUserDefaults:(id)arg1;
 - (id)navigationController;
 - (void)setAvailableActivities:(id)arg1;

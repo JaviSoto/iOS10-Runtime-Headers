@@ -3,21 +3,25 @@
  */
 
 @interface PRSSearchCompletionResultSet : NSObject <PRSDecoderDelegate> {
-    BOOL _cacheable;
-    float _completionScore;
-    NSString *_completionString;
-    PRSDecoder *_decoder;
-    <PRSSimpleResult> *_fakeMapsMoreResult;
-    NSString *_feedbackQueryIdentifier;
-    double _maxAge;
-    NSArray *_patternStrings;
-    NSMutableDictionary *_patternStringsToPatterns;
-    NSString *_prefix;
-    NSString *_resultStatusString;
-    NSArray *_results;
+    BOOL  _cacheable;
+    NSArray * _category_stats_long_term;
+    NSArray * _category_stats_short_term;
+    float  _completionScore;
+    NSString * _completionString;
+    PRSDecoder * _decoder;
+    <PRSSimpleResult> * _fakeMapsMoreResult;
+    NSString * _feedbackQueryIdentifier;
+    double  _maxAge;
+    NSArray * _patternStrings;
+    NSMutableDictionary * _patternStringsToPatterns;
+    NSString * _prefix;
+    NSString * _resultStatusString;
+    NSArray * _results;
 }
 
 @property (getter=isCacheable, nonatomic, readonly) BOOL cacheable;
+@property (nonatomic, retain) NSArray *category_stats_long_term;
+@property (nonatomic, retain) NSArray *category_stats_short_term;
 @property (nonatomic, readonly) float completionScore;
 @property (nonatomic, readonly) NSString *completionString;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +36,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)category_stats_long_term;
+- (id)category_stats_short_term;
 - (Class)classForObjectsAtPropertyPath:(id)arg1 ofObject:(id)arg2 protocol:(id*)arg3;
 - (Class)classForObjectsAtPropertyPath:(id)arg1 ofObject:(id)arg2 withValue:(id)arg3 protocol:(id*)arg4;
 - (float)completionScore;
@@ -43,6 +49,7 @@
 - (unsigned int)hash;
 - (id)initWithFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 prefix:(id)arg4 completionString:(id)arg5 score:(float)arg6 resultStatusString:(id)arg7 feedbackQueryIdentifier:(id)arg8 resultDictionaries:(id)arg9 matchesArray:(id)arg10 error:(id*)arg11;
 - (id)initWithResultSet:(id)arg1 prefix:(id)arg2 completionString:(id)arg3 score:(float)arg4;
+- (id)initWithResultStatusString:(id)arg1;
 - (BOOL)isCacheable;
 - (BOOL)isEqual:(id)arg1;
 - (double)maxAge;
@@ -52,6 +59,8 @@
 - (id)resultStatusString;
 - (id)results;
 - (id)serverKeysForKey:(id)arg1 ofObject:(id)arg2;
+- (void)setCategory_stats_long_term:(id)arg1;
+- (void)setCategory_stats_short_term:(id)arg1;
 - (void)setMaxAge:(double)arg1;
 
 @end

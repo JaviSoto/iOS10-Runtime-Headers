@@ -3,12 +3,12 @@
  */
 
 @interface DuetConfigurator : NSObject <DuetLoggerProtocol> {
-    NSMutableDictionary *appBlackMap;
-    NSMutableArray *appWhiteListArray;
-    NSUserDefaults *bkbdDDomain;
-    NSBundle *bundle;
-    NSMutableDictionary *dictOfConfigurations;
-    NSUserDefaults *sbDomain;
+    NSMutableDictionary * appBlackMap;
+    NSMutableArray * appWhiteListArray;
+    NSUserDefaults * bkbdDDomain;
+    NSBundle * bundle;
+    NSMutableDictionary * dictOfConfigurations;
+    NSUserDefaults * sbDomain;
 }
 
 @property (nonatomic, readonly, retain) NSMutableDictionary *appBlackMap;
@@ -19,7 +19,9 @@
 - (void).cxx_destruct;
 - (id)appBlackMap;
 - (id)appWhiteListArray;
-- (long long)getStateFor:(id)arg1;
+- (double)getDoubleFor:(id)arg1;
+- (long long)getInt64For:(id)arg1;
+- (id)getNSNumberFor:(id)arg1;
 - (id)init;
 - (void)loadBundleConfigurations;
 - (void)loadConfigurations:(id)arg1;

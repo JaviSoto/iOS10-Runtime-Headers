@@ -3,7 +3,7 @@
  */
 
 @interface GEODirectionsCollectionRequest : PBRequest <NSCopying> {
-    NSMutableArray *_requestElements;
+    NSMutableArray * _requestElements;
 }
 
 @property (nonatomic, retain) NSMutableArray *requestElements;

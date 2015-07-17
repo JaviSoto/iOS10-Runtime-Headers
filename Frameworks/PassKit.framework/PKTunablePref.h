@@ -3,9 +3,9 @@
  */
 
 @interface PKTunablePref : NSObject {
-    NSMapTable *_handlers;
-    NSString *_prefName;
-    id _prefValue;
+    NSMapTable * _handlers;
+    NSString * _prefName;
+    id  _prefValue;
 }
 
 @property (retain) NSMapTable *handlers;

@@ -3,7 +3,7 @@
  */
 
 @interface TNPageRep : TSWPPageRep {
-    struct CGPath { } *_shadowPath;
+    struct CGPath { } * _shadowPath;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _shadowPathRect;
+    }  _shadowPathRect;
 }
 
 - (void)dealloc;

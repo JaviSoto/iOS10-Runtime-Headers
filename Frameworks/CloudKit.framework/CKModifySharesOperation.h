@@ -3,13 +3,13 @@
  */
 
 @interface CKModifySharesOperation : CKDatabaseOperation {
-    NSMutableArray *_deletedShareIDs;
-    id /* block */ _modifySharesCompletionBlock;
-    NSMutableDictionary *_savedSharesByShareID;
-    NSMutableDictionary *_shareErrorsByShareID;
-    NSArray *_shareIDsToDelete;
-    NSMutableDictionary *_sharesByShareID;
-    NSArray *_sharesToSave;
+    NSMutableArray * _deletedShareIDs;
+    id /* block */  _modifySharesCompletionBlock;
+    NSMutableDictionary * _savedSharesByShareID;
+    NSMutableDictionary * _shareErrorsByShareID;
+    NSArray * _shareIDsToDelete;
+    NSMutableDictionary * _sharesByShareID;
+    NSArray * _sharesToSave;
 }
 
 @property (nonatomic, retain) NSMutableArray *deletedShareIDs;
@@ -24,6 +24,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)deletedShareIDs;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

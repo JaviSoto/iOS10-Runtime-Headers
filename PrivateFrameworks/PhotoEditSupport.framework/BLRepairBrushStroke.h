@@ -6,7 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _repairTextureOffset;
+    }  _repairTextureOffset;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } repairTextureOffset;

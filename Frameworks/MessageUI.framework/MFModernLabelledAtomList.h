@@ -3,22 +3,22 @@
  */
 
 @interface MFModernLabelledAtomList : UIView <MFModernAddressAtomDelegate, MFPassthroughViewProvider> {
-    NSMutableArray *_addressAtoms;
-    void *_addressBook;
-    UIView *_baselineView;
-    <MFModernLabelledAtomListDelegate> *_delegate;
-    float _firstLineWidth;
-    unsigned int _isChangingFrame;
-    UILabel *_label;
-    UIColor *_labelTextColor;
-    BOOL _labelVisible;
-    float _lineSpacing;
-    unsigned int _needsReflow;
-    unsigned int _numberOfRows;
-    BOOL _primary;
-    NSDictionary *_recipients;
-    NSString *_title;
-    BOOL _usePadDisplayStyle;
+    NSMutableArray * _addressAtoms;
+    void * _addressBook;
+    UIView * _baselineView;
+    <MFModernLabelledAtomListDelegate> * _delegate;
+    float  _firstLineWidth;
+    unsigned int  _isChangingFrame;
+    UILabel * _label;
+    UIColor * _labelTextColor;
+    BOOL  _labelVisible;
+    float  _lineSpacing;
+    unsigned int  _needsReflow;
+    unsigned int  _numberOfRows;
+    BOOL  _primary;
+    NSDictionary * _recipients;
+    NSString * _title;
+    BOOL  _usePadDisplayStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

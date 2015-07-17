@@ -3,12 +3,12 @@
  */
 
 @interface GEOAddress : PBCodable <GEOURLSerializable, NSCopying> {
-    NSMutableArray *_formattedAddressLines;
-    int _formattedAddressType;
+    NSMutableArray * _formattedAddressLines;
+    int  _formattedAddressType;
     struct { 
         unsigned int formattedAddressType : 1; 
-    } _has;
-    GEOStructuredAddress *_structuredAddress;
+    }  _has;
+    GEOStructuredAddress * _structuredAddress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -43,7 +43,6 @@
 - (BOOL)hasStructuredAddress;
 - (unsigned int)hash;
 - (id)initWithAddressDictionary:(id)arg1;
-- (id)initWithAddressString:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;

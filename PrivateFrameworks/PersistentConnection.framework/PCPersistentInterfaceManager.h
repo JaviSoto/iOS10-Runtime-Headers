@@ -3,30 +3,30 @@
  */
 
 @interface PCPersistentInterfaceManager : NSObject <PCInterfaceMonitorDelegate> {
-    long _WWANContextIdentifier;
-    NSString *_WWANInterfaceName;
-    struct __CFSet { } *_WiFiAutoAssociationDelegates;
-    PCSimpleTimer *_WiFiAutoAssociationDisableTimer;
-    BOOL _ctIsWWANInHomeCountry;
-    void *_ctServerConnection;
-    NSMapTable *_delegatesAndQueues;
-    BOOL _hasWWANStatusIndicator;
-    NSTimer *_inCallWWANOverrideTimer;
-    void *_interfaceAssertion;
-    BOOL _isInCall;
-    BOOL _isPowerStateDetectionSupported;
-    BOOL _isWWANInterfaceActivationPermitted;
-    BOOL _isWWANInterfaceDataActive;
-    BOOL _isWWANInterfaceInProlongedHighPowerState;
-    BOOL _isWWANInterfaceUp;
-    BOOL _isWakeOnWiFiEnabled;
-    BOOL _isWakeOnWiFiSupported;
-    double _lastActivationTime;
-    NSRecursiveLock *_lock;
-    BOOL _shouldOverrideOnCallBehavior;
-    struct __CFSet { } *_wakeOnWiFiDelegates;
-    PCSimpleTimer *_wakeOnWiFiDisableTimer;
-    int _wwanRSSI;
+    long  _WWANContextIdentifier;
+    NSString * _WWANInterfaceName;
+    struct __CFSet { } * _WiFiAutoAssociationDelegates;
+    PCSimpleTimer * _WiFiAutoAssociationDisableTimer;
+    BOOL  _ctIsWWANInHomeCountry;
+    void * _ctServerConnection;
+    NSMapTable * _delegatesAndQueues;
+    BOOL  _hasWWANStatusIndicator;
+    NSTimer * _inCallWWANOverrideTimer;
+    void * _interfaceAssertion;
+    BOOL  _isInCall;
+    BOOL  _isPowerStateDetectionSupported;
+    BOOL  _isWWANInterfaceActivationPermitted;
+    BOOL  _isWWANInterfaceDataActive;
+    BOOL  _isWWANInterfaceInProlongedHighPowerState;
+    BOOL  _isWWANInterfaceUp;
+    BOOL  _isWakeOnWiFiEnabled;
+    BOOL  _isWakeOnWiFiSupported;
+    double  _lastActivationTime;
+    NSRecursiveLock * _lock;
+    BOOL  _shouldOverrideOnCallBehavior;
+    struct __CFSet { } * _wakeOnWiFiDelegates;
+    PCSimpleTimer * _wakeOnWiFiDisableTimer;
+    int  _wwanRSSI;
 }
 
 @property (readonly) NSString *WWANInterfaceName;

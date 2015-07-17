@@ -3,32 +3,32 @@
  */
 
 @interface NetTopoDeviceConnectionLayer : NetTopoObjectLayer {
-    struct CGPath { } *_arrowhead;
-    struct CGColor { } *_clearColor;
-    CAShapeLayer *_connectionLineLayer;
-    unsigned int _connectionMediumFallback;
-    unsigned int _connectionStyle;
+    struct CGPath { } * _arrowhead;
+    struct CGColor { } * _clearColor;
+    CAShapeLayer * _connectionLineLayer;
+    unsigned int  _connectionMediumFallback;
+    unsigned int  _connectionStyle;
     struct CGPoint { 
         float x; 
         float y; 
-    } _downstreamConnectionPoint;
-    struct CGPath { } *_hitTestPath;
-    struct CGColor { } *_lineColorActive;
-    struct CGColor { } *_lineColorEthernet;
-    struct CGColor { } *_lineColorInactive;
-    struct CGColor { } *_lineColorWiFi;
-    struct CGColor { } *_selectedLineColor;
+    }  _downstreamConnectionPoint;
+    struct CGPath { } * _hitTestPath;
+    struct CGColor { } * _lineColorActive;
+    struct CGColor { } * _lineColorEthernet;
+    struct CGColor { } * _lineColorInactive;
+    struct CGColor { } * _lineColorWiFi;
+    struct CGColor { } * _selectedLineColor;
     struct CGPoint { 
         float x; 
         float y; 
-    } _siblingMergePoint;
+    }  _siblingMergePoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _upstreamConnectionPoint;
-    unsigned int _upstreamConnectionSide;
-    unsigned int _upstreamDeviceSpatialRelationship;
-    struct CGColor { } *_whiteColor;
+    }  _upstreamConnectionPoint;
+    unsigned int  _upstreamConnectionSide;
+    unsigned int  _upstreamDeviceSpatialRelationship;
+    struct CGColor { } * _whiteColor;
 }
 
 @property (nonatomic, readonly) unsigned int connectionMedium;

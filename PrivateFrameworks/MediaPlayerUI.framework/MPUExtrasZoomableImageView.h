@@ -3,17 +3,17 @@
  */
 
 @interface MPUExtrasZoomableImageView : UIScrollView <MPUExtrasZoomingImageTransitionParticipant, UIScrollViewDelegate> {
-    UIImage *_image;
+    UIImage * _image;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
+    }  _imageSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } _pointToCenterAfterResize;
-    float _scaleToRestoreAfterResize;
-    UIImageView *_zoomView;
+    }  _pointToCenterAfterResize;
+    float  _scaleToRestoreAfterResize;
+    UIImageView * _zoomView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface IDSProtobuf : NSObject <NSCoding> {
-    NSMutableDictionary *_protoBufParams;
-    NSData *_uncompressedData;
+    NSMutableDictionary * _protoBufParams;
+    NSData * _uncompressedData;
 }
 
 @property (nonatomic, retain) IDSMessageContext *context;

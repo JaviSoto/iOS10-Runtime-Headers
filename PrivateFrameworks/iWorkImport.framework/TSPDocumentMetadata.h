@@ -3,7 +3,7 @@
  */
 
 @interface TSPDocumentMetadata : TSPObject {
-    BOOL _isInCollaborationModeForArchiving;
+    BOOL  _isInCollaborationModeForArchiving;
 }
 
 - (id)initFromUnarchiver:(id)arg1;

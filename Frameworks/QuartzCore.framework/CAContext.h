@@ -12,8 +12,6 @@
 @property (getter=isSecure) BOOL secure;
 @property (readonly) BOOL valid;
 
-// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
-
 + (id)allContexts;
 + (id)currentContext;
 + (id)localContext;
@@ -34,10 +32,5 @@
 - (void)setFencePort:(unsigned int)arg1;
 - (void)setFencePort:(unsigned int)arg1 commitHandler:(id /* block */)arg2;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (id)_associatedScreen;
-- (void)_setAssociatedScreen:(id)arg1;
 
 @end

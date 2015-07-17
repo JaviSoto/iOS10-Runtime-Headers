@@ -3,18 +3,18 @@
  */
 
 @interface RURadioStationPlaybackMetadata : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    RadioArtworkCollection *_artworkCollection;
-    BOOL _hasSetArtworkCollection;
-    BOOL _hasSetStationHash;
-    BOOL _hasSetStationID;
-    BOOL _hasSetStationName;
-    BOOL _hasSetStationStringID;
-    BOOL _hasValidRadioStation;
-    RadioStation *_station;
-    NSString *_stationHash;
-    long long _stationID;
-    NSString *_stationName;
-    NSString *_stationStringID;
+    RadioArtworkCollection * _artworkCollection;
+    BOOL  _hasSetArtworkCollection;
+    BOOL  _hasSetStationHash;
+    BOOL  _hasSetStationID;
+    BOOL  _hasSetStationName;
+    BOOL  _hasSetStationStringID;
+    BOOL  _hasValidRadioStation;
+    RadioStation * _station;
+    NSString * _stationHash;
+    long long  _stationID;
+    NSString * _stationName;
+    NSString * _stationStringID;
 }
 
 @property (nonatomic, readonly) RadioArtworkCollection *artworkCollection;

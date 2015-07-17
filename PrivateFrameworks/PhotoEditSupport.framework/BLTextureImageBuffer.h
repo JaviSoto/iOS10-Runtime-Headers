@@ -3,10 +3,10 @@
  */
 
 @interface BLTextureImageBuffer : BLImageBuffer {
-    unsigned int _accumlatorFramebuffer;
-    unsigned int _accumlatorTexture;
-    CIImage *_ciImage;
-    EAGLContext *_eaglContext;
+    unsigned int  _accumlatorFramebuffer;
+    unsigned int  _accumlatorTexture;
+    CIImage * _ciImage;
+    EAGLContext * _eaglContext;
 }
 
 - (id)ciImage;

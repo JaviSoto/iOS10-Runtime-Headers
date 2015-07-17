@@ -3,17 +3,17 @@
  */
 
 @interface CKPackageItem : NSObject {
-    NSNumber *_deviceID;
-    NSNumber *_fileID;
-    NSURL *_fileURL;
-    NSNumber *_generationID;
-    unsigned long long _itemID;
-    long long _offset;
-    int _packageIndex;
-    long _sectionIndex;
-    NSData *_signature;
-    long long _size;
-    NSData *_wrappedAssetKey;
+    NSNumber * _deviceID;
+    NSNumber * _fileID;
+    NSURL * _fileURL;
+    NSNumber * _generationID;
+    unsigned long long  _itemID;
+    long long  _offset;
+    int  _packageIndex;
+    long  _sectionIndex;
+    NSData * _signature;
+    long long  _size;
+    NSData * _wrappedAssetKey;
 }
 
 @property (nonatomic, retain) NSNumber *deviceID;

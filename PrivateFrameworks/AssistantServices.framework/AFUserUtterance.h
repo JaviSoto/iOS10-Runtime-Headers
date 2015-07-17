@@ -3,10 +3,10 @@
  */
 
 @interface AFUserUtterance : NSObject {
-    NSDictionary *_correctionIdentifier;
-    NSMutableArray *_phrases;
-    NSString *_text;
-    NSMutableArray *_tokens;
+    NSDictionary * _correctionIdentifier;
+    NSMutableArray * _phrases;
+    NSString * _text;
+    NSMutableArray * _tokens;
 }
 
 @property (nonatomic, readonly) NSDictionary *correctionIdentifier;

@@ -3,8 +3,8 @@
  */
 
 @interface DADataHandler : NSObject {
-    NSString *_changeTrackingID;
-    void *_container;
+    NSString * _changeTrackingID;
+    void * _container;
 }
 
 @property (nonatomic, copy) NSString *changeTrackingID;
@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (void)drainContainer;
 - (void)drainSuperfluousChanges;
+- (id)getDAExceptionObjectWithLocalItem:(void*)arg1 originalEvent:(id)arg2 account:(id)arg3;
 - (id)getDAObjectWithLocalItem:(void*)arg1 serverId:(id)arg2 account:(id)arg3;
 - (int)getIdFromLocalObject:(void*)arg1;
 - (id)initWithContainer:(void*)arg1 changeTrackingID:(id)arg2;

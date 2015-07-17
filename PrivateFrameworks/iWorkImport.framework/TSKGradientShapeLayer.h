@@ -3,8 +3,8 @@
  */
 
 @interface TSKGradientShapeLayer : CAShapeLayer {
-    CAGradientLayer *_gradient;
-    CAShapeLayer *_shapeMask;
+    CAGradientLayer * _gradient;
+    CAShapeLayer * _shapeMask;
 }
 
 @property (copy) NSArray *colors;

@@ -3,8 +3,8 @@
  */
 
 @interface MusicEntityValueProviderWrapper : NSObject <MusicEntityValueProviding> {
-    <MusicEntityValueProviding> *_entityValueProvider;
-    NSMutableDictionary *_handlers;
+    <MusicEntityValueProviding> * _entityValueProvider;
+    NSMutableDictionary * _handlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

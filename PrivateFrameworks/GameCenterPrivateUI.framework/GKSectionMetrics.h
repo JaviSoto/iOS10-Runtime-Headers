@@ -3,35 +3,41 @@
  */
 
 @interface GKSectionMetrics : GKGridLayoutMetrics {
-    unsigned int _alignment;
-    float _desiredItemHeight;
-    float _desiredItemWidth;
-    float _flowColumnWidth;
-    unsigned int _flowMaxColumnCount;
-    BOOL _incrementalRevealConsumesPadding;
-    unsigned int _incrementalRevealItemCount;
-    float _interitemSpacing;
-    NSDictionary *_itemHeightList;
-    unsigned int _lastLineItemAlignment;
-    float _lineSpacing;
-    float _marginBetweenItems;
-    unsigned int _maximumVisibleItemCount;
+    unsigned int  _alignment;
+    float  _calculatedItemHeightCache;
+    float  _desiredItemHeight;
+    float  _desiredItemWidth;
+    float  _flowColumnWidth;
+    unsigned int  _flowMaxColumnCount;
+    unsigned int  _flowMaxColumnCountLandscape;
+    unsigned int  _flowMaxColumnCountPortrait;
+    BOOL  _incrementalRevealConsumesPadding;
+    unsigned int  _incrementalRevealItemCount;
+    float  _interitemSpacing;
+    NSDictionary * _itemHeightList;
+    unsigned int  _lastLineItemAlignment;
+    float  _lineSpacing;
+    float  _marginBetweenItems;
+    unsigned int  _maximumVisibleItemCount;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _padding;
-    BOOL _shouldAlwaysIncludeShowMore;
-    BOOL _shouldShowSectionHeadersWhenNoItems;
+    }  _padding;
+    BOOL  _shouldAlwaysIncludeShowMore;
+    BOOL  _shouldShowSectionHeadersWhenNoItems;
 }
 
 @property (nonatomic) unsigned int alignment;
 @property (nonatomic, readonly) float calculatedItemHeight;
+@property (nonatomic) float calculatedItemHeightCache;
 @property (nonatomic) float desiredItemHeight;
 @property (nonatomic) float desiredItemWidth;
 @property (nonatomic) float flowColumnWidth;
 @property (nonatomic) unsigned int flowMaxColumnCount;
+@property (nonatomic) unsigned int flowMaxColumnCountLandscape;
+@property (nonatomic) unsigned int flowMaxColumnCountPortrait;
 @property (nonatomic) BOOL incrementalRevealConsumesPadding;
 @property (nonatomic) unsigned int incrementalRevealItemCount;
 @property (nonatomic) float interitemSpacing;
@@ -51,12 +57,15 @@
 
 - (unsigned int)alignment;
 - (float)calculatedItemHeight;
+- (float)calculatedItemHeightCache;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)desiredItemHeight;
 - (float)desiredItemWidth;
 - (float)flowColumnWidth;
 - (unsigned int)flowMaxColumnCount;
+- (unsigned int)flowMaxColumnCountLandscape;
+- (unsigned int)flowMaxColumnCountPortrait;
 - (BOOL)incrementalRevealConsumesPadding;
 - (unsigned int)incrementalRevealItemCount;
 - (id)init;
@@ -74,10 +83,13 @@
 - (float)sectionHeaderHeight;
 - (BOOL)sectionHeadersShouldPin;
 - (void)setAlignment:(unsigned int)arg1;
+- (void)setCalculatedItemHeightCache:(float)arg1;
 - (void)setDesiredItemHeight:(float)arg1;
 - (void)setDesiredItemWidth:(float)arg1;
 - (void)setFlowColumnWidth:(float)arg1;
 - (void)setFlowMaxColumnCount:(unsigned int)arg1;
+- (void)setFlowMaxColumnCountLandscape:(unsigned int)arg1;
+- (void)setFlowMaxColumnCountPortrait:(unsigned int)arg1;
 - (void)setIncrementalRevealConsumesPadding:(BOOL)arg1;
 - (void)setIncrementalRevealItemCount:(unsigned int)arg1;
 - (void)setInteritemSpacing:(float)arg1;

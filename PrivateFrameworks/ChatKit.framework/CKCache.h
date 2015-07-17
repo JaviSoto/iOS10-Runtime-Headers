@@ -3,7 +3,7 @@
  */
 
 @interface CKCache : NSObject <CKCache> {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (readonly, copy) NSString *debugDescription;

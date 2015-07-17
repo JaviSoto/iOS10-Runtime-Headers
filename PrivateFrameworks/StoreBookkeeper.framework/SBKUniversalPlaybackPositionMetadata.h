@@ -3,11 +3,11 @@
  */
 
 @interface SBKUniversalPlaybackPositionMetadata : NSObject <NSCopying, SBKKeyValuePayloadPair> {
-    double _bookmarkTime;
-    BOOL _hasBeenPlayed;
-    NSString *_itemIdentifier;
-    unsigned int _playCount;
-    double _timestamp;
+    double  _bookmarkTime;
+    BOOL  _hasBeenPlayed;
+    NSString * _itemIdentifier;
+    unsigned int  _playCount;
+    double  _timestamp;
 }
 
 @property double bookmarkTime;

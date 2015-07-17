@@ -3,14 +3,14 @@
  */
 
 @interface KeychainSyncHeaderView : UIView <PSHeaderFooterView> {
-    UILabel *_detailLabel;
-    UILabel *_titleLabel;
-    BOOL _usesCompactLayout;
+    UILabel * _detailLabel;
+    UILabel * _titleLabel;
+    BOOL  _usesCompactLayout;
 }
 
 @property (nonatomic) BOOL usesCompactLayout;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
 - (float)preferredHeightForWidth:(float)arg1 inTableView:(id)arg2;

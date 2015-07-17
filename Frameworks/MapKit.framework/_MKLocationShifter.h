@@ -3,10 +3,12 @@
  */
 
 @interface _MKLocationShifter : NSObject {
-    GEOLocationShifter *_locationShifter;
+    GEOLocationShifter * _locationShifter;
 }
 
 @property (getter=isLocationShiftEnabled, nonatomic, readonly) BOOL locationShiftEnabled;
+
++ (BOOL)isLocationShiftRequiredForLocation:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_prepareShiftForLocation:(id)arg1 withCompletionHandler:(id /* block */)arg2 withShiftRequestBlock:(id /* block */)arg3;

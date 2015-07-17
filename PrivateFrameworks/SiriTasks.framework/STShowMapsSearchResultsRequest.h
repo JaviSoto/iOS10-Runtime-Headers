@@ -3,7 +3,7 @@
  */
 
 @interface STShowMapsSearchResultsRequest : AFSiriRequest {
-    AFLocation *_searchResults;
+    STSiriLocation * _searchResults;
 }
 
 + (BOOL)supportsSecureCoding;

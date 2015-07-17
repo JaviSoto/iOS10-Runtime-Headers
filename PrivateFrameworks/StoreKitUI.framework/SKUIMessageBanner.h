@@ -3,12 +3,12 @@
  */
 
 @interface SKUIMessageBanner : UIView {
-    NSAttributedString *_attributedMessage;
-    UIView *_borderView;
-    UIButton *_button;
-    UIButton *_clearButton;
-    <SKUIMessageBannerDelegate> *_delegate;
-    UILabel *_label;
+    NSAttributedString * _attributedMessage;
+    UIView * _borderView;
+    UIButton * _button;
+    UIButton * _clearButton;
+    <SKUIMessageBannerDelegate> * _delegate;
+    UILabel * _label;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedMessage;

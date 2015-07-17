@@ -3,10 +3,10 @@
  */
 
 @interface CPGraphicObject : CPChunk {
-    CPParagraph *anchoringParagraph;
-    CPTextLine *anchoringTextLine;
-    unsigned int clipIndex;
-    BOOL isInZoneBorder;
+    CPParagraph * anchoringParagraph;
+    CPTextLine * anchoringTextLine;
+    unsigned int  clipIndex;
+    BOOL  isInZoneBorder;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,9 +16,9 @@
             float width; 
             float height; 
         } size; 
-    } renderedBounds;
-    CPChunk<CPGraphicUser> *user;
-    int zoneGraphicType;
+    }  renderedBounds;
+    CPChunk<CPGraphicUser> * user;
+    int  zoneGraphicType;
 }
 
 @property (nonatomic, retain) CPParagraph *anchoringParagraph;

@@ -3,30 +3,32 @@
  */
 
 @interface AXSpeechAction : NSObject {
-    BOOL _cannotInterrupt;
-    id /* block */ _completionCallback;
-    NSMutableArray *_emojiRangeReplacements;
-    NSString *_language;
-    id /* block */ _onPauseCallback;
-    id /* block */ _onResumeCallback;
-    id /* block */ _onSpeechStartCallback;
-    id /* block */ _onWillSpeakRangeCallback;
-    float _pitch;
-    NSString *_processedString;
-    BOOL _shouldDetectLanguage;
-    BOOL _shouldPrecomposeString;
-    BOOL _shouldProcessEmoji;
-    BOOL _shouldProcessEmoticons;
-    BOOL _shouldQueue;
-    float _speakingRate;
-    TTSSpeechRequest *_speechRequest;
-    NSString *_string;
-    BOOL _useCompactVoice;
-    NSString *_voiceIdentifier;
-    float _volume;
-    int _wordCallbackPostProcessedOffset;
+    unsigned int  _audioQueueFlags;
+    BOOL  _cannotInterrupt;
+    id /* block */  _completionCallback;
+    NSMutableArray * _emojiRangeReplacements;
+    NSString * _language;
+    id /* block */  _onPauseCallback;
+    id /* block */  _onResumeCallback;
+    id /* block */  _onSpeechStartCallback;
+    id /* block */  _onWillSpeakRangeCallback;
+    float  _pitch;
+    NSString * _processedString;
+    BOOL  _shouldDetectLanguage;
+    BOOL  _shouldPrecomposeString;
+    BOOL  _shouldProcessEmoji;
+    BOOL  _shouldProcessEmoticons;
+    BOOL  _shouldQueue;
+    float  _speakingRate;
+    TTSSpeechRequest * _speechRequest;
+    NSString * _string;
+    BOOL  _useCompactVoice;
+    NSString * _voiceIdentifier;
+    float  _volume;
+    int  _wordCallbackPostProcessedOffset;
 }
 
+@property (nonatomic) unsigned int audioQueueFlags;
 @property (nonatomic) BOOL cannotInterrupt;
 @property (nonatomic, copy) id /* block */ completionCallback;
 @property (nonatomic, retain) NSMutableArray *emojiRangeReplacements;
@@ -53,6 +55,7 @@
 + (id)actionWithString:(id)arg1 shouldQueue:(BOOL)arg2;
 
 - (id)_detectLanguageFromContent;
+- (unsigned int)audioQueueFlags;
 - (BOOL)cannotInterrupt;
 - (id /* block */)completionCallback;
 - (void)dealloc;
@@ -67,6 +70,7 @@
 - (float)pitch;
 - (void)preprocessAction;
 - (id)processedString;
+- (void)setAudioQueueFlags:(unsigned int)arg1;
 - (void)setCannotInterrupt:(BOOL)arg1;
 - (void)setCompletionCallback:(id /* block */)arg1;
 - (void)setEmojiRangeReplacements:(id)arg1;

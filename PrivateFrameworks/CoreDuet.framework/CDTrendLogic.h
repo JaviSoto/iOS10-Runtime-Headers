@@ -3,21 +3,21 @@
  */
 
 @interface CDTrendLogic : NSObject {
-    unsigned long long _cDelta;
-    unsigned long long _cEpsilon;
-    unsigned long long _cHighThreshold;
-    unsigned long long _cLowThreshold;
-    unsigned long long _cMax;
-    unsigned long long _cMin;
-    unsigned long long _iecAvgMult;
-    unsigned long long _iecDecayMult;
-    unsigned long long _iecDiv;
-    unsigned long long _iecMaxSeconds;
-    unsigned long long _iecMinMult;
-    unsigned long long _iecMinSeconds;
-    unsigned long long _slotCount;
-    unsigned long long _timerLeewaySeconds;
-    unsigned long long _timerMinSeconds;
+    unsigned long long  _cDelta;
+    unsigned long long  _cEpsilon;
+    unsigned long long  _cHighThreshold;
+    unsigned long long  _cLowThreshold;
+    unsigned long long  _cMax;
+    unsigned long long  _cMin;
+    unsigned long long  _iecAvgMult;
+    unsigned long long  _iecDecayMult;
+    unsigned long long  _iecDiv;
+    unsigned long long  _iecMaxSeconds;
+    unsigned long long  _iecMinMult;
+    unsigned long long  _iecMinSeconds;
+    unsigned long long  _slotCount;
+    unsigned long long  _timerLeewaySeconds;
+    unsigned long long  _timerMinSeconds;
 }
 
 @property unsigned long long cDelta;

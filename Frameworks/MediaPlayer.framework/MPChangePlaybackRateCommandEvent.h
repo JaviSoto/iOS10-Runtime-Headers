@@ -3,7 +3,7 @@
  */
 
 @interface MPChangePlaybackRateCommandEvent : MPRemoteCommandEvent {
-    float _playbackRate;
+    float  _playbackRate;
 }
 
 @property (nonatomic, readonly) float playbackRate;

@@ -3,12 +3,12 @@
  */
 
 @interface GEOTileServerLocalProxy : GEOTileServerProxy <GEOResourceManifestTileGroupObserver> {
-    NSString *_cacheLocation;
-    GEODBReader *_dbReader;
-    GEODBWriter *_dbWriter;
-    NSMutableArray *_inProgress;
-    NSLock *_inProgressLock;
-    NSMapTable *_providers;
+    NSString * _cacheLocation;
+    GEODBReader * _dbReader;
+    GEODBWriter * _dbWriter;
+    NSMutableArray * _inProgress;
+    NSLock * _inProgressLock;
+    NSMapTable * _providers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,6 +30,7 @@
 - (void)open;
 - (void)registerProvider:(Class)arg1;
 - (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
+- (void)reprioritizeKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 newPriority:(unsigned int)arg2;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1;

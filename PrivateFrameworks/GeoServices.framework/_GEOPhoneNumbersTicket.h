@@ -3,17 +3,20 @@
  */
 
 @interface _GEOPhoneNumbersTicket : NSObject <GEOMapServiceTicket> {
-    BOOL _allowCellularDataForLookup;
-    BOOL _canceled;
-    NSArray *_phoneNumbers;
-    GEOMapServiceTraits *_traits;
+    BOOL  _allowCellularDataForLookup;
+    BOOL  _canceled;
+    NSArray * _phoneNumbers;
+    GEOMapServiceTraits * _traits;
 }
 
 @property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
+@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
+@property (nonatomic, readonly) NSString *resultSectionHeader;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
@@ -23,7 +26,10 @@
 - (id)description;
 - (id)initWithPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
 - (BOOL)isCanceled;
+- (BOOL)isChainResultSet;
+- (id)responseUserInfo;
 - (id)resultBoundingRegion;
+- (id)resultSectionHeader;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
 - (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface TSDDrawableLayout : TSDLayout <TSDWrappable> {
-    TSUBezierPath *mCachedExternalWrapPath;
-    TSUBezierPath *mCachedWrapPath;
-    TSDWrapSegments *mCachedWrapSegments;
+    TSUBezierPath * mCachedExternalWrapPath;
+    TSUBezierPath * mCachedWrapPath;
+    TSDWrapSegments * mCachedWrapSegments;
 }
 
 @property (readonly, copy) NSString *debugDescription;

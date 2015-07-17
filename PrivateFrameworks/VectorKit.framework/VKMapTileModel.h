@@ -3,15 +3,15 @@
  */
 
 @interface VKMapTileModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
-    VKMapModel *_mapModel;
-    unsigned char _maximumZ;
-    unsigned char _minimumZ;
-    NSMutableSet *_previousTilesInScene;
-    NSMutableSet *_tilesExitingScene;
-    NSMutableSet *_tilesInScene;
-    NSMutableSet *_tilesInScenePlusExitingTiles;
-    NSMutableSet *_tilesWillEnterScene;
-    NSMutableSet *_tilesWillExitScene;
+    VKMapModel * _mapModel;
+    unsigned char  _maximumZ;
+    unsigned char  _minimumZ;
+    NSMutableSet * _previousTilesInScene;
+    NSMutableSet * _tilesExitingScene;
+    NSMutableSet * _tilesInScene;
+    NSMutableSet * _tilesInScenePlusExitingTiles;
+    NSMutableSet * _tilesWillEnterScene;
+    NSMutableSet * _tilesWillExitScene;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +20,7 @@
 @property (nonatomic) VKMapModel *mapModel;
 @property (nonatomic, readonly) unsigned char maximumZ;
 @property (nonatomic, readonly) unsigned char minimumZ;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSSet *tilesInScene;
 @property (nonatomic, readonly) NSSet *tilesInScenePlusExitingTiles;
@@ -45,7 +45,7 @@
 - (void)reset;
 - (void)setMapModel:(id)arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
 - (void)stylesheetWillChange;
 - (id)tilesInScene;

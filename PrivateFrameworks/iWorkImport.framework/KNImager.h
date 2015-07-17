@@ -3,9 +3,9 @@
  */
 
 @interface KNImager : TSDImager <TSDConnectedInfoReplacing> {
-    BOOL mShouldShowInstructionalText;
-    KNAbstractSlide *mSlide;
-    unsigned int mSlideNumber;
+    BOOL  mShouldShowInstructionalText;
+    KNAbstractSlide * mSlide;
+    unsigned int  mSlideNumber;
 }
 
 @property (readonly, copy) NSString *debugDescription;

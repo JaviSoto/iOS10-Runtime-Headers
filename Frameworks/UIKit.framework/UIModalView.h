@@ -3,18 +3,18 @@
  */
 
 @interface UIModalView : UIView <UITextFieldDelegate> {
-    float _bodyTextHeight;
-    UILabel *_bodyTextLabel;
-    NSMutableArray *_buttons;
-    int _cancelButton;
-    id _context;
-    int _defaultButton;
-    <UIModalViewDelegate> *_delegate;
-    UIView *_dimView;
-    UIWindow *_dimWindow;
-    int _dismissButtonIndex;
-    int _firstOtherButton;
-    UIView *_keyboard;
+    float  _bodyTextHeight;
+    UILabel * _bodyTextLabel;
+    NSMutableArray * _buttons;
+    int  _cancelButton;
+    id  _context;
+    int  _defaultButton;
+    <UIModalViewDelegate> * _delegate;
+    UIView * _dimView;
+    UIWindow * _dimWindow;
+    int  _dismissButtonIndex;
+    int  _firstOtherButton;
+    UIView * _keyboard;
     struct { 
         unsigned int numberOfRows : 7; 
         unsigned int delegateAlertSheetButtonClicked : 1; 
@@ -53,18 +53,18 @@
         unsigned int useAutomaticKB : 1; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
-    } _modalViewFlags;
-    UIWindow *_originalWindow;
-    UIView *_sheetView;
-    float _startX;
-    float _startY;
-    UILabel *_subtitleLabel;
-    int _suspendTag;
-    UIView *_table;
-    UILabel *_taglineTextLabel;
-    NSMutableArray *_textFields;
-    UILabel *_titleLabel;
-    UIToolbar *_toolbar;
+    }  _modalViewFlags;
+    UIWindow * _originalWindow;
+    UIView * _sheetView;
+    float  _startX;
+    float  _startY;
+    UILabel * _subtitleLabel;
+    int  _suspendTag;
+    UIView * _table;
+    UILabel * _taglineTextLabel;
+    NSMutableArray * _textFields;
+    UILabel * _titleLabel;
+    UIToolbar * _toolbar;
 }
 
 @property (nonatomic) int cancelButtonIndex;
@@ -86,6 +86,7 @@
 + (id)topMostAlert;
 + (id)visibleAlert;
 
+- (void).cxx_destruct;
 - (id)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addButtonWithTitleText:(id)arg1;

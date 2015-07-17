@@ -3,8 +3,8 @@
  */
 
 @interface CUIPSDLayerEffectComponent : NSObject {
-    NSString *_name;
-    BOOL _visible;
+    NSString * _name;
+    BOOL  _visible;
 }
 
 @property (retain) NSString *name;

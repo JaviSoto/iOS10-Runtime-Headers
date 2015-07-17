@@ -3,17 +3,17 @@
  */
 
 @interface MPURatingControl : UIControl {
-    <MPURatingControlDelegate> *_delegate;
+    <MPURatingControlDelegate> * _delegate;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _hitTestEdgeInsets;
-    NSMutableArray *_imageViews;
-    UIPanGestureRecognizer *_panGestureRecognizer;
-    float _rating;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    }  _hitTestEdgeInsets;
+    NSMutableArray * _imageViews;
+    UIPanGestureRecognizer * _panGestureRecognizer;
+    float  _rating;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic) <MPURatingControlDelegate> *delegate;

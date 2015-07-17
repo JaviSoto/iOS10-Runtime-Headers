@@ -3,13 +3,13 @@
  */
 
 @interface EKDayViewWithGutters : UIView {
-    float _allDayHeight;
-    EKDayView *_dayView;
-    float _gutterWidth;
-    EKDayAllDayView *_leftAllDayView;
-    UIView *_leftGutter;
-    EKDayAllDayView *_rightAllDayView;
-    UIView *_rightGutter;
+    float  _allDayHeight;
+    EKDayView * _dayView;
+    float  _gutterWidth;
+    EKDayAllDayView * _leftAllDayView;
+    UIView * _leftGutter;
+    EKDayAllDayView * _rightAllDayView;
+    UIView * _rightGutter;
 }
 
 @property (nonatomic) float allDayHeight;

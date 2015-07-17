@@ -3,24 +3,24 @@
  */
 
 @interface MPUSystemMediaControlsViewController : UIViewController <MPAVRoutingControllerDelegate, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPUNowPlayingDelegate, MPURemoteViewControllerPresentation, MPUSystemMediaControlsViewDelegate, MPUTransportControlMediaRemoteControllerDelegate, MPUTransportControlsViewDataSource, MPUTransportControlsViewDelegate, MPUTransportControlsViewLayoutDelegate> {
-    UIImageView *_artworkImageView;
-    NSString *_audioCategoryForDisabledHUD;
-    NSArray *_currentlySupportedCommands;
-    <MPUSystemMediaControlsDelegate> *_delegate;
-    double _lastDurationFromUpdate;
-    BOOL _lockscreenDisabledForScreenTurnOff;
-    MPUSystemMediaControlsView *_mediaControlsView;
-    NSArray *_notificationObservers;
-    MPUNowPlayingController *_nowPlayingController;
-    BOOL _nowPlayingIsRadioStation;
-    BOOL _persistentUpdatesEnabled;
-    MPAVRoutingController *_routingController;
-    double _scrubbedTimeDestination;
-    NSTimer *_scrubberCommitTimer;
-    NSTimer *_skipInformationRevealTimer;
-    int _style;
-    MPUTransportControlMediaRemoteController *_transportControlMediaRemoteController;
-    BOOL _wantsToLaunchNowPlayingApp;
+    UIImageView * _artworkImageView;
+    NSString * _audioCategoryForDisabledHUD;
+    NSArray * _currentlySupportedCommands;
+    <MPUSystemMediaControlsDelegate> * _delegate;
+    double  _lastDurationFromUpdate;
+    BOOL  _lockscreenDisabledForScreenTurnOff;
+    MPUSystemMediaControlsView * _mediaControlsView;
+    NSArray * _notificationObservers;
+    MPUNowPlayingController * _nowPlayingController;
+    BOOL  _nowPlayingIsRadioStation;
+    BOOL  _persistentUpdatesEnabled;
+    MPAVRoutingController * _routingController;
+    double  _scrubbedTimeDestination;
+    NSTimer * _scrubberCommitTimer;
+    NSTimer * _skipInformationRevealTimer;
+    int  _style;
+    MPUTransportControlMediaRemoteController * _transportControlMediaRemoteController;
+    BOOL  _wantsToLaunchNowPlayingApp;
 }
 
 @property (nonatomic, readonly) UIView *artworkView;

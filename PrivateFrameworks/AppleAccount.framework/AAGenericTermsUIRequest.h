@@ -3,8 +3,8 @@
  */
 
 @interface AAGenericTermsUIRequest : AARequest {
-    ACAccount *_account;
-    NSDictionary *_requestDictionary;
+    ACAccount * _account;
+    NSDictionary * _requestDictionary;
 }
 
 + (Class)responseClass;

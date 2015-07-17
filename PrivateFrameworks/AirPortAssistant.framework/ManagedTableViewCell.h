@@ -3,11 +3,11 @@
  */
 
 @interface ManagedTableViewCell : UITableViewCell {
-    NSMutableDictionary *_cellDict;
-    float _cellXEdgeInset;
-    float _computedRightmostEditTextInset;
-    NSIndexPath *_currentIndexPath;
-    float _forcedRightmostEditTextInset;
+    NSMutableDictionary * _cellDict;
+    float  _cellXEdgeInset;
+    float  _computedRightmostEditTextInset;
+    NSIndexPath * _currentIndexPath;
+    float  _forcedRightmostEditTextInset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,9 +17,9 @@
             float width; 
             float height; 
         } size; 
-    } _modifiedContentViewFrame;
-    float _neededContentHeight;
-    TableViewManager *_parentTableManager;
+    }  _modifiedContentViewFrame;
+    float  _neededContentHeight;
+    TableViewManager * _parentTableManager;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cellDict;

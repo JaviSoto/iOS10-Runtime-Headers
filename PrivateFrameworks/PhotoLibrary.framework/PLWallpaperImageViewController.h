@@ -3,18 +3,22 @@
  */
 
 @interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate> {
-    unsigned int _didSetImageMode;
-    BOOL _isWallpaperEdit;
-    PLWallpaperNavigationItem *_navItem;
-    NSArray *_navigationToolbarItems;
-    int _previewType;
-    int _previewVariant;
-    BOOL _saveWallpaperData;
-    int _wallpaperMode;
-    SBSUIWallpaperPreviewViewController *_wallpaperPreviewViewController;
-    NSString *_wallpaperTitle;
+    BOOL  __statusBarHidden;
+    int  __statusBarStyle;
+    unsigned int  _didSetImageMode;
+    BOOL  _isWallpaperEdit;
+    PLWallpaperNavigationItem * _navItem;
+    NSArray * _navigationToolbarItems;
+    int  _previewType;
+    int  _previewVariant;
+    BOOL  _saveWallpaperData;
+    int  _wallpaperMode;
+    SBSUIWallpaperPreviewViewController * _wallpaperPreviewViewController;
+    NSString * _wallpaperTitle;
 }
 
+@property (setter=_setStatusBarHidden:, nonatomic) BOOL _statusBarHidden;
+@property (setter=_setStatusBarStyle:, nonatomic) int _statusBarStyle;
 @property (nonatomic) BOOL isWallpaperEdit;
 @property (nonatomic) int previewType;
 @property (nonatomic) int previewVariant;
@@ -28,6 +32,10 @@
 - (void)_cropWallpaperFinished:(id)arg1;
 - (void)_displayWallpaperOptionsSheet;
 - (void)_savePhoto;
+- (void)_setStatusBarHidden:(BOOL)arg1;
+- (void)_setStatusBarStyle:(int)arg1;
+- (BOOL)_statusBarHidden;
+- (int)_statusBarStyle;
 - (unsigned int)_tileAutoresizingMask;
 - (void)_updatePreviewFrame:(id)arg1;
 - (void)_updateTitles;
@@ -48,7 +56,8 @@
 - (id)navigationItem;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
+- (int)preferredStatusBarStyle;
+- (int)preferredStatusBarUpdateAnimation;
 - (void)prepareForBackground:(id)arg1;
 - (void)prepareForForeground:(id)arg1;
 - (int)previewType;

@@ -3,9 +3,9 @@
  */
 
 @interface CUIPSDLayerEffects : NSObject {
-    NSMutableDictionary *_effectList;
-    float _effectScale;
-    BOOL _visible;
+    NSMutableDictionary * _effectList;
+    float  _effectScale;
+    BOOL  _visible;
 }
 
 @property (copy) NSMutableDictionary *effectList;

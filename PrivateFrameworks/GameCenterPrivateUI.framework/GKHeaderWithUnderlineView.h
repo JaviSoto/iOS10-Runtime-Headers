@@ -3,16 +3,16 @@
  */
 
 @interface GKHeaderWithUnderlineView : UICollectionReusableView {
-    BOOL _didSetupConstraints;
-    NSArray *_gutterConstraints;
-    BOOL _isPinned;
-    float _leadingMargin;
-    NSMutableDictionary *_metrics;
-    UIView *_pinnedBackdropView;
-    UIImageView *_shadowView;
-    float _trailingMargin;
-    BOOL _underlineHasRightMargin;
-    UIView *_underlineView;
+    BOOL  _didSetupConstraints;
+    NSArray * _gutterConstraints;
+    BOOL  _isPinned;
+    float  _leadingMargin;
+    NSMutableDictionary * _metrics;
+    UIView * _pinnedBackdropView;
+    UIImageView * _shadowView;
+    float  _trailingMargin;
+    BOOL  _underlineHasRightMargin;
+    UIView * _underlineView;
 }
 
 @property (nonatomic) BOOL didSetupConstraints;

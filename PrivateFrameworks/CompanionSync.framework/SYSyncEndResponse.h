@@ -3,13 +3,13 @@
  */
 
 @interface SYSyncEndResponse : PBCodable <NSCopying> {
-    SYErrorInfo *_error;
-    int _errorResolution;
+    SYErrorInfo * _error;
+    int  _errorResolution;
     struct { 
         unsigned int errorResolution : 1; 
-    } _has;
-    SYMessageHeader *_header;
-    NSString *_syncID;
+    }  _has;
+    SYMessageHeader * _header;
+    NSString * _syncID;
 }
 
 @property (nonatomic, retain) SYErrorInfo *error;

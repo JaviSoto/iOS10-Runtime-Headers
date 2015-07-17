@@ -3,23 +3,23 @@
  */
 
 @interface VSSpeechRequest : NSObject <NSSecureCoding> {
-    NSAttributedString *_attributedText;
-    unsigned int _audioQueueFlags;
-    unsigned int _audioSessionID;
-    BOOL _audioSessionIDIsValid;
-    int _footprint;
-    int _gender;
-    NSString *_languageCode;
-    BOOL _maintainsInput;
-    NSURL *_outputPath;
-    id /* block */ _pauseHandler;
-    double _pitch;
-    double _rate;
-    id /* block */ _stopHandler;
-    NSString *_text;
-    BOOL _useCustomVoice;
-    NSString *_voiceName;
-    double _volume;
+    NSAttributedString * _attributedText;
+    unsigned int  _audioQueueFlags;
+    unsigned int  _audioSessionID;
+    BOOL  _audioSessionIDIsValid;
+    int  _footprint;
+    int  _gender;
+    NSString * _languageCode;
+    BOOL  _maintainsInput;
+    NSURL * _outputPath;
+    id /* block */  _pauseHandler;
+    double  _pitch;
+    double  _rate;
+    id /* block */  _stopHandler;
+    NSString * _text;
+    BOOL  _useCustomVoice;
+    NSString * _voiceName;
+    double  _volume;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

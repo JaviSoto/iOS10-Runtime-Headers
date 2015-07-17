@@ -3,8 +3,8 @@
  */
 
 @interface NSMetadataItem : NSObject {
-    id _item;
-    void *_reserved;
+    id  _item;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSArray *attributes;

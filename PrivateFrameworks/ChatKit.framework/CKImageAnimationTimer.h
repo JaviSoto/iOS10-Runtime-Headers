@@ -3,9 +3,9 @@
  */
 
 @interface CKImageAnimationTimer : NSObject {
-    CADisplayLink *_displayLink;
-    unsigned int _frame;
-    NSMutableSet *_observers;
+    CADisplayLink * _displayLink;
+    unsigned int  _frame;
+    NSMutableSet * _observers;
 }
 
 @property (nonatomic, retain) CADisplayLink *displayLink;

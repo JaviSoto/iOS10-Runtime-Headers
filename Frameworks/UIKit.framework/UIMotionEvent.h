@@ -2,26 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIMotionEvent : UIInternalEvent {
-    double _highLevelTime;
-    float _highPassState;
-    unsigned int _highPassStateIndex;
-    NSTimer *_idleTimer;
-    double _lastMovementTime;
-    double _lowEndTimeout;
-    float _lowPassState;
-    unsigned int _lowPassStateIndex;
-    id _motionAccelerometer;
-    BOOL _sentMotionBegan;
-    double _shakeStartTime;
-    int _shakeState;
-    int _stateMachineState;
-    int _subtype;
-    int notifyToken;
+@interface UIMotionEvent : UIEvent {
+    double  _highLevelTime;
+    float  _highPassState;
+    unsigned int  _highPassStateIndex;
+    NSTimer * _idleTimer;
+    double  _lastMovementTime;
+    double  _lowEndTimeout;
+    float  _lowPassState;
+    unsigned int  _lowPassStateIndex;
+    id  _motionAccelerometer;
+    BOOL  _sentMotionBegan;
+    double  _shakeStartTime;
+    int  _shakeState;
+    int  _stateMachineState;
+    int  _subtype;
+    int  notifyToken;
 }
 
 @property (nonatomic) int shakeState;
 
+- (void).cxx_destruct;
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
 - (BOOL)_detectWhenNotActive;
 - (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(int)arg4;

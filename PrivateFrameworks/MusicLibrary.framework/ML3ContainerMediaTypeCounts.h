@@ -3,8 +3,8 @@
  */
 
 @interface ML3ContainerMediaTypeCounts : NSObject {
-    unsigned int _count;
-    struct __CFDictionary { } *_map;
+    unsigned int  _count;
+    struct __CFDictionary { } * _map;
 }
 
 @property (nonatomic) unsigned int count;

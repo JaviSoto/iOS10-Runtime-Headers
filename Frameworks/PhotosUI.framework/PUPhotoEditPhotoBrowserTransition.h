@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoEditPhotoBrowserTransition : PUNavigationTransition {
-    BOOL _editSessionDidSaveChanges;
+    BOOL  _editSessionDidSaveChanges;
 }
 
 @property (nonatomic) BOOL editSessionDidSaveChanges;

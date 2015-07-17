@@ -2,32 +2,32 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextContentView : UIView <UITextInput, UITextInputTraits, UITextLinkInteraction> {
-    BOOL m_allowsEditingTextAttributes;
-    BOOL m_becomesEditableWithGestures;
-    BOOL m_becomingFirstResponder;
-    DOMHTMLElement *m_body;
-    float m_bottomBufferHeight;
-    id m_delegate;
-    BOOL m_editable;
-    BOOL m_editing;
-    UIFont *m_font;
-    WebFrame *m_frame;
-    BOOL m_hasExplicitTextAlignment;
-    UITextInteractionAssistant *m_interactionAssistant;
-    int m_marginTop;
-    BOOL m_reentrancyGuard;
-    BOOL m_scrollsSelectionOnWebDocumentChanges;
+@interface UITextContentView : UIView <UITextInput, UITextInputTraits, UITextLinkInteraction, WebPolicyDelegate> {
+    BOOL  m_allowsEditingTextAttributes;
+    BOOL  m_becomesEditableWithGestures;
+    BOOL  m_becomingFirstResponder;
+    DOMHTMLElement * m_body;
+    float  m_bottomBufferHeight;
+    id  m_delegate;
+    BOOL  m_editable;
+    BOOL  m_editing;
+    UIFont * m_font;
+    WebFrame * m_frame;
+    BOOL  m_hasExplicitTextAlignment;
+    UITextInteractionAssistant * m_interactionAssistant;
+    int  m_marginTop;
+    BOOL  m_reentrancyGuard;
+    BOOL  m_scrollsSelectionOnWebDocumentChanges;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } m_selectionInset;
-    int m_textAlignment;
-    UIColor *m_textColor;
-    BOOL m_usesAttributedText;
-    UIWebDocumentView *m_webView;
+    }  m_selectionInset;
+    int  m_textAlignment;
+    UIColor * m_textColor;
+    BOOL  m_usesAttributedText;
+    UIWebDocumentView * m_webView;
 }
 
 @property (nonatomic) BOOL allowsEditingTextAttributes;
@@ -49,6 +49,7 @@
 @property (nonatomic) int keyboardType;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (nonatomic) BOOL scrollsSelectionOnWebDocumentChanges;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
@@ -64,6 +65,7 @@
 @property (nonatomic, readonly) UIView *textInputView;
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 
+- (void).cxx_destruct;
 - (void)_addShortcut:(id)arg1;
 - (unsigned int)_allowedLinkTypes;
 - (id)_automationValue;
@@ -72,6 +74,7 @@
 - (void)_hideSelectionCommands;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
 - (id)_keyboardResponder;
+- (void)_lookup:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (id)_proxyTextInput;
@@ -81,6 +84,7 @@
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillBeginDragging;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;
+- (void)_share:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_sizeChanged;
 - (void)_transliterateChinese:(id)arg1;

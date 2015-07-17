@@ -3,9 +3,9 @@
  */
 
 @interface QLPreviewItemAVState : NSObject <NSSecureCoding> {
-    double duration;
-    BOOL playing;
-    double position;
+    double  duration;
+    BOOL  playing;
+    double  position;
 }
 
 @property double duration;

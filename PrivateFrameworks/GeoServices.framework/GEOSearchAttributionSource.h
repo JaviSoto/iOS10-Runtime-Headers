@@ -3,17 +3,17 @@
  */
 
 @interface GEOSearchAttributionSource : PBCodable <NSCopying> {
-    NSMutableArray *_attributionApps;
+    NSMutableArray * _attributionApps;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _attributionRequirements;
-    NSMutableArray *_localizedAttributions;
-    NSString *_sourceIdentifier;
-    unsigned int _sourceVersion;
-    NSMutableArray *_supportedComponentActions;
-    NSString *_webBaseActionURL;
+    }  _attributionRequirements;
+    NSMutableArray * _localizedAttributions;
+    NSString * _sourceIdentifier;
+    unsigned int  _sourceVersion;
+    NSMutableArray * _supportedComponentActions;
+    NSString * _webBaseActionURL;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributionApps;
@@ -37,6 +37,7 @@
 - (int)attributionRequirementsAtIndex:(unsigned int)arg1;
 - (unsigned int)attributionRequirementsCount;
 - (id)bestLocalizedAttribution;
+- (BOOL)canLocallyHandleAction:(int)arg1 forComponent:(int)arg2;
 - (void)clearAttributionApps;
 - (void)clearAttributionRequirements;
 - (void)clearLocalizedAttributions;
@@ -66,6 +67,7 @@
 - (id)supportedComponentActions;
 - (id)supportedComponentActionsAtIndex:(unsigned int)arg1;
 - (unsigned int)supportedComponentActionsCount;
+- (BOOL)supportsAction:(int)arg1 forComponent:(int)arg2;
 - (id)webBaseActionURL;
 - (void)writeTo:(id)arg1;
 

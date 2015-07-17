@@ -3,25 +3,25 @@
  */
 
 @interface SKUICircleProgressIndicator : UIView {
-    float _animatedValue;
-    double _animationEndTime;
-    double _animationStartTime;
-    float _animationStartValue;
-    UIImage *_borderImage;
-    UIImage *_centerImage;
+    float  _animatedValue;
+    double  _animationEndTime;
+    double  _animationStartTime;
+    float  _animationStartValue;
+    UIImage * _borderImage;
+    UIImage * _centerImage;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _centerImageInsets;
-    CADisplayLink *_displayLink;
-    UIImage *_fillImage;
-    BOOL _highlighted;
-    UIImageView *_indeterminateView;
-    BOOL _isAnimating;
-    float _progress;
-    UIColor *_unhighlightedBackgroundColor;
+    }  _centerImageInsets;
+    CADisplayLink * _displayLink;
+    UIImage * _fillImage;
+    BOOL  _highlighted;
+    UIImageView * _indeterminateView;
+    BOOL  _isAnimating;
+    float  _progress;
+    UIColor * _unhighlightedBackgroundColor;
 }
 
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;

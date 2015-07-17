@@ -3,8 +3,8 @@
  */
 
 @interface PHAssetUUIDRequestJob : PLDaemonJob {
-    id /* block */ _completionHandler;
-    NSString *_uuid;
+    id /* block */  _completionHandler;
+    NSString * _uuid;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

@@ -3,19 +3,19 @@
  */
 
 @interface AAUIAccountRepairRemoteUI : NSObject <RUIObjectModelDelegate> {
-    ACAccount *_account;
-    UINavigationController *_accountRepairUIViewController;
-    ACAccountStore *_accountStore;
-    NSString *_agreeURL;
-    NSDictionary *_cookieHeadersForRepairRequest;
-    <AAUIAccountRepairRemoteUIDelegate> *_delegate;
-    BOOL _isModal;
-    id /* block */ _linkLoadCompletion;
-    RUILoader *_loader;
-    NSMutableArray *_objectModels;
-    UIViewController *_originatingViewController;
-    UINavigationController *_parentNavController;
-    UIAlertView *_tcConfirmationAlert;
+    ACAccount * _account;
+    UINavigationController * _accountRepairUIViewController;
+    ACAccountStore * _accountStore;
+    NSString * _agreeURL;
+    NSDictionary * _cookieHeadersForRepairRequest;
+    <AAUIAccountRepairRemoteUIDelegate> * _delegate;
+    BOOL  _isModal;
+    id /* block */  _linkLoadCompletion;
+    RUILoader * _loader;
+    NSMutableArray * _objectModels;
+    UIViewController * _originatingViewController;
+    UINavigationController * _parentNavController;
+    UIAlertView * _tcConfirmationAlert;
 }
 
 @property (readonly, copy) NSString *debugDescription;

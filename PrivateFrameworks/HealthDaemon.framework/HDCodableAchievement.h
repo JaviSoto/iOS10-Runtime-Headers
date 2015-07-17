@@ -3,18 +3,18 @@
  */
 
 @interface HDCodableAchievement : PBCodable <NSCopying> {
-    long long _achievementType;
-    double _completedDate;
-    double _doubleValue;
-    NSData *_extraData;
+    long long  _achievementType;
+    double  _completedDate;
+    double  _doubleValue;
+    NSData * _extraData;
     struct { 
         unsigned int achievementType : 1; 
         unsigned int completedDate : 1; 
         unsigned int doubleValue : 1; 
         unsigned int intValue : 1; 
-    } _has;
-    long long _intValue;
-    NSData *_uuid;
+    }  _has;
+    long long  _intValue;
+    NSData * _uuid;
 }
 
 @property (nonatomic) long long achievementType;

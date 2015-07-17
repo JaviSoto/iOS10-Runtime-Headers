@@ -3,10 +3,10 @@
  */
 
 @interface NEVPNIKEv1ProposalParameters : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int _diffieHellmanGroup;
-    int _encryptionAlgorithm;
-    int _integrityAlgorithm;
-    int _lifetimeSeconds;
+    int  _diffieHellmanGroup;
+    int  _encryptionAlgorithm;
+    int  _integrityAlgorithm;
+    int  _lifetimeSeconds;
 }
 
 @property int diffieHellmanGroup;
@@ -19,7 +19,7 @@
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (int)diffieHellmanGroup;
 - (void)encodeWithCoder:(id)arg1;
 - (int)encryptionAlgorithm;

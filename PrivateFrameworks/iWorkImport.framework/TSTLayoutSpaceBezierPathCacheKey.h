@@ -12,9 +12,9 @@
             unsigned int column; 
             unsigned int row; 
         } bottomRight; 
-    } _gridRange;
-    float _inset;
-    BOOL _reoriginToZero;
+    }  _gridRange;
+    float  _inset;
+    BOOL  _reoriginToZero;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -22,7 +22,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _transform;
+    }  _transform;
 }
 
 @property (nonatomic) struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; } gridRange;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicLibraryActionAddOperation : NSOperation {
-    MPUContentItemIdentifierCollection *_contentItemIdentifierCollection;
+    MPUContentItemIdentifierCollection * _contentItemIdentifierCollection;
 }
 
 @property (readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;

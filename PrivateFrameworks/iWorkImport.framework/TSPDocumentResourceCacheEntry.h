@@ -3,12 +3,12 @@
  */
 
 @interface TSPDocumentResourceCacheEntry : NSObject {
-    NSURL *_URL;
-    int _accessCount;
-    NSDate *_contentAccessDate;
-    NSString *_digestString;
-    long long _fileSize;
-    BOOL _wasDownloaded;
+    NSURL * _URL;
+    int  _accessCount;
+    NSDate * _contentAccessDate;
+    NSString * _digestString;
+    long long  _fileSize;
+    BOOL  _wasDownloaded;
 }
 
 @property (nonatomic, copy) NSURL *URL;

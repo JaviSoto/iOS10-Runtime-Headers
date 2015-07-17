@@ -3,15 +3,15 @@
  */
 
 @interface MPUBorderConfiguration : NSObject <NSCopying> {
-    float _borderAlpha;
-    UIColor *_borderColor;
-    float _borderWidth;
-    float _dropShadowAlpha;
-    UIColor *_dropShadowColor;
-    unsigned int _dropShadowEdges;
-    float _dropShadowWidth;
-    float _fillAlpha;
-    UIColor *_fillColor;
+    float  _borderAlpha;
+    UIColor * _borderColor;
+    float  _borderWidth;
+    float  _dropShadowAlpha;
+    UIColor * _dropShadowColor;
+    unsigned int  _dropShadowEdges;
+    float  _dropShadowWidth;
+    float  _fillAlpha;
+    UIColor * _fillColor;
 }
 
 @property (nonatomic) float borderAlpha;

@@ -3,7 +3,7 @@
  */
 
 @interface IKTextParser : NSObject <NSCopying> {
-    NSAttributedString *_attributedString;
+    NSAttributedString * _attributedString;
 }
 
 @property (nonatomic, readonly, retain) NSAttributedString *attributedString;

@@ -3,11 +3,11 @@
  */
 
 @interface CKDPResponseOperationResult : PBCodable <NSCopying> {
-    int _code;
-    CKDPResponseOperationResultError *_error;
+    int  _code;
+    CKDPResponseOperationResultError * _error;
     struct { 
         unsigned int code : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int code;

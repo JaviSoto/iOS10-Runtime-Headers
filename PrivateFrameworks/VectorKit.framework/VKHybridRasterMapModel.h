@@ -3,7 +3,7 @@
  */
 
 @interface VKHybridRasterMapModel : VKRasterMapModel {
-    float _roadAlpha;
+    float  _roadAlpha;
 }
 
 + (float)roadAlphaForLayoutContext:(id)arg1;

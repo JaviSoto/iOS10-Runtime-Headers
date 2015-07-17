@@ -3,13 +3,13 @@
  */
 
 @interface RCCurrentRecordingViewController : UIViewController <RCCurrentRecordingViewControllerDelegate, RCUIServiceCurrentRecordingViewController> {
-    RCAVState *_AVState;
-    <RCCurrentRecordingViewControllerDelegate> *_delegate;
-    BOOL _isDisplayingLockscreenInterface;
-    UIColor *_presentationBackgroundColor;
-    RCCurrentRecordingRemoteViewController *_remoteViewController;
-    BOOL _screenUpdatesDisabled;
-    UIColor *_waveformForegroundColor;
+    RCAVState * _AVState;
+    <RCCurrentRecordingViewControllerDelegate> * _delegate;
+    BOOL  _isDisplayingLockscreenInterface;
+    UIColor * _presentationBackgroundColor;
+    RCCurrentRecordingRemoteViewController * _remoteViewController;
+    BOOL  _screenUpdatesDisabled;
+    UIColor * _waveformForegroundColor;
 }
 
 @property (nonatomic, retain) RCAVState *AVState;
@@ -30,6 +30,7 @@
 - (void)currentRecordingViewControllerRecordingDidEnd:(id)arg1;
 - (id)delegate;
 - (void)dismissLockscreenInterface;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)insertRemoteViewController:(id)arg1;

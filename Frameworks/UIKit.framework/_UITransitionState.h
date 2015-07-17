@@ -3,9 +3,9 @@
  */
 
 @interface _UITransitionState : NSObject {
-    NSDate *_beginDate;
-    id /* block */ _completion;
-    int _transitionDirection;
+    NSDate * _beginDate;
+    id /* block */  _completion;
+    int  _transitionDirection;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
@@ -13,9 +13,9 @@
 @property (nonatomic, readonly) int effectiveTransitionDirection;
 @property (nonatomic, readonly) int transitionDirection;
 
+- (void).cxx_destruct;
 - (id)beginDate;
 - (void)cleanupWithFinishedState:(BOOL)arg1 completedState:(BOOL)arg2;
-- (void)dealloc;
 - (id)description;
 - (int)effectiveTransitionDirection;
 - (id)initWithTransitionDirection:(int)arg1 completion:(id /* block */)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface TSPPasteboardNativeDataProvider : NSObject <TSPPasteboardWriting> {
-    NSMutableDictionary *_nativeData;
-    TSPPasteboard *_pasteboard;
-    NSMutableDictionary *_tspData;
+    NSMutableDictionary * _nativeData;
+    TSPPasteboard * _pasteboard;
+    NSMutableDictionary * _tspData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

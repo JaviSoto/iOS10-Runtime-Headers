@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DFillSageFillData : NSObject <TSCH3DSageFillData> {
-    TSCH3DFill *mFill;
-    NSMutableArray *mTextureBlendModes;
-    NSMutableArray *mTextures;
+    TSCH3DFill * mFill;
+    NSMutableArray * mTextureBlendModes;
+    NSMutableArray * mTextures;
 }
 
 + (id)dataWithFill:(id)arg1;

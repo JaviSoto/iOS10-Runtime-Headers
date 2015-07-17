@@ -3,10 +3,10 @@
  */
 
 @interface RCAcousticAnnotationView : UIView {
-    RCUIConfiguration *_UIConfiguration;
-    struct CGGradient { } *_decibelMarkerBackgroundGradient;
-    float _gradientAlpha;
-    RCLayoutMetrics *_layoutMetrics;
+    RCUIConfiguration * _UIConfiguration;
+    struct CGGradient { } * _decibelMarkerBackgroundGradient;
+    float  _gradientAlpha;
+    RCLayoutMetrics * _layoutMetrics;
 }
 
 @property (nonatomic, copy) RCUIConfiguration *UIConfiguration;

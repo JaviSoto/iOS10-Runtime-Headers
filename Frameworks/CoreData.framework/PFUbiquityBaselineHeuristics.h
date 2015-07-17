@@ -3,17 +3,17 @@
  */
 
 @interface PFUbiquityBaselineHeuristics : NSObject {
-    PFUbiquityKnowledgeVector *_currentBaselineKV;
-    PFUbiquityKnowledgeVector *_currentKV;
-    NSString *_localPeerID;
-    long long _logSize;
-    long double_logToStoreSizeRatio;
-    int _minLogBytes;
-    NSString *_modelVersionHash;
-    int _numRequiredTransactions;
-    NSString *_storeName;
-    long long _storeSize;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    PFUbiquityKnowledgeVector * _currentBaselineKV;
+    PFUbiquityKnowledgeVector * _currentKV;
+    NSString * _localPeerID;
+    long long  _logSize;
+    long double _logToStoreSizeRatio;
+    int  _minLogBytes;
+    NSString * _modelVersionHash;
+    int  _numRequiredTransactions;
+    NSString * _storeName;
+    long long  _storeSize;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (nonatomic, retain) PFUbiquityKnowledgeVector *currentBaselineKV;

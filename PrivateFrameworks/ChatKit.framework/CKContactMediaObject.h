@@ -3,8 +3,8 @@
  */
 
 @interface CKContactMediaObject : CKCardMediaObject {
-    ABVCardRecord *_vCard;
-    UIImage *_vCardImage;
+    ABVCardRecord * _vCard;
+    UIImage * _vCardImage;
 }
 
 @property (nonatomic, retain) ABVCardRecord *vCard;

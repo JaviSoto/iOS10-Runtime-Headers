@@ -3,8 +3,8 @@
  */
 
 @interface HDDiscreteStatisticsBuilder : HDStatisticsBuilder {
-    long long _anchor;
-    HDDiscreteCollectionCalculator *_collectionCalculator;
+    long long  _anchor;
+    HDDiscreteCollectionCalculator * _collectionCalculator;
 }
 
 - (void).cxx_destruct;

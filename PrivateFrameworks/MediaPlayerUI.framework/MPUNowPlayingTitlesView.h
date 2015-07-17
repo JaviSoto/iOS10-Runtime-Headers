@@ -3,35 +3,35 @@
  */
 
 @interface MPUNowPlayingTitlesView : UIView {
-    NSString *_albumText;
-    NSString *_artistText;
-    UILabel *_detailLabel;
+    NSString * _albumText;
+    NSString * _artistText;
+    UILabel * _detailLabel;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _detailMarqueeEdgeInsets;
-    MPUMarqueeView *_detailMarqueeView;
-    NSDictionary *_detailTextAttributes;
-    BOOL _explicit;
-    UIImage *_explicitImage;
-    UIImageView *_explicitImageView;
-    BOOL _needsLabelUpdate;
-    NSString *_stationNameText;
-    int _style;
-    float _textMargin;
-    UILabel *_titleLabel;
-    float _titleLeading;
+    }  _detailMarqueeEdgeInsets;
+    MPUMarqueeView * _detailMarqueeView;
+    NSDictionary * _detailTextAttributes;
+    BOOL  _explicit;
+    UIImage * _explicitImage;
+    UIImageView * _explicitImageView;
+    BOOL  _needsLabelUpdate;
+    NSString * _stationNameText;
+    int  _style;
+    float  _textMargin;
+    UILabel * _titleLabel;
+    float  _titleLeading;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _titleMarqueeEdgeInsets;
-    MPUMarqueeView *_titleMarqueeView;
-    NSString *_titleText;
-    NSDictionary *_titleTextAttributes;
+    }  _titleMarqueeEdgeInsets;
+    MPUMarqueeView * _titleMarqueeView;
+    NSString * _titleText;
+    NSDictionary * _titleTextAttributes;
 }
 
 @property (nonatomic, copy) NSString *albumText;

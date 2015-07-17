@@ -3,8 +3,8 @@
  */
 
 @interface _MPArtworkDataSourceURLCache : NSURLCache {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMapTable *_requestSizeMap;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMapTable * _requestSizeMap;
 }
 
 - (void).cxx_destruct;

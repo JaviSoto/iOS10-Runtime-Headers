@@ -3,15 +3,15 @@
  */
 
 @interface MKOverlayPathView : MKOverlayView {
-    UIColor *_fillColor;
-    int _lineCap;
-    NSArray *_lineDashPattern;
-    float _lineDashPhase;
-    int _lineJoin;
-    float _lineWidth;
-    float _miterLimit;
-    struct CGPath { } *_path;
-    UIColor *_strokeColor;
+    UIColor * _fillColor;
+    int  _lineCap;
+    NSArray * _lineDashPattern;
+    float  _lineDashPhase;
+    int  _lineJoin;
+    float  _lineWidth;
+    float  _miterLimit;
+    struct CGPath { } * _path;
+    UIColor * _strokeColor;
 }
 
 @property (retain) UIColor *fillColor;

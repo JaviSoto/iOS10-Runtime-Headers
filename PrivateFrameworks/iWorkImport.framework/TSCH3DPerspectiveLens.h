@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DPerspectiveLens : TSCH3DLens {
-    float mAspect;
-    float mFOV;
+    float  mAspect;
+    float  mFOV;
 }
 
 @property (nonatomic) float aspect;

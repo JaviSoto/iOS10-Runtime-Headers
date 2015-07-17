@@ -3,13 +3,13 @@
  */
 
 @interface MSASServerSideModel : MSASModelBase <MSASModel, MSASStateMachineDelegate> {
-    MSASServerSideModelGroupedCommandQueue *_commandQueue;
-    MSASStateMachine *_counterpartInstance;
-    MSAlbumSharingDaemon *_daemon;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSCountedSet *_observers;
-    MSASPendingChanges *_pendingChanges;
+    MSASServerSideModelGroupedCommandQueue * _commandQueue;
+    MSASStateMachine * _counterpartInstance;
+    MSAlbumSharingDaemon * _daemon;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSCountedSet * _observers;
+    MSASPendingChanges * _pendingChanges;
 }
 
 @property (nonatomic) MSASStateMachine *MSASCounterpartInstance;

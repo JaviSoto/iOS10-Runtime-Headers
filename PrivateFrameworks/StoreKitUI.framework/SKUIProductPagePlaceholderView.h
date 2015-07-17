@@ -3,9 +3,9 @@
  */
 
 @interface SKUIProductPagePlaceholderView : UIView {
-    UIImageView *_imageView;
-    UILabel *_label;
-    UIColor *_textColor;
+    UIImageView * _imageView;
+    UILabel * _label;
+    UIColor * _textColor;
 }
 
 @property (nonatomic, retain) UIColor *textColor;

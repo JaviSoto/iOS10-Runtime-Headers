@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DChartShadowsPropertiesInternal : NSObject {
-    TSCH3DCamera *mCamera;
-    BOOL mEnabled;
-    TSCH3DDataBufferResource *mFadecoords;
-    TSCH3DDataBufferResource *mQuad;
-    NSObject<TSCH3DShadowsRenderer> *mRenderer;
+    TSCH3DCamera * mCamera;
+    BOOL  mEnabled;
+    TSCH3DDataBufferResource * mFadecoords;
+    TSCH3DDataBufferResource * mQuad;
+    NSObject<TSCH3DShadowsRenderer> * mRenderer;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
@@ -43,8 +43,8 @@
                 float p; 
             } ; 
         } mMax; 
-    } mShadowPlanePadding;
-    TSCH3DDataBufferResource *mTexcoords;
+    }  mShadowPlanePadding;
+    TSCH3DDataBufferResource * mTexcoords;
 }
 
 @property (nonatomic, retain) TSCH3DCamera *camera;

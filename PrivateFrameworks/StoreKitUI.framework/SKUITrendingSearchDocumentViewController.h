@@ -3,8 +3,8 @@
  */
 
 @interface SKUITrendingSearchDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
-    SKUITrendingSearchView *_resultsView;
-    SKUITrendingSearchTemplateElement *_template;
+    SKUITrendingSearchView * _resultsView;
+    SKUITrendingSearchTemplateElement * _template;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface SUPreviewOverlayView : UIView {
-    UIView *_borderView;
-    UIView *_storePageView;
+    UIView * _borderView;
+    UIView * _storePageView;
 }
 
 @property (nonatomic, retain) UIView *storePageView;

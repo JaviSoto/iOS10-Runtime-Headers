@@ -3,10 +3,10 @@
  */
 
 @interface SKUIArtwork : NSObject <SKUICacheCoding> {
-    int _height;
-    NSURL *_url;
-    NSString *_urlString;
-    int _width;
+    int  _height;
+    NSURL * _url;
+    NSString * _urlString;
+    int  _width;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

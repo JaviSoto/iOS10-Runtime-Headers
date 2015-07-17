@@ -3,9 +3,9 @@
  */
 
 @interface MusicNowPlayingLyricsViewController : UIViewController <UIViewControllerTransitioningDelegate> {
-    _UIBackdropView *_backdropView;
-    MPAVItem *_currentItem;
-    UITextView *_textView;
+    _UIBackdropView * _backdropView;
+    MPAVItem * _currentItem;
+    UITextView * _textView;
 }
 
 @property (nonatomic, readonly) _UIBackdropView *backdropView;

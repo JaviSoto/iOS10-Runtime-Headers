@@ -3,8 +3,8 @@
  */
 
 @interface HMCharacteristicResponseTuple : NSObject {
-    HMCharacteristic *_characteristic;
-    NSError *_error;
+    HMCharacteristic * _characteristic;
+    NSError * _error;
 }
 
 @property (nonatomic, readonly) HMCharacteristic *characteristic;

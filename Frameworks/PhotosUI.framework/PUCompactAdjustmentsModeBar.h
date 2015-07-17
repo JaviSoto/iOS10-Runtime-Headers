@@ -3,17 +3,17 @@
  */
 
 @interface PUCompactAdjustmentsModeBar : PUAdjustmentsModeBar <UICollectionViewDataSource> {
-    NSArray *__visibleModes;
-    NSMutableSet *_expandedSupermodes;
-    UIButton *_expansionButton;
-    NSArray *_expansionButtonConstraints;
-    PUSlidersCollectionView *_modeSlidersCollectionView;
-    NSArray *_modeSlidersCollectionViewConstraints;
-    PUAdjustmentsModeBadge *_titleBackground;
-    UIButton *_titleButton;
-    UILabel *_titleLabel;
-    NSMutableDictionary *_titleViewConstraintsByKey;
-    NSMutableDictionary *_titleViewsByKey;
+    NSArray * __visibleModes;
+    NSMutableSet * _expandedSupermodes;
+    UIButton * _expansionButton;
+    NSArray * _expansionButtonConstraints;
+    PUSlidersCollectionView * _modeSlidersCollectionView;
+    NSArray * _modeSlidersCollectionViewConstraints;
+    PUAdjustmentsModeBadge * _titleBackground;
+    UIButton * _titleButton;
+    UILabel * _titleLabel;
+    NSMutableDictionary * _titleViewConstraintsByKey;
+    NSMutableDictionary * _titleViewsByKey;
 }
 
 @property (readonly, copy) NSString *debugDescription;

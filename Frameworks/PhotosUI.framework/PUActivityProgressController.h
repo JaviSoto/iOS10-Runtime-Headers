@@ -3,16 +3,16 @@
  */
 
 @interface PUActivityProgressController : NSObject {
-    UIAlertController *_alertController;
-    id /* block */ _cancellationHandler;
-    UIView *_containerView;
-    BOOL _didHide;
-    BOOL _didShow;
-    UIView *_dimmingView;
-    UIView *_progressContainerView;
-    PUActivityProgressViewController *_progressViewController;
-    NSString *_title;
-    double _whenDidShow;
+    UIAlertController * _alertController;
+    id /* block */  _cancellationHandler;
+    UIView * _containerView;
+    BOOL  _didHide;
+    BOOL  _didShow;
+    UIView * _dimmingView;
+    UIView * _progressContainerView;
+    PUActivityProgressViewController * _progressViewController;
+    NSString * _title;
+    double  _whenDidShow;
 }
 
 @property (nonatomic, copy) id /* block */ cancellationHandler;

@@ -3,18 +3,18 @@
  */
 
 @interface CKDPShare : PBCodable <NSCopying> {
-    NSString *_etag;
+    NSString * _etag;
     struct { 
         unsigned int publicAccess : 1; 
-    } _has;
-    NSData *_internalAppSpecificMetadata;
-    CKDPProtectionInfo *_invitedPcs;
-    NSMutableArray *_participants;
-    int _publicAccess;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
-    NSData *_shortTokenHash;
-    NSString *_shortTokenRoutingKey;
+    }  _has;
+    NSData * _internalAppSpecificMetadata;
+    CKDPProtectionInfo * _invitedPcs;
+    NSMutableArray * _participants;
+    int  _publicAccess;
+    CKDPProtectionInfo * _selfAddedPcs;
+    CKDPShareIdentifier * _shareId;
+    NSData * _shortTokenHash;
+    NSString * _shortTokenRoutingKey;
 }
 
 @property (nonatomic, retain) NSString *etag;

@@ -3,10 +3,10 @@
  */
 
 @interface BBDismissalSyncBulletinMatch : NSObject {
-    NSString *_dismissalID;
-    BBDismissalItem *_dismissalItem;
-    unsigned int _feeds;
-    NSString *_sectionID;
+    NSString * _dismissalID;
+    BBDismissalItem * _dismissalItem;
+    unsigned int  _feeds;
+    NSString * _sectionID;
 }
 
 @property (nonatomic, copy) NSString *dismissalID;

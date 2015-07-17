@@ -3,9 +3,9 @@
  */
 
 @interface TSPExternalReferenceDataStorage : TSPFileDataStorage {
-    NSURL *_URL;
-    NSData *_bookmarkData;
-    TSPObjectContext *_context;
+    NSURL * _URL;
+    NSData * _bookmarkData;
+    TSPObjectContext * _context;
 }
 
 - (void).cxx_destruct;

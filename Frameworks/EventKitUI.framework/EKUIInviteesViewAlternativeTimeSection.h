@@ -3,22 +3,22 @@
  */
 
 @interface EKUIInviteesViewAlternativeTimeSection : NSObject <EKUIInviteesViewConflictResolutionSection> {
-    NSArray *_alternativeTimes;
-    BOOL _availabilityRequestInProgress;
-    EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
-    NSString *_cachedConflictSearchCellReuseIdentifier;
-    NSString *_cachedTimeCellReuseIdentifier;
-    BOOL _hasCheckedRow;
-    BOOL _initialSearchInProgress;
-    int _lastCheckedRow;
-    unsigned int _maximumNumberOfTimeSlotsToShow;
-    id /* block */ _newTimeChosen;
-    unsigned int _reuseIdentifierVersion;
-    NSMutableSet *_rowsShowingAllParticipants;
-    BOOL _searchExhausted;
-    id /* block */ _showMoreAlternativeTimesTapped;
-    id /* block */ _showPreviewOfEventAtTime;
-    id /* block */ _tableViewCellHook;
+    NSArray * _alternativeTimes;
+    BOOL  _availabilityRequestInProgress;
+    EKUIInviteeAlternativeTimeSearcher * _availabilitySearcher;
+    NSString * _cachedConflictSearchCellReuseIdentifier;
+    NSString * _cachedTimeCellReuseIdentifier;
+    BOOL  _hasCheckedRow;
+    BOOL  _initialSearchInProgress;
+    int  _lastCheckedRow;
+    unsigned int  _maximumNumberOfTimeSlotsToShow;
+    id /* block */  _newTimeChosen;
+    unsigned int  _reuseIdentifierVersion;
+    NSMutableSet * _rowsShowingAllParticipants;
+    BOOL  _searchExhausted;
+    id /* block */  _showMoreAlternativeTimesTapped;
+    id /* block */  _showPreviewOfEventAtTime;
+    id /* block */  _tableViewCellHook;
 }
 
 @property (nonatomic, retain) NSArray *alternativeTimes;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIEditorialLinkView : UIView {
-    NSMutableArray *_buttons;
-    <SKUIEditorialLinkViewDelegate> *_delegate;
-    UIColor *_highlightedTextColor;
-    int _horizontalAlignment;
-    SKUIEditorialLinkLayout *_layout;
-    UIColor *_textColor;
+    NSMutableArray * _buttons;
+    <SKUIEditorialLinkViewDelegate> * _delegate;
+    UIColor * _highlightedTextColor;
+    int  _horizontalAlignment;
+    SKUIEditorialLinkLayout * _layout;
+    UIColor * _textColor;
 }
 
 @property (nonatomic) <SKUIEditorialLinkViewDelegate> *delegate;

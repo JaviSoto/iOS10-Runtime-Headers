@@ -3,9 +3,9 @@
  */
 
 @interface PLUserActivityTrackerJob : PLDaemonJob {
-    long long _activity;
-    NSString *_clientID;
-    NSArray *_uuids;
+    long long  _activity;
+    NSString * _clientID;
+    NSArray * _uuids;
 }
 
 @property (nonatomic) long long activity;

@@ -3,8 +3,9 @@
  */
 
 @interface ISAuthenticationChallenge : NSObject {
-    NSString *_localizedMessage;
-    NSString *_localizedTitle;
+    NSURLAuthenticationChallenge * _challenge;
+    NSString * _localizedMessage;
+    NSString * _localizedTitle;
 }
 
 @property (readonly) int failureCount;
@@ -21,6 +22,7 @@
 - (void)dealloc;
 - (int)failureCount;
 - (BOOL)hasPassword;
+- (id)initWithAuthenticationChallenge:(id)arg1;
 - (id)localizedMessage;
 - (id)localizedTitle;
 - (id)password;

@@ -3,7 +3,7 @@
  */
 
 @interface _UIHostedTextServiceSession : _UITextServiceSession {
-    <_UIHostedTextServiceSessionDelegate> *_delegate;
+    <_UIHostedTextServiceSessionDelegate> * _delegate;
 }
 
 @property (nonatomic) <_UIHostedTextServiceSessionDelegate> *delegate;

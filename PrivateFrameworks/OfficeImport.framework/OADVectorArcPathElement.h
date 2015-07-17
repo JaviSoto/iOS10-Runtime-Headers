@@ -6,9 +6,9 @@
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    } mBottom;
-    BOOL mClockwise;
-    BOOL mConnectedToPrevious;
+    }  mBottom;
+    BOOL  mClockwise;
+    BOOL  mConnectedToPrevious;
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
@@ -18,15 +18,15 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    } mEndVector;
+    }  mEndVector;
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    } mLeft;
+    }  mLeft;
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    } mRight;
+    }  mRight;
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
@@ -36,14 +36,13 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    } mStartVector;
+    }  mStartVector;
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    } mTop;
+    }  mTop;
 }
 
-- (id).cxx_construct;
 - (struct OADAdjustCoord { BOOL x1; int x2; })bottom;
 - (BOOL)clockwise;
 - (BOOL)connectedToPrevious;

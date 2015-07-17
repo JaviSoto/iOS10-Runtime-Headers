@@ -3,7 +3,7 @@
  */
 
 @interface MSCameraFolder : ICCameraFolder {
-    void *_msCameraFolderProperties;
+    void * _msCameraFolderProperties;
 }
 
 @property (readonly) struct timespec { int x1; long x2; } fsCreationTime;

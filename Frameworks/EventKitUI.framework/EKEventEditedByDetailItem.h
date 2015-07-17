@@ -3,7 +3,7 @@
  */
 
 @interface EKEventEditedByDetailItem : EKEventDetailItem <EKCellShortener> {
-    UITableViewCell *_cell;
+    UITableViewCell * _cell;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface AVTimebaseObserver : NSObject {
-    double _currentRate;
-    BOOL _invalid;
-    double _lastRate;
-    struct OpaqueCMTimebase { } *_timebase;
-    NSObject<OS_dispatch_queue> *_timerQueue;
-    NSObject<OS_dispatch_source> *_timerSource;
-    AVWeakReference *_weakReference;
+    double  _currentRate;
+    BOOL  _invalid;
+    double  _lastRate;
+    struct OpaqueCMTimebase { } * _timebase;
+    NSObject<OS_dispatch_queue> * _timerQueue;
+    NSObject<OS_dispatch_source> * _timerSource;
+    AVWeakReference * _weakReference;
 }
 
 @property (nonatomic, readonly) BOOL invalidated;

@@ -3,13 +3,13 @@
  */
 
 @interface CKDQueryURLRequest : CKDURLRequest {
-    NSData *_cursor;
-    unsigned int _limit;
-    CKQuery *_query;
-    NSMutableArray *_queryResponses;
-    NSArray *_requestedFields;
-    NSData *_resultsCursor;
-    CKRecordZoneID *_zoneID;
+    NSData * _cursor;
+    unsigned int  _limit;
+    CKQuery * _query;
+    NSMutableArray * _queryResponses;
+    NSArray * _requestedFields;
+    NSData * _resultsCursor;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSData *cursor;

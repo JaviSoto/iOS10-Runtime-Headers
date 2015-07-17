@@ -3,15 +3,15 @@
  */
 
 @interface WKSelectTableViewController : UITableViewController <UIKeyInput> {
-    BOOL _allowsMultipleSelection;
-    WKContentView *_contentView;
-    float _fontSize;
-    float _maximumTextWidth;
-    int _numberOfSections;
-    WKSelectPopover *_popover;
-    unsigned int _singleSelectionIndex;
-    unsigned int _singleSelectionSection;
-    int _textAlignment;
+    BOOL  _allowsMultipleSelection;
+    WKContentView * _contentView;
+    float  _fontSize;
+    float  _maximumTextWidth;
+    int  _numberOfSections;
+    WKSelectPopover * _popover;
+    unsigned int  _singleSelectionIndex;
+    unsigned int  _singleSelectionSection;
+    int  _textAlignment;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -23,6 +23,7 @@
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
 @property (nonatomic) WKSelectPopover *popover;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;

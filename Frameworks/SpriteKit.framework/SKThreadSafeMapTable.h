@@ -3,8 +3,8 @@
  */
 
 @interface SKThreadSafeMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
-    NSMutableArray *_storage;
-    int _storageLock;
+    NSMutableArray * _storage;
+    int  _storageLock;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface _UIDocumentPickerDescriptor : NSObject {
-    NSExtension *_extension;
-    BOOL _newlyAdded;
+    NSExtension * _extension;
+    BOOL  _newlyAdded;
 }
 
 @property (nonatomic) BOOL enabled;
@@ -18,6 +18,7 @@
 
 + (id)allPickers;
 + (id)allPickersForMode:(unsigned int)arg1 documentTypes:(id)arg2;
++ (BOOL)checkDefaultVisibilityForExtension:(id)arg1;
 + (BOOL)cloudEnabledStatus;
 + (id)defaultPickerIdentifierForMode:(unsigned int)arg1 documentTypes:(id)arg2;
 + (id)descriptorWithIdentifier:(id)arg1;
@@ -29,6 +30,7 @@
 + (void)setHostBundleID:(id)arg1;
 + (void)setOrderFromPickers:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_extensionValueOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_ownBundle;
 - (id)_parentApp;
@@ -45,6 +47,7 @@
 - (id)localizedName;
 - (id)nonUIBundle;
 - (id)nonUIIdentifier;
+- (BOOL)pickerEnabledForMode:(unsigned int)arg1 documentTypes:(id)arg2 reason:(id*)arg3;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setNewlyAdded:(BOOL)arg1;

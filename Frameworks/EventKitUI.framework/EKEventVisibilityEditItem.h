@@ -3,10 +3,10 @@
  */
 
 @interface EKEventVisibilityEditItem : EKEventEditItem {
-    EKEventAvailabilityEditItem *_availabilityEditItem;
-    unsigned int _lastKnownNumberOfSubitems;
-    EKEventPrivacyLevelInlineEditItem *_privacyLevelEditItem;
-    EKEventEditItem *_subitemOfLastDetailViewControllerRequested;
+    EKEventAvailabilityEditItem * _availabilityEditItem;
+    unsigned int  _lastKnownNumberOfSubitems;
+    EKEventPrivacyLevelInlineEditItem * _privacyLevelEditItem;
+    EKEventEditItem * _subitemOfLastDetailViewControllerRequested;
 }
 
 - (void).cxx_destruct;

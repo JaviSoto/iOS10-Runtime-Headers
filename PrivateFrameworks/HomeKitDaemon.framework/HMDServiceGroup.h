@@ -3,12 +3,12 @@
  */
 
 @interface HMDServiceGroup : NSObject <HMMessageReceiver, NSSecureCoding> {
-    HMDHome *_home;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSMutableArray *_services;
-    NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    HMDHome * _home;
+    HMMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSMutableArray * _services;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +32,7 @@
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_registerForMessages;
 - (void)configure:(id)arg1 queue:(id)arg2;
+- (BOOL)containsAccessoryWithUUID:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fixupServicesForReplacementAccessory:(id)arg1;

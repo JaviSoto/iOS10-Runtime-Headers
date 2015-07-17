@@ -3,9 +3,9 @@
  */
 
 @interface SUSegmentedControlBar : UIView {
-    _UIBackdropView *_backdropView;
-    UIControl *_control;
-    UIView *_separatorView;
+    _UIBackdropView * _backdropView;
+    UIControl * _control;
+    UIView * _separatorView;
 }
 
 - (void)dealloc;

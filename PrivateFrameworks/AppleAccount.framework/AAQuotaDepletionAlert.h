@@ -3,7 +3,7 @@
  */
 
 @interface AAQuotaDepletionAlert : NSObject {
-    NSString *_dataclass;
+    NSString * _dataclass;
 }
 
 - (void).cxx_destruct;

@@ -3,10 +3,10 @@
  */
 
 @interface MusicWelcomePlaceholderView : UIView <MusicClientContextConsuming> {
-    UIImageView *_backgroundImageView;
-    MusicClientContext *_clientContext;
-    float _logoImageTopInset;
-    UIImageView *_logoImageView;
+    UIImageView * _backgroundImageView;
+    MusicClientContext * _clientContext;
+    float  _logoImageTopInset;
+    UIImageView * _logoImageView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

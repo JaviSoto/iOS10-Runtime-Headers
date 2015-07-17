@@ -3,8 +3,8 @@
  */
 
 @interface BWDepthFirstEnumerator : BWNodeEnumerator {
-    unsigned int _currentSourceIndex;
-    NSMutableArray *_stack;
+    unsigned int  _currentSourceIndex;
+    NSMutableArray * _stack;
 }
 
 - (void)dealloc;

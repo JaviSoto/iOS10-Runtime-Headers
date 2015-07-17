@@ -3,9 +3,9 @@
  */
 
 @interface GKDebugHighlightView : UIView {
-    NSString *_caption;
-    UIColor *_color;
-    BOOL _isOval;
+    NSString * _caption;
+    UIColor * _color;
+    BOOL  _isOval;
 }
 
 @property (nonatomic, retain) NSString *caption;

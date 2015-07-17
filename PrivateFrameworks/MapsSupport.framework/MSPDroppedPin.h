@@ -3,9 +3,9 @@
  */
 
 @interface MSPDroppedPin : PBCodable <NSCopying> {
-    GEOLatLng *_latLng;
-    GEOMapRegion *_mapRegion;
-    PBUnknownFields *_unknownFields;
+    GEOLatLng * _latLng;
+    GEOMapRegion * _mapRegion;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasLatLng;

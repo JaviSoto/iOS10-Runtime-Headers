@@ -3,22 +3,22 @@
  */
 
 @interface SKUIStyledImageButton : UIControl {
-    SKUIImageView *_additionalImageView;
+    SKUIImageView * _additionalImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _bigHitInsets;
-    BOOL _didInitialHighlightForTouch;
+    }  _bigHitInsets;
+    BOOL  _didInitialHighlightForTouch;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _hitRectInsets;
-    SKUIImageView *_imageView;
-    BOOL _useBigHitTarget;
+    }  _hitRectInsets;
+    SKUIImageView * _imageView;
+    BOOL  _useBigHitTarget;
 }
 
 @property (nonatomic, readonly) SKUIImageView *additionalImageView;

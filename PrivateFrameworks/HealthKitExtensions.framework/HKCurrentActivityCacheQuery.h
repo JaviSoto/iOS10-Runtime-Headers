@@ -3,8 +3,8 @@
  */
 
 @interface HKCurrentActivityCacheQuery : HKQuery {
-    HKActivityCache *_lastActivityCache;
-    id /* block */ _updateHandler;
+    HKActivityCache * _lastActivityCache;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, retain) HKActivityCache *lastActivityCache;

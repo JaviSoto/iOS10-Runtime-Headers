@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver> {
-    TKTonePickerItem *_classicTonesHeaderItem;
-    <TKTonePickerTableViewControllerHelper> *_tonePickerTableViewControllerHelper;
+@interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver> {
+    TKTonePickerItem * _classicTonesHeaderItem;
+    <TKTonePickerTableViewControllerHelper> * _tonePickerTableViewControllerHelper;
 }
 
 @property (setter=_setClassicTonesHeaderItem:, nonatomic, retain) TKTonePickerItem *_classicTonesHeaderItem;
@@ -24,6 +24,7 @@
 - (void)layoutMarginsDidChangeInTonePickerTableView:(id)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)separatorColorDidChangeInTonePickerTableView:(id)arg1;
 - (void)setTonePickerTableViewControllerHelper:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

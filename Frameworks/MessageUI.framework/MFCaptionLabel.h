@@ -3,13 +3,13 @@
  */
 
 @interface MFCaptionLabel : UIView {
-    void *_addressBook;
-    NSArray *_bccRecipients;
-    NSArray *_ccRecipients;
-    UIButton *_moreButton;
-    BOOL _needsLabelUpdate;
-    UILabel *_recipientLabel;
-    NSArray *_toRecipients;
+    void * _addressBook;
+    NSArray * _bccRecipients;
+    NSArray * _ccRecipients;
+    UIButton * _moreButton;
+    BOOL  _needsLabelUpdate;
+    UILabel * _recipientLabel;
+    NSArray * _toRecipients;
 }
 
 @property (nonatomic) void*addressBook;

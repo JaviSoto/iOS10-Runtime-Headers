@@ -3,12 +3,12 @@
  */
 
 @interface AXDisplayLinkManager : NSObject {
-    NSMutableSet *_activeTargetActions;
-    BOOL _handlingDisplayRefresh;
-    BOOL _hasUpdatedTargetActions;
-    CADisplayLink *_storedDisplayLink;
-    NSMutableSet *_updatedTargetActions;
-    unsigned int _warmUpModeRequirementsCount;
+    NSMutableSet * _activeTargetActions;
+    BOOL  _handlingDisplayRefresh;
+    BOOL  _hasUpdatedTargetActions;
+    CADisplayLink * _storedDisplayLink;
+    NSMutableSet * _updatedTargetActions;
+    unsigned int  _warmUpModeRequirementsCount;
 }
 
 @property (nonatomic, retain) NSMutableSet *activeTargetActions;

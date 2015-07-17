@@ -3,12 +3,12 @@
  */
 
 @interface CKDispatchCache : NSObject <IMSystemMonitorListener> {
-    long _dispatchPriority;
-    CKDispatchQueue *_dispatchQueue;
-    NSObject<OS_dispatch_queue> *_lockQueue;
-    NSCache *_objectCache;
-    NSMutableDictionary *_pendingGroups;
-    NSCountedSet *_pendingKeys;
+    long  _dispatchPriority;
+    CKDispatchQueue * _dispatchQueue;
+    NSObject<OS_dispatch_queue> * _lockQueue;
+    NSCache * _objectCache;
+    NSMutableDictionary * _pendingGroups;
+    NSCountedSet * _pendingKeys;
 }
 
 @property (nonatomic) long dispatchPriority;

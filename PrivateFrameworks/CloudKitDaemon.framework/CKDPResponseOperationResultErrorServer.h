@@ -5,8 +5,8 @@
 @interface CKDPResponseOperationResultErrorServer : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    int _type;
+    }  _has;
+    int  _type;
 }
 
 @property (nonatomic) BOOL hasType;

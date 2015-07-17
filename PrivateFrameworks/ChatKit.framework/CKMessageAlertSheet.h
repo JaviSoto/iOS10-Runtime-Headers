@@ -3,7 +3,7 @@
  */
 
 @interface CKMessageAlertSheet : UIAlertView {
-    BOOL _showingTagline;
+    BOOL  _showingTagline;
 }
 
 @property (nonatomic) BOOL showingTagline;

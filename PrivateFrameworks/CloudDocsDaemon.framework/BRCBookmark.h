@@ -3,15 +3,15 @@
  */
 
 @interface BRCBookmark : NSObject {
-    NSData *_bookmarkData;
-    BRCLocalContainer *_container;
-    BOOL _containsItemID;
-    BOOL _dataResolved;
-    BRCAccountSession *_session;
-    BRCDocumentItem *_target;
-    BRCRelativePath *_targetRelpath;
-    BOOL _targetResolved;
-    BRCServerZone *_targetServerZone;
+    NSData * _bookmarkData;
+    BRCLocalContainer * _container;
+    BOOL  _containsItemID;
+    BOOL  _dataResolved;
+    BRCAccountSession * _session;
+    BRCDocumentItem * _target;
+    BRCRelativePath * _targetRelpath;
+    BOOL  _targetResolved;
+    BRCServerZone * _targetServerZone;
 }
 
 @property (nonatomic, readonly) BOOL containsItemID;

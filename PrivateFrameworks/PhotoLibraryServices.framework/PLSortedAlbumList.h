@@ -3,11 +3,11 @@
  */
 
 @interface PLSortedAlbumList : NSObject <PLAlbumContainer, PLIndexMappingCache> {
-    struct NSObject { Class x1; } *_backingAlbumList;
-    struct __CFArray { } *_fromBackingMap;
-    id /* block */ _sortComparator;
-    struct __CFArray { } *_toBackingMap;
-    NSMutableOrderedSet *_weak_albums;
+    struct NSObject { Class x1; } * _backingAlbumList;
+    struct __CFArray { } * _fromBackingMap;
+    id /* block */  _sortComparator;
+    struct __CFArray { } * _toBackingMap;
+    NSMutableOrderedSet * _weak_albums;
 }
 
 @property (nonatomic, retain) NSMutableOrderedSet *_albums;

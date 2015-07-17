@@ -3,14 +3,14 @@
  */
 
 @interface PSNavBarSpinnerManager : NSObject {
-    NSMutableDictionary *_navigationItems;
-    NSMutableDictionary *_savedLeftItems;
-    NSMutableDictionary *_savedRightItems;
+    NSMutableDictionary * _navigationItems;
+    NSMutableDictionary * _savedLeftItems;
+    NSMutableDictionary * _savedRightItems;
 }
 
 + (id)sharedSpinnerManager;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)startAnimatingInNavItem:(id)arg1 forIdentifier:(id)arg2;
 - (void)startAnimatingInNavItem:(id)arg1 forIdentifier:(id)arg2 hideBackButton:(BOOL)arg3;

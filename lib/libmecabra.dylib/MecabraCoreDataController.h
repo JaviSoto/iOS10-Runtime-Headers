@@ -3,17 +3,17 @@
  */
 
 @interface MecabraCoreDataController : NSObject {
-    NSEntityDescription *_entityDescription;
-    NSURL *_localInfoPlistURL;
-    NSURL *_localStoreURL;
-    NSURL *_localURL;
-    NSString *_localURLLastPartOfName;
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSURL *_storeURL;
-    NSArray *_storedElementsForMerge;
-    NSString *_type;
+    NSEntityDescription * _entityDescription;
+    NSURL * _localInfoPlistURL;
+    NSURL * _localStoreURL;
+    NSURL * _localURL;
+    NSString * _localURLLastPartOfName;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
+    NSURL * _storeURL;
+    NSArray * _storedElementsForMerge;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) NSEntityDescription *entityDescription;

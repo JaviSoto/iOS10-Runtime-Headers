@@ -3,10 +3,10 @@
  */
 
 @interface PKTransactionDetailsViewController : UITableViewController {
-    UITableViewCell *_mapsCell;
-    NSDictionary *_merchantDetails;
-    PKPaymentTransaction *_transaction;
-    NSDictionary *_transactionDetails;
+    UITableViewCell * _mapsCell;
+    NSDictionary * _merchantDetails;
+    PKPaymentTransaction * _transaction;
+    NSDictionary * _transactionDetails;
 }
 
 @property (nonatomic, retain) NSDictionary *merchantDetails;

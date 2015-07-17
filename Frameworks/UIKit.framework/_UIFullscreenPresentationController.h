@@ -3,8 +3,7 @@
  */
 
 @interface _UIFullscreenPresentationController : _UICurrentContextPresentationController {
-    int _computedOrientation;
-    float _counterRotatedAngle;
+    float  _counterRotatedAngle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,11 +13,13 @@
             float width; 
             float height; 
         } size; 
-    } _counterRotatedOriginalBounds;
-    UIView *_counterRotatedView;
-    int _originalOrientation;
+    }  _counterRotatedOriginalBounds;
+    UIView * _counterRotatedView;
+    int  _originalOrientation;
+    id /* block */  finalRotationBlock;
 }
 
+- (void).cxx_destruct;
 - (void)_adjustOrientationIfNecessaryInWindow:(id)arg1 forViewController:(id)arg2 preservingViewController:(id)arg3;
 - (BOOL)_invokesDelegatesOnOrientationChange;
 - (void)_placeCounterRotationViewWithView:(id)arg1 inWindow:(id)arg2 fromOrientation:(int)arg3 toOrientation:(int)arg4 force:(BOOL)arg5;
@@ -32,6 +33,5 @@
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
-- (void)transitionDidFinish:(BOOL)arg1;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface CIRadialGradient : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor0;
-    CIColor *inputColor1;
-    NSNumber *inputRadius0;
-    NSNumber *inputRadius1;
+    CIVector * inputCenter;
+    CIColor * inputColor0;
+    CIColor * inputColor1;
+    NSNumber * inputRadius0;
+    NSNumber * inputRadius1;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;
@@ -25,7 +25,6 @@
 - (id)inputRadius0;
 - (id)inputRadius1;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputColor0:(id)arg1;
 - (void)setInputColor1:(id)arg1;

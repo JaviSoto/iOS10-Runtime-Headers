@@ -3,17 +3,17 @@
  */
 
 @interface MusicContextualActionsHeaderView : UIView {
-    BOOL _allowsSelection;
-    UIImageView *_artworkView;
-    MusicContextualActionsHeaderBlendingHighlightView *_backgroundBlendingHighlightView;
-    <MusicContextualActionsHeaderViewDelegate> *_delegate;
+    BOOL  _allowsSelection;
+    UIImageView * _artworkView;
+    MusicContextualActionsHeaderBlendingHighlightView * _backgroundBlendingHighlightView;
+    <MusicContextualActionsHeaderViewDelegate> * _delegate;
     struct { 
         unsigned int wasSelected : 1; 
-    } _delegateRespondsToSelector;
-    UILabel *_detailLabel;
-    MusicEntityValueContext *_entityValueContext;
-    BOOL _highlighted;
-    UILabel *_titleLabel;
+    }  _delegateRespondsToSelector;
+    UILabel * _detailLabel;
+    MusicEntityValueContext * _entityValueContext;
+    BOOL  _highlighted;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) BOOL allowsSelection;

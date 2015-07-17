@@ -3,9 +3,9 @@
  */
 
 @interface MBSDevice : NSObject {
-    NSMutableDictionary *_deviceInfoDictionary;
-    NSData *_logData;
-    NSString *_logFileName;
+    NSMutableDictionary * _deviceInfoDictionary;
+    NSData * _logData;
+    NSString * _logFileName;
 }
 
 @property (retain) NSMutableDictionary *deviceInfoDictionary;

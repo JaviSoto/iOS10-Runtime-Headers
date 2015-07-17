@@ -8,16 +8,16 @@
         float left; 
         float bottom; 
         float right; 
-    } _appliedContentInsetsAdjustment;
-    <SKUIScrollingSegmentedControllerItemContextDelegate> *_delegate;
+    }  _appliedContentInsetsAdjustment;
+    <SKUIScrollingSegmentedControllerItemContextDelegate> * _delegate;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _desiredContentInsetsAdjustment;
-    UIScrollView *_insetAdjustedContentScrollView;
-    UIViewController *_viewController;
+    }  _desiredContentInsetsAdjustment;
+    UIScrollView * _insetAdjustedContentScrollView;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) <SKUIScrollingSegmentedControllerItemContextDelegate> *delegate;

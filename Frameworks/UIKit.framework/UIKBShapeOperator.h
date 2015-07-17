@@ -3,7 +3,7 @@
  */
 
 @interface UIKBShapeOperator : NSObject {
-    float _scale;
+    float  _scale;
 }
 
 @property (nonatomic) float scale;

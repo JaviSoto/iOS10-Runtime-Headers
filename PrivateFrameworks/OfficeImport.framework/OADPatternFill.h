@@ -3,12 +3,9 @@
  */
 
 @interface OADPatternFill : OADFill {
-    OADColor *mBgColor;
-    OADColor *mFgColor;
-    BOOL mIsBgColorOverridden;
-    BOOL mIsFgColorOverridden;
-    BOOL mIsPatternOverridden;
-    OADPattern *mPattern;
+    OADColor * mBgColor;
+    OADColor * mFgColor;
+    OADPattern * mPattern;
 }
 
 + (id)defaultProperties;
@@ -17,14 +14,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fgColor;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithDefaults;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isBgColorOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFgColorOverridden;
 - (BOOL)isPatternOverridden;
 - (id)namedImageDataWithBlipCollection:(id)arg1;
 - (id)pattern;
+- (void)removeUnnecessaryOverrides;
 - (void)setBgColor:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setFgColor:(id)arg1;

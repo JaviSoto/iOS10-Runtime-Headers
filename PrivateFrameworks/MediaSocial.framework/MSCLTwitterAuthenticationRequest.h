@@ -3,8 +3,8 @@
  */
 
 @interface MSCLTwitterAuthenticationRequest : NSObject {
-    ACAccount *_account;
-    id /* block */ _responseBlock;
+    ACAccount * _account;
+    id /* block */  _responseBlock;
 }
 
 - (void).cxx_destruct;

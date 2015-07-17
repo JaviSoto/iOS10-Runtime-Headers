@@ -3,10 +3,10 @@
  */
 
 @interface UIPrinterSetupPINViewController : UIViewController {
-    UIPrinterSetupPINView *_PINView;
-    UIPrinterSetupConnectingView *_connectingView;
-    PKPrinter *_printer;
-    UIScrollView *_scrollView;
+    UIPrinterSetupPINView * _PINView;
+    UIPrinterSetupConnectingView * _connectingView;
+    PKPrinter * _printer;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic, retain) UIPrinterSetupPINView *PINView;
@@ -14,6 +14,7 @@
 @property (nonatomic, retain) PKPrinter *printer;
 @property (nonatomic, retain) UIScrollView *scrollView;
 
+- (void).cxx_destruct;
 - (id)PINView;
 - (void)connectToPrinter;
 - (void)connected:(BOOL)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface CPLPersonChange : CPLRecordChange {
-    NSString *_fullName;
+    NSString * _fullName;
 }
 
 @property (nonatomic, copy) NSString *fullName;

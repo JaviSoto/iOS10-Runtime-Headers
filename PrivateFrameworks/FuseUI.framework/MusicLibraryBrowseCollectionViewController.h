@@ -2,27 +2,27 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryBrowseCollectionViewController : UIViewController <MusicClientContextConsuming, MusicCollectionViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicEntityVerticalSectionHeaderViewDelegate, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryViewConfigurationConsuming, MusicSplitInitialStateProviding, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    Class _cellClass;
-    NSString *_cellReuseIdentifier;
-    MusicClientContext *_clientContext;
-    MusicCollectionView *_collectionView;
-    MusicLibraryBrowseCollectionViewConfiguration *_collectionViewConfiguration;
-    <MusicLibraryBrowseCollectionViewControllerDelegate> *_delegate;
-    MusicEntityCollectionViewDescriptor *_entityViewDescriptor;
-    SKUIDynamicPageSectionIndexMapper *_indexMapper;
-    MusicEntityValueContext *_itemEntityValueContext;
-    int _lastSelectionBehavior;
-    MusicLibraryBrowseCollectionViewLayoutMetrics *_layoutMetrics;
-    MusicEntityPlayabilityController *_playabilityController;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    NSMutableArray *_reusableCoalescingEntityValueProviders;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
+@interface MusicLibraryBrowseCollectionViewController : UIViewController <MusicClientContextConsuming, MusicCollectionViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicEntityVerticalSectionHeaderViewDelegate, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLayoutMarginProxyViewDelegate, MusicLibraryViewConfigurationConsuming, MusicSplitInitialStateProviding, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+    Class  _cellClass;
+    NSString * _cellReuseIdentifier;
+    MusicClientContext * _clientContext;
+    MusicCollectionView * _collectionView;
+    MusicLibraryBrowseCollectionViewConfiguration * _collectionViewConfiguration;
+    <MusicLibraryBrowseCollectionViewControllerDelegate> * _delegate;
+    MusicEntityCollectionViewDescriptor * _entityViewDescriptor;
+    SKUIDynamicPageSectionIndexMapper * _indexMapper;
+    MusicEntityValueContext * _itemEntityValueContext;
+    int  _lastSelectionBehavior;
+    MusicLibraryBrowseCollectionViewLayoutMetrics * _layoutMetrics;
+    MusicEntityPlayabilityController * _playabilityController;
+    MusicEntityPlaybackStatusController * _playbackStatusController;
+    MPAVController * _player;
+    NSMutableArray * _reusableCoalescingEntityValueProviders;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
     struct CGSize { 
         float width; 
         float height; 
-    } _sizeForLayoutMetrics;
+    }  _sizeForLayoutMetrics;
 }
 
 @property (getter=_cellClass, nonatomic, readonly) Class _cellClass;
@@ -77,16 +77,22 @@
 - (id)collectionViewFlowLayout;
 - (void)collectionViewTintColorDidChange:(id)arg1;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)entityViewDescriptor;
 - (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)layoutMarginProxyViewLayoutMarginsDidChange:(id)arg1;
 - (id)libraryViewConfiguration;
 - (id)loadEntityViewDescriptor;
+- (void)loadView;
 - (unsigned int)maximumItemsPerRow;
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (unsigned int)numberOfIndexBarEntries;

@@ -3,7 +3,7 @@
  */
 
 @interface AVFileProcessor : NSObject {
-    float _percentComplete;
+    float  _percentComplete;
 }
 
 + (id)fileProcessor;

@@ -3,10 +3,10 @@
  */
 
 @interface __NSCFSet : NSMutableSet {
-    unsigned int _bits;
-    void *_callbacks;
-    unsigned char _cfinfo;
-    id *_values;
+    unsigned int  _bits;
+    void * _callbacks;
+    unsigned char  _cfinfo;
+    id * _values;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;

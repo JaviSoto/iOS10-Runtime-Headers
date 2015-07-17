@@ -3,9 +3,9 @@
  */
 
 @interface SKUIOnboardingFooterView : UIView {
-    UIButton *_leftButton;
-    SKUIOnboardingProgressView *_progressView;
-    UIButton *_rightButton;
+    UIButton * _leftButton;
+    SKUIOnboardingProgressView * _progressView;
+    UIButton * _rightButton;
 }
 
 @property (nonatomic, readonly) UIButton *leftButton;

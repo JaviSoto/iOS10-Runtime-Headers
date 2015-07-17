@@ -3,11 +3,11 @@
  */
 
 @interface RadioGetTracksResponse : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSDate *_expirationDate;
-    NSDictionary *_responseDictionary;
-    RadioStation *_station;
-    NSMutableDictionary *_tracksByStationKey;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSDate * _expirationDate;
+    NSDictionary * _responseDictionary;
+    RadioStation * _station;
+    NSMutableDictionary * _tracksByStationKey;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *dialogDictionary;

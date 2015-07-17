@@ -10,6 +10,7 @@
 - (void)beginUsing:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (NSDictionary *)bundleInfoDictionary;
 - (NSURL *)containingUrl;
+- (<PKPlugIn> *)createInstanceWithUUID:(NSUUID *)arg1;
 - (NSUserDefaults *)defaults;
 - (NSBundle *)embeddedBundle;
 - (id)embeddedPrincipal;
@@ -18,6 +19,7 @@
 - (NSString *)localizedContainingName;
 - (NSString *)localizedName;
 - (NSString *)localizedShortName;
+- (NSUUID *)multipleInstanceUUID;
 - (id /* block */)notificationBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, <PKPlugIn> *, unsigned int, void*, id, SEL
 - (BOOL)onSystemVolume;
 - (NSDictionary *)plugInDictionary;

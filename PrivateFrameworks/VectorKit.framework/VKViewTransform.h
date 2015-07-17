@@ -6,7 +6,7 @@
     struct shared_ptr<vk::ViewTransform> { 
         struct ViewTransform {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _viewTransform;
+    }  _viewTransform;
 }
 
 @property (nonatomic, readonly) float contentScale;

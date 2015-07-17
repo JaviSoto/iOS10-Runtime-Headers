@@ -3,7 +3,7 @@
  */
 
 @interface SKUISectionHeaderCollectionViewCell : SKUICollectionViewCell <SKUIViewElementView> {
-    SKUISectionHeaderView *_headerView;
+    SKUISectionHeaderView * _headerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

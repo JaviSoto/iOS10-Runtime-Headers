@@ -3,18 +3,18 @@
  */
 
 @interface FTIDSMessage : IDSBaseMessage <NSCopying> {
-    NSMutableArray *_certDataArray;
-    NSData *_identityCert;
-    struct __SecKey { } *_identityKey;
-    struct __SecKey { } *_identityPublicKey;
-    NSMutableArray *_privateKeyArray;
-    NSMutableArray *_publicKeyArray;
-    NSData *_pushCert;
-    struct __SecKey { } *_pushKey;
-    struct __SecKey { } *_pushPublicKey;
-    NSData *_pushToken;
-    NSString *_selfURI;
-    NSMutableArray *_userIDArray;
+    NSMutableArray * _certDataArray;
+    NSData * _identityCert;
+    struct __SecKey { } * _identityKey;
+    struct __SecKey { } * _identityPublicKey;
+    NSMutableArray * _privateKeyArray;
+    NSMutableArray * _publicKeyArray;
+    NSData * _pushCert;
+    struct __SecKey { } * _pushKey;
+    struct __SecKey { } * _pushPublicKey;
+    NSData * _pushToken;
+    NSString * _selfURI;
+    NSMutableArray * _userIDArray;
 }
 
 @property (nonatomic, copy) NSData *IDCertificate;

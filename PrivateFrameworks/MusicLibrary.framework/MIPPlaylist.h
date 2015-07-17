@@ -3,10 +3,10 @@
  */
 
 @interface MIPPlaylist : PBCodable <NSCopying> {
-    NSMutableArray *_childIdentifiers;
-    NSString *_cloudGlobalId;
-    int _distinguishedKind;
-    MIPMultiverseIdentifier *_geniusSeedTrackIdentifier;
+    NSMutableArray * _childIdentifiers;
+    NSString * _cloudGlobalId;
+    int  _distinguishedKind;
+    MIPMultiverseIdentifier * _geniusSeedTrackIdentifier;
     struct { 
         unsigned int storeId : 1; 
         unsigned int distinguishedKind : 1; 
@@ -14,16 +14,16 @@
         unsigned int type : 1; 
         unsigned int hidden : 1; 
         unsigned int reversedSorting : 1; 
-    } _has;
-    BOOL _hidden;
-    NSMutableArray *_items;
-    NSString *_name;
-    MIPMultiverseIdentifier *_parentIdentifier;
-    BOOL _reversedSorting;
-    MIPSmartPlaylistInfo *_smartPlaylistInfo;
-    int _sortType;
-    long long _storeId;
-    int _type;
+    }  _has;
+    BOOL  _hidden;
+    NSMutableArray * _items;
+    NSString * _name;
+    MIPMultiverseIdentifier * _parentIdentifier;
+    BOOL  _reversedSorting;
+    MIPSmartPlaylistInfo * _smartPlaylistInfo;
+    int  _sortType;
+    long long  _storeId;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSMutableArray *childIdentifiers;

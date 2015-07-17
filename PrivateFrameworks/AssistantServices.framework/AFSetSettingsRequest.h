@@ -3,8 +3,8 @@
  */
 
 @interface AFSetSettingsRequest : AFSiriRequest {
-    BOOL _applyChanges;
-    NSArray *_settings;
+    BOOL  _applyChanges;
+    NSArray * _settings;
 }
 
 @property (nonatomic) BOOL applyChanges;

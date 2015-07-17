@@ -3,20 +3,20 @@
  */
 
 @interface VKAnchorWrapper : NSObject <VKAnchorDelegate> {
-    VKAnchor *_anchor;
-    MDDisplayLayer *_displayLayer;
-    BOOL _followsTerrain;
-    BOOL _isUpdating;
+    VKAnchor * _anchor;
+    MDDisplayLayer * _displayLayer;
+    BOOL  _followsTerrain;
+    BOOL  _isUpdating;
     struct { 
         double latitude; 
         double longitude; 
-    } _lastCoordinate;
-    VKLayoutContext *_lastLayoutContext;
-    double _pointsPerMeter;
+    }  _lastCoordinate;
+    VKLayoutContext * _lastLayoutContext;
+    double  _pointsPerMeter;
     struct CGPoint { 
         float x; 
         float y; 
-    } _screenPointInCanvas;
+    }  _screenPointInCanvas;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
@@ -27,7 +27,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (id)_anchorWithContext:(id)arg1;
 - (void)_updateCachedPointWithContext:(id)arg1;
 - (void)anchorWorldPointDidChange:(void*)arg1;

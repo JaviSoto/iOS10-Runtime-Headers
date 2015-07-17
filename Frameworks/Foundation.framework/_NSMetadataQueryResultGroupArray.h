@@ -3,7 +3,7 @@
  */
 
 @interface _NSMetadataQueryResultGroupArray : NSArray {
-    id _group;
+    id  _group;
 }
 
 - (id)_init:(id)arg1;

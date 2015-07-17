@@ -6,21 +6,21 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _attachmentPointA;
+    }  _attachmentPointA;
     struct CGPoint { 
         float x; 
         float y; 
-    } _attachmentPointB;
-    float _damping;
-    id _delegate;
-    BOOL _enabled;
-    CAValueFunction *_function;
-    CALayer *_layerA;
-    CALayer *_layerB;
-    NSString *_name;
-    void *_priv;
-    float _restLength;
-    float _stiffness;
+    }  _attachmentPointB;
+    float  _damping;
+    id  _delegate;
+    BOOL  _enabled;
+    CAValueFunction * _function;
+    CALayer * _layerA;
+    CALayer * _layerB;
+    NSString * _name;
+    void * _priv;
+    float  _restLength;
+    float  _stiffness;
 }
 
 @property struct CGPoint { float x1; float x2; } attachmentPointA;
@@ -39,7 +39,6 @@
 + (id)defaultValueForKey:(id)arg1;
 + (id)spring;
 
-- (id).cxx_construct;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;

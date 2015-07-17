@@ -3,11 +3,11 @@
  */
 
 @interface PT2DGraphDatum : NSObject <PT2DGraphDatum> {
-    UIColor *_color;
+    UIColor * _color;
     struct CGPoint { 
         float x; 
         float y; 
-    } _graphPoint;
+    }  _graphPoint;
 }
 
 @property (nonatomic, retain) UIColor *color;

@@ -3,16 +3,16 @@
  */
 
 @interface BRListNonLocalVersionsOperation : NSOperation <BRNonLocalVersionReceiving> {
-    NSURL *_documentURL;
-    BOOL _executing;
-    id /* block */ _fetchingVersionsDoneBlock;
-    BOOL _finished;
-    BOOL _includeCachedVersions;
-    <BRNonLocalVersionSending> *_sender;
-    BOOL _state;
-    NSMutableArray *_versions;
-    NSMutableDictionary *_versionsByEtag;
-    GSPermanentStorage *_versionsStore;
+    NSURL * _documentURL;
+    BOOL  _executing;
+    id /* block */  _fetchingVersionsDoneBlock;
+    BOOL  _finished;
+    BOOL  _includeCachedVersions;
+    <BRNonLocalVersionSending> * _sender;
+    BOOL  _state;
+    NSMutableArray * _versions;
+    NSMutableDictionary * _versionsByEtag;
+    GSPermanentStorage * _versionsStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

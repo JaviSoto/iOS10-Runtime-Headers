@@ -3,17 +3,17 @@
  */
 
 @interface AWDAirPlaySessionEnded : PBCodable <NSCopying> {
-    unsigned int _duration;
+    unsigned int  _duration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
         unsigned int initiator : 1; 
         unsigned int reason : 1; 
-    } _has;
-    unsigned int _initiator;
-    int _reason;
-    NSString *_sessionUUID;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _initiator;
+    int  _reason;
+    NSString * _sessionUUID;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int duration;

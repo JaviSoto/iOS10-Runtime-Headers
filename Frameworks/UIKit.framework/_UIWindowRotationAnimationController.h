@@ -3,10 +3,10 @@
  */
 
 @interface _UIWindowRotationAnimationController : _UIWindowAnimationController {
-    id /* block */ _animations;
-    double _duration;
-    BOOL _skipCallbacks;
-    BOOL _updateStatusBarIfNecessary;
+    id /* block */  _animations;
+    double  _duration;
+    BOOL  _skipCallbacks;
+    BOOL  _updateStatusBarIfNecessary;
 }
 
 @property (nonatomic, copy) id /* block */ animations;
@@ -14,6 +14,7 @@
 @property (nonatomic) BOOL skipCallbacks;
 @property (nonatomic) BOOL updateStatusBarIfNecessary;
 
+- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (id /* block */)animations;
 - (void)dealloc;

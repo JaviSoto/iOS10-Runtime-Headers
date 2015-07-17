@@ -3,11 +3,11 @@
  */
 
 @interface TSPUnknownContent : NSObject {
-    NSArray *_ignoreAndDropFields;
-    NSArray *_ignoreAndPreserveFields;
-    NSArray *_messages;
-    NSArray *_savedIgnoreAndDropFields;
-    NSArray *_savedIgnoreAndPreserveFields;
+    NSArray * _ignoreAndDropFields;
+    NSArray * _ignoreAndPreserveFields;
+    NSArray * _messages;
+    NSArray * _savedIgnoreAndDropFields;
+    NSArray * _savedIgnoreAndPreserveFields;
 }
 
 @property (nonatomic, readonly) NSArray *messages;

@@ -3,7 +3,7 @@
  */
 
 @interface CKTranscriptCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    CKChatItem *_chatItem;
+    CKChatItem * _chatItem;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -21,8 +21,8 @@
         float m42; 
         float m43; 
         float m44; 
-    } _contentTransform3D;
-    float _currentCenterY;
+    }  _contentTransform3D;
+    float  _currentCenterY;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -32,14 +32,14 @@
             float width; 
             float height; 
         } size; 
-    } _currentFrame;
-    float _easing;
-    float _factor;
-    float _height;
-    BOOL _hidden;
-    BOOL _orientation;
-    float _targetCenterY;
-    float _targetEasing;
+    }  _currentFrame;
+    float  _easing;
+    float  _factor;
+    float  _height;
+    BOOL  _hidden;
+    BOOL  _orientation;
+    float  _targetCenterY;
+    float  _targetEasing;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -49,7 +49,7 @@
             float width; 
             float height; 
         } size; 
-    } _targetFrame;
+    }  _targetFrame;
 }
 
 @property (nonatomic, retain) CKChatItem *chatItem;

@@ -3,15 +3,15 @@
  */
 
 @interface SKUIViewController : UIViewController <SKUIClientContextConsuming, SKUINetworkErrorDelegate, SKUIProductPageOverlayDelegate, SKUITabBarItemRootViewController, SKUIWishlistDelegate, UIPopoverControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    SKUINetworkErrorViewController *_networkErrorViewController;
-    NSOperationQueue *_operationQueue;
-    SKUIProductPageOverlayController *_productPageOverlayController;
-    SKUIIPadSearchController *_searchController;
-    BOOL _wishlistButtonHidden;
-    UIBarButtonItem *_wishlistButtonItem;
-    SKUIPopoverObserver *_wishlistPopoverObserver;
-    SKUIWishlistViewController *_wishlistViewController;
+    SKUIClientContext * _clientContext;
+    SKUINetworkErrorViewController * _networkErrorViewController;
+    NSOperationQueue * _operationQueue;
+    SKUIProductPageOverlayController * _productPageOverlayController;
+    SKUIIPadSearchController * _searchController;
+    BOOL  _wishlistButtonHidden;
+    UIBarButtonItem * _wishlistButtonItem;
+    SKUIPopoverObserver * _wishlistPopoverObserver;
+    SKUIWishlistViewController * _wishlistViewController;
 }
 
 @property (nonatomic, readonly) SKUIIPadSearchController *IPadSearchController;

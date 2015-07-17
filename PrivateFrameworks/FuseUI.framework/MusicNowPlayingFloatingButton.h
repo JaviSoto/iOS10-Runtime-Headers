@@ -3,14 +3,14 @@
  */
 
 @interface MusicNowPlayingFloatingButton : UIButton {
-    MusicNowPlayingAtmosphericEffectView *_effectView;
+    MusicNowPlayingAtmosphericEffectView * _effectView;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _glyphImageOffset;
-    UIImageView *_glyphImageView;
-    BOOL _hideShadow;
-    UIImageView *_shadowView;
+    }  _glyphImageOffset;
+    UIImageView * _glyphImageView;
+    BOOL  _hideShadow;
+    UIImageView * _shadowView;
 }
 
 @property (nonatomic, retain) NSString *backdropGroupName;

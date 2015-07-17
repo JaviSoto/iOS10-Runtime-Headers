@@ -3,7 +3,7 @@
  */
 
 @interface NSAutoContentAccessingProxy : NSProxy {
-    id _target;
+    id  _target;
 }
 
 + (id)proxyWithTarget:(id)arg1;

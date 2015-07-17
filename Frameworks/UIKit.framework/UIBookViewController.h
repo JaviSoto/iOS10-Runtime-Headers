@@ -3,22 +3,22 @@
  */
 
 @interface UIBookViewController : UIViewController {
-    int _animatedPageTurns;
+    int  _animatedPageTurns;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIView *_contentView;
-    <UIBookViewControllerDelegate> *_delegate;
-    UIViewController *_evenPage;
-    UIViewController *_newEvenPage;
-    UIViewController *_newOddPage;
-    UIViewController *_oddPage;
-    int _turnCount;
-    double _turnDuration;
-    float _turnMargin;
+    }  _contentInset;
+    UIView * _contentView;
+    <UIBookViewControllerDelegate> * _delegate;
+    UIViewController * _evenPage;
+    UIViewController * _newEvenPage;
+    UIViewController * _newOddPage;
+    UIViewController * _oddPage;
+    int  _turnCount;
+    double  _turnDuration;
+    float  _turnMargin;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

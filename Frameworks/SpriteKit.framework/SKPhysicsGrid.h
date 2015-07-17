@@ -3,8 +3,8 @@
  */
 
 @interface SKPhysicsGrid : NSObject {
-    float _height;
-    float _width;
+    float  _height;
+    float  _width;
 }
 
 @property (nonatomic, readonly) float height;

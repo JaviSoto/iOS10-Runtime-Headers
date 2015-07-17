@@ -3,14 +3,14 @@
  */
 
 @interface SPXPCMessage : NSObject {
-    NSDictionary *_info;
-    NSString *_name;
-    SPXPCConnection *_receivingConnection;
-    unsigned long _shmemLen;
-    unsigned int _shmemPtr;
-    NSObject<OS_xpc_object> *_x_message;
-    NSObject<OS_xpc_object> *_x_reply;
-    NSObject<OS_xpc_object> *_x_reply_connection;
+    NSDictionary * _info;
+    NSString * _name;
+    SPXPCConnection * _receivingConnection;
+    unsigned long  _shmemLen;
+    unsigned int  _shmemPtr;
+    NSObject<OS_xpc_object> * _x_message;
+    NSObject<OS_xpc_object> * _x_reply;
+    NSObject<OS_xpc_object> * _x_reply_connection;
 }
 
 @property (nonatomic, copy) NSDictionary *info;
@@ -18,9 +18,9 @@
 @property (nonatomic) unsigned long sharedMemoryLength;
 @property (nonatomic) unsigned int sharedMemoryRegion;
 
+- (void).cxx_destruct;
 - (id)_createXPCMessage;
 - (id)_initWithXPCMessage:(id)arg1 onConnection:(id)arg2;
-- (void)dealloc;
 - (id)info;
 - (id)initWithName:(id)arg1;
 - (id)name;

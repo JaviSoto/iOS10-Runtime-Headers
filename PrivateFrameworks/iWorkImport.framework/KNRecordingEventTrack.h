@@ -3,8 +3,8 @@
  */
 
 @interface KNRecordingEventTrack : TSPObject {
-    NSArray *mEvents;
-    NSString *mType;
+    NSArray * mEvents;
+    NSString * mType;
 }
 
 @property (nonatomic, readonly) NSArray *events;

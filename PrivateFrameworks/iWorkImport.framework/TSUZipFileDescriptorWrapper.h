@@ -3,9 +3,9 @@
  */
 
 @interface TSUZipFileDescriptorWrapper : NSObject {
-    NSObject<OS_dispatch_group> *_accessGroup;
-    int _fileDescriptor;
-    <TSUReadChannel> *_readChannel;
+    NSObject<OS_dispatch_group> * _accessGroup;
+    int  _fileDescriptor;
+    <TSUReadChannel> * _readChannel;
 }
 
 @property (nonatomic, readonly) int fileDescriptor;

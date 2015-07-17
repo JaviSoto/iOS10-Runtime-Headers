@@ -3,17 +3,17 @@
  */
 
 @interface GEOMapRegion : PBCodable <NSCopying> {
-    double _eastLng;
+    double  _eastLng;
     struct { 
         unsigned int eastLng : 1; 
         unsigned int northLat : 1; 
         unsigned int southLat : 1; 
         unsigned int westLng : 1; 
-    } _has;
-    double _northLat;
-    double _southLat;
-    NSMutableArray *_vertexs;
-    double _westLng;
+    }  _has;
+    double  _northLat;
+    double  _southLat;
+    NSMutableArray * _vertexs;
+    double  _westLng;
 }
 
 @property (nonatomic, readonly) double centerLat;
@@ -31,6 +31,8 @@
 @property (nonatomic) double westLng;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)_geo_mapRegionForGEOCoordinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 - (void)addVertex:(id)arg1;
 - (double)centerLat;
@@ -84,7 +86,6 @@
 
 + (id)_mapkit_mapRegionEnclosingAnnotations:(id)arg1;
 + (id)_mapkit_mapRegionForCoordinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (id)_mapkit_mapRegionForGEOCoordinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)_mapkit_mapRegionForLatitude:(double)arg1 longitude:(double)arg2 latSpan:(double)arg3 longSpan:(double)arg4;
 
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine

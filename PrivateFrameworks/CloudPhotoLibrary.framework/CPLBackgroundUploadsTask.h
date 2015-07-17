@@ -3,15 +3,15 @@
  */
 
 @interface CPLBackgroundUploadsTask : CPLEngineSyncTask {
-    unsigned int _failedUploadedResourcesCount;
-    BOOL _hasBadErrors;
-    BOOL _hasResetQueue;
-    NSObject<OS_dispatch_queue> *_lock;
-    BOOL _shouldStop;
-    double _start;
-    unsigned int _successfullyUploadedResourcesCount;
-    unsigned int _total;
-    NSMutableArray *_uploadTasks;
+    unsigned int  _failedUploadedResourcesCount;
+    BOOL  _hasBadErrors;
+    BOOL  _hasResetQueue;
+    NSObject<OS_dispatch_queue> * _lock;
+    BOOL  _shouldStop;
+    double  _start;
+    unsigned int  _successfullyUploadedResourcesCount;
+    unsigned int  _total;
+    NSMutableArray * _uploadTasks;
 }
 
 - (void).cxx_destruct;

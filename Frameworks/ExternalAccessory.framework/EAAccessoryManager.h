@@ -3,14 +3,14 @@
  */
 
 @interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate> {
-    NSMutableArray *_connectedAccessories;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    EABluetoothAccessoryPicker *_picker;
-    id /* block */ _pickerCompletion;
-    NSTimer *_pickerTimer;
-    NSString *_selectedBluetoothAddress;
-    BOOL _sequesterNewAccessories;
-    NSMutableArray *_sequesteredAccessories;
+    NSMutableArray * _connectedAccessories;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    EABluetoothAccessoryPicker * _picker;
+    id /* block */  _pickerCompletion;
+    NSTimer * _pickerTimer;
+    NSString * _selectedBluetoothAddress;
+    BOOL  _sequesterNewAccessories;
+    NSMutableArray * _sequesteredAccessories;
 }
 
 @property (nonatomic, readonly) NSArray *connectedAccessories;
@@ -25,8 +25,10 @@
 + (void)registerCapabilities:(unsigned int)arg1;
 + (id)sharedAccessoryManager;
 
+- (void)_OOBBTPairingCompletionStatusReceived:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_cameraInfoUpdated:(id)arg1;
 - (void)_checkForConnectedAccessories;
 - (void)_cleanUpForTaskSuspend;
 - (id)_connectedAccessories;

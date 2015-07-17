@@ -3,12 +3,12 @@
  */
 
 @interface GEOVoltaireETAProvider : GEOETAProvider <PBRequesterDelegate> {
-    BOOL _cancelled;
-    id /* block */ _errorHandler;
-    id /* block */ _finishedHandler;
-    GEORequester *_requester;
-    id /* block */ _simpleETARequestFinishedHandler;
-    id /* block */ _willSendRequestHandler;
+    BOOL  _cancelled;
+    id /* block */  _errorHandler;
+    id /* block */  _finishedHandler;
+    GEORequester * _requester;
+    id /* block */  _simpleETARequestFinishedHandler;
+    id /* block */  _willSendRequestHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

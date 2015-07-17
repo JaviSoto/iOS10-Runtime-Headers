@@ -3,21 +3,23 @@
  */
 
 @interface OADDrawableProperties : OADProperties {
-    unsigned int mAspectRatioLocked;
-    OADHyperlink *mClickHyperlink;
-    NSString *mDescription;
-    unsigned int mHasAspectRatioLocked;
-    unsigned int mHasWrdInline;
-    OADHyperlink *mHoverHyperlink;
-    OADOrientedBounds *mOrientedBounds;
-    NSString *mTitle;
-    unsigned int mWrdInline;
+    unsigned int  mAspectRatioLocked;
+    OADHyperlink * mClickHyperlink;
+    NSString * mDescription;
+    unsigned int  mHasAspectRatioLocked;
+    unsigned int  mHasWrdInline;
+    OADHyperlink * mHoverHyperlink;
+    OADOrientedBounds * mOrientedBounds;
+    NSString * mTitle;
+    unsigned int  mWrdInline;
 }
 
 - (id)altDescription;
 - (id)altTitle;
 - (id)clickHyperlink;
 - (void)dealloc;
+- (id)description;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasAltDescription;
 - (BOOL)hasAltTitle;
 - (BOOL)hasAspectRatioLocked;

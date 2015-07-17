@@ -3,31 +3,31 @@
  */
 
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
-    BOOL _alwaysDispatchesScrollEvents;
-    UIColor *_backgroundColor;
-    NSDictionary *_contextDictionary;
-    BOOL _doubleTapEnabled;
-    BOOL _embedded;
-    BOOL _flashesScrollIndicators;
-    BOOL _inputViewObeysDOMFocus;
-    int _loadingIndicatorStyle;
-    UIColor *_loadingTextColor;
-    UIColor *_loadingTextShadowColor;
-    SUGradient *_placeholderBackgroundGradient;
+    BOOL  _alwaysDispatchesScrollEvents;
+    UIColor * _backgroundColor;
+    NSDictionary * _contextDictionary;
+    BOOL  _doubleTapEnabled;
+    BOOL  _embedded;
+    BOOL  _flashesScrollIndicators;
+    BOOL  _inputViewObeysDOMFocus;
+    int  _loadingIndicatorStyle;
+    UIColor * _loadingTextColor;
+    UIColor * _loadingTextShadowColor;
+    SUGradient * _placeholderBackgroundGradient;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _scrollContentInsets;
-    BOOL _scrollingDisabled;
-    BOOL _shouldLoadProgressively;
-    BOOL _shouldShowFormAccessory;
-    BOOL _showsBackgroundShadow;
-    BOOL _showsHorizontalScrollIndicator;
-    BOOL _showsVerticalScrollIndicator;
-    UIColor *_topExtensionColor;
-    BOOL _usesBlurredBackground;
+    }  _scrollContentInsets;
+    BOOL  _scrollingDisabled;
+    BOOL  _shouldLoadProgressively;
+    BOOL  _shouldShowFormAccessory;
+    BOOL  _showsBackgroundShadow;
+    BOOL  _showsHorizontalScrollIndicator;
+    BOOL  _showsVerticalScrollIndicator;
+    UIColor * _topExtensionColor;
+    BOOL  _usesBlurredBackground;
 }
 
 @property (nonatomic) BOOL alwaysDispatchesScrollEvents;

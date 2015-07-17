@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioSessionDataSourceDescription : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (readonly) NSNumber *dataSourceID;

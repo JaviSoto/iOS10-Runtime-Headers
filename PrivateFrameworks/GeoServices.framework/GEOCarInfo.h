@@ -6,10 +6,10 @@
     struct { 
         unsigned int screenResolution : 1; 
         unsigned int interactionModel : 1; 
-    } _has;
-    int _interactionModel;
-    NSString *_manufacturer;
-    NSString *_model;
+    }  _has;
+    int  _interactionModel;
+    NSString * _manufacturer;
+    NSString * _model;
     struct { 
         double _height; 
         double _width; 
@@ -17,7 +17,7 @@
             unsigned int height : 1; 
             unsigned int width : 1; 
         } _has; 
-    } _screenResolution;
+    }  _screenResolution;
 }
 
 @property (nonatomic) BOOL hasInteractionModel;

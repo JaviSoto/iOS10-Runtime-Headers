@@ -3,21 +3,21 @@
  */
 
 @interface PLSlideshowSettingsViewController : UIViewController <MPMediaPickerControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    PLSlideshowAirPlayRoutesViewController *_airPlayRoutesController;
-    NSArray *_airplayRoutes;
-    NSArray *_alternateTransitionLocalizations;
-    <PLSlideshowSettingsViewControllerDelegate> *_delegate;
-    MPMediaPickerController *_mediaPicker;
-    UITableViewCell *_playMusicSwitchCell;
-    unsigned int _selectedAirplayRouteIndex;
-    UITableViewCell *_selectedMusicCell;
-    NSString *_selectedTransition;
-    MPMediaItemCollection *_slideshowMusicCollection;
-    BOOL _slideshowShouldPlayMusic;
-    UITableView *_table;
-    UITableViewCell *_transitionCell;
-    NSArray *_transitionKeys;
-    PLSlideshowTransitionsViewController *_transitionsController;
+    PLSlideshowAirPlayRoutesViewController * _airPlayRoutesController;
+    NSArray * _airplayRoutes;
+    NSArray * _alternateTransitionLocalizations;
+    <PLSlideshowSettingsViewControllerDelegate> * _delegate;
+    MPMediaPickerController * _mediaPicker;
+    UITableViewCell * _playMusicSwitchCell;
+    unsigned int  _selectedAirplayRouteIndex;
+    UITableViewCell * _selectedMusicCell;
+    NSString * _selectedTransition;
+    MPMediaItemCollection * _slideshowMusicCollection;
+    BOOL  _slideshowShouldPlayMusic;
+    UITableView * _table;
+    UITableViewCell * _transitionCell;
+    NSArray * _transitionKeys;
+    PLSlideshowTransitionsViewController * _transitionsController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

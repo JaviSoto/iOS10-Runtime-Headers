@@ -3,9 +3,9 @@
  */
 
 @interface RMListItem : NSObject {
-    unsigned int _count;
-    struct CGPDFNode {} **_paragraphs;
-    unsigned int _pos;
+    unsigned int  _count;
+    struct CGPDFNode {} ** _paragraphs;
+    unsigned int  _pos;
 }
 
 @property (readonly) struct CGPDFPage { }*page;

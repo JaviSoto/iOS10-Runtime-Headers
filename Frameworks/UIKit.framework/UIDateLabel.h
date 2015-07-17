@@ -3,18 +3,18 @@
  */
 
 @interface UIDateLabel : UILabel {
-    BOOL _boldForAllLocales;
-    NSCalendar *_calendar;
-    NSDate *_date;
-    BOOL _forceTimeOnly;
-    NSDate *_noon;
-    float _paddingFromTimeToDesignator;
-    NSDate *_previousWeek;
-    BOOL _shouldRecomputeText;
-    UIFont *_timeDesignatorFont;
-    NSDate *_today;
-    NSDate *_tomorrow;
-    NSDate *_yesterday;
+    BOOL  _boldForAllLocales;
+    NSCalendar * _calendar;
+    NSDate * _date;
+    BOOL  _forceTimeOnly;
+    NSDate * _noon;
+    float  _paddingFromTimeToDesignator;
+    NSDate * _previousWeek;
+    BOOL  _shouldRecomputeText;
+    UIFont * _timeDesignatorFont;
+    NSDate * _today;
+    NSDate * _tomorrow;
+    NSDate * _yesterday;
 }
 
 @property (nonatomic) BOOL boldForAllLocales;
@@ -32,13 +32,13 @@
 
 + (id)_dateFormatter;
 + (id)_relativeDateFormatter;
-+ (id)_timeFormatWithoutDesignator;
 + (id)_timeOnlyDateFormatter;
 + (id)_weekdayDateFormatter;
 + (id)amString;
 + (id)defaultFont;
 + (id)pmString;
 
+- (void).cxx_destruct;
 - (id)_calendar;
 - (id)_dateString;
 - (id)_dateWithDayDiffFromToday:(int)arg1;

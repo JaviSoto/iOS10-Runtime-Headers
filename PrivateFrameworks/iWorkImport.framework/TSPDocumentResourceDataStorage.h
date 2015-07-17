@@ -3,8 +3,8 @@
  */
 
 @interface TSPDocumentResourceDataStorage : TSPFileDataStorage {
-    TSPDocumentResourceInfo *_documentResourceInfo;
-    TSPDocumentResourceManager *_manager;
+    TSPDocumentResourceInfo * _documentResourceInfo;
+    TSPDocumentResourceManager * _manager;
 }
 
 @property (nonatomic, retain) TSPDocumentResourceInfo *documentResourceInfo;

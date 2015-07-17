@@ -3,11 +3,11 @@
  */
 
 @interface _UIWebFindOnPageHighlightBubbleView : UIView {
-    struct CGImage { } *_highlightedContent;
+    struct CGImage { } * _highlightedContent;
     struct CGPoint { 
         float x; 
         float y; 
-    } _highlightedContentOrigin;
+    }  _highlightedContentOrigin;
 }
 
 - (void)dealloc;

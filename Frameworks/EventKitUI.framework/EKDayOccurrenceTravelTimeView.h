@@ -3,18 +3,18 @@
  */
 
 @interface EKDayOccurrenceTravelTimeView : UIView {
-    <EKDayOccurrenceTravelTimeViewMetricsDelegate> *_delegate;
-    UIColor *_elementColor;
-    float _hairlineYPosition;
-    UIView *_horizontalLineView;
-    UIColor *_lineColor;
-    NSString *_location;
-    int _occurrenceBackgroundStyle;
-    int _routingMode;
-    BOOL _selected;
-    double _travelTime;
-    UIImageView *_travelTimeIcon;
-    UILabel *_travelTimeLabel;
+    <EKDayOccurrenceTravelTimeViewMetricsDelegate> * _delegate;
+    UIColor * _elementColor;
+    float  _hairlineYPosition;
+    UIView * _horizontalLineView;
+    UIColor * _lineColor;
+    NSString * _location;
+    int  _occurrenceBackgroundStyle;
+    int  _routingMode;
+    BOOL  _selected;
+    double  _travelTime;
+    UIImageView * _travelTimeIcon;
+    UILabel * _travelTimeLabel;
 }
 
 @property (nonatomic) <EKDayOccurrenceTravelTimeViewMetricsDelegate> *delegate;

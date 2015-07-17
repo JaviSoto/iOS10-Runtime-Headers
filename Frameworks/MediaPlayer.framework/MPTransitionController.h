@@ -3,18 +3,18 @@
  */
 
 @interface MPTransitionController : NSObject {
-    float _duration;
-    int _fromInterfaceOrientation;
-    MPViewController *_fromViewController;
-    struct __CFDictionary { } *_observers;
-    NSMutableSet *_persistentViewsToFadeIn;
-    NSMutableSet *_persistentViewsToFadeOut;
-    UIView *_rootView;
-    UIViewController *_toContainerViewController;
-    int _toInterfaceOrientation;
-    MPViewController *_toViewController;
-    NSMutableSet *_viewsToFadeIn;
-    NSMutableSet *_viewsToFadeOut;
+    float  _duration;
+    int  _fromInterfaceOrientation;
+    MPViewController * _fromViewController;
+    struct __CFDictionary { } * _observers;
+    NSMutableSet * _persistentViewsToFadeIn;
+    NSMutableSet * _persistentViewsToFadeOut;
+    UIView * _rootView;
+    UIViewController * _toContainerViewController;
+    int  _toInterfaceOrientation;
+    MPViewController * _toViewController;
+    NSMutableSet * _viewsToFadeIn;
+    NSMutableSet * _viewsToFadeOut;
 }
 
 @property (nonatomic) float duration;

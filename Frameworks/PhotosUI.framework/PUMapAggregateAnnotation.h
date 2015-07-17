@@ -6,16 +6,16 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    unsigned int _hash;
-    NSObject *_itemId;
-    NSArray *_mapItems;
+    }  _coordinate;
+    unsigned int  _hash;
+    NSObject * _itemId;
+    NSArray * _mapItems;
     struct { 
         double latitude; 
         double longitude; 
-    } _originalCoordinate;
-    unsigned int _relativeOrder;
-    NSMutableSet *_subAnnotations;
+    }  _originalCoordinate;
+    unsigned int  _relativeOrder;
+    NSMutableSet * _subAnnotations;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;

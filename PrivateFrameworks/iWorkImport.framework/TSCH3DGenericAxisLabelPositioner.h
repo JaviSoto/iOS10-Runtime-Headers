@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DGenericAxisLabelPositioner : NSObject <TSCH3DAxisLabelPositioner> {
-    unsigned int mAlignment;
-    unsigned int mAxis;
-    float mOffset;
+    unsigned int  mAlignment;
+    unsigned int  mAxis;
+    float  mOffset;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -17,7 +17,7 @@
             float g; 
             float t; 
         } ; 
-    } mRange;
+    }  mRange;
 }
 
 + (id)horizontal;

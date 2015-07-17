@@ -3,7 +3,7 @@
  */
 
 @interface GEOTileSetStateFeedbackCollection : PBCodable <NSCopying> {
-    double _durationInOldState;
+    double  _durationInOldState;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int durationInOldState : 1; 
@@ -11,15 +11,15 @@
         unsigned int oldCoverage : 1; 
         unsigned int sessionRelativeTimestamp : 1; 
         unsigned int tileSetStateType : 1; 
-    } _has;
-    double _newCoverage;
-    double _oldCoverage;
+    }  _has;
+    double  _newCoverage;
+    double  _oldCoverage;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionID;
-    double _sessionRelativeTimestamp;
-    int _tileSetStateType;
+    }  _sessionID;
+    double  _sessionRelativeTimestamp;
+    int  _tileSetStateType;
 }
 
 @property (nonatomic) double durationInOldState;

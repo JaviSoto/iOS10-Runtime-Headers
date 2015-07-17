@@ -3,20 +3,20 @@
  */
 
 @interface PUZoomableGridTransition : NSObject <UIViewControllerInteractiveTransitioning> {
-    UICollectionViewTransitionLayout *__transitionLayout;
-    NSIndexPath *_anchorItemIndexPath;
-    UICollectionView *_collectionView;
+    UICollectionViewTransitionLayout * __transitionLayout;
+    NSIndexPath * _anchorItemIndexPath;
+    UICollectionView * _collectionView;
     struct CGSize { 
         float width; 
         float height; 
-    } _currentInteractiveCenterOffset;
-    float _currentInteractiveProgress;
-    BOOL _interactive;
-    unsigned int _originZoomLevel;
-    unsigned int _targetZoomLevel;
-    <UIViewControllerContextTransitioning> *_transitionContext;
-    unsigned int _transitionState;
-    PUMomentsZoomLevelManager *_zoomLevelManager;
+    }  _currentInteractiveCenterOffset;
+    float  _currentInteractiveProgress;
+    BOOL  _interactive;
+    unsigned int  _originZoomLevel;
+    unsigned int  _targetZoomLevel;
+    <UIViewControllerContextTransitioning> * _transitionContext;
+    unsigned int  _transitionState;
+    PUMomentsZoomLevelManager * _zoomLevelManager;
 }
 
 @property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewTransitionLayout *_transitionLayout;

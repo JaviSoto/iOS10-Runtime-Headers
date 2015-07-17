@@ -3,14 +3,14 @@
  */
 
 @interface PTSImagePickerViewController : UITableViewController <PTSImageLoaderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
-    id /* block */ _completion;
-    BOOL _doneLoading;
-    NSMutableArray *_filenames;
-    PTSImageLoader *_imageLoader;
-    NSMutableArray *_images;
-    BOOL _includePhotoLibrary;
-    UIImagePickerController *_photoLibraryPicker;
-    UIPopoverController *_popoverController;
+    id /* block */  _completion;
+    BOOL  _doneLoading;
+    NSMutableArray * _filenames;
+    PTSImageLoader * _imageLoader;
+    NSMutableArray * _images;
+    BOOL  _includePhotoLibrary;
+    UIImagePickerController * _photoLibraryPicker;
+    UIPopoverController * _popoverController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

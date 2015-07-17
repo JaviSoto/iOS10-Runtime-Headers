@@ -3,13 +3,13 @@
  */
 
 @interface TIKeyboardLayoutState : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _canMultitap;
-    BOOL _hasAccentKey;
-    BOOL _hasCandidateKey;
-    NSString *_inputMode;
-    BOOL _interfaceIdiomIsPad;
-    BOOL _isAlphabeticPlane;
-    NSString *_layoutTag;
+    BOOL  _canMultitap;
+    BOOL  _hasAccentKey;
+    BOOL  _hasCandidateKey;
+    NSString * _inputMode;
+    BOOL  _interfaceIdiomIsPad;
+    BOOL  _isAlphabeticPlane;
+    NSString * _layoutTag;
 }
 
 @property (nonatomic) BOOL canMultitap;

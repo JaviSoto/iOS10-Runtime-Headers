@@ -3,12 +3,12 @@
  */
 
 @interface GKPurchasableGameCell : GKBaseGameCell {
-    float _capturedRating;
-    UILabel *_developerLabel;
-    UILabel *_numberRatings;
-    UILabel *_priceLabel;
-    GKRatingView *_ratingStarsView;
-    GKStoreItemInternal *_storeItem;
+    float  _capturedRating;
+    UILabel * _developerLabel;
+    UILabel * _numberRatings;
+    UILabel * _priceLabel;
+    GKRatingView * _ratingStarsView;
+    GKStoreItemInternal * _storeItem;
 }
 
 @property (nonatomic) float capturedRating;

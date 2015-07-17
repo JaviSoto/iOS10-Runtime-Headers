@@ -3,8 +3,8 @@
  */
 
 @interface SUClipCornersImageModifier : SUImageModifier {
-    float _cornerRadius;
-    int _corners;
+    float  _cornerRadius;
+    int  _corners;
 }
 
 @property (nonatomic) float cornerRadius;

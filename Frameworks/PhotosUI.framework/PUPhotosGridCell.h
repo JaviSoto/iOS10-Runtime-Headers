@@ -3,27 +3,27 @@
  */
 
 @interface PUPhotosGridCell : UICollectionViewCell {
-    UIImageView *_cloudIconImageView;
-    BOOL _cloudIconVisible;
-    int _currentImageRequestID;
+    UIImageView * _cloudIconImageView;
+    BOOL  _cloudIconVisible;
+    int  _currentImageRequestID;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _fillerEdgeInsets;
-    UIView *_highlightOverlayView;
-    PUPhotoView *_photoContentView;
-    NSNumber *_progress;
-    PUProgressIndicatorView *_progressIndicatorView;
-    NSArray *_progressIndicatorViewConstraints;
-    UIImageView *_selectionBadgeImageView;
-    BOOL _selectionBadgeVisible;
-    UIView *_selectionOverlayView;
-    PUPhotoView *_temporaryPhotoContentView;
-    UIView *_transitionFillerView;
-    BOOL _transitionFillerViewEnabled;
-    BOOL _transitionIsAppearing;
+    }  _fillerEdgeInsets;
+    UIView * _highlightOverlayView;
+    PUPhotoView * _photoContentView;
+    NSNumber * _progress;
+    PUProgressIndicatorView * _progressIndicatorView;
+    NSArray * _progressIndicatorViewConstraints;
+    UIImageView * _selectionBadgeImageView;
+    BOOL  _selectionBadgeVisible;
+    UIView * _selectionOverlayView;
+    PUPhotoView * _temporaryPhotoContentView;
+    UIView * _transitionFillerView;
+    BOOL  _transitionFillerViewEnabled;
+    BOOL  _transitionIsAppearing;
 }
 
 @property (getter=isCloudIconVisible, nonatomic) BOOL cloudIconVisible;

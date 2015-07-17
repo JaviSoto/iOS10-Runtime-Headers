@@ -3,13 +3,13 @@
  */
 
 @interface NFAWDAPNReceived : NSObject <NFAWDEventProtocol> {
-    AWDNFCTSMAPNReceivedEvent *_metric;
+    AWDNFCTSMAPNReceivedEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCTSMAPNReceivedEvent *metric;
+@property (nonatomic, retain) AWDNFCTSMAPNReceivedEvent *metric;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
@@ -18,6 +18,5 @@
 - (id)init;
 - (id)metric;
 - (void)setMetric:(id)arg1;
-- (void)updateTSMTransactionStateWithUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

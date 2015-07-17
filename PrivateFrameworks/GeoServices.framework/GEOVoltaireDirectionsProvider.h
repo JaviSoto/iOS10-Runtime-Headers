@@ -3,8 +3,8 @@
  */
 
 @interface GEOVoltaireDirectionsProvider : GEODirectionsProvider <PBRequesterDelegate> {
-    BOOL _cancelled;
-    GEORequester *_requester;
+    BOOL  _cancelled;
+    GEORequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;

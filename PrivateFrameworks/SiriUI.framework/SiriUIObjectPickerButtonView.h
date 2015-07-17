@@ -3,10 +3,10 @@
  */
 
 @interface SiriUIObjectPickerButtonView : UIView {
-    SiriUIKeyline *_bottomKeyline;
-    UIButton *_button;
-    BOOL _showsTopKeyline;
-    SiriUIKeyline *_topKeyline;
+    SiriUIKeyline * _bottomKeyline;
+    UIButton * _button;
+    BOOL  _showsTopKeyline;
+    SiriUIKeyline * _topKeyline;
 }
 
 @property (nonatomic, readonly) UIButton *button;

@@ -3,10 +3,10 @@
  */
 
 @interface MusicLibraryPlaylistsViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    NSMutableSet *_additionalQueryFilterPredicates;
-    unsigned int _playlistsConfigurationOptions;
-    NSString *_playlistsFilter;
-    BOOL _playlistsFilterIsCuratorID;
+    NSMutableSet * _additionalQueryFilterPredicates;
+    unsigned int  _playlistsConfigurationOptions;
+    NSString * _playlistsFilter;
+    BOOL  _playlistsFilterIsCuratorID;
 }
 
 @property (nonatomic, readonly, copy) NSSet *additionalQueryFilterPredicates;

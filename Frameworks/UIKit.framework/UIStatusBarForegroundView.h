@@ -3,20 +3,21 @@
  */
 
 @interface UIStatusBarForegroundView : UIView {
-    NSMutableArray *_actionAnimationStack;
-    UIStatusBarForegroundStyleAttributes *_foregroundStyle;
-    int _idiom;
-    int _ignoreDataLevel;
-    BOOL _itemIsEnabled;
-    UIStatusBarLayoutManager *_layoutManagers;
-    int _pendedActions;
-    UIStatusBarComposedData *_pendedData;
-    BOOL _usesVerticalLayout;
+    NSMutableArray * _actionAnimationStack;
+    UIStatusBarForegroundStyleAttributes * _foregroundStyle;
+    int  _idiom;
+    int  _ignoreDataLevel;
+    BOOL  _itemIsEnabled;
+    UIStatusBarLayoutManager * _layoutManagers;
+    int  _pendedActions;
+    UIStatusBarComposedData * _pendedData;
+    BOOL  _usesVerticalLayout;
 }
 
 @property (nonatomic, readonly) UIStatusBarForegroundStyleAttributes *foregroundStyle;
 @property (nonatomic) int idiom;
 
+- (void).cxx_destruct;
 - (void)_cleanUpAfterDataChange;
 - (void)_cleanUpAfterSimpleReflow;
 - (id)_computeVisibleItemsPreservingHistory:(BOOL)arg1;

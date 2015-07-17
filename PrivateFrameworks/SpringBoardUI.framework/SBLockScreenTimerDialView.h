@@ -3,8 +3,8 @@
  */
 
 @interface SBLockScreenTimerDialView : UIView <SBLegibility> {
-    _UILegibilityView *_dialView;
-    float _strength;
+    _UILegibilityView * _dialView;
+    float  _strength;
 }
 
 @property (readonly, copy) NSString *debugDescription;

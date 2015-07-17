@@ -3,8 +3,8 @@
  */
 
 @interface BRCSharedServerZone : BRCServerZone {
-    NSString *_mangledID;
-    NSString *_ownerName;
+    NSString * _mangledID;
+    NSString * _ownerName;
 }
 
 @property (nonatomic, readonly) BRCSharedLocalContainer *container;

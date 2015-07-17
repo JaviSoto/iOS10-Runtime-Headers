@@ -3,17 +3,17 @@
  */
 
 @interface UIPushBehavior : UIDynamicBehavior {
-    BOOL _active;
-    float _angle;
+    BOOL  _active;
+    float  _angle;
     struct CGVector { 
         float dx; 
         float dy; 
-    } _forceVector;
-    int _i;
-    float _magnitude;
-    int _mode;
-    NSMutableDictionary *_targetPoints;
-    double _timeInterval;
+    }  _forceVector;
+    int  _i;
+    float  _magnitude;
+    int  _mode;
+    NSMutableDictionary * _targetPoints;
+    double  _timeInterval;
 }
 
 @property (nonatomic) BOOL active;
@@ -23,14 +23,15 @@
 @property (nonatomic, readonly) int mode;
 @property (nonatomic) struct CGVector { float x1; float x2; } pushDirection;
 
++ (BOOL)_isPrimitiveBehavior;
+
+- (void).cxx_destruct;
 - (void)_associate;
-- (void)_commonInit;
 - (void)_dissociate;
 - (void)_step;
 - (BOOL)active;
 - (void)addItem:(id)arg1;
 - (float)angle;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithItems:(id)arg1;

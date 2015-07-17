@@ -3,14 +3,14 @@
  */
 
 @interface ADPrerollView : UIView <ADPrerollBottomBarDelegate, ADPrerollTopBarDelegate, UIGestureRecognizerDelegate> {
-    double _accumulatedViewingTime;
-    BOOL _barsVisible;
-    ADPrerollBottomBar *_bottomBar;
-    <ADPrerollViewDelegate> *_delegate;
-    NSTimer *_passiveWatchingTimer;
-    BOOL _skipButtonCountingDown;
-    UIImageView *_swooshView;
-    ADPrerollTopBar *_topBar;
+    double  _accumulatedViewingTime;
+    BOOL  _barsVisible;
+    ADPrerollBottomBar * _bottomBar;
+    <ADPrerollViewDelegate> * _delegate;
+    NSTimer * _passiveWatchingTimer;
+    BOOL  _skipButtonCountingDown;
+    UIImageView * _swooshView;
+    ADPrerollTopBar * _topBar;
 }
 
 @property (nonatomic) double accumulatedViewingTime;

@@ -3,25 +3,25 @@
  */
 
 @interface RadioGetTracksRequest : RadioRequest {
-    NSNumber *_accountUniqueIdentifier;
-    NSDictionary *_additionalRequestParameters;
-    unsigned long long _globalVersion;
-    NSData *_heartbeatTokenData;
-    BOOL _includeCleanTracksOnly;
-    unsigned int _numberOfTracks;
-    NSArray *_playActivityFeedEvents;
-    RadioPlayEventCollection *_playEventCollection;
-    RadioPlaybackContext *_playbackContext;
-    SSVPlaybackLease *_playbackLease;
-    int _reasonType;
-    SSURLConnectionRequest *_request;
-    BOOL _shouldIncludeAsset;
-    BOOL _shouldIncludeStationInResponse;
-    BOOL _skipPromptForSeamlessPlayback;
-    NSString *_stationHash;
-    long long _stationID;
-    RadioStationMatchContext *_stationMatchContext;
-    NSString *_stationStringID;
+    NSNumber * _accountUniqueIdentifier;
+    NSDictionary * _additionalRequestParameters;
+    unsigned long long  _globalVersion;
+    NSData * _heartbeatTokenData;
+    BOOL  _includeCleanTracksOnly;
+    unsigned int  _numberOfTracks;
+    NSArray * _playActivityFeedEvents;
+    RadioPlayEventCollection * _playEventCollection;
+    RadioPlaybackContext * _playbackContext;
+    SSVPlaybackLease * _playbackLease;
+    int  _reasonType;
+    SSURLConnectionRequest * _request;
+    BOOL  _shouldIncludeAsset;
+    BOOL  _shouldIncludeStationInResponse;
+    BOOL  _skipPromptForSeamlessPlayback;
+    NSString * _stationHash;
+    long long  _stationID;
+    RadioStationMatchContext * _stationMatchContext;
+    NSString * _stationStringID;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *accountUniqueIdentifier;

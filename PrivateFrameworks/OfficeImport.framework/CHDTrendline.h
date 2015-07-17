@@ -3,17 +3,17 @@
  */
 
 @interface CHDTrendline : NSObject {
-    double mBackward;
-    bool mDisplayEquation;
-    bool mDisplayRSquaredValue;
-    double mForward;
-    OADGraphicProperties *mGraphicProperties;
-    double mInterceptYAxis;
-    CHDTrendlineLabel *mLabel;
-    long mMovingAveragePeriod;
-    EDString *mName;
-    int mPolynomialOrder;
-    int mType;
+    double  mBackward;
+    bool  mDisplayEquation;
+    bool  mDisplayRSquaredValue;
+    double  mForward;
+    OADGraphicProperties * mGraphicProperties;
+    double  mInterceptYAxis;
+    CHDTrendlineLabel * mLabel;
+    long  mMovingAveragePeriod;
+    EDString * mName;
+    int  mPolynomialOrder;
+    int  mType;
 }
 
 + (id)trendline;
@@ -21,6 +21,7 @@
 - (double)backward;
 - (void)dealloc;
 - (id)defaultNameWithSeriesName:(id)arg1;
+- (id)description;
 - (double)forward;
 - (id)graphicProperties;
 - (id)init;

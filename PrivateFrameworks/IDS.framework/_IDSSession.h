@@ -3,22 +3,22 @@
  */
 
 @interface _IDSSession : NSObject <IDSBaseSocketPairConnectionDelegate, IDSDaemonListenerProtocol> {
-    NSString *_accountID;
-    id _boostContext;
-    CUTWeakReference *_delegate;
-    id _delegateContext;
-    NSSet *_destinations;
-    int _inviteTimeout;
-    BOOL _isAudioEnabled;
-    BOOL _isLegacy;
-    BOOL _isMuted;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _sessionEndedReason;
-    int _socket;
-    unsigned int _state;
-    int _transportType;
-    NSString *_uniqueID;
-    IDSBaseSocketPairConnection *_unreliableSocketPairConnection;
+    NSString * _accountID;
+    id  _boostContext;
+    CUTWeakReference * _delegate;
+    id  _delegateContext;
+    NSSet * _destinations;
+    int  _inviteTimeout;
+    BOOL  _isAudioEnabled;
+    BOOL  _isLegacy;
+    BOOL  _isMuted;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _sessionEndedReason;
+    int  _socket;
+    unsigned int  _state;
+    int  _transportType;
+    NSString * _uniqueID;
+    IDSBaseSocketPairConnection * _unreliableSocketPairConnection;
 }
 
 @property (nonatomic, retain) id boostContext;

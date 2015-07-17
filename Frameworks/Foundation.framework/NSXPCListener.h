@@ -3,14 +3,14 @@
  */
 
 @interface NSXPCListener : NSObject {
-    <NSXPCListenerDelegate> *_delegate;
-    id _reserved1;
-    id _reserved2;
-    NSString *_serviceName;
-    unsigned long long _state;
-    NSObject<OS_dispatch_queue> *_userQueue;
-    void *_xconnection;
-    void *reserved0;
+    <NSXPCListenerDelegate> * _delegate;
+    id  _reserved1;
+    id  _reserved2;
+    NSString * _serviceName;
+    unsigned long long  _state;
+    NSObject<OS_dispatch_queue> * _userQueue;
+    void * _xconnection;
+    void * reserved0;
 }
 
 @property <NSXPCListenerDelegate> *delegate;

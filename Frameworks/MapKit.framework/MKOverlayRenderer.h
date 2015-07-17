@@ -3,7 +3,7 @@
  */
 
 @interface MKOverlayRenderer : NSObject {
-    float _alpha;
+    float  _alpha;
     struct { 
         struct { 
             double x; 
@@ -13,10 +13,10 @@
             double width; 
             double height; 
         } size; 
-    } _boundingMapRect;
-    float _contentScaleFactor;
-    <MKOverlay> *_overlay;
-    id _renderer;
+    }  _boundingMapRect;
+    float  _contentScaleFactor;
+    <MKOverlay> * _overlay;
+    id  _renderer;
 }
 
 @property float alpha;

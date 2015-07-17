@@ -3,12 +3,12 @@
  */
 
 @interface HSMediaLibraryImportObserver : NSObject {
-    unsigned int _consecutiveUpdateFailures;
-    <HSMediaLibraryImportObserverDelegate> *_delegate;
-    BOOL _stopped;
-    double _updateInterval;
-    NSTimer *_updateTimer;
-    BOOL _updating;
+    unsigned int  _consecutiveUpdateFailures;
+    <HSMediaLibraryImportObserverDelegate> * _delegate;
+    BOOL  _stopped;
+    double  _updateInterval;
+    NSTimer * _updateTimer;
+    BOOL  _updating;
 }
 
 @property (nonatomic) <HSMediaLibraryImportObserverDelegate> *delegate;

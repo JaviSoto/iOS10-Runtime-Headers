@@ -3,9 +3,9 @@
  */
 
 @interface UIKit_PKSubsystem : NSObject <PKModularService> {
-    NSDictionary *_infoDictionary;
-    BOOL _initialized;
-    BOOL _plugInKitProcess;
+    NSDictionary * _infoDictionary;
+    BOOL  _initialized;
+    BOOL  _plugInKitProcess;
 }
 
 @property (readonly, copy) NSString *debugDescription;

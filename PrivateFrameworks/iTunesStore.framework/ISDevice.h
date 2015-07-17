@@ -3,10 +3,10 @@
  */
 
 @interface ISDevice : NSObject <ISSingleton> {
-    unsigned int _daemonLaunchCount;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_guid;
-    double _lastFreeSpaceRequest;
+    unsigned int  _daemonLaunchCount;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _guid;
+    double  _lastFreeSpaceRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;

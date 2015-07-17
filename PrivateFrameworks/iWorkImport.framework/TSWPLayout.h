@@ -3,10 +3,10 @@
  */
 
 @interface TSWPLayout : TSDLayout <TSWPLayoutOwner, TSWPLayoutTarget> {
-    NSMutableArray *_columns;
-    TSWPLayoutManager *_layoutManager;
-    TSWPStorage *_storage;
-    BOOL _textLayoutValid;
+    NSMutableArray * _columns;
+    TSWPLayoutManager * _layoutManager;
+    TSWPStorage * _storage;
+    BOOL  _textLayoutValid;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } anchorPoint;
@@ -73,6 +73,7 @@
 - (id)interiorClippingPath;
 - (void)invalidateForFootnoteNumberingChange;
 - (BOOL)invalidateForPageCountChange;
+- (void)invalidateForcingFullReLayOut;
 - (void)invalidateParentForAutosizing;
 - (void)invalidateSize;
 - (void)invalidateTextLayout;
@@ -126,6 +127,7 @@
 - (BOOL)textLayoutValid;
 - (id)textWrapper;
 - (void)validate;
+- (void)validateTextLayoutForcibly;
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
 - (id)validatedLayoutForInlineDrawable:(id)arg1;
 - (int)verticalAlignment;

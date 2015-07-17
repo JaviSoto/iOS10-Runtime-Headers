@@ -3,29 +3,29 @@
  */
 
 @interface SKUIItemListTableViewController : UITableViewController <SKUIItemCollectionDelegate> {
-    SKUIItemArtworkContext *_artworkContext;
-    SKUIClientContext *_clientContext;
-    <SKUIItemListTableDelegate> *_delegate;
-    BOOL _delegateWantsCanRemove;
-    BOOL _delegateWantsDidRemove;
-    BOOL _delegateWantsWillDisplay;
-    BOOL _didLoadMore;
-    NSMutableIndexSet *_hiddenIconIndexSet;
+    SKUIItemArtworkContext * _artworkContext;
+    SKUIClientContext * _clientContext;
+    <SKUIItemListTableDelegate> * _delegate;
+    BOOL  _delegateWantsCanRemove;
+    BOOL  _delegateWantsDidRemove;
+    BOOL  _delegateWantsWillDisplay;
+    BOOL  _didLoadMore;
+    NSMutableIndexSet * _hiddenIconIndexSet;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageBoundingSize;
-    SKUIItemCollectionController *_itemCollectionController;
-    SKUIItemList *_itemList;
-    SSVLoadURLOperation *_loadMoreOperation;
-    BOOL _loadsMoreItems;
-    NSOperationQueue *_operationQueue;
-    BOOL _requestedLoadMore;
-    float _rowHeight;
-    int _selectionStyle;
-    int _separatorStyle;
-    BOOL _suspended;
-    SKUIUber *_uber;
+    }  _imageBoundingSize;
+    SKUIItemCollectionController * _itemCollectionController;
+    SKUIItemList * _itemList;
+    SSVLoadURLOperation * _loadMoreOperation;
+    BOOL  _loadsMoreItems;
+    NSOperationQueue * _operationQueue;
+    BOOL  _requestedLoadMore;
+    float  _rowHeight;
+    int  _selectionStyle;
+    int  _separatorStyle;
+    BOOL  _suspended;
+    SKUIUber * _uber;
 }
 
 @property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;

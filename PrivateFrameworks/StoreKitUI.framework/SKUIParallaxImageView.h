@@ -8,12 +8,12 @@
         float left; 
         float bottom; 
         float right; 
-    } _imagePadding;
+    }  _imagePadding;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    SKUIImageView *_innerImageView;
+    }  _imageSize;
+    SKUIImageView * _innerImageView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,11 +3,11 @@
  */
 
 @interface PBBridgeIDSServiceDelegate : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_inflightMessages;
-    NSMutableDictionary *_pendingMessages;
-    IDSService *_service;
-    BOOL _shouldSuppressTransportReachabilityTimeout;
-    NSTimer *_transportReachabilityTimer;
+    NSMutableDictionary * _inflightMessages;
+    NSMutableDictionary * _pendingMessages;
+    IDSService * _service;
+    BOOL  _shouldSuppressTransportReachabilityTimeout;
+    NSTimer * _transportReachabilityTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

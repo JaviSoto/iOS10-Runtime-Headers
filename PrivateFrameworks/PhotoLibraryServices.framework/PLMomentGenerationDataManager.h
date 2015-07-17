@@ -3,16 +3,16 @@
  */
 
 @interface PLMomentGenerationDataManager : NSObject <PLMomentGenerationDataManagement_Private> {
-    void *_addressBook;
-    PLMomentAnalyzer *_analyzer;
-    NSDictionary *_generationOptions;
-    PLMomentGeneration *_generator;
-    BOOL _isLightweightMigrationManager;
-    PLXPCTransaction *_keepAliveTransaction;
-    NSManagedObjectContext *_managedObjectContext;
-    PLPhotoLibrary *_momentGenerationLibrary;
-    BOOL _observingReachability;
-    id /* block */ _reachabilityBlock;
+    void * _addressBook;
+    PLMomentAnalyzer * _analyzer;
+    NSDictionary * _generationOptions;
+    PLMomentGeneration * _generator;
+    BOOL  _isLightweightMigrationManager;
+    PLXPCTransaction * _keepAliveTransaction;
+    NSManagedObjectContext * _managedObjectContext;
+    PLPhotoLibrary * _momentGenerationLibrary;
+    BOOL  _observingReachability;
+    id /* block */  _reachabilityBlock;
 }
 
 @property (nonatomic, readonly) void*_addressBook;
@@ -68,6 +68,7 @@
 - (BOOL)isMomentsSupportedOnPlatform;
 - (BOOL)isNetworkReachable;
 - (id)managedObjectContext;
+- (id)momentAnalysisTransactionWithName:(const char *)arg1;
 - (Class)momentAssetDataClass;
 - (Class)momentDataClass;
 - (id)momentGenerationLibrary;

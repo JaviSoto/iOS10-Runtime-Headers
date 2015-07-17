@@ -3,10 +3,10 @@
  */
 
 @interface MSCLSettingsTextFieldTableViewCell : UITableViewCell {
-    <UITextFieldDelegate> *_delegate;
-    BOOL _enabled;
-    int _layoutStyle;
-    UITextField *_textField;
+    <UITextFieldDelegate> * _delegate;
+    BOOL  _enabled;
+    int  _layoutStyle;
+    UITextField * _textField;
 }
 
 @property (nonatomic) <UITextFieldDelegate> *delegate;

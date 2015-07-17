@@ -3,7 +3,7 @@
  */
 
 @interface SUItemCellContext : SUArtworkCellContext {
-    struct __CFDictionary { } *_cachedRatingImages;
+    struct __CFDictionary { } * _cachedRatingImages;
     struct { 
         int version; 
         int (*retain)(); 
@@ -11,8 +11,8 @@
         int (*copyDescription)(); 
         int (*equal)(); 
         int (*hash)(); 
-    } _stringSizeCacheKeyCallBacks;
-    struct __CFDictionary { } *_stringSizes;
+    }  _stringSizeCacheKeyCallBacks;
+    struct __CFDictionary { } * _stringSizes;
 }
 
 @property (nonatomic) struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); } stringSizeCacheKeyCallBacks;

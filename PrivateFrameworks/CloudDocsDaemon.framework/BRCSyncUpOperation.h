@@ -3,17 +3,17 @@
  */
 
 @interface BRCSyncUpOperation : _BRCOperation <BRCOperationSubclass> {
-    NSMutableDictionary *_conflictLosersToResolveByRecordID;
-    float _cost;
-    NSMutableArray *_deletedRecordIDs;
-    NSMutableArray *_deletedShareIDs;
-    NSMutableDictionary *_recordIDsToDeleteToEtags;
-    NSMutableArray *_recordsNeedingSharingInfo;
-    NSMutableArray *_recordsToSave;
-    unsigned long long _requestID;
-    BRCServerZone *_serverZone;
-    NSString *_stageID;
-    id /* block */ _syncUpCompletionBlock;
+    NSMutableDictionary * _conflictLosersToResolveByRecordID;
+    float  _cost;
+    NSMutableArray * _deletedRecordIDs;
+    NSMutableArray * _deletedShareIDs;
+    NSMutableDictionary * _recordIDsToDeleteToEtags;
+    NSMutableArray * _recordsNeedingSharingInfo;
+    NSMutableArray * _recordsToSave;
+    unsigned long long  _requestID;
+    BRCServerZone * _serverZone;
+    NSString * _stageID;
+    id /* block */  _syncUpCompletionBlock;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *conflictLosersToResolveByRecordID;
@@ -58,6 +58,7 @@
 - (void)setSyncUpCompletionBlock:(id /* block */)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)stageID;
+- (unsigned long long)startActivity;
 - (id /* block */)syncUpCompletionBlock;
 
 @end

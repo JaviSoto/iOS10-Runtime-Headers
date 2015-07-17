@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKActivityTableCell : UITableViewCell {
-    UIActivityIndicatorView *_activityIndicator;
+@interface PKActivityTableCell : PKTableViewCell {
+    UIActivityIndicatorView * _activityIndicator;
 }
 
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;

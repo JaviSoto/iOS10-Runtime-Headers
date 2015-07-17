@@ -3,8 +3,8 @@
  */
 
 @interface CISharpenLuminance : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputSharpness;
+    CIImage * inputImage;
+    NSNumber * inputSharpness;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -17,7 +17,6 @@
 - (id)inputImage;
 - (id)inputSharpness;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputSharpness:(id)arg1;
 

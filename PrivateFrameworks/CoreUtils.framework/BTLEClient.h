@@ -3,15 +3,15 @@
  */
 
 @interface BTLEClient : NSObject <CBCentralManagerDelegate> {
-    NSDictionary *_accessoryInfo;
-    CBCentralManager *_centralManager;
-    id /* block */ _connectHandler;
-    BOOL _connectPending;
-    id /* block */ _disconnectHandler;
-    CBPeripheral *_peripheral;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_transactionQueue;
-    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } *_ucat;
+    NSDictionary * _accessoryInfo;
+    CBCentralManager * _centralManager;
+    id /* block */  _connectHandler;
+    BOOL  _connectPending;
+    id /* block */  _disconnectHandler;
+    CBPeripheral * _peripheral;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _transactionQueue;
+    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } * _ucat;
 }
 
 @property (nonatomic, copy) NSDictionary *accessoryInfo;

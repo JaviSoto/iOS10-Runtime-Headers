@@ -3,15 +3,15 @@
  */
 
 @interface RadioStationTreeNode : NSObject <NSCopying, NSMutableCopying> {
-    RadioArtworkCollection *_artworkCollection;
-    int _childNodeLoadingStyle;
-    NSArray *_childNodes;
-    int _displayStyle;
-    BOOL _hasAdditionalChildNodes;
-    NSString *_name;
-    long long _nodeID;
-    NSDictionary *_stationDictionary;
-    NSDictionary *_stationTreeNodeDictionary;
+    RadioArtworkCollection * _artworkCollection;
+    int  _childNodeLoadingStyle;
+    NSArray * _childNodes;
+    int  _displayStyle;
+    BOOL  _hasAdditionalChildNodes;
+    NSString * _name;
+    long long  _nodeID;
+    NSDictionary * _stationDictionary;
+    NSDictionary * _stationTreeNodeDictionary;
 }
 
 @property (nonatomic, readonly, copy) RadioArtworkCollection *artworkCollection;

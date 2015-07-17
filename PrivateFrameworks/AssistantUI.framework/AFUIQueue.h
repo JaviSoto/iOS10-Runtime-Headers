@@ -3,8 +3,8 @@
  */
 
 @interface AFUIQueue : NSObject <NSFastEnumeration> {
-    <AFUIQueueDelegate> *_delegate;
-    NSMutableArray *_objects;
+    <AFUIQueueDelegate> * _delegate;
+    NSMutableArray * _objects;
 }
 
 @property (nonatomic, readonly) int count;

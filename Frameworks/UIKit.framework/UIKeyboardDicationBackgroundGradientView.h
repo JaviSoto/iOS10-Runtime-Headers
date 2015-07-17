@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardDicationBackgroundGradientView : UIView <_UIBasicAnimationFactory> {
-    UIDictationView *_dictationView;
-    UIKBRenderConfig *_renderConfig;
+    UIDictationView * _dictationView;
+    UIKBRenderConfig * _renderConfig;
 }
 
 @property (readonly, copy) NSString *debugDescription;

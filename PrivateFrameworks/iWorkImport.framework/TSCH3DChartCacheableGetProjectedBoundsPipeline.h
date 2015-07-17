@@ -38,7 +38,7 @@
                 float p; 
             } ; 
         } mMax; 
-    } mBodyLayout3DBounds;
+    }  mBodyLayout3DBounds;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
@@ -74,7 +74,7 @@
                 float p; 
             } ; 
         } mMax; 
-    } mConstantDepthBodyLayout3DBounds;
+    }  mConstantDepthBodyLayout3DBounds;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
@@ -110,9 +110,9 @@
                 float p; 
             } ; 
         } mMax; 
-    } mLayout3DBounds;
-    BOOL mLayoutBoundsValid;
-    TSCH3DGetBoundsProjector *mProjector;
+    }  mLayout3DBounds;
+    BOOL  mLayoutBoundsValid;
+    TSCH3DGetBoundsProjector * mProjector;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
@@ -148,8 +148,8 @@
                 float p; 
             } ; 
         } mMax; 
-    } mShadowsLayout3DBounds;
-    BOOL mUseIndividualBounds;
+    }  mShadowsLayout3DBounds;
+    BOOL  mUseIndividualBounds;
 }
 
 @property (nonatomic) BOOL useIndividualBounds;

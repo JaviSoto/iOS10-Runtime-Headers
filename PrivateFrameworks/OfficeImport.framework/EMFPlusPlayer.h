@@ -3,13 +3,13 @@
  */
 
 @interface EMFPlusPlayer : NSObject {
-    MFPEffect *mEffect;
-    MFPGraphics *mGraphics;
-    NSMutableData *mLargeData;
-    unsigned short mLargeFlags;
-    unsigned int mLargeSize;
-    int mLargeType;
-    EMFPlayer *mOwner;
+    MFPEffect * mEffect;
+    MFPGraphics * mGraphics;
+    NSMutableData * mLargeData;
+    unsigned short  mLargeFlags;
+    unsigned int  mLargeSize;
+    int  mLargeType;
+    EMFPlayer * mOwner;
 }
 
 + (float)firstTabPosPastPos:(float)arg1 stringFormat:(id)arg2 isExplicit:(BOOL*)arg3;

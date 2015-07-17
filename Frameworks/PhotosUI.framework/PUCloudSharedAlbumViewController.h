@@ -3,19 +3,19 @@
  */
 
 @interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    BOOL __canContributeToCloudSharedAlbum;
-    UIBarButtonItem *__optionsBarButtonItem;
-    UIBarButtonItem *__optionsBarButtonSpacerItem;
-    UIViewController *__optionsPopoverRootViewController;
-    UIViewController *__optionsViewController;
-    int __selectedItemIndex;
-    UIBarButtonItem *__switcherBarButtonItem;
-    UISegmentedControl *__switcherSegmentedControl;
-    NSArray *__transitioningOptionsViewControllers;
-    PUPhotosPickerViewController *_activePhotosPickerViewController;
-    PUPhotoStreamComposeServiceViewController *_composeServiceController;
-    BOOL _displayingOptions;
-    PUVideoTrimQueueController *_trimController;
+    BOOL  __canContributeToCloudSharedAlbum;
+    UIBarButtonItem * __optionsBarButtonItem;
+    UIBarButtonItem * __optionsBarButtonSpacerItem;
+    UIViewController * __optionsPopoverRootViewController;
+    UIViewController * __optionsViewController;
+    int  __selectedItemIndex;
+    UIBarButtonItem * __switcherBarButtonItem;
+    UISegmentedControl * __switcherSegmentedControl;
+    NSArray * __transitioningOptionsViewControllers;
+    PUPhotosPickerViewController * _activePhotosPickerViewController;
+    PUPhotoStreamComposeServiceViewController * _composeServiceController;
+    BOOL  _displayingOptions;
+    PUVideoTrimQueueController * _trimController;
 }
 
 @property (setter=_setCanContributeToCloudSharedAlbum:, nonatomic) BOOL _canContributeToCloudSharedAlbum;

@@ -3,11 +3,11 @@
  */
 
 @interface PHAssetEmbeddedThumbnailProperties : NSObject {
-    PHAsset *_asset;
-    short _embeddedThumbnailHeight;
-    int _embeddedThumbnailLength;
-    int _embeddedThumbnailOffset;
-    short _embeddedThumbnailWidth;
+    PHAsset * _asset;
+    short  _embeddedThumbnailHeight;
+    int  _embeddedThumbnailLength;
+    int  _embeddedThumbnailOffset;
+    short  _embeddedThumbnailWidth;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

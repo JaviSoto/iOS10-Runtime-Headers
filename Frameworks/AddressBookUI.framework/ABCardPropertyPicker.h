@@ -3,10 +3,10 @@
  */
 
 @interface ABCardPropertyPicker : UIView <ABStyleProviding, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_allProperties;
-    id _delegate;
-    NSArray *_policies;
-    UITableView *_tableView;
+    NSArray * _allProperties;
+    id  _delegate;
+    NSArray * _policies;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

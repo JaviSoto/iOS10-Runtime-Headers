@@ -3,13 +3,13 @@
  */
 
 @interface _MPRadioStreamMetadata : NSObject {
-    NSString *_album;
-    NSString *_albumBuyButtonText;
-    int _albumBuyButtonType;
-    NSString *_artist;
-    RadioArtworkCollection *_artworkCollection;
-    NSNumber *_explicit;
-    NSString *_title;
+    NSString * _album;
+    NSString * _albumBuyButtonText;
+    int  _albumBuyButtonType;
+    NSString * _artist;
+    RadioArtworkCollection * _artworkCollection;
+    NSNumber * _explicit;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *album;

@@ -3,17 +3,17 @@
  */
 
 @interface RMSDAAPTouchRemoteManager : NSObject <RMSTouchRemoteSocketDelegate> {
-    int _controlPromptRevision;
-    <RMSDAAPTouchRemoteManagerDelegate> *_delegate;
-    int _encryptionKey;
-    int _port;
-    int _portSecret;
-    RMSDAAPRequestManager *_requestManager;
-    RMSTouchRemoteSocket *_socket;
-    float _touchDistanceMax;
-    float _touchDistanceMin;
-    unsigned long _touchTimeMax;
-    unsigned long _touchTimeMin;
+    int  _controlPromptRevision;
+    <RMSDAAPTouchRemoteManagerDelegate> * _delegate;
+    int  _encryptionKey;
+    int  _port;
+    int  _portSecret;
+    RMSDAAPRequestManager * _requestManager;
+    RMSTouchRemoteSocket * _socket;
+    float  _touchDistanceMax;
+    float  _touchDistanceMin;
+    unsigned long  _touchTimeMax;
+    unsigned long  _touchTimeMin;
 }
 
 @property (readonly, copy) NSString *debugDescription;

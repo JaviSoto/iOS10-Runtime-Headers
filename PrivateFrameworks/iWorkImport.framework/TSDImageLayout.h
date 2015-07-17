@@ -3,14 +3,14 @@
  */
 
 @interface TSDImageLayout : TSDMediaLayout <TSDShapeControlLayout> {
-    TSDLayoutGeometry *mBaseImageLayoutGeometry;
-    TSDInfoGeometry *mBaseInfoGeometry;
-    TSDImageAdjustments *mDynamicImageAdjustments;
-    TSDInfoGeometry *mDynamicInfoGeometry;
-    int mHasAlpha;
-    TSDLayoutGeometry *mImageGeometry;
-    BOOL mInInstantAlphaMode;
-    BOOL mIsUpdatingImageAdjustments;
+    TSDLayoutGeometry * mBaseImageLayoutGeometry;
+    TSDInfoGeometry * mBaseInfoGeometry;
+    TSDImageAdjustments * mDynamicImageAdjustments;
+    TSDInfoGeometry * mDynamicInfoGeometry;
+    int  mHasAlpha;
+    TSDLayoutGeometry * mImageGeometry;
+    BOOL  mInInstantAlphaMode;
+    BOOL  mIsUpdatingImageAdjustments;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -18,7 +18,7 @@
         float d; 
         float tx; 
         float ty; 
-    } mLayoutToImageTransform;
+    }  mLayoutToImageTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -26,13 +26,13 @@
         float d; 
         float tx; 
         float ty; 
-    } mLayoutToMaskTransform;
-    int mMaskEditMode;
-    BOOL mMaskIntersectsImage;
-    TSDMaskLayout *mMaskLayout;
-    struct CGPath { } *mPathToStroke;
-    BOOL mScalingInMaskMode;
-    TSUBezierPath *mTracedPath;
+    }  mLayoutToMaskTransform;
+    int  mMaskEditMode;
+    BOOL  mMaskIntersectsImage;
+    TSDMaskLayout * mMaskLayout;
+    struct CGPath { } * mPathToStroke;
+    BOOL  mScalingInMaskMode;
+    TSUBezierPath * mTracedPath;
 }
 
 @property (nonatomic, readonly) TSDPathSource<TSDSmartPathSource> *smartPathSource;

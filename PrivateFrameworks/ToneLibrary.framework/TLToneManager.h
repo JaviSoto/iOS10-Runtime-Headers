@@ -3,16 +3,16 @@
  */
 
 @interface TLToneManager : NSObject {
-    TLAccessQueue *_accessQueue;
-    NSMutableDictionary *_alertTonesByIdentifier;
-    NSDictionary *_cachedTonePreferences;
-    NSMutableDictionary *_iTunesToneIdentifiersByPID;
-    NSMutableDictionary *_iTunesTonesByIdentifier;
-    NSDictionary *_previewBehaviorsByDefaultIdentifier;
-    BOOL _shouldIgnoreNextToneDidChangeNotification;
-    BOOL _shouldUseServiceToAccessTonePreferences;
-    NSDictionary *_toneIdentifierAliasMap;
-    NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
+    TLAccessQueue * _accessQueue;
+    NSMutableDictionary * _alertTonesByIdentifier;
+    NSDictionary * _cachedTonePreferences;
+    NSMutableDictionary * _iTunesToneIdentifiersByPID;
+    NSMutableDictionary * _iTunesTonesByIdentifier;
+    NSDictionary * _previewBehaviorsByDefaultIdentifier;
+    BOOL  _shouldIgnoreNextToneDidChangeNotification;
+    BOOL  _shouldUseServiceToAccessTonePreferences;
+    NSDictionary * _toneIdentifierAliasMap;
+    NPSDomainAccessor * _transientNanoPreferencesDomainAccessor;
 }
 
 @property (setter=_setAccessQueue:, retain) TLAccessQueue *_accessQueue;

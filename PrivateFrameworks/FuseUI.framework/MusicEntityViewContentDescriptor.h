@@ -3,32 +3,32 @@
  */
 
 @interface MusicEntityViewContentDescriptor : NSObject <NSCopying> {
-    NSSet *_allPropertiesToPrefetch;
-    BOOL _allowsDeletionWithoutEditingMode;
-    MusicEntityViewContentArtworkDescriptor *_artworkDescriptor;
-    UIColor *_backgroundColor;
-    UIColor *_customSelectionTintColor;
-    UIColor *_customSeparatorColor;
-    NSString *_explicitBadgeProperty;
-    UIColor *_keepLocalDeviceColor;
-    NSString *_keepLocalPreferenceProperty;
-    UIColor *_keepLocalSashColor;
-    BOOL _leftSeparatorInsetFollowsText;
-    Class _lockupViewClass;
-    float _minimumHeight;
-    int _selectionStyle;
-    BOOL _shouldDisableWhenUnplayable;
-    BOOL _shouldForceBottomSeparatorVisible;
-    NSString *_storeDownloadIDProperty;
-    NSString *_storeOffersProperty;
-    int _textDescriptorVerticalAlignment;
-    NSArray *_textDescriptors;
-    NSCountedSet *_textDescriptorsBeingObserved;
-    NSString *_wantsAddButtonProperty;
-    NSString *_wantsBuyButtonProperty;
-    NSString *_wantsContextualActionsButtonProperty;
-    NSString *_wantsDisclosureIndicatorProperty;
-    NSString *_wantsPlayButtonProperty;
+    NSSet * _allPropertiesToPrefetch;
+    BOOL  _allowsDeletionWithoutEditingMode;
+    MusicEntityViewContentArtworkDescriptor * _artworkDescriptor;
+    UIColor * _backgroundColor;
+    UIColor * _customSelectionTintColor;
+    UIColor * _customSeparatorColor;
+    NSString * _explicitBadgeProperty;
+    UIColor * _keepLocalDeviceColor;
+    NSString * _keepLocalPreferenceProperty;
+    UIColor * _keepLocalSashColor;
+    BOOL  _leftSeparatorInsetFollowsText;
+    Class  _lockupViewClass;
+    float  _minimumHeight;
+    int  _selectionStyle;
+    BOOL  _shouldDisableWhenUnplayable;
+    BOOL  _shouldForceBottomSeparatorVisible;
+    NSString * _storeDownloadIDProperty;
+    NSString * _storeOffersProperty;
+    int  _textDescriptorVerticalAlignment;
+    NSArray * _textDescriptors;
+    NSCountedSet * _textDescriptorsBeingObserved;
+    NSString * _wantsAddButtonProperty;
+    NSString * _wantsBuyButtonProperty;
+    NSString * _wantsContextualActionsButtonProperty;
+    NSString * _wantsDisclosureIndicatorProperty;
+    NSString * _wantsPlayButtonProperty;
 }
 
 @property (nonatomic, readonly) NSSet *allPropertiesToPrefetch;

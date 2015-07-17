@@ -3,24 +3,24 @@
  */
 
 @interface UIKBShadowEffect : NSObject <UIKBRenderEffect> {
-    NSString *_colorName;
+    NSString * _colorName;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _concaveInsets;
+    }  _concaveInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _insets;
+    }  _insets;
     struct CGSize { 
         float width; 
         float height; 
-    } _offset;
-    float _weight;
+    }  _offset;
+    float  _weight;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } concaveInsets;

@@ -3,12 +3,12 @@
  */
 
 @interface TSDExteriorTextWrap : NSObject <NSCopying, NSMutableCopying> {
-    float _alphaThreshold;
-    int _direction;
-    int _fitType;
-    BOOL _isHTMLWrap;
-    float _margin;
-    int _type;
+    float  _alphaThreshold;
+    int  _direction;
+    int  _fitType;
+    BOOL  _isHTMLWrap;
+    float  _margin;
+    int  _type;
 }
 
 @property (nonatomic, readonly) float alphaThreshold;

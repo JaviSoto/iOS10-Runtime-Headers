@@ -3,8 +3,8 @@
  */
 
 @interface FCRFace : NSObject {
-    NSDictionary *additionalInfo;
-    NSDictionary *expressionFeatures;
+    NSDictionary * additionalInfo;
+    NSDictionary * expressionFeatures;
     struct { 
         struct CGPoint { 
             float x; 
@@ -20,12 +20,12 @@
                 float height; 
             } size; 
         } bounds; 
-    } face;
-    float faceAngle;
-    NSDictionary *faceLandmarkPoints;
-    float faceSize;
-    int faceType;
-    NSData *faceprint;
+    }  face;
+    float  faceAngle;
+    NSDictionary * faceLandmarkPoints;
+    float  faceSize;
+    int  faceType;
+    NSData * faceprint;
     struct { 
         struct CGPoint { 
             float x; 
@@ -41,7 +41,7 @@
                 float height; 
             } size; 
         } bounds; 
-    } leftEye;
+    }  leftEye;
     struct { 
         struct CGPoint { 
             float x; 
@@ -57,7 +57,7 @@
                 float height; 
             } size; 
         } bounds; 
-    } mouth;
+    }  mouth;
     struct { 
         struct CGPoint { 
             float x; 
@@ -73,9 +73,9 @@
                 float height; 
             } size; 
         } bounds; 
-    } rightEye;
-    unsigned int trackDuration;
-    int trackID;
+    }  rightEye;
+    unsigned int  trackDuration;
+    int  trackID;
 }
 
 @property (retain) NSDictionary *additionalInfo;
@@ -94,6 +94,8 @@
 @property struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } rightEye;
 @property unsigned int trackDuration;
 @property int trackID;
+
+// Image: /System/Library/PrivateFrameworks/FaceCore.framework/FaceCore
 
 - (id)additionalInfo;
 - (void)dealloc;
@@ -125,5 +127,11 @@
 - (void)setTrackID:(int)arg1;
 - (unsigned int)trackDuration;
 - (int)trackID;
+
+// Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceBounds:(unsigned long)arg1 height:(unsigned long)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceBoundsWithTransform:(unsigned long)arg1 height:(unsigned long)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
+- (unsigned int)flagsForOrientation:(BOOL)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3;
 
 @end

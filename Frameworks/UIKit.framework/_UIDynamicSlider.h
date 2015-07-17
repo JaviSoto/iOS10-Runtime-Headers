@@ -3,17 +3,17 @@
  */
 
 @interface _UIDynamicSlider : UISlider <UICollisionBehaviorDelegate, UIDynamicAnimatorDelegate> {
-    _UIDynamicSliderAnimator *_animator;
-    UIGravityBehavior *_gravityBehavior;
-    UIDynamicItemBehavior *_itemBehavior;
-    UIPushBehavior *_pushBehavior;
-    UIView *_thumbDynamicsView;
+    _UIDynamicSliderAnimator * _animator;
+    UIGravityBehavior * _gravityBehavior;
+    UIDynamicItemBehavior * _itemBehavior;
+    UIPushBehavior * _pushBehavior;
+    UIView * _thumbDynamicsView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _thumbPreviousPoint;
-    double _thumbPreviousTime;
-    float _thumbVelocity;
+    }  _thumbPreviousPoint;
+    double  _thumbPreviousTime;
+    float  _thumbVelocity;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +21,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_clearDynamics;
 - (void)_handleConversionToDynamicsTracking;
 - (void)_handleDynamicsStep;

@@ -3,14 +3,14 @@
  */
 
 @interface MusicLibrarySearchResultsViewController : MusicLibraryBrowseHeterogenousCollectionViewController {
-    MusicEntityCollectionViewDescriptor *_collectionViewDescriptor;
-    MusicEntityValueContext *_itemEntityValueContext;
-    NSMutableDictionary *_layoutMetricsForSection;
-    unsigned int _maximumNumberOfSectionResults;
-    <MusicLibrarySearchResultsViewControllerDelegate> *_searchResultsDelegate;
-    MusicLibrarySearchResultsEntityProviderConfiguration *_searchResultsEntityProviderConfiguration;
-    NSString *_searchTerm;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
+    MusicEntityCollectionViewDescriptor * _collectionViewDescriptor;
+    MusicEntityValueContext * _itemEntityValueContext;
+    NSMutableDictionary * _layoutMetricsForSection;
+    unsigned int  _maximumNumberOfSectionResults;
+    <MusicLibrarySearchResultsViewControllerDelegate> * _searchResultsDelegate;
+    MusicLibrarySearchResultsEntityProviderConfiguration * _searchResultsEntityProviderConfiguration;
+    NSString * _searchTerm;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
 }
 
 @property (nonatomic, readonly) BOOL hasResults;

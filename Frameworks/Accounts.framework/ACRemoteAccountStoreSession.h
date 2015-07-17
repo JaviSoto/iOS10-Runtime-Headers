@@ -3,10 +3,10 @@
  */
 
 @interface ACRemoteAccountStoreSession : NSObject <NSXPCProxyCreating> {
-    NSXPCConnection *_connection;
-    BOOL _hasConfiguredRemoteAccountStore;
-    BOOL _notificationsEnabled;
-    NSString *_spoofedBundleID;
+    NSXPCConnection * _connection;
+    BOOL  _hasConfiguredRemoteAccountStore;
+    BOOL  _notificationsEnabled;
+    NSString * _spoofedBundleID;
 }
 
 @property (nonatomic) BOOL notificationsEnabled;

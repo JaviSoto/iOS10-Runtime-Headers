@@ -3,7 +3,7 @@
  */
 
 @interface NSVariableExpression : NSExpression {
-    NSString *_variable;
+    NSString * _variable;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

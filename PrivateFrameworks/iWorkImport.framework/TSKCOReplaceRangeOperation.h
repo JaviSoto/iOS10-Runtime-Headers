@@ -3,9 +3,9 @@
  */
 
 @interface TSKCOReplaceRangeOperation : TSKCOReplaceOperation <TSKCORangeOperation, TSKCOReplaceRangeOperationSubset, TSKCOTransforming> {
-    TSKCORangeAddress *mAddress;
-    unsigned int mInsertLength;
-    BOOL mPreserveLowerPriorityLocation;
+    TSKCORangeAddress * mAddress;
+    unsigned int  mInsertLength;
+    BOOL  mPreserveLowerPriorityLocation;
 }
 
 @property (nonatomic, readonly) TSKCORangeAddress *address;

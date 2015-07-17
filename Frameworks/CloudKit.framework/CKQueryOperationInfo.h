@@ -3,12 +3,12 @@
  */
 
 @interface CKQueryOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    CKQueryCursor *_cursor;
-    NSArray *_desiredKeys;
-    CKQuery *_query;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContent;
-    CKRecordZoneID *_zoneID;
+    CKQueryCursor * _cursor;
+    NSArray * _desiredKeys;
+    CKQuery * _query;
+    unsigned int  _resultsLimit;
+    BOOL  _shouldFetchAssetContent;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) CKQueryCursor *cursor;

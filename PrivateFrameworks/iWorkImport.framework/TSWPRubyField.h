@@ -3,7 +3,7 @@
  */
 
 @interface TSWPRubyField : TSWPSmartField {
-    NSString *_rubyText;
+    NSString * _rubyText;
 }
 
 @property (nonatomic, readonly) NSString *baseText;

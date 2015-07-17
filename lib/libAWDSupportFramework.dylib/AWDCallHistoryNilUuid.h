@@ -3,14 +3,14 @@
  */
 
 @interface AWDCallHistoryNilUuid : PBCodable <NSCopying> {
-    unsigned int _callStatus;
-    unsigned int _callType;
+    unsigned int  _callStatus;
+    unsigned int  _callType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int callStatus : 1; 
         unsigned int callType : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int callStatus;

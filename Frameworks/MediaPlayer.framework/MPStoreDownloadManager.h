@@ -3,18 +3,18 @@
  */
 
 @interface MPStoreDownloadManager : NSObject <SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableArray *_blockObservers;
-    UIAlertView *_cellularDownloadAlertView;
-    NSMutableArray *_cellularDownloadRequestCompletionHandlers;
-    NSMapTable *_downloadIdentifiersToDownloads;
-    SSDownloadManager *_downloadManager;
-    NSMutableArray *_downloads;
-    NSMapTable *_downloadsToObservers;
-    NSMapTable *_libraryIdentifiersToDownloads;
-    NSHashTable *_observersForAllDownloads;
-    SSPurchaseManager *_purchaseManager;
-    NSMapTable *_storeIdentifiersToDownloads;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableArray * _blockObservers;
+    UIAlertView * _cellularDownloadAlertView;
+    NSMutableArray * _cellularDownloadRequestCompletionHandlers;
+    NSMapTable * _downloadIdentifiersToDownloads;
+    SSDownloadManager * _downloadManager;
+    NSMutableArray * _downloads;
+    NSMapTable * _downloadsToObservers;
+    NSMapTable * _libraryIdentifiersToDownloads;
+    NSHashTable * _observersForAllDownloads;
+    SSPurchaseManager * _purchaseManager;
+    NSMapTable * _storeIdentifiersToDownloads;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,15 +3,15 @@
  */
 
 @interface PHContentEditingOutput : NSObject <NSSecureCoding> {
-    PHAdjustmentData *_adjustmentData;
-    int _baseVersion;
-    NSURL *_editorBundleURL;
-    int _fullSizeRenderHeight;
-    int _fullSizeRenderWidth;
-    BOOL _isSubstandardRender;
-    int _mediaType;
-    NSData *_penultimateRenderedJPEGData;
-    NSURL *_renderedContentURL;
+    PHAdjustmentData * _adjustmentData;
+    int  _baseVersion;
+    NSURL * _editorBundleURL;
+    int  _fullSizeRenderHeight;
+    int  _fullSizeRenderWidth;
+    BOOL  _isSubstandardRender;
+    int  _mediaType;
+    NSData * _penultimateRenderedJPEGData;
+    NSURL * _renderedContentURL;
 }
 
 @property (retain) PHAdjustmentData *adjustmentData;
@@ -31,6 +31,7 @@
 - (void)_commonInit;
 - (id)adjustmentData;
 - (int)baseVersion;
+- (void)clearRenderedContentURL;
 - (id)description;
 - (id)editorBundleURL;
 - (void)encodeWithCoder:(id)arg1;

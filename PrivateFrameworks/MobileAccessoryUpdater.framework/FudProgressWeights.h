@@ -3,9 +3,9 @@
  */
 
 @interface FudProgressWeights : NSObject {
-    float applyWeight;
-    float finishWeight;
-    float prepareWeight;
+    float  applyWeight;
+    float  finishWeight;
+    float  prepareWeight;
 }
 
 @property float applyWeight;

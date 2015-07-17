@@ -3,7 +3,7 @@
  */
 
 @interface AAUIAddPhotoView : UIView {
-    UIButton *_addPhotoButton;
+    UIButton * _addPhotoButton;
 }
 
 - (void).cxx_destruct;

@@ -3,9 +3,9 @@
  */
 
 @interface VSSpeechConnection : NSObject {
-    NSXPCConnection *_connection;
-    VSSpeechConnectionDelegateWrapper *_delegateWrapper;
-    VSSpeechRequest *_request;
+    NSXPCConnection * _connection;
+    VSSpeechConnectionDelegateWrapper * _delegateWrapper;
+    VSSpeechRequest * _request;
 }
 
 @property (nonatomic) <VSSpeechConnectionDelegate> *delegate;

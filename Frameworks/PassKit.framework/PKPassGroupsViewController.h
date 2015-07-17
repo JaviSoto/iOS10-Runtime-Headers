@@ -3,23 +3,23 @@
  */
 
 @interface PKPassGroupsViewController : UIViewController <PKCodeAcquisitionDelegate, PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPaymentServiceDelegate, UIScrollViewDelegate> {
-    NSTimer *_allowDimmingTimer;
-    BOOL _backgroundMode;
-    NSMutableArray *_blocksQueuedForUpdateCompletion;
-    <PKPassGroupsViewControllerDelegate> *_delegate;
-    PKPassGroupStackView *_groupStackView;
-    PKGroupsController *_groupsController;
-    unsigned int _modalCardIndex;
-    NSTimer *_passViewedNotificationTimer;
-    BOOL _passesAreOutdated;
-    PKPaymentService *_paymentService;
-    int _presentationState;
-    BOOL _reloadingPasses;
-    UIImageView *_statusBarGradient;
-    PKUsageNotificationServer *_usageServer;
-    BOOL _viewAppeared;
-    BOOL _viewAppearedBefore;
-    BOOL _welcomeStateEnabled;
+    NSTimer * _allowDimmingTimer;
+    BOOL  _backgroundMode;
+    NSMutableArray * _blocksQueuedForUpdateCompletion;
+    <PKPassGroupsViewControllerDelegate> * _delegate;
+    PKPassGroupStackView * _groupStackView;
+    PKGroupsController * _groupsController;
+    unsigned int  _modalCardIndex;
+    NSTimer * _passViewedNotificationTimer;
+    BOOL  _passesAreOutdated;
+    PKPaymentService * _paymentService;
+    int  _presentationState;
+    BOOL  _reloadingPasses;
+    UIImageView * _statusBarGradient;
+    unsigned int  _suppressedContent;
+    BOOL  _viewAppeared;
+    BOOL  _viewAppearedBefore;
+    BOOL  _welcomeStateEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,6 +29,7 @@
 @property (readonly) unsigned int hash;
 @property BOOL passesAreOutdated;
 @property (readonly) Class superclass;
+@property (nonatomic) unsigned int suppressedContent;
 @property (getter=isWelcomeStateEnabled, nonatomic) BOOL welcomeStateEnabled;
 
 + (void)beginTrackingAction;
@@ -40,15 +41,17 @@
 - (void)_dismissPresentedVCsWithRequirements:(unsigned int)arg1 performAction:(id /* block */)arg2;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_handleApplicationdidEnterBackground:(id)arg1;
+- (void)_handleDidReceiveSuccessfulTransaction:(id)arg1;
 - (void)_handleStatusBarChange:(id)arg1;
 - (void)_localeDidChangeNotification:(id)arg1;
 - (void)_passViewedNotificationTimerFired;
-- (void)_presentGroupWithIndex:(unsigned int)arg1 animated:(BOOL)arg2;
-- (void)_presentGroupWithIndex:(unsigned int)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)_presentAddPassesControllerWithPasses:(id)arg1;
+- (void)_presentGroupWithIndex:(unsigned int)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_presentWithUpdatedPasses:(id /* block */)arg1;
 - (void)_regionConfigurationDidChangeNotification;
 - (void)_startPassViewedNotificationTimer;
 - (void)_updateStatusBarGradientOpacity:(BOOL)arg1;
+- (void)addVASPassWithIdentifier:(id)arg1;
 - (void)allowIdleTimer;
 - (void)cardsChanged:(id)arg1;
 - (void)codeAcquisitionController:(id)arg1 didAcquirePass:(id)arg2;
@@ -78,6 +81,7 @@
 - (unsigned int)indexOfGroup:(id)arg1;
 - (unsigned int)indexOfSeparationGroup;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithGroupsController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isWelcomeStateEnabled;
@@ -85,7 +89,7 @@
 - (unsigned int)numberOfGroups;
 - (BOOL)passesAreOutdated;
 - (BOOL)passesGrowWhenFlipped;
-- (void)paymentDeviceDidEnterField;
+- (void)paymentDeviceDidEnterFieldWithProperties:(id)arg1 forPassUniqueIdentifiers:(id)arg2;
 - (int)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
 - (void)presentGroupTable;
@@ -97,7 +101,9 @@
 - (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2;
 - (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)presentPassWithUniqueID:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3 fallbackHandler:(id /* block */)arg4;
+- (void)presentPassWithUniqueID:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3 fallbackHandler:(id /* block */)arg4;
 - (void)presentPaymentSetup;
+- (void)presentPileOffscreen;
 - (void)reloadPasses;
 - (void)reloadPassesWithCompletion:(id /* block */)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -106,6 +112,7 @@
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPassesAreOutdated:(BOOL)arg1;
+- (void)setSuppressedContent:(unsigned int)arg1;
 - (void)setWelcomeStateEnabled:(BOOL)arg1;
 - (BOOL)shouldAutorotate;
 - (void)startPaymentPreflight:(id)arg1;

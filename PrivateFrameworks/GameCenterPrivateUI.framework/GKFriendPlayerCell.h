@@ -3,8 +3,8 @@
  */
 
 @interface GKFriendPlayerCell : GKBasePlayerCell {
-    GKLabel *_statusLabel;
-    GKLabel *_whenLabel;
+    GKLabel * _statusLabel;
+    GKLabel * _whenLabel;
 }
 
 @property (nonatomic, retain) GKLabel *statusLabel;

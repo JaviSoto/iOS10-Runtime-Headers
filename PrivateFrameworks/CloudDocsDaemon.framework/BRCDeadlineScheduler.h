@@ -3,16 +3,16 @@
  */
 
 @interface BRCDeadlineScheduler : NSObject <BRCLifeCycle> {
-    id /* block */ _computeNextAdmissibleDateForScheduling;
-    NSObject<OS_dispatch_source> *_delay;
-    BOOL _isCancelled;
-    BOOL _isResumed;
-    long long _lastSchedule;
-    long long _leeway;
-    BRCMinHeap *_minHeap;
-    NSString *_name;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_source;
+    id /* block */  _computeNextAdmissibleDateForScheduling;
+    NSObject<OS_dispatch_source> * _delay;
+    BOOL  _isCancelled;
+    BOOL  _isResumed;
+    long long  _lastSchedule;
+    long long  _leeway;
+    BRCMinHeap * _minHeap;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 @property (nonatomic) long long coalescingLeeway;

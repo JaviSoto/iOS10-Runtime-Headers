@@ -3,16 +3,15 @@
  */
 
 @interface GQDImageBinary : NSObject {
-    struct __CFURL { } *mAbsoluteUrl;
-    struct __CFString { } *mPath;
-    int mResourceType;
+    struct __CFURL { } * mAbsoluteUrl;
+    struct __CFString { } * mPath;
+    int  mResourceType;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
+    }  mSize;
 }
 
-- (id).cxx_construct;
 - (struct __CFURL { }*)createAbsoluteUrlForState:(id)arg1;
 - (void)dealloc;
 - (int)readDataAttributesFromReader:(struct _xmlTextReader { }*)arg1;

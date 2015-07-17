@@ -3,13 +3,13 @@
  */
 
 @interface EKUIInviteesViewInvisibleInviteeStatusCell : UITableViewCell {
-    UILabel *_commentLabel;
-    float _leftInset;
-    NSLayoutConstraint *_minimumHeightConstraint;
-    NSLayoutConstraint *_nameBaselineToTopConstraint;
-    UILabel *_nameLabel;
-    NSArray *_persistentConstraints;
-    NSArray *_removableConstraints;
+    UILabel * _commentLabel;
+    float  _leftInset;
+    NSLayoutConstraint * _minimumHeightConstraint;
+    NSLayoutConstraint * _nameBaselineToTopConstraint;
+    UILabel * _nameLabel;
+    NSArray * _persistentConstraints;
+    NSArray * _removableConstraints;
 }
 
 @property (nonatomic, retain) UILabel *commentLabel;

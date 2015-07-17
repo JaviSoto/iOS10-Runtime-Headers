@@ -3,19 +3,20 @@
  */
 
 @interface UIMoreNavigationController : UINavigationController {
-    UIMoreListController *_moreListController;
-    UINavigationController *_originalNavigationController;
-    UIViewController *_originalRootViewController;
+    UIMoreListController * _moreListController;
+    UINavigationController * _originalNavigationController;
+    UIViewController * _originalRootViewController;
 }
 
 @property (nonatomic) BOOL allowsCustomizing;
 @property (nonatomic) UIViewController *displayedViewController;
-@property (nonatomic, readonly, retain) UIViewController *moreListController;
+@property (nonatomic, readonly) UIViewController *moreListController;
 @property (nonatomic, retain) NSArray *moreViewControllers;
 @property (nonatomic) BOOL moreViewControllersChanged;
 
 + (Class)_moreListControllerClass;
 
+- (void).cxx_destruct;
 - (void)_ensureChildrenHaveParentViewController;
 - (id)_preparedViewController:(id)arg1;
 - (void)_redisplayMoreTableView;
@@ -23,7 +24,6 @@
 - (id)_stateRestorationParentForChildViewController:(id)arg1 index:(unsigned int*)arg2;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)allowsCustomizing;
-- (void)dealloc;
 - (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)displayedViewController;
 - (id)init;

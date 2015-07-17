@@ -3,7 +3,7 @@
  */
 
 @interface MusicStoreBag : NSObject {
-    NSDictionary *_bagDictionary;
+    NSDictionary * _bagDictionary;
 }
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;

@@ -3,17 +3,17 @@
  */
 
 @interface MusicProductTracklistTableViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    NSString *_completeOfferLocalizedTitle;
-    MusicEntityViewDescriptor *_copyrightEntityViewDescriptor;
-    <MusicEntityProviding> *_copyrightSourceEntityProvider;
-    <MusicEntityProviding> *_entityProvider;
-    MusicEntityViewDescriptor *_showCompleteOfferEntityViewDescriptor;
-    MusicEntityViewDescriptor *_shuffleEntityViewDescriptor;
-    MusicEntityViewDescriptor *_tracklistEntityViewDescriptor;
-    BOOL _wantsArtistName;
-    BOOL _wantsArtwork;
-    BOOL _wantsCompleteOffer;
-    BOOL _wantsCopyrightText;
+    NSString * _completeOfferLocalizedTitle;
+    MusicEntityViewDescriptor * _copyrightEntityViewDescriptor;
+    <MusicEntityProviding> * _copyrightSourceEntityProvider;
+    <MusicEntityProviding> * _entityProvider;
+    MusicEntityViewDescriptor * _showCompleteOfferEntityViewDescriptor;
+    MusicEntityViewDescriptor * _shuffleEntityViewDescriptor;
+    MusicEntityViewDescriptor * _tracklistEntityViewDescriptor;
+    BOOL  _wantsArtistName;
+    BOOL  _wantsArtwork;
+    BOOL  _wantsCompleteOffer;
+    BOOL  _wantsCopyrightText;
 }
 
 @property (nonatomic, readonly) MusicEntityViewDescriptor *_copyrightEntityViewDescriptor;

@@ -3,7 +3,7 @@
  */
 
 @interface TSKCOAbstractOperation : NSObject <TSKCOOperation> {
-    BOOL mNoop;
+    BOOL  mNoop;
 }
 
 @property (nonatomic, readonly) BOOL isNoop;

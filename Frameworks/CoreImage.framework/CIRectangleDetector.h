@@ -3,15 +3,15 @@
  */
 
 @interface CIRectangleDetector : CIDetector {
-    float _height;
-    void *_internalBuffer;
-    float _width;
-    CIContext *context;
-    NSMutableDictionary *featureOptions;
-    struct __CVBuffer { } *interimScaleBuffer;
-    float *perMeshPtr;
-    struct OpaqueVTPixelTransferSession { } *pixelTransferSession;
-    struct __CVBuffer { } *scaleBuffer;
+    float  _height;
+    void * _internalBuffer;
+    float  _width;
+    CIContext * context;
+    NSMutableDictionary * featureOptions;
+    struct __CVBuffer { } * interimScaleBuffer;
+    float * perMeshPtr;
+    struct OpaqueVTPixelTransferSession { } * pixelTransferSession;
+    struct __CVBuffer { } * scaleBuffer;
 }
 
 @property (nonatomic, retain) CIContext *context;

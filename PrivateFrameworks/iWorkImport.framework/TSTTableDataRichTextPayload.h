@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataRichTextPayload : TSTTableDataObject {
-    TSTRichTextPayload *mPayload;
+    TSTRichTextPayload * mPayload;
 }
 
 - (void)dealloc;

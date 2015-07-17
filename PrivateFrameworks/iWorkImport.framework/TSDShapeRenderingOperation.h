@@ -3,8 +3,8 @@
  */
 
 @interface TSDShapeRenderingOperation : TSDSwatchRenderingOperation {
-    float mAngle;
-    int mShapeType;
+    float  mAngle;
+    int  mShapeType;
 }
 
 - (void)doWorkWithReadLock;

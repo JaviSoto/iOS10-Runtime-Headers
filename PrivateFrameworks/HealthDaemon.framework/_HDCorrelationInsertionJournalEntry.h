@@ -3,9 +3,9 @@
  */
 
 @interface _HDCorrelationInsertionJournalEntry : HDJournalEntry {
-    NSUUID *_correlationUUID;
-    NSData *_objectUUIDsData;
-    int _provenance;
+    NSUUID * _correlationUUID;
+    NSData * _objectUUIDsData;
+    int  _provenance;
 }
 
 @property (nonatomic, readonly) NSUUID *correlationUUID;

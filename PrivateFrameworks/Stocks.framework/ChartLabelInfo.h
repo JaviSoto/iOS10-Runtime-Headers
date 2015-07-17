@@ -3,13 +3,13 @@
  */
 
 @interface ChartLabelInfo : NSObject {
-    BOOL _immutable;
-    float _position;
+    BOOL  _immutable;
+    float  _position;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSString *_string;
+    }  _size;
+    NSString * _string;
 }
 
 @property (nonatomic, readonly) BOOL immutable;

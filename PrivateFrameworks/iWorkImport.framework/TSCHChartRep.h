@@ -3,44 +3,45 @@
  */
 
 @interface TSCHChartRep : TSWPTextHostRep <TSCHChartRepPlatformProtocols, TSCHSupportsRendering> {
-    TSCHSearchSelection *_selection;
-    TSCHSelectionPath *mActiveTextEditingPath;
-    BOOL mBuildingChunks;
-    BOOL mBuildingFinalBackground;
-    BOOL mBuildingFinalElements;
-    BOOL mCDECausedSetNeedsDisplay;
-    BOOL mCDEIsEditingInfo;
-    TSCHChartLayout *mChartLayout;
-    BOOL mChartRepGoingAway;
-    int mChunkPhase;
-    BOOL mChunkTexturesValid;
-    int mCurrentChunk;
-    id /* block */ mDrawingOpEndBlock;
-    id /* block */ mDrawingOpStartBlock;
-    BOOL mDrawingSearchReference;
-    TSCHLegendMoveKnob *mDynamicLegendKnob;
-    BOOL mEditorIsEditingInfo;
-    BOOL mFinishedBecomingSelected;
-    BOOL mForceSeparateLegendLayer;
-    unsigned int mInDynamicStandinLayoutOperation;
-    unsigned int mInDynamicStandinOperation;
-    BOOL mInZoom;
-    BOOL mInvalidateLegendLayerForLayerBasedRep;
-    BOOL mIsKPFExportForMultiData;
-    BOOL mIsLayerBasedRep;
+    TSCHSearchSelection * _selection;
+    TSCHSelectionPath * mActiveTextEditingPath;
+    BOOL  mBuildingChunks;
+    BOOL  mBuildingFinalBackground;
+    BOOL  mBuildingFinalElements;
+    BOOL  mCDECausedSetNeedsDisplay;
+    BOOL  mCDEIsEditingInfo;
+    TSCHChartLayout * mChartLayout;
+    BOOL  mChartRepGoingAway;
+    int  mChunkPhase;
+    BOOL  mChunkTexturesValid;
+    int  mCurrentChunk;
+    id /* block */  mDrawingOpEndBlock;
+    id /* block */  mDrawingOpStartBlock;
+    BOOL  mDrawingSearchReference;
+    TSCHLegendMoveKnob * mDynamicLegendKnob;
+    BOOL  mEditorIsEditingInfo;
+    BOOL  mFinishedBecomingSelected;
+    BOOL  mForceSeparateLegendLayer;
+    unsigned int  mInDynamicStandinLayoutOperation;
+    unsigned int  mInDynamicStandinOperation;
+    BOOL  mInZoom;
+    BOOL  mInvalidateLegendLayerForLayerBasedRep;
+    BOOL  mIs2DRepFor3DChartRep;
+    BOOL  mIsKPFExportForMultiData;
+    BOOL  mIsLayerBasedRep;
     struct CGPoint { 
         float x; 
         float y; 
-    } mLastSubselectionLayerRelativeReferencePosition;
-    CAShapeLayer *mLegendBorderHaloLayer;
-    BOOL mLegendBorderHaloLayerPathValid;
-    TSCHRendererLayer *mLegendLayer;
-    CAShapeLayer *mMediatorEditingHaloLayer;
-    BOOL mMediatorEditingHaloLayerPathValid;
-    int mRenderPassChunkPhase;
-    NSArray *mRenderers;
-    CALayer *mSubselectionKnobLayer;
-    BOOL mWantsPreviewLayout;
+    }  mLastSubselectionLayerRelativeReferencePosition;
+    CAShapeLayer * mLegendBorderHaloLayer;
+    BOOL  mLegendBorderHaloLayerPathValid;
+    TSCHRendererLayer * mLegendLayer;
+    CAShapeLayer * mMediatorEditingHaloLayer;
+    BOOL  mMediatorEditingHaloLayerPathValid;
+    int  mRenderPassChunkPhase;
+    NSArray * mRenderers;
+    CALayer * mSubselectionKnobLayer;
+    BOOL  mWantsPreviewLayout;
 }
 
 @property (nonatomic, readonly, retain) TSCHSelectionPath *activeTextEditingPath;
@@ -61,6 +62,7 @@
 @property (nonatomic, readonly) BOOL forceRenderBlankBackground;
 @property (nonatomic) BOOL forceSeparateLegendLayer;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL is2DRepFor3DChartRep;
 @property (nonatomic, readonly) TSCHSearchSelection *selection;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) float viewScale;
@@ -102,6 +104,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })geometryFrame;
 - (BOOL)inPrintPreviewMode;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
+- (id)initWithLayout:(id)arg1 canvas:(id)arg2 is2DRepFor3DChartRep:(BOOL)arg3;
+- (BOOL)is2DRepFor3DChartRep;
 - (BOOL)isDrawingIntoPDF;
 - (BOOL)isEditing;
 - (BOOL)isLayerBasedRep;
@@ -109,6 +113,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })outerShadowFrame;
 - (int)p_backgroundLikePlaneStateForEffectiveStage:(int)arg1;
 - (BOOL)p_chartShouldDisplayMessage;
+- (void)p_checkFillPropertiesForDataListeningWithChangedProperties:(id)arg1;
 - (void)p_deleteMessageView;
 - (void)p_forceDismissTransientMessage;
 - (BOOL)p_hasBackgroundFill;

@@ -3,20 +3,20 @@
  */
 
 @interface TZFileSystemInterface : NSObject {
-    NSURL *_ICUDestinationDirectoryURL;
-    NSURL *_ICUDestinationFileURL;
-    NSURL *_cachedTZDataLocation;
-    TZVersionInfo *_currentVersionInfo;
-    NSURL *_dataExpansionVersionDirectory;
-    TZVersionInfo *_lastInstalledVersionInfo;
-    NSURL *_latestLinkDestinationAtStartup;
-    NSURL *_latestTZDataLink;
-    TZVersionInfo *_latestVersionInfo;
-    NSString *_systemICUChecksum;
-    NSURL *_systemICUDataFileURL;
-    TZVersionInfo *_systemVersionInfo;
-    NSURL *_temporaryDirectory;
-    NSURL *_zoneinfoDestinationURL;
+    NSURL * _ICUDestinationDirectoryURL;
+    NSURL * _ICUDestinationFileURL;
+    NSURL * _cachedTZDataLocation;
+    TZVersionInfo * _currentVersionInfo;
+    NSURL * _dataExpansionVersionDirectory;
+    TZVersionInfo * _lastInstalledVersionInfo;
+    NSURL * _latestLinkDestinationAtStartup;
+    NSURL * _latestTZDataLink;
+    TZVersionInfo * _latestVersionInfo;
+    NSString * _systemICUChecksum;
+    NSURL * _systemICUDataFileURL;
+    TZVersionInfo * _systemVersionInfo;
+    NSURL * _temporaryDirectory;
+    NSURL * _zoneinfoDestinationURL;
 }
 
 @property (retain) NSURL *ICUDestinationDirectoryURL;

@@ -3,7 +3,7 @@
  */
 
 @interface WebDownload : NSURLDownload {
-    WebDownloadInternal *_webInternal;
+    WebDownloadInternal * _webInternal;
 }
 
 - (id)_initWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;

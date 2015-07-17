@@ -3,29 +3,29 @@
  */
 
 @interface APSConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    unsigned int _connectionPort;
-    NSString *_connectionPortName;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    CUTWeakReference *_delegateReference;
-    BOOL _enableCriticalReliability;
-    BOOL _enableStatusNotifications;
-    NSArray *_enabledTopics;
-    NSString *_environmentName;
-    BOOL _everHadDelegate;
-    NSMutableDictionary *_idsToOutgoingMessages;
-    NSArray *_ignoredTopics;
-    BOOL _isConnected;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    unsigned int _largeMessageSize;
-    NSObject<OS_dispatch_queue> *_machQueue;
-    NSObject<OS_dispatch_source> *_mach_source;
-    unsigned int _messageSize;
-    unsigned int _nextOutgoingMessageID;
-    NSArray *_opportunisticTopics;
-    NSData *_publicToken;
-    NSMutableArray *_queuedDelegateBlocks;
-    BOOL _usesAppLaunchStats;
+    NSObject<OS_xpc_object> * _connection;
+    unsigned int  _connectionPort;
+    NSString * _connectionPortName;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    CUTWeakReference * _delegateReference;
+    BOOL  _enableCriticalReliability;
+    BOOL  _enableStatusNotifications;
+    NSArray * _enabledTopics;
+    NSString * _environmentName;
+    BOOL  _everHadDelegate;
+    NSMutableDictionary * _idsToOutgoingMessages;
+    NSArray * _ignoredTopics;
+    BOOL  _isConnected;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    unsigned int  _largeMessageSize;
+    NSObject<OS_dispatch_queue> * _machQueue;
+    NSObject<OS_dispatch_source> * _mach_source;
+    unsigned int  _messageSize;
+    unsigned int  _nextOutgoingMessageID;
+    NSArray * _opportunisticTopics;
+    NSData * _publicToken;
+    NSMutableArray * _queuedDelegateBlocks;
+    BOOL  _usesAppLaunchStats;
 }
 
 @property (nonatomic) <APSConnectionDelegate> *delegate;

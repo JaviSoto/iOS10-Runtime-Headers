@@ -3,7 +3,7 @@
  */
 
 @interface PKReusablePassViewQueue : NSObject {
-    NSMutableSet *_passViews;
+    NSMutableSet * _passViews;
 }
 
 - (void)dealloc;

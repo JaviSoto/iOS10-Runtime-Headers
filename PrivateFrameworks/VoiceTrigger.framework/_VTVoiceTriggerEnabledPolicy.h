@@ -3,9 +3,9 @@
  */
 
 @interface _VTVoiceTriggerEnabledPolicy : _VTStatePolicy {
-    BOOL _enabled;
-    int _notificationToken;
-    BOOL _primedPhraseSpotter;
+    BOOL  _enabled;
+    int  _notificationToken;
+    BOOL  _primedPhraseSpotter;
 }
 
 - (void)_listenForReload;

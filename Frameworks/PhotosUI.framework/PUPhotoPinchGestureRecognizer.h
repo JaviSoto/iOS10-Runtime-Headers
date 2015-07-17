@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotoPinchGestureRecognizer : UIPinchGestureRecognizer {
-    PUValueFilter *__rotationFilter;
-    BOOL __touchesNeedUpdate;
+    PUValueFilter * __rotationFilter;
+    BOOL  __touchesNeedUpdate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,17 +14,17 @@
             float width; 
             float height; 
         } size; 
-    } _initialPinchRect;
+    }  _initialPinchRect;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialTouchLocations;
-    BOOL _initialTouchLocationsSet;
+    }  _initialTouchLocations;
+    BOOL  _initialTouchLocationsSet;
     struct CGPoint { 
         float x; 
         float y; 
-    } _latestTouchLocations;
-    float _rotationHysteresisDegrees;
+    }  _latestTouchLocations;
+    float  _rotationHysteresisDegrees;
 }
 
 @property (setter=_setRotationFilter:, nonatomic, retain) PUValueFilter *_rotationFilter;

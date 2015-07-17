@@ -3,20 +3,20 @@
  */
 
 @interface SKUIIPhoneSlideshowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIClientContext *_clientContext;
-    SKUIGiftThemeCollectionView *_collectionView;
-    <SKUISlideshowViewControllerDataSource> *_dataSource;
-    <SKUISlideshowViewControllerDelegate> *_delegate;
-    NSMutableArray *_images;
-    int _indexToScrollToOnLoadView;
-    NSOperationQueue *_operationQueue;
-    UIPageControl *_pageControl;
-    NSMutableDictionary *_placeholderImages;
-    NSOperationQueue *_placeholderQueue;
-    BOOL _respondsToCount;
-    BOOL _respondsToImage;
-    BOOL _respondsToURL;
-    SKUIScreenshotDataConsumer *_screenshotConsumer;
+    SKUIClientContext * _clientContext;
+    SKUIGiftThemeCollectionView * _collectionView;
+    <SKUISlideshowViewControllerDataSource> * _dataSource;
+    <SKUISlideshowViewControllerDelegate> * _delegate;
+    NSMutableArray * _images;
+    int  _indexToScrollToOnLoadView;
+    NSOperationQueue * _operationQueue;
+    UIPageControl * _pageControl;
+    NSMutableDictionary * _placeholderImages;
+    NSOperationQueue * _placeholderQueue;
+    BOOL  _respondsToCount;
+    BOOL  _respondsToImage;
+    BOOL  _respondsToURL;
+    SKUIScreenshotDataConsumer * _screenshotConsumer;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

@@ -3,21 +3,21 @@
  */
 
 @interface IMMessage : NSObject <NSCopying> {
-    NSError *_error;
-    NSArray *_fileTransferGUIDs;
-    unsigned long long _flags;
-    NSString *_guid;
-    BOOL _isInvitationMessage;
-    long long _messageID;
-    NSAttributedString *_messageSubject;
-    NSString *_plainBody;
-    IMHandle *_sender;
-    IMHandle *_subject;
-    NSAttributedString *_text;
-    NSDate *_time;
-    NSDate *_timeDelivered;
-    NSDate *_timePlayed;
-    NSDate *_timeRead;
+    NSError * _error;
+    NSArray * _fileTransferGUIDs;
+    unsigned long long  _flags;
+    NSString * _guid;
+    BOOL  _isInvitationMessage;
+    long long  _messageID;
+    NSAttributedString * _messageSubject;
+    NSString * _plainBody;
+    IMHandle * _sender;
+    IMHandle * _subject;
+    NSAttributedString * _text;
+    NSDate * _time;
+    NSDate * _timeDelivered;
+    NSDate * _timePlayed;
+    NSDate * _timeRead;
 }
 
 @property (nonatomic, readonly, retain) IMMessageItem *_imMessageItem;

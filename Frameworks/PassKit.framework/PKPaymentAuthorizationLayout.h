@@ -3,11 +3,11 @@
  */
 
 @interface PKPaymentAuthorizationLayout : NSObject <UITraitEnvironment> {
-    float _contentHeightPadding;
-    float _contentMargin;
-    UIViewController *_controller;
-    float _headerMargin;
-    float _valueLeftMargin;
+    float  _contentHeightPadding;
+    float  _contentMargin;
+    UIViewController * _controller;
+    float  _headerMargin;
+    float  _valueLeftMargin;
 }
 
 @property (nonatomic, readonly) float contentHeightPadding;

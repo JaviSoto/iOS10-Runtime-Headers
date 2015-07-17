@@ -3,9 +3,9 @@
  */
 
 @interface SSDownloadQueue : NSObject <SSDownloadManagerObserverPrivate> {
-    BOOL _autoFinishDownloads;
-    SSDownloadManager *_downloadManager;
-    struct __CFSet { } *_observers;
+    BOOL  _autoFinishDownloads;
+    SSDownloadManager * _downloadManager;
+    struct __CFSet { } * _observers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

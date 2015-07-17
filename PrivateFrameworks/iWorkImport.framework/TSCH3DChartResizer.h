@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DChartResizer : NSObject {
-    struct ChartScenePropertyAccessor { id x1; } *mAccessor;
-    TSCH3DChartType *mChartType;
+    struct ChartScenePropertyAccessor { id x1; } * mAccessor;
+    TSCH3DChartType * mChartType;
     struct ResizeData { 
         struct tvec2<float> { 
             union { 
@@ -83,9 +83,9 @@
                 float t; 
             } ; 
         } chartOnlySize; 
-    } mCurrent;
-    unsigned int mIndex;
-    TSCH3DChartBoundsLayout *mLayout;
+    }  mCurrent;
+    unsigned int  mIndex;
+    TSCH3DChartBoundsLayout * mLayout;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -94,9 +94,9 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
-    } mLayoutSettings;
-    float mMinStep;
-    float mPrecision;
+    }  mLayoutSettings;
+    float  mMinStep;
+    float  mPrecision;
     struct ResizeData { 
         struct tvec2<float> { 
             union { 
@@ -175,8 +175,8 @@
                 float t; 
             } ; 
         } chartOnlySize; 
-    } mPrevious;
-    TSCH3DScene *mScene;
+    }  mPrevious;
+    TSCH3DScene * mScene;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -188,7 +188,7 @@
             float g; 
             float t; 
         } ; 
-    } mTarget;
+    }  mTarget;
 }
 
 @property (nonatomic) float minStep;

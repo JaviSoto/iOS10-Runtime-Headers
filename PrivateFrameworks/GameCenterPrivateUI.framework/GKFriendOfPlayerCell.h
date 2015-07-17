@@ -3,7 +3,7 @@
  */
 
 @interface GKFriendOfPlayerCell : GKBasePlayerCell {
-    UILabel *_commonalitiesLabel;
+    UILabel * _commonalitiesLabel;
 }
 
 @property (nonatomic, retain) UILabel *commonalitiesLabel;

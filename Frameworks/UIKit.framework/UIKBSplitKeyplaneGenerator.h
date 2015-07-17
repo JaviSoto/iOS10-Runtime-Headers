@@ -6,21 +6,21 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _keyboardSize;
-    int _keyboardType;
-    float _leftSideWidestRow;
-    UIKeyboardTransitionSlice *_leftSlice;
-    float _rightSideWidestRow;
-    UIKeyboardTransitionSlice *_rightSlice;
-    NSMutableArray *_rows;
-    UIKeyboardSliceSet *_sliceSet;
-    UIKBTree *_sourceKeyboard;
-    UIKBTree *_sourceKeyplane;
+    }  _keyboardSize;
+    int  _keyboardType;
+    float  _leftSideWidestRow;
+    UIKeyboardTransitionSlice * _leftSlice;
+    float  _rightSideWidestRow;
+    UIKeyboardTransitionSlice * _rightSlice;
+    NSMutableArray * _rows;
+    UIKeyboardSliceSet * _sliceSet;
+    UIKBTree * _sourceKeyboard;
+    UIKBTree * _sourceKeyplane;
     struct CGSize { 
         float width; 
         float height; 
-    } _splitKeySizeFactor;
-    NSDictionary *_splitLayoutHints;
+    }  _splitKeySizeFactor;
+    NSDictionary * _splitLayoutHints;
 }
 
 - (void)addKey:(id)arg1 withShape:(id)arg2 forRow:(id)arg3 attribs:(id)arg4 left:(BOOL)arg5 force:(BOOL)arg6 isDefaultWidth:(BOOL)arg7;

@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioEnvironmentReverbParameters : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (nonatomic) BOOL enable;

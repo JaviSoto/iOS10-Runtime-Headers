@@ -3,7 +3,7 @@
  */
 
 @interface CKDFetchWebAuthTokenURLRequest : CKDURLRequest {
-    id /* block */ _tokenFetchedBlock;
+    id /* block */  _tokenFetchedBlock;
 }
 
 @property (nonatomic, copy) id /* block */ tokenFetchedBlock;

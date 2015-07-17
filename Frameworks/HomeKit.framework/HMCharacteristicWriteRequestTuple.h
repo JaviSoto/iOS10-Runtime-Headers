@@ -3,8 +3,8 @@
  */
 
 @interface HMCharacteristicWriteRequestTuple : NSObject {
-    HMCharacteristic *_characteristic;
-    id _value;
+    HMCharacteristic * _characteristic;
+    id  _value;
 }
 
 @property (nonatomic, readonly) HMCharacteristic *characteristic;

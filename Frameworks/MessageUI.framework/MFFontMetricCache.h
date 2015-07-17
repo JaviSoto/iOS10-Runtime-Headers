@@ -3,8 +3,8 @@
  */
 
 @interface MFFontMetricCache : NSObject {
-    NSMutableDictionary *_metricCacheDictionary;
-    NSString *_preferredSizeValidationKey;
+    NSMutableDictionary * _metricCacheDictionary;
+    NSString * _preferredSizeValidationKey;
 }
 
 + (id)sharedFontMetricCache;

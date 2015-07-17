@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _allowedSize;
-    NSString *_text;
+    }  _allowedSize;
+    NSString * _text;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } allowedSize;

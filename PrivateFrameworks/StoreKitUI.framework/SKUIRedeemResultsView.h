@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsetAdjustments;
-    <SKUIRedeemResultsViewDelegate> *_resultsDelegate;
-    NSArray *_sections;
+    }  _contentInsetAdjustments;
+    <SKUIRedeemResultsViewDelegate> * _resultsDelegate;
+    NSArray * _sections;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface RUJingleTiltReportingController : MPUReportingController {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    double _flushInterval;
-    NSMutableArray *_pendingReportingEvents;
-    NSObject<OS_dispatch_source> *_playEventFlushTimerSource;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    double  _flushInterval;
+    NSMutableArray * _pendingReportingEvents;
+    NSObject<OS_dispatch_source> * _playEventFlushTimerSource;
 }
 
 - (void).cxx_destruct;

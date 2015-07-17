@@ -8,23 +8,23 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
+    }  _contentInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageBoundingSize;
-    int _itemOfferStyle;
-    UILabel *_itemOfferTextLabel;
-    int _layoutStyle;
-    int _lockupSize;
-    SKUILockupMetadataView *_metadataView;
-    BOOL _playsInlineVideo;
-    int _verticalAlignment;
+    }  _imageBoundingSize;
+    int  _itemOfferStyle;
+    UILabel * _itemOfferTextLabel;
+    int  _layoutStyle;
+    int  _lockupSize;
+    SKUILockupMetadataView * _metadataView;
+    BOOL  _playsInlineVideo;
+    int  _verticalAlignment;
     struct CGSize { 
         float width; 
         float height; 
-    } _videoThumbnailSize;
-    SKUIEmbeddedMediaView *_videoThumbnailView;
+    }  _videoThumbnailSize;
+    SKUIEmbeddedMediaView * _videoThumbnailView;
 }
 
 @property (nonatomic, copy) NSString *artistName;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIEditorDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIEditorTemplateViewDelegate> {
-    SKUIButtonViewElement *_doneButtonElement;
-    SKUIEditorTemplateView *_editorView;
-    BOOL _isTextChanged;
+    SKUIButtonViewElement * _doneButtonElement;
+    SKUIEditorTemplateView * _editorView;
+    BOOL  _isTextChanged;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,10 +15,10 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIButtonViewElement *_resetButtonElement;
-    SKUIEditorTemplateViewElement *_templateElement;
+    }  _keyboardFrame;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIButtonViewElement * _resetButtonElement;
+    SKUIEditorTemplateViewElement * _templateElement;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,7 +28,7 @@
             float width; 
             float height; 
         } size; 
-    } _toolbarFrame;
+    }  _toolbarFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;

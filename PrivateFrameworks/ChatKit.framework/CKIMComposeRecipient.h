@@ -3,7 +3,7 @@
  */
 
 @interface CKIMComposeRecipient : MFComposeRecipient {
-    IMHandle *_handle;
+    IMHandle * _handle;
 }
 
 @property (nonatomic, readonly, retain) IMHandle *handle;

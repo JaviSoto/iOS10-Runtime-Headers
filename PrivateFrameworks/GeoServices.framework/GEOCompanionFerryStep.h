@@ -5,8 +5,8 @@
 @interface GEOCompanionFerryStep : PBCodable <NSCopying> {
     struct { 
         unsigned int maneuverType : 1; 
-    } _has;
-    int _maneuverType;
+    }  _has;
+    int  _maneuverType;
 }
 
 @property (nonatomic) BOOL hasManeuverType;

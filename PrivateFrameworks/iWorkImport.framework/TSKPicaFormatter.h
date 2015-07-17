@@ -3,9 +3,9 @@
  */
 
 @interface TSKPicaFormatter : NSFormatter {
-    NSNumber *mMaximum;
-    NSNumber *mMinimum;
-    NSString *mPicaSeparator;
+    NSNumber * mMaximum;
+    NSNumber * mMinimum;
+    NSString * mPicaSeparator;
 }
 
 @property (nonatomic, copy) NSNumber *maximum;

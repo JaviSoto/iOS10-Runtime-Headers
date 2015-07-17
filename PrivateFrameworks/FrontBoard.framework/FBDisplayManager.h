@@ -3,10 +3,10 @@
  */
 
 @interface FBDisplayManager : NSObject {
-    NSMapTable *_displayIDToFBSDisplayMap;
-    NSMutableSet *_displaysDebouncing;
-    FBSDisplay *_mainDisplay;
-    NSHashTable *_observers;
+    NSMapTable * _displayIDToFBSDisplayMap;
+    NSMutableSet * _displaysDebouncing;
+    FBSDisplay * _mainDisplay;
+    NSHashTable * _observers;
 }
 
 @property (nonatomic, retain) FBSDisplay *mainDisplay;

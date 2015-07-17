@@ -3,8 +3,8 @@
  */
 
 @interface _HKStatisticsQueryServerDataObject : _HKQueryServerDataObject {
-    unsigned int _mergeStrategy;
-    unsigned int _options;
+    unsigned int  _mergeStrategy;
+    unsigned int  _options;
 }
 
 @property (nonatomic) unsigned int mergeStrategy;

@@ -3,16 +3,16 @@
  */
 
 @interface TNPageLayout : TSWPPageLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
-    TNPageContentLayout *mContentLayout;
-    BOOL mIsChildLayoutsValid;
-    BOOL mIsPlaceholder;
-    TNPageController *mPageController;
+    TNPageContentLayout * mContentLayout;
+    BOOL  mIsChildLayoutsValid;
+    BOOL  mIsPlaceholder;
+    TNPageController * mPageController;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mPageCoordinate;
-    TNSheet *mSheet;
+    }  mPageCoordinate;
+    TNSheet * mSheet;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;

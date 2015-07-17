@@ -3,7 +3,7 @@
  */
 
 @interface PACountedSampleFrame : PACountedFrame {
-    PASampleFrame *_sampleFrame;
+    PASampleFrame * _sampleFrame;
 }
 
 @property (readonly) PASampleFrame *sampleFrame;

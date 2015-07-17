@@ -3,19 +3,19 @@
  */
 
 @interface VMUCallTreeRoot : VMUCallTreeNode {
-    NSMapTable *_addressToLeafSymbolNameMap;
-    NSMapTable *_addressToSymbolNameMap;
-    NSArray *_binaryImages;
-    NSString *_binaryImagesDescription;
-    NSMapTable *_dispatchQueueSerialNumToNameMap;
-    unsigned int _options;
-    VMUSampler *_sampler;
+    NSMapTable * _addressToLeafSymbolNameMap;
+    NSMapTable * _addressToSymbolNameMap;
+    NSArray * _binaryImages;
+    NSString * _binaryImagesDescription;
+    NSMapTable * _dispatchQueueSerialNumToNameMap;
+    unsigned int  _options;
+    VMUSampler * _sampler;
     struct _CSTypeRef { 
         unsigned int _opaque_1; 
         unsigned int _opaque_2; 
-    } _symbolicator;
-    NSMapTable *_threadPortToNameMap;
-    NSHashTable *_uniqueNodeNames;
+    }  _symbolicator;
+    NSMapTable * _threadPortToNameMap;
+    NSHashTable * _uniqueNodeNames;
 }
 
 - (id)addBacktrace:(id)arg1;

@@ -8,15 +8,15 @@
         float left; 
         float bottom; 
         float right; 
-    } _headerMargins;
-    UIView *_headerView;
+    }  _headerMargins;
+    UIView * _headerView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _subheaderMargins;
-    UIView *_subheaderView;
+    }  _subheaderMargins;
+    UIView * _subheaderView;
 }
 
 @property (nonatomic, readonly) float headerHeight;

@@ -3,10 +3,10 @@
  */
 
 @interface PLMoviePlayerView : UIView {
-    PLAirPlayBackgroundView *_airPlayView;
-    PLAVPlayerView *_avPlayerView;
-    BOOL _destinationPlaceholderHidden;
-    PLVideoOutBackgroundView *_videoOutView;
+    PLAirPlayBackgroundView * _airPlayView;
+    PLAVPlayerView * _avPlayerView;
+    BOOL  _destinationPlaceholderHidden;
+    PLVideoOutBackgroundView * _videoOutView;
 }
 
 @property (getter=isDestinationPlaceholderHidden, nonatomic) BOOL destinationPlaceholderHidden;

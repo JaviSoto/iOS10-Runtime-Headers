@@ -3,16 +3,16 @@
  */
 
 @interface MusicProfileFollowButton : UIControl {
-    double _animationDuration;
-    MPUSpringAnimationFactory *_animationFactory;
-    _UIBackdropView *_backdropView;
-    MusicMediaDetailTintInformation *_detailTintInformation;
-    BOOL _following;
-    NSString *_followingText;
-    NSString *_initialText;
-    float _maximumWidth;
-    int _style;
-    UILabel *_titleLabel;
+    double  _animationDuration;
+    MPUSpringAnimationFactory * _animationFactory;
+    _UIBackdropView * _backdropView;
+    MusicMediaDetailTintInformation * _detailTintInformation;
+    BOOL  _following;
+    NSString * _followingText;
+    NSString * _initialText;
+    float  _maximumWidth;
+    int  _style;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) double animationDuration;

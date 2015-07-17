@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetFontFeatures : TSWPSpecFontFeatures {
-    NSArray *_fontFeatures;
-    BOOL _unset;
+    NSArray * _fontFeatures;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

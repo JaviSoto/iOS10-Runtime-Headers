@@ -3,19 +3,19 @@
  */
 
 @interface SKUISwooshArrayViewController : UIViewController <SKUIMetricsViewController, SKUIProductPageChildViewController, SKUIResourceLoaderDelegate, SKUISwooshViewControllerDelegate, UIScrollViewDelegate> {
-    SKUIResourceLoader *_artworkLoader;
-    BOOL _askPermission;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    SKUIMetricsController *_metricsController;
-    NSOperationQueue *_operationQueue;
-    SSVPlatformRequestOperation *_platformOperation;
-    UIScrollView *_scrollView;
-    NSMutableArray *_swooshArtworkLoaders;
-    NSArray *_swooshComponents;
-    NSMutableArray *_viewControllers;
+    SKUIResourceLoader * _artworkLoader;
+    BOOL  _askPermission;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    SKUIMetricsController * _metricsController;
+    NSOperationQueue * _operationQueue;
+    SSVPlatformRequestOperation * _platformOperation;
+    UIScrollView * _scrollView;
+    NSMutableArray * _swooshArtworkLoaders;
+    NSArray * _swooshComponents;
+    NSMutableArray * _viewControllers;
 }
 
 @property (nonatomic) BOOL askPermission;

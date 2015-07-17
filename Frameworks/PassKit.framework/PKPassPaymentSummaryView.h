@@ -3,15 +3,15 @@
  */
 
 @interface PKPassPaymentSummaryView : UIView <PKPassPaymentSummaryCellDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL _deepLinkingEnabled;
-    <PKPassPaymentSummaryViewDelegate> *_delegate;
-    PKPaymentMessage *_message;
-    NSString *_messageAppLaunchToken;
-    NSNumberFormatter *_numberFormatter;
-    PKPaymentPass *_pass;
-    UITableView *_tableView;
-    PKPaymentTransaction *_transaction;
-    NSString *_transactionAppLaunchToken;
+    BOOL  _deepLinkingEnabled;
+    <PKPassPaymentSummaryViewDelegate> * _delegate;
+    PKPaymentMessage * _message;
+    NSString * _messageAppLaunchToken;
+    NSNumberFormatter * _numberFormatter;
+    PKPaymentPass * _pass;
+    UITableView * _tableView;
+    PKPaymentTransaction * _transaction;
+    NSString * _transactionAppLaunchToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

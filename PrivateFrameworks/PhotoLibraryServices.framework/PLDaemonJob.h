@@ -3,9 +3,9 @@
  */
 
 @interface PLDaemonJob : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    PLXPCTransaction *_transaction;
-    NSObject<OS_xpc_object> *_xpcReply;
+    NSObject<OS_xpc_object> * _connection;
+    PLXPCTransaction * _transaction;
+    NSObject<OS_xpc_object> * _xpcReply;
 }
 
 @property (nonatomic, readonly) BOOL clientWantsReply;

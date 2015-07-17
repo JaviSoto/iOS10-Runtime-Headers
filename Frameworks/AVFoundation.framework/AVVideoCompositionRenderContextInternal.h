@@ -3,32 +3,32 @@
  */
 
 @interface AVVideoCompositionRenderContextInternal : NSObject {
-    NSDictionary *_basisProperties;
-    struct __CFDictionary { } *_cleanApertureDict;
-    NSDictionary *_clientRequiredPixelBufferAttributes;
-    NSDictionary *_destinationDesiredPixelBufferAttributes;
-    NSString *_destinationDesiredPixelBufferColorPrimaries;
-    NSString *_destinationDesiredPixelBufferTransferFunction;
-    NSString *_destinationDesiredPixelBufferYCbCrMatrix;
+    NSDictionary * _basisProperties;
+    struct __CFDictionary { } * _cleanApertureDict;
+    NSDictionary * _clientRequiredPixelBufferAttributes;
+    NSDictionary * _destinationDesiredPixelBufferAttributes;
+    NSString * _destinationDesiredPixelBufferColorPrimaries;
+    NSString * _destinationDesiredPixelBufferTransferFunction;
+    NSString * _destinationDesiredPixelBufferYCbCrMatrix;
     struct { 
         int width; 
         int height; 
-    } _destinationPixelBufferDimensions;
+    }  _destinationPixelBufferDimensions;
     struct { 
         float left; 
         float top; 
         float right; 
         float bottom; 
-    } _edgeWidths;
-    BOOL _highQualityRendering;
+    }  _edgeWidths;
+    BOOL  _highQualityRendering;
     struct { 
         int horizontalSpacing; 
         int verticalSpacing; 
-    } _pixelAspectRatio;
-    struct __CFDictionary { } *_pixelAspectRatioDict;
-    struct __CVPixelBufferPool { } *_pixelBufferPool;
-    NSObject<OS_dispatch_queue> *_pixelBufferPoolQ;
-    float _renderScale;
+    }  _pixelAspectRatio;
+    struct __CFDictionary { } * _pixelAspectRatioDict;
+    struct __CVPixelBufferPool { } * _pixelBufferPool;
+    NSObject<OS_dispatch_queue> * _pixelBufferPoolQ;
+    float  _renderScale;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -36,13 +36,13 @@
         float d; 
         float tx; 
         float ty; 
-    } _renderTransform;
+    }  _renderTransform;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    AVVideoComposition *_videoComposition;
-    int pixelFormatFamily;
+    }  _size;
+    AVVideoComposition * _videoComposition;
+    int  pixelFormatFamily;
 }
 
 - (void)_willDeallocOrFinalize;

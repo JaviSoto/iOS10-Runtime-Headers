@@ -8,11 +8,11 @@
         unsigned int recordCount : 1; 
         unsigned int version : 1; 
         unsigned int success : 1; 
-    } _has;
-    unsigned int _recordCount;
-    BOOL _success;
-    unsigned long long _timestamp;
-    unsigned int _version;
+    }  _has;
+    unsigned int  _recordCount;
+    BOOL  _success;
+    unsigned long long  _timestamp;
+    unsigned int  _version;
 }
 
 @property (nonatomic) BOOL hasRecordCount;

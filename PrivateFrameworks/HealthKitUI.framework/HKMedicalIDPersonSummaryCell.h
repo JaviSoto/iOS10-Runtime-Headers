@@ -3,16 +3,16 @@
  */
 
 @interface HKMedicalIDPersonSummaryCell : UITableViewCell {
-    NSDate *_birthdate;
-    UILabel *_birthdateLabel;
-    NSLayoutConstraint *_imageGapConstraint;
-    NSLayoutConstraint *_imageWidthConstraint;
-    NSString *_name;
-    UILabel *_nameLabel;
-    UIFont *_nameLabelFont;
-    UIImage *_picture;
-    UIImageView *_pictureView;
-    BOOL _resetFormatters;
+    NSDate * _birthdate;
+    UILabel * _birthdateLabel;
+    NSLayoutConstraint * _imageGapConstraint;
+    NSLayoutConstraint * _imageWidthConstraint;
+    NSString * _name;
+    UILabel * _nameLabel;
+    UIFont * _nameLabelFont;
+    UIImage * _picture;
+    UIImageView * _pictureView;
+    BOOL  _resetFormatters;
 }
 
 @property (nonatomic, retain) NSDate *birthdate;

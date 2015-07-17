@@ -3,21 +3,21 @@
  */
 
 @interface EKLocationEditItemViewController : EKEditItemViewController <EKUILocationSearchModelDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    EKCalendarItem *_calendarItem;
-    BOOL _needsSave;
-    BOOL _onlyDisplayMapLocations;
-    _UINavigationControllerPalette *_palette;
+    EKCalendarItem * _calendarItem;
+    BOOL  _needsSave;
+    BOOL  _onlyDisplayMapLocations;
+    _UINavigationControllerPalette * _palette;
     struct CGSize { 
         float width; 
         float height; 
-    } _preferredContentSize;
-    UISearchBar *_searchBar;
-    EKUILocationSearchModel *_searchModel;
-    EKUIConferenceRoom *_selectedConferenceRoom;
-    EKStructuredLocation *_selectedLocation;
-    EKStructuredLocation *_structuredLocation;
-    BOOL _supportsStructuredLocations;
-    UITableView *_tableView;
+    }  _preferredContentSize;
+    UISearchBar * _searchBar;
+    EKUILocationSearchModel * _searchModel;
+    EKUIConferenceRoom * _selectedConferenceRoom;
+    EKStructuredLocation * _selectedLocation;
+    EKStructuredLocation * _structuredLocation;
+    BOOL  _supportsStructuredLocations;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -79,7 +79,6 @@
 - (id)title;
 - (void)useAsString:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

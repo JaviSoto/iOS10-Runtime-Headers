@@ -3,9 +3,9 @@
  */
 
 @interface TSTCellMapIterator : NSObject {
-    TSTCellMap *_cellMap;
-    TSTCellUIDIterator *_cellUIDIterator;
-    TSTCell *_currentCell;
+    TSTCellMap * _cellMap;
+    TSTCellUIDIterator * _cellUIDIterator;
+    TSTCell * _currentCell;
     struct TSTCellUID { 
         struct UUIDData<TSP::UUIDData> { 
             union { 
@@ -61,9 +61,9 @@
                 } ; 
             } ; 
         } _row; 
-    } _currentCellUID;
-    unsigned int _index;
-    BOOL _oneToMany;
+    }  _currentCellUID;
+    unsigned int  _index;
+    BOOL  _oneToMany;
 }
 
 - (id).cxx_construct;

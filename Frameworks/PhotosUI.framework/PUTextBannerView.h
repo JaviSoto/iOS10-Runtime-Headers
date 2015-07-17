@@ -3,11 +3,11 @@
  */
 
 @interface PUTextBannerView : UIView {
-    UIImageView *_backgroundView;
-    BOOL _destructiveText;
-    NSString *_text;
-    int _textAlignment;
-    UILabel *_textLabel;
+    UIImageView * _backgroundView;
+    BOOL  _destructiveText;
+    NSString * _text;
+    int  _textAlignment;
+    UILabel * _textLabel;
 }
 
 @property (getter=isDestructiveText, nonatomic) BOOL destructiveText;

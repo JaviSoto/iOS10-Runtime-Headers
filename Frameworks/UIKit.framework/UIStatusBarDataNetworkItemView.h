@@ -3,11 +3,11 @@
  */
 
 @interface UIStatusBarDataNetworkItemView : UIStatusBarItemView {
-    int _dataNetworkType;
-    BOOL _enableRSSI;
-    BOOL _showRSSI;
-    int _wifiStrengthBars;
-    int _wifiStrengthRaw;
+    int  _dataNetworkType;
+    BOOL  _enableRSSI;
+    BOOL  _showRSSI;
+    int  _wifiStrengthBars;
+    int  _wifiStrengthRaw;
 }
 
 - (id)_dataNetworkImage;

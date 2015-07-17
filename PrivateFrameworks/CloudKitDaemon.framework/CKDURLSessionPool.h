@@ -3,14 +3,14 @@
  */
 
 @interface CKDURLSessionPool : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegatePrivate> {
-    int _backgroundSessionConnectionPoolLimit;
-    NSMutableDictionary *_delegateByTaskDescription;
-    NSMutableDictionary *_ephemeralSessionByTaskDescription;
-    int _networkdNotifyToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_sessionByIdentifier;
-    NSMutableDictionary *_sessionConfigurationReferenceByIdentifier;
-    NSMutableDictionary *_sessionConfigurationReferenceByName;
+    int  _backgroundSessionConnectionPoolLimit;
+    NSMutableDictionary * _delegateByTaskDescription;
+    NSMutableDictionary * _ephemeralSessionByTaskDescription;
+    int  _networkdNotifyToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _sessionByIdentifier;
+    NSMutableDictionary * _sessionConfigurationReferenceByIdentifier;
+    NSMutableDictionary * _sessionConfigurationReferenceByName;
 }
 
 @property (nonatomic, readonly) int backgroundSessionConnectionPoolLimit;

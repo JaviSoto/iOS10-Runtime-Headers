@@ -3,17 +3,17 @@
  */
 
 @interface HKDataCategory : NSObject {
-    UIColor *_bottomColor;
-    NSMutableDictionary *_cachedGradients;
-    NSMutableDictionary *_cachedRoundedCornerGradients;
-    int _categoryID;
-    UIImage *_dashboardIcon;
-    NSMutableArray *_dataUnitGroups;
-    NSString *_displayName;
-    UIImage *_listIcon;
-    NSString *_listIconName;
-    UIImage *_shareIcon;
-    UIColor *_topColor;
+    UIColor * _bottomColor;
+    NSMutableDictionary * _cachedGradients;
+    NSMutableDictionary * _cachedRoundedCornerGradients;
+    int  _categoryID;
+    UIImage * _dashboardIcon;
+    NSMutableArray * _dataUnitGroups;
+    NSString * _displayName;
+    UIImage * _listIcon;
+    NSString * _listIconName;
+    UIImage * _shareIcon;
+    UIColor * _topColor;
 }
 
 @property (nonatomic, readonly) int categoryID;
@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) BOOL isMeCategory;
 @property (nonatomic, readonly) UIImage *listIcon;
 @property (nonatomic, readonly) NSString *listIconName;
+@property (nonatomic, readonly) UIColor *seriesColor;
 @property (nonatomic, readonly) UIImage *shareIcon;
 
 - (void).cxx_destruct;
@@ -40,6 +41,7 @@
 - (id)listIcon;
 - (id)listIconName;
 - (id)roundedCornerGradientWithHeight:(float)arg1;
+- (id)seriesColor;
 - (id)shareIcon;
 
 @end

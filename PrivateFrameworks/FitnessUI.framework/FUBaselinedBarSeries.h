@@ -3,14 +3,14 @@
  */
 
 @interface FUBaselinedBarSeries : FUChartSeries {
-    UIColor *_barColor;
-    NSArray *_barViews;
-    float _barWidth;
-    NSNumber *_baselineAbsoluteYPos;
-    float _baselineGraphHeightPercent;
-    float _baselineValue;
-    BOOL _hideBarsBelowThreshold;
-    NSArray *_plotPoints;
+    UIColor * _barColor;
+    NSArray * _barViews;
+    float  _barWidth;
+    NSNumber * _baselineAbsoluteYPos;
+    float  _baselineGraphHeightPercent;
+    float  _baselineValue;
+    BOOL  _hideBarsBelowThreshold;
+    NSArray * _plotPoints;
 }
 
 @property (nonatomic, retain) UIColor *barColor;

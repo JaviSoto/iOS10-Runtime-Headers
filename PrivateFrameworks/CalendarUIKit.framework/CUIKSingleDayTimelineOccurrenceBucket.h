@@ -3,19 +3,19 @@
  */
 
 @interface CUIKSingleDayTimelineOccurrenceBucket : NSObject {
-    CUIKSingleDayTimelineLayoutPartition *_correspondingPartition;
-    NSMutableArray *_currentOccurrences;
-    BOOL _ignoreFirstOccurrenceInFitnessCalculations;
-    BOOL _ignoreLastOccurrenceInFitnessCalculations;
-    BOOL _isOnlyBucket;
-    double _originalFitnessLevel;
-    BOOL _originalFitnessLevelRequiresCalculation;
-    <CUIKSingleDayTimelineLayoutScreenUtils> *_screenUtilsDelegate;
-    double _temporaryFitnessLevel;
-    BOOL _temporaryFitnessLevelRequiresCalculation;
-    <CUIKSingleDayTimelineViewItem> *_temporaryOccurrenceAtBeginning;
-    <CUIKSingleDayTimelineViewItem> *_temporaryOccurrenceAtEnd;
-    BOOL _useTemporaryFitnessLevel;
+    CUIKSingleDayTimelineLayoutPartition * _correspondingPartition;
+    NSMutableArray * _currentOccurrences;
+    BOOL  _ignoreFirstOccurrenceInFitnessCalculations;
+    BOOL  _ignoreLastOccurrenceInFitnessCalculations;
+    BOOL  _isOnlyBucket;
+    double  _originalFitnessLevel;
+    BOOL  _originalFitnessLevelRequiresCalculation;
+    <CUIKSingleDayTimelineLayoutScreenUtils> * _screenUtilsDelegate;
+    double  _temporaryFitnessLevel;
+    BOOL  _temporaryFitnessLevelRequiresCalculation;
+    <CUIKSingleDayTimelineViewItem> * _temporaryOccurrenceAtBeginning;
+    <CUIKSingleDayTimelineViewItem> * _temporaryOccurrenceAtEnd;
+    BOOL  _useTemporaryFitnessLevel;
 }
 
 @property (nonatomic, retain) CUIKSingleDayTimelineLayoutPartition *correspondingPartition;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIAdornedImageView : SKUIImageView <SKUIViewElementView> {
-    SKUIAdornedImageViewReuseView *_reuseView;
+    SKUIAdornedImageViewReuseView * _reuseView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

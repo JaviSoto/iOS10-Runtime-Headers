@@ -3,26 +3,27 @@
  */
 
 @interface PBBridgeCompanionController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, NSURLConnectionDelegate, PBBridgeCompanionProtocol, RUILoaderDelegate> {
-    NSURLConnection *_activationConnection;
-    NSMutableData *_activationData;
-    NSMutableURLRequest *_activationRequest;
-    int _activationState;
-    NSTimer *_activationTimeout;
-    BOOL _allowAnyHTTPSCertificate;
-    BOOL _connectionFailed;
-    NSString *_contentType;
-    <PBBridgeConnectionDelegate> *_delegate;
-    unsigned short _granularActivationState;
-    id /* block */ _initialSyncPrepCompletion;
-    NSString *_internalLastSendMessageID;
-    BOOL _isEstablishingPairing;
-    id /* block */ _lockedOnAnimationCompletion;
-    BOOL _nonSilentActivation;
-    BOOL _passcodeSet;
-    <RUILoaderDelegate> *_ruiDelegate;
-    RUILoader *_ruiLoader;
-    BOOL _selectedPairedUnlock;
-    struct __MKBAssertion { } *_unlockPairingAssertion;
+    NSURLConnection * _activationConnection;
+    NSMutableData * _activationData;
+    NSMutableURLRequest * _activationRequest;
+    int  _activationState;
+    NSTimer * _activationTimeout;
+    BOOL  _allowAnyHTTPSCertificate;
+    BOOL  _awaitingCustomResponse;
+    BOOL  _connectionFailed;
+    NSString * _contentType;
+    <PBBridgeConnectionDelegate> * _delegate;
+    unsigned short  _granularActivationState;
+    id /* block */  _initialSyncPrepCompletion;
+    NSString * _internalLastSendMessageID;
+    BOOL  _isEstablishingPairing;
+    id /* block */  _lockedOnAnimationCompletion;
+    BOOL  _nonSilentActivation;
+    BOOL  _passcodeSet;
+    <RUILoaderDelegate> * _ruiDelegate;
+    RUILoader * _ruiLoader;
+    BOOL  _selectedPairedUnlock;
+    struct __MKBAssertion { } * _unlockPairingAssertion;
 }
 
 @property (nonatomic, retain) NSURLConnection *activationConnection;
@@ -31,6 +32,7 @@
 @property (nonatomic) int activationState;
 @property (nonatomic, retain) NSTimer *activationTimeout;
 @property (nonatomic) BOOL allowAnyHTTPSCertificate;
+@property (nonatomic) BOOL awaitingCustomResponse;
 @property (nonatomic) BOOL connectionFailed;
 @property (nonatomic, copy) NSString *contentType;
 @property (readonly, copy) NSString *debugDescription;
@@ -56,8 +58,10 @@
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (id)_connectionWithRequest:(id)arg1;
+- (BOOL)_dumpCustomRequestBody;
 - (BOOL)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
 - (BOOL)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
+- (unsigned short)_testActivationResponseType;
 - (id)activationConnection;
 - (id)activationData;
 - (id)activationRequest;
@@ -65,6 +69,7 @@
 - (id)activationTimeout;
 - (void)activationTimeout:(id)arg1;
 - (BOOL)allowAnyHTTPSCertificate;
+- (BOOL)awaitingCustomResponse;
 - (void)beginSetupTransaction;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -113,6 +118,7 @@
 - (BOOL)selectedPairedUnlock;
 - (void)sendGizmoPasscodeRestrictions;
 - (void)sendProxyActivationRequest:(id)arg1;
+- (void)sendProxyActivationWithCustomRequest:(id)arg1;
 - (id)serviceIdentifier;
 - (void)setActivationConnection:(id)arg1;
 - (void)setActivationData:(id)arg1;
@@ -120,6 +126,7 @@
 - (void)setActivationState:(int)arg1;
 - (void)setActivationTimeout:(id)arg1;
 - (void)setAllowAnyHTTPSCertificate:(BOOL)arg1;
+- (void)setAwaitingCustomResponse:(BOOL)arg1;
 - (void)setConnectionFailed:(BOOL)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setDelegate:(id)arg1;

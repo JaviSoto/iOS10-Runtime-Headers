@@ -3,13 +3,13 @@
  */
 
 @interface MPUExtrasMainTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasMainMenuSectionMetricsDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
-    NSLayoutConstraint *_collectionViewHeightConstraint;
-    UICollectionViewFlowLayout *_collectionViewLayout;
-    <UICollectionViewDelegate> *_didSelectDelegate;
-    BOOL _hasHadMenuSelection;
-    MPUExtrasMainMenuSectionMetrics *_mainMenuMetrics;
-    UICollectionView *_menuBarCollectionView;
-    UIView *_menuBarView;
+    NSLayoutConstraint * _collectionViewHeightConstraint;
+    UICollectionViewFlowLayout * _collectionViewLayout;
+    <UICollectionViewDelegate> * _didSelectDelegate;
+    BOOL  _hasHadMenuSelection;
+    MPUExtrasMainMenuSectionMetrics * _mainMenuMetrics;
+    UICollectionView * _menuBarCollectionView;
+    UIView * _menuBarView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

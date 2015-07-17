@@ -3,8 +3,8 @@
  */
 
 @interface GKTextField : UITextField <GKTextStyleReplay> {
-    GKTextStyle *_appliedStyle;
-    GKTextStyle *_baseStyle;
+    GKTextStyle * _appliedStyle;
+    GKTextStyle * _baseStyle;
 }
 
 @property (nonatomic, retain) GKTextStyle *appliedStyle;

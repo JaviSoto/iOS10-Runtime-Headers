@@ -3,7 +3,7 @@
  */
 
 @interface UIBlurEffect : UIVisualEffect {
-    int _style;
+    int  _style;
 }
 
 @property (nonatomic, readonly) int _style;
@@ -13,6 +13,7 @@
 
 - (int)_style;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)effectForUserInterfaceStyle:(int)arg1;
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

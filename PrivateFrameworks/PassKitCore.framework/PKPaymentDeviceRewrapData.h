@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentDeviceRewrapData : NSObject <NSSecureCoding> {
-    NSString *_CASDECCCertificate;
-    NSString *_CASDRSACertificate;
-    NSString *_deviceIdentifier;
+    NSString * _CASDECCCertificate;
+    NSString * _CASDRSACertificate;
+    NSString * _deviceIdentifier;
 }
 
 @property (nonatomic, copy) NSString *CASDECCCertificate;

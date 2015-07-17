@@ -3,7 +3,7 @@
  */
 
 @interface _UIDSMAlertViewDelegate : NSObject <UIAlertViewDelegate> {
-    id /* block */ _completionHandler;
+    id /* block */  _completionHandler;
 }
 
 @property (copy) id /* block */ completionHandler;

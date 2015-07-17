@@ -3,7 +3,7 @@
  */
 
 @interface EKEventDetailAttendeesCell : EKEventDetailCell {
-    EKEventDetailAttendeesListView *_attendeesListView;
+    EKEventDetailAttendeesListView * _attendeesListView;
 }
 
 - (void).cxx_destruct;

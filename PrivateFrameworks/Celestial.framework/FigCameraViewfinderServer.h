@@ -3,9 +3,9 @@
  */
 
 @interface FigCameraViewfinderServer : NSObject <FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate, NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSMutableArray *_connections;
-    NSXPCListener *_serviceListener;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSMutableArray * _connections;
+    NSXPCListener * _serviceListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,19 +3,19 @@
  */
 
 @interface RURadioGetTracksOperation : NSOperation {
-    ISDialogOperation *_dialogOperation;
-    MPUserNotification *_explicitUserNotification;
-    RadioGetTracksRequest *_getTracksRequest;
-    NSLock *_lock;
-    unsigned int _numberOfTracks;
-    RadioPlaybackContext *_playbackContext;
-    SSVPlaybackLease *_playbackLease;
-    int _reasonType;
-    RadioRequestContext *_requestContext;
-    id /* block */ _responseBlock;
-    BOOL _shouldIncludeStationInResponse;
-    RadioStation *_station;
-    RadioStationMatchContext *_stationMatchContext;
+    ISDialogOperation * _dialogOperation;
+    MPUserNotification * _explicitUserNotification;
+    RadioGetTracksRequest * _getTracksRequest;
+    NSLock * _lock;
+    unsigned int  _numberOfTracks;
+    RadioPlaybackContext * _playbackContext;
+    SSVPlaybackLease * _playbackLease;
+    int  _reasonType;
+    RadioRequestContext * _requestContext;
+    id /* block */  _responseBlock;
+    BOOL  _shouldIncludeStationInResponse;
+    RadioStation * _station;
+    RadioStationMatchContext * _stationMatchContext;
 }
 
 @property unsigned int numberOfTracks;

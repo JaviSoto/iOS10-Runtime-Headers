@@ -3,13 +3,13 @@
  */
 
 @interface TSWPDateTimeSmartField : TSWPSmartField {
-    NSDate *_date;
-    long _dateStyle;
-    NSString *_format;
-    NSString *_localeID;
-    BOOL _needsUpdate;
-    long _timeStyle;
-    int _updatePlan;
+    NSDate * _date;
+    long  _dateStyle;
+    NSString * _format;
+    NSString * _localeID;
+    BOOL  _needsUpdate;
+    long  _timeStyle;
+    int  _updatePlan;
 }
 
 @property (nonatomic, copy) NSDate *date;

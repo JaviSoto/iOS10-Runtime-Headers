@@ -3,12 +3,12 @@
  */
 
 @interface TIKeyboardLayout : NSObject <NSSecureCoding> {
-    unsigned int _count;
-    struct _ShortRect { short x1; short x2; short x3; short x4; } *_frames;
-    unsigned int _framesCapacity;
-    char *_strings;
-    unsigned int _stringsCapacity;
-    unsigned int _stringsSize;
+    unsigned int  _count;
+    struct _ShortRect { short x1; short x2; short x3; short x4; } * _frames;
+    unsigned int  _framesCapacity;
+    char * _strings;
+    unsigned int  _stringsCapacity;
+    unsigned int  _stringsSize;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewCellContentMirror : UIView {
-    unsigned int _selected;
+    unsigned int  _selected;
 }
 
 @property (getter=isSelected, nonatomic) BOOL selected;

@@ -3,10 +3,10 @@
  */
 
 @interface CKDShareTokenInfo : NSObject <NSCopying> {
-    NSData *_privateTokenData;
-    NSData *_publicTokenData;
-    NSString *_routingKey;
-    NSData *_shortSharingTokenData;
+    NSData * _privateTokenData;
+    NSData * _publicTokenData;
+    NSString * _routingKey;
+    NSData * _shortSharingTokenData;
 }
 
 @property (nonatomic, retain) NSData *privateTokenData;

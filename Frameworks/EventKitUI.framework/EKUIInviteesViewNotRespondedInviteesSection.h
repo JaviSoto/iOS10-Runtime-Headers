@@ -3,21 +3,21 @@
  */
 
 @interface EKUIInviteesViewNotRespondedInviteesSection : NSObject <EKUIInviteesViewSection> {
-    id /* block */ _addInviteesTapped;
-    NSOperationQueue *_availabilityRequestsQueue;
-    NSString *_cachedAddInviteeCellReuseIdentifier;
-    NSString *_cachedInviteeCellReuseIdentifier;
-    BOOL _canSeeAttendeeStatuses;
-    BOOL _editable;
-    EKEvent *_event;
-    NSMutableSet *_participantAddressesForInFlightAvailabilityOperations;
-    NSMutableDictionary *_participantAddressesToAvailabilityType;
-    NSMutableDictionary *_participantAddressesToParticipantIndex;
-    id /* block */ _participantRemoved;
-    id /* block */ _participantTapped;
-    NSMutableArray *_participants;
-    unsigned int _reuseIdentifierVersion;
-    id /* block */ _tableViewCellHook;
+    id /* block */  _addInviteesTapped;
+    NSOperationQueue * _availabilityRequestsQueue;
+    NSString * _cachedAddInviteeCellReuseIdentifier;
+    NSString * _cachedInviteeCellReuseIdentifier;
+    BOOL  _canSeeAttendeeStatuses;
+    BOOL  _editable;
+    EKEvent * _event;
+    NSMutableSet * _participantAddressesForInFlightAvailabilityOperations;
+    NSMutableDictionary * _participantAddressesToAvailabilityType;
+    NSMutableDictionary * _participantAddressesToParticipantIndex;
+    id /* block */  _participantRemoved;
+    id /* block */  _participantTapped;
+    NSMutableArray * _participants;
+    unsigned int  _reuseIdentifierVersion;
+    id /* block */  _tableViewCellHook;
 }
 
 @property (nonatomic, copy) id /* block */ addInviteesTapped;
@@ -48,7 +48,10 @@
 - (BOOL)_isValidRow:(int)arg1;
 - (id)_lookUpAvailabilityTypeForParticipantAddress:(id)arg1;
 - (id)_lookUpParticipantIndexForParticipantAddress:(id)arg1;
+- (void)_removeAddressFromDictionaryOfAddressesToAvailabilityType:(id)arg1;
+- (void)_removeAddressFromDictionaryOfAddressesToParticipantIndex:(id)arg1;
 - (void)_removeAddressFromSetOfAddressesToInflightOperations:(id)arg1;
+- (void)_removeParticipantAtIndexPath:(id)arg1;
 - (void)_setAvailabilityType:(id)arg1 forParticipantAddress:(id)arg2;
 - (BOOL)_setOfAddressesToInflightOperationsContainsAddress:(id)arg1;
 - (void)_setParticipantIndex:(id)arg1 forParticipantAddress:(id)arg2;

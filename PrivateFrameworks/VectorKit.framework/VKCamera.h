@@ -3,102 +3,102 @@
  */
 
 @interface VKCamera : NSObject {
-    BOOL _allowDatelineWraparound;
-    float _aspectRatio;
-    double _canonicalPitch;
-    <VKCameraDelegate> *_delegate;
-    double _distanceToGroundAndFarClipPlaneIntersection;
-    VKFootprint *_footprint;
+    BOOL  _allowDatelineWraparound;
+    float  _aspectRatio;
+    double  _canonicalPitch;
+    <VKCameraDelegate> * _delegate;
+    double  _distanceToGroundAndFarClipPlaneIntersection;
+    VKFootprint * _footprint;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
-    } _forward;
-    double _fractionOfScreenAboveFarClipPlaneAtCanonicalPitch;
+    }  _forward;
+    double  _fractionOfScreenAboveFarClipPlaneAtCanonicalPitch;
     struct { 
         BOOL orthographic; 
         double width; 
         double height; 
         double near; 
         double far; 
-    } _frustum;
+    }  _frustum;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
-    } _gmPosition;
+    }  _gmPosition;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
-    } _gmProjectionMatrix;
+    }  _gmProjectionMatrix;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
-    } _gmUnscaledViewMatrix;
+    }  _gmUnscaledViewMatrix;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
-    } _gmViewMatrix;
+    }  _gmViewMatrix;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
-    } _gmViewProjectionMatrix;
+    }  _gmViewProjectionMatrix;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
-    } _gmViewProjectionMatrixWithoutOffset;
+    }  _gmViewProjectionMatrixWithoutOffset;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
-    } _gmWorldMatrix;
-    double _horizontalOffset;
-    double _maxFarClipDistance;
-    double _maxHeight;
-    double _maxHeightNoPitch;
-    double _maxPitch;
-    double _minHeight;
-    BOOL _needsUpdate;
+    }  _gmWorldMatrix;
+    double  _horizontalOffset;
+    double  _maxFarClipDistance;
+    double  _maxHeight;
+    double  _maxHeightNoPitch;
+    double  _maxPitch;
+    double  _minHeight;
+    BOOL  _needsUpdate;
     struct { 
         double v[4][4]; 
-    } _orientation;
+    }  _orientation;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _position;
+    }  _position;
     struct { 
         double v[4][4]; 
-    } _projectionMatrix;
+    }  _projectionMatrix;
     struct { 
         double v[4][4]; 
-    } _projectionMatrixUnscaled;
+    }  _projectionMatrixUnscaled;
     struct { 
         double v[4][4]; 
-    } _projectionMatrixUnscaledWithoutOffset;
+    }  _projectionMatrixUnscaledWithoutOffset;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _puckPosition;
+    }  _puckPosition;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
-    } _right;
-    double _screenHeightOfGroundAndFarClipPlaneIntersection;
-    double _tanHalfHorizFOV;
-    double _tanHalfVerticalFOV;
-    double _terrainHeight;
+    }  _right;
+    double  _screenHeightOfGroundAndFarClipPlaneIntersection;
+    double  _tanHalfHorizFOV;
+    double  _tanHalfVerticalFOV;
+    double  _terrainHeight;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
-    } _up;
-    int _updateNumber;
-    BOOL _updating;
-    float _verticalFieldOfView;
+    }  _up;
+    int  _updateNumber;
+    BOOL  _updating;
+    float  _verticalFieldOfView;
     struct { 
         double v[4][4]; 
-    } _viewMatrix;
+    }  _viewMatrix;
     struct { 
         double v[4][4]; 
-    } _viewMatrixUnscaled;
+    }  _viewMatrixUnscaled;
     struct { 
         double v[4][4]; 
-    } _viewProjectionMatrix;
+    }  _viewProjectionMatrix;
     struct { 
         double v[4][4]; 
-    } _viewProjectionMatrixUnscaled;
-    VKViewVolume *_viewVolume;
+    }  _viewProjectionMatrixUnscaled;
+    VKViewVolume * _viewVolume;
     struct { 
         double v[4][4]; 
-    } _worldMatrix;
+    }  _worldMatrix;
 }
 
 @property (nonatomic) BOOL allowDatelineWraparound;

@@ -3,19 +3,19 @@
  */
 
 @interface UIKBRenderer : NSObject {
-    NSString *_cacheKey;
-    struct CGContext { } *_cachingContext;
-    id /* block */ _cachingContextCompletion;
-    BOOL _containsRGBContent;
-    struct CGContext { } *_ctx;
-    BOOL _opaque;
-    int _renderFlags;
-    UIImage *_renderedImage;
-    float _scale;
+    NSString * _cacheKey;
+    struct CGContext { } * _cachingContext;
+    id /* block */  _cachingContextCompletion;
+    BOOL  _containsRGBContent;
+    struct CGContext { } * _ctx;
+    BOOL  _opaque;
+    int  _renderFlags;
+    UIImage * _renderedImage;
+    float  _scale;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, retain) NSString *cacheKey;
@@ -35,7 +35,7 @@
 - (void)_completeCacheImageWithTraitsIfNecessary:(id)arg1;
 - (struct CGContext { }*)_contextForCacheImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGPath { }*)_deleteGlyphPaths;
-- (void)_drawKeyImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3 force1xImages:(BOOL)arg4;
+- (void)_drawKeyImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3 force1xImages:(BOOL)arg4 flipHorizontally:(BOOL)arg5;
 - (BOOL)_drawKeyString:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3;
 - (void)_drawLinearGradient:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)_drawSingleSymbol:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3;
@@ -60,6 +60,7 @@
 - (id)initWithContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 withScale:(float)arg3 opaque:(BOOL)arg4 renderFlags:(int)arg5;
 - (BOOL)loadCachedImageForHashString:(id)arg1;
 - (BOOL)opaque;
+- (id)pathForConcaveCornerWithGeometry:(id)arg1;
 - (id)pathForFlickGeometry:(id)arg1;
 - (id)pathForFlickPopupGeometries:(id)arg1;
 - (id)pathForRenderGeometry:(id)arg1;

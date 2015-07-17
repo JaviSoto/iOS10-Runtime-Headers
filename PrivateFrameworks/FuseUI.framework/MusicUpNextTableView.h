@@ -3,13 +3,13 @@
  */
 
 @interface MusicUpNextTableView : MusicTableView <MusicUpNextReorderLayoutDelegate> {
-    NSIndexPath *_attachedIndexPath;
-    UIView *_attachedView;
-    BOOL _lieAboutContentsWhileAutoScrolling;
-    float _minimumYForReorderingCells;
-    int _pinState;
-    BOOL _punchOutEnabled;
-    MusicUpNextPunchOutView *_punchOutView;
+    NSIndexPath * _attachedIndexPath;
+    UIView * _attachedView;
+    BOOL  _lieAboutContentsWhileAutoScrolling;
+    float  _minimumYForReorderingCells;
+    int  _pinState;
+    BOOL  _punchOutEnabled;
+    MusicUpNextPunchOutView * _punchOutView;
 }
 
 @property (nonatomic, readonly) UIView *attachedView;

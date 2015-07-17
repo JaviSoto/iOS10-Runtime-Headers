@@ -3,17 +3,17 @@
  */
 
 @interface QLRemotePreviewContentController : _UIRemoteViewController <QLPreviewContentControllerProtocol, QLPrintPageRendererDataSource> {
-    int _currentPreviewItemIndex;
-    <QLPreviewContentDataSource> *_dataSource;
-    <QLPreviewContentDelegate> *_delegate;
-    _UIRemoteView *_fullScreenView;
-    BOOL _isHostingFullScreenWindow;
-    int _numberOfPreviewItems;
-    QLPreviewController *_previewController;
-    NSMapTable *_previewItemsForProxys;
-    QLPrintPageRenderer *_printPageRenderer;
-    NSMapTable *_proxysForPreviewItems;
-    BOOL _statusBarWasHidden;
+    int  _currentPreviewItemIndex;
+    <QLPreviewContentDataSource> * _dataSource;
+    <QLPreviewContentDelegate> * _delegate;
+    _UIRemoteView * _fullScreenView;
+    BOOL  _isHostingFullScreenWindow;
+    int  _numberOfPreviewItems;
+    QLPreviewController * _previewController;
+    NSMapTable * _previewItemsForProxys;
+    QLPrintPageRenderer * _printPageRenderer;
+    NSMapTable * _proxysForPreviewItems;
+    BOOL  _statusBarWasHidden;
 }
 
 @property <QLPreviewContentDataSource> *dataSource;
@@ -30,6 +30,7 @@
 
 - (void)_contentWasTappedInPreviewContentController;
 - (void)_didExitFullScreen;
+- (void)_dismissGestureUpdateWithState:(int)arg1 trackingInformation:(id)arg2;
 - (void)_overlayWasTappedInPreviewContentController;
 - (void)_previewContentControllerDidLoadItem:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
 - (void)_previewContentControllerDidMoveToItemAtIndex:(int)arg1;
@@ -53,6 +54,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
+- (void)dismissTransitionIsReadyToFinishSynchronizedWithBlock:(id /* block */)arg1;
 - (void)endScrubbing;
 - (void)enterBackground;
 - (void)forceResignFirstResponder;

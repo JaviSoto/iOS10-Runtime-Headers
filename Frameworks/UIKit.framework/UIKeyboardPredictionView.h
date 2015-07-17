@@ -3,34 +3,35 @@
  */
 
 @interface UIKeyboardPredictionView : UIView {
-    UITouch *_activeTouch;
-    NSDate *_lastUpdateDate;
-    TIKeyboardCandidate *_scheduledAutocorrection;
-    NSArray *_scheduledPredictions;
-    int _state;
-    NSTimer *_updateTimer;
-    unsigned int m_activeIndex;
-    UIKBBackgroundView *m_backgroundView;
-    NSString *m_closeQuote;
-    BOOL m_currentInputModeEnablePrediction;
-    BOOL m_delayActive;
-    BOOL m_dragging;
-    UIKeyboardPredictionBarGrabber *m_grabber;
-    BOOL m_hasLongCandidates;
+    UITouch * _activeTouch;
+    NSDate * _lastUpdateDate;
+    int  _notifyBatterySaverToken;
+    TIKeyboardCandidate * _scheduledAutocorrection;
+    NSArray * _scheduledPredictions;
+    int  _state;
+    NSTimer * _updateTimer;
+    unsigned int  m_activeIndex;
+    unsigned int  m_autocorrectionCell;
+    UIKBBackgroundView * m_backgroundView;
+    NSString * m_closeQuote;
+    UIKBKeyView * m_collapsedView;
+    BOOL  m_currentInputModeEnablePrediction;
+    BOOL  m_delayActive;
+    BOOL  m_dragging;
+    UIKeyboardPredictionBarGrabber * m_grabber;
+    BOOL  m_hasLongCandidates;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_initLocation;
-    UIView *m_leftDimmingView;
-    UIView *m_message;
-    UIKBKeyView *m_messageKeyView;
-    UILabel *m_messageLabel;
-    double m_messageShownTime;
-    NSString *m_openQuote;
-    NSMutableArray *m_predictionCells;
-    UIView *m_rightDimmingView;
-    BOOL m_touchOnDimmingView;
-    float m_width;
+    }  m_initLocation;
+    BOOL  m_isMinimized;
+    UIView * m_message;
+    UIKBKeyView * m_messageKeyView;
+    UILabel * m_messageLabel;
+    double  m_messageShownTime;
+    NSString * m_openQuote;
+    NSMutableArray * m_predictionCells;
+    float  m_width;
 }
 
 @property (nonatomic, retain) UITouch *activeTouch;
@@ -45,6 +46,7 @@
 + (unsigned int)numberOfCandidates;
 + (float)overlapHeight;
 + (float)predictionViewHeightForState:(int)arg1 orientation:(int)arg2;
++ (float)predictionViewWidthForOrientation:(int)arg1;
 + (id)sharedInstance;
 
 - (void)_setPredictions:(id)arg1 autocorrection:(id)arg2;
@@ -52,6 +54,7 @@
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)activateCandidateAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)activeTouch;
+- (id)autocorrection;
 - (void)commitPrediction:(id)arg1;
 - (void)deactivateCandidate;
 - (void)dealloc;
@@ -61,6 +64,7 @@
 - (float)heightBeforeStateChangeForInterfaceOrientation:(int)arg1;
 - (float)heightForInterfaceOrientation:(int)arg1;
 - (unsigned int)indexForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)initCells;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)inputModeDidChange;
 - (id)labelTextForPrediction:(id)arg1 typedString:(id)arg2;

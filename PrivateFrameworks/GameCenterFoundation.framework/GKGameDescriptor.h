@@ -3,10 +3,10 @@
  */
 
 @interface GKGameDescriptor : GKInternalRepresentation {
-    NSNumber *_adamID;
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    NSNumber *_externalVersion;
+    NSNumber * _adamID;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    NSNumber * _externalVersion;
 }
 
 @property (nonatomic, retain) NSNumber *adamID;

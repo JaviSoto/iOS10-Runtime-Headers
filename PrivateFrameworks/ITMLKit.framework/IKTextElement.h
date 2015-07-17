@@ -3,10 +3,9 @@
  */
 
 @interface IKTextElement : IKViewElement {
-    IKViewElementFactory *_elementFactory;
-    NSMutableArray *_textBadges;
-    IKTextParser *_textParser;
-    unsigned int _textStyle;
+    NSMutableArray * _textBadges;
+    IKTextParser * _textParser;
+    unsigned int  _textStyle;
 }
 
 @property (nonatomic, readonly) unsigned int alignment;

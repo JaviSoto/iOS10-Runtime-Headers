@@ -3,11 +3,11 @@
  */
 
 @interface CPHighlighter : NSObject {
-    CPZone *boundingZone;
-    struct CGColor { } *color;
-    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; union { unsigned char x_12_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_12_1_2; void*x_12_1_3; long doublex_12_1_4; void*x_12_1_5; bycopy unsigned int x_12_1_6/* : ? */; void*x_12_1_7; void*x_12_1_8; BOOL x_12_1_9; void*x_12_1_10; } *x12; union { unsigned char x_13_1_1; void*x_13_1_2; void*x_13_1_3; long doublex_13_1_4; void*x_13_1_5; bycopy unsigned int x_13_1_6/* : ? */; void*x_13_1_7; void*x_13_1_8; BOOL x_13_1_9; void*x_13_1_10; } *x13; struct CGColor {} *x14; struct CPPDFStyle {} *x15; } *highlightedStyle;
-    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; union { unsigned char x_12_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_12_1_2; void*x_12_1_3; long doublex_12_1_4; void*x_12_1_5; bycopy unsigned int x_12_1_6/* : ? */; void*x_12_1_7; void*x_12_1_8; BOOL x_12_1_9; void*x_12_1_10; } *x12; union { unsigned char x_13_1_1; void*x_13_1_2; void*x_13_1_3; long doublex_13_1_4; void*x_13_1_5; bycopy unsigned int x_13_1_6/* : ? */; void*x_13_1_7; void*x_13_1_8; BOOL x_13_1_9; void*x_13_1_10; } *x13; struct CGColor {} *x14; struct CPPDFStyle {} *x15; } *style;
-    CPTextLine *textLine;
+    CPZone * boundingZone;
+    struct CGColor { } * color;
+    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; union { unsigned char x_12_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_12_1_2; void*x_12_1_3; long doublex_12_1_4; void*x_12_1_5; bycopy unsigned int x_12_1_6/* : ? */; void*x_12_1_7; void*x_12_1_8; BOOL x_12_1_9; void*x_12_1_10; } *x12; union { unsigned char x_13_1_1; void*x_13_1_2; void*x_13_1_3; long doublex_13_1_4; void*x_13_1_5; bycopy unsigned int x_13_1_6/* : ? */; void*x_13_1_7; void*x_13_1_8; BOOL x_13_1_9; void*x_13_1_10; } *x13; struct CGColor {} *x14; struct CPPDFStyle {} *x15; } * highlightedStyle;
+    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; union { unsigned char x_12_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_12_1_2; void*x_12_1_3; long doublex_12_1_4; void*x_12_1_5; bycopy unsigned int x_12_1_6/* : ? */; void*x_12_1_7; void*x_12_1_8; BOOL x_12_1_9; void*x_12_1_10; } *x12; union { unsigned char x_13_1_1; void*x_13_1_2; void*x_13_1_3; long doublex_13_1_4; void*x_13_1_5; bycopy unsigned int x_13_1_6/* : ? */; void*x_13_1_7; void*x_13_1_8; BOOL x_13_1_9; void*x_13_1_10; } *x13; struct CGColor {} *x14; struct CPPDFStyle {} *x15; } * style;
+    CPTextLine * textLine;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*color;

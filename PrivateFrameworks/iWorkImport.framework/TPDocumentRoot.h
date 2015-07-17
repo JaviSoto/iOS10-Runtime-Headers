@@ -3,49 +3,49 @@
  */
 
 @interface TPDocumentRoot : TSADocumentRoot <TSCEResolverContainer, TSDInfoUUIDPathPrefixComponentsProvider, TSDThumbnailProducer, TSTResolverContainerNameProvider, TSWPChangeSessionManager, TSWPChangeVisibility, TSWPDrawableOLC, TSWPStorageParent> {
-    TSWPChangeSession *_activeChangeSession;
-    TSWPStorage *_bodyStorage;
-    float _bottomMargin;
-    NSMutableArray *_changeSessionHistory;
-    BOOL _changeTrackingEnabled;
-    BOOL _changeTrackingPaused;
-    NSMutableDictionary *_chartsUIState;
-    NSArray *_citationRecords;
-    float _currentThumbnailContainerWidth;
-    TPDrawablesZOrder *_drawablesZOrder;
-    TPFloatingDrawables *_floatingDrawables;
-    float _footerMargin;
-    float _headerMargin;
-    struct __CFLocale { } *_hyphenationLocale;
-    TPInteractiveCanvasController *_interactiveCanvasController;
-    BOOL _layoutBodyVertically;
-    float _leftMargin;
-    TSWPChangeSession *_mostRecentChangeSession;
-    BOOL _needsInitialization;
-    BOOL _newDocument;
-    NSArray *_obsoleteTOCStyles;
-    unsigned int _orientation;
-    TPPageLayoutNotifier *_pageLayoutNotifier;
-    float _pageScale;
+    TSWPChangeSession * _activeChangeSession;
+    TSWPStorage * _bodyStorage;
+    float  _bottomMargin;
+    NSMutableArray * _changeSessionHistory;
+    BOOL  _changeTrackingEnabled;
+    BOOL  _changeTrackingPaused;
+    NSMutableDictionary * _chartsUIState;
+    NSArray * _citationRecords;
+    float  _currentThumbnailContainerWidth;
+    TPDrawablesZOrder * _drawablesZOrder;
+    TPFloatingDrawables * _floatingDrawables;
+    float  _footerMargin;
+    float  _headerMargin;
+    struct __CFLocale { } * _hyphenationLocale;
+    TPInteractiveCanvasController * _interactiveCanvasController;
+    BOOL  _layoutBodyVertically;
+    float  _leftMargin;
+    TSWPChangeSession * _mostRecentChangeSession;
+    BOOL  _needsInitialization;
+    BOOL  _newDocument;
+    NSArray * _obsoleteTOCStyles;
+    unsigned int  _orientation;
+    TPPageLayoutNotifier * _pageLayoutNotifier;
+    float  _pageScale;
     struct CGSize { 
         float width; 
         float height; 
-    } _pageSize;
-    TPPaginatedPageController *_paginatedPageController;
-    NSString *_paperID;
-    NSString *_printerID;
-    float _rightMargin;
-    TPDocumentSettings *_settings;
-    BOOL _shouldUniquifyTableNames;
-    TSSStylesheet *_stylesheet;
-    NSMutableDictionary *_tableInfosWithUniqueNames;
-    unsigned int _tableNameCounter;
-    TPTheme *_theme;
-    TSDThumbnailController *_thumbnailController;
-    TPTOCController *_tocController;
-    float _topMargin;
-    BOOL _usesSingleHeaderFooter;
-    BOOL initiallyShowRuler;
+    }  _pageSize;
+    TPPaginatedPageController * _paginatedPageController;
+    NSString * _paperID;
+    NSString * _printerID;
+    float  _rightMargin;
+    TPDocumentSettings * _settings;
+    BOOL  _shouldUniquifyTableNames;
+    TSSStylesheet * _stylesheet;
+    NSMutableDictionary * _tableInfosWithUniqueNames;
+    unsigned int  _tableNameCounter;
+    TPTheme * _theme;
+    TSDThumbnailController * _thumbnailController;
+    TPTOCController * _tocController;
+    float  _topMargin;
+    BOOL  _usesSingleHeaderFooter;
+    BOOL  initiallyShowRuler;
 }
 
 @property (nonatomic, retain) TSWPChangeSession *activeChangeSession;
@@ -96,7 +96,6 @@
 + (struct CGSize { float x1; float x2; })pageSizeFromPaperSize:(struct CGSize { float x1; float x2; })arg1 pageScale:(float)arg2 orientation:(unsigned int)arg3;
 + (struct CGSize { float x1; float x2; })previewImageSizeForType:(unsigned int)arg1;
 
-- (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
 - (id)activeChangeSession;
 - (unsigned int)applicationType;
@@ -168,6 +167,7 @@
 - (id)p_realTOCEntryStyleFromFakeTOCEntryStyle:(id)arg1 context:(id)arg2;
 - (void)p_uniquifyTableNames;
 - (void)p_upgradeBodyTOC;
+- (void)p_upgradeTOCModelForUnity20;
 - (void)p_upgradeTOCStyles;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageBoundsWithinMargins;
 - (void)pageCountDidChangeForPageController:(id)arg1;

@@ -2,54 +2,54 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDayOccurrenceView : UIView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
-    BOOL _allDay;
-    BOOL _allDayDrawingStyle;
-    float _bottomPinningProximity;
-    unsigned int _bottomPinningState;
-    float _cappedColorBarHeight;
-    UIColor *_color;
-    EKDayOccurrenceContentView *_content;
-    BOOL _declined;
-    id _delegate;
-    BOOL _dimmed;
-    BOOL _drawsResizeHandles;
-    UIView *_endResizeHandle;
-    UIImageView *_eventBackgroundView;
-    BOOL _hideBackgroundImage;
-    BOOL _hideText;
-    BOOL _isSelectedCopyView;
+@interface EKDayOccurrenceView : UIVisualEffectView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
+    BOOL  _allDay;
+    BOOL  _allDayDrawingStyle;
+    float  _bottomPinningProximity;
+    unsigned int  _bottomPinningState;
+    float  _cappedColorBarHeight;
+    UIColor * _color;
+    EKDayOccurrenceContentView * _content;
+    BOOL  _declined;
+    id  _delegate;
+    BOOL  _dimmed;
+    BOOL  _drawsResizeHandles;
+    UIView * _endResizeHandle;
+    UIImageView * _eventBackgroundView;
+    BOOL  _hideBackgroundImage;
+    BOOL  _hideText;
+    BOOL  _isSelectedCopyView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _margin;
-    BOOL _needsBackgroundImageUpdate;
-    BOOL _needsContentCalc;
-    BOOL _needsReply;
-    EKEvent *_occurrence;
-    int _occurrenceBackgroundStyle;
-    unsigned int _offsetContentForLandscape;
-    float _originalXBeforeOffset;
+    }  _margin;
+    BOOL  _needsBackgroundImageUpdate;
+    BOOL  _needsContentCalc;
+    BOOL  _needsReply;
+    EKEvent * _occurrence;
+    int  _occurrenceBackgroundStyle;
+    unsigned int  _offsetContentForLandscape;
+    float  _originalXBeforeOffset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _padding;
-    UIView *_pinFadeView;
-    BOOL _reduceLayoutProcessingForAnimation;
-    BOOL _selected;
-    EKDayOccurrenceView *_selectedCopy;
-    BOOL _showsTravelTime;
-    UIView *_startResizeHandle;
-    BOOL _tentative;
-    unsigned int _touchKeptInsideOccurrence;
-    UIImageView *_travelBackgroundView;
-    double _travelTime;
-    EKDayOccurrenceTravelTimeView *_travelTimeContentView;
-    float _travelTimeSubviewHeightInPoints;
+    }  _padding;
+    UIView * _pinFadeView;
+    BOOL  _reduceLayoutProcessingForAnimation;
+    BOOL  _selected;
+    EKDayOccurrenceView * _selectedCopy;
+    BOOL  _showsTravelTime;
+    UIView * _startResizeHandle;
+    BOOL  _tentative;
+    unsigned int  _touchKeptInsideOccurrence;
+    UIImageView * _travelBackgroundView;
+    double  _travelTime;
+    EKDayOccurrenceTravelTimeView * _travelTimeContentView;
+    float  _travelTimeSubviewHeightInPoints;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -59,7 +59,7 @@
             float width; 
             float height; 
         } size; 
-    } _unpinnedEventBackgroundFrame;
+    }  _unpinnedEventBackgroundFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -69,9 +69,9 @@
             float width; 
             float height; 
         } size; 
-    } _unpinnedTravelBackgroundFrame;
-    float _visibleHeight;
-    BOOL _visibleHeightLocked;
+    }  _unpinnedTravelBackgroundFrame;
+    float  _visibleHeight;
+    BOOL  _visibleHeightLocked;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;
@@ -91,6 +91,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hideBackgroundImage;
 @property (nonatomic) BOOL hideText;
+@property (nonatomic, readonly) BOOL isPinned;
 @property (nonatomic) BOOL isSelectedCopyView;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margin;
@@ -115,14 +116,11 @@
 @property (nonatomic) BOOL usesSmallText;
 @property (nonatomic, readonly) BOOL visibleHeightLocked;
 
-+ (id)_adjustedOccurrenceColorForDarkBackground:(id)arg1 opaque:(BOOL)arg2;
-+ (id)_adjustedStripeColorForDarkBackground:(id)arg1;
 + (id)_cachedImageForCalendarColor:(id)arg1 selected:(BOOL)arg2 declined:(BOOL)arg3 cancelled:(BOOL)arg4 tentative:(BOOL)arg5 needsReply:(BOOL)arg6 colorBarStyle:(int)arg7 dayViewBackgroundStyle:(int)arg8;
 + (void)_clearViewCache;
 + (id)_color:(id)arg1 lightenedToPercentage:(float)arg2 withFinalAlpha:(float)arg3;
 + (id)_imageForBarColor:(id)arg1 backgroundColor:(id)arg2 colorBarStyle:(int)arg3;
 + (id)_imageForBarColor:(id)arg1 backgroundColor:(id)arg2 stripeColor:(id)arg3 stripedImageAlpha:(float)arg4 colorBarStyle:(int)arg5;
-+ (id)_lightColorForColor:(id)arg1 opaque:(BOOL)arg2;
 + (id)_lightStripeColorForColor:(id)arg1;
 + (id)_viewCache;
 + (float)barToBarGapWidth;
@@ -150,7 +148,6 @@
 - (void)_removeTravelTimeSubviews;
 - (void)_resetContentViewPosition;
 - (BOOL)_shouldShowTimeString;
-- (id)_timedEventBackgroundColor;
 - (void)_updateColors;
 - (void)_updateResizeHandleLocations;
 - (float)_verticalContentInset;
@@ -181,6 +178,7 @@
 - (BOOL)isCancelled;
 - (BOOL)isDeclined;
 - (BOOL)isFacebook;
+- (BOOL)isPinned;
 - (BOOL)isSelectedCopyView;
 - (BOOL)isTentative;
 - (void)layoutSubviews;

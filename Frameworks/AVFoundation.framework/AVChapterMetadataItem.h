@@ -3,7 +3,7 @@
  */
 
 @interface AVChapterMetadataItem : AVMetadataItem {
-    AVChapterMetadataItemInternal *_privChapter;
+    AVChapterMetadataItemInternal * _privChapter;
 }
 
 - (void)_addFigAssetNotifications;

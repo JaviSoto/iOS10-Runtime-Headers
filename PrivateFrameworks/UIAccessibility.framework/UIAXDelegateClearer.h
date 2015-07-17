@@ -3,9 +3,9 @@
  */
 
 @interface UIAXDelegateClearer : NSObject {
-    SEL clearMethod;
-    id delegate;
-    id delegatee;
+    SEL  clearMethod;
+    id  delegate;
+    id  delegatee;
 }
 
 @property (nonatomic) SEL clearMethod;

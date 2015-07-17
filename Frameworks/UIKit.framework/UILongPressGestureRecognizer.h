@@ -2,53 +2,69 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UILongPressGestureRecognizer : UIGestureRecognizer {
-    NSMutableSet *_activeTouches;
-    float _allowableMovement;
-    int _buttonType;
-    unsigned int _cancelPastAllowableMovement;
-    id _enoughTimeElapsed;
-    unsigned int _gotEnoughTaps;
-    unsigned int _gotTooMany;
-    unsigned int _gotTouchEnd;
-    id _imp;
-    double _minimumPressDuration;
-    unsigned int _numberOfTouchesRequired;
+@interface UILongPressGestureRecognizer : UIGestureRecognizer <UITapRecognizerDelegate> {
+    NSMutableSet * _activeTouches;
+    float  _allowableMovement;
+    unsigned int  _allowsDynamicTouchesList;
+    int  _buttonType;
+    unsigned int  _cancelPastAllowableMovement;
+    UIDelayedAction * _enoughTimeElapsed;
+    unsigned int  _gotEnoughTaps;
+    unsigned int  _gotTooMany;
+    unsigned int  _gotTouchEnd;
+    UITapRecognizer * _imp;
+    double  _minimumPressDuration;
+    unsigned int  _numberOfTouchesRequired;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPointScreen;
-    id _tooMuchTimeElapsed;
-    NSArray *_touches;
+    }  _startPointScreen;
+    UIDelayedAction * _tooMuchTimeElapsed;
+    NSArray * _touches;
 }
 
 @property (setter=_setButtonType:, nonatomic) int _buttonType;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } _centroidScreen;
 @property (nonatomic) float allowableMovement;
 @property (nonatomic) BOOL cancelPastAllowableMovement;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centroid;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) double delay;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) double minimumPressDuration;
 @property (nonatomic) unsigned int numberOfTapsRequired;
 @property (nonatomic) unsigned int numberOfTouchesRequired;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
-@property (nonatomic, readonly, retain) NSArray *touches;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *touches;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void).cxx_destruct;
+- (float)_allowableSeparation;
+- (BOOL)_allowsDynamicTouchesList;
 - (int)_buttonType;
+- (struct CGPoint { float x1; float x2; })_centroidInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_centroidScreen;
+- (void)_changeTouchesListTo:(id)arg1;
 - (void)_interactionsEndedWithValidTouches:(BOOL)arg1;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_resetGestureRecognizer;
+- (void)_setAllowableSeparation:(float)arg1;
+- (void)_setAllowsDynamicTouchesList:(BOOL)arg1;
 - (void)_setButtonType:(int)arg1;
+- (BOOL)_shouldFailInResponseToPresses:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_shouldReceivePress:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_startPointInView:(id)arg1;
 - (void)_startTapFinishedTimer;
 - (float)_touchSloppinessFactor;
+- (struct CGPoint { float x1; float x2; })_translationInView:(id)arg1;
+- (BOOL)activeTouchesExceedAllowableSeparation;
 - (float)allowableMovement;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (BOOL)cancelPastAllowableMovement;
 - (struct CGPoint { float x1; float x2; })centroid;
-- (struct CGPoint { float x1; float x2; })centroidScreen;
 - (void)clearTimer;
-- (void)dealloc;
 - (double)delay;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enoughTimeElapsed:(id)arg1;
@@ -61,6 +77,10 @@
 - (unsigned int)numberOfTapsRequired;
 - (unsigned int)numberOfTouches;
 - (unsigned int)numberOfTouchesRequired;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)setAllowableMovement:(float)arg1;
 - (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
@@ -80,5 +100,9 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (BOOL)cam_isHoldingLongPress;
 
 @end

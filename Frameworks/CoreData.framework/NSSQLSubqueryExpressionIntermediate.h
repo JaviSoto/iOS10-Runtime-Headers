@@ -3,23 +3,23 @@
  */
 
 @interface NSSQLSubqueryExpressionIntermediate : NSSQLExpressionIntermediate {
-    NSSQLFetchIntermediate *_fetchIntermediate;
-    NSSQLEntity *_governingEntityForVariable;
-    BOOL _hasTrailingFunction;
-    BOOL _isCount;
-    NSMutableArray *_keypathsToPromote;
-    BOOL _onlyTrailIsCount;
-    NSString *_selectEntityAlias;
-    NSMutableString *_selectFromCorrelationTarget;
-    NSSQLEntity *_selectFromEntity;
-    BOOL _subqueryHasTruePredicate;
-    NSString *_targetAlias;
-    NSSQLColumn *_targetColumn;
-    NSExpression *_trailingKeypath;
-    BOOL _useDistinct;
-    NSString *_variableAlias;
-    NSSQLColumn *_variableColumn;
-    NSExpression *_variableExpression;
+    NSSQLFetchIntermediate * _fetchIntermediate;
+    NSSQLEntity * _governingEntityForVariable;
+    BOOL  _hasTrailingFunction;
+    BOOL  _isCount;
+    NSMutableArray * _keypathsToPromote;
+    BOOL  _onlyTrailIsCount;
+    NSString * _selectEntityAlias;
+    NSMutableString * _selectFromCorrelationTarget;
+    NSSQLEntity * _selectFromEntity;
+    BOOL  _subqueryHasTruePredicate;
+    NSString * _targetAlias;
+    NSSQLColumn * _targetColumn;
+    NSExpression * _trailingKeypath;
+    BOOL  _useDistinct;
+    NSString * _variableAlias;
+    NSSQLColumn * _variableColumn;
+    NSExpression * _variableExpression;
 }
 
 - (void)_createCollectionJoinsForFetchInContext:(id)arg1;

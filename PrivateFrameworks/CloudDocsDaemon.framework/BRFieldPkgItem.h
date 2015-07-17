@@ -7,15 +7,15 @@
         unsigned int mtime : 1; 
         unsigned int isExecutable : 1; 
         unsigned int isWritable : 1; 
-    } _has;
-    BOOL _isExecutable;
-    BOOL _isWritable;
-    long long _mtime;
-    NSString *_path;
-    NSData *_quarantineInfo;
-    NSData *_signature;
-    NSString *_symlinkContent;
-    int _type;
+    }  _has;
+    BOOL  _isExecutable;
+    BOOL  _isWritable;
+    long long  _mtime;
+    NSString * _path;
+    NSData * _quarantineInfo;
+    NSData * _signature;
+    NSString * _symlinkContent;
+    int  _type;
 }
 
 @property (nonatomic) BOOL hasIsExecutable;

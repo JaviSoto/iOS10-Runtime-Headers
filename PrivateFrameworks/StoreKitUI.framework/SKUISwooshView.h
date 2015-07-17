@@ -3,25 +3,25 @@
  */
 
 @interface SKUISwooshView : UIView {
-    UIView *_borderView;
-    UICollectionView *_collectionView;
+    UIView * _borderView;
+    UICollectionView * _collectionView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _collectionViewInsets;
+    }  _collectionViewInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UIButton *_seeAllButton;
-    BOOL _showsChevronForTitle;
-    SKUILinkButton *_titleButton;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
+    }  _contentInsets;
+    UIButton * _seeAllButton;
+    BOOL  _showsChevronForTitle;
+    SKUILinkButton * _titleButton;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, readonly) UIControl *chevronTitleControl;

@@ -3,10 +3,10 @@
  */
 
 @interface MPUSpringAnimationFactory : MPUAnimationFactory {
-    float _damping;
-    float _mass;
-    float _stiffness;
-    float _velocity;
+    float  _damping;
+    float  _mass;
+    float  _stiffness;
+    float  _velocity;
 }
 
 @property (nonatomic) float damping;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIRadioStationEntityValueProvider : NSObject <IKEntityValueProviding> {
-    RadioStation *_station;
+    RadioStation * _station;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface EKDayViewContentGeometryDelegate : NSObject <CUIKSingleDayTimelineGeometryDelegate> {
-    EKDayViewContent *_dayViewContent;
+    EKDayViewContent * _dayViewContent;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
+    }  _frame;
 }
 
 @property (nonatomic) EKDayViewContent *dayViewContent;

@@ -3,9 +3,9 @@
  */
 
 @interface MMCSDuetReporter : NSObject {
-    CDAttribute *_attribute;
-    NSObject *_value;
-    NSNumber *_xferID;
+    CDAttribute * _attribute;
+    NSObject * _value;
+    NSNumber * _xferID;
 }
 
 + (void)associateAttributeToBudgets:(id)arg1 withSession:(id)arg2;

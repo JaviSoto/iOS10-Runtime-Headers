@@ -3,14 +3,14 @@
  */
 
 @interface TIHandwritingStrokes : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _continuePreviousStroke;
+    BOOL  _continuePreviousStroke;
     struct vector<std::__1::vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> >, std::__1::allocator<std::__1::vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > > > { 
         struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__begin_; 
         struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__end_; 
         struct __compressed_pair<std::__1::vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > *, std::__1::allocator<std::__1::vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > > > { 
             struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__first_; 
         } __end_cap_; 
-    } _strokes;
+    }  _strokes;
 }
 
 + (BOOL)supportsSecureCoding;

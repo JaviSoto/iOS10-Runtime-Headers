@@ -3,7 +3,7 @@
  */
 
 @interface MPUTransportControlCenterButton : SBUIControlCenterButton <MPUTransportButton, SBUIControlCenterButtonDelegate> {
-    MPUTransportButtonEventHandler *_transportButtonEventHandler;
+    MPUTransportButtonEventHandler * _transportButtonEventHandler;
 }
 
 @property (nonatomic) BOOL adjustsImageWhenHighlighted;

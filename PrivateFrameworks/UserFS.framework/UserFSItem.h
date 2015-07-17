@@ -6,17 +6,17 @@
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
-    } _createdDate;
-    BOOL _isDirectory;
-    unsigned long long _length;
-    BOOL _locked;
+    }  _createdDate;
+    BOOL  _isDirectory;
+    unsigned long long  _length;
+    BOOL  _locked;
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
-    } _modifiedDate;
-    NSString *_name;
-    NSString *_path;
-    UserFSVolume *_volume;
+    }  _modifiedDate;
+    NSString * _name;
+    NSString * _path;
+    UserFSVolume * _volume;
 }
 
 @property (nonatomic) struct timespec { int x1; long x2; } createdDate;

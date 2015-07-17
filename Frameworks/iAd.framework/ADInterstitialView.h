@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _dismissButtonRect;
-    ADInterstitialAd *_interstitialAd;
+    }  _dismissButtonRect;
+    ADInterstitialAd * _interstitialAd;
 }
 
 @property (readonly, copy) NSString *debugDescription;

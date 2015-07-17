@@ -3,16 +3,17 @@
  */
 
 @interface TSPComponentWriter : NSObject {
-    NSHashTable *_analyzedCommandToModelReferences;
-    NSHashTable *_archivedObjects;
-    NSMapTable *_archivedObjectsDictionary;
-    TSPArchiverManager *_archiverManager;
-    NSHashTable *_commandToModelReferences;
-    TSPComponent *_component;
-    NSHashTable *_dataReferences;
-    <TSPComponentWriterDelegate> *_delegate;
-    NSObject<OS_dispatch_semaphore> *_delegateSemaphore;
-    NSHashTable *_externalReferences;
+    NSHashTable * _analyzedCommandToModelReferences;
+    NSHashTable * _archivedObjects;
+    NSMapTable * _archivedObjectsDictionary;
+    TSPArchiverManager * _archiverManager;
+    NSHashTable * _commandToModelReferences;
+    TSPComponent * _component;
+    TSPMutableComponentObjectUUIDMap * _componentObjectUUIDMap;
+    NSHashTable * _dataReferences;
+    <TSPComponentWriterDelegate> * _delegate;
+    NSObject<OS_dispatch_semaphore> * _delegateSemaphore;
+    NSHashTable * _externalReferences;
     struct { 
         unsigned int success : 1; 
         unsigned int isErrorRecoverable : 1; 
@@ -21,29 +22,28 @@
         unsigned int delegateRespondsToObjectBelongsToLinkedComponent : 1; 
         unsigned int delegateRespondsToExternalPackageDidWriteObject : 1; 
         unsigned int delegateRespondsToShouldDelayWritingObject : 1; 
-    } _flags;
-    NSObject<OS_dispatch_queue> *_globalConcurrentQueue;
-    NSHashTable *_indirectCommandToModelExternalReferences;
-    NSHashTable *_lazyReferences;
-    NSString *_locator;
-    int _mode;
-    NSHashTable *_newCommandToModelReferences;
+    }  _flags;
+    NSObject<OS_dispatch_queue> * _globalConcurrentQueue;
+    NSHashTable * _indirectCommandToModelExternalReferences;
+    NSHashTable * _lazyReferences;
+    NSString * _locator;
+    int  _mode;
+    NSHashTable * _newCommandToModelReferences;
     struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry> > { 
         struct ObjectStackEntry {} *__begin_; 
         struct ObjectStackEntry {} *__end_; 
         struct __compressed_pair<TSP::ObjectStackEntry *, std::__1::allocator<TSP::ObjectStackEntry> > { 
             struct ObjectStackEntry {} *__first_; 
         } __end_cap_; 
-    } _objectStack;
-    NSMutableDictionary *_objectUUIDToIdentifierDictionary;
-    unsigned char _packageIdentifier;
-    unsigned long long _readVersion;
-    TSPObject *_rootObject;
-    NSHashTable *_weakReferences;
-    <TSPComponentWriteChannel> *_writeChannel;
-    NSObject<OS_dispatch_group> *_writeGroup;
-    NSObject<OS_dispatch_queue> *_writeQueue;
-    unsigned long long _writeVersion;
+    }  _objectStack;
+    unsigned char  _packageIdentifier;
+    unsigned long long  _readVersion;
+    TSPObject * _rootObject;
+    NSHashTable * _weakReferences;
+    <TSPComponentWriteChannel> * _writeChannel;
+    NSObject<OS_dispatch_group> * _writeGroup;
+    NSObject<OS_dispatch_queue> * _writeQueue;
+    unsigned long long  _writeVersion;
 }
 
 @property (nonatomic, readonly) TSPComponent *component;

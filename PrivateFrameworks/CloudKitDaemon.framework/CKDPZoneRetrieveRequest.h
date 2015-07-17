@@ -3,7 +3,7 @@
  */
 
 @interface CKDPZoneRetrieveRequest : PBRequest <NSCopying> {
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL hasZoneIdentifier;

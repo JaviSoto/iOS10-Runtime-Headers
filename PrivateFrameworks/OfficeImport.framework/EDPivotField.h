@@ -3,16 +3,16 @@
  */
 
 @interface EDPivotField : NSObject {
-    int mAxis;
-    bool mCompact;
-    bool mDataField;
-    bool mInsertBlankRow;
-    unsigned long mNumFmtId;
-    bool mOutlineItems;
-    EDCollection *mPivotFieldItems;
-    bool mShowAllItems;
-    bool mShowDefaultSubTotal;
-    bool mSubtotalTop;
+    int  mAxis;
+    bool  mCompact;
+    bool  mDataField;
+    bool  mInsertBlankRow;
+    unsigned long  mNumFmtId;
+    bool  mOutlineItems;
+    EDCollection * mPivotFieldItems;
+    bool  mShowAllItems;
+    bool  mShowDefaultSubTotal;
+    bool  mSubtotalTop;
 }
 
 + (id)pivotField;
@@ -21,6 +21,7 @@
 - (bool)compact;
 - (bool)dataField;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (bool)insertBlankRow;
 - (unsigned long)numFmtId;

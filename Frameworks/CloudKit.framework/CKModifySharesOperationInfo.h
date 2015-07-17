@@ -3,8 +3,8 @@
  */
 
 @interface CKModifySharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_shareIDsToDelete;
-    NSArray *_sharesToSave;
+    NSArray * _shareIDsToDelete;
+    NSArray * _sharesToSave;
 }
 
 @property (nonatomic, retain) NSArray *shareIDsToDelete;

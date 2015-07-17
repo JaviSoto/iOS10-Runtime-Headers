@@ -3,17 +3,17 @@
  */
 
 @interface PLThumbFileManager : NSObject <PLThumbPersistenceManager> {
-    int _entryLength;
-    NSString *_filename;
-    int _format;
-    int _imageLength;
-    int _imageRowBytes;
-    NSString *_path;
-    BOOL _readOnly;
+    int  _entryLength;
+    NSString * _filename;
+    int  _format;
+    int  _imageLength;
+    int  _imageRowBytes;
+    NSString * _path;
+    BOOL  _readOnly;
     struct CGSize { 
         float width; 
         float height; 
-    } _thumbnailSize;
+    }  _thumbnailSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

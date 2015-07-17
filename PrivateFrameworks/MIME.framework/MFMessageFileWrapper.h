@@ -3,14 +3,14 @@
  */
 
 @interface MFMessageFileWrapper : NSObject {
-    NSMutableDictionary *_attributes;
-    NSData *_data;
-    NSString *_filename;
-    NSString *_linkDestination;
-    NSString *_path;
-    NSString *_preferredFilename;
-    int _type;
-    NSString *_url;
+    NSMutableDictionary * _attributes;
+    NSData * _data;
+    NSString * _filename;
+    NSString * _linkDestination;
+    NSString * _path;
+    NSString * _preferredFilename;
+    int  _type;
+    NSString * _url;
 }
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
@@ -24,6 +24,7 @@
 - (id)eventUniqueID;
 - (id)fileAttributes;
 - (id)fileProtection;
+- (unsigned int)fileSize;
 - (id)fileWrappers;
 - (id)filename;
 - (unsigned short)finderFlags;
@@ -62,17 +63,6 @@
 - (void)setURL:(id)arg1;
 - (id)symbolicLinkDestination;
 - (unsigned long)type;
-
-// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
-
-- (BOOL)_pathExtensionEquals:(id)arg1;
-- (BOOL)isDisplayableByWebKit;
-- (BOOL)isDisplayableImage;
-- (BOOL)isMedia;
-- (BOOL)isRFC822;
-- (BOOL)isZip;
-- (float)minimumZoomFontSize;
-- (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 

@@ -3,18 +3,18 @@
  */
 
 @interface CalDAVContainerSyncTaskGroup : CoreDAVContainerSyncTaskGroup {
-    <CalDAVCalendar> *_calendar;
-    NSDateComponents *_eventFilterEndDate;
-    NSDateComponents *_eventFilterStartDate;
-    BOOL _fallbackOnMultiGetError;
-    int _fetchingEtagState;
-    BOOL _getScheduleChanges;
-    BOOL _getScheduleTags;
-    BOOL _supportsExtendedCalendarQuery;
-    BOOL _syncEvents;
-    BOOL _syncTodos;
-    NSDateComponents *_todoFilterEndDate;
-    NSDateComponents *_todoFilterStartDate;
+    <CalDAVCalendar> * _calendar;
+    NSDateComponents * _eventFilterEndDate;
+    NSDateComponents * _eventFilterStartDate;
+    BOOL  _fallbackOnMultiGetError;
+    int  _fetchingEtagState;
+    BOOL  _getScheduleChanges;
+    BOOL  _getScheduleTags;
+    BOOL  _supportsExtendedCalendarQuery;
+    BOOL  _syncEvents;
+    BOOL  _syncTodos;
+    NSDateComponents * _todoFilterEndDate;
+    NSDateComponents * _todoFilterStartDate;
 }
 
 @property (nonatomic, retain) <CalDAVCalendar> *calendar;
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSDateComponents *todoFilterEndDate;
 @property (nonatomic, retain) NSDateComponents *todoFilterStartDate;
 
+- (void).cxx_destruct;
 - (BOOL)_shouldFetchEventsForState:(int)arg1;
 - (BOOL)_shouldFetchTodosForState:(int)arg1;
 - (void)applyAdditionalPropertiesFromPostTask:(id)arg1;
@@ -40,7 +41,6 @@
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
 - (id)copyPutTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
 - (id)dataContentType;
-- (void)dealloc;
 - (id)eventFilterEndDate;
 - (id)eventFilterStartDate;
 - (BOOL)fallbackOnMultiGetError;

@@ -3,11 +3,11 @@
  */
 
 @interface CPFontInfo : NSObject <CPDisposable> {
-    const char *dataPtr;
-    struct __CFData { } *fontData;
-    unsigned int fontDataLength;
-    unsigned int offset;
-    BOOL valid;
+    const char * dataPtr;
+    struct __CFData { } * fontData;
+    unsigned int  fontDataLength;
+    unsigned int  offset;
+    BOOL  valid;
 }
 
 - (void)dealloc;

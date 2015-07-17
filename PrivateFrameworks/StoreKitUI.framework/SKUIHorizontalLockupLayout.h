@@ -3,16 +3,16 @@
  */
 
 @interface SKUIHorizontalLockupLayout : NSObject {
-    NSMutableArray *_columns;
-    float _imageMarginRight;
+    NSMutableArray * _columns;
+    float  _imageMarginRight;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _metadataColumnEdgeInsets;
-    float _metadataColumnMinHeight;
-    float _tallestNonMetadataColumnHeight;
+    }  _metadataColumnEdgeInsets;
+    float  _metadataColumnMinHeight;
+    float  _tallestNonMetadataColumnHeight;
 }
 
 @property (nonatomic, readonly) NSArray *columns;

@@ -3,17 +3,17 @@
  */
 
 @interface SKUIVideoImageDataConsumer : SKUIImageDataConsumer {
-    unsigned int _allowedOrientations;
-    UIColor *_backgroundColor;
-    SKUIColorScheme *_colorScheme;
+    unsigned int  _allowedOrientations;
+    UIColor * _backgroundColor;
+    SKUIColorScheme * _colorScheme;
     struct CGSize { 
         float width; 
         float height; 
-    } _landscapeSize;
+    }  _landscapeSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _portraitSize;
+    }  _portraitSize;
 }
 
 @property (nonatomic) unsigned int allowedOrientations;

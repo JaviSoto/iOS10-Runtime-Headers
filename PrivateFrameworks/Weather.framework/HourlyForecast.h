@@ -3,12 +3,12 @@
  */
 
 @interface HourlyForecast : NSObject <NSCopying> {
-    int _conditionCode;
-    NSString *_detail;
-    unsigned int _eventType;
-    int _hourIndex;
-    float _percentPrecipitation;
-    NSString *_time;
+    int  _conditionCode;
+    NSString * _detail;
+    unsigned int  _eventType;
+    int  _hourIndex;
+    float  _percentPrecipitation;
+    NSString * _time;
 }
 
 @property (nonatomic) int conditionCode;
@@ -20,9 +20,9 @@
 
 + (int)TimeValueFromString:(id)arg1;
 
+- (void).cxx_destruct;
 - (int)conditionCode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)detail;
 - (unsigned int)eventType;

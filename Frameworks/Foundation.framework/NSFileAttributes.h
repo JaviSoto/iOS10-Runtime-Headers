@@ -11,10 +11,10 @@
             unsigned int creationDate : 1; 
             unsigned int reserved : 30; 
         } validFields; 
-    } catInfo;
-    NSMutableDictionary *dict;
-    NSDictionary *extendedAttrs;
-    int fileProtectionClass;
+    }  catInfo;
+    NSMutableDictionary * dict;
+    NSDictionary * extendedAttrs;
+    int  fileProtectionClass;
     struct stat { 
         int st_dev; 
         unsigned short st_mode; 
@@ -46,7 +46,7 @@
         unsigned int st_gen; 
         int st_lspare; 
         long long st_qspare[2]; 
-    } statInfo;
+    }  statInfo;
 }
 
 + (id)_attributesAtPath:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;

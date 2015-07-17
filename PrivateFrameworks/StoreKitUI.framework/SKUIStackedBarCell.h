@@ -3,10 +3,10 @@
  */
 
 @interface SKUIStackedBarCell : UIButton {
-    UIButton *_backButton;
-    BOOL _expanded;
-    UILabel *_expandedLabel;
-    UIView *_separator;
+    UIButton * _backButton;
+    BOOL  _expanded;
+    UILabel * _expandedLabel;
+    UIView * _separator;
 }
 
 @property (nonatomic, readonly) UIButton *backButton;

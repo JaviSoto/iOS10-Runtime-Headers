@@ -3,10 +3,10 @@
  */
 
 @interface ODIHierarchy : NSObject {
-    int mMaxMappableTreeDepth;
-    NSMutableDictionary *mNodeInfoMap;
-    ODIState *mState;
-    int mType;
+    int  mMaxMappableTreeDepth;
+    NSMutableDictionary * mNodeInfoMap;
+    ODIState * mState;
+    int  mType;
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;

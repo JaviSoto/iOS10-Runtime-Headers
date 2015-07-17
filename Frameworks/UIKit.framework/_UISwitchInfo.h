@@ -8,17 +8,17 @@
         unsigned int pressed : 1; 
         unsigned int useAlternateColors : 1; 
         unsigned int skipValueChangedAction : 1; 
-    } _switchFlags;
-    int imageState;
-    UIImage *images;
-    UIView *leftEdgeView;
-    CALayer *maskLayer;
-    UIColor *onButtonColor;
-    float position;
-    UIView *rightEdgeView;
+    }  _switchFlags;
+    int  imageState;
+    UIImage * images;
+    UIView * leftEdgeView;
+    CALayer * maskLayer;
+    UIColor * onButtonColor;
+    float  position;
+    UIView * rightEdgeView;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 
 @end

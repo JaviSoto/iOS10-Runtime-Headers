@@ -3,15 +3,15 @@
  */
 
 @interface TSUZipEntry : NSObject {
-    unsigned int _CRC;
-    BOOL _compressed;
-    unsigned long long _compressedSize;
-    unsigned short _extraFieldsLength;
-    unsigned long _fileHeaderLength;
-    NSString *_name;
-    unsigned short _nameLength;
-    unsigned long long _offset;
-    unsigned long long _size;
+    unsigned int  _CRC;
+    BOOL  _compressed;
+    unsigned long long  _compressedSize;
+    unsigned short  _extraFieldsLength;
+    unsigned long  _fileHeaderLength;
+    NSString * _name;
+    unsigned short  _nameLength;
+    unsigned long long  _offset;
+    unsigned long long  _size;
 }
 
 @property (nonatomic) unsigned int CRC;

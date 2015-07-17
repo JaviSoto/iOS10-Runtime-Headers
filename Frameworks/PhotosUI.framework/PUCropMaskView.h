@@ -3,7 +3,7 @@
  */
 
 @interface PUCropMaskView : UIView {
-    UIView *_opaqueView;
+    UIView * _opaqueView;
 }
 
 @property (nonatomic, readonly) UIView *opaqueView;

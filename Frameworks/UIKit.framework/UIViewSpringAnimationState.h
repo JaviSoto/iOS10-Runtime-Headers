@@ -3,10 +3,10 @@
  */
 
 @interface UIViewSpringAnimationState : UIViewAnimationState {
-    float _damping;
-    float _mass;
-    float _stiffness;
-    float _velocity;
+    float  _damping;
+    float  _mass;
+    float  _stiffness;
+    float  _velocity;
 }
 
 + (id)defaultSpringAnimationForKey:(id)arg1 mass:(float)arg2 stiffness:(float)arg3 damping:(float)arg4 velocity:(float)arg5;

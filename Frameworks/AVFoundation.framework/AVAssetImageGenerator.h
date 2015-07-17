@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetImageGenerator : NSObject {
-    AVAssetImageGeneratorInternal *_priv;
+    AVAssetImageGeneratorInternal * _priv;
 }
 
 @property (nonatomic, copy) NSString *apertureMode;

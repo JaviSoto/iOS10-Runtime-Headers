@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSectionInfoListBBProvider : NSObject <BLTSectionInfoObserverDelegate, LSApplicationWorkspaceObserverProtocol> {
-    LSApplicationWorkspace *_appWorkspace;
-    <BLTSectionInfoListProviderDelegate> *_delegate;
-    BLTSectionInfoObserver *_observer;
-    NSObject<OS_dispatch_queue> *_queue;
+@interface BLTSectionInfoListBBProvider : NSObject <BLTSectionInfoListProvider, BLTSectionInfoObserverDelegate, LSApplicationWorkspaceObserverProtocol> {
+    LSApplicationWorkspace * _appWorkspace;
+    <BLTSectionInfoListProviderDelegate> * _delegate;
+    BLTSectionInfoObserver * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

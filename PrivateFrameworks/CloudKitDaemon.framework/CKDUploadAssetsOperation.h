@@ -3,17 +3,17 @@
  */
 
 @interface CKDUploadAssetsOperation : CKDDatabaseOperation {
-    NSMutableArray *_MMCSItemsToUpload;
-    NSArray *_assetsToUpload;
-    CKDCancelTokenGroup *_cancelTokens;
-    unsigned int _maxPackageUploadsPerBatch;
-    NSMutableArray *_openedPackages;
-    NSMutableArray *_packageManifests;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _uploadCompletionBlock;
-    id /* block */ _uploadPreparationBlock;
-    id /* block */ _uploadProgressBlock;
-    NSMapTable *_uploadTasksByPackages;
+    NSMutableArray * _MMCSItemsToUpload;
+    NSArray * _assetsToUpload;
+    CKDCancelTokenGroup * _cancelTokens;
+    unsigned int  _maxPackageUploadsPerBatch;
+    NSMutableArray * _openedPackages;
+    NSMutableArray * _packageManifests;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _uploadCompletionBlock;
+    id /* block */  _uploadPreparationBlock;
+    id /* block */  _uploadProgressBlock;
+    NSMapTable * _uploadTasksByPackages;
 }
 
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToUpload;
@@ -32,6 +32,9 @@
 - (id)MMCSItemsToUpload;
 - (void)_closeAllPackages;
 - (void)_closePackage:(id)arg1;
+- (void)_collectMetricsFromCompletedItemGroup:(id)arg1;
+- (void)_collectMetricsFromCompletedItemGroupSet:(id)arg1;
+- (void)_collectMetricsFromMMCSOperationMetrics:(id)arg1;
 - (void)_didFechUploadTokensForMMCSItems:(id)arg1 error:(id)arg2;
 - (void)_didMakeProgressForAsset:(id)arg1 progress:(double)arg2;
 - (void)_didMakeProgressForMMCSItem:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface QLGenericView : UIView {
-    UIView *_containerView;
-    NSError *_error;
-    UIImageView *_iconView;
-    UIButton *_showArchiveContentButton;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    <QLGenericViewDelegate> *delegate;
+    UIView * _containerView;
+    NSError * _error;
+    UIImageView * _iconView;
+    UIButton * _showArchiveContentButton;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    <QLGenericViewDelegate> * delegate;
 }
 
 @property (copy) NSAttributedString *attributedSubtitle;

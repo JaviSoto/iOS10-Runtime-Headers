@@ -3,7 +3,7 @@
  */
 
 @interface SUDeferredUIButton : UIButton <SUDeferredUIView> {
-    BOOL _deferredEnabled;
+    BOOL  _deferredEnabled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,10 +13,10 @@
             float width; 
             float height; 
         } size; 
-    } _deferredFrame;
-    NSMutableDictionary *_deferredImages;
-    NSMutableDictionary *_deferredTitles;
-    BOOL _isDeferringInterfaceUpdates;
+    }  _deferredFrame;
+    NSMutableDictionary * _deferredImages;
+    NSMutableDictionary * _deferredTitles;
+    BOOL  _isDeferringInterfaceUpdates;
 }
 
 @property (readonly, copy) NSString *debugDescription;

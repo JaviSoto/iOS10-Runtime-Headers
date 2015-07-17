@@ -3,17 +3,17 @@
  */
 
 @interface NMSyncDefaults : NSObject {
-    BOOL _assetSyncEnabled;
-    NSNumber *_assetSyncLimit;
-    unsigned int _assetSyncLimitType;
-    NSNumber *_assetSyncPlaylistPersistentID;
-    NSNumber *_lastFullySentAssetSyncPlaylistPersistentID;
-    NSNumber *_lastFullySentAssetSyncPlaylistVersion;
-    NSDate *_modificationDate;
-    BOOL _needsSync;
-    int _notifyToken;
-    NSNumber *_numberOfSyncedAssetSyncPlaylistSongs;
-    NSString *_pairingID;
+    BOOL  _assetSyncEnabled;
+    NSNumber * _assetSyncLimit;
+    unsigned int  _assetSyncLimitType;
+    NSNumber * _assetSyncPlaylistPersistentID;
+    NSNumber * _lastFullySentAssetSyncPlaylistPersistentID;
+    NSNumber * _lastFullySentAssetSyncPlaylistVersion;
+    NSDate * _modificationDate;
+    BOOL  _needsSync;
+    int  _notifyToken;
+    NSNumber * _numberOfSyncedAssetSyncPlaylistSongs;
+    NSString * _pairingID;
 }
 
 @property (getter=isAssetSyncEnabled, nonatomic) BOOL assetSyncEnabled;

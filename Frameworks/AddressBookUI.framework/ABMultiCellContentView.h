@@ -3,22 +3,22 @@
  */
 
 @interface ABMultiCellContentView : ABPersonCellContentView <ABResponderDelegate> {
-    int _abCellStyle;
-    BOOL _allowsEditing;
-    UITableViewCell *_cell;
-    BOOL _isEditing;
-    BOOL _isEmphasized;
-    BOOL _isHighlighted;
-    BOOL _isImportant;
-    UIView *_labelDivider;
-    BOOL _needsReload;
-    ABAbstractPropertyGroup *_pg;
-    id _pgInfo;
-    int _property;
-    BOOL _shouldIgnoreEndEditing;
-    UIView *_touchedView;
-    <ABMultiCellContentViewUpdateDelegate> *_updateDelegate;
-    BOOL _usesCustomPropertyCell;
+    int  _abCellStyle;
+    BOOL  _allowsEditing;
+    UITableViewCell * _cell;
+    BOOL  _isEditing;
+    BOOL  _isEmphasized;
+    BOOL  _isHighlighted;
+    BOOL  _isImportant;
+    UIView * _labelDivider;
+    BOOL  _needsReload;
+    ABAbstractPropertyGroup * _pg;
+    id  _pgInfo;
+    int  _property;
+    BOOL  _shouldIgnoreEndEditing;
+    UIView * _touchedView;
+    <ABMultiCellContentViewUpdateDelegate> * _updateDelegate;
+    BOOL  _usesCustomPropertyCell;
 }
 
 @property (nonatomic) int abCellStyle;

@@ -3,10 +3,10 @@
  */
 
 @interface BLRetouchLayer : NSObject {
-    int _brushType;
-    BOOL _enabled;
-    BLRetouchLayer *_layerBelow;
-    BLBaseLayerStack *_layerStack;
+    int  _brushType;
+    BOOL  _enabled;
+    BLRetouchLayer * _layerBelow;
+    BLBaseLayerStack * _layerStack;
 }
 
 @property (nonatomic) int brushType;

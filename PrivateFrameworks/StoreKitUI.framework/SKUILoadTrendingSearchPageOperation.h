@@ -3,9 +3,9 @@
  */
 
 @interface SKUILoadTrendingSearchPageOperation : NSOperation {
-    SKUIClientContext *_clientContext;
-    id /* block */ _outputBlock;
-    NSURL *_url;
+    SKUIClientContext * _clientContext;
+    id /* block */  _outputBlock;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSURL *URL;

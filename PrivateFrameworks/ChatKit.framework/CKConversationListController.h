@@ -2,28 +2,27 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKConversationListController : UIViewController <CKConversationResultsControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIToolbar *_buttonBar;
-    float _conversationCellHeight;
-    CKConversationList *_conversationList;
-    UIBarButtonItem *_currentEditButtonItem;
-    int _filterMode;
-    NSArray *_filteredContactsAndSMSConversations;
-    unsigned int _filteredConversationCount;
-    NSArray *_filteredJunkConversations;
-    NSArray *_frozenConversations;
-    BOOL _isInitialLoad;
-    BOOL _isShowingSwipeDeleteConfirmation;
-    unsigned int _isVisible;
-    CKMessagesController *_messagesController;
-    UIView *_noMessagesDialogView;
-    NSIndexPath *_previouslySelectedIndexPath;
-    UISearchController *_searchController;
-    CKConversationSearchResultsController *_searchResultsController;
-    UITableView *_table;
-    CKScheduledUpdater *_updater;
-    unsigned int _willBeMarkedReadCount;
-    unsigned int _willRotate;
+@interface CKConversationListController : UITableViewController <CKConversationResultsControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+    float  _conversationCellHeight;
+    CKConversationList * _conversationList;
+    UIBarButtonItem * _currentEditButtonItem;
+    int  _filterMode;
+    NSArray * _filteredContactsAndSMSConversations;
+    unsigned int  _filteredConversationCount;
+    NSArray * _filteredJunkConversations;
+    NSArray * _frozenConversations;
+    BOOL  _isInitialLoad;
+    BOOL  _isShowingSwipeDeleteConfirmation;
+    unsigned int  _isVisible;
+    CKMessagesController * _messagesController;
+    UIView * _noMessagesDialogView;
+    NSIndexPath * _previouslySelectedIndexPath;
+    UISearchController * _searchController;
+    CKConversationSearchResultsController * _searchResultsController;
+    UITableView * _table;
+    CKScheduledUpdater * _updater;
+    unsigned int  _willBeMarkedReadCount;
+    unsigned int  _willRotate;
 }
 
 @property (nonatomic) float conversationCellHeight;
@@ -53,6 +52,7 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_conversationDisplayNameChangedNotification:(id)arg1;
 - (void)_conversationFilteringStateChangedNotification:(id)arg1;
+- (void)_conversationIsFilteredChangedNotification:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
@@ -63,10 +63,10 @@
 - (unsigned int)_indexOfConverationClosestToDeletedIndex:(unsigned int)arg1;
 - (unsigned int)_indexOfDefaultConversation;
 - (void)_keyboardWillShowOrHide:(id)arg1;
+- (id)_lastFewUnreadConversations;
 - (void)_selectConversationAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (BOOL)_shouldKeepSelection;
 - (void)_updateFilteredConversationLists;
-- (void)_updateSearchTableInsets;
 - (void)_updateToolbarItems;
 - (void)accessibilityLargeTextDidChange;
 - (id)activeConversations;
@@ -82,7 +82,6 @@
 - (void)dealloc;
 - (void)deleteButtonTappedForIndexPath:(id)arg1;
 - (void)didDismissSearchController:(id)arg1;
-- (void)didPresentSearchController:(id)arg1;
 - (void)editButtonTapped:(id)arg1;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
 - (int)filterMode;
@@ -92,6 +91,7 @@
 - (id)frozenConversations;
 - (id)init;
 - (id)inputAccessoryView;
+- (void)invalidateCellLayout;
 - (BOOL)isShowingSwipeDeleteConfirmation;
 - (void)loadView;
 - (void)markAsReadButtonTapped:(id)arg1;
@@ -107,6 +107,7 @@
 - (void)scrollToTop;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
 - (id)searchController;
 - (id)searchResultsController;
 - (id)searcher:(id)arg1 conversationForChatGUID:(id)arg2;

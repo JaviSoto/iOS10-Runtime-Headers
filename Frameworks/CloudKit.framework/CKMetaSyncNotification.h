@@ -3,7 +3,7 @@
  */
 
 @interface CKMetaSyncNotification : CKNotification <NSSecureCoding> {
-    int _databaseScope;
+    int  _databaseScope;
 }
 
 @property (nonatomic) int databaseScope;

@@ -3,7 +3,7 @@
  */
 
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
-    id _implementation;
+    id  _implementation;
 }
 
 @property (nonatomic, readonly) UIView *backgroundView;

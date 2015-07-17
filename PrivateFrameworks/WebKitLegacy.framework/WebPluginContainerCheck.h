@@ -3,14 +3,14 @@
  */
 
 @interface WebPluginContainerCheck : NSObject {
-    id _contextInfo;
-    <WebPluginContainerCheckController> *_controller;
-    BOOL _done;
-    WebPolicyDecisionListener *_listener;
-    NSURLRequest *_request;
-    id _resultObject;
-    SEL _resultSelector;
-    NSString *_target;
+    id  _contextInfo;
+    <WebPluginContainerCheckController> * _controller;
+    BOOL  _done;
+    WebPolicyDecisionListener * _listener;
+    NSURLRequest * _request;
+    id  _resultObject;
+    SEL  _resultSelector;
+    NSString * _target;
 }
 
 + (id)checkWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5 contextInfo:(id)arg6;

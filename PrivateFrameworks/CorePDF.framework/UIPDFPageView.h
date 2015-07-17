@@ -3,22 +3,22 @@
  */
 
 @interface UIPDFPageView : UIView {
-    UIActivityIndicatorView *_activityIndicator;
-    BOOL _allowHighlighting;
-    BOOL _allowSelection;
-    BOOL _allowTwoFingerSelection;
-    BOOL _animateSetFrame;
-    UIPDFAnnotationController *_annotationController;
-    UIImage *_backgroundImage;
-    BOOL _backgroundIsFullResolution;
-    BOOL _backgroundIsScheduled;
-    unsigned int _backgroundScheduleCount;
-    CALayer *_backingLayer;
-    UIColor *_backingLayerColor;
-    BOOL _boundsChanged;
-    float _cachedScale;
-    UIPDFPageContentDelegate *_contentDelegate;
-    CALayer *_contentLayer;
+    UIActivityIndicatorView * _activityIndicator;
+    BOOL  _allowHighlighting;
+    BOOL  _allowSelection;
+    BOOL  _allowTwoFingerSelection;
+    BOOL  _animateSetFrame;
+    UIPDFAnnotationController * _annotationController;
+    UIImage * _backgroundImage;
+    BOOL  _backgroundIsFullResolution;
+    BOOL  _backgroundIsScheduled;
+    unsigned int  _backgroundScheduleCount;
+    CALayer * _backingLayer;
+    UIColor * _backingLayerColor;
+    BOOL  _boundsChanged;
+    float  _cachedScale;
+    UIPDFPageContentDelegate * _contentDelegate;
+    CALayer * _contentLayer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,16 +28,16 @@
             float width; 
             float height; 
         } size; 
-    } _cropBox;
-    <NSObject><UIPDFPageViewDelegate> *_delegate;
-    UIPDFDocument *_document;
-    CALayer *_effectsLayer;
-    struct CGColor { } *_highLightColor;
-    NSMutableArray *_highlights;
-    int _lock;
-    float _margin;
-    UIPDFPage *_page;
-    unsigned int _pageIndex;
+    }  _cropBox;
+    <NSObject><UIPDFPageViewDelegate> * _delegate;
+    UIPDFDocument * _document;
+    CALayer * _effectsLayer;
+    struct CGColor { } * _highLightColor;
+    NSMutableArray * _highlights;
+    int  _lock;
+    float  _margin;
+    UIPDFPage * _page;
+    unsigned int  _pageIndex;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -45,17 +45,17 @@
         float d; 
         float tx; 
         float ty; 
-    } _pageToViewTransform;
-    BOOL _scalePageOnDraw;
-    UIPDFSearchHighlightsController *_searchHighlightController;
-    NSMutableArray *_searchHiglightLayers;
-    UIPDFSelectionController *_selectionController;
-    BOOL _showActivityIndicator;
-    BOOL _showLinkAnnotationUnderline;
-    BOOL _showTextAnnotations;
-    UIPDFViewTouchHandler *_touchHandler;
-    BOOL _useBackingLayer;
-    BOOL _useTiledContent;
+    }  _pageToViewTransform;
+    BOOL  _scalePageOnDraw;
+    UIPDFSearchHighlightsController * _searchHighlightController;
+    NSMutableArray * _searchHiglightLayers;
+    UIPDFSelectionController * _selectionController;
+    BOOL  _showActivityIndicator;
+    BOOL  _showLinkAnnotationUnderline;
+    BOOL  _showTextAnnotations;
+    UIPDFViewTouchHandler * _touchHandler;
+    BOOL  _useBackingLayer;
+    BOOL  _useTiledContent;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -63,8 +63,8 @@
         float d; 
         float tx; 
         float ty; 
-    } _viewToPageTransform;
-    BOOL showAnnotations;
+    }  _viewToPageTransform;
+    BOOL  showAnnotations;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -74,7 +74,7 @@
             float width; 
             float height; 
         } size; 
-    } zoomRect;
+    }  zoomRect;
 }
 
 @property (nonatomic) BOOL allowHighlighting;

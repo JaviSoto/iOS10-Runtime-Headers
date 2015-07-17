@@ -3,7 +3,7 @@
  */
 
 @interface MSCLTokenTextViewTableAssistant : NSObject <MSCLTagListDelegate, NSLayoutManagerDelegate, UITextViewDelegate> {
-    MSCLConfiguration *_configuration;
+    MSCLConfiguration * _configuration;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,11 +13,11 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    UIViewController *_parentViewController;
-    UITableView *_tableView;
-    MSCLTagListViewController *_tagCompletionViewController;
-    NSMutableOrderedSet *_textViews;
+    }  _keyboardFrame;
+    UIViewController * _parentViewController;
+    UITableView * _tableView;
+    MSCLTagListViewController * _tagCompletionViewController;
+    NSMutableOrderedSet * _textViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

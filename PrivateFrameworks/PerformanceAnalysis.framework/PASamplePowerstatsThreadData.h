@@ -3,7 +3,7 @@
  */
 
 @interface PASamplePowerstatsThreadData : PASampleThreadData {
-    unsigned int _powerstatsFlags;
+    unsigned int  _powerstatsFlags;
 }
 
 - (BOOL)hasValidPowerstatsFlags;

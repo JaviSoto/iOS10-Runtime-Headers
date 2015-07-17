@@ -3,18 +3,18 @@
  */
 
 @interface ATDeviceSyncSessionSyncTask : ATDeviceSyncSessionTask {
-    BOOL _addedTransportUpgradeException;
-    unsigned long long _clientCurrentItemCount;
-    unsigned long long _clientTotalItemCount;
-    <ATSyncClient> *_pluginClient;
-    unsigned long long _serverCurrentItemCount;
-    unsigned long long _serverTotalItemCount;
-    ATDeviceSettings *_settings;
-    BOOL _startAssetTaskWhenFinished;
-    NSMutableArray *_streamReaders;
-    unsigned int _syncIterationCount;
-    double _taskStartTime;
-    unsigned long long _totalItemsSyncedCount;
+    BOOL  _addedTransportUpgradeException;
+    unsigned long long  _clientCurrentItemCount;
+    unsigned long long  _clientTotalItemCount;
+    <ATSyncClient> * _pluginClient;
+    unsigned long long  _serverCurrentItemCount;
+    unsigned long long  _serverTotalItemCount;
+    ATDeviceSettings * _settings;
+    BOOL  _startAssetTaskWhenFinished;
+    NSMutableArray * _streamReaders;
+    unsigned int  _syncIterationCount;
+    double  _taskStartTime;
+    unsigned long long  _totalItemsSyncedCount;
 }
 
 @property (nonatomic) BOOL startAssetTaskWhenFinished;

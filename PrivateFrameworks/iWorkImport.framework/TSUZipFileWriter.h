@@ -3,7 +3,7 @@
  */
 
 @interface TSUZipFileWriter : TSUZipWriter {
-    <TSURandomWriteChannel> *_writeChannel;
+    <TSURandomWriteChannel> * _writeChannel;
 }
 
 + (void)zipDirectoryAtURL:(id)arg1 customDirectoryFilename:(id)arg2 toURL:(id)arg3 queue:(id)arg4 progressHandler:(id /* block */)arg5;

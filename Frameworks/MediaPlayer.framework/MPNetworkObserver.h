@@ -3,8 +3,8 @@
  */
 
 @interface MPNetworkObserver : NSObject {
-    int _networkUsageCount;
-    NSObject<OS_dispatch_queue> *_networkUsageQueue;
+    int  _networkUsageCount;
+    NSObject<OS_dispatch_queue> * _networkUsageQueue;
 }
 
 @property (nonatomic, readonly) BOOL isCellularNetworkingAllowed;

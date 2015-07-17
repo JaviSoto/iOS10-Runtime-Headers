@@ -3,17 +3,17 @@
  */
 
 @interface MKTiltGestureRecognizer : UIPanGestureRecognizer {
-    float _initialDistance;
+    float  _initialDistance;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialTouch1Point;
+    }  _initialTouch1Point;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialTouch2Point;
-    UITouch *_touch1;
-    UITouch *_touch2;
+    }  _initialTouch2Point;
+    UITouch * _touch1;
+    UITouch * _touch2;
 }
 
 - (void).cxx_destruct;

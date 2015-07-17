@@ -3,10 +3,10 @@
  */
 
 @interface GEOVoltaireAddressCorrectionProvider : NSObject <PBRequesterDelegate> {
-    id /* block */ _errorHandler;
-    id /* block */ _initFinishedHandler;
-    GEORequester *_requester;
-    id /* block */ _updateFinishedHandler;
+    id /* block */  _errorHandler;
+    id /* block */  _initFinishedHandler;
+    GEORequester * _requester;
+    id /* block */  _updateFinishedHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

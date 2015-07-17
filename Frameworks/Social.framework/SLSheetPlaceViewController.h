@@ -3,21 +3,21 @@
  */
 
 @interface SLSheetPlaceViewController : UIViewController <MKMapViewDelegate, SLPlaceDataSourceDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
-    ACAccount *_account;
-    NSBundle *_effectiveBundle;
-    float _mapHeight;
-    MKMapView *_mapView;
-    NSObject<SLPlaceDataSource> *_placeDataSource;
-    SLSheetPlaceSearchController *_placeSearchController;
-    NSArray *_places;
-    BOOL _searchAnimationComplete;
-    UISearchBar *_searchBar;
-    UISearchDisplayController *_searchDisplayController;
-    BOOL _searchEnabled;
-    BOOL _searchPresented;
-    SLPlace *_selectedPlace;
-    NSObject<SLSheetPlaceViewControllerDelegate> *_selectionDelegate;
-    UITableView *_tableView;
+    ACAccount * _account;
+    NSBundle * _effectiveBundle;
+    float  _mapHeight;
+    MKMapView * _mapView;
+    NSObject<SLPlaceDataSource> * _placeDataSource;
+    SLSheetPlaceSearchController * _placeSearchController;
+    NSArray * _places;
+    BOOL  _searchAnimationComplete;
+    UISearchBar * _searchBar;
+    UISearchDisplayController * _searchDisplayController;
+    BOOL  _searchEnabled;
+    BOOL  _searchPresented;
+    SLPlace * _selectedPlace;
+    NSObject<SLSheetPlaceViewControllerDelegate> * _selectionDelegate;
+    UITableView * _tableView;
 }
 
 @property (retain) ACAccount *account;

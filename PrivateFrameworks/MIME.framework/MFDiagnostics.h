@@ -3,7 +3,7 @@
  */
 
 @interface MFDiagnostics : NSObject <MFDiagnosticsGenerator> {
-    MFWeakSet *_diagnosticsGenerators;
+    MFWeakSet * _diagnosticsGenerators;
 }
 
 @property (readonly, copy) NSString *debugDescription;

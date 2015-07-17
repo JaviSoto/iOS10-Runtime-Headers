@@ -3,15 +3,15 @@
  */
 
 @interface OISFUFileDataRepresentation : OISFUDataRepresentation {
-    OISFUCryptoKey *mCryptoKey;
-    BOOL mDeleteFileWhenDone;
-    long long mFileLength;
-    unsigned long mFileType;
-    BOOL mHasFileAttributes;
-    <SFUInputStream> *mInputStream;
-    NSString *mPath;
-    long long mPlaintextDataLength;
-    int mSharedFd;
+    OISFUCryptoKey * mCryptoKey;
+    BOOL  mDeleteFileWhenDone;
+    long long  mFileLength;
+    unsigned long  mFileType;
+    BOOL  mHasFileAttributes;
+    <SFUInputStream> * mInputStream;
+    NSString * mPath;
+    long long  mPlaintextDataLength;
+    int  mSharedFd;
 }
 
 - (long long)dataLength;

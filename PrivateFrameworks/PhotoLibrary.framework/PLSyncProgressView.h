@@ -3,13 +3,13 @@
  */
 
 @interface PLSyncProgressView : UIView {
-    NSNumberFormatter *_countFormatter;
-    unsigned int _currentCount;
-    UILabel *_infoLabel;
-    int _progressType;
-    UIActivityIndicatorView *_spinner;
-    int _style;
-    unsigned int _totalCount;
+    NSNumberFormatter * _countFormatter;
+    unsigned int  _currentCount;
+    UILabel * _infoLabel;
+    int  _progressType;
+    UIActivityIndicatorView * _spinner;
+    int  _style;
+    unsigned int  _totalCount;
 }
 
 @property (nonatomic, readonly) unsigned int currentCount;

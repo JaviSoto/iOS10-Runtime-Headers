@@ -3,26 +3,26 @@
  */
 
 @interface KNShow : TSPObject {
-    BOOL mAutomaticallyPlaysUponOpen;
-    double mAutoplayBuildDelay;
-    double mAutoplayTransitionDelay;
-    BOOL mIdleTimerActive;
-    double mIdleTimerDelay;
-    BOOL mLocalizeDocument;
-    BOOL mLoopPresentation;
-    int mMode;
-    BOOL mNeedsToUpdateThumbnails;
-    KNRecording *mRecording;
+    BOOL  mAutomaticallyPlaysUponOpen;
+    double  mAutoplayBuildDelay;
+    double  mAutoplayTransitionDelay;
+    BOOL  mIdleTimerActive;
+    double  mIdleTimerDelay;
+    BOOL  mLocalizeDocument;
+    BOOL  mLoopPresentation;
+    int  mMode;
+    BOOL  mNeedsToUpdateThumbnails;
+    KNRecording * mRecording;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
-    KNSlideTree *mSlideTree;
-    KNSoundtrack *mSoundtrack;
-    TSSStylesheet *mStylesheet;
-    KNTheme *mTheme;
-    KNUIState *mUIState;
-    BOOL mWasImportedAsPreUFF;
+    }  mSize;
+    KNSlideTree * mSlideTree;
+    KNSoundtrack * mSoundtrack;
+    TSSStylesheet * mStylesheet;
+    KNTheme * mTheme;
+    KNUIState * mUIState;
+    BOOL  mWasImportedAsPreUFF;
 }
 
 @property (nonatomic, readonly) BOOL allSlidesSkipped;

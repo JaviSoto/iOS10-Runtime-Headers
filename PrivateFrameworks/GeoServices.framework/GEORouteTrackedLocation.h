@@ -6,21 +6,21 @@
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _lastGoodMatchCoordinate;
-    NSDate *_lastTimeInTunnel;
-    double _newStepDistanceTraveled;
+    }  _lastGoodMatchCoordinate;
+    NSDate * _lastTimeInTunnel;
+    double  _newStepDistanceTraveled;
     struct { 
         double latitude; 
         double longitude; 
-    } _newStepLastGeoCoord;
+    }  _newStepLastGeoCoord;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _newStepLastRouteCoord;
-    unsigned int _newStepProgressions;
-    GEOLocation *_rawLocation;
-    GEOComposedRoute *_route;
-    GEORouteMatch *_routeMatch;
+    }  _newStepLastRouteCoord;
+    unsigned int  _newStepProgressions;
+    GEOLocation * _rawLocation;
+    GEOComposedRoute * _route;
+    GEORouteMatch * _routeMatch;
 }
 
 @property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; } lastGoodMatchCoordinate;

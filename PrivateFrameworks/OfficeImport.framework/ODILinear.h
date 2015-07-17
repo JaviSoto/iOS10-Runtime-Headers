@@ -3,16 +3,16 @@
  */
 
 @interface ODILinear : NSObject {
-    float mConnectorWidth;
-    BOOL mIsHorizontal;
-    BOOL mIsTextCenteredHorizontally;
-    BOOL mIsTextCenteredVertically;
-    unsigned int mMaxPointCount;
-    float mPadding;
-    float mPointHeight;
-    ODIState *mState;
-    BOOL mStretch;
-    BOOL mWithConnectors;
+    float  mConnectorWidth;
+    BOOL  mIsHorizontal;
+    BOOL  mIsTextCenteredHorizontally;
+    BOOL  mIsTextCenteredVertically;
+    unsigned int  mMaxPointCount;
+    float  mPadding;
+    float  mPointHeight;
+    ODIState * mState;
+    BOOL  mStretch;
+    BOOL  mWithConnectors;
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;

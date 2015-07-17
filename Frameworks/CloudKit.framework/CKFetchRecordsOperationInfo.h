@@ -3,17 +3,17 @@
  */
 
 @interface CKFetchRecordsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int _URLOptions;
-    NSSet *_assetFieldNamesToPublishURLs;
-    NSArray *_desiredKeys;
-    NSDictionary *_desiredPackageFileIndices;
-    BOOL _isFetchCurrentUserOperation;
-    NSArray *_recordIDs;
-    NSDictionary *_recordIDsToVersionETags;
-    unsigned int _requestedTTL;
-    BOOL _shouldFetchAssetContent;
-    NSDictionary *_signaturesOfAssetsByRecordIDAndKey;
-    NSDictionary *_webSharingIdentityDataByRecordID;
+    unsigned int  _URLOptions;
+    NSSet * _assetFieldNamesToPublishURLs;
+    NSArray * _desiredKeys;
+    NSDictionary * _desiredPackageFileIndices;
+    BOOL  _isFetchCurrentUserOperation;
+    NSArray * _recordIDs;
+    NSDictionary * _recordIDsToVersionETags;
+    unsigned int  _requestedTTL;
+    BOOL  _shouldFetchAssetContent;
+    NSDictionary * _signaturesOfAssetsByRecordIDAndKey;
+    NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
 @property (nonatomic) unsigned int URLOptions;

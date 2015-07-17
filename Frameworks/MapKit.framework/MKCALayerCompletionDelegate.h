@@ -3,7 +3,7 @@
  */
 
 @interface MKCALayerCompletionDelegate : NSObject {
-    id /* block */ _completion;
+    id /* block */  _completion;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

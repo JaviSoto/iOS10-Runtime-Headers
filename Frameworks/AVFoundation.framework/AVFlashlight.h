@@ -3,14 +3,13 @@
  */
 
 @interface AVFlashlight : NSObject {
-    AVFlashlightInternal *_internal;
+    AVFlashlightInternal * _internal;
 }
 
 @property (getter=isAvailable, nonatomic, readonly) BOOL available;
 @property (nonatomic, readonly) float flashlightLevel;
 @property (getter=isOverheated, nonatomic, readonly) BOOL overheated;
 
-+ (id)alloc;
 + (BOOL)hasFlashlight;
 + (void)initialize;
 

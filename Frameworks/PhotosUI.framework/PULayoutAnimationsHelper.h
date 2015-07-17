@@ -3,8 +3,8 @@
  */
 
 @interface PULayoutAnimationsHelper : NSObject {
-    PUSectionedGridLayout *_layout;
-    BOOL _shouldAnimateTemporaryImageView;
+    PUSectionedGridLayout * _layout;
+    BOOL  _shouldAnimateTemporaryImageView;
 }
 
 @property (nonatomic, readonly) PUSectionedGridLayout *layout;

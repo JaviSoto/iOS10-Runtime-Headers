@@ -3,17 +3,17 @@
  */
 
 @interface HDCodableActivityCache : PBCodable <NSCopying> {
-    long long _activeEnergyBurnedAnchor;
-    double _activeHours;
-    long long _activeHoursAnchor;
-    double _briskMinutes;
-    long long _briskMinutesAnchor;
-    long long _cacheIndex;
-    long long _calorieGoalAnchor;
-    double _energyBurned;
-    double _energyBurnedGoal;
-    long long _energyBurnedGoalAnchor;
-    double _energyBurnedGoalDate;
+    long long  _activeEnergyBurnedAnchor;
+    double  _activeHours;
+    long long  _activeHoursAnchor;
+    double  _briskMinutes;
+    long long  _briskMinutesAnchor;
+    long long  _cacheIndex;
+    long long  _calorieGoalAnchor;
+    double  _energyBurned;
+    double  _energyBurnedGoal;
+    long long  _energyBurnedGoalAnchor;
+    double  _energyBurnedGoalDate;
     struct { 
         unsigned int activeEnergyBurnedAnchor : 1; 
         unsigned int activeHours : 1; 
@@ -31,13 +31,13 @@
         unsigned int walkingAndRunningDistance : 1; 
         unsigned int walkingAndRunningDistanceAnchor : 1; 
         unsigned int workoutAnchor : 1; 
-    } _has;
-    HDCodableSample *_sample;
-    long long _stepCount;
-    long long _stepCountAnchor;
-    double _walkingAndRunningDistance;
-    long long _walkingAndRunningDistanceAnchor;
-    long long _workoutAnchor;
+    }  _has;
+    HDCodableSample * _sample;
+    long long  _stepCount;
+    long long  _stepCountAnchor;
+    double  _walkingAndRunningDistance;
+    long long  _walkingAndRunningDistanceAnchor;
+    long long  _workoutAnchor;
 }
 
 @property (nonatomic) long long activeEnergyBurnedAnchor;

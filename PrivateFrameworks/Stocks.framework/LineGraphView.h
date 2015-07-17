@@ -3,10 +3,10 @@
  */
 
 @interface LineGraphView : UIView {
-    UIImage *_lineImage;
-    BOOL _showingTintedLine;
-    UIView *_tintedLineClipView;
-    TintedView *_tintedLineView;
+    UIImage * _lineImage;
+    BOOL  _showingTintedLine;
+    UIView * _tintedLineClipView;
+    TintedView * _tintedLineView;
 }
 
 - (void).cxx_destruct;

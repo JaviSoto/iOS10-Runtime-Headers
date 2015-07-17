@@ -3,9 +3,9 @@
  */
 
 @interface SSVFamilyAccountPair : NSObject {
-    unsigned long long _downloaderAccountIdentifier;
-    unsigned long long _familyIdentifier;
-    unsigned long long _purchaserAccountIdentifier;
+    unsigned long long  _downloaderAccountIdentifier;
+    unsigned long long  _familyIdentifier;
+    unsigned long long  _purchaserAccountIdentifier;
 }
 
 @property (nonatomic, readonly) unsigned long long downloaderAccountIdentifier;

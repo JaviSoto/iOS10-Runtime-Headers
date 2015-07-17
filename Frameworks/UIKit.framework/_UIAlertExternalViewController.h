@@ -3,10 +3,10 @@
  */
 
 @interface _UIAlertExternalViewController : UIViewController {
-    NSMutableArray *_buttons;
-    UILabel *_messageLabel;
-    UIAlertView *_representedAlert;
-    UILabel *_titleLabel;
+    NSMutableArray * _buttons;
+    UILabel * _messageLabel;
+    UIAlertView * _representedAlert;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) UIAlertView *representedAlert;
@@ -18,13 +18,14 @@
 - (id)_messageAttributedStringSmallText;
 - (id)_messageAttributes;
 - (id)_messageAttributesSmallText;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (id)_textAttributes;
 - (id)_titleAttributedString;
 - (id)_titleAttributes;
 - (void)dealloc;
 - (id)init;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)representedAlert;
 - (void)setRepresentedAlert:(id)arg1;
 - (void)viewDidLayoutSubviews;

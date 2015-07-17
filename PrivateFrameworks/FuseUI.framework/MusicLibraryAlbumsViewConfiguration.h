@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryAlbumsViewConfiguration : MusicLibraryAdaptiveViewConfiguration {
-    MusicLibraryAlbumsCollectionViewConfiguration *_collectionViewConfiguration;
-    BOOL _shouldForwardBasePropertyValues;
+    MusicLibraryAlbumsCollectionViewConfiguration * _collectionViewConfiguration;
+    BOOL  _shouldForwardBasePropertyValues;
 }
 
 - (void).cxx_destruct;

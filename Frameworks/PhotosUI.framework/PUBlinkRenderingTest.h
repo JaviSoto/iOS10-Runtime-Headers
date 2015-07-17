@@ -3,8 +3,8 @@
  */
 
 @interface PUBlinkRenderingTest : UIViewController {
-    PLManagedAsset *_asset;
-    UIImageView *_imageView;
+    PLManagedAsset * _asset;
+    UIImageView * _imageView;
 }
 
 @property (nonatomic, retain) PLManagedAsset *asset;

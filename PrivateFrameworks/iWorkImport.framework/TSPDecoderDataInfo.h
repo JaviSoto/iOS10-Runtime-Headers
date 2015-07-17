@@ -3,10 +3,10 @@
  */
 
 @interface TSPDecoderDataInfo : NSObject <TSPDecoderDataInfo> {
-    TSPDigest *_digest;
-    NSString *_externalFilePath;
-    long long _identifier;
-    NSString *_preferredFilename;
+    TSPDigest * _digest;
+    NSString * _externalFilePath;
+    long long  _identifier;
+    NSString * _preferredFilename;
 }
 
 @property (readonly, copy) NSString *debugDescription;

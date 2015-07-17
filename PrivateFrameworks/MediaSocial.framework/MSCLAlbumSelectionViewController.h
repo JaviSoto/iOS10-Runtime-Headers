@@ -3,13 +3,13 @@
  */
 
 @interface MSCLAlbumSelectionViewController : SKUIViewController <SKUIArtworkRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_albumItems;
-    BOOL _loading;
-    UIImage *_placeholderImage;
-    SKUIResourceLoader *_resourceLoader;
-    int _selectedItemIndex;
-    id /* block */ _selectionBlock;
-    UITableView *_tableView;
+    NSArray * _albumItems;
+    BOOL  _loading;
+    UIImage * _placeholderImage;
+    SKUIResourceLoader * _resourceLoader;
+    int  _selectedItemIndex;
+    id /* block */  _selectionBlock;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, copy) NSArray *albumItems;

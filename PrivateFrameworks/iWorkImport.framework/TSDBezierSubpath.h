@@ -3,8 +3,8 @@
  */
 
 @interface TSDBezierSubpath : NSObject {
-    BOOL mClosed;
-    NSMutableArray *mNodes;
+    BOOL  mClosed;
+    NSMutableArray * mNodes;
 }
 
 @property (nonatomic, readonly) BOOL allNodesSelected;

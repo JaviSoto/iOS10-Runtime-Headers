@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDMultiLocalizedString : PBCodable <NSCopying> {
-    NSMutableArray *_localizedStrings;
+    NSMutableArray * _localizedStrings;
 }
 
 @property (nonatomic, retain) NSMutableArray *localizedStrings;

@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutDurationFilter : _HKFilter {
-    double _duration;
-    unsigned int _operatorType;
+    double  _duration;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) double duration;

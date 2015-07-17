@@ -3,8 +3,8 @@
  */
 
 @interface PKInAppPaymentEntitlement : NSObject {
-    BOOL _ignoreMerchantIdentifiers;
-    NSArray *_merchantIdentifiers;
+    BOOL  _ignoreMerchantIdentifiers;
+    NSArray * _merchantIdentifiers;
 }
 
 @property (nonatomic, readonly) BOOL hasMerchantIdentifiers;

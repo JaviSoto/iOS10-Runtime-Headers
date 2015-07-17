@@ -3,15 +3,18 @@
  */
 
 @interface HMDCharacteristicRequest : NSObject {
-    HMDCharacteristic *_characteristic;
+    HMDCharacteristic * _characteristic;
+    id  _previousValue;
 }
 
 @property (nonatomic, readonly) HMDCharacteristic *characteristic;
+@property (nonatomic, readonly) id previousValue;
 
 + (id)requestWithCharacteristic:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)characteristic;
 - (id)initWithCharacteristic:(id)arg1;
+- (id)previousValue;
 
 @end

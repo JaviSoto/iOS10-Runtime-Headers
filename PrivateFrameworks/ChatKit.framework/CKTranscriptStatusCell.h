@@ -3,8 +3,8 @@
  */
 
 @interface CKTranscriptStatusCell : CKTranscriptLabelCell {
-    float _prevBalloonWidth;
-    UIButton *_statusButton;
+    float  _prevBalloonWidth;
+    UIButton * _statusButton;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedButtonText;

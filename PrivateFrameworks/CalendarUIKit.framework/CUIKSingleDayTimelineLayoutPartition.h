@@ -3,10 +3,10 @@
  */
 
 @interface CUIKSingleDayTimelineLayoutPartition : NSObject {
-    float _initialLeftBoundary;
-    float _rightBoundary;
-    NSMutableArray *_stackOfOccurrences;
-    double _topBoundaryTime;
+    float  _initialLeftBoundary;
+    float  _rightBoundary;
+    NSMutableArray * _stackOfOccurrences;
+    double  _topBoundaryTime;
 }
 
 @property (nonatomic, readonly) float freeSpaceLeftBoundary;

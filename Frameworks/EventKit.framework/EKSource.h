@@ -3,11 +3,11 @@
  */
 
 @interface EKSource : EKObject {
-    EKAvailabilityCache *_availabilityCache;
-    NSString *_cachedHost;
-    NSSet *_cachedOwnerAddresses;
-    int _cachedPort;
-    NSDate *_timeOfLastExternalIdentificationCache;
+    EKAvailabilityCache * _availabilityCache;
+    NSString * _cachedHost;
+    NSSet * _cachedOwnerAddresses;
+    int  _cachedPort;
+    NSDate * _timeOfLastExternalIdentificationCache;
 }
 
 @property (nonatomic, readonly) NSSet *allCalendars;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSSet *cachedOwnerAddresses;
 @property (nonatomic) int cachedPort;
 @property (nonatomic, readonly) NSSet *calendars;
-@property (nonatomic, readonly) EKSourceConstraints *constraints;
+@property (nonatomic, readonly) CDBSourceConstraints *constraints;
 @property (nonatomic, copy) NSNumber *defaultAlarmOffset;
 @property (nonatomic, readonly) int displayOrderForNewCalendar;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;

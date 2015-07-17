@@ -3,16 +3,16 @@
  */
 
 @interface WKRotatingPopover : NSObject <UIPopoverControllerDelegate> {
-    <WKRotatingPopoverDelegate> *_dismissionDelegate;
-    BOOL _isRotating;
+    <WKRotatingPopoverDelegate> * _dismissionDelegate;
+    BOOL  _isRotating;
     struct RetainPtr<UIPopoverController> { 
         void *m_ptr; 
-    } _popoverController;
+    }  _popoverController;
     struct CGPoint { 
         float x; 
         float y; 
-    } _presentationPoint;
-    WKContentView *_view;
+    }  _presentationPoint;
+    WKContentView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;

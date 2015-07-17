@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarHideAnimationParameters : UIStatusBarAnimationParameters {
-    float _additionalSlideHeight;
-    int _hideAnimation;
+    float  _additionalSlideHeight;
+    int  _hideAnimation;
 }
 
 @property (nonatomic) float additionalSlideHeight;

@@ -3,10 +3,10 @@
  */
 
 @interface MPUExtrasNavigationController : UINavigationController <IKAppNavigationController, MPUExtrasLoadingViewDelegate> {
-    BOOL _clearStackOnPush;
-    MPUExtrasContext *_context;
-    UIViewController *_emptyViewController;
-    MPUExtrasLoadingView *_loadingView;
+    BOOL  _clearStackOnPush;
+    MPUExtrasContext * _context;
+    UIViewController * _emptyViewController;
+    MPUExtrasLoadingView * _loadingView;
 }
 
 @property (nonatomic, readonly) MPUExtrasContext *context;

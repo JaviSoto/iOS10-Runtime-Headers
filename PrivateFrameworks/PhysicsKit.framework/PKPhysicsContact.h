@@ -3,19 +3,19 @@
  */
 
 @interface PKPhysicsContact : NSObject {
-    PKPhysicsBody *_bodyA;
-    PKPhysicsBody *_bodyB;
+    PKPhysicsBody * _bodyA;
+    PKPhysicsBody * _bodyB;
     struct CGVector { 
         float dx; 
         float dy; 
-    } _contactNormal;
+    }  _contactNormal;
     struct CGPoint { 
         float x; 
         float y; 
-    } _contactPoint;
-    BOOL _didBegin;
-    BOOL _didEnd;
-    float _impulse;
+    }  _contactPoint;
+    BOOL  _didBegin;
+    BOOL  _didEnd;
+    float  _impulse;
 }
 
 @property (nonatomic, readonly) PKPhysicsBody *bodyA;
@@ -26,7 +26,6 @@
 @property BOOL didBegin;
 @property BOOL didEnd;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)bodyA;
 - (id)bodyB;

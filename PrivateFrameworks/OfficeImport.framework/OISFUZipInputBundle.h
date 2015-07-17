@@ -3,7 +3,7 @@
  */
 
 @interface OISFUZipInputBundle : NSObject <SFUInputBundle> {
-    OISFUZipArchive *_zipArchive;
+    OISFUZipArchive * _zipArchive;
 }
 
 @property (readonly, copy) NSString *debugDescription;

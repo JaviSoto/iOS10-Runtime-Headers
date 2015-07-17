@@ -3,11 +3,11 @@
  */
 
 @interface SKUIContentRatingArtworkResourceLoader : NSObject <SKUIArtworkRequestDelegate> {
-    NSMapTable *_artworkRequestIDs;
-    SKUIImageDataConsumer *_imageDataConsumer;
-    SKUIResourceLoader *_loader;
-    NSHashTable *_observers;
-    UIImage *_placeholderImage;
+    NSMapTable * _artworkRequestIDs;
+    SKUIImageDataConsumer * _imageDataConsumer;
+    SKUIResourceLoader * _loader;
+    NSHashTable * _observers;
+    UIImage * _placeholderImage;
 }
 
 @property (nonatomic, readonly) SKUIResourceLoader *artworkLoader;

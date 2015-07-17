@@ -11,12 +11,14 @@
 - (BOOL)isSecureTextEntry;
 - (int)keyboardAppearance;
 - (int)keyboardType;
+- (NSString *)recentInputIdentifier;
 - (int)returnKeyType;
 - (void)setAutocapitalizationType:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
+- (void)setRecentInputIdentifier:(NSString *)arg1;
 - (void)setReturnKeyType:(int)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSpellCheckingType:(int)arg1;

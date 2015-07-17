@@ -3,10 +3,10 @@
  */
 
 @interface CKDPShareAcceptRequest : PBRequest <NSCopying> {
-    NSString *_etag;
-    CKDPProtectionInfo *_publicParticipantPublicKey;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
+    NSString * _etag;
+    CKDPProtectionInfo * _publicParticipantPublicKey;
+    CKDPProtectionInfo * _selfAddedPcs;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic, retain) NSString *etag;

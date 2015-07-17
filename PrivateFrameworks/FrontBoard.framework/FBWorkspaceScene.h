@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWorkspaceScene : NSObject <FBSceneClient, FBWorkspaceServerSceneEventHandler> {
-    FBSSceneClientSettings *_clientSettings;
-    FBSDisplay *_display;
-    <FBSceneHost> *_host;
-    NSString *_identifier;
-    BOOL _invalidated;
-    BOOL _sentCreationEvent;
-    FBSSceneSettings *_settings;
-    FBWorkspace *_workspace;
-    NSObject<OS_dispatch_queue> *_workspaceQueue;
+@interface FBWorkspaceScene : NSObject <BSDescriptionProviding, FBSceneClient, FBWorkspaceServerSceneEventHandler> {
+    FBSSceneClientSettings * _clientSettings;
+    FBSDisplay * _display;
+    <FBSceneHost> * _host;
+    NSString * _identifier;
+    BOOL  _invalidated;
+    BOOL  _sentCreationEvent;
+    FBSSceneSettings * _settings;
+    FBWorkspace * _workspace;
+    NSObject<OS_dispatch_queue> * _workspaceQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,9 +25,8 @@
 @property (nonatomic, readonly, copy) FBSSceneSettings *settings;
 @property (readonly) Class superclass;
 
-- (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (id)_workspaceQueue;
-- (void)_workspaceQueue_dispatchClientBlockIfNecessary:(id /* block */)arg1;
+- (void)_workspaceQueue_dispatchClientBlockIfNecessary:(id /* block */)arg1 success:(BOOL)arg2;
 - (BOOL)_workspaceQueue_hasSentCreationEvent;
 - (void)_workspaceQueue_invalidate;
 - (id)_workspaceQueue_process;
@@ -39,19 +38,24 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)host;
+- (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 - (id)identifier;
-- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2 initialClientSettings:(id)arg3;
+- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2;
 - (void)invalidate;
 - (id)parentWorkspace;
-- (void)sceneAttachContext:(id)arg1;
-- (void)sceneDetachContext:(id)arg1;
+- (void)sceneAttachLayer:(id)arg1;
+- (void)sceneDetachLayer:(id)arg1;
 - (void)sceneDidReceiveActions:(id)arg1;
 - (void)sceneDidUpdateClientSettings:(id)arg1;
-- (void)sceneUpdateContext:(id)arg1;
+- (void)sceneUpdateLayer:(id)arg1;
 - (id)settings;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

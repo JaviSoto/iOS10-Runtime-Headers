@@ -3,10 +3,10 @@
  */
 
 @interface SKUIAccountButtonsViewController : UIViewController <UINavigationControllerDelegate> {
-    SKUIAccountButtonsView *_buttonsView;
-    SKUIClientContext *_clientContext;
-    <SKUIAccountButtonsDelegate> *_delegate;
-    SKUILink *_ecommerceLink;
+    SKUIAccountButtonsView * _buttonsView;
+    SKUIClientContext * _clientContext;
+    <SKUIAccountButtonsDelegate> * _delegate;
+    SKUILink * _ecommerceLink;
 }
 
 @property (nonatomic, retain) SKUILink *ECommerceLink;
@@ -36,7 +36,6 @@
 - (void)_termsAndConditionsButtonAction:(id)arg1;
 - (void)_usernameButtonAction:(id)arg1;
 - (void)_viewAppleID;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;

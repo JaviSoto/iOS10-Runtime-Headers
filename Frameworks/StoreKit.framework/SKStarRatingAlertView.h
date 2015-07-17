@@ -3,7 +3,7 @@
  */
 
 @interface SKStarRatingAlertView : UIAlertView {
-    SKStarRatingControl *_ratingControl;
+    SKStarRatingControl * _ratingControl;
 }
 
 @property (nonatomic) float rating;

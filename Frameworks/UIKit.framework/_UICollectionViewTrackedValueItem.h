@@ -3,8 +3,8 @@
  */
 
 @interface _UICollectionViewTrackedValueItem : NSObject {
-    double _timeStamp;
-    float _value;
+    double  _timeStamp;
+    float  _value;
 }
 
 @property (nonatomic) double timeStamp;

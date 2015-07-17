@@ -6,10 +6,10 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } anchor;
-    double maxFontLineHeight;
-    float maxFontSize;
-    BOOL metricInfoCalculated;
+    }  anchor;
+    double  maxFontLineHeight;
+    float  maxFontSize;
+    BOOL  metricInfoCalculated;
 }
 
 - (void)calculateMetrics;

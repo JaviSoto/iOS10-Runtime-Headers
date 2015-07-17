@@ -3,10 +3,10 @@
  */
 
 @interface _HKDelayedOperation : NSObject {
-    id /* block */ _block;
-    double _lastExecution;
-    int _pendingRunCount;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _block;
+    double  _lastExecution;
+    int  _pendingRunCount;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;

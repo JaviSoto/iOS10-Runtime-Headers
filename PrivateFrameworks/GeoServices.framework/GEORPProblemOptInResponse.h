@@ -5,8 +5,8 @@
 @interface GEORPProblemOptInResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int statusCode : 1; 
-    } _has;
-    int _statusCode;
+    }  _has;
+    int  _statusCode;
 }
 
 @property (nonatomic) BOOL hasStatusCode;

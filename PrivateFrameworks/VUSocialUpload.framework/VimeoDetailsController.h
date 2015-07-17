@@ -3,17 +3,17 @@
  */
 
 @interface VimeoDetailsController : UITableViewController <UITextFieldDelegate> {
-    <VimeoComposeOptionViewDelegate> *_delegate;
-    UITableViewCell *_descriptionCell;
-    UITextView *_descriptionTextView;
-    NSIndexPath *_indexPathForPendingFirstResponder;
-    NSArray *_privacyLevels;
-    int _privacySetting;
-    NSMutableArray *_tags;
-    int _videoSize;
-    NSArray *_videoSizeFormatStrings;
-    NSArray *_videoSizeStrings;
-    NSMutableArray *_videoSizes;
+    <VimeoComposeOptionViewDelegate> * _delegate;
+    UITableViewCell * _descriptionCell;
+    UITextView * _descriptionTextView;
+    NSIndexPath * _indexPathForPendingFirstResponder;
+    NSArray * _privacyLevels;
+    int  _privacySetting;
+    NSMutableArray * _tags;
+    int  _videoSize;
+    NSArray * _videoSizeFormatStrings;
+    NSArray * _videoSizeStrings;
+    NSMutableArray * _videoSizes;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -53,7 +53,6 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tags;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidEndEditing:(id)arg1;

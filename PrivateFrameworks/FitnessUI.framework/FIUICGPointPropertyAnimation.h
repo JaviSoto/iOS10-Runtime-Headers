@@ -6,15 +6,15 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _currentValue;
+    }  _currentValue;
     struct CGPoint { 
         float x; 
         float y; 
-    } _endValue;
+    }  _endValue;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startValue;
+    }  _startValue;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentValue;

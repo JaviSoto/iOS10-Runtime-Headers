@@ -3,12 +3,12 @@
  */
 
 @interface SBManagerClient : NSObject <SBManagerClientInterface> {
-    int _clientType;
-    BOOL _connected;
-    <SBManagerClientDelegate> *_delegate;
-    struct dispatch_queue_s { } *_queue;
-    NSXPCConnection *_serverConnection;
-    BOOL _serverIsExiting;
+    int  _clientType;
+    BOOL  _connected;
+    <SBManagerClientDelegate> * _delegate;
+    struct dispatch_queue_s { } * _queue;
+    NSXPCConnection * _serverConnection;
+    BOOL  _serverIsExiting;
 }
 
 @property (nonatomic) int clientType;

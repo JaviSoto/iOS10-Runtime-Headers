@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentPassDetailActivationFooterView : UIView {
-    UIButton *_activationButton;
-    UILabel *_footerTextLabel;
+    UIButton * _activationButton;
+    UILabel * _footerTextLabel;
 }
 
 - (void)dealloc;

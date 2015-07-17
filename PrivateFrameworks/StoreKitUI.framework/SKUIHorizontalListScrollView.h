@@ -3,9 +3,9 @@
  */
 
 @interface SKUIHorizontalListScrollView : SKUIViewReuseView <SKUIViewElementView> {
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    UIScrollView *_scrollView;
-    NSMapTable *_viewElementViews;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    UIScrollView * _scrollView;
+    NSMapTable * _viewElementViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

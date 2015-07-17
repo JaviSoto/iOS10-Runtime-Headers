@@ -6,10 +6,10 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int status : 1; 
-    } _has;
-    NSString *_sessionUUID;
-    int _status;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _sessionUUID;
+    int  _status;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasSessionUUID;

@@ -3,11 +3,11 @@
  */
 
 @interface TSWPDrawableAttachment : TSWPAttachment {
-    TSDDrawableInfo *_drawableInfo;
-    float _hOffset;
-    int _hOffsetType;
-    float _vOffset;
-    int _vOffsetType;
+    TSDDrawableInfo * _drawableInfo;
+    float  _hOffset;
+    int  _hOffsetType;
+    float  _vOffset;
+    int  _vOffsetType;
 }
 
 @property (nonatomic, readonly) float descent;
@@ -31,7 +31,6 @@
 - (float)hOffset;
 - (int)hOffsetType;
 - (void)infoChanged;
-- (id)init;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 drawable:(id)arg2;
 - (void)invalidate;

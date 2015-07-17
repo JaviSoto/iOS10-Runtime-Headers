@@ -3,11 +3,12 @@
  */
 
 @interface UITableViewWrapperView : UIScrollView {
-    NSMutableArray *_stuckToBackViews;
+    NSMutableArray * _stuckToBackViews;
 }
 
 @property (nonatomic, readonly) NSArray *stuckToBackViews;
 
+- (void).cxx_destruct;
 - (BOOL)_forwardsToParentScroller;
 - (void)_stickViewToBack:(id)arg1;
 - (void)_unstickView:(id)arg1;

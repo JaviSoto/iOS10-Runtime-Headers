@@ -3,7 +3,7 @@
  */
 
 @interface _PUSettingsController : PTSettingsController {
-    id /* block */ _onViewDidDisappearBlock;
+    id /* block */  _onViewDidDisappearBlock;
 }
 
 @property (nonatomic, copy) id /* block */ onViewDidDisappearBlock;

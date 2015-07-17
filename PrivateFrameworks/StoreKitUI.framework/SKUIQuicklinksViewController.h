@@ -3,11 +3,11 @@
  */
 
 @interface SKUIQuicklinksViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    UICollectionView *_collectionView;
-    SKUIColorScheme *_colorScheme;
-    <SKUIQuicklinksViewControllerDelegate> *_delegate;
-    NSArray *_links;
-    SKUIQuicklinksView *_quicklinksView;
+    UICollectionView * _collectionView;
+    SKUIColorScheme * _colorScheme;
+    <SKUIQuicklinksViewControllerDelegate> * _delegate;
+    NSArray * _links;
+    SKUIQuicklinksView * _quicklinksView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

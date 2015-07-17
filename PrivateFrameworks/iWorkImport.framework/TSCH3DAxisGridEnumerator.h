@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DAxisGridEnumerator : TSCH3DValueEnumerator {
-    TSCHChartAxis *mAxis;
+    TSCHChartAxis * mAxis;
 }
 
 @property (nonatomic, readonly) TSCHChartAxis *axis;

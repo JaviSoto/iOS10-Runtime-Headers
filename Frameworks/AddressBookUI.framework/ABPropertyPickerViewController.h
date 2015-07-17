@@ -3,10 +3,10 @@
  */
 
 @interface ABPropertyPickerViewController : ABPickerViewController <ABCardPropertyPickerDelegate> {
-    void *_addressBook;
-    ABUIPerson *_person;
-    NSArray *_policies;
-    struct __CFArray { } *_properties;
+    void * _addressBook;
+    ABUIPerson * _person;
+    NSArray * _policies;
+    struct __CFArray { } * _properties;
 }
 
 @property (nonatomic) void*addressBook;

@@ -3,10 +3,10 @@
  */
 
 @interface HKMedicalIDEditorHeightCell : HKMedicalIDEditorCell <UIPickerViewDataSource, UIPickerViewDelegate> {
-    NSNumber *_centimeterValue;
-    NSLengthFormatter *_lengthFormatter;
-    UIPickerView *_picker;
-    BOOL _usesImperialUnits;
+    NSNumber * _centimeterValue;
+    NSLengthFormatter * _lengthFormatter;
+    UIPickerView * _picker;
+    BOOL  _usesImperialUnits;
 }
 
 @property (nonatomic, retain) NSNumber *centimeterValue;

@@ -3,12 +3,12 @@
  */
 
 @interface CKDFetchChangedRecordZonesOperation : CKDDatabaseOperation {
-    CKServerChangeToken *_previousServerChangeToken;
-    id /* block */ _recordZoneWithIDChangedBlock;
-    id /* block */ _recordZoneWithIDWasDeletedBlock;
-    unsigned int _resultsLimit;
-    CKServerChangeToken *_serverChangeToken;
-    int _status;
+    CKServerChangeToken * _previousServerChangeToken;
+    id /* block */  _recordZoneWithIDChangedBlock;
+    id /* block */  _recordZoneWithIDWasDeletedBlock;
+    unsigned int  _resultsLimit;
+    CKServerChangeToken * _serverChangeToken;
+    int  _status;
 }
 
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleFetchChangedRecordZonesRequestCompleted:(id)arg1;
+- (unsigned long long)activityStart;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

@@ -3,9 +3,9 @@
  */
 
 @interface SUMenuViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
-    <SUMenuViewControllerDelegate> *_delegate;
-    int _selectedIndex;
-    UITableView *_tableView;
+    <SUMenuViewControllerDelegate> * _delegate;
+    int  _selectedIndex;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

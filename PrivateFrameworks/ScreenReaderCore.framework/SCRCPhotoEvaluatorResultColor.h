@@ -3,9 +3,9 @@
  */
 
 @interface SCRCPhotoEvaluatorResultColor : SCRCPhotoEvaluatorResult {
-    float _blueLevel;
-    float _greenLevel;
-    float _redLevel;
+    float  _blueLevel;
+    float  _greenLevel;
+    float  _redLevel;
 }
 
 @property (nonatomic, readonly) float blueLevel;

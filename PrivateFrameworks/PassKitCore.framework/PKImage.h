@@ -8,14 +8,14 @@
         float left; 
         float bottom; 
         float right; 
-    } _capInsets;
-    NSData *_imageData;
-    struct CGImage { } *_imageRef;
-    int _orientation;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _scale;
-    BOOL _shouldStretch;
-    BOOL _shouldTile;
+    }  _capInsets;
+    NSData * _imageData;
+    struct CGImage { } * _imageRef;
+    int  _orientation;
+    NSObject<OS_dispatch_queue> * _queue;
+    float  _scale;
+    BOOL  _shouldStretch;
+    BOOL  _shouldTile;
 }
 
 @property (nonatomic, readonly) struct PKEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
@@ -34,6 +34,8 @@
 + (id)hashOfImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
++ (id)newImageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)newImageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 + (id)passesImageNamed:(id)arg1;
 + (BOOL)supportsSecureCoding;
 

@@ -3,7 +3,7 @@
  */
 
 @interface GKABObject : NSObject {
-    void *_type;
+    void * _type;
 }
 
 + (id)objectWithABObject:(id)arg1;

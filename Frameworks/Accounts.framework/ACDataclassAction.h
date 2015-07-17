@@ -3,8 +3,8 @@
  */
 
 @interface ACDataclassAction : NSObject <NSSecureCoding> {
-    BOOL _isDestructive;
-    int _type;
+    BOOL  _isDestructive;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL isDestructive;

@@ -3,15 +3,15 @@
  */
 
 @interface GEOUserSessionEntity : NSObject {
-    unsigned int _sequenceNumber;
-    double _sessionCreationTime;
+    unsigned int  _sequenceNumber;
+    double  _sessionCreationTime;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionID;
+    }  _sessionID;
 }
 
-@property unsigned int sequenceNumber;
+@property (nonatomic) unsigned int sequenceNumber;
 @property double sessionCreationTime;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic, readonly) NSNumber *sessionIDHigh;
@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSString *sessionIDString;
 
 - (id)description;
+- (id)initWithSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1 sessionCreationTime:(double)arg2 sequenceNumber:(unsigned int)arg3;
 - (unsigned int)sequenceNumber;
 - (double)sessionCreationTime;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;

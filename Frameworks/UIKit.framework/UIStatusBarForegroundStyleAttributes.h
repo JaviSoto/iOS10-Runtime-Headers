@@ -3,18 +3,19 @@
  */
 
 @interface UIStatusBarForegroundStyleAttributes : NSObject {
-    NSMutableDictionary *_cachedFonts;
-    BOOL _hasBusyBackground;
-    float _height;
-    int _idiom;
-    BOOL _isTintColorBlack;
-    int _legibilityStyle;
-    UIColor *_tintColor;
+    NSMutableDictionary * _cachedFonts;
+    BOOL  _hasBusyBackground;
+    float  _height;
+    int  _idiom;
+    BOOL  _isTintColorBlack;
+    int  _legibilityStyle;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, readonly, retain) UIColor *tintColor;
 
-- (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 charging:(BOOL)arg3;
+- (void).cxx_destruct;
+- (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 style:(unsigned int)arg3;
 - (void)_cacheImage:(id)arg1 named:(id)arg2;
 - (id)_cachedImageNamed:(id)arg1;
 - (void)_drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6;
@@ -28,8 +29,7 @@
 - (void)cacheImage:(id)arg1 named:(id)arg2 inTempGroup:(id)arg3;
 - (id)cachedImageNamed:(id)arg1 inTempGroup:(id)arg2;
 - (id)cachedImageWithText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 textAlignment:(int)arg5 style:(int)arg6 itemType:(int)arg7;
-- (void)dealloc;
-- (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
+- (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 style:(unsigned int)arg3;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
 - (void)drawText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 textAlignment:(int)arg5 style:(int)arg6 textSize:(struct CGSize { float x1; float x2; })arg7 textHeight:(float)arg8;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withColor:(id)arg2 withBlock:(id /* block */)arg3;
@@ -54,6 +54,7 @@
 - (float)shadowPadding;
 - (float)sizeForMoonMaskVisible:(BOOL)arg1;
 - (float)standardPadding;
+- (BOOL)supportsShowingBuildVersion;
 - (id)textColorForStyle:(int)arg1;
 - (id)textFontForStyle:(int)arg1;
 - (id)textForNetworkType:(int)arg1;

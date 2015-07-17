@@ -3,23 +3,23 @@
  */
 
 @interface DATaskManager : NSObject {
-    DAAccount *_account;
-    <DATask> *_activeExclusiveTask;
-    <DATask> *_activeModalTask;
-    <DATask> *_activeQueuedTask;
-    BOOL _didLogSyncStart;
-    DADuetReporter *_duetReporter;
-    NSMutableSet *_heldIndependentTasks;
-    NSMutableSet *_independentTasks;
-    NSMutableArray *_mQueuedTasks;
-    NSTimer *_managerIdleTimer;
-    <DATask> *_modalHeldActiveQueuedTask;
-    NSMutableSet *_modalHeldIndependentTasks;
-    NSTimer *_powerLogIdleTimer;
-    NSMutableArray *_queuedExclusiveTasks;
-    NSMutableArray *_queuedModalTasks;
-    int _state;
-    NSTimer *_userInitiatedSyncTimer;
+    DAAccount * _account;
+    <DATask> * _activeExclusiveTask;
+    <DATask> * _activeModalTask;
+    <DATask> * _activeQueuedTask;
+    BOOL  _didLogSyncStart;
+    DADuetReporter * _duetReporter;
+    NSMutableSet * _heldIndependentTasks;
+    NSMutableSet * _independentTasks;
+    NSMutableArray * _mQueuedTasks;
+    NSTimer * _managerIdleTimer;
+    <DATask> * _modalHeldActiveQueuedTask;
+    NSMutableSet * _modalHeldIndependentTasks;
+    NSTimer * _powerLogIdleTimer;
+    NSMutableArray * _queuedExclusiveTasks;
+    NSMutableArray * _queuedModalTasks;
+    int  _state;
+    NSTimer * _userInitiatedSyncTimer;
 }
 
 @property (nonatomic) DAAccount *account;

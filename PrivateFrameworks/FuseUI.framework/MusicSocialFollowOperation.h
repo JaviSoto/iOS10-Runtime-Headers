@@ -3,8 +3,8 @@
  */
 
 @interface MusicSocialFollowOperation : MusicSocialAbstractOperation {
-    long long _artistStoreID;
-    BOOL _follow;
+    long long  _artistStoreID;
+    BOOL  _follow;
 }
 
 - (id)initWithArtistStoreID:(long long)arg1 shouldFollow:(BOOL)arg2;

@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetRuleOffset : TSWPSpecRuleOffset {
-    TSWPRuleOffset *_ruleOffset;
-    BOOL _unset;
+    TSWPRuleOffset * _ruleOffset;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

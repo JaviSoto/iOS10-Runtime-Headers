@@ -3,8 +3,8 @@
  */
 
 @interface MSCLTokenTextAttachment : NSTextAttachment {
-    id _representedObject;
-    MSCLTokenTextAttachmentView *_tokenView;
+    id  _representedObject;
+    MSCLTokenTextAttachmentView * _tokenView;
 }
 
 @property (nonatomic, retain) id representedObject;

@@ -3,16 +3,16 @@
  */
 
 @interface EKDayGridView : UIView <EKCurrentTimeMarkerViewUpdating> {
-    BOOL _animatesTimeMarker;
-    UIColor *_backgroundColor;
-    unsigned int _daysToDisplay;
-    float _eventHorizontalInset;
-    float _fixedDayWidth;
-    float _gridHeightScale;
-    NSMutableArray *_gridPatternViews;
-    float _hourHeight;
-    float _hoursToPadBottom;
-    float _hoursToPadTop;
+    BOOL  _animatesTimeMarker;
+    UIColor * _backgroundColor;
+    unsigned int  _daysToDisplay;
+    float  _eventHorizontalInset;
+    float  _fixedDayWidth;
+    float  _gridHeightScale;
+    NSMutableArray * _gridPatternViews;
+    float  _hourHeight;
+    float  _hoursToPadBottom;
+    float  _hoursToPadTop;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,24 +22,24 @@
             float width; 
             float height; 
         } size; 
-    } _lastBounds;
-    unsigned int _leftBorder;
-    UIView *_leftBorderView;
-    UIColor *_lineColor;
-    NSMutableArray *_middleBorderViews;
-    int _orientation;
-    unsigned int _rightBorder;
-    BOOL _rightBorderInsetsOccurrences;
-    UIView *_rightBorderView;
-    int _selected;
-    BOOL _showsTimeLine;
-    BOOL _showsTimeMarker;
-    UIImageView *_timeDot;
-    float _timeInset;
-    EKCurrentTimeMarkerView *_timeMarker;
-    int _timeMarkerDotDay;
-    float _timeWidth;
-    BOOL _usesVibrantGridDrawing;
+    }  _lastBounds;
+    unsigned int  _leftBorder;
+    UIView * _leftBorderView;
+    UIColor * _lineColor;
+    NSMutableArray * _middleBorderViews;
+    int  _orientation;
+    unsigned int  _rightBorder;
+    BOOL  _rightBorderInsetsOccurrences;
+    UIView * _rightBorderView;
+    int  _selected;
+    BOOL  _showsTimeLine;
+    BOOL  _showsTimeMarker;
+    UIImageView * _timeDot;
+    float  _timeInset;
+    EKCurrentTimeMarkerView * _timeMarker;
+    int  _timeMarkerDotDay;
+    float  _timeWidth;
+    BOOL  _usesVibrantGridDrawing;
 }
 
 @property (nonatomic) BOOL animatesTimeMarker;

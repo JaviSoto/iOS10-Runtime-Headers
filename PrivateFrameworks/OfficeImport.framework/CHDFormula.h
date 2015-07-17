@@ -3,13 +3,14 @@
  */
 
 @interface CHDFormula : EDFormula {
-    EDReferenceCollection *mReferences;
-    EDWorkbook *mWorkbook;
+    EDReferenceCollection * mReferences;
+    EDWorkbook * mWorkbook;
 }
 
 + (id)formulaWithReference:(id)arg1;
 + (id)formulaWithReferences:(id)arg1;
 
+- (id)constantValuesFromConstantStringFormula;
 - (unsigned int)countOfCellsBeingReferenced;
 - (void)dealloc;
 - (id)initWithReference:(id)arg1;

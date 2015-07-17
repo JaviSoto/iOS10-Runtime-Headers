@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STWeatherAttributes : AFSiriModelObject {
-    NSNumber *_chanceOfPrecipitation;
-    int _condition;
-    STTemperature *_highTemperature;
-    STTemperature *_lowTemperature;
-    STTemperature *_temperature;
+@interface STWeatherAttributes : STSiriModelObject {
+    NSNumber * _chanceOfPrecipitation;
+    int  _condition;
+    STTemperature * _highTemperature;
+    STTemperature * _lowTemperature;
+    STTemperature * _temperature;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,10 +3,10 @@
  */
 
 @interface TSDCapabilities : NSObject {
-    int _device;
-    int _deviceType;
-    int _platform;
-    int _renderer;
+    int  _device;
+    int  _deviceType;
+    int  _platform;
+    int  _renderer;
 }
 
 @property (nonatomic, readonly) int device;

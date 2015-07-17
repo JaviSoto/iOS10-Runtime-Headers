@@ -3,7 +3,7 @@
  */
 
 @interface MFPMetafileImage : MFPImage {
-    NSData *mMetafileData;
+    NSData * mMetafileData;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPageComponent : NSObject <SSMetricsEventFieldProvider> {
-    int _metricsLocationPosition;
-    SKUIViewElement *_viewElement;
+    int  _metricsLocationPosition;
+    SKUIViewElement * _viewElement;
 }
 
 @property (nonatomic, readonly) int componentType;

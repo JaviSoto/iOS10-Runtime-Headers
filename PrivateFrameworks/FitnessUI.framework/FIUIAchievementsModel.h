@@ -3,11 +3,11 @@
  */
 
 @interface FIUIAchievementsModel : NSObject {
-    NSArray *_achievements;
-    NSObject<OS_dispatch_queue> *_achievementsLock;
-    <FIUIAchievementsModelDelegate> *_delegate;
-    HKExtendedHealthStore *_extendedHealthStore;
-    BOOL _loadingAchievements;
+    NSArray * _achievements;
+    NSObject<OS_dispatch_queue> * _achievementsLock;
+    <FIUIAchievementsModelDelegate> * _delegate;
+    HKExtendedHealthStore * _extendedHealthStore;
+    BOOL  _loadingAchievements;
 }
 
 @property (nonatomic) <FIUIAchievementsModelDelegate> *delegate;

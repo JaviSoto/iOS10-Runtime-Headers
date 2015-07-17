@@ -3,10 +3,10 @@
  */
 
 @interface BBColor : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    float _alpha;
-    float _blue;
-    float _green;
-    float _red;
+    float  _alpha;
+    float  _blue;
+    float  _green;
+    float  _red;
 }
 
 @property (nonatomic, readonly) float alpha;

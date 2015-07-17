@@ -3,13 +3,13 @@
  */
 
 @interface RMSDAAPControlSession : NSObject <RMSDAAPControlSession, RMSDAAPNowPlayingManagerDelegate, RMSDAAPRequestManagerDelegate, RMSDAAPTouchRemoteManagerDelegate> {
-    <RMSDAAPControlSessionDelegate> *_delegate;
-    RMSDAAPLoginManager *_loginManager;
-    RMSNowPlayingInfo *_nowPlayingInfo;
-    RMSDAAPNowPlayingManager *_nowPlayingManager;
-    RMSDAAPRequestManager *_requestManager;
-    RMSService *_service;
-    RMSDAAPTouchRemoteManager *_touchRemoteManager;
+    <RMSDAAPControlSessionDelegate> * _delegate;
+    RMSDAAPLoginManager * _loginManager;
+    RMSNowPlayingInfo * _nowPlayingInfo;
+    RMSDAAPNowPlayingManager * _nowPlayingManager;
+    RMSDAAPRequestManager * _requestManager;
+    RMSService * _service;
+    RMSDAAPTouchRemoteManager * _touchRemoteManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;

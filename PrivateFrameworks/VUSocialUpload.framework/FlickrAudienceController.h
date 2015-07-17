@@ -3,8 +3,8 @@
  */
 
 @interface FlickrAudienceController : UITableViewController {
-    int _audience;
-    <FlickrComposeOptionViewDelegate> *_delegate;
+    int  _audience;
+    <FlickrComposeOptionViewDelegate> * _delegate;
 }
 
 @property (nonatomic) int audience;

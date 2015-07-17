@@ -3,8 +3,8 @@
  */
 
 @interface ATClientController : NSObject {
-    NSDictionary *_clientMap;
-    struct __CFDictionary { } *_queueMap;
+    NSDictionary * _clientMap;
+    struct __CFDictionary { } * _queueMap;
 }
 
 + (id)controllerForDataclasses:(id)arg1;

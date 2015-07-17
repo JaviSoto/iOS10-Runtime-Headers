@@ -3,43 +3,43 @@
  */
 
 @interface SKUIApplicationController : NSObject <IKAppContextDelegate, IKApplication, SKUIModalDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationControllerDelegate, SKUINavigationDocumentDelegate, SKUITabBarControllerDelegate, SKUIURLResolverDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate> {
-    SKUIURL *_activationURL;
-    NSURL *_applicationScriptURL;
-    SKUIClientContext *_clientContext;
-    Class _clientContextClass;
-    <SKUIApplicationDelegate> *_delegate;
-    SKUIAppDeviceConfig *_deviceConfig;
-    BOOL _didDisplayFirstPage;
-    UIViewController *_floatingStatusOverlayViewController;
-    BOOL _hidesTabBar;
-    BOOL _ignoreDidBecomeActive;
-    unsigned int _indexOfLastTabNeedingContent;
-    int _lastNavigationControllerOperation;
-    UIViewController *_lastPoppedViewController;
-    NSDictionary *_launchOptions;
-    SKUIURL *_legacyLaunchURL;
-    IKAppDataStorage *_localStorage;
-    BOOL _mescalPrimeEnabledForXHRRequests;
-    SKUIMetricsController *_metricsController;
-    SKUIModalDocumentController *_modalDocumentController;
-    SKUISimpleContainerViewController *_navigationContainerViewController;
-    NSMutableArray *_navigationDocumentControllers;
-    NSOperationQueue *_operationQueue;
-    SKUIPreviewDocumentController *_previewDocumentController;
-    unsigned int _resignActiveTaskID;
-    UIViewController *_rootViewController;
-    IKAppContext *_scriptContext;
-    int _scriptLoadState;
-    SKUIScrollingTabBarController *_scrollingTabBarController;
-    _SKUIApplicationShutdownHelper *_shutdownHelper;
-    <SKUIStatusOverlayProvider> *_statusOverlayProvider;
-    SKUITabBarController *_tabBarController;
-    int _tabBarControllerStyle;
-    NSArray *_tabBarItems;
-    SKUINavigationDocumentController *_transientNavigationDocument;
-    SKUIURLResolver *_urlResolver;
-    IKAppDataStorage *_vendorStorage;
-    NSMutableArray *_whenLoadedBlocks;
+    SKUIURL * _activationURL;
+    NSURL * _applicationScriptURL;
+    SKUIClientContext * _clientContext;
+    Class  _clientContextClass;
+    <SKUIApplicationDelegate> * _delegate;
+    SKUIAppDeviceConfig * _deviceConfig;
+    BOOL  _didDisplayFirstPage;
+    UIViewController * _floatingStatusOverlayViewController;
+    BOOL  _hidesTabBar;
+    BOOL  _ignoreDidBecomeActive;
+    unsigned int  _indexOfLastTabNeedingContent;
+    int  _lastNavigationControllerOperation;
+    UIViewController * _lastPoppedViewController;
+    NSDictionary * _launchOptions;
+    SKUIURL * _legacyLaunchURL;
+    IKAppDataStorage * _localStorage;
+    BOOL  _mescalPrimeEnabledForXHRRequests;
+    SKUIMetricsController * _metricsController;
+    SKUIModalDocumentController * _modalDocumentController;
+    SKUISimpleContainerViewController * _navigationContainerViewController;
+    NSMutableArray * _navigationDocumentControllers;
+    NSOperationQueue * _operationQueue;
+    SKUIApplicationControllerOptions * _options;
+    SKUIPreviewDocumentController * _previewDocumentController;
+    unsigned int  _resignActiveTaskID;
+    UIViewController * _rootViewController;
+    IKAppContext * _scriptContext;
+    int  _scriptLoadState;
+    SKUIScrollingTabBarController * _scrollingTabBarController;
+    _SKUIApplicationShutdownHelper * _shutdownHelper;
+    <SKUIStatusOverlayProvider> * _statusOverlayProvider;
+    SKUITabBarController * _tabBarController;
+    NSArray * _tabBarItems;
+    SKUINavigationDocumentController * _transientNavigationDocument;
+    SKUIURLResolver * _urlResolver;
+    IKAppDataStorage * _vendorStorage;
+    NSMutableArray * _whenLoadedBlocks;
 }
 
 @property (nonatomic, readonly) int _applicationMode;
@@ -55,11 +55,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL mescalPrimeEnabledForXHRRequests;
 @property (nonatomic, readonly) SKUIModalDocumentController *modalDocumentController;
+@property (nonatomic, readonly) SKUIApplicationControllerOptions *options;
 @property (nonatomic, readonly) UIViewController *rootViewController;
 @property (nonatomic, readonly) SKUIScrollingTabBarController *scrollingTabBarController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITabBarController *tabBarController;
-@property (nonatomic, readonly) int tabBarControllerStyle;
 @property (nonatomic, copy) NSArray *tabBarItems;
 
 + (id)applicationOptionsWithLaunchOptions:(id)arg1;
@@ -76,6 +76,7 @@
 - (void)_dispatchTabBarOnNeedsContentForTabAtIndex:(unsigned int)arg1;
 - (void)_dispatchTabBarOnSelect;
 - (id)_documentControllerForNavigationController:(id)arg1;
+- (void)_ensureStackConsistencyForNavigationController:(id)arg1;
 - (id)_existingTabBarController;
 - (void)_failReloadWithError:(id)arg1;
 - (void)_failWithError:(id)arg1;
@@ -161,7 +162,9 @@
 - (void)evaluateBlockWhenLoaded:(id /* block */)arg1;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)hideStatusOverlayForProvider:(id)arg1 animated:(BOOL)arg2;
+- (id)init;
 - (id)initWithClientContextClass:(Class)arg1;
+- (id)initWithClientContextClass:(Class)arg1 options:(id)arg2;
 - (id)initWithClientContextClass:(Class)arg1 tabBarControllerStyle:(int)arg2;
 - (id)jsNavigationDocumentForNavigationController:(id)arg1 inContext:(id)arg2;
 - (id)jsNavigationDocumentForNavigationDocumentController:(id)arg1 inContext:(id)arg2;
@@ -178,6 +181,7 @@
 - (unsigned int)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationDocumentController:(id)arg1 requestsAccessToAppContextUsingBlock:(id /* block */)arg2;
 - (void)navigationDocumentStackDidChange:(id)arg1;
+- (id)options;
 - (id)presentationViewControllerForAppContext:(id)arg1;
 - (id)presentationViewControllerForURLResolver:(id)arg1;
 - (void)recordMetricsEvent:(id)arg1 flushImmediately:(BOOL)arg2;
@@ -201,7 +205,6 @@
 - (BOOL)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willDisplayViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { float x1; float x2; })arg2 withTransitionCoordinator:(id)arg3;
-- (int)tabBarControllerStyle;
 - (unsigned int)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)tabBarItems;
 - (void)updateTabBarWithItems:(id)arg1 animated:(BOOL)arg2;

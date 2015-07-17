@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPhysicalCirclesView : UIView <PKPhysicsContactDelegate> {
-    NSMutableArray *_circleBodies;
-    NSObject<OS_dispatch_source> *_circleLoadStepTimer;
+    NSMutableArray * _circleBodies;
+    NSObject<OS_dispatch_source> * _circleLoadStepTimer;
     struct SKUIPhysicalCircleConstants { 
         float circleDensity; 
         float circleLinearDamping; 
@@ -14,20 +14,20 @@
         float springMinimumFrequency; 
         float springDamping; 
         float translationForceMultiplier; 
-    } _constants;
-    <SKUIPhysicalCirclesDataSource> *_dataSource;
-    <SKUIPhysicalCirclesDelegate> *_delegate;
-    CADisplayLink *_displayLink;
-    PKPhysicsBody *_groundBody;
-    int _longPressCircleIndex;
-    UILongPressGestureRecognizer *_longPressRecognizer;
-    float _maximumFrequencyDistance;
-    float _minimumFrequencyDistance;
-    UIPanGestureRecognizer *_panRecognizer;
-    void *_physicsKitFramework;
-    PKPhysicsWorld *_physicsWorld;
-    NSMutableArray *_repellors;
-    UITapGestureRecognizer *_tapRecognizer;
+    }  _constants;
+    <SKUIPhysicalCirclesDataSource> * _dataSource;
+    <SKUIPhysicalCirclesDelegate> * _delegate;
+    CADisplayLink * _displayLink;
+    PKPhysicsBody * _groundBody;
+    int  _longPressCircleIndex;
+    UILongPressGestureRecognizer * _longPressRecognizer;
+    float  _maximumFrequencyDistance;
+    float  _minimumFrequencyDistance;
+    UIPanGestureRecognizer * _panRecognizer;
+    void * _physicsKitFramework;
+    PKPhysicsWorld * _physicsWorld;
+    NSMutableArray * _repellors;
+    UITapGestureRecognizer * _tapRecognizer;
 }
 
 @property (nonatomic) struct SKUIPhysicalCircleConstants { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; } constants;

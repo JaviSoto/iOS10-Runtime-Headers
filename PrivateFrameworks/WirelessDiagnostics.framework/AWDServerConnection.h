@@ -3,7 +3,7 @@
  */
 
 @interface AWDServerConnection : NSObject {
-    struct AWDServerConnection { struct shared_ptr<awd::ServerConnectionInfo> { struct ServerConnectionInfo {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; } *fServerConnection;
+    struct AWDServerConnection { struct shared_ptr<awd::ServerConnectionInfo> { struct ServerConnectionInfo {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; } * fServerConnection;
 }
 
 - (void)dealloc;

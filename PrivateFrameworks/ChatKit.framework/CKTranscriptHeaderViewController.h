@@ -3,8 +3,8 @@
  */
 
 @interface CKTranscriptHeaderViewController : UIViewController {
-    CKConversation *_conversation;
-    BOOL _shouldInvalidateOnAddressBookChange;
+    CKConversation * _conversation;
+    BOOL  _shouldInvalidateOnAddressBookChange;
 }
 
 @property (nonatomic, retain) CKConversation *conversation;

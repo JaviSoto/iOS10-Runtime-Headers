@@ -3,10 +3,10 @@
  */
 
 @interface TSCHChartDrawableLayoutLegendResizer : NSObject {
-    float mAnchoringPosition;
-    int mAnchoringStates;
-    NSArray *mLegendConfinementBounds;
-    BOOL mShouldUpdateConfinedPushableAnchoring;
+    float  mAnchoringPosition;
+    int  mAnchoringStates;
+    NSArray * mLegendConfinementBounds;
+    BOOL  mShouldUpdateConfinedPushableAnchoring;
 }
 
 @property (nonatomic, copy) NSArray *p_legendConfinementBounds;

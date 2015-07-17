@@ -3,10 +3,10 @@
  */
 
 @interface TSTTableDataList : TSPObject {
-    TSTIntegerKeyDict *mData;
-    TSTTableDataObjectKeyDict *mIDs;
-    int mListType;
-    unsigned int mNextID;
+    TSTIntegerKeyDict * mData;
+    TSTTableDataObjectKeyDict * mIDs;
+    int  mListType;
+    unsigned int  mNextID;
 }
 
 @property (nonatomic, readonly) TSTIntegerKeyDict *data;
@@ -17,6 +17,7 @@
 - (id)allRichTextPayloadStorages;
 - (id)data;
 - (void)dealloc;
+- (id)description;
 - (void)enumerateCustomFormatsUsingBlock:(id /* block */)arg1;
 - (unsigned long)flushableSize;
 - (id)initFromUnarchiver:(id)arg1;

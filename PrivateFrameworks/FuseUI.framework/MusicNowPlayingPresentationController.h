@@ -3,10 +3,10 @@
  */
 
 @interface MusicNowPlayingPresentationController : UIPresentationController <MusicNowPlayingAtmosphericStatusBarDelegate> {
-    BOOL _isPresented;
-    UIView *_nowPlayingClippingView;
-    MusicNowPlayingAtmosphericStatusBar *_nowPlayingStatusBar;
-    BOOL _wantsAtmosphericStatusBar;
+    BOOL  _isPresented;
+    UIView * _nowPlayingClippingView;
+    MusicNowPlayingAtmosphericStatusBar * _nowPlayingStatusBar;
+    BOOL  _wantsAtmosphericStatusBar;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface TSDContactShadow : TSDShadow {
-    float mHeight;
+    float  mHeight;
 }
 
 @property (nonatomic, readonly) float height;

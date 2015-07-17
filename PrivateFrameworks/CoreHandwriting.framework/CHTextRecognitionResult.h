@@ -3,10 +3,10 @@
  */
 
 @interface CHTextRecognitionResult : CHRecognitionResult {
-    BOOL _rare;
-    NSString *_string;
-    NSArray *_wordIDs;
-    NSArray *_wordRanges;
+    BOOL  _rare;
+    NSString * _string;
+    NSArray * _wordIDs;
+    NSArray * _wordRanges;
 }
 
 @property (readonly) BOOL rare;

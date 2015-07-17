@@ -3,8 +3,8 @@
  */
 
 @interface DAMailboxSetFlagsRequest : DAMailboxRequest {
-    unsigned long long _offFlags;
-    unsigned long long _onFlags;
+    unsigned long long  _offFlags;
+    unsigned long long  _onFlags;
 }
 
 @property (nonatomic) unsigned long long offFlags;

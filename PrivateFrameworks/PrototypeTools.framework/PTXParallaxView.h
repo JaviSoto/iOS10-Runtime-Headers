@@ -3,16 +3,16 @@
  */
 
 @interface PTXParallaxView : UIView <PTXParallaxObserver, _UISettingsKeyObserver> {
-    PTXParallaxController *_parallaxController;
-    BOOL _resizesView;
-    PTXParallaxSettings *_settings;
-    PTXMotionWindow *_slideWindowX;
-    PTXMotionWindow *_slideWindowY;
-    BOOL _stopped;
-    PTXMotionWindow *_tiltWindowX;
-    PTXMotionWindow *_tiltWindowY;
-    UIView *_view;
-    float _viewAlpha;
+    PTXParallaxController * _parallaxController;
+    BOOL  _resizesView;
+    PTXParallaxSettings * _settings;
+    PTXMotionWindow * _slideWindowX;
+    PTXMotionWindow * _slideWindowY;
+    BOOL  _stopped;
+    PTXMotionWindow * _tiltWindowX;
+    PTXMotionWindow * _tiltWindowY;
+    UIView * _view;
+    float  _viewAlpha;
 }
 
 @property (readonly, copy) NSString *debugDescription;

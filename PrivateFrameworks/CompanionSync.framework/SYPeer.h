@@ -3,7 +3,7 @@
  */
 
 @interface SYPeer : PBCodable <NSCopying> {
-    NSString *_peerID;
+    NSString * _peerID;
 }
 
 @property (nonatomic, retain) NSString *peerID;

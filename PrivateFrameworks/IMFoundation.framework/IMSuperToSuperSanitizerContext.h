@@ -3,14 +3,14 @@
  */
 
 @interface IMSuperToSuperSanitizerContext : IMFromSuperParserContext {
-    NSMutableArray *_attachments;
-    NSString *_backgroundColor;
-    int _baseWritingDirection;
-    NSMutableAttributedString *_content;
-    BOOL _extractAttachments;
-    NSString *_foregroundColor;
-    BOOL _hadBaseWritingDirectionAttribute;
-    unsigned int _offset;
+    NSMutableArray * _attachments;
+    NSString * _backgroundColor;
+    int  _baseWritingDirection;
+    NSMutableAttributedString * _content;
+    BOOL  _extractAttachments;
+    NSString * _foregroundColor;
+    BOOL  _hadBaseWritingDirectionAttribute;
+    unsigned int  _offset;
 }
 
 @property (readonly, retain) NSArray *attachments;

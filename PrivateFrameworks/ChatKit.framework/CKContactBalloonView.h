@@ -3,11 +3,11 @@
  */
 
 @interface CKContactBalloonView : CKColoredBalloonView <CKContactBalloonViewProtocol> {
-    UIImageView *_chevron;
-    UIImageView *_contactImageView;
-    CKMediaObject *_mediaObject;
-    UILabel *_nameLabel;
-    UILabel *_organizationLabel;
+    UIImageView * _chevron;
+    UIImageView * _contactImageView;
+    CKMediaObject * _mediaObject;
+    UILabel * _nameLabel;
+    UILabel * _organizationLabel;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;

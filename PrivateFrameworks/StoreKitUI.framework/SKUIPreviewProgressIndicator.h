@@ -3,11 +3,11 @@
  */
 
 @interface SKUIPreviewProgressIndicator : UIControl {
-    SKUIShapeView *_backgroundView;
-    UIImageView *_cancelImageView;
-    SKUIShapeView *_foregroundView;
-    BOOL _isIndeterminate;
-    float _progress;
+    SKUIShapeView * _backgroundView;
+    UIImageView * _cancelImageView;
+    SKUIShapeView * _foregroundView;
+    BOOL  _isIndeterminate;
+    float  _progress;
 }
 
 @property (getter=isIndeterminate, nonatomic, readonly) BOOL indeterminate;

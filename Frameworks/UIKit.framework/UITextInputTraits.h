@@ -3,41 +3,42 @@
  */
 
 @interface UITextInputTraits : NSObject <NSCopying, UITextInputTraits, UITextInputTraits_Private> {
-    BOOL acceptsEmoji;
-    BOOL acceptsFloatingKeyboard;
-    BOOL acceptsSplitKeyboard;
-    int autocapitalizationType;
-    NSString *autocorrectionContext;
-    int autocorrectionType;
-    BOOL contentsIsSingleValue;
-    BOOL deferBecomingResponder;
-    BOOL disablePrediction;
-    BOOL displaySecureTextUsingPlainText;
-    int emptyContentReturnKeyType;
-    BOOL enablesReturnKeyAutomatically;
-    BOOL enablesReturnKeyOnNonWhiteSpaceContent;
-    BOOL forceEnableDictation;
-    UIColor *insertionPointColor;
-    unsigned int insertionPointWidth;
-    BOOL isSingleLineDocument;
-    unsigned int keyboardAppearance;
-    unsigned int keyboardType;
-    BOOL learnsCorrections;
-    NSString *responseContext;
-    BOOL returnKeyGoesToNextResponder;
-    int returnKeyType;
-    BOOL secureTextEntry;
-    UIColor *selectionBarColor;
-    UIImage *selectionDragDotImage;
-    UIColor *selectionHighlightColor;
-    int shortcutConversionType;
-    int spellCheckingType;
-    BOOL suppressReturnKeyStyling;
-    int textLoupeVisibility;
-    int textSelectionBehavior;
-    id textSuggestionDelegate;
-    struct __CFCharacterSet { } *textTrimmingSet;
-    BOOL useInterfaceLanguageForLocalization;
+    BOOL  acceptsEmoji;
+    BOOL  acceptsFloatingKeyboard;
+    BOOL  acceptsSplitKeyboard;
+    int  autocapitalizationType;
+    NSString * autocorrectionContext;
+    int  autocorrectionType;
+    BOOL  contentsIsSingleValue;
+    BOOL  deferBecomingResponder;
+    BOOL  disablePrediction;
+    BOOL  displaySecureTextUsingPlainText;
+    int  emptyContentReturnKeyType;
+    BOOL  enablesReturnKeyAutomatically;
+    BOOL  enablesReturnKeyOnNonWhiteSpaceContent;
+    BOOL  forceEnableDictation;
+    UIColor * insertionPointColor;
+    unsigned int  insertionPointWidth;
+    BOOL  isSingleLineDocument;
+    unsigned int  keyboardAppearance;
+    unsigned int  keyboardType;
+    BOOL  learnsCorrections;
+    NSString * recentInputIdentifier;
+    NSString * responseContext;
+    BOOL  returnKeyGoesToNextResponder;
+    int  returnKeyType;
+    BOOL  secureTextEntry;
+    UIColor * selectionBarColor;
+    UIImage * selectionDragDotImage;
+    UIColor * selectionHighlightColor;
+    int  shortcutConversionType;
+    int  spellCheckingType;
+    BOOL  suppressReturnKeyStyling;
+    int  textLoupeVisibility;
+    int  textSelectionBehavior;
+    id  textSuggestionDelegate;
+    struct __CFCharacterSet { } * textTrimmingSet;
+    BOOL  useInterfaceLanguageForLocalization;
 }
 
 @property (nonatomic) BOOL acceptsEmoji;
@@ -63,6 +64,7 @@
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
 @property (nonatomic) BOOL learnsCorrections;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
 @property (nonatomic) int returnKeyType;
@@ -81,10 +83,12 @@
 @property (nonatomic) BOOL useInterfaceLanguageForLocalization;
 
 + (int)accessibleAppearanceForAppearance:(int)arg1;
++ (int)configuredAppearanceForAppearance:(int)arg1 withTraitEnvironment:(id)arg2;
 + (id)defaultTextInputTraits;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 + (id)traitsByAdoptingTraits:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_setColorsToMatchTintColor:(id)arg1;
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
@@ -114,6 +118,7 @@
 - (int)keyboardType;
 - (BOOL)learnsCorrections;
 - (BOOL)publicTraitsMatchTraits:(id)arg1;
+- (id)recentInputIdentifier;
 - (id)responseContext;
 - (BOOL)returnKeyGoesToNextResponder;
 - (int)returnKeyType;
@@ -140,6 +145,7 @@
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
+- (void)setRecentInputIdentifier:(id)arg1;
 - (void)setResponseContext:(id)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
 - (void)setReturnKeyType:(int)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIImageCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    SKUIImageView *_highlightImageView;
-    id _imageRequestCacheKey;
-    BOOL _showsReflectionImage;
+    SKUIImageView * _highlightImageView;
+    id  _imageRequestCacheKey;
+    BOOL  _showsReflectionImage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

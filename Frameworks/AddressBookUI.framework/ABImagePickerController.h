@@ -3,20 +3,20 @@
  */
 
 @interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
-    BOOL _allowsEditingExistingPhoto;
-    NSDictionary *_animationContextDictionary;
-    BOOL _applyImageChangesToAllPeople;
-    CAKeyframeAnimation *_bounceAnimation;
-    BOOL _canChooseFromMultiplePhotos;
-    BOOL _canChoosePhoto;
-    BOOL _confirmingDelete;
-    BOOL _editingImage;
-    BOOL _hasExistingPhoto;
-    <ABPersonImageDataDelegate> *_imageDataDelegate;
-    UIImagePickerController *_imagePicker;
-    NSArray *_people;
-    UIPopoverController *_popoverPresenter;
-    NSArray *_writablePeople;
+    BOOL  _allowsEditingExistingPhoto;
+    NSDictionary * _animationContextDictionary;
+    BOOL  _applyImageChangesToAllPeople;
+    CAKeyframeAnimation * _bounceAnimation;
+    BOOL  _canChooseFromMultiplePhotos;
+    BOOL  _canChoosePhoto;
+    BOOL  _confirmingDelete;
+    BOOL  _editingImage;
+    BOOL  _hasExistingPhoto;
+    <ABPersonImageDataDelegate> * _imageDataDelegate;
+    UIImagePickerController * _imagePicker;
+    NSArray * _people;
+    UIPopoverController * _popoverPresenter;
+    NSArray * _writablePeople;
 }
 
 @property (readonly, copy) NSString *debugDescription;

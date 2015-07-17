@@ -3,18 +3,18 @@
  */
 
 @interface CPGuideFinder : NSObject <CPDisposable> {
-    double *anchorArray;
-    CPCluster *anchors;
-    CPZone *contentZone;
-    unsigned int countOfWordsInZone;
-    struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; } *crossingWordArray;
-    NSMutableArray *gutters;
-    NSMutableArray *leftGuides;
-    float medianFontSizeOfFirstCharacter;
-    float medianFontSizeOfLastCharacter;
-    NSMutableArray *rightGuides;
-    double *rightHandSideArray;
-    CPCluster *rightHandSides;
+    double * anchorArray;
+    CPCluster * anchors;
+    CPZone * contentZone;
+    unsigned int  countOfWordsInZone;
+    struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; } * crossingWordArray;
+    NSMutableArray * gutters;
+    NSMutableArray * leftGuides;
+    float  medianFontSizeOfFirstCharacter;
+    float  medianFontSizeOfLastCharacter;
+    NSMutableArray * rightGuides;
+    double * rightHandSideArray;
+    CPCluster * rightHandSides;
 }
 
 + (BOOL)guideSeparates:(id)arg1 from:(id)arg2;

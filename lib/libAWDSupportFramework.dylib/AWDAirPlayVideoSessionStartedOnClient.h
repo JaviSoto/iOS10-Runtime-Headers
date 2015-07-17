@@ -3,13 +3,13 @@
  */
 
 @interface AWDAirPlayVideoSessionStartedOnClient : PBCodable <NSCopying> {
-    unsigned int _audioOnly;
-    unsigned int _authMs;
-    unsigned int _bitrate;
-    unsigned int _bonjourMs;
-    unsigned int _connectMs;
-    unsigned int _duration;
-    unsigned long long _fileBytes;
+    unsigned int  _audioOnly;
+    unsigned int  _authMs;
+    unsigned int  _bitrate;
+    unsigned int  _bonjourMs;
+    unsigned int  _connectMs;
+    unsigned int  _duration;
+    unsigned long long  _fileBytes;
     struct { 
         unsigned int fileBytes : 1; 
         unsigned int timestamp : 1; 
@@ -25,17 +25,17 @@
         unsigned int status : 1; 
         unsigned int transportType : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned int _infoMs;
-    unsigned int _postAuthMs;
-    unsigned int _secureConnectionMs;
-    NSString *_serverModel;
-    NSString *_serverVersion;
-    NSString *_sessionUUID;
-    int _status;
-    unsigned long long _timestamp;
-    unsigned int _transportType;
-    unsigned int _type;
+    }  _has;
+    unsigned int  _infoMs;
+    unsigned int  _postAuthMs;
+    unsigned int  _secureConnectionMs;
+    NSString * _serverModel;
+    NSString * _serverVersion;
+    NSString * _sessionUUID;
+    int  _status;
+    unsigned long long  _timestamp;
+    unsigned int  _transportType;
+    unsigned int  _type;
 }
 
 @property (nonatomic) unsigned int audioOnly;

@@ -3,9 +3,11 @@
  */
 
 @interface OADGraphic : OADDrawable {
-    OADGraphic *mMasterGraphic;
+    OADGraphic * mMasterGraphic;
 }
 
+- (id)description;
+- (id)geometry;
 - (id)graphicProperties;
 - (id)masterGraphic;
 - (void)setMasterGraphic:(id)arg1;

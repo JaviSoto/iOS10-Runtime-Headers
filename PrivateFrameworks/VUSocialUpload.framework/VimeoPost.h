@@ -3,29 +3,29 @@
  */
 
 @interface VimeoPost : NSObject {
-    unsigned int _accessType;
-    ACAccount *_account;
-    ALAsset *_asset;
-    NSData *_assetData;
-    NSURL *_assetURL;
-    ALAssetsLibrary *_assetsLibrary;
-    NSURL *_baseURL;
-    BOOL _canUploadOverCellular;
-    BOOL _continuingUpload;
-    VUDataReader *_dataReader;
-    <VimeoPostDelegate> *_delegate;
-    NSURL *_exportedVideoURL;
-    unsigned int _lastByteStored;
-    NSString *_postDescription;
-    int _privacySettings;
-    int _retryCount;
-    NSArray *_tags;
-    NSString *_ticketID;
-    NSString *_title;
-    NSURL *_uploadEndpoint;
-    int _uploadState;
-    NSString *_videoID;
-    int _videoSize;
+    unsigned int  _accessType;
+    ACAccount * _account;
+    ALAsset * _asset;
+    NSData * _assetData;
+    NSURL * _assetURL;
+    ALAssetsLibrary * _assetsLibrary;
+    NSURL * _baseURL;
+    BOOL  _canUploadOverCellular;
+    BOOL  _continuingUpload;
+    VUDataReader * _dataReader;
+    <VimeoPostDelegate> * _delegate;
+    NSURL * _exportedVideoURL;
+    unsigned int  _lastByteStored;
+    NSString * _postDescription;
+    int  _privacySettings;
+    int  _retryCount;
+    NSArray * _tags;
+    NSString * _ticketID;
+    NSString * _title;
+    NSURL * _uploadEndpoint;
+    int  _uploadState;
+    NSString * _videoID;
+    int  _videoSize;
 }
 
 @property (nonatomic) unsigned int accessType;

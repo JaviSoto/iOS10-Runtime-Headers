@@ -3,16 +3,20 @@
  */
 
 @interface UIWebFormAccessory : UIInputView {
-    UIBarButtonItem *_autofill;
-    UIBarButtonItem *_clearButton;
-    UIBarButtonItem *_doneButton;
-    UIBarButtonItem *_flexibleSpaceItem;
-    UIToolbar *_leftToolbar;
-    UIBarButtonItem *_nextItem;
-    UIBarButtonItem *_previousItem;
-    UIToolbar *_rightToolbar;
-    UISegmentedControl *_tab;
-    <UIWebFormAccessoryDelegate> *delegate;
+    UITextInputAssistantItem * _assistantItem;
+    UIBarButtonItem * _autofill;
+    UIBarButtonItemGroup * _buttonGroupAutoFill;
+    UIBarButtonItemGroup * _buttonGroupNavigation;
+    UIBarButtonItem * _clearButton;
+    UIBarButtonItem * _doneButton;
+    UIBarButtonItem * _flexibleSpaceItem;
+    UIToolbar * _leftToolbar;
+    UIBarButtonItem * _nextItem;
+    UIBarButtonItem * _previousItem;
+    UIToolbar * _rightToolbar;
+    UISegmentedControl * _tab;
+    BOOL  _usesUCB;
+    <UIWebFormAccessoryDelegate> * delegate;
 }
 
 @property (nonatomic, retain) UIBarButtonItem *_autofill;
@@ -42,7 +46,9 @@
 - (id)delegate;
 - (void)done:(id)arg1;
 - (void)hideAutoFillButton;
+- (void)initForUCB;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)inputAssistantItem;
 - (BOOL)isNextEnabled;
 - (BOOL)isPreviousEnabled;
 - (void)layoutSubviews;

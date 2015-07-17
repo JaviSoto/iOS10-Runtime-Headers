@@ -3,7 +3,7 @@
  */
 
 @interface CKDServerEnvironmentURLRequest : CKDURLRequest {
-    int _environment;
+    int  _environment;
 }
 
 @property (nonatomic) int environment;

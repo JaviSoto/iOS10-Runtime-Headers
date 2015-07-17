@@ -7,11 +7,11 @@
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
         unsigned int status : 1; 
-    } _has;
-    unsigned int _status;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned int  _status;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic) BOOL hasStatus;

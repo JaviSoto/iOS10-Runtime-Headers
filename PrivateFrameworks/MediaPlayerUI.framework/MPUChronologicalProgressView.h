@@ -3,23 +3,23 @@
  */
 
 @interface MPUChronologicalProgressView : UIView <MPDetailScrubControllerDelegate, MPUContentSizeCategoryChanging> {
-    BOOL _alwaysLive;
-    double _currentTime;
-    UILabel *_currentTimeLabel;
-    <MPUChronologicalProgressViewDelegate> *_delegate;
-    MPUNowPlayingIndicatorView *_indicatorView;
-    NSString *_lastCurrentTimeString;
-    double _lastDisplayedDuration;
-    NSString *_lastRemainingTimeString;
-    UILabel *_remainingTimeLabel;
-    MPDetailScrubController *_scrubController;
-    BOOL _scrubbingEnabled;
-    BOOL _showIsPlaying;
-    BOOL _showTimeLabels;
-    UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding> *_slider;
-    int _style;
-    int _substyle;
-    double _totalDuration;
+    BOOL  _alwaysLive;
+    double  _currentTime;
+    UILabel * _currentTimeLabel;
+    <MPUChronologicalProgressViewDelegate> * _delegate;
+    MPUNowPlayingIndicatorView * _indicatorView;
+    NSString * _lastCurrentTimeString;
+    double  _lastDisplayedDuration;
+    NSString * _lastRemainingTimeString;
+    UILabel * _remainingTimeLabel;
+    MPDetailScrubController * _scrubController;
+    BOOL  _scrubbingEnabled;
+    BOOL  _showIsPlaying;
+    BOOL  _showTimeLabels;
+    UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding> * _slider;
+    int  _style;
+    int  _substyle;
+    double  _totalDuration;
 }
 
 @property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;
@@ -40,6 +40,7 @@
 - (void).cxx_destruct;
 - (id)_createIndicatorViewWithStyle:(int)arg1;
 - (id)_createTimeLabelWithStyle:(int)arg1;
+- (float)_estimatedTimeLabelsWidth;
 - (void)_internalSetCurrentTime:(double)arg1;
 - (float)_sliderNormalizedValueForTime:(double)arg1;
 - (id)_stringForTime:(double)arg1 isTimeRemaining:(BOOL)arg2;

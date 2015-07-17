@@ -3,11 +3,11 @@
  */
 
 @interface PLPhotoCommentEntryView : UIView <UITextViewDelegate> {
-    <PLPhotoCommentEntryViewDelegate> *_delegate;
-    UILabel *_placeholderLabel;
-    UIButton *_postButton;
-    UITextView *_textView;
-    UILabel *placeholderLabel;
+    <PLPhotoCommentEntryViewDelegate> * _delegate;
+    UILabel * _placeholderLabel;
+    UIButton * _postButton;
+    UITextView * _textView;
+    UILabel * placeholderLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +30,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)textView;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
+- (void)textViewDidEndEditing:(id)arg1;
+- (BOOL)textViewShouldBeginEditing:(id)arg1;
 - (id)trimmedText;
 
 @end

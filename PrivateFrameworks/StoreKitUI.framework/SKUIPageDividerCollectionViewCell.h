@@ -3,21 +3,21 @@
  */
 
 @interface SKUIPageDividerCollectionViewCell : UICollectionViewCell <SKUIViewElementView> {
-    UIView *_bottomDividerLine;
+    UIView * _bottomDividerLine;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    float _dividerHeight;
-    int _dividerType;
-    UIColor *_insetColor;
-    UIView *_insetView;
-    float _leftEdgeInset;
-    float _rightEdgeInset;
-    UIView *_topDividerLine;
-    int _verticalAlignment;
+    }  _contentInset;
+    float  _dividerHeight;
+    int  _dividerType;
+    UIColor * _insetColor;
+    UIView * _insetView;
+    float  _leftEdgeInset;
+    float  _rightEdgeInset;
+    UIView * _topDividerLine;
+    int  _verticalAlignment;
 }
 
 @property (readonly, copy) NSString *debugDescription;

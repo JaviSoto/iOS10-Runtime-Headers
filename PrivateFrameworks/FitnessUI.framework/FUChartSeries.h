@@ -3,21 +3,21 @@
  */
 
 @interface FUChartSeries : UIView {
-    float _animationDuration;
-    NSArray *_dataPoints;
-    FUChartDataSet *_dataSet;
-    <FUChartSeriesDataSource> *_dataSource;
-    <FUChartSeriesDelegate> *_delegate;
+    float  _animationDuration;
+    NSArray * _dataPoints;
+    FUChartDataSet * _dataSet;
+    <FUChartSeriesDataSource> * _dataSource;
+    <FUChartSeriesDelegate> * _delegate;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    NSDate *_maxXValue;
-    NSNumber *_maxYValue;
-    NSDate *_minXValue;
-    NSNumber *_minYValue;
+    }  _edgeInsets;
+    NSDate * _maxXValue;
+    NSNumber * _maxYValue;
+    NSDate * _minXValue;
+    NSNumber * _minYValue;
 }
 
 @property (nonatomic) float animationDuration;

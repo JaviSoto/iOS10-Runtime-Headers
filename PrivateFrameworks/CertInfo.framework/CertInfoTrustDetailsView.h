@@ -3,8 +3,8 @@
  */
 
 @interface CertInfoTrustDetailsView : UIView {
-    NSArray *_certificateViews;
-    CertInfoCertificateDetailsView *_currentCertView;
+    NSArray * _certificateViews;
+    CertInfoCertificateDetailsView * _currentCertView;
 }
 
 - (void).cxx_destruct;

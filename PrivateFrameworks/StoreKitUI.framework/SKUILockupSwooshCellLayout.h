@@ -3,26 +3,26 @@
  */
 
 @interface SKUILockupSwooshCellLayout : SKUIItemCellLayout {
-    UILabel *_artistNameLabel;
-    UILabel *_categoryLabel;
-    UIImageView *_iconHighlightImageView;
-    UILabel *_itemCountLabel;
+    UILabel * _artistNameLabel;
+    UILabel * _categoryLabel;
+    UIImageView * _iconHighlightImageView;
+    UILabel * _itemCountLabel;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxImageSize;
-    UILabel *_priceLabel;
-    UIColor *_primaryTextColor;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
-    UIImageView *_videoHighlightImageView;
-    UIImageView *_videoImageView;
-    UIImageView *_videoPlayButtonImageView;
+    }  _maxImageSize;
+    UILabel * _priceLabel;
+    UIColor * _primaryTextColor;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
+    UIImageView * _videoHighlightImageView;
+    UIImageView * _videoImageView;
+    UIImageView * _videoPlayButtonImageView;
     struct CGSize { 
         float width; 
         float height; 
-    } _videoSize;
-    unsigned int _visibleFields;
+    }  _videoSize;
+    unsigned int  _visibleFields;
 }
 
 @property (nonatomic, copy) NSString *artistName;

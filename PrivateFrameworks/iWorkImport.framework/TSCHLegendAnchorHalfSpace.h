@@ -9,7 +9,7 @@
             float y; 
         } normal; 
         float distance; 
-    } mLine;
+    }  mLine;
 }
 
 @property (nonatomic, readonly) struct TSCHLegendAnchorLine { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } line;

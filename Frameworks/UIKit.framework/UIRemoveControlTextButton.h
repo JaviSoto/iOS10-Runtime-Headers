@@ -3,7 +3,7 @@
  */
 
 @interface UIRemoveControlTextButton : UIControl {
-    NSString *_label;
+    NSString * _label;
 }
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;

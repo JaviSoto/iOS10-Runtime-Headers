@@ -3,13 +3,13 @@
  */
 
 @interface MPUExtrasConstrainedArtworkContainerView : UIView {
-    MPUArtworkView *_artworkView;
-    UIImage *_overlayImage;
-    float _overlayScale;
-    NSArray *_overlaySizeConstraints;
-    UIImageView *_overlayView;
-    BOOL _shouldAutoresizeMaskLayerToFillBounds;
-    BOOL _shouldBottomAlignArtwork;
+    MPUArtworkView * _artworkView;
+    UIImage * _overlayImage;
+    float  _overlayScale;
+    NSArray * _overlaySizeConstraints;
+    UIImageView * _overlayView;
+    BOOL  _shouldAutoresizeMaskLayerToFillBounds;
+    BOOL  _shouldBottomAlignArtwork;
 }
 
 @property (nonatomic, retain) MPUArtworkView *artworkView;

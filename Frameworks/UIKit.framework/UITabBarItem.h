@@ -3,19 +3,19 @@
  */
 
 @interface UITabBarItem : UIBarItem {
-    SEL _action;
-    id _appearanceStorage;
-    NSString *_badgeValue;
-    int _barMetrics;
+    SEL  _action;
+    id  _appearanceStorage;
+    NSString * _badgeValue;
+    int  _barMetrics;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _imageInsets;
-    int _imageStyle;
-    UIImage *_selectedImage;
-    UIImage *_selectedTemplateImage;
+    }  _imageInsets;
+    int  _imageStyle;
+    UIImage * _selectedImage;
+    UIImage * _selectedTemplateImage;
     struct { 
         unsigned int enabled : 1; 
         unsigned int style : 3; 
@@ -25,14 +25,14 @@
         unsigned int animatedBadge : 1; 
         unsigned int customSelectedImage : 1; 
         unsigned int customUnselectedImage : 1; 
-    } _tabBarItemFlags;
-    int _tag;
-    id _target;
-    UIImage *_templateImage;
-    UIColor *_tintColor;
-    NSString *_title;
-    UIImage *_unselectedImage;
-    UIView *_view;
+    }  _tabBarItemFlags;
+    int  _tag;
+    id  _target;
+    UIImage * _templateImage;
+    UIColor * _tintColor;
+    NSString * _title;
+    UIImage * _unselectedImage;
+    UIView * _view;
 }
 
 @property (setter=_setBarMetrics:, nonatomic) int _barMetrics;
@@ -43,6 +43,7 @@
 @property (nonatomic, copy) NSString *badgeValue;
 @property (nonatomic, retain) UIImage *selectedImage;
 @property (nonatomic) id target;
+@property (nonatomic) struct UIOffset { float x1; float x2; } titlePositionAdjustment;
 @property (nonatomic, retain) UIImage *unselectedImage;
 @property (nonatomic, retain) UIView *view;
 @property (nonatomic) BOOL viewIsCustom;

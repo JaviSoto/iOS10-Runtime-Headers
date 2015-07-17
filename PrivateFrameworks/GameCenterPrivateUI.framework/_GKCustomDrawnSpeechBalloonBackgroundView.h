@@ -3,8 +3,8 @@
  */
 
 @interface _GKCustomDrawnSpeechBalloonBackgroundView : UIView {
-    unsigned char _drawStyle;
-    unsigned char _tipDirection;
+    unsigned char  _drawStyle;
+    unsigned char  _tipDirection;
 }
 
 @property (nonatomic) unsigned char drawStyle;

@@ -3,13 +3,16 @@
  */
 
 @interface _GEOReverseGeocodeRequestTicket : _GEOPlaceRequestTicket <GEOMapServiceSearchTicket> {
-    BOOL _shiftLocationsIfNeeded;
+    BOOL  _shiftLocationsIfNeeded;
 }
 
+@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
+@property (nonatomic, readonly) NSString *resultSectionHeader;
 @property (nonatomic, readonly) NSString *searchQuery;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;

@@ -3,17 +3,17 @@
  */
 
 @interface MFModernAddressAtom : UIControl <MFModernAtomViewResembling> {
-    void *_addressBook;
-    unsigned int _addressIsPhoneNumber;
-    MFModernAtomView *_atomView;
-    <MFModernAddressAtomDelegate> *_delegate;
-    NSString *_displayString;
-    NSString *_fullAddress;
-    int _identifier;
-    unsigned int _isDisplayStringFromAddressBook;
-    unsigned int _maxWidth;
-    void *_person;
-    unsigned int _updatedABPerson;
+    void * _addressBook;
+    unsigned int  _addressIsPhoneNumber;
+    MFModernAtomView * _atomView;
+    <MFModernAddressAtomDelegate> * _delegate;
+    NSString * _displayString;
+    NSString * _fullAddress;
+    int  _identifier;
+    unsigned int  _isDisplayStringFromAddressBook;
+    unsigned int  _maxWidth;
+    void * _person;
+    unsigned int  _updatedABPerson;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } baselinePoint;

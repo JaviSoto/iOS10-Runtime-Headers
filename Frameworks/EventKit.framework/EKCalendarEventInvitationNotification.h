@@ -3,20 +3,20 @@
  */
 
 @interface EKCalendarEventInvitationNotification : EKCalendarNotification {
-    BOOL _allDay;
-    BOOL _attendeeReplyChanged;
-    NSArray *_attendees;
-    BOOL _dateChanged;
-    NSDate *_endDate;
-    BOOL _hasRecurrenceRules;
-    NSString *_location;
-    BOOL _locationChanged;
-    int _participationStatus;
-    NSDate *_participationStatusModifiedDate;
-    NSDate *_startDate;
-    NSDate *_startDateForNextOccurrence;
-    int _status;
-    BOOL _timeChanged;
+    BOOL  _allDay;
+    BOOL  _attendeeReplyChanged;
+    NSArray * _attendees;
+    BOOL  _dateChanged;
+    NSDate * _endDate;
+    BOOL  _hasRecurrenceRules;
+    NSString * _location;
+    BOOL  _locationChanged;
+    int  _participationStatus;
+    NSDate * _participationStatusModifiedDate;
+    NSDate * _startDate;
+    NSDate * _startDateForNextOccurrence;
+    int  _status;
+    BOOL  _timeChanged;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;
@@ -33,6 +33,8 @@
 @property (nonatomic, retain) NSDate *startDateForNextOccurrence;
 @property (nonatomic) int status;
 @property (nonatomic) BOOL timeChanged;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 - (BOOL)attendeeReplyChanged;
 - (id)attendees;
@@ -65,5 +67,19 @@
 - (id)startDateForNextOccurrence;
 - (int)status;
 - (BOOL)timeChanged;
+
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (id)_attachmentString;
+- (id)_attendeeString;
+- (id)_dateString;
+- (id)_errorString;
+- (id)_locationString;
+- (id)_organizerString;
+- (void)_populateStringsForInvitation:(id)arg1 options:(unsigned int)arg2;
+- (void)_populateStringsForReply:(id)arg1 options:(unsigned int)arg2;
+- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
+- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (BOOL)supportsDisplay;
 
 @end

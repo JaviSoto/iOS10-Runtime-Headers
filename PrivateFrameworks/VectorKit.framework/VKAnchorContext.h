@@ -6,11 +6,11 @@
     struct shared_ptr<vk::AnchorContext> { 
         struct AnchorContext {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _anchorContext;
+    }  _anchorContext;
     struct shared_ptr<vk::AnchorFactory> { 
         struct AnchorFactory {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _anchorFactory;
+    }  _anchorFactory;
 }
 
 - (id).cxx_construct;

@@ -3,8 +3,8 @@
  */
 
 @interface BRShareCopyOperation : BROperation {
-    id /* block */ _shareCopyCompletionBlock;
-    NSURL *_url;
+    id /* block */  _shareCopyCompletionBlock;
+    NSURL * _url;
 }
 
 @property (copy) id /* block */ shareCopyCompletionBlock;

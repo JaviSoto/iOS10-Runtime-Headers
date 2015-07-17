@@ -3,27 +3,27 @@
  */
 
 @interface TSCHMultiDataChartRep : TSCHChartRep {
-    BOOL _shouldDisableMultiDataControls;
-    BOOL mAnimatedLayersNeedUpdate;
-    TSCHMultiDataChartRepElementIndex *mCurrentRepElementIndex;
-    CALayer *mDataSetNameLayer;
-    unsigned int mElementLayersMultiDataSetIndex;
-    CALayer *mElementsContainerLayer;
-    int mGridDirection;
-    NSMutableDictionary *mIndexedElements;
-    BOOL mIsAnimatingForBuilds;
-    NSMutableDictionary *mLayerIdToLayerMap;
-    NSMutableDictionary *mPreviousOutsideBodyBounds;
-    NSSet *mReferenceLineLabelsSearchSelectionsToRender;
-    CALayer *mReferenceLinesContainerLayer;
-    NSSet *mReferenceLinesToRender;
-    BOOL mRenderingBackgroundLayer;
-    BOOL mRenderingDataSetNameLayer;
-    BOOL mRenderingElementLabelsLayer;
-    BOOL mRenderingElementShapeLayer;
-    BOOL mRenderingReferenceLineLayer;
-    CALayer *mRootLayer;
-    BOOL mShouldAnimateLabelsQuickly;
+    BOOL  _shouldDisableMultiDataControls;
+    BOOL  mAnimatedLayersNeedUpdate;
+    TSCHMultiDataChartRepElementIndex * mCurrentRepElementIndex;
+    CALayer * mDataSetNameLayer;
+    unsigned int  mElementLayersMultiDataSetIndex;
+    CALayer * mElementsContainerLayer;
+    int  mGridDirection;
+    NSMutableDictionary * mIndexedElements;
+    BOOL  mIsAnimatingForBuilds;
+    NSMutableDictionary * mLayerIdToLayerMap;
+    NSMutableDictionary * mPreviousOutsideBodyBounds;
+    NSSet * mReferenceLineLabelsSearchSelectionsToRender;
+    CALayer * mReferenceLinesContainerLayer;
+    NSSet * mReferenceLinesToRender;
+    BOOL  mRenderingBackgroundLayer;
+    BOOL  mRenderingDataSetNameLayer;
+    BOOL  mRenderingElementLabelsLayer;
+    BOOL  mRenderingElementShapeLayer;
+    BOOL  mRenderingReferenceLineLayer;
+    CALayer * mRootLayer;
+    BOOL  mShouldAnimateLabelsQuickly;
 }
 
 @property (nonatomic, readonly) BOOL shouldDisableMultiDataControls;

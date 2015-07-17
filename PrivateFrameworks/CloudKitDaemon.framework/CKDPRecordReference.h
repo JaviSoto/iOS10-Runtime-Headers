@@ -5,9 +5,9 @@
 @interface CKDPRecordReference : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPRecordIdentifier *_recordIdentifier;
-    int _type;
+    }  _has;
+    CKDPRecordIdentifier * _recordIdentifier;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL hasRecordIdentifier;

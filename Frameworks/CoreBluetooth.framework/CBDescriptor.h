@@ -3,10 +3,10 @@
  */
 
 @interface CBDescriptor : CBAttribute {
-    CBCharacteristic *_characteristic;
-    NSNumber *_handle;
-    CBPeripheral *_peripheral;
-    id _value;
+    CBCharacteristic * _characteristic;
+    NSNumber * _handle;
+    CBPeripheral * _peripheral;
+    id  _value;
 }
 
 @property (nonatomic) CBCharacteristic *characteristic;

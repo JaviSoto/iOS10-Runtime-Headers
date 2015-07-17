@@ -3,16 +3,17 @@
  */
 
 @interface UIAnimator : NSObject {
-    NSMutableArray *_animations;
-    /* Warning: unhandled array encoding: '[3@]' */ id _heartbeat;
-    int _heartbeatClientCount;
-    double _lastUpdateTime;
+    NSMutableArray * _animations;
+    /* Warning: unhandled array encoding: '[3@]' */ id  _heartbeat;
+    int  _heartbeatClientCount;
+    double  _lastUpdateTime;
 }
 
 + (void)disableAnimation;
 + (void)enableAnimation;
 + (id)sharedAnimator;
 
+- (void).cxx_destruct;
 - (void)_LCDHeartbeatCallback:(id)arg1;
 - (void)_TVHeartbeatCallback:(id)arg1;
 - (void)_TimerHeartbeatCallback:(id)arg1;

@@ -5,9 +5,9 @@
 @interface GEORPProblemStatusResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int statusCode : 1; 
-    } _has;
-    NSMutableArray *_problemStatus;
-    int _statusCode;
+    }  _has;
+    NSMutableArray * _problemStatus;
+    int  _statusCode;
 }
 
 @property (nonatomic) BOOL hasStatusCode;

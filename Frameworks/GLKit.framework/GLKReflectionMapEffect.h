@@ -3,7 +3,7 @@
  */
 
 @interface GLKReflectionMapEffect : GLKBaseEffect <GLKNamedEffect> {
-    BOOL _dirtyUniforms;
+    BOOL  _dirtyUniforms;
     union _GLKMatrix3 { 
         struct { 
             float m00; 
@@ -17,9 +17,9 @@
             float m22; 
         } ; 
         float m[9]; 
-    } _matrix;
-    int _matrixLoc;
-    GLKEffectPropertyTexture *_textureCubeMap;
+    }  _matrix;
+    int  _matrixLoc;
+    GLKEffectPropertyTexture * _textureCubeMap;
 }
 
 @property (nonatomic) BOOL dirtyUniforms;

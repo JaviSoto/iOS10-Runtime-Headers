@@ -3,7 +3,7 @@
  */
 
 @interface TKPickerItem : NSObject {
-    int _section;
+    int  _section;
 }
 
 @property (nonatomic) int section;

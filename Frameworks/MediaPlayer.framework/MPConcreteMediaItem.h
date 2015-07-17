@@ -3,9 +3,9 @@
  */
 
 @interface MPConcreteMediaItem : MPMediaItem <MPCacheableConcreteMediaEntity, MPMediaItemArrayPIDEncodableItem, NSCoding, NSCopying> {
-    MPMediaLibrary *_library;
-    unsigned long long _persistentID;
-    MPConcreteMediaEntityPropertiesCache *_propertiesCache;
+    MPMediaLibrary * _library;
+    unsigned long long  _persistentID;
+    MPConcreteMediaEntityPropertiesCache * _propertiesCache;
 }
 
 @property (nonatomic, readonly, retain) MPConcreteMediaEntityPropertiesCache *cachedPropertyValues;

@@ -3,9 +3,9 @@
  */
 
 @interface ADProgressView : UIView {
-    UILabel *_elapsedTimeLabel;
-    UILabel *_remainingTimeLabel;
-    ADPrerollSlider *_slider;
+    UILabel * _elapsedTimeLabel;
+    UILabel * _remainingTimeLabel;
+    ADPrerollSlider * _slider;
 }
 
 @property (nonatomic, retain) UILabel *elapsedTimeLabel;

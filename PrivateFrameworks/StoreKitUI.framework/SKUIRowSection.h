@@ -3,19 +3,19 @@
  */
 
 @interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
-    SKUIClientContext *_clientContext;
-    NSMapTable *_columnViews;
-    NSMapTable *_componentArtworkRequestIDs;
-    NSMapTable *_countdownViewControllers;
-    NSMapTable *_editorialLayouts;
-    NSMutableIndexSet *_expandedEditorialIndexes;
-    NSMapTable *_galleryViewControllers;
-    BOOL _isPad;
-    float _landscapeCellContentHeight;
-    SKUIMissingItemLoader *_missingItemLoader;
-    SKUIProductPageOverlayController *_overlayController;
-    SKUILockupComponent *_overlaySourceComponent;
-    float _portraitCellContentHeight;
+    SKUIClientContext * _clientContext;
+    NSMapTable * _columnViews;
+    NSMapTable * _componentArtworkRequestIDs;
+    NSMapTable * _countdownViewControllers;
+    NSMapTable * _editorialLayouts;
+    NSMutableIndexSet * _expandedEditorialIndexes;
+    NSMapTable * _galleryViewControllers;
+    BOOL  _isPad;
+    float  _landscapeCellContentHeight;
+    SKUIMissingItemLoader * _missingItemLoader;
+    SKUIProductPageOverlayController * _overlayController;
+    SKUILockupComponent * _overlaySourceComponent;
+    float  _portraitCellContentHeight;
 }
 
 @property (readonly, copy) NSString *debugDescription;

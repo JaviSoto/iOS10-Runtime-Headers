@@ -3,18 +3,18 @@
  */
 
 @interface SUSectionButton : NSObject <NSCopying> {
-    NSString *_accessibilityTitle;
-    NSString *_displayTitle;
-    UIImage *_image;
+    NSString * _accessibilityTitle;
+    NSString * _displayTitle;
+    UIImage * _image;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _imageInsets;
-    NSURL *_imageURL;
-    float _imageURLScale;
-    int _tag;
+    }  _imageInsets;
+    NSURL * _imageURL;
+    float  _imageURLScale;
+    int  _tag;
 }
 
 @property (nonatomic, copy) NSString *accessibilityTitle;

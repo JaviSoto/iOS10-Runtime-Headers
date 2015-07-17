@@ -3,10 +3,10 @@
  */
 
 @interface UIWebElementAction : NSObject {
-    id /* block */ _actionHandler;
-    id /* block */ _dismissalHandler;
-    NSString *_title;
-    int _type;
+    id /* block */  _actionHandler;
+    id /* block */  _dismissalHandler;
+    NSString * _title;
+    int  _type;
 }
 
 @property (nonatomic, copy) id /* block */ dismissalHandler;

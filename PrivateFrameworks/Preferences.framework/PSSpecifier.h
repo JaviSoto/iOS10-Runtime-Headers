@@ -3,29 +3,29 @@
  */
 
 @interface PSSpecifier : NSObject {
-    SEL _buttonAction;
-    SEL _confirmationAction;
-    SEL _confirmationCancelAction;
-    SEL _controllerLoadAction;
-    NSString *_name;
-    NSMutableDictionary *_properties;
-    NSDictionary *_shortTitleDict;
-    BOOL _showContentString;
-    NSDictionary *_titleDict;
-    id _userInfo;
-    NSArray *_values;
-    SEL action;
-    int autoCapsType;
-    int autoCorrectionType;
-    SEL cancel;
-    int cellType;
-    Class detailControllerClass;
-    Class editPaneClass;
-    SEL getter;
-    int keyboardType;
-    SEL setter;
-    id target;
-    unsigned int textFieldType;
+    SEL  _buttonAction;
+    SEL  _confirmationAction;
+    SEL  _confirmationCancelAction;
+    SEL  _controllerLoadAction;
+    NSString * _name;
+    NSMutableDictionary * _properties;
+    NSDictionary * _shortTitleDict;
+    BOOL  _showContentString;
+    NSDictionary * _titleDict;
+    id  _userInfo;
+    NSArray * _values;
+    SEL  action;
+    int  autoCapsType;
+    int  autoCorrectionType;
+    SEL  cancel;
+    int  cellType;
+    Class  detailControllerClass;
+    Class  editPaneClass;
+    SEL  getter;
+    int  keyboardType;
+    SEL  setter;
+    id  target;
+    unsigned int  textFieldType;
 }
 
 @property (nonatomic, retain) IMAccount *CNFRegAccount;
@@ -60,21 +60,32 @@
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 + (id)specifierWithSpecifier:(id)arg1;
 
+- (void).cxx_destruct;
 - (SEL)buttonAction;
 - (int)cellType;
 - (SEL)confirmationAction;
 - (SEL)confirmationCancelAction;
 - (SEL)controllerLoadAction;
-- (void)dealloc;
 - (id)description;
 - (Class)detailControllerClass;
 - (Class)editPaneClass;
+- (BOOL)hasValidGetter;
+- (BOOL)hasValidSetter;
 - (id)identifier;
 - (id)init;
 - (BOOL)isEqualToSpecifier:(id)arg1;
+- (SEL)legacyAction;
+- (SEL)legacyCancel;
 - (void)loadValuesAndTitlesFromDataSource;
 - (id)name;
 - (id)objectForKeyedSubscript:(id)arg1;
+- (void)performButtonAction;
+- (void)performConfirmationAction;
+- (void)performConfirmationCancelAction;
+- (void)performControllerLoadAction;
+- (id)performGetter;
+- (void)performLegacyAction;
+- (void)performSetterWithValue:(id)arg1;
 - (id)properties;
 - (id)propertyForKey:(id)arg1;
 - (void)removePropertyForKey:(id)arg1;
@@ -87,6 +98,8 @@
 - (void)setEditPaneClass:(Class)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setKeyboardType:(int)arg1 autoCaps:(int)arg2 autoCorrection:(int)arg3;
+- (void)setLegacyAction:(SEL)arg1;
+- (void)setLegacyCancel:(SEL)arg1;
 - (void)setName:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setProperties:(id)arg1;

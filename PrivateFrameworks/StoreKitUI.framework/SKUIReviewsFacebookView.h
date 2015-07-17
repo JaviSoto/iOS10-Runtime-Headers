@@ -3,21 +3,21 @@
  */
 
 @interface SKUIReviewsFacebookView : UIView {
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    NSArray *_friendNames;
-    UILabel *_friendsLabel;
-    UIButton *_likeButton;
-    UIImageView *_logoImageView;
-    UIView *_separatorView;
-    UILabel *_titleLabel;
-    BOOL _userLiked;
+    }  _contentInsets;
+    NSArray * _friendNames;
+    UILabel * _friendsLabel;
+    UIButton * _likeButton;
+    UIImageView * _logoImageView;
+    UIView * _separatorView;
+    UILabel * _titleLabel;
+    BOOL  _userLiked;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

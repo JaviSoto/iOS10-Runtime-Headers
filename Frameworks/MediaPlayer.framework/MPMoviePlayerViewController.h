@@ -3,8 +3,8 @@
  */
 
 @interface MPMoviePlayerViewController : UIViewController {
-    id _internal;
-    BOOL _statusBarWasHidden;
+    id  _internal;
+    BOOL  _statusBarWasHidden;
 }
 
 @property (nonatomic, readonly) MPMoviePlayerController *moviePlayer;
@@ -17,9 +17,10 @@
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (id)init;
 - (id)initWithAsset:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContentURL:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)moviePlayer;
 - (BOOL)prefersStatusBarHidden;

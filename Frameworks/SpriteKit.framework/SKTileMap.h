@@ -3,30 +3,30 @@
  */
 
 @interface SKTileMap : SKNode <NSXMLParserDelegate> {
-    int _firstGid;
-    int _imgHeight;
-    NSString *_imgName;
-    int _imgWidth;
-    BOOL _isometric;
-    int _layerHeight;
-    NSString *_layerName;
-    NSMutableArray *_layerTiles;
-    int _layerWidth;
-    BOOL _loaded;
-    BOOL _loading;
-    int _mapHeight;
-    NSString *_mapName;
-    int _mapTileHeight;
-    int _mapTileWidth;
-    int _mapWidth;
-    int _margin;
-    NSXMLParser *_parser;
-    BOOL _skipSprites;
-    int _spacing;
-    int _tileHeight;
-    int _tileIndex;
-    int _tileWidth;
-    NSString *_tilesetName;
+    int  _firstGid;
+    int  _imgHeight;
+    NSString * _imgName;
+    int  _imgWidth;
+    BOOL  _isometric;
+    int  _layerHeight;
+    NSString * _layerName;
+    NSMutableArray * _layerTiles;
+    int  _layerWidth;
+    BOOL  _loaded;
+    BOOL  _loading;
+    int  _mapHeight;
+    NSString * _mapName;
+    int  _mapTileHeight;
+    int  _mapTileWidth;
+    int  _mapWidth;
+    int  _margin;
+    NSXMLParser * _parser;
+    BOOL  _skipSprites;
+    int  _spacing;
+    int  _tileHeight;
+    int  _tileIndex;
+    int  _tileWidth;
+    NSString * _tilesetName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

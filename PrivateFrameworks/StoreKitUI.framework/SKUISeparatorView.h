@@ -3,9 +3,9 @@
  */
 
 @interface SKUISeparatorView : UIView {
-    UIColor *_color1;
-    UIColor *_color2;
-    int _separatorStyle;
+    UIColor * _color1;
+    UIColor * _color2;
+    int  _separatorStyle;
 }
 
 @property (nonatomic, copy) UIColor *color1;

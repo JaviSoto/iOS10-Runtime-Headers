@@ -3,7 +3,7 @@
  */
 
 @interface MusicApplicationController : SKUIApplicationController <SKUIModalDocumentDataSource, SKUIModalDocumentDelegate, SSVDirectUploadObserver> {
-    SSVDirectUploadQueue *_uploadQueue;
+    SSVDirectUploadQueue * _uploadQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

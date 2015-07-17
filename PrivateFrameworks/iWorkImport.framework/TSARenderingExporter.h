@@ -3,15 +3,15 @@
  */
 
 @interface TSARenderingExporter : NSObject <TSKRenderingExporter> {
-    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
-    TSADocumentRoot *mDocumentRoot;
-    BOOL mDoesDrawAllPages;
-    TSDImager *mImager;
-    BOOL mIsCancelled;
-    BOOL mIsQuit;
-    BOOL mPaginate;
-    TSUProgressContext *mProgressContext;
-    NSObject<TSARenderingExporterDelegate> *mRenderingExporterDelegate;
+    TSDBitmapRenderingQualityInfo * mBitmapRenderingQualityInfo;
+    TSADocumentRoot * mDocumentRoot;
+    BOOL  mDoesDrawAllPages;
+    TSDImager * mImager;
+    BOOL  mIsCancelled;
+    BOOL  mIsQuit;
+    BOOL  mPaginate;
+    TSUProgressContext * mProgressContext;
+    NSObject<TSARenderingExporterDelegate> * mRenderingExporterDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

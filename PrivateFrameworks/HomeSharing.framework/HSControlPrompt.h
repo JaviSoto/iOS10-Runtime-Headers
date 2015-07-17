@@ -3,15 +3,15 @@
  */
 
 @interface HSControlPrompt : NSObject {
-    unsigned int _keyboardType;
-    unsigned int _messageType;
-    unsigned int _promptID;
-    BOOL _secureText;
-    unsigned long long _sessionID;
-    NSString *_string;
-    NSString *_subText;
-    NSString *_title;
-    unsigned int _version;
+    unsigned int  _keyboardType;
+    unsigned int  _messageType;
+    unsigned int  _promptID;
+    BOOL  _secureText;
+    unsigned long long  _sessionID;
+    NSString * _string;
+    NSString * _subText;
+    NSString * _title;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned int keyboardType;

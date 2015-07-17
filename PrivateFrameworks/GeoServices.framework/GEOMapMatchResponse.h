@@ -6,10 +6,10 @@
     struct { 
         unsigned int matchingStatus : 1; 
         unsigned int status : 1; 
-    } _has;
-    int _matchingStatus;
-    int _status;
-    NSData *_zilchPoints;
+    }  _has;
+    int  _matchingStatus;
+    int  _status;
+    NSData * _zilchPoints;
 }
 
 @property (nonatomic) BOOL hasMatchingStatus;

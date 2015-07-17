@@ -3,16 +3,16 @@
  */
 
 @interface CKDDownloadAssetsOperation : CKDDatabaseOperation {
-    NSMutableArray *_MMCSItemsToDownload;
-    NSArray *_assetsToDownload;
-    CKDCancelTokenGroup *_cancelTokens;
-    id /* block */ _downloadCompletionBlock;
-    id /* block */ _downloadPreparationBlock;
-    id /* block */ _downloadProgressBlock;
-    NSMapTable *_downloadTasksByPackages;
-    unsigned int _maxPackageDownloadsPerBatch;
-    NSArray *_packageIndexSets;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray * _MMCSItemsToDownload;
+    NSArray * _assetsToDownload;
+    CKDCancelTokenGroup * _cancelTokens;
+    id /* block */  _downloadCompletionBlock;
+    id /* block */  _downloadPreparationBlock;
+    id /* block */  _downloadProgressBlock;
+    NSMapTable * _downloadTasksByPackages;
+    unsigned int  _maxPackageDownloadsPerBatch;
+    NSArray * _packageIndexSets;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToDownload;
@@ -28,6 +28,9 @@
 
 - (void).cxx_destruct;
 - (id)MMCSItemsToDownload;
+- (void)_collectMetricsFromCompletedItemGroup:(id)arg1;
+- (void)_collectMetricsFromCompletedItemGroupSet:(id)arg1;
+- (void)_collectMetricsFromMMCSOperationMetrics:(id)arg1;
 - (void)_didDownloadAsset:(id)arg1 error:(id)arg2;
 - (void)_didDownloadMMCSItem:(id)arg1 error:(id)arg2;
 - (void)_didDownloadMMCSItems:(id)arg1 error:(id)arg2;
@@ -45,6 +48,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (BOOL)_prepareForDownload;
 - (void)_removeUntrackedMMCSItems:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)assetsToDownload;
 - (void)cancel;
 - (id)cancelTokens;

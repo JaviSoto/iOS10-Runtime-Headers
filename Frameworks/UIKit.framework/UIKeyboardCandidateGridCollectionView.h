@@ -3,11 +3,11 @@
  */
 
 @interface UIKeyboardCandidateGridCollectionView : UIKBCandidateCollectionView {
-    UIView *_headerView;
-    UITableViewIndex *_index;
-    float _indexMaximumHeight;
-    UIKeyboardCandidateGridCollectionViewController *_parentViewController;
-    float _previousGroupBarStartingY;
+    UIView * _headerView;
+    UITableViewIndex * _index;
+    float  _indexMaximumHeight;
+    UIKeyboardCandidateGridCollectionViewController * _parentViewController;
+    float  _previousGroupBarStartingY;
 }
 
 @property (nonatomic, retain) UIView *headerView;

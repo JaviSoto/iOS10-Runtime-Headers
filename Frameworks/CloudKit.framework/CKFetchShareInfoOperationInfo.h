@@ -3,7 +3,7 @@
  */
 
 @interface CKFetchShareInfoOperationInfo : CKOperationInfo {
-    NSArray *_shareURLsToFetch;
+    NSArray * _shareURLsToFetch;
 }
 
 @property (nonatomic, retain) NSArray *shareURLsToFetch;

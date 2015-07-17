@@ -3,7 +3,7 @@
  */
 
 @interface MPChangeShuffleModeCommandEvent : MPRemoteCommandEvent {
-    unsigned int _shuffleType;
+    unsigned int  _shuffleType;
 }
 
 @property (nonatomic, readonly) unsigned int shuffleType;

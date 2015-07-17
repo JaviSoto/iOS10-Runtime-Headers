@@ -3,7 +3,7 @@
  */
 
 @interface SGRawKey : NSObject <SGEntityKey> {
-    NSString *_seralized;
+    NSString * _seralized;
 }
 
 @property (readonly, copy) NSString *debugDescription;

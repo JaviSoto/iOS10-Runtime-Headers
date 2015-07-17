@@ -3,26 +3,26 @@
  */
 
 @interface EKUIInviteeAlternativeTimeSearcher : NSObject {
-    BOOL _availabilityRequestInProgress;
-    NSOperationQueue *_availabilityRequestsQueue;
-    double _availabilitySearchDurationMultiplier;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSString *_ignoredEventID;
-    NSMutableArray *_internalOriginalConflictedParticipants;
-    NSDate *_internalOriginalEndDate;
-    NSDate *_internalOriginalStartDate;
-    BOOL _internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
-    BOOL _internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
-    NSMutableArray *_internalTimesWhenAllAttendeesCanAttend;
-    NSMutableArray *_internalTimesWhenSomeAttendeesCanAttend;
-    NSMutableArray *_leftoverSpans;
-    NSDate *_nextAvailabilityRangeStartDate;
-    NSString *_organizerAddress;
-    NSMutableDictionary *_participantAddressesToParticipants;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    unsigned int _remainingSearchAttempts;
-    EKSource *_source;
-    id /* block */ _stateChanged;
+    BOOL  _availabilityRequestInProgress;
+    NSOperationQueue * _availabilityRequestsQueue;
+    double  _availabilitySearchDurationMultiplier;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSString * _ignoredEventID;
+    NSMutableArray * _internalOriginalConflictedParticipants;
+    NSDate * _internalOriginalEndDate;
+    NSDate * _internalOriginalStartDate;
+    BOOL  _internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
+    BOOL  _internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
+    NSMutableArray * _internalTimesWhenAllAttendeesCanAttend;
+    NSMutableArray * _internalTimesWhenSomeAttendeesCanAttend;
+    NSMutableArray * _leftoverSpans;
+    NSDate * _nextAvailabilityRangeStartDate;
+    NSString * _organizerAddress;
+    NSMutableDictionary * _participantAddressesToParticipants;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    unsigned int  _remainingSearchAttempts;
+    EKSource * _source;
+    id /* block */  _stateChanged;
 }
 
 @property (nonatomic) BOOL availabilityRequestInProgress;

@@ -3,8 +3,8 @@
  */
 
 @interface OADWavAudioFile : OADEmbeddedMediaFile {
-    float mDuration;
-    BOOL mHasDuration;
+    float  mDuration;
+    BOOL  mHasDuration;
 }
 
 @property (nonatomic) float duration;
@@ -15,5 +15,6 @@
 - (BOOL)isAudioOnly;
 - (void)setDuration:(float)arg1;
 - (void)setHasDuration:(BOOL)arg1;
+- (void)setIsAudioOnly:(BOOL)arg1;
 
 @end

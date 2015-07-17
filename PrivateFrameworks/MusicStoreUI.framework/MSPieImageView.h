@@ -3,11 +3,11 @@
  */
 
 @interface MSPieImageView : UIView {
-    UIImage *_backgroundImage;
-    UIBezierPath *_clipPath;
-    UIImage *_foregroundImage;
-    float _pieFraction;
-    float _pieRadius;
+    UIImage * _backgroundImage;
+    UIBezierPath * _clipPath;
+    UIImage * _foregroundImage;
+    float  _pieFraction;
+    float  _pieRadius;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;

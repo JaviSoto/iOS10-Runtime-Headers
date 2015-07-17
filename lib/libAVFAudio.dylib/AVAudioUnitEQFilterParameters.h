@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioUnitEQFilterParameters : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (nonatomic) float bandwidth;

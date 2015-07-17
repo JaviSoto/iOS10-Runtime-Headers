@@ -3,8 +3,8 @@
  */
 
 @interface TSDGLShaderQualifierFloat : TSDGLShaderQualifier {
-    float _GLfloatValue;
-    float _proposedGLfloatValue;
+    float  _GLfloatValue;
+    float  _proposedGLfloatValue;
 }
 
 @property (nonatomic, readonly) float GLfloatValue;

@@ -3,8 +3,8 @@
  */
 
 @interface SBUIPluginController : NSObject <SBPluginBundleController> {
-    <SBUIPluginControllerHost> *_host;
-    BOOL _isVisible;
+    <SBUIPluginControllerHost> * _host;
+    BOOL  _isVisible;
 }
 
 @property (nonatomic) <SBUIPluginControllerHost> *host;

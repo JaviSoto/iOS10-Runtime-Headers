@@ -3,10 +3,10 @@
  */
 
 @interface TWCLocationUpdater : TWCUpdater {
-    City *_currentCity;
-    CLGeocoder *_geocoder;
-    id /* block */ _localWeatherHandler;
-    _MKLocationShifter *_locationShifter;
+    City * _currentCity;
+    CLGeocoder * _geocoder;
+    id /* block */  _localWeatherHandler;
+    _MKLocationShifter * _locationShifter;
 }
 
 @property (nonatomic, retain) City *currentCity;
@@ -14,6 +14,7 @@
 + (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
+- (void).cxx_destruct;
 - (void)_failed:(unsigned int)arg1;
 - (void)_geocodeLocation:(id)arg1;
 - (id)aggregateDictionaryDomain;

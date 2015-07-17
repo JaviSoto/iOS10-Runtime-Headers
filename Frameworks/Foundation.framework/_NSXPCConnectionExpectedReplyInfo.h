@@ -3,13 +3,13 @@
  */
 
 @interface _NSXPCConnectionExpectedReplyInfo : NSObject {
-    id /* block */ _cleanupBlock;
-    id /* block */ _errorBlock;
-    NSXPCInterface *_interface;
-    unsigned long long _proxyNumber;
-    NSBlock *_replyBlock;
-    SEL _selector;
-    NSDictionary *_userInfo;
+    id /* block */  _cleanupBlock;
+    id /* block */  _errorBlock;
+    NSXPCInterface * _interface;
+    unsigned long long  _proxyNumber;
+    NSBlock * _replyBlock;
+    SEL  _selector;
+    NSDictionary * _userInfo;
 }
 
 @property (copy) id /* block */ cleanupBlock;

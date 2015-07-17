@@ -3,12 +3,12 @@
  */
 
 @interface CKVideoPreviewViewController : UIViewController {
-    AVPlayer *_avPlayer;
-    AVPlayerItem *_avPlayerItem;
-    AVPlayerLayer *_avPlayerLayer;
-    BOOL _reachedEnd;
-    BOOL _redisplayStatusBar;
-    <CKVideoPreviewViewControllerDelegate> *_videoPreviewDelegate;
+    AVPlayer * _avPlayer;
+    AVPlayerItem * _avPlayerItem;
+    AVPlayerLayer * _avPlayerLayer;
+    BOOL  _reachedEnd;
+    BOOL  _redisplayStatusBar;
+    <CKVideoPreviewViewControllerDelegate> * _videoPreviewDelegate;
 }
 
 @property (nonatomic, retain) AVPlayer *avPlayer;

@@ -3,9 +3,9 @@
  */
 
 @interface DAMailboxFetchSearchResultRequest : NSObject {
-    int _bodyFormat;
-    NSString *_longID;
-    int _maxSize;
+    int  _bodyFormat;
+    NSString * _longID;
+    int  _maxSize;
 }
 
 @property (nonatomic) int bodyFormat;

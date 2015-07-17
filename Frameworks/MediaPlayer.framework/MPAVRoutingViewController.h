@@ -3,22 +3,22 @@
  */
 
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    int _airPlayPasswordAlertDidCancelToken;
-    BOOL _allowMirroring;
-    unsigned int _avItemType;
-    NSArray *_cachedRoutes;
-    BOOL _cachedShowAirPlayDebugButton;
-    <MPAVRoutingViewControllerDelegate> *_delegate;
-    BOOL _hasCachedAirPlayDebugButtonStatus;
-    BOOL _needsDisplayedRoutesUpdate;
-    MPAVRoutingController *_routingController;
-    unsigned int _style;
-    UIColor *_tableCellsBackgroundColor;
-    UIColor *_tableCellsContentColor;
-    UITableView *_tableView;
-    MPWeakTimer *_updateTimer;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    int  _airPlayPasswordAlertDidCancelToken;
+    BOOL  _allowMirroring;
+    unsigned int  _avItemType;
+    NSArray * _cachedRoutes;
+    BOOL  _cachedShowAirPlayDebugButton;
+    <MPAVRoutingViewControllerDelegate> * _delegate;
+    BOOL  _hasCachedAirPlayDebugButtonStatus;
+    BOOL  _needsDisplayedRoutesUpdate;
+    MPAVRoutingController * _routingController;
+    unsigned int  _style;
+    UIColor * _tableCellsBackgroundColor;
+    UIColor * _tableCellsContentColor;
+    UITableView * _tableView;
+    MPWeakTimer * _updateTimer;
 }
 
 @property (nonatomic) BOOL allowMirroring;

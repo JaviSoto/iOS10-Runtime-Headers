@@ -3,17 +3,17 @@
  */
 
 @interface UIStatusBarButtonActionItemView : UIStatusBarItemView {
-    UIButton *_button;
-    UIButton *_externalButton;
+    UIButton * _button;
+    UIButton * _externalButton;
 }
 
+- (void).cxx_destruct;
 - (id)_createButton;
 - (void)_doubleTapButton:(id)arg1;
 - (void)_pressAndHoldButton:(id)arg1;
 - (void)_pressButton:(id)arg1;
 - (void)_triggerButtonWithAction:(int)arg1;
 - (int)buttonType;
-- (void)dealloc;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (float)updateContentsAndWidth;

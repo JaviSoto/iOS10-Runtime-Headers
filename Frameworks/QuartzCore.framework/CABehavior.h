@@ -3,10 +3,10 @@
  */
 
 @interface CABehavior : NSObject <NSCoding, NSCopying> {
-    void *_attr;
-    void *_priv;
-    unsigned int _refcount;
-    unsigned int _uid;
+    void * _attr;
+    void * _priv;
+    unsigned int  _refcount;
+    unsigned int  _uid;
 }
 
 @property id delegate;

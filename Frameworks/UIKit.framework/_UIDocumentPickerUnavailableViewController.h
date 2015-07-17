@@ -3,17 +3,17 @@
  */
 
 @interface _UIDocumentPickerUnavailableViewController : UIViewController {
-    UIButton *_button;
-    NSURL *_buttonURL;
-    NSLayoutConstraint *_imageToTitleConstraint;
-    UIImageView *_leadImageView;
-    UILabel *_textLabel;
-    UILabel *_textLabel2;
-    NSLayoutConstraint *_textToButtonConstraint;
-    NSLayoutConstraint *_textToTextConstraint;
-    UILabel *_titleLabel;
-    NSLayoutConstraint *_titleToTextConstraint;
-    NSLayoutConstraint *_topConstraint;
+    UIButton * _button;
+    NSURL * _buttonURL;
+    NSLayoutConstraint * _imageToTitleConstraint;
+    UIImageView * _leadImageView;
+    UILabel * _textLabel;
+    UILabel * _textLabel2;
+    NSLayoutConstraint * _textToButtonConstraint;
+    NSLayoutConstraint * _textToTextConstraint;
+    UILabel * _titleLabel;
+    NSLayoutConstraint * _titleToTextConstraint;
+    NSLayoutConstraint * _topConstraint;
 }
 
 @property (nonatomic, retain) UIButton *button;
@@ -28,6 +28,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *titleToTextConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *topConstraint;
 
+- (void).cxx_destruct;
 - (id)_buttonBackgroundImageForState:(unsigned int)arg1 traits:(id)arg2;
 - (void)_buttonPressed:(id)arg1;
 - (void)_fontSizeDidChange:(id)arg1;

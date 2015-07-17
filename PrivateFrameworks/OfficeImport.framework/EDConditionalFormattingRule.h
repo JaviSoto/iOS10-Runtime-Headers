@@ -3,22 +3,22 @@
  */
 
 @interface EDConditionalFormattingRule : NSObject {
-    bool mAboveAverage;
-    bool mAppliesToDateOnly;
-    bool mBottom;
-    unsigned int mDifferentialStyleIndex;
-    bool mEqualAverage;
-    NSMutableArray *mFormulas;
-    int mOperator;
-    bool mPercent;
-    long mPriority;
-    unsigned long mRank;
-    EDResources *mResources;
-    long mStdDev;
-    bool mStopIfTrue;
-    NSString *mText;
-    int mTimePeriod;
-    int mType;
+    bool  mAboveAverage;
+    bool  mAppliesToDateOnly;
+    bool  mBottom;
+    unsigned int  mDifferentialStyleIndex;
+    bool  mEqualAverage;
+    NSMutableArray * mFormulas;
+    int  mOperator;
+    bool  mPercent;
+    long  mPriority;
+    unsigned long  mRank;
+    EDResources * mResources;
+    long  mStdDev;
+    bool  mStopIfTrue;
+    NSString * mText;
+    int  mTimePeriod;
+    int  mType;
 }
 
 + (id)conditionalFormattingRuleWithResources:(id)arg1;
@@ -29,6 +29,7 @@
 - (bool)bottom;
 - (int)compareToOtherRuleUsingPriority:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)differentialStyle;
 - (unsigned int)differentialStyleIndex;
 - (bool)equalAverage;

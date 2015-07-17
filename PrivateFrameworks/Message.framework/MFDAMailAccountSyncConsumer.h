@@ -3,18 +3,18 @@
  */
 
 @interface MFDAMailAccountSyncConsumer : MFDAMailAccountConsumer <DAMailboxRequestConsumer, DAMailboxStreamingContentConsumer> {
-    NSString *_accountID;
-    NSMutableData *_bodyData;
-    NSArray *_consumers;
-    BOOL _firstSyncBatch;
-    MFActivityMonitor *_monitor;
-    BOOL _moreAvailable;
-    BOOL _receivedFirstItem;
-    NSArray *_requests;
-    int _serverErrors;
-    id _streamConsumer;
-    int _syncKeyResets;
-    NSString *_tag;
+    NSString * _accountID;
+    NSMutableData * _bodyData;
+    NSArray * _consumers;
+    BOOL  _firstSyncBatch;
+    MFActivityMonitor * _monitor;
+    BOOL  _moreAvailable;
+    BOOL  _receivedFirstItem;
+    NSArray * _requests;
+    int  _serverErrors;
+    id  _streamConsumer;
+    int  _syncKeyResets;
+    NSString * _tag;
 }
 
 @property (nonatomic, readonly) BOOL moreAvailable;

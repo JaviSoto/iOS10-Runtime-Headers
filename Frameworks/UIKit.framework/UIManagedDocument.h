@@ -3,20 +3,20 @@
  */
 
 @interface UIManagedDocument : UIDocument {
-    NSDictionary *_documentMetadata;
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
+    NSDictionary * _documentMetadata;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
     struct __mdocFlags { 
         unsigned int shouldWriteAdditionalContent : 1; 
         unsigned int _reserved : 31; 
-    } _mdocFlags;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSString *modelConfiguration;
-    NSDictionary *persistentStoreOptions;
+    }  _mdocFlags;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
+    NSString * modelConfiguration;
+    NSDictionary * persistentStoreOptions;
 }
 
-@property (nonatomic, readonly, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, readonly, retain) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, copy) NSString *modelConfiguration;
 @property (nonatomic, copy) NSDictionary *persistentStoreOptions;
 

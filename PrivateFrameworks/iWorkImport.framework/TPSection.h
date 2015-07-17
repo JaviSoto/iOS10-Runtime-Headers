@@ -3,17 +3,16 @@
  */
 
 @interface TPSection : TSPObject <TSKDocumentObject, TSKModel, TSWPSection> {
-    TPDocumentRoot *_documentRoot;
-    BOOL _inheritPreviousHeaderFooter;
-    NSString *_name;
-    BOOL _pageMasterEvenOddPagesDifferent;
-    BOOL _pageMasterFirstPageDifferent;
-    BOOL _pageMasterFirstPageHidesHeaderFooter;
-    TPPageMaster *_pageMasters;
-    TSWPStorage *_parentStorage;
-    unsigned int _sectionPageNumberKind;
-    unsigned int _sectionPageNumberStart;
-    unsigned int _sectionStartKind;
+    BOOL  _inheritPreviousHeaderFooter;
+    NSString * _name;
+    BOOL  _pageMasterEvenOddPagesDifferent;
+    BOOL  _pageMasterFirstPageDifferent;
+    BOOL  _pageMasterFirstPageHidesHeaderFooter;
+    TPPageMaster * _pageMasters;
+    TSWPStorage * _parentStorage;
+    unsigned int  _sectionPageNumberKind;
+    unsigned int  _sectionPageNumberStart;
+    unsigned int  _sectionStartKind;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -40,7 +39,6 @@
 - (void)i_clearPropertiesToDefaults;
 - (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2;
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1;
-- (void)i_setDocumentRoot:(id)arg1;
 - (BOOL)inheritPreviousHeaderFooter;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;

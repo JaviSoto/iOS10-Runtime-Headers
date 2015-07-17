@@ -3,19 +3,19 @@
  */
 
 @interface AVAsynchronousVideoCompositionRequestInternal : NSObject {
-    struct OpaqueFigVideoCompositorFrame { } *_compositionFrame;
+    struct OpaqueFigVideoCompositorFrame { } * _compositionFrame;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _compositionTime;
-    <AVVideoCompositionInstruction> *_instruction;
-    BOOL _isFinished;
-    AVVideoCompositionRenderContext *_renderContext;
-    AVWeakReference *_session;
-    NSArray *_sourceTrackIDsInClientOrder;
-    NSDictionary *_sourcesByTrackID;
+    }  _compositionTime;
+    <AVVideoCompositionInstruction> * _instruction;
+    BOOL  _isFinished;
+    AVVideoCompositionRenderContext * _renderContext;
+    AVWeakReference * _session;
+    NSArray * _sourceTrackIDsInClientOrder;
+    NSDictionary * _sourcesByTrackID;
 }
 
 @property (nonatomic) struct OpaqueFigVideoCompositorFrame { }*compositionFrame;

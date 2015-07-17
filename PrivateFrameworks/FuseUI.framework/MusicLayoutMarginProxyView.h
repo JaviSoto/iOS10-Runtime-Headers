@@ -3,8 +3,8 @@
  */
 
 @interface MusicLayoutMarginProxyView : UIView {
-    <MusicLayoutMarginProxyViewDelegate> *_delegate;
-    BOOL _shouldUseConsistentHorizontalInsets;
+    <MusicLayoutMarginProxyViewDelegate> * _delegate;
+    BOOL  _shouldUseConsistentHorizontalInsets;
 }
 
 @property (nonatomic) <MusicLayoutMarginProxyViewDelegate> *delegate;

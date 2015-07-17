@@ -3,14 +3,15 @@
  */
 
 @interface WDSymbol : WDRun {
-    unsigned short mCharacter;
-    WDFont *mFont;
-    WDCharacterProperties *mProperties;
+    unsigned short  mCharacter;
+    WDFont * mFont;
+    WDCharacterProperties * mProperties;
 }
 
 - (unsigned short)character;
 - (void)clearProperties;
 - (void)dealloc;
+- (id)description;
 - (id)font;
 - (id)initWithParagraph:(id)arg1;
 - (id)properties;

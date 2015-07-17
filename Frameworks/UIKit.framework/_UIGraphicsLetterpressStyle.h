@@ -3,26 +3,26 @@
  */
 
 @interface _UIGraphicsLetterpressStyle : NSObject <NSCopying> {
-    UIColor *bottomGradientColor;
-    UIColor *embossHighlightColor;
-    UIColor *embossShadowColor;
-    float embossSize;
-    float innerOpacity;
-    int innerShadowBlendMode;
-    float innerShadowBlur;
-    UIColor *innerShadowColor;
+    UIColor * bottomGradientColor;
+    UIColor * embossHighlightColor;
+    UIColor * embossShadowColor;
+    float  embossSize;
+    float  innerOpacity;
+    int  innerShadowBlendMode;
+    float  innerShadowBlur;
+    UIColor * innerShadowColor;
     struct CGPoint { 
         float x; 
         float y; 
-    } innerShadowOffset;
-    int outerShadowBlendMode;
-    float outerShadowBlur;
-    UIColor *outerShadowColor;
+    }  innerShadowOffset;
+    int  outerShadowBlendMode;
+    float  outerShadowBlur;
+    UIColor * outerShadowColor;
     struct CGPoint { 
         float x; 
         float y; 
-    } outerShadowOffset;
-    UIColor *topGradientColor;
+    }  outerShadowOffset;
+    UIColor * topGradientColor;
 }
 
 @property (nonatomic, retain) UIColor *bottomGradientColor;
@@ -44,9 +44,9 @@
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
 
+- (void).cxx_destruct;
 - (id)bottomGradientColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)embossHighlightColor;
 - (id)embossShadowColor;

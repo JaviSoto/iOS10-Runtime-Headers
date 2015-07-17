@@ -3,17 +3,17 @@
  */
 
 @interface BRCSyncUpEnumerator : NSEnumerator {
-    unsigned int _batchSize;
-    NSMutableSet *_blacklist;
-    BRCLocalContainer *_container;
-    struct PQLResultSet { Class x1; } *_enumerator;
-    unsigned int _maxDepth;
-    unsigned long long _retryAfter;
-    NSMutableIndexSet *_returned;
-    NSMutableArray *_stack;
-    int _stage;
-    NSMutableDictionary *_tombstonesEmbargo;
-    NSMutableSet *_whitelist;
+    unsigned int  _batchSize;
+    NSMutableSet * _blacklist;
+    BRCLocalContainer * _container;
+    struct PQLResultSet { Class x1; } * _enumerator;
+    unsigned int  _maxDepth;
+    unsigned long long  _retryAfter;
+    NSMutableIndexSet * _returned;
+    NSMutableArray * _stack;
+    int  _stage;
+    NSMutableDictionary * _tombstonesEmbargo;
+    NSMutableSet * _whitelist;
 }
 
 @property (nonatomic, readonly) unsigned int batchSize;

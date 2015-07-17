@@ -3,13 +3,13 @@
  */
 
 @interface EDTableColumn : NSObject {
-    unsigned int mDataAreaDxfIndex;
-    unsigned int mHeaderRowDxfIndex;
-    EDString *mName;
-    EDResources *mResources;
-    unsigned int mTotalsRowDxfIndex;
-    EDString *mTotalsRowLabel;
-    EDString *mUniqueName;
+    unsigned int  mDataAreaDxfIndex;
+    unsigned int  mHeaderRowDxfIndex;
+    EDString * mName;
+    EDResources * mResources;
+    unsigned int  mTotalsRowDxfIndex;
+    EDString * mTotalsRowLabel;
+    EDString * mUniqueName;
 }
 
 + (id)tableColumnWithResources:(id)arg1;
@@ -17,6 +17,7 @@
 - (id)dataAreaDxf;
 - (unsigned int)dataAreaDxfIndex;
 - (void)dealloc;
+- (id)description;
 - (id)headerRowDxf;
 - (unsigned int)headerRowDxfIndex;
 - (id)initWithResources:(id)arg1;

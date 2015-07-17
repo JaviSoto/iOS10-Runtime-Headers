@@ -3,15 +3,19 @@
  */
 
 @interface FigCaptureSinkConfiguration : NSObject <FigXPCCoding, NSCopying> {
-    NSString *_sinkID;
-    int _sinkType;
-    BOOL _videoDataDerivedFromPreview;
-    BOOL _videoDataDiscardsLateVideoFrames;
+    BOOL  _performsFeature8675309;
+    NSString * _sinkID;
+    int  _sinkType;
+    BOOL  _stillImageFeature1Enabled;
+    BOOL  _videoDataDerivedFromPreview;
+    BOOL  _videoDataDiscardsLateVideoFrames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL feature0Enabled;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL performsFeature8675309;
 @property (nonatomic, copy) NSString *sinkID;
 @property (nonatomic) int sinkType;
 @property (readonly) Class superclass;
@@ -26,9 +30,13 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
+- (BOOL)feature0Enabled;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)performsFeature8675309;
+- (void)setFeature0Enabled:(BOOL)arg1;
+- (void)setPerformsFeature8675309:(BOOL)arg1;
 - (void)setSinkID:(id)arg1;
 - (void)setSinkType:(int)arg1;
 - (void)setVideoDataDerivedFromPreview:(BOOL)arg1;

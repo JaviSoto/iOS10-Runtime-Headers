@@ -3,23 +3,23 @@
  */
 
 @interface MFModernAtomView : UIDefaultKeyboardInput <MFModernAtomViewResembling> {
-    MFModernAtomIconView *_accessoryIconView;
-    UIActivityIndicatorView *_activityIndicator;
-    MFModernAtomBackgroundView *_background;
-    MFModernAtomIconView *_badgeIconView;
-    UIView *_baselineView;
-    UIView *_compositingView;
-    unsigned int _disabledPresentationOptions;
-    UIColor *_effectiveTintColor;
-    BOOL _isPrimaryAddressAtom;
-    UILabel *_label;
-    unsigned int _presentationOptions;
-    float _scalingFactor;
-    BOOL _selected;
-    BOOL _separatorHidden;
-    BOOL _separatorIsLeftAligned;
-    UIFont *_titleFont;
-    UIView *_titleLabelFillView;
+    MFModernAtomIconView * _accessoryIconView;
+    UIActivityIndicatorView * _activityIndicator;
+    MFModernAtomBackgroundView * _background;
+    MFModernAtomIconView * _badgeIconView;
+    UIView * _baselineView;
+    UIView * _compositingView;
+    unsigned int  _disabledPresentationOptions;
+    UIColor * _effectiveTintColor;
+    BOOL  _isPrimaryAddressAtom;
+    UILabel * _label;
+    unsigned int  _presentationOptions;
+    float  _scalingFactor;
+    BOOL  _selected;
+    BOOL  _separatorHidden;
+    BOOL  _separatorIsLeftAligned;
+    UIFont * _titleFont;
+    UIView * _titleLabelFillView;
 }
 
 @property (nonatomic, readonly) MFModernAtomIconView *accessoryIconView;
@@ -57,6 +57,7 @@
 + (id)defaultFont;
 + (float)defaultHeight;
 + (float)horizontalPadding;
++ (BOOL)presentationOptions:(unsigned int*)arg1 encodedIntoAddress:(id)arg2;
 + (id)primaryAtomFont;
 
 - (void)_invalidatePresentationOptions;

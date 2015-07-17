@@ -3,9 +3,9 @@
  */
 
 @interface ML3PersistentIDGenerator : NSObject {
-    ML3DatabaseConnection *_connection;
-    long long _currentPersistentID;
-    long long _nextUsedPersistentID;
+    ML3DatabaseConnection * _connection;
+    long long  _currentPersistentID;
+    long long  _nextUsedPersistentID;
 }
 
 - (void).cxx_destruct;

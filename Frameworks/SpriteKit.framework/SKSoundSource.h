@@ -3,8 +3,8 @@
  */
 
 @interface SKSoundSource : NSObject {
-    NSMutableArray *_buffers;
-    unsigned int _sourceId;
+    NSMutableArray * _buffers;
+    unsigned int  _sourceId;
 }
 
 @property (nonatomic, readonly) int completedBufferCount;

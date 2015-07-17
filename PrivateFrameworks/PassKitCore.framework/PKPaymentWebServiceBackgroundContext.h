@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentWebServiceBackgroundContext : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_backgroundTaskRecordsByTaskIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _backgroundTaskRecordsByTaskIdentifier;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (retain) NSMutableDictionary *backgroundTaskRecordsByTaskIdentifier;

@@ -6,7 +6,7 @@
     struct _CSTypeRef { 
         unsigned int _opaque_1; 
         unsigned int _opaque_2; 
-    } _symbolicator;
+    }  _symbolicator;
 }
 
 + (id)symbolicatorForPid:(int)arg1;

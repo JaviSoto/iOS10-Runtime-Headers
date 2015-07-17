@@ -3,8 +3,8 @@
  */
 
 @interface _MKNearbyAppsFlowLayout : UICollectionViewFlowLayout {
-    BOOL _snapsToItemBoundaries;
-    BOOL _snapsToItemCenters;
+    BOOL  _snapsToItemBoundaries;
+    BOOL  _snapsToItemCenters;
 }
 
 @property (nonatomic) BOOL snapsToItemBoundaries;

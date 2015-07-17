@@ -3,9 +3,9 @@
  */
 
 @interface WMParagraphStyleMapper : CMMapper {
-    WMParagraphStyle *mStyle;
-    WDParagraphProperties *wdParaProperties;
-    WDParagraph *wdParagraph;
+    WMParagraphStyle * mStyle;
+    WDParagraphProperties * wdParaProperties;
+    WDParagraph * wdParagraph;
 }
 
 - (id)bulletLabelAtLevel:(id)arg1 forIndex:(int)arg2 bulletFormat:(int)arg3 listState:(id)arg4;

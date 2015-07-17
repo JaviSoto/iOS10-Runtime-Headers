@@ -3,34 +3,34 @@
  */
 
 @interface StockChartDisplayMode : NSObject <NSCopying> {
-    BOOL _HUDEnabled;
-    UIColor *_axisLabelsColor;
-    struct CGGradient { } *_backgroundGradient;
-    UIColor *_backgroundLinesColor;
+    BOOL  _HUDEnabled;
+    UIColor * _axisLabelsColor;
+    struct CGGradient { } * _backgroundGradient;
+    UIColor * _backgroundLinesColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _chartSize;
-    BOOL _graphOverlapsYAxisLabels;
-    NSString *_hash;
-    unsigned int _horizontalGridlineCount;
-    float _intervalRowHeight;
-    UIColor *_lineColor;
+    }  _chartSize;
+    BOOL  _graphOverlapsYAxisLabels;
+    NSString * _hash;
+    unsigned int  _horizontalGridlineCount;
+    float  _intervalRowHeight;
+    UIColor * _lineColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _lineGraphInsets;
-    float _lineWidth;
-    int _maxInterval;
-    BOOL _showsPriceLabelForPreviousClose;
-    float _showsTitle;
-    BOOL _showsVolume;
-    BOOL _usesDetailedAxisLabels;
-    float _volumeHeight;
-    UIColor *_xAxisKeylineColor;
-    unsigned int _yAxisLabelCount;
+    }  _lineGraphInsets;
+    float  _lineWidth;
+    int  _maxInterval;
+    BOOL  _showsPriceLabelForPreviousClose;
+    float  _showsTitle;
+    BOOL  _showsVolume;
+    BOOL  _usesDetailedAxisLabels;
+    float  _volumeHeight;
+    UIColor * _xAxisKeylineColor;
+    unsigned int  _yAxisLabelCount;
 }
 
 @property (nonatomic) BOOL HUDEnabled;

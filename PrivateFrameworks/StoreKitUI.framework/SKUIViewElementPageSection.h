@@ -3,19 +3,19 @@
  */
 
 @interface SKUIViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
-    Class _cellClass;
+    Class  _cellClass;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _cellContentInset;
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    float _firstSectionTopInset;
-    SKUICollectionViewCell<SKUIViewElementView> *_lastCell;
-    BOOL _rendersWithPerspective;
-    NSString *_reuseIdentifier;
-    float _sectionBottomInset;
+    }  _cellContentInset;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    float  _firstSectionTopInset;
+    SKUICollectionViewCell<SKUIViewElementView> * _lastCell;
+    BOOL  _rendersWithPerspective;
+    NSString * _reuseIdentifier;
+    float  _sectionBottomInset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

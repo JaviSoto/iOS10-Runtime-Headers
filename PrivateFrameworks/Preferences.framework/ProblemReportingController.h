@@ -3,11 +3,11 @@
  */
 
 @interface ProblemReportingController : PSListController {
-    PrefsUILinkLabel *_aboutDiagnosticsLinkLabel;
-    NSArray *_appActivitySpecifiers;
-    PSSpecifier *_diagnosticDataGroupSpecifier;
-    PSSpecifier *_filesystemMetadataSnapshotSpecifier;
-    PSSpecifier *_spinnerSpecifier;
+    PrefsUILinkLabel * _aboutDiagnosticsLinkLabel;
+    NSArray * _appActivitySpecifiers;
+    PSSpecifier * _diagnosticDataGroupSpecifier;
+    PSSpecifier * _filesystemMetadataSnapshotSpecifier;
+    PSSpecifier * _spinnerSpecifier;
 }
 
 @property (readonly) NSArray *appActivitySpecifiers;
@@ -16,9 +16,9 @@
 
 + (BOOL)isProblemReportingEnabled;
 
+- (void).cxx_destruct;
 - (id)appActivitySpecifiers;
 - (void)checkDiagnosticsSessionAvailability;
-- (void)dealloc;
 - (void)dismissAboutSheet:(id)arg1;
 - (id)filesystemMetadataSnapshotSpecifier;
 - (void)launchDiagnosticsSession:(id)arg1;

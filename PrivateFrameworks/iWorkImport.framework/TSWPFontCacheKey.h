@@ -3,9 +3,9 @@
  */
 
 @interface TSWPFontCacheKey : NSObject {
-    NSString *_fontName;
-    float _fontSize;
-    unsigned int _hash;
+    NSString * _fontName;
+    float  _fontSize;
+    unsigned int  _hash;
 }
 
 @property (nonatomic, readonly) NSString *fontName;

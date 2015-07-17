@@ -3,10 +3,10 @@
  */
 
 @interface _UIBarItemAppearanceStorage : NSObject {
-    NSMutableDictionary *textAttributesForState;
+    NSMutableDictionary * textAttributesForState;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setTextAttribute:(id)arg1 forKey:(id)arg2 state:(unsigned int)arg3;
 - (void)setTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)textAttributeForKey:(id)arg1 state:(unsigned int)arg2;

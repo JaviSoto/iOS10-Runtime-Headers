@@ -3,18 +3,18 @@
  */
 
 @interface SKUICardViewElementCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIPerspectiveView, SKUIViewElementView> {
-    SKUISizeValue *_artworkBoundingSize;
-    NSHashTable *_artworkRelatedChildViewElementViews;
-    <SKUIPerspectiveView> *_backgroundViewWithParallax;
-    SKUIBackgroundImageWrapperForHorizontalLockup *_backgroundWrapper;
-    SKUICardViewElement *_cardElement;
-    BOOL _hasBottomAlignedItems;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    BOOL _isActivityCard;
-    SKUICardLayout *_layout;
-    SKUIViewElement *_productImageElement;
-    UIView *_programmedCardBackgroundView;
-    NSMapTable *_viewElements;
+    SKUISizeValue * _artworkBoundingSize;
+    NSHashTable * _artworkRelatedChildViewElementViews;
+    <SKUIPerspectiveView> * _backgroundViewWithParallax;
+    SKUIBackgroundImageWrapperForHorizontalLockup * _backgroundWrapper;
+    SKUICardViewElement * _cardElement;
+    BOOL  _hasBottomAlignedItems;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    BOOL  _isActivityCard;
+    SKUICardLayout * _layout;
+    SKUIViewElement * _productImageElement;
+    UIView * _programmedCardBackgroundView;
+    NSMapTable * _viewElements;
 }
 
 @property (nonatomic, copy) SKUISizeValue *artworkBoundingSize;

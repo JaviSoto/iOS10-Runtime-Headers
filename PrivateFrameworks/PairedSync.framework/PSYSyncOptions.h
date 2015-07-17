@@ -3,10 +3,10 @@
  */
 
 @interface PSYSyncOptions : NSObject <NSSecureCoding> {
-    BOOL _dryRun;
-    BOOL _terminateDuringDryRun;
-    PSYTestInput *_testInput;
-    NSUUID *_transactionID;
+    BOOL  _dryRun;
+    BOOL  _terminateDuringDryRun;
+    PSYTestInput * _testInput;
+    NSUUID * _transactionID;
 }
 
 @property (nonatomic) BOOL dryRun;

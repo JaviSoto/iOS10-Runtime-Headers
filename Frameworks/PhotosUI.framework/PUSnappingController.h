@@ -3,17 +3,17 @@
  */
 
 @interface PUSnappingController : NSObject {
-    float __accumulatedOffset;
-    BOOL __hasEnteredAttractionThreshold;
-    BOOL __hasEnteredRetentionThreshold;
-    float __previousOffset;
-    BOOL __previousOffsetInvalid;
-    BOOL _accumulateOffsetWhileSnapped;
-    float _attractionOffsetThreshold;
-    float _attractionVelocityThreshold;
-    float _retentionOffsetThreshold;
-    BOOL _snappedToTarget;
-    float _targetOffset;
+    float  __accumulatedOffset;
+    BOOL  __hasEnteredAttractionThreshold;
+    BOOL  __hasEnteredRetentionThreshold;
+    float  __previousOffset;
+    BOOL  __previousOffsetInvalid;
+    BOOL  _accumulateOffsetWhileSnapped;
+    float  _attractionOffsetThreshold;
+    float  _attractionVelocityThreshold;
+    float  _retentionOffsetThreshold;
+    BOOL  _snappedToTarget;
+    float  _targetOffset;
 }
 
 @property (setter=_setAccumulatedOffset:, nonatomic) float _accumulatedOffset;

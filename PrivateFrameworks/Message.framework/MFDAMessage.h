@@ -3,10 +3,10 @@
  */
 
 @interface MFDAMessage : MFMailMessage {
-    DAMailMessage *_DAMailMessage;
-    NSString *_externalConversationID;
-    MFMailboxUid *_mailbox;
-    MFMessage *_rfc822CreatedMessage;
+    DAMailMessage * _DAMailMessage;
+    NSString * _externalConversationID;
+    MFMailboxUid * _mailbox;
+    MFMessage * _rfc822CreatedMessage;
 }
 
 @property (nonatomic, readonly) DAMailMessage *DAMailMessage;

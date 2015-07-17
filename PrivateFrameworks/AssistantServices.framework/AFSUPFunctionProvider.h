@@ -3,9 +3,9 @@
  */
 
 @interface AFSUPFunctionProvider : AFSpeakableUtteranceParser <AFSpeakableNamespaceProvider> {
-    NSDateFormatter *_dateFormatter;
-    NSDateFormatter *_timeFormatter;
-    BOOL _useSpeechMode;
+    NSDateFormatter * _dateFormatter;
+    NSDateFormatter * _timeFormatter;
+    BOOL  _useSpeechMode;
 }
 
 @property (readonly, copy) NSString *debugDescription;

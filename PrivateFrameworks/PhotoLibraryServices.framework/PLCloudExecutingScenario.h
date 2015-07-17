@@ -3,14 +3,14 @@
  */
 
 @interface PLCloudExecutingScenario : NSObject {
-    id /* block */ _completionCallback;
-    PLCloudScenarioExecutionResult *_executionState;
-    PLCloudScenario *_scenario;
+    id /* block */  _completionCallback;
+    PLCloudScenarioExecutionResult * _executionState;
+    PLCloudLegacyScenario * _scenario;
 }
 
 @property (nonatomic, copy) id /* block */ completionCallback;
 @property (nonatomic, retain) PLCloudScenarioExecutionResult *executionState;
-@property (nonatomic, retain) PLCloudScenario *scenario;
+@property (nonatomic, retain) PLCloudLegacyScenario *scenario;
 
 - (id /* block */)completionCallback;
 - (void)dealloc;

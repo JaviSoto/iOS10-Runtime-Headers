@@ -3,13 +3,13 @@
  */
 
 @interface SKUIGiftTheme : NSObject <NSCopying> {
-    UIColor *_backgroundColor;
-    UIColor *_bodyTextColor;
-    UIImage *_headerImage;
-    NSURL *_headerImageURL;
-    UIColor *_primaryTextColor;
-    long long _themeIdentifier;
-    NSString *_themeName;
+    UIColor * _backgroundColor;
+    UIColor * _bodyTextColor;
+    UIImage * _headerImage;
+    NSURL * _headerImageURL;
+    UIColor * _primaryTextColor;
+    long long  _themeIdentifier;
+    NSString * _themeName;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;

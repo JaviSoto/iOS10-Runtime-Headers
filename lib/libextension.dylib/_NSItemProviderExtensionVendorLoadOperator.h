@@ -3,8 +3,8 @@
  */
 
 @interface _NSItemProviderExtensionVendorLoadOperator : NSObject <_NSItemProviderLoading> {
-    NSUUID *_extensionContextIdentifier;
-    NSUUID *_identifier;
+    NSUUID * _extensionContextIdentifier;
+    NSUUID * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

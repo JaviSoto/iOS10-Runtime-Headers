@@ -3,22 +3,22 @@
  */
 
 @interface SKUICountdown : NSObject {
-    NSURL *_URL;
-    SKUIArtworkList *_artworkList;
-    unsigned int _dateFormat;
-    SKUIArtworkList *_endArtworkList;
-    NSDate *_endDate;
-    long long _finalValue;
-    UIColor *_flapBottomColor;
-    UIColor *_flapTopColor;
-    BOOL _flapped;
-    UIColor *_fontColor;
-    long long _initialValue;
-    BOOL _isLoaded;
-    NSString *_numberFormat;
-    int _rate;
-    NSDate *_startDate;
-    int _type;
+    NSURL * _URL;
+    SKUIArtworkList * _artworkList;
+    unsigned int  _dateFormat;
+    SKUIArtworkList * _endArtworkList;
+    NSDate * _endDate;
+    long long  _finalValue;
+    UIColor * _flapBottomColor;
+    UIColor * _flapTopColor;
+    BOOL  _flapped;
+    UIColor * _fontColor;
+    long long  _initialValue;
+    BOOL  _isLoaded;
+    NSString * _numberFormat;
+    int  _rate;
+    NSDate * _startDate;
+    int  _type;
 }
 
 @property (nonatomic, copy) NSURL *URL;

@@ -3,23 +3,23 @@
  */
 
 @interface SUBDescriptor : NSObject <NSSecureCoding> {
-    NSError *_denialReasons;
-    SUBDocumentation *_documentation;
-    NSString *_documentationID;
-    long long _downloadSize;
-    long long _installationSize;
-    BOOL _isAwaitingAdmissionControlForInstallation;
-    NSString *_marketingVersion;
-    long _msuHandle;
-    long long _msuPrepareSize;
-    NSString *_productBuildVersion;
-    NSString *_productSystemName;
-    NSString *_productVersion;
-    NSString *_publisher;
-    long long _totalRequiredFreeSpace;
-    long long _unarchivedSize;
-    BOOL _userDidAcceptTermsAndConditions;
-    BOOL _willProceedWithInstallation;
+    NSError * _denialReasons;
+    SUBDocumentation * _documentation;
+    NSString * _documentationID;
+    long long  _downloadSize;
+    long long  _installationSize;
+    BOOL  _isAwaitingAdmissionControlForInstallation;
+    NSString * _marketingVersion;
+    long  _msuHandle;
+    long long  _msuPrepareSize;
+    NSString * _productBuildVersion;
+    NSString * _productSystemName;
+    NSString * _productVersion;
+    NSString * _publisher;
+    long long  _totalRequiredFreeSpace;
+    long long  _unarchivedSize;
+    BOOL  _userDidAcceptTermsAndConditions;
+    BOOL  _willProceedWithInstallation;
 }
 
 @property (nonatomic, retain) NSError *denialReasons;

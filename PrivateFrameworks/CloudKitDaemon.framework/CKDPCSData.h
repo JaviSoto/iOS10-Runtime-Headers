@@ -3,9 +3,9 @@
  */
 
 @interface CKDPCSData : NSObject <NSSecureCoding> {
-    NSString *_etag;
-    struct _OpaquePCSShareProtection { } *_pcs;
-    NSData *_pcsData;
+    NSString * _etag;
+    struct _OpaquePCSShareProtection { } * _pcs;
+    NSData * _pcsData;
 }
 
 @property (nonatomic, copy) NSString *etag;

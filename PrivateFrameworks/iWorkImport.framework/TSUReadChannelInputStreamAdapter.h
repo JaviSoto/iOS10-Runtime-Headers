@@ -3,9 +3,9 @@
  */
 
 @interface TSUReadChannelInputStreamAdapter : NSObject <SFUInputStream> {
-    NSObject<OS_dispatch_data> *_leftoverData;
-    long long _offset;
-    <TSUReadChannel> *_readChannel;
+    NSObject<OS_dispatch_data> * _leftoverData;
+    long long  _offset;
+    <TSUReadChannel> * _readChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

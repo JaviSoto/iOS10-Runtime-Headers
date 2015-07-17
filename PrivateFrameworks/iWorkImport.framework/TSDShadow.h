@@ -3,12 +3,12 @@
  */
 
 @interface TSDShadow : NSObject <NSCopying, NSMutableCopying, TSDMixing, TSSPreset, TSSPresetSource> {
-    float mAngle;
-    struct CGColor { } *mColor;
-    BOOL mEnabled;
-    float mOffset;
-    float mOpacity;
-    float mRadius;
+    float  mAngle;
+    struct CGColor { } * mColor;
+    BOOL  mEnabled;
+    float  mOffset;
+    float  mOpacity;
+    float  mRadius;
 }
 
 @property (nonatomic, readonly, copy) TSUColor *TSUColor;

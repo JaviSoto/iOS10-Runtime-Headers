@@ -3,14 +3,14 @@
  */
 
 @interface MPUStringTruncationStrategy : NSObject {
-    NSString *_componentsNamePlural;
-    NSString *_componentsNameSingular;
+    NSString * _componentsNamePlural;
+    NSString * _componentsNameSingular;
     struct CGSize { 
         float width; 
         float height; 
-    } _drawingSize;
-    NSDictionary *_textAttributes;
-    NSString *_truncationTokenFormat;
+    }  _drawingSize;
+    NSDictionary * _textAttributes;
+    NSString * _truncationTokenFormat;
 }
 
 @property (nonatomic, copy) NSString *componentsNamePlural;

@@ -3,9 +3,9 @@
  */
 
 @interface IMSPIHandle : NSObject {
-    NSString *_address;
-    NSString *_displayName;
-    NSString *_identifier;
+    NSString * _address;
+    NSString * _displayName;
+    NSString * _identifier;
 }
 
 @property (retain) NSString *address;

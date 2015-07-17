@@ -3,20 +3,20 @@
  */
 
 @interface ABPersonTableHeaderView : UIView <UITableViewDataSource, UITableViewDelegate> {
-    <ABPersonTableHeaderViewDelegate> *_delegate;
-    ABPersonNameDisplayView *_displayView;
-    BOOL _editing;
-    ABMultiCellContentView *_editingView;
-    ABMultiCell *_editingViewCell;
-    UITableView *_editingViewContainer;
-    UIView *_extraHeaderView;
-    BOOL _extraHeaderViewAlignsToImage;
-    UIImageView *_imageShadowView;
-    ABPersonImageView *_imageView;
-    ABNamePropertyGroup *_namePropertyGroup;
-    BOOL _representsLinkedPeople;
-    BOOL _showsMultiplePhotoBackdropView;
-    <ABStyleProvider> *_styleProvider;
+    <ABPersonTableHeaderViewDelegate> * _delegate;
+    ABPersonNameDisplayView * _displayView;
+    BOOL  _editing;
+    ABMultiCellContentView * _editingView;
+    ABMultiCell * _editingViewCell;
+    UITableView * _editingViewContainer;
+    UIView * _extraHeaderView;
+    BOOL  _extraHeaderViewAlignsToImage;
+    UIImageView * _imageShadowView;
+    ABPersonImageView * _imageView;
+    ABNamePropertyGroup * _namePropertyGroup;
+    BOOL  _representsLinkedPeople;
+    BOOL  _showsMultiplePhotoBackdropView;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, copy) NSString *alternateName;

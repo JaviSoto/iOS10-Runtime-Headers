@@ -3,10 +3,11 @@
  */
 
 @interface UICellHighlightingSupport : NSObject {
-    id _cell;
-    struct __CFDictionary { } *_unhighlightedStates;
+    id  _cell;
+    struct __CFDictionary { } * _unhighlightedStates;
 }
 
+- (void).cxx_destruct;
 - (void)applyState:(unsigned int)arg1 toView:(id)arg2;
 - (void)cacheState:(unsigned int)arg1 forView:(id)arg2;
 - (void)dealloc;

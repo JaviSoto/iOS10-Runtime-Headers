@@ -3,17 +3,17 @@
  */
 
 @interface NFAWDMiddlewareException : NSObject <NFAWDEventProtocol> {
-    AWDNFCMiddlewareExceptionEvent *_metric;
-    unsigned int errorCode;
-    unsigned int type;
-    unsigned int version;
+    AWDNFCMiddlewareExceptionEvent * _metric;
+    unsigned int  errorCode;
+    unsigned int  type;
+    unsigned int  version;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int errorCode;
 @property (readonly) unsigned int hash;
-@property AWDNFCMiddlewareExceptionEvent *metric;
+@property (nonatomic, retain) AWDNFCMiddlewareExceptionEvent *metric;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
 @property (nonatomic) unsigned int version;
@@ -29,6 +29,7 @@
 - (void)setType:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (unsigned int)type;
+- (void)updateExceptionUUID:(id)arg1;
 - (unsigned int)version;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface _HSUnresolvedLibrary : NSObject {
-    int _browserType;
-    id /* block */ _completionHandler;
-    NSNetService *_netService;
-    struct _DNSServiceRef_t { } *_resolvingDNSService;
+    int  _browserType;
+    id /* block */  _completionHandler;
+    NSNetService * _netService;
+    struct _DNSServiceRef_t { } * _resolvingDNSService;
 }
 
 - (void).cxx_destruct;

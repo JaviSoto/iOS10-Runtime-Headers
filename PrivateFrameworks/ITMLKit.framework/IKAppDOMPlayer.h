@@ -3,9 +3,9 @@
  */
 
 @interface IKAppDOMPlayer : NSObject <IKDOMFeature, IKJSPlayerAppBridge> {
-    IKAppContext *_appContext;
-    <IKAppPlayerDelegate> *_delegate;
-    NSString *_featureName;
+    IKAppContext * _appContext;
+    <IKAppPlayerDelegate> * _delegate;
+    NSString * _featureName;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

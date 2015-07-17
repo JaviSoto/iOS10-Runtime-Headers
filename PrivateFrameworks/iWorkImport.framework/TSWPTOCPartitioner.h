@@ -3,7 +3,7 @@
  */
 
 @interface TSWPTOCPartitioner : NSObject <TSDPartitioner> {
-    TSWPTOCInfo *_info;
+    TSWPTOCInfo * _info;
 }
 
 @property (nonatomic, readonly) TSWPTOCInfo *info;

@@ -3,18 +3,19 @@
  */
 
 @interface CHDPlotArea : NSObject {
-    CHDAxesCollection *mAxes;
-    bool mCategoryAxesReversed;
-    bool mCategoryAxesReversedOverridden;
-    CHDChartTypesCollection *mChartTypes;
-    bool mContainsVolumeStockType;
-    OADGraphicProperties *mGraphicProperties;
+    CHDAxesCollection * mAxes;
+    bool  mCategoryAxesReversed;
+    bool  mCategoryAxesReversedOverridden;
+    CHDChartTypesCollection * mChartTypes;
+    bool  mContainsVolumeStockType;
+    OADGraphicProperties * mGraphicProperties;
 }
 
 - (id)axes;
 - (id)chartTypes;
 - (bool)containsVolumeStockType;
 - (void)dealloc;
+- (id)description;
 - (id)graphicProperties;
 - (bool)hasSecondaryAxis;
 - (bool)hasSecondaryYAxisDeleted;

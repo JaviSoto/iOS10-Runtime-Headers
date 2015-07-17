@@ -3,21 +3,21 @@
  */
 
 @interface GKSupplementaryViewMetrics : NSObject <NSCopying> {
-    int _animateWithSection;
-    SEL _configurator;
-    float _desiredHeight;
-    float _desiredWidth;
+    int  _animateWithSection;
+    SEL  _configurator;
+    float  _desiredHeight;
+    float  _desiredWidth;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _globalSectionRange;
-    BOOL _hidden;
-    NSString *_kind;
-    Class _reusableViewClass;
-    BOOL _shouldPin;
-    BOOL _shouldPinGlobal;
-    BOOL _shouldUseGlobalIndexing;
-    id _target;
+    }  _globalSectionRange;
+    BOOL  _hidden;
+    NSString * _kind;
+    Class  _reusableViewClass;
+    BOOL  _shouldPin;
+    BOOL  _shouldPinGlobal;
+    BOOL  _shouldUseGlobalIndexing;
+    id  _target;
 }
 
 @property (nonatomic) int animateWithSection;

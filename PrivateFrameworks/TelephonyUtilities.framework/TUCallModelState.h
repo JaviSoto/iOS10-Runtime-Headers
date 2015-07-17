@@ -3,17 +3,17 @@
  */
 
 @interface TUCallModelState : NSObject <NSSecureCoding> {
-    BOOL _addCallAllowed;
-    int _ambiguityState;
-    BOOL _ambiguous;
-    BOOL _endAndAnswerAllowed;
-    BOOL _hardPauseAvailable;
-    BOOL _holdAllowed;
-    BOOL _holdAndAnswerAllowed;
-    BOOL _mergeable;
-    BOOL _sendToVoicemailAllowed;
-    BOOL _swappable;
-    BOOL _takingCallsPrivateAllowed;
+    BOOL  _addCallAllowed;
+    int  _ambiguityState;
+    BOOL  _ambiguous;
+    BOOL  _endAndAnswerAllowed;
+    BOOL  _hardPauseAvailable;
+    BOOL  _holdAllowed;
+    BOOL  _holdAndAnswerAllowed;
+    BOOL  _mergeable;
+    BOOL  _sendToVoicemailAllowed;
+    BOOL  _swappable;
+    BOOL  _takingCallsPrivateAllowed;
 }
 
 @property (getter=isAddCallAllowed, nonatomic) BOOL addCallAllowed;

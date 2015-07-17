@@ -3,11 +3,11 @@
  */
 
 @interface SKUIPickerView : UIView <UIPickerViewDataSource, UIPickerViewDelegate> {
-    _UIBackdropView *_backdropView;
-    <SKUIPickerViewDelegate> *_delegate;
-    UIPickerView *_pickerView;
-    UIView *_separatorView;
-    NSArray *_titles;
+    _UIBackdropView * _backdropView;
+    <SKUIPickerViewDelegate> * _delegate;
+    UIPickerView * _pickerView;
+    UIView * _separatorView;
+    NSArray * _titles;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +20,8 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitles:(id)arg1;
 - (void)layoutSubviews;
 - (int)numberOfComponentsInPickerView:(id)arg1;

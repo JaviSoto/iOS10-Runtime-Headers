@@ -3,9 +3,9 @@
  */
 
 @interface _HKCategoryValueFilter : _HKFilter {
-    NSNumber *_comparisonValue;
-    HKCategoryType *_dataType;
-    unsigned int _operatorType;
+    NSNumber * _comparisonValue;
+    HKCategoryType * _dataType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) NSNumber *comparisonValue;

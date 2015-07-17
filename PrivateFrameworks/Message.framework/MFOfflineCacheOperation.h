@@ -3,7 +3,7 @@
  */
 
 @interface MFOfflineCacheOperation : NSObject <NSCoding> {
-    long long _rowid;
+    long long  _rowid;
 }
 
 @property (nonatomic) long long rowid;

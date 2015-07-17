@@ -3,12 +3,12 @@
  */
 
 @interface CKFetchUserIdentitiesOperation : CKOperation {
-    NSMutableSet *_discoveredUserIdentities;
-    id /* block */ _fetchIdentitiesCompletionBlock;
-    NSArray *_identities;
-    id /* block */ _identityFetchedBlock;
-    NSMutableDictionary *_lookupErrors;
-    NSMutableDictionary *_lookupInfoToUserIdentities;
+    NSMutableSet * _discoveredUserIdentities;
+    id /* block */  _fetchIdentitiesCompletionBlock;
+    NSArray * _identities;
+    id /* block */  _identityFetchedBlock;
+    NSMutableDictionary * _lookupErrors;
+    NSMutableDictionary * _lookupInfoToUserIdentities;
 }
 
 @property (nonatomic, retain) NSMutableSet *discoveredUserIdentities;
@@ -22,6 +22,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)discoveredUserIdentities;
 - (id /* block */)fetchIdentitiesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface PLProgressStack : NSObject {
-    float currentMultiplier;
-    float currentTotal;
-    id delegate;
-    NSString *mediaPathString;
-    NSMutableArray *multipliers;
-    BOOL notifyUsingAssetsdNotificationCenter;
+    float  currentMultiplier;
+    float  currentTotal;
+    id  delegate;
+    NSString * mediaPathString;
+    NSMutableArray * multipliers;
+    BOOL  notifyUsingAssetsdNotificationCenter;
 }
 
 @property (nonatomic) float currentMultiplier;

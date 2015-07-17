@@ -3,26 +3,26 @@
  */
 
 @interface PTXParallaxSettings : _UISettings {
-    BOOL _alphaEnabled;
-    int _distanceFromScreen;
-    BOOL _increaseEnabled;
-    float _maxAlpha;
-    float _minAlpha;
-    float _perspectiveTransform;
-    int _slideDirectionX;
-    int _slideDirectionY;
-    BOOL _slideEnabled;
-    float _slideIncreaseX;
-    float _slideIncreaseY;
-    float _slidePixelsX;
-    float _slidePixelsY;
-    float _tiltDegreesX;
-    float _tiltDegreesY;
-    int _tiltDirectionX;
-    int _tiltDirectionY;
-    BOOL _tiltEnabled;
-    float _tiltIncreaseX;
-    float _tiltIncreaseY;
+    BOOL  _alphaEnabled;
+    int  _distanceFromScreen;
+    BOOL  _increaseEnabled;
+    float  _maxAlpha;
+    float  _minAlpha;
+    float  _perspectiveTransform;
+    int  _slideDirectionX;
+    int  _slideDirectionY;
+    BOOL  _slideEnabled;
+    float  _slideIncreaseX;
+    float  _slideIncreaseY;
+    float  _slidePixelsX;
+    float  _slidePixelsY;
+    float  _tiltDegreesX;
+    float  _tiltDegreesY;
+    int  _tiltDirectionX;
+    int  _tiltDirectionY;
+    BOOL  _tiltEnabled;
+    float  _tiltIncreaseX;
+    float  _tiltIncreaseY;
 }
 
 @property BOOL alphaEnabled;

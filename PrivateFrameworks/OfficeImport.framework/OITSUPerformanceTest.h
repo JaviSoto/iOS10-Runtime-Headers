@@ -3,13 +3,13 @@
  */
 
 @interface OITSUPerformanceTest : NSObject {
-    double mGoalTime;
-    NSString *mName;
-    BOOL mPassed;
-    double mPrecision;
-    BOOL mQuiet;
-    SEL mSelector;
-    id mTarget;
+    double  mGoalTime;
+    NSString * mName;
+    BOOL  mPassed;
+    double  mPrecision;
+    BOOL  mQuiet;
+    SEL  mSelector;
+    id  mTarget;
     struct TSUOpstat_s { 
         BOOL running; 
         unsigned long long count; 
@@ -29,7 +29,7 @@
             int tv_sec; 
             int tv_usec; 
         } last_time; 
-    } mTiming;
+    }  mTiming;
 }
 
 @property (nonatomic) double goalTime;

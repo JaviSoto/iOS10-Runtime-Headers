@@ -3,10 +3,10 @@
  */
 
 @interface SKUINavigationBarMenusController : SKUINavigationBarSectionController <SKUIMenuPopoverDelegate> {
-    UIControl *_focusedMenuButton;
-    NSArray *_menuViewElements;
-    SKUINavigationBarMenusView *_menusView;
-    SKUIMenuPopoverController *_popoverController;
+    UIControl * _focusedMenuButton;
+    NSArray * _menuViewElements;
+    SKUINavigationBarMenusView * _menusView;
+    SKUIMenuPopoverController * _popoverController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

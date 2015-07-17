@@ -3,8 +3,8 @@
  */
 
 @interface BRCLocalVersion : BRCVersion {
-    NSError *_uploadError;
-    CKRecord *_uploadedAssets;
+    NSError * _uploadError;
+    CKRecord * _uploadedAssets;
 }
 
 @property (nonatomic, retain) NSError *uploadError;

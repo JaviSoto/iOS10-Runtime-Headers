@@ -3,10 +3,10 @@
  */
 
 @interface PLCropOverlayPreviewBottomBar : UIView {
-    int _backgroundStyle;
-    UIButton *_cancelButton;
-    UIButton *_doneButton;
-    UIButton *_playbackButton;
+    int  _backgroundStyle;
+    UIButton * _cancelButton;
+    UIButton * _doneButton;
+    UIButton * _playbackButton;
 }
 
 @property (nonatomic) int backgroundStyle;

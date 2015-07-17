@@ -3,13 +3,13 @@
  */
 
 @interface CIModTransition : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    NSNumber *inputCompression;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    NSNumber * inputCompression;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;
@@ -31,7 +31,6 @@
 - (id)inputTargetImage;
 - (id)inputTime;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputCompression:(id)arg1;

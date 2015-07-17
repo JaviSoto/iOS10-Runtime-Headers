@@ -3,9 +3,9 @@
  */
 
 @interface CKDiscoverUserInfosOperationInfo : CKOperationInfo <NSSecureCoding> {
-    NSArray *_emails;
-    BOOL _shouldDiscoverAllContacts;
-    NSArray *_userRecordIDs;
+    NSArray * _emails;
+    BOOL  _shouldDiscoverAllContacts;
+    NSArray * _userRecordIDs;
 }
 
 @property (nonatomic, retain) NSArray *emails;
@@ -15,6 +15,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (id)emails;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

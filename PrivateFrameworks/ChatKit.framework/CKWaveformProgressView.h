@@ -3,13 +3,13 @@
  */
 
 @interface CKWaveformProgressView : CKBalloonImageView {
-    BOOL _color;
-    double _currentTime;
-    IMManualUpdater *_displayUpdater;
-    double _duration;
-    BOOL _played;
-    BOOL _playing;
-    UIImage *_waveform;
+    BOOL  _color;
+    double  _currentTime;
+    IMManualUpdater * _displayUpdater;
+    double  _duration;
+    BOOL  _played;
+    BOOL  _playing;
+    UIImage * _waveform;
 }
 
 @property (nonatomic) BOOL color;

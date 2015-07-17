@@ -3,7 +3,7 @@
  */
 
 @interface WebUIModalAlertView : UIAlertView <UIAlertViewDelegate> {
-    int _clickedButton;
+    int  _clickedButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;

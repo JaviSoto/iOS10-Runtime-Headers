@@ -3,16 +3,16 @@
  */
 
 @interface SKUIBrickGridCollectionViewCell : UICollectionViewCell {
-    NSString *_accessibilityLabel;
-    UIImageView *_brickImageView;
+    NSString * _accessibilityLabel;
+    UIImageView * _brickImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    SKUIEditorialCellLayout *_editorialCellLayout;
-    UIView *_editorialContainerView;
+    }  _contentInsets;
+    SKUIEditorialCellLayout * _editorialCellLayout;
+    UIView * _editorialContainerView;
 }
 
 @property (nonatomic, copy) NSString *accessibilityLabel;

@@ -3,23 +3,23 @@
  */
 
 @interface MPUExtrasCarouselCollectionViewCell : UICollectionViewCell <MPUExtrasCarouselCollectionViewCell, UIGestureRecognizerDelegate> {
-    BOOL _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
-    UILabel *_descriptionLabel;
-    MPUContentSizeLayoutConstraint *_descriptionLabelBaselineConstraint;
-    MPUExtrasZoomingImageInteractiveTransitionSourceContext *_interactiveTransitionSourceContext;
-    unsigned int _itemIndex;
-    UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    MPUContentSizeLayoutConstraint *_subtitleBaselineConstraint;
-    UILabel *_subtitleLabel;
-    UIView *_textContainer;
-    MPUExtrasConstrainedArtworkContainerView *_thumbnailImageContainerView;
-    NSLayoutConstraint *_thumbnailImageContainerViewHeightConstraint;
-    UILabel *_titleLabel;
+    BOOL  _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
+    UILabel * _descriptionLabel;
+    MPUContentSizeLayoutConstraint * _descriptionLabelBaselineConstraint;
+    MPUExtrasZoomingImageInteractiveTransitionSourceContext * _interactiveTransitionSourceContext;
+    unsigned int  _itemIndex;
+    UIPinchGestureRecognizer * _pinchGestureRecognizer;
+    MPUContentSizeLayoutConstraint * _subtitleBaselineConstraint;
+    UILabel * _subtitleLabel;
+    UIView * _textContainer;
+    MPUExtrasConstrainedArtworkContainerView * _thumbnailImageContainerView;
+    NSLayoutConstraint * _thumbnailImageContainerViewHeightConstraint;
+    UILabel * _titleLabel;
     struct CGSize { 
         float width; 
         float height; 
-    } _windowSize;
-    NSString *_zoomingImageTransitionIdentifier;
+    }  _windowSize;
+    NSString * _zoomingImageTransitionIdentifier;
 }
 
 @property (nonatomic) BOOL allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;

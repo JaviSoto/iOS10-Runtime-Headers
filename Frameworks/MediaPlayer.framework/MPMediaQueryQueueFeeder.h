@@ -3,23 +3,23 @@
  */
 
 @interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPShuffleControllerDataSource> {
-    MPMediaItem *_cloudDialogAllowedMediaItem;
-    MPMediaLibraryConnectionAssertion *_connectionAssertion;
-    unsigned int _currentInvalidationRevision;
-    unsigned long long _feederRevisionID;
-    BOOL _hasValidItems;
-    MPMutableBidirectionalDictionary *_indexToIdentifierCache;
-    BOOL _isPlaylistQueueFeeder;
+    MPMediaItem * _cloudDialogAllowedMediaItem;
+    MPMediaLibraryConnectionAssertion * _connectionAssertion;
+    unsigned int  _currentInvalidationRevision;
+    unsigned long long  _feederRevisionID;
+    BOOL  _hasValidItems;
+    MPMutableBidirectionalDictionary * _indexToIdentifierCache;
+    BOOL  _isPlaylistQueueFeeder;
     struct vector<long long, std::__1::allocator<long long> > { 
         long long *__begin_; 
         long long *__end_; 
         struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
             long long *__first_; 
         } __end_cap_; 
-    } _itemPIDs;
-    MPMediaQuery *_query;
-    NSArray *_queryItems;
-    MPShuffleController *_shuffleController;
+    }  _itemPIDs;
+    MPMediaQuery * _query;
+    NSArray * _queryItems;
+    MPShuffleController * _shuffleController;
 }
 
 @property (nonatomic, retain) MPMediaItem *cloudDialogAllowedMediaItem;
@@ -35,6 +35,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_commonInit;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned int)arg1;

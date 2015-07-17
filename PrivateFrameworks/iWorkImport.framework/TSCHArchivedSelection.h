@@ -3,7 +3,7 @@
  */
 
 @interface TSCHArchivedSelection : TSPObject <TSKArchivedSelection> {
-    TSCHSelection *mSelection;
+    TSCHSelection * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

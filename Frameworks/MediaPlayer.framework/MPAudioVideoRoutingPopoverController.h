@@ -3,10 +3,10 @@
  */
 
 @interface MPAudioVideoRoutingPopoverController : UIPopoverController <MPAVRoutingViewControllerDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    BOOL _mirroringIncluded;
-    MPAVRoutingViewController *_routingViewController;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    BOOL  _mirroringIncluded;
+    MPAVRoutingViewController * _routingViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

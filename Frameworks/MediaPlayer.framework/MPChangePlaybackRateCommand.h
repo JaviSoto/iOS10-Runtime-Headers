@@ -3,7 +3,7 @@
  */
 
 @interface MPChangePlaybackRateCommand : MPRemoteCommand {
-    NSArray *_supportedPlaybackRates;
+    NSArray * _supportedPlaybackRates;
 }
 
 @property (nonatomic, copy) NSArray *supportedPlaybackRates;

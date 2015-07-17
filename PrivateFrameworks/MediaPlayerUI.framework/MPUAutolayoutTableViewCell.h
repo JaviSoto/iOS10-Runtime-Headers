@@ -3,37 +3,37 @@
  */
 
 @interface MPUAutolayoutTableViewCell : UITableViewCell {
-    BOOL _alignsSeparatorInsetsWithLabels;
+    BOOL  _alignsSeparatorInsetsWithLabels;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _artworkInsets;
-    NSArray *_artworkLayoutConstraints;
-    UIView *_artworkLayoutGuide;
-    float _artworkMaxWidth;
-    MPUArtworkView *_artworkView;
-    UIView *_contentLayoutGuide;
-    UILabel *_detailTextLabel;
-    float _detailTextLabelFirstLineLeading;
-    NSString *_detailTextLabelFontStyle;
-    BOOL _expanded;
-    NSArray *_expansionConstraints;
-    UIView *_expansionView;
+    }  _artworkInsets;
+    NSArray * _artworkLayoutConstraints;
+    UIView * _artworkLayoutGuide;
+    float  _artworkMaxWidth;
+    MPUArtworkView * _artworkView;
+    UIView * _contentLayoutGuide;
+    UILabel * _detailTextLabel;
+    float  _detailTextLabelFirstLineLeading;
+    NSString * _detailTextLabelFontStyle;
+    BOOL  _expanded;
+    NSArray * _expansionConstraints;
+    UIView * _expansionView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _labelContentViewInsets;
-    NSArray *_labelHorizontalLayoutConstraints;
-    UIView *_labelLayoutGuide;
-    NSArray *_labelVerticalLayoutConstraints;
-    NSArray *_layoutGuideConstraints;
-    BOOL _skipSeparatorInsetUpdates;
-    UILabel *_textLabel;
-    NSString *_textLabelFontStyle;
+    }  _labelContentViewInsets;
+    NSArray * _labelHorizontalLayoutConstraints;
+    UIView * _labelLayoutGuide;
+    NSArray * _labelVerticalLayoutConstraints;
+    NSArray * _layoutGuideConstraints;
+    BOOL  _skipSeparatorInsetUpdates;
+    UILabel * _textLabel;
+    NSString * _textLabelFontStyle;
 }
 
 @property (nonatomic) BOOL alignsSeparatorInsetsWithLabels;

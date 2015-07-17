@@ -3,18 +3,18 @@
  */
 
 @interface GEOSuggestionsOptions : PBCodable <NSCopying> {
-    int _entriesType;
+    int  _entriesType;
     struct { 
         unsigned int entriesType : 1; 
         unsigned int listType : 1; 
         unsigned int includeRankingFeatures : 1; 
         unsigned int normalizePOIs : 1; 
-    } _has;
-    BOOL _includeRankingFeatures;
-    int _listType;
-    BOOL _normalizePOIs;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
+    }  _has;
+    BOOL  _includeRankingFeatures;
+    int  _listType;
+    BOOL  _normalizePOIs;
+    NSData * _suggestionEntryMetadata;
+    NSData * _suggestionMetadata;
 }
 
 @property (nonatomic) int entriesType;

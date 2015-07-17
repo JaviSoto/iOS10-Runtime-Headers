@@ -3,20 +3,19 @@
  */
 
 @interface HMDService : NSObject <NSSecureCoding> {
-    HMDAccessory *_accessory;
-    NSString *_associatedServiceType;
-    NSArray *_characteristics;
-    HAPService *_hapService;
-    NSNumber *_instanceID;
-    NSString *_name;
-    NSString *_providedName;
-    NSString *_serviceType;
+    HMDAccessory * _accessory;
+    NSString * _associatedServiceType;
+    NSArray * _characteristics;
+    NSNumber * _instanceID;
+    NSString * _name;
+    NSString * _providedName;
+    NSString * _serviceType;
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
 @property (nonatomic, readonly) NSString *associatedServiceType;
 @property (nonatomic, readonly, copy) NSArray *characteristics;
-@property (nonatomic, retain) HAPService *hapService;
+@property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, copy) NSNumber *instanceID;
 @property (getter=getName, nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSString *providedName;
@@ -31,25 +30,24 @@
 - (id)associatedServiceType;
 - (id)characteristics;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2;
+- (id)contextID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findCharacteristic:(id)arg1;
 - (id)findCharacteristicWithType:(id)arg1;
 - (id)getConfiguredName;
 - (id)getName;
-- (id)hapService;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithService:(id)arg1 accessory:(id)arg2;
 - (id)instanceID;
 - (id)providedName;
 - (id)serviceType;
-- (void)setHapService:(id)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProvidedName:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (id)type;
-- (void)unconfigure;
 - (BOOL)updateAssociatedServiceType:(id)arg1 error:(id*)arg2;
+- (void)updateLastKnownValues;
 - (id)updateName:(id)arg1;
 
 @end

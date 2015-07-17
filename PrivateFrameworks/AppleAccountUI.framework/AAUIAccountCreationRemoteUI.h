@@ -3,17 +3,17 @@
  */
 
 @interface AAUIAccountCreationRemoteUI : NSObject <RUIObjectModelDelegate> {
-    AASetupAssistantService *_aaService;
-    UINavigationController *_createAccountNavController;
-    <AAUIAccountCreationDelegate> *_delegate;
-    UIAlertView *_failedToCreateAccountAlert;
-    BOOL _isModal;
-    RUILoader *_loader;
-    NSMutableArray *_objectModels;
-    BOOL _over13;
-    UINavigationController *_parentNavController;
-    UIAlertView *_tcConfirmationAlert;
-    AAAutoAccountVerifier *_verifier;
+    AASetupAssistantService * _aaService;
+    UINavigationController * _createAccountNavController;
+    <AAUIAccountCreationDelegate> * _delegate;
+    UIAlertView * _failedToCreateAccountAlert;
+    BOOL  _isModal;
+    RUILoader * _loader;
+    NSMutableArray * _objectModels;
+    BOOL  _over13;
+    UINavigationController * _parentNavController;
+    UIAlertView * _tcConfirmationAlert;
+    AAAutoAccountVerifier * _verifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

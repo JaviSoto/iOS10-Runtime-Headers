@@ -3,10 +3,10 @@
  */
 
 @interface CDDHistoryWindow : NSObject {
-    double _duration;
-    double _recurrenceDelta;
-    double _recurrenceWidth;
-    NSDate *_start;
+    double  _duration;
+    double  _recurrenceDelta;
+    double  _recurrenceWidth;
+    NSDate * _start;
 }
 
 @property (readonly) double duration;

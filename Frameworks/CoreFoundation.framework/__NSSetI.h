@@ -3,8 +3,8 @@
  */
 
 @interface __NSSetI : NSSet {
-    unsigned int _szidx;
-    unsigned int _used;
+    unsigned int  _szidx;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;

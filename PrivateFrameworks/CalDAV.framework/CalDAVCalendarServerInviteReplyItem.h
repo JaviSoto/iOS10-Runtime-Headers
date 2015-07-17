@@ -3,14 +3,14 @@
  */
 
 @interface CalDAVCalendarServerInviteReplyItem : CoreDAVItem {
-    NSURL *_acceptedURL;
-    NSString *_firstName;
-    CoreDAVItemWithHrefChildItem *_hostURL;
-    CoreDAVHrefItem *_href;
-    CoreDAVLeafItem *_inReplyTo;
-    CoreDAVItemWithNoChildren *_inviteStatus;
-    NSString *_lastName;
-    CoreDAVLeafItem *_summary;
+    NSURL * _acceptedURL;
+    NSString * _firstName;
+    CoreDAVItemWithHrefChildItem * _hostURL;
+    CoreDAVHrefItem * _href;
+    CoreDAVLeafItem * _inReplyTo;
+    CoreDAVItemWithNoChildren * _inviteStatus;
+    NSString * _lastName;
+    CoreDAVLeafItem * _summary;
 }
 
 @property (nonatomic, retain) NSURL *acceptedURL;
@@ -22,9 +22,9 @@
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) CoreDAVLeafItem *summary;
 
+- (void).cxx_destruct;
 - (id)acceptedURL;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)firstName;
 - (id)hostURL;
 - (id)href;

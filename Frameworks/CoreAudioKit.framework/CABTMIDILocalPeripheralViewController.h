@@ -3,17 +3,17 @@
  */
 
 @interface CABTMIDILocalPeripheralViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    int advertiseTimeout;
-    NSTimer *advertiseTimer;
-    BOOL advertising;
-    AMSBTLEAdvertisementManager *advertisingManager;
-    BOOL didCleanup;
-    UIActivityIndicatorView *indicator;
-    BOOL isErrorMessage;
-    NSTimer *messageTimer;
-    UITextField *serviceNameField;
-    NSString *statusString;
-    NSString *theServiceName;
+    int  advertiseTimeout;
+    NSTimer * advertiseTimer;
+    BOOL  advertising;
+    AMSBTLEAdvertisementManager * advertisingManager;
+    BOOL  didCleanup;
+    UIActivityIndicatorView * indicator;
+    BOOL  isErrorMessage;
+    NSTimer * messageTimer;
+    UITextField * serviceNameField;
+    NSString * statusString;
+    NSString * theServiceName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface MSCLDefaultServiceHelper : NSObject <MSCLExternalServiceHelper> {
-    NSString *_serviceID;
+    NSString * _serviceID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,8 +12,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)authenticateAccountWithCompletionBlock:(id /* block */)arg1;
 - (void)authenticateUserName:(id)arg1 password:(id)arg2 withCompletionBlock:(id /* block */)arg3;
+- (BOOL)canAddAccount;
 - (id)initWithServiceIdentifier:(id)arg1;
+- (void)requestAccessForAccount:(id)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)requestAccessForUserName:(id)arg1 password:(id)arg2 options:(id)arg3 withCompletionBlock:(id /* block */)arg4;
 
 @end

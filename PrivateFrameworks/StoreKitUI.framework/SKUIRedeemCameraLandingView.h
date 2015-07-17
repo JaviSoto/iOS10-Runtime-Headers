@@ -3,11 +3,11 @@
  */
 
 @interface SKUIRedeemCameraLandingView : UIView {
-    UILabel *_bodyLabel;
-    UIButton *_button;
-    UILabel *_headerLabel;
-    UIImageView *_imageView;
-    int _spacingStyle;
+    UILabel * _bodyLabel;
+    UIButton * _button;
+    UILabel * _headerLabel;
+    UIImageView * _imageView;
+    int  _spacingStyle;
 }
 
 @property (nonatomic, readonly) UIButton *button;

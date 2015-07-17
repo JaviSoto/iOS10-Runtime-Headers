@@ -3,7 +3,7 @@
  */
 
 @interface NSMutableStringProxyForMutableAttributedString : NSMutableString {
-    NSMutableAttributedString *mutableAttributedString;
+    NSMutableAttributedString * mutableAttributedString;
 }
 
 - (unsigned short)characterAtIndex:(unsigned int)arg1;

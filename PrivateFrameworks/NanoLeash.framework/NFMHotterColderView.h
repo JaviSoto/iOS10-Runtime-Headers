@@ -3,16 +3,16 @@
  */
 
 @interface NFMHotterColderView : UIView {
-    UIView *_babyBar;
-    int _bufferIndex;
-    BOOL _freshBuffer;
-    GraphView *_graph;
-    UIView *_graphClippingView;
-    NFMLeashManager *_leashManager;
-    UIView *_mamaBar;
-    int _miniBufferIndex;
-    UIView *_papaBar;
-    UILabel *_rssiStats;
+    UIView * _babyBar;
+    int  _bufferIndex;
+    BOOL  _freshBuffer;
+    GraphView * _graph;
+    UIView * _graphClippingView;
+    NFMLeashManager * _leashManager;
+    UIView * _mamaBar;
+    int  _miniBufferIndex;
+    UIView * _papaBar;
+    UILabel * _rssiStats;
 }
 
 @property (nonatomic, retain) UIView *babyBar;

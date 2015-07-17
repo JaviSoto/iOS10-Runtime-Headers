@@ -3,14 +3,14 @@
  */
 
 @interface MPUSkipLimitView : UIView {
-    NSTimer *_hideTimer;
-    UILabel *_informationLabel;
+    NSTimer * _hideTimer;
+    UILabel * _informationLabel;
     struct { 
         int numberOfAvailableSkips; 
         int skipFrequency; 
         double skipInterval; 
-    } _skipLimit;
-    NSDictionary *_textAttributes;
+    }  _skipLimit;
+    NSDictionary * _textAttributes;
 }
 
 @property (nonatomic, readonly) UILabel *label;
@@ -24,6 +24,7 @@
 - (void)_updateInformationLabel;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)dealloc;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 labelClass:(Class)arg2;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;

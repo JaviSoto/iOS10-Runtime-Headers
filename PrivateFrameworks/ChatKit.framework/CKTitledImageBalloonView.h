@@ -3,8 +3,8 @@
  */
 
 @interface CKTitledImageBalloonView : CKImageBalloonView {
-    UIImageView *_chevron;
-    UILabel *_titleLabel;
+    UIImageView * _chevron;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;

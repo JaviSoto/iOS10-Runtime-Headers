@@ -3,9 +3,9 @@
  */
 
 @interface GEOPDSearchSubstringDescriptor : PBCodable <NSCopying> {
-    int _beginIndex;
-    int _endIndex;
-    int _stringType;
+    int  _beginIndex;
+    int  _endIndex;
+    int  _stringType;
 }
 
 @property (nonatomic) int beginIndex;

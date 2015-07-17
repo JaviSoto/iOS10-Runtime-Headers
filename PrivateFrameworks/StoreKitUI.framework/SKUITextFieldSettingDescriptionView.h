@@ -3,11 +3,11 @@
  */
 
 @interface SKUITextFieldSettingDescriptionView : SKUIFieldSettingDescriptionView <UITextFieldDelegate> {
-    float _aggregateLabelWidth;
-    SKUIInputViewElement *_inputViewElement;
-    UILabel *_label;
-    SKUIFieldSettingDescription *_settingDescription;
-    UITextField *_textField;
+    float  _aggregateLabelWidth;
+    SKUIInputViewElement * _inputViewElement;
+    UILabel * _label;
+    SKUIFieldSettingDescription * _settingDescription;
+    UITextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;

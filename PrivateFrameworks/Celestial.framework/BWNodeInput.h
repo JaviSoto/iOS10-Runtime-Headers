@@ -3,23 +3,23 @@
  */
 
 @interface BWNodeInput : NSObject {
-    long long _configurationID;
-    BWNodeConnection *_connection;
-    int _delayedBufferCount;
-    BOOL _enabled;
-    BWFormat *_format;
-    BWFormatRequirements *_formatRequirements;
-    int _indefinitelyHeldBufferCount;
-    unsigned int _index;
-    long long _liveConfigurationID;
-    BWVideoFormat *_liveFormat;
-    unsigned long _mediaType;
-    BOOL _mediaTypeIsVideo;
-    BWNode *_node;
-    unsigned int _numberOfBuffersDropped;
-    unsigned int _numberOfBuffersReceived;
-    int _passthroughMode;
-    int _retainedBufferCount;
+    long long  _configurationID;
+    BWNodeConnection * _connection;
+    int  _delayedBufferCount;
+    BOOL  _enabled;
+    BWFormat * _format;
+    BWFormatRequirements * _formatRequirements;
+    int  _indefinitelyHeldBufferCount;
+    unsigned int  _index;
+    long long  _liveConfigurationID;
+    BWVideoFormat * _liveFormat;
+    unsigned long  _mediaType;
+    BOOL  _mediaTypeIsVideo;
+    BWNode * _node;
+    unsigned int  _numberOfBuffersDropped;
+    unsigned int  _numberOfBuffersReceived;
+    int  _passthroughMode;
+    int  _retainedBufferCount;
 }
 
 @property (nonatomic) long long configurationID;

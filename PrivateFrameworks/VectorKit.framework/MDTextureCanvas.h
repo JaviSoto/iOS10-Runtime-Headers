@@ -3,15 +3,15 @@
  */
 
 @interface MDTextureCanvas : NSObject <MDRenderTarget> {
-    float _contentScale;
+    float  _contentScale;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
     struct CGSize { 
         float width; 
         float height; 
-    } _sizeInPixels;
+    }  _sizeInPixels;
 }
 
 @property (nonatomic, readonly) float averageFPS;
@@ -23,7 +23,6 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (float)contentScale;
 - (void)dealloc;
 - (id)description;

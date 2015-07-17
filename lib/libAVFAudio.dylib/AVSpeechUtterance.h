@@ -3,13 +3,13 @@
  */
 
 @interface AVSpeechUtterance : NSObject <NSCopying, NSSecureCoding> {
-    float _pitchMultiplier;
-    double _postUtteranceDelay;
-    double _preUtteranceDelay;
-    float _rate;
-    NSString *_speechString;
-    AVSpeechSynthesisVoice *_voice;
-    float _volume;
+    float  _pitchMultiplier;
+    double  _postUtteranceDelay;
+    double  _preUtteranceDelay;
+    float  _rate;
+    NSString * _speechString;
+    AVSpeechSynthesisVoice * _voice;
+    float  _volume;
 }
 
 @property (nonatomic) float pitchMultiplier;

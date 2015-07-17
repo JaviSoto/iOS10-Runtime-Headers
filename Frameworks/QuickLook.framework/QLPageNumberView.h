@@ -3,11 +3,11 @@
  */
 
 @interface QLPageNumberView : UIView {
-    UILabel *_backgroundLabel;
-    NSNumberFormatter *_indexFormatter;
-    UILabel *_label;
-    int _pageCount;
-    int _pageNumber;
+    UILabel * _backgroundLabel;
+    NSNumberFormatter * _indexFormatter;
+    UILabel * _label;
+    int  _pageCount;
+    int  _pageNumber;
 }
 
 @property int pageCount;

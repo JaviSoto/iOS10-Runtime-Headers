@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DPieBevelEdgeNormalDirectionMapper : TSCH3DNormalDirectionMapper {
-    int mAngleLimit;
-    int mAngleSteps;
-    int mRadiusLimit;
-    int mRadiusSteps;
-    int mTopMeshOffset;
+    int  mAngleLimit;
+    int  mAngleSteps;
+    int  mRadiusLimit;
+    int  mRadiusSteps;
+    int  mTopMeshOffset;
 }
 
 - (id)initWithTopMeshOffset:(int)arg1 angleSteps:(int)arg2 radiusSteps:(int)arg3 angleLimit:(int)arg4 radiusLimit:(int)arg5;

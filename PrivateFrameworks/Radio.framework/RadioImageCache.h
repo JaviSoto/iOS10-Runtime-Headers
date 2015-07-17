@@ -3,7 +3,7 @@
  */
 
 @interface RadioImageCache : NSObject {
-    NSOperationQueue *_imageRequestQueue;
+    NSOperationQueue * _imageRequestQueue;
 }
 
 + (struct __CFURLStorageSession { }*)_newSharedCacheStorageSession;

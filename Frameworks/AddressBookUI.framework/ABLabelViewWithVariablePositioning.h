@@ -3,10 +3,10 @@
  */
 
 @interface ABLabelViewWithVariablePositioning : UIView {
-    float _bottomPadding;
-    float _horizontalPadding;
-    UILabel *_label;
-    float _topPadding;
+    float  _bottomPadding;
+    float  _horizontalPadding;
+    UILabel * _label;
+    float  _topPadding;
 }
 
 @property (nonatomic) float bottomPadding;

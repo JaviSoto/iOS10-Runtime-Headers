@@ -3,7 +3,7 @@
  */
 
 @interface __NSFileSecurity : NSFileSecurity <NSCoding, NSCopying> {
-    struct _filesec { } *_filesec;
+    struct _filesec { } * _filesec;
 }
 
 + (id)__new:(struct _filesec { }*)arg1;

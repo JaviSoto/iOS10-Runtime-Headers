@@ -3,14 +3,14 @@
  */
 
 @interface SKUIBrowseItemCell : UICollectionViewCell {
-    UIView *_borderView;
-    UIImage *_decorationImage;
-    UIImageView *_decorationImageView;
-    BOOL _hasBlueBackgroundWhenSelected;
-    BOOL _showTopBorder;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    UIView *_topBorderView;
+    UIView * _borderView;
+    UIImage * _decorationImage;
+    UIImageView * _decorationImageView;
+    BOOL  _hasBlueBackgroundWhenSelected;
+    BOOL  _showTopBorder;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic, retain) UIImage *decorationImage;

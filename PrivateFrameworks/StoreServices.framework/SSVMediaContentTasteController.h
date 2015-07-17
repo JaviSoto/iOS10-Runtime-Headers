@@ -3,14 +3,14 @@
  */
 
 @interface SSVMediaContentTasteController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessSerialQueue;
-    NSObject<OS_dispatch_queue> *_calloutSerialQueue;
-    unsigned long long _currentResponseRevisionID;
-    int _itemsDidChangeNotifyToken;
-    unsigned long long _lastNotificationReceivedResponseRevisionID;
-    long long _pendingMutateRequestCount;
-    NSMutableDictionary *_playlistGlobalIDToContentTasteItem;
-    NSMutableDictionary *_playlistGlobalIDToPendingContentTasteItem;
+    NSObject<OS_dispatch_queue> * _accessSerialQueue;
+    NSObject<OS_dispatch_queue> * _calloutSerialQueue;
+    unsigned long long  _currentResponseRevisionID;
+    int  _itemsDidChangeNotifyToken;
+    unsigned long long  _lastNotificationReceivedResponseRevisionID;
+    long long  _pendingMutateRequestCount;
+    NSMutableDictionary * _playlistGlobalIDToContentTasteItem;
+    NSMutableDictionary * _playlistGlobalIDToPendingContentTasteItem;
     struct map<long long, SSVMediaContentTasteItem *, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, SSVMediaContentTasteItem *> > > { 
         struct __tree<std::__1::__value_type<long long, SSVMediaContentTasteItem *>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, SSVMediaContentTasteItem *>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, SSVMediaContentTasteItem *> > > { 
             struct __tree_node<std::__1::__value_type<long long, SSVMediaContentTasteItem *>, void *> {} *__begin_node_; 
@@ -23,7 +23,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _storeAdamIDToContentTasteItem;
+    }  _storeAdamIDToContentTasteItem;
     struct map<long long, SSVMediaContentTasteItem *, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, SSVMediaContentTasteItem *> > > { 
         struct __tree<std::__1::__value_type<long long, SSVMediaContentTasteItem *>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, SSVMediaContentTasteItem *>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, SSVMediaContentTasteItem *> > > { 
             struct __tree_node<std::__1::__value_type<long long, SSVMediaContentTasteItem *>, void *> {} *__begin_node_; 
@@ -36,7 +36,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _storeAdamIDToPendingContentTasteItem;
+    }  _storeAdamIDToPendingContentTasteItem;
 }
 
 - (id).cxx_construct;

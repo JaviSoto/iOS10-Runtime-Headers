@@ -13,6 +13,8 @@
 @property (nonatomic) BOOL safeMode;
 @property (nonatomic) double userLaunchEventTime;
 @property (nonatomic) double watchdogExtension;
+@property (nonatomic) int watchdogPolicy;
+@property (nonatomic) double watchdogScaleFactor;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -39,6 +41,10 @@
 - (void)setAllowCPUThrottling:(BOOL)arg1;
 - (void)setRunWatchdogIndependently:(BOOL)arg1;
 - (void)setWatchdogExtension:(double)arg1;
+- (void)setWatchdogPolicy:(int)arg1;
+- (void)setWatchdogScaleFactor:(double)arg1;
 - (double)watchdogExtension;
+- (int)watchdogPolicy;
+- (double)watchdogScaleFactor;
 
 @end

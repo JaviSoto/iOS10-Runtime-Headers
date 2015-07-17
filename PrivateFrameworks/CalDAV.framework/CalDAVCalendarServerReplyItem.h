@@ -3,14 +3,14 @@
  */
 
 @interface CalDAVCalendarServerReplyItem : CalDAVItemWithRecurrenceChildren {
-    CoreDAVLeafItem *_attendee;
+    CoreDAVLeafItem * _attendee;
 }
 
 @property (nonatomic, retain) CoreDAVLeafItem *attendee;
 
+- (void).cxx_destruct;
 - (id)attendee;
 - (id)copyParseRules;
-- (void)dealloc;
 - (void)setAttendee:(id)arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface NFAWDSERemoved : NSObject <NFAWDEventProtocol> {
-    AWDNFCSERemovedEvent *_metric;
-    unsigned int reason;
+    AWDNFCSERemovedEvent * _metric;
+    unsigned int  reason;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCSERemovedEvent *metric;
+@property (nonatomic, retain) AWDNFCSERemovedEvent *metric;
 @property (nonatomic) unsigned int reason;
 @property (readonly) Class superclass;
 
@@ -22,5 +22,6 @@
 - (unsigned int)reason;
 - (void)setMetric:(id)arg1;
 - (void)setReason:(unsigned int)arg1;
+- (void)updateExceptionUUID:(id)arg1;
 
 @end

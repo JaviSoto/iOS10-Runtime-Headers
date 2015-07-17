@@ -3,37 +3,37 @@
  */
 
 @interface TSPPackageReadCoordinator : TSPReadCoordinatorBase <TSPReadCoordinator> {
-    BOOL _areExternalDataReferencesAllowed;
-    TSPPackageMetadata *_cachedMetadata;
-    NSObject<OS_dispatch_group> *_completionGroup;
-    NSObject<OS_dispatch_queue> *_componentQueue;
-    NSMutableArray *_componentsToUpgrade;
-    TSPObjectContext *_context;
-    BOOL _didRequireUpgrade;
-    TSPObject *_documentObject;
-    TSPDocumentResourceDataProvider *_documentResourceDataProvider;
-    TSPDocumentRevision *_documentRevision;
-    NSUUID *_documentUUID;
-    NSError *_error;
-    NSObject<OS_dispatch_queue> *_errorQueue;
-    TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
-    NSObject<OS_dispatch_queue> *_ioCompletionQueue;
-    NSObject<OS_dispatch_queue> *_ioQueue;
-    TSPObject *_metadataObject;
-    NSObject<OS_dispatch_queue> *_objectQueue;
-    NSMapTable *_objects;
-    TSPPackage *_package;
-    NSURL *_packageURL;
-    TSPPersistedObjectUUIDMap *_persistedUUIDMap;
+    BOOL  _areExternalDataReferencesAllowed;
+    TSPPackageMetadata * _cachedMetadata;
+    NSObject<OS_dispatch_group> * _completionGroup;
+    NSObject<OS_dispatch_queue> * _componentQueue;
+    NSMutableArray * _componentsToUpgrade;
+    TSPObjectContext * _context;
+    BOOL  _didRequireUpgrade;
+    TSPObject * _documentObject;
+    TSPDocumentResourceDataProvider * _documentResourceDataProvider;
+    TSPDocumentRevision * _documentRevision;
+    NSUUID * _documentUUID;
+    NSError * _error;
+    NSObject<OS_dispatch_queue> * _errorQueue;
+    TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
+    NSObject<OS_dispatch_queue> * _ioCompletionQueue;
+    NSObject<OS_dispatch_queue> * _ioQueue;
+    TSPObject * _metadataObject;
+    NSObject<OS_dispatch_queue> * _objectQueue;
+    NSMapTable * _objects;
+    TSPPackage * _package;
+    NSURL * _packageURL;
+    TSPPersistedObjectUUIDMap * _persistedUUIDMap;
     struct vector<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation>, std::__1::allocator<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation> > > { 
         struct auto_ptr<TSP::PersistedObjectUUIDMapOperation> {} *__begin_; 
         struct auto_ptr<TSP::PersistedObjectUUIDMapOperation> {} *__end_; 
         struct __compressed_pair<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation> *, std::__1::allocator<std::__1::auto_ptr<TSP::PersistedObjectUUIDMapOperation> > > { 
             struct auto_ptr<TSP::PersistedObjectUUIDMapOperation> {} *__first_; 
         } __end_cap_; 
-    } _persistedUUIDMapOperations;
-    int _preferredPackageType;
-    NSObject<OS_dispatch_queue> *_readCompletionQueue;
+    }  _persistedUUIDMapOperations;
+    int  _preferredPackageType;
+    NSObject<OS_dispatch_queue> * _readCompletionQueue;
     struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
         struct __hash_table<std::__1::pair<const long long, bool>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > > { 
@@ -58,7 +58,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _readExternalObjects;
+    }  _readExternalObjects;
     struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
         struct __hash_table<std::__1::pair<const long long, bool>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > > { 
@@ -83,11 +83,11 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _readIdentifiers;
-    unsigned long long _readVersion;
-    unsigned long long _saveToken;
-    BOOL _skipDocumentUpgrade;
-    unsigned long long _writeVersion;
+    }  _readIdentifiers;
+    unsigned long long  _readVersion;
+    unsigned long long  _saveToken;
+    BOOL  _skipDocumentUpgrade;
+    unsigned long long  _writeVersion;
 }
 
 @property (readonly, copy) NSString *debugDescription;

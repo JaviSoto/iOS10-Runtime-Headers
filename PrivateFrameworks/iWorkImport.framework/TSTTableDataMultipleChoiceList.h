@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataMultipleChoiceList : TSTTableDataObject {
-    TSTPopUpMenuModel *mPopUpMenuModel;
+    TSTPopUpMenuModel * mPopUpMenuModel;
 }
 
 - (void)dealloc;

@@ -3,10 +3,10 @@
  */
 
 @interface BRCClientRanksPersistedState : NSObject <NSSecureCoding> {
-    unsigned long long _nextItemRowID;
-    unsigned long long _nextNotifRank;
-    unsigned long long _nextPackageItemRank;
-    BRCAccountSession *_session;
+    unsigned long long  _nextItemRowID;
+    unsigned long long  _nextNotifRank;
+    unsigned long long  _nextPackageItemRank;
+    BRCAccountSession * _session;
 }
 
 @property (nonatomic, readonly) unsigned long long nextItemRowID;

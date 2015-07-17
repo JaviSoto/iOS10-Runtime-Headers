@@ -3,23 +3,25 @@
  */
 
 @interface NNMKProtoMessage : PBCodable <NSCopying> {
-    NSString *_accountId;
-    NSMutableArray *_ccs;
-    NSString *_conversationId;
-    NSData *_dateReceived;
-    NSData *_dateSent;
-    NSString *_from;
+    NSString * _accountId;
+    NSMutableArray * _bccs;
+    NSMutableArray * _ccs;
+    NSString * _conversationId;
+    NSData * _dateReceived;
+    NSData * _dateSent;
+    NSString * _from;
     struct { 
         unsigned int status : 1; 
-    } _has;
-    NSString *_messageId;
-    NSString *_messageIdHeader;
-    unsigned int _status;
-    NSString *_subject;
-    NSMutableArray *_tos;
+    }  _has;
+    NSString * _messageId;
+    NSString * _messageIdHeader;
+    unsigned int  _status;
+    NSString * _subject;
+    NSMutableArray * _tos;
 }
 
 @property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSMutableArray *bccs;
 @property (nonatomic, retain) NSMutableArray *ccs;
 @property (nonatomic, retain) NSString *conversationId;
 @property (nonatomic, retain) NSData *dateReceived;
@@ -42,11 +44,16 @@
 
 - (void).cxx_destruct;
 - (id)accountId;
+- (void)addBcc:(id)arg1;
 - (void)addCc:(id)arg1;
 - (void)addTo:(id)arg1;
+- (id)bccAtIndex:(unsigned int)arg1;
+- (id)bccs;
+- (unsigned int)bccsCount;
 - (id)ccAtIndex:(unsigned int)arg1;
 - (id)ccs;
 - (unsigned int)ccsCount;
+- (void)clearBccs;
 - (void)clearCcs;
 - (void)clearTos;
 - (id)conversationId;
@@ -73,6 +80,7 @@
 - (id)messageIdHeader;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAccountId:(id)arg1;
+- (void)setBccs:(id)arg1;
 - (void)setCcs:(id)arg1;
 - (void)setConversationId:(id)arg1;
 - (void)setDateReceived:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreItemOfferAsset : NSObject {
-    NSDictionary *_lookupDictionary;
+    NSDictionary * _lookupDictionary;
 }
 
 @property (nonatomic, readonly) double duration;

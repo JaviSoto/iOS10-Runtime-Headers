@@ -3,12 +3,12 @@
  */
 
 @interface AWDNFCHCIEndOfTransactionEvent : PBCodable <NSCopying> {
-    NSData *_aid;
-    NSData *_cdi;
-    unsigned int _command;
-    unsigned int _commandStatus;
-    unsigned int _currencyCode;
-    unsigned int _cvm;
+    NSData * _aid;
+    NSData * _cdi;
+    unsigned int  _command;
+    unsigned int  _commandStatus;
+    unsigned int  _currencyCode;
+    unsigned int  _cvm;
     struct { 
         unsigned int iad : 1; 
         unsigned int timeDeltaFromReference : 1; 
@@ -22,20 +22,20 @@
         unsigned int msc : 1; 
         unsigned int transactionStatus : 1; 
         unsigned int version : 1; 
-    } _has;
-    unsigned long long _iad;
-    unsigned int _informative;
-    NSData *_maid;
-    NSData *_maidDeprecated;
-    NSData *_mcii;
-    unsigned int _msc;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_transactionId;
-    unsigned int _transactionStatus;
-    unsigned long long _transactionTotal;
-    NSData *_uuidReference;
-    unsigned int _version;
+    }  _has;
+    unsigned long long  _iad;
+    unsigned int  _informative;
+    NSData * _maid;
+    NSData * _maidDeprecated;
+    NSData * _mcii;
+    unsigned int  _msc;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _transactionId;
+    unsigned int  _transactionStatus;
+    unsigned long long  _transactionTotal;
+    NSData * _uuidReference;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) NSData *aid;

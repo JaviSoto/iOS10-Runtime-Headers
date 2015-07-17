@@ -3,10 +3,10 @@
  */
 
 @interface OISFUDataRepresentation : NSObject {
-    BOOL mHasHash;
-    BOOL mHasSha1Hash;
-    unsigned int mHash;
-    NSData *mSha1Hash;
+    BOOL  mHasHash;
+    BOOL  mHasSha1Hash;
+    unsigned int  mHash;
+    NSData * mSha1Hash;
 }
 
 - (id)bufferedInputStream;

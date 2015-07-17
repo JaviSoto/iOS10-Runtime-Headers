@@ -8,11 +8,11 @@
         unsigned int score : 1; 
         unsigned int numRatingsUsedForScore : 1; 
         unsigned int ratingType : 1; 
-    } _has;
-    double _maxScore;
-    int _numRatingsUsedForScore;
-    int _ratingType;
-    double _score;
+    }  _has;
+    double  _maxScore;
+    int  _numRatingsUsedForScore;
+    int  _ratingType;
+    double  _score;
 }
 
 @property (nonatomic) BOOL hasMaxScore;

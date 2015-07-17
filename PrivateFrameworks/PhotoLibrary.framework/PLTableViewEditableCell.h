@@ -3,12 +3,12 @@
  */
 
 @interface PLTableViewEditableCell : UITableViewCell <UITextFieldDelegate, UITextViewDelegate> {
-    int _cellStyle;
-    id _delegate;
-    BOOL _forceFirstResponder;
-    UILabel *_sizeTextLabel;
-    UITextField *_textField;
-    PLTextView *_textView;
+    int  _cellStyle;
+    id  _delegate;
+    BOOL  _forceFirstResponder;
+    UILabel * _sizeTextLabel;
+    UITextField * _textField;
+    PLTextView * _textView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -10,7 +10,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _affineTransform;
+    }  _affineTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -18,7 +18,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _proposedAffineTransform;
+    }  _proposedAffineTransform;
 }
 
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } affineTransform;

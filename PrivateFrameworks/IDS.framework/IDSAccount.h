@@ -3,7 +3,7 @@
  */
 
 @interface IDSAccount : NSObject {
-    _IDSAccount *_internal;
+    _IDSAccount * _internal;
 }
 
 @property (nonatomic, retain) NSDictionary *accountInfo;

@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _displayProfileRectSize;
+    }  _displayProfileRectSize;
 }
 
 + (BOOL)archivedObject:(id)arg1 matchesDisplayProfile:(id)arg2;

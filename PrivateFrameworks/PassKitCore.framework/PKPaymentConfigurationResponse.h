@@ -3,10 +3,10 @@
  */
 
 @interface PKPaymentConfigurationResponse : PKPaymentWebServiceResponse {
-    NSDictionary *_configuration;
-    NSData *_data;
-    NSData *_signature;
-    NSString *_version;
+    NSDictionary * _configuration;
+    NSData * _data;
+    NSData * _signature;
+    NSString * _version;
 }
 
 @property (nonatomic, readonly) NSDictionary *configuration;

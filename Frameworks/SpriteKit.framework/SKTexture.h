@@ -3,36 +3,37 @@
  */
 
 @interface SKTexture : NSObject <NSCoding, NSCopying> {
-    int _alignment;
-    unsigned int *_alphaMap;
+    int  _alignment;
+    unsigned int * _alphaMap;
     struct CGSize { 
         float width; 
         float height; 
-    } _alphaMapSize;
-    unsigned int _compressedFormat;
-    int _compressedSize;
+    }  _alphaMapSize;
+    struct jet_texture { int (**x1)(); struct jet_context {} *x2; } * _backingTexture;
+    unsigned int  _compressedFormat;
+    int  _compressedSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } _cropOffset;
+    }  _cropOffset;
     struct CGPoint { 
         float x; 
         float y; 
-    } _cropScale;
-    BOOL _didGenerateMipmaps;
-    BOOL _disableAlpha;
-    CIFilter *_filter;
-    NSString *_imgName;
-    BOOL _isCompressed;
-    BOOL _isData;
-    BOOL _isPath;
-    BOOL _isRotated;
-    NSString *_originalAtlasName;
-    SKTexture *_originalTexture;
-    int _rowLength;
-    NSArray *_searchPaths;
-    BOOL _shouldGenerateMipmaps;
-    NSString *_subTextureName;
+    }  _cropScale;
+    BOOL  _didGenerateMipmaps;
+    BOOL  _disableAlpha;
+    CIFilter * _filter;
+    NSString * _imgName;
+    BOOL  _isCompressed;
+    BOOL  _isData;
+    BOOL  _isPath;
+    BOOL  _isRotated;
+    NSString * _originalAtlasName;
+    SKTexture * _originalTexture;
+    int  _rowLength;
+    NSArray * _searchPaths;
+    BOOL  _shouldGenerateMipmaps;
+    NSString * _subTextureName;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -42,7 +43,7 @@
             float width; 
             float height; 
         } size; 
-    } _textCoords;
+    }  _textCoords;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -52,11 +53,12 @@
             float width; 
             float height; 
         } size; 
-    } _textRect;
-    SKTextureCache *_textureCache;
-    unsigned int _textureTarget;
+    }  _textRect;
+    SKTextureCache * _textureCache;
+    unsigned int  _textureTarget;
 }
 
+@property (nonatomic, readonly) struct CGImage { }*CGImage;
 @property (nonatomic, readonly) unsigned int*alphaMap;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } alphaMapSize;
 @property (nonatomic) struct CGPoint { float x1; float x2; } cropOffset;
@@ -101,8 +103,9 @@
 + (id)textureWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inTexture:(id)arg2;
 + (void)updateTextures;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct CGImage { }*)CGImage;
+- (struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })_backingTexture;
 - (id)_copyImageData;
 - (struct CGImage { }*)_createCGImage;
 - (void)_ensureImageData;
@@ -112,6 +115,7 @@
 - (struct CGImage { }*)_newTextureFromGLCache;
 - (struct CGImage { }*)_rotateCGImage:(struct CGImage { }*)arg1;
 - (void)_savePngFromGLCache:(id)arg1;
+- (void)_setImageName:(id)arg1;
 - (id)_textureCache;
 - (unsigned int*)alphaMap;
 - (struct CGSize { float x1; float x2; })alphaMapSize;
@@ -133,6 +137,8 @@
 - (id)imgName;
 - (id)init;
 - (void)initTextureCacheWithImageData;
+- (id)initWithBackingTetxure:(struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (id)initWithBackingTetxure:(struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })arg1 logicalWidth:(float)arg2 height:(float)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImageNamed:(id)arg1;
 - (id)initWithImagePath:(id)arg1;
@@ -144,6 +150,7 @@
 - (void)loadImageDataFromCGImage:(struct CGImage { }*)arg1 pointsSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)loadImageDataFromPVRData:(id)arg1;
 - (BOOL)loadImageDataFromPVRGZData:(id)arg1;
+- (id)metalTexture;
 - (id)originalAtlasName;
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)preload;

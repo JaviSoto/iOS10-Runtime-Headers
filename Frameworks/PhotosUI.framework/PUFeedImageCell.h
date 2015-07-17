@@ -3,27 +3,27 @@
  */
 
 @interface PUFeedImageCell : PUFeedCell {
-    UIImageView *__centerOverlayImageView;
-    UIButton *__commentButton;
-    int __imageTag;
-    UIImageView *__imageView;
-    UIView<PLVideoOverlayButton> *__overlayPlayButton;
-    PUImageViewExtraction *__overlayPlayButtonBackgroundExtraction;
-    UIImageView *__overlayPlayButtonBackgroundImageView;
-    BOOL __shouldHideCenterOverlayImageView;
-    BOOL __shouldHideCommentButton;
-    BOOL __shouldHideOverlayPlayButton;
-    BOOL __shouldUpdateOverlayPlayButtonBackground;
-    int _commentCount;
-    UIImage *_image;
-    int _imageAlignment;
-    int _imageContentMode;
-    BOOL _imageHidden;
+    UIImageView * __centerOverlayImageView;
+    UIButton * __commentButton;
+    int  __imageTag;
+    UIImageView * __imageView;
+    UIView<PLVideoOverlayButton> * __overlayPlayButton;
+    PUImageViewExtraction * __overlayPlayButtonBackgroundExtraction;
+    UIImageView * __overlayPlayButtonBackgroundImageView;
+    BOOL  __shouldHideCenterOverlayImageView;
+    BOOL  __shouldHideCommentButton;
+    BOOL  __shouldHideOverlayPlayButton;
+    BOOL  __shouldUpdateOverlayPlayButtonBackground;
+    int  _commentCount;
+    UIImage * _image;
+    int  _imageAlignment;
+    int  _imageContentMode;
+    BOOL  _imageHidden;
     struct CGSize { 
         float width; 
         float height; 
-    } _maximumImageSize;
-    int _overlayOptions;
+    }  _maximumImageSize;
+    int  _overlayOptions;
 }
 
 @property (setter=_setCenterOverlayImageView:, nonatomic, retain) UIImageView *_centerOverlayImageView;

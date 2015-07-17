@@ -3,35 +3,35 @@
  */
 
 @interface PTPTransport : NSObject {
-    BOOL _busy;
-    struct __CFRunLoopSource { } *_callbackDummyMachPortRLSrc;
-    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *_callbackThread;
+    BOOL  _busy;
+    struct __CFRunLoopSource { } * _callbackDummyMachPortRLSrc;
+    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } * _callbackThread;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } _callbackThreadCondition;
-    BOOL _callbackThreadConditionSignaled;
+    }  _callbackThreadCondition;
+    BOOL  _callbackThreadConditionSignaled;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _callbackThreadMutex;
-    struct __CFRunLoop { } *_callbackThreadRunLoop;
-    unsigned long _canceledTransactionID;
-    int _connectionStatus;
-    PTPWrappedBytes *_dataForTransaction;
-    id _delegate;
-    BOOL _delegateNeedsResponse;
-    unsigned long long _excessReceivedDataSize;
-    BOOL _failedMD5;
-    unsigned char _headerBuffer;
-    BOOL _headerBufferFound;
-    unsigned char _md5;
-    PTPOperationResponsePacket *_response;
-    BOOL _responseReceived;
-    int _role;
-    BOOL _timedOut;
-    unsigned long _totalBytesFilled;
-    unsigned short _type;
+    }  _callbackThreadMutex;
+    struct __CFRunLoop { } * _callbackThreadRunLoop;
+    unsigned long  _canceledTransactionID;
+    int  _connectionStatus;
+    PTPWrappedBytes * _dataForTransaction;
+    id  _delegate;
+    BOOL  _delegateNeedsResponse;
+    unsigned long long  _excessReceivedDataSize;
+    BOOL  _failedMD5;
+    unsigned char  _headerBuffer;
+    BOOL  _headerBufferFound;
+    unsigned char  _md5;
+    PTPOperationResponsePacket * _response;
+    BOOL  _responseReceived;
+    int  _role;
+    BOOL  _timedOut;
+    unsigned long  _totalBytesFilled;
+    unsigned short  _type;
 }
 
 - (void)abortPendingIO;

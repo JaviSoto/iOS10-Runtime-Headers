@@ -2,43 +2,46 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@interface CHRecentCall : CHSynchronizedLoggable <NSCopying, NSSecureCoding> {
-    NSString *_addressBookCallerIDMultiValueId;
-    NSString *_addressBookRecordId;
-    BOOL _answered;
-    NSNumber *_bytesOfDataUsed;
-    NSMutableArray *_callOccurrences;
-    unsigned int _callStatus;
-    unsigned int _callType;
-    NSString *_callerId;
-    unsigned int _callerIdAvailability;
-    BOOL _callerIdIsBlocked;
-    BOOL _callerIdIsFormatted;
-    NSString *_callerIdLabel;
-    NSString *_callerIdLocation;
-    NSString *_callerName;
-    NSString *_callerNetworkFirstName;
-    NSString *_callerNetworkName;
-    NSString *_callerNetworkSecondName;
-    NSDate *_date;
-    NSString *_devicePhoneId;
-    NSNumber *_disconnectedCause;
-    double _duration;
-    NSString *_isoCountryCode;
-    NSString *_mobileCountryCode;
-    NSString *_mobileNetworkCode;
-    BOOL _mobileOriginated;
-    BOOL _multiCall;
-    <CHPhoneBookManagerProtocol> *_phoneBookManager;
-    BOOL _read;
-    NSString *_uniqueId;
-    unsigned int _unreadCount;
+@interface CHRecentCall : CHSynchronizable <NSCopying, NSSecureCoding> {
+    NSString * _addressBookCallerIDMultiValueId;
+    NSString * _addressBookRecordId;
+    NSValue * _addressBookRecordRef;
+    BOOL  _answered;
+    NSNumber * _bytesOfDataUsed;
+    NSMutableArray * _callOccurrences;
+    unsigned int  _callStatus;
+    unsigned int  _callType;
+    NSString * _callerId;
+    unsigned int  _callerIdAvailability;
+    BOOL  _callerIdIsBlocked;
+    BOOL  _callerIdIsFormatted;
+    NSString * _callerIdLabel;
+    NSString * _callerIdLocation;
+    NSString * _callerName;
+    NSString * _callerNetworkFirstName;
+    NSString * _callerNetworkName;
+    NSString * _callerNetworkSecondName;
+    NSString * _clientAddressBookRecordId;
+    NSDate * _date;
+    NSString * _devicePhoneId;
+    NSNumber * _disconnectedCause;
+    double  _duration;
+    NSString * _isoCountryCode;
+    NSString * _mobileCountryCode;
+    NSString * _mobileNetworkCode;
+    BOOL  _mobileOriginated;
+    BOOL  _multiCall;
+    <CHPhoneBookManagerProtocol> * _phoneBookManager;
+    BOOL  _read;
+    NSString * _uniqueId;
+    unsigned int  _unreadCount;
 }
 
 @property (nonatomic, copy) NSString *addressBookCallerIDMultiValueId;
 @property (nonatomic, copy) NSString *addressBookRecordId;
+@property (copy) NSValue *addressBookRecordRef;
 @property BOOL answered;
-@property (nonatomic, copy) NSNumber *bytesOfDataUsed;
+@property (copy) NSNumber *bytesOfDataUsed;
 @property (nonatomic, retain) NSMutableArray *callOccurrences;
 @property unsigned int callStatus;
 @property unsigned int callType;
@@ -52,9 +55,10 @@
 @property (copy) NSString *callerNetworkFirstName;
 @property (nonatomic, copy) NSString *callerNetworkName;
 @property (copy) NSString *callerNetworkSecondName;
+@property (copy) NSString *clientAddressBookRecordId;
 @property (copy) NSDate *date;
 @property (copy) NSString *devicePhoneId;
-@property (nonatomic, copy) NSNumber *disconnectedCause;
+@property (copy) NSNumber *disconnectedCause;
 @property double duration;
 @property (copy) NSString *isoCountryCode;
 @property (copy) NSString *mobileCountryCode;
@@ -68,6 +72,7 @@
 
 + (id)callStatusAsString:(unsigned int)arg1;
 + (id)callTypeAsString:(unsigned int)arg1;
++ (id)getLocationForCallerId:(id)arg1 andIsoCountryCode:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -77,6 +82,8 @@
 - (void)addressBookChanged;
 - (id)addressBookRecordId;
 - (id)addressBookRecordIdSync;
+- (id)addressBookRecordRef;
+- (id)addressBookRecordRefSync;
 - (BOOL)answered;
 - (id)bytesOfDataUsed;
 - (id)callOccurrences;
@@ -108,12 +115,14 @@
 - (BOOL)canCoalesceSyncWithCollapseIfEqualStrategyWithCall:(id)arg1;
 - (BOOL)canCoalesceSyncWithRecentsStrategyWithCall:(id)arg1;
 - (BOOL)canCoalesceWithCall:(id)arg1 withStrategy:(id)arg2;
+- (id)clientAddressBookRecordId;
 - (BOOL)coalesceWithCall:(id)arg1 withStrategy:(id)arg2;
 - (id)coalescingHash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)createOccurrenceArraySync;
 - (id)date;
 - (id)description;
+- (id)descriptionInDepth;
 - (id)devicePhoneId;
 - (id)disconnectedCause;
 - (double)duration;
@@ -138,6 +147,7 @@
 - (BOOL)representsCallAtDate:(id)arg1;
 - (void)setAddressBookCallerIDMultiValueId:(id)arg1;
 - (void)setAddressBookRecordId:(id)arg1;
+- (void)setAddressBookRecordRef:(id)arg1;
 - (void)setAnswered:(BOOL)arg1;
 - (void)setBytesOfDataUsed:(id)arg1;
 - (void)setCallOccurrences:(id)arg1;
@@ -153,6 +163,7 @@
 - (void)setCallerNetworkFirstName:(id)arg1;
 - (void)setCallerNetworkName:(id)arg1;
 - (void)setCallerNetworkSecondName:(id)arg1;
+- (void)setClientAddressBookRecordId:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDevicePhoneId:(id)arg1;
 - (void)setDisconnectedCause:(id)arg1;

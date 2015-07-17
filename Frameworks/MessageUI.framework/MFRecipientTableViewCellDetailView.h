@@ -3,12 +3,12 @@
  */
 
 @interface MFRecipientTableViewCellDetailView : UIView <MFTinting> {
-    UILabel *_detailLabel;
-    BOOL _highlighted;
-    BOOL _labelIsHidden;
-    UILabel *_labelLabel;
-    BOOL _shouldDim;
-    UIColor *_tintColor;
+    UILabel * _detailLabel;
+    BOOL  _highlighted;
+    BOOL  _labelIsHidden;
+    UILabel * _labelLabel;
+    BOOL  _shouldDim;
+    UIColor * _tintColor;
 }
 
 @property (readonly, copy) NSString *debugDescription;

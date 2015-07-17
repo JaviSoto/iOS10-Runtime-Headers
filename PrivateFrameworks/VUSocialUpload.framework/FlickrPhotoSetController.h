@@ -3,11 +3,11 @@
  */
 
 @interface FlickrPhotoSetController : UITableViewController <FlickrPhotoSetTableDelegate> {
-    <FlickrComposeOptionViewDelegate> *_delegate;
-    FlickrPhotoSetManager *_manager;
-    long long _photoSetID;
-    NSString *_photoSetTitle;
-    int _selectedIndexRow;
+    <FlickrComposeOptionViewDelegate> * _delegate;
+    FlickrPhotoSetManager * _manager;
+    long long  _photoSetID;
+    NSString * _photoSetTitle;
+    int  _selectedIndexRow;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)initWithPhotoSetManager:(id)arg1;
+- (void)loadView;
 - (id)manager;
 - (long long)photoSetID;
 - (id)photoSetTitle;

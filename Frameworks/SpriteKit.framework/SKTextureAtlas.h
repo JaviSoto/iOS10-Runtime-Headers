@@ -3,21 +3,25 @@
  */
 
 @interface SKTextureAtlas : NSObject <NSCoding> {
-    NSString *_atlasName;
-    NSDictionary *_textureDict;
+    NSString * _atlasName;
+    NSDictionary * _textureDict;
 }
 
 @property (nonatomic, readonly) NSArray *textureNames;
 
++ (void)_exportAtlasWithDictionary:(id)arg1 toFile:(id)arg2;
++ (void)_exportAtlasWithDictionary:(id)arg1 toFile:(id)arg2 forcePOT:(BOOL)arg3;
 + (id)atlasNamed:(id)arg1;
 + (id)atlasWithDictionary:(id)arg1;
 + (BOOL)canUseObjectForAtlas:(id)arg1;
++ (struct CGImage { }*)createCGImageFromCUINamedImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 atRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (id)findTextureNamed:(id)arg1;
 + (id)getSupportedPostfixes;
 + (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (id)_copyImageData;
+- (void)commonInit;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

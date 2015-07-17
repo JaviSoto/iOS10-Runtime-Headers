@@ -3,10 +3,10 @@
  */
 
 @interface MPUExtrasLoadingView : UIView <IKAppDocumentDelegate> {
-    MPUExtrasActivityIndicator *_activityIndicator;
-    <MPUExtrasLoadingViewDelegate> *_delegate;
-    IKAppDocument *_document;
-    NSDictionary *_options;
+    MPUExtrasActivityIndicator * _activityIndicator;
+    <MPUExtrasLoadingViewDelegate> * _delegate;
+    IKAppDocument * _document;
+    NSDictionary * _options;
 }
 
 @property (readonly, copy) NSString *debugDescription;

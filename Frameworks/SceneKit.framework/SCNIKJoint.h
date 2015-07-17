@@ -3,8 +3,8 @@
  */
 
 @interface SCNIKJoint : NSObject {
-    SCNNode *joint;
-    float maxAllowedRotationAngle;
+    SCNNode * joint;
+    float  maxAllowedRotationAngle;
 }
 
 @property (nonatomic) SCNNode *joint;

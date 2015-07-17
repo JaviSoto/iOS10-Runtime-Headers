@@ -3,29 +3,34 @@
  */
 
 @interface VMUProcessDescription : NSObject <VMULibraryLoadDelegate> {
-    NSDictionary *_binaryImageHints;
-    BOOL _binaryImagePostProcessingComplete;
-    NSMutableArray *_binaryImages;
-    NSDictionary *_buildVersionDictionary;
-    int _cpuType;
-    NSDate *_date;
-    unsigned long long _executableLoadAddress;
-    NSString *_executablePath;
-    BOOL _executablePathNeedsCorrection;
-    BOOL _is64Bit;
-    _VMULibraryLoadObserver *_loadUnloadObserver;
-    NSDictionary *_lsApplicationInformation;
-    struct mapped_memory_t { } *_mappedMemory;
-    NSDictionary *_osVersionDictionary;
-    NSString *_parentExecutablePath;
-    NSString *_parentProcessName;
-    int _pid;
-    int _ppid;
-    NSString *_processName;
-    BOOL _processNameNeedsCorrection;
-    NSArray *_sortedBinaryImages;
-    unsigned int _task;
-    NSArray *_unreadableBinaryImagePaths;
+    NSDictionary * _binaryImageHints;
+    BOOL  _binaryImagePostProcessingComplete;
+    NSMutableArray * _binaryImages;
+    NSDictionary * _buildVersionDictionary;
+    int  _cpuType;
+    NSDate * _date;
+    unsigned long long  _executableLoadAddress;
+    NSString * _executablePath;
+    BOOL  _executablePathNeedsCorrection;
+    NSString * _hardwareModel;
+    BOOL  _is64Bit;
+    _VMULibraryLoadObserver * _loadUnloadObserver;
+    NSDictionary * _lsApplicationInformation;
+    struct mapped_memory_t { } * _mappedMemory;
+    NSDictionary * _osVersionDictionary;
+    NSString * _parentExecutablePath;
+    NSString * _parentProcessName;
+    int  _pid;
+    int  _ppid;
+    struct timeval { 
+        int tv_sec; 
+        int tv_usec; 
+    }  _proc_starttime;
+    NSString * _processName;
+    BOOL  _processNameNeedsCorrection;
+    NSArray * _sortedBinaryImages;
+    unsigned int  _task;
+    NSArray * _unreadableBinaryImagePaths;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,24 +3,24 @@
  */
 
 @interface PUAdjustmentsToolController : PUPhotoEditToolController <PUAdjustmentsModeBarDataSource, PUAdjustmentsModeBarDelegate, PUPhotoEditVisualLevelSliderDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
-    NSArray *__allAvailableModes;
-    PUSnappingController *__snappingController;
-    UIScrollView *_adjustmentScrollView;
-    NSArray *_adjustmentScrollViewConstraints;
-    PUAdjustmentsModeBar *_adjustmentsModeBar;
-    NSArray *_adjustmentsModeBarConstraints;
-    NSMutableSet *_cleanSliderThumbnailsModes;
-    float _currentModeLevelSliderOffset;
+    NSArray * __allAvailableModes;
+    PUSnappingController * __snappingController;
+    UIScrollView * _adjustmentScrollView;
+    NSArray * _adjustmentScrollViewConstraints;
+    PUAdjustmentsModeBar * _adjustmentsModeBar;
+    NSArray * _adjustmentsModeBarConstraints;
+    NSMutableSet * _cleanSliderThumbnailsModes;
+    float  _currentModeLevelSliderOffset;
     struct CGPoint { 
         float x; 
         float y; 
-    } _interactionInitialScrollOffset;
-    int _interactionMode;
-    float _interactiveModeTransitionStartOffset;
-    PUAdjustmentsMode *_lastUsedMode;
-    NSMapTable *_levelSlidersByMode;
-    float _scrollViewModeSwitchSideOriginOffset;
-    NSMapTable *_sliderThumbnailsByModeAndIntensity;
+    }  _interactionInitialScrollOffset;
+    int  _interactionMode;
+    float  _interactiveModeTransitionStartOffset;
+    PUAdjustmentsMode * _lastUsedMode;
+    NSMapTable * _levelSlidersByMode;
+    float  _scrollViewModeSwitchSideOriginOffset;
+    NSMapTable * _sliderThumbnailsByModeAndIntensity;
 }
 
 @property (setter=_setSnappingController:, nonatomic, retain) PUSnappingController *_snappingController;

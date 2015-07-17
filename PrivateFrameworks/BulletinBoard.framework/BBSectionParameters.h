@@ -3,18 +3,18 @@
  */
 
 @interface BBSectionParameters : NSObject <BBUniquableObject, NSSecureCoding> {
-    NSMutableDictionary *_allSubtypeParameters;
-    BBSectionSubtypeParameters *_defaultSubtypeParameters;
-    NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
-    BBSectionIcon *_icon;
-    NSLock *_lock;
-    unsigned int _messageNumberOfLines;
-    BOOL _orderSectionUsingRecencyDate;
-    BOOL _showsDateInFloatingLockScreenAlert;
-    BOOL _showsSubtitle;
-    NSString *_uniqueIdentifier;
-    BOOL _usesVariableLayout;
+    NSMutableDictionary * _allSubtypeParameters;
+    BBSectionSubtypeParameters * _defaultSubtypeParameters;
+    NSString * _displayName;
+    BOOL  _displaysCriticalBulletins;
+    BBSectionIcon * _icon;
+    NSLock * _lock;
+    unsigned int  _messageNumberOfLines;
+    BOOL  _orderSectionUsingRecencyDate;
+    BOOL  _showsDateInFloatingLockScreenAlert;
+    BOOL  _showsSubtitle;
+    NSString * _uniqueIdentifier;
+    BOOL  _usesVariableLayout;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *allSubtypeParameters;

@@ -3,14 +3,14 @@
  */
 
 @interface CPBitmapStore : NSObject {
-    NSCache *_cache;
-    NSString *_imagePath;
-    BOOL _lockOnRead;
-    NSString *_path;
-    NSObject<OS_dispatch_queue> *_serialQueueRemoveImagesBackground;
-    NSObject<OS_dispatch_queue> *_serialQueueRemoveImagesDefault;
-    int _version;
-    NSString *_versionPath;
+    NSCache * _cache;
+    NSString * _imagePath;
+    BOOL  _lockOnRead;
+    NSString * _path;
+    NSObject<OS_dispatch_queue> * _serialQueueRemoveImagesBackground;
+    NSObject<OS_dispatch_queue> * _serialQueueRemoveImagesDefault;
+    int  _version;
+    NSString * _versionPath;
 }
 
 @property (nonatomic) unsigned int cacheItemLimit;

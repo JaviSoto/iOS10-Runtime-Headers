@@ -3,11 +3,11 @@
  */
 
 @interface ABPersonTableViewImageDataDelegate : NSObject <ABPersonImageDataDelegate> {
-    NSMutableDictionary *_currentImageData;
-    ABPersonTableViewDataSource *_dataSource;
-    BOOL _didChangePreferredPersonForImage;
-    BOOL _hasImageChanges;
-    ABUIPerson *_personForImageData;
+    NSMutableDictionary * _currentImageData;
+    ABPersonTableViewDataSource * _dataSource;
+    BOOL  _didChangePreferredPersonForImage;
+    BOOL  _hasImageChanges;
+    ABUIPerson * _personForImageData;
 }
 
 @property (nonatomic) ABPersonTableViewDataSource *dataSource;

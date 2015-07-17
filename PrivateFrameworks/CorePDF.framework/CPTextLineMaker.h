@@ -3,7 +3,7 @@
  */
 
 @interface CPTextLineMaker : NSObject {
-    NSMutableArray *textLines;
+    NSMutableArray * textLines;
 }
 
 - (void)dealloc;

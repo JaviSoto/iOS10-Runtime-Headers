@@ -3,20 +3,20 @@
  */
 
 @interface PKJob : NSObject {
-    int mediaProgress;
-    int mediaSheets;
-    int mediaSheetsCompleted;
-    int number;
-    NSString *printerDisplayName;
-    int printerKind;
-    NSString *printerLocation;
-    int remoteJobId;
-    PKPrintSettings *settings;
-    int state;
-    NSData *thumbnailImage;
-    NSDate *timeAtCompleted;
-    NSDate *timeAtCreation;
-    NSDate *timeAtProcessing;
+    int  mediaProgress;
+    int  mediaSheets;
+    int  mediaSheetsCompleted;
+    int  number;
+    NSString * printerDisplayName;
+    int  printerKind;
+    NSString * printerLocation;
+    int  remoteJobId;
+    PKPrintSettings * settings;
+    int  state;
+    NSData * thumbnailImage;
+    NSDate * timeAtCompleted;
+    NSDate * timeAtCreation;
+    NSDate * timeAtProcessing;
 }
 
 @property (nonatomic) int mediaProgress;

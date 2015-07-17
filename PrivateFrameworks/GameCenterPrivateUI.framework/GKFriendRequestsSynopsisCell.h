@@ -3,11 +3,11 @@
  */
 
 @interface GKFriendRequestsSynopsisCell : GKCollectionViewCell {
-    UIImageView *_caretView;
-    GKPlayerMultiPhotoView *_iconView;
-    NSDictionary *_metricsOverrides;
-    GKLabel *_subtitleLabel;
-    GKLabel *_titleLabel;
+    UIImageView * _caretView;
+    GKPlayerMultiPhotoView * _iconView;
+    NSDictionary * _metricsOverrides;
+    GKLabel * _subtitleLabel;
+    GKLabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImageView *caretView;

@@ -3,10 +3,10 @@
  */
 
 @interface PUPublishingActivity : PUActivity {
-    PLPublishingAgent *_currentAgent;
-    double _endTime;
-    UIViewController *_referenceViewController;
-    double _startTime;
+    PLPublishingAgent * _currentAgent;
+    double  _endTime;
+    UIViewController * _referenceViewController;
+    double  _startTime;
 }
 
 + (int)activityCategory;

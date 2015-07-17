@@ -6,10 +6,10 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mEndPoint;
-    BOOL mIsFilled;
-    GQDBezierPath *mPath;
-    double mScale;
+    }  mEndPoint;
+    BOOL  mIsFilled;
+    GQDBezierPath * mPath;
+    double  mScale;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,6 @@
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (struct CGPoint { float x1; float x2; })endPoint;
 - (BOOL)isFilled;

@@ -3,8 +3,8 @@
  */
 
 @interface TSCHCompositeRenderer : TSCHRenderer <TSCHCompositeRendering> {
-    TSCHRenderer *mEventHandler;
-    NSArray *mSubRenderers;
+    TSCHRenderer * mEventHandler;
+    NSArray * mSubRenderers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

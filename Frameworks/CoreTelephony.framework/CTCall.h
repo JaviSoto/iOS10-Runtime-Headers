@@ -3,8 +3,8 @@
  */
 
 @interface CTCall : NSObject {
-    NSString *_callID;
-    NSString *_callState;
+    NSString * _callID;
+    NSString * _callState;
 }
 
 @property (nonatomic, copy) NSString *callID;

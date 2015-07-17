@@ -2,42 +2,42 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIFieldEditor : UIScrollView <NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate> {
-    UIAutoscroll *_autoscroll;
+@interface UIFieldEditor : UIScrollView <NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UIKeyInputPrivate, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate> {
+    UIAutoscroll * _autoscroll;
     struct CGPoint { 
         float x; 
         float y; 
-    } _autoscrollContentOffset;
-    _UIFieldEditorContentView *_contentView;
-    float _contentWidth;
+    }  _autoscrollContentOffset;
+    _UIFieldEditorContentView * _contentView;
+    float  _contentWidth;
     struct { 
         unsigned int delegateRespondsToFieldEditorDidChange : 1; 
         unsigned int delegateRespondsToShouldInsertText : 1; 
         unsigned int delegateRespondsToShouldReplaceWithText : 1; 
         unsigned int suppressScrollToSelection : 1; 
         unsigned int clearOnNextEdit : 1; 
-    } _feFlags;
-    UITextInputController *_inputController;
-    _UIFieldEditorLayoutManager *_layoutManager;
-    NSTimer *_obscureAllTextTimer;
+    }  _feFlags;
+    UITextInputController * _inputController;
+    _UIFieldEditorLayoutManager * _layoutManager;
+    NSTimer * _obscureAllTextTimer;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _padding;
-    _UIFieldEditorContentView *_passcodeStyleCutoutView;
-    UITextField *_proxiedView;
-    NSTextContainer *_textContainer;
+    }  _padding;
+    _UIFieldEditorContentView * _passcodeStyleCutoutView;
+    UITextField * _proxiedView;
+    NSTextContainer * _textContainer;
     struct CGPoint { 
         float x; 
         float y; 
-    } _textContainerOrigin;
-    _UICascadingTextStorage *_textStorage;
+    }  _textContainerOrigin;
+    _UICascadingTextStorage * _textStorage;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _unobscuredSecureRange;
+    }  _unobscuredSecureRange;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -52,11 +52,12 @@
 @property (nonatomic) <UITextInputDelegate> *inputDelegate;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
-@property (nonatomic) int layoutOrientation;
+@property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } markedRange;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (copy) UITextRange *selectedTextRange;
@@ -73,6 +74,7 @@
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
 
+- (void).cxx_destruct;
 - (void)_cancelObscureAllTextTimer;
 - (BOOL)_clearOnEditIfNeeded;
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
@@ -129,6 +131,7 @@
 - (id)inputDelegate;
 - (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (id)insertDictationResultPlaceholder;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })insertFilteredText:(id)arg1;
 - (void)insertText:(id)arg1;
 - (id)interactionAssistant;
 - (void)invalidateTextContainerOrigin;

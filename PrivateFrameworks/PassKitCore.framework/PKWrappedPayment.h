@@ -3,15 +3,14 @@
  */
 
 @interface PKWrappedPayment : NSObject <NSSecureCoding> {
-    NSData *_transactionData;
-    NSString *_transactionIdentifier;
+    NSData * _transactionData;
+    NSString * _transactionIdentifier;
 }
 
 @property (nonatomic, copy) NSData *transactionData;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
 + (BOOL)supportsSecureCoding;
-+ (id)wrappedPaymentWithTransactionResponse:(id)arg1;
 
 - (void)dealloc;
 - (id)description;

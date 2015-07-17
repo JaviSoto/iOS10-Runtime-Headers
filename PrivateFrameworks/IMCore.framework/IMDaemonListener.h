@@ -3,24 +3,24 @@
  */
 
 @interface IMDaemonListener : NSObject {
-    NSMutableDictionary *_contexts;
-    NSMutableArray *_deferredChatMessages;
-    NSMutableArray *_handlers;
-    BOOL _hasPendingProcessChange;
-    BOOL _hidingDisconnect;
-    BOOL _holdingChatMessages;
-    NSDate *_myIdleSince;
-    NSString *_myNowPlayingString;
-    NSData *_myPicture;
-    unsigned int _myStatus;
-    NSString *_myStatusMessage;
-    NSMutableDictionary *_persistentProperties;
-    BOOL _postedSetupComplete;
-    NSMutableDictionary *_properties;
-    NSProtocolChecker *_protocol;
-    NSMutableDictionary *_services;
-    BOOL _setupComplete;
-    unsigned long long _vcCapabilities;
+    NSMutableDictionary * _contexts;
+    NSMutableArray * _deferredChatMessages;
+    NSMutableArray * _handlers;
+    BOOL  _hasPendingProcessChange;
+    BOOL  _hidingDisconnect;
+    BOOL  _holdingChatMessages;
+    NSDate * _myIdleSince;
+    NSString * _myNowPlayingString;
+    NSData * _myPicture;
+    unsigned int  _myStatus;
+    NSString * _myStatusMessage;
+    NSMutableDictionary * _persistentProperties;
+    BOOL  _postedSetupComplete;
+    NSMutableDictionary * _properties;
+    NSProtocolChecker * _protocol;
+    NSMutableDictionary * _services;
+    BOOL  _setupComplete;
+    unsigned long long  _vcCapabilities;
 }
 
 @property (nonatomic, readonly, retain) NSMutableDictionary *_contexts;

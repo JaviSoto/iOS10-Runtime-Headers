@@ -3,12 +3,12 @@
  */
 
 @interface MCDAndOthersLabel : UIView {
-    NSString *_andOthers;
-    UIFont *_font;
-    NSArray *_items;
-    NSString *_separator;
-    UIColor *_textColor;
-    NSString *_truncatedItemsString;
+    NSString * _andOthers;
+    UIFont * _font;
+    NSArray * _items;
+    NSString * _separator;
+    UIColor * _textColor;
+    NSString * _truncatedItemsString;
 }
 
 @property (nonatomic, readonly) float actualHeight;

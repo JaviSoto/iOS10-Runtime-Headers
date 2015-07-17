@@ -3,25 +3,25 @@
  */
 
 @interface MPUTransportControlsView : UIView {
-    NSArray *_availableTransportControls;
-    NSMutableDictionary *_classByReuseIdentifier;
-    <MPUTransportControlsViewDataSource> *_dataSource;
-    <MPUTransportControlsViewDelegate> *_delegate;
+    NSArray * _availableTransportControls;
+    NSMutableDictionary * _classByReuseIdentifier;
+    <MPUTransportControlsViewDataSource> * _dataSource;
+    <MPUTransportControlsViewDelegate> * _delegate;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _insetsForExpandingButtons;
-    <MPUTransportControlsViewLayoutDelegate> *_layoutDelegate;
-    unsigned int _minimumNumberOfTransportButtonsForLayout;
-    NSMutableDictionary *_recycledButtonsByReuseIdentifier;
-    NSMapTable *_reuseIdentifierByButton;
-    NSMutableArray *_sortedVisibleControlsWithBlanks;
-    BOOL _sortedVisibleControlsWithBlanksNeedsReload;
-    NSMutableSet *_typesOfControlsToReload;
-    BOOL _usesLegacyLayoutHeuristics;
-    NSMutableDictionary *_visibleButtonByControlType;
+    }  _insetsForExpandingButtons;
+    <MPUTransportControlsViewLayoutDelegate> * _layoutDelegate;
+    unsigned int  _minimumNumberOfTransportButtonsForLayout;
+    NSMutableDictionary * _recycledButtonsByReuseIdentifier;
+    NSMapTable * _reuseIdentifierByButton;
+    NSMutableArray * _sortedVisibleControlsWithBlanks;
+    BOOL  _sortedVisibleControlsWithBlanksNeedsReload;
+    NSMutableSet * _typesOfControlsToReload;
+    BOOL  _usesLegacyLayoutHeuristics;
+    NSMutableDictionary * _visibleButtonByControlType;
 }
 
 @property (nonatomic, copy) NSArray *availableTransportControls;

@@ -3,18 +3,18 @@
  */
 
 @interface EKUIInviteesViewOriginalConflictSection : NSObject <EKUIInviteesViewConflictResolutionSection> {
-    EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
-    NSArray *_busyParticipants;
-    NSString *_cachedCellReuseIdentifier;
-    BOOL _checked;
-    BOOL _conflictFound;
-    NSDate *_endDate;
-    id /* block */ _newTimeChosen;
-    unsigned int _reuseIdentifierVersion;
-    NSMutableSet *_rowsShowingAllParticipants;
-    id /* block */ _showPreviewOfEventAtTime;
-    NSDate *_startDate;
-    id /* block */ _tableViewCellHook;
+    EKUIInviteeAlternativeTimeSearcher * _availabilitySearcher;
+    NSArray * _busyParticipants;
+    NSString * _cachedCellReuseIdentifier;
+    BOOL  _checked;
+    BOOL  _conflictFound;
+    NSDate * _endDate;
+    id /* block */  _newTimeChosen;
+    unsigned int  _reuseIdentifierVersion;
+    NSMutableSet * _rowsShowingAllParticipants;
+    id /* block */  _showPreviewOfEventAtTime;
+    NSDate * _startDate;
+    id /* block */  _tableViewCellHook;
 }
 
 @property (nonatomic, retain) EKUIInviteeAlternativeTimeSearcher *availabilitySearcher;

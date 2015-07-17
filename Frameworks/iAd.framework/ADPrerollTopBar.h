@@ -3,13 +3,13 @@
  */
 
 @interface ADPrerollTopBar : UIView {
-    <ADPrerollTopBarDelegate> *_delegate;
-    ADPrerollButton *_doneButton;
-    BOOL _isFullscreen;
-    BOOL _layoutForExpandedSize;
-    ADProgressView *_progressView;
-    ADPrerollButton *_scaleToFillButton;
-    UIStatusBar *_statusBar;
+    <ADPrerollTopBarDelegate> * _delegate;
+    ADPrerollButton * _doneButton;
+    BOOL  _isFullscreen;
+    BOOL  _layoutForExpandedSize;
+    ADProgressView * _progressView;
+    ADPrerollButton * _scaleToFillButton;
+    UIStatusBar * _statusBar;
 }
 
 @property (nonatomic) <ADPrerollTopBarDelegate> *delegate;

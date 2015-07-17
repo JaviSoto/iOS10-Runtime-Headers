@@ -3,9 +3,9 @@
  */
 
 @interface BBObserverBulletinUpdate : NSObject <NSSecureCoding> {
-    BBBulletin *_bulletin;
-    unsigned int _transactionID;
-    int _updateType;
+    BBBulletin * _bulletin;
+    unsigned int  _transactionID;
+    int  _updateType;
 }
 
 @property (nonatomic, readonly, retain) BBBulletin *bulletin;

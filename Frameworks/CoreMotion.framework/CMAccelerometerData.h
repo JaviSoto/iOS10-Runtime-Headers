@@ -3,7 +3,7 @@
  */
 
 @interface CMAccelerometerData : CMLogItem {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } acceleration;

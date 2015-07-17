@@ -3,8 +3,8 @@
  */
 
 @interface MusicCarPlayManager : NSObject <MCDCarDisplayServiceProvider> {
-    MCDRootController *_carDisplayController;
-    RadioRecentStationsController *_recentStationsController;
+    MCDRootController * _carDisplayController;
+    RadioRecentStationsController * _recentStationsController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

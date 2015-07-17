@@ -3,8 +3,8 @@
  */
 
 @interface TSPDataManager : NSObject {
-    TSPObjectContext *_context;
-    NSObject<OS_dispatch_queue> *_datasQueue;
+    TSPObjectContext * _context;
+    NSObject<OS_dispatch_queue> * _datasQueue;
     struct hash_map<const std::__1::array<unsigned char, 20>, TSPData *__weak, TSP::DigestHash, TSP::DigestEqualTo, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
         struct __hash_table<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestEqualTo, true>, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > > { 
@@ -29,10 +29,10 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _digestToDataMap;
-    NSObject<OS_dispatch_group> *_externalReferenceRemovalGroup;
-    NSObject<OS_dispatch_queue> *_externalReferenceRemovalQueue;
-    BOOL _hasExternalReferences;
+    }  _digestToDataMap;
+    NSObject<OS_dispatch_group> * _externalReferenceRemovalGroup;
+    NSObject<OS_dispatch_queue> * _externalReferenceRemovalQueue;
+    BOOL  _hasExternalReferences;
     struct hash_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
         struct __hash_table<std::__1::pair<const long long, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > > { 
@@ -57,11 +57,11 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _identifierToDataMap;
-    long long _nextNewIdentifier;
-    TSUTemporaryDirectory *_temporaryDirectory;
-    TSUPathSet *_temporaryDirectoryPathSet;
-    NSObject<OS_dispatch_queue> *_temporaryDirectoryQueue;
+    }  _identifierToDataMap;
+    long long  _nextNewIdentifier;
+    TSUTemporaryDirectory * _temporaryDirectory;
+    TSUPathSet * _temporaryDirectoryPathSet;
+    NSObject<OS_dispatch_queue> * _temporaryDirectoryQueue;
 }
 
 @property (nonatomic, readonly) TSPObjectContext *context;

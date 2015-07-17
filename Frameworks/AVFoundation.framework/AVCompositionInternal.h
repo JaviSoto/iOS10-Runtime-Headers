@@ -3,18 +3,19 @@
  */
 
 @interface AVCompositionInternal : NSObject {
-    AVAssetInspector *assetInspector;
-    long assetInspectorInitializationOnce;
-    AVAssetInspectorLoader *assetInspectorLoader;
-    struct OpaqueFigFormatReader { } *formatReader;
-    long formatReaderInitializationOnce;
-    struct OpaqueFigMutableComposition { } *mutableComposition;
+    NSDictionary * URLAssetInitializationOptions;
+    AVAssetInspector * assetInspector;
+    long  assetInspectorInitializationOnce;
+    AVAssetInspectorLoader * assetInspectorLoader;
+    struct OpaqueFigFormatReader { } * formatReader;
+    long  formatReaderInitializationOnce;
+    struct OpaqueFigMutableComposition { } * mutableComposition;
     struct CGSize { 
         float width; 
         float height; 
-    } naturalSize;
-    NSMutableArray *tracks;
-    long tracksInitializationOnce;
+    }  naturalSize;
+    NSMutableArray * tracks;
+    long  tracksInitializationOnce;
 }
 
 @end

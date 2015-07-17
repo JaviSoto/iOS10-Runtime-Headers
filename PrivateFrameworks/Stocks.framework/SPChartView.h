@@ -3,18 +3,18 @@
  */
 
 @interface SPChartView : UIView <StockGraphViewContainer> {
-    StockChartData *_chartData;
-    BOOL _compactGraph;
-    StockChartDisplayMode *_currentDisplayMode;
-    <SPChartViewDelegate> *_delegate;
-    BOOL _glanceGraph;
-    StockGraphView *_graph;
-    ChartLabelInfoManager *_labelInfoManager;
-    int _selectedInterval;
-    BOOL _showsHorizontalLines;
-    Stock *_stock;
-    NSMutableArray *_xAxisLabels;
-    NSMutableArray *_yAxisLabels;
+    StockChartData * _chartData;
+    BOOL  _compactGraph;
+    StockChartDisplayMode * _currentDisplayMode;
+    <SPChartViewDelegate> * _delegate;
+    BOOL  _glanceGraph;
+    StockGraphView * _graph;
+    ChartLabelInfoManager * _labelInfoManager;
+    int  _selectedInterval;
+    BOOL  _showsHorizontalLines;
+    Stock * _stock;
+    NSMutableArray * _xAxisLabels;
+    NSMutableArray * _yAxisLabels;
 }
 
 @property (nonatomic, retain) StockChartData *chartData;

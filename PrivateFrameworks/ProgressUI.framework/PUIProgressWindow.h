@@ -3,28 +3,35 @@
  */
 
 @interface PUIProgressWindow : NSObject {
-    struct CGImage { } *_appleLogo;
-    CAContext *_context;
-    float _currentProgress;
-    float _displayOrientation;
-    float _displayScale;
+    struct CGImage { } * _appleLogo;
+    CAContext * _context;
+    float  _currentProgress;
+    float  _displayOrientation;
+    float  _displayScale;
     struct CGSize { 
         float width; 
         float height; 
-    } _displaySize;
-    BOOL _forceInverted;
-    CALayer *_layer;
-    NSString *_pluginName;
-    CALayer *_pluginNameLayer;
-    CALayer *_progressLayer;
-    float _progressWidth;
-    float _progressXDelta;
-    float _progressYDelta;
-    BOOL _showPluginName;
-    BOOL _showsProgressBar;
-    BOOL _sideways;
-    BOOL _weCreatedTheContext;
-    BOOL _white;
+    }  _displaySize;
+    BOOL  _forceInverted;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _framebufferSize;
+    struct __IOSurface { } * _ioSurface;
+    CALayer * _ioSurfaceLayer;
+    CALayer * _layer;
+    NSString * _pluginName;
+    CALayer * _pluginNameLayer;
+    CALayer * _progressLayer;
+    float  _progressWidth;
+    float  _progressXDelta;
+    float  _progressYDelta;
+    BOOL  _renderWithIOSurface;
+    BOOL  _showPluginName;
+    BOOL  _showsProgressBar;
+    BOOL  _sideways;
+    BOOL  _weCreatedTheContext;
+    BOOL  _white;
 }
 
 @property (nonatomic, readonly) CALayer *layer;
@@ -45,6 +52,7 @@
 - (unsigned int)_nanoDeviceType;
 - (int)_nanoMaterial;
 - (const char *)_productSuffix;
+- (void)_updateIOSurface;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;

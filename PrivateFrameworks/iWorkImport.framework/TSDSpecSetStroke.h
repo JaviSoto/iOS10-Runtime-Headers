@@ -3,8 +3,8 @@
  */
 
 @interface TSDSpecSetStroke : TSDSpecStroke {
-    TSDStroke *_stroke;
-    BOOL _unset;
+    TSDStroke * _stroke;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

@@ -3,20 +3,22 @@
  */
 
 @interface OISFUZipArchive : NSObject {
-    OISFUCryptoKey *mCryptoKey;
-    OISFUDataRepresentation<SFUZipArchiveDataRepresentation> *mDataRepresentation;
-    NSData *mEncryptedDocumentUuid;
-    NSMutableDictionary *mEntries;
-    NSString *mPassphraseHint;
-    NSData *mPassphraseVerifier;
+    OISFUCryptoKey * mCryptoKey;
+    OISFUDataRepresentation<SFUZipArchiveDataRepresentation> * mDataRepresentation;
+    NSData * mEncryptedDocumentUuid;
+    NSMutableDictionary * mEntries;
+    NSString * mPassphraseHint;
+    NSData * mPassphraseVerifier;
 }
 
 + (BOOL)isZipArchiveAtPath:(id)arg1;
 
 - (id)allEntryNames;
 - (void)collapseCommonRootDirectoryIgnoreCase:(BOOL)arg1;
+- (id)commonRootDirectoryIgnoringCase:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)decompressAtPath:(id)arg1;
+- (BOOL)decompressAtPath:(id)arg1 wasEmpty:(BOOL*)arg2;
 - (id)encryptedDocumentUuid;
 - (id)entryWithName:(id)arg1;
 - (id)entryWithName:(id)arg1 dataLength:(long long)arg2;

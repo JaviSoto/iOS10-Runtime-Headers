@@ -3,13 +3,13 @@
  */
 
 @interface GLKTextureInfo : NSObject <NSCopying> {
-    int alphaState;
-    BOOL containsMipmaps;
-    unsigned int height;
-    unsigned int name;
-    unsigned int target;
-    int textureOrigin;
-    unsigned int width;
+    int  alphaState;
+    BOOL  containsMipmaps;
+    unsigned int  height;
+    unsigned int  name;
+    unsigned int  target;
+    int  textureOrigin;
+    unsigned int  width;
 }
 
 @property (readonly) int alphaState;

@@ -3,11 +3,11 @@
  */
 
 @interface GKVoiceChat : NSObject <GKVoiceChatSessionDelegate> {
-    GKSession *_gkSession;
-    GKVoiceChatSession *_gkVoiceChatSession;
-    id /* block */ _playerStateUpdateHandler;
-    id /* block */ _playerVoiceChatStateDidChangeHandler;
-    NSArray *_players;
+    GKSession * _gkSession;
+    GKVoiceChatSession * _gkVoiceChatSession;
+    id /* block */  _playerStateUpdateHandler;
+    id /* block */  _playerVoiceChatStateDidChangeHandler;
+    NSArray * _players;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;

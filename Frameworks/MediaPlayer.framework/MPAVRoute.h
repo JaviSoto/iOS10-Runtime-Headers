@@ -3,16 +3,16 @@
  */
 
 @interface MPAVRoute : NSObject {
-    NSDictionary *_avRouteDescription;
-    int _displayRouteType;
-    int _pickableRouteType;
-    BOOL _picked;
-    BOOL _requiresPassword;
-    NSString *_routeName;
-    int _routeSubtype;
-    int _routeType;
-    NSString *_routeUID;
-    MPAVRoute *_wirelessDisplayRoute;
+    NSDictionary * _avRouteDescription;
+    int  _displayRouteType;
+    int  _pickableRouteType;
+    BOOL  _picked;
+    BOOL  _requiresPassword;
+    NSString * _routeName;
+    int  _routeSubtype;
+    int  _routeType;
+    NSString * _routeUID;
+    MPAVRoute * _wirelessDisplayRoute;
 }
 
 @property (nonatomic, readonly) BOOL displayIsPicked;
@@ -20,8 +20,6 @@
 @property (nonatomic, readonly) int passwordType;
 @property (nonatomic, readonly) int pickableRouteType;
 @property (getter=isPicked, nonatomic, readonly) BOOL picked;
-@property (nonatomic, readonly) int rc_audioRouteType;
-@property (nonatomic, readonly) BOOL rc_shouldExpectFaceContact;
 @property (nonatomic, readonly) BOOL requiresPassword;
 @property (nonatomic, readonly) NSString *routeName;
 @property (nonatomic, readonly) int routeSubtype;

@@ -3,9 +3,9 @@
  */
 
 @interface _UIButtonMaskAnimationView : UIView {
-    UIButton *_delegate;
-    unsigned int _hardEdge;
-    UIView *_hardEdgeLine;
+    UIButton * _delegate;
+    unsigned int  _hardEdge;
+    UIView * _hardEdgeLine;
 }
 
 @property (nonatomic) UIColor *borderColor;
@@ -13,12 +13,12 @@
 @property (nonatomic) UIButton *delegate;
 @property unsigned int hardEdge;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForLine;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)borderColor;
 - (float)borderWidth;
-- (void)dealloc;
 - (id)delegate;
 - (unsigned int)hardEdge;
 - (id)init;

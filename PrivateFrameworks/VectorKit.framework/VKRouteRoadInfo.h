@@ -3,12 +3,12 @@
  */
 
 @interface VKRouteRoadInfo : NSObject {
-    NSString *_name;
+    NSString * _name;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeOffset;
-    NSString *_shieldGroup;
+    }  _routeOffset;
+    NSString * _shieldGroup;
 }
 
 @property (nonatomic, readonly, retain) NSString *name;

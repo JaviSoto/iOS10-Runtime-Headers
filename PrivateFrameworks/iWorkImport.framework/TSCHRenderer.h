@@ -3,8 +3,8 @@
  */
 
 @interface TSCHRenderer : NSObject <TSCHSupportsTextEditing> {
-    TSCHChartLayoutItem *mChartLayoutItem;
-    <TSCHSupportsRendering> *mChartRep;
+    TSCHChartLayoutItem * mChartLayoutItem;
+    <TSCHSupportsRendering> * mChartRep;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chartInfo;

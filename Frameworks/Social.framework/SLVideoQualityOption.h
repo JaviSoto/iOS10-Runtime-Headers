@@ -3,10 +3,10 @@
  */
 
 @interface SLVideoQualityOption : NSObject {
-    NSString *_exportPreset;
-    NSString *_identifier;
-    NSString *_name;
-    long long _size;
+    NSString * _exportPreset;
+    NSString * _identifier;
+    NSString * _name;
+    long long  _size;
 }
 
 @property (nonatomic, retain) NSString *exportPreset;

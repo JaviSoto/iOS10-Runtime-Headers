@@ -3,19 +3,19 @@
  */
 
 @interface GEOBatchRevGeocodeResponse : PBCodable <NSCopying> {
-    NSMutableArray *_batchPlaceResults;
-    NSMutableArray *_clusters;
+    NSMutableArray * _batchPlaceResults;
+    NSMutableArray * _clusters;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int statusCode : 1; 
         unsigned int ttl : 1; 
         unsigned int version : 1; 
-    } _has;
-    int _statusCode;
-    double _timestamp;
-    unsigned int _ttl;
-    unsigned int _version;
-    NSMutableArray *_versionDomains;
+    }  _has;
+    int  _statusCode;
+    double  _timestamp;
+    unsigned int  _ttl;
+    unsigned int  _version;
+    NSMutableArray * _versionDomains;
 }
 
 @property (nonatomic, retain) NSMutableArray *batchPlaceResults;
@@ -24,7 +24,6 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTtl;
 @property (nonatomic) BOOL hasVersion;
-@property (nonatomic, retain) NSDictionary *httpHeaders;
 @property (nonatomic) int statusCode;
 @property (nonatomic) double timestamp;
 @property (nonatomic) unsigned int ttl;

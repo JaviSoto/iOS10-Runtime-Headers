@@ -3,9 +3,9 @@
  */
 
 @interface PKRemoteAssetManifest : NSObject {
-    NSURL *_fileURL;
-    NSString *_name;
-    NSMutableDictionary *_remoteAssets;
+    NSURL * _fileURL;
+    NSString * _name;
+    NSMutableDictionary * _remoteAssets;
 }
 
 @property (nonatomic, readonly) NSURL *fileURL;

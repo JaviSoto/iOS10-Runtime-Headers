@@ -3,9 +3,9 @@
  */
 
 @interface MecabraCoreDataProperties : NSObject {
-    NSMutableDictionary *_descriptionDictionary;
-    NSString *_identifier;
-    NSString *_type;
+    NSMutableDictionary * _descriptionDictionary;
+    NSString * _identifier;
+    NSString * _type;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *descriptionDictionary;

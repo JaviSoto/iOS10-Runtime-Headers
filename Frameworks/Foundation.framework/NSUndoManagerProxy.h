@@ -3,8 +3,8 @@
  */
 
 @interface NSUndoManagerProxy : NSProxy {
-    NSUndoManager *_manager;
-    Class _targetClass;
+    NSUndoManager * _manager;
+    Class  _targetClass;
 }
 
 - (BOOL)_tryRetain;

@@ -3,15 +3,15 @@
  */
 
 @interface UIStatusBarStyleAttributes : NSObject {
-    UIStatusBarForegroundStyleAttributes *_foregroundStyle;
-    UIStatusBarStyleRequest *_request;
+    UIStatusBarForegroundStyleAttributes * _foregroundStyle;
+    UIStatusBarStyleRequest * _request;
 }
 
+- (void).cxx_destruct;
 - (BOOL)areTopCornersRounded;
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (id)backgroundImageName;
 - (int)cornerStyle;
-- (void)dealloc;
 - (float)foregroundAlpha;
 - (id)foregroundStyle;
 - (double)glowAnimationDuration;

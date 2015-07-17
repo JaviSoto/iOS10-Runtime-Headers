@@ -3,8 +3,8 @@
  */
 
 @interface ALAssetRepresentation : NSObject {
-    BOOL _ignoreRead;
-    id _internal;
+    BOOL  _ignoreRead;
+    id  _internal;
 }
 
 @property BOOL ignoreRead;

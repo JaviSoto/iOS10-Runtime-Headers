@@ -3,20 +3,21 @@
  */
 
 @interface CHDErrorBar : NSObject {
-    CHDChart *mChart;
-    int mDirection;
-    OADGraphicProperties *mGraphicProperties;
-    CHDData *mMinusValues;
-    bool mNoEndCap;
-    CHDData *mPlusValues;
-    int mType;
-    double mValue;
-    int mValueType;
+    CHDChart * mChart;
+    int  mDirection;
+    OADGraphicProperties * mGraphicProperties;
+    CHDData * mMinusValues;
+    bool  mNoEndCap;
+    CHDData * mPlusValues;
+    int  mType;
+    double  mValue;
+    int  mValueType;
 }
 
 + (id)errorBarWithChart:(id)arg1;
 
 - (void)dealloc;
+- (id)description;
 - (int)direction;
 - (id)graphicProperties;
 - (id)initWithChart:(id)arg1;

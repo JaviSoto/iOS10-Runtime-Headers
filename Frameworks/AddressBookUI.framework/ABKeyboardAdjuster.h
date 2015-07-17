@@ -3,8 +3,8 @@
  */
 
 @interface ABKeyboardAdjuster : NSObject {
-    BOOL _active;
-    NSMutableSet *_adjustmentRecords;
+    BOOL  _active;
+    NSMutableSet * _adjustmentRecords;
 }
 
 @property (nonatomic) BOOL active;

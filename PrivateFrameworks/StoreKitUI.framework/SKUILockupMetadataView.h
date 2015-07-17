@@ -3,21 +3,21 @@
  */
 
 @interface SKUILockupMetadataView : UIView {
-    UILabel *_artistNameLabel;
-    UILabel *_categoryLabel;
-    SKUIClientContext *_clientContext;
-    SKUIBadgeLabel *_editorialBadgeLabel;
-    UILabel *_itemCountLabel;
-    UILabel *_itemOfferLabel;
-    int _numberOfUserRatings;
-    UILabel *_releaseDateLabel;
-    UIColor *_textColor;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
-    float _userRating;
-    UIImageView *_userRatingImageView;
-    UILabel *_userRatingLabel;
-    unsigned int _visibleFields;
+    UILabel * _artistNameLabel;
+    UILabel * _categoryLabel;
+    SKUIClientContext * _clientContext;
+    SKUIBadgeLabel * _editorialBadgeLabel;
+    UILabel * _itemCountLabel;
+    UILabel * _itemOfferLabel;
+    int  _numberOfUserRatings;
+    UILabel * _releaseDateLabel;
+    UIColor * _textColor;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
+    float  _userRating;
+    UIImageView * _userRatingImageView;
+    UILabel * _userRatingLabel;
+    unsigned int  _visibleFields;
 }
 
 @property (nonatomic, copy) NSString *artistName;

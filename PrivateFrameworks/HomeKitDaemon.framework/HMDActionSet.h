@@ -3,13 +3,14 @@
  */
 
 @interface HMDActionSet : NSObject <HMMessageReceiver, NSSecureCoding> {
-    NSMutableArray *_currentActions;
-    BOOL _executionInProgress;
-    HMDHome *_home;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSMutableArray * _currentActions;
+    BOOL  _executionInProgress;
+    HMDHome * _home;
+    HMMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSString * _type;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) NSArray *actions;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *type;
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -41,6 +43,7 @@
 - (id)actionWithUUID:(id)arg1;
 - (id)actions;
 - (void)configure:(id)arg1 queue:(id)arg2;
+- (BOOL)containsAccessoryWithUUID:(id)arg1;
 - (id)currentActions;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -50,12 +53,11 @@
 - (void)fixupActionsForReplacementAccessory:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 uuid:(id)arg2 home:(id)arg3 queue:(id)arg4;
+- (id)initWithName:(id)arg1 uuid:(id)arg2 type:(id)arg3 home:(id)arg4 queue:(id)arg5;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (id)name;
-- (void)prepareMessageForRemoteExecuteActionSet:(id)arg1;
 - (void)removeAccessory:(id)arg1;
 - (void)removeActionForCharacteristic:(id)arg1;
 - (void)removeService:(id)arg1;
@@ -64,7 +66,9 @@
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setType:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)type;
 - (id)uuid;
 - (id)workQueue;
 

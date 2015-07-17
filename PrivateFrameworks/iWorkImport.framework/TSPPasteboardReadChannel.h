@@ -3,9 +3,9 @@
  */
 
 @interface TSPPasteboardReadChannel : NSObject <TSUStreamReadChannel> {
-    TSPPasteboard *_pasteboard;
-    NSString *_pasteboardType;
-    NSObject<OS_dispatch_queue> *_readQueue;
+    TSPPasteboard * _pasteboard;
+    NSString * _pasteboardType;
+    NSObject<OS_dispatch_queue> * _readQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

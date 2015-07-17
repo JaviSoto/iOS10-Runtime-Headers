@@ -3,8 +3,8 @@
  */
 
 @interface HDNanoSyncRequestContext : NSObject {
-    id /* block */ _completion;
-    BOOL _pullRequest;
+    id /* block */  _completion;
+    BOOL  _pullRequest;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ completion;

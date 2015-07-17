@@ -3,14 +3,14 @@
  */
 
 @interface CPTable : CPChunk <CPDisposable, CPGraphicUser> {
-    struct CGColor { } *backgroundColor;
-    unsigned int backgroundGraphicCount;
-    id *backgroundGraphics;
-    unsigned int columnCount;
-    float *columnX;
-    BOOL disposed;
-    unsigned int rowCount;
-    float *rowY;
+    struct CGColor { } * backgroundColor;
+    unsigned int  backgroundGraphicCount;
+    id * backgroundGraphics;
+    unsigned int  columnCount;
+    float * columnX;
+    BOOL  disposed;
+    unsigned int  rowCount;
+    float * rowY;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,8 +20,8 @@
             float width; 
             float height; 
         } size; 
-    } tableBounds;
-    unsigned int usedGraphicCount;
+    }  tableBounds;
+    unsigned int  usedGraphicCount;
 }
 
 @property (nonatomic, readonly) unsigned int backgroundGraphicCount;

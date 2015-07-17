@@ -3,12 +3,12 @@
  */
 
 @interface MusicLibraryAdaptiveViewController : UIViewController <MusicClientContextConsuming, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryViewConfigurationConsuming> {
-    UIViewController<MusicLibraryViewConfigurationConsuming> *_activeViewController;
-    MusicClientContext *_clientContext;
-    int _horizontalSizeClassForActiveView;
-    BOOL _isActiveViewControllerIndexBarDataSource;
-    BOOL _isActiveViewControllerIndexBarScrollDelegate;
-    MusicLibraryAdaptiveViewConfiguration *_libraryViewConfiguration;
+    UIViewController<MusicLibraryViewConfigurationConsuming> * _activeViewController;
+    MusicClientContext * _clientContext;
+    int  _horizontalSizeClassForActiveView;
+    BOOL  _isActiveViewControllerIndexBarDataSource;
+    BOOL  _isActiveViewControllerIndexBarScrollDelegate;
+    MusicLibraryAdaptiveViewConfiguration * _libraryViewConfiguration;
 }
 
 @property (nonatomic, readonly) UIViewController<MusicLibraryViewConfigurationConsuming> *activeViewController;
@@ -30,9 +30,12 @@
 - (id)childViewControllerForStatusBarStyle;
 - (id)clientContext;
 - (void)dealloc;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)libraryViewConfiguration;
 - (unsigned int)numberOfIndexBarEntries;
 - (void)setClientContext:(id)arg1;

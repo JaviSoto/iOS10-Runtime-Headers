@@ -6,10 +6,10 @@
     struct { 
         unsigned int height : 1; 
         unsigned int width : 1; 
-    } _has;
-    unsigned int _height;
-    NSString *_url;
-    unsigned int _width;
+    }  _has;
+    unsigned int  _height;
+    NSString * _url;
+    unsigned int  _width;
 }
 
 @property (nonatomic) BOOL hasHeight;
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic) unsigned int width;
 
+- (unsigned int)_area;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

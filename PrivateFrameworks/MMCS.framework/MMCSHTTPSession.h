@@ -3,13 +3,13 @@
  */
 
 @interface MMCSHTTPSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
-    NSMutableDictionary *_contextsForTasks;
-    BOOL _isBackground;
-    NSOperationQueue *_operationQueue;
-    NSString *_sessionConfigurationId;
-    NSString *_sessionName;
-    NSURLSession *_urlSession;
-    NSURLSessionConfiguration *_urlSessionConfiguration;
+    NSMutableDictionary * _contextsForTasks;
+    BOOL  _isBackground;
+    NSOperationQueue * _operationQueue;
+    NSString * _sessionConfigurationId;
+    NSString * _sessionName;
+    NSURLSession * _urlSession;
+    NSURLSessionConfiguration * _urlSessionConfiguration;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *contextsForTasks;

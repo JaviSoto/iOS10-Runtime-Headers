@@ -3,7 +3,7 @@
  */
 
 @interface SSFamilyCircleResponse : NSObject {
-    SSFamilyCircle *_familyCircle;
+    SSFamilyCircle * _familyCircle;
 }
 
 @property (nonatomic, retain) SSFamilyCircle *familyCircle;

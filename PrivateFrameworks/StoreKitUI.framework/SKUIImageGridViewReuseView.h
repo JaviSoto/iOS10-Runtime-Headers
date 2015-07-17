@@ -3,10 +3,10 @@
  */
 
 @interface SKUIImageGridViewReuseView : SKUIViewReuseView <SKUIViewElementView> {
-    SKUIImageGridViewElement *_imageGridViewElement;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    NSArray *_imageViews;
-    NSMapTable *_viewElementViews;
+    SKUIImageGridViewElement * _imageGridViewElement;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    NSArray * _imageViews;
+    NSMapTable * _viewElementViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

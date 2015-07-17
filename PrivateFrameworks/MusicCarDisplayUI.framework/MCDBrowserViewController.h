@@ -3,17 +3,17 @@
  */
 
 @interface MCDBrowserViewController : UINavigationController <UITabBarControllerDelegate> {
-    AVExternalDevice *_externalDevice;
-    UITabBarController *_hostTabBarController;
-    BOOL _libraryHasSongs;
-    NSMapTable *_noContentViews;
-    UIButton *_nowPlayingButton;
-    MPAVController *_player;
-    MCDRadioViewController *_radioViewController;
-    RadioRecentStationsController *_recentStationsController;
-    <MCDCarDisplayServiceProvider> *_serviceProvider;
-    UITabBarController *_tabBarController;
-    BOOL _viewHasAppeared;
+    AVExternalDevice * _externalDevice;
+    UITabBarController * _hostTabBarController;
+    BOOL  _libraryHasSongs;
+    NSMapTable * _noContentViews;
+    UIButton * _nowPlayingButton;
+    MPAVController * _player;
+    MCDRadioViewController * _radioViewController;
+    RadioRecentStationsController * _recentStationsController;
+    <MCDCarDisplayServiceProvider> * _serviceProvider;
+    UITabBarController * _tabBarController;
+    BOOL  _viewHasAppeared;
 }
 
 @property (readonly, copy) NSString *debugDescription;

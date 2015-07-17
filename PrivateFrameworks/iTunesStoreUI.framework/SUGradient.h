@@ -3,24 +3,24 @@
  */
 
 @interface SUGradient : NSObject <NSCoding, NSCopying> {
-    NSMutableArray *_colorStops;
-    NSLock *_lock;
+    NSMutableArray * _colorStops;
+    NSLock * _lock;
     struct SUGradientPoint { 
         struct CGPoint { 
             float x; 
             float y; 
         } point; 
         float radius; 
-    } _p0;
+    }  _p0;
     struct SUGradientPoint { 
         struct CGPoint { 
             float x; 
             float y; 
         } point; 
         float radius; 
-    } _p1;
-    BOOL _sorted;
-    int _type;
+    }  _p1;
+    BOOL  _sorted;
+    int  _type;
 }
 
 @property (readonly) NSArray *colorStopColors;

@@ -3,8 +3,8 @@
  */
 
 @interface TDPNGAsset : TDAsset {
-    int _exifOrientation;
-    unsigned int _fileScaleFactor;
+    int  _exifOrientation;
+    unsigned int  _fileScaleFactor;
 }
 
 @property (nonatomic, retain) NSSet *renditions;

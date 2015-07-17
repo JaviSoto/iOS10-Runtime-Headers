@@ -3,12 +3,13 @@
  */
 
 @interface TSPReader : NSObject <TSPObjectDelegate, TSPUnarchiverDelegate> {
-    NSObject<OS_dispatch_group> *_completionGroup;
-    TSPComponent *_component;
-    <TSPReaderDelegate> *_delegate;
-    NSError *_error;
-    NSObject<OS_dispatch_queue> *_errorQueue;
-    TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
+    NSObject<OS_dispatch_group> * _completionGroup;
+    TSPComponent * _component;
+    TSPComponentObjectUUIDMap * _componentObjectUUIDMap;
+    <TSPReaderDelegate> * _delegate;
+    NSError * _error;
+    NSObject<OS_dispatch_queue> * _errorQueue;
+    TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
     struct { 
         unsigned int didFinishResolvingReferences : 1; 
         unsigned int needsUpgrade : 1; 
@@ -19,9 +20,8 @@
         unsigned int delegateRespondsToDidResetObjectIdentifierForObject : 1; 
         unsigned int delegateRespondsToDidResetObjectUUID : 1; 
         unsigned int delegateRespondsToDidUnarchiveObject : 1; 
-    } _flags;
-    BOOL _hasReadFailure;
-    NSDictionary *_objectIdentifierToUUIDDictionary;
+    }  _flags;
+    BOOL  _hasReadFailure;
     struct hash_map<long long, TSP::ObjectInfo, TSP::ObjectIdentifierHash, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, TSP::ObjectInfo> > > { 
         struct __hash_table<std::__1::pair<long long, TSP::ObjectInfo>, __gnu_cxx::__hash_map_hasher<std::__1::pair<long long, TSP::ObjectInfo>, TSP::ObjectIdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<long long, TSP::ObjectInfo>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::pair<long long, TSP::ObjectInfo> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<long long, TSP::ObjectInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<long long, TSP::ObjectInfo>, void *> *> > > { 
@@ -46,19 +46,19 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _objectInfoMap;
-    NSMapTable *_objects;
-    NSObject<OS_dispatch_queue> *_objectsQueue;
-    NSHashTable *_objectsToModify;
-    NSObject<OS_dispatch_queue> *_objectsToModifyQueue;
+    }  _objectInfoMap;
+    NSMapTable * _objects;
+    NSObject<OS_dispatch_queue> * _objectsQueue;
+    NSHashTable * _objectsToModify;
+    NSObject<OS_dispatch_queue> * _objectsToModifyQueue;
     struct vector<TSP::UnarchiverRepeatedReference, std::__1::allocator<TSP::UnarchiverRepeatedReference> > { 
         struct UnarchiverRepeatedReference {} *__begin_; 
         struct UnarchiverRepeatedReference {} *__end_; 
         struct __compressed_pair<TSP::UnarchiverRepeatedReference *, std::__1::allocator<TSP::UnarchiverRepeatedReference> > { 
             struct UnarchiverRepeatedReference {} *__first_; 
         } __end_cap_; 
-    } _repeatedReferences;
-    NSObject<OS_dispatch_queue> *_unarchiveQueue;
+    }  _repeatedReferences;
+    NSObject<OS_dispatch_queue> * _unarchiveQueue;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *completionGroup;
@@ -83,6 +83,7 @@
 - (id)UUIDForObjectIdentifier:(long long)arg1;
 - (void)addUnarchivedObject:(id)arg1 unarchiver:(id)arg2;
 - (void)attemptedToReadInMemoryObject:(id)arg1 objectIdentifier:(long long)arg2;
+- (void)beginIgnoringModificationsForObject:(id)arg1;
 - (void)beginReadingWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)canSetObjectUUIDForObject:(id)arg1;
 - (id)completionGroup;
@@ -92,6 +93,7 @@
 - (id)delegate;
 - (BOOL)didFinishResolvingReferences;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;
+- (void)endIgnoringModificationsForObject:(id)arg1;
 - (id)error;
 - (unsigned long long)fileFormatVersion;
 - (BOOL)finishUnarchiving;

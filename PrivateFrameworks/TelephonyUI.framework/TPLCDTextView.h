@@ -3,19 +3,19 @@
  */
 
 @interface TPLCDTextView : UIView {
-    unsigned int _animates;
-    UIFrameAnimation *_animation;
-    unsigned int _centerText;
-    id _delegate;
-    UIFont *_font;
-    float _fontSize;
-    unsigned int _isAnimating;
-    unsigned int _leftTruncates;
-    float _minFontSize;
-    TPLCDTextViewScrollingView *_scrollingView;
-    UIColor *_shadowColor;
-    NSString *_text;
-    UIColor *_textColor;
+    unsigned int  _animates;
+    UIFrameAnimation * _animation;
+    unsigned int  _centerText;
+    id  _delegate;
+    UIFont * _font;
+    float  _fontSize;
+    unsigned int  _isAnimating;
+    unsigned int  _leftTruncates;
+    float  _minFontSize;
+    TPLCDTextViewScrollingView * _scrollingView;
+    UIColor * _shadowColor;
+    NSString * _text;
+    UIColor * _textColor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,12 +25,13 @@
             float width; 
             float height; 
         } size; 
-    } _textRect;
-    unsigned int _textRectIsValid;
+    }  _textRect;
+    unsigned int  _textRectIsValid;
 }
 
 + (float)defaultMinimumFontSize;
 
+- (void).cxx_destruct;
 - (id)_automationID;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 verticallyOffset:(BOOL)arg2;
 - (void)_finishedScrolling;

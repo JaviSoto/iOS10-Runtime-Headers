@@ -3,9 +3,9 @@
  */
 
 @interface GKBaseBubbleWithTextControl : GKBubbleControl {
-    NSArray *_labels;
-    float _referenceZPosition;
-    id _updateRasterizationScaleToken;
+    NSArray * _labels;
+    float  _referenceZPosition;
+    id  _updateRasterizationScaleToken;
 }
 
 @property (nonatomic, retain) NSArray *labels;

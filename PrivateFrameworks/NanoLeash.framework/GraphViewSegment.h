@@ -3,10 +3,10 @@
  */
 
 @interface GraphViewSegment : NSObject {
-    float avghistory;
-    int index;
-    CALayer *layer;
-    float rssihistory;
+    float  avghistory;
+    int  index;
+    CALayer * layer;
+    float  rssihistory;
 }
 
 @property (nonatomic, readonly) CALayer *layer;

@@ -3,19 +3,20 @@
  */
 
 @interface SSDownloadManager : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSArray *_activeDownloads;
-    BOOL _activeDownloadsChanged;
-    NSObject<OS_dispatch_queue> *_backgroundQueue;
-    SSXPCConnection *_connection;
-    NSArray *_downloads;
-    BOOL _downloadsChanged;
-    BOOL _isUsingNetwork;
-    SSXPCConnection *_observerConnection;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    struct __CFArray { } *_observers;
-    SSDownloadManagerOptions *_options;
-    NSMutableSet *_removedDownloads;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSArray * _activeDownloads;
+    BOOL  _activeDownloadsChanged;
+    NSObject<OS_dispatch_queue> * _backgroundQueue;
+    SSXPCConnection * _connection;
+    NSArray * _downloads;
+    BOOL  _downloadsChanged;
+    BOOL  _isUsingNetwork;
+    int  _launchNotificationToken;
+    SSXPCConnection * _observerConnection;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    struct __CFArray { } * _observers;
+    SSDownloadManagerOptions * _options;
+    NSMutableSet * _removedDownloads;
 }
 
 @property (readonly) NSArray *activeDownloads;
@@ -40,6 +41,7 @@
 + (id)softwareDownloadManager;
 
 - (id)_XPCConnection;
+- (void)_connectAfterDaemonLaunch;
 - (void)_connectAsObserver;
 - (id)_copyDownloadKindsUsingNetwork;
 - (id)_copyDownloads;

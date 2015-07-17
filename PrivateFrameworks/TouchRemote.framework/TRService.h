@@ -3,9 +3,9 @@
  */
 
 @interface TRService : NSObject <NSSecureCoding> {
-    TRAdvertisingInfo *_advertisingInfo;
-    NSString *_name;
-    int _uniqueID;
+    TRAdvertisingInfo * _advertisingInfo;
+    NSString * _name;
+    int  _uniqueID;
 }
 
 @property (nonatomic, readonly) TRAdvertisingInfo *advertisingInfo;

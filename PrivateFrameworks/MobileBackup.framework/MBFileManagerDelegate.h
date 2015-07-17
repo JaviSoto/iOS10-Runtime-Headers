@@ -3,7 +3,7 @@
  */
 
 @interface MBFileManagerDelegate : NSObject <NSFileManagerDelegate> {
-    id /* block */ _shouldCopyItemAtPathToPath;
+    id /* block */  _shouldCopyItemAtPathToPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

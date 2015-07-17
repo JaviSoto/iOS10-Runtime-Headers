@@ -3,9 +3,9 @@
  */
 
 @interface MSCLComposeImagePickerController : NSObject <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    <MSCLComposeImagePickerDelegate> *_delegate;
-    UIImagePickerController *_imagePickerController;
-    UIPopoverPresentationController *_popoverPresentationController;
+    <MSCLComposeImagePickerDelegate> * _delegate;
+    UIImagePickerController * _imagePickerController;
+    UIPopoverPresentationController * _popoverPresentationController;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,9 +15,9 @@
             float width; 
             float height; 
         } size; 
-    } _popoverSourceRect;
-    UIView *_popoverSourceView;
-    int _sourceType;
+    }  _popoverSourceRect;
+    UIView * _popoverSourceView;
+    int  _sourceType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

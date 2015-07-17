@@ -3,13 +3,13 @@
  */
 
 @interface SKUIMediaPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate> {
-    SKUIArtwork *_artwork;
-    unsigned int _artworkRequestID;
+    SKUIArtwork * _artwork;
+    unsigned int  _artworkRequestID;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    SKUIEmbeddedMediaView *_mediaView;
+    }  _imageSize;
+    SKUIEmbeddedMediaView * _mediaView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

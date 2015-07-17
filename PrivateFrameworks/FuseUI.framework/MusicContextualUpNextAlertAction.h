@@ -3,9 +3,9 @@
  */
 
 @interface MusicContextualUpNextAlertAction : UIAlertAction {
-    int _insertionType;
-    MPPlaybackContext *_playbackContext;
-    MPAVController *_player;
+    int  _insertionType;
+    MPPlaybackContext * _playbackContext;
+    MPAVController * _player;
 }
 
 + (id)contextualUpNextActionWithEntityValueContext:(id)arg1 insertionType:(int)arg2 didDismissHandler:(id /* block */)arg3;

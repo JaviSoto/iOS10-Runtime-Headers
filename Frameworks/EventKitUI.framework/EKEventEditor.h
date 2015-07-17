@@ -3,10 +3,10 @@
  */
 
 @interface EKEventEditor : EKCalendarItemEditor {
-    UIColor *_backgroundColor;
-    EKEventDateEditItem *_dateItem;
-    BOOL _isTransitioning;
-    BOOL _showAttachments;
+    UIColor * _backgroundColor;
+    EKEventDateEditItem * _dateItem;
+    BOOL  _isTransitioning;
+    BOOL  _showAttachments;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

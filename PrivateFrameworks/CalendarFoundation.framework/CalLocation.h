@@ -3,16 +3,16 @@
  */
 
 @interface CalLocation : NSObject <NSSecureCoding> {
-    NSString *_abURLString;
-    NSString *_address;
-    NSString *_displayName;
-    BOOL _isCurrentLocation;
-    CLLocation *_location;
-    CLPlacemark *_placemark;
-    double _radius;
-    NSString *_routeType;
-    NSString *_title;
-    int _type;
+    NSString * _abURLString;
+    NSString * _address;
+    NSString * _displayName;
+    BOOL  _isCurrentLocation;
+    CLLocation * _location;
+    CLPlacemark * _placemark;
+    double  _radius;
+    NSString * _routeType;
+    NSString * _title;
+    int  _type;
 }
 
 @property (copy) NSString *abURLString;

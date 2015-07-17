@@ -3,20 +3,21 @@
  */
 
 @interface _UIRefreshControlModernContentView : _UIRefreshControlContentView {
-    BOOL _animationsAreValid;
-    BOOL _areAnimationsValid;
-    float _currentPopStiffness;
-    BOOL _hasFinishedRevealing;
-    UIView *_replicatorContainer;
-    _UIRefreshControlModernReplicatorView *_replicatorView;
-    UIView *_seed;
-    UILabel *_textLabel;
+    BOOL  _animationsAreValid;
+    BOOL  _areAnimationsValid;
+    float  _currentPopStiffness;
+    BOOL  _hasFinishedRevealing;
+    UIView * _replicatorContainer;
+    _UIRefreshControlModernReplicatorView * _replicatorView;
+    UIView * _seed;
+    UILabel * _textLabel;
 }
 
 @property (nonatomic) BOOL areAnimationsValid;
 @property (nonatomic) float currentPopStiffness;
 @property (nonatomic, readonly) UILabel *textLabel;
 
+- (void).cxx_destruct;
 - (void)_cleanUpAfterRevealing;
 - (double)_currentTimeOffset;
 - (float)_effectiveScrollViewHeight;
@@ -36,7 +37,6 @@
 - (BOOL)areAnimationsValid;
 - (id)attributedTitle;
 - (float)currentPopStiffness;
-- (void)dealloc;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;

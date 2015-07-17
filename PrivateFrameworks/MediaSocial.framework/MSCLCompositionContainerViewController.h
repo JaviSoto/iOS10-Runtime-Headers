@@ -3,16 +3,16 @@
  */
 
 @interface MSCLCompositionContainerViewController : SKUIViewController <MSCLComposePostViewControllerDelegate, SKUIModalDocumentViewController> {
-    UIBarButtonItem *_cancelButtonItem;
-    MSCLComposePostViewController *_composePostViewController;
-    MSCLConfiguration *_configuration;
-    <MSCLComposePostDelegate> *_delegate;
-    MSCLStoreItem *_item;
-    MSCLLoadConfigurationOperation *_loadConfigurationOperation;
-    <SKUIModalDocumentController> *_modalDocumentController;
-    UINavigationController *_navigationController;
-    NSMutableArray *_pendingAttachments;
-    UIBarButtonItem *_shareButtonItem;
+    UIBarButtonItem * _cancelButtonItem;
+    MSCLComposePostViewController * _composePostViewController;
+    MSCLConfiguration * _configuration;
+    <MSCLComposePostDelegate> * _delegate;
+    MSCLStoreItem * _item;
+    MSCLLoadConfigurationOperation * _loadConfigurationOperation;
+    <SKUIModalDocumentController> * _modalDocumentController;
+    UINavigationController * _navigationController;
+    NSMutableArray * _pendingAttachments;
+    UIBarButtonItem * _shareButtonItem;
 }
 
 @property (nonatomic, readonly, copy) MSCLConfiguration *configuration;

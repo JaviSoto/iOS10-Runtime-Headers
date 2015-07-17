@@ -3,16 +3,16 @@
  */
 
 @interface MFWebMessageDocument : MFWebAttachmentSource {
-    MFAttachmentManager *_attachmentManager;
-    NSURL *_baseURL;
-    NSData *_htmlData;
-    MFMimePart *_htmlPart;
-    MFLock *_lock;
-    MFMimeBody *_mimeBody;
-    NSMutableDictionary *_partsByFilename;
-    NSMutableDictionary *_partsByURL;
-    unsigned long _preferredEncoding;
-    unsigned int _uniqueId;
+    MFAttachmentManager * _attachmentManager;
+    NSURL * _baseURL;
+    NSData * _htmlData;
+    MFMimePart * _htmlPart;
+    MFLock * _lock;
+    MFMimeBody * _mimeBody;
+    NSMutableDictionary * _partsByFilename;
+    NSMutableDictionary * _partsByURL;
+    unsigned long  _preferredEncoding;
+    unsigned int  _uniqueId;
 }
 
 @property (nonatomic, retain) MFAttachmentManager *attachmentManager;

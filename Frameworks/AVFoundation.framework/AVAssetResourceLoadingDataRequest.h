@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetResourceLoadingDataRequest : NSObject {
-    AVAssetResourceLoadingDataRequestInternal *_dataRequest;
+    AVAssetResourceLoadingDataRequestInternal * _dataRequest;
 }
 
 @property (nonatomic, readonly) long long currentOffset;

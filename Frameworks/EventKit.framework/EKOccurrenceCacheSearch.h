@@ -3,12 +3,12 @@
  */
 
 @interface EKOccurrenceCacheSearch : NSObject <EKCancellableRemoteOperation> {
-    NSSet *_calendars;
-    id /* block */ _callback;
-    BOOL _canceled;
-    NSNumber *_replyID;
-    NSString *_searchTerm;
-    EKEventStore *_store;
+    NSSet * _calendars;
+    id /* block */  _callback;
+    BOOL  _canceled;
+    NSNumber * _replyID;
+    NSString * _searchTerm;
+    EKEventStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;

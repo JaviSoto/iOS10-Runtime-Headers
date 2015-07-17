@@ -3,7 +3,7 @@
  */
 
 @interface VKGlobePointCache : NSObject {
-    VKClassicGlobeCanvas *_canvas;
+    VKClassicGlobeCanvas * _canvas;
 }
 
 @property (nonatomic) VKClassicGlobeCanvas *canvas;

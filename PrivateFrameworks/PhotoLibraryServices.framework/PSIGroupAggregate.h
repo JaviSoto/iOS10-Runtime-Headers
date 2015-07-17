@@ -3,11 +3,11 @@
  */
 
 @interface PSIGroupAggregate : NSObject {
-    NSMutableArray *_aggregatedGroupIds;
-    NSMutableArray *_assetIdArrays;
-    NSMutableArray *_groups;
-    NSMutableArray *_rangesMatchingTokens;
-    NSArray *_searchTokens;
+    NSMutableArray * _aggregatedGroupIds;
+    NSMutableArray * _assetIdArrays;
+    NSMutableArray * _groups;
+    NSMutableArray * _rangesMatchingTokens;
+    NSArray * _searchTokens;
 }
 
 - (struct __CFArray { }*)_newSortedGroupIds;

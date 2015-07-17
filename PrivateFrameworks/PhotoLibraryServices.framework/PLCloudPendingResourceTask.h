@@ -3,10 +3,10 @@
  */
 
 @interface PLCloudPendingResourceTask : NSObject {
-    BOOL _completed;
-    NSDate *_lastUpdated;
-    NSMutableDictionary *_pendingTasks;
-    CPLResourceTransferTask *_transferTask;
+    BOOL  _completed;
+    NSDate * _lastUpdated;
+    NSMutableDictionary * _pendingTasks;
+    CPLResourceTransferTask * _transferTask;
 }
 
 - (id)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;

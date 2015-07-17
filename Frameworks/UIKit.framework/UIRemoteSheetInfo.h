@@ -3,12 +3,12 @@
  */
 
 @interface UIRemoteSheetInfo : NSObject {
-    void *_context;
-    id _delegate;
-    UISpringBoardHostedView *_remoteView;
-    int _returnCode;
-    SEL _selector;
-    UIView *_sheetView;
+    void * _context;
+    id  _delegate;
+    UISpringBoardHostedView * _remoteView;
+    int  _returnCode;
+    SEL  _selector;
+    UIView * _sheetView;
 }
 
 @property (nonatomic) void*context;
@@ -18,8 +18,8 @@
 @property (nonatomic) SEL selector;
 @property (nonatomic, retain) UIView *sheetView;
 
+- (void).cxx_destruct;
 - (void*)context;
-- (void)dealloc;
 - (id)delegate;
 - (id)remoteView;
 - (int)returnCode;

@@ -3,9 +3,9 @@
  */
 
 @interface NanoResourceGrabber : NSObject {
-    BOOL _connectionMayBeValid;
-    NSXPCConnection *_nrgdConnection;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _connectionMayBeValid;
+    NSXPCConnection * _nrgdConnection;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) BOOL connectionMayBeValid;

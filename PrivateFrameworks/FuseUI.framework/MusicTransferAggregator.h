@@ -3,15 +3,15 @@
  */
 
 @interface MusicTransferAggregator : NSObject <MPStoreDownloadManagerObserver, SSVDirectUploadObserver> {
-    MPStoreDownloadManager *_downloadManager;
-    NSMutableArray *_downloads;
-    NSString *_localizedStatusString;
-    unsigned int _maxDownloadCount;
-    unsigned int _maxUploadCount;
-    NSNumberFormatter *_numberFormatter;
-    NSHashTable *_observers;
-    SSVDirectUploadQueue *_uploadQueue;
-    NSMutableArray *_uploads;
+    MPStoreDownloadManager * _downloadManager;
+    NSMutableArray * _downloads;
+    NSString * _localizedStatusString;
+    unsigned int  _maxDownloadCount;
+    unsigned int  _maxUploadCount;
+    NSNumberFormatter * _numberFormatter;
+    NSHashTable * _observers;
+    SSVDirectUploadQueue * _uploadQueue;
+    NSMutableArray * _uploads;
 }
 
 @property (readonly, copy) NSString *debugDescription;

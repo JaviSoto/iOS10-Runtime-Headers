@@ -3,21 +3,21 @@
  */
 
 @interface CKIMFileTransfer : NSObject <CKFileTransfer> {
-    unsigned long long _currentBytes;
-    NSError *_error;
-    BOOL _fileDataReady;
-    NSURL *_fileURL;
-    BOOL _fileURLFinalized;
-    NSString *_filename;
-    NSString *_guid;
-    IMMessage *_imMessage;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSURL *_linkFileURL;
-    int _mediaObjectCount;
-    BOOL _restoring;
-    unsigned long long _totalBytes;
-    NSDictionary *_transcoderUserInfo;
-    int _transferState;
+    unsigned long long  _currentBytes;
+    NSError * _error;
+    BOOL  _fileDataReady;
+    NSURL * _fileURL;
+    BOOL  _fileURLFinalized;
+    NSString * _filename;
+    NSString * _guid;
+    IMMessage * _imMessage;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSURL * _linkFileURL;
+    int  _mediaObjectCount;
+    BOOL  _restoring;
+    unsigned long long  _totalBytes;
+    NSDictionary * _transcoderUserInfo;
+    int  _transferState;
 }
 
 @property (nonatomic, retain) IMMessage *IMMessage;

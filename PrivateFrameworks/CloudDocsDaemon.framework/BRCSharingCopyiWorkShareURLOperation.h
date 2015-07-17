@@ -3,12 +3,13 @@
  */
 
 @interface BRCSharingCopyiWorkShareURLOperation : BRCSharingModifyShareOperation {
-    NSString *_appName;
+    NSString * _appName;
 }
 
 - (void).cxx_destruct;
 - (id)initWithShare:(id)arg1 zone:(id)arg2 appName:(id)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

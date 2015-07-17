@@ -3,23 +3,23 @@
  */
 
 @interface SBUIPasscodeLockViewWithKeyboard : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate> {
-    SBUIAlphanumericPasscodeEntryField *_alphaEntryField;
-    BOOL _disableAnimationsDuringMinMax;
-    SBUIRingViewLabelButton *_emergencyCallButton;
-    UIView *_emergencyCallLeftFiller;
-    UIView *_emergencyCallRightFiller;
-    UIView *_emergencyCallToTopFiller;
-    UIView *_entryFieldToBottomFiller;
-    BOOL _isAnimating;
-    SBPasscodeKeyboard *_keyboard;
-    BOOL _previousKeyboardShowedInlineCandidates;
-    UILabel *_statusField;
-    UIView *_statusFieldBackground;
-    UIView *_statusFieldToTopOrEmergencyCallBottomFiller;
-    UILabel *_statusSubtitleView;
-    BOOL _triedToMinMaxWhileRotating;
-    BOOL _usesLightStyle;
-    BOOL _wasMinimizedWhenAnimationStarted;
+    SBUIAlphanumericPasscodeEntryField * _alphaEntryField;
+    BOOL  _disableAnimationsDuringMinMax;
+    SBUIRingViewLabelButton * _emergencyCallButton;
+    UIView * _emergencyCallLeftFiller;
+    UIView * _emergencyCallRightFiller;
+    UIView * _emergencyCallToTopFiller;
+    UIView * _entryFieldToBottomFiller;
+    BOOL  _isAnimating;
+    SBPasscodeKeyboard * _keyboard;
+    BOOL  _previousKeyboardShowedInlineCandidates;
+    UILabel * _statusField;
+    UIView * _statusFieldBackground;
+    UIView * _statusFieldToTopOrEmergencyCallBottomFiller;
+    UILabel * _statusSubtitleView;
+    BOOL  _triedToMinMaxWhileRotating;
+    BOOL  _usesLightStyle;
+    BOOL  _wasMinimizedWhenAnimationStarted;
 }
 
 @property (readonly, copy) NSString *debugDescription;

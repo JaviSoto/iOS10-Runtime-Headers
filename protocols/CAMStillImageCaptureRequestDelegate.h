@@ -5,10 +5,11 @@
 
 @optional
 
-- (void)captureController:(CAMCaptureController *)arg1 didCaptureStillImageForRequest:(CAMStillImageCaptureRequest *)arg2;
-- (void)captureController:(CAMCaptureController *)arg1 didCompleteResponse:(CAMStillImageCaptureResponse *)arg2 forStillImageRequest:(CAMStillImageCaptureRequest *)arg3 error:(NSError *)arg4;
-- (void)captureController:(CAMCaptureController *)arg1 didFinishWriteForResponse:(CAMStillImageCaptureResponse *)arg2 forStillImageRequest:(CAMStillImageCaptureRequest *)arg3 error:(NSError *)arg4;
-- (void)captureController:(CAMCaptureController *)arg1 didGenerateResponse:(CAMStillImageCaptureResponse *)arg2 forStillImageRequest:(CAMStillImageCaptureRequest *)arg3 error:(NSError *)arg4;
-- (void)captureController:(CAMCaptureController *)arg1 willCaptureStillImageForRequest:(CAMStillImageCaptureRequest *)arg2;
+- (void)stillImageRequestDidCompleteCapture:(CAMStillImageCaptureRequest *)arg1 error:(NSError *)arg2;
+- (void)stillImageRequestDidCompleteStillImageCapture:(CAMStillImageCaptureRequest *)arg1 withResponse:(CAMStillImageCaptureResponse *)arg2 error:(NSError *)arg3;
+- (void)stillImageRequestDidCompleteStillImageLocalPersistence:(CAMStillImageCaptureRequest *)arg1 withResponse:(CAMStillImagePersistenceResponse *)arg2 error:(NSError *)arg3;
+- (void)stillImageRequestDidCompleteStillImageRemotePersistence:(CAMStillImageCaptureRequest *)arg1 withResponse:(CAMStillImagePersistenceResponse *)arg2 error:(NSError *)arg3;
+- (void)stillImageRequestDidStartCapturing:(CAMStillImageCaptureRequest *)arg1;
+- (void)stillImageRequestDidStopCapturing:(CAMStillImageCaptureRequest *)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SSLookupItemArtwork : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

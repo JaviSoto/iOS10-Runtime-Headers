@@ -3,13 +3,13 @@
  */
 
 @interface SKUIProductPageHeaderLabel : UIView {
-    NSString *_contentRating;
-    UIImage *_contentRatingImage;
-    BOOL _isPad;
-    UIColor *_ratingColor;
-    NSArray *_secondaryContentRatingImages;
-    NSString *_text;
-    UIColor *_textColor;
+    NSString * _contentRating;
+    UIImage * _contentRatingImage;
+    BOOL  _isPad;
+    UIColor * _ratingColor;
+    NSArray * _secondaryContentRatingImages;
+    NSString * _text;
+    UIColor * _textColor;
 }
 
 @property (nonatomic, retain) NSString *contentRating;

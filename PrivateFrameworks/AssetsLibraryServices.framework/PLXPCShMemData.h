@@ -3,9 +3,9 @@
  */
 
 @interface PLXPCShMemData : NSData {
-    void *_buffer;
-    unsigned long _bufferLength;
-    unsigned long _dataLength;
+    void * _buffer;
+    unsigned long  _bufferLength;
+    unsigned long  _dataLength;
 }
 
 - (const void*)bytes;

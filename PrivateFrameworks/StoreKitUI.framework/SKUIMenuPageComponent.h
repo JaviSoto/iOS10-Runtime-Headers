@@ -3,15 +3,15 @@
  */
 
 @interface SKUIMenuPageComponent : SKUIPageComponent {
-    NSMutableArray *_childrenComponents;
-    int _defaultSelectedIndex;
-    int _menuStyle;
-    NSString *_menuTitle;
-    float _menuTitleFontSize;
-    int _menuTitleFontWeight;
-    NSMutableArray *_sortURLStrings;
-    NSString *_titleForMoreItem;
-    NSMutableArray *_titles;
+    NSMutableArray * _childrenComponents;
+    int  _defaultSelectedIndex;
+    int  _menuStyle;
+    NSString * _menuTitle;
+    float  _menuTitleFontSize;
+    int  _menuTitleFontWeight;
+    NSMutableArray * _sortURLStrings;
+    NSString * _titleForMoreItem;
+    NSMutableArray * _titles;
 }
 
 @property (nonatomic, readonly) NSArray *allTitles;

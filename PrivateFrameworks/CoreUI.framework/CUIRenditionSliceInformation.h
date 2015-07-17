@@ -3,7 +3,7 @@
  */
 
 @interface CUIRenditionSliceInformation : NSObject <NSCopying> {
-    float _boundaries;
+    float  _boundaries;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,14 +13,14 @@
             float width; 
             float height; 
         } size; 
-    } _destinationRect;
+    }  _destinationRect;
     struct { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    int _renditionType;
+    }  _edgeInsets;
+    int  _renditionType;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } destinationRect;

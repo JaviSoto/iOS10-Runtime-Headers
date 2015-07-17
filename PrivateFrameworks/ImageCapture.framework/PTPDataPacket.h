@@ -3,18 +3,18 @@
  */
 
 @interface PTPDataPacket : NSObject {
-    long long _bufferSize;
-    long long _bytesTransferred;
-    id _data;
-    int _fd;
-    NSString *_filepath;
-    long long _offsetInBuffer;
-    unsigned short _operationCode;
+    long long  _bufferSize;
+    long long  _bytesTransferred;
+    id  _data;
+    int  _fd;
+    NSString * _filepath;
+    long long  _offsetInBuffer;
+    unsigned short  _operationCode;
     struct _PTPRange { 
         unsigned long long location; 
         unsigned long long length; 
-    } _range;
-    unsigned long _transactionID;
+    }  _range;
+    unsigned long  _transactionID;
 }
 
 - (long long)bufferSize;

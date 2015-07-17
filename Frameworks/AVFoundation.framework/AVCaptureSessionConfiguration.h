@@ -3,11 +3,11 @@
  */
 
 @interface AVCaptureSessionConfiguration : NSObject {
-    long long _configurationID;
-    NSArray *_connections;
-    NSArray *_inputs;
-    NSArray *_outputs;
-    NSHashTable *_videoPreviewLayers;
+    long long  _configurationID;
+    NSArray * _connections;
+    NSArray * _inputs;
+    NSArray * _outputs;
+    NSHashTable * _videoPreviewLayers;
 }
 
 @property (readonly) long long configurationID;

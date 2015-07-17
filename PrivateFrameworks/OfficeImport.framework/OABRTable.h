@@ -3,23 +3,22 @@
  */
 
 @interface OABRTable : NSObject {
-    struct OABTable2DArray<OABTableCell> { int x1; int x2; struct OABTableCell {} *x3; } *mCells;
-    int mColumnCount;
-    struct OABTable2DArray<EshShape *> { int x1; int x2; struct EshShape {} **x3; } *mHorzLines;
-    int mRowCount;
+    struct OABTable2DArray<OABTableCell> { int x1; int x2; struct OABTableCell {} *x3; } * mCells;
+    int  mColumnCount;
+    struct OABTable2DArray<EshShape *> { int x1; int x2; struct EshShape {} **x3; } * mHorzLines;
+    int  mRowCount;
     struct CGPoint { 
         float x; 
         float y; 
-    } mScale;
-    ESDContainer *mSrcTable;
-    OABReaderState *mState;
-    OADTable *mTgtTable;
-    struct OABTable2DArray<EshShape *> { int x1; int x2; struct EshShape {} **x3; } *mVertLines;
-    OABTableSortedIntArray *mXCoords;
-    OABTableSortedIntArray *mYCoords;
+    }  mScale;
+    ESDContainer * mSrcTable;
+    OABReaderState * mState;
+    OADTable * mTgtTable;
+    struct OABTable2DArray<EshShape *> { int x1; int x2; struct EshShape {} **x3; } * mVertLines;
+    OABTableSortedIntArray * mXCoords;
+    OABTableSortedIntArray * mYCoords;
 }
 
-- (id).cxx_construct;
 - (void)createTargetTableContents;
 - (void)dealloc;
 - (id)initWithSourceTable:(id)arg1 targetTable:(id)arg2 state:(id)arg3;

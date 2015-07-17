@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptDownload : SUScriptObject {
-    ISUDownload *_download;
+    ISUDownload * _download;
 }
 
 @property (readonly) NSNumber *adamID;

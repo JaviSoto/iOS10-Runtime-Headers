@@ -3,13 +3,13 @@
  */
 
 @interface AVCaptureFileOutputDelegateWrapper : NSObject {
-    NSArray *_connections;
-    AVWeakReferencingDelegateStorage *_delegateStorage;
-    NSArray *_metadata;
-    NSURL *_outputFileURL;
-    BOOL _paused;
-    BOOL _recording;
-    long long _settingsID;
+    NSArray * _connections;
+    AVWeakReferencingDelegateStorage * _delegateStorage;
+    NSArray * _metadata;
+    NSURL * _outputFileURL;
+    BOOL  _paused;
+    BOOL  _recording;
+    long long  _settingsID;
 }
 
 @property (readonly) NSArray *connections;

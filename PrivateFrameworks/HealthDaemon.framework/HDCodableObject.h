@@ -3,13 +3,13 @@
  */
 
 @interface HDCodableObject : PBCodable <NSCopying> {
-    double _creationDate;
+    double  _creationDate;
     struct { 
         unsigned int creationDate : 1; 
-    } _has;
-    HDCodableMetadataDictionary *_metadataDictionary;
-    NSString *_sourceBundleIdentifier;
-    NSData *_uuid;
+    }  _has;
+    HDCodableMetadataDictionary * _metadataDictionary;
+    NSString * _sourceBundleIdentifier;
+    NSData * _uuid;
 }
 
 @property (nonatomic) double creationDate;

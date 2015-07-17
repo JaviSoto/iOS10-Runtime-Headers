@@ -3,13 +3,13 @@
  */
 
 @interface SKUIViewElementSlideshowController : NSObject <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate> {
-    <SKUIViewElementSlideshowDelegate> *_delegate;
-    SKUIViewElementLayoutContext *_layoutContext;
-    NSMutableArray *_lockups;
-    SKUISlideshowViewController *_padViewController;
-    SKUIIPhoneSlideshowViewController *_phoneViewController;
-    int _selectedIndex;
-    NSString *_title;
+    <SKUIViewElementSlideshowDelegate> * _delegate;
+    SKUIViewElementLayoutContext * _layoutContext;
+    NSMutableArray * _lockups;
+    SKUISlideshowViewController * _padViewController;
+    SKUIIPhoneSlideshowViewController * _phoneViewController;
+    int  _selectedIndex;
+    NSString * _title;
 }
 
 @property (readonly, copy) NSString *debugDescription;

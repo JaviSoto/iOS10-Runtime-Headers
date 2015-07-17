@@ -3,11 +3,11 @@
  */
 
 @interface CalLocationManagerDelegate : NSObject <CLLocationManagerDelegate> {
-    id /* block */ _completionBlock;
-    CLLocation *_currentLocation;
-    BOOL _didFinish;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_timer;
+    id /* block */  _completionBlock;
+    CLLocation * _currentLocation;
+    BOOL  _didFinish;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 @property (copy) id /* block */ completionBlock;

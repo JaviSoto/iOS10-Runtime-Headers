@@ -3,7 +3,7 @@
  */
 
 @interface _MFDAMessageStoreGetUpdatesRequest : DAMailboxGetUpdatesRequest <MFDAMailAccountRequest> {
-    BOOL _isUserRequested;
+    BOOL  _isUserRequested;
 }
 
 @property (nonatomic, readonly) BOOL isUserRequested;

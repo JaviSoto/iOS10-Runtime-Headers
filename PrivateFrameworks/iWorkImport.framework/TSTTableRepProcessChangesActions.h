@@ -13,7 +13,7 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } _dirtyCellRange;
+    }  _dirtyCellRange;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -24,19 +24,19 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } _dirtyStrokeRange;
-    BOOL _hideChromeContextMenuButton;
-    BOOL _hideStepperHUD;
-    BOOL _invalidateAllChrome;
-    BOOL _invalidateAllChromeCaches;
-    BOOL _invalidateColumnChrome;
-    BOOL _invalidateKnobs;
-    BOOL _invalidateRowChrome;
-    BOOL _invalidateSelection;
-    BOOL _invalidateTableName;
-    BOOL _setNeedsDisplay;
-    BOOL _syncReferenceHighlightState;
-    BOOL _updateEditorRemainders;
+    }  _dirtyStrokeRange;
+    BOOL  _hideChromeContextMenuButton;
+    BOOL  _hideStepperHUD;
+    BOOL  _invalidateAllChrome;
+    BOOL  _invalidateAllChromeCaches;
+    BOOL  _invalidateColumnChrome;
+    BOOL  _invalidateKnobs;
+    BOOL  _invalidateRowChrome;
+    BOOL  _invalidateSelection;
+    BOOL  _invalidateTableName;
+    BOOL  _setNeedsDisplay;
+    BOOL  _syncReferenceHighlightState;
+    BOOL  _updateEditorRemainders;
 }
 
 @property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyCellRange;
@@ -54,7 +54,6 @@
 @property (nonatomic) BOOL syncReferenceHighlightState;
 @property (nonatomic) BOOL updateEditorRemainders;
 
-- (id).cxx_construct;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyCellRange;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyStrokeRange;
 - (BOOL)hideChromeContextMenuButton;

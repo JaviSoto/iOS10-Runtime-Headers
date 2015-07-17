@@ -3,12 +3,12 @@
  */
 
 @interface SSItemMedia : NSObject {
-    int _duration;
-    int _fullDuration;
-    long long _mediaFileSize;
-    NSString *_mediaKind;
-    BOOL _protected;
-    NSURL *_url;
+    int  _duration;
+    int  _fullDuration;
+    long long  _mediaFileSize;
+    NSString * _mediaKind;
+    BOOL  _protected;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

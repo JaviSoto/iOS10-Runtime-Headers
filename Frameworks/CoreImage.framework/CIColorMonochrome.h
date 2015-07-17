@@ -3,9 +3,9 @@
  */
 
 @interface CIColorMonochrome : CIFilter {
-    CIColor *inputColor;
-    CIImage *inputImage;
-    NSNumber *inputIntensity;
+    CIColor * inputColor;
+    CIImage * inputImage;
+    NSNumber * inputIntensity;
 }
 
 @property (nonatomic, retain) CIColor *inputColor;
@@ -19,7 +19,6 @@
 - (id)inputImage;
 - (id)inputIntensity;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputColor:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputIntensity:(id)arg1;

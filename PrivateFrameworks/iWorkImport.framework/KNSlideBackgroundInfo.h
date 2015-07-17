@@ -3,11 +3,11 @@
  */
 
 @interface KNSlideBackgroundInfo : NSObject <TSDChangeableInfo, TSKDocumentObject, TSKTransformableObject> {
-    TSSPropertySetChangeDetails *mChanges;
-    TSDInfoGeometry *mGeometry;
-    NSObject<TSDContainerInfo> *mParentInfo;
-    KNAbstractSlide *mSlide;
-    TSSStylesheet *mStylesheet;
+    TSSPropertySetChangeDetails * mChanges;
+    TSDInfoGeometry * mGeometry;
+    NSObject<TSDContainerInfo> * mParentInfo;
+    KNAbstractSlide * mSlide;
+    TSSStylesheet * mStylesheet;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

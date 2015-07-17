@@ -3,8 +3,8 @@
  */
 
 @interface _MTLDepthStencilState : NSObject <MTLDepthStencilState> {
-    <MTLDevice> *_device;
-    NSString *_label;
+    <MTLDevice> * _device;
+    NSString * _label;
 }
 
 @property (readonly, copy) NSString *debugDescription;

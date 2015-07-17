@@ -3,19 +3,19 @@
  */
 
 @interface _PFBatchFaultingArray : NSArray {
-    unsigned int *_LRUBatches;
-    _PFArray *_array;
-    unsigned int _batchSize;
-    int _cd_rc;
-    unsigned int _count;
-    unsigned int *_entryFlags;
+    unsigned int * _LRUBatches;
+    _PFArray * _array;
+    unsigned int  _batchSize;
+    int  _cd_rc;
+    unsigned int  _count;
+    unsigned int * _entryFlags;
     struct _PFBatchFaultingArrayFlags { 
         unsigned int _LRUIndex : 8; 
         unsigned int _uniformEntity : 1; 
         unsigned int _RESERVED : 23; 
-    } _flags;
-    NSManagedObjectContext *_moc;
-    NSFetchRequest *_request;
+    }  _flags;
+    NSManagedObjectContext * _moc;
+    NSCachingFetchRequest * _request;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -55,6 +55,8 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)objectsAtIndexes:(id)arg1;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

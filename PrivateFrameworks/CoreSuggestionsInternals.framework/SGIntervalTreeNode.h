@@ -3,15 +3,12 @@
  */
 
 @interface SGIntervalTreeNode : NSObject {
-    BOOL _hasIndex;
-    BOOL _hasLeftIndex;
-    BOOL _hasRightIndex;
-    unsigned int _index;
-    NSMutableSet *_keys;
-    SGIntervalTreeNode *_left;
-    unsigned int _leftIndex;
-    SGIntervalTreeNode *_right;
-    unsigned int _rightIndex;
+    unsigned int  _index;
+    NSMutableSet * _keys;
+    SGIntervalTreeNode * _left;
+    unsigned int  _leftIndex;
+    SGIntervalTreeNode * _right;
+    unsigned int  _rightIndex;
 }
 
 - (void).cxx_destruct;

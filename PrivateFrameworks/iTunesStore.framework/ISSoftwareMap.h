@@ -3,7 +3,7 @@
  */
 
 @interface ISSoftwareMap : NSObject {
-    NSArray *_applications;
+    NSArray * _applications;
 }
 
 @property (nonatomic, readonly) NSArray *applications;

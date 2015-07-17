@@ -3,9 +3,9 @@
  */
 
 @interface GEOLocationShiftFunctionRequest : NSObject {
-    GEOLocationShiftRequest *_locationShiftRequest;
-    GEOPolyLocationShiftRequest *_polyLocationShiftRequest;
-    unsigned short _providerID;
+    GEOLocationShiftRequest * _locationShiftRequest;
+    GEOPolyLocationShiftRequest * _polyLocationShiftRequest;
+    unsigned short  _providerID;
 }
 
 @property (nonatomic) struct { double x1; double x2; } coordinate;

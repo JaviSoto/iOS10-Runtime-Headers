@@ -3,10 +3,10 @@
  */
 
 @interface SKUIComposeTextFieldListView : UIView {
-    <SKUIComposeTextFieldListViewDelegate> *_delegate;
-    NSMutableArray *_fields;
-    BOOL _isValid;
-    int _style;
+    <SKUIComposeTextFieldListViewDelegate> * _delegate;
+    NSMutableArray * _fields;
+    BOOL  _isValid;
+    int  _style;
 }
 
 @property (nonatomic, readonly) int composeReviewStyle;

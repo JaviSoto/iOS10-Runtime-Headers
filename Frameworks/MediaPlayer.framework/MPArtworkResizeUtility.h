@@ -3,9 +3,9 @@
  */
 
 @interface MPArtworkResizeUtility : NSObject {
-    NSObject<OS_dispatch_queue> *_artworkResizingAccessQueue;
-    NSOperationQueue *_artworkResizingOperationQueue;
-    NSMapTable *_artworkResizingOperations;
+    NSObject<OS_dispatch_queue> * _artworkResizingAccessQueue;
+    NSOperationQueue * _artworkResizingOperationQueue;
+    NSMapTable * _artworkResizingOperations;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *artworkResizingAccessQueue;

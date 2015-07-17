@@ -3,7 +3,7 @@
  */
 
 @interface MFDAMessageStore : MFLibraryStore {
-    DAFolder *_DAFolder;
+    DAFolder * _DAFolder;
 }
 
 - (id)_additionalHeadersForAction:(int)arg1 ofMessage:(id)arg2;

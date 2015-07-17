@@ -3,14 +3,14 @@
  */
 
 @interface SBAwayViewPluginController : NSObject {
-    BOOL _alwaysFullscreen;
-    id /* block */ _disableTransitionBlock;
-    unsigned int _effectivePresentationStyle;
-    NSString *_enablingApplicationBundleIdentifier;
-    BOOL _fullscreen;
-    int _orientation;
-    UIView *_view;
-    BOOL _viewCanBeDisplayed;
+    BOOL  _alwaysFullscreen;
+    id /* block */  _disableTransitionBlock;
+    unsigned int  _effectivePresentationStyle;
+    NSString * _enablingApplicationBundleIdentifier;
+    BOOL  _fullscreen;
+    int  _orientation;
+    UIView * _view;
+    BOOL  _viewCanBeDisplayed;
 }
 
 @property (getter=isAlwaysFullscreen, nonatomic) BOOL alwaysFullscreen;

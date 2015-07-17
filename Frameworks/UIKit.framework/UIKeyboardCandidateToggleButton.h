@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardCandidateToggleButton : UIButton {
-    NSString *_arrowDirection;
-    UIKBThemedView *_themedView;
+    NSString * _arrowDirection;
+    UIKBThemedView * _themedView;
 }
 
 @property (nonatomic, copy) NSString *arrowDirection;

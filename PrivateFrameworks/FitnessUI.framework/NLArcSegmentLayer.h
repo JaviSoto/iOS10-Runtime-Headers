@@ -3,10 +3,10 @@
  */
 
 @interface NLArcSegmentLayer : CAShapeLayer {
-    float _arcLineWidth;
-    int _numberOfSegments;
-    float _percentageFull;
-    float _radius;
+    float  _arcLineWidth;
+    int  _numberOfSegments;
+    float  _percentageFull;
+    float  _radius;
 }
 
 @property (nonatomic) float arcLineWidth;

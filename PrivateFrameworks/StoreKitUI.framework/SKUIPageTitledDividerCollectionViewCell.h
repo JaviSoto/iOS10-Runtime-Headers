@@ -3,44 +3,44 @@
  */
 
 @interface SKUIPageTitledDividerCollectionViewCell : UICollectionViewCell <SKUIViewElementView> {
-    float _buttonContentHorizontalPadding;
-    SKUIButtonViewElement *_buttonViewElement;
+    float  _buttonContentHorizontalPadding;
+    SKUIButtonViewElement * _buttonViewElement;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentEdgeInsets;
+    }  _contentEdgeInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIButton *_dividerButton;
-    NSNumber *_dividerButtonImageRequestIdentifier;
-    UILabel *_dividerLabel;
+    }  _contentInset;
+    UIButton * _dividerButton;
+    NSNumber * _dividerButtonImageRequestIdentifier;
+    UILabel * _dividerLabel;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _imageVerticalPadding;
+    }  _imageVerticalPadding;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _internalHorizontalMargins;
-    UIView *_leftLine;
-    UIView *_rightLine;
+    }  _internalHorizontalMargins;
+    UIView * _leftLine;
+    UIView * _rightLine;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _titleVerticalPadding;
-    float _topEdgeInset;
+    }  _titleVerticalPadding;
+    float  _topEdgeInset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

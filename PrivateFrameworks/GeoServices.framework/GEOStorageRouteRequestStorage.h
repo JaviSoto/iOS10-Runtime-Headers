@@ -5,11 +5,11 @@
 @interface GEOStorageRouteRequestStorage : PBCodable <NSCopying> {
     struct { 
         unsigned int transportType : 1; 
-    } _has;
-    GEOURLRouteHandle *_routeHandle;
-    int _transportType;
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_waypoints;
+    }  _has;
+    GEOURLRouteHandle * _routeHandle;
+    int  _transportType;
+    PBUnknownFields * _unknownFields;
+    NSMutableArray * _waypoints;
 }
 
 @property (nonatomic, readonly) BOOL hasRouteHandle;

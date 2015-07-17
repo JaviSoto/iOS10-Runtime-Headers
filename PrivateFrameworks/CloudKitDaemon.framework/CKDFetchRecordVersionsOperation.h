@@ -3,12 +3,12 @@
  */
 
 @interface CKDFetchRecordVersionsOperation : CKDDatabaseOperation {
-    NSArray *_desiredKeys;
-    NSObject<OS_dispatch_group> *_fetchVersionsGroup;
-    BOOL _isDeleted;
-    NSString *_minimumVersionETag;
-    NSArray *_recordIDs;
-    id /* block */ _recordVersionFetchedBlock;
+    NSArray * _desiredKeys;
+    NSObject<OS_dispatch_group> * _fetchVersionsGroup;
+    BOOL  _isDeleted;
+    NSString * _minimumVersionETag;
+    NSArray * _recordIDs;
+    id /* block */  _recordVersionFetchedBlock;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;
@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordVersionsFecthedForID:(id)arg1 isDeleted:(BOOL)arg2 versions:(id)arg3 responseCode:(id)arg4;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (id)fetchVersionsGroup;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

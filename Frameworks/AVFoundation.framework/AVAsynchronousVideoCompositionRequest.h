@@ -3,7 +3,7 @@
  */
 
 @interface AVAsynchronousVideoCompositionRequest : NSObject <NSCopying> {
-    AVAsynchronousVideoCompositionRequestInternal *_internal;
+    AVAsynchronousVideoCompositionRequestInternal * _internal;
 }
 
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;

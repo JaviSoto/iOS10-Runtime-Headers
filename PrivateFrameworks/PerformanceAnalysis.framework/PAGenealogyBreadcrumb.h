@@ -3,7 +3,7 @@
  */
 
 @interface PAGenealogyBreadcrumb : PAGenealogyTimestampedMessage <PASerializable> {
-    NSString *_message;
+    NSString * _message;
 }
 
 @property (readonly, copy) NSString *debugDescription;

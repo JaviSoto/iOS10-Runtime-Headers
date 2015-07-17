@@ -3,8 +3,8 @@
  */
 
 @interface MFLANContinuationContext : NSObject {
-    NSString *_host;
-    unsigned short _port;
+    NSString * _host;
+    unsigned short  _port;
 }
 
 @property (nonatomic, copy) NSString *host;

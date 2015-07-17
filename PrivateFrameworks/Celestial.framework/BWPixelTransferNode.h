@@ -3,10 +3,10 @@
  */
 
 @interface BWPixelTransferNode : BWNode {
-    int _cropMode;
-    BOOL _flipHorizontal;
-    BOOL _flipVertical;
-    BOOL _haveLiveInputCropRect;
+    int  _cropMode;
+    BOOL  _flipHorizontal;
+    BOOL  _flipVertical;
+    BOOL  _haveLiveInputCropRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,15 +16,15 @@
             float width; 
             float height; 
         } size; 
-    } _inputCropRect;
-    BWPixelBufferPool *_intermediateBufferPool;
+    }  _inputCropRect;
+    BWPixelBufferPool * _intermediateBufferPool;
     struct { 
         int width; 
         int height; 
-    } _intermediatePoolDimensions;
-    int _liveCropMode;
-    BOOL _liveFlipHorizontal;
-    BOOL _liveFlipVertical;
+    }  _intermediatePoolDimensions;
+    int  _liveCropMode;
+    BOOL  _liveFlipHorizontal;
+    BOOL  _liveFlipVertical;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,26 +34,26 @@
             float width; 
             float height; 
         } size; 
-    } _liveInputCropRect;
-    BOOL _liveLowSpeed;
-    BOOL _livePassesBuffersThroughWhenPossible;
-    int _liveRotationDegrees;
-    BOOL _liveZeroFillBuffers;
-    BOOL _lowSpeed;
-    BOOL _makeCurrentConfigurationLiveOnNextRenderCallback;
-    struct opaqueCMFormatDescription { } *_outputFormatDescription;
-    unsigned long _outputHeight;
-    unsigned long _outputPixelFormat;
-    unsigned long _outputWidth;
-    BOOL _passesBuffersThroughWhenPossible;
-    int _rotationDegrees;
-    struct OpaqueVTImageRotationSession { } *_rotationSession;
-    BOOL _rotationSessionFlipHorizontal;
-    BOOL _rotationSessionFlipVertical;
-    BOOL _rotationSessionLowSpeed;
-    int _rotationSessionRotationDegrees;
-    BOOL _rotationSessionZeroFillBuffers;
-    struct OpaqueVTPixelTransferSession { } *_transferSession;
+    }  _liveInputCropRect;
+    BOOL  _liveLowSpeed;
+    BOOL  _livePassesBuffersThroughWhenPossible;
+    int  _liveRotationDegrees;
+    BOOL  _liveZeroFillBuffers;
+    BOOL  _lowSpeed;
+    BOOL  _makeCurrentConfigurationLiveOnNextRenderCallback;
+    struct opaqueCMFormatDescription { } * _outputFormatDescription;
+    unsigned long  _outputHeight;
+    unsigned long  _outputPixelFormat;
+    unsigned long  _outputWidth;
+    BOOL  _passesBuffersThroughWhenPossible;
+    int  _rotationDegrees;
+    struct OpaqueVTImageRotationSession { } * _rotationSession;
+    BOOL  _rotationSessionFlipHorizontal;
+    BOOL  _rotationSessionFlipVertical;
+    BOOL  _rotationSessionLowSpeed;
+    int  _rotationSessionRotationDegrees;
+    BOOL  _rotationSessionZeroFillBuffers;
+    struct OpaqueVTPixelTransferSession { } * _transferSession;
 }
 
 + (void)initialize;

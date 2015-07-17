@@ -3,16 +3,16 @@
  */
 
 @interface MSCLAttachmentPropertiesViewController : SKUIViewController <MSCLAttachmentPropertiesTableViewSectionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    MSCLAlbumSelectionViewController *_albumSelectionViewController;
-    int _artistNameLength;
-    MSCLAttachment *_attachment;
-    SKUIMediaSocialAuthor *_author;
-    NSArray *_authorAlbumItems;
-    MSCLLoadAuthorAlbumsOperation *_authorAlbumsOperation;
-    MSCLConfiguration *_configuration;
-    <MSCLAttachmentPropertiesDelegate> *_delegate;
-    UIBarButtonItem *_doneButton;
-    UIImagePickerController *_imagePickerController;
+    MSCLAlbumSelectionViewController * _albumSelectionViewController;
+    int  _artistNameLength;
+    MSCLAttachment * _attachment;
+    SKUIMediaSocialAuthor * _author;
+    NSArray * _authorAlbumItems;
+    MSCLLoadAuthorAlbumsOperation * _authorAlbumsOperation;
+    MSCLConfiguration * _configuration;
+    <MSCLAttachmentPropertiesDelegate> * _delegate;
+    UIBarButtonItem * _doneButton;
+    UIImagePickerController * _imagePickerController;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,12 +22,12 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    UIPopoverPresentationController *_popoverPresentationController;
-    NSMutableArray *_sections;
-    UITableView *_tableView;
-    int _titleLength;
-    MSCLTokenTextViewTableAssistant *_tokenTextViewAssistant;
+    }  _keyboardFrame;
+    UIPopoverPresentationController * _popoverPresentationController;
+    NSMutableArray * _sections;
+    UITableView * _tableView;
+    int  _titleLength;
+    MSCLTokenTextViewTableAssistant * _tokenTextViewAssistant;
 }
 
 @property (nonatomic, readonly, copy) MSCLAttachment *attachment;

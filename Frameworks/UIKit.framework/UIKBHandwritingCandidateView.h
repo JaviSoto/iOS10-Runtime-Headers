@@ -3,21 +3,21 @@
  */
 
 @interface UIKBHandwritingCandidateView : UIKBKeyView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIKeyboardCandidateList> {
-    TIKeyboardCandidateResultSet *_candidateResultSet;
-    UIKBCandidateCollectionView *_candidatesCollectionView;
-    <UIKeyboardCandidateListDelegate> *_delegate;
-    unsigned int _dummyCellCount;
-    float _dummyCellWidth;
-    UIKeyboardCandidateLogButton *_logButton;
-    UIKeyboardCandidatePocketShadow *_pocketShadow;
-    BOOL _usesCandidateSelection;
+    TIKeyboardCandidateResultSet * _candidateResultSet;
+    UIKBCandidateCollectionView * _candidatesCollectionView;
+    <UIKeyboardCandidateListDelegate> * _delegate;
+    unsigned int  _dummyCellCount;
+    float  _dummyCellWidth;
+    UIKeyboardCandidateLogButton * _logButton;
+    UIKeyboardCandidatePocketShadow * _pocketShadow;
+    BOOL  _usesCandidateSelection;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    } _visualStyling;
+    }  _visualStyling;
 }
 
 @property (nonatomic, readonly) <UIKeyboardCandidateList> *candidateList;
@@ -36,6 +36,8 @@
 @property (nonatomic) BOOL usesCandidateSelection;
 @property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
++ (Class)cellClass;
+
 - (id)_inheritedRenderConfig;
 - (void)_setRenderConfig:(id)arg1;
 - (void)calculateDummyCellAttributes;
@@ -52,6 +54,7 @@
 - (unsigned int)currentIndex;
 - (void)dealloc;
 - (id)delegate;
+- (void)displayLayer:(id)arg1;
 - (unsigned int)dummyCellCount;
 - (float)dummyCellWidth;
 - (BOOL)hasCandidates;

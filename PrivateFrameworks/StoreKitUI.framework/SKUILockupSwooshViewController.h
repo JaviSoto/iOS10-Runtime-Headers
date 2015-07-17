@@ -3,29 +3,29 @@
  */
 
 @interface SKUILockupSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIItemArtworkContext *_artworkContext;
-    UICollectionView *_collectionView;
+    SKUIItemArtworkContext * _artworkContext;
+    UICollectionView * _collectionView;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    } _defaultLockupStyle;
-    BOOL _delegateWantsWillDisplay;
-    BOOL _didInitialReload;
+    }  _defaultLockupStyle;
+    BOOL  _delegateWantsWillDisplay;
+    BOOL  _didInitialReload;
     struct CGSize { 
         float width; 
         float height; 
-    } _expectedImageSize;
-    NSMutableIndexSet *_hiddenIconIndexSet;
-    NSArray *_lockups;
+    }  _expectedImageSize;
+    NSMutableIndexSet * _hiddenIconIndexSet;
+    NSArray * _lockups;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxCellSize;
+    }  _maxCellSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxImageSize;
+    }  _maxImageSize;
     struct { 
         struct CGSize { 
             float width; 
@@ -51,14 +51,14 @@
         float interItemSpacingMixed; 
         float interItemSpacingNewsstand; 
         float interItemSpacingVideoLockup; 
-    } _metrics;
-    BOOL _seeAllHidden;
-    int _seeAllStyle;
-    NSString *_seeAllTitle;
-    NSURL *_seeAllURL;
-    int _swooshType;
-    SKUISwooshView *_swooshView;
-    SKUIVideoImageDataConsumer *_videoImageConsumer;
+    }  _metrics;
+    BOOL  _seeAllHidden;
+    int  _seeAllStyle;
+    NSString * _seeAllTitle;
+    NSURL * _seeAllURL;
+    int  _swooshType;
+    SKUISwooshView * _swooshView;
+    SKUIVideoImageDataConsumer * _videoImageConsumer;
 }
 
 @property (nonatomic, readonly) SKUIItemArtworkContext *artworkContext;

@@ -3,9 +3,9 @@
  */
 
 @interface HKEmergencyCardMultilineTextTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate> {
-    HKMedicalIDEditorMultilineStringCell *_editableCell;
-    _HKMedicalIDMultilineStringCell *_labelCell;
-    <HKEmergencyCardRowHeightChangeDelegate> *_rowHeightChangeDelegate;
+    HKMedicalIDEditorMultilineStringCell * _editableCell;
+    _HKMedicalIDMultilineStringCell * _labelCell;
+    <HKEmergencyCardRowHeightChangeDelegate> * _rowHeightChangeDelegate;
 }
 
 @property (nonatomic) <HKEmergencyCardRowHeightChangeDelegate> *rowHeightChangeDelegate;

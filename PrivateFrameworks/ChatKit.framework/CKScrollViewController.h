@@ -3,8 +3,8 @@
  */
 
 @interface CKScrollViewController : CKViewController {
-    float _bottomInsetPadding;
-    BOOL _keyboardInteractionCancelled;
+    float  _bottomInsetPadding;
+    BOOL  _keyboardInteractionCancelled;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +14,12 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardScreenFrame;
-    BOOL _keyboardVisible;
-    UIScrollView *_scrollView;
-    BOOL _topInsetIncludesPalette;
-    float _topInsetPadding;
-    IMScheduledUpdater *_updater;
+    }  _keyboardScreenFrame;
+    BOOL  _keyboardVisible;
+    UIScrollView * _scrollView;
+    BOOL  _topInsetIncludesPalette;
+    float  _topInsetPadding;
+    IMScheduledUpdater * _updater;
 }
 
 @property (nonatomic, readonly) float bottomInsetPadding;

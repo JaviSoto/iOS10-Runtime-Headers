@@ -3,10 +3,10 @@
  */
 
 @interface FBApplicationProcessExitContext : NSObject {
-    unsigned int _exitReason;
-    unsigned long long _launchdExitReason;
-    FBProcessState *_stateBeforeExiting;
-    int _terminationReason;
+    unsigned int  _exitReason;
+    unsigned long long  _launchdExitReason;
+    FBProcessState * _stateBeforeExiting;
+    int  _terminationReason;
 }
 
 @property (nonatomic, readonly) int exitCode;

@@ -3,9 +3,9 @@
  */
 
 @interface NSWeakCallback : NSObject {
-    int (*_callback_function;
-    id _callback_next;
-    id _callback_target;
+    int (* _callback_function;
+    id  _callback_next;
+    id  _callback_target;
 }
 
 @end

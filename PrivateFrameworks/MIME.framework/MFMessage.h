@@ -3,27 +3,27 @@
  */
 
 @interface MFMessage : NSObject <NSCopying> {
-    NSArray *_bcc;
-    NSString *_cachedMessageIDHeader;
-    unsigned int _calculatedAttachmentInfo;
-    NSArray *_cc;
-    NSString *_contentType;
-    long long _conversationID;
-    unsigned int _dateReceivedInterval;
-    unsigned int _dateSentInterval;
-    NSString *_externalID;
-    unsigned long long _generationNumber;
-    long long _messageIDHeaderHash;
-    NSURL *_messageURL;
-    unsigned short _numberOfAttachments;
-    MFMimePart *_parentPart;
-    unsigned long _preferredEncoding;
-    NSArray *_sender;
-    NSString *_senderAddressComment;
-    MFMessageStore *_store;
-    NSString *_subject;
-    NSString *_summary;
-    NSArray *_to;
+    NSArray * _bcc;
+    NSString * _cachedMessageIDHeader;
+    unsigned int  _calculatedAttachmentInfo;
+    NSArray * _cc;
+    NSString * _contentType;
+    long long  _conversationID;
+    unsigned int  _dateReceivedInterval;
+    unsigned int  _dateSentInterval;
+    NSString * _externalID;
+    unsigned long long  _generationNumber;
+    long long  _messageIDHeaderHash;
+    NSURL * _messageURL;
+    unsigned short  _numberOfAttachments;
+    MFMimePart * _parentPart;
+    unsigned long  _preferredEncoding;
+    NSArray * _sender;
+    NSString * _senderAddressComment;
+    MFMessageStore * _store;
+    NSString * _subject;
+    NSString * _summary;
+    NSArray * _to;
 }
 
 @property (nonatomic, retain) MFMimePart *parentPart;
@@ -69,6 +69,7 @@
 - (double)dateSentAsTimeIntervalSince1970;
 - (void)dealloc;
 - (id)defaultAlternativeInPart:(id)arg1;
+- (void)deleteBodyData;
 - (id)externalID;
 - (BOOL)fetchDataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withConsumer:(id)arg3 isComplete:(BOOL*)arg4 downloadIfNecessary:(BOOL)arg5;
 - (id)firstSender;

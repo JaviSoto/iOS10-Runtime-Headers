@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetResourceLoadingContentInformationRequest : NSObject {
-    AVAssetResourceLoadingContentInformationRequestInternal *_contentInformationRequest;
+    AVAssetResourceLoadingContentInformationRequestInternal * _contentInformationRequest;
 }
 
 @property (getter=isByteRangeAccessSupported, nonatomic) BOOL byteRangeAccessSupported;

@@ -3,10 +3,10 @@
  */
 
 @interface SUScalingFlipView : UIView {
-    UIView *_backView;
-    <SUScalingFlipViewDelegate> *_delegate;
-    int _direction;
-    double _duration;
+    UIView * _backView;
+    <SUScalingFlipViewDelegate> * _delegate;
+    int  _direction;
+    double  _duration;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,8 +16,8 @@
             float width; 
             float height; 
         } size; 
-    } _fromFrame;
-    UIView *_frontView;
+    }  _fromFrame;
+    UIView * _frontView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,7 +27,7 @@
             float width; 
             float height; 
         } size; 
-    } _toFrame;
+    }  _toFrame;
 }
 
 @property (nonatomic) <SUScalingFlipViewDelegate> *delegate;

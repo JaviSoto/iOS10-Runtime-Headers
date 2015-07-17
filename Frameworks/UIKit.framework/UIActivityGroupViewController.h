@@ -3,28 +3,28 @@
  */
 
 @interface UIActivityGroupViewController : UICollectionViewController <UIGestureRecognizerDelegate, _UIActivityGroupViewDelegateFlowLayout> {
-    NSArray *_activities;
-    int _activityCategory;
-    BOOL _activityIndexDidChangeWhileDragging;
-    BOOL _allowsUserCustomization;
-    NSMutableDictionary *_cachedPreferredItemSizesByString;
-    NSDictionary *_customActivityTitles;
-    BOOL _darkStyleOnLegacyApp;
-    <UIActivityGroupViewControllerDataSource> *_dataSource;
-    <UIActivityGroupViewControllerDelegate> *_delegate;
-    UILongPressGestureRecognizer *_editingGestureRecognizer;
-    BOOL _embedded;
-    BOOL _hasActivities;
-    NSIndexPath *_indexPathForMenuActivity;
+    NSArray * _activities;
+    int  _activityCategory;
+    BOOL  _activityIndexDidChangeWhileDragging;
+    BOOL  _allowsUserCustomization;
+    NSMutableDictionary * _cachedPreferredItemSizesByString;
+    NSDictionary * _customActivityTitles;
+    BOOL  _darkStyleOnLegacyApp;
+    <UIActivityGroupViewControllerDataSource> * _dataSource;
+    <UIActivityGroupViewControllerDelegate> * _delegate;
+    UILongPressGestureRecognizer * _editingGestureRecognizer;
+    BOOL  _embedded;
+    BOOL  _hasActivities;
+    NSIndexPath * _indexPathForMenuActivity;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialDraggingLocation;
-    BOOL _picker;
-    _UIActivityGroupActivityCell *_prototypeActivityCell;
-    _UIActivityUserDefaults *_userDefaults;
-    _UIUserDefaultsActivity *_userDefaultsActivity;
-    NSArray *_visibleActivities;
+    }  _initialDraggingLocation;
+    BOOL  _picker;
+    _UIActivityGroupActivityCell * _prototypeActivityCell;
+    _UIActivityUserDefaults * _userDefaults;
+    _UIUserDefaultsActivity * _userDefaultsActivity;
+    NSArray * _visibleActivities;
 }
 
 @property (nonatomic, copy) NSArray *activities;
@@ -51,6 +51,7 @@
 @property (nonatomic, retain) _UIUserDefaultsActivity *userDefaultsActivity;
 @property (nonatomic, copy) NSArray *visibleActivities;
 
+- (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_cachedPreferredItemSizeForString:(id)arg1;
 - (void)_setActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)_setVisibleActivities:(id)arg1 animated:(BOOL)arg2;
@@ -90,6 +91,9 @@
 - (id)indexPathForMenuActivity;
 - (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2;
 - (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2 userDefaultsIdentifier:(id)arg3;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithCollectionViewLayout:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (struct CGPoint { float x1; float x2; })initialDraggingLocation;
 - (BOOL)isEmbedded;
 - (BOOL)isPicker;

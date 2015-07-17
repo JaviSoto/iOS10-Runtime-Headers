@@ -3,10 +3,10 @@
  */
 
 @interface PAMicrostackshotData : NSObject {
-    unsigned int _cpuNumber;
-    unsigned char _microSnapshotFlags;
-    unsigned short _systemStatsFlags;
-    unsigned long long _timeInUsUnix;
+    unsigned int  _cpuNumber;
+    unsigned char  _microSnapshotFlags;
+    unsigned short  _systemStatsFlags;
+    unsigned long long  _timeInUsUnix;
 }
 
 @property (readonly) unsigned int cpuNumber;

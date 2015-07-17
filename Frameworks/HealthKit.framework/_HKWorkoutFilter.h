@@ -3,7 +3,7 @@
  */
 
 @interface _HKWorkoutFilter : _HKFilter {
-    NSUUID *_workoutUUID;
+    NSUUID * _workoutUUID;
 }
 
 @property (nonatomic, readonly) NSUUID *workoutUUID;

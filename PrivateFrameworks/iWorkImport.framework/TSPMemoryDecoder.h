@@ -3,9 +3,9 @@
  */
 
 @interface TSPMemoryDecoder : NSObject <TSPDecoder> {
-    <TSPMemoryDecoderDelegate> *_delegate;
-    NSObject<OS_dispatch_data> *_metadataDispatchData;
-    NSObject<OS_dispatch_data> *_rootObjectComponentDispatchData;
+    <TSPMemoryDecoderDelegate> * _delegate;
+    NSObject<OS_dispatch_data> * _metadataDispatchData;
+    NSObject<OS_dispatch_data> * _rootObjectComponentDispatchData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

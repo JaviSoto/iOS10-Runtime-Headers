@@ -3,10 +3,10 @@
  */
 
 @interface OADTableTextStyle : NSObject {
-    int mBold;
-    OADColor *mColor;
-    OADFontReference *mFontReference;
-    int mItalic;
+    int  mBold;
+    OADColor * mColor;
+    OADFontReference * mFontReference;
+    int  mItalic;
 }
 
 + (int)defaultBold;
@@ -19,6 +19,7 @@
 - (int)bold;
 - (id)color;
 - (void)dealloc;
+- (id)description;
 - (id)fontReference;
 - (id)init;
 - (int)italic;

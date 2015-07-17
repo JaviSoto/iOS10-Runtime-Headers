@@ -3,9 +3,9 @@
  */
 
 @interface PTIconSettings : _UISettings {
-    float _alphaStrength;
-    BOOL _on;
-    float _radiusStrength;
+    float  _alphaStrength;
+    BOOL  _on;
+    float  _radiusStrength;
 }
 
 @property (nonatomic) float alphaStrength;

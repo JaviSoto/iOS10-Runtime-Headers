@@ -3,8 +3,8 @@
  */
 
 @interface MPUBorderView : UIView {
-    MPUBorderConfiguration *_borderConfiguration;
-    BOOL _hidesWhenFullyTransparent;
+    MPUBorderConfiguration * _borderConfiguration;
+    BOOL  _hidesWhenFullyTransparent;
 }
 
 @property (nonatomic, copy) MPUBorderConfiguration *borderConfiguration;

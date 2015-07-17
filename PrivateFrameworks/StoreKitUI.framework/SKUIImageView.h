@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    UITapGestureRecognizer *_tapRecognizer;
+    }  _imageSize;
+    UITapGestureRecognizer * _tapRecognizer;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } imageSize;

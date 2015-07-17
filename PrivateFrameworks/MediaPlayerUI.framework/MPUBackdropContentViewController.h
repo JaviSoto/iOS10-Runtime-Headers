@@ -3,11 +3,11 @@
  */
 
 @interface MPUBackdropContentViewController : UIViewController {
-    _UIBackdropView *_backdropView;
-    int _backdropViewPrivateStyle;
-    UIView *_backgroundView;
-    UIViewController *_contentViewController;
-    MPUPinningView *_pinningView;
+    _UIBackdropView * _backdropView;
+    int  _backdropViewPrivateStyle;
+    UIView * _backgroundView;
+    UIViewController * _contentViewController;
+    MPUPinningView * _pinningView;
 }
 
 @property (nonatomic) int backdropViewPrivateStyle;

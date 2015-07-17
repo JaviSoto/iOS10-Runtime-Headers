@@ -3,12 +3,12 @@
  */
 
 @interface FlickrResponse : NSObject <NSXMLParserDelegate> {
-    int _errorCode;
-    NSString *_errorDescription;
-    NSMutableString *_partialPhotoIDString;
-    long long _photoID;
-    BOOL _success;
-    BOOL _workaround;
+    int  _errorCode;
+    NSString * _errorDescription;
+    NSMutableString * _partialPhotoIDString;
+    long long  _photoID;
+    BOOL  _success;
+    BOOL  _workaround;
 }
 
 @property (readonly, copy) NSString *debugDescription;

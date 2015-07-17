@@ -3,11 +3,11 @@
  */
 
 @interface EKEventAttachmentCellController : NSObject <UIDocumentInteractionControllerDelegate> {
-    EKAttachment *_attachment;
-    EKEventAttachmentCell *_cell;
-    <EKEventAttachmentCellControllerDelegate> *_delegate;
-    id _downloadID;
-    BOOL _sourceIsManaged;
+    EKAttachment * _attachment;
+    EKEventAttachmentCell * _cell;
+    <EKEventAttachmentCellControllerDelegate> * _delegate;
+    id  _downloadID;
+    BOOL  _sourceIsManaged;
 }
 
 @property (nonatomic, retain) EKAttachment *attachment;

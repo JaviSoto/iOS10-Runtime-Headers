@@ -6,11 +6,11 @@
     struct { 
         unsigned int isPlaceholder : 1; 
         unsigned int wasMediaReplaced : 1; 
-    } mFlags;
+    }  mFlags;
     struct CGSize { 
         float width; 
         float height; 
-    } mOriginalSize;
+    }  mOriginalSize;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } defaultOriginalSize;

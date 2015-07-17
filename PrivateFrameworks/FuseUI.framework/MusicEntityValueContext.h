@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityValueContext : NSObject <NSCopying> {
-    <MusicEntityValueProviding> *_containerEntityValueProvider;
-    MPUContentItemIdentifierCollection *_containerIdentifierCollection;
-    MPPlaybackContext *_containerPlaybackContext;
-    <MusicEntityValueProviding> *_itemEntityValueProvider;
-    unsigned int _itemGlobalIndex;
-    MPUContentItemIdentifierCollection *_itemIdentifierCollection;
-    MPPlaybackContext *_itemPlaybackContext;
-    BOOL _wantsContainerEntityValueProvider;
-    BOOL _wantsContainerIdentifierCollection;
-    BOOL _wantsContainerPlaybackContext;
-    BOOL _wantsItemEntityValueProvider;
-    BOOL _wantsItemGlobalIndex;
-    BOOL _wantsItemIdentifierCollection;
-    BOOL _wantsItemPlaybackContext;
+@interface MusicEntityValueContext : NSObject <NSCoding, NSCopying> {
+    <MusicEntityValueProviding> * _containerEntityValueProvider;
+    MPUContentItemIdentifierCollection * _containerIdentifierCollection;
+    MPPlaybackContext * _containerPlaybackContext;
+    <MusicEntityValueProviding> * _itemEntityValueProvider;
+    unsigned int  _itemGlobalIndex;
+    MPUContentItemIdentifierCollection * _itemIdentifierCollection;
+    MPPlaybackContext * _itemPlaybackContext;
+    BOOL  _wantsContainerEntityValueProvider;
+    BOOL  _wantsContainerIdentifierCollection;
+    BOOL  _wantsContainerPlaybackContext;
+    BOOL  _wantsItemEntityValueProvider;
+    BOOL  _wantsItemGlobalIndex;
+    BOOL  _wantsItemIdentifierCollection;
+    BOOL  _wantsItemPlaybackContext;
 }
 
 @property (nonatomic, retain) <MusicEntityValueProviding> *containerEntityValueProvider;
@@ -41,8 +41,10 @@
 - (id)containerIdentifierCollection;
 - (id)containerPlaybackContext;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entityValueProvider;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)itemEntityValueProvider;
 - (unsigned int)itemGlobalIndex;
 - (id)itemIdentifierCollection;

@@ -3,15 +3,15 @@
  */
 
 @interface AWDMMCSGetRequestInfo : PBCodable <NSCopying> {
-    NSMutableArray *_authHttpInfos;
-    NSMutableArray *_cancelErrors;
-    int _cancelledErrorCode;
-    NSString *_cancelledErrorDomain;
-    NSString *_clientId;
-    NSMutableArray *_completeHttpInfos;
-    NSMutableArray *_containerHttpInfos;
-    long long _duration;
-    NSMutableArray *_errors;
+    NSMutableArray * _authHttpInfos;
+    NSMutableArray * _cancelErrors;
+    int  _cancelledErrorCode;
+    NSString * _cancelledErrorDomain;
+    NSString * _clientId;
+    NSMutableArray * _completeHttpInfos;
+    NSMutableArray * _containerHttpInfos;
+    long long  _duration;
+    NSMutableArray * _errors;
     struct { 
         unsigned int duration : 1; 
         unsigned int localBytes : 1; 
@@ -22,15 +22,15 @@
         unsigned int itemCount : 1; 
         unsigned int itemsNeedingChunks : 1; 
         unsigned int requestErrorCode : 1; 
-    } _has;
-    int _itemCount;
-    int _itemsNeedingChunks;
-    long long _localBytes;
-    int _requestErrorCode;
-    NSString *_requestErrorDomain;
-    long long _resumedBytes;
-    long long _startTime;
-    long long _timestamp;
+    }  _has;
+    int  _itemCount;
+    int  _itemsNeedingChunks;
+    long long  _localBytes;
+    int  _requestErrorCode;
+    NSString * _requestErrorDomain;
+    long long  _resumedBytes;
+    long long  _startTime;
+    long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *authHttpInfos;

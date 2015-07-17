@@ -3,14 +3,14 @@
  */
 
 @interface GEOPDPlaceInfo : PBCodable <NSCopying> {
-    double _area;
-    GEOLatLng *_center;
+    double  _area;
+    GEOLatLng * _center;
     struct { 
         unsigned int area : 1; 
         unsigned int isApproximateCenter : 1; 
-    } _has;
-    BOOL _isApproximateCenter;
-    GEOTimezone *_timezone;
+    }  _has;
+    BOOL  _isApproximateCenter;
+    GEOTimezone * _timezone;
 }
 
 @property (nonatomic) double area;

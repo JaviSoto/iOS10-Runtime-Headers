@@ -3,10 +3,10 @@
  */
 
 @interface SPFeedbackEngagement : SPFeedback {
-    NSURL *_action_destination;
-    NSString *_cardType;
-    BOOL _engagementOnCard;
-    BOOL _userReturnedToResultsList;
+    NSURL * _action_destination;
+    NSString * _cardType;
+    BOOL  _engagementOnCard;
+    BOOL  _userReturnedToResultsList;
 }
 
 @property (nonatomic, retain) NSURL *action_destination;
@@ -14,6 +14,7 @@
 @property (nonatomic) BOOL engagementOnCard;
 @property (nonatomic) BOOL userReturnedToResultsList;
 
+- (void).cxx_destruct;
 - (id)action_destination;
 - (id)cardType;
 - (void)encodeWithCoder:(id)arg1;

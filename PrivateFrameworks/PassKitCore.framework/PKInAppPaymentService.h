@@ -3,7 +3,7 @@
  */
 
 @interface PKInAppPaymentService : NSObject {
-    PKXPCService *_remoteService;
+    PKXPCService * _remoteService;
 }
 
 - (id)_remoteObjectProxy;

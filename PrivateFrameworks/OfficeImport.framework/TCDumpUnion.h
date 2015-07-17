@@ -3,9 +3,9 @@
  */
 
 @interface TCDumpUnion : TCDumpType {
-    TCDumpNumeric *mSelectorField;
-    NSString *mSelectorFieldName;
-    NSMutableDictionary *mSelectorToMemberMap;
+    TCDumpNumeric * mSelectorField;
+    NSString * mSelectorFieldName;
+    NSMutableDictionary * mSelectorToMemberMap;
 }
 
 - (void)dealloc;

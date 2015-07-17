@@ -3,16 +3,19 @@
  */
 
 @interface OADTable : OADDrawable {
-    OADTableGrid *mGrid;
-    NSMutableArray *mRows;
+    OADTableGrid * mGrid;
+    NSMutableArray * mRows;
 }
 
 + (void)applyTextStyle:(id)arg1 toParagraphProperties:(id)arg2;
 
 - (id)addRow;
 - (id)cellAtPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
+- (void)changeParentTextListStylePreservingEffectiveValues:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)flattenStyle;
+- (void)flipTableRTL;
 - (id)grid;
 - (id)init;
 - (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;

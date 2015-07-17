@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewAnimationAttributes : NSObject <NSSecureCoding> {
-    int _curve;
-    double _delay;
-    double _duration;
-    unsigned int _options;
+    int  _curve;
+    double  _delay;
+    double  _duration;
+    unsigned int  _options;
 }
 
 @property (getter=_curve, nonatomic, readonly) int curve;

@@ -3,13 +3,13 @@
  */
 
 @interface PUCropHandleView : UIView {
-    UIView *__layoutReferenceView;
-    NSArray *__lineViews;
-    NSLayoutConstraint *__lineWidthConstraint;
-    NSArray *__overlayViews;
-    unsigned int _handle;
-    BOOL _lineWeightHeavy;
-    BOOL _overlayHidden;
+    UIView * __layoutReferenceView;
+    NSArray * __lineViews;
+    NSLayoutConstraint * __lineWidthConstraint;
+    NSArray * __overlayViews;
+    unsigned int  _handle;
+    BOOL  _lineWeightHeavy;
+    BOOL  _overlayHidden;
 }
 
 @property (setter=_setLayoutReferenceView:, nonatomic, retain) UIView *_layoutReferenceView;

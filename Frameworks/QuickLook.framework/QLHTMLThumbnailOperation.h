@@ -3,8 +3,8 @@
  */
 
 @interface QLHTMLThumbnailOperation : QLThumbnailOperation {
-    UIWebBrowserView *_browserView;
-    DOMNode *_node;
+    UIWebBrowserView * _browserView;
+    DOMNode * _node;
 }
 
 - (void)dealloc;

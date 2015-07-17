@@ -3,10 +3,10 @@
  */
 
 @interface RUISpinnerRecord : NSObject {
-    NSArray *_leftItems;
-    UINavigationItem *_navigationItem;
-    NSArray *_rightItems;
-    NSString *_title;
+    NSArray * _leftItems;
+    UINavigationItem * _navigationItem;
+    NSArray * _rightItems;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSArray *leftItems;

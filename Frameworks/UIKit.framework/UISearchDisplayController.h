@@ -3,35 +3,35 @@
  */
 
 @interface UISearchDisplayController : NSObject <_UIScrollNotification> {
-    float __activationGapHeight;
-    float __additionalNonCollapsingHeightAboveSearchBar;
-    UIButton *_animatingAppearanceNavigationButton;
-    float _animatingAppearanceNavigationSearchBarWidth;
-    _UINavigationControllerPalette *_attachedNavigationPalette;
-    UISearchDisplayControllerContainerView *_containerView;
+    float  __activationGapHeight;
+    float  __additionalNonCollapsingHeightAboveSearchBar;
+    UIButton * _animatingAppearanceNavigationButton;
+    float  _animatingAppearanceNavigationSearchBarWidth;
+    _UINavigationControllerPalette * _attachedNavigationPalette;
+    UISearchDisplayControllerContainerView * _containerView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _containingScrollViewContentOffset;
-    struct __CFArray { } *_containingScrollViews;
-    <UISearchDisplayDelegate> *_delegate;
-    _UISearchControllerDidScrollDelegate *_didScrollDelegate;
-    UIColor *_dimmingOverlayColor;
-    UIView *_dimmingView;
-    BOOL _displaysSearchBarInNavigationBar;
-    float _lastFooterAdjustment;
-    float _lastKeyboardAdjustment;
-    unsigned int _navigationBarSearchFieldSizing;
-    id _navigationControllerBookkeeper;
-    UINavigationItem *_navigationItem;
-    UILabel *_noResultsLabel;
-    NSString *_noResultsMessage;
-    UIPopoverController *_popoverController;
-    NSString *_resultsTitle;
-    UIScrollView *_savedContainingScrollView;
-    unsigned int _savedSearchBarResizingMask;
-    NSArray *_savedSelectedCellsWhenViewWillAppear;
-    UISearchBar *_searchBar;
+    }  _containingScrollViewContentOffset;
+    struct __CFArray { } * _containingScrollViews;
+    <UISearchDisplayDelegate> * _delegate;
+    _UISearchControllerDidScrollDelegate * _didScrollDelegate;
+    UIColor * _dimmingOverlayColor;
+    UIView * _dimmingView;
+    BOOL  _displaysSearchBarInNavigationBar;
+    float  _lastFooterAdjustment;
+    float  _lastKeyboardAdjustment;
+    unsigned int  _navigationBarSearchFieldSizing;
+    id  _navigationControllerBookkeeper;
+    UINavigationItem * _navigationItem;
+    UILabel * _noResultsLabel;
+    NSString * _noResultsMessage;
+    UIPopoverController * _popoverController;
+    NSString * _resultsTitle;
+    UIScrollView * _savedContainingScrollView;
+    unsigned int  _savedSearchBarResizingMask;
+    NSArray * _savedSelectedCellsWhenViewWillAppear;
+    UISearchBar * _searchBar;
     struct { 
         unsigned int visible : 1; 
         unsigned int animating : 1; 
@@ -49,7 +49,7 @@
         unsigned int animatingSearchResultsDisappearance : 1; 
         unsigned int navigationBarShadowWasHidden : 1; 
         unsigned int hoistingSearchBar : 1; 
-    } _searchDisplayControllerFlags;
+    }  _searchDisplayControllerFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -59,14 +59,14 @@
             float width; 
             float height; 
         } size; 
-    } _searchFieldInNavigationBarFrame;
-    int _searchResultsTableViewStyle;
-    UITableView *_tableView;
-    UIView *_tableViewBackgroundHeaderView;
-    <UITableViewDataSource> *_tableViewDataSource;
-    <UITableViewDelegate> *_tableViewDelegate;
-    int _unactivatedBarPosition;
-    UIViewController *_viewController;
+    }  _searchFieldInNavigationBarFrame;
+    int  _searchResultsTableViewStyle;
+    UITableView * _tableView;
+    UIView * _tableViewBackgroundHeaderView;
+    <UITableViewDataSource> * _tableViewDataSource;
+    <UITableViewDelegate> * _tableViewDelegate;
+    int  _unactivatedBarPosition;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) float _activationGapHeight;
@@ -93,6 +93,7 @@
 @property (nonatomic, copy) NSString *searchResultsTitle;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (float)_activationGapHeight;
 - (float)_additionalNonCollapsingHeightAboveSearchBar;
 - (void)_adjustTableViewContentInsetsAndOffsetsIgnoringCurrent:(BOOL)arg1;

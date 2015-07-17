@@ -3,15 +3,15 @@
  */
 
 @interface MusicNowPlayingTransitionController : NSObject <UIViewControllerAnimatedTransitioning> {
-    UIView *_dimmingView;
-    BOOL _dismissal;
-    BOOL _hasFinishedTransition;
-    MusicTabBarController *_tabBarController;
-    id /* block */ _transitionEndBlock;
-    id /* block */ _transitionFinishBlock;
-    id /* block */ _transitionRubberBandEffectBlock;
-    id /* block */ _transitionStartBlock;
-    id /* block */ _transitionStopBlock;
+    UIView * _dimmingView;
+    BOOL  _dismissal;
+    BOOL  _hasFinishedTransition;
+    MusicTabBarController * _tabBarController;
+    id /* block */  _transitionEndBlock;
+    id /* block */  _transitionFinishBlock;
+    id /* block */  _transitionRubberBandEffectBlock;
+    id /* block */  _transitionStartBlock;
+    id /* block */  _transitionStopBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

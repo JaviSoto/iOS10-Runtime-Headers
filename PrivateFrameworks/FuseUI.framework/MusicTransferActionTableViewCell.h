@@ -3,7 +3,7 @@
  */
 
 @interface MusicTransferActionTableViewCell : UITableViewCell {
-    UIButton *_button;
+    UIButton * _button;
 }
 
 @property (nonatomic, readonly) UIButton *button;

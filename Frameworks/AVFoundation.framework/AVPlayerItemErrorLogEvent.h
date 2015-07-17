@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemErrorLogEvent : NSObject <NSCopying> {
-    AVPlayerItemErrorLogEventInternal *_playerItemErrorLogEvent;
+    AVPlayerItemErrorLogEventInternal * _playerItemErrorLogEvent;
 }
 
 @property (nonatomic, readonly) NSString *URI;

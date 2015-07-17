@@ -3,8 +3,8 @@
  */
 
 @interface TSURemoteDefaults : NSObject {
-    NSObject<OS_dispatch_queue> *_checkQueue;
-    NSObject<OS_dispatch_source> *_updateTimer;
+    NSObject<OS_dispatch_queue> * _checkQueue;
+    NSObject<OS_dispatch_source> * _updateTimer;
 }
 
 @property (nonatomic, readonly) NSURL *downloadableContentURL;

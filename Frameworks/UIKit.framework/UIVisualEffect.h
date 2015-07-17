@@ -3,8 +3,8 @@
  */
 
 @interface UIVisualEffect : NSObject <NSCopying, NSSecureCoding> {
-    _UIVisualEffectConfig *_effectConfig;
-    _UIBackdropViewSettings *_effectSettings;
+    _UIVisualEffectConfig * _effectConfig;
+    _UIBackdropViewSettings * _effectSettings;
 }
 
 @property (nonatomic, readonly) _UIVisualEffectConfig *effectConfig;
@@ -12,8 +12,11 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
+- (id)effectConfigForQuality:(int)arg1;
+- (id)effectForUserInterfaceStyle:(int)arg1;
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardEmojiSectionHeader : UICollectionReusableView {
-    UILabel *_emojiSectionHeader;
+    UILabel * _emojiSectionHeader;
 }
 
 @property (nonatomic) float headerFontSize;
@@ -12,7 +12,7 @@
 @property (nonatomic, copy) UIColor *headerTextColor;
 @property (nonatomic) BOOL useVibrantBlend;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (float)headerFontSize;
 - (id)headerName;
 - (float)headerOpacity;

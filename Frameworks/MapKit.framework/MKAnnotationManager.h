@@ -3,23 +3,23 @@
  */
 
 @interface MKAnnotationManager : NSObject {
-    NSMutableSet *_annotationRepresentations;
-    BOOL _annotationRepresentationsAreAddedImmediately;
-    MKQuadTrie *_annotations;
-    NSMapTable *_annotationsToRepresentations;
-    <MKAnnotationMarkerContainer> *_container;
-    <MKAnnotationManagerDelegate> *_delegate;
-    NSMutableSet *_disallowAnimationAnnotations;
-    <MKAnnotation> *_draggedAnnotation;
-    NSMutableSet *_invalidCoordinateAnnotations;
-    BOOL _isChangingCoordinate;
-    NSMutableSet *_managedAnnotations;
-    NSMutableSet *_managedAnnotationsObservingCoordinate;
-    NSMutableSet *_pendingAnnotations;
-    NSMapTable *_reusableAnnotationRepresentations;
-    <MKAnnotation> *_selectedAnnotation;
-    NSTimer *_updateVisibleTimer;
-    NSMutableSet *_visibleAnnotations;
+    NSMutableSet * _annotationRepresentations;
+    BOOL  _annotationRepresentationsAreAddedImmediately;
+    MKQuadTrie * _annotations;
+    NSMapTable * _annotationsToRepresentations;
+    <MKAnnotationMarkerContainer> * _container;
+    <MKAnnotationManagerDelegate> * _delegate;
+    NSMutableSet * _disallowAnimationAnnotations;
+    <MKAnnotation> * _draggedAnnotation;
+    NSMutableSet * _invalidCoordinateAnnotations;
+    BOOL  _isChangingCoordinate;
+    NSMutableSet * _managedAnnotations;
+    NSMutableSet * _managedAnnotationsObservingCoordinate;
+    NSMutableSet * _pendingAnnotations;
+    NSMapTable * _reusableAnnotationRepresentations;
+    <MKAnnotation> * _selectedAnnotation;
+    NSTimer * _updateVisibleTimer;
+    NSMutableSet * _visibleAnnotations;
 }
 
 @property (nonatomic, readonly) NSArray *annotationRepresentations;

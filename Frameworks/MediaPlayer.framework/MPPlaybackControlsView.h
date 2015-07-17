@@ -3,37 +3,37 @@
  */
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
-    UIActivityIndicatorView *_activityIndicator;
-    <MPPlaybackControlsDelegate> *_delegate;
-    unsigned int _detailScrubbing;
-    unsigned long long _disabledParts;
-    unsigned int _fastForwardAndRewindButtonDisabled;
-    MPButton *_fastFowardButton;
-    UIView *_fastFowardButtonBezel;
-    MPButton *_geniusButton;
-    unsigned int _geniusButtonDisabled;
-    MPAVItem *_item;
-    MPButton *_mailButton;
-    unsigned int _mailButtonDisabled;
-    unsigned int _mailButtonHidden;
-    MPTimeMarker *_markerForProgressControlDuration;
-    unsigned int _needsUpdateButtonVisibility;
-    MPButton *_playbackSpeedButton;
-    unsigned int _playbackSpeedButtonDisabled;
-    MPAVController *_player;
-    MPDetailSlider *_progressControl;
-    double _progressOffset;
-    MPButton *_repeatButton;
-    MPButton *_rewindButton;
-    UIView *_rewindButtonBezel;
-    CABasicAnimation *_rewindOpacityAnimation;
-    float _seekedToValue;
-    MPButton *_shuffleButton;
-    double _tickInterval;
-    UILabel *_trackInfoLabel;
-    unsigned int _useMediaDetailSlider;
-    unsigned long long _visibleParts;
-    unsigned int _wantsTick;
+    UIActivityIndicatorView * _activityIndicator;
+    <MPPlaybackControlsDelegate> * _delegate;
+    unsigned int  _detailScrubbing;
+    unsigned long long  _disabledParts;
+    unsigned int  _fastForwardAndRewindButtonDisabled;
+    MPButton * _fastFowardButton;
+    UIView * _fastFowardButtonBezel;
+    MPButton * _geniusButton;
+    unsigned int  _geniusButtonDisabled;
+    MPAVItem * _item;
+    MPButton * _mailButton;
+    unsigned int  _mailButtonDisabled;
+    unsigned int  _mailButtonHidden;
+    MPTimeMarker * _markerForProgressControlDuration;
+    unsigned int  _needsUpdateButtonVisibility;
+    MPButton * _playbackSpeedButton;
+    unsigned int  _playbackSpeedButtonDisabled;
+    MPAVController * _player;
+    MPDetailSlider * _progressControl;
+    double  _progressOffset;
+    MPButton * _repeatButton;
+    MPButton * _rewindButton;
+    UIView * _rewindButtonBezel;
+    CABasicAnimation * _rewindOpacityAnimation;
+    float  _seekedToValue;
+    MPButton * _shuffleButton;
+    double  _tickInterval;
+    UILabel * _trackInfoLabel;
+    unsigned int  _useMediaDetailSlider;
+    unsigned long long  _visibleParts;
+    unsigned int  _wantsTick;
 }
 
 @property (readonly, copy) NSString *debugDescription;

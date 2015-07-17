@@ -3,11 +3,11 @@
  */
 
 @interface AWDAirPlayVideoSessionEndedOnServer : PBCodable <NSCopying> {
-    double _bandwidthMax;
-    double _bandwidthMean;
-    double _bandwidthStdDev;
-    unsigned int _duration;
-    unsigned int _fastFowards;
+    double  _bandwidthMax;
+    double  _bandwidthMean;
+    double  _bandwidthStdDev;
+    unsigned int  _duration;
+    unsigned int  _fastFowards;
     struct { 
         unsigned int bandwidthMax : 1; 
         unsigned int bandwidthMean : 1; 
@@ -24,18 +24,18 @@
         unsigned int remoteNonFairPlayCount : 1; 
         unsigned int rewinds : 1; 
         unsigned int stallCount : 1; 
-    } _has;
-    unsigned int _localFairPlayCount;
-    unsigned int _localNonFairPlayCount;
-    unsigned int _pauses;
-    unsigned int _readyToPlayMs;
-    int _reason;
-    unsigned int _remoteFairPlayCount;
-    unsigned int _remoteNonFairPlayCount;
-    unsigned int _rewinds;
-    NSString *_sessionUUID;
-    unsigned int _stallCount;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _localFairPlayCount;
+    unsigned int  _localNonFairPlayCount;
+    unsigned int  _pauses;
+    unsigned int  _readyToPlayMs;
+    int  _reason;
+    unsigned int  _remoteFairPlayCount;
+    unsigned int  _remoteNonFairPlayCount;
+    unsigned int  _rewinds;
+    NSString * _sessionUUID;
+    unsigned int  _stallCount;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) double bandwidthMax;

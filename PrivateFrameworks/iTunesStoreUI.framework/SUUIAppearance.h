@@ -3,18 +3,18 @@
  */
 
 @interface SUUIAppearance : NSObject <NSCopying> {
-    SUControlAppearance *_backButtonAppearance;
-    SUControlAppearance *_confirmationButtonAppearance;
-    SUControlAppearance *_destructiveButtonAppearance;
-    SUControlAppearance *_exitStoreButtonAppearance;
-    SUControlAppearance *_forwardButtonAppearance;
-    BOOL _isDefaultAppearance;
-    NSMutableDictionary *_navigationBarBackgroundImages;
-    NSDictionary *_navigationBarTitleTextAttributes;
-    NSMutableDictionary *_navigationButtonAppearance;
-    NSMutableDictionary *_segmentedControlAppearance;
-    SUTabBarAppearance *_tabBarAppearance;
-    SUToolbarAppearance *_toolbarAppearance;
+    SUControlAppearance * _backButtonAppearance;
+    SUControlAppearance * _confirmationButtonAppearance;
+    SUControlAppearance * _destructiveButtonAppearance;
+    SUControlAppearance * _exitStoreButtonAppearance;
+    SUControlAppearance * _forwardButtonAppearance;
+    BOOL  _isDefaultAppearance;
+    NSMutableDictionary * _navigationBarBackgroundImages;
+    NSDictionary * _navigationBarTitleTextAttributes;
+    NSMutableDictionary * _navigationButtonAppearance;
+    NSMutableDictionary * _segmentedControlAppearance;
+    SUTabBarAppearance * _tabBarAppearance;
+    SUToolbarAppearance * _toolbarAppearance;
 }
 
 @property (nonatomic, copy) SUControlAppearance *backButtonAppearance;

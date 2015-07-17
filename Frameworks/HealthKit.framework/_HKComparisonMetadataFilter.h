@@ -3,7 +3,7 @@
  */
 
 @interface _HKComparisonMetadataFilter : _HKMetadataFilter {
-    id _value;
+    id  _value;
 }
 
 @property (nonatomic, readonly) id value;

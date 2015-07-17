@@ -3,12 +3,12 @@
  */
 
 @interface QLThumbnailOperation : NSOperation {
-    UIImage *_image;
-    int _index;
+    UIImage * _image;
+    int  _index;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (retain) UIImage *image;

@@ -3,10 +3,10 @@
  */
 
 @interface CalDescriptionBuilder : NSObject {
-    NSMutableDictionary *_descriptionUnderConstruction;
-    NSString *_keyDelimiter;
-    BOOL _sortedByKey;
-    NSString *_superclassDescription;
+    NSMutableDictionary * _descriptionUnderConstruction;
+    NSString * _keyDelimiter;
+    BOOL  _sortedByKey;
+    NSString * _superclassDescription;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *descriptionUnderConstruction;

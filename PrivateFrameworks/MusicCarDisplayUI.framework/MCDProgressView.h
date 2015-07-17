@@ -3,14 +3,14 @@
  */
 
 @interface MCDProgressView : UIView {
-    UIView *_indicatorView;
-    BOOL _isLive;
-    float _progress;
-    BOOL _progressActive;
-    UIView *_progressView;
-    UILabel *_timeLabel;
-    UILabel *_timeRemainingLabel;
-    UIView *_trackView;
+    UIView * _indicatorView;
+    BOOL  _isLive;
+    float  _progress;
+    BOOL  _progressActive;
+    UIView * _progressView;
+    UILabel * _timeLabel;
+    UILabel * _timeRemainingLabel;
+    UIView * _trackView;
 }
 
 - (void).cxx_destruct;

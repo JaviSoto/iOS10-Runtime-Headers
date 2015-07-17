@@ -3,10 +3,10 @@
  */
 
 @interface IMParentalControlsService : NSObject {
-    BOOL _disableService;
-    BOOL _forceWhiteList;
-    NSString *_name;
-    NSSet *_whitelist;
+    BOOL  _disableService;
+    BOOL  _forceWhiteList;
+    NSString * _name;
+    NSSet * _whitelist;
 }
 
 @property BOOL disableService;

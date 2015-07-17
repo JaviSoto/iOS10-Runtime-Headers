@@ -3,7 +3,7 @@
  */
 
 @interface TSUManagedTemporaryDirectory : NSObject {
-    NSURL *_URL;
+    NSURL * _URL;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

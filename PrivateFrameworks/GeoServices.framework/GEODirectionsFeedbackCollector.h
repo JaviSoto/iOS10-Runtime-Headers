@@ -3,9 +3,11 @@
  */
 
 @interface GEODirectionsFeedbackCollector : NSObject {
-    GEODirectionsFeedback *_currentDirectionsFeedback;
-    GEODirectionsFeedbackCollection *_currentFeedbackCollection;
-    NSMutableSet *_routeIDs;
+    GEODirectionsFeedback * _currentDirectionsFeedback;
+    double  _currentDirectionsNavigationEndTime;
+    double  _currentDirectionsNavigationStartTime;
+    GEODirectionsFeedbackCollection * _currentFeedbackCollection;
+    NSMutableSet * _routeIDs;
 }
 
 @property (nonatomic, retain) GEODirectionsFeedback *currentDirectionsFeedback;

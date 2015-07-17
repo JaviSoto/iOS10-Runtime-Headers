@@ -3,11 +3,11 @@
  */
 
 @interface PKRemoteAssetManifestItem : NSObject <NSSecureCoding> {
-    NSURL *_localURL;
-    NSURL *_passURL;
-    NSURL *_remoteURL;
-    NSString *_sha1Hex;
-    NSNumber *_size;
+    NSURL * _localURL;
+    NSURL * _passURL;
+    NSURL * _remoteURL;
+    NSString * _sha1Hex;
+    NSNumber * _size;
 }
 
 @property (nonatomic, copy) NSURL *localURL;

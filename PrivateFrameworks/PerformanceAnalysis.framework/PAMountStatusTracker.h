@@ -3,7 +3,7 @@
  */
 
 @interface PAMountStatusTracker : NSObject <PASerializable> {
-    NSMutableDictionary *_mountStatusDict;
+    NSMutableDictionary * _mountStatusDict;
 }
 
 @property (readonly, copy) NSString *debugDescription;

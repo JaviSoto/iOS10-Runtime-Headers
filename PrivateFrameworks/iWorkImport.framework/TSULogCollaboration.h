@@ -3,15 +3,15 @@
  */
 
 @interface TSULogCollaboration : NSObject {
-    TSUASLClient *_aslClient;
-    TSUASLLogFile *_currentLogFile;
-    int _filterLevel;
-    int _logFileLevelMask;
-    NSURL *_logFileURL;
-    BOOL _shouldLogCommandTrace;
-    BOOL _shouldLogToFile;
-    BOOL _shouldLogToStderr;
-    int _stderrLevelMask;
+    TSUASLClient * _aslClient;
+    TSUASLLogFile * _currentLogFile;
+    int  _filterLevel;
+    int  _logFileLevelMask;
+    NSURL * _logFileURL;
+    BOOL  _shouldLogCommandTrace;
+    BOOL  _shouldLogToFile;
+    BOOL  _shouldLogToStderr;
+    int  _stderrLevelMask;
 }
 
 @property (nonatomic) int filterLevel;

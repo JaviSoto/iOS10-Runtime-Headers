@@ -3,17 +3,17 @@
  */
 
 @interface SUStorePageView : UIView {
-    UIView *_backdropView;
-    UIView *_contentView;
+    UIView * _backdropView;
+    UIView * _contentView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentViewInsets;
-    UIScrollView *_headerScrollView;
-    UIView *_headerView;
-    UIView *_previewOverlayView;
+    }  _contentViewInsets;
+    UIScrollView * _headerScrollView;
+    UIView * _headerView;
+    UIView * _previewOverlayView;
 }
 
 @property (nonatomic, retain) UIView *backdropView;

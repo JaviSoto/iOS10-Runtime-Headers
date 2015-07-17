@@ -3,7 +3,7 @@
  */
 
 @interface TKVibrationRecorderViewController : UINavigationController {
-    TKVibrationRecorderContentViewController *_vibrationRecorderContentViewController;
+    TKVibrationRecorderContentViewController * _vibrationRecorderContentViewController;
 }
 
 @property (setter=_setVibrationRecorderContentViewController:, nonatomic, retain) TKVibrationRecorderContentViewController *_vibrationRecorderContentViewController;

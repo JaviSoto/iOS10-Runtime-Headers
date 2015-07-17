@@ -3,15 +3,15 @@
  */
 
 @interface HDCodableSample : PBCodable <NSCopying> {
-    long long _dataType;
-    double _endDate;
+    long long  _dataType;
+    double  _endDate;
     struct { 
         unsigned int dataType : 1; 
         unsigned int endDate : 1; 
         unsigned int startDate : 1; 
-    } _has;
-    HDCodableObject *_object;
-    double _startDate;
+    }  _has;
+    HDCodableObject * _object;
+    double  _startDate;
 }
 
 @property (nonatomic) long long dataType;

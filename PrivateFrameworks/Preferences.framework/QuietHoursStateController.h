@@ -3,18 +3,18 @@
  */
 
 @interface QuietHoursStateController : NSObject {
-    BBSettingsGateway *_bbGateway;
-    NSArray *_behaviorOverrides;
-    NSDateComponents *_fromComponents;
-    BOOL _isEffectiveWhileUnlocked;
-    unsigned int _mode;
-    int _overrideStatus;
-    unsigned int _overrideType;
-    NSArray *_overrides;
-    unsigned int _privilegeTypes;
-    int _recordID;
-    NSDateComponents *_toComponents;
-    BOOL _valid;
+    BBSettingsGateway * _bbGateway;
+    NSArray * _behaviorOverrides;
+    NSDateComponents * _fromComponents;
+    BOOL  _isEffectiveWhileUnlocked;
+    unsigned int  _mode;
+    int  _overrideStatus;
+    unsigned int  _overrideType;
+    NSArray * _overrides;
+    unsigned int  _privilegeTypes;
+    int  _recordID;
+    NSDateComponents * _toComponents;
+    BOOL  _valid;
 }
 
 @property (nonatomic, readonly) BBSettingsGateway *bbGateway;
@@ -36,6 +36,7 @@
 + (void)setScheduledRangeFrom:(id)arg1 to:(id)arg2;
 + (id)sharedController;
 
+- (void).cxx_destruct;
 - (unsigned int)allowedGroupType;
 - (id)bbGateway;
 - (id)behaviorOverrides;

@@ -3,15 +3,15 @@
  */
 
 @interface CalDAVCalendarServerInviteNotificationItem : CoreDAVItem {
-    CalDAVCalendarServerAccessItem *_access;
-    CoreDAVItemWithNoChildren *_calendarPublic;
-    CoreDAVItemWithHrefChildItem *_hostURL;
-    CoreDAVHrefItem *_href;
-    CoreDAVItemWithNoChildren *_inviteStatus;
-    CalDAVCalendarServerOrganizerItem *_organizer;
-    CoreDAVLeafItem *_summary;
-    CalDAVSupportedCalendarComponentSet *_supportedCalendarComponentSet;
-    CoreDAVLeafItem *_uid;
+    CalDAVCalendarServerAccessItem * _access;
+    CoreDAVItemWithNoChildren * _calendarPublic;
+    CoreDAVItemWithHrefChildItem * _hostURL;
+    CoreDAVHrefItem * _href;
+    CoreDAVItemWithNoChildren * _inviteStatus;
+    CalDAVCalendarServerOrganizerItem * _organizer;
+    CoreDAVLeafItem * _summary;
+    CalDAVSupportedCalendarComponentSet * _supportedCalendarComponentSet;
+    CoreDAVLeafItem * _uid;
 }
 
 @property (nonatomic, retain) CalDAVCalendarServerAccessItem *access;
@@ -24,11 +24,10 @@
 @property (nonatomic, retain) CalDAVSupportedCalendarComponentSet *supportedCalendarComponentSet;
 @property (nonatomic, retain) CoreDAVLeafItem *uid;
 
+- (void).cxx_destruct;
 - (id)access;
 - (id)calendarPublic;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)hostURL;
 - (id)href;
 - (id)init;

@@ -3,7 +3,7 @@
  */
 
 @interface BLTSectionConfiguration : NSObject {
-    NSDictionary *_configurations;
+    NSDictionary * _configurations;
 }
 
 + (id)sharedSectionConfiguration;
@@ -13,5 +13,6 @@
 - (BOOL)hasSectionIDOptedOutOfAttachmentCoordination:(id)arg1;
 - (BOOL)hasSectionIDOptedOutOfCoordination:(id)arg1;
 - (id)init;
+- (BOOL)shouldSectionIDSettingsAlwaysSync:(id)arg1;
 
 @end

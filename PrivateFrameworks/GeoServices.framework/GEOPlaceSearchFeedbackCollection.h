@@ -3,20 +3,20 @@
  */
 
 @interface GEOPlaceSearchFeedbackCollection : PBCodable <NSCopying> {
-    NSMutableArray *_actionCaptures;
-    unsigned long long _businessID;
+    NSMutableArray * _actionCaptures;
+    unsigned long long  _businessID;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int businessID : 1; 
         unsigned int placeID : 1; 
         unsigned int localSearchProviderID : 1; 
-    } _has;
-    int _localSearchProviderID;
-    long long _placeID;
+    }  _has;
+    int  _localSearchProviderID;
+    long long  _placeID;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionID;
+    }  _sessionID;
 }
 
 @property (nonatomic, retain) NSMutableArray *actionCaptures;

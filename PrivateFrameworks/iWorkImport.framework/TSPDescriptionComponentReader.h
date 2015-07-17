@@ -3,7 +3,7 @@
  */
 
 @interface TSPDescriptionComponentReader : TSPComponentReader {
-    TSPDescriptionGenerator *_descriptionGenerator;
+    TSPDescriptionGenerator * _descriptionGenerator;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface TSKCOUpdateRangeOperation : TSKCOUpdateOperation <TSKCORangeOperation, TSKCOTransforming, TSKCOUpdateRangeOperationSubset> {
-    TSKCORangeAddress *mAddress;
-    int mTransformBehavior;
+    TSKCORangeAddress * mAddress;
+    int  mTransformBehavior;
 }
 
 @property (nonatomic, readonly) TSKCORangeAddress *address;

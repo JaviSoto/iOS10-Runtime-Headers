@@ -3,8 +3,8 @@
  */
 
 @interface GKGameRecentPlayersDataSource : GKBasicCollectionViewDataSource {
-    GKGame *_game;
-    GKPlayer *_player;
+    GKGame * _game;
+    GKPlayer * _player;
 }
 
 @property (nonatomic, retain) GKGame *game;

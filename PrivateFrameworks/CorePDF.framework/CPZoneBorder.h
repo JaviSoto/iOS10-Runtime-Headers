@@ -12,17 +12,17 @@
             float width; 
             float height; 
         } size; 
-    } bounds;
-    NSMutableArray *graphicObjects;
-    BOOL hasBackwardVector;
-    BOOL hasForwardVector;
-    NSMutableArray *intersections;
-    BOOL isHorizontal;
-    NSMutableArray *neighbors;
-    float overhangMax;
-    float overhangMin;
-    NSMutableArray *ownerArray;
-    CPPage *page;
+    }  bounds;
+    NSMutableArray * graphicObjects;
+    BOOL  hasBackwardVector;
+    BOOL  hasForwardVector;
+    NSMutableArray * intersections;
+    BOOL  isHorizontal;
+    NSMutableArray * neighbors;
+    float  overhangMax;
+    float  overhangMin;
+    NSMutableArray * ownerArray;
+    CPPage * page;
 }
 
 + (void)addIntersectionBetweenBorder:(id)arg1 andBorder:(id)arg2 atRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;

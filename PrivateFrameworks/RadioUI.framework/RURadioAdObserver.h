@@ -3,22 +3,22 @@
  */
 
 @interface RURadioAdObserver : NSObject <ADBannerViewDelegate, ISDialogOperationDelegate> {
-    RURTCReportingController *_RTCReportingController;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasDirtyVisualEngagement;
-    BOOL _isSlotAcquisitionInProgress;
-    MPUJinglePlayActivityReportingController *_jinglePlayActivityReportingController;
-    RUJingleTiltReportingController *_jingleTiltReportingController;
-    int _lastApplicationState;
-    double _minDurationToCountAsPlayed;
-    unsigned int _numberOfSkippedTracks;
-    MPAVController *_player;
-    int _policyEngineEnabledCount;
-    MPUReportingPlaybackObserver *_reportingPlaybackObserver;
-    double _skipThreshold;
-    ISDialogOperation *_slotAcquisitionDialogOperation;
-    int _visualEngagementCount;
-    BOOL _visuallyEngaged;
+    RURTCReportingController * _RTCReportingController;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasDirtyVisualEngagement;
+    BOOL  _isSlotAcquisitionInProgress;
+    MPUJinglePlayActivityReportingController * _jinglePlayActivityReportingController;
+    RUJingleTiltReportingController * _jingleTiltReportingController;
+    int  _lastApplicationState;
+    double  _minDurationToCountAsPlayed;
+    unsigned int  _numberOfSkippedTracks;
+    MPAVController * _player;
+    int  _policyEngineEnabledCount;
+    MPUReportingPlaybackObserver * _reportingPlaybackObserver;
+    double  _skipThreshold;
+    ISDialogOperation * _slotAcquisitionDialogOperation;
+    int  _visualEngagementCount;
+    BOOL  _visuallyEngaged;
 }
 
 @property (nonatomic, retain) RURTCReportingController *RTCReportingController;

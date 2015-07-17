@@ -3,23 +3,23 @@
  */
 
 @interface SKUIGiftItemView : UIView {
-    NSString *_artistName;
-    NSString *_categoryName;
-    SKUIClientContext *_clientContext;
-    SKUIItem *_item;
-    UIImageView *_itemImageView;
-    SKUIItemOfferButton *_itemOfferButton;
-    SKUIItemState *_itemState;
-    int _itemStyle;
-    int _numberOfUserRatings;
-    NSString *_price;
-    UIImageView *_starRatingImageView;
-    UILabel *_subtitleLabel1;
-    UILabel *_subtitleLabel2;
-    SKUIGiftTheme *_theme;
-    UILabel *_titleLabel;
-    float _userRating;
-    UILabel *_userRatingCountLabel;
+    NSString * _artistName;
+    NSString * _categoryName;
+    SKUIClientContext * _clientContext;
+    SKUIItem * _item;
+    UIImageView * _itemImageView;
+    SKUIItemOfferButton * _itemOfferButton;
+    SKUIItemState * _itemState;
+    int  _itemStyle;
+    int  _numberOfUserRatings;
+    NSString * _price;
+    UIImageView * _starRatingImageView;
+    UILabel * _subtitleLabel1;
+    UILabel * _subtitleLabel2;
+    SKUIGiftTheme * _theme;
+    UILabel * _titleLabel;
+    float  _userRating;
+    UILabel * _userRatingCountLabel;
 }
 
 @property (nonatomic, copy) NSString *artistName;

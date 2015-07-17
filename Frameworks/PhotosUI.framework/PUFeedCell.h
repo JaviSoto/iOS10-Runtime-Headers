@@ -3,11 +3,11 @@
  */
 
 @interface PUFeedCell : UICollectionViewCell <UIGestureRecognizerDelegate> {
-    UITapGestureRecognizer *__tapGestureRecognizer;
-    <PUFeedCellDelegate> *_delegate;
-    NSIndexPath *_indexPath;
-    NSString *_representedElementKind;
-    BOOL _tappable;
+    UITapGestureRecognizer * __tapGestureRecognizer;
+    <PUFeedCellDelegate> * _delegate;
+    NSIndexPath * _indexPath;
+    NSString * _representedElementKind;
+    BOOL  _tappable;
 }
 
 @property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;

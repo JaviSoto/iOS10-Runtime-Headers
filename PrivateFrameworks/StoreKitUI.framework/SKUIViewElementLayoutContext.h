@@ -3,27 +3,27 @@
  */
 
 @interface SKUIViewElementLayoutContext : NSObject {
-    float _activePageWidth;
-    NSMutableDictionary *_aggregateValues;
-    <SKUIArtworkRequestDelegate> *_artworkRequestDelegate;
-    NSString *_backdropGroupName;
-    SKUIBadgeTextAttachmentLoader *_badgeImageLoader;
-    NSMapTable *_blurColors;
-    MPUBorderDrawingCache *_borderDrawingCache;
-    SKUIClientContext *_clientContext;
-    unsigned int _containerViewElementType;
-    float _displayScale;
-    NSMapTable *_editorialLayouts;
-    NSHashTable *_expandedEditorialLayouts;
-    SKUIItemOfferButton *_itemOfferButton;
-    NSMutableDictionary *_itemOfferButtonSizes;
-    SKUIViewElementTextLayoutCache *_labelLayoutCache;
-    NSMutableSet *_observedArtworkRequestIDs;
-    UIViewController *_parentViewController;
-    UIColor *_placeholderColor;
-    NSMapTable *_placeholderImages;
-    SKUIResourceLoader *_resourceLoader;
-    UIColor *_tintColor;
+    float  _activePageWidth;
+    NSMutableDictionary * _aggregateValues;
+    <SKUIArtworkRequestDelegate> * _artworkRequestDelegate;
+    NSString * _backdropGroupName;
+    SKUIBadgeTextAttachmentLoader * _badgeImageLoader;
+    NSMapTable * _blurColors;
+    MPUBorderDrawingCache * _borderDrawingCache;
+    SKUIClientContext * _clientContext;
+    unsigned int  _containerViewElementType;
+    float  _displayScale;
+    NSMapTable * _editorialLayouts;
+    NSHashTable * _expandedEditorialLayouts;
+    SKUIItemOfferButton * _itemOfferButton;
+    NSMutableDictionary * _itemOfferButtonSizes;
+    SKUIViewElementTextLayoutCache * _labelLayoutCache;
+    NSMutableSet * _observedArtworkRequestIDs;
+    UIViewController * _parentViewController;
+    UIColor * _placeholderColor;
+    NSMapTable * _placeholderImages;
+    SKUIResourceLoader * _resourceLoader;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic) float activePageWidth;

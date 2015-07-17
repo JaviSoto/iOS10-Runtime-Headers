@@ -3,7 +3,7 @@
  */
 
 @interface MPRadioStationRemotePlaybackQueue : MPRemotePlaybackQueue {
-    RURadioStationPlaybackMetadata *_stationMetadata;
+    RURadioStationPlaybackMetadata * _stationMetadata;
 }
 
 @property (nonatomic, readonly) RURadioStationPlaybackMetadata *stationMetadata;

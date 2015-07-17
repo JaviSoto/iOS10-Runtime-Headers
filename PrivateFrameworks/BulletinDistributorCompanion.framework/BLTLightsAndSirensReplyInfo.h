@@ -3,12 +3,12 @@
  */
 
 @interface BLTLightsAndSirensReplyInfo : NSObject {
-    NSDate *_bulletinPublicationDate;
-    bool _didLogAggd;
-    unsigned int _didPlayLightsAndSirens;
-    NSDate *_expiration;
-    id /* block */ _reply;
-    BOOL _replySent;
+    NSDate * _bulletinPublicationDate;
+    bool  _didLogAggd;
+    unsigned int  _didPlayLightsAndSirens;
+    NSDate * _expiration;
+    id /* block */  _reply;
+    BOOL  _replySent;
 }
 
 @property (nonatomic, retain) NSDate *bulletinPublicationDate;

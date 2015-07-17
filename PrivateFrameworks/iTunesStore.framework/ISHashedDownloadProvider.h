@@ -3,10 +3,10 @@
  */
 
 @interface ISHashedDownloadProvider : ISDataProvider <NSCopying> {
-    int _fileDescriptor;
-    NSArray *_hashes;
-    ISHashError *_lastHashError;
-    NSString *_localFilePath;
+    int  _fileDescriptor;
+    NSArray * _hashes;
+    ISHashError * _lastHashError;
+    NSString * _localFilePath;
     struct CC_MD5state_st { 
         unsigned int A; 
         unsigned int B; 
@@ -16,11 +16,11 @@
         unsigned int Nh; 
         unsigned int data[16]; 
         int num; 
-    } _md5Context;
-    long long _numberOfBytesToHash;
-    BOOL _shouldResumeFromLocalBytes;
-    long long _totalBytesWritten;
-    long long _validatedBytes;
+    }  _md5Context;
+    long long  _numberOfBytesToHash;
+    BOOL  _shouldResumeFromLocalBytes;
+    long long  _totalBytesWritten;
+    long long  _validatedBytes;
 }
 
 @property (retain) NSArray *hashes;

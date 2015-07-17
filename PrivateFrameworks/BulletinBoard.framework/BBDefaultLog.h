@@ -3,14 +3,15 @@
  */
 
 @interface BBDefaultLog : BSFileLogger {
-    NSMutableSet *_knownCategories;
+    NSMutableSet * _knownCategories;
 }
 
 - (void)_setEnabled:(BOOL)arg1;
+- (void)_setLevel:(int)arg1;
 - (BOOL)_shouldEnableCategory:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabled;
+- (int)level;
 - (unsigned int)logDestinations;
 - (id)logPath;
 - (id)logPreferenceDomain;

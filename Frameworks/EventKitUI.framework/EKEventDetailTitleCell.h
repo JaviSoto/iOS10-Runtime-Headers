@@ -3,26 +3,30 @@
  */
 
 @interface EKEventDetailTitleCell : EKEventDetailCell {
-    NSMutableArray *_dateTimeViews;
-    NSObject<EKEventDetailTitleCellDelegate> *_delegate;
-    UIButton *_editButton;
-    BOOL _hasLocationStatus;
-    int _locationStatus;
-    UIImage *_locationStatusImage;
-    UIImageView *_locationStatusView;
-    EKTextViewWithLabelTextMetrics *_locationView;
-    BOOL _observingLocaleChanges;
-    UILabel *_recurrenceView;
-    UILabel *_statusView;
-    UILabel *_titleView;
-    UILabel *_travelTimeView;
-    unsigned int _visibleItems;
+    NSMutableArray * _dateTimeViews;
+    NSObject<EKEventDetailTitleCellDelegate> * _delegate;
+    UIButton * _editButton;
+    BOOL  _hasLocationStatus;
+    int  _locationStatus;
+    UIImage * _locationStatusImage;
+    UIImageView * _locationStatusView;
+    EKTextViewWithLabelTextMetrics * _locationView;
+    BOOL  _observingLocaleChanges;
+    UILabel * _recurrenceView;
+    UILabel * _statusView;
+    UILabel * _titleView;
+    UILabel * _travelTimeView;
+    unsigned int  _visibleItems;
 }
 
 @property (nonatomic) NSObject<EKEventDetailTitleCellDelegate> *delegate;
 
++ (void)_geocodeEventIfNeeded:(id)arg1;
 + (void)_invalidateCachedFonts;
++ (id)_largeTitleFont;
 + (id)_locationFont;
++ (id)_locationStringForStructuredLocation:(id)arg1;
++ (id)_mapsURLForLocationOnEvent:(id)arg1;
 + (void)_registerForInvalidation;
 + (id)_titleFont;
 
@@ -36,9 +40,11 @@
 - (id)_statusView;
 - (id)_titleView;
 - (id)_travelTimeView;
+- (BOOL)_useLargeFonts;
 - (void)dealloc;
 - (id)delegate;
 - (void)editButtonTapped;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setColor:(id)arg1;
 - (void)setDelegate:(id)arg1;

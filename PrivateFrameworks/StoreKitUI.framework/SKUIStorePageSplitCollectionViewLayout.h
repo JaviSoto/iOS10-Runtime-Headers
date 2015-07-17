@@ -3,12 +3,12 @@
  */
 
 @interface SKUIStorePageSplitCollectionViewLayout : _UICollectionViewCompositionLayout <SKUIStorePageCollectionViewLayout> {
-    NSString *_backdropGroupName;
-    NSArray *_indexPathsForGradientItems;
-    NSMutableArray *_orderedSublayouts;
-    BOOL _rendersWithParallax;
-    BOOL _rendersWithPerspective;
-    NSMapTable *_sublayoutToSectionsToIndexRanges;
+    NSString * _backdropGroupName;
+    NSArray * _indexPathsForGradientItems;
+    NSMutableArray * _orderedSublayouts;
+    BOOL  _rendersWithParallax;
+    BOOL  _rendersWithPerspective;
+    NSMapTable * _sublayoutToSectionsToIndexRanges;
 }
 
 @property (nonatomic, copy) NSString *backdropGroupName;

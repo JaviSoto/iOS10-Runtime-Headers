@@ -3,7 +3,7 @@
  */
 
 @interface GKVoiceChatSession : NSObject {
-    id opaqueSession;
+    id  opaqueSession;
 }
 
 @property (getter=isActiveSession) BOOL activeSession;

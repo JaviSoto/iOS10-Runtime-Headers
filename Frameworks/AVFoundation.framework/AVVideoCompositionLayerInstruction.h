@@ -3,7 +3,7 @@
  */
 
 @interface AVVideoCompositionLayerInstruction : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    AVVideoCompositionLayerInstructionInternal *_layerInstruction;
+    AVVideoCompositionLayerInstructionInternal * _layerInstruction;
 }
 
 @property (nonatomic, readonly) int trackID;

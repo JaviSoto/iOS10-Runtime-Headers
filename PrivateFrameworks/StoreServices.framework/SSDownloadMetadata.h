@@ -3,9 +3,9 @@
  */
 
 @interface SSDownloadMetadata : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_dictionary;
-    int _keyStyle;
-    NSLock *_lock;
+    NSMutableDictionary * _dictionary;
+    int  _keyStyle;
+    NSLock * _lock;
 }
 
 @property (readonly) NSArray *MD5HashStrings;
@@ -77,6 +77,7 @@
 - (unsigned long long)artistIdentifier;
 - (id)artistName;
 - (BOOL)artworkIsPrerendered;
+- (id)betaExternalVersionIdentifier;
 - (id)bundleIdentifier;
 - (id)cancelDownloadURL;
 - (id)cloudIdentifier;
@@ -153,6 +154,7 @@
 - (void)setArtistName:(id)arg1;
 - (void)setArtworkIsPrerendered:(BOOL)arg1;
 - (void)setAutomaticDownload:(BOOL)arg1;
+- (void)setBetaExternalVersionIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCancelDownloadURL:(id)arg1;
 - (void)setCloudIdentifier:(id)arg1;
@@ -223,6 +225,7 @@
 - (void)setTransitMapDataURL:(id)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
 - (void)setValuesFromDownload:(id)arg1;
+- (void)setVariantID:(id)arg1;
 - (void)setVideoDetailsDictionary:(id)arg1;
 - (void)setViewStoreItemURL:(id)arg1;
 - (id)shortDescription;
@@ -241,6 +244,7 @@
 - (id)transitMapDataURL;
 - (id)valueForFirstAvailableKey:(id)arg1;
 - (id)valueForMetadataKey:(id)arg1;
+- (id)variantID;
 - (id)videoDetailsDictionary;
 - (id)viewStoreItemURL;
 

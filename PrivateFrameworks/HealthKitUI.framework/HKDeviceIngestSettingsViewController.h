@@ -3,13 +3,13 @@
  */
 
 @interface HKDeviceIngestSettingsViewController : UITableViewController <HKSwitchTableViewCellDelegate> {
-    NSMutableArray *_dataTypeNames;
-    HKDataUnitGroupController *_dataUnitGroupController;
-    BOOL _deviceEnabled;
-    BOOL _deviceFound;
-    NSUUID *_deviceIdentifier;
-    HKHealthStore *_healthStore;
-    HKSource *_source;
+    NSMutableArray * _dataTypeNames;
+    HKDataUnitGroupController * _dataUnitGroupController;
+    BOOL  _deviceEnabled;
+    BOOL  _deviceFound;
+    NSUUID * _deviceIdentifier;
+    HKHealthStore * _healthStore;
+    HKSource * _source;
 }
 
 - (void).cxx_destruct;

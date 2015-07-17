@@ -3,19 +3,20 @@
  */
 
 @interface FTRegAccountMonitor : NSObject {
-    NSArray *_accounts;
-    FTRegConnectionHandler *_connectionHandler;
+    NSArray * _accounts;
+    FTRegConnectionHandler * _connectionHandler;
     struct { 
         unsigned int listeningForNotifications : 1; 
-    } _monitorFlags;
-    IMServiceImpl *_service;
-    int _serviceType;
+    }  _monitorFlags;
+    IMServiceImpl * _service;
+    int  _serviceType;
 }
 
 @property (nonatomic, readonly, retain) NSArray *activeAccounts;
 @property (nonatomic, retain) IMServiceImpl *service;
 @property (nonatomic) int serviceType;
 
+- (void).cxx_destruct;
 - (id)_activeAccounts;
 - (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;

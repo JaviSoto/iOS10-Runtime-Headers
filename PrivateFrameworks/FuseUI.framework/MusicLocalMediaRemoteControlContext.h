@@ -3,9 +3,9 @@
  */
 
 @interface MusicLocalMediaRemoteControlContext : NSObject {
-    MPAVItem *_currentlyPlayingItem;
-    unsigned long long _itemPersistentID;
-    MusicAVPlayer *_player;
+    MPAVItem * _currentlyPlayingItem;
+    unsigned long long  _itemPersistentID;
+    MusicAVPlayer * _player;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentlyPlayingItem;

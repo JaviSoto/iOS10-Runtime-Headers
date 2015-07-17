@@ -3,18 +3,23 @@
  */
 
 @interface SGDetection : NSObject {
-    NSString *_context;
-    NSString *_extraction;
-    BOOL _hasPhoneLabel;
-    NSString *_label;
+    NSString * _context;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _match;
-    unsigned int _type;
+    }  _contextRangeOfInterest;
+    NSString * _extraction;
+    BOOL  _hasPhoneLabel;
+    NSString * _label;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    }  _match;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSString *context;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } contextRangeOfInterest;
 @property (nonatomic, readonly) NSString *extraction;
 @property (nonatomic, readonly) BOOL hasPhoneLabel;
 @property (nonatomic, readonly) NSString *label;
@@ -25,10 +30,10 @@
 
 - (void).cxx_destruct;
 - (id)context;
-- (id)description;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })contextRangeOfInterest;
 - (id)extraction;
 - (BOOL)hasPhoneLabel;
-- (id)initWithType:(unsigned int)arg1 extraction:(id)arg2 context:(id)arg3 label:(id)arg4 hasPhoneLabel:(BOOL)arg5 match:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
+- (id)initWithType:(unsigned int)arg1 extraction:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 label:(id)arg5 hasPhoneLabel:(BOOL)arg6 match:(struct _NSRange { unsigned int x1; unsigned int x2; })arg7;
 - (id)label;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })match;
 - (unsigned int)type;

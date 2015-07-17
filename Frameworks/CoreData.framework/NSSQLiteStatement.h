@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLiteStatement : NSSQLStatement {
-    struct sqlite3_stmt { } *_cachedSQLiteStatement;
+    struct sqlite3_stmt { } * _cachedSQLiteStatement;
 }
 
 - (struct sqlite3_stmt { }*)cachedSQLiteStatement;

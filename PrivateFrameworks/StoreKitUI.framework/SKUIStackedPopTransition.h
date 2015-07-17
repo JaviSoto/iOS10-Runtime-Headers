@@ -3,9 +3,9 @@
  */
 
 @interface SKUIStackedPopTransition : NSObject <UIViewControllerAnimatedTransitioning> {
-    SKUIStackedBar *_fromBar;
-    float _split;
-    SKUIStackedBar *_toBar;
+    SKUIStackedBar * _fromBar;
+    float  _split;
+    SKUIStackedBar * _toBar;
 }
 
 @property (readonly, copy) NSString *debugDescription;

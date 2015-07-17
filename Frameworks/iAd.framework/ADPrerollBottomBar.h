@@ -3,22 +3,22 @@
  */
 
 @interface ADPrerollBottomBar : UIView {
-    double _accumulatedViewingTime;
-    ADPrerollButton *_actionButton;
-    <ADPrerollBottomBarDelegate> *_delegate;
-    BOOL _isFullscreen;
-    double _lastViewingStartTime;
-    BOOL _layoutForExpandedSize;
-    UIImage *_pauseImage;
-    UIImage *_playImage;
-    ADPrerollButton *_playPauseButton;
-    UILabel *_shortSkipLabel;
-    NSTimer *_skipAccumulationTimer;
-    ADPrerollButton *_skipButton;
-    BOOL _skipButtonCountingDown;
-    double _skipDuration;
-    UILabel *_skipLabel;
-    ADVolumeSlider *_volumeSlider;
+    double  _accumulatedViewingTime;
+    ADPrerollButton * _actionButton;
+    <ADPrerollBottomBarDelegate> * _delegate;
+    BOOL  _isFullscreen;
+    double  _lastViewingStartTime;
+    BOOL  _layoutForExpandedSize;
+    UIImage * _pauseImage;
+    UIImage * _playImage;
+    ADPrerollButton * _playPauseButton;
+    UILabel * _shortSkipLabel;
+    NSTimer * _skipAccumulationTimer;
+    ADPrerollButton * _skipButton;
+    BOOL  _skipButtonCountingDown;
+    double  _skipDuration;
+    UILabel * _skipLabel;
+    ADVolumeSlider * _volumeSlider;
 }
 
 @property (nonatomic) double accumulatedViewingTime;

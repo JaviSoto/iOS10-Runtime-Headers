@@ -3,14 +3,14 @@
  */
 
 @interface MPMediaPickerController : UIViewController {
-    BOOL _allowsPickingMultipleItems;
-    _UIAsyncInvocation *_cancelRequest;
-    <MPMediaPickerControllerDelegate> *_delegate;
-    unsigned int _mediaTypes;
-    id _modalContext;
-    NSString *_prompt;
-    MPRemoteMediaPickerController *_remoteViewController;
-    BOOL _showsCloudItems;
+    BOOL  _allowsPickingMultipleItems;
+    _UIAsyncInvocation * _cancelRequest;
+    <MPMediaPickerControllerDelegate> * _delegate;
+    unsigned int  _mediaTypes;
+    id  _modalContext;
+    NSString * _prompt;
+    MPRemoteMediaPickerController * _remoteViewController;
+    BOOL  _showsCloudItems;
 }
 
 @property (nonatomic) BOOL allowsPickingMultipleItems;
@@ -34,8 +34,9 @@
 - (BOOL)allowsPickingMultipleItems;
 - (void)dealloc;
 - (id)delegate;
-- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMediaTypes:(unsigned int)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (unsigned int)mediaTypes;
 - (id)prompt;
 - (void)remoteMediaPickerDidCancel;

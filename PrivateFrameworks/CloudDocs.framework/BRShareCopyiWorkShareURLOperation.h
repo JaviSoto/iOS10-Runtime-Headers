@@ -3,9 +3,9 @@
  */
 
 @interface BRShareCopyiWorkShareURLOperation : BROperation {
-    NSString *_appName;
-    CKShare *_share;
-    id /* block */ _shareCopyURLCompletionBlock;
+    NSString * _appName;
+    CKShare * _share;
+    id /* block */  _shareCopyURLCompletionBlock;
 }
 
 @property (nonatomic, retain) NSString *appName;

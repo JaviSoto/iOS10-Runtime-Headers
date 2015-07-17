@@ -3,12 +3,12 @@
  */
 
 @interface BLTObjectCache : NSObject {
-    NSMutableDictionary *_cachedObjects;
-    <BLTObjectCacheDelegate> *_delegate;
-    NSMutableSet *_keys;
-    double _maxItemAge;
-    int _maxItemCount;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _cachedObjects;
+    <BLTObjectCacheDelegate> * _delegate;
+    NSMutableSet * _keys;
+    double  _maxItemAge;
+    int  _maxItemCount;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;
@@ -20,6 +20,7 @@
 - (BOOL)_isObjectWithKeyCached:(id)arg1;
 - (void)_pruneCache;
 - (void)_updateCachedObjectIfNecessary:(id)arg1 withKey:(id)arg2;
+- (id)init;
 - (id)initWithDelegate:(id)arg1 withMaxItemAge:(double)arg2;
 - (id)initWithDelegate:(id)arg1 withMaxItemCount:(int)arg2;
 - (id)initWithDelegate:(id)arg1 withMaxItemCount:(int)arg2 andMaxItemAge:(double)arg3;

@@ -3,19 +3,19 @@
  */
 
 @interface TSDStyledRep : TSDRep {
-    TSDMutableReflection *mDynamicReflection;
-    TSDShadow *mDynamicShadow;
+    TSDMutableReflection * mDynamicReflection;
+    TSDShadow * mDynamicShadow;
     struct { 
         unsigned int shadowInvalid : 1; 
-    } mFlags;
-    BOOL mIsUpdatingReflectionOpacity;
-    BOOL mIsUpdatingShadow;
+    }  mFlags;
+    BOOL  mIsUpdatingReflectionOpacity;
+    BOOL  mIsUpdatingShadow;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOriginalReflectionLayerPositionInScaledCanvas;
-    CALayer *mReflectionLayer;
-    CALayer *mShadowLayer;
+    }  mOriginalReflectionLayerPositionInScaledCanvas;
+    CALayer * mReflectionLayer;
+    CALayer * mShadowLayer;
 }
 
 @property (nonatomic, readonly) float opacity;

@@ -3,11 +3,11 @@
  */
 
 @interface ML3StoreItemTrackData : NSObject {
-    NSArray *_lookupItems;
-    NSArray *_parsedStoreItemsImportProperties;
-    NSArray *_storeItems;
-    NSDateFormatter *_storePlatformDateFormatter;
-    NSData *_trackData;
+    NSArray * _lookupItems;
+    NSArray * _parsedStoreItemsImportProperties;
+    NSArray * _storeItems;
+    NSDateFormatter * _storePlatformDateFormatter;
+    NSData * _trackData;
 }
 
 @property (nonatomic, readonly) NSArray *parsedStoreItemsImportProperties;

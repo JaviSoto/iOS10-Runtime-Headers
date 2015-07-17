@@ -3,11 +3,11 @@
  */
 
 @interface IMXMLReparser : NSObject <NSXMLParserDelegate> {
-    IMXMLReparserContext *_context;
-    unsigned int _depth;
-    NSError *_error;
-    NSMutableString *_output;
-    NSXMLParser *_parser;
+    IMXMLReparserContext * _context;
+    unsigned int  _depth;
+    NSError * _error;
+    NSMutableString * _output;
+    NSXMLParser * _parser;
 }
 
 @property (readonly, copy) NSString *debugDescription;

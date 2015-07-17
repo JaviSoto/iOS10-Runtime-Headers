@@ -3,7 +3,7 @@
  */
 
 @interface PUCollectionViewData : NSObject {
-    int _cachedPageCount;
+    int  _cachedPageCount;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,9 +13,9 @@
             float width; 
             float height; 
         } size; 
-    } _currentContentBounds;
-    NSMutableArray *_itemLayoutAttributes;
-    NSMutableDictionary *_itemLayoutAttributesByIndexPath;
+    }  _currentContentBounds;
+    NSMutableArray * _itemLayoutAttributes;
+    NSMutableDictionary * _itemLayoutAttributesByIndexPath;
 }
 
 @property (nonatomic, readonly) int cachedPageCount;

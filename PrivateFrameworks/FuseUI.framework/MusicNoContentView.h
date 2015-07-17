@@ -3,16 +3,16 @@
  */
 
 @interface MusicNoContentView : UIView {
-    UIButton *_actionButton;
-    _UIBackdropView *_backdropView;
-    UIImage *_buttonBackgroundImage;
-    NSString *_buttonTitle;
-    UIView *_containerView;
-    <MusicNoContentViewDelegate> *_delegate;
-    NSString *_message;
-    UILabel *_messageLabel;
-    NSString *_title;
-    UILabel *_titleLabel;
+    UIButton * _actionButton;
+    _UIBackdropView * _backdropView;
+    UIImage * _buttonBackgroundImage;
+    NSString * _buttonTitle;
+    UIView * _containerView;
+    <MusicNoContentViewDelegate> * _delegate;
+    NSString * _message;
+    UILabel * _messageLabel;
+    NSString * _title;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *buttonTitle;

@@ -3,12 +3,12 @@
  */
 
 @interface MFMessageURLProtocol : NSURLProtocol {
-    MFMessageTextAttachment *_attachment;
-    NSMutableArray *_attachments;
-    MFMonitoredInvocation *_invocation;
-    NSThread *_loader;
-    BOOL _stopped;
-    NSURL *_url;
+    MFMessageTextAttachment * _attachment;
+    NSMutableArray * _attachments;
+    MFMonitoredInvocation * _invocation;
+    NSThread * _loader;
+    BOOL  _stopped;
+    NSURL * _url;
 }
 
 + (BOOL)canInitWithRequest:(id)arg1;

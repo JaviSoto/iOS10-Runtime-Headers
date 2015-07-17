@@ -3,8 +3,8 @@
  */
 
 @interface IMSuperToPlainParserContext : IMFromSuperParserContext {
-    BOOL _extractLinks;
-    NSMutableString *_plainString;
+    BOOL  _extractLinks;
+    NSMutableString * _plainString;
 }
 
 @property (nonatomic, readonly) NSString *plainString;

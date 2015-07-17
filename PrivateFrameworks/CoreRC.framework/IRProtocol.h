@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface IRProtocol : NSObject {
-    double _carrierFrequency;
-    unsigned char _options;
-    unsigned char _protocolID;
-    double _repeatInterval;
+@interface IRProtocol : NSObject <NSSecureCoding> {
+    double  _carrierFrequency;
+    unsigned char  _options;
+    unsigned char  _protocolID;
+    double  _repeatInterval;
 }
 
 @property (nonatomic, readonly) double carrierFrequency;
@@ -15,11 +15,14 @@
 @property (nonatomic, readonly) double repeatInterval;
 
 + (id)protocolWithID:(unsigned char)arg1 options:(unsigned char)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (double)carrierFrequency;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned char)options;

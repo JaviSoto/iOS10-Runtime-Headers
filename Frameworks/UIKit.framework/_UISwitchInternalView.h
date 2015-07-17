@@ -3,29 +3,29 @@
  */
 
 @interface _UISwitchInternalView : UIView <_UISwitchInternalViewProtocol> {
-    BOOL _animating;
-    CALayer *_backgroundLayer;
-    UIImage *_colorMask;
-    UIImageView *_colorView;
-    UIImageView *_idleImageView;
-    UIView *_interactiveView;
-    UIImageView *_labelView;
-    UIColor *_nonAlternateColor;
-    UIImage *_offImage;
-    BOOL _on;
-    UIImage *_onImage;
-    UIColor *_onTintColor;
-    float _position;
-    BOOL _pressed;
-    BOOL _sendAction;
-    UIImage *_shapeMask;
-    UIImage *_shapeShadow;
-    UIImage *_thumb;
-    UIImage *_thumbPressed;
-    UIColor *_thumbTintColor;
-    UIImageView *_thumbView;
-    UIColor *_tintColor;
-    BOOL _useAlternateColor;
+    BOOL  _animating;
+    CALayer * _backgroundLayer;
+    UIImage * _colorMask;
+    UIImageView * _colorView;
+    UIImageView * _idleImageView;
+    UIView * _interactiveView;
+    UIImageView * _labelView;
+    UIColor * _nonAlternateColor;
+    UIImage * _offImage;
+    BOOL  _on;
+    UIImage * _onImage;
+    UIColor * _onTintColor;
+    float  _position;
+    BOOL  _pressed;
+    BOOL  _sendAction;
+    UIImage * _shapeMask;
+    UIImage * _shapeShadow;
+    UIImage * _thumb;
+    UIImage * _thumbPressed;
+    UIColor * _thumbTintColor;
+    UIImageView * _thumbView;
+    UIColor * _tintColor;
+    BOOL  _useAlternateColor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -42,6 +42,7 @@
 
 + (id)_defaultOnTintColor;
 
+- (void).cxx_destruct;
 - (void)_buildControl;
 - (void)_cleanUpAfterAnimating;
 - (id)_colorImage;
@@ -58,7 +59,6 @@
 - (void)_setupBackgroundLayer;
 - (void)_setupThumbImages;
 - (id)_snapshotImage;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)offImage;
 - (BOOL)on;

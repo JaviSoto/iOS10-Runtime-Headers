@@ -6,8 +6,8 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _origin;
-    float _referenceHeight;
+    }  _origin;
+    float  _referenceHeight;
 }
 
 @property (nonatomic) float referenceHeight;

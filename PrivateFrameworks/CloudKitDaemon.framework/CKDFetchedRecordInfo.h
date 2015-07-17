@@ -3,8 +3,8 @@
  */
 
 @interface CKDFetchedRecordInfo : NSObject {
-    NSError *_error;
-    CKRecord *_record;
+    NSError * _error;
+    CKRecord * _record;
 }
 
 @property (nonatomic, retain) NSError *error;

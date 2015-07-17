@@ -3,9 +3,9 @@
  */
 
 @interface SKUICardLayout : NSObject {
-    SKUICardViewElement *_cardViewElement;
-    BOOL _hasBackground;
-    SKUIViewElementLayoutContext *_layoutContext;
+    SKUICardViewElement * _cardViewElement;
+    BOOL  _hasBackground;
+    SKUIViewElementLayoutContext * _layoutContext;
 }
 
 @property (nonatomic, readonly) SKUICardViewElement *cardViewElement;

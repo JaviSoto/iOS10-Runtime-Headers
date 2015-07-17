@@ -3,11 +3,12 @@
  */
 
 @interface UISpringBoardHostedView : UIView {
-    NSString *_remoteViewIdentifier;
-    BOOL _remoteViewOpaque;
-    UIWindow *_remoteWindow;
+    NSString * _remoteViewIdentifier;
+    BOOL  _remoteViewOpaque;
+    UIWindow * _remoteWindow;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)registerWithIdentifier:(id)arg1 andController:(id)arg2;
 - (id)remoteViewIdentifier;

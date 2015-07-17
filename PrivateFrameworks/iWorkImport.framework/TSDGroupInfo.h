@@ -3,8 +3,8 @@
  */
 
 @interface TSDGroupInfo : TSDDrawableInfo <TSDMixing, TSDMutableContainerInfo, TSDSelectionStatisticsContributor, TSKDocumentObject> {
-    NSMutableArray *mChildInfos;
-    BOOL mIsInDocument;
+    NSMutableArray * mChildInfos;
+    BOOL  mIsInDocument;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

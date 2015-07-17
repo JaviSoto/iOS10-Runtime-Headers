@@ -3,14 +3,14 @@
  */
 
 @interface RCWaveformDataSource : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
-    RCMutableWaveform *_accumulatorWaveform;
-    NSURL *_generatedWaveformOutputURL;
-    BOOL _hasSavedGeneratedWaveform;
-    BOOL _hasStartedLoading;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    RCWaveformGenerator *_waveformGenerator;
-    NSHashTable *_weakObservers;
+    RCMutableWaveform * _accumulatorWaveform;
+    NSURL * _generatedWaveformOutputURL;
+    BOOL  _hasSavedGeneratedWaveform;
+    BOOL  _hasStartedLoading;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    RCWaveformGenerator * _waveformGenerator;
+    NSHashTable * _weakObservers;
 }
 
 @property (nonatomic, readonly) RCWaveform *accumulatorWaveform;

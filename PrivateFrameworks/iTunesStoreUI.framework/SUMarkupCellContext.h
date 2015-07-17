@@ -3,10 +3,10 @@
  */
 
 @interface SUMarkupCellContext : SUItemCellContext {
-    int _pendingWebViewLoads;
-    NSString *_stylesheet;
-    struct __CFDictionary { } *_webViewCache;
-    float _webViewWidth;
+    int  _pendingWebViewLoads;
+    NSString * _stylesheet;
+    struct __CFDictionary { } * _webViewCache;
+    float  _webViewWidth;
 }
 
 @property (nonatomic, retain) NSString *stylesheet;

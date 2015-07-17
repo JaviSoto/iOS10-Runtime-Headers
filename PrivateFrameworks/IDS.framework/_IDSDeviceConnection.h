@@ -3,18 +3,18 @@
  */
 
 @interface _IDSDeviceConnection : NSObject <IDSDaemonListenerProtocol> {
-    BOOL _hasTimedOut;
-    NSInputStream *_inputStreamForSocket;
-    BOOL _isDefaultPairedDevice;
-    NSString *_nsuuid;
-    id /* block */ _openSocketCompletionHandler;
-    NSString *_openSocketCompletionHandlerID;
-    NSObject<OS_dispatch_queue> *_openSocketCompletionHandlerQueue;
-    NSOutputStream *_outputStreamForSocket;
-    NSString *_service;
-    NSString *_serviceToken;
-    int _socket;
-    NSString *_streamName;
+    BOOL  _hasTimedOut;
+    NSInputStream * _inputStreamForSocket;
+    BOOL  _isDefaultPairedDevice;
+    NSString * _nsuuid;
+    id /* block */  _openSocketCompletionHandler;
+    NSString * _openSocketCompletionHandlerID;
+    NSObject<OS_dispatch_queue> * _openSocketCompletionHandlerQueue;
+    NSOutputStream * _outputStreamForSocket;
+    NSString * _service;
+    NSString * _serviceToken;
+    int  _socket;
+    NSString * _streamName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

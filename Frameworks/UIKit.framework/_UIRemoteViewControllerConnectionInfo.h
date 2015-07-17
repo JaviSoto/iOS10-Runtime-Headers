@@ -3,19 +3,19 @@
  */
 
 @interface _UIRemoteViewControllerConnectionInfo : NSObject {
-    _UIHostedWindowHostingHandle *_hostedWindowHostingHandle;
-    _UIViewServiceInterface *_interface;
-    int _preferredStatusBarStyle;
-    BOOL _prefersStatusBarHidden;
-    _UIHostedWindowHostingHandle *_remoteKeyboardsWindowHostingHandle;
-    _UIViewServiceXPCMachSendRight *_serviceAccessibilityServerPortWrapper;
-    id _serviceViewControllerControlMessageProxy;
-    id _serviceViewControllerProxy;
-    NSArray *_serviceViewControllerSupportedInterfaceOrientations;
-    id _textEffectsOperatorProxy;
-    _UIHostedWindowHostingHandle *_textEffectsWindowAboveStatusBarHostingHandle;
-    _UIHostedWindowHostingHandle *_textEffectsWindowHostingHandle;
-    id _viewControllerOperatorProxy;
+    _UIHostedWindowHostingHandle * _hostedWindowHostingHandle;
+    _UIViewServiceInterface * _interface;
+    int  _preferredStatusBarStyle;
+    BOOL  _prefersStatusBarHidden;
+    _UIHostedWindowHostingHandle * _remoteKeyboardsWindowHostingHandle;
+    BSMachPortSendRight * _serviceAccessibilityServerPortWrapper;
+    id  _serviceViewControllerControlMessageProxy;
+    id  _serviceViewControllerProxy;
+    NSArray * _serviceViewControllerSupportedInterfaceOrientations;
+    id  _textEffectsOperatorProxy;
+    _UIHostedWindowHostingHandle * _textEffectsWindowAboveStatusBarHostingHandle;
+    _UIHostedWindowHostingHandle * _textEffectsWindowHostingHandle;
+    id  _viewControllerOperatorProxy;
 }
 
 @property (retain) _UIHostedWindowHostingHandle *hostedWindowHostingHandle;
@@ -23,7 +23,7 @@
 @property int preferredStatusBarStyle;
 @property BOOL prefersStatusBarHidden;
 @property (retain) _UIHostedWindowHostingHandle *remoteKeyboardsWindowHostingHandle;
-@property (retain) _UIViewServiceXPCMachSendRight *serviceAccessibilityServerPortWrapper;
+@property (retain) BSMachPortSendRight *serviceAccessibilityServerPortWrapper;
 @property (retain) id serviceViewControllerControlMessageProxy;
 @property (retain) id serviceViewControllerProxy;
 @property (retain) NSArray *serviceViewControllerSupportedInterfaceOrientations;
@@ -32,7 +32,7 @@
 @property (retain) _UIHostedWindowHostingHandle *textEffectsWindowHostingHandle;
 @property (retain) id viewControllerOperatorProxy;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)hostedWindowHostingHandle;
 - (id)interface;
 - (int)preferredStatusBarStyle;

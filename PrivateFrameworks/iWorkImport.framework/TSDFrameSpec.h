@@ -6,30 +6,30 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mAdornmentPosition;
+    }  mAdornmentPosition;
     struct CGSize { 
         float width; 
         float height; 
-    } mAdornmentSize;
-    float mBottomHeight;
-    float mBottomInset;
-    NSBundle *mBundle;
-    BOOL mDisplayInPicker;
-    NSString *mFrameName;
-    BOOL mHasAdornment;
-    BOOL mHasImages;
-    BOOL mHasMask;
-    int mInterest;
-    float mLeftInset;
-    float mLeftWidth;
-    BOOL mLoadedImageMetrics;
-    float mMinimumAssetScale;
-    NSMutableDictionary *mProvidersByKey;
-    float mRightInset;
-    float mRightWidth;
-    int mTilingMode;
-    float mTopHeight;
-    float mTopInset;
+    }  mAdornmentSize;
+    float  mBottomHeight;
+    float  mBottomInset;
+    NSBundle * mBundle;
+    BOOL  mDisplayInPicker;
+    NSString * mFrameName;
+    BOOL  mHasAdornment;
+    BOOL  mHasImages;
+    BOOL  mHasMask;
+    int  mInterest;
+    float  mLeftInset;
+    float  mLeftWidth;
+    BOOL  mLoadedImageMetrics;
+    float  mMinimumAssetScale;
+    NSMutableDictionary * mProvidersByKey;
+    float  mRightInset;
+    float  mRightWidth;
+    int  mTilingMode;
+    float  mTopHeight;
+    float  mTopInset;
 }
 
 @property (nonatomic, readonly) BOOL displayInPicker;

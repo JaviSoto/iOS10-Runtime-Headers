@@ -3,10 +3,10 @@
  */
 
 @interface GKBaseComposeHeaderField : UIImageView {
-    SEL _actionWhenTouched;
-    unsigned int _maxLineCount;
-    GKLabel *_nameLabel;
-    GKHairlineView *_separatorView;
+    SEL  _actionWhenTouched;
+    unsigned int  _maxLineCount;
+    GKLabel * _nameLabel;
+    GKHairlineView * _separatorView;
 }
 
 @property (nonatomic) SEL actionWhenTouched;

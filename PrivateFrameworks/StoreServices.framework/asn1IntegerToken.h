@@ -3,7 +3,7 @@
  */
 
 @interface asn1IntegerToken : asn1Token {
-    unsigned long long mValue;
+    unsigned long long  mValue;
 }
 
 @property (readonly) unsigned long long value;

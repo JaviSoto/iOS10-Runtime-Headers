@@ -3,12 +3,12 @@
  */
 
 @interface SSPurchaseManager : NSObject {
-    NSObject<OS_dispatch_queue> *_completionBlockQueue;
-    <SSPurchaseManagerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_managerIdentifier;
-    SSXPCConnection *_requestConnection;
-    SSXPCConnection *_responseConnection;
+    NSObject<OS_dispatch_queue> * _completionBlockQueue;
+    <SSPurchaseManagerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _managerIdentifier;
+    SSXPCConnection * _requestConnection;
+    SSXPCConnection * _responseConnection;
 }
 
 @property <SSPurchaseManagerDelegate> *delegate;

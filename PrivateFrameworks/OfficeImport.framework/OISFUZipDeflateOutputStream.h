@@ -18,9 +18,9 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } mDeflateStream;
-    char *mOutBuffer;
-    <SFUOutputStream> *mOutputStream;
+    }  mDeflateStream;
+    char * mOutBuffer;
+    <SFUOutputStream> * mOutputStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

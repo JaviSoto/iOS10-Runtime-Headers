@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableStrokePreset : TSPObject <TSSPreset> {
-    unsigned int mIndex;
+    unsigned int  mIndex;
 }
 
 @property (nonatomic, readonly) NSString *presetKind;

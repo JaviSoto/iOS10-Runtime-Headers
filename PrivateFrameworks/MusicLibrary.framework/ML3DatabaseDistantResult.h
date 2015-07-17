@@ -3,10 +3,10 @@
  */
 
 @interface ML3DatabaseDistantResult : ML3DatabaseResult {
-    NSArray *_cachedRows;
-    ML3DatabaseDistantConnection *_distantConnection;
-    NSArray *_parameters;
-    NSString *_sql;
+    NSArray * _cachedRows;
+    ML3DatabaseDistantConnection * _distantConnection;
+    NSArray * _parameters;
+    NSString * _sql;
 }
 
 @property (nonatomic, readonly) ML3DatabaseDistantConnection *distantConnection;

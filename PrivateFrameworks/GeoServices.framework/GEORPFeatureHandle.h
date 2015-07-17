@@ -3,10 +3,10 @@
  */
 
 @interface GEORPFeatureHandle : PBCodable <NSCopying> {
-    unsigned int _featureIndex;
-    unsigned int _featureTileX;
-    unsigned int _featureTileY;
-    unsigned int _featureTileZ;
+    unsigned int  _featureIndex;
+    unsigned int  _featureTileX;
+    unsigned int  _featureTileY;
+    unsigned int  _featureTileZ;
     struct { 
         unsigned int featureIndex : 1; 
         unsigned int featureTileX : 1; 
@@ -15,13 +15,13 @@
         unsigned int identifier : 1; 
         unsigned int style : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned int _identifier;
-    int _style;
-    struct { int x1; int x2; } *_styleAttributes;
-    unsigned int _styleAttributesCount;
-    unsigned int _styleAttributesSpace;
-    int _type;
+    }  _has;
+    unsigned int  _identifier;
+    int  _style;
+    struct { int x1; int x2; } * _styleAttributes;
+    unsigned int  _styleAttributesCount;
+    unsigned int  _styleAttributesSpace;
+    int  _type;
 }
 
 @property (nonatomic) unsigned int featureIndex;

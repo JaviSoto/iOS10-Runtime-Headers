@@ -3,24 +3,24 @@
  */
 
 @interface SKUIItemOfferButtonProperties : NSObject {
-    float _alpha;
-    NSAttributedString *_attributedText;
-    UIColor *_borderBackgroundColor;
-    UIColor *_borderColor;
-    CAFilter *_borderCompositingFilter;
-    float _borderCornerRadius;
-    float _borderWidth;
-    BOOL _cancelRecognizer;
-    int _confirmationTitleStyle;
-    BOOL _hasBorderView;
-    BOOL _hasTitleLabel;
-    UIImage *_image;
-    float _progress;
-    BOOL _progressIndeterminate;
-    int _progressType;
-    UIColor *_textColor;
-    int _titleStyle;
-    BOOL _universal;
+    float  _alpha;
+    NSAttributedString * _attributedText;
+    UIColor * _borderBackgroundColor;
+    UIColor * _borderColor;
+    CAFilter * _borderCompositingFilter;
+    float  _borderCornerRadius;
+    float  _borderWidth;
+    BOOL  _cancelRecognizer;
+    int  _confirmationTitleStyle;
+    BOOL  _hasBorderView;
+    BOOL  _hasTitleLabel;
+    UIImage * _image;
+    float  _progress;
+    BOOL  _progressIndeterminate;
+    int  _progressType;
+    UIColor * _textColor;
+    int  _titleStyle;
+    BOOL  _universal;
 }
 
 @property (nonatomic) float alpha;

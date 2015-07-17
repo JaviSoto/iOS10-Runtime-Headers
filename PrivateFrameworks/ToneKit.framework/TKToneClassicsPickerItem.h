@@ -3,7 +3,7 @@
  */
 
 @interface TKToneClassicsPickerItem : TKTonePickerItem {
-    int _classicToneIndex;
+    int  _classicToneIndex;
 }
 
 @property (nonatomic) int classicToneIndex;

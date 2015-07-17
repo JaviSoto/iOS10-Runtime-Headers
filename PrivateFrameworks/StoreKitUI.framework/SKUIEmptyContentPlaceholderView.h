@@ -8,10 +8,10 @@
         float left; 
         float bottom; 
         float right; 
-    } _imageInsets;
-    UIImageView *_imageView;
-    UILabel *_label;
-    UIButton *_signInButton;
+    }  _imageInsets;
+    UIImageView * _imageView;
+    UILabel * _label;
+    UIButton * _signInButton;
 }
 
 @property (nonatomic, retain) UIImage *placeholderImage;

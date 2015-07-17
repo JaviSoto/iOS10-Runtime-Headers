@@ -3,7 +3,7 @@
  */
 
 @interface SKRemoteComposeReviewViewController : _UIRemoteViewController <SKUIClientComposeReviewViewController> {
-    SKComposeReviewViewController *_composeReviewViewController;
+    SKComposeReviewViewController * _composeReviewViewController;
 }
 
 @property (nonatomic) SKComposeReviewViewController *composeReviewViewController;

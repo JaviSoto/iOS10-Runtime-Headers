@@ -3,12 +3,12 @@
  */
 
 @interface MPAVRoutingSheet : UIView <MPAVRoutingViewControllerDelegate> {
-    UIView *_backgroundView;
-    UIButton *_cancelButton;
-    id /* block */ _completionHandler;
-    UIView *_controlsView;
-    UIWindow *_presentationWindow;
-    MPAVRoutingViewController *_routingViewController;
+    UIView * _backgroundView;
+    UIButton * _cancelButton;
+    id /* block */  _completionHandler;
+    UIView * _controlsView;
+    UIWindow * _presentationWindow;
+    MPAVRoutingViewController * _routingViewController;
 }
 
 @property (setter=setAVItemType:, nonatomic) unsigned int avItemType;

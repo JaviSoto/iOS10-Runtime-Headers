@@ -6,12 +6,12 @@
     struct { 
         unsigned int maxResults : 1; 
         unsigned int sortOrder : 1; 
-    } _has;
-    unsigned int _maxResults;
-    GEOLatLng *_searchLocation;
-    NSString *_searchString;
-    int _sortOrder;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    GEOLatLng * _searchLocation;
+    NSString * _searchString;
+    int  _sortOrder;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;
@@ -36,7 +36,7 @@
 - (BOOL)hasSortOrder;
 - (BOOL)hasViewportInfo;
 - (unsigned int)hash;
-- (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;

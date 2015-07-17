@@ -3,7 +3,7 @@
  */
 
 @interface CPLEngineResourceUploadQueue : CPLEngineStorage <CPLAbstractObject> {
-    BOOL _immediateUploads;
+    BOOL  _immediateUploads;
 }
 
 @property (readonly, copy) NSString *debugDescription;

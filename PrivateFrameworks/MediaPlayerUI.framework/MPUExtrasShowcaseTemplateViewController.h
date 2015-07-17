@@ -3,14 +3,14 @@
  */
 
 @interface MPUExtrasShowcaseTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasCarouselViewControllerDataSource, MPUExtrasCarouselViewControllerDelegate, MPUExtrasImageBrowserViewControllerDataSource, MPUExtrasNavigationAnimationControllerProvider, MPUExtrasZoomingImageInteractiveTransitionSource, MPUExtrasZoomingImageTransitionParticipant> {
-    MPUExtrasZoomingImageTransitionController *_activeZoomingImageInteractiveTransitionController;
-    unsigned int _autohighlightIndex;
-    NSArray *_bannerButtonElements;
-    NSArray *_carouselLockupElements;
-    MPUExtrasCarouselViewController *_carouselViewController;
-    MPUExtrasImageBrowserViewController *_imageBrowserViewController;
-    NSDictionary *_overriddenFullscreenImages;
-    BOOL _supportsOneupMode;
+    MPUExtrasZoomingImageTransitionController * _activeZoomingImageInteractiveTransitionController;
+    unsigned int  _autohighlightIndex;
+    NSArray * _bannerButtonElements;
+    NSArray * _carouselLockupElements;
+    MPUExtrasCarouselViewController * _carouselViewController;
+    MPUExtrasImageBrowserViewController * _imageBrowserViewController;
+    NSDictionary * _overriddenFullscreenImages;
+    BOOL  _supportsOneupMode;
 }
 
 @property (nonatomic, retain) MPUExtrasZoomingImageTransitionController *activeZoomingImageInteractiveTransitionController;

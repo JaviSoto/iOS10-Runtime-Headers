@@ -3,17 +3,17 @@
  */
 
 @interface TSTStrokeDefaultVendor : NSObject {
-    unsigned int _bodySideBorderColumn;
-    unsigned int _bottomBorderRow;
-    unsigned int _footerRowSeparatorRow;
-    unsigned int _headerColumnSeparatorColumn;
-    unsigned int _headerRowSeparatorRow;
-    unsigned int _headerSideBorderColumn;
-    BOOL _isValid;
-    TSTMasterLayout *_masterLayout;
-    <TSTTableStrokeProviding> *_strokeProvider;
-    NSPointerArray *_strokeTypeToLayerMap;
-    unsigned int _topBorderRow;
+    unsigned int  _bodySideBorderColumn;
+    unsigned int  _bottomBorderRow;
+    unsigned int  _footerRowSeparatorRow;
+    unsigned int  _headerColumnSeparatorColumn;
+    unsigned int  _headerRowSeparatorRow;
+    unsigned int  _headerSideBorderColumn;
+    BOOL  _isValid;
+    TSTMasterLayout * _masterLayout;
+    <TSTTableStrokeProviding> * _strokeProvider;
+    NSPointerArray * _strokeTypeToLayerMap;
+    unsigned int  _topBorderRow;
 }
 
 @property (nonatomic) unsigned int bodySideBorderColumn;

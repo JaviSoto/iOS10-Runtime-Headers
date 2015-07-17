@@ -3,15 +3,15 @@
  */
 
 @interface BKSApplicationStateMonitor : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    BOOL _denied;
-    id /* block */ _handler;
-    NSArray *_interestedBundleIDs;
-    unsigned int _interestedStates;
-    BSSignal *_invalidationSignal;
-    NSObject<OS_dispatch_queue> *_messageHandlingQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_xpc_object> *_serverEndpoint;
+    NSObject<OS_xpc_object> * _connection;
+    BOOL  _denied;
+    id /* block */  _handler;
+    NSArray * _interestedBundleIDs;
+    unsigned int  _interestedStates;
+    BSSignal * _invalidationSignal;
+    NSObject<OS_dispatch_queue> * _messageHandlingQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_xpc_object> * _serverEndpoint;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

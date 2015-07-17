@@ -3,11 +3,11 @@
  */
 
 @interface SKUIOnboardingProgressView : UIView {
-    SKUIShapeView *_borderView;
-    UIImageView *_imageView;
-    float _progress;
-    SKUIShapeView *_progressView;
-    UILabel *_titleLabel;
+    SKUIShapeView * _borderView;
+    UIImageView * _imageView;
+    float  _progress;
+    SKUIShapeView * _progressView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) UIColor *fillColor;

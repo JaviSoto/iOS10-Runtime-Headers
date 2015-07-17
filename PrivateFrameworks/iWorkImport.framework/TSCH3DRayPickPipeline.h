@@ -14,8 +14,8 @@
             float g; 
             float t; 
         } ; 
-    } mPickPosition;
-    TSCH3DRayPickPipelineDelegate *mSceneObjectDelegate;
+    }  mPickPosition;
+    TSCH3DRayPickPipelineDelegate * mSceneObjectDelegate;
 }
 
 @property (nonatomic, readonly) TSCH3DPickedPoint *pickedPoint;

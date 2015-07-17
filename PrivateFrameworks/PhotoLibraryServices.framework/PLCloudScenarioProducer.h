@@ -3,8 +3,8 @@
  */
 
 @interface PLCloudScenarioProducer : NSObject {
-    <PLCloudScenarioConsumer> *_consumer;
-    NSArray *_triggers;
+    <PLCloudScenarioConsumer> * _consumer;
+    NSArray * _triggers;
 }
 
 @property (nonatomic, retain) <PLCloudScenarioConsumer> *consumer;
@@ -15,8 +15,7 @@
 - (void)dealloc;
 - (void)setConsumer:(id)arg1;
 - (void)setTriggers:(id)arg1;
-- (void)subscribeToTriggerType:(unsigned int)arg1 withSelector:(SEL)arg2;
+- (void)subscribeToTriggerType:(Class)arg1 withSelector:(SEL)arg2;
 - (id)triggers;
-- (void)unsubscribeFromTriggerType:(unsigned int)arg1;
 
 @end

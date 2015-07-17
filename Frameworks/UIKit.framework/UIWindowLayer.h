@@ -3,7 +3,7 @@
  */
 
 @interface UIWindowLayer : CALayer {
-    UIWindow *_window;
+    UIWindow * _window;
 }
 
 - (id)actionForKey:(id)arg1;

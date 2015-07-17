@@ -3,12 +3,12 @@
  */
 
 @interface TRDServerConnection : TRTCPConnection {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableArray *_authorizationCompletionHandlers;
-    BOOL _authorized;
-    TRDBrowser *_browser;
-    NSObject<OS_dispatch_queue> *_packetEventQueue;
-    TRService *_service;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableArray * _authorizationCompletionHandlers;
+    BOOL  _authorized;
+    TRDBrowser * _browser;
+    NSObject<OS_dispatch_queue> * _packetEventQueue;
+    TRService * _service;
 }
 
 @property (nonatomic, readonly) TRService *service;

@@ -3,12 +3,10 @@
  */
 
 @interface IMItemChatContext : NSObject {
-    IMHandle *_otherHandle;
-    IMHandle *_senderHandle;
+    IMHandle * _otherHandle;
+    IMHandle * _senderHandle;
 }
 
 - (void)dealloc;
-- (id)sender;
-- (id)subject;
 
 @end

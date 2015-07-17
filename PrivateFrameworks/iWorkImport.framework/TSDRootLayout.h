@@ -3,9 +3,9 @@
  */
 
 @interface TSDRootLayout : TSDAbstractLayout <TSDAdaptiveLayout> {
-    TSDLayoutController *mLayoutController;
-    TSUPointerKeyDictionary *mShiftedObjects;
-    BOOL mSupportsAdaptiveLayout;
+    TSDLayoutController * mLayoutController;
+    TSUPointerKeyDictionary * mShiftedObjects;
+    BOOL  mSupportsAdaptiveLayout;
 }
 
 - (struct CGPoint { float x1; float x2; })applyAdaptiveLayoutTo:(id)arg1 info:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3;

@@ -3,18 +3,18 @@
  */
 
 @interface GEOETAResult : PBCodable <NSCopying> {
-    unsigned int _distance;
+    unsigned int  _distance;
     struct { 
         unsigned int distance : 1; 
         unsigned int historicTravelTime : 1; 
         unsigned int liveTravelTime : 1; 
         unsigned int status : 1; 
-    } _has;
-    unsigned int _historicTravelTime;
-    unsigned int _liveTravelTime;
-    GEOPlaceSearchResponse *_placeSearchResponse;
-    NSMutableArray *_sortedETAs;
-    int _status;
+    }  _has;
+    unsigned int  _historicTravelTime;
+    unsigned int  _liveTravelTime;
+    GEOPlaceSearchResponse * _placeSearchResponse;
+    NSMutableArray * _sortedETAs;
+    int  _status;
 }
 
 @property (nonatomic) unsigned int distance;

@@ -3,12 +3,12 @@
  */
 
 @interface NSInvocation : NSObject {
-    id _container;
-    void *_frame;
-    unsigned char _reserved;
-    unsigned char _retainedArgs;
-    void *_retdata;
-    id _signature;
+    id  _container;
+    void * _frame;
+    unsigned char  _reserved;
+    unsigned char  _retainedArgs;
+    void * _retdata;
+    id  _signature;
 }
 
 @property (readonly) BOOL argumentsRetained;
@@ -84,8 +84,8 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (void)executeBlock:(id /* block */)arg1;
-+ (id)invocationWithBlock:(id /* block */)arg1;
++ (void)tsu_executeBlock:(id /* block */)arg1;
++ (id)tsu_invocationWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

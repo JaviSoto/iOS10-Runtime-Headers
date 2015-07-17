@@ -3,13 +3,13 @@
  */
 
 @interface SUShadow : NSObject <NSCoding, NSCopying> {
-    UIColor *_color;
+    UIColor * _color;
     struct CGSize { 
         float width; 
         float height; 
-    } _offset;
-    float _opacity;
-    float _radius;
+    }  _offset;
+    float  _opacity;
+    float  _radius;
 }
 
 @property (nonatomic, retain) UIColor *color;

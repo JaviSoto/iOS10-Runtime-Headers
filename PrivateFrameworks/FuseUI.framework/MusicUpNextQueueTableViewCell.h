@@ -3,8 +3,8 @@
  */
 
 @interface MusicUpNextQueueTableViewCell : MusicUpNextTableViewCell {
-    BOOL _isReordering;
-    MusicUpNextPunchOutView *_punchOutView;
+    BOOL  _isReordering;
+    MusicUpNextPunchOutView * _punchOutView;
 }
 
 - (void).cxx_destruct;

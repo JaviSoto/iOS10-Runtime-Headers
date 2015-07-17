@@ -3,8 +3,8 @@
  */
 
 @interface TSDSpecSetLineEnd : TSDSpecLineEnd {
-    TSDLineEnd *_lineEnd;
-    BOOL _unset;
+    TSDLineEnd * _lineEnd;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface FBWorkspaceServer : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    <FBWorkspaceServerDelegate> *_delegate;
-    BSSignal *_invalidateSignal;
-    NSMutableArray *_messagesQueuedForSend;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_sceneIDToSceneHandlerMap;
-    unsigned int _transactionBlockDepth;
-    BOOL _triedToSendMessageInTransaction;
+    NSObject<OS_xpc_object> * _connection;
+    <FBWorkspaceServerDelegate> * _delegate;
+    BSSignal * _invalidateSignal;
+    NSMutableArray * _messagesQueuedForSend;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _sceneIDToSceneHandlerMap;
+    unsigned int  _transactionBlockDepth;
+    BOOL  _triedToSendMessageInTransaction;
 }
 
 @property (nonatomic) <FBWorkspaceServerDelegate> *delegate;
@@ -24,11 +24,11 @@
 - (void)_queue_handleDestroySceneRequest:(id)arg1;
 - (void)_queue_handleMessage:(id)arg1;
 - (BOOL)_queue_handleMessage:(id)arg1 withType:(long long)arg2;
-- (void)_queue_handleSceneAttachContext:(id)arg1;
-- (void)_queue_handleSceneDetachContext:(id)arg1;
+- (void)_queue_handleSceneAttachLayer:(id)arg1;
+- (void)_queue_handleSceneDetachLayer:(id)arg1;
 - (void)_queue_handleSceneDidReceiveActions:(id)arg1;
 - (void)_queue_handleSceneDidUpdateClientSettings:(id)arg1;
-- (void)_queue_handleSceneUpdateContext:(id)arg1;
+- (void)_queue_handleSceneUpdateLayer:(id)arg1;
 - (void)_queue_invalidate;
 - (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2;
 - (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2 withResponseEvent:(id /* block */)arg3 ofType:(Class)arg4;

@@ -3,12 +3,12 @@
  */
 
 @interface MCDAlbumsDetailTableHeaderView : UITableViewHeaderFooterView {
-    UIImageView *_artworkImageView;
-    UIView *_separatorView;
-    id /* block */ _shuffleActionBlock;
-    MCDButton *_shuffleButton;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    UIImageView * _artworkImageView;
+    UIView * _separatorView;
+    id /* block */  _shuffleActionBlock;
+    MCDButton * _shuffleButton;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *artworkImage;

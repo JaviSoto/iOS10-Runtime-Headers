@@ -3,11 +3,11 @@
  */
 
 @interface GKAchievement : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    GKGame *_game;
-    BOOL _hidden;
-    GKAchievementInternal *_internal;
-    GKPlayer *_player;
-    BOOL _showsCompletionBanner;
+    GKGame * _game;
+    BOOL  _hidden;
+    GKAchievementInternal * _internal;
+    GKPlayer * _player;
+    BOOL  _showsCompletionBanner;
 }
 
 @property (getter=isCompleted, nonatomic, readonly) BOOL completed;
@@ -35,6 +35,7 @@
 + (void)resetAchievementsWithCompletionHandler:(id /* block */)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)_achievementDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

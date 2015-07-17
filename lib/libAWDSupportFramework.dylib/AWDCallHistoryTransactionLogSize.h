@@ -7,10 +7,10 @@
         unsigned int timestamp : 1; 
         unsigned int records : 1; 
         unsigned int sizeBytes : 1; 
-    } _has;
-    unsigned int _records;
-    unsigned int _sizeBytes;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _records;
+    unsigned int  _sizeBytes;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasRecords;

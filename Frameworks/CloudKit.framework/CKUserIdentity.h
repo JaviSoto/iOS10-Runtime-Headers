@@ -3,13 +3,13 @@
  */
 
 @interface CKUserIdentity : NSObject <NSSecureCoding> {
-    NSString *_emailAddress;
-    NSString *_firstName;
-    BOOL _hasiCloudAccount;
-    BOOL _hasiCloudAccountSupportingSharing;
-    NSString *_lastName;
-    NSData *_protectionData;
-    CKRecordID *_userRecordID;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    BOOL  _hasiCloudAccount;
+    BOOL  _hasiCloudAccountSupportingSharing;
+    NSString * _lastName;
+    NSData * _protectionData;
+    CKRecordID * _userRecordID;
 }
 
 @property (nonatomic, copy) NSString *emailAddress;

@@ -3,18 +3,18 @@
  */
 
 @interface PKPassFieldView : UIView {
-    int _background;
+    int  _background;
     struct CGSize { 
         float width; 
         float height; 
-    } _cachedSize;
-    PKPassColorProfile *_colorProfile;
-    PKDiffView *_diffView;
-    PKPassField *_field;
-    PKPassFieldTemplate *_fieldTemplate;
-    UILabel *_labelLabel;
-    BOOL _needsRecalculation;
-    UILabel *_valueLabel;
+    }  _cachedSize;
+    PKPassColorProfile * _colorProfile;
+    PKDiffView * _diffView;
+    PKPassField * _field;
+    PKPassFieldTemplate * _fieldTemplate;
+    UILabel * _labelLabel;
+    BOOL  _needsRecalculation;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, retain) PKPassColorProfile *colorProfile;

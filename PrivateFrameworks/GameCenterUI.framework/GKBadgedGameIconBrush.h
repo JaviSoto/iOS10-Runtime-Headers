@@ -3,7 +3,7 @@
  */
 
 @interface GKBadgedGameIconBrush : GKThemeBrush {
-    GKThemeBrush *_badgeBrush;
+    GKThemeBrush * _badgeBrush;
 }
 
 @property (nonatomic, retain) GKThemeBrush *badgeBrush;

@@ -3,32 +3,32 @@
  */
 
 @interface _UIDatePickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate> {
-    BOOL _allowsZeroTimeInterval;
-    _UIDatePickerChineseCalendar *_chineseWrapperCalendar;
-    NSLocale *_compositeLocale;
-    UIDatePicker *_datePickerDelegate;
+    BOOL  _allowsZeroTimeInterval;
+    _UIDatePickerChineseCalendar * _chineseWrapperCalendar;
+    NSLocale * _compositeLocale;
+    UIDatePicker * _datePickerDelegate;
     struct { 
         unsigned int staggerTimeIntervals : 1; 
         unsigned int loadingDateOrTime : 1; 
         unsigned int highlightsToday : 1; 
         unsigned int usesBlackChrome : 1; 
-    } _datePickerFlags;
-    id _delegateOfDatePicker;
-    int _expectedAMPM;
-    UILabel *_hourLabel;
-    NSDateComponents *_lastSelectedDateComponents;
-    int _loadingDate;
-    NSDate *_maximumDate;
-    NSDate *_minimumDate;
-    UILabel *_minuteLabel;
-    _UIDatePickerMode *_mode;
-    double _timeInterval;
-    NSTimeZone *_timeZone;
-    NSCalendar *_userProvidedCalendar;
-    NSLocale *_userProvidedLocale;
-    NSDate *_userSuppliedDate;
-    NSDate *_userSuppliedMaximumDate;
-    NSDate *_userSuppliedMinimumDate;
+    }  _datePickerFlags;
+    id  _delegateOfDatePicker;
+    int  _expectedAMPM;
+    UILabel * _hourLabel;
+    NSDateComponents * _lastSelectedDateComponents;
+    int  _loadingDate;
+    NSDate * _maximumDate;
+    NSDate * _minimumDate;
+    UILabel * _minuteLabel;
+    _UIDatePickerMode * _mode;
+    double  _timeInterval;
+    NSTimeZone * _timeZone;
+    NSCalendar * _userProvidedCalendar;
+    NSLocale * _userProvidedLocale;
+    NSDate * _userSuppliedDate;
+    NSDate * _userSuppliedMaximumDate;
+    NSDate * _userSuppliedMinimumDate;
 }
 
 @property (getter=_allowsZeroCountDownDuration, setter=_setAllowsZeroCountDownDuration:, nonatomic) BOOL allowsZeroCountDownDuration;
@@ -61,6 +61,7 @@
 @property (nonatomic, retain) NSLocale *userProvidedLocale;
 @property (getter=_usesBlackChrome, setter=_setUsesBlackChrome:, nonatomic) BOOL usesBlackChrome;
 
+- (void).cxx_destruct;
 - (BOOL)_allowsZeroCountDownDuration;
 - (BOOL)_allowsZeroTimeInterval;
 - (int)_amPmValue;

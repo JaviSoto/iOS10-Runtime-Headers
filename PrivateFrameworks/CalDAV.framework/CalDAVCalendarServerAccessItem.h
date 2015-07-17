@@ -3,18 +3,16 @@
  */
 
 @interface CalDAVCalendarServerAccessItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_accessLevel;
+    CoreDAVItemWithNoChildren * _accessLevel;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *accessLevel;
 
+- (void).cxx_destruct;
 - (id)accessLevel;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)init;
 - (id)initWithAccess:(int)arg1;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setAccessLevel:(id)arg1;
 
 @end

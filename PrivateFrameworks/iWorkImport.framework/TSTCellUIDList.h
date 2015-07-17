@@ -9,37 +9,37 @@
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct UUIDData<TSP::UUIDData> {} *__first_; 
         } __end_cap_; 
-    } _columnIdList;
+    }  _columnIdList;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
             int *__first_; 
         } __end_cap_; 
-    } _columnUIDIndexList;
-    unsigned long _compressedSize;
-    NSObject<OS_dispatch_queue> *_queue;
+    }  _columnUIDIndexList;
+    unsigned long  _compressedSize;
+    NSObject<OS_dispatch_queue> * _queue;
     struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct UUIDData<TSP::UUIDData> {} *__begin_; 
         struct UUIDData<TSP::UUIDData> {} *__end_; 
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct UUIDData<TSP::UUIDData> {} *__first_; 
         } __end_cap_; 
-    } _rowIdList;
+    }  _rowIdList;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
             int *__first_; 
         } __end_cap_; 
-    } _rowUIDIndexList;
+    }  _rowUIDIndexList;
     struct vector<TSTCellUID, std::__1::allocator<TSTCellUID> > { 
         struct TSTCellUID {} *__begin_; 
         struct TSTCellUID {} *__end_; 
         struct __compressed_pair<TSTCellUID *, std::__1::allocator<TSTCellUID> > { 
             struct TSTCellUID {} *__first_; 
         } __end_cap_; 
-    } _uncompressedCellUIDs;
+    }  _uncompressedCellUIDs;
 }
 
 @property (nonatomic, readonly) unsigned long compressedSize;

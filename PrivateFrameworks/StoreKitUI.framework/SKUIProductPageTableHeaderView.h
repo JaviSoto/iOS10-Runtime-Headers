@@ -8,8 +8,8 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UILabel *_titleLabel;
+    }  _contentInsets;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;

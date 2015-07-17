@@ -3,12 +3,12 @@
  */
 
 @interface CKDPublicIdentityLookupService : NSObject {
-    CKDKeyValueDiskCache *_cache;
-    CKDClientContext *_context;
-    NSObject<OS_dispatch_source> *_lookupSource;
-    CKDOperation *_operationToUseForSettingUpThelookup;
-    NSMutableArray *_pendingRequests;
-    NSObject<OS_dispatch_queue> *_queue;
+    CKDKeyValueDiskCache * _cache;
+    CKDClientContext * _context;
+    NSObject<OS_dispatch_source> * _lookupSource;
+    CKDOperation * _operationToUseForSettingUpThelookup;
+    NSMutableArray * _pendingRequests;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) CKDClientContext *context;

@@ -3,27 +3,27 @@
  */
 
 @interface WBUPrintPageRenderer : UIPrintPageRenderer <UIPrintInteractionControllerDelegate> {
-    NSString *_URLString;
-    float _URLWidth;
-    UIWebBrowserView *_browserView;
-    UIPrintFormatter *_contentFormatter;
+    NSString * _URLString;
+    float  _URLWidth;
+    UIWebBrowserView * _browserView;
+    UIPrintFormatter * _contentFormatter;
     struct CGPoint { 
         float x; 
         float y; 
-    } _contentOffset;
-    NSString *_dateString;
-    float _dateWidth;
-    UIColor *_footerColor;
-    UIFont *_footerFont;
+    }  _contentOffset;
+    NSString * _dateString;
+    float  _dateWidth;
+    UIColor * _footerColor;
+    UIFont * _footerFont;
     struct CGPoint { 
         float x; 
         float y; 
-    } _footerOffset;
-    NSNumberFormatter *_numberFormatter;
-    UIWebPaginationInfo *_paginationInfo;
-    BOOL _printFooter;
-    float _printWidth;
-    WebFrame *_webFrame;
+    }  _footerOffset;
+    NSNumberFormatter * _numberFormatter;
+    UIWebPaginationInfo * _paginationInfo;
+    BOOL  _printFooter;
+    float  _printWidth;
+    WebFrame * _webFrame;
 }
 
 @property (nonatomic, retain) NSString *URLString;

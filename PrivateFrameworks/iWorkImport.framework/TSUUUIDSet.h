@@ -3,7 +3,7 @@
  */
 
 @interface TSUUUIDSet : NSObject <NSCopying, NSMutableCopying> {
-    unsigned int _index;
+    unsigned int  _index;
     struct unordered_set<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct __hash_table<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct unique_ptr<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> > > { 
@@ -28,7 +28,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _uuidSet;
+    }  _uuidSet;
 }
 
 @property (readonly) unsigned int count;

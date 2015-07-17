@@ -3,8 +3,8 @@
  */
 
 @interface SKUISearchDisplayController : UISearchDisplayController {
-    NSMutableString *_paddingString;
-    UILabel *_suffixLabel;
+    NSMutableString * _paddingString;
+    UILabel * _suffixLabel;
 }
 
 - (void).cxx_destruct;

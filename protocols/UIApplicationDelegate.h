@@ -19,10 +19,13 @@
 - (void)application:(UIApplication *)arg1 didRegisterUserNotificationSettings:(UIUserNotificationSettings *)arg2;
 - (void)application:(UIApplication *)arg1 didUpdateUserActivity:(NSUserActivity *)arg2;
 - (void)application:(void *)arg1 handleActionWithIdentifier:(void *)arg2 forLocalNotification:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: UIApplication *, NSString *, UILocalNotification *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)application:(void *)arg1 handleActionWithIdentifier:(void *)arg2 forLocalNotification:(void *)arg3 withResponseInfo:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 9: UIApplication *, NSString *, UILocalNotification *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)application:(void *)arg1 handleActionWithIdentifier:(void *)arg2 forRemoteNotification:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: UIApplication *, NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)application:(void *)arg1 handleActionWithIdentifier:(void *)arg2 forRemoteNotification:(void *)arg3 withResponseInfo:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 9: UIApplication *, NSString *, NSDictionary *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)application:(void *)arg1 handleEventsForBackgroundURLSession:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 7: UIApplication *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (BOOL)application:(UIApplication *)arg1 handleOpenURL:(NSURL *)arg2;
 - (void)application:(void *)arg1 handleWatchKitExtensionRequest:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: UIApplication *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (BOOL)application:(UIApplication *)arg1 openURL:(NSURL *)arg2 options:(NSDictionary *)arg3;
 - (BOOL)application:(UIApplication *)arg1 openURL:(NSURL *)arg2 sourceApplication:(NSString *)arg3 annotation:(id)arg4;
 - (void)application:(void *)arg1 performFetchWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: UIApplication *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, void*
 - (BOOL)application:(UIApplication *)arg1 shouldAllowExtensionPointIdentifier:(NSString *)arg2;
@@ -41,6 +44,7 @@
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)arg1;
 - (void)applicationProtectedDataDidBecomeAvailable:(UIApplication *)arg1;
 - (void)applicationProtectedDataWillBecomeUnavailable:(UIApplication *)arg1;
+- (void)applicationShouldRequestHealthAuthorization:(UIApplication *)arg1;
 - (void)applicationSignificantTimeChange:(UIApplication *)arg1;
 - (void)applicationWillEnterForeground:(UIApplication *)arg1;
 - (void)applicationWillResignActive:(UIApplication *)arg1;

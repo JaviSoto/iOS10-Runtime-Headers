@@ -3,29 +3,29 @@
  */
 
 @interface MPVolumeView : UIView <MPAVRoutingControllerDelegate, NSCoding> {
-    BOOL _hasNonDefaultMaxVolumeSliderImage;
-    BOOL _hasNonDefaultMinVolumeSliderImage;
-    BOOL _hasNonDefaultRouteButtonImages;
-    BOOL _hidesRouteLabelWhenNoRouteChoice;
-    BOOL _pushedRouteDiscoveryModeState;
-    UIButton *_routeButton;
-    BOOL _routeButtonShowsTouchWhenHighlighted;
-    BOOL _routeDiscoveryEnabled;
-    UILabel *_routeLabel;
-    MPAudioVideoRoutingPopoverController *_routePopoverController;
-    unsigned int _routePopoverPermittedArrowDirections;
-    MPAVRoutingController *_routingController;
-    MPAVRoutingSheet *_routingSheet;
-    BOOL _showingButton;
-    BOOL _showingLabel;
-    BOOL _showingSlider;
-    BOOL _showsRouteButton;
-    BOOL _showsVolumeSlider;
-    int _style;
-    MPVolumeSlider *_volumeSlider;
-    BOOL _volumeSliderShrinksFromBothEnds;
-    BOOL _wirelessRouteIsPicked;
-    BOOL _wirelessRoutesAvailable;
+    BOOL  _hasNonDefaultMaxVolumeSliderImage;
+    BOOL  _hasNonDefaultMinVolumeSliderImage;
+    BOOL  _hasNonDefaultRouteButtonImages;
+    BOOL  _hidesRouteLabelWhenNoRouteChoice;
+    BOOL  _pushedRouteDiscoveryModeState;
+    UIButton * _routeButton;
+    BOOL  _routeButtonShowsTouchWhenHighlighted;
+    BOOL  _routeDiscoveryEnabled;
+    UILabel * _routeLabel;
+    MPAudioVideoRoutingPopoverController * _routePopoverController;
+    unsigned int  _routePopoverPermittedArrowDirections;
+    MPAVRoutingController * _routingController;
+    MPAVRoutingSheet * _routingSheet;
+    BOOL  _showingButton;
+    BOOL  _showingLabel;
+    BOOL  _showingSlider;
+    BOOL  _showsRouteButton;
+    BOOL  _showsVolumeSlider;
+    int  _style;
+    MPVolumeSlider * _volumeSlider;
+    BOOL  _volumeSliderShrinksFromBothEnds;
+    BOOL  _wirelessRouteIsPicked;
+    BOOL  _wirelessRoutesAvailable;
 }
 
 @property (readonly, copy) NSString *debugDescription;

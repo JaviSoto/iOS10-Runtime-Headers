@@ -3,21 +3,21 @@
  */
 
 @interface EDSheet : OCDDelayedNode {
-    OITSUPointerKeyDictionary *mCommentMap;
-    EDColorReference *mDefaultGridlineColorReference;
-    bool mDisplayFormulas;
-    bool mDisplayGridlines;
-    NSMutableArray *mDrawables;
-    ESDContainer *mEscherDrawing;
-    EDHeaderFooter *mHeaderFooter;
-    bool mHidden;
-    bool mIsDialogSheet;
-    EDString *mName;
-    EDPageSetup *mPageSetup;
-    EDProcessors *mProcessors;
-    OITSUPointerKeyDictionary *mTextBoxMap;
-    EDWarnings *mWarnings;
-    EDWorkbook *mWorkbook;
+    OITSUPointerKeyDictionary * mCommentMap;
+    EDColorReference * mDefaultGridlineColorReference;
+    bool  mDisplayFormulas;
+    bool  mDisplayGridlines;
+    NSMutableArray * mDrawables;
+    ESDContainer * mEscherDrawing;
+    EDHeaderFooter * mHeaderFooter;
+    bool  mHidden;
+    bool  mIsDialogSheet;
+    EDString * mName;
+    EDPageSetup * mPageSetup;
+    EDProcessors * mProcessors;
+    OITSUPointerKeyDictionary * mTextBoxMap;
+    EDWarnings * mWarnings;
+    EDWorkbook * mWorkbook;
 }
 
 @property (nonatomic) bool isDialogSheet;
@@ -30,6 +30,7 @@
 - (void)dealloc;
 - (id)defaultGridlineColor;
 - (id)defaultGridlineColorReference;
+- (id)description;
 - (void)doneWithNonRowContent;
 - (id)drawableAtIndex:(unsigned int)arg1;
 - (unsigned int)drawableCount;

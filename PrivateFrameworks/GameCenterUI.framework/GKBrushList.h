@@ -3,7 +3,7 @@
  */
 
 @interface GKBrushList : GKThemeBrush {
-    NSArray *_brushList;
+    NSArray * _brushList;
 }
 
 @property (nonatomic, retain) NSArray *brushList;

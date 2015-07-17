@@ -3,17 +3,17 @@
  */
 
 @interface ABServerSearchPredicate : ABPredicate <DASearchQueryConsumer> {
-    NSString *_accountIdentifier;
-    DADConnection *_connection;
-    <ABPredicateDelegate> *_delegate;
-    NSConditionLock *_doneLock;
-    int _error;
-    BOOL _includePhotosInResults;
-    BOOL _includeSourceInResults;
-    DAContactsSearchQuery *_searchQuery;
-    NSMutableArray *_searchResults;
-    NSString *_searchString;
-    void *_source;
+    NSString * _accountIdentifier;
+    DADConnection * _connection;
+    <ABPredicateDelegate> * _delegate;
+    NSConditionLock * _doneLock;
+    int  _error;
+    BOOL  _includePhotosInResults;
+    BOOL  _includeSourceInResults;
+    DAContactsSearchQuery * _searchQuery;
+    NSMutableArray * _searchResults;
+    NSString * _searchString;
+    void * _source;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;
@@ -27,7 +27,7 @@
 
 - (int)_errorForDAStatusCode:(int)arg1;
 - (void)_searchQueryIsDone;
-- (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
+- (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 ranked:(BOOL)arg2 inAddressBook:(void*)arg3 withDelegate:(id)arg4;
 - (id)accountIdentifier;
 - (id)connection;
 - (void)dealloc;

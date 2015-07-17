@@ -3,7 +3,7 @@
  */
 
 @interface GEOComposedDrivingRouteStep : GEOComposedRouteStep {
-    int _drivingSide;
+    int  _drivingSide;
 }
 
 @property (nonatomic, readonly) int drivingSide;

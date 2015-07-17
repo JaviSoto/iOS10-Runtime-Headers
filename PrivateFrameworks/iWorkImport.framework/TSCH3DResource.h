@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DResource : NSObject <NSCopying> {
-    TSCH3DDataBuffer *mCache;
-    BOOL mCached;
-    int mCaching;
-    BOOL mChanged;
+    TSCH3DDataBuffer * mCache;
+    BOOL  mCached;
+    int  mCaching;
+    BOOL  mChanged;
     struct DataBufferInfo { 
         int componentType; 
         unsigned int components; 
@@ -14,9 +14,9 @@
         unsigned int byteSize; 
         unsigned int componentByteSize; 
         unsigned int elementByteSize; 
-    } mDataBufferInfo;
-    unsigned long long mUniqueIdentifier;
-    int mUpdate;
+    }  mDataBufferInfo;
+    unsigned long long  mUniqueIdentifier;
+    int  mUpdate;
 }
 
 @property (nonatomic, readonly) TSCH3DDataBuffer *buffer;

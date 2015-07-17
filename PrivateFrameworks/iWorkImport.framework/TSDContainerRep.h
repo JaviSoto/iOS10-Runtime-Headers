@@ -3,7 +3,7 @@
  */
 
 @interface TSDContainerRep : TSDRep <TSDMutableContainerRep> {
-    NSMutableArray *mChildReps;
+    NSMutableArray * mChildReps;
 }
 
 @property (nonatomic, readonly) NSObject<TSDContainerInfo> *containerInfo;

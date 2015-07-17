@@ -3,11 +3,11 @@
  */
 
 @interface CKDBFileTransfer : NSObject <CKFileTransfer> {
-    NSURL *_fileURL;
-    NSString *_filename;
-    NSString *_guid;
-    NSDictionary *_transcoderUserInfo;
-    int _transferState;
+    NSURL * _fileURL;
+    NSString * _filename;
+    NSString * _guid;
+    NSDictionary * _transcoderUserInfo;
+    int  _transferState;
 }
 
 @property (nonatomic, retain) IMMessage *IMMessage;

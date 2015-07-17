@@ -3,10 +3,10 @@
  */
 
 @interface CKSQLiteStatement : NSObject {
-    NSString *_SQL;
-    CKSQLite *_SQLite;
-    struct sqlite3_stmt { } *_handle;
-    BOOL _reset;
+    NSString * _SQL;
+    CKSQLite * _SQLite;
+    struct sqlite3_stmt { } * _handle;
+    BOOL  _reset;
 }
 
 @property (nonatomic, readonly) NSString *SQL;

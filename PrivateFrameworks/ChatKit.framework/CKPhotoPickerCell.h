@@ -3,10 +3,10 @@
  */
 
 @interface CKPhotoPickerCell : UICollectionViewCell {
-    UIImageView *_imageView;
-    BOOL _isVideo;
-    PLRoundProgressView *_progressView;
-    UIImageView *_videoImageView;
+    UIImageView * _imageView;
+    BOOL  _isVideo;
+    PLRoundProgressView * _progressView;
+    UIImageView * _videoImageView;
 }
 
 @property (nonatomic, retain) UIImageView *imageView;

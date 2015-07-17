@@ -3,8 +3,8 @@
  */
 
 @interface CKDismissView : UIView {
-    <CKDismissViewDelegate> *_delegate;
-    NSArray *_passthroughViews;
+    <CKDismissViewDelegate> * _delegate;
+    NSArray * _passthroughViews;
 }
 
 @property (nonatomic) <CKDismissViewDelegate> *delegate;

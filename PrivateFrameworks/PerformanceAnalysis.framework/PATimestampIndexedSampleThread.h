@@ -3,8 +3,8 @@
  */
 
 @interface PATimestampIndexedSampleThread : NSObject {
-    unsigned int _lastTimestampIndex;
-    PASampleThreadData *_sampleThread;
+    unsigned int  _lastTimestampIndex;
+    PASampleThreadData * _sampleThread;
 }
 
 @property unsigned int lastTimestampIndex;

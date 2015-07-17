@@ -3,30 +3,33 @@
  */
 
 @interface PLRelationshipOrderKeyManager : NSObject {
-    NSMutableDictionary *_enqueuedAlbumAssetsOrderValueUpdates;
-    NSMutableDictionary *_enqueuedFolderAlbumsOrderValueUpdates;
-    BOOL _hasStashedLocationValues;
-    NSMutableDictionary *_locationsCache;
-    NSObject<OS_dispatch_queue> *_locationsCacheQueue;
-    PLPhotoLibrary *_locationsPhotoLibrary;
-    PLPhotoLibrary *_photoLibrary;
+    BOOL  _conflictDetected;
+    NSMutableDictionary * _enqueuedAlbumAssetsOrderValueUpdates;
+    NSMutableDictionary * _enqueuedFolderAlbumsOrderValueUpdates;
+    BOOL  _hasStashedLocationValues;
+    NSMutableDictionary * _locationsCache;
+    NSObject<OS_dispatch_queue> * _locationsCacheQueue;
+    PLPhotoLibrary * _locationsPhotoLibrary;
+    PLPhotoLibrary * _photoLibrary;
 }
 
+@property (nonatomic, readonly) BOOL conflictDetected;
 @property (nonatomic, readonly) BOOL hasStashedLocationValues;
 
 + (id)sharedManager;
 
 - (id)_enqueuedAlbumAssetsOrderValueUpdates;
 - (id)_enqueuedFolderAlbumsOrderValueUpdates;
-- (void)_getAndResetEnqueuedOrderValueUpdatesForFolders:(id*)arg1 albums:(id*)arg2;
+- (void)_getAndResetEnqueuedOrderValueUpdatesForFolders:(id*)arg1 albums:(id*)arg2 conflictDetected:(BOOL*)arg3;
 - (id)_inq_orderingStateForRelationship:(id)arg1 onObjectWithID:(id)arg2;
 - (void)_inq_stashLocationValue:(long long)arg1 forOrderedObjectWithID:(id)arg2 inSourceObjectID:(id)arg3 relationship:(id)arg4 atIndex:(unsigned int)arg5 usingStashDictionary:(id)arg6;
 - (id)_locationsCache;
-- (void)_migration_updateOrderKeysForParent:(id)arg1 childToOrderKeyMap:(id)arg2;
-- (void)_migration_updateOrderValuesForAlbum:(id)arg1 managedObjectContext:(id)arg2;
+- (void)_migration_updateOrderKeysForAssetsInParentAlbum:(id)arg1 childToOrderKeyMap:(id)arg2;
+- (void)_migration_updateOrderValuesForAssetsInAlbum:(id)arg1 managedObjectContext:(id)arg2;
 - (void)_updateOrderOfChildrenInParent:(id)arg1 usingTransientOrders:(id)arg2;
 - (id)albumsAndOrderValuesForAsset:(id)arg1 inManagedObjectContext:(id)arg2;
 - (int)compareOrderKeyObject:(id)arg1 withObject:(id)arg2;
+- (BOOL)conflictDetected;
 - (void)dealloc;
 - (unsigned int)findIndexForAlbumWithID:(id)arg1 newOrderValue:(long long)arg2 inFolderWithID:(id)arg3 hasOrderValueConflictWithAlbumID:(id*)arg4;
 - (unsigned int)findIndexForAssetWithID:(id)arg1 newOrderValue:(long long)arg2 inAlbumWithID:(id)arg3 hasOrderValueConflictWithAssetID:(id*)arg4;
@@ -35,13 +38,15 @@
 - (id)init;
 - (id)locationsManagedObjectContext;
 - (id)locationsPhotoLibrary;
-- (long long)migration_defaultOrderKeySpacing;
-- (void)migration_ensureValidOrderKey:(id)arg1;
-- (void)migration_fixupOrderKeys:(id)arg1 withSpacing:(long long)arg2;
-- (void)migration_updateOrderValuesForAlbums:(id)arg1 managedObjectContext:(id)arg2;
+- (void)migration_ensureValidOrderKey:(id)arg1 usingOrderValuePropertyKey:(id)arg2;
+- (void)migration_fixupOrderKeys:(id)arg1 usingOrderValuePropertyKey:(id)arg2 enforceSingletonAlbumReservedKeySpace:(BOOL)arg3;
+- (id)migration_sortedOrderKeysForAssetsInAlbum:(id)arg1 usingMap:(id)arg2;
+- (void)migration_updateLegacyChildCollectionOrderKeysInFolder:(id)arg1;
+- (void)migration_updateLegacyOrderValuesForAssetsInAlbums:(id)arg1 managedObjectContext:(id)arg2;
 - (id)objectIDsAndOrderValuesForRelationship:(id)arg1 onObjectWithID:(id)arg2;
 - (id)parentFolderOrderValueForAlbum:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)photoLibrary;
+- (void)setConflictDetected:(BOOL)arg1;
 - (void)stashAlbumAssetsLocationValue:(long long)arg1 forAssetWithID:(id)arg2 inAlbumWithID:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)stashFolderAlbumsLocationValue:(long long)arg1 forAlbumWithID:(id)arg2 inFolderWithID:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)updateAlbumAssetsUsingTransientOrdersByAlbumOID:(id)arg1 inLibrary:(id)arg2;

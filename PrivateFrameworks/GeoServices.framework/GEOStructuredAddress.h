@@ -3,31 +3,31 @@
  */
 
 @interface GEOStructuredAddress : PBCodable <GEOURLSerializable, NSCopying> {
-    NSString *_administrativeArea;
-    NSString *_administrativeAreaCode;
-    NSMutableArray *_areaOfInterests;
-    NSString *_country;
-    NSString *_countryCode;
-    NSMutableArray *_dependentLocalitys;
-    NSString *_fullThoroughfare;
+    NSString * _administrativeArea;
+    NSString * _administrativeAreaCode;
+    NSMutableArray * _areaOfInterests;
+    NSString * _country;
+    NSString * _countryCode;
+    NSMutableArray * _dependentLocalitys;
+    NSString * _fullThoroughfare;
     struct { 
         long long *list; 
         unsigned int count; 
         unsigned int size; 
-    } _geoIds;
-    NSString *_inlandWater;
-    NSString *_locality;
-    NSString *_ocean;
-    NSString *_postCode;
-    NSString *_postCodeExtension;
-    NSString *_postCodeFull;
-    NSString *_premise;
-    NSString *_premises;
-    NSString *_subAdministrativeArea;
-    NSString *_subLocality;
-    NSMutableArray *_subPremises;
-    NSString *_subThoroughfare;
-    NSString *_thoroughfare;
+    }  _geoIds;
+    NSString * _inlandWater;
+    NSString * _locality;
+    NSString * _ocean;
+    NSString * _postCode;
+    NSString * _postCodeExtension;
+    NSString * _postCodeFull;
+    NSString * _premise;
+    NSString * _premises;
+    NSString * _subAdministrativeArea;
+    NSString * _subLocality;
+    NSMutableArray * _subPremises;
+    NSString * _subThoroughfare;
+    NSString * _thoroughfare;
 }
 
 @property (nonatomic, retain) NSString *administrativeArea;

@@ -3,9 +3,9 @@
  */
 
 @interface PLPolaroidImageView : PLImageView {
-    UILabel *_nameLabel;
-    BOOL _polaroidBorderVisible;
-    UIView *_posterView;
+    UILabel * _nameLabel;
+    BOOL  _polaroidBorderVisible;
+    UIView * _posterView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,8 +15,8 @@
             float width; 
             float height; 
         } size; 
-    } _roi;
-    float _thinBorderWidth;
+    }  _roi;
+    float  _thinBorderWidth;
 }
 
 @property (nonatomic, retain) UIImage *posterImage;

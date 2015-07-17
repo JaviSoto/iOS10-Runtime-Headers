@@ -3,13 +3,13 @@
  */
 
 @interface PLFilteredAlbumList : NSObject <PLAlbumContainer, PLDerivedAlbumListOrigin, PLIndexMapperDataSource, PLIndexMappingCache> {
-    NSObject<PLIndexMappingCache> *_derivedAlbumLists;
-    NSMutableIndexSet *_filteredIndexes;
-    PLIndexMapper *_indexMapper;
-    NSMutableOrderedSet *_weak_albums;
-    PLManagedAlbumList *backingAlbumList;
-    int filter;
-    NSPredicate *predicate;
+    NSObject<PLIndexMappingCache> * _derivedAlbumLists;
+    NSMutableIndexSet * _filteredIndexes;
+    PLIndexMapper * _indexMapper;
+    NSMutableOrderedSet * _weak_albums;
+    PLManagedAlbumList * backingAlbumList;
+    int  filter;
+    NSPredicate * predicate;
 }
 
 @property (nonatomic, retain) NSMutableOrderedSet *_albums;

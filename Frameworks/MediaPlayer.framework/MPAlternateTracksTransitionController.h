@@ -3,8 +3,8 @@
  */
 
 @interface MPAlternateTracksTransitionController : MPTransitionController {
-    UIImageView *_snapshotCoverImageView;
-    MPVideoViewController *_videoController;
+    UIImageView * _snapshotCoverImageView;
+    MPVideoViewController * _videoController;
 }
 
 @property (nonatomic) MPVideoViewController *videoController;

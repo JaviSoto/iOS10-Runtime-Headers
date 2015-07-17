@@ -3,7 +3,7 @@
  */
 
 @interface SUTableCellContentOverlayView : UIView {
-    SUCellConfiguration *_configuration;
+    SUCellConfiguration * _configuration;
 }
 
 @property (nonatomic, retain) SUCellConfiguration *configuration;

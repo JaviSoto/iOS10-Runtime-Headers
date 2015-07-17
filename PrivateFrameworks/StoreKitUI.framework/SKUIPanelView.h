@@ -3,10 +3,10 @@
  */
 
 @interface SKUIPanelView : SKUIViewReuseView <SKUIAnimatorDOMFeatureDelegate, SKUIViewElementView> {
-    NSMapTable *_animators;
-    UIResponder *_inputResponder;
-    NSMapTable *_viewElements;
-    NSMapTable *_viewMargins;
+    NSMapTable * _animators;
+    UIResponder * _inputResponder;
+    NSMapTable * _viewElements;
+    NSMapTable * _viewMargins;
 }
 
 @property (readonly, copy) NSString *debugDescription;

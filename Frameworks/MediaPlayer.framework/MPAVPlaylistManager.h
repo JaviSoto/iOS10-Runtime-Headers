@@ -3,21 +3,21 @@
  */
 
 @interface MPAVPlaylistManager : NSObject <MPAVQueueCoordinatorDataSource, MPQueueBehaviorManaging, MPQueueFeederDelegate, NSCoding> {
-    NSString *_audioSessionModeOverride;
-    MPAVController *_avController;
-    BOOL _changingPlayer;
-    BOOL _changingPlaylistFeeder;
-    MPAVItem *_currentItem;
-    <MPAVPlaylistManagerDelegate> *_delegate;
-    BOOL _goToTargetIndex;
-    int _lastSelectionDirection;
-    int _playbackMode;
-    MPQueuePlayer *_player;
-    MPQueueFeeder *_playlistFeeder;
-    MPAVQueueCoordinator *_queueCoordinator;
-    int _repeatMode;
-    int _targetIndex;
-    BOOL _updatedAudioSessionMode;
+    NSString * _audioSessionModeOverride;
+    MPAVController * _avController;
+    BOOL  _changingPlayer;
+    BOOL  _changingPlaylistFeeder;
+    MPAVItem * _currentItem;
+    <MPAVPlaylistManagerDelegate> * _delegate;
+    BOOL  _goToTargetIndex;
+    int  _lastSelectionDirection;
+    int  _playbackMode;
+    MPQueuePlayer * _player;
+    MPQueueFeeder * _playlistFeeder;
+    MPAVQueueCoordinator * _queueCoordinator;
+    int  _repeatMode;
+    int  _targetIndex;
+    BOOL  _updatedAudioSessionMode;
 }
 
 @property (nonatomic, readonly) BOOL allowsUserVisibleUpcomingItems;
@@ -95,6 +95,7 @@
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(id)arg3;
+- (void)queueFeederDidInvalidateAssets:(id)arg1;
 - (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)repeatMode;

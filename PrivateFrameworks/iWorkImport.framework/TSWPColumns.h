@@ -3,10 +3,10 @@
  */
 
 @interface TSWPColumns : NSObject {
-    unsigned int _columnCount;
-    BOOL _equalWidth;
-    float _gapArray;
-    float _widthArray;
+    unsigned int  _columnCount;
+    BOOL  _equalWidth;
+    float  _gapArray;
+    float  _widthArray;
 }
 
 @property (nonatomic) unsigned int columnCount;

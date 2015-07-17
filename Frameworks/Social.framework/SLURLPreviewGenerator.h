@@ -3,8 +3,8 @@
  */
 
 @interface SLURLPreviewGenerator : NSObject <UIWebViewDelegate> {
-    id /* block */ _completion;
-    UIWebView *_webView;
+    id /* block */  _completion;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

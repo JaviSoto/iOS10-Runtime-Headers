@@ -3,17 +3,18 @@
  */
 
 @interface UIStatusBarLayoutManager : NSObject {
-    UIStatusBarForegroundView *_foregroundView;
-    UIStatusBarItemView *_itemViews;
-    BOOL _persistentAnimationsEnabled;
-    int _region;
-    BOOL _usesVerticalLayout;
+    UIStatusBarForegroundView * _foregroundView;
+    UIStatusBarItemView * _itemViews;
+    BOOL  _persistentAnimationsEnabled;
+    int  _region;
+    BOOL  _usesVerticalLayout;
 }
 
 @property (nonatomic) UIStatusBarForegroundView *foregroundView;
 @property (nonatomic) BOOL persistentAnimationsEnabled;
 @property (nonatomic, readonly) BOOL usesVerticalLayout;
 
+- (void).cxx_destruct;
 - (void)_addOriginDelta:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)_createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3;
 - (float)_dimensionForSize:(struct CGSize { float x1; float x2; })arg1;

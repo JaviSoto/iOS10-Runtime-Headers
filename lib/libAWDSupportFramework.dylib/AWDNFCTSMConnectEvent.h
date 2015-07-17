@@ -3,17 +3,17 @@
  */
 
 @interface AWDNFCTSMConnectEvent : PBCodable <NSCopying> {
-    BOOL _connected;
+    BOOL  _connected;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
         unsigned int httpStatus : 1; 
         unsigned int connected : 1; 
-    } _has;
-    unsigned int _httpStatus;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned int  _httpStatus;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic) BOOL connected;

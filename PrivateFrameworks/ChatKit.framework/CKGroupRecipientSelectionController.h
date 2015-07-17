@@ -3,7 +3,7 @@
  */
 
 @interface CKGroupRecipientSelectionController : CKRecipientSelectionController <CKRecipientSelectionControllerDelegate> {
-    UIBarButtonItem *_doneButton;
+    UIBarButtonItem * _doneButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +30,6 @@
 - (void)recipientSelectionControllerRequestDismissKeyboard:(id)arg1;
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(id)arg1;
-- (BOOL)searchListShouldUsePopvoers;
 - (void)setDoneButton:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (BOOL)shouldSuppressSearchResultsTable;

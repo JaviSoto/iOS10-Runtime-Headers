@@ -3,8 +3,8 @@
  */
 
 @interface SKUITextFooterSettingsHeaderFooterDescriptionView : SKUISettingsHeaderFooterDescriptionView {
-    UILabel *_label;
-    SKUIViewElement *_viewElement;
+    UILabel * _label;
+    SKUIViewElement * _viewElement;
 }
 
 + (id)_concatenateTextFromLabelElements:(id)arg1;

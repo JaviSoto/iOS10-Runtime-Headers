@@ -3,7 +3,7 @@
  */
 
 @interface RadioMutableLikeBanItem : RadioLikeBanItem {
-    long long _itemID;
+    long long  _itemID;
 }
 
 @property (nonatomic) long long albumID;

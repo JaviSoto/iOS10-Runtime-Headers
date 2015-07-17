@@ -3,11 +3,11 @@
  */
 
 @interface MKMapSnapshotCreator : NSObject <MKMapViewDelegate> {
-    NSString *_lastAttributionString;
-    UIImage *_lastSnapshot;
-    NSLock *_requestLock;
-    NSMutableArray *_requests;
-    MKMapSnapshotRequest *_servingRequest;
+    NSString * _lastAttributionString;
+    UIImage * _lastSnapshot;
+    NSLock * _requestLock;
+    NSMutableArray * _requests;
+    MKMapSnapshotRequest * _servingRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;

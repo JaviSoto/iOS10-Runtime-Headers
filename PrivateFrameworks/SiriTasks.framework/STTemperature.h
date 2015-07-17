@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STTemperature : AFSiriModelObject {
-    int _units;
-    double _value;
+@interface STTemperature : STSiriModelObject {
+    int  _units;
+    double  _value;
 }
 
 + (BOOL)supportsSecureCoding;

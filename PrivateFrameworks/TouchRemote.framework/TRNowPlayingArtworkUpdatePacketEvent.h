@@ -3,9 +3,9 @@
  */
 
 @interface TRNowPlayingArtworkUpdatePacketEvent : TRPacketEvent {
-    NSData *_artworkData;
-    NSString *_artworkMIMEType;
-    NSDictionary *_nowPlayingInfo;
+    NSData * _artworkData;
+    NSString * _artworkMIMEType;
+    NSDictionary * _nowPlayingInfo;
 }
 
 @property (nonatomic, readonly) NSData *artworkData;

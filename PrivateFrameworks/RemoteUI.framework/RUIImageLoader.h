@@ -3,31 +3,33 @@
  */
 
 @interface RUIImageLoader : NSObject {
-    NSLock *_cacheLock;
-    NSMutableDictionary *_imageCache;
-    NSMutableArray *_imageCacheLRU;
-    NSMutableArray *_loadQueue;
-    NSTimer *_loadStatusNotificationTimer;
-    struct __CFRunLoop { } *_loaderRunLoop;
-    struct __CFRunLoopSource { } *_loaderSource;
-    NSMutableSet *_loadsInProgress;
-    NSNotificationCenter *_notificationCenter;
-    NSLock *_queueLock;
+    NSLock * _cacheLock;
+    NSMutableDictionary * _imageCache;
+    NSMutableArray * _imageCacheLRU;
+    NSMutableDictionary * _loadCompletions;
+    NSMutableArray * _loadQueue;
+    NSTimer * _loadStatusNotificationTimer;
+    struct __CFRunLoop { } * _loaderRunLoop;
+    struct __CFRunLoopSource { } * _loaderSource;
+    NSMutableSet * _loadsInProgress;
+    NSNotificationCenter * _notificationCenter;
+    NSLock * _queueLock;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } _startupCondition;
+    }  _startupCondition;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _startupLock;
+    }  _startupLock;
 }
 
 + (id)sharedImageLoader;
 
 - (void).cxx_destruct;
+- (void)_callCompletionsForURL:(id)arg1 image:(struct CGImage { }*)arg2 error:(id)arg3;
 - (void)_imageLoadFinished:(id)arg1;
-- (void)_loadImageURL:(id)arg1;
+- (void)_loadImageURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)_loadingStatusChanged;
 - (BOOL)_locked_URLIsLoading:(id)arg1;
 - (void)_locked_imageLoadStarted:(id)arg1;
@@ -35,9 +37,10 @@
 - (void)_mainThread_postLoadingStatusChanged;
 - (void)_postImageLoadedNotification:(id)arg1;
 - (void)_postLoadingStatusChanged;
-- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
+- (void)_setImageData:(id)arg1 forURL:(id)arg2 error:(id)arg3;
 - (void)_startLoader;
 - (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
+- (void)imageForURL:(id)arg1 scale:(float)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (BOOL)isLoadingImages;
 - (id)notificationCenter;

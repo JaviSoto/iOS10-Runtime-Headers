@@ -3,13 +3,13 @@
  */
 
 @interface CKDPQueryRetrieveResponseQueryResult : PBCodable <NSCopying> {
-    NSString *_etag;
+    NSString * _etag;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPRecordIdentifier *_identifier;
-    CKDPRecord *_record;
-    int _type;
+    }  _has;
+    CKDPRecordIdentifier * _identifier;
+    CKDPRecord * _record;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *etag;

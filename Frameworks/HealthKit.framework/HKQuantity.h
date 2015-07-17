@@ -3,8 +3,8 @@
  */
 
 @interface HKQuantity : NSObject <NSCopying, NSSecureCoding> {
-    HKUnit *_unit;
-    double _value;
+    HKUnit * _unit;
+    double  _value;
 }
 
 @property (getter=_unit, nonatomic, readonly) HKUnit *unit;

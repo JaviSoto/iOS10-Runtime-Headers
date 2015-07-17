@@ -3,13 +3,13 @@
  */
 
 @interface KNAnimationContext : NSObject {
-    CALayer *mBaseLayer;
-    BOOL mBaseLayerVisible;
-    TSDCapabilities *mCapabilities;
-    struct CGColorSpace { } *mColorSpace;
-    float mFOVInRadians;
-    float mPixelAspectRatio;
-    KNAnimationRegistryWithFallbacks *mRegistry;
+    CALayer * mBaseLayer;
+    BOOL  mBaseLayerVisible;
+    TSDCapabilities * mCapabilities;
+    struct CGColorSpace { } * mColorSpace;
+    float  mFOVInRadians;
+    float  mPixelAspectRatio;
+    KNAnimationRegistryWithFallbacks * mRegistry;
     struct CATransform3D { 
         float m11; 
         float m12; 
@@ -27,7 +27,7 @@
         float m42; 
         float m43; 
         float m44; 
-    } mSlideProjectionMatrix;
+    }  mSlideProjectionMatrix;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -37,7 +37,7 @@
             float width; 
             float height; 
         } size; 
-    } mSlideRect;
+    }  mSlideRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -47,8 +47,8 @@
             float width; 
             float height; 
         } size; 
-    } mUnscaledSlideRect;
-    float mViewScale;
+    }  mUnscaledSlideRect;
+    float  mViewScale;
 }
 
 @property (nonatomic, readonly) CALayer *baseLayer;

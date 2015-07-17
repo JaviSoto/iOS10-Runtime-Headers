@@ -3,10 +3,10 @@
  */
 
 @interface SKUIContentUnavailableDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
-    SKUIContentUnavailableView *_contentUnavailableView;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIContentUnavailableTemplateElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIContentUnavailableView * _contentUnavailableView;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIContentUnavailableTemplateElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

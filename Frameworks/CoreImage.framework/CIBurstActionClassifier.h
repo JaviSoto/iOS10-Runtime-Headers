@@ -3,19 +3,19 @@
  */
 
 @interface CIBurstActionClassifier : NSObject {
-    struct __SVMParameters { struct __SVMScaleOffset { float x_1_1_1; float x_1_1_2; } x1[7]; double x2; double x3; int x4; int x5; struct CIBurstSupportVector {} *x6; struct CIBurstSupportVector {} *x7; } *_svmParameters;
-    BOOL hasBeenScaled;
-    float testAverageCameraTravelDistance;
-    float testAverageRegistrationErrorSkewness;
-    float testBeginningVsEndAEMatrixVsAverageAdjacentAEMatrix;
-    float testInOutRatio;
-    float testMaxInnerDistance;
-    float testMaxPeakRegistrationError;
-    float testMaxRegistrationErrorIntegral;
-    float testMaxRegistrationErrorSkewness;
-    float testMeanPeakRegistrationError;
-    float testMinRegionOfInterestSize;
-    double testVector;
+    struct __SVMParameters { struct __SVMScaleOffset { float x_1_1_1; float x_1_1_2; } x1[7]; double x2; double x3; int x4; int x5; struct CIBurstSupportVector {} *x6; struct CIBurstSupportVector {} *x7; } * _svmParameters;
+    BOOL  hasBeenScaled;
+    float  testAverageCameraTravelDistance;
+    float  testAverageRegistrationErrorSkewness;
+    float  testBeginningVsEndAEMatrixVsAverageAdjacentAEMatrix;
+    float  testInOutRatio;
+    float  testMaxInnerDistance;
+    float  testMaxPeakRegistrationError;
+    float  testMaxRegistrationErrorIntegral;
+    float  testMaxRegistrationErrorSkewness;
+    float  testMeanPeakRegistrationError;
+    float  testMinRegionOfInterestSize;
+    double  testVector;
 }
 
 @property struct __SVMParameters { struct __SVMScaleOffset { float x_1_1_1; float x_1_1_2; } x1[7]; double x2; double x3; int x4; int x5; struct CIBurstSupportVector {} *x6; struct CIBurstSupportVector {} *x7; }*svmParameters;

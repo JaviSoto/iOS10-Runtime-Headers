@@ -3,19 +3,19 @@
  */
 
 @interface SUPurchaseManager : NSObject <SSDownloadManagerObserver, SSPurchaseRequestDelegate, SSPurchaseRequestDelegatePrivate, SUContinuationDelegate> {
-    <SUPurchaseManagerDelegate> *_delegate;
-    NSMutableSet *_futurePurchases;
-    NSMutableSet *_inflightContinuations;
-    NSMutableArray *_observedDownloadManagers;
-    NSMutableArray *_pendingContinuations;
-    NSMutableArray *_pendingPurchases;
-    NSMutableArray *_purchaseRequests;
-    NSMutableSet *_purchasedIdentifiers;
-    SUQueueSessionManager *_queueSessionManager;
-    BOOL _showingErrorDialogs;
-    int _updatesCount;
-    NSString *_userAgent;
-    BOOL _waitingForAuthentication;
+    <SUPurchaseManagerDelegate> * _delegate;
+    NSMutableSet * _futurePurchases;
+    NSMutableSet * _inflightContinuations;
+    NSMutableArray * _observedDownloadManagers;
+    NSMutableArray * _pendingContinuations;
+    NSMutableArray * _pendingPurchases;
+    NSMutableArray * _purchaseRequests;
+    NSMutableSet * _purchasedIdentifiers;
+    SUQueueSessionManager * _queueSessionManager;
+    BOOL  _showingErrorDialogs;
+    int  _updatesCount;
+    NSString * _userAgent;
+    BOOL  _waitingForAuthentication;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +31,6 @@
 
 - (id)_accountForPurchase:(id)arg1;
 - (void)_addBatchForPurchases:(id)arg1 options:(id)arg2;
-- (void)_addDownloadingIconForPurchases:(id)arg1;
 - (void)_dialogDidFinish:(id)arg1;
 - (id)_downloadManagerForDownloadKind:(id)arg1;
 - (void)_enqueueContinuations:(id)arg1;

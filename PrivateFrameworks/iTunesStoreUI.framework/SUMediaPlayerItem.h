@@ -3,17 +3,17 @@
  */
 
 @interface SUMediaPlayerItem : NSObject <NSCopying> {
-    NSURL *_backgroundImageURL;
-    NSString *_bookmarkIdentifier;
-    NSArray *_downloadPingURLs;
-    int _initialOrientation;
-    unsigned long long _itemIdentifier;
-    int _itemType;
-    double _playableDuration;
-    NSArray *_playbackPingURLs;
-    NSString *_subtitle;
-    NSString *_title;
-    NSURL *_url;
+    NSURL * _backgroundImageURL;
+    NSString * _bookmarkIdentifier;
+    NSArray * _downloadPingURLs;
+    int  _initialOrientation;
+    unsigned long long  _itemIdentifier;
+    int  _itemType;
+    double  _playableDuration;
+    NSArray * _playbackPingURLs;
+    NSString * _subtitle;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSURL *URL;

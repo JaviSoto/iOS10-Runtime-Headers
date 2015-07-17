@@ -6,10 +6,10 @@
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic) BOOL hasTimeDeltaFromReference;

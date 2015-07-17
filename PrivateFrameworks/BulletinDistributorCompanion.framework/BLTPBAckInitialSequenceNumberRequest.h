@@ -3,10 +3,10 @@
  */
 
 @interface BLTPBAckInitialSequenceNumberRequest : PBRequest <NSCopying> {
-    BOOL _assert;
+    BOOL  _assert;
     struct { 
         unsigned int assert : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) BOOL assert;

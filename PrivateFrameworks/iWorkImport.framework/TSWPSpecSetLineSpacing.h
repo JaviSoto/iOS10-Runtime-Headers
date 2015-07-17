@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetLineSpacing : TSWPSpecLineSpacing {
-    TSWPLineSpacing *_lineSpacing;
-    BOOL _unset;
+    TSWPLineSpacing * _lineSpacing;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

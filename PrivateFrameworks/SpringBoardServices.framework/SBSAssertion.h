@@ -3,20 +3,21 @@
  */
 
 @interface SBSAssertion : NSObject {
-    NSString *_assertionName;
+    NSString * _assertionName;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    unsigned int _port;
-    NSString *_reason;
+    }  _lock;
+    unsigned int  _port;
+    NSString * _reason;
 }
 
-@property (nonatomic, readonly) NSString *assertionName;
-@property (nonatomic, readonly) NSString *reason;
+@property (nonatomic, readonly, copy) NSString *assertionName;
+@property (nonatomic, readonly, copy) NSString *reason;
 
 - (id)assertionName;
 - (void)dealloc;
+- (id)init;
 - (id)initWithAssertionName:(id)arg1 reason:(id)arg2 port:(unsigned int)arg3;
 - (void)invalidate;
 - (id)reason;

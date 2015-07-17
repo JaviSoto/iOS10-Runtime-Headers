@@ -8,15 +8,15 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentEdgeInsets;
+    }  _contentEdgeInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    int _entryType;
-    BOOL _hasValidContentSize;
-    UIColor *_tintColor;
-    int _visibilityPriority;
+    }  _contentSize;
+    int  _entryType;
+    BOOL  _hasValidContentSize;
+    UIColor * _tintColor;
+    int  _visibilityPriority;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;

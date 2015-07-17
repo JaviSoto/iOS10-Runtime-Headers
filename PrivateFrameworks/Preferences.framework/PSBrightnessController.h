@@ -3,8 +3,8 @@
  */
 
 @interface PSBrightnessController : NSObject {
-    id /* block */ _brightnessChangedExternally;
-    id /* block */ _isTracking;
+    id /* block */  _brightnessChangedExternally;
+    id /* block */  _isTracking;
 }
 
 @property (nonatomic, copy) id /* block */ brightnessChangedExternally;
@@ -12,6 +12,7 @@
 
 + (id)sharedController;
 
+- (void).cxx_destruct;
 - (id /* block */)brightnessChangedExternally;
 - (id /* block */)isTracking;
 - (void)setBrightnessChangedExternally:(id /* block */)arg1;

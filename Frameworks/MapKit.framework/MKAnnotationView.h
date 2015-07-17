@@ -3,24 +3,28 @@
  */
 
 @interface MKAnnotationView : UIView <MKAnnotationRepresentation, MKLocatableObject> {
-    _MKAnnotationViewAnchor *_anchor;
-    BOOL _animatingToCoordinate;
-    <MKAnnotation> *_annotation;
-    MKAnnotationManager *_annotationManager;
-    id /* block */ _calloutHitTest;
+    _MKAnnotationViewAnchor * _anchor;
+    BOOL  _animatingToCoordinate;
+    <MKAnnotation> * _annotation;
+    MKAnnotationManager * _annotationManager;
+    id /* block */  _calloutHitTest;
     struct CGPoint { 
         float x; 
         float y; 
-    } _calloutOffset;
-    UICalloutView *_calloutView;
+    }  _calloutOffset;
+    UICalloutView * _calloutView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _centerOffset;
-    BOOL _customTransformApplied;
-    UIView *_detailCalloutAccessoryView;
-    unsigned int _dragState;
-    BOOL _explicitlyHidden;
+    }  _centerOffset;
+    struct { 
+        double latitude; 
+        double longitude; 
+    }  _coordinate;
+    BOOL  _customTransformApplied;
+    UIView * _detailCalloutAccessoryView;
+    unsigned int  _dragState;
+    BOOL  _explicitlyHidden;
     struct { 
         unsigned int disabled : 1; 
         unsigned int selected : 1; 
@@ -29,37 +33,41 @@
         unsigned int canDisplayDisclosureInCallout : 1; 
         unsigned int canDisplayPlacemarkInCallout : 1; 
         unsigned int draggable : 1; 
-    } _flags;
-    BOOL _hiddenForInvalidPoint;
-    BOOL _hiddenForOffscreen;
-    UIImage *_image;
-    BOOL _internalTransformApplied;
-    UIView *_leftCalloutAccessoryView;
+    }  _flags;
+    BOOL  _hiddenForInvalidPoint;
+    BOOL  _hiddenForOffscreen;
+    UIImage * _image;
+    BOOL  _internalTransformApplied;
+    UIView * _leftCalloutAccessoryView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _leftCalloutOffset;
-    unsigned int _mapDisplayStyle;
-    float _mapPitchRadians;
-    float _mapRotationRadians;
-    unsigned int _mapType;
+    }  _leftCalloutOffset;
+    struct { 
+        unsigned char timePeriod; 
+        unsigned char overlayType; 
+        unsigned char applicationState; 
+    }  _mapDisplayStyle;
+    float  _mapPitchRadians;
+    float  _mapRotationRadians;
+    unsigned int  _mapType;
     struct { 
         double latitude; 
         double longitude; 
-    } _presentationCoordinate;
-    id /* block */ _presentationCoordinateChangedCallback;
-    double _presentationCourse;
-    NSString *_reuseIdentifier;
-    UIView *_rightCalloutAccessoryView;
+    }  _presentationCoordinate;
+    id /* block */  _presentationCoordinateChangedCallback;
+    double  _presentationCourse;
+    NSString * _reuseIdentifier;
+    UIView * _rightCalloutAccessoryView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _rightCalloutOffset;
-    float _rotationRadians;
-    GEORouteMatch *_routeMatch;
-    BOOL _tracking;
-    MKUserLocationAnnotationViewProxy *_userLocationProxy;
-    unsigned int _zIndex;
+    }  _rightCalloutOffset;
+    float  _rotationRadians;
+    GEORouteMatch * _routeMatch;
+    BOOL  _tracking;
+    MKUserLocationAnnotationViewProxy * _userLocationProxy;
+    unsigned int  _zIndex;
 }
 
 @property (getter=_isAnimatingToCoordinate, setter=_setAnimatingToCoordinate:, nonatomic) BOOL _animatingToCoordinate;
@@ -90,7 +98,7 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIView *leftCalloutAccessoryView;
 @property (nonatomic) struct CGPoint { float x1; float x2; } leftCalloutOffset;
-@property (getter=_mapDisplayStyle, setter=_setMapDisplayStyle:, nonatomic) unsigned int mapDisplayStyle;
+@property (getter=_mapDisplayStyle, setter=_setMapDisplayStyle:, nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; } mapDisplayStyle;
 @property (getter=_mapPitchRadians, setter=_setMapPitchRadians:, nonatomic) float mapPitchRadians;
 @property (getter=_mapRotationRadians, setter=_setMapRotationRadians:, nonatomic) float mapRotationRadians;
 @property (nonatomic, readonly) NSString *reuseIdentifier;
@@ -121,11 +129,13 @@
 - (void)_didUpdatePosition;
 - (struct CGPoint { float x1; float x2; })_draggingDropOffset;
 - (void)_enableRotationForHeadingMode:(float)arg1;
+- (id)_getPopover:(id)arg1;
 - (BOOL)_hasAlternateOrientation;
+- (void)_invalidateCachedCoordinate;
 - (BOOL)_isAnimatingToCoordinate;
 - (BOOL)_isHiddenForInvalidPoint;
 - (BOOL)_isTracking;
-- (unsigned int)_mapDisplayStyle;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; })_mapDisplayStyle;
 - (float)_mapPitchRadians;
 - (float)_mapRotationRadians;
 - (unsigned int)_mapType;
@@ -135,6 +145,7 @@
 - (struct { double x1; double x2; })_presentationCoordinate;
 - (id /* block */)_presentationCoordinateChangedCallback;
 - (double)_presentationCourse;
+- (void)_removePopover;
 - (void)_resetZIndex;
 - (void)_resetZIndexNotify:(BOOL)arg1;
 - (id)_routeMatch;
@@ -145,7 +156,7 @@
 - (void)_setCanDisplayPlacemarkInCallout:(BOOL)arg1;
 - (void)_setHiddenForInvalidPoint:(BOOL)arg1;
 - (void)_setHiddenForOffscreen:(BOOL)arg1;
-- (void)_setMapDisplayStyle:(unsigned int)arg1;
+- (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)_setMapPitchRadians:(float)arg1;
 - (void)_setMapRotationRadians:(float)arg1;
 - (void)_setMapType:(unsigned int)arg1;
@@ -175,7 +186,7 @@
 - (id)detailCalloutAccessoryView;
 - (unsigned int)dragState;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)image;
+- (struct UIImage { Class x1; }*)image;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDraggable;
@@ -201,7 +212,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setImage:(struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)arg1;
+- (void)setImage:(struct UIImage { Class x1; }*)arg1;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setLeftCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;

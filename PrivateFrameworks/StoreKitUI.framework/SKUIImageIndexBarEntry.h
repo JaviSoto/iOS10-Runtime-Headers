@@ -3,7 +3,7 @@
  */
 
 @interface SKUIImageIndexBarEntry : SKUIIndexBarEntry {
-    UIImage *_image;
+    UIImage * _image;
 }
 
 @property (nonatomic, readonly) UIImage *image;

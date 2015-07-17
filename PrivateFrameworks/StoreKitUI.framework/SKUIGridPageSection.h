@@ -3,26 +3,26 @@
  */
 
 @interface SKUIGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
-    NSMapTable *_artworkRequests;
-    SKUIClientContext *_clientContext;
-    BOOL _containsLockups;
-    NSMapTable *_editorialLayouts;
-    NSMutableIndexSet *_hiddenIconIndexSet;
-    BOOL _isLandscape;
-    BOOL _isPad;
-    NSMapTable *_lockupArtworkContexts;
+    NSMapTable * _artworkRequests;
+    SKUIClientContext * _clientContext;
+    BOOL  _containsLockups;
+    NSMapTable * _editorialLayouts;
+    NSMutableIndexSet * _hiddenIconIndexSet;
+    BOOL  _isLandscape;
+    BOOL  _isPad;
+    NSMapTable * _lockupArtworkContexts;
     struct CGSize { 
         float width; 
         float height; 
-    } _lockupImageBoundingSize;
-    SKUIMissingItemLoader *_missingItemLoader;
-    NSString *_moreButtonTitle;
-    int _numberOfColumns;
-    SKUIProductPageOverlayController *_overlayController;
-    int _overlaySourceItemIndex;
-    int _screenScale;
-    SKUIVideoImageDataConsumer *_videoImageDataConsumer;
-    NSMutableDictionary *_videoPlaceholderImages;
+    }  _lockupImageBoundingSize;
+    SKUIMissingItemLoader * _missingItemLoader;
+    NSString * _moreButtonTitle;
+    int  _numberOfColumns;
+    SKUIProductPageOverlayController * _overlayController;
+    int  _overlaySourceItemIndex;
+    int  _screenScale;
+    SKUIVideoImageDataConsumer * _videoImageDataConsumer;
+    NSMutableDictionary * _videoPlaceholderImages;
 }
 
 @property (readonly, copy) NSString *debugDescription;

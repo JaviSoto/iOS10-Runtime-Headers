@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIRemoteControlEvent : UIInternalEvent {
-    int _subtype;
+@interface UIRemoteControlEvent : UIEvent {
+    int  _subtype;
 }
 
 - (id)_init;

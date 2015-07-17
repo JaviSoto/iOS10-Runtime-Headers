@@ -3,7 +3,7 @@
  */
 
 @interface QLThumbnail : NSObject {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (retain) NSURL *url;

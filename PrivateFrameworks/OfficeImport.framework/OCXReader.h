@@ -3,7 +3,7 @@
  */
 
 @interface OCXReader : OCDEncryptedReader {
-    OCPZipPackage *mZipPackage;
+    OCPZipPackage * mZipPackage;
 }
 
 @property (nonatomic, retain) OCPZipPackage *zipPackage;

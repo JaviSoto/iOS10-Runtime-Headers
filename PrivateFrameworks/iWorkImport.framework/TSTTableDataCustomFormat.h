@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataCustomFormat : TSTTableDataObject {
-    TSUCustomFormat *mCustomFormat;
+    TSUCustomFormat * mCustomFormat;
 }
 
 - (void)dealloc;

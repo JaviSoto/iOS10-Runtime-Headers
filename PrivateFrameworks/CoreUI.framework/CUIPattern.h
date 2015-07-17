@@ -3,9 +3,9 @@
  */
 
 @interface CUIPattern : NSObject {
-    float _alpha;
-    struct CGPattern { } *_pattern;
-    struct CGImage { } *_patternImage;
+    float  _alpha;
+    struct CGPattern { } * _pattern;
+    struct CGImage { } * _patternImage;
 }
 
 @property (nonatomic) float alpha;

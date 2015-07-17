@@ -3,32 +3,32 @@
  */
 
 @interface GLKViewController : UIViewController <GLKViewDelegate, NSCoding> {
-    <GLKViewControllerDelegate> *_delegate;
-    CADisplayLink *_displayLink;
-    GLKDisplayLinkMessenger *_displayLinkMessenger;
-    BOOL _displayLinkPaused;
-    BOOL _firstResumeOccurred;
-    int _frameInterval;
-    int _framesDisplayed;
-    int _framesPerSecond;
-    BOOL _lastDrawOccurred;
-    BOOL _lastResumeOccurred;
-    BOOL _lastUpdateOccurred;
-    BOOL _pauseOnWillResignActive;
-    int _preferredFramesPerSecond;
-    BOOL _resumeOnDidBecomeActive;
-    UIScreen *_screen;
-    int _screenFramesPerSecond;
-    double _timeSinceFirstResume;
-    double _timeSinceFirstResumeStartTime;
-    double _timeSinceLastDraw;
-    double _timeSinceLastDrawPreviousTime;
-    double _timeSinceLastResume;
-    double _timeSinceLastResumeStartTime;
-    double _timeSinceLastUpdate;
-    double _timeSinceLastUpdatePreviousTime;
-    int (*_updateIMP;
-    BOOL _viewIsVisible;
+    <GLKViewControllerDelegate> * _delegate;
+    CADisplayLink * _displayLink;
+    GLKDisplayLinkMessenger * _displayLinkMessenger;
+    BOOL  _displayLinkPaused;
+    BOOL  _firstResumeOccurred;
+    int  _frameInterval;
+    int  _framesDisplayed;
+    int  _framesPerSecond;
+    BOOL  _lastDrawOccurred;
+    BOOL  _lastResumeOccurred;
+    BOOL  _lastUpdateOccurred;
+    BOOL  _pauseOnWillResignActive;
+    int  _preferredFramesPerSecond;
+    BOOL  _resumeOnDidBecomeActive;
+    UIScreen * _screen;
+    int  _screenFramesPerSecond;
+    double  _timeSinceFirstResume;
+    double  _timeSinceFirstResumeStartTime;
+    double  _timeSinceLastDraw;
+    double  _timeSinceLastDrawPreviousTime;
+    double  _timeSinceLastResume;
+    double  _timeSinceLastResumeStartTime;
+    double  _timeSinceLastUpdate;
+    double  _timeSinceLastUpdatePreviousTime;
+    int (* _updateIMP;
+    BOOL  _viewIsVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface CMDiagramPointMapper : CMMapper {
-    CMDrawingContext *mDrawingContext;
-    OADOrientedBounds *mOrientedBounds;
-    ODDPoint *mPoint;
-    NSString *mPresentationName;
+    CMDrawingContext * mDrawingContext;
+    OADOrientedBounds * mOrientedBounds;
+    ODDPoint * mPoint;
+    NSString * mPresentationName;
 }
 
 - (void)applyDiagramStyleToShapeProperties;

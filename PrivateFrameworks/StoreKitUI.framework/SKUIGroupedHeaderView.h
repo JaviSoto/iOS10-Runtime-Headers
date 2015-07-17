@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGroupedHeaderView : UIView {
-    UIView *_botBorder;
-    UILabel *_titleLabel;
-    UIView *_topBorder;
+    UIView * _botBorder;
+    UILabel * _titleLabel;
+    UIView * _topBorder;
 }
 
 @property (nonatomic) BOOL hasBottomBorder;

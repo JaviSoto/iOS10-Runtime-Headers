@@ -3,8 +3,8 @@
  */
 
 @interface HMXpcClientConnectionProxy : NSObject <HMMessageTransport> {
-    HMMessageDispatcher *_recvDispatcher;
-    id /* block */ _refreshHandler;
+    HMMessageDispatcher * _recvDispatcher;
+    id /* block */  _refreshHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

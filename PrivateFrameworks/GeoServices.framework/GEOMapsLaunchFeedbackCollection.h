@@ -5,13 +5,13 @@
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionId : 1; 
-    } _has;
+    }  _has;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionId;
-    NSString *_sourceAppBundleId;
-    NSString *_uriScheme;
+    }  _sessionId;
+    NSString * _sourceAppBundleId;
+    NSString * _uriScheme;
 }
 
 @property (nonatomic) BOOL hasSessionId;

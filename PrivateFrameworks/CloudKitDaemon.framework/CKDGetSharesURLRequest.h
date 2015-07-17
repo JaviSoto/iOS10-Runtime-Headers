@@ -3,11 +3,11 @@
  */
 
 @interface CKDGetSharesURLRequest : CKDURLRequest {
-    id /* block */ _shareFetchedBlock;
-    NSArray *_shareIDs;
-    NSMutableDictionary *_shareIDsByRequestID;
-    NSArray *_zoneIDs;
-    NSMutableDictionary *_zoneIDsByRequestID;
+    id /* block */  _shareFetchedBlock;
+    NSArray * _shareIDs;
+    NSMutableDictionary * _shareIDsByRequestID;
+    NSArray * _zoneIDs;
+    NSMutableDictionary * _zoneIDsByRequestID;
 }
 
 @property (nonatomic, copy) id /* block */ shareFetchedBlock;

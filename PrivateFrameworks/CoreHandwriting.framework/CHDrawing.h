@@ -20,7 +20,7 @@
             unsigned int _h; 
         } bitmap; 
         double lineHeight; 
-    } _drawing;
+    }  _drawing;
 }
 
 @property (nonatomic) /* Warning: unhandled struct encoding: '{CJKChar={vector<std::__1::vector<double' */ struct  drawing; /* unknown property attribute:  std::__1::allocator<double> >}}}II{Matrix<double>=^^?^dII}d} */

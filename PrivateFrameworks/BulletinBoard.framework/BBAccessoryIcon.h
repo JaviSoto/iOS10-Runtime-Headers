@@ -3,7 +3,7 @@
  */
 
 @interface BBAccessoryIcon : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableDictionary *_imagesForContentSize;
+    NSMutableDictionary * _imagesForContentSize;
 }
 
 @property (nonatomic, copy) NSDictionary *imagesForContentSize;

@@ -3,14 +3,14 @@
  */
 
 @interface AVMetadataFaceObjectInternal : NSObject {
-    int _faceID;
-    BOOL _hasLeftEyeBounds;
-    BOOL _hasLeftEyeClosedConfidence;
-    BOOL _hasRightEyeBounds;
-    BOOL _hasRightEyeClosedConfidence;
-    BOOL _hasRollAngle;
-    BOOL _hasSmileConfidence;
-    BOOL _hasYawAngle;
+    int  _faceID;
+    BOOL  _hasLeftEyeBounds;
+    BOOL  _hasLeftEyeClosedConfidence;
+    BOOL  _hasRightEyeBounds;
+    BOOL  _hasRightEyeClosedConfidence;
+    BOOL  _hasRollAngle;
+    BOOL  _hasSmileConfidence;
+    BOOL  _hasYawAngle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,8 +20,8 @@
             float width; 
             float height; 
         } size; 
-    } _leftEyeBounds;
-    int _leftEyeClosedConfidence;
+    }  _leftEyeBounds;
+    int  _leftEyeClosedConfidence;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,11 +31,11 @@
             float width; 
             float height; 
         } size; 
-    } _rightEyeBounds;
-    int _rightEyeClosedConfidence;
-    float _rollAngle;
-    int _smileConfidence;
-    float _yawAngle;
+    }  _rightEyeBounds;
+    int  _rightEyeClosedConfidence;
+    float  _rollAngle;
+    int  _smileConfidence;
+    float  _yawAngle;
 }
 
 @property (nonatomic) int faceID;

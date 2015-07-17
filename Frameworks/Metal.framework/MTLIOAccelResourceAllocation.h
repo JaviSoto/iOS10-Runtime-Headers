@@ -3,12 +3,12 @@
  */
 
 @interface MTLIOAccelResourceAllocation : MTLResourceAllocationInfo {
-    unsigned int _dirtySize;
-    NSString *_memoryPool;
-    BOOL _purgeable;
-    unsigned int _residentSize;
-    unsigned long long _uniqueIdentifier;
-    unsigned int _virtualSize;
+    unsigned int  _dirtySize;
+    NSString * _memoryPool;
+    BOOL  _purgeable;
+    unsigned int  _residentSize;
+    unsigned long long  _uniqueIdentifier;
+    unsigned int  _virtualSize;
 }
 
 - (void)dealloc;

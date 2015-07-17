@@ -3,10 +3,10 @@
  */
 
 @interface SKUIItemOfferButtonState : NSObject {
-    BOOL _hasImage;
-    BOOL _highlighted;
-    int _progressType;
-    BOOL _showingConfirmation;
+    BOOL  _hasImage;
+    BOOL  _highlighted;
+    int  _progressType;
+    BOOL  _showingConfirmation;
 }
 
 @property (nonatomic) BOOL hasImage;

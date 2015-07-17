@@ -3,31 +3,31 @@
  */
 
 @interface MPDetailSlider : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing> {
-    BOOL _allowsScrubbing;
-    BOOL _autoscrubActive;
-    NSTimer *_autoscrubTimer;
-    double _availableDuration;
-    BOOL _canCommit;
-    double _currentTime;
-    UILabel *_currentTimeInverseLabel;
-    UILabel *_currentTimeLabel;
-    <MPDetailSliderDelegate> *_delegate;
-    float _detailScrubbingVerticalRange;
-    UIView *_downloadingTrackOverlay;
-    double _duration;
-    UIImageView *_glowDetailScrubImageView;
-    BOOL _isTracking;
-    float _maxTrackWidth;
-    float _minTimeLabelWidth;
+    BOOL  _allowsScrubbing;
+    BOOL  _autoscrubActive;
+    NSTimer * _autoscrubTimer;
+    double  _availableDuration;
+    BOOL  _canCommit;
+    double  _currentTime;
+    UILabel * _currentTimeInverseLabel;
+    UILabel * _currentTimeLabel;
+    <MPDetailSliderDelegate> * _delegate;
+    float  _detailScrubbingVerticalRange;
+    UIView * _downloadingTrackOverlay;
+    double  _duration;
+    UIImageView * _glowDetailScrubImageView;
+    BOOL  _isTracking;
+    float  _maxTrackWidth;
+    float  _minTimeLabelWidth;
     struct CGPoint { 
         float x; 
         float y; 
-    } _previousLocationInView;
-    MPDetailScrubController *_scrubController;
-    int _style;
-    UIImageView *_thumbImageView;
-    int _timeLabelStyle;
-    float _trackInset;
+    }  _previousLocationInView;
+    MPDetailScrubController * _scrubController;
+    int  _style;
+    UIImageView * _thumbImageView;
+    int  _timeLabelStyle;
+    float  _trackInset;
 }
 
 @property (nonatomic) BOOL allowsDetailScrubbing;
@@ -106,6 +106,7 @@
 - (id)timeLabelTextColorForStyle:(int)arg1;
 - (void)tintColorDidChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)viewForBaselineLayout;
+- (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

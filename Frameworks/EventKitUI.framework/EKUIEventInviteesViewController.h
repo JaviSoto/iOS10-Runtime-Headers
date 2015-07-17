@@ -3,23 +3,23 @@
  */
 
 @interface EKUIEventInviteesViewController : UITableViewController <EKEditItemViewControllerDelegate, EKEditItemViewControllerProtocol, UITableViewDataSource, UITableViewDelegate> {
-    EKUIInviteesViewAllInviteesCanAttendSection *_allInviteesCanAttendSection;
-    EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
-    BOOL _editable;
-    EKEvent *_event;
-    EKUIInviteesViewInvisibleInviteeStatusSection *_invisibleInviteeStatusSection;
-    EKUIEventInviteesView *_inviteesView;
-    EKUIInviteesViewNotRespondedInviteesSection *_notRespondedSection;
-    EKUIInviteesViewOriginalConflictSection *_originalConflictSection;
-    EKUIEventInviteesEditViewController *_parentController;
-    BOOL _resetAttendeesSections;
-    BOOL _resetConflictResolutionSections;
-    EKUIInviteesViewRespondedInviteesSection *_respondedSection;
-    NSArray *_sections;
-    NSDate *_selectedEndDate;
-    NSDate *_selectedStartDate;
-    EKUIInviteesViewSomeInviteesCanAttendSection *_someInviteesCanAttendSection;
-    BOOL _viewIsVisible;
+    EKUIInviteesViewAllInviteesCanAttendSection * _allInviteesCanAttendSection;
+    EKUIInviteeAlternativeTimeSearcher * _availabilitySearcher;
+    BOOL  _editable;
+    EKEvent * _event;
+    EKUIInviteesViewInvisibleInviteeStatusSection * _invisibleInviteeStatusSection;
+    EKUIEventInviteesView * _inviteesView;
+    EKUIInviteesViewNotRespondedInviteesSection * _notRespondedSection;
+    EKUIInviteesViewOriginalConflictSection * _originalConflictSection;
+    EKUIEventInviteesEditViewController * _parentController;
+    BOOL  _resetAttendeesSections;
+    BOOL  _resetConflictResolutionSections;
+    EKUIInviteesViewRespondedInviteesSection * _respondedSection;
+    NSArray * _sections;
+    NSDate * _selectedEndDate;
+    NSDate * _selectedStartDate;
+    EKUIInviteesViewSomeInviteesCanAttendSection * _someInviteesCanAttendSection;
+    BOOL  _viewIsVisible;
 }
 
 @property (nonatomic, retain) EKUIInviteesViewAllInviteesCanAttendSection *allInviteesCanAttendSection;

@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _centerOffset;
+    }  _centerOffset;
 }
 
 - (void)_adjustLayoutAttributes:(id)arg1;

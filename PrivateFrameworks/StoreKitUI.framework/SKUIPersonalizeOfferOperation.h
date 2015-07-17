@@ -3,10 +3,10 @@
  */
 
 @interface SKUIPersonalizeOfferOperation : NSOperation {
-    SKUIClientContext *_clientContext;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    long long _itemID;
-    id /* block */ _outputBlock;
+    SKUIClientContext * _clientContext;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    long long  _itemID;
+    id /* block */  _outputBlock;
 }
 
 @property (copy) id /* block */ outputBlock;

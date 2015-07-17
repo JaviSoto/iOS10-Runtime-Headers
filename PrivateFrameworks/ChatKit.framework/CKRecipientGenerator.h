@@ -3,7 +3,7 @@
  */
 
 @interface CKRecipientGenerator : NSObject {
-    NSArray *_searchABPropertyTypes;
+    NSArray * _searchABPropertyTypes;
 }
 
 @property (nonatomic, retain) NSArray *searchABPropertyTypes;

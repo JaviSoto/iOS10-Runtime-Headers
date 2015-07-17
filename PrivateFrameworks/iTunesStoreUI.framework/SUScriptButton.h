@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptButton : SUScriptObject <SUScriptNavigationItem> {
-    id _action;
-    SUScriptCanvasContext *_canvas;
-    BOOL _shouldPerformDefaultAction;
-    WebScriptObject *_target;
+    id  _action;
+    SUScriptCanvasContext * _canvas;
+    BOOL  _shouldPerformDefaultAction;
+    WebScriptObject * _target;
 }
 
 @property (retain) id action;

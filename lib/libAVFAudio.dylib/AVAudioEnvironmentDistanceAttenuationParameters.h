@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioEnvironmentDistanceAttenuationParameters : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (nonatomic) int distanceAttenuationModel;

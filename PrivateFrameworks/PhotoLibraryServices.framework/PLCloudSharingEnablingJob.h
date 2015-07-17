@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudSharingEnablingJob : PLCloudSharingJob {
-    BOOL _enableSharing;
+    BOOL  _enableSharing;
 }
 
 @property (nonatomic) BOOL enableSharing;

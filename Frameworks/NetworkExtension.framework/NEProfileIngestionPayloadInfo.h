@@ -3,14 +3,14 @@
  */
 
 @interface NEProfileIngestionPayloadInfo : NSObject <NEConfigurationLegacySupport, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL _applicationCreated;
-    BOOL _isSetAside;
-    NSString *_payloadOrganization;
-    NSString *_payloadProtocolType;
-    NSString *_payloadUUID;
-    NSString *_profileIdentifier;
-    NSString *_profileOrganization;
-    NSString *_profileUUID;
+    BOOL  _applicationCreated;
+    BOOL  _isSetAside;
+    NSString * _payloadOrganization;
+    NSString * _payloadProtocolType;
+    NSString * _payloadUUID;
+    NSString * _profileIdentifier;
+    NSString * _profileOrganization;
+    NSString * _profileUUID;
 }
 
 @property BOOL applicationCreated;
@@ -28,7 +28,7 @@
 - (BOOL)applicationCreated;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

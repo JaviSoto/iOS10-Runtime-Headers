@@ -3,8 +3,8 @@
  */
 
 @interface WBURecentWebSearchesController : WBSRecentWebSearchesController {
-    NSString *_pathToLegacySearchesFile;
-    NSString *_preferencesDomain;
+    NSString * _pathToLegacySearchesFile;
+    NSString * _preferencesDomain;
 }
 
 + (unsigned int)_maximumNumberOfSearchesToTrack;

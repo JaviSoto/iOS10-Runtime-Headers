@@ -3,8 +3,8 @@
  */
 
 @interface CKDZoneGatekeeper : NSObject {
-    NSMutableArray *_waiterWrappers;
-    NSMutableDictionary *_zoneIDsToGateHolders;
+    NSMutableArray * _waiterWrappers;
+    NSMutableDictionary * _zoneIDsToGateHolders;
 }
 
 @property (nonatomic, retain) NSMutableArray *waiterWrappers;

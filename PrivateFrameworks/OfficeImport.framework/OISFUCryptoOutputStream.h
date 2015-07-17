@@ -3,11 +3,11 @@
  */
 
 @interface OISFUCryptoOutputStream : NSObject <SFUOutputStream> {
-    <SFUOutputStream> *mBaseStream;
-    BOOL mComputeCrc32;
-    unsigned int mCrc32;
-    OISFUCryptor *mCryptor;
-    BOOL mIsClosed;
+    <SFUOutputStream> * mBaseStream;
+    BOOL  mComputeCrc32;
+    unsigned int  mCrc32;
+    OISFUCryptor * mCryptor;
+    BOOL  mIsClosed;
 }
 
 @property (readonly, copy) NSString *debugDescription;

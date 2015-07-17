@@ -8,13 +8,13 @@
         float y; 
         float z; 
         float w; 
-    } _GLPoint4DValue;
+    }  _GLPoint4DValue;
     struct { 
         float x; 
         float y; 
         float z; 
         float w; 
-    } _proposedGLPoint4DValue;
+    }  _proposedGLPoint4DValue;
 }
 
 @property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } GLPoint4DValue;

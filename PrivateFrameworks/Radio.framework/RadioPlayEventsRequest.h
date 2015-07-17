@@ -3,8 +3,8 @@
  */
 
 @interface RadioPlayEventsRequest : RadioRequest {
-    RadioPlayEventCollection *_playEventCollection;
-    SSURLConnectionRequest *_request;
+    RadioPlayEventCollection * _playEventCollection;
+    SSURLConnectionRequest * _request;
 }
 
 @property (nonatomic, readonly, copy) RadioPlayEventCollection *playEventCollection;

@@ -3,11 +3,11 @@
  */
 
 @interface TPFootnoteContainerLayout : TSDLayout <TSWPColumnMetrics, TSWPFootnoteMarkProvider, TSWPLayoutParent> {
-    <TSWPFootnoteMarkProvider> *_footnoteMarkProvider;
-    float _footnoteSpacing;
-    BOOL _includeFootnoteSeparatorLine;
-    float _maxFootnoteHeight;
-    float _width;
+    <TSWPFootnoteMarkProvider> * _footnoteMarkProvider;
+    float  _footnoteSpacing;
+    BOOL  _includeFootnoteSeparatorLine;
+    float  _maxFootnoteHeight;
+    float  _width;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;

@@ -3,10 +3,10 @@
  */
 
 @interface RadioAddStationRequest : RadioSyncRequest {
-    NSDictionary *_matchDictionary;
-    long long _persistentID;
-    NSMutableDictionary *_stationDictionary;
-    NSString *_stationHashForSkipHistoryCopying;
+    NSDictionary * _matchDictionary;
+    long long  _persistentID;
+    NSMutableDictionary * _stationDictionary;
+    NSString * _stationHashForSkipHistoryCopying;
 }
 
 - (void).cxx_destruct;

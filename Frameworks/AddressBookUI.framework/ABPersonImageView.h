@@ -3,20 +3,20 @@
  */
 
 @interface ABPersonImageView : ABPasteboardControl {
-    BOOL _allowsEditing;
-    ABUIPerson *_displayedPerson;
-    UIImageView *_editingImageView;
-    ABClippingImageView *_emptyImageView;
-    <ABPersonImageDataDelegate> *_imageDataDelegate;
-    BOOL _isEditing;
-    BOOL _multiplePhotoBackdropEnabled;
-    BOOL _needsReflow;
-    BOOL _needsReload;
-    ABClippingImageView *_pasteboardMaskImageView;
-    UIImage *_personImage;
-    UIImageView *_personImageView;
-    BOOL _showLabel;
-    <ABStyleProvider> *_styleProvider;
+    BOOL  _allowsEditing;
+    ABUIPerson * _displayedPerson;
+    UIImageView * _editingImageView;
+    ABClippingImageView * _emptyImageView;
+    <ABPersonImageDataDelegate> * _imageDataDelegate;
+    BOOL  _isEditing;
+    BOOL  _multiplePhotoBackdropEnabled;
+    BOOL  _needsReflow;
+    BOOL  _needsReload;
+    ABClippingImageView * _pasteboardMaskImageView;
+    UIImage * _personImage;
+    UIImageView * _personImageView;
+    BOOL  _showLabel;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) BOOL allowsEditing;

@@ -6,22 +6,22 @@
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
-    } _allFshMasks;
-    unsigned char _enabled;
-    int _envMode;
-    NSString *_filePath;
-    unsigned char _matrixEnabled;
-    unsigned int _name;
-    unsigned int _target;
-    NSMutableArray *_texGenArray;
-    GLKEffectPropertyTexGen *_texGenR;
-    GLKEffectPropertyTexGen *_texGenS;
-    GLKEffectPropertyTexGen *_texGenT;
-    int _textureIndex;
-    int _unit2dLoc;
-    char *_unit2dNameString;
-    int _unitCubeLoc;
-    char *_unitCubeNameString;
+    }  _allFshMasks;
+    unsigned char  _enabled;
+    int  _envMode;
+    NSString * _filePath;
+    unsigned char  _matrixEnabled;
+    unsigned int  _name;
+    unsigned int  _target;
+    NSMutableArray * _texGenArray;
+    GLKEffectPropertyTexGen * _texGenR;
+    GLKEffectPropertyTexGen * _texGenS;
+    GLKEffectPropertyTexGen * _texGenT;
+    int  _textureIndex;
+    int  _unit2dLoc;
+    char * _unit2dNameString;
+    int  _unitCubeLoc;
+    char * _unitCubeNameString;
 }
 
 @property (nonatomic, readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;

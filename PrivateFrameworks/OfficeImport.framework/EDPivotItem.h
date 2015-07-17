@@ -3,14 +3,15 @@
  */
 
 @interface EDPivotItem : NSObject {
-    EDCollection *mItemIndexes;
-    unsigned int mRepeatedItemCounts;
-    int mType;
+    EDCollection * mItemIndexes;
+    unsigned int  mRepeatedItemCounts;
+    int  mType;
 }
 
 + (id)pivotItem;
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)itemIndexes;
 - (unsigned int)repeatedItemCounts;

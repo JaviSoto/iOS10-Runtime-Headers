@@ -3,7 +3,7 @@
  */
 
 @interface SSVPlayActivityTable : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 @property (nonatomic) unsigned long long currentEventsRevision;

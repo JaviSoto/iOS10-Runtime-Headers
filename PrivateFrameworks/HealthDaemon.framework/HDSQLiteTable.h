@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteTable : NSObject {
-    NSMutableArray *_columns;
-    NSMutableArray *_tableConstraints;
-    NSString *_tableName;
+    NSMutableArray * _columns;
+    NSMutableArray * _tableConstraints;
+    NSString * _tableName;
 }
 
 @property (nonatomic, copy) NSString *tableName;

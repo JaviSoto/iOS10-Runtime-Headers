@@ -3,18 +3,18 @@
  */
 
 @interface PUReviewScrubber : UIToolbar <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
-    UIImageView *__arrowImageView;
-    _UIBackdropView *__backdropView;
-    UICollectionView *__collectionView;
-    PUHorizontalCollectionViewLayout *__collectionViewLayout;
-    BOOL __ignoreScrollViewDidScrollUpdate;
-    unsigned int __numberOfPhotos;
-    BOOL __performingInteractiveUpdate;
-    UIImageView *__shadowView;
-    UITapGestureRecognizer *__tapGestureRecognizer;
-    <PUReviewScrubberDataSource> *_dataSource;
-    <PUReviewScrubberDelegate> *_scrubberDelegate;
-    int _selectedIndex;
+    UIImageView * __arrowImageView;
+    _UIBackdropView * __backdropView;
+    UICollectionView * __collectionView;
+    PUHorizontalCollectionViewLayout * __collectionViewLayout;
+    BOOL  __ignoreScrollViewDidScrollUpdate;
+    unsigned int  __numberOfPhotos;
+    BOOL  __performingInteractiveUpdate;
+    UIImageView * __shadowView;
+    UITapGestureRecognizer * __tapGestureRecognizer;
+    <PUReviewScrubberDataSource> * _dataSource;
+    <PUReviewScrubberDelegate> * _scrubberDelegate;
+    int  _selectedIndex;
 }
 
 @property (nonatomic, readonly) UIImageView *_arrowImageView;

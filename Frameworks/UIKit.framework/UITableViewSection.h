@@ -3,11 +3,11 @@
  */
 
 @interface UITableViewSection : NSObject <NSCoding> {
-    NSString *_footerTitle;
-    UIView *_footerView;
-    NSString *_headerTitle;
-    UIView *_headerView;
-    NSArray *_rows;
+    NSString * _footerTitle;
+    UIView * _footerView;
+    NSString * _headerTitle;
+    UIView * _headerView;
+    NSArray * _rows;
 }
 
 @property (nonatomic, copy) NSString *footerTitle;
@@ -18,7 +18,7 @@
 
 + (id)sectionWithRows:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)footerTitle;
 - (id)footerView;

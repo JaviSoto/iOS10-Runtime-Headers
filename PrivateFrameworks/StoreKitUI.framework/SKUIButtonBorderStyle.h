@@ -3,22 +3,22 @@
  */
 
 @interface SKUIButtonBorderStyle : NSObject <NSCopying> {
-    IKColor *_borderColor;
-    float _borderWidth;
+    IKColor * _borderColor;
+    float  _borderWidth;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
+    }  _contentInset;
     struct IKCornerRadii { 
         float bottomLeft; 
         float bottomRight; 
         float topLeft; 
         float topRight; 
-    } _cornerRadii;
-    IKColor *_fillColor;
-    NSString *_namedCornerStyle;
+    }  _cornerRadii;
+    IKColor * _fillColor;
+    NSString * _namedCornerStyle;
 }
 
 @property (nonatomic, copy) IKColor *borderColor;

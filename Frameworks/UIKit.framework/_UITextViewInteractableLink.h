@@ -3,7 +3,7 @@
  */
 
 @interface _UITextViewInteractableLink : _UITextViewInteractableItem <DDDetectionControllerInteractionDelegate> {
-    NSURL *_link;
+    NSURL * _link;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 
 + (id)interactableLinkWithURL:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
+- (void).cxx_destruct;
 - (void)_dataDetectorAction:(id)arg1;
 - (void)_linkInteractionAddToReadingList;
 - (void)_linkInteractionCopyLink;
@@ -23,7 +24,6 @@
 - (id)actions;
 - (BOOL)allowInteraction;
 - (id)dataDetectorActionsForTextView:(id)arg1;
-- (void)dealloc;
 - (id)defaultAction;
 - (id)link;
 - (id)linkActions;

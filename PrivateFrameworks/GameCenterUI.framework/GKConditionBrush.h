@@ -3,9 +3,9 @@
  */
 
 @interface GKConditionBrush : GKBrush {
-    GKBrush *_noBrush;
-    NSPredicate *_predicate;
-    GKBrush *_yesBrush;
+    GKBrush * _noBrush;
+    NSPredicate * _predicate;
+    GKBrush * _yesBrush;
 }
 
 @property (nonatomic, retain) GKBrush *noBrush;

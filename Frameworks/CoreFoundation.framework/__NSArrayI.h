@@ -3,7 +3,8 @@
  */
 
 @interface __NSArrayI : NSArray {
-    unsigned int _used;
+    unsigned int  _used;
+    /* Warning: unhandled array encoding: '[0@]' */ id  list;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;

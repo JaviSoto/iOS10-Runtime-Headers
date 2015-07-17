@@ -3,9 +3,9 @@
  */
 
 @interface PLPhotoScrollerViewController : PLPhotoBrowserController {
-    BOOL _dontChangeStatusBar;
-    BOOL _modalSheetIsPresent;
-    BOOL _viewWillDisappear;
+    BOOL  _dontChangeStatusBar;
+    BOOL  _modalSheetIsPresent;
+    BOOL  _viewWillDisappear;
 }
 
 - (id)_initWithAssetCollections:(id)arg1 dataSource:(id)arg2 lockStatusBar:(BOOL)arg3 currentImageIndexPath:(id)arg4 delayImageLoading:(BOOL)arg5;

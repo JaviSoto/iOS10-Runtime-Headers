@@ -3,17 +3,17 @@
  */
 
 @interface CKRecordZone : NSObject <NSCopying, NSSecureCoding> {
-    long long _assetQuotaUsage;
-    unsigned int _capabilities;
-    NSData *_clientChangeToken;
-    CKContainerID *_containerID;
-    NSData *_currentServerContinuationToken;
-    int _deviceCount;
-    long long _metadataQuotaUsage;
-    NSString *_previousProtectionEtag;
-    NSData *_protectionData;
-    NSString *_protectionEtag;
-    CKRecordZoneID *_zoneID;
+    long long  _assetQuotaUsage;
+    unsigned int  _capabilities;
+    NSData * _clientChangeToken;
+    CKContainerID * _containerID;
+    NSData * _currentServerContinuationToken;
+    int  _deviceCount;
+    long long  _metadataQuotaUsage;
+    NSString * _previousProtectionEtag;
+    NSData * _protectionData;
+    NSString * _protectionEtag;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic) long long assetQuotaUsage;

@@ -3,8 +3,8 @@
  */
 
 @interface VUFooterContainerView : UIView {
-    id _delegate;
-    UIButton *_termsButton;
+    id  _delegate;
+    UIButton * _termsButton;
 }
 
 @property (nonatomic) id delegate;

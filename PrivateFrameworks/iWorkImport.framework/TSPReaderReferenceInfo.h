@@ -3,8 +3,8 @@
  */
 
 @interface TSPReaderReferenceInfo : NSObject {
-    long long _componentIdentifier;
-    long long _objectIdentifier;
+    long long  _componentIdentifier;
+    long long  _objectIdentifier;
 }
 
 @property (nonatomic, readonly) long long componentIdentifier;

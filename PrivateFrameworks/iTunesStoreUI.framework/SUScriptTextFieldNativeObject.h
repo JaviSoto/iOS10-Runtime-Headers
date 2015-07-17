@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptTextFieldNativeObject : SUScriptNativeObject <SUScriptTextFieldDelegate> {
-    SUScriptTextFieldDelegate *_textFieldDelegate;
+    SUScriptTextFieldDelegate * _textFieldDelegate;
 }
 
 @property (nonatomic) int autocapitalizationType;

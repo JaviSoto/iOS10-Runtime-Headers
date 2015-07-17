@@ -3,15 +3,15 @@
  */
 
 @interface PLAWDBattery : PLAWDAuxMetrics {
-    PLEntryNotificationOperatorComposition *_batteryEventCallback;
-    long _batterySubmitCnt;
-    long _dispOnOffCnt;
-    PLEntryNotificationOperatorComposition *_displayEventCallback;
-    double _prevCapacity;
-    BOOL _prevDeviceCharging;
-    double _prevDispTimeStamp;
-    BOOL _prevDisplayON;
-    double _prevVoltage;
+    PLEntryNotificationOperatorComposition * _batteryEventCallback;
+    long  _batterySubmitCnt;
+    long  _dispOnOffCnt;
+    PLEntryNotificationOperatorComposition * _displayEventCallback;
+    double  _prevCapacity;
+    BOOL  _prevDeviceCharging;
+    double  _prevDispTimeStamp;
+    BOOL  _prevDisplayON;
+    double  _prevVoltage;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryEventCallback;

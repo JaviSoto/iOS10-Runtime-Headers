@@ -3,10 +3,10 @@
  */
 
 @interface _UIInputViewContent : UIView {
-    float _contentHeight;
-    float _contentWidth;
-    UIInputView *_inputView;
-    int _unclippableCorners;
+    float  _contentHeight;
+    float  _contentWidth;
+    UIInputView * _inputView;
+    int  _unclippableCorners;
 }
 
 @property (nonatomic) int _unclippableCorners;

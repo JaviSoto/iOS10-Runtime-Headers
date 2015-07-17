@@ -12,7 +12,13 @@
 + (id)season;
 + (id)seasonWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)currentSeasonYear;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)relativeSeasonYear;
+- (id)seasonYear;
+- (void)setCurrentSeasonYear:(id)arg1;
+- (void)setRelativeSeasonYear:(id)arg1;
+- (void)setSeasonYear:(id)arg1;
 
 @end

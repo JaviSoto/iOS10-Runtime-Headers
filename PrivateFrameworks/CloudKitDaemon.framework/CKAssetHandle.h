@@ -3,13 +3,13 @@
  */
 
 @interface CKAssetHandle : CKObject {
-    NSString *_UUID;
-    NSNumber *_deviceID;
-    NSNumber *_fileID;
-    NSNumber *_generationID;
-    NSNumber *_itemID;
-    NSNumber *_lastUsedTime;
-    NSString *_path;
+    NSString * _UUID;
+    NSNumber * _deviceID;
+    NSNumber * _fileID;
+    NSNumber * _generationID;
+    NSNumber * _itemID;
+    NSNumber * _lastUsedTime;
+    NSString * _path;
 }
 
 @property (nonatomic, retain) NSString *UUID;
@@ -19,8 +19,6 @@
 @property (nonatomic, retain) NSNumber *itemID;
 @property (nonatomic, retain) NSNumber *lastUsedTime;
 @property (nonatomic, retain) NSString *path;
-
-+ (BOOL)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forPath:(id)arg4 error:(id*)arg5;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -32,7 +30,6 @@
 - (id)initWithItemID:(id)arg1 UUID:(id)arg2 path:(id)arg3;
 - (id)itemID;
 - (id)lastUsedTime;
-- (int)openFileDescriptorWithError:(id*)arg1;
 - (id)path;
 - (void)setDeviceID:(id)arg1;
 - (void)setFileID:(id)arg1;

@@ -6,10 +6,10 @@
     struct { 
         unsigned int size : 1; 
         unsigned int lastSection : 1; 
-    } _has;
-    BOOL _lastSection;
-    NSData *_signature;
-    long long _size;
+    }  _has;
+    BOOL  _lastSection;
+    NSData * _signature;
+    long long  _size;
 }
 
 @property (nonatomic) BOOL hasLastSection;

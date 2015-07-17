@@ -3,11 +3,11 @@
  */
 
 @interface EKParticipantForSorting : NSObject {
-    NSString *_cachedDisplayName;
-    NSString *_firstName;
-    BOOL _isEmail;
-    NSString *_lastName;
-    EKParticipant *_participant;
+    NSString * _cachedDisplayName;
+    NSString * _firstName;
+    BOOL  _isEmail;
+    NSString * _lastName;
+    EKParticipant * _participant;
 }
 
 - (void).cxx_destruct;

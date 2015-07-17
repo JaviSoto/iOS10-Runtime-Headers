@@ -3,9 +3,9 @@
  */
 
 @interface BRCSharingModifyShareOperation : _BRCFrameworkOperation <BRCOperationSubclass> {
-    BRCItemID *_itemID;
-    BRCServerZone *_serverZone;
-    CKShare *_share;
+    BRCItemID * _itemID;
+    BRCServerZone * _serverZone;
+    CKShare * _share;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,5 +21,6 @@
 - (void)main;
 - (void)performAfterFetchingBaseTokenIfNecessary:(id /* block */)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

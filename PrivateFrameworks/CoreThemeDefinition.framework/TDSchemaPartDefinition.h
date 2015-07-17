@@ -3,10 +3,10 @@
  */
 
 @interface TDSchemaPartDefinition : NSManagedObject {
-    unsigned int partFeatures;
-    CUIImage *previewImage;
-    NSArray *renditionGroups;
-    NSArray *renditions;
+    unsigned int  partFeatures;
+    CUIImage * previewImage;
+    NSArray * renditionGroups;
+    NSArray * renditions;
 }
 
 @property (nonatomic, retain) TDSchemaDefinition *element;

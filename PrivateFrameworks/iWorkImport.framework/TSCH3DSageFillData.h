@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DSageFillData : NSObject <TSCH3DSageFillData> {
-    TSCH3DFillSetIdentifier *mIdentifier;
-    NSObject<TSCH3DSageFillImageDataSource> *mImageSource;
-    NSArray *mLayersProperties;
-    NSDictionary *mProperties;
+    TSCH3DFillSetIdentifier * mIdentifier;
+    NSObject<TSCH3DSageFillImageDataSource> * mImageSource;
+    NSArray * mLayersProperties;
+    NSDictionary * mProperties;
 }
 
 + (id)TSPImageDataFromTexture:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface PLLargeImageLoader : NSObject <PLPreheatItemSource> {
-    int _format;
+    int  _format;
 }
 
 @property (readonly, copy) NSString *debugDescription;

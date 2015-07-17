@@ -3,8 +3,8 @@
  */
 
 @interface ML3Entity : NSObject {
-    ML3MusicLibrary *_library;
-    long long _persistentID;
+    ML3MusicLibrary * _library;
+    long long  _persistentID;
 }
 
 @property (readonly) BOOL existsInLibrary;

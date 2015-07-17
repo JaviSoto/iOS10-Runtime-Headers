@@ -3,23 +3,23 @@
  */
 
 @interface IMToSuperParserContext : IMXMLParserContext {
-    NSString *_backgroundColor;
-    NSMutableArray *_backgroundColorStack;
-    int _baseWritingDirection;
-    NSMutableAttributedString *_body;
-    unsigned int _boldCount;
-    NSMutableDictionary *_currentAttributes;
-    BOOL _didAddBodyAttributes;
-    NSMutableArray *_fileTransferGUIDs;
-    NSMutableArray *_fontFamilyStack;
-    NSMutableArray *_fontSizeStack;
-    NSString *_foregroundColor;
-    NSMutableArray *_foregroundColorStack;
-    unsigned int _italicCount;
-    NSMutableArray *_linkStack;
-    unsigned int _messagePartNumber;
-    unsigned int _strikethroughCount;
-    unsigned int _underlineCount;
+    NSString * _backgroundColor;
+    NSMutableArray * _backgroundColorStack;
+    int  _baseWritingDirection;
+    NSMutableAttributedString * _body;
+    unsigned int  _boldCount;
+    NSMutableDictionary * _currentAttributes;
+    BOOL  _didAddBodyAttributes;
+    NSMutableArray * _fileTransferGUIDs;
+    NSMutableArray * _fontFamilyStack;
+    NSMutableArray * _fontSizeStack;
+    NSString * _foregroundColor;
+    NSMutableArray * _foregroundColorStack;
+    unsigned int  _italicCount;
+    NSMutableArray * _linkStack;
+    unsigned int  _messagePartNumber;
+    unsigned int  _strikethroughCount;
+    unsigned int  _underlineCount;
 }
 
 @property (nonatomic, retain) NSString *backgroundColor;

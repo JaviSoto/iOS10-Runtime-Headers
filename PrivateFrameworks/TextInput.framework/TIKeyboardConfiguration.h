@@ -3,11 +3,11 @@
  */
 
 @interface TIKeyboardConfiguration : NSObject <NSSecureCoding> {
-    NSString *_accentKeyString;
-    BOOL _assertDefaultKeyPlane;
-    TIKeyboardInputManagerState *_inputManagerState;
-    TIKeyboardIntermediateText *_intermediateText;
-    NSString *_layoutTag;
+    NSString * _accentKeyString;
+    BOOL  _assertDefaultKeyPlane;
+    TIKeyboardInputManagerState * _inputManagerState;
+    TIKeyboardIntermediateText * _intermediateText;
+    NSString * _layoutTag;
 }
 
 @property (nonatomic, copy) NSString *accentKeyString;

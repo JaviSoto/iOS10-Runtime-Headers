@@ -7,7 +7,7 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _transportTypes;
+    }  _transportTypes;
 }
 
 @property (nonatomic, readonly) int*transportTypes;

@@ -3,14 +3,14 @@
  */
 
 @interface CLVisit : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_arrivalDate;
+    NSDate * _arrivalDate;
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    NSDate *_departureDate;
-    NSDate *_detectionDate;
-    double _horizontalAccuracy;
+    }  _coordinate;
+    NSDate * _departureDate;
+    NSDate * _detectionDate;
+    double  _horizontalAccuracy;
 }
 
 @property (nonatomic, readonly, copy) NSDate *arrivalDate;

@@ -5,11 +5,11 @@
 @interface GEOPDAddress : PBCodable <NSCopying> {
     struct { 
         unsigned int knownAccuracy : 1; 
-    } _has;
-    int _knownAccuracy;
-    NSMutableArray *_localizedAddress;
-    NSMutableArray *_spokenNavigationAddress;
-    NSMutableArray *_spokenStructuredAddress;
+    }  _has;
+    int  _knownAccuracy;
+    NSMutableArray * _localizedAddress;
+    NSMutableArray * _spokenNavigationAddress;
+    NSMutableArray * _spokenStructuredAddress;
 }
 
 @property (nonatomic) BOOL hasKnownAccuracy;

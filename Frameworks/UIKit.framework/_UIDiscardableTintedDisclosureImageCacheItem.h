@@ -7,14 +7,15 @@
         unsigned int isDiscarded : 1; 
         unsigned int isPressed : 1; 
         unsigned int useCount; 
-    } _flags;
-    UIColor *_tintColor;
-    UIImage *_tintedImage;
+    }  _flags;
+    UIColor * _tintColor;
+    UIImage * _tintedImage;
 }
 
 @property (nonatomic, readonly) UIColor *tintColor;
 @property (nonatomic, readonly) UIImage *tintedImage;
 
+- (void).cxx_destruct;
 - (id)_tintedDisclosureImage:(BOOL)arg1;
 - (BOOL)beginContentAccess;
 - (void)dealloc;

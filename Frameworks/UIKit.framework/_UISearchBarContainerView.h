@@ -3,8 +3,8 @@
  */
 
 @interface _UISearchBarContainerView : UIView {
-    int _resizingMask;
-    UIView *_subview;
+    int  _resizingMask;
+    UIView * _subview;
 }
 
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;

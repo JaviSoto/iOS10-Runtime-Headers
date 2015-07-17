@@ -3,7 +3,7 @@
  */
 
 @interface TSPCopyArchiver : TSPArchiver <TSPProxyObjectMappingProvider> {
-    <TSPProxyObjectMapping> *_proxyObjectMapping;
+    <TSPProxyObjectMapping> * _proxyObjectMapping;
 }
 
 @property (nonatomic) <TSPProxyObjectMapping> *proxyObjectMapping;

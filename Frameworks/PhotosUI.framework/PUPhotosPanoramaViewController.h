@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotosPanoramaViewController : PUPhotosGridViewController {
-    PUPhotosPanoramaViewControllerSpec *_panoramaSpec;
-    PHAssetCollection *_userPanoAlbum;
+    PUPhotosPanoramaViewControllerSpec * _panoramaSpec;
+    PHAssetCollection * _userPanoAlbum;
 }
 
 @property (nonatomic, readonly) PUSectionedGridLayout *mainGridLayout;
@@ -28,6 +28,7 @@
 - (void)setUserPanoAlbum:(id)arg1;
 - (void)updateLayoutMetrics;
 - (void)updatePhotoViewContent:(id)arg1 withThumbnailImage:(id)arg2;
+- (BOOL)updateSpec;
 - (id)userPanoAlbum;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)wantsGlobalFooter;

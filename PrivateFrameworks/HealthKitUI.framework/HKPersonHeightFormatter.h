@@ -3,8 +3,8 @@
  */
 
 @interface HKPersonHeightFormatter : NSObject {
-    NSLengthFormatter *_heightFormatter;
-    NSNumber *_usesImperialUnits;
+    NSLengthFormatter * _heightFormatter;
+    NSNumber * _usesImperialUnits;
 }
 
 + (id)sharedFormatter;

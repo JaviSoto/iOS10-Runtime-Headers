@@ -3,14 +3,14 @@
  */
 
 @interface CKFetchRecordZonesOperation : CKDatabaseOperation {
-    NSError *_fetchAllRecordZonesError;
-    id /* block */ _fetchRecordZonesCompletionBlock;
-    BOOL _ignorePCSFailures;
-    BOOL _isFetchAllRecordZonesOperation;
-    NSMutableDictionary *_recordZoneErrors;
-    NSArray *_recordZoneIDs;
-    NSArray *_recordZones;
-    NSMutableDictionary *_recordZonesByZoneID;
+    NSError * _fetchAllRecordZonesError;
+    id /* block */  _fetchRecordZonesCompletionBlock;
+    BOOL  _ignorePCSFailures;
+    BOOL  _isFetchAllRecordZonesOperation;
+    NSMutableDictionary * _recordZoneErrors;
+    NSArray * _recordZoneIDs;
+    NSArray * _recordZones;
+    NSMutableDictionary * _recordZonesByZoneID;
 }
 
 @property (nonatomic, retain) NSError *fetchAllRecordZonesError;
@@ -28,6 +28,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)fetchAllRecordZonesError;
 - (id /* block */)fetchRecordZonesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;

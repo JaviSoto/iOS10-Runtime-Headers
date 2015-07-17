@@ -3,19 +3,19 @@
  */
 
 @interface PLProgressView : UIView {
-    _UIBackdropView *_backgroundBlurredView;
-    UIView *_backgroundTintedView;
-    int _backgroundType;
-    UIView *_backgroundView;
-    UIButton *_cancelButton;
-    id /* block */ _cancelationHandler;
-    unsigned int _didLayout;
-    unsigned int _didSetPermanantTextOnLabelView;
-    UILabel *_labelView;
-    NSNumberFormatter *_progressFormatter;
-    UIProgressView *_progressView;
-    BOOL _showsCancelButton;
-    UIView *_topDivider;
+    _UIBackdropView * _backgroundBlurredView;
+    UIView * _backgroundTintedView;
+    int  _backgroundType;
+    UIView * _backgroundView;
+    UIButton * _cancelButton;
+    id /* block */  _cancelationHandler;
+    unsigned int  _didLayout;
+    unsigned int  _didSetPermanantTextOnLabelView;
+    UILabel * _labelView;
+    NSNumberFormatter * _progressFormatter;
+    UIProgressView * _progressView;
+    BOOL  _showsCancelButton;
+    UIView * _topDivider;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backgroundBlurredView;

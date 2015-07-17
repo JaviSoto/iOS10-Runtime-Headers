@@ -3,13 +3,13 @@
  */
 
 @interface MPStoreOffer : NSObject {
-    unsigned long long _entityPersistentID;
-    NSString *_entityTitle;
-    int _entityType;
-    NSDictionary *_mediaAssetDictionary;
-    NSDictionary *_offerDictionary;
-    int _passType;
-    MPStoreOffer *_regularPriceOffer;
+    unsigned long long  _entityPersistentID;
+    NSString * _entityTitle;
+    int  _entityType;
+    NSDictionary * _mediaAssetDictionary;
+    NSDictionary * _offerDictionary;
+    int  _passType;
+    MPStoreOffer * _regularPriceOffer;
 }
 
 @property (nonatomic, readonly, copy) NSString *actionDisplayTitle;

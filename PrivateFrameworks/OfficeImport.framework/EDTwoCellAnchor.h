@@ -3,20 +3,20 @@
  */
 
 @interface EDTwoCellAnchor : EDAnchor {
-    int mEditAs;
+    int  mEditAs;
     struct EDCellAnchorMarker { 
         int columnIndex; 
         float columnAdjustment; 
         int rowIndex; 
         float rowAdjustment; 
-    } mFrom;
-    BOOL mIsRelative;
+    }  mFrom;
+    BOOL  mIsRelative;
     struct EDCellAnchorMarker { 
         int columnIndex; 
         float columnAdjustment; 
         int rowIndex; 
         float rowAdjustment; 
-    } mTo;
+    }  mTo;
 }
 
 - (id).cxx_construct;

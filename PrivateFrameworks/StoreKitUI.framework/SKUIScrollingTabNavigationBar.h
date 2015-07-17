@@ -6,7 +6,7 @@
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _positionOffset;
+    }  _positionOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

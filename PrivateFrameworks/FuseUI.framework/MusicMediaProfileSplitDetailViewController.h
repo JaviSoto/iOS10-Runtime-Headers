@@ -3,11 +3,11 @@
  */
 
 @interface MusicMediaProfileSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
-    MusicClientContext *_clientContext;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    <MusicMediaDetailSplitViewControllerDelegate> *_mediaSplitViewControllerDelegate;
-    UIViewController *_relatedContentViewController;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+    MusicClientContext * _clientContext;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    <MusicMediaDetailSplitViewControllerDelegate> * _mediaSplitViewControllerDelegate;
+    UIViewController * _relatedContentViewController;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;

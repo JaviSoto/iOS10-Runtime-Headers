@@ -3,17 +3,17 @@
  */
 
 @interface SPSearchResultSection : PBCodable <NSCopying> {
-    NSString *_category;
-    NSString *_displayIdentifier;
-    unsigned int _domain;
-    int _flags;
+    NSString * _category;
+    NSString * _displayIdentifier;
+    unsigned int  _domain;
+    int  _flags;
     struct { 
         unsigned int domain : 1; 
         unsigned int flags : 1; 
-    } _has;
-    NSString *_icon;
-    NSMutableOrderedSet *_resultSet;
-    NSString *_scheme;
+    }  _has;
+    NSString * _icon;
+    NSMutableOrderedSet * _resultSet;
+    NSString * _scheme;
 }
 
 @property (nonatomic, retain) NSString *category;
@@ -25,17 +25,18 @@
 @property (nonatomic) BOOL hasDomain;
 @property (nonatomic) BOOL hasFlags;
 @property (nonatomic, readonly) BOOL hasIcon;
+@property (nonatomic, readonly) BOOL hasResults;
 @property (nonatomic, readonly) BOOL hasScheme;
 @property (nonatomic, retain) NSString *icon;
 @property (nonatomic, retain) NSString *scheme;
 
+- (void).cxx_destruct;
 - (void)addResults:(id)arg1;
 - (void)addResults:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)category;
 - (void)clearResults;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayIdentifier;
@@ -47,6 +48,7 @@
 - (BOOL)hasEquivalentResults:(id)arg1;
 - (BOOL)hasFlags;
 - (BOOL)hasIcon;
+- (BOOL)hasResults;
 - (BOOL)hasScheme;
 - (unsigned int)hash;
 - (id)icon;
@@ -59,6 +61,8 @@
 - (id)resultsAtIndex:(unsigned int)arg1;
 - (unsigned int)resultsCount;
 - (id)scheme;
+- (void)serializeTo:(id)arg1;
+- (BOOL)serialized;
 - (void)setCategory:(id)arg1;
 - (void)setDisplayIdentifier:(id)arg1;
 - (void)setDomain:(unsigned int)arg1;

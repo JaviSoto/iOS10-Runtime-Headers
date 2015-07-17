@@ -3,9 +3,9 @@
  */
 
 @interface SFUCryptoInputStream : NSObject <SFUInputStream> {
-    <SFUInputStream> *mBaseStream;
-    SFUCryptor *mCryptor;
-    long long mOffset;
+    <SFUInputStream> * mBaseStream;
+    SFUCryptor * mCryptor;
+    long long  mOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

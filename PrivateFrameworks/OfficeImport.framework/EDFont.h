@@ -3,27 +3,28 @@
  */
 
 @interface EDFont : NSObject <EDImmutableObject, NSCopying> {
-    bool mBold;
-    bool mBoldOverridden;
-    int mCharSet;
-    EDColorReference *mColorReference;
-    bool mDoNotModify;
-    int mFamily;
-    double mHeightInTwips;
-    bool mHeightOverridden;
-    bool mItalic;
-    bool mItalicOverridden;
-    NSString *mName;
-    bool mOutline;
-    EDResources *mResources;
-    int mScript;
-    bool mShadow;
-    bool mStrike;
-    bool mStrikeOverridden;
-    int mUnderline;
-    bool mUnderlineOverridden;
-    unsigned int mWeight;
-    bool mWeightOverridden;
+    bool  mBold;
+    bool  mBoldOverridden;
+    int  mCharSet;
+    EDColorReference * mColorReference;
+    bool  mDoNotModify;
+    int  mFamily;
+    double  mHeightInTwips;
+    bool  mHeightOverridden;
+    bool  mItalic;
+    bool  mItalicOverridden;
+    NSString * mName;
+    bool  mNameOverridden;
+    bool  mOutline;
+    EDResources * mResources;
+    int  mScript;
+    bool  mShadow;
+    bool  mStrike;
+    bool  mStrikeOverridden;
+    int  mUnderline;
+    bool  mUnderlineOverridden;
+    unsigned int  mWeight;
+    bool  mWeightOverridden;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,6 +39,7 @@
 - (id)colorReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (int)family;
 - (double)height;
 - (id)initWithResources:(id)arg1;
@@ -48,6 +50,7 @@
 - (bool)isHeightOverridden;
 - (bool)isItalic;
 - (bool)isItalicOverridden;
+- (bool)isNameOverridden;
 - (bool)isOutline;
 - (bool)isShadow;
 - (bool)isStrike;

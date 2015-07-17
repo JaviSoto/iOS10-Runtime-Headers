@@ -3,9 +3,9 @@
  */
 
 @interface _NSCopyOnWriteCalendarWrapper : NSCalendar {
-    _NSRefcountedPthreadMutex *_lock;
-    NSCalendar *cal;
-    BOOL needsToCopy;
+    _NSRefcountedPthreadMutex * _lock;
+    NSCalendar * cal;
+    BOOL  needsToCopy;
 }
 
 + (id)currentCalendar;

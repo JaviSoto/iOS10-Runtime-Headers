@@ -3,18 +3,18 @@
  */
 
 @interface SKUIBrickSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    NSArray *_bricks;
-    UICollectionView *_collectionView;
-    BOOL _delegateWantsWillDisplay;
-    NSMutableIndexSet *_hiddenImageIndexSet;
+    NSArray * _bricks;
+    UICollectionView * _collectionView;
+    BOOL  _delegateWantsWillDisplay;
+    NSMutableIndexSet * _hiddenImageIndexSet;
     struct { 
         float cellHeight; 
         float cellWidth; 
         float interItemSpacing; 
-    } _metrics;
-    BOOL _showBrickTitles;
-    NSString *_swooshTitle;
-    SKUISwooshView *_swooshView;
+    }  _metrics;
+    BOOL  _showBrickTitles;
+    NSString * _swooshTitle;
+    SKUISwooshView * _swooshView;
 }
 
 @property (nonatomic, copy) NSArray *bricks;

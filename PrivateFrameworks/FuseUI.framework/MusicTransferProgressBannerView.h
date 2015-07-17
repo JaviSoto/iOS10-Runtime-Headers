@@ -3,10 +3,10 @@
  */
 
 @interface MusicTransferProgressBannerView : UIControl {
-    BOOL _didInitialHighlightForTouch;
-    UILabel *_label;
-    float _progress;
-    UIView *_progressView;
+    BOOL  _didInitialHighlightForTouch;
+    UILabel * _label;
+    float  _progress;
+    UIView * _progressView;
 }
 
 @property (nonatomic, readonly) UILabel *label;

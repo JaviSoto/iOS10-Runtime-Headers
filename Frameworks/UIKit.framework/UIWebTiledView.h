@@ -3,14 +3,14 @@
  */
 
 @interface UIWebTiledView : UIView {
-    BOOL _allowsPaintingAndScriptsWhilePanning;
-    BOOL _didFirstTileLayout;
-    BOOL _editingTilingModeEnabled;
-    int _inGestureType;
-    BOOL _layoutTilesInMainThread;
-    int _tilingArea;
-    BOOL _tilingModeIsLocked;
-    WAKWindow *_wakWindow;
+    BOOL  _allowsPaintingAndScriptsWhilePanning;
+    BOOL  _didFirstTileLayout;
+    BOOL  _editingTilingModeEnabled;
+    int  _inGestureType;
+    BOOL  _layoutTilesInMainThread;
+    int  _tilingArea;
+    BOOL  _tilingModeIsLocked;
+    WAKWindow * _wakWindow;
 }
 
 - (void)_didScroll;

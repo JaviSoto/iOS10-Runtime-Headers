@@ -3,8 +3,8 @@
  */
 
 @interface MPServerObject : NSObject {
-    struct { unsigned int x1[8]; } *_clientAuditToken;
-    int _clientPID;
+    struct { unsigned int x1[8]; } * _clientAuditToken;
+    int  _clientPID;
 }
 
 @property (nonatomic, readonly) struct { unsigned int x1[8]; }*clientAuditToken;

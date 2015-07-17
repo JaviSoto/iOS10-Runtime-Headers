@@ -3,7 +3,7 @@
  */
 
 @interface PLLabel : UILabel {
-    float shadowBlurRadius;
+    float  shadowBlurRadius;
 }
 
 @property (nonatomic) float shadowBlurRadius;

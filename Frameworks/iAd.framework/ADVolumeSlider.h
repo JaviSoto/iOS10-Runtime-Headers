@@ -3,8 +3,8 @@
  */
 
 @interface ADVolumeSlider : MPVolumeSlider {
-    UIColor *_maximumTintUsedForTrackImageColor;
-    UIColor *_minimumTintUsedForTrackImageColor;
+    UIColor * _maximumTintUsedForTrackImageColor;
+    UIColor * _minimumTintUsedForTrackImageColor;
 }
 
 - (void)_availableRoutesDidChangeNotification:(id)arg1;

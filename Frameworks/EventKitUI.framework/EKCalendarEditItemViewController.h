@@ -3,11 +3,11 @@
  */
 
 @interface EKCalendarEditItemViewController : EKEditItemViewController <EKCalendarChooserDelegate> {
-    EKCalendarChooser *_chooser;
-    unsigned int _entityType;
-    BOOL _limitToSource;
-    EKCalendar *_selectedCalendar;
-    EKEventStore *_store;
+    EKCalendarChooser * _chooser;
+    unsigned int  _entityType;
+    BOOL  _limitToSource;
+    EKCalendar * _selectedCalendar;
+    EKEventStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;

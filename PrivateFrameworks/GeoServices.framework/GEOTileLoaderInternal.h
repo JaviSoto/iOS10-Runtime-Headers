@@ -3,14 +3,14 @@
  */
 
 @interface GEOTileLoaderInternal : GEOTileLoader <GEOExperimentConfigurationObserver, GEOResourceManifestTileGroupObserver, GEOTileServerProxyDelegate> {
-    GEOTilePool *_cache;
-    GEOTileLoaderConfiguration *_config;
-    int _diskHits;
-    GEOTilePool *_expiringCache;
-    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _freeableSizeRequesters;
-    <GEOTileLoaderInternalDelegate> *_internalDelegate;
-    NSObject<OS_dispatch_queue> *_internalDelegateQ;
-    BOOL _isUsageTimerScheduled;
+    GEOTilePool * _cache;
+    GEOTileLoaderConfiguration * _config;
+    int  _diskHits;
+    GEOTilePool * _expiringCache;
+    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {}  _freeableSizeRequesters;
+    <GEOTileLoaderInternalDelegate> * _internalDelegate;
+    NSObject<OS_dispatch_queue> * _internalDelegateQ;
+    BOOL  _isUsageTimerScheduled;
     struct list<LoadItem, std::__1::allocator<LoadItem> > { 
         struct __list_node_base<LoadItem, void *> { 
             struct __list_node<LoadItem, void *> {} *__prev_; 
@@ -19,19 +19,19 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<LoadItem, void *> > > { 
             unsigned long __first_; 
         } __size_alloc_; 
-    } _loadItems;
-    NSObject<OS_dispatch_queue> *_loadQ;
+    }  _loadItems;
+    NSObject<OS_dispatch_queue> * _loadQ;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
         } __m_; 
-    } _lock;
-    int _memoryHits;
-    BOOL _networkActive;
-    int _networkHits;
-    NSMutableSet *_openers;
-    GEOTileServerProxy *_proxy;
+    }  _lock;
+    int  _memoryHits;
+    BOOL  _networkActive;
+    int  _networkHits;
+    NSMutableSet * _openers;
+    GEOTileServerProxy * _proxy;
     struct deque<ErrorInfo, std::__1::allocator<ErrorInfo> > { 
         struct __split_buffer<ErrorInfo *, std::__1::allocator<ErrorInfo *> > { 
             struct ErrorInfo {} **__first_; 
@@ -45,19 +45,19 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<ErrorInfo> > { 
             unsigned long __first_; 
         } __size_; 
-    } _recentErrors;
-    int _rollingBatchId;
-    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _shrinkCacheRequesters;
+    }  _recentErrors;
+    int  _rollingBatchId;
+    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {}  _shrinkCacheRequesters;
     struct { 
         double x; 
         double y; 
-    } _sortPoint;
-    NSMutableArray *_tileDecoders;
+    }  _sortPoint;
+    NSMutableArray * _tileDecoders;
     struct unique_ptr<geo::DispatchTimer, std::__1::default_delete<geo::DispatchTimer> > { 
         struct __compressed_pair<geo::DispatchTimer *, std::__1::default_delete<geo::DispatchTimer> > { 
             struct DispatchTimer {} *__first_; 
         } __ptr_; 
-    } _timer;
+    }  _timer;
     struct unordered_map<_GEOTileKey, UsageData, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<std::__1::pair<const _GEOTileKey, UsageData> > > { 
         struct __hash_table<std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::__unordered_map_hasher<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::hash<GEOTileKey>, true>, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::equal_to<GEOTileKey>, true>, std::__1::allocator<std::__1::__hash_value_type<_GEOTileKey, UsageData> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, UsageData>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, UsageData>, void *> *> > > { 
@@ -82,18 +82,18 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _usageData;
+    }  _usageData;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
         } __m_; 
-    } _usageLock;
+    }  _usageLock;
     struct unique_ptr<geo::DispatchTimer, std::__1::default_delete<geo::DispatchTimer> > { 
         struct __compressed_pair<geo::DispatchTimer *, std::__1::default_delete<geo::DispatchTimer> > { 
             struct DispatchTimer {} *__first_; 
         } __ptr_; 
-    } _usageTimer;
+    }  _usageTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

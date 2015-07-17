@@ -3,8 +3,8 @@
  */
 
 @interface WDRevisionAuthorTable : NSObject {
-    NSMutableArray *mAuthors;
-    WDDocument *mDocument;
+    NSMutableArray * mAuthors;
+    WDDocument * mDocument;
 }
 
 - (void)addAuthor:(id)arg1;
@@ -13,6 +13,7 @@
 - (unsigned int)authorCount;
 - (id)authors;
 - (void)dealloc;
+- (id)description;
 - (id)initWithDocument:(id)arg1;
 
 @end

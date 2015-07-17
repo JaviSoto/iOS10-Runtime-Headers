@@ -3,15 +3,15 @@
  */
 
 @interface GEORPProblemCollectionRequest : PBRequest <NSCopying> {
-    NSString *_countryCode;
-    NSData *_devicePushToken;
-    NSString *_hwMachine;
-    NSString *_inputLanguage;
-    NSString *_osRelease;
-    NSMutableArray *_requestElements;
-    GEORPUserCredentials *_userCredentials;
-    NSString *_userEmail;
-    GEOLocation *_userLocation;
+    NSString * _countryCode;
+    NSData * _devicePushToken;
+    NSString * _hwMachine;
+    NSString * _inputLanguage;
+    NSString * _osRelease;
+    NSMutableArray * _requestElements;
+    GEORPUserCredentials * _userCredentials;
+    NSString * _userEmail;
+    GEOLocation * _userLocation;
 }
 
 @property (nonatomic, retain) NSString *countryCode;

@@ -3,14 +3,14 @@
  */
 
 @interface SKUILockupComponent : SKUIPageComponent {
-    SKUIEditorialComponent *_editorial;
-    SKUIItem *_item;
-    long long _itemIdentifier;
+    SKUIEditorialComponent * _editorial;
+    SKUIItem * _item;
+    long long  _itemIdentifier;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    } _lockupStyle;
+    }  _lockupStyle;
 }
 
 @property (nonatomic, readonly) BOOL _needsItemData;

@@ -3,15 +3,14 @@
  */
 
 @interface GQDScalarPath : GQDPath {
-    double mScalar;
+    double  mScalar;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
-    int mType;
+    }  mSize;
+    int  mType;
 }
 
-- (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
 - (BOOL)isRect;
 - (BOOL)isRectangular;

@@ -3,12 +3,12 @@
  */
 
 @interface CBService : CBAttribute {
-    NSArray *_characteristics;
-    NSNumber *_endHandle;
-    NSArray *_includedServices;
-    BOOL _isPrimary;
-    CBPeripheral *_peripheral;
-    NSNumber *_startHandle;
+    NSArray * _characteristics;
+    NSNumber * _endHandle;
+    NSArray * _includedServices;
+    BOOL  _isPrimary;
+    CBPeripheral * _peripheral;
+    NSNumber * _startHandle;
 }
 
 @property (retain) NSArray *characteristics;

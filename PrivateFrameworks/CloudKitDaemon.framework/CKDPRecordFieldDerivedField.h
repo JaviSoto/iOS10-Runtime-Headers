@@ -3,16 +3,16 @@
  */
 
 @interface CKDPRecordFieldDerivedField : PBCodable <NSCopying> {
-    CKDPRecordFieldIdentifier *_aggregatedField;
-    NSMutableArray *_aggregatedTypes;
-    int _aggregationFunction;
-    NSMutableArray *_filters;
-    CKDPRecordFieldIdentifier *_groupByField;
+    CKDPRecordFieldIdentifier * _aggregatedField;
+    NSMutableArray * _aggregatedTypes;
+    int  _aggregationFunction;
+    NSMutableArray * _filters;
+    CKDPRecordFieldIdentifier * _groupByField;
     struct { 
         unsigned int aggregationFunction : 1; 
-    } _has;
-    CKDPRecordFieldIdentifier *_identifier;
-    NSMutableArray *_targetTypes;
+    }  _has;
+    CKDPRecordFieldIdentifier * _identifier;
+    NSMutableArray * _targetTypes;
 }
 
 @property (nonatomic, retain) CKDPRecordFieldIdentifier *aggregatedField;

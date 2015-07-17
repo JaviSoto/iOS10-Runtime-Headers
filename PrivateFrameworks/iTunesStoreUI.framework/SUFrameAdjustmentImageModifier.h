@@ -3,8 +3,8 @@
  */
 
 @interface SUFrameAdjustmentImageModifier : SUImageModifier {
-    BOOL _shouldSizeDownToFit;
-    unsigned int _sizingMask;
+    BOOL  _shouldSizeDownToFit;
+    unsigned int  _sizingMask;
 }
 
 @property (nonatomic) BOOL shouldSizeDownToFit;

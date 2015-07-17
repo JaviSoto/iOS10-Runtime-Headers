@@ -3,9 +3,9 @@
  */
 
 @interface MusicNowPlayingVideoViewController : MPUNowPlayingVideoViewController <MPVideoOverlayDelegate> {
-    MPVideoPlaybackOverlayView *_videoOverlayView;
-    NSObject<OS_dispatch_source> *_videoOverlayViewIdleTimer;
-    <MusicNowPlayingVideoViewControllerDelegate> *_videoViewControllerDelegate;
+    MPVideoPlaybackOverlayView * _videoOverlayView;
+    NSObject<OS_dispatch_source> * _videoOverlayViewIdleTimer;
+    <MusicNowPlayingVideoViewControllerDelegate> * _videoViewControllerDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

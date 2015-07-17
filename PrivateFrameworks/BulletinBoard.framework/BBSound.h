@@ -3,19 +3,19 @@
  */
 
 @interface BBSound : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    NSString *_accountIdentifier;
-    int _alertType;
-    NSString *_audioCategory;
-    double _maxDuration;
-    BOOL _repeats;
-    NSString *_ringtoneName;
-    NSString *_songPath;
-    unsigned int _soundBehavior;
-    int _soundType;
-    unsigned long _systemSoundID;
-    NSString *_toneIdentifier;
-    NSString *_vibrationIdentifier;
-    NSDictionary *_vibrationPattern;
+    NSString * _accountIdentifier;
+    int  _alertType;
+    NSString * _audioCategory;
+    double  _maxDuration;
+    BOOL  _repeats;
+    NSString * _ringtoneName;
+    NSString * _songPath;
+    unsigned int  _soundBehavior;
+    int  _soundType;
+    unsigned long  _systemSoundID;
+    NSString * _toneIdentifier;
+    NSString * _vibrationIdentifier;
+    NSDictionary * _vibrationPattern;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;

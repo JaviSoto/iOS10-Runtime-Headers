@@ -3,13 +3,13 @@
  */
 
 @interface PASampleTaskDataPrivateData : NSObject <PASerializable> {
-    int _cow_faults;
-    int _faults;
-    unsigned int _latency_qos;
-    int _pageins;
-    unsigned int _ss_flags;
-    int _suspend_count;
-    int _task_size;
+    int  _cow_faults;
+    int  _faults;
+    unsigned int  _latency_qos;
+    int  _pageins;
+    unsigned int  _ss_flags;
+    int  _suspend_count;
+    int  _task_size;
 }
 
 @property (readonly, copy) NSString *debugDescription;

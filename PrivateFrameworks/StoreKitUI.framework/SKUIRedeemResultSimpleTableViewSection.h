@@ -8,8 +8,8 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UIView *_view;
+    }  _contentInsets;
+    UIView * _view;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;

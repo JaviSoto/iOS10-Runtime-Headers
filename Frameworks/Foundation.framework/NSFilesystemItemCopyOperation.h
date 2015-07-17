@@ -3,8 +3,8 @@
  */
 
 @interface NSFilesystemItemCopyOperation : NSDirectoryTraversalOperation {
-    NSString *_destinationPath;
-    NSMutableSet *_skippedPaths;
+    NSString * _destinationPath;
+    NSMutableSet * _skippedPaths;
 }
 
 + (id)_errorWithErrno:(int)arg1 sourcePath:(id)arg2 destinationPath:(id)arg3;

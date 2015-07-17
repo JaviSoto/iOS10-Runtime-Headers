@@ -3,7 +3,7 @@
  */
 
 @interface SLSheetPreComposedAppIconImageView : SLSheetImagePreviewView {
-    UIImage *_shadowImage;
+    UIImage * _shadowImage;
 }
 
 - (void).cxx_destruct;

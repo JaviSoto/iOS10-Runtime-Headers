@@ -3,15 +3,15 @@
  */
 
 @interface NFAWDStartOfTransaction : NSObject <NFAWDEventProtocol> {
-    AWDNFCHCIStartOfTransactionEvent *_metric;
-    unsigned int status;
-    unsigned int version;
+    AWDNFCHCIStartOfTransactionEvent * _metric;
+    unsigned int  status;
+    unsigned int  version;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCHCIStartOfTransactionEvent *metric;
+@property (nonatomic, retain) AWDNFCHCIStartOfTransactionEvent *metric;
 @property (nonatomic) unsigned int status;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int version;
@@ -25,7 +25,8 @@
 - (void)setStatus:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (unsigned int)status;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 - (unsigned int)version;
 
 @end

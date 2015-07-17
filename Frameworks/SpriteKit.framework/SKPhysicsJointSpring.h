@@ -3,8 +3,8 @@
  */
 
 @interface SKPhysicsJointSpring : SKPhysicsJoint {
-    float _damping;
-    float _frequency;
+    float  _damping;
+    float  _frequency;
 }
 
 @property (nonatomic) float damping;

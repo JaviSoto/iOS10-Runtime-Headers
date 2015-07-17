@@ -3,18 +3,18 @@
  */
 
 @interface _UISiriTrackingItem : NSObject {
-    UIImageView *_animatedView;
-    id /* block */ _animationCompletionHandler;
-    UIImage *_capturedGlyphImage;
-    BOOL _deleted;
+    UIImageView * _animatedView;
+    id /* block */  _animationCompletionHandler;
+    UIImage * _capturedGlyphImage;
+    BOOL  _deleted;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _glyphRange;
-    BOOL _isABigReplacement;
-    BOOL _isASmallReplacement;
-    BOOL _isAnIntroduction;
-    float _offscreenXLocation;
+    }  _glyphRange;
+    BOOL  _isABigReplacement;
+    BOOL  _isASmallReplacement;
+    BOOL  _isAnIntroduction;
+    float  _offscreenXLocation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,12 +24,12 @@
             float width; 
             float height; 
         } size; 
-    } _targetFrame;
-    UIColor *_textColor;
+    }  _targetFrame;
+    UIColor * _textColor;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _textRange;
+    }  _textRange;
 }
 
 @property (nonatomic, retain) UIImageView *animatedView;
@@ -44,6 +44,7 @@
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
 
+- (void).cxx_destruct;
 - (void)animateOut;
 - (id)animatedView;
 - (id /* block */)animationCompletionHandler;

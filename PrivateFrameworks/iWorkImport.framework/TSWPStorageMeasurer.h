@@ -6,18 +6,18 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _anchor;
-    NSMutableArray *_columns;
-    unsigned int _flags;
+    }  _anchor;
+    NSMutableArray * _columns;
+    unsigned int  _flags;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxSize;
+    }  _maxSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _minSize;
-    TSWPStorage *_storage;
+    }  _minSize;
+    TSWPStorage * _storage;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
@@ -60,7 +60,6 @@
 @property (nonatomic, readonly) int verticalAlignment;
 @property (nonatomic, readonly) BOOL wantsLineFragments;
 
-- (id).cxx_construct;
 - (void)addAttachmentLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;

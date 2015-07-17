@@ -3,22 +3,24 @@
  */
 
 @interface PASampleThreadData : NSObject <PASerializable> {
-    unsigned long long continuation;
-    int currentScheduledPriority;
-    unsigned long long dispatchQueueId;
-    BOOL ioPassive;
-    unsigned char ioTier;
-    BOOL isSuspended;
-    PASampleFrame *leafFrame;
-    int schedulerFlags;
-    BOOL ss_flags;
-    int state;
-    int staticPriority;
-    unsigned long long systemTimeInNs;
-    unsigned long long threadId;
-    unsigned int threadQos;
-    unsigned long long userTimeInNs;
-    unsigned long long waitEvent;
+    unsigned long long  continuation;
+    int  currentScheduledPriority;
+    unsigned long long  dispatchQueueId;
+    BOOL  ioPassive;
+    unsigned char  ioTier;
+    BOOL  isSuspended;
+    PASampleFrame * leafFrame;
+    int  schedulerFlags;
+    BOOL  ss_flags;
+    int  state;
+    int  staticPriority;
+    unsigned long long  systemTimeInNs;
+    unsigned long long  threadId;
+    BOOL  threadQos;
+    BOOL  threadRequestedQos;
+    BOOL  threadRequestedQosOverride;
+    unsigned long long  userTimeInNs;
+    unsigned long long  waitEvent;
 }
 
 @property (readonly, copy) NSString *debugDescription;

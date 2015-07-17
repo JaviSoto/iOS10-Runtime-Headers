@@ -3,11 +3,11 @@
  */
 
 @interface MusicSearchRecentsStorage : UIViewController {
-    BOOL _hasChanges;
-    int _limit;
-    int _maximumNumberOfRecents;
-    NSURL *_persistenceURL;
-    NSMutableArray *_recents;
+    BOOL  _hasChanges;
+    int  _limit;
+    int  _maximumNumberOfRecents;
+    NSURL * _persistenceURL;
+    NSMutableArray * _recents;
 }
 
 @property (readonly) int maximumNumberOfRecents;

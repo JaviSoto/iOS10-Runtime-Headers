@@ -3,8 +3,8 @@
  */
 
 @interface SKUIChartColumnHeaderView : UIControl {
-    NSArray *_buttons;
-    int _selectedTitleIndex;
+    NSArray * _buttons;
+    int  _selectedTitleIndex;
 }
 
 @property (nonatomic) int selectedTitleIndex;

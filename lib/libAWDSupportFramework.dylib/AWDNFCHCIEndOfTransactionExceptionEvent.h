@@ -5,9 +5,9 @@
 @interface AWDNFCHCIEndOfTransactionExceptionEvent : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

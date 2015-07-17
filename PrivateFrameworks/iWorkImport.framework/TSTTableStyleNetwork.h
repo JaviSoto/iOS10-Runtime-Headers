@@ -3,18 +3,18 @@
  */
 
 @interface TSTTableStyleNetwork : TSPObject <NSFastEnumeration> {
-    TSTCellStyle *mBodyCellStyle;
-    TSWPParagraphStyle *mBodyTextStyle;
-    TSTCellStyle *mFooterRowCellStyle;
-    TSWPParagraphStyle *mFooterRowTextStyle;
-    TSTCellStyle *mHeaderColumnCellStyle;
-    TSWPParagraphStyle *mHeaderColumnTextStyle;
-    TSTCellStyle *mHeaderRowCellStyle;
-    TSWPParagraphStyle *mHeaderRowTextStyle;
-    int mPresetIndex;
-    TSWPShapeStyle *mTableNameShapeStyle;
-    TSWPParagraphStyle *mTableNameStyle;
-    TSTTableStyle *mTableStyle;
+    TSTCellStyle * mBodyCellStyle;
+    TSWPParagraphStyle * mBodyTextStyle;
+    TSTCellStyle * mFooterRowCellStyle;
+    TSWPParagraphStyle * mFooterRowTextStyle;
+    TSTCellStyle * mHeaderColumnCellStyle;
+    TSWPParagraphStyle * mHeaderColumnTextStyle;
+    TSTCellStyle * mHeaderRowCellStyle;
+    TSWPParagraphStyle * mHeaderRowTextStyle;
+    int  mPresetIndex;
+    TSWPShapeStyle * mTableNameShapeStyle;
+    TSWPParagraphStyle * mTableNameStyle;
+    TSTTableStyle * mTableStyle;
 }
 
 @property (nonatomic, readonly) TSTCellStyle *bodyCellStyle;

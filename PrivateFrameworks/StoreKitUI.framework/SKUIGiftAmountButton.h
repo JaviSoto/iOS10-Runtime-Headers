@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftAmountButton : UIButton {
-    UIView *_borderView;
+    UIView * _borderView;
 }
 
 - (void).cxx_destruct;

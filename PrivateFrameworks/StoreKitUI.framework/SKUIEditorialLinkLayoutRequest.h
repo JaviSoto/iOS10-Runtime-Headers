@@ -3,8 +3,8 @@
  */
 
 @interface SKUIEditorialLinkLayoutRequest : NSObject <SKUILayoutRequest> {
-    NSArray *_links;
-    float _width;
+    NSArray * _links;
+    float  _width;
 }
 
 @property (readonly, copy) NSString *debugDescription;

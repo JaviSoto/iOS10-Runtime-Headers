@@ -3,8 +3,8 @@
  */
 
 @interface MSCLSettingsTextViewTableViewCell : UITableViewCell {
-    <MSCLTokenTextViewDelegate> *_changeDelegate;
-    MSCLTokenTextView *_textView;
+    <MSCLTokenTextViewDelegate> * _changeDelegate;
+    MSCLTokenTextView * _textView;
 }
 
 @property (nonatomic) <MSCLTokenTextViewDelegate> *changeDelegate;

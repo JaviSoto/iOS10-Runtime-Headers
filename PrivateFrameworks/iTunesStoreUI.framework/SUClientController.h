@@ -3,19 +3,19 @@
  */
 
 @interface SUClientController : NSObject <MFMailComposeViewControllerDelegate, SUClientInterfaceDelegate, SUPurchaseManagerDelegate> {
-    BOOL _active;
-    SUClientInterface *_clientInterface;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SUImageCache *_imageCache;
-    ISURLOperationPool *_imagePool;
-    NSString *_localStoreFrontAtLastSuspend;
-    MFMailComposeViewController *_mailComposeViewController;
-    struct __CFArray { } *_offeredAssetTypes;
-    NSArray *_overlayConfigurations;
-    UIViewController *_rootViewController;
-    SUScriptExecutionContext *_scriptExecutionContext;
-    NSString *_synchedStoreFrontAtLastSuspend;
-    NSMutableDictionary *_urlBagKeys;
+    BOOL  _active;
+    SUClientInterface * _clientInterface;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SUImageCache * _imageCache;
+    ISURLOperationPool * _imagePool;
+    NSString * _localStoreFrontAtLastSuspend;
+    MFMailComposeViewController * _mailComposeViewController;
+    struct __CFArray { } * _offeredAssetTypes;
+    NSArray * _overlayConfigurations;
+    UIViewController * _rootViewController;
+    SUScriptExecutionContext * _scriptExecutionContext;
+    NSString * _synchedStoreFrontAtLastSuspend;
+    NSMutableDictionary * _urlBagKeys;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

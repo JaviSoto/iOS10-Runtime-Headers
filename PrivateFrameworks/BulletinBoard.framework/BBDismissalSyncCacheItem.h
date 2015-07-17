@@ -3,8 +3,8 @@
  */
 
 @interface BBDismissalSyncCacheItem : NSObject {
-    NSMutableArray *_dismissalDictionariesAndFeeds;
-    NSMutableDictionary *_dismissalIDToFeeds;
+    NSMutableArray * _dismissalDictionariesAndFeeds;
+    NSMutableDictionary * _dismissalIDToFeeds;
 }
 
 @property (nonatomic, readonly, retain) NSMutableArray *dismissalDictionariesAndFeeds;

@@ -3,7 +3,7 @@
  */
 
 @interface HDMetadataKeyResult : NSObject {
-    NSString *_key;
+    NSString * _key;
 }
 
 @property (nonatomic, retain) NSString *key;

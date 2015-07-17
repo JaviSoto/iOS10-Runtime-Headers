@@ -3,16 +3,16 @@
  */
 
 @interface MPUExtrasSlideshowViewController : UIViewController <MPUExtrasZoomingImageTransitionParticipant> {
-    BOOL _animatingTransition;
-    <MPUExtrasSlideshowViewControllerDataSource> *_dataSource;
-    MPUExtrasConstrainedArtworkContainerView *_disappearingImageContainerView;
-    MPUExtrasConstrainedArtworkContainerView *_imageContainerView;
-    UIImage *_nextImage;
-    double _transitionInterval;
-    unsigned int _transitionStyle;
-    NSTimer *_transitionTimer;
-    BOOL _viewVisible;
-    unsigned int _visibleImageIndex;
+    BOOL  _animatingTransition;
+    <MPUExtrasSlideshowViewControllerDataSource> * _dataSource;
+    MPUExtrasConstrainedArtworkContainerView * _disappearingImageContainerView;
+    MPUExtrasConstrainedArtworkContainerView * _imageContainerView;
+    UIImage * _nextImage;
+    double  _transitionInterval;
+    unsigned int  _transitionStyle;
+    NSTimer * _transitionTimer;
+    BOOL  _viewVisible;
+    unsigned int  _visibleImageIndex;
 }
 
 @property (getter=isAnimatingTransition, nonatomic) BOOL animatingTransition;

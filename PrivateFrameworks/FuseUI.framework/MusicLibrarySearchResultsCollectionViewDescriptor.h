@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibrarySearchResultsCollectionViewDescriptor : MusicEntityCollectionViewDescriptor {
-    BOOL _itemsFillRow;
-    unsigned int _numberOfItemsPerRow;
+    BOOL  _itemsFillRow;
+    unsigned int  _numberOfItemsPerRow;
 }
 
 @property (nonatomic) BOOL itemsFillRow;

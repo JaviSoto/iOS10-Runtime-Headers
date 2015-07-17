@@ -3,11 +3,11 @@
  */
 
 @interface TKVibrationRecorderRippleTouchContext : NSObject {
-    double _creationTimestamp;
+    double  _creationTimestamp;
     struct CGPoint { 
         float x; 
         float y; 
-    } _location;
+    }  _location;
 }
 
 @property (setter=_setCreationTimestamp:, nonatomic) double _creationTimestamp;

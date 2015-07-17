@@ -3,8 +3,8 @@
  */
 
 @interface SKUIGridViewGradientDecorationView : UICollectionReusableView {
-    SKUIGridViewGradientDecorationBackgroundView *_backgroundView;
-    IKColor *_kolor;
+    SKUIGridViewGradientDecorationBackgroundView * _backgroundView;
+    IKColor * _kolor;
 }
 
 @property (nonatomic, readonly) UIView *backgroundView;

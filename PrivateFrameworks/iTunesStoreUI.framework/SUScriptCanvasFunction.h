@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptCanvasFunction : SUScriptFunction {
-    SUScriptCanvasResult *_lastResult;
+    SUScriptCanvasResult * _lastResult;
 }
 
 - (id)copyResultForSize:(struct CGSize { float x1; float x2; })arg1;

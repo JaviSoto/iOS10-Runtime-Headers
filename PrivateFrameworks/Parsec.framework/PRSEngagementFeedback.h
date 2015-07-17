@@ -3,14 +3,19 @@
  */
 
 @interface PRSEngagementFeedback : PRSFeedback {
-    unsigned int _action_area;
-    NSString *_action_card_type;
-    NSURL *_action_destination;
-    unsigned int _action_type;
-    NSString *_fbr;
-    NSString *_local_result;
-    NSString *_parsec_result;
-    BOOL _userReturnedToResultsList;
+    unsigned int  _action_area;
+    NSString * _action_card_type;
+    NSURL * _action_destination;
+    unsigned int  _action_type;
+    NSString * _fbr;
+    NSString * _local_result;
+    NSString * _parsec_result;
+    NSString * _prsActivityBundleID;
+    NSString * _prsActivityIdentifier;
+    NSString * _prsActivityInfo;
+    BOOL  _prsActivityIsPublic;
+    NSString * _prsAppShortVersion;
+    BOOL  _userReturnedToResultsList;
 }
 
 @property unsigned int action_area;
@@ -20,6 +25,11 @@
 @property (nonatomic, retain) NSString *fbr;
 @property (nonatomic, retain) NSString *local_result;
 @property (nonatomic, retain) NSString *parsec_result;
+@property (nonatomic, retain) NSString *prsActivityBundleID;
+@property (nonatomic, retain) NSString *prsActivityIdentifier;
+@property (nonatomic, retain) NSString *prsActivityInfo;
+@property BOOL prsActivityIsPublic;
+@property (nonatomic, retain) NSString *prsAppShortVersion;
 @property BOOL userReturnedToResultsList;
 
 + (BOOL)supportsSecureCoding;
@@ -37,6 +47,11 @@
 - (id)local_result;
 - (id)parsec_result;
 - (id)plist;
+- (id)prsActivityBundleID;
+- (id)prsActivityIdentifier;
+- (id)prsActivityInfo;
+- (BOOL)prsActivityIsPublic;
+- (id)prsAppShortVersion;
 - (void)setAction_area:(unsigned int)arg1;
 - (void)setAction_card_type:(id)arg1;
 - (void)setAction_destination:(id)arg1;
@@ -44,6 +59,11 @@
 - (void)setFbr:(id)arg1;
 - (void)setLocal_result:(id)arg1;
 - (void)setParsec_result:(id)arg1;
+- (void)setPrsActivityBundleID:(id)arg1;
+- (void)setPrsActivityIdentifier:(id)arg1;
+- (void)setPrsActivityInfo:(id)arg1;
+- (void)setPrsActivityIsPublic:(BOOL)arg1;
+- (void)setPrsAppShortVersion:(id)arg1;
 - (void)setUserReturnedToResultsList:(BOOL)arg1;
 - (id)type;
 - (BOOL)userReturnedToResultsList;

@@ -3,11 +3,11 @@
  */
 
 @interface GEOResourceInfo : NSObject {
-    BOOL _allowResumingPartialDownload;
-    NSString *_checksum;
-    NSArray *_equivalentResources;
-    NSString *_name;
-    int _type;
+    BOOL  _allowResumingPartialDownload;
+    NSString * _checksum;
+    NSArray * _equivalentResources;
+    NSString * _name;
+    int  _type;
 }
 
 @property (getter=_allowResumingPartialDownload, setter=_setAllowResumingPartialDownload:, nonatomic) BOOL allowResumingPartialDownload;

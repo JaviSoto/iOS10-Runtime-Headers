@@ -3,18 +3,18 @@
  */
 
 @interface MusicMiniPlayerPlaybackProgressView : UIView <MusicPlaybackProgressScrubbing> {
-    BOOL _alwaysLive;
-    double _currentTime;
-    double _currentTimeSetTimeInterval;
-    UIView *_minimumTrackView;
-    BOOL _needsAnimationUpdate;
+    BOOL  _alwaysLive;
+    double  _currentTime;
+    double  _currentTimeSetTimeInterval;
+    UIView * _minimumTrackView;
+    BOOL  _needsAnimationUpdate;
     struct CGSize { 
         float width; 
         float height; 
-    } _previousKnownSize;
-    float _rate;
-    <MusicPlaybackProgressScrubberDelegate> *_scrubberDelegate;
-    double _totalDuration;
+    }  _previousKnownSize;
+    float  _rate;
+    <MusicPlaybackProgressScrubberDelegate> * _scrubberDelegate;
+    double  _totalDuration;
 }
 
 @property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;

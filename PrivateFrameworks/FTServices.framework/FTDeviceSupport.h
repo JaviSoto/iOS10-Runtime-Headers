@@ -3,32 +3,32 @@
  */
 
 @interface FTDeviceSupport : NSObject {
-    BOOL _accountModificationRestricted;
-    BOOL _blockPost;
-    int _carrierBundleSupported;
-    BOOL _commCenterDead;
-    BOOL _faceTimeBlocked;
-    int _iMessageAllowedToken;
-    BOOL _iMessageBlocked;
-    BOOL _mmsConfigured;
-    NSString *_number;
-    int _performanceClass;
-    BOOL _shouldUseSIMState;
-    BOOL _simBecameNotReady;
-    BOOL _simInserted;
-    BOOL _supportsBackCamera;
-    BOOL _supportsCellularData;
-    BOOL _supportsFT;
-    BOOL _supportsFTA;
-    BOOL _supportsFrontCamera;
-    BOOL _supportsHandoff;
-    BOOL _supportsMMS;
-    BOOL _supportsNonWiFiFaceTime;
-    BOOL _supportsSMS;
-    BOOL _supportsTethering;
-    BOOL _supportsWLAN;
-    BOOL _supportsWiFi;
-    BOOL _supportsiMessage;
+    BOOL  _accountModificationRestricted;
+    BOOL  _blockPost;
+    int  _carrierBundleSupported;
+    BOOL  _commCenterDead;
+    BOOL  _faceTimeBlocked;
+    int  _iMessageAllowedToken;
+    BOOL  _iMessageBlocked;
+    BOOL  _mmsConfigured;
+    NSString * _number;
+    int  _performanceClass;
+    BOOL  _shouldUseSIMState;
+    BOOL  _simBecameNotReady;
+    BOOL  _simInserted;
+    BOOL  _supportsBackCamera;
+    BOOL  _supportsCellularData;
+    BOOL  _supportsFT;
+    BOOL  _supportsFTA;
+    BOOL  _supportsFrontCamera;
+    BOOL  _supportsHandoff;
+    BOOL  _supportsMMS;
+    BOOL  _supportsNonWiFiFaceTime;
+    BOOL  _supportsSMS;
+    BOOL  _supportsTethering;
+    BOOL  _supportsWLAN;
+    BOOL  _supportsWiFi;
+    BOOL  _supportsiMessage;
 }
 
 @property (nonatomic, readonly) NSDictionary *CTNetworkInformation;

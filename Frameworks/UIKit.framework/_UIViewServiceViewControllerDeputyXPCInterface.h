@@ -3,8 +3,8 @@
  */
 
 @interface _UIViewServiceViewControllerDeputyXPCInterface : NSObject <_UIViewServiceDeputyXPCInterface> {
-    NSXPCInterface *_exportedInterface;
-    NSXPCInterface *_remoteViewControllerInterface;
+    NSXPCInterface * _exportedInterface;
+    NSXPCInterface * _remoteViewControllerInterface;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,10 +14,10 @@
 
 + (id)interfaceWithExportedInterface:(id)arg1 remoteViewControllerInterface:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)connectionInvocation;
 - (id)connectionProtocol;
 - (SEL)connectionSelector;
-- (void)dealloc;
 - (id)exportedInterface;
 - (id)hostObjectInterface;
 

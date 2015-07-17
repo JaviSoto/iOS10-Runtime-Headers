@@ -3,7 +3,7 @@
  */
 
 @interface UIWebDragDotView : UIView {
-    UIImageView *m_dot;
+    UIImageView * m_dot;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,10 +13,10 @@
             float width; 
             float height; 
         } size; 
-    } m_dotFrame;
-    UIColor *m_insertionPointColor;
-    int m_orientation;
-    UIColor *m_selectionBarColor;
+    }  m_dotFrame;
+    UIColor * m_insertionPointColor;
+    int  m_orientation;
+    UIColor * m_selectionBarColor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,7 +26,7 @@
             float width; 
             float height; 
         } size; 
-    } m_stickFrame;
+    }  m_stickFrame;
 }
 
 @property (nonatomic) BOOL showsBall;

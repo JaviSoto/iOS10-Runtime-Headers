@@ -3,7 +3,7 @@
  */
 
 @interface CKAcceptSharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_shareURLsToAccept;
+    NSArray * _shareURLsToAccept;
 }
 
 @property (nonatomic, retain) NSArray *shareURLsToAccept;

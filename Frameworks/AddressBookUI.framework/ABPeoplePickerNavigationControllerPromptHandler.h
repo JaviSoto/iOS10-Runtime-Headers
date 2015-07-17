@@ -3,8 +3,8 @@
  */
 
 @interface ABPeoplePickerNavigationControllerPromptHandler : NSObject {
-    ABPeoplePickerNavigationController *_ppnc;
-    NSMutableArray *_prompts;
+    ABPeoplePickerNavigationController * _ppnc;
+    NSMutableArray * _prompts;
 }
 
 - (BOOL)_shouldShowPromptForOrientation:(int)arg1;

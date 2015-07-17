@@ -3,9 +3,9 @@
  */
 
 @interface SKUIProductPagePlaceholderScrollView : UIScrollView {
-    BOOL _isPad;
-    float _offset;
-    UIView *_placeholderView;
+    BOOL  _isPad;
+    float  _offset;
+    UIView * _placeholderView;
 }
 
 @property (nonatomic) BOOL isPad;

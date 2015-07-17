@@ -3,16 +3,16 @@
  */
 
 @interface _UILegibilityView : UIView {
-    BOOL _hidesImage;
-    UIImage *_image;
-    CAFilter *_imageColorFilter;
-    UIImageView *_imageView;
-    int _options;
-    _UILegibilitySettings *_settings;
-    UIImage *_shadowImage;
-    CAFilter *_shadowImageColorFilter;
-    UIImageView *_shadowImageView;
-    float _strength;
+    BOOL  _hidesImage;
+    UIImage * _image;
+    CAFilter * _imageColorFilter;
+    UIImageView * _imageView;
+    int  _options;
+    _UILegibilitySettings * _settings;
+    UIImage * _shadowImage;
+    CAFilter * _shadowImageColorFilter;
+    UIImageView * _shadowImageView;
+    float  _strength;
 }
 
 @property (nonatomic) BOOL hidesImage;

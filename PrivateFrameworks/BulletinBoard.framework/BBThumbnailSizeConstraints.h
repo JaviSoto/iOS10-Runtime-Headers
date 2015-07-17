@@ -3,13 +3,13 @@
  */
 
 @interface BBThumbnailSizeConstraints : NSObject <NSSecureCoding> {
-    int _constraintType;
-    float _fixedDimension;
-    float _fixedHeight;
-    float _fixedWidth;
-    float _maxAspectRatio;
-    float _minAspectRatio;
-    float _thumbnailScale;
+    int  _constraintType;
+    float  _fixedDimension;
+    float  _fixedHeight;
+    float  _fixedWidth;
+    float  _maxAspectRatio;
+    float  _minAspectRatio;
+    float  _thumbnailScale;
 }
 
 @property (nonatomic) int constraintType;

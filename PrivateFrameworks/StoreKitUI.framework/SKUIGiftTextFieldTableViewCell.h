@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGiftTextFieldTableViewCell : UITableViewCell {
-    UILabel *_label;
-    UITextField *_textField;
-    UIView *_topBorderView;
+    UILabel * _label;
+    UITextField * _textField;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedPlaceholder;

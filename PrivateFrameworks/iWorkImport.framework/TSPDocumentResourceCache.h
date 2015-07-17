@@ -3,10 +3,10 @@
  */
 
 @interface TSPDocumentResourceCache : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSURL *_cacheURL;
-    NSMutableDictionary *_entries;
-    long long _maxCacheSizeInBytes;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSURL * _cacheURL;
+    NSMutableDictionary * _entries;
+    long long  _maxCacheSizeInBytes;
 }
 
 @property (nonatomic) long long maxCacheSizeInBytes;

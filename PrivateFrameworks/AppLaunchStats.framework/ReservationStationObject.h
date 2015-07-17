@@ -3,15 +3,15 @@
  */
 
 @interface ReservationStationObject : NSObject <DuetLoggerProtocol> {
-    int appType;
-    NSString *bundleID;
-    id /* block */ forceEndHandler;
-    long long lockTime;
-    NSObject<OS_dispatch_queue> *rsDispatchQueue;
-    long long seqNum;
-    unsigned long long startMachAbsoluteTime;
-    NSObject<OS_dispatch_source> *theTimer;
-    NSDate *timeStamp;
+    int  appType;
+    NSString * bundleID;
+    id /* block */  forceEndHandler;
+    long long  lockTime;
+    NSObject<OS_dispatch_queue> * rsDispatchQueue;
+    long long  seqNum;
+    unsigned long long  startMachAbsoluteTime;
+    NSObject<OS_dispatch_source> * theTimer;
+    NSDate * timeStamp;
 }
 
 - (void).cxx_destruct;

@@ -3,9 +3,9 @@
  */
 
 @interface SiriUITranscriptItem : NSObject {
-    AceObject *_aceObject;
-    NSUUID *_itemIdentifier;
-    UIViewController<SiriUIViewController> *_viewController;
+    AceObject * _aceObject;
+    NSUUID * _itemIdentifier;
+    UIViewController<SiriUIViewController> * _viewController;
 }
 
 @property (nonatomic, retain) AceObject *aceObject;

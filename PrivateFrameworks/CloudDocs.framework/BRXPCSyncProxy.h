@@ -3,11 +3,11 @@
  */
 
 @interface BRXPCSyncProxy : NSProxy {
-    NSError *_error;
-    NSObject<OS_dispatch_group> *_group;
-    int _nested;
-    id _result;
-    NSObject *_target;
+    NSError * _error;
+    NSObject<OS_dispatch_group> * _group;
+    int  _nested;
+    id  _result;
+    NSObject * _target;
 }
 
 @property (nonatomic, retain) NSError *error;

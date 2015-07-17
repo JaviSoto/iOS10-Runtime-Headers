@@ -3,10 +3,11 @@
  */
 
 @interface PDNotesSlide : PDSlideChild {
-    PDNotesMaster *mNotesMaster;
+    PDNotesMaster * mNotesMaster;
 }
 
 - (void)dealloc;
+- (id)description;
 - (void)doneWithContent;
 - (id)init;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;

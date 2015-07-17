@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UICompatibilityTextView : UIScrollView <UITextInput, UITextLinkInteraction> {
-    id _private;
-    BOOL m_editing;
-    UIView *m_inputView;
+@interface _UICompatibilityTextView : UIScrollView <UITextInput, UITextLinkInteraction, WebPolicyDelegate> {
+    id  _private;
+    BOOL  m_editing;
+    UIView * m_inputView;
 }
 
 @property (nonatomic) BOOL allowsEditingTextAttributes;
@@ -31,6 +31,7 @@
 @property (nonatomic) int keyboardType;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
@@ -50,6 +51,7 @@
 + (id)excludedElementsForHTML;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_addShortcut:(id)arg1;
 - (unsigned int)_allowedLinkTypes;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
@@ -57,12 +59,15 @@
 - (void)_dealloc;
 - (void)_define:(id)arg1;
 - (id)_keyboardResponder;
+- (void)_lookup:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_ownsInputAccessoryView;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (Class)_printFormatterClass;
 - (void)_promptForReplace:(id)arg1;
 - (id)_proxyTextInput;
 - (BOOL)_requiresKeyboardWhenFirstResponder;
 - (void)_setDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)_share:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_transferAttribute:(id)arg1 fromString:(id)arg2 andSetPropertyWith:(SEL)arg3 usingValueClass:(Class)arg4;
 - (void)_transferTextViewPropertiesFromText:(id)arg1;
@@ -227,6 +232,7 @@
 - (id)styleString;
 - (id)supportedPasteboardTypesForCurrentSelection;
 - (void)tapLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)text;
 - (int)textAlignment;
 - (id)textColor;

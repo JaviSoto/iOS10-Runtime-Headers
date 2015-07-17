@@ -3,11 +3,11 @@
  */
 
 @interface DDTextKitOperation : DDOperation {
-    int _editCount;
+    int  _editCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 @property (nonatomic, retain) UITextView *container;

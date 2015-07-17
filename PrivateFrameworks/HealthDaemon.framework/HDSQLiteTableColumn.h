@@ -3,8 +3,8 @@
  */
 
 @interface HDSQLiteTableColumn : NSObject {
-    NSString *_name;
-    NSString *_qualifiers;
+    NSString * _name;
+    NSString * _qualifiers;
 }
 
 @property (nonatomic, retain) NSString *name;

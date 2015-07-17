@@ -3,12 +3,12 @@
  */
 
 @interface BBSectionIconVariant : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_bundlePath;
-    int _format;
-    NSData *_imageData;
-    NSString *_imageName;
-    NSString *_imagePath;
-    BOOL _precomposed;
+    NSString * _bundlePath;
+    int  _format;
+    NSData * _imageData;
+    NSString * _imageName;
+    NSString * _imagePath;
+    BOOL  _precomposed;
 }
 
 @property (nonatomic, copy) NSString *bundlePath;

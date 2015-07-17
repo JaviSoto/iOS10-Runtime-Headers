@@ -3,13 +3,13 @@
  */
 
 @interface SFCompanionService : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_deviceID;
-    NSString *_deviceName;
-    NSString *_identifier;
-    NSString *_ipAddress;
-    NSString *_managerID;
-    NSNumber *_nsxpcVersion;
-    NSString *_serviceType;
+    NSString * _deviceID;
+    NSString * _deviceName;
+    NSString * _identifier;
+    NSString * _ipAddress;
+    NSString * _managerID;
+    NSNumber * _nsxpcVersion;
+    NSString * _serviceType;
 }
 
 @property (copy) NSString *deviceID;

@@ -3,12 +3,12 @@
  */
 
 @interface _MFDAMessageStoreFetchRequest : DAMailboxFetchMessageRequest <MFDAMailAccountRequest> {
-    <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
-    int format;
-    MFMessage *message;
-    MFMimePart *part;
-    BOOL partial;
-    MFDAMessageStore *store;
+    <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> * consumer;
+    int  format;
+    MFMessage * message;
+    MFMimePart * part;
+    BOOL  partial;
+    MFDAMessageStore * store;
 }
 
 @property (nonatomic, readonly) BOOL isUserRequested;

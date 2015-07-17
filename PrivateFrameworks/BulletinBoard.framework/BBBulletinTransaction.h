@@ -3,8 +3,8 @@
  */
 
 @interface BBBulletinTransaction : NSObject {
-    NSString *_bulletinID;
-    unsigned int _transactionID;
+    NSString * _bulletinID;
+    unsigned int  _transactionID;
 }
 
 @property (nonatomic, readonly, copy) NSString *bulletinID;

@@ -3,8 +3,8 @@
  */
 
 @interface IMLocationShareOfferChatItem : IMTranscriptChatItem <IMMessageChatItem> {
-    BOOL _actionableEclipsed;
-    IMHandle *_sender;
+    BOOL  _actionableEclipsed;
+    IMHandle * _sender;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,18 +3,18 @@
  */
 
 @interface CPLEngineResourceDownloadQueue : CPLEngineStorage <CPLAbstractObject> {
-    NSMutableArray *_backgroundActiveTasks;
-    NSObject<OS_dispatch_queue> *_downloadQueue;
-    NSMutableArray *_highPriorityActiveTaskGroups;
-    NSMutableArray *_highPriorityActiveTasks;
-    NSMutableArray *_highPriorityTasksQueue;
-    NSMutableArray *_lowPriorityActiveTaskGroups;
-    NSMutableArray *_lowPriorityActiveTasks;
-    NSMutableArray *_lowPriorityTasksQueue;
-    BOOL _shouldRequestABackgroundDownloadSyncPhase;
-    unsigned int _totalClientRequestErrors;
-    unsigned int _totalClientRequests;
-    unsigned int _totalPutInBackground;
+    NSMutableArray * _backgroundActiveTasks;
+    NSObject<OS_dispatch_queue> * _downloadQueue;
+    NSMutableArray * _highPriorityActiveTaskGroups;
+    NSMutableArray * _highPriorityActiveTasks;
+    NSMutableArray * _highPriorityTasksQueue;
+    NSMutableArray * _lowPriorityActiveTaskGroups;
+    NSMutableArray * _lowPriorityActiveTasks;
+    NSMutableArray * _lowPriorityTasksQueue;
+    BOOL  _shouldRequestABackgroundDownloadSyncPhase;
+    unsigned int  _totalClientRequestErrors;
+    unsigned int  _totalClientRequests;
+    unsigned int  _totalPutInBackground;
 }
 
 @property (readonly, copy) NSString *debugDescription;

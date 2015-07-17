@@ -3,9 +3,9 @@
  */
 
 @interface EKCurrentTimeMarkerView : UIView {
-    UILabel *_currentTimeLabel;
-    BOOL _showsLine;
-    BOOL _showsThumb;
+    UILabel * _currentTimeLabel;
+    BOOL  _showsLine;
+    BOOL  _showsThumb;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentTimeFrame;

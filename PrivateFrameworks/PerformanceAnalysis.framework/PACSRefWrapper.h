@@ -6,7 +6,7 @@
     struct _CSTypeRef { 
         unsigned int _opaque_1; 
         unsigned int _opaque_2; 
-    } _csRef;
+    }  _csRef;
 }
 
 @property (readonly) struct _CSTypeRef { unsigned int x1; unsigned int x2; } csRef;

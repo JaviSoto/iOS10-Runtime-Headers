@@ -3,7 +3,7 @@
  */
 
 @interface CKReportSpamChatItem : CKStampChatItem {
-    NSAttributedString *_transcriptButtonText;
+    NSAttributedString * _transcriptButtonText;
 }
 
 @property (nonatomic, copy) NSAttributedString *transcriptButtonText;

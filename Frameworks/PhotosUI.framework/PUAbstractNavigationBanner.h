@@ -3,7 +3,7 @@
  */
 
 @interface PUAbstractNavigationBanner : NSObject {
-    <PUAbstractNavigationBannerDelegate> *_delegate;
+    <PUAbstractNavigationBannerDelegate> * _delegate;
 }
 
 @property (nonatomic) <PUAbstractNavigationBannerDelegate> *delegate;

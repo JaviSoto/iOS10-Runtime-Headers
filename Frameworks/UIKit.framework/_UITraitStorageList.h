@@ -3,16 +3,16 @@
  */
 
 @interface _UITraitStorageList : NSObject <NSCoding> {
-    NSSet *_descendants;
-    id _topLevelObject;
-    NSArray *_traitStorages;
+    NSSet * _descendants;
+    id  _topLevelObject;
+    NSArray * _traitStorages;
 }
 
 @property (nonatomic, readonly) NSSet *descendants;
 @property (nonatomic, readonly) id topLevelObject;
 @property (nonatomic, readonly) NSArray *traitStorages;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)descendants;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface SGRecordId : NSObject <NSCopying, NSSecureCoding> {
-    long long _internalEntityId;
+    long long  _internalEntityId;
 }
 
 + (id)recordIdWithInternalEntityId:(long long)arg1;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

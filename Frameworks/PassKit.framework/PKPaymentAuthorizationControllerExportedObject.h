@@ -3,10 +3,10 @@
  */
 
 @interface PKPaymentAuthorizationControllerExportedObject : NSObject <PKPaymentAuthorizationHostProtocol> {
-    PKPaymentAuthorizationController *_controller;
-    <PKPaymentAuthorizationControllerDelegate> *_delegate;
-    <PKPaymentAuthorizationControllerPrivateDelegate> *_privateDelegate;
-    <PKPaymentAuthorizationServiceProtocol> *_serviceProxy;
+    PKPaymentAuthorizationController * _controller;
+    <PKPaymentAuthorizationControllerDelegate> * _delegate;
+    <PKPaymentAuthorizationControllerPrivateDelegate> * _privateDelegate;
+    <PKPaymentAuthorizationServiceProtocol> * _serviceProxy;
 }
 
 @property (nonatomic) PKPaymentAuthorizationController *controller;
@@ -21,6 +21,7 @@
 - (void)authorizationDidAuthorizePayment:(id)arg1;
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidPresent;
+- (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
 - (void)authorizationWillStart;

@@ -3,14 +3,14 @@
  */
 
 @interface PTXParallaxController : NSObject <_UISettingsKeyObserver> {
-    CADisplayLink *_displayLink;
-    BOOL _generatingUpdates;
-    CMMotionManager *_motionManager;
-    NSHashTable *_observers;
-    PTXParallaxReferenceFrame *_referenceFrame;
-    PTXParallaxEngineSettings *_settings;
-    double _startUpdatesTimestamp;
-    NSMutableSet *_suspendReasons;
+    CADisplayLink * _displayLink;
+    BOOL  _generatingUpdates;
+    CMMotionManager * _motionManager;
+    NSHashTable * _observers;
+    PTXParallaxReferenceFrame * _referenceFrame;
+    PTXParallaxEngineSettings * _settings;
+    double  _startUpdatesTimestamp;
+    NSMutableSet * _suspendReasons;
 }
 
 @property (readonly, copy) NSString *debugDescription;

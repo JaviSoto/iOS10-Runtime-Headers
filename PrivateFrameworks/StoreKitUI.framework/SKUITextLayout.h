@@ -3,18 +3,18 @@
  */
 
 @interface SKUITextLayout : NSObject <SKUICachedLayout> {
-    struct __CTFramesetter { } *_framesetter;
-    float _lineHeight;
-    BOOL _requiresTruncation;
+    struct __CTFramesetter { } * _framesetter;
+    float  _lineHeight;
+    BOOL  _requiresTruncation;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    struct __CTFrame { } *_textFrame;
+    }  _size;
+    struct __CTFrame { } * _textFrame;
     struct CGSize { 
         float width; 
         float height; 
-    } _truncatedSize;
+    }  _truncatedSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

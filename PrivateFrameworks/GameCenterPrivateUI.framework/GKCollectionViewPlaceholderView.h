@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKCollectionViewPlaceholderView : UICollectionReusableView <GKStateMachineDelegate> {
-    int _alignment;
-    NSArray *_cachedConstraints;
-    NSString *_errorMessage;
-    NSString *_errorTitle;
-    UIActivityIndicatorView *_loadingIndicatorView;
-    GKPlaceholderContentStateMachine *_loadingMachine;
-    SEL _noContentButtonAction;
-    id _noContentButtonTarget;
-    NSString *_noContentButtonTitle;
-    NSString *_noContentMessage;
-    NSString *_noContentTitle;
-    GKPlaceholderView *_placeholderView;
+@interface GKCollectionViewPlaceholderView : UICollectionReusableView <_GKStateMachineDelegate> {
+    int  _alignment;
+    NSArray * _cachedConstraints;
+    NSString * _errorMessage;
+    NSString * _errorTitle;
+    UIActivityIndicatorView * _loadingIndicatorView;
+    GKPlaceholderContentStateMachine * _loadingMachine;
+    SEL  _noContentButtonAction;
+    id  _noContentButtonTarget;
+    NSString * _noContentButtonTitle;
+    NSString * _noContentMessage;
+    NSString * _noContentTitle;
+    GKPlaceholderView * _placeholderView;
 }
 
 @property (nonatomic) int alignment;

@@ -3,9 +3,9 @@
  */
 
 @interface _UITiltMotionEffect : UIMotionEffect {
-    float _maximumHorizontalTiltAngle;
-    float _maximumVerticalTiltAngle;
-    float _rotatingSphereRadius;
+    float  _maximumHorizontalTiltAngle;
+    float  _maximumVerticalTiltAngle;
+    float  _rotatingSphereRadius;
 }
 
 @property (nonatomic) float maximumHorizontalTiltAngle;

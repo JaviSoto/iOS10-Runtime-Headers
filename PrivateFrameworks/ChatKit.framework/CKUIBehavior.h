@@ -3,8 +3,8 @@
  */
 
 @interface CKUIBehavior : NSObject {
-    int _HUDStyle;
-    float _waveformMaxWidth;
+    int  _HUDStyle;
+    float  _waveformMaxWidth;
 }
 
 @property (nonatomic) int HUDStyle;
@@ -22,17 +22,20 @@
 @property (nonatomic, readonly) float attachmentBrowserHeaderLabelPadding;
 @property (nonatomic, readonly) UIFont *attachmentTextFont;
 @property (nonatomic, readonly) Class attachmentViewClass;
+@property (nonatomic, readonly) Class audioBalloonCellClass;
 @property (nonatomic, readonly) UIFont *audioBalloonTimeFont;
 @property (nonatomic, readonly) float audioBalloonTimeInset;
 @property (nonatomic, readonly) Class audioBalloonViewClass;
 @property (nonatomic, readonly) float audioBalloonWaveformTimeSpace;
 @property (nonatomic, readonly) UIFont *audioHintFont;
 @property (nonatomic, readonly) BOOL automaticallyShowsKeyboard;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } balloonLineFragmentInsets;
 @property (nonatomic, readonly) float balloonLineFragmentPadding;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } balloonMaskFrameCapInsets;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } balloonMaskFrameInsets;
 @property (nonatomic, readonly) float balloonMaskTailHeight;
 @property (nonatomic, readonly) float balloonMaskTailWidth;
+@property (nonatomic, readonly) float balloonMaxWidthPercent;
 @property (nonatomic, readonly) NSString *balloonName;
 @property (nonatomic, readonly) UIFont *balloonSubjectFont;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } balloonTextContainerInset;
@@ -44,6 +47,8 @@
 @property (nonatomic, readonly) BOOL cameraIsWhitelisted;
 @property (nonatomic, readonly) BOOL canAccessContacts;
 @property (nonatomic, readonly) BOOL canAccessPhotos;
+@property (nonatomic, readonly) BOOL canPresentOverKeyboard;
+@property (nonatomic, readonly) BOOL canShowContactPhotosInConversationList;
 @property (nonatomic, readonly) UIFont *characterCountFont;
 @property (nonatomic, readonly) float checkmarkHorizontalPadding;
 @property (nonatomic, readonly) UIImage *chevronImage;
@@ -74,6 +79,7 @@
 @property (nonatomic, readonly) UIColor *conversationListGroupCountColor;
 @property (nonatomic, readonly) UIFont *conversationListGroupCountFont;
 @property (nonatomic, readonly) UIFont *conversationListGroupSenderFont;
+@property (nonatomic, readonly) float conversationListMinimumWidthForHiddenContactImage;
 @property (nonatomic, readonly) float conversationListMultipleContactsImageDiameter;
 @property (nonatomic, readonly) Class conversationListNavigationControllerClass;
 @property (nonatomic, readonly) UIColor *conversationListSenderColor;
@@ -96,8 +102,6 @@
 @property (nonatomic, readonly) NSDictionary *drawerTranscriptTextAttributes;
 @property (nonatomic, readonly) float editingTransitionAnimationDuration;
 @property (nonatomic, readonly) float emojiPreviewMaxWidth;
-@property (nonatomic, readonly) float entryContentViewPortraitWidth;
-@property (nonatomic, readonly) float entryCoverViewPortraitWidth;
 @property (nonatomic, readonly) UIColor *entryFieldAudioRecordingBaloonColor;
 @property (nonatomic, readonly) UIColor *entryFieldBackgroundColor;
 @property (nonatomic, readonly) UIColor *entryFieldButtonColor;
@@ -109,9 +113,6 @@
 @property (nonatomic, readonly) UIColor *entryFieldGrayColor;
 @property (nonatomic, readonly) BOOL entryFieldShouldUseBackdropView;
 @property (nonatomic, readonly) UIColor *entryFieldTextColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } entryViewCoverInsets;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } entryViewMarginInsets;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } entryViewVerticalAlignmentInsets;
 @property (nonatomic, readonly) UIImage *errorDocumentIcon;
 @property (nonatomic, readonly) BOOL faceTimeAudioIsWhitelisted;
 @property (nonatomic, readonly) BOOL faceTimeVideoIsWhitelisted;
@@ -124,8 +125,10 @@
 @property (nonatomic, readonly) BOOL hideUnreadCountInTitleBar;
 @property (nonatomic, readonly) BOOL hidesUnreadIndicatorWhenEditing;
 @property (nonatomic, readonly) BOOL hyphenatesTextContent;
+@property (nonatomic, readonly) unsigned int initialConversationSizingMessageCount;
 @property (nonatomic, readonly) unsigned int initialConversationViewingMessageCount;
 @property (nonatomic, readonly) BOOL isAccessibilityPreferredContentSizeCategory;
+@property (nonatomic, readonly) BOOL isProximityMonitoringSupported;
 @property (nonatomic, readonly) BOOL isSizeConstrained;
 @property (nonatomic, readonly) BOOL joystickUsesWindow;
 @property (nonatomic, readonly) int keyboardAppearance;
@@ -142,9 +145,12 @@
 @property (nonatomic, readonly) BOOL lowClearanceInLandscape;
 @property (nonatomic, readonly) BOOL mailIsWhitelisted;
 @property (nonatomic, readonly) double maxAudioRecordingDuration;
+@property (nonatomic, readonly) float maxPrimaryColumnWidth;
+@property (nonatomic, readonly) float maxTranscriptPortraitWidth;
 @property (nonatomic, readonly) float mediumTranscriptSpace;
 @property (nonatomic, readonly) UIColor *messagesControllerBackgroundColor;
 @property (nonatomic, readonly) double minAudioRecordingDuration;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } minTranscriptMarginInsets;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } minimumPlayButtonInsets;
 @property (nonatomic, readonly) BOOL modifiesFirstBalloonLayout;
 @property (nonatomic, readonly) BOOL modifiesSingleLineBalloonLayout;
@@ -160,10 +166,10 @@
 @property (nonatomic, readonly) BOOL phoneIsWhitelisted;
 @property (nonatomic, readonly) float photoPickerInterItemSpacing;
 @property (nonatomic, readonly) float photoPickerMaxPhotoHeight;
-@property (nonatomic, readonly) float photoPickerMaxPopoverPhotoHeight;
 @property (nonatomic, readonly) float photoPickerPopoverWidth;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } photoPickerSectionInsets;
 @property (nonatomic, readonly) BOOL photoPickerShouldZoomOnSelection;
+@property (nonatomic, readonly) BOOL photoPickerUsesVitality;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } photoSheetProgressIndicatorSize;
 @property (nonatomic, readonly) float photoSheetVideoIconPadding;
 @property (nonatomic, readonly) BOOL photosIsWhitelisted;
@@ -190,6 +196,7 @@
 @property (nonatomic, readonly) BOOL recordsRecentContact;
 @property (nonatomic, readonly) BOOL resetsIdleTimer;
 @property (nonatomic, readonly) float resizeMessageEntryViewAnimationDuration;
+@property (nonatomic, readonly) double resumeToConversationListTimeInterval;
 @property (nonatomic, readonly) float scrollInNewMessageAnimationDuration;
 @property (nonatomic, readonly) BOOL scrollToBottomStopsAtTopOfLastBubble;
 @property (nonatomic, readonly) BOOL selectNewConversationOnDeletion;
@@ -198,19 +205,21 @@
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } senderTranscriptInsets;
 @property (nonatomic, readonly) NSDictionary *senderTranscriptTextAttributes;
 @property (nonatomic, readonly) BOOL shouldAdjustWidthForSendFailure;
+@property (nonatomic, readonly) BOOL shouldAlignRecipientGlyphsWithMargins;
 @property (nonatomic, readonly) BOOL shouldAutomaticallyCheckAvailabilityOfAlternateAddresses;
 @property (nonatomic, readonly) BOOL shouldBackfillTranscript;
 @property (nonatomic, readonly) BOOL shouldFillAttachmentBalloon;
 @property (nonatomic, readonly) BOOL shouldGrabBackgroundAssertion;
 @property (nonatomic, readonly) BOOL shouldHomogenizeAtomsForPreferredService;
 @property (nonatomic, readonly) BOOL shouldInsetForStatusBar;
+@property (nonatomic, readonly) BOOL shouldLoadInitialViewingMessageCount;
 @property (nonatomic, readonly) BOOL shouldNotShowSendButton;
-@property (nonatomic, readonly) BOOL shouldReconfigureNewComposeOnRotation;
+@property (nonatomic, readonly) BOOL shouldOnlyResumeToConversationListAfterTimeout;
 @property (nonatomic, readonly) BOOL shouldRefreshAlternateAddressesSheet;
-@property (nonatomic, readonly) BOOL shouldShowContactPhotosInConversationList;
 @property (nonatomic, readonly) BOOL shouldShowContactPhotosInTranscript;
 @property (nonatomic, readonly) BOOL shouldShowDisclosureChevronInRecipientAtoms;
 @property (nonatomic, readonly) BOOL shouldShowSearchBarInConversationList;
+@property (nonatomic, readonly) BOOL shouldSizeInitialViewingMessageCount;
 @property (nonatomic, readonly) BOOL shouldSuppressRotationInNewCompose;
 @property (nonatomic, readonly) BOOL shouldUseDynamicGradient;
 @property (nonatomic, readonly) BOOL shouldUseDynamicScrolling;
@@ -268,8 +277,7 @@
 @property (nonatomic, readonly) float transcriptJunkHeaderButtonHeight;
 @property (nonatomic, readonly) UIFont *transcriptJunkHeaderTitleFont;
 @property (nonatomic, readonly) int transcriptLoadingIndicatorStyle;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } transcriptMarginInsets;
-@property (nonatomic, readonly) float transcriptPortraitWidth;
+@property (nonatomic, readonly) float transcriptScrollToBottomThreshold;
 @property (nonatomic, readonly) UIColor *transcriptSeparatorColor;
 @property (nonatomic, readonly) UIColor *transcriptTextColor;
 @property (nonatomic, readonly) UIFont *transcriptTextFont;
@@ -279,10 +287,9 @@
 @property (nonatomic, readonly) UIImage *unreadImage;
 @property (nonatomic, readonly) float updateTranscriptInsetsAnimationDuration;
 @property (nonatomic, readonly) BOOL useSingleLineForContactVCardNames;
-@property (nonatomic, readonly) BOOL usesCustomSplitViewMasterColumnWidth;
+@property (nonatomic, readonly) BOOL usesActionMenu;
 @property (nonatomic, readonly) BOOL usesDataDetectorsUI;
 @property (nonatomic, readonly) BOOL usesEntryView;
-@property (nonatomic, readonly) BOOL usesJoystick;
 @property (nonatomic, readonly) BOOL usesNavigationBarControls;
 @property (nonatomic, readonly) BOOL usesPersistentConversationSelection;
 @property (nonatomic, readonly) BOOL usesPopovers;
@@ -324,6 +331,7 @@
 - (float)attachmentBrowserHeaderLabelPadding;
 - (id)attachmentTextFont;
 - (Class)attachmentViewClass;
+- (Class)audioBalloonCellClass;
 - (id)audioBalloonTimeFont;
 - (float)audioBalloonTimeInset;
 - (float)audioBalloonTimeWidthForDuration:(double)arg1;
@@ -333,6 +341,7 @@
 - (BOOL)automaticallyShowsKeyboard;
 - (float)balloonBalloonTranscriptSpace:(unsigned char)arg1;
 - (id)balloonColorsForColorType:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })balloonLineFragmentInsets;
 - (float)balloonLineFragmentPadding;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })balloonMaskAlignmentRectInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })balloonMaskAlignmentRectInsetsWithTail:(BOOL)arg1;
@@ -344,6 +353,8 @@
 - (struct CGSize { float x1; float x2; })balloonMaskSizeWithTail:(BOOL)arg1;
 - (float)balloonMaskTailHeight;
 - (float)balloonMaskTailWidth;
+- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowPhotoButton:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4;
+- (float)balloonMaxWidthPercent;
 - (id)balloonName;
 - (id)balloonOverlayColorForColorType:(BOOL)arg1;
 - (id)balloonSubjectFont;
@@ -368,6 +379,8 @@
 - (BOOL)cameraIsWhitelisted;
 - (BOOL)canAccessContacts;
 - (BOOL)canAccessPhotos;
+- (BOOL)canPresentOverKeyboard;
+- (BOOL)canShowContactPhotosInConversationList;
 - (id)characterCountFont;
 - (float)checkmarkHorizontalPadding;
 - (id)chevronImage;
@@ -400,6 +413,7 @@
 - (id)conversationListGroupCountColor;
 - (id)conversationListGroupCountFont;
 - (id)conversationListGroupSenderFont;
+- (float)conversationListMinimumWidthForHiddenContactImage;
 - (float)conversationListMultipleContactsImageDiameter;
 - (Class)conversationListNavigationControllerClass;
 - (float)conversationListSenderBodyLeading;
@@ -424,8 +438,6 @@
 - (id)drawerTranscriptTextAttributes;
 - (float)editingTransitionAnimationDuration;
 - (float)emojiPreviewMaxWidth;
-- (float)entryContentViewPortraitWidth;
-- (float)entryCoverViewPortraitWidth;
 - (id)entryFieldAudioRecordingBaloonColor;
 - (id)entryFieldBackgroundColor;
 - (id)entryFieldButtonColor;
@@ -437,9 +449,6 @@
 - (id)entryFieldGrayColor;
 - (BOOL)entryFieldShouldUseBackdropView;
 - (id)entryFieldTextColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewCoverInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewMarginInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewVerticalAlignmentInsets;
 - (id)errorDocumentIcon;
 - (BOOL)faceTimeAudioIsWhitelisted;
 - (BOOL)faceTimeVideoIsWhitelisted;
@@ -472,18 +481,15 @@
 - (BOOL)hideUnreadCountInTitleBar;
 - (BOOL)hidesUnreadIndicatorWhenEditing;
 - (BOOL)hyphenatesTextContent;
+- (unsigned int)initialConversationSizingMessageCount;
 - (unsigned int)initialConversationViewingMessageCount;
 - (void)invalidateTranscriptDrawerWidth;
 - (BOOL)isAccessibilityPreferredContentSizeCategory;
+- (BOOL)isProximityMonitoringSupported;
 - (BOOL)isSizeConstrained;
 - (BOOL)joystickUsesWindow;
 - (int)keyboardAppearance;
 - (float)largeTranscriptSpace;
-- (float)leftBalloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (float)leftSplitPaneMaximumWidth;
-- (float)leftSplitPaneMinimumWidth;
-- (float)leftSplitPaneWidthForUIInterfaceOrientation:(int)arg1;
-- (float)leftSplitPaneWidthFraction;
 - (id)lightGrayColor;
 - (struct CGSize { float x1; float x2; })locationOfferMapThumbnailFillSizeForWidth:(float)arg1;
 - (id)locationShareActionIcon;
@@ -500,9 +506,14 @@
 - (BOOL)mailIsWhitelisted;
 - (struct CGSize { float x1; float x2; })mapThumbnailFillSizeForWidth:(float)arg1;
 - (double)maxAudioRecordingDuration;
+- (float)maxPrimaryColumnWidth;
+- (float)maxPrimaryColumnWidthForInterfaceOrientation:(int)arg1;
+- (float)maxTranscriptPortraitWidth;
 - (float)mediumTranscriptSpace;
 - (id)messagesControllerBackgroundColor;
 - (double)minAudioRecordingDuration;
+- (unsigned int)minBalloonsForTranscriptHeight;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minTranscriptMarginInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minimumPlayButtonInsets;
 - (BOOL)modifiesFirstBalloonLayout;
 - (BOOL)modifiesSingleLineBalloonLayout;
@@ -524,6 +535,7 @@
 - (float)photoPickerPopoverWidth;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })photoPickerSectionInsets;
 - (BOOL)photoPickerShouldZoomOnSelection;
+- (BOOL)photoPickerUsesVitality;
 - (struct CGSize { float x1; float x2; })photoSheetProgressIndicatorSize;
 - (float)photoSheetVideoIconPadding;
 - (BOOL)photosIsWhitelisted;
@@ -536,6 +548,7 @@
 - (BOOL)presentsFullscreenInViewService;
 - (BOOL)presentsQuickLookController;
 - (BOOL)presentsReaderController;
+- (float)previewBalloonMaxWidthForBalloonMaxWidth:(float)arg1;
 - (float)previewMaxWidth;
 - (float)previewTitleBarHeight;
 - (id)previewTitleFont;
@@ -562,7 +575,7 @@
 - (id)red_waveformColor;
 - (BOOL)resetsIdleTimer;
 - (float)resizeMessageEntryViewAnimationDuration;
-- (float)rightBalloonMaxWidthForEntryContentViewWidth:(float)arg1;
+- (double)resumeToConversationListTimeInterval;
 - (float)scrollInNewMessageAnimationDuration;
 - (BOOL)scrollToBottomStopsAtTopOfLastBubble;
 - (BOOL)selectNewConversationOnDeletion;
@@ -573,19 +586,21 @@
 - (id)senderTranscriptTextAttributes;
 - (void)setHUDStyle:(int)arg1;
 - (BOOL)shouldAdjustWidthForSendFailure;
+- (BOOL)shouldAlignRecipientGlyphsWithMargins;
 - (BOOL)shouldAutomaticallyCheckAvailabilityOfAlternateAddresses;
 - (BOOL)shouldBackfillTranscript;
 - (BOOL)shouldFillAttachmentBalloon;
 - (BOOL)shouldGrabBackgroundAssertion;
 - (BOOL)shouldHomogenizeAtomsForPreferredService;
 - (BOOL)shouldInsetForStatusBar;
+- (BOOL)shouldLoadInitialViewingMessageCount;
 - (BOOL)shouldNotShowSendButton;
-- (BOOL)shouldReconfigureNewComposeOnRotation;
+- (BOOL)shouldOnlyResumeToConversationListAfterTimeout;
 - (BOOL)shouldRefreshAlternateAddressesSheet;
-- (BOOL)shouldShowContactPhotosInConversationList;
 - (BOOL)shouldShowContactPhotosInTranscript;
 - (BOOL)shouldShowDisclosureChevronInRecipientAtoms;
 - (BOOL)shouldShowSearchBarInConversationList;
+- (BOOL)shouldSizeInitialViewingMessageCount;
 - (BOOL)shouldSuppressRotationInNewCompose;
 - (BOOL)shouldUseDynamicGradient;
 - (BOOL)shouldUseDynamicScrolling;
@@ -673,8 +688,7 @@
 - (float)transcriptJunkHeaderButtonHeight;
 - (id)transcriptJunkHeaderTitleFont;
 - (int)transcriptLoadingIndicatorStyle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })transcriptMarginInsets;
-- (float)transcriptPortraitWidth;
+- (float)transcriptScrollToBottomThreshold;
 - (id)transcriptSeparatorColor;
 - (id)transcriptTextColor;
 - (id)transcriptTextFont;
@@ -686,10 +700,9 @@
 - (id)unreadImage;
 - (float)updateTranscriptInsetsAnimationDuration;
 - (BOOL)useSingleLineForContactVCardNames;
-- (BOOL)usesCustomSplitViewMasterColumnWidth;
+- (BOOL)usesActionMenu;
 - (BOOL)usesDataDetectorsUI;
 - (BOOL)usesEntryView;
-- (BOOL)usesJoystick;
 - (BOOL)usesNavigationBarControls;
 - (BOOL)usesPersistentConversationSelection;
 - (BOOL)usesPopovers;

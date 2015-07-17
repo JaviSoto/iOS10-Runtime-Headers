@@ -3,37 +3,37 @@
  */
 
 @interface VKTrafficIncident : NSObject <NSCopying> {
-    NSString *_crossStreet;
-    NSDate *_endDate;
-    NSString *_info;
-    BOOL _isNotForDisplay;
-    BOOL _isOnSelectedRoute;
-    NSDate *_lastUpdatedDate;
+    NSString * _crossStreet;
+    NSDate * _endDate;
+    NSString * _info;
+    BOOL  _isNotForDisplay;
+    BOOL  _isOnSelectedRoute;
+    NSDate * _lastUpdatedDate;
     struct { 
         double latitude; 
         double longitude; 
-    } _location;
-    float _maxZoom;
-    float _minZoom;
+    }  _location;
+    float  _maxZoom;
+    float  _minZoom;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeOffset;
-    unsigned int _routeOffsetInMeters;
-    int _routeRelevance;
-    int _significance;
-    NSDate *_startDate;
-    NSString *_street;
-    NSString *_subtitle;
-    NSString *_title;
-    int _type;
-    unsigned long long _uniqueID;
-    NSString *_uniqueString;
+    }  _routeOffset;
+    unsigned int  _routeOffsetInMeters;
+    int  _routeRelevance;
+    int  _significance;
+    NSDate * _startDate;
+    NSString * _street;
+    NSString * _subtitle;
+    NSString * _title;
+    int  _type;
+    unsigned long long  _uniqueID;
+    NSString * _uniqueString;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _worldPoint;
+    }  _worldPoint;
 }
 
 @property (nonatomic, readonly) NSString *crossStreet;

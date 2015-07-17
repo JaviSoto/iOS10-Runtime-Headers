@@ -3,8 +3,8 @@
  */
 
 @interface _MFAtomTextView : UITextView {
-    MFComposeRecipientTextView *_hostRecipientView;
-    unsigned int _textStorageEditingDepth;
+    MFComposeRecipientTextView * _hostRecipientView;
+    unsigned int  _textStorageEditingDepth;
 }
 
 @property (readonly) NSArray *atoms;

@@ -3,9 +3,9 @@
  */
 
 @interface TSPPasteboardMetadata : TSPObject {
-    NSHashTable *_dataReferences;
-    BOOL _isCrossAppPaste;
-    BOOL _isCrossDocumentPaste;
+    NSHashTable * _dataReferences;
+    BOOL  _isCrossAppPaste;
+    BOOL  _isCrossDocumentPaste;
     struct PasteboardMetadata { 
         int (**_vptr$MessageLite)(); 
         struct UnknownFieldSet { 
@@ -27,7 +27,7 @@
             int total_size_; 
         } datas_; 
         struct UUID {} *source_document_uuid_; 
-    } _message;
+    }  _message;
 }
 
 @property (nonatomic, readonly) NSHashTable *dataReferences;

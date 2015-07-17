@@ -3,10 +3,10 @@
  */
 
 @interface NSFileProviderExtension : NSObject <NSExtensionRequestHandling> {
-    NSObject<OS_dispatch_queue> *_extensionDispatchQueue;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSURL *_memberQueueDocumentStorageURL;
-    NSString *_memberQueueProviderIdentifier;
+    NSObject<OS_dispatch_queue> * _extensionDispatchQueue;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSURL * _memberQueueDocumentStorageURL;
+    NSString * _memberQueueProviderIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,9 +22,9 @@
 + (id)placeholderURLForURL:(id)arg1;
 + (BOOL)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
 
+- (void).cxx_destruct;
 - (id)URLForItemWithPersistentIdentifier:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;
-- (void)dealloc;
 - (id)documentStorageURL;
 - (id)init;
 - (void)itemChangedAtURL:(id)arg1;

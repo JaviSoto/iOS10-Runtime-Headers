@@ -3,8 +3,8 @@
  */
 
 @interface GKCenteredContentViewController : GKViewController <UIScrollViewDelegate> {
-    UIView *_containerView;
-    GKCenteringScrollView *_scrollView;
+    UIView * _containerView;
+    GKCenteringScrollView * _scrollView;
 }
 
 @property (nonatomic, retain) UIView *containerView;

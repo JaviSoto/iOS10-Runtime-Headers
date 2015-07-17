@@ -3,14 +3,14 @@
  */
 
 @interface DEAttachmentItem : NSObject <NSSecureCoding> {
-    NSURL *_attachedPath;
-    NSString *_attachmentType;
-    NSNumber *_deleteOnAttach;
-    NSString *_displayName;
-    NSNumber *_filesize;
-    NSDate *_modificationDate;
-    NSURL *_path;
-    NSNumber *_shouldCompress;
+    NSURL * _attachedPath;
+    NSString * _attachmentType;
+    NSNumber * _deleteOnAttach;
+    NSString * _displayName;
+    NSNumber * _filesize;
+    NSDate * _modificationDate;
+    NSURL * _path;
+    NSNumber * _shouldCompress;
 }
 
 @property (nonatomic, retain) NSURL *attachedPath;
@@ -22,9 +22,10 @@
 @property (nonatomic, retain) NSURL *path;
 @property (nonatomic, retain) NSNumber *shouldCompress;
 
++ (id)attachmentWithPath:(id)arg1;
++ (id)attachmentWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;
++ (id)attachmentWithPathURL:(id)arg1;
 + (id)newAttachmentWithPath:(id)arg1;
-+ (id)newAttachmentWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;
-+ (id)newAttachmentWithPathURL:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -39,6 +40,9 @@
 - (id)filesize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;
+- (id)initWithPathURL:(id)arg1;
 - (id)modificationDate;
 - (id)path;
 - (void)setAttachedPath:(id)arg1;

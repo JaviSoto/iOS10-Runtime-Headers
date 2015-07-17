@@ -3,7 +3,7 @@
  */
 
 @interface TSTFilteredTableDynamicContentDelegate : NSObject <TSTLayoutDynamicContentProtocol> {
-    TSTTableModel *mTableModel;
+    TSTTableModel * mTableModel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

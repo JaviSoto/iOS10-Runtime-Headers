@@ -3,9 +3,9 @@
  */
 
 @interface TSDContainerInfo : TSPObject <TSDMutableContainerInfo, TSKDocumentObject> {
-    NSMutableArray *mChildInfos;
-    TSDInfoGeometry *mGeometry;
-    NSObject<TSDContainerInfo> *mParentInfo;
+    NSMutableArray * mChildInfos;
+    TSDInfoGeometry * mGeometry;
+    NSObject<TSDContainerInfo> * mParentInfo;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

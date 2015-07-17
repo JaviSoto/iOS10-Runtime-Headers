@@ -3,36 +3,36 @@
  */
 
 @interface _UIViewControllerTransitionContext : NSObject <UIViewControllerContextTransitioningEx> {
-    BOOL __allowUserInteraction;
-    <UIViewControllerAnimatedTransitioning> *__animator;
-    _UIViewControllerTransitionCoordinator *__auxContext;
-    int __completionCurve;
-    id /* block */ __completionHandler;
-    float __completionVelocity;
-    NSArray *__containerViews;
-    id /* block */ __didCompleteHandler;
-    double __duration;
-    id /* block */ __interactiveUpdateHandler;
-    <UIViewControllerInteractiveTransitioning> *__interactor;
-    BOOL __isPresentation;
-    float __percentOffset;
-    id /* block */ __postInteractiveCompletionHandler;
-    int __state;
-    id /* block */ __willCompleteHandler;
-    UIView *_containerView;
-    NSArray *_disabledViews;
-    BOOL _initiallyInteractive;
-    BOOL _isAnimated;
-    BOOL _isCurrentlyInteractive;
-    int _presentationStyle;
-    float _previousPercentComplete;
-    BOOL _rotating;
+    BOOL  __allowUserInteraction;
+    <UIViewControllerAnimatedTransitioning> * __animator;
+    _UIViewControllerTransitionCoordinator * __auxContext;
+    int  __completionCurve;
+    id /* block */  __completionHandler;
+    float  __completionVelocity;
+    NSArray * __containerViews;
+    id /* block */  __didCompleteHandler;
+    double  __duration;
+    id /* block */  __interactiveUpdateHandler;
+    <UIViewControllerInteractiveTransitioning> * __interactor;
+    BOOL  __isPresentation;
+    float  __percentOffset;
+    id /* block */  __postInteractiveCompletionHandler;
+    int  __state;
+    id /* block */  __willCompleteHandler;
+    UIView * _containerView;
+    NSArray * _disabledViews;
+    BOOL  _initiallyInteractive;
+    BOOL  _isAnimated;
+    BOOL  _isCurrentlyInteractive;
+    int  _presentationStyle;
+    float  _previousPercentComplete;
+    BOOL  _rotating;
     struct { 
         unsigned int interactorImplementsCompletionSpeed : 1; 
         unsigned int interactorImplementsCompletionCurve : 1; 
         unsigned int transitionWasCancelled : 1; 
         unsigned int transitionIsCompleting : 1; 
-    } _transitionContextFlags;
+    }  _transitionContextFlags;
 }
 
 @property (getter=_allowUserInteraction, setter=_setAllowUserInteraction:, nonatomic) BOOL _allowUserInteraction;
@@ -66,6 +66,7 @@
 
 + (id)_associatedTransitionContextForObject:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)__runAlongsideAnimations;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_affineTransform;
 - (BOOL)_allowUserInteraction;

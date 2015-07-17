@@ -3,31 +3,31 @@
  */
 
 @interface ICCameraProperties : NSObject {
-    BOOL _accessRestrictedAppleDevice;
-    BOOL _allowsSyncingClock;
-    unsigned int _batteryLevel;
-    BOOL _batteryLevelAvailable;
-    BOOL _beingEjected;
-    unsigned int _contentCatalogPercentCompleted;
-    BOOL _contentReceived;
-    NSMutableArray *_contents;
-    int _contentsLock;
-    NSObject<OS_dispatch_semaphore> *_deviceQSemaphore;
-    double _downloadCancelTimestamp;
-    NSObject<OS_dispatch_queue> *_downloadQ;
-    BOOL _ejectable;
-    unsigned int _estimatedNumberOfDownloadableItems;
-    NSObject<OS_dispatch_queue> *_generalQ;
-    BOOL _locked;
-    NSMutableArray *_mediaFiles;
-    int _mediaFilesLock;
-    NSObject<OS_dispatch_queue> *_metadataFetchQ;
-    NSMutableArray *_notifyArray;
-    unsigned int _numberOfDownloadableItems;
-    NSObject<OS_dispatch_queue> *_thumbnailFetchQ;
-    double _timeOffset;
-    NSMutableArray *_toBeNotifiedAddedItems;
-    NSString *_volumePath;
+    BOOL  _accessRestrictedAppleDevice;
+    BOOL  _allowsSyncingClock;
+    unsigned int  _batteryLevel;
+    BOOL  _batteryLevelAvailable;
+    BOOL  _beingEjected;
+    unsigned int  _contentCatalogPercentCompleted;
+    BOOL  _contentReceived;
+    NSMutableArray * _contents;
+    int  _contentsLock;
+    NSObject<OS_dispatch_semaphore> * _deviceQSemaphore;
+    double  _downloadCancelTimestamp;
+    NSObject<OS_dispatch_queue> * _downloadQ;
+    BOOL  _ejectable;
+    unsigned int  _estimatedNumberOfDownloadableItems;
+    NSObject<OS_dispatch_queue> * _generalQ;
+    BOOL  _locked;
+    NSMutableArray * _mediaFiles;
+    int  _mediaFilesLock;
+    NSObject<OS_dispatch_queue> * _metadataFetchQ;
+    NSMutableArray * _notifyArray;
+    unsigned int  _numberOfDownloadableItems;
+    NSObject<OS_dispatch_queue> * _thumbnailFetchQ;
+    double  _timeOffset;
+    NSMutableArray * _toBeNotifiedAddedItems;
+    NSString * _volumePath;
 }
 
 @property BOOL accessRestrictedAppleDevice;

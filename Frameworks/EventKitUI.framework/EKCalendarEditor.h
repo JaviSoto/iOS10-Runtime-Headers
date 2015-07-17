@@ -3,16 +3,16 @@
  */
 
 @interface EKCalendarEditor : UIViewController <EKCalendarEditItemDelegate> {
-    EKCalendar *_calendar;
-    <EKCalendarEditorDelegate> *_delegate;
-    NSArray *_editItems;
-    unsigned int _entityType;
-    EKEventStore *_eventStore;
-    BOOL _isNewCalendar;
-    EKCalendarShareesEditItem *_shareesEditItem;
-    EKSource *_source;
-    <EKStyleProvider> *_styleProvider;
-    UITableView *_tableView;
+    EKCalendar * _calendar;
+    <EKCalendarEditorDelegate> * _delegate;
+    NSArray * _editItems;
+    unsigned int  _entityType;
+    EKEventStore * _eventStore;
+    BOOL  _isNewCalendar;
+    EKCalendarShareesEditItem * _shareesEditItem;
+    EKSource * _source;
+    <EKStyleProvider> * _styleProvider;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) EKCalendar *calendar;

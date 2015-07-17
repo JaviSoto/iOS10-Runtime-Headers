@@ -3,15 +3,15 @@
  */
 
 @interface TSPCryptoComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
-    char *_buffer;
+    char * _buffer;
     struct { 
         unsigned int ctx[96]; 
-    } _ccHmacContext;
-    struct _CCCryptor { } *_cryptor;
-    unsigned long _decryptedBlockLength;
-    unsigned long _encodedBlockLength;
-    <TSPMutableCryptoInfo> *_encryptionInfo;
-    <TSPComponentWriteChannel> *_writeChannel;
+    }  _ccHmacContext;
+    struct _CCCryptor { } * _cryptor;
+    unsigned long  _decryptedBlockLength;
+    unsigned long  _encodedBlockLength;
+    <TSPMutableCryptoInfo> * _encryptionInfo;
+    <TSPComponentWriteChannel> * _writeChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_finalizeBlockForClosing:(BOOL)arg1;
 - (BOOL)_initializeBlock;

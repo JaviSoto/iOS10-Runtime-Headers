@@ -3,16 +3,16 @@
  */
 
 @interface TSPLazyReference : NSObject <NSCopying> {
-    TSPComponent *_component;
-    <TSPLazyReferenceDelegate> *_delegate;
+    TSPComponent * _component;
+    <TSPLazyReferenceDelegate> * _delegate;
     struct { 
         unsigned int isWeak : 1; 
         unsigned int isExternal : 1; 
         unsigned int allowUnknownObject : 1; 
-    } _flags;
-    long long _identifier;
-    TSPObject *_strongObject;
-    TSPObject *_weakObject;
+    }  _flags;
+    long long  _identifier;
+    TSPObject * _strongObject;
+    TSPObject * _weakObject;
 }
 
 @property (nonatomic) TSPComponent *component;
@@ -29,7 +29,6 @@
 + (id)referenceForObject:(id)arg1;
 + (id)weakReferenceForObject:(id)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2;
 - (id)component;

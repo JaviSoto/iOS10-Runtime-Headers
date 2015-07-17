@@ -3,9 +3,9 @@
  */
 
 @interface KNRecordingMovieEvent : KNRecordingEvent {
-    int mMovieEventType;
-    double mMovieEventValue;
-    TSPLazyReference *mMovieInfoReference;
+    int  mMovieEventType;
+    double  mMovieEventValue;
+    TSPLazyReference * mMovieInfoReference;
 }
 
 @property (nonatomic, readonly) BOOL beginsScrubbing;

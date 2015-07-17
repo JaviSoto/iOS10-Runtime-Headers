@@ -3,14 +3,14 @@
  */
 
 @interface IMMe : NSObject {
-    NSArray *_abEmails;
-    NSString *_abFirstName;
-    NSString *_abFullName;
-    NSMutableArray *_abIMHandles;
-    NSString *_abLastName;
-    NSString *_abNickname;
-    NSMutableArray *_loginIMHandles;
-    IMPerson *_person;
+    NSArray * _abEmails;
+    NSString * _abFirstName;
+    NSString * _abFullName;
+    NSMutableArray * _abIMHandles;
+    NSString * _abLastName;
+    NSString * _abNickname;
+    NSMutableArray * _loginIMHandles;
+    IMPerson * _person;
 }
 
 @property (nonatomic, readonly) IMHandle *bestIMHandle;

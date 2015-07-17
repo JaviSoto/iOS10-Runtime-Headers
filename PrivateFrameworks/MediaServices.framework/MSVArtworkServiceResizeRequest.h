@@ -3,9 +3,9 @@
  */
 
 @interface MSVArtworkServiceResizeRequest : MSVArtworkServiceRequest {
-    BOOL _overwriteExistingDestinations;
-    NSMutableArray *_resizeDestinations;
-    NSURL *_sourceURL;
+    BOOL  _overwriteExistingDestinations;
+    NSMutableArray * _resizeDestinations;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic) BOOL overwriteExistingDestinations;

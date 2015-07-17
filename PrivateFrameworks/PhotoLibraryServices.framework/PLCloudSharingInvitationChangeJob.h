@@ -3,12 +3,12 @@
  */
 
 @interface PLCloudSharingInvitationChangeJob : PLCloudSharingJob {
-    NSArray *_MSASSharingRelationships;
-    NSString *_albumGUID;
-    long long _jobType;
-    NSDictionary *_mstreamdInfoDictionary;
-    long long _relationshipChangeType;
-    NSString *_resendInvitationGUID;
+    NSArray * _MSASSharingRelationships;
+    NSString * _albumGUID;
+    long long  _jobType;
+    NSDictionary * _mstreamdInfoDictionary;
+    long long  _relationshipChangeType;
+    NSString * _resendInvitationGUID;
 }
 
 @property (nonatomic, retain) NSArray *MSASSharingRelationships;

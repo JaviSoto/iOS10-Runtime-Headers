@@ -9,32 +9,32 @@
         struct __compressed_pair<TSTWidthHeightCache_Private::WHCCol *, std::__1::allocator<TSTWidthHeightCache_Private::WHCCol> > { 
             struct WHCCol {} *__first_; 
         } __end_cap_; 
-    } mFittingColumnWidth;
+    }  mFittingColumnWidth;
     struct vector<TSTWidthHeightCache_Private::WHCRow, std::__1::allocator<TSTWidthHeightCache_Private::WHCRow> > { 
         struct WHCRow {} *__begin_; 
         struct WHCRow {} *__end_; 
         struct __compressed_pair<TSTWidthHeightCache_Private::WHCRow *, std::__1::allocator<TSTWidthHeightCache_Private::WHCRow> > { 
             struct WHCRow {} *__first_; 
         } __end_cap_; 
-    } mFittingRowHeight;
+    }  mFittingRowHeight;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } mLock;
+    }  mLock;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
             float *__first_; 
         } __end_cap_; 
-    } mModelColumnWidth;
+    }  mModelColumnWidth;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
             float *__first_; 
         } __end_cap_; 
-    } mModelRowHeight;
+    }  mModelRowHeight;
 }
 
 - (id).cxx_construct;

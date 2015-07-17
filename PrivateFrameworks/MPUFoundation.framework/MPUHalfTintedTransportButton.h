@@ -3,12 +3,12 @@
  */
 
 @interface MPUHalfTintedTransportButton : UIControl <MPUTransportButton, MPUVibrantContentDisabling> {
-    UIButton *_regularButton;
-    UIImage *_regularImage;
-    UIColor *_regularImageColor;
-    UIButton *_tintedButton;
-    UIImage *_tintedImage;
-    MPUTransportButtonEventHandler *_transportButtonEventHandler;
+    UIButton * _regularButton;
+    UIImage * _regularImage;
+    UIColor * _regularImageColor;
+    UIButton * _tintedButton;
+    UIImage * _tintedImage;
+    MPUTransportButtonEventHandler * _transportButtonEventHandler;
 }
 
 @property (nonatomic) BOOL adjustsImageWhenHighlighted;

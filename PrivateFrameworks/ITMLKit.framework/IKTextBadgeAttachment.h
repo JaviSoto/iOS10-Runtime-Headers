@@ -3,7 +3,7 @@
  */
 
 @interface IKTextBadgeAttachment : NSTextAttachment {
-    IKBadgeElement *_badge;
+    IKBadgeElement * _badge;
 }
 
 @property (nonatomic, readonly, retain) IKBadgeElement *badge;

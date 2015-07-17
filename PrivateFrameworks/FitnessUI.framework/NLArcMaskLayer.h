@@ -3,12 +3,12 @@
  */
 
 @interface NLArcMaskLayer : CAShapeLayer {
-    float _arcStart;
+    float  _arcStart;
     struct CGPoint { 
         float x; 
         float y; 
-    } _center;
-    float _radius;
+    }  _center;
+    float  _radius;
 }
 
 @property (nonatomic) float arcStart;

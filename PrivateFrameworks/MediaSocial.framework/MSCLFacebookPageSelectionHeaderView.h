@@ -3,7 +3,7 @@
  */
 
 @interface MSCLFacebookPageSelectionHeaderView : UIView {
-    UILabel *_label;
+    UILabel * _label;
 }
 
 @property (nonatomic, readonly) UILabel *label;

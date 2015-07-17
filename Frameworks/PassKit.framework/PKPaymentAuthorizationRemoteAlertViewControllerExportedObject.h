@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentAuthorizationRemoteAlertViewControllerExportedObject : NSObject <PKPaymentAuthorizationServiceProtocol> {
-    PKPaymentAuthorizationRemoteAlertViewController *_controller;
-    <PKPaymentAuthorizationServiceProtocol> *_delegate;
+    PKPaymentAuthorizationRemoteAlertViewController * _controller;
+    <PKPaymentAuthorizationServiceProtocol> * _delegate;
 }
 
 @property (nonatomic) PKPaymentAuthorizationRemoteAlertViewController *controller;
@@ -15,6 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
 - (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(id)arg2;
 - (id)controller;

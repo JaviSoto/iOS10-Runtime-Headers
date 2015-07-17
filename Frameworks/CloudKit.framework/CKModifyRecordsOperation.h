@@ -3,22 +3,22 @@
  */
 
 @interface CKModifyRecordsOperation : CKDatabaseOperation {
-    NSMutableDictionary *_assetsByRecordIDAndRecordKey;
-    BOOL _atomic;
-    NSData *_clientChangeTokenData;
-    NSDictionary *_conflictLosersToResolveByRecordID;
-    NSMutableArray *_deletedRecordIDs;
-    id /* block */ _modifyRecordsCompletionBlock;
-    id /* block */ _perRecordCompletionBlock;
-    id /* block */ _perRecordProgressBlock;
-    NSMutableDictionary *_recordErrors;
-    NSArray *_recordIDsToDelete;
-    NSDictionary *_recordIDsToDeleteToEtags;
-    NSMutableDictionary *_recordsByRecordIDs;
-    NSArray *_recordsToSave;
-    int _savePolicy;
-    NSMutableArray *_savedRecords;
-    BOOL _shouldOnlySaveAssetContent;
+    NSMutableDictionary * _assetsByRecordIDAndRecordKey;
+    BOOL  _atomic;
+    NSData * _clientChangeTokenData;
+    NSDictionary * _conflictLosersToResolveByRecordID;
+    NSMutableArray * _deletedRecordIDs;
+    id /* block */  _modifyRecordsCompletionBlock;
+    id /* block */  _perRecordCompletionBlock;
+    id /* block */  _perRecordProgressBlock;
+    NSMutableDictionary * _recordErrors;
+    NSArray * _recordIDsToDelete;
+    NSDictionary * _recordIDsToDeleteToEtags;
+    NSMutableDictionary * _recordsByRecordIDs;
+    NSArray * _recordsToSave;
+    int  _savePolicy;
+    NSMutableArray * _savedRecords;
+    BOOL  _shouldOnlySaveAssetContent;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assetsByRecordIDAndRecordKey;
@@ -38,10 +38,14 @@
 @property (nonatomic, retain) NSMutableArray *savedRecords;
 @property (nonatomic) BOOL shouldOnlySaveAssetContent;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (void)_trackAssetsToUpload;
+- (unsigned long long)activityStart;
 - (id)assetsByRecordIDAndRecordKey;
 - (BOOL)atomic;
 - (id)clientChangeTokenData;
@@ -78,5 +82,9 @@
 - (void)setSavedRecords:(id)arg1;
 - (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
 - (BOOL)shouldOnlySaveAssetContent;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (void)ic_removeAllCompletionBlocks;
 
 @end

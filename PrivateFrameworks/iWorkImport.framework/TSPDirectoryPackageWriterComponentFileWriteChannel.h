@@ -3,11 +3,11 @@
  */
 
 @interface TSPDirectoryPackageWriterComponentFileWriteChannel : NSObject <TSPComponentWriteChannel> {
-    NSURL *_URL;
-    id /* block */ _handler;
-    BOOL _isClosed;
-    NSObject<OS_dispatch_queue> *_queue;
-    TSUFileIOChannel *_writeChannel;
+    NSURL * _URL;
+    id /* block */  _handler;
+    BOOL  _isClosed;
+    NSObject<OS_dispatch_queue> * _queue;
+    TSUFileIOChannel * _writeChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

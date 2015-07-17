@@ -3,12 +3,12 @@
  */
 
 @interface RDBridge : NSObject <IDSServiceDelegate> {
-    NSObject<OS_dispatch_source> *_connectionHealthCheckTimer;
-    int _connectionState;
-    <RDBridgeDelegate> *_delegate;
-    RDMulticastService *_multicastService;
-    IDSService *_remoteService;
-    NSObject<OS_dispatch_source> *_sleepFailSafeTimer;
+    NSObject<OS_dispatch_source> * _connectionHealthCheckTimer;
+    int  _connectionState;
+    <RDBridgeDelegate> * _delegate;
+    RDMulticastService * _multicastService;
+    IDSService * _remoteService;
+    NSObject<OS_dispatch_source> * _sleepFailSafeTimer;
 }
 
 @property (nonatomic) int connectionState;

@@ -3,10 +3,11 @@
  */
 
 @interface DDRemoteActionViewController : _UIRemoteViewController <DDRemoteActionPresenter> {
-    DDAction *_action;
-    DDActionController *_actionController;
-    BOOL _proxyConfigured;
-    BOOL _waitingForRemoteConfiguration;
+    DDAction * _action;
+    DDActionController * _actionController;
+    BOOL  _proxyConfigured;
+    BOOL  _receivedActionDidFinish;
+    BOOL  _waitingForRemoteConfiguration;
 }
 
 @property (retain) DDAction *action;

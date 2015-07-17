@@ -3,24 +3,24 @@
  */
 
 @interface UIOldSliderControl : UIControl {
-    float _animationEndValue;
-    float _hitOffset;
+    float  _animationEndValue;
+    float  _hitOffset;
     struct CGPoint { 
         float x; 
         float y; 
-    } _idleTrackingPoint;
-    double _idleTrackingTime;
-    UIView *_knob;
+    }  _idleTrackingPoint;
+    double  _idleTrackingTime;
+    UIView * _knob;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastTrackingPoint;
-    double _lastTrackingTime;
-    float _maxValue;
-    UIImage *_maxValueImage;
-    float _minValue;
-    UIImage *_minValueImage;
-    int _numberOfTickMarks;
+    }  _lastTrackingPoint;
+    double  _lastTrackingTime;
+    float  _maxValue;
+    UIImage * _maxValueImage;
+    float  _minValue;
+    UIImage * _minValueImage;
+    int  _numberOfTickMarks;
     struct { 
         unsigned int allowsOnlyTickMarks : 1; 
         unsigned int animating : 1; 
@@ -32,20 +32,20 @@
         unsigned int shouldFlipValue : 1; 
         unsigned int needsNonOpaqueFills : 1; 
         unsigned int reserved : 24; 
-    } _sliderFlags;
-    UIImage *_sliderLeftCap;
+    }  _sliderFlags;
+    UIImage * _sliderLeftCap;
     /* Warning: unhandled union encoding: '(?="image"@"UIImage""view"@"UIView")' */ union { 
         UIImage *image; 
         id view; 
-    } _sliderLeftFill;
-    UIImage *_sliderLeftFillCap;
-    UIImage *_sliderRightCap;
+    }  _sliderLeftFill;
+    UIImage * _sliderLeftFillCap;
+    UIImage * _sliderRightCap;
     /* Warning: unhandled union encoding: '(?="image"@"UIImage""view"@"UIView")' */ union { 
         UIImage *image; 
         id view; 
-    } _sliderRightFill;
-    UIImage *_sliderRightFullCap;
-    float _value;
+    }  _sliderRightFill;
+    UIImage * _sliderRightFullCap;
+    float  _value;
 }
 
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;

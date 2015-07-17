@@ -3,7 +3,7 @@
  */
 
 @interface MKRouteStepPolyline : MKPolyline {
-    MKRoutePolyline *_fullRoute;
+    MKRoutePolyline * _fullRoute;
 }
 
 - (void).cxx_destruct;

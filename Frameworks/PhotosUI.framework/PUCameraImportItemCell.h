@@ -3,10 +3,10 @@
  */
 
 @interface PUCameraImportItemCell : UICollectionViewCell {
-    UIImageView *_badgeImageView;
-    int _badgeType;
-    PUPhotoView *_photoView;
-    UIActivityIndicatorView *_spinner;
+    UIImageView * _badgeImageView;
+    int  _badgeType;
+    PUPhotoView * _photoView;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, retain) UIImageView *badgeImageView;

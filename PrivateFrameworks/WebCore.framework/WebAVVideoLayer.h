@@ -5,12 +5,12 @@
 @interface WebAVVideoLayer : CALayer <AVVideoLayer> {
     struct RetainPtr<WebAVPlayerController> { 
         void *m_ptr; 
-    } _avPlayerController;
+    }  _avPlayerController;
     struct RetainPtr<AVPlayerViewController> { 
         void *m_ptr; 
-    } _avPlayerViewController;
-    BOOL _readyForDisplay;
-    int _videoLayerGravity;
+    }  _avPlayerViewController;
+    BOOL  _readyForDisplay;
+    int  _videoLayerGravity;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,10 +20,10 @@
             float width; 
             float height; 
         } size; 
-    } _videoRect;
+    }  _videoRect;
     struct RetainPtr<CALayer> { 
         void *m_ptr; 
-    } _videoSublayer;
+    }  _videoSublayer;
 }
 
 @property (getter=isReadyForDisplay, nonatomic) BOOL readyForDisplay;
@@ -35,8 +35,10 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)enterOptimizedFullScreenModeRedirectingVideoToLayer:(id)arg1;
 - (id)init;
 - (BOOL)isReadyForDisplay;
+- (void)leaveOptimizedFullScreenMode;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPlayerController:(id)arg1;
 - (void)setPlayerViewController:(id)arg1;

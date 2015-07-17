@@ -3,10 +3,10 @@
  */
 
 @interface TSUUUIDSetStore : NSObject <NSCopying> {
-    unsigned int _highestIndex;
-    NSMutableDictionary *_indexesUsingUuid;
-    NSLock *_lock;
-    TSUSparseArray *_uuidSetForIndex;
+    unsigned int  _highestIndex;
+    NSMutableDictionary * _indexesUsingUuid;
+    NSLock * _lock;
+    TSUSparseArray * _uuidSetForIndex;
 }
 
 @property (readonly) unsigned int count;

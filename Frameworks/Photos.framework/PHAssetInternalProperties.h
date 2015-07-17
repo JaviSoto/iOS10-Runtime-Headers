@@ -3,10 +3,10 @@
  */
 
 @interface PHAssetInternalProperties : NSObject {
-    PHAsset *_asset;
-    NSString *_avalancheUUID;
-    double _sortToken;
-    short _visibilityState;
+    PHAsset * _asset;
+    NSString * _avalancheUUID;
+    double  _sortToken;
+    short  _visibilityState;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

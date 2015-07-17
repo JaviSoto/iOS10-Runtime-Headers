@@ -3,10 +3,10 @@
  */
 
 @interface EKEventAttendeesEditViewController : EKEditItemViewController {
-    BOOL _cancelTapped;
-    BOOL _disableShowingButtons;
-    EKEvent *_event;
-    EKEventAttendeePicker *_picker;
+    BOOL  _cancelTapped;
+    BOOL  _disableShowingButtons;
+    EKEvent * _event;
+    EKEventAttendeePicker * _picker;
 }
 
 @property (nonatomic, copy) NSArray *attendees;

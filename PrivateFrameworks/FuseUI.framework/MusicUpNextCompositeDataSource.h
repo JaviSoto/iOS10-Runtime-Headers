@@ -3,10 +3,10 @@
  */
 
 @interface MusicUpNextCompositeDataSource : NSObject <MusicEntityProviding, UITableViewDataSource, UITableViewDelegate> {
-    <MusicUpNextCompositeDataSourceDelegate> *_delegate;
-    MusicEntityViewHorizontalLockupContentDescriptor *_horizontalLockupContentDescriptor;
-    MPUAVPlayer *_player;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
+    <MusicUpNextCompositeDataSourceDelegate> * _delegate;
+    MusicEntityViewHorizontalLockupContentDescriptor * _horizontalLockupContentDescriptor;
+    MPUAVPlayer * _player;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

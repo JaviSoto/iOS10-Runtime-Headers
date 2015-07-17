@@ -3,10 +3,10 @@
  */
 
 @interface TNChartFormulaStorage : NSObject <NSCopying, NSMutableCopying> {
-    unsigned int mCachedNumberOfGroups;
-    BOOL mCachedNumberOfGroupsValid;
-    int mDirection;
-    struct __CFDictionary { } *mStorage;
+    unsigned int  mCachedNumberOfGroups;
+    BOOL  mCachedNumberOfGroupsValid;
+    int  mDirection;
+    struct __CFDictionary { } * mStorage;
 }
 
 + (struct vector<TNChartFormulaType, std::__1::allocator<TNChartFormulaType> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<TNChartFormulaType *, std::__1::allocator<TNChartFormulaType> > { unsigned int *x_3_1_1; } x3; })persistentFormulaTypes;

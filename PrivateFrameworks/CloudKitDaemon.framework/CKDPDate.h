@@ -5,8 +5,8 @@
 @interface CKDPDate : PBCodable <NSCopying> {
     struct { 
         unsigned int time : 1; 
-    } _has;
-    double _time;
+    }  _has;
+    double  _time;
 }
 
 @property (nonatomic) BOOL hasTime;

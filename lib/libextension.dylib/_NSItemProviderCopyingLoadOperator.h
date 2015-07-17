@@ -3,8 +3,8 @@
  */
 
 @interface _NSItemProviderCopyingLoadOperator : NSObject <_NSItemProviderLoading> {
-    NSItemProvider *_itemProvider;
-    NSDictionary *_loadedItems;
+    NSItemProvider * _itemProvider;
+    NSDictionary * _loadedItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;

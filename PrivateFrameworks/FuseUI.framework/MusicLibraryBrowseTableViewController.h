@@ -3,39 +3,40 @@
  */
 
 @interface MusicLibraryBrowseTableViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryBrowseSectionHeaderViewDelegate, MusicLibraryViewConfigurationConsuming, MusicMediaPickerSearchDelegate, MusicSplitInitialStateProviding, MusicTableViewDelegate, UITableViewDataSource> {
-    MusicClientContext *_clientContext;
-    BOOL _collapseSections;
-    NSArray *_contentDescriptors;
-    UIColor *_defaultSelectionTintColor;
-    <MusicLibraryBrowseTableViewControllerDelegate> *_delegate;
+    MusicClientContext * _clientContext;
+    BOOL  _collapseSections;
+    NSArray * _contentDescriptors;
+    UIColor * _defaultSelectionTintColor;
+    <MusicLibraryBrowseTableViewControllerDelegate> * _delegate;
     struct { 
         unsigned int didFinishContentHeightAnimation : 1; 
         unsigned int willBeginContentHeightAnimation : 1; 
-    } _delegateRespondsToSelector;
-    BOOL _didIgnoreEntityProviderInvalidationDuringEditing;
-    id /* block */ _editingChangesCommitBlock;
-    MusicEditingEntityProvider *_editingEntityProvider;
-    BOOL _editingWasCancelled;
-    MusicEntityViewDescriptor *_entityViewDescriptor;
-    unsigned int _firstSectionHeaderIndex;
-    BOOL _hasValidFirstSectionHeaderIndex;
-    MusicEntityValueContext *_itemEntityValueContext;
-    int _lastSelectionBehavior;
-    MusicLibraryBrowseTableViewConfiguration *_libraryViewConfiguration;
-    unsigned int _numberOfEntities;
-    MusicEntityPlayabilityController *_playabilityController;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    float _previousWidth;
-    unsigned int _referenceCountForIgnoringEntityProviderInvalidation;
-    unsigned int _referenceCountForRunningEditingStateAnimations;
-    NSMutableArray *_reusableCoalescingEntityValueProviders;
-    NSMapTable *_sectionContentDescriptorToMaximumHeaderHeight;
-    unsigned int _sectionCountThresholdForCollapsedSections;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
-    MusicEntityValueContext *_selectedItemEntityValueContext;
-    BOOL _shouldReloadTableViewOnceStoppedIgnoringNotifications;
-    MusicTableView *_tableView;
+    }  _delegateRespondsToSelector;
+    BOOL  _didIgnoreEntityProviderInvalidationDuringEditing;
+    id /* block */  _editingChangesCommitBlock;
+    MusicEditingEntityProvider * _editingEntityProvider;
+    BOOL  _editingWasCancelled;
+    MusicEntityViewDescriptor * _entityViewDescriptor;
+    unsigned int  _firstSectionHeaderIndex;
+    BOOL  _hasValidFirstSectionHeaderIndex;
+    MusicEntityValueContext * _itemEntityValueContext;
+    int  _lastSelectionBehavior;
+    MusicLibraryBrowseTableViewConfiguration * _libraryViewConfiguration;
+    unsigned int  _numberOfEntities;
+    MusicEntityPlayabilityController * _playabilityController;
+    MusicEntityPlaybackStatusController * _playbackStatusController;
+    MPAVController * _player;
+    float  _previousWidth;
+    unsigned int  _referenceCountForIgnoringEntityProviderInvalidation;
+    unsigned int  _referenceCountForRunningEditingStateAnimations;
+    NSMutableArray * _reusableCoalescingEntityValueProviders;
+    NSMapTable * _sectionContentDescriptorToMaximumHeaderHeight;
+    unsigned int  _sectionCountThresholdForCollapsedSections;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
+    MusicEntityValueContext * _selectedItemEntityValueContext;
+    BOOL  _shouldReloadTableViewOnceStoppedIgnoringNotifications;
+    MusicTableView * _tableView;
+    NSMutableArray * _visibleFlexibleHeaderViews;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -96,11 +97,13 @@
 - (id)clientContext;
 - (id)contentScrollView;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (id)description;
 - (void)didEndDisplayingBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
 - (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
 - (float)effectiveContentHeight;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)endEditingWithCommitBlock:(id /* block */)arg1;
 - (id)entityProviderChangeRecords;
 - (id)entityViewDescriptor;
@@ -112,6 +115,7 @@
 - (int)handleSelectionOfCellForEntityValueContext:(id)arg1;
 - (int)handleSelectionOfSectionHeaderForSectionEntityValueContext:(id)arg1;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)insertEntityValueProviders:(id)arg1;
@@ -160,6 +164,7 @@
 - (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableViewLayoutMarginsDidChange:(id)arg1;
 - (id)tableViewThatNeedsSearchBarHeader;
 - (void)tableViewTintColorDidChange:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

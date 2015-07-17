@@ -8,7 +8,7 @@
         float left; 
         float bottom; 
         float right; 
-    } _visibleBoundsInsets;
+    }  _visibleBoundsInsets;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } visibleBoundsInsets;

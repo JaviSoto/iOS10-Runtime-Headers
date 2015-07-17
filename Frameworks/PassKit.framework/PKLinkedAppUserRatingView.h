@@ -3,8 +3,8 @@
  */
 
 @interface PKLinkedAppUserRatingView : UIView {
-    NSMutableArray *_starViews;
-    float _userRating;
+    NSMutableArray * _starViews;
+    float  _userRating;
 }
 
 @property (nonatomic) float userRating;

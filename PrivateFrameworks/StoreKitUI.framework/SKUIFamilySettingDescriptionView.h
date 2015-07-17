@@ -3,12 +3,12 @@
  */
 
 @interface SKUIFamilySettingDescriptionView : SKUISettingDescriptionView {
-    UIActivityIndicatorView *_activityIndicator;
-    UIImageView *_iconImageView;
-    UILabel *_labelView;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUISettingsFamilyViewElement *_viewElement;
-    int _viewState;
+    UIActivityIndicatorView * _activityIndicator;
+    UIImageView * _iconImageView;
+    UILabel * _labelView;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUISettingsFamilyViewElement * _viewElement;
+    int  _viewState;
 }
 
 + (struct CGSize { float x1; float x2; })preferredSizeForSettingDescription:(id)arg1 context:(id)arg2;

@@ -3,18 +3,18 @@
  */
 
 @interface PKPassGroupViewVerticalPanAnimator : NSObject {
-    UIPanGestureRecognizer *_gestureRecognizer;
-    _UIDynamicValueAnimation *_panningAnimation;
-    PKPassGroupView *_panningGroupView;
+    UIPanGestureRecognizer * _gestureRecognizer;
+    _UIDynamicValueAnimation * _panningAnimation;
+    PKPassGroupView * _panningGroupView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _panningViewStartPosition;
+    }  _panningViewStartPosition;
     struct CGPoint { 
         float x; 
         float y; 
-    } _panningViewTargetPosition;
-    float _panningViewTargetScale;
+    }  _panningViewTargetPosition;
+    float  _panningViewTargetScale;
 }
 
 @property (nonatomic, retain) UIPanGestureRecognizer *gestureRecognizer;

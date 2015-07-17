@@ -3,12 +3,12 @@
  */
 
 @interface SGIdentityName : NSObject {
-    NSString *_firstname;
-    NSString *_middlename;
-    NSString *_prefix;
-    NSString *_privFullName;
-    NSString *_suffix;
-    NSString *_surname;
+    NSString * _firstname;
+    NSString * _middlename;
+    NSString * _prefix;
+    NSString * _privFullName;
+    NSString * _suffix;
+    NSString * _surname;
 }
 
 @property (nonatomic, readonly) NSString *firstname;
@@ -36,6 +36,6 @@
 - (id)segmentWesternNameWithNameParts:(id)arg1 andPrefix:(id)arg2;
 - (id)suffix;
 - (id)surname;
-- (id)toSGName;
+- (id)toSGNameWithOrigin:(id)arg1 andRecordId:(id)arg2;
 
 @end

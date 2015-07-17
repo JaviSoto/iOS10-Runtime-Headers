@@ -3,9 +3,9 @@
  */
 
 @interface SSDownloadPolicy : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    int _bagType;
-    NSString *_downloadKind;
-    NSMutableArray *_policyRules;
+    int  _bagType;
+    NSString * _downloadKind;
+    NSMutableArray * _policyRules;
 }
 
 @property (nonatomic, readonly) int URLBagType;

@@ -3,7 +3,7 @@
  */
 
 @interface ACUILinkButton : UIButton {
-    NSString *_acui_titleString;
+    NSString * _acui_titleString;
 }
 
 @property (retain) NSString *acui_titleString;

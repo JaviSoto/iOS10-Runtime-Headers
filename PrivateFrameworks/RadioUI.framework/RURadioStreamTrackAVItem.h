@@ -3,16 +3,16 @@
  */
 
 @interface RURadioStreamTrackAVItem : RURadioAVItem <AVAssetResourceLoaderDelegate> {
-    _MPRadioStreamMetadata *_adamIDMetadata;
-    long long _albumStoreID;
-    NSArray *_buyOffers;
-    _MPRadioStreamMetadata *_effectiveMetadata;
-    NSData *_jingleTimedMetadata;
-    double _playStartDateTimeSinceReferenceDate;
-    NSData *_previousAdamIDBlob;
-    _MPRadioStreamMetadata *_radioStreamTrackMetadata;
-    long long _storeID;
-    _MPRadioStreamMetadata *_timedMetadata;
+    _MPRadioStreamMetadata * _adamIDMetadata;
+    long long  _albumStoreID;
+    NSArray * _buyOffers;
+    _MPRadioStreamMetadata * _effectiveMetadata;
+    NSData * _jingleTimedMetadata;
+    double  _playStartDateTimeSinceReferenceDate;
+    NSData * _previousAdamIDBlob;
+    _MPRadioStreamMetadata * _radioStreamTrackMetadata;
+    long long  _storeID;
+    _MPRadioStreamMetadata * _timedMetadata;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,9 +21,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (BOOL)_canUseStoreAdamIDForSubscriptionAdamID;
 - (id)_createMetadataForRadioStreamTrack;
 - (void)_getCurrentTimedMetadata:(id*)arg1 pings:(id*)arg2 adamIDBlob:(id*)arg3 jingleTimedMetadata:(id*)arg4;
+- (void)_handleStoreIDDidChange;
 - (float)_maximumBitRateForNetworkType:(int)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_reloadMetadataAndPostNotificationsIfNeeded:(BOOL)arg1;

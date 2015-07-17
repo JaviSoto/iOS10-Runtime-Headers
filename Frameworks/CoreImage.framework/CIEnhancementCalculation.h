@@ -3,21 +3,21 @@
  */
 
 @interface CIEnhancementCalculation : NSObject {
-    CIEnhancementHistogram *borderHist;
-    float curvePercent;
-    float exposureValue;
-    float exposureValueAtZeroShadow;
-    BOOL faceInputSet;
-    CIEnhancementHistogram *lumHist;
-    float maxShadow;
-    float minShadow;
+    CIEnhancementHistogram * borderHist;
+    float  curvePercent;
+    float  exposureValue;
+    float  exposureValueAtZeroShadow;
+    BOOL  faceInputSet;
+    CIEnhancementHistogram * lumHist;
+    float  maxShadow;
+    float  minShadow;
     struct { 
         float i; 
         float q; 
-    } originalFaceColor;
-    float percentFaceChange;
-    CIEnhancementHistogram *rgbSumHist;
-    CIEnhancementHistogram *satHist;
+    }  originalFaceColor;
+    float  percentFaceChange;
+    CIEnhancementHistogram * rgbSumHist;
+    CIEnhancementHistogram * satHist;
 }
 
 @property (readonly) CIEnhancementHistogram *borderHist;

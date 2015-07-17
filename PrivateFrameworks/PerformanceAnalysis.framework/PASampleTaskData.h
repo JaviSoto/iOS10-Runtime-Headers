@@ -3,10 +3,10 @@
  */
 
 @interface PASampleTaskData : NSObject <PASerializable> {
-    NSSet *_donatingPids;
-    PASampleTaskDataPrivateData *_privateData;
-    PASampleTimeInsensitiveTaskData *_timeInsensitiveTaskData;
-    NSArray *sampleThreadsArray;
+    NSSet * _donatingPids;
+    PASampleTaskDataPrivateData * _privateData;
+    PASampleTimeInsensitiveTaskData * _timeInsensitiveTaskData;
+    NSArray * sampleThreadsArray;
 }
 
 @property (readonly) BOOL allowsIdleExit;
@@ -35,6 +35,7 @@
 @property (readonly) unsigned long long mainBinaryOffset;
 @property (readonly) NSString *mainBinaryPath;
 @property (readonly) NSUUID *mainBinaryUuid;
+@property (readonly) double mostRecentTimeSamplingOnlyMainThread;
 @property (readonly) NSString *name;
 @property (readonly) int numberOfCopyOnWritePageFaults;
 @property (readonly) int numberOfPageFaults;
@@ -66,7 +67,7 @@
 - (id)architectureString;
 - (id)bundleName;
 - (void)dealloc;
-- (id)description;
+- (id)debugDescription;
 - (id)donatingPids;
 - (id)imageInfos;
 - (id)initWithStackshotTask:(id)arg1 andTimeInsensitiveTaskData:(id)arg2;
@@ -90,6 +91,7 @@
 - (unsigned long long)mainBinaryOffset;
 - (id)mainBinaryPath;
 - (id)mainBinaryUuid;
+- (double)mostRecentTimeSamplingOnlyMainThread;
 - (id)name;
 - (int)numberOfCopyOnWritePageFaults;
 - (int)numberOfPageFaults;

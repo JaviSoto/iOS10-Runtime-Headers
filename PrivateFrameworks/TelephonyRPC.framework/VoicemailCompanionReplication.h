@@ -3,20 +3,20 @@
  */
 
 @interface VoicemailCompanionReplication : NSObject <PSYSyncCoordinatorDelegate, SYStoreDelegate> {
-    NSObject<OS_dispatch_queue> *_companionSyncQueue;
-    NSObject<OS_dispatch_queue> *_concurrentQueue;
-    PSYSyncCoordinator *_coordinator;
-    BOOL _didSuspendCompanionSyncQueue;
-    NPSDomainAccessor *_domainAccessor;
+    NSObject<OS_dispatch_queue> * _companionSyncQueue;
+    NSObject<OS_dispatch_queue> * _concurrentQueue;
+    PSYSyncCoordinator * _coordinator;
+    BOOL  _didSuspendCompanionSyncQueue;
+    NPSDomainAccessor * _domainAccessor;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _domainAccessorMutexLock;
-    NanoTelephonyIDSProxy *_proxy;
-    SYStore *_syncStore;
-    NSMutableArray *_vmAfterSyncComplete;
-    NSObject<OS_dispatch_semaphore> *vmdIsReadySemaphore;
-    NSObject<OS_dispatch_semaphore> *waitForFirstSyncCompleteSemaphore;
+    }  _domainAccessorMutexLock;
+    NanoTelephonyIDSProxy * _proxy;
+    SYStore * _syncStore;
+    NSMutableArray * _vmAfterSyncComplete;
+    NSObject<OS_dispatch_semaphore> * vmdIsReadySemaphore;
+    NSObject<OS_dispatch_semaphore> * waitForFirstSyncCompleteSemaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

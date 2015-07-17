@@ -3,27 +3,29 @@
  */
 
 @interface MPCloudServiceStatusController : NSObject <SSVPlaybackLeaseDelegate> {
-    unsigned int _URLBagObservationCount;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned int _accountStoreChangeObservationCount;
-    unsigned int _automaticLeaseRefreshCount;
-    NSObject<OS_dispatch_queue> *_calloutQueue;
-    unsigned int _cloudLibraryObservationCount;
-    SSVFairPlaySubscriptionController *_fairPlaySubscriptionController;
-    unsigned int _fairPlaySubscriptionStatusObservationCount;
-    BOOL _hasLoadedMatchStatus;
-    BOOL _hasLoadedURLBag;
-    BOOL _hasSubscriptionLease;
-    SSVSubscriptionStatus *_lastKnownSubscriptionStatus;
-    unsigned int _matchStatus;
-    unsigned int _matchStatusObservationCount;
-    SSVPlaybackLease *_playbackLease;
-    unsigned int _purchaseHistoryObservationCount;
-    unsigned int _shouldPlaybackRequireSubscriptionLeaseObservationCount;
-    unsigned int _subscriptionAvailabilityObservationCount;
-    BOOL _subscriptionAvailable;
-    unsigned int _subscriptionLeaseUsageCount;
-    unsigned int _subscriptionStatusObservationCount;
+    unsigned int  _URLBagObservationCount;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned int  _accountStoreChangeObservationCount;
+    unsigned int  _automaticLeaseRefreshCount;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    unsigned int  _cloudLibraryObservationCount;
+    SSVFairPlaySubscriptionController * _fairPlaySubscriptionController;
+    unsigned int  _fairPlaySubscriptionStatusObservationCount;
+    BOOL  _hasLoadedMatchStatus;
+    BOOL  _hasLoadedURLBag;
+    BOOL  _hasSubscriptionLease;
+    SSVSubscriptionStatus * _lastKnownSubscriptionStatus;
+    unsigned int  _matchStatus;
+    unsigned int  _matchStatusObservationCount;
+    BOOL  _observingNetworkReachability;
+    SSVPlaybackLease * _playbackLease;
+    unsigned int  _purchaseHistoryObservationCount;
+    BOOL  _shouldPlaybackRequireSubscriptionLease;
+    unsigned int  _shouldPlaybackRequireSubscriptionLeaseObservationCount;
+    unsigned int  _subscriptionAvailabilityObservationCount;
+    BOOL  _subscriptionAvailable;
+    unsigned int  _subscriptionLeaseUsageCount;
+    unsigned int  _subscriptionStatusObservationCount;
 }
 
 @property (getter=isCloudLibraryEnabled, nonatomic, readonly) BOOL cloudLibraryEnabled;
@@ -62,6 +64,7 @@
 - (void)_setHasSubscriptionLease:(BOOL)arg1 endReasonType:(unsigned int)arg2;
 - (void)_storeFrontDidChangeNotification:(id)arg1;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
+- (void)_updateForNetworkReachabilityObserversCountChange;
 - (void)_updateMatchStatus;
 - (void)_updateWithURLBagDictionary:(id)arg1;
 - (void)acquireSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;

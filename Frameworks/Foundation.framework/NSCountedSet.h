@@ -3,8 +3,8 @@
  */
 
 @interface NSCountedSet : NSMutableSet {
-    void *_reserved;
-    id _table;
+    void * _reserved;
+    id  _table;
 }
 
 + (BOOL)supportsSecureCoding;

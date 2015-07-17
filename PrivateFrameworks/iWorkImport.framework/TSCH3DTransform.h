@@ -19,8 +19,8 @@
             float b; 
             float p; 
         } ; 
-    } mCenter;
-    BOOL mDirty;
+    }  mCenter;
+    BOOL  mDirty;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -44,13 +44,13 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mMatrix;
+    }  mMatrix;
     struct tquat<float> { 
         float x; 
         float y; 
         float z; 
         float w; 
-    } mRotation;
+    }  mRotation;
     struct tvec3<float> { 
         union { 
             float x; 
@@ -67,7 +67,7 @@
             float b; 
             float p; 
         } ; 
-    } mScaleFactor;
+    }  mScaleFactor;
     struct tvec3<float> { 
         union { 
             float x; 
@@ -84,7 +84,7 @@
             float b; 
             float p; 
         } ; 
-    } mTranslation;
+    }  mTranslation;
 }
 
 @property (nonatomic) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } center;

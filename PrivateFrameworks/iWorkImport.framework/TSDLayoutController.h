@@ -3,13 +3,13 @@
  */
 
 @interface TSDLayoutController : NSObject {
-    TSDCanvas *mCanvas;
-    NSMutableSet *mInvalidChildrenLayouts;
-    NSMutableSet *mInvalidLayouts;
-    struct __CFDictionary { } *mLayoutsByInfo;
-    NSMutableSet *mLayoutsNeedingRecreating;
-    TSDRootLayout *mRootLayout;
-    TSDLayout *mValidatingLayout;
+    TSDCanvas * mCanvas;
+    NSMutableSet * mInvalidChildrenLayouts;
+    NSMutableSet * mInvalidLayouts;
+    struct __CFDictionary { } * mLayoutsByInfo;
+    NSMutableSet * mLayoutsNeedingRecreating;
+    TSDRootLayout * mRootLayout;
+    TSDLayout * mValidatingLayout;
 }
 
 + (id)allInteractiveLayoutControllers;

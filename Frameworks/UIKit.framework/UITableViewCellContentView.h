@@ -3,13 +3,14 @@
  */
 
 @interface UITableViewCellContentView : UIView {
-    CALayer *_mask;
+    CALayer * _mask;
 }
 
 @property (nonatomic, retain) CALayer *mask;
 
 + (id)classFallbacksForKeyedArchiver;
 
+- (void).cxx_destruct;
 - (id)_cell;
 - (void)_tableViewCellContentViewCommonSetup;
 - (void)dealloc;

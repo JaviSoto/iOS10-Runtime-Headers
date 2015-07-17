@@ -3,8 +3,8 @@
  */
 
 @interface _UIVisualEffectConfig : NSObject {
-    _UIVisualEffectLayerConfig *_contentConfig;
-    NSMutableArray *_layerConfigs;
+    _UIVisualEffectLayerConfig * _contentConfig;
+    NSMutableArray * _layerConfigs;
 }
 
 @property (nonatomic, readonly) _UIVisualEffectLayerConfig *contentConfig;
@@ -13,9 +13,9 @@
 + (id)configWithContentConfig:(id)arg1;
 + (id)configWithLayerConfigs:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addLayerConfig:(id)arg1;
 - (id)contentConfig;
-- (void)dealloc;
 - (void)enumerateLayerConfigs:(id /* block */)arg1;
 - (id)layerConfigs;
 

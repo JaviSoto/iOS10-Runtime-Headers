@@ -3,7 +3,7 @@
  */
 
 @interface SCNActionJavaScript : SCNAction {
-    NSString *_script;
+    NSString * _script;
 }
 
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;
@@ -14,6 +14,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isCustom;
+- (id)parameters;
 - (id)reversedAction;
 
 @end

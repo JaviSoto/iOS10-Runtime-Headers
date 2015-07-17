@@ -3,15 +3,15 @@
  */
 
 @interface TPPageLayoutState : NSObject {
-    unsigned int _bodyCharIndex;
-    void *_bodyLayoutState;
-    TSWPStorage *_bodyStorage;
-    unsigned int _documentPageIndex;
-    BOOL _doingLayout;
-    unsigned int _footnoteIndex;
-    unsigned int _lastLaidOutSectionIndex;
-    BOOL _onLastSection;
-    TPPageIndexPath *_pageIndexPath;
+    unsigned int  _bodyCharIndex;
+    void * _bodyLayoutState;
+    TSWPStorage * _bodyStorage;
+    unsigned int  _documentPageIndex;
+    BOOL  _doingLayout;
+    unsigned int  _footnoteIndex;
+    unsigned int  _lastLaidOutSectionIndex;
+    BOOL  _onLastSection;
+    TPPageIndexPath * _pageIndexPath;
 }
 
 @property (nonatomic) unsigned int bodyCharIndex;

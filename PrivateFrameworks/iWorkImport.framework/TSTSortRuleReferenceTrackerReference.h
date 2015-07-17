@@ -3,8 +3,8 @@
  */
 
 @interface TSTSortRuleReferenceTrackerReference : NSObject {
-    unsigned char mColumnIndex;
-    TSCETrackedReference *mTrackedReference;
+    unsigned char  mColumnIndex;
+    TSCETrackedReference * mTrackedReference;
 }
 
 @property (nonatomic) unsigned char columnIndex;

@@ -3,9 +3,9 @@
  */
 
 @interface RCAudioRouteBarButton : UIButton {
-    BOOL _needsUpdateDisplay;
-    UIColor *_routeToHandsetOrHeadphoneColor;
-    UIColor *_routeToSpeakerOrWirelessColor;
+    BOOL  _needsUpdateDisplay;
+    UIColor * _routeToHandsetOrHeadphoneColor;
+    UIColor * _routeToSpeakerOrWirelessColor;
 }
 
 @property (nonatomic, retain) UIColor *routeToHandsetOrHeadphoneColor;

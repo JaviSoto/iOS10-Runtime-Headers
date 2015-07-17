@@ -3,18 +3,18 @@
  */
 
 @interface SKUIModernChartsView : UIView <UIScrollViewDelegate> {
-    _UIBackdropView *_backdropView;
+    _UIBackdropView * _backdropView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    UIView *_headerView;
-    NSMutableArray *_headerViews;
-    BOOL _hideHeader;
-    UIScrollView *_scrollView;
-    NSArray *_viewControllers;
+    }  _contentInset;
+    UIView * _headerView;
+    NSMutableArray * _headerViews;
+    BOOL  _hideHeader;
+    UIScrollView * _scrollView;
+    NSArray * _viewControllers;
 }
 
 @property (nonatomic, readonly) _UIBackdropView *backdropView;

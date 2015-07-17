@@ -3,14 +3,14 @@
  */
 
 @interface SUTermsAndConditionsView : UIView {
-    UIAlertView *_accountButtonAlert;
-    SUSubtitledButton *_button;
-    SUClientInterface *_clientInterface;
-    BOOL _hideAccountButton;
-    float _rightMargin;
-    int _style;
-    SULinkControl *_termsAndConditionsControl;
-    SUClientInterface *clientInterface;
+    UIAlertView * _accountButtonAlert;
+    SUSubtitledButton * _button;
+    SUClientInterface * _clientInterface;
+    BOOL  _hideAccountButton;
+    float  _rightMargin;
+    int  _style;
+    SULinkControl * _termsAndConditionsControl;
+    SUClientInterface * clientInterface;
 }
 
 @property (nonatomic, retain) SUClientInterface *clientInterface;

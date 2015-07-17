@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartSceneAreaLayoutItemCache : NSObject {
-    TSCH3DVector *_containingViewportVector;
+    TSCH3DVector * _containingViewportVector;
     struct TSCH3DChartSceneAreaLayoutItemCacheValues { 
         struct tvec4<float> { 
             union { 
@@ -89,7 +89,7 @@
             unsigned int max3DLimitingSeries; 
         } layoutSettings; 
         BOOL forcedValid; 
-    } mValues;
+    }  mValues;
 }
 
 @property (nonatomic, readonly) struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } chartBodyLayoutOffsetInChartAreaLayoutSpace;

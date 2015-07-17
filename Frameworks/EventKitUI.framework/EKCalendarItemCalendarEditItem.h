@@ -3,7 +3,7 @@
  */
 
 @interface EKCalendarItemCalendarEditItem : EKCalendarItemEditItem {
-    unsigned int _entityType;
+    unsigned int  _entityType;
 }
 
 - (BOOL)_shouldShowSourceForCalendar:(id)arg1;

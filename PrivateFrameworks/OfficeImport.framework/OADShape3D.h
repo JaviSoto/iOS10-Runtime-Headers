@@ -3,14 +3,14 @@
  */
 
 @interface OADShape3D : NSObject <NSCopying> {
-    OADBevel *mBottomBevel;
-    OADColor *mContourColor;
-    float mContourWidth;
-    OADColor *mExtrusionColor;
-    float mExtrusionHeight;
-    int mMaterial;
-    float mShapeDepth;
-    OADBevel *mTopBevel;
+    OADBevel * mBottomBevel;
+    OADColor * mContourColor;
+    float  mContourWidth;
+    OADColor * mExtrusionColor;
+    float  mExtrusionHeight;
+    int  mMaterial;
+    float  mShapeDepth;
+    OADBevel * mTopBevel;
 }
 
 + (id)nullShape3D;

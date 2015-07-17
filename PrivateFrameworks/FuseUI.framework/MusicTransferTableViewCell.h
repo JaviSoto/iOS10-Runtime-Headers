@@ -3,7 +3,7 @@
  */
 
 @interface MusicTransferTableViewCell : UITableViewCell {
-    SKUIItemOfferButton *_statusButton;
+    SKUIItemOfferButton * _statusButton;
 }
 
 @property (nonatomic, readonly) UIControl *statusButton;

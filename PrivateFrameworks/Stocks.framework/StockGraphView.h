@@ -3,33 +3,33 @@
  */
 
 @interface StockGraphView : UIView <GraphRenderOperationDelegate> {
-    StockChartData *_chartData;
-    UIView<StockGraphViewContainer> *_chartViewDelegate;
-    unsigned int _dataCount;
-    unsigned int _dataSize;
-    StockChartDisplayMode *_displayMode;
-    NSArray *_dottedLinePositions;
-    NSArray *_dottedLinePositionsForStyleOnly;
+    StockChartData * _chartData;
+    UIView<StockGraphViewContainer> * _chartViewDelegate;
+    unsigned int  _dataCount;
+    unsigned int  _dataSize;
+    StockChartDisplayMode * _displayMode;
+    NSArray * _dottedLinePositions;
+    NSArray * _dottedLinePositionsForStyleOnly;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _graphInsets;
-    BOOL _isRendered;
-    NSMutableArray *_linePointCounts;
-    LineGraphView *_lineView;
-    unsigned long long _maxVolume;
-    struct CGPoint { float x1; float x2; } *_points;
-    GraphRenderOperation *_renderOperation;
-    int _valueCount;
-    int _valueIndex;
-    struct CGPoint { float x1; float x2; } *_values;
-    float _volumeBarWidth;
-    struct { float x1; unsigned long long x2; } *_volumeBars;
-    unsigned int _volumeCount;
-    unsigned int _volumeSize;
-    VolumeGraphView *_volumeView;
+    }  _graphInsets;
+    BOOL  _isRendered;
+    NSMutableArray * _linePointCounts;
+    LineGraphView * _lineView;
+    unsigned long long  _maxVolume;
+    struct CGPoint { float x1; float x2; } * _points;
+    GraphRenderOperation * _renderOperation;
+    int  _valueCount;
+    int  _valueIndex;
+    struct CGPoint { float x1; float x2; } * _values;
+    float  _volumeBarWidth;
+    struct { float x1; unsigned long long x2; } * _volumeBars;
+    unsigned int  _volumeCount;
+    unsigned int  _volumeSize;
+    VolumeGraphView * _volumeView;
 }
 
 @property (nonatomic) UIView<StockGraphViewContainer> *chartViewDelegate;

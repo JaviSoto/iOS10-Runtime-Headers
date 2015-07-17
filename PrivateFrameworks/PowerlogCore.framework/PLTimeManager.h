@@ -3,10 +3,10 @@
  */
 
 @interface PLTimeManager : NSObject <PLTimeReferenceManager> {
-    PLSQLiteConnection *_connection;
-    NSDictionary *_notificationsToTimeReferences;
-    PLStorageOperator *_storageOperator;
-    NSDictionary *_timeReferences;
+    PLSQLiteConnection * _connection;
+    NSDictionary * _notificationsToTimeReferences;
+    PLStorageOperator * _storageOperator;
+    NSDictionary * _timeReferences;
 }
 
 @property PLSQLiteConnection *connection;
@@ -36,6 +36,7 @@
 - (void)setTimeReferences:(id)arg1;
 - (id)storageOperator;
 - (id)storageQueue;
+- (double)timeOffsetForTimeReference:(int)arg1;
 - (id)timeReferences;
 - (void)unregisterForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(int)arg2;
 

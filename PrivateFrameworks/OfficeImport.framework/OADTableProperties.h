@@ -3,15 +3,15 @@
  */
 
 @interface OADTableProperties : OADDrawableProperties <OADEffectsParent> {
-    BOOL mBandColumn;
-    BOOL mBandRow;
-    NSArray *mEffects;
-    BOOL mFirstColumn;
-    BOOL mFirstRow;
-    BOOL mLastColumn;
-    BOOL mLastRow;
-    BOOL mRightToLeft;
-    OADTableStyle *mStyle;
+    BOOL  mBandColumn;
+    BOOL  mBandRow;
+    NSArray * mEffects;
+    BOOL  mFirstColumn;
+    BOOL  mFirstRow;
+    BOOL  mLastColumn;
+    BOOL  mLastRow;
+    BOOL  mRightToLeft;
+    OADTableStyle * mStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 - (BOOL)bandColumn;
 - (BOOL)bandRow;
 - (void)dealloc;
+- (id)description;
 - (id)effects;
 - (BOOL)firstColumn;
 - (BOOL)firstRow;

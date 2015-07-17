@@ -3,9 +3,9 @@
  */
 
 @interface NBManager : NSObject {
-    NSObject<OS_dispatch_queue> *_externalQueue;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    NSXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_queue> * _externalQueue;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *externalQueue;

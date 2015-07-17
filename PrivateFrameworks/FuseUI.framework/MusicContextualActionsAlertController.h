@@ -3,9 +3,9 @@
  */
 
 @interface MusicContextualActionsAlertController : UIAlertController <MusicClientContextConsuming, MusicJSContextualActionsNativeViewControllerDelegate, MusicJSNativeViewControllerFactory> {
-    MusicClientContext *_clientContext;
-    MusicViewControllerPresenter *_presenter;
-    id _strongSelfRef;
+    MusicClientContext * _clientContext;
+    MusicViewControllerPresenter * _presenter;
+    id  _strongSelfRef;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

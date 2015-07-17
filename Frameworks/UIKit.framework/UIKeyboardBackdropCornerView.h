@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardBackdropCornerView : UIView {
-    int _corners;
-    float _radius;
+    int  _corners;
+    float  _radius;
 }
 
 - (id)_generateBackdropMaskImage;

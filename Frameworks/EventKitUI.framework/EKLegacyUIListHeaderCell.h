@@ -3,8 +3,8 @@
  */
 
 @interface EKLegacyUIListHeaderCell : UIView {
-    EKLegacyUIListHeaderCellContentView *_contentView;
-    BOOL _showWeekNumber;
+    EKLegacyUIListHeaderCellContentView * _contentView;
+    BOOL  _showWeekNumber;
 }
 
 @property (nonatomic) double date;

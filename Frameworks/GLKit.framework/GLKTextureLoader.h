@@ -3,8 +3,8 @@
  */
 
 @interface GLKTextureLoader : NSObject {
-    EAGLContext *_glContext;
-    NSLock *_nsLock;
+    EAGLContext * _glContext;
+    NSLock * _nsLock;
 }
 
 @property (retain) EAGLContext *glContext;

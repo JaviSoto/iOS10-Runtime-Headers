@@ -3,23 +3,23 @@
  */
 
 @interface SKUIDynamicBarAnimator : NSObject {
-    float _bottomBarOffset;
-    float _bottomBarOffsetForState;
-    <SKUIDynamicBarAnimatorDelegate> *_delegate;
-    BOOL _didHideBarsByMoving;
-    BOOL _didHideOrShowBarsExplicitly;
-    CADisplayLink *_displayLink;
-    BOOL _dragging;
-    BOOL _inSteadyState;
-    float _lastOffset;
-    float _lastUnroundedTopBarHeight;
-    float _maximumBottomBarOffset;
-    float _minimumTopBarHeight;
-    int _state;
-    float _targetTopBarHeight;
-    float _topBarHeight;
-    float _topBarHeightForState;
-    float _unroundedTopBarHeight;
+    float  _bottomBarOffset;
+    float  _bottomBarOffsetForState;
+    <SKUIDynamicBarAnimatorDelegate> * _delegate;
+    BOOL  _didHideBarsByMoving;
+    BOOL  _didHideOrShowBarsExplicitly;
+    CADisplayLink * _displayLink;
+    BOOL  _dragging;
+    BOOL  _inSteadyState;
+    float  _lastOffset;
+    float  _lastUnroundedTopBarHeight;
+    float  _maximumBottomBarOffset;
+    float  _minimumTopBarHeight;
+    int  _state;
+    float  _targetTopBarHeight;
+    float  _topBarHeight;
+    float  _topBarHeightForState;
+    float  _unroundedTopBarHeight;
 }
 
 @property (nonatomic, readonly) float bottomBarOffset;

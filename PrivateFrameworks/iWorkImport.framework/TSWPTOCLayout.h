@@ -3,12 +3,13 @@
  */
 
 @interface TSWPTOCLayout : TSWPShapeLayout {
-    TSWPTOCLayoutHint *_hint;
-    unsigned int _initialCharIndex;
+    TSWPTOCLayoutHint * _hint;
+    unsigned int  _initialCharIndex;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxSize;
+    }  _maxSize;
+    unsigned int  _storageChangeCount;
 }
 
 @property (nonatomic, readonly) TSWPTOCLayoutHint *hint;
@@ -16,7 +17,6 @@
 @property (getter=isLastLayoutInTOC, nonatomic, readonly) BOOL lastLayoutInTOC;
 @property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
 
-- (id).cxx_construct;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;

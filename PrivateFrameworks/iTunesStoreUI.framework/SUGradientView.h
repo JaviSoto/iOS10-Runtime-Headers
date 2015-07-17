@@ -3,8 +3,8 @@
  */
 
 @interface SUGradientView : UIView {
-    struct CGGradient { } *_cgGradient;
-    SUGradient *_gradient;
+    struct CGGradient { } * _cgGradient;
+    SUGradient * _gradient;
 }
 
 @property (nonatomic, copy) SUGradient *gradient;

@@ -3,8 +3,8 @@
  */
 
 @interface AXEventListenerContainer : NSObject {
-    id /* block */ handler;
-    NSString *identifier;
+    id /* block */  handler;
+    NSString * identifier;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

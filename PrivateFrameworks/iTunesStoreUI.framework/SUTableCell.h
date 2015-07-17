@@ -3,18 +3,18 @@
  */
 
 @interface SUTableCell : UITableViewCell {
-    UIColor *_bottomBorderColor;
-    SUTableCellContentView *_configurationView;
-    int _editState;
-    unsigned int _hideHighlight;
-    SUItemOfferButton *_itemOfferButton;
+    UIColor * _bottomBorderColor;
+    SUTableCellContentView * _configurationView;
+    int  _editState;
+    unsigned int  _hideHighlight;
+    SUItemOfferButton * _itemOfferButton;
     struct { 
         unsigned int localIndex; 
         unsigned int localCount; 
         unsigned int globalIndex; 
         unsigned int globalCount; 
-    } _position;
-    UIColor *_topBorderColor;
+    }  _position;
+    UIColor * _topBorderColor;
 }
 
 @property (nonatomic, retain) UIColor *bottomBorderColor;

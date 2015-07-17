@@ -3,10 +3,10 @@
  */
 
 @interface NSMetadataQuery : NSObject {
-    unsigned int _flags;
-    double _interval;
-    /* Warning: unhandled array encoding: '[11@]' */ id _private;
-    void *_reserved;
+    unsigned int  _flags;
+    double  _interval;
+    /* Warning: unhandled array encoding: '[11@]' */ id  _private;
+    void * _reserved;
 }
 
 @property <NSMetadataQueryDelegate> *delegate;
@@ -46,6 +46,7 @@
 - (void)_noteNote3:(id)arg1;
 - (void)_noteNote4:(id)arg1;
 - (void)_noteNote5:(id)arg1;
+- (id)_pendingChangeNotificationsArrayForKey:(id)arg1 create:(BOOL)arg2;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)_queryString;
 - (void)_recreateQuery;

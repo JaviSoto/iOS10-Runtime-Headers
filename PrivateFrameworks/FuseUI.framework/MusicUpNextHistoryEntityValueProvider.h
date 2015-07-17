@@ -3,8 +3,8 @@
  */
 
 @interface MusicUpNextHistoryEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    <MusicLocalPlaybackHistoryItemDataSource> *_dataSource;
-    MPMediaItem *_mediaItem;
+    <MusicLocalPlaybackHistoryItemDataSource> * _dataSource;
+    MPMediaItem * _mediaItem;
 }
 
 @property (nonatomic) <MusicLocalPlaybackHistoryItemDataSource> *dataSource;

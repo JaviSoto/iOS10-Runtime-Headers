@@ -3,47 +3,47 @@
  */
 
 @interface SKUIIndexBarControl : UIControl {
-    SKUIIndexBarEntry *_combinedEntry;
+    SKUIIndexBarEntry * _combinedEntry;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentEdgeInsets;
-    <SKUIIndexBarControlDataSource> *_dataSource;
+    }  _contentEdgeInsets;
+    <SKUIIndexBarControlDataSource> * _dataSource;
     struct { 
         unsigned int dataSourceRespondsToCombinedEntry : 1; 
         unsigned int dataSourceRespondsToNumberOfSections : 1; 
         unsigned int delegateRespondsToDidSelectEntryAtIndexPath : 1; 
         unsigned int delegateRespondsToDidSelectBeyondBottom : 1; 
         unsigned int delegateRespondsToDidSelectBeyondTop : 1; 
-    } _dataSourceDelegateFlags;
-    NSDictionary *_defaultTextAttributes;
-    <SKUIIndexBarControlDelegate> *_delegate;
-    BOOL _didSendPastBottom;
-    BOOL _didSendPastTop;
-    NSArray *_displayEntries;
-    BOOL _hasValidCombinedEntry;
-    BOOL _hasValidDisplayEntries;
-    BOOL _hasValidNumberOfSections;
-    BOOL _hasValidTotalEntryCount;
-    BOOL _hasValidTotalSize;
+    }  _dataSourceDelegateFlags;
+    NSDictionary * _defaultTextAttributes;
+    <SKUIIndexBarControlDelegate> * _delegate;
+    BOOL  _didSendPastBottom;
+    BOOL  _didSendPastTop;
+    NSArray * _displayEntries;
+    BOOL  _hasValidCombinedEntry;
+    BOOL  _hasValidDisplayEntries;
+    BOOL  _hasValidNumberOfSections;
+    BOOL  _hasValidTotalEntryCount;
+    BOOL  _hasValidTotalSize;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _hitTestEdgeInsets;
-    NSMapTable *_indexPathToEntryMapTable;
-    NSIndexPath *_lastSelectedIndexPath;
-    float _lineSpacing;
-    int _numberOfSections;
-    NSMapTable *_sectionIndexToNumberOfEntriesMapTable;
-    int _totalEntryCount;
+    }  _hitTestEdgeInsets;
+    NSMapTable * _indexPathToEntryMapTable;
+    NSIndexPath * _lastSelectedIndexPath;
+    float  _lineSpacing;
+    int  _numberOfSections;
+    NSMapTable * _sectionIndexToNumberOfEntriesMapTable;
+    int  _totalEntryCount;
     struct CGSize { 
         float width; 
         float height; 
-    } _totalSize;
+    }  _totalSize;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;

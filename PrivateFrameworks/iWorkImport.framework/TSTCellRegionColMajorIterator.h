@@ -13,12 +13,12 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mBoundingCellRange;
+    }  mBoundingCellRange;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mCellID;
+    }  mCellID;
     struct set<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > { 
         struct __tree<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > { 
             struct __tree_node<TSUColumnRowRect, void *> {} *__begin_node_; 
@@ -31,7 +31,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } mCellRangeSet;
+    }  mCellRangeSet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

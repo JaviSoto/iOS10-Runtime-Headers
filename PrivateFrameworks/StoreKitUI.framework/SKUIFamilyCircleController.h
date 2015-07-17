@@ -3,13 +3,13 @@
  */
 
 @interface SKUIFamilyCircleController : NSObject {
-    SKUIClientContext *_clientContext;
-    BOOL _hasLoaded;
-    FAFamilyCircle *_iCloudFamily;
-    SSFamilyCircle *_iTunesFamily;
-    NSCache *_imageCache;
-    NSNumber *_lastAccountID;
-    NSOperationQueue *_opQueue;
+    SKUIClientContext * _clientContext;
+    BOOL  _hasLoaded;
+    FAFamilyCircle * _iCloudFamily;
+    SSFamilyCircle * _iTunesFamily;
+    NSCache * _imageCache;
+    NSNumber * _lastAccountID;
+    NSOperationQueue * _opQueue;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

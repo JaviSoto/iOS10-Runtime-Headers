@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPreviewTemplateViewElement : SKUIViewElement {
-    long long _itemIdentifier;
-    NSString *_previewURLString;
+    long long  _itemIdentifier;
+    NSString * _previewURLString;
 }
 
 @property (nonatomic, readonly) long long itemIdentifier;

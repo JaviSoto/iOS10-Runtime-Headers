@@ -3,13 +3,14 @@
  */
 
 @interface CKAttachmentItem : NSObject <QLPreviewItem> {
-    NSURL *_fileURL;
-    NSString *_guid;
-    NSURL *_previewURL;
+    NSURL * _appendedBundleURL;
+    NSURL * _fileURL;
+    NSString * _guid;
+    NSURL * _previewURL;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,8 +18,8 @@
 @property (nonatomic, copy) NSURL *fileURL;
 @property (nonatomic, copy) NSString *guid;
 @property (readonly) unsigned int hash;
-@property (readonly) NSString *previewItemTitle;
-@property (readonly) NSURL *previewItemURL;
+@property (nonatomic, readonly) NSString *previewItemTitle;
+@property (nonatomic, readonly) NSURL *previewItemURL;
 @property (nonatomic, retain) NSURL *previewURL;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (readonly) Class superclass;
@@ -30,6 +31,7 @@
 + (unsigned int)pxWidth;
 
 - (id)UTIType;
+- (void)_removeAppendedBundle;
 - (void)_savePreview:(id)arg1;
 - (id)_savedPreviewFromURL:(id)arg1;
 - (id)cachedPreview;
@@ -40,6 +42,7 @@
 - (id)guid;
 - (id)imageData;
 - (id)initWithFileURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 guid:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (id)pasteboardItem;
 - (id)previewItemURL;
 - (id)previewURL;

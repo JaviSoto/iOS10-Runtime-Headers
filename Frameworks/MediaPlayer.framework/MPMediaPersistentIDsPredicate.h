@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaPersistentIDsPredicate : MPMediaPredicate <MPPProtobufferCoding> {
-    unsigned int _count;
-    long long *_persistentIDs;
-    BOOL _shouldContain;
+    unsigned int  _count;
+    long long * _persistentIDs;
+    BOOL  _shouldContain;
 }
 
 @property (nonatomic, readonly) unsigned int count;

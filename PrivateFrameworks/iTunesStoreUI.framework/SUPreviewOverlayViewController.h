@@ -6,14 +6,14 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    id /* block */ _loadBlock;
-    BOOL _loaded;
-    float _paddingRight;
-    float _paddingTop;
-    SUPreviewOverlayStorePageViewController *_storePageViewController;
-    NSString *_userInfoString;
-    BOOL _visible;
+    }  _contentSize;
+    id /* block */  _loadBlock;
+    BOOL  _loaded;
+    float  _paddingRight;
+    float  _paddingTop;
+    SUPreviewOverlayStorePageViewController * _storePageViewController;
+    NSString * _userInfoString;
+    BOOL  _visible;
 }
 
 @property (getter=isContentLoaded, nonatomic, readonly) BOOL contentLoaded;

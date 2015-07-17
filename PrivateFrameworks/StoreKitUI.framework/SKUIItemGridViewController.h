@@ -3,22 +3,22 @@
  */
 
 @interface SKUIItemGridViewController : UIViewController <SKUIItemCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIItemArtworkContext *_artworkContext;
-    SKUIClientContext *_clientContext;
-    UICollectionView *_collectionView;
-    <SKUIItemGridDelegate> *_delegate;
-    NSMutableIndexSet *_hiddenIconIndexSet;
+    SKUIItemArtworkContext * _artworkContext;
+    SKUIClientContext * _clientContext;
+    UICollectionView * _collectionView;
+    <SKUIItemGridDelegate> * _delegate;
+    NSMutableIndexSet * _hiddenIconIndexSet;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageBoundingSize;
-    SKUIItemCollectionController *_itemCollectionController;
-    NSMutableArray *_items;
-    NSOperationQueue *_operationQueue;
-    UIImage *_placeholderImage;
-    float _rowHeight;
-    NSMutableIndexSet *_selectedItemIndexSet;
-    SKUIUber *_uber;
+    }  _imageBoundingSize;
+    SKUIItemCollectionController * _itemCollectionController;
+    NSMutableArray * _items;
+    NSOperationQueue * _operationQueue;
+    UIImage * _placeholderImage;
+    float  _rowHeight;
+    NSMutableIndexSet * _selectedItemIndexSet;
+    SKUIUber * _uber;
 }
 
 @property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;

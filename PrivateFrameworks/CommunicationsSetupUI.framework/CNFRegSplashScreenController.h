@@ -3,9 +3,9 @@
  */
 
 @interface CNFRegSplashScreenController : PSViewController <CNFRegFirstRunExperience> {
-    <CNFRegFirstRunDelegate> *_delegate;
-    UIButton *_learnMoreButton;
-    CNFRegController *_regController;
+    <CNFRegFirstRunDelegate> * _delegate;
+    UIButton * _learnMoreButton;
+    CNFRegController * _regController;
 }
 
 @property (nonatomic, readonly) int currentAppearanceStyle;
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) CNFRegController *regController;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
 - (int)currentAppearanceStyle;

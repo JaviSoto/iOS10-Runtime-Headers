@@ -3,9 +3,9 @@
  */
 
 @interface GEOURLSessionConnection : NSObject {
-    struct _CFURLConnection { } *_cfConnection;
-    GEOURLConnectionSession *_connectionSession;
-    id _delegate;
+    struct _CFURLConnection { } * _cfConnection;
+    GEOURLConnectionSession * _connectionSession;
+    id  _delegate;
 }
 
 - (void)cancel;

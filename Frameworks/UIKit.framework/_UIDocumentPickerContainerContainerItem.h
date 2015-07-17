@@ -3,14 +3,20 @@
  */
 
 @interface _UIDocumentPickerContainerContainerItem : _UIDocumentPickerContainerItem {
-    NSString *_cachedSubtitle;
+    NSString * _cachedSubtitle;
+    BRContainer * _container;
 }
 
-- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+@property (nonatomic, readonly) BRContainer *container;
+
+- (void).cxx_destruct;
+- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 wantsBorder:(BOOL*)arg3;
 - (id)_defaultThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)_modelChanged;
-- (void)dealloc;
+- (id)container;
+- (id)initWithContainer:(id)arg1;
 - (id)sortDate;
+- (id)sortPath;
 - (id)subtitle;
 - (id)title;
 - (int)type;

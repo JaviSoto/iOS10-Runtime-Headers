@@ -3,9 +3,9 @@
  */
 
 @interface ABSectionListVibrantHeaderView : ABSectionListHeaderView {
-    _UIBackdropView *_backdrop;
-    UIView *_plusDView;
-    BOOL _wantsPlusDLayer;
+    _UIBackdropView * _backdrop;
+    UIView * _plusDView;
+    BOOL  _wantsPlusDLayer;
 }
 
 @property (nonatomic) BOOL wantsPlusDLayer;

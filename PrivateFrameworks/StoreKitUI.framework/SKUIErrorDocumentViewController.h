@@ -3,8 +3,8 @@
  */
 
 @interface SKUIErrorDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
-    SKUIClientContext *_clientContext;
-    unsigned int _contentUnavailableStyle;
+    SKUIClientContext * _clientContext;
+    unsigned int  _contentUnavailableStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

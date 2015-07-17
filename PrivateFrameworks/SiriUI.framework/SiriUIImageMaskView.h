@@ -3,7 +3,7 @@
  */
 
 @interface SiriUIImageMaskView : UIView {
-    UIImage *_maskImage;
+    UIImage * _maskImage;
 }
 
 @property (nonatomic, retain) UIImage *maskImage;

@@ -3,15 +3,15 @@
  */
 
 @interface SKUIShelfCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView> {
-    UICollectionView *_collectionView;
+    UICollectionView * _collectionView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    BOOL _rendersWithParallax;
-    BOOL _rendersWithPerspective;
+    }  _contentInset;
+    BOOL  _rendersWithParallax;
+    BOOL  _rendersWithPerspective;
 }
 
 @property (nonatomic, retain) UICollectionView *collectionView;

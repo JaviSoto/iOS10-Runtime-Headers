@@ -3,13 +3,13 @@
  */
 
 @interface CKDPQueryFilter : PBCodable <NSCopying> {
-    CKDPLocationBound *_bounds;
-    CKDPRecordFieldIdentifier *_fieldName;
-    CKDPRecordFieldValue *_fieldValue;
+    CKDPLocationBound * _bounds;
+    CKDPRecordFieldIdentifier * _fieldName;
+    CKDPRecordFieldValue * _fieldValue;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    int _type;
+    }  _has;
+    int  _type;
 }
 
 @property (nonatomic, retain) CKDPLocationBound *bounds;

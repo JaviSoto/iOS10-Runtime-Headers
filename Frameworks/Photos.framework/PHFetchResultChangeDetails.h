@@ -3,17 +3,17 @@
  */
 
 @interface PHFetchResultChangeDetails : NSObject {
-    NSIndexSet *_changedIndexes;
-    NSArray *_changedItems;
-    NSArray *_currentItems;
-    PHFetchResult *_fetchResultAfterChanges;
-    PHFetchResult *_fetchResultBeforeChanges;
-    NSIndexSet *_insertedIndexes;
-    struct __CFArray { } *_movedFromIndexes;
-    NSIndexSet *_movedIndexes;
-    NSArray *_previousItems;
-    NSIndexSet *_removedIndexes;
-    BOOL _skipIncrementalChanges;
+    NSIndexSet * _changedIndexes;
+    NSArray * _changedItems;
+    NSArray * _currentItems;
+    PHFetchResult * _fetchResultAfterChanges;
+    PHFetchResult * _fetchResultBeforeChanges;
+    NSIndexSet * _insertedIndexes;
+    struct __CFArray { } * _movedFromIndexes;
+    NSIndexSet * _movedIndexes;
+    NSArray * _previousItems;
+    NSIndexSet * _removedIndexes;
+    BOOL  _skipIncrementalChanges;
 }
 
 @property (readonly) NSIndexSet *changedIndexes;
@@ -35,6 +35,7 @@
 - (id)changedIndexes;
 - (id)changedObjects;
 - (id)currentItems;
+- (void)dealloc;
 - (id)description;
 - (void)enumerateMovesWithBlock:(id /* block */)arg1;
 - (id)fetchResultAfterChanges;

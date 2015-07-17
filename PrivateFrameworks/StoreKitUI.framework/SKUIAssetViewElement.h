@@ -3,10 +3,10 @@
  */
 
 @interface SKUIAssetViewElement : SKUIViewElement {
-    double _initialPlaybackTime;
-    long long _itemIdentifier;
-    double _playbackDuration;
-    NSURL *_url;
+    double  _initialPlaybackTime;
+    long long  _itemIdentifier;
+    double  _playbackDuration;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

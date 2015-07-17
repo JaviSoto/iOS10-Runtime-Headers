@@ -3,13 +3,13 @@
  */
 
 @interface WKMultipleSelectPicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, WKFormControl> {
-    bool _allowsMultipleSelection;
-    float _fontSize;
-    float _layoutWidth;
-    float _maximumTextWidth;
-    unsigned int _singleSelectionIndex;
-    int _textAlignment;
-    WKContentView *_view;
+    bool  _allowsMultipleSelection;
+    float  _fontSize;
+    float  _layoutWidth;
+    float  _maximumTextWidth;
+    unsigned int  _singleSelectionIndex;
+    int  _textAlignment;
+    WKContentView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;

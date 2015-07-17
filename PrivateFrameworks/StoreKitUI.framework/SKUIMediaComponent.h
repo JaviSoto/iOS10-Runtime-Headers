@@ -3,18 +3,18 @@
  */
 
 @interface SKUIMediaComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
-    NSString *_accessibilityLabel;
-    int _alignment;
-    double _duration;
-    SKUILink *_link;
-    int _mediaAppearance;
-    long long _mediaIdentifier;
-    int _mediaType;
-    NSString *_mediaURLString;
-    SKUIArtworkList *_thumbnailArtworkList;
-    NSString *_title;
-    float _titleFontSize;
-    int _titleFontWeight;
+    NSString * _accessibilityLabel;
+    int  _alignment;
+    double  _duration;
+    SKUILink * _link;
+    int  _mediaAppearance;
+    long long  _mediaIdentifier;
+    int  _mediaType;
+    NSString * _mediaURLString;
+    SKUIArtworkList * _thumbnailArtworkList;
+    NSString * _title;
+    float  _titleFontSize;
+    int  _titleFontWeight;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityLabel;

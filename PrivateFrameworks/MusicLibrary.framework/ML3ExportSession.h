@@ -3,8 +3,8 @@
  */
 
 @interface ML3ExportSession : NSData {
-    ML3MusicLibrary *_library;
-    NSOutputStream *_outputStream;
+    ML3MusicLibrary * _library;
+    NSOutputStream * _outputStream;
 }
 
 @property (nonatomic, readonly) ML3MusicLibrary *library;

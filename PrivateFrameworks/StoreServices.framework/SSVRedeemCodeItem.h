@@ -3,7 +3,7 @@
  */
 
 @interface SSVRedeemCodeItem : NSObject {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) long long itemIdentifier;

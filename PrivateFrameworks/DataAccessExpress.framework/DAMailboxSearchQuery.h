@@ -3,14 +3,14 @@
  */
 
 @interface DAMailboxSearchQuery : DASearchQuery {
-    int _MIMESupport;
-    BOOL _allOrNone;
-    int _bodyType;
-    NSString *_collectionID;
-    BOOL _deepTraversal;
-    NSDate *_priorToDate;
-    BOOL _rebuildResults;
-    long long _truncationSize;
+    int  _MIMESupport;
+    BOOL  _allOrNone;
+    int  _bodyType;
+    NSString * _collectionID;
+    BOOL  _deepTraversal;
+    NSDate * _priorToDate;
+    BOOL  _rebuildResults;
+    long long  _truncationSize;
 }
 
 @property (nonatomic) int MIMESupport;

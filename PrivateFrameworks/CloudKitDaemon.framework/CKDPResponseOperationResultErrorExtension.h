@@ -3,11 +3,11 @@
  */
 
 @interface CKDPResponseOperationResultErrorExtension : PBCodable <NSCopying> {
-    NSString *_extensionName;
+    NSString * _extensionName;
     struct { 
         unsigned int typeCode : 1; 
-    } _has;
-    unsigned int _typeCode;
+    }  _has;
+    unsigned int  _typeCode;
 }
 
 @property (nonatomic, retain) NSString *extensionName;

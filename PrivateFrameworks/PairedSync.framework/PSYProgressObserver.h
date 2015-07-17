@@ -3,16 +3,16 @@
  */
 
 @interface PSYProgressObserver : NSObject {
-    NSDictionary *_activityErrors;
-    NSString *_activityLabel;
-    double _activityProgress;
-    NSXPCConnection *_connection;
-    <PSYProgressObserverDelegate> *_delegate;
-    NSMutableDictionary *_failedActivities;
-    PSProgressClient *_progressClient;
-    int _progressObserverState;
-    NSObject<OS_dispatch_queue> *_queue;
-    double _totalProgress;
+    NSDictionary * _activityErrors;
+    NSString * _activityLabel;
+    double  _activityProgress;
+    NSXPCConnection * _connection;
+    <PSYProgressObserverDelegate> * _delegate;
+    NSMutableDictionary * _failedActivities;
+    PSProgressClient * _progressClient;
+    int  _progressObserverState;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _totalProgress;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *activityErrors;

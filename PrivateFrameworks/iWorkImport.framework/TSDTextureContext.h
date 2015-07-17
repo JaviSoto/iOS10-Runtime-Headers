@@ -3,24 +3,24 @@
  */
 
 @interface TSDTextureContext : NSObject <NSCopying> {
-    unsigned int _isMagicMove;
-    <TSDAnimationSession> *_session;
-    unsigned int _shouldAddFinal;
-    unsigned int _shouldAddMagicMoveObjectOnly;
-    unsigned int _shouldAddMasks;
-    BOOL _shouldAddNoShapeAttributes;
-    unsigned int _shouldAddReversedFinal;
-    unsigned int _shouldDistortToFit;
-    unsigned int _shouldForceTextureGeneration;
-    unsigned int _shouldIgnoreScaleInSourceImage;
-    unsigned int _shouldNotAddContainedReps;
-    unsigned int _shouldNotAddShapeAttributes;
-    unsigned int _shouldNotAddText;
-    unsigned int _shouldNotCacheTexture;
-    unsigned int _shouldSeparateReflection;
-    unsigned int _shouldSeparateShadow;
-    unsigned int _shouldSeparateStroke;
-    unsigned int _shouldSeparateText;
+    unsigned int  _isMagicMove;
+    <TSDAnimationSession> * _session;
+    unsigned int  _shouldAddFinal;
+    unsigned int  _shouldAddMagicMoveObjectOnly;
+    unsigned int  _shouldAddMasks;
+    BOOL  _shouldAddNoShapeAttributes;
+    unsigned int  _shouldAddReversedFinal;
+    unsigned int  _shouldDistortToFit;
+    unsigned int  _shouldForceTextureGeneration;
+    unsigned int  _shouldIgnoreScaleInSourceImage;
+    unsigned int  _shouldNotAddContainedReps;
+    unsigned int  _shouldNotAddShapeAttributes;
+    unsigned int  _shouldNotAddText;
+    unsigned int  _shouldNotCacheTexture;
+    unsigned int  _shouldSeparateReflection;
+    unsigned int  _shouldSeparateShadow;
+    unsigned int  _shouldSeparateStroke;
+    unsigned int  _shouldSeparateText;
 }
 
 @property (nonatomic) BOOL isMagicMove;

@@ -3,43 +3,43 @@
  */
 
 @interface UIDictationController : NSObject <_UITouchPhaseChangeDelegate> {
-    NSArray *_availableLanguages;
-    id _callCenter;
-    void *_callCenterFrameworkFileHandle;
-    AFDictationConnection *_connection;
-    BOOL _connectionWasAlreadyAliveForStatisticsLogging;
-    BOOL _deferredCancellationRequested;
-    UIAlertView *_dictationAvailableSoonAlert;
-    UIWindow *_dictationPresenterWindow;
-    _UIDictationPrivacySheetController *_dictationPrivacySheetController;
-    BOOL _discardNextHypothesis;
-    void *_facetimeCallFrameworkFileHandle;
-    id _facetimeCallManager;
-    id /* block */ _finalResultsOperation;
-    BOOL _hasPreheated;
-    UIKeyboardInputMode *_inputModeThatInvokedDictation;
+    NSArray * _availableLanguages;
+    id  _callCenter;
+    void * _callCenterFrameworkFileHandle;
+    AFDictationConnection * _connection;
+    BOOL  _connectionWasAlreadyAliveForStatisticsLogging;
+    BOOL  _deferredCancellationRequested;
+    UIAlertView * _dictationAvailableSoonAlert;
+    UIWindow * _dictationPresenterWindow;
+    _UIDictationPrivacySheetController * _dictationPrivacySheetController;
+    BOOL  _discardNextHypothesis;
+    void * _facetimeCallFrameworkFileHandle;
+    id  _facetimeCallManager;
+    id /* block */  _finalResultsOperation;
+    BOOL  _hasPreheated;
+    UIKeyboardInputMode * _inputModeThatInvokedDictation;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _insertionRange;
-    NSString *_language;
-    double _lastAnimationUpdateTimeStamp;
-    NSString *_lastHypothesis;
-    AFDictationOptions *_options;
-    NSMutableArray *_pendingEdits;
-    BOOL _performingStreamingEditingOperation;
-    AFPreferences *_preferences;
-    NSString *_previousHypothesis;
-    BOOL _recievingResults;
-    NSTimer *_recordingLimitTimer;
-    BOOL _streamingAnimationActive;
-    CADisplayLink *_streamingAnimationDisplayLink;
-    UIDictationStreamingOperations *_streamingOperations;
-    NSString *_targetHypothesis;
-    int _updatingDocument;
-    BOOL _wasDisabledDueToTelephonyActivity;
-    BOOL cancelledByWaitingForLocalResults;
-    BOOL dictationStartedFromGesture;
+    }  _insertionRange;
+    NSString * _language;
+    double  _lastAnimationUpdateTimeStamp;
+    NSString * _lastHypothesis;
+    AFDictationOptions * _options;
+    NSMutableArray * _pendingEdits;
+    BOOL  _performingStreamingEditingOperation;
+    AFPreferences * _preferences;
+    NSString * _previousHypothesis;
+    BOOL  _recievingResults;
+    NSTimer * _recordingLimitTimer;
+    BOOL  _streamingAnimationActive;
+    CADisplayLink * _streamingAnimationDisplayLink;
+    UIDictationStreamingOperations * _streamingOperations;
+    NSString * _targetHypothesis;
+    int  _updatingDocument;
+    BOOL  _wasDisabledDueToTelephonyActivity;
+    BOOL  cancelledByWaitingForLocalResults;
+    BOOL  dictationStartedFromGesture;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -106,8 +106,9 @@
 + (id)streamingHypothesisForPhrases:(id)arg1;
 + (id)stringForState:(int)arg1;
 + (id)stringForViewMode:(int)arg1;
-+ (BOOL)takesPhysicalButtonsBegan:(id)arg1 forTextView:(id)arg2;
-+ (BOOL)takesPhysicalButtonsEnded:(id)arg1 forTextView:(id)arg2;
++ (BOOL)takesPressesBegan:(id)arg1 forTextView:(id)arg2;
++ (BOOL)takesPressesChanged:(id)arg1 forTextView:(id)arg2;
++ (BOOL)takesPressesEnded:(id)arg1 forTextView:(id)arg2;
 + (void)updateLandingView;
 + (BOOL)usingServerManualEndpointingThreshold;
 + (BOOL)usingTypeAndTalk;
@@ -134,7 +135,7 @@
 - (id)assistantCompatibleLanguageCodeForInputMode:(id)arg1;
 - (float)audioLevel;
 - (void)cancelDictation;
-- (void)cancelDictationForTextStoreChanges;
+- (void)cancelDictationForTextStoreChangesInResponder:(id)arg1;
 - (void)cancelRecordingLimitTimer;
 - (void)completeStartConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)completeStartConnectionForReason:(int)arg1;

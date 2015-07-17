@@ -8,10 +8,10 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    int _elementSpacing;
-    UIImage *_starRatingImage;
-    SKUIAttributedStringLayout *_textLayout;
+    }  _contentInset;
+    int  _elementSpacing;
+    UIImage * _starRatingImage;
+    SKUIAttributedStringLayout * _textLayout;
 }
 
 @property (readonly, copy) NSString *debugDescription;

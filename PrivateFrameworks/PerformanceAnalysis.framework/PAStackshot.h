@@ -3,10 +3,10 @@
  */
 
 @interface PAStackshot : NSObject {
-    double _machTimestamp;
-    PAMicrostackshotData *_microstackshotData;
-    NSData *_traceBufData;
-    double _wallTimestamp;
+    double  _machTimestamp;
+    PAMicrostackshotData * _microstackshotData;
+    NSData * _traceBufData;
+    double  _wallTimestamp;
 }
 
 @property (readonly) BOOL isMicrostackshot;

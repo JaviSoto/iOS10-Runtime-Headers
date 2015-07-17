@@ -3,24 +3,24 @@
  */
 
 @interface SKUIGiftComposeViewController : SKUIGiftStepViewController <UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    SKUIGiftAddressingSection *_addressingSection;
-    SKUIGiftAmountSection *_amountSection;
-    UIDatePicker *_datePicker;
-    UIPopoverController *_datePickerPopover;
-    UIImage *_itemImage;
-    SKUIGiftItemView *_itemView;
-    SKUIGiftValidationResponse *_lastValidationResponse;
-    UIPopoverController *_peoplePickerPopover;
-    UIPopoverController *_searchResultsPopover;
-    UIView *_searchResultsView;
-    NSMutableArray *_sections;
-    SKUIGiftSendDateSection *_sendDateSection;
-    NSIndexPath *_showDatePickerIndexPathAfterKeyboardDismiss;
-    UITableView *_tableView;
-    BOOL _tappedNextWhileValidating;
-    SKUIGiftTermsAndConditionsSection *_termsSection;
-    NSObject<OS_dispatch_source> *_validationTimer;
-    SKUIGiftValidator *_validator;
+    SKUIGiftAddressingSection * _addressingSection;
+    SKUIGiftAmountSection * _amountSection;
+    UIDatePicker * _datePicker;
+    UIPopoverController * _datePickerPopover;
+    UIImage * _itemImage;
+    SKUIGiftItemView * _itemView;
+    SKUIGiftValidationResponse * _lastValidationResponse;
+    UIPopoverController * _peoplePickerPopover;
+    UIPopoverController * _searchResultsPopover;
+    UIView * _searchResultsView;
+    NSMutableArray * _sections;
+    SKUIGiftSendDateSection * _sendDateSection;
+    NSIndexPath * _showDatePickerIndexPathAfterKeyboardDismiss;
+    UITableView * _tableView;
+    BOOL  _tappedNextWhileValidating;
+    SKUIGiftTermsAndConditionsSection * _termsSection;
+    NSObject<OS_dispatch_source> * _validationTimer;
+    SKUIGiftValidator * _validator;
 }
 
 @property (readonly, copy) NSString *debugDescription;

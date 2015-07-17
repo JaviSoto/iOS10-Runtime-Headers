@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemLegibleOutput : AVPlayerItemOutput {
-    AVPlayerItemLegibleOutputInternal *_legibleOutputInternal;
+    AVPlayerItemLegibleOutputInternal * _legibleOutputInternal;
 }
 
 @property (nonatomic) double advanceIntervalForDelegateInvocation;

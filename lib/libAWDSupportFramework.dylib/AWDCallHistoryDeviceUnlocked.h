@@ -3,12 +3,12 @@
  */
 
 @interface AWDCallHistoryDeviceUnlocked : PBCodable <NSCopying> {
-    unsigned int _callCount;
+    unsigned int  _callCount;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int callCount : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int callCount;

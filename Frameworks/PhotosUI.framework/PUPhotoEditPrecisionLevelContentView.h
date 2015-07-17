@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotoEditPrecisionLevelContentView : UIView <PUPhotoEditLayoutStaticAdaptable> {
-    <PUPhotoEditPrecisionLevelContentViewDataSource> *_dataSource;
-    int _layoutOrientation;
+    <PUPhotoEditPrecisionLevelContentViewDataSource> * _dataSource;
+    int  _layoutOrientation;
 }
 
 @property (nonatomic) <PUPhotoEditPrecisionLevelContentViewDataSource> *dataSource;

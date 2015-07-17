@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardCandidateFloatingArrowView : UICollectionReusableView {
-    UIButton *_arrowButton;
+    UIButton * _arrowButton;
 }
 
 @property (nonatomic, retain) UIButton *arrowButton;

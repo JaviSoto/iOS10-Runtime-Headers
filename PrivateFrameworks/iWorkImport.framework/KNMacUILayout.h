@@ -3,13 +3,13 @@
  */
 
 @interface KNMacUILayout : NSObject <NSCopying, NSMutableCopying> {
-    int mInspectorPaneViewMode;
-    BOOL mShowingInspectorPane;
-    BOOL mShowingLightTable;
-    BOOL mShowingMasterSlides;
-    BOOL mShowingNavigatorViewInSidebar;
-    BOOL mShowingPresenterNotes;
-    BOOL mShowingSidebar;
+    int  mInspectorPaneViewMode;
+    BOOL  mShowingInspectorPane;
+    BOOL  mShowingLightTable;
+    BOOL  mShowingMasterSlides;
+    BOOL  mShowingNavigatorViewInSidebar;
+    BOOL  mShowingPresenterNotes;
+    BOOL  mShowingSidebar;
 }
 
 @property (nonatomic, readonly) int inspectorPaneViewMode;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUITabularLockupColumn : NSObject {
-    NSMutableArray *_childViewElements;
-    int _identifier;
+    NSMutableArray * _childViewElements;
+    int  _identifier;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, readonly, copy) NSArray *childViewElements;

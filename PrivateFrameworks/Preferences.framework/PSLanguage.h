@@ -3,9 +3,9 @@
  */
 
 @interface PSLanguage : NSObject {
-    NSString *_languageCode;
-    NSString *_languageName;
-    NSString *_localizedLanguageName;
+    NSString * _languageCode;
+    NSString * _languageName;
+    NSString * _localizedLanguageName;
 }
 
 @property (nonatomic, retain) NSString *languageCode;
@@ -14,7 +14,7 @@
 
 + (id)languageWithCode:(id)arg1 name:(id)arg2 localizedName:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)displayNamesAreEqual;
 - (id)languageCode;
 - (id)languageName;

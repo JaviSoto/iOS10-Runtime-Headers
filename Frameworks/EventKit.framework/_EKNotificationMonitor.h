@@ -3,27 +3,25 @@
  */
 
 @interface _EKNotificationMonitor : NSObject {
-    NSMutableSet *_alertedNotificationsThatFailedToMarkAlerted;
-    NSMutableArray *_culledRecentlyRepliedNotifications;
-    NSArray *_eventNotificationReferences;
-    EKEventStore *_eventStore;
-    id /* block */ _eventStoreGetter;
-    BOOL _handlesOnlyEvents;
-    BOOL _initialCheck;
-    unsigned int _lastEventCount;
-    unsigned int _lastReminderCount;
-    BOOL _loadRecentlyRepliedNotifications;
-    NSDate *_nextFireTime;
-    BOOL _pendingChanges;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_recentlyRepliedNotifications;
-    NSArray *_reminderNotificationReferences;
-    BOOL _running;
-    BOOL _shouldInstallPersistentTimer;
-    NSTimer *_syncTimer;
-    PCPersistentTimer *_timer;
-    NSObject<OS_dispatch_queue> *_timerQueue;
-    BOOL _useSyncIdleTimer;
+    NSMutableSet * _alertedNotificationsThatFailedToMarkAlerted;
+    NSArray * _eventNotificationReferences;
+    EKEventStore * _eventStore;
+    id /* block */  _eventStoreGetter;
+    BOOL  _handlesOnlyEvents;
+    BOOL  _initialCheck;
+    unsigned int  _lastEventCount;
+    unsigned int  _lastReminderCount;
+    BOOL  _loadRecentlyRepliedNotifications;
+    NSDate * _nextFireTime;
+    BOOL  _pendingChanges;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSArray * _reminderNotificationReferences;
+    BOOL  _running;
+    BOOL  _shouldInstallPersistentTimer;
+    NSTimer * _syncTimer;
+    PCPersistentTimer * _timer;
+    NSObject<OS_dispatch_queue> * _timerQueue;
+    BOOL  _useSyncIdleTimer;
 }
 
 @property (nonatomic, readonly) unsigned int eventNotificationCount;

@@ -3,10 +3,10 @@
  */
 
 @interface MPNowPlayingInfoCenter : NSObject {
-    NSDictionary *_nowPlayingInfo;
-    NSDate *_pushDate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_queuedNowPlayingInfo;
+    NSDictionary * _nowPlayingInfo;
+    NSDate * _pushDate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _queuedNowPlayingInfo;
 }
 
 @property (copy) NSDictionary *nowPlayingInfo;

@@ -3,16 +3,16 @@
  */
 
 @interface VMUCallTreeNode : NSObject {
-    unsigned long long _address;
-    unsigned int _count;
-    NSString *_name;
-    unsigned long long _numBytes;
-    unsigned int _numChildren;
-    VMUCallTreeNode *_parent;
+    unsigned long long  _address;
+    unsigned int  _count;
+    NSString * _name;
+    unsigned long long  _numBytes;
+    unsigned int  _numChildren;
+    VMUCallTreeNode * _parent;
     union { 
         void *theChild; 
         void **theChildren; 
-    } _un;
+    }  _un;
 }
 
 + (id)makeFakeRootForNode:(id)arg1;

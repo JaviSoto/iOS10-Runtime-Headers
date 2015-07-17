@@ -3,17 +3,18 @@
  */
 
 @interface WDAnnotation : WDRun {
-    WDAnnotationData *mData;
-    WDAnnotation *mOtherEndOfRangedAnnotation;
-    WDCharacterRun *mReference;
-    BOOL mReferencePopertiesFixed;
-    int mType;
+    WDAnnotationData * mData;
+    WDAnnotation * mOtherEndOfRangedAnnotation;
+    WDCharacterRun * mReference;
+    BOOL  mReferencePopertiesFixed;
+    int  mType;
 }
 
 - (int)annotationType;
 - (id)data;
 - (id)date;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1 type:(int)arg2;
 - (id)otherEndOfRangedAnnotation;
 - (id)owner;

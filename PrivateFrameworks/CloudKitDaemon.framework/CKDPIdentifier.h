@@ -5,9 +5,9 @@
 @interface CKDPIdentifier : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    NSString *_name;
-    int _type;
+    }  _has;
+    NSString * _name;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL hasName;

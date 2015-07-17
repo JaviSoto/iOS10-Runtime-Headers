@@ -3,9 +3,9 @@
  */
 
 @interface _HKQueryServerDataObject : NSObject <NSSecureCoding> {
-    _HKFilter *_filter;
-    HKSampleType *_sampleType;
-    BOOL _shouldStayAliveAfterInitialResults;
+    _HKFilter * _filter;
+    HKSampleType * _sampleType;
+    BOOL  _shouldStayAliveAfterInitialResults;
 }
 
 @property (nonatomic, retain) _HKFilter *filter;

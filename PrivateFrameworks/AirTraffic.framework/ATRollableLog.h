@@ -3,14 +3,14 @@
  */
 
 @interface ATRollableLog : NSObject {
-    NSString *_baseFilename;
-    NSString *_directory;
-    NSObject<OS_dispatch_source> *_fdWatcher;
-    NSFileHandle *_fh;
-    NSString *_generationalFilenameFormat;
-    NSDate *_lastStatDate;
-    NSObject<OS_dispatch_queue> *_logQueue;
-    NSObject<OS_dispatch_queue> *_logRequestQueue;
+    NSString * _baseFilename;
+    NSString * _directory;
+    NSObject<OS_dispatch_source> * _fdWatcher;
+    NSFileHandle * _fh;
+    NSString * _generationalFilenameFormat;
+    NSDate * _lastStatDate;
+    NSObject<OS_dispatch_queue> * _logQueue;
+    NSObject<OS_dispatch_queue> * _logRequestQueue;
 }
 
 @property (retain) NSFileHandle *fh;

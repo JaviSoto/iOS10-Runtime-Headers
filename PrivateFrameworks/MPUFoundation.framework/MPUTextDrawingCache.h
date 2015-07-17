@@ -3,19 +3,19 @@
  */
 
 @interface MPUTextDrawingCache : NSObject {
-    id /* block */ _attributedTextProvider;
-    NSCache *_cache;
-    float _displayScale;
-    unsigned int _invalidationNotificationCoalescingRequestsCount;
-    NSHashTable *_invalidationObservers;
-    unsigned int _maximumNumberOfLines;
-    BOOL _opaque;
-    NSOperationQueue *_preHeatingOperationQueue;
-    NSStringDrawingContext *_reusableStringDrawingContext;
-    MPUTextDrawingCacheKey *_reusableTextDrawingCacheKey;
-    NSDictionary *_textAttributes;
-    BOOL _usesImageCachingInsteadOfStringDrawingContextCaching;
-    BOOL _wasInvalidatedWithoutNotifyingObservers;
+    id /* block */  _attributedTextProvider;
+    NSCache * _cache;
+    float  _displayScale;
+    unsigned int  _invalidationNotificationCoalescingRequestsCount;
+    NSHashTable * _invalidationObservers;
+    unsigned int  _maximumNumberOfLines;
+    BOOL  _opaque;
+    NSOperationQueue * _preHeatingOperationQueue;
+    NSStringDrawingContext * _reusableStringDrawingContext;
+    MPUTextDrawingCacheKey * _reusableTextDrawingCacheKey;
+    NSDictionary * _textAttributes;
+    BOOL  _usesImageCachingInsteadOfStringDrawingContextCaching;
+    BOOL  _wasInvalidatedWithoutNotifyingObservers;
 }
 
 @property (nonatomic, copy) id /* block */ attributedTextProvider;

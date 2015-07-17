@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DLens : NSObject <NSCopying> {
-    float mFar;
-    float mNear;
+    float  mFar;
+    float  mNear;
 }
 
 @property (nonatomic) float far;

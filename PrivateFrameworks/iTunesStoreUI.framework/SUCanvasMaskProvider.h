@@ -3,7 +3,7 @@
  */
 
 @interface SUCanvasMaskProvider : SUMaskProvider {
-    SUScriptCanvasFunction *_function;
+    SUScriptCanvasFunction * _function;
 }
 
 - (id)copyMaskImageWithSize:(struct CGSize { float x1; float x2; })arg1;

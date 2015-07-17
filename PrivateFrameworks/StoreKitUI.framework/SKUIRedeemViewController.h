@@ -3,16 +3,16 @@
  */
 
 @interface SKUIRedeemViewController : UINavigationController {
-    BOOL _attempsAutomaticRedeem;
-    BOOL _cameraRedeemEnabled;
-    int _category;
-    SKUIClientContext *_clientContext;
-    int _initialBarStyle;
-    NSString *_initialCode;
-    NSOperationQueue *_operationQueue;
-    SKUIRedeemPreflightOperation *_preflightOperation;
-    SKUIRedeemConfiguration *_redeemConfiguration;
-    SKUIRedeemStepViewController *_rootViewController;
+    BOOL  _attempsAutomaticRedeem;
+    BOOL  _cameraRedeemEnabled;
+    int  _category;
+    SKUIClientContext * _clientContext;
+    int  _initialBarStyle;
+    NSString * _initialCode;
+    NSOperationQueue * _operationQueue;
+    SKUIRedeemPreflightOperation * _preflightOperation;
+    SKUIRedeemConfiguration * _redeemConfiguration;
+    SKUIRedeemStepViewController * _rootViewController;
 }
 
 @property (nonatomic) BOOL attempsAutomaticRedeem;

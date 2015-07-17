@@ -3,12 +3,12 @@
  */
 
 @interface TSWPFontCache : NSObject {
-    NSMutableArray *_cachedAvailableMembers;
-    NSString *_cachedMembersFamilyName;
-    NSMutableDictionary *_familyDisplayNames;
-    NSArray *_familyFonts;
-    NSArray *_familyNames;
-    TSULRUCache *_fontCache;
+    NSMutableArray * _cachedAvailableMembers;
+    NSString * _cachedMembersFamilyName;
+    NSMutableDictionary * _familyDisplayNames;
+    NSArray * _familyFonts;
+    NSArray * _familyNames;
+    TSULRUCache * _fontCache;
 }
 
 + (id)_singletonAlloc;

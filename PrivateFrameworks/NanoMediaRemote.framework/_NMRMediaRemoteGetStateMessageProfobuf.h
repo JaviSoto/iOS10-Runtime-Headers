@@ -3,16 +3,16 @@
  */
 
 @interface _NMRMediaRemoteGetStateMessageProfobuf : PBCodable <NSCopying> {
-    NSData *_applicationInfoDigest;
+    NSData * _applicationInfoDigest;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int state : 1; 
-    } _has;
-    NSData *_knownDigest;
-    NSData *_nowPlayingInfoDigest;
-    int _state;
-    NSData *_supportedCommandsDigest;
-    double _timestamp;
+    }  _has;
+    NSData * _knownDigest;
+    NSData * _nowPlayingInfoDigest;
+    int  _state;
+    NSData * _supportedCommandsDigest;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSData *applicationInfoDigest;

@@ -3,9 +3,9 @@
  */
 
 @interface SBSUICarDisplayNowPlayingStateContext : NSObject <NSSecureCoding> {
-    NSString *_animationName;
-    NSString *_associatedBundleID;
-    NSString *_stateName;
+    NSString * _animationName;
+    NSString * _associatedBundleID;
+    NSString * _stateName;
 }
 
 @property (nonatomic, copy) NSString *animationName;

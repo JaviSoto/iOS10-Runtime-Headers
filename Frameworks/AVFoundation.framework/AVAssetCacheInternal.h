@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetCacheInternal : NSObject {
-    NSURL *url;
+    NSURL * url;
 }
 
 @end

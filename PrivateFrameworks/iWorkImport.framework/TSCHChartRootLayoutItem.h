@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartRootLayoutItem : TSCHChartLayoutItem <TSCHUnretainedParent> {
-    TSCHChartAbstractAreaLayoutItem *mChartArea;
-    TSCHChartInfo *mChartInfo;
+    TSCHChartAbstractAreaLayoutItem * mChartArea;
+    TSCHChartInfo * mChartInfo;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +14,9 @@
             float width; 
             float height; 
         } size; 
-    } mChartInnerFrame;
-    TSCHChartModel *mChartModel;
-    BOOL mInResize;
+    }  mChartInnerFrame;
+    TSCHChartModel * mChartModel;
+    BOOL  mInResize;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -25,8 +25,8 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
-    } mLayoutSettings;
-    TSCHLegendAreaLayoutItem *mLegend;
+    }  mLayoutSettings;
+    TSCHLegendAreaLayoutItem * mLegend;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -36,12 +36,12 @@
             float width; 
             float height; 
         } size; 
-    } mLegendInnerFrame;
-    NSDictionary *mSeriesIndexedPieWedgeExplosions;
+    }  mLegendInnerFrame;
+    NSDictionary * mSeriesIndexedPieWedgeExplosions;
     struct CGSize { 
         float width; 
         float height; 
-    } mStartingSize;
+    }  mStartingSize;
 }
 
 @property (nonatomic, readonly) TSCHChartAbstractAreaLayoutItem *chartAreaLayoutItem;

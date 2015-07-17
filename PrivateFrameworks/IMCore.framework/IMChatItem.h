@@ -3,7 +3,7 @@
  */
 
 @interface IMChatItem : NSObject <NSCopying> {
-    IMItem *_item;
+    IMItem * _item;
 }
 
 @property (nonatomic, readonly) BOOL canDelete;

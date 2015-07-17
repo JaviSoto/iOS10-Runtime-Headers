@@ -3,8 +3,8 @@
  */
 
 @interface EKAvailabilityCachedSpan : NSObject {
-    NSDate *_creationDate;
-    EKAvailabilitySpan *_span;
+    NSDate * _creationDate;
+    EKAvailabilitySpan * _span;
 }
 
 @property (nonatomic, retain) NSDate *creationDate;

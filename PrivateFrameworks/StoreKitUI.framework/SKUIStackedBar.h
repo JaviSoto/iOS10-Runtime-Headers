@@ -3,19 +3,19 @@
  */
 
 @interface SKUIStackedBar : UIView {
-    BOOL _alwaysShowsBackButton;
-    _UIBackdropView *_backdropView;
-    NSArray *_cells;
-    <SKUIStackedBarDelegate> *_delegate;
-    BOOL _hidesStatusBar;
-    NSArray *_items;
-    BOOL _lastItemExpanded;
-    UIView *_maskView;
-    float _newOffset;
-    float _offset;
-    BOOL _splitViewStyle;
-    UIView *_wrapperView;
-    BOOL _zeroHeightWhenFirstChildExpanded;
+    BOOL  _alwaysShowsBackButton;
+    _UIBackdropView * _backdropView;
+    NSArray * _cells;
+    <SKUIStackedBarDelegate> * _delegate;
+    BOOL  _hidesStatusBar;
+    NSArray * _items;
+    BOOL  _lastItemExpanded;
+    UIView * _maskView;
+    float  _newOffset;
+    float  _offset;
+    BOOL  _splitViewStyle;
+    UIView * _wrapperView;
+    BOOL  _zeroHeightWhenFirstChildExpanded;
 }
 
 @property (nonatomic) BOOL alwaysShowsBackButton;

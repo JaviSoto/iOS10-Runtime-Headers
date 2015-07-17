@@ -2,35 +2,34 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate> {
-    BOOL _allowsProductHairline;
-    MPArtworkCatalog *_artworkCatalog;
-    UIBarButtonItem *_cancelButtonItem;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    MusicMediaProductDetailHeaderConfiguration *_detailHeaderConfiguration;
-    UIImage *_editedContentArtworkImage;
-    BOOL _editingWasCancelled;
-    BOOL _forContentCreation;
-    BOOL _hasDetailTintInformation;
-    BOOL _hasReceivedViewWillAppearAtLeastOnce;
-    MusicMediaDetailHeaderViewController *_mediaDetailHeaderViewController;
-    MusicMediaProductHeaderContentViewController *_mediaProductHeaderContentViewController;
-    BOOL _needsArtworkCatalogUpdate;
-    BOOL _needsColorAnalysisUpdate;
-    BOOL _needsEffectiveNavigationItemUpdateForEditingStateChangeUponViewWillAppear;
-    NSArray *_nonEditingLeftBarButtonItems;
-    NSArray *_nonEditingRightBarButtonItems;
-    NSMutableArray *_pendingTintInformationDispatchEvents;
-    int _presentationSource;
+@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate, UIViewControllerRestoration> {
+    BOOL  _allowsProductHairline;
+    MPArtworkCatalog * _artworkCatalog;
+    UIBarButtonItem * _cancelButtonItem;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    MusicMediaProductDetailHeaderConfiguration * _detailHeaderConfiguration;
+    UIImage * _editedContentArtworkImage;
+    BOOL  _editingWasCancelled;
+    BOOL  _forContentCreation;
+    BOOL  _hasDetailTintInformation;
+    BOOL  _hasReceivedViewWillAppearAtLeastOnce;
+    MusicMediaDetailHeaderViewController * _mediaDetailHeaderViewController;
+    MusicMediaProductHeaderContentViewController * _mediaProductHeaderContentViewController;
+    BOOL  _needsArtworkCatalogUpdate;
+    BOOL  _needsColorAnalysisUpdate;
+    BOOL  _needsEffectiveNavigationItemUpdateForEditingStateChangeUponViewWillAppear;
+    NSArray * _nonEditingLeftBarButtonItems;
+    NSArray * _nonEditingRightBarButtonItems;
+    NSMutableArray * _pendingTintInformationDispatchEvents;
+    int  _presentationSource;
     struct CGSize { 
         float width; 
         float height; 
-    } _previousMaximumHeaderSize;
-    UIViewController *_relatedContentViewController;
-    BOOL _shouldAutomaticallyDismissUponExitingEditingMode;
-    <MusicEntityProviding> *_tracklistEntityProvider;
+    }  _previousMaximumHeaderSize;
+    UIViewController * _relatedContentViewController;
+    <MusicEntityProviding> * _tracklistEntityProvider;
 }
 
 @property (nonatomic, readonly) MusicEntityValueContext *_containerEntityValueContext;
@@ -45,11 +44,12 @@
 @property (nonatomic, retain) MusicMediaProductHeaderContentViewController *headerContentViewController;
 @property (nonatomic, retain) MusicMediaDetailHeaderViewController *headerViewController;
 @property (nonatomic, readonly) int presentationSource;
-@property (nonatomic) BOOL shouldAutomaticallyDismissUponExitingEditingMode;
 @property (nonatomic, readonly) MusicMediaProductSplitDetailViewController *splitDetailViewController;
 @property (nonatomic, retain) MusicMediaProductSplitMainViewController *splitMainViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <MusicEntityProviding> *tracklistEntityProvider;
+
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (BOOL)_calculateHeaderContentViewControllerEditing;
@@ -84,6 +84,7 @@
 - (void)dealloc;
 - (void)detailTintInformationDidChange;
 - (id)editedContentArtworkImage;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4 forContentCreation:(BOOL)arg5;
 - (BOOL)isForContentCreation;
@@ -101,8 +102,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShouldAutomaticallyDismissUponExitingEditingMode:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyDismissUponExitingEditingMode;
 - (void)showingSplitDetailViewControllerDidChange;
 - (id)tracklistEntityProvider;
 - (void)traitCollectionDidChange:(id)arg1;

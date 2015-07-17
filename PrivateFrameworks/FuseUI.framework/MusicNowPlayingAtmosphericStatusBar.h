@@ -3,10 +3,10 @@
  */
 
 @interface MusicNowPlayingAtmosphericStatusBar : UIView {
-    MPUPinningView *_atmosphericContentView;
-    UIView *_containerView;
-    MusicNowPlayingAtmosphericEffectView *_effectView;
-    MusicStatusBar *_statusBar;
+    MPUPinningView * _atmosphericContentView;
+    UIView * _containerView;
+    MusicNowPlayingAtmosphericEffectView * _effectView;
+    MusicStatusBar * _statusBar;
 }
 
 @property (nonatomic, readonly) MPUPinningView *atmosphericContentView;

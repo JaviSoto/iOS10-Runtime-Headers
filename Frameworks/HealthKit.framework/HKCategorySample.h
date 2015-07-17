@@ -3,7 +3,7 @@
  */
 
 @interface HKCategorySample : HKSample <HDCoding> {
-    int _value;
+    int  _value;
 }
 
 @property (readonly) HKCategoryType *categoryType;
@@ -18,6 +18,7 @@
 + (id)_categorySampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 categoryType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7 value:(int)arg8;
 + (BOOL)_isConcreteObjectClass;
 + (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4;
++ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
 + (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
 + (BOOL)supportsSecureCoding;
 
@@ -36,5 +37,9 @@
 
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (int)hk_integerValue;
 
 @end

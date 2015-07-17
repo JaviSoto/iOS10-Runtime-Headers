@@ -3,10 +3,10 @@
  */
 
 @interface CacheDeleteListener : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener *_listener;
-    Protocol *_protocol;
-    NSMutableSet *_requiredEntitlements;
-    id _xObj;
+    NSXPCListener * _listener;
+    Protocol * _protocol;
+    NSMutableSet * _requiredEntitlements;
+    id  _xObj;
 }
 
 @property (readonly, copy) NSString *debugDescription;

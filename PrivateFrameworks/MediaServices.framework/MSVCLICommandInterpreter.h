@@ -3,8 +3,8 @@
  */
 
 @interface MSVCLICommandInterpreter : NSObject {
-    NSMutableDictionary *_commandToInvocationsMap;
-    NSMutableArray *_retainedBlockHandlers;
+    NSMutableDictionary * _commandToInvocationsMap;
+    NSMutableArray * _retainedBlockHandlers;
 }
 
 - (void).cxx_destruct;

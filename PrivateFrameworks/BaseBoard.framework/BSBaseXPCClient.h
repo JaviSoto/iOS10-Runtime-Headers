@@ -3,14 +3,14 @@
  */
 
 @interface BSBaseXPCClient : NSObject {
-    BOOL _clientInvalidated;
-    NSObject<OS_xpc_object> *_connection;
-    BSSignal *_invalidationSignal;
-    int _notifyToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_xpc_object> *_serverEndpoint;
-    NSString *_serviceName;
-    BOOL _suspended;
+    BOOL  _clientInvalidated;
+    NSObject<OS_xpc_object> * _connection;
+    BSSignal * _invalidationSignal;
+    int  _notifyToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_xpc_object> * _serverEndpoint;
+    NSString * _serviceName;
+    BOOL  _suspended;
 }
 
 @property (getter=isSuspended, nonatomic, readonly) BOOL suspended;
@@ -22,14 +22,18 @@
 - (id)_notifyTokenName;
 - (void)_sendMessage:(id /* block */)arg1;
 - (void)_sendMessage:(id /* block */)arg1 withReplyHandler:(id /* block */)arg2 waitForReply:(BOOL)arg3 waitDuration:(unsigned long long)arg4;
+- (void)_sendMessageReply:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)_sendReply:(id)arg1 messagePacker:(id /* block */)arg2;
+- (void)_sendReplyForMessage:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)_setEndpoint:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (void)invalidate;
 - (BOOL)isSuspended;
+- (void)queue_clientWasInvalidated;
 - (id)queue_connection;
 - (void)queue_connectionWasCreated;
 - (void)queue_connectionWasDestroyed;

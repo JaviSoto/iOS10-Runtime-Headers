@@ -3,7 +3,7 @@
  */
 
 @interface MRNowPlayingArtworkSurface : MRNowPlayingArtwork {
-    struct __IOSurface { } *_surface;
+    struct __IOSurface { } * _surface;
 }
 
 @property (nonatomic, readonly) struct __IOSurface { }*surface;

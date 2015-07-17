@@ -3,15 +3,16 @@
  */
 
 @interface EDPivotPageField : NSObject {
-    NSString *mCap;
-    unsigned long mFieldId;
-    NSString *mName;
+    NSString * mCap;
+    unsigned long  mFieldId;
+    NSString * mName;
 }
 
 + (id)pivotPageField;
 
 - (id)cap;
 - (void)dealloc;
+- (id)description;
 - (unsigned long)fieldId;
 - (id)init;
 - (id)name;

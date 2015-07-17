@@ -3,7 +3,7 @@
  */
 
 @interface GQUWebView : WebView {
-    BOOL mHasAttachments;
+    BOOL  mHasAttachments;
 }
 
 + (id)_createWebPreferencesForRendering;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIStarRatingControl : UIControl {
-    UIImageView *_emptyStarsImageView;
-    UIImageView *_filledStarsImageView;
-    int _previousUserRating;
-    float _starSpacing;
-    float _starWidth;
-    int _userRating;
+    UIImageView * _emptyStarsImageView;
+    UIImageView * _filledStarsImageView;
+    int  _previousUserRating;
+    float  _starSpacing;
+    float  _starWidth;
+    int  _userRating;
 }
 
 @property (nonatomic, retain) UIImage *emptyStarsImage;

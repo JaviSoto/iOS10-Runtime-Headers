@@ -3,17 +3,17 @@
  */
 
 @interface MKPlaceReviewsViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
-    NSMutableDictionary *_cachedMaskedImages;
-    BOOL _hasAttribution;
-    MKMapItem *_mapItem;
-    ABMonogrammer *_monogrammer;
-    _MKPlaceViewController *_owner;
-    GEORating *_rating;
-    <MKPlaceCardReviewsControllerDelegate> *_reviewsControllerDelegate;
-    BOOL _showAttribution;
-    BOOL _showCheckInAndWriteReviewButtons;
-    BOOL _showMoreReviewsButton;
-    NSMutableArray *_viewDidAppearBlocks;
+    NSMutableDictionary * _cachedMaskedImages;
+    BOOL  _hasAttribution;
+    MKMapItem * _mapItem;
+    ABMonogrammer * _monogrammer;
+    _MKPlaceViewController * _owner;
+    NSArray * _reviews;
+    <MKPlaceCardReviewsControllerDelegate> * _reviewsControllerDelegate;
+    BOOL  _showAttribution;
+    BOOL  _showCheckInAndWriteReviewButtons;
+    BOOL  _showMoreReviewsButton;
+    NSMutableArray * _viewDidAppearBlocks;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,9 +23,10 @@
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, retain) ABMonogrammer *monogrammer;
 @property (nonatomic) _MKPlaceViewController *owner;
-@property (nonatomic, retain) GEORating *rating;
 @property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic, retain) NSArray *reviews;
 @property (nonatomic) <MKPlaceCardReviewsControllerDelegate> *reviewsControllerDelegate;
+@property (nonatomic, readonly) unsigned int reviewsCount;
 @property (nonatomic) BOOL showAttribution;
 @property (nonatomic, readonly) BOOL showAttributionButtons;
 @property (nonatomic) BOOL showCheckInAndWriteReviewButtons;
@@ -34,7 +35,7 @@
 @property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
-- (void)_showReviewWithID:(id)arg1;
+- (void)_showReview:(id)arg1;
 - (void)_viewAllReviews;
 - (void)checkInWriteReviewCellDidSelectCheckIn:(id)arg1;
 - (void)checkInWriteReviewCellDidSelectWriteReview:(id)arg1;
@@ -44,14 +45,16 @@
 - (id)monogrammer;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)owner;
-- (id)rating;
 - (BOOL)requiresPreferredContentSizeInStackingView;
+- (id)reviewAtIndex:(unsigned int)arg1;
+- (id)reviews;
 - (id)reviewsControllerDelegate;
+- (unsigned int)reviewsCount;
 - (void)setHasAttribution:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMonogrammer:(id)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setRating:(id)arg1;
+- (void)setReviews:(id)arg1;
 - (void)setReviewsControllerDelegate:(id)arg1;
 - (void)setShowAttribution:(BOOL)arg1;
 - (void)setShowCheckInAndWriteReviewButtons:(BOOL)arg1;

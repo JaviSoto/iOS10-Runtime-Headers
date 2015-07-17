@@ -3,7 +3,7 @@
  */
 
 @interface PLCoreOperator : NSObject {
-    NSMutableDictionary *_operators;
+    NSMutableDictionary * _operators;
 }
 
 @property (retain) NSMutableDictionary *operators;
@@ -20,5 +20,6 @@
 - (id)operators;
 - (void)setOperators:(id)arg1;
 - (void)startOperatorsOfSuperClassType:(Class)arg1;
+- (id)tablesToTrimConditionsForTrimDate:(id)arg1;
 
 @end

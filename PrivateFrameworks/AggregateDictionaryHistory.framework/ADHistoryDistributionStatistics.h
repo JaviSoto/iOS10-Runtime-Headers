@@ -3,13 +3,13 @@
  */
 
 @interface ADHistoryDistributionStatistics : NSObject {
-    double _avg;
-    int _count;
-    unsigned int *_histCounts;
-    NSArray *_intervals;
-    double _max;
-    double _min;
-    double _rss;
+    double  _avg;
+    int  _count;
+    unsigned int * _histCounts;
+    NSArray * _intervals;
+    double  _max;
+    double  _min;
+    double  _rss;
 }
 
 @property (nonatomic, readonly) NSArray *intervals;

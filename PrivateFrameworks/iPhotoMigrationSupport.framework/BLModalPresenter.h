@@ -3,7 +3,7 @@
  */
 
 @interface BLModalPresenter : UIWindow <UIKeyInput> {
-    NSMutableArray *_controllers;
+    NSMutableArray * _controllers;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,10 +13,10 @@
             float width; 
             float height; 
         } size; 
-    } _keyboard;
-    BOOL _keyboardVisible;
-    int _lockCount;
-    BLModalPresenterRootViewController *_rootViewController;
+    }  _keyboard;
+    BOOL  _keyboardVisible;
+    int  _lockCount;
+    BLModalPresenterRootViewController * _rootViewController;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -27,6 +27,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;

@@ -3,7 +3,7 @@
  */
 
 @interface UIPageControllerScrollView : UIScrollView {
-    UIPageController *_pageController;
+    UIPageController * _pageController;
 }
 
 @property (nonatomic) UIPageController *pageController;

@@ -3,10 +3,10 @@
  */
 
 @interface BRCApplyScheduler : BRCFSSchedulerBase <BRCModule> {
-    BOOL _applyCountReachedMax;
-    BRCCountedSet *_coordinatedWriters;
-    NSMutableSet *_watchingFaults;
-    NSObject<OS_dispatch_group> *_writerGroup;
+    BOOL  _applyCountReachedMax;
+    BRCCountedSet * _coordinatedWriters;
+    NSMutableSet * _watchingFaults;
+    NSObject<OS_dispatch_group> * _writerGroup;
 }
 
 @property (readonly, copy) NSString *debugDescription;

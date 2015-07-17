@@ -3,19 +3,20 @@
  */
 
 @interface UIPrinterPickerViewController : UIViewController <UINavigationControllerDelegate, UIPrinterBrowserOwner> {
-    BOOL _animated;
-    BOOL _dismissed;
-    UINavigationController *_navigationController;
-    BOOL _observingRotation;
-    UIViewController *_originalViewControllerInNav;
-    UIViewController *_parentController;
-    BOOL _parentHasNoPopover;
-    UIPopoverController *_poverController;
-    PKPrinter *_printer;
-    UIPrinterBrowserViewController *_printerBrowserViewController;
-    UIPrinterPickerController *_printerPickerController;
-    BOOL _userSelectedPrinter;
-    UIWindow *_window;
+    BOOL  _animated;
+    BOOL  _dismissed;
+    UINavigationController * _navigationController;
+    BOOL  _observingRotation;
+    id  _originalNavControllerDelegate;
+    UIViewController * _originalViewControllerInNav;
+    UIViewController * _parentController;
+    BOOL  _parentHasNoPopover;
+    UIPopoverController * _poverController;
+    PKPrinter * _printer;
+    UIPrinterBrowserViewController * _printerBrowserViewController;
+    UIPrinterPickerController * _printerPickerController;
+    BOOL  _userSelectedPrinter;
+    UIWindow * _window;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +26,7 @@
 @property (readonly) Class superclass;
 @property BOOL userSelectedPrinter;
 
+- (void).cxx_destruct;
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentInParentAnimated:(BOOL)arg1;
 - (void)_presentWindow;

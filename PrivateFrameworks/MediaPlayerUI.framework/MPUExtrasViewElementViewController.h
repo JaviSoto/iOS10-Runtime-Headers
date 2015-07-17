@@ -3,8 +3,8 @@
  */
 
 @interface MPUExtrasViewElementViewController : MPUExtrasElementViewController {
-    BOOL _embedded;
-    IKViewElement *_viewElement;
+    BOOL  _embedded;
+    IKViewElement * _viewElement;
 }
 
 @property (nonatomic) BOOL embedded;

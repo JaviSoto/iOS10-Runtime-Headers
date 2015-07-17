@@ -6,10 +6,10 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _startLocation;
-    double _startTime;
-    int _swipeDirection;
-    UITouch *_trackingTouch;
+    }  _startLocation;
+    double  _startTime;
+    int  _swipeDirection;
+    UITouch * _trackingTouch;
 }
 
 @property (nonatomic, readonly) int swipeDirection;

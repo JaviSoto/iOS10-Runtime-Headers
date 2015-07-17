@@ -3,10 +3,10 @@
  */
 
 @interface SUReviewsButton : SUGradientButton {
-    UIImageView *_disclosureView;
-    float _userRating;
-    int _userRatingCount;
-    NSString *_userRatingCountString;
+    UIImageView * _disclosureView;
+    float  _userRating;
+    int  _userRatingCount;
+    NSString * _userRatingCountString;
 }
 
 @property (nonatomic) float userRating;

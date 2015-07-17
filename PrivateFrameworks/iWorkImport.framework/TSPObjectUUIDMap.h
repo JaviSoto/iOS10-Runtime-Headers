@@ -3,12 +3,12 @@
  */
 
 @interface TSPObjectUUIDMap : NSObject {
-    NSMutableSet *_UUIDsWithSuppressedAssertions;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    int _assertOnReadCount;
-    TSPObjectContext *_context;
-    NSMutableDictionary *_inMemoryUUIDDictionary;
-    TSPPersistedObjectUUIDMap *_persistedUUIDMap;
+    NSMutableSet * _UUIDsWithSuppressedAssertions;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    int  _assertOnReadCount;
+    TSPObjectContext * _context;
+    NSMutableDictionary * _inMemoryUUIDDictionary;
+    TSPPersistedObjectUUIDMap * _persistedUUIDMap;
 }
 
 - (void).cxx_destruct;

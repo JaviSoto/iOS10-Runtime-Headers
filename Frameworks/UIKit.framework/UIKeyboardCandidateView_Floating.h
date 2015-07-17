@@ -12,11 +12,11 @@
             float width; 
             float height; 
         } size; 
-    } _collapsedRect;
+    }  _collapsedRect;
     struct CGSize { 
         float width; 
         float height; 
-    } presentationSize;
+    }  presentationSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

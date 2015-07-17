@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewSetPlacementAccessoryOnScreen : UIInputViewSetPlacement
+@interface UIInputViewSetPlacementAccessoryOnScreen : UIInputViewSetPlacement <NSSecureCoding>
+
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)accessoryViewWillAppear;
 - (BOOL)showsInputViews;

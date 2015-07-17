@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DGLFramebuffer : TSCH3DFramebuffer <TSCH3DPipelineLinkable> {
-    TSCH3DGLContext *mContext;
-    BOOL mHasSetDefaultStates;
+    TSCH3DGLContext * mContext;
+    BOOL  mHasSetDefaultStates;
 }
 
 @property (nonatomic, readonly) TSCH3DGLContext *context;

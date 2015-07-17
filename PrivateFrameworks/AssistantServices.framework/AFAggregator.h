@@ -3,11 +3,11 @@
  */
 
 @interface AFAggregator : NSObject {
-    BOOL _hasActiveRequest;
-    BOOL _retryPrefersWWAN;
-    BOOL _sessionIsRetrying;
-    double _startTime;
-    unsigned int _type;
+    BOOL  _hasActiveRequest;
+    BOOL  _retryPrefersWWAN;
+    BOOL  _sessionIsRetrying;
+    double  _startTime;
+    unsigned int  _type;
 }
 
 @property (nonatomic) unsigned int connectionType;
@@ -23,6 +23,7 @@
 + (void)logPingTimeout;
 + (void)logRequestCancelAfterSeconds:(double)arg1;
 + (void)logRequestCompletedWithDuration:(double)arg1;
++ (void)logRequestLaunchedApp;
 + (void)logSiriOtherRequestStarted;
 + (void)logSiriRequestCancelled;
 + (void)logSiriRequestFailedWithError:(id)arg1;

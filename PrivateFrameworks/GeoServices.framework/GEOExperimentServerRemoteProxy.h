@@ -3,10 +3,10 @@
  */
 
 @interface GEOExperimentServerRemoteProxy : NSObject <GEOExperimentServerProxy> {
-    <GEOExperimentServerProxyDelegate> *_delegate;
-    int _experimentsChangedToken;
-    GEOABExperimentResponse *_experimentsInfo;
-    NSLock *_experimentsInfoLock;
+    <GEOExperimentServerProxyDelegate> * _delegate;
+    int  _experimentsChangedToken;
+    GEOABExperimentResponse * _experimentsInfo;
+    NSLock * _experimentsInfoLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

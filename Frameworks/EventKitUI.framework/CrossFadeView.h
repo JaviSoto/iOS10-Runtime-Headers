@@ -12,9 +12,9 @@
             float width; 
             float height; 
         } size; 
-    } _endFrame;
-    UIView *_endView;
-    BOOL _scaleSize;
+    }  _endFrame;
+    UIView * _endView;
+    BOOL  _scaleSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,8 +24,8 @@
             float width; 
             float height; 
         } size; 
-    } _startFrame;
-    UIView *_startView;
+    }  _startFrame;
+    UIView * _startView;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;

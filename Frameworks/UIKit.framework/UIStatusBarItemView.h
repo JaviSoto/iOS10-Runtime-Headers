@@ -3,15 +3,15 @@
  */
 
 @interface UIStatusBarItemView : UIView {
-    BOOL _allowsUpdates;
-    float _currentOverlap;
-    UIStatusBarForegroundStyleAttributes *_foregroundStyle;
-    struct CGContext { } *_imageContext;
-    float _imageContextScale;
-    UIStatusBarItem *_item;
-    UIStatusBarLayoutManager *_layoutManager;
-    _UILegibilityView *_legibilityView;
-    BOOL _visible;
+    BOOL  _allowsUpdates;
+    float  _currentOverlap;
+    UIStatusBarForegroundStyleAttributes * _foregroundStyle;
+    struct CGContext { } * _imageContext;
+    float  _imageContextScale;
+    UIStatusBarItem * _item;
+    UIStatusBarLayoutManager * _layoutManager;
+    _UILegibilityView * _legibilityView;
+    BOOL  _visible;
 }
 
 @property (nonatomic) BOOL allowsUpdates;
@@ -22,6 +22,7 @@
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
 
+- (void).cxx_destruct;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (float)addContentOverlap:(float)arg1;
 - (float)adjustFrameToNewSize:(float)arg1;

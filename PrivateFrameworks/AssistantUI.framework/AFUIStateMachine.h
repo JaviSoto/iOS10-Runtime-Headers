@@ -3,9 +3,9 @@
  */
 
 @interface AFUIStateMachine : NSObject {
-    <AFUIStateMachineDelegate> *_delegate;
-    NSMutableDictionary *_endStatesByEventByStartState;
-    int _state;
+    <AFUIStateMachineDelegate> * _delegate;
+    NSMutableDictionary * _endStatesByEventByStartState;
+    int  _state;
 }
 
 @property (nonatomic) <AFUIStateMachineDelegate> *delegate;

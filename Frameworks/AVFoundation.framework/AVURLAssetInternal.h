@@ -3,18 +3,15 @@
  */
 
 @interface AVURLAssetInternal : NSObject {
-    NSURL *URL;
-    AVAssetCache *assetCache;
-    NSURL *downloadDestinationURL;
-    AVAssetInspectorLoader *loader;
-    long makeOneResourceLoaderOnly;
-    unsigned int referenceRestrictions;
-    AVAssetResourceLoader *resourceLoader;
-    BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-    BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
-    BOOL shouldOptimizeAccessForLinearMoviePlayback;
-    NSArray *tracks;
-    NSObject<OS_dispatch_queue> *tracksAccessQueue;
+    NSURL * URL;
+    AVAssetClientURLRequestHelper * URLRequestHelper;
+    BOOL  hasInstanceIdentifierMapping;
+    NSDictionary * initializationOptions;
+    AVAssetInspectorLoader * loader;
+    long  makeOneResourceLoaderOnly;
+    AVAssetResourceLoader * resourceLoader;
+    NSArray * tracks;
+    NSObject<OS_dispatch_queue> * tracksAccessQueue;
 }
 
 @end

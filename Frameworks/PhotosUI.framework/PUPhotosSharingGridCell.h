@@ -3,19 +3,19 @@
  */
 
 @interface PUPhotosSharingGridCell : UICollectionViewCell {
-    int _currentImageRequestID;
-    UIView *_highlightOverlayView;
+    int  _currentImageRequestID;
+    UIView * _highlightOverlayView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastZoomPoint;
+    }  _lastZoomPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _originalZoomPoint;
-    PUPhotoView *_photoView;
-    PUPhotosZoomingSharingGridCell *_zoomingCell;
-    UIView *_zoomingCellSuperview;
+    }  _originalZoomPoint;
+    PUPhotoView * _photoView;
+    PUPhotosZoomingSharingGridCell * _zoomingCell;
+    UIView * _zoomingCellSuperview;
 }
 
 @property (nonatomic) int currentImageRequestID;

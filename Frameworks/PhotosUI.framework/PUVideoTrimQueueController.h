@@ -3,24 +3,24 @@
  */
 
 @interface PUVideoTrimQueueController : NSObject {
-    PLManagedAlbum *_album;
-    NSString *_albumName;
-    NSString *_commentText;
-    <PUVideoTrimQueueControllerDelegate> *_delegate;
+    PLManagedAlbum * _album;
+    NSString * _albumName;
+    NSString * _commentText;
+    <PUVideoTrimQueueControllerDelegate> * _delegate;
     struct { 
         unsigned int hasWillTrim : 1; 
         unsigned int hasDidTrim : 1; 
         unsigned int hasDidFinish : 1; 
         unsigned int hasDidCancel : 1; 
-    } _delegateFlags;
-    UIViewController *_displayingViewController;
-    double _endTime;
-    NSArray *_recipients;
-    NSMutableArray *_sourcesToTransform;
-    double _startTime;
-    NSMutableArray *_trimQueue;
-    NSMutableDictionary *_trimmedVideoInfo;
-    NSArray *_videosSources;
+    }  _delegateFlags;
+    UIViewController * _displayingViewController;
+    double  _endTime;
+    NSArray * _recipients;
+    NSMutableArray * _sourcesToTransform;
+    double  _startTime;
+    NSMutableArray * _trimQueue;
+    NSMutableDictionary * _trimmedVideoInfo;
+    NSArray * _videosSources;
 }
 
 @property (nonatomic, readonly) PLManagedAlbum *album;

@@ -3,8 +3,8 @@
  */
 
 @interface TSPPackageWriterCopyDataResult : NSObject {
-    <TSPCryptoInfo> *_encryptionInfo;
-    NSString *_filename;
+    <TSPCryptoInfo> * _encryptionInfo;
+    NSString * _filename;
 }
 
 @property (nonatomic, readonly) <TSPCryptoInfo> *encryptionInfo;

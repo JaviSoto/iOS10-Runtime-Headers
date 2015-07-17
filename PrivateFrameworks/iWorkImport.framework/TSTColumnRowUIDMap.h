@@ -9,42 +9,42 @@
         struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
             char *__first_; 
         } __end_cap_; 
-    } mColumnIndexForUIDIndex;
+    }  mColumnIndexForUIDIndex;
     struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
         char *__begin_; 
         char *__end_; 
         struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
             char *__first_; 
         } __end_cap_; 
-    } mColumnUIDIndexForIndex;
+    }  mColumnUIDIndexForIndex;
     struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
             unsigned short *__first_; 
         } __end_cap_; 
-    } mRowIndexForUIDIndex;
+    }  mRowIndexForUIDIndex;
     struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
             unsigned short *__first_; 
         } __end_cap_; 
-    } mRowUIDIndexForIndex;
+    }  mRowUIDIndexForIndex;
     struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct UUIDData<TSP::UUIDData> {} *__begin_; 
         struct UUIDData<TSP::UUIDData> {} *__end_; 
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct UUIDData<TSP::UUIDData> {} *__first_; 
         } __end_cap_; 
-    } mSortedColumnUIDs;
+    }  mSortedColumnUIDs;
     struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct UUIDData<TSP::UUIDData> {} *__begin_; 
         struct UUIDData<TSP::UUIDData> {} *__end_; 
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct UUIDData<TSP::UUIDData> {} *__first_; 
         } __end_cap_; 
-    } mSortedRowUIDs;
+    }  mSortedRowUIDs;
 }
 
 - (id).cxx_construct;

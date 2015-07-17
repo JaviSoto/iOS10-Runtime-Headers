@@ -3,7 +3,7 @@
  */
 
 @interface SSItemImageCollection : NSObject <NSCopying> {
-    NSArray *_itemImages;
+    NSArray * _itemImages;
 }
 
 @property (nonatomic, readonly) NSArray *itemImages;

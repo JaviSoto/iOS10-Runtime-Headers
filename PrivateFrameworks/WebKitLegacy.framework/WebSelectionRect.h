@@ -3,13 +3,13 @@
  */
 
 @interface WebSelectionRect : NSObject <NSCopying> {
-    BOOL m_containsEnd;
-    BOOL m_containsStart;
-    BOOL m_isFirstOnLine;
-    BOOL m_isHorizontal;
-    BOOL m_isInFixedPosition;
-    BOOL m_isLastOnLine;
-    BOOL m_isLineBreak;
+    BOOL  m_containsEnd;
+    BOOL  m_containsStart;
+    BOOL  m_isFirstOnLine;
+    BOOL  m_isHorizontal;
+    BOOL  m_isInFixedPosition;
+    BOOL  m_isLastOnLine;
+    BOOL  m_isLineBreak;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,8 +19,8 @@
             float width; 
             float height; 
         } size; 
-    } m_rect;
-    int m_writingDirection;
+    }  m_rect;
+    int  m_writingDirection;
 }
 
 @property (nonatomic) BOOL containsEnd;

@@ -3,13 +3,13 @@
  */
 
 @interface MPAlternateTracks : NSObject <AVPlayerItemLegibleOutputPushDelegate> {
-    NSDictionary *_alternateTracks;
-    MPAlternateTextTrack *_currentTextTrack;
-    BOOL _disableAlternateTextTrackRendering;
-    MPAVItem *_item;
-    AVPlayerItemLegibleOutput *_legibleOutput;
-    NSArray *_outOfBandTextTracks;
-    NSMutableDictionary *_trackChangeDictionary;
+    NSDictionary * _alternateTracks;
+    MPAlternateTextTrack * _currentTextTrack;
+    BOOL  _disableAlternateTextTrackRendering;
+    MPAVItem * _item;
+    AVPlayerItemLegibleOutput * _legibleOutput;
+    NSArray * _outOfBandTextTracks;
+    NSMutableDictionary * _trackChangeDictionary;
 }
 
 @property (readonly, copy) NSString *debugDescription;

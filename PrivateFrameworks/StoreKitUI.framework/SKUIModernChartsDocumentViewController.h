@@ -3,12 +3,12 @@
  */
 
 @interface SKUIModernChartsDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIModalSourceViewProvider> {
-    SKUIActivityIndicatorView *_activityIndicatorView;
-    SKUIModernChartsView *_chartsView;
-    NSMutableArray *_columnViewControllers;
-    SKUILayoutCache *_layoutCache;
-    SKUIChartsTemplateViewElement *_templateElement;
-    SKUIViewElementLayoutContext *_viewLayoutContext;
+    SKUIActivityIndicatorView * _activityIndicatorView;
+    SKUIModernChartsView * _chartsView;
+    NSMutableArray * _columnViewControllers;
+    SKUILayoutCache * _layoutCache;
+    SKUIChartsTemplateViewElement * _templateElement;
+    SKUIViewElementLayoutContext * _viewLayoutContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

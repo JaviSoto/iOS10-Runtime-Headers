@@ -3,8 +3,8 @@
  */
 
 @interface QLLayoutedPrintPageRenderer : QLWebViewPrintPageHelper {
-    NSMutableArray *_nodes;
-    UIWebPaginationInfo *_paginationInfo;
+    NSMutableArray * _nodes;
+    UIWebPaginationInfo * _paginationInfo;
 }
 
 - (id)_currentNodes;

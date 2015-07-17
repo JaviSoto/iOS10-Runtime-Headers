@@ -3,7 +3,7 @@
  */
 
 @interface NSLock : NSObject <NSLocking> {
-    void *_priv;
+    void * _priv;
 }
 
 @property (copy) NSString *name;

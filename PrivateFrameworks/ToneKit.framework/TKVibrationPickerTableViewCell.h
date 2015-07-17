@@ -3,10 +3,10 @@
  */
 
 @interface TKVibrationPickerTableViewCell : TKPickerTableViewCell <UITextFieldDelegate> {
-    <TKVibrationPickerTableViewCellDelegate> *_delegate;
-    BOOL _editable;
-    UIColor *_regularTextColor;
-    UITextField *_removableTextField;
+    <TKVibrationPickerTableViewCellDelegate> * _delegate;
+    BOOL  _editable;
+    UIColor * _regularTextColor;
+    UITextField * _removableTextField;
 }
 
 @property (getter=_isDisplayingRemovableTextField, nonatomic, readonly) BOOL _displayingRemovableTextField;

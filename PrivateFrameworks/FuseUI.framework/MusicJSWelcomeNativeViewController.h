@@ -3,10 +3,10 @@
  */
 
 @interface MusicJSWelcomeNativeViewController : MusicJSNativeViewController <MusicJSWelcomeNativeViewController> {
-    <MusicJSWelcomeNativeViewControllerDelegate> *_delegate;
-    IKAppDocument *_welcomeDocument;
-    NSDictionary *_welcomeDocumentOptions;
-    IKDOMDocument *_welcomeJSDocument;
+    <MusicJSWelcomeNativeViewControllerDelegate> * _delegate;
+    IKAppDocument * _welcomeDocument;
+    NSDictionary * _welcomeDocumentOptions;
+    IKDOMDocument * _welcomeJSDocument;
 }
 
 @property (nonatomic) <MusicJSWelcomeNativeViewControllerDelegate> *delegate;

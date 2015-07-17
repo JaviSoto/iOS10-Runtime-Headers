@@ -3,12 +3,12 @@
  */
 
 @interface SSMachineDataRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountID;
-    NSData *_actionData;
-    NSString *_actionName;
-    BOOL _allowsBootstrapCellularData;
-    int _protocolVersion;
-    BOOL _waitsForPurchaseOperations;
+    NSNumber * _accountID;
+    NSData * _actionData;
+    NSString * _actionName;
+    BOOL  _allowsBootstrapCellularData;
+    int  _protocolVersion;
+    BOOL  _waitsForPurchaseOperations;
 }
 
 @property (copy) NSNumber *accountIdentifier;

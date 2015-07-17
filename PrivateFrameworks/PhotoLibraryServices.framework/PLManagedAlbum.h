@@ -3,9 +3,9 @@
  */
 
 @interface PLManagedAlbum : _PLManagedAlbum <PLUserEditableAlbumProtocol> {
-    BOOL _albumShouldBeAutomaticallyDeleted;
-    BOOL _needsPersistenceUpdate;
-    BOOL _resolvingConflicts;
+    BOOL  _albumShouldBeAutomaticallyDeleted;
+    BOOL  _needsPersistenceUpdate;
+    BOOL  _resolvingConflicts;
 }
 
 @property (nonatomic) BOOL albumShouldBeAutomaticallyDeleted;
@@ -104,8 +104,6 @@
 - (id)internalUserEditableAssetsAtIndexes:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isValidKindForPersistence;
-- (id)migration_newOrderKeyChild:(id)arg1;
-- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (id)mutableAssets;
 - (BOOL)needsPersistenceUpdate;
 - (id)objectInInternalUserEditableAssetsAtIndex:(unsigned int)arg1;

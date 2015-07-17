@@ -3,11 +3,11 @@
  */
 
 @interface MPUExtrasStackTemplateViewController : MPUExtrasTemplateViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
-    MPUExtrasBannerController *_bannerViewController;
-    UICollectionView *_collectionView;
-    UICollectionViewFlowLayout *_collectionViewLayout;
-    NSMutableDictionary *_sizes;
-    NSMutableDictionary *_viewControllers;
+    MPUExtrasBannerController * _bannerViewController;
+    UICollectionView * _collectionView;
+    UICollectionViewFlowLayout * _collectionViewLayout;
+    NSMutableDictionary * _sizes;
+    NSMutableDictionary * _viewControllers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

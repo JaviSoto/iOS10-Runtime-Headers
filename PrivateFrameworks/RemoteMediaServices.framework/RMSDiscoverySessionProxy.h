@@ -3,14 +3,15 @@
  */
 
 @interface RMSDiscoverySessionProxy : RMSSessionProxy <RMSDiscoverySession> {
-    NSArray *_availableServices;
-    <RMSDiscoverySessionDelegate> *_delegate;
-    BOOL _discovering;
-    int _discoveryTypes;
-    RMSIDSClient *_idsClient;
-    BOOL _networkAvailable;
-    int _retryRate;
-    BOOL _wifiAvailable;
+    NSArray * _availableServices;
+    <RMSDiscoverySessionDelegate> * _delegate;
+    BOOL  _discovering;
+    int  _discoveryTypes;
+    RMSIDSClient * _idsClient;
+    BOOL  _networkAvailable;
+    NSArray * _pairedNetworkNames;
+    int  _retryRate;
+    BOOL  _wifiAvailable;
 }
 
 @property (nonatomic, readonly) NSArray *availableServices;
@@ -20,6 +21,7 @@
 @property (nonatomic) int discoveryTypes;
 @property (readonly) unsigned int hash;
 @property (getter=isNetworkAvailable, nonatomic, readonly) BOOL networkAvailable;
+@property (nonatomic, retain) NSArray *pairedNetworkNames;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -37,7 +39,9 @@
 - (void)heartbeatDidFail;
 - (id)init;
 - (BOOL)isNetworkAvailable;
+- (id)pairedNetworkNames;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryTypes:(int)arg1;
+- (void)setPairedNetworkNames:(id)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface MusicMediaUberHeaderLegibilityOverlayView : UIView {
-    UIColor *_bottomGradientColor;
-    NSString *_bottomGradientType;
-    MPUGradientView *_bottomGradientView;
-    float _radialGradientEdgeElevation;
-    float _radialGradientHeight;
-    UIColor *_topGradientColor;
+    UIColor * _bottomGradientColor;
+    NSString * _bottomGradientType;
+    MPUGradientView * _bottomGradientView;
+    float  _radialGradientEdgeElevation;
+    float  _radialGradientHeight;
+    UIColor * _topGradientColor;
 }
 
 @property (nonatomic, retain) UIColor *bottomGradientColor;

@@ -3,7 +3,7 @@
  */
 
 @interface PLTileContainerView : UIView {
-    PLPhotoTileViewController *_photoTileController;
+    PLPhotoTileViewController * _photoTileController;
 }
 
 - (BOOL)canBecomeFirstResponder;

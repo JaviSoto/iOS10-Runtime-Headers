@@ -3,15 +3,15 @@
  */
 
 @interface HAPKeychainItem : NSObject {
-    NSString *_accessGroup;
-    NSString *_account;
-    NSData *_genericData;
-    NSString *_itemDescription;
-    NSString *_label;
-    void *_platformReference;
-    BOOL _syncable;
-    NSNumber *_type;
-    NSData *_valueData;
+    NSString * _accessGroup;
+    NSString * _account;
+    NSData * _genericData;
+    NSString * _itemDescription;
+    NSString * _label;
+    void * _platformReference;
+    BOOL  _syncable;
+    NSNumber * _type;
+    NSData * _valueData;
 }
 
 @property (nonatomic, retain) NSString *accessGroup;

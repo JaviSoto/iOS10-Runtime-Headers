@@ -3,24 +3,24 @@
  */
 
 @interface SUOverlayViewController : SUViewController {
-    NSMutableArray *_actionQueue;
-    UIViewController *_activeViewController;
-    UIViewController *_backViewController;
-    BOOL _canSwipeToDismiss;
-    UIViewController *_frontViewController;
-    SUOverlayTransition *_lastFlipTransition;
+    NSMutableArray * _actionQueue;
+    UIViewController * _activeViewController;
+    UIViewController * _backViewController;
+    BOOL  _canSwipeToDismiss;
+    UIViewController * _frontViewController;
+    SUOverlayTransition * _lastFlipTransition;
     struct CGSize { 
         float width; 
         float height; 
-    } _overlaySize;
-    SUOverlayTransition *_presentationTransition;
-    SUScriptWindowContext *_scriptWindowContext;
-    float _shadowOpacity;
-    float _shadowRadius;
-    SUScriptFunction *_shouldDismissFunction;
-    int _state;
-    SUMaskedView *_subviewContainerView;
-    SUTouchCaptureView *_touchCaptureView;
+    }  _overlaySize;
+    SUOverlayTransition * _presentationTransition;
+    SUScriptWindowContext * _scriptWindowContext;
+    float  _shadowOpacity;
+    float  _shadowRadius;
+    SUScriptFunction * _shouldDismissFunction;
+    int  _state;
+    SUMaskedView * _subviewContainerView;
+    SUTouchCaptureView * _touchCaptureView;
 }
 
 @property (getter=isActiveOverlay, nonatomic, readonly) BOOL activeOverlay;

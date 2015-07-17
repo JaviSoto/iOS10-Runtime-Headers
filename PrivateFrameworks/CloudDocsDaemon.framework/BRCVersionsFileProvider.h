@@ -3,7 +3,7 @@
  */
 
 @interface BRCVersionsFileProvider : BRCFileProvider {
-    NSMutableDictionary *_operationsByName;
+    NSMutableDictionary * _operationsByName;
 }
 
 - (void).cxx_destruct;

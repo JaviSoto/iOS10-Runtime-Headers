@@ -3,16 +3,18 @@
  */
 
 @interface UIPrintRangeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIPickerView *_fromPicker;
-    int _pageCount;
+    UIPickerView * _fromPicker;
+    NSString * _multiPageRangeTitle;
+    NSArray * _multiPageRanges;
+    int  _pageCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _pageRange;
-    float _pickerWidth;
-    UIPrintPanelViewController *_printPanelViewController;
-    UITableView *_tableView;
-    UIPickerView *_toPicker;
+    }  _pageRange;
+    float  _pickerWidth;
+    UIPrintPanelViewController * _printPanelViewController;
+    UITableView * _tableView;
+    UIPickerView * _toPicker;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -35,7 +37,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

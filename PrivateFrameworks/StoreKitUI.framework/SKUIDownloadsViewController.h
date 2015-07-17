@@ -3,14 +3,14 @@
  */
 
 @interface SKUIDownloadsViewController : SKUIViewController <SKUIDownloadsChildViewControllerDelegate, SSDownloadManagerObserver> {
-    SKUIImageDataConsumer *_consumer;
-    SSDownloadManager *_downloadManager;
-    NSArray *_downloads;
-    NSMutableDictionary *_imageOperations;
-    NSCache *_images;
-    SKUIIPadDownloadsViewController *_ipadViewController;
-    SKUIIPhoneDownloadsViewController *_iphoneViewController;
-    UIImage *_nullImage;
+    SKUIImageDataConsumer * _consumer;
+    SSDownloadManager * _downloadManager;
+    NSArray * _downloads;
+    NSMutableDictionary * _imageOperations;
+    NSCache * _images;
+    SKUIIPadDownloadsViewController * _ipadViewController;
+    SKUIIPhoneDownloadsViewController * _iphoneViewController;
+    UIImage * _nullImage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

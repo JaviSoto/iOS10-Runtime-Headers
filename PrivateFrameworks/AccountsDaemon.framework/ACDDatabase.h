@@ -3,11 +3,11 @@
  */
 
 @interface ACDDatabase : NSObject {
-    NSManagedObjectContext *_context;
-    id _contextDidSaveNotificationObserver;
-    NSManagedObjectModel *_model;
-    NSString *_path;
-    NSPersistentStore *_store;
+    NSManagedObjectContext * _context;
+    id  _contextDidSaveNotificationObserver;
+    NSManagedObjectModel * _model;
+    NSString * _path;
+    NSPersistentStore * _store;
 }
 
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
@@ -40,6 +40,7 @@
 - (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2 sortDescriptor:(id)arg3;
 - (id)initWithDefaultPath;
 - (id)initWithPath:(id)arg1;
+- (id)initWithTimeMachineHomeFolderPath:(id)arg1;
 - (id)managedObjectContext;
 - (id)managedObjectIDForURI:(id)arg1;
 - (id)objectForObjectURI:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface UINibDecoder : NSCoder {
-    Class arrayClass;
-    Class *classes;
-    id delegate;
-    Class dictionaryClass;
-    int failedByKeyMask;
+    Class  arrayClass;
+    Class * classes;
+    id  delegate;
+    Class  dictionaryClass;
+    int  failedByKeyMask;
     struct UINibDecoderHeader { 
         unsigned char type[10]; 
         unsigned int formatVersion; 
@@ -28,8 +28,8 @@
             unsigned int count; 
             unsigned int offset; 
         } classes; 
-    } header;
-    long inlinedValueKey;
+    }  header;
+    long  inlinedValueKey;
     struct UIKeyToKeyIDCache { 
         NSString *previousKey[64]; 
         void *previousKeyID[64]; 
@@ -37,33 +37,33 @@
         int hashHits; 
         int hashHotMisses; 
         int hashColdMisses; 
-    } keyIDCache;
-    UINibStringIDTable *keyIDTable;
-    unsigned int *keyMasks;
-    unsigned int *longObjectClassIDs;
-    int lookupRounds;
-    int maxPossibleLookupRounds;
-    id *missingClasses;
-    struct UINibDecoderObjectEntry { unsigned int x1; unsigned int x2; } *objects;
-    id *objectsByObjectID;
+    }  keyIDCache;
+    UINibStringIDTable * keyIDTable;
+    unsigned int * keyMasks;
+    unsigned int * longObjectClassIDs;
+    int  lookupRounds;
+    int  maxPossibleLookupRounds;
+    id * missingClasses;
+    struct UINibDecoderObjectEntry { unsigned int x1; unsigned int x2; } * objects;
+    id * objectsByObjectID;
     struct UINibDecoderRecursiveState { 
         int objectID; 
         int nextGenericKey; 
         unsigned int nextValueSearchIndex; 
         BOOL replaced; 
-    } recursiveState;
-    int savedByKeyMask;
-    Class setClass;
-    char *shortObjectClassIDs;
+    }  recursiveState;
+    int  savedByKeyMask;
+    Class  setClass;
+    char * shortObjectClassIDs;
     struct UIKeyAndScopeToValueCache { 
         unsigned int previousScope; 
         unsigned int previousKey; 
         struct UINibDecoderValue {} *previousValue; 
-    } valueCache;
-    void *valueData;
-    unsigned long valueDataSize;
-    char *valueTypes;
-    struct UINibDecoderValue { unsigned int x1; unsigned int x2; } *values;
+    }  valueCache;
+    void * valueData;
+    unsigned long  valueDataSize;
+    char * valueTypes;
+    struct UINibDecoderValue { unsigned int x1; unsigned int x2; } * values;
 }
 
 @property id delegate;

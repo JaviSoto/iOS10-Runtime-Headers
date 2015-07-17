@@ -3,21 +3,21 @@
  */
 
 @interface MPUExtrasGridCellStyle : NSObject <NSCopying> {
-    int _defaultTextAlignment;
+    int  _defaultTextAlignment;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    NSDictionary *_subtitleDefaultFontAttributes;
-    float _subtitleFirstBaselineHeight;
-    UIColor *_subtitleTextColor;
-    NSString *_subtitleTextStyle;
-    float _textFirstBaselineToBottom;
-    float _textLastBaselineToBottom;
-    NSDictionary *_titleDefaultFontAttributes;
-    float _titleFirstBaselineHeight;
-    UIColor *_titleTextColor;
-    NSString *_titleTextStyle;
+    }  _imageSize;
+    NSDictionary * _subtitleDefaultFontAttributes;
+    float  _subtitleFirstBaselineHeight;
+    UIColor * _subtitleTextColor;
+    NSString * _subtitleTextStyle;
+    float  _textFirstBaselineToBottom;
+    float  _textLastBaselineToBottom;
+    NSDictionary * _titleDefaultFontAttributes;
+    float  _titleFirstBaselineHeight;
+    UIColor * _titleTextColor;
+    NSString * _titleTextStyle;
 }
 
 @property (nonatomic) int defaultTextAlignment;

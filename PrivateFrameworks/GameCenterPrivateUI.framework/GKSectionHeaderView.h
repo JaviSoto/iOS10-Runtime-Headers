@@ -3,18 +3,18 @@
  */
 
 @interface GKSectionHeaderView : GKHeaderWithUnderlineView {
-    BOOL _allSectionItemsVisible;
-    int _itemCount;
-    int (*_itemCountFormatter;
-    GKLabel *_leftLabel;
-    BOOL _manualItemCount;
-    int _maxItemCount;
-    int _maxRange;
-    SEL _rightAction;
-    GKButton *_rightButton;
-    id _rightTarget;
-    unsigned int _sectionIndex;
-    SEL _showAllAction;
+    BOOL  _allSectionItemsVisible;
+    int  _itemCount;
+    int (* _itemCountFormatter;
+    GKLabel * _leftLabel;
+    BOOL  _manualItemCount;
+    int  _maxItemCount;
+    int  _maxRange;
+    SEL  _rightAction;
+    GKButton * _rightButton;
+    id  _rightTarget;
+    unsigned int  _sectionIndex;
+    SEL  _showAllAction;
 }
 
 @property (nonatomic) BOOL allSectionItemsVisible;

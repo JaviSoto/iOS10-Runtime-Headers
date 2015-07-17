@@ -3,7 +3,7 @@
  */
 
 @interface PRSiTunesEngagementFeedback : PRSEngagementFeedback {
-    unsigned int _iTunes_action_target;
+    unsigned int  _iTunes_action_target;
 }
 
 @property unsigned int iTunes_action_target;

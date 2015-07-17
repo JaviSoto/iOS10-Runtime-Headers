@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptColor : SUScriptObject {
-    UIColor *_color;
+    UIColor * _color;
 }
 
 @property (readonly) float alpha;

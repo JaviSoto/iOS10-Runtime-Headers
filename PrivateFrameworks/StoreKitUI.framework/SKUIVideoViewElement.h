@@ -3,10 +3,10 @@
  */
 
 @interface SKUIVideoViewElement : SKUIViewElement {
-    BOOL _enabled;
-    long long _itemIdentifier;
-    int _playbackStyle;
-    SKUIImageViewElement *_thumbnailImage;
+    BOOL  _enabled;
+    long long  _itemIdentifier;
+    int  _playbackStyle;
+    SKUIImageViewElement * _thumbnailImage;
 }
 
 @property (nonatomic, readonly) NSArray *assets;

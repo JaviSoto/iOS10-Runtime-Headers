@@ -3,30 +3,30 @@
  */
 
 @interface PUGridRenderedStrip : UICollectionReusableView {
-    BOOL __needsRendering;
-    UIView *__sideExtendedContentView;
-    int _backgroundColorValue;
-    unsigned int _contentExtenderType;
-    <PUGridRenderedStripDataSource> *_dataSource;
-    BOOL _extendsToTop;
+    BOOL  __needsRendering;
+    UIView * __sideExtendedContentView;
+    int  _backgroundColorValue;
+    unsigned int  _contentExtenderType;
+    <PUGridRenderedStripDataSource> * _dataSource;
+    BOOL  _extendsToTop;
     struct CGSize { 
         float width; 
         float height; 
-    } _interItemSpacing;
-    float _itemContentScale;
-    NSArray *_itemIndexPaths;
+    }  _interItemSpacing;
+    float  _itemContentScale;
+    NSArray * _itemIndexPaths;
     struct CGSize { 
         float width; 
         float height; 
-    } _itemSize;
-    PUSectionedGridLayout *_layout;
-    float _leftContentInset;
-    UIView *_topContentView;
+    }  _itemSize;
+    PUSectionedGridLayout * _layout;
+    float  _leftContentInset;
+    UIView * _topContentView;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _visualItemRange;
-    int _visualSectionIndex;
+    }  _visualItemRange;
+    int  _visualSectionIndex;
 }
 
 @property (setter=_setNeedsRendering:, nonatomic) BOOL _needsRendering;

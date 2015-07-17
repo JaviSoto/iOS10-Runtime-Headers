@@ -3,15 +3,15 @@
  */
 
 @interface TRDirectionalPanPacketEvent : TRPacketEvent {
-    int _gestureState;
+    int  _gestureState;
     struct CGPoint { 
         float x; 
         float y; 
-    } _location;
+    }  _location;
     struct CGPoint { 
         float x; 
         float y; 
-    } _velocity;
+    }  _velocity;
 }
 
 @property (nonatomic, readonly) int gestureState;

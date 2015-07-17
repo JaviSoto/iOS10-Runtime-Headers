@@ -3,11 +3,11 @@
  */
 
 @interface SUPlaceholderViewController : SUViewController {
-    SUGradient *_backgroundGradient;
-    SUGradient *_defaultBackgroundGradient;
-    SUGradientView *_gradientView;
-    BOOL _hideLoadingView;
-    SULoadingView *_loadingView;
+    SUGradient * _backgroundGradient;
+    SUGradient * _defaultBackgroundGradient;
+    SUGradientView * _gradientView;
+    BOOL  _hideLoadingView;
+    SULoadingView * _loadingView;
 }
 
 @property (nonatomic, copy) SUGradient *backgroundGradient;

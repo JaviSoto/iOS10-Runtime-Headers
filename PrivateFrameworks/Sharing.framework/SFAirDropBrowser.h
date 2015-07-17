@@ -3,13 +3,13 @@
  */
 
 @interface SFAirDropBrowser : NSObject {
-    struct __SFBrowser { } *_browser;
-    <SFAirDropBrowserDelegate> *_delegate;
-    BOOL _didDelay;
-    NSMutableDictionary *_nodes;
-    NSArray *_people;
-    double _startTime;
-    NSObject<OS_dispatch_source> *_timer;
+    struct __SFBrowser { } * _browser;
+    <SFAirDropBrowserDelegate> * _delegate;
+    BOOL  _didDelay;
+    NSMutableDictionary * _nodes;
+    NSArray * _people;
+    double  _startTime;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 @property <SFAirDropBrowserDelegate> *delegate;

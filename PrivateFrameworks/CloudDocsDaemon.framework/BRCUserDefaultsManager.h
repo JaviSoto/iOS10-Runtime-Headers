@@ -3,12 +3,12 @@
  */
 
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate> {
-    id /* block */ _configurationPlistDidUpdateBlock;
-    NSOperationQueue *_downloadQueue;
-    NSDictionary *_serverConfigurationDict;
-    NSURL *_serverConfigurationURL;
-    NSURLSession *_urlSession;
-    NSMutableDictionary *_userDefaultsCache;
+    id /* block */  _configurationPlistDidUpdateBlock;
+    NSOperationQueue * _downloadQueue;
+    NSDictionary * _serverConfigurationDict;
+    NSURL * _serverConfigurationURL;
+    NSURLSession * _urlSession;
+    NSMutableDictionary * _userDefaultsCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

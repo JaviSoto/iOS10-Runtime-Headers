@@ -3,13 +3,13 @@
  */
 
 @interface MPTapGestureRecognizer : UIGestureRecognizer {
-    unsigned int _lastTapCount;
-    NSTimer *_tapHandleTimer;
+    unsigned int  _lastTapCount;
+    NSTimer * _tapHandleTimer;
     struct CGPoint { 
         float x; 
         float y; 
-    } _tapLocation;
-    UITouch *_trackingTouch;
+    }  _tapLocation;
+    UITouch * _trackingTouch;
 }
 
 @property unsigned int tapCount;

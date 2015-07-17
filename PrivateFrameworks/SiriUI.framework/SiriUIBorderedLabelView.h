@@ -3,15 +3,15 @@
  */
 
 @interface SiriUIBorderedLabelView : UIView {
-    UIImageView *_borderImageView;
+    UIImageView * _borderImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    UIFont *_font;
-    UILabel *_ratingLabel;
+    }  _edgeInsets;
+    UIFont * _font;
+    UILabel * _ratingLabel;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;

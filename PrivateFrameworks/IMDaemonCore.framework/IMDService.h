@@ -3,15 +3,15 @@
  */
 
 @interface IMDService : NSObject <IMSystemMonitorListener> {
-    NSDictionary *_accountDefaults;
-    BOOL _blockPrefWriting;
-    NSBundle *_bundle;
-    NSDictionary *_cachedServiceDefaults;
-    NSDictionary *_cachedSetupServiceDefaults;
-    NSString *_internalName;
-    NSDictionary *_serviceDefaults;
-    NSDictionary *_serviceProperties;
-    Class _sessionClass;
+    NSDictionary * _accountDefaults;
+    BOOL  _blockPrefWriting;
+    NSBundle * _bundle;
+    NSDictionary * _cachedServiceDefaults;
+    NSDictionary * _cachedSetupServiceDefaults;
+    NSString * _internalName;
+    NSDictionary * _serviceDefaults;
+    NSDictionary * _serviceProperties;
+    Class  _sessionClass;
 }
 
 @property (nonatomic, readonly) Class accountClass;
@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) BOOL serviceRequiresHost;
 @property (nonatomic, readonly) BOOL serviceRequiresSingleAccount;
 @property (nonatomic, readonly) BOOL serviceShouldBeAlwaysLoggedIn;
+@property (nonatomic, readonly) BOOL serviceSupportsOneSessionForAllAccounts;
 @property (nonatomic, readonly) BOOL serviceSupportsPresence;
 @property (nonatomic, readonly) BOOL serviceSupportsRegistration;
 @property (nonatomic, readonly) BOOL serviceWantsNullHostReachability;
@@ -79,6 +80,7 @@
 - (BOOL)serviceRequiresHost;
 - (BOOL)serviceRequiresSingleAccount;
 - (BOOL)serviceShouldBeAlwaysLoggedIn;
+- (BOOL)serviceSupportsOneSessionForAllAccounts;
 - (BOOL)serviceSupportsPresence;
 - (BOOL)serviceSupportsRegistration;
 - (BOOL)serviceWantsNullHostReachability;

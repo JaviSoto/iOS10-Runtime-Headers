@@ -3,13 +3,13 @@
  */
 
 @interface SuggestedAppsController : NSObject {
-    NSArray *_specifiers;
+    NSArray * _specifiers;
 }
 
-@property (nonatomic, readonly, retain) NSArray *specifiers;
+@property (nonatomic, readonly) NSArray *specifiers;
 
+- (void).cxx_destruct;
 - (id)appStore:(id)arg1;
-- (void)dealloc;
 - (id)myApps:(id)arg1;
 - (void)reloadSpecifiers;
 - (void)setAppStore:(id)arg1 specifier:(id)arg2;

@@ -3,11 +3,11 @@
  */
 
 @interface SUTableTextFooterView : UIView {
-    UIFont *_font;
-    UIColor *_shadowColor;
-    int _textAlignment;
-    UIColor *_textColor;
-    NSArray *_textLines;
+    UIFont * _font;
+    UIColor * _shadowColor;
+    int  _textAlignment;
+    UIColor * _textColor;
+    NSArray * _textLines;
 }
 
 @property (nonatomic, retain) UIFont *font;

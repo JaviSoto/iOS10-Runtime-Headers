@@ -3,29 +3,29 @@
  */
 
 @interface PLMoviePlayerController : NSObject {
-    BOOL _TVOutEnabled;
-    UIAlertView *_alertView;
-    BOOL _audioSessionActive;
-    unsigned int _backgroundTaskId;
-    unsigned int _bufferingState;
-    <PLMoviePlayerControllerDelegate> *_delegate;
-    BOOL _exited;
-    BOOL _forceDisableTVOut;
-    BOOL _forceUpdateCurrentTime;
-    BOOL _hasPendingTime;
-    BOOL _isActiveController;
-    BOOL _isExternalPlayback;
-    BOOL _isPreparedForPlayback;
-    BOOL _isSeeking;
-    double _lastSetCurrentTimeTime;
-    NSString *_originalAudioCategory;
-    double _pendingTime;
-    unsigned int _pendingTimeSnapOption;
-    unsigned int _playbackState;
-    AVPlayer *_player;
-    AVPlayerItem *_playerItem;
-    PLTVOutWindow *_tvOutWindow;
-    PLMoviePlayerView *_view;
+    BOOL  _TVOutEnabled;
+    UIAlertView * _alertView;
+    BOOL  _audioSessionActive;
+    unsigned int  _backgroundTaskId;
+    unsigned int  _bufferingState;
+    <PLMoviePlayerControllerDelegate> * _delegate;
+    BOOL  _exited;
+    BOOL  _forceDisableTVOut;
+    BOOL  _forceUpdateCurrentTime;
+    BOOL  _hasPendingTime;
+    BOOL  _isActiveController;
+    BOOL  _isExternalPlayback;
+    BOOL  _isPreparedForPlayback;
+    BOOL  _isSeeking;
+    double  _lastSetCurrentTimeTime;
+    NSString * _originalAudioCategory;
+    double  _pendingTime;
+    unsigned int  _pendingTimeSnapOption;
+    unsigned int  _playbackState;
+    AVPlayer * _player;
+    AVPlayerItem * _playerItem;
+    PLTVOutWindow * _tvOutWindow;
+    PLMoviePlayerView * _view;
 }
 
 @property (nonatomic) BOOL TVOutEnabled;

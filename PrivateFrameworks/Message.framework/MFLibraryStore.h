@@ -3,11 +3,11 @@
  */
 
 @interface MFLibraryStore : MFMailMessageStore {
-    MFMessageCriterion *_criterion;
-    NSDate *_earliestReceivedDate;
-    unsigned int _fetchWindow;
-    MFMessageLibrary *_library;
-    unsigned int _serverMessageCount;
+    MFMessageCriterion * _criterion;
+    NSDate * _earliestReceivedDate;
+    unsigned int  _fetchWindow;
+    MFMessageLibrary * _library;
+    unsigned int  _serverMessageCount;
 }
 
 @property (nonatomic, retain) NSDate *earliestReceivedDate;
@@ -66,7 +66,9 @@
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (BOOL)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 withConsumer:(id)arg4 downloadIfNecessary:(BOOL)arg5 didDownload:(BOOL*)arg6;
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
+- (id)dateOfOldestNonIndexedNonSearchResultMessage;
 - (void)dealloc;
+- (void)deleteBodyDataForMessage:(id)arg1;
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(BOOL)arg2;
 - (void)doCompact;

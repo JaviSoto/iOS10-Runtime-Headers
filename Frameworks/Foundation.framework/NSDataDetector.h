@@ -3,7 +3,7 @@
  */
 
 @interface NSDataDetector : NSRegularExpression {
-    unsigned long long _types;
+    unsigned long long  _types;
 }
 
 @property (readonly) unsigned long long checkingTypes;

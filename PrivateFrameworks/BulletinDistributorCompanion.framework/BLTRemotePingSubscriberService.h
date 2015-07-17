@@ -3,11 +3,11 @@
  */
 
 @interface BLTRemotePingSubscriberService : NSObject <BLTPingService, NSXPCListenerDelegate> {
-    NSXPCConnection *_connectionFromServer;
-    NSXPCConnection *_connectionToServer;
-    <BLTPingSubscribing> *_delegate;
-    NSXPCListener *_listener;
-    NSString *_machServiceName;
+    NSXPCConnection * _connectionFromServer;
+    NSXPCConnection * _connectionToServer;
+    <BLTPingSubscribing> * _delegate;
+    NSXPCListener * _listener;
+    NSString * _machServiceName;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connectionFromServer;

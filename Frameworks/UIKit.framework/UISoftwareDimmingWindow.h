@@ -3,7 +3,7 @@
  */
 
 @interface UISoftwareDimmingWindow : UIWindow {
-    float _overlayLevel;
+    float  _overlayLevel;
 }
 
 @property (nonatomic) float overlayLevel;

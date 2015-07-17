@@ -3,8 +3,8 @@
  */
 
 @interface WKScrollViewDelegateForwarder : NSObject <UIScrollViewDelegate> {
-    <UIScrollViewDelegate> *_externalDelegate;
-    WKWebView *_internalDelegate;
+    <UIScrollViewDelegate> * _externalDelegate;
+    WKWebView * _internalDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

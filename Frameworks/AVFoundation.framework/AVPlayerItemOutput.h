@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemOutput : NSObject {
-    AVPlayerItemOutputInternal *_outputInternal;
+    AVPlayerItemOutputInternal * _outputInternal;
 }
 
 @property (nonatomic) BOOL suppressesPlayerRendering;

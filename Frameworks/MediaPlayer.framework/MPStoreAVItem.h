@@ -3,18 +3,19 @@
  */
 
 @interface MPStoreAVItem : MPAVItem {
-    NSString *_aggregateDictionaryItemIdentifier;
-    unsigned int _assetQuality;
-    BOOL _hasEverPrioritizedPlayerItem;
-    BOOL _hasPrioritizedPlayWhileDownloadSession;
-    BOOL _hasPrioritizedStreamingDownloadSession;
-    BOOL _hasValidAggregateDictionaryItemIdentifier;
-    BOOL _hasValidAssetQuality;
-    BOOL _isActivePlayerItem;
-    unsigned int _options;
-    MPStorePlayWhileDownloadSession *_playWhileDownloadSession;
-    MPMediaPlaybackItemMetadata *_playbackItemMetadata;
-    MPStreamingDownloadSession *_streamingDownloadSession;
+    NSString * _aggregateDictionaryItemIdentifier;
+    unsigned int  _assetQuality;
+    BOOL  _hasEverPrioritizedPlayerItem;
+    BOOL  _hasPrioritizedPlayWhileDownloadSession;
+    BOOL  _hasPrioritizedStreamingDownloadSession;
+    BOOL  _hasValidAggregateDictionaryItemIdentifier;
+    BOOL  _hasValidAssetQuality;
+    BOOL  _isActivePlayerItem;
+    unsigned int  _options;
+    MPStorePlayWhileDownloadSession * _playWhileDownloadSession;
+    MPMediaPlaybackItemMetadata * _playbackItemMetadata;
+    unsigned int  _preferredAssetQuality;
+    MPStreamingDownloadSession * _streamingDownloadSession;
 }
 
 @property (nonatomic, readonly) unsigned int options;
@@ -23,7 +24,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)_assetURLForCachedLocalPlaybackAssetFilePathForPlaybackItemMetadata:(id)arg1 withMinimumAssetQuality:(unsigned int)arg2 assetOptions:(id)arg3 returningProtectionType:(unsigned int*)arg4 assetQuality:(unsigned int*)arg5 usesPurchaseBundle:(BOOL*)arg6;
-+ (unsigned int)_preferredAssetQualityForCurrentNetworkConditions;
++ (unsigned int)_currentPreferredAssetQualityForPlaybackItemMetadata:(id)arg1;
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 + (BOOL)isPlaybackItemMetadataStreamingForAssetCreation:(id)arg1 returningProtectionType:(unsigned int*)arg2;
 + (BOOL)isPlaybackItemMetadataValidForAssetCreation:(id)arg1;

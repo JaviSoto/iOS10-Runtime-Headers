@@ -3,8 +3,8 @@
  */
 
 @interface SBSAccelerometer : NSObject <BKSAccelerometerDelegate> {
-    BKSAccelerometer *_bksMirror;
-    <SBSAccelerometerDelegate> *_delegate;
+    BKSAccelerometer * _bksMirror;
+    <SBSAccelerometerDelegate> * _delegate;
 }
 
 @property (nonatomic) BOOL accelerometerEventsEnabled;

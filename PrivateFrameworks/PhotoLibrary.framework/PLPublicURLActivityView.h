@@ -3,8 +3,8 @@
  */
 
 @interface PLPublicURLActivityView : UIView {
-    UILabel *_infoLabel;
-    UIActivityIndicatorView *_spinner;
+    UILabel * _infoLabel;
+    UIActivityIndicatorView * _spinner;
 }
 
 - (void)dealloc;

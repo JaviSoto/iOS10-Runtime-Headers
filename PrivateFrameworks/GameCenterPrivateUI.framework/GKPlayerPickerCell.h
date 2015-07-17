@@ -3,11 +3,11 @@
  */
 
 @interface GKPlayerPickerCell : GKBasePlayerCell {
-    UILabel *_infoLabel;
-    GKPlayerPickerInfo *_pickerInfo;
-    unsigned int _selectionStatus;
-    UIImageView *_selectionView;
-    UILabel *_statusLabel;
+    UILabel * _infoLabel;
+    GKPlayerPickerInfo * _pickerInfo;
+    unsigned int  _selectionStatus;
+    UIImageView * _selectionView;
+    UILabel * _statusLabel;
 }
 
 @property (nonatomic, retain) UILabel *infoLabel;

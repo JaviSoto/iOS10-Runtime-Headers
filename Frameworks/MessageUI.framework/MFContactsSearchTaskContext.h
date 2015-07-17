@@ -3,10 +3,10 @@
  */
 
 @interface MFContactsSearchTaskContext : NSObject {
-    <MFContactsSearchConsumer> *_consumer;
-    NSMutableSet *_operations;
-    NSMutableSet *_searchQueries;
-    NSString *_text;
+    <MFContactsSearchConsumer> * _consumer;
+    NSMutableSet * _operations;
+    NSMutableSet * _searchQueries;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) <MFContactsSearchConsumer> *consumer;
@@ -17,6 +17,10 @@
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 
 - (id)consumer;
+- (BOOL)consumerRespondsToAutocompleteCallbacks;
+- (BOOL)consumerRespondsToCorecipientCallbacks;
+- (BOOL)consumerRespondsToNetworkingMethods;
+- (BOOL)consumerRespondsToOldSortingCallbacks;
 - (void)dealloc;
 - (BOOL)done;
 - (id)operations;

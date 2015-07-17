@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDAutocompleteResult : PBCodable <NSCopying> {
-    NSMutableArray *_sections;
+    NSMutableArray * _sections;
 }
 
 @property (nonatomic, retain) NSMutableArray *sections;

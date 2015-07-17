@@ -3,9 +3,9 @@
  */
 
 @interface MKPlaceAttributionCell : ABContactCell {
-    UILabel *_label;
-    NSArray *_marginConstraints;
-    NSMutableArray *_scaledConstraints;
+    UILabel * _label;
+    NSArray * _marginConstraints;
+    NSMutableArray * _scaledConstraints;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributionString;

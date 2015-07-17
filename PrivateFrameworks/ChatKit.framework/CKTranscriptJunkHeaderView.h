@@ -3,14 +3,14 @@
  */
 
 @interface CKTranscriptJunkHeaderView : UIView {
-    _UIBackdropView *_backdropView;
-    UIView *_bottomSeparator;
-    UIView *_buttonSeparator;
-    UIButton *_ignoreButton;
-    UIButton *_reportJunkButton;
-    UIImageView *_titleImageView;
-    UILabel *_titleLabel;
-    UIView *_titleSeparator;
+    _UIBackdropView * _backdropView;
+    UIView * _bottomSeparator;
+    UIView * _buttonSeparator;
+    UIButton * _ignoreButton;
+    UIButton * _reportJunkButton;
+    UIImageView * _titleImageView;
+    UILabel * _titleLabel;
+    UIView * _titleSeparator;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backdropView;

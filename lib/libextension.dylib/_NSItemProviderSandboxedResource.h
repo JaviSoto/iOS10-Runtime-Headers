@@ -3,9 +3,9 @@
  */
 
 @interface _NSItemProviderSandboxedResource : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _accessingSecurityScopedResource;
-    NSURL *_resourceURL;
-    NSData *_sandboxExtensionToken;
+    BOOL  _accessingSecurityScopedResource;
+    NSURL * _resourceURL;
+    NSData * _sandboxExtensionToken;
 }
 
 @property (getter=isAccessingSecurityScopedResource, nonatomic) BOOL accessingSecurityScopedResource;

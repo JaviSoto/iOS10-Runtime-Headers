@@ -3,8 +3,8 @@
  */
 
 @interface SURotationImageModifier : SUImageModifier {
-    float _degrees;
-    int _orientation;
+    float  _degrees;
+    int  _orientation;
 }
 
 @property (nonatomic) float degrees;

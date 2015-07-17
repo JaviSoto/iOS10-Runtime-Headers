@@ -3,16 +3,16 @@
  */
 
 @interface PKPaper : NSObject {
-    NSString *_baseName;
-    BOOL _isTransverse;
-    int bottomMargin;
-    int height;
-    int leftMargin;
-    NSDictionary *mediaInfo;
-    NSString *name;
-    int rightMargin;
-    int topMargin;
-    int width;
+    NSString * _baseName;
+    BOOL  _isTransverse;
+    int  bottomMargin;
+    int  height;
+    int  leftMargin;
+    NSDictionary * mediaInfo;
+    NSString * name;
+    int  rightMargin;
+    int  topMargin;
+    int  width;
 }
 
 @property (nonatomic, readonly) NSString *baseName;

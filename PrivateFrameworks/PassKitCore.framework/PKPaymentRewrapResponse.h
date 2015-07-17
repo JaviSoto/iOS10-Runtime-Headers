@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentRewrapResponse : PKPaymentWebServiceResponse {
-    NSData *_rewrappedPaymentData;
+    NSData * _rewrappedPaymentData;
 }
 
 @property (nonatomic, retain) NSData *rewrappedPaymentData;

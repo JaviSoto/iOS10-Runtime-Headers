@@ -3,11 +3,11 @@
  */
 
 @interface MSTrackListCopyrightFooterView : UIView {
-    NSString *_text;
+    NSString * _text;
     struct CGSize { 
         float width; 
         float height; 
-    } _textSize;
+    }  _textSize;
 }
 
 @property (nonatomic, retain) NSString *text;

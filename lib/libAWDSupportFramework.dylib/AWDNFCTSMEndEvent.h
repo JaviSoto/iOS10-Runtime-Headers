@@ -3,9 +3,9 @@
  */
 
 @interface AWDNFCTSMEndEvent : PBCodable <NSCopying> {
-    NSData *_aid;
-    BOOL _authEnable;
-    NSData *_discretionaryData;
+    NSData * _aid;
+    BOOL  _authEnable;
+    NSData * _discretionaryData;
     struct { 
         unsigned int timeDeltaFromReference : 1; 
         unsigned int timestamp : 1; 
@@ -14,14 +14,14 @@
         unsigned int authEnable : 1; 
         unsigned int mfdEnable : 1; 
         unsigned int restricted : 1; 
-    } _has;
-    unsigned int _lcState;
-    BOOL _mfdEnable;
-    BOOL _restricted;
-    unsigned int _status;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned int  _lcState;
+    BOOL  _mfdEnable;
+    BOOL  _restricted;
+    unsigned int  _status;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic, retain) NSData *aid;

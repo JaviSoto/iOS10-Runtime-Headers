@@ -3,14 +3,14 @@
  */
 
 @interface BRCFSUploader : BRCFSSchedulerBase <BRCModule> {
-    BOOL _initialKickDone;
-    BOOL _isDefaultOwnerOutOfQuota;
-    BOOL _prepareReachedMax;
-    struct br_pacer_t { } *_quotaPacer;
-    BRCDeadlineToken *_retryQueueToken;
-    NSObject<OS_dispatch_queue> *_thumbnailQueue;
-    NSMutableDictionary *_thumbnailsOperations;
-    BRCDeadlineScheduler *_uploadsDeadlineScheduler;
+    BOOL  _initialKickDone;
+    BOOL  _isDefaultOwnerOutOfQuota;
+    BOOL  _prepareReachedMax;
+    struct br_pacer_t { } * _quotaPacer;
+    BRCDeadlineToken * _retryQueueToken;
+    NSObject<OS_dispatch_queue> * _thumbnailQueue;
+    NSMutableDictionary * _thumbnailsOperations;
+    BRCDeadlineScheduler * _uploadsDeadlineScheduler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL isCancelled;
 @property (nonatomic) BOOL isDefaultOwnerOutOfQuota;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *thumbnailsOperationsByID;
 @property (nonatomic, readonly) BRCDeadlineScheduler *uploadsDeadlineScheduler;
 
 - (void).cxx_destruct;
@@ -41,6 +42,7 @@
 - (void)_setQuotaAvailableForDefaultOwner:(unsigned long long)arg1;
 - (void)_startFetchThumbnail:(id)arg1 throttleID:(id)arg2;
 - (unsigned int)_thumbnailOperationsMax;
+- (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3;
 - (BOOL)_updatePackageRecord:(id)arg1 item:(id)arg2 stageID:(id)arg3 error:(id*)arg4;
 - (void)_updateRecord:(id)arg1 item:(id)arg2 thumbnailOperation:(id)arg3 stageID:(id)arg4;
 - (void)_updateRecord:(id)arg1 throttleID:(long long)arg2 thumbnailOperation:(id)arg3 stageID:(id)arg4;
@@ -60,9 +62,10 @@
 - (void)rescheduleThrottlesPendingInitialSyncInZone:(id)arg1;
 - (void)resume;
 - (void)scheduleQuotaFetchIfNeededForOwner:(id)arg1;
-- (void)sendBatchForSyncContext:(id)arg1 maxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (void)setIsDefaultOwnerOutOfQuota:(BOOL)arg1;
 - (void)suspend;
+- (id)thumbnailsOperationsByID;
+- (void)transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completionBlock:(id /* block */)arg4;
 - (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
 - (void)uploadItem:(id)arg1;
 - (id)uploadsDeadlineScheduler;

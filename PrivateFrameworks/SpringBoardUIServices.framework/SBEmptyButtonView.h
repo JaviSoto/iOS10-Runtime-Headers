@@ -3,7 +3,7 @@
  */
 
 @interface SBEmptyButtonView : UIView <TPNumberPadButtonProtocol> {
-    unsigned int _char;
+    unsigned int  _char;
 }
 
 @property unsigned int character;

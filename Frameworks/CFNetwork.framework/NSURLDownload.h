@@ -3,7 +3,7 @@
  */
 
 @interface NSURLDownload : NSObject <NSURLAuthenticationChallengeSender> {
-    NSURLDownloadInternal *_internal;
+    NSURLDownloadInternal * _internal;
 }
 
 @property (readonly, copy) NSString *debugDescription;

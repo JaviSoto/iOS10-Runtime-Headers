@@ -3,7 +3,7 @@
  */
 
 @interface NSPlaceholderValue : NSNumber {
-    struct _NSZone { } *zoneForInstance;
+    struct _NSZone { } * zoneForInstance;
 }
 
 + (BOOL)supportsSecureCoding;

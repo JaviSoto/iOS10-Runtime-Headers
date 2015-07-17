@@ -3,21 +3,21 @@
  */
 
 @interface MCEASAccountPayload : MCEmailAccountPayloadBase {
-    NSString *_accountDescription;
-    NSString *_accountPersistentUUID;
-    NSData *_certificatePersistentID;
-    NSString *_certificateUUID;
-    NSString *_emailAddress;
-    NSData *_embeddedCertificate;
-    NSString *_embeddedCertificateName;
-    NSString *_embeddedCertificatePassword;
-    NSString *_hostname;
-    NSNumber *_mailNumberOfPastDaysToSync;
-    NSString *_password;
-    BOOL _syncDefaultFoldersOnly;
-    NSNumber *_syncDefaultFoldersOnlyNum;
-    NSNumber *_useSSL;
-    NSString *_username;
+    NSString * _accountDescription;
+    NSString * _accountPersistentUUID;
+    NSData * _certificatePersistentID;
+    NSString * _certificateUUID;
+    NSString * _emailAddress;
+    NSData * _embeddedCertificate;
+    NSString * _embeddedCertificateName;
+    NSString * _embeddedCertificatePassword;
+    NSString * _hostname;
+    NSNumber * _mailNumberOfPastDaysToSync;
+    NSString * _password;
+    BOOL  _syncDefaultFoldersOnly;
+    NSNumber * _syncDefaultFoldersOnlyNum;
+    NSNumber * _useSSL;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly, retain) NSString *accountDescription;

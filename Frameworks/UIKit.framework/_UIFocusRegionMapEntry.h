@@ -3,7 +3,6 @@
  */
 
 @interface _UIFocusRegionMapEntry : NSObject <NSSecureCoding> {
-    UIView *_associatedView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,21 +12,17 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
+    }  _frame;
 }
 
-@property (nonatomic, retain) UIView *associatedView;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 
 + (BOOL)supportsSecureCoding;
 
-- (id)associatedView;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithCoder:(id)arg1;
-- (void)setAssociatedView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

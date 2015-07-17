@@ -3,8 +3,8 @@
  */
 
 @interface EMCellTextMapper : CMMapper {
-    EDString *edString;
-    EDStyle *edStyle;
+    EDString * edString;
+    EDStyle * edStyle;
 }
 
 - (double)contentWidth;

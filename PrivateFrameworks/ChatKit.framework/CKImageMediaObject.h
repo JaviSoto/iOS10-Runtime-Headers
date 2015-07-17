@@ -3,9 +3,14 @@
  */
 
 @interface CKImageMediaObject : CKMediaObject {
-    CKImageData *_backgroundImageData;
-    CKImageData *_imageData;
-    UIImage *_thumbnail;
+    NSURL * _appendedBundleURL;
+    CKImageData * _backgroundImageData;
+    CKImageData * _imageData;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _originalSize;
+    UIImage * _thumbnail;
 }
 
 @property (nonatomic, readonly, retain) CKImageData *imageData;
@@ -18,6 +23,7 @@
 + (Class)imageDataClass;
 + (BOOL)isPreviewable;
 
+- (void)_removeAppendedBundle;
 - (struct CGSize { float x1; float x2; })bbSize;
 - (BOOL)canExport;
 - (void)dealloc;
@@ -25,8 +31,12 @@
 - (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)imageData;
+- (id)initWithTransfer:(id)arg1;
 - (id)location;
 - (int)mediaType;
+- (struct CGSize { float x1; float x2; })originalSize;
+- (id)previewItemTitle;
+- (id)previewItemURL;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 

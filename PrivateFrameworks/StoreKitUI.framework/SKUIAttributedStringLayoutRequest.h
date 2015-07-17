@@ -3,10 +3,10 @@
  */
 
 @interface SKUIAttributedStringLayoutRequest : NSObject <SKUILayoutRequest> {
-    NSAttributedString *_attributedString;
-    int _numberOfLines;
-    BOOL _wantsBaselineOffset;
-    float _width;
+    NSAttributedString * _attributedString;
+    int  _numberOfLines;
+    BOOL  _wantsBaselineOffset;
+    float  _width;
 }
 
 @property (nonatomic, readonly) NSAttributedString *attributedString;

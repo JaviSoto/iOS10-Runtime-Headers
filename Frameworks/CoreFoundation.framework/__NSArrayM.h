@@ -3,15 +3,15 @@
  */
 
 @interface __NSArrayM : NSMutableArray {
-    unsigned int _doHardRetain;
-    unsigned int _doWeakAccess;
-    unsigned int _hasObjects;
-    unsigned int _hasStrongReferences;
-    id *_list;
-    unsigned long _mutations;
-    unsigned int _offset;
-    unsigned int _size;
-    unsigned int _used;
+    unsigned int  _doHardRetain;
+    unsigned int  _doWeakAccess;
+    unsigned int  _hasObjects;
+    unsigned int  _hasStrongReferences;
+    id * _list;
+    unsigned long  _mutations;
+    unsigned int  _offset;
+    unsigned int  _size;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3 :(BOOL)arg4 :(BOOL)arg5;

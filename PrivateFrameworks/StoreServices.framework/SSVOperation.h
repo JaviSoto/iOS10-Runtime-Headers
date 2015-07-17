@@ -3,9 +3,9 @@
  */
 
 @interface SSVOperation : NSOperation {
-    NSOperation *_childOperation;
-    NSMutableArray *_childRequests;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSOperation * _childOperation;
+    NSMutableArray * _childRequests;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 - (void).cxx_destruct;

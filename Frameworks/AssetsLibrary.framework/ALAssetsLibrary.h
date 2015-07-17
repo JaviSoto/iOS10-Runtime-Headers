@@ -3,7 +3,7 @@
  */
 
 @interface ALAssetsLibrary : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, retain) ALAssetsLibraryPrivate *internal;

@@ -3,8 +3,8 @@
  */
 
 @interface FBWaitForSceneDestructionTransaction : FBTransaction <FBSceneManagerObserver> {
-    FBSceneManager *_sceneManager;
-    FBScene *_sceneToWaitForDeath;
+    FBSceneManager * _sceneManager;
+    FBScene * _sceneToWaitForDeath;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 @property (readonly) Class superclass;
 
 - (void)_begin;
+- (BOOL)_canBeInterrupted;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
 - (void)dealloc;

@@ -3,15 +3,15 @@
  */
 
 @interface MSCLFacebookLoadImageOperation : NSOperation {
-    NSString *_accessToken;
-    SKUIImageDataConsumer *_dataConsumer;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSString * _accessToken;
+    SKUIImageDataConsumer * _dataConsumer;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
     struct CGSize { 
         float width; 
         float height; 
-    } _imagePixelSize;
-    NSString *_objectIdentifier;
-    id /* block */ _outputBlock;
+    }  _imagePixelSize;
+    NSString * _objectIdentifier;
+    id /* block */  _outputBlock;
 }
 
 @property (copy) NSString *accessToken;

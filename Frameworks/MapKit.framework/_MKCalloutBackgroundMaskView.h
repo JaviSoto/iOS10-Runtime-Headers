@@ -3,12 +3,12 @@
  */
 
 @interface _MKCalloutBackgroundMaskView : UIView {
-    UIView *_baseView;
-    UIImageView *_bottomArrow;
-    UIView *_currentArrowContainer;
-    UIImageView *_leftArrow;
-    UIImageView *_rightArrow;
-    UIImageView *_topArrow;
+    UIView * _baseView;
+    UIImageView * _bottomArrow;
+    UIView * _currentArrowContainer;
+    UIImageView * _leftArrow;
+    UIImageView * _rightArrow;
+    UIImageView * _topArrow;
 }
 
 @property (nonatomic, readonly) UIView *baseView;

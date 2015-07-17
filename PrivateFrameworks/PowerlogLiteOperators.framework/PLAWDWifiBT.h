@@ -3,17 +3,17 @@
  */
 
 @interface PLAWDWifiBT : PLAWDAuxMetrics {
-    PLEntryNotificationOperatorComposition *_btEventCallback;
-    PLEntryNotificationOperatorComposition *_btPowerCallback;
-    PLEntryNotificationOperatorComposition *_btRailCallback;
-    long _btSubmitCnt;
-    BOOL _isBTRailStart;
-    BOOL _isBTStart;
-    BOOL _isWiFiRailStart;
-    BOOL _isWiFiStart;
-    PLEntryNotificationOperatorComposition *_wifiEventCallback;
-    PLEntryNotificationOperatorComposition *_wifiRailCallback;
-    long _wifiSubmitCnt;
+    PLEntryNotificationOperatorComposition * _btEventCallback;
+    PLEntryNotificationOperatorComposition * _btPowerCallback;
+    PLEntryNotificationOperatorComposition * _btRailCallback;
+    long  _btSubmitCnt;
+    BOOL  _isBTRailStart;
+    BOOL  _isBTStart;
+    BOOL  _isWiFiRailStart;
+    BOOL  _isWiFiStart;
+    PLEntryNotificationOperatorComposition * _wifiEventCallback;
+    PLEntryNotificationOperatorComposition * _wifiRailCallback;
+    long  _wifiSubmitCnt;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *btEventCallback;
@@ -24,8 +24,6 @@
 @property BOOL isBTStart;
 @property BOOL isWiFiRailStart;
 @property BOOL isWiFiStart;
-@property PLOperator *operator;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property (retain) PLEntryNotificationOperatorComposition *wifiEventCallback;
 @property (retain) PLEntryNotificationOperatorComposition *wifiRailCallback;
 @property long wifiSubmitCnt;

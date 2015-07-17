@@ -3,7 +3,7 @@
  */
 
 @interface NSConstantValueExpression : NSExpression {
-    id constantValue;
+    id  constantValue;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

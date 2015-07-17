@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDComponent : PBCodable <NSCopying> {
-    GEOPDAttribution *_attribution;
-    int _cacheControl;
+    GEOPDAttribution * _attribution;
+    int  _cacheControl;
     struct { 
         unsigned int timestampFirstSeen : 1; 
         unsigned int cacheControl : 1; 
@@ -14,17 +14,17 @@
         unsigned int type : 1; 
         unsigned int valuesAvailable : 1; 
         unsigned int version : 1; 
-    } _has;
-    GEOPDSource *_source;
-    int _startIndex;
-    int _status;
-    double _timestampFirstSeen;
-    unsigned int _ttl;
-    int _type;
-    NSMutableArray *_values;
-    int _valuesAvailable;
-    unsigned int _version;
-    NSMutableArray *_versionDomains;
+    }  _has;
+    GEOPDSource * _source;
+    int  _startIndex;
+    int  _status;
+    double  _timestampFirstSeen;
+    unsigned int  _ttl;
+    int  _type;
+    NSMutableArray * _values;
+    int  _valuesAvailable;
+    unsigned int  _version;
+    NSMutableArray * _versionDomains;
 }
 
 @property (nonatomic, retain) GEOPDAttribution *attribution;

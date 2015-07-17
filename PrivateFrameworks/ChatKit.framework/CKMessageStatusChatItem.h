@@ -6,15 +6,15 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _buttonSize;
-    BOOL _buttonSizeLoaded;
+    }  _buttonSize;
+    BOOL  _buttonSizeLoaded;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _buttonTextAlignmentInsets;
-    NSAttributedString *_transcriptButtonText;
+    }  _buttonTextAlignmentInsets;
+    NSAttributedString * _transcriptButtonText;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } buttonSize;

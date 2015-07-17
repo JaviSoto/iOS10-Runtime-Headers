@@ -3,19 +3,19 @@
  */
 
 @interface TSDTextureSet : NSObject <NSCopying> {
-    BOOL _isFlippedHorizontally;
-    int _objectType;
-    int _stageIndex;
-    float _textureAnimationPercent;
+    BOOL  _isFlippedHorizontally;
+    int  _objectType;
+    int  _stageIndex;
+    float  _textureAnimationPercent;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } mActiveChunkIndices;
-    NSMutableArray *mAllTextures;
-    CALayer *mAlternateLayer;
-    NSDictionary *mBakedAttributes;
-    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
-    NSMutableDictionary *mBoundingRectForStage;
+    }  mActiveChunkIndices;
+    NSMutableArray * mAllTextures;
+    CALayer * mAlternateLayer;
+    NSDictionary * mBakedAttributes;
+    TSDBitmapRenderingQualityInfo * mBitmapRenderingQualityInfo;
+    NSMutableDictionary * mBoundingRectForStage;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,34 +25,34 @@
             float width; 
             float height; 
         } size; 
-    } mBounds;
+    }  mBounds;
     struct CGPoint { 
         float x; 
         float y; 
-    } mCenter;
-    unsigned int mChunkCount;
-    struct CGColorSpace { } *mColorSpace;
-    NSMutableDictionary *mFinalTextureForStage;
-    TSUNoCopyDictionary *mFinalTexturesToStageMap;
-    BOOL mIsBackground;
-    BOOL mIsBaked;
-    BOOL mIsMagicMove;
-    CALayer *mLayer;
-    int mMaxStageIndex;
+    }  mCenter;
+    unsigned int  mChunkCount;
+    struct CGColorSpace { } * mColorSpace;
+    NSMutableDictionary * mFinalTextureForStage;
+    TSUNoCopyDictionary * mFinalTexturesToStageMap;
+    BOOL  mIsBackground;
+    BOOL  mIsBaked;
+    BOOL  mIsMagicMove;
+    CALayer * mLayer;
+    int  mMaxStageIndex;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOriginalPosition;
-    TSDRep *mRep;
-    NSMutableDictionary *mReverseFinalTextureForStage;
-    TSUNoCopyDictionary *mReverseFinalTexturesToStageMap;
-    BOOL mShouldIncludeFinalTexturesInVisibleSet;
-    BOOL mShouldTransformUsingTextureCenter;
-    TSUNoCopyDictionary *mStageIndexForTexture;
-    float mTextureAngle;
-    float mTextureOpacity;
-    int mTextureZOrder;
-    NSMutableArray *mTextures;
+    }  mOriginalPosition;
+    TSDRep * mRep;
+    NSMutableDictionary * mReverseFinalTextureForStage;
+    TSUNoCopyDictionary * mReverseFinalTexturesToStageMap;
+    BOOL  mShouldIncludeFinalTexturesInVisibleSet;
+    BOOL  mShouldTransformUsingTextureCenter;
+    TSUNoCopyDictionary * mStageIndexForTexture;
+    float  mTextureAngle;
+    float  mTextureOpacity;
+    int  mTextureZOrder;
+    NSMutableArray * mTextures;
 }
 
 @property (nonatomic, readonly) NSArray *allTextures;

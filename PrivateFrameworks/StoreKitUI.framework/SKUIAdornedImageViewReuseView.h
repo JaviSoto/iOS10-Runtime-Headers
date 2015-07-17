@@ -3,11 +3,11 @@
  */
 
 @interface SKUIAdornedImageViewReuseView : SKUIViewReuseView <SKUIMediaPlayerObserver, SKUIViewElementView> {
-    SKUIImageViewElement *_imageViewElement;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    SKUIPlayButton *_playButton;
-    unsigned int _playButtonPosition;
-    NSMapTable *_viewElementViews;
+    SKUIImageViewElement * _imageViewElement;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    SKUIPlayButton * _playButton;
+    unsigned int  _playButtonPosition;
+    NSMapTable * _viewElementViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

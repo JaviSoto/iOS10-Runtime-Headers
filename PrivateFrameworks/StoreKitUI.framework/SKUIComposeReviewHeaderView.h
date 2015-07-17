@@ -3,12 +3,12 @@
  */
 
 @interface SKUIComposeReviewHeaderView : UIView <SKUIComposeTextFieldListViewDelegate> {
-    <SKUIComposeReviewHeaderDelegate> *_delegate;
-    SKStarRatingControl *_ratingControl;
-    SKUIReviewMetadata *_review;
-    BOOL _showNicknameField;
-    int _style;
-    SKUIComposeTextFieldListView *_textFieldListView;
+    <SKUIComposeReviewHeaderDelegate> * _delegate;
+    SKStarRatingControl * _ratingControl;
+    SKUIReviewMetadata * _review;
+    BOOL  _showNicknameField;
+    int  _style;
+    SKUIComposeTextFieldListView * _textFieldListView;
 }
 
 @property (nonatomic, readonly) int composeReviewStyle;

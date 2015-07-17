@@ -3,8 +3,8 @@
  */
 
 @interface MSObjectQueue : NSObject {
-    struct sqlite3 { } *_db;
-    struct __CFDictionary { } *_statements;
+    struct sqlite3 { } * _db;
+    struct __CFDictionary { } * _statements;
 }
 
 @property (readonly) long long count;

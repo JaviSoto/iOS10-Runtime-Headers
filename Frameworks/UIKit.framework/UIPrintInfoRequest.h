@@ -3,9 +3,9 @@
  */
 
 @interface UIPrintInfoRequest : NSObject {
-    id /* block */ _completionHandler;
-    PKPrinter *_printer;
-    int _requestState;
+    id /* block */  _completionHandler;
+    PKPrinter * _printer;
+    int  _requestState;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
@@ -13,8 +13,8 @@
 
 + (id)requestInfoForPrinter:(id)arg1;
 
+- (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (void)dealloc;
 - (void)requestPrintInfo;
 - (int)requestState;
 - (void)setCompletionHandler:(id /* block */)arg1;

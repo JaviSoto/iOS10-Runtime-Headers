@@ -3,17 +3,17 @@
  */
 
 @interface TTSSpeechSynthesizer : NSObject <TTSSpeechConnectionDelegate> {
-    unsigned int _audioQueueFlags;
-    unsigned int _audioSessionID;
-    BOOL _audioSessionIDIsValid;
-    NSMutableDictionary *_channels;
-    NSMutableArray *_currentRequestOwners;
-    <TTSSpeechSynthesizerDelegate> *_delegate;
-    int _footprint;
-    float _pitch;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _rate;
-    NSMutableArray *_speechRequests;
+    unsigned int  _audioQueueFlags;
+    unsigned int  _audioSessionID;
+    BOOL  _audioSessionIDIsValid;
+    NSMutableDictionary * _channels;
+    NSMutableArray * _currentRequestOwners;
+    <TTSSpeechSynthesizerDelegate> * _delegate;
+    int  _footprint;
+    float  _pitch;
+    NSObject<OS_dispatch_queue> * _queue;
+    float  _rate;
+    NSMutableArray * _speechRequests;
     struct { 
         unsigned int delegateStartWithRequest : 1; 
         unsigned int delegateFinishWithRequest : 1; 
@@ -22,10 +22,10 @@
         unsigned int delegateContinueWithRequest : 1; 
         unsigned int delegateWillSpeakWithRequest : 1; 
         unsigned int willUseInput : 1; 
-    } _synthesizerFlags;
-    BOOL _useSharedSession;
-    NSString *_voiceIdentifier;
-    float _volume;
+    }  _synthesizerFlags;
+    BOOL  _useSharedSession;
+    NSString * _voiceIdentifier;
+    float  _volume;
 }
 
 @property (nonatomic) <TTSSpeechSynthesizerDelegate> *delegate;
@@ -35,11 +35,13 @@
 @property (nonatomic, retain) NSString *voiceIdentifier;
 @property (nonatomic) float volume;
 
++ (id)allAvailableVoices;
 + (id)availableLanguageCodes;
 + (id)availableVoices;
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (void)initialize;
 + (BOOL)isSystemSpeaking;
++ (void)refreshAllAvailableVoices;
 
 - (void).cxx_destruct;
 - (BOOL)_continueSpeakingRequest:(id)arg1 withError:(id*)arg2;
@@ -71,6 +73,7 @@
 - (float)pitch;
 - (float)rate;
 - (id)resolvedVoiceIdentifier;
+- (id)resolvedVoiceIdentifierForLanguageCode:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFootprint:(int)arg1;
 - (void)setPitch:(float)arg1;

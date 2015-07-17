@@ -3,11 +3,11 @@
  */
 
 @interface PHObject : NSObject <NSCopying> {
-    BOOL _deleted;
-    NSManagedObjectID *_objectID;
-    PHPhotoLibrary *_photoLibrary;
-    unsigned int _propertyHint;
-    NSString *_uuid;
+    BOOL  _deleted;
+    NSManagedObjectID * _objectID;
+    PHPhotoLibrary * _photoLibrary;
+    unsigned int  _propertyHint;
+    NSString * _uuid;
 }
 
 @property (getter=isDeleted, readonly) BOOL deleted;
@@ -25,13 +25,10 @@
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsBursts;
-+ (BOOL)managedObjectSupportsCloudSharedType;
 + (BOOL)managedObjectSupportsHiddenState;
-+ (BOOL)managedObjectSupportsPhotoStreamType;
++ (BOOL)managedObjectSupportsSavedAssetType;
 + (BOOL)managedObjectSupportsTrashedState;
 + (BOOL)managedObjectSupportsVisibilityState;
-+ (BOOL)managedObjectSupportsWallpaperType;
-+ (BOOL)managedObjectSupportsiTunesSyncType;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (id)uuidFromLocalIdentifier:(id)arg1;
 

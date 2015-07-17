@@ -23,8 +23,8 @@
             float m33; 
         } ; 
         float m[16]; 
-    } _invModelviewMatrix;
-    int _invModelviewMatrixLoc;
+    }  _invModelviewMatrix;
+    int  _invModelviewMatrixLoc;
     union _GLKMatrix4 { 
         struct { 
             float m00; 
@@ -45,8 +45,8 @@
             float m33; 
         } ; 
         float m[16]; 
-    } _modelviewMatrix;
-    int _modelviewMatrixLoc;
+    }  _modelviewMatrix;
+    int  _modelviewMatrixLoc;
     union _GLKMatrix4 { 
         struct { 
             float m00; 
@@ -67,8 +67,8 @@
             float m33; 
         } ; 
         float m[16]; 
-    } _mvpMatrix;
-    int _mvpMatrixLoc;
+    }  _mvpMatrix;
+    int  _mvpMatrixLoc;
     union _GLKMatrix3 { 
         struct { 
             float m00; 
@@ -82,8 +82,8 @@
             float m22; 
         } ; 
         float m[9]; 
-    } _normalMatrix;
-    int _normalMatrixLoc;
+    }  _normalMatrix;
+    int  _normalMatrixLoc;
     union _GLKMatrix4 { 
         struct { 
             float m00; 
@@ -104,8 +104,8 @@
             float m33; 
         } ; 
         float m[16]; 
-    } _projectionMatrix;
-    int _projectionMatrixLoc;
+    }  _projectionMatrix;
+    int  _projectionMatrixLoc;
 }
 
 @property (nonatomic) union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; } invModelviewMatrix;

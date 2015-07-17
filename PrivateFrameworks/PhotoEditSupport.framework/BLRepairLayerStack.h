@@ -3,19 +3,19 @@
  */
 
 @interface BLRepairLayerStack : BLBaseLayerStack {
-    UIImage *_analysisImage;
-    int _mode;
-    UIImage *_redEyeSourceImage;
+    UIImage * _analysisImage;
+    int  _mode;
+    UIImage * _redEyeSourceImage;
     struct CGSize { 
         float width; 
         float height; 
-    } _redEyeSourceSize;
-    UIImage *_repairSourceImage;
+    }  _redEyeSourceSize;
+    UIImage * _repairSourceImage;
     struct CGSize { 
         float width; 
         float height; 
-    } _repairSourceSize;
-    UIImage *_sourceImage;
+    }  _repairSourceSize;
+    UIImage * _sourceImage;
 }
 
 @property (nonatomic, retain) UIImage *analysisImage;

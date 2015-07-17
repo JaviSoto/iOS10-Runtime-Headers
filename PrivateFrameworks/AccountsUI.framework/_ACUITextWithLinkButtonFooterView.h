@@ -3,9 +3,9 @@
  */
 
 @interface _ACUITextWithLinkButtonFooterView : UIView <PSHeaderFooterView> {
-    NSString *_footerText;
-    NSArray *_linkButtons;
-    UILabel *_textLabel;
+    NSString * _footerText;
+    NSArray * _linkButtons;
+    UILabel * _textLabel;
 }
 
 - (void).cxx_destruct;

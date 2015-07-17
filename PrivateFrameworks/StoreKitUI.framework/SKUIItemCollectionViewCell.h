@@ -3,7 +3,7 @@
  */
 
 @interface SKUIItemCollectionViewCell : SKUICollectionViewCell <SKUICellLayoutParentView> {
-    BOOL _layoutNeedsLayout;
+    BOOL  _layoutNeedsLayout;
 }
 
 @property (readonly, copy) NSString *debugDescription;

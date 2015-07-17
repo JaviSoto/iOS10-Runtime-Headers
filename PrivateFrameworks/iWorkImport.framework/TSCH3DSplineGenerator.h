@@ -3,23 +3,23 @@
  */
 
 @interface TSCH3DSplineGenerator : NSObject {
-    float mAdaptiveThreshold;
+    float  mAdaptiveThreshold;
     struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { 
         struct tvec2<float> {} *__begin_; 
         struct tvec2<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
             struct tvec2<float> {} *__first_; 
         } __end_cap_; 
-    } mControlPts;
-    float mDetail;
+    }  mControlPts;
+    float  mDetail;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
             int *__first_; 
         } __end_cap_; 
-    } mSplineExclude;
-    float mTension;
+    }  mSplineExclude;
+    float  mTension;
 }
 
 @property (nonatomic) float adaptiveThreshold;

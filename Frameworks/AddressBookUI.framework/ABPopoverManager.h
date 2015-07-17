@@ -3,15 +3,15 @@
  */
 
 @interface ABPopoverManager : NSObject <UIActionSheetDelegate, UIPopoverControllerDelegate> {
-    UIActionSheet *_autorotateActionSheet;
-    UIBarButtonItem *_autorotateBarButtonItem;
-    unsigned int _autorotateDirections;
-    UIPopoverController *_autorotatePopoverController;
-    UIResponder *_autorotateResponder;
-    UIView *_autorotateView;
-    id _realDelegate;
-    <ABPopoverRepresentDelegate> *_representDelegate;
-    BOOL _rotating;
+    UIActionSheet * _autorotateActionSheet;
+    UIBarButtonItem * _autorotateBarButtonItem;
+    unsigned int  _autorotateDirections;
+    UIPopoverController * _autorotatePopoverController;
+    UIResponder * _autorotateResponder;
+    UIView * _autorotateView;
+    id  _realDelegate;
+    <ABPopoverRepresentDelegate> * _representDelegate;
+    BOOL  _rotating;
 }
 
 @property (nonatomic, retain) UIActionSheet *autorotateActionSheet;

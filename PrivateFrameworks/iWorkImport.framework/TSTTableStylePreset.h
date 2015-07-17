@@ -3,8 +3,8 @@
  */
 
 @interface TSTTableStylePreset : TSPObject <TSKModel, TSSPreset, TSSStyleClient> {
-    TSTTableStyleNetwork *_styleNetwork;
-    unsigned int _tempUpgradePresetID;
+    TSTTableStyleNetwork * _styleNetwork;
+    unsigned int  _tempUpgradePresetID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

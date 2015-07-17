@@ -6,60 +6,60 @@
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _albumListsContent;
+    }  _albumListsContent;
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _albumsContent;
-    NSMutableSet *_assetsWithCloudCommentChanges;
-    int _cameraPreviewChangeListenerCount;
-    NSNumber *_cameraPreviewChangedToken;
+    }  _albumsContent;
+    NSMutableSet * _assetsWithCloudCommentChanges;
+    int  _cameraPreviewChangeListenerCount;
+    NSNumber * _cameraPreviewChangedToken;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedAlbumLists;
+    }  _changedAlbumLists;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedAlbums;
+    }  _changedAlbums;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedAssets;
+    }  _changedAssets;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedCloudFeedEntries;
-    NSMapTable *_changedInflightAssetsAlbumsToSnapshots;
+    }  _changedCloudFeedEntries;
+    NSMapTable * _changedInflightAssetsAlbumsToSnapshots;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedMomentLists;
+    }  _changedMomentLists;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedMoments;
-    NSMutableArray *_enqueuedNotifications;
-    BOOL _isOverloaded;
-    BOOL _isProcessingRemoteDidSave;
-    PLManagedObjectContext *_moc;
+    }  _changedMoments;
+    NSMutableArray * _enqueuedNotifications;
+    BOOL  _isOverloaded;
+    BOOL  _isProcessingRemoteDidSave;
+    PLManagedObjectContext * _moc;
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _momentListsContent;
+    }  _momentListsContent;
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _momentsContent;
-    NSMutableSet *_overloadedObjects;
-    NSDictionary *_remoteNotificationData;
-    NSMutableArray *_snapshots;
+    }  _momentsContent;
+    NSMutableSet * _overloadedObjects;
+    NSDictionary * _remoteNotificationData;
+    NSMutableArray * _snapshots;
 }
 
 @property (nonatomic, readonly) BOOL _shouldForceFetchingAlbumsToReload;

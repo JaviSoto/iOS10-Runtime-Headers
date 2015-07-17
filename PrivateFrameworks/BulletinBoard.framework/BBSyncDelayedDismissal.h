@@ -3,8 +3,8 @@
  */
 
 @interface BBSyncDelayedDismissal : NSObject {
-    BBBulletin *_bulletin;
-    unsigned int _feeds;
+    BBBulletin * _bulletin;
+    unsigned int  _feeds;
 }
 
 @property (nonatomic, retain) BBBulletin *bulletin;

@@ -3,12 +3,12 @@
  */
 
 @interface TSDMagicMoveTextureZOrderer : NSObject {
-    NSArray *_incomingTexturesInZOrder;
-    NSArray *_outgoingTexturesInZOrder;
-    NSArray *_percentTextures;
-    float *_percentTexturesTimes;
-    unsigned int _zOrderIntersectionsCount;
-    NSArray *_zOrderMatches;
+    NSArray * _incomingTexturesInZOrder;
+    NSArray * _outgoingTexturesInZOrder;
+    NSArray * _percentTextures;
+    float * _percentTexturesTimes;
+    unsigned int  _zOrderIntersectionsCount;
+    NSArray * _zOrderMatches;
 }
 
 @property (nonatomic, readonly) NSArray *flattenableAnimationMatches;

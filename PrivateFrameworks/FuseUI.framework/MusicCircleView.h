@@ -3,7 +3,7 @@
  */
 
 @interface MusicCircleView : UIView {
-    UIColor *_fillColor;
+    UIColor * _fillColor;
 }
 
 @property (nonatomic, retain) UIColor *fillColor;

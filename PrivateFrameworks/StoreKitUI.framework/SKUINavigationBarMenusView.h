@@ -3,15 +3,15 @@
  */
 
 @interface SKUINavigationBarMenusView : SKUIViewReuseView {
-    SEL _buttonAction;
-    id _buttonTarget;
+    SEL  _buttonAction;
+    id  _buttonTarget;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSArray *_menuViewElements;
+    }  _contentInset;
+    NSArray * _menuViewElements;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

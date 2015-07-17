@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetPadding : TSWPSpecPadding {
-    TSWPPadding *_padding;
-    BOOL _unset;
+    TSWPPadding * _padding;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

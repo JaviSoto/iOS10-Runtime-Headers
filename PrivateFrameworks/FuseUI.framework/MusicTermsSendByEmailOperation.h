@@ -3,8 +3,8 @@
  */
 
 @interface MusicTermsSendByEmailOperation : SSVComplexOperation {
-    NSString *_emailAddress;
-    NSError *_error;
+    NSString * _emailAddress;
+    NSError * _error;
 }
 
 @property (readonly, copy) NSString *emailAddress;

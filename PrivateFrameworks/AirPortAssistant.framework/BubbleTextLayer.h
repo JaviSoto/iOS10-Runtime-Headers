@@ -3,12 +3,12 @@
  */
 
 @interface BubbleTextLayer : CALayer {
-    NSMutableArray *_annotationPoints;
-    float _ascent;
+    NSMutableArray * _annotationPoints;
+    float  _ascent;
     struct CGSize { 
         float width; 
         float height; 
-    } _boundsSizeConstraint;
+    }  _boundsSizeConstraint;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,18 +18,18 @@
             float width; 
             float height; 
         } size; 
-    } _bubbleFrame;
+    }  _bubbleFrame;
     struct CGSize { 
         float width; 
         float height; 
-    } _bubbleSize;
+    }  _bubbleSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    struct __CTFont { } *_curCTFont;
-    float _descent;
-    void *_font;
+    }  _contentSize;
+    struct __CTFont { } * _curCTFont;
+    float  _descent;
+    void * _font;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -39,20 +39,20 @@
             float width; 
             float height; 
         } size; 
-    } _fontBounds;
-    struct CGColor { } *_generalShadowColor;
-    float _leading;
-    CALayer *_leftImageLayer;
+    }  _fontBounds;
+    struct CGColor { } * _generalShadowColor;
+    float  _leading;
+    CALayer * _leftImageLayer;
     struct CGSize { 
         float width; 
         float height; 
-    } _leftImageLayerSize;
-    id _owningView;
-    CALayer *_rightAccessoryLayer;
+    }  _leftImageLayerSize;
+    id  _owningView;
+    CALayer * _rightAccessoryLayer;
     struct CGSize { 
         float width; 
         float height; 
-    } _rightAccessoryLayerSize;
+    }  _rightAccessoryLayerSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -62,13 +62,13 @@
             float width; 
             float height; 
         } size; 
-    } _textFrame;
+    }  _textFrame;
     struct CGSize { 
         float width; 
         float height; 
-    } _textSize;
-    struct __CTLine { } *_theLine;
-    struct CGColor { } *_whiteShadowColor;
+    }  _textSize;
+    struct __CTLine { } * _theLine;
+    struct CGColor { } * _whiteShadowColor;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } boundsSizeConstraint;

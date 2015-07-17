@@ -3,26 +3,28 @@
  */
 
 @interface PSSearchModel : NSObject <PSSearchIndexOperationDelegate, PSSearchOperationDelegate, PSSpecifierObserver> {
-    PSSearchOperation *_activeSearchOperation;
-    NSString *_currentQuery;
-    PSSearchResults *_currentResults;
-    <PSSearchModelDataSource> *_dataSource;
-    NSMutableArray *_deferredSpecifierUpdates;
-    NSMutableSet *_delegates;
-    NSMutableSet *_entriesBeingIndexed;
-    NSMutableSet *_entriesPendingSearch;
-    BOOL _hasLoadedRootEntries;
-    BOOL _hasStartedIndexing;
-    NSOperationQueue *_indexOperationQueue;
-    BOOL _indexing;
-    NSMutableSet *_indexingEntriesWithLoadedDataSources;
-    NSString *_queryForCurrentResults;
-    NSMutableSet *_removedEntriesStillIndexing;
-    NSMutableSet *_removedEntriesStillSearching;
-    NSMutableArray *_rootEntries;
-    NSOperationQueue *_searchOperationQueue;
-    NSObject<OS_dispatch_queue> *_searchStateAccessQueue;
-    NSMapTable *_specifierDataSources;
+    PSSearchOperation * _activeSearchOperation;
+    NSString * _currentQuery;
+    PSSearchResults * _currentResults;
+    <PSSearchModelDataSource> * _dataSource;
+    NSMutableArray * _deferredSpecifierUpdates;
+    NSMutableSet * _delegates;
+    NSMutableSet * _entriesBeingIndexed;
+    NSMutableSet * _entriesPendingSearch;
+    BOOL  _hasLoadedRootEntries;
+    BOOL  _hasStartedIndexing;
+    NSOperationQueue * _indexOperationQueue;
+    BOOL  _indexing;
+    NSMutableSet * _indexingEntriesWithLoadedDataSources;
+    NSString * _queryForCurrentResults;
+    NSMutableSet * _removedEntriesStillIndexing;
+    NSMutableSet * _removedEntriesStillSearching;
+    NSMutableArray * _rootEntries;
+    NSOperationQueue * _searchOperationQueue;
+    NSObject<OS_dispatch_queue> * _searchStateAccessQueue;
+    BOOL  _showSectionInDetailText;
+    NSMapTable * _specifierDataSources;
+    BOOL  _waitUntilFinished;
 }
 
 @property (retain) PSSearchOperation *activeSearchOperation;
@@ -37,10 +39,13 @@
 @property (getter=isLoadingResults, nonatomic, readonly) BOOL loadingResults;
 @property (nonatomic, readonly) int observerType;
 @property (nonatomic, readonly) NSArray *rootEntries;
+@property (nonatomic) BOOL showSectionInDetailText;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL waitUntilFinished;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_addSearchEntries:(id)arg1 parent:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)_addSpecifierDataSource:(id)arg1 forSearchEntry:(id)arg2;
 - (void)_beginIndexingIfNecessary;
@@ -74,6 +79,7 @@
 - (BOOL)isLoadingResults;
 - (int)observerType;
 - (void)preheat;
+- (id)recursiveDescription;
 - (void)reloadRootSpecifier:(id)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)removeRootSpecifier:(id)arg1;
@@ -90,5 +96,9 @@
 - (void)setActiveSearchOperation:(id)arg1;
 - (void)setCurrentQuery:(id)arg1;
 - (void)setDataSource:(id)arg1;
+- (void)setShowSectionInDetailText:(BOOL)arg1;
+- (void)setWaitUntilFinished:(BOOL)arg1;
+- (BOOL)showSectionInDetailText;
+- (BOOL)waitUntilFinished;
 
 @end

@@ -8,8 +8,8 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIContentUnavailableView *_contentUnavailableView;
+    }  _contentInset;
+    SKUIContentUnavailableView * _contentUnavailableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

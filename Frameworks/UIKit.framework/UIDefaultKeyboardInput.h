@@ -3,7 +3,7 @@
  */
 
 @interface UIDefaultKeyboardInput : UIView <UIKeyboardInput, UITextInputPrivate> {
-    UITextInputTraits *m_traits;
+    UITextInputTraits * m_traits;
 }
 
 @property (nonatomic) BOOL acceptsEmoji;
@@ -35,6 +35,7 @@
 @property (nonatomic) BOOL learnsCorrections;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
 @property (nonatomic) int returnKeyType;

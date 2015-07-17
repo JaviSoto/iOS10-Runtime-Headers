@@ -3,12 +3,12 @@
  */
 
 @interface UIKeyboardSplitControlMenu : UIKeyboardMenuView {
-    id /* block */ _finishSplitTransitionBlock;
-    NSMutableArray *m_menuOptions;
+    id /* block */  _finishSplitTransitionBlock;
+    NSMutableArray * m_menuOptions;
     struct CGSize { 
         float width; 
         float height; 
-    } m_preferredSize;
+    }  m_preferredSize;
 }
 
 @property (nonatomic, copy) id /* block */ finishSplitTransitionBlock;

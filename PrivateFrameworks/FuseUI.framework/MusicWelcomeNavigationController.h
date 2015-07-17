@@ -3,11 +3,11 @@
  */
 
 @interface MusicWelcomeNavigationController : MusicNavigationController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSWelcomeNativeViewControllerDelegate> {
-    MusicClientContext *_clientContext;
-    <MusicWelcomeNavigationControllerDisappearanceObserver> *_disappearanceObserver;
-    NSMutableArray *_queuedNativeViewEventTypes;
-    BOOL _registeredWithModalNavigationStackRegistry;
-    MusicWelcomePlaceholderView *_welcomePlaceholderView;
+    MusicClientContext * _clientContext;
+    <MusicWelcomeNavigationControllerDisappearanceObserver> * _disappearanceObserver;
+    NSMutableArray * _queuedNativeViewEventTypes;
+    BOOL  _registeredWithModalNavigationStackRegistry;
+    MusicWelcomePlaceholderView * _welcomePlaceholderView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

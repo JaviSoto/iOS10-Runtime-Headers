@@ -3,10 +3,10 @@
  */
 
 @interface SKUniform : NSObject <NSCoding, NSCopying> {
-    NSString *_name;
-    unsigned int _seed;
-    SKTexture *_textureValue;
-    int _type;
+    NSString * _name;
+    unsigned int  _seed;
+    SKTexture * _textureValue;
+    int  _type;
     union { 
         float _floatValue; 
         union _GLKVector2 { 
@@ -104,7 +104,7 @@
             } ; 
             float m[16]; 
         } _floatMatrix4Value; 
-    } _value;
+    }  _value;
 }
 
 @property unsigned int _seed;
@@ -115,9 +115,9 @@
 @property union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } floatVector2Value;
 @property union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } floatVector3Value;
 @property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } floatVector4Value;
-@property (readonly) NSString *name;
-@property (retain) SKTexture *textureValue;
-@property (readonly) int uniformType;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) SKTexture *textureValue;
+@property (nonatomic, readonly) int uniformType;
 
 + (id)uniformWithName:(id)arg1;
 + (id)uniformWithName:(id)arg1 float:(float)arg2;
@@ -129,7 +129,6 @@
 + (id)uniformWithName:(id)arg1 floatVector4:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg2;
 + (id)uniformWithName:(id)arg1 texture:(id)arg2;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)_seed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

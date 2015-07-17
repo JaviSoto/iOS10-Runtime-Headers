@@ -3,8 +3,8 @@
  */
 
 @interface UITextMagnifierRenderer : UIView {
-    int m_autoscrollDirections;
-    int m_magnifierMethod;
+    int  m_autoscrollDirections;
+    int  m_magnifierMethod;
 }
 
 @property (nonatomic) int autoscrollDirections;

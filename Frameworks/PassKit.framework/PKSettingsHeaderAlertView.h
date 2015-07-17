@@ -3,9 +3,9 @@
  */
 
 @interface PKSettingsHeaderAlertView : UIView <PSHeaderFooterView> {
-    NSString *_descriptionText;
-    NSString *_headerText;
-    UITextView *_textView;
+    NSString * _descriptionText;
+    NSString * _headerText;
+    UITextView * _textView;
 }
 
 @property (nonatomic, retain) NSString *descriptionText;

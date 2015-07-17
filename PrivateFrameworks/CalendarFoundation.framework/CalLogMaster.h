@@ -3,16 +3,16 @@
  */
 
 @interface CalLogMaster : NSObject {
-    CalLogNode *_aslNode;
-    BOOL _autoFlush;
-    NSObject<OS_dispatch_group> *_dispatchGroup;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _hasValidNotificationRegistrationToken;
-    int _notificationRegistrationToken;
-    CalLogNode *_rootConfigurationNode;
-    CalLogNode *_standardOutNode;
-    NSArray *_topLevelNodes;
-    CalLogNode *_userNotificationNode;
+    CalLogNode * _aslNode;
+    BOOL  _autoFlush;
+    NSObject<OS_dispatch_group> * _dispatchGroup;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _hasValidNotificationRegistrationToken;
+    int  _notificationRegistrationToken;
+    CalLogNode * _rootConfigurationNode;
+    CalLogNode * _standardOutNode;
+    NSArray * _topLevelNodes;
+    CalLogNode * _userNotificationNode;
 }
 
 @property (nonatomic, retain) CalLogNode *aslNode;

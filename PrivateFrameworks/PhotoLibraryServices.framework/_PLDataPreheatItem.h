@@ -3,8 +3,8 @@
  */
 
 @interface _PLDataPreheatItem : PLPreheatItem {
-    PLImageTable *_imageTable;
-    unsigned int _thumbIndex;
+    PLImageTable * _imageTable;
+    unsigned int  _thumbIndex;
 }
 
 - (void)dealloc;

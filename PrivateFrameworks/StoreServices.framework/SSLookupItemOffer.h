@@ -3,7 +3,7 @@
  */
 
 @interface SSLookupItemOffer : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSString *buyParameters;

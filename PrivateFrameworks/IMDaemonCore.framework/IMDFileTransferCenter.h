@@ -3,13 +3,13 @@
  */
 
 @interface IMDFileTransferCenter : NSObject <IMFileCopierDelegate> {
-    NSMutableSet *_activeTransfers;
-    NSString *_contextStamp;
-    NSMutableDictionary *_guidToCopierMap;
-    NSMutableDictionary *_guidToSimpleCopierMap;
-    NSMutableDictionary *_guidToTransferMap;
-    NSTimer *_transferTimer;
-    NSMutableArray *_transferringTransfers;
+    NSMutableSet * _activeTransfers;
+    NSString * _contextStamp;
+    NSMutableDictionary * _guidToCopierMap;
+    NSMutableDictionary * _guidToSimpleCopierMap;
+    NSMutableDictionary * _guidToTransferMap;
+    NSTimer * _transferTimer;
+    NSMutableArray * _transferringTransfers;
 }
 
 @property (nonatomic, retain) NSString *contextStamp;

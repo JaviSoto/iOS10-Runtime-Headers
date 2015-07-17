@@ -3,11 +3,11 @@
  */
 
 @interface KNAnimParameterGroup : NSObject {
-    NSString *_fileName;
-    NSString *_name;
-    NSString *_originalFileName;
-    NSArray *_parameterArray;
-    NSMutableDictionary *_parametersDict;
+    NSString * _fileName;
+    NSString * _name;
+    NSString * _originalFileName;
+    NSArray * _parameterArray;
+    NSMutableDictionary * _parametersDict;
 }
 
 @property (nonatomic, readonly) NSString *name;

@@ -3,13 +3,13 @@
  */
 
 @interface _UIBarButtonItemAppearanceStorage : _UIBarItemAppearanceStorage {
-    _UIBarBackButtonItemAppearanceStorage *backButtonAppearance;
-    NSMutableDictionary *backgroundImages;
-    NSMutableDictionary *backgroundVerticalAdjustmentsForBarMetrics;
-    NSMutableDictionary *miniBackgroundImages;
-    NSValue *miniTitlePositionOffset;
-    UIColor *tintColor;
-    NSValue *titlePositionOffset;
+    _UIBarBackButtonItemAppearanceStorage * backButtonAppearance;
+    NSMutableDictionary * backgroundImages;
+    NSMutableDictionary * backgroundVerticalAdjustmentsForBarMetrics;
+    NSMutableDictionary * miniBackgroundImages;
+    NSValue * miniTitlePositionOffset;
+    UIColor * tintColor;
+    NSValue * titlePositionOffset;
 }
 
 @property (nonatomic, retain) NSValue *backButtonTitlePositionOffset;
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, retain) NSValue *titlePositionOffset;
 
+- (void).cxx_destruct;
 - (id)anyBackButtonBackgroundImage;
 - (id)anyBackgroundImage;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
@@ -25,7 +26,6 @@
 - (id)backButtonTitlePositionOffset;
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 isMini:(BOOL)arg3;
 - (float)backgroundVerticalAdjustmentForBarMetrics:(int)arg1;
-- (void)dealloc;
 - (id)miniBackButtonTitlePositionOffset;
 - (id)miniTitlePositionOffset;
 - (void)setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;

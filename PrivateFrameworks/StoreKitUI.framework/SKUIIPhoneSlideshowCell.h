@@ -6,9 +6,9 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    UIImageView *_imageView;
-    UIImageView *_playIcon;
+    }  _imageSize;
+    UIImageView * _imageView;
+    UIImageView * _playIcon;
 }
 
 @property (nonatomic, retain) UIImage *image;

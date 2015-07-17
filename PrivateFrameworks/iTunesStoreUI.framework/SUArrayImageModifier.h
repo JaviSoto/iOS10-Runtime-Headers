@@ -3,7 +3,7 @@
  */
 
 @interface SUArrayImageModifier : SUImageModifier {
-    NSArray *_modifiers;
+    NSArray * _modifiers;
 }
 
 @property (nonatomic, retain) NSArray *modifiers;

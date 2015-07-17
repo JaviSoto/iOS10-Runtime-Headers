@@ -3,10 +3,10 @@
  */
 
 @interface TPPageInfo : NSObject <TSDContainerInfo> {
-    TPBodyInfo *_bodyInfo;
-    TPDocumentRoot *_documentRoot;
-    <TPPageLayoutInfoProvider> *_layoutInfoProvider;
-    unsigned int _pageIndex;
+    TPBodyInfo * _bodyInfo;
+    TPDocumentRoot * _documentRoot;
+    <TPPageLayoutInfoProvider> * _layoutInfoProvider;
+    unsigned int  _pageIndex;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVPrincipalEmailDetailsResult : NSObject {
-    NSSet *_addresses;
-    NSString *_displayName;
-    NSURL *_principalURL;
+    NSSet * _addresses;
+    NSString * _displayName;
+    NSURL * _principalURL;
 }
 
 @property (nonatomic, retain) NSSet *addresses;
@@ -14,8 +14,8 @@
 
 + (id)resultFromResponseItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)addresses;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)principalURL;

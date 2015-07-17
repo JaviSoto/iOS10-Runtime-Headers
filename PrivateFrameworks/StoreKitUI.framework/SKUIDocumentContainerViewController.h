@@ -3,32 +3,32 @@
  */
 
 @interface SKUIDocumentContainerViewController : SKUIViewController <IKAppDocumentDelegate, SKUIMediaQueryDelegate, SKUIModalSourceViewProvider, SKUINavigationBarControllerDelegate, SKUINavigationBarDisplayConfiguring, SKUINavigationPaletteProvider, SKUIScrollingTabAppearanceStatusObserver, SKUIScrollingTabNestedPagedScrolling, SKUIToolbarControllerDelegate, UIViewControllerTransitioningDelegate> {
-    UIViewController *_beforeErrorChildViewController;
-    UIViewController *_childViewController;
-    NSArray *_defaultLeftBarButtonItems;
-    IKAppDocument *_document;
-    float _lastBottomLayoutGuideLength;
-    float _lastTopLayoutGuideLength;
-    SSVLoadURLOperation *_loadURLOperation;
-    SKUIMediaQueryEvaluator *_mediaQueryEvaluator;
-    SKUINavigationBarController *_navigationBarController;
-    NSNumber *_orientationAtDisappear;
-    NSNumber *_pageResponseAbsoluteTime;
-    NSSet *_personalizationItems;
-    NSDictionary *_presentationOptions;
+    UIViewController * _beforeErrorChildViewController;
+    UIViewController * _childViewController;
+    NSArray * _defaultLeftBarButtonItems;
+    IKAppDocument * _document;
+    float  _lastBottomLayoutGuideLength;
+    float  _lastTopLayoutGuideLength;
+    SSVLoadURLOperation * _loadURLOperation;
+    SKUIMediaQueryEvaluator * _mediaQueryEvaluator;
+    SKUINavigationBarController * _navigationBarController;
+    NSNumber * _orientationAtDisappear;
+    NSNumber * _pageResponseAbsoluteTime;
+    NSSet * _personalizationItems;
+    NSDictionary * _presentationOptions;
     struct { 
         float progress; 
         BOOL isBouncingOffTheEdge; 
-    } _scrollingTabAppearanceStatus;
-    NSArray *_searchBarControllers;
-    NSValue *_sizeAtDisappear;
-    unsigned int _templateViewElementType;
-    SKUIToolbarController *_toolbarController;
-    NSString *_urlString;
+    }  _scrollingTabAppearanceStatus;
+    NSArray * _searchBarControllers;
+    NSValue * _sizeAtDisappear;
+    unsigned int  _templateViewElementType;
+    SKUIToolbarController * _toolbarController;
+    NSString * _urlString;
     struct CGSize { 
         float width; 
         float height; 
-    } _viewSize;
+    }  _viewSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

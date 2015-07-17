@@ -3,9 +3,10 @@
  */
 
 @interface CIFaceCoreDetector : CIDetector {
-    CIContext *context;
-    FCRFaceDetector *faceCoreDetector;
-    NSMutableDictionary *featureOptions;
+    bool  _tracking;
+    CIContext * context;
+    FCRFaceDetector * faceCoreDetector;
+    NSMutableDictionary * featureOptions;
 }
 
 @property (nonatomic, retain) CIContext *context;

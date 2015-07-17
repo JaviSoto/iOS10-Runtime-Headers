@@ -3,7 +3,7 @@
  */
 
 @interface MPUTextButton : UIButton {
-    int _titleAlignment;
+    int  _titleAlignment;
 }
 
 @property (nonatomic) int titleAlignment;

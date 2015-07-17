@@ -3,12 +3,12 @@
  */
 
 @interface RadioLikeRequest : RadioRequest {
-    BOOL _isSeed;
-    long long _itemID;
-    int _likeStatus;
-    SSURLConnectionRequest *_request;
-    int _seedType;
-    RadioStation *_station;
+    BOOL  _isSeed;
+    long long  _itemID;
+    int  _likeStatus;
+    SSURLConnectionRequest * _request;
+    int  _seedType;
+    RadioStation * _station;
 }
 
 @property (nonatomic) BOOL isSeed;

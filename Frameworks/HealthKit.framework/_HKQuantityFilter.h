@@ -3,9 +3,9 @@
  */
 
 @interface _HKQuantityFilter : _HKFilter {
-    HKQuantity *_comparisonQuantity;
-    HKQuantityType *_dataType;
-    unsigned int _operatorType;
+    HKQuantity * _comparisonQuantity;
+    HKQuantityType * _dataType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) HKQuantity *comparisonQuantity;

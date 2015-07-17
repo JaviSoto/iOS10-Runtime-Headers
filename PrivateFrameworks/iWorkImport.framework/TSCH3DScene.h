@@ -3,15 +3,15 @@
  */
 
 @interface TSCH3DScene : NSObject {
-    TSCH3DScenePropertyAccessor *mAccessor;
-    NSObject<TSCH3DScenePropertyAccessorFactory> *mAccessorFactory;
-    TSCH3DCamera *mCamera;
-    TSUNoCopyDictionary *mDelegateMap;
-    NSMutableDictionary *mEnumeratorMap;
-    TSCH3DSceneObject *mMain;
-    NSMutableArray *mObjects;
-    TSCH3DScene *mOriginal;
-    NSMutableDictionary *mPropertiesMap;
+    TSCH3DScenePropertyAccessor * mAccessor;
+    NSObject<TSCH3DScenePropertyAccessorFactory> * mAccessorFactory;
+    TSCH3DCamera * mCamera;
+    TSUNoCopyDictionary * mDelegateMap;
+    NSMutableDictionary * mEnumeratorMap;
+    TSCH3DSceneObject * mMain;
+    NSMutableArray * mObjects;
+    TSCH3DScene * mOriginal;
+    NSMutableDictionary * mPropertiesMap;
 }
 
 @property (nonatomic, retain) TSCH3DScenePropertyAccessor *accessor;

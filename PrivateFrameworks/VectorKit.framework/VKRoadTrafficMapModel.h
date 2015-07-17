@@ -3,13 +3,19 @@
  */
 
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
-    BOOL _enabled;
-    VKRoadMapModel *_roadModel;
-    struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
-        struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
-            struct TrafficManager {} *__first_; 
+    BOOL  _enabled;
+    struct unique_ptr<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor>, std::__1::default_delete<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor> > > { 
+        struct __compressed_pair<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor> *, std::__1::default_delete<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor> > > { 
+            struct TrafficManager<ggl::PilledTrafficRibbonDescriptor> {} *__first_; 
         } __ptr_; 
-    } _trafficManager;
+    }  _pilledTrafficManager;
+    VKRoadMapModel * _roadModel;
+    struct unique_ptr<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor>, std::__1::default_delete<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor> > > { 
+        struct __compressed_pair<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor> *, std::__1::default_delete<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor> > > { 
+            struct TrafficManager<ggl::SolidTrafficRibbonDescriptor> {} *__first_; 
+        } __ptr_; 
+    }  _solidTrafficManager;
+    int  _sourceTileZtoStencilOffset;
 }
 
 @property (nonatomic) BOOL enabled;

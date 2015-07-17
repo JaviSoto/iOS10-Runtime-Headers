@@ -3,8 +3,8 @@
  */
 
 @interface CIVibrance : CIFilter <_CIFilterProperties> {
-    NSNumber *inputAmount;
-    CIImage *inputImage;
+    NSNumber * inputAmount;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) NSNumber *inputAmount;
@@ -20,7 +20,6 @@
 - (id)inputAmount;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAmount:(id)arg1;
 - (void)setInputImage:(id)arg1;
 

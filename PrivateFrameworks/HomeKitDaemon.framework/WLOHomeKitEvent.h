@@ -3,7 +3,7 @@
  */
 
 @interface WLOHomeKitEvent : NSObject {
-    unsigned int _eventType;
+    unsigned int  _eventType;
 }
 
 @property (nonatomic) unsigned int eventType;

@@ -3,8 +3,8 @@
  */
 
 @interface TSDSpecSetShadow : TSDSpecShadow {
-    TSDShadow *_shadow;
-    BOOL _unset;
+    TSDShadow * _shadow;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

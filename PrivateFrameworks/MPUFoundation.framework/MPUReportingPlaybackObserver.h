@@ -3,19 +3,19 @@
  */
 
 @interface MPUReportingPlaybackObserver : NSObject {
-    BOOL _SBEnabled;
-    NSData *_currentJingleReportingTimedMetadata;
-    BOOL _isReloadingWithPlaybackContext;
-    BOOL _isScrubbing;
-    MPAVItem *_itemForCurrentTimeChange;
-    double _lastPlayEventEndTimeForCurrentItem;
-    double _lastPlayEventTimeIntervalSinceReferenceDate;
-    BOOL _offline;
-    NSString *_playbackSessionID;
-    MPAVController *_player;
-    MPUReportingController *_reportingController;
-    double _startTimeForCurrentTimeChange;
-    unsigned long long _storeAccountID;
+    BOOL  _SBEnabled;
+    NSData * _currentJingleReportingTimedMetadata;
+    BOOL  _isReloadingWithPlaybackContext;
+    BOOL  _isScrubbing;
+    MPAVItem * _itemForCurrentTimeChange;
+    double  _lastPlayEventEndTimeForCurrentItem;
+    double  _lastPlayEventTimeIntervalSinceReferenceDate;
+    BOOL  _offline;
+    NSString * _playbackSessionID;
+    MPAVController * _player;
+    MPUReportingController * _reportingController;
+    double  _startTimeForCurrentTimeChange;
+    unsigned long long  _storeAccountID;
 }
 
 @property (getter=isSBEnabled, nonatomic) BOOL SBEnabled;

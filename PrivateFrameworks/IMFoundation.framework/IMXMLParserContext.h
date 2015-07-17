@@ -3,7 +3,7 @@
  */
 
 @interface IMXMLParserContext : NSObject {
-    NSData *_inContentAsData;
+    NSData * _inContentAsData;
 }
 
 @property (readonly, retain) NSData *inContentAsData;

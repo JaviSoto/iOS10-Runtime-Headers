@@ -12,9 +12,9 @@
             float width; 
             float height; 
         } size; 
-    } mCanvasRect;
-    int mCurrentSlideNumber;
-    NSArray *mSlides;
+    }  mCanvasRect;
+    int  mCurrentSlideNumber;
+    NSArray * mSlides;
 }
 
 @property (nonatomic) int currentSlideNumber;

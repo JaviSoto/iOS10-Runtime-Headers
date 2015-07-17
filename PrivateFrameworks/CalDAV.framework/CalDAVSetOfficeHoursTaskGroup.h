@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVSetOfficeHoursTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
-    ICSDocument *_calendarAvailability;
-    NSURL *_inboxURL;
+    ICSDocument * _calendarAvailability;
+    NSURL * _inboxURL;
 }
 
 @property (nonatomic, retain) ICSDocument *calendarAvailability;
@@ -15,8 +15,8 @@
 @property (nonatomic, retain) NSURL *inboxURL;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)calendarAvailability;
-- (void)dealloc;
 - (id)inboxURL;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 calendarAvailability:(id)arg3 taskManager:(id)arg4;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;

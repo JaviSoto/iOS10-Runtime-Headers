@@ -3,12 +3,12 @@
  */
 
 @interface MPHomeSharingML3DataProvider : MPMediaLibraryDataProviderML3 {
-    <MPArtworkDataSource> *_artworkDataSource;
-    NSMutableDictionary *_blocksForLoadingContainerPIDs;
-    NSObject<OS_dispatch_queue> *_containerFillQueue;
-    HSHomeSharingLibrary *_homeSharingLibrary;
-    NSMutableSet *_loadedContainerPIDs;
-    NSMutableDictionary *_tokenDataForDSIDs;
+    <MPArtworkDataSource> * _artworkDataSource;
+    NSMutableDictionary * _blocksForLoadingContainerPIDs;
+    NSObject<OS_dispatch_queue> * _containerFillQueue;
+    HSHomeSharingLibrary * _homeSharingLibrary;
+    NSMutableSet * _loadedContainerPIDs;
+    NSMutableDictionary * _tokenDataForDSIDs;
 }
 
 @property (nonatomic, readonly) HSHomeSharingLibrary *homeSharingLibrary;

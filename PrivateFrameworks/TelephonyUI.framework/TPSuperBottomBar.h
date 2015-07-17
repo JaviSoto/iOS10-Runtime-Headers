@@ -3,30 +3,31 @@
  */
 
 @interface TPSuperBottomBar : UIView <TPSlidingButtonDelegateProtocol> {
-    BOOL _blursBackground;
-    float _bottomMargin;
-    NSArray *_buttonLayoutConstraints;
-    int _currentState;
-    BOOL _declineAndMessageIsAvailable;
-    BOOL _declineAndRemindIsAvailable;
-    <TPSuperBottomBarDelegateProtocol> *_delegate;
-    BOOL _enabled;
-    NSMutableArray *_hijackedGestureRecognizers;
-    NSArray *_horizontalConstraintsForSupplementalButtons;
-    UIButton *_mainLeftButton;
-    UIButton *_mainRightButton;
-    int _orientation;
-    UIButton *_sideButtonLeft;
-    UIButton *_sideButtonRight;
-    TPSlidingButton *_slidingButton;
-    NSMutableArray *_stateStack;
-    UIButton *_supplementalBottomLeftButton;
-    UIButton *_supplementalBottomRightButton;
-    UIButton *_supplementalTopLeftButton;
-    UIButton *_supplementalTopRightButton;
-    UIView *_topLayoutGuide;
-    BOOL _usesLowerButtons;
-    float _yOffsetForLoweredButtons;
+    BOOL  _blursBackground;
+    float  _bottomMargin;
+    NSArray * _buttonLayoutConstraints;
+    int  _currentState;
+    BOOL  _declineAndMessageIsAvailable;
+    BOOL  _declineAndRemindIsAvailable;
+    <TPSuperBottomBarDelegateProtocol> * _delegate;
+    BOOL  _enabled;
+    NSMutableArray * _hijackedGestureRecognizers;
+    NSArray * _horizontalConstraintsForSupplementalButtons;
+    UIView * _mainButtonLayoutGuide;
+    UIButton * _mainLeftButton;
+    UIButton * _mainRightButton;
+    int  _orientation;
+    UIButton * _sideButtonLeft;
+    UIButton * _sideButtonRight;
+    TPSlidingButton * _slidingButton;
+    NSMutableArray * _stateStack;
+    UIButton * _supplementalBottomLeftButton;
+    UIButton * _supplementalBottomRightButton;
+    UIButton * _supplementalTopLeftButton;
+    UIButton * _supplementalTopRightButton;
+    UIView * _topLayoutGuide;
+    BOOL  _usesLowerButtons;
+    float  _yOffsetForLoweredButtons;
 }
 
 @property (nonatomic) BOOL blursBackground;
@@ -43,6 +44,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMutableArray *hijackedGestureRecognizers;
 @property (retain) NSArray *horizontalConstraintsForSupplementalButtons;
+@property (nonatomic, retain) UIView *mainButtonLayoutGuide;
 @property (nonatomic, retain) UIButton *mainLeftButton;
 @property (nonatomic, retain) UIButton *mainRightButton;
 @property (nonatomic) int orientation;
@@ -67,10 +69,9 @@
 + (float)defaultWidth;
 + (float)defaultYOffsetForBottomButtons;
 
+- (void).cxx_destruct;
 - (void)_clearHijackedGestureRecognizers;
-- (id)_horizontalConstraintsForSupplementalButtonsUsingLabels:(id)arg1;
 - (void)_startShopDemoMode;
-- (void)_updateHorizontalConstraintsForSupplementalButtons;
 - (void)addSubview:(id)arg1;
 - (void)animateFromIncomingCallStateToFaceTimeInCallState:(int)arg1 withCompletion:(id /* block */)arg2;
 - (void)animateFromIncomingCallStateToInCallState:(int)arg1 withCompletion:(id /* block */)arg2;
@@ -102,6 +103,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
+- (id)mainButtonLayoutGuide;
 - (id)mainLeftButton;
 - (id)mainRightButton;
 - (id)makeButtonWithType:(int)arg1 title:(id)arg2 image:(id)arg3 color:(id)arg4 font:(id)arg5 fontColor:(id)arg6;
@@ -130,6 +132,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHijackedGestureRecognizers:(id)arg1;
 - (void)setHorizontalConstraintsForSupplementalButtons:(id)arg1;
+- (void)setMainButtonLayoutGuide:(id)arg1;
 - (void)setMainLeftButton:(id)arg1;
 - (void)setMainRightButton:(id)arg1;
 - (void)setOrientation:(int)arg1;
@@ -160,6 +163,7 @@
 - (id)supplementalTopLeftButton;
 - (id)supplementalTopRightButton;
 - (id)topLayoutGuide;
+- (void)updateMainButtonLayoutGuide;
 - (void)updateTopLayoutGuide;
 - (int)updatedActionTypeForActionType:(int)arg1;
 - (id)updatedImageForActionType:(int)arg1 givenDefaultImage:(id)arg2;

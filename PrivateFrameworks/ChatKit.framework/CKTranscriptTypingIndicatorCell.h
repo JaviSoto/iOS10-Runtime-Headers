@@ -3,8 +3,8 @@
  */
 
 @interface CKTranscriptTypingIndicatorCell : CKTranscriptMessageCell {
-    CKTypingView *_typingIndicatorLayer;
-    CKTypingView *_typingView;
+    CKTypingView * _typingIndicatorLayer;
+    CKTypingView * _typingView;
 }
 
 @property (nonatomic, retain) CKTypingView *typingIndicatorLayer;

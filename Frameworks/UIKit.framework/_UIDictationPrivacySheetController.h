@@ -3,7 +3,7 @@
  */
 
 @interface _UIDictationPrivacySheetController : UINavigationController {
-    id /* block */ _dismissHandler;
+    id /* block */  _dismissHandler;
 }
 
 @property (copy) id /* block */ dismissHandler;

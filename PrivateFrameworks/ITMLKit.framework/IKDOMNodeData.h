@@ -3,18 +3,16 @@
  */
 
 @interface IKDOMNodeData : NSObject {
-    BOOL _childrenUpdated;
-    NSMutableDictionary *_featuresMap;
-    IKDOMNode *_ownerJSNode;
-    IKViewElementStyleComposer *_styleComposer;
-    BOOL _subtreeUpdated;
-    BOOL _updated;
+    BOOL  _childrenUpdated;
+    NSMutableDictionary * _featuresMap;
+    IKDOMNode * _ownerJSNode;
+    BOOL  _subtreeUpdated;
+    BOOL  _updated;
 }
 
 @property (getter=isChildrenUpdated, nonatomic) BOOL childrenUpdated;
 @property (nonatomic, retain) NSMutableDictionary *featuresMap;
 @property (nonatomic) IKDOMNode *ownerJSNode;
-@property (nonatomic, retain) IKViewElementStyleComposer *styleComposer;
 @property (getter=isSubtreeUpdated, nonatomic) BOOL subtreeUpdated;
 @property (getter=isUpdated, nonatomic) BOOL updated;
 
@@ -31,9 +29,7 @@
 - (void)setFeature:(id)arg1 forName:(id)arg2;
 - (void)setFeaturesMap:(id)arg1;
 - (void)setOwnerJSNode:(id)arg1;
-- (void)setStyleComposer:(id)arg1;
 - (void)setSubtreeUpdated:(BOOL)arg1;
 - (void)setUpdated:(BOOL)arg1;
-- (id)styleComposer;
 
 @end

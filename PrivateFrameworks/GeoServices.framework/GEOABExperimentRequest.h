@@ -3,7 +3,7 @@
  */
 
 @interface GEOABExperimentRequest : PBRequest <NSCopying> {
-    NSString *_guid;
+    NSString * _guid;
 }
 
 @property (nonatomic, retain) NSString *guid;

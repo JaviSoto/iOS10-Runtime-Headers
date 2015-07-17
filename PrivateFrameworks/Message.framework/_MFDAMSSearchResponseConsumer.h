@@ -3,11 +3,11 @@
  */
 
 @interface _MFDAMSSearchResponseConsumer : _MFDAMSBasicConsumer <DASearchQueryConsumer> {
-    MFConditionLock *doneCondition;
-    NSDate *latestDateToAdd;
-    NSMutableArray *matchingRemoteIDs;
-    double timeReceivedLastResponse;
-    unsigned int totalCount;
+    MFConditionLock * doneCondition;
+    NSDate * latestDateToAdd;
+    NSMutableArray * matchingRemoteIDs;
+    double  timeReceivedLastResponse;
+    unsigned int  totalCount;
 }
 
 @property (nonatomic, retain) NSDate *latestDateToAdd;

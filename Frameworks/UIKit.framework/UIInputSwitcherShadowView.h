@@ -3,7 +3,7 @@
  */
 
 @interface UIInputSwitcherShadowView : UIView {
-    _UIBackdropView *_blurView;
+    _UIBackdropView * _blurView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,11 +13,11 @@
             float width; 
             float height; 
         } size; 
-    } _keyRect;
-    UIKeyboardMenuView *_menu;
-    NSArray *m_gradientColors;
-    int m_mode;
-    float m_pointerOffset;
+    }  _keyRect;
+    UIKeyboardMenuView * _menu;
+    NSArray * m_gradientColors;
+    int  m_mode;
+    float  m_pointerOffset;
 }
 
 @property (nonatomic, retain) _UIBackdropView *blurView;

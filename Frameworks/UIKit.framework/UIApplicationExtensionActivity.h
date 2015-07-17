@@ -3,17 +3,17 @@
  */
 
 @interface UIApplicationExtensionActivity : UIActivity {
-    NSExtensionItem *__injectedExtensionItem;
-    _UIActivityBundleHelper *_activityBundleHelper;
-    NSExtension *_applicationExtension;
-    id _extensionContextIdentifier;
-    id /* block */ _extensionRequestCleanupCompletion;
-    UIViewController *_extensionViewController;
-    NSString *_localizedExtensionBundleName;
-    id /* block */ _presenterCompletion;
-    UIViewController *_presenterViewController;
-    UIImage *_renderedActivityImage;
-    UIImage *_renderedActivitySettingsImage;
+    NSExtensionItem * __injectedExtensionItem;
+    _UIActivityBundleHelper * _activityBundleHelper;
+    NSExtension * _applicationExtension;
+    id  _extensionContextIdentifier;
+    id /* block */  _extensionRequestCleanupCompletion;
+    UIViewController * _extensionViewController;
+    NSString * _localizedExtensionBundleName;
+    id /* block */  _presenterCompletion;
+    UIViewController * _presenterViewController;
+    UIImage * _renderedActivityImage;
+    UIImage * _renderedActivitySettingsImage;
 }
 
 @property (nonatomic, retain) NSExtensionItem *_injectedExtensionItem;
@@ -31,6 +31,7 @@
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
 + (int)activityCategory;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
 - (BOOL)_canBeExcludedByActivityViewController:(id)arg1;

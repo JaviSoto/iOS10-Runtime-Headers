@@ -3,12 +3,12 @@
  */
 
 @interface SKUIGiftAmountControl : UIControl <UITextFieldDelegate> {
-    NSMutableArray *_amountButtons;
-    UIView *_customAmountBackgroundView;
-    UITextField *_customAmountField;
-    SKUIGiftConfiguration *_giftConfiguration;
-    int _selectedAmount;
-    int _trackingAmount;
+    NSMutableArray * _amountButtons;
+    UIView * _customAmountBackgroundView;
+    UITextField * _customAmountField;
+    SKUIGiftConfiguration * _giftConfiguration;
+    int  _selectedAmount;
+    int  _trackingAmount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

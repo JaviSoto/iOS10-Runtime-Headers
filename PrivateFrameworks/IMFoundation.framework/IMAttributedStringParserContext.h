@@ -3,7 +3,7 @@
  */
 
 @interface IMAttributedStringParserContext : NSObject {
-    NSAttributedString *_inString;
+    NSAttributedString * _inString;
 }
 
 @property (readonly, retain) NSAttributedString *inString;

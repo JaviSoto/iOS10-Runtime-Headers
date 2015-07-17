@@ -3,14 +3,14 @@
  */
 
 @interface PHChangeRequestHelper : NSObject {
-    id _changeRequest;
-    BOOL _didRequestUUID;
-    BOOL _isMutated;
-    BOOL _isNew;
-    NSMutableDictionary *_mutations;
-    NSManagedObjectID *_objectID;
-    NSString *_uuid;
-    NSString *_uuidSaveToken;
+    id  _changeRequest;
+    BOOL  _didRequestUUID;
+    BOOL  _isMutated;
+    BOOL  _isNew;
+    NSMutableDictionary * _mutations;
+    NSManagedObjectID * _objectID;
+    NSString * _uuid;
+    NSString * _uuidSaveToken;
 }
 
 @property (nonatomic) id changeRequest;

@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewServiceSessionManager : NSObject <NSXPCListenerDelegate> {
-    int _connectionNotificationToken;
-    NSXPCListener *_listener;
-    int _lock;
-    NSMutableArray *_sessions;
+    int  _connectionNotificationToken;
+    NSXPCListener * _listener;
+    int  _lock;
+    NSMutableArray * _sessions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,6 +18,7 @@
 + (BOOL)hasActiveSessions;
 + (void)startViewServiceSessionManagerAsPlugin:(BOOL)arg1;
 
+- (void).cxx_destruct;
 - (void)_configureSessionForConnection:(id)arg1;
 - (BOOL)_hasActiveSessions;
 - (id)_initAsPlugIn:(BOOL)arg1;

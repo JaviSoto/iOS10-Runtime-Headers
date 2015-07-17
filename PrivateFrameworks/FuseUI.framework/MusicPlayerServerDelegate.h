@@ -3,16 +3,16 @@
  */
 
 @interface MusicPlayerServerDelegate : NSObject <MPMusicPlayerControllerServerDelegate> {
-    MusicAVPlayer *_applicationPlayer;
-    MPMediaItem *_firstItem;
-    MPNowPlayingObserver *_nowPlayingObserver;
-    int _playbackShuffleMode;
-    id /* block */ _repeatChangeHandler;
-    MPAVController *_repeatChangeHandlerPlayer;
-    int _repeatMode;
-    id /* block */ _shuffleChangeHandler;
-    MPAVController *_shuffleChangeHandlerPlayer;
-    int _shuffleMode;
+    MusicAVPlayer * _applicationPlayer;
+    MPMediaItem * _firstItem;
+    MPNowPlayingObserver * _nowPlayingObserver;
+    int  _playbackShuffleMode;
+    id /* block */  _repeatChangeHandler;
+    MPAVController * _repeatChangeHandlerPlayer;
+    int  _repeatMode;
+    id /* block */  _shuffleChangeHandler;
+    MPAVController * _shuffleChangeHandlerPlayer;
+    int  _shuffleMode;
 }
 
 @property (readonly, copy) NSString *debugDescription;

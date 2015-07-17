@@ -3,7 +3,7 @@
  */
 
 @interface GEONameInfoList : PBCodable <NSCopying> {
-    NSMutableArray *_nameInfos;
+    NSMutableArray * _nameInfos;
 }
 
 @property (nonatomic, retain) NSMutableArray *nameInfos;

@@ -3,8 +3,8 @@
  */
 
 @interface BLTObjectStore : NSObject <BLTObjectCacheDelegate> {
-    NSString *_path;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _path;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

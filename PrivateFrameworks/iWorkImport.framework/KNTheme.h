@@ -3,16 +3,16 @@
  */
 
 @interface KNTheme : TSATheme <KNSlideCollection, TSKDocumentObject, TSKTransformableObject, TSSPresetSource> {
-    NSMutableArray *mClassicThemeRecords;
-    NSMutableDictionary *mCustomEffectTimingCurves;
-    BOOL mDefaultMasterSlideNodeIsOurBestGuess;
-    NSObject<OS_dispatch_queue> *mDefaultMasterSlideNodeQueue;
-    TSUWeakReference *mDefaultMasterSlideNodeReference;
-    TSUPointerKeyDictionary *mFormulaReferenceNamesForSlideNodesCache;
-    NSArray *mMasters;
-    NSMutableDictionary *mSlideNodesForFormulaReferenceNamesCache;
-    int mSlideStyleIndex;
-    NSString *mUUID;
+    NSMutableArray * mClassicThemeRecords;
+    NSMutableDictionary * mCustomEffectTimingCurves;
+    BOOL  mDefaultMasterSlideNodeIsOurBestGuess;
+    NSObject<OS_dispatch_queue> * mDefaultMasterSlideNodeQueue;
+    TSUWeakReference * mDefaultMasterSlideNodeReference;
+    TSUPointerKeyDictionary * mFormulaReferenceNamesForSlideNodesCache;
+    NSArray * mMasters;
+    NSMutableDictionary * mSlideNodesForFormulaReferenceNamesCache;
+    int  mSlideStyleIndex;
+    NSString * mUUID;
 }
 
 @property (nonatomic, retain) NSString *UUID;

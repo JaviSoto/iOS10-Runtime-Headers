@@ -6,12 +6,11 @@
     struct OADFormulaArg { 
         int type; 
         int value; 
-    } mArgs;
-    NSString *mName;
-    int mType;
+    }  mArgs;
+    NSString * mName;
+    int  mType;
 }
 
-- (id).cxx_construct;
 - (struct OADFormulaArg { int x1; int x2; })argAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;

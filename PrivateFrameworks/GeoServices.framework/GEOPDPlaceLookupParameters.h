@@ -5,13 +5,13 @@
 @interface GEOPDPlaceLookupParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int resultProviderId : 1; 
-    } _has;
+    }  _has;
     struct { 
         unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
-    } _muids;
-    int _resultProviderId;
+    }  _muids;
+    int  _resultProviderId;
 }
 
 @property (nonatomic) BOOL hasResultProviderId;

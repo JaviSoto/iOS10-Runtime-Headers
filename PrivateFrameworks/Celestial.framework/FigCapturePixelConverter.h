@@ -3,11 +3,11 @@
  */
 
 @interface FigCapturePixelConverter : NSObject {
-    BWVideoFormat *_outputFormat;
-    struct opaqueCMFormatDescription { } *_outputFormatDescription;
-    BWPixelBufferPool *_pool;
-    int _poolCapacity;
-    struct OpaqueVTPixelTransferSession { } *_transferSession;
+    BWVideoFormat * _outputFormat;
+    struct opaqueCMFormatDescription { } * _outputFormatDescription;
+    BWPixelBufferPool * _pool;
+    int  _poolCapacity;
+    struct OpaqueVTPixelTransferSession { } * _transferSession;
 }
 
 + (void)initialize;

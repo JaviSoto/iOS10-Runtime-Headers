@@ -3,7 +3,7 @@
  */
 
 @interface PKDiffView : UIView {
-    CAShapeLayer *_shapeLayer;
+    CAShapeLayer * _shapeLayer;
 }
 
 + (void)initialize;

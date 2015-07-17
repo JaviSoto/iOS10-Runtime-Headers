@@ -3,7 +3,7 @@
  */
 
 @interface MCDAlbumsViewController : MCDTableViewController {
-    MPMediaPredicate *_compilationPredicate;
+    MPMediaPredicate * _compilationPredicate;
 }
 
 + (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;

@@ -3,16 +3,16 @@
  */
 
 @interface MPVolumeController : NSObject {
-    float _EUVolumeLimit;
-    BOOL _debugVolumeWarning;
-    <MPVolumeControllerDelegate> *_delegate;
-    MPAVController *_player;
-    NSString *_volumeAudioCategory;
-    float _volumeValue;
-    BOOL _volumeWarningBlinking;
-    BOOL _volumeWarningEnabled;
-    int _volumeWarningState;
-    UIImage *_volumeWarningTrackImage;
+    float  _EUVolumeLimit;
+    BOOL  _debugVolumeWarning;
+    <MPVolumeControllerDelegate> * _delegate;
+    MPAVController * _player;
+    NSString * _volumeAudioCategory;
+    float  _volumeValue;
+    BOOL  _volumeWarningBlinking;
+    BOOL  _volumeWarningEnabled;
+    int  _volumeWarningState;
+    UIImage * _volumeWarningTrackImage;
 }
 
 @property (nonatomic, readonly) float EUVolumeLimit;

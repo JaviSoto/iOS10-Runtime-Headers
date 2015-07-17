@@ -3,12 +3,12 @@
  */
 
 @interface MusicNowPlayingVolumeSlider : MPVolumeSlider <MPUVibrantContentDisabling> {
-    <MusicNowPlayingVolumeSliderDelegate> *_delegate;
-    float _displayScaleUsedForTrackImages;
-    UIView *_knobView;
-    UIColor *_maximumTintUsedForTrackImageColor;
-    UIColor *_minimumTintUsedForTrackImageColor;
-    MPUTransportButton *_routesButton;
+    <MusicNowPlayingVolumeSliderDelegate> * _delegate;
+    float  _displayScaleUsedForTrackImages;
+    UIView * _knobView;
+    UIColor * _maximumTintUsedForTrackImageColor;
+    UIColor * _minimumTintUsedForTrackImageColor;
+    MPUTransportButton * _routesButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;

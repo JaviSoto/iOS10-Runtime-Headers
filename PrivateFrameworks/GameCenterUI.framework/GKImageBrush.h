@@ -3,7 +3,7 @@
  */
 
 @interface GKImageBrush : GKThemeBrush {
-    id /* block */ _inputTransform;
+    id /* block */  _inputTransform;
 }
 
 @property (nonatomic, copy) id /* block */ inputTransform;

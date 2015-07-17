@@ -3,12 +3,12 @@
  */
 
 @interface PKPaymentButton : UIButton {
-    UILabel *_buyLabel;
-    UIView *_container;
-    UIView *_highlightView;
-    PKPaymentButtonPDFView *_pdfView;
-    int _style;
-    int _type;
+    UILabel * _buyLabel;
+    UIView * _container;
+    UIView * _highlightView;
+    PKPaymentButtonPDFView * _pdfView;
+    int  _style;
+    int  _type;
 }
 
 @property (nonatomic, retain) UILabel *buyLabel;

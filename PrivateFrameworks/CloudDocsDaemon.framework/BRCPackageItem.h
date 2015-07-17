@@ -3,20 +3,20 @@
  */
 
 @interface BRCPackageItem : NSObject {
-    long long _assetRank;
-    BRCLocalContainer *_container;
-    NSData *_contentSignature;
-    unsigned long long _fileID;
-    BRCGenerationID *_generationID;
-    BOOL _isDirty;
-    BOOL _mode;
-    long long _mtime;
-    unsigned long long _packageID;
-    NSString *_pathInPackage;
-    NSData *_quarantineInfo;
-    long long _size;
-    NSString *_symlinkContent;
-    int _type;
+    long long  _assetRank;
+    BRCLocalContainer * _container;
+    NSData * _contentSignature;
+    unsigned long long  _fileID;
+    BRCGenerationID * _generationID;
+    BOOL  _isDirty;
+    BOOL  _mode;
+    long long  _mtime;
+    unsigned long long  _packageID;
+    NSString * _pathInPackage;
+    NSData * _quarantineInfo;
+    long long  _size;
+    NSString * _symlinkContent;
+    int  _type;
 }
 
 @property (nonatomic, readonly) long long assetRank;
@@ -45,7 +45,7 @@
 + (id)packageItemInContainer:(id)arg1 documentID:(unsigned int)arg2 relativePath:(id)arg3;
 + (struct PQLResultSet { Class x1; }*)packageItemsForDocumentID:(unsigned int)arg1 order:(unsigned int)arg2 container:(id)arg3;
 + (struct PQLResultSet { Class x1; }*)packageItemsForItem:(id)arg1 order:(unsigned int)arg2;
-+ (BOOL)updateSigaturesForFilesInItem:(id)arg1 fromCKPackage:(id)arg2 error:(id*)arg3;
++ (BOOL)updateSignaturesForFilesInItem:(id)arg1 fromCKPackage:(id)arg2 error:(id*)arg3;
 + (BOOL)updateSnapshotAtPath:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;

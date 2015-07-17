@@ -3,12 +3,12 @@
  */
 
 @interface NSSQLBindVariable : NSObject {
-    NSAttributeDescription *_attributeDescription;
-    int _cd_rc;
-    unsigned int _index;
-    long long _int64;
-    unsigned int _sqlType;
-    id _value;
+    NSAttributeDescription * _attributeDescription;
+    int  _cd_rc;
+    unsigned int  _index;
+    long long  _int64;
+    unsigned int  _sqlType;
+    id  _value;
 }
 
 - (BOOL)_isDeallocating;

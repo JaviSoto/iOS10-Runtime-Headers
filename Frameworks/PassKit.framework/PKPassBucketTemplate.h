@@ -3,7 +3,7 @@
  */
 
 @interface PKPassBucketTemplate : NSObject {
-    int _bucketAlignment;
+    int  _bucketAlignment;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,12 +13,12 @@
             float width; 
             float height; 
         } size; 
-    } _bucketRect;
-    PKPassFieldTemplate *_defaultFieldTemplate;
-    NSMutableArray *_fieldTemplates;
-    unsigned int _maxFields;
-    float _minFieldPadding;
-    BOOL _sitsOnStripImage;
+    }  _bucketRect;
+    PKPassFieldTemplate * _defaultFieldTemplate;
+    NSMutableArray * _fieldTemplates;
+    unsigned int  _maxFields;
+    float  _minFieldPadding;
+    BOOL  _sitsOnStripImage;
 }
 
 @property (nonatomic) int bucketAlignment;

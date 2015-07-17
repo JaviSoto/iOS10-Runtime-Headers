@@ -3,24 +3,24 @@
  */
 
 @interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _autoDownloadAllowableForCellular;
-    BOOL _disableCDLevel4;
-    BOOL _disableSiriVoiceDeletion;
-    SUDocumentation *_documentation;
-    BOOL _downloadAllowableForCellular;
-    unsigned long long _downloadSize;
-    BOOL _downloadable;
-    BOOL _downloadableOverCellular;
-    NSString *_humanReadableUpdateName;
-    unsigned long long _installationSize;
-    unsigned long long _msuPrepareSize;
-    NSString *_productBuildVersion;
-    NSString *_productSystemName;
-    NSString *_productVersion;
-    NSString *_publisher;
-    BOOL _streamingZipCapable;
-    unsigned long long _unarchiveSize;
-    int _updateType;
+    BOOL  _autoDownloadAllowableForCellular;
+    BOOL  _disableCDLevel4;
+    BOOL  _disableSiriVoiceDeletion;
+    SUDocumentation * _documentation;
+    BOOL  _downloadAllowableForCellular;
+    unsigned long long  _downloadSize;
+    BOOL  _downloadable;
+    BOOL  _downloadableOverCellular;
+    NSString * _humanReadableUpdateName;
+    unsigned long long  _installationSize;
+    unsigned long long  _msuPrepareSize;
+    NSString * _productBuildVersion;
+    NSString * _productSystemName;
+    NSString * _productVersion;
+    NSString * _publisher;
+    BOOL  _streamingZipCapable;
+    unsigned long long  _unarchiveSize;
+    int  _updateType;
 }
 
 @property (nonatomic) BOOL autoDownloadAllowableForCellular;

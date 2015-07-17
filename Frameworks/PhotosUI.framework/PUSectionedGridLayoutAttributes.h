@@ -3,10 +3,10 @@
  */
 
 @interface PUSectionedGridLayoutAttributes : UICollectionViewLayoutAttributes {
-    BOOL _exists;
-    BOOL _extendsTopContent;
-    BOOL _floating;
-    float _interactiveTransitionProgress;
+    BOOL  _exists;
+    BOOL  _extendsTopContent;
+    BOOL  _floating;
+    float  _interactiveTransitionProgress;
 }
 
 @property (nonatomic) BOOL exists;

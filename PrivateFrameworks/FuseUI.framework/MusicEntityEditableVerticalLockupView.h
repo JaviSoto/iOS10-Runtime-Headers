@@ -3,9 +3,9 @@
  */
 
 @interface MusicEntityEditableVerticalLockupView : MusicEntityVerticalLockupView {
-    UIView *_artworkEditingOverlayView;
-    MusicNowPlayingFloatingButton *_cameraButton;
-    BOOL _editing;
+    UIView * _artworkEditingOverlayView;
+    MusicNowPlayingFloatingButton * _cameraButton;
+    BOOL  _editing;
 }
 
 @property (nonatomic) <MusicEntityEditableVerticalLockupViewDelegate> *delegate;

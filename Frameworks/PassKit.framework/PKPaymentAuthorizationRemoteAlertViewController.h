@@ -3,13 +3,14 @@
  */
 
 @interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentAuthorizationHostProtocol> {
-    BOOL _didForceDismiss;
-    PKPaymentAuthorizationRemoteAlertViewControllerExportedObject *_exportedObject;
-    int _hostAppInterfaceOrientation;
-    NSXPCConnection *_hostConnection;
-    PKInAppPaymentService *_inAppPaymentService;
-    PKPaymentAuthorizationServiceNavigationController *_navigationController;
-    PKPaymentRequest *_paymentRequest;
+    BOOL  _didForceDismiss;
+    PKPaymentAuthorizationRemoteAlertViewControllerExportedObject * _exportedObject;
+    NSString * _hostAppBundleIdentifier;
+    int  _hostAppInterfaceOrientation;
+    NSXPCConnection * _hostConnection;
+    PKInAppPaymentService * _inAppPaymentService;
+    PKPaymentAuthorizationServiceNavigationController * _navigationController;
+    PKPaymentRequest * _paymentRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +32,7 @@
 - (void)_willAppearInRemoteViewController;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
 - (void)authorizationDidFinishWithError:(id)arg1;
+- (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
 - (void)authorizationWillStart;

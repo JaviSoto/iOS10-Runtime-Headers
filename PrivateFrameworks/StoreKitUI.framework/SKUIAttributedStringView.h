@@ -3,14 +3,14 @@
  */
 
 @interface SKUIAttributedStringView : UIView {
-    float _calculatedTopInset;
-    BOOL _containsLinks;
-    int _firstLineTopInset;
-    SKUIAttributedStringLayout *_layout;
-    NSLayoutManager *_layoutManager;
-    <SKUILinkHandler> *_linkDelegate;
-    NSMutableArray *_requiredBadges;
-    int _stringTreatment;
+    float  _calculatedTopInset;
+    BOOL  _containsLinks;
+    int  _firstLineTopInset;
+    SKUIAttributedStringLayout * _layout;
+    NSLayoutManager * _layoutManager;
+    <SKUILinkHandler> * _linkDelegate;
+    NSMutableArray * _requiredBadges;
+    int  _stringTreatment;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,18 +20,18 @@
             float width; 
             float height; 
         } size; 
-    } _textBounds;
-    UIColor *_textColor;
-    BOOL _textColorFollowsTintColor;
-    NSTextContainer *_textContainer;
-    NSTextStorage *_textStorage;
-    BOOL _touchInside;
+    }  _textBounds;
+    UIColor * _textColor;
+    BOOL  _textColorFollowsTintColor;
+    NSTextContainer * _textContainer;
+    NSTextStorage * _textStorage;
+    BOOL  _touchInside;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _trackingRange;
-    BOOL _trackingTouch;
-    UIColor *_treatmentColor;
+    }  _trackingRange;
+    BOOL  _trackingTouch;
+    UIColor * _treatmentColor;
 }
 
 @property (nonatomic, readonly) float baselineOffset;

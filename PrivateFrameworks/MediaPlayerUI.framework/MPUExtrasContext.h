@@ -3,14 +3,14 @@
  */
 
 @interface MPUExtrasContext : NSObject <MPUExtrasPlaybackDelegate> {
-    NSString *_buyParameters;
-    <MPUExtrasContextDelegate> *_delegate;
-    MPUExtrasRootViewController *_extrasRootViewController;
-    MPPlaybackContext *_featurePlaybackContext;
-    UIViewController *_featurePlaybackViewController;
-    NSURL *_javascriptURL;
-    MPMediaItem *_mediaItem;
-    long long _storeID;
+    NSString * _buyParameters;
+    <MPUExtrasContextDelegate> * _delegate;
+    MPUExtrasRootViewController * _extrasRootViewController;
+    MPPlaybackContext * _featurePlaybackContext;
+    UIViewController * _featurePlaybackViewController;
+    NSURL * _javascriptURL;
+    MPMediaItem * _mediaItem;
+    long long  _storeID;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;

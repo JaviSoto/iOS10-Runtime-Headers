@@ -3,9 +3,9 @@
  */
 
 @interface SUTextViewCell : SUTableCell <UITextContentViewDelegate> {
-    <SUTextViewCellDelegate> *_delegate;
-    UIScrollView *_scrollView;
-    SUTextContentView *_textContentView;
+    <SUTextViewCellDelegate> * _delegate;
+    UIScrollView * _scrollView;
+    SUTextContentView * _textContentView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

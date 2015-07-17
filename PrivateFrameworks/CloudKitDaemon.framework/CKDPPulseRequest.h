@@ -3,18 +3,18 @@
  */
 
 @interface CKDPPulseRequest : PBRequest <NSCopying> {
-    int _apnsEnv;
-    NSString *_etag;
+    int  _apnsEnv;
+    NSString * _etag;
     struct { 
         unsigned int lookbackWindowMillis : 1; 
         unsigned int apnsEnv : 1; 
         unsigned int reset : 1; 
-    } _has;
-    long long _lookbackWindowMillis;
-    CKDPPulseData *_pulseData;
-    NSData *_pushToken;
-    BOOL _reset;
-    CKDPShareIdentifier *_shareId;
+    }  _has;
+    long long  _lookbackWindowMillis;
+    CKDPPulseData * _pulseData;
+    NSData * _pushToken;
+    BOOL  _reset;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic) int apnsEnv;

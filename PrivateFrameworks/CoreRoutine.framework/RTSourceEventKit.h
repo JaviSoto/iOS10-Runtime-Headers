@@ -3,7 +3,7 @@
  */
 
 @interface RTSourceEventKit : RTSource {
-    NSString *_eventIdentifier;
+    NSString * _eventIdentifier;
 }
 
 @property (nonatomic, readonly, retain) NSString *eventIdentifier;

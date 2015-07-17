@@ -3,8 +3,8 @@
  */
 
 @interface TSUASLLogFile : NSObject {
-    TSUASLClient *_client;
-    int _fileDescriptor;
+    TSUASLClient * _client;
+    int  _fileDescriptor;
 }
 
 @property (nonatomic, readonly) int fileDescriptor;

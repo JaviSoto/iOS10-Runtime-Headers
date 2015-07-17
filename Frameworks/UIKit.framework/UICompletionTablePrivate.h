@@ -3,12 +3,12 @@
  */
 
 @interface UICompletionTablePrivate : NSObject {
-    id _delegate;
-    UIShadowView *_shadowView;
-    UITableView *_table;
-    UIView *_topStrokeView;
+    id  _delegate;
+    UIShadowView * _shadowView;
+    UITableView * _table;
+    UIView * _topStrokeView;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

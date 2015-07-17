@@ -3,8 +3,8 @@
  */
 
 @interface MusicJSNowPlayingController : IKJSObject <MusicJSNowPlayingController> {
-    MPAVController *_player;
-    MusicTabBarController *_tabBarController;
+    MPAVController * _player;
+    MusicTabBarController * _tabBarController;
 }
 
 @property (nonatomic, retain) MPAVController *player;

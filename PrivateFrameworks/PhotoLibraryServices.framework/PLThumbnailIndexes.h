@@ -3,10 +3,10 @@
  */
 
 @interface PLThumbnailIndexes : NSObject {
-    unsigned long long _fetchTimestamp;
-    NSObject<OS_dispatch_queue> *isolation;
-    NSMutableIndexSet *unusedIndexes;
-    int usedMax;
+    unsigned long long  _fetchTimestamp;
+    NSObject<OS_dispatch_queue> * isolation;
+    NSMutableIndexSet * unusedIndexes;
+    int  usedMax;
 }
 
 + (void)getAvailableThumbnailIndexWithHandler:(id /* block */)arg1;

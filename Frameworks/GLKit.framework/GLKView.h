@@ -3,26 +3,26 @@
  */
 
 @interface GLKView : UIView <NSCoding> {
-    EAGLContext *_context;
-    <GLKViewDelegate> *_delegate;
-    unsigned int _depthRenderbuffer;
-    unsigned int _depthStencilRenderbuffer;
-    int (*_drawRectIMP;
-    int _drawableColorFormat;
-    int _drawableDepthFormat;
-    int _drawableHeight;
-    int _drawableMultisample;
-    NSMutableDictionary *_drawableProperties;
-    int _drawableStencilFormat;
-    int _drawableWidth;
-    BOOL _enableSetNeedsDisplay;
-    BOOL _inDraw;
-    unsigned int _multisampleColorRenderbuffer;
-    unsigned int _multisampleFramebuffer;
-    unsigned int _resolveColorRenderbuffer;
-    unsigned int _resolveFramebuffer;
-    BOOL _shouldDeleteFramebuffer;
-    unsigned int _stencilRenderbuffer;
+    EAGLContext * _context;
+    <GLKViewDelegate> * _delegate;
+    unsigned int  _depthRenderbuffer;
+    unsigned int  _depthStencilRenderbuffer;
+    int (* _drawRectIMP;
+    int  _drawableColorFormat;
+    int  _drawableDepthFormat;
+    int  _drawableHeight;
+    int  _drawableMultisample;
+    NSMutableDictionary * _drawableProperties;
+    int  _drawableStencilFormat;
+    int  _drawableWidth;
+    BOOL  _enableSetNeedsDisplay;
+    BOOL  _inDraw;
+    unsigned int  _multisampleColorRenderbuffer;
+    unsigned int  _multisampleFramebuffer;
+    unsigned int  _resolveColorRenderbuffer;
+    unsigned int  _resolveFramebuffer;
+    BOOL  _shouldDeleteFramebuffer;
+    unsigned int  _stencilRenderbuffer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -32,8 +32,8 @@
             float width; 
             float height; 
         } size; 
-    } _viewBounds;
-    float _viewContentScaleFactor;
+    }  _viewBounds;
+    float  _viewContentScaleFactor;
 }
 
 @property (nonatomic, retain) EAGLContext *context;

@@ -3,17 +3,17 @@
  */
 
 @interface SKUIBannerViewController : UIViewController <SKUIItemStateCenterObserver> {
-    SKUIBannerView *_bannerView;
-    SKUIClientContext *_clientContext;
-    <SKUIBannerViewDelegate> *_delegate;
-    UIImage *_iconImage;
-    SSLookupItem *_item;
-    SKUIItemArtworkContext *_itemArtworkContext;
-    long long _itemIdentifier;
-    SKUIItemStateCenter *_itemStateCenter;
-    NSOperationQueue *_resourceOperationQueue;
-    NSMutableArray *_screenshotImages;
-    NSDictionary *_scriptContextDictionary;
+    SKUIBannerView * _bannerView;
+    SKUIClientContext * _clientContext;
+    <SKUIBannerViewDelegate> * _delegate;
+    UIImage * _iconImage;
+    SSLookupItem * _item;
+    SKUIItemArtworkContext * _itemArtworkContext;
+    long long  _itemIdentifier;
+    SKUIItemStateCenter * _itemStateCenter;
+    NSOperationQueue * _resourceOperationQueue;
+    NSMutableArray * _screenshotImages;
+    NSDictionary * _scriptContextDictionary;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

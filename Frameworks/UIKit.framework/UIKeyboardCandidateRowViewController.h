@@ -3,11 +3,11 @@
  */
 
 @interface UIKeyboardCandidateRowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIKeyboardCandidateList> {
-    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    TIKeyboardCandidateResultSet *_candidateSet;
-    Class _cellClass;
-    <UIKeyboardCandidateRowViewControllerDelegate> *_delegate;
-    BOOL _showsHiddenCandidates;
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    TIKeyboardCandidateResultSet * _candidateSet;
+    Class  _cellClass;
+    <UIKeyboardCandidateRowViewControllerDelegate> * _delegate;
+    BOOL  _showsHiddenCandidates;
 }
 
 @property (nonatomic) <UIKeyboardCandidateListDelegate> *candidateListDelegate;

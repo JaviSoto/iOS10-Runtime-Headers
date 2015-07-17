@@ -3,26 +3,26 @@
  */
 
 @interface BLPromiseImage : BLImage {
-    int _actualOrientation;
-    BLAdjustmentModel *_adjustmentModel;
-    NSDictionary *_adjustments;
-    NSDictionary *_analysis;
-    int _backOrientation;
-    BLCropModel *_cropModel;
-    NSLock *_drawLock;
-    BLPixelImageBuffer *_flattenedImageBuffer;
-    BLImagePatchList *_imagePatchList;
-    int _initialOrientation;
-    BLPhotoEffectsModel *_photoEffectsModel;
-    BLImagePatchList *_repairImagePatchList;
-    BLRepairModel *_repairModel;
-    BLRetouchModel *_retouchModel;
-    struct CGImage { } *_sourceCGImage;
+    int  _actualOrientation;
+    BLAdjustmentModel * _adjustmentModel;
+    NSDictionary * _adjustments;
+    NSDictionary * _analysis;
+    int  _backOrientation;
+    BLCropModel * _cropModel;
+    NSLock * _drawLock;
+    BLPixelImageBuffer * _flattenedImageBuffer;
+    BLImagePatchList * _imagePatchList;
+    int  _initialOrientation;
+    BLPhotoEffectsModel * _photoEffectsModel;
+    BLImagePatchList * _repairImagePatchList;
+    BLRepairModel * _repairModel;
+    BLRetouchModel * _retouchModel;
+    struct CGImage { } * _sourceCGImage;
     struct CGSize { 
         float width; 
         float height; 
-    } _sourceSize;
-    BLCropModel *_userCropModel;
+    }  _sourceSize;
+    BLCropModel * _userCropModel;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } sourceSize;

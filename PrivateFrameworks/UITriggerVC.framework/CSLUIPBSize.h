@@ -3,8 +3,8 @@
  */
 
 @interface CSLUIPBSize : PBCodable <NSCopying> {
-    float _height;
-    float _width;
+    float  _height;
+    float  _width;
 }
 
 @property (nonatomic) float height;

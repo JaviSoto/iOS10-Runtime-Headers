@@ -3,13 +3,13 @@
  */
 
 @interface _UIDynamicAnimation : NSObject {
-    unsigned int _began;
-    id /* block */ _completion;
-    unsigned int _grouped;
-    unsigned int _running;
-    int _state;
-    unsigned int _usesNSTimer;
-    unsigned int _yield;
+    unsigned int  _began;
+    id /* block */  _completion;
+    unsigned int  _grouped;
+    unsigned int  _running;
+    int  _state;
+    unsigned int  _usesNSTimer;
+    unsigned int  _yield;
 }
 
 @property (nonatomic, readonly) int state;

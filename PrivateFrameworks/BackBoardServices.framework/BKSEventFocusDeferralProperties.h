@@ -3,15 +3,15 @@
  */
 
 @interface BKSEventFocusDeferralProperties : NSObject <NSSecureCoding> {
-    NSString *_clientID;
-    unsigned int _contextID;
-    NSString *_displayUUID;
-    int _pid;
+    NSString * _clientID;
+    unsigned int  _contextID;
+    NSString * _displayUUID;
+    int  _pid;
 }
 
-@property (nonatomic, readonly) NSString *clientID;
+@property (nonatomic, readonly, copy) NSString *clientID;
 @property (nonatomic, readonly) unsigned int contextID;
-@property (nonatomic, readonly) NSString *displayUUID;
+@property (nonatomic, readonly, copy) NSString *displayUUID;
 @property (nonatomic, readonly) int pid;
 
 + (id)propertiesWithClientID:(id)arg1 displayUUID:(id)arg2 contextID:(unsigned int)arg3;

@@ -3,18 +3,19 @@
  */
 
 @interface WDTableCell : NSObject {
-    NSString *mIdentifier;
-    unsigned int mIndex;
-    WDTableCellProperties *mProperties;
-    WDTableRow *mRow;
-    WDText *mText;
-    BOOL mUseTrackedProperties;
+    NSString * mIdentifier;
+    unsigned int  mIndex;
+    WDTableCellProperties * mProperties;
+    WDTableRow * mRow;
+    WDText * mText;
+    BOOL  mUseTrackedProperties;
 }
 
 - (double)cellWidth;
 - (void)clearProperties;
 - (int)compareIndex:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)identifier;
 - (unsigned int)index;
 - (id)initWithRow:(id)arg1 at:(unsigned int)arg2;

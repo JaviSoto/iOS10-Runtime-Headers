@@ -3,20 +3,16 @@
  */
 
 @interface PLIdentityServicesAgent : PLAgent {
-    PLAccountingGroup *_IDSAccountingGroup;
-    PLAccountingGroup *_bluetoothAccountingGroup;
-    PLXPCListenerOperatorComposition *_infraWiFiRequestHandler;
-    NSDate *_initialEntryDate;
-    NSMutableDictionary *_lastEntryDatePerCategory;
-    NSDate *_lastLocalDeliveryLogDate;
-    PLXPCListenerOperatorComposition *_localLinkTypeHandler;
-    PLXPCListenerOperatorComposition *_networkStatsHandler;
-    NSMutableDictionary *_previousStatsByPriority;
-    PLXPCListenerOperatorComposition *_xpcHandler;
+    PLXPCListenerOperatorComposition * _infraWiFiRequestHandler;
+    NSDate * _initialEntryDate;
+    NSMutableDictionary * _lastEntryDatePerCategory;
+    NSDate * _lastLocalDeliveryLogDate;
+    PLXPCListenerOperatorComposition * _localLinkTypeHandler;
+    PLXPCListenerOperatorComposition * _networkStatsHandler;
+    NSMutableDictionary * _previousStatsByPriority;
+    PLXPCListenerOperatorComposition * _xpcHandler;
 }
 
-@property (readonly) PLAccountingGroup *IDSAccountingGroup;
-@property (readonly) PLAccountingGroup *bluetoothAccountingGroup;
 @property (retain) PLXPCListenerOperatorComposition *infraWiFiRequestHandler;
 @property (retain) NSDate *initialEntryDate;
 @property (retain) NSMutableDictionary *lastEntryDatePerCategory;
@@ -26,7 +22,6 @@
 @property (retain) NSMutableDictionary *previousStatsByPriority;
 @property (retain) PLXPCListenerOperatorComposition *xpcHandler;
 
-+ (id)accountingGroupDefinitions;
 + (id)entryDefinitionIDSLocalLink;
 + (id)entryDefinitionIDSMessageStats;
 + (id)entryDefinitionIDSSocketStats;
@@ -37,8 +32,6 @@
 + (void)load;
 
 - (void).cxx_destruct;
-- (id)IDSAccountingGroup;
-- (id)bluetoothAccountingGroup;
 - (void)createBTAccountingEvents:(id)arg1;
 - (void)createIDSAccountingEventsWithEntries:(id)arg1;
 - (id)infraWiFiRequestHandler;

@@ -3,15 +3,15 @@
  */
 
 @interface SUCellConfiguration : NSObject {
-    id _context;
-    unsigned int _isDeleteConfirmationVisible;
+    id  _context;
+    unsigned int  _isDeleteConfirmationVisible;
     struct CGSize { 
         float width; 
         float height; 
-    } _layoutSize;
-    unsigned int _needsDisplay;
-    id _representedObject;
-    UIView<SUCellConfigurationView> *_view;
+    }  _layoutSize;
+    unsigned int  _needsDisplay;
+    id  _representedObject;
+    UIView<SUCellConfigurationView> * _view;
 }
 
 @property (nonatomic, retain) id context;

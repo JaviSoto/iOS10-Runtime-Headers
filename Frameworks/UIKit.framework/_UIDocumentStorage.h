@@ -3,8 +3,8 @@
  */
 
 @interface _UIDocumentStorage : NSObject {
-    NSURL *_rootURL;
-    NSString *_scope;
+    NSURL * _rootURL;
+    NSString * _scope;
 }
 
 @property (readonly) NSURL *rootURL;

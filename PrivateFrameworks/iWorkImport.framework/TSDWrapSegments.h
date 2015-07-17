@@ -12,14 +12,14 @@
             float width; 
             float height; 
         } size; 
-    } mBounds;
+    }  mBounds;
     struct vector<TSDWrapSegment, std::__1::allocator<TSDWrapSegment> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSDWrapSegment *, std::__1::allocator<TSDWrapSegment> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } mSegments;
+    }  mSegments;
 }
 
 + (id)wrapSegmentsWithPath:(id)arg1;

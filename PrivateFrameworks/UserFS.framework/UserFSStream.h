@@ -3,9 +3,9 @@
  */
 
 @interface UserFSStream : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    UserFSItem *_item;
-    unsigned long long _length;
+    NSObject<OS_xpc_object> * _connection;
+    UserFSItem * _item;
+    unsigned long long  _length;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;

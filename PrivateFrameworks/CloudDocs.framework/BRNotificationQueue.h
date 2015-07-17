@@ -3,10 +3,10 @@
  */
 
 @interface BRNotificationQueue : NSObject <NSFastEnumeration> {
-    NSMutableArray *_array;
-    NSMutableArray *_callbacks;
-    unsigned int _dequeued;
-    NSMutableDictionary *_index;
+    NSMutableArray * _array;
+    NSMutableArray * _callbacks;
+    unsigned int  _dequeued;
+    NSMutableDictionary * _index;
 }
 
 @property (nonatomic, readonly) unsigned int count;

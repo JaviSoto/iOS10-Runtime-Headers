@@ -3,20 +3,20 @@
  */
 
 @interface PTSHUD : UIView <UIGestureRecognizerDelegate, _UISettingsGroupObserver, _UISettingsKeyPathObserver> {
-    NSDictionary *_configuration;
-    BOOL _enteringModalEditingSavedModeTableViewCell;
-    BOOL _exitingModalEditingSavedModeTableViewCell;
+    NSDictionary * _configuration;
+    BOOL  _enteringModalEditingSavedModeTableViewCell;
+    BOOL  _exitingModalEditingSavedModeTableViewCell;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialPoint;
-    NSString *_mode;
-    UIView *_panView;
-    NSArray *_savedModeRows;
-    unsigned int _savedSettingsIndex;
-    _UISettings *_settings;
-    _UISettingsGroup *_settingsGroup;
-    BOOL _showing;
+    }  _initialPoint;
+    NSString * _mode;
+    UIView * _panView;
+    NSArray * _savedModeRows;
+    unsigned int  _savedSettingsIndex;
+    _UISettings * _settings;
+    _UISettingsGroup * _settingsGroup;
+    BOOL  _showing;
 }
 
 @property (nonatomic, copy) NSDictionary *configuration;

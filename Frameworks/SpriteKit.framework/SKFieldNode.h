@@ -3,12 +3,12 @@
  */
 
 @interface SKFieldNode : SKNode {
-    float _animationSpeed;
-    BOOL _exclusive;
-    PKPhysicsField *_field;
-    SKRegion *_region;
-    float _smoothness;
-    SKTexture *_texture;
+    float  _animationSpeed;
+    BOOL  _exclusive;
+    PKPhysicsField * _field;
+    SKRegion * _region;
+    float  _smoothness;
+    SKTexture * _texture;
 }
 
 @property (nonatomic) float animationSpeed;
@@ -60,6 +60,7 @@
 - (void)setExclusive:(BOOL)arg1;
 - (void)setFalloff:(float)arg1;
 - (void)setMinimumRadius:(float)arg1;
+- (void)setPhysicsField:(id)arg1;
 - (void)setRegion:(id)arg1;
 - (void)setSmoothness:(float)arg1;
 - (void)setStrength:(float)arg1;

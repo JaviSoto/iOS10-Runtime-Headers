@@ -3,10 +3,10 @@
  */
 
 @interface CIHistogramDisplayFilter : CIFilter {
-    NSNumber *inputHeight;
-    NSNumber *inputHighLimit;
-    CIImage *inputImage;
-    NSNumber *inputLowLimit;
+    NSNumber * inputHeight;
+    NSNumber * inputHighLimit;
+    CIImage * inputImage;
+    NSNumber * inputLowLimit;
 }
 
 @property (nonatomic, retain) NSNumber *inputHeight;
@@ -17,13 +17,11 @@
 + (id)customAttributes;
 
 - (id)_kernel;
-- (id)customAttributes;
 - (id)inputHeight;
 - (id)inputHighLimit;
 - (id)inputImage;
 - (id)inputLowLimit;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputHeight:(id)arg1;
 - (void)setInputHighLimit:(id)arg1;
 - (void)setInputImage:(id)arg1;

@@ -3,18 +3,17 @@
  */
 
 @interface VKRoadSignArtwork : NSObject {
-    float _contentScale;
+    float  _contentScale;
     struct CGSize { 
         float width; 
         float height; 
-    } _layoutSize;
-    struct __CTLine { } *_line;
-    BOOL _onRoute;
-    int _orientation;
-    float _scale;
+    }  _layoutSize;
+    struct __CTLine { } * _line;
+    BOOL  _onRoute;
+    int  _orientation;
+    float  _scale;
 }
 
-- (id).cxx_construct;
 - (void)_updateLayoutSize;
 - (void)dealloc;
 - (id)image;

@@ -3,8 +3,8 @@
  */
 
 @interface BWFanOutNode : BWNode {
-    id *_outputsCArray;
-    int _outputsCount;
+    id * _outputsCArray;
+    int  _outputsCount;
 }
 
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;

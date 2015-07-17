@@ -3,9 +3,9 @@
  */
 
 @interface SKUIViewControllerContainerCollectionViewCell : UICollectionViewCell {
-    NSIndexPath *_indexPath;
-    BOOL _managesViewControllerContainerViewLayout;
-    SKUIViewControllerContainerView *_viewControllerContainerView;
+    NSIndexPath * _indexPath;
+    BOOL  _managesViewControllerContainerViewLayout;
+    SKUIViewControllerContainerView * _viewControllerContainerView;
 }
 
 @property (nonatomic, readonly) NSIndexPath *indexPath;

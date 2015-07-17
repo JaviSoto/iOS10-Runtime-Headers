@@ -3,9 +3,9 @@
  */
 
 @interface GEOPDPhotoFilter : PBCodable <NSCopying> {
-    struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_photoSizeFilters;
-    unsigned int _photoSizeFiltersCount;
-    unsigned int _photoSizeFiltersSpace;
+    struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _photoSizeFilters;
+    unsigned int  _photoSizeFiltersCount;
+    unsigned int  _photoSizeFiltersSpace;
 }
 
 @property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*photoSizeFilters;

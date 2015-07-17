@@ -3,10 +3,10 @@
  */
 
 @interface SKUIStackedImageView : SKUIImageView <MPUStackViewDataSource> {
-    MPUBorderConfiguration *_borderConfiguration;
-    MPUBorderDrawingCache *_borderDrawingCache;
-    int _stackDepth;
-    MPUStackView *_stackView;
+    MPUBorderConfiguration * _borderConfiguration;
+    MPUBorderDrawingCache * _borderDrawingCache;
+    int  _stackDepth;
+    MPUStackView * _stackView;
 }
 
 @property (nonatomic, retain) MPUBorderDrawingCache *borderDrawingCache;

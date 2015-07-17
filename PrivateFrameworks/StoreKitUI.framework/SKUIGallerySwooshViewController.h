@@ -3,11 +3,11 @@
  */
 
 @interface SKUIGallerySwooshViewController : SKUISwooshViewController <SKUIEmbeddedMediaViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    UICollectionView *_collectionView;
-    BOOL _delegateWantsWillDisplay;
-    SKUISwooshPageComponent *_gallerySwoosh;
-    float _itemHeight;
-    SKUISwooshView *_swooshView;
+    UICollectionView * _collectionView;
+    BOOL  _delegateWantsWillDisplay;
+    SKUISwooshPageComponent * _gallerySwoosh;
+    float  _itemHeight;
+    SKUISwooshView * _swooshView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

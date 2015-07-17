@@ -3,8 +3,8 @@
  */
 
 @interface SKUIEditorialCollectionViewCell : SKUICollectionViewCell <SKUICellLayoutParentView> {
-    SKUIEditorialCellLayout *_layout;
-    BOOL _layoutNeedsLayout;
+    SKUIEditorialCellLayout * _layout;
+    BOOL  _layoutNeedsLayout;
 }
 
 @property (readonly, copy) NSString *debugDescription;

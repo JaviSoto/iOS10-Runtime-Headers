@@ -3,22 +3,22 @@
  */
 
 @interface CAInterAppAudioTransportView : UIView {
-    BOOL _connected;
-    UIFont *_currentTimeLabelFont;
-    double _playTime;
-    BOOL _playing;
-    BOOL _recording;
-    struct HostCallbackInfo { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } *callBackInfo;
-    UILabel *currentTimeLabel;
-    BOOL enabled;
-    BOOL inForeground;
-    struct OpaqueAudioComponentInstance { } *outputUnit;
-    UIColor *pauseButtonColor;
-    UIColor *playButtonColor;
-    CAUITransportButton *playPauseButton;
-    NSTimer *pollingPlayerTimer;
-    CAUITransportButton *recordButton;
-    CAUITransportButton *rewindButton;
+    BOOL  _connected;
+    UIFont * _currentTimeLabelFont;
+    double  _playTime;
+    BOOL  _playing;
+    BOOL  _recording;
+    struct HostCallbackInfo { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * callBackInfo;
+    UILabel * currentTimeLabel;
+    BOOL  enabled;
+    BOOL  inForeground;
+    struct OpaqueAudioComponentInstance { } * outputUnit;
+    UIColor * pauseButtonColor;
+    UIColor * playButtonColor;
+    CAUITransportButton * playPauseButton;
+    NSTimer * pollingPlayerTimer;
+    CAUITransportButton * recordButton;
+    CAUITransportButton * rewindButton;
 }
 
 @property (getter=isConnected, nonatomic, readonly) BOOL connected;

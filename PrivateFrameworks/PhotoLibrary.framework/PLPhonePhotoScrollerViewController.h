@@ -3,9 +3,9 @@
  */
 
 @interface PLPhonePhotoScrollerViewController : PLPhotoScrollerViewController <UINavigationControllerDelegate> {
-    BOOL _didDisappearUnderModalTransition;
-    BOOL _isModalTransition;
-    UIView *_viewToRemoveForSlideShow;
+    BOOL  _didDisappearUnderModalTransition;
+    BOOL  _isModalTransition;
+    UIView * _viewToRemoveForSlideShow;
 }
 
 @property (readonly, copy) NSString *debugDescription;

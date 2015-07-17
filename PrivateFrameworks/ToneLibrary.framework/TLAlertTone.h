@@ -3,9 +3,9 @@
  */
 
 @interface TLAlertTone : NSObject {
-    TLSound *_actualSound;
-    NSString *_filePath;
-    TLSound *_previewSound;
+    TLSound * _actualSound;
+    NSString * _filePath;
+    TLSound * _previewSound;
 }
 
 @property (nonatomic, retain) TLSound *actualSound;

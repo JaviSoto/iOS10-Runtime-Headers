@@ -3,13 +3,13 @@
  */
 
 @interface TSUFastReadInvalidatingCache : NSObject {
-    NSCondition *mCondition;
-    id /* block */ mGenerator;
-    BOOL mIsGenerating;
-    long long mReaderCount;
-    BOOL mReentrant;
-    NSArray *mToDispose;
-    id mValue;
+    NSCondition * mCondition;
+    id /* block */  mGenerator;
+    BOOL  mIsGenerating;
+    long long  mReaderCount;
+    BOOL  mReentrant;
+    NSArray * mToDispose;
+    id  mValue;
 }
 
 - (void)dealloc;

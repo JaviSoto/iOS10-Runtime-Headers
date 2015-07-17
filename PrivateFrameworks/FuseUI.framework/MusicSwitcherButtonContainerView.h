@@ -3,20 +3,20 @@
  */
 
 @interface MusicSwitcherButtonContainerView : UIView {
-    UIFont *_defaultFontForTrailingAndLeadingButtons;
-    <MusicSwitcherButtonContainerViewDelegate> *_delegate;
-    UIFont *_fontOfLeadingAndTrailingButtons;
-    UIFont *_fontOfTextRightAbove;
-    BOOL _isSwitcherButtonHidden;
-    MPUTextButton *_leadingButton;
-    NSString *_leadingButtonTitle;
-    UIView *_leftHairlineView;
-    UIView *_rightHairlineView;
-    UIButton *_switcherButton;
-    UIFont *_switcherButtonFont;
-    NSString *_switcherButtonTitle;
-    MPUTextButton *_trailingButton;
-    NSString *_trailingButtonTitle;
+    UIFont * _defaultFontForTrailingAndLeadingButtons;
+    <MusicSwitcherButtonContainerViewDelegate> * _delegate;
+    UIFont * _fontOfLeadingAndTrailingButtons;
+    UIFont * _fontOfTextRightAbove;
+    BOOL  _isSwitcherButtonHidden;
+    MPUTextButton * _leadingButton;
+    NSString * _leadingButtonTitle;
+    UIView * _leftHairlineView;
+    UIView * _rightHairlineView;
+    UIButton * _switcherButton;
+    UIFont * _switcherButtonFont;
+    NSString * _switcherButtonTitle;
+    MPUTextButton * _trailingButton;
+    NSString * _trailingButtonTitle;
 }
 
 @property (nonatomic) <MusicSwitcherButtonContainerViewDelegate> *delegate;

@@ -3,38 +3,45 @@
  */
 
 @interface NSEncodingDetector : NSObject {
-    unsigned long _encoding;
-    unsigned long _givenNumBytes;
-    BOOL _hasBOM;
-    BOOL _hasBase64;
-    BOOL _isBigEndian;
-    unsigned long _mostFrqChars;
-    unsigned long _numBase64;
-    unsigned long _numBigrams;
-    unsigned long _numChars;
-    unsigned long _numDirect;
-    unsigned long _numHigher;
-    unsigned long _numLower;
-    unsigned long _numMultiByteChars;
-    unsigned long _numRep;
-    unsigned long _numSeq;
-    unsigned long _numSingleBytechars;
-    unsigned long _numTrigram;
-    unsigned long _numZeroBytes;
-    unsigned long _skipBytes;
-    unsigned int _tag;
-    double _weight;
+    unsigned long  _cfEncoding;
+    unsigned long  _givenNumBytes;
+    BOOL  _hasBOM;
+    BOOL  _hasBase64;
+    BOOL  _isBigEndian;
+    unsigned long  _mostFrqChars;
+    unsigned int  _nsEncoding;
+    unsigned long  _numBase64;
+    unsigned long  _numBigrams;
+    unsigned long  _numChars;
+    unsigned long  _numDirect;
+    unsigned long  _numHigher;
+    unsigned long  _numLower;
+    unsigned long  _numMultiByteChars;
+    unsigned long  _numRep;
+    unsigned long  _numSeq;
+    unsigned long  _numSingleBytechars;
+    unsigned long  _numTrigram;
+    unsigned long  _numZeroBytes;
+    unsigned long  _skipBytes;
+    unsigned int  _tag;
+    double  _weight;
 }
 
-+ (id)encodingDetectorWithEncoding:(unsigned int)arg1;
+@property (readonly) unsigned long cfEncoding;
+@property (readonly) unsigned int nsEncoding;
+
++ (Class)classForCFStringEncoding:(unsigned long)arg1;
++ (id)detectorForCFStringEncoding:(unsigned long)arg1 allowBackupDetectors:(BOOL)arg2;
 
 - (double)bytesRatio;
+- (unsigned long)cfEncoding;
 - (double)confidence;
 - (double)confidenceWith2Chars;
-- (id)init;
+- (id)initWithNSStringEncoding:(unsigned int)arg1 CFStringEncoding:(unsigned long)arg2;
 - (unsigned long)maxSkipBytes;
 - (double)multiBytesRatio;
-- (unsigned long)recognizeString:(const char *)arg1 withDataLength:(unsigned long)arg2 withReplacement:(const char *)arg3 withReplacementLength:(unsigned long)arg4 inNewData:(char *)arg5 maxBufferLength:(unsigned long)arg6 actualBufferLength:(unsigned int*)arg7;
+- (unsigned int)nsEncoding;
+- (unsigned long)recognizeString:(const char *)arg1 withDataLength:(unsigned long)arg2 intoBuffer:(id)arg3;
 - (void)reset;
 - (void)softReset;
 

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIButtonFooterSettingsHeaderFooterDescriptionView : SKUISettingsHeaderFooterDescriptionView {
-    UIButton *_button;
-    SKUIButtonViewElement *_buttonElement;
-    SKUIViewElement *_viewElement;
+    UIButton * _button;
+    SKUIButtonViewElement * _buttonElement;
+    SKUIViewElement * _viewElement;
 }
 
 + (id)_buttonWithButtonElement:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface SSSoftwareLibraryItem : NSObject <SSXPCCoding> {
-    BOOL _beta;
-    NSMutableDictionary *_etags;
-    BOOL _placeholder;
-    BOOL _profileValidated;
-    NSMutableDictionary *_propertyValues;
+    BOOL  _beta;
+    NSMutableDictionary * _etags;
+    BOOL  _placeholder;
+    BOOL  _profileValidated;
+    NSMutableDictionary * _propertyValues;
 }
 
 @property (getter=isBeta, nonatomic) BOOL beta;

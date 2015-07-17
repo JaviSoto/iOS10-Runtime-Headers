@@ -3,7 +3,7 @@
  */
 
 @interface CKAggregateMessagePartChatItem : CKTextMessagePartChatItem {
-    NSArray *_subparts;
+    NSArray * _subparts;
 }
 
 @property (nonatomic, copy) NSArray *subparts;

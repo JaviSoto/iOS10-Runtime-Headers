@@ -3,13 +3,13 @@
  */
 
 @interface GEODirectionsRequestFeedback : PBCodable <NSCopying> {
-    NSString *_appIdentifier;
+    NSString * _appIdentifier;
     struct { 
         unsigned int purpose : 1; 
         unsigned int source : 1; 
-    } _has;
-    int _purpose;
-    int _source;
+    }  _has;
+    int  _purpose;
+    int  _source;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;

@@ -6,9 +6,9 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _cachedCollectionViewContentSize;
-    NSDictionary *_cachedLayoutAttributes;
-    int _indexOfVisibleItemForBoundsChange;
+    }  _cachedCollectionViewContentSize;
+    NSDictionary * _cachedLayoutAttributes;
+    int  _indexOfVisibleItemForBoundsChange;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } cachedCollectionViewContentSize;

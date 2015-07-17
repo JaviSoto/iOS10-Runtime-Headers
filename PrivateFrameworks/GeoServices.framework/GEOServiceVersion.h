@@ -5,9 +5,9 @@
 @interface GEOServiceVersion : PBCodable <NSCopying> {
     struct { 
         unsigned int minimumVersion : 1; 
-    } _has;
-    unsigned int _minimumVersion;
-    NSMutableArray *_versionDomains;
+    }  _has;
+    unsigned int  _minimumVersion;
+    NSMutableArray * _versionDomains;
 }
 
 @property (nonatomic) BOOL hasMinimumVersion;

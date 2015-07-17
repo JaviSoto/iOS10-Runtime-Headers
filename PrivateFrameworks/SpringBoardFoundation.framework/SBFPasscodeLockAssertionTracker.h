@@ -3,8 +3,8 @@
  */
 
 @interface SBFPasscodeLockAssertionTracker : NSObject {
-    NSMutableSet *_assertions;
-    struct __MKBAssertion { } *_mkbAssertion;
+    NSMutableSet * _assertions;
+    struct __MKBAssertion { } * _mkbAssertion;
 }
 
 - (void)addAssertion:(id)arg1;
@@ -12,6 +12,7 @@
 - (id)description;
 - (BOOL)hasActiveAssertions;
 - (id)init;
+- (BOOL)isAssertionValid:(id)arg1;
 - (id)mkbAssertionOptions;
 - (void)removeAssertion:(id)arg1;
 

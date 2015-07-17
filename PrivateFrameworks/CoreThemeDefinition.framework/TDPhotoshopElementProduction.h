@@ -3,13 +3,13 @@
  */
 
 @interface TDPhotoshopElementProduction : TDElementProduction <TDElementAttributes> {
-    CUIImage *_baselineMetricsMask;
-    NSDate *_cachedImageDate;
-    BOOL _didCheckForMetricsMasks;
-    CUIImage *_edgeMetricsMask;
-    CUIImage *_textMetricsMask;
-    NSMutableAttributedString *log;
-    CUIPSDImageRef *psdImageRef;
+    CUIImage * _baselineMetricsMask;
+    NSDate * _cachedImageDate;
+    BOOL  _didCheckForMetricsMasks;
+    CUIImage * _edgeMetricsMask;
+    CUIImage * _textMetricsMask;
+    NSMutableAttributedString * log;
+    CUIPSDImageRef * psdImageRef;
 }
 
 @property (nonatomic, retain) TDPhotoshopAsset *asset;

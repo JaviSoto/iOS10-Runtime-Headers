@@ -3,7 +3,7 @@
  */
 
 @interface TNChartSelection : TSDDrawableSelection {
-    TSCHChartDrawableInfo *mChart;
+    TSCHChartDrawableInfo * mChart;
     struct { 
         struct TSCERangeCoordinate { 
             struct { 
@@ -18,7 +18,7 @@
             } mBottomRight; 
         } range; 
         struct __CFUUID {} *tableID; 
-    } mReference;
+    }  mReference;
 }
 
 @property (nonatomic, readonly) TSCHChartDrawableInfo *chart;
@@ -26,7 +26,6 @@
 
 + (Class)archivedSelectionClass;
 
-- (id).cxx_construct;
 - (id)chart;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

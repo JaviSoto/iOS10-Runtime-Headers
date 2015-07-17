@@ -3,12 +3,12 @@
  */
 
 @interface RCCompositionComposedAssetWriter : NSObject {
-    BOOL _canGenerateWaveform;
-    BOOL _canGenerateWaveformByProcessingAVURL;
-    BOOL _canSaveCompositionMetadata;
-    RCComposition *_composition;
-    AVAssetExportSession *_exportSession;
-    RCWaveformDataSource *_waveformDataSource;
+    BOOL  _canGenerateWaveform;
+    BOOL  _canGenerateWaveformByProcessingAVURL;
+    BOOL  _canSaveCompositionMetadata;
+    RCComposition * _composition;
+    AVAssetExportSession * _exportSession;
+    RCWaveformDataSource * _waveformDataSource;
 }
 
 @property (nonatomic) BOOL canGenerateWaveform;

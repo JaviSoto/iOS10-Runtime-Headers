@@ -3,11 +3,11 @@
  */
 
 @interface IMParentalControls : NSObject {
-    BOOL _active;
-    BOOL _disableAV;
-    BOOL _forceChatLogging;
-    NSMutableDictionary *_parentalControls;
-    BOOL _shouldPostNotifications;
+    BOOL  _active;
+    BOOL  _disableAV;
+    BOOL  _forceChatLogging;
+    NSMutableDictionary * _parentalControls;
+    BOOL  _shouldPostNotifications;
 }
 
 @property (nonatomic, readonly) BOOL _disableAV;

@@ -3,13 +3,13 @@
  */
 
 @interface _UIViewControllerTransitionCoordinatorContextDescription : NSObject <NSSecureCoding> {
-    BOOL _animated;
-    BOOL _cancelled;
-    int _completionCurve;
-    float _completionVelocity;
-    int _fromOrientation;
-    BOOL _interactive;
-    float _percentComplete;
+    BOOL  _animated;
+    BOOL  _cancelled;
+    int  _completionCurve;
+    float  _completionVelocity;
+    int  _fromOrientation;
+    BOOL  _interactive;
+    float  _percentComplete;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -17,9 +17,9 @@
         float d; 
         float tx; 
         float ty; 
-    } _targetTransform;
-    int _toOrientation;
-    float _transitionDuration;
+    }  _targetTransform;
+    int  _toOrientation;
+    float  _transitionDuration;
 }
 
 @property (getter=isAnimated, nonatomic) BOOL animated;

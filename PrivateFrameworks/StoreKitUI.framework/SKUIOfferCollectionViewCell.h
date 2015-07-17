@@ -3,7 +3,7 @@
  */
 
 @interface SKUIOfferCollectionViewCell : SKUICollectionViewCell <SKUIViewElementView> {
-    SKUIOfferView *_offerView;
+    SKUIOfferView * _offerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

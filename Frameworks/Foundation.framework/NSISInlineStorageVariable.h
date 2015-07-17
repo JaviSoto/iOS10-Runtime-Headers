@@ -3,9 +3,9 @@
  */
 
 @interface NSISInlineStorageVariable : NSISVariable <NSISVariableDelegate> {
-    NSString *_name;
-    BOOL _shouldBeMinimized;
-    int _valueRestriction;
+    NSString * _name;
+    BOOL  _shouldBeMinimized;
+    int  _valueRestriction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

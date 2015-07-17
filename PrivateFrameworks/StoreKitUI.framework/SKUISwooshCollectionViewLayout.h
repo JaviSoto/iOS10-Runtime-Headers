@@ -3,9 +3,9 @@
  */
 
 @interface SKUISwooshCollectionViewLayout : UICollectionViewFlowLayout {
-    UIColor *_backgroundColor;
-    BOOL _snapsToItemBoundaries;
-    BOOL _snapsToItemCenters;
+    UIColor * _backgroundColor;
+    BOOL  _snapsToItemBoundaries;
+    BOOL  _snapsToItemCenters;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;

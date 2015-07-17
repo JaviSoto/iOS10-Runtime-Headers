@@ -3,8 +3,8 @@
  */
 
 @interface AVSampleBufferDisplayLayerInternal : NSObject {
-    BOOL aboveHighWaterLevel;
-    BOOL addedToSynchronizer;
+    BOOL  aboveHighWaterLevel;
+    BOOL  addedToSynchronizer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,26 +14,29 @@
             float width; 
             float height; 
         } size; 
-    } bounds;
-    CALayer *contentLayer;
-    struct OpaqueCMTimebase { } *controlTimebaseSetByUser;
-    BOOL controlTimebaseSetByUserIsInUse;
-    NSError *error;
-    BOOL isRequestingMediaData;
-    AVMediaDataRequester *mediaDataRequester;
-    BOOL outputObscured;
+    }  bounds;
+    CALayer * contentLayer;
+    struct OpaqueCMTimebase { } * controlTimebaseSetByUser;
+    BOOL  controlTimebaseSetByUserIsInUse;
+    NSError * error;
+    NSObject<OS_dispatch_queue> * flushCallbackListQueue;
+    NSObject<OS_dispatch_queue> * flushCallbackQueue;
+    NSMutableArray * flushCallbacks;
+    BOOL  isRequestingMediaData;
+    AVMediaDataRequester * mediaDataRequester;
+    BOOL  outputObscured;
     struct CGSize { 
         float width; 
         float height; 
-    } presentationSize;
-    struct OpaqueCMTimebase { } *readOnlyRenderingTimebase;
-    struct OpaqueCMTimebase { } *readOnlyVideoQueueTimebase;
-    NSObject<OS_dispatch_queue> *serialQueue;
-    int status;
-    NSString *videoGravity;
-    struct OpaqueFigVideoQueue { } *videoQueue;
-    AVWeakReference *weakReferenceToSelf;
-    AVWeakReference *weakReferenceToSynchronizer;
+    }  presentationSize;
+    struct OpaqueCMTimebase { } * readOnlyRenderingTimebase;
+    struct OpaqueCMTimebase { } * readOnlyVideoQueueTimebase;
+    NSObject<OS_dispatch_queue> * serialQueue;
+    int  status;
+    NSString * videoGravity;
+    struct OpaqueFigVideoQueue { } * videoQueue;
+    AVWeakReference * weakReferenceToSelf;
+    AVWeakReference * weakReferenceToSynchronizer;
 }
 
 @end

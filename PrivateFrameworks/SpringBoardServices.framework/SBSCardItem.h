@@ -3,15 +3,15 @@
  */
 
 @interface SBSCardItem : NSObject <NSCopying, NSSecureCoding> {
-    NSData *_attachmentData;
-    NSString *_body;
-    NSString *_bundleName;
-    NSData *_iconData;
-    NSString *_identifier;
-    BOOL _requiresPasscode;
-    UIImage *_thumbnail;
-    NSString *_title;
-    NSDictionary *_userInfo;
+    NSData * _attachmentData;
+    NSString * _body;
+    NSString * _bundleName;
+    NSData * _iconData;
+    NSString * _identifier;
+    BOOL  _requiresPasscode;
+    UIImage * _thumbnail;
+    NSString * _title;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, copy) NSData *attachmentData;

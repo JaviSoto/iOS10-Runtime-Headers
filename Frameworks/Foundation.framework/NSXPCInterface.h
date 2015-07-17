@@ -3,9 +3,9 @@
  */
 
 @interface NSXPCInterface : NSObject {
-    struct __CFDictionary { } *_methods2;
-    Protocol *_protocol;
-    id _reserved1;
+    struct __CFDictionary { } * _methods2;
+    Protocol * _protocol;
+    id  _reserved1;
 }
 
 @property Protocol *protocol;
@@ -33,6 +33,13 @@
 - (void)setInterface:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
 - (void)setProtocol:(id)arg1;
 - (void)setReplyBlockSignature:(id)arg1 forSelector:(SEL)arg2;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (id)hm_setupRemoteHostInterface;
++ (id)hm_setupRemoteServiceInterface;
++ (id)hm_userManagementRemoteHostInterface;
++ (id)hm_userManagementRemoteServiceInterface;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 

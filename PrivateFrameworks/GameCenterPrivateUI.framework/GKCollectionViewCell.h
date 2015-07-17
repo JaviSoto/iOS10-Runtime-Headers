@@ -3,22 +3,22 @@
  */
 
 @interface GKCollectionViewCell : UICollectionViewCell {
-    GKHairlineView *_bottomHairline;
-    NSLayoutConstraint *_contentLeftConstraint;
-    float _contentOriginX;
-    GKStaticRenderContentView *_contentRenderView;
-    BOOL _doesAbutLeftEdge;
-    NSArray *_editActions;
-    NSArray *_editActionsConstraints;
-    GKEditActionsView *_editActionsView;
-    NSArray *_hairlineConstraints;
-    float _leadingMargin;
-    CALayer *_leftGradientMask;
-    id _representedItem;
-    BOOL _shouldDisplaySwipeToEditAccessories;
-    UIView *_staticContentView;
-    GKHairlineView *_topHairline;
-    float _trailingMargin;
+    GKHairlineView * _bottomHairline;
+    NSLayoutConstraint * _contentLeftConstraint;
+    float  _contentOriginX;
+    GKStaticRenderContentView * _contentRenderView;
+    BOOL  _doesAbutLeftEdge;
+    NSArray * _editActions;
+    NSArray * _editActionsConstraints;
+    GKEditActionsView * _editActionsView;
+    NSArray * _hairlineConstraints;
+    float  _leadingMargin;
+    CALayer * _leftGradientMask;
+    id  _representedItem;
+    BOOL  _shouldDisplaySwipeToEditAccessories;
+    UIView * _staticContentView;
+    GKHairlineView * _topHairline;
+    float  _trailingMargin;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRectForText;
@@ -35,7 +35,7 @@
 @property (nonatomic) float leadingMargin;
 @property (nonatomic, retain) CALayer *leftGradientMask;
 @property (nonatomic, retain) id representedItem;
-@property (nonatomic, readonly) UIView *staticContentView;
+@property (nonatomic, retain) UIView *staticContentView;
 @property (nonatomic, retain) GKHairlineView *topHairline;
 @property (nonatomic) float trailingMargin;
 
@@ -67,6 +67,7 @@
 - (void)layoutSubviews;
 - (float)leadingMargin;
 - (id)leftGradientMask;
+- (id)popoverSourceView;
 - (void)prepareEditActionsConstraintsIfNeeded;
 - (void)prepareForReuse;
 - (void)prepareHairlineConstraintsIfNeeded;
@@ -86,6 +87,7 @@
 - (void)setNeedsDisplay;
 - (void)setRepresentedItem:(id)arg1;
 - (void)setShouldDisplaySwipeToEditAccessories:(BOOL)arg1;
+- (void)setStaticContentView:(id)arg1;
 - (void)setTopHairline:(id)arg1;
 - (void)setTrailingMargin:(float)arg1;
 - (void)setUserInteractionEnabledForEditing:(BOOL)arg1;

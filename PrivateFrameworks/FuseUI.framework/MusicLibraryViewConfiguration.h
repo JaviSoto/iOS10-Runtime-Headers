@@ -3,14 +3,14 @@
  */
 
 @interface MusicLibraryViewConfiguration : NSObject {
-    MusicEntityViewDescriptor *_entityViewDescriptor;
-    NSString *_iconName;
-    NSString *_identifier;
-    BOOL _supportsSplitView;
-    NSString *_title;
-    NSArray *_userActivityItemTypes;
-    Class _viewControllerClass;
-    BOOL _wantsImmediateHandlingOfEditingChangeRecords;
+    MusicEntityViewDescriptor * _entityViewDescriptor;
+    NSString * _iconName;
+    NSString * _identifier;
+    BOOL  _supportsSplitView;
+    NSString * _title;
+    NSArray * _userActivityItemTypes;
+    Class  _viewControllerClass;
+    BOOL  _wantsImmediateHandlingOfEditingChangeRecords;
 }
 
 @property (nonatomic, readonly) MusicEntityViewDescriptor *entityViewDescriptor;

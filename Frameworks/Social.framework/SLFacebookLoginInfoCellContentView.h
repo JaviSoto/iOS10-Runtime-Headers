@@ -3,19 +3,19 @@
  */
 
 @interface SLFacebookLoginInfoCellContentView : UIView {
-    UIImageView *_addressBookIcon;
-    UILabel *_addressBookLabel;
-    NSString *_addressBookLabelText;
-    UIImageView *_appStoreIcon;
-    UILabel *_appStoreLabel;
-    NSString *_appStoreLabelText;
-    UIImageView *_calendarIcon;
-    UILabel *_calendarLabel;
-    NSString *_calendarLabelText;
-    UIFont *_font;
-    UIImageView *_photosIcon;
-    UILabel *_photosLabel;
-    NSString *_photosLabelText;
+    UIImageView * _addressBookIcon;
+    UILabel * _addressBookLabel;
+    NSString * _addressBookLabelText;
+    UIImageView * _appStoreIcon;
+    UILabel * _appStoreLabel;
+    NSString * _appStoreLabelText;
+    UIImageView * _calendarIcon;
+    UILabel * _calendarLabel;
+    NSString * _calendarLabelText;
+    UIFont * _font;
+    UIImageView * _photosIcon;
+    UILabel * _photosLabel;
+    NSString * _photosLabelText;
 }
 
 - (void).cxx_destruct;

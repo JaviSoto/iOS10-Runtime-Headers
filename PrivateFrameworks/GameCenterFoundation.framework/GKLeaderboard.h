@@ -3,19 +3,19 @@
  */
 
 @interface GKLeaderboard : NSObject {
-    GKLeaderboardInternal *_internal;
-    int _loadingCount;
-    GKScore *_localPlayerScore;
-    int _lock;
-    int _playerScope;
-    NSArray *_players;
+    GKLeaderboardInternal * _internal;
+    int  _loadingCount;
+    GKScore * _localPlayerScore;
+    int  _lock;
+    int  _playerScope;
+    NSArray * _players;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSArray *_scores;
-    int _timeScope;
-    <GKLeaderboardDelegate> *_weakDelegate;
+    }  _range;
+    NSArray * _scores;
+    int  _timeScope;
+    <GKLeaderboardDelegate> * _weakDelegate;
 }
 
 @property (nonatomic, copy) NSString *category;

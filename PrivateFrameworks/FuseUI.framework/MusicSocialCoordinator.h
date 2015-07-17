@@ -3,10 +3,10 @@
  */
 
 @interface MusicSocialCoordinator : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableArray *_following;
-    BOOL _followingLoaded;
-    NSOperationQueue *_queue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableArray * _following;
+    BOOL  _followingLoaded;
+    NSOperationQueue * _queue;
 }
 
 + (id)activeDsid;

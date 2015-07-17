@@ -3,20 +3,20 @@
  */
 
 @interface UIFlicker : NSObject {
-    float _delay;
-    id _delegate;
-    int _mouseDraggedCount;
-    int _mouseUpCount;
+    float  _delay;
+    id  _delegate;
+    int  _mouseDraggedCount;
+    int  _mouseUpCount;
     struct CGPoint { 
         float x; 
         float y; 
-    } _offset;
+    }  _offset;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startLocation;
-    UIView *_target;
-    int _throwIterations;
+    }  _startLocation;
+    UIView * _target;
+    int  _throwIterations;
 }
 
 - (id)init;

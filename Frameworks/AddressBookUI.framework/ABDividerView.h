@@ -3,12 +3,12 @@
  */
 
 @interface ABDividerView : UIView {
-    UIColor *_defaultColor;
-    BOOL _disappearsOnHighlight;
-    BOOL _isVertical;
-    ABSteadfastLineView *_line;
-    UIColor *_shadowColor;
-    ABSteadfastLineView *_shadowLine;
+    UIColor * _defaultColor;
+    BOOL  _disappearsOnHighlight;
+    BOOL  _isVertical;
+    ABSteadfastLineView * _line;
+    UIColor * _shadowColor;
+    ABSteadfastLineView * _shadowLine;
 }
 
 @property (nonatomic, retain) UIColor *defaultColor;

@@ -3,10 +3,10 @@
  */
 
 @interface CertInfoGradientLabel : UIView {
-    UIFont *_font;
-    UIImage *_gradient;
-    struct CGColor { } *_patternColor;
-    NSString *_text;
+    UIFont * _font;
+    UIImage * _gradient;
+    struct CGColor { } * _patternColor;
+    NSString * _text;
 }
 
 @property (nonatomic, retain) UIFont *font;

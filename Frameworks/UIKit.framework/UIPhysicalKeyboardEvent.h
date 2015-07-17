@@ -2,20 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPhysicalKeyboardEvent : UIPhysicalButtonsEvent {
-    NSString *_commandModifiedInput;
-    int _inputFlags;
-    NSString *_markedInput;
-    NSString *_modifiedInput;
-    int _modifierFlags;
-    NSString *_privateInput;
-    NSString *_shiftModifiedInput;
-    NSString *_unmodifiedInput;
+@interface UIPhysicalKeyboardEvent : UIPressesEvent {
+    NSString * _commandModifiedInput;
+    NSString * _hint;
+    int  _inputFlags;
+    NSString * _markedInput;
+    NSString * _modifiedInput;
+    int  _modifierFlags;
+    NSString * _privateInput;
+    NSString * _shiftModifiedInput;
+    NSString * _unmodifiedInput;
 }
 
 @property (nonatomic, retain) NSString *_commandModifiedInput;
 @property (nonatomic, readonly) int _gsModifierFlags;
+@property (nonatomic, retain) NSString *_hint;
 @property (nonatomic) int _inputFlags;
+@property (nonatomic, readonly) BOOL _isFunctionKey;
 @property (nonatomic, readonly) BOOL _isKeyDown;
 @property (nonatomic, readonly) long _keyCode;
 @property (nonatomic, retain) NSString *_markedInput;
@@ -27,10 +30,13 @@
 
 + (id)_eventWithInput:(id)arg1 inputFlags:(int)arg2;
 
+- (void).cxx_destruct;
 - (id)_cloneEvent;
 - (id)_commandModifiedInput;
 - (int)_gsModifierFlags;
+- (id)_hint;
 - (int)_inputFlags;
+- (BOOL)_isFunctionKey;
 - (BOOL)_isKeyDown;
 - (long)_keyCode;
 - (id)_markedInput;
@@ -42,9 +48,9 @@
 - (void)_setHIDEvent:(struct __IOHIDEvent { }*)arg1 keyboard:(struct __GSKeyboard { }*)arg2;
 - (id)_shiftModifiedInput;
 - (id)_unmodifiedInput;
-- (void)dealloc;
 - (BOOL)isEqual:(id)arg1;
 - (void)set_commandModifiedInput:(id)arg1;
+- (void)set_hint:(id)arg1;
 - (void)set_inputFlags:(int)arg1;
 - (void)set_markedInput:(id)arg1;
 - (void)set_modifiedInput:(id)arg1;

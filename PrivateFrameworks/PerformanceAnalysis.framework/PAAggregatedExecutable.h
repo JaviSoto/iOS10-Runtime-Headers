@@ -3,12 +3,12 @@
  */
 
 @interface PAAggregatedExecutable : PAAggregatedTask {
-    unsigned int _count;
-    unsigned int _firstTimestampIndex;
-    unsigned int _lastTimestampIndex;
-    NSUUID *_mainBinaryUuid;
-    NSString *_name;
-    NSMutableSet *_rootFrames;
+    unsigned int  _count;
+    unsigned int  _firstTimestampIndex;
+    unsigned int  _lastTimestampIndex;
+    NSUUID * _mainBinaryUuid;
+    NSString * _name;
+    NSMutableSet * _rootFrames;
 }
 
 @property (readonly) PAExecutableAggregator *aggregator;

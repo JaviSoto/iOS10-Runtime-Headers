@@ -3,13 +3,13 @@
  */
 
 @interface AVAssetMakeReadyForInspectionLoader : AVAssetInspectorLoader {
-    NSURL *_URL;
-    AVAssetInspector *_assetInspector;
-    long _basicInspectionFailureCode;
-    struct OpaqueFigFormatReader { } *_formatReader;
-    NSMutableArray *_keysAwaitingCompletion;
-    struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    int _status;
+    NSURL * _URL;
+    AVAssetInspector * _assetInspector;
+    long  _basicInspectionFailureCode;
+    struct OpaqueFigFormatReader { } * _formatReader;
+    NSMutableArray * _keysAwaitingCompletion;
+    struct OpaqueFigSimpleMutex { } * _loadingMutex;
+    int  _status;
 }
 
 - (id)URL;

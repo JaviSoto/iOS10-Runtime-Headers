@@ -3,23 +3,23 @@
  */
 
 @interface EKLegacyUIOccurrenceListItem : UIView {
-    unsigned int _cancelled;
-    unsigned int _declined;
-    unsigned int _designator;
-    UIImage *_dot;
-    UIColor *_dotColor;
-    unsigned int _indentsWithoutDot;
-    unsigned int _isAllDay;
-    unsigned int _isBirthday;
-    unsigned int _isEndDate;
-    unsigned int _isFacebook;
-    BOOL _isSelected;
-    NSString *_location;
-    unsigned int _needsReply;
-    unsigned int _showsColors;
-    unsigned int _tentative;
-    NSString *_timeString;
-    NSString *_title;
+    unsigned int  _cancelled;
+    unsigned int  _declined;
+    unsigned int  _designator;
+    UIImage * _dot;
+    UIColor * _dotColor;
+    unsigned int  _indentsWithoutDot;
+    unsigned int  _isAllDay;
+    unsigned int  _isBirthday;
+    unsigned int  _isEndDate;
+    unsigned int  _isFacebook;
+    BOOL  _isSelected;
+    NSString * _location;
+    unsigned int  _needsReply;
+    unsigned int  _showsColors;
+    unsigned int  _tentative;
+    NSString * _timeString;
+    NSString * _title;
 }
 
 + (void)_calculateWidths;

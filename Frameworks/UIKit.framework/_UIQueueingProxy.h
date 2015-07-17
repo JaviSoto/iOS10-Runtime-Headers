@@ -3,17 +3,17 @@
  */
 
 @interface _UIQueueingProxy : _UITargetedProxy {
-    int _lock;
-    NSMutableArray *_queuedInvocations;
-    id /* block */ _shouldSuspendInvocationBlock;
-    unsigned int _suspensionCount;
+    int  _lock;
+    NSMutableArray * _queuedInvocations;
+    id /* block */  _shouldSuspendInvocationBlock;
+    unsigned int  _suspensionCount;
 }
 
 + (id)proxyWithTarget:(id)arg1;
 + (id)proxyWithTarget:(id)arg1 shouldSuspendInvocationBlock:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (void)_dispatchSuspendedMessages;
-- (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (void)removeAllEnqueuedInvocations;

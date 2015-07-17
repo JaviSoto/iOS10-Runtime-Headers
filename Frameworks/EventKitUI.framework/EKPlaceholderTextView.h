@@ -3,8 +3,8 @@
  */
 
 @interface EKPlaceholderTextView : UITextView {
-    UILabel *_placeholder;
-    BOOL _showingPlaceholder;
+    UILabel * _placeholder;
+    BOOL  _showingPlaceholder;
 }
 
 - (void).cxx_destruct;

@@ -3,22 +3,22 @@
  */
 
 @interface PLPhotoScrubber : UIControl {
-    int __lastSpeedRegime;
-    double __lastTime;
-    float __scrubbingSpeed;
-    NSTimer *__timeoutTimer;
-    <PLPhotoScrubberDataSource> *_dataSource;
-    BOOL _deferImageLoading;
-    unsigned int _displayedImageIndex;
-    unsigned int _imageCount;
-    float _imagesPerViewRatio;
-    double _lastUpdate;
-    BOOL _loadImagesSynchronously;
-    int _loupeIndex;
-    UIImageView *_loupeView;
-    int _prospectiveImageIndex;
-    BOOL _scrubbing;
-    <PLPhotoScrubberSpeedDelegate> *_speedDelegate;
+    int  __lastSpeedRegime;
+    double  __lastTime;
+    float  __scrubbingSpeed;
+    NSTimer * __timeoutTimer;
+    <PLPhotoScrubberDataSource> * _dataSource;
+    BOOL  _deferImageLoading;
+    unsigned int  _displayedImageIndex;
+    unsigned int  _imageCount;
+    float  _imagesPerViewRatio;
+    double  _lastUpdate;
+    BOOL  _loadImagesSynchronously;
+    int  _loupeIndex;
+    UIImageView * _loupeView;
+    int  _prospectiveImageIndex;
+    BOOL  _scrubbing;
+    <PLPhotoScrubberSpeedDelegate> * _speedDelegate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,10 +28,10 @@
             float width; 
             float height; 
         } size; 
-    } _thumbnailBounds;
-    UIView *_thumbnailTrackView;
-    NSMutableArray *_thumbnailViews;
-    double _timeOfLastTouch;
+    }  _thumbnailBounds;
+    UIView * _thumbnailTrackView;
+    NSMutableArray * _thumbnailViews;
+    double  _timeOfLastTouch;
 }
 
 @property (setter=_setLastSpeedRegime:, nonatomic) int _lastSpeedRegime;

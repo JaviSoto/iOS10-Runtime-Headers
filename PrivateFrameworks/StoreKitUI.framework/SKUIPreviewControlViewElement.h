@@ -3,9 +3,9 @@
  */
 
 @interface SKUIPreviewControlViewElement : SKUIViewElement {
-    BOOL _enabled;
-    long long _itemIdentifier;
-    NSString *_mediaURLString;
+    BOOL  _enabled;
+    long long  _itemIdentifier;
+    NSString * _mediaURLString;
 }
 
 @property (nonatomic, readonly) long long itemIdentifier;

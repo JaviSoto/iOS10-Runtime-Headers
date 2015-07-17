@@ -3,10 +3,10 @@
  */
 
 @interface BTLEAccessory : NSObject {
-    int _lastRSSI;
-    double _lastSeen;
-    NSString *_name;
-    CBPeripheral *_peripheral;
+    int  _lastRSSI;
+    double  _lastSeen;
+    NSString * _name;
+    CBPeripheral * _peripheral;
 }
 
 @property (nonatomic) int RSSI;

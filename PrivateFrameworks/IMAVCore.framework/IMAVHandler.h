@@ -3,9 +3,9 @@
  */
 
 @interface IMAVHandler : NSObject {
-    NSMutableArray *_pendingChats;
-    NSMutableArray *_pendingLookups;
-    NSMutableArray *_processingInvites;
+    NSMutableArray * _pendingChats;
+    NSMutableArray * _pendingLookups;
+    NSMutableArray * _processingInvites;
 }
 
 + (void)ensureHandlerSetup;

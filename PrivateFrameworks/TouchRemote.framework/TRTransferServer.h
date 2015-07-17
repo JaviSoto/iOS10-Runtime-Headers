@@ -3,15 +3,16 @@
  */
 
 @interface TRTransferServer : NSObject <WPTransferDelegate> {
-    int _advertiserState;
-    struct { struct _CCCryptor {} *x1; unsigned char x2[16]; unsigned char x3[16]; unsigned int x4; } *_aesContext;
-    <TRTransferServerDelegate> *_delegate;
-    BOOL _didSendData;
-    struct AirPlayPairingSessionPrivate { } *_pairingSession;
-    int _pairingState;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _started;
-    WPTransfer *_transferSession;
+    int  _advertiserState;
+    struct { struct _CCCryptor {} *x1; unsigned char x2[16]; unsigned char x3[16]; unsigned int x4; } * _aesContext;
+    <TRTransferServerDelegate> * _delegate;
+    BOOL  _didSendData;
+    struct AirPlayPairingSessionPrivate { } * _pairingSession;
+    int  _pairingState;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_semaphore> * _responseSemaphore;
+    BOOL  _started;
+    WPTransfer * _transferSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;

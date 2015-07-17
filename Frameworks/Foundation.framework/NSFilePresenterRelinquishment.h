@@ -3,8 +3,8 @@
  */
 
 @interface NSFilePresenterRelinquishment : NSObject {
-    NSCountedSet *_blockingAccessClaimIDs;
-    id /* block */ _reacquirer;
+    NSCountedSet * _blockingAccessClaimIDs;
+    id /* block */  _reacquirer;
 }
 
 - (BOOL)addBlockingAccessClaimID:(id)arg1;

@@ -5,6 +5,7 @@
 @interface HDSQLitePredicate : NSObject <NSCopying>
 
 + (id)compoundPredicateWithPredicate:(id)arg1 otherPredicate:(id)arg2;
++ (id)falsePredicate;
 
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;

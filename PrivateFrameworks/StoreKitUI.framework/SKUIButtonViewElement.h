@@ -3,30 +3,30 @@
  */
 
 @interface SKUIButtonViewElement : SKUIViewElement {
-    BOOL _autoIncrementCount;
-    NSString *_badgeResourceName;
-    BOOL _bigHitButton;
-    float _bigHitSize;
-    SKUIViewElementText *_buttonText;
-    int _buttonViewSubType;
-    int _buttonViewType;
-    SKUIBuyButtonDescriptor *_buyButtonDescriptor;
-    NSString *_confirmationText;
-    long long _dataPlaybackId;
-    BOOL _enabled;
-    long long _itemIdentifier;
-    NSString *_nonToggledText;
-    NSString *_playItemIdentifier;
-    BOOL _selected;
-    BOOL _showOnDemand;
-    NSString *_sizeVariant;
-    SKUIStoreIdentifier *_storeIdentifier;
-    NSString *_toggleItemIdentfier;
-    NSString *_toggleItemIdentifier;
-    BOOL _toggled;
-    NSString *_toggledText;
-    NSString *_variantIdentifier;
-    IKDOMElement *_xml;
+    BOOL  _autoIncrementCount;
+    NSString * _badgeResourceName;
+    BOOL  _bigHitButton;
+    float  _bigHitSize;
+    SKUIViewElementText * _buttonText;
+    int  _buttonViewSubType;
+    int  _buttonViewType;
+    SKUIBuyButtonDescriptor * _buyButtonDescriptor;
+    NSString * _confirmationText;
+    long long  _dataPlaybackId;
+    BOOL  _enabled;
+    long long  _itemIdentifier;
+    NSString * _nonToggledText;
+    NSString * _playItemIdentifier;
+    BOOL  _selected;
+    BOOL  _showOnDemand;
+    NSString * _sizeVariant;
+    SKUIStoreIdentifier * _storeIdentifier;
+    NSString * _toggleItemIdentfier;
+    NSString * _toggleItemIdentifier;
+    BOOL  _toggled;
+    NSString * _toggledText;
+    NSString * _variantIdentifier;
+    IKDOMElement * _xml;
 }
 
 @property (nonatomic, readonly) SKUIImageViewElement *additionalButtonImage;

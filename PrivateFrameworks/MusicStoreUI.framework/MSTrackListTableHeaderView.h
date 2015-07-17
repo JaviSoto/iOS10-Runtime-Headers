@@ -3,11 +3,11 @@
  */
 
 @interface MSTrackListTableHeaderView : UIView {
-    NSString *_title;
+    NSString * _title;
     struct CGSize { 
         float width; 
         float height; 
-    } _titleSize;
+    }  _titleSize;
 }
 
 @property (nonatomic, retain) NSString *title;

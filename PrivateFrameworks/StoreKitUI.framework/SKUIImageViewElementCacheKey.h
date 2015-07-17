@@ -3,12 +3,12 @@
  */
 
 @interface SKUIImageViewElementCacheKey : NSObject {
-    int _imageTreatment;
+    int  _imageTreatment;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSURL *_url;
+    }  _size;
+    NSURL * _url;
 }
 
 - (void).cxx_destruct;

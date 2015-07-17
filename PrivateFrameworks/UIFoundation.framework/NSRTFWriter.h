@@ -3,32 +3,33 @@
  */
 
 @interface NSRTFWriter : NSObject {
-    NSAttributedString *_attrString;
-    unsigned int _attrStringLength;
-    NSMutableDictionary *_colors;
-    id _curBackgroundColor;
-    id _curBaselineOffset;
-    unsigned long _curEncoding;
-    id _curFont;
-    id _curForegroundColor;
-    id _curKern;
-    id _curParagraphStyle;
-    id _curSuperscript;
-    int _curTraits;
-    id _curUnderlineStyle;
-    NSDictionary *_docAttrs;
-    NSFileWrapper *_document;
-    NSMutableDictionary *_fontNames;
-    void *_layoutSections;
-    NSMutableArray *_listRanges;
-    NSMutableData *_output;
-    float _rightMargin;
+    NSMapTable * _attachmentData;
+    NSAttributedString * _attrString;
+    unsigned int  _attrStringLength;
+    NSMutableDictionary * _colors;
+    id  _curBackgroundColor;
+    id  _curBaselineOffset;
+    unsigned long  _curEncoding;
+    id  _curFont;
+    id  _curForegroundColor;
+    id  _curKern;
+    id  _curParagraphStyle;
+    id  _curSuperscript;
+    int  _curTraits;
+    id  _curUnderlineStyle;
+    NSDictionary * _docAttrs;
+    NSFileWrapper * _document;
+    NSMutableDictionary * _fontNames;
+    void * _layoutSections;
+    NSMutableArray * _listRanges;
+    NSMutableData * _output;
+    float  _rightMargin;
     struct { 
         unsigned int _forceColorWrite : 1; 
         unsigned int _activeFontFeatures : 1; 
         unsigned int _preserveNaturalAlignment : 1; 
         unsigned int _reserved : 29; 
-    } _rwFlags;
+    }  _rwFlags;
 }
 
 + (id)RTFDataForDate:(id)arg1;
@@ -39,6 +40,7 @@
 - (id)RTFD;
 - (id)RTFDFileWrapper;
 - (id)_RTFDFileWrapper;
+- (id)_attachmentData;
 - (int)_mostCompatibleCharset:(id)arg1;
 - (id)_plainFontNameForFont:(id)arg1;
 - (void)_setPreserveNaturalAlignment:(BOOL)arg1;

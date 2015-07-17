@@ -3,7 +3,7 @@
  */
 
 @interface TSWPHyperlinkField : TSWPSmartField {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *displayText;

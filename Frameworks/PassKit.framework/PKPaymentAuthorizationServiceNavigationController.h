@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentAuthorizationServiceNavigationController : UINavigationController {
-    PKPaymentAuthorizationServiceViewController *_authorizationViewController;
-    PKPaymentAuthorizationLayout *_layout;
-    <UIViewControllerTransitioningDelegate> *_paymentTransitioningDelegate;
+    PKPaymentAuthorizationServiceViewController * _authorizationViewController;
+    PKPaymentAuthorizationLayout * _layout;
+    <UIViewControllerTransitioningDelegate> * _paymentTransitioningDelegate;
 }
 
 @property (nonatomic, retain) PKPaymentAuthorizationServiceViewController *authorizationViewController;

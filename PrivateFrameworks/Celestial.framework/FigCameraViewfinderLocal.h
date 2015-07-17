@@ -3,9 +3,9 @@
  */
 
 @interface FigCameraViewfinderLocal : FigCameraViewfinder <FigCaptureSessionObserver> {
-    FigCameraViewfinderSessionLocal *_activeViewfinderSession;
-    BOOL _observing;
-    NSDictionary *_options;
+    FigCameraViewfinderSessionLocal * _activeViewfinderSession;
+    BOOL  _observing;
+    NSDictionary * _options;
 }
 
 @property (readonly, copy) NSString *debugDescription;

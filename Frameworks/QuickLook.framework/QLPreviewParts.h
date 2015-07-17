@@ -3,37 +3,37 @@
  */
 
 @interface QLPreviewParts : NSObject {
-    NSURLConnection *_connection;
-    void *_convertFunction;
-    NSData *_data;
-    id _delegate;
-    NSString *_fileName;
-    int _pageCount;
-    float _pageHeight;
-    float _pageWidth;
-    NSString *_password;
-    BOOL _progressive;
-    NSURL *_url;
-    NSString *_uti;
-    BOOL cancelled;
-    BOOL computed;
-    NSThread *delegateCallbackThread;
-    NSMutableDictionary *encodingsForURLs;
-    BOOL htmlErrorDisabled;
-    NSError *mainError;
-    NSMutableSet *outstandingURLs;
-    NSURLResponse *previewResponse;
-    NSURL *previewURL;
-    NSMutableSet *registeredURLs;
-    const void *representedObject;
+    NSURLConnection * _connection;
+    void * _convertFunction;
+    NSData * _data;
+    id  _delegate;
+    NSString * _fileName;
+    int  _pageCount;
+    float  _pageHeight;
+    float  _pageWidth;
+    NSString * _password;
+    BOOL  _progressive;
+    NSURL * _url;
+    NSString * _uti;
+    BOOL  cancelled;
+    BOOL  computed;
+    NSThread * delegateCallbackThread;
+    NSMutableDictionary * encodingsForURLs;
+    BOOL  htmlErrorDisabled;
+    NSError * mainError;
+    NSMutableSet * outstandingURLs;
+    NSURLResponse * previewResponse;
+    NSURL * previewURL;
+    NSMutableSet * registeredURLs;
+    const void * representedObject;
     struct { 
         int version; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
         int (*equal)(); 
-    } representedObjectCallbacks;
-    long representedObjectProtection;
+    }  representedObjectCallbacks;
+    long  representedObjectProtection;
 }
 
 @property (nonatomic, readonly) NSSet *attachmentURLs;

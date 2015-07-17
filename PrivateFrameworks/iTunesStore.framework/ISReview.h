@@ -3,18 +3,18 @@
  */
 
 @interface ISReview : NSObject <NSCoding, NSCopying> {
-    int _assetType;
-    NSString *_body;
-    unsigned int _bodyMaxLength;
-    NSURL *_infoURL;
-    unsigned long long _itemIdentifier;
-    NSString *_nickname;
-    BOOL _nicknameIsConfirmed;
-    unsigned int _nicknameMaxLength;
-    float _rating;
-    NSURL *_submitURL;
-    NSString *_title;
-    unsigned int _titleMaxLength;
+    int  _assetType;
+    NSString * _body;
+    unsigned int  _bodyMaxLength;
+    NSURL * _infoURL;
+    unsigned long long  _itemIdentifier;
+    NSString * _nickname;
+    BOOL  _nicknameIsConfirmed;
+    unsigned int  _nicknameMaxLength;
+    float  _rating;
+    NSURL * _submitURL;
+    NSString * _title;
+    unsigned int  _titleMaxLength;
 }
 
 @property (nonatomic) int assetType;

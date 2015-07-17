@@ -3,24 +3,24 @@
  */
 
 @interface SKStoreProductViewController : UIViewController {
-    NSString *_additionalBuyParameters;
-    NSString *_affiliateIdentifier;
-    BOOL _askToBuy;
-    BOOL _automaticallyDismisses;
-    NSString *_cancelButtonTitle;
-    _UIAsyncInvocation *_cancelRequest;
-    NSString *_clientIdentifier;
-    <SKStoreProductViewControllerDelegatePrivate> *_delegate;
-    id /* block */ _loadBlock;
-    int _originalStatusBarStyle;
-    int _productPageStyle;
-    NSString *_promptString;
-    SKRemoteProductViewController *_remoteViewController;
-    NSString *_rightBarButtonTitle;
-    NSDictionary *_scriptContextDictionary;
-    SKInvocationQueueProxy<SKUIServiceProductPageViewController> *_serviceProxy;
-    BOOL _showsRightBarButton;
-    BOOL _showsStoreButton;
+    NSString * _additionalBuyParameters;
+    NSString * _affiliateIdentifier;
+    BOOL  _askToBuy;
+    BOOL  _automaticallyDismisses;
+    NSString * _cancelButtonTitle;
+    _UIAsyncInvocation * _cancelRequest;
+    NSString * _clientIdentifier;
+    <SKStoreProductViewControllerDelegatePrivate> * _delegate;
+    id /* block */  _loadBlock;
+    int  _originalStatusBarStyle;
+    int  _productPageStyle;
+    NSString * _promptString;
+    SKRemoteProductViewController * _remoteViewController;
+    NSString * _rightBarButtonTitle;
+    NSDictionary * _scriptContextDictionary;
+    SKInvocationQueueProxy<SKUIServiceProductPageViewController> * _serviceProxy;
+    BOOL  _showsRightBarButton;
+    BOOL  _showsStoreButton;
 }
 
 @property (nonatomic, copy) id /* block */ _gkCompletionHandler;
@@ -49,6 +49,7 @@
 - (void)_addRemoteView;
 - (void)_didFinish;
 - (void)_didFinishWithResult:(int)arg1;
+- (void)_fireLoadBlockBeforeFinishing;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)_loadDidFinishWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;

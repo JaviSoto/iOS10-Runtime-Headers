@@ -3,13 +3,13 @@
  */
 
 @interface NSTextTableBlock : NSTextBlock {
-    int _colNum;
-    int _colSpan;
-    int _rowNum;
-    int _rowSpan;
-    NSTextTable *_table;
-    void *_tableBlockPrimary;
-    void *_tableBlockSecondary;
+    int  _colNum;
+    int  _colSpan;
+    int  _rowNum;
+    int  _rowSpan;
+    NSTextTable * _table;
+    void * _tableBlockPrimary;
+    void * _tableBlockSecondary;
 }
 
 + (void)initialize;

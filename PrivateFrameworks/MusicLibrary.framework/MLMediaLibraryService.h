@@ -3,11 +3,11 @@
  */
 
 @interface MLMediaLibraryService : NSObject <MLMediaLibraryServiceClientProtocol> {
-    NSMutableDictionary *_progressBlocksByUUID;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSXPCConnection *_serviceConnection;
-    <MLMediaLibraryServiceProtocol> *_serviceProxy;
+    NSMutableDictionary * _progressBlocksByUUID;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSXPCConnection * _serviceConnection;
+    <MLMediaLibraryServiceProtocol> * _serviceProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;

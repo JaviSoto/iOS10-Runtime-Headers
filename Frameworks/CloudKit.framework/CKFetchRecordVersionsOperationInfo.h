@@ -3,9 +3,9 @@
  */
 
 @interface CKFetchRecordVersionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_desiredKeys;
-    NSString *_minimumVersionETag;
-    NSArray *_recordIDs;
+    NSArray * _desiredKeys;
+    NSString * _minimumVersionETag;
+    NSArray * _recordIDs;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;

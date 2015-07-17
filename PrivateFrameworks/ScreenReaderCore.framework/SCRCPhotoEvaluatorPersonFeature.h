@@ -3,7 +3,7 @@
  */
 
 @interface SCRCPhotoEvaluatorPersonFeature : NSObject {
-    int _faceLocation;
+    int  _faceLocation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +13,8 @@
             float width; 
             float height; 
         } size; 
-    } _faceRect;
-    int _faceSize;
+    }  _faceRect;
+    int  _faceSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,7 +24,7 @@
             float width; 
             float height; 
         } size; 
-    } _leftEyeRect;
+    }  _leftEyeRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,7 +34,7 @@
             float width; 
             float height; 
         } size; 
-    } _mouthRect;
+    }  _mouthRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -44,8 +44,8 @@
             float width; 
             float height; 
         } size; 
-    } _rightEyeRect;
-    NSString *_shirtColor;
+    }  _rightEyeRect;
+    NSString * _shirtColor;
 }
 
 @property (nonatomic, readonly) int faceLocation;

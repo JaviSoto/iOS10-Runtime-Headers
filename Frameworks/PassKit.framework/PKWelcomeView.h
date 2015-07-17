@@ -3,17 +3,17 @@
  */
 
 @interface PKWelcomeView : UIView {
-    UIButton *_actionButton;
-    UIActivityIndicatorView *_activityIndicator;
-    UIImageView *_backgroundView;
-    UIImage *_headerImage;
-    UIImageView *_headerView;
-    NSAttributedString *_message;
-    UITextView *_messageView;
-    UIImageView *_shadowView;
-    BOOL _showActivityIndicator;
-    NSAttributedString *_title;
-    UITextView *_titleView;
+    UIButton * _actionButton;
+    UIActivityIndicatorView * _activityIndicator;
+    UIImageView * _backgroundView;
+    UIImage * _headerImage;
+    UIImageView * _headerView;
+    NSAttributedString * _message;
+    UITextView * _messageView;
+    UIImageView * _shadowView;
+    BOOL  _showActivityIndicator;
+    NSAttributedString * _title;
+    UITextView * _titleView;
 }
 
 @property (nonatomic, retain) UIButton *actionButton;

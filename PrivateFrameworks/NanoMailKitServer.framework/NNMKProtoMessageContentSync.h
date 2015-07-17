@@ -3,19 +3,19 @@
  */
 
 @interface NNMKProtoMessageContentSync : PBCodable <NSCopying> {
-    NSMutableArray *_attachments;
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSMutableArray * _attachments;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int mainAlternativeValid : 1; 
         unsigned int partiallyLoaded : 1; 
-    } _has;
-    BOOL _mainAlternativeValid;
-    NSString *_messageId;
-    BOOL _partiallyLoaded;
-    NSData *_preview;
-    NSData *_text;
+    }  _has;
+    BOOL  _mainAlternativeValid;
+    NSString * _messageId;
+    BOOL  _partiallyLoaded;
+    NSData * _preview;
+    NSData * _text;
 }
 
 @property (nonatomic, retain) NSMutableArray *attachments;

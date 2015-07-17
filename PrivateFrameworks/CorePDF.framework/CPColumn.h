@@ -3,13 +3,13 @@
  */
 
 @interface CPColumn : CPRegion {
-    BOOL complete;
-    BOOL hasCentredParagraph;
-    BOOL hasColumnBreak;
-    float maxLeftPad;
-    float maxRight;
-    float maxRightPad;
-    float minLeft;
+    BOOL  complete;
+    BOOL  hasCentredParagraph;
+    BOOL  hasColumnBreak;
+    float  maxLeftPad;
+    float  maxRight;
+    float  maxRightPad;
+    float  minLeft;
 }
 
 @property BOOL complete;

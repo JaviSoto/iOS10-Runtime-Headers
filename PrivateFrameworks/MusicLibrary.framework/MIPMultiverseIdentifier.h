@@ -3,7 +3,7 @@
  */
 
 @interface MIPMultiverseIdentifier : PBCodable <NSCopying> {
-    long long _accountId;
+    long long  _accountId;
     struct { 
         unsigned int accountId : 1; 
         unsigned int purchaseHistoryId : 1; 
@@ -11,14 +11,14 @@
         unsigned int storeId : 1; 
         unsigned int mediaObjectType : 1; 
         unsigned int mediaType : 1; 
-    } _has;
-    NSMutableArray *_libraryIdentifiers;
-    int _mediaObjectType;
-    int _mediaType;
-    NSString *_name;
-    long long _purchaseHistoryId;
-    long long _sagaId;
-    long long _storeId;
+    }  _has;
+    NSMutableArray * _libraryIdentifiers;
+    int  _mediaObjectType;
+    int  _mediaType;
+    NSString * _name;
+    long long  _purchaseHistoryId;
+    long long  _sagaId;
+    long long  _storeId;
 }
 
 @property (nonatomic) long long accountId;

@@ -3,23 +3,23 @@
  */
 
 @interface SKUIReviewsHistogramView : UIView {
-    UIButton *_appSupportButton;
-    UIView *_bottomSeparatorView;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    UILabel *_countLabel;
-    UIImageView *_histogramImageView;
-    NSArray *_histogramValues;
-    int _numberOfUserRatings;
-    NSMutableDictionary *_ratings;
-    UISegmentedControl *_segmentedControl;
-    SKUIStarRatingControl *_starRatingControl;
-    UILabel *_starRatingControlLabel;
-    UILabel *_titleLabel;
-    float _userRating;
-    UIImageView *_userRatingStarsView;
-    NSString *_versionString;
-    UIButton *_writeAReviewButton;
+    UIButton * _appSupportButton;
+    UIView * _bottomSeparatorView;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    UILabel * _countLabel;
+    UIImageView * _histogramImageView;
+    NSArray * _histogramValues;
+    int  _numberOfUserRatings;
+    NSMutableDictionary * _ratings;
+    UISegmentedControl * _segmentedControl;
+    SKUIStarRatingControl * _starRatingControl;
+    UILabel * _starRatingControlLabel;
+    UILabel * _titleLabel;
+    float  _userRating;
+    UIImageView * _userRatingStarsView;
+    NSString * _versionString;
+    UIButton * _writeAReviewButton;
 }
 
 @property (nonatomic, readonly) UIControl *appSupportButton;

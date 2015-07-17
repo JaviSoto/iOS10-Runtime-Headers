@@ -3,12 +3,12 @@
  */
 
 @interface PSSoftwareUpdateTitleCell : PSTableCell <UIWebViewDelegate> {
-    PSSoftwareUpdateAnimatedIcon *_animatedGearView;
-    BOOL _animatingGearView;
-    UIProgressView *_progressBar;
-    int _progressStyle;
-    PSWebContainerView *_releaseNotesSummaryView;
-    UILabel *_updateStatusLabel;
+    PSSoftwareUpdateAnimatedIcon * _animatedGearView;
+    BOOL  _animatingGearView;
+    UIProgressView * _progressBar;
+    int  _progressStyle;
+    PSWebContainerView * _releaseNotesSummaryView;
+    UILabel * _updateStatusLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,8 +23,8 @@
 
 + (int)cellStyle;
 
+- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)dealloc;
 - (void)didMoveToSuperview;
 - (id)gearBackgroundImage;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;

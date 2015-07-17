@@ -3,7 +3,7 @@
  */
 
 @interface PLCGPathCache : NSObject {
-    struct __CFDictionary { } *_pathCache;
+    struct __CFDictionary { } * _pathCache;
 }
 
 + (id)sharedPathCache;

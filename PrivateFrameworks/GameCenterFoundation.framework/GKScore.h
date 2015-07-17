@@ -3,9 +3,9 @@
  */
 
 @interface GKScore : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    GKGame *_game;
-    GKScoreInternal *_internal;
-    BOOL _shouldSetDefaultLeaderboard;
+    GKGame * _game;
+    GKScoreInternal * _internal;
+    BOOL  _shouldSetDefaultLeaderboard;
 }
 
 @property (nonatomic, copy) NSString *category;

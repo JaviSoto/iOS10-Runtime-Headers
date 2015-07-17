@@ -6,12 +6,12 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialPinchCenter;
-    float _initialPinchScale;
-    BOOL _interactive;
-    unsigned int _itemIndex;
-    BOOL _shouldUseSpringAnimation;
-    MPUExtrasBorderedImageView *_zoomingImageView;
+    }  _initialPinchCenter;
+    float  _initialPinchScale;
+    BOOL  _interactive;
+    unsigned int  _itemIndex;
+    BOOL  _shouldUseSpringAnimation;
+    MPUExtrasBorderedImageView * _zoomingImageView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderTrackOutput : AVAssetReaderOutput {
-    AVAssetReaderTrackOutputInternal *_trackOutputInternal;
+    AVAssetReaderTrackOutputInternal * _trackOutputInternal;
 }
 
 @property (nonatomic) BOOL appliesPreferredTrackTransform;

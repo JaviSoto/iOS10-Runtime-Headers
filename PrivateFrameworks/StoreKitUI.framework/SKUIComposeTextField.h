@@ -3,12 +3,12 @@
  */
 
 @interface SKUIComposeTextField : UIView <UITextFieldDelegate> {
-    SKUIComposeTextFieldConfiguration *_configuration;
-    int _currentTextLength;
-    id _delegate;
-    UILabel *_label;
-    int _style;
-    UITextField *_textField;
+    SKUIComposeTextFieldConfiguration * _configuration;
+    int  _currentTextLength;
+    id  _delegate;
+    UILabel * _label;
+    int  _style;
+    UITextField * _textField;
 }
 
 @property (nonatomic, readonly) int composeReviewStyle;

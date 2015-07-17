@@ -15,7 +15,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } map;
+    }  map;
 }
 
 - (id).cxx_construct;

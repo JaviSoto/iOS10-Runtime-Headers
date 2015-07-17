@@ -3,7 +3,7 @@
  */
 
 @interface MPRemoteMediaPickerController : _UIRemoteViewController {
-    MPMediaPickerController *_mediaPickerController;
+    MPMediaPickerController * _mediaPickerController;
 }
 
 @property (nonatomic) MPMediaPickerController *mediaPickerController;

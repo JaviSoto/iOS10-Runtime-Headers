@@ -3,25 +3,26 @@
  */
 
 @interface PLCameraImporter : NSObject <ICCameraDeviceDelegate, ICDeviceDelegate> {
-    BOOL _autosplitEvents;
-    ICCameraDevice *_camera;
-    NSMutableArray *_coalescedDeletedItems;
-    id _delegate;
-    PLCameraImportQueue *_deleteQueue;
-    PLCameraImportQueue *_downloadQueue;
-    int _eventSplitGranularity;
-    PLImportFileManager *_importFileManager;
-    BOOL _importInProgress;
-    BOOL _importItemInProgress;
-    PLCameraImportQueue *_importQueue;
-    BOOL _isAppleDevice;
-    NSMutableArray *_items;
-    NSMutableDictionary *_itemsMapping;
-    NSMutableArray *_orphanItems;
-    NSMutableDictionary *_parentFolderMapping;
-    BOOL _stopAfterNextItemImport;
-    PLMutableCameraImportQueue *_thumbnailQueue;
-    NSString *importSessionIdentifier;
+    BOOL  _autosplitEvents;
+    NSMutableSet * _avalanchesImported;
+    ICCameraDevice * _camera;
+    NSMutableArray * _coalescedDeletedItems;
+    id  _delegate;
+    PLCameraImportQueue * _deleteQueue;
+    PLCameraImportQueue * _downloadQueue;
+    int  _eventSplitGranularity;
+    PLImportFileManager * _importFileManager;
+    BOOL  _importInProgress;
+    BOOL  _importItemInProgress;
+    PLCameraImportQueue * _importQueue;
+    BOOL  _isAppleDevice;
+    NSMutableArray * _items;
+    NSMutableDictionary * _itemsMapping;
+    NSMutableArray * _orphanItems;
+    NSMutableDictionary * _parentFolderMapping;
+    BOOL  _stopAfterNextItemImport;
+    PLMutableCameraImportQueue * _thumbnailQueue;
+    NSString * importSessionIdentifier;
 }
 
 @property (nonatomic, retain) ICCameraDevice *camera;

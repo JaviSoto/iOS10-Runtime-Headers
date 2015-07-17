@@ -3,10 +3,10 @@
  */
 
 @interface TSDStrokePattern : NSObject <NSCopying, TSDMixing> {
-    unsigned int mCount;
-    float mPattern;
-    float mPhase;
-    int mType;
+    unsigned int  mCount;
+    float  mPattern;
+    float  mPhase;
+    int  mType;
 }
 
 @property (nonatomic, readonly) unsigned int count;

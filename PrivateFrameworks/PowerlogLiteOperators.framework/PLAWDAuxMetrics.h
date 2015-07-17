@@ -3,8 +3,8 @@
  */
 
 @interface PLAWDAuxMetrics : NSObject {
-    PLOperator *_operator;
-    NSMutableSet *_runningMetrics;
+    PLOperator * _operator;
+    NSMutableSet * _runningMetrics;
 }
 
 @property PLOperator *operator;

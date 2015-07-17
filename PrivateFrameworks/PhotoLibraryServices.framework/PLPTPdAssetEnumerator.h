@@ -3,10 +3,10 @@
  */
 
 @interface PLPTPdAssetEnumerator : NSObject <NSFastEnumeration> {
-    NSArray *_albumObjectIDs;
-    NSArray *_assetObjectIDs;
-    PLManagedObjectContext *_managedObjectContext;
-    NSArray *_resultStore;
+    NSArray * _albumObjectIDs;
+    NSArray * _assetObjectIDs;
+    PLManagedObjectContext * _managedObjectContext;
+    NSArray * _resultStore;
 }
 
 + (id)enumeratorWithAssetObjectIDs:(id)arg1 albumObjectIDs:(id)arg2 managedObjectContext:(id)arg3;

@@ -3,11 +3,11 @@
  */
 
 @interface WPZoneTracker : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WPZoneTrackerDelegate> *_delegate;
-    int _state;
-    BOOL _wantEntry;
-    BOOL _wantExit;
+    XPCClient * _connection;
+    <WPZoneTrackerDelegate> * _delegate;
+    int  _state;
+    BOOL  _wantEntry;
+    BOOL  _wantExit;
 }
 
 @property (nonatomic, retain) XPCClient *connection;

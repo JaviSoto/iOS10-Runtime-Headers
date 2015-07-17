@@ -14,15 +14,15 @@
         } rangeToBuffer; 
         int bufferedRangeStart; 
         int bufferedRangeEnd; 
-    } _ib;
-    unsigned int _len;
-    unsigned int _pos;
-    NSIndexSet *_quoted;
+    }  _ib;
+    unsigned int  _len;
+    unsigned int  _pos;
+    NSIndexSet * _quoted;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _sig;
-    struct __CFString { } *_str;
+    }  _sig;
+    struct __CFString { } * _str;
 }
 
 @property (nonatomic) unsigned int pos;

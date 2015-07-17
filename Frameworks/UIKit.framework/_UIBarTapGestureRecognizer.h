@@ -3,8 +3,8 @@
  */
 
 @interface _UIBarTapGestureRecognizer : UITapGestureRecognizer {
-    BOOL _failWhenTappingInBars;
-    int _tapCategory;
+    BOOL  _failWhenTappingInBars;
+    int  _tapCategory;
 }
 
 @property (nonatomic) BOOL failWhenTappingInBars;

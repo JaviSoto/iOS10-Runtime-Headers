@@ -3,22 +3,22 @@
  */
 
 @interface UIKBSplitRow : NSObject {
-    UIKBTree *_attrlistLeft;
-    UIKBTree *_attrlistRight;
+    UIKBTree * _attrlistLeft;
+    UIKBTree * _attrlistRight;
     struct CGSize { 
         float width; 
         float height; 
-    } _defaultKeySize;
-    UIKBTree *_geolistLeft;
-    UIKBTree *_geolistRight;
-    NSDictionary *_hints;
-    UIKBTree *_keylistLeft;
-    UIKBTree *_keylistRight;
-    NSMutableArray *_keys;
-    unsigned char _rowIndex;
-    float _rowOffset;
-    float _rowWidth;
-    NSMutableArray *_vacancies;
+    }  _defaultKeySize;
+    UIKBTree * _geolistLeft;
+    UIKBTree * _geolistRight;
+    NSDictionary * _hints;
+    UIKBTree * _keylistLeft;
+    UIKBTree * _keylistRight;
+    NSMutableArray * _keys;
+    unsigned char  _rowIndex;
+    float  _rowOffset;
+    float  _rowWidth;
+    NSMutableArray * _vacancies;
 }
 
 @property struct CGSize { float x1; float x2; } defaultKeySize;

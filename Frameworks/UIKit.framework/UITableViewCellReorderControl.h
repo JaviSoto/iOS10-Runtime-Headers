@@ -3,16 +3,19 @@
  */
 
 @interface UITableViewCellReorderControl : UIControl {
-    UITableViewCell *_cell;
+    UITableViewCell * _cell;
     struct CGPoint { 
         float x; 
         float y; 
-    } _downPoint;
+    }  _downPoint;
 }
+
+@property (nonatomic, readonly) BOOL wantsMaskingWhileAnimatingDisabled;
 
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (id)grabberImage;
 
+- (void).cxx_destruct;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -22,5 +25,6 @@
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldTrack;
+- (BOOL)wantsMaskingWhileAnimatingDisabled;
 
 @end

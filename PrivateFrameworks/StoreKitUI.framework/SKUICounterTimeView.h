@@ -3,16 +3,16 @@
  */
 
 @interface SKUICounterTimeView : UIView {
-    SKUIClientContext *_clientContext;
-    _SKUICounterTimeFieldView *_daysFieldView;
-    NSDate *_endDate;
-    _SKUICounterTimeFieldView *_hoursFieldView;
-    int _lastTimeValue;
-    _SKUICounterTimeFieldView *_minutesFieldView;
-    _SKUICounterTimeFieldView *_secondsFieldView;
-    UIColor *_textColor;
-    UIFont *_valueFont;
-    unsigned int _visibleFields;
+    SKUIClientContext * _clientContext;
+    _SKUICounterTimeFieldView * _daysFieldView;
+    NSDate * _endDate;
+    _SKUICounterTimeFieldView * _hoursFieldView;
+    int  _lastTimeValue;
+    _SKUICounterTimeFieldView * _minutesFieldView;
+    _SKUICounterTimeFieldView * _secondsFieldView;
+    UIColor * _textColor;
+    UIFont * _valueFont;
+    unsigned int  _visibleFields;
 }
 
 @property (nonatomic, copy) NSDate *endDate;

@@ -3,8 +3,8 @@
  */
 
 @interface MCDTableViewCell : UITableViewCell {
-    UIImageView *_artworkImageView;
-    float _originalLeftInset;
+    UIImageView * _artworkImageView;
+    float  _originalLeftInset;
 }
 
 @property (nonatomic, retain) UIImage *artworkImage;

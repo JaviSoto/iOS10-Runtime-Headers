@@ -3,12 +3,12 @@
  */
 
 @interface NSRegularExpression : NSObject <NSCoding, NSCopying> {
-    int _checkout;
-    void *_internal;
-    unsigned int _options;
-    NSString *_pattern;
-    id _reserved1;
-    int _reserved2;
+    int  _checkout;
+    void * _internal;
+    unsigned int  _options;
+    NSString * _pattern;
+    id  _reserved1;
+    int  _reserved2;
 }
 
 @property (readonly) unsigned int numberOfCaptureGroups;

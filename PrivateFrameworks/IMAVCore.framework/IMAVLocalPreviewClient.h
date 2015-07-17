@@ -3,10 +3,10 @@
  */
 
 @interface IMAVLocalPreviewClient : NSObject <IMSystemMonitorListener> {
-    BOOL _supportsPreview;
-    BOOL _wantsPausedPreview;
-    BOOL _wantsPreview;
-    BOOL _wantsUnpausedPreview;
+    BOOL  _supportsPreview;
+    BOOL  _wantsPausedPreview;
+    BOOL  _wantsPreview;
+    BOOL  _wantsUnpausedPreview;
 }
 
 @property (nonatomic) unsigned int cameraOrientation;
@@ -24,6 +24,7 @@
 - (void)_updatePreviewState;
 - (void)beginAnimationToPIP;
 - (void)beginAnimationToPreview;
+- (void)cameraDidBecomeAvailable:(unsigned int)arg1;
 - (unsigned int)cameraOrientation;
 - (unsigned int)cameraType;
 - (void)dealloc;

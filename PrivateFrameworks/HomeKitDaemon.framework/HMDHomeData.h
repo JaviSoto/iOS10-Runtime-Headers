@@ -3,21 +3,30 @@
  */
 
 @interface HMDHomeData : NSObject {
-    NSArray *_accessories;
-    NSArray *_homes;
-    NSUUID *_primaryHomeUUID;
-    NSArray *_uuidsOfRemovedHomes;
+    NSArray * _accessories;
+    NSUUID * _dataTag;
+    int  _dataVersion;
+    NSArray * _homes;
+    NSArray * _incomingInvitations;
+    NSUUID * _primaryHomeUUID;
+    NSArray * _uuidsOfRemovedHomes;
 }
 
 @property (nonatomic, readonly, copy) NSArray *accessories;
+@property (nonatomic, readonly, copy) NSUUID *dataTag;
+@property (nonatomic, readonly) int dataVersion;
 @property (nonatomic, readonly, copy) NSArray *homes;
+@property (nonatomic, readonly, copy) NSArray *incomingInvitations;
 @property (nonatomic, readonly, copy) NSUUID *primaryHomeUUID;
 @property (nonatomic, readonly, copy) NSArray *uuidsOfRemovedHomes;
 
 - (void).cxx_destruct;
 - (id)accessories;
+- (id)dataTag;
+- (int)dataVersion;
 - (id)homes;
-- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 uuidsOfRemovedHomes:(id)arg4;
+- (id)incomingInvitations;
+- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 dataVersion:(int)arg4 dataTag:(id)arg5 uuidsOfRemovedHomes:(id)arg6 incomingInvitations:(id)arg7;
 - (id)primaryHomeUUID;
 - (id)uuidsOfRemovedHomes;
 

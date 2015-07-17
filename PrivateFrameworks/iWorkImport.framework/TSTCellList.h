@@ -3,7 +3,7 @@
  */
 
 @interface TSTCellList : TSPObject <NSCopying> {
-    NSPointerArray *_cells;
+    NSPointerArray * _cells;
 }
 
 @property (nonatomic, retain) NSPointerArray *cells;

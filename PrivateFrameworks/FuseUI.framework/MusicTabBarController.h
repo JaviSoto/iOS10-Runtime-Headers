@@ -3,12 +3,12 @@
  */
 
 @interface MusicTabBarController : SKUIScrollingTabBarController {
-    MusicMiniPlayerViewController *_miniPlayerViewController;
-    BOOL _miniPlayerVisible;
-    id /* block */ _nowPlayingPresentationCompletionHandler;
-    MusicNowPlayingViewController *_nowPlayingViewController;
-    MPAVController *_player;
-    BOOL _shouldIgnorePresentations;
+    MusicMiniPlayerViewController * _miniPlayerViewController;
+    BOOL  _miniPlayerVisible;
+    id /* block */  _nowPlayingPresentationCompletionHandler;
+    MusicNowPlayingViewController * _nowPlayingViewController;
+    MPAVController * _player;
+    BOOL  _shouldIgnorePresentations;
 }
 
 @property (nonatomic, readonly) MusicMiniPlayerViewController *miniPlayerViewController;

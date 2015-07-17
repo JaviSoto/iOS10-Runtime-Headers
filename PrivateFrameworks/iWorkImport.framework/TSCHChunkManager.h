@@ -3,10 +3,10 @@
  */
 
 @interface TSCHChunkManager : NSObject {
-    TSCHChartInfo *mChartInfo;
-    unsigned int mChunkMapCount;
-    unsigned int *mSeriesMap;
-    unsigned int *mValuesMap;
+    TSCHChartInfo * mChartInfo;
+    unsigned int  mChunkMapCount;
+    unsigned int * mSeriesMap;
+    unsigned int * mValuesMap;
 }
 
 + (id)p_allChartDeliveryStylesLocalized:(BOOL)arg1;

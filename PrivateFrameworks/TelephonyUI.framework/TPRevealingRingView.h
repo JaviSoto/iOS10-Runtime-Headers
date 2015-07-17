@@ -3,32 +3,32 @@
  */
 
 @interface TPRevealingRingView : UIView {
-    float _alphaInsideRing;
-    float _alphaOutsideRing;
-    int _animationStyle;
-    UIColor *_colorInsideRing;
-    UIColor *_colorOutsideRing;
-    float _cornerRadius;
-    float _defaultRingStrokeWidth;
-    float _gammaBoost;
-    BOOL _gammaBoostInside;
-    BOOL _gammaBoostOuterRing;
-    BOOL _innerGammaAlpha;
-    TPPathView *_innerGammaView;
-    TPPathView *_innerView;
-    BOOL _isCircularRing;
-    float _minimumRevealingScale;
-    TPPathView *_outerGammaView;
-    TPBackgroundRoundedRectView *_outerView;
+    float  _alphaInsideRing;
+    float  _alphaOutsideRing;
+    int  _animationStyle;
+    UIColor * _colorInsideRing;
+    UIColor * _colorOutsideRing;
+    float  _cornerRadius;
+    float  _defaultRingStrokeWidth;
+    float  _gammaBoost;
+    BOOL  _gammaBoostInside;
+    BOOL  _gammaBoostOuterRing;
+    BOOL  _innerGammaAlpha;
+    TPPathView * _innerGammaView;
+    TPPathView * _innerView;
+    BOOL  _isCircularRing;
+    float  _minimumRevealingScale;
+    TPPathView * _outerGammaView;
+    TPBackgroundRoundedRectView * _outerView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _paddingOutsideRing;
-    float _revealAnimationDuration;
-    BOOL _revealed;
-    float _unrevealAnimationDuration;
+    }  _paddingOutsideRing;
+    float  _revealAnimationDuration;
+    BOOL  _revealed;
+    float  _unrevealAnimationDuration;
 }
 
 @property (nonatomic) float alphaInsideRing;
@@ -47,6 +47,7 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } ringSize;
 @property (nonatomic) float unrevealAnimationDuration;
 
+- (void).cxx_destruct;
 - (void)_adjustGammaBoostIfNecessary;
 - (void)_animateForReveal:(BOOL)arg1 withDuration:(float)arg2 delay:(double)arg3;
 - (id)_bezierPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
@@ -63,7 +64,6 @@
 - (id)colorInsideRing;
 - (id)colorOutsideRing;
 - (float)cornerRadius;
-- (void)dealloc;
 - (float)defaultRingStrokeWidth;
 - (float)gammaBoost;
 - (BOOL)gammaBoostInside;

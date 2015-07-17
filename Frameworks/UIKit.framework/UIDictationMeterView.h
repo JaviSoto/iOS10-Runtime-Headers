@@ -3,20 +3,20 @@
  */
 
 @interface UIDictationMeterView : UIButton {
-    CALayer *_animatingLayer;
-    UIImageView *_background;
-    int _cachedViewMode;
-    CADisplayLink *_displayLink;
-    NSTimer *_fillTimer;
-    CALayer *_micImageLayer;
-    NSMutableArray *_micListeningImages;
-    UIImageView *_overlay;
-    int _phase;
-    unsigned int _powerPointer;
-    float _releaseLevel;
-    double _releaseStart;
-    float _runningPowerLevels;
-    int _state;
+    CALayer * _animatingLayer;
+    UIImageView * _background;
+    int  _cachedViewMode;
+    CADisplayLink * _displayLink;
+    NSTimer * _fillTimer;
+    CALayer * _micImageLayer;
+    NSMutableArray * _micListeningImages;
+    UIImageView * _overlay;
+    int  _phase;
+    unsigned int  _powerPointer;
+    float  _releaseLevel;
+    double  _releaseStart;
+    float  _runningPowerLevels;
+    int  _state;
 }
 
 - (float)_adjustedDuration:(float)arg1;

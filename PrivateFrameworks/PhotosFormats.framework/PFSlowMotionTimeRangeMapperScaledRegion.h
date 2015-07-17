@@ -3,11 +3,11 @@
  */
 
 @interface PFSlowMotionTimeRangeMapperScaledRegion : NSObject {
-    float _rampInEndTime;
-    float _rampInStartTime;
-    float _rampOutEndTime;
-    float _rampOutStartTime;
-    float _rate;
+    float  _rampInEndTime;
+    float  _rampInStartTime;
+    float  _rampOutEndTime;
+    float  _rampOutStartTime;
+    float  _rate;
 }
 
 @property (nonatomic) float rampInEndTime;

@@ -3,16 +3,16 @@
  */
 
 @interface _UITextViewInteractableItem : NSObject <_UIRotatingAlertControllerDelegate> {
-    NSArray *_actions;
-    NSDictionary *_defaultAction;
-    BOOL _interactionIsFinished;
-    _UIRotatingAlertController *_linkInteractionAlertController;
+    NSArray * _actions;
+    NSDictionary * _defaultAction;
+    BOOL  _interactionIsFinished;
+    _UIRotatingAlertController * _linkInteractionAlertController;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    UITextView *_textView;
-    UIWindow *_windowForActionSheetPresentation;
+    }  _range;
+    UITextView * _textView;
+    UIWindow * _windowForActionSheetPresentation;
 }
 
 @property (nonatomic, readonly) NSArray *actions;
@@ -23,6 +23,7 @@
 @property (nonatomic) UITextView *textView;
 @property (nonatomic, retain) UIWindow *windowForActionSheetPresentation;
 
+- (void).cxx_destruct;
 - (id)_actionSheet;
 - (void)_cleanupSheet;
 - (void)_cleanupWindowForActionSheetPresentation;

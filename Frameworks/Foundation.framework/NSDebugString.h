@@ -3,7 +3,7 @@
  */
 
 @interface NSDebugString : NSString {
-    NSString *string;
+    NSString * string;
 }
 
 - (unsigned short)characterAtIndex:(unsigned int)arg1;

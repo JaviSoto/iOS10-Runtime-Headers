@@ -3,10 +3,10 @@
  */
 
 @interface MFMailComposeCorecipientViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    MFMailComposeRecipientView *_recipientView;
-    NSMutableArray *_recipients;
-    NSMutableIndexSet *_selectedIndexes;
-    UITableView *_tableView;
+    MFMailComposeRecipientView * _recipientView;
+    NSMutableArray * _recipients;
+    NSMutableIndexSet * _selectedIndexes;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

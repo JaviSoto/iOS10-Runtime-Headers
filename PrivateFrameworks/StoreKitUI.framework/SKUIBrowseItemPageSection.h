@@ -3,8 +3,8 @@
  */
 
 @interface SKUIBrowseItemPageSection : SKUIStorePageSection {
-    SKUIBrowseItemComponent *_component;
-    SKUIViewElementLayoutContext *_layoutContext;
+    SKUIBrowseItemComponent * _component;
+    SKUIViewElementLayoutContext * _layoutContext;
 }
 
 @property (nonatomic, readonly) SKUIBrowseItemComponent *pageComponent;

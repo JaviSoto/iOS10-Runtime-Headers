@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicAVPlayer : RURadioAVPlayer
+@interface MusicAVPlayer : RURadioAVPlayer {
+    MusicPlayerSessionController * _sessionController;
+}
+
+@property (nonatomic) MusicPlayerSessionController *sessionController;
 
 + (id)sharedAVPlayer;
 
+- (void).cxx_destruct;
 - (void)_connectAVPlayer;
 - (id)_expectedAssetTypesForPlaybackMode:(int)arg1;
 - (void)_musicPlayer_defaultsDidChangeNotification:(id)arg1;
-- (BOOL)_shouldSwitchToAudioPlaybackWhenTransitioningFromVideo;
 - (void)_streamingDownloadSessionControllerDidFailDownloadSessionNotification:(id)arg1;
+- (void)_willBeginPlaying;
 - (void)beginOrTogglePlayback;
 - (void)beginPlayback;
 - (void)dealloc;
@@ -19,5 +24,7 @@
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)seekAlbum:(int)arg1;
 - (void)seekPlaylist:(int)arg1;
+- (id)sessionController;
+- (void)setSessionController:(id)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SCNProgramSemanticInfo : NSObject <NSSecureCoding> {
-    NSDictionary *_options;
-    NSString *_semantic;
+    NSDictionary * _options;
+    NSString * _semantic;
 }
 
 @property (nonatomic, retain) NSDictionary *options;

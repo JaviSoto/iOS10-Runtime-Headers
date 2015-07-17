@@ -3,14 +3,15 @@
  */
 
 @interface __NSDictionaryI : NSDictionary {
-    unsigned int _szidx;
-    unsigned int _used;
+    unsigned int  _szidx;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)__apply:(int (*)arg1 context:(void*)arg2;
 - (double)_clumpingFactor;
 - (double)_clumpingInterestingThreshold;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

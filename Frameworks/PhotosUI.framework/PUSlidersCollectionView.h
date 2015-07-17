@@ -3,9 +3,9 @@
  */
 
 @interface PUSlidersCollectionView : UICollectionView {
-    float _rowHeight;
-    int _scrollDirection;
-    PUSlidersCollectionViewLayout *_tableLikeLayout;
+    float  _rowHeight;
+    int  _scrollDirection;
+    PUSlidersCollectionViewLayout * _tableLikeLayout;
 }
 
 @property (nonatomic) float rowHeight;

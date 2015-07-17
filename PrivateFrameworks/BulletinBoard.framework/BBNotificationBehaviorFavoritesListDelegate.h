@@ -3,7 +3,7 @@
  */
 
 @interface BBNotificationBehaviorFavoritesListDelegate : NSObject <ABPredicateDelegate> {
-    id /* block */ _handlerBlock;
+    id /* block */  _handlerBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

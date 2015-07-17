@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetWriterInputGroup : AVMediaSelectionGroup {
-    AVAssetWriterInputGroupInternal *_internal;
+    AVAssetWriterInputGroupInternal * _internal;
 }
 
 @property (nonatomic, readonly) AVAssetWriterInput *defaultInput;

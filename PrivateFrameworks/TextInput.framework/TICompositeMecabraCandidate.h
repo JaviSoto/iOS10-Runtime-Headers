@@ -3,8 +3,8 @@
  */
 
 @interface TICompositeMecabraCandidate : TIMecabraCandidate {
-    NSArray *_autoconvertedCandidatePointerValues;
-    NSString *_remainderCandidateString;
+    NSArray * _autoconvertedCandidatePointerValues;
+    NSString * _remainderCandidateString;
 }
 
 @property (nonatomic, copy) NSArray *autoconvertedCandidatePointerValues;

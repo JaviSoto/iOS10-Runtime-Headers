@@ -3,8 +3,8 @@
  */
 
 @interface MFPSharpenEffect : MFPEffect {
-    float mAmount;
-    float mRadius;
+    float  mAmount;
+    float  mRadius;
 }
 
 + (id)GUID;

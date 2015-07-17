@@ -3,12 +3,12 @@
  */
 
 @interface PRSSearchResponse : NSObject {
-    double _backOff;
-    NSArray *_completionResultSets;
-    NSString *_errorCodeString;
-    double _maxAge;
-    int _status;
-    NSString *_statusString;
+    double  _backOff;
+    NSArray * _completionResultSets;
+    NSString * _errorCodeString;
+    double  _maxAge;
+    int  _status;
+    NSString * _statusString;
 }
 
 @property (nonatomic, readonly) double backOff;

@@ -3,15 +3,15 @@
  */
 
 @interface PUActivityViewController : UIActivityViewController <PLDismissableViewController> {
-    struct __CFString { } *_aggregateKey;
-    float _currentAssetPreparationProgress;
-    <PUActivityViewControllerDelegate> *_delegate;
-    PUActivityItemSourceController *_itemSourceController;
-    int _numberOfAssetPreparationsCompleted;
-    int _numberOfAssetsToPrepare;
-    NSArray *_photosActivities;
-    PUProgressIndicatorView *_preparationProgressView;
-    PLProgressView *_remakerProgressView;
+    struct __CFString { } * _aggregateKey;
+    float  _currentAssetPreparationProgress;
+    <PUActivityViewControllerDelegate> * _delegate;
+    PUActivityItemSourceController * _itemSourceController;
+    int  _numberOfAssetPreparationsCompleted;
+    int  _numberOfAssetsToPrepare;
+    NSArray * _photosActivities;
+    PUProgressIndicatorView * _preparationProgressView;
+    PLProgressView * _remakerProgressView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -40,16 +40,18 @@
 - (void)_showPreparationProgressView:(id)arg1 withCancelationHandler:(id /* block */)arg2;
 - (void)_showRemakerProgressView:(id)arg1 forMail:(BOOL)arg2 withCancelationHandler:(id /* block */)arg3;
 - (void)_showSharingWasInterruptedWithCompletion:(id /* block */)arg1;
-- (void)addAsset:(id)arg1;
+- (void)addAssetItem:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithAssets:(id)arg1 photosApplicationActivities:(id)arg2;
+- (id)initWithAssetItems:(id)arg1 photosApplicationActivities:(id)arg2;
 - (void)mailActivity:(id)arg1 displayVideoRemakerProgressView:(id)arg2;
 - (id)photosActivities;
+- (void)ppt_cancelActivity;
+- (void)ppt_performActivityOfType:(id)arg1;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
-- (void)removeAsset:(id)arg1;
+- (void)removeAssetItem:(id)arg1;
 - (void)setAggregateKey:(struct __CFString { }*)arg1;
-- (void)setAssets:(id)arg1;
+- (void)setAssetItems:(id)arg1;
 - (void)setCompletionWithItemsHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)updateVisibleShareActions;

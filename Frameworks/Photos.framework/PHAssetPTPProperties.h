@@ -3,9 +3,9 @@
  */
 
 @interface PHAssetPTPProperties : NSObject {
-    PHAsset *_asset;
-    NSString *_exifTimestampString;
-    NSString *_importSessionID;
+    PHAsset * _asset;
+    NSString * _exifTimestampString;
+    NSString * _importSessionID;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

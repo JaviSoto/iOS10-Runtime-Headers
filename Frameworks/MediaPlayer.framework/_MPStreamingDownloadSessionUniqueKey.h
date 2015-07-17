@@ -3,8 +3,8 @@
  */
 
 @interface _MPStreamingDownloadSessionUniqueKey : NSObject {
-    NSString *_buyParameters;
-    long long _storeAdamID;
+    NSString * _buyParameters;
+    long long  _storeAdamID;
 }
 
 @property (nonatomic, copy) NSString *buyParameters;

@@ -3,8 +3,8 @@
  */
 
 @interface WMListLevelTextToken : NSObject {
-    int m_level;
-    NSString *m_string;
+    int  m_level;
+    NSString * m_string;
 }
 
 + (id)tokenWithString:(id)arg1 andLevel:(int)arg2;

@@ -3,11 +3,10 @@
  */
 
 @interface CIColorCrossPolynomial : CIFilter {
-    CIVector *inputBlueCoefficients;
-    CIVector *inputCoefficients;
-    CIVector *inputGreenCoefficients;
-    CIImage *inputImage;
-    CIVector *inputRedCoefficients;
+    CIVector * inputBlueCoefficients;
+    CIVector * inputGreenCoefficients;
+    CIImage * inputImage;
+    CIVector * inputRedCoefficients;
 }
 
 @property (nonatomic, retain) CIVector *inputBlueCoefficients;
@@ -24,7 +23,6 @@
 - (id)inputImage;
 - (id)inputRedCoefficients;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputBlueCoefficients:(id)arg1;
 - (void)setInputGreenCoefficients:(id)arg1;
 - (void)setInputImage:(id)arg1;

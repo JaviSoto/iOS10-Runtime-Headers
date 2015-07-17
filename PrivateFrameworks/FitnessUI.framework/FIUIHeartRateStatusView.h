@@ -3,13 +3,13 @@
  */
 
 @interface FIUIHeartRateStatusView : UIView {
-    UIImageView *_animatingImageView;
-    BOOL _delayedStartMeasuringAnimation;
-    UIImageView *_fullHeartImageView;
-    double _heartRate;
-    UIImageView *_reloadArrowView;
-    UIImageView *_reloadOutlineView;
-    unsigned int _state;
+    UIImageView * _animatingImageView;
+    BOOL  _delayedStartMeasuringAnimation;
+    UIImageView * _fullHeartImageView;
+    double  _heartRate;
+    UIImageView * _reloadArrowView;
+    UIImageView * _reloadOutlineView;
+    unsigned int  _state;
 }
 
 @property (nonatomic, retain) UIImageView *animatingImageView;
@@ -20,11 +20,14 @@
 - (void).cxx_destruct;
 - (void)_beatFullHeartOnce;
 - (void)_finishedHeartBeat;
+- (void)_resumeAnimations;
 - (void)_startMeasuringAnimation;
+- (void)_suspendAnimations;
 - (id)animatingImageView;
-- (void)appDidBecomeActive:(id)arg1;
 - (void)dealloc;
 - (id)fullHeartImageView;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heartImageNameFormat:(id)arg2 frameRateDivider:(int)arg3 resourceBundle:(id)arg4;
 - (void)layoutSubviews;
 - (id)reloadArrowView;

@@ -3,7 +3,7 @@
  */
 
 @interface GKHairlineView : UIView {
-    int _alignment;
+    int  _alignment;
 }
 
 @property (nonatomic) int alignment;

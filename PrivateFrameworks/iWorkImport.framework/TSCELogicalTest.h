@@ -3,11 +3,11 @@
  */
 
 @interface TSCELogicalTest : NSObject {
-    NSDate *mDate;
-    struct TSCEEvaluationContext { id x1; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x2; unsigned short x3; unsigned char x4; void*x5; void*x6; void x7; void*x8; long x9; void*x10; void*x11; void*x12; int x13; out in unsigned short x14; void*x15; void*x16; BOOL x17; void*x18; void*x19; struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_20_1_1; struct TSCEValue {} *x_20_1_2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_2_1; } x_20_1_3; } x20; int x21; } *mEvaluationContext;
-    TSCERegexMatcher *mMatcher;
-    int mOperation;
-    NSString *mString;
+    NSDate * mDate;
+    struct TSCEEvaluationContext { id x1; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x2; unsigned short x3; unsigned char x4; void*x5; void*x6; void x7; void*x8; long x9; void*x10; void*x11; void*x12; int x13; out in unsigned short x14; void*x15; void*x16; BOOL x17; void*x18; void*x19; struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_20_1_1; struct TSCEValue {} *x_20_1_2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_2_1; } x_20_1_3; } x20; int x21; } * mEvaluationContext;
+    TSCERegexMatcher * mMatcher;
+    int  mOperation;
+    NSString * mString;
     struct TSCENumberValue { 
         int (**_vptr$TSCEAbstractValue)(); 
         double mDouble; 
@@ -65,7 +65,7 @@
             } mData; 
         } mFormat; 
         BOOL mIsUnitlessZero; 
-    } mValue;
+    }  mValue;
 }
 
 + (id)logicalTestWithCriterion:(struct TSCEValue { unsigned int x1[64]; int x2; })arg1 functionSpec:(id)arg2 evaluationContext:(struct TSCEEvaluationContext { id x1; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x2; unsigned short x3; unsigned char x4; void*x5; void*x6; void x7; void*x8; long x9; void*x10; void*x11; void*x12; int x13; out in unsigned short x14; void*x15; void*x16; BOOL x17; void*x18; void*x19; struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_20_1_1; struct TSCEValue {} *x_20_1_2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_2_1; } x_20_1_3; } x20; int x21; }*)arg3;

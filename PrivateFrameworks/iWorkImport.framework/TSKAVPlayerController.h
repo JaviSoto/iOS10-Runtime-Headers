@@ -3,18 +3,18 @@
  */
 
 @interface TSKAVPlayerController : NSObject <TSKMediaPlayerController> {
-    BOOL mCanPlay;
-    <TSKMediaPlayerControllerDelegate> *mDelegate;
-    BOOL mFastForwarding;
-    BOOL mFastReversing;
-    BOOL mIsObservingStatus;
-    AVPlayer *mPlayer;
-    BOOL mPlaying;
-    float mRateBeforeScrubbing;
-    int mRepeatMode;
-    unsigned int mScrubbingCount;
-    BOOL mStreaming;
-    float mVolume;
+    BOOL  mCanPlay;
+    <TSKMediaPlayerControllerDelegate> * mDelegate;
+    BOOL  mFastForwarding;
+    BOOL  mFastReversing;
+    BOOL  mIsObservingStatus;
+    AVPlayer * mPlayer;
+    BOOL  mPlaying;
+    float  mRateBeforeScrubbing;
+    int  mRepeatMode;
+    unsigned int  mScrubbingCount;
+    BOOL  mStreaming;
+    float  mVolume;
 }
 
 @property (nonatomic, readonly) double absoluteCurrentTime;
@@ -105,6 +105,7 @@
 - (void)setStartTime:(double)arg1;
 - (void)setVolume:(float)arg1;
 - (double)startTime;
+- (void)stopSynchronously;
 - (void)teardown;
 - (float)volume;
 

@@ -3,19 +3,19 @@
  */
 
 @interface PMPresentationMapper : CMMapper <CMMapperRoot> {
-    CMArchiveManager *mArchiver;
-    OIXMLElement *mBodyElement;
-    unsigned int mCurrentSlide;
-    BOOL mHasPushedFirstSlides;
-    unsigned int mNextCommit;
-    PDPresentation *mPresentation;
-    NSString *mResourceUrlPrefix;
-    NSString *mResourceUrlProtocol;
-    NSMutableArray *mSlideGuids;
-    NSMutableArray *mSlideNames;
-    float mSlideOriginY;
-    int mWidth;
-    OIXMLDocument *mXhtmlDoc;
+    CMArchiveManager * mArchiver;
+    OIXMLElement * mBodyElement;
+    unsigned int  mCurrentSlide;
+    BOOL  mHasPushedFirstSlides;
+    unsigned int  mNextCommit;
+    PDPresentation * mPresentation;
+    NSString * mResourceUrlPrefix;
+    NSString * mResourceUrlProtocol;
+    NSMutableArray * mSlideGuids;
+    NSMutableArray * mSlideNames;
+    float  mSlideOriginY;
+    int  mWidth;
+    OIXMLDocument * mXhtmlDoc;
 }
 
 - (void)_pushEmptySlideWithMessage:(id)arg1;

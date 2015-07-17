@@ -3,14 +3,14 @@
  */
 
 @interface PLFilesystemDeletionInfo : NSObject {
-    NSString *_directory;
-    NSArray *_fileURLs;
-    NSString *_filename;
-    NSURL *_objectIDURI;
-    NSString *_thumbnailIdentifier;
-    unsigned int _thumbnailIndex;
-    unsigned long long _timestamp;
-    NSString *_uuid;
+    NSString * _directory;
+    NSArray * _fileURLs;
+    NSString * _filename;
+    NSURL * _objectIDURI;
+    NSString * _thumbnailIdentifier;
+    unsigned int  _thumbnailIndex;
+    unsigned long long  _timestamp;
+    NSString * _uuid;
 }
 
 @property (readonly, retain) NSString *directory;

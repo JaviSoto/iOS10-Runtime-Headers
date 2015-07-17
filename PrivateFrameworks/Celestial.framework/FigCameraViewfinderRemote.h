@@ -3,11 +3,11 @@
  */
 
 @interface FigCameraViewfinderRemote : FigCameraViewfinder <FigCameraViewfinderRemoteObjectCallbacks> {
-    FigNSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_connectionManagementQueue;
-    <FigCameraViewfinderRemoteObject> *_remoteViewfinder;
-    FigStateMachine *_stateMachine;
-    NSMapTable *_weakSessionTable;
+    FigNSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _connectionManagementQueue;
+    <FigCameraViewfinderRemoteObject> * _remoteViewfinder;
+    FigStateMachine * _stateMachine;
+    NSMapTable * _weakSessionTable;
 }
 
 @property (readonly, copy) NSString *debugDescription;

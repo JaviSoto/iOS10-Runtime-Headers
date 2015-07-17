@@ -3,16 +3,16 @@
  */
 
 @interface SKUIEditorialLayout : NSObject {
-    SKUIEditorialComponent *_editorial;
-    int _landscapeLinkLayoutIndex;
-    int _landscapeTextLayoutIndex;
-    int _landscapeTitleLayoutIndex;
-    float _landscapeWidth;
-    int _portraitLinkLayoutIndex;
-    int _portraitTextLayoutIndex;
-    int _portraitTitleLayoutIndex;
-    float _portraitWidth;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIEditorialComponent * _editorial;
+    int  _landscapeLinkLayoutIndex;
+    int  _landscapeTextLayoutIndex;
+    int  _landscapeTitleLayoutIndex;
+    float  _landscapeWidth;
+    int  _portraitLinkLayoutIndex;
+    int  _portraitTextLayoutIndex;
+    int  _portraitTitleLayoutIndex;
+    float  _portraitWidth;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (nonatomic, readonly) SKUIEditorialComponent *editorialComponent;

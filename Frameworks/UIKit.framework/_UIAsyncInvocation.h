@@ -3,15 +3,15 @@
  */
 
 @interface _UIAsyncInvocation : NSObject {
-    id /* block */ _invocationBlock;
-    BOOL _invocationBlockHasBeenCalled;
-    _UIAsyncInvocationObserver *_observer;
+    id /* block */  _invocationBlock;
+    BOOL  _invocationBlockHasBeenCalled;
+    _UIAsyncInvocationObserver * _observer;
 }
 
 + (id)emptyInvocation;
 + (id)invocationWithBlock:(id /* block */)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)invoke;
 
 @end

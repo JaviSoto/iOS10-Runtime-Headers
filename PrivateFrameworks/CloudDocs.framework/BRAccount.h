@@ -3,8 +3,8 @@
  */
 
 @interface BRAccount : NSObject {
-    NSString *_accountID;
-    NSData *_perAppAccountIdentifier;
+    NSString * _accountID;
+    NSData * _perAppAccountIdentifier;
 }
 
 @property (nonatomic, copy) NSData *perAppAccountIdentifier;

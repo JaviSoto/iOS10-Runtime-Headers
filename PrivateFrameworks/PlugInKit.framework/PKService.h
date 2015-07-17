@@ -3,13 +3,13 @@
  */
 
 @interface PKService : NSObject <NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_queue> *__sync;
-    <PKServiceDelegate> *_delegate;
-    NSMutableDictionary *_personalities;
-    NSXPCListener *_serviceListener;
-    BOOL _shared;
-    PKServicePersonality *_solePersonality;
-    NSArray *_subsystems;
+    NSObject<OS_dispatch_queue> * __sync;
+    <PKServiceDelegate> * _delegate;
+    NSMutableDictionary * _personalities;
+    NSXPCListener * _serviceListener;
+    BOOL  _shared;
+    PKServicePersonality * _solePersonality;
+    NSArray * _subsystems;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *_sync;
@@ -29,6 +29,7 @@
 + (void)main;
 
 - (void).cxx_destruct;
+- (BOOL)_processDefaultSubsystemName:(id)arg1;
 - (id)_sync;
 - (void)checkEnvironment:(id)arg1;
 - (id)configuredSubsystemList;

@@ -3,9 +3,9 @@
  */
 
 @interface KNRecordingNavigationEvent : KNRecordingEvent {
-    int mAnimationPhase;
-    unsigned int mTargetEventIndex;
-    TSPLazyReference *mTargetSlideNodeReference;
+    int  mAnimationPhase;
+    unsigned int  mTargetEventIndex;
+    TSPLazyReference * mTargetSlideNodeReference;
 }
 
 @property (nonatomic, readonly) int animationPhase;

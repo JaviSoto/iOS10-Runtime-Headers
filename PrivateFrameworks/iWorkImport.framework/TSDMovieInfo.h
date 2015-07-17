@@ -3,24 +3,24 @@
  */
 
 @interface TSDMovieInfo : TSDMediaInfo <TSDMixing> {
-    BOOL mAudioOnly;
-    TSPData *mAudioOnlyImageData;
-    double mEndTime;
-    TSPData *mImportedAuxiliaryMovieData;
-    unsigned int mLoopOption;
-    TSPData *mMovieData;
-    NSURL *mMovieRemoteURL;
+    BOOL  mAudioOnly;
+    TSPData * mAudioOnlyImageData;
+    double  mEndTime;
+    TSPData * mImportedAuxiliaryMovieData;
+    unsigned int  mLoopOption;
+    TSPData * mMovieData;
+    NSURL * mMovieRemoteURL;
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
-    TSPData *mPosterImageData;
-    BOOL mPosterImageGeneratedWithAlphaSupport;
-    double mPosterTime;
-    double mStartTime;
-    BOOL mStreaming;
-    TSDMediaStyle *mStyle;
-    float mVolume;
+    }  mNaturalSize;
+    TSPData * mPosterImageData;
+    BOOL  mPosterImageGeneratedWithAlphaSupport;
+    double  mPosterTime;
+    double  mStartTime;
+    BOOL  mStreaming;
+    TSDMediaStyle * mStyle;
+    float  mVolume;
 }
 
 @property (getter=isAudioOnly, nonatomic) BOOL audioOnly;

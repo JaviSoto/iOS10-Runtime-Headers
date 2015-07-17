@@ -3,15 +3,17 @@
  */
 
 @interface HMHAPMetadata : NSObject <NSSecureCoding> {
-    NSArray *_assistantCharacteristics;
-    NSDictionary *_assistantServices;
-    NSDictionary *_assistantUnits;
-    NSArray *_hapCharacteristics;
-    NSArray *_hapServices;
-    NSArray *_hapValueUnits;
-    NSNumber *_version;
+    NSArray * _accessoryCategories;
+    NSArray * _assistantCharacteristics;
+    NSDictionary * _assistantServices;
+    NSDictionary * _assistantUnits;
+    NSArray * _hapCharacteristics;
+    NSArray * _hapServices;
+    NSArray * _hapValueUnits;
+    NSNumber * _version;
 }
 
+@property (nonatomic, retain) NSArray *accessoryCategories;
 @property (nonatomic, retain) NSArray *assistantCharacteristics;
 @property (nonatomic, retain) NSDictionary *assistantServices;
 @property (nonatomic, retain) NSDictionary *assistantUnits;
@@ -25,7 +27,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)assistantCharacteristicFormatType:(id)arg1;
+- (id)accessoryCategories;
 - (id)assistantCharacteristics;
 - (id)assistantServices;
 - (id)assistantUnits;
@@ -38,10 +40,6 @@
 - (id)hapServices;
 - (id)hapValueUnits;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isStandardCharacteristicName:(id)arg1;
-- (BOOL)isStandardCharacteristicType:(id)arg1;
-- (BOOL)isStandardServiceName:(id)arg1;
-- (BOOL)isStandardServiceType:(id)arg1;
 - (id)mapCharacteristicValueType:(id)arg1;
 - (id)mapFromAssistantCharacteristicValue:(id)arg1 name:(id)arg2;
 - (id)mapFromAssistantServiceName:(id)arg1;
@@ -54,6 +52,7 @@
 - (id)mapWriteCharcteristicFromAssistantName:(id)arg1;
 - (id)serviceTypeDescription:(id)arg1;
 - (id)serviceTypeLocalizedDescription:(id)arg1;
+- (void)setAccessoryCategories:(id)arg1;
 - (void)setAssistantCharacteristics:(id)arg1;
 - (void)setAssistantServices:(id)arg1;
 - (void)setAssistantUnits:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface TNHintCache : NSObject {
-    TNPageCoordinateDictionary *mHintCacheEntryDictionary;
-    TSDDrawableInfo *mInfo;
-    BOOL mIsMaxColumnValid;
-    BOOL mIsMaxRowValid;
-    TNPageController *mPageController;
+    TNPageCoordinateDictionary * mHintCacheEntryDictionary;
+    TSDDrawableInfo * mInfo;
+    BOOL  mIsMaxColumnValid;
+    BOOL  mIsMaxRowValid;
+    TNPageController * mPageController;
     struct { 
         struct { 
             unsigned short row; 
@@ -19,13 +19,12 @@
             unsigned char column; 
             unsigned char reserved; 
         } bottomRight; 
-    } mPageRange;
+    }  mPageRange;
 }
 
 @property (retain) TSDDrawableInfo *info;
 @property (readonly) TNPageController *pageController;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)info;
 - (id)initWithInfo:(id)arg1 pageController:(id)arg2;

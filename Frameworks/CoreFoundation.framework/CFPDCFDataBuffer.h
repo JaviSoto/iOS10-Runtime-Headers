@@ -3,7 +3,7 @@
  */
 
 @interface CFPDCFDataBuffer : CFPDDataBuffer {
-    struct __CFData { } *data;
+    struct __CFData { } * data;
 }
 
 - (void*)bytes;

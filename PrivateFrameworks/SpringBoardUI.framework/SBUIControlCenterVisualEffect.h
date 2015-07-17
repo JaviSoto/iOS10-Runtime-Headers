@@ -3,7 +3,7 @@
  */
 
 @interface SBUIControlCenterVisualEffect : UIVisualEffect {
-    int _style;
+    int  _style;
 }
 
 + (id)effectWithStyle:(int)arg1;

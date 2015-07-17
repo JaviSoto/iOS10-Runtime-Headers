@@ -6,15 +6,15 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mBaseNaturalSize;
+    }  mBaseNaturalSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } mEnd;
+    }  mEnd;
     struct CGPoint { 
         float x; 
         float y; 
-    } mStart;
+    }  mStart;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -22,7 +22,7 @@
         float d; 
         float tx; 
         float ty; 
-    } mTransformBeforeUpgrade;
+    }  mTransformBeforeUpgrade;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } baseNaturalSize;

@@ -3,20 +3,20 @@
  */
 
 @interface ISOperation : NSOperation {
-    <ISOperationDelegate> *_delegate;
-    NSError *_error;
-    NSLock *_lock;
-    NSRunLoop *_operationRunLoop;
-    ISOperation *_parentOperation;
-    NSString *_powerAssertionIdentifier;
-    SSOperationProgress *_progress;
-    NSArray *_serializationLockIdentifiers;
-    BOOL _shouldMessageMainThread;
-    BOOL _shouldRunWithBackgroundPriority;
-    BOOL _stopped;
-    NSMutableArray *_subOperations;
-    BOOL _success;
-    id _threadSafeDelegate;
+    <ISOperationDelegate> * _delegate;
+    NSError * _error;
+    NSLock * _lock;
+    NSRunLoop * _operationRunLoop;
+    ISOperation * _parentOperation;
+    NSString * _powerAssertionIdentifier;
+    SSOperationProgress * _progress;
+    NSArray * _serializationLockIdentifiers;
+    BOOL  _shouldMessageMainThread;
+    BOOL  _shouldRunWithBackgroundPriority;
+    BOOL  _stopped;
+    NSMutableArray * _subOperations;
+    BOOL  _success;
+    id  _threadSafeDelegate;
 }
 
 @property <ISOperationDelegate> *delegate;

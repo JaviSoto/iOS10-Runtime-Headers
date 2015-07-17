@@ -3,8 +3,8 @@
  */
 
 @interface TPStarkPhoneCallGalleryView : UIView <TPStarkPhoneCallContainerDataSource, TPStarkPhoneCallContainerDelegate> {
-    TPStarkPhoneCallContainer *_container;
-    <TPStarkPhoneCallGalleryViewDelegate> *_delegate;
+    TPStarkPhoneCallContainer * _container;
+    <TPStarkPhoneCallGalleryViewDelegate> * _delegate;
 }
 
 @property (retain) TPStarkPhoneCallContainer *container;
@@ -16,6 +16,7 @@
 
 + (id)statusStringForDisplayForCall:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addPrimaryPhoneCall:(id)arg1 animated:(BOOL)arg2;
 - (id)container;
 - (void)dealloc;

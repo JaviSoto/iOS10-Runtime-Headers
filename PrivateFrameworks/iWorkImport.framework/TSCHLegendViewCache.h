@@ -3,15 +3,15 @@
  */
 
 @interface TSCHLegendViewCache : NSObject <TSCHUnretainedParent> {
-    unsigned int mCellCount;
-    struct CGPoint { float x1; float x2; } *mCellOrigins;
+    unsigned int  mCellCount;
+    struct CGPoint { float x1; float x2; } * mCellOrigins;
     struct CGSize { 
         float width; 
         float height; 
-    } mFinalSize;
-    TSCHLegendModelCache *mModelCache;
-    unsigned int mNumberOfColumns;
-    unsigned int mNumberOfRows;
+    }  mFinalSize;
+    TSCHLegendModelCache * mModelCache;
+    unsigned int  mNumberOfColumns;
+    unsigned int  mNumberOfRows;
 }
 
 @property (readonly) struct CGSize { float x1; float x2; } legendSize;

@@ -3,23 +3,23 @@
  */
 
 @interface TSUZipWriter : NSObject {
-    BOOL _calculateCRC;
-    BOOL _calculateSize;
-    TSUZipWriterEntry *_currentEntry;
-    long long _currentOffset;
-    NSMutableArray *_entries;
-    NSMutableDictionary *_entriesMap;
-    unsigned long _entryDataSize;
-    NSMutableArray *_entryDatas;
-    unsigned short _entryDate;
-    unsigned short _entryTime;
-    NSError *_error;
-    BOOL _force32BitSize;
-    BOOL _isClosed;
-    NSObject<OS_dispatch_data> *_localFileHeaderData;
-    unsigned int _options;
-    NSObject<OS_dispatch_queue> *_writeQueue;
-    long long _writtenOffset;
+    BOOL  _calculateCRC;
+    BOOL  _calculateSize;
+    TSUZipWriterEntry * _currentEntry;
+    long long  _currentOffset;
+    NSMutableArray * _entries;
+    NSMutableDictionary * _entriesMap;
+    unsigned long  _entryDataSize;
+    NSMutableArray * _entryDatas;
+    unsigned short  _entryDate;
+    unsigned short  _entryTime;
+    NSError * _error;
+    BOOL  _force32BitSize;
+    BOOL  _isClosed;
+    NSObject<OS_dispatch_data> * _localFileHeaderData;
+    unsigned int  _options;
+    NSObject<OS_dispatch_queue> * _writeQueue;
+    long long  _writtenOffset;
 }
 
 @property (nonatomic, readonly) unsigned long long archiveLength;

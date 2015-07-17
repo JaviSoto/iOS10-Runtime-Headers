@@ -3,13 +3,13 @@
  */
 
 @interface _NACVolumeObserverRecord : NSObject {
-    float _EUVolumeLimit;
-    BOOL _muted;
-    MPAVRoutingController *_routingController;
-    NACEventThrottler *_throttler;
-    BOOL _volumeControlAvailable;
-    MPVolumeController *_volumeController;
-    BOOL _volumeWarningEnabled;
+    float  _EUVolumeLimit;
+    BOOL  _muted;
+    MPAVRoutingController * _routingController;
+    NACEventThrottler * _throttler;
+    BOOL  _volumeControlAvailable;
+    MPVolumeController * _volumeController;
+    BOOL  _volumeWarningEnabled;
 }
 
 @property (nonatomic) float EUVolumeLimit;

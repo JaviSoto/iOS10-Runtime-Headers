@@ -3,10 +3,10 @@
  */
 
 @interface MPTiledArtworkDataSource : NSObject <MPArtworkDataSource> {
-    NSCountedSet *_loadingTiledArtworkRequests;
-    NSObject<OS_dispatch_queue> *_loadingTiledArtworkRequestsAccessQueue;
-    NSCache *_tiledArtworkRepresentationFallbackCache;
-    NSOperationQueue *_tilingArtworkCatalogOperationQueue;
+    NSCountedSet * _loadingTiledArtworkRequests;
+    NSObject<OS_dispatch_queue> * _loadingTiledArtworkRequestsAccessQueue;
+    NSCache * _tiledArtworkRepresentationFallbackCache;
+    NSOperationQueue * _tilingArtworkCatalogOperationQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

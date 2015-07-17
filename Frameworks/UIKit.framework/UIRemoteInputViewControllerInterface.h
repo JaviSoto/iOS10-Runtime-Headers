@@ -3,7 +3,7 @@
  */
 
 @interface UIRemoteInputViewControllerInterface : NSExtensionContext <_UIIVCResponseDelegate> {
-    <_UIIVCResponseDelegate> *_responseDelegate;
+    <_UIIVCResponseDelegate> * _responseDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

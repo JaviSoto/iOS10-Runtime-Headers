@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftThemePickerFlowLayout : UICollectionViewFlowLayout {
-    int _currentPage;
+    int  _currentPage;
 }
 
 @property (nonatomic) int currentPage;

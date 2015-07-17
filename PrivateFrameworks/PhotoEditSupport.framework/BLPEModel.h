@@ -3,20 +3,20 @@
  */
 
 @interface BLPEModel : NSObject {
-    NSMutableDictionary *_AdaptiveGradientProcessingCache;
-    NSMutableDictionary *_InkProcessingCache;
-    NSMutableDictionary *_TiltShiftProcessingCache;
-    CIFilter *_auraFilter;
-    CIFilter *_blackAndWhiteFilter;
-    CIFilter *_dramaFilter;
-    CIFilter *_duotoneFilter;
-    BOOL _liveInteraction;
-    CIFilter *_photoFiltersFilter;
-    BOOL _processingFX;
-    BLPixelImageBuffer *_sourceImageBuffer;
-    BOOL _sourceImageDidChange;
-    CIFilter *_vintageFilter;
-    CIFilter *_warmAndCoolFilter;
+    NSMutableDictionary * _AdaptiveGradientProcessingCache;
+    NSMutableDictionary * _InkProcessingCache;
+    NSMutableDictionary * _TiltShiftProcessingCache;
+    CIFilter * _auraFilter;
+    CIFilter * _blackAndWhiteFilter;
+    CIFilter * _dramaFilter;
+    CIFilter * _duotoneFilter;
+    BOOL  _liveInteraction;
+    CIFilter * _photoFiltersFilter;
+    BOOL  _processingFX;
+    BLPixelImageBuffer * _sourceImageBuffer;
+    BOOL  _sourceImageDidChange;
+    CIFilter * _vintageFilter;
+    CIFilter * _warmAndCoolFilter;
 }
 
 @property (nonatomic, retain) CIFilter *auraFilter;

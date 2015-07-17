@@ -3,8 +3,8 @@
  */
 
 @interface AVPlaybackItemInspector : AVAssetInspector {
-    struct OpaqueFigPlaybackItem { } *_playbackItem;
-    NSArray *_trackIDs;
+    struct OpaqueFigPlaybackItem { } * _playbackItem;
+    NSArray * _trackIDs;
 }
 
 @property (getter=_playbackItem, setter=_setPlaybackItem:, nonatomic, retain) struct OpaqueFigPlaybackItem { }*playbackItem;

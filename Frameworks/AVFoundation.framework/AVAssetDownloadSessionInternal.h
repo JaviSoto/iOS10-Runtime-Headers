@@ -3,18 +3,20 @@
  */
 
 @interface AVAssetDownloadSessionInternal : NSObject {
-    NSURL *URL;
-    struct OpaqueFigAsset { } *asset;
-    NSNumber *cachePrimingDownloadTokenNum;
-    NSURL *destinationURL;
-    unsigned long long downloadToken;
-    NSError *error;
-    struct OpaqueFigPlaybackItem { } *playbackItem;
-    struct OpaqueFigPlayer { } *player;
-    int priority;
-    NSObject<OS_dispatch_queue> *readWriteQueue;
-    int status;
-    AVWeakReference *weakReference;
+    NSURL * URL;
+    AVURLAsset * asset;
+    struct CMBaseObject { } * assetDownloader;
+    NSNumber * cachePrimingDownloadTokenNum;
+    NSURL * destinationURL;
+    unsigned long long  downloadToken;
+    NSError * error;
+    struct OpaqueFigAsset { } * figAsset;
+    struct OpaqueFigPlaybackItem { } * playbackItem;
+    struct OpaqueFigPlayer { } * player;
+    int  priority;
+    NSObject<OS_dispatch_queue> * readWriteQueue;
+    int  status;
+    AVWeakReference * weakReference;
 }
 
 @end

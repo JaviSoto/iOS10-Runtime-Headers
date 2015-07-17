@@ -3,10 +3,10 @@
  */
 
 @interface TSPSupportMetadata : TSPObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableSet *_acknowledgedServerData;
-    NSSet *_acknowledgedServerDataForArchiving;
-    BOOL _isInCollaborationModeForArchiving;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableSet * _acknowledgedServerData;
+    NSSet * _acknowledgedServerDataForArchiving;
+    BOOL  _isInCollaborationModeForArchiving;
 }
 
 - (void).cxx_destruct;

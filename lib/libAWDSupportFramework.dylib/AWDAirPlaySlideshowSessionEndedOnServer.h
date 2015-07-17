@@ -3,7 +3,7 @@
  */
 
 @interface AWDAirPlaySlideshowSessionEndedOnServer : PBCodable <NSCopying> {
-    unsigned int _duration;
+    unsigned int  _duration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int duration : 1; 
@@ -16,18 +16,18 @@
         unsigned int skipAheads : 1; 
         unsigned int skipBacks : 1; 
         unsigned int totalPhotos : 1; 
-    } _has;
-    unsigned int _maxBPS;
-    unsigned int _maxPhotoBytes;
-    unsigned int _minBPS;
-    unsigned int _minPhotoBytes;
-    unsigned int _pauses;
-    int _reason;
-    NSString *_sessionUUID;
-    unsigned int _skipAheads;
-    unsigned int _skipBacks;
-    unsigned long long _timestamp;
-    unsigned int _totalPhotos;
+    }  _has;
+    unsigned int  _maxBPS;
+    unsigned int  _maxPhotoBytes;
+    unsigned int  _minBPS;
+    unsigned int  _minPhotoBytes;
+    unsigned int  _pauses;
+    int  _reason;
+    NSString * _sessionUUID;
+    unsigned int  _skipAheads;
+    unsigned int  _skipBacks;
+    unsigned long long  _timestamp;
+    unsigned int  _totalPhotos;
 }
 
 @property (nonatomic) unsigned int duration;

@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDMixing, TSDReducableInfo, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
-    TSCHChartInfo *mChart;
-    TSCHChunkManager *mChunkManager;
-    TSPObject<TSCHMediatorProvider> *mMediatorPersistentObject;
+    TSCHChartInfo * mChart;
+    TSCHChunkManager * mChunkManager;
+    TSPObject<TSCHMediatorProvider> * mMediatorPersistentObject;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chart;
@@ -41,6 +41,7 @@
 - (BOOL)hasBackgroundLayerForPieChart;
 - (BOOL)hasReferenceLines;
 - (id)imageDatasForReducingFileSizeWithAssociatedHints;
+- (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 chart:(id)arg2;

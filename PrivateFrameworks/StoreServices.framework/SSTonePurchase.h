@@ -3,11 +3,11 @@
  */
 
 @interface SSTonePurchase : SSPurchase <NSCoding, NSCopying, SSXPCCoding> {
-    NSArray *_allowedToneStyles;
-    NSNumber *_assigneeIdentifier;
-    NSString *_assigneeToneStyle;
-    BOOL _shouldMakeDefaultRingtone;
-    BOOL _shouldMakeDefaultTextTone;
+    NSArray * _allowedToneStyles;
+    NSNumber * _assigneeIdentifier;
+    NSString * _assigneeToneStyle;
+    BOOL  _shouldMakeDefaultRingtone;
+    BOOL  _shouldMakeDefaultTextTone;
 }
 
 @property (copy) NSArray *allowedToneStyles;

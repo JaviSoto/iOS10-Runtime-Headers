@@ -3,18 +3,18 @@
  */
 
 @interface TSWPCitationRecord : TSPObject {
-    NSString *_authorsString;
-    NSString *_endNoteXML;
-    BOOL _hideAuthorNames;
-    BOOL _hideYear;
-    NSString *_pageRange;
-    NSString *_prefix;
-    BOOL _recordXMLApplied;
-    BOOL _shouldRemove;
-    NSString *_suffix;
-    NSString *_title;
-    NSString *_type;
-    NSString *_year;
+    NSString * _authorsString;
+    NSString * _endNoteXML;
+    BOOL  _hideAuthorNames;
+    BOOL  _hideYear;
+    NSString * _pageRange;
+    NSString * _prefix;
+    BOOL  _recordXMLApplied;
+    BOOL  _shouldRemove;
+    NSString * _suffix;
+    NSString * _title;
+    NSString * _type;
+    NSString * _year;
 }
 
 @property (nonatomic, copy) NSString *authorsString;

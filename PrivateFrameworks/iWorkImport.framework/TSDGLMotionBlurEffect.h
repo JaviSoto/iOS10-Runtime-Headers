@@ -3,34 +3,34 @@
  */
 
 @interface TSDGLMotionBlurEffect : NSObject {
-    TSDGLDataBuffer *_FBODataBuffer;
-    TSDGLState *_GLState;
-    TSDGLDataBuffer *_colorFBODataBuffer;
-    TSDGLFrameBuffer *_colorFramebuffer;
-    TSDGLFrameBuffer *_combinedFramebuffer;
-    int _debugDrawMode;
-    TSDGLShader *_defaultTextureShader;
-    float _framebufferScale;
+    TSDGLDataBuffer * _FBODataBuffer;
+    TSDGLState * _GLState;
+    TSDGLDataBuffer * _colorFBODataBuffer;
+    TSDGLFrameBuffer * _colorFramebuffer;
+    TSDGLFrameBuffer * _combinedFramebuffer;
+    int  _debugDrawMode;
+    TSDGLShader * _defaultTextureShader;
+    float  _framebufferScale;
     struct CGSize { 
         float width; 
         float height; 
-    } _framebufferSize;
-    BOOL _isSingleObject;
-    float _motionBlurStrength;
-    int _originalViewport;
+    }  _framebufferSize;
+    BOOL  _isSingleObject;
+    float  _motionBlurStrength;
+    int  _originalViewport;
     struct CGSize { 
         float width; 
         float height; 
-    } _slideSize;
-    TSDGLShader *_velocityCollectionShader;
-    TSDGLDataBuffer *_velocityFBODataBuffer;
-    TSDGLFrameBuffer *_velocityFramebuffer;
-    TSDGLShader *_velocityNeighborMaxHorizontalShader;
-    TSDGLShader *_velocityNeighborMaxVerticalShader;
-    TSDGLDataBuffer *_velocitySquashedFBODataBuffer;
-    TSDGLShader *_velocityTileMaxHorizontalShader;
-    TSDGLShader *_velocityTileMaxVerticalShader;
-    TSDGLShader *_velocityVisualizerShader;
+    }  _slideSize;
+    TSDGLShader * _velocityCollectionShader;
+    TSDGLDataBuffer * _velocityFBODataBuffer;
+    TSDGLFrameBuffer * _velocityFramebuffer;
+    TSDGLShader * _velocityNeighborMaxHorizontalShader;
+    TSDGLShader * _velocityNeighborMaxVerticalShader;
+    TSDGLDataBuffer * _velocitySquashedFBODataBuffer;
+    TSDGLShader * _velocityTileMaxHorizontalShader;
+    TSDGLShader * _velocityTileMaxVerticalShader;
+    TSDGLShader * _velocityVisualizerShader;
 }
 
 @property (nonatomic, retain) TSDGLState *GLState;

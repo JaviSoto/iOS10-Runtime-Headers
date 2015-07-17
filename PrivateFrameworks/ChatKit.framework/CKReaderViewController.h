@@ -3,9 +3,9 @@
  */
 
 @interface CKReaderViewController : UIViewController <UIWebViewDelegate> {
-    <CKReaderViewControllerDelegate> *_delegate;
-    NSString *_messageGUID;
-    UITextView *_textView;
+    <CKReaderViewControllerDelegate> * _delegate;
+    NSString * _messageGUID;
+    UITextView * _textView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

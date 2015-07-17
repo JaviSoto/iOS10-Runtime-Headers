@@ -3,12 +3,12 @@
  */
 
 @interface HSPlayStatusUpdateResponse : HSResponse {
-    unsigned int _nextRevisionID;
-    unsigned long long _nowPlayingContainerID;
-    unsigned long long _nowPlayingContainerItemID;
-    unsigned long long _nowPlayingDatabaseID;
-    unsigned long long _nowPlayingItemID;
-    NSDictionary *_playStatusInformation;
+    unsigned int  _nextRevisionID;
+    unsigned long long  _nowPlayingContainerID;
+    unsigned long long  _nowPlayingContainerItemID;
+    unsigned long long  _nowPlayingDatabaseID;
+    unsigned long long  _nowPlayingItemID;
+    NSDictionary * _playStatusInformation;
 }
 
 @property (nonatomic) unsigned int nextRevisionID;

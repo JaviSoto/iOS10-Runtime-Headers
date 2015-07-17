@@ -3,16 +3,16 @@
  */
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
-    id _delegate;
-    UIResponder *_firstResponderToRestore;
-    UIView *_fromView;
-    float _fromViewAlpha;
-    unsigned int _isTransitioning;
-    UIWindow *_originalWindow;
-    unsigned int _popoverWillCleanUpNavigationTransition;
-    UIView *_toView;
-    int _transition;
-    unsigned int _usesRoundedCorners;
+    id  _delegate;
+    UIResponder * _firstResponderToRestore;
+    UIView * _fromView;
+    float  _fromViewAlpha;
+    unsigned int  _isTransitioning;
+    UIWindow * _originalWindow;
+    unsigned int  _popoverWillCleanUpNavigationTransition;
+    UIView * _toView;
+    int  _transition;
+    unsigned int  _usesRoundedCorners;
 }
 
 @property (nonatomic) id delegate;
@@ -23,6 +23,7 @@
 
 + (double)defaultDurationForTransition:(int)arg1;
 
+- (void).cxx_destruct;
 - (void)_cleanupTransition;
 - (void)_cleanupTransitionFromPopover;
 - (BOOL)_isTransitioningFromView:(id)arg1;

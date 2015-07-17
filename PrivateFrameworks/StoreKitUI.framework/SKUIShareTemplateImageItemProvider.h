@@ -3,7 +3,7 @@
  */
 
 @interface SKUIShareTemplateImageItemProvider : UIActivityItemProvider {
-    SKUIShareTemplateViewElement *_templateElement;
+    SKUIShareTemplateViewElement * _templateElement;
 }
 
 - (void).cxx_destruct;

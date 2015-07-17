@@ -3,7 +3,7 @@
  */
 
 @interface CPTextBox : CPRegion {
-    float rotationAngle;
+    float  rotationAngle;
 }
 
 - (void)accept:(id)arg1;

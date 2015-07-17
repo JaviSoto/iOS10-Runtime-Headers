@@ -3,14 +3,14 @@
  */
 
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
-    NSUUID *_UUID;
-    BOOL _indoor;
-    NSDictionary *_resumeDataByType;
-    BOOL _shouldUseDeviceData;
-    NSDate *_startDate;
-    unsigned int _workoutActivityType;
-    NSArray *_workoutEvents;
-    int _workoutState;
+    NSUUID * _UUID;
+    BOOL  _indoor;
+    NSDictionary * _resumeDataByType;
+    BOOL  _shouldUseDeviceData;
+    NSDate * _startDate;
+    unsigned int  _workoutActivityType;
+    NSArray * _workoutEvents;
+    int  _workoutState;
 }
 
 @property (nonatomic, retain) NSUUID *UUID;

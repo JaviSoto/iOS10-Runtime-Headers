@@ -3,16 +3,16 @@
  */
 
 @interface _UIBackdropColorSettings : NSObject {
-    float _averageBrightness;
-    float _averageHue;
-    float _averageSaturation;
-    float _contrast;
-    BOOL _hasObservedValues;
-    _UIBackdropViewSettings *_parentSettings;
-    float _previousAverageBrightness;
-    float _previousAverageHue;
-    float _previousAverageSaturation;
-    float _previousContrast;
+    float  _averageBrightness;
+    float  _averageHue;
+    float  _averageSaturation;
+    float  _contrast;
+    BOOL  _hasObservedValues;
+    _UIBackdropViewSettings * _parentSettings;
+    float  _previousAverageBrightness;
+    float  _previousAverageHue;
+    float  _previousAverageSaturation;
+    float  _previousContrast;
 }
 
 @property (nonatomic) float averageBrightness;

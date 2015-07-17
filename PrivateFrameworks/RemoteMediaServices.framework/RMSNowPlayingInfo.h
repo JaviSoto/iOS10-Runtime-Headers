@@ -3,24 +3,24 @@
  */
 
 @interface RMSNowPlayingInfo : NSObject {
-    NSString *_albumName;
-    NSString *_artistName;
-    BOOL _canSkipNext;
-    BOOL _canSkipPrevious;
-    BOOL _canWishlist;
-    unsigned long long _databaseID;
-    BOOL _hasChapterData;
-    unsigned long long _itemID;
-    BOOL _likeable;
-    int _likedState;
-    int _mediaKind;
-    int _playbackState;
-    int _revisionNumber;
-    int _scrubbableState;
-    double _timeRemaining;
-    double _timestamp;
-    double _totalDuration;
-    NSString *_trackName;
+    NSString * _albumName;
+    NSString * _artistName;
+    BOOL  _canSkipNext;
+    BOOL  _canSkipPrevious;
+    BOOL  _canWishlist;
+    unsigned long long  _databaseID;
+    BOOL  _hasChapterData;
+    unsigned long long  _itemID;
+    BOOL  _likeable;
+    int  _likedState;
+    int  _mediaKind;
+    int  _playbackState;
+    int  _revisionNumber;
+    int  _scrubbableState;
+    double  _timeRemaining;
+    double  _timestamp;
+    double  _totalDuration;
+    NSString * _trackName;
 }
 
 @property (nonatomic, retain) NSString *albumName;

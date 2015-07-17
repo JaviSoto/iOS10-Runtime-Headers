@@ -12,13 +12,13 @@
                 int tag; 
             } asBits; 
         } u; 
-    } exceptionValue;
+    }  exceptionValue;
     struct String { 
         struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    } functionName;
-    WebScriptObject *globalObject;
+    }  functionName;
+    WebScriptObject * globalObject;
 }
 
 - (id).cxx_construct;

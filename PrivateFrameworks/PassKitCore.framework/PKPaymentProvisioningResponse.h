@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentProvisioningResponse : PKPaymentWebServiceResponse {
-    NSURL *_passURL;
+    NSURL * _passURL;
 }
 
 @property (nonatomic, retain) NSURL *passURL;

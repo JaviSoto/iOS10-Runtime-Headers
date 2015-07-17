@@ -3,8 +3,8 @@
  */
 
 @interface SKThreadSafeMutableDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
-    NSMutableDictionary *_storage;
-    int _storageLock;
+    NSMutableDictionary * _storage;
+    int  _storageLock;
 }
 
 - (void).cxx_destruct;

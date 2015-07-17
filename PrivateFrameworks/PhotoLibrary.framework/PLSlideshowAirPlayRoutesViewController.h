@@ -3,10 +3,10 @@
  */
 
 @interface PLSlideshowAirPlayRoutesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_airplayRoutes;
-    UIView *_containerView;
-    unsigned int _selectedRouteIndex;
-    UITableView *_table;
+    NSArray * _airplayRoutes;
+    UIView * _containerView;
+    unsigned int  _selectedRouteIndex;
+    UITableView * _table;
 }
 
 @property (readonly, copy) NSString *debugDescription;

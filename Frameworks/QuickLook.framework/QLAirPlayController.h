@@ -3,12 +3,12 @@
  */
 
 @interface QLAirPlayController : NSObject {
-    _UIHostedWindow *_airPlayWindow;
-    int _mode;
-    QLPreviewViewController *_previewViewController;
-    NSTimer *_refreshTimer;
-    UIScreen *_screen;
-    UISnapshotView *_snapshotView;
+    _UIHostedWindow * _airPlayWindow;
+    int  _mode;
+    QLPreviewViewController * _previewViewController;
+    NSTimer * _refreshTimer;
+    UIScreen * _screen;
+    UISnapshotView * _snapshotView;
 }
 
 @property int mode;

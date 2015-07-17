@@ -10,7 +10,7 @@
         struct { 
             unsigned int z : 1; 
         } _has; 
-    } _pixel;
+    }  _pixel;
 }
 
 @property (nonatomic) struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; } pixel;

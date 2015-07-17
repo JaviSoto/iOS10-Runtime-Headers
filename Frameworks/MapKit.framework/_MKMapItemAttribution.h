@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapItemAttribution : NSObject {
-    GEOMapItemAttribution *_geoAttribution;
+    GEOMapItemAttribution * _geoAttribution;
 }
 
 @property (nonatomic, readonly) NSArray *attributionApps;

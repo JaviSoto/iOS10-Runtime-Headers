@@ -3,10 +3,10 @@
  */
 
 @interface GKPlayerWithSpeechBalloonView : UIView {
-    GKSpeechBalloonBackgroundView *_balloonView;
-    UIView<GKPlayerPhotoContainer> *_photoView;
-    NSArray *_replaceableConstraints;
-    UITextView *_speechTextView;
+    GKSpeechBalloonBackgroundView * _balloonView;
+    UIView<GKPlayerPhotoContainer> * _photoView;
+    NSArray * _replaceableConstraints;
+    UITextView * _speechTextView;
 }
 
 @property (nonatomic, retain) GKSpeechBalloonBackgroundView *balloonView;
@@ -22,6 +22,7 @@
 + (BOOL)requiresConstraintBasedLayout;
 
 - (void)_updateSpeechText:(id)arg1;
+- (void)awakeFromNib;
 - (id)balloonView;
 - (void)dealloc;
 - (unsigned char)drawStyle;
@@ -38,6 +39,7 @@
 - (void)setSpeechText:(id)arg1;
 - (void)setSpeechTextView:(id)arg1;
 - (void)setTipDirection:(unsigned char)arg1;
+- (void)setupSubviews;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)speechText;
 - (id)speechTextView;

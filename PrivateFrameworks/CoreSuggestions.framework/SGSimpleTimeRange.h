@@ -3,22 +3,28 @@
  */
 
 @interface SGSimpleTimeRange : NSObject <NSCopying, NSSecureCoding> {
-    double _end;
-    int _endUTCOffsetSeconds;
-    BOOL _floating;
-    double _start;
-    int _startUTCOffsetSeconds;
+    double  _end;
+    int  _endUTCOffsetSeconds;
+    BOOL  _floating;
+    double  _start;
+    int  _startUTCOffsetSeconds;
 }
 
 @property (nonatomic, readonly) double end;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSTimeZone *endTimeZone;
 @property (nonatomic, readonly) int endUTCOffsetSeconds;
 @property (getter=isFloating, nonatomic, readonly) BOOL floating;
 @property (nonatomic, readonly) double start;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) NSTimeZone *startTimeZone;
 @property (nonatomic, readonly) int startUTCOffsetSeconds;
 
 + (id)dateFromGregorianComponents:(id)arg1;
-+ (id)floatingRangeWithStart:(double)arg1 end:(double)arg2;
-+ (id)floatingRangeWithStartDate:(id)arg1 endDate:(id)arg2;
++ (id)floatingRangeWithLocalStart:(double)arg1 end:(double)arg2;
++ (id)floatingRangeWithLocalStartDate:(id)arg1 endDate:(id)arg2;
++ (id)floatingRangeWithUTCStart:(double)arg1 end:(double)arg2;
++ (id)floatingRangeWithUTCStartDate:(id)arg1 endDate:(id)arg2;
 + (double)fromFloatingTime:(double)arg1;
 + (BOOL)hasYearMonthDayComponents:(id)arg1;
 + (BOOL)isAllDayComponents:(id)arg1;
@@ -34,12 +40,13 @@
 
 - (id)absoluteRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)end;
+- (id)endDate;
+- (id)endTimeZone;
 - (int)endUTCOffsetSeconds;
 - (unsigned int)hash;
-- (id)initFloatingWithStart:(double)arg1 end:(double)arg2;
+- (id)initUTCFloatingWithStart:(double)arg1 end:(double)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStart:(double)arg1 startUTCOffsetSeconds:(int)arg2 end:(double)arg3 endUTCOffsetSeconds:(int)arg4;
 - (BOOL)isEqual:(id)arg1;
@@ -47,6 +54,8 @@
 - (BOOL)isFloating;
 - (id)stableStringRepresentation;
 - (double)start;
+- (id)startDate;
+- (id)startTimeZone;
 - (int)startUTCOffsetSeconds;
 
 @end

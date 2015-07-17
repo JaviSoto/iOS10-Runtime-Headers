@@ -3,9 +3,9 @@
  */
 
 @interface _UISearchBarSearchFieldBackgroundView : _UITextFieldRoundedRectBackgroundViewNeue {
-    BOOL _backgroundContainer;
-    int _barStyle;
-    unsigned int _searchBarStyle;
+    BOOL  _backgroundContainer;
+    int  _barStyle;
+    unsigned int  _searchBarStyle;
 }
 
 @property (nonatomic) BOOL backgroundContainer;

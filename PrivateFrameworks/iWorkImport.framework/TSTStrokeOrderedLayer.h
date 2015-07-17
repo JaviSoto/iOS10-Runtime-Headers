@@ -3,8 +3,8 @@
  */
 
 @interface TSTStrokeOrderedLayer : TSTStrokeLayer {
-    TSTStrokeLayer *_majorStrokeLayer;
-    TSTStrokeLayer *_minorStrokeLayer;
+    TSTStrokeLayer * _majorStrokeLayer;
+    TSTStrokeLayer * _minorStrokeLayer;
 }
 
 @property (nonatomic, retain) TSTStrokeLayer *majorStrokeLayer;

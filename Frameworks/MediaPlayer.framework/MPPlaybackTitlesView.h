@@ -3,12 +3,12 @@
  */
 
 @interface MPPlaybackTitlesView : UIControl {
-    UIView *_contentView;
-    NSArray *_labels;
-    unsigned int _marqueeScrollableIndex;
-    BOOL _marqueeScrollingActive;
-    BOOL _showingLoadingUI;
-    NSArray *_titles;
+    UIView * _contentView;
+    NSArray * _labels;
+    unsigned int  _marqueeScrollableIndex;
+    BOOL  _marqueeScrollingActive;
+    BOOL  _showingLoadingUI;
+    NSArray * _titles;
 }
 
 @property (nonatomic, readonly) UIView *contentView;

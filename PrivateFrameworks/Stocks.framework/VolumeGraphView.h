@@ -3,11 +3,11 @@
  */
 
 @interface VolumeGraphView : UIView {
-    StockGraphImageSet *_graphImageSet;
-    BOOL _showingTintedRegion;
-    UIView *_tintedRegionClipView;
-    TintedView *_tintedVolumeView;
-    UIImage *_volumeImage;
+    StockGraphImageSet * _graphImageSet;
+    BOOL  _showingTintedRegion;
+    UIView * _tintedRegionClipView;
+    TintedView * _tintedVolumeView;
+    UIImage * _volumeImage;
 }
 
 @property (nonatomic, retain) StockGraphImageSet *graphImageSet;

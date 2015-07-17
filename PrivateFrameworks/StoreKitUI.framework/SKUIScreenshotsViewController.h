@@ -3,21 +3,21 @@
  */
 
 @interface SKUIScreenshotsViewController : UIViewController <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate> {
-    SKUIClientContext *_clientContext;
-    UICollectionView *_collectionView;
-    SKUIScreenshotDataConsumer *_dataConsumer;
-    <SKUIScreenshotsDelegate> *_delegate;
-    NSOperationQueue *_operationQueue;
-    NSMutableArray *_screenshotImages;
+    SKUIClientContext * _clientContext;
+    UICollectionView * _collectionView;
+    SKUIScreenshotDataConsumer * _dataConsumer;
+    <SKUIScreenshotsDelegate> * _delegate;
+    NSOperationQueue * _operationQueue;
+    NSMutableArray * _screenshotImages;
     struct CGSize { 
         float width; 
         float height; 
-    } _screenshotMaxSize;
-    NSMutableArray *_screenshotRawImages;
-    NSArray *_screenshots;
-    SKUIVideoImageDataConsumer *_trailerConsumer;
-    NSMutableArray *_trailerImages;
-    NSArray *_trailers;
+    }  _screenshotMaxSize;
+    NSMutableArray * _screenshotRawImages;
+    NSArray * _screenshots;
+    SKUIVideoImageDataConsumer * _trailerConsumer;
+    NSMutableArray * _trailerImages;
+    NSArray * _trailers;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

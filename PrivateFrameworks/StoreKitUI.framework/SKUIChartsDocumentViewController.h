@@ -3,9 +3,9 @@
  */
 
 @interface SKUIChartsDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
-    SKUIChartColumnsView *_chartsView;
-    NSMutableArray *_columnViewControllers;
-    SKUIChartsTemplateViewElement *_templateElement;
+    SKUIChartColumnsView * _chartsView;
+    NSMutableArray * _columnViewControllers;
+    SKUIChartsTemplateViewElement * _templateElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

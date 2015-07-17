@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonTableTinyActionCellContentView : UIView {
-    NSMutableArray *_actions;
-    NSMutableArray *_buttons;
-    ABPersonTableTinyActionCell *_cell;
-    UIButton *_highlightedButton;
+    NSMutableArray * _actions;
+    NSMutableArray * _buttons;
+    ABPersonTableTinyActionCell * _cell;
+    UIButton * _highlightedButton;
 }
 
 @property (nonatomic, readonly) NSArray *actions;

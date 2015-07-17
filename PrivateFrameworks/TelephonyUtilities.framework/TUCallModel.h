@@ -3,17 +3,17 @@
  */
 
 @interface TUCallModel : NSObject {
-    BOOL _addCallAllowed;
-    int _ambiguityState;
-    BOOL _ambiguous;
-    BOOL _endAndAnswerAllowed;
-    BOOL _hardPauseAvailable;
-    BOOL _holdAllowed;
-    BOOL _holdAndAnswerAllowed;
-    BOOL _mergeable;
-    BOOL _sendToVoicemailAllowed;
-    BOOL _swappable;
-    BOOL _takingCallsPrivateAllowed;
+    BOOL  _addCallAllowed;
+    int  _ambiguityState;
+    BOOL  _ambiguous;
+    BOOL  _endAndAnswerAllowed;
+    BOOL  _hardPauseAvailable;
+    BOOL  _holdAllowed;
+    BOOL  _holdAndAnswerAllowed;
+    BOOL  _mergeable;
+    BOOL  _sendToVoicemailAllowed;
+    BOOL  _swappable;
+    BOOL  _takingCallsPrivateAllowed;
 }
 
 @property (getter=isAddCallAllowed, nonatomic, readonly) BOOL addCallAllowed;
@@ -31,6 +31,8 @@
 + (id)sharedInstance;
 
 - (int)ambiguityState;
+- (id)audioCategoryForCall:(id)arg1;
+- (id)audioModeForCall:(id)arg1;
 - (id)description;
 - (BOOL)isAddCallAllowed;
 - (BOOL)isAmbiguous;
@@ -42,5 +44,6 @@
 - (BOOL)isSendToVoicemailAllowed;
 - (BOOL)isSwappable;
 - (BOOL)isTakingCallsPrivateAllowed;
+- (BOOL)shouldPlayDTMFToneForCall:(id)arg1;
 
 @end

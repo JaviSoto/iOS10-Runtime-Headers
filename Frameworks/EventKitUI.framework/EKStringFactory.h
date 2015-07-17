@@ -3,14 +3,14 @@
  */
 
 @interface EKStringFactory : NSObject {
-    struct __CFDateFormatter { } *_abbrevDayFormatter;
-    struct __CFDateFormatter { } *_customFormatter;
-    struct __CFDateFormatter { } *_dayFormatter;
-    struct __CFDateFormatter { } *_dayOfWeekFormatter;
-    struct __CFDateFormatter { } *_fullStyleDateFormatter;
-    NSMutableDictionary *_longFormatters;
-    struct __CFDateFormatter { } *_standardTimeFormatter;
-    struct __CFDateFormatter { } *_timeFormatter;
+    struct __CFDateFormatter { } * _abbrevDayFormatter;
+    struct __CFDateFormatter { } * _customFormatter;
+    struct __CFDateFormatter { } * _dayFormatter;
+    struct __CFDateFormatter { } * _dayOfWeekFormatter;
+    struct __CFDateFormatter { } * _fullStyleDateFormatter;
+    NSMutableDictionary * _longFormatters;
+    struct __CFDateFormatter { } * _standardTimeFormatter;
+    struct __CFDateFormatter { } * _timeFormatter;
 }
 
 + (id)sharedInstance;

@@ -3,22 +3,22 @@
  */
 
 @interface MPUExtrasImageViewController : UIViewController <MPUExtrasZoomingImageTransitionParticipant> {
-    UIActivityIndicatorView *_activityIndicatorView;
-    BOOL _allowsPinchingImageForInteractiveZoomingImageTransition;
-    MPUContentSizeLayoutConstraint *_bottomLabelConstraint;
-    UILabel *_descriptionLabel;
-    MPUContentSizeLayoutConstraint *_descriptionLeadingConstraint;
-    NSArray *_gestureRecognizers;
-    unsigned int _imageIndex;
-    MPUExtrasZoomingImageInteractiveTransitionSourceContext *_interactiveTransitionSourceContext;
-    BOOL _overlayHidden;
-    UILabel *_subtitleLabel;
-    MPUContentSizeLayoutConstraint *_subtitleLeadingConstraint;
-    UIView *_textContainmentView;
-    UILabel *_titleLabel;
-    MPUContentSizeLayoutConstraint *_topLabelConstraint;
-    MPUExtrasZoomableImageView *_zoomableImageView;
-    NSString *_zoomingImageTransitionIdentifier;
+    UIActivityIndicatorView * _activityIndicatorView;
+    BOOL  _allowsPinchingImageForInteractiveZoomingImageTransition;
+    MPUContentSizeLayoutConstraint * _bottomLabelConstraint;
+    UILabel * _descriptionLabel;
+    MPUContentSizeLayoutConstraint * _descriptionLeadingConstraint;
+    NSArray * _gestureRecognizers;
+    unsigned int  _imageIndex;
+    MPUExtrasZoomingImageInteractiveTransitionSourceContext * _interactiveTransitionSourceContext;
+    BOOL  _overlayHidden;
+    UILabel * _subtitleLabel;
+    MPUContentSizeLayoutConstraint * _subtitleLeadingConstraint;
+    UIView * _textContainmentView;
+    UILabel * _titleLabel;
+    MPUContentSizeLayoutConstraint * _topLabelConstraint;
+    MPUExtrasZoomableImageView * _zoomableImageView;
+    NSString * _zoomingImageTransitionIdentifier;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;

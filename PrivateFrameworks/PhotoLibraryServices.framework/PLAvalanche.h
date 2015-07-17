@@ -3,18 +3,18 @@
  */
 
 @interface PLAvalanche : NSObject <PLAssetChangeObserver, PLAssetContainer> {
-    PLManagedAsset *__aNewPick;
-    PLManagedAsset *__anOldPick;
-    NSMutableIndexSet *__autoPickIndexes;
-    id /* block */ __completionHandler;
-    NSIndexSet *__originalAutoPickIndexes;
-    unsigned int __originalStackIndex;
-    NSIndexSet *__originalUserFavoriteIndexes;
-    unsigned int __stackIndex;
-    NSMutableIndexSet *__userFavoriteIndexes;
-    NSOrderedSet *_assets;
-    PLPhotoLibrary *_photoLibrary;
-    NSString *_uuid;
+    PLManagedAsset * __aNewPick;
+    PLManagedAsset * __anOldPick;
+    NSMutableIndexSet * __autoPickIndexes;
+    id /* block */  __completionHandler;
+    NSIndexSet * __originalAutoPickIndexes;
+    unsigned int  __originalStackIndex;
+    NSIndexSet * __originalUserFavoriteIndexes;
+    unsigned int  __stackIndex;
+    NSMutableIndexSet * __userFavoriteIndexes;
+    NSOrderedSet * _assets;
+    PLPhotoLibrary * _photoLibrary;
+    NSString * _uuid;
 }
 
 @property (setter=_setANewPick:, nonatomic, retain) PLManagedAsset *_aNewPick;
@@ -53,16 +53,17 @@
 + (unsigned int)_calculateStackAssetForAssetCount:(unsigned int)arg1 autoPicks:(id)arg2 userFavorites:(id)arg3;
 + (void)_handleUpdatesForContextWillSave:(id)arg1;
 + (void)_updateMembershipForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(BOOL)arg5 inLibrary:(id)arg6;
-+ (id)_updatePropertiesForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(BOOL)arg5;
++ (id)_updatePropertiesForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(BOOL)arg5 setFirstPick:(BOOL)arg6;
 + (id)_visibleIndexesAmongAssets:(id)arg1 fromUserFavoriteIndexes:(id)arg2 stackIndex:(unsigned int)arg3;
 + (id)assetsWithAvalancheUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)avalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (unsigned int)countForAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
++ (void)disolveBurstForAssets:(id)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfTopImageInStackForStackFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (BOOL)isValidBurstWithAssets:(id)arg1;
 + (id)partialAvalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (void)removeFavoriteStatus:(id)arg1;
-+ (void)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2;
++ (void)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(BOOL)arg3;
 + (BOOL)shouldHideAvalanchesFromPhotoStream;
 + (BOOL)shouldOnlyShowAvalanchePicks;
 

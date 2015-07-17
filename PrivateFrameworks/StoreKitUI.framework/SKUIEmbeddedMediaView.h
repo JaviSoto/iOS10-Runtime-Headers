@@ -3,14 +3,14 @@
  */
 
 @interface SKUIEmbeddedMediaView : UIControl {
-    <SKUIEmbeddedMediaViewDelegate> *_delegate;
-    int _mediaType;
-    NSString *_mediaURLString;
-    MPMoviePlayerController *_moviePlayer;
-    UIImageView *_playerDecorationView;
-    UIImageView *_thumbnailReflectionView;
-    UIImageView *_thumbnailView;
-    BOOL _usingInlinePlayback;
+    <SKUIEmbeddedMediaViewDelegate> * _delegate;
+    int  _mediaType;
+    NSString * _mediaURLString;
+    MPMoviePlayerController * _moviePlayer;
+    UIImageView * _playerDecorationView;
+    UIImageView * _thumbnailReflectionView;
+    UIImageView * _thumbnailView;
+    BOOL  _usingInlinePlayback;
 }
 
 @property (nonatomic) <SKUIEmbeddedMediaViewDelegate> *delegate;

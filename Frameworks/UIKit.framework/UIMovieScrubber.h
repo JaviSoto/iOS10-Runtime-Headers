@@ -3,23 +3,23 @@
  */
 
 @interface UIMovieScrubber : UIControl <UIMovieScrubberTrackViewDataSource, UIMovieScrubberTrackViewDelegate> {
-    <UIMovieScrubberDataSource> *_dataSource;
-    <UIMovieScrubberDelegate> *_delegate;
-    float _edgeInset;
-    BOOL _editable;
-    UIMovieScrubberEditingView *_editingView;
-    UILabel *_elapsedLabel;
-    UIImage *_fillImage;
-    float _hitOffset;
-    UIImage *_innerShadowImage;
-    UIImage *_maskImage;
-    double _maxTrimmedLength;
-    double _maximumValue;
-    double _minTrimmedLength;
-    double _minimumValue;
-    UILabel *_remainingLabel;
-    UIImage *_shadowImage;
-    BOOL _showTimeViews;
+    <UIMovieScrubberDataSource> * _dataSource;
+    <UIMovieScrubberDelegate> * _delegate;
+    float  _edgeInset;
+    BOOL  _editable;
+    UIMovieScrubberEditingView * _editingView;
+    UILabel * _elapsedLabel;
+    UIImage * _fillImage;
+    float  _hitOffset;
+    UIImage * _innerShadowImage;
+    UIImage * _maskImage;
+    double  _maxTrimmedLength;
+    double  _maximumValue;
+    double  _minTrimmedLength;
+    double  _minimumValue;
+    UILabel * _remainingLabel;
+    UIImage * _shadowImage;
+    BOOL  _showTimeViews;
     struct { 
         unsigned int continuous : 1; 
         unsigned int animating : 1; 
@@ -53,13 +53,13 @@
         unsigned int delegateDidEndAnimatingZoom : 1; 
         unsigned int delegateWillZoom : 1; 
         unsigned int dataSourceRequestThumbnailImageIsSummmary : 1; 
-    } _sliderFlags;
-    UIImageView *_thumbView;
-    int _timeComponents;
+    }  _sliderFlags;
+    UIImageView * _thumbView;
+    int  _timeComponents;
     struct CGPoint { 
         float x; 
         float y; 
-    } _touchLocationWhenTrackPressBegan;
+    }  _touchLocationWhenTrackPressBegan;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -69,14 +69,14 @@
             float width; 
             float height; 
         } size; 
-    } _trackRect;
-    UIMovieScrubberTrackView *_trackView;
-    double _trimEndValue;
-    double _trimStartValue;
-    double _value;
-    double _zoomAnimationDelay;
-    double _zoomAnimationDuration;
-    double _zoomDelay;
+    }  _trackRect;
+    UIMovieScrubberTrackView * _trackView;
+    double  _trimEndValue;
+    double  _trimStartValue;
+    double  _value;
+    double  _zoomAnimationDelay;
+    double  _zoomAnimationDuration;
+    double  _zoomDelay;
 }
 
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentMargins;
@@ -106,6 +106,7 @@
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
+- (void).cxx_destruct;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_animateAfterEdit:(BOOL)arg1;
 - (void)_beginTrackPressWithTouch:(id)arg1 touchesBegan:(BOOL)arg2;

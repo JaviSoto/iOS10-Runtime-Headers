@@ -3,8 +3,8 @@
  */
 
 @interface ABMultiCellContentView_Simple : ABMultiCellContentView <UITextFieldDelegate> {
-    NSString *_previousValue;
-    ABHighlightingTextField *_textField;
+    NSString * _previousValue;
+    ABHighlightingTextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface PKXPCForwarder : NSObject {
-    PKWeakReference *_target;
-    Class _targetClass;
+    PKWeakReference * _target;
+    Class  _targetClass;
 }
 
 - (void)clearTarget;

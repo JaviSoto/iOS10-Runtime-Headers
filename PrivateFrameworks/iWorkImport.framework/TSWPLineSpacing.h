@@ -3,9 +3,9 @@
  */
 
 @interface TSWPLineSpacing : NSObject <NSCopying> {
-    float _amount;
-    float _baselineRule;
-    int _mode;
+    float  _amount;
+    float  _baselineRule;
+    int  _mode;
 }
 
 + (id)lineSpacing;

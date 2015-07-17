@@ -3,14 +3,14 @@
  */
 
 @interface AVOnceTimebaseObserver : AVTimebaseObserver {
-    id /* block */ _block;
-    BOOL _didFire;
+    id /* block */  _block;
+    BOOL  _didFire;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _fireTime;
+    }  _fireTime;
 }
 
 @property (nonatomic, readonly) BOOL didFire;

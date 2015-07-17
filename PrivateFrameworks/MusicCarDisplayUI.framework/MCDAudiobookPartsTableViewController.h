@@ -3,8 +3,8 @@
  */
 
 @interface MCDAudiobookPartsTableViewController : MCD_OLD_TableViewController {
-    NSNumberFormatter *_formatter;
-    NSString *_numberOfParts;
+    NSNumberFormatter * _formatter;
+    NSString * _numberOfParts;
 }
 
 - (void).cxx_destruct;

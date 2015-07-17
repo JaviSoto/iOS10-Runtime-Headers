@@ -3,14 +3,16 @@
  */
 
 @interface HKStatisticsQuery : HKQuery {
-    id /* block */ _completionHandler;
-    unsigned int _mergeStrategy;
-    unsigned int _options;
+    id /* block */  _completionHandler;
+    unsigned int  _mergeStrategy;
+    unsigned int  _options;
 }
 
 @property (nonatomic, readonly) id /* block */ completionHandler;
 @property (nonatomic) unsigned int mergeStrategy;
 @property (nonatomic, readonly) unsigned int options;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
 
@@ -25,5 +27,9 @@
 - (unsigned int)mergeStrategy;
 - (unsigned int)options;
 - (void)setMergeStrategy:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

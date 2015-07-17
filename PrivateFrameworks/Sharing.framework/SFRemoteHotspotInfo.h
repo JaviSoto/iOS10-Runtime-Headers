@@ -3,9 +3,9 @@
  */
 
 @interface SFRemoteHotspotInfo : NSObject <NSSecureCoding> {
-    NSNumber *_channel;
-    NSString *_name;
-    NSString *_password;
+    NSNumber * _channel;
+    NSString * _name;
+    NSString * _password;
 }
 
 @property (retain) NSNumber *channel;

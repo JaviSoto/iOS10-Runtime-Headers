@@ -3,9 +3,9 @@
  */
 
 @interface SSVCookieStorage : NSObject {
-    SSSQLiteDatabase *_db;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSURL *_storageLocation;
+    SSSQLiteDatabase * _db;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSURL * _storageLocation;
 }
 
 @property (readonly) NSURL *storageLocation;

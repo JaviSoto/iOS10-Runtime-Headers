@@ -3,10 +3,10 @@
  */
 
 @interface TPTextWrapCookie : NSObject {
-    TSWPColumn *_column;
-    NSMutableArray *_floatingWrappables;
-    TSDWrapSegments *_interiorWrapSegments;
-    TSDLayout<TSWPLayoutTarget> *_target;
+    TSWPColumn * _column;
+    NSMutableArray * _floatingWrappables;
+    TSDWrapSegments * _interiorWrapSegments;
+    TSDLayout<TSWPLayoutTarget> * _target;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -14,8 +14,8 @@
         float d; 
         float tx; 
         float ty; 
-    } _targetInverseTransformInRoot;
-    TSUPointerKeyDictionary *_wrapSegmentsInverseTransformInRootDictionary;
+    }  _targetInverseTransformInRoot;
+    TSUPointerKeyDictionary * _wrapSegmentsInverseTransformInRootDictionary;
 }
 
 @property (nonatomic, retain) TSWPColumn *column;

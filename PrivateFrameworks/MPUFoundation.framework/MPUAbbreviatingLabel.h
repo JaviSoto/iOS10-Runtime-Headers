@@ -3,8 +3,8 @@
  */
 
 @interface MPUAbbreviatingLabel : UILabel {
-    NSMutableArray *_textRepresentationSizes;
-    NSArray *_textRepresentations;
+    NSMutableArray * _textRepresentationSizes;
+    NSArray * _textRepresentations;
 }
 
 @property (nonatomic, copy) NSArray *textRepresentations;

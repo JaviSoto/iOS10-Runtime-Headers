@@ -3,8 +3,8 @@
  */
 
 @interface BRCThrottle : BRCThrottleBase {
-    NSMutableDictionary *_retryCounters;
-    BRCMinHeap *_retryHeap;
+    NSMutableDictionary * _retryCounters;
+    BRCMinHeap * _retryHeap;
 }
 
 + (long long)throttleHashBytes:(void*)arg1 length:(unsigned long)arg2;

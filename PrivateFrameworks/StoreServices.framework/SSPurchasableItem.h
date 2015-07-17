@@ -3,9 +3,9 @@
  */
 
 @interface SSPurchasableItem : NSObject {
-    SSSQLiteDatabase *_database;
-    NSDictionary *_propertyValues;
-    NSString *_tableName;
+    SSSQLiteDatabase * _database;
+    NSDictionary * _propertyValues;
+    NSString * _tableName;
 }
 
 + (id)allPropertyKeys;

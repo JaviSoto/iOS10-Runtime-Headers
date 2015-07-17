@@ -3,29 +3,31 @@
  */
 
 @interface UIKBTextStyle : NSObject <NSCopying> {
-    NSString *_etchColor;
+    NSString * _etchColor;
     struct CGPoint { 
         float x; 
         float y; 
-    } _etchOffset;
-    NSString *_fontName;
-    float _fontSize;
-    float _kerning;
-    float _minFontSize;
-    float _pathWeight;
-    int _selector;
-    NSString *_textColor;
+    }  _etchOffset;
+    NSString * _fontName;
+    float  _fontSize;
+    BOOL  _ignoreTextMarginOnKey;
+    float  _kerning;
+    float  _minFontSize;
+    float  _pathWeight;
+    int  _selector;
+    NSString * _textColor;
     struct CGPoint { 
         float x; 
         float y; 
-    } _textOffset;
-    float _textOpacity;
+    }  _textOffset;
+    float  _textOpacity;
 }
 
 @property (nonatomic, retain) NSString *etchColor;
 @property (nonatomic) struct CGPoint { float x1; float x2; } etchOffset;
 @property (nonatomic, retain) NSString *fontName;
 @property (nonatomic) float fontSize;
+@property (nonatomic) BOOL ignoreTextMarginOnKey;
 @property (nonatomic) float kerning;
 @property (nonatomic) float minFontSize;
 @property (nonatomic) float pathWeight;
@@ -44,6 +46,7 @@
 - (struct CGPoint { float x1; float x2; })etchOffset;
 - (id)fontName;
 - (float)fontSize;
+- (BOOL)ignoreTextMarginOnKey;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (float)kerning;
@@ -55,6 +58,7 @@
 - (void)setEtchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFontName:(id)arg1;
 - (void)setFontSize:(float)arg1;
+- (void)setIgnoreTextMarginOnKey:(BOOL)arg1;
 - (void)setKerning:(float)arg1;
 - (void)setMinFontSize:(float)arg1;
 - (void)setPathWeight:(float)arg1;

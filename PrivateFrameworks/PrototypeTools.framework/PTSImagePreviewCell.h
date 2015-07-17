@@ -3,12 +3,12 @@
  */
 
 @interface PTSImagePreviewCell : UITableViewCell {
-    UIView *_darkBackground;
-    UILabel *_imageNameLabel;
-    UIImageView *_imageViewOnDark;
-    UIImageView *_imageViewOnLight;
-    UIView *_lightBackground;
-    UIImage *_previewImage;
+    UIView * _darkBackground;
+    UILabel * _imageNameLabel;
+    UIImageView * _imageViewOnDark;
+    UIImageView * _imageViewOnLight;
+    UIView * _lightBackground;
+    UIImage * _previewImage;
 }
 
 @property (nonatomic, retain) NSString *imageName;

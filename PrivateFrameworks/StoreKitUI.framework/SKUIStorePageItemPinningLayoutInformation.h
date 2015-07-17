@@ -3,7 +3,7 @@
  */
 
 @interface SKUIStorePageItemPinningLayoutInformation : NSObject {
-    float _afterPinningLocationYAdditions;
+    float  _afterPinningLocationYAdditions;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +13,8 @@
             float width; 
             float height; 
         } size; 
-    } _availablePinningFrame;
-    float _beforePinningLocationYAdditions;
+    }  _availablePinningFrame;
+    float  _beforePinningLocationYAdditions;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,7 +24,7 @@
             float width; 
             float height; 
         } size; 
-    } _layoutAttributesFrame;
+    }  _layoutAttributesFrame;
 }
 
 @property (nonatomic) float afterPinningLocationYAdditions;

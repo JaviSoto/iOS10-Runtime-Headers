@@ -3,11 +3,11 @@
  */
 
 @interface CIAutoEnhanceFace : NSObject {
-    double I;
-    double Q;
-    int centerX;
-    int centerY;
-    int size;
+    double  I;
+    double  Q;
+    int  centerX;
+    int  centerY;
+    int  size;
 }
 
 @property (readonly) double I;

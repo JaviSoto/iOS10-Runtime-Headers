@@ -3,7 +3,7 @@
  */
 
 @interface CCCameraConnectionInternal : NSObject <CCCameraConnectionProtocol> {
-    CCCameraConnection *_parent;
+    CCCameraConnection * _parent;
 }
 
 @property (nonatomic) CCCameraConnection *parent;

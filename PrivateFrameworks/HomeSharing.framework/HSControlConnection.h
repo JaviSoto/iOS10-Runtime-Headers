@@ -3,11 +3,11 @@
  */
 
 @interface HSControlConnection : NSObject <NSStreamDelegate> {
-    <HSControlConnectionDelegate> *_delegate;
-    unsigned int _key;
-    NSOutputStream *_outputStream;
-    unsigned int _protocolVersion;
-    double _timestamp;
+    <HSControlConnectionDelegate> * _delegate;
+    unsigned int  _key;
+    NSOutputStream * _outputStream;
+    unsigned int  _protocolVersion;
+    double  _timestamp;
 }
 
 @property (readonly, copy) NSString *debugDescription;

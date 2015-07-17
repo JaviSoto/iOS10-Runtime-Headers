@@ -3,8 +3,8 @@
  */
 
 @interface PKAsyncCache : NSObject {
-    NSMutableDictionary *_deliveryBlocksByKey;
-    NSCache *_itemByKey;
+    NSMutableDictionary * _deliveryBlocksByKey;
+    NSCache * _itemByKey;
 }
 
 - (void)_executeRetrievalBlock:(id /* block */)arg1 forKey:(id)arg2;

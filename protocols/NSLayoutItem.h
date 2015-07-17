@@ -20,7 +20,12 @@
 @optional
 
 - (void)nsli_addConstraint:(NSLayoutConstraint *)arg1;
+- (NSISVariable *)nsli_heightVariable;
+- (NSArray *)nsli_installedConstraints;
 - (float)nsli_marginOffsetForAttribute:(int)arg1;
+- (NSISVariable *)nsli_minXVariable;
+- (NSISVariable *)nsli_minYVariable;
 - (BOOL)nsli_removeConstraint:(NSLayoutConstraint *)arg1;
+- (NSISVariable *)nsli_widthVariable;
 
 @end

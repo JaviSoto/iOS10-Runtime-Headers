@@ -3,18 +3,18 @@
  */
 
 @interface _UINavigationParallaxTransition : NSObject <UIViewControllerAnimatedTransitioningEx, _UIBasicAnimationFactory> {
-    _UIParallaxDimmingView *_borderDimmingView;
-    UIView *_clipUnderView;
-    BOOL _clipUnderlapWhileTransitioning;
-    UIView *_containerFromView;
-    UIView *_containerToView;
-    _UIParallaxDimmingView *_contentDimmingView;
-    BOOL _interactionAborted;
-    _UINavigationInteractiveTransitionBase *_interactionController;
-    int _operation;
-    <UIViewControllerContextTransitioning> *_transitionContext;
-    float _transitionGap;
-    int _transitionStyle;
+    _UIParallaxDimmingView * _borderDimmingView;
+    UIView * _clipUnderView;
+    BOOL  _clipUnderlapWhileTransitioning;
+    UIView * _containerFromView;
+    UIView * _containerToView;
+    _UIParallaxDimmingView * _contentDimmingView;
+    BOOL  _interactionAborted;
+    _UINavigationInteractiveTransitionBase * _interactionController;
+    int  _operation;
+    <UIViewControllerContextTransitioning> * _transitionContext;
+    float  _transitionGap;
+    int  _transitionStyle;
 }
 
 @property (nonatomic, retain) _UIParallaxDimmingView *borderDimmingView;
@@ -34,6 +34,7 @@
 @property (nonatomic) float transitionGap;
 @property (nonatomic) int transitionStyle;
 
+- (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimation;
 - (void)animateKeyboard:(id)arg1;
@@ -46,7 +47,6 @@
 - (id)containerFromView;
 - (id)containerToView;
 - (id)contentDimmingView;
-- (void)dealloc;
 - (float)gapBetweenViews;
 - (id)initWithCurrentOperation:(int)arg1;
 - (BOOL)interactionAborted;

@@ -3,32 +3,32 @@
  */
 
 @interface ISPurchaseReceipt : NSObject {
-    BOOL _createdFromCoder;
-    NSString *mAdamID;
-    NSString *mBundleID;
-    NSString *mBundleVersion;
-    NSString *mCancellationReason;
-    NSString *mDSID;
-    struct SecCmsMessageStr { } *mDecodedMessage;
-    NSString *mDeveloperID;
-    NSString *mDownloadID;
-    NSDate *mExpirationDate;
-    NSString *mExpirationDateString;
-    NSNumber *mFRToolVersion;
-    NSString *mHWType;
-    BOOL mHashIsValid;
-    NSString *mInstallerVersionID;
-    NSString *mOraganizationDisplayName;
-    NSString *mParentalControls;
-    NSDate *mPurchaseDate;
-    NSString *mPurchaseDateString;
-    NSDate *mReceiptCreationDate;
-    NSData *mReceiptData;
-    NSString *mReceiptPath;
-    NSString *mReceiptType;
-    NSDate *mRenewalDate;
-    NSString *mRenewalDateString;
-    struct SecCmsSignedDataStr { } *mSignedData;
+    BOOL  _createdFromCoder;
+    NSString * mAdamID;
+    NSString * mBundleID;
+    NSString * mBundleVersion;
+    NSString * mCancellationReason;
+    NSString * mDSID;
+    struct SecCmsMessageStr { } * mDecodedMessage;
+    NSString * mDeveloperID;
+    NSString * mDownloadID;
+    NSDate * mExpirationDate;
+    NSString * mExpirationDateString;
+    NSNumber * mFRToolVersion;
+    NSString * mHWType;
+    BOOL  mHashIsValid;
+    NSString * mInstallerVersionID;
+    NSString * mOraganizationDisplayName;
+    NSString * mParentalControls;
+    NSDate * mPurchaseDate;
+    NSString * mPurchaseDateString;
+    NSDate * mReceiptCreationDate;
+    NSData * mReceiptData;
+    NSString * mReceiptPath;
+    NSString * mReceiptType;
+    NSDate * mRenewalDate;
+    NSString * mRenewalDateString;
+    struct SecCmsSignedDataStr { } * mSignedData;
 }
 
 @property (readonly) NSString *adamID;

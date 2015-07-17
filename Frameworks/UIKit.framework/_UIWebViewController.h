@@ -3,20 +3,20 @@
  */
 
 @interface _UIWebViewController : UIViewController {
-    NSString *_URLString;
-    UIBarButtonItem *_backBarButtonItem;
-    BOOL _canGoBack;
-    BOOL _canGoForward;
-    _UIAsyncInvocation *_cancelViewServiceRequest;
-    <_UIWebViewControllerDelegate> *_delegate;
-    float _estimatedProgress;
-    UIBarButtonItem *_forwardBarButtonItem;
-    BOOL _hasCalledBeginAppearanceTransition;
-    BOOL _hasCalledEndAppearanceTransition;
-    BOOL _loading;
-    NSString *_pageTitle;
-    _UIRemoteWebViewController *_remoteViewController;
-    _UIQueueingServiceWebViewControllerProxy *_serviceProxy;
+    NSString * _URLString;
+    UIBarButtonItem * _backBarButtonItem;
+    BOOL  _canGoBack;
+    BOOL  _canGoForward;
+    _UIAsyncInvocation * _cancelViewServiceRequest;
+    <_UIWebViewControllerDelegate> * _delegate;
+    float  _estimatedProgress;
+    UIBarButtonItem * _forwardBarButtonItem;
+    BOOL  _hasCalledBeginAppearanceTransition;
+    BOOL  _hasCalledEndAppearanceTransition;
+    BOOL  _loading;
+    NSString * _pageTitle;
+    _UIRemoteWebViewController * _remoteViewController;
+    _UIQueueingServiceWebViewControllerProxy * _serviceProxy;
 }
 
 @property (nonatomic, copy) NSString *URLString;

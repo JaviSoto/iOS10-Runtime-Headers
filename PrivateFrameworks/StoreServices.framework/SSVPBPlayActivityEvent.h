@@ -3,14 +3,14 @@
  */
 
 @interface SSVPBPlayActivityEvent : PBCodable <NSCopying> {
-    NSString *_containerID;
-    int _containerType;
-    NSString *_deviceName;
-    int _endReasonType;
-    double _eventDateTimestamp;
-    double _eventSecondsFromGMT;
-    NSString *_externalID;
-    NSString *_featureName;
+    NSString * _containerID;
+    int  _containerType;
+    NSString * _deviceName;
+    int  _endReasonType;
+    double  _eventDateTimestamp;
+    double  _eventSecondsFromGMT;
+    NSString * _externalID;
+    NSString * _featureName;
     struct { 
         unsigned int eventDateTimestamp : 1; 
         unsigned int eventSecondsFromGMT : 1; 
@@ -26,22 +26,22 @@
         unsigned int sourceType : 1; 
         unsigned int offline : 1; 
         unsigned int sBEnabled : 1; 
-    } _has;
-    double _itemDuration;
-    double _itemEndTime;
-    double _itemStartTime;
-    int _itemType;
-    int _mediaType;
-    BOOL _offline;
-    long long _persistentID;
-    NSString *_personalizedContainerID;
-    NSData *_recommendationData;
-    BOOL _sBEnabled;
-    int _sourceType;
-    unsigned long long _storeAccountID;
-    NSString *_storeID;
-    NSData *_timedMetadata;
-    NSData *_trackInfo;
+    }  _has;
+    double  _itemDuration;
+    double  _itemEndTime;
+    double  _itemStartTime;
+    int  _itemType;
+    int  _mediaType;
+    BOOL  _offline;
+    long long  _persistentID;
+    NSString * _personalizedContainerID;
+    NSData * _recommendationData;
+    BOOL  _sBEnabled;
+    int  _sourceType;
+    unsigned long long  _storeAccountID;
+    NSString * _storeID;
+    NSData * _timedMetadata;
+    NSData * _trackInfo;
 }
 
 @property (nonatomic, retain) NSString *containerID;

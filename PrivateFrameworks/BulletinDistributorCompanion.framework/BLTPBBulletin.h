@@ -3,16 +3,16 @@
  */
 
 @interface BLTPBBulletin : PBCodable <NSCopying> {
-    NSData *_alertSuppressionContexts;
-    NSData *_attachment;
-    unsigned int _attachmentType;
-    NSString *_bulletinID;
-    NSString *_category;
-    BOOL _containsUpdatedAttachment;
-    NSData *_context;
-    double _date;
-    BLTPBAction *_dismissAction;
-    unsigned int _feed;
+    NSData * _alertSuppressionContexts;
+    NSData * _attachment;
+    unsigned int  _attachmentType;
+    NSString * _bulletinID;
+    NSString * _category;
+    BOOL  _containsUpdatedAttachment;
+    NSData * _context;
+    double  _date;
+    BLTPBAction * _dismissAction;
+    unsigned int  _feed;
     struct { 
         unsigned int date : 1; 
         unsigned int publicationDate : 1; 
@@ -21,26 +21,26 @@
         unsigned int soundAlertType : 1; 
         unsigned int containsUpdatedAttachment : 1; 
         unsigned int loading : 1; 
-    } _has;
-    BOOL _includesSound;
-    BOOL _loading;
-    NSString *_messageTitle;
-    double _publicationDate;
-    NSString *_publisherBulletinID;
-    NSString *_recordID;
-    NSString *_sectionDisplayName;
-    NSString *_sectionID;
-    int _sectionSubtype;
-    BLTPBAction *_snoozeAction;
-    NSString *_sockPuppetAppBundleID;
-    NSString *_soundAccountIdentifier;
-    int _soundAlertType;
-    NSString *_soundToneIdentifier;
-    NSString *_subtitle;
-    NSMutableArray *_supplementaryActions;
-    NSString *_teamID;
-    NSString *_title;
-    NSString *_universalSectionID;
+    }  _has;
+    BOOL  _includesSound;
+    BOOL  _loading;
+    NSString * _messageTitle;
+    double  _publicationDate;
+    NSString * _publisherBulletinID;
+    NSString * _recordID;
+    NSString * _sectionDisplayName;
+    NSString * _sectionID;
+    int  _sectionSubtype;
+    BLTPBAction * _snoozeAction;
+    NSString * _sockPuppetAppBundleID;
+    NSString * _soundAccountIdentifier;
+    int  _soundAlertType;
+    NSString * _soundToneIdentifier;
+    NSString * _subtitle;
+    NSMutableArray * _supplementaryActions;
+    NSString * _teamID;
+    NSString * _title;
+    NSString * _universalSectionID;
 }
 
 @property (nonatomic, retain) NSData *alertSuppressionContexts;
@@ -99,7 +99,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *universalSectionID;
 
-+ (id)_actionWithBBAction:(id)arg1;
 + (void)_addPrimaryAttachmentFromBBBulletin:(id)arg1 toBLTPBBulletin:(id)arg2 observer:(id)arg3 completion:(id /* block */)arg4;
 + (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 isSockPuppetAppInstalled:(BOOL)arg3 observer:(id)arg4 feed:(unsigned int)arg5 teamID:(id)arg6 universalSectionID:(id)arg7 completion:(id /* block */)arg8;
 

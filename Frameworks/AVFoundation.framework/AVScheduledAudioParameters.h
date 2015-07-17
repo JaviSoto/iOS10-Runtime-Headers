@@ -3,7 +3,7 @@
  */
 
 @interface AVScheduledAudioParameters : NSObject <NSCopying, NSMutableCopying> {
-    AVScheduledAudioParametersInternal *_scheduledParametersInternal;
+    AVScheduledAudioParametersInternal * _scheduledParametersInternal;
 }
 
 @property (getter=_ramps, setter=_setRamps:, nonatomic, copy) NSArray *ramps;

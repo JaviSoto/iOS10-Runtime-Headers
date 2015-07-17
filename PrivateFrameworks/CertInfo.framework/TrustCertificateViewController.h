@@ -3,8 +3,8 @@
  */
 
 @interface TrustCertificateViewController : UINavigationController {
-    CertificateViewController *_certificateViewController;
-    <TrustCertificateViewControllerDelegate> *_trustCertificateDelegate;
+    CertificateViewController * _certificateViewController;
+    <TrustCertificateViewControllerDelegate> * _trustCertificateDelegate;
 }
 
 @property (nonatomic, retain) CertificateViewController *certificateViewController;

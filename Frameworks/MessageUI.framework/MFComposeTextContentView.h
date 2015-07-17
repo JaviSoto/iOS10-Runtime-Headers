@@ -3,12 +3,12 @@
  */
 
 @interface MFComposeTextContentView : UITextContentView {
-    BOOL _keepScrollPosition;
-    int _preventScrollSelectionToVisible;
+    BOOL  _keepScrollPosition;
+    int  _preventScrollSelectionToVisible;
     struct CGPoint { 
         float x; 
         float y; 
-    } _scrollPosition;
+    }  _scrollPosition;
 }
 
 - (BOOL)becomeFirstResponder;
@@ -19,6 +19,7 @@
 - (void)endPreventingScrollSelectionToVisible;
 - (void)ensureSelection;
 - (void)increaseQuoteLevel;
+- (id)keyCommands;
 - (BOOL)resignFirstResponder;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (void)showQuoteLevelOptions;

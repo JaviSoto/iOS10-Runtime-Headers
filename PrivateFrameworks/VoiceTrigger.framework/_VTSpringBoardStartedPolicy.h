@@ -3,8 +3,8 @@
  */
 
 @interface _VTSpringBoardStartedPolicy : _VTStatePolicy {
-    int _notifyToken;
-    BOOL _springboardStarted;
+    int  _notifyToken;
+    BOOL  _springboardStarted;
 }
 
 - (void)_stopListening;

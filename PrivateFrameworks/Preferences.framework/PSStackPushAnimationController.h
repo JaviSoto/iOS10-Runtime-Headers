@@ -3,17 +3,17 @@
  */
 
 @interface PSStackPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
-    int _animationPreset;
-    NSMutableArray *_animationsToRunAlongsideToVC;
-    id /* block */ _completionBlock;
-    double _completionStagger;
-    BOOL _hasStartedAnimation;
-    UINavigationController *_navigationController;
-    double _pushDuration;
-    NSArray *_snapshots;
-    float _springDamping;
-    double _startStagger;
-    NSArray *_viewControllers;
+    int  _animationPreset;
+    NSMutableArray * _animationsToRunAlongsideToVC;
+    id /* block */  _completionBlock;
+    double  _completionStagger;
+    BOOL  _hasStartedAnimation;
+    UINavigationController * _navigationController;
+    double  _pushDuration;
+    NSArray * _snapshots;
+    float  _springDamping;
+    double  _startStagger;
+    NSArray * _viewControllers;
 }
 
 @property (nonatomic) int animationPreset;
@@ -35,6 +35,7 @@
 + (void)resetDefaultAnimationParameters;
 + (void)setDefaultAnimationPreset:(int)arg1;
 
+- (void).cxx_destruct;
 - (double)_actualDuration;
 - (void)_addAnimation:(id /* block */)arg1 forViewAtIndex:(unsigned int)arg2 count:(unsigned int)arg3;
 - (double)_desiredDuration;
@@ -47,7 +48,6 @@
 - (int)animationPreset;
 - (id /* block */)completionBlock;
 - (double)completionStagger;
-- (void)dealloc;
 - (id)init;
 - (id)navigationController;
 - (double)pushDuration;

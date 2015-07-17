@@ -3,21 +3,21 @@
  */
 
 @interface SKUIIndexBarEntryDescriptor : NSObject {
-    SKUIArtwork *_artwork;
-    NSAttributedString *_attributedString;
+    SKUIArtwork * _artwork;
+    NSAttributedString * _attributedString;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentEdgeInsets;
-    int _entryDescriptorType;
-    UIImage *_image;
+    }  _contentEdgeInsets;
+    int  _entryDescriptorType;
+    UIImage * _image;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    int _visibilityPriority;
+    }  _size;
+    int  _visibilityPriority;
 }
 
 @property (nonatomic, retain) SKUIArtwork *artwork;

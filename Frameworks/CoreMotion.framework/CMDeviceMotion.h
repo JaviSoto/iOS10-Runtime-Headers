@@ -3,7 +3,7 @@
  */
 
 @interface CMDeviceMotion : CMLogItem {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) CMAttitude *attitude;
@@ -14,8 +14,6 @@
 @property (nonatomic, readonly) int magneticFieldCalibrationLevel;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } rotationRate;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } userAcceleration;
-
-// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
 
 + (BOOL)supportsSecureCoding;
 
@@ -33,9 +31,5 @@
 - (int)magneticFieldCalibrationLevel;
 - (struct { double x1; double x2; double x3; })rotationRate;
 - (struct { double x1; double x2; double x3; })userAcceleration;
-
-// Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
-
-- (BOOL)calibrationRequired;
 
 @end

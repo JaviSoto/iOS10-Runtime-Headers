@@ -3,18 +3,18 @@
  */
 
 @interface AOSFMFAccountInfo : NSObject <NSSecureCoding> {
-    NSDictionary *_additionalInfo;
-    NSString *_aosAPSEnvironment;
-    NSString *_aosServerHost;
-    NSString *_aosServerProtocolScheme;
-    NSString *_appAuthToken;
-    int _appAuthTokenStatus;
-    NSString *_appServerHost;
-    NSString *_dsid;
-    NSString *_internalAuthToken;
-    NSString *_legacyDsid;
-    NSString *_legacyUsername;
-    NSString *_username;
+    NSDictionary * _additionalInfo;
+    NSString * _aosAPSEnvironment;
+    NSString * _aosServerHost;
+    NSString * _aosServerProtocolScheme;
+    NSString * _appAuthToken;
+    int  _appAuthTokenStatus;
+    NSString * _appServerHost;
+    NSString * _dsid;
+    NSString * _internalAuthToken;
+    NSString * _legacyDsid;
+    NSString * _legacyUsername;
+    NSString * _username;
 }
 
 @property (nonatomic, retain) NSDictionary *additionalInfo;

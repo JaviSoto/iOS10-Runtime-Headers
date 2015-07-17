@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceEnd : NSObject <NSCopying> {
-    NSDate *_endDate;
-    unsigned int _occurrenceCount;
+    NSDate * _endDate;
+    unsigned int  _occurrenceCount;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;

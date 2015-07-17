@@ -3,24 +3,25 @@
  */
 
 @interface WDStyle : NSObject <NSCopying> {
-    WDStyle *mBaseStyle;
-    WDCharacterProperties *mCharacterProperties;
-    BOOL mHidden;
-    NSString *mId;
-    NSString *mName;
-    WDStyle *mNextStyle;
-    WDParagraphProperties *mParagraphProperties;
-    WDStyleSheet *mStyleSheet;
-    int mStyleType;
-    WDTableCellProperties *mTableCellProperties;
-    WDTableRowProperties *mTableRowProperties;
-    WDTableStyleOverride *mTableStyleOverrides;
+    WDStyle * mBaseStyle;
+    WDCharacterProperties * mCharacterProperties;
+    BOOL  mHidden;
+    NSString * mId;
+    NSString * mName;
+    WDStyle * mNextStyle;
+    WDParagraphProperties * mParagraphProperties;
+    WDStyleSheet * mStyleSheet;
+    int  mStyleType;
+    WDTableCellProperties * mTableCellProperties;
+    WDTableRowProperties * mTableRowProperties;
+    WDTableStyleOverride * mTableStyleOverrides;
 }
 
 - (id)baseStyle;
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hidden;
 - (id)id;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;

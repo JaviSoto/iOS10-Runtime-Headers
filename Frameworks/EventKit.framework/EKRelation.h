@@ -3,11 +3,11 @@
  */
 
 @interface EKRelation : NSObject {
-    NSString *_entityName;
-    id /* block */ _inversePropertyIsApplicable;
-    NSSet *_inversePropertyNames;
-    BOOL _ownsRelated;
-    BOOL _toMany;
+    NSString * _entityName;
+    id /* block */  _inversePropertyIsApplicable;
+    NSSet * _inversePropertyNames;
+    BOOL  _ownsRelated;
+    BOOL  _toMany;
 }
 
 @property (nonatomic, copy) id /* block */ inversePropertyIsApplicable;

@@ -6,11 +6,10 @@
     struct { 
         int location; 
         int length; 
-    } mPageRange;
-    GQDSStyle *mStyle;
+    }  mPageRange;
+    GQDSStyle * mStyle;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface RUNowPlayingObserver : MPNowPlayingObserver {
-    RURadioPlaybackCoordinator *_playbackCoordinator;
+    RURadioPlaybackCoordinator * _playbackCoordinator;
 }
 
 - (void).cxx_destruct;

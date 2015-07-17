@@ -3,7 +3,7 @@
  */
 
 @interface UIStoryboardPopoverSegue : UIStoryboardSegue {
-    UIBarButtonItem *_anchorBarButtonItem;
+    UIBarButtonItem * _anchorBarButtonItem;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,11 +13,11 @@
             float width; 
             float height; 
         } size; 
-    } _anchorRect;
-    UIView *_anchorView;
-    NSArray *_passthroughViews;
-    unsigned int _permittedArrowDirections;
-    UIPopoverController *_popoverController;
+    }  _anchorRect;
+    UIView * _anchorView;
+    NSArray * _passthroughViews;
+    unsigned int  _permittedArrowDirections;
+    UIPopoverController * _popoverController;
 }
 
 @property (setter=_setAnchorBarButtonItem:, nonatomic, retain) UIBarButtonItem *_anchorBarButtonItem;
@@ -25,8 +25,9 @@
 @property (setter=_setAnchorView:, nonatomic, retain) UIView *_anchorView;
 @property (setter=_setPassthroughViews:, nonatomic, copy) NSArray *_passthroughViews;
 @property (setter=_setPermittedArrowDirections:, nonatomic) unsigned int _permittedArrowDirections;
-@property (nonatomic, readonly, retain) UIPopoverController *popoverController;
+@property (nonatomic, readonly) UIPopoverController *popoverController;
 
+- (void).cxx_destruct;
 - (id)_anchorBarButtonItem;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_anchorRect;
 - (id)_anchorView;
@@ -37,7 +38,6 @@
 - (void)_setAnchorView:(id)arg1;
 - (void)_setPassthroughViews:(id)arg1;
 - (void)_setPermittedArrowDirections:(unsigned int)arg1;
-- (void)dealloc;
 - (void)perform;
 - (id)popoverController;
 

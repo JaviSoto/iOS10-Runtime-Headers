@@ -3,15 +3,15 @@
  */
 
 @interface CPLPullFromTransportTask : CPLEngineSyncTask {
-    NSString *_clientCacheIdentifier;
-    BOOL _didGetSomeChanges;
-    <CPLEngineTransportDownloadBatchTask> *_downloadTask;
-    <CPLEngineTransportGetAssetCountsTask> *_getAssetCountsTask;
-    NSData *_initialSyncAnchor;
-    BOOL _isPostPushPhase;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _resetSyncAnchor;
-    BOOL _shouldGetAssetCounts;
+    NSString * _clientCacheIdentifier;
+    BOOL  _didGetSomeChanges;
+    <CPLEngineTransportDownloadBatchTask> * _downloadTask;
+    <CPLEngineTransportGetAssetCountsTask> * _getAssetCountsTask;
+    NSData * _initialSyncAnchor;
+    BOOL  _isPostPushPhase;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _resetSyncAnchor;
+    BOOL  _shouldGetAssetCounts;
 }
 
 @property (retain) <CPLPullFromTransportTaskDelegate> *delegate;

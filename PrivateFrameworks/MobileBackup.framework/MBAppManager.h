@@ -3,8 +3,8 @@
  */
 
 @interface MBAppManager : NSObject {
-    NSMutableDictionary *_containersByID;
-    MBSettingsContext *_settingsContext;
+    NSMutableDictionary * _containersByID;
+    MBSettingsContext * _settingsContext;
 }
 
 + (id)appManager;
@@ -25,6 +25,7 @@
 - (id)initWithSettingsContext:(id)arg1;
 - (BOOL)isDomainNameEnabled:(id)arg1;
 - (BOOL)loadAppsWithSafeHarbors:(BOOL)arg1 error:(id*)arg2;
+- (BOOL)moveAppDataToSafeHarborForContainer:(id)arg1 withError:(id*)arg2;
 - (void)removeAllDisabledDomainNames;
 - (void)removeOldSafeHarbors;
 - (void)setEnabled:(BOOL)arg1 forDomainName:(id)arg2;

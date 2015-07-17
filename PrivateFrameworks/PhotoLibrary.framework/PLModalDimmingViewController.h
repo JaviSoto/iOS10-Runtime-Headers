@@ -3,9 +3,9 @@
  */
 
 @interface PLModalDimmingViewController : UIViewController {
-    UIViewController<PLModalDimmingContained> *_contentViewController;
-    UIImageView *_vignetteView;
-    UIView *_wrapperView;
+    UIViewController<PLModalDimmingContained> * _contentViewController;
+    UIImageView * _vignetteView;
+    UIView * _wrapperView;
 }
 
 @property (nonatomic, retain) UIViewController<PLModalDimmingContained> *contentViewController;

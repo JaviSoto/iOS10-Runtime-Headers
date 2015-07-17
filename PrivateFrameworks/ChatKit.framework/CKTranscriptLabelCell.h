@@ -3,8 +3,8 @@
  */
 
 @interface CKTranscriptLabelCell : CKTranscriptCell {
-    UILabel *_label;
-    BOOL _wantsContactImageLayout;
+    UILabel * _label;
+    BOOL  _wantsContactImageLayout;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

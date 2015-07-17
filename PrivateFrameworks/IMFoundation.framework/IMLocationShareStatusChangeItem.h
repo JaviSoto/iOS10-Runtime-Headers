@@ -3,13 +3,13 @@
  */
 
 @interface IMLocationShareStatusChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    BOOL _actionable;
-    long long _direction;
-    BOOL _expired;
-    NSString *_otherCountryCode;
-    NSString *_otherHandle;
-    NSString *_otherUnformattedID;
-    long long _status;
+    BOOL  _actionable;
+    long long  _direction;
+    BOOL  _expired;
+    NSString * _otherCountryCode;
+    NSString * _otherHandle;
+    NSString * _otherUnformattedID;
+    long long  _status;
 }
 
 @property (nonatomic) BOOL actionable;

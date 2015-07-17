@@ -7,9 +7,9 @@
         double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _parameters;
-    double _radius;
-    int _status;
+    }  _parameters;
+    double  _radius;
+    int  _status;
 }
 
 @property (nonatomic, readonly) double*parameters;

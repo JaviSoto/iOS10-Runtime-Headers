@@ -3,7 +3,7 @@
  */
 
 @interface SCNLayerSource : SCNImageSource {
-    CALayer *_layer;
+    CALayer * _layer;
 }
 
 @property (nonatomic, retain) CALayer *layer;
@@ -12,6 +12,6 @@
 - (BOOL)isOpaque;
 - (id)layer;
 - (void)setLayer:(id)arg1;
-- (id)textureSourceForContext:(void*)arg1;
+- (id)textureSource;
 
 @end

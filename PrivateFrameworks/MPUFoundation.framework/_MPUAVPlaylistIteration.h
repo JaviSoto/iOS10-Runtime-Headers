@@ -3,10 +3,10 @@
  */
 
 @interface _MPUAVPlaylistIteration : NSObject <NSCoding> {
-    unsigned int _count;
-    unsigned int _indexToFaultIn;
-    unsigned int _iterationIndex;
-    MPSparseArray *_sourceContexts;
+    unsigned int  _count;
+    unsigned int  _indexToFaultIn;
+    unsigned int  _iterationIndex;
+    MPSparseArray * _sourceContexts;
 }
 
 @property (nonatomic) unsigned int count;

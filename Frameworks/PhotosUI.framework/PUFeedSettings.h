@@ -3,33 +3,33 @@
  */
 
 @interface PUFeedSettings : PUSettings {
-    BOOL _allowsInfiniteScrolling;
-    float _fastScrollPreheatingWindowSize;
-    int _feedContent;
-    BOOL _forceAllItemsAsVideo;
-    BOOL _forceDefaultPreheatManager;
-    BOOL _ignoresCaptions;
-    int _infiniteScrollingWindowSizeIncrement;
-    int _initialWindowSize;
-    int _maximumScrollRegimeForQualityImageFormats;
-    float _mediumScrollPreheatingWindowSize;
-    float _preheatingMinimumScrollFactor;
-    BOOL _shouldPreheatAssets;
-    BOOL _shouldPreheatComments;
-    BOOL _shouldPreheatCoreData;
-    BOOL _shouldUseJPEGFastFormatForLargeTiles;
-    BOOL _shouldUseJPEGFastFormatForMediumTiles;
-    BOOL _simulateSharedStreamsEnabled;
-    float _slowScrollPreheatingWindowSize;
-    float _smallTileSizeTolerance;
-    float _speedometerFastLowerThreshold;
-    float _speedometerFastUpperThreshold;
-    float _speedometerMediumLowerThreshold;
-    float _speedometerMediumUpperThreshold;
-    int _testInitialWindowSize;
-    BOOL _useJPEGImageFormats;
-    BOOL _useQualityImageFormats;
-    BOOL _useSpeedometerFeedback;
+    BOOL  _allowsInfiniteScrolling;
+    float  _fastScrollPreheatingWindowSize;
+    int  _feedContent;
+    BOOL  _forceAllItemsAsVideo;
+    BOOL  _forceDefaultPreheatManager;
+    BOOL  _ignoresCaptions;
+    int  _infiniteScrollingWindowSizeIncrement;
+    int  _initialWindowSize;
+    int  _maximumScrollRegimeForQualityImageFormats;
+    float  _mediumScrollPreheatingWindowSize;
+    float  _preheatingMinimumScrollFactor;
+    BOOL  _shouldPreheatAssets;
+    BOOL  _shouldPreheatComments;
+    BOOL  _shouldPreheatCoreData;
+    BOOL  _shouldUseJPEGFastFormatForLargeTiles;
+    BOOL  _shouldUseJPEGFastFormatForMediumTiles;
+    BOOL  _simulateSharedStreamsEnabled;
+    float  _slowScrollPreheatingWindowSize;
+    float  _smallTileSizeTolerance;
+    float  _speedometerFastLowerThreshold;
+    float  _speedometerFastUpperThreshold;
+    float  _speedometerMediumLowerThreshold;
+    float  _speedometerMediumUpperThreshold;
+    int  _testInitialWindowSize;
+    BOOL  _useJPEGImageFormats;
+    BOOL  _useQualityImageFormats;
+    BOOL  _useSpeedometerFeedback;
 }
 
 @property (nonatomic) BOOL allowsInfiniteScrolling;

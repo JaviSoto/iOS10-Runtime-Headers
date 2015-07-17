@@ -3,21 +3,21 @@
  */
 
 @interface CIRedEyeRepair : NSObject {
-    unsigned char CbCrDistanceTable;
-    BOOL autoPupilTonality;
-    struct CGImageBlockSet { } *blockSet;
-    struct __CFData { } *dataRef;
-    BOOL debugRedEye;
-    NSArray *faces;
-    BOOL forceLoValue;
-    int iFaceIndex;
-    BOOL iLeft;
-    int imageSourceType;
-    BOOL infillBackground;
-    int lastClickBitmapMaxX;
-    int lastClickBitmapMaxY;
-    int lastClickBitmapMinX;
-    int lastClickBitmapMinY;
+    unsigned char  CbCrDistanceTable;
+    BOOL  autoPupilTonality;
+    struct CGImageBlockSet { } * blockSet;
+    struct __CFData { } * dataRef;
+    BOOL  debugRedEye;
+    NSArray * faces;
+    BOOL  forceLoValue;
+    int  iFaceIndex;
+    BOOL  iLeft;
+    int  imageSourceType;
+    BOOL  infillBackground;
+    int  lastClickBitmapMaxX;
+    int  lastClickBitmapMaxY;
+    int  lastClickBitmapMinX;
+    int  lastClickBitmapMinY;
     struct { 
         char *baseAddress; 
         int width; 
@@ -28,7 +28,7 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastClickCbCrBitmap;
+    }  lastClickCbCrBitmap;
     struct { 
         char *baseAddress; 
         int width; 
@@ -39,13 +39,13 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastClickCbCrBitmaps;
+    }  lastClickCbCrBitmaps;
     struct { 
         int minrow; 
         int maxrow; 
         int mincol; 
         int maxcol; 
-    } lastClickIRects;
+    }  lastClickIRects;
     struct { 
         char *baseAddress; 
         int width; 
@@ -56,7 +56,7 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastClickYBitmap;
+    }  lastClickYBitmap;
     struct { 
         char *baseAddress; 
         int width; 
@@ -67,13 +67,13 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastClickYBitmaps;
-    float lastRepairIOD;
-    int lastRepairTag;
-    int lastSearchBitmapMaxX;
-    int lastSearchBitmapMaxY;
-    int lastSearchBitmapMinX;
-    int lastSearchBitmapMinY;
+    }  lastClickYBitmaps;
+    float  lastRepairIOD;
+    int  lastRepairTag;
+    int  lastSearchBitmapMaxX;
+    int  lastSearchBitmapMaxY;
+    int  lastSearchBitmapMinX;
+    int  lastSearchBitmapMinY;
     struct { 
         char *baseAddress; 
         int width; 
@@ -84,7 +84,7 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastSearchCbCrBitmap;
+    }  lastSearchCbCrBitmap;
     struct { 
         char *baseAddress; 
         int width; 
@@ -95,32 +95,32 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastSearchYBitmap;
-    struct { BOOL x1[256]; BOOL x2[32]; struct { char *x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; int x_3_1_5; int x_3_1_6; int x_3_1_7; int x_3_1_8; float x_3_1_9; } x3; int x4; int x5; struct { int x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct CGColorSpace {} *x7; unsigned int x8; int x9; int x10; BOOL x11; float x12; } *lf;
-    int linearCoefficients;
-    int loValue;
-    BOOL logRepairs;
-    int nLinears;
-    int nPolyPoints;
-    int nRepairs;
-    int nextRepairTag;
-    BOOL ownLF;
-    BOOL polyClosed;
+    }  lastSearchYBitmap;
+    struct { BOOL x1[256]; BOOL x2[32]; struct { char *x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; int x_3_1_5; int x_3_1_6; int x_3_1_7; int x_3_1_8; float x_3_1_9; } x3; int x4; int x5; struct { int x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct CGColorSpace {} *x7; unsigned int x8; int x9; int x10; BOOL x11; float x12; } * lf;
+    int  linearCoefficients;
+    int  loValue;
+    BOOL  logRepairs;
+    int  nLinears;
+    int  nPolyPoints;
+    int  nRepairs;
+    int  nextRepairTag;
+    BOOL  ownLF;
+    BOOL  polyClosed;
     struct { 
         float a; 
         float b; 
         float c; 
-    } polyLines;
-    BOOL polyPointConcave;
+    }  polyLines;
+    BOOL  polyPointConcave;
     struct CGPoint { 
         float x; 
         float y; 
-    } polyPoints;
-    BOOL pupilShadeAlignment;
-    int redEyeThresholdKind;
-    void *releaseMe;
-    BOOL renderAlpha;
-    BOOL renderSpecularShine;
+    }  polyPoints;
+    BOOL  pupilShadeAlignment;
+    int  redEyeThresholdKind;
+    void * releaseMe;
+    BOOL  renderAlpha;
+    BOOL  renderSpecularShine;
     struct { 
         int tag; 
         struct CGPoint { 
@@ -235,15 +235,15 @@
             float ymean; 
             float ystd; 
         } BI; 
-    } repairs;
-    float specularSize;
-    float specularSoftness;
+    }  repairs;
+    float  specularSize;
+    float  specularSoftness;
     struct { 
         int lo; 
         int med; 
         int hi; 
         int average; 
-    } standardTemplate;
+    }  standardTemplate;
 }
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })supportRectangleWithFaceArray:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;

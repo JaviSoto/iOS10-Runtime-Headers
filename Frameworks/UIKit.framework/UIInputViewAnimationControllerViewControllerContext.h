@@ -3,8 +3,8 @@
  */
 
 @interface UIInputViewAnimationControllerViewControllerContext : NSObject <UIViewControllerKeyboardContextTransitioning> {
-    _UIViewControllerTransitionContext *_context;
-    UIView *_from;
+    _UIViewControllerTransitionContext * _context;
+    UIView * _from;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,9 +14,9 @@
             float width; 
             float height; 
         } size; 
-    } _fromRect;
-    <UIInputViewAnimationHost> *_host;
-    UIView *_to;
+    }  _fromRect;
+    <UIInputViewAnimationHost> * _host;
+    UIView * _to;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,7 +26,7 @@
             float width; 
             float height; 
         } size; 
-    } _toRect;
+    }  _toRect;
 }
 
 @property (readonly, copy) NSString *debugDescription;

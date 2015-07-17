@@ -3,10 +3,10 @@
  */
 
 @interface CertInfoDescriptionCellContentView : UIView {
-    float _idealHeight;
-    NSArray *_labelsAndValues;
-    struct CGSize { float x1; float x2; } *_sizes;
-    int _sizesCount;
+    float  _idealHeight;
+    NSArray * _labelsAndValues;
+    struct CGSize { float x1; float x2; } * _sizes;
+    int  _sizesCount;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface ML3MigrationMisgroupedTrack : NSObject {
-    long long _albumArtistPID;
-    long long _persistentID;
+    long long  _albumArtistPID;
+    long long  _persistentID;
 }
 
 @property (nonatomic, readonly) long long albumArtistPID;

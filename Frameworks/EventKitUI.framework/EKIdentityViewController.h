@@ -3,8 +3,8 @@
  */
 
 @interface EKIdentityViewController : UIViewController <ABPersonViewControllerDelegate, EKEditItemViewControllerProtocol> {
-    <EKIdentityProtocol> *_identity;
-    ABPersonViewController *_personViewController;
+    <EKIdentityProtocol> * _identity;
+    ABPersonViewController * _personViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

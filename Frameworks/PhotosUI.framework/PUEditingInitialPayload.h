@@ -3,15 +3,15 @@
  */
 
 @interface PUEditingInitialPayload : NSObject <NSSecureCoding> {
-    PHAdjustmentData *_adjustmentData;
-    NSDate *_creationDate;
-    NSData *_displaySizeImageData;
-    CLLocation *_location;
-    unsigned int _mediaSubtypes;
-    int _mediaType;
-    NSData *_placeholderImageData;
-    NSString *_videoPathSandboxExtensionToken;
-    NSURL *_videoURL;
+    PHAdjustmentData * _adjustmentData;
+    NSDate * _creationDate;
+    NSData * _displaySizeImageData;
+    CLLocation * _location;
+    unsigned int  _mediaSubtypes;
+    int  _mediaType;
+    NSData * _placeholderImageData;
+    NSString * _videoPathSandboxExtensionToken;
+    NSURL * _videoURL;
 }
 
 @property (nonatomic, retain) PHAdjustmentData *adjustmentData;

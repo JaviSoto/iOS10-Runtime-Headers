@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentTransactionTableCell : UITableViewCell {
-    UILabel *_amountLabel;
-    NSString *_amountString;
-    UILabel *_primaryLabel;
-    NSString *_primaryString;
-    UILabel *_secondaryLabel;
-    NSString *_secondaryString;
+@interface PKPaymentTransactionTableCell : PKTableViewCell {
+    UILabel * _amountLabel;
+    NSString * _amountString;
+    UILabel * _primaryLabel;
+    NSString * _primaryString;
+    UILabel * _secondaryLabel;
+    NSString * _secondaryString;
 }
 
 @property (nonatomic, retain) NSString *amountString;

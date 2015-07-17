@@ -3,8 +3,8 @@
  */
 
 @interface MusicAccountNavigationController : MusicNavigationController <MusicClientContextConsuming, MusicJSAccountNativeViewControllerDelegate, MusicJSNativeViewControllerFactory> {
-    MusicClientContext *_clientContext;
-    BOOL _registeredWithModalNavigationStackRegistry;
+    MusicClientContext * _clientContext;
+    BOOL  _registeredWithModalNavigationStackRegistry;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

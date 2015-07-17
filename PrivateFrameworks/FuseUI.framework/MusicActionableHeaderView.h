@@ -3,17 +3,17 @@
  */
 
 @interface MusicActionableHeaderView : UIView {
-    BOOL _actionable;
+    BOOL  _actionable;
     struct { 
         float titleBaselineOffsetFromBottom; 
         float titleBaselineOffsetFromTop; 
-    } _actionableHeaderMetrics;
-    <MusicActionableHeaderViewDelegate> *_delegate;
-    BOOL _enforceMinimumLayoutMargins;
-    MPUFontDescriptor *_headerFontDescriptor;
-    NSString *_headerTitle;
-    UIColor *_headerTitleColor;
-    MusicImageAccessoryButton *_imageAccessoryButton;
+    }  _actionableHeaderMetrics;
+    <MusicActionableHeaderViewDelegate> * _delegate;
+    BOOL  _enforceMinimumLayoutMargins;
+    MPUFontDescriptor * _headerFontDescriptor;
+    NSString * _headerTitle;
+    UIColor * _headerTitleColor;
+    MusicImageAccessoryButton * _imageAccessoryButton;
 }
 
 @property (getter=isActionable, nonatomic) BOOL actionable;

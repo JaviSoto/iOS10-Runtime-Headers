@@ -3,7 +3,7 @@
  */
 
 @interface UIProxyObject : NSObject <NSCoding> {
-    NSString *proxiedObjectIdentifier;
+    NSString * proxiedObjectIdentifier;
 }
 
 + (void)addMappingFromIdentifier:(id)arg1 toObject:(id)arg2 forCoder:(id)arg3;
@@ -12,7 +12,7 @@
 + (struct __CFDictionary { }*)proxyDecodingMap;
 + (void)removeMappingsForCoder:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)proxiedObjectIdentifier;

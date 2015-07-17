@@ -3,15 +3,15 @@
  */
 
 @interface SUNavigationBarBackgroundView : UIView {
-    _UIBackdropView *_backdropView;
-    UIView *_borderView;
-    BOOL _separatorOnTop;
-    UIView *_shadowView;
-    _UINavigationBarAppearanceStorage *appearanceStorage;
-    int barStyle;
-    UIColor *barTintColor;
-    BOOL barWantsAdaptiveBackdrop;
-    BOOL translucent;
+    _UIBackdropView * _backdropView;
+    UIView * _borderView;
+    BOOL  _separatorOnTop;
+    UIView * _shadowView;
+    _UINavigationBarAppearanceStorage * appearanceStorage;
+    int  barStyle;
+    UIColor * barTintColor;
+    BOOL  barWantsAdaptiveBackdrop;
+    BOOL  translucent;
 }
 
 @property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;

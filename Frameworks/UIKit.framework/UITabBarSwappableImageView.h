@@ -3,14 +3,14 @@
  */
 
 @interface UITabBarSwappableImageView : UIImageView {
-    id _alternate;
-    int _buttonTag;
-    int _currentAnimation;
-    BOOL _flipped;
-    float _scale;
-    BOOL _showAlternate;
-    UITabBar *_tabBar;
-    id _value;
+    id  _alternate;
+    int  _buttonTag;
+    int  _currentAnimation;
+    BOOL  _flipped;
+    float  _scale;
+    BOOL  _showAlternate;
+    UITabBar * _tabBar;
+    id  _value;
 }
 
 - (void)animateImage:(float)arg1 withTabBar:(id)arg2 withTag:(int)arg3;

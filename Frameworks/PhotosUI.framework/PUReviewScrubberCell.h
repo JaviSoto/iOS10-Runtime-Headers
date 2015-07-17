@@ -3,13 +3,13 @@
  */
 
 @interface PUReviewScrubberCell : UICollectionViewCell {
-    UIImageView *__checkmarkImageView;
-    UIImageView *__suggestedImageView;
-    UIImageView *__thumbnailImageView;
-    BOOL _favorite;
-    UIImage *_image;
-    BOOL _suggested;
-    BOOL _wantsSmallSuggestionIndicators;
+    UIImageView * __checkmarkImageView;
+    UIImageView * __suggestedImageView;
+    UIImageView * __thumbnailImageView;
+    BOOL  _favorite;
+    UIImage * _image;
+    BOOL  _suggested;
+    BOOL  _wantsSmallSuggestionIndicators;
 }
 
 @property (nonatomic, readonly) UIImageView *_checkmarkImageView;

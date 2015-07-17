@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLUICameraViewController : CAMCameraViewController <UIImagePickerCameraViewController> {
-    int _newStatusBarStyle;
+@interface PLUICameraViewController : CMKCameraViewController <UIImagePickerCameraViewController> {
+    int  _newStatusBarStyle;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -11,8 +11,8 @@
         float d; 
         float tx; 
         float ty; 
-    } _previewViewTransform;
-    int _previousStatusBarStyle;
+    }  _previewViewTransform;
+    int  _previousStatusBarStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

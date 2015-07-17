@@ -3,33 +3,33 @@
  */
 
 @interface IMDaemonController : NSObject {
-    BOOL _acquiringDaemonConnection;
-    BOOL _autoReconnect;
-    NSLock *_blockingLock;
-    BOOL _blocksConnectionAtResume;
-    unsigned int _cachedCapabilities;
-    NSRecursiveLock *_connectionLock;
-    IMDaemonListener *_daemonListener;
-    id _delegate;
-    unsigned int _gMyFZListenerCapabilities;
-    BOOL _hasBeenSuspended;
-    BOOL _hasCheckedForDaemon;
-    BOOL _inBlockingConnect;
-    unsigned int _lastUpdatedCapabilities;
-    NSString *_listenerID;
-    NSObject<OS_dispatch_queue> *_listenerLockQueue;
-    NSMutableDictionary *_listenerMap;
-    IMLocalObject *_localObject;
-    NSObject<OS_dispatch_queue> *_localObjectLockQueue;
-    BOOL _preventReconnect;
-    NSProtocolChecker *_protocol;
-    NSObject<OS_dispatch_queue> *_remoteDaemonLockQueue;
-    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
-    IMRemoteObject<IMRemoteDaemonProtocol> *_remoteObject;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSMutableArray *_services;
-    NSArray *_servicesToAllow;
-    NSArray *_servicesToDeny;
+    BOOL  _acquiringDaemonConnection;
+    BOOL  _autoReconnect;
+    NSLock * _blockingLock;
+    BOOL  _blocksConnectionAtResume;
+    unsigned int  _cachedCapabilities;
+    NSRecursiveLock * _connectionLock;
+    IMDaemonListener * _daemonListener;
+    id  _delegate;
+    unsigned int  _gMyFZListenerCapabilities;
+    BOOL  _hasBeenSuspended;
+    BOOL  _hasCheckedForDaemon;
+    BOOL  _inBlockingConnect;
+    unsigned int  _lastUpdatedCapabilities;
+    NSString * _listenerID;
+    NSObject<OS_dispatch_queue> * _listenerLockQueue;
+    NSMutableDictionary * _listenerMap;
+    IMLocalObject * _localObject;
+    NSObject<OS_dispatch_queue> * _localObjectLockQueue;
+    BOOL  _preventReconnect;
+    NSProtocolChecker * _protocol;
+    NSObject<OS_dispatch_queue> * _remoteDaemonLockQueue;
+    NSObject<OS_dispatch_queue> * _remoteMessageQueue;
+    IMRemoteObject<IMRemoteDaemonProtocol> * _remoteObject;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    NSMutableArray * _services;
+    NSArray * _servicesToAllow;
+    NSArray * _servicesToDeny;
 }
 
 @property (setter=_setAutoReconnect:) BOOL _autoReconnect;

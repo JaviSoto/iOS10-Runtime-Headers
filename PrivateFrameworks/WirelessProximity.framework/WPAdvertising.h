@@ -3,9 +3,9 @@
  */
 
 @interface WPAdvertising : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WPAdvertisingDelegate> *_delegate;
-    int _state;
+    XPCClient * _connection;
+    <WPAdvertisingDelegate> * _delegate;
+    int  _state;
 }
 
 @property (nonatomic, retain) XPCClient *connection;

@@ -3,15 +3,13 @@
  */
 
 @interface NSKeyValueObservance : NSWeakCallback {
-    BOOL _cachedIsShareable;
-    unsigned int _cachedUnrotatedHashComponent;
-    void *_context;
-    NSPointerArray *_observationInfos;
-    NSObject *_observer;
-    unsigned int _options;
-    NSObject *_originalObservable;
-    NSKeyValueProperty *_property;
-    int _retainCountMinusOne;
+    BOOL  _cachedIsShareable;
+    void * _context;
+    NSObject * _observer;
+    unsigned int  _options;
+    NSObject * _originalObservable;
+    NSKeyValueProperty * _property;
+    int  _retainCountMinusOne;
 }
 
 - (id)_initWithObserver:(id)arg1 property:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4 originalObservable:(id)arg5;

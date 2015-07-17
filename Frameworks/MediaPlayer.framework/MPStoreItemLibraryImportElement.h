@@ -3,8 +3,8 @@
  */
 
 @interface MPStoreItemLibraryImportElement : NSObject {
-    NSDictionary *_additionalTrackMetadata;
-    long long _storeItemID;
+    NSDictionary * _additionalTrackMetadata;
+    long long  _storeItemID;
 }
 
 @property (nonatomic, readonly) NSDictionary *additionalTrackMetadata;

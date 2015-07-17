@@ -3,12 +3,12 @@
  */
 
 @interface SKUITracklistSectionHeaderCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
-    UIControl *_button;
-    SKUIButtonViewElement *_buttonViewElement;
-    SKUIBuyButtonDescriptor *_buyButtonDescriptor;
-    SKUITracklistColumnData *_columnData;
-    NSMutableArray *_labels;
-    UIView *_separatorView;
+    UIControl * _button;
+    SKUIButtonViewElement * _buttonViewElement;
+    SKUIBuyButtonDescriptor * _buyButtonDescriptor;
+    SKUITracklistColumnData * _columnData;
+    NSMutableArray * _labels;
+    UIView * _separatorView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

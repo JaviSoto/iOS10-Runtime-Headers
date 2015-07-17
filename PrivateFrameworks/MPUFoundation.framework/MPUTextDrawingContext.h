@@ -3,18 +3,18 @@
  */
 
 @interface MPUTextDrawingContext : NSObject {
-    NSAttributedString *_attributedText;
+    NSAttributedString * _attributedText;
     struct CGSize { 
         float width; 
         float height; 
-    } _boundingSize;
-    float _firstBaselineOffsetFromTop;
-    UIImage *_image;
-    float _lastBaselineOffsetFromBottom;
-    NSStringDrawingContext *_stringDrawingContext;
-    int _stringDrawingOptions;
-    NSString *_text;
-    NSDictionary *_uniformTextAttributes;
+    }  _boundingSize;
+    float  _firstBaselineOffsetFromTop;
+    UIImage * _image;
+    float  _lastBaselineOffsetFromBottom;
+    NSStringDrawingContext * _stringDrawingContext;
+    int  _stringDrawingOptions;
+    NSString * _text;
+    NSDictionary * _uniformTextAttributes;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

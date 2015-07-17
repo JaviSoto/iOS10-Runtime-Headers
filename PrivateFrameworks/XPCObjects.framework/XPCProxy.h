@@ -3,16 +3,16 @@
  */
 
 @interface XPCProxy : NSObject <NSCopying> {
-    NSObject<OS_xpc_object> *_connection;
-    id /* block */ _errorHandler;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    BOOL _invalidated;
-    NSObject<OS_dispatch_queue> *_queue;
-    Class _remoteClass;
-    Protocol *_remoteProtocol;
-    <XPCProxyTarget> *_target;
-    BOOL _useTraditionalEncoder;
-    NSArray *_whitelistedClassNames;
+    NSObject<OS_xpc_object> * _connection;
+    id /* block */  _errorHandler;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    BOOL  _invalidated;
+    NSObject<OS_dispatch_queue> * _queue;
+    Class  _remoteClass;
+    Protocol * _remoteProtocol;
+    <XPCProxyTarget> * _target;
+    BOOL  _useTraditionalEncoder;
+    NSArray * _whitelistedClassNames;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;

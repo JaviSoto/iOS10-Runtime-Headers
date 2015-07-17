@@ -3,10 +3,10 @@
  */
 
 @interface NSAKSerializerStream : NSObject <NSSerializerStream> {
-    unsigned int current;
-    unsigned int max;
-    void *memory;
-    struct __CFDictionary { } *roomForIntLocations;
+    unsigned int  current;
+    unsigned int  max;
+    void * memory;
+    struct __CFDictionary { } * roomForIntLocations;
 }
 
 - (void)copySerializationInto:(void*)arg1;

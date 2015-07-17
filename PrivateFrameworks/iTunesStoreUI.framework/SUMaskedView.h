@@ -3,7 +3,7 @@
  */
 
 @interface SUMaskedView : UIView {
-    SUMaskProvider *_maskProvider;
+    SUMaskProvider * _maskProvider;
 }
 
 @property (nonatomic, retain) SUMaskProvider *maskProvider;

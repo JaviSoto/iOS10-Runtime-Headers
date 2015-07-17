@@ -3,25 +3,31 @@
  */
 
 @interface PRSQueryTask : NSObject {
-    BOOL _canceled;
-    NSString *_fbq;
-    PRSSearchFeedback *_feedback;
-    <PRSSearchQueryHandler> *_handler;
-    int _queryId;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _representedObject;
-    PRSSearchSession *_session;
-    BOOL _started;
-    BOOL _webSearch;
+    BOOL  _canceled;
+    NSArray * _category_stats_long_term;
+    NSArray * _category_stats_short_term;
+    NSString * _fbq;
+    PRSSearchFeedback * _feedback;
+    <PRSSearchQueryHandler> * _handler;
+    NSString * _keyboardLanguage;
+    int  _queryId;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _representedObject;
+    PRSSearchSession * _session;
+    BOOL  _started;
+    BOOL  _webSearch;
 }
 
 @property (nonatomic) BOOL canceled;
+@property (nonatomic, retain) NSArray *category_stats_long_term;
+@property (nonatomic, retain) NSArray *category_stats_short_term;
 @property (nonatomic, retain) NSString *fbq;
 @property (retain) PRSSearchFeedback *feedback;
 @property (nonatomic, retain) <PRSSearchQueryHandler> *handler;
+@property (nonatomic, retain) NSString *keyboardLanguage;
 @property int queryId;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, retain) id representedObject;
+@property (nonatomic) id representedObject;
 @property (nonatomic) PRSSearchSession *session;
 @property (nonatomic) BOOL started;
 @property BOOL webSearch;
@@ -33,21 +39,27 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (BOOL)canceled;
+- (id)category_stats_long_term;
+- (id)category_stats_short_term;
 - (id)fbq;
 - (id)feedback;
 - (id)feedbackQueryIdentifier;
 - (id)handler;
 - (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4;
 - (void)invalidateHandler;
+- (id)keyboardLanguage;
 - (int)queryId;
 - (id)queue;
 - (id)representedObject;
 - (void)resume;
 - (id)session;
 - (void)setCanceled:(BOOL)arg1;
+- (void)setCategory_stats_long_term:(id)arg1;
+- (void)setCategory_stats_short_term:(id)arg1;
 - (void)setFbq:(id)arg1;
 - (void)setFeedback:(id)arg1;
 - (void)setHandler:(id)arg1;
+- (void)setKeyboardLanguage:(id)arg1;
 - (void)setQueryId:(int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;

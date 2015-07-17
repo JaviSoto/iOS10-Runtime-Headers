@@ -3,10 +3,10 @@
  */
 
 @interface UIScrubberTimeView : UIView {
-    unsigned int _align;
-    NSString *_time;
-    UIColor *_timeColor;
-    UIColor *_timeShadowColor;
+    unsigned int  _align;
+    NSString * _time;
+    UIColor * _timeColor;
+    UIColor * _timeShadowColor;
 }
 
 - (void)dealloc;

@@ -3,9 +3,9 @@
  */
 
 @interface AWDNFCSECRSAuthorizeECommerce : PBCodable <NSCopying> {
-    NSData *_aid;
-    unsigned int _countryCode;
-    unsigned int _currencyCode;
+    NSData * _aid;
+    unsigned int  _countryCode;
+    unsigned int  _currencyCode;
     struct { 
         unsigned int otherAmount : 1; 
         unsigned int timeDeltaFromReference : 1; 
@@ -17,18 +17,18 @@
         unsigned int method : 1; 
         unsigned int status : 1; 
         unsigned int transactionType : 1; 
-    } _has;
-    unsigned int _merchantCapabilities;
-    NSData *_merchantId;
-    unsigned int _method;
-    unsigned long long _otherAmount;
-    unsigned int _status;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    NSData *_transactionId;
-    unsigned long long _transactionTotal;
-    unsigned int _transactionType;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned int  _merchantCapabilities;
+    NSData * _merchantId;
+    unsigned int  _method;
+    unsigned long long  _otherAmount;
+    unsigned int  _status;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    NSData * _transactionId;
+    unsigned long long  _transactionTotal;
+    unsigned int  _transactionType;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic, retain) NSData *aid;

@@ -3,16 +3,16 @@
  */
 
 @interface CABTMIDICentralViewController : UITableViewController <BTLEConnectionTable, UITableViewDataSource, UITableViewDelegate> {
-    UIBarButtonItem *cancelButton;
-    AMSBTLEConnectionManager *connectionManager;
-    NSTimer *connectionTimer;
-    BOOL didCleanup;
-    UIBarButtonItem *editButton;
-    UIBarButtonItem *forgetButton;
-    BOOL inEditingMode;
-    NSMutableArray *incompleteConnectionList;
-    UIActivityIndicatorView *indicator;
-    NSMutableArray *peripheralList;
+    UIBarButtonItem * cancelButton;
+    AMSBTLEConnectionManager * connectionManager;
+    NSTimer * connectionTimer;
+    BOOL  didCleanup;
+    UIBarButtonItem * editButton;
+    UIBarButtonItem * forgetButton;
+    BOOL  inEditingMode;
+    NSMutableArray * incompleteConnectionList;
+    UIActivityIndicatorView * indicator;
+    NSMutableArray * peripheralList;
 }
 
 @property (readonly, copy) NSString *debugDescription;

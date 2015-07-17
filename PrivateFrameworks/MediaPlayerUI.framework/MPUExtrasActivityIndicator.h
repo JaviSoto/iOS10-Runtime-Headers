@@ -3,8 +3,8 @@
  */
 
 @interface MPUExtrasActivityIndicator : UIView {
-    UIActivityIndicatorView *_spinner;
-    UILabel *_titleLabel;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

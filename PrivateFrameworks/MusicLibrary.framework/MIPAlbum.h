@@ -3,9 +3,9 @@
  */
 
 @interface MIPAlbum : PBCodable <NSCopying> {
-    MIPArtist *_artist;
-    NSString *_artworkId;
-    BOOL _compilation;
+    MIPArtist * _artist;
+    NSString * _artworkId;
+    BOOL  _compilation;
     struct { 
         unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
@@ -13,14 +13,14 @@
         unsigned int numTracks : 1; 
         unsigned int userRating : 1; 
         unsigned int compilation : 1; 
-    } _has;
-    NSString *_name;
-    int _numDiscs;
-    int _numTracks;
-    long long _persistentId;
-    NSString *_sortName;
-    long long _storeId;
-    int _userRating;
+    }  _has;
+    NSString * _name;
+    int  _numDiscs;
+    int  _numTracks;
+    long long  _persistentId;
+    NSString * _sortName;
+    long long  _storeId;
+    int  _userRating;
 }
 
 @property (nonatomic, retain) MIPArtist *artist;

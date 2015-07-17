@@ -3,35 +3,35 @@
  */
 
 @interface VKCameraContext : NSObject {
-    BOOL _allowVerticalPanning;
-    BOOL _animated;
-    BOOL _applied;
-    int _courseSource;
+    BOOL  _allowVerticalPanning;
+    BOOL  _animated;
+    BOOL  _applied;
+    int  _courseSource;
     struct { 
         double latitude; 
         double longitude; 
-    } _courseTargetLocation;
-    int _focusStyle;
-    double _heading;
-    double _lastCameraFocusCourse;
-    VKPuckAnimatorLocationProjector *_locationProjector;
+    }  _courseTargetLocation;
+    int  _focusStyle;
+    double  _heading;
+    double  _lastCameraFocusCourse;
+    VKPuckAnimatorLocationProjector * _locationProjector;
     struct { 
         double latitude; 
         double longitude; 
-    } _pointOfFocus;
+    }  _pointOfFocus;
     struct { 
         double latitude; 
         double longitude; 
-    } _pointOfReference;
+    }  _pointOfReference;
     struct vector<GEOLocationCoordinate2D, std::__1::allocator<GEOLocationCoordinate2D> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<GEOLocationCoordinate2D *, std::__1::allocator<GEOLocationCoordinate2D> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } _pois;
-    int _style;
-    double _verticalGroundspanScale;
+    }  _pois;
+    int  _style;
+    double  _verticalGroundspanScale;
 }
 
 @property (nonatomic, readonly) BOOL allowVerticalPanning;

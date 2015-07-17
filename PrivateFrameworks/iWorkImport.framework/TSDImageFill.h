@@ -6,21 +6,21 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mFillSize;
-    TSUFlushableCachedImage *mHalfSizeTintedImage;
-    BOOL mHasIndicatedInterestInProvider;
-    TSPData *mImageData;
-    BOOL mInterpretsUntaggedImageDataAsGeneric;
-    TSPData *mOriginalImageData;
-    TSUFlushableCachedImage *mQuarterSizeTintedImage;
-    TSUColor *mReferenceColor;
-    struct CGImage { } *mSourceOfTempRenderCopy;
-    TSUFlushableCachedImage *mStandardSizeTintedImage;
-    int mTechnique;
-    struct CGImage { } *mTempRenderCopy;
-    int mTempRenderCount;
-    NSObject<OS_dispatch_queue> *mTempRenderLock;
-    TSUColor *mTintColor;
+    }  mFillSize;
+    TSUFlushableCachedImage * mHalfSizeTintedImage;
+    BOOL  mHasIndicatedInterestInProvider;
+    TSPData * mImageData;
+    BOOL  mInterpretsUntaggedImageDataAsGeneric;
+    TSPData * mOriginalImageData;
+    TSUFlushableCachedImage * mQuarterSizeTintedImage;
+    TSUColor * mReferenceColor;
+    struct CGImage { } * mSourceOfTempRenderCopy;
+    TSUFlushableCachedImage * mStandardSizeTintedImage;
+    int  mTechnique;
+    struct CGImage { } * mTempRenderCopy;
+    int  mTempRenderCount;
+    NSObject<OS_dispatch_queue> * mTempRenderLock;
+    TSUColor * mTintColor;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } fillSize;

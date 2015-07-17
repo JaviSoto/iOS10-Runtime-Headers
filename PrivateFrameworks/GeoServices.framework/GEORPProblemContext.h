@@ -3,31 +3,36 @@
  */
 
 @interface GEORPProblemContext : PBCodable <NSCopying> {
-    NSMutableArray *_auxiliaryControls;
-    NSMutableArray *_directionsRequests;
-    NSMutableArray *_directionsResponses;
+    NSMutableArray * _auxiliaryControls;
+    double  _creationDate;
+    NSMutableArray * _directionsRequests;
+    NSMutableArray * _directionsResponses;
     struct { 
         unsigned int sessionId : 1; 
+        unsigned int creationDate : 1; 
         unsigned int originatingAuxiliaryControlIndex : 1; 
         unsigned int pinType : 1; 
-    } _has;
-    NSString *_lastSearchString;
-    GEORPMapLocation *_mapLocation;
-    GEOPlace *_originalPlace;
-    unsigned long long _originatingAuxiliaryControlIndex;
-    int _pinType;
-    GEOPDPlace *_place;
+    }  _has;
+    NSString * _lastSearchString;
+    GEORPMapLocation * _mapLocation;
+    GEOPlace * _originalPlace;
+    unsigned long long  _originatingAuxiliaryControlIndex;
+    int  _pinType;
+    GEOPDPlace * _place;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionId;
-    NSString *_tileStateLog;
-    NSMutableArray *_visibleTileSets;
+    }  _sessionId;
+    NSString * _tileStateLog;
+    GEORPTransitLineTileInfo * _transitLineTileInfo;
+    NSMutableArray * _visibleTileSets;
 }
 
 @property (nonatomic, retain) NSMutableArray *auxiliaryControls;
+@property (nonatomic) double creationDate;
 @property (nonatomic, retain) NSMutableArray *directionsRequests;
 @property (nonatomic, retain) NSMutableArray *directionsResponses;
+@property (nonatomic) BOOL hasCreationDate;
 @property (nonatomic, readonly) BOOL hasLastSearchString;
 @property (nonatomic, readonly) BOOL hasMapLocation;
 @property (nonatomic, readonly) BOOL hasOriginalPlace;
@@ -36,6 +41,7 @@
 @property (nonatomic, readonly) BOOL hasPlace;
 @property (nonatomic) BOOL hasSessionId;
 @property (nonatomic, readonly) BOOL hasTileStateLog;
+@property (nonatomic, readonly) BOOL hasTransitLineTileInfo;
 @property (nonatomic, retain) NSString *lastSearchString;
 @property (nonatomic, retain) GEORPMapLocation *mapLocation;
 @property (nonatomic, retain) GEOPlace *originalPlace;
@@ -44,6 +50,7 @@
 @property (nonatomic, retain) GEOPDPlace *place;
 @property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
 @property (nonatomic, retain) NSString *tileStateLog;
+@property (nonatomic, retain) GEORPTransitLineTileInfo *transitLineTileInfo;
 @property (nonatomic, retain) NSMutableArray *visibleTileSets;
 
 - (void)addAuxiliaryControl:(id)arg1;
@@ -59,6 +66,7 @@
 - (void)clearVisibleTileSets;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)creationDate;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -68,6 +76,7 @@
 - (id)directionsResponseAtIndex:(unsigned int)arg1;
 - (id)directionsResponses;
 - (unsigned int)directionsResponsesCount;
+- (BOOL)hasCreationDate;
 - (BOOL)hasLastSearchString;
 - (BOOL)hasMapLocation;
 - (BOOL)hasOriginalPlace;
@@ -76,6 +85,7 @@
 - (BOOL)hasPlace;
 - (BOOL)hasSessionId;
 - (BOOL)hasTileStateLog;
+- (BOOL)hasTransitLineTileInfo;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastSearchString;
@@ -88,8 +98,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setAuxiliaryControls:(id)arg1;
+- (void)setCreationDate:(double)arg1;
 - (void)setDirectionsRequests:(id)arg1;
 - (void)setDirectionsResponses:(id)arg1;
+- (void)setHasCreationDate:(BOOL)arg1;
 - (void)setHasOriginatingAuxiliaryControlIndex:(BOOL)arg1;
 - (void)setHasPinType:(BOOL)arg1;
 - (void)setHasSessionId:(BOOL)arg1;
@@ -101,8 +113,10 @@
 - (void)setPlace:(id)arg1;
 - (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTileStateLog:(id)arg1;
+- (void)setTransitLineTileInfo:(id)arg1;
 - (void)setVisibleTileSets:(id)arg1;
 - (id)tileStateLog;
+- (id)transitLineTileInfo;
 - (id)visibleTileSetAtIndex:(unsigned int)arg1;
 - (id)visibleTileSets;
 - (unsigned int)visibleTileSetsCount;

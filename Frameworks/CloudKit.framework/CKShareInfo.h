@@ -3,21 +3,21 @@
  */
 
 @interface CKShareInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_container;
-    int _environment;
-    NSString *_etag;
-    NSString *_iWorkDocumentName;
-    NSString *_ownerFirstName;
-    NSString *_ownerLastName;
-    int _participantPermission;
-    int _participantStatus;
-    int _participantType;
-    NSData *_privateToken;
-    NSData *_protectedFullToken;
-    NSData *_publicProtectionData;
-    NSString *_publicProtectionEtag;
-    NSData *_publicToken;
-    CKShareID *_shareID;
+    NSString * _container;
+    int  _environment;
+    NSString * _etag;
+    NSString * _iWorkDocumentName;
+    NSString * _ownerFirstName;
+    NSString * _ownerLastName;
+    int  _participantPermission;
+    int  _participantStatus;
+    int  _participantType;
+    NSData * _privateToken;
+    NSData * _protectedFullToken;
+    NSData * _publicProtectionData;
+    NSString * _publicProtectionEtag;
+    NSData * _publicToken;
+    CKShareID * _shareID;
 }
 
 @property (nonatomic, retain) NSString *container;

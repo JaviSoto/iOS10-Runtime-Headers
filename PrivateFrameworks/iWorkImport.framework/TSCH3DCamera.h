@@ -14,8 +14,8 @@
             float g; 
             float t; 
         } ; 
-    } mContainingViewportOffset;
-    TSCH3DLens *mLens;
+    }  mContainingViewportOffset;
+    TSCH3DLens * mLens;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -39,7 +39,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mTransform;
+    }  mTransform;
     struct box<glm::detail::tvec2<int> > { 
         struct tvec2<int> { 
             union { 
@@ -65,9 +65,9 @@
                 int t; 
             } ; 
         } mMax; 
-    } mViewport;
-    float mViewportSamples;
-    float mViewportScale;
+    }  mViewport;
+    float  mViewportSamples;
+    float  mViewportScale;
 }
 
 @property (nonatomic) struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } containingViewportOffset;

@@ -3,16 +3,16 @@
  */
 
 @interface CKDGetRecordsURLRequest : CKDURLRequest {
-    unsigned int _URLOptions;
-    NSSet *_assetFieldNamesToPublishURLs;
-    NSSet *_desiredKeys;
-    unsigned int _recordCount;
-    id /* block */ _recordFetchedBlock;
-    NSMutableDictionary *_recordIDByRequestID;
-    NSArray *_recordIDs;
-    NSDictionary *_recordIDsToETags;
-    NSDictionary *_recordIDsToVersionETags;
-    unsigned int _requestedTTL;
+    unsigned int  _URLOptions;
+    NSSet * _assetFieldNamesToPublishURLs;
+    NSSet * _desiredKeys;
+    unsigned int  _recordCount;
+    id /* block */  _recordFetchedBlock;
+    NSMutableDictionary * _recordIDByRequestID;
+    NSArray * _recordIDs;
+    NSDictionary * _recordIDsToETags;
+    NSDictionary * _recordIDsToVersionETags;
+    unsigned int  _requestedTTL;
 }
 
 @property (nonatomic) unsigned int URLOptions;

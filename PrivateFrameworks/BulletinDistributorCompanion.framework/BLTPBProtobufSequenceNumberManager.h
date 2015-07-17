@@ -3,12 +3,12 @@
  */
 
 @interface BLTPBProtobufSequenceNumberManager : NSObject {
-    BLTCircularBitBuffer *_duplicateEntries;
-    BOOL _isInitialSendSequenceNumber;
-    unsigned long long _recvSequenceNumber;
-    unsigned long long _sendSequenceNumber;
-    NSLock *_sequenceNumberAccess;
-    NSString *_serviceName;
+    BLTCircularBitBuffer * _duplicateEntries;
+    BOOL  _isInitialSendSequenceNumber;
+    unsigned long long  _recvSequenceNumber;
+    unsigned long long  _sendSequenceNumber;
+    NSLock * _sequenceNumberAccess;
+    NSString * _serviceName;
 }
 
 @property (nonatomic) BOOL isInitialSendSequenceNumber;

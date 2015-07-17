@@ -3,10 +3,10 @@
  */
 
 @interface MPLocalMediaQueryRemotePlaybackQueue : MPRemotePlaybackQueue {
-    MPMediaItem *_firstItem;
-    MPMediaQuery *_mediaQuery;
-    unsigned int _repeatType;
-    unsigned int _shuffleType;
+    MPMediaItem * _firstItem;
+    MPMediaQuery * _mediaQuery;
+    unsigned int  _repeatType;
+    unsigned int  _shuffleType;
 }
 
 @property (nonatomic, readonly) MPMediaItem *firstItem;

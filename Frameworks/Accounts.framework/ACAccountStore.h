@@ -3,10 +3,11 @@
  */
 
 @interface ACAccountStore : NSObject {
-    NSString *_clientBundleID;
-    id _daemonAccountStoreDidChangeObserver;
-    ACRemoteAccountStoreSession *_remoteAccountStoreSession;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    NSMutableDictionary * _accountCache;
+    NSString * _clientBundleID;
+    id  _daemonAccountStoreDidChangeObserver;
+    ACRemoteAccountStoreSession * _remoteAccountStoreSession;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 @property (nonatomic, readonly) NSArray *accounts;
@@ -20,7 +21,10 @@
 + (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_connectionFailureError;
+- (id)_sanitizeOptionsDictionary:(id)arg1;
 - (void)_saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id /* block */)arg4;
+- (id)_unsanitizeError:(id)arg1;
 - (id)accessKeysForAccountType:(id)arg1;
 - (id)accountIdentifiersEnabledForDataclass:(id)arg1;
 - (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id /* block */)arg3;
@@ -38,6 +42,7 @@
 - (id)allAccountTypes;
 - (id)allDataclasses;
 - (id)appPermissionsForAccountType:(id)arg1;
+- (void)cachedAccountWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)canSaveAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)childAccountsForAccount:(id)arg1;
 - (id)childAccountsForAccount:(id)arg1 withTypeIdentifier:(id)arg2;
@@ -53,6 +58,7 @@
 - (id)dataclassActionsForAccountSave:(id)arg1;
 - (void)dealloc;
 - (void)disconnectFromRemoteAccountStore;
+- (void)discoverPropertiesForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)displayTypeForAccountWithIdentifier:(id)arg1;
 - (id)effectiveBundleID;
 - (id)enabledDataclassesForAccount:(id)arg1;
@@ -93,6 +99,7 @@
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id /* block */)arg3;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 doVerify:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setCredential:(id)arg1 forAccount:(id)arg2 serviceID:(id)arg3 error:(id*)arg4;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (void)setRemoteAccountStoreSession:(id)arg1;
@@ -108,6 +115,8 @@
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
++ (BOOL)SLDuplicateAccountExistsForAccount:(id)arg1 withTypeIdentifier:(id)arg2 andAccountPropertyIDKey:(id)arg3;
+
 - (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 delegateClassName:(id)arg3 completion:(id /* block */)arg4;
 - (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
@@ -122,7 +131,8 @@
 - (id)aa_appleAccountWithPersonID:(id)arg1;
 - (id)aa_appleAccountWithUsername:(id)arg1;
 - (id)aa_appleAccounts;
-- (id)aa_grandSlamAccountWithUsername:(id)arg1;
+- (id)aa_grandSlamAccountForiCloudAccount:(id)arg1;
+- (BOOL)aa_isUsingiCloud;
 - (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id /* block */)arg3;
 - (id)aa_primaryAppleAccount;
 - (id)aa_primaryAppleAccountWithPreloadedDataclasses;

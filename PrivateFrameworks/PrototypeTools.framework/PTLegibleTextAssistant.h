@@ -3,8 +3,8 @@
  */
 
 @interface PTLegibleTextAssistant : NSObject {
-    float _alphaStrength;
-    BOOL _effectsDisabled;
+    float  _alphaStrength;
+    BOOL  _effectsDisabled;
     struct { 
         float meanRed; 
         float meanGreen; 
@@ -15,10 +15,10 @@
         float meanAlpha; 
         float standardDeviationBrightness; 
         float standardDeviationSaturation; 
-    } _imageStatistics;
-    float _largestShadowRadius;
-    float _radiusStrength;
-    PTLegibleTextAssistantSettings *_settings;
+    }  _imageStatistics;
+    float  _largestShadowRadius;
+    float  _radiusStrength;
+    PTLegibleTextAssistantSettings * _settings;
 }
 
 @property (nonatomic) float alphaStrength;

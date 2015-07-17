@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _imageRect;
-    UIImageView *_imageView;
+    }  _imageRect;
+    UIImageView * _imageView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

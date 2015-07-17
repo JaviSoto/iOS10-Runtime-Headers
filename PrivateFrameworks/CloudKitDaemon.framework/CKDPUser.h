@@ -3,11 +3,11 @@
  */
 
 @interface CKDPUser : PBCodable <NSCopying> {
-    CKDPUserAlias *_alias;
-    NSString *_firstName;
-    CKDPIdentifier *_identifier;
-    NSString *_lastName;
-    CKDPProtectionInfo *_protectionInfo;
+    CKDPUserAlias * _alias;
+    NSString * _firstName;
+    CKDPIdentifier * _identifier;
+    NSString * _lastName;
+    CKDPProtectionInfo * _protectionInfo;
 }
 
 @property (nonatomic, retain) CKDPUserAlias *alias;

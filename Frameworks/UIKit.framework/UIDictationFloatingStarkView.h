@@ -3,7 +3,7 @@
  */
 
 @interface UIDictationFloatingStarkView : UIDictationView <UIGestureRecognizerDelegate> {
-    UIDimmingView *_dimmingView;
+    UIDimmingView * _dimmingView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

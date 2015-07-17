@@ -12,8 +12,8 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    } _boundingRegion;
-    NSArray *_mapItems;
+    }  _boundingRegion;
+    NSArray * _mapItems;
 }
 
 @property (nonatomic, readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;

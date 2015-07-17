@@ -3,9 +3,9 @@
  */
 
 @interface TRDirectionalButtonPacketEvent : TRPacketEvent {
-    int _buttonType;
-    int _gestureState;
-    int _gestureType;
+    int  _buttonType;
+    int  _gestureState;
+    int  _gestureType;
 }
 
 @property (nonatomic, readonly) int buttonType;

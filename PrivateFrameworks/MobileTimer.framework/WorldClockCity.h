@@ -3,14 +3,14 @@
  */
 
 @interface WorldClockCity : NSObject {
-    ALCity *_alCity;
-    NSString *_countryCode;
-    NSString *_countryName;
-    NSString *_name;
-    NSString *_timeZone;
-    NSString *_unlocalizedCountryName;
-    NSString *_unlocalizedName;
-    City *_weatherCity;
+    ALCity * _alCity;
+    NSString * _countryCode;
+    NSString * _countryName;
+    NSString * _name;
+    NSString * _timeZone;
+    NSString * _unlocalizedCountryName;
+    NSString * _unlocalizedName;
+    City * _weatherCity;
 }
 
 @property (nonatomic, readonly) NSString *abbreviation;
@@ -32,11 +32,11 @@
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
 + (BOOL)isWorldClockCityProperties:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)alCity;
 - (id)alCityId;
 - (id)countryCode;
 - (id)countryName;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)idUrl;

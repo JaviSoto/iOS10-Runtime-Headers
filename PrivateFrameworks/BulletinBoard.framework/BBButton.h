@@ -3,10 +3,10 @@
  */
 
 @interface BBButton : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    BBAction *_action;
-    NSString *_identifier;
-    BBImage *_image;
-    NSString *_title;
+    BBAction * _action;
+    NSString * _identifier;
+    BBImage * _image;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) BBAction *action;

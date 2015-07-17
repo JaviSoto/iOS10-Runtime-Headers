@@ -3,7 +3,7 @@
  */
 
 @interface TSUBufferedReadChannelHelper : NSObject <TSUStreamReadChannel> {
-    TSUBufferedReadChannel *_bufferedReadChannel;
+    TSUBufferedReadChannel * _bufferedReadChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

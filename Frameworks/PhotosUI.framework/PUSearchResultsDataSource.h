@@ -3,20 +3,20 @@
  */
 
 @interface PUSearchResultsDataSource : NSObject <PUSearchResultsValueDelegate> {
-    NSSet *_albumUUIDs;
-    PLSearchIndexDateFormatter *_dateFormatter;
-    <PUSearchResultsDelegate> *_delegate;
-    BOOL _ignorePastResults;
-    unsigned int _maxGroupedResultsCount;
-    PLPhotoLibrary *_photoLibrary;
-    PSIQuery *_query;
-    unsigned int _queryTag;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSArray *_results;
-    PSIDatabase *_searchIndex;
-    unsigned int _uncommittedMaxGroupedResultsCount;
-    NSArray *_uncommittedResults;
-    unsigned int _unprocessedSearchResultsCount;
+    NSSet * _albumUUIDs;
+    PLSearchIndexDateFormatter * _dateFormatter;
+    <PUSearchResultsDelegate> * _delegate;
+    BOOL  _ignorePastResults;
+    unsigned int  _maxGroupedResultsCount;
+    PLPhotoLibrary * _photoLibrary;
+    PSIQuery * _query;
+    unsigned int  _queryTag;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSArray * _results;
+    PSIDatabase * _searchIndex;
+    unsigned int  _uncommittedMaxGroupedResultsCount;
+    NSArray * _uncommittedResults;
+    unsigned int  _unprocessedSearchResultsCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,7 +28,6 @@
 
 - (void).cxx_destruct;
 - (id)_fetchAlbumsWithUUIDs:(id)arg1;
-- (id)_fetchAssetsWithUUIDs:(id)arg1;
 - (void)_inqBackgroundProcessSearchResults:(id)arg1 withTag:(unsigned int)arg2 searchString:(id)arg3;
 - (void)_inqCancel;
 - (BOOL)_shouldCancel:(unsigned int)arg1;
@@ -44,6 +43,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;
 - (void)setSearchString:(id)arg1;
+- (void)setSearchString:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setSearchString:(id)arg1 withEarlyNotifyOfResults:(id /* block */)arg2 andCompletion:(id /* block */)arg3;
 - (id)valueAtIndex:(unsigned int)arg1;
 
 @end

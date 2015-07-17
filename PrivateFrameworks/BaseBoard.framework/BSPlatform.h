@@ -2,18 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSPlatform : NSObject {
-    BOOL _hasGasGauge;
-    BOOL _isInternalInstall;
-    BOOL _isMultiCore;
-    NSString *_localizedProductName;
-    NSString *_productBuildVersion;
-    NSString *_productClass;
-    NSString *_productHardwareModel;
-    NSString *_productType;
-    NSString *_productVersion;
-    NSString *_uniqueDeviceIdentifier;
-}
+@interface BSPlatform : NSObject
 
 @property (nonatomic, readonly) BOOL hasGasGauge;
 @property (getter=isInternalInstall, nonatomic, readonly) BOOL internalInstall;
@@ -28,9 +17,7 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
 - (BOOL)hasGasGauge;
-- (id)init;
 - (BOOL)isInternalInstall;
 - (BOOL)isMultiCore;
 - (id)localizedProductName;

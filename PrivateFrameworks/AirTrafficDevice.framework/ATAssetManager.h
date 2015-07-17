@@ -3,20 +3,20 @@
  */
 
 @interface ATAssetManager : NSObject <ATAssetLinkControllerObserver, ATMessageLinkRequestHandler> {
-    NSMutableSet *_allAssets;
-    NSDictionary *_assetClients;
-    NSMutableArray *_assets;
-    NSMutableDictionary *_assetsByDataclass;
-    NSMutableDictionary *_assetsByStoreID;
-    unsigned int _completedAssets;
-    NSMutableArray *_completedStoreAssets;
-    NSDictionary *_legacyAssetClients;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_remainingAssetsByDataClass;
-    NSObject<OS_dispatch_source> *_signalSource;
-    unsigned int _totalAssetCount;
-    NSMutableDictionary *_totalAssetCountByDataClass;
+    NSMutableSet * _allAssets;
+    NSDictionary * _assetClients;
+    NSMutableArray * _assets;
+    NSMutableDictionary * _assetsByDataclass;
+    NSMutableDictionary * _assetsByStoreID;
+    unsigned int  _completedAssets;
+    NSMutableArray * _completedStoreAssets;
+    NSDictionary * _legacyAssetClients;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _remainingAssetsByDataClass;
+    NSObject<OS_dispatch_source> * _signalSource;
+    unsigned int  _totalAssetCount;
+    NSMutableDictionary * _totalAssetCountByDataClass;
 }
 
 @property (readonly, copy) NSString *debugDescription;

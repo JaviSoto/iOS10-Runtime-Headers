@@ -3,21 +3,21 @@
  */
 
 @interface PLPhotosApplication : UIApplication <UIApplicationDelegate> {
-    NSString *_currentTestName;
-    NSDictionary *_currentTestOptions;
-    BLActivityAlert *_iPhotoMigrationActivityAlert;
-    BOOL _isOnWifi;
-    BOOL _isReachable;
-    int _observeForRechabilityChanges;
-    int _photoStreamActivityToken;
-    BOOL _photoStreamIsBusy;
-    BOOL _receivingRemoteControlEvents;
-    int _sharedPhotoStreamActivityToken;
-    int _sharedPhotoStreamInvitationFailureToken;
-    BOOL _sharedPhotoStreamIsBusy;
-    PLUIController *_uiController;
-    BOOL _urlNeedsHandling;
-    UIWindow *_window;
+    NSString * _currentTestName;
+    NSDictionary * _currentTestOptions;
+    BLActivityAlert * _iPhotoMigrationActivityAlert;
+    BOOL  _isOnWifi;
+    BOOL  _isReachable;
+    int  _observeForRechabilityChanges;
+    int  _photoStreamActivityToken;
+    BOOL  _photoStreamIsBusy;
+    BOOL  _receivingRemoteControlEvents;
+    int  _sharedPhotoStreamActivityToken;
+    int  _sharedPhotoStreamInvitationFailureToken;
+    BOOL  _sharedPhotoStreamIsBusy;
+    PLUIController * _uiController;
+    BOOL  _urlNeedsHandling;
+    UIWindow * _window;
 }
 
 @property (nonatomic, retain) NSString *currentTestName;
@@ -40,7 +40,6 @@
 - (void)_registerForPhotoStreamActivityNotifications;
 - (void)_setImageOptions;
 - (void)_startObservingReachabilityChanges;
-- (void)_statusBarDoubleTap:(id)arg1;
 - (void)_stopObservingReachabilityChanges;
 - (void)_unregisterForPhotoStreamActivityNotifications;
 - (void)_updateNetworkActivityIndicatorAsync;
@@ -62,7 +61,6 @@
 - (BOOL)isReachable;
 - (id)mainWindow;
 - (void)photosPreferencesChanged;
-- (void)presentInternalSettingsController;
 - (id)rootViewController;
 - (void)setCurrentTestName:(id)arg1;
 - (void)setCurrentTestOptions:(id)arg1;

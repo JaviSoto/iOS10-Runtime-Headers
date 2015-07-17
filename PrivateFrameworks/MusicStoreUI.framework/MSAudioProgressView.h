@@ -3,12 +3,12 @@
  */
 
 @interface MSAudioProgressView : UIView {
-    UIImageView *_bufferingImageView;
-    NSObject<OS_dispatch_source> *_bufferingTimer;
-    BOOL _highlighted;
-    SUPlayerStatus *_playerStatus;
-    MSPieImageView *_progressView;
-    UIImageView *_stopImageView;
+    UIImageView * _bufferingImageView;
+    NSObject<OS_dispatch_source> * _bufferingTimer;
+    BOOL  _highlighted;
+    SUPlayerStatus * _playerStatus;
+    MSPieImageView * _progressView;
+    UIImageView * _stopImageView;
 }
 
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;

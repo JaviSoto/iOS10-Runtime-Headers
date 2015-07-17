@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartTitleLayoutItem : TSCHChartLayoutItem {
-    float mChartBodyWidth;
-    NSString *mEditedString;
-    float mMinHitSize;
+    float  mChartBodyWidth;
+    NSString * mEditedString;
+    float  mMinHitSize;
 }
 
 @property (nonatomic) float chartBodyWidth;

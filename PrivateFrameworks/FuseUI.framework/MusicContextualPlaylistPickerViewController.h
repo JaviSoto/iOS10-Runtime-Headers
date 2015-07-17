@@ -3,9 +3,9 @@
  */
 
 @interface MusicContextualPlaylistPickerViewController : MusicNavigationController <MusicContextualPlaylistPickerDelegate> {
-    id /* block */ _playlistSelectionHandler;
-    MusicContextualPlaylistPickerViewConfiguration *_playlistsViewConfiguration;
-    UIViewController *_playlistsViewController;
+    id /* block */  _playlistSelectionHandler;
+    MusicContextualPlaylistPickerViewConfiguration * _playlistsViewConfiguration;
+    UIViewController * _playlistsViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface _MKPlaceInfoViewControllerRouter : NSObject {
-    id _selectorDelegate;
+    id  _selectorDelegate;
 }
 
 @property (nonatomic) id selectorDelegate;

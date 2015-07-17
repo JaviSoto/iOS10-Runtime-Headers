@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDLocationDirectedSearchResult : PBCodable <NSCopying> {
-    NSMutableArray *_disambiguationLabels;
-    GEOMapRegion *_displayMapRegion;
+    NSMutableArray * _disambiguationLabels;
+    GEOMapRegion * _displayMapRegion;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;

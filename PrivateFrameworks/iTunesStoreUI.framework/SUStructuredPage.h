@@ -3,18 +3,18 @@
  */
 
 @interface SUStructuredPage : NSObject <NSCopying> {
-    BOOL _artworkShouldFitWidth;
-    float _artworkWidth;
-    BOOL _didShowDialog;
-    int _displayStyle;
-    SUItem *_item;
-    SUItemList *_itemList;
-    SUStorePageProtocol *_protocol;
-    SUPageSectionGroup *_sectionsGroup;
-    BOOL _shouldHideSignInButton;
-    NSString *_title;
-    int _type;
-    BOOL _wantsIndexBar;
+    BOOL  _artworkShouldFitWidth;
+    float  _artworkWidth;
+    BOOL  _didShowDialog;
+    int  _displayStyle;
+    SUItem * _item;
+    SUItemList * _itemList;
+    SUStorePageProtocol * _protocol;
+    SUPageSectionGroup * _sectionsGroup;
+    BOOL  _shouldHideSignInButton;
+    NSString * _title;
+    int  _type;
+    BOOL  _wantsIndexBar;
 }
 
 @property (nonatomic, readonly) BOOL artworkShouldFitWidth;

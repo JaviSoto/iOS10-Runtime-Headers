@@ -3,9 +3,9 @@
  */
 
 @interface NCInteractiveNotificationViewController : UIViewController <NCInteractiveNotificationServiceInterface> {
-    NSDictionary *_context;
-    float _maximumHeight;
-    BOOL _modal;
+    NSDictionary * _context;
+    float  _maximumHeight;
+    BOOL  _modal;
 }
 
 @property (nonatomic, copy) NSDictionary *context;

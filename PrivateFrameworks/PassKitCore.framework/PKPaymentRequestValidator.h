@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentRequestValidator : NSObject <PKPaymentValidating> {
-    PKPaymentRequest *_request;
+    PKPaymentRequest * _request;
 }
 
 @property (readonly, copy) NSString *debugDescription;

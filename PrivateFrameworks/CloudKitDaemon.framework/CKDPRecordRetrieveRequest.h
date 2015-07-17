@@ -3,11 +3,11 @@
  */
 
 @interface CKDPRecordRetrieveRequest : PBRequest <NSCopying> {
-    NSString *_clientVersionETag;
-    CKDPRecordRetrieveRequestRetrieveAssetURL *_getAssetURL;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPRequestedFields *_requestedFields;
-    NSString *_versionETag;
+    NSString * _clientVersionETag;
+    CKDPRecordRetrieveRequestRetrieveAssetURL * _getAssetURL;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPRequestedFields * _requestedFields;
+    NSString * _versionETag;
 }
 
 @property (nonatomic, retain) NSString *clientVersionETag;

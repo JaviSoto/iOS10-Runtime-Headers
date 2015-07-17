@@ -3,7 +3,7 @@
  */
 
 @interface TUPhoneNumber : NSObject <NSCoding, NSSecureCoding> {
-    struct __CFPhoneNumber { } *_phoneNumberRef;
+    struct __CFPhoneNumber { } * _phoneNumberRef;
 }
 
 @property (readonly) NSString *countryCode;

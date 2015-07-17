@@ -3,14 +3,14 @@
  */
 
 @interface SKPhysicsJoint : NSObject <NSCoding> {
-    BOOL __implicit;
-    SKPhysicsBody *bodyA;
-    SKPhysicsBody *bodyB;
+    BOOL  __implicit;
+    SKPhysicsBody * bodyA;
+    SKPhysicsBody * bodyB;
     struct CGVector { 
         float dx; 
         float dy; 
-    } reactionForce;
-    float reactionTorque;
+    }  reactionForce;
+    float  reactionTorque;
 }
 
 @property (nonatomic) BOOL _implicit;
@@ -21,7 +21,6 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_implicit;
 - (id)bodyA;

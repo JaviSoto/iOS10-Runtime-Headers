@@ -3,22 +3,22 @@
  */
 
 @interface SKUIMenuBarTemplateDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIHorizontalScrollingContainerViewControllerDelegate, SKUIMenuBarViewElementConfigurationDelegate, SKUINavigationBarControllerProviding, SKUIScrollingSegmentedControllerDelegate, SKUIScrollingTabAppearanceStatusObserver, SKUIScrollingTabNestedPagedScrolling> {
-    SKUIDynamicPageSectionIndexMapper *_dynamicPageSectionIndexMapper;
-    SKUIMenuBarTemplateDocumentViewControllerEmbeddedPaletteHost *_embeddedPaletteHost;
-    NSMutableDictionary *_entityUniqueIdentifierToEntityIndex;
-    SKUIHorizontalScrollingContainerViewController *_horizontalScrollingContainerViewController;
-    SKUILoadingDocumentViewController *_loadingDocumentViewController;
-    SKUIMenuBarSectionsViewController *_menuBarSectionsViewController;
-    int _menuBarStyle;
-    SKUIViewElement<SKUIMenuBarViewElement> *_menuBarViewElement;
-    SKUIMenuBarViewElementConfiguration *_menuBarViewElementConfiguration;
-    SKUIMenuItemViewElement *_pendingSelectedMenuItemViewElement;
-    SKUIScrollingSegmentedController *_scrollingSegmentedController;
+    SKUIDynamicPageSectionIndexMapper * _dynamicPageSectionIndexMapper;
+    SKUIMenuBarTemplateDocumentViewControllerEmbeddedPaletteHost * _embeddedPaletteHost;
+    NSMutableDictionary * _entityUniqueIdentifierToEntityIndex;
+    SKUIHorizontalScrollingContainerViewController * _horizontalScrollingContainerViewController;
+    SKUILoadingDocumentViewController * _loadingDocumentViewController;
+    SKUIMenuBarSectionsViewController * _menuBarSectionsViewController;
+    int  _menuBarStyle;
+    SKUIViewElement<SKUIMenuBarViewElement> * _menuBarViewElement;
+    SKUIMenuBarViewElementConfiguration * _menuBarViewElementConfiguration;
+    SKUIMenuItemViewElement * _pendingSelectedMenuItemViewElement;
+    SKUIScrollingSegmentedController * _scrollingSegmentedController;
     struct { 
         float progress; 
         BOOL isBouncingOffTheEdge; 
-    } _scrollingTabAppearanceStatus;
-    SKUIMenuBarTemplateElement *_templateElement;
+    }  _scrollingTabAppearanceStatus;
+    SKUIMenuBarTemplateElement * _templateElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

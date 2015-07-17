@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardCache : NSObject {
-    BOOL _isCommitting;
-    NSSet *_layouts;
-    CPBitmapStore *_store;
+    BOOL  _isCommitting;
+    NSSet * _layouts;
+    CPBitmapStore * _store;
 }
 
 + (BOOL)enabled;

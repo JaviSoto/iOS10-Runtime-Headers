@@ -3,17 +3,19 @@
  */
 
 @interface CFPDPurgeableBuffer : CFPDDataBuffer {
-    unsigned int allocSize;
-    struct __CFData { } *handle;
-    BOOL safe;
-    BOOL usedMalloc;
+    unsigned int  allocSize;
+    struct __CFData { } * handle;
+    BOOL  safe;
+    BOOL  usedMalloc;
 }
 
 - (BOOL)beginAccessing;
 - (void*)bytes;
 - (void)dealloc;
 - (void)endAccessing;
+- (id)initWithFileDescriptor:(int)arg1 size:(unsigned long)arg2;
 - (id)initWithPropertyList:(void*)arg1;
 - (unsigned long)length;
+- (BOOL)purgable;
 
 @end

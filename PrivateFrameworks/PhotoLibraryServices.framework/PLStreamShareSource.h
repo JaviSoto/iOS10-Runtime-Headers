@@ -3,10 +3,10 @@
  */
 
 @interface PLStreamShareSource : NSObject {
-    NSString *_fileExtension;
-    NSData *_mediaData;
-    int _mediaType;
-    NSURL *_mediaURL;
+    NSString * _fileExtension;
+    NSData * _mediaData;
+    int  _mediaType;
+    NSURL * _mediaURL;
 }
 
 @property (nonatomic, retain) NSString *fileExtension;

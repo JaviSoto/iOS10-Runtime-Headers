@@ -3,13 +3,13 @@
  */
 
 @interface BrightnessSystemClientInternal : NSThread {
-    NSXPCConnection *_connection;
-    bool _initializationComplete;
-    id _remote;
-    NSTimer *_timer;
-    NSArray *clientProperties;
-    BrightnessSystemClientExportedObj *exportedObj;
-    bool shouldKeepRunning;
+    NSXPCConnection * _connection;
+    bool  _initializationComplete;
+    id  _remote;
+    NSTimer * _timer;
+    NSArray * clientProperties;
+    BrightnessSystemClientExportedObj * exportedObj;
+    bool  shouldKeepRunning;
 }
 
 - (id)copyPropertyForKey:(id)arg1;

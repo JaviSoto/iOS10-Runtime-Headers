@@ -3,8 +3,8 @@
  */
 
 @interface CKTranscriptAddRecipientCell : UITableViewCell {
-    UIImageView *_addIcon;
-    UILabel *_addLabel;
+    UIImageView * _addIcon;
+    UILabel * _addLabel;
 }
 
 @property (nonatomic, retain) UIImageView *addIcon;

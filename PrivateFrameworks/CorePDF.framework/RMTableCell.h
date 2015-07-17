@@ -3,11 +3,11 @@
  */
 
 @interface RMTableCell : NSObject {
-    NSString *_contents;
-    RMTableCell *_nextCellInColumn;
-    RMTableCell *_nextCellInRow;
-    RMTable *_table;
-    struct CGPDFNode { } *_tableCellNode;
+    NSString * _contents;
+    RMTableCell * _nextCellInColumn;
+    RMTableCell * _nextCellInRow;
+    RMTable * _table;
+    struct CGPDFNode { } * _tableCellNode;
 }
 
 @property (retain) RMTableCell *nextCellInColumn;

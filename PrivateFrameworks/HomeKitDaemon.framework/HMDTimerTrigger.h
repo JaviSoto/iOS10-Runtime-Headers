@@ -3,12 +3,12 @@
  */
 
 @interface HMDTimerTrigger : HMDTrigger {
-    NSDate *_currentFireDate;
-    NSDate *_fireDate;
-    NSTimeZone *_fireDateTimeZone;
-    NSDateComponents *_fireRepeatInterval;
-    NSTimer *_timer;
-    NSString *_timerID;
+    NSDate * _currentFireDate;
+    NSDate * _fireDate;
+    NSTimeZone * _fireDateTimeZone;
+    NSDateComponents * _fireRepeatInterval;
+    NSTimer * _timer;
+    NSString * _timerID;
 }
 
 @property (nonatomic, retain) NSDate *currentFireDate;
@@ -22,7 +22,6 @@
 + (id)validateWholeMinuteDate:(id)arg1 onCalendar:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)_activate:(BOOL)arg1;
 - (void)_closestDatesForStartDate:(id)arg1 earliestDate:(id)arg2 timeZone:(id)arg3 deliveryRepeatInterval:(id)arg4 returnDateBefore:(id*)arg5 returnDateAfter:(id*)arg6;
 - (void)_handleUpdateTimerTriggerPropertiesRequest:(id)arg1;
 - (id)_nextFireDate;
@@ -30,6 +29,7 @@
 - (void)_startTimerWithFireDate:(id)arg1;
 - (void)_stopTimer;
 - (void)_timerTriggered;
+- (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)completeConfiguration;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (id)currentFireDate;

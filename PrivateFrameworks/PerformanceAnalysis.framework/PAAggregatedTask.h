@@ -3,8 +3,8 @@
  */
 
 @interface PAAggregatedTask : NSObject {
-    PASampleAggregator *_aggregator;
-    NSMutableDictionary *_binaryImages;
+    PASampleAggregator * _aggregator;
+    NSMutableDictionary * _binaryImages;
 }
 
 @property (readonly) PASampleTimeSeriesDataStore *sampleStore;

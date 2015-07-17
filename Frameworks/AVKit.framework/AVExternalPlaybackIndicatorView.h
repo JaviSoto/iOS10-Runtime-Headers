@@ -3,8 +3,8 @@
  */
 
 @interface AVExternalPlaybackIndicatorView : UIView {
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

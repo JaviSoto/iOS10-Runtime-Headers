@@ -3,12 +3,12 @@
  */
 
 @interface ALAssetRepresentationPrivate : NSObject <ALAssetsLibraryAsset> {
-    NSString *_extension;
-    BOOL _isValid;
-    ALAssetsLibrary *_library;
-    PLManagedAsset *_photo;
-    PLPhotoLibrary *_photoLibrary;
-    PLSidecarFile *_sidecar;
+    NSString * _extension;
+    BOOL  _isValid;
+    ALAssetsLibrary * _library;
+    PLManagedAsset * _photo;
+    PLPhotoLibrary * _photoLibrary;
+    PLSidecarFile * _sidecar;
 }
 
 @property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;

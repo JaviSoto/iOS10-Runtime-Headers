@@ -3,8 +3,8 @@
  */
 
 @interface SYClock : PBCodable <NSCopying> {
-    SYPeer *_peer;
-    unsigned long long _version;
+    SYPeer * _peer;
+    unsigned long long  _version;
 }
 
 @property (nonatomic, retain) SYPeer *peer;

@@ -3,8 +3,8 @@
  */
 
 @interface SSFamilyCircle : NSObject <SSXPCCoding> {
-    NSArray *_familyMembers;
-    NSArray *_iTunesAccountNames;
+    NSArray * _familyMembers;
+    NSArray * _iTunesAccountNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;

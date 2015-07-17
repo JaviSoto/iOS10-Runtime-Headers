@@ -3,8 +3,8 @@
  */
 
 @interface MSCLFacebookAccountsRequest : NSObject {
-    MSCLAccountStore *_accountStore;
-    id /* block */ _responseBlock;
+    MSCLAccountStore * _accountStore;
+    id /* block */  _responseBlock;
 }
 
 - (void).cxx_destruct;

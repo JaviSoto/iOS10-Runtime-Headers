@@ -3,8 +3,8 @@
  */
 
 @interface PLPhotoBrowserImageRequest : NSObject {
-    BOOL _canceled;
-    int _imageManagerRequestID;
+    BOOL  _canceled;
+    int  _imageManagerRequestID;
 }
 
 @property (nonatomic) BOOL canceled;

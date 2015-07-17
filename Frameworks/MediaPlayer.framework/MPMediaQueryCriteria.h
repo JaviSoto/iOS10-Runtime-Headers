@@ -3,18 +3,18 @@
  */
 
 @interface MPMediaQueryCriteria : NSObject <NSCopying> {
-    NSSet *_collectionPropertiesToFetch;
-    unsigned int _entityLimit;
-    unsigned int _entityOrder;
-    NSMutableSet *_filterPredicates;
-    int _groupingType;
-    BOOL _ignoreSystemFilterPredicates;
-    BOOL _includeEntitiesWithBlankNames;
-    BOOL _includeNonLibraryEntities;
-    NSSet *_itemPropertiesToFetch;
-    NSDictionary *_orderingDirectionMappings;
-    NSArray *_orderingProperties;
-    BOOL _useSections;
+    NSSet * _collectionPropertiesToFetch;
+    unsigned int  _entityLimit;
+    unsigned int  _entityOrder;
+    NSMutableSet * _filterPredicates;
+    int  _groupingType;
+    BOOL  _ignoreSystemFilterPredicates;
+    BOOL  _includeEntitiesWithBlankNames;
+    BOOL  _includeNonLibraryEntities;
+    NSSet * _itemPropertiesToFetch;
+    NSDictionary * _orderingDirectionMappings;
+    NSArray * _orderingProperties;
+    BOOL  _useSections;
 }
 
 @property (nonatomic, copy) NSSet *collectionPropertiesToFetch;

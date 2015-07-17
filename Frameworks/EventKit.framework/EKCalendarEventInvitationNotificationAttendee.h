@@ -3,15 +3,15 @@
  */
 
 @interface EKCalendarEventInvitationNotificationAttendee : NSObject <EKIdentityProtocol> {
-    NSString *_comment;
-    BOOL _commentChanged;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    NSString *_lastName;
-    NSString *_name;
-    int _participantStatus;
-    BOOL _statusChanged;
-    NSURL *_url;
+    NSString * _comment;
+    BOOL  _commentChanged;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    NSString * _lastName;
+    NSString * _name;
+    int  _participantStatus;
+    BOOL  _statusChanged;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *comment;

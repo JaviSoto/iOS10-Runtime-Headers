@@ -3,21 +3,21 @@
  */
 
 @interface TSPArchiver : TSPArchiverBase {
-    NSHashTable *_aggregatedCommandToModelReferences;
-    NSHashTable *_aggregatedDataReferences;
-    NSHashTable *_aggregatedLazyReferences;
-    NSHashTable *_aggregatedStrongReferences;
-    NSHashTable *_aggregatedWeakReferences;
-    NSHashTable *_alternates;
-    NSObject<OS_dispatch_group> *_archiveGroup;
-    unsigned long long _documentReadVersion;
-    unsigned long long _documentWriteVersion;
-    TSPObject *_explicitComponentRootObject;
-    BOOL _flags;
-    NSUUID *_objectUUID;
-    NSObject<OS_dispatch_group> *_serializeGroup;
-    NSObject<OS_dispatch_data> *_serializedData;
-    NSArray *_unknownMessages;
+    NSHashTable * _aggregatedCommandToModelReferences;
+    NSHashTable * _aggregatedDataReferences;
+    NSHashTable * _aggregatedLazyReferences;
+    NSHashTable * _aggregatedStrongReferences;
+    NSHashTable * _aggregatedWeakReferences;
+    NSHashTable * _alternates;
+    NSObject<OS_dispatch_group> * _archiveGroup;
+    unsigned long long  _documentReadVersion;
+    unsigned long long  _documentWriteVersion;
+    TSPObject * _explicitComponentRootObject;
+    BOOL  _flags;
+    NSUUID * _objectUUID;
+    NSObject<OS_dispatch_group> * _serializeGroup;
+    NSObject<OS_dispatch_data> * _serializedData;
+    NSArray * _unknownMessages;
 }
 
 @property (nonatomic, readonly) NSHashTable *aggregatedCommandToModelReferences;

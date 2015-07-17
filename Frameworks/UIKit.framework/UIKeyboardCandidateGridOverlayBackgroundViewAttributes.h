@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _rowSize;
+    }  _rowSize;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } rowSize;

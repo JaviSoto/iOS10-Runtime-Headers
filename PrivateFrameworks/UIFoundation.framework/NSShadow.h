@@ -3,13 +3,13 @@
  */
 
 @interface NSShadow : NSObject <NSCoding, NSCopying> {
-    float _shadowBlurRadius;
-    NSColor *_shadowColor;
-    unsigned int _shadowFlags;
+    float  _shadowBlurRadius;
+    NSColor * _shadowColor;
+    unsigned int  _shadowFlags;
     struct CGSize { 
         float width; 
         float height; 
-    } _shadowOffset;
+    }  _shadowOffset;
 }
 
 @property (nonatomic) float shadowBlurRadius;
@@ -25,6 +25,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithShadow:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

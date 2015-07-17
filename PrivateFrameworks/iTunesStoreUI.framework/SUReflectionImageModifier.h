@@ -3,8 +3,8 @@
  */
 
 @interface SUReflectionImageModifier : SUImageModifier {
-    UIGradient *_gradient;
-    float _reflectionHeight;
+    UIGradient * _gradient;
+    float  _reflectionHeight;
 }
 
 @property (nonatomic, retain) UIGradient *gradient;

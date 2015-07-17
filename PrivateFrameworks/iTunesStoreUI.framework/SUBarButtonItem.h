@@ -3,17 +3,17 @@
  */
 
 @interface SUBarButtonItem : UIBarButtonItem {
-    UIView *_accessoryView;
+    UIView * _accessoryView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _accessoryViewInsets;
-    SUUIAppearance *_confirmationAppearance;
-    UINavigationItem *_lastNavigationItem;
-    NSString *_preConfirmationTitle;
-    SUTouchCaptureView *_touchCaptureView;
+    }  _accessoryViewInsets;
+    SUUIAppearance * _confirmationAppearance;
+    UINavigationItem * _lastNavigationItem;
+    NSString * _preConfirmationTitle;
+    SUTouchCaptureView * _touchCaptureView;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;

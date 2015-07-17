@@ -3,8 +3,8 @@
  */
 
 @interface SKUIURLActivityItemProvider : UIActivityItemProvider {
-    SKUIClientContext *_clientContext;
-    SKUIProductPageItem *_item;
+    SKUIClientContext * _clientContext;
+    SKUIProductPageItem * _item;
 }
 
 - (void).cxx_destruct;

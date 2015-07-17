@@ -3,31 +3,31 @@
  */
 
 @interface CPLEngineSyncManager : NSObject <CPLAbstractObject, CPLBackgroundDownloadsTaskDelegate, CPLBackgroundUploadsTaskDelegate, CPLEngineComponent, CPLEngineSyncEmergencyTaskDelegate, CPLMinglePulledChangesTaskDelegate, CPLPullFromTransportTaskDelegate, CPLPushToTransportTaskDelegate> {
-    NSMutableArray *_archivedManagementTasks;
-    CPLBackgroundDownloadsTask *_backgroundDownloadsTask;
-    CPLBackgroundUploadsTask *_backgroundUploadsTask;
-    id /* block */ _closingCompletionHandler;
-    NSMutableDictionary *_completionHandlerPerTaskIdentifier;
-    CPLEngineLibrary *_engineLibrary;
-    BOOL _foreground;
-    BOOL _hasTransactionForSyncSession;
-    NSError *_lastError;
-    NSMutableArray *_lastErrors;
-    NSString *_libraryZoneName;
-    NSObject<OS_dispatch_queue> *_lock;
-    CPLEngineSyncEmergencyTask *_managementTask;
-    CPLMinglePulledChangesTask *_mingleTask;
-    CPLPlatformObject *_platformObject;
-    CPLPullFromTransportTask *_prePullTask;
-    CPLPullFromTransportTask *_pullTask;
-    CPLPushToTransportTask *_pushTask;
-    NSMutableArray *_setupBarriers;
-    BOOL _setupIsDone;
-    <CPLEngineTransportSetupTask> *_setupTask;
-    unsigned int _shouldRestartSessionFromState;
-    BOOL _shouldTryToMingleImmediately;
-    unsigned int _state;
-    <CPLEngineStoreUserIdentifier> *_transportUserIdentifier;
+    NSMutableArray * _archivedManagementTasks;
+    CPLBackgroundDownloadsTask * _backgroundDownloadsTask;
+    CPLBackgroundUploadsTask * _backgroundUploadsTask;
+    id /* block */  _closingCompletionHandler;
+    NSMutableDictionary * _completionHandlerPerTaskIdentifier;
+    CPLEngineLibrary * _engineLibrary;
+    BOOL  _foreground;
+    BOOL  _hasTransactionForSyncSession;
+    NSError * _lastError;
+    NSMutableArray * _lastErrors;
+    NSString * _libraryZoneName;
+    NSObject<OS_dispatch_queue> * _lock;
+    CPLEngineSyncEmergencyTask * _managementTask;
+    CPLMinglePulledChangesTask * _mingleTask;
+    CPLPlatformObject * _platformObject;
+    CPLPullFromTransportTask * _prePullTask;
+    CPLPullFromTransportTask * _pullTask;
+    CPLPushToTransportTask * _pushTask;
+    NSMutableArray * _setupBarriers;
+    BOOL  _setupIsDone;
+    <CPLEngineTransportSetupTask> * _setupTask;
+    unsigned int  _shouldRestartSessionFromState;
+    BOOL  _shouldTryToMingleImmediately;
+    unsigned int  _state;
+    <CPLEngineStoreUserIdentifier> * _transportUserIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -50,9 +50,10 @@
 - (void)_cancelAllTasksForManagement;
 - (void)_cancelAllTasksForPrePull;
 - (void)_cancelAllTasksForPull;
-- (void)_cancelAllTasksForPush;
+- (void)_cancelAllTasksForPush:(BOOL)arg1;
 - (void)_cancelAllTasksForSetup;
 - (void)_cancelAllTasksLocked;
+- (void)_cancelAllTasksLockedDeferringPushTaskCancellationIfCurrentlyUploadingForeground:(BOOL)arg1;
 - (id)_descriptionForBackgroundDownloadsTasks;
 - (id)_descriptionForBackgroundUploadsTasks;
 - (id)_descriptionForCurrentState;
@@ -86,8 +87,10 @@
 - (float)_progressForPrePullTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForPullTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForPushTask:(id)arg1 progress:(float)arg2;
+- (void)_releasePowerAssertionForMingleTaskIfNecessary;
 - (void)_resetErrorForSyncSession;
 - (void)_restartSyncSessionFromStateLocked:(unsigned int)arg1 cancelIfNecessary:(BOOL)arg2;
+- (void)_retainPowerAssertionForMingleTaskIfNecessary;
 - (void)_saveManagementTasks;
 - (void)_setErrorForSyncSession:(id)arg1;
 - (void)_setState:(unsigned int)arg1;

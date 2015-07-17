@@ -3,10 +3,10 @@
  */
 
 @interface _MPUAVItemSourceContext : NSObject <MPAVItemPlaylistIdentifier> {
-    <MPAVItemQueueIdentifier> *_itemIdentifier;
-    unsigned int _originalIterationIndex;
-    int _playlistIteration;
-    MPQueueFeeder *_queueFeeder;
+    <MPAVItemQueueIdentifier> * _itemIdentifier;
+    unsigned int  _originalIterationIndex;
+    int  _playlistIteration;
+    MPQueueFeeder * _queueFeeder;
 }
 
 @property (readonly, copy) NSString *debugDescription;

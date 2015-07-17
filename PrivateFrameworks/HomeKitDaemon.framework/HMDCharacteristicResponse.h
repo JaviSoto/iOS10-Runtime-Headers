@@ -3,9 +3,9 @@
  */
 
 @interface HMDCharacteristicResponse : NSObject {
-    NSError *_error;
-    HMDCharacteristicRequest *_request;
-    id _value;
+    NSError * _error;
+    HMDCharacteristicRequest * _request;
+    id  _value;
 }
 
 @property (nonatomic, readonly) NSError *error;

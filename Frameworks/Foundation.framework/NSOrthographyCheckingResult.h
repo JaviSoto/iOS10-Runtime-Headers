@@ -3,11 +3,11 @@
  */
 
 @interface NSOrthographyCheckingResult : NSTextCheckingResult {
-    NSOrthography *_orthography;
+    NSOrthography * _orthography;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 - (BOOL)_adjustRangesWithOffset:(int)arg1;

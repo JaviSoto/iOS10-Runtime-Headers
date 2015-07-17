@@ -3,13 +3,13 @@
  */
 
 @interface TSPDistributableArchiveOutputStream : NSObject {
-    BOOL _descriptorsEnabled;
-    BOOL _doneWritingClassInfoMap;
-    BOOL _doneWritingFileDescriptorProtos;
-    BOOL _doneWritingObjectEntries;
-    long long _offset;
-    <SFUSimpleOutputStream> *_outputStream;
-    BOOL _tocEnabled;
+    BOOL  _descriptorsEnabled;
+    BOOL  _doneWritingClassInfoMap;
+    BOOL  _doneWritingFileDescriptorProtos;
+    BOOL  _doneWritingObjectEntries;
+    long long  _offset;
+    <SFUSimpleOutputStream> * _outputStream;
+    BOOL  _tocEnabled;
 }
 
 - (void).cxx_destruct;

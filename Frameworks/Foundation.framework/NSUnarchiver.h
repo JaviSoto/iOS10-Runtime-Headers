@@ -3,21 +3,21 @@
  */
 
 @interface NSUnarchiver : NSCoder {
-    void *allUnarchivedObjects;
-    id classVersions;
-    unsigned int cursor;
-    void *datax;
-    int lastLabel;
-    void *map;
-    struct _NSZone { } *objectZone;
-    void *pointerTable;
-    id reserved;
-    BOOL streamerVersion;
-    void *stringTable;
-    BOOL swap;
-    unsigned int systemVersion;
-    BOOL unused1;
-    BOOL unused2;
+    void * allUnarchivedObjects;
+    id  classVersions;
+    unsigned int  cursor;
+    void * datax;
+    int  lastLabel;
+    void * map;
+    struct _NSZone { } * objectZone;
+    void * pointerTable;
+    id  reserved;
+    BOOL  streamerVersion;
+    void * stringTable;
+    BOOL  swap;
+    unsigned int  systemVersion;
+    BOOL  unused1;
+    BOOL  unused2;
 }
 
 @property (getter=isAtEnd, readonly) BOOL atEnd;

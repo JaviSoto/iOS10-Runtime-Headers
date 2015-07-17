@@ -5,7 +5,7 @@
 @interface WKWebProcessBundleParameters : NSObject {
     struct RetainPtr<NSMutableDictionary> { 
         void *m_ptr; 
-    } _parameters;
+    }  _parameters;
 }
 
 - (id).cxx_construct;

@@ -3,7 +3,7 @@
  */
 
 @interface CKStarkConversationListViewController : UITableViewController {
-    CKConversation *_selectedConversation;
+    CKConversation * _selectedConversation;
 }
 
 @property (nonatomic, retain) CKConversation *selectedConversation;

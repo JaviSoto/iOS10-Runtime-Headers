@@ -3,28 +3,28 @@
  */
 
 @interface UIPDFAnnotationController : NSObject <UIGestureRecognizerDelegate> {
-    BOOL _allowEditing;
+    BOOL  _allowEditing;
     struct CGSize { 
         float width; 
         float height; 
-    } _cachedMarginNoteSize;
-    UIPDFMarkupAnnotation *_currentAnnotation;
-    UIColor *_currentColor;
-    <NSObject><UIPDFAnnotationControllerDelegate> *_delegate;
-    CALayer *_drawingSurface;
+    }  _cachedMarginNoteSize;
+    UIPDFMarkupAnnotation * _currentAnnotation;
+    UIColor * _currentColor;
+    <NSObject><UIPDFAnnotationControllerDelegate> * _delegate;
+    CALayer * _drawingSurface;
     struct { 
         int location; 
         int length; 
-    } _initialRange;
-    int _lock;
-    BOOL _moving;
-    UIPDFPageView *_pageView;
+    }  _initialRange;
+    int  _lock;
+    BOOL  _moving;
+    UIPDFPageView * _pageView;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPoint;
-    BOOL _tracking;
-    BOOL makeUnderlineAnnotation;
+    }  _startPoint;
+    BOOL  _tracking;
+    BOOL  makeUnderlineAnnotation;
 }
 
 @property (nonatomic) BOOL allowEditing;

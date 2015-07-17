@@ -3,14 +3,14 @@
  */
 
 @interface SKUIScrollingTabBarControllerItemContext : NSObject <SKUINavigationStackObserver> {
-    BOOL _adjustingNestedPagingScrollViewContentOffset;
+    BOOL  _adjustingNestedPagingScrollViewContentOffset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _appliedContentInsetsAdjustment;
-    <SKUIScrollingTabBarControllerItemContextDelegate> *_delegate;
+    }  _appliedContentInsetsAdjustment;
+    <SKUIScrollingTabBarControllerItemContextDelegate> * _delegate;
     struct { 
         struct UIEdgeInsets { 
             float top; 
@@ -19,19 +19,19 @@
             float right; 
         } contentInset; 
         float bottomInsetValueAddedForScrollingTabBar; 
-    } _desiredContentInsetAdjustmentDescriptor;
-    UIScrollView *_insetAdjustedContentScrollView;
-    float _lastSeenContentWidth;
-    unsigned int _lastSelectedPageIndex;
+    }  _desiredContentInsetAdjustmentDescriptor;
+    UIScrollView * _insetAdjustedContentScrollView;
+    float  _lastSeenContentWidth;
+    unsigned int  _lastSelectedPageIndex;
     struct { 
         float progress; 
         BOOL isBouncingOffTheEdge; 
-    } _lastSentAppearanceStatus;
-    UIScrollView *_observedNestedPagingScrollView;
-    unsigned int _originalAutoresizingMask;
-    BOOL _readyForDisplay;
-    UIViewController *_viewController;
-    BOOL _viewControllerIsNavigationController;
+    }  _lastSentAppearanceStatus;
+    UIScrollView * _observedNestedPagingScrollView;
+    unsigned int  _originalAutoresizingMask;
+    BOOL  _readyForDisplay;
+    UIViewController * _viewController;
+    BOOL  _viewControllerIsNavigationController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

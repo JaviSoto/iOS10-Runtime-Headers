@@ -3,18 +3,18 @@
  */
 
 @interface CPPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
-    struct __CFDictionary { } *_annotationDictionary;
-    NSMutableString *_characters;
-    struct CGColor { } *_color;
-    struct __CFString { } *_content;
-    struct __CFString { } *_id;
-    struct __CFString { } *_otherId;
+    struct __CFDictionary { } * _annotationDictionary;
+    NSMutableString * _characters;
+    struct CGColor { } * _color;
+    struct __CFString { } * _content;
+    struct __CFString { } * _id;
+    struct __CFString { } * _otherId;
     struct CGPoint { 
         float x; 
         float y; 
-    } _p;
-    BOOL _parseError;
-    struct __CFArray { } *_quadPoints;
+    }  _p;
+    BOOL  _parseError;
+    struct __CFArray { } * _quadPoints;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,7 +24,7 @@
             float width; 
             float height; 
         } size; 
-    } _rect;
+    }  _rect;
 }
 
 @property (nonatomic) struct __CFDictionary { }*annotationDictionary;

@@ -3,8 +3,8 @@
  */
 
 @interface CertInfoCertificateDetailsView : UIView <UITableViewDataSource> {
-    NSMutableArray *_tableSections;
-    UITableView *_tableView;
+    NSMutableArray * _tableSections;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

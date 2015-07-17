@@ -3,10 +3,10 @@
  */
 
 @interface IMDChatRegistry : NSObject {
-    NSMutableDictionary *_chats;
-    NSRecursiveLock *_chatsLock;
-    BOOL _doneLoadingAfterMerge;
-    BOOL _isLoading;
+    NSMutableDictionary * _chats;
+    NSRecursiveLock * _chatsLock;
+    BOOL  _doneLoadingAfterMerge;
+    BOOL  _isLoading;
 }
 
 @property (nonatomic, readonly) NSArray *chats;
@@ -17,7 +17,6 @@
 - (id)_chatInfoForSaving;
 - (void)_forceReloadChats:(BOOL)arg1;
 - (void)_makeAllAttachmentsClassC;
-- (void)_rebuildSpotlightDatabaseFor18306262;
 - (BOOL)_saveChats;
 - (void)addChat:(id)arg1;
 - (void)addItem:(id)arg1 toChat:(id)arg2;

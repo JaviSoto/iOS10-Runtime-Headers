@@ -3,16 +3,16 @@
  */
 
 @interface SKUIStorePageSection : NSObject <SKUIProductPageOverlayDelegate> {
-    IKColor *_backgroundColorForSection;
-    BOOL _bottomSection;
-    SKUIPageComponent *_component;
-    SKUIStorePageSectionContext *_context;
-    BOOL _hasValidRelevantEntityProviders;
-    NSArray *_indexPathsForBackgroundItems;
-    SKUIProductPageOverlayController *_overlayController;
-    NSSet *_relevantEntityProviders;
-    int _sectionIndex;
-    BOOL _topSection;
+    IKColor * _backgroundColorForSection;
+    BOOL  _bottomSection;
+    SKUIPageComponent * _component;
+    SKUIStorePageSectionContext * _context;
+    BOOL  _hasValidRelevantEntityProviders;
+    NSArray * _indexPathsForBackgroundItems;
+    SKUIProductPageOverlayController * _overlayController;
+    NSSet * _relevantEntityProviders;
+    int  _sectionIndex;
+    BOOL  _topSection;
 }
 
 @property (nonatomic, readonly) IKColor *backgroundColorForSection;

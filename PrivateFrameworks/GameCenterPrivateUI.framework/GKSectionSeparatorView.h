@@ -3,7 +3,7 @@
  */
 
 @interface GKSectionSeparatorView : UICollectionReusableView {
-    UIView *_underlineView;
+    UIView * _underlineView;
 }
 
 @property (nonatomic, retain) UIView *underlineView;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIIPhoneProductPageView : UIView {
-    float _bannerOffset;
-    UIView *_bannerView;
-    UIView *_view;
+    float  _bannerOffset;
+    UIView * _bannerView;
+    UIView * _view;
 }
 
 @property (nonatomic) float bannerOffset;

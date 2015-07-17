@@ -3,20 +3,20 @@
  */
 
 @interface AXIPCServer : NSObject {
-    unsigned int _assignedServerPort;
-    id /* block */ _clientInvalidationHandler;
-    unsigned int _clientInvalidationPort;
-    struct __CFRunLoopSource { } *_clientInvalidationSource;
-    NSMutableSet *_connectedClients;
-    id /* block */ _defaultHandler;
-    NSMutableDictionary *_entitlements;
-    NSMutableDictionary *_handlers;
-    BOOL _perPidService;
-    BOOL _running;
-    unsigned int _serverPort;
-    struct __CFRunLoopSource { } *_serverRunLoopSource;
-    NSString *_serviceName;
-    NSMutableDictionary *_validSecurityTokens;
+    unsigned int  _assignedServerPort;
+    id /* block */  _clientInvalidationHandler;
+    unsigned int  _clientInvalidationPort;
+    struct __CFRunLoopSource { } * _clientInvalidationSource;
+    NSMutableSet * _connectedClients;
+    id /* block */  _defaultHandler;
+    NSMutableDictionary * _entitlements;
+    NSMutableDictionary * _handlers;
+    BOOL  _perPidService;
+    BOOL  _running;
+    unsigned int  _serverPort;
+    struct __CFRunLoopSource { } * _serverRunLoopSource;
+    NSString * _serviceName;
+    NSMutableDictionary * _validSecurityTokens;
 }
 
 @property (nonatomic, copy) id /* block */ clientInvalidationCallback;
@@ -27,12 +27,14 @@
 @property (getter=isRunning, nonatomic) BOOL running;
 @property (nonatomic, retain) NSString *serviceName;
 
+- (void)_addPossibleRequiredEntitlementsToMessageWithKey:(int)arg1 first:(id)arg2 vothers:(void*)arg3;
 - (id)_clientIdentificationForAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (BOOL)_clientWithPort:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 hasAnyEntitlementRequiredForMessage:(id)arg3;
 - (void)_handleClientInvalidation:(unsigned int)arg1;
 - (void)_handleClientRegistration:(id)arg1;
 - (BOOL)_handleErrorWithMessage:(id)arg1 outError:(id*)arg2;
-- (id)_handleIncomingMessage:(id)arg1 securityToken:(struct { unsigned int x1[2]; })arg2 auditToken:(struct { unsigned int x1[8]; })arg3 clientPort:(unsigned int)arg4;
+- (void)_handleIncomingMessage:(id)arg1 securityToken:(struct { unsigned int x1[2]; })arg2 auditToken:(struct { unsigned int x1[8]; })arg3 clientPort:(unsigned int)arg4 completion:(id /* block */)arg5;
+- (void)_registerContext:(id)arg1 forKey:(int)arg2;
 - (void)_startServerThread;
 - (void)addPossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
 - (id /* block */)clientInvalidationCallback;
@@ -52,6 +54,8 @@
 - (void)setClientInvalidationCallback:(id /* block */)arg1;
 - (void)setDefaultHandler:(id /* block */)arg1;
 - (void)setHandler:(id /* block */)arg1 forKey:(int)arg2;
+- (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 async:(BOOL)arg3 forKey:(int)arg4;
+- (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 async:(BOOL)arg3 forKey:(int)arg4 possibleRequiredEntitlements:(id)arg5;
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3;
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3 possibleRequiredEntitlements:(id)arg4;
 - (void)setHandlers:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface _PFMutableProxyArray : NSMutableArray {
-    int _cd_rc;
-    unsigned int _editCount;
-    struct __CFArray { } *_indicesVeneer;
-    unsigned int _limit;
-    unsigned int _offset;
-    _PFArray *_originalArray;
-    NSMutableArray *_updatedObjectsArray;
+    int  _cd_rc;
+    unsigned int  _editCount;
+    struct __CFArray { } * _indicesVeneer;
+    unsigned int  _limit;
+    unsigned int  _offset;
+    _PFArray * _originalArray;
+    NSMutableArray * _updatedObjectsArray;
 }
 
 - (BOOL)_isDeallocating;

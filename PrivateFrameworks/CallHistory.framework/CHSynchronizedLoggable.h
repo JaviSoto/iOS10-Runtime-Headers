@@ -3,8 +3,8 @@
  */
 
 @interface CHSynchronizedLoggable : NSObject <CHLoggerProtocol, CHSynchronizableProtocol> {
-    CHLogger *_logger;
-    CHSynchronizable *_synchronizable;
+    CHLogger * _logger;
+    CHSynchronizable * _synchronizable;
 }
 
 - (void).cxx_destruct;

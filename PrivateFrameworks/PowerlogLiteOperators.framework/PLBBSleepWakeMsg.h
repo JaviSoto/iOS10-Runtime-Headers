@@ -3,22 +3,22 @@
  */
 
 @interface PLBBSleepWakeMsg : PLBBMsgRoot {
-    NSMutableDictionary *_commonInfo;
-    NSMutableDictionary *_kvPairs;
-    NSString *_swAtCmd;
-    NSString *_swCTData;
-    NSString *_swChan;
-    NSString *_swClientId;
-    NSString *_swCmd;
-    NSString *_swCmdFullName;
-    NSString *_swCmdName;
-    NSDictionary *_swIpData;
-    NSString *_swMsgId;
-    NSString *_swMsgType;
-    NSString *_swRadioClass;
-    NSString *_swRawData;
-    NSString *_swReason;
-    NSNumber *_swSvcId;
+    NSMutableDictionary * _commonInfo;
+    NSMutableDictionary * _kvPairs;
+    NSString * _swAtCmd;
+    NSString * _swCTData;
+    NSString * _swChan;
+    NSString * _swClientId;
+    NSString * _swCmd;
+    NSString * _swCmdFullName;
+    NSString * _swCmdName;
+    NSDictionary * _swIpData;
+    NSString * _swMsgId;
+    NSString * _swMsgType;
+    NSString * _swRadioClass;
+    NSString * _swRawData;
+    NSString * _swReason;
+    NSNumber * _swSvcId;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *commonInfo;

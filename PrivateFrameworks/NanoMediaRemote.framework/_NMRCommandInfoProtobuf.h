@@ -3,36 +3,39 @@
  */
 
 @interface _NMRCommandInfoProtobuf : PBCodable <NSCopying> {
-    BOOL _active;
-    int _command;
-    BOOL _enabled;
+    BOOL  _active;
+    int  _command;
+    BOOL  _enabled;
     struct { 
         unsigned int command : 1; 
         unsigned int maximumRating : 1; 
         unsigned int minimumRating : 1; 
         unsigned int presentationStyle : 1; 
+        unsigned int prominentRadioStationSupported : 1; 
         unsigned int repeatMode : 1; 
         unsigned int shuffleMode : 1; 
         unsigned int active : 1; 
         unsigned int enabled : 1; 
-    } _has;
-    NSString *_localizedShortTitle;
-    NSString *_localizedTitle;
-    float _maximumRating;
-    float _minimumRating;
+    }  _has;
+    NSString * _localizedShortTitle;
+    NSString * _localizedTitle;
+    float  _maximumRating;
+    float  _minimumRating;
     struct { 
         double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _preferredIntervals;
-    int _presentationStyle;
-    int _repeatMode;
-    int _shuffleMode;
+    }  _preferredIntervals;
+    int  _presentationStyle;
+    NSString * _prominentRadioStationName;
+    int  _prominentRadioStationSupported;
+    int  _repeatMode;
+    int  _shuffleMode;
     struct { 
         float *list; 
         unsigned int count; 
         unsigned int size; 
-    } _supportedRates;
+    }  _supportedRates;
 }
 
 @property (nonatomic) BOOL active;
@@ -46,6 +49,8 @@
 @property (nonatomic) BOOL hasMaximumRating;
 @property (nonatomic) BOOL hasMinimumRating;
 @property (nonatomic) BOOL hasPresentationStyle;
+@property (nonatomic, readonly) BOOL hasProminentRadioStationName;
+@property (nonatomic) BOOL hasProminentRadioStationSupported;
 @property (nonatomic) BOOL hasRepeatMode;
 @property (nonatomic) BOOL hasShuffleMode;
 @property (nonatomic, retain) NSString *localizedShortTitle;
@@ -55,6 +60,8 @@
 @property (nonatomic, readonly) double*preferredIntervals;
 @property (nonatomic, readonly) unsigned int preferredIntervalsCount;
 @property (nonatomic) int presentationStyle;
+@property (nonatomic, retain) NSString *prominentRadioStationName;
+@property (nonatomic) int prominentRadioStationSupported;
 @property (nonatomic) int repeatMode;
 @property (nonatomic) int shuffleMode;
 @property (nonatomic, readonly) float*supportedRates;
@@ -81,6 +88,8 @@
 - (BOOL)hasMaximumRating;
 - (BOOL)hasMinimumRating;
 - (BOOL)hasPresentationStyle;
+- (BOOL)hasProminentRadioStationName;
+- (BOOL)hasProminentRadioStationSupported;
 - (BOOL)hasRepeatMode;
 - (BOOL)hasShuffleMode;
 - (unsigned int)hash;
@@ -94,6 +103,8 @@
 - (double*)preferredIntervals;
 - (unsigned int)preferredIntervalsCount;
 - (int)presentationStyle;
+- (id)prominentRadioStationName;
+- (int)prominentRadioStationSupported;
 - (BOOL)readFrom:(id)arg1;
 - (int)repeatMode;
 - (void)setActive:(BOOL)arg1;
@@ -105,6 +116,7 @@
 - (void)setHasMaximumRating:(BOOL)arg1;
 - (void)setHasMinimumRating:(BOOL)arg1;
 - (void)setHasPresentationStyle:(BOOL)arg1;
+- (void)setHasProminentRadioStationSupported:(BOOL)arg1;
 - (void)setHasRepeatMode:(BOOL)arg1;
 - (void)setHasShuffleMode:(BOOL)arg1;
 - (void)setLocalizedShortTitle:(id)arg1;
@@ -113,6 +125,8 @@
 - (void)setMinimumRating:(float)arg1;
 - (void)setPreferredIntervals:(double*)arg1 count:(unsigned int)arg2;
 - (void)setPresentationStyle:(int)arg1;
+- (void)setProminentRadioStationName:(id)arg1;
+- (void)setProminentRadioStationSupported:(int)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;
 - (void)setSupportedRates:(float*)arg1 count:(unsigned int)arg2;

@@ -6,9 +6,9 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
-    float mScalar;
-    int mType;
+    }  mNaturalSize;
+    float  mScalar;
+    int  mType;
 }
 
 @property (nonatomic, readonly) float maxScalar;

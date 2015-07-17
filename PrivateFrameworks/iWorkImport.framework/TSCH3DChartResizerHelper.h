@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DChartResizerHelper : NSObject {
-    TSCH3DChartBoundsLayout *mBoundsLayout;
-    TSCHChartInfo *mChartInfo;
+    TSCH3DChartBoundsLayout * mBoundsLayout;
+    TSCHChartInfo * mChartInfo;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -16,7 +16,7 @@
             int g; 
             int t; 
         } ; 
-    } mContainingViewport;
+    }  mContainingViewport;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -25,7 +25,7 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
-    } mLayoutSettings;
+    }  mLayoutSettings;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -37,7 +37,7 @@
             int g; 
             int t; 
         } ; 
-    } mOriginalContainingViewport;
+    }  mOriginalContainingViewport;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chartInfo;

@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemAccessLog : NSObject <NSCopying> {
-    AVPlayerItemAccessLogInternal *_playerItemAccessLog;
+    AVPlayerItemAccessLogInternal * _playerItemAccessLog;
 }
 
 @property (nonatomic, readonly) NSArray *events;

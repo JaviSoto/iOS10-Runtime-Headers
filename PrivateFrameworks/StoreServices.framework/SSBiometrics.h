@@ -3,8 +3,8 @@
  */
 
 @interface SSBiometrics : NSObject {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    SSXPCConnection *_connection;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    SSXPCConnection * _connection;
 }
 
 - (void).cxx_destruct;

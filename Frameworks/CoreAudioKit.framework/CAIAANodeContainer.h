@@ -3,7 +3,7 @@
  */
 
 @interface CAIAANodeContainer : UIScrollView {
-    int _numPages;
+    int  _numPages;
 }
 
 @property int numPages;

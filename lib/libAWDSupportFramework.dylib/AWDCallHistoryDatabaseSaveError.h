@@ -3,15 +3,15 @@
  */
 
 @interface AWDCallHistoryDatabaseSaveError : PBCodable <NSCopying> {
-    unsigned int _domain;
-    unsigned int _error;
+    unsigned int  _domain;
+    unsigned int  _error;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int domain : 1; 
         unsigned int error : 1; 
-    } _has;
-    NSString *_table;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _table;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int domain;

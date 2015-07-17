@@ -13,5 +13,6 @@
 - (void)main;
 - (void)performAfterSavingRecords:(id /* block */)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

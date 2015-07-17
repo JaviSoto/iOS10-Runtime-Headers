@@ -3,7 +3,7 @@
  */
 
 @interface WKNPAPIPlugInContainer : NSObject <WKNPAPIPlugInContainer> {
-    struct NetscapePlugin { } *_plugin;
+    struct NetscapePlugin { } * _plugin;
 }
 
 @property (readonly, copy) NSString *debugDescription;

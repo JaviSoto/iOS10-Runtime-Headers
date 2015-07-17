@@ -3,11 +3,11 @@
  */
 
 @interface WFUserSettings : NSObject {
-    WFWhitelistSiteBuffer *_contentFilterOverriddenBlackListedSitesBuffer;
-    WFWhitelistSiteBuffer *_contentFilterOverriddenWhiteListedSitesBuffer;
-    NSString *_userName;
-    NSDictionary *_userSettings;
-    WFWhitelistSiteBuffer *_whiteListedSitesBuffer;
+    WFWhitelistSiteBuffer * _contentFilterOverriddenBlackListedSitesBuffer;
+    WFWhitelistSiteBuffer * _contentFilterOverriddenWhiteListedSitesBuffer;
+    NSString * _userName;
+    NSDictionary * _userSettings;
+    WFWhitelistSiteBuffer * _whiteListedSitesBuffer;
 }
 
 @property (nonatomic, readonly) BOOL canEditContentFilterOverriddenBlackListedSites;
@@ -23,7 +23,6 @@
 @property (nonatomic, retain) NSArray *whiteListAllowedSites;
 
 + (id)_arrayByConvertingLinesInStringsAtPath:(id)arg1;
-+ (BOOL)_isURLMetasite:(id)arg1;
 + (id)_metasiteDomainNamesArray;
 + (id)_sharedMetasiteDomainNamesDictionary;
 + (id)_sharedMetasiteExceptionsDomainNamesArray;

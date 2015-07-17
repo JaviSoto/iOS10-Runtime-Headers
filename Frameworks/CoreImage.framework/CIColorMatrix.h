@@ -3,12 +3,12 @@
  */
 
 @interface CIColorMatrix : CIFilter {
-    CIVector *inputAVector;
-    CIVector *inputBVector;
-    CIVector *inputBiasVector;
-    CIVector *inputGVector;
-    CIImage *inputImage;
-    CIVector *inputRVector;
+    CIVector * inputAVector;
+    CIVector * inputBVector;
+    CIVector * inputBiasVector;
+    CIVector * inputGVector;
+    CIImage * inputImage;
+    CIVector * inputRVector;
 }
 
 @property (nonatomic, retain) CIVector *inputAVector;
@@ -27,7 +27,6 @@
 - (id)inputImage;
 - (id)inputRVector;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAVector:(id)arg1;
 - (void)setInputBVector:(id)arg1;
 - (void)setInputBiasVector:(id)arg1;

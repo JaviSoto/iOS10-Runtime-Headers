@@ -3,17 +3,17 @@
  */
 
 @interface SCROBrailleTranslationManager : NSObject {
-    BOOL _alwaysUsesNemethCodeForTechnicalText;
-    BOOL _auxTableSupportsContractedBraille;
-    BOOL _auxTableSupportsEightDotBraille;
-    <SCROBrailleTranslatorProtocol> *_auxTranslator;
-    NSBundle *_auxTranslatorBundle;
-    NSLock *_contentLock;
-    <SCROBrailleTranslatorProtocol> *_nemethTranslator;
-    BOOL _tableSupportsContractedBraille;
-    BOOL _tableSupportsEightDotBraille;
-    <SCROBrailleTranslatorProtocol> *_translator;
-    NSBundle *_translatorBundle;
+    BOOL  _alwaysUsesNemethCodeForTechnicalText;
+    BOOL  _auxTableSupportsContractedBraille;
+    BOOL  _auxTableSupportsEightDotBraille;
+    <SCROBrailleTranslatorProtocol> * _auxTranslator;
+    NSBundle * _auxTranslatorBundle;
+    NSLock * _contentLock;
+    <SCROBrailleTranslatorProtocol> * _nemethTranslator;
+    BOOL  _tableSupportsContractedBraille;
+    BOOL  _tableSupportsEightDotBraille;
+    <SCROBrailleTranslatorProtocol> * _translator;
+    NSBundle * _translatorBundle;
 }
 
 @property (nonatomic) BOOL alwaysUsesNemethCodeForTechnicalText;

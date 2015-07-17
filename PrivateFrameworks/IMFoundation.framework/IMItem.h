@@ -3,19 +3,19 @@
  */
 
 @interface IMItem : NSObject <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    NSString *_account;
-    NSString *_accountID;
-    id _context;
-    NSString *_countryCode;
-    NSString *_guid;
-    NSString *_handle;
-    long long _messageID;
-    NSString *_roomName;
-    NSDictionary *_senderInfo;
-    NSString *_service;
-    NSDate *_time;
-    long long _type;
-    NSString *_unformattedID;
+    NSString * _account;
+    NSString * _accountID;
+    id  _context;
+    NSString * _countryCode;
+    NSString * _guid;
+    NSString * _handle;
+    long long  _messageID;
+    NSString * _roomName;
+    NSDictionary * _senderInfo;
+    NSString * _service;
+    NSDate * _time;
+    long long  _type;
+    NSString * _unformattedID;
 }
 
 @property (nonatomic, retain) NSString *account;
@@ -84,13 +84,20 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
++ (Class)contextClass;
+
+- (id)_copy;
 - (BOOL)_hasMessageChatItem;
+- (BOOL)_isInvitation;
 - (id)_newChatItems;
 - (id)_otherHandle;
 - (id)_senderHandle;
 - (id)_service;
 - (id)_serviceHandle;
+- (void)_setInvitation:(BOOL)arg1;
 - (void)_updateContextWithSenderHandle:(id)arg1 otherHandle:(id)arg2;
+- (BOOL)isIncomingTypingOrCancelTypingMessage;
+- (BOOL)isTypingOrCancelTypingMessage;
 - (id)message;
 
 @end

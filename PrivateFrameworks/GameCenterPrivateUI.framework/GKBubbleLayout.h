@@ -3,14 +3,14 @@
  */
 
 @interface GKBubbleLayout : NSObject {
-    NSArray *_bubbleLocations;
-    NSArray *_bubbleViews;
+    NSArray * _bubbleLocations;
+    NSArray * _bubbleViews;
     struct CGPoint { 
         float x; 
         float y; 
-    } _center;
-    float _radius;
-    NSSet *_visibleBubbleSet;
+    }  _center;
+    float  _radius;
+    NSSet * _visibleBubbleSet;
 }
 
 @property (nonatomic, retain) NSArray *bubbleLocations;

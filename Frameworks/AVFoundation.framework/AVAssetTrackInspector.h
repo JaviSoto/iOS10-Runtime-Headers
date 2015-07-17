@@ -3,9 +3,9 @@
  */
 
 @interface AVAssetTrackInspector : AVFigObjectInspector <AVAsynchronousKeyValueLoading> {
-    NSArray *_cachedMediaCharacteristics;
-    long _synthesizeMediaCharacteristicsOnce;
-    AVWeakReference *_weakReference;
+    NSArray * _cachedMediaCharacteristics;
+    long  _synthesizeMediaCharacteristicsOnce;
+    AVWeakReference * _weakReference;
 }
 
 @property (nonatomic, readonly) int alternateGroupID;

@@ -3,10 +3,10 @@
  */
 
 @interface MusicCoalescingEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    <MusicEntityValueProviding> *_baseEntityValueProvider;
-    NSDictionary *_cachedPropertyValues;
-    MusicEntityViewContentDescriptor *_contentDescriptor;
-    NSSet *_propertiesToPrefetch;
+    <MusicEntityValueProviding> * _baseEntityValueProvider;
+    NSDictionary * _cachedPropertyValues;
+    MusicEntityViewContentDescriptor * _contentDescriptor;
+    NSSet * _propertiesToPrefetch;
 }
 
 @property (nonatomic, retain) <MusicEntityValueProviding> *baseEntityValueProvider;

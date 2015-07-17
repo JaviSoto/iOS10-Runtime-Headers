@@ -3,7 +3,7 @@
  */
 
 @interface PLPhotoStreamsHelper : NSObject {
-    BOOL _appHasPolledOnceThisForegroundSession;
+    BOOL  _appHasPolledOnceThisForegroundSession;
 }
 
 + (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;

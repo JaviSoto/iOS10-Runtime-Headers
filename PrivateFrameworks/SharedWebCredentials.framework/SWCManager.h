@@ -3,14 +3,16 @@
  */
 
 @interface SWCManager : NSObject <NSXPCListenerDelegate, SWCXPCServer> {
-    NSMutableArray *_database;
-    NSMutableArray *_netRequests;
-    NSObject<OS_dispatch_source> *_recheckTimer;
-    NSObject<OS_dispatch_source> *_retryTimer;
-    BOOL _started;
-    BOOL _verifyEV;
-    NSXPCListener *_xpcListener;
-    NSMutableArray *_xpcRequests;
+    BOOL  _allowUnsigned;
+    NSMutableArray * _database;
+    NSMutableArray * _netRequests;
+    NSObject<OS_dispatch_source> * _recheckTimer;
+    BOOL  _redirects;
+    NSObject<OS_dispatch_source> * _retryTimer;
+    BOOL  _started;
+    BOOL  _verifyEV;
+    NSXPCListener * _xpcListener;
+    NSMutableArray * _xpcRequests;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +30,7 @@
 - (id)_installedAppByID:(id)arg1;
 - (void)_parseServiceDomainString:(id)arg1 legacy:(BOOL)arg2 service:(id*)arg3 domain:(id*)arg4;
 - (void)_performPeriodicRechecks;
+- (void)_reorderAppLinks:(id)arg1 domain:(id)arg2;
 - (void)_retryDownloads;
 - (void)_sanitizeDatabase;
 - (long)_saveDatabase;
@@ -53,6 +56,7 @@
 - (void)logControl:(id)arg1 reply:(id /* block */)arg2;
 - (void)removeBundleID:(id)arg1;
 - (void)removeService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
+- (void)setService:(id)arg1 app:(id)arg2 domain:(id)arg3 details:(id)arg4 reply:(id /* block */)arg5;
 - (void)setService:(id)arg1 app:(id)arg2 domain:(id)arg3 mask:(unsigned int)arg4 flags:(unsigned int)arg5 reply:(id /* block */)arg6;
 - (void)show:(id)arg1 reply:(id /* block */)arg2;
 - (void)start;

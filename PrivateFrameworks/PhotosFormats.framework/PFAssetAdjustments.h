@@ -3,7 +3,7 @@
  */
 
 @interface PFAssetAdjustments : NSObject <NSCopying> {
-    NSDictionary *_propertyListDictionary;
+    NSDictionary * _propertyListDictionary;
 }
 
 @property (nonatomic, readonly) int adjustmentBaseVersion;

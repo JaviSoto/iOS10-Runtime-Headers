@@ -3,14 +3,14 @@
  */
 
 @interface _UIDocumentContainerObserver : NSObject {
-    NSMutableSet *_added;
-    NSArray *_descriptors;
-    id /* block */ _handler;
-    NSOrderedSet *_lastSnapshot;
-    NSDate *_lastSnapshotDate;
-    NSMutableDictionary *_moved;
-    NSPredicate *_predicate;
-    NSMutableSet *_removed;
+    NSMutableSet * _added;
+    NSArray * _descriptors;
+    id /* block */  _handler;
+    NSOrderedSet * _lastSnapshot;
+    NSDate * _lastSnapshotDate;
+    NSMutableDictionary * _moved;
+    NSPredicate * _predicate;
+    NSMutableSet * _removed;
 }
 
 @property (nonatomic, copy) NSArray *descriptors;

@@ -3,12 +3,12 @@
  */
 
 @interface RURadioAdAVItem : MPAVAdItem {
-    RURadioAdTrack *_adTrack;
-    RadioStation *_station;
-    NSString *_stationHash;
-    long long _stationID;
-    NSString *_stationName;
-    NSString *_stationStringID;
+    RURadioAdTrack * _adTrack;
+    RadioStation * _station;
+    NSString * _stationHash;
+    long long  _stationID;
+    NSString * _stationName;
+    NSString * _stationStringID;
 }
 
 @property (nonatomic, retain) RadioStation *station;

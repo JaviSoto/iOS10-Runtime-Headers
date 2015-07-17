@@ -3,24 +3,24 @@
  */
 
 @interface HSCloudAvailabilityController : NSObject <HSCloudAvailability, RadiosPreferencesDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _canShowCloudDownloadButtons;
-    BOOL _canShowCloudMusic;
-    BOOL _canShowCloudVideo;
-    BOOL _isAirplaneModeActive;
-    BOOL _isAutoDownloadOnCellularAllowed;
-    BOOL _isCellularDataActive;
-    BOOL _isNetworkReachable;
-    BOOL _isShowingAllMusic;
-    BOOL _isShowingAllVideo;
-    BOOL _isUpdateInProgress;
-    BOOL _isWiFiEnabled;
-    unsigned int _networkReachabilityObservationCount;
-    int _networkType;
-    int _preferencesChangedNotifyToken;
-    BOOL _preferencesChangedNotifyTokenIsValid;
-    RadiosPreferences *_radiosPreferences;
-    struct __SCNetworkReachability { } *_reachabilityRef;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _canShowCloudDownloadButtons;
+    BOOL  _canShowCloudMusic;
+    BOOL  _canShowCloudVideo;
+    BOOL  _isAirplaneModeActive;
+    BOOL  _isAutoDownloadOnCellularAllowed;
+    BOOL  _isCellularDataActive;
+    BOOL  _isNetworkReachable;
+    BOOL  _isShowingAllMusic;
+    BOOL  _isShowingAllVideo;
+    BOOL  _isUpdateInProgress;
+    BOOL  _isWiFiEnabled;
+    unsigned int  _networkReachabilityObservationCount;
+    int  _networkType;
+    int  _preferencesChangedNotifyToken;
+    BOOL  _preferencesChangedNotifyTokenIsValid;
+    RadiosPreferences * _radiosPreferences;
+    struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
 @property (readonly, copy) NSString *debugDescription;

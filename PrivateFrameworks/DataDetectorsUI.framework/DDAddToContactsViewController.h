@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDAddToContactsViewController : UINavigationController <ABUnknownPersonViewControllerDelegate, DDRemoteActionViewControllerConfiguration> {
-    DDAction *_action;
-    ABUnknownPersonViewController *_personViewController;
-    <DDRemoteActionPresenter> *_proxy;
+@interface DDAddToContactsViewController : UINavigationController <CNContactViewControllerDelegate, DDRemoteActionViewControllerConfiguration> {
+    DDAction * _action;
+    BOOL  _gotReplyBefore;
+    CNContactViewController * _personViewController;
+    <DDRemoteActionPresenter> * _proxy;
+    BOOL  _shouldShowCancelButton;
 }
 
 @property (retain) DDAction *action;
@@ -16,15 +18,18 @@
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
++ (id)alternateNameForContact:(id)arg1;
 
 - (void)_augmentRecord:(void*)arg1 withResultsFromAction:(id)arg2;
 - (id)action;
 - (void)cancelPressed:(id)arg1;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)dealloc;
-- (id)init;
+- (void)doneWithAddingContact;
 - (void)prepareForAction:(id)arg1;
 - (void)setAction:(id)arg1;
-- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
-- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)setNeedsCancelButtonUpdate;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

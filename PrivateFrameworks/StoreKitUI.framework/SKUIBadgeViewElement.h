@@ -3,15 +3,15 @@
  */
 
 @interface SKUIBadgeViewElement : SKUIViewElement {
-    UIImage *_fallbackImage;
-    BOOL _hasValidFallbackImage;
-    NSString *_resourceName;
+    UIImage * _fallbackImage;
+    BOOL  _hasValidFallbackImage;
+    NSString * _resourceName;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSString *_text;
-    NSURL *_url;
+    }  _size;
+    NSString * _text;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

@@ -3,10 +3,10 @@
  */
 
 @interface FigCaptureThermalMonitor : NSObject {
-    float _maxTorchLevel;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    int _registrationToken;
-    id /* block */ _torchHandler;
+    float  _maxTorchLevel;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    int  _registrationToken;
+    id /* block */  _torchHandler;
 }
 
 @property (nonatomic, readonly) float maxTorchLevel;

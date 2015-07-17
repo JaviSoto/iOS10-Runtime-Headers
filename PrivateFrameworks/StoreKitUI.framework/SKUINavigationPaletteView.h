@@ -3,19 +3,19 @@
  */
 
 @interface SKUINavigationPaletteView : SKUIViewReuseView <SKUIViewElementView> {
-    NSHashTable *_artworkRelatedChildViewElementViews;
+    NSHashTable * _artworkRelatedChildViewElementViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    NSMutableArray *_segmentedControls;
-    NSMutableArray *_stretchViews;
-    int _verticalAlignment;
-    NSMapTable *_viewElementViews;
-    NSMapTable *_viewSpacings;
+    }  _contentInset;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    NSMutableArray * _segmentedControls;
+    NSMutableArray * _stretchViews;
+    int  _verticalAlignment;
+    NSMapTable * _viewElementViews;
+    NSMapTable * _viewSpacings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

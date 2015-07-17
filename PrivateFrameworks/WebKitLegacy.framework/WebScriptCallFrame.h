@@ -3,8 +3,8 @@
  */
 
 @interface WebScriptCallFrame : NSObject {
-    WebScriptCallFramePrivate *_private;
-    id _userInfo;
+    WebScriptCallFramePrivate * _private;
+    id  _userInfo;
 }
 
 - (id)_convertValueToObjcValue:(struct JSValue { union EncodedValueDescriptor { long long x_1_1_1; double x_1_1_2; struct { int x_3_2_1; int x_3_2_2; } x_1_1_3; } x1; })arg1;

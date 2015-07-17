@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumPickerViewController : UIViewController <PUSessionInfoObserver, UINavigationControllerDelegate> {
-    PUAlbumListViewController *__albumListViewController;
-    PUAlbumPickerSessionInfo *_albumPickerSessionInfo;
-    PHCollectionList *_collectionList;
-    id /* block */ _completionHandler;
-    UINavigationController *_contentNavigationController;
-    PUAlbumPickerViewControllerSpec *_spec;
+@interface PUAlbumPickerViewController : UIViewController <PUSessionInfoObserver> {
+    PUAlbumListViewController * __albumListViewController;
+    PUAlbumPickerSessionInfo * _albumPickerSessionInfo;
+    PHCollectionList * _collectionList;
+    id /* block */  _completionHandler;
+    UINavigationController * _contentNavigationController;
+    PUAlbumPickerViewControllerSpec * _spec;
 }
 
 @property (setter=_setAlbumListViewController:, nonatomic, retain) PUAlbumListViewController *_albumListViewController;
@@ -36,8 +36,6 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithSpec:(id)arg1 sessionInfo:(id)arg2;
 - (void)loadView;
-- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)setCollectionList:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;

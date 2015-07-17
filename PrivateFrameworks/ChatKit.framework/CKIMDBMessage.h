@@ -3,8 +3,8 @@
  */
 
 @interface CKIMDBMessage : CKDBMessage {
-    int _personID;
-    NSString *_personName;
+    int  _personID;
+    NSString * _personName;
 }
 
 @property (nonatomic) int personID;

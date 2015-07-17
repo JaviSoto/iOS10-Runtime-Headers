@@ -3,7 +3,7 @@
  */
 
 @interface AVMutableVideoCompositionInstruction : AVVideoCompositionInstruction {
-    AVMutableVideoCompositionInstructionInternal *_mutableInstruction;
+    AVMutableVideoCompositionInstructionInternal * _mutableInstruction;
 }
 
 @property (nonatomic, retain) struct CGColor { }*backgroundColor;

@@ -3,25 +3,25 @@
  */
 
 @interface TSDGLFrameBuffer : NSObject {
-    int _currentBindingOption;
-    int _currentDrawBufferCount;
-    unsigned int _currentDrawBuffers;
-    unsigned int _currentReadBuffer;
-    NSMutableArray *_currentTextureLookupInfoByAttachment;
-    NSMutableArray *_desiredTextureLookupInfoByAttachment;
-    unsigned int _framebuffer;
-    BOOL _isBound;
-    BOOL _isUsingNonDefaultAttachments;
-    NSString *_name;
-    NSDictionary *_namesToTextureDict;
-    BOOL _shouldDeleteTexturesOnTeardown;
+    int  _currentBindingOption;
+    int  _currentDrawBufferCount;
+    unsigned int  _currentDrawBuffers;
+    unsigned int  _currentReadBuffer;
+    NSMutableArray * _currentTextureLookupInfoByAttachment;
+    NSMutableArray * _desiredTextureLookupInfoByAttachment;
+    unsigned int  _framebuffer;
+    BOOL  _isBound;
+    BOOL  _isUsingNonDefaultAttachments;
+    NSString * _name;
+    NSDictionary * _namesToTextureDict;
+    BOOL  _shouldDeleteTexturesOnTeardown;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSArray *_textureConfigs;
-    NSArray *_textureConfigsByAttachment;
-    NSArray *_textureLookupInfosByAttachment;
+    }  _size;
+    NSArray * _textureConfigs;
+    NSArray * _textureConfigsByAttachment;
+    NSArray * _textureLookupInfosByAttachment;
 }
 
 @property (nonatomic, readonly) unsigned int currentGLTexture;

@@ -3,16 +3,16 @@
  */
 
 @interface TSCHChartAxis : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
-    TSUFastReadInvalidatingCache *mAnalysisCache;
-    TSCHChartAxisID *mAxisID;
-    TSCHChartModel *mChartModel;
-    TSUFastReadInvalidatingCache *mInterceptCache;
-    TSUFastReadInvalidatingCache *mMultiDataSetAnalysisCache;
-    <TSCHStyleActAlike> *mNonStyle;
-    unsigned int mNonStyleIndex;
-    TSCHChartAxis *mNonTransientCounterpart;
-    <TSCHStyleActAlike> *mStyle;
-    unsigned int mStyleIndex;
+    TSUFastReadInvalidatingCache * mAnalysisCache;
+    TSCHChartAxisID * mAxisID;
+    TSCHChartModel * mChartModel;
+    TSUFastReadInvalidatingCache * mInterceptCache;
+    TSUFastReadInvalidatingCache * mMultiDataSetAnalysisCache;
+    <TSCHStyleActAlike> * mNonStyle;
+    unsigned int  mNonStyleIndex;
+    TSCHChartAxis * mNonTransientCounterpart;
+    <TSCHStyleActAlike> * mStyle;
+    unsigned int  mStyleIndex;
 }
 
 @property (nonatomic, readonly) TSCHChartAxisID *axisID;

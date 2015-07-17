@@ -3,10 +3,10 @@
  */
 
 @interface HAPCharacteristicMetadata : NSObject {
-    HAPMetadataConstraints *_constraints;
-    NSString *_format;
-    NSString *_manufacturerDescription;
-    NSString *_units;
+    HAPMetadataConstraints * _constraints;
+    NSString * _format;
+    NSString * _manufacturerDescription;
+    NSString * _units;
 }
 
 @property (nonatomic, retain) HAPMetadataConstraints *constraints;

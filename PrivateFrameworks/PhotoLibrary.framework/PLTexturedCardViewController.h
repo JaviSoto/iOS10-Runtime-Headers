@@ -3,11 +3,11 @@
  */
 
 @interface PLTexturedCardViewController : UIViewController <PLModalDimmingContained> {
-    UIImageView *_decorationView;
-    UIImageView *_innerShadowView;
-    UINavigationBar *_navigationBar;
-    UINavigationController *_navigationController;
-    UIView *_wrapperView;
+    UIImageView * _decorationView;
+    UIImageView * _innerShadowView;
+    UINavigationBar * _navigationBar;
+    UINavigationController * _navigationController;
+    UIView * _wrapperView;
 }
 
 - (void)_updateNavigationBarToOrientation:(int)arg1;

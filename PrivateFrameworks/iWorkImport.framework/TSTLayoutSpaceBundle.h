@@ -3,14 +3,14 @@
  */
 
 @interface TSTLayoutSpaceBundle : NSObject {
-    TSTLayoutSpace *mFrozenHeaderColumnsSpace;
-    TSTLayoutSpace *mFrozenHeaderCornerSpace;
-    TSTLayoutSpace *mFrozenHeaderRowsSpace;
-    TSTLayout *mLayout;
-    TSTLayoutSpace *mRepeatHeaderColumnsSpace;
-    TSTLayoutSpace *mRepeatHeaderCornerSpace;
-    TSTLayoutSpace *mRepeatHeaderRowsSpace;
-    TSTLayoutSpace *mSpace;
+    TSTLayoutSpace * mFrozenHeaderColumnsSpace;
+    TSTLayoutSpace * mFrozenHeaderCornerSpace;
+    TSTLayoutSpace * mFrozenHeaderRowsSpace;
+    TSTLayout * mLayout;
+    TSTLayoutSpace * mRepeatHeaderColumnsSpace;
+    TSTLayoutSpace * mRepeatHeaderCornerSpace;
+    TSTLayoutSpace * mRepeatHeaderRowsSpace;
+    TSTLayoutSpace * mSpace;
 }
 
 @property (nonatomic, retain) TSTLayoutSpace *frozenHeaderColumnsSpace;

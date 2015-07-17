@@ -3,8 +3,8 @@
  */
 
 @interface PKKeychainItemWrapper : NSObject {
-    NSMutableDictionary *genericPasswordQuery;
-    NSMutableDictionary *keychainItemData;
+    NSMutableDictionary * genericPasswordQuery;
+    NSMutableDictionary * keychainItemData;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *genericPasswordQuery;

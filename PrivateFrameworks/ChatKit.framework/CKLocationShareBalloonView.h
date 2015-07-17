@@ -3,16 +3,16 @@
  */
 
 @interface CKLocationShareBalloonView : CKImageBalloonView {
-    UIImageView *_chevron;
-    UIView *_horizontalSeparator;
-    UIButton *_ignoreButton;
-    UILabel *_locationLabel;
-    NSString *_locationString;
-    int _offerState;
-    UIButton *_startSharingButton;
-    UILabel *_titleLabel;
-    NSString *_titleString;
-    UIView *_verticalSeparator;
+    UIImageView * _chevron;
+    UIView * _horizontalSeparator;
+    UIButton * _ignoreButton;
+    UILabel * _locationLabel;
+    NSString * _locationString;
+    int  _offerState;
+    UIButton * _startSharingButton;
+    UILabel * _titleLabel;
+    NSString * _titleString;
+    UIView * _verticalSeparator;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;

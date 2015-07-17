@@ -3,11 +3,11 @@
  */
 
 @interface KNRecording : TSPObject {
-    double mDuration;
-    NSArray *mEventTracks;
-    NSDate *mModificationDate;
-    KNRecordingMovieTrack *mMovieTrack;
-    KNRecordingSyncState *mSyncState;
+    double  mDuration;
+    NSArray * mEventTracks;
+    NSDate * mModificationDate;
+    KNRecordingMovieTrack * mMovieTrack;
+    KNRecordingSyncState * mSyncState;
 }
 
 @property (nonatomic, readonly) double duration;
@@ -24,6 +24,7 @@
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4;
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 modificationDate:(id)arg5;
 - (BOOL)isInSyncWithShow;
+- (BOOL)isLocallyOutOfSyncWithShowUsingLocalOutOfSyncToken:(id)arg1;
 - (id)modificationDate;
 - (id)movieTrack;
 - (id)recordingByMarkingAsOutOfSyncWithShow:(BOOL)arg1 withLocalOutOfSyncToken:(id)arg2 restoringModificationDate:(id)arg3;

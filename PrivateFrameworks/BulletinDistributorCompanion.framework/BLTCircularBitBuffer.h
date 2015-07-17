@@ -3,9 +3,9 @@
  */
 
 @interface BLTCircularBitBuffer : NSObject {
-    unsigned long long _beginIndex;
-    NSMutableData *_bitVector;
-    unsigned int _capacity;
+    unsigned long long  _beginIndex;
+    NSMutableData * _bitVector;
+    unsigned int  _capacity;
 }
 
 @property (nonatomic, readonly) unsigned long long beginIndex;

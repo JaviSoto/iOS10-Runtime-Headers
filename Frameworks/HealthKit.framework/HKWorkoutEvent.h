@@ -3,8 +3,8 @@
  */
 
 @interface HKWorkoutEvent : NSObject <HDCoding, NSSecureCoding> {
-    NSDate *_date;
-    int _type;
+    NSDate * _date;
+    int  _type;
 }
 
 @property (readonly, copy) NSDate *date;

@@ -3,31 +3,31 @@
  */
 
 @interface PLImageView : UIImageView {
-    float _accessoryViewsAlpha;
-    float _aspectRatio;
-    UIView *_borderView;
-    unsigned int _borderViewIsVisible;
-    UIView *_bottomRightAccessoryView;
-    unsigned int _drawsBorder;
-    BOOL _edgeAntialiasingEnabled;
-    int _fullSizeImageOrientation;
-    PLTiledLayer *_fullSizeImageTiledLayer;
-    double _lastBorderAlphaTime;
-    double _lastShadowAlphaTime;
-    UIView *_leftAccessoryView;
+    float  _accessoryViewsAlpha;
+    float  _aspectRatio;
+    UIView * _borderView;
+    unsigned int  _borderViewIsVisible;
+    UIView * _bottomRightAccessoryView;
+    unsigned int  _drawsBorder;
+    BOOL  _edgeAntialiasingEnabled;
+    int  _fullSizeImageOrientation;
+    PLTiledLayer * _fullSizeImageTiledLayer;
+    double  _lastBorderAlphaTime;
+    double  _lastShadowAlphaTime;
+    UIView * _leftAccessoryView;
     struct CGSize { 
         float width; 
         float height; 
-    } _leftAccessoryViewOffset;
-    NSString *_name;
-    float _placeholderScale;
-    PLPhotoTilePlaceholderView *_placeholderView;
-    unsigned int _shadowEnabled;
-    BOOL _showsPlaceholder;
-    unsigned int _suppressShadowDrawing;
-    UILabel *_textBadge;
-    float _transitionProgress;
-    PLVideoView *_videoView;
+    }  _leftAccessoryViewOffset;
+    NSString * _name;
+    float  _placeholderScale;
+    PLPhotoTilePlaceholderView * _placeholderView;
+    unsigned int  _shadowEnabled;
+    BOOL  _showsPlaceholder;
+    unsigned int  _suppressShadowDrawing;
+    UILabel * _textBadge;
+    float  _transitionProgress;
+    PLVideoView * _videoView;
 }
 
 @property (nonatomic) float accessoryViewsAlpha;

@@ -3,11 +3,11 @@
  */
 
 @interface PLPhotoTilePlaceholderView : UIView <PLTilePlaceholderView> {
-    BOOL _indicatorIsVisible;
-    double _lastViewPhaseChangeDate;
-    UIView *_loadingContainerView;
-    UIActivityIndicatorView *_loadingIndicatorView;
-    UILabel *_loadingLabel;
+    BOOL  _indicatorIsVisible;
+    double  _lastViewPhaseChangeDate;
+    UIView * _loadingContainerView;
+    UIActivityIndicatorView * _loadingIndicatorView;
+    UILabel * _loadingLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

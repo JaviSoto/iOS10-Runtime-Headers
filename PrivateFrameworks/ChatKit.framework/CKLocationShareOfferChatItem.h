@@ -3,7 +3,7 @@
  */
 
 @interface CKLocationShareOfferChatItem : CKBalloonChatItem {
-    FMFLocation *_lastKnownLocation;
+    FMFLocation * _lastKnownLocation;
 }
 
 @property (nonatomic, retain) FMFLocation *lastKnownLocation;

@@ -3,16 +3,16 @@
  */
 
 @interface CDSBasisObject : NSObject {
-    unsigned long long _attributeId;
-    double _basisDoubleValue;
-    unsigned long long _basisUint64Value;
-    NSString *_basisValueString;
-    NSDate *_creationDate;
-    double _duration;
-    BOOL _fallingEdge;
-    unsigned long long _localTime;
-    BOOL _risingEdge;
-    int _type;
+    unsigned long long  _attributeId;
+    double  _basisDoubleValue;
+    unsigned long long  _basisUint64Value;
+    NSString * _basisValueString;
+    NSDate * _creationDate;
+    double  _duration;
+    BOOL  _fallingEdge;
+    unsigned long long  _localTime;
+    BOOL  _risingEdge;
+    int  _type;
 }
 
 @property (nonatomic) unsigned long long attributeId;

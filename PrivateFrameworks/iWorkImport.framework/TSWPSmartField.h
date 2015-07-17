@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSmartField : TSPObject <TSKDocumentObject, TSPCopying> {
-    unsigned int _lastTableIndex;
-    TSWPStorage *_parentStorage;
+    unsigned int  _lastTableIndex;
+    TSWPStorage * _parentStorage;
 }
 
 @property (nonatomic, readonly) int attributeArrayKind;

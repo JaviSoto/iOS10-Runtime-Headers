@@ -3,19 +3,19 @@
  */
 
 @interface AVCaptureVideoDataOutputInternal : NSObject {
-    BOOL alwaysDiscardsLateVideoFrames;
-    NSObject<OS_dispatch_queue> *bufferQueue;
-    AVWeakReferencingDelegateStorage *delegateStorage;
+    BOOL  alwaysDiscardsLateVideoFrames;
+    NSObject<OS_dispatch_queue> * bufferQueue;
+    AVWeakReferencingDelegateStorage * delegateStorage;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } deprecatedMinFrameDuration;
-    struct OpaqueFigSimpleMutex { } *remoteQueueMutex;
-    struct remoteQueueReceiverOpaque { } *remoteReceiverQueue;
-    NSDictionary *videoSettings;
-    AVWeakReference *weakReference;
+    }  deprecatedMinFrameDuration;
+    struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
+    struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;
+    NSDictionary * videoSettings;
+    AVWeakReference * weakReference;
 }
 
 - (void)dealloc;

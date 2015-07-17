@@ -3,19 +3,19 @@
  */
 
 @interface CKDProtobufResponseBodyParser : NSObject <CKDResponseBodyParser> {
-    unsigned int _curObjectLength;
-    BOOL _isParsing;
+    unsigned int  _curObjectLength;
+    BOOL  _isParsing;
     struct CC_SHA256state_st { 
         unsigned int count[2]; 
         unsigned int hash[8]; 
         unsigned int wbuf[16]; 
-    } _mescalSignature;
-    Class _messageClass;
-    id /* block */ _objectParsedBlock;
-    NSObject<OS_dispatch_queue> *_parseQueue;
-    NSData *_parserData;
-    NSError *_parserError;
-    NSMutableData *_tailParserData;
+    }  _mescalSignature;
+    Class  _messageClass;
+    id /* block */  _objectParsedBlock;
+    NSObject<OS_dispatch_queue> * _parseQueue;
+    NSData * _parserData;
+    NSError * _parserError;
+    NSMutableData * _tailParserData;
 }
 
 @property (nonatomic) unsigned int curObjectLength;

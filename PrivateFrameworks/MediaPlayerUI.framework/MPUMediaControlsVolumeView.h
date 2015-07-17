@@ -3,14 +3,14 @@
  */
 
 @interface MPUMediaControlsVolumeView : UIView <MPVolumeControllerDelegate> {
-    UISlider *_slider;
-    int _style;
-    double _timeStoppedTracking;
-    NSTimer *_volumeCommitTimer;
-    MPVolumeController *_volumeController;
-    NSTimer *_warningBlinkTimer;
-    BOOL _warningIndicatorBlinking;
-    UIView *_warningView;
+    UISlider * _slider;
+    int  _style;
+    double  _timeStoppedTracking;
+    NSTimer * _volumeCommitTimer;
+    MPVolumeController * _volumeController;
+    NSTimer * _warningBlinkTimer;
+    BOOL  _warningIndicatorBlinking;
+    UIView * _warningView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

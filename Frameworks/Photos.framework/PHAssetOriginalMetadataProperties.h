@@ -3,14 +3,14 @@
  */
 
 @interface PHAssetOriginalMetadataProperties : NSObject {
-    PHAsset *_asset;
-    NSString *_originalAssetsUUID;
-    short _originalExifOrientation;
-    NSString *_originalFilename;
-    int _originalFilesize;
-    short _originalHeight;
-    NSString *_originalPath;
-    short _originalWidth;
+    PHAsset * _asset;
+    NSString * _originalAssetsUUID;
+    short  _originalExifOrientation;
+    NSString * _originalFilename;
+    int  _originalFilesize;
+    short  _originalHeight;
+    NSString * _originalPath;
+    short  _originalWidth;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

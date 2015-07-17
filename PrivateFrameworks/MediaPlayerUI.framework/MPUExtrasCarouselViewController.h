@@ -3,11 +3,11 @@
  */
 
 @interface MPUExtrasCarouselViewController : UIViewController <MPUExtrasCarouselCollectionViewDelegate, MPUExtrasZoomingImageTransitionParticipant, UICollectionViewDataSource, UICollectionViewDelegate> {
-    MPUExtrasCarouselCollectionView *_carouselCollectionView;
-    UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout> *_carouselCollectionViewLayout;
-    <MPUExtrasCarouselViewControllerDataSource> *_dataSource;
-    <MPUExtrasCarouselViewControllerDelegate> *_delegate;
-    BOOL _revealingNavigationBarDuringTransition;
+    MPUExtrasCarouselCollectionView * _carouselCollectionView;
+    UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout> * _carouselCollectionViewLayout;
+    <MPUExtrasCarouselViewControllerDataSource> * _dataSource;
+    <MPUExtrasCarouselViewControllerDelegate> * _delegate;
+    BOOL  _revealingNavigationBarDuringTransition;
 }
 
 @property (nonatomic, retain) MPUExtrasCarouselCollectionView *carouselCollectionView;

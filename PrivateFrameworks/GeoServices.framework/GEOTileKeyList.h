@@ -3,12 +3,12 @@
  */
 
 @interface GEOTileKeyList : NSObject <NSCopying, NSFastEnumeration> {
-    unsigned int _count;
-    void *_head;
-    GEOTileKeyMap *_map;
-    unsigned int _maxCount;
-    unsigned long _mutationsCount;
-    void *_tail;
+    unsigned int  _count;
+    void * _head;
+    GEOTileKeyMap * _map;
+    unsigned int  _maxCount;
+    unsigned long  _mutationsCount;
+    void * _tail;
 }
 
 + (id)listFromXPCData:(id)arg1;

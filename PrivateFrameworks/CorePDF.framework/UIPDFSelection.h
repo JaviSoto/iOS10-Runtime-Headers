@@ -3,16 +3,16 @@
  */
 
 @interface UIPDFSelection : NSObject {
-    int _cachedEndIndex;
-    int _cachedStartIndex;
-    struct CGPDFSelection { } *_cgSelection;
-    BOOL _dirty;
-    UIPDFPage *_page;
-    struct __CFString { } *_string;
+    int  _cachedEndIndex;
+    int  _cachedStartIndex;
+    struct CGPDFSelection { } * _cgSelection;
+    BOOL  _dirty;
+    UIPDFPage * _page;
+    struct __CFString { } * _string;
     struct { 
         int location; 
         int length; 
-    } stringRange;
+    }  stringRange;
 }
 
 @property (nonatomic) struct { int x1; int x2; } stringRange;

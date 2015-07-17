@@ -3,7 +3,7 @@
  */
 
 @interface MKReverseGeocoder : NSObject {
-    MKReverseGeocoderInternal *_internal;
+    MKReverseGeocoderInternal * _internal;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;

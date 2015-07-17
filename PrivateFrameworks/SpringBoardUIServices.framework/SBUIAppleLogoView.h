@@ -3,8 +3,8 @@
  */
 
 @interface SBUIAppleLogoView : UIView {
-    UIView *_layerView;
-    PUIProgressWindow *_progressWindow;
+    UIView * _layerView;
+    PUIProgressWindow * _progressWindow;
 }
 
 - (void)dealloc;

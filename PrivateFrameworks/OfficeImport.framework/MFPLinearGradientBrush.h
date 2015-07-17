@@ -12,12 +12,11 @@
             float width; 
             float height; 
         } size; 
-    } mBounds;
-    OITSUColor *mEndColor;
-    OITSUColor *mStartColor;
+    }  mBounds;
+    OITSUColor * mEndColor;
+    OITSUColor * mStartColor;
 }
 
-- (id).cxx_construct;
 - (void)createShading;
 - (void)dealloc;
 - (id)endColor;

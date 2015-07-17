@@ -3,11 +3,11 @@
  */
 
 @interface BTLETransaction : NSObject {
-    NSString *_identifier;
-    NSString *_replyCharacteristic;
-    NSData *_replyData;
-    CBATTRequest *_request;
-    BOOL _waitingToUpdate;
+    NSString * _identifier;
+    NSString * _replyCharacteristic;
+    NSData * _replyData;
+    CBATTRequest * _request;
+    BOOL  _waitingToUpdate;
 }
 
 @property (nonatomic, copy) NSString *identifier;

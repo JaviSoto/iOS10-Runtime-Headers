@@ -3,7 +3,7 @@
  */
 
 @interface DADiagnosticsNotesPane : PSEditingPane {
-    UITextView *_notesView;
+    UITextView * _notesView;
 }
 
 - (void).cxx_destruct;

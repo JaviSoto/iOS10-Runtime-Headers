@@ -3,11 +3,15 @@
  */
 
 @interface NSTextList : NSObject <NSCoding, NSCopying> {
-    unsigned int _listFlags;
-    void *_listSecondary;
-    NSString *_markerFormat;
-    int _startIndex;
+    unsigned int  _listFlags;
+    void * _listSecondary;
+    NSString * _markerFormat;
+    int  _startIndex;
 }
+
+@property (readonly) unsigned int listOptions;
+@property (readonly, copy) NSString *markerFormat;
+@property int startingItemNumber;
 
 + (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;

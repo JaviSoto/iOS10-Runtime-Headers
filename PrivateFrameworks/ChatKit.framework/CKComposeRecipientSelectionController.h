@@ -3,7 +3,7 @@
  */
 
 @interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate> {
-    id /* block */ _sendBlock;
+    id /* block */  _sendBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +26,6 @@
 - (id)proposedRecipients;
 - (void)recipientSelectionControllerDidChange;
 - (void)reset;
-- (BOOL)searchListShouldUsePopvoers;
 - (id /* block */)sendBlock;
 - (void)setSendBlock:(id /* block */)arg1;
 - (BOOL)shouldAtomizeToConversationName;

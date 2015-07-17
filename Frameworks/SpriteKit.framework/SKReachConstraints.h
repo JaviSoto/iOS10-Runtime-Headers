@@ -3,8 +3,8 @@
  */
 
 @interface SKReachConstraints : NSObject <NSCoding> {
-    float _lowerAngleLimit;
-    float _upperAngleLimit;
+    float  _lowerAngleLimit;
+    float  _upperAngleLimit;
 }
 
 @property (nonatomic) float lowerAngleLimit;

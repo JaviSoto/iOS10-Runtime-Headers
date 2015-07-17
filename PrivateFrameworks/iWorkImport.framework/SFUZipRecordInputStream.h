@@ -3,10 +3,10 @@
  */
 
 @interface SFUZipRecordInputStream : NSObject {
-    const char *mBuffer;
-    long long mBufferEnd;
-    long long mBufferStart;
-    <SFUBufferedInputStream> *mInput;
+    const char * mBuffer;
+    long long  mBufferEnd;
+    long long  mBufferStart;
+    <SFUBufferedInputStream> * mInput;
 }
 
 - (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3;

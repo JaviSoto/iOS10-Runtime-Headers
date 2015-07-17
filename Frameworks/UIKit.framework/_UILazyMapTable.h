@@ -3,16 +3,16 @@
  */
 
 @interface _UILazyMapTable : NSObject {
-    NSMapTable *_keysToClientTables;
-    NSMapTable *_keysToValues;
-    id /* block */ _mappingBlock;
-    NSMapTable *_valuesToKeys;
+    NSMapTable * _keysToClientTables;
+    NSMapTable * _keysToValues;
+    id /* block */  _mappingBlock;
+    NSMapTable * _valuesToKeys;
 }
 
+- (void).cxx_destruct;
 - (id)cachedObjectEnumerable;
 - (id)cachedObjects;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)description;
 - (BOOL)hasCachedObjectForKey:(id)arg1;
 - (id)initWithMappingBlock:(id /* block */)arg1;

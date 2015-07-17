@@ -3,8 +3,8 @@
  */
 
 @interface NEPluginPreferences : NSObject {
-    NSString *_pluginType;
-    struct __SCPreferences { } *_prefs;
+    NSString * _pluginType;
+    struct __SCPreferences { } * _prefs;
 }
 
 @property (readonly) NSString *pluginType;

@@ -3,30 +3,31 @@
  */
 
 @interface PKGroupsController : NSObject <PKPassLibraryDelegate> {
-    BOOL _activePassesOnly;
-    PKCatalog *_catalogBeforeReordering;
-    <PKGroupsControllerDelegate> *_delegate;
-    BOOL _enqueueRemoteUpdates;
-    NSMutableArray *_enqueuedUpdates;
-    NSMutableDictionary *_groupIDsByPassUniqueID;
-    NSMutableArray *_groups;
-    NSMutableDictionary *_groupsByGroupID;
-    NSMutableDictionary *_indicesByGroupID;
-    BOOL _limitedMode;
-    NSArray *_localPasses;
-    PKPassLibrary *_passLibrary;
-    unsigned int _passTypeMask;
-    NSMutableDictionary *_passesByUniqueID;
-    BOOL _reorderingEnabled;
-    BOOL _shouldSeparatePaymentPasses;
-    BOOL _suppressRemoteUpdates;
+    BOOL  _activePassesOnly;
+    PKCatalog * _catalogBeforeReordering;
+    <PKGroupsControllerDelegate> * _delegate;
+    BOOL  _enqueueRemoteUpdates;
+    NSMutableArray * _enqueuedUpdates;
+    unsigned int  _filters;
+    NSMutableDictionary * _groupIDsByPassUniqueID;
+    NSMutableArray * _groups;
+    NSMutableDictionary * _groupsByGroupID;
+    NSMutableDictionary * _indicesByGroupID;
+    BOOL  _limitedMode;
+    NSArray * _localPasses;
+    PKPassLibrary * _passLibrary;
+    unsigned int  _passTypeMask;
+    NSMutableDictionary * _passesByUniqueID;
+    BOOL  _reorderingEnabled;
+    BOOL  _shouldSeparatePaymentPasses;
+    BOOL  _suppressRemoteUpdates;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKGroupsControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=isReorderingEnabled, nonatomic, readonly) BOOL reorderingEnabled;
+@property (nonatomic) BOOL reorderingEnabled;
 @property (nonatomic) BOOL shouldSeparatePaymentPasses;
 @property (readonly) Class superclass;
 
@@ -37,6 +38,7 @@
 - (void)_fixIndicesFrom:(unsigned int)arg1 through:(unsigned int)arg2;
 - (void)_getPassesAndCatalogWithHandler:(id /* block */)arg1;
 - (BOOL)_groupIDIsNew:(id)arg1;
+- (id)_groupsExcludingPayment;
 - (unsigned int)_indexOfGroupID:(id)arg1;
 - (void)_insertGroup:(id)arg1 atIndex:(unsigned int)arg2 notify:(BOOL)arg3;
 - (void)_insertLocalGroupsIntoCatalog:(id)arg1 withPassesByUniqueID:(id)arg2;
@@ -61,8 +63,7 @@
 - (unsigned int)indexOfSeparationGroup;
 - (id)init;
 - (id)initLimited;
-- (id)initWithPassTypeMask:(unsigned int)arg1;
-- (BOOL)isReorderingEnabled;
+- (id)initWithPassTypeMask:(unsigned int)arg1 passFilters:(unsigned int)arg2;
 - (void)loadGroupsSynchronously;
 - (void)loadGroupsWithCompletion:(id /* block */)arg1;
 - (void)moveGroupAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
@@ -71,7 +72,9 @@
 - (void)reloadGroups;
 - (void)reloadGroupsAndNotify:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)reloadGroupsWithCompletion:(id /* block */)arg1;
+- (BOOL)reorderingEnabled;
 - (void)setDelegate:(id)arg1;
+- (void)setReorderingEnabled:(BOOL)arg1;
 - (void)setShouldSeparatePaymentPasses:(BOOL)arg1;
 - (BOOL)shouldSeparatePaymentPasses;
 - (void)suppressRemoteUpdates:(BOOL)arg1;

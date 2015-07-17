@@ -3,7 +3,7 @@
  */
 
 @interface TLFileLoggingController : NSObject {
-    NSObject<OS_dispatch_queue> *_serialLoggingQueue;
+    NSObject<OS_dispatch_queue> * _serialLoggingQueue;
 }
 
 @property (setter=_setSerialLoggingQueue:, nonatomic) NSObject<OS_dispatch_queue> *_serialLoggingQueue;

@@ -3,9 +3,9 @@
  */
 
 @interface SSURLConnectionResponse : NSObject <SSXPCCoding> {
-    NSData *_bodyData;
-    SSMetricsPageEvent *_metricsPageEvent;
-    NSHTTPURLResponse *_urlResponse;
+    NSData * _bodyData;
+    SSMetricsPageEvent * _metricsPageEvent;
+    NSHTTPURLResponse * _urlResponse;
 }
 
 @property (nonatomic, readonly) NSString *MIMEType;

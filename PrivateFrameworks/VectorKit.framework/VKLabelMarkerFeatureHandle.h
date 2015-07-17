@@ -3,14 +3,14 @@
  */
 
 @interface VKLabelMarkerFeatureHandle : NSObject {
-    int _featureIndex;
-    int _featureType;
-    GEOFeatureStyleAttributes *_styleAttributes;
-    int _tileStyle;
-    unsigned int _tileVersion;
-    int _tileX;
-    int _tileY;
-    int _tileZ;
+    int  _featureIndex;
+    int  _featureType;
+    GEOFeatureStyleAttributes * _styleAttributes;
+    int  _tileStyle;
+    unsigned int  _tileVersion;
+    int  _tileX;
+    int  _tileY;
+    int  _tileZ;
 }
 
 - (void)dealloc;

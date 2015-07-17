@@ -3,15 +3,15 @@
  */
 
 @interface MIPArtist : PBCodable <NSCopying> {
-    NSString *_artworkId;
+    NSString * _artworkId;
     struct { 
         unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
-    } _has;
-    NSString *_name;
-    long long _persistentId;
-    NSString *_sortName;
-    long long _storeId;
+    }  _has;
+    NSString * _name;
+    long long  _persistentId;
+    NSString * _sortName;
+    long long  _storeId;
 }
 
 @property (nonatomic, retain) NSString *artworkId;

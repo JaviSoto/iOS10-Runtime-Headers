@@ -11,6 +11,7 @@
 - (float)_row4ControlSegmentWidth;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (float)bottomRowDefaultFontSize;
+- (float)cornerRadiusForKey:(id)arg1;
 - (float)defaultPathWeight;
 - (struct CGSize { float x1; float x2; })defaultVariantGeometrySize;
 - (float)defaultVariantSizeThreshold;
@@ -32,7 +33,9 @@
 - (float)facemarkKeyFontSize;
 - (float)fallbackFontSize;
 - (float)fontSizeAdjustmentForNonAlphanumericKeycaps;
+- (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (float)internationalKeyFontSize;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;
 - (float)keyCornerRadius;
@@ -41,9 +44,11 @@
 - (float)moreKeyFontSize;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
+- (float)predictiveKeyCornerRadius;
 - (float)returnKeySymbolFrameInset;
 - (int)rowLimitForKey:(id)arg1;
 - (struct CGPoint { float x1; float x2; })secondaryShiftKeyOffset;
+- (void)setAllowsPaddles:(BOOL)arg1;
 - (void)setupLayoutSegments;
 - (float)shiftKeyFontSize;
 - (id)shiftKeyImageName;

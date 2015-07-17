@@ -3,18 +3,18 @@
  */
 
 @interface QLPathTree : NSObject {
-    NSMutableDictionary *_directoryChildren;
-    QLPackageChecker *_packageChecker;
-    NSMutableArray *_packageChildren;
-    NSString *_path;
+    NSMutableDictionary * _directoryChildren;
+    QLPackageChecker * _packageChecker;
+    NSMutableArray * _packageChildren;
+    NSString * _path;
 }
 
 @property (readonly, copy) NSString *path;
 
+- (void).cxx_destruct;
 - (void)addPath:(id)arg1;
 - (void)addPathComponents:(id)arg1;
 - (void)addPathInsidePackage:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)initWithPackageChecker:(id)arg1;
 - (id)initWithPath:(id)arg1 isPackage:(BOOL)arg2 packageChecker:(id)arg3;

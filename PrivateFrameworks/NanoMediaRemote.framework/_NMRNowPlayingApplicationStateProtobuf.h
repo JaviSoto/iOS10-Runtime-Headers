@@ -3,13 +3,13 @@
  */
 
 @interface _NMRNowPlayingApplicationStateProtobuf : PBCodable <NSCopying> {
-    NSString *_companionBundleIdentifier;
+    NSString * _companionBundleIdentifier;
     struct { 
         unsigned int playbackState : 1; 
-    } _has;
-    NSString *_localizedDisplayName;
-    unsigned int _playbackState;
-    NSString *_watchBundleIdentifier;
+    }  _has;
+    NSString * _localizedDisplayName;
+    unsigned int  _playbackState;
+    NSString * _watchBundleIdentifier;
 }
 
 @property (nonatomic, retain) NSString *companionBundleIdentifier;

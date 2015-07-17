@@ -3,7 +3,7 @@
  */
 
 @interface ML3ImportPersistentIDGenerator : ML3PersistentIDGenerator {
-    NSMutableDictionary *_pregeneratedIdMappings;
+    NSMutableDictionary * _pregeneratedIdMappings;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface _MusicEntityPlaybackProgressApplierWeakTarget : NSObject {
-    MusicEntityPlaybackProgressApplier *_applier;
+    MusicEntityPlaybackProgressApplier * _applier;
 }
 
 @property (nonatomic) MusicEntityPlaybackProgressApplier *applier;

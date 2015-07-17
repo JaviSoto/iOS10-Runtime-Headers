@@ -3,12 +3,12 @@
  */
 
 @interface UIKeyboardCandidateBarLayout : UICollectionViewLayout {
-    NSMutableArray *_allAttributes;
+    NSMutableArray * _allAttributes;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    NSArray *_edgeDummyCellAttributes;
+    }  _contentSize;
+    NSArray * _edgeDummyCellAttributes;
 }
 
 @property (nonatomic, retain) NSMutableArray *allAttributes;

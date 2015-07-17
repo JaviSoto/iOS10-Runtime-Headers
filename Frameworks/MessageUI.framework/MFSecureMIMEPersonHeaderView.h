@@ -3,13 +3,13 @@
  */
 
 @interface MFSecureMIMEPersonHeaderView : UIView {
-    UIView *_backgroundView;
-    NSArray *_buttons;
-    unsigned int _editing;
-    UILabel *_label;
-    UIView *_secureLabel;
-    UIView *_signedLabel;
-    UIView *_warningLabel;
+    UIView * _backgroundView;
+    NSArray * _buttons;
+    unsigned int  _editing;
+    UILabel * _label;
+    UIView * _secureLabel;
+    UIView * _signedLabel;
+    UIView * _warningLabel;
 }
 
 @property (nonatomic, copy) NSArray *buttons;

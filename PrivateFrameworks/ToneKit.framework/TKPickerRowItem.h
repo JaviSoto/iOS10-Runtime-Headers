@@ -3,7 +3,7 @@
  */
 
 @interface TKPickerRowItem : TKPickerItem {
-    int _row;
+    int  _row;
 }
 
 @property (nonatomic) int row;

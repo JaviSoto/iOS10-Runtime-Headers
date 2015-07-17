@@ -3,15 +3,15 @@
  */
 
 @interface MPUTransportButton : UIButton <MPUTransportButton> {
-    UIColor *_disabledColor;
-    UIColor *_highlightedColor;
-    UIColor *_regularColor;
-    UIColor *_selectedColor;
-    CALayer *_selectionIndicatorLayer;
-    BOOL _shouldInferColorsFromTintColor;
-    BOOL _shouldShowBackgroundForSelectedState;
-    MPUTransportButtonEventHandler *_transportButtonEventHandler;
-    UIImage *_transportButtonImage;
+    UIColor * _disabledColor;
+    UIColor * _highlightedColor;
+    UIColor * _regularColor;
+    UIColor * _selectedColor;
+    CALayer * _selectionIndicatorLayer;
+    BOOL  _shouldInferColorsFromTintColor;
+    BOOL  _shouldShowBackgroundForSelectedState;
+    MPUTransportButtonEventHandler * _transportButtonEventHandler;
+    UIImage * _transportButtonImage;
 }
 
 @property (nonatomic) BOOL adjustsImageWhenHighlighted;

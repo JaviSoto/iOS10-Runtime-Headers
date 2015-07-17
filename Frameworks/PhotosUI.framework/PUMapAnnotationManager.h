@@ -3,14 +3,14 @@
  */
 
 @interface PUMapAnnotationManager : NSObject <PUMapAnnotationQuadtreeDataSource> {
-    NSMutableDictionary *_activeAnnotationAddresses;
-    NSMutableSet *_activeAnnotations;
-    BOOL _alwaysFadeRemoves;
-    NSMutableSet *_animatedRemoves;
+    NSMutableDictionary * _activeAnnotationAddresses;
+    NSMutableSet * _activeAnnotations;
+    BOOL  _alwaysFadeRemoves;
+    NSMutableSet * _animatedRemoves;
     struct CGSize { 
         float width; 
         float height; 
-    } _annotationSize;
+    }  _annotationSize;
     struct { 
         struct { 
             double latitude; 
@@ -20,21 +20,21 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    } _currentCoordRegion;
+    }  _currentCoordRegion;
     struct CGSize { 
         float width; 
         float height; 
-    } _currentMapSize;
-    unsigned int _currentTreeLevel;
-    <PUMapAnnotationManagerDataSource> *_dataSource;
-    NSMutableArray *_debugOverlays;
-    NSMutableSet *_managedAnnotations;
-    MKMapView *_mapView;
-    NSMutableSet *_pendingRemoves;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    PUMapAnnotationQuadtree *_quadtree;
-    BOOL _showDebugOverlays;
-    int _updateId;
+    }  _currentMapSize;
+    unsigned int  _currentTreeLevel;
+    <PUMapAnnotationManagerDataSource> * _dataSource;
+    NSMutableArray * _debugOverlays;
+    NSMutableSet * _managedAnnotations;
+    MKMapView * _mapView;
+    NSMutableSet * _pendingRemoves;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    PUMapAnnotationQuadtree * _quadtree;
+    BOOL  _showDebugOverlays;
+    int  _updateId;
 }
 
 @property (nonatomic) BOOL alwaysFadeRemoves;

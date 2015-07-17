@@ -3,23 +3,25 @@
  */
 
 @interface NPKGizmoDatabase : NSObject {
-    struct sqlite3 { } *_database;
-    NSObject<OS_dispatch_queue> *_dbQueue;
-    struct sqlite3_stmt { } *_deleteStatement;
-    int _externallyChangedBroadcasts;
-    struct sqlite3_stmt { } *_insertDiffStatement;
-    struct sqlite3_stmt { } *_insertStatement;
-    BOOL _isInTransaction;
-    NSData *_libraryHash;
-    NSMutableDictionary *_manifest;
-    BOOL _needsMoreLocalNotifyDatabaseChanged;
-    BOOL _observingFirstUnlockNotification;
-    BOOL _passDBIsAvailable;
-    NSMutableArray *_passDescriptions;
-    struct sqlite3_stmt { } *_selectPassDataStatement;
-    struct sqlite3_stmt { } *_selectPassDiffStatement;
-    BOOL _sendingLocalNotifyDatabaseChanged;
-    struct sqlite3_stmt { } *_updateDeletePendingStatment;
+    struct sqlite3 { } * _database;
+    NSObject<OS_dispatch_queue> * _dbQueue;
+    struct sqlite3_stmt { } * _deleteStatement;
+    int  _externallyChangedBroadcasts;
+    struct sqlite3_stmt { } * _insertDiffStatement;
+    struct sqlite3_stmt { } * _insertStatement;
+    BOOL  _isInTransaction;
+    NSData * _libraryHash;
+    NSMutableDictionary * _manifest;
+    BOOL  _needsMoreLocalNotifyDatabaseChanged;
+    BOOL  _observingFirstUnlockNotification;
+    BOOL  _passDBIsAvailable;
+    NSMutableArray * _passDescriptions;
+    struct sqlite3_stmt { } * _selectPassDataStatement;
+    struct sqlite3_stmt { } * _selectPassDiffStatement;
+    struct sqlite3_stmt { } * _selectPreferredAIDStatement;
+    BOOL  _sendingLocalNotifyDatabaseChanged;
+    struct sqlite3_stmt { } * _updateDeletePendingStatment;
+    struct sqlite3_stmt { } * _updatePreferredAIDStatement;
 }
 
 @property (readonly) struct sqlite3 { }*database;
@@ -32,22 +34,27 @@
 @property (readonly) NSArray *passDescriptions;
 @property (readonly) struct sqlite3_stmt { }*selectPassDataStatement;
 @property (readonly) struct sqlite3_stmt { }*selectPassDiffStatement;
+@property (readonly) struct sqlite3_stmt { }*selectPreferredAIDStatement;
 @property (readonly) struct sqlite3_stmt { }*updateDeletePendingStatement;
+@property (readonly) struct sqlite3_stmt { }*updatePreferredAIDStatement;
 
 + (int)maxDatabaseVersion;
 + (id)sharedDatabase;
 
 - (void).cxx_destruct;
 - (int)_databaseVersionExists:(BOOL*)arg1 valid:(BOOL*)arg2;
+- (id)_decodeObjectOfClass:(Class)arg1 fromStatment:(struct sqlite3_stmt { }*)arg2 column:(int)arg3;
 - (id)_diffForUniqueIDLocked:(id)arg1;
+- (void)_enumerateAllPassesForMigration:(id /* block */)arg1;
 - (BOOL)_executeSQL:(id)arg1;
 - (void)_executeSQLQuery:(id)arg1 processResultsBlock:(id /* block */)arg2;
+- (id)_getPreferredPaymentApplicationForPaymentPass:(id)arg1 aid:(id*)arg2;
 - (void)_handleDatabaseChangedExternally;
 - (void)_handleFirstUnlock;
 - (void)_insertDatabaseVersionRow:(int)arg1;
 - (id)_libraryHashLocked;
 - (void)_loadInitialManifestLocked;
-- (void)_migrateDatabase:(id /* block */)arg1;
+- (BOOL)_migrateDatabase:(id /* block */)arg1;
 - (void)_notifyDatabaseChangedExternally;
 - (void)_notifyDatabaseChangedWithNoop:(BOOL)arg1;
 - (void)_notifyDatabaseChangedWithNoop:(BOOL)arg1 firstUnlock:(BOOL)arg2;
@@ -57,12 +64,17 @@
 - (void)_performTransactionWithBlock:(id /* block */)arg1;
 - (BOOL)_removePassWithUniqueIDLocked:(id)arg1;
 - (void)_saveDiffLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
-- (void)_savePassLocked:(id)arg1;
+- (void)_savePassLocked:(id)arg1 wasUpdate:(BOOL*)arg2;
 - (void)_updateDatabaseVersionRow:(int)arg1;
+- (BOOL)_updateDeviceAndPreferredPaymentApplications:(id)arg1;
+- (BOOL)_updateIngestedDates:(id)arg1;
+- (BOOL)_updateNFCPayloadDuringMigration:(id)arg1;
+- (BOOL)_updatePrivateLabelAndCobrandDuringMigration:(id)arg1;
 - (struct sqlite3 { }*)database;
 - (void)dealloc;
 - (struct sqlite3_stmt { }*)deleteStatement;
 - (id)diffForUniqueID:(id)arg1;
+- (void)enumerateAllPassesAndDescriptionsWithBlock:(id /* block */)arg1;
 - (void)enumerateAllPassesWithBlock:(id /* block */)arg1;
 - (id)hashForUniqueID:(id)arg1;
 - (id)init;
@@ -70,17 +82,21 @@
 - (struct sqlite3_stmt { }*)insertStatement;
 - (id)libraryHash;
 - (id)manifestHashes;
-- (id)nukeAndRebuildDatabaseWithPasses:(id)arg1;
 - (BOOL)passDBIsAvailable;
 - (id)passDescriptions;
 - (id)passForUniqueID:(id)arg1;
+- (id)preferredPaymentApplicationForPaymentPass:(id)arg1;
+- (id)rebuildDatabaseWithPasses:(id)arg1;
 - (id)removePassWithUniqueID:(id)arg1;
 - (void)saveDiff:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (id)savePass:(id)arg1;
 - (struct sqlite3_stmt { }*)selectPassDataStatement;
 - (struct sqlite3_stmt { }*)selectPassDiffStatement;
+- (struct sqlite3_stmt { }*)selectPreferredAIDStatement;
 - (void)setDeletePending:(BOOL)arg1 forUniqueID:(id)arg2;
 - (void)setPassDBIsAvailable:(BOOL)arg1;
+- (void)setPreferredPaymentApplication:(id)arg1 forPaymentPass:(id)arg2;
 - (struct sqlite3_stmt { }*)updateDeletePendingStatement;
+- (struct sqlite3_stmt { }*)updatePreferredAIDStatement;
 
 @end

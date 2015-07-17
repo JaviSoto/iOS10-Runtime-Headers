@@ -3,14 +3,14 @@
  */
 
 @interface PKPassFieldTemplate : NSObject {
-    NSNumber *_boxedSuppressesEmptyLabel;
-    NSNumber *_boxedSuppressesLabel;
-    NSNumber *_boxedTextAlignment;
-    NSNumber *_boxedValueCanWrap;
-    NSNumber *_boxedVerticalPadding;
-    UIFont *_labelFont;
-    UIFont *_valueFont;
-    Class _viewSubclass;
+    NSNumber * _boxedSuppressesEmptyLabel;
+    NSNumber * _boxedSuppressesLabel;
+    NSNumber * _boxedTextAlignment;
+    NSNumber * _boxedValueCanWrap;
+    NSNumber * _boxedVerticalPadding;
+    UIFont * _labelFont;
+    UIFont * _valueFont;
+    Class  _viewSubclass;
 }
 
 @property (nonatomic, retain) NSNumber *boxedSuppressesEmptyLabel;

@@ -3,10 +3,10 @@
  */
 
 @interface _CertInfoGradientLabel : UIView {
-    UIImage *_checkImage;
-    UIFont *_font;
-    struct CGColor { } *_patternColor;
-    NSString *_text;
+    UIImage * _checkImage;
+    UIFont * _font;
+    struct CGColor { } * _patternColor;
+    NSString * _text;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface CKDDecryptRecordsOperationInfo : CKDatabaseOperationInfo {
-    NSArray *_recordsToDecrypt;
-    NSDictionary *_webSharingIdentityDataByRecordID;
+    NSArray * _recordsToDecrypt;
+    NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
 @property (nonatomic, retain) NSArray *recordsToDecrypt;

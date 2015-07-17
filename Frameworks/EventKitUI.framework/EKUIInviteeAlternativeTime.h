@@ -3,9 +3,9 @@
  */
 
 @interface EKUIInviteeAlternativeTime : NSObject {
-    NSArray *_conflictedParticipants;
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSArray * _conflictedParticipants;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, retain) NSArray *conflictedParticipants;

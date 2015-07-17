@@ -3,20 +3,20 @@
  */
 
 @interface FigCaptureSourceConfiguration : NSObject <FigXPCCoding, NSCopying> {
-    BOOL _applyMaxIntegrationTimeOverrideWhenAvailable;
-    BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
-    NSDictionary *_faceDetectionConfiguration;
-    int _imageControlMode;
-    FigCaptureSourceFormat *_requiredFormat;
-    float _requiredMaxFrameRate;
-    float _requiredMinFrameRate;
-    BOOL _sensorHDREnabled;
-    struct OpaqueFigCaptureSource { } *_source;
-    NSDictionary *_sourceAttributes;
-    NSString *_sourceID;
-    int _sourceType;
-    float _videoZoomFactor;
-    float _videoZoomRampAcceleration;
+    BOOL  _applyMaxIntegrationTimeOverrideWhenAvailable;
+    BOOL  _automaticallyEnablesLowLightBoostWhenAvailable;
+    NSDictionary * _faceDetectionConfiguration;
+    int  _imageControlMode;
+    FigCaptureSourceFormat * _requiredFormat;
+    float  _requiredMaxFrameRate;
+    float  _requiredMinFrameRate;
+    BOOL  _sensorHDREnabled;
+    struct OpaqueFigCaptureSource { } * _source;
+    NSDictionary * _sourceAttributes;
+    NSString * _sourceID;
+    int  _sourceType;
+    float  _videoZoomFactor;
+    float  _videoZoomRampAcceleration;
 }
 
 @property (nonatomic) BOOL applyMaxIntegrationTimeOverrideWhenAvailable;

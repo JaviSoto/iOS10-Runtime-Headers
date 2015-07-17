@@ -8,8 +8,8 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIActivityIndicatorView *_indicatorView;
+    }  _contentInset;
+    SKUIActivityIndicatorView * _indicatorView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

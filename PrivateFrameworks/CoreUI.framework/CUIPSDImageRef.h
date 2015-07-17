@@ -3,11 +3,11 @@
  */
 
 @interface CUIPSDImageRef : NSObject {
-    int _file;
-    BOOL _parsedForLayers;
-    NSString *_path;
-    struct CPSDFile { int (**x1)(); struct CPSDFile {} *x2; char *x3; unsigned int x4; unsigned int x5; unsigned char x6; unsigned int x7; unsigned int x8; unsigned short x9; unsigned int x10; unsigned short x11; unsigned short x12; char *x13; struct CPSDChannelLengthInfo {} *x14; char **x15; unsigned short x16; void *x17; unsigned char x18; struct CPSDHeader { int (**x_19_1_1)(); struct CPSDFile {} *x_19_1_2; unsigned int x_19_1_3; unsigned short x_19_1_4; unsigned char x_19_1_5[6]; unsigned short x_19_1_6; unsigned int x_19_1_7; unsigned int x_19_1_8; unsigned short x_19_1_9; unsigned short x_19_1_10; } x19; struct CPSDColorModeData { int (**x_20_1_1)(); struct CPSDFile {} *x_20_1_2; unsigned int x_20_1_3; char *x_20_1_4; } x20; struct CPSDImageResources { int (**x_21_1_1)(); struct CPSDFile {} *x_21_1_2; unsigned int x_21_1_3; struct CPSDImageResourceBlock {} *x_21_1_4; } x21; struct CPSDLayerAndMaskInfo { int (**x_22_1_1)(); struct CPSDFile {} *x_22_1_2; unsigned int x_22_1_3; struct CPSDLayerInfo { int (**x_4_2_1)(); struct CPSDFile {} *x_4_2_2; unsigned int x_4_2_3; unsigned short x_4_2_4; struct vector<CPSDLayerRecord, std::__1::allocator<CPSDLayerRecord> > { struct CPSDLayerRecord {} *x_5_3_1; struct CPSDLayerRecord {} *x_5_3_2; struct __compressed_pair<CPSDLayerRecord *, std::__1::allocator<CPSDLayerRecord> > { struct CPSDLayerRecord {} *x_3_4_1; } x_5_3_3; } x_4_2_5; struct vector<CPSDLayerChannelGroup *, std::__1::allocator<CPSDLayerChannelGroup *> > { struct CPSDLayerChannelGroup {} **x_6_3_1; struct CPSDLayerChannelGroup {} **x_6_3_2; struct __compressed_pair<CPSDLayerChannelGroup **, std::__1::allocator<CPSDLayerChannelGroup *> > { struct CPSDLayerChannelGroup {} **x_3_4_1; } x_6_3_3; } x_4_2_6; } x_22_1_4; struct CPSDGlobalLayerMaskInfo { int (**x_5_2_1)(); struct CPSDFile {} *x_5_2_2; unsigned int x_5_2_3; unsigned short x_5_2_4; unsigned short x_5_2_5[4]; unsigned short x_5_2_6; unsigned char x_5_2_7; unsigned int x_5_2_8; } x_22_1_5; struct CPSDAdditionalLayerInfo { int (**x_6_2_1)(); struct CPSDFile {} *x_6_2_2; unsigned int x_6_2_3; struct CPSDAdditionalLayerInfoItem {} *x_6_2_4; } x_22_1_6; } x22; unsigned char x23; } *_psd;
-    _CUIPSDSublayerInfo *_rootLayers;
+    int  _file;
+    BOOL  _parsedForLayers;
+    NSString * _path;
+    struct CPSDFile { int (**x1)(); struct CPSDFile {} *x2; char *x3; unsigned int x4; unsigned int x5; unsigned char x6; unsigned int x7; unsigned int x8; unsigned short x9; unsigned int x10; unsigned short x11; unsigned short x12; char *x13; struct CPSDChannelLengthInfo {} *x14; char **x15; unsigned short x16; void *x17; unsigned char x18; struct CPSDHeader { int (**x_19_1_1)(); struct CPSDFile {} *x_19_1_2; unsigned int x_19_1_3; unsigned short x_19_1_4; unsigned char x_19_1_5[6]; unsigned short x_19_1_6; unsigned int x_19_1_7; unsigned int x_19_1_8; unsigned short x_19_1_9; unsigned short x_19_1_10; } x19; struct CPSDColorModeData { int (**x_20_1_1)(); struct CPSDFile {} *x_20_1_2; unsigned int x_20_1_3; char *x_20_1_4; } x20; struct CPSDImageResources { int (**x_21_1_1)(); struct CPSDFile {} *x_21_1_2; unsigned int x_21_1_3; struct CPSDImageResourceBlock {} *x_21_1_4; } x21; struct CPSDLayerAndMaskInfo { int (**x_22_1_1)(); struct CPSDFile {} *x_22_1_2; unsigned int x_22_1_3; struct CPSDLayerInfo { int (**x_4_2_1)(); struct CPSDFile {} *x_4_2_2; unsigned int x_4_2_3; unsigned short x_4_2_4; struct vector<CPSDLayerRecord, std::__1::allocator<CPSDLayerRecord> > { struct CPSDLayerRecord {} *x_5_3_1; struct CPSDLayerRecord {} *x_5_3_2; struct __compressed_pair<CPSDLayerRecord *, std::__1::allocator<CPSDLayerRecord> > { struct CPSDLayerRecord {} *x_3_4_1; } x_5_3_3; } x_4_2_5; struct vector<CPSDLayerChannelGroup *, std::__1::allocator<CPSDLayerChannelGroup *> > { struct CPSDLayerChannelGroup {} **x_6_3_1; struct CPSDLayerChannelGroup {} **x_6_3_2; struct __compressed_pair<CPSDLayerChannelGroup **, std::__1::allocator<CPSDLayerChannelGroup *> > { struct CPSDLayerChannelGroup {} **x_3_4_1; } x_6_3_3; } x_4_2_6; } x_22_1_4; struct CPSDGlobalLayerMaskInfo { int (**x_5_2_1)(); struct CPSDFile {} *x_5_2_2; unsigned int x_5_2_3; unsigned short x_5_2_4; unsigned short x_5_2_5[4]; unsigned short x_5_2_6; unsigned char x_5_2_7; unsigned int x_5_2_8; } x_22_1_5; struct CPSDAdditionalLayerInfo { int (**x_6_2_1)(); struct CPSDFile {} *x_6_2_2; unsigned int x_6_2_3; struct CPSDAdditionalLayerInfoItem {} *x_6_2_4; } x_22_1_6; } x22; unsigned char x23; } * _psd;
+    _CUIPSDSublayerInfo * _rootLayers;
 }
 
 + (BOOL)isValidPSDResourceAtPath:(id)arg1;
@@ -56,6 +56,7 @@
 - (struct CGImage { }*)createCGImageAtLayer:(unsigned int)arg1;
 - (struct CGImage { }*)createCompositeCGImage;
 - (void)dealloc;
+- (void)enumerateLayersUsingBlock:(id /* block */)arg1;
 - (id)fillSampleAtLayer:(unsigned int)arg1;
 - (void)finalize;
 - (id)gradientAtLayer:(unsigned int)arg1;
@@ -67,6 +68,7 @@
 - (id)imageFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2 isEmptyImage:(BOOL*)arg3;
 - (struct _PSDImageInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; int x6; })imageInfo;
 - (id)initWithPath:(id)arg1;
+- (id)layerEnumerator;
 - (id)layerNames;
 - (id)layerRefAtIndex:(unsigned int)arg1;
 - (BOOL)loadPSDFileWithLayers:(BOOL)arg1;

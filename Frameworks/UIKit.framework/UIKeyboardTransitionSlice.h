@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardTransitionSlice : NSObject {
-    BOOL _delayCrossfade;
+    BOOL  _delayCrossfade;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,10 +13,10 @@
             float width; 
             float height; 
         } size; 
-    } _endRect;
-    UIKBCacheToken *_endToken;
-    int _normalization;
-    BOOL _shiftContents;
+    }  _endRect;
+    UIKBCacheToken * _endToken;
+    int  _normalization;
+    BOOL  _shiftContents;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,8 +26,8 @@
             float width; 
             float height; 
         } size; 
-    } _startRect;
-    UIKBCacheToken *_startToken;
+    }  _startRect;
+    UIKBCacheToken * _startToken;
 }
 
 @property BOOL delayCrossfade;

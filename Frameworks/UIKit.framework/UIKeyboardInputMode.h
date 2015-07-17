@@ -3,13 +3,13 @@
  */
 
 @interface UIKeyboardInputMode : UITextInputMode <NSCopying> {
-    NSString *hardwareLayout;
-    NSString *identifier;
-    BOOL isDisplayed;
-    NSString *languageWithRegion;
-    NSString *normalizedIdentifier;
-    NSString *primaryLanguage;
-    NSString *softwareLayout;
+    NSString * hardwareLayout;
+    NSString * identifier;
+    BOOL  isDisplayed;
+    NSString * languageWithRegion;
+    NSString * normalizedIdentifier;
+    NSString * primaryLanguage;
+    NSString * softwareLayout;
 }
 
 @property (nonatomic, readonly) NSBundle *containingBundle;

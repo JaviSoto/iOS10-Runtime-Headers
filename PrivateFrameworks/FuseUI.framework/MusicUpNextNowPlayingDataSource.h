@@ -3,10 +3,10 @@
  */
 
 @interface MusicUpNextNowPlayingDataSource : MusicUpNextCompositeDataSource {
-    <MusicUpNextCompositeDataSourceDelegate> *_delegate;
-    BOOL _hidesViews;
-    MusicEntityViewHorizontalLockupContentDescriptor *_horizontalLockupContentDescriptor;
-    MPUAVPlayer *_player;
+    <MusicUpNextCompositeDataSourceDelegate> * _delegate;
+    BOOL  _hidesViews;
+    MusicEntityViewHorizontalLockupContentDescriptor * _horizontalLockupContentDescriptor;
+    MPUAVPlayer * _player;
 }
 
 @property (nonatomic) BOOL hidesViews;

@@ -3,10 +3,10 @@
  */
 
 @interface MPAbstractNetworkArtworkDataSource : NSObject <MPArtworkDataSource, NSURLSessionDataDelegate> {
-    NSURLSession *_URLSession;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSCache *_artworkRepresentationCache;
-    NSMapTable *_catalogTaskMap;
+    NSURLSession * _URLSession;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSCache * _artworkRepresentationCache;
+    NSMapTable * _catalogTaskMap;
 }
 
 @property (nonatomic, retain) NSURLSession *URLSession;
@@ -26,14 +26,12 @@
 - (id)_existingRepresentationFromURLCacheForArtworkCatalog:(id)arg1 immediateImageDecompressionAllowed:(BOOL)arg2;
 - (id)_existingRepresentativeObjectForArtworkCatalog:(id)arg1 handler:(id /* block */)arg2;
 - (BOOL)_isRepresentationSize:(struct CGSize { float x1; float x2; })arg1 validForCatalog:(id)arg2;
-- (void)_updateConfigurationForCellularDataRestriction:(id)arg1;
 - (id)accessQueue;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
 - (id)artworkRepresentationCache;
 - (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
 - (id)catalogTaskMap;
-- (void)dealloc;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;

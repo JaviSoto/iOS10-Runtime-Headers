@@ -3,13 +3,13 @@
  */
 
 @interface SKButtonNode : SKLabelNode {
-    NSObject<SKButtonNodeDelegate> *_delegate;
-    SKAction *_downAction;
-    id /* block */ _downBlock;
-    int _touches;
-    SKAction *_upAction;
-    id /* block */ _upBlock;
-    id /* block */ _upInsideBlock;
+    NSObject<SKButtonNodeDelegate> * _delegate;
+    SKAction * _downAction;
+    id /* block */  _downBlock;
+    int  _touches;
+    SKAction * _upAction;
+    id /* block */  _upBlock;
+    id /* block */  _upInsideBlock;
 }
 
 @property (nonatomic) NSObject<SKButtonNodeDelegate> *delegate;

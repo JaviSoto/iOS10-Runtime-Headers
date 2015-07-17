@@ -3,10 +3,10 @@
  */
 
 @interface MPUSystemBuyButtonConfiguration : NSObject {
-    float _downloadProgress;
-    MPStoreItemOffer *_offer;
-    unsigned int _progressType;
-    BOOL _visible;
+    float  _downloadProgress;
+    MPStoreItemOffer * _offer;
+    unsigned int  _progressType;
+    BOOL  _visible;
 }
 
 @property (nonatomic) float downloadProgress;

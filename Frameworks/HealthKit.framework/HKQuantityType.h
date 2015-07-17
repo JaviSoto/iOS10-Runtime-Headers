@@ -3,10 +3,10 @@
  */
 
 @interface HKQuantityType : HKSampleType {
-    int _aggregationStyle;
-    HKUnit *_canonicalUnit;
-    long _canonicalUnitToken;
-    NSString *_unitString;
+    int  _aggregationStyle;
+    HKUnit * _canonicalUnit;
+    long  _canonicalUnitToken;
+    NSString * _unitString;
 }
 
 @property (readonly) int aggregationStyle;

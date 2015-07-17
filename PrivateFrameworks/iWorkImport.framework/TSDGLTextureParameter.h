@@ -3,10 +3,10 @@
  */
 
 @interface TSDGLTextureParameter : NSObject {
-    float *_floatData;
-    int *_intData;
-    unsigned int _paramCount;
-    unsigned int _pname;
+    float * _floatData;
+    int * _intData;
+    unsigned int  _paramCount;
+    unsigned int  _pname;
 }
 
 + (id)stringWithCurrentTextureParameters;

@@ -3,11 +3,11 @@
  */
 
 @interface BLTPBProtobuf : IDSProtobuf {
-    BOOL _hasSequenceNumber;
-    IDSProtobuf *_idsProtobuf;
-    BOOL _isInitialSequenceNumber;
-    PBCodable *_protobuf;
-    unsigned long long _sequenceNumber;
+    BOOL  _hasSequenceNumber;
+    IDSProtobuf * _idsProtobuf;
+    BOOL  _isInitialSequenceNumber;
+    PBCodable * _protobuf;
+    unsigned long long  _sequenceNumber;
 }
 
 @property (nonatomic) BOOL hasSequenceNumber;

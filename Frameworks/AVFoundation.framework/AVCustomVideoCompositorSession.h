@@ -3,20 +3,21 @@
  */
 
 @interface AVCustomVideoCompositorSession : NSObject {
-    <AVVideoCompositing> *_clientCustomCompositor;
-    NSObject<OS_dispatch_queue> *_clientCustomCompositorQ;
-    NSError *_clientError;
-    NSObject<OS_dispatch_queue> *_clientErrorQ;
-    NSDictionary *_clientRequiredPixelBufferAttributes;
-    struct OpaqueFigVideoCompositor { } *_figCustomCompositor;
-    NSObject<OS_dispatch_queue> *_finishedRequestQ;
-    BOOL _hasRegisteredFigCustomCompositorCallbacks;
-    AVVideoCompositionRenderContext *_renderContext;
-    NSObject<OS_dispatch_queue> *_renderContextQ;
-    AVVideoComposition *_videoComposition;
-    BOOL _videoCompositionDidChange;
-    NSObject<OS_dispatch_queue> *_videoCompositionQ;
-    AVWeakReference *_weakSelf;
+    void * _callbackContextToken;
+    <AVVideoCompositing> * _clientCustomCompositor;
+    NSObject<OS_dispatch_queue> * _clientCustomCompositorQ;
+    NSError * _clientError;
+    NSObject<OS_dispatch_queue> * _clientErrorQ;
+    NSDictionary * _clientRequiredPixelBufferAttributes;
+    struct OpaqueFigVideoCompositor { } * _figCustomCompositor;
+    NSObject<OS_dispatch_queue> * _finishedRequestQ;
+    BOOL  _hasRegisteredFigCustomCompositorCallbacks;
+    AVVideoCompositionRenderContext * _renderContext;
+    NSObject<OS_dispatch_queue> * _renderContextQ;
+    AVVideoComposition * _videoComposition;
+    BOOL  _videoCompositionDidChange;
+    NSObject<OS_dispatch_queue> * _videoCompositionQ;
+    AVWeakReference * _weakSelf;
 }
 
 + (id)sessionWithVideoComposition:(id)arg1 recyclingSession:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface _NSXPCConnectionExportInfo : NSObject {
-    long long _exportCount;
-    NSXPCInterface *_exportedInterface;
-    id _exportedObject;
+    long long  _exportCount;
+    NSXPCInterface * _exportedInterface;
+    id  _exportedObject;
 }
 
 @property long long exportCount;

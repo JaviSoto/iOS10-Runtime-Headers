@@ -3,8 +3,8 @@
  */
 
 @interface _MFSecureMIMEPersonHeaderLabel : UIView {
-    UIImageView *_imageView;
-    UILabel *_label;
+    UIImageView * _imageView;
+    UILabel * _label;
 }
 
 @property (nonatomic, copy) NSString *text;

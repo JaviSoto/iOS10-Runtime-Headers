@@ -3,12 +3,12 @@
  */
 
 @interface SBUIPasscodeLockViewSIMLockKeypad : SBUIPasscodeLockViewLongNumericKeypad {
-    UIView *_entryFieldFiller;
-    BOOL _isShowingStatus;
-    UIView *_statusSpringView;
-    UIView *_statusSpringViewParent;
-    UILabel *_statusSubtitleView;
-    float _targetEntryFieldFillerAlpha;
+    UIView * _entryFieldFiller;
+    BOOL  _isShowingStatus;
+    UIView * _statusSpringView;
+    UIView * _statusSpringViewParent;
+    UILabel * _statusSubtitleView;
+    float  _targetEntryFieldFillerAlpha;
 }
 
 @property (nonatomic, copy) NSString *statusSubtitle;

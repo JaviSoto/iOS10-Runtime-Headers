@@ -3,15 +3,15 @@
  */
 
 @interface MFPowerController : NSObject <MFDiagnosticsGenerator> {
-    unsigned int _appState;
-    CDSession *_duetSession;
-    NSCountedSet *_identifiers;
-    int _pluggedIn;
-    unsigned int _pmNotifier;
-    struct IONotificationPort { } *_pmPort;
-    NSObject<OS_dispatch_queue> *_powerQueue;
-    int _powerToken;
-    NSObject<OS_dispatch_queue> *_queue;
+    unsigned int  _appState;
+    CDSession * _duetSession;
+    NSCountedSet * _identifiers;
+    int  _pluggedIn;
+    unsigned int  _pmNotifier;
+    struct IONotificationPort { } * _pmPort;
+    NSObject<OS_dispatch_queue> * _powerQueue;
+    int  _powerToken;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 - (void)_deleteDuetAttributesForAccountWithUniqueId:(id)arg1;
 - (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(BOOL)arg2;
 - (void)_initDuet;
+- (void)_lowPowerModeChangedNotification:(id)arg1;
 - (void)_releaseAssertion_nts;
 - (void)_retainAssertion_nts;
 - (void)_setPluggedIn:(unsigned int)arg1;
@@ -36,10 +37,12 @@
 - (void)dealloc;
 - (id)duetIdentifier;
 - (id)init;
+- (BOOL)isBatterySaverModeEnabled;
 - (BOOL)isPluggedIn;
 - (void)recordDuetEventForAccount:(id)arg1 event:(id)arg2;
 - (void)releaseAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1 withAccount:(id)arg2;
+- (void)startListeningForBatterySaverNotifications;
 
 @end

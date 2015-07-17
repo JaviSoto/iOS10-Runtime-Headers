@@ -3,16 +3,16 @@
  */
 
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
-    BOOL _allowsMultipleSelection;
-    NSArray *_cachedItems;
-    float _fontSize;
-    NSArray *_groupsAndOptions;
-    float _maximumTextWidth;
-    UIWebSelectPopover *_popover;
-    DOMHTMLSelectElement *_selectionNode;
-    unsigned int _singleSelectionIndex;
-    unsigned int _singleSelectionSection;
-    int _textAlignment;
+    BOOL  _allowsMultipleSelection;
+    NSArray * _cachedItems;
+    float  _fontSize;
+    NSArray * _groupsAndOptions;
+    float  _maximumTextWidth;
+    UIWebSelectPopover * _popover;
+    DOMHTMLSelectElement * _selectionNode;
+    unsigned int  _singleSelectionIndex;
+    unsigned int  _singleSelectionSection;
+    int  _textAlignment;
 }
 
 @property (nonatomic, retain) NSArray *_cachedItems;
@@ -27,6 +27,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;

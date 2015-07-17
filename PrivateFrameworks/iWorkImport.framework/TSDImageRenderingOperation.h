@@ -3,8 +3,8 @@
  */
 
 @interface TSDImageRenderingOperation : TSDSwatchRenderingOperation {
-    TSDImageInfo *mImageInfo;
-    BOOL mShouldClipVertically;
+    TSDImageInfo * mImageInfo;
+    BOOL  mShouldClipVertically;
 }
 
 @property (retain) TSDImageInfo *imageInfo;

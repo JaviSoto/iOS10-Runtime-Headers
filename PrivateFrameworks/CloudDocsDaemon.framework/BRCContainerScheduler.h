@@ -3,22 +3,24 @@
  */
 
 @interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCLocalContainerDelegate> {
-    BRCContainerMetadataSyncPersistedState *_containerMetadataPersistedState;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_containerMetadataSyncOperation;
-    unsigned int _containerMetadataSyncState;
-    BRCDeadlineToken *_containerMetadataSyncToken;
-    NSString *_environmentName;
-    NSObject<OS_dispatch_group> *_initialSyncDownGroup;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_periodicSyncOperation;
-    APSConnection *_pushConnection;
-    NSObject<OS_dispatch_queue> *_pushQueue;
-    NSObject<OS_dispatch_source> *_pushSource;
-    BRCAccountSession *_session;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_sharedDatabaseSyncOperation;
-    BRCDeadlineToken *_sharedDatabaseSyncToken;
-    NSObject<OS_dispatch_group> *_syncGroup;
-    BRCDeadlineScheduler *_syncScheduler;
-    BRCSyncBudgetThrottle *_syncUpBudget;
+    BRCContainerMetadataSyncPersistedState * _containerMetadataPersistedState;
+    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _containerMetadataSyncOperation;
+    unsigned int  _containerMetadataSyncState;
+    BRCDeadlineToken * _containerMetadataSyncToken;
+    NSString * _environmentName;
+    NSObject<OS_dispatch_group> * _initialSyncDownGroup;
+    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _periodicSyncOperation;
+    APSConnection * _pushConnection;
+    NSObject<OS_dispatch_queue> * _pushQueue;
+    NSObject<OS_dispatch_source> * _pushSource;
+    NSData * _pushToken;
+    BRCAccountSession * _session;
+    unsigned int  _sharedDBSyncState;
+    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _sharedDatabaseSyncOperation;
+    BRCDeadlineToken * _sharedDatabaseSyncToken;
+    NSObject<OS_dispatch_group> * _syncGroup;
+    BRCDeadlineScheduler * _syncScheduler;
+    BRCSyncBudgetThrottle * _syncUpBudget;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -47,7 +49,6 @@
 - (void)containerDidBecomeForeground:(id)arg1;
 - (void)didChangeSyncStatusForContainerMetadataForContainer:(id)arg1;
 - (void)didInitialSyncDownForContainer:(id)arg1;
-- (void)didSyncDownSharedDatabase;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
 - (id)initialSyncDownGroup;

@@ -3,31 +3,31 @@
  */
 
 @interface UIPDFTextRangeWidget : NSObject <UIPDFSelectionWidget> {
-    CALayer *_endBar;
-    CALayer *_endHandle;
-    unsigned int _endIndex;
-    long _endRectangle;
-    bool _endRight;
-    CALayer *_endSelectionGrabber;
-    float _endX;
-    CALayer *_fixedSelectionGrabber;
-    struct CGColor { } *_grabberColor;
-    float _handleHeight;
-    float _handleWidth;
+    CALayer * _endBar;
+    CALayer * _endHandle;
+    unsigned int  _endIndex;
+    long  _endRectangle;
+    bool  _endRight;
+    CALayer * _endSelectionGrabber;
+    float  _endX;
+    CALayer * _fixedSelectionGrabber;
+    struct CGColor { } * _grabberColor;
+    float  _handleHeight;
+    float  _handleWidth;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialSelectionPointOnPage;
-    float _offsetX;
-    float _offsetY;
-    UIPDFPageView *_pageView;
-    CALayer *_startBar;
-    CALayer *_startHandle;
-    unsigned int _startIndex;
-    bool _startLeft;
-    long _startRectangle;
-    CALayer *_startSelectionGrabber;
-    float _startX;
+    }  _initialSelectionPointOnPage;
+    float  _offsetX;
+    float  _offsetY;
+    UIPDFPageView * _pageView;
+    CALayer * _startBar;
+    CALayer * _startHandle;
+    unsigned int  _startIndex;
+    bool  _startLeft;
+    long  _startRectangle;
+    CALayer * _startSelectionGrabber;
+    float  _startX;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentSelectionPointOnPage;

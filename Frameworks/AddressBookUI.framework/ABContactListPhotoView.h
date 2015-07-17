@@ -3,9 +3,9 @@
  */
 
 @interface ABContactListPhotoView : UIView {
-    UIImageView *_contactImageView;
-    ABUIPerson *_person;
-    ABStyleProvider *_styleProvider;
+    UIImageView * _contactImageView;
+    ABUIPerson * _person;
+    ABStyleProvider * _styleProvider;
 }
 
 @property (nonatomic, retain) ABUIPerson *person;

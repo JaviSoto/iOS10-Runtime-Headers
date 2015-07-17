@@ -3,8 +3,8 @@
  */
 
 @interface PAGenealogyTimestampedMessage : NSObject {
-    unsigned long long _activityId;
-    double _machTime;
+    unsigned long long  _activityId;
+    double  _machTime;
 }
 
 @property (readonly) unsigned long long activityId;

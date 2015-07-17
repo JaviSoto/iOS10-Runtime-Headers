@@ -3,8 +3,8 @@
  */
 
 @interface VSAssetUpdateListener : NSObject {
-    PCPersistentTimer *_assetCleanupTimer;
-    BOOL _isListening;
+    PCPersistentTimer * _assetCleanupTimer;
+    BOOL  _isListening;
 }
 
 + (id)sharedListener;

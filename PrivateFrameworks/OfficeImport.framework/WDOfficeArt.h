@@ -3,9 +3,9 @@
  */
 
 @interface WDOfficeArt : WDRun {
-    OADDrawable *mDrawable;
-    bool mFloating;
-    WDCharacterProperties *mProperties;
+    OADDrawable * mDrawable;
+    bool  mFloating;
+    WDCharacterProperties * mProperties;
 }
 
 + (int)textBoxTextTypeForRegularTextType:(int)arg1;
@@ -14,6 +14,7 @@
 - (void)clearDrawable;
 - (void)clearProperties;
 - (void)dealloc;
+- (id)description;
 - (id)drawable;
 - (id)imageBlipRef;
 - (id)imageData;

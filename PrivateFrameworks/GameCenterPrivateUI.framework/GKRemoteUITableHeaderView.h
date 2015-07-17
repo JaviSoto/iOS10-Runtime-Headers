@@ -3,14 +3,14 @@
  */
 
 @interface GKRemoteUITableHeaderView : UIView <RUIPageAccessory> {
-    NSDictionary *_attributes;
-    GKButton *_button;
-    <GKRemoteUIAuxiliaryViewDelegate> *_delegate;
-    float _height;
-    GKLabel *_label;
-    int _layoutStyle;
-    NSArray *_replaceableConstraints;
-    GKLabel *_subLabel;
+    NSDictionary * _attributes;
+    GKButton * _button;
+    <GKRemoteUIAuxiliaryViewDelegate> * _delegate;
+    float  _height;
+    GKLabel * _label;
+    int  _layoutStyle;
+    NSArray * _replaceableConstraints;
+    GKLabel * _subLabel;
 }
 
 @property (nonatomic, retain) NSDictionary *attributes;

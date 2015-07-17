@@ -3,8 +3,8 @@
  */
 
 @interface MIInstallerClient : NSObject <MobileInstallerDelegateProtocol> {
-    NSXPCConnection *_connection;
-    id /* block */ _progressBlock;
+    NSXPCConnection * _connection;
+    id /* block */  _progressBlock;
 }
 
 @property (nonatomic, copy) id /* block */ progressBlock;
@@ -18,6 +18,7 @@
 - (void)clearUninstalledIdentifiers:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)fetchDiskUsageForIdentifiers:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)fetchInstalledAppsWithOptions:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchInstalledDeveloperAppsWithMountPath:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithProgressBlock:(id /* block */)arg1;
 - (void)installPath:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
@@ -33,7 +34,6 @@
 - (void)setProgressBlock:(id /* block */)arg1;
 - (void)uninstallIdentifiers:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)updateAppDataProtectionWithOptions:(id)arg1 completion:(id /* block */)arg2;
-- (void)updateSinfForIdentifier:(id)arg1 withOptions:(id)arg2 sinfData:(id)arg3 completion:(id /* block */)arg4;
 - (void)updateSinfForLSWithIdentifier:(id)arg1 withOptions:(id)arg2 sinfData:(id)arg3 completion:(id /* block */)arg4;
 
 @end

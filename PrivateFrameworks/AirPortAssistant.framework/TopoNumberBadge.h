@@ -3,17 +3,17 @@
  */
 
 @interface TopoNumberBadge : CALayer {
-    int _count;
-    UIFont *_font;
+    int  _count;
+    UIFont * _font;
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    id _owningView;
+    }  _imageSize;
+    id  _owningView;
     struct CGSize { 
         float width; 
         float height; 
-    } _textSize;
+    }  _textSize;
 }
 
 @property (nonatomic) int count;

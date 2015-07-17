@@ -3,11 +3,11 @@
  */
 
 @interface MusicEntityPlaybackProgressApplier : NSObject {
-    CADisplayLink *_displayLink;
-    id /* block */ _handler;
-    MusicEntityPlaybackStatus *_playbackStatus;
-    UIScreen *_screen;
-    _MusicEntityPlaybackProgressApplierWeakTarget *_weakDisplayLinkTarget;
+    CADisplayLink * _displayLink;
+    id /* block */  _handler;
+    MusicEntityPlaybackStatus * _playbackStatus;
+    UIScreen * _screen;
+    _MusicEntityPlaybackProgressApplierWeakTarget * _weakDisplayLinkTarget;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

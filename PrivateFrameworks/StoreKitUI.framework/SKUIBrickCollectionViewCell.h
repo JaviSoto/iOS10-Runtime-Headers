@@ -3,20 +3,20 @@
  */
 
 @interface SKUIBrickCollectionViewCell : UICollectionViewCell {
-    NSString *_accessibilityLabel;
-    SKUIClientContext *_clientContext;
-    SKUICountdownView *_countdownView;
-    BOOL _itemImageHidden;
+    NSString * _accessibilityLabel;
+    SKUIClientContext * _clientContext;
+    SKUICountdownView * _countdownView;
+    BOOL  _itemImageHidden;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _itemImageInsets;
-    UIImageView *_itemImageView;
-    UIImageView *_overlayImageView;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
+    }  _itemImageInsets;
+    UIImageView * _itemImageView;
+    UIImageView * _overlayImageView;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *accessibilityLabel;

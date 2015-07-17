@@ -18,7 +18,6 @@
 - (void)setActionType:(id)arg1;
 - (void)setAttribute:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)value;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface PKPassLogoImageSet : PKPassImageSet {
-    PKImage *_backgroundImage;
-    PKImage *_bankLogoImage;
-    PKImage *_cardBackgroundCombinedImage;
-    PKImage *_cardBackgroundImage;
-    PKImage *_cobrandLogoImage;
-    PKImage *_footerImage;
-    PKImage *_logoImage;
-    PKImage *_networkLogoImage;
-    PKImage *_stripImage;
+    PKImage * _backgroundImage;
+    PKImage * _bankLogoImage;
+    PKImage * _cardBackgroundCombinedImage;
+    PKImage * _cardBackgroundImage;
+    PKImage * _cobrandLogoImage;
+    PKImage * _footerImage;
+    PKImage * _logoImage;
+    PKImage * _networkLogoImage;
+    PKImage * _stripImage;
 }
 
 @property (nonatomic, retain) PKImage *backgroundImage;

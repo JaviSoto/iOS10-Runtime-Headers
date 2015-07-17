@@ -3,9 +3,9 @@
  */
 
 @interface GKSegmentedSelectorView : GKHeaderWithUnderlineView {
-    UISegmentedControl *_segmentedControl;
-    id _target;
-    NSLayoutConstraint *_widthConstraint;
+    UISegmentedControl * _segmentedControl;
+    id  _target;
+    NSLayoutConstraint * _widthConstraint;
 }
 
 @property (nonatomic, retain) UISegmentedControl *segmentedControl;

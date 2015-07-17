@@ -9,12 +9,12 @@
         struct __compressed_pair<GEOLocationCoordinate2D *, std::__1::allocator<GEOLocationCoordinate2D> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } _coords;
+    }  _coords;
     struct shared_ptr<geo::MapEdgeRoad> { 
         struct MapEdgeRoad {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _edge;
-    GEOMapAccess *_map;
+    }  _edge;
+    GEOMapAccess * _map;
 }
 
 @property (nonatomic, readonly) unsigned long coordinateCount;
@@ -33,6 +33,7 @@
 - (struct { double x1; double x2; }*)coordinates;
 - (void)dealloc;
 - (id)description;
+- (struct { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned long long x7; BOOL x8; unsigned long long x9; float x10; unsigned long long x11; id x12; }*)feature;
 - (id)findRoadsFrom:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (int)formOfWay;
 - (id)initWithMap:(id)arg1 edge:(struct shared_ptr<geo::MapEdgeRoad> { struct MapEdgeRoad {} *x1; struct __shared_weak_count {} *x2; })arg2;

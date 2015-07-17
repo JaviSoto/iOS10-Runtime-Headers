@@ -3,10 +3,10 @@
  */
 
 @interface MSStructuredPageViewController : SUStructuredPageGroupedViewController {
-    SUSegmentedControl *_inlineSegmentedControl;
-    NSIndexPath *_previewIndexPath;
-    SUAudioPlayer *_previewPlayer;
-    SUPlayerStatus *_previewStatus;
+    SUSegmentedControl * _inlineSegmentedControl;
+    NSIndexPath * _previewIndexPath;
+    SUAudioPlayer * _previewPlayer;
+    SUPlayerStatus * _previewStatus;
 }
 
 - (BOOL)_handleInlinePreviewForIndexPath:(id)arg1;

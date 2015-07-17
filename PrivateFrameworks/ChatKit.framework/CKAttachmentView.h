@@ -3,11 +3,11 @@
  */
 
 @interface CKAttachmentView : UIView <CKAttachmentView> {
-    UILabel *_actionLabel;
-    UIImageView *_iconImageView;
-    CKMediaObject *_mediaObject;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    UILabel * _actionLabel;
+    UIImageView * _iconImageView;
+    CKMediaObject * _mediaObject;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UILabel *actionLabel;

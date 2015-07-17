@@ -3,10 +3,10 @@
  */
 
 @interface RURadioAdTrack : NSObject <ADBannerViewDelegate, NSCopying, RURadioItemIdentifier> {
-    NSURL *_URL;
-    int _adType;
-    ADBannerView *_adView;
-    NSDictionary *_loudnessInfo;
+    NSURL * _URL;
+    int  _adType;
+    ADBannerView * _adView;
+    NSDictionary * _loudnessInfo;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

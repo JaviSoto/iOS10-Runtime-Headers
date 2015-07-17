@@ -12,12 +12,12 @@
             float width; 
             float height; 
         } size; 
-    } _cropRect;
-    BOOL _isPortrait;
-    NSString *_name;
-    float _parallaxFactor;
-    BOOL _supportsCropping;
-    float _zoomScale;
+    }  _cropRect;
+    BOOL  _isPortrait;
+    NSString * _name;
+    float  _parallaxFactor;
+    BOOL  _supportsCropping;
+    float  _zoomScale;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;

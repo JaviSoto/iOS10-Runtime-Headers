@@ -3,9 +3,9 @@
  */
 
 @interface TLAccessQueue : NSObject {
-    NSString *_label;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSString *_threadLocalStorageKey;
+    NSString * _label;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSString * _threadLocalStorageKey;
 }
 
 @property (setter=_setSerialQueue:, nonatomic) NSObject<OS_dispatch_queue> *_serialQueue;

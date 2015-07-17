@@ -3,10 +3,10 @@
  */
 
 @interface CUIPSDLayerEffectInnerGlow : CUIPSDLayerEffectComponent {
-    int _blendMode;
-    unsigned int _blurSize;
-    CUIColor *_color;
-    float _opacity;
+    int  _blendMode;
+    unsigned int  _blurSize;
+    CUIColor * _color;
+    float  _opacity;
 }
 
 @property int blendMode;

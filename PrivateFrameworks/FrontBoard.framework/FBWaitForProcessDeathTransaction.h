@@ -3,10 +3,10 @@
  */
 
 @interface FBWaitForProcessDeathTransaction : FBTransaction <FBProcessObserver> {
-    FBProcessManager *_manager;
-    FBProcess *_process;
-    double _timeout;
-    BSWatchdog *_watchdog;
+    FBProcessManager * _manager;
+    FBProcess * _process;
+    double  _timeout;
+    BSWatchdog * _watchdog;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) double timeout;
 
 - (void)_begin;
+- (BOOL)_canBeInterrupted;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
 - (void)dealloc;

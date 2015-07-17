@@ -3,8 +3,8 @@
  */
 
 @interface MPUIndeterminateProgressIndicatorView : UIView {
-    float _progressGap;
-    float _progressLineWidth;
+    float  _progressGap;
+    float  _progressLineWidth;
 }
 
 @property (nonatomic) float progressGap;

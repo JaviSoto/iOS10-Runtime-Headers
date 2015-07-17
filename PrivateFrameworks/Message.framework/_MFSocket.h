@@ -3,22 +3,22 @@
  */
 
 @interface _MFSocket : NSObject {
-    NSString *_accountIdentifier;
-    BOOL _allowsTrustPrompt;
-    NSArray *_clientCertificates;
-    NSCondition *_condition;
-    struct __CFString { } *_connectionServiceType;
-    NSInvocation *_eventHandler;
-    NSString *_host;
-    int _lowThroughputCounter;
-    int _numTimeoutSecs;
-    NSString *_protocol;
-    NSString *_service;
-    BOOL _socketCanRead;
-    BOOL _socketCanWrite;
-    NSString *_sourceApplicationBundleIdentifier;
-    MFStream *_stream;
-    BOOL _usesOpportunisticSockets;
+    NSString * _accountIdentifier;
+    BOOL  _allowsTrustPrompt;
+    NSArray * _clientCertificates;
+    NSCondition * _condition;
+    struct __CFString { } * _connectionServiceType;
+    NSInvocation * _eventHandler;
+    NSString * _host;
+    int  _lowThroughputCounter;
+    int  _numTimeoutSecs;
+    NSString * _protocol;
+    NSString * _service;
+    BOOL  _socketCanRead;
+    BOOL  _socketCanWrite;
+    NSString * _sourceApplicationBundleIdentifier;
+    MFStream * _stream;
+    BOOL  _usesOpportunisticSockets;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;

@@ -3,7 +3,7 @@
  */
 
 @interface UISearchBarTextFieldLabel : UITextFieldLabel {
-    BOOL _ignoresGeometryChanges;
+    BOOL  _ignoresGeometryChanges;
 }
 
 @property (nonatomic) BOOL ignoresGeometryChanges;

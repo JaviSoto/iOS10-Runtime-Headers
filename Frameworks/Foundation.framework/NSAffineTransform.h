@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSAffineTransform : NSObject <NSCoding, NSCopying> {
+@interface NSAffineTransform : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         float m11; 
         float m12; 
@@ -10,17 +10,19 @@
         float m22; 
         float tX; 
         float tY; 
-    } _transformStruct;
+    }  _transformStruct;
 }
 
 @property struct { float x1; float x2; float x3; float x4; float x5; float x6; } transformStruct;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (BOOL)supportsSecureCoding;
 + (id)transform;
 
 - (void)appendTransform:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;

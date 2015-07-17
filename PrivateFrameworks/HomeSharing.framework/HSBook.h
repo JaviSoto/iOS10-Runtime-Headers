@@ -3,17 +3,17 @@
  */
 
 @interface HSBook : NSObject <NSSecureCoding> {
-    NSURL *_artworkURL;
-    NSString *_author;
-    NSDate *_datePurchased;
-    NSString *_genre;
-    unsigned long long _purchaseHistoryID;
-    NSString *_redownloadParameters;
-    unsigned long long _storeID;
-    NSString *_title;
-    BOOL _vppLicensed;
-    NSString *_vppOrganizationDisplayName;
-    NSString *_vppOrganizationID;
+    NSURL * _artworkURL;
+    NSString * _author;
+    NSDate * _datePurchased;
+    NSString * _genre;
+    unsigned long long  _purchaseHistoryID;
+    NSString * _redownloadParameters;
+    unsigned long long  _storeID;
+    NSString * _title;
+    BOOL  _vppLicensed;
+    NSString * _vppOrganizationDisplayName;
+    NSString * _vppOrganizationID;
 }
 
 @property (nonatomic, copy) NSURL *artworkURL;

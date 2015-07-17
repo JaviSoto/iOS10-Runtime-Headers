@@ -3,7 +3,7 @@
  */
 
 @interface GKMoreExistSectionFooterView : UICollectionReusableView {
-    GKLabel *_label;
+    GKLabel * _label;
 }
 
 @property (nonatomic, retain) GKLabel *label;

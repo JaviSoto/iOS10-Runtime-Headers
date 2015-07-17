@@ -12,10 +12,10 @@
             float width; 
             float height; 
         } size; 
-    } mBoundsForStandardKnobs;
-    TSUBezierPath *mCachedExternalWrapPath;
-    TSUBezierPath *mCachedWrapPath;
-    TSDLayoutGeometry *mDynamicLayoutGeometry;
+    }  mBoundsForStandardKnobs;
+    TSUBezierPath * mCachedExternalWrapPath;
+    TSUBezierPath * mCachedWrapPath;
+    TSDLayoutGeometry * mDynamicLayoutGeometry;
 }
 
 - (id)additionalDependenciesForChildLayout:(id)arg1;

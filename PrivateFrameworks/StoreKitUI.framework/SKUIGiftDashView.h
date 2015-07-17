@@ -3,12 +3,12 @@
  */
 
 @interface SKUIGiftDashView : UIView {
-    UIColor *_dashColor;
+    UIColor * _dashColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _dashSize;
-    float _dashSpacing;
+    }  _dashSize;
+    float  _dashSpacing;
 }
 
 @property (nonatomic, copy) UIColor *dashColor;

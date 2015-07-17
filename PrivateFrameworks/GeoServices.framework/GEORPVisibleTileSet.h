@@ -6,12 +6,12 @@
     struct { 
         unsigned int identifier : 1; 
         unsigned int style : 1; 
-    } _has;
-    unsigned int _identifier;
-    int _style;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_tileKeys;
-    unsigned int _tileKeysCount;
-    unsigned int _tileKeysSpace;
+    }  _has;
+    unsigned int  _identifier;
+    int  _style;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _tileKeys;
+    unsigned int  _tileKeysCount;
+    unsigned int  _tileKeysSpace;
 }
 
 @property (nonatomic) BOOL hasIdentifier;

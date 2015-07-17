@@ -3,7 +3,7 @@
  */
 
 @interface MPUExtrasSlideshowArtworkCatalogHelper : NSObject {
-    MPArtworkCatalog *_artworkCatalog;
+    MPArtworkCatalog * _artworkCatalog;
 }
 
 @property (nonatomic, retain) MPArtworkCatalog *artworkCatalog;

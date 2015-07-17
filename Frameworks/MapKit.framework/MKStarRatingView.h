@@ -3,19 +3,19 @@
  */
 
 @interface MKStarRatingView : UIView {
-    UIImage *_emptyStarHighlightedImage;
-    UIImage *_emptyStarImage;
-    UIImage *_fullStarHighlightedImage;
-    UIImage *_fullStarImage;
-    UIImage *_halfStarHighlightedImage;
-    UIImage *_halfStarImage;
-    BOOL _highlighted;
-    int _numLevels;
-    int _numReviews;
-    float _padding;
-    float _rating;
-    NSMutableArray *_ratingViews;
-    int _starStyle;
+    UIImage * _emptyStarHighlightedImage;
+    UIImage * _emptyStarImage;
+    UIImage * _fullStarHighlightedImage;
+    UIImage * _fullStarImage;
+    UIImage * _halfStarHighlightedImage;
+    UIImage * _halfStarImage;
+    BOOL  _highlighted;
+    int  _numLevels;
+    int  _numReviews;
+    float  _padding;
+    float  _rating;
+    NSMutableArray * _ratingViews;
+    int  _starStyle;
 }
 
 @property (nonatomic, retain) UIImage *emptyStarHighlightedImage;
@@ -31,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (void)_layoutStarViewsCreatingIfNeeded:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)commonInit;
 - (void)didMoveToWindow;
 - (id)emptyStarHighlightedImage;
@@ -60,5 +61,6 @@
 - (void)setStarStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)starStyle;
+- (float)verticalAlignmentCenterPercentage;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface BRCStagePersistedState : NSObject <NSSecureCoding> {
-    long _latestGCStartTime;
-    NSObject<OS_dispatch_queue> *_queue;
-    BRCAccountSession *_session;
+    long  _latestGCStartTime;
+    NSObject<OS_dispatch_queue> * _queue;
+    BRCAccountSession * _session;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;

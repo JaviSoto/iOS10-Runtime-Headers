@@ -3,18 +3,31 @@
  */
 
 @interface SPSearchAgent : NSObject <MCProfileConnectionObserver, SPDaemonQueryDelegate> {
-    SPDaemonQueryToken *_currentToken;
-    NSObject<SPSearchAgentDelegate> *_delegate;
-    BOOL _observersAdded;
-    int _options;
-    NSString *_prefixWithNoResults;
-    BOOL _queryComplete;
-    unsigned int _resultCount;
-    NSArray *_searchDomains;
-    BOOL _searchThroughAllowed;
-    SPSearchResultSection *_searchThroughSection;
-    NSMutableArray *_sections;
-    SPSearchResultSection *_topHitResultSection;
+    SPSearchResult * _appStoreSearchThroughResult;
+    SPDaemonQueryToken * _currentToken;
+    int  _currentZKWLevel;
+    BOOL  _defaultSearchEnabled;
+    NSObject<SPSearchAgentDelegate> * _delegate;
+    BOOL  _hasCachedUpdate;
+    NSDictionary * _lastParsecResults;
+    NSString * _lastVoiceQuery;
+    SPSearchResult * _mapsSearchThroughResult;
+    bool  _newQuery;
+    BOOL  _observersAdded;
+    BOOL  _oneShotZKWSEnabled;
+    int  _options;
+    NSString * _prefixWithNoResults;
+    int  _prefsToken;
+    BOOL  _queryComplete;
+    NSObject<OS_dispatch_queue> * _queryProcessor;
+    unsigned int  _resultCount;
+    NSArray * _searchDomains;
+    BOOL  _searchThroughAllowed;
+    SPSearchResultSection * _searchThroughSection;
+    NSMutableArray * _sections;
+    SPSearchResultSection * _topHitResultSection;
+    BOOL  _voiceQueryHasBeenStable;
+    SPSearchResult * _webSearchThroughResult;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,10 +36,14 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int options;
 @property (nonatomic, readonly) BOOL queryComplete;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queryProcessor;
 @property (nonatomic, readonly) unsigned int resultCount;
 @property (nonatomic, retain) NSArray *searchDomains;
 @property (readonly) Class superclass;
 
++ (void)initialize;
+
+- (void).cxx_destruct;
 - (id)_indexesOfCompatibleSection:(id)arg1;
 - (BOOL)_shouldIgnoreQuery:(id)arg1;
 - (void)activate;
@@ -45,11 +62,15 @@
 - (void)internetDomainsChanged;
 - (void)invalidate;
 - (int)options;
+- (void)previewDeserializedSection:(id)arg1;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (BOOL)queryComplete;
+- (id)queryId;
+- (id)queryProcessor;
 - (id)queryString;
 - (void)removeSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)resultCount;
+- (void)retrieveFirstTimeExperienceTextWithReply:(id /* block */)arg1;
 - (void)retrieveImageDataForIdentifier:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
 - (void)retrieveImageDataForResult:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
@@ -59,11 +80,16 @@
 - (id)searchDomains;
 - (id)sectionAtIndex:(unsigned int)arg1;
 - (unsigned int)sectionCount;
+- (BOOL)sectionNeedsMoreMapsOption:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOptions:(int)arg1;
-- (BOOL)setQueryString:(id)arg1;
+- (void)setQueryProcessor:(id)arg1;
+- (BOOL)setQueryString:(id)arg1 keyboardLanguage:(id)arg2 levelZKW:(int)arg3 allowInternet:(BOOL)arg4;
+- (BOOL)setQueryString:(id)arg1 keyboardLanguage:(id)arg2 withResponse:(id)arg3 isStable:(BOOL)arg4;
+- (BOOL)setQueryString:(id)arg1 withResponse:(id)arg2 keyboardLanguage:(id)arg3 isStable:(BOOL)arg4 levelZKW:(int)arg5 allowInternet:(BOOL)arg6;
 - (void)setSearchDomains:(id)arg1;
 - (void)stuffChanged;
-- (void)updateSearchThroughWithString:(id)arg1;
+- (void)updateResultsThroughDelegate;
+- (void)updateSearchThroughSectionWithQuery:(id)arg1;
 
 @end

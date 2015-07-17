@@ -3,17 +3,17 @@
  */
 
 @interface PTPWrappedBytes : NSObject {
-    BOOL _allocatedBytes;
-    char *_bytes;
-    unsigned long long _capacity;
-    unsigned long long _excessDataLength;
-    int _fd;
-    int _lastNotifiedProgress;
-    unsigned long long _offset;
-    double _progressNotificationTime;
-    int (*_progressNotifier;
-    void *_progressNotifierContext;
-    BOOL _useByteBuffer;
+    BOOL  _allocatedBytes;
+    char * _bytes;
+    unsigned long long  _capacity;
+    unsigned long long  _excessDataLength;
+    int  _fd;
+    int  _lastNotifiedProgress;
+    unsigned long long  _offset;
+    double  _progressNotificationTime;
+    int (* _progressNotifier;
+    void * _progressNotifierContext;
+    BOOL  _useByteBuffer;
 }
 
 + (id)wrappedBytesWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;

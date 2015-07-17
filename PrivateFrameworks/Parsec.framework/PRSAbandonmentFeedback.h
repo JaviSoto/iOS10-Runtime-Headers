@@ -3,7 +3,7 @@
  */
 
 @interface PRSAbandonmentFeedback : PRSFeedback {
-    unsigned int _method;
+    unsigned int  _method;
 }
 
 @property (nonatomic, readonly) unsigned int method;

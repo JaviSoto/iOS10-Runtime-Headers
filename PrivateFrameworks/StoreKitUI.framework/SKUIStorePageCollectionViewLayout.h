@@ -3,31 +3,31 @@
  */
 
 @interface SKUIStorePageCollectionViewLayout : UICollectionViewFlowLayout <SKUIStorePageCollectionViewLayout> {
-    BOOL _allowsPinningTransitions;
-    NSString *_backdropGroupName;
-    UIColor *_collectionViewBackgroundColor;
+    BOOL  _allowsPinningTransitions;
+    NSString * _backdropGroupName;
+    UIColor * _collectionViewBackgroundColor;
     struct { 
         unsigned int respondsToIndexPathsForPinningItems : 1; 
         unsigned int respondsToPinningContentInsetForItemAtIndexPath : 1; 
         unsigned int respondsToPinningStyleForItemAtIndexPath : 1; 
         unsigned int respondsToPinningTransitionStyleForItemAtIndexPath : 1; 
         unsigned int respondsToWillApplyLayoutAttributes : 1; 
-    } _collectionViewDelegateFlags;
-    NSIndexSet *_expandChildPageSectionsIndexSet;
-    BOOL _hasValidGradientIndexPaths;
-    BOOL _hasValidIndexPathsForPinningItems;
-    BOOL _hasValidPinnedBackdropViewStyle;
-    BOOL _hasValidPinningLayoutInformation;
-    int _inLayoutAttributesForElementsCount;
-    NSMapTable *_indexPathToItemPinningConfiguration;
-    NSMapTable *_indexPathToPinningLayoutInformation;
-    NSArray *_indexPathsForGradientItems;
-    NSArray *_indexPathsForPinningItems;
-    float _overrideContentWidth;
-    int _pinnedBackdropViewStyle;
-    BOOL _rendersWithParallax;
-    BOOL _rendersWithPerspective;
-    NSArray *_updateItems;
+    }  _collectionViewDelegateFlags;
+    NSIndexSet * _expandChildPageSectionsIndexSet;
+    BOOL  _hasValidGradientIndexPaths;
+    BOOL  _hasValidIndexPathsForPinningItems;
+    BOOL  _hasValidPinnedBackdropViewStyle;
+    BOOL  _hasValidPinningLayoutInformation;
+    int  _inLayoutAttributesForElementsCount;
+    NSMapTable * _indexPathToItemPinningConfiguration;
+    NSMapTable * _indexPathToPinningLayoutInformation;
+    NSArray * _indexPathsForGradientItems;
+    NSArray * _indexPathsForPinningItems;
+    float  _overrideContentWidth;
+    int  _pinnedBackdropViewStyle;
+    BOOL  _rendersWithParallax;
+    BOOL  _rendersWithPerspective;
+    NSArray * _updateItems;
 }
 
 @property (nonatomic) BOOL allowsPinningTransitions;

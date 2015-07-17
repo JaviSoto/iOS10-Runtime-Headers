@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBHandwritingStrokeView : UIView <UIKBHandwritingStrokeEnabled> {
-    UIKBHandwritingView *_keyView;
+@interface UIKBHandwritingStrokeView : UIView {
+    UIKBHandwritingView * _keyView;
 }
 
-@property (nonatomic, readonly) float inkWidth;
 @property (nonatomic, retain) UIKBHandwritingView *keyView;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)inkWidth;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })handwritingPointToRect:(id)arg1;
 - (id)keyView;
 - (void)setKeyView:(id)arg1;
 

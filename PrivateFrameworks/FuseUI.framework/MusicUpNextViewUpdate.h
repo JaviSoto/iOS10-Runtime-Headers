@@ -3,8 +3,8 @@
  */
 
 @interface MusicUpNextViewUpdate : NSObject {
-    NSArray *_indexPaths;
-    unsigned int _type;
+    NSArray * _indexPaths;
+    unsigned int  _type;
 }
 
 @property (nonatomic, retain) NSArray *indexPaths;

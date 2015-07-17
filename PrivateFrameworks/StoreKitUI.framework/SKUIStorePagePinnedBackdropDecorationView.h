@@ -3,9 +3,9 @@
  */
 
 @interface SKUIStorePagePinnedBackdropDecorationView : UICollectionReusableView {
-    _UIBackdropViewSettings *_backdropStyleDefaultSettings;
-    _UIBackdropView *_backdropView;
-    UIView *_backgroundView;
+    _UIBackdropViewSettings * _backdropStyleDefaultSettings;
+    _UIBackdropView * _backdropView;
+    UIView * _backgroundView;
 }
 
 - (void).cxx_destruct;

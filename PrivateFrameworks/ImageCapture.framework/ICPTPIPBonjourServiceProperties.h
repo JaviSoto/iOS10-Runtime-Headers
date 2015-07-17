@@ -3,19 +3,19 @@
  */
 
 @interface ICPTPIPBonjourServiceProperties : NSObject {
-    int _clientSpinLock;
-    NSMutableArray *_clients;
-    int _clientsSpinLock;
-    id _delegate;
-    NSString *_hostGUID;
-    unsigned long _hostMaxConnections;
-    NSString *_hostName;
-    unsigned short _hostPort;
-    int _hostSecuritylevel;
-    struct __CFSocket { } *_hostSocket;
-    struct __CFNetService { } *_publishedService;
-    NSString *_serviceType;
-    NSDictionary *_txtRecordsDict;
+    int  _clientSpinLock;
+    NSMutableArray * _clients;
+    int  _clientsSpinLock;
+    id  _delegate;
+    NSString * _hostGUID;
+    unsigned long  _hostMaxConnections;
+    NSString * _hostName;
+    unsigned short  _hostPort;
+    int  _hostSecuritylevel;
+    struct __CFSocket { } * _hostSocket;
+    struct __CFNetService { } * _publishedService;
+    NSString * _serviceType;
+    NSDictionary * _txtRecordsDict;
 }
 
 @property (retain) NSMutableArray *clients;

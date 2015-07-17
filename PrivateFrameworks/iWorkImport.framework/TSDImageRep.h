@@ -10,10 +10,10 @@
         float d; 
         float tx; 
         float ty; 
-    } mBaseMaskLayoutTransform;
-    CALayer *mContentsLayer;
-    BOOL mDirectlyManagesLayerContent;
-    BOOL mFrameInUnscaledCanvasIsValid;
+    }  mBaseMaskLayoutTransform;
+    CALayer * mContentsLayer;
+    BOOL  mDirectlyManagesLayerContent;
+    BOOL  mFrameInUnscaledCanvasIsValid;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,14 +23,14 @@
             float width; 
             float height; 
         } size; 
-    } mFrameInUnscaledCanvasRelativeToSuper;
-    NSCache *mHitTestCache;
-    long mHitTestCacheOnce;
-    CAShapeLayer *mIAMaskLayer;
-    BOOL mInInstantAlphaMode;
-    struct CGImage { } *mInstantAlphaImage;
-    TSDInstantAlphaTracker *mInstantAlphaTracker;
-    TSDLayoutGeometry *mLastImageGeometryInRoot;
+    }  mFrameInUnscaledCanvasRelativeToSuper;
+    NSCache * mHitTestCache;
+    long  mHitTestCacheOnce;
+    CAShapeLayer * mIAMaskLayer;
+    BOOL  mInInstantAlphaMode;
+    struct CGImage { } * mInstantAlphaImage;
+    TSDInstantAlphaTracker * mInstantAlphaTracker;
+    TSDLayoutGeometry * mLastImageGeometryInRoot;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -38,8 +38,8 @@
         float d; 
         float tx; 
         float ty; 
-    } mLastLayoutToImageTransform;
-    TSDLayoutGeometry *mLastMaskGeometryInRoot;
+    }  mLastLayoutToImageTransform;
+    TSDLayoutGeometry * mLastMaskGeometryInRoot;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -47,25 +47,25 @@
         float d; 
         float tx; 
         float ty; 
-    } mLastPictureFrameLayerTransform;
-    NSRecursiveLock *mLayerUpdateAndSizingStateLock;
-    CAShapeLayer *mMaskPathLayer;
-    CAShapeLayer *mMaskSublayer;
-    BOOL mShowImageHighlight;
-    struct CGImage { } *mSizedImage;
-    NSObject<OS_dispatch_queue> *mSizedImageAccessQueue;
-    BOOL mSizedImageHasAdjustmentsBakedIn;
-    BOOL mSizedImageHasMaskBakedIn;
-    struct CGPath { } *mSizedImageMaskPath;
-    int mSizedImageOrientation;
+    }  mLastPictureFrameLayerTransform;
+    NSRecursiveLock * mLayerUpdateAndSizingStateLock;
+    CAShapeLayer * mMaskPathLayer;
+    CAShapeLayer * mMaskSublayer;
+    BOOL  mShowImageHighlight;
+    struct CGImage { } * mSizedImage;
+    NSObject<OS_dispatch_queue> * mSizedImageAccessQueue;
+    BOOL  mSizedImageHasAdjustmentsBakedIn;
+    BOOL  mSizedImageHasMaskBakedIn;
+    struct CGPath { } * mSizedImageMaskPath;
+    int  mSizedImageOrientation;
     struct CGSize { 
         float width; 
         float height; 
-    } mSizedImageSize;
-    TSDImageRepSizingState *mSizingState;
-    BOOL mSizingStateReady;
-    NSMutableArray *mUpdateFromLayoutBlocks;
-    NSObject<OS_dispatch_semaphore> *mUpdateFromLayoutBlocksLock;
+    }  mSizedImageSize;
+    TSDImageRepSizingState * mSizingState;
+    BOOL  mSizingStateReady;
+    NSMutableArray * mUpdateFromLayoutBlocks;
+    NSObject<OS_dispatch_semaphore> * mUpdateFromLayoutBlocksLock;
 }
 
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
@@ -94,6 +94,7 @@
 - (id)p_validatedImageProvider;
 - (id)p_validatedThumbnailImageProvider;
 - (void)setTextureAttributes:(id)arg1;
+- (BOOL)shouldShowCheckerboard;
 - (id)textureForContext:(id)arg1;
 - (void)willBeRemoved;
 

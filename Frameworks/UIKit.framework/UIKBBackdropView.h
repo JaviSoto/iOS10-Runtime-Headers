@@ -3,10 +3,10 @@
  */
 
 @interface UIKBBackdropView : _UIBackdropView {
-    UIKeyboardBackdropCornerView *_backdropCornerView;
-    BOOL _hasUpdatedFrame;
-    BOOL _primaryBackdrop;
-    NSMutableArray *_secondaryBackdrops;
+    UIKeyboardBackdropCornerView * _backdropCornerView;
+    BOOL  _hasUpdatedFrame;
+    BOOL  _primaryBackdrop;
+    NSMutableArray * _secondaryBackdrops;
 }
 
 @property (nonatomic, readonly) BOOL _hasUpdatedFrame;

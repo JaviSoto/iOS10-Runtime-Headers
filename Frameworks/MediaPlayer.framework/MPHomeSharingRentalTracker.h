@@ -3,8 +3,8 @@
  */
 
 @interface MPHomeSharingRentalTracker : NSObject {
-    NSObject<OS_dispatch_queue> *_rentalTrackerQueue;
-    NSMutableDictionary *_rentals;
+    NSObject<OS_dispatch_queue> * _rentalTrackerQueue;
+    NSMutableDictionary * _rentals;
 }
 
 + (id)sharedInstance;

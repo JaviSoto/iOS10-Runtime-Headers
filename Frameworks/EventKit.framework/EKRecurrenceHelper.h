@@ -3,15 +3,15 @@
  */
 
 @interface EKRecurrenceHelper : NSObject {
-    NSArray *_daysOfTheMonth;
-    NSArray *_daysOfTheWeek;
-    NSArray *_daysOfTheYear;
-    BOOL _dirty;
-    NSArray *_monthsOfTheYear;
-    BOOL _parsed;
-    NSArray *_setPositions;
-    NSString *_specifier;
-    NSArray *_weeksOfTheYear;
+    NSArray * _daysOfTheMonth;
+    NSArray * _daysOfTheWeek;
+    NSArray * _daysOfTheYear;
+    BOOL  _dirty;
+    NSArray * _monthsOfTheYear;
+    BOOL  _parsed;
+    NSArray * _setPositions;
+    NSString * _specifier;
+    NSArray * _weeksOfTheYear;
 }
 
 @property (nonatomic, copy) NSArray *daysOfTheMonth;

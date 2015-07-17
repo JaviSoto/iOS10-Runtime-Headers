@@ -3,13 +3,14 @@
  */
 
 @interface EDLinkReference : NSObject {
-    unsigned int mFirstSheetIndex;
-    unsigned int mLastSheetIndex;
-    unsigned int mLinkIndex;
+    unsigned int  mFirstSheetIndex;
+    unsigned int  mLastSheetIndex;
+    unsigned int  mLinkIndex;
 }
 
 + (id)linkReferenceWithLinkIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
 
+- (id)description;
 - (unsigned int)firstSheetIndex;
 - (unsigned int)hash;
 - (id)init;

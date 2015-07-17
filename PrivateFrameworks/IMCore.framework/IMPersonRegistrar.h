@@ -3,7 +3,7 @@
  */
 
 @interface IMPersonRegistrar : NSObject {
-    NSMutableDictionary *_personMap;
+    NSMutableDictionary * _personMap;
 }
 
 @property (retain) NSMutableDictionary *_personMap;

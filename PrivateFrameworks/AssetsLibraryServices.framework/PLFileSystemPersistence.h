@@ -3,7 +3,7 @@
  */
 
 @interface PLFileSystemPersistence : NSObject {
-    NSObject<OS_dispatch_queue> *_writerQueue;
+    NSObject<OS_dispatch_queue> * _writerQueue;
 }
 
 + (id)filesystemPersistenceBatchItemForFileAtURL:(id)arg1;

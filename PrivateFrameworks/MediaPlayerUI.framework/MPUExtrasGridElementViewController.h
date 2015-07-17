@@ -3,18 +3,18 @@
  */
 
 @interface MPUExtrasGridElementViewController : MPUExtrasViewElementViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
-    UICollectionView *_collectionView;
-    MPUExtrasGridViewControllerStyle *_extraLargeStyle;
-    _MPUExtrasShelfCollectionViewLayout *_flowLayout;
-    _MPUExtrasGridHeaderView *_headerView;
-    NSArray *_headerViewConstraints;
-    MPUExtrasGridViewControllerStyle *_largeStyle;
-    MPUExtrasGridViewControllerStyle *_mediumStyle;
-    BOOL _shelfStyle;
-    MPUExtrasGridViewControllerStyle *_smallStyle;
-    UIView *_titleRule;
-    NSArray *_titleRuleConstraints;
-    MPUExtrasGridViewControllerStyle *_wideStyle;
+    UICollectionView * _collectionView;
+    MPUExtrasGridViewControllerStyle * _extraLargeStyle;
+    _MPUExtrasShelfCollectionViewLayout * _flowLayout;
+    _MPUExtrasGridHeaderView * _headerView;
+    NSArray * _headerViewConstraints;
+    MPUExtrasGridViewControllerStyle * _largeStyle;
+    MPUExtrasGridViewControllerStyle * _mediumStyle;
+    BOOL  _shelfStyle;
+    MPUExtrasGridViewControllerStyle * _smallStyle;
+    UIView * _titleRule;
+    NSArray * _titleRuleConstraints;
+    MPUExtrasGridViewControllerStyle * _wideStyle;
 }
 
 @property (nonatomic, readonly) UICollectionView *collectionView;
@@ -32,7 +32,7 @@
 @property (nonatomic, retain) MPUExtrasGridViewControllerStyle *wideStyle;
 
 + (id)_defaultCellStyle;
-+ (id)_fontAttributes;
++ (id)_fontAttributesForTextStyle:(id)arg1;
 + (id)extraLargeDetailStyle;
 + (id)extraLargeGalleryStyle;
 + (id)extraLargeStackGridStyle;

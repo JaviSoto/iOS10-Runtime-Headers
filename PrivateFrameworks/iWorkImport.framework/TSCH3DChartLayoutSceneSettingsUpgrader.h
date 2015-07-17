@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DChartLayoutSceneSettingsUpgrader : TSCH3DAbstractLimitingSeriesUpgrader {
-    BOOL hasConstantDepth;
-    TSCH3DChartLayout *mChartLayout;
-    NSValue *mInfoGeometryOffset;
-    BOOL mIsMutatedForSceneSettings;
+    BOOL  hasConstantDepth;
+    TSCH3DChartLayout * mChartLayout;
+    NSValue * mInfoGeometryOffset;
+    BOOL  mIsMutatedForSceneSettings;
 }
 
 @property (nonatomic) BOOL hasConstantDepth;

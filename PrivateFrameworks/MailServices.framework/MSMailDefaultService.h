@@ -3,7 +3,7 @@
  */
 
 @interface MSMailDefaultService : MSService {
-    BOOL _shouldLaunch;
+    BOOL  _shouldLaunch;
 }
 
 @property (nonatomic) BOOL shouldLaunchMobileMail;

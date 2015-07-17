@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryBrowseCollectionViewConfiguration : MusicLibraryViewConfiguration {
-    MusicEntityCollectionViewDescriptor *_entityCollectionViewDescriptor;
-    BOOL _wantsEdgeToEdgeLayout;
+    MusicEntityCollectionViewDescriptor * _entityCollectionViewDescriptor;
+    BOOL  _wantsEdgeToEdgeLayout;
 }
 
 @property (nonatomic, readonly) MusicEntityCollectionViewDescriptor *entityViewDescriptor;

@@ -3,8 +3,8 @@
  */
 
 @interface NPKProtoPaymentPreconditionsNotMetRequest : PBRequest <NSCopying> {
-    int _failedPrecondition;
-    NSMutableArray *_passIDs;
+    int  _failedPrecondition;
+    NSMutableArray * _passIDs;
 }
 
 @property (nonatomic) int failedPrecondition;

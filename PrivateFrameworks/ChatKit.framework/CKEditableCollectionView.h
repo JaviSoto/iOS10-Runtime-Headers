@@ -3,13 +3,13 @@
  */
 
 @interface CKEditableCollectionView : UICollectionView {
-    BOOL _editing;
+    BOOL  _editing;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _marginInsets;
+    }  _marginInsets;
 }
 
 @property (getter=isEditing, nonatomic) BOOL editing;

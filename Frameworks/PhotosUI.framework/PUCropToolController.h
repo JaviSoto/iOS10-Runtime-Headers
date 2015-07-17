@@ -3,21 +3,21 @@
  */
 
 @interface PUCropToolController : PUPhotoEditToolController <PUCropAndStraightenViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
-    CIImage *__CIImage;
-    BOOL __activeTool;
-    NSMutableDictionary *__animationTargetsByKeyPath;
-    NSMutableDictionary *__animationsByKeyPath;
-    UIAlertController *__aspectAlertController;
-    UIButton *__aspectButton;
-    BOOL __contentViewsHidden;
-    unsigned int __contentViewsHiddenAnimationCount;
-    PUCropAspect *__cropAspect;
-    UIView *__cropCanvasView;
-    NSDictionary *__cropHandleViewsByHandle;
-    PUCropOverlayView *__cropOverlayView;
-    UIButton *__cropToggleButton;
-    NSString *__cropToggleButtonTitle;
-    PUCropAndStraightenView *__cropView;
+    CIImage * __CIImage;
+    BOOL  __activeTool;
+    NSMutableDictionary * __animationTargetsByKeyPath;
+    NSMutableDictionary * __animationsByKeyPath;
+    UIAlertController * __aspectAlertController;
+    UIButton * __aspectButton;
+    BOOL  __contentViewsHidden;
+    unsigned int  __contentViewsHiddenAnimationCount;
+    PUCropAspect * __cropAspect;
+    UIView * __cropCanvasView;
+    NSDictionary * __cropHandleViewsByHandle;
+    PUCropOverlayView * __cropOverlayView;
+    UIButton * __cropToggleButton;
+    NSString * __cropToggleButtonTitle;
+    PUCropAndStraightenView * __cropView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -27,13 +27,13 @@
             float width; 
             float height; 
         } size; 
-    } __cropViewFrameForLastModelLoad;
-    PLImageGeometry *__geometry;
-    BOOL __hasAppliedCropSuggestion;
-    BOOL __hasAutoAppliedCropSuggestion;
-    BOOL __hasRequestedCropSuggestion;
-    BOOL __ignoreTrackingUpdates;
-    UIImage *__image;
+    }  __cropViewFrameForLastModelLoad;
+    PLImageGeometry * __geometry;
+    BOOL  __hasAppliedCropSuggestion;
+    BOOL  __hasAutoAppliedCropSuggestion;
+    BOOL  __hasRequestedCropSuggestion;
+    BOOL  __ignoreTrackingUpdates;
+    UIImage * __image;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -43,12 +43,12 @@
             float width; 
             float height; 
         } size; 
-    } __initialHandlePanCropRect;
-    NSMutableDictionary *__initialLocationsInHandlesByHandle;
-    PLPhotoEditModel *__lastKnownEditModel;
-    BOOL __modelChangeLocal;
-    BOOL __needsImageLoad;
-    BOOL __needsModelLoad;
+    }  __initialHandlePanCropRect;
+    NSMutableDictionary * __initialLocationsInHandlesByHandle;
+    PLPhotoEditModel * __lastKnownEditModel;
+    BOOL  __modelChangeLocal;
+    BOOL  __needsImageLoad;
+    BOOL  __needsModelLoad;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -58,19 +58,19 @@
             float width; 
             float height; 
         } size; 
-    } __normalizedImageRect;
+    }  __normalizedImageRect;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } __previewViewInsets;
-    PLPhotoEditRenderer *__renderer;
-    UIButton *__rotateButton;
-    UIView *__rotateSnapshotView;
-    unsigned int __rotatingAnimationCount;
-    PUCropHandleView *__selectedCropHandleView;
-    float __straightenAngle;
+    }  __previewViewInsets;
+    PLPhotoEditRenderer * __renderer;
+    UIButton * __rotateButton;
+    UIView * __rotateSnapshotView;
+    unsigned int  __rotatingAnimationCount;
+    PUCropHandleView * __selectedCropHandleView;
+    float  __straightenAngle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -80,9 +80,9 @@
             float width; 
             float height; 
         } size; 
-    } __suggestedCrop;
-    float __suggestedStraightenAngle;
-    PUTiltWheelControl *__tiltControl;
+    }  __suggestedCrop;
+    float  __suggestedStraightenAngle;
+    PUTiltWheelControl * __tiltControl;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -92,9 +92,9 @@
             float width; 
             float height; 
         } size; 
-    } __viewCropRect;
-    BOOL __wantsPreviewViewHidden;
-    BOOL _trackingTiltControl;
+    }  __viewCropRect;
+    BOOL  __wantsPreviewViewHidden;
+    BOOL  _trackingTiltControl;
 }
 
 @property (setter=_setCIImage:, nonatomic, retain) CIImage *_CIImage;

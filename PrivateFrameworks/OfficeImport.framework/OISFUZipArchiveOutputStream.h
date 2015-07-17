@@ -3,18 +3,18 @@
  */
 
 @interface OISFUZipArchiveOutputStream : NSObject <SFUSimpleOutputStream> {
-    char *mBuffer;
-    OISFUCryptoKey *mCryptoKey;
-    OISFUZipOutputEntry *mCurrentEntry;
-    OISFUZipFreeSpaceEntry *mCurrentFreeSpace;
-    NSData *mEncryptedDocumentUuid;
-    NSMutableArray *mEntries;
-    <SFUOutputStream> *mEntryOutputStream;
-    unsigned long long mFreeBytes;
-    NSMutableArray *mFreeList;
-    OISFUZipOutputEntry *mLastEntryInFile;
-    OISFUMoveableFileOutputStream *mOutputStream;
-    NSData *mPassphraseHint;
+    char * mBuffer;
+    OISFUCryptoKey * mCryptoKey;
+    OISFUZipOutputEntry * mCurrentEntry;
+    OISFUZipFreeSpaceEntry * mCurrentFreeSpace;
+    NSData * mEncryptedDocumentUuid;
+    NSMutableArray * mEntries;
+    <SFUOutputStream> * mEntryOutputStream;
+    unsigned long long  mFreeBytes;
+    NSMutableArray * mFreeList;
+    OISFUZipOutputEntry * mLastEntryInFile;
+    OISFUMoveableFileOutputStream * mOutputStream;
+    NSData * mPassphraseHint;
 }
 
 @property (readonly, copy) NSString *debugDescription;

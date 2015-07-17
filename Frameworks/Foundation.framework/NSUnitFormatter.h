@@ -3,20 +3,23 @@
  */
 
 @interface NSUnitFormatter : NSFormatter {
-    struct UAMeasureFormat { } *_formatter;
-    NSString *_localeID;
-    BOOL _modified;
-    NSNumberFormatter *_numberFormatter;
-    struct UPluralRules { } *_prules;
-    int _unitStyle;
+    struct UAMeasureFormat { } * _formatter;
+    NSString * _localeID;
+    BOOL  _modified;
+    NSNumberFormatter * _numberFormatter;
+    struct UPluralRules { } * _prules;
+    int  _unitStyle;
 }
 
 @property (copy) NSNumberFormatter *numberFormatter;
 @property int unitStyle;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)numberFormatter;
 - (void)setNumberFormatter:(id)arg1;
 - (void)setUnitStyle:(int)arg1;

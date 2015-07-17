@@ -3,10 +3,10 @@
  */
 
 @interface _MKPlaceAttributionLabel : NSObject {
-    UIImage *image;
-    float imageBaselineOffset;
-    NSString *imagePlaceholder;
-    float textBaselineOffset;
+    UIImage * image;
+    float  imageBaselineOffset;
+    NSString * imagePlaceholder;
+    float  textBaselineOffset;
 }
 
 @property (retain) UIImage *image;

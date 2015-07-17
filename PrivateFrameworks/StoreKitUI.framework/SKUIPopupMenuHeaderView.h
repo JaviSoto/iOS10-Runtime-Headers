@@ -3,15 +3,15 @@
  */
 
 @interface SKUIPopupMenuHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    <SKUIPopupMenuDelegate> *_delegate;
-    UIButton *_menuButton;
-    NSArray *_menuItemTitles;
-    UILabel *_menuLabel;
-    NSString *_menuLabelTitle;
-    UIPopoverController *_menuPopoverController;
-    SKUIMenuViewController *_menuViewController;
-    int _selectedMenuItemIndex;
-    UILabel *_titleLabel;
+    <SKUIPopupMenuDelegate> * _delegate;
+    UIButton * _menuButton;
+    NSArray * _menuItemTitles;
+    UILabel * _menuLabel;
+    NSString * _menuLabelTitle;
+    UIPopoverController * _menuPopoverController;
+    SKUIMenuViewController * _menuViewController;
+    int  _selectedMenuItemIndex;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

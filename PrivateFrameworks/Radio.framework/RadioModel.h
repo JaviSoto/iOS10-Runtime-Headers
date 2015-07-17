@@ -3,34 +3,38 @@
  */
 
 @interface RadioModel : NSObject <NSFetchedResultsControllerDelegate> {
-    NSObject<OS_dispatch_queue> *_accessSerialQueue;
-    NSOperationQueue *_backgroundCleanupQueue;
-    BKSProcessAssertion *_backgroundProcessAssertion;
-    int _backgroundTaskCount;
-    NSObject<OS_dispatch_source> *_backgroundTaskInvalidateTimerSource;
-    NSManagedObjectContext *_context;
-    BOOL _isBackgroundModel;
-    NSManagedObjectModel *_model;
-    int _modelChangedToken;
-    BOOL _modelChangedTokenIsValid;
-    int _modelDeletedToken;
-    BOOL _modelDeletedTokenIsValid;
-    NSFetchRequest *_stationFetchRequest;
-    NSFetchedResultsController *_stationFetchedResultsController;
-    NSMapTable *_stationToSkipControllerMapTable;
-    NSPersistentStoreCoordinator *_storeCoordinator;
-    int _transactionCount;
+    NSObject<OS_dispatch_queue> * _accessSerialQueue;
+    NSOperationQueue * _backgroundCleanupQueue;
+    BKSProcessAssertion * _backgroundProcessAssertion;
+    int  _backgroundTaskCount;
+    NSObject<OS_dispatch_source> * _backgroundTaskInvalidateTimerSource;
+    NSManagedObjectContext * _context;
+    BOOL  _isBackgroundModel;
+    NSManagedObjectModel * _model;
+    int  _modelChangedToken;
+    BOOL  _modelChangedTokenIsValid;
+    int  _modelDeletedToken;
+    BOOL  _modelDeletedTokenIsValid;
+    NSFetchRequest * _stationFetchRequest;
+    NSFetchedResultsController * _stationFetchedResultsController;
+    NSMapTable * _stationToSkipControllerMapTable;
+    NSPersistentStoreCoordinator * _storeCoordinator;
+    int  _transactionCount;
 }
 
 @property (nonatomic, readonly) NSArray *allStations;
 @property (nonatomic) unsigned long long authenticatedAccountIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *featuredStations;
 @property (nonatomic, copy) NSString *globalHash;
 @property (nonatomic) unsigned long long globalVersion;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *previewStations;
 @property (nonatomic, readonly, copy) NSArray *reportProblemIssueTypes;
 @property (nonatomic, copy) NSArray *stationSortOrdering;
 @property (nonatomic, readonly) NSArray *stations;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *userStations;
 
 + (id)_persistentStoreConfigurationOptions;

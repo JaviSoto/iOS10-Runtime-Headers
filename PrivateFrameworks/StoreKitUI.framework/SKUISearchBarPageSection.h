@@ -3,7 +3,7 @@
  */
 
 @interface SKUISearchBarPageSection : SKUIStorePageSection {
-    SKUISearchBarController *_searchBarController;
+    SKUISearchBarController * _searchBarController;
 }
 
 - (void).cxx_destruct;

@@ -3,25 +3,25 @@
  */
 
 @interface CIBurstImageStat : NSObject {
-    int AEAverage;
-    BOOL AEStable;
-    int AETarget;
-    BOOL AFStable;
-    int _AEDelta;
-    struct __IOSurface { } *_fullsizeJpegData;
-    int _fullsizeJpegSize;
-    int _version;
-    float actionClusteringScore;
-    float actionScore;
-    unsigned short aeMatrix;
-    float avgHorzDiffY;
-    float blurExtent;
-    float colorHistogram;
-    int dissimilarity;
-    BOOL doLimitedSharpnessAndBlur;
-    BOOL emotionallyRejected;
-    BOOL exclude;
-    NSMutableArray *faceStatArray;
+    int  AEAverage;
+    BOOL  AEStable;
+    int  AETarget;
+    BOOL  AFStable;
+    int  _AEDelta;
+    struct __IOSurface { } * _fullsizeJpegData;
+    int  _fullsizeJpegSize;
+    int  _version;
+    float  actionClusteringScore;
+    float  actionScore;
+    unsigned short  aeMatrix;
+    float  avgHorzDiffY;
+    float  blurExtent;
+    float  colorHistogram;
+    int  dissimilarity;
+    BOOL  doLimitedSharpnessAndBlur;
+    BOOL  emotionallyRejected;
+    BOOL  exclude;
+    NSMutableArray * faceStatArray;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,26 +31,26 @@
             float width; 
             float height; 
         } size; 
-    } facesRoiRect;
-    int gridHeight;
+    }  facesRoiRect;
+    int  gridHeight;
     struct GridROI_t { 
         int startX; 
         int startY; 
         int endX; 
         int endY; 
-    } gridROI;
-    int gridWidth;
-    BOOL hasRegistrationData;
-    NSString *imageId;
-    float imageScore;
-    BOOL isGarbage;
-    float maxSkewness;
-    float normalizedFocusScore;
-    float normalizedSigma;
-    int numEntries;
-    int numHWFaces;
-    int orientation;
-    void *projectionMemoryBlock;
+    }  gridROI;
+    int  gridWidth;
+    BOOL  hasRegistrationData;
+    NSString * imageId;
+    float  imageScore;
+    BOOL  isGarbage;
+    float  maxSkewness;
+    float  normalizedFocusScore;
+    float  normalizedSigma;
+    int  numEntries;
+    int  numHWFaces;
+    int  orientation;
+    void * projectionMemoryBlock;
     struct FastRegistration_Signatures { 
         float *piRow; 
         unsigned int nPiRow; 
@@ -64,23 +64,23 @@
             float *sumTable; 
             float *sumSqTable; 
         } piColTable; 
-    } projectionSignature;
-    float registrationErrorIntegral;
-    float registrationErrorX;
-    float registrationErrorY;
-    float roiSize;
-    struct SharpnessGridElement_t { unsigned char x1; unsigned char x2; float x3; } *sharpnessGrid;
+    }  projectionSignature;
+    float  registrationErrorIntegral;
+    float  registrationErrorX;
+    float  registrationErrorY;
+    float  roiSize;
+    struct SharpnessGridElement_t { unsigned char x1; unsigned char x2; float x3; } * sharpnessGrid;
     struct GridROI_t { 
         int startX; 
         int startY; 
         int endX; 
         int endY; 
-    } smoothedROI;
-    int temporalOrder;
-    double timeReceived;
-    double timestamp;
-    float tx;
-    float ty;
+    }  smoothedROI;
+    int  temporalOrder;
+    double  timeReceived;
+    double  timestamp;
+    float  tx;
+    float  ty;
 }
 
 @property int AEAverage;

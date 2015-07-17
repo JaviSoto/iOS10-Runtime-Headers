@@ -3,13 +3,13 @@
  */
 
 @interface SKUIMenuBarViewElementConfiguration : NSObject <IKAppMenuBarDocumentDelegate> {
-    <SKUIMenuBarViewElementConfigurationDelegate> *_delegate;
-    IKAppMenuBarDocument *_menuBarDocument;
-    int _menuBarStyle;
-    NSArray *_menuItemViewElements;
-    BOOL _needsReload;
-    <_SKUIMenuBarViewElementConfigurationReloadDelegate> *_reloadDelegate;
-    SKUIMenuItemViewElement *_selectedMenuItemViewElement;
+    <SKUIMenuBarViewElementConfigurationDelegate> * _delegate;
+    IKAppMenuBarDocument * _menuBarDocument;
+    int  _menuBarStyle;
+    NSArray * _menuItemViewElements;
+    BOOL  _needsReload;
+    <_SKUIMenuBarViewElementConfigurationReloadDelegate> * _reloadDelegate;
+    SKUIMenuItemViewElement * _selectedMenuItemViewElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

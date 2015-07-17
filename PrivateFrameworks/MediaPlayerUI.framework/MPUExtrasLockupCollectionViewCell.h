@@ -3,25 +3,25 @@
  */
 
 @interface MPUExtrasLockupCollectionViewCell : UICollectionViewCell <MPUExtrasCarouselCollectionViewCell> {
-    BOOL _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
-    NSLayoutConstraint *_artworkContainerHeightConstraint;
-    MPUExtrasConstrainedArtworkContainerView *_artworkContainerView;
-    NSLayoutConstraint *_artworkContainerWidthConstraint;
+    BOOL  _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
+    NSLayoutConstraint * _artworkContainerHeightConstraint;
+    MPUExtrasConstrainedArtworkContainerView * _artworkContainerView;
+    NSLayoutConstraint * _artworkContainerWidthConstraint;
     struct CGSize { 
         float width; 
         float height; 
-    } _artworkSize;
-    NSLayoutConstraint *_descriptionBaselineConstraint;
-    UILabel *_descriptionLabel;
-    MPUExtrasZoomingImageInteractiveTransitionSourceContext *_interactiveTransitionSourceContext;
-    unsigned int _itemIndex;
-    IKLockupElement *_lockup;
-    UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    NSLayoutConstraint *_subtitleBaselineConstraint;
-    UILabel *_subtitleLabel;
-    UIView *_textContainerView;
-    UILabel *_titleLabel;
-    NSString *_zoomingImageTransitionIdentifier;
+    }  _artworkSize;
+    NSLayoutConstraint * _descriptionBaselineConstraint;
+    UILabel * _descriptionLabel;
+    MPUExtrasZoomingImageInteractiveTransitionSourceContext * _interactiveTransitionSourceContext;
+    unsigned int  _itemIndex;
+    IKLockupElement * _lockup;
+    UIPinchGestureRecognizer * _pinchGestureRecognizer;
+    NSLayoutConstraint * _subtitleBaselineConstraint;
+    UILabel * _subtitleLabel;
+    UIView * _textContainerView;
+    UILabel * _titleLabel;
+    NSString * _zoomingImageTransitionIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

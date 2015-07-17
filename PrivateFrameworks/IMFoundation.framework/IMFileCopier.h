@@ -3,29 +3,29 @@
  */
 
 @interface IMFileCopier : NSObject {
-    void *_BOMCopier;
-    id /* block */ _callback;
-    <IMFileCopierDelegate> *_delegate;
-    BOOL _didErrorOccur;
-    id _identifier;
-    BOOL _inProgress;
-    NSURL *_inputURL;
-    unsigned int _operation;
-    NSURL *_outputURL;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _shouldCancel;
+    void * _BOMCopier;
+    id /* block */  _callback;
+    <IMFileCopierDelegate> * _delegate;
+    BOOL  _didErrorOccur;
+    id  _identifier;
+    BOOL  _inProgress;
+    NSURL * _inputURL;
+    unsigned int  _operation;
+    NSURL * _outputURL;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _shouldCancel;
 }
 
 @property void*_BOMCopier;
-@property id /* block */ _callback;
+@property (copy) id /* block */ _callback;
 @property NSObject<OS_dispatch_queue> *_queue;
 @property <IMFileCopierDelegate> *delegate;
 @property (nonatomic, readonly) BOOL didErrorOccur;
-@property (readonly) id identifier;
+@property (readonly, retain) id identifier;
 @property BOOL inProgress;
-@property (readonly) NSURL *inputURL;
+@property (readonly, retain) NSURL *inputURL;
 @property unsigned int operation;
-@property (readonly) NSURL *outputURL;
+@property (readonly, retain) NSURL *outputURL;
 @property (nonatomic, readonly) BOOL wasCancelled;
 
 - (void*)_BOMCopier;

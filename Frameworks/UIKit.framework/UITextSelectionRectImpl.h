@@ -3,7 +3,7 @@
  */
 
 @interface UITextSelectionRectImpl : UITextSelectionRect {
-    WebSelectionRect *webRect;
+    WebSelectionRect * webRect;
 }
 
 @property (nonatomic, retain) WebSelectionRect *webRect;

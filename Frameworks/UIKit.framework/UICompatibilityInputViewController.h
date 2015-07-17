@@ -2,21 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICompatibilityInputViewController : UIInputViewController {
-    UIKeyboard *_deferredSystemView;
-    UIKeyboardInputMode *_incomingExtensionInputMode;
-    UIViewController *_inputController;
-    UIView *_inputControllerSnapshot;
-    UIKeyboardInputMode *_inputMode;
-    BOOL _shouldRegenerateSizingConstraints;
-    BOOL _shouldSuppressRemoteInputController;
+@interface UICompatibilityInputViewController : UIInputViewController <_UIKBDelegateAwareInputController> {
+    UIKeyboard * _deferredSystemView;
+    UIKeyboardInputMode * _incomingExtensionInputMode;
+    UIViewController * _inputController;
+    UIView * _inputControllerSnapshot;
+    UIKeyboardInputMode * _inputMode;
+    BOOL  _shouldRegenerateSizingConstraints;
+    BOOL  _shouldSuppressRemoteInputController;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIViewController *inputController;
 @property (nonatomic, retain) UIView *inputControllerSnapshot;
+@property (readonly) Class superclass;
 
 + (BOOL)_requiresProxyInterface;
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
 + (id)deferredInputModeControllerWithKeyboard:(id)arg1;
 + (id)inputViewControllerWithView:(id)arg1;
 
@@ -24,6 +27,8 @@
 - (id)_compatibilityController;
 - (id)_initAsDeferredController;
 - (id)_keyboard;
+- (id)_keyboardForThisViewController;
+- (id)_systemViewControllerForInputMode:(id)arg1;
 - (id)childCompatibilityController;
 - (void)dealloc;
 - (void)didFinishTranslation;
@@ -34,7 +39,9 @@
 - (void)generateCompatibleSizeConstraintsIfNecessary;
 - (id)inputController;
 - (id)inputControllerSnapshot;
+- (void)keyboardWillChangeFromDelegate:(id)arg1 toDelegate:(id)arg2;
 - (void)loadView;
+- (id)preferredFocusedItem;
 - (void)rebuildChildConstraints;
 - (void)removeSnapshotView;
 - (void)setInputController:(id)arg1;

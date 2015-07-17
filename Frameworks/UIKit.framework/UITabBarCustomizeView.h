@@ -3,10 +3,10 @@
  */
 
 @interface UITabBarCustomizeView : UIView {
-    NSArray *_availableItems;
-    UISnapshotView *_dragImage;
-    UITabBarItem *_draggingItem;
-    UITabBarItemProxy *_draggingProxy;
+    NSArray * _availableItems;
+    UISnapshotView * _dragImage;
+    UITabBarItem * _draggingItem;
+    UITabBarItemProxy * _draggingProxy;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,20 +16,20 @@
             float width; 
             float height; 
         } size; 
-    } _firstItemRect;
-    NSMutableArray *_fixedItems;
-    float _gridOffset;
-    int _itemsInRowCount;
-    NSMutableArray *_proxies;
-    UITabBarItem *_replaceItem;
-    UIImageView *_replacementGlow;
-    UITabBarItem *_selectedBeforeItem;
+    }  _firstItemRect;
+    NSMutableArray * _fixedItems;
+    float  _gridOffset;
+    int  _itemsInRowCount;
+    NSMutableArray * _proxies;
+    UITabBarItem * _replaceItem;
+    UIImageView * _replacementGlow;
+    UITabBarItem * _selectedBeforeItem;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPoint;
-    UITabBar *_tabBar;
-    UILabel *_titleLabel;
+    }  _startPoint;
+    UITabBar * _tabBar;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSArray *availableItems;

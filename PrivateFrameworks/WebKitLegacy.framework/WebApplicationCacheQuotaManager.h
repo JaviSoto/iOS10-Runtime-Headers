@@ -3,7 +3,7 @@
  */
 
 @interface WebApplicationCacheQuotaManager : NSObject <WebQuotaManager> {
-    WebSecurityOrigin *_origin;
+    WebSecurityOrigin * _origin;
 }
 
 - (id)initWithOrigin:(id)arg1;

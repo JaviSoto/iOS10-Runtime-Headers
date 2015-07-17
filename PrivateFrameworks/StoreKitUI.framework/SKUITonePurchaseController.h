@@ -3,11 +3,11 @@
  */
 
 @interface SKUITonePurchaseController : NSObject <ABPeoplePickerNavigationControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    id /* block */ _completionBlock;
-    SKUIItem *_item;
-    UIViewController *_parentViewController;
-    ABPeoplePickerNavigationController *_peoplePicker;
+    SKUIClientContext * _clientContext;
+    id /* block */  _completionBlock;
+    SKUIItem * _item;
+    UIViewController * _parentViewController;
+    ABPeoplePickerNavigationController * _peoplePicker;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

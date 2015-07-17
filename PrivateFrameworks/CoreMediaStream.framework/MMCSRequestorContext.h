@@ -3,13 +3,13 @@
  */
 
 @interface MMCSRequestorContext : NSObject {
-    char **_authTokens;
-    unsigned long _count;
-    MMCSEngine *_engine;
-    unsigned int *_itemFlags;
-    unsigned long long *_itemIDs;
-    char **_signatures;
-    int _type;
+    char ** _authTokens;
+    unsigned long  _count;
+    MMCSEngine * _engine;
+    unsigned int * _itemFlags;
+    unsigned long long * _itemIDs;
+    char ** _signatures;
+    int  _type;
 }
 
 @property (nonatomic) char **authTokens;

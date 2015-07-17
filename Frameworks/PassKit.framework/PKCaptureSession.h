@@ -3,11 +3,11 @@
  */
 
 @interface PKCaptureSession : NSObject <AVCaptureMetadataOutputObjectsDelegate> {
-    AVCaptureSession *_captureSession;
-    <PKCaptureDelegate> *_delegate;
-    AVCaptureDeviceInput *_deviceInput;
-    NSObject<OS_dispatch_queue> *_metadataQueue;
-    AVCaptureVideoPreviewLayer *_previewLayer;
+    AVCaptureSession * _captureSession;
+    <PKCaptureDelegate> * _delegate;
+    AVCaptureDeviceInput * _deviceInput;
+    NSObject<OS_dispatch_queue> * _metadataQueue;
+    AVCaptureVideoPreviewLayer * _previewLayer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,17 +3,17 @@
  */
 
 @interface PKPaymentAuthorizationSummaryItemsView : UIView {
-    NSMutableArray *_constraints;
-    NSMutableArray *_labelViews;
-    PKPaymentAuthorizationLayout *_layout;
-    NSMutableArray *_valueViews;
+    NSMutableArray * _constraints;
+    NSMutableArray * _labelViews;
+    PKPaymentAuthorizationLayout * _layout;
+    NSMutableArray * _valueViews;
 }
 
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;
 
 - (id)_labelAttributedStringWithString:(id)arg1;
 - (id)_valueAttributedStringWithString:(id)arg1;
-- (void)addLabel:(id)arg1 value:(id)arg2;
+- (void)addLabel:(id)arg1 value:(id)arg2 itemType:(unsigned int)arg3;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithLayout:(id)arg1;

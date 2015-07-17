@@ -12,7 +12,7 @@
 @property (copy) NSString *lineJoin;
 @property float lineWidth;
 @property float miterLimit;
-@property struct CGPath { }*path;
+@property const struct CGPath { }*path;
 @property struct CGColor { }*strokeColor;
 @property float strokeEnd;
 @property float strokeStart;
@@ -37,7 +37,7 @@
 - (id)lineJoin;
 - (float)lineWidth;
 - (float)miterLimit;
-- (struct CGPath { }*)path;
+- (const struct CGPath { }*)path;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setFillRule:(id)arg1;
 - (void)setLineCap:(id)arg1;

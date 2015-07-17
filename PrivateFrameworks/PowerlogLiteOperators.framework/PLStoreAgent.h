@@ -3,8 +3,8 @@
  */
 
 @interface PLStoreAgent : PLAgent <SSEventMonitorDelegate> {
-    NSMutableDictionary *_currentDownloads;
-    SSEventMonitor *_monitor;
+    NSMutableDictionary * _currentDownloads;
+    SSEventMonitor * _monitor;
 }
 
 @property (retain) NSMutableDictionary *currentDownloads;

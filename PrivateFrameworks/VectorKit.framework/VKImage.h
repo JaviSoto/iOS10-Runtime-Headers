@@ -3,20 +3,19 @@
  */
 
 @interface VKImage : NSObject {
-    NSData *_data;
-    struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; } *_gglTexture;
-    struct CGImage { } *_imageRef;
-    NSString *_name;
-    VKResourceManager *_resourceManager;
-    float _scale;
+    NSData * _data;
+    struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; } * _gglTexture;
+    struct CGImage { } * _imageRef;
+    NSString * _name;
+    VKResourceManager * _resourceManager;
+    float  _scale;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    BOOL _usedAsTextureAndImage;
+    }  _size;
+    BOOL  _usedAsTextureAndImage;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }*)gglTexture;
 - (struct CGImage { }*)image;

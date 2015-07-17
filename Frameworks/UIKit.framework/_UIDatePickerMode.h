@@ -3,39 +3,39 @@
  */
 
 @interface _UIDatePickerMode : NSObject {
-    UIFont *_amPmFont;
-    NSString *_amString;
-    NSDate *_baseDate;
-    NSDateComponents *_baseDateComponents;
-    NSArray *_dateFormatters;
-    _UIDatePickerView *_datePickerView;
-    UIFont *_defaultTimeFont;
-    unsigned int *_elements;
-    UIFont *_font;
-    NSNumberFormatter *_formatter;
-    BOOL _isUsingJapaneseCalendar;
-    NSString *_localizedFormatString;
+    UIFont * _amPmFont;
+    NSString * _amString;
+    NSDate * _baseDate;
+    NSDateComponents * _baseDateComponents;
+    NSArray * _dateFormatters;
+    _UIDatePickerView * _datePickerView;
+    UIFont * _defaultTimeFont;
+    unsigned int * _elements;
+    UIFont * _font;
+    NSNumberFormatter * _formatter;
+    BOOL  _isUsingJapaneseCalendar;
+    NSString * _localizedFormatString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _maxDayRange;
+    }  _maxDayRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _maxMonthRange;
-    NSDate *_maximumDate;
-    NSDateComponents *_maximumDateComponents;
-    NSDate *_minimumDate;
-    NSDateComponents *_minimumDateComponents;
-    int _minuteInterval;
-    unsigned int _numberOfComponents;
-    NSDate *_originatingDate;
-    NSString *_pmString;
-    NSDateComponents *_selectedDateComponents;
-    NSDateComponents *_todayDateComponents;
-    double _todaySinceReferenceDate;
-    UIColor *_todayTextColor;
-    int _yearsSinceBaseDate;
+    }  _maxMonthRange;
+    NSDate * _maximumDate;
+    NSDateComponents * _maximumDateComponents;
+    NSDate * _minimumDate;
+    NSDateComponents * _minimumDateComponents;
+    int  _minuteInterval;
+    unsigned int  _numberOfComponents;
+    NSDate * _originatingDate;
+    NSString * _pmString;
+    NSDateComponents * _selectedDateComponents;
+    NSDateComponents * _todayDateComponents;
+    double  _todaySinceReferenceDate;
+    UIColor * _todayTextColor;
+    int  _yearsSinceBaseDate;
 }
 
 @property (nonatomic, readonly) UIFont *amPmFont;
@@ -75,6 +75,7 @@
 + (void)initialize;
 + (id)newDateFromGregorianYear:(int)arg1 month:(int)arg2 day:(int)arg3 timeZone:(id)arg4;
 
+- (void).cxx_destruct;
 - (id)_dateByEnsuringValue:(int)arg1 forCalendarUnit:(unsigned int)arg2;
 - (id)_dateForYearRow:(int)arg1;
 - (int)_incrementForStaggeredTimeIntervals;
@@ -110,6 +111,7 @@
 - (int)displayedCalendarUnits;
 - (unsigned int*)elements;
 - (int)eraForYearRow:(int)arg1;
+- (void)fixUpElementsForRTL;
 - (id)font;
 - (id)fontForCalendarUnit:(unsigned int)arg1;
 - (int)hourForRow:(int)arg1;

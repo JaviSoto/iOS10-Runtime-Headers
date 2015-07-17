@@ -3,7 +3,7 @@
  */
 
 @interface SUTouchCaptureView : UIControl {
-    NSArray *_passThroughViews;
+    NSArray * _passThroughViews;
 }
 
 @property (nonatomic, retain) NSArray *passThroughViews;

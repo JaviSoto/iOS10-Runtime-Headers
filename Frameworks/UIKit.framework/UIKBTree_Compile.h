@@ -3,8 +3,8 @@
  */
 
 @interface UIKBTree_Compile : UIKBTree {
-    NSMutableDictionary *refs;
-    NSMutableDictionary *symbols;
+    NSMutableDictionary * refs;
+    NSMutableDictionary * symbols;
 }
 
 @property (nonatomic, readonly) NSArray *refList;

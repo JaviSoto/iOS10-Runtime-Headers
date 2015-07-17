@@ -3,10 +3,10 @@
  */
 
 @interface SKUICarouselItem : NSObject {
-    NSString *_accessibilityLabel;
-    SKUIArtworkList *_artworkList;
-    long long _carouselItemIdentifier;
-    SKUILink *_link;
+    NSString * _accessibilityLabel;
+    SKUIArtworkList * _artworkList;
+    long long  _carouselItemIdentifier;
+    SKUILink * _link;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityLabel;

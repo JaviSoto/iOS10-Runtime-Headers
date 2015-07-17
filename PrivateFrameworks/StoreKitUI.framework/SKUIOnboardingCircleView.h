@@ -3,17 +3,17 @@
  */
 
 @interface SKUIOnboardingCircleView : UIView {
-    UIImageView *_backgroundImageView;
+    UIImageView * _backgroundImageView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    UIColor *_fillColor;
-    float _minimumDiameter;
-    UILabel *_titleLabel;
-    int _titlePosition;
+    }  _edgeInsets;
+    UIColor * _fillColor;
+    float  _minimumDiameter;
+    UILabel * _titleLabel;
+    int  _titlePosition;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;

@@ -9,14 +9,14 @@
         struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
             long long *__first_; 
         } __end_cap_; 
-    } _persistentIDs;
+    }  _persistentIDs;
     struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
         char *__begin_; 
         char *__end_; 
         struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
             char *__first_; 
         } __end_cap_; 
-    } _sections;
+    }  _sections;
 }
 
 @property (nonatomic, readonly) unsigned int count;

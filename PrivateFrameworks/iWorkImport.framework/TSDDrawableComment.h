@@ -3,8 +3,8 @@
  */
 
 @interface TSDDrawableComment : NSObject <TSDAnnotationHosting> {
-    TSDDrawableInfo *mParent;
-    TSDCommentStorage *mStorage;
+    TSDDrawableInfo * mParent;
+    TSDCommentStorage * mStorage;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
@@ -26,7 +26,6 @@
 - (int)annotationType;
 - (id)author;
 - (void)commentWillBeAddedToDocumentRoot;
-- (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;

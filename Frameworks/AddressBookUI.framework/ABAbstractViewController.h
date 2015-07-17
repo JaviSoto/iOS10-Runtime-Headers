@@ -3,8 +3,8 @@
  */
 
 @interface ABAbstractViewController : UITableViewController {
-    ABModel *_model;
-    <ABStyleProvider> *_styleProvider;
+    ABModel * _model;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) ABModel *model;

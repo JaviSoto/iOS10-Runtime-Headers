@@ -9,5 +9,6 @@
 - (id)_generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)generatePreviewWithCompletion:(id /* block */)arg1;
 - (id)previewItemTitle;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

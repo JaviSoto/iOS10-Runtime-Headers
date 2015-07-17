@@ -3,7 +3,7 @@
  */
 
 @interface PSSoftwareUpdateReleaseNotesDetail : PSListController <UIWebViewDelegate> {
-    NSString *_releaseNotes;
+    NSString * _releaseNotes;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *releaseNotes;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)loadView;
 - (id)releaseNotes;

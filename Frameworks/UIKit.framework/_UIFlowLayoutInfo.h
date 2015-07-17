@@ -6,25 +6,25 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    float _dimension;
-    BOOL _estimatesSizes;
-    BOOL _horizontal;
-    BOOL _isValid;
-    UICollectionViewFlowLayout *_layout;
+    }  _contentSize;
+    float  _dimension;
+    BOOL  _estimatesSizes;
+    BOOL  _horizontal;
+    BOOL  _isValid;
+    UICollectionViewFlowLayout * _layout;
     struct CGSize { 
         float width; 
         float height; 
-    } _layoutSize;
-    BOOL _leftToRight;
+    }  _layoutSize;
+    BOOL  _leftToRight;
     struct { 
         int commonRowHorizontalAlignment; 
         int lastRowHorizontalAlignment; 
         int rowVerticalAlignment; 
-    } _rowAlignmentOptions;
-    NSMutableArray *_sections;
-    BOOL _useFloatingHeaderFooter;
-    BOOL _usesFloatingHeaderFooter;
+    }  _rowAlignmentOptions;
+    NSMutableArray * _sections;
+    BOOL  _useFloatingHeaderFooter;
+    BOOL  _usesFloatingHeaderFooter;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,7 +34,7 @@
             float width; 
             float height; 
         } size; 
-    } _visibleBounds;
+    }  _visibleBounds;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
@@ -48,10 +48,10 @@
 @property (nonatomic, readonly) NSMutableArray *sections;
 @property (nonatomic) BOOL usesFloatingHeaderFooter;
 
+- (void).cxx_destruct;
 - (id)addSection;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (id)copy;
-- (void)dealloc;
 - (void)didUpdateSizeForSection:(int)arg1 withDelta:(float)arg2;
 - (float)dimension;
 - (BOOL)estimatesSizes;

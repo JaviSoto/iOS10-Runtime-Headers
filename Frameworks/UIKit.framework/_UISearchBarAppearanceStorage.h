@@ -3,18 +3,18 @@
  */
 
 @interface _UISearchBarAppearanceStorage : NSObject {
-    NSMutableDictionary *iconImages;
-    UIImage *scopeBarBackgroundImage;
-    NSMutableDictionary *searchFieldBackgroundImages;
-    NSValue *searchFieldPositionAdjustment;
-    UIImage *separatorImage;
+    NSMutableDictionary * iconImages;
+    UIImage * scopeBarBackgroundImage;
+    NSMutableDictionary * searchFieldBackgroundImages;
+    NSValue * searchFieldPositionAdjustment;
+    UIImage * separatorImage;
 }
 
 @property (nonatomic, retain) UIImage *scopeBarBackgroundImage;
 @property (nonatomic, retain) NSValue *searchFieldPositionAdjustment;
 @property (nonatomic, retain) UIImage *separatorImage;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)imageForIcon:(int)arg1 state:(unsigned int)arg2;
 - (id)scopeBarBackgroundImage;
 - (id)searchFieldBackgroundImageForState:(unsigned int)arg1;

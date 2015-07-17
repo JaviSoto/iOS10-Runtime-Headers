@@ -3,16 +3,16 @@
  */
 
 @interface PUHorizontalTiledCollectionViewLayout : UICollectionViewLayout {
-    PUCollectionViewData *_data;
-    <PUHorizontalTiledCollectionViewLayoutDelegate> *_delegate;
-    UICollectionViewLayoutAttributes *_dummyAttrs;
-    float _interitemSpacing;
+    PUCollectionViewData * _data;
+    <PUHorizontalTiledCollectionViewLayoutDelegate> * _delegate;
+    UICollectionViewLayoutAttributes * _dummyAttrs;
+    float  _interitemSpacing;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _itemsContentInset;
+    }  _itemsContentInset;
 }
 
 @property (nonatomic) <PUHorizontalTiledCollectionViewLayoutDelegate> *delegate;

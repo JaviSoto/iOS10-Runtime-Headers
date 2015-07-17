@@ -3,26 +3,25 @@
  */
 
 @interface VKGlobeAnnotationTrackingCameraController : VKAnnotationTrackingCameraController {
-    struct Anchor { int (**x1)(); } *_anchor;
+    struct Anchor { int (**x1)(); } * _anchor;
     struct { 
         double latitude; 
         double longitude; 
-    } _currentAnimationEndCoordinate;
+    }  _currentAnimationEndCoordinate;
     struct { 
         double latitude; 
         double longitude; 
-    } _currentAnimationPresentationStartCoordinate;
+    }  _currentAnimationPresentationStartCoordinate;
     struct { 
         double latitude; 
         double longitude; 
         double altitude; 
-    } _currentAnimationStartCoordinate;
-    struct GlobeView { int (**x1)(); } *_globeView;
+    }  _currentAnimationStartCoordinate;
+    struct GlobeView { int (**x1)(); } * _globeView;
 }
 
 @property (nonatomic) struct GlobeView { int (**x1)(); }*globeView;
 
-- (id).cxx_construct;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (void)dealloc;

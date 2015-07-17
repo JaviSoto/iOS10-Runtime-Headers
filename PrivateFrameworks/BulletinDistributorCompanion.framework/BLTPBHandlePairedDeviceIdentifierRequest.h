@@ -3,11 +3,11 @@
  */
 
 @interface BLTPBHandlePairedDeviceIdentifierRequest : PBRequest <NSCopying> {
-    BOOL _carry;
+    BOOL  _carry;
     struct { 
         unsigned int carry : 1; 
-    } _has;
-    NSString *_identifier;
+    }  _has;
+    NSString * _identifier;
 }
 
 @property (nonatomic) BOOL carry;

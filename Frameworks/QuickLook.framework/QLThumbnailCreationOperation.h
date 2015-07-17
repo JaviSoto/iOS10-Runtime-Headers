@@ -12,15 +12,15 @@
             float width; 
             float height; 
         } size; 
-    } _contentRect;
-    NSURL *_documentURL;
-    NSError *_error;
-    BOOL _executing;
-    BOOL _finished;
-    UIImage *_image;
-    float _maximumDimension;
-    float _scaleFactor;
-    unsigned int _useMode;
+    }  _contentRect;
+    NSURL * _documentURL;
+    NSError * _error;
+    BOOL  _executing;
+    BOOL  _finished;
+    UIImage * _image;
+    float  _maximumDimension;
+    float  _scaleFactor;
+    unsigned int  _useMode;
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;

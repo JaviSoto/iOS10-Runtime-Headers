@@ -3,12 +3,10 @@
  */
 
 @interface WebSecurityOrigin : NSObject {
-    <WebQuotaManager> *_applicationCacheQuotaManager;
-    <WebQuotaManager> *_databaseQuotaManager;
-    WebSecurityOriginPrivate *_private;
+    <WebQuotaManager> * _applicationCacheQuotaManager;
+    <WebQuotaManager> * _databaseQuotaManager;
+    WebSecurityOriginPrivate * _private;
 }
-
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 + (id)webSecurityOriginFromDatabaseIdentifier:(id)arg1;
 
@@ -29,9 +27,5 @@
 - (id)stringValue;
 - (id)toString;
 - (unsigned long long)usage;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)webui_userVisibleName;
 
 @end

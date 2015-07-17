@@ -3,18 +3,18 @@
  */
 
 @interface NACIDSServer : NSObject <IDSServiceDelegate, MPAVRoutingControllerDelegate, MPVolumeControllerDelegate> {
-    NACEventThrottler *_hapticThrottler;
-    NSObject<OS_dispatch_queue> *_idsDispatchQueue;
-    IDSService *_idsService;
-    BOOL _isSystemMuted;
-    NSMutableDictionary *_messageRecords;
-    NSMutableDictionary *_routesObservers;
-    BOOL _shouldObserveHapticIntensity;
-    BOOL _shouldObserveSystemMutedState;
-    int _systemMuteToken;
-    NSArray *_volumeAudioCategories;
-    NSMutableDictionary *_volumeObservers;
-    NACRunAssertion *_volumeRunAssertion;
+    NACEventThrottler * _hapticThrottler;
+    NSObject<OS_dispatch_queue> * _idsDispatchQueue;
+    IDSService * _idsService;
+    BOOL  _isSystemMuted;
+    NSMutableDictionary * _messageRecords;
+    NSMutableDictionary * _routesObservers;
+    BOOL  _shouldObserveHapticIntensity;
+    BOOL  _shouldObserveSystemMutedState;
+    int  _systemMuteToken;
+    NSArray * _volumeAudioCategories;
+    NSMutableDictionary * _volumeObservers;
+    NACRunAssertion * _volumeRunAssertion;
 }
 
 @property (readonly, copy) NSString *debugDescription;

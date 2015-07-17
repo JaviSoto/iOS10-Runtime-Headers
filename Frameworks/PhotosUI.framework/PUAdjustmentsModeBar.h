@@ -3,37 +3,37 @@
  */
 
 @interface PUAdjustmentsModeBar : UIView <PUPhotoEditLayoutStaticAdaptable, UITableViewDataSource, UITableViewDelegate> {
-    UIView *_adjustmentViewsContainer;
-    NSArray *_adjustmentViewsContainerConstraints;
-    NSArray *_allAdjustmentModes;
-    BOOL _dataIsValid;
-    <PUAdjustmentsModeBarDataSource> *_dataSource;
-    <PUAdjustmentsModeBarDelegate> *_delegate;
-    BOOL _didSetInitialModeSlidersOffset;
-    float _expandedShortSideSize;
-    _UIDynamicValueAnimation *_finishTransitionAnimation;
-    float _interactiveTransitionProgress;
-    int _interactiveTransitionState;
-    int _layoutOrientation;
-    BOOL _listViewExpanded;
-    BOOL _listViewExpandedExplicitly;
-    UITableView *_modePickerTableView;
-    UIView *_modePickerTableViewBackground;
-    NSArray *_modePickerTableViewConstraints;
-    NSArray *_modePickerTableViewHiddenConstraints;
-    NSLayoutConstraint *_modePickerTableViewShortSideConstraint;
-    NSNumberFormatter *_nonZeroLevelValueFormatter;
-    _PUSliderPlayheadBaseView *_playheadBaseView;
-    float _playheadSize;
-    UIView *_playheadView;
-    BOOL _playheadViewVisible;
-    NSArray *_playheadViewsConstraints;
-    PUAdjustmentsMode *_selectedMode;
-    NSLayoutConstraint *_selfSizeConstraint;
-    float _shortSideSize;
-    float _slidersLongContentLength;
-    float _slidersShortSideLength;
-    NSNumberFormatter *_zeroLevelValueFormatter;
+    UIView * _adjustmentViewsContainer;
+    NSArray * _adjustmentViewsContainerConstraints;
+    NSArray * _allAdjustmentModes;
+    BOOL  _dataIsValid;
+    <PUAdjustmentsModeBarDataSource> * _dataSource;
+    <PUAdjustmentsModeBarDelegate> * _delegate;
+    BOOL  _didSetInitialModeSlidersOffset;
+    float  _expandedShortSideSize;
+    _UIDynamicValueAnimation * _finishTransitionAnimation;
+    float  _interactiveTransitionProgress;
+    int  _interactiveTransitionState;
+    int  _layoutOrientation;
+    BOOL  _listViewExpanded;
+    BOOL  _listViewExpandedExplicitly;
+    UITableView * _modePickerTableView;
+    UIView * _modePickerTableViewBackground;
+    NSArray * _modePickerTableViewConstraints;
+    NSArray * _modePickerTableViewHiddenConstraints;
+    NSLayoutConstraint * _modePickerTableViewShortSideConstraint;
+    NSNumberFormatter * _nonZeroLevelValueFormatter;
+    _PUSliderPlayheadBaseView * _playheadBaseView;
+    float  _playheadSize;
+    UIView * _playheadView;
+    BOOL  _playheadViewVisible;
+    NSArray * _playheadViewsConstraints;
+    PUAdjustmentsMode * _selectedMode;
+    NSLayoutConstraint * _selfSizeConstraint;
+    float  _shortSideSize;
+    float  _slidersLongContentLength;
+    float  _slidersShortSideLength;
+    NSNumberFormatter * _zeroLevelValueFormatter;
 }
 
 @property (nonatomic) <PUAdjustmentsModeBarDataSource> *dataSource;

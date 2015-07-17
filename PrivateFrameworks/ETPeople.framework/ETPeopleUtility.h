@@ -5,9 +5,9 @@
 @interface ETPeopleUtility : NSObject
 
 + (id)compressPhoneNumberString:(id)arg1;
++ (id)initialForString:(id)arg1;
 + (id)initialsForPerson:(void*)arg1;
 + (BOOL)isRomanString:(id)arg1;
-+ (BOOL)personHasImage:(void*)arg1;
 + (BOOL)personHasLinkages:(void*)arg1;
 + (BOOL)shouldAllowAddingFriendWithRecordID:(int)arg1 withFriendListManager:(id)arg2 addressBook:(void*)arg3 personValueCache:(id)arg4;
 

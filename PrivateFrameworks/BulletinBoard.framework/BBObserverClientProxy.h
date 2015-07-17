@@ -3,11 +3,11 @@
  */
 
 @interface BBObserverClientProxy : NSObject <BBObserverClientInterface, BBObserverServerInterface> {
-    NSMutableDictionary *_bulletinIDsToTransaction;
-    NSString *_clientBundleIdentifier;
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_queue;
-    BBServer *_serverWeak;
+    NSMutableDictionary * _bulletinIDsToTransaction;
+    NSString * _clientBundleIdentifier;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _queue;
+    BBServer * _serverWeak;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *bulletinIDsToTransaction;
@@ -31,11 +31,12 @@
 - (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getBulletinsWithHandler:(id /* block */)arg1;
 - (void)getObserverDebugInfo:(id /* block */)arg1;
 - (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id /* block */)arg1;
 - (void)getPrivilegedSenderTypesWithHandler:(id /* block */)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)getSectionInfoForSectionIDs:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getSectionInfoWithHandler:(id /* block */)arg1;
 - (void)getSectionOrderRuleWithHandler:(id /* block */)arg1;
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
@@ -64,8 +65,8 @@
 - (id)transactionBulletinIDs;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;
-- (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
-- (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
+- (void)updateSectionInfo:(id)arg1;
+- (void)updateSectionOrder:(id)arg1;
 - (void)updateSectionOrderRule:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 

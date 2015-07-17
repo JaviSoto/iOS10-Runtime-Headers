@@ -3,7 +3,7 @@
  */
 
 @interface MCPeerID : NSObject <NSCopying, NSSecureCoding> {
-    MCPeerIDInternal *_internal;
+    MCPeerIDInternal * _internal;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

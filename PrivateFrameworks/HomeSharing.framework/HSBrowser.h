@@ -3,14 +3,14 @@
  */
 
 @interface HSBrowser : NSObject <NSNetServiceDelegate> {
-    id /* block */ _addLibraryHandler;
-    NSArray *_availableLibraries;
-    int _browserType;
-    struct _DNSServiceRef_t { } *_dnsService;
-    NSObject<OS_dispatch_queue> *_dnsServiceQueue;
-    NSString *_homeSharingGroupID;
-    BOOL _isBrowsing;
-    id /* block */ _removeLibraryHandler;
+    id /* block */  _addLibraryHandler;
+    NSArray * _availableLibraries;
+    int  _browserType;
+    struct _DNSServiceRef_t { } * _dnsService;
+    NSObject<OS_dispatch_queue> * _dnsServiceQueue;
+    NSString * _homeSharingGroupID;
+    BOOL  _isBrowsing;
+    id /* block */  _removeLibraryHandler;
 }
 
 @property (nonatomic, readonly) NSArray *availableLibraries;

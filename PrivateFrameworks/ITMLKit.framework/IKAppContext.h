@@ -3,22 +3,23 @@
  */
 
 @interface IKAppContext : NSObject <ISURLOperationDelegate> {
-    <IKApplication> *_app;
-    BOOL _canAccessPendingQueue;
-    <IKAppContextDelegate> *_delegate;
-    BOOL _isValid;
-    JSContext *_jsContext;
-    IKJSFoundation *_jsFoundation;
-    struct __CFRunLoop { } *_jsThreadRunLoop;
-    struct __CFRunLoopSource { } *_jsThreadRunLoopSource;
-    BOOL _mescalPrimeEnabledForXHRRequests;
-    unsigned int _mode;
-    NSMutableArray *_pendingQueue;
-    NSMutableArray *_postEvaluationBlocks;
-    id _reloadData;
-    BOOL _remoteInspectionEnabled;
-    NSError *_responseError;
-    NSString *_responseScript;
+    <IKApplication> * _app;
+    BOOL  _canAccessPendingQueue;
+    <IKAppContextDelegate> * _delegate;
+    BOOL  _isValid;
+    JSContext * _jsContext;
+    IKJSFoundation * _jsFoundation;
+    struct __CFRunLoop { } * _jsThreadRunLoop;
+    struct __CFRunLoopSource { } * _jsThreadRunLoopSource;
+    BOOL  _mescalPrimeEnabledForXHRRequests;
+    unsigned int  _mode;
+    NSMutableArray * _pendingQueue;
+    NSMutableArray * _postEvaluationBlocks;
+    id  _reloadData;
+    BOOL  _remoteInspectionEnabled;
+    NSError * _responseError;
+    NSString * _responseScript;
+    BOOL  _trusted;
 }
 
 @property (nonatomic, readonly) <IKApplication> *app;
@@ -39,12 +40,15 @@
 @property (nonatomic, retain) NSError *responseError;
 @property (nonatomic, copy) NSString *responseScript;
 @property (readonly) Class superclass;
+@property (getter=isTrusted, nonatomic) BOOL trusted;
 
 + (id)currentAppContext;
++ (void)registerPrivateProtocols:(id)arg1 forClass:(Class)arg2;
 
 - (void).cxx_destruct;
 - (void)_addStopRecordToPendingQueueWithReload:(BOOL)arg1;
 - (void)_dispatchError:(id)arg1;
+- (void)_doEvaluate:(id /* block */)arg1;
 - (id)_errorWithMessage:(id)arg1;
 - (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
@@ -53,7 +57,7 @@
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)_sourcePerform;
 - (void)_sourceScheduledOnRunLoop:(struct __CFRunLoop { }*)arg1;
-- (void)_startWithScript:(id)arg1;
+- (void)_startWithScript:(id)arg1 scriptUrl:(id)arg2;
 - (void)_startWithURL:(id)arg1 urlTrusted:(BOOL)arg2;
 - (void)_stopAndReload:(BOOL)arg1;
 - (void)addPostEvaluateBlock:(id /* block */)arg1;
@@ -67,6 +71,7 @@
 - (void)handleReloadWithUrgencyType:(unsigned int)arg1 data:(id)arg2;
 - (void)handleRestart;
 - (id)initWithApplication:(id)arg1 mode:(unsigned int)arg2 delegate:(id)arg3;
+- (BOOL)isTrusted;
 - (BOOL)isValid;
 - (id)jsContext;
 - (id)jsFoundation;
@@ -96,6 +101,7 @@
 - (void)setRemoteInspectionEnabled:(BOOL)arg1;
 - (void)setResponseError:(id)arg1;
 - (void)setResponseScript:(id)arg1;
+- (void)setTrusted:(BOOL)arg1;
 - (void)start;
 - (void)stop;
 - (void)suspendWithOptions:(id)arg1;

@@ -6,27 +6,27 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } __lastContentOffset;
+    }  __lastContentOffset;
     struct CGSize { 
         float width; 
         float height; 
-    } __lastContentSize;
-    UIScrollView *__lastScrollView;
-    double __lastTime;
-    int __nextRegime;
-    int __nextRegimeCount;
-    NSTimer *__timeoutTimer;
-    <PUScrollViewSpeedometerDelegate> *_delegate;
-    BOOL _delegateSupportsRegimeChange;
-    float _fastLowerThreshold;
-    float _fastUpperThreshold;
-    float _mediumLowerThreshold;
-    float _mediumUpperThreshold;
-    int _regime;
+    }  __lastContentSize;
+    UIScrollView * __lastScrollView;
+    double  __lastTime;
+    int  __nextRegime;
+    int  __nextRegimeCount;
+    NSTimer * __timeoutTimer;
+    <PUScrollViewSpeedometerDelegate> * _delegate;
+    BOOL  _delegateSupportsRegimeChange;
+    float  _fastLowerThreshold;
+    float  _fastUpperThreshold;
+    float  _mediumLowerThreshold;
+    float  _mediumUpperThreshold;
+    int  _regime;
     struct CGPoint { 
         float x; 
         float y; 
-    } _scrollSpeed;
+    }  _scrollSpeed;
 }
 
 @property (setter=_setLastContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _lastContentOffset;

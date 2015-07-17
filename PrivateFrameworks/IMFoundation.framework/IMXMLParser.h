@@ -3,12 +3,12 @@
  */
 
 @interface IMXMLParser : NSObject <NSXMLParserDelegate> {
-    IMXMLParserContext *_context;
-    struct __CFDictionary { } *_framespace;
-    NSMutableArray *_otherFrames;
-    NSXMLParser *_parser;
-    struct _TidyDoc { int x1; } *_tidyDoc;
-    IMXMLParserFrame *_topFrame;
+    IMXMLParserContext * _context;
+    struct __CFDictionary { } * _framespace;
+    NSMutableArray * _otherFrames;
+    NSXMLParser * _parser;
+    struct _TidyDoc { int x1; } * _tidyDoc;
+    IMXMLParserFrame * _topFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;

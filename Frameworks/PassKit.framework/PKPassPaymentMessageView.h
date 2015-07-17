@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassPaymentMessageView : PKPassPaymentFooterContentView {
-    UIImageView *_alertImageView;
-    UILabel *_bodyLabel;
-    UIView *_bottomRule;
-    UIButton *_button;
-    UILabel *_titleLabel;
+@interface PKPassPaymentMessageView : PKPassFooterContentView {
+    UIImageView * _alertImageView;
+    UILabel * _bodyLabel;
+    UIView * _bottomRule;
+    UIButton * _button;
+    UILabel * _titleLabel;
 }
 
 - (id)_actionButton;

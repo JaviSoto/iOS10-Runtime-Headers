@@ -3,9 +3,9 @@
  */
 
 @interface BLRetouchModel : NSObject {
-    BLRetouchLayerStack *_layerStack;
-    NSLock *_lock;
-    NSDictionary *_strokesDataDictionary;
+    BLRetouchLayerStack * _layerStack;
+    NSLock * _lock;
+    NSDictionary * _strokesDataDictionary;
 }
 
 - (void)buildLayerStackWithMaskSourceImage:(id)arg1;

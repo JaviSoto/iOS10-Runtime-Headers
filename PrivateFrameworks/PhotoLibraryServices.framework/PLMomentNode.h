@@ -3,15 +3,15 @@
  */
 
 @interface PLMomentNode : NSObject {
-    PLMomentCluster *__cluster;
-    NSDate *__creationDate;
-    CLLocation *__location;
-    NSObject<NSCopying> *__objectID;
-    NSString *__userTag;
-    unsigned int __userTagType;
-    NSNumber *_cacheInsertionIndex;
-    BOOL _marked;
-    BOOL _visited;
+    PLMomentCluster * __cluster;
+    NSDate * __creationDate;
+    CLLocation * __location;
+    NSObject<NSCopying> * __objectID;
+    NSString * __userTag;
+    unsigned int  __userTagType;
+    NSNumber * _cacheInsertionIndex;
+    BOOL  _marked;
+    BOOL  _visited;
 }
 
 @property (nonatomic, retain) NSNumber *cacheInsertionIndex;

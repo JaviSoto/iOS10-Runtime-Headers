@@ -3,14 +3,14 @@
  */
 
 @interface XPCClient : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    <XPCClientDelegate> *_delegate;
-    NSRecursiveLock *_delegateLock;
-    NSString *_machName;
-    NSDictionary *_options;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
-    NSString *_type;
+    NSObject<OS_xpc_object> * _connection;
+    <XPCClientDelegate> * _delegate;
+    NSRecursiveLock * _delegateLock;
+    NSString * _machName;
+    NSDictionary * _options;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
+    NSString * _type;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;

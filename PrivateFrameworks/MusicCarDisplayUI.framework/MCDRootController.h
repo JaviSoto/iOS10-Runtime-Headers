@@ -3,10 +3,10 @@
  */
 
 @interface MCDRootController : NSObject {
-    MCDBrowserViewController *_browserViewController;
-    UIWindow *_carDisplayWindow;
-    MPAVController *_player;
-    <MCDCarDisplayServiceProvider> *_serviceProvider;
+    MCDBrowserViewController * _browserViewController;
+    UIWindow * _carDisplayWindow;
+    MPAVController * _player;
+    <MCDCarDisplayServiceProvider> * _serviceProvider;
 }
 
 @property (nonatomic, readonly) UIWindow *carDisplayWindow;

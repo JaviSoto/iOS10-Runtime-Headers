@@ -3,11 +3,11 @@
  */
 
 @interface EKUIInviteesViewConflictSearchCell : UITableViewCell {
-    UILabel *_label;
-    float _leftInset;
-    UIColor *_originalLabelFontColor;
-    NSArray *_persistentConstraints;
-    UIActivityIndicatorView *_spinner;
+    UILabel * _label;
+    float  _leftInset;
+    UIColor * _originalLabelFontColor;
+    NSArray * _persistentConstraints;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, retain) UILabel *label;

@@ -3,12 +3,12 @@
  */
 
 @interface EKTimeZoneViewController : UITableViewController <UISearchControllerDelegate> {
-    int _chooserStyle;
-    NSArray *_cities;
-    <EKTimeZoneViewControllerDelegate> *_delegate;
-    UISearchController *_searchController;
-    int _style;
-    NSTimeZone *_timeZone;
+    int  _chooserStyle;
+    NSArray * _cities;
+    <EKTimeZoneViewControllerDelegate> * _delegate;
+    UISearchController * _searchController;
+    int  _style;
+    NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, readonly) int chooserStyle;

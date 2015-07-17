@@ -3,13 +3,13 @@
  */
 
 @interface MPStoreOfferMediaItemCollection : MPMediaItemCollection {
-    MPStoreOfferContentRating *_collectionContentRating;
-    BOOL _hasHiddenRestrictedContent;
-    MPMediaItemCollection *_localCollection;
-    MPMediaQuery *_localItemsQuery;
-    int _preferredStoreOfferVariant;
-    MPStoreCompletionOfferResponse *_storeOfferResponse;
-    NSArray *_unmergedStoreMediaItems;
+    MPStoreOfferContentRating * _collectionContentRating;
+    BOOL  _hasHiddenRestrictedContent;
+    MPMediaItemCollection * _localCollection;
+    MPMediaQuery * _localItemsQuery;
+    int  _preferredStoreOfferVariant;
+    MPStoreCompletionOfferResponse * _storeOfferResponse;
+    NSArray * _unmergedStoreMediaItems;
 }
 
 @property (nonatomic, readonly) BOOL isCollectionOfferPresentable;

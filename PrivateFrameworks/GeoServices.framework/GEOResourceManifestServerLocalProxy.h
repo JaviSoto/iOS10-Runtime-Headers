@@ -3,30 +3,32 @@
  */
 
 @interface GEOResourceManifestServerLocalProxy : NSObject <GEOResourceManifestServerProxy, NSURLConnectionDelegate> {
-    GEOActiveTileGroup *_activeTileGroup;
-    NSString *_authToken;
-    NSLock *_authTokenLock;
-    GEOResourceManifestConfiguration *_configuration;
-    NSURLConnection *_connection;
-    <GEOResourceManifestServerProxyDelegate> *_delegate;
-    double _lastManifestRetryTimestamp;
-    NSError *_lastResourceManifestLoadError;
-    double _lastTileGroupRetryTimestamp;
-    NSString *_loadingTileGroupUniqueIdentifier;
-    unsigned int _manifestRetryCount;
-    NSMutableArray *_manifestUpdateCompletionHandlers;
-    NSTimer *_manifestUpdateTimer;
-    GEOResourceLoader *_resourceLoader;
-    GEOResourceManifestDownload *_resourceManifest;
-    NSMutableData *_responseData;
-    NSString *_responseETag;
-    BOOL _started;
-    unsigned int _tileGroupRetryCount;
-    NSTimer *_tileGroupUpdateTimer;
-    BOOL _wantsManifestUpdateOnReachabilityChange;
-    BOOL _wantsTileGroupUpdateOnReachabilityChange;
+    GEOActiveTileGroup * _activeTileGroup;
+    NSString * _authToken;
+    NSLock * _authTokenLock;
+    GEOResourceManifestConfiguration * _configuration;
+    NSURLConnection * _connection;
+    <GEOResourceManifestServerProxyDelegate> * _delegate;
+    double  _lastManifestRequestStartTime;
+    double  _lastManifestRetryTimestamp;
+    NSError * _lastResourceManifestLoadError;
+    double  _lastTileGroupRetryTimestamp;
+    NSString * _loadingTileGroupUniqueIdentifier;
+    unsigned int  _manifestRetryCount;
+    NSMutableArray * _manifestUpdateCompletionHandlers;
+    NSTimer * _manifestUpdateTimer;
+    GEOResourceLoader * _resourceLoader;
+    GEOResourceManifestDownload * _resourceManifest;
+    NSMutableData * _responseData;
+    NSString * _responseETag;
+    BOOL  _started;
+    unsigned int  _tileGroupRetryCount;
+    NSTimer * _tileGroupUpdateTimer;
+    BOOL  _wantsManifestUpdateOnReachabilityChange;
+    BOOL  _wantsTileGroupUpdateOnReachabilityChange;
 }
 
+@property (nonatomic, readonly) GEOActiveTileGroup *activeTileGroup;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GEOResourceManifestServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -43,6 +45,7 @@
 - (id)_idealTileGroupToUse;
 - (void)_loadFromDisk;
 - (id)_manifestURL;
+- (void)_networkDefaultsDidChange:(id)arg1;
 - (void)_notifyManifestUpdateCompletionHandlers:(id)arg1;
 - (void)_purgeOldRegionalResources;
 - (void)_purgeOldResources;
@@ -56,8 +59,9 @@
 - (void)_updateManifest:(id /* block */)arg1;
 - (BOOL)_updateManifestIfNecessary:(id /* block */)arg1;
 - (void)_updateTimerFired:(id)arg1;
-- (void)_writeActiveTileGroupToDisk:(id)arg1;
-- (void)_writeManifestToDisk:(id)arg1;
+- (BOOL)_writeActiveTileGroupToDisk:(id)arg1 error:(id*)arg2;
+- (BOOL)_writeManifestToDisk:(id)arg1 error:(id*)arg2;
+- (id)activeTileGroup;
 - (id)authToken;
 - (void)closeConnection;
 - (id)configuration;

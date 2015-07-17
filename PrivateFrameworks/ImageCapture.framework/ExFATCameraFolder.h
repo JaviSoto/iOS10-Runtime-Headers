@@ -3,7 +3,7 @@
  */
 
 @interface ExFATCameraFolder : ICCameraFolder {
-    void *_exFATCameraFolderProperties;
+    void * _exFATCameraFolderProperties;
 }
 
 @property (readonly) struct timespec { int x1; long x2; } fsCreationTime;

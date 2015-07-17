@@ -3,7 +3,7 @@
  */
 
 @interface PLButtonTableViewCell : UITableViewCell {
-    UIButton *_button;
+    UIButton * _button;
 }
 
 @property (nonatomic, retain) UIButton *button;

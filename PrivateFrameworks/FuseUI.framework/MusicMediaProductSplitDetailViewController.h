@@ -3,18 +3,18 @@
  */
 
 @interface MusicMediaProductSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicEntityEditableVerticalLockupViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    UIImage *_editedContentArtworkImage;
-    NSString *_lockupArtworkProperty;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    <MusicMediaProductSplitDetailViewControllerDelegate> *_mediaSplitViewControllerDelegate;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    UIViewController *_relatedContentViewController;
-    MusicEntityEditableVerticalLockupView *_verticalLockupView;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    UIImage * _editedContentArtworkImage;
+    NSString * _lockupArtworkProperty;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    <MusicMediaProductSplitDetailViewControllerDelegate> * _mediaSplitViewControllerDelegate;
+    MusicEntityPlaybackStatusController * _playbackStatusController;
+    MPAVController * _player;
+    UIViewController * _relatedContentViewController;
+    MusicEntityEditableVerticalLockupView * _verticalLockupView;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;

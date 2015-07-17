@@ -3,27 +3,27 @@
  */
 
 @interface HTSHTTPServer : NSObject {
-    NSMutableArray *_activeConnections;
-    NSMutableDictionary *_authTokens;
-    double _bandwidthStddev;
-    unsigned long long _bytesWritten;
-    int _cacheMaxAge;
-    struct __CFHTTPMessage { } *_currentRequest;
-    <HTSHTTPServerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _digestAuthenticationEnabled;
-    NSString *_documentRoot;
-    double _kbps;
-    double _lastReplenishTime;
-    double _latency;
-    double _latencyStddev;
-    int _listenSocket4;
-    NSObject<OS_dispatch_source> *_listenSource4;
-    NSString *_nodename;
-    BOOL _pipeliningEnabled;
-    unsigned short _port;
-    NSObject<OS_dispatch_queue> *_serverQueue;
-    unsigned long long _totalBytesWritten;
+    NSMutableArray * _activeConnections;
+    NSMutableDictionary * _authTokens;
+    double  _bandwidthStddev;
+    unsigned long long  _bytesWritten;
+    int  _cacheMaxAge;
+    struct __CFHTTPMessage { } * _currentRequest;
+    <HTSHTTPServerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _digestAuthenticationEnabled;
+    NSString * _documentRoot;
+    double  _kbps;
+    double  _lastReplenishTime;
+    double  _latency;
+    double  _latencyStddev;
+    int  _listenSocket4;
+    NSObject<OS_dispatch_source> * _listenSource4;
+    NSString * _nodename;
+    BOOL  _pipeliningEnabled;
+    unsigned short  _port;
+    NSObject<OS_dispatch_queue> * _serverQueue;
+    unsigned long long  _totalBytesWritten;
 }
 
 @property (nonatomic) double bandwidthStddev;

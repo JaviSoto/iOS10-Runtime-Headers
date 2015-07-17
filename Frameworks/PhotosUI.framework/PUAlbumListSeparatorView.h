@@ -3,8 +3,8 @@
  */
 
 @interface PUAlbumListSeparatorView : UIView {
-    UIColor *_lineColor;
-    UIView *_separatorLine;
+    UIColor * _lineColor;
+    UIView * _separatorLine;
 }
 
 @property (nonatomic, copy) UIColor *lineColor;

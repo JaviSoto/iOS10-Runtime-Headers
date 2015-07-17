@@ -3,8 +3,8 @@
  */
 
 @interface PLAWDAudio : PLAWDAuxMetrics {
-    PLEntryNotificationOperatorComposition *_audioRailCallback;
-    NSDate *_startTime;
+    PLEntryNotificationOperatorComposition * _audioRailCallback;
+    NSDate * _startTime;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *audioRailCallback;

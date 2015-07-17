@@ -3,7 +3,7 @@
  */
 
 @interface MCDPodcastEpisodesTableViewController : MCD_OLD_TableViewController {
-    NSDateFormatter *_formatter;
+    NSDateFormatter * _formatter;
 }
 
 - (void).cxx_destruct;

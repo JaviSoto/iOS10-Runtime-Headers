@@ -3,16 +3,16 @@
  */
 
 @interface _UIDocumentPickerOverviewViewControllerCell : UITableViewCell {
-    UIImageView *_iconView;
-    UIImageView *_newlyAddedView;
+    UIImageView * _iconView;
+    UIImageView * _newlyAddedView;
 }
 
 @property (nonatomic, retain) UIImageView *iconView;
 @property (nonatomic, retain) UIImageView *newlyAddedView;
 @property (nonatomic) BOOL showNewlyAdded;
 
+- (void).cxx_destruct;
 - (id)_dotImage;
-- (void)dealloc;
 - (id)iconView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;

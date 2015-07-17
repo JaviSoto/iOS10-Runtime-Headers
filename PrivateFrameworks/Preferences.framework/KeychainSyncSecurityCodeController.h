@@ -3,14 +3,14 @@
  */
 
 @interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController {
-    NSString *_firstPasscodeEntry;
-    UIButton *_footerButton;
-    UILabel *_footerLabel;
-    NSString *_generatedCode;
-    float _keyboardHeight;
-    int _mode;
-    int _securityCodeType;
-    BOOL _showsAdvancedSettings;
+    NSString * _firstPasscodeEntry;
+    UIButton * _footerButton;
+    UILabel * _footerLabel;
+    NSString * _generatedCode;
+    float  _keyboardHeight;
+    int  _mode;
+    int  _securityCodeType;
+    BOOL  _showsAdvancedSettings;
 }
 
 @property (nonatomic, retain) NSString *firstPasscodeEntry;
@@ -18,6 +18,8 @@
 @property (nonatomic) int securityCodeType;
 @property (nonatomic) BOOL showsAdvancedSettings;
 
+- (void).cxx_destruct;
+- (id)_configureTextEntryCell;
 - (void)animatePasscodeFieldLeft:(BOOL)arg1;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface IDSPushHandler : NSObject <APSConnectionDelegate> {
-    Class _APSConnectionClass;
-    APSConnection *_apsConnection;
-    NSData *_cachedPushToken;
-    NSMapTable *_handlerMap;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    NSMutableSet *_topicsCache;
+    Class  _APSConnectionClass;
+    APSConnection * _apsConnection;
+    NSData * _cachedPushToken;
+    NSMapTable * _handlerMap;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    NSMutableSet * _topicsCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

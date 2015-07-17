@@ -3,18 +3,18 @@
  */
 
 @interface HDIDSOutgoingRequest : NSObject <HDNanoSyncDescription> {
-    NSData *_data;
-    BOOL _doNotCompress;
-    BOOL _forceLocalDelivery;
-    NSString *_idsIdentifier;
-    HDIDSMessageCenter *_messageCenter;
-    unsigned short _messageID;
-    id _pbRequest;
-    NSDictionary *_persistentUserInfo;
-    unsigned int _priority;
-    BOOL _queueOnly1;
-    double _responseTimeout;
-    double _sendTimeout;
+    NSData * _data;
+    BOOL  _doNotCompress;
+    BOOL  _forceLocalDelivery;
+    NSString * _idsIdentifier;
+    HDIDSMessageCenter * _messageCenter;
+    unsigned short  _messageID;
+    id  _pbRequest;
+    NSDictionary * _persistentUserInfo;
+    unsigned int  _priority;
+    BOOL  _queueOnly1;
+    double  _responseTimeout;
+    double  _sendTimeout;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -34,8 +34,8 @@
 @property (nonatomic) double sendTimeout;
 @property (readonly) Class superclass;
 
-+ (id)activationRequestWithRestore:(id)arg1 pairingInfo:(id)arg2;
-+ (id)changeRequestWithChanges:(id)arg1 status:(id)arg2 pairingInfo:(id)arg3;
++ (id)activationRequestWithRestore:(id)arg1 forStore:(id)arg2;
++ (id)changeRequestWithChanges:(id)arg1 status:(id)arg2 forStore:(id)arg3;
 + (id)requestWithMessageID:(unsigned short)arg1;
 
 - (void).cxx_destruct;

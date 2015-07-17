@@ -3,10 +3,10 @@
  */
 
 @interface PKDiffHunk : NSObject <NSSecureCoding> {
-    NSString *_key;
-    NSString *_message;
-    id _newValue;
-    id _oldValue;
+    NSString * _key;
+    NSString * _message;
+    id  _newValue;
+    id  _oldValue;
 }
 
 @property (nonatomic, retain) NSString *key;

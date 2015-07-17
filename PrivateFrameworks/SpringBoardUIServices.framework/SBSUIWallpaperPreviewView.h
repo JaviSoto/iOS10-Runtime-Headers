@@ -3,28 +3,34 @@
  */
 
 @interface SBSUIWallpaperPreviewView : UIView {
-    SBFLockScreenDateView *_dateView;
-    SBSUIWallpaperMotionButton *_motionButton;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    SBFWallpaperView *_wallpaperView;
+    int  _batterySaverModeNotificationToken;
+    SBFLockScreenDateView * _dateView;
+    BOOL  _observingParallaxChanges;
+    SBSUIEffectsSegmentedControl * _segmentedControl;
+    BOOL  _usingSegmentedControl;
+    SBFWallpaperView * _wallpaperView;
 }
 
 @property (nonatomic, retain) SBFLockScreenDateView *dateView;
-@property (nonatomic, retain) SBFWallpaperView *wallpaperView;
+@property (nonatomic) SBSUIEffectsSegmentedControl *segmentedControl;
+@property (nonatomic, readonly, retain) SBFWallpaperView *wallpaperView;
 
+- (void)_batterySaverModeChanged;
+- (void)_effectChanged:(id)arg1;
 - (void)_layoutDateView;
-- (void)_layoutMotionButton;
+- (void)_layoutSegmentedControl;
 - (void)_layoutWallpaperView;
-- (float)_motionButtonInset;
+- (float)_segmentedControlInset;
 - (void)_toggleMotion;
-- (void)_updateMotionEffectsButton;
+- (void)_updateSegmentedControl;
 - (id)dateView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperView:(id)arg2;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)segmentedControl;
 - (void)setDateView:(id)arg1;
-- (void)setWallpaperView:(id)arg1;
+- (void)setSegmentedControl:(id)arg1;
 - (id)wallpaperView;
 
 @end

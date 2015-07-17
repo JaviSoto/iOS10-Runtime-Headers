@@ -2,38 +2,38 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLayoutMarginProxyViewDelegate, MusicLibraryBrowseCollectionViewControllerDelegate, MusicSplitInitialStateProviding, MusicVerticalScrollingContainerViewControllerDelegate, SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController> {
-    MusicLibraryArtistsViewConfiguration *_artistsViewConfiguration;
-    MusicClientContext *_clientContext;
-    NSMutableArray *_entityProviderNotificationObservers;
-    MusicHairlineView *_hairlineView;
-    BOOL _hasIndexBarEntries;
-    SKUIIndexBarControl *_indexBarControl;
-    int _indexBarControlVisibleTransactionCount;
-    MusicVerticalScrollingContainerItem *_indexBarMinimumVerticalScrollingContainerItem;
-    float _indexBarRightLayoutMarginAddition;
-    <MusicIndexBarDataSource><MusicIndexBarScrollDelegate> *_indexBarSupportDataSource;
-    BOOL _isContainedWithinSplitViewPrimary;
-    BOOL _isIgnoringLayoutMarginsChange;
-    BOOL _isIndexBarTracking;
-    BOOL _isIndexBarVisible;
-    UIViewController *_libraryBrowseViewController;
-    BOOL _needsIndexBarVisibilityUpdate;
-    SKUIProxyScrollView *_proxyScrollView;
+@interface MusicLibraryViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLayoutMarginProxyViewDelegate, MusicLibraryBrowseCollectionViewControllerDelegate, MusicSplitInitialStateProviding, MusicVerticalScrollingContainerViewControllerDelegate, SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController, UIViewControllerRestoration> {
+    MusicLibraryArtistsViewConfiguration * _artistsViewConfiguration;
+    MusicClientContext * _clientContext;
+    NSMutableArray * _entityProviderNotificationObservers;
+    MusicHairlineView * _hairlineView;
+    BOOL  _hasIndexBarEntries;
+    SKUIIndexBarControl * _indexBarControl;
+    int  _indexBarControlVisibleTransactionCount;
+    MusicVerticalScrollingContainerItem * _indexBarMinimumVerticalScrollingContainerItem;
+    float  _indexBarRightLayoutMarginAddition;
+    <MusicIndexBarDataSource><MusicIndexBarScrollDelegate> * _indexBarSupportDataSource;
+    BOOL  _isContainedWithinSplitViewPrimary;
+    BOOL  _isIgnoringLayoutMarginsChange;
+    BOOL  _isIndexBarTracking;
+    BOOL  _isIndexBarVisible;
+    UIViewController * _libraryBrowseViewController;
+    BOOL  _needsIndexBarVisibilityUpdate;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _proxyScrollViewContentInsetAdditions;
-    MusicActionableHeaderView *_recentlyAddedHeaderView;
-    MusicLibraryBrowseCollectionViewController *_recentlyAddedViewController;
-    MusicLibraryViewConfiguration *_selectedViewConfiguration;
-    BOOL _shouldAnimatePendingIndexBarVisibilityUpdate;
-    MusicSwitcherButtonContainerView *_switcherButtonContainerView;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
-    NSMutableDictionary *_viewConfigurationIdentifierToHasContentNumber;
-    NSArray *_viewConfigurations;
+    }  _proxyScrollViewContentInsetAdditions;
+    MusicActionableHeaderView * _recentlyAddedHeaderView;
+    MusicLibraryBrowseCollectionViewController * _recentlyAddedViewController;
+    MusicLibraryViewConfiguration * _selectedViewConfiguration;
+    BOOL  _shouldAnimatePendingIndexBarVisibilityUpdate;
+    MusicSwitcherButtonContainerView * _switcherButtonContainerView;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
+    NSMutableDictionary * _viewConfigurationIdentifierToHasContentNumber;
+    NSArray * _viewConfigurations;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -46,6 +46,9 @@
 @property (nonatomic, readonly) UIViewController *selectedViewConfigurationViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MusicSwitcherButtonContainerView *switcherButtonContainerView;
+
++ (id)_newRecentlyAddedViewControllerWithClientContext:(id)arg1;
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (float)_calculateHairlineViewHeight;
@@ -81,6 +84,8 @@
 - (void)collectionViewFlowLayoutLayoutMetricsWereUpdatedForLibraryBrowseCollectionViewController:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)indexBarControl:(id)arg1 didSelectEntryAtIndexPath:(id)arg2;
 - (id)indexBarControl:(id)arg1 entryAtIndexPath:(id)arg2;
 - (int)indexBarControl:(id)arg1 numberOfEntriesInSection:(int)arg2;

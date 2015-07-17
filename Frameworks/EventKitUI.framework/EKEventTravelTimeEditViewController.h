@@ -3,16 +3,16 @@
  */
 
 @interface EKEventTravelTimeEditViewController : EKEditItemViewController <EKEditItemViewControllerDelegate, EKTravelRouteEstimationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSDate *_arrivalDate;
-    EKCalendarItem *_calendarItem;
-    NSIndexPath *_checkedItem;
-    BOOL _customTimesGroupIsShowing;
-    double _customTravelTimeDuration;
-    EKStructuredLocation *_destinationStructuredLocation;
-    BOOL _estimatedRowIsChecked;
-    BOOL _estimationGroupIsShowing;
-    EKEventStore *_eventStore;
-    BOOL _externallySetValueGroupIsShowing;
+    NSDate * _arrivalDate;
+    EKCalendarItem * _calendarItem;
+    NSIndexPath * _checkedItem;
+    BOOL  _customTimesGroupIsShowing;
+    double  _customTravelTimeDuration;
+    EKStructuredLocation * _destinationStructuredLocation;
+    BOOL  _estimatedRowIsChecked;
+    BOOL  _estimationGroupIsShowing;
+    EKEventStore * _eventStore;
+    BOOL  _externallySetValueGroupIsShowing;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,22 +22,22 @@
             float width; 
             float height; 
         } size; 
-    } _initFrame;
-    BOOL _isAnimatingTableSections;
-    BOOL _isOriginSelectionVisible;
-    EKStructuredLocation *_originStructuredLocation;
-    int _originalSelectedRoutingMode;
-    double _originalSelectedTravelTime;
-    BOOL _pendingReloadData;
-    EKTravelRouteEstimationController *_routeEstimationControler;
-    NSString *_routeEstimationErrorMessage;
-    int _selectedRoutingMode;
-    double _selectedTravelTime;
-    UIView *_shadowView;
-    BOOL _suppressErrors;
-    UISwitch *_switchControl;
-    UITableView *_table;
-    int _travelTimeSelectedChoice;
+    }  _initFrame;
+    BOOL  _isAnimatingTableSections;
+    BOOL  _isOriginSelectionVisible;
+    EKStructuredLocation * _originStructuredLocation;
+    int  _originalSelectedRoutingMode;
+    double  _originalSelectedTravelTime;
+    BOOL  _pendingReloadData;
+    EKTravelRouteEstimationController * _routeEstimationControler;
+    NSString * _routeEstimationErrorMessage;
+    int  _selectedRoutingMode;
+    double  _selectedTravelTime;
+    UIView * _shadowView;
+    BOOL  _suppressErrors;
+    UISwitch * _switchControl;
+    UITableView * _table;
+    int  _travelTimeSelectedChoice;
 }
 
 @property (nonatomic, retain) NSDate *arrivalDate;

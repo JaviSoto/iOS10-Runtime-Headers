@@ -3,26 +3,26 @@
  */
 
 @interface TSCHLegendModelCache : NSObject {
-    unsigned int mCellCount;
-    NSArray *mCells;
-    float mEffectiveStrokeWidth;
-    id mFill;
-    float mHorizontalCellSpacing;
+    unsigned int  mCellCount;
+    NSArray * mCells;
+    float  mEffectiveStrokeWidth;
+    id  mFill;
+    float  mHorizontalCellSpacing;
     struct CGSize { 
         float width; 
         float height; 
-    } mLargestCellSize;
-    TSCHLegendViewCache *mLastLegendViewCache;
-    float mLastLegendWidth;
-    BOOL mLegendOn;
-    TSCHLegendCellMetrics *mMetrics;
-    float mOpacity;
-    TSWPParagraphStyle *mParagraphStyle;
-    BOOL mReverseSingleColumnLegendOrder;
-    TSDShadow *mShadow;
-    TSDStroke *mStroke;
-    float mSymbolGap;
-    float mVerticalCellSpacing;
+    }  mLargestCellSize;
+    TSCHLegendViewCache * mLastLegendViewCache;
+    float  mLastLegendWidth;
+    BOOL  mLegendOn;
+    TSCHLegendCellMetrics * mMetrics;
+    float  mOpacity;
+    TSWPParagraphStyle * mParagraphStyle;
+    BOOL  mReverseSingleColumnLegendOrder;
+    TSDShadow * mShadow;
+    TSDStroke * mStroke;
+    float  mSymbolGap;
+    float  mVerticalCellSpacing;
 }
 
 @property (readonly) unsigned int cellCount;

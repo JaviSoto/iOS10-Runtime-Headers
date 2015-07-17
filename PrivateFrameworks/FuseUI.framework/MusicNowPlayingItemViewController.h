@@ -3,18 +3,18 @@
  */
 
 @interface MusicNowPlayingItemViewController : UIViewController <MusicNowPlayingVideoViewControllerDelegate> {
-    ADBannerView *_adBannerView;
-    MPArtworkCatalog *_artworkCatalog;
-    UIImage *_artworkImage;
-    id /* block */ _deferTransitionBlock;
-    <MusicNowPlayingItemViewControllerDelegate> *_delegate;
-    BOOL _hasProperApplicationStateForWantingVideoLayer;
-    BOOL _hasVisibilityForWantingVideoLayer;
-    MusicArtworkView *_imageView;
-    MPAVItem *_item;
-    unsigned int _itemType;
-    MusicNowPlayingVideoViewController *_videoViewController;
-    BOOL _wantsVideoLayer;
+    ADBannerView * _adBannerView;
+    MPArtworkCatalog * _artworkCatalog;
+    UIImage * _artworkImage;
+    id /* block */  _deferTransitionBlock;
+    <MusicNowPlayingItemViewControllerDelegate> * _delegate;
+    BOOL  _hasProperApplicationStateForWantingVideoLayer;
+    BOOL  _hasVisibilityForWantingVideoLayer;
+    MusicArtworkView * _imageView;
+    MPAVItem * _item;
+    unsigned int  _itemType;
+    MusicNowPlayingVideoViewController * _videoViewController;
+    BOOL  _wantsVideoLayer;
 }
 
 @property (nonatomic) BOOL canShowOverlayControls;

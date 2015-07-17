@@ -3,11 +3,11 @@
  */
 
 @interface BRQueryStitch : NSObject {
-    NSURL *_fromURL;
-    BOOL _kind;
-    NSNumber *_objid;
-    NSArray *_queries;
-    NSURL *_url;
+    NSURL * _fromURL;
+    BOOL  _kind;
+    NSNumber * _objid;
+    NSArray * _queries;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSURL *fromURL;

@@ -3,8 +3,8 @@
  */
 
 @interface GKAlertView : UIAlertView {
-    UIView *_clipView;
-    UIView *_contentView;
+    UIView * _clipView;
+    UIView * _contentView;
 }
 
 + (void)initialize;

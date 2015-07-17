@@ -8,33 +8,33 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentBeyondBounds;
+    }  _contentBeyondBounds;
     struct CGPoint { 
         float x; 
         float y; 
-    } _contentOffset;
+    }  _contentOffset;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    unsigned int _disableEdgeAntialiasing;
-    unsigned int _disableVerticalStretch;
+    }  _contentSize;
+    unsigned int  _disableEdgeAntialiasing;
+    unsigned int  _disableVerticalStretch;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
+    }  _edgeInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgePadding;
-    UIColor *_edgePaddingColor;
-    NSMutableArray *_edgePaddingViews;
-    UIView *_imageView;
-    UIImageView *_shadowView;
+    }  _edgePadding;
+    UIColor * _edgePaddingColor;
+    NSMutableArray * _edgePaddingViews;
+    UIView * _imageView;
+    UIImageView * _shadowView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -44,8 +44,8 @@
             float width; 
             float height; 
         } size; 
-    } _snapshotRect;
-    UIColor *_statusBarTintColor;
+    }  _snapshotRect;
+    UIColor * _statusBarTintColor;
 }
 
 @property (setter=_setStatusBarTintColor:, nonatomic, retain) UIColor *_statusBarTintColor;

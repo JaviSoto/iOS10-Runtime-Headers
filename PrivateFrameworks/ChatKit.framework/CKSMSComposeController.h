@@ -3,15 +3,15 @@
  */
 
 @interface CKSMSComposeController : UIViewController <CKSMSCompose, CKSMSComposeRemoteViewControllerDelegate> {
-    _UIAsyncInvocation *_cancellationInvocation;
-    UINavigationController *_clientNavigationController;
-    id _delegate;
-    BOOL _didChangeStatusBarStyle;
-    int _entryViewInvisible;
-    CKSMSComposeRemoteViewController *_remoteViewController;
-    CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
-    BOOL _safeToAdd;
-    int _savedStatusBarStyle;
+    _UIAsyncInvocation * _cancellationInvocation;
+    UINavigationController * _clientNavigationController;
+    id  _delegate;
+    BOOL  _didChangeStatusBarStyle;
+    int  _entryViewInvisible;
+    CKSMSComposeRemoteViewController * _remoteViewController;
+    CKSMSComposeQueuingRemoteViewControllerProxy * _remoteViewControllerProxy;
+    BOOL  _safeToAdd;
+    int  _savedStatusBarStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

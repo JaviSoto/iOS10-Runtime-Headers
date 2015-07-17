@@ -3,16 +3,16 @@
  */
 
 @interface SSPurchaseRequest : SSRequest <SSPurchaseManagerDelegate, SSXPCCoding> {
-    id /* block */ _completionBlock;
-    BOOL _createsDownloads;
-    BOOL _isBackgroundRequest;
-    BOOL _needsAuthentication;
-    NSMutableSet *_openPurchaseIdentifiers;
-    id /* block */ _purchaseBlock;
-    SSPurchaseManager *_purchaseManager;
-    id /* block */ _purchaseResponseBlock;
-    NSArray *_purchases;
-    BOOL _shouldValidatePurchases;
+    id /* block */  _completionBlock;
+    BOOL  _createsDownloads;
+    BOOL  _isBackgroundRequest;
+    BOOL  _needsAuthentication;
+    NSMutableSet * _openPurchaseIdentifiers;
+    id /* block */  _purchaseBlock;
+    SSPurchaseManager * _purchaseManager;
+    id /* block */  _purchaseResponseBlock;
+    NSArray * _purchases;
+    BOOL  _shouldValidatePurchases;
 }
 
 @property (getter=isBackgroundRequest, nonatomic) BOOL backgroundRequest;

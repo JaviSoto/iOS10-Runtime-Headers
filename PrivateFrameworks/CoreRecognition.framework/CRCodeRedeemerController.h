@@ -3,7 +3,7 @@
  */
 
 @interface CRCodeRedeemerController : CRCameraReader <CRCameraReaderDelegate> {
-    <CRCodeRedeemerControllerDelegate> *_delegate;
+    <CRCodeRedeemerControllerDelegate> * _delegate;
 }
 
 @property (copy) NSString *cameraMode;

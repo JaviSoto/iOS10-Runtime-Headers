@@ -6,9 +6,9 @@
     /* Warning: unhandled struct encoding: '{_NSSimpleAttributeDictionaryElement="hash"I"key"@"value"@}]' */ struct _NSSimpleAttributeDictionaryElement { 
         unsigned int hash; 
         id key; 
-    } elements;
-    unsigned int numElements;
-    unsigned int refCount;
+    }  elements;
+    unsigned int  numElements;
+    unsigned int  refCount;
 }
 
 + (id)emptyAttributeDictionary;

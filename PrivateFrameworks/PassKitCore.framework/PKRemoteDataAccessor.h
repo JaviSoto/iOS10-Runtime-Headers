@@ -3,8 +3,8 @@
  */
 
 @interface PKRemoteDataAccessor : PKDataAccessor {
-    PKPassLibrary *_library;
-    NSString *_objectUniqueID;
+    PKPassLibrary * _library;
+    NSString * _objectUniqueID;
 }
 
 @property (nonatomic, readonly, retain) PKPassLibrary *library;
@@ -21,6 +21,6 @@
 - (id)objectUniqueID;
 - (void)requestUpdateWithCompletion:(id /* block */)arg1;
 - (void)revocationStatusWithCompletion:(id /* block */)arg1;
-- (void)updateSettings:(int)arg1;
+- (void)updateSettings:(unsigned int)arg1;
 
 @end

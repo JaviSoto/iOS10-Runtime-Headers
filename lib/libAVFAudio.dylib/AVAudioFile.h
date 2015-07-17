@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioFile : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (nonatomic, readonly) AVAudioFormat *fileFormat;

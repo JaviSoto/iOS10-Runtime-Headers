@@ -3,9 +3,9 @@
  */
 
 @interface CKDShortTokenInfo : NSObject <NSCopying> {
-    NSString *_routingKey;
-    CKShareID *_shareID;
-    NSData *_shortSharingTokenHashData;
+    NSString * _routingKey;
+    CKShareID * _shareID;
+    NSData * _shortSharingTokenHashData;
 }
 
 @property (nonatomic, retain) NSString *routingKey;

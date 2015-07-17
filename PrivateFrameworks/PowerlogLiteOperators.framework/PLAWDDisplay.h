@@ -3,29 +3,29 @@
  */
 
 @interface PLAWDDisplay : PLAWDAuxMetrics {
-    PLEntryNotificationOperatorComposition *_alsEnabledEventCallback;
-    PLEntryNotificationOperatorComposition *_alsUserPreferencesEventCallback;
-    PLEntryNotificationOperatorComposition *_backlightEventCallback;
-    PLEntryNotificationOperatorComposition *_backlightRailCallback;
-    PLEntryNotificationOperatorComposition *_batteryEventCallback;
-    double _bklPowerRailTimeStamp;
-    double _bklTimeStamp;
-    long _dispSubmitCnt;
-    PLEntryNotificationOperatorComposition *_displayEventCallback;
-    double _displayOnTimeStamp;
-    BOOL _filterFirstEntry;
-    PLEntryNotificationOperatorComposition *_ioReportEventCallback;
-    double _mieOnTimeStamp;
-    BOOL _prevAlsOn;
-    long _prevBklBucketIdx;
-    double _prevBklChgTimeStamp;
-    double _prevBklPower;
-    BOOL _prevDeviceCharging;
-    BOOL _prevDisplayOn;
-    BOOL _prevMieOn;
-    long long _startTouchEntryId;
-    PLEntryNotificationOperatorComposition *_touchEventCallback;
-    long _touchSubmitCnt;
+    PLEntryNotificationOperatorComposition * _alsEnabledEventCallback;
+    PLEntryNotificationOperatorComposition * _alsUserPreferencesEventCallback;
+    PLEntryNotificationOperatorComposition * _backlightEventCallback;
+    PLEntryNotificationOperatorComposition * _backlightRailCallback;
+    PLEntryNotificationOperatorComposition * _batteryEventCallback;
+    double  _bklPowerRailTimeStamp;
+    double  _bklTimeStamp;
+    long  _dispSubmitCnt;
+    PLEntryNotificationOperatorComposition * _displayEventCallback;
+    double  _displayOnTimeStamp;
+    BOOL  _filterFirstEntry;
+    PLEntryNotificationOperatorComposition * _ioReportEventCallback;
+    double  _mieOnTimeStamp;
+    BOOL  _prevAlsOn;
+    long  _prevBklBucketIdx;
+    double  _prevBklChgTimeStamp;
+    double  _prevBklPower;
+    BOOL  _prevDeviceCharging;
+    BOOL  _prevDisplayOn;
+    BOOL  _prevMieOn;
+    long long  _startTouchEntryId;
+    PLEntryNotificationOperatorComposition * _touchEventCallback;
+    long  _touchSubmitCnt;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *alsEnabledEventCallback;
@@ -41,7 +41,6 @@
 @property BOOL filterFirstEntry;
 @property (retain) PLEntryNotificationOperatorComposition *ioReportEventCallback;
 @property double mieOnTimeStamp;
-@property PLOperator *operator;
 @property BOOL prevAlsOn;
 @property long prevBklBucketIdx;
 @property double prevBklChgTimeStamp;
@@ -49,7 +48,6 @@
 @property BOOL prevDeviceCharging;
 @property BOOL prevDisplayOn;
 @property BOOL prevMieOn;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property long long startTouchEntryId;
 @property (retain) PLEntryNotificationOperatorComposition *touchEventCallback;
 @property long touchSubmitCnt;

@@ -3,15 +3,15 @@
  */
 
 @interface MPAudioVideoRoutingActionSheet : UIActionSheet <UIActionSheetDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    unsigned int _avItemType;
-    id /* block */ _completionHandler;
-    NSArray *_displayedRoutes;
-    MPAVRoutingController *_routingController;
-    BOOL _shouldPauseAfterDismissing;
-    UIViewController *_viewControllerForActionSheet;
-    UIWindow *_windowForActionSheet;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    unsigned int  _avItemType;
+    id /* block */  _completionHandler;
+    NSArray * _displayedRoutes;
+    MPAVRoutingController * _routingController;
+    BOOL  _shouldPauseAfterDismissing;
+    UIViewController * _viewControllerForActionSheet;
+    UIWindow * _windowForActionSheet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

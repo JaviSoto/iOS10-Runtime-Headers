@@ -3,8 +3,8 @@
  */
 
 @interface TRAuthorizePacketEvent : TRPacketEvent {
-    NSString *_deviceIdentifier;
-    NSString *_passcode;
+    NSString * _deviceIdentifier;
+    NSString * _passcode;
 }
 
 @property (nonatomic, readonly) NSString *deviceIdentifier;

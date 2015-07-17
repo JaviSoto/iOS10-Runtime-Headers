@@ -3,31 +3,31 @@
  */
 
 @interface CPLLibraryManager : NSObject <CPLAbstractObject> {
-    NSURL *_clientLibraryBaseURL;
-    NSURL *_cloudLibraryResourceStorageURL;
-    NSURL *_cloudLibraryStateStorageURL;
-    CPLConfiguration *_configuration;
-    long _configurationOnce;
-    CPLChangeSession *_currentSession;
-    <CPLLibraryManagerDelegate> *_delegate;
-    NSString *_effectiveClientBundleIdentifier;
-    NSString *_libraryIdentifier;
-    NSString *_libraryVersion;
-    unsigned int _numberOfImagesToUpload;
-    unsigned int _numberOfOtherItemsToUpload;
-    unsigned int _numberOfVideosToUpload;
-    CPLPlatformObject *_platformObject;
-    NSObject<OS_dispatch_queue> *_queue;
-    <CPLResourceProgressDelegate> *_resourceProgressDelegate;
-    NSObject<OS_dispatch_queue> *_sessionLock;
-    unsigned long long _sizeOfResourcesToUpload;
-    BOOL _sizeOfResourcesToUploadIsSet;
-    unsigned int _state;
-    unsigned int _status;
-    NSError *_statusError;
-    long _statusOnce;
-    CPLStatus *_syncStatus;
-    NSString *_userOverride;
+    NSURL * _clientLibraryBaseURL;
+    NSURL * _cloudLibraryResourceStorageURL;
+    NSURL * _cloudLibraryStateStorageURL;
+    CPLConfiguration * _configuration;
+    long  _configurationOnce;
+    CPLChangeSession * _currentSession;
+    <CPLLibraryManagerDelegate> * _delegate;
+    NSString * _effectiveClientBundleIdentifier;
+    NSString * _libraryIdentifier;
+    NSString * _libraryVersion;
+    unsigned int  _numberOfImagesToUpload;
+    unsigned int  _numberOfOtherItemsToUpload;
+    unsigned int  _numberOfVideosToUpload;
+    CPLPlatformObject * _platformObject;
+    NSObject<OS_dispatch_queue> * _queue;
+    <CPLResourceProgressDelegate> * _resourceProgressDelegate;
+    NSObject<OS_dispatch_queue> * _sessionLock;
+    unsigned long long  _sizeOfResourcesToUpload;
+    BOOL  _sizeOfResourcesToUploadIsSet;
+    unsigned int  _state;
+    unsigned int  _status;
+    NSError * _statusError;
+    long  _statusOnce;
+    CPLStatus * _syncStatus;
+    NSString * _userOverride;
 }
 
 @property (nonatomic, readonly, copy) NSURL *clientLibraryBaseURL;

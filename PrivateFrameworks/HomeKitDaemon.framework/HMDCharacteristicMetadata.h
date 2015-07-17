@@ -3,13 +3,13 @@
  */
 
 @interface HMDCharacteristicMetadata : NSObject <NSSecureCoding> {
-    NSString *_format;
-    NSString *_manufacturerDescription;
-    NSNumber *_maxLength;
-    NSNumber *_maximumValue;
-    NSNumber *_minimumValue;
-    NSNumber *_stepValue;
-    NSString *_units;
+    NSString * _format;
+    NSString * _manufacturerDescription;
+    NSNumber * _maxLength;
+    NSNumber * _maximumValue;
+    NSNumber * _minimumValue;
+    NSNumber * _stepValue;
+    NSString * _units;
 }
 
 @property (nonatomic, readonly, copy) NSString *format;

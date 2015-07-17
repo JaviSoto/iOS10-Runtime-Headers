@@ -3,9 +3,9 @@
  */
 
 @interface TSPSaveOperationState : NSObject {
-    NSMapTable *_newDataStorages;
-    int _sampleID;
-    int _updateType;
+    NSMapTable * _newDataStorages;
+    int  _sampleID;
+    int  _updateType;
 }
 
 @property (nonatomic, readonly) BOOL preserveDocumentUUID;

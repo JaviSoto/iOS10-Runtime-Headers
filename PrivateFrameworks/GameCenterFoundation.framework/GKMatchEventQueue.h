@@ -3,17 +3,18 @@
  */
 
 @interface GKMatchEventQueue : NSObject {
-    NSMutableDictionary *_connectionInfo;
-    BOOL _counted;
-    int _deferedPlayerState;
-    NSMutableArray *_events;
-    BOOL _hasInitRelayInfo;
-    BOOL _hasUpdateRelayInfo;
-    BOOL _okToSend;
-    GKPlayer *_player;
-    int _playerState;
-    BOOL _relayInitiated;
-    unsigned int _sequenceNumber;
+    NSMutableDictionary * _connectionInfo;
+    BOOL  _counted;
+    int  _deferedPlayerState;
+    NSMutableArray * _events;
+    BOOL  _hasInitRelayInfo;
+    BOOL  _hasUpdateRelayInfo;
+    GKPlayer * _hostPlayer;
+    BOOL  _okToSend;
+    GKPlayer * _player;
+    int  _playerState;
+    BOOL  _relayInitiated;
+    unsigned int  _sequenceNumber;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *connectionInfo;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) NSMutableArray *events;
 @property (nonatomic) BOOL hasInitRelayInfo;
 @property (nonatomic) BOOL hasUpdateRelayInfo;
+@property (nonatomic, retain) GKPlayer *hostPlayer;
 @property (nonatomic) BOOL okToSend;
 @property (nonatomic, retain) GKPlayer *player;
 @property (nonatomic) int playerState;
@@ -35,6 +37,7 @@
 - (id)events;
 - (BOOL)hasInitRelayInfo;
 - (BOOL)hasUpdateRelayInfo;
+- (id)hostPlayer;
 - (id)init;
 - (BOOL)okToSend;
 - (id)player;
@@ -47,6 +50,7 @@
 - (void)setEvents:(id)arg1;
 - (void)setHasInitRelayInfo:(BOOL)arg1;
 - (void)setHasUpdateRelayInfo:(BOOL)arg1;
+- (void)setHostPlayer:(id)arg1;
 - (void)setOkToSend:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPlayerState:(int)arg1;

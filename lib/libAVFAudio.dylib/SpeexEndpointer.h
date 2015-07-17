@@ -3,13 +3,13 @@
  */
 
 @interface SpeexEndpointer : NSObject <Endpointer> {
-    void *_impl;
-    double mEndWaitTime;
-    int mEndpointMode;
-    unsigned long mFrameRate;
-    double mInterspeechWaitTime;
-    int mLastStatus;
-    double mStartWaitTime;
+    void * _impl;
+    double  mEndWaitTime;
+    int  mEndpointMode;
+    unsigned long  mFrameRate;
+    double  mInterspeechWaitTime;
+    int  mLastStatus;
+    double  mStartWaitTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;

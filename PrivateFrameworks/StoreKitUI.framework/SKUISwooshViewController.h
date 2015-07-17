@@ -3,9 +3,9 @@
  */
 
 @interface SKUISwooshViewController : UIViewController {
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    <SKUISwooshViewControllerDelegate> *_delegate;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    <SKUISwooshViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

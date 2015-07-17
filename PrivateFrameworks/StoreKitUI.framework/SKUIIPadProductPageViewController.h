@@ -3,30 +3,30 @@
  */
 
 @interface SKUIIPadProductPageViewController : UIViewController <SKUIMessageBannerDelegate, SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageChildViewControllerDelegate, SKUIProductPageHeaderViewDelegate> {
-    BOOL _askPermission;
-    SKUIMessageBanner *_banner;
-    NSString *_bannerText;
-    SKUIClientContext *_clientContext;
-    int _defaultSelectedSectionIndex;
-    <SKUIIPadProductPageDelegate> *_delegate;
-    SKUIProductPageDetailsViewController *_detailsViewController;
-    BOOL _didSendCannotOpen;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    SKUIIncompatibleAppViewController *_incompatibleViewController;
-    SKUIItem *_item;
-    SSMetricsPageEvent *_lastPageEvent;
-    SKUILoadProductPageOperation *_loadOperation;
-    long long _lookupItemIdentifier;
-    SKUIMetricsController *_metricsController;
-    SKUINetworkErrorViewController *_networkErrorViewController;
-    NSOperationQueue *_operationQueue;
-    UIView *_overlayView;
-    SKUIProductPagePlaceholderViewController *_placeholderViewController;
-    SKUIProductPage *_productPage;
-    SKUISwooshArrayViewController *_relatedViewController;
-    SKUIProductPageReviewsViewController *_reviewsViewController;
-    int _selectedSectionIndex;
-    NSURLRequest *_urlRequest;
+    BOOL  _askPermission;
+    SKUIMessageBanner * _banner;
+    NSString * _bannerText;
+    SKUIClientContext * _clientContext;
+    int  _defaultSelectedSectionIndex;
+    <SKUIIPadProductPageDelegate> * _delegate;
+    SKUIProductPageDetailsViewController * _detailsViewController;
+    BOOL  _didSendCannotOpen;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    SKUIIncompatibleAppViewController * _incompatibleViewController;
+    SKUIItem * _item;
+    SSMetricsPageEvent * _lastPageEvent;
+    SKUILoadProductPageOperation * _loadOperation;
+    long long  _lookupItemIdentifier;
+    SKUIMetricsController * _metricsController;
+    SKUINetworkErrorViewController * _networkErrorViewController;
+    NSOperationQueue * _operationQueue;
+    UIView * _overlayView;
+    SKUIProductPagePlaceholderViewController * _placeholderViewController;
+    SKUIProductPage * _productPage;
+    SKUISwooshArrayViewController * _relatedViewController;
+    SKUIProductPageReviewsViewController * _reviewsViewController;
+    int  _selectedSectionIndex;
+    NSURLRequest * _urlRequest;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

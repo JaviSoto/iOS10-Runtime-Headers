@@ -3,7 +3,7 @@
  */
 
 @interface GKBubbleFlowAnimator : NSObject <UINavigationControllerDelegate, UITabBarControllerDelegate> {
-    GKBubbleSet *_mostRecentOverlayBubbleSet;
+    GKBubbleSet * _mostRecentOverlayBubbleSet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

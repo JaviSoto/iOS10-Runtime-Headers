@@ -3,27 +3,27 @@
  */
 
 @interface UIKeyboardCandidateBar : UIView <UICollectionViewDataSource, UIKeyboardCandidateBarLayoutDelegate, UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
-    BOOL _canExtend;
-    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    UIImageView *_candidateMaskView;
-    TIKeyboardCandidateResultSet *_candidateResultSet;
-    NSArray *_candidateViews;
-    unsigned int _currentCandidateViewIndex;
-    <UIKeyboardCandidateBarDelegate> *_delegate;
-    BOOL _didSkipLayout;
-    NSIndexPath *_dragStartNextPageIndexPath;
+    BOOL  _canExtend;
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    UIImageView * _candidateMaskView;
+    TIKeyboardCandidateResultSet * _candidateResultSet;
+    NSArray * _candidateViews;
+    unsigned int  _currentCandidateViewIndex;
+    <UIKeyboardCandidateBarDelegate> * _delegate;
+    BOOL  _didSkipLayout;
+    NSIndexPath * _dragStartNextPageIndexPath;
     struct CGPoint { 
         float x; 
         float y; 
-    } _dragStartOffset;
-    NSIndexPath *_dragStartPreviousPageIndexPath;
-    NSArray *_filteredCandidates;
-    BOOL _forceReloadInitiallyHiddenCandidates;
-    NSString *_inlineText;
-    UIKBThemedView *_secondaryCandidatesViewEdgeGradient;
-    BOOL _shouldSkipLayoutUntilScrollViewAnimationEnds;
-    id /* block */ _skippedSetCandidatesBlock;
-    float _upArrowWidth;
+    }  _dragStartOffset;
+    NSIndexPath * _dragStartPreviousPageIndexPath;
+    NSArray * _filteredCandidates;
+    BOOL  _forceReloadInitiallyHiddenCandidates;
+    NSString * _inlineText;
+    UIKBThemedView * _secondaryCandidatesViewEdgeGradient;
+    BOOL  _shouldSkipLayoutUntilScrollViewAnimationEnds;
+    id /* block */  _skippedSetCandidatesBlock;
+    float  _upArrowWidth;
 }
 
 @property (nonatomic) BOOL canExtend;

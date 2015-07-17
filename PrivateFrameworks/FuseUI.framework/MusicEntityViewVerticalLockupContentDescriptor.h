@@ -3,7 +3,7 @@
  */
 
 @interface MusicEntityViewVerticalLockupContentDescriptor : MusicEntityViewContentDescriptor {
-    float _textEdgePadding;
+    float  _textEdgePadding;
 }
 
 @property (nonatomic) float textEdgePadding;

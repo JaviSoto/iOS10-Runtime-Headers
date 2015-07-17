@@ -3,7 +3,7 @@
  */
 
 @interface _UITabBarItemAppearanceStorage : _UIBarItemAppearanceStorage {
-    NSValue *titleOffset;
+    NSValue * titleOffset;
 }
 
 @property (nonatomic, retain) NSValue *titleOffset;

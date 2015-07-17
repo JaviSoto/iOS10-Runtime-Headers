@@ -3,13 +3,13 @@
  */
 
 @interface _WKWebViewPrintFormatter : UIViewPrintFormatter {
-    _WKFrameHandle *_frameToPrint;
+    _WKFrameHandle * _frameToPrint;
     struct PrintInfo { 
         float pageSetupScaleFactor; 
         float availablePaperWidth; 
         float availablePaperHeight; 
-    } _printInfo;
-    double _totalScaleFactor;
+    }  _printInfo;
+    double  _totalScaleFactor;
 }
 
 @property (nonatomic, retain) _WKFrameHandle *frameToPrint;

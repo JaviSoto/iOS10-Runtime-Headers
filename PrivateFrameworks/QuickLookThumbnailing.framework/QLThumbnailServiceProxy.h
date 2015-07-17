@@ -3,10 +3,11 @@
  */
 
 @interface QLThumbnailServiceProxy : NSObject {
-    NSXPCConnection *_connection;
-    NSObject<QLThumbnailsInterface> *_proxy;
+    NSXPCConnection * _connection;
+    NSObject<QLThumbnailsInterface> * _proxy;
 }
 
++ (id)interface;
 + (id)sharedInstance;
 
 - (void)askThumbnailAdditionIndex:(id /* block */)arg1;

@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDynamicCaretInput : UIView <UIKBHandwritingStrokeEnabled> {
-    TIHandwritingStrokes *_accumulatedStrokes;
-    struct CGContext { } *_bitmapContext;
-    UIDelayedAction *_committedAction;
-    _UIDynamicCaretDot *_dotView;
-    int _fadeCount;
-    NSTimer *_fadeTimer;
+@interface _UIDynamicCaretInput : UIView {
+    TIHandwritingStrokes * _accumulatedStrokes;
+    struct CGContext { } * _bitmapContext;
+    UIDelayedAction * _committedAction;
+    _UIDynamicCaretDot * _dotView;
+    int  _fadeCount;
+    NSTimer * _fadeTimer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,11 +18,11 @@
             float width; 
             float height; 
         } size; 
-    } _inkedAreaOfBitmapContext;
+    }  _inkedAreaOfBitmapContext;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastViewLoc;
+    }  _lastViewLoc;
 }
 
 @property (nonatomic, retain) TIHandwritingStrokes *accumulatedStrokes;
@@ -30,9 +30,9 @@
 @property (nonatomic, retain) _UIDynamicCaretDot *dotView;
 @property (nonatomic, retain) NSTimer *fadeTimer;
 @property (nonatomic, readonly) BOOL hasInk;
-@property (nonatomic, readonly) float inkWidth;
 @property (nonatomic, readonly) BOOL isInking;
 
+- (void).cxx_destruct;
 - (void)_fadeInk;
 - (id)accumulatedStrokes;
 - (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1 fromLastPoint:(BOOL)arg2;

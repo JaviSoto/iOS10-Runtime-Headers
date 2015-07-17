@@ -3,14 +3,14 @@
  */
 
 @interface TKVibrationRecorderTouchSurface : TKVibrationRecorderRippleView {
-    <TKVibrationRecorderTouchSurfaceDelegate> *_delegate;
-    TKVibrationRecorderTouchSurfaceRecordedDataWrapper *_recordedDataWrapper;
-    BOOL _recordingModeEnabled;
-    BOOL _replayModeEnabled;
-    double _replayModeWasEnteredStartTime;
-    BOOL _shouldIgnoreCurrentTouch;
-    double _vibrationPatternMaximumDuration;
-    TLVibrationPattern *_vibrationPatternToReplay;
+    <TKVibrationRecorderTouchSurfaceDelegate> * _delegate;
+    TKVibrationRecorderTouchSurfaceRecordedDataWrapper * _recordedDataWrapper;
+    BOOL  _recordingModeEnabled;
+    BOOL  _replayModeEnabled;
+    double  _replayModeWasEnteredStartTime;
+    BOOL  _shouldIgnoreCurrentTouch;
+    double  _vibrationPatternMaximumDuration;
+    TLVibrationPattern * _vibrationPatternToReplay;
 }
 
 @property (setter=_setRecordedDataWrapper:, nonatomic, retain) TKVibrationRecorderTouchSurfaceRecordedDataWrapper *_recordedDataWrapper;

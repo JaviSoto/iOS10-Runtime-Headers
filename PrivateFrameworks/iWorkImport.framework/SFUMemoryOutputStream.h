@@ -3,7 +3,7 @@
  */
 
 @interface SFUMemoryOutputStream : NSObject <SFUOutputStream> {
-    NSMutableData *mData;
+    NSMutableData * mData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface EDFormula : NSObject <EDFormulaBuilding> {
-    struct __CFData { } *mPackedData;
+    struct __CFData { } * mPackedData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 - (bool)copyTokenFromXlPtg:(struct XlPtg { char *x1; int x2; unsigned int x3; unsigned short x4; }*)arg1;
 - (unsigned int)countExtendedDataForTokenAtIndex:(unsigned int)arg1;
 - (void)dealloc;
+- (id)description;
 - (char *)extendedDataForTokenAtIndex:(unsigned int)arg1 extendedDataIndex:(unsigned int)arg2 length:(unsigned int*)arg3;
 - (unsigned int)firstTokenIndexForArgAtIndex:(unsigned int)arg1;
 - (BOOL)fixTableOfConstantsRefs;

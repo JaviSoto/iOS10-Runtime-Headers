@@ -9,14 +9,14 @@
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    } mBottom;
+    }  mBottom;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
         struct tvec3<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    } mTop;
+    }  mTop;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -28,8 +28,8 @@
             float g; 
             float t; 
         } ; 
-    } mYLimits;
-    float mZeroValue;
+    }  mYLimits;
+    float  mZeroValue;
 }
 
 + (id)generatorWithYLimits:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1 zeroValue:(float)arg2;

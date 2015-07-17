@@ -3,10 +3,10 @@
  */
 
 @interface SUBProgress : NSObject <NSSecureCoding> {
-    double _estimatedTimeRemaining;
-    BOOL _isDone;
-    NSString *_phase;
-    float _portionComplete;
+    double  _estimatedTimeRemaining;
+    BOOL  _isDone;
+    NSString * _phase;
+    float  _portionComplete;
 }
 
 @property (nonatomic) double estimatedTimeRemaining;

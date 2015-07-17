@@ -3,8 +3,8 @@
  */
 
 @interface SSWishlist : NSObject {
-    long long _accountIdentifier;
-    SSSQLiteDatabase *_database;
+    long long  _accountIdentifier;
+    SSSQLiteDatabase * _database;
 }
 
 @property (nonatomic, readonly) long long accountIdentifier;

@@ -3,13 +3,13 @@
  */
 
 @interface PLAutoScroller : NSObject {
-    NSTimer *_autoscrollTimer;
+    NSTimer * _autoscrollTimer;
     struct CGPoint { 
         float x; 
         float y; 
-    } _targetPoint;
-    UIScrollView *_targetScrollView;
-    float _thresholdDistance;
+    }  _targetPoint;
+    UIScrollView * _targetScrollView;
+    float  _thresholdDistance;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } targetPoint;

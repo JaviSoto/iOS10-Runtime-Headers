@@ -3,24 +3,24 @@
  */
 
 @interface MFConnection : NSObject {
-    unsigned int _allowFallbacks;
-    char *_buffer;
-    unsigned int _bufferLength;
-    int _bufferRemainingBytes;
-    unsigned int _bufferStart;
-    unsigned int _compressionEnabled;
-    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_deflater;
-    unsigned long _desiredBufferLength;
-    unsigned int _dontLogReads;
-    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_inflater;
-    unsigned int _isFetching;
-    double _lastUsedTime;
-    NSData *_logData;
-    unsigned int _readBytesNotLogged;
-    NSMutableString *_readBytesToLog;
-    <MFSASLSecurityLayer> *_securityLayer;
-    _MFSocket *_socket;
-    char *_zbuffer;
+    unsigned int  _allowFallbacks;
+    char * _buffer;
+    unsigned int  _bufferLength;
+    int  _bufferRemainingBytes;
+    unsigned int  _bufferStart;
+    unsigned int  _compressionEnabled;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } * _deflater;
+    unsigned long  _desiredBufferLength;
+    unsigned int  _dontLogReads;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } * _inflater;
+    unsigned int  _isFetching;
+    double  _lastUsedTime;
+    NSData * _logData;
+    unsigned int  _readBytesNotLogged;
+    NSMutableString * _readBytesToLog;
+    <MFSASLSecurityLayer> * _securityLayer;
+    _MFSocket * _socket;
+    char * _zbuffer;
 }
 
 @property (nonatomic, readonly) NSArray *authenticationMechanisms;

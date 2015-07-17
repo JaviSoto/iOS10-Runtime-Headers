@@ -3,15 +3,15 @@
  */
 
 @interface MPStoreOfferMediaItemArtworkDescriptor : NSObject <NSCopying> {
-    NSString *_cacheID;
-    NSArray *_containerArtworkSizes;
-    NSDictionary *_containerArtworkURLs;
-    unsigned int _hash;
-    NSArray *_itemArtworkSizes;
-    NSDictionary *_itemArtworkURLs;
-    long long _itemPersistentID;
-    NSArray *_screenshotSizes;
-    NSDictionary *_screenshotURLs;
+    NSString * _cacheID;
+    NSArray * _containerArtworkSizes;
+    NSDictionary * _containerArtworkURLs;
+    unsigned int  _hash;
+    NSArray * _itemArtworkSizes;
+    NSDictionary * _itemArtworkURLs;
+    long long  _itemPersistentID;
+    NSArray * _screenshotSizes;
+    NSDictionary * _screenshotURLs;
 }
 
 @property (nonatomic, readonly) NSString *cacheID;

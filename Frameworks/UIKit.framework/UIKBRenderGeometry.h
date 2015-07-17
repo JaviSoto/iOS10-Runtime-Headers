@@ -3,7 +3,12 @@
  */
 
 @interface UIKBRenderGeometry : NSObject <NSCopying> {
-    BOOL _detachedVariants;
+    int  _concaveCorner;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _concaveCornerOffset;
+    BOOL  _detachedVariants;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +18,8 @@
             float width; 
             float height; 
         } size; 
-    } _displayFrame;
-    int _flickDirection;
+    }  _displayFrame;
+    int  _flickDirection;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,7 +29,7 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
+    }  _frame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,16 +39,16 @@
             float width; 
             float height; 
         } size; 
-    } _paddedFrame;
-    int _popupBias;
+    }  _paddedFrame;
+    int  _popupBias;
     struct CGPoint { 
         float x; 
         float y; 
-    } _popupSource;
-    int _roundRectCorners;
-    float _roundRectRadius;
-    NSValue *_splitLeftRect;
-    NSValue *_splitRightRect;
+    }  _popupSource;
+    int  _roundRectCorners;
+    float  _roundRectRadius;
+    NSValue * _splitLeftRect;
+    NSValue * _splitRightRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -53,10 +58,12 @@
             float width; 
             float height; 
         } size; 
-    } _symbolFrame;
-    BOOL _tallPopup;
+    }  _symbolFrame;
+    BOOL  _tallPopup;
 }
 
+@property (nonatomic) int concaveCorner;
+@property (nonatomic) struct CGSize { float x1; float x2; } concaveCornerOffset;
 @property (nonatomic) BOOL detachedVariants;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } displayFrame;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
@@ -84,6 +91,8 @@
 - (void)applyInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)applyOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)applyShadowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (int)concaveCorner;
+- (struct CGSize { float x1; float x2; })concaveCornerOffset;
 - (id)copyForFlickDirection:(int)arg1 scale:(float)arg2;
 - (id)copyForPopupDirection:(int)arg1 scale:(float)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -106,6 +115,8 @@
 - (struct CGPoint { float x1; float x2; })popupSource;
 - (int)roundRectCorners;
 - (float)roundRectRadius;
+- (void)setConcaveCorner:(int)arg1;
+- (void)setConcaveCornerOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDetachedVariants:(BOOL)arg1;
 - (void)setDisplayFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFlickDirection:(int)arg1;

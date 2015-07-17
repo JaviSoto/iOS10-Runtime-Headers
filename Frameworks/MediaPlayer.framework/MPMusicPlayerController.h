@@ -3,7 +3,7 @@
  */
 
 @interface MPMusicPlayerController : NSObject <MPMediaPlayback> {
-    MPMusicPlayerControllerInternal *_internal;
+    MPMusicPlayerControllerInternal * _internal;
 }
 
 @property (nonatomic) float currentPlaybackRate;

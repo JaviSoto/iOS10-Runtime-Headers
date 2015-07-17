@@ -3,11 +3,11 @@
  */
 
 @interface AWDMMCSHttpInfo : PBCodable <NSCopying> {
-    BOOL _cancelled;
-    BOOL _connectionReused;
-    long long _duration;
-    int _errorCode;
-    NSString *_errorDomain;
+    BOOL  _cancelled;
+    BOOL  _connectionReused;
+    long long  _duration;
+    int  _errorCode;
+    NSString * _errorDomain;
     struct { 
         unsigned int duration : 1; 
         unsigned int responseReceivedDuration : 1; 
@@ -21,21 +21,21 @@
         unsigned int connectionReused : 1; 
         unsigned int timedOut : 1; 
         unsigned int transactionComplete : 1; 
-    } _has;
-    NSMutableArray *_httpErrors;
-    int _httpStatus;
-    NSString *_interfaceIdentifier;
-    NSString *_locatorHostname;
-    NSString *_locatorPeerAddress;
-    unsigned int _locatorPort;
-    NSString *_locatorScheme;
-    int _requestSize;
-    long long _responseReceivedDuration;
-    int _responseSize;
-    long long _startTime;
-    NSMutableArray *_tcpInfos;
-    BOOL _timedOut;
-    BOOL _transactionComplete;
+    }  _has;
+    NSMutableArray * _httpErrors;
+    int  _httpStatus;
+    NSString * _interfaceIdentifier;
+    NSString * _locatorHostname;
+    NSString * _locatorPeerAddress;
+    unsigned int  _locatorPort;
+    NSString * _locatorScheme;
+    int  _requestSize;
+    long long  _responseReceivedDuration;
+    int  _responseSize;
+    long long  _startTime;
+    NSMutableArray * _tcpInfos;
+    BOOL  _timedOut;
+    BOOL  _transactionComplete;
 }
 
 @property (nonatomic) BOOL cancelled;

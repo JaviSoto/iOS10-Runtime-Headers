@@ -3,12 +3,12 @@
  */
 
 @interface XPCEncoder : NSCoder {
-    struct __CFDictionary { } *_conditionalObjects;
-    NSObject<OS_xpc_object> *_currentObject;
-    struct __CFDictionary { } *_encodedObjects;
-    NSObject<OS_xpc_object> *_encoding;
-    unsigned int _nextConditionalObjectID;
-    struct __CFDictionary { } *_replacementObjects;
+    struct __CFDictionary { } * _conditionalObjects;
+    NSObject<OS_xpc_object> * _currentObject;
+    struct __CFDictionary { } * _encodedObjects;
+    NSObject<OS_xpc_object> * _encoding;
+    unsigned int  _nextConditionalObjectID;
+    struct __CFDictionary { } * _replacementObjects;
 }
 
 + (id)copyEncodingForRootObject:(id)arg1;

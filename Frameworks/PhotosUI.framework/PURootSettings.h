@@ -3,48 +3,71 @@
  */
 
 @interface PURootSettings : PUSettings {
-    PUFeedSettings *_feedSettings;
-    int _imagePickerTestSourceType;
-    PUMomentsSettings *_momentsSettings;
-    PUPhotoEditProtoSettings *_photoEditingSettings;
-    PUPhotosGridSettings *_photosGridSettings;
-    unsigned int _settingsVersion;
-    PUSizeSettings *_sizeSettings;
+    PUAirPlaySettings * _airPlaySettings;
+    NSMutableSet * _archivedSettings;
+    PUFeedSettings * _feedSettings;
+    Class  _interfaceThemeClass;
+    PUMedusaSettings * _medusaSettings;
+    PUMomentsSettings * _momentsSettings;
+    PUOneUpSettings * _oneUpSettings;
+    PUPhotoEditProtoSettings * _photoEditingSettings;
+    PUPhotosDataSourceSettings * _photosDataSourceSettings;
+    PUPhotosGridSettings * _photosGridSettings;
+    unsigned int  _settingsVersion;
+    PUSlideshowSettings * _slideshowSettings;
+    PUTilingViewSettings * _tilingViewSettings;
 }
 
+@property (nonatomic, retain) PUAirPlaySettings *airPlaySettings;
 @property (nonatomic, retain) PUFeedSettings *feedSettings;
-@property (nonatomic) int imagePickerTestSourceType;
+@property (nonatomic) Class interfaceThemeClass;
+@property (nonatomic, retain) PUMedusaSettings *medusaSettings;
 @property (nonatomic, retain) PUMomentsSettings *momentsSettings;
+@property (nonatomic, retain) PUOneUpSettings *oneUpSettings;
 @property (nonatomic, retain) PUPhotoEditProtoSettings *photoEditingSettings;
+@property (nonatomic, retain) PUPhotosDataSourceSettings *photosDataSourceSettings;
 @property (nonatomic, retain) PUPhotosGridSettings *photosGridSettings;
 @property (nonatomic) unsigned int settingsVersion;
-@property (nonatomic, retain) PUSizeSettings *sizeSettings;
+@property (nonatomic, retain) PUSlideshowSettings *slideshowSettings;
+@property (nonatomic, retain) PUTilingViewSettings *tilingViewSettings;
 
-+ (void)_addRandomPhoto;
 + (id)_currentViewControllerStack;
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)_deleteAllDiagnosticFiles;
 + (void)_setDebugRows:(id)arg1;
 + (void)presentSettingsController;
 + (id)settingsControllerModule;
++ (void)setupStatusBarDoubleTapOnInternalDevices;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_save;
+- (id)airPlaySettings;
+- (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
+- (id)archiveValueForKey:(id)arg1;
 - (id)feedSettings;
-- (int)imagePickerTestSourceType;
+- (Class)interfaceThemeClass;
+- (id)medusaSettings;
 - (id)momentsSettings;
+- (id)oneUpSettings;
 - (id)photoEditingSettings;
+- (id)photosDataSourceSettings;
 - (id)photosGridSettings;
+- (void)save;
+- (void)setAirPlaySettings:(id)arg1;
 - (void)setDefaultValues;
 - (void)setFeedSettings:(id)arg1;
-- (void)setImagePickerTestSourceType:(int)arg1;
+- (void)setInterfaceThemeClass:(Class)arg1;
+- (void)setMedusaSettings:(id)arg1;
 - (void)setMomentsSettings:(id)arg1;
+- (void)setOneUpSettings:(id)arg1;
 - (void)setPhotoEditingSettings:(id)arg1;
+- (void)setPhotosDataSourceSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;
 - (void)setSettingsVersion:(unsigned int)arg1;
-- (void)setSizeSettings:(id)arg1;
+- (void)setSlideshowSettings:(id)arg1;
+- (void)setTilingViewSettings:(id)arg1;
 - (unsigned int)settingsVersion;
-- (id)sizeSettings;
+- (id)slideshowSettings;
+- (id)tilingViewSettings;
 
 @end

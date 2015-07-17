@@ -3,35 +3,35 @@
  */
 
 @interface SUStorePageViewController : SUViewController <ISURLOperationDelegate, SKUITabBarItemRootViewController, SUMenuViewControllerDelegate, SUPreviewOverlayContainer, UIPopoverControllerDelegate> {
-    SUViewController *_activeChildViewController;
-    int _activeSectionIndex;
-    struct __CFSet { } *_allowedInterfaceOrientations;
-    SSAuthenticationContext *_authContext;
-    _UIBackdropView *_backdropView;
-    BOOL _canMoveToOverlay;
-    <SUStorePageViewControllerDelegate> *_delegate;
-    double _expirationTime;
-    BOOL _externalRequest;
-    BOOL _lastLoadDidFail;
-    SUStorePageProtocol *_lastValidProtocol;
-    id /* block */ _loadBlock;
-    BOOL _loadingForSectionChange;
-    BOOL _loadsWhenHidden;
-    UIPopoverController *_navigationMenuPopover;
-    SUNavigationMenuViewController *_navigationMenuViewController;
-    BOOL _needsAuthentication;
-    int _pageType;
-    SUViewController *_pendingChildViewController;
-    ISURLRequestPerformance *_performanceMetrics;
-    BOOL _reloadOnAppear;
-    BOOL _reloadsWhenCacheExpired;
-    NSString *_scriptUserInfo;
-    SUSearchFieldController *_searchFieldController;
-    SUPageSectionGroup *_sectionsGroup;
-    SUSegmentedControl *_segmentedControl;
-    BOOL _shouldAdjustContentOffsets;
-    SSMutableURLRequestProperties *_urlRequestProperties;
-    BOOL _useWebViewFastPath;
+    SUViewController * _activeChildViewController;
+    int  _activeSectionIndex;
+    struct __CFSet { } * _allowedInterfaceOrientations;
+    SSAuthenticationContext * _authContext;
+    _UIBackdropView * _backdropView;
+    BOOL  _canMoveToOverlay;
+    <SUStorePageViewControllerDelegate> * _delegate;
+    double  _expirationTime;
+    BOOL  _externalRequest;
+    BOOL  _lastLoadDidFail;
+    SUStorePageProtocol * _lastValidProtocol;
+    id /* block */  _loadBlock;
+    BOOL  _loadingForSectionChange;
+    BOOL  _loadsWhenHidden;
+    UIPopoverController * _navigationMenuPopover;
+    SUNavigationMenuViewController * _navigationMenuViewController;
+    BOOL  _needsAuthentication;
+    int  _pageType;
+    SUViewController * _pendingChildViewController;
+    ISURLRequestPerformance * _performanceMetrics;
+    BOOL  _reloadOnAppear;
+    BOOL  _reloadsWhenCacheExpired;
+    NSString * _scriptUserInfo;
+    SUSearchFieldController * _searchFieldController;
+    SUPageSectionGroup * _sectionsGroup;
+    SUSegmentedControl * _segmentedControl;
+    BOOL  _shouldAdjustContentOffsets;
+    SSMutableURLRequestProperties * _urlRequestProperties;
+    BOOL  _useWebViewFastPath;
 }
 
 @property (nonatomic, copy) SSURLRequestProperties *URLRequestProperties;

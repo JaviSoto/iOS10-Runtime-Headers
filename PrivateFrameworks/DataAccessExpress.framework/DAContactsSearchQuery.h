@@ -3,9 +3,9 @@
  */
 
 @interface DAContactsSearchQuery : DASearchQuery {
-    BOOL _includePhotos;
-    NSString *_searchBase;
-    NSString *_searchScope;
+    BOOL  _includePhotos;
+    NSString * _searchBase;
+    NSString * _searchScope;
 }
 
 @property (nonatomic) BOOL includePhotos;

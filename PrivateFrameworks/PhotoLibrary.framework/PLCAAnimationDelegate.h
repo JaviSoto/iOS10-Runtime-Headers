@@ -3,8 +3,8 @@
  */
 
 @interface PLCAAnimationDelegate : NSObject {
-    id /* block */ _completion;
-    id /* block */ _start;
+    id /* block */  _completion;
+    id /* block */  _start;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

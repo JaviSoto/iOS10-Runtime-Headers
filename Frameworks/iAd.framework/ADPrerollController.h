@@ -3,14 +3,14 @@
  */
 
 @interface ADPrerollController : NSObject <ADPlayerDelegate, ADPrerollViewDelegate> {
-    ADPlayer *_adPlayer;
-    AVPlayerViewController *_avPlayerViewController;
-    id /* block */ _completionHandler;
-    BOOL _isObservingThirdPartyAVPlayer;
-    MPMoviePlayerController *_moviePlayerController;
-    BOOL _setupInProgress;
-    unsigned int _type;
-    ADPrerollView *_view;
+    ADPlayer * _adPlayer;
+    AVPlayerViewController * _avPlayerViewController;
+    id /* block */  _completionHandler;
+    BOOL  _isObservingThirdPartyAVPlayer;
+    MPMoviePlayerController * _moviePlayerController;
+    BOOL  _setupInProgress;
+    unsigned int  _type;
+    ADPrerollView * _view;
 }
 
 @property (nonatomic, retain) ADPlayer *adPlayer;

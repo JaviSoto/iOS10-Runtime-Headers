@@ -3,26 +3,26 @@
  */
 
 @interface UICollisionBehavior : UIDynamicBehavior {
-    NSMutableDictionary *_boundaryBodies;
-    NSMutableDictionary *_boundaryPaths;
+    NSMutableDictionary * _boundaryBodies;
+    NSMutableDictionary * _boundaryPaths;
     struct { 
         unsigned int delegateBeganWithItem : 1; 
         unsigned int delegateEndedWithItem : 1; 
         unsigned int delegateBeganWithBoundary : 1; 
         unsigned int delegateEndedWithBoundary : 1; 
-    } _collisionBehaviorFlags;
-    <UICollisionBehaviorDelegate> *_collisionDelegate;
-    unsigned int _collisionMode;
-    unsigned int _groupBID;
-    unsigned int _groupVID;
-    PKExtendedPhysicsBody *_implicitBoundsBody;
+    }  _collisionBehaviorFlags;
+    <UICollisionBehaviorDelegate> * _collisionDelegate;
+    unsigned int  _collisionMode;
+    unsigned int  _groupBID;
+    unsigned int  _groupVID;
+    PKExtendedPhysicsBody * _implicitBoundsBody;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _implicitBoundsInsets;
-    BOOL _usesImplicitBounds;
+    }  _implicitBoundsInsets;
+    BOOL  _usesImplicitBounds;
 }
 
 @property (nonatomic, readonly, copy) NSArray *boundaryIdentifiers;
@@ -31,6 +31,9 @@
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic) BOOL translatesReferenceBoundsIntoBoundary;
 
++ (BOOL)_isPrimitiveBehavior;
+
+- (void).cxx_destruct;
 - (void)_addItem:(id)arg1;
 - (void)_applySettings;
 - (void)_associate;
@@ -51,7 +54,6 @@
 - (id)boundaryWithIdentifier:(id)arg1;
 - (id)collisionDelegate;
 - (unsigned int)collisionMode;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithItems:(id)arg1;

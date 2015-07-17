@@ -3,10 +3,10 @@
  */
 
 @interface SKUITracklistPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    SKUITracklistColumnData *_columnData;
-    <SKUIEntityProviding> *_entityProvider;
-    int _lastNeedsMoreCount;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    SKUITracklistColumnData * _columnData;
+    <SKUIEntityProviding> * _entityProvider;
+    int  _lastNeedsMoreCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

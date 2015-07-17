@@ -3,34 +3,34 @@
  */
 
 @interface GKRemoteUIController : NSObject <GKRemoteUIAuxiliaryViewDelegate, RUILoaderDelegate, RUIObjectModelDelegate> {
-    BOOL _accountChanged;
-    NSString *_alias;
-    NSString *_appleID;
-    NSString *_authToken;
-    BOOL _complete;
-    id /* block */ _completionHandler;
-    NSError *_error;
-    NSString *_firstName;
-    NSString *_lastName;
-    int _layoutStyle;
-    id /* block */ _loadHandler;
-    RUILoader *_loader;
-    BOOL _loading;
-    BOOL _loadingInitialUI;
-    UINavigationController *_navigationController;
-    NSMutableArray *_objectModels;
-    NSString *_playerID;
-    GKRemoteUIController *_presentedRemoteUIController;
-    BOOL _previousUseCustomBackButtonActionValue;
-    NSData *_pushToken;
-    BOOL _shouldApplyGameCenterTheme;
-    NSArray *_staticViewControllers;
-    NSURL *_url;
+    NSString * _alias;
+    NSString * _appleID;
+    NSDictionary * _authInfo;
+    NSString * _authToken;
+    BOOL  _complete;
+    id /* block */  _completionHandler;
+    NSError * _error;
+    NSString * _firstName;
+    NSString * _lastName;
+    int  _layoutStyle;
+    id /* block */  _loadHandler;
+    RUILoader * _loader;
+    BOOL  _loading;
+    BOOL  _loadingInitialUI;
+    UINavigationController * _navigationControllerWeak;
+    NSMutableArray * _objectModels;
+    NSString * _playerID;
+    GKRemoteUIController * _presentedRemoteUIController;
+    BOOL  _previousUseCustomBackButtonActionValue;
+    NSData * _pushToken;
+    BOOL  _shouldApplyGameCenterTheme;
+    NSArray * _staticViewControllers;
+    NSURL * _url;
 }
 
-@property (nonatomic) BOOL accountChanged;
 @property (nonatomic, retain) NSString *alias;
 @property (nonatomic, retain) NSString *appleID;
+@property (nonatomic, retain) NSDictionary *authInfo;
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, readonly) NSString *bagKey;
 @property (nonatomic) BOOL complete;
@@ -61,17 +61,17 @@
 
 + (id)remoteUIController;
 
-- (BOOL)accountChanged;
 - (id)addThemeInfoToAttributes:(id)arg1;
 - (id)alias;
 - (id)appleID;
+- (id)authInfo;
 - (id)authToken;
 - (void)auxiliaryView:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)auxiliaryView:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (id)bagKey;
 - (BOOL)complete;
 - (id /* block */)completionHandler;
-- (void)configureFromBagKey:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)configureFromBagKey:(id)arg1 player:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)didLoadURL:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)error;
@@ -123,9 +123,9 @@
 - (void)pushObjectModel:(id)arg1 animated:(BOOL)arg2;
 - (id)pushToken;
 - (void)replaceObjectModelAtIndex:(unsigned int)arg1 withObjectObjectModel:(id)arg2;
-- (void)setAccountChanged:(BOOL)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setAppleID:(id)arg1;
+- (void)setAuthInfo:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setComplete:(BOOL)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface iPhotoMigrationSupport : NSObject {
-    int _inFlightMigrationCount;
-    PLPhotoLibrary *_pl_library;
+    int  _inFlightMigrationCount;
+    PLPhotoLibrary * _pl_library;
 }
 
 @property (nonatomic, readonly) BOOL migrationWasInterrupted;

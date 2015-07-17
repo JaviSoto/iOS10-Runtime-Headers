@@ -3,29 +3,29 @@
  */
 
 @interface RURadioPlaybackCoordinator : NSObject <MPAVRoutingControllerDelegate> {
-    RadioStation *_currentStation;
-    BOOL _deviceIsDocked;
-    BOOL _deviceIsLocked;
-    BOOL _didPresentNotificationForCurrentItem;
-    int _lockStateNotifyToken;
-    BOOL _lockStateNotifyTokenIsValid;
-    void *_mediaRemoteCommandObserver;
-    NSObject<OS_dispatch_source> *_pauseTimeoutTimerSource;
-    MPAVRoute *_pickedRoute;
-    BOOL _playbackIsPaused;
-    RadioStation *_playbackNotificationStation;
-    NSDate *_playbackTimeoutBeginDate;
-    double _playbackTimeoutDuration;
-    RUPlaybackTimeoutInfoController *_playbackTimeoutInfoController;
-    MPUserNotification *_playbackTimeoutNotification;
-    BOOL _playbackTimeoutNotificationDidExpire;
-    NSObject<OS_dispatch_source> *_playbackTimeoutNotificationExpirationTimerSource;
-    RURadioAVPlayer *_player;
-    NSObject<OS_dispatch_source> *_presentPlaybackTimeoutTimerSource;
-    RadioRecentStationsController *_recentStationsController;
-    MPUReportingPlaybackObserver *_reportingPlaybackObserver;
-    MPAVRoutingController *_routingController;
-    BOOL _wasUsingBackgroundNetwork;
+    RadioStation * _currentStation;
+    BOOL  _deviceIsDocked;
+    BOOL  _deviceIsLocked;
+    BOOL  _didPresentNotificationForCurrentItem;
+    int  _lockStateNotifyToken;
+    BOOL  _lockStateNotifyTokenIsValid;
+    void * _mediaRemoteCommandObserver;
+    NSObject<OS_dispatch_source> * _pauseTimeoutTimerSource;
+    MPAVRoute * _pickedRoute;
+    BOOL  _playbackIsPaused;
+    RadioStation * _playbackNotificationStation;
+    NSDate * _playbackTimeoutBeginDate;
+    double  _playbackTimeoutDuration;
+    RUPlaybackTimeoutInfoController * _playbackTimeoutInfoController;
+    MPUserNotification * _playbackTimeoutNotification;
+    BOOL  _playbackTimeoutNotificationDidExpire;
+    NSObject<OS_dispatch_source> * _playbackTimeoutNotificationExpirationTimerSource;
+    RURadioAVPlayer * _player;
+    NSObject<OS_dispatch_source> * _presentPlaybackTimeoutTimerSource;
+    RadioRecentStationsController * _recentStationsController;
+    MPUReportingPlaybackObserver * _reportingPlaybackObserver;
+    MPAVRoutingController * _routingController;
+    BOOL  _wasUsingBackgroundNetwork;
 }
 
 @property (readonly, copy) NSString *debugDescription;

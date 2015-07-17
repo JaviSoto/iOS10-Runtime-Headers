@@ -3,10 +3,10 @@
  */
 
 @interface CKPhoneNumberCompressor : NSObject {
-    float _desiredWidth;
-    UIFont *_font;
-    NSString *_phoneNumber;
-    NSArray *_preferredCompressions;
+    float  _desiredWidth;
+    UIFont * _font;
+    NSString * _phoneNumber;
+    NSArray * _preferredCompressions;
 }
 
 @property (nonatomic) float desiredWidth;

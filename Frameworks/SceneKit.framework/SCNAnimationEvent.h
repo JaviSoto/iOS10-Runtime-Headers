@@ -3,12 +3,10 @@
  */
 
 @interface SCNAnimationEvent : NSObject {
-    id /* block */ _eventBlock;
-    double _eventTime;
-    id _reserved;
+    id /* block */  _eventBlock;
+    double  _eventTime;
 }
 
-+ (id)SCNJSExportProtocol;
 + (id)animationEventWithKeyTime:(float)arg1 block:(id /* block */)arg2;
 
 - (void)dealloc;

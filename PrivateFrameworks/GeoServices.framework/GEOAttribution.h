@@ -3,12 +3,12 @@
  */
 
 @interface GEOAttribution : PBCodable <NSCopying> {
-    NSString *_badge;
-    NSString *_badgeChecksum;
-    NSString *_logo;
-    NSString *_logoChecksum;
-    NSString *_name;
-    NSString *_url;
+    NSString * _badge;
+    NSString * _badgeChecksum;
+    NSString * _logo;
+    NSString * _logoChecksum;
+    NSString * _name;
+    NSString * _url;
 }
 
 @property (nonatomic, retain) NSString *badge;

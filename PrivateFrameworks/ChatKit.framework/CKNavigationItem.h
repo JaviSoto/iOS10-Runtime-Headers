@@ -3,7 +3,7 @@
  */
 
 @interface CKNavigationItem : UINavigationItem {
-    UIScrollView *_contentScrollView;
+    UIScrollView * _contentScrollView;
 }
 
 @property (nonatomic) UIScrollView *contentScrollView;

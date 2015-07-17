@@ -3,8 +3,8 @@
  */
 
 @interface PUSearchFooterView : UIView {
-    UIActivityIndicatorView *_indicatorView;
-    UILabel *_label;
+    UIActivityIndicatorView * _indicatorView;
+    UILabel * _label;
 }
 
 @property (nonatomic, readonly) UILabel *label;

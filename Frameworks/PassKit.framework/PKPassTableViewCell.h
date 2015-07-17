@@ -3,7 +3,7 @@
  */
 
 @interface PKPassTableViewCell : PKCardOnFileTableViewCell {
-    PKPaymentPass *_paymentPass;
+    PKPaymentPass * _paymentPass;
 }
 
 @property (nonatomic, retain) PKPaymentPass *paymentPass;

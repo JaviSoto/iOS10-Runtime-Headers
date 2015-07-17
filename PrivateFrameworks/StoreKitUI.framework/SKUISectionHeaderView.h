@@ -8,14 +8,14 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIHeaderViewElement *_header;
+    }  _contentInset;
+    SKUIHeaderViewElement * _header;
     struct CGSize { 
         float width; 
         float height; 
-    } _lastFitSize;
-    NSArray *_lines;
-    NSMapTable *_views;
+    }  _lastFitSize;
+    NSArray * _lines;
+    NSMapTable * _views;
 }
 
 @property (readonly, copy) NSString *debugDescription;

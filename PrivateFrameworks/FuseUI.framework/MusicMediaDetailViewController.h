@@ -3,35 +3,35 @@
  */
 
 @interface MusicMediaDetailViewController : UIViewController <MusicLayoutMarginProxyViewDelegate, MusicMediaDetailHeaderViewControllerDelegate, MusicMediaDetailSplitViewControllerDelegate, SKUINavigationBarDisplayConfiguring, SKUIProxyScrollViewDelegate> {
-    MusicMediaDetailTintInformation *_detailTintInformation;
+    MusicMediaDetailTintInformation * _detailTintInformation;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _externalContentInset;
-    BOOL _hairlineRightInsetIgnoresLayoutMargin;
-    MusicHairlineView *_hairlineView;
-    BOOL _hasAttemptedSplitDetailViewControllerCreation;
-    BOOL _hasReceivedViewDidAppear;
-    UIViewController<MusicMediaDetailHeaderContentViewController> *_headerContentViewController;
-    float _headerHeight;
-    float _headerTransitionProgress;
-    float _headerVerticalOffset;
-    UIViewController<MusicMediaDetailHeaderViewController> *_headerViewController;
-    BOOL _isHandlingScrollViewUpdate;
-    float _maximumHeaderHeight;
-    float _maximumHeaderHeightAdditions;
-    float _navigationTitleViewAlphaTransitionProgressDelay;
-    SKUIProxyScrollView *_proxyScrollView;
-    BOOL _showingSplitDetailViewController;
-    UIViewController<MusicMediaDetailSplitViewController> *_splitDetailViewController;
-    id /* block */ _splitDetailViewControllerCreationBlock;
-    UIViewController<MusicMediaDetailSplitViewController> *_splitMainViewController;
-    NSMapTable *_splitScrollViewToScrollingContext;
-    NSArray *_splitScrollViews;
-    BOOL _supportsSplitDetailViewController;
-    NSMapTable *_viewControllerToClippingView;
+    }  _externalContentInset;
+    BOOL  _hairlineRightInsetIgnoresLayoutMargin;
+    MusicHairlineView * _hairlineView;
+    BOOL  _hasAttemptedSplitDetailViewControllerCreation;
+    BOOL  _hasReceivedViewDidAppear;
+    UIViewController<MusicMediaDetailHeaderContentViewController> * _headerContentViewController;
+    float  _headerHeight;
+    float  _headerTransitionProgress;
+    float  _headerVerticalOffset;
+    UIViewController<MusicMediaDetailHeaderViewController> * _headerViewController;
+    BOOL  _isHandlingScrollViewUpdate;
+    float  _maximumHeaderHeight;
+    float  _maximumHeaderHeightAdditions;
+    float  _navigationTitleViewAlphaTransitionProgressDelay;
+    SKUIProxyScrollView * _proxyScrollView;
+    BOOL  _showingSplitDetailViewController;
+    UIViewController<MusicMediaDetailSplitViewController> * _splitDetailViewController;
+    id /* block */  _splitDetailViewControllerCreationBlock;
+    UIViewController<MusicMediaDetailSplitViewController> * _splitMainViewController;
+    NSMapTable * _splitScrollViewToScrollingContext;
+    NSArray * _splitScrollViews;
+    BOOL  _supportsSplitDetailViewController;
+    NSMapTable * _viewControllerToClippingView;
 }
 
 @property (nonatomic, readonly) UIScrollView *currentPrimaryScrollView;

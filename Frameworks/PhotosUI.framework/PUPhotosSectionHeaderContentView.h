@@ -3,10 +3,10 @@
  */
 
 @interface PUPhotosSectionHeaderContentView : UIView {
-    UILabel *dateLabel;
-    UIImageView *locationsIconView;
-    UILabel *locationsLabel;
-    UILabel *titleLabel;
+    UILabel * dateLabel;
+    UIImageView * locationsIconView;
+    UILabel * locationsLabel;
+    UILabel * titleLabel;
 }
 
 @property (nonatomic, retain) UILabel *dateLabel;

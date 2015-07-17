@@ -3,7 +3,7 @@
  */
 
 @interface MFMailAccountProxy : NSObject {
-    NSDictionary *_properties;
+    NSDictionary * _properties;
 }
 
 @property (nonatomic, readonly) NSArray *emailAddresses;
@@ -12,10 +12,12 @@
 @property (nonatomic, readonly) NSArray *fromEmailAddressesIncludingDisabled;
 @property (nonatomic, readonly) NSString *fullUserName;
 @property (nonatomic, readonly) BOOL isDefaultDeliveryAccount;
+@property (nonatomic, readonly) BOOL isManaged;
 @property (nonatomic, readonly) id mailAccount;
 @property (nonatomic, readonly) BOOL restrictsRepliesAndForwards;
+@property (nonatomic, readonly) BOOL supportsMailDrop;
 @property (nonatomic, readonly) BOOL supportsSoftBankCodePoints;
-@property (nonatomic, readonly) BOOL supportsThreadNotifications;
+@property (nonatomic, readonly) BOOL supportsThreadOperations;
 @property (nonatomic, readonly) NSString *uniqueID;
 @property (nonatomic, readonly) NSString *username;
 
@@ -30,10 +32,12 @@
 - (id)fromEmailAddressesIncludingDisabled;
 - (id)fullUserName;
 - (BOOL)isDefaultDeliveryAccount;
+- (BOOL)isManaged;
 - (id)mailAccount;
 - (BOOL)restrictsRepliesAndForwards;
+- (BOOL)supportsMailDrop;
 - (BOOL)supportsSoftBankCodePoints;
-- (BOOL)supportsThreadNotifications;
+- (BOOL)supportsThreadOperations;
 - (id)uniqueID;
 - (id)username;
 

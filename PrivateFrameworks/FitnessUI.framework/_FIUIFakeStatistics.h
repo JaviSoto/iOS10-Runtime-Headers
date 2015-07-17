@@ -3,7 +3,7 @@
  */
 
 @interface _FIUIFakeStatistics : NSObject {
-    HKQuantity *_sumQuantity;
+    HKQuantity * _sumQuantity;
 }
 
 @property (nonatomic, retain) HKQuantity *sumQuantity;

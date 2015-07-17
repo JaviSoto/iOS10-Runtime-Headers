@@ -3,11 +3,12 @@
  */
 
 @interface CKDFetchUserQuotaOperation : CKDDatabaseOperation {
-    unsigned long long _quotaAvailable;
+    unsigned long long  _quotaAvailable;
 }
 
 @property (nonatomic) unsigned long long quotaAvailable;
 
+- (unsigned long long)activityStart;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

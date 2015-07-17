@@ -3,10 +3,10 @@
  */
 
 @interface CPLStatus : NSObject {
-    <CPLStatusDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_lock;
-    NSMutableDictionary *_status;
-    NSURL *_statusFileURL;
+    <CPLStatusDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _lock;
+    NSMutableDictionary * _status;
+    NSURL * _statusFileURL;
 }
 
 @property (nonatomic, readonly) NSDictionary *cloudAssetCountPerType;

@@ -3,17 +3,17 @@
  */
 
 @interface PLContainerChangeNotification : PLChangeNotification {
-    NSIndexSet *_changedIndexes;
-    NSArray *_changedObjects;
-    BOOL _countDidChange;
-    NSIndexSet *_deletedIndexes;
-    BOOL _didCalculateDiffs;
-    NSIndexSet *_insertedIndexes;
-    struct __CFArray { } *_movedFromIndexes;
-    NSIndexSet *_movedIndexes;
-    id _object;
-    BOOL _shouldReload;
-    PLObjectSnapshot *_snapshot;
+    NSIndexSet * _changedIndexes;
+    NSArray * _changedObjects;
+    BOOL  _countDidChange;
+    NSIndexSet * _deletedIndexes;
+    BOOL  _didCalculateDiffs;
+    NSIndexSet * _insertedIndexes;
+    struct __CFArray { } * _movedFromIndexes;
+    NSIndexSet * _movedIndexes;
+    id  _object;
+    BOOL  _shouldReload;
+    PLObjectSnapshot * _snapshot;
 }
 
 @property (nonatomic, readonly, retain) NSArray *_changedObjects;
@@ -30,6 +30,8 @@
 @property (nonatomic, readonly) BOOL hasMoves;
 @property (nonatomic, readonly, retain) NSIndexSet *insertedIndexes;
 @property (nonatomic, readonly, retain) NSArray *insertedObjects;
+@property (nonatomic, readonly, retain) struct __CFArray { }*movedFromIndexes;
+@property (nonatomic, readonly, retain) NSIndexSet *movedIndexes;
 @property (nonatomic, readonly) BOOL shouldReload;
 @property (nonatomic, readonly, retain) PLObjectSnapshot *snapshot;
 
@@ -56,6 +58,8 @@
 - (id)init;
 - (id)insertedIndexes;
 - (id)insertedObjects;
+- (struct __CFArray { }*)movedFromIndexes;
+- (id)movedIndexes;
 - (id)name;
 - (id)object;
 - (BOOL)shouldReload;

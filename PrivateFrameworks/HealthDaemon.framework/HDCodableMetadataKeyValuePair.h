@@ -3,16 +3,16 @@
  */
 
 @interface HDCodableMetadataKeyValuePair : PBCodable <NSCopying> {
-    double _dateValue;
+    double  _dateValue;
     struct { 
         unsigned int dateValue : 1; 
         unsigned int numberDoubleValue : 1; 
         unsigned int numberIntValue : 1; 
-    } _has;
-    NSString *_key;
-    double _numberDoubleValue;
-    long long _numberIntValue;
-    NSString *_stringValue;
+    }  _has;
+    NSString * _key;
+    double  _numberDoubleValue;
+    long long  _numberIntValue;
+    NSString * _stringValue;
 }
 
 @property (nonatomic) double dateValue;

@@ -3,25 +3,25 @@
  */
 
 @interface GKMatchmaker : NSObject {
-    id /* block */ _inviteHandler;
-    id /* block */ _inviteeResponseHandler;
-    NSSet *_invitees;
-    NSDictionary *_inviteesByUserID;
-    NSObject<OS_dispatch_queue> *_lookForInviteQueue;
-    GKMatch *_match;
-    int _matching;
-    BOOL _nearbyAdvertising;
-    BOOL _nearbyBrowsing;
-    NSSet *_nearbyCompatibileHashes;
-    GKDiscovery *_nearbyDiscovery;
-    NSMutableDictionary *_nearbyInvites;
-    id /* block */ _nearbyPlayerHandler;
-    id /* block */ _nearbyPlayerIDHandler;
-    NSMutableDictionary *_nearbyPlayers;
-    double _nearbyQueryAllowance;
-    NSDate *_nearbyQueryLastCheckDate;
-    id /* block */ _recipientResponseHandler;
-    BOOL _wasNearbyBrowsing;
+    id /* block */  _inviteHandler;
+    id /* block */  _inviteeResponseHandler;
+    NSSet * _invitees;
+    NSDictionary * _inviteesByUserID;
+    NSObject<OS_dispatch_queue> * _lookForInviteQueue;
+    GKMatch * _match;
+    int  _matching;
+    BOOL  _nearbyAdvertising;
+    BOOL  _nearbyBrowsing;
+    NSSet * _nearbyCompatibileHashes;
+    GKDiscovery * _nearbyDiscovery;
+    NSMutableDictionary * _nearbyInvites;
+    id /* block */  _nearbyPlayerHandler;
+    id /* block */  _nearbyPlayerIDHandler;
+    NSMutableDictionary * _nearbyPlayers;
+    double  _nearbyQueryAllowance;
+    NSDate * _nearbyQueryLastCheckDate;
+    id /* block */  _recipientResponseHandler;
+    BOOL  _wasNearbyBrowsing;
 }
 
 @property (nonatomic, readonly) BOOL hasInviteListener;
@@ -98,7 +98,8 @@
 - (void)loadCompatabilityMatrixAsDictionaryWithHandler:(id /* block */)arg1;
 - (void)loadConnectivitySettingsWithCompletionHandler:(id /* block */)arg1;
 - (void)loadPhotoDataDictionaryWithHandler:(id /* block */)arg1;
-- (void)localPlayerAcceptedGameInvite:(id)arg1;
+- (void)localPlayerAcceptedGameInvite;
+- (void)localPlayerAcceptedGameInviteNotification:(id)arg1;
 - (void)localPlayerAcceptedNearbyInvite:(id)arg1;
 - (void)localPlayerRespondedToNearbyInvite:(id)arg1;
 - (void)lookForInvite;

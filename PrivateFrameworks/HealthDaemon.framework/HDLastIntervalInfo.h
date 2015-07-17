@@ -3,10 +3,10 @@
  */
 
 @interface HDLastIntervalInfo : NSObject {
-    long long _lastInterval;
-    NSArray *_orderedSourceIds;
-    double _startTimeInBucket;
-    NSMutableDictionary *_sumsBySource;
+    long long  _lastInterval;
+    NSArray * _orderedSourceIds;
+    double  _startTimeInBucket;
+    NSMutableDictionary * _sumsBySource;
 }
 
 @property (nonatomic) long long lastInterval;

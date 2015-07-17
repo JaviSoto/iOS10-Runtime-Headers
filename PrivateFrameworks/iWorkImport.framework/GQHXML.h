@@ -3,13 +3,13 @@
  */
 
 @interface GQHXML : NSObject {
-    bool isProgressive;
-    struct __CFString { } *mCss;
-    struct __CFString { } *mCssFilename;
-    struct __CFString { } *mFilename;
-    struct __CFString { } *mLastCss;
-    <GQHXMLOutput> *mOutput;
-    BOOL mUseExternalCss;
+    bool  isProgressive;
+    struct __CFString { } * mCss;
+    struct __CFString { } * mCssFilename;
+    struct __CFString { } * mFilename;
+    struct __CFString { } * mLastCss;
+    <GQHXMLOutput> * mOutput;
+    BOOL  mUseExternalCss;
 }
 
 @property (readonly) bool isProgressive;

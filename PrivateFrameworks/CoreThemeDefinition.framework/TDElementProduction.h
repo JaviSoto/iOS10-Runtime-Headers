@@ -14,6 +14,8 @@
 @property (nonatomic, retain) TDThemeConstant *renditionSubtype;
 @property (nonatomic, retain) TDRenditionType *renditionType;
 @property (nonatomic, retain) NSSet *renditions;
+@property (nonatomic, retain) NSSet *tags;
+@property (nonatomic, retain) NSString *universalTypeIdentifier;
 @property (nonatomic, retain) TDThemeConstant *zeroCodeArtworkInfo;
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;

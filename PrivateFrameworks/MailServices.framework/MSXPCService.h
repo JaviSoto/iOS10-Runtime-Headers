@@ -3,16 +3,17 @@
  */
 
 @interface MSXPCService : NSObject {
-    NSXPCConnection *_connection;
-    NSLock *_lock;
-    NSXPCInterface *_remoteObjectInterface;
-    BOOL _shouldLaunchMobileMail;
+    NSXPCConnection * _connection;
+    NSLock * _lock;
+    NSXPCInterface * _remoteObjectInterface;
+    BOOL  _shouldLaunchMobileMail;
 }
 
 @property (nonatomic) BOOL shouldLaunchMobileMail;
 
 - (id)connection;
 - (void)dealloc;
+- (id)init;
 - (id)initWithRemoteObjectInterface:(id)arg1;
 - (id)newConnectionForInterface:(id)arg1;
 - (id)remoteObjectProxy;

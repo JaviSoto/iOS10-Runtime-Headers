@@ -3,8 +3,8 @@
  */
 
 @interface NSBlockOperation : NSOperation {
-    id _private2;
-    void *_reserved2;
+    id  _private2;
+    void * _reserved2;
 }
 
 @property (readonly, copy) NSArray *executionBlocks;

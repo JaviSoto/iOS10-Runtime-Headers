@@ -3,10 +3,10 @@
  */
 
 @interface TSWPPadding : NSObject <TSDMixing, TSSPropertyCommandSerializing> {
-    float _bottomInset;
-    float _leftInset;
-    float _rightInset;
-    float _topInset;
+    float  _bottomInset;
+    float  _leftInset;
+    float  _rightInset;
+    float  _topInset;
 }
 
 @property (nonatomic) float bottomInset;

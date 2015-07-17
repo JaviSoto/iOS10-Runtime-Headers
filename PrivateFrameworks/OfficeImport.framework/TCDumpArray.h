@@ -3,11 +3,11 @@
  */
 
 @interface TCDumpArray : TCDumpType {
-    int mCount;
-    NSString *mCountFieldName;
-    int mCountFieldType;
-    TCDumpType *mElementType;
-    int mPaddingSize;
+    int  mCount;
+    NSString * mCountFieldName;
+    int  mCountFieldType;
+    TCDumpType * mElementType;
+    int  mPaddingSize;
 }
 
 - (void)dealloc;

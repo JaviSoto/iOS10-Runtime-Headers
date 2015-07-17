@@ -3,9 +3,9 @@
  */
 
 @interface BBApplicationLauncher : NSObject {
-    BKSApplicationStateMonitor *_appStateMonitor;
-    NSMutableDictionary *_bundleIdentifierToAssertions;
-    FBSSystemService *_systemService;
+    BKSApplicationStateMonitor * _appStateMonitor;
+    NSMutableDictionary * _bundleIdentifierToAssertions;
+    FBSSystemService * _systemService;
 }
 
 - (void)_applicationFinishedBackgroundNotificationAction:(id)arg1;

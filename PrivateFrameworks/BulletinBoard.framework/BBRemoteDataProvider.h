@@ -3,15 +3,15 @@
  */
 
 @interface BBRemoteDataProvider : BBDataProvider <BBRemoteDataProviderServerProxy> {
-    <BBRemoteDataProviderClientProxy> *_clientProxy;
-    BOOL _connected;
-    <BBRemoteDataProviderDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_proxyQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    NSString *_sectionID;
-    NSObject<OS_dispatch_queue> *_serverControlQueue;
-    BOOL _serverIsReady;
+    <BBRemoteDataProviderClientProxy> * _clientProxy;
+    BOOL  _connected;
+    <BBRemoteDataProviderDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _proxyQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    NSString * _sectionID;
+    NSObject<OS_dispatch_queue> * _serverControlQueue;
+    BOOL  _serverIsReady;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -51,7 +51,6 @@
 - (void)setClearedInfo:(id)arg1;
 - (void)setClientProxy:(id)arg1 completion:(id /* block */)arg2;
 - (void)setSectionInfo:(id)arg1;
-- (void)setSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)setServerIsReady:(BOOL)arg1;
 - (void)startWatchdog;
 - (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id /* block */)arg2 completion:(id /* block */)arg3;

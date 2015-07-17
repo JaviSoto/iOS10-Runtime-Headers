@@ -3,14 +3,16 @@
  */
 
 @interface OADTableRow : NSObject {
-    NSMutableArray *mCells;
-    float mHeight;
+    NSMutableArray * mCells;
+    float  mHeight;
 }
 
 - (id)addCell;
 - (id)cellAtIndex:(unsigned int)arg1;
 - (unsigned int)cellCount;
 - (void)dealloc;
+- (id)description;
+- (void)flipCellsRTL;
 - (float)height;
 - (id)init;
 - (void)setHeight:(float)arg1;

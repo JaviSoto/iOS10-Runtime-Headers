@@ -3,15 +3,15 @@
  */
 
 @interface MPAudioVideoRoutingTableViewController : UITableViewController <MPAVRoutingControllerDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    int _airPlayPasswordAlertDidCancelToken;
-    unsigned int _avItemType;
-    BOOL _displayMirroringRoutes;
-    NSArray *_displayedRoutes;
-    MPAVRoutingController *_routingController;
-    BOOL _wirelessDisplayCapableRouteIsPicked;
-    BOOL _wirelessDisplayRouteIsPendingAsPicked;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    int  _airPlayPasswordAlertDidCancelToken;
+    unsigned int  _avItemType;
+    BOOL  _displayMirroringRoutes;
+    NSArray * _displayedRoutes;
+    MPAVRoutingController * _routingController;
+    BOOL  _wirelessDisplayCapableRouteIsPicked;
+    BOOL  _wirelessDisplayRouteIsPendingAsPicked;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,16 +3,16 @@
  */
 
 @interface MFComposeSMIMELockButton : UIButton {
-    BOOL _canEncrypt;
-    UIImageView *_lockedImageView;
-    UIImageView *_unlockedImageView;
-    BOOL _wantsEncryption;
+    BOOL  _canEncrypt;
+    UIImageView * _lockedImageView;
+    UIImageView * _unlockedImageView;
+    BOOL  _wantsEncryption;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } touchInsets;
+    }  touchInsets;
 }
 
 @property (nonatomic) BOOL canEncrypt;

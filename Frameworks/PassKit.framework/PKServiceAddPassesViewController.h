@@ -3,23 +3,23 @@
  */
 
 @interface PKServiceAddPassesViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKServiceAddPassesViewControllerProtocol, UIScrollViewDelegate> {
-    BOOL _allowsPassIngestion;
-    BOOL _alreadyAdding;
-    PKPassGroupStackView *_cardStackView;
-    NSMutableData *_downloadPassData;
-    long long _downloadPassExpectedBytes;
-    NSURLConnection *_downloadPassURLConnection;
-    int _groupLoadState;
-    PKGroupsController *_groupsController;
-    BOOL _haveStartedCardAnimation;
-    id /* block */ _loadedGroupsCallback;
-    NSArray *_localPassDatas;
-    NSMutableArray *_localPasses;
-    NSMutableArray *_minimumCardHeightFromHereToTop;
-    UINavigationBar *_navigationBar;
-    int _presentationState;
-    UIProgressView *_progressView;
-    BOOL _viewAppeared;
+    BOOL  _allowsPassIngestion;
+    BOOL  _alreadyAdding;
+    PKPassGroupStackView * _cardStackView;
+    NSMutableData * _downloadPassData;
+    long long  _downloadPassExpectedBytes;
+    NSURLConnection * _downloadPassURLConnection;
+    int  _groupLoadState;
+    PKGroupsController * _groupsController;
+    BOOL  _haveStartedCardAnimation;
+    id /* block */  _loadedGroupsCallback;
+    NSArray * _localPassDatas;
+    NSMutableArray * _localPasses;
+    NSMutableArray * _minimumCardHeightFromHereToTop;
+    UINavigationBar * _navigationBar;
+    int  _presentationState;
+    UIProgressView * _progressView;
+    BOOL  _viewAppeared;
 }
 
 @property (nonatomic, retain) PKPassGroupStackView *cardStackView;
@@ -75,6 +75,8 @@
 - (id)navigationBar;
 - (unsigned int)numberOfGroups;
 - (BOOL)passesGrowWhenFlipped;
+- (int)preferredStatusBarStyle;
+- (BOOL)prefersStatusBarHidden;
 - (int)presentationState;
 - (id)progressView;
 - (void)setAllowsPassIngestion:(BOOL)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface NSSimpleCString : NSString {
-    char *bytes;
-    int numBytes;
+    char * bytes;
+    int  numBytes;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

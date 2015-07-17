@@ -3,9 +3,9 @@
  */
 
 @interface _SSVPlayActivityEndpointRevisionInformation : NSObject <NSCopying, NSSecureCoding> {
-    NSIndexSet *_additionalPendingRevisionsIndexSet;
-    unsigned long long _currentRevision;
-    NSString *_revisionVersionToken;
+    NSIndexSet * _additionalPendingRevisionsIndexSet;
+    unsigned long long  _currentRevision;
+    NSString * _revisionVersionToken;
 }
 
 @property (nonatomic, copy) NSIndexSet *additionalPendingRevisionsIndexSet;

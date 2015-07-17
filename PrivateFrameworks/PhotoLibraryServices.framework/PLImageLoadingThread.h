@@ -3,21 +3,21 @@
  */
 
 @interface PLImageLoadingThread : NSObject {
-    BOOL _canceled;
-    NSObject<OS_dispatch_queue> *_highPriorityQueue;
-    NSMutableArray *_highPriorityRequests;
-    NSObject<OS_dispatch_queue> *_highestPriorityQueue;
-    NSMutableArray *_highestPriorityRequests;
-    NSObject<OS_dispatch_queue> *_isolation;
-    PLPhotoLibrary *_library;
-    NSObject<OS_dispatch_queue> *_normalPriorityQueue;
-    NSMutableArray *_normalPriorityRequests;
-    BOOL _paused;
-    NSMutableSet *_queues;
-    NSMutableDictionary *_requestsByKey;
-    BOOL _running;
-    PLImageCache *_weak_cache;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    BOOL  _canceled;
+    NSObject<OS_dispatch_queue> * _highPriorityQueue;
+    NSMutableArray * _highPriorityRequests;
+    NSObject<OS_dispatch_queue> * _highestPriorityQueue;
+    NSMutableArray * _highestPriorityRequests;
+    NSObject<OS_dispatch_queue> * _isolation;
+    PLPhotoLibrary * _library;
+    NSObject<OS_dispatch_queue> * _normalPriorityQueue;
+    NSMutableArray * _normalPriorityRequests;
+    BOOL  _paused;
+    NSMutableSet * _queues;
+    NSMutableDictionary * _requestsByKey;
+    BOOL  _running;
+    PLImageCache * _weak_cache;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 - (BOOL)_dequeueRequest:(id)arg1;

@@ -58,13 +58,13 @@
                 } ; 
             } ; 
         } _row; 
-    } _cellUID;
-    TSTCellUIDList *_cellUIDList;
-    unsigned long _columnIndex;
-    unsigned long _columnRemainDup;
-    unsigned long _index;
-    unsigned long _lastColumnDiffPos;
-    unsigned long _lastRowDiffPos;
+    }  _cellUID;
+    TSTCellUIDList * _cellUIDList;
+    unsigned long  _columnIndex;
+    unsigned long  _columnRemainDup;
+    unsigned long  _index;
+    unsigned long  _lastColumnDiffPos;
+    unsigned long  _lastRowDiffPos;
     struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct __split_buffer<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { 
             struct UUIDData<TSP::UUIDData> {} **__first_; 
@@ -78,7 +78,7 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             unsigned long __first_; 
         } __size_; 
-    } _recentColumnResults;
+    }  _recentColumnResults;
     struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct __split_buffer<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { 
             struct UUIDData<TSP::UUIDData> {} **__first_; 
@@ -92,9 +92,9 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             unsigned long __first_; 
         } __size_; 
-    } _recentRowResults;
-    unsigned long _rowIndex;
-    unsigned long _rowRemainDup;
+    }  _recentRowResults;
+    unsigned long  _rowIndex;
+    unsigned long  _rowRemainDup;
 }
 
 @property (nonatomic) struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; } cellUID;

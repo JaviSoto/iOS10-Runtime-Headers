@@ -3,11 +3,11 @@
  */
 
 @interface DADownloadContext : NSObject {
-    NSString *_accountID;
-    NSString *_attachmentUUID;
-    id /* block */ _completionBlock;
-    id /* block */ _progressBlock;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _accountID;
+    NSString * _attachmentUUID;
+    id /* block */  _completionBlock;
+    id /* block */  _progressBlock;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) NSString *accountID;

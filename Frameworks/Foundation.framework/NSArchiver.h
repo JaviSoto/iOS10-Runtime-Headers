@@ -3,13 +3,13 @@
  */
 
 @interface NSArchiver : NSCoder {
-    void *ids;
-    void *map;
-    void *mdata;
-    void *pointerTable;
-    void *replacementTable;
-    void *reserved;
-    void *stringTable;
+    void * ids;
+    void * map;
+    void * mdata;
+    void * pointerTable;
+    void * replacementTable;
+    void * reserved;
+    void * stringTable;
 }
 
 @property (readonly, retain) NSMutableData *archiverData;

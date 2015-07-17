@@ -3,8 +3,8 @@
  */
 
 @interface CIGammaAdjust : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputPower;
+    CIImage * inputImage;
+    NSNumber * inputPower;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -16,7 +16,6 @@
 - (id)inputImage;
 - (id)inputPower;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputPower:(id)arg1;
 

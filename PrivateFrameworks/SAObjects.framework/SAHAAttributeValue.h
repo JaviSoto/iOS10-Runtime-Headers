@@ -10,9 +10,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *units;
 
++ (id)attributeValue;
++ (id)attributeValueWithDictionary:(id)arg1 context:(id)arg2;
+
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)init;
 - (void)setUnits:(id)arg1;
 - (id)units;
 

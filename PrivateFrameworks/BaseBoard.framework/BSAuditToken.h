@@ -5,7 +5,7 @@
 @interface BSAuditToken : NSObject <BSXPCCoding, NSCopying> {
     struct { 
         unsigned int val[8]; 
-    } _auditToken;
+    }  _auditToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

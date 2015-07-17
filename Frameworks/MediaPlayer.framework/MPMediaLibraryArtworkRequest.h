@@ -3,17 +3,17 @@
  */
 
 @interface MPMediaLibraryArtworkRequest : NSObject {
-    int _artworkType;
-    NSString *_availableArtworkToken;
-    int _entityType;
-    NSNumber *_fetchableArtworkSource;
-    NSString *_fetchableArtworkToken;
-    BOOL _hasRetrievedTokens;
-    ML3MusicLibrary *_library;
-    MPMediaLibraryArtwork *_libraryArtwork;
-    unsigned long long _libraryID;
-    unsigned int _mediaType;
-    double _retrievalTime;
+    int  _artworkType;
+    NSString * _availableArtworkToken;
+    int  _entityType;
+    NSNumber * _fetchableArtworkSource;
+    NSString * _fetchableArtworkToken;
+    BOOL  _hasRetrievedTokens;
+    ML3MusicLibrary * _library;
+    MPMediaLibraryArtwork * _libraryArtwork;
+    unsigned long long  _libraryID;
+    unsigned int  _mediaType;
+    double  _retrievalTime;
 }
 
 @property (nonatomic, readonly) int artworkType;

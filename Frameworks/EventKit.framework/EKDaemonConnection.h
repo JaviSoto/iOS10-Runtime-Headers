@@ -3,21 +3,21 @@
  */
 
 @interface EKDaemonConnection : NSObject <CADClientInterface> {
-    NSMutableDictionary *_cancellableOperations;
-    NSObject<OS_dispatch_queue> *_connectionLock;
-    NSString *_dbPath;
-    id _delegate;
-    unsigned int _nextCancellationToken;
-    unsigned long _options;
-    BOOL _registeredForStartNote;
-    <CADInterface> *_remoteOperationProxy;
-    NSObject<OS_dispatch_queue> *_replyHandlerLock;
-    NSXPCConnection *_xpcConnection;
+    NSMutableDictionary * _cancellableOperations;
+    NSObject<OS_dispatch_queue> * _connectionLock;
+    NSString * _dbPath;
+    id  _delegate;
+    unsigned int  _nextCancellationToken;
+    unsigned long  _options;
+    BOOL  _registeredForStartNote;
+    <CADInterface> * _remoteOperationProxy;
+    NSObject<OS_dispatch_queue> * _replyHandlerLock;
+    NSXPCConnection * _xpcConnection;
 }
 
-@property (readonly, retain) <CADInterface> *CADOperationProxy;
+@property (nonatomic, readonly, retain) <CADInterface> *CADOperationProxy;
 @property id delegate;
-@property (readonly, retain) NSXPCConnection *xpcConnection;
+@property (nonatomic, readonly, retain) NSXPCConnection *xpcConnection;
 
 + (void)waitOnSemaphoreWithBlock:(id /* block */)arg1;
 

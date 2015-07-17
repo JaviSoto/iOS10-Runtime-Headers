@@ -3,10 +3,10 @@
  */
 
 @interface SPDeviceConnection : NSObject <SPLocalApplicationProtocol> {
-    BOOL _connectionIsValid;
-    <SPDeviceConnectionDelegate> *_delegate;
-    NSHashTable *_observers;
-    NSXPCConnection *_serverConnection;
+    BOOL  _connectionIsValid;
+    <SPDeviceConnectionDelegate> * _delegate;
+    NSHashTable * _observers;
+    NSXPCConnection * _serverConnection;
 }
 
 @property BOOL connectionIsValid;
@@ -23,14 +23,21 @@
 
 - (void).cxx_destruct;
 - (void)_enumerateObserversSafely:(id /* block */)arg1;
+- (void)activeComplicationsWithCompletion:(id /* block */)arg1;
 - (void)addObserver:(id)arg1;
 - (void)cancelPendingInstallations;
 - (BOOL)connectionIsValid;
 - (void)createXPCConnection;
 - (id)delegate;
 - (void)fetchApplicationWithContainingApplicationBundleID:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchInfoForApplicationWithBundleID:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchInfoForApplicationWithContainingApplicationBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchInstalledApplicationsWithCompletion:(id /* block */)arg1;
+- (void)fetchInstalledComplicationsWithCompletion:(id /* block */)arg1;
 - (void)fetchInstalledGlancesWithCompletion:(id /* block */)arg1;
+- (void)fetchProvisioningProfilesForApplicationWithBundleID:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchProvisioningProfilesWithCompletion:(id /* block */)arg1;
+- (void)fetchWatchAppBundleIDForCompanionAppBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchWatchAppBundleURLWithinCompanionAppWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchWatchAppBundleURLWithinCompanionAppWithWatchAppIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAlwaysInstallWithCompletion:(id /* block */)arg1;
@@ -38,12 +45,14 @@
 - (id)init;
 - (void)installAllApplications;
 - (void)installApplication:(id)arg1 completion:(id /* block */)arg2;
+- (void)installApplication:(id)arg1 withProvisioningProfiles:(id)arg2 completion:(id /* block */)arg3;
 - (void)installProvisioningProfileWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)localeForUserNotification;
 - (id)observers;
 - (void)receiveData:(id)arg1;
 - (void)removeApplication:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeObserver:(id)arg1;
+- (void)removeProvisioningProfileWithID:(id)arg1 completion:(id /* block */)arg2;
 - (id)serverConnection;
 - (void)setAlwaysInstall:(id)arg1;
 - (void)setConnectionIsValid:(BOOL)arg1;
@@ -51,7 +60,9 @@
 - (void)setLogLevel:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setServerConnection:(id)arg1;
+- (void)showUserNotification:(int)arg1 applicationName:(id)arg2 extensionBundleID:(id)arg3;
 - (void)showUserNotification:(int)arg1 bundleID:(id)arg2;
+- (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 completion:(id /* block */)arg3;
 - (void)wakeExtensionForWatchApp:(id)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface FCRLandmark : NSObject {
-    unsigned int pointCount;
-    struct CGPoint { float x1; float x2; } *points;
-    NSString *type;
+    unsigned int  pointCount;
+    struct CGPoint { float x1; float x2; } * points;
+    NSString * type;
 }
 
 @property (readonly) unsigned int pointCount;

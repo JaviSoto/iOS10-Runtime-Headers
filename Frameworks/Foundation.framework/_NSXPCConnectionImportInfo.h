@@ -3,10 +3,10 @@
  */
 
 @interface _NSXPCConnectionImportInfo : NSObject {
-    unsigned long long _generationCount;
-    struct __CFSet { } *_knownProxies;
-    NSLock *_lock;
-    struct __CFDictionary { } *_proxyNumberToCount;
+    unsigned long long  _generationCount;
+    struct __CFSet { } * _knownProxies;
+    NSLock * _lock;
+    struct __CFDictionary { } * _proxyNumberToCount;
 }
 
 - (void)addProxy:(id)arg1;

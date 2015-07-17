@@ -3,15 +3,22 @@
  */
 
 @interface AVTimeFormatter : NSFormatter {
-    double _formatTemplate;
-    unsigned int _fullWidth;
-    int _style;
+    NSString * _cachedDateFormatterFormat;
+    NSString * _cachedDateFormatterTemplate;
+    double  _formatTemplate;
+    unsigned int  _fullWidth;
+    unsigned int  _isRightToLeft;
+    NSLocale * _locale;
+    NSNumberFormatter * _numberFormatterWithOneMinimumIntegerDigits;
+    NSNumberFormatter * _numberFormatterWithTwoMinimumIntegerDigits;
+    int  _style;
 }
 
 @property double formatTemplate;
 @property (getter=isFullWidth) BOOL fullWidth;
 @property int style;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (double)formatTemplate;

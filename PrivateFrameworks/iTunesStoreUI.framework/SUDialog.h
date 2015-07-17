@@ -3,9 +3,9 @@
  */
 
 @interface SUDialog : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_alertView;
-    id /* block */ _completionBlock;
-    ISDialog *_dialog;
+    UIAlertView * _alertView;
+    id /* block */  _completionBlock;
+    ISDialog * _dialog;
 }
 
 @property (readonly, copy) NSString *debugDescription;

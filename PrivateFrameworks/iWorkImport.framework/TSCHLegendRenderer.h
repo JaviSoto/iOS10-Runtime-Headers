@@ -6,7 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _textEditingPixelAlignmentOffset;
+    }  _textEditingPixelAlignmentOffset;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } textEditingPixelAlignmentOffset;

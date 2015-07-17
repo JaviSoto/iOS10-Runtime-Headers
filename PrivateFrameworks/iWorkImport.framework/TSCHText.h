@@ -3,10 +3,10 @@
  */
 
 @interface TSCHText : NSObject {
-    TSUCache *mDigitWidthFonts;
-    TSUCache *mNumberWidthCache;
-    TSUCache *mTSWPColumnCache;
-    TSUCache *mTSWPTextCache;
+    TSUCache * mDigitWidthFonts;
+    TSUCache * mNumberWidthCache;
+    TSUCache * mTSWPColumnCache;
+    TSUCache * mTSWPTextCache;
 }
 
 + (id)_singletonAlloc;

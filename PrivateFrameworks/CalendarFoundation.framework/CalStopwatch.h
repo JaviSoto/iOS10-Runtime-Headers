@@ -3,12 +3,15 @@
  */
 
 @interface CalStopwatch : NSObject {
-    unsigned long long _elapsedTime;
-    NSMutableDictionary *_events;
-    BOOL _hasValidElapsedTime;
-    BOOL _isRunning;
-    unsigned long long _lastStartTime;
+    unsigned long long  _elapsedTime;
+    NSMutableDictionary * _events;
+    BOOL  _hasValidElapsedTime;
+    BOOL  _isRunning;
+    unsigned long long  _lastStartTime;
+    BOOL  _usesSignalFlags;
 }
+
+@property BOOL usesSignalFlags;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -20,7 +23,9 @@
 - (double)markEventSplit:(id)arg1;
 - (void)markEventStart:(id)arg1;
 - (void)reset;
+- (void)setUsesSignalFlags:(BOOL)arg1;
 - (void)start;
 - (void)stop;
+- (BOOL)usesSignalFlags;
 
 @end

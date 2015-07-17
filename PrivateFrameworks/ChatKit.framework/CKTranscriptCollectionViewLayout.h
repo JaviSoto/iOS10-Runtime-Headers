@@ -3,24 +3,24 @@
  */
 
 @interface CKTranscriptCollectionViewLayout : UICollectionViewLayout {
-    float _anchorYPosition;
+    float  _anchorYPosition;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    CADisplayLink *_displayLink;
-    BOOL _easingUp;
-    BOOL _hasLoadMore;
-    BOOL _holdingBoundsInvalidation;
-    BOOL _isResting;
-    NSArray *_layoutAttributes;
-    double _prevTimestamp;
-    BOOL _shouldDisplayLinkInvalidateLayout;
+    }  _contentSize;
+    CADisplayLink * _displayLink;
+    BOOL  _easingUp;
+    BOOL  _hasLoadMore;
+    BOOL  _holdingBoundsInvalidation;
+    BOOL  _isResting;
+    NSArray * _layoutAttributes;
+    double  _prevTimestamp;
+    BOOL  _shouldDisplayLinkInvalidateLayout;
     struct CGPoint { 
         float x; 
         float y; 
-    } _targetContentOffset;
-    BOOL _useInitialLayoutAttributesForRotation;
+    }  _targetContentOffset;
+    BOOL  _useInitialLayoutAttributesForRotation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -30,7 +30,7 @@
             float width; 
             float height; 
         } size; 
-    } _visibleBounds;
+    }  _visibleBounds;
 }
 
 @property (nonatomic) float anchorYPosition;
@@ -73,6 +73,7 @@
 - (void)prepareLayout;
 - (void)prepareLayoutForRotisserieScrolling;
 - (double)prevTimestamp;
+- (void)reduceMotionSettingChanged;
 - (void)reloadData;
 - (void)setAnchorYPosition:(float)arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;

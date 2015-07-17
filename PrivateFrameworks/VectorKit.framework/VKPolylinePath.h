@@ -3,21 +3,21 @@
  */
 
 @interface VKPolylinePath : NSObject {
-    VKPolylineOverlay *_overlay;
-    BOOL _ownsPoints;
-    unsigned int _pointCount;
-    struct Matrix<float, 2, 1> { float x1[2]; } *_points;
+    VKPolylineOverlay * _overlay;
+    BOOL  _ownsPoints;
+    unsigned int  _pointCount;
+    struct Matrix<float, 2, 1> { float x1[2]; } * _points;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeEnd;
+    }  _routeEnd;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeStart;
-    GEOComposedRouteSection *_section;
-    GEOSnappedRoutePath *_snappedPath;
-    BOOL _trafficSpeed;
+    }  _routeStart;
+    GEOComposedRouteSection * _section;
+    GEOSnappedRoutePath * _snappedPath;
+    BOOL  _trafficSpeed;
 }
 
 @property (readonly) BOOL hasCompletedMapMatching;

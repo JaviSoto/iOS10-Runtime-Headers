@@ -3,8 +3,8 @@
  */
 
 @interface PTPCameraDeviceManager : DeviceManager <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    NSNetServiceBrowser *_netServiceBrowser;
-    NSMutableArray *_netServices;
+    NSNetServiceBrowser * _netServiceBrowser;
+    NSMutableArray * _netServices;
 }
 
 @property (readonly, copy) NSString *debugDescription;

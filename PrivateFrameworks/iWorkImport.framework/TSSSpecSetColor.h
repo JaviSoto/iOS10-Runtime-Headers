@@ -3,8 +3,8 @@
  */
 
 @interface TSSSpecSetColor : TSSSpecColor {
-    TSUColor *_color;
-    BOOL _unset;
+    TSUColor * _color;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface OADTableCellBorderStyle : NSObject {
-    OADStroke *mBottomLeftToTopRightStroke;
-    OADStroke *mBottomStroke;
-    OADStroke *mHorzInsideStroke;
-    OADStroke *mLeftStroke;
-    OADStroke *mRightStroke;
-    OADStroke *mTopLeftToBottomRightStroke;
-    OADStroke *mTopStroke;
-    OADStroke *mVertInsideStroke;
+    OADStroke * mBottomLeftToTopRightStroke;
+    OADStroke * mBottomStroke;
+    OADStroke * mHorzInsideStroke;
+    OADStroke * mLeftStroke;
+    OADStroke * mRightStroke;
+    OADStroke * mTopLeftToBottomRightStroke;
+    OADStroke * mTopStroke;
+    OADStroke * mVertInsideStroke;
 }
 
 + (id)defaultAxisParallelStroke;
@@ -21,6 +21,7 @@
 - (id)bottomLeftToTopRightStroke;
 - (id)bottomStroke;
 - (void)dealloc;
+- (id)description;
 - (id)horzInsideStroke;
 - (id)leftStroke;
 - (id)rightStroke;
@@ -29,6 +30,7 @@
 - (void)setHorzInsideStroke:(id)arg1;
 - (void)setLeftStroke:(id)arg1;
 - (void)setRightStroke:(id)arg1;
+- (void)setStrokeOfType:(int)arg1 toValue:(id)arg2;
 - (void)setTopLeftToBottomRightStroke:(id)arg1;
 - (void)setTopStroke:(id)arg1;
 - (void)setVertInsideStroke:(id)arg1;

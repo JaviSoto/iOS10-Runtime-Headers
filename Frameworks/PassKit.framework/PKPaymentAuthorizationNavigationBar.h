@@ -3,15 +3,15 @@
  */
 
 @interface PKPaymentAuthorizationNavigationBar : UINavigationBar {
-    PKPaymentAuthorizationNavigationBarBackgroundView *_bgView;
-    UIButton *_customButton;
-    SEL _customButtonAction;
-    id _customButtonTarget;
-    PKPaymentAuthorizationLayout *_layout;
-    UIImageView *_logoView;
-    NSLayoutConstraint *_separatorLeftConstraint;
-    UIView *_separatorView;
-    int _style;
+    PKPaymentAuthorizationNavigationBarBackgroundView * _bgView;
+    UIButton * _customButton;
+    SEL  _customButtonAction;
+    id  _customButtonTarget;
+    PKPaymentAuthorizationLayout * _layout;
+    UIImageView * _logoView;
+    NSLayoutConstraint * _separatorLeftConstraint;
+    UIView * _separatorView;
+    int  _style;
 }
 
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;

@@ -3,10 +3,10 @@
  */
 
 @interface SLFacebookUpload : NSObject <NSSecureCoding> {
-    unsigned long long _totalBytes;
-    unsigned long long _transferredBytes;
-    NSString *_uploadID;
-    int _uploadType;
+    unsigned long long  _totalBytes;
+    unsigned long long  _transferredBytes;
+    NSString * _uploadID;
+    int  _uploadType;
 }
 
 @property (nonatomic) unsigned long long totalBytes;

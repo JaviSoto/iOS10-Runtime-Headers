@@ -3,8 +3,8 @@
  */
 
 @interface SKUISizeValue : NSObject <NSCopying> {
-    int _height;
-    int _width;
+    int  _height;
+    int  _width;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;

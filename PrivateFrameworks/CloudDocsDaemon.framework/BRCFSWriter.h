@@ -3,10 +3,10 @@
  */
 
 @interface BRCFSWriter : NSObject <BRCFileCoordinationWriting, BRCModule> {
-    BOOL _isCancelled;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    BRCAccountSession *_session;
-    int _suspendCount;
+    BOOL  _isCancelled;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    BRCAccountSession * _session;
+    int  _suspendCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

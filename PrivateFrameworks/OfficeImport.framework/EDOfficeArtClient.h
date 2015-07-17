@@ -3,7 +3,7 @@
  */
 
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
-    EDAnchor *mAnchor;
+    EDAnchor * mAnchor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,13 +13,13 @@
             float width; 
             float height; 
         } size; 
-    } mBounds;
-    id mClientState;
-    EDComment *mComment;
-    bool mIsBoundsSet;
-    EDSheet *mSheet;
-    NSMutableDictionary *mTableModels;
-    EDTextBox *mTextBox;
+    }  mBounds;
+    id  mClientState;
+    EDComment * mComment;
+    bool  mIsBoundsSet;
+    EDSheet * mSheet;
+    NSMutableDictionary * mTableModels;
+    EDTextBox * mTextBox;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,13 +27,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (id)anchor;
 - (bool)areBoundsSet;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)clientState;
 - (id)comment;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasBounds;
 - (BOOL)hasText;
 - (void)setAnchor:(id)arg1;

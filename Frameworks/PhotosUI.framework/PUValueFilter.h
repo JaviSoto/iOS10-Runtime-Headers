@@ -3,7 +3,7 @@
  */
 
 @interface PUValueFilter : NSObject {
-    double _currentValue;
+    double  _currentValue;
 }
 
 @property (nonatomic) double currentValue;

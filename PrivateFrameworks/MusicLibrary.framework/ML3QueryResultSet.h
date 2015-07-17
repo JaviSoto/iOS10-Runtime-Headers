@@ -3,14 +3,14 @@
  */
 
 @interface ML3QueryResultSet : NSObject <NSCopying> {
-    ML3QueryResultSet_BackingStore *_backingStore;
-    NSObject<OS_dispatch_queue> *_fixedPriorityQueue;
-    long long _localRevision;
-    ML3Query *_query;
-    NSObject<OS_dispatch_queue> *_queue;
-    long long _revision;
-    BOOL _supportsIncrementalUpdate;
-    NSMutableArray *_updateToLibraryCurrentRevisionCompletionBlocks;
+    ML3QueryResultSet_BackingStore * _backingStore;
+    NSObject<OS_dispatch_queue> * _fixedPriorityQueue;
+    long long  _localRevision;
+    ML3Query * _query;
+    NSObject<OS_dispatch_queue> * _queue;
+    long long  _revision;
+    BOOL  _supportsIncrementalUpdate;
+    NSMutableArray * _updateToLibraryCurrentRevisionCompletionBlocks;
 }
 
 @property (nonatomic, readonly) unsigned int count;

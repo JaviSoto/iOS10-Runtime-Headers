@@ -3,12 +3,12 @@
  */
 
 @interface PUPhotoEditEffectCell : UICollectionViewCell {
-    UIView *__highlightView;
-    UIImageView *__imageView;
-    UILabel *__nameLabel;
-    UIImageView *__selectionView;
-    UIImage *_image;
-    NSString *_name;
+    UIView * __highlightView;
+    UIImageView * __imageView;
+    UILabel * __nameLabel;
+    UIImageView * __selectionView;
+    UIImage * _image;
+    NSString * _name;
 }
 
 @property (setter=_setHighlightView:, nonatomic, retain) UIView *_highlightView;

@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentSetupCardDetailsFooterView : UIView {
-    int _context;
-    UIButton *_manualEntryButton;
-    UIButton *_setupLaterButton;
+    int  _context;
+    UIButton * _manualEntryButton;
+    UIButton * _setupLaterButton;
 }
 
 @property (nonatomic) int context;

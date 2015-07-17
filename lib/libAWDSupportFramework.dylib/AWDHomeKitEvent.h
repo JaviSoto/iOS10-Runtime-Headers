@@ -3,13 +3,13 @@
  */
 
 @interface AWDHomeKitEvent : PBCodable <NSCopying> {
-    unsigned int _eventType;
-    NSString *_guid;
+    unsigned int  _eventType;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int eventType : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int eventType;

@@ -3,9 +3,9 @@
  */
 
 @interface ESDObject : NSObject {
-    struct EshObject { int (**x1)(); unsigned short x2; } *mEshObject;
-    bool mIsChart;
-    ESDContainer *mParent;
+    struct EshObject { int (**x1)(); unsigned short x2; } * mEshObject;
+    bool  mIsChart;
+    ESDContainer * mParent;
 }
 
 - (void)dealloc;

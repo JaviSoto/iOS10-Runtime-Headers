@@ -3,9 +3,9 @@
  */
 
 @interface PLPlaceholderThumbnailManager : NSObject {
-    NSObject<OS_dispatch_queue> *_isolation;
-    NSCache *_placeholderDataCache;
-    NSCache *_placeholderImageCache;
+    NSObject<OS_dispatch_queue> * _isolation;
+    NSCache * _placeholderDataCache;
+    NSCache * _placeholderImageCache;
 }
 
 + (id)sharedManager;

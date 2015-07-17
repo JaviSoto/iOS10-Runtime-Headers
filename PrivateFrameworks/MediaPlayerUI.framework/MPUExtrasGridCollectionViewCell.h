@@ -3,17 +3,17 @@
  */
 
 @interface MPUExtrasGridCollectionViewCell : UICollectionViewCell {
-    MPUExtrasConstrainedArtworkContainerView *_artworkContainer;
-    NSLayoutConstraint *_artworkContainerHeightConstraint;
-    NSLayoutConstraint *_artworkContainerWidthConstraint;
-    IKLockupElement *_lockupElement;
-    NSLayoutConstraint *_spacerHeight;
-    NSLayoutConstraint *_spacerTop;
-    UIView *_spacerView;
-    UILabel *_subtitleLabel;
-    MPUContentSizeLayoutConstraint *_subtitleLineHeight;
-    UILabel *_titleLabel;
-    MPUContentSizeLayoutConstraint *_topLineHeight;
+    MPUExtrasConstrainedArtworkContainerView * _artworkContainer;
+    NSLayoutConstraint * _artworkContainerHeightConstraint;
+    NSLayoutConstraint * _artworkContainerWidthConstraint;
+    IKLockupElement * _lockupElement;
+    NSLayoutConstraint * _spacerHeight;
+    NSLayoutConstraint * _spacerTop;
+    UIView * _spacerView;
+    UILabel * _subtitleLabel;
+    MPUContentSizeLayoutConstraint * _subtitleLineHeight;
+    UILabel * _titleLabel;
+    MPUContentSizeLayoutConstraint * _topLineHeight;
 }
 
 @property (nonatomic, readonly) MPUExtrasConstrainedArtworkContainerView *artworkContainer;

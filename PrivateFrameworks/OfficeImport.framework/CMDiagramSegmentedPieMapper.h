@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramSegmentedPieMapper : CMDiagramShapeMapper {
-    BOOL mDrawArrows;
+    BOOL  mDrawArrows;
 }
 
 - (id)_suggestedBoundsForNodeAtIndex:(unsigned int)arg1;

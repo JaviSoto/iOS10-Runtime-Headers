@@ -3,11 +3,11 @@
  */
 
 @interface SSDownloadStatus : NSObject <NSCopying, SSXPCCoding> {
-    SSDownloadPhase *_activePhase;
-    BOOL _contentRestricted;
-    NSError *_error;
-    BOOL _failed;
-    BOOL _paused;
+    SSDownloadPhase * _activePhase;
+    BOOL  _contentRestricted;
+    NSError * _error;
+    BOOL  _failed;
+    BOOL  _paused;
 }
 
 @property (nonatomic, readonly) SSDownloadPhase *activePhase;

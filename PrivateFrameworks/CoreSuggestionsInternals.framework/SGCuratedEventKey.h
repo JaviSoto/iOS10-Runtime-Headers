@@ -3,7 +3,7 @@
  */
 
 @interface SGCuratedEventKey : NSObject <SGEntityKey> {
-    NSString *_externalId;
+    NSString * _externalId;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,6 @@
 + (BOOL)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)description;
 - (id)externalId;
 - (unsigned int)hash;
 - (id)initWithExternalId:(id)arg1;

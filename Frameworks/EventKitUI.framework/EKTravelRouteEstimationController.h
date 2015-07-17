@@ -3,17 +3,17 @@
  */
 
 @interface EKTravelRouteEstimationController : NSObject {
-    NSDate *_arrivalDate;
-    <EKTravelRouteEstimationControllerDelegate> *_delegate;
-    EKStructuredLocation *_destinationStructuredLocation;
-    EKStructuredLocation *_evaluatedOriginLocation;
-    EKEventStore *_eventStore;
-    BOOL _isEstimating;
-    EKStructuredLocation *_originStructuredLocation;
-    NSMutableArray *_rows;
-    <EKStyleProvider> *_styleProvider;
-    NSDictionary *_travelTimeEstimatedValues;
-    NSDictionary *_travelTimeLookupErrors;
+    NSDate * _arrivalDate;
+    <EKTravelRouteEstimationControllerDelegate> * _delegate;
+    EKStructuredLocation * _destinationStructuredLocation;
+    EKStructuredLocation * _evaluatedOriginLocation;
+    EKEventStore * _eventStore;
+    BOOL  _isEstimating;
+    EKStructuredLocation * _originStructuredLocation;
+    NSMutableArray * _rows;
+    <EKStyleProvider> * _styleProvider;
+    NSDictionary * _travelTimeEstimatedValues;
+    NSDictionary * _travelTimeLookupErrors;
 }
 
 @property (retain) NSDate *arrivalDate;

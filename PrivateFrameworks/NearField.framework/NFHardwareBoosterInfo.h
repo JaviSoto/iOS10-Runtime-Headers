@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFHardwareBoosterInfo : NSObject {
-    NSData *_dynamicConfig;
-    unsigned int _siliconVersion;
-    NSData *_staticConfig;
+@interface NFHardwareBoosterInfo : NSObject <NSSecureCoding> {
+    NSData * _dynamicConfig;
+    unsigned int  _siliconVersion;
+    NSData * _staticConfig;
 }
 
 @property (nonatomic, readonly) NSData *dynamicConfig;
 @property (nonatomic, readonly) unsigned int siliconVersion;
 @property (nonatomic, readonly) NSData *staticConfig;
 
++ (BOOL)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)dynamicConfig;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (unsigned int)siliconVersion;
 - (id)staticConfig;

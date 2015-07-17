@@ -3,8 +3,8 @@
  */
 
 @interface GKConstraintLeadingInfo : NSObject {
-    NSString *_fontTextStyle;
-    float _leading;
+    NSString * _fontTextStyle;
+    float  _leading;
 }
 
 @property (nonatomic, retain) NSString *fontTextStyle;

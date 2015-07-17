@@ -3,18 +3,18 @@
  */
 
 @interface PURegularAdjustmentsModeBar : PUAdjustmentsModeBar <UICollectionViewDataSource> {
-    NSArray *__availableSupermodes;
-    NSArray *__visibleSliderModes;
-    UIButton *_expansionButton;
-    NSArray *_expansionButtonConstraints;
-    PUSlidersCollectionView *_modeDetailSlidersCollectionView;
-    NSArray *_modeDetailSlidersCollectionViewConstraints;
-    UIView *_modeDetailView;
-    NSArray *_modeDetailViewConstraints;
-    NSMapTable *_supermodeButtonsByMode;
-    NSArray *_supermodeButtonsConstraints;
-    NSMapTable *_supermodeLabelsByMode;
-    NSMapTable *_supermodeTitleBackgroundByMode;
+    NSArray * __availableSupermodes;
+    NSArray * __visibleSliderModes;
+    UIButton * _expansionButton;
+    NSArray * _expansionButtonConstraints;
+    PUSlidersCollectionView * _modeDetailSlidersCollectionView;
+    NSArray * _modeDetailSlidersCollectionViewConstraints;
+    UIView * _modeDetailView;
+    NSArray * _modeDetailViewConstraints;
+    NSMapTable * _supermodeButtonsByMode;
+    NSArray * _supermodeButtonsConstraints;
+    NSMapTable * _supermodeLabelsByMode;
+    NSMapTable * _supermodeTitleBackgroundByMode;
 }
 
 @property (nonatomic, readonly) PUAdjustmentsMode *_expandedSupermode;

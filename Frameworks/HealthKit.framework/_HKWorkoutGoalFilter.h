@@ -3,9 +3,9 @@
  */
 
 @interface _HKWorkoutGoalFilter : _HKFilter {
-    HKQuantity *_comparisonQuantity;
-    unsigned int _goalType;
-    unsigned int _operatorType;
+    HKQuantity * _comparisonQuantity;
+    unsigned int  _goalType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) HKQuantity *comparisonQuantity;

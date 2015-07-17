@@ -3,19 +3,19 @@
  */
 
 @interface TSDGLDataArrayBuffer : NSObject <TSDGLDataBufferAccessor> {
-    unsigned int _GLDataBufferEntrySize;
-    unsigned int _bufferCount;
-    unsigned int _bufferUsage;
-    unsigned int _currentBufferIndex;
-    unsigned long _dataTypeSizeInBytes;
-    NSMutableArray *_vertexAttributes;
-    NSMutableDictionary *mAttributeOffsetsDictionary;
-    char *mGLData;
-    BOOL mGLDataBufferHasBeenSetup;
-    unsigned int *mGLDataBuffers;
-    int *mNeedsUpdateFirstIndex;
-    int *mNeedsUpdateLastIndex;
-    unsigned int mVertexCount;
+    unsigned int  _GLDataBufferEntrySize;
+    unsigned int  _bufferCount;
+    unsigned int  _bufferUsage;
+    unsigned int  _currentBufferIndex;
+    unsigned long  _dataTypeSizeInBytes;
+    NSMutableArray * _vertexAttributes;
+    NSMutableDictionary * mAttributeOffsetsDictionary;
+    char * mGLData;
+    BOOL  mGLDataBufferHasBeenSetup;
+    unsigned int * mGLDataBuffers;
+    int * mNeedsUpdateFirstIndex;
+    int * mNeedsUpdateLastIndex;
+    unsigned int  mVertexCount;
 }
 
 @property (nonatomic, readonly) unsigned int GLDataBufferEntrySize;

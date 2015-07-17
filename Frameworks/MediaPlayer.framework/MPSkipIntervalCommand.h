@@ -3,7 +3,7 @@
  */
 
 @interface MPSkipIntervalCommand : MPRemoteCommand {
-    NSArray *_preferredIntervals;
+    NSArray * _preferredIntervals;
 }
 
 @property (nonatomic, copy) NSArray *preferredIntervals;

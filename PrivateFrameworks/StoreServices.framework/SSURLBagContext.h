@@ -3,14 +3,14 @@
  */
 
 @interface SSURLBagContext : NSObject <NSCopying, SSXPCCoding> {
-    int _allowedRetryCount;
-    BOOL _allowsBootstrapCellularData;
-    BOOL _allowsExpiredBags;
-    int _bagType;
-    NSMutableDictionary *_httpHeaders;
-    BOOL _ignoresCaches;
-    NSNumber *_userIdentifier;
-    BOOL _usesCachedBagsOnly;
+    int  _allowedRetryCount;
+    BOOL  _allowsBootstrapCellularData;
+    BOOL  _allowsExpiredBags;
+    int  _bagType;
+    NSMutableDictionary * _httpHeaders;
+    BOOL  _ignoresCaches;
+    NSNumber * _userIdentifier;
+    BOOL  _usesCachedBagsOnly;
 }
 
 @property (nonatomic, copy) NSDictionary *allHTTPHeaders;

@@ -3,17 +3,17 @@
  */
 
 @interface SKUIPillsControl : UIControl {
-    SKUIColorScheme *_colorScheme;
+    SKUIColorScheme * _colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    int _maximumNumberOfVisiblePills;
-    NSString *_moreListTitle;
-    SKUISegmentedControl *_segmentedControl;
-    NSArray *_titles;
+    }  _contentInset;
+    int  _maximumNumberOfVisiblePills;
+    NSString * _moreListTitle;
+    SKUISegmentedControl * _segmentedControl;
+    NSArray * _titles;
 }
 
 @property (nonatomic, copy) SKUIColorScheme *colorScheme;

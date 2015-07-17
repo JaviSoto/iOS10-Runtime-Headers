@@ -3,10 +3,10 @@
  */
 
 @interface SLSheetMasklayer : CALayer {
-    UIColor *_backgroundColor;
-    CALayer *_bottomLayer;
-    UIColor *_clipBackgroundColor;
-    float _clipCornerRadius;
+    UIColor * _backgroundColor;
+    CALayer * _bottomLayer;
+    UIColor * _clipBackgroundColor;
+    float  _clipCornerRadius;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,7 +16,7 @@
             float width; 
             float height; 
         } size; 
-    } _lastBounds;
+    }  _lastBounds;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,12 +26,12 @@
             float width; 
             float height; 
         } size; 
-    } _lastMaskRect;
-    CALayer *_leftLayer;
-    CALayer *_rightLayer;
-    _SLSheetMaskLayer *_sheetMaskLayer;
-    CALayer *_solidSheetMaskLayer;
-    CALayer *_topLayer;
+    }  _lastMaskRect;
+    CALayer * _leftLayer;
+    CALayer * _rightLayer;
+    _SLSheetMaskLayer * _sheetMaskLayer;
+    CALayer * _solidSheetMaskLayer;
+    CALayer * _topLayer;
 }
 
 @property (nonatomic, retain) UIColor *clipBackgroundColor;

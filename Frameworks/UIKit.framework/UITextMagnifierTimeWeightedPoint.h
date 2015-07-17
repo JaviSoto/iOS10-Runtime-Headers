@@ -3,14 +3,14 @@
  */
 
 @interface UITextMagnifierTimeWeightedPoint : NSObject {
-    int m_index;
+    int  m_index;
     struct { 
         struct CGPoint { 
             float x; 
             float y; 
         } point; 
         double time; 
-    } m_points;
+    }  m_points;
 }
 
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } weightedPoint;

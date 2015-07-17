@@ -3,11 +3,12 @@
  */
 
 @interface PSControlTableCell : PSTableCell {
-    UIControl *_control;
+    UIControl * _control;
 }
 
 @property (nonatomic, retain) UIControl *control;
 
+- (void).cxx_destruct;
 - (BOOL)canReload;
 - (id)control;
 - (void)controlChanged:(id)arg1;

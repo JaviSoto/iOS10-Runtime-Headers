@@ -3,9 +3,9 @@
  */
 
 @interface SLSheetBevelledImageView : SLSheetImagePreviewView {
-    BOOL _needsURLPlaceholderImage;
-    UIImageView *_placeholderGlyphView;
-    UIView *_placeholderPreviewView;
+    BOOL  _needsURLPlaceholderImage;
+    UIImageView * _placeholderGlyphView;
+    UIView * _placeholderPreviewView;
 }
 
 @property (nonatomic) BOOL needsURLPlaceholderImage;

@@ -3,11 +3,11 @@
  */
 
 @interface MPUFontDescriptor : NSObject <NSCopying, NSMutableCopying> {
-    int _leadingAdjustment;
-    int _textStyle;
-    BOOL _usesItalic;
-    BOOL _wantsMonospaceNumbers;
-    int _weight;
+    int  _leadingAdjustment;
+    int  _textStyle;
+    BOOL  _usesItalic;
+    BOOL  _wantsMonospaceNumbers;
+    int  _weight;
 }
 
 @property (nonatomic, readonly) int leadingAdjustment;

@@ -3,28 +3,28 @@
  */
 
 @interface MPQueuePlayer : NSObject <MPAVRoutingControllerDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    AVPlayerItem *_currentItem;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    AVPlayerItem * _currentItem;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _currentTime;
-    int _defaultItemEQPresetType;
-    BOOL _isExternalPlaybackActive;
-    MPAVRoute *_lastPickedRoute;
-    BOOL _outputObscuredDueToInsufficientExternalProtection;
-    BOOL _pausedForPlaybackQueueTransaction;
-    id /* block */ _playbackQueueCommitHandler;
-    int _playbackQueueTransactionCount;
-    AVQueuePlayer *_player;
-    NSMutableArray *_queuedOperations;
-    float _rate;
-    float _rateBeforePlaybackQueueTransaction;
-    BOOL _routeDidChangeDuringPlaybackQueueTransaction;
-    MPAVRoutingController *_routingController;
-    int _status;
+    }  _currentTime;
+    int  _defaultItemEQPresetType;
+    BOOL  _isExternalPlaybackActive;
+    MPAVRoute * _lastPickedRoute;
+    BOOL  _outputObscuredDueToInsufficientExternalProtection;
+    BOOL  _pausedForPlaybackQueueTransaction;
+    id /* block */  _playbackQueueCommitHandler;
+    int  _playbackQueueTransactionCount;
+    AVQueuePlayer * _player;
+    NSMutableArray * _queuedOperations;
+    float  _rate;
+    float  _rateBeforePlaybackQueueTransaction;
+    BOOL  _routeDidChangeDuringPlaybackQueueTransaction;
+    MPAVRoutingController * _routingController;
+    int  _status;
 }
 
 @property (nonatomic, readonly) int _externalProtectionStatus;

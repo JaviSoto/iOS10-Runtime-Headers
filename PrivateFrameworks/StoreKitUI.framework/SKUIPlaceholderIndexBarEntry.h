@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _placeholderSize;
+    }  _placeholderSize;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } placeholderSize;

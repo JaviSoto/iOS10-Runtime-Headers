@@ -3,11 +3,15 @@
  */
 
 @interface CKEntity : NSObject {
-    IMHandle *_handle;
+    CNContact * _cnContact;
+    IMHandle * _handle;
+    UIImage * _transcriptContactImage;
+    UIImage * _transcriptDrawerContactImage;
 }
 
 @property (nonatomic, readonly, copy) NSString *IDSCanonicalAddress;
 @property (nonatomic, readonly) void*abRecord;
+@property (nonatomic, retain) CNContact *cnContact;
 @property (nonatomic, readonly, retain) IMHandle *defaultIMHandle;
 @property (nonatomic, readonly, copy) NSString *fullName;
 @property (nonatomic, retain) IMHandle *handle;
@@ -28,6 +32,7 @@
 
 - (id)IDSCanonicalAddress;
 - (void*)abRecord;
+- (id)cnContact;
 - (void)dealloc;
 - (id)defaultIMHandle;
 - (id)description;
@@ -44,6 +49,7 @@
 - (id)personViewControllerWithDelegate:(id)arg1;
 - (int)propertyType;
 - (id)rawAddress;
+- (void)setCnContact:(id)arg1;
 - (void)setHandle:(id)arg1;
 - (id)textToneIdentifier;
 - (id)textVibrationIdentifier;

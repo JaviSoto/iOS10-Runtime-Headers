@@ -3,12 +3,12 @@
  */
 
 @interface ABPersonTableFooterView : UIView <ABPersonTableActionDelegate> {
-    UIView *_accessoryView;
-    UIButton *_attributionButton;
-    ABPersonTableAction *_deleteAction;
-    UIView *_deleteView;
-    BOOL _editing;
-    <ABStyleProvider> *_styleProvider;
+    UIView * _accessoryView;
+    UIButton * _attributionButton;
+    ABPersonTableAction * _deleteAction;
+    UIView * _deleteView;
+    BOOL  _editing;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;

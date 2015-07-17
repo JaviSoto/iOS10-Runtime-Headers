@@ -3,17 +3,17 @@
  */
 
 @interface GKContiguousContainerView : UIView {
-    BOOL _applyOrthogonalConstraints;
-    UIView *_baselineView;
+    BOOL  _applyOrthogonalConstraints;
+    UIView * _baselineView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _insets;
-    float _overlap;
-    NSArray *_replaceableConstraints;
-    BOOL _vertical;
+    }  _insets;
+    float  _overlap;
+    NSArray * _replaceableConstraints;
+    BOOL  _vertical;
 }
 
 @property (nonatomic) BOOL applyOrthogonalConstraints;

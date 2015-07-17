@@ -3,16 +3,16 @@
  */
 
 @interface _UILegibilitySettings : NSObject {
-    UIColor *_contentColor;
-    float _imageOutset;
-    float _minFillHeight;
-    UIColor *_primaryColor;
-    UIColor *_secondaryColor;
-    float _shadowAlpha;
-    UIColor *_shadowColor;
-    NSString *_shadowCompositingFilterName;
-    float _shadowRadius;
-    int _style;
+    UIColor * _contentColor;
+    float  _imageOutset;
+    float  _minFillHeight;
+    UIColor * _primaryColor;
+    UIColor * _secondaryColor;
+    float  _shadowAlpha;
+    UIColor * _shadowColor;
+    NSString * _shadowCompositingFilterName;
+    float  _shadowRadius;
+    int  _style;
 }
 
 @property (nonatomic, retain) UIColor *contentColor;

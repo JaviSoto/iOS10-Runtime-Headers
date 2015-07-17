@@ -3,13 +3,13 @@
  */
 
 @interface NPKProtoBitmap : PBCodable <NSCopying> {
-    NSData *_bitmapData;
-    unsigned int _bitmapInfo;
-    unsigned long long _bitsPerComponent;
-    unsigned long long _bitsPerPixel;
-    unsigned long long _bytesPerRow;
-    unsigned long long _height;
-    unsigned long long _width;
+    NSData * _bitmapData;
+    unsigned int  _bitmapInfo;
+    unsigned long long  _bitsPerComponent;
+    unsigned long long  _bitsPerPixel;
+    unsigned long long  _bytesPerRow;
+    unsigned long long  _height;
+    unsigned long long  _width;
 }
 
 @property (nonatomic, retain) NSData *bitmapData;

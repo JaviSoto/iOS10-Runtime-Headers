@@ -3,15 +3,15 @@
  */
 
 @interface SUOverlayConfiguration : NSObject {
-    NSRegularExpression *_bagKeyPattern;
-    int _cornerRadius;
-    BOOL _shouldShowNavigationBar;
+    NSRegularExpression * _bagKeyPattern;
+    int  _cornerRadius;
+    BOOL  _shouldShowNavigationBar;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSString *_transitionName;
-    NSRegularExpression *_urlPattern;
+    }  _size;
+    NSString * _transitionName;
+    NSRegularExpression * _urlPattern;
 }
 
 @property (nonatomic, readonly) int cornerRadius;

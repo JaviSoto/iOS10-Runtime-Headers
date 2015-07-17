@@ -3,17 +3,17 @@
  */
 
 @interface _UIGlintyStringView : UIView {
-    BOOL _adjustsFontSizeToFitWidth;
-    BOOL _allowsLuminanceAdjustments;
-    BOOL _animating;
-    BOOL _animationRepeats;
-    UIColor *_backgroundColor;
-    UIView *_backgroundView;
-    float _blurAlpha;
-    NSMutableSet *_blurHiddenRequesters;
-    UIView *_blurView;
-    UIImage *_chevron;
-    UIColor *_chevronBackgroundColor;
+    BOOL  _adjustsFontSizeToFitWidth;
+    BOOL  _allowsLuminanceAdjustments;
+    BOOL  _animating;
+    BOOL  _animationRepeats;
+    UIColor * _backgroundColor;
+    UIView * _backgroundView;
+    float  _blurAlpha;
+    NSMutableSet * _blurHiddenRequesters;
+    UIView * _blurView;
+    UIImage * _chevron;
+    UIColor * _chevronBackgroundColor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,32 +23,32 @@
             float width; 
             float height; 
         } size; 
-    } _chevronFrame;
-    int _chevronStyle;
-    <_UIGlintyStringViewDelegate> *_delegate;
-    UIView *_effectView;
-    BOOL _fading;
-    UIFont *_font;
-    BOOL _hasCustomBackgroundColor;
-    BOOL _highlight;
-    UIView *_highlightView;
-    float _horizontalPadding;
-    UILabel *_label;
+    }  _chevronFrame;
+    int  _chevronStyle;
+    <_UIGlintyStringViewDelegate> * _delegate;
+    UIView * _effectView;
+    BOOL  _fading;
+    UIFont * _font;
+    BOOL  _hasCustomBackgroundColor;
+    BOOL  _highlight;
+    UIView * _highlightView;
+    float  _horizontalPadding;
+    UILabel * _label;
     struct CGSize { 
         float width; 
         float height; 
-    } _labelSize;
-    _UILegibilitySettings *_legibilitySettings;
-    BOOL _needsTextUpdate;
-    UIView *_reflectionImageView;
-    UIView *_shimmerImageView;
-    BOOL _showing;
-    UIView *_spotlightView;
-    NSString *_text;
-    int _textIndex;
-    NSString *_textLanguage;
-    BOOL _usesBackgroundDimming;
-    _UIVibrantSettings *_vibrantSettings;
+    }  _labelSize;
+    _UILegibilitySettings * _legibilitySettings;
+    BOOL  _needsTextUpdate;
+    UIView * _reflectionImageView;
+    UIView * _shimmerImageView;
+    BOOL  _showing;
+    UIView * _spotlightView;
+    NSString * _text;
+    int  _textIndex;
+    NSString * _textLanguage;
+    BOOL  _usesBackgroundDimming;
+    _UIVibrantSettings * _vibrantSettings;
 }
 
 @property (nonatomic) BOOL adjustsFontSizeToFitWidth;
@@ -87,6 +87,7 @@
 @property (nonatomic) BOOL usesBackgroundDimming;
 @property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
+- (void).cxx_destruct;
 - (float)_chevronHeightWithMaxOffset;
 - (id)_chevronImageForStyle:(int)arg1;
 - (float)_chevronPadding;

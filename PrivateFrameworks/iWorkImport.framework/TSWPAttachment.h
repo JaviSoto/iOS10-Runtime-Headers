@@ -3,7 +3,7 @@
  */
 
 @interface TSWPAttachment : TSPObject <TSDOwningAttachment, TSKDocumentObject, TSPCopying> {
-    TSWPStorage *_parentStorage;
+    TSWPStorage * _parentStorage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramChevronMapper : CMDiagramShapeMapper {
-    BOOL mHChevron;
+    BOOL  mHChevron;
 }
 
 - (id)_suggestedBoundsForNodeAtIndex:(unsigned int)arg1;

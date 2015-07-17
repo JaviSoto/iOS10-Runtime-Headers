@@ -3,19 +3,20 @@
  */
 
 @interface LSInstallProgressDelegate : NSObject <LSInstallProgressProtocol, NSXPCListenerDelegate> {
-    NSMutableSet *_inactiveInstalls;
-    NSObject<OS_dispatch_queue> *_installControlsQueue;
-    NSMutableDictionary *_installIndexes;
-    NSMutableDictionary *_observers;
-    NSObject<OS_dispatch_queue> *_observersQueue;
-    NSMutableOrderedSet *_orderedInstalls;
-    LSInstallProgressList *_progresses;
-    BOOL _usingNetwork;
-    LSObserverTimer *didUninstallTimer;
-    LSObserverTimer *iconsUpdatedTimer;
-    LSObserverTimer *installsFinishedTimer;
-    LSObserverTimer *installsStartedTimer;
-    LSObserverTimer *installsUpdatedTimer;
+    NSObject<OS_dispatch_queue> * _databaseQueue;
+    NSMutableSet * _inactiveInstalls;
+    NSObject<OS_dispatch_queue> * _installControlsQueue;
+    NSMutableDictionary * _installIndexes;
+    NSMutableDictionary * _observers;
+    NSObject<OS_dispatch_queue> * _observersQueue;
+    NSMutableOrderedSet * _orderedInstalls;
+    LSInstallProgressList * _progresses;
+    BOOL  _usingNetwork;
+    LSObserverTimer * didUninstallTimer;
+    LSObserverTimer * iconsUpdatedTimer;
+    LSObserverTimer * installsFinishedTimer;
+    LSObserverTimer * installsStartedTimer;
+    LSObserverTimer * installsUpdatedTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,7 +30,7 @@
 - (void)dealloc;
 - (void)endObservingConnection;
 - (void)handleCancelInstallationForApp:(id)arg1;
-- (id)init;
+- (id)initWithQueue:(id)arg1;
 - (void)installationEndedForApplication:(id)arg1;
 - (void)installationFailedForApplication:(id)arg1 reply:(id /* block */)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

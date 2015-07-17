@@ -3,9 +3,9 @@
  */
 
 @interface MFWeakDictionary : NSMutableDictionary {
-    NSMutableDictionary *_dictionary;
-    unsigned long _gen;
-    NSLock *_lock;
+    NSMutableDictionary * _dictionary;
+    unsigned long  _gen;
+    NSLock * _lock;
 }
 
 - (id)_copyDictionary;

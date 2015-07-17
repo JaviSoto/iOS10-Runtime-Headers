@@ -3,13 +3,13 @@
  */
 
 @interface NSFileAccessArbiter : NSObject <NSFileAccessArbiter> {
-    NSMutableDictionary *_accessClaimsByID;
-    BOOL _isSubarbiter;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_reactorsByID;
-    NSFileAccessNode *_rootNode;
-    NSMutableDictionary *_subarbitrationClaimsByID;
-    NSObject<OS_xpc_object> *_superarbitrationServer;
+    NSMutableDictionary * _accessClaimsByID;
+    BOOL  _isSubarbiter;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _reactorsByID;
+    NSFileAccessNode * _rootNode;
+    NSMutableDictionary * _subarbitrationClaimsByID;
+    NSObject<OS_xpc_object> * _superarbitrationServer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,7 @@
 @property (readonly) Class superclass;
 
 - (void)_addPresenter:(id)arg1 ofItemAtURL:(id)arg2 watchingFile:(BOOL)arg3 withLastEventID:(id)arg4;
-- (void)_addProvider:(id)arg1 ofItemsAtURL:(id)arg2;
+- (BOOL)_addProvider:(id)arg1 ofItemsAtURL:(id)arg2;
 - (void)_cancelAccessClaimForID:(id)arg1;
 - (void)_getDebugInformationWithString:(id)arg1 fromPid:(int)arg2 thenContinue:(id /* block */)arg3;
 - (void)_grantAccessClaim:(id)arg1;
@@ -33,6 +33,7 @@
 - (void)_sendSubarbitersMessageWithKind:(id)arg1 parameters:(id)arg2;
 - (void)_startArbitratingItemsAtURLs:(id)arg1 withSuperarbitrationServer:(id)arg2;
 - (void)_tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
+- (void)_willRemoveReactor:(id)arg1;
 - (void)_writerWithPurposeID:(id)arg1 didChangeItemAtURL:(id)arg2;
 - (void)_writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(id)arg2;
 - (void)_writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(id)arg2;

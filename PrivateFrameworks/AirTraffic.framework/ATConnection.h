@@ -3,12 +3,12 @@
  */
 
 @interface ATConnection : NSObject <ATConnectionDelegate> {
-    BOOL _atcRunning;
-    int _atcRunningToken;
-    NSObject<ATConnectionDelegate> *_delegate;
-    BOOL _registerForStatus;
-    NSMutableArray *_registeredDataclasses;
-    NSXPCConnection *_xpcConnection;
+    BOOL  _atcRunning;
+    int  _atcRunningToken;
+    NSObject<ATConnectionDelegate> * _delegate;
+    BOOL  _registerForStatus;
+    NSMutableArray * _registeredDataclasses;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -40,6 +40,7 @@
 - (void)registerForStatus;
 - (void)requestSyncForLibrary:(id)arg1;
 - (void)requestSyncForPairedDeviceWithPriority:(int)arg1;
+- (id)restoreDeviceWithIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterForStatus;
 

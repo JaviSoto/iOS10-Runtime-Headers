@@ -3,9 +3,9 @@
  */
 
 @interface GKBasePlayerCell : GKCollectionViewCell {
-    GKPlayerPhotoView *_iconView;
-    NSDictionary *_metricsOverrides;
-    UILabel *_nameLabel;
+    GKPlayerPhotoView * _iconView;
+    NSDictionary * _metricsOverrides;
+    UILabel * _nameLabel;
 }
 
 @property (nonatomic, retain) GKPlayerPhotoView *iconView;
@@ -30,6 +30,7 @@
 - (id)metricsOverrides;
 - (id)nameLabel;
 - (id)player;
+- (id)popoverSourceView;
 - (void)prepareForReuse;
 - (void)setIconView:(id)arg1;
 - (void)setMetricsOverrides:(id)arg1;

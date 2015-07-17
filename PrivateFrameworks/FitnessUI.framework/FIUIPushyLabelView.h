@@ -3,13 +3,13 @@
  */
 
 @interface FIUIPushyLabelView : UIView {
-    double _currentAnimationFinishTime;
-    NSAttributedString *_currentAttributedText;
-    NSArray *_currentSnapshotCharacters;
-    NSArray *_incomingSnapshotCharacters;
-    id _pendingAttributedString;
-    unsigned int _pendingDirection;
-    BOOL _pendingPushPerCharacter;
+    double  _currentAnimationFinishTime;
+    NSAttributedString * _currentAttributedText;
+    NSArray * _currentSnapshotCharacters;
+    NSArray * _incomingSnapshotCharacters;
+    id  _pendingAttributedString;
+    unsigned int  _pendingDirection;
+    BOOL  _pendingPushPerCharacter;
 }
 
 - (void).cxx_destruct;

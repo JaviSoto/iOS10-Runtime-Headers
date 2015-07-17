@@ -3,8 +3,8 @@
  */
 
 @interface SGLabeledValue : NSObject {
-    NSString *_label;
-    NSString *_value;
+    NSString * _label;
+    NSString * _value;
 }
 
 @property (nonatomic, readonly) NSString *label;

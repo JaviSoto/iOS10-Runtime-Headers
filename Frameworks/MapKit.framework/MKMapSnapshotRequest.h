@@ -3,21 +3,21 @@
  */
 
 @interface MKMapSnapshotRequest : NSObject {
-    NSString *_attributionString;
-    id _context;
+    NSString * _attributionString;
+    id  _context;
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    MKMapSnapshotCreator *_delegate;
-    UIImage *_image;
-    id _requester;
+    }  _coordinate;
+    MKMapSnapshotCreator * _delegate;
+    UIImage * _image;
+    id  _requester;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    VKMapSnapshotCreator *_snapshotCreator;
-    unsigned int _zoomLevel;
+    }  _size;
+    VKMapSnapshotCreator * _snapshotCreator;
+    unsigned int  _zoomLevel;
 }
 
 @property (nonatomic, retain) NSString *attributionString;

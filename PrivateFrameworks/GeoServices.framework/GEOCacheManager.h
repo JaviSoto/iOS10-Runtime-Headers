@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOCacheManager : NSObject {
-    <GEOCacheManaging> *_proxy;
+@interface GEOCacheManager : NSObject <GEOCacheManaging> {
+    <GEOCacheManaging> * _proxy;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_isLocalProxy;
 + (id)sharedManager;
@@ -14,7 +19,13 @@
 - (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
+- (int)invalidationStateForComponent:(id)arg1;
 - (int)invalidationStateForPlace:(id)arg1;
+- (id)refreshLOIAssociatedMapItems:(id)arg1 updatedCoordinates:(id)arg2;
+- (void)refreshLOIAssociatedMapItems:(id)arg1 updatedCoordinates:(id)arg2 handler:(id /* block */)arg3;
+- (id)refreshLOIReverseGeocodedMapItems:(id)arg1 updatedCoordinates:(id)arg2;
+- (void)refreshLOIReverseGeocodedMapItems:(id)arg1 updatedCoordinates:(id)arg2 handler:(id /* block */)arg3;
+- (void)snapshotWithFilePathArray:(id)arg1 handler:(id /* block */)arg2;
 - (void)versionsForDomains:(id)arg1 handler:(id /* block */)arg2;
 
 @end

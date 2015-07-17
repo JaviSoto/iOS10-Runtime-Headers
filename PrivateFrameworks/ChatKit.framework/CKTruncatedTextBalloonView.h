@@ -3,7 +3,7 @@
  */
 
 @interface CKTruncatedTextBalloonView : CKHyperlinkBalloonView <NSLayoutManagerDelegate> {
-    UIImageView *_chevron;
+    UIImageView * _chevron;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;

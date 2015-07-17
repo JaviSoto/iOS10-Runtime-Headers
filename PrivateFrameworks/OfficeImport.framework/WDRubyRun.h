@@ -3,12 +3,13 @@
  */
 
 @interface WDRubyRun : WDCharacterRun {
-    WDCharacterRun *mPhoneticRun;
-    WDRubyProperties *mRubyProperties;
+    WDCharacterRun * mPhoneticRun;
+    WDRubyProperties * mRubyProperties;
 }
 
 - (void)appendPhoneticRunString:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1;
 - (id)phoneticRun;
 - (id)phoneticRunString;

@@ -3,9 +3,9 @@
  */
 
 @interface TSPMemoryEncoder : NSObject <TSPEncoder> {
-    BOOL _alwaysDefragmentData;
-    TSPMemoryComponentWriteChannel *_metadataWriteChannel;
-    TSPMemoryComponentWriteChannel *_rootComponentWriteChannel;
+    BOOL  _alwaysDefragmentData;
+    TSPMemoryComponentWriteChannel * _metadataWriteChannel;
+    TSPMemoryComponentWriteChannel * _rootComponentWriteChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

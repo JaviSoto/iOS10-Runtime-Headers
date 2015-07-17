@@ -3,7 +3,7 @@
  */
 
 @interface BRFieldXattrBlob : PBCodable <NSCopying> {
-    NSMutableArray *_xattrs;
+    NSMutableArray * _xattrs;
 }
 
 @property (nonatomic, retain) NSMutableArray *xattrs;

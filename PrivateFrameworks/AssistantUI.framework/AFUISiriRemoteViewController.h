@@ -3,8 +3,8 @@
  */
 
 @interface AFUISiriRemoteViewController : _UIRemoteViewController <SVSSiriViewControllerHosting> {
-    <AFUISiriRemoteViewControllerDataSource> *_dataSource;
-    <AFUISiriRemoteViewControllerDelegate> *_delegate;
+    <AFUISiriRemoteViewControllerDataSource> * _dataSource;
+    <AFUISiriRemoteViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <AFUISiriRemoteViewControllerDataSource> *dataSource;
@@ -24,6 +24,8 @@
 - (void)didReceiveBugButtonLongPress;
 - (void)didReceiveHelpAction;
 - (void)didReceiveReportBugAction;
+- (void)didReceiveSuggestionsAction;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)getScreenshotWithReplyHandler:(id /* block */)arg1;
 - (void)handlePasscodeUnlockWithCompletion:(id /* block */)arg1;
 - (void)notifyOnNextUserInteraction;
@@ -31,6 +33,7 @@
 - (void)serviceBulletinWithIdentifier:(id)arg1 replyHandler:(id /* block */)arg2;
 - (void)serviceDidDismissBugReporter;
 - (void)serviceDidPresentBugReporter;
+- (void)serviceDidPresentUserInterface;
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
 - (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 replyHandler:(id /* block */)arg3;
 - (void)serviceOpenURL:(id)arg1 appBundleID:(id)arg2 allowSiriDismissal:(BOOL)arg3;
@@ -43,6 +46,7 @@
 - (void)serviceWillPresentViewControllerWithStatusBarStyle:(int)arg1;
 - (id)sessionDelegate;
 - (void)setBugReportingAvailable:(BOOL)arg1;
+- (void)setCarDisplayGatekeeperVisible:(BOOL)arg1;
 - (void)setCarDisplaySnippetVisible:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface AVPropertyStorage : NSObject {
-    NSMutableDictionary *_propertyStorage;
-    NSObject<OS_dispatch_queue> *_storageAccessWorkQueue;
+    NSMutableDictionary * _propertyStorage;
+    NSObject<OS_dispatch_queue> * _storageAccessWorkQueue;
 }
 
 - (void)dealloc;

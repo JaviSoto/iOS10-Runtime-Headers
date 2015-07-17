@@ -3,11 +3,11 @@
  */
 
 @interface BBObserverBulletinAttachmentImageSizePair : NSObject {
-    UIImage *_image;
+    UIImage * _image;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, retain) UIImage *image;

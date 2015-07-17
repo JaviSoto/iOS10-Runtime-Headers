@@ -3,18 +3,18 @@
  */
 
 @interface _UISiriStreamingManager : NSObject {
-    BOOL _commitResultsAfterDynamicsFinish;
-    unsigned int _firstIndexToRemoveAfterLineChangeClearingAnimation;
-    BOOL _isPerformingLineChangeClearingAnimation;
-    UIView *_siriItemView;
-    NSLayoutManager *_streamingLayoutManager;
-    NSTextContainer *_streamingTextContainer;
-    NSTextStorage *_streamingTextStorage;
-    UITextView *_textView;
-    BOOL _waitingForDynamicsBehaviorToStop;
-    NSMutableArray *_wordTokens;
-    NSMutableArray *_words;
-    NSArray *_wordsToSetAfterAnimations;
+    BOOL  _commitResultsAfterDynamicsFinish;
+    unsigned int  _firstIndexToRemoveAfterLineChangeClearingAnimation;
+    BOOL  _isPerformingLineChangeClearingAnimation;
+    UIView * _siriItemView;
+    NSLayoutManager * _streamingLayoutManager;
+    NSTextContainer * _streamingTextContainer;
+    NSTextStorage * _streamingTextStorage;
+    UITextView * _textView;
+    BOOL  _waitingForDynamicsBehaviorToStop;
+    NSMutableArray * _wordTokens;
+    NSMutableArray * _words;
+    NSArray * _wordsToSetAfterAnimations;
 }
 
 @property (nonatomic, readonly) NSLayoutManager *streamingLayoutManager;
@@ -22,11 +22,11 @@
 @property (nonatomic, readonly) NSTextStorage *streamingTextStorage;
 @property (nonatomic, copy) NSArray *words;
 
+- (void).cxx_destruct;
 - (void)_commitFinalResults;
 - (void)animateText;
 - (void)behaviorDidStop:(id)arg1;
 - (void)commitFinalResults;
-- (void)dealloc;
 - (id)initWithTextView:(id)arg1;
 - (void)setWords:(id)arg1;
 - (id)streamingLayoutManager;

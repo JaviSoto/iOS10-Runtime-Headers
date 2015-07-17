@@ -3,9 +3,9 @@
  */
 
 @interface SKPhysicsJointSliding : SKPhysicsJoint {
-    float _lowerDistanceLimit;
-    BOOL _shouldEnableLimits;
-    float _upperDistanceLimit;
+    float  _lowerDistanceLimit;
+    BOOL  _shouldEnableLimits;
+    float  _upperDistanceLimit;
 }
 
 @property (nonatomic) float lowerDistanceLimit;

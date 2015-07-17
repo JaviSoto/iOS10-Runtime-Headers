@@ -3,9 +3,9 @@
  */
 
 @interface ICCameraFolder : ICCameraItem {
-    int _filesLock;
-    void *_folderProperties;
-    int _foldersLock;
+    int  _filesLock;
+    void * _folderProperties;
+    int  _foldersLock;
 }
 
 @property (readonly) NSArray *contents;

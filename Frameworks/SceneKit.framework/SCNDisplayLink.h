@@ -3,17 +3,16 @@
  */
 
 @interface SCNDisplayLink : NSObject {
-    BOOL _asynchronous;
-    id /* block */ _block;
-    CADisplayLink *_caDisplayLink;
-    int _frameInterval;
-    BOOL _invalidated;
-    double _lastVideoOutput;
-    id _owner;
-    BOOL _paused;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _queuedFrameCount;
-    id _reserved;
+    BOOL  _asynchronous;
+    id /* block */  _block;
+    CADisplayLink * _caDisplayLink;
+    int  _frameInterval;
+    BOOL  _invalidated;
+    double  _lastVideoOutput;
+    id  _owner;
+    BOOL  _paused;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _queuedFrameCount;
 }
 
 @property (nonatomic) int frameInterval;
@@ -33,6 +32,7 @@
 - (BOOL)isPaused;
 - (int)queuedFrameCount;
 - (void)setFrameInterval:(int)arg1;
+- (void)setNeedsDisplay;
 - (void)setPaused:(BOOL)arg1;
 - (void)setPaused:(BOOL)arg1 nextFrameTimeHint:(double)arg2;
 - (void)willDie;

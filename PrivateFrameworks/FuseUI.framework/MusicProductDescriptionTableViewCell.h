@@ -3,21 +3,21 @@
  */
 
 @interface MusicProductDescriptionTableViewCell : UITableViewCell <UITextViewDelegate> {
-    <MusicProductDescriptionTableViewCellDelegate> *_delegate;
+    <MusicProductDescriptionTableViewCellDelegate> * _delegate;
     struct { 
         unsigned int productDescriptionDidChange : 1; 
-    } _delegateRespondsToSelector;
-    UILabel *_descriptionHeaderLabel;
-    MusicMediaDetailTintInformation *_detailTintInformation;
-    BOOL _expanded;
-    BOOL _hasValidMoreButtonSize;
-    UIButton *_moreButton;
-    BOOL _needsForcedTextViewUpdate;
-    UITextView *_placeholderTextView;
-    MusicProductDescription *_productDescription;
-    int _productDescriptionMaximumLengthForTextInput;
-    NSString *_productDescriptionTitle;
-    UITextView *_textView;
+    }  _delegateRespondsToSelector;
+    UILabel * _descriptionHeaderLabel;
+    MusicMediaDetailTintInformation * _detailTintInformation;
+    BOOL  _expanded;
+    BOOL  _hasValidMoreButtonSize;
+    UIButton * _moreButton;
+    BOOL  _needsForcedTextViewUpdate;
+    UITextView * _placeholderTextView;
+    MusicProductDescription * _productDescription;
+    int  _productDescriptionMaximumLengthForTextInput;
+    NSString * _productDescriptionTitle;
+    UITextView * _textView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

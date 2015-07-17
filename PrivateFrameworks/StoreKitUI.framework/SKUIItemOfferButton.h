@@ -3,36 +3,36 @@
  */
 
 @interface SKUIItemOfferButton : UIControl <SKUIViewElementOfferButton> {
-    UIColor *_backgroundColor;
-    UIView *_borderView;
-    SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
-    UIImage *_cloudImage;
-    UIColor *_cloudTintColor;
-    UIColor *_confirmationColor;
-    NSMutableAttributedString *_confirmationTitleAttributedString;
+    UIColor * _backgroundColor;
+    UIView * _borderView;
+    SKUIFocusedTouchGestureRecognizer * _cancelGestureRecognizer;
+    UIImage * _cloudImage;
+    UIColor * _cloudTintColor;
+    UIColor * _confirmationColor;
+    NSMutableAttributedString * _confirmationTitleAttributedString;
     struct CGSize { 
         float width; 
         float height; 
-    } _confirmationTitleFitSize;
-    int _confirmationTitleStyle;
-    <SKUIItemOfferButtonDelegate> *_delegate;
-    int _fillStyle;
-    UIImage *_image;
-    UIImageView *_imageView;
-    float _progress;
-    SKUICircleProgressIndicator *_progressIndicator;
-    BOOL _showsConfirmationState;
-    SKUIItemOfferButtonState *_state;
-    NSMutableAttributedString *_titleAttributedString;
+    }  _confirmationTitleFitSize;
+    int  _confirmationTitleStyle;
+    <SKUIItemOfferButtonDelegate> * _delegate;
+    int  _fillStyle;
+    UIImage * _image;
+    UIImageView * _imageView;
+    float  _progress;
+    SKUICircleProgressIndicator * _progressIndicator;
+    BOOL  _showsConfirmationState;
+    SKUIItemOfferButtonState * _state;
+    NSMutableAttributedString * _titleAttributedString;
     struct CGSize { 
         float width; 
         float height; 
-    } _titleFitSize;
-    UILabel *_titleLabel;
-    int _titleStyle;
-    BOOL _universal;
-    UIImageView *_universalImageView;
-    BOOL _usesDrawRectPath;
+    }  _titleFitSize;
+    UILabel * _titleLabel;
+    int  _titleStyle;
+    BOOL  _universal;
+    UIImageView * _universalImageView;
+    BOOL  _usesDrawRectPath;
 }
 
 @property (nonatomic, copy) UIColor *cloudTintColor;

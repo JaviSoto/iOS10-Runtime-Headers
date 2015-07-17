@@ -3,11 +3,11 @@
  */
 
 @interface CIFaceBalance : CIFilter <_CIFilterProperties> {
-    CIImage *inputImage;
-    NSNumber *inputOrigI;
-    NSNumber *inputOrigQ;
-    NSNumber *inputStrength;
-    NSNumber *inputWarmth;
+    CIImage * inputImage;
+    NSNumber * inputOrigI;
+    NSNumber * inputOrigQ;
+    NSNumber * inputStrength;
+    NSNumber * inputWarmth;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -28,7 +28,6 @@
 - (id)inputStrength;
 - (id)inputWarmth;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputOrigI:(id)arg1;
 - (void)setInputOrigQ:(id)arg1;

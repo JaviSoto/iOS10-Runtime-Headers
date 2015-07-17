@@ -3,8 +3,8 @@
  */
 
 @interface TSPSupportPackageReadCoordinator : TSPPackageReadCoordinator {
-    NSObject<OS_dispatch_queue> *_documentComponentReadQueue;
-    TSPPackage *_documentPackage;
+    NSObject<OS_dispatch_queue> * _documentComponentReadQueue;
+    TSPPackage * _documentPackage;
 }
 
 - (void).cxx_destruct;

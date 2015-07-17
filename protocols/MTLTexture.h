@@ -19,6 +19,7 @@
 - (<MTLResource> *)rootResource;
 - (unsigned int)sampleCount;
 - (unsigned int)textureType;
+- (unsigned int)usage;
 - (unsigned int)width;
 
 @end

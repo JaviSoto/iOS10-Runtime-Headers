@@ -3,10 +3,10 @@
  */
 
 @interface PASymbol : NSObject <PASerializable> {
-    unsigned long long _length;
-    NSString *_name;
-    unsigned long long _offsetInOwner;
-    NSMutableArray *_sourceInfos;
+    unsigned long long  _length;
+    NSString * _name;
+    unsigned long long  _offsetInOwner;
+    NSMutableArray * _sourceInfos;
 }
 
 @property (readonly, copy) NSString *debugDescription;

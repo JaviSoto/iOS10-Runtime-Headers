@@ -3,9 +3,9 @@
  */
 
 @interface IMPeople : NSObject {
-    int _coalesceCount;
-    BOOL _hidePeople;
-    NSMutableArray *_people;
+    int  _coalesceCount;
+    BOOL  _hidePeople;
+    NSMutableArray * _people;
 }
 
 @property (nonatomic, readonly) BOOL coalescingChanges;

@@ -3,9 +3,9 @@
  */
 
 @interface CAMeshTransform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    void *_impl;
-    unsigned long _normalization;
-    long _subdivisionSteps;
+    void * _impl;
+    unsigned long  _normalization;
+    long  _subdivisionSteps;
 }
 
 @property (readonly, copy) NSString *depthNormalization;

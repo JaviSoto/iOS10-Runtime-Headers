@@ -3,12 +3,12 @@
  */
 
 @interface MSService : NSObject {
-    int _canceled;
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    NSObject<OS_xpc_object> *_responseHandler;
-    NSObject<OS_xpc_object> *_responseListener;
+    int  _canceled;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    NSObject<OS_xpc_object> * _responseHandler;
+    NSObject<OS_xpc_object> * _responseListener;
 }
 
 @property (getter=isCanceled, readonly) BOOL canceled;

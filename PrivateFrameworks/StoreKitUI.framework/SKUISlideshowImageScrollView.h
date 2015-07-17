@@ -6,10 +6,10 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _centerPointBeforeResize;
-    UIImage *_image;
-    UIImageView *_imageView;
-    float _scaleBeforeResize;
+    }  _centerPointBeforeResize;
+    UIImage * _image;
+    UIImageView * _imageView;
+    float  _scaleBeforeResize;
 }
 
 @property (nonatomic, retain) UIImage *image;

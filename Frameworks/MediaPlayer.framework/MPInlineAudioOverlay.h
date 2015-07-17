@@ -3,13 +3,13 @@
  */
 
 @interface MPInlineAudioOverlay : MPPlaybackControlsView {
-    UIView *_backgroundView;
-    NSString *_playbackErrorDescription;
-    UILabel *_playbackErrorDescriptionLabel;
-    UILabel *_streamingLabel;
-    int _style;
-    MPInlineAudioTransportControls *_transportControls;
-    <MPVideoControllerProtocol> *_videoViewController;
+    UIView * _backgroundView;
+    NSString * _playbackErrorDescription;
+    UILabel * _playbackErrorDescriptionLabel;
+    UILabel * _streamingLabel;
+    int  _style;
+    MPInlineAudioTransportControls * _transportControls;
+    <MPVideoControllerProtocol> * _videoViewController;
 }
 
 @property (nonatomic, copy) NSString *playbackErrorDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface ATService : NSObject <ATMessageLinkObserver> {
-    NSMutableSet *_messageLinks;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet * _messageLinks;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,7 @@
 - (void)addMessageLink:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)init;
-- (id)messageLinkForLibrary:(id)arg1;
+- (id)messageLinkForIdentifier:(id)arg1;
 - (id)messageLinks;
 - (id)observers;
 - (void)removeMessageLink:(id)arg1;

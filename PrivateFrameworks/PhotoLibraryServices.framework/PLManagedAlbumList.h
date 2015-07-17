@@ -3,9 +3,9 @@
  */
 
 @interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLDerivedAlbumListOrigin, PLIndexMappersDataOrigin> {
-    NSObject<PLIndexMappingCache> *_derivedAlbumLists;
-    BOOL didRegisteredWithUserInterfaceContext;
-    BOOL isRegisteredForChanges;
+    NSObject<PLIndexMappingCache> * _derivedAlbumLists;
+    BOOL  didRegisteredWithUserInterfaceContext;
+    BOOL  isRegisteredForChanges;
 }
 
 @property (nonatomic, readonly, retain) NSString *_prettyDescription;

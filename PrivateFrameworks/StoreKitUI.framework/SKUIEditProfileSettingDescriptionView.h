@@ -3,13 +3,13 @@
  */
 
 @interface SKUIEditProfileSettingDescriptionView : SKUISettingDescriptionView <UITextFieldDelegate> {
-    SKUIClientContext *_clientContext;
-    CALayer *_divider1;
-    UIButton *_editButton;
-    UITextField *_handleField;
-    SKUIImageView *_imageView;
-    UITextField *_nameField;
-    SKUIEditProfileSettingDescription *_settingDescription;
+    SKUIClientContext * _clientContext;
+    CALayer * _divider1;
+    UIButton * _editButton;
+    UITextField * _handleField;
+    SKUIImageView * _imageView;
+    UITextField * _nameField;
+    SKUIEditProfileSettingDescription * _settingDescription;
 }
 
 @property (readonly, copy) NSString *debugDescription;

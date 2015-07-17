@@ -3,8 +3,8 @@
  */
 
 @interface BRCPrivateServerZone : BRCServerZone {
-    BRCZonePurgeOperation *_deleteAllContentsOperation;
-    NSError *_deleteAllContentsOperationLastError;
+    BRCZonePurgeOperation * _deleteAllContentsOperation;
+    NSError * _deleteAllContentsOperationLastError;
 }
 
 @property (nonatomic, readonly) BRCPrivateLocalContainer *container;

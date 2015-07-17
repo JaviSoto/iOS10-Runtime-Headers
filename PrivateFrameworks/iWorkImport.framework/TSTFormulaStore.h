@@ -3,11 +3,11 @@
  */
 
 @interface TSTFormulaStore : NSObject {
-    TSCECalculationEngine *_calcEngine;
-    TSUSparseArray *_formulas;
-    TSCEOwnerFormulaMap *_formulasForUndo;
-    unsigned int _nextIndex;
-    struct __CFUUID { } *_ownerID;
+    TSCECalculationEngine * _calcEngine;
+    TSUSparseArray * _formulas;
+    TSCEOwnerFormulaMap * _formulasForUndo;
+    unsigned int  _nextIndex;
+    struct __CFUUID { } * _ownerID;
 }
 
 @property (nonatomic, retain) TSCECalculationEngine *calcEngine;

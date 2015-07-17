@@ -3,8 +3,8 @@
  */
 
 @interface _GEOPlaceCompletionGroup : NSObject <GEOCompletionGroup> {
-    GEOSuggestionEntryList *_entryList;
-    NSArray *_items;
+    GEOSuggestionEntryList * _entryList;
+    NSArray * _items;
 }
 
 @property (readonly, copy) NSString *debugDescription;

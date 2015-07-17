@@ -3,13 +3,13 @@
  */
 
 @interface MKOverlayContainerView : UIView {
-    <MKOverlayContainerViewDelegate> *_delegate;
-    NSMutableArray *_drawables;
-    float _mapZoomScale;
-    NSMapTable *_overlayToDrawable;
-    NSMutableOrderedSet *_overlays;
-    UIView *_viewContainers;
-    NSMutableArray *_vkOverlays;
+    <MKOverlayContainerViewDelegate> * _delegate;
+    NSMutableArray * _drawables;
+    float  _mapZoomScale;
+    NSMapTable * _overlayToDrawable;
+    NSMutableOrderedSet * _overlays;
+    UIView * _viewContainers;
+    NSMutableArray * _vkOverlays;
 }
 
 @property (nonatomic) <MKOverlayContainerViewDelegate> *delegate;
@@ -32,7 +32,6 @@
 - (void)addOverlay:(id)arg1 level:(int)arg2;
 - (void)addOverlays:(id)arg1;
 - (void)addOverlays:(id)arg1 level:(int)arg2;
-- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (id)drawableForOverlay:(id)arg1;
@@ -51,6 +50,5 @@
 - (void)removeOverlays:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMapZoomScale:(float)arg1;
-- (void)visibleRectChanged;
 
 @end

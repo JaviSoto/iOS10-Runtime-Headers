@@ -3,10 +3,10 @@
  */
 
 @interface CBPeripheralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
-    NSMapTable *_centrals;
-    NSMutableDictionary *_characteristicIDs;
-    CBXpcConnection *_connection;
-    <CBPeripheralManagerDelegate> *_delegate;
+    NSMapTable * _centrals;
+    NSMutableDictionary * _characteristicIDs;
+    CBXpcConnection * _connection;
+    <CBPeripheralManagerDelegate> * _delegate;
     struct { 
         unsigned int willRestoreState : 1; 
         unsigned int didAddService : 1; 
@@ -18,14 +18,14 @@
         unsigned int isReadyToUpdate : 1; 
         unsigned int centralDidConnect : 1; 
         unsigned int centralDidUpdateConnectionParameters : 1; 
-    } _delegateFlags;
-    BOOL _isAdvertising;
-    CBPairingAgent *_pairingAgent;
-    BOOL _readyForUpdates;
-    NSMutableArray *_services;
-    int _state;
-    NSLock *_updateLock;
-    BOOL _waitingForReady;
+    }  _delegateFlags;
+    BOOL  _isAdvertising;
+    CBPairingAgent * _pairingAgent;
+    BOOL  _readyForUpdates;
+    NSMutableArray * _services;
+    int  _state;
+    NSLock * _updateLock;
+    BOOL  _waitingForReady;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -58,16 +58,19 @@
 - (void)handleSetAttributeValues:(id)arg1;
 - (void)handleSolicitedServicesFound:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
+- (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (BOOL)isAdvertising;
 - (BOOL)isMsgAllowedAlways:(int)arg1;
 - (BOOL)isMsgAllowedWhenOff:(int)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)peerWithInfo:(id)arg1;
 - (oneway void)release;
 - (void)removeAllServices;
 - (void)removeService:(id)arg1;
 - (void)respondToRequest:(id)arg1 withResult:(int)arg2;
+- (void)respondToTransaction:(id)arg1 value:(id)arg2 attributeID:(id)arg3 result:(int)arg4;
 - (BOOL)sendMsg:(int)arg1 args:(id)arg2;
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)setDelegate:(id)arg1;
@@ -79,9 +82,9 @@
 - (int)state;
 - (void)stopAdvertising;
 - (BOOL)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
-- (void)xpcConnection:(id)arg1 didReceiveMsg:(unsigned short)arg2 args:(id)arg3;
-- (void)xpcConnectionDidFinalize:(id)arg1;
-- (void)xpcConnectionDidReset:(id)arg1;
-- (void)xpcConnectionIsInvalid:(id)arg1;
+- (void)xpcConnectionDidFinalize;
+- (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2 reply:(id /* block */)arg3;
+- (void)xpcConnectionDidReset;
+- (void)xpcConnectionIsInvalid;
 
 @end

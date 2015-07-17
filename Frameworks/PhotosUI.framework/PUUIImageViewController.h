@@ -4,4 +4,6 @@
 
 @interface PUUIImageViewController : PLUIImageViewController
 
+- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2;
+
 @end

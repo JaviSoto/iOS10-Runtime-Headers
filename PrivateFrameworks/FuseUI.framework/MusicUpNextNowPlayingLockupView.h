@@ -3,12 +3,12 @@
  */
 
 @interface MusicUpNextNowPlayingLockupView : MusicEntityHorizontalLockupView {
-    <MusicUpNextNowPlayingLockupViewDelegate> *_dismissalDelegate;
-    UIView *_itemContentViewContainerView;
-    MusicPlaybackProgressScrubberController *_playbackProgressController;
-    MusicMiniPlayerPlaybackProgressView *_playbackProgressView;
-    MPAVController *_player;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    <MusicUpNextNowPlayingLockupViewDelegate> * _dismissalDelegate;
+    UIView * _itemContentViewContainerView;
+    MusicPlaybackProgressScrubberController * _playbackProgressController;
+    MusicMiniPlayerPlaybackProgressView * _playbackProgressView;
+    MPAVController * _player;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic) <MusicUpNextNowPlayingLockupViewDelegate> *dismissalDelegate;

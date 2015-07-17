@@ -3,10 +3,10 @@
  */
 
 @interface DDWebKitOperation : DDOperation {
-    DOMNode *_endNode;
-    int _endOffset;
-    DOMNode *_startNode;
-    int _startOffset;
+    DOMNode * _endNode;
+    int  _endOffset;
+    DOMNode * _startNode;
+    int  _startOffset;
 }
 
 @property (nonatomic, retain) WebFrame *container;

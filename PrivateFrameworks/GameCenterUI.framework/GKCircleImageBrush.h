@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _sizeOverride;
+    }  _sizeOverride;
 }
 
 @property (readonly, copy) NSString *debugDescription;

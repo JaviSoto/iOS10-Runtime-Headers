@@ -3,9 +3,9 @@
  */
 
 @interface PLCloudScenarioExecutionResult : NSObject {
-    BOOL _duplicateScenario;
-    NSMutableArray *_failedOperations;
-    NSMutableArray *_successfullOperations;
+    BOOL  _duplicateScenario;
+    NSMutableArray * _failedOperations;
+    NSMutableArray * _successfullOperations;
 }
 
 @property (nonatomic) BOOL duplicateScenario;

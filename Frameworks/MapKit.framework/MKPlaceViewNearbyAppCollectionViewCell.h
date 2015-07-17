@@ -3,11 +3,11 @@
  */
 
 @interface MKPlaceViewNearbyAppCollectionViewCell : UICollectionViewCell {
-    UILabel *_categoryLabel;
-    UIImageView *_icon;
-    UILabel *_priceLabel;
-    NSDictionary *_storeData;
-    UILabel *_titleLabel;
+    UILabel * _categoryLabel;
+    UIImageView * _icon;
+    UILabel * _priceLabel;
+    NSDictionary * _storeData;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSDictionary *storeData;

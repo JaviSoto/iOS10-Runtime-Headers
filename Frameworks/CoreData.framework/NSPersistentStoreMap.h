@@ -3,11 +3,11 @@
  */
 
 @interface NSPersistentStoreMap : NSObject {
-    NSString *_databaseUUID;
-    NSDictionary *_mappings;
-    unsigned long long _nextPK64;
-    NSMappedObjectStore *_store;
-    NSDictionary *_storeMetadata;
+    NSString * _databaseUUID;
+    NSDictionary * _mappings;
+    unsigned long long  _nextPK64;
+    NSMappedObjectStore * _store;
+    NSDictionary * _storeMetadata;
 }
 
 + (void)initialize;

@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    _UIFilteredDataSource *_filteredDataSource;
-    int _filteredDataType;
-    id _keyboardSupport;
-    id _staticDataSource;
+@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITableViewFocusDelegateLegacy, _UIKeyboardAutoRespondingScrollViewController> {
+    _UIFilteredDataSource * _filteredDataSource;
+    int  _filteredDataType;
+    UIAutoRespondingScrollViewControllerKeyboardSupport * _keyboardSupport;
+    UITableViewDataSource * _staticDataSource;
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
         unsigned int insetsApplied : 1; 
         unsigned int adjustingInsets : 1; 
-    } _tableViewControllerFlags;
-    int _tableViewStyle;
+    }  _tableViewControllerFlags;
+    int  _tableViewStyle;
 }
 
 @property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
@@ -20,16 +20,18 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (getter=_scrollView, nonatomic, readonly, retain) UIScrollView<_UIKeyboardAutoRespondingScrollView> *scrollView;
 @property (getter=_staticDataSource, setter=_setStaticDataSource:, nonatomic, retain) UITableViewDataSource *staticDataSource;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableView *tableView;
 
-- (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (void).cxx_destruct;
 - (void)_applyDefaultDataSourceToTable:(id)arg1;
 - (id)_existingTableView;
 - (int)_filteredDataType;
 - (void)_refreshFilteredDataSourceFilterTypeForScreen:(id)arg1;
 - (int)_resolvedDataSourceFilterTypeForScreen:(id)arg1;
+- (id)_scrollView;
 - (void)_setFilteredDataType:(int)arg1;
 - (void)_setStaticDataSource:(id)arg1;
 - (id)_staticDataSource;

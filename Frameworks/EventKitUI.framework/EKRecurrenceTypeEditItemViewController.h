@@ -3,15 +3,15 @@
  */
 
 @interface EKRecurrenceTypeEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
-    EKCalendarItem *_calendarItem;
-    NSIndexPath *_checkedItem;
-    EKUICustomRecurrenceViewController *_customRecurrenceViewController;
-    <EKRecurrenceTypeEditItemViewControllerDelegate> *_delegate;
-    EKRecurrenceRule *_recurrenceRule;
-    int _repeatType;
-    NSDate *_suggestedStartDate;
-    NSString *_summaryString;
-    UITableView *_table;
+    EKCalendarItem * _calendarItem;
+    NSIndexPath * _checkedItem;
+    EKUICustomRecurrenceViewController * _customRecurrenceViewController;
+    <EKRecurrenceTypeEditItemViewControllerDelegate> * _delegate;
+    EKRecurrenceRule * _recurrenceRule;
+    int  _repeatType;
+    NSDate * _suggestedStartDate;
+    NSString * _summaryString;
+    UITableView * _table;
 }
 
 @property (retain) EKCalendarItem *calendarItem;

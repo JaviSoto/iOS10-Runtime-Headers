@@ -3,15 +3,15 @@
  */
 
 @interface MSCLConfiguration : NSObject <NSCopying> {
-    NSArray *_allowedExternalServices;
-    NSArray *_audioCategoryNames;
-    SKUIMediaSocialAuthor *_authorForActiveAccount;
-    NSURL *_baseTagLookupURL;
-    MSCLStoreItem *_item;
-    int _maximumNumberOfAttachments;
-    double _maximumSoundBiteDuration;
-    NSArray *_potentalAuthors;
-    NSArray *_suggestedTags;
+    NSArray * _allowedExternalServices;
+    NSArray * _audioCategoryNames;
+    SKUIMediaSocialAuthor * _authorForActiveAccount;
+    NSURL * _baseTagLookupURL;
+    MSCLStoreItem * _item;
+    int  _maximumNumberOfAttachments;
+    double  _maximumSoundBiteDuration;
+    NSArray * _potentalAuthors;
+    NSArray * _suggestedTags;
 }
 
 @property (nonatomic, copy) NSArray *allowedExternalServices;

@@ -3,22 +3,22 @@
  */
 
 @interface RCCaptureSession : NSObject <RCCaptureOutputWriterDelegate, RCWaveformDataSourceObserver> {
-    unsigned int _backgroundTaskIdentifier;
-    BOOL _captureBeginSoundEffectDisabled;
-    BOOL _captureEndSoundEffectDisabled;
-    RCCaptureOutputWriter *_captureOutputWriter;
-    RCAudioSessionRoutingAssertion *_captureRouteAssertion;
-    NSDate *_captureStartDate;
-    RCCaptureInputWaveformDataSource *_captureWaveformDataSource;
-    BOOL _deleteCapturedOutWhenFinished;
-    BOOL _destinationShouldBeDeleted;
-    NSObject<OS_dispatch_group> *_endCaptureTaskGroup;
-    BOOL _handledFinishedCapturingAfterCompletionSound;
-    BOOL _handlingDidFinishCapturing;
-    RCCaptureInputDevice *_inputDevice;
-    int _sessionCaptureState;
-    NSString *_sessionRouteName;
-    NSHashTable *_weakObservers;
+    unsigned int  _backgroundTaskIdentifier;
+    BOOL  _captureBeginSoundEffectDisabled;
+    BOOL  _captureEndSoundEffectDisabled;
+    RCCaptureOutputWriter * _captureOutputWriter;
+    RCAudioSessionRoutingAssertion * _captureRouteAssertion;
+    NSDate * _captureStartDate;
+    RCCaptureInputWaveformDataSource * _captureWaveformDataSource;
+    BOOL  _deleteCapturedOutWhenFinished;
+    BOOL  _destinationShouldBeDeleted;
+    NSObject<OS_dispatch_group> * _endCaptureTaskGroup;
+    BOOL  _handledFinishedCapturingAfterCompletionSound;
+    BOOL  _handlingDidFinishCapturing;
+    RCCaptureInputDevice * _inputDevice;
+    int  _sessionCaptureState;
+    NSString * _sessionRouteName;
+    NSHashTable * _weakObservers;
 }
 
 @property (nonatomic, readonly) RCAVState *AVState;
@@ -29,6 +29,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) RCCaptureInputDevice *inputDevice;
 @property (nonatomic, readonly) BOOL isCaptureSessionFinished;
+@property (readonly) double storeDemoTimeLimit;
 @property (readonly) Class superclass;
 
 + (void)playCaptureDidFinishSoundEffectWithCompletionBlock:(id /* block */)arg1;
@@ -68,6 +69,7 @@
 - (void)disableCaptureBeginSoundEffect;
 - (void)disableCaptureEndSoundEffect;
 - (void)finishCapturing;
+- (id)init;
 - (id)initWithInputDevice:(id)arg1 captureWaveformDataSource:(id)arg2;
 - (id)inputDevice;
 - (BOOL)isCaptureActive;
@@ -78,6 +80,7 @@
 - (void)prepareToCaptureWithPreparedHandler:(id /* block */)arg1;
 - (void)removeCaptureSessionObserver:(id)arg1;
 - (void)resumeCapturing;
+- (double)storeDemoTimeLimit;
 - (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformDataSourceDidFinishLoading:(id)arg1;
 

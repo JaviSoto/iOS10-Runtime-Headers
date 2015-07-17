@@ -3,10 +3,10 @@
  */
 
 @interface CKConversationSearchResultsController : UITableViewController <UISearchResultsUpdating> {
-    CKSpotlightQuery *_currentQuery;
-    <CKConversationResultsControllerDelegate> *_delegate;
-    NSArray *_searchResults;
-    NSString *_selectedChatGUID;
+    CKSpotlightQuery * _currentQuery;
+    <CKConversationResultsControllerDelegate> * _delegate;
+    NSArray * _searchResults;
+    NSString * _selectedChatGUID;
 }
 
 @property (nonatomic, retain) CKSpotlightQuery *currentQuery;

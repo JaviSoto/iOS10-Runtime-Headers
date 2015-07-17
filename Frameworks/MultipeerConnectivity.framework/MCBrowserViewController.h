@@ -3,22 +3,22 @@
  */
 
 @interface MCBrowserViewController : UIViewController <MCNearbyServiceBrowserDelegate, MCSessionPrivateDelegate, UIAlertViewDelegate, UINavigationBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    MCNearbyServiceBrowser *_browser;
-    UIBarButtonItem *_cancelButton;
-    unsigned int _declinedPeersCount;
-    <MCBrowserViewControllerDelegate> *_delegate;
-    UIBarButtonItem *_doneButton;
-    NSMutableArray *_foundPeers;
-    NSBundle *_frameworkBundle;
-    NSMutableArray *_invitedPeersSection;
-    NSMutableDictionary *_invitedPeersState;
-    unsigned int _maximumNumberOfPeers;
-    unsigned int _minimumNumberOfPeers;
-    MCPeerID *_myPeerID;
-    UINavigationBar *_navigationBar;
-    NSMutableArray *_nearbyPeersSection;
-    MCSession *_session;
-    UITableView *_tableView;
+    MCNearbyServiceBrowser * _browser;
+    UIBarButtonItem * _cancelButton;
+    unsigned int  _declinedPeersCount;
+    <MCBrowserViewControllerDelegate> * _delegate;
+    UIBarButtonItem * _doneButton;
+    NSMutableArray * _foundPeers;
+    NSBundle * _frameworkBundle;
+    NSMutableArray * _invitedPeersSection;
+    NSMutableDictionary * _invitedPeersState;
+    unsigned int  _maximumNumberOfPeers;
+    unsigned int  _minimumNumberOfPeers;
+    MCPeerID * _myPeerID;
+    UINavigationBar * _navigationBar;
+    NSMutableArray * _nearbyPeersSection;
+    MCSession * _session;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) MCNearbyServiceBrowser *browser;

@@ -3,11 +3,11 @@
  */
 
 @interface ML3ComparisonPredicate : ML3PropertyPredicate {
-    BOOL _caseInsensitive;
-    int _comparison;
-    NSString *_transformFunction;
-    NSString *_treatNullAsString;
-    id _value;
+    BOOL  _caseInsensitive;
+    int  _comparison;
+    NSString * _transformFunction;
+    NSString * _treatNullAsString;
+    id  _value;
 }
 
 @property (nonatomic) BOOL caseInsensitive;

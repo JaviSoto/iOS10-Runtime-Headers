@@ -3,7 +3,7 @@
  */
 
 @interface NSMultiReadUniWriteLock : NSObject <NSLocking> {
-    void *_priv;
+    void * _priv;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MPReflectionImageView : _UIReflectingView {
-    UIImageView *_imageView;
-    BOOL _squareImage;
+    UIImageView * _imageView;
+    BOOL  _squareImage;
 }
 
 @property (nonatomic, retain) UIImage *image;

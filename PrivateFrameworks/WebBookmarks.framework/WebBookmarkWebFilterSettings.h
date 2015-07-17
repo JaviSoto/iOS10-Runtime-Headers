@@ -3,7 +3,7 @@
  */
 
 @interface WebBookmarkWebFilterSettings : NSObject {
-    WFUserSettings *_userSettings;
+    WFUserSettings * _userSettings;
 }
 
 @property (nonatomic, readonly) WFUserSettings *userSettings;
@@ -12,6 +12,7 @@
 
 + (id)sharedWebFilterSettings;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isWebFilterEnabled;

@@ -3,13 +3,13 @@
  */
 
 @interface SKUICircleRepellor : NSObject {
-    float _bufferSize;
+    float  _bufferSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } _center;
-    PKPhysicsBody *_physicsBody;
-    float _radius;
+    }  _center;
+    PKPhysicsBody * _physicsBody;
+    float  _radius;
 }
 
 @property (nonatomic) float bufferSize;

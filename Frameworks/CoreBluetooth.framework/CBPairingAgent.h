@@ -3,9 +3,9 @@
  */
 
 @interface CBPairingAgent : NSObject {
-    <CBPairingAgentDelegate> *_delegate;
-    <CBPairingAgentParentDelegate> *_parentManager;
-    BOOL _useOOBMode;
+    <CBPairingAgentDelegate> * _delegate;
+    <CBPairingAgentParentDelegate> * _parentManager;
+    BOOL  _useOOBMode;
 }
 
 @property (nonatomic) <CBPairingAgentDelegate> *delegate;

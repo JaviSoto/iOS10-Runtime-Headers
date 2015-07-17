@@ -3,8 +3,8 @@
  */
 
 @interface PUSearchButtonItemCustomView : UIView {
-    UINavigationBar *_navigationBar;
-    BOOL _nudgesSearchIcon;
+    UINavigationBar * _navigationBar;
+    BOOL  _nudgesSearchIcon;
 }
 
 @property (nonatomic) UINavigationBar *navigationBar;

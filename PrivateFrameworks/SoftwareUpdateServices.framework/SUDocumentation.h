@@ -3,16 +3,16 @@
  */
 
 @interface SUDocumentation : NSObject <NSCopying, NSSecureCoding> {
-    NSURL *_baseDocumentationURL;
-    NSMutableDictionary *_cachedData;
-    NSString *_humanReadableUpdateName;
-    NSString *_licenseAgreementFileName;
-    NSURL *_licenseAgreementURL;
-    NSString *_primaryLanguage;
-    NSString *_releaseNotesFileName;
-    NSString *_releaseNotesSummaryFileName;
-    NSURL *_releaseNotesSummaryURL;
-    NSURL *_releaseNotesURL;
+    NSURL * _baseDocumentationURL;
+    NSMutableDictionary * _cachedData;
+    NSString * _humanReadableUpdateName;
+    NSString * _licenseAgreementFileName;
+    NSURL * _licenseAgreementURL;
+    NSString * _primaryLanguage;
+    NSString * _releaseNotesFileName;
+    NSString * _releaseNotesSummaryFileName;
+    NSURL * _releaseNotesSummaryURL;
+    NSURL * _releaseNotesURL;
 }
 
 @property (nonatomic, retain) NSURL *baseDocumentationURL;

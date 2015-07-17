@@ -3,22 +3,22 @@
  */
 
 @interface MFOutgoingMessageDelivery : NSObject {
-    MailAccount *_archiveAccount;
-    NSArray *_charsets;
-    NSDictionary *_compositionSpecification;
-    unsigned long long _conversationFlags;
-    MFMailDelivery *_currentDeliveryObject;
-    <MFDeliveryDelegate> *_delegate;
-    DeliveryAccount *_deliveryAccount;
-    MFMutableMessageHeaders *_headers;
-    NSString *_htmlBody;
-    BOOL _isUserRequested;
-    MFMessage *_message;
-    NSArray *_mixedContent;
-    long long _originalConversationId;
-    NSArray *_otherHTMLAndAttachments;
-    MFPlainTextDocument *_plainTextAlternative;
-    BOOL _textPartsAreHTML;
+    MailAccount * _archiveAccount;
+    NSArray * _charsets;
+    NSDictionary * _compositionSpecification;
+    unsigned long long  _conversationFlags;
+    MFMailDelivery * _currentDeliveryObject;
+    <MFDeliveryDelegate> * _delegate;
+    DeliveryAccount * _deliveryAccount;
+    MFMutableMessageHeaders * _headers;
+    NSString * _htmlBody;
+    BOOL  _isUserRequested;
+    MFMessage * _message;
+    NSArray * _mixedContent;
+    long long  _originalConversationId;
+    NSArray * _otherHTMLAndAttachments;
+    MFPlainTextDocument * _plainTextAlternative;
+    BOOL  _textPartsAreHTML;
 }
 
 @property (nonatomic, retain) NSDictionary *compositionSpecification;

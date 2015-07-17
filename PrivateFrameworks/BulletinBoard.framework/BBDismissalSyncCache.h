@@ -3,8 +3,8 @@
  */
 
 @interface BBDismissalSyncCache : NSObject {
-    NSMutableDictionary *_cache;
-    NSDate *_timeToCheck;
+    NSMutableDictionary * _cache;
+    NSDate * _timeToCheck;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cache;

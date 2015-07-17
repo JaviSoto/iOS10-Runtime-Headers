@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentOptionGroupItemButtonCell : PKPaymentOptionGroupItemCell {
-    UIButton *_button;
+    UIButton * _button;
 }
 
 - (void)_updateCellContent;

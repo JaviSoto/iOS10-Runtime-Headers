@@ -3,8 +3,8 @@
  */
 
 @interface SSClientAccountStore : SSAccountStore {
-    NSArray *_accounts;
-    BOOL _accountsValid;
+    NSArray * _accounts;
+    BOOL  _accountsValid;
 }
 
 @property (copy) NSArray *accounts;

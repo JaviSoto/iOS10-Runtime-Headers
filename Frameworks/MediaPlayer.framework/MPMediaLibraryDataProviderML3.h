@@ -3,15 +3,15 @@
  */
 
 @interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate> {
-    <MPArtworkDataSource> *_artworkDataSource;
-    unsigned int _backgroundTask;
-    unsigned int _backgroundTaskCount;
-    NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
-    MPMediaEntityCache *_entityCache;
-    BOOL _hasScheduledEventPosting;
-    ML3MusicLibrary *_library;
-    int _refreshState;
-    NSString *_uniqueIdentifier;
+    <MPArtworkDataSource> * _artworkDataSource;
+    unsigned int  _backgroundTask;
+    unsigned int  _backgroundTaskCount;
+    NSObject<OS_dispatch_queue> * _backgroundTaskQueue;
+    MPMediaEntityCache * _entityCache;
+    BOOL  _hasScheduledEventPosting;
+    ML3MusicLibrary * _library;
+    int  _refreshState;
+    NSString * _uniqueIdentifier;
 }
 
 @property (nonatomic, readonly) <MPArtworkDataSource> *artworkDataSource;

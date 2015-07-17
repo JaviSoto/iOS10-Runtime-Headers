@@ -3,12 +3,12 @@
  */
 
 @interface EKExpandingTextView : UITextView <UITextViewDelegate> {
-    BOOL _allowEnclosingViewScroll;
-    UILabel *_placeholderLabel;
+    BOOL  _allowEnclosingViewScroll;
+    UILabel * _placeholderLabel;
     struct CGSize { 
         float width; 
         float height; 
-    } _previousIntrinsicContentSize;
+    }  _previousIntrinsicContentSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,22 +3,22 @@
  */
 
 @interface MPUExtrasGridHeaderStyle : NSObject {
-    float _bottomLabelDescender;
+    float  _bottomLabelDescender;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _insets;
-    BOOL _showsImage;
-    UIColor *_subtitleColor;
-    NSDictionary *_subtitleDefaultFontAttributes;
-    float _subtitleLineHeight;
-    NSString *_subtitleTextStyle;
-    UIColor *_titleColor;
-    NSDictionary *_titleDefaultFontAttributes;
-    float _titleLineHeight;
-    NSString *_titleTextStyle;
+    }  _insets;
+    BOOL  _showsImage;
+    UIColor * _subtitleColor;
+    NSDictionary * _subtitleDefaultFontAttributes;
+    float  _subtitleLineHeight;
+    NSString * _subtitleTextStyle;
+    UIColor * _titleColor;
+    NSDictionary * _titleDefaultFontAttributes;
+    float  _titleLineHeight;
+    NSString * _titleTextStyle;
 }
 
 @property (nonatomic) float bottomLabelDescender;

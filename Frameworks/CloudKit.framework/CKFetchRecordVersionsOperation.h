@@ -3,13 +3,13 @@
  */
 
 @interface CKFetchRecordVersionsOperation : CKDatabaseOperation {
-    NSArray *_desiredKeys;
-    id /* block */ _fetchRecordVersionsCompletionBlock;
-    id /* block */ _fetchRecordVersionsProgressBlock;
-    BOOL _isDeleted;
-    NSString *_minimumVersionETag;
-    NSMutableDictionary *_recordErrors;
-    NSArray *_recordIDs;
+    NSArray * _desiredKeys;
+    id /* block */  _fetchRecordVersionsCompletionBlock;
+    id /* block */  _fetchRecordVersionsProgressBlock;
+    BOOL  _isDeleted;
+    NSString * _minimumVersionETag;
+    NSMutableDictionary * _recordErrors;
+    NSArray * _recordIDs;
 }
 
 @property (nonatomic, copy) NSArray *desiredKeys;
@@ -24,6 +24,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (id /* block */)fetchRecordVersionsCompletionBlock;
 - (id /* block */)fetchRecordVersionsProgressBlock;

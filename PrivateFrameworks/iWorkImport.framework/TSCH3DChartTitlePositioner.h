@@ -14,7 +14,7 @@
             float g; 
             float t; 
         } ; 
-    } mCachedCategoryAxisLabelsSize;
+    }  mCachedCategoryAxisLabelsSize;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -26,7 +26,7 @@
             float g; 
             float t; 
         } ; 
-    } mCachedSeriesLabelsSize;
+    }  mCachedSeriesLabelsSize;
     struct tvec2<float> { 
         union { 
             float x; 
@@ -38,9 +38,9 @@
             float g; 
             float t; 
         } ; 
-    } mCachedValueAxisLabelsSize;
-    TSCHChartInfo *mInfo;
-    TSCH3DScene *mScene;
+    }  mCachedValueAxisLabelsSize;
+    TSCHChartInfo * mInfo;
+    TSCH3DScene * mScene;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *info;

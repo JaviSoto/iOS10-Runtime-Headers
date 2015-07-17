@@ -28,10 +28,10 @@
                 float t; 
             } ; 
         } mMax; 
-    } mBodyLayoutInPage;
-    TSCH3DScene *mBounds;
-    TSCH3DChartGetProjectedBoundsPipeline *mGetBounds;
-    Class mGetBoundsClass;
+    }  mBodyLayoutInPage;
+    TSCH3DScene * mBounds;
+    TSCH3DChartGetProjectedBoundsPipeline * mGetBounds;
+    Class  mGetBoundsClass;
     struct box<glm::detail::tvec2<float> > { 
         struct tvec2<float> { 
             union { 
@@ -57,7 +57,7 @@
                 float t; 
             } ; 
         } mMax; 
-    } mLayoutInPage;
+    }  mLayoutInPage;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -66,8 +66,8 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
-    } mLayoutSettings;
-    int mMode;
+    }  mLayoutSettings;
+    int  mMode;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -79,9 +79,9 @@
             int g; 
             int t; 
         } ; 
-    } mOriginalContainingViewport;
-    TSCH3DScene *mScene;
-    TSCH3DChartBoundsLayoutSceneDelegate *mSceneDelegate;
+    }  mOriginalContainingViewport;
+    TSCH3DScene * mScene;
+    TSCH3DChartBoundsLayoutSceneDelegate * mSceneDelegate;
 }
 
 @property (nonatomic) struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; } bodyLayoutInPage;

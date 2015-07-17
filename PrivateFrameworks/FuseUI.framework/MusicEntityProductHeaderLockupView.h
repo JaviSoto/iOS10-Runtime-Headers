@@ -3,35 +3,31 @@
  */
 
 @interface MusicEntityProductHeaderLockupView : MusicEntityAbstractLockupView <UITextViewDelegate> {
-    MPUTextButton *_addSongsButton;
-    UIButton *_addToLibraryButton;
-    int _addToLibraryButtonState;
-    UIView *_artworkEditingOverlayView;
-    _UIBackdropView *_backdropView;
-    UIImage *_backgroundImage;
-    UIImageView *_backgroundImageView;
-    UIView *_backgroundOverlayView;
-    UIView *_bottomHairlineView;
-    MusicNowPlayingFloatingButton *_cameraButton;
-    UIButton *_contextualActionsButton;
-    <MusicEntityProductHeaderLockupViewDelegate> *_delegate;
-    MusicDownloadStatusSashView *_downloadStatusSashView;
-    MPUTextButton *_editButton;
-    NSString *_editableText;
-    UIView *_editableTextBottomHairlineView;
-    UILabel *_editableTextHeaderLabel;
-    UITextView *_editableTextPlaceholderView;
-    UITextView *_editableTextView;
-    BOOL _editableTitleShouldBecomeFirstResponder;
-    BOOL _editing;
-    UIButton *_likeDislikeButton;
-    int _likeDislikeButtonState;
-    UIView *_placeholderBackgroundView;
-    MusicEntityViewProductHeaderLockupContentDescriptor *_productHeaderLockupContentDescriptor;
-    UIActivityIndicatorView *_refreshActivityIndicatorView;
-    UIButton *_refreshButton;
-    UIButton *_shareButton;
-    BOOL _shouldIgnoreArtworkImageChanges;
+    MPUTextButton * _addSongsButton;
+    UIButton * _addToLibraryButton;
+    int  _addToLibraryButtonState;
+    UIView * _artworkEditingOverlayView;
+    _UIBackdropView * _backdropView;
+    UIView * _bottomHairlineView;
+    MusicNowPlayingFloatingButton * _cameraButton;
+    UIButton * _contextualActionsButton;
+    <MusicEntityProductHeaderLockupViewDelegate> * _delegate;
+    MusicDownloadStatusSashView * _downloadStatusSashView;
+    MPUTextButton * _editButton;
+    NSString * _editableText;
+    UIView * _editableTextBottomHairlineView;
+    UILabel * _editableTextHeaderLabel;
+    UITextView * _editableTextPlaceholderView;
+    UITextView * _editableTextView;
+    BOOL  _editableTitleShouldBecomeFirstResponder;
+    BOOL  _editing;
+    UIButton * _likeDislikeButton;
+    int  _likeDislikeButtonState;
+    MusicEntityViewProductHeaderLockupContentDescriptor * _productHeaderLockupContentDescriptor;
+    UIActivityIndicatorView * _refreshActivityIndicatorView;
+    UIButton * _refreshButton;
+    UIButton * _shareButton;
+    BOOL  _shouldIgnoreArtworkImageChanges;
 }
 
 @property (nonatomic, readonly) UIButton *addToLibraryButton;

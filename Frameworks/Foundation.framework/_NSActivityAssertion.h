@@ -3,15 +3,16 @@
  */
 
 @interface _NSActivityAssertion : NSObject {
-    long long _ended;
-    id /* block */ _expirationHandler;
-    unsigned long long _options;
-    NSObject<OS_voucher> *_previousVoucher;
-    BKSProcessAssertion *_processAssertion;
-    NSString *_reason;
-    unsigned int _systemSleepAssertionID;
-    NSObject<OS_voucher> *_voucher;
-    <NSObject> *_xpcBoost;
+    unsigned char  _adoptPreviousVoucher;
+    long long  _ended;
+    id /* block */  _expirationHandler;
+    unsigned long long  _options;
+    NSObject<OS_voucher> * _previousVoucher;
+    BKSProcessAssertion * _processAssertion;
+    NSString * _reason;
+    unsigned int  _systemSleepAssertionID;
+    NSObject<OS_voucher> * _voucher;
+    <NSObject> * _xpcBoost;
 }
 
 + (void)_dumpExpiringActivitives;

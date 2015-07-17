@@ -3,25 +3,25 @@
  */
 
 @interface MPVolumeSlider : UISlider <MPAVRoutingControllerDelegate, MPVolumeControllerDelegate> {
-    NSTimer *_commitTimer;
-    BOOL _forcingOffscreenVisibility;
+    NSTimer * _commitTimer;
+    BOOL  _forcingOffscreenVisibility;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _hitRectInsets;
-    BOOL _isOffScreen;
-    UILabel *_routeNameLabel;
-    MPAVRoutingController *_routingController;
-    int _style;
-    UIImageView *_thumbImageView;
-    BOOL _thumbIsDefault;
-    UIImageView *_thumbMaskImageView;
-    MPVolumeController *_volumeController;
-    BOOL _volumeWarningBlinking;
-    UIImage *_volumeWarningTrackImage;
-    UIView *_volumeWarningView;
+    }  _hitRectInsets;
+    BOOL  _isOffScreen;
+    UILabel * _routeNameLabel;
+    MPAVRoutingController * _routingController;
+    int  _style;
+    UIImageView * _thumbImageView;
+    BOOL  _thumbIsDefault;
+    UIImageView * _thumbMaskImageView;
+    MPVolumeController * _volumeController;
+    BOOL  _volumeWarningBlinking;
+    UIImage * _volumeWarningTrackImage;
+    UIView * _volumeWarningView;
 }
 
 @property (setter=_setIsOffScreen:, nonatomic) BOOL _isOffScreen;

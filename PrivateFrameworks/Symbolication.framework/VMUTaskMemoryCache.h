@@ -3,11 +3,11 @@
  */
 
 @interface VMUTaskMemoryCache : NSObject {
-    struct mapped_memory_t { } *_memoryRegions;
-    BOOL _shouldTouchPages;
-    BOOL _stopped;
-    unsigned int _task;
-    BOOL _taskIs64Bit;
+    struct mapped_memory_t { } * _memoryRegions;
+    BOOL  _shouldTouchPages;
+    BOOL  _stopped;
+    unsigned int  _task;
+    BOOL  _taskIs64Bit;
 }
 
 + (BOOL)taskIs64Bit:(unsigned int)arg1;

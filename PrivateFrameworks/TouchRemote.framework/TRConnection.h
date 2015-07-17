@@ -3,13 +3,13 @@
  */
 
 @interface TRConnection : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _closed;
-    unsigned int _connectionCount;
-    NSMapTable *_packetEventClassToTargetActions;
-    NSObject<OS_dispatch_queue> *_sendQueue;
-    TRService *_service;
-    int _uniqueID;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _closed;
+    unsigned int  _connectionCount;
+    NSMapTable * _packetEventClassToTargetActions;
+    NSObject<OS_dispatch_queue> * _sendQueue;
+    TRService * _service;
+    int  _uniqueID;
 }
 
 @property (nonatomic, readonly) TRService *service;

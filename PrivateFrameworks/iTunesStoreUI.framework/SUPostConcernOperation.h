@@ -3,9 +3,9 @@
  */
 
 @interface SUPostConcernOperation : ISOperation <ISStoreURLOperationDelegate> {
-    NSString *_commentText;
-    SUConcernItem *_concern;
-    unsigned long long _itemIdentifier;
+    NSString * _commentText;
+    SUConcernItem * _concern;
+    unsigned long long  _itemIdentifier;
 }
 
 @property (retain) NSString *commentText;

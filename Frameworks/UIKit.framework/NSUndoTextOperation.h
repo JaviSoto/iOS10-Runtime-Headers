@@ -6,13 +6,14 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _affectedRange;
-    UITextInputController *_inputController;
+    }  _affectedRange;
+    UITextInputController * _inputController;
 }
 
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } affectedRange;
 @property (nonatomic) UITextInputController *inputController;
 
+- (void).cxx_destruct;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })affectedRange;
 - (id)initWithAffectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inputController:(id)arg2;
 - (id)inputController;

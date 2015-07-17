@@ -3,7 +3,7 @@
  */
 
 @interface TSPReadOnlyFileDataStorage : TSPFileDataStorage {
-    NSURL *_URL;
+    NSURL * _URL;
 }
 
 - (void).cxx_destruct;

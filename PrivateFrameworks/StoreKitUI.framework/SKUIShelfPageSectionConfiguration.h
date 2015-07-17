@@ -3,27 +3,27 @@
  */
 
 @interface SKUIShelfPageSectionConfiguration : NSObject {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    <SKUIShelfPageSectionConfigurationDataSource> *_dataSource;
-    int _lockupType;
-    BOOL _needsShelfCollectionViewLayout;
-    BOOL _needsShelfCollectionViewReload;
-    SKUIStorePageSectionContext *_pageSectionContext;
-    BOOL _rendersWithParallax;
-    BOOL _rendersWithPerspective;
-    int _sectionIndex;
-    UICollectionView *_shelfCollectionView;
-    UIColor *_shelfCollectionViewBackgroundColor;
-    <UICollectionViewDataSource> *_shelfCollectionViewDataSource;
-    <UICollectionViewDelegate> *_shelfCollectionViewDelegate;
-    SKUIShelfLayoutData *_shelfLayoutData;
-    IKViewElementStyle *_shelfViewElementStyle;
-    BOOL _topSection;
-    BOOL _wantsZoomingShelfLayout;
-    float _zoomingShelfLayoutFocusedItemHorizontalCenterOffset;
-    float _zoomingShelfLayoutInterItemSpacing;
-    float _zoomingShelfLayoutItemWidth;
-    float _zoomingShelfLayoutScaledItemWidth;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    <SKUIShelfPageSectionConfigurationDataSource> * _dataSource;
+    int  _lockupType;
+    BOOL  _needsShelfCollectionViewLayout;
+    BOOL  _needsShelfCollectionViewReload;
+    SKUIStorePageSectionContext * _pageSectionContext;
+    BOOL  _rendersWithParallax;
+    BOOL  _rendersWithPerspective;
+    int  _sectionIndex;
+    UICollectionView * _shelfCollectionView;
+    UIColor * _shelfCollectionViewBackgroundColor;
+    <UICollectionViewDataSource> * _shelfCollectionViewDataSource;
+    <UICollectionViewDelegate> * _shelfCollectionViewDelegate;
+    SKUIShelfLayoutData * _shelfLayoutData;
+    IKViewElementStyle * _shelfViewElementStyle;
+    BOOL  _topSection;
+    BOOL  _wantsZoomingShelfLayout;
+    float  _zoomingShelfLayoutFocusedItemHorizontalCenterOffset;
+    float  _zoomingShelfLayoutInterItemSpacing;
+    float  _zoomingShelfLayoutItemWidth;
+    float  _zoomingShelfLayoutScaledItemWidth;
 }
 
 @property (nonatomic, retain) SKUIViewElementLayoutContext *cellLayoutContext;

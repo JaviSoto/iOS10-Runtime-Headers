@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetSynchronousInspectorLoader : AVAssetInspectorLoader {
-    AVAssetInspector *_assetInspector;
+    AVAssetInspector * _assetInspector;
 }
 
 - (id)assetInspector;

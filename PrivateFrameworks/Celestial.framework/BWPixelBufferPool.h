@@ -3,15 +3,15 @@
  */
 
 @interface BWPixelBufferPool : NSObject {
-    NSDictionary *_additionalPixelBufferAttributes;
-    unsigned long _capacity;
-    BOOL _clientProvidesPool;
-    NSString *_name;
-    struct __CVPixelBufferPool { } *_pixelBufferPool;
-    NSDictionary *_pixelBufferPoolAuxAttributes;
-    long _pixelBufferPoolCreateError;
-    long _pixelBufferPoolOnce;
-    BWVideoFormat *_videoFormat;
+    NSDictionary * _additionalPixelBufferAttributes;
+    unsigned long  _capacity;
+    BOOL  _clientProvidesPool;
+    NSString * _name;
+    struct __CVPixelBufferPool { } * _pixelBufferPool;
+    NSDictionary * _pixelBufferPoolAuxAttributes;
+    long  _pixelBufferPoolCreateError;
+    long  _pixelBufferPoolOnce;
+    BWVideoFormat * _videoFormat;
 }
 
 @property (nonatomic, readonly) unsigned long capacity;

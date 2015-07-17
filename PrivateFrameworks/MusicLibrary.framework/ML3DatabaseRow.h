@@ -3,8 +3,8 @@
  */
 
 @interface ML3DatabaseRow : NSObject {
-    ML3DatabaseResult *_parentResult;
-    struct sqlite3_stmt { } *_stmt;
+    ML3DatabaseResult * _parentResult;
+    struct sqlite3_stmt { } * _stmt;
 }
 
 @property (nonatomic, readonly) ML3DatabaseResult *parentResult;

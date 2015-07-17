@@ -3,12 +3,12 @@
  */
 
 @interface SKUISlideshowGalleryBarView : UIView {
-    <SKUISlideshowGalleryBarViewDelegate> *_delegate;
-    NSMutableArray *_imageViews;
-    UIView *_imageViewsContainer;
-    unsigned int _numberOfImages;
-    unsigned int _selectedImageIndex;
-    UIToolbar *_toolbarView;
+    <SKUISlideshowGalleryBarViewDelegate> * _delegate;
+    NSMutableArray * _imageViews;
+    UIView * _imageViewsContainer;
+    unsigned int  _numberOfImages;
+    unsigned int  _selectedImageIndex;
+    UIToolbar * _toolbarView;
 }
 
 @property (nonatomic) <SKUISlideshowGalleryBarViewDelegate> *delegate;

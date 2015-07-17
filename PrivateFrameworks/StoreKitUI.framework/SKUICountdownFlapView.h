@@ -3,20 +3,20 @@
  */
 
 @interface SKUICountdownFlapView : UIImageView {
-    UIView *_backgroundViewBot;
-    UIView *_backgroundViewTop;
-    UIImageView *_backgroundViewTransitionBot;
-    UIImageView *_backgroundViewTransitionTop;
-    float _factor;
-    UIColor *_flapBottomColor;
-    UIColor *_flapTopColor;
-    UILabel *_labelBot;
-    UILabel *_labelTop;
-    UILabel *_labelTransitionBot;
-    UILabel *_labelTransitionTop;
-    int _position;
-    NSString *_string;
-    UIColor *_textColor;
+    UIView * _backgroundViewBot;
+    UIView * _backgroundViewTop;
+    UIImageView * _backgroundViewTransitionBot;
+    UIImageView * _backgroundViewTransitionTop;
+    float  _factor;
+    UIColor * _flapBottomColor;
+    UIColor * _flapTopColor;
+    UILabel * _labelBot;
+    UILabel * _labelTop;
+    UILabel * _labelTransitionBot;
+    UILabel * _labelTransitionTop;
+    int  _position;
+    NSString * _string;
+    UIColor * _textColor;
 }
 
 @property (nonatomic, readonly) UIColor *flapBottomColor;

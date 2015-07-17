@@ -3,18 +3,18 @@
  */
 
 @interface MPMusicPlayerClientState : NSObject {
-    BOOL _allowsBackgroundVideo;
-    int _backgroundPlaybackAccess;
-    MPMediaItem *_firstItem;
-    MPMediaPlaylist *_geniusMixPlaylist;
-    BOOL _hasAudioBackgroundMode;
-    MPMediaQuery *_query;
-    MPRadioStation *_radioStation;
-    int _repeatMode;
-    BOOL _seeking;
-    int _shuffleMode;
-    BOOL _useApplicationSpecificQueue;
-    BOOL _videoPlaybackEnabled;
+    BOOL  _allowsBackgroundVideo;
+    int  _backgroundPlaybackAccess;
+    MPMediaItem * _firstItem;
+    MPMediaPlaylist * _geniusMixPlaylist;
+    BOOL  _hasAudioBackgroundMode;
+    MPMediaQuery * _query;
+    MPRadioStation * _radioStation;
+    int  _repeatMode;
+    BOOL  _seeking;
+    int  _shuffleMode;
+    BOOL  _useApplicationSpecificQueue;
+    BOOL  _videoPlaybackEnabled;
 }
 
 @property (nonatomic) BOOL allowsBackgroundVideo;

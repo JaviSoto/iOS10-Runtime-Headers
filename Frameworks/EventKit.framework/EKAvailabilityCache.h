@@ -3,13 +3,13 @@
  */
 
 @interface EKAvailabilityCache : NSObject {
-    NSString *_accountID;
-    NSMutableDictionary *_addressesToCachedSpanRanges;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSMutableDictionary *_ignoredEventIDsToAddressBasedCaches;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    BOOL _sourceIsInvalid;
-    BOOL _sourceSupportsAvailabilityRequests;
+    NSString * _accountID;
+    NSMutableDictionary * _addressesToCachedSpanRanges;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSMutableDictionary * _ignoredEventIDsToAddressBasedCaches;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    BOOL  _sourceIsInvalid;
+    BOOL  _sourceSupportsAvailabilityRequests;
 }
 
 + (int)_convertType:(int)arg1;
@@ -22,6 +22,7 @@
 - (void)cancelAvailabilityRequestWithID:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithSource:(id)arg1;
 - (id)requestAvailabilityBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 resultsBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
 

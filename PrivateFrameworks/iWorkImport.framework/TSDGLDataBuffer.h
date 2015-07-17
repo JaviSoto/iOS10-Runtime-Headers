@@ -3,27 +3,27 @@
  */
 
 @interface TSDGLDataBuffer : NSObject <TSDGLDataBufferAccessor> {
-    BOOL _didTeardown;
-    unsigned int _drawMode;
-    TSDGLShader *_enabledShader;
-    BOOL _isDoubleBuffered;
-    BOOL _isEnabled;
-    BOOL _isUpdatingRawDataBuffer;
-    NSArray *_vertexAttributes;
-    unsigned int _vertexCount;
-    NSMutableArray *mArrayBuffers;
-    NSMutableDictionary *mAttributeToArrayBuffersDictionary;
-    unsigned int mCurrentBufferIndex;
-    unsigned int mElementArrayCount;
-    unsigned short *mGLElementData;
-    unsigned int mGLElementDataBuffer;
-    BOOL mGLElementDataBufferWasSetup;
+    BOOL  _didTeardown;
+    unsigned int  _drawMode;
+    TSDGLShader * _enabledShader;
+    BOOL  _isDoubleBuffered;
+    BOOL  _isEnabled;
+    BOOL  _isUpdatingRawDataBuffer;
+    NSArray * _vertexAttributes;
+    unsigned int  _vertexCount;
+    NSMutableArray * mArrayBuffers;
+    NSMutableDictionary * mAttributeToArrayBuffersDictionary;
+    unsigned int  mCurrentBufferIndex;
+    unsigned int  mElementArrayCount;
+    unsigned short * mGLElementData;
+    unsigned int  mGLElementDataBuffer;
+    BOOL  mGLElementDataBufferWasSetup;
     struct CGSize { 
         float width; 
         float height; 
-    } mGLElementMeshSize;
-    unsigned int mGLElementQuadParticleCount;
-    unsigned int mGLVertexArrayObjects;
+    }  mGLElementMeshSize;
+    unsigned int  mGLElementQuadParticleCount;
+    unsigned int  mGLVertexArrayObjects;
 }
 
 @property (readonly, copy) NSString *debugDescription;

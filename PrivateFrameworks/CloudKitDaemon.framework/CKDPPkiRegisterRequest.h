@@ -3,8 +3,8 @@
  */
 
 @interface CKDPPkiRegisterRequest : PBRequest <NSCopying> {
-    NSString *_currentKeyHash;
-    CKDPPublicKey *_publicKey;
+    NSString * _currentKeyHash;
+    CKDPPublicKey * _publicKey;
 }
 
 @property (nonatomic, retain) NSString *currentKeyHash;

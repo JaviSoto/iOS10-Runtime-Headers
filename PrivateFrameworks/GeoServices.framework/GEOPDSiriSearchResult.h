@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDSiriSearchResult : PBCodable <NSCopying> {
-    NSMutableArray *_disambiguationLabels;
+    NSMutableArray * _disambiguationLabels;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;

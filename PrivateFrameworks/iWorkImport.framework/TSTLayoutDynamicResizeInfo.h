@@ -3,24 +3,24 @@
  */
 
 @interface TSTLayoutDynamicResizeInfo : NSObject <TSTLayoutDynamicResizeInfoProtocol> {
-    float mCapturedColumnWidthTotal;
-    float *mCapturedColumnWidths;
-    float mCapturedRowHeightTotal;
-    float *mCapturedRowHeights;
-    TSTCellRegion *mColumnRegion;
-    float *mCurrentColumnWidths;
-    float *mCurrentRowHeights;
-    float *mMinimumColumnWidths;
-    float *mMinimumRowHeights;
-    unsigned short mNumberOfColumns;
-    unsigned short mNumberOfResizableColumns;
-    unsigned short mNumberOfResizableRows;
-    unsigned short mNumberOfRows;
-    TSTCellRegion *mRowRegion;
-    unsigned char mStartColumnIndex;
-    unsigned short mStartRowIndex;
-    int mTableRowsBehavior;
-    BOOL mValid;
+    float  mCapturedColumnWidthTotal;
+    float * mCapturedColumnWidths;
+    float  mCapturedRowHeightTotal;
+    float * mCapturedRowHeights;
+    TSTCellRegion * mColumnRegion;
+    float * mCurrentColumnWidths;
+    float * mCurrentRowHeights;
+    float * mMinimumColumnWidths;
+    float * mMinimumRowHeights;
+    unsigned short  mNumberOfColumns;
+    unsigned short  mNumberOfResizableColumns;
+    unsigned short  mNumberOfResizableRows;
+    unsigned short  mNumberOfRows;
+    TSTCellRegion * mRowRegion;
+    unsigned char  mStartColumnIndex;
+    unsigned short  mStartRowIndex;
+    int  mTableRowsBehavior;
+    BOOL  mValid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

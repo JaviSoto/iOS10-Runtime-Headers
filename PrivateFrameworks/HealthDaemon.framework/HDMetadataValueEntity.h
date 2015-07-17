@@ -10,8 +10,8 @@
 + (id)_predicateForEntityWithObjectID:(id)arg1;
 + (id)_propertySettersForResult;
 + (id)_resultsForPredicate:(id)arg1 database:(id)arg2;
++ (id)columnsDefinition;
 + (id)createNonUniqueIndicesForColumns;
-+ (id)createTableSQL;
 + (id)databaseTable;
 + (id)deleteStatementForObjectMetadataWithDatabase:(id)arg1;
 + (id)insertMetadataValueWithKeyID:(id)arg1 objectID:(id)arg2 value:(id)arg3 healthDatabase:(id)arg4 error:(id*)arg5;

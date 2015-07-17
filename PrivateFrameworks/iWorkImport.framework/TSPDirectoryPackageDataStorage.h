@@ -3,13 +3,13 @@
  */
 
 @interface TSPDirectoryPackageDataStorage : TSPFileDataStorage {
-    unsigned long long _cachedEncodedLength;
-    <TSPCryptoInfo> *_decryptionInfo;
-    BOOL _gilligan_isRemote;
-    BOOL _isMissingData;
-    TSPDirectoryPackage *_package;
-    unsigned char _packageIdentifier;
-    NSString *_path;
+    unsigned long long  _cachedEncodedLength;
+    <TSPCryptoInfo> * _decryptionInfo;
+    BOOL  _gilligan_isRemote;
+    BOOL  _isMissingData;
+    TSPDirectoryPackage * _package;
+    unsigned char  _packageIdentifier;
+    NSString * _path;
 }
 
 - (void).cxx_destruct;

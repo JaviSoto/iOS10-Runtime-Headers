@@ -4,8 +4,10 @@
 
 @interface SAHAFilter : SADomainObject
 
++ (id)filter;
++ (id)filterWithDictionary:(id)arg1 context:(id)arg2;
+
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)init;
 
 @end

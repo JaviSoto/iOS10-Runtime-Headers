@@ -3,10 +3,10 @@
  */
 
 @interface TLVibrationPattern : NSObject {
-    id _complexPatternDescription;
-    id _contextObject;
-    double _duration;
-    id _propertyListRepresentation;
+    id  _complexPatternDescription;
+    id  _contextObject;
+    double  _duration;
+    id  _propertyListRepresentation;
 }
 
 @property (nonatomic, readonly) id _artificiallyRepeatingPropertyListRepresentation;

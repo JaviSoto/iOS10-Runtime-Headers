@@ -3,8 +3,8 @@
  */
 
 @interface SYTransportLog : NSObject {
-    NSString *_facility;
-    NSString *_rootPath;
+    NSString * _facility;
+    NSString * _rootPath;
 }
 
 @property (nonatomic, copy) NSString *facility;

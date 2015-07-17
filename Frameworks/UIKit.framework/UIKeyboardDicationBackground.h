@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardDicationBackground : UIView {
-    UIKeyboardDicationBackgroundGradientView *_gradient;
-    NSArray *_shadows;
+    UIKeyboardDicationBackgroundGradientView * _gradient;
+    NSArray * _shadows;
 }
 
 @property (nonatomic, retain) UIKeyboardDicationBackgroundGradientView *gradient;

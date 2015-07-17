@@ -3,10 +3,10 @@
  */
 
 @interface StocksTapDragGestureRecognizer : UIGestureRecognizer {
-    unsigned int _maximumNumberOfTouches;
-    unsigned int _minimumNumberOfTouches;
-    float _requiredPressDelay;
-    NSTimer *_touchDelayTimer;
+    unsigned int  _maximumNumberOfTouches;
+    unsigned int  _minimumNumberOfTouches;
+    float  _requiredPressDelay;
+    NSTimer * _touchDelayTimer;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,8 +16,8 @@
             float width; 
             float height; 
         } size; 
-    } _touchableBounds;
-    NSMutableSet *_touches;
+    }  _touchableBounds;
+    NSMutableSet * _touches;
 }
 
 @property (nonatomic) unsigned int maximumNumberOfTouches;

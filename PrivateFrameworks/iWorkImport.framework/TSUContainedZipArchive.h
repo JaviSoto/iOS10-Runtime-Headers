@@ -3,8 +3,8 @@
  */
 
 @interface TSUContainedZipArchive : TSUZipArchive {
-    TSUZipEntry *_entry;
-    TSUZipArchive *_zipArchive;
+    TSUZipEntry * _entry;
+    TSUZipArchive * _zipArchive;
 }
 
 + (id)zipArchiveFromEntry:(id)arg1 zipArchive:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;

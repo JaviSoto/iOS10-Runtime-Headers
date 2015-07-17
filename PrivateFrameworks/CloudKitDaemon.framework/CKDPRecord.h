@@ -3,22 +3,22 @@
  */
 
 @interface CKDPRecord : PBCodable <NSCopying> {
-    NSMutableArray *_conflictLoserEtags;
-    CKDPIdentifier *_createdBy;
-    NSString *_etag;
-    NSMutableArray *_fields;
+    NSMutableArray * _conflictLoserEtags;
+    CKDPIdentifier * _createdBy;
+    NSString * _etag;
+    NSMutableArray * _fields;
     struct { 
         unsigned int permission : 1; 
-    } _has;
-    CKDPIdentifier *_modifiedBy;
-    NSString *_modifiedByDevice;
-    int _permission;
-    NSMutableArray *_pluginFields;
-    CKDPProtectionInfo *_protectionInfo;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPShareIdentifier *_shareId;
-    CKDPDateStatistics *_timeStatistics;
-    CKDPRecordType *_type;
+    }  _has;
+    CKDPIdentifier * _modifiedBy;
+    NSString * _modifiedByDevice;
+    int  _permission;
+    NSMutableArray * _pluginFields;
+    CKDPProtectionInfo * _protectionInfo;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPShareIdentifier * _shareId;
+    CKDPDateStatistics * _timeStatistics;
+    CKDPRecordType * _type;
 }
 
 @property (nonatomic, retain) NSMutableArray *conflictLoserEtags;

@@ -3,8 +3,8 @@
  */
 
 @interface MSCLVideoScrubberControl : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing> {
-    MPDetailScrubController *_detailScrubController;
-    BOOL _isTracking;
+    MPDetailScrubController * _detailScrubController;
+    BOOL  _isTracking;
 }
 
 @property (nonatomic, readonly) int currentScrubSpeed;

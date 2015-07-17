@@ -3,13 +3,13 @@
  */
 
 @interface SKUIPhysicalCirclesDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUIOnboardingAffiliationCirclesDelegate, SKUIPhysicalCirclesTemplateDelegate, UIGestureRecognizerDelegate> {
-    SKUIOnboardingAffiliationCirclesViewController *_circlesViewController;
-    SKUIOnboardingFooterView *_footerView;
-    NSMapTable *_imageRequests;
-    UIGestureRecognizer *_interactivePopGestureRecognizer;
-    SKUIOnboardingProgressView *_progressView;
-    SKUIResourceLoader *_resourceLoader;
-    SKUIPhysicalCirclesTemplateViewElement *_templateElement;
+    SKUIOnboardingAffiliationCirclesViewController * _circlesViewController;
+    SKUIOnboardingFooterView * _footerView;
+    NSMapTable * _imageRequests;
+    UIGestureRecognizer * _interactivePopGestureRecognizer;
+    SKUIOnboardingProgressView * _progressView;
+    SKUIResourceLoader * _resourceLoader;
+    SKUIPhysicalCirclesTemplateViewElement * _templateElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

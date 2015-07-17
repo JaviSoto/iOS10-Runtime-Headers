@@ -3,8 +3,8 @@
  */
 
 @interface BRDaemonConnection : NSXPCConnection {
-    BOOL _isUsingTokenService;
-    NSUUID *_uuid;
+    BOOL  _isUsingTokenService;
+    NSUUID * _uuid;
 }
 
 + (id)cloudDocsAppSupportURL;

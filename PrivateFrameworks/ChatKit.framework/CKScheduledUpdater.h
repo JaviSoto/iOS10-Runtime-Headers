@@ -3,7 +3,7 @@
  */
 
 @interface CKScheduledUpdater : CKManualUpdater {
-    NSCountedSet *_holdingUpdatesKeys;
+    NSCountedSet * _holdingUpdatesKeys;
 }
 
 @property (nonatomic, retain) NSCountedSet *holdingUpdatesKeys;

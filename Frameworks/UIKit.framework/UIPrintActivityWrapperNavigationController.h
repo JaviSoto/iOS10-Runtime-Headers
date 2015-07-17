@@ -3,13 +3,13 @@
  */
 
 @interface UIPrintActivityWrapperNavigationController : UINavigationController {
-    id /* block */ _completionHandler;
-    BOOL _presentedPrintInteractionController;
+    id /* block */  _completionHandler;
+    BOOL  _presentedPrintInteractionController;
 }
 
 @property (nonatomic) BOOL presentedPrintInteractionController;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithCompletion:(id /* block */)arg1;
 - (BOOL)presentedPrintInteractionController;
 - (void)setPresentedPrintInteractionController:(BOOL)arg1;

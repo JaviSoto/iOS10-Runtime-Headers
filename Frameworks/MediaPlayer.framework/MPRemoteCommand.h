@@ -3,12 +3,12 @@
  */
 
 @interface MPRemoteCommand : NSObject {
-    NSString *_contextID;
-    <MPRemoteCommandDelegate> *_delegate;
-    BOOL _enabled;
-    unsigned int _mediaRemoteCommandType;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableArray *_targetInvocations;
+    NSString * _contextID;
+    <MPRemoteCommandDelegate> * _delegate;
+    BOOL  _enabled;
+    unsigned int  _mediaRemoteCommandType;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSMutableArray * _targetInvocations;
 }
 
 @property (getter=isEnabled, nonatomic) BOOL enabled;

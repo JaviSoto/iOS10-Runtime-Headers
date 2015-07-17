@@ -3,19 +3,20 @@
  */
 
 @interface PRSSearchFeedback : PRSFeedback {
-    BOOL _cached;
-    NSDictionary *_client_error;
-    NSString *_connectionType;
-    int _delta;
-    int _delta_ref;
-    BOOL _error;
-    NSString *_error_code;
-    int _latency;
-    long long _responseSize;
-    NSArray *_serverStatus;
-    int _ttfb;
-    int _type;
-    NSURLRequest *_urlRequest;
+    BOOL  _cached;
+    NSDictionary * _client_error;
+    NSString * _connectionType;
+    int  _delta;
+    int  _delta_ref;
+    BOOL  _error;
+    NSString * _error_code;
+    int  _latency;
+    NSNumber * _queryId;
+    long long  _responseSize;
+    NSArray * _serverStatus;
+    int  _ttfb;
+    int  _type;
+    NSURLRequest * _urlRequest;
 }
 
 @property (nonatomic) BOOL cached;
@@ -26,6 +27,7 @@
 @property (nonatomic) BOOL error;
 @property (nonatomic, retain) NSString *error_code;
 @property (nonatomic) int latency;
+@property (nonatomic, readonly) NSNumber *queryId;
 @property (nonatomic) long long responseSize;
 @property (nonatomic, retain) NSArray *serverStatus;
 @property (nonatomic) int ttfb;
@@ -45,8 +47,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFeedback:(id)arg1;
 - (id)initWithInput:(id)arg1 type:(int)arg2 timestamp:(int)arg3 connectionType:(id)arg4;
+- (id)initWithInput:(id)arg1 type:(int)arg2 timestamp:(int)arg3 connectionType:(id)arg4 queryId:(id)arg5;
 - (int)latency;
 - (id)plist;
+- (id)queryId;
 - (long long)responseSize;
 - (id)serverStatus;
 - (void)setCached:(BOOL)arg1;

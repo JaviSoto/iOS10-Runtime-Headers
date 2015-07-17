@@ -3,7 +3,7 @@
  */
 
 @interface NCWidgetController : NSObject <_NCWidgetController_Service_IPC> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 + (id)widgetController;

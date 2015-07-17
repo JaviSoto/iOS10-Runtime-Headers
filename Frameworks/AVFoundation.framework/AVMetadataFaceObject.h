@@ -3,7 +3,7 @@
  */
 
 @interface AVMetadataFaceObject : AVMetadataObject <NSCopying> {
-    AVMetadataFaceObjectInternal *_internal;
+    AVMetadataFaceObjectInternal * _internal;
 }
 
 @property (readonly) int faceID;

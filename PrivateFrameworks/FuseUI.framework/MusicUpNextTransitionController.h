@@ -3,14 +3,14 @@
  */
 
 @interface MusicUpNextTransitionController : NSObject <UIViewControllerAnimatedTransitioning> {
-    UIView *_itemContainerView;
-    MusicNowPlayingViewController *_nowPlayingViewController;
-    BOOL _presenting;
-    BOOL _requiresNonSpringAnimation;
-    id /* block */ _transitionEndBlock;
-    id /* block */ _transitionFinishBlock;
-    id /* block */ _transitionStartBlock;
-    MusicUpNextViewController *_upNextViewController;
+    UIView * _itemContainerView;
+    MusicNowPlayingViewController * _nowPlayingViewController;
+    BOOL  _presenting;
+    BOOL  _requiresNonSpringAnimation;
+    id /* block */  _transitionEndBlock;
+    id /* block */  _transitionFinishBlock;
+    id /* block */  _transitionStartBlock;
+    MusicUpNextViewController * _upNextViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

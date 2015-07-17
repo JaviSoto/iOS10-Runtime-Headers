@@ -3,7 +3,7 @@
  */
 
 @interface LSApplicationWorkspaceObserver : NSObject <LSApplicationWorkspaceObserverProtocol, NSSecureCoding> {
-    NSUUID *_uuid;
+    NSUUID * _uuid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

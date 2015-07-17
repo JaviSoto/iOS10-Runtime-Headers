@@ -3,9 +3,11 @@
  */
 
 @interface PDTransitionOptions : NSObject {
-    BOOL mHasSound;
-    BOOL mIsStartSoundAction;
-    NSString *mSoundFile;
+    BOOL  mHasSound;
+    BOOL  mIsStartSoundAction;
+    NSString * mSoundFile;
 }
+
+- (id)description;
 
 @end

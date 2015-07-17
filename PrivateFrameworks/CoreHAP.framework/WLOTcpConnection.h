@@ -3,9 +3,9 @@
  */
 
 @interface WLOTcpConnection : NSObject <NSStreamDelegate> {
-    <WLOTcpConnectionDelegate> *_delegate;
-    NSInputStream *_inputStream;
-    NSOutputStream *_outputStream;
+    <WLOTcpConnectionDelegate> * _delegate;
+    NSInputStream * _inputStream;
+    NSOutputStream * _outputStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

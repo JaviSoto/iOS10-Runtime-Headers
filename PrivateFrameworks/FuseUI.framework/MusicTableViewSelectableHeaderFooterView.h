@@ -3,17 +3,17 @@
  */
 
 @interface MusicTableViewSelectableHeaderFooterView : UITableViewHeaderFooterView {
-    UIView *_bottomHairlineView;
-    int _highlightOrSelectionChangeTransactionsCount;
-    UIView *_highlightOverlayView;
-    BOOL _highlighted;
-    BOOL _lastHighlightOrSelectionChangeWasAnimated;
-    BOOL _selected;
-    UIColor *_selectionTintColor;
-    UIColor *_separatorColor;
-    BOOL _showsBottomSeparator;
-    BOOL _showsTopSeparator;
-    UIView *_topHairlineView;
+    UIView * _bottomHairlineView;
+    int  _highlightOrSelectionChangeTransactionsCount;
+    UIView * _highlightOverlayView;
+    BOOL  _highlighted;
+    BOOL  _lastHighlightOrSelectionChangeWasAnimated;
+    BOOL  _selected;
+    UIColor * _selectionTintColor;
+    UIColor * _separatorColor;
+    BOOL  _showsBottomSeparator;
+    BOOL  _showsTopSeparator;
+    UIView * _topHairlineView;
 }
 
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
@@ -29,7 +29,7 @@
 - (void)_updateBackgroundColorAnimated:(BOOL)arg1;
 - (void)beginHighlightOrSelectionChangeTransaction;
 - (void)endHighlightOrSelectionChangeTransaction;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (void)layoutSubviews;

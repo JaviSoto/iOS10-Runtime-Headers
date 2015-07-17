@@ -3,12 +3,12 @@
  */
 
 @interface TSPDocumentProperties : NSObject <NSCopying> {
-    NSDictionary *_additionalProperties;
-    NSUUID *_documentUUID;
-    unsigned long long _fileFormatVersion;
-    TSPDocumentRevision *_revision;
-    NSUUID *_shareUUID;
-    NSUUID *_versionUUID;
+    NSDictionary * _additionalProperties;
+    NSUUID * _documentUUID;
+    unsigned long long  _fileFormatVersion;
+    TSPDocumentRevision * _revision;
+    NSUUID * _shareUUID;
+    NSUUID * _versionUUID;
 }
 
 @property (nonatomic, copy) NSDictionary *additionalProperties;

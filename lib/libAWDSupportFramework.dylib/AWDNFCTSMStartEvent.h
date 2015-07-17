@@ -10,15 +10,15 @@
         unsigned int persistentAvail : 1; 
         unsigned int transientDeselectAvail : 1; 
         unsigned int transientResetAvail : 1; 
-    } _has;
-    unsigned int _idxTableAvail;
-    unsigned int _persistentAvail;
-    unsigned long long _timeDeltaFromReference;
-    unsigned long long _timestamp;
-    unsigned int _transientDeselectAvail;
-    unsigned int _transientResetAvail;
-    NSString *_url;
-    NSData *_uuidReference;
+    }  _has;
+    unsigned int  _idxTableAvail;
+    unsigned int  _persistentAvail;
+    unsigned long long  _timeDeltaFromReference;
+    unsigned long long  _timestamp;
+    unsigned int  _transientDeselectAvail;
+    unsigned int  _transientResetAvail;
+    NSString * _url;
+    NSData * _uuidReference;
 }
 
 @property (nonatomic) BOOL hasIdxTableAvail;

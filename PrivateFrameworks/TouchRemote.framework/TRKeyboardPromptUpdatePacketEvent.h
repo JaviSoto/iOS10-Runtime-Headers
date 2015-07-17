@@ -3,13 +3,13 @@
  */
 
 @interface TRKeyboardPromptUpdatePacketEvent : TRPacketEvent {
-    int _keyboardType;
-    BOOL _secureText;
-    unsigned long long _sessionID;
-    NSString *_subtitle;
-    NSString *_text;
-    NSString *_title;
-    int _updateType;
+    int  _keyboardType;
+    BOOL  _secureText;
+    unsigned long long  _sessionID;
+    NSString * _subtitle;
+    NSString * _text;
+    NSString * _title;
+    int  _updateType;
 }
 
 @property (nonatomic, readonly) int keyboardType;

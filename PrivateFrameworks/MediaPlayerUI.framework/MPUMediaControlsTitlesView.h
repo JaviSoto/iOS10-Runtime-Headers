@@ -3,13 +3,13 @@
  */
 
 @interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <MPUContentSizeCategoryChanging, SBUIControlCenterControlObserver> {
-    NSString *_appDisplayName;
-    <MPUMediaControlsTitlesViewDelegate> *_delegate;
-    CALayer *_detailEdgesLayerMask;
-    BOOL _displayingAppName;
-    BOOL _highlighted;
-    int _mediaControlsStyle;
-    CALayer *_titleEdgesLayerMask;
+    NSString * _appDisplayName;
+    <MPUMediaControlsTitlesViewDelegate> * _delegate;
+    CALayer * _detailEdgesLayerMask;
+    BOOL  _displayingAppName;
+    BOOL  _highlighted;
+    int  _mediaControlsStyle;
+    CALayer * _titleEdgesLayerMask;
 }
 
 @property (readonly, copy) NSString *debugDescription;

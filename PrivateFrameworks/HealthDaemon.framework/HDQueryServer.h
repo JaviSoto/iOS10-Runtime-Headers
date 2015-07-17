@@ -3,16 +3,18 @@
  */
 
 @interface HDQueryServer : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HKQueryServer> {
-    <NSXPCProxyCreating> *_clientProxy;
-    <HDHealthDaemon> *_daemon;
-    <HDQueryServerDelegate> *_delegate;
-    BOOL _didEndActivationTransaction;
-    _HKFilter *_filter;
-    NSObject<OS_dispatch_queue> *_queryQueue;
-    int _queryState;
-    NSUUID *_queryUUID;
-    HKSampleType *_sampleType;
-    int _shouldDeactivate;
+    <NSXPCProxyCreating> * _clientProxy;
+    <HDHealthDaemon> * _daemon;
+    <HDQueryServerDelegate> * _delegate;
+    BOOL  _didEndActivationTransaction;
+    _HKFilter * _filter;
+    int  _observingData;
+    int  _pauseRequested;
+    NSObject<OS_dispatch_queue> * _queryQueue;
+    int  _queryState;
+    NSUUID * _queryUUID;
+    HKSampleType * _sampleType;
+    int  _shouldDeactivate;
 }
 
 @property (nonatomic, readonly) <NSXPCProxyCreating> *clientProxy;
@@ -30,7 +32,10 @@
 
 - (void).cxx_destruct;
 - (id)_activationTransactionString;
+- (void)_batchSamplesWithLimit:(unsigned int)arg1 predicate:(id)arg2 anchor:(id)arg3 includeDeletedObjects:(BOOL)arg4 batchHandler:(id /* block */)arg5;
+- (void)_batchSamplesWithLimit:(unsigned int)arg1 sortDescriptors:(id)arg2 predicate:(id)arg3 anchor:(id)arg4 batchHandler:(id /* block */)arg5;
 - (BOOL)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2;
+- (BOOL)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2 authorizationAnchor:(id*)arg3;
 - (void)_pauseServerValidate:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (id)_predicateString;
 - (id)_queryStateString;
@@ -46,7 +51,9 @@
 - (void)_scheduleStartQuery;
 - (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (BOOL)_shouldListenForUpdates;
+- (BOOL)_shouldObserveOnPause;
 - (BOOL)_shouldStopProcessingQuery;
+- (BOOL)_shouldSuspendQuery;
 - (void)activateServerWithCompletion:(id /* block */)arg1;
 - (id)clientProxy;
 - (id)daemon;

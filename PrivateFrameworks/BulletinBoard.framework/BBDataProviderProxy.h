@@ -3,14 +3,14 @@
  */
 
 @interface BBDataProviderProxy : NSObject <BBRemoteDataProviderClientProxy> {
-    NSObject<OS_dispatch_queue> *_clientCalloutQueue;
-    BOOL _connected;
-    <BBRemoteDataProvider> *_dataProvider;
-    BOOL _dataProviderDidLoad;
-    BBDataProviderIdentity *_identity;
-    NSObject<OS_dispatch_queue> *_proxyQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    <BBRemoteDataProviderServerProxy> *_serverProxy;
+    NSObject<OS_dispatch_queue> * _clientCalloutQueue;
+    BOOL  _connected;
+    <BBRemoteDataProvider> * _dataProvider;
+    BOOL  _dataProviderDidLoad;
+    BBDataProviderIdentity * _identity;
+    NSObject<OS_dispatch_queue> * _proxyQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    <BBRemoteDataProviderServerProxy> * _serverProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -45,7 +45,6 @@
 - (void)setServerProxy:(id)arg1;
 - (void)updateClearedInfoWithHandler:(id /* block */)arg1;
 - (void)updateIdentity:(id /* block */)arg1;
-- (void)updateSectionInfoInCategory:(int)arg1 withHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)updateSectionInfoWithHandler:(id /* block */)arg1;
 - (void)updateSectionInfoWithHandler:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1;

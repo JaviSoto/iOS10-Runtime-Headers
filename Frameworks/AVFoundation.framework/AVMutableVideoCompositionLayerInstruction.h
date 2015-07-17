@@ -3,7 +3,7 @@
  */
 
 @interface AVMutableVideoCompositionLayerInstruction : AVVideoCompositionLayerInstruction {
-    AVMutableVideoCompositionLayerInstructionInternal *_mutableLayerInstruction;
+    AVMutableVideoCompositionLayerInstructionInternal * _mutableLayerInstruction;
 }
 
 @property (nonatomic) int trackID;

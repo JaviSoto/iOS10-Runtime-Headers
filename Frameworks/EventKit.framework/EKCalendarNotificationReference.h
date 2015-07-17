@@ -3,14 +3,14 @@
  */
 
 @interface EKCalendarNotificationReference : NSObject {
-    NSDate *_date;
-    EKEventStore *_eventStore;
-    EKCalendarNotification *_notification;
+    NSDate * _date;
+    EKEventStore * _eventStore;
+    EKCalendarNotification * _notification;
     struct { 
         int entityType; 
         int entityID; 
-    } _objectID;
-    int _type;
+    }  _objectID;
+    int  _type;
 }
 
 @property (nonatomic, readonly) EKCalendarNotification *notification;

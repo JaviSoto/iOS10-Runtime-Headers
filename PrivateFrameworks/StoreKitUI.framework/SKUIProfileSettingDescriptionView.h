@@ -3,10 +3,10 @@
  */
 
 @interface SKUIProfileSettingDescriptionView : SKUISettingDescriptionView {
-    UILabel *_handleLabel;
-    BOOL _hasDisclosureChevron;
-    SKUIImageView *_imageView;
-    UILabel *_nameLabel;
+    UILabel * _handleLabel;
+    BOOL  _hasDisclosureChevron;
+    SKUIImageView * _imageView;
+    UILabel * _nameLabel;
 }
 
 + (struct CGSize { float x1; float x2; })preferredSizeForSettingDescription:(id)arg1 context:(id)arg2;

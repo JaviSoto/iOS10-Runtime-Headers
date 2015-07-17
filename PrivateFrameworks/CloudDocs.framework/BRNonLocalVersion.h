@@ -3,17 +3,17 @@
  */
 
 @interface BRNonLocalVersion : NSObject {
-    NSString *_displayName;
-    NSString *_etag;
-    BOOL _hasThumbnail;
-    NSString *_lastEditorDeviceName;
-    NSString *_lastEditorFormattedName;
-    NSDate *_modificationDate;
-    NSURL *_physicalURL;
-    long long _sandboxHandle;
-    unsigned long long _size;
-    NSURL *_url;
-    GSPermanentStorage *_versionsStore;
+    NSString * _displayName;
+    NSString * _etag;
+    BOOL  _hasThumbnail;
+    NSString * _lastEditorDeviceName;
+    NSString * _lastEditorFormattedName;
+    NSDate * _modificationDate;
+    NSURL * _physicalURL;
+    long long  _sandboxHandle;
+    unsigned long long  _size;
+    NSURL * _url;
+    GSPermanentStorage * _versionsStore;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

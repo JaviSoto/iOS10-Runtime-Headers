@@ -3,10 +3,10 @@
  */
 
 @interface GEOCompanionStep : PBCodable <NSCopying> {
-    unsigned int _distance;
-    GEOCompanionDriveStep *_driveStep;
-    unsigned int _endCoordinateIndex;
-    GEOCompanionFerryStep *_ferryStep;
+    unsigned int  _distance;
+    GEOCompanionDriveStep * _driveStep;
+    unsigned int  _endCoordinateIndex;
+    GEOCompanionFerryStep * _ferryStep;
     struct { 
         unsigned int distance : 1; 
         unsigned int endCoordinateIndex : 1; 
@@ -14,13 +14,13 @@
         unsigned int startCoordinateIndex : 1; 
         unsigned int stepID : 1; 
         unsigned int time : 1; 
-    } _has;
-    unsigned int _maneuverStartCoordinateIndex;
-    NSString *_roadName;
-    unsigned int _startCoordinateIndex;
-    unsigned int _stepID;
-    unsigned int _time;
-    GEOCompanionWalkStep *_walkStep;
+    }  _has;
+    unsigned int  _maneuverStartCoordinateIndex;
+    NSString * _roadName;
+    unsigned int  _startCoordinateIndex;
+    unsigned int  _stepID;
+    unsigned int  _time;
+    GEOCompanionWalkStep * _walkStep;
 }
 
 @property (nonatomic) unsigned int distance;

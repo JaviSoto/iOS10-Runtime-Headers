@@ -3,9 +3,9 @@
  */
 
 @interface PUCropAspect : NSObject {
-    float _height;
-    NSString *_localizedName;
-    float _width;
+    float  _height;
+    NSString * _localizedName;
+    float  _width;
 }
 
 @property (nonatomic, readonly) float height;

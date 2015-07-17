@@ -3,7 +3,7 @@
  */
 
 @interface AVMutableScheduledAudioParameters : AVScheduledAudioParameters {
-    AVMutableScheduledAudioParametersInternal *_mutableScheduledParametersInternal;
+    AVMutableScheduledAudioParametersInternal * _mutableScheduledParametersInternal;
 }
 
 + (id)scheduledAudioParameters;

@@ -3,11 +3,11 @@
  */
 
 @interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
-    BOOL _canBeWeakScriptReference;
-    SUClientInterface *_clientInterface;
-    BOOL _loading;
-    SUSection *_section;
-    int _storeBarStyle;
+    BOOL  _canBeWeakScriptReference;
+    SUClientInterface * _clientInterface;
+    BOOL  _loading;
+    SUSection * _section;
+    int  _storeBarStyle;
 }
 
 @property (nonatomic, retain) SUClientInterface *clientInterface;

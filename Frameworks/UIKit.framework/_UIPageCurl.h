@@ -3,8 +3,8 @@
  */
 
 @interface _UIPageCurl : NSObject {
-    NSMutableArray *_activeStateQueue;
-    NSMutableSet *_completedStates;
+    NSMutableArray * _activeStateQueue;
+    NSMutableSet * _completedStates;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,15 +14,15 @@
             float width; 
             float height; 
         } size; 
-    } _contentRect;
-    UIView *_contentView;
-    double _delayBetweenSuccessiveAnimations;
-    float _manualPageCurlMaxDAngle;
-    _UIPageCurlState *_manualPageCurlState;
-    float _pageDiagonalAngle;
-    float _pageDiagonalLength;
-    NSMutableArray *_pendingStateQueue;
-    int _spineLocation;
+    }  _contentRect;
+    UIView * _contentView;
+    double  _delayBetweenSuccessiveAnimations;
+    float  _manualPageCurlMaxDAngle;
+    _UIPageCurlState * _manualPageCurlState;
+    float  _pageDiagonalAngle;
+    float  _pageDiagonalLength;
+    NSMutableArray * _pendingStateQueue;
+    int  _spineLocation;
 }
 
 @property (getter=_isManualPageCurlInProgressAndUncommitted, nonatomic, readonly) BOOL _manualPageCurlInProgressAndUncommitted;
@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) int _spineLocation;
 @property (nonatomic, readonly) NSNumber *_wrappedManualPageCurlDirection;
 
+- (void).cxx_destruct;
 - (void)_abortManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2;
 - (id)_animationKeyPaths;
 - (BOOL)_areAnimationsInFlightOrPending;

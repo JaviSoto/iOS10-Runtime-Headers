@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DTexCoordGeneration : NSObject {
-    TSCH3DNormalDirectionMapper *mNormalDirectionMapper;
+    TSCH3DNormalDirectionMapper * mNormalDirectionMapper;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -27,7 +27,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mTransform;
+    }  mTransform;
 }
 
 @property (nonatomic, retain) TSCH3DNormalDirectionMapper *normalDirectionMapper;

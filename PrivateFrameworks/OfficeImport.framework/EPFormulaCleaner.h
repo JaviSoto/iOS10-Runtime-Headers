@@ -3,15 +3,15 @@
  */
 
 @interface EPFormulaCleaner : EDProcessor {
-    EDRowBlocks *mBaseFormulaRowBlocks;
-    int mColumnOffset;
-    EDSheet *mCurrentSheet;
-    EDFormula *mFormula;
-    OITSUIntDictionary *mNameArrayedTestCache;
-    OITSUIntDictionary *mNameCircularReferenceTestCache;
-    EDName *mParentName;
-    int mRowOffset;
-    EDFormula *mTokensToClean;
+    EDRowBlocks * mBaseFormulaRowBlocks;
+    int  mColumnOffset;
+    EDSheet * mCurrentSheet;
+    EDFormula * mFormula;
+    OITSUIntDictionary * mNameArrayedTestCache;
+    OITSUIntDictionary * mNameCircularReferenceTestCache;
+    EDName * mParentName;
+    int  mRowOffset;
+    EDFormula * mTokensToClean;
 }
 
 - (void)addOffsetsToRow:(int*)arg1 rowRelative:(bool)arg2 column:(int*)arg3 columnRelative:(bool)arg4;
@@ -56,6 +56,8 @@
 - (bool)useEvaluationStackToCheckFunctionId:(int)arg1 functionName:(id)arg2 tokenIndex:(unsigned int)arg3;
 - (unsigned int)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2;
 - (id)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 allReferencesAllowed:(bool)arg3 success:(bool*)arg4;
+- (int)useEvaluationStackToGetParameterTokenType:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 success:(bool*)arg3;
 - (id)worksheetFromLinkReferenceIndex:(unsigned int)arg1;
+- (id)worksheetsFromLinkReferenceIndex:(unsigned int)arg1;
 
 @end

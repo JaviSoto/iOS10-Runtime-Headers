@@ -3,8 +3,8 @@
  */
 
 @interface TRConnectionManager : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMapTable *_serviceToConnection;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMapTable * _serviceToConnection;
 }
 
 + (id)sharedManager;

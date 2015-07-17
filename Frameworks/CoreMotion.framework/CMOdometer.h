@@ -3,14 +3,12 @@
  */
 
 @interface CMOdometer : NSObject {
-    <CMOdometerDelegate> *_delegate;
-    CMOdometerProxy *_odometerProxy;
+    <CMOdometerDelegate> * _delegate;
+    CMOdometerProxy * _odometerProxy;
 }
 
 @property (nonatomic) <CMOdometerDelegate> *delegate;
 @property (nonatomic, readonly) CMOdometerProxy *odometerProxy;
-
-+ (BOOL)isOdometerAvailableForActivity:(int)arg1;
 
 - (void)dealloc;
 - (id)delegate;

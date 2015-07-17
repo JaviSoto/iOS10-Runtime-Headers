@@ -5,7 +5,7 @@
 @interface _UIFlowLayoutItem : NSObject {
     struct { 
         unsigned int positionEstimated : 1; 
-    } _itemFlags;
+    }  _itemFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,9 +15,9 @@
             float width; 
             float height; 
         } size; 
-    } _itemFrame;
-    _UIFlowLayoutRow *_rowObject;
-    _UIFlowLayoutSection *_section;
+    }  _itemFrame;
+    _UIFlowLayoutRow * _rowObject;
+    _UIFlowLayoutSection * _section;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } itemFrame;
@@ -25,6 +25,7 @@
 @property (nonatomic) _UIFlowLayoutRow *rowObject;
 @property (nonatomic) _UIFlowLayoutSection *section;
 
+- (void).cxx_destruct;
 - (id)copy;
 - (BOOL)isPositionEstimated;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })itemFrame;

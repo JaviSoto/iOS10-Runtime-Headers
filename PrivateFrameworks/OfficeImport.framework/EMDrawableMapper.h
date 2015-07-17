@@ -3,8 +3,8 @@
  */
 
 @interface EMDrawableMapper : CMDrawableMapper {
-    double *mColumnGrid;
-    double *mRowGrid;
+    double * mColumnGrid;
+    double * mRowGrid;
 }
 
 + (BOOL)isAnchorRelative:(id)arg1;

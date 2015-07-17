@@ -3,15 +3,15 @@
  */
 
 @interface NMSSyncManager : NSObject <ATSessionObserver> {
-    id _activeSyncSessionIdentifier;
-    unsigned int _aggregateAssetPlaylistItemBytes;
-    BOOL _assetPlaylistItemsPendingDownload;
-    float _estimatedSyncProgress;
-    NSTimer *_maskedPendingSyncStateRevealTimer;
-    unsigned int _numberOfAssetPlaylistItems;
-    ATSession *_observedSession;
-    BOOL _syncPending;
-    BOOL _syncing;
+    id  _activeSyncSessionIdentifier;
+    unsigned int  _aggregateAssetPlaylistItemBytes;
+    BOOL  _assetPlaylistItemsPendingDownload;
+    float  _estimatedSyncProgress;
+    NSTimer * _maskedPendingSyncStateRevealTimer;
+    unsigned int  _numberOfAssetPlaylistItems;
+    ATSession * _observedSession;
+    BOOL  _syncPending;
+    BOOL  _syncing;
 }
 
 @property (nonatomic, retain) id activeSyncSessionIdentifier;

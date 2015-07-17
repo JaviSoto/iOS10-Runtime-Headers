@@ -3,9 +3,9 @@
  */
 
 @interface TSDLinePreset : NSObject {
-    TSDLineEnd *mHeadLineEnd;
-    TSDStroke *mStroke;
-    TSDLineEnd *mTailLineEnd;
+    TSDLineEnd * mHeadLineEnd;
+    TSDStroke * mStroke;
+    TSDLineEnd * mTailLineEnd;
 }
 
 @property (nonatomic, readonly, copy) TSDLineEnd *headLineEnd;

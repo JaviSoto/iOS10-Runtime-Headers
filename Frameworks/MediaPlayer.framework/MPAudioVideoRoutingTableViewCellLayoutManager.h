@@ -8,7 +8,7 @@
         float left; 
         float bottom; 
         float right; 
-    } imageViewEdgeInsets;
+    }  imageViewEdgeInsets;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageViewEdgeInsets;

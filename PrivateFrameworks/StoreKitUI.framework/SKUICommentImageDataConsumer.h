@@ -3,7 +3,7 @@
  */
 
 @interface SKUICommentImageDataConsumer : SKUIStyledImageDataConsumer {
-    id /* block */ _completionBlock;
+    id /* block */  _completionBlock;
 }
 
 @property (copy) id /* block */ completionBlock;

@@ -3,17 +3,17 @@
  */
 
 @interface FBUIApplicationWorkspaceScene : FBWorkspaceScene {
-    NSMutableSet *_allWatchdogs;
-    BOOL _createResponseReceived;
-    BKSProcessAssertion *_deliverMessageProcessAssertion;
-    unsigned int _deliverMessageProcessAssertionCount;
-    BKSProcessAssertion *_launchBoostahAssertion;
-    BKSProcessAssertion *_resumeProcessAssertion;
-    BKSProcessAssertion *_seoProcessAssertion;
-    int _suspendType;
-    BKSProcessAssertion *_suspendingProcessAssertion;
-    BOOL _transitioningToForeground;
-    NSMutableArray *_watchdogStack;
+    NSMutableSet * _allWatchdogs;
+    BOOL  _createResponseReceived;
+    BKSProcessAssertion * _deliverMessageProcessAssertion;
+    unsigned int  _deliverMessageProcessAssertionCount;
+    BKSProcessAssertion * _launchBoostahAssertion;
+    BKSProcessAssertion * _resumeProcessAssertion;
+    BKSProcessAssertion * _seoProcessAssertion;
+    int  _suspendType;
+    BKSProcessAssertion * _suspendingProcessAssertion;
+    BOOL  _transitioningToForeground;
+    NSMutableArray * _watchdogStack;
 }
 
 @property (getter=_workspaceQueue_isTransitioningToForeground, nonatomic, readonly) BOOL transitioningToForeground;
@@ -45,9 +45,10 @@
 - (void)_workspaceQueue_takeSEOProcessAssertionWithTransitionContext:(id)arg1;
 - (void)_workspaceQueue_takeSuspendingProcessAssertion;
 - (void)dealloc;
+- (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
-- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2 initialClientSettings:(id)arg3;
+- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2;
 - (id)parentWorkspace;
 
 @end

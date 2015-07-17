@@ -6,11 +6,11 @@
     struct { 
         unsigned int maneuverType : 1; 
         unsigned int zilchIndex : 1; 
-    } _has;
-    int _maneuverType;
-    GEONameInfo *_name;
-    NSMutableArray *_signposts;
-    int _zilchIndex;
+    }  _has;
+    int  _maneuverType;
+    GEONameInfo * _name;
+    NSMutableArray * _signposts;
+    int  _zilchIndex;
 }
 
 @property (nonatomic) BOOL hasManeuverType;

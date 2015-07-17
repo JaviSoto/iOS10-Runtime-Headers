@@ -3,7 +3,7 @@
  */
 
 @interface IMDDController : NSObject {
-    NSObject<OS_dispatch_queue> *_scannerQueue;
+    NSObject<OS_dispatch_queue> * _scannerQueue;
 }
 
 + (id)sharedInstance;

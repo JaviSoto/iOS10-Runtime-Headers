@@ -3,11 +3,11 @@
  */
 
 @interface _MPMediaLibraryArtworkDataSourceCacheKey : NSObject {
-    id _catalogIdentifier;
+    id  _catalogIdentifier;
     struct CGSize { 
         float width; 
         float height; 
-    } _representationSize;
+    }  _representationSize;
 }
 
 @property (nonatomic, copy) id catalogIdentifier;

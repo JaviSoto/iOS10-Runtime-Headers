@@ -7,13 +7,13 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _actions;
-    int _component;
-    BOOL _handleLocally;
+    }  _actions;
+    int  _component;
+    BOOL  _handleLocally;
     struct { 
         unsigned int component : 1; 
         unsigned int handleLocally : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, readonly) int*actions;

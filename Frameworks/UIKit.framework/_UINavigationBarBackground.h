@@ -3,16 +3,16 @@
  */
 
 @interface _UINavigationBarBackground : _UIBarBackgroundImageView <_UIBackdropViewGraphicsQualityChangeDelegate> {
-    _UIBackdropView *_adaptiveBackdrop;
-    _UINavigationBarAppearanceStorage *_appearanceStorage;
-    UIColor *_barTintColor;
+    _UIBackdropView * _adaptiveBackdrop;
+    _UINavigationBarAppearanceStorage * _appearanceStorage;
+    UIColor * _barTintColor;
     struct { 
         unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
         unsigned int isContainedInPopover : 1; 
         unsigned int barWantsAdaptiveBackdrop : 1; 
-    } _navbarBackgroundFlags;
-    UIImageView *_shadowView;
+    }  _navbarBackgroundFlags;
+    UIImageView * _shadowView;
 }
 
 @property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;
@@ -22,6 +22,7 @@
 @property (nonatomic) BOOL barWantsAdaptiveBackdrop;
 @property (getter=isTranslucent, nonatomic) BOOL translucent;
 
+- (void).cxx_destruct;
 - (id)_adaptiveBackdrop;
 - (id)_currentCustomBackground;
 - (id)_currentCustomBackgroundDedicatedToBarMetrics:(int*)arg1 barPosition:(int*)arg2;

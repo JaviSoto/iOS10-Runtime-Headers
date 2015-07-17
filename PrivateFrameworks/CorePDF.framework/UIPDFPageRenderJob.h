@@ -3,21 +3,21 @@
  */
 
 @interface UIPDFPageRenderJob : NSObject {
-    SEL _callback;
-    UIImage *_image;
-    int _lock;
-    UIPDFPageRenderOperation *_operation;
-    UIPDFPage *_page;
-    unsigned int _pageIndex;
-    int _priority;
-    BOOL _releaseWhenDone;
-    BOOL _sendPending;
+    SEL  _callback;
+    UIImage * _image;
+    int  _lock;
+    UIPDFPageRenderOperation * _operation;
+    UIPDFPage * _page;
+    unsigned int  _pageIndex;
+    int  _priority;
+    BOOL  _releaseWhenDone;
+    BOOL  _sendPending;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    id _target;
-    id _userData;
+    }  _size;
+    id  _target;
+    id  _userData;
 }
 
 @property (readonly, retain) UIImage *image;

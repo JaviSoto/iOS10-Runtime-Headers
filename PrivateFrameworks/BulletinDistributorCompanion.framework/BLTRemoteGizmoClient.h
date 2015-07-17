@@ -3,7 +3,7 @@
  */
 
 @interface BLTRemoteGizmoClient : BLTRemoteObject <BLTGizmoClient> {
-    <BLTCompanionServer> *_server;
+    <BLTCompanionServer> * _server;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,5 +32,6 @@
 - (void)removeBulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (id)server;
 - (void)setServer:(id)arg1;
+- (void)updateBulletinList:(id)arg1;
 
 @end

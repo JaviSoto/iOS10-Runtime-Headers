@@ -3,7 +3,7 @@
  */
 
 @interface HKSessionAchievement : HKAchievement {
-    unsigned int _activityType;
+    unsigned int  _activityType;
 }
 
 @property (nonatomic, readonly) unsigned int activityType;

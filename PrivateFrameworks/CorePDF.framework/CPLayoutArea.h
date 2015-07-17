@@ -3,7 +3,7 @@
  */
 
 @interface CPLayoutArea : CPRegion {
-    BOOL isFirstLayout;
+    BOOL  isFirstLayout;
 }
 
 - (void)accept:(id)arg1;

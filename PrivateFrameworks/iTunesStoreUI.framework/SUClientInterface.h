@@ -3,23 +3,23 @@
  */
 
 @interface SUClientInterface : NSObject {
-    SUUIAppearance *_appearance;
-    NSString *_askToBuyApprovalPrompt;
-    NSString *_clientIdentifier;
-    UIColor *_darkKeyColor;
-    <SUClientInterfaceDelegatePrivate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _ignoresExpectedClientsProtocol;
-    BOOL _inAskToBuyApprovalFlow;
-    UIColor *_lightKeyColor;
-    NSString *_localStoragePath;
-    SUPurchaseManager *_purchaseManager;
-    SUQueueSessionManager *_queueSessionManager;
-    NSMutableDictionary *_urlBagKeys;
-    NSString *_userAgent;
-    SUViewControllerFactory *_viewControllerFactory;
-    BOOL _wasLaunchedFromLibrary;
-    BOOL inAskToBuyApprovalFlow;
+    SUUIAppearance * _appearance;
+    NSString * _askToBuyApprovalPrompt;
+    NSString * _clientIdentifier;
+    UIColor * _darkKeyColor;
+    <SUClientInterfaceDelegatePrivate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _ignoresExpectedClientsProtocol;
+    BOOL  _inAskToBuyApprovalFlow;
+    UIColor * _lightKeyColor;
+    NSString * _localStoragePath;
+    SUPurchaseManager * _purchaseManager;
+    SUQueueSessionManager * _queueSessionManager;
+    NSMutableDictionary * _urlBagKeys;
+    NSString * _userAgent;
+    SUViewControllerFactory * _viewControllerFactory;
+    BOOL  _wasLaunchedFromLibrary;
+    BOOL  inAskToBuyApprovalFlow;
 }
 
 @property (getter=_ignoresExpectedClientsProtocol, setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;

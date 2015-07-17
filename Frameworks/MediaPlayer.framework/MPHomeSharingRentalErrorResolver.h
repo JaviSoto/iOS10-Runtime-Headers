@@ -3,13 +3,13 @@
  */
 
 @interface MPHomeSharingRentalErrorResolver : MPAVErrorResolver <SSRequestDelegate> {
-    unsigned long long _accountID;
-    MPHomeSharingML3DataProvider *_dataProvider;
-    NSError *_error;
-    unsigned long long _homeSharingID;
-    unsigned long long _itemID;
-    unsigned long long _rentalID;
-    SSRentalCheckoutRequest *_request;
+    unsigned long long  _accountID;
+    MPHomeSharingML3DataProvider * _dataProvider;
+    NSError * _error;
+    unsigned long long  _homeSharingID;
+    unsigned long long  _itemID;
+    unsigned long long  _rentalID;
+    SSRentalCheckoutRequest * _request;
 }
 
 @property (nonatomic, retain) MPHomeSharingML3DataProvider *dataProvider;

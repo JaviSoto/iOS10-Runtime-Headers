@@ -3,7 +3,7 @@
  */
 
 @interface _UIBookViewControllerView : UIView {
-    UIBookViewController *_bookViewController;
+    UIBookViewController * _bookViewController;
 }
 
 - (id)initWithBookViewController:(id)arg1 withView:(id)arg2;

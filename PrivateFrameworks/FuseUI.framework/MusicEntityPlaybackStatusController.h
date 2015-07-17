@@ -3,17 +3,17 @@
  */
 
 @interface MusicEntityPlaybackStatusController : NSObject <MusicPlaybackProgressScrubbing> {
-    BOOL _alwaysLive;
-    MPUContentItemIdentifierCollection *_currentContainerIdentifierCollection;
-    MPUContentItemIdentifierCollection *_currentItemIdentifierCollection;
-    NSHashTable *_observers;
-    double _playbackCurrentTime;
-    double _playbackCurrentTimeOriginatingTime;
-    int _playbackDisplayState;
-    double _playbackDuration;
-    MusicPlaybackProgressScrubberController *_playbackProgressScrubberController;
-    float _playbackRate;
-    MPAVController *_player;
+    BOOL  _alwaysLive;
+    MPUContentItemIdentifierCollection * _currentContainerIdentifierCollection;
+    MPUContentItemIdentifierCollection * _currentItemIdentifierCollection;
+    NSHashTable * _observers;
+    double  _playbackCurrentTime;
+    double  _playbackCurrentTimeOriginatingTime;
+    int  _playbackDisplayState;
+    double  _playbackDuration;
+    MusicPlaybackProgressScrubberController * _playbackProgressScrubberController;
+    float  _playbackRate;
+    MPAVController * _player;
 }
 
 @property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;

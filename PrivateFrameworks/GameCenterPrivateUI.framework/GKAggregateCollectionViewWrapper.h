@@ -3,8 +3,8 @@
  */
 
 @interface GKAggregateCollectionViewWrapper : NSObject {
-    GKAggregateMapping *_mapping;
-    UICollectionView *_wrappedView;
+    GKAggregateMapping * _mapping;
+    UICollectionView * _wrappedView;
 }
 
 @property (nonatomic, retain) GKAggregateMapping *mapping;

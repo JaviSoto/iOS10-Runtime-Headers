@@ -3,9 +3,9 @@
  */
 
 @interface TSPAssetReadChannel : NSObject <TSUStreamReadChannel> {
-    ALAssetsLibrary *_library;
-    NSObject<OS_dispatch_queue> *_readQueue;
-    ALAssetRepresentation *_representation;
+    ALAssetsLibrary * _library;
+    NSObject<OS_dispatch_queue> * _readQueue;
+    ALAssetRepresentation * _representation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

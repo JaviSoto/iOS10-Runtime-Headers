@@ -3,9 +3,9 @@
  */
 
 @interface QLThreadInvoker : NSObject {
-    NSURLConnection *_connection;
-    NSData *_data;
-    NSError *_error;
+    NSURLConnection * _connection;
+    NSData * _data;
+    NSError * _error;
 }
 
 - (void)connectionDidFailWithError:(id)arg1;

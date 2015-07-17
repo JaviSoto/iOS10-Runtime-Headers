@@ -3,11 +3,11 @@
  */
 
 @interface MKUserLocationAnnotation : NSObject <MKUserLocationAnnotation> {
-    double _accuracy;
+    double  _accuracy;
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
+    }  _coordinate;
 }
 
 @property (nonatomic) double accuracy;

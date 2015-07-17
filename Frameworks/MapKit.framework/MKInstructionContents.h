@@ -3,15 +3,15 @@
  */
 
 @interface MKInstructionContents : NSObject {
-    NSArray *_branchNames;
-    NSString *_destinationName;
-    NSString *_exitNumber;
-    NSString *_intersectionName;
-    int _junctionAngle;
-    int _maneuverType;
-    BOOL _toFreeway;
-    NSArray *_towardNames;
-    int _transportType;
+    NSArray * _branchNames;
+    NSString * _destinationName;
+    NSString * _exitNumber;
+    NSString * _intersectionName;
+    int  _junctionAngle;
+    int  _maneuverType;
+    BOOL  _toFreeway;
+    NSArray * _towardNames;
+    int  _transportType;
 }
 
 @property (nonatomic, retain) NSArray *branchNames;

@@ -3,9 +3,9 @@
  */
 
 @interface HKMedicalIDEditorNameAndPhotoCell : HKMedicalIDEditorMultilineStringCell {
-    UIButton *_editPhotoButton;
-    UIButton *_editPhotoLabelButton;
-    UIView *_nameBottomSeparator;
+    UIButton * _editPhotoButton;
+    UIButton * _editPhotoLabelButton;
+    UIView * _nameBottomSeparator;
 }
 
 @property (nonatomic, readonly) UIButton *editPhotoButton;

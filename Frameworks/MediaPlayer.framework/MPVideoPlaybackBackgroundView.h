@@ -8,11 +8,11 @@
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    UIImageView *_imageView;
-    MPAVController *_player;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    }  _edgeInsets;
+    UIImageView * _imageView;
+    MPAVController * _player;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;

@@ -3,21 +3,21 @@
  */
 
 @interface CPZone : CPRegion <CPGraphicUser> {
-    double area;
-    NSMutableArray *backgroundGraphics;
-    CPCharSequence *charactersInZone;
-    NSArray *graphicsInZone;
-    NSArray *gutters;
-    BOOL isStraddleZone;
-    NSArray *leftGuides;
-    struct CGPoint { float x1; float x2; } *outerVertices;
-    NSArray *rightGuides;
-    NSArray *spacers;
-    struct CGPoint { float x1; float x2; } *swollenOuterVertices;
-    NSMutableArray *textLinesInZone;
-    unsigned int usedGraphicCount;
-    NSMutableArray *zoneBorders;
-    CPZoneProfile *zoneProfile;
+    double  area;
+    NSMutableArray * backgroundGraphics;
+    CPCharSequence * charactersInZone;
+    NSArray * graphicsInZone;
+    NSArray * gutters;
+    BOOL  isStraddleZone;
+    NSArray * leftGuides;
+    struct CGPoint { float x1; float x2; } * outerVertices;
+    NSArray * rightGuides;
+    NSArray * spacers;
+    struct CGPoint { float x1; float x2; } * swollenOuterVertices;
+    NSMutableArray * textLinesInZone;
+    unsigned int  usedGraphicCount;
+    NSMutableArray * zoneBorders;
+    CPZoneProfile * zoneProfile;
 }
 
 - (void)accept:(id)arg1;

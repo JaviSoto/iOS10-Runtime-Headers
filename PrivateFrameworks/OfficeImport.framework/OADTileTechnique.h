@@ -3,28 +3,30 @@
  */
 
 @interface OADTileTechnique : OADImageFillTechnique {
-    int mAlignment;
-    int mFlipMode;
-    BOOL mIsAlignmentOverridden;
-    BOOL mIsFlipModeOverridden;
-    BOOL mIsOffsetXOverridden;
-    BOOL mIsOffsetYOverridden;
-    BOOL mIsScaleXOverridden;
-    BOOL mIsScaleYOverridden;
-    float mOffsetX;
-    float mOffsetY;
-    float mScaleX;
-    float mScaleY;
+    int  mAlignment;
+    int  mFlipMode;
+    BOOL  mIsAlignmentOverridden;
+    BOOL  mIsFlipModeOverridden;
+    BOOL  mIsOffsetXOverridden;
+    BOOL  mIsOffsetYOverridden;
+    BOOL  mIsScaleXOverridden;
+    BOOL  mIsScaleYOverridden;
+    float  mOffsetX;
+    float  mOffsetY;
+    float  mScaleX;
+    float  mScaleY;
 }
 
 + (id)defaultProperties;
 
 - (int)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (int)flipMode;
 - (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isAlignmentOverridden;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFlipModeOverridden;
 - (BOOL)isOffsetXOverridden;
@@ -33,6 +35,7 @@
 - (BOOL)isScaleYOverridden;
 - (float)offsetX;
 - (float)offsetY;
+- (void)removeUnnecessaryOverrides;
 - (float)scaleX;
 - (float)scaleY;
 - (void)setAlignment:(int)arg1;

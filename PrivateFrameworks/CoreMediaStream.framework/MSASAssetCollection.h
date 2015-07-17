@@ -3,24 +3,24 @@
  */
 
 @interface MSASAssetCollection : NSObject <NSCopying> {
-    NSString *_GUID;
-    NSString *_albumGUID;
-    NSArray *_assets;
-    NSString *_ctag;
-    NSString *_email;
-    NSString *_fileName;
-    NSString *_firstName;
-    NSString *_fullName;
-    BOOL _hasComments;
-    BOOL _isDeletable;
-    BOOL _isMine;
-    NSString *_lastName;
-    NSDictionary *_metadata;
-    NSString *_path;
-    NSString *_personID;
-    long long _photoNumber;
-    NSDate *_timestamp;
-    <NSCoding> *_userInfo;
+    NSString * _GUID;
+    NSString * _albumGUID;
+    NSArray * _assets;
+    NSString * _ctag;
+    NSString * _email;
+    NSString * _fileName;
+    NSString * _firstName;
+    NSString * _fullName;
+    BOOL  _hasComments;
+    BOOL  _isDeletable;
+    BOOL  _isMine;
+    NSString * _lastName;
+    NSDictionary * _metadata;
+    NSString * _path;
+    NSString * _personID;
+    long long  _photoNumber;
+    NSDate * _timestamp;
+    <NSCoding> * _userInfo;
 }
 
 @property (nonatomic, retain) NSString *GUID;
@@ -67,6 +67,7 @@
 - (BOOL)isDeletable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMine;
+- (BOOL)isVideo;
 - (id)lastName;
 - (id)mediaAssetType;
 - (id)metadata;

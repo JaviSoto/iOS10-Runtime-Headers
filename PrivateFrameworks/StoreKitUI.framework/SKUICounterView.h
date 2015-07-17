@@ -8,13 +8,13 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUICounterViewElement *_counterElement;
-    SKUIImageView *_imageView;
-    NSNumberFormatter *_numberFormatter;
-    UILabel *_numberView;
-    SKUICounterTimeView *_timeView;
-    NSObject<OS_dispatch_source> *_updateTimer;
+    }  _contentInset;
+    SKUICounterViewElement * _counterElement;
+    SKUIImageView * _imageView;
+    NSNumberFormatter * _numberFormatter;
+    UILabel * _numberView;
+    SKUICounterTimeView * _timeView;
+    NSObject<OS_dispatch_source> * _updateTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

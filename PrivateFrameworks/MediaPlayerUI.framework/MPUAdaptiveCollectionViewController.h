@@ -8,15 +8,15 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsetAdditions;
-    MPUInsetProxyScrollView *_insetProxyScrollView;
+    }  _contentInsetAdditions;
+    MPUInsetProxyScrollView * _insetProxyScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _scrollIndicatorInsetsAdditions;
-    NSMutableDictionary *_sizeClassToClassMap;
+    }  _scrollIndicatorInsetsAdditions;
+    NSMutableDictionary * _sizeClassToClassMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;

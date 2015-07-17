@@ -3,24 +3,24 @@
  */
 
 @interface IDSServerBag : NSObject {
-    BOOL _allowSelfSignedCertificates;
-    BOOL _allowUnsignedBags;
-    NSString *_apsEnvironmentName;
-    NSDictionary *_bag;
-    NSObject<OS_dispatch_queue> *_bagQueue;
-    NSURL *_bagURL;
-    NSNumber *_cacheTime;
-    NSDictionary *_cachedBag;
-    NSString *_cachedHash;
-    NSString *_cachedURLString;
-    NSData *_certData;
-    IMConnectionMonitor *_connectionMonitor;
-    unsigned long long _hasPairedDeviceState;
-    NSDate *_loadDate;
-    IDSRemoteURLConnection *_remoteURLConnection;
-    int _token;
-    int _trustStatus;
-    NSMutableURLRequest *_urlRequest;
+    BOOL  _allowSelfSignedCertificates;
+    BOOL  _allowUnsignedBags;
+    NSString * _apsEnvironmentName;
+    NSDictionary * _bag;
+    NSObject<OS_dispatch_queue> * _bagQueue;
+    NSURL * _bagURL;
+    NSNumber * _cacheTime;
+    NSDictionary * _cachedBag;
+    NSString * _cachedHash;
+    NSString * _cachedURLString;
+    NSData * _certData;
+    IMConnectionMonitor * _connectionMonitor;
+    unsigned long long  _hasPairedDeviceState;
+    NSDate * _loadDate;
+    IDSRemoteURLConnection * _remoteURLConnection;
+    int  _token;
+    int  _trustStatus;
+    NSMutableURLRequest * _urlRequest;
 }
 
 @property (setter=_setBag:, retain) NSDictionary *_bag;
@@ -32,7 +32,7 @@
 @property (retain) NSData *_certData;
 @property (retain) IMConnectionMonitor *_connectionMonitor;
 @property (retain) NSDate *_loadDate;
-@property IDSRemoteURLConnection *_remoteURLConnection;
+@property (retain) IDSRemoteURLConnection *_remoteURLConnection;
 @property (setter=_setTrustStatus:) int _trustStatus;
 @property (retain) NSMutableURLRequest *_urlRequest;
 @property BOOL allowSelfSignedCertificates;
@@ -49,6 +49,7 @@
 + (id)_bagCreationLock;
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
++ (id)defaultBag;
 + (id)sharedInstance;
 + (id)sharedInstanceForBagType:(int)arg1;
 

@@ -3,9 +3,9 @@
  */
 
 @interface UIStatusBarQuietModeItemView : UIStatusBarIndicatorItemView {
-    BOOL _hideForAction;
-    BOOL _inactive;
-    BOOL _registeredForNotifications;
+    BOOL  _hideForAction;
+    BOOL  _inactive;
+    BOOL  _registeredForNotifications;
 }
 
 - (void)_triggerAction:(id)arg1;

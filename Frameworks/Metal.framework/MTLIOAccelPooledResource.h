@@ -10,7 +10,7 @@
             id *tqe_prev; 
             unsigned long long time_added; 
         } entry; 
-    } _priv;
+    }  _priv;
 }
 
 @end

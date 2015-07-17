@@ -3,15 +3,15 @@
  */
 
 @interface SKUIReportAConcernTemplateView : SKUIViewReuseView <SKUIViewElementView, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_concerns;
-    UITableView *_concernsTable;
-    <SKUIReportAConcernTemplateViewDelegate> *_delegate;
-    UIView *_dividerBottom;
-    UIView *_dividerTop;
-    UIFont *_elementFont;
-    UITextView *_headerView;
-    int _selectedIndex;
-    UITextView *_titleView;
+    NSArray * _concerns;
+    UITableView * _concernsTable;
+    <SKUIReportAConcernTemplateViewDelegate> * _delegate;
+    UIView * _dividerBottom;
+    UIView * _dividerTop;
+    UIFont * _elementFont;
+    UITextView * _headerView;
+    int  _selectedIndex;
+    UITextView * _titleView;
 }
 
 @property (nonatomic, retain) NSArray *concerns;

@@ -3,32 +3,34 @@
  */
 
 @interface UIKeyboardCandidateGridCell : UICollectionViewCell {
-    NSString *_alternativeText;
-    UILabel *_alternativeTextLabel;
-    unsigned int _candidateNumber;
-    UILabel *_candidateNumberLabel;
+    NSString * _alternativeText;
+    UILabel * _alternativeTextLabel;
+    UILabel * _annotationLabel;
+    NSString * _annotationText;
+    unsigned int  _candidateNumber;
+    UILabel * _candidateNumberLabel;
     struct CGSize { 
         float width; 
         float height; 
-    } _candidateNumberSize;
-    int _candidatesVisualStyle;
-    float _cellPadding;
-    BOOL _dummy;
-    unsigned int _edges;
-    BOOL _emphasizedAppearance;
-    float _minimumWidth;
-    float _rightPadding;
-    float _rowHeight;
-    BOOL _secondaryCandidateAppearance;
-    BOOL _shouldShowCandidateNumber;
+    }  _candidateNumberSize;
+    int  _candidatesVisualStyle;
+    float  _cellPadding;
+    BOOL  _dummy;
+    unsigned int  _edges;
+    BOOL  _emphasizedAppearance;
+    float  _minimumWidth;
+    float  _rightPadding;
+    float  _rowHeight;
+    BOOL  _secondaryCandidateAppearance;
+    BOOL  _shouldShowCandidateNumber;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    NSString *_text;
-    int _textAlignment;
-    UILabel *_textLabel;
-    BOOL _usesGroupHeaderAppearance;
+    }  _size;
+    NSString * _text;
+    int  _textAlignment;
+    UILabel * _textLabel;
+    BOOL  _usesGroupHeaderAppearance;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -38,18 +40,20 @@
             float width; 
             float height; 
         } size; 
-    } _visibleBounds;
+    }  _visibleBounds;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    } _visualStyling;
+    }  _visualStyling;
 }
 
 @property (nonatomic, copy) NSString *alternativeText;
 @property (nonatomic, retain) UILabel *alternativeTextLabel;
+@property (nonatomic, retain) UILabel *annotationLabel;
+@property (nonatomic, copy) NSString *annotationText;
 @property (nonatomic, readonly) BOOL canShowCandidateNumber;
 @property (nonatomic) unsigned int candidateNumber;
 @property (nonatomic, retain) UILabel *candidateNumberLabel;
@@ -82,6 +86,8 @@
 
 - (id)alternativeText;
 - (id)alternativeTextLabel;
+- (id)annotationLabel;
+- (id)annotationText;
 - (void)applyLayoutAttributes:(id)arg1;
 - (BOOL)canShowCandidateNumber;
 - (unsigned int)candidateNumber;
@@ -103,6 +109,8 @@
 - (BOOL)secondaryCandidateAppearance;
 - (void)setAlternativeText:(id)arg1;
 - (void)setAlternativeTextLabel:(id)arg1;
+- (void)setAnnotationLabel:(id)arg1;
+- (void)setAnnotationText:(id)arg1;
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (void)setCandidateNumberLabel:(id)arg1;
 - (void)setCandidateNumberSize:(struct CGSize { float x1; float x2; })arg1;

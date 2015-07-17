@@ -3,7 +3,7 @@
  */
 
 @interface NSPropertyListSerialization : NSObject {
-    void *reserved;
+    void * reserved;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

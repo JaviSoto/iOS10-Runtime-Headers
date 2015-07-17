@@ -3,7 +3,7 @@
  */
 
 @interface _NSXPCDistantObjectWithError : _NSXPCDistantObject {
-    id /* block */ _errorBlock;
+    id /* block */  _errorBlock;
 }
 
 @property (copy) id /* block */ errorBlock;

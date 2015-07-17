@@ -3,16 +3,16 @@
  */
 
 @interface BWVideoFormat : BWFormat {
-    unsigned long _bytesPerRowAlignment;
-    unsigned int _cacheMode;
-    unsigned long _extendedHeight;
-    unsigned long _extendedWidth;
-    unsigned long _height;
-    NSDictionary *_pixelBufferAttributes;
-    unsigned long _pixelFormat;
-    unsigned long _planeAlignment;
-    BOOL _prewireBuffers;
-    unsigned long _width;
+    unsigned long  _bytesPerRowAlignment;
+    unsigned int  _cacheMode;
+    unsigned long  _extendedHeight;
+    unsigned long  _extendedWidth;
+    unsigned long  _height;
+    NSDictionary * _pixelBufferAttributes;
+    unsigned long  _pixelFormat;
+    unsigned long  _planeAlignment;
+    BOOL  _prewireBuffers;
+    unsigned long  _width;
 }
 
 @property (nonatomic) unsigned long bytesPerRowAlignment;

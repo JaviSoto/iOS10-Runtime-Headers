@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderVideoCompositionOutput : AVAssetReaderOutput {
-    AVAssetReaderVideoCompositionOutputInternal *_videoCompositionOutputInternal;
+    AVAssetReaderVideoCompositionOutputInternal * _videoCompositionOutputInternal;
 }
 
 @property (nonatomic, readonly) <AVVideoCompositing> *customVideoCompositor;

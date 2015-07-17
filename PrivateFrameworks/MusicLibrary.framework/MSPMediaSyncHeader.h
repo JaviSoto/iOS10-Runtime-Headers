@@ -6,9 +6,9 @@
     struct { 
         unsigned int syncType : 1; 
         unsigned int totalPackages : 1; 
-    } _has;
-    int _syncType;
-    int _totalPackages;
+    }  _has;
+    int  _syncType;
+    int  _totalPackages;
 }
 
 @property (nonatomic) BOOL hasSyncType;

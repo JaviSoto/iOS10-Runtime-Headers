@@ -3,11 +3,11 @@
  */
 
 @interface TSPDocumentResourceInfo : NSObject {
-    NSString *_digestString;
-    NSString *_extension;
-    long long _fileSize;
-    BOOL _isDownloadable;
-    NSString *_locator;
+    NSString * _digestString;
+    NSString * _extension;
+    long long  _fileSize;
+    BOOL  _isDownloadable;
+    NSString * _locator;
 }
 
 @property (nonatomic, readonly) NSString *digestString;

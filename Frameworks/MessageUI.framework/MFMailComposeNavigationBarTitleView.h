@@ -3,9 +3,9 @@
  */
 
 @interface MFMailComposeNavigationBarTitleView : UIView {
-    unsigned int _style;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    unsigned int  _style;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *title;

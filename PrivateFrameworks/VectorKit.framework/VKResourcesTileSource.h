@@ -3,7 +3,7 @@
  */
 
 @interface VKResourcesTileSource : VKTileSource {
-    GEOTileKeyMap *_keyToKeysMap;
+    GEOTileKeyMap * _keyToKeysMap;
 }
 
 - (BOOL)canFetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface SUStorePageDataProvider : ISDataProvider {
-    SUClientInterface *_clientInterface;
-    int _outputType;
-    ISPropertyListProvider *_propertyListDataProvider;
+    SUClientInterface * _clientInterface;
+    int  _outputType;
+    ISPropertyListProvider * _propertyListDataProvider;
 }
 
 @property (retain) SUClientInterface *clientInterface;

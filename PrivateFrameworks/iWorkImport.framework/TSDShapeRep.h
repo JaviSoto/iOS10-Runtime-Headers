@@ -3,8 +3,8 @@
  */
 
 @interface TSDShapeRep : TSDStyledRep <TSDMagicMoveMatching> {
-    BOOL mDirectlyManagesLayerContent;
-    BOOL mFrameInUnscaledCanvasIsValid;
+    BOOL  mDirectlyManagesLayerContent;
+    BOOL  mFrameInUnscaledCanvasIsValid;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +14,7 @@
             float width; 
             float height; 
         } size; 
-    } mFrameInUnscaledCanvasRelativeToSuper;
+    }  mFrameInUnscaledCanvasRelativeToSuper;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,8 +24,8 @@
             float width; 
             float height; 
         } size; 
-    } mOriginalAliasedAlignmentFrameInLayerFrame;
-    BOOL mShadowOnChildrenDisabled;
+    }  mOriginalAliasedAlignmentFrameInLayerFrame;
+    BOOL  mShadowOnChildrenDisabled;
 }
 
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;

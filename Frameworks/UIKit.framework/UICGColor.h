@@ -3,7 +3,7 @@
  */
 
 @interface UICGColor : UIColor {
-    struct CGColor { } *cachedColor;
+    struct CGColor { } * cachedColor;
 }
 
 - (struct CGColor { }*)CGColor;

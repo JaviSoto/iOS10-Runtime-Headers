@@ -3,19 +3,19 @@
  */
 
 @interface MPMovie : NSObject {
-    double _endPlaybackTime;
-    BOOL _explicitlySetMovieSourceType;
-    MPAVItem *_item;
-    double _lastKnownDuration;
+    double  _endPlaybackTime;
+    BOOL  _explicitlySetMovieSourceType;
+    MPAVItem * _item;
+    double  _lastKnownDuration;
     struct CGSize { 
         float width; 
         float height; 
-    } _lastKnownNaturalSize;
-    unsigned int _lastKnownType;
-    BOOL _movieIsUnplayable;
-    int _movieSourceType;
-    double _startPlaybackTime;
-    NSURL *_url;
+    }  _lastKnownNaturalSize;
+    unsigned int  _lastKnownType;
+    BOOL  _movieIsUnplayable;
+    int  _movieSourceType;
+    double  _startPlaybackTime;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;

@@ -3,10 +3,10 @@
  */
 
 @interface CKAcceptSharesOperation : CKDatabaseOperation {
-    id /* block */ _acceptSharesCompletionBlock;
-    NSMutableDictionary *_errorsByShareURL;
-    id /* block */ _perShareCompletionBlock;
-    NSArray *_shareURLs;
+    id /* block */  _acceptSharesCompletionBlock;
+    NSMutableDictionary * _errorsByShareURL;
+    id /* block */  _perShareCompletionBlock;
+    NSArray * _shareURLs;
 }
 
 @property (nonatomic, copy) id /* block */ acceptSharesCompletionBlock;
@@ -19,6 +19,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id /* block */)acceptSharesCompletionBlock;
+- (unsigned long long)activityStart;
 - (id)errorsByShareURL;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

@@ -3,11 +3,11 @@
  */
 
 @interface PUTabbedLibraryViewControllerSpec : NSObject {
-    PUAlbumListViewControllerSpec *_albumListViewControllerSpec;
-    PUAlbumListViewController *_createAlbumListViewController;
-    PUAlbumListViewController *_createSharedAlbumListViewController;
-    PUFeedViewControllerSpec *_feedViewControllerSpec;
-    PUZoomableGridViewControllerSpec *_zoomableGridViewControllerSpec;
+    PUAlbumListViewControllerSpec * _albumListViewControllerSpec;
+    PUAlbumListViewController * _createAlbumListViewController;
+    PUAlbumListViewController * _createSharedAlbumListViewController;
+    PUFeedViewControllerSpec * _feedViewControllerSpec;
+    PUZoomableGridViewControllerSpec * _zoomableGridViewControllerSpec;
 }
 
 @property (nonatomic, readonly) PUAlbumListViewControllerSpec *albumListViewControllerSpec;

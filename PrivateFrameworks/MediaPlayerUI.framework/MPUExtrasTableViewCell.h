@@ -3,24 +3,24 @@
  */
 
 @interface MPUExtrasTableViewCell : UITableViewCell {
-    MPUExtrasConstrainedArtworkContainerView *_artworkContainer;
-    NSLayoutConstraint *_artworkHeightConstraint;
-    NSLayoutConstraint *_artworkSpacerHeightConstraint;
-    NSLayoutConstraint *_artworkWidthConstraint;
-    NSArray *_bottomConstraints;
-    NSLayoutConstraint *_bottomLabelConstraint;
-    IKListItemLockupElement *_element;
-    NSLayoutConstraint *_leadingViewConstraint;
-    NSLayoutConstraint *_minimumHeightConstraint;
-    MPUContentSizeLayoutConstraint *_subtitleBaselineConstraint;
-    UILabel *_subtitleLabel;
-    UIView *_textContainerView;
-    NSLayoutConstraint *_textLeadingConstraint;
-    NSLayoutConstraint *_textSpacerHeightConstraint;
-    NSLayoutConstraint *_textTrailingConstraint;
-    UILabel *_titleLabel;
-    NSArray *_topConstraints;
-    NSLayoutConstraint *_topLabelConstraint;
+    MPUExtrasConstrainedArtworkContainerView * _artworkContainer;
+    NSLayoutConstraint * _artworkHeightConstraint;
+    NSLayoutConstraint * _artworkSpacerHeightConstraint;
+    NSLayoutConstraint * _artworkWidthConstraint;
+    NSArray * _bottomConstraints;
+    NSLayoutConstraint * _bottomLabelConstraint;
+    IKListItemLockupElement * _element;
+    NSLayoutConstraint * _leadingViewConstraint;
+    NSLayoutConstraint * _minimumHeightConstraint;
+    MPUContentSizeLayoutConstraint * _subtitleBaselineConstraint;
+    UILabel * _subtitleLabel;
+    UIView * _textContainerView;
+    NSLayoutConstraint * _textLeadingConstraint;
+    NSLayoutConstraint * _textSpacerHeightConstraint;
+    NSLayoutConstraint * _textTrailingConstraint;
+    UILabel * _titleLabel;
+    NSArray * _topConstraints;
+    NSLayoutConstraint * _topLabelConstraint;
 }
 
 @property (nonatomic, readonly) MPUExtrasConstrainedArtworkContainerView *artworkContainerView;

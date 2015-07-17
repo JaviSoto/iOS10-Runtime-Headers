@@ -3,10 +3,10 @@
  */
 
 @interface PKRemoteAssetManager : NSObject {
-    NSURL *_directoryURL;
-    NSMutableDictionary *_manifestItemsByRelativeURL;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSURLSession *_urlSession;
+    NSURL * _directoryURL;
+    NSMutableDictionary * _manifestItemsByRelativeURL;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSURLSession * _urlSession;
 }
 
 - (void)_flushBundleCaches;

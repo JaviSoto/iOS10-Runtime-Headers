@@ -3,8 +3,8 @@
  */
 
 @interface CalMessageStrings : NSObject {
-    NSIndexSet *_indexSetOfCommentStrings;
-    NSArray *_strings;
+    NSIndexSet * _indexSetOfCommentStrings;
+    NSArray * _strings;
 }
 
 @property (nonatomic, readonly) NSIndexSet *indexSetOfCommentStrings;

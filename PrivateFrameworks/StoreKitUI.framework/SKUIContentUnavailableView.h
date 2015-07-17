@@ -3,18 +3,18 @@
  */
 
 @interface SKUIContentUnavailableView : SKUIViewReuseView <SKUIViewElementView> {
-    UIControl *_button;
-    SKUIButtonViewElement *_buttonElement;
+    UIControl * _button;
+    SKUIButtonViewElement * _buttonElement;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIImageViewElement *_imageElement;
-    SKUIImageView *_imageView;
-    SKUIAttributedStringView *_messageView;
-    SKUIAttributedStringView *_titleView;
+    }  _contentInset;
+    SKUIImageViewElement * _imageElement;
+    SKUIImageView * _imageView;
+    SKUIAttributedStringView * _messageView;
+    SKUIAttributedStringView * _titleView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

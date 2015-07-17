@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _finalLayoutMargins;
-    UIImageView *_imageView;
-    UILabel *_label;
+    }  _finalLayoutMargins;
+    UIImageView * _imageView;
+    UILabel * _label;
 }
 
 @property (nonatomic, copy) NSString *authorName;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIEditorialLockupCollectionViewCell : SKUIItemCollectionViewCell {
-    SKUIEditorialLockupCellLayout *_layout;
+    SKUIEditorialLockupCellLayout * _layout;
 }
 
 @property (nonatomic, readonly) SKUIEditorialLockupCellLayout *layout;

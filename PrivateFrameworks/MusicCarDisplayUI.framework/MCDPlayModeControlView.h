@@ -3,10 +3,10 @@
  */
 
 @interface MCDPlayModeControlView : UIView {
-    BOOL _creatingGenius;
-    MCDButton *_geniusButton;
-    MCDButton *_repeatButton;
-    MCDButton *_shuffleButton;
+    BOOL  _creatingGenius;
+    MCDButton * _geniusButton;
+    MCDButton * _repeatButton;
+    MCDButton * _shuffleButton;
 }
 
 @property (nonatomic) BOOL creatingGenius;

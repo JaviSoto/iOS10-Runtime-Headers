@@ -3,10 +3,10 @@
  */
 
 @interface WebFilterEvaluator : NSObject <NSSecureCoding> {
-    NSMutableData *_buffer;
-    unsigned int _filterState;
-    NSString *_pageTitle;
-    NSURL *_url;
+    NSMutableData * _buffer;
+    unsigned int  _filterState;
+    NSString * _pageTitle;
+    NSURL * _url;
 }
 
 + (id)createWithResponse:(id)arg1;

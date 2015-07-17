@@ -3,20 +3,20 @@
  */
 
 @interface PSAccountSecurityController : PSListController <KeychainSyncPhoneSettingsFragmentDelegate, KeychainSyncViewControllerDelegate, UIAlertViewDelegate> {
-    NSString *_SMSTarget;
-    KeychainSyncCountryInfo *_SMSTargetCountryInfo;
-    UIAlertView *_changeDevicePasscodeAlert;
-    KeychainSyncDevicePINController *_devicePINController;
-    PSSetupController *_devicePasscodeChangeSetupController;
-    UIAlertView *_disableRecoveryConfirmationAlert;
-    UIAlertView *_invalidPhoneNumberAlert;
-    PSKeychainSyncManager *_manager;
-    NSArray *_passcodeSpecifiers;
-    KeychainSyncPhoneSettingsFragment *_phoneSettingsFragment;
-    PSSpecifier *_recoverySwitch;
-    BOOL _secureBackupEnabled;
-    NSString *_securityCode;
-    int _securityCodeType;
+    NSString * _SMSTarget;
+    KeychainSyncCountryInfo * _SMSTargetCountryInfo;
+    UIAlertView * _changeDevicePasscodeAlert;
+    KeychainSyncDevicePINController * _devicePINController;
+    PSSetupController * _devicePasscodeChangeSetupController;
+    UIAlertView * _disableRecoveryConfirmationAlert;
+    UIAlertView * _invalidPhoneNumberAlert;
+    PSKeychainSyncManager * _manager;
+    NSArray * _passcodeSpecifiers;
+    KeychainSyncPhoneSettingsFragment * _phoneSettingsFragment;
+    PSSpecifier * _recoverySwitch;
+    BOOL  _secureBackupEnabled;
+    NSString * _securityCode;
+    int  _securityCodeType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,12 +26,12 @@
 @property (nonatomic) int securityCodeType;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_setShowsDoneButton:(BOOL)arg1;
 - (void)_showSecurityCodeChangeSheetOnSpecifier:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)cancelPressed;
 - (void)changeSecurityCode:(id)arg1;
-- (void)dealloc;
 - (void)disableRecovery;
 - (void)handleBurnedRecord;
 - (id)init;

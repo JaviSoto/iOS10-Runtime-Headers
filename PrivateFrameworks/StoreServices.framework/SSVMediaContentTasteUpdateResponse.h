@@ -3,10 +3,10 @@
  */
 
 @interface SSVMediaContentTasteUpdateResponse : NSObject <NSSecureCoding, SSXPCCoding> {
-    BOOL _cachedResponse;
-    NSArray *_contentTasteItems;
-    NSDate *_expirationDate;
-    unsigned long long _responseRevisionID;
+    BOOL  _cachedResponse;
+    NSArray * _contentTasteItems;
+    NSDate * _expirationDate;
+    unsigned long long  _responseRevisionID;
 }
 
 @property (getter=isCachedResponse, nonatomic) BOOL cachedResponse;

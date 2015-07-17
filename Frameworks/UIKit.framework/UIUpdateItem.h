@@ -3,13 +3,13 @@
  */
 
 @interface UIUpdateItem : NSObject {
-    int _action;
-    int _animation;
-    UITableViewUpdateGap *_gap;
-    BOOL _headerFooterOnly;
-    NSIndexPath *_indexPath;
-    float _offset;
-    BOOL _skipAnimation;
+    int  _action;
+    int  _animation;
+    UITableViewUpdateGap * _gap;
+    BOOL  _headerFooterOnly;
+    NSIndexPath * _indexPath;
+    float  _offset;
+    BOOL  _skipAnimation;
 }
 
 @property (nonatomic, readonly) int action;
@@ -20,11 +20,11 @@
 @property (nonatomic) float offset;
 @property (nonatomic) BOOL skipAnimation;
 
+- (void).cxx_destruct;
 - (id)_actionDescription;
 - (int)action;
 - (int)animation;
 - (int)compareIndexPaths:(id)arg1;
-- (void)dealloc;
 - (id)gap;
 - (BOOL)headerFooterOnly;
 - (id)indexPath;

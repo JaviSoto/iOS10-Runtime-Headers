@@ -3,9 +3,9 @@
  */
 
 @interface PAContiguousThreadArray : NSObject {
-    unsigned int _firstTimestampIndex;
-    unsigned long long _previousCpuTimeNs;
-    NSMutableArray *_threads;
+    unsigned int  _firstTimestampIndex;
+    unsigned long long  _previousCpuTimeNs;
+    NSMutableArray * _threads;
 }
 
 @property (readonly) unsigned long long dispatchQueueId;

@@ -8,12 +8,12 @@
         float columnAdjustment; 
         int rowIndex; 
         float rowAdjustment; 
-    } mFrom;
-    BOOL mIsRelative;
+    }  mFrom;
+    BOOL  mIsRelative;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
+    }  mSize;
 }
 
 - (id).cxx_construct;

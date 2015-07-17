@@ -3,11 +3,11 @@
  */
 
 @interface BRCServerChangeState : NSObject <NSCopying, NSSecureCoding> {
-    CKServerChangeToken *_changeToken;
-    unsigned long long _clientRequestID;
-    NSDate *_lastSyncDownDate;
-    int _lastSyncDownStatus;
-    CKServerChangeToken *_pendingChangeToken;
+    CKServerChangeToken * _changeToken;
+    unsigned long long  _clientRequestID;
+    NSDate * _lastSyncDownDate;
+    int  _lastSyncDownStatus;
+    CKServerChangeToken * _pendingChangeToken;
 }
 
 @property (nonatomic, retain) CKServerChangeToken *changeToken;

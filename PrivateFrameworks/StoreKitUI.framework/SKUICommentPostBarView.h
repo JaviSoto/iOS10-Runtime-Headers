@@ -3,13 +3,13 @@
  */
 
 @interface SKUICommentPostBarView : UIView <UITextFieldDelegate> {
-    UILabel *_asLabel;
-    UIButton *_asNameButton;
-    NSString *_asText;
-    NSString *_commenter;
-    <SKUICommentDelegate> *_delegate;
-    UIButton *_postButton;
-    SKUICommentPostBarTextField *_postTextField;
+    UILabel * _asLabel;
+    UIButton * _asNameButton;
+    NSString * _asText;
+    NSString * _commenter;
+    <SKUICommentDelegate> * _delegate;
+    UIButton * _postButton;
+    SKUICommentPostBarTextField * _postTextField;
 }
 
 @property (nonatomic, copy) NSString *commenter;

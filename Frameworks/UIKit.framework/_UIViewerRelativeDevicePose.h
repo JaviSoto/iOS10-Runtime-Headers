@@ -3,23 +3,23 @@
  */
 
 @interface _UIViewerRelativeDevicePose : NSObject <NSCoding, NSCopying> {
-    _UIMotionEffectAcceleratedOutputRange *_acceleratedOutputRange;
-    float _planarRotationAngle;
+    _UIMotionEffectAcceleratedOutputRange * _acceleratedOutputRange;
+    float  _planarRotationAngle;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _viewerOffset;
+    }  _viewerOffset;
 }
 
 @property (nonatomic) float planarRotationAngle;
 @property (nonatomic) struct UIOffset { float x1; float x2; } viewerOffset;
 
+- (void).cxx_destruct;
 - (struct UIOffset { float x1; float x2; })_acceleratedOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg1 accelerationBoostFactor:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_acceleratedOutputRange;
 - (void)_reset;
 - (void)_setAcceleration:(struct CGPoint { float x1; float x2; })arg1 fixingOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

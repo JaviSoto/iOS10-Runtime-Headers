@@ -3,11 +3,11 @@
  */
 
 @interface TKPickerSelectableItem : TKPickerRowItem {
-    NSString *_detailText;
-    BOOL _showsCheckmark;
-    BOOL _showsDisclosureIndicator;
-    NSString *_text;
-    BOOL _textCentered;
+    NSString * _detailText;
+    BOOL  _showsCheckmark;
+    BOOL  _showsDisclosureIndicator;
+    NSString * _text;
+    BOOL  _textCentered;
 }
 
 @property (nonatomic, copy) NSString *detailText;

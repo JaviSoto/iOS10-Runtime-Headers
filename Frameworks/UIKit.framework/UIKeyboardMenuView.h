@@ -3,18 +3,18 @@
  */
 
 @interface UIKeyboardMenuView : UIView <UIDimmingViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIKeyboardLayoutStar *_layout;
-    UIKBTree *_referenceKey;
-    BOOL _usesDarkTheme;
-    BOOL _usesStraightLeftEdge;
-    UIDimmingView *m_dimmingView;
-    int m_firstVisibleRow;
-    int m_mode;
+    UIKeyboardLayoutStar * _layout;
+    UIKBTree * _referenceKey;
+    BOOL  _usesDarkTheme;
+    BOOL  _usesStraightLeftEdge;
+    UIDimmingView * m_dimmingView;
+    int  m_firstVisibleRow;
+    int  m_mode;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_point;
-    float m_pointerOffset;
+    }  m_point;
+    float  m_pointerOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,18 +24,18 @@
             float width; 
             float height; 
         } size; 
-    } m_referenceRect;
-    int m_scrollDirection;
-    double m_scrollStartTime;
-    NSTimer *m_scrollTimer;
-    BOOL m_scrollable;
-    BOOL m_scrolling;
-    UIInputSwitcherSelectionExtraView *m_selExtraView;
-    UIInputSwitcherShadowView *m_shadowView;
-    BOOL m_shouldFade;
-    BOOL m_startAutoscroll;
-    UIInputSwitcherTableView *m_table;
-    int m_visibleRows;
+    }  m_referenceRect;
+    int  m_scrollDirection;
+    double  m_scrollStartTime;
+    NSTimer * m_scrollTimer;
+    BOOL  m_scrollable;
+    BOOL  m_scrolling;
+    UIInputSwitcherSelectionExtraView * m_selExtraView;
+    UIInputSwitcherShadowView * m_shadowView;
+    BOOL  m_shouldFade;
+    BOOL  m_startAutoscroll;
+    UIInputSwitcherTableView * m_table;
+    int  m_visibleRows;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -54,6 +54,7 @@
 - (void)_delayedFade;
 - (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
 - (void)applicationWillSuspend:(id)arg1;
+- (id)assistantSwitch;
 - (void)autoscrollTimerFired:(id)arg1;
 - (BOOL)centerPopUpOverKey;
 - (void)dealloc;
@@ -116,6 +117,7 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)titleForItemAtIndex:(int)arg1;
+- (void)toggleKeyboardAssistantPreference;
 - (void)toggleKeyboardPredictionPreference;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

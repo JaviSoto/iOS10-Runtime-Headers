@@ -3,7 +3,7 @@
  */
 
 @interface SKUIViewControllerContainerView : UIView {
-    UIViewController *_viewController;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic, retain) UIViewController *viewController;

@@ -6,10 +6,11 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _startSceneReferenceLocation;
-    UIDelayedAction *_touchDelay;
+    }  _startSceneReferenceLocation;
+    UIDelayedAction * _touchDelay;
 }
 
+- (void).cxx_destruct;
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (void)dealloc;

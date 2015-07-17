@@ -3,27 +3,27 @@
  */
 
 @interface TNSheet : TSPObject <TSCEResolverContainer, TSDDrawableContainerInfo, TSKDocumentObject, TSKModel, TSKSearchTarget, TSWPHeaderFooterProvider> {
-    float _pageFooterInset;
-    float _pageHeaderInset;
+    float  _pageFooterInset;
+    float  _pageHeaderInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _printMargins;
-    int _startPageNumber;
-    BOOL _usingStartPageNumber;
-    NSMutableArray *mChildInfos;
-    float mContentScale;
-    TSWPStorage *mHeaderFooters;
-    BOOL mInDocument;
-    BOOL mInPortraitPageOrientation;
-    BOOL mIsAutofitOn;
-    NSString *mName;
-    int mPageOrder;
-    BOOL mShowPageNumbers;
-    unsigned int mTableNameCounter;
-    BOOL mUsesSingleHeaderFooter;
+    }  _printMargins;
+    int  _startPageNumber;
+    BOOL  _usingStartPageNumber;
+    NSMutableArray * mChildInfos;
+    float  mContentScale;
+    TSWPStorage * mHeaderFooters;
+    BOOL  mInDocument;
+    BOOL  mInPortraitPageOrientation;
+    BOOL  mIsAutofitOn;
+    NSString * mName;
+    int  mPageOrder;
+    BOOL  mShowPageNumbers;
+    unsigned int  mTableNameCounter;
+    BOOL  mUsesSingleHeaderFooter;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -58,7 +58,6 @@
 + (BOOL)needsObjectUUID;
 + (id)sheetForSelectionModel:(id)arg1 outIsPaginated:(BOOL*)arg2;
 
-- (id).cxx_construct;
 - (void)addChildInfo:(id)arg1;
 - (float)bodyWidth;
 - (BOOL)canMoveDrawables:(id)arg1 toIndexes:(id)arg2;

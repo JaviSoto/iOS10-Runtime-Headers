@@ -3,11 +3,12 @@
  */
 
 @interface CUIMutableCatalog : CUICatalog {
-    unsigned int _checkRespondsTo;
-    unsigned int _respondsToCheck;
+    unsigned int  _checkRespondsTo;
+    unsigned int  _respondsToCheck;
 }
 
 - (id)_baseKeyForName:(id)arg1;
+- (unsigned int)_storageRefForRendition:(id)arg1 representsODRContent:(BOOL*)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1;

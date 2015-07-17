@@ -3,8 +3,8 @@
  */
 
 @interface MPRemotePlaybackQueue : NSObject {
-    struct _MRSystemAppPlaybackQueue { } *_mediaRemotePlaybackQueue;
-    NSDictionary *_userInfo;
+    struct _MRSystemAppPlaybackQueue { } * _mediaRemotePlaybackQueue;
+    NSDictionary * _userInfo;
 }
 
 @property (getter=isRequestingImmediatePlayback, nonatomic, readonly) BOOL requestingImmediatePlayback;

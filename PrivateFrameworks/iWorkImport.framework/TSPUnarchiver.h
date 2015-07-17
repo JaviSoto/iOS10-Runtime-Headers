@@ -3,34 +3,34 @@
  */
 
 @interface TSPUnarchiver : NSObject {
-    <TSPUnarchiverDelegate> *_delegate;
-    struct vector<void (^)(), std::__1::allocator<void (^)()> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(), std::__1::allocator<void (^)()> >="__first_"^@? {} _finalizeHandlers;
-    <TSPLazyReferenceDelegate> *_lazyReferenceDelegate;
+    <TSPUnarchiverDelegate> * _delegate;
+    struct vector<void (^)(), std::__1::allocator<void (^)()> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(), std::__1::allocator<void (^)()> >="__first_"^@? {}  _finalizeHandlers;
+    <TSPLazyReferenceDelegate> * _lazyReferenceDelegate;
     struct auto_ptr<google::protobuf::Message> { 
         struct Message {} *__ptr_; 
-    } _message;
-    unsigned int _messageType;
-    unsigned long long _messageVersion;
-    <TSPObjectDelegate> *_objectDelegate;
-    long long _objectIdentifier;
+    }  _message;
+    unsigned int  _messageType;
+    unsigned long long  _messageVersion;
+    <TSPObjectDelegate> * _objectDelegate;
+    long long  _objectIdentifier;
     struct vector<TSP::UnarchiverReference, std::__1::allocator<TSP::UnarchiverReference> > { 
         struct UnarchiverReference {} *__begin_; 
         struct UnarchiverReference {} *__end_; 
         struct __compressed_pair<TSP::UnarchiverReference *, std::__1::allocator<TSP::UnarchiverReference> > { 
             struct UnarchiverReference {} *__first_; 
         } __end_cap_; 
-    } _references;
+    }  _references;
     struct vector<TSP::UnarchiverRepeatedReference, std::__1::allocator<TSP::UnarchiverRepeatedReference> > { 
         struct UnarchiverRepeatedReference {} *__begin_; 
         struct UnarchiverRepeatedReference {} *__end_; 
         struct __compressed_pair<TSP::UnarchiverRepeatedReference *, std::__1::allocator<TSP::UnarchiverRepeatedReference> > { 
             struct UnarchiverRepeatedReference {} *__first_; 
         } __end_cap_; 
-    } _repeatedReferences;
+    }  _repeatedReferences;
     struct auto_ptr<__gnu_cxx::hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > > { 
         struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > {} *__ptr_; 
-    } _strongReferences;
-    TSPUnknownContent *_unknownContent;
+    }  _strongReferences;
+    TSPUnknownContent * _unknownContent;
 }
 
 @property (nonatomic, readonly) BOOL canValidateReferences;

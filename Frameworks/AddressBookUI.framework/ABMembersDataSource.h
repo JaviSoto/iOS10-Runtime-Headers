@@ -3,18 +3,18 @@
  */
 
 @interface ABMembersDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
-    void *_addressBook;
-    ABBannerView *_bannerView;
-    <ABMembersDataSourceDelegate> *_delegate;
-    struct __CFDictionary { } *_displayableSectionHeaderToSectionHeader;
-    struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
-    ABUIPerson *_meCard;
-    ABModel *_model;
-    struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
-    struct __CFDictionary { } *_sectionHeaderToSortingIndex;
-    NSMutableArray *_sectionIndexTitles;
-    struct __CFDictionary { } *_sectionIndexToDisplayableSectionIndex;
-    <ABStyleProvider> *_styleProvider;
+    void * _addressBook;
+    ABBannerView * _bannerView;
+    <ABMembersDataSourceDelegate> * _delegate;
+    struct __CFDictionary { } * _displayableSectionHeaderToSectionHeader;
+    struct __CFDictionary { } * _displayableSectionIndexToSectionIndex;
+    ABUIPerson * _meCard;
+    ABModel * _model;
+    struct __CFDictionary { } * _sectionHeaderToDisplayableSectionHeader;
+    struct __CFDictionary { } * _sectionHeaderToSortingIndex;
+    NSMutableArray * _sectionIndexTitles;
+    struct __CFDictionary { } * _sectionIndexToDisplayableSectionIndex;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) void*addressBook;

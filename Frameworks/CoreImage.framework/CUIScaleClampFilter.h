@@ -3,8 +3,8 @@
  */
 
 @interface CUIScaleClampFilter : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

@@ -3,10 +3,10 @@
  */
 
 @interface TSCHPieChartRep : TSCHChartRep {
-    BOOL mHasDrawnSinceWedgeKnobTrackerCreated;
-    TSCHChartPieElementsRenderer *mPieElementRenderer;
-    NSDictionary *mSeriesIndexedPieWedgeDraggingLayers;
-    NSArray *mWedgeKnobs;
+    BOOL  mHasDrawnSinceWedgeKnobTrackerCreated;
+    TSCHChartPieElementsRenderer * mPieElementRenderer;
+    NSDictionary * mSeriesIndexedPieWedgeDraggingLayers;
+    NSArray * mWedgeKnobs;
 }
 
 - (void)clearRenderers;

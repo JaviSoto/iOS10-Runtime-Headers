@@ -3,8 +3,8 @@
  */
 
 @interface SKUIWriteAReviewTemplateViewElement : SKUIViewElement {
-    long long _itemIdentifier;
-    NSString *_reviewMetadataURLString;
+    long long  _itemIdentifier;
+    NSString * _reviewMetadataURLString;
 }
 
 @property (nonatomic, readonly) long long itemIdentifier;

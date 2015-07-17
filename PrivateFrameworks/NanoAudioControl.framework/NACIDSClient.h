@@ -3,10 +3,10 @@
  */
 
 @interface NACIDSClient : NSObject <IDSServiceDelegate> {
-    <NACIDSClientDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_idsDispatchQueue;
-    NSObject<OS_dispatch_queue> *_idsOutgoingQueue;
-    IDSService *_idsService;
+    <NACIDSClientDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _idsDispatchQueue;
+    NSObject<OS_dispatch_queue> * _idsOutgoingQueue;
+    IDSService * _idsService;
 }
 
 @property (readonly, copy) NSString *debugDescription;

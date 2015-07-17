@@ -3,21 +3,21 @@
  */
 
 @interface UISlider : UIControl <NSCoding> {
-    float _alpha;
-    BOOL _animatingWithDynamics;
-    struct __CFDictionary { } *_contentLookup;
-    float _hitOffset;
-    UIImageView *_innerThumbView;
-    BOOL _maxColorIsValid;
-    UIColor *_maxTintColor;
-    UIView *_maxTrackClipView;
-    UIImageView *_maxTrackView;
-    float _maxValue;
-    UIImageView *_maxValueImageView;
-    UIColor *_minTintColor;
-    UIImageView *_minTrackView;
-    float _minValue;
-    UIImageView *_minValueImageView;
+    float  _alpha;
+    BOOL  _animatingWithDynamics;
+    struct __CFDictionary { } * _contentLookup;
+    float  _hitOffset;
+    UIImageView * _innerThumbView;
+    BOOL  _maxColorIsValid;
+    UIColor * _maxTintColor;
+    UIView * _maxTrackClipView;
+    UIImageView * _maxTrackView;
+    float  _maxValue;
+    UIImageView * _maxValueImageView;
+    UIColor * _minTintColor;
+    UIImageView * _minTrackView;
+    float  _minValue;
+    UIImageView * _minValueImageView;
     struct { 
         unsigned int continuous : 1; 
         unsigned int animating : 1; 
@@ -27,16 +27,15 @@
         unsigned int creatingSnapshot : 1; 
         unsigned int thumbDisabled : 1; 
         unsigned int minTrackHidden : 1; 
-    } _sliderFlags;
-    BOOL _thumbIsArtworkBased;
-    UIColor *_thumbTintColor;
-    UIImageView *_thumbView;
-    UIView *_thumbViewNeue;
-    CAShapeLayer *_thumbViewNeueShape;
-    NSArray *_trackColors;
-    BOOL _trackIsArtworkBased;
-    BOOL _useLookNeue;
-    float _value;
+    }  _sliderFlags;
+    BOOL  _thumbIsArtworkBased;
+    UIColor * _thumbTintColor;
+    UIImageView * _thumbView;
+    UIView * _thumbViewNeue;
+    NSArray * _trackColors;
+    BOOL  _trackIsArtworkBased;
+    BOOL  _useLookNeue;
+    float  _value;
 }
 
 @property (getter=isContinuous, nonatomic) BOOL continuous;
@@ -52,10 +51,12 @@
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic) float value;
 
+- (void).cxx_destruct;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_buildTrackArtwork;
 - (id)_contentForState:(unsigned int)arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (unsigned int)_controlEventsForActionTriggered;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;

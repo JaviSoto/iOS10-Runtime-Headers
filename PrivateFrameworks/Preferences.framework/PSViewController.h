@@ -3,9 +3,9 @@
  */
 
 @interface PSViewController : UIViewController <PSController> {
-    UIViewController<PSController> *_parentController;
-    PSRootController *_rootController;
-    PSSpecifier *_specifier;
+    UIViewController<PSController> * _parentController;
+    PSRootController * _rootController;
+    PSSpecifier * _specifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,8 +13,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)canBeShownFromSuspendedState;
-- (void)dealloc;
 - (void)didLock;
 - (void)didUnlock;
 - (void)didWake;

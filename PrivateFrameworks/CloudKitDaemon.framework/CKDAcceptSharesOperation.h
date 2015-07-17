@@ -3,11 +3,11 @@
  */
 
 @interface CKDAcceptSharesOperation : CKDDatabaseOperation {
-    id /* block */ _acceptCompletionBlock;
-    NSMutableArray *_acceptedShareURLsToFetch;
-    int _numShareAcceptAttempts;
-    NSMutableDictionary *_shareInfosToAcceptByURL;
-    NSMutableArray *_shareURLsToAccept;
+    id /* block */  _acceptCompletionBlock;
+    NSMutableArray * _acceptedShareURLsToFetch;
+    int  _numShareAcceptAttempts;
+    NSMutableDictionary * _shareInfosToAcceptByURL;
+    NSMutableArray * _shareURLsToAccept;
 }
 
 @property (nonatomic, copy) id /* block */ acceptCompletionBlock;
@@ -27,6 +27,7 @@
 - (void)_prepareShareInfo;
 - (id /* block */)acceptCompletionBlock;
 - (id)acceptedShareURLsToFetch;
+- (unsigned long long)activityStart;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)makeStateTransition;

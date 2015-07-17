@@ -3,30 +3,31 @@
  */
 
 @interface CPLEngineStore : NSObject <CPLAbstractObject, CPLEngineComponent> {
-    BOOL _batchedTransactionDequeueIsScheduled;
-    NSMutableArray *_batchedTransactions;
-    NSObject<OS_dispatch_queue> *_batchedTransactionsQueue;
-    CPLEngineClientCache *_clientCache;
-    CPLEngineCloudCache *_cloudCache;
-    CPLEngineChangePipe *_deletePushQueue;
-    CPLEngineResourceDownloadQueue *_downloadQueue;
-    CPLEngineLibrary *_engineLibrary;
-    CPLEngineIDMapping *_idMapping;
-    CPLPlatformObject *_platformObject;
-    CPLEngineChangePipe *_pullQueue;
-    CPLEngineChangePipe *_pushQueue;
-    CPLEngineRemappedDeletes *_remappedDeletes;
-    NSMutableArray *_resetEvents;
-    NSURL *_resetEventsURL;
-    CPLEngineResourceStorage *_resourceStorage;
-    unsigned int _state;
-    NSHashTable *_storages;
-    CPLEngineTransientRepository *_transientPullRepository;
-    CPLEngineResourceUploadQueue *_uploadQueue;
+    BOOL  _batchedTransactionDequeueIsScheduled;
+    NSMutableArray * _batchedTransactions;
+    NSObject<OS_dispatch_queue> * _batchedTransactionsQueue;
+    CPLEngineClientCache * _clientCache;
+    CPLEngineCloudCache * _cloudCache;
+    CPLEngineChangePipe * _deletePushQueue;
+    CPLEngineResourceDownloadQueue * _downloadQueue;
+    CPLEngineLibrary * _engineLibrary;
+    CPLEngineIDMapping * _idMapping;
+    CPLPlatformObject * _platformObject;
+    CPLEngineChangePipe * _pullQueue;
+    CPLEngineChangePipe * _pushQueue;
+    CPLEngineRemappedDeletes * _remappedDeletes;
+    NSMutableArray * _resetEvents;
+    NSURL * _resetEventsURL;
+    CPLEngineResourceStorage * _resourceStorage;
+    unsigned int  _state;
+    NSHashTable * _storages;
+    CPLEngineTransientRepository * _transientPullRepository;
+    CPLEngineResourceUploadQueue * _uploadQueue;
 }
 
 @property (nonatomic, readonly) CPLEngineClientCache *clientCache;
 @property (nonatomic, readonly) CPLEngineCloudCache *cloudCache;
+@property (nonatomic, readonly) id corruptionInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) CPLEngineChangePipe *deletePushQueue;
 @property (readonly, copy) NSString *description;
@@ -69,6 +70,7 @@
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudCache;
 - (id)componentName;
+- (id)corruptionInfo;
 - (id)createNewLibraryVersion;
 - (void)dealloc;
 - (id)deletePushQueue;
@@ -95,6 +97,7 @@
 - (id)remappedDeletes;
 - (BOOL)resetCompleteSyncStateWithCause:(id)arg1 error:(id*)arg2;
 - (BOOL)resetLocalSyncStateWithCause:(id)arg1 error:(id*)arg2;
+- (BOOL)resetSyncAnchorWithCause:(id)arg1 error:(id*)arg2;
 - (id)resourceStorage;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;

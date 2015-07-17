@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DBaseImageTextureTiling : TSCH3DTextureTiling {
-    float _rotation;
-    TSCH3DVector *_scale;
+    float  _rotation;
+    TSCH3DVector * _scale;
 }
 
 @property (nonatomic) float rotation;

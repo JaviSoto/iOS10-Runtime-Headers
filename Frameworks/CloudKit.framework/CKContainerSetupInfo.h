@@ -3,9 +3,9 @@
  */
 
 @interface CKContainerSetupInfo : NSObject <NSSecureCoding> {
-    CKAccountInfo *_accountInfoOverride;
-    CKContainerID *_containerID;
-    NSString *_sourceApplicationBundleIdentifier;
+    CKAccountInfo * _accountInfoOverride;
+    CKContainerID * _containerID;
+    NSString * _sourceApplicationBundleIdentifier;
 }
 
 @property (nonatomic, retain) CKAccountInfo *accountInfoOverride;

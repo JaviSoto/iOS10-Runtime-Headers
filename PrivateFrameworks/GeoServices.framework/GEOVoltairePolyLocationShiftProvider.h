@@ -3,9 +3,9 @@
  */
 
 @interface GEOVoltairePolyLocationShiftProvider : GEOLocationShiftProvider <PBRequesterDelegate> {
-    id /* block */ _errorHandler;
-    id /* block */ _finishedHandler;
-    GEORequester *_requester;
+    id /* block */  _errorHandler;
+    id /* block */  _finishedHandler;
+    GEORequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;

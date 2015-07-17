@@ -7,7 +7,7 @@
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mCacheHintID;
+    }  mCacheHintID;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -18,20 +18,20 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mCellRange;
+    }  mCellRange;
     struct CGSize { 
         float width; 
         float height; 
-    } mEffectiveSize;
-    BOOL mHorizontal;
-    BOOL mIsValid;
-    TSTLayout *mLayout;
+    }  mEffectiveSize;
+    BOOL  mHorizontal;
+    BOOL  mIsValid;
+    TSTLayout * mLayout;
     struct CGSize { 
         float width; 
         float height; 
-    } mMaximumSize;
-    unsigned int mPartitionPosition;
-    NSNumber *mPartitioningPass;
+    }  mMaximumSize;
+    unsigned int  mPartitionPosition;
+    NSNumber * mPartitioningPass;
 }
 
 @property (nonatomic) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cacheHintID;
@@ -50,7 +50,6 @@
 
 + (Class)archivedHintClass;
 
-- (id).cxx_construct;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cacheHintID;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRange;
 - (id)copyForArchiving;
@@ -69,7 +68,7 @@
 - (id)layout;
 - (struct CGSize { float x1; float x2; })maximumSize;
 - (void)offsetByDelta:(int)arg1;
-- (BOOL)overlapsWithSelection:(id)arg1;
+- (BOOL)overlapsWithSelectionPath:(id)arg1;
 - (unsigned int)partitionPosition;
 - (id)partitioningPass;
 - (oneway void)release;

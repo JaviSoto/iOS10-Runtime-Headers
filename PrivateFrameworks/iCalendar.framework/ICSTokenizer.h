@@ -3,20 +3,21 @@
  */
 
 @interface ICSTokenizer : NSObject {
-    int _cursor;
-    NSData *_data;
-    const char *_datastring;
-    int _expectedNextTokenType;
-    int _length;
-    int _logCount;
-    BOOL _printedICS;
-    char *_token;
-    int _tokenType;
+    int  _cursor;
+    NSData * _data;
+    const char * _datastring;
+    int  _expectedNextTokenType;
+    int  _length;
+    int  _logCount;
+    BOOL  _printedICS;
+    char * _token;
+    int  _tokenType;
 }
 
 @property int logCount;
 @property BOOL printedICS;
 
+- (void).cxx_destruct;
 - (BOOL)consumeEOL;
 - (BOOL)consumeEscaped:(const char *)arg1;
 - (BOOL)consumeFolding;

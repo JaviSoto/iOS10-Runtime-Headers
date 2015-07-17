@@ -3,12 +3,12 @@
  */
 
 @interface SUItemOfferButton : UIButton {
-    int _animationHorizontalAlignment;
-    NSString *_buttonStyle;
-    NSString *_confirmationTitle;
-    BOOL _isShowingConfirmation;
-    NSString *_offerTitle;
-    BOOL _shouldShowConfirmation;
+    int  _animationHorizontalAlignment;
+    NSString * _buttonStyle;
+    NSString * _confirmationTitle;
+    BOOL  _isShowingConfirmation;
+    NSString * _offerTitle;
+    BOOL  _shouldShowConfirmation;
 }
 
 @property (nonatomic) int animationHorizontalAlignment;

@@ -3,9 +3,9 @@
  */
 
 @interface RadioFairPlayKBSyncManager : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long long _activeAccountIdentifier;
-    NSMutableArray *_dpInfoKeyBagSyncDataBlobs;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned long long  _activeAccountIdentifier;
+    NSMutableArray * _dpInfoKeyBagSyncDataBlobs;
 }
 
 + (id)sharedManager;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIGiftResultView : UIView {
-    UIButton *_giftAgainButton;
-    UIImageView *_imageView;
-    SKUIGiftItemView *_itemView;
-    UILabel *_titleLabel;
+    UIButton * _giftAgainButton;
+    UIImageView * _imageView;
+    SKUIGiftItemView * _itemView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, readonly) UIButton *giftAgainButton;

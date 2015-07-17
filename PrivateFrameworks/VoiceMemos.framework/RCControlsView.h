@@ -3,22 +3,22 @@
  */
 
 @interface RCControlsView : UIView {
-    RCAVState *_AVState;
-    UIColor *_bottomSeparatorLineColor;
-    BOOL _canEnableCaptureButton;
-    BOOL _canEnableDoneButton;
-    BOOL _canEnablePreviewButton;
-    BOOL _canRecord;
-    int _controlsConfiguration;
-    <RCControlsViewDelegate> *_delegate;
-    UIButton *_doneButton;
-    RCLayoutMetrics *_layoutMetrics;
-    UIButton *_leftPlayStateButton;
-    UIAlertController *_noMicAlertViewController;
-    RCRecorderStateButton *_recordingStateButton;
-    BOOL _showsBottomSeparatorLine;
-    float _topPadding;
-    NSLayoutConstraint *_topPaddingCn;
+    RCAVState * _AVState;
+    UIColor * _bottomSeparatorLineColor;
+    BOOL  _canEnableCaptureButton;
+    BOOL  _canEnableDoneButton;
+    BOOL  _canEnablePreviewButton;
+    BOOL  _canRecord;
+    int  _controlsConfiguration;
+    <RCControlsViewDelegate> * _delegate;
+    UIButton * _doneButton;
+    RCLayoutMetrics * _layoutMetrics;
+    UIButton * _leftPlayStateButton;
+    UIAlertController * _noMicAlertViewController;
+    RCRecorderStateButton * _recordingStateButton;
+    BOOL  _showsBottomSeparatorLine;
+    float  _topPadding;
+    NSLayoutConstraint * _topPaddingCn;
 }
 
 @property (nonatomic, copy) RCAVState *AVState;

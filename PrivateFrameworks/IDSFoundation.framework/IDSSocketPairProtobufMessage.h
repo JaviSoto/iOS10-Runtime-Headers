@@ -3,30 +3,30 @@
  */
 
 @interface IDSSocketPairProtobufMessage : IDSSocketPairMessage {
-    BOOL _compressed;
-    NSData *_data;
-    BOOL _expectsPeerResponse;
-    NSDate *_expiryDate;
-    unsigned short _isResponse;
-    NSString *_messageUUID;
-    unsigned int _payloadLength;
-    unsigned int _payloadOffset;
-    NSString *_peerResponseIdentifier;
-    unsigned int _sequenceNumber;
-    unsigned short _streamID;
-    unsigned short _type;
-    BOOL _wantsAppAck;
+    BOOL  _compressed;
+    NSData * _data;
+    BOOL  _expectsPeerResponse;
+    NSDate * _expiryDate;
+    unsigned short  _isResponse;
+    NSString * _messageUUID;
+    unsigned int  _payloadLength;
+    unsigned int  _payloadOffset;
+    NSString * _peerResponseIdentifier;
+    unsigned int  _sequenceNumber;
+    unsigned short  _streamID;
+    unsigned short  _type;
+    BOOL  _wantsAppAck;
 }
 
 @property (nonatomic) BOOL compressed;
-@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) BOOL expectsPeerResponse;
-@property (nonatomic) NSDate *expiryDate;
+@property (nonatomic, retain) NSDate *expiryDate;
 @property (nonatomic, readonly) unsigned short isResponse;
 @property (nonatomic, readonly, retain) NSString *messageUUID;
 @property (nonatomic, readonly, retain) NSString *peerResponseIdentifier;
 @property (nonatomic) unsigned int sequenceNumber;
-@property (nonatomic, readonly) unsigned short streamID;
+@property (nonatomic) unsigned short streamID;
 @property (nonatomic, readonly) unsigned short type;
 @property (nonatomic, readonly) BOOL wantsAppAck;
 
@@ -46,6 +46,7 @@
 - (void)setCompressed:(BOOL)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setStreamID:(unsigned short)arg1;
 - (unsigned short)streamID;
 - (unsigned short)type;
 - (BOOL)wantsAppAck;

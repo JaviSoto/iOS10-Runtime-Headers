@@ -3,7 +3,7 @@
  */
 
 @interface TSKCOIdAddress : TSKCOAddress {
-    NSString *mId;
+    NSString * mId;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

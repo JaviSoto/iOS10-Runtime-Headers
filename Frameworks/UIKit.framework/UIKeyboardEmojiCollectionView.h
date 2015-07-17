@@ -3,15 +3,15 @@
  */
 
 @interface UIKeyboardEmojiCollectionView : UICollectionView {
-    UITouch *_activeTouch;
-    UIKeyboardEmojiGraphicsTraits *_emojiGraphicsTraits;
-    UIResponder *_hitTestResponder;
-    UIKeyboardEmojiInputController *_inputController;
-    UIKeyboardEmojiView *_onDisplay;
-    UIKeyboardEmojiView *_pendingDisplay;
-    UIView *_pressIndicator;
-    UIKBRenderConfig *_renderConfig;
-    UIKeyboardEmojiView *_touched;
+    UITouch * _activeTouch;
+    UIKeyboardEmojiGraphicsTraits * _emojiGraphicsTraits;
+    UIResponder * _hitTestResponder;
+    UIKeyboardEmojiInputController * _inputController;
+    UIKeyboardEmojiView * _onDisplay;
+    UIKeyboardEmojiView * _pendingDisplay;
+    UIView * _pressIndicator;
+    UIKBRenderConfig * _renderConfig;
+    UIKeyboardEmojiView * _touched;
 }
 
 @property (retain) UITouch *activeTouch;
@@ -24,6 +24,7 @@
 @property (retain) UIKeyboardEmojiView *touched;
 
 - (float)_currentScreenScale;
+- (BOOL)_shouldReverseLayoutDirection;
 - (id)activeTouch;
 - (id)closestCellForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;

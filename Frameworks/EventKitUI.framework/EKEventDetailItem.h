@@ -3,14 +3,14 @@
  */
 
 @interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
-    BOOL _allowsEditing;
-    int _cellPosition;
-    <EKEventDetailItemDelegate> *_delegate;
-    EKEvent *_event;
-    EKUIRecurrenceAlertController *_recurrenceAlertController;
-    BOOL _shouldIndent;
-    EKEventStore *_store;
-    UIViewController<EKEditItemViewControllerProtocol> *_viewController;
+    BOOL  _allowsEditing;
+    int  _cellPosition;
+    <EKEventDetailItemDelegate> * _delegate;
+    EKEvent * _event;
+    EKUIRecurrenceAlertController * _recurrenceAlertController;
+    BOOL  _shouldIndent;
+    EKEventStore * _store;
+    UIViewController<EKEditItemViewControllerProtocol> * _viewController;
 }
 
 @property (nonatomic) BOOL allowsEditing;

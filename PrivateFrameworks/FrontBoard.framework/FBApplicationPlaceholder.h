@@ -3,13 +3,13 @@
  */
 
 @interface FBApplicationPlaceholder : FBBundleInfo {
-    NSObject<OS_dispatch_queue> *_queue;
-    double _queue_cachedPercentComplete;
-    BOOL _queue_installType;
-    BOOL _queue_isNewsstand;
-    BOOL _queue_isRestricted;
-    NSMutableSet *_queue_observers;
-    NSProgress *_queue_progress;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _queue_cachedPercentComplete;
+    BOOL  _queue_installType;
+    BOOL  _queue_isNewsstand;
+    BOOL  _queue_isRestricted;
+    NSMutableSet * _queue_observers;
+    NSProgress * _queue_progress;
 }
 
 @property (getter=isCancellable, nonatomic, readonly) BOOL cancellable;
@@ -24,6 +24,7 @@
 
 - (void)_dispatchToObservers:(id)arg1 block:(id /* block */)arg2;
 - (id)_iconDictionary;
+- (id)_initWithApplicationProxy:(id)arg1;
 - (double)_normalizedProgress:(double)arg1;
 - (void)_noteChangedSignificantly;
 - (id)_proxy;
@@ -44,7 +45,6 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
-- (id)initWithApplicationProxy:(id)arg1;
 - (unsigned int)installPhase;
 - (unsigned int)installState;
 - (unsigned int)installType;

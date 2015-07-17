@@ -3,11 +3,12 @@
  */
 
 @interface PDBuild : NSObject {
-    OADDrawable *mDrawable;
-    BOOL mIsAnimateBackground;
+    OADDrawable * mDrawable;
+    BOOL  mIsAnimateBackground;
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)drawable;
 - (id)init;
 - (BOOL)isAnimateBackground;

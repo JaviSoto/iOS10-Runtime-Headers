@@ -3,10 +3,10 @@
  */
 
 @interface MPUExtrasZoomingImageInteractiveTransitionSourceContext : NSObject {
-    NSString *_identifier;
-    unsigned int _itemIndex;
-    UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    unsigned int _supportedZoomingImageTransitionDirections;
+    NSString * _identifier;
+    unsigned int  _itemIndex;
+    UIPinchGestureRecognizer * _pinchGestureRecognizer;
+    unsigned int  _supportedZoomingImageTransitionDirections;
 }
 
 @property (nonatomic, copy) NSString *identifier;

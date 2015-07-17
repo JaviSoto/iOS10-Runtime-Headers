@@ -3,14 +3,14 @@
  */
 
 @interface RURadioPlaybackContext : MPPlaybackContext {
-    NSArray *_allPreparedAdSlotRadioTracks;
-    SSVPlaybackLease *_playbackLease;
-    MPAVItem *_prefixItem;
-    NSMapTable *_preparedAdSlotByRadioTrack;
-    RadioStation *_station;
-    RadioStationMatchContext *_stationMatchContext;
-    NSArray *_tracks;
-    BOOL _transitioningPlaybackModes;
+    NSArray * _allPreparedAdSlotRadioTracks;
+    SSVPlaybackLease * _playbackLease;
+    MPAVItem * _prefixItem;
+    NSMapTable * _preparedAdSlotByRadioTrack;
+    RadioStation * _station;
+    RadioStationMatchContext * _stationMatchContext;
+    NSArray * _tracks;
+    BOOL  _transitioningPlaybackModes;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;

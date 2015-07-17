@@ -3,10 +3,10 @@
  */
 
 @interface NSFileReactorProxy : NSObject {
-    NSObject<OS_xpc_object> *_client;
-    NSFileAccessNode *_itemLocation;
-    id /* block */ _messageSender;
-    id _reactorID;
+    NSObject<OS_xpc_object> * _client;
+    NSFileAccessNode * _itemLocation;
+    id /* block */  _messageSender;
+    id  _reactorID;
 }
 
 - (id)client;

@@ -3,8 +3,8 @@
  */
 
 @interface MFMutableMessageHeaders : MFMessageHeaders {
-    NSMutableDictionary *_headersAdded;
-    NSMutableArray *_headersRemoved;
+    NSMutableDictionary * _headersAdded;
+    NSMutableArray * _headersRemoved;
 }
 
 - (void)_appendAddedHeaderKey:(id)arg1 value:(id)arg2 toData:(id)arg3;
@@ -18,6 +18,7 @@
 - (id)encodedHeaders;
 - (id)firstHeaderForKey:(id)arg1;
 - (BOOL)hasHeaderForKey:(id)arg1;
+- (id)headersDictionary;
 - (void)mergeHeaders:(id)arg1;
 - (id)mutableCopy;
 - (void)removeHeaderForKey:(id)arg1;

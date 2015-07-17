@@ -3,15 +3,15 @@
  */
 
 @interface SKUIViewReuseCollectionViewCell : SKUICollectionViewCell {
-    NSMapTable *_allViewTextProperties;
+    NSMapTable * _allViewTextProperties;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIViewReusePool *_viewPool;
-    NSArray *_views;
+    }  _contentInset;
+    SKUIViewReusePool * _viewPool;
+    NSArray * _views;
 }
 
 @property (nonatomic, readonly) NSArray *allExistingViews;

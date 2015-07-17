@@ -3,19 +3,19 @@
  */
 
 @interface UIMorphingLabelGlyphSet : NSObject {
-    NSAttributedString *_attributedString;
-    unsigned int _glyphCount;
-    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_glyphFrames;
-    struct CGPoint { float x1; float x2; } *_glyphPositions;
-    NSMutableArray *_glyphViews;
-    unsigned short *_glyphs;
-    UIMorphingLabel *_label;
-    struct __CTLine { } *_line;
+    NSAttributedString * _attributedString;
+    unsigned int  _glyphCount;
+    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } * _glyphFrames;
+    struct CGPoint { float x1; float x2; } * _glyphPositions;
+    NSMutableArray * _glyphViews;
+    unsigned short * _glyphs;
+    UIMorphingLabel * _label;
+    struct __CTLine { } * _line;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lineOrigin;
-    float _lineWidth;
+    }  _lineOrigin;
+    float  _lineWidth;
 }
 
 @property (nonatomic, readonly) NSAttributedString *attributedString;

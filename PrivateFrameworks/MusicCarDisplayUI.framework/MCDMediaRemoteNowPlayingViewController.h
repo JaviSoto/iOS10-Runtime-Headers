@@ -21,16 +21,16 @@
         unsigned int bookmarkTrack : 1; 
         unsigned int fastForwardWithInterval : 1; 
         unsigned int rewindWithInterval : 1; 
-    } __supportedCommandsFlags;
-    UIAlertController *_actionSheetAlertController;
-    double _elapsedTime;
-    NSString *_expectedPlaybackBundleIdentifier;
-    BOOL _isScrubbing;
-    MPUNowPlayingController *_nowPlayingController;
-    NSDictionary *_nowPlayingInfo;
-    MCDNowPlayingViewController *_nowPlayingViewController;
-    BOOL _observingMediaRemoteCommandChanges;
-    NSDictionary *_supportedCommands;
+    }  __supportedCommandsFlags;
+    UIAlertController * _actionSheetAlertController;
+    double  _elapsedTime;
+    NSString * _expectedPlaybackBundleIdentifier;
+    BOOL  _isScrubbing;
+    MPUNowPlayingController * _nowPlayingController;
+    NSDictionary * _nowPlayingInfo;
+    MCDNowPlayingViewController * _nowPlayingViewController;
+    BOOL  _observingMediaRemoteCommandChanges;
+    NSDictionary * _supportedCommands;
 }
 
 @property (readonly, copy) NSString *debugDescription;

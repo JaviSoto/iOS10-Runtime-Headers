@@ -3,7 +3,7 @@
  */
 
 @interface SKUIWishlist : NSObject {
-    SSWishlist *_database;
+    SSWishlist * _database;
 }
 
 @property (nonatomic, readonly) long long accountIdentifier;

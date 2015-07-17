@@ -3,12 +3,12 @@
  */
 
 @interface SKDistanceConstraint : SKConstraint {
-    SKRange *_distanceRange;
-    SKNode *_node;
+    SKRange * _distanceRange;
+    SKNode * _node;
     struct CGPoint { 
         float x; 
         float y; 
-    } _point;
+    }  _point;
 }
 
 @property (copy) SKRange *distanceRange;
@@ -19,7 +19,6 @@
 + (id)constraintWithPoint:(struct CGPoint { float x1; float x2; })arg1 distanceRange:(id)arg2;
 + (id)constraintWithPoint:(struct CGPoint { float x1; float x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)distanceRange;

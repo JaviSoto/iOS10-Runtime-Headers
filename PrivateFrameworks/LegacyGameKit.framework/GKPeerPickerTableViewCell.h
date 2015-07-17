@@ -3,7 +3,7 @@
  */
 
 @interface GKPeerPickerTableViewCell : UITableViewCell {
-    BOOL _topSeparator;
+    BOOL  _topSeparator;
 }
 
 @property (nonatomic) BOOL topSeparator;

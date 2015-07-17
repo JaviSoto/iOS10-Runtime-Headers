@@ -3,13 +3,13 @@
  */
 
 @interface PKVerificationChannel : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_contactPoint;
-    NSString *_identifier;
-    NSString *_organizationName;
-    BOOL _requiresUserInteraction;
-    NSString *_sourceAddress;
-    unsigned int _type;
-    NSString *_typeDescription;
+    NSString * _contactPoint;
+    NSString * _identifier;
+    NSString * _organizationName;
+    BOOL  _requiresUserInteraction;
+    NSString * _sourceAddress;
+    unsigned int  _type;
+    NSString * _typeDescription;
 }
 
 @property (nonatomic, copy) NSString *contactPoint;

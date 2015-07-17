@@ -3,13 +3,13 @@
  */
 
 @interface IKViewElementStyleComposer : NSObject {
-    IKViewElementStyle *_composedSansDefaultStyle;
-    IKViewElementStyle *_composedStyle;
-    IKViewElementStyleComposer *_defaultStyleComposer;
-    IKViewElementStyle *_elementStyleOverrides;
-    IKViewElementStyleComposer *_parentStyleComposer;
-    BOOL _requiresMediaQueryEvaluation;
-    IKStyleList *_styleList;
+    IKViewElementStyle * _composedSansDefaultStyle;
+    IKViewElementStyle * _composedStyle;
+    IKViewElementStyleComposer * _defaultStyleComposer;
+    IKViewElementStyle * _elementStyleOverrides;
+    IKViewElementStyleComposer * _parentStyleComposer;
+    BOOL  _requiresMediaQueryEvaluation;
+    IKStyleList * _styleList;
 }
 
 @property (nonatomic, retain) IKViewElementStyle *composedSansDefaultStyle;

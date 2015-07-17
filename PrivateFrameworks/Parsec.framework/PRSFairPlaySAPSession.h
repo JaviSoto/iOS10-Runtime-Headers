@@ -3,13 +3,13 @@
  */
 
 @interface PRSFairPlaySAPSession : NSObject {
-    NSString *_SAPVersion;
-    BOOL _complete;
+    NSString * _SAPVersion;
+    BOOL  _complete;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    } _hardwareInfo;
-    struct FPSAPContextOpaque_ { } *_session;
+    }  _hardwareInfo;
+    struct FPSAPContextOpaque_ { } * _session;
 }
 
 @property (retain) NSString *SAPVersion;

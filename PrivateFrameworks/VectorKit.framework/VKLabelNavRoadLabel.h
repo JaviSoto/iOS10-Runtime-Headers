@@ -3,16 +3,16 @@
  */
 
 @interface VKLabelNavRoadLabel : NSObject {
-    int _alignment;
-    float _desiredOffsetDistance;
-    NSString *_displayGroup;
-    unsigned int _displayID;
+    int  _alignment;
+    float  _desiredOffsetDistance;
+    NSString * _displayGroup;
+    unsigned int  _displayID;
     struct shared_ptr<vk::NavLabel> { 
         struct NavLabel {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _label;
-    <VKLabelNavFeature> *_navFeature;
-    int _navLabelType;
+    }  _label;
+    <VKLabelNavFeature> * _navFeature;
+    int  _navLabelType;
 }
 
 @property (nonatomic) int alignment;

@@ -3,14 +3,14 @@
  */
 
 @interface CPShape : CPGraphicObject <CPDisposable> {
-    BOOL boundsComputed;
-    struct CGColor { } *fillColor;
-    union CGPDFObject { } *fillObject;
-    BOOL isUprightRectangle;
-    int lineCap;
-    int lineJoin;
-    float lineWidth;
-    float miterLimit;
+    BOOL  boundsComputed;
+    struct CGColor { } * fillColor;
+    union CGPDFObject { } * fillObject;
+    BOOL  isUprightRectangle;
+    int  lineCap;
+    int  lineJoin;
+    float  lineWidth;
+    float  miterLimit;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -18,13 +18,13 @@
         float d; 
         float tx; 
         float ty; 
-    } paintTransform;
-    struct CGPath { } *path;
-    unsigned int pdfObjectID;
-    BOOL renderedBoundsComputed;
-    struct CGColor { } *strokeColor;
-    union CGPDFObject { } *strokeObject;
-    int windingRule;
+    }  paintTransform;
+    struct CGPath { } * path;
+    unsigned int  pdfObjectID;
+    BOOL  renderedBoundsComputed;
+    struct CGColor { } * strokeColor;
+    union CGPDFObject { } * strokeObject;
+    int  windingRule;
 }
 
 - (void)accept:(id)arg1;

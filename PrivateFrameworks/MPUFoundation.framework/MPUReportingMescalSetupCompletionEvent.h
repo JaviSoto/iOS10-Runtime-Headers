@@ -3,8 +3,8 @@
  */
 
 @interface MPUReportingMescalSetupCompletionEvent : NSObject <MPUReportingEvent> {
-    NSError *_error;
-    double _setupDuration;
+    NSError * _error;
+    double  _setupDuration;
 }
 
 @property (readonly, copy) NSString *debugDescription;

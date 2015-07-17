@@ -3,10 +3,10 @@
  */
 
 @interface PKCameraCaptureInstructionView : UIView {
-    int _context;
-    PKTableHeaderView *_headerView;
-    UIButton *_manualEntryButton;
-    UIButton *_setupLaterButton;
+    int  _context;
+    PKTableHeaderView * _headerView;
+    UIButton * _manualEntryButton;
+    UIButton * _setupLaterButton;
 }
 
 @property (nonatomic, retain) UIButton *manualEntryButton;

@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentDeviceConfigurationData : NSObject <NSSecureCoding> {
-    BOOL _devSigned;
+    BOOL  _devSigned;
 }
 
 @property (nonatomic) BOOL devSigned;

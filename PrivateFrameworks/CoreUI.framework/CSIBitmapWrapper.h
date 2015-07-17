@@ -3,15 +3,15 @@
  */
 
 @interface CSIBitmapWrapper : NSObject {
-    BOOL _allowsMultiPassEncoding;
-    struct CGContext { } *_bitmapContext;
-    unsigned int _height;
-    unsigned int _imageAlpha;
-    NSData *_pixelData;
-    unsigned int _pixelFormat;
-    NSData *_rawData;
-    unsigned long _rowbytes;
-    unsigned int _width;
+    BOOL  _allowsMultiPassEncoding;
+    struct CGContext { } * _bitmapContext;
+    unsigned int  _height;
+    unsigned int  _imageAlpha;
+    NSData * _pixelData;
+    unsigned int  _pixelFormat;
+    NSData * _rawData;
+    unsigned long  _rowbytes;
+    unsigned int  _width;
 }
 
 @property BOOL allowsMultiPassEncoding;
@@ -31,7 +31,7 @@
 - (void)setPixelData:(id)arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setSourceAlphaInfo:(unsigned int)arg1;
-- (unsigned int)sourceImageAlpha;
+- (unsigned int)sourceAlphaInfo;
 - (unsigned int)width;
 
 @end

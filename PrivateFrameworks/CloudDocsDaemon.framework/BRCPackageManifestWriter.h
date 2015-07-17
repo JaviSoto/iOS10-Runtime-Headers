@@ -3,13 +3,13 @@
  */
 
 @interface BRCPackageManifestWriter : NSObject {
-    NSError *_error;
-    BRCAccountSession *_session;
-    BOOL _sharedZone;
-    NSString *_stageID;
-    NSOutputStream *_stream;
-    NSURL *_url;
-    PBMessageStreamWriter *_writer;
+    NSError * _error;
+    BRCAccountSession * _session;
+    BOOL  _sharedZone;
+    NSString * _stageID;
+    NSOutputStream * _stream;
+    NSURL * _url;
+    PBMessageStreamWriter * _writer;
 }
 
 @property (nonatomic, readonly) NSError *error;

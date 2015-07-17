@@ -3,11 +3,11 @@
  */
 
 @interface GQUQuicklookOutputBundle : NSObject <GQUOutputBundle> {
-    struct __CFDictionary { } *mAttachments;
-    struct __CFData { } *mMainHtmlData;
-    struct __CFDictionary { } *mQuicklookProperties;
-    struct __CFString { } *mUriScheme;
-    struct __CFString { } *mUuidStr;
+    struct __CFDictionary { } * mAttachments;
+    struct __CFData { } * mMainHtmlData;
+    struct __CFDictionary { } * mQuicklookProperties;
+    struct __CFString { } * mUriScheme;
+    struct __CFString { } * mUuidStr;
 }
 
 @property (readonly, copy) NSString *debugDescription;

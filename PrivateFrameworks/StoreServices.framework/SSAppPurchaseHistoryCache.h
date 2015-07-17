@@ -3,9 +3,9 @@
  */
 
 @interface SSAppPurchaseHistoryCache : NSObject {
-    SSAccount *_account;
-    SSDatabaseCache *_databaseCache;
-    SSAppPurchaseHistoryDatabase *_purchaseHistoryDatabase;
+    SSAccount * _account;
+    SSDatabaseCache * _databaseCache;
+    SSAppPurchaseHistoryDatabase * _purchaseHistoryDatabase;
 }
 
 - (id)allUncachedImages;

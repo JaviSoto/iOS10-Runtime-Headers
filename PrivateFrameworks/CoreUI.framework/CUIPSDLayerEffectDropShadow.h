@@ -3,13 +3,13 @@
  */
 
 @interface CUIPSDLayerEffectDropShadow : CUIPSDLayerEffectComponent {
-    short _angle;
-    int _blendMode;
-    unsigned int _blurSize;
-    CUIColor *_color;
-    unsigned int _distance;
-    float _opacity;
-    unsigned int _spread;
+    short  _angle;
+    int  _blendMode;
+    unsigned int  _blurSize;
+    CUIColor * _color;
+    unsigned int  _distance;
+    float  _opacity;
+    unsigned int  _spread;
 }
 
 @property short angle;

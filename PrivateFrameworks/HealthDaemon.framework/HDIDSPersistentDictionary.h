@@ -3,14 +3,14 @@
  */
 
 @interface HDIDSPersistentDictionary : NSObject {
-    struct sqlite3_stmt { } *_byDate;
-    struct sqlite3 { } *_db;
-    struct sqlite3_stmt { } *_fetch;
-    struct sqlite3_stmt { } *_insert;
-    Class _objectClass;
-    NSString *_path;
-    struct sqlite3_stmt { } *_remove;
-    struct sqlite3_stmt { } *_removeAll;
+    struct sqlite3_stmt { } * _byDate;
+    struct sqlite3 { } * _db;
+    struct sqlite3_stmt { } * _fetch;
+    struct sqlite3_stmt { } * _insert;
+    Class  _objectClass;
+    NSString * _path;
+    struct sqlite3_stmt { } * _remove;
+    struct sqlite3_stmt { } * _removeAll;
 }
 
 - (void).cxx_destruct;

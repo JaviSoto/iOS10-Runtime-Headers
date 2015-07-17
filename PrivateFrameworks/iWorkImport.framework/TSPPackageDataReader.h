@@ -3,8 +3,8 @@
  */
 
 @interface TSPPackageDataReader : NSObject <TSPFileCoordinatorDelegate> {
-    NSURL *_URL;
-    TSPPackage *_package;
+    NSURL * _URL;
+    TSPPackage * _package;
 }
 
 @property (readonly, copy) NSString *debugDescription;

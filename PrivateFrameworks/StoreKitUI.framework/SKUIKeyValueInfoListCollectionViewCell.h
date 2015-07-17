@@ -3,10 +3,10 @@
  */
 
 @interface SKUIKeyValueInfoListCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    float _titleColumnWidth;
-    SKUIAttributedStringView *_titleView;
-    NSMapTable *_valueViews;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    float  _titleColumnWidth;
+    SKUIAttributedStringView * _titleView;
+    NSMapTable * _valueViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

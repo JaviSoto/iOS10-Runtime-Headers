@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoView : UIView {
-    PUPhotoViewContentHelper *_contentHelper;
+    PUPhotoViewContentHelper * _contentHelper;
 }
 
 @property (nonatomic, readonly) PUPhotoViewContentHelper *contentHelper;

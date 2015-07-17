@@ -3,11 +3,11 @@
  */
 
 @interface SKUICheckboxFieldSettingDescriptionView : SKUIFieldSettingDescriptionView <UITextFieldDelegate> {
-    float _aggregateLabelWidth;
-    SKUIInputViewElement *_inputViewElement;
-    UILabel *_label;
-    SKUIFieldSettingDescription *_settingDescription;
-    UISwitch *_switch;
+    float  _aggregateLabelWidth;
+    SKUIInputViewElement * _inputViewElement;
+    UILabel * _label;
+    SKUIFieldSettingDescription * _settingDescription;
+    UISwitch * _switch;
 }
 
 @property (readonly, copy) NSString *debugDescription;

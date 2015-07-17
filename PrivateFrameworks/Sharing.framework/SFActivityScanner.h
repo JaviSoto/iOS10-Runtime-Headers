@@ -3,9 +3,9 @@
  */
 
 @interface SFActivityScanner : NSObject <SFContinuityScanManagerObserver> {
-    <SFActivityScannerDelegate> *_delegate;
-    NSUUID *_identifier;
-    BOOL _receiving;
+    <SFActivityScannerDelegate> * _delegate;
+    NSUUID * _identifier;
+    BOOL  _receiving;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +17,6 @@
 @property (readonly) Class superclass;
 
 - (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)activityPayloadFromDeviceIdentifier:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)identifier;
@@ -27,6 +26,7 @@
 - (void)scanManager:(id)arg1 lostDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 receivedAdvertisement:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setForceScanningEnabled:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setReceiving:(BOOL)arg1;
 - (void)start;

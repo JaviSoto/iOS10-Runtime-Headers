@@ -3,7 +3,7 @@
  */
 
 @interface MPRadioStation : NSObject <NSCopying, NSSecureCoding> {
-    RadioStation *_station;
+    RadioStation * _station;
 }
 
 @property (getter=_station, nonatomic, readonly) RadioStation *_station;

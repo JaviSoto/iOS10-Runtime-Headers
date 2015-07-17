@@ -6,21 +6,21 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mBaseAlignmentFrameOriginForFixingInterimPosition;
+    }  mBaseAlignmentFrameOriginForFixingInterimPosition;
     struct CGPoint { 
         float x; 
         float y; 
-    } mBaseCapturedAlignmentFrameOriginForInline;
-    TSDLayoutGeometry *mBaseGeometry;
+    }  mBaseCapturedAlignmentFrameOriginForInline;
+    TSDLayoutGeometry * mBaseGeometry;
     struct CGPoint { 
         float x; 
         float y; 
-    } mCapturedAlignmentFrameOriginForInline;
+    }  mCapturedAlignmentFrameOriginForInline;
     struct CGPoint { 
         float x; 
         float y; 
-    } mCapturedInfoGeometryPositionForInline;
-    NSMutableSet *mConnectedLayouts;
+    }  mCapturedInfoGeometryPositionForInline;
+    NSMutableSet * mConnectedLayouts;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -30,8 +30,8 @@
             float width; 
             float height; 
         } size; 
-    } mDirtyRect;
-    NSObject<TSDInfo> *mInfo;
+    }  mDirtyRect;
+    NSObject<TSDInfo> * mInfo;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -41,13 +41,13 @@
             float width; 
             float height; 
         } size; 
-    } mInitialBoundsForStandardKnobs;
+    }  mInitialBoundsForStandardKnobs;
     struct { 
         unsigned int position : 1; 
         unsigned int size : 1; 
         unsigned int inlineSize : 1; 
-    } mInvalidFlags;
-    int mLayoutState;
+    }  mInvalidFlags;
+    int  mLayoutState;
 }
 
 @property (nonatomic, readonly) BOOL canAspectRatioLockBeChangedByUser;

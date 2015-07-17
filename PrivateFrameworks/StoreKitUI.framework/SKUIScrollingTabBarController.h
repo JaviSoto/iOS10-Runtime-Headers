@@ -3,8 +3,8 @@
  */
 
 @interface SKUIScrollingTabBarController : SKUIViewController <SKUIDynamicBarAnimatorDelegate, SKUIProxyScrollViewDelegate, SKUIScrollViewDelegateObserver, SKUIScrollingTabBarContentCollectionViewDelegate, SKUIScrollingTabBarControllerItemContextDelegate, SKUIScrollingTabBarPaletteDelegate, SKUITabBarController, UICollectionViewDataSource, UICollectionViewDelegate> {
-    unsigned int _activePaletteTransitions;
-    unsigned int _additionalPositionOffsetsAtomicUpdateRequestCount;
+    unsigned int  _activePaletteTransitions;
+    unsigned int  _additionalPositionOffsetsAtomicUpdateRequestCount;
     struct { 
         BOOL didUpdateAdditionalTabBarButtonsContainerPositionOffset; 
         struct UIOffset { 
@@ -16,55 +16,55 @@
             float horizontal; 
             float vertical; 
         } oldAdditionalTabBarPalettePositionOffset; 
-    } _additionalPositionOffsetsUpdateRecord;
+    }  _additionalPositionOffsetsUpdateRecord;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _additionalTabBarButtonsContainerPositionOffset;
+    }  _additionalTabBarButtonsContainerPositionOffset;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _additionalTabBarPalettePositionOffset;
-    BOOL _canHideBarsOnSwipe;
-    BOOL _chargeEnabledOnTabBarButtonsContainer;
-    SKUIScrollingTabBarContentCollectionView *_contentCollectionView;
-    NSMutableArray *_contentCollectionViewCells;
+    }  _additionalTabBarPalettePositionOffset;
+    BOOL  _canHideBarsOnSwipe;
+    BOOL  _chargeEnabledOnTabBarButtonsContainer;
+    SKUIScrollingTabBarContentCollectionView * _contentCollectionView;
+    NSMutableArray * _contentCollectionViewCells;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentCollectionViewItemSize;
-    <SKUITabBarControllerDelegate> *_delegate;
-    SKUIDynamicBarAnimator *_dynamicBarAnimator;
-    UIScrollView *_focusedContentScrollView;
-    BOOL _focusedScrollViewIsDragging;
-    UIViewController *_focusedViewController;
-    int _indexOfViewControllerWithUpdatedContentSize;
-    BOOL _isDelegatingPresentedViewControllerLogicToSelectedViewController;
-    SKUIProxyScrollView *_proxyScrollView;
+    }  _contentCollectionViewItemSize;
+    <SKUITabBarControllerDelegate> * _delegate;
+    SKUIDynamicBarAnimator * _dynamicBarAnimator;
+    UIScrollView * _focusedContentScrollView;
+    BOOL  _focusedScrollViewIsDragging;
+    UIViewController * _focusedViewController;
+    int  _indexOfViewControllerWithUpdatedContentSize;
+    BOOL  _isDelegatingPresentedViewControllerLogicToSelectedViewController;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _proxyScrollViewContentInsetAdjustment;
-    unsigned int _referenceCountForIgnoringContentOffsetUpdateRequests;
-    BOOL _scrollEnabled;
-    BOOL _shouldPreserveFocusUponNextContentCollectionViewItemSizeChange;
-    BOOL _shouldShowBarsAfterDraggingDownward;
-    SKUICrossFadingTabBar *_tabBar;
-    UIView *_tabBarContainerView;
+    }  _proxyScrollViewContentInsetAdjustment;
+    unsigned int  _referenceCountForIgnoringContentOffsetUpdateRequests;
+    BOOL  _scrollEnabled;
+    BOOL  _shouldPreserveFocusUponNextContentCollectionViewItemSizeChange;
+    BOOL  _shouldShowBarsAfterDraggingDownward;
+    SKUICrossFadingTabBar * _tabBar;
+    UIView * _tabBarContainerView;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _tabBarExplicitHidingOffset;
-    BOOL _tabBarExplicitlyHidden;
-    SKUIScrollingTabBarBackgroundView *_tabBarExtendedBackgroundView;
-    SKUIScrollingTabBarPalette *_tabBarPalette;
-    UIViewController *_topLevelFocusedViewController;
-    UIViewController *_transientViewController;
-    SKUIScrollingTabBarControllerItemContext *_transientViewControllerItemContext;
-    NSMapTable *_viewControllerToItemContext;
-    NSArray *_viewControllers;
+    }  _tabBarExplicitHidingOffset;
+    BOOL  _tabBarExplicitlyHidden;
+    SKUIScrollingTabBarBackgroundView * _tabBarExtendedBackgroundView;
+    SKUIScrollingTabBarPalette * _tabBarPalette;
+    UIViewController * _topLevelFocusedViewController;
+    UIViewController * _transientViewController;
+    SKUIScrollingTabBarControllerItemContext * _transientViewControllerItemContext;
+    NSMapTable * _viewControllerToItemContext;
+    NSArray * _viewControllers;
 }
 
 @property (nonatomic) struct UIOffset { float x1; float x2; } additionalTabBarButtonsContainerPositionOffset;

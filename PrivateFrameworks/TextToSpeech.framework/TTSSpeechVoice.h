@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@interface TTSSpeechVoice : NSObject {
-    int _footprint;
-    int _gender;
-    NSString *_identifier;
-    BOOL _isCustomVoice;
-    BOOL _isDefault;
-    NSString *_language;
-    NSString *_name;
-    <TTSSpeechService> *_service;
-    BOOL _useVoiceBooster;
+@interface TTSSpeechVoice : NSObject <NSSecureCoding> {
+    int  _footprint;
+    int  _gender;
+    NSString * _identifier;
+    BOOL  _isCustomVoice;
+    BOOL  _isDefault;
+    NSString * _language;
+    NSString * _name;
+    <TTSSpeechService> * _service;
+    BOOL  _useVoiceBooster;
 }
 
 @property (nonatomic) int footprint;
@@ -23,14 +23,18 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) BOOL useVoiceBooster;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_initializeVoiceBooster;
 - (void)_routeChange:(id)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (int)footprint;
 - (int)gender;
 - (id)identifier;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isCustomVoice;
 - (BOOL)isDefault;
 - (id)language;

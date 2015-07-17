@@ -3,10 +3,10 @@
  */
 
 @interface MusicInteractiveBlurringView : UIView {
-    MusicInteractiveBackdropView *_backdropView;
-    _UIBackdropViewSettings *_destinationSettings;
-    float _tintAlphaProgressMultiplier;
-    UIView *_tintView;
+    MusicInteractiveBackdropView * _backdropView;
+    _UIBackdropViewSettings * _destinationSettings;
+    float  _tintAlphaProgressMultiplier;
+    UIView * _tintView;
 }
 
 @property (nonatomic) float tintAlphaProgressMultiplier;

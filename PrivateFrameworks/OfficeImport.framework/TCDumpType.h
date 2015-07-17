@@ -3,7 +3,7 @@
  */
 
 @interface TCDumpType : NSObject {
-    NSString *mName;
+    NSString * mName;
 }
 
 - (void)dealloc;

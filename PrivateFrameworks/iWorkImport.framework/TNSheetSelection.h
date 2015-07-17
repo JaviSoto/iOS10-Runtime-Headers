@@ -3,8 +3,8 @@
  */
 
 @interface TNSheetSelection : TSKSelection {
-    BOOL mIsPaginated;
-    TNSheet *mSheet;
+    BOOL  mIsPaginated;
+    TNSheet * mSheet;
 }
 
 @property (getter=isPaginated, nonatomic, readonly) BOOL paginated;

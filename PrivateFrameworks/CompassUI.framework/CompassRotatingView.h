@@ -3,8 +3,8 @@
  */
 
 @interface CompassRotatingView : UIView {
-    float _angle;
-    double _compassHeading;
+    float  _angle;
+    double  _compassHeading;
 }
 
 @property (nonatomic, readonly) float angle;

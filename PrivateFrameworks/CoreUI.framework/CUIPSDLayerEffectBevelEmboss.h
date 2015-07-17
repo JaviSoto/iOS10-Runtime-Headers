@@ -3,17 +3,17 @@
  */
 
 @interface CUIPSDLayerEffectBevelEmboss : CUIPSDLayerEffectComponent {
-    unsigned int _altitude;
-    short _angle;
-    unsigned int _blurSize;
-    unsigned int _direction;
-    int _highlightBlendMode;
-    CUIColor *_highlightColor;
-    float _highlightOpacity;
-    int _shadowBlendMode;
-    CUIColor *_shadowColor;
-    float _shadowOpacity;
-    unsigned int _softenSize;
+    unsigned int  _altitude;
+    short  _angle;
+    unsigned int  _blurSize;
+    unsigned int  _direction;
+    int  _highlightBlendMode;
+    CUIColor * _highlightColor;
+    float  _highlightOpacity;
+    int  _shadowBlendMode;
+    CUIColor * _shadowColor;
+    float  _shadowOpacity;
+    unsigned int  _softenSize;
 }
 
 @property unsigned int altitude;

@@ -3,13 +3,13 @@
  */
 
 @interface GEORegionalResourceTile : PBCodable <NSCopying> {
-    NSMutableArray *_attributions;
-    NSMutableArray *_childrens;
-    NSMutableArray *_iconChecksums;
-    NSMutableArray *_icons;
-    unsigned int _x;
-    unsigned int _y;
-    unsigned int _z;
+    NSMutableArray * _attributions;
+    NSMutableArray * _childrens;
+    NSMutableArray * _iconChecksums;
+    NSMutableArray * _icons;
+    unsigned int  _x;
+    unsigned int  _y;
+    unsigned int  _z;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributions;

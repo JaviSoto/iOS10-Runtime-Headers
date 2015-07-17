@@ -3,30 +3,30 @@
  */
 
 @interface RURadioQueueFeeder : MPQueueFeeder <MPUQueueBehaviorManaging> {
-    RURadioAdObserver *_adObserver;
-    NSMapTable *_adSlotToAllAdTracks;
-    NSMapTable *_adSlotToInsertedAdTracks;
-    NSMapTable *_adSlotToRadioTrack;
-    BOOL _canSeek;
-    MPAVItem *_currentItem;
-    BOOL _didReceiveTracklistEnd;
-    unsigned int _feederRevisionID;
-    NSMapTable *_fetchingTracksCompletionHandlersByStation;
-    BOOL _hasReceivedStreamTrack;
-    BOOL _hasVerifiedCloudStatus;
-    BOOL _isPreparingStation;
-    int _maximumGetTracksRetryCount;
-    MPPlaceholderAVItem *_placeholderAVItem;
-    SSVPlaybackLease *_playbackLease;
-    int _playbackMode;
-    NSArray *_previousDatabaseTrackPlaybackDescriptorQueue;
-    NSMapTable *_radioTrackToAdSlot;
-    RadioStation *_station;
-    RadioStationSkipController *_stationSkipController;
-    NSMapTable *_stationTracklistRetrievalRetryCount;
-    NSArray *_tracks;
-    NSMutableSet *_visibleAdSlots;
-    BOOL _wasUsingBackgroundNetwork;
+    RURadioAdObserver * _adObserver;
+    NSMapTable * _adSlotToAllAdTracks;
+    NSMapTable * _adSlotToInsertedAdTracks;
+    NSMapTable * _adSlotToRadioTrack;
+    BOOL  _canSeek;
+    MPAVItem * _currentItem;
+    BOOL  _didReceiveTracklistEnd;
+    unsigned int  _feederRevisionID;
+    NSMapTable * _fetchingTracksCompletionHandlersByStation;
+    BOOL  _hasReceivedStreamTrack;
+    BOOL  _hasVerifiedCloudStatus;
+    BOOL  _isPreparingStation;
+    int  _maximumGetTracksRetryCount;
+    MPPlaceholderAVItem * _placeholderAVItem;
+    SSVPlaybackLease * _playbackLease;
+    int  _playbackMode;
+    NSArray * _previousDatabaseTrackPlaybackDescriptorQueue;
+    NSMapTable * _radioTrackToAdSlot;
+    RadioStation * _station;
+    RadioStationSkipController * _stationSkipController;
+    NSMapTable * _stationTracklistRetrievalRetryCount;
+    NSArray * _tracks;
+    NSMutableSet * _visibleAdSlots;
+    BOOL  _wasUsingBackgroundNetwork;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
@@ -63,6 +63,7 @@
 - (void)_adTrackActionDidFinishNotification:(id)arg1;
 - (void)_adTrackActionWillBeginNotification:(id)arg1;
 - (void)_adTrackDidFailToLoadNotification:(id)arg1;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_applicationWillTerminateNotification:(id)arg1;
 - (void)_applyTracksForAdSlot:(id)arg1 radioTrack:(id)arg2 currentPlayingItem:(id)arg3 toTracks:(id)arg4;
 - (BOOL)_canHavePlaceholderTrack;

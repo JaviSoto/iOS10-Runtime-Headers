@@ -3,8 +3,8 @@
  */
 
 @interface SKUISegmentedControlCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    SKUIDividerView *_bottomDividerView;
-    SKUISegmentedControlViewElementController *_elementController;
+    SKUIDividerView * _bottomDividerView;
+    SKUISegmentedControlViewElementController * _elementController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

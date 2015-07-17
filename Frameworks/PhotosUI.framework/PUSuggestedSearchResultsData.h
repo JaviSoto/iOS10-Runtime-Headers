@@ -3,9 +3,9 @@
  */
 
 @interface PUSuggestedSearchResultsData : NSObject {
-    NSString *_displayTitle;
-    NSString *_searchString;
-    NSArray *_uuids;
+    NSString * _displayTitle;
+    NSString * _searchString;
+    NSArray * _uuids;
 }
 
 @property (nonatomic, copy) NSString *displayTitle;

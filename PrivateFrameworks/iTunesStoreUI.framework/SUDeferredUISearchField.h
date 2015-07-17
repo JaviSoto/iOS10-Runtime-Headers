@@ -3,8 +3,8 @@
  */
 
 @interface SUDeferredUISearchField : UISearchField <SUDeferredUIView> {
-    int _deferredClearButtonMode;
-    id _deferredFont;
+    int  _deferredClearButtonMode;
+    id  _deferredFont;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,12 +14,12 @@
             float width; 
             float height; 
         } size; 
-    } _deferredFrame;
-    float _deferredPaddingLeft;
-    float _deferredPaddingTop;
-    NSString *_deferredPlaceholder;
-    NSString *_deferredText;
-    BOOL _isDeferringInterfaceUpdates;
+    }  _deferredFrame;
+    float  _deferredPaddingLeft;
+    float  _deferredPaddingTop;
+    NSString * _deferredPlaceholder;
+    NSString * _deferredText;
+    BOOL  _isDeferringInterfaceUpdates;
 }
 
 @property (readonly, copy) NSString *debugDescription;

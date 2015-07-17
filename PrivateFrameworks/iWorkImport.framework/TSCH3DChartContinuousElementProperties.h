@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DChartContinuousElementProperties : TSCH3DChartBasicElementProperties {
-    float mDepthGapFactor;
-    float mDepthLimitFactor;
-    unsigned int mMaxLimitingSeries;
-    float mShadowCameraDepthLimitAdjustmentFactor;
+    float  mDepthGapFactor;
+    float  mDepthLimitFactor;
+    unsigned int  mMaxLimitingSeries;
+    float  mShadowCameraDepthLimitAdjustmentFactor;
 }
 
 @property (nonatomic, readonly) float depthLimitFactor;

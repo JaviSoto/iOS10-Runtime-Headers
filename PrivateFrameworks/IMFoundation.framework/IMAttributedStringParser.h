@@ -3,7 +3,7 @@
  */
 
 @interface IMAttributedStringParser : NSObject {
-    IMAttributedStringParserContext *_context;
+    IMAttributedStringParserContext * _context;
 }
 
 + (id)sharedInstance;

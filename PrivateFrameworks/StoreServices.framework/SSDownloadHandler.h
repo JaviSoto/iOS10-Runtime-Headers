@@ -3,15 +3,15 @@
  */
 
 @interface SSDownloadHandler : NSObject {
-    SSXPCConnection *_controlConnection;
-    <SSDownloadHandlerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSArray *_downloadPhasesToIgnore;
-    long long _handlerID;
-    SSXPCConnection *_observerConnection;
-    BOOL _sessionsNeedPowerAssertion;
-    BOOL _sessionsShouldBlockOtherDownloads;
+    SSXPCConnection * _controlConnection;
+    <SSDownloadHandlerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSArray * _downloadPhasesToIgnore;
+    long long  _handlerID;
+    SSXPCConnection * _observerConnection;
+    BOOL  _sessionsNeedPowerAssertion;
+    BOOL  _sessionsShouldBlockOtherDownloads;
 }
 
 @property <SSDownloadHandlerDelegate> *delegate;

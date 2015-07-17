@@ -3,9 +3,9 @@
  */
 
 @interface ISDelegateProxy : NSObject {
-    id _delegate;
-    NSLock *_lock;
-    BOOL _shouldMessageMainThread;
+    id  _delegate;
+    NSLock * _lock;
+    BOOL  _shouldMessageMainThread;
 }
 
 - (void)dealloc;

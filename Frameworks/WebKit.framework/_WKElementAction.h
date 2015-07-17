@@ -3,12 +3,12 @@
  */
 
 @interface _WKElementAction : NSObject {
-    id /* block */ _actionHandler;
-    id /* block */ _dismissalHandler;
+    id /* block */  _actionHandler;
+    id /* block */  _dismissalHandler;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    } _title;
-    int _type;
+    }  _title;
+    int  _type;
 }
 
 @property (nonatomic, copy) id /* block */ dismissalHandler;

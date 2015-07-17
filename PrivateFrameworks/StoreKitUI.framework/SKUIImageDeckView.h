@@ -3,20 +3,20 @@
  */
 
 @interface SKUIImageDeckView : SKUIViewReuseView <SKUIViewElementView, UIGestureRecognizerDelegate> {
-    UIDynamicAnimator *_animator;
+    UIDynamicAnimator * _animator;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    float _fitWidth;
-    SKUIImageDeckViewElement *_imageDeckViewElement;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    NSArray *_imageViews;
-    UIView *_selectedImageView;
-    unsigned int _selectedImageViewIndex;
-    NSMapTable *_viewElementViews;
+    }  _contentInset;
+    float  _fitWidth;
+    SKUIImageDeckViewElement * _imageDeckViewElement;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    NSArray * _imageViews;
+    UIView * _selectedImageView;
+    unsigned int  _selectedImageViewIndex;
+    NSMapTable * _viewElementViews;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

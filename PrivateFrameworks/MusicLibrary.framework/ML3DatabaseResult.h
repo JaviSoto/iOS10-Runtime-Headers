@@ -3,11 +3,11 @@
  */
 
 @interface ML3DatabaseResult : NSObject {
-    NSDictionary *_columnNameIndexMap;
-    unsigned int _limitIndex;
-    NSString *_limitProperty;
-    long long _limitValue;
-    ML3DatabaseStatement *_statement;
+    NSDictionary * _columnNameIndexMap;
+    unsigned int  _limitIndex;
+    NSString * _limitProperty;
+    long long  _limitValue;
+    ML3DatabaseStatement * _statement;
 }
 
 @property (nonatomic, copy) NSString *limitProperty;

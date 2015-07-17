@@ -3,15 +3,15 @@
  */
 
 @interface RadioPlayEvent : NSObject <NSCopying, NSMutableCopying> {
-    NSDate *_datePlayed;
-    int _endReason;
-    double _endTimeInTrack;
-    NSString *_externalIdentifier;
-    double _startTimeInTrack;
-    long long _storeID;
-    NSData *_timedMetadata;
-    NSDictionary *_trackInfo;
-    int _type;
+    NSDate * _datePlayed;
+    int  _endReason;
+    double  _endTimeInTrack;
+    NSString * _externalIdentifier;
+    double  _startTimeInTrack;
+    long long  _storeID;
+    NSData * _timedMetadata;
+    NSDictionary * _trackInfo;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDate *datePlayed;

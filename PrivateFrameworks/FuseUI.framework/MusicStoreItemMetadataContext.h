@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreItemMetadataContext : NSObject <NSCopying> {
-    NSDictionary *_JSDictionary;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMapTable *_adjustedOptionsToRepresentativeMediaEntity;
-    BOOL _hasCompleteStoreItemMetadata;
-    BOOL _hasOverrideChildrenMetadataContexts;
-    NSArray *_overrideChildrenMetadataContexts;
-    NSString *_storeID;
-    MPStoreItemMetadata *_storeItemMetadata;
-    BOOL _wantsRepresentativeMediaEntity;
+@interface MusicStoreItemMetadataContext : NSObject <NSCopying, NSSecureCoding> {
+    NSDictionary * _JSDictionary;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMapTable * _adjustedOptionsToRepresentativeMediaEntity;
+    BOOL  _hasCompleteStoreItemMetadata;
+    BOOL  _hasOverrideChildrenMetadataContexts;
+    NSArray * _overrideChildrenMetadataContexts;
+    NSString * _storeID;
+    MPStoreItemMetadata * _storeItemMetadata;
+    BOOL  _wantsRepresentativeMediaEntity;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *JSDictionary;
@@ -24,6 +24,7 @@
 @property (getter=isStoreRestricted, nonatomic, readonly) BOOL storeRestricted;
 
 + (id)mediaLibrary;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)JSDictionary;
@@ -36,8 +37,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasCompleteStoreItemMetadata;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithJSDictionary:(id)arg1;
 - (id)initWithStoreID:(id)arg1;
 - (id)initWithStoreItemMetadata:(id)arg1 hasCompleteStoreItemMetadata:(BOOL)arg2;

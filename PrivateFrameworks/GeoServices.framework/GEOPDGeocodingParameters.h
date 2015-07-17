@@ -5,11 +5,11 @@
 @interface GEOPDGeocodingParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int maxResults : 1; 
-    } _has;
-    unsigned int _maxResults;
-    NSString *_queryString;
-    GEOStructuredAddress *_structuredAddress;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    NSString * _queryString;
+    GEOStructuredAddress * _structuredAddress;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;

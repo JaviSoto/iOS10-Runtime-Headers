@@ -3,9 +3,9 @@
  */
 
 @interface CPFont : NSObject <CPDisposable> {
-    struct CGFont { } *cgFont;
-    struct CGPDFFont { } *cgPDFFont;
-    float defaultWidth;
+    struct CGFont { } * cgFont;
+    struct CGPDFFont { } * cgPDFFont;
+    float  defaultWidth;
     struct { 
         float fontStretch; 
         float fontWeight; 
@@ -34,13 +34,13 @@
         float spaceWidth; 
         float underlinePosition; 
         float underlineThickness; 
-    } descriptor;
-    BOOL disposed;
-    BOOL exactMatch;
-    NSString *fontName;
-    BOOL isHorizontal;
-    struct __CFDictionary { } *kernDictionary;
-    double kernUnitsPerEm;
+    }  descriptor;
+    BOOL  disposed;
+    BOOL  exactMatch;
+    NSString * fontName;
+    BOOL  isHorizontal;
+    struct __CFDictionary { } * kernDictionary;
+    double  kernUnitsPerEm;
 }
 
 - (float)ascent;

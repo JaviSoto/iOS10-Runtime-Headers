@@ -3,11 +3,11 @@
  */
 
 @interface _SKUIItemBrowseCellContentView : UIView {
-    UILabel *_indexNumberLabel;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    SKUICellImageView *_userRatingImageView;
-    UILabel *_userRatingLabel;
+    UILabel * _indexNumberLabel;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    SKUICellImageView * _userRatingImageView;
+    UILabel * _userRatingLabel;
 }
 
 @property (nonatomic, retain) UILabel *indexNumberLabel;

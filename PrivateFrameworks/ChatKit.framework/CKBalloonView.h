@@ -3,25 +3,25 @@
  */
 
 @interface CKBalloonView : CKBalloonImageView <UIGestureRecognizerDelegate> {
-    unsigned int _balloonCorners;
-    BOOL _canUseOpaqueMask;
-    <CKBalloonViewDelegate> *_delegate;
-    CKManualUpdater *_displayUpdater;
-    UITapGestureRecognizer *_doubleTapGestureRecognizer;
-    BOOL _filled;
-    BOOL _hasOverlay;
-    BOOL _hasTail;
-    UILongPressGestureRecognizer *_longPressGestureRecognizer;
-    BOOL _orientation;
-    CKBalloonImageView *_overlay;
-    BOOL _showingMenu;
+    unsigned int  _balloonCorners;
+    BOOL  _canUseOpaqueMask;
+    <CKBalloonViewDelegate> * _delegate;
+    CKManualUpdater * _displayUpdater;
+    UITapGestureRecognizer * _doubleTapGestureRecognizer;
+    BOOL  _filled;
+    BOOL  _hasOverlay;
+    BOOL  _hasTail;
+    UILongPressGestureRecognizer * _longPressGestureRecognizer;
+    BOOL  _orientation;
+    CKBalloonImageView * _overlay;
+    BOOL  _showingMenu;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _textAlignmentInsets;
-    BOOL _wantsSkinnyMask;
+    }  _textAlignmentInsets;
+    BOOL  _wantsSkinnyMask;
 }
 
 @property (nonatomic) unsigned int balloonCorners;

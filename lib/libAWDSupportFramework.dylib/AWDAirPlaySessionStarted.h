@@ -3,19 +3,19 @@
  */
 
 @interface AWDAirPlaySessionStarted : PBCodable <NSCopying> {
-    unsigned int _audioCompressionType;
+    unsigned int  _audioCompressionType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioCompressionType : 1; 
         unsigned int initiator : 1; 
         unsigned int sessionType : 1; 
         unsigned int transportType : 1; 
-    } _has;
-    unsigned int _initiator;
-    unsigned int _sessionType;
-    NSString *_sessionUUID;
-    unsigned long long _timestamp;
-    unsigned int _transportType;
+    }  _has;
+    unsigned int  _initiator;
+    unsigned int  _sessionType;
+    NSString * _sessionUUID;
+    unsigned long long  _timestamp;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic) unsigned int audioCompressionType;

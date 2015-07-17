@@ -6,11 +6,11 @@
     struct { 
         float x; 
         float y; 
-    } _GLPoint2DValue;
+    }  _GLPoint2DValue;
     struct { 
         float x; 
         float y; 
-    } _proposedGLPoint2DValue;
+    }  _proposedGLPoint2DValue;
 }
 
 @property (nonatomic, readonly) struct { float x1; float x2; } GLPoint2DValue;

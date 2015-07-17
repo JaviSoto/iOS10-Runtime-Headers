@@ -3,7 +3,7 @@
  */
 
 @interface RUIVariableHeightCell : RemoteUITableViewCell {
-    BOOL _supportsAccessory;
+    BOOL  _supportsAccessory;
 }
 
 @property (nonatomic) BOOL supportsAccessory;

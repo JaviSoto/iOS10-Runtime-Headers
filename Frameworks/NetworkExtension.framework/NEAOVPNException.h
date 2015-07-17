@@ -3,9 +3,9 @@
  */
 
 @interface NEAOVPNException : NSObject <NSCopying, NSSecureCoding> {
-    int _action;
-    NSString *_bundleIdentifier;
-    NSString *_serviceName;
+    int  _action;
+    NSString * _bundleIdentifier;
+    NSString * _serviceName;
 }
 
 @property int action;
@@ -19,7 +19,7 @@
 - (id)bundleIdentifier;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)serviceName;

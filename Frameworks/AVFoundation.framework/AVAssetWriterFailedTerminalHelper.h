@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetWriterFailedTerminalHelper : AVAssetWriterTerminalHelper {
-    NSError *_terminalError;
+    NSError * _terminalError;
 }
 
 - (void)dealloc;

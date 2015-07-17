@@ -3,9 +3,9 @@
  */
 
 @interface SYDJournal : NSObject {
-    NSMutableDictionary *journal;
-    BOOL readonly;
-    NSMutableDictionary *store;
+    NSMutableDictionary * journal;
+    BOOL  readonly;
+    NSMutableDictionary * store;
 }
 
 - (void)addChange:(int)arg1 forKey:(id)arg2 changeCount:(long long)arg3;

@@ -3,34 +3,37 @@
  */
 
 @interface PKGlyphView : UIView {
-    PKCheckGlyphView *_checkView;
-    UIImage *_customImage;
-    UIImageView *_customImageView;
-    <PKGlyphViewDelegate> *_delegate;
-    PKFingerprintGlyphView *_fingerprintView;
-    double _lastAnimationWillFinish;
+    PKCheckGlyphView * _checkView;
+    UIImage * _customImage;
+    UIImageView * _customImageView;
+    <PKGlyphViewDelegate> * _delegate;
+    PKFingerprintGlyphView * _fingerprintView;
+    double  _lastAnimationWillFinish;
     struct { 
         unsigned int showingPhone : 1; 
         unsigned int phoneRotated : 1; 
-    } _layoutFlags;
-    float _phoneAspectRatio;
-    PKPhoneGlyphView *_phoneView;
-    NSString *_phoneWiggleAnimationKey;
-    BOOL _phoneWiggling;
-    UIColor *_primaryColor;
-    int _priorState;
-    UIColor *_secondaryColor;
-    int _state;
-    NSMutableArray *_transitionCompletionHandlers;
-    unsigned int _transitionIndex;
-    BOOL _transitioning;
+    }  _layoutFlags;
+    float  _phoneAspectRatio;
+    PKPhoneGlyphView * _phoneView;
+    NSString * _phoneWiggleAnimationKey;
+    BOOL  _phoneWiggling;
+    UIColor * _primaryColor;
+    int  _priorState;
+    UIColor * _secondaryColor;
+    int  _state;
+    NSMutableArray * _transitionCompletionHandlers;
+    unsigned int  _transitionIndex;
+    BOOL  _transitioning;
 }
 
 @property (nonatomic, retain) UIImage *customImage;
 @property (nonatomic) <PKGlyphViewDelegate> *delegate;
+@property (nonatomic) BOOL fadeOnRecognized;
 @property (nonatomic, copy) UIColor *primaryColor;
 @property (nonatomic, copy) UIColor *secondaryColor;
 @property (nonatomic, readonly) int state;
+
++ (BOOL)automaticallyNotifiesObserversOfState;
 
 - (void)_endPhoneWiggle;
 - (void)_executeAfterMinimumAnimationDurationForStateTransition:(id /* block */)arg1;
@@ -50,6 +53,8 @@
 - (id)customImage;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)fadeOnRecognized;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;
@@ -57,6 +62,7 @@
 - (id)secondaryColor;
 - (void)setCustomImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFadeOnRecognized:(BOOL)arg1;
 - (void)setPrimaryColor:(id)arg1;
 - (void)setPrimaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setSecondaryColor:(id)arg1;

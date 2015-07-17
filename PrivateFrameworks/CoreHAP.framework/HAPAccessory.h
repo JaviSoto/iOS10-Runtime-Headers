@@ -3,22 +3,26 @@
  */
 
 @interface HAPAccessory : NSObject {
-    <HAPAccessoryDelegate> *_delegate;
-    NSString *_identifier;
-    NSNumber *_instanceID;
-    NSString *_manufacturer;
-    NSString *_model;
-    NSString *_name;
-    BOOL _primary;
-    BOOL _reachable;
-    NSString *_serialNumber;
-    HAPAccessoryServer *_server;
-    NSArray *_services;
-    NSString *_uniqueIdentifier;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    <HAPAccessoryDelegate> * _delegate;
+    NSString * _firmwareVersion;
+    NSString * _identifier;
+    NSNumber * _instanceID;
+    NSString * _manufacturer;
+    NSString * _model;
+    NSString * _name;
+    BOOL  _primary;
+    BOOL  _reachable;
+    NSString * _serialNumber;
+    HAPAccessoryServer * _server;
+    NSArray * _services;
+    BOOL  _supportsRelay;
+    NSString * _uniqueIdentifier;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, readonly, copy) NSNumber *category;
 @property (nonatomic) <HAPAccessoryDelegate> *delegate;
+@property (nonatomic, copy) NSString *firmwareVersion;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSNumber *instanceID;
 @property (nonatomic, readonly) int linkType;
@@ -31,10 +35,11 @@
 @property (nonatomic, copy) NSString *serialNumber;
 @property (nonatomic) HAPAccessoryServer *server;
 @property (nonatomic, retain) NSArray *services;
-@property (nonatomic, readonly) BOOL supportsGroupedRequests;
+@property (nonatomic) BOOL supportsRelay;
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (id)instanceIDForUniqueIdentifier:(id)arg1;
 + (BOOL)isAccessoryPairedWithIdentifier:(id)arg1;
 + (BOOL)isAccessoryPrimaryWithUniqueIdentifier:(id)arg1;
 + (id)serverIdentifierWithUniqueIdentifier:(id)arg1;
@@ -45,9 +50,14 @@
 - (BOOL)_updateAndValidateServices;
 - (BOOL)_updateForAccessoryInformationService;
 - (BOOL)_updateService:(id)arg1;
+- (id)category;
+- (id)characteristicOfType:(id)arg1 serviceType:(id)arg2;
+- (id)characteristicsOfType:(id)arg1;
 - (id)delegate;
 - (id)description;
+- (id)firmwareVersion;
 - (id)identifier;
+- (id)init;
 - (id)initWithServer:(id)arg1 instanceID:(id)arg2;
 - (id)initWithServer:(id)arg1 instanceID:(id)arg2 parsedServices:(id)arg3;
 - (id)instanceID;
@@ -64,7 +74,9 @@
 - (id)serialNumber;
 - (id)server;
 - (id)services;
+- (id)servicesOfType:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFirmwareVersion:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setManufacturer:(id)arg1;
@@ -75,9 +87,10 @@
 - (void)setSerialNumber:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setServices:(id)arg1;
+- (void)setSupportsRelay:(BOOL)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (BOOL)supportsGroupedRequests;
+- (BOOL)supportsRelay;
 - (id)uniqueIdentifier;
 - (BOOL)validateCharacteristicValues:(id*)arg1;
 - (id)workQueue;

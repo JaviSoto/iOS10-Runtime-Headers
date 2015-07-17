@@ -3,41 +3,41 @@
  */
 
 @interface SKUIPlayButtonControl : UIControl {
-    NSString *_backdropGroupName;
-    _UIBackdropView *_backdropView;
-    UIColor *_backgroundColor;
-    UIImage *_backgroundImageForBlurring;
-    int _backgroundType;
-    UIView *_backgroundView;
+    NSString * _backdropGroupName;
+    _UIBackdropView * _backdropView;
+    UIColor * _backgroundColor;
+    UIImage * _backgroundImageForBlurring;
+    int  _backgroundType;
+    UIView * _backgroundView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _bigHitInsets;
-    SKUIPlayButtonShapeView *_borderLayer;
-    UIColor *_bufferProgressIndicatorColor;
-    id _bufferProgressIndicatorCompositingFilter;
-    UIColor *_controlForeGroundColor;
-    UIImage *_customPlayImage;
-    UIImage *_customToggleImage;
-    BOOL _didInitialHighlightForTouch;
-    SKUIPlayButtonGradientView *_gradientBackgroundView;
-    NSArray *_gradientColors;
-    int _gradientType;
-    UIImageView *_imageView;
-    BOOL _indeterminate;
-    SKUIPlayButtonShapeView *_innerProgressLayer;
-    SKUIPlayButtonShapeView *_outerProgressLayer;
-    float _progress;
-    UIColor *_progressIndicatorColor;
-    id _progressIndicatorCompositingFilter;
-    SKUIPlayButtonShapeView *_selectedLayer;
-    BOOL _showBorder;
-    BOOL _showOuterBorder;
-    BOOL _showingPlayIndicator;
-    BOOL _showingProgress;
-    BOOL _usesBlurredBackground;
+    }  _bigHitInsets;
+    SKUIPlayButtonShapeView * _borderLayer;
+    UIColor * _bufferProgressIndicatorColor;
+    id  _bufferProgressIndicatorCompositingFilter;
+    UIColor * _controlForeGroundColor;
+    UIImage * _customPlayImage;
+    UIImage * _customToggleImage;
+    BOOL  _didInitialHighlightForTouch;
+    SKUIPlayButtonGradientView * _gradientBackgroundView;
+    NSArray * _gradientColors;
+    int  _gradientType;
+    UIImageView * _imageView;
+    BOOL  _indeterminate;
+    SKUIPlayButtonShapeView * _innerProgressLayer;
+    SKUIPlayButtonShapeView * _outerProgressLayer;
+    float  _progress;
+    UIColor * _progressIndicatorColor;
+    id  _progressIndicatorCompositingFilter;
+    SKUIPlayButtonShapeView * _selectedLayer;
+    BOOL  _showBorder;
+    BOOL  _showOuterBorder;
+    BOOL  _showingPlayIndicator;
+    BOOL  _showingProgress;
+    BOOL  _usesBlurredBackground;
 }
 
 @property (nonatomic, copy) NSString *backdropGroupName;
@@ -133,6 +133,7 @@
 - (void)setShowOuterBorder:(BOOL)arg1;
 - (BOOL)showOuterBorder;
 - (void)showPlayIndicator:(BOOL)arg1;
+- (void)showPlayIndicator:(BOOL)arg1 force:(BOOL)arg2;
 - (BOOL)showingPlayIndicator;
 - (BOOL)showingProgress;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

@@ -3,20 +3,20 @@
  */
 
 @interface BWGraph : NSObject {
-    BOOL _beingConfigured;
-    BOOL _classicRetainedBufferCount;
-    NSObject<OS_dispatch_group> *_commitGroup;
-    NSMutableArray *_connections;
-    long _errorStatus;
-    long long _inflightConfigurationID;
-    NSMutableArray *_nodes;
-    NSMutableArray *_outputsWithSharedPools;
-    BOOL _running;
-    NSMutableArray *_sinkNodes;
-    NSMutableArray *_sourceNodes;
-    NSObject<OS_dispatch_group> *_startGroup;
-    <BWGraphStatusDelegate> *_statusDelegate;
-    BOOL _supportsLiveReconfiguration;
+    BOOL  _beingConfigured;
+    BOOL  _classicRetainedBufferCount;
+    NSObject<OS_dispatch_group> * _commitGroup;
+    NSMutableArray * _connections;
+    long  _errorStatus;
+    long long  _inflightConfigurationID;
+    NSMutableArray * _nodes;
+    NSMutableArray * _outputsWithSharedPools;
+    BOOL  _running;
+    NSMutableArray * _sinkNodes;
+    NSMutableArray * _sourceNodes;
+    NSObject<OS_dispatch_group> * _startGroup;
+    <BWGraphStatusDelegate> * _statusDelegate;
+    BOOL  _supportsLiveReconfiguration;
 }
 
 @property long errorStatus;

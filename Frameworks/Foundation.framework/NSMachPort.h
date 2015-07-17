@@ -3,10 +3,10 @@
  */
 
 @interface NSMachPort : NSPort {
-    id _delegate;
-    unsigned int _flags;
-    unsigned int _machPort;
-    unsigned int _reserved;
+    id  _delegate;
+    unsigned int  _flags;
+    unsigned int  _machPort;
+    unsigned int  _reserved;
 }
 
 @property (readonly) unsigned int machPort;

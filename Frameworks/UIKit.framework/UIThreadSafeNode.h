@@ -3,14 +3,14 @@
  */
 
 @interface UIThreadSafeNode : NSObject {
-    DOMNode *_node;
+    DOMNode * _node;
 }
 
 + (id)threadSafeNodeWithNode:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_realNode;
 - (BOOL)conformsToProtocol:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithNode:(id)arg1;

@@ -12,12 +12,12 @@
             float width; 
             float height; 
         } size; 
-    } boundingBox;
-    unsigned int pageIndex;
-    NSArray *rects;
-    NSArray *rotationAngles;
-    NSString *string;
-    NSArray *strings;
+    }  boundingBox;
+    unsigned int  pageIndex;
+    NSArray * rects;
+    NSArray * rotationAngles;
+    NSString * string;
+    NSArray * strings;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingBox;

@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetCache : NSObject {
-    AVAssetCacheInternal *_priv;
+    AVAssetCacheInternal * _priv;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;

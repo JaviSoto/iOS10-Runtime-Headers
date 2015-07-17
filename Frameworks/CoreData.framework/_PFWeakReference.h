@@ -3,8 +3,8 @@
  */
 
 @interface _PFWeakReference : NSObject {
-    id _object;
-    unsigned int _objectAddress;
+    id  _object;
+    unsigned int  _objectAddress;
 }
 
 @property (readonly) id object;

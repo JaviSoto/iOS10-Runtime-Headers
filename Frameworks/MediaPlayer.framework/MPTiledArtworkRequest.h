@@ -3,14 +3,14 @@
  */
 
 @interface MPTiledArtworkRequest : NSObject <NSCopying> {
-    id /* block */ _artworkCatalogsBlock;
-    NSArray *_artworkCatalogsCache;
-    <NSCopying> *_entityIdentifier;
-    <NSCopying> *_namespaceIdentifier;
-    unsigned int _numberOfColumns;
-    unsigned int _numberOfRows;
-    <NSCopying> *_revisionIdentifier;
-    float _tileSpacing;
+    id /* block */  _artworkCatalogsBlock;
+    NSArray * _artworkCatalogsCache;
+    <NSCopying> * _entityIdentifier;
+    <NSCopying> * _namespaceIdentifier;
+    unsigned int  _numberOfColumns;
+    unsigned int  _numberOfRows;
+    <NSCopying> * _revisionIdentifier;
+    float  _tileSpacing;
 }
 
 @property (nonatomic, copy) id /* block */ artworkCatalogsBlock;

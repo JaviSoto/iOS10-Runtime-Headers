@@ -3,8 +3,8 @@
  */
 
 @interface _VTSiriUIPolicy : _VTStatePolicy {
-    int _notifyToken;
-    unsigned char _siriState;
+    int  _notifyToken;
+    unsigned char  _siriState;
 }
 
 - (void)_enabledAssertionStatusUpdated;

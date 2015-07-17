@@ -3,12 +3,12 @@
  */
 
 @interface TSCHChartInfo : NSObject <NSCopying, TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
-    NSMutableArray *mCategoryAxisNonStyles;
-    NSMutableArray *mCategoryAxisStyles;
-    TSCHChartMediator *mChartMediator;
-    TSCHChartType *mChartType;
-    BOOL mDisplayMessageOnRepCreation;
-    TSCHChartDrawableInfo *mDrawableInfo;
+    NSMutableArray * mCategoryAxisNonStyles;
+    NSMutableArray * mCategoryAxisStyles;
+    TSCHChartMediator * mChartMediator;
+    TSCHChartType * mChartType;
+    BOOL  mDisplayMessageOnRepCreation;
+    TSCHChartDrawableInfo * mDrawableInfo;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,37 +18,37 @@
             float width; 
             float height; 
         } size; 
-    } mInnerChartFrame;
-    NSString *mLastAppliedFillSetLookupString;
-    unsigned int mLastSeriesIndex;
-    TSPLazyReference *mLazyPreset;
-    TSCHLegendModel *mLegendModel;
-    <TSCHStyleActAlike> *mLegendNonStyle;
-    <TSCHStyleActAlike> *mLegendStyle;
-    double mMessageDuration;
-    NSString *mMessageString;
-    TSCHChartModel *mModel;
-    BOOL mNeedsCalcEngineDependentImport;
-    BOOL mNeedsCalcEngineDependentUpgrade;
-    TSDInfoGeometry *mNonInfoGeometry;
-    <TSCHStyleActAlike> *mNonStyle;
-    NSMutableArray *mParagraphStyles;
-    TSKCustomFormatList *mPasteboardCustomFormatList;
+    }  mInnerChartFrame;
+    NSString * mLastAppliedFillSetLookupString;
+    unsigned int  mLastSeriesIndex;
+    TSPLazyReference * mLazyPreset;
+    TSCHLegendModel * mLegendModel;
+    <TSCHStyleActAlike> * mLegendNonStyle;
+    <TSCHStyleActAlike> * mLegendStyle;
+    double  mMessageDuration;
+    NSString * mMessageString;
+    TSCHChartModel * mModel;
+    BOOL  mNeedsCalcEngineDependentImport;
+    BOOL  mNeedsCalcEngineDependentUpgrade;
+    TSDInfoGeometry * mNonInfoGeometry;
+    <TSCHStyleActAlike> * mNonStyle;
+    NSMutableArray * mParagraphStyles;
+    TSKCustomFormatList * mPasteboardCustomFormatList;
     struct CGPoint { 
         float x; 
         float y; 
-    } mPreviewOrigin;
-    NSMutableArray *mPrivateSeriesStyles;
-    NSMutableDictionary *mRefLineNonStylesMap;
-    NSMutableDictionary *mRefLineStylesMap;
-    NSMutableArray *mSeriesNonStyles;
-    <TSCHStyleActAlike> *mStyle;
-    NSMutableDictionary *mStyleViewProxyMap;
-    NSArray *mStyleViewProxyParagraphStyleArray;
-    <TSCHStyleActAlike> *mThemePresetRefLineStyle;
-    NSMutableArray *mThemeSeriesStyles;
-    NSMutableArray *mValueAxisNonStyles;
-    NSMutableArray *mValueAxisStyles;
+    }  mPreviewOrigin;
+    NSMutableArray * mPrivateSeriesStyles;
+    NSMutableDictionary * mRefLineNonStylesMap;
+    NSMutableDictionary * mRefLineStylesMap;
+    NSMutableArray * mSeriesNonStyles;
+    <TSCHStyleActAlike> * mStyle;
+    NSMutableDictionary * mStyleViewProxyMap;
+    NSArray * mStyleViewProxyParagraphStyleArray;
+    <TSCHStyleActAlike> * mThemePresetRefLineStyle;
+    NSMutableArray * mThemeSeriesStyles;
+    NSMutableArray * mValueAxisNonStyles;
+    NSMutableArray * mValueAxisStyles;
 }
 
 @property (nonatomic, readonly, retain) TSCHChartType *chartType;
@@ -162,6 +162,7 @@
 - (BOOL)hasSetDefaultLayoutSettings;
 - (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1;
 - (id)infoGeometryForDesiredPureLayoutGeometry:(id)arg1;
+- (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
 - (id)infoGeometryForVisuallyCenteringOnUnscaledCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (double)informationalMessageDuration;
 - (id)informationalMessageString;

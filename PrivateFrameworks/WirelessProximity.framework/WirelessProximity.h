@@ -3,9 +3,9 @@
  */
 
 @interface WirelessProximity : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WirelessProximityDelegate> *_delegate;
-    int _state;
+    XPCClient * _connection;
+    <WirelessProximityDelegate> * _delegate;
+    int  _state;
 }
 
 @property (nonatomic, retain) XPCClient *connection;

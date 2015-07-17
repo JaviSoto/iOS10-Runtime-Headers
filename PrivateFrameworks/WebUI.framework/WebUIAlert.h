@@ -3,20 +3,29 @@
  */
 
 @interface WebUIAlert : NSObject {
-    id /* block */ _actionHandler;
-    NSString *_bodyText;
-    id _context;
-    int _defaultAction;
-    int _hideAction;
-    int _indexOfSelectedTableItem;
-    int _otherAction;
-    int _tableAction;
-    NSMutableArray *_tableItems;
-    NSString *_title;
-    int _type;
+    id /* block */  _actionHandler;
+    NSString * _bodyText;
+    id  _context;
+    int  _defaultAction;
+    int  _hideAction;
+    int  _indexOfSelectedTableItem;
+    int  _otherAction;
+    int  _tableAction;
+    NSMutableArray * _tableItems;
+    NSString * _title;
+    int  _type;
 }
 
 @property (nonatomic, copy) id /* block */ actionHandler;
+@property (nonatomic, readonly, copy) NSString *bodyText;
+@property (nonatomic, readonly, copy) NSArray *buttonTitles;
+@property (nonatomic, retain) id context;
+@property (nonatomic, readonly) int defaultAction;
+@property (nonatomic) int hideAction;
+@property (nonatomic, readonly) int tableAction;
+@property (nonatomic, readonly, copy) NSArray *tableItems;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (id)_buttonTitleForAction:(int)arg1;

@@ -3,18 +3,18 @@
  */
 
 @interface AWDEasyConfigCompleted : PBCodable <NSCopying> {
-    BOOL _adminPasswordSet;
-    unsigned int _channelOfDestinationAP;
-    unsigned int _channelOfSWAP;
-    BOOL _destinationNetworkPSKInKeychain;
-    BOOL _destinationNetworkRecommendationUsed;
-    NSString *_eaBundleSeedID;
-    NSString *_eaFirmwareRevision;
-    NSString *_eaHardwareRevision;
-    NSString *_eaManufacturerName;
-    NSString *_eaModelName;
-    NSMutableArray *_eaProtocolStrings;
-    int _easyConfigStoppedReasonError;
+    BOOL  _adminPasswordSet;
+    unsigned int  _channelOfDestinationAP;
+    unsigned int  _channelOfSWAP;
+    BOOL  _destinationNetworkPSKInKeychain;
+    BOOL  _destinationNetworkRecommendationUsed;
+    NSString * _eaBundleSeedID;
+    NSString * _eaFirmwareRevision;
+    NSString * _eaHardwareRevision;
+    NSString * _eaManufacturerName;
+    NSString * _eaModelName;
+    NSMutableArray * _eaProtocolStrings;
+    int  _easyConfigStoppedReasonError;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int channelOfDestinationAP : 1; 
@@ -42,27 +42,27 @@
         unsigned int pauseAfterApply : 1; 
         unsigned int playPasswordSet : 1; 
         unsigned int userChangedFriendlyName : 1; 
-    } _has;
-    BOOL _hitJoiningDestinationAPTimeout;
-    BOOL _hitJoiningTargetSWAPTimeout;
-    BOOL _pauseAfterApply;
-    BOOL _playPasswordSet;
-    int _rssiOfDestinationAP;
-    int _rssiOfSWAP;
-    float _secondsToApplyConfig;
-    float _secondsToCompleteFullConfig;
-    float _secondsToCompleteMFiSAPAuth;
-    float _secondsToCompletePostConfigCheck;
-    float _secondsToFindPostConfigDevice;
-    float _secondsToFindPreConfigDevice;
-    float _secondsToGetLinkUpOnDestination;
-    float _secondsToGetLinkUpOnSWAP;
-    unsigned int _snrOfDestinationAP;
-    unsigned int _snrOfSWAP;
-    unsigned long long _timestamp;
-    BOOL _userChangedFriendlyName;
-    int _wifiJoinDestinationAPError;
-    int _wifiJoinSWAPError;
+    }  _has;
+    BOOL  _hitJoiningDestinationAPTimeout;
+    BOOL  _hitJoiningTargetSWAPTimeout;
+    BOOL  _pauseAfterApply;
+    BOOL  _playPasswordSet;
+    int  _rssiOfDestinationAP;
+    int  _rssiOfSWAP;
+    float  _secondsToApplyConfig;
+    float  _secondsToCompleteFullConfig;
+    float  _secondsToCompleteMFiSAPAuth;
+    float  _secondsToCompletePostConfigCheck;
+    float  _secondsToFindPostConfigDevice;
+    float  _secondsToFindPreConfigDevice;
+    float  _secondsToGetLinkUpOnDestination;
+    float  _secondsToGetLinkUpOnSWAP;
+    unsigned int  _snrOfDestinationAP;
+    unsigned int  _snrOfSWAP;
+    unsigned long long  _timestamp;
+    BOOL  _userChangedFriendlyName;
+    int  _wifiJoinDestinationAPError;
+    int  _wifiJoinSWAPError;
 }
 
 @property (nonatomic) BOOL adminPasswordSet;

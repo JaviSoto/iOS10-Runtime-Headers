@@ -3,10 +3,10 @@
  */
 
 @interface SKUIKeyValueInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    SKUIInfoListViewElement *_infoList;
-    NSNumber *_titleColumnWidth;
-    NSArray *_viewElements;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    SKUIInfoListViewElement * _infoList;
+    NSNumber * _titleColumnWidth;
+    NSArray * _viewElements;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface TSUZipArchive : NSObject {
-    NSMutableSet *_entries;
-    NSMutableDictionary *_entriesMap;
-    unsigned int _options;
+    NSMutableSet * _entries;
+    NSMutableDictionary * _entriesMap;
+    unsigned int  _options;
 }
 
 @property (nonatomic, readonly) unsigned long long archiveLength;

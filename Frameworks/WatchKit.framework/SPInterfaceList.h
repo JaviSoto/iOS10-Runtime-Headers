@@ -3,10 +3,10 @@
  */
 
 @interface SPInterfaceList : SPInterfaceObject {
-    <SPInterfaceController> *_controller;
-    NSArray *_rowControllerProperties;
-    NSArray *_rowControllers;
-    NSDictionary *_rowDescriptions;
+    <SPInterfaceController> * _controller;
+    NSArray * _rowControllerProperties;
+    NSArray * _rowControllers;
+    NSDictionary * _rowDescriptions;
 }
 
 @property (nonatomic) <SPInterfaceController> *controller;

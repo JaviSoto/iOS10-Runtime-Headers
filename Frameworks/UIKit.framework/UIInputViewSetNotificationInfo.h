@@ -6,7 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _beginCenter;
+    }  _beginCenter;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,7 +16,7 @@
             float width; 
             float height; 
         } size; 
-    } _beginFrame;
+    }  _beginFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,13 +26,13 @@
             float width; 
             float height; 
         } size; 
-    } _bounds;
-    BOOL _changedAccessoryOnly;
-    float _duration;
+    }  _bounds;
+    BOOL  _changedAccessoryOnly;
+    float  _duration;
     struct CGPoint { 
         float x; 
         float y; 
-    } _endCenter;
+    }  _endCenter;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -42,8 +42,9 @@
             float width; 
             float height; 
         } size; 
-    } _endFrame;
-    unsigned int _options;
+    }  _endFrame;
+    BOOL  _forceNotification;
+    unsigned int  _options;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } beginCenter;
@@ -53,6 +54,7 @@
 @property (nonatomic) float duration;
 @property (nonatomic) struct CGPoint { float x1; float x2; } endCenter;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
+@property (nonatomic) BOOL forceNotification;
 @property (nonatomic) unsigned int options;
 @property (nonatomic, readonly) NSDictionary *privateUserInfo;
 @property (nonatomic, readonly) NSDictionary *userInfo;
@@ -63,9 +65,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)changedAccessoryOnly;
+- (BOOL)containsChange;
 - (float)duration;
 - (struct CGPoint { float x1; float x2; })endCenter;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
+- (BOOL)forceNotification;
 - (id)inverseInfo;
 - (void)logGeometry;
 - (unsigned int)options;
@@ -80,6 +84,7 @@
 - (void)setDuration:(float)arg1;
 - (void)setEndCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setForceNotification:(BOOL)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (id)userInfo;
 

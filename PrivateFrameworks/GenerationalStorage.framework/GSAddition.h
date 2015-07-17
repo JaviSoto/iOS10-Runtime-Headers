@@ -3,14 +3,14 @@
  */
 
 @interface GSAddition : NSObject {
-    NSString *_displayName;
-    NSString *_namespace;
-    unsigned long long _options;
-    NSString *_originalName;
-    NSNumber *_size;
-    NSObject<GSAdditionStoring><GSAdditionStoringPrivate> *_storage;
-    NSURL *_url;
-    NSDictionary *_userInfo;
+    NSString * _displayName;
+    NSString * _namespace;
+    unsigned long long  _options;
+    NSString * _originalName;
+    NSNumber * _size;
+    NSObject<GSAdditionStoring><GSAdditionStoringPrivate> * _storage;
+    NSURL * _url;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly) NSString *br_lastEditorDeviceName;

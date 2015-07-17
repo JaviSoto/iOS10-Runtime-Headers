@@ -3,7 +3,7 @@
  */
 
 @interface _NMRSupportedCommandsProtobuf : PBCodable <NSCopying> {
-    NSMutableArray *_supportedCommands;
+    NSMutableArray * _supportedCommands;
 }
 
 @property (nonatomic, retain) NSMutableArray *supportedCommands;

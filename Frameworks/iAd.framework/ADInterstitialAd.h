@@ -3,25 +3,24 @@
  */
 
 @interface ADInterstitialAd : NSObject <ADAdRecipient> {
-    BOOL _actionInProgress;
-    ADAdSpace *_adSpace;
-    BOOL _canLoadMoreThanOnce;
-    int _creativeType;
-    <ADInterstitialAdDelegate> *_delegate;
-    BOOL _hasLoadedFirstAd;
-    <ADInterstitialAdDelegate> *_internalDelegate;
-    UIViewController *_internalPresentingViewController;
-    ADInterstitialView *_interstitialView;
-    BOOL _loaded;
-    int _options;
-    ADInterstitialAdPresentationViewController *_presentationViewController;
+    BOOL  _actionInProgress;
+    ADAdSpace * _adSpace;
+    BOOL  _canLoadMoreThanOnce;
+    int  _creativeType;
+    <ADInterstitialAdDelegate> * _delegate;
+    BOOL  _hasLoadedFirstAd;
+    <ADInterstitialAdDelegate> * _internalDelegate;
+    UIViewController * _internalPresentingViewController;
+    ADInterstitialView * _interstitialView;
+    BOOL  _loaded;
+    int  _options;
+    ADInterstitialAdPresentationViewController * _presentationViewController;
 }
 
 @property (getter=isActionInProgress, nonatomic) BOOL actionInProgress;
 @property (nonatomic, retain) ADAdSpace *adSpace;
 @property (nonatomic, readonly) UIView *adSpaceView;
 @property (nonatomic) BOOL canLoadMoreThanOnce;
-@property (nonatomic, copy) NSSet *context;
 @property (nonatomic) int creativeType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ADInterstitialAdDelegate> *delegate;
@@ -88,6 +87,7 @@
 - (void)setPresentationViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setServerURL:(id)arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)storyboardViewControllerDidPresent;
 
 @end

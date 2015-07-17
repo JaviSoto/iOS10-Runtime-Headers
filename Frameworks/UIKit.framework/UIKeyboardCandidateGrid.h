@@ -3,25 +3,25 @@
  */
 
 @interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateRowViewControllerDelegate> {
-    UIKBBackdropView *_backdropView;
-    UIImageView *_backgroundView;
-    UIView *_bottomBarShadow;
-    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    TIKeyboardCandidateResultSet *_candidateSet;
-    int _candidatesVisualStyle;
-    UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
-    NSMutableDictionary *_collectionViewControllers;
-    BOOL _drawBottomShadow;
-    BOOL _drawTopShadow;
-    UIKeyboardCandidateGridHeader *_gridHeader;
-    NSString *_inlineText;
-    unsigned int _numberOfColumns;
-    <UICollectionViewDelegate> *_scrollViewDelegate;
-    UIKeyboardCandidateRowViewController *_secondaryCandidatesViewController;
-    BOOL _secondaryCandidatesViewIsCurrent;
-    UIKeyboardCandidateSortControl *_sortBar;
-    NSArray *_sortedCandidates;
-    UIView *_topBarShadow;
+    UIKBBackdropView * _backdropView;
+    UIImageView * _backgroundView;
+    UIView * _bottomBarShadow;
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    TIKeyboardCandidateResultSet * _candidateSet;
+    int  _candidatesVisualStyle;
+    UIKeyboardCandidateGridCollectionViewController * _collectionViewController;
+    NSMutableDictionary * _collectionViewControllers;
+    BOOL  _drawBottomShadow;
+    BOOL  _drawTopShadow;
+    UIKeyboardCandidateGridHeader * _gridHeader;
+    NSString * _inlineText;
+    unsigned int  _numberOfColumns;
+    <UICollectionViewDelegate> * _scrollViewDelegate;
+    UIKeyboardCandidateRowViewController * _secondaryCandidatesViewController;
+    BOOL  _secondaryCandidatesViewIsCurrent;
+    UIKeyboardCandidateSortControl * _sortBar;
+    NSArray * _sortedCandidates;
+    UIView * _topBarShadow;
 }
 
 @property (nonatomic, retain) UIKBBackdropView *backdropView;

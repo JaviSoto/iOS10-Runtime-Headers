@@ -3,8 +3,8 @@
  */
 
 @interface BLTBulletinDistributorSubscriberList : NSObject <BLTBulletinDistributorSubscriberDelegate> {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_subscribers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _subscribers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,14 +3,23 @@
  */
 
 @interface HKAnchoredObjectQuery : HKQuery {
-    NSNumber *_anchor;
-    id /* block */ _completionHandler;
-    unsigned int _limit;
+    NSNumber * _anchor;
+    id /* block */  _completionHandler;
+    BOOL  _includeDeletedObjects;
+    BOOL  _initialHandlerCalled;
+    unsigned int  _limit;
+    BOOL  _shouldIgnoreAnchor;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, retain) NSNumber *anchor;
 @property (nonatomic, readonly) id /* block */ completionHandler;
+@property (nonatomic) BOOL includeDeletedObjects;
 @property (nonatomic) unsigned int limit;
+@property (getter=_shouldIgnoreAnchor, setter=_setShouldIgnoreAnchor:, nonatomic) BOOL shouldIgnoreAnchor;
+@property (nonatomic, copy) id /* block */ updateHandler;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
 
@@ -18,13 +27,25 @@
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id /* block */)_queue_errorHandler;
+- (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
+- (void)_setShouldIgnoreAnchor:(BOOL)arg1;
+- (BOOL)_shouldIgnoreAnchor;
 - (id)anchor;
 - (id /* block */)completionHandler;
-- (void)deliverDataObjects:(id)arg1 withAnchor:(id)arg2 queryUUID:(id)arg3;
+- (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
+- (BOOL)includeDeletedObjects;
 - (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned int)arg3 limit:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
+- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(int)arg3 limit:(unsigned int)arg4 resultsHandler:(id /* block */)arg5;
 - (unsigned int)limit;
 - (void)setAnchor:(id)arg1;
+- (void)setIncludeDeletedObjects:(BOOL)arg1;
 - (void)setLimit:(unsigned int)arg1;
+- (void)setUpdateHandler:(id /* block */)arg1;
+- (id /* block */)updateHandler;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

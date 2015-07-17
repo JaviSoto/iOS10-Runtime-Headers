@@ -3,7 +3,7 @@
  */
 
 @interface PACountedFrame : NSObject {
-    unsigned int _count;
+    unsigned int  _count;
 }
 
 @property unsigned int count;

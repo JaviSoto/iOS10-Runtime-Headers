@@ -3,11 +3,11 @@
  */
 
 @interface TSSTheme : TSPObject <TSKModel, TSSPresetSource> {
-    TSSStylesheet *mDocumentStylesheet;
-    TSSStylesheet *mLegacyStylesheet;
-    NSMutableDictionary *mPresetsByKind;
-    NSMutableDictionary *mReplacedPresetUUIDs;
-    NSString *mThemeIdentifier;
+    TSSStylesheet * mDocumentStylesheet;
+    TSSStylesheet * mLegacyStylesheet;
+    NSMutableDictionary * mPresetsByKind;
+    NSMutableDictionary * mReplacedPresetUUIDs;
+    NSString * mThemeIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

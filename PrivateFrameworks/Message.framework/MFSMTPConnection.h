@@ -3,17 +3,17 @@
  */
 
 @interface MFSMTPConnection : MFConnection {
-    id _delegate;
-    BOOL _dislikesSaveSentMbox;
-    NSString *_domainName;
-    BOOL _hideLoggedData;
-    long _lastCommandTimestamp;
-    MFSMTPResponse *_lastResponse;
-    NSMutableData *_mdata;
-    int _originalSocketTimeout;
-    NSString *_saveSentMbox;
-    NSMutableArray *_serviceExtensions;
-    BOOL _useSaveSent;
+    id  _delegate;
+    BOOL  _dislikesSaveSentMbox;
+    NSString * _domainName;
+    BOOL  _hideLoggedData;
+    long  _lastCommandTimestamp;
+    MFSMTPResponse * _lastResponse;
+    NSMutableData * _mdata;
+    int  _originalSocketTimeout;
+    NSString * _saveSentMbox;
+    NSMutableArray * _serviceExtensions;
+    BOOL  _useSaveSent;
 }
 
 - (BOOL)_connectUsingAccount:(id)arg1;

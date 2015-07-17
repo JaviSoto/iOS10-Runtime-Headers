@@ -3,11 +3,11 @@
  */
 
 @interface CKFetchShareInfoOperation : CKOperation {
-    NSMutableDictionary *_errorsByURL;
-    id /* block */ _fetchShareInfoCompletionBlock;
-    id /* block */ _perShareInfoBlock;
-    NSMutableDictionary *_shareInfoByURL;
-    NSArray *_shareURLs;
+    NSMutableDictionary * _errorsByURL;
+    id /* block */  _fetchShareInfoCompletionBlock;
+    id /* block */  _perShareInfoBlock;
+    NSMutableDictionary * _shareInfoByURL;
+    NSArray * _shareURLs;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *errorsByURL;
@@ -20,6 +20,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)errorsByURL;
 - (id /* block */)fetchShareInfoCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;

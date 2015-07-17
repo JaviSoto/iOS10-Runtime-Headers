@@ -3,20 +3,20 @@
  */
 
 @interface ABDateField : ABUILabelWithPlaceholder {
-    UIButton *_clearButton;
-    NSDate *_date;
-    UIDatePicker *_datePicker;
+    UIButton * _clearButton;
+    NSDate * _date;
+    UIDatePicker * _datePicker;
     struct CGSize { 
         float width; 
         float height; 
-    } _datePickerSize;
-    <ABDateFieldDelegate> *_delegate;
-    BOOL _editable;
-    BOOL _inBecomeFirstResponder;
-    BOOL _isClearButtonEnabled;
-    BOOL _isFirstResponder;
-    <ABDatePickerPresentationDelegate> *_presentationDelegate;
-    BOOL _usesDatePickerAsInputView;
+    }  _datePickerSize;
+    <ABDateFieldDelegate> * _delegate;
+    BOOL  _editable;
+    BOOL  _inBecomeFirstResponder;
+    BOOL  _isClearButtonEnabled;
+    BOOL  _isFirstResponder;
+    <ABDatePickerPresentationDelegate> * _presentationDelegate;
+    BOOL  _usesDatePickerAsInputView;
 }
 
 @property (nonatomic, retain) NSDate *date;

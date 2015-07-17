@@ -3,8 +3,8 @@
  */
 
 @interface CKDPShareTokenDeleteRequest : PBRequest <NSCopying> {
-    NSString *_routingKey;
-    NSData *_shortTokenHash;
+    NSString * _routingKey;
+    NSData * _shortTokenHash;
 }
 
 @property (nonatomic, readonly) BOOL hasRoutingKey;

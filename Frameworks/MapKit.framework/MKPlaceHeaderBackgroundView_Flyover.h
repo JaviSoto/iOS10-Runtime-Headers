@@ -3,10 +3,11 @@
  */
 
 @interface MKPlaceHeaderBackgroundView_Flyover : MKPlaceHeaderBackgroundView {
-    BOOL _animationPaused;
-    GEOPDFlyover *_flyover;
-    UITapGestureRecognizer *_interactionTapRecognizer;
-    MKMapView *_mapView;
+    BOOL  _animationPaused;
+    BOOL  _animationPrepared;
+    GEOPDFlyover * _flyover;
+    UITapGestureRecognizer * _interactionTapRecognizer;
+    MKMapView * _mapView;
 }
 
 - (void).cxx_destruct;

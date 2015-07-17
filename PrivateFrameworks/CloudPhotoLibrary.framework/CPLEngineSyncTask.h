@@ -3,12 +3,12 @@
  */
 
 @interface CPLEngineSyncTask : NSObject {
-    BOOL _cancelled;
-    <CPLEngineSyncTaskDelegate> *_delegate;
-    CPLEngineLibrary *_engineLibrary;
-    BOOL _foreground;
-    BOOL _paused;
-    <NSCoding> *_transportUserIdentifier;
+    BOOL  _cancelled;
+    <CPLEngineSyncTaskDelegate> * _delegate;
+    CPLEngineLibrary * _engineLibrary;
+    BOOL  _foreground;
+    BOOL  _paused;
+    <NSCoding> * _transportUserIdentifier;
 }
 
 @property (getter=isCancelled) BOOL cancelled;

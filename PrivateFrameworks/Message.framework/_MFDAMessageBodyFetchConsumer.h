@@ -3,10 +3,10 @@
  */
 
 @interface _MFDAMessageBodyFetchConsumer : NSObject <DAMailAccountStreamConsumerFactory, MFRequestQueueResponseConsumer> {
-    NSData *_data;
-    MFError *_error;
-    <MFDAStreamingContentConsumer> *_streamConsumer;
-    BOOL _succeeded;
+    NSData * _data;
+    MFError * _error;
+    <MFDAStreamingContentConsumer> * _streamConsumer;
+    BOOL  _succeeded;
 }
 
 @property (nonatomic, retain) NSData *data;

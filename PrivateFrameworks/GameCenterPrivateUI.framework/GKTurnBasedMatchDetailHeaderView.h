@@ -3,18 +3,18 @@
  */
 
 @interface GKTurnBasedMatchDetailHeaderView : UICollectionReusableView {
-    GKTextBubbleControl *_actionBubble;
-    SEL _bubbleAction;
-    id _bubbleTarget;
-    NSLayoutConstraint *_bubbleToLastConstraint;
-    BOOL _compactHeight;
-    GKLabel *_infoLabel;
-    NSString *_infoText;
-    GKLabel *_lastTurnLabel;
-    GKTurnBasedMatch *_match;
-    NSLayoutConstraint *_playingToTopConstraint;
-    GKLabel *_playingWithLabel;
-    GKLabel *_startedLabel;
+    GKTextBubbleControl * _actionBubble;
+    SEL  _bubbleAction;
+    id  _bubbleTarget;
+    NSLayoutConstraint * _bubbleToLastConstraint;
+    BOOL  _compactHeight;
+    GKLabel * _infoLabel;
+    NSString * _infoText;
+    GKLabel * _lastTurnLabel;
+    GKTurnBasedMatch * _match;
+    NSLayoutConstraint * _playingToTopConstraint;
+    GKLabel * _playingWithLabel;
+    GKLabel * _startedLabel;
 }
 
 @property (nonatomic, retain) GKTextBubbleControl *actionBubble;

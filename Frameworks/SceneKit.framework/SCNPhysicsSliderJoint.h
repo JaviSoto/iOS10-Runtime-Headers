@@ -3,7 +3,7 @@
  */
 
 @interface SCNPhysicsSliderJoint : SCNPhysicsBehavior {
-    struct btSliderConstraint { int (**x1)(); int x2; int x3; union { int x_4_1_1; void *x_4_1_2; } x4; float x5; bool x6; bool x7; int x8; struct btRigidBody {} *x9; struct btRigidBody {} *x10; float x11; float x12; struct btJointFeedback {} *x13; bool x14; bool x15; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_16_1_1; struct btVector3 { float x_2_2_1[4]; } x_16_1_2; } x16; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_17_1_1; struct btVector3 { float x_2_2_1[4]; } x_17_1_2; } x17; bool x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; bool x47; bool x48; int x49; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_50_1_1; struct btVector3 { float x_2_2_1[4]; } x_50_1_2; struct btVector3 { float x_3_2_1[4]; } x_50_1_3; struct btVector3 { float x_4_2_1[4]; } x_50_1_4; struct btVector3 { float x_5_2_1[4]; } x_50_1_5; float x_50_1_6; } x50[3]; float x51[3]; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_52_1_1; struct btVector3 { float x_2_2_1[4]; } x_52_1_2; struct btVector3 { float x_3_2_1[4]; } x_52_1_3; struct btVector3 { float x_4_2_1[4]; } x_52_1_4; struct btVector3 { float x_5_2_1[4]; } x_52_1_5; float x_52_1_6; } x52[3]; float x53; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_54_1_1; struct btVector3 { float x_2_2_1[4]; } x_54_1_2; } x54; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_55_1_1; struct btVector3 { float x_2_2_1[4]; } x_55_1_2; } x55; struct btVector3 { float x_56_1_1[4]; } x56; struct btVector3 { float x_57_1_1[4]; } x57; struct btVector3 { float x_58_1_1[4]; } x58; struct btVector3 { float x_59_1_1[4]; } x59; struct btVector3 { float x_60_1_1[4]; } x60; struct btVector3 { float x_61_1_1[4]; } x61; struct btVector3 { float x_62_1_1[4]; } x62; struct btVector3 { float x_63_1_1[4]; } x63; float x64; float x65; float x66; float x67; bool x68; float x69; float x70; float x71; bool x72; float x73; float x74; float x75; } *_constraint;
+    struct btSliderConstraint { int (**x1)(); int x2; int x3; union { int x_4_1_1; void *x_4_1_2; } x4; float x5; bool x6; bool x7; int x8; struct btRigidBody {} *x9; struct btRigidBody {} *x10; float x11; float x12; struct btJointFeedback {} *x13; bool x14; bool x15; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_16_1_1; struct btVector3 { float x_2_2_1[4]; } x_16_1_2; } x16; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_17_1_1; struct btVector3 { float x_2_2_1[4]; } x_17_1_2; } x17; bool x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; float x35; float x36; float x37; float x38; float x39; float x40; float x41; float x42; float x43; float x44; float x45; float x46; bool x47; bool x48; int x49; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_50_1_1; struct btVector3 { float x_2_2_1[4]; } x_50_1_2; struct btVector3 { float x_3_2_1[4]; } x_50_1_3; struct btVector3 { float x_4_2_1[4]; } x_50_1_4; struct btVector3 { float x_5_2_1[4]; } x_50_1_5; float x_50_1_6; } x50[3]; float x51[3]; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_52_1_1; struct btVector3 { float x_2_2_1[4]; } x_52_1_2; struct btVector3 { float x_3_2_1[4]; } x_52_1_3; struct btVector3 { float x_4_2_1[4]; } x_52_1_4; struct btVector3 { float x_5_2_1[4]; } x_52_1_5; float x_52_1_6; } x52[3]; float x53; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_54_1_1; struct btVector3 { float x_2_2_1[4]; } x_54_1_2; } x54; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_55_1_1; struct btVector3 { float x_2_2_1[4]; } x_55_1_2; } x55; struct btVector3 { float x_56_1_1[4]; } x56; struct btVector3 { float x_57_1_1[4]; } x57; struct btVector3 { float x_58_1_1[4]; } x58; struct btVector3 { float x_59_1_1[4]; } x59; struct btVector3 { float x_60_1_1[4]; } x60; struct btVector3 { float x_61_1_1[4]; } x61; struct btVector3 { float x_62_1_1[4]; } x62; struct btVector3 { float x_63_1_1[4]; } x63; float x64; float x65; float x66; float x67; bool x68; float x69; float x70; float x71; bool x72; float x73; float x74; float x75; } * _constraint;
     struct { 
         SCNPhysicsBody *bodyA; 
         SCNPhysicsBody *bodyB; 
@@ -35,8 +35,8 @@
         float motorMaximumForce; 
         float motorTargetAngularVelocity; 
         float motorMaximumTorque; 
-    } _definition;
-    SCNPhysicsWorld *_world;
+    }  _definition;
+    SCNPhysicsWorld * _world;
 }
 
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } anchorA;
@@ -54,11 +54,9 @@
 @property (nonatomic) float motorTargetAngularVelocity;
 @property (nonatomic) float motorTargetLinearVelocity;
 
-+ (id)SCNJSExportProtocol;
 + (id)jointWithBody:(id)arg1 axis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 anchor:(struct SCNVector3 { float x1; float x2; float x3; })arg3;
 + (id)jointWithBodyA:(id)arg1 axisA:(struct SCNVector3 { float x1; float x2; float x3; })arg2 anchorA:(struct SCNVector3 { float x1; float x2; float x3; })arg3 bodyB:(id)arg4 axisB:(struct SCNVector3 { float x1; float x2; float x3; })arg5 anchorB:(struct SCNVector3 { float x1; float x2; float x3; })arg6;
 
-- (id).cxx_construct;
 - (void)_addToPhysicsWorld:(id)arg1;
 - (void)_willRemoveFromPhysicsWorld:(id)arg1;
 - (struct SCNVector3 { float x1; float x2; float x3; })anchorA;

@@ -3,11 +3,11 @@
  */
 
 @interface _NMRNowPlayingInfoProtobuf : PBCodable <NSCopying> {
-    NSString *_album;
-    NSString *_artist;
-    NSData *_artworkDataDigest;
-    double _duration;
-    double _elapsedTime;
+    NSString * _album;
+    NSString * _artist;
+    NSData * _artworkDataDigest;
+    double  _duration;
+    double  _elapsedTime;
     struct { 
         unsigned int duration : 1; 
         unsigned int elapsedTime : 1; 
@@ -21,20 +21,20 @@
         unsigned int isAlwaysLive : 1; 
         unsigned int isExplicitTrack : 1; 
         unsigned int isMusicApp : 1; 
-    } _has;
-    BOOL _isAdvertisement;
-    BOOL _isAlwaysLive;
-    BOOL _isExplicitTrack;
-    BOOL _isMusicApp;
-    float _playbackRate;
-    NSString *_radioStationHash;
-    long long _radioStationIdentifier;
-    NSString *_radioStationName;
-    int _repeatMode;
-    int _shuffleMode;
-    double _timestamp;
-    NSString *_title;
-    unsigned long long _uniqueIdentifier;
+    }  _has;
+    BOOL  _isAdvertisement;
+    BOOL  _isAlwaysLive;
+    BOOL  _isExplicitTrack;
+    BOOL  _isMusicApp;
+    float  _playbackRate;
+    NSString * _radioStationHash;
+    long long  _radioStationIdentifier;
+    NSString * _radioStationName;
+    int  _repeatMode;
+    int  _shuffleMode;
+    double  _timestamp;
+    NSString * _title;
+    unsigned long long  _uniqueIdentifier;
 }
 
 @property (nonatomic, retain) NSString *album;

@@ -3,9 +3,9 @@
  */
 
 @interface CKDPCSCacheItem : NSObject {
-    NSError *_fetchError;
-    NSObject<OS_dispatch_group> *_fetchGroup;
-    CKDPCSData *_pcsData;
+    NSError * _fetchError;
+    NSObject<OS_dispatch_group> * _fetchGroup;
+    CKDPCSData * _pcsData;
 }
 
 @property (nonatomic, retain) NSError *fetchError;
@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)fetchError;
 - (id)fetchGroup;
-- (id)initWithFetchGroup:(id)arg1;
+- (id)init;
 - (id)pcsData;
 - (void)setFetchError:(id)arg1;
 - (void)setFetchGroup:(id)arg1;

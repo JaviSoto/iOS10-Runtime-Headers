@@ -3,9 +3,9 @@
  */
 
 @interface CKImageBalloonView : CKBalloonView <CKAnimationTimerObserver> {
-    CKAnimatedImage *_animatedImage;
-    NSArray *_frames;
-    CKBalloonImageView *_tailMask;
+    CKAnimatedImage * _animatedImage;
+    NSArray * _frames;
+    CKBalloonImageView * _tailMask;
 }
 
 @property (nonatomic, retain) CKAnimatedImage *animatedImage;

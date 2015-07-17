@@ -3,15 +3,15 @@
  */
 
 @interface SKUIBrickGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
-    NSMapTable *_artworkRequests;
-    float _baseHeight;
-    float _columnWidth;
-    NSMapTable *_editorialLayouts;
-    SKUIMissingItemLoader *_missingItemLoader;
-    int _numberOfColumns;
-    float _paddingHorizontal;
-    float _paddingTop;
-    UIImage *_placeholderImage;
+    NSMapTable * _artworkRequests;
+    float  _baseHeight;
+    float  _columnWidth;
+    NSMapTable * _editorialLayouts;
+    SKUIMissingItemLoader * _missingItemLoader;
+    int  _numberOfColumns;
+    float  _paddingHorizontal;
+    float  _paddingTop;
+    UIImage * _placeholderImage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

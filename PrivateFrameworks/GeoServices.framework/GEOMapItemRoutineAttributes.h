@@ -3,15 +3,15 @@
  */
 
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying> {
-    double _eventDate;
-    NSString *_eventName;
+    double  _eventDate;
+    NSString * _eventName;
     struct { 
         unsigned int eventDate : 1; 
         unsigned int loiType : 1; 
         unsigned int isEventAllDay : 1; 
-    } _has;
-    BOOL _isEventAllDay;
-    int _loiType;
+    }  _has;
+    BOOL  _isEventAllDay;
+    int  _loiType;
 }
 
 @property (nonatomic) double eventDate;

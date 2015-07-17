@@ -8,8 +8,8 @@
         unsigned char green; 
         unsigned char red; 
         unsigned char alpha; 
-    } _edgeAwareColor;
-    struct CGContext { } *_labContextRef;
+    }  _edgeAwareColor;
+    struct CGContext { } * _labContextRef;
 }
 
 + (id)layerStack;

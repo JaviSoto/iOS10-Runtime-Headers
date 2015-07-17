@@ -3,14 +3,14 @@
  */
 
 @interface EKUIEventNotificationRepresentation : NSObject {
-    BOOL _allDay;
-    NSDate *_date;
-    NSDictionary *_organizerContactDictionary;
-    EKUITextAndHeaderItem *_subtitleItem;
-    NSArray *_supplementaryItems;
-    EKUITextAndHeaderItem *_titleItem;
-    unsigned int _type;
-    NSDictionary *_userActivityUserInfo;
+    BOOL  _allDay;
+    NSDate * _date;
+    NSDictionary * _organizerContactDictionary;
+    EKUITextAndHeaderItem * _subtitleItem;
+    NSArray * _supplementaryItems;
+    EKUITextAndHeaderItem * _titleItem;
+    unsigned int  _type;
+    NSDictionary * _userActivityUserInfo;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;

@@ -3,11 +3,11 @@
  */
 
 @interface WMFPlayer : NSObject {
-    BOOL m_boundsSet;
-    MFGraphicsDevice *m_gdi;
-    BOOL m_ignoreSetWindowOrg;
-    int m_records;
-    unsigned short m_windowsVersion;
+    BOOL  m_boundsSet;
+    MFGraphicsDevice * m_gdi;
+    BOOL  m_ignoreSetWindowOrg;
+    int  m_records;
+    unsigned short  m_windowsVersion;
 }
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInLogicalUnits:(id)arg1;
@@ -43,6 +43,7 @@
 - (int)playInvertRegion:(unsigned int)arg1 :(const char *)arg2;
 - (int)playLineTo:(unsigned int)arg1 :(const char *)arg2;
 - (int)playMoveTo:(unsigned int)arg1 :(const char *)arg2;
+- (int)playOffsetClipRegion:(unsigned int)arg1 :(const char *)arg2;
 - (int)playOffsetViewportOrg:(unsigned int)arg1 :(const char *)arg2;
 - (int)playOffsetWindowOrg:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPaintRegion:(unsigned int)arg1 :(const char *)arg2;

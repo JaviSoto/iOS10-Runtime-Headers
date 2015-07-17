@@ -3,11 +3,11 @@
  */
 
 @interface TSTStrokeSidecar : TSPObject <TSTCustomStrokeProviding> {
-    NSPointerArray *_bottomRowStrokes;
-    NSPointerArray *_leftColumnStrokes;
-    int _maxOrder;
-    NSPointerArray *_rightColumnStrokes;
-    NSPointerArray *_topRowStrokes;
+    NSPointerArray * _bottomRowStrokes;
+    NSPointerArray * _leftColumnStrokes;
+    int  _maxOrder;
+    NSPointerArray * _rightColumnStrokes;
+    NSPointerArray * _topRowStrokes;
 }
 
 @property (nonatomic, retain) NSPointerArray *bottomRowStrokes;

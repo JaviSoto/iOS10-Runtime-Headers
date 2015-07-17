@@ -3,37 +3,37 @@
  */
 
 @interface FULineSeries : FUChartSeries {
-    NSArray *_barViews;
-    FUGradientObject *_fillGradient;
-    FUGradientView *_fillView;
-    UIView *_highlightClipView;
-    UIColor *_highlightIndicatorColor;
-    struct CGGradient { } *_highlightIndicatorGradient;
-    UIView *_highlightView;
-    FUGradientView *_highlightedFillView;
-    FUShapeView *_highlightedLineView;
-    UIImageView *_leftHighlightIndicator;
-    UIColor *_lineColor;
-    FUShapeView *_lineView;
-    float _lineWidth;
-    NSArray *_plotPoints;
-    UIColor *_pointColor;
-    int _pointOccurrence;
-    float _pointRadius;
-    int _pointStyle;
-    NSArray *_pointViews;
-    float _previousLeftPointX;
-    UIImageView *_rightHighlightIndicator;
-    FUGradientObject *_selectedFillGradient;
-    UIColor *_selectedLineColor;
-    UIColor *_selectedPointColor;
+    NSArray * _barViews;
+    FUGradientObject * _fillGradient;
+    FUGradientView * _fillView;
+    UIView * _highlightClipView;
+    UIColor * _highlightIndicatorColor;
+    struct CGGradient { } * _highlightIndicatorGradient;
+    UIView * _highlightView;
+    FUGradientView * _highlightedFillView;
+    FUShapeView * _highlightedLineView;
+    UIImageView * _leftHighlightIndicator;
+    UIColor * _lineColor;
+    FUShapeView * _lineView;
+    float  _lineWidth;
+    NSArray * _plotPoints;
+    UIColor * _pointColor;
+    int  _pointOccurrence;
+    float  _pointRadius;
+    int  _pointStyle;
+    NSArray * _pointViews;
+    float  _previousLeftPointX;
+    UIImageView * _rightHighlightIndicator;
+    FUGradientObject * _selectedFillGradient;
+    UIColor * _selectedLineColor;
+    UIColor * _selectedPointColor;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _selectedPointRange;
-    float _sineWaveSmoothingFactor;
-    BOOL _snapToPoint;
-    int _waveForm;
+    }  _selectedPointRange;
+    float  _sineWaveSmoothingFactor;
+    BOOL  _snapToPoint;
+    int  _waveForm;
 }
 
 @property (nonatomic, retain) NSArray *barViews;

@@ -3,8 +3,8 @@
  */
 
 @interface ATDeviceSettings : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSUserDefaults *_userDefaults;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, readonly, copy) NSArray *dataClassesNeedingSync;

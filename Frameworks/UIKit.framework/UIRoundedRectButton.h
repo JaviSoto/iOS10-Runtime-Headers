@@ -3,12 +3,13 @@
  */
 
 @interface UIRoundedRectButton : UIButton {
-    UIColor *_fillColor;
-    UIBezierPath *_fillPath;
-    UIView *_shadowView;
-    UIGroupTableViewCellBackground *_tableViewStyleBackground;
+    UIColor * _fillColor;
+    UIBezierPath * _fillPath;
+    UIView * _shadowView;
+    UIGroupTableViewCellBackground * _tableViewStyleBackground;
 }
 
+- (void).cxx_destruct;
 - (id)_backgroundView;
 - (BOOL)_canDrawContent;
 - (void)_commonRoundedRectButtonInit;
@@ -21,7 +22,6 @@
 - (void)_updateState;
 - (BOOL)_wantsTableViewStyleBackground;
 - (int)buttonType;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fillColor:(id)arg2;

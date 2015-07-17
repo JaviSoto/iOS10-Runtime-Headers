@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DBarResourceCache : NSObject {
-    TSUNoCopyDictionary *mCache;
+    TSUNoCopyDictionary * mCache;
 }
 
 + (id)_singletonAlloc;

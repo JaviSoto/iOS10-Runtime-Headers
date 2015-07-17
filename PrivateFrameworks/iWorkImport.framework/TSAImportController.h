@@ -3,12 +3,12 @@
  */
 
 @interface TSAImportController : NSObject <NSFilePresenter, TSADocumentRootDelegate, TSKImportExportDelegate, TSPObjectContextDelegate> {
-    NSMutableArray *_deferredWriters;
-    <TSAImportDelegate> *_delegate;
-    TSPObjectContext *_documentContext;
-    NSString *_documentType;
-    NSURL *_documentURL;
-    NSError *_error;
+    NSMutableArray * _deferredWriters;
+    <TSAImportDelegate> * _delegate;
+    TSPObjectContext * _documentContext;
+    NSString * _documentType;
+    NSURL * _documentURL;
+    NSError * _error;
     struct { 
         unsigned int success : 1; 
         unsigned int isPasswordProtected : 1; 
@@ -16,16 +16,16 @@
         unsigned int isImportCancelled : 1; 
         unsigned int preserveDocumentAfterImport : 1; 
         unsigned int shouldNotifyProgress : 1; 
-    } _flags;
-    NSMutableSet *_importWarnings;
-    <TSKImporter> *_importer;
-    NSObject<OS_dispatch_group> *_passphraseCompletionGroup;
-    NSOperationQueue *_presentedItemOperationQueue;
-    NSURL *_presentedItemURL;
-    TSUProgressContext *_progressContext;
-    NSString *_sourcePath;
-    TSUTemporaryDirectory *_temporaryDFFDirectory;
-    TSUTemporaryDirectory *_temporaryDirectory;
+    }  _flags;
+    NSMutableSet * _importWarnings;
+    <TSKImporter> * _importer;
+    NSObject<OS_dispatch_group> * _passphraseCompletionGroup;
+    NSOperationQueue * _presentedItemOperationQueue;
+    NSURL * _presentedItemURL;
+    TSUProgressContext * _progressContext;
+    NSString * _sourcePath;
+    TSUTemporaryDirectory * _temporaryDFFDirectory;
+    TSUTemporaryDirectory * _temporaryDirectory;
 }
 
 @property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
@@ -55,9 +55,9 @@
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (nonatomic) BOOL preserveDocumentAfterImport;
-@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
 @property (nonatomic, retain) TSUProgressContext *progressContext;
+@property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
 @property (nonatomic, readonly) NSString *sourcePath;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *temporaryURL;

@@ -3,9 +3,9 @@
  */
 
 @interface TKStyleProvider : NSObject <TKVibrationRecorderStyleProvider> {
-    NSBundle *_bundle;
-    NSMutableDictionary *_cachedStyleProperties;
-    UIScreen *_screen;
+    NSBundle * _bundle;
+    NSMutableDictionary * _cachedStyleProperties;
+    UIScreen * _screen;
 }
 
 @property (setter=_setBundle:, nonatomic, retain) NSBundle *_bundle;

@@ -6,11 +6,10 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } mRange;
-    int mType;
+    }  mRange;
+    int  mType;
 }
 
-- (id).cxx_construct;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

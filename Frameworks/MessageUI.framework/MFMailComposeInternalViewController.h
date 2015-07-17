@@ -3,25 +3,25 @@
  */
 
 @interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate> {
-    NSMutableArray *_attachments;
-    id _autorotationDelegate;
-    _UIAsyncInvocation *_cancellationInvocation;
-    int _composeResult;
-    NSError *_composeResultError;
-    NSMutableDictionary *_compositionValues;
-    unsigned int _compositionValuesAreFinalized;
-    unsigned int _delegateRespondsToBodyFinishedLoadingWithResult;
-    unsigned int _didAppear;
-    unsigned int _didEndDelayedPresentation;
-    unsigned int _didFinish;
-    unsigned int _hasDelayedPresentation;
-    unsigned int _isAppearing;
-    <MFMailComposeViewControllerDelegate> *_mailComposeDelegate;
-    NSString *_placeholderSubject;
-    MFMailComposePlaceholderViewController *_placeholderViewController;
-    double _presentationDelayBeganTimestamp;
-    unsigned int _remoteViewControllerIsConfigured;
-    MFMailComposeRemoteViewController *_serviceViewController;
+    NSMutableArray * _attachments;
+    id  _autorotationDelegate;
+    _UIAsyncInvocation * _cancellationInvocation;
+    int  _composeResult;
+    NSError * _composeResultError;
+    NSMutableDictionary * _compositionValues;
+    unsigned int  _compositionValuesAreFinalized;
+    unsigned int  _delegateRespondsToBodyFinishedLoadingWithResult;
+    unsigned int  _didAppear;
+    unsigned int  _didEndDelayedPresentation;
+    unsigned int  _didFinish;
+    unsigned int  _hasDelayedPresentation;
+    unsigned int  _isAppearing;
+    <MFMailComposeViewControllerDelegate> * _mailComposeDelegate;
+    NSString * _placeholderSubject;
+    MFMailComposePlaceholderViewController * _placeholderViewController;
+    double  _presentationDelayBeganTimestamp;
+    unsigned int  _remoteViewControllerIsConfigured;
+    MFMailComposeRemoteViewController * _serviceViewController;
 }
 
 @property (nonatomic) id autorotationDelegate;
@@ -42,11 +42,13 @@
 - (void)_setCompositionValue:(id)arg1 forKey:(id)arg2;
 - (void)_setPlaceHolderSubject:(id)arg1;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (id)addAttachmentFileURL:(id)arg1 mimeType:(id)arg2;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)autorotationDelegate;
 - (void)autosaveWithHandler:(id /* block */)arg1;
 - (void)compositionFinishedWithResult:(int)arg1 error:(id)arg2;
 - (void)compositionViewServiceTerminatedWithError:(id)arg1;
+- (void)currentAttachmentLimitWithHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)finalizeCompositionValues;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

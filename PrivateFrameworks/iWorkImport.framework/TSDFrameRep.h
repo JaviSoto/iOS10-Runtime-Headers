@@ -3,12 +3,12 @@
  */
 
 @interface TSDFrameRep : NSObject {
-    TSDBitmapImageProvider *mAdornment;
-    TSDFrame *mFrame;
-    NSArray *mImages;
-    CALayer *mMaskLayer;
-    NSArray *mMasks;
-    BOOL mShouldEnableBlendMode;
+    TSDBitmapImageProvider * mAdornment;
+    TSDFrame * mFrame;
+    NSArray * mImages;
+    CALayer * mMaskLayer;
+    NSArray * mMasks;
+    BOOL  mShouldEnableBlendMode;
 }
 
 - (void)applyMaskForRectWithCoverage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toContext:(struct CGContext { }*)arg2;

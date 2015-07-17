@@ -3,18 +3,19 @@
  */
 
 @interface ATAssetSessionTask : ATSessionTask <ATAssetLinkControllerObserver> {
-    ATAssetLinkController *_assetLinkController;
-    BOOL _cancelAtStart;
-    NSString *_dataClass;
-    unsigned int _failedAssetsCount;
-    NSPredicate *_filterPredicate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableOrderedSet *_remainingAssets;
-    double _retryInterval;
-    NSObject<OS_dispatch_source> *_retryTimer;
-    BOOL _retryUntilFinished;
-    id /* block */ _shouldRetryAssetBlock;
-    BOOL _waitingForRetry;
+    ATAssetLinkController * _assetLinkController;
+    BOOL  _cancelAtStart;
+    NSString * _dataClass;
+    NSMutableSet * _failedAssets;
+    unsigned int  _failedAssetsCount;
+    NSPredicate * _filterPredicate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableOrderedSet * _remainingAssets;
+    double  _retryInterval;
+    NSObject<OS_dispatch_source> * _retryTimer;
+    BOOL  _retryUntilFinished;
+    id /* block */  _shouldRetryAssetBlock;
+    BOOL  _waitingForRetry;
 }
 
 @property (nonatomic, retain) ATAssetLinkController *assetLinkController;

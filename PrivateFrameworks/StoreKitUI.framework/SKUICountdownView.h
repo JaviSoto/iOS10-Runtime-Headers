@@ -3,26 +3,26 @@
  */
 
 @interface SKUICountdownView : UIView {
-    SKUIClientContext *_clientContext;
-    SKUICountdown *_countdown;
-    UILabel *_dateDescriptionLabelDay;
-    UILabel *_dateDescriptionLabelHour;
-    UILabel *_dateDescriptionLabelMinute;
-    UILabel *_dateDescriptionLabelSecond;
-    NSMutableArray *_dateFlapLabels;
-    UILabel *_dateLabelDay;
-    UILabel *_dateLabelHour;
-    UILabel *_dateLabelMinute;
-    UILabel *_dateLabelSecond;
-    float _factor;
-    UIImageView *_imageView;
-    NSMutableArray *_numberFlapLabels;
-    NSNumberFormatter *_numberFormatter;
-    UILabel *_numberLabel;
-    NSMutableArray *_numberSeparatorLabels;
-    NSOperationQueue *_operationQueue;
-    NSTimer *_timer;
-    SKUICountdownViewTimerTarget *_timerTarget;
+    SKUIClientContext * _clientContext;
+    SKUICountdown * _countdown;
+    UILabel * _dateDescriptionLabelDay;
+    UILabel * _dateDescriptionLabelHour;
+    UILabel * _dateDescriptionLabelMinute;
+    UILabel * _dateDescriptionLabelSecond;
+    NSMutableArray * _dateFlapLabels;
+    UILabel * _dateLabelDay;
+    UILabel * _dateLabelHour;
+    UILabel * _dateLabelMinute;
+    UILabel * _dateLabelSecond;
+    float  _factor;
+    UIImageView * _imageView;
+    NSMutableArray * _numberFlapLabels;
+    NSNumberFormatter * _numberFormatter;
+    UILabel * _numberLabel;
+    NSMutableArray * _numberSeparatorLabels;
+    NSOperationQueue * _operationQueue;
+    NSTimer * _timer;
+    SKUICountdownViewTimerTarget * _timerTarget;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;

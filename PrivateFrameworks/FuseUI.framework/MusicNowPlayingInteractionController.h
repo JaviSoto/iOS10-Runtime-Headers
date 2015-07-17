@@ -3,18 +3,18 @@
  */
 
 @interface MusicNowPlayingInteractionController : MPUPercentDrivenInteractionTransition {
-    MusicNowPlayingTransitionController *_animationController;
-    <UIViewControllerContextTransitioning> *_context;
-    UIPanGestureRecognizer *_gestureRecognizer;
+    MusicNowPlayingTransitionController * _animationController;
+    <UIViewControllerContextTransitioning> * _context;
+    UIPanGestureRecognizer * _gestureRecognizer;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialLocation;
-    BOOL _isRubberbanding;
-    MusicNowPlayingPresentationController *_presentationController;
-    BOOL _transitionCanceled;
-    BOOL _transitionFinished;
-    BOOL _transitionStarted;
+    }  _initialLocation;
+    BOOL  _isRubberbanding;
+    MusicNowPlayingPresentationController * _presentationController;
+    BOOL  _transitionCanceled;
+    BOOL  _transitionFinished;
+    BOOL  _transitionStarted;
 }
 
 @property (nonatomic, retain) MusicNowPlayingTransitionController *animationController;

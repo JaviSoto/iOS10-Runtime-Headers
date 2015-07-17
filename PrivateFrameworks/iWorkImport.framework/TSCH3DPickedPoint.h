@@ -14,7 +14,7 @@
             float g; 
             float t; 
         } ; 
-    } mCenterProjectionPoint;
+    }  mCenterProjectionPoint;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -26,7 +26,7 @@
             int g; 
             int t; 
         } ; 
-    } mElement;
+    }  mElement;
     struct tvec3<float> { 
         union { 
             float x; 
@@ -43,7 +43,7 @@
             float b; 
             float p; 
         } ; 
-    } mObjectSpacePoint;
+    }  mObjectSpacePoint;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -67,8 +67,8 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mProjection;
-    TSCH3DSceneObject *mSceneObject;
+    }  mProjection;
+    TSCH3DSceneObject * mSceneObject;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
@@ -92,7 +92,7 @@
                 float q; 
             } ; 
         } value[4]; 
-    } mTransform;
+    }  mTransform;
 }
 
 @property (nonatomic, readonly) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } cameraSpacePoint;

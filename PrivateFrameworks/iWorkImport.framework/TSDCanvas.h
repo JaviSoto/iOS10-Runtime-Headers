@@ -3,39 +3,39 @@
  */
 
 @interface TSDCanvas : NSObject {
-    NSSet *mAllReps;
-    BOOL mAllowsFontSubpixelQuantization;
-    struct CGColor { } *mBackgroundColor;
-    TSDInteractiveCanvasController *mCanvasController;
-    BOOL mClipToCanvas;
+    NSSet * mAllReps;
+    BOOL  mAllowsFontSubpixelQuantization;
+    struct CGColor { } * mBackgroundColor;
+    TSDInteractiveCanvasController * mCanvasController;
+    BOOL  mClipToCanvas;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } mContentInset;
-    float mContentsScale;
-    <TSDCanvasDelegate> *mDelegate;
-    BOOL mIgnoringClickThrough;
-    BOOL mInLayout;
-    NSArray *mInfos;
+    }  mContentInset;
+    float  mContentsScale;
+    <TSDCanvasDelegate> * mDelegate;
+    BOOL  mIgnoringClickThrough;
+    BOOL  mInLayout;
+    NSArray * mInfos;
     struct { 
         unsigned int layout : 1; 
         unsigned int reps : 1; 
         unsigned int visibleBounds : 1; 
         unsigned int layers : 1; 
-    } mInvalidFlags;
-    BOOL mIsTemporaryForLayout;
-    TSDLayoutController *mLayoutController;
-    NSArray *mPreviouslyVisibleLayouts;
-    struct __CFDictionary { } *mRepsByLayout;
-    BOOL mSuppressesShadowsAndReflections;
-    NSArray *mTopLevelReps;
+    }  mInvalidFlags;
+    BOOL  mIsTemporaryForLayout;
+    TSDLayoutController * mLayoutController;
+    NSArray * mPreviouslyVisibleLayouts;
+    struct __CFDictionary { } * mRepsByLayout;
+    BOOL  mSuppressesShadowsAndReflections;
+    NSArray * mTopLevelReps;
     struct CGSize { 
         float width; 
         float height; 
-    } mUnscaledSize;
-    float mViewScale;
+    }  mUnscaledSize;
+    float  mViewScale;
 }
 
 @property (nonatomic, readonly) TSKAccessController *accessController;
@@ -100,7 +100,7 @@
 - (id)infosToDisplay;
 - (id)init;
 - (id)initForTemporaryLayout;
-- (id)initWithLayoutControllerClass:(Class)arg1;
+- (id)initWithLayoutControllerClass:(Class)arg1 delegate:(id)arg2;
 - (void)invalidateLayers;
 - (void)invalidateReps;
 - (void)invalidateVisibleBounds;
@@ -122,6 +122,7 @@
 - (BOOL)p_updateRepsFromLayouts;
 - (void)recreateAllLayoutsAndReps;
 - (id)repForLayout:(id)arg1;
+- (Class)rootLayoutClass;
 - (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -143,5 +144,6 @@
 - (struct CGSize { float x1; float x2; })unscaledSize;
 - (float)viewScale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleUnscaledRectForClippingReps;
+- (BOOL)wantsEditingLayoutsForOffscreenInfos;
 
 @end

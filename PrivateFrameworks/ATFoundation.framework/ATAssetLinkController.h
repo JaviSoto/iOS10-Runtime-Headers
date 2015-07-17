@@ -3,13 +3,13 @@
  */
 
 @interface ATAssetLinkController : NSObject <ATAssetLinkDelegate> {
-    NSMutableOrderedSet *_assetLinks;
-    NSMutableOrderedSet *_assetQueue;
-    NSMapTable *_assetsToFailedLinks;
-    NSMapTable *_assetsToLinks;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableOrderedSet * _assetLinks;
+    NSMutableOrderedSet * _assetQueue;
+    NSMapTable * _assetsToFailedLinks;
+    NSMapTable * _assetsToLinks;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

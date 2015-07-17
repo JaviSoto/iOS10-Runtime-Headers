@@ -3,7 +3,7 @@
  */
 
 @interface CLDispatchSilo : CLSilo {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;

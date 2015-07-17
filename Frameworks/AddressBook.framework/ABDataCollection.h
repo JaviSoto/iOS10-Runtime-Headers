@@ -3,21 +3,21 @@
  */
 
 @interface ABDataCollection : NSObject {
-    void *_addressBook;
-    bool _isLocalSourceOnly;
-    bool _isLocalSourceRemaining;
-    bool _isMeCardHomeAddressSet;
-    bool _isMeCardSet;
-    bool _isMeCardWorkAddressSet;
-    NSMutableDictionary *_propertyCountForRecordID;
-    bool _runningUnitTests;
-    NSCountedSet *_sourceTypeScalarKeys;
-    int _totalContacts;
-    int _totalContactsWithAnniversaries;
-    int _totalContactsWithBirthdays;
-    int _totalContactsWithPhotos;
-    int _totalContactsWithYearOnBirthday;
-    int _totalGroups;
+    void * _addressBook;
+    bool  _isLocalSourceOnly;
+    bool  _isLocalSourceRemaining;
+    bool  _isMeCardHomeAddressSet;
+    bool  _isMeCardSet;
+    bool  _isMeCardWorkAddressSet;
+    NSMutableDictionary * _propertyCountForRecordID;
+    bool  _runningUnitTests;
+    NSCountedSet * _sourceTypeScalarKeys;
+    int  _totalContacts;
+    int  _totalContactsWithAnniversaries;
+    int  _totalContactsWithBirthdays;
+    int  _totalContactsWithPhotos;
+    int  _totalContactsWithYearOnBirthday;
+    int  _totalGroups;
 }
 
 @property (nonatomic) bool isLocalSourceOnly;

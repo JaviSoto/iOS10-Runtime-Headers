@@ -3,11 +3,11 @@
  */
 
 @interface MPAlternateTracksViewController : MPAbstractAlternateTracksViewController <UITableViewDataSource, UITableViewDelegate> {
-    UIView *_backgroundView;
-    UITextLabel *_loadingLabel;
-    UINavigationBar *_navigationBar;
-    UIProgressIndicator *_progressIndicator;
-    UITableView *_table;
+    UIView * _backgroundView;
+    UITextLabel * _loadingLabel;
+    UINavigationBar * _navigationBar;
+    UIProgressIndicator * _progressIndicator;
+    UITableView * _table;
 }
 
 @property (readonly, copy) NSString *debugDescription;

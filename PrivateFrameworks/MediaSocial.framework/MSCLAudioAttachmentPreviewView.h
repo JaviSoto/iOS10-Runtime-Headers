@@ -3,16 +3,18 @@
  */
 
 @interface MSCLAudioAttachmentPreviewView : UIView {
-    UILabel *_artistLabel;
-    UIView *_categoryBackgroundView;
-    UILabel *_categoryLabel;
-    UIImageView *_coverImageView;
-    UILabel *_dateLabel;
-    UILabel *_titleLabel;
+    UILabel * _artistLabel;
+    UIView * _categoryBackgroundView;
+    UILabel * _categoryLabel;
+    UIImageView * _coverImageView;
+    UILabel * _dateLabel;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;
 - (id)initWithAttachment:(id)arg1 clientContext:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 

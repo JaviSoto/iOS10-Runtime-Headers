@@ -3,9 +3,9 @@
  */
 
 @interface UITriggerTableViewController : UITableViewController <CSLUIUITriggerIDSProtocolResponse, IDSServiceDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSMutableArray *_UIProviders;
-    UIAlertView *_alertView;
-    IDSService *_idsService;
+    NSMutableArray * _UIProviders;
+    UIAlertView * _alertView;
+    IDSService * _idsService;
 }
 
 @property (nonatomic, retain) NSMutableArray *UIProviders;

@@ -3,7 +3,7 @@
  */
 
 @interface _MKUIViewControllerRootView : UIView {
-    UIViewController *_viewController;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) UIViewController *viewController;

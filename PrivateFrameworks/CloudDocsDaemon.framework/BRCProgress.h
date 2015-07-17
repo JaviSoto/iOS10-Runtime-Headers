@@ -3,8 +3,8 @@
  */
 
 @interface BRCProgress : NSProgress {
-    BOOL _isPublished;
-    NSMutableDictionary *_progressByAliasContainerID;
+    BOOL  _isPublished;
+    NSMutableDictionary * _progressByAliasContainerID;
 }
 
 + (id)downloadProgressWithBRCDocumentItem:(id)arg1;

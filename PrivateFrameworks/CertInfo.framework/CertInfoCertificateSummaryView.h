@@ -3,14 +3,14 @@
  */
 
 @interface CertInfoCertificateSummaryView : UIView <UITableViewDataSource, UITableViewDelegate> {
-    CertInfoCertificateSummaryDescriptionCell *_descriptionCell;
-    NSDate *_expirationDate;
-    CertInfoCertificateHeaderCell *_headerCell;
-    id /* block */ _moreDetailsSelectedBlock;
-    NSString *_purpose;
-    UITableView *_tableView;
-    NSString *_trustSubtitle;
-    NSString *_trustTitle;
+    CertInfoCertificateSummaryDescriptionCell * _descriptionCell;
+    NSDate * _expirationDate;
+    CertInfoCertificateHeaderCell * _headerCell;
+    id /* block */  _moreDetailsSelectedBlock;
+    NSString * _purpose;
+    UITableView * _tableView;
+    NSString * _trustSubtitle;
+    NSString * _trustTitle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

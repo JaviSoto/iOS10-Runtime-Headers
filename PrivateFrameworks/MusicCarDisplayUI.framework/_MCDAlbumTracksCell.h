@@ -3,10 +3,10 @@
  */
 
 @interface _MCDAlbumTracksCell : UITableViewCell {
-    UILabel *_durationLabel;
-    float _maximumDurationWidth;
-    UILabel *_titleLabel;
-    UILabel *_trackNumberLabel;
+    UILabel * _durationLabel;
+    float  _maximumDurationWidth;
+    UILabel * _titleLabel;
+    UILabel * _trackNumberLabel;
 }
 
 @property (nonatomic, copy) NSString *durationText;

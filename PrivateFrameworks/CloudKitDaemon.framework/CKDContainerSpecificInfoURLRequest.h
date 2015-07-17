@@ -3,9 +3,9 @@
  */
 
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
-    NSString *_containerIdentifier;
-    CKDContainerInfo *_containerInfo;
-    BOOL _needUserID;
+    NSString * _containerIdentifier;
+    CKDContainerInfo * _containerInfo;
+    BOOL  _needUserID;
 }
 
 @property (nonatomic) NSString *containerIdentifier;

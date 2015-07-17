@@ -3,15 +3,15 @@
  */
 
 @interface HAPMetadata : NSObject {
-    NSString *_hapBaseUUIDSuffix;
-    NSArray *_hapCharacteristics;
-    NSArray *_hapProperties;
-    NSArray *_hapServices;
-    NSArray *_hapSupportsAuthDataTuples;
-    NSArray *_hapValueUnits;
-    NSMutableArray *_parsedUUIDs;
-    NSNumber *_schemaVersion;
-    NSNumber *_version;
+    NSString * _hapBaseUUIDSuffix;
+    NSArray * _hapCharacteristics;
+    NSArray * _hapProperties;
+    NSArray * _hapServices;
+    NSArray * _hapSupportsAuthDataTuples;
+    NSArray * _hapValueUnits;
+    NSMutableArray * _parsedUUIDs;
+    NSNumber * _schemaVersion;
+    NSNumber * _version;
 }
 
 @property (nonatomic, retain) NSString *hapBaseUUIDSuffix;
@@ -24,7 +24,6 @@
 @property (nonatomic, retain) NSNumber *schemaVersion;
 @property (nonatomic, retain) NSNumber *version;
 
-+ (id)expandHAPType:(id)arg1 baseUUIDSuffix:(id)arg2;
 + (id)getBuiltinInstance;
 + (id)getSharedInstance;
 + (BOOL)setSharedInstance:(id)arg1 version:(id)arg2 schemaVersion:(id)arg3;
@@ -33,7 +32,6 @@
 - (void).cxx_destruct;
 - (BOOL)allowAssociatedService:(id)arg1;
 - (id)btleToServiceType:(id)arg1;
-- (id)characteristicDescription:(id)arg1;
 - (id)characteristicName:(id)arg1;
 - (id)characteristicType:(id)arg1;
 - (id)generateDictionary;
@@ -54,7 +52,6 @@
 - (BOOL)isStandardHAPService:(id)arg1;
 - (BOOL)isStandardHAPServiceName:(id)arg1;
 - (BOOL)isStandardHAPUnitName:(id)arg1;
-- (id)mandatoryCharacteristics:(id)arg1;
 - (id)parseCharacteristicServiceTuples:(id)arg1;
 - (id)parseCharacteristicValue:(id)arg1;
 - (id)parseCharacteristics:(id)arg1;
@@ -66,9 +63,7 @@
 - (BOOL)parseVersion:(id)arg1;
 - (id)parsedUUIDs;
 - (id)schemaVersion;
-- (id)serviceDescription:(id)arg1;
 - (id)serviceName:(id)arg1;
-- (id)serviceType:(id)arg1;
 - (id)serviceTypeToBTLE:(id)arg1;
 - (void)setHapBaseUUIDSuffix:(id)arg1;
 - (void)setHapCharacteristics:(id)arg1;

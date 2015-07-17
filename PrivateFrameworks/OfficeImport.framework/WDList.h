@@ -3,10 +3,10 @@
  */
 
 @interface WDList : NSObject {
-    WDDocument *mDocument;
-    NSMutableArray *mLevelOverrides;
-    long mListDefinitionId;
-    long mListId;
+    WDDocument * mDocument;
+    NSMutableArray * mLevelOverrides;
+    long  mListDefinitionId;
+    long  mListId;
 }
 
 @property (nonatomic, readonly) long listDefinitionId;
@@ -16,6 +16,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithDocument:(id)arg1 listId:(long)arg2 listDefinitionId:(long)arg3;
+- (BOOL)isAnyListLevelOverridden;
 - (id)levelOverrideAt:(unsigned int)arg1;
 - (unsigned int)levelOverrideCount;
 - (id)levelOverrideForLevel:(unsigned char)arg1;

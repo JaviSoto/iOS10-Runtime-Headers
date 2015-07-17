@@ -3,12 +3,12 @@
  */
 
 @interface MFDebugTimer : NSObject {
-    double _timer_base;
-    unsigned long long _timer_end;
-    double _timer_nsecs;
-    unsigned long long _timer_start;
-    unsigned long long _timer_ticks;
-    NSString *name;
+    double  _timer_base;
+    unsigned long long  _timer_end;
+    double  _timer_nsecs;
+    unsigned long long  _timer_start;
+    unsigned long long  _timer_ticks;
+    NSString * name;
 }
 
 @property (retain) NSString *name;

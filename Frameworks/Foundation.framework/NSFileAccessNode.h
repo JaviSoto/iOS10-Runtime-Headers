@@ -3,22 +3,22 @@
  */
 
 @interface NSFileAccessNode : NSObject {
-    id _accessClaimOrClaims;
-    NSMutableDictionary *_childrenByNormalizedName;
-    BOOL _isArbitrationBoundary;
-    BOOL _isFilePackage;
-    BOOL _isFilePackageIsFigured;
-    NSFileAccessNode *_lastRequestedChild;
-    NSString *_lastRequestedChildName;
-    NSString *_name;
-    NSString *_normalizedName;
-    NSFileAccessNode *_parent;
-    id _presenterOrPresenters;
-    id _progressPublisherOrPublishers;
-    id _progressSubscriberOrSubscribers;
-    id _provider;
-    NSFileAccessNode *_symbolicLinkDestination;
-    unsigned int _symbolicLinkReferenceCount;
+    id  _accessClaimOrClaims;
+    NSMutableDictionary * _childrenByNormalizedName;
+    BOOL  _isArbitrationBoundary;
+    BOOL  _isFilePackage;
+    BOOL  _isFilePackageIsFigured;
+    NSFileAccessNode * _lastRequestedChild;
+    NSString * _lastRequestedChildName;
+    NSString * _name;
+    NSString * _normalizedName;
+    NSFileAccessNode * _parent;
+    id  _presenterOrPresenters;
+    id  _progressPublisherOrPublishers;
+    id  _progressSubscriberOrSubscribers;
+    id  _provider;
+    NSFileAccessNode * _symbolicLinkDestination;
+    unsigned int  _symbolicLinkReferenceCount;
 }
 
 - (id)_childrenExcludingExcessNodes:(BOOL)arg1;

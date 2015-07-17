@@ -3,12 +3,12 @@
  */
 
 @interface TSCENamedReferenceManager : TSPObject <TSCEReferenceTrackerDelegate> {
-    TSCECalculationEngine *mCalculationEngine;
-    NSLock *mNRMLock;
-    TSCENamedReferenceTrie *mNames;
-    TSCEReferenceTracker *mReferenceTracker;
-    struct __CFDictionary { } *mStringsByTrackedReferenceByTable;
-    struct __CFSet { } *mTablesBeingTracked;
+    TSCECalculationEngine * mCalculationEngine;
+    NSLock * mNRMLock;
+    TSCENamedReferenceTrie * mNames;
+    TSCEReferenceTracker * mReferenceTracker;
+    struct __CFDictionary { } * mStringsByTrackedReferenceByTable;
+    struct __CFSet { } * mTablesBeingTracked;
 }
 
 - (void)beginTrackingNameInCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 ofResolver:(id)arg2 addingTrackedReferencesTo:(id)arg3;

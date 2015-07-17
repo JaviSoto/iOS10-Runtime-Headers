@@ -3,14 +3,14 @@
  */
 
 @interface SSSoftwareUpdatesStore : NSObject {
-    NSObject<OS_dispatch_queue> *_calloutQueue;
-    SSXPCConnection *_connection;
-    SSUpdatesDatabase *_database;
-    BOOL _didMigration;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    void *_mobileCoreServices;
-    BOOL _useLocalRead;
-    BOOL _useLocalWrite;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    SSXPCConnection * _connection;
+    SSUpdatesDatabase * _database;
+    BOOL  _didMigration;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    void * _mobileCoreServices;
+    BOOL  _useLocalRead;
+    BOOL  _useLocalWrite;
 }
 
 + (id)databasePath;

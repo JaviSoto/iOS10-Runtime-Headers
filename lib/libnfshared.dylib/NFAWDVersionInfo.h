@@ -3,30 +3,30 @@
  */
 
 @interface NFAWDVersionInfo : NSObject <NFAWDEventProtocol> {
-    AWDNFCVersions *_metric;
-    unsigned int nfccFWRevision;
-    unsigned int nfccFWVersion;
-    unsigned int nfccHWVersion;
-    unsigned int nfccMWVersion;
-    unsigned int nfccROMVersion;
-    unsigned int seDeviceType;
-    unsigned int seFWVersion;
-    unsigned int seHWVersion;
-    unsigned int seMigrationInst;
-    unsigned int seMigrationPkgs;
-    unsigned int seMigrationState;
-    unsigned int seOSMode;
-    NSString *sePlatformId;
-    unsigned int seRefCount;
-    unsigned int seRestrictedMode;
-    unsigned int seSeqCount;
-    unsigned int seSignKeyType;
+    AWDNFCVersions * _metric;
+    unsigned int  nfccFWRevision;
+    unsigned int  nfccFWVersion;
+    unsigned int  nfccHWVersion;
+    unsigned int  nfccMWVersion;
+    unsigned int  nfccROMVersion;
+    unsigned int  seDeviceType;
+    unsigned int  seFWVersion;
+    unsigned int  seHWVersion;
+    unsigned int  seMigrationInst;
+    unsigned int  seMigrationPkgs;
+    unsigned int  seMigrationState;
+    unsigned int  seOSMode;
+    NSString * sePlatformId;
+    unsigned int  seRefCount;
+    unsigned int  seRestrictedMode;
+    unsigned int  seSeqCount;
+    unsigned int  seSignKeyType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCVersions *metric;
+@property (nonatomic, retain) AWDNFCVersions *metric;
 @property (nonatomic) unsigned int nfccFWRevision;
 @property (nonatomic) unsigned int nfccFWVersion;
 @property (nonatomic) unsigned int nfccHWVersion;

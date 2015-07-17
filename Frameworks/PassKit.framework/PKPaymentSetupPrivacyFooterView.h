@@ -3,9 +3,11 @@
  */
 
 @interface PKPaymentSetupPrivacyFooterView : UIView <UITextViewDelegate> {
-    int _context;
-    <PKPaymentSetupPrivacyFooterViewDelegate> *_delegate;
-    UITextView *_message;
+    int  _context;
+    <PKPaymentSetupPrivacyFooterViewDelegate> * _delegate;
+    UIColor * _linkColor;
+    UITextView * _message;
+    UIColor * _messageColor;
 }
 
 @property (nonatomic) int context;
@@ -13,21 +15,31 @@
 @property (nonatomic) <PKPaymentSetupPrivacyFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) UIColor *linkColor;
 @property (nonatomic, retain) UITextView *message;
+@property (nonatomic, copy) UIColor *messageColor;
 @property (readonly) Class superclass;
 
-- (id)_linkColor;
+- (id)_defaultLinkColor;
+- (id)_defaultMessageColor;
 - (id)_linkTextAttributes;
+- (void)_reloadMessage;
 - (id)_textAttributes;
 - (int)context;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;
 - (void)layoutSubviews;
+- (id)linkColor;
 - (id)message;
+- (id)messageColor;
+- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; unsigned char x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; unsigned int x28; void*x29; void*x30; const void*x31; in short x32; BOOL x33; const int x34; void*x35; void*x36; unsigned char x37; void*x38; void*x39; void*x40; unsigned int x41; void*x42; void*x43; void*x44; void*x45; void*x46; long x47; void*x48; short x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; }*)arg1;
+- (id)pk_childrenForAppearance;
 - (void)setContext:(int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLinkColor:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setMessageColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 

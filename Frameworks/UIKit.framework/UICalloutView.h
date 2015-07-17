@@ -27,18 +27,18 @@
                 float height; 
             } size; 
         } desiredBounds; 
-    } _anchor;
-    UIImageView *_bottomAnchor;
-    id _delegate;
-    NSMutableArray *_fadeInViews;
-    NSMutableArray *_fadeOutViews;
+    }  _anchor;
+    UIImageView * _bottomAnchor;
+    id  _delegate;
+    NSMutableArray * _fadeInViews;
+    NSMutableArray * _fadeOutViews;
     struct { 
         unsigned int animated : 1; 
         unsigned int didMoveCalled : 1; 
         unsigned int hasPendingAnimatedLayout : 1; 
         unsigned int canAnchorFromBottom : 1; 
         unsigned int reserved : 28; 
-    } _flags;
+    }  _flags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -48,19 +48,19 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
-    NSTimer *_layoutAnimationTimer;
-    UIImageView *_leftBackground;
-    UIImageView *_leftCap;
-    UIView *_leftView;
-    float _maximumWidth;
-    UIImageView *_rightBackground;
-    UIImageView *_rightCap;
-    UIView *_rightView;
-    UILabel *_subtitle;
-    UILabel *_temporary;
-    UILabel *_title;
-    UIImageView *_topAnchor;
+    }  _frame;
+    NSTimer * _layoutAnimationTimer;
+    UIImageView * _leftBackground;
+    UIImageView * _leftCap;
+    UIView * _leftView;
+    float  _maximumWidth;
+    UIImageView * _rightBackground;
+    UIImageView * _rightCap;
+    UIView * _rightView;
+    UILabel * _subtitle;
+    UILabel * _temporary;
+    UILabel * _title;
+    UIImageView * _topAnchor;
 }
 
 @property (nonatomic, readonly) float UICalloutViewButtonPadding;
@@ -90,6 +90,7 @@
 + (float)defaultHeight;
 + (id)sharedCalloutView;
 
+- (void).cxx_destruct;
 - (float)UICalloutViewButtonPadding;
 - (float)UICalloutViewCapHeight;
 - (float)UICalloutViewCapPaddingTop;

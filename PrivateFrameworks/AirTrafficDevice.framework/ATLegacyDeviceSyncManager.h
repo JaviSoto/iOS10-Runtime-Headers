@@ -3,29 +3,29 @@
  */
 
 @interface ATLegacyDeviceSyncManager : ATDeviceSyncManager <ATEnvironmentMonitorObserver, ATLegacyAssetLinkProgressDelegate, ATSessionObserver> {
-    ATLegacyAssetLink *_assetLink;
-    BOOL _automaticSync;
-    struct CacheDeleteToken { } *_cacheDeleteToken;
-    ATClientController *_clientController;
-    id /* block */ _clientProgressCallback;
-    ATAsset *_currentAsset;
-    NSString *_currentDataclass;
-    ATLegacyMessageLink *_currentMessageLink;
-    double _currentOverallProgress;
-    unsigned int _currentStage;
-    NSString *_currentStatus;
-    double _currentSyncProgress;
-    NSMutableDictionary *_dataclassTimers;
-    NSMutableArray *_dataclasses;
-    ATUserDefaults *_defaults;
-    ATDeviceDiskUsageProvider *_diskUsageProvider;
-    unsigned long _grappaId;
-    BOOL _localSyncRequest;
-    BOOL _localSyncRequestCanceled;
-    NSMutableArray *_messageLinks;
-    NSDate *_startTime;
-    ATSession *_syncSession;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    ATLegacyAssetLink * _assetLink;
+    BOOL  _automaticSync;
+    struct CacheDeleteToken { } * _cacheDeleteToken;
+    ATClientController * _clientController;
+    id /* block */  _clientProgressCallback;
+    ATAsset * _currentAsset;
+    NSString * _currentDataclass;
+    ATLegacyMessageLink * _currentMessageLink;
+    double  _currentOverallProgress;
+    unsigned int  _currentStage;
+    NSString * _currentStatus;
+    double  _currentSyncProgress;
+    NSMutableDictionary * _dataclassTimers;
+    NSMutableArray * _dataclasses;
+    ATUserDefaults * _defaults;
+    ATDeviceDiskUsageProvider * _diskUsageProvider;
+    unsigned long  _grappaId;
+    BOOL  _localSyncRequest;
+    BOOL  _localSyncRequestCanceled;
+    NSMutableArray * _messageLinks;
+    NSDate * _startTime;
+    ATSession * _syncSession;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

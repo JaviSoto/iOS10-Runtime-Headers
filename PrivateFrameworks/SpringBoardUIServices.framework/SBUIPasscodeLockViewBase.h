@@ -3,31 +3,30 @@
  */
 
 @interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIBiometricEventObserver, SBUIPasscodeLockView, SBUIPasscodeLockView_Internal> {
-    BOOL _allowsStatusTextUpdatingOnResignFirstResponder;
-    BOOL _appearingForSmartCoverUnlock;
-    float _backgroundAlpha;
-    <SBFLegibilitySettingsProvider> *_backgroundLegibilitySettingsProvider;
-    BOOL _becameVisible;
-    unsigned int _biometricMatchMode;
-    float _currentBacklightLevel;
-    UIColor *_customBackgroundColor;
-    <SBUIPasscodeLockViewDelegate_Internal> *_delegate;
-    BOOL _deviceHasBeenUnlockedOnceSinceBoot;
-    BOOL _enabledMatching;
-    SBUIPasscodeEntryField *_entryField;
-    _UILegibilitySettings *_legibilitySettings;
-    float _luminanceBoost;
-    BOOL _mesaLockedOut;
-    NSString *_passcode;
-    BOOL _playsKeypadSounds;
-    BOOL _screenOn;
-    BOOL _shouldResetForFailedPasscodeAttempt;
-    BOOL _showsEmergencyCallButton;
-    BOOL _showsStatusField;
-    unsigned int _statusState;
-    NSString *_statusSubtitleText;
-    NSString *_statusText;
-    int _style;
+    BOOL  _allowsStatusTextUpdatingOnResignFirstResponder;
+    BOOL  _appearingForSmartCoverUnlock;
+    float  _backgroundAlpha;
+    <SBFLegibilitySettingsProvider> * _backgroundLegibilitySettingsProvider;
+    BOOL  _becameVisible;
+    unsigned int  _biometricMatchMode;
+    float  _currentBacklightLevel;
+    UIColor * _customBackgroundColor;
+    <SBUIPasscodeLockViewDelegate_Internal> * _delegate;
+    BOOL  _deviceHasBeenUnlockedOnceSinceBoot;
+    BOOL  _enabledMatching;
+    SBUIPasscodeEntryField * _entryField;
+    _UILegibilitySettings * _legibilitySettings;
+    float  _luminanceBoost;
+    BOOL  _mesaLockedOut;
+    BOOL  _playsKeypadSounds;
+    BOOL  _screenOn;
+    BOOL  _shouldResetForFailedPasscodeAttempt;
+    BOOL  _showsEmergencyCallButton;
+    BOOL  _showsStatusField;
+    unsigned int  _statusState;
+    NSString * _statusSubtitleText;
+    NSString * _statusText;
+    int  _style;
 }
 
 @property (getter=_entryField, setter=_setEntryField:, nonatomic, retain) SBUIPasscodeEntryField *_entryField;

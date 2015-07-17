@@ -3,25 +3,25 @@
  */
 
 @interface SLComposeViewController : UIViewController <SLRemoteComposeViewControllerDelegateProtocol> {
-    id /* block */ _completionHandler;
-    BOOL _didCompleteSheet;
-    BOOL _didFailLoadingRemoteViewController;
-    NSExtension *_extension;
-    NSArray *_extensionItems;
-    NSString *_initialText;
-    NSArray *_itemProviders;
-    NSLayoutConstraint *_keyboardTopConstraint;
-    UIView *_keyboardTrackingView;
-    int _maximumImageCount;
-    int _maximumURLCount;
-    int _maximumVideoCount;
-    int _numImagesAdded;
-    int _numURLsAdded;
-    int _numVideosAdded;
-    UIViewController *_remoteViewController;
-    int _savedStatusBarStyle;
-    NSString *_serviceType;
-    BOOL _wasPresented;
+    id /* block */  _completionHandler;
+    BOOL  _didCompleteSheet;
+    BOOL  _didFailLoadingRemoteViewController;
+    NSExtension * _extension;
+    NSArray * _extensionItems;
+    NSString * _initialText;
+    NSArray * _itemProviders;
+    NSLayoutConstraint * _keyboardTopConstraint;
+    UIView * _keyboardTrackingView;
+    int  _maximumImageCount;
+    int  _maximumURLCount;
+    int  _maximumVideoCount;
+    int  _numImagesAdded;
+    int  _numURLsAdded;
+    int  _numVideosAdded;
+    UIViewController * _remoteViewController;
+    int  _savedStatusBarStyle;
+    NSString * _serviceType;
+    BOOL  _wasPresented;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
@@ -29,7 +29,6 @@
 @property (nonatomic, readonly) NSString *serviceType;
 
 + (id)_extensionIdentifierForServiceType:(id)arg1;
-+ (BOOL)_isAvailableForMediaShareExtension:(id)arg1;
 + (BOOL)_isAvailableForService:(id)arg1;
 + (BOOL)_isServiceType:(id)arg1;
 + (id)_serviceTypeForExtensionIdentifier:(id)arg1;

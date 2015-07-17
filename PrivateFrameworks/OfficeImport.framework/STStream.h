@@ -3,7 +3,7 @@
  */
 
 @interface STStream : STSStgObject {
-    struct _Stream { } *m_pCStream;
+    struct _Stream { } * m_pCStream;
 }
 
 @property (nonatomic, readonly) struct _Stream { }*cStream;

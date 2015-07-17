@@ -3,11 +3,11 @@
  */
 
 @interface QLZipArchiveEntry : NSObject {
-    QLZipArchive *_archive;
-    NSData *_data;
-    struct archive_entry { } *_entry;
-    NSError *_error;
-    NSURL *_url;
+    QLZipArchive * _archive;
+    NSData * _data;
+    struct archive_entry { } * _entry;
+    NSError * _error;
+    NSURL * _url;
 }
 
 @property QLZipArchive *archive;

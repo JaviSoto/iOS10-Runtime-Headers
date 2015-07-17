@@ -3,15 +3,15 @@
  */
 
 @interface PHCollectionChangeRequestHelper : NSObject {
-    BOOL _allowsInsert;
-    BOOL _allowsMove;
-    BOOL _allowsRemove;
-    PHChangeRequestHelper *_changeRequestHelper;
-    NSString *_destinationEntityName;
-    id /* block */ _isDestinationObjectValid;
-    NSMutableArray *_mutableObjectIDsAndUUIDs;
-    NSArray *_originalObjectIDs;
-    NSString *_relationshipName;
+    BOOL  _allowsInsert;
+    BOOL  _allowsMove;
+    BOOL  _allowsRemove;
+    PHChangeRequestHelper * _changeRequestHelper;
+    NSString * _destinationEntityName;
+    id /* block */  _isDestinationObjectValid;
+    NSMutableArray * _mutableObjectIDsAndUUIDs;
+    NSArray * _originalObjectIDs;
+    NSString * _relationshipName;
 }
 
 @property (nonatomic) BOOL allowsInsert;

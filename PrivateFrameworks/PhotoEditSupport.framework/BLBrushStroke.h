@@ -3,22 +3,22 @@
  */
 
 @interface BLBrushStroke : AutoEncodeDecodeObject {
-    int _destinationWidth;
-    BOOL _erase;
+    int  _destinationWidth;
+    BOOL  _erase;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastPoint;
-    BOOL _magicEdges;
-    NSMutableData *_offsets;
-    float _opacity;
-    float _size;
-    float _softness;
+    }  _lastPoint;
+    BOOL  _magicEdges;
+    NSMutableData * _offsets;
+    float  _opacity;
+    float  _size;
+    float  _softness;
     struct CGPoint { 
         float x; 
         float y; 
-    } _startPoint;
-    BOOL _startPointSet;
+    }  _startPoint;
+    BOOL  _startPointSet;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,9 +28,9 @@
             float width; 
             float height; 
         } size; 
-    } _strokeRect;
-    double _timestamp;
-    int _type;
+    }  _strokeRect;
+    double  _timestamp;
+    int  _type;
 }
 
 @property (nonatomic) int destinationWidth;

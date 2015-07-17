@@ -3,8 +3,8 @@
  */
 
 @interface TSPUnknownMessage : NSObject {
-    NSArray *_datas;
-    NSObject<OS_dispatch_data> *_messageData;
+    NSArray * _datas;
+    NSObject<OS_dispatch_data> * _messageData;
     struct MessageInfo { 
         int (**_vptr$MessageLite)(); 
         struct UnknownFieldSet { 
@@ -38,8 +38,8 @@
             int total_size_; 
         } data_references_; 
         int _data_references_cached_byte_size_; 
-    } _messageInfo;
-    TSPLazyReferenceArray *_objects;
+    }  _messageInfo;
+    TSPLazyReferenceArray * _objects;
 }
 
 @property (nonatomic, retain) NSArray *datas;

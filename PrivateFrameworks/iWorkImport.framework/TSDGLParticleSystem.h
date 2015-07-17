@@ -3,41 +3,41 @@
  */
 
 @interface TSDGLParticleSystem : NSObject {
-    TSDGLDataBufferAttribute *_centerAttribute;
-    TSDGLDataBufferAttribute *_colorAttribute;
-    TSDGLDataBuffer *_dataBuffer;
-    unsigned int _direction;
-    float _duration;
-    BOOL _hasParticleTexture;
-    BOOL _isDataBufferInitialized;
-    BOOL _isInitialized;
-    TSDGLDataBufferAttribute *_lifeSpanAttribute;
+    TSDGLDataBufferAttribute * _centerAttribute;
+    TSDGLDataBufferAttribute * _colorAttribute;
+    TSDGLDataBuffer * _dataBuffer;
+    unsigned int  _direction;
+    float  _duration;
+    BOOL  _hasParticleTexture;
+    BOOL  _isDataBufferInitialized;
+    BOOL  _isInitialized;
+    TSDGLDataBufferAttribute * _lifeSpanAttribute;
     struct CGSize { 
         float width; 
         float height; 
-    } _objectSize;
-    unsigned int _particleCount;
+    }  _objectSize;
+    unsigned int  _particleCount;
     struct CGSize { 
         float width; 
         float height; 
-    } _particleSize;
-    TSDGLDataBufferAttribute *_particleTexCoordAttribute;
-    unsigned int _particlesHigh;
-    unsigned int _particlesWide;
-    TSDGLDataBufferAttribute *_positionAttribute;
-    TSDGLDataBufferAttribute *_rotationAttribute;
-    TSDGLDataBufferAttribute *_scaleAttribute;
-    TSDGLShader *_shader;
-    BOOL _shouldDraw;
+    }  _particleSize;
+    TSDGLDataBufferAttribute * _particleTexCoordAttribute;
+    unsigned int  _particlesHigh;
+    unsigned int  _particlesWide;
+    TSDGLDataBufferAttribute * _positionAttribute;
+    TSDGLDataBufferAttribute * _rotationAttribute;
+    TSDGLDataBufferAttribute * _scaleAttribute;
+    TSDGLShader * _shader;
+    BOOL  _shouldDraw;
     struct CGSize { 
         float width; 
         float height; 
-    } _slideSize;
-    TSDGLDataBufferAttribute *_speedAttribute;
-    TSDGLDataBufferAttribute *_texCoordAttribute;
-    unsigned int _textureCount;
-    BOOL *_visibilities;
-    unsigned int _visibleParticleCount;
+    }  _slideSize;
+    TSDGLDataBufferAttribute * _speedAttribute;
+    TSDGLDataBufferAttribute * _texCoordAttribute;
+    unsigned int  _textureCount;
+    BOOL * _visibilities;
+    unsigned int  _visibleParticleCount;
 }
 
 @property (nonatomic, readonly) TSDGLDataBufferAttribute *centerAttribute;

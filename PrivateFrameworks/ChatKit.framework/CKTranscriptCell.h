@@ -3,9 +3,9 @@
  */
 
 @interface CKTranscriptCell : CKEditableCollectionViewCell {
-    float _drawerPercentRevealed;
-    BOOL _orientation;
-    BOOL _wantsDrawerLayout;
+    float  _drawerPercentRevealed;
+    BOOL  _orientation;
+    BOOL  _wantsDrawerLayout;
 }
 
 @property (nonatomic) float drawerPercentRevealed;

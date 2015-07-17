@@ -3,10 +3,10 @@
  */
 
 @interface CKSpotlightSearchResult : NSObject {
-    NSString *_chatGUID;
-    NSDate *_messageDate;
-    NSString *_messageGUID;
-    NSString *_summary;
+    NSString * _chatGUID;
+    NSDate * _messageDate;
+    NSString * _messageGUID;
+    NSString * _summary;
 }
 
 @property (nonatomic, copy) NSString *chatGUID;

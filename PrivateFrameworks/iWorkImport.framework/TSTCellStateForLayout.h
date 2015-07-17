@@ -3,19 +3,19 @@
  */
 
 @interface TSTCellStateForLayout : NSObject {
-    TSTCell *mCell;
-    id mCellContents;
-    BOOL mCellPropsRowHeight;
-    BOOL mCellWraps;
-    BOOL mForDrawing;
-    BOOL mInDynamicLayout;
-    TSTLayoutContentCachedKey *mKeyVal;
-    int mLayoutCacheFlags;
+    TSTCell * mCell;
+    id  mCellContents;
+    BOOL  mCellPropsRowHeight;
+    BOOL  mCellWraps;
+    BOOL  mForDrawing;
+    BOOL  mInDynamicLayout;
+    TSTLayoutContentCachedKey * mKeyVal;
+    int  mLayoutCacheFlags;
     struct CGSize { 
         float width; 
         float height; 
-    } mMaxSize;
-    float mMaxWidthForChildren;
+    }  mMaxSize;
+    float  mMaxWidthForChildren;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -26,26 +26,26 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mMergedRange;
+    }  mMergedRange;
     struct CGSize { 
         float width; 
         float height; 
-    } mMinSize;
+    }  mMinSize;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mModelCellID;
+    }  mModelCellID;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } mPaddingInsets;
-    unsigned int mPageCount;
-    unsigned int mPageNumber;
-    int mVerticalAlignment;
-    TSWPColumn *mWPColumn;
+    }  mPaddingInsets;
+    unsigned int  mPageCount;
+    unsigned int  mPageNumber;
+    int  mVerticalAlignment;
+    TSWPColumn * mWPColumn;
 }
 
 @property (nonatomic, copy) TSTCell *cell;

@@ -3,12 +3,12 @@
  */
 
 @interface SFUZipArchive : NSObject {
-    SFUCryptoKey *mCryptoKey;
-    SFUDataRepresentation<SFUZipArchiveDataRepresentation> *mDataRepresentation;
-    NSData *mEncryptedDocumentUuid;
-    NSMutableDictionary *mEntries;
-    NSString *mPassphraseHint;
-    NSData *mPassphraseVerifier;
+    SFUCryptoKey * mCryptoKey;
+    SFUDataRepresentation<SFUZipArchiveDataRepresentation> * mDataRepresentation;
+    NSData * mEncryptedDocumentUuid;
+    NSMutableDictionary * mEntries;
+    NSString * mPassphraseHint;
+    NSData * mPassphraseVerifier;
 }
 
 + (BOOL)isZipArchiveAtPath:(id)arg1;

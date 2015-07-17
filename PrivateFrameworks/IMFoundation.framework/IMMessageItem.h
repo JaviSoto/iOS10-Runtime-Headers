@@ -3,18 +3,18 @@
  */
 
 @interface IMMessageItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    NSAttributedString *_body;
-    NSData *_bodyData;
-    unsigned int _error;
-    long long _expireState;
-    NSArray *_fileTransferGUIDs;
-    unsigned long long _flags;
-    NSString *_plainBody;
-    long long _replaceID;
-    NSString *_subject;
-    NSDate *_timeDelivered;
-    NSDate *_timePlayed;
-    NSDate *_timeRead;
+    NSAttributedString * _body;
+    NSData * _bodyData;
+    unsigned int  _error;
+    long long  _expireState;
+    NSArray * _fileTransferGUIDs;
+    unsigned long long  _flags;
+    NSString * _plainBody;
+    long long  _replaceID;
+    NSString * _subject;
+    NSDate * _timeDelivered;
+    NSDate * _timePlayed;
+    NSDate * _timeRead;
 }
 
 @property (nonatomic, retain) NSAttributedString *body;
@@ -118,11 +118,20 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
++ (Class)contextClass;
+
+- (id)_copy;
+- (id)_copyWithFlags:(unsigned long long)arg1;
 - (BOOL)_hasMessageChatItem;
+- (BOOL)_isInvitation;
 - (id)_newChatItems;
-- (id)_otherHandle;
-- (id)_senderHandle;
 - (id)_service;
+- (void)_setInivtation:(BOOL)arg1;
+- (BOOL)isCancelTypingMessage;
+- (BOOL)isIncomingTypingMessage;
+- (BOOL)isIncomingTypingOrCancelTypingMessage;
+- (BOOL)isSystemMessage;
+- (BOOL)isTypingOrCancelTypingMessage;
 - (id)message;
 
 @end

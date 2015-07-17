@@ -3,9 +3,9 @@
  */
 
 @interface SKUITrendingSearchPageView : UIView {
-    <SKUITrendingSearchPageViewDelegate> *_delegate;
-    SKUITrendingSearchPage *_page;
-    SKUITrendingSearchView *_trendingSearchView;
+    <SKUITrendingSearchPageViewDelegate> * _delegate;
+    SKUITrendingSearchPage * _page;
+    SKUITrendingSearchView * _trendingSearchView;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

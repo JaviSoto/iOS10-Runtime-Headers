@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSArray *_resultButtons;
-    UILabel *_titleLabel;
+    }  _contentInset;
+    NSArray * _resultButtons;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

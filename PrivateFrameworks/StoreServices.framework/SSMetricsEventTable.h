@@ -3,7 +3,7 @@
  */
 
 @interface SSMetricsEventTable : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 + (id)databasePath;

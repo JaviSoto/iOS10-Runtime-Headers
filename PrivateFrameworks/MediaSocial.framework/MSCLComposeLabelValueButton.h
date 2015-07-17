@@ -3,12 +3,12 @@
  */
 
 @interface MSCLComposeLabelValueButton : UIControl {
-    BOOL _didHighlightForInitialTouch;
-    UIImageView *_disclosureImageView;
-    UIView *_highlightView;
-    UILabel *_label;
-    UIView *_topSeparatorView;
-    UILabel *_valueLabel;
+    BOOL  _didHighlightForInitialTouch;
+    UIImageView * _disclosureImageView;
+    UIView * _highlightView;
+    UILabel * _label;
+    UIView * _topSeparatorView;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, copy) NSString *labelText;

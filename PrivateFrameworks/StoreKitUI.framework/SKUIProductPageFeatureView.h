@@ -3,10 +3,10 @@
  */
 
 @interface SKUIProductPageFeatureView : UIView {
-    SKUIColorScheme *_colorScheme;
-    UIImageView *_iconView;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    SKUIColorScheme * _colorScheme;
+    UIImageView * _iconView;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

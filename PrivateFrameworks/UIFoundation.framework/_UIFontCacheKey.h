@@ -3,12 +3,12 @@
  */
 
 @interface _UIFontCacheKey : NSObject <NSCopying> {
-    NSString *_contentSizeCategory;
-    UIFontDescriptor *_fontDescriptor;
-    NSString *_fontName;
-    float _pointSize;
-    NSString *_textStyle;
-    int _traits;
+    NSString * _contentSizeCategory;
+    UIFontDescriptor * _fontDescriptor;
+    NSString * _fontName;
+    float  _pointSize;
+    NSString * _textStyle;
+    int  _traits;
 }
 
 @property (nonatomic, copy) NSString *contentSizeCategory;

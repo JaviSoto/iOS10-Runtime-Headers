@@ -3,11 +3,11 @@
  */
 
 @interface PSTableCellHighlightContext : NSObject {
-    BOOL _animateUnhighlight;
-    UITableViewCell *_cell;
-    int _originalSelectionStyle;
-    NSTimer *_timer;
-    BOOL _valid;
+    BOOL  _animateUnhighlight;
+    UITableViewCell * _cell;
+    int  _originalSelectionStyle;
+    NSTimer * _timer;
+    BOOL  _valid;
 }
 
 @property (nonatomic, readonly) BOOL animateUnhighlight;
@@ -17,6 +17,7 @@
 
 + (id)contextWithCell:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_killTimer;
 - (void)_timerFired;
 - (BOOL)animateUnhighlight;

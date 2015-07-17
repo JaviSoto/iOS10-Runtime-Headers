@@ -3,72 +3,73 @@
  */
 
 @interface FigCoreMotionDelegate : NSObject {
-    int accelRingIndex;
-    double accelRingTime;
-    float accelRingX;
-    float accelRingY;
-    float accelRingZ;
-    BOOL computingPosition;
-    BOOL copyingAllData;
+    int  accelRingIndex;
+    double  accelRingTime;
+    float  accelRingX;
+    float  accelRingY;
+    float  accelRingZ;
+    BOOL  computingPosition;
+    BOOL  copyingAllData;
     struct { 
         double w; 
         double x; 
         double y; 
         double z; 
-    } currentQuaternion;
-    double dGyroUpdateInterval;
-    double dLatestFusedMotionCopied;
-    double dLatestTimestamp;
-    struct OpaqueFigSemaphore { } *dataSemaphore;
+    }  currentQuaternion;
+    double  dGyroUpdateInterval;
+    double  dLatestFusedMotionCopied;
+    double  dLatestTimestamp;
+    double  dStartOfLogging;
+    struct OpaqueFigSemaphore { } * dataSemaphore;
     struct { 
         float x; 
         float y; 
         float z; 
-    } fusedRingAccel;
-    BOOL fusedRingDoingBiasEstimation;
-    int fusedRingIndex;
+    }  fusedRingAccel;
+    BOOL  fusedRingDoingBiasEstimation;
+    int  fusedRingIndex;
     struct { 
         float x; 
         float y; 
         float z; 
-    } fusedRingPosition;
+    }  fusedRingPosition;
     struct { 
         double w; 
         double x; 
         double y; 
         double z; 
-    } fusedRingQuaternion;
-    double fusedRingTime;
-    BOOL gettingAttitudeChange;
-    double latestGravityDataTime;
-    double latestMotionDataTime;
-    BOOL manageAccel;
-    BOOL manageFusedMotion;
-    BOOL manageGravity;
-    CMMotionManager *motionManager;
+    }  fusedRingQuaternion;
+    double  fusedRingTime;
+    BOOL  gettingAttitudeChange;
+    double  latestGravityDataTime;
+    double  latestMotionDataTime;
+    BOOL  manageAccel;
+    BOOL  manageFusedMotion;
+    BOOL  manageGravity;
+    CMMotionManager * motionManager;
     struct { 
         double timestamp; 
         float x; 
         float y; 
         float z; 
-    } position;
+    }  position;
     struct { 
         double w; 
         double x; 
         double y; 
         double z; 
-    } previousQuaternion;
+    }  previousQuaternion;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } ringMutex;
-    double timestampLatency;
+    }  ringMutex;
+    double  timestampLatency;
     struct { 
         double timestamp; 
         float x; 
         float y; 
         float z; 
-    } velocity;
+    }  velocity;
 }
 
 - (id)copyAllFusedMotionData;
@@ -87,6 +88,7 @@
 - (void)getCurrentQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;
 - (long)getFusedVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (long)getGravityX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
+- (long)getLatestMotionDataTime:(double*)arg1;
 - (void)getPositionX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (long)getVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;

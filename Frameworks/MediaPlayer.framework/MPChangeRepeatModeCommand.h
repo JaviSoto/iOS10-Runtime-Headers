@@ -3,7 +3,7 @@
  */
 
 @interface MPChangeRepeatModeCommand : MPRemoteCommand {
-    unsigned int _currentRepeatType;
+    unsigned int  _currentRepeatType;
 }
 
 @property (nonatomic) unsigned int currentRepeatType;

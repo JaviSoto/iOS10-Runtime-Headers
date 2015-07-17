@@ -3,16 +3,16 @@
  */
 
 @interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSCopying, NSSecureCoding> {
-    MPStoreOfferContentRating *_contentRating;
-    id _discNumber;
-    NSNumber *_itemID;
-    NSDictionary *_lookupCollectionPropertyValues;
-    MPStoreOfferMediaItemArtworkDescriptor *_offerArtworkDescriptor;
-    long _offerArtworkDescriptorOnceToken;
-    id _pid;
-    int _preferredStoreOfferVariant;
-    id _title;
-    id _trackNumber;
+    MPStoreOfferContentRating * _contentRating;
+    id  _discNumber;
+    NSNumber * _itemID;
+    NSDictionary * _lookupCollectionPropertyValues;
+    MPStoreOfferMediaItemArtworkDescriptor * _offerArtworkDescriptor;
+    long  _offerArtworkDescriptorOnceToken;
+    id  _pid;
+    int  _preferredStoreOfferVariant;
+    id  _title;
+    id  _trackNumber;
 }
 
 + (id)assetLookupKeyForItemMediaProperty:(id)arg1;

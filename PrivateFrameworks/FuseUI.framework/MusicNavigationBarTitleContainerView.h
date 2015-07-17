@@ -3,7 +3,7 @@
  */
 
 @interface MusicNavigationBarTitleContainerView : UIView {
-    UILabel *_titleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *title;

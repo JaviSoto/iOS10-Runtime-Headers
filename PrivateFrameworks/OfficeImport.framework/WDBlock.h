@@ -3,11 +3,12 @@
  */
 
 @interface WDBlock : NSObject {
-    WDText *mText;
+    WDText * mText;
 }
 
 - (int)blockType;
 - (void)clearProperties;
+- (id)description;
 - (id)document;
 - (id)init;
 - (id)initWithText:(id)arg1;

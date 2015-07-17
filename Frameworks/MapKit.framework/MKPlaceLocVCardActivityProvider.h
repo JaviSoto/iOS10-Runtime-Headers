@@ -3,7 +3,7 @@
  */
 
 @interface MKPlaceLocVCardActivityProvider : MKPlaceActivityProvider {
-    CNContact *_contact;
+    CNContact * _contact;
 }
 
 @property (nonatomic, retain) CNContact *contact;

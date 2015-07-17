@@ -3,15 +3,15 @@
  */
 
 @interface MPUTableViewController : MPUDataSourceViewController <MPStoreDownloadManagerObserver, MPUActionTableViewDataSource, UITableViewDelegate> {
-    Class _cellConfigurationClass;
-    BOOL _hasAppearedOnce;
-    int _numberOfBottomActionRows;
-    int _numberOfTopActionRows;
-    BOOL _shouldDeselectImmediately;
-    BOOL _shouldUpdateVisibleCellsWhenVisible;
-    UITableView *_tableView;
-    NSMutableArray *_visibleBottomActionRows;
-    NSMutableArray *_visibleTopActionRows;
+    Class  _cellConfigurationClass;
+    BOOL  _hasAppearedOnce;
+    int  _numberOfBottomActionRows;
+    int  _numberOfTopActionRows;
+    BOOL  _shouldDeselectImmediately;
+    BOOL  _shouldUpdateVisibleCellsWhenVisible;
+    UITableView * _tableView;
+    NSMutableArray * _visibleBottomActionRows;
+    NSMutableArray * _visibleTopActionRows;
 }
 
 @property (nonatomic, readonly) Class cellConfigurationClass;

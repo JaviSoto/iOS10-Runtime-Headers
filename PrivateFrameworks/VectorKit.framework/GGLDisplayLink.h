@@ -3,13 +3,13 @@
  */
 
 @interface GGLDisplayLink : NSObject {
-    CADisplay *_display;
-    CADisplayLink *_displayLink;
-    int _frameInterval;
-    BOOL _paused;
-    SEL _selector;
-    int _skippedFrames;
-    id _target;
+    CADisplay * _display;
+    CADisplayLink * _displayLink;
+    int  _frameInterval;
+    BOOL  _paused;
+    SEL  _selector;
+    int  _skippedFrames;
+    id  _target;
 }
 
 @property (nonatomic, retain) CADisplay *display;

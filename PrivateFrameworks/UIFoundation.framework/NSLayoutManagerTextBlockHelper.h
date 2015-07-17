@@ -3,7 +3,7 @@
  */
 
 @interface NSLayoutManagerTextBlockHelper : NSObject {
-    NSTextBlock *_block;
+    NSTextBlock * _block;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _boundsRect;
+    }  _boundsRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,7 +23,7 @@
             float width; 
             float height; 
         } size; 
-    } _layoutRect;
+    }  _layoutRect;
 }
 
 - (void)dealloc;

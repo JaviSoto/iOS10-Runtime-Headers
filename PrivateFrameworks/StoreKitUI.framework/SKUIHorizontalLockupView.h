@@ -3,29 +3,29 @@
  */
 
 @interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIMediaPlayerObserver, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIToggleButtonDelegate, SKUIViewElementView, UIGestureRecognizerDelegate> {
-    NSHashTable *_artworkRelatedChildViewElementViews;
-    SKUIBadgeViewElement *_badge;
-    NSMapTable *_buyButtonDescriptorToButton;
+    NSHashTable * _artworkRelatedChildViewElementViews;
+    SKUIBadgeViewElement * _badge;
+    NSMapTable * _buyButtonDescriptorToButton;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    SUPlayerStatus *_lastPlayerStatus;
-    SKUIHorizontalLockupLayout *_layout;
-    SKUILockupViewElement *_lockupElement;
-    UIView *_metadataBackgroundView;
-    SKUIGradientView *_offerConfirmationGradientView;
-    NSHashTable *_offerViews;
-    SKUIPlayButton *_playButton;
-    SKUIPreviewProgressIndicator *_previewProgressIndicator;
-    int _previewState;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    NSMutableArray *_tappableViews;
-    BOOL _useClearBackground;
-    NSMapTable *_viewElementViews;
+    }  _contentInset;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    SUPlayerStatus * _lastPlayerStatus;
+    SKUIHorizontalLockupLayout * _layout;
+    SKUILockupViewElement * _lockupElement;
+    UIView * _metadataBackgroundView;
+    SKUIGradientView * _offerConfirmationGradientView;
+    NSHashTable * _offerViews;
+    SKUIPlayButton * _playButton;
+    SKUIPreviewProgressIndicator * _previewProgressIndicator;
+    int  _previewState;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    NSMutableArray * _tappableViews;
+    BOOL  _useClearBackground;
+    NSMapTable * _viewElementViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface BLRetouchRedEyeLayer : BLRetouchLayer {
-    CIImage *_ciSourceImage;
-    NSMutableArray *_eyePoints;
-    UIImage *_repairSourceImage;
-    UIImage *_repairedImage;
+    CIImage * _ciSourceImage;
+    NSMutableArray * _eyePoints;
+    UIImage * _repairSourceImage;
+    UIImage * _repairedImage;
 }
 
 @property (nonatomic, copy) NSMutableArray *eyePoints;

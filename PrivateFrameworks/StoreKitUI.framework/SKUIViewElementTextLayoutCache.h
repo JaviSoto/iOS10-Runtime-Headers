@@ -3,8 +3,8 @@
  */
 
 @interface SKUIViewElementTextLayoutCache : NSObject {
-    SKUILayoutCache *_layoutCache;
-    NSMutableDictionary *_layoutMapTables;
+    SKUILayoutCache * _layoutCache;
+    NSMutableDictionary * _layoutMapTables;
 }
 
 @property (nonatomic, readonly) SKUILayoutCache *layoutCache;

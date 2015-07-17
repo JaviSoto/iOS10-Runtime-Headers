@@ -3,10 +3,10 @@
  */
 
 @interface MusicNowPlayingAtmosphericEffectView : UIView {
-    _UIBackdropView *_backdropView;
-    UIView *_blendModeTintView;
-    UIView *_colorTintView;
-    int _effect;
+    _UIBackdropView * _backdropView;
+    UIView * _blendModeTintView;
+    UIView * _colorTintView;
+    int  _effect;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backdropView;

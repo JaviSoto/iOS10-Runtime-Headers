@@ -5,9 +5,9 @@
 @interface MIPLibraryIdentifier : PBCodable <NSCopying> {
     struct { 
         unsigned int libraryId : 1; 
-    } _has;
-    long long _libraryId;
-    NSString *_libraryName;
+    }  _has;
+    long long  _libraryId;
+    NSString * _libraryName;
 }
 
 @property (nonatomic) BOOL hasLibraryId;

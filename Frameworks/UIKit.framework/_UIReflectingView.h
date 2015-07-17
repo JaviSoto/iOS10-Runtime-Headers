@@ -3,15 +3,16 @@
  */
 
 @interface _UIReflectingView : UIView {
-    UIView *_containerView;
-    UIView *_gradientView;
-    float _reflectionAlpha;
+    UIView * _containerView;
+    UIView * _gradientView;
+    float  _reflectionAlpha;
 }
 
 @property (nonatomic, readonly, retain) UIView *containerView;
 @property (nonatomic) float reflectionAlpha;
 @property (nonatomic) float reflectionFraction;
 
+- (void).cxx_destruct;
 - (id)_gradientLayer;
 - (void)_updateGradientColors;
 - (id)containerView;

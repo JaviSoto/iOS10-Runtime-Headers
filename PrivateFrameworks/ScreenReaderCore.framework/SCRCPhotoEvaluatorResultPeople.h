@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _imageSize;
-    NSArray *_people;
+    }  _imageSize;
+    NSArray * _people;
 }
 
 @property (nonatomic, readonly) NSArray *people;

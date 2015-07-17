@@ -3,9 +3,9 @@
  */
 
 @interface BRCMigrationQueryOperation : BRCSyncDownOperation {
-    CKQueryCursor *_continuationCursor;
-    NSString *_migrationKey;
-    NSMutableArray *_recordsWithShareID;
+    CKQueryCursor * _continuationCursor;
+    NSString * _migrationKey;
+    NSMutableArray * _recordsWithShareID;
 }
 
 + (id)allMigrationKeysOrdered;

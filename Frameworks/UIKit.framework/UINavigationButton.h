@@ -8,35 +8,35 @@
         float left; 
         float bottom; 
         float right; 
-    } __additionalSelectionInsets;
-    BOOL __barItemHidden;
-    Class _appearanceGuideClass;
-    id _appearanceStorage;
-    int _barStyle;
+    }  __additionalSelectionInsets;
+    BOOL  __barItemHidden;
+    Class  _appearanceGuideClass;
+    id  _appearanceStorage;
+    int  _barStyle;
     struct CGSize { 
         float width; 
         float height; 
-    } _boundsAdjustment;
-    int _buttonItemStyle;
-    BOOL _createdByBarButtonItem;
-    float _fontScaleAdjustment;
-    BOOL _isFontScaleInvalid;
-    float _maximumWidth;
-    float _minimumWidth;
-    UIColor *_navigationBarTintColor;
-    UIBarButtonItem *_originatingButtonItem;
-    UINavigationItem *_originatingNavigationItem;
-    NSSet *_possibleSystemItems;
-    NSSet *_possibleTitles;
-    unsigned int _size;
-    int _style;
-    NSDictionary *_stylesForSizingTitles;
-    BOOL _wantsBlendModeForAccessibilityBackgrounds;
-    unsigned int _wantsLetterpressContent;
+    }  _boundsAdjustment;
+    int  _buttonItemStyle;
+    BOOL  _createdByBarButtonItem;
+    float  _fontScaleAdjustment;
+    BOOL  _isFontScaleInvalid;
+    float  _maximumWidth;
+    float  _minimumWidth;
+    UIColor * _navigationBarTintColor;
+    UIBarButtonItem * _originatingButtonItem;
+    UINavigationItem * _originatingNavigationItem;
+    NSSet * _possibleSystemItems;
+    NSSet * _possibleTitles;
+    unsigned int  _size;
+    int  _style;
+    NSDictionary * _stylesForSizingTitles;
+    BOOL  _wantsBlendModeForAccessibilityBackgrounds;
+    unsigned int  _wantsLetterpressContent;
 }
 
 @property (setter=_setAdditionalSelectionInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _additionalSelectionInsets;
-@property (setter=_setAppearanceGuideClass:, nonatomic) Class _appearanceGuideClass;
+@property (setter=_setAppearanceGuideClass:, nonatomic, retain) Class _appearanceGuideClass;
 @property (setter=_setBarItemHidden:, nonatomic) BOOL _barItemHidden;
 @property (setter=_setButtonItemStyle:, nonatomic) int _buttonItemStyle;
 @property (setter=_setCreatedByBarButtonItem:, nonatomic) BOOL _createdByBarButtonItem;
@@ -58,6 +58,7 @@
 + (void)_resetRenderingModesForBackgroundImageView:(id)arg1 inBarStyle:(int)arg2 isEnabled:(BOOL)arg3 withAccessibilityBackground:(BOOL)arg4 wantsBlendModeForAccessibilityBackgrounds:(BOOL)arg5;
 + (id)defaultFont;
 
+- (void).cxx_destruct;
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
@@ -69,6 +70,8 @@
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
 - (void)_accessibilityButtonShapesParametersDidChange;
+- (int)_activeBarMetrics;
+- (id)_activeVisualStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_additionalSelectionInsets;
 - (void)_adjustBounds;
 - (id)_adjustedDefaultTitleFont;
@@ -135,6 +138,7 @@
 - (void)_updateStyle;
 - (void)_updateTitleColorsForState:(unsigned int)arg1;
 - (void)_updateTitleForLetterpress;
+- (id)_visualStyleForMetrics:(int)arg1;
 - (BOOL)_wantsAccessibilityButtonShapes;
 - (BOOL)_wantsBlendModeForAccessibilityBackgrounds;
 - (int)barStyle;

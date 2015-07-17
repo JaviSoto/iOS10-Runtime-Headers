@@ -3,16 +3,16 @@
  */
 
 @interface SKUIMenuBarTemplateShelfFixedElementsCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    NSHashTable *_artworkRelatedChildViewElementViews;
+    NSHashTable * _artworkRelatedChildViewElementViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    NSMapTable *_viewElementViews;
-    NSArray *_viewElements;
+    }  _contentInset;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    NSMapTable * _viewElementViews;
+    NSArray * _viewElements;
 }
 
 @property (readonly, copy) NSString *debugDescription;

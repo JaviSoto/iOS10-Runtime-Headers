@@ -3,7 +3,7 @@
  */
 
 @interface ALAsset : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (getter=isEditable, nonatomic, readonly) BOOL editable;
@@ -12,7 +12,7 @@
 
 + (struct CGSize { float x1; float x2; })largePreviewImageSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 
-- (id)_createContentEditingOutputWithType:(int)arg1;
+- (id)_newContentEditingOutputWithType:(int)arg1;
 - (id)_typeAsString;
 - (id)_uuid;
 - (struct CGImage { }*)aspectRatioThumbnail;

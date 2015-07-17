@@ -3,17 +3,17 @@
  */
 
 @interface EKRequestAvailabilityOperation : NSOperation {
-    NSArray *_addresses;
-    EKAvailabilityCache *_availabilityCache;
-    NSDate *_endDate;
-    NSError *_error;
-    NSString *_ignoredEventID;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _requestID;
-    id /* block */ _resultsBlock;
-    NSDate *_startDate;
+    NSArray * _addresses;
+    EKAvailabilityCache * _availabilityCache;
+    NSDate * _endDate;
+    NSError * _error;
+    NSString * _ignoredEventID;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _requestID;
+    id /* block */  _resultsBlock;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, retain) NSError *error;

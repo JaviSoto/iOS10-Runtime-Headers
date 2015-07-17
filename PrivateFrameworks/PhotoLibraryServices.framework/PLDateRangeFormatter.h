@@ -3,28 +3,28 @@
  */
 
 @interface PLDateRangeFormatter : NSObject {
-    NSLocale *__currentLocale;
-    NSDateFormatter *__dayOfTheWeekDateFormatter;
-    struct UDateIntervalFormat { } *__dayOfTheWeekIntervalFormat;
-    struct UDateIntervalFormat { } *__differentMonthDayIntervalFormat;
-    struct UDateIntervalFormat { } *__differentMonthDayNoYearIntervalFormat;
-    struct UDateIntervalFormat { } *__monthDayIntervalFormat;
-    struct UDateIntervalFormat { } *__monthDayNoYearIntervalFormat;
-    NSDateFormatter *__relativeDateFormatterDay;
-    NSDateFormatter *__sameDayDateFormatter;
-    NSDateFormatter *__sameDayNoYearDateFormatter;
-    struct UDateIntervalFormat { } *__timeIntervalFormat;
-    NSDateFormatter *__yearDateFormatter;
-    struct UDateIntervalFormat { } *__yearIntervalFormat;
-    BOOL _autoUpdateOnChanges;
-    BOOL _includeDayNumbers;
-    BOOL _includeDayNumbersWhenMonthsDiffer;
-    BOOL _timeOnly;
-    BOOL _useRelativeDayFormatting;
-    BOOL _useShortDaysInRanges;
-    BOOL _useShortMonths;
-    BOOL _useTime;
-    BOOL _yearOnly;
+    NSLocale * __currentLocale;
+    NSDateFormatter * __dayOfTheWeekDateFormatter;
+    struct UDateIntervalFormat { } * __dayOfTheWeekIntervalFormat;
+    struct UDateIntervalFormat { } * __differentMonthDayIntervalFormat;
+    struct UDateIntervalFormat { } * __differentMonthDayNoYearIntervalFormat;
+    struct UDateIntervalFormat { } * __monthDayIntervalFormat;
+    struct UDateIntervalFormat { } * __monthDayNoYearIntervalFormat;
+    NSDateFormatter * __relativeDateFormatterDay;
+    NSDateFormatter * __sameDayDateFormatter;
+    NSDateFormatter * __sameDayNoYearDateFormatter;
+    struct UDateIntervalFormat { } * __timeIntervalFormat;
+    NSDateFormatter * __yearDateFormatter;
+    struct UDateIntervalFormat { } * __yearIntervalFormat;
+    BOOL  _autoUpdateOnChanges;
+    BOOL  _includeDayNumbers;
+    BOOL  _includeDayNumbersWhenMonthsDiffer;
+    BOOL  _timeOnly;
+    BOOL  _useRelativeDayFormatting;
+    BOOL  _useShortDaysInRanges;
+    BOOL  _useShortMonths;
+    BOOL  _useTime;
+    BOOL  _yearOnly;
 }
 
 @property (setter=_setCurrentLocale:, nonatomic, retain) NSLocale *_currentLocale;

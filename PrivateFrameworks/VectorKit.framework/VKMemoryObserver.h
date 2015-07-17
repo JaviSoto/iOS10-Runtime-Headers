@@ -3,9 +3,9 @@
  */
 
 @interface VKMemoryObserver : NSObject {
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
-    SEL _selector;
-    id _target;
+    NSObject<OS_dispatch_source> * _memoryNotificationEventSource;
+    SEL  _selector;
+    id  _target;
 }
 
 - (void)_receivedMemoryNotification;

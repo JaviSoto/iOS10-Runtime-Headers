@@ -3,7 +3,7 @@
  */
 
 @interface SKPaymentQueue : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) SKPaymentQueueClient *paymentQueueClient;

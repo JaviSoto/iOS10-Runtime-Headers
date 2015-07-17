@@ -3,10 +3,10 @@
  */
 
 @interface PUPhotosGridDownloadHelper : NSObject {
-    id /* block */ _currentDownloadSuccessHandler;
-    NSString *_currentGridProgressIdentifier;
-    PUResourceDownloadRequest *_currentResourceDownloadRequest;
-    PUPhotosGridViewController *_gridViewController;
+    id /* block */  _currentDownloadSuccessHandler;
+    NSString * _currentGridProgressIdentifier;
+    PUResourceDownloadRequest * _currentResourceDownloadRequest;
+    PUPhotosGridViewController * _gridViewController;
 }
 
 @property (nonatomic, readonly) PUPhotosGridViewController *gridViewController;
@@ -18,6 +18,7 @@
 - (void)cancelCurrentAssetDownload;
 - (id)gridViewController;
 - (void)handleDownloadOfAsset:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(id /* block */)arg3;
+- (id)init;
 - (id)initWithGridViewController:(id)arg1;
 
 @end

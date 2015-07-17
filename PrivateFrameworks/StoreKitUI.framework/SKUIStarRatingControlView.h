@@ -8,10 +8,10 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUIStarRatingControl *_control;
-    UIImage *_emptyStars;
-    SKUIStarRatingViewElement *_viewElement;
+    }  _contentInset;
+    SKUIStarRatingControl * _control;
+    UIImage * _emptyStars;
+    SKUIStarRatingViewElement * _viewElement;
 }
 
 @property (nonatomic, retain) SKUIStarRatingControl *control;

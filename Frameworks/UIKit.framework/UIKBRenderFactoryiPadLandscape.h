@@ -22,6 +22,7 @@
 - (float)facemarkKeyFontSize;
 - (float)fallbackFontSize;
 - (float)fontSizeAdjustmentForNonAlphanumericKeycaps;
+- (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (id)handwritingMoreKeyImageName;
 - (float)internationalKeyFontSize;

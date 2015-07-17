@@ -3,11 +3,11 @@
  */
 
 @interface CKDModifySharesOperation : CKDDatabaseOperation {
-    id /* block */ _deleteCompletionBlock;
-    BOOL _haveOutstandingMetadatas;
-    int _numShareSaveAttempts;
-    id /* block */ _saveCompletionBlock;
-    NSMutableArray *_shareMetadatas;
+    id /* block */  _deleteCompletionBlock;
+    BOOL  _haveOutstandingMetadatas;
+    int  _numShareSaveAttempts;
+    id /* block */  _saveCompletionBlock;
+    NSMutableArray * _shareMetadatas;
 }
 
 @property (nonatomic, copy) id /* block */ deleteCompletionBlock;
@@ -41,6 +41,7 @@
 - (BOOL)_serializePCSDataForShare:(id)arg1 error:(id*)arg2;
 - (BOOL)_serializePublicPCSForShareInfo:(id)arg1 error:(id*)arg2;
 - (BOOL)_updateSharePublicPCS:(id)arg1 error:(id*)arg2;
+- (unsigned long long)activityStart;
 - (id /* block */)deleteCompletionBlock;
 - (BOOL)haveOutstandingMetadatas;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

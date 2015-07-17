@@ -3,16 +3,16 @@
  */
 
 @interface FMFNoLocationView : UIView {
-    BOOL _blockLabelUpdates;
-    UIView *_blur;
-    NSLayoutConstraint *_bottomInsetConstraint;
-    <FMFNoLocationViewDelegate> *_delegate;
-    UILabel *_detailsLabel;
-    UIView *_insetView;
-    UIImage *_offlineProfileImage;
-    UIImageView *_offlineProfileImageView;
-    UIImageView *_personImageView;
-    NSLayoutConstraint *_topInsetConstraint;
+    BOOL  _blockLabelUpdates;
+    UIView * _blur;
+    NSLayoutConstraint * _bottomInsetConstraint;
+    <FMFNoLocationViewDelegate> * _delegate;
+    UILabel * _detailsLabel;
+    UIView * _insetView;
+    UIImage * _offlineProfileImage;
+    UIImageView * _offlineProfileImageView;
+    UIImageView * _personImageView;
+    NSLayoutConstraint * _topInsetConstraint;
 }
 
 @property (nonatomic) BOOL blockLabelUpdates;

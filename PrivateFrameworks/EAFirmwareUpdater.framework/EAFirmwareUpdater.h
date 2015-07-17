@@ -3,27 +3,27 @@
  */
 
 @interface EAFirmwareUpdater : MobileAssetUpdater <EAAccessoryDelegate, NSStreamDelegate, iAUPServerDelegate> {
-    EAAccessory *_accessory;
-    NSString *_appProtocol;
-    id /* block */ _applyCompletion;
-    NSString *_bootloaderProtocol;
-    NSObject<OS_dispatch_queue> *_eaNotificationDispatchQueue;
-    NSString *_firmwareBundleFilename;
-    NSURL *_firmwareBundleURL;
-    BOOL _firmwareUpdateComplete;
-    unsigned int _firmwareVersionMajor;
-    unsigned int _firmwareVersionMinor;
-    unsigned int _firmwareVersionRelease;
-    iAUPServer *_iAUPServer;
-    BOOL _isExpectingReconnect;
-    NSMutableData *_outputData;
-    unsigned int _productIDCode;
-    id /* block */ _progressHandler;
-    NSString *_protocolString;
-    NSTimer *_reconnectTimer;
-    EASession *_session;
-    NSString *_updateBundleFilename;
-    NSURL *_updateBundleURL;
+    EAAccessory * _accessory;
+    NSString * _appProtocol;
+    id /* block */  _applyCompletion;
+    NSString * _bootloaderProtocol;
+    NSObject<OS_dispatch_queue> * _eaNotificationDispatchQueue;
+    NSString * _firmwareBundleFilename;
+    NSURL * _firmwareBundleURL;
+    BOOL  _firmwareUpdateComplete;
+    unsigned int  _firmwareVersionMajor;
+    unsigned int  _firmwareVersionMinor;
+    unsigned int  _firmwareVersionRelease;
+    iAUPServer * _iAUPServer;
+    BOOL  _isExpectingReconnect;
+    NSMutableData * _outputData;
+    unsigned int  _productIDCode;
+    id /* block */  _progressHandler;
+    NSString * _protocolString;
+    NSTimer * _reconnectTimer;
+    EASession * _session;
+    NSString * _updateBundleFilename;
+    NSURL * _updateBundleURL;
 }
 
 @property (nonatomic, retain) EAAccessory *accessory;

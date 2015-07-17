@@ -3,10 +3,10 @@
  */
 
 @interface GEOPhoneNumberMUIDMapper : NSObject {
-    NSString *_filePath;
-    NSMutableDictionary *_phoneNumberMuidMapping;
-    NSMutableArray *_uniquePhoneNumbers;
-    NSObject<OS_dispatch_queue> *_writeQ;
+    NSString * _filePath;
+    NSMutableDictionary * _phoneNumberMuidMapping;
+    NSMutableArray * _uniquePhoneNumbers;
+    NSObject<OS_dispatch_queue> * _writeQ;
 }
 
 - (void)_pruneToSize:(unsigned int)arg1;

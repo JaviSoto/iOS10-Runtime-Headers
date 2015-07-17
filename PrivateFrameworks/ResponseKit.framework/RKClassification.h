@@ -3,12 +3,12 @@
  */
 
 @interface RKClassification : NSObject {
-    NSArray *_customResponses;
-    unsigned int _gender;
-    NSString *_language;
-    int _sensitive;
-    unsigned int _sentenceType;
-    NSString *_taggedText;
+    NSArray * _customResponses;
+    unsigned int  _gender;
+    NSString * _language;
+    int  _sensitive;
+    unsigned int  _sentenceType;
+    NSString * _taggedText;
 }
 
 @property (retain) NSArray *customResponses;

@@ -3,16 +3,16 @@
  */
 
 @interface ABPersonOverlayingContainerView : UIScrollView <ABPersonTabsScrollView> {
-    UIView *_abContentView;
-    UIView *_backgroundView;
-    float _minimumBottomInset;
+    UIView * _abContentView;
+    UIView * _backgroundView;
+    float  _minimumBottomInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _savedContentInset;
-    <ABPersonTabsLayoutManager> *_tabsLayoutManager;
+    }  _savedContentInset;
+    <ABPersonTabsLayoutManager> * _tabsLayoutManager;
 }
 
 @property (nonatomic, retain) UIView *backgroundView;

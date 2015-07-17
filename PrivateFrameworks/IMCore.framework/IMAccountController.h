@@ -3,15 +3,15 @@
  */
 
 @interface IMAccountController : NSObject {
-    NSMutableDictionary *_accountMap;
-    NSMutableArray *_accounts;
-    BOOL _cachesEnabled;
-    BOOL _isReadOnly;
-    NSArray *_operationalAccountsCache;
-    NSMutableDictionary *_serviceToAccountsMap;
-    NSMutableDictionary *_serviceToActiveAccountsMap;
-    NSMutableDictionary *_serviceToConnectedAccountsMap;
-    NSMutableDictionary *_serviceToOperationalAccountsMap;
+    NSMutableDictionary * _accountMap;
+    NSMutableArray * _accounts;
+    BOOL  _cachesEnabled;
+    BOOL  _isReadOnly;
+    NSArray * _operationalAccountsCache;
+    NSMutableDictionary * _serviceToAccountsMap;
+    NSMutableDictionary * _serviceToActiveAccountsMap;
+    NSMutableDictionary * _serviceToConnectedAccountsMap;
+    NSMutableDictionary * _serviceToOperationalAccountsMap;
 }
 
 @property (nonatomic, readonly) NSMutableArray *_accounts;

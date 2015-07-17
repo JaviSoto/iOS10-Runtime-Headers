@@ -3,7 +3,7 @@
  */
 
 @interface NSCorrectionCheckingResult : NSSubstitutionCheckingResult {
-    NSArray *_alternativeStrings;
+    NSArray * _alternativeStrings;
 }
 
 - (id)alternativeStrings;

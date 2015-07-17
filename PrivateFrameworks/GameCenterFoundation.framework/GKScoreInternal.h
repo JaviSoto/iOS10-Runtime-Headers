@@ -3,15 +3,15 @@
  */
 
 @interface GKScoreInternal : GKInternalRepresentation {
-    unsigned long long _context;
-    NSDate *_date;
-    NSString *_formattedValue;
-    NSString *_groupLeaderboardIdentifier;
-    NSString *_leaderboardIdentifier;
-    GKPlayerInternal *_player;
-    unsigned int _rank;
-    long long _value;
-    BOOL _valueSet;
+    unsigned long long  _context;
+    NSDate * _date;
+    NSString * _formattedValue;
+    NSString * _groupLeaderboardIdentifier;
+    NSString * _leaderboardIdentifier;
+    GKPlayerInternal * _player;
+    unsigned int  _rank;
+    long long  _value;
+    BOOL  _valueSet;
 }
 
 @property (nonatomic, retain) NSString *category;

@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutActivityTypeFilter : _HKFilter {
-    unsigned int _operatorType;
-    unsigned int _workoutActivityType;
+    unsigned int  _operatorType;
+    unsigned int  _workoutActivityType;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;

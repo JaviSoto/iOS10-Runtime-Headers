@@ -3,32 +3,32 @@
  */
 
 @interface CPLAssetChange : CPLItemChange {
-    NSDate *_addedDate;
-    CPLAdjustments *_adjustments;
-    NSDate *_assetDate;
-    unsigned int _assetHDRType;
-    unsigned int _assetSubtype;
-    unsigned int _burstFlags;
-    NSString *_burstIdentifier;
-    NSString *_caption;
-    NSString *_collectionIdentifier;
-    NSString *_collectionName;
-    int _duration;
-    NSString *_extendedDescription;
-    BOOL _favorite;
-    BOOL _hidden;
-    NSArray *_keywords;
-    NSDate *_lastSharedDate;
-    CLLocation *_location;
-    NSString *_masterIdentifier;
-    NSString *_momentIdentifier;
-    NSString *_momentName;
-    int _orientation;
-    unsigned int _originalChoice;
-    NSArray *_people;
-    NSArray *_resources;
-    NSString *_timeZoneName;
-    NSNumber *_timeZoneOffset;
+    NSDate * _addedDate;
+    CPLAdjustments * _adjustments;
+    NSDate * _assetDate;
+    unsigned int  _assetHDRType;
+    unsigned int  _assetSubtype;
+    unsigned int  _burstFlags;
+    NSString * _burstIdentifier;
+    NSString * _caption;
+    NSString * _collectionIdentifier;
+    NSString * _collectionName;
+    int  _duration;
+    NSString * _extendedDescription;
+    BOOL  _favorite;
+    BOOL  _hidden;
+    NSArray * _keywords;
+    NSDate * _lastSharedDate;
+    CLLocation * _location;
+    NSString * _masterIdentifier;
+    NSString * _momentIdentifier;
+    NSString * _momentName;
+    int  _orientation;
+    unsigned int  _originalChoice;
+    NSArray * _people;
+    NSArray * _resources;
+    NSString * _timeZoneName;
+    NSNumber * _timeZoneOffset;
 }
 
 @property (nonatomic, copy) NSDate *addedDate;

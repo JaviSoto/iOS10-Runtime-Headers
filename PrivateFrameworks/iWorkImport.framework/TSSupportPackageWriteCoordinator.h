@@ -3,7 +3,7 @@
  */
 
 @interface TSSupportPackageWriteCoordinator : TSPPackageWriteCoordinator {
-    TSPPackageWriteCoordinator *_packageWriteCoordinator;
+    TSPPackageWriteCoordinator * _packageWriteCoordinator;
 }
 
 - (void).cxx_destruct;

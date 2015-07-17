@@ -3,13 +3,13 @@
  */
 
 @interface HDContentProtectionManager : NSObject <HDDiagnosticObject> {
-    double _beganObservingTime;
-    int _contentProtectionState;
-    double _lastNotificationTime;
-    int _notifyToken;
-    NSObject<OS_dispatch_queue> *_observationQueue;
-    NSMapTable *_observers;
-    int _unlockedSinceBoot;
+    double  _beganObservingTime;
+    int  _contentProtectionState;
+    double  _lastNotificationTime;
+    int  _notifyToken;
+    NSObject<OS_dispatch_queue> * _observationQueue;
+    NSMapTable * _observers;
+    int  _unlockedSinceBoot;
 }
 
 @property (readonly, copy) NSString *debugDescription;

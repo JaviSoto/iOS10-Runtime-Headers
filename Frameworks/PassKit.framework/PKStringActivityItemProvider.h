@@ -3,9 +3,9 @@
  */
 
 @interface PKStringActivityItemProvider : UIActivityItemProvider {
-    NSString *_passOrganizationName;
-    NSString *_passSharingString;
-    PKPassView *_passView;
+    NSString * _passOrganizationName;
+    NSString * _passSharingString;
+    PKPassView * _passView;
 }
 
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;

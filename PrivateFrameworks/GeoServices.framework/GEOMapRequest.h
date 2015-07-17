@@ -3,9 +3,9 @@
  */
 
 @interface GEOMapRequest : NSObject {
-    id /* block */ _completionHandler;
-    BOOL _isFinished;
-    GEOMapRequestManager *_requestManager;
+    id /* block */  _completionHandler;
+    BOOL  _isFinished;
+    GEOMapRequestManager * _requestManager;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

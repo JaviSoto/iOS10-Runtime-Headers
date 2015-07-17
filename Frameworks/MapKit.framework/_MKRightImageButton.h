@@ -3,8 +3,8 @@
  */
 
 @interface _MKRightImageButton : UIControl {
-    UIImageView *_imageView;
-    UILabel *_titleLabel;
+    UIImageView * _imageView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *image;
@@ -21,6 +21,6 @@
 - (void)tintColorDidChange;
 - (id)title;
 - (id)titleLabel;
-- (id)viewForBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

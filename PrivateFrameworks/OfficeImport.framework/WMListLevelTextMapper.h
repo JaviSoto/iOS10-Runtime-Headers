@@ -3,10 +3,10 @@
  */
 
 @interface WMListLevelTextMapper : NSObject {
-    int m_format;
-    unsigned int m_initNumber;
-    void **m_numberFormatter;
-    NSMutableArray *m_tokens;
+    int  m_format;
+    unsigned int  m_initNumber;
+    void ** m_numberFormatter;
+    NSMutableArray * m_tokens;
 }
 
 - (void)dealloc;

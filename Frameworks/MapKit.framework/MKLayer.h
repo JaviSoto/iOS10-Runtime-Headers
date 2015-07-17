@@ -12,15 +12,15 @@
             float width; 
             float height; 
         } size; 
-    } _hitBounds;
+    }  _hitBounds;
     struct CGPoint { 
         float x; 
         float y; 
-    } _hitOffset;
+    }  _hitOffset;
     struct CGPoint { 
         float x; 
         float y; 
-    } _hitOutset;
+    }  _hitOutset;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hitBounds;

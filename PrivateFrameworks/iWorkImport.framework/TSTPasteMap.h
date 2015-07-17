@@ -15,7 +15,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } mColumnTgtToPbMaps;
+    }  mColumnTgtToPbMaps;
     struct set<TSTColumnOrRowMap, TSTColumnOrRowMapTgtLess, std::__1::allocator<TSTColumnOrRowMap> > { 
         struct __tree<TSTColumnOrRowMap, TSTColumnOrRowMapTgtLess, std::__1::allocator<TSTColumnOrRowMap> > { 
             struct __tree_node<TSTColumnOrRowMap, void *> {} *__begin_node_; 
@@ -28,7 +28,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } mRowTgtToPbMaps;
+    }  mRowTgtToPbMaps;
 }
 
 - (id).cxx_construct;

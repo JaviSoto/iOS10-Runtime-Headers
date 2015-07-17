@@ -3,16 +3,16 @@
  */
 
 @interface CHDDefaultTextProperty : NSObject <EDKeyedObject> {
-    unsigned int mContentFormatId;
-    int mDefaultTextType;
-    int mLabelPosition;
-    EDResources *mResources;
-    EDRunsCollection *mRuns;
-    bool mShowBubbleSizeLabel;
-    bool mShowCategoryLabel;
-    bool mShowPercentageLabel;
-    bool mShowSeriesLabel;
-    bool mShowValueLabel;
+    unsigned int  mContentFormatId;
+    int  mDefaultTextType;
+    int  mLabelPosition;
+    EDResources * mResources;
+    EDRunsCollection * mRuns;
+    bool  mShowBubbleSizeLabel;
+    bool  mShowCategoryLabel;
+    bool  mShowPercentageLabel;
+    bool  mShowSeriesLabel;
+    bool  mShowValueLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +26,7 @@
 - (unsigned int)contentFormatId;
 - (void)dealloc;
 - (int)defaultTextType;
+- (id)description;
 - (id)initWithResources:(id)arg1;
 - (bool)isShowBubbleSizeLabel;
 - (bool)isShowCategoryLabel;

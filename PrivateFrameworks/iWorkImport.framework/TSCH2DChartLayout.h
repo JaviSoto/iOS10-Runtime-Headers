@@ -3,12 +3,12 @@
  */
 
 @interface TSCH2DChartLayout : TSCHChartLayout {
-    NSValue *mCachedOriginRelativeToChartAreaFrame;
+    NSValue * mCachedOriginRelativeToChartAreaFrame;
     struct CGSize { 
         float width; 
         float height; 
-    } mLastChartBodySize;
-    TSCHChartRootLayoutItem *mLayoutTreeRoot;
+    }  mLastChartBodySize;
+    TSCHChartRootLayoutItem * mLayoutTreeRoot;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,7 +18,7 @@
             float width; 
             float height; 
         } size; 
-    } mStartingChartInnerFrame;
+    }  mStartingChartInnerFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,11 +28,11 @@
             float width; 
             float height; 
         } size; 
-    } mStartingLegendInnerFrame;
+    }  mStartingLegendInnerFrame;
     struct CGSize { 
         float width; 
         float height; 
-    } mStartingSize;
+    }  mStartingSize;
 }
 
 @property (readonly) TSCHChartRootLayoutItem *p_layoutTree;

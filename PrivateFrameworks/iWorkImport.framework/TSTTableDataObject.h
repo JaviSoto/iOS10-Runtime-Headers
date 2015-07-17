@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataObject : NSObject {
-    unsigned int mRefCount;
+    unsigned int  mRefCount;
 }
 
 @end

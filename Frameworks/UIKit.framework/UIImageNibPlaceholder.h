@@ -3,10 +3,10 @@
  */
 
 @interface UIImageNibPlaceholder : UIImage <NSCoding> {
-    NSString *runtimeResourceName;
+    NSString * runtimeResourceName;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1 andRuntimeResourceName:(id)arg2;

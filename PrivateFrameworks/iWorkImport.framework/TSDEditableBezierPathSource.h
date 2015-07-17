@@ -3,8 +3,8 @@
  */
 
 @interface TSDEditableBezierPathSource : TSDPathSource <TSDMixing, TSDRealignablePathSource> {
-    unsigned int mActiveSubpath;
-    BOOL mHasLockedFlipTransform;
+    unsigned int  mActiveSubpath;
+    BOOL  mHasLockedFlipTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -12,8 +12,8 @@
         float d; 
         float tx; 
         float ty; 
-    } mLockedFlipTransform;
-    NSMutableArray *mSubpaths;
+    }  mLockedFlipTransform;
+    NSMutableArray * mSubpaths;
 }
 
 @property (nonatomic, readonly) BOOL allNodesSelected;

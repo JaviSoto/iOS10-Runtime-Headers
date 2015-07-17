@@ -3,14 +3,17 @@
  */
 
 @interface PUGridMagnifiedImageViewController : UIViewController {
-    BOOL _canShowFullScreen;
-    id _delegate;
+    BOOL  _canShowFullScreen;
+    id  _delegate;
     struct CGPoint { 
         float x; 
         float y; 
-    } _gestureWindLocation;
-    int _imageFormat;
-    NSIndexPath *_itemIndexPath;
+    }  _gestureWindLocation;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _imageSize;
+    NSIndexPath * _itemIndexPath;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,29 +23,29 @@
             float width; 
             float height; 
         } size; 
-    } _itemWindFrame;
+    }  _itemWindFrame;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastLocation;
+    }  _lastLocation;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _magnifiedDragEdgeInsets;
+    }  _magnifiedDragEdgeInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _magnifiedSize;
-    PUGridMagnifiedView *_magnifiedView;
-    float _magnifiedYOffset;
+    }  _magnifiedSize;
+    PUGridMagnifiedView * _magnifiedView;
+    float  _magnifiedYOffset;
     struct CGSize { 
         float width; 
         float height; 
-    } _shadowOffset;
-    float _shadowOpacity;
-    float _shadowRadius;
+    }  _shadowOffset;
+    float  _shadowOpacity;
+    float  _shadowRadius;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -52,13 +55,13 @@
             float width; 
             float height; 
         } size; 
-    } _trackingWindFrame;
+    }  _trackingWindFrame;
 }
 
 @property (nonatomic, readonly) BOOL canShowFullScreen;
 @property (nonatomic) id delegate;
 @property (nonatomic) struct CGPoint { float x1; float x2; } gestureWindLocation;
-@property (nonatomic) int imageFormat;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, retain) NSIndexPath *itemIndexPath;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } itemWindFrame;
 @property (nonatomic) struct CGPoint { float x1; float x2; } lastLocation;
@@ -72,7 +75,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackingWindFrame;
 
 - (void).cxx_destruct;
-- (void)beginMagnification;
+- (void)beginMagnificationAnimated:(BOOL)arg1;
 - (BOOL)canShowFullScreen;
 - (void)continueMagnification;
 - (id)delegate;
@@ -82,7 +85,7 @@
 - (void)hideMagnifiedThumbnailWithAnimation:(BOOL)arg1;
 - (id)imageForIndexPath:(id)arg1;
 - (id)imageForMagnifyLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (int)imageFormat;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithDelegate:(id)arg1;
 - (id)installMagnifiedView;
 - (BOOL)isValidMagnifyLocation:(struct CGPoint { float x1; float x2; })arg1;
@@ -98,7 +101,7 @@
 - (void)prepareForRelease;
 - (void)setDelegate:(id)arg1;
 - (void)setGestureWindLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setImageFormat:(int)arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setItemIndexPath:(id)arg1;
 - (void)setItemWindFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLastLocation:(struct CGPoint { float x1; float x2; })arg1;

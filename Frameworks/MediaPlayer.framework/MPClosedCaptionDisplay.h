@@ -3,10 +3,10 @@
  */
 
 @interface MPClosedCaptionDisplay : UIView {
-    UIView *_backgroundView;
-    BOOL _hidden;
-    UILabel *_label;
-    BOOL _rotating;
+    UIView * _backgroundView;
+    BOOL  _hidden;
+    UILabel * _label;
+    BOOL  _rotating;
 }
 
 - (void).cxx_destruct;

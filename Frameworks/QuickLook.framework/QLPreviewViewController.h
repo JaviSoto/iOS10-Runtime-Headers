@@ -3,9 +3,10 @@
  */
 
 @interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, QLSwippableItemProtocol, UIDocumentPasswordViewDelegate> {
-    UIView *_accessoryContainerView;
-    QLGenericView *_airPlayPasswordView;
-    float _aspectRatio;
+    UIView * _accessoryContainerView;
+    QLGenericView * _airPlayPasswordView;
+    float  _aspectRatio;
+    NSLayoutConstraint * _bundleTopConstraint;
     struct { 
         int pid; 
         struct { 
@@ -21,13 +22,13 @@
                 float height; 
             } size; 
         } contentFrame; 
-    } _clientContext;
-    UIView *_contentContainerView;
-    QLDisplayBundle *_displayBundle;
-    <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
-    UIDocumentPasswordView *_documentPasswordView;
-    NSLayoutConstraint *_documentPasswordViewKeyboardConstraint;
-    int _index;
+    }  _clientContext;
+    UIView * _contentContainerView;
+    QLDisplayBundle * _displayBundle;
+    <QLPreviewItemInteractionDelegate> * _displayBundleDelegate;
+    UIDocumentPasswordView * _documentPasswordView;
+    NSLayoutConstraint * _documentPasswordViewKeyboardConstraint;
+    int  _index;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -37,22 +38,22 @@
             float width; 
             float height; 
         } size; 
-    } _initialFrame;
-    BOOL _loadedWithPassword;
-    NSString *_loadingTextForMissingFiles;
-    float _navigationBarVerticalOffset;
-    BOOL _needsReload;
-    QLDisplayBundle *_newDisplayBundle;
-    BOOL _overlayHidden;
-    <QLPreviewItem> *_previewItem;
-    int _previewMode;
-    NSTimer *_progressTimer;
-    QLProgressView *_progressView;
-    float _scaleFactor;
-    UIView *_scalingView;
-    BOOL _shouldSwapDisplayBundles;
-    BOOL _swiping;
-    BOOL _visible;
+    }  _initialFrame;
+    BOOL  _loadedWithPassword;
+    NSString * _loadingTextForMissingFiles;
+    float  _navigationBarVerticalOffset;
+    BOOL  _needsReload;
+    QLDisplayBundle * _newDisplayBundle;
+    BOOL  _overlayHidden;
+    <QLPreviewItem> * _previewItem;
+    int  _previewMode;
+    NSTimer * _progressTimer;
+    QLProgressView * _progressView;
+    float  _scaleFactor;
+    UIView * _scalingView;
+    BOOL  _shouldSwapDisplayBundles;
+    BOOL  _swiping;
+    BOOL  _visible;
 }
 
 @property (readonly) int airPlayMode;
@@ -85,9 +86,11 @@
 - (void)_showProgressUI;
 - (void)_swapDisplayBundles;
 - (void)_updateProgressUIWithDuration:(double)arg1;
+- (void)_updateTopConstraintWithDuration:(float)arg1;
 - (int)airPlayMode;
 - (id)airPlayView;
 - (void)beginTrackingViewUpdates;
+- (BOOL)canHideOverlay;
 - (void)cancelLoadIfNeeded;
 - (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
 - (id)clientProcessAlertViewForPreviewItem:(id)arg1;
@@ -139,6 +142,6 @@
 - (void)viewWasTappedOnPreviewItem:(id)arg1;
 - (BOOL)visible;
 - (void)willMoveToParentViewController:(id)arg1;
-- (void)willStartSwiping;
+- (void)willStartSwiping:(BOOL)arg1;
 
 @end

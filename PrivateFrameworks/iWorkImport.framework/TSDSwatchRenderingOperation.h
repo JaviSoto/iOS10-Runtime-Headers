@@ -3,18 +3,18 @@
  */
 
 @interface TSDSwatchRenderingOperation : NSOperation {
-    struct CGImage { } *mDeliveredImage;
-    TSKDocumentRoot *mDocumentRoot;
-    NSString *mIdentifier;
-    float mImageScale;
+    struct CGImage { } * mDeliveredImage;
+    TSKDocumentRoot * mDocumentRoot;
+    NSString * mIdentifier;
+    float  mImageScale;
     struct CGSize { 
         float width; 
         float height; 
-    } mImageSize;
-    unsigned int mInsertPopoverPageNumber;
-    unsigned int mInsertPopoverPageType;
-    NSObject<TSSPreset> *mPreset;
-    NSObject *mRenderingTicket;
+    }  mImageSize;
+    unsigned int  mInsertPopoverPageNumber;
+    unsigned int  mInsertPopoverPageType;
+    NSObject<TSSPreset> * mPreset;
+    <TSKAccessControllerReadTicket> * mRenderingTicket;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,8 +24,8 @@
             float width; 
             float height; 
         } size; 
-    } mSwatchFrame;
-    UIView *mView;
+    }  mSwatchFrame;
+    UIView * mView;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*deliveredImage;
@@ -36,10 +36,11 @@
 @property unsigned int insertPopoverPageNumber;
 @property unsigned int insertPopoverPageType;
 @property (readonly) NSObject<TSSPreset> *preset;
-@property (retain) NSObject *renderingTicket;
+@property (nonatomic, retain) <TSKAccessControllerReadTicket> *renderingTicket;
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } swatchFrame;
 @property (retain) UIView *view;
 
+- (void)cancel;
 - (void)dealloc;
 - (void)deliverCGImage:(struct CGImage { }*)arg1;
 - (struct CGImage { }*)deliveredImage;
@@ -55,6 +56,7 @@
 - (BOOL)needsPressedStateBackground;
 - (void)p_animateSwatchIn;
 - (void)p_deliverResultOnMainThread:(id)arg1;
+- (id)p_extendedRenderingTicket;
 - (struct CGImage { }*)p_newSwatchPressedStateBackgroundFromCGImage:(struct CGImage { }*)arg1;
 - (id)preset;
 - (id)renderingTicket;

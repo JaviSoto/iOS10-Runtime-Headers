@@ -3,19 +3,19 @@
  */
 
 @interface _ADUIViewControllerAdController : NSObject <ADBannerViewDelegate, ADInterstitialAdDelegate, _UIViewControllerContentViewEmbedding> {
-    NSString *_bannerAdSection;
-    NSString *_bannerAuthUserName;
-    NSURL *_bannerServerURL;
-    ADBannerView *_bannerView;
-    BOOL _canDisplayBannerAds;
-    BOOL _canOwnSharedBanner;
-    UIViewController *_contentViewController;
-    ADInterstitialAd *_interstitialAd;
-    NSString *_interstitialAdSection;
-    NSString *_interstitialAuthUserName;
-    int _interstitialPresentationPolicy;
-    NSURL *_interstitialServerURL;
-    BOOL _presentingFullScreenAd;
+    NSString * _bannerAdSection;
+    NSString * _bannerAuthUserName;
+    NSURL * _bannerServerURL;
+    ADBannerView * _bannerView;
+    BOOL  _canDisplayBannerAds;
+    BOOL  _canOwnSharedBanner;
+    UIViewController * _contentViewController;
+    ADInterstitialAd * _interstitialAd;
+    NSString * _interstitialAdSection;
+    NSString * _interstitialAuthUserName;
+    int  _interstitialPresentationPolicy;
+    NSURL * _interstitialServerURL;
+    BOOL  _presentingFullScreenAd;
 }
 
 @property (nonatomic, copy) NSString *bannerAdSection;

@@ -3,10 +3,10 @@
  */
 
 @interface OADGroupProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
-    NSArray *mEffects;
-    OADFill *mFill;
-    OADScene3D *mScene3D;
-    OADShape3D *mShape3D;
+    NSArray * mEffects;
+    OADFill * mFill;
+    OADScene3D * mScene3D;
+    OADShape3D * mShape3D;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,8 +17,10 @@
 + (id)defaultProperties;
 
 - (void)dealloc;
+- (id)description;
 - (id)effects;
 - (id)fill;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasEffects;
 - (BOOL)hasFill;
 - (BOOL)hasScene3D;

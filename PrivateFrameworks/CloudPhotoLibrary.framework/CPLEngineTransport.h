@@ -3,8 +3,8 @@
  */
 
 @interface CPLEngineTransport : NSObject <CPLAbstractObject, CPLEngineComponent> {
-    CPLEngineLibrary *_engineLibrary;
-    CPLPlatformObject *_platformObject;
+    CPLEngineLibrary * _engineLibrary;
+    CPLPlatformObject * _platformObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

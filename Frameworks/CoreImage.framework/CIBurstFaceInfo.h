@@ -6,23 +6,23 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } hwCenter;
-    int hwFaceId;
-    int hwLastFrameSeen;
+    }  hwCenter;
+    int  hwFaceId;
+    int  hwLastFrameSeen;
     struct CGSize { 
         float width; 
         float height; 
-    } hwSize;
+    }  hwSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } swCenter;
-    int swFaceId;
-    int swLastFrameSeen;
+    }  swCenter;
+    int  swFaceId;
+    int  swLastFrameSeen;
     struct CGSize { 
         float width; 
         float height; 
-    } swSize;
+    }  swSize;
 }
 
 @property struct CGPoint { float x1; float x2; } hwCenter;

@@ -3,14 +3,14 @@
  */
 
 @interface UIDynamicCaret : UIImageView <UIKeyboardCandidateList, _UIDynamicCaretDocumentContentDelegate> {
-    _UIDynamicCaretAlternatives *_alternativesView;
-    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    TIKeyboardCandidateResultSet *_candidateSet;
-    _UIDynamicCaretHelpLabel *_helpLabel;
-    _UIDynamicCaretInput *_inputView;
-    BOOL _justDeleted;
-    _UIDynamicCaretNoContentView *_noContentView;
-    int _selectedIndex;
+    _UIDynamicCaretAlternatives * _alternativesView;
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    TIKeyboardCandidateResultSet * _candidateSet;
+    _UIDynamicCaretHelpLabel * _helpLabel;
+    _UIDynamicCaretInput * _inputView;
+    BOOL  _justDeleted;
+    _UIDynamicCaretNoContentView * _noContentView;
+    int  _selectedIndex;
 }
 
 @property (nonatomic, retain) _UIDynamicCaretAlternatives *alternativesView;
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) _UIDynamicCaretNoContentView *noContentView;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)alternativeTappedAtIndex:(int)arg1;
 - (id)alternativesView;
 - (id)backgroundImage;
@@ -31,7 +32,6 @@
 - (id)candidateSet;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
-- (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)displayAlternatives:(BOOL)arg1;
 - (BOOL)hasCandidates;

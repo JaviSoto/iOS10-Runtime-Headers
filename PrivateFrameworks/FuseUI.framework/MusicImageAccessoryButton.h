@@ -3,12 +3,12 @@
  */
 
 @interface MusicImageAccessoryButton : UIButton {
-    BOOL _shouldBaselineAlignTrailingAccessoryImage;
-    float _tallestFontDescender;
+    BOOL  _shouldBaselineAlignTrailingAccessoryImage;
+    float  _tallestFontDescender;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _trailingAccessoryOffset;
+    }  _trailingAccessoryOffset;
 }
 
 @property (nonatomic) BOOL shouldBaselineAlignTrailingAccessoryImage;

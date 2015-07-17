@@ -3,9 +3,9 @@
  */
 
 @interface PBBridgeProgressView : UIView {
-    UIImageView *_appleLogo;
-    float _currentProgress;
-    unsigned int _style;
+    UIImageView * _appleLogo;
+    float  _currentProgress;
+    unsigned int  _style;
 }
 
 @property (nonatomic, retain) UIImageView *appleLogo;

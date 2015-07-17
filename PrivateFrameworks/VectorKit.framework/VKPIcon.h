@@ -3,9 +3,9 @@
  */
 
 @interface VKPIcon : PBCodable <NSCopying> {
-    unsigned int _anchorPointX;
-    unsigned int _anchorPointY;
-    unsigned int _atlasIndex;
+    unsigned int  _anchorPointX;
+    unsigned int  _anchorPointY;
+    unsigned int  _atlasIndex;
     struct { 
         unsigned int matchingStyleAttributeLongValue : 1; 
         unsigned int anchorPointX : 1; 
@@ -17,17 +17,17 @@
         unsigned int matchingStyleAttributeKey : 1; 
         unsigned int matchingStyleAttributeValue : 1; 
         unsigned int size : 1; 
-    } _has;
-    unsigned int _iconRectHeight;
-    unsigned int _iconRectWidth;
-    unsigned int _iconRectX;
-    unsigned int _iconRectY;
-    unsigned int _matchingStyleAttributeKey;
-    unsigned long long _matchingStyleAttributeLongValue;
-    int _matchingStyleAttributeValue;
-    NSString *_name;
-    unsigned int _quadIndex;
-    int _size;
+    }  _has;
+    unsigned int  _iconRectHeight;
+    unsigned int  _iconRectWidth;
+    unsigned int  _iconRectX;
+    unsigned int  _iconRectY;
+    unsigned int  _matchingStyleAttributeKey;
+    unsigned long long  _matchingStyleAttributeLongValue;
+    int  _matchingStyleAttributeValue;
+    NSString * _name;
+    unsigned int  _quadIndex;
+    int  _size;
 }
 
 @property (nonatomic) unsigned int anchorPointX;

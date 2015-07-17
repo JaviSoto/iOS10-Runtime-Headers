@@ -3,9 +3,9 @@
  */
 
 @interface PASample : NSObject <PASerializable> {
-    double _machTimestamp;
-    NSMutableDictionary *_tasks;
-    double _wallTimestamp;
+    double  _machTimestamp;
+    NSMutableDictionary * _tasks;
+    double  _wallTimestamp;
 }
 
 @property (readonly, copy) NSString *debugDescription;

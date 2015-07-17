@@ -3,14 +3,14 @@
  */
 
 @interface AWDAirPlayAudioSessionEndedOnServer : PBCodable <NSCopying> {
-    unsigned int _bigLosses;
-    unsigned int _compressionPercent;
-    unsigned int _dacpNext;
-    unsigned int _dacpPauses;
-    unsigned int _dacpPrevious;
-    unsigned int _duration;
-    unsigned int _futileRetransmits;
-    unsigned int _glitches;
+    unsigned int  _bigLosses;
+    unsigned int  _compressionPercent;
+    unsigned int  _dacpNext;
+    unsigned int  _dacpPauses;
+    unsigned int  _dacpPrevious;
+    unsigned int  _duration;
+    unsigned int  _futileRetransmits;
+    unsigned int  _glitches;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int bigLosses : 1; 
@@ -44,32 +44,32 @@
         unsigned int rtpMaxSkew : 1; 
         unsigned int rtpSkewResets : 1; 
         unsigned int unrecoveredPackets : 1; 
-    } _has;
-    unsigned int _lastPackets;
-    unsigned int _lostPackets;
-    unsigned int _maxBurstLoss;
-    unsigned int _ntpOffsetAvg;
-    unsigned int _ntpOffsetMax;
-    unsigned int _ntpOffsetMin;
-    unsigned int _ntpOutliers;
-    unsigned int _ntpRTTAvg;
-    unsigned int _ntpRTTMax;
-    unsigned int _ntpRTTMin;
-    unsigned int _ntpSteps;
-    int _reason;
-    unsigned int _retransmitAvgMs;
-    unsigned int _retransmitMaxMs;
-    unsigned int _retransmitMinMs;
-    unsigned int _retransmitNotFounds;
-    unsigned int _retransmitReceives;
-    unsigned int _retransmitRetryMaxMs;
-    unsigned int _retransmitRetryMinMs;
-    unsigned int _retransmitSends;
-    unsigned int _rtpMaxSkew;
-    unsigned int _rtpSkewResets;
-    NSString *_sessionUUID;
-    unsigned long long _timestamp;
-    unsigned int _unrecoveredPackets;
+    }  _has;
+    unsigned int  _lastPackets;
+    unsigned int  _lostPackets;
+    unsigned int  _maxBurstLoss;
+    unsigned int  _ntpOffsetAvg;
+    unsigned int  _ntpOffsetMax;
+    unsigned int  _ntpOffsetMin;
+    unsigned int  _ntpOutliers;
+    unsigned int  _ntpRTTAvg;
+    unsigned int  _ntpRTTMax;
+    unsigned int  _ntpRTTMin;
+    unsigned int  _ntpSteps;
+    int  _reason;
+    unsigned int  _retransmitAvgMs;
+    unsigned int  _retransmitMaxMs;
+    unsigned int  _retransmitMinMs;
+    unsigned int  _retransmitNotFounds;
+    unsigned int  _retransmitReceives;
+    unsigned int  _retransmitRetryMaxMs;
+    unsigned int  _retransmitRetryMinMs;
+    unsigned int  _retransmitSends;
+    unsigned int  _rtpMaxSkew;
+    unsigned int  _rtpSkewResets;
+    NSString * _sessionUUID;
+    unsigned long long  _timestamp;
+    unsigned int  _unrecoveredPackets;
 }
 
 @property (nonatomic) unsigned int bigLosses;

@@ -3,15 +3,15 @@
  */
 
 @interface FigCameraViewfinderSessionLocal : FigCameraViewfinderSession <FigCameraViewfinderStreamDelegate, FigCaptureSessionPreviewTapDelegate> {
-    FigCaptureSessionProxy *_captureSessionProxy;
-    BOOL _ended;
-    long long _identifier;
-    FigCameraViewfinderStream *_previewStream;
-    BOOL _previewStreamClosed;
-    long _previewStreamClosedErrorStatus;
-    NSObject<OS_dispatch_queue> *_previewStreamQueue;
-    FigStateMachine *_stateMachine;
-    FigCameraViewfinderLocal *_viewfinder;
+    FigCaptureSessionProxy * _captureSessionProxy;
+    BOOL  _ended;
+    long long  _identifier;
+    FigCameraViewfinderStream * _previewStream;
+    BOOL  _previewStreamClosed;
+    long  _previewStreamClosedErrorStatus;
+    NSObject<OS_dispatch_queue> * _previewStreamQueue;
+    FigStateMachine * _stateMachine;
+    FigCameraViewfinderLocal * _viewfinder;
 }
 
 @property (readonly, copy) NSString *debugDescription;

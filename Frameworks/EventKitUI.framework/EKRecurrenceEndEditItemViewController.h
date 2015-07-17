@@ -3,16 +3,16 @@
  */
 
 @interface EKRecurrenceEndEditItemViewController : EKEditItemViewController <EKCellShortener, UITableViewDataSource, UITableViewDelegate> {
-    NSDate *_bestInitialDate;
-    PreferencesValueCell *_dateCell;
-    UIDatePicker *_datePicker;
-    UITableViewCell *_datePickerCell;
-    NSDate *_minimumEndDate;
-    NSDate *_preNeverEndDate;
-    NSDate *_repeatEndDate;
-    int _shorteningStatus;
-    UITableView *_table;
-    unsigned int _updatingPicker;
+    NSDate * _bestInitialDate;
+    PreferencesValueCell * _dateCell;
+    UIDatePicker * _datePicker;
+    UITableViewCell * _datePickerCell;
+    NSDate * _minimumEndDate;
+    NSDate * _preNeverEndDate;
+    NSDate * _repeatEndDate;
+    int  _shorteningStatus;
+    UITableView * _table;
+    unsigned int  _updatingPicker;
 }
 
 @property (nonatomic, copy) NSDate *bestInitialDate;

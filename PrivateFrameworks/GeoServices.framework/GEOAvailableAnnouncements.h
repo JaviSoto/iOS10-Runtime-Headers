@@ -3,8 +3,8 @@
  */
 
 @interface GEOAvailableAnnouncements : PBCodable <NSCopying> {
-    NSMutableArray *_announcements;
-    NSString *_languageCode;
+    NSMutableArray * _announcements;
+    NSString * _languageCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *announcements;

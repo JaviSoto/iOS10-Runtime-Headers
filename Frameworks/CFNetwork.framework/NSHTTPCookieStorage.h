@@ -3,7 +3,7 @@
  */
 
 @interface NSHTTPCookieStorage : NSObject {
-    NSHTTPCookieStorageInternal *_internal;
+    NSHTTPCookieStorageInternal * _internal;
 }
 
 @property unsigned int cookieAcceptPolicy;
@@ -11,6 +11,11 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
++ (id)_groupContainerCookieStorages;
++ (id)_groupContainerStoragesLock;
++ (void)_setSharedHTTPCookieStorage:(id)arg1;
++ (id)_sharedCookieStorageLock;
++ (id)sharedCookieStorageForGroupContainerIdentifier:(id)arg1;
 + (id)sharedHTTPCookieStorage;
 
 - (struct OpaqueCFHTTPCookieStorage { }*)_CFHTTPCookieStorage;

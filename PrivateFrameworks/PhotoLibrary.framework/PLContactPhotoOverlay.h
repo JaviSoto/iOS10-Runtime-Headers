@@ -3,8 +3,8 @@
  */
 
 @interface PLContactPhotoOverlay : UIView {
-    UIImageView *__avatarPreview;
-    UILabel *_titleLabel;
+    UIImageView * __avatarPreview;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, readonly) UIImageView *_avatarPreview;

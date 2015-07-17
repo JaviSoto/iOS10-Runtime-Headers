@@ -3,8 +3,8 @@
  */
 
 @interface HAPBTLEConnectionRequestTuple : NSObject {
-    NSObject<OS_dispatch_source> *_connectionRequestTimer;
-    NSString *_identifier;
+    NSObject<OS_dispatch_source> * _connectionRequestTimer;
+    NSString * _identifier;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *connectionRequestTimer;

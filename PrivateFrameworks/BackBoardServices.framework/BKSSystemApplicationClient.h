@@ -3,11 +3,11 @@
  */
 
 @interface BKSSystemApplicationClient : BSBaseXPCClient {
-    NSObject<OS_dispatch_queue> *_callOutQueue;
-    NSObject<OS_dispatch_semaphore> *_checkinSemaphore;
-    <BKSSystemApplicationClientDelegate> *_delegate;
-    BOOL _pendingCheckIn;
-    BOOL _sentConnect;
+    NSObject<OS_dispatch_queue> * _callOutQueue;
+    NSObject<OS_dispatch_semaphore> * _checkinSemaphore;
+    <BKSSystemApplicationClientDelegate> * _delegate;
+    BOOL  _pendingCheckIn;
+    BOOL  _sentConnect;
 }
 
 @property (nonatomic) <BKSSystemApplicationClientDelegate> *delegate;
@@ -21,7 +21,9 @@
 - (void)connect;
 - (void)dealloc;
 - (id)delegate;
+- (void)finishBooting;
 - (id)initWithCalloutQueue:(id)arg1;
+- (BOOL)ping;
 - (void)queue_connectionWasInterrupted;
 - (void)queue_connectionWasInvalidated;
 - (void)queue_connectionWasResumed;

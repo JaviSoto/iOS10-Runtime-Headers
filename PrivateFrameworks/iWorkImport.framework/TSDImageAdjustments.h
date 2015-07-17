@@ -3,20 +3,20 @@
  */
 
 @interface TSDImageAdjustments : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    float mBottomLevel;
-    float mContrast;
-    float mDenoise;
-    BOOL mEnhance;
-    float mExposure;
-    float mGamma;
-    float mHighlights;
-    BOOL mRepresentsSageAdjustments;
-    float mSaturation;
-    float mShadows;
-    float mSharpness;
-    float mTemperature;
-    float mTint;
-    float mTopLevel;
+    float  mBottomLevel;
+    float  mContrast;
+    float  mDenoise;
+    BOOL  mEnhance;
+    float  mExposure;
+    float  mGamma;
+    float  mHighlights;
+    BOOL  mRepresentsSageAdjustments;
+    float  mSaturation;
+    float  mShadows;
+    float  mSharpness;
+    float  mTemperature;
+    float  mTint;
+    float  mTopLevel;
 }
 
 @property (nonatomic, readonly) float bottomLevel;

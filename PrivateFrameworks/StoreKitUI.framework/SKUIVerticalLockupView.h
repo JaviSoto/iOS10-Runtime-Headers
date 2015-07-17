@@ -3,20 +3,20 @@
  */
 
 @interface SKUIVerticalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIPerspectiveView, SKUIViewElementView> {
-    NSHashTable *_artworkRelatedChildViewElementViews;
+    NSHashTable * _artworkRelatedChildViewElementViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMapTable *_imageViewToImageResourceCacheKey;
-    NSMapTable *_lineSpacings;
-    SKUILockupViewElement *_lockupElement;
-    float _opacityOfViewsOtherThanProductImageView;
-    float _productImageAdjustedWidth;
-    SKUISizeValue *_productImageBoundingSize;
-    UIView *_productImageView;
+    }  _contentInset;
+    NSMapTable * _imageViewToImageResourceCacheKey;
+    NSMapTable * _lineSpacings;
+    SKUILockupViewElement * _lockupElement;
+    float  _opacityOfViewsOtherThanProductImageView;
+    float  _productImageAdjustedWidth;
+    SKUISizeValue * _productImageBoundingSize;
+    UIView * _productImageView;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -24,12 +24,12 @@
         float d; 
         float tx; 
         float ty; 
-    } _productImageViewOriginalTransform;
-    int _sizingStyle;
-    NSMapTable *_topInsets;
-    NSMapTable *_viewElementViews;
-    float _zoomingImageAlpha;
-    float _zoomingImageWidth;
+    }  _productImageViewOriginalTransform;
+    int  _sizingStyle;
+    NSMapTable * _topInsets;
+    NSMapTable * _viewElementViews;
+    float  _zoomingImageAlpha;
+    float  _zoomingImageWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;

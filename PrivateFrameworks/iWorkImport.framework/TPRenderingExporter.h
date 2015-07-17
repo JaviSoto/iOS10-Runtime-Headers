@@ -3,11 +3,11 @@
  */
 
 @interface TPRenderingExporter : TSARenderingExporter {
-    BOOL mDidLimitPageLayout;
-    TPPdfHyperlinkController *mHyperlinkController;
-    int mLastPageIndexForLayout;
-    unsigned int mPageCount;
-    unsigned int mPageIndex;
+    BOOL  mDidLimitPageLayout;
+    TPPdfHyperlinkController * mHyperlinkController;
+    int  mLastPageIndexForLayout;
+    unsigned int  mPageCount;
+    unsigned int  mPageIndex;
 }
 
 @property (readonly) BOOL didLimitPageLayout;

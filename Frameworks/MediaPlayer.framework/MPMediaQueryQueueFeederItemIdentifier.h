@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaQueryQueueFeederItemIdentifier : NSObject <MPAVItemQueueIdentifier, NSSecureCoding> {
-    unsigned long long _feederRevisionID;
-    MPMediaItem *_mediaItem;
-    unsigned int _repeatIndex;
+    unsigned long long  _feederRevisionID;
+    MPMediaItem * _mediaItem;
+    unsigned int  _repeatIndex;
 }
 
 @property (readonly, copy) NSString *debugDescription;

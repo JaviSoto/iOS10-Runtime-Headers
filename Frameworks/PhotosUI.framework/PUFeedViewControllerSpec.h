@@ -3,53 +3,53 @@
  */
 
 @interface PUFeedViewControllerSpec : NSObject {
-    PUPhotosGridViewControllerSpec *_gridSpec;
-    int _largeNumberOfSubjectsForLikes;
-    int _largeTileFastImageFormat;
+    PUPhotosGridViewControllerSpec * _gridSpec;
+    int  _largeNumberOfSubjectsForLikes;
+    int  _largeTileFastImageFormat;
     struct CGSize { 
         float width; 
         float height; 
-    } _largeTileMaximumFillingSize;
-    int _largeTileQualityImageFormat;
-    int _mediumTileFastImageFormat;
+    }  _largeTileMaximumFillingSize;
+    int  _largeTileQualityImageFormat;
+    int  _mediumTileFastImageFormat;
     struct CGSize { 
         float width; 
         float height; 
-    } _mediumTileMaximumFillingSize;
-    int _mediumTileQualityImageFormat;
+    }  _mediumTileMaximumFillingSize;
+    int  _mediumTileQualityImageFormat;
     struct CGSize { 
         float width; 
         float height; 
-    } _minimumVideoTileSize;
-    PUPhotoBrowserControllerSpec *_photoBrowserSpec;
-    PUPhotosPickerViewControllerSpec *_photosPickerSpec;
-    PUFeedViewControllerSpec *_popoverFeedViewControllerSpec;
-    int _promptStyle;
-    NSIndexSet *_qualityImageFormats;
-    BOOL _shouldHideBarsInLandscape;
-    BOOL _shouldShowInvitationsInPopover;
-    BOOL _shouldUseAspectThumbnails;
-    BOOL _shouldUseFullscreenLayout;
-    int _smallTileFastImageFormat;
+    }  _minimumVideoTileSize;
+    PUPhotoBrowserControllerSpec * _photoBrowserSpec;
+    PUPhotosPickerViewControllerSpec * _photosPickerSpec;
+    PUFeedViewControllerSpec * _popoverFeedViewControllerSpec;
+    int  _promptStyle;
+    NSIndexSet * _qualityImageFormats;
+    BOOL  _shouldHideBarsInLandscape;
+    BOOL  _shouldShowInvitationsInPopover;
+    BOOL  _shouldUseAspectThumbnails;
+    BOOL  _shouldUseFullscreenLayout;
+    int  _smallTileFastImageFormat;
     struct CGSize { 
         float width; 
         float height; 
-    } _smallTileMaximumFittingSize;
-    float _smallTilePanoAspectRatio;
-    int _smallTilePanoQualityImageFormat;
-    int _smallTileQualityImageFormat;
-    int _squareThumbnailFastImageFormat;
+    }  _smallTileMaximumFittingSize;
+    float  _smallTilePanoAspectRatio;
+    int  _smallTilePanoQualityImageFormat;
+    int  _smallTileQualityImageFormat;
+    int  _squareThumbnailFastImageFormat;
     struct CGSize { 
         float width; 
         float height; 
-    } _squareThumbnailMaximumSize;
-    int _squareThumbnailQualityImageFormat;
+    }  _squareThumbnailMaximumSize;
+    int  _squareThumbnailQualityImageFormat;
     struct CGSize { 
         float width; 
         float height; 
-    } _thumbnailSize;
-    int _veryLargeTileFastImageFormat;
-    int _veryLargeTileQualityImageFormat;
+    }  _thumbnailSize;
+    int  _veryLargeTileFastImageFormat;
+    int  _veryLargeTileQualityImageFormat;
 }
 
 @property (nonatomic, readonly) PUPhotosGridViewControllerSpec *gridSpec;

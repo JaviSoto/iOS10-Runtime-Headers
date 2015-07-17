@@ -9,8 +9,8 @@
         struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } mCellCoordinates;
-    NSObject<OS_dispatch_semaphore> *mSem;
+    }  mCellCoordinates;
+    NSObject<OS_dispatch_semaphore> * mSem;
 }
 
 - (id).cxx_construct;

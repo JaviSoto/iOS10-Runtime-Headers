@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioOnlyIndicatorView : UIView {
-    UIImageView *_imageView;
+    UIImageView * _imageView;
 }
 
 - (void).cxx_destruct;

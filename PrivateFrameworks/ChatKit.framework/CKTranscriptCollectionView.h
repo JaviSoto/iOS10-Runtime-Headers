@@ -3,7 +3,7 @@
  */
 
 @interface CKTranscriptCollectionView : CKEditableCollectionView {
-    BOOL _ignoresContentOffsetChanges;
+    BOOL  _ignoresContentOffsetChanges;
 }
 
 @property (nonatomic) BOOL ignoresContentOffsetChanges;

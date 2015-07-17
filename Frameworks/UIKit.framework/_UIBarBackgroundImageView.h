@@ -3,9 +3,9 @@
  */
 
 @interface _UIBarBackgroundImageView : UIImageView {
-    UIImageView *_customImageContainer;
-    UIView *_topStripView;
-    BOOL _translucent;
+    UIImageView * _customImageContainer;
+    UIView * _topStripView;
+    BOOL  _translucent;
 }
 
 @property (getter=isTranslucent, nonatomic) BOOL translucent;

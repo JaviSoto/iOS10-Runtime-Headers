@@ -3,18 +3,18 @@
  */
 
 @interface SSVDirectUpload : NSObject <SSXPCCoding> {
-    NSString *_categoryName;
-    long long _countOfBytesExpectedToSend;
-    long long _countOfBytesSent;
-    NSError *_error;
-    BOOL _explicitContent;
-    long long _persistentIdentifier;
-    int _state;
-    NSString *_subtitle;
-    NSURL *_thumbnailImageURL;
-    NSString *_title;
-    NSString *_uploadKind;
-    NSString *_uti;
+    NSString * _categoryName;
+    long long  _countOfBytesExpectedToSend;
+    long long  _countOfBytesSent;
+    NSError * _error;
+    BOOL  _explicitContent;
+    long long  _persistentIdentifier;
+    int  _state;
+    NSString * _subtitle;
+    NSURL * _thumbnailImageURL;
+    NSString * _title;
+    NSString * _uploadKind;
+    NSString * _uti;
 }
 
 @property (nonatomic, copy) NSString *UTI;

@@ -3,8 +3,8 @@
  */
 
 @interface MFAccountStore : NSObject {
-    ACAccountStore *_accountStore;
-    int _accountStoreLock;
+    ACAccountStore * _accountStore;
+    int  _accountStoreLock;
 }
 
 @property (readonly) ACAccountStore *persistentStore;

@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderOutputMetadataAdaptor : NSObject {
-    AVAssetReaderOutputMetadataAdaptorInternal *_internal;
+    AVAssetReaderOutputMetadataAdaptorInternal * _internal;
 }
 
 @property (nonatomic, readonly) AVAssetReaderTrackOutput *assetReaderTrackOutput;

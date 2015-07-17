@@ -3,20 +3,20 @@
  */
 
 @interface GEOZilchDecoderRequest : GEOMapRequest {
-    GEOZilchDecoder *_decoder;
-    id /* block */ _errorHandler;
-    NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
-    NSError *_firstTileLoadingError;
+    GEOZilchDecoder * _decoder;
+    id /* block */  _errorHandler;
+    NSObject<OS_dispatch_semaphore> * _finishedSemaphore;
+    NSError * _firstTileLoadingError;
     struct unique_ptr<geo::ZilchMapModel, std::__1::default_delete<geo::ZilchMapModel> > { 
         struct __compressed_pair<geo::ZilchMapModel *, std::__1::default_delete<geo::ZilchMapModel> > { 
             struct ZilchMapModel {} *__first_; 
         } __ptr_; 
-    } _mapModel;
+    }  _mapModel;
     struct shared_ptr<zilch::Message> { 
         struct Message {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _message;
-    id /* block */ _pathHandler;
+    }  _message;
+    id /* block */  _pathHandler;
 }
 
 @property (copy) id /* block */ errorHandler;

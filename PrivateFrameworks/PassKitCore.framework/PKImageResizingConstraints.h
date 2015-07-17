@@ -3,18 +3,18 @@
  */
 
 @interface PKImageResizingConstraints : NSObject {
-    int _constraintType;
-    float _fixedDimension;
-    float _maxAspectRatio;
-    float _minAspectRatio;
-    float _outputBorderTrim;
-    BOOL _outputMirrored;
-    float _outputScale;
-    BOOL _respectAspectRatioRange;
+    int  _constraintType;
+    float  _fixedDimension;
+    float  _maxAspectRatio;
+    float  _minAspectRatio;
+    float  _outputBorderTrim;
+    BOOL  _outputMirrored;
+    float  _outputScale;
+    BOOL  _respectAspectRatioRange;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic) float outputBorderTrim;

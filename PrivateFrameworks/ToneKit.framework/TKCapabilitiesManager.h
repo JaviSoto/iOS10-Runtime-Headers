@@ -3,8 +3,8 @@
  */
 
 @interface TKCapabilitiesManager : NSObject {
-    BOOL _alertToneStoreAvailable;
-    BOOL _ringtoneStoreAvailable;
+    BOOL  _alertToneStoreAvailable;
+    BOOL  _ringtoneStoreAvailable;
 }
 
 @property (getter=_isAlertToneStoreAvailable, setter=_setAlertToneStoreAvailable:, nonatomic) BOOL _alertToneStoreAvailable;

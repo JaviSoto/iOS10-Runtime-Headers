@@ -3,12 +3,12 @@
  */
 
 @interface CKDPublicIdentityLookupRequest : NSObject {
-    NSMutableDictionary *_emailsToProtectionInfo;
-    NSMutableDictionary *_emailsToUserInfo;
-    BOOL _isCancelled;
-    id /* block */ _lookupCompletionBlock;
-    id /* block */ _perEmailProgressBlock;
-    NSMutableSet *_remainingEmailsToFetch;
+    NSMutableDictionary * _emailsToProtectionInfo;
+    NSMutableDictionary * _emailsToUserInfo;
+    BOOL  _isCancelled;
+    id /* block */  _lookupCompletionBlock;
+    id /* block */  _perEmailProgressBlock;
+    NSMutableSet * _remainingEmailsToFetch;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *emailsToProtectionInfo;

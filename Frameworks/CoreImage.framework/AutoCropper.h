@@ -3,13 +3,13 @@
  */
 
 @interface AutoCropper : NSObject {
-    NSNumber *bufferZone;
+    NSNumber * bufferZone;
     struct CGSize { 
         float width; 
         float height; 
-    } originalImageSize;
-    BOOL shouldFavorBottom;
-    BOOL shouldFavorTop;
+    }  originalImageSize;
+    BOOL  shouldFavorBottom;
+    BOOL  shouldFavorTop;
 }
 
 @property (nonatomic, retain) NSNumber *bufferZone;

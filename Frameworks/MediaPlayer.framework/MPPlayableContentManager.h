@@ -3,15 +3,15 @@
  */
 
 @interface MPPlayableContentManager : NSObject {
-    NSOperationQueue *_artworkUpdateQueue;
-    BOOL _coalescingUpdates;
-    NSMutableSet *_contentItemIdentifiersSentToMediaRemote;
-    MPPlayableContentManagerContext *_context;
-    <MPPlayableContentDataSource> *_dataSource;
-    <MPPlayableContentDelegate> *_delegate;
-    AVExternalDevice *_externalDevice;
-    NSMutableSet *_mutatedContentItems;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSOperationQueue * _artworkUpdateQueue;
+    BOOL  _coalescingUpdates;
+    NSMutableSet * _contentItemIdentifiersSentToMediaRemote;
+    MPPlayableContentManagerContext * _context;
+    <MPPlayableContentDataSource> * _dataSource;
+    <MPPlayableContentDelegate> * _delegate;
+    AVExternalDevice * _externalDevice;
+    NSMutableSet * _mutatedContentItems;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, retain) MPPlayableContentManagerContext *context;
@@ -21,7 +21,7 @@
 + (id)sharedContentManager;
 
 - (void).cxx_destruct;
-- (BOOL)_areContentLimitsEnabled;
+- (BOOL)_areContentLimitsEnforced;
 - (void)_browsableContentEndpointChanged:(id)arg1;
 - (void)_contentItemChangedNotification:(id)arg1;
 - (BOOL)_contentItemWasSentToMediaRemote:(id)arg1;
@@ -31,6 +31,7 @@
 - (id)_init;
 - (void)_limitedUIChanged:(id)arg1;
 - (void)_markContentItemsAsSentToMediaRemote:(id)arg1;
+- (BOOL)_musicListsLimited;
 - (BOOL)_onQueueContentItemWasSentToMediaRemote:(id)arg1;
 - (void)_pushContentItemsUpdate;
 - (void)_setupMediaRemoteEndpoint;

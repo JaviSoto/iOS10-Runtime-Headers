@@ -3,11 +3,11 @@
  */
 
 @interface HKHealthService : NSObject <NSCopying, NSSecureCoding> {
-    NSUUID *_identifier;
-    double _lastConnection;
-    NSString *_name;
-    NSString *_serviceId;
-    int _type;
+    NSUUID * _identifier;
+    double  _lastConnection;
+    NSString * _name;
+    NSString * _serviceId;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSUUID *identifier;
@@ -15,6 +15,8 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, copy) NSString *serviceId;
 @property (nonatomic, readonly) int type;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (BOOL)supportsSecureCoding;
 
@@ -37,5 +39,9 @@
 - (void)setLastConnection:(double)arg1;
 - (void)setServiceId:(id)arg1;
 - (int)type;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (id)initWithType:(int)arg1 peripheral:(id)arg2;
 
 @end

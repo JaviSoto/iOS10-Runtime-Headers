@@ -3,26 +3,26 @@
  */
 
 @interface TTSSpeechRequest : NSObject <NSSecureCoding> {
-    NSAttributedString *_attributedText;
-    unsigned int _audioQueueFlags;
-    unsigned int _audioSessionID;
-    BOOL _audioSessionIDIsValid;
-    <TTSSpeechRequestDelegate> *_delegate;
-    double _dispatchTime;
-    int _footprint;
-    int _gender;
-    double _handledTime;
-    NSString *_languageCode;
-    double _latency;
-    BOOL _maintainsInput;
-    NSURL *_outputPath;
-    double _pitch;
-    double _rate;
-    TTSSpeechChannel *_speechChannel;
-    NSString *_text;
-    BOOL _useCustomVoice;
-    BOOL _useVoiceBooster;
-    double _volume;
+    NSAttributedString * _attributedText;
+    unsigned int  _audioQueueFlags;
+    unsigned int  _audioSessionID;
+    BOOL  _audioSessionIDIsValid;
+    <TTSSpeechRequestDelegate> * _delegate;
+    double  _dispatchTime;
+    int  _footprint;
+    int  _gender;
+    double  _handledTime;
+    NSString * _languageCode;
+    double  _latency;
+    BOOL  _maintainsInput;
+    NSURL * _outputPath;
+    double  _pitch;
+    double  _rate;
+    TTSSpeechChannel * _speechChannel;
+    NSString * _text;
+    BOOL  _useCustomVoice;
+    BOOL  _useVoiceBooster;
+    double  _volume;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;

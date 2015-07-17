@@ -3,7 +3,7 @@
  */
 
 @interface EKTextViewWithLabelTextMetrics : UITextView <CalendarLabelTextMetrics> {
-    int lineBreakMode;
+    int  lineBreakMode;
 }
 
 @property (nonatomic, retain) UIFont *font;

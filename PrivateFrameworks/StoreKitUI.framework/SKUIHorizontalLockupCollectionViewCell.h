@@ -3,20 +3,20 @@
  */
 
 @interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView, SKUIViewElementView, UIScrollViewAccessibilityDelegate> {
-    UIButton *_actionButton;
-    SKUIButtonViewElement *_actionButtonViewElement;
-    SKUICellScrollView *_actionsScrollView;
+    UIButton * _actionButton;
+    SKUIButtonViewElement * _actionButtonViewElement;
+    SKUICellScrollView * _actionsScrollView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUICheckboxInputViewElement *_editModeCheckboxElement;
-    UIImageView *_editModeControl;
-    UIView *_highlightBackgroundView;
-    SKUIHorizontalLockupView *_lockupView;
-    UIColor *_lockupViewBackgroundColor;
+    }  _contentInset;
+    SKUICheckboxInputViewElement * _editModeCheckboxElement;
+    UIImageView * _editModeControl;
+    UIView * _highlightBackgroundView;
+    SKUIHorizontalLockupView * _lockupView;
+    UIColor * _lockupViewBackgroundColor;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

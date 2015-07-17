@@ -3,14 +3,14 @@
  */
 
 @interface SKUICounterViewElement : SKUIViewElement {
-    double _changeRatePerSecond;
-    int _counterType;
-    int _dateFormatType;
-    NSDate *_endDate;
-    NSString *_numberFormat;
-    long long _startValue;
-    NSDate *_startValueDate;
-    long long _stopValue;
+    double  _changeRatePerSecond;
+    int  _counterType;
+    int  _dateFormatType;
+    NSDate * _endDate;
+    NSString * _numberFormat;
+    long long  _startValue;
+    NSDate * _startValueDate;
+    long long  _stopValue;
 }
 
 @property (nonatomic, readonly) SKUIImageViewElement *backgroundImageElement;

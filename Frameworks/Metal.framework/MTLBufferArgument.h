@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLBufferArgument : MTLArgument {
-    unsigned short _alignment;
-    unsigned int _dataSize;
-    unsigned short _dataType;
-    MTLStructType *_structType;
+@interface MTLBufferArgument : MTLArgumentInternal {
+    unsigned short  _alignment;
+    unsigned int  _dataSize;
+    unsigned short  _dataType;
+    MTLStructTypeInternal * _structType;
 }
 
 - (unsigned int)bufferAlignment;

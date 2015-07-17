@@ -3,13 +3,13 @@
  */
 
 @interface _UIGestureRecognizerTransformAnalyzer : NSObject {
-    int _dominantComponent;
-    float _lowPassRotationDelta;
-    float _lowPassScaleDelta;
-    float _lowPassTranslationMagnitudeDelta;
-    float _pinchingWeight;
-    float _rotationWeight;
-    float _translationWeight;
+    int  _dominantComponent;
+    float  _lowPassRotationDelta;
+    float  _lowPassScaleDelta;
+    float  _lowPassTranslationMagnitudeDelta;
+    float  _pinchingWeight;
+    float  _rotationWeight;
+    float  _translationWeight;
 }
 
 @property (nonatomic, readonly) int dominantComponent;

@@ -3,59 +3,72 @@
  */
 
 @interface UIAlertControllerVisualStyle : NSObject {
-    UIAlertControllerDescriptor *_descriptor;
-    UITraitCollection *_traitCollection;
+    UIAlertControllerDescriptor * _descriptor;
+    UITraitCollection * _traitCollection;
 }
 
 @property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
 @property (nonatomic, retain) UITraitCollection *traitCollection;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
+- (void).cxx_destruct;
 - (id)_detailMessageFont;
+- (float)_marginAboveDetailMessageFirstBaseline;
+- (float)_scaledMarginAboveDetailMessageFirstBaseline;
 - (float)_scaledMarginAboveMessageLabelFirstBaseline;
 - (float)_scaledMarginAboveTitleLabelFirstBaseline;
 - (float)_scaledMarginBelowLastLabelLastBaseline;
 - (float)_scaledMarginBelowMessageLabelLastBaseline;
 - (float)_scaledMarginBelowTitleLabelLastBaseline;
-- (id)actionHighlightedBackgroundView;
+- (id)actionContentColorForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (float)actionHorizontalContentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
 - (float)actionWidthForMinimumActionWidth:(float)arg1;
+- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 isInteractive:(BOOL)arg4 inContainerView:(id)arg5 descendantOfContainerView:(id)arg6 duration:(double)arg7 completionBlock:(id /* block */)arg8;
+- (void)animateAncillaryViewsForAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 isInteractive:(BOOL)arg4 inContainerView:(id)arg5 descendantOfContainerView:(id)arg6 duration:(double)arg7;
 - (float)backgroundCornerRadius;
 - (id)backgroundView;
+- (id)backgroundViewForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewContentInsets;
 - (struct CGSize { float x1; float x2; })collectionViewOutsetSize;
-- (id)defaultActionBackgroundColorWhenSeparate;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)defaultActionFont;
 - (id)descriptor;
-- (id)dimmingView;
-- (id)disabledActionContentColor;
+- (id)dimmingViewForAlertController:(id)arg1;
 - (BOOL)focusedActionAnimatesOnPresentationAndDismissal;
 - (BOOL)hideActionSeparators;
-- (id)highlightedActionContentColor;
-- (float)horizontalContentMargin;
+- (BOOL)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })highlightedActionTransformForActionSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)interactionProgressForTransitionOfType:(int)arg1 forAlertController:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (float)marginAboveMessageLabelFirstBaseline;
 - (float)marginAboveTitleLabelFirstBaseline;
 - (float)marginBelowLastLabelLastBaseline;
 - (float)marginBelowMessageLabelLastBaseline;
 - (float)marginBelowTitleLabelLastBaseline;
+- (float)maximumHeightForDisplayOnScreen:(id)arg1;
 - (int)maximumNumberOfLinesInMessageLabel;
 - (int)maximumNumberOfLinesInTitleLabel;
 - (float)maximumWidth;
+- (float)maximumWidthForTitleAndMessageContentView;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })presentationAnimationStartTransform;
+- (float)minimumWidth;
+- (int)permittedActionLayoutDirection;
+- (void)positionAlertControllerView:(id)arg1 ofAlertController:(id)arg2 inAvailableSpaceView:(id)arg3;
+- (void)positionAncillaryViewsForAlertController:(id)arg1 withAlertControllerView:(id)arg2 inContainerView:(id)arg3;
+- (id)preferredActionFont;
 - (id)regularActionFont;
 - (float)sectionDelimitingSeparatorDimension;
 - (void)setDescriptor:(id)arg1;
 - (void)setTraitCollection:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textFieldCollectionViewContentInset;
+- (id)textFieldContainingViewWithTextField:(id)arg1;
+- (float)textFieldHorizontalMargin;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
 - (id)traitCollection;
-- (float)verticalContentMargin;
-- (float)visualAltitude;
-
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
-
-- (BOOL)isEqual:(id)arg1;
+- (double)transitionDurationForPresentation:(BOOL)arg1 ofAlertController:(id)arg2;
+- (BOOL)transitionOfType:(int)arg1 shouldBeInteractiveForAlertController:(id)arg2;
 
 @end

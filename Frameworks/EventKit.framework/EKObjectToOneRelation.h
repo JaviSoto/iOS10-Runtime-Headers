@@ -3,8 +3,8 @@
  */
 
 @interface EKObjectToOneRelation : EKObjectRelation {
-    EKObject *_relatedObject;
-    BOOL _weak;
+    EKObject * _relatedObject;
+    BOOL  _weak;
 }
 
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;

@@ -3,12 +3,12 @@
  */
 
 @interface _VMULibraryLoadObserver : NSObject {
-    <VMULibraryLoadDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_serialNotificationsQueue;
+    <VMULibraryLoadDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _serialNotificationsQueue;
     struct _CSTypeRef { 
         unsigned int _opaque_1; 
         unsigned int _opaque_2; 
-    } _symbolicator;
+    }  _symbolicator;
 }
 
 - (void)dealloc;

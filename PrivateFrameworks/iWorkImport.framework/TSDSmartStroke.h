@@ -3,7 +3,7 @@
  */
 
 @interface TSDSmartStroke : TSDStroke {
-    NSString *mStrokeName;
+    NSString * mStrokeName;
 }
 
 @property (nonatomic, copy) NSString *strokeName;

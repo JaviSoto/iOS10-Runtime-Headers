@@ -3,10 +3,10 @@
  */
 
 @interface IMAVController : NSObject {
-    BOOL _blockIncomingInvitationsDuringCall;
-    BOOL _blockMultipleIncomingInvitations;
-    BOOL _blockOutgoingInvitationsDuringCall;
-    NSMutableArray *_delegates;
+    BOOL  _blockIncomingInvitationsDuringCall;
+    BOOL  _blockMultipleIncomingInvitations;
+    BOOL  _blockOutgoingInvitationsDuringCall;
+    NSMutableArray * _delegates;
 }
 
 @property (nonatomic, retain) NSMutableArray *_delegates;
@@ -28,7 +28,6 @@
 
 - (id)_delegates;
 - (void)_dumpCaps;
-- (void)_markSetup;
 - (BOOL)_ready;
 - (void)_receivedPendingACRequests;
 - (void)_receivedPendingVCRequests;

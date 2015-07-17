@@ -3,16 +3,16 @@
  */
 
 @interface SKDownload : NSObject {
-    NSString *_contentIdentifier;
-    long long _contentLength;
-    NSURL *_contentURL;
-    NSNumber *_downloadID;
-    int _downloadState;
-    NSError *_error;
-    float _progress;
-    double _timeRemaining;
-    SKPaymentTransaction *_transaction;
-    NSString *_version;
+    NSString * _contentIdentifier;
+    long long  _contentLength;
+    NSURL * _contentURL;
+    NSNumber * _downloadID;
+    int  _downloadState;
+    NSError * _error;
+    float  _progress;
+    double  _timeRemaining;
+    SKPaymentTransaction * _transaction;
+    NSString * _version;
 }
 
 @property (getter=_downloadID, setter=_setDownloadID:, nonatomic, copy) NSNumber *_downloadID;

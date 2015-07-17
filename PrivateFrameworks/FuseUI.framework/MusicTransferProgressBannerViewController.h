@@ -3,10 +3,10 @@
  */
 
 @interface MusicTransferProgressBannerViewController : UIViewController <MusicTransferObserver, MusicTransferProgressViewControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    MusicTransferProgressBannerView *_bannerView;
-    UIPopoverPresentationController *_presentationController;
-    MusicTransferAggregator *_transferAggregator;
-    MusicTransferProgressViewController *_transferProgressViewController;
+    MusicTransferProgressBannerView * _bannerView;
+    UIPopoverPresentationController * _presentationController;
+    MusicTransferAggregator * _transferAggregator;
+    MusicTransferProgressViewController * _transferProgressViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

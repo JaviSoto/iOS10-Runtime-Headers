@@ -3,11 +3,11 @@
  */
 
 @interface BBObserverServerProxy : NSObject <BBObserverClientInterface, BBObserverServerInterface> {
-    NSXPCConnection *_connection;
-    BOOL _isEstablished;
-    BOOL _isValid;
-    BBObserver *_observerWeak;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSXPCConnection * _connection;
+    BOOL  _isEstablished;
+    BOOL  _isValid;
+    BBObserver * _observerWeak;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
@@ -26,11 +26,12 @@
 - (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getBulletinsWithHandler:(id /* block */)arg1;
 - (void)getObserverDebugInfo:(id /* block */)arg1;
 - (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id /* block */)arg1;
 - (void)getPrivilegedSenderTypesWithHandler:(id /* block */)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)getSectionInfoForSectionIDs:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getSectionInfoWithHandler:(id /* block */)arg1;
 - (void)getSectionOrderRuleWithHandler:(id /* block */)arg1;
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
@@ -56,8 +57,8 @@
 - (void)setQueue:(id)arg1;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;
-- (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
-- (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
+- (void)updateSectionInfo:(id)arg1;
+- (void)updateSectionOrder:(id)arg1;
 - (void)updateSectionOrderRule:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 

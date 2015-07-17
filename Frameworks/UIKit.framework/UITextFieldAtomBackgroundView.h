@@ -3,7 +3,7 @@
  */
 
 @interface UITextFieldAtomBackgroundView : UIView {
-    int _atomStyle;
+    int  _atomStyle;
 }
 
 - (int)atomStyle;

@@ -3,8 +3,8 @@
  */
 
 @interface MPShuffledItemGroup : NSObject <NSSecureCoding> {
-    long long _groupPersistentID;
-    NSMutableArray *_mutableItems;
+    long long  _groupPersistentID;
+    NSMutableArray * _mutableItems;
 }
 
 + (BOOL)supportsSecureCoding;

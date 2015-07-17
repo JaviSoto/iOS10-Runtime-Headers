@@ -3,40 +3,39 @@
  */
 
 @interface TSTCellIterator : NSObject {
-    TSTCell *mCell;
-    TSTTableTileRowInfo *mCurRow;
-    unsigned short mCurRowID;
-    TSTTableTile *mCurTile;
+    TSTCell * mCell;
+    TSTTableTileRowInfo * mCurRow;
+    unsigned short  mCurRowID;
+    TSTTableTile * mCurTile;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } mCurTileRange;
-    BOOL mDontCheckSize;
-    BOOL mDontExpandCellRefs;
-    BOOL mDontInflateFormulas;
-    BOOL mDontReturnMergeRegions;
-    TSTCellRegion *mModelRegion;
-    struct NSObject { Class x1; } *mModelRegionIterator;
+    }  mCurTileRange;
+    BOOL  mDontCheckSize;
+    BOOL  mDontExpandCellRefs;
+    BOOL  mDontInflateFormulas;
+    BOOL  mDontReturnMergeRegions;
+    TSTCellRegion * mModelRegion;
+    struct NSObject { Class x1; } * mModelRegionIterator;
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mPreviousCellID;
-    BOOL mReturnCellBorder;
-    BOOL mReturnEmptyCells;
-    BOOL mReturnHiddenCells;
-    int mRowWalkDirection;
-    BOOL mSkipCommentStorageOnlyCells;
-    BOOL mSkipStyleOnlyCells;
-    TSTTableDataStore *mTableDataStore;
-    TSTTableModel *mTableModel;
+    }  mPreviousCellID;
+    BOOL  mReturnCellBorder;
+    BOOL  mReturnEmptyCells;
+    BOOL  mReturnHiddenCells;
+    int  mRowWalkDirection;
+    BOOL  mSkipCommentStorageOnlyCells;
+    BOOL  mSkipStyleOnlyCells;
+    TSTTableDataStore * mTableDataStore;
+    TSTTableModel * mTableModel;
 }
 
 @property (readonly) BOOL dontExpandCellRefs;
 @property (readonly) int rowWalkDirection;
 @property (nonatomic, readonly) TSTTableModel *tableModel;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (BOOL)dontExpandCellRefs;
 - (BOOL)getNext:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;

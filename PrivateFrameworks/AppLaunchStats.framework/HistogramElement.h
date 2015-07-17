@@ -3,10 +3,10 @@
  */
 
 @interface HistogramElement : NSObject <NSCoding> {
-    unsigned long long count;
-    double probability;
-    unsigned long long queryID;
-    NSString *stringkey;
+    unsigned long long  count;
+    double  probability;
+    unsigned long long  queryID;
+    NSString * stringkey;
 }
 
 @property (nonatomic) unsigned long long count;

@@ -3,8 +3,8 @@
  */
 
 @interface CKDShareResponse : NSObject {
-    CKShare *_share;
-    CKShareID *_shareID;
+    CKShare * _share;
+    CKShareID * _shareID;
 }
 
 @property (nonatomic, retain) CKShare *share;

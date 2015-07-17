@@ -3,7 +3,7 @@
  */
 
 @interface TSPDatabaseObjectWithDataState : TSPDatabaseObject {
-    long long _dataState;
+    long long  _dataState;
 }
 
 - (long long)dataState;

@@ -29,10 +29,12 @@
 - (void)gatherInformationForPath:(id)arg1 reply:(id /* block */)arg2;
 - (void)getApplicationDocumentUsageInfoForBundleID:(id)arg1 withReply:(id /* block */)arg2;
 - (void)getApplicationStatus:(id /* block */)arg1;
+- (void)getApplicationStatusWithAuditToken:(struct { unsigned int x1[8]; })arg1 reply:(id /* block */)arg2;
 - (void)getApplicationStatusWithPID:(int)arg1 reply:(id /* block */)arg2;
 - (void)getAttributeValues:(id)arg1 forItemAtURL:(id)arg2 reply:(id /* block */)arg3;
-- (void)getBackReferencingContainerIDsForURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)getBackReferencingContainerIDsForURLs:(id)arg1 reply:(id /* block */)arg2;
 - (void)getBackReferencingURLForURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)getBookmarkDataForURL:(id)arg1 andAllowAccessByBundleID:(id)arg2 reply:(id /* block */)arg3;
 - (void)getBookmarkDataForURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)getContainerForURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)getContainerForURLFast:(id)arg1 reply:(id /* block */)arg2;
@@ -44,6 +46,7 @@
 - (void)getContainersNeedingUpload:(id /* block */)arg1;
 - (void)getIsContainerWithIDOverQuota:(id)arg1 reply:(id /* block */)arg2;
 - (void)getItemUpdateSenderWithReceiver:(id)arg1 reply:(id /* block */)arg2;
+- (void)getLastSyncDateWithReply:(id /* block */)arg1;
 - (void)getMigrationStatusForPrimaryiCloudAccount:(id /* block */)arg1;
 - (void)getNonLocalVersionSenderWithReceiver:(id)arg1 documentURL:(id)arg2 includeCachedVersions:(BOOL)arg3 reply:(id /* block */)arg4;
 - (void)getNotificationInfoAtURL:(id)arg1 reply:(id /* block */)arg2;
@@ -52,12 +55,13 @@
 - (void)getiWorkPublishingBadgingStatusAtURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)getiWorkPublishingInfoAtURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)handleShareURL:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)iWorkForceSyncContainerID:(id)arg1 ownedByMe:(BOOL)arg2 reply:(id /* block */)arg3;
 - (void)jetsamCloudDocsAppsWithReply:(id /* block */)arg1;
 - (oneway void)log:(const char *)arg1 function:(const char *)arg2 source:(const char *)arg3 line:(int)arg4 message:(id)arg5;
 - (void)performSelfCheck:(id)arg1 reply:(id /* block */)arg2;
 - (void)presentAcceptDialogsForShareURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)presyncContainerWithID:(id)arg1 reply:(id /* block */)arg2;
-- (void)printStatus:(id)arg1 reply:(id /* block */)arg2;
+- (void)printStatus:(id)arg1 containerID:(id)arg2 reply:(id /* block */)arg3;
 - (void)purgeAmount:(long long)arg1 withUrgency:(int)arg2 reply:(id /* block */)arg3;
 - (void)reclaimAmount:(long long)arg1 withUrgency:(int)arg2 reply:(id /* block */)arg3;
 - (void)registerInitialSyncBarrierForID:(id)arg1 reply:(id /* block */)arg2;
@@ -70,7 +74,7 @@
 - (void)setupInstanceWithDict:(id)arg1 reply:(id /* block */)arg2;
 - (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopyShareURLForShare:(id)arg2 appName:(id)arg3 reply:(id /* block */)arg4;
-- (void)startOperation:(id)arg1 toCopySharingAccessToken:(id)arg2 wantsPermissions:(BOOL)arg3 reply:(id /* block */)arg4;
+- (void)startOperation:(id)arg1 toCopySharingAccessToken:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopySharingInfoAtURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopySharingWebAuthTokenForContainerID:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toDestroySharingInfo:(id)arg2 reply:(id /* block */)arg3;

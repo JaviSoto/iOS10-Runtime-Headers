@@ -3,16 +3,16 @@
  */
 
 @interface TUProxyCallModel : TUCallModel {
-    BOOL _addCallAllowed;
-    int _ambiguityState;
-    BOOL _endAndAnswerAllowed;
-    BOOL _hardPauseAvailable;
-    BOOL _holdAllowed;
-    BOOL _holdAndAnswerAllowed;
-    BOOL _mergeable;
-    BOOL _sendToVoicemailAllowed;
-    BOOL _swappable;
-    BOOL _takingCallsPrivateAllowed;
+    BOOL  _addCallAllowed;
+    int  _ambiguityState;
+    BOOL  _endAndAnswerAllowed;
+    BOOL  _hardPauseAvailable;
+    BOOL  _holdAllowed;
+    BOOL  _holdAndAnswerAllowed;
+    BOOL  _mergeable;
+    BOOL  _sendToVoicemailAllowed;
+    BOOL  _swappable;
+    BOOL  _takingCallsPrivateAllowed;
 }
 
 @property (getter=isAddCallAllowed, nonatomic) BOOL addCallAllowed;
@@ -29,6 +29,8 @@
 + (id)sharedInstance;
 
 - (int)ambiguityState;
+- (id)audioCategoryForCall:(id)arg1;
+- (id)audioModeForCall:(id)arg1;
 - (BOOL)isAddCallAllowed;
 - (BOOL)isEndAndAnswerAllowed;
 - (BOOL)isHardPauseAvailable;

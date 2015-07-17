@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentRemoteAssetDownloadRecord : PKPaymentBackgroundDownloadRecord <NSSecureCoding> {
-    NSURL *_passURL;
-    NSDictionary *_remoteAssetsByTaskIdentifier;
+    NSURL * _passURL;
+    NSDictionary * _remoteAssetsByTaskIdentifier;
 }
 
 @property (nonatomic, retain) NSURL *passURL;

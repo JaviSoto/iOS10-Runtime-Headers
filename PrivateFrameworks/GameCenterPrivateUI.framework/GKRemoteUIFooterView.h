@@ -3,13 +3,13 @@
  */
 
 @interface GKRemoteUIFooterView : UIView <RemoteUITableFooter> {
-    float _bottomMargin;
-    int _layoutStyle;
-    float _leftMargin;
-    float _paragraphMargin;
-    float _rightMargin;
-    BOOL _shouldApplyGameCenterTheme;
-    GKLabel *_textLabel;
+    float  _bottomMargin;
+    int  _layoutStyle;
+    float  _leftMargin;
+    float  _paragraphMargin;
+    float  _rightMargin;
+    BOOL  _shouldApplyGameCenterTheme;
+    GKLabel * _textLabel;
 }
 
 @property (nonatomic) float bottomMargin;

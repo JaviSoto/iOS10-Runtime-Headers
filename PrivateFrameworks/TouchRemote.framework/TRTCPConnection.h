@@ -3,15 +3,15 @@
  */
 
 @interface TRTCPConnection : NSObject <TRTCPConnectionStreamDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _closed;
-    TRTCPConnectionStream *_connectionStream;
-    <TRTCPConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSString *_deviceIdentifier;
-    NSObject<OS_dispatch_source> *_keepAliveTimer;
-    NSArray *_relevantPacketEventClasses;
-    int _uniqueID;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _closed;
+    TRTCPConnectionStream * _connectionStream;
+    <TRTCPConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSString * _deviceIdentifier;
+    NSObject<OS_dispatch_source> * _keepAliveTimer;
+    NSArray * _relevantPacketEventClasses;
+    int  _uniqueID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

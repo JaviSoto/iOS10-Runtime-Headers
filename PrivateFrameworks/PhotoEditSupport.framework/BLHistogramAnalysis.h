@@ -3,17 +3,17 @@
  */
 
 @interface BLHistogramAnalysis : NSObject {
-    float _averageLinearBlue;
-    float _averageLinearGreen;
-    float _averageLinearRed;
-    float _blackPoint;
-    float _blackPointBlue;
-    float _blackPointGreen;
-    float _blackPointRed;
-    float _whitePoint;
-    float _whitePointBlue;
-    float _whitePointGreen;
-    float _whitePointRed;
+    float  _averageLinearBlue;
+    float  _averageLinearGreen;
+    float  _averageLinearRed;
+    float  _blackPoint;
+    float  _blackPointBlue;
+    float  _blackPointGreen;
+    float  _blackPointRed;
+    float  _whitePoint;
+    float  _whitePointBlue;
+    float  _whitePointGreen;
+    float  _whitePointRed;
 }
 
 @property (nonatomic) float averageLinearBlue;

@@ -3,19 +3,19 @@
  */
 
 @interface STStgInfo : NSObject {
-    int m_accessMode;
+    int  m_accessMode;
     struct { 
         unsigned int m_data1; 
         unsigned short m_data2; 
         unsigned short m_data3; 
         unsigned char m_data4[8]; 
-    } m_clsid;
-    long m_creationTime;
-    long m_modificationTime;
-    NSString *m_pstrName;
-    unsigned long m_size;
-    int m_type;
-    unsigned long m_userFlags;
+    }  m_clsid;
+    long  m_creationTime;
+    long  m_modificationTime;
+    NSString * m_pstrName;
+    unsigned long  m_size;
+    int  m_type;
+    unsigned long  m_userFlags;
 }
 
 - (void)dealloc;

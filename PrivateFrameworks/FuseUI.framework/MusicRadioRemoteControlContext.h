@@ -3,11 +3,11 @@
  */
 
 @interface MusicRadioRemoteControlContext : NSObject {
-    MPAVItem *_currentlyPlayingItem;
-    RadioTrack *_currentlyPlayingTrack;
-    MusicAVPlayer *_player;
-    RadioStation *_radioStation;
-    long long _trackID;
+    MPAVItem * _currentlyPlayingItem;
+    RadioTrack * _currentlyPlayingTrack;
+    MusicAVPlayer * _player;
+    RadioStation * _radioStation;
+    long long  _trackID;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentlyPlayingItem;

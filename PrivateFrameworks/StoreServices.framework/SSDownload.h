@@ -3,10 +3,10 @@
  */
 
 @interface SSDownload : SSEntity <SSXPCCoding> {
-    NSMutableDictionary *_localAssets;
-    SSDownloadMetadata *_metadata;
-    NSNumber *_prioritizeAboveDownload;
-    SSDownloadStatus *_status;
+    NSMutableDictionary * _localAssets;
+    SSDownloadMetadata * _metadata;
+    NSNumber * _prioritizeAboveDownload;
+    SSDownloadStatus * _status;
 }
 
 @property (getter=_XPCConnection, readonly) SSXPCConnection *_XPCConnection;

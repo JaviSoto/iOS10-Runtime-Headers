@@ -3,14 +3,15 @@
  */
 
 @interface FBWorkspaceLogger : FBFileLogger {
-    unsigned int _overrideDestinations;
-    BOOL _useOverrideDestinations;
+    unsigned int  _overrideDestinations;
+    BOOL  _useOverrideDestinations;
 }
 
 - (void)_configureOverrideDestinationForString:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1;
+- (void)_setLevel:(int)arg1;
 - (id)init;
-- (BOOL)isEnabled;
+- (int)level;
 - (unsigned int)logDestinations;
 - (id)logPrefixForCategory:(id)arg1 destination:(unsigned int)arg2;
 - (int)maxLogCount;

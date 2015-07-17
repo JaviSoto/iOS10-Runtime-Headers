@@ -3,8 +3,8 @@
  */
 
 @interface TSDPathSource : NSObject <NSCopying, TSDMixing> {
-    BOOL mHorizontalFlip;
-    BOOL mVerticalFlip;
+    BOOL  mHorizontalFlip;
+    BOOL  mVerticalFlip;
 }
 
 @property BOOL hasHorizontalFlip;

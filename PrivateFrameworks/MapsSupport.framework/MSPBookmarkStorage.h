@@ -7,15 +7,15 @@
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSString *_identifier;
-    MSPPlaceBookmark *_placeBookmark;
-    double _position;
-    MSPRegionBookmark *_regionBookmark;
-    MSPRouteBookmark *_routeBookmark;
-    double _timestamp;
-    int _type;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    NSString * _identifier;
+    MSPPlaceBookmark * _placeBookmark;
+    double  _position;
+    MSPRegionBookmark * _regionBookmark;
+    MSPRouteBookmark * _routeBookmark;
+    double  _timestamp;
+    int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

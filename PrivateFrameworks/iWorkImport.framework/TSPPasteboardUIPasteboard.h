@@ -3,10 +3,10 @@
  */
 
 @interface TSPPasteboardUIPasteboard : TSPPasteboard {
-    int _cachedChangeCount;
-    NSArray *_cachedPasteboardTypes;
-    unsigned int _pasteboardItemCount;
-    NSMutableDictionary *_pasteboardItemIndexCache;
+    int  _cachedChangeCount;
+    NSArray * _cachedPasteboardTypes;
+    unsigned int  _pasteboardItemCount;
+    NSMutableDictionary * _pasteboardItemIndexCache;
 }
 
 - (void).cxx_destruct;

@@ -3,11 +3,11 @@
  */
 
 @interface QLThumbnailDescriptor : NSObject {
-    float _scaleFactor;
+    float  _scaleFactor;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property float scaleFactor;

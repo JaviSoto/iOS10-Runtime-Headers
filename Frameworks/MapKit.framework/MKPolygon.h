@@ -6,9 +6,9 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _centroid;
-    NSArray *_interiorPolygons;
-    BOOL _isDefinitelyConvex;
+    }  _centroid;
+    NSArray * _interiorPolygons;
+    BOOL  _isDefinitelyConvex;
 }
 
 @property (nonatomic) BOOL _isDefinitelyConvex;

@@ -3,16 +3,18 @@
  */
 
 @interface CKDModifyRecordMetadata : NSObject {
-    NSError *_error;
-    NSString *_etag;
-    BOOL _isDelete;
-    CKDProgressTracker *_progressTracker;
-    CKRecord *_record;
-    CKRecordID *_recordID;
-    CKRecord *_serverRecord;
-    unsigned int _uploadState;
+    int  _batchRank;
+    NSError * _error;
+    NSString * _etag;
+    BOOL  _isDelete;
+    CKDProgressTracker * _progressTracker;
+    CKRecord * _record;
+    CKRecordID * _recordID;
+    CKRecord * _serverRecord;
+    unsigned int  _uploadState;
 }
 
+@property (nonatomic) int batchRank;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSString *etag;
 @property (nonatomic) BOOL isDelete;
@@ -27,6 +29,7 @@
 + (id)modifyMetadataWithRecord:(id)arg1;
 
 - (void).cxx_destruct;
+- (int)batchRank;
 - (id)description;
 - (id)error;
 - (id)etag;
@@ -35,6 +38,7 @@
 - (id)record;
 - (id)recordID;
 - (id)serverRecord;
+- (void)setBatchRank:(int)arg1;
 - (void)setError:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setIsDelete:(BOOL)arg1;

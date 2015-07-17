@@ -3,7 +3,7 @@
  */
 
 @interface TPBodyInfo : NSObject <TSDContainerInfo> {
-    TPPageInfo *_pageInfo;
+    TPPageInfo * _pageInfo;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

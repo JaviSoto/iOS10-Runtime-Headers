@@ -3,16 +3,16 @@
  */
 
 @interface CHBState : NSObject {
-    CHDChart *mChart;
-    bool mHasPrimaryMixedArea;
-    bool mHasPrimaryMixedColumn;
-    bool mHasPrimaryMixedLine;
-    bool mHasSecondaryMixedArea;
-    bool mHasSecondaryMixedColumn;
-    bool mHasSecondaryMixedLine;
-    struct __CFArray { } *mXlChartDataSeriesCollection;
-    int mXlCurrentSeriesIndex;
-    int mXlSeriesCount;
+    CHDChart * mChart;
+    bool  mHasPrimaryMixedArea;
+    bool  mHasPrimaryMixedColumn;
+    bool  mHasPrimaryMixedLine;
+    bool  mHasSecondaryMixedArea;
+    bool  mHasSecondaryMixedColumn;
+    bool  mHasSecondaryMixedLine;
+    struct __CFArray { } * mXlChartDataSeriesCollection;
+    int  mXlCurrentSeriesIndex;
+    int  mXlSeriesCount;
 }
 
 - (id)chart;
@@ -26,6 +26,7 @@
 - (bool)hasSecondaryMixedColumn;
 - (bool)hasSecondaryMixedLine;
 - (id)init;
+- (bool)isMixedChart;
 - (void)readAndCacheXlChartDataSeries;
 - (id)resources;
 - (void)setChart:(id)arg1;

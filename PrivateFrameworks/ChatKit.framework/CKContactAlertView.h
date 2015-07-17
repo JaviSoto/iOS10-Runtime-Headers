@@ -3,10 +3,10 @@
  */
 
 @interface CKContactAlertView : UIView {
-    NSString *_contactDescription;
-    UIImageView *_contactImageView;
-    UILabel *_contactLabel;
-    UIImage *_image;
+    NSString * _contactDescription;
+    UIImageView * _contactImageView;
+    UILabel * _contactLabel;
+    UIImage * _image;
 }
 
 @property (nonatomic, retain) NSString *contactDescription;

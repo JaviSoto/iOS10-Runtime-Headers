@@ -3,13 +3,13 @@
  */
 
 @interface ABLabelPickerViewController : ABPickerViewController {
-    NSArray *_additionalLabels;
-    void *_addressBook;
-    BOOL _didCreateNewLabel;
-    int _itemIndex;
-    ABItemLabelPicker *_labelPicker;
-    ABPropertyGroup *_propertyGroup;
-    NSString *_selectedLabel;
+    NSArray * _additionalLabels;
+    void * _addressBook;
+    BOOL  _didCreateNewLabel;
+    int  _itemIndex;
+    ABItemLabelPicker * _labelPicker;
+    ABPropertyGroup * _propertyGroup;
+    NSString * _selectedLabel;
 }
 
 @property (nonatomic) BOOL didCreateNewLabel;

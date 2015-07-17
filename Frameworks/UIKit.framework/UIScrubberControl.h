@@ -3,44 +3,44 @@
  */
 
 @interface UIScrubberControl : UIOldSliderControl {
-    unsigned int _allowsAnyValue;
-    unsigned int _alwaysShowAllComponentsForDuration;
-    unsigned int _autoSizesToFitDuration;
-    id _delegate;
-    unsigned int _delegateDidChangeScrubValue;
-    unsigned int _delegateDidEnterScrubbingState;
-    unsigned int _delegateShouldBeginScrubbing;
-    unsigned int _didDrag;
-    double _duration;
-    UIView *_elapsedTimeView;
-    unsigned int _endingTracking;
-    unsigned int _largeKnob;
-    float _lastDisplayedWidth;
+    unsigned int  _allowsAnyValue;
+    unsigned int  _alwaysShowAllComponentsForDuration;
+    unsigned int  _autoSizesToFitDuration;
+    id  _delegate;
+    unsigned int  _delegateDidChangeScrubValue;
+    unsigned int  _delegateDidEnterScrubbingState;
+    unsigned int  _delegateShouldBeginScrubbing;
+    unsigned int  _didDrag;
+    double  _duration;
+    UIView * _elapsedTimeView;
+    unsigned int  _endingTracking;
+    unsigned int  _largeKnob;
+    float  _lastDisplayedWidth;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastUpdatedPoint;
-    unsigned int _layoutTimeParts;
-    unsigned int _leftCapIsDownloadCap;
-    float _maxTrackWidth;
-    unsigned int _remainingIsDuration;
-    UIView *_remainingTimeView;
-    unsigned int _requireMomentaryDelay;
-    unsigned int _rightCapIsDownloadCap;
-    unsigned int _sentScrubbingStart;
-    unsigned int _showFullWidthComponents;
-    unsigned int _showKnob;
-    unsigned int _showTimeCentered;
+    }  _lastUpdatedPoint;
+    unsigned int  _layoutTimeParts;
+    unsigned int  _leftCapIsDownloadCap;
+    float  _maxTrackWidth;
+    unsigned int  _remainingIsDuration;
+    UIView * _remainingTimeView;
+    unsigned int  _requireMomentaryDelay;
+    unsigned int  _rightCapIsDownloadCap;
+    unsigned int  _sentScrubbingStart;
+    unsigned int  _showFullWidthComponents;
+    unsigned int  _showKnob;
+    unsigned int  _showTimeCentered;
     /* Warning: unhandled union encoding: '(?="image"@"UIImage""view"@"UIView")' */ union { 
         UIImage *image; 
         id view; 
-    } _sliderAvailableFill;
-    unsigned int _timeLayoutDisabledCount;
-    unsigned int _timeLayoutSkippedForcedLayout;
-    unsigned int _timeLayoutSkippedLayout;
-    double _trackingStartTime;
-    unsigned int _unused;
-    float _valueAvailable;
+    }  _sliderAvailableFill;
+    unsigned int  _timeLayoutDisabledCount;
+    unsigned int  _timeLayoutSkippedForcedLayout;
+    unsigned int  _timeLayoutSkippedLayout;
+    double  _trackingStartTime;
+    unsigned int  _unused;
+    float  _valueAvailable;
 }
 
 + (BOOL)allowLayeredFillForKnob;

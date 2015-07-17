@@ -3,7 +3,7 @@
  */
 
 @interface UIPrintRangePickerView : UIPickerView {
-    float _shift;
+    float  _shift;
 }
 
 - (float)_wheelShift;

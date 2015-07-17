@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartCategoryAxis : TSCHChartAxis {
-    int mRangeContinuousCache;
+    int  mRangeContinuousCache;
 }
 
 + (id)axisForInfo:(id)arg1;

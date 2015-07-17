@@ -3,9 +3,9 @@
  */
 
 @interface CTCellularPlanSubscriptionDataUsage : NSObject <NSCopying, NSSecureCoding> {
-    double _dataCapacity;
-    NSString *_dataCategory;
-    double _dataUsed;
+    double  _dataCapacity;
+    NSString * _dataCategory;
+    double  _dataUsed;
 }
 
 @property (nonatomic, readonly) double dataCapacity;

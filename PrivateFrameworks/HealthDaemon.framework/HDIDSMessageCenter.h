@@ -3,19 +3,19 @@
  */
 
 @interface HDIDSMessageCenter : NSObject <IDSServiceDelegate> {
-    NSString *_cacheDirectoryPath;
-    <HDIDSMessageCenterDelegate> *_delegate;
-    NSMutableDictionary *_errorHandlers;
-    NSObject<OS_dispatch_source> *_expireTimer;
-    NSString *_launchNotification;
-    NSDate *_nextExpireTimerFireDate;
-    NSMutableDictionary *_pbMapping;
-    HDIDSPersistentDictionary *_persistentContextStore;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_requestHandlers;
-    NSMutableDictionary *_responseHandlers;
-    IDSService *_service;
-    NSString *_serviceIdentifier;
+    NSString * _cacheDirectoryPath;
+    <HDIDSMessageCenterDelegate> * _delegate;
+    NSMutableDictionary * _errorHandlers;
+    NSObject<OS_dispatch_source> * _expireTimer;
+    NSString * _launchNotification;
+    NSDate * _nextExpireTimerFireDate;
+    NSMutableDictionary * _pbMapping;
+    HDIDSPersistentDictionary * _persistentContextStore;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _requestHandlers;
+    NSMutableDictionary * _responseHandlers;
+    IDSService * _service;
+    NSString * _serviceIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSString *cacheDirectoryPath;
@@ -41,7 +41,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)dropExtantMessages;
 - (id)idsService;
 - (id)initWithIDSServiceIdentifier:(id)arg1 launchOnDemandNotification:(id)arg2 cacheDirectoryPath:(id)arg3;
 - (void)mapPBRequest:(Class)arg1 toResponse:(Class)arg2 messageID:(unsigned short)arg3;

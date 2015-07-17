@@ -3,18 +3,19 @@
  */
 
 @interface SBAlertItem : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_alertSheet;
-    BOOL _allowInCar;
-    BOOL _allowInSetup;
-    BOOL _allowMessageInCar;
-    NSArray *_allowedBundleIDs;
-    BOOL _didEverActivate;
-    BOOL _didPlayPresentationSound;
-    BOOL _ignoreIfAlreadyDisplaying;
-    BOOL _orderOverSBAlert;
-    BOOL _pendInSetupIfNotAllowed;
-    BOOL _pendWhileKeyBagLocked;
-    BOOL _preventLockOver;
+    UIAlertView * _alertSheet;
+    BOOL  _allowInCar;
+    BOOL  _allowInSetup;
+    BOOL  _allowMessageInCar;
+    NSArray * _allowedBundleIDs;
+    BOOL  _didEverActivate;
+    BOOL  _didEverDeactivate;
+    BOOL  _didPlayPresentationSound;
+    BOOL  _ignoreIfAlreadyDisplaying;
+    BOOL  _orderOverSBAlert;
+    BOOL  _pendInSetupIfNotAllowed;
+    BOOL  _pendWhileKeyBagLocked;
+    BOOL  _preventLockOver;
 }
 
 @property (nonatomic) BOOL allowInCar;
@@ -33,7 +34,9 @@
 + (void)activateAlertItem:(id)arg1;
 
 - (BOOL)_didEverActivate;
+- (BOOL)_didEverDeactivate;
 - (BOOL)_dismissesOverlaysOnLockScreen;
+- (void)_noteDeactivated;
 - (void)_playPresentationSound;
 - (id)alertController;
 - (id)alertItemNotificationDate;

@@ -3,7 +3,7 @@
  */
 
 @interface CKDPShareTokenSaveResponse : PBCodable <NSCopying> {
-    NSString *_routingKey;
+    NSString * _routingKey;
 }
 
 @property (nonatomic, readonly) BOOL hasRoutingKey;

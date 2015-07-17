@@ -3,10 +3,10 @@
  */
 
 @interface BRCRetryCounter : NSObject {
-    long long _latestRetry;
-    unsigned int _retryCount;
-    BOOL _scheduled;
-    long long _throttleHash;
+    long long  _latestRetry;
+    unsigned int  _retryCount;
+    BOOL  _scheduled;
+    long long  _throttleHash;
 }
 
 @property (nonatomic, readonly) long long latestRetry;

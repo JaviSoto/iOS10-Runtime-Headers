@@ -3,18 +3,18 @@
  */
 
 @interface MPUSystemMediaControlsView : UIView <SKUIItemOfferButtonDelegate> {
-    MPUItemOfferButton *_buyAlbumButton;
-    MPUSystemBuyButtonConfiguration *_buyAlbumConfiguration;
-    MPUItemOfferButton *_buyTrackButton;
-    MPUSystemBuyButtonConfiguration *_buyTrackConfiguration;
-    <MPUSystemMediaControlsViewDelegate> *_delegate;
-    int _prefsChangedNotifyToken;
-    MPUSkipLimitView *_skipLimitView;
-    int _style;
-    MPUChronologicalProgressView *_timeInformationView;
-    MPUMediaControlsTitlesView *_trackInformationView;
-    MPUTransportControlsView *_transportControlsView;
-    MPUMediaControlsVolumeView *_volumeView;
+    MPUItemOfferButton * _buyAlbumButton;
+    MPUSystemBuyButtonConfiguration * _buyAlbumConfiguration;
+    MPUItemOfferButton * _buyTrackButton;
+    MPUSystemBuyButtonConfiguration * _buyTrackConfiguration;
+    <MPUSystemMediaControlsViewDelegate> * _delegate;
+    int  _prefsChangedNotifyToken;
+    MPUSkipLimitView * _skipLimitView;
+    int  _style;
+    MPUChronologicalProgressView * _timeInformationView;
+    MPUMediaControlsTitlesView * _trackInformationView;
+    MPUTransportControlsView * _transportControlsView;
+    MPUMediaControlsVolumeView * _volumeView;
 }
 
 @property (nonatomic, readonly) MPUSystemBuyButtonConfiguration *buyAlbumConfiguration;

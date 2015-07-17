@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKIMGroupHeaderRecipient : CKIMComposeRecipient {
-    NSString *_displayString;
-}
+@interface CKIMGroupHeaderRecipient : CKIMComposeRecipient
 
 @property (nonatomic, retain) NSString *displayString;
 
+- (void)dealloc;
 - (id)displayString;
 - (void)setDisplayString:(id)arg1;
 

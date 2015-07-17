@@ -3,8 +3,8 @@
  */
 
 @interface UICIColor : UIColor {
-    CIColor *_ciColor;
-    UIColor *_rgbColor;
+    CIColor * _ciColor;
+    UIColor * _rgbColor;
 }
 
 - (struct CGColor { }*)CGColor;

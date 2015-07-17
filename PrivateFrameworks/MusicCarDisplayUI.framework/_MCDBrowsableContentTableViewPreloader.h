@@ -3,14 +3,14 @@
  */
 
 @interface _MCDBrowsableContentTableViewPreloader : NSObject <MCDBrowsableContentModelListener> {
-    BOOL _cancelled;
-    id /* block */ _cancelledBlock;
-    NSIndexPath *_indexPath;
-    MCDBrowsableContentModel *_model;
-    UINavigationController *_navigationController;
-    BOOL _pushContainerWhenNil;
-    BOOL _pushNowPlayingWhenNil;
-    UIViewController *_sourceViewController;
+    BOOL  _cancelled;
+    id /* block */  _cancelledBlock;
+    NSIndexPath * _indexPath;
+    MCDBrowsableContentModel * _model;
+    UINavigationController * _navigationController;
+    BOOL  _pushContainerWhenNil;
+    BOOL  _pushNowPlayingWhenNil;
+    UIViewController * _sourceViewController;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;

@@ -6,12 +6,12 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
+    }  mNaturalSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } mPoint;
-    int mType;
+    }  mPoint;
+    int  mType;
 }
 
 @property struct CGSize { float x1; float x2; } naturalSize;

@@ -6,7 +6,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
+    }  mSize;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -14,7 +14,7 @@
         float d; 
         float tx; 
         float ty; 
-    } mTransform;
+    }  mTransform;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;

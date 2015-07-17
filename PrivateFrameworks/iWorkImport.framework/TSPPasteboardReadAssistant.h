@@ -3,11 +3,11 @@
  */
 
 @interface TSPPasteboardReadAssistant : NSObject <TSPDecoderReadCoordinatorDelegate> {
-    NSDictionary *_dataInfos;
-    BOOL _isCrossAppPaste;
-    BOOL _isCrossDocumentPaste;
-    TSPObjectContext *_pasteboardContext;
-    TSPPasteboardObject *_pasteboardObject;
+    NSDictionary * _dataInfos;
+    BOOL  _isCrossAppPaste;
+    BOOL  _isCrossDocumentPaste;
+    TSPObjectContext * _pasteboardContext;
+    TSPPasteboardObject * _pasteboardObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

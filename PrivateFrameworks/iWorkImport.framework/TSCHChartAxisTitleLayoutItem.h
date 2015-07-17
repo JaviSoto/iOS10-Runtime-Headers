@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mChartBodySize;
-    float mMinHitSize;
+    }  mChartBodySize;
+    float  mMinHitSize;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } chartBodySize;

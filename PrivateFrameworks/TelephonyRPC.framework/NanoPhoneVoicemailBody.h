@@ -3,8 +3,8 @@
  */
 
 @interface NanoPhoneVoicemailBody : PBCodable <NSCopying> {
-    long long _voicemailNumber;
-    NSData *_voicemailRecording;
+    long long  _voicemailNumber;
+    NSData * _voicemailRecording;
 }
 
 @property (nonatomic, readonly) BOOL hasVoicemailRecording;

@@ -3,10 +3,10 @@
  */
 
 @interface MusicEntityPlayabilityController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _cellularNetworkAllowed;
-    BOOL _hasValidNetworkType;
-    int _networkType;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _cellularNetworkAllowed;
+    BOOL  _hasValidNetworkType;
+    int  _networkType;
 }
 
 - (void).cxx_destruct;

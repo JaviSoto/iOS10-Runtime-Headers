@@ -3,31 +3,31 @@
  */
 
 @interface CKDBMessage : NSObject {
-    NSString *_address;
-    NSDate *_date;
-    NSString *_groupID;
-    NSString *_guid;
-    BOOL _hasBeenRead;
-    int _identifier;
-    BOOL _isAudioMessage;
-    BOOL _isMadrid;
-    BOOL _isOutgoing;
-    BOOL _isVisibleByDefault;
-    NSString *_madridAccount;
-    NSString *_madridAccountGUID;
-    NSString *_madridAccountLogin;
-    NSAttributedString *_madridAttributedBody;
-    NSString *_madridChatGUID;
-    NSString *_madridChatIdentifier;
-    NSString *_madridRoomname;
-    NSString *_madridService;
-    long long _madridType;
-    NSMutableArray *_mediaObjects;
-    NSString *_plainBody;
-    NSArray *_recipients;
-    NSString *_subject;
-    NSString *_text;
-    NSString *_voicemailString;
+    NSString * _address;
+    NSDate * _date;
+    NSString * _groupID;
+    NSString * _guid;
+    BOOL  _hasBeenRead;
+    int  _identifier;
+    BOOL  _isAudioMessage;
+    BOOL  _isMadrid;
+    BOOL  _isOutgoing;
+    BOOL  _isVisibleByDefault;
+    NSString * _madridAccount;
+    NSString * _madridAccountGUID;
+    NSString * _madridAccountLogin;
+    NSAttributedString * _madridAttributedBody;
+    NSString * _madridChatGUID;
+    NSString * _madridChatIdentifier;
+    NSString * _madridRoomname;
+    NSString * _madridService;
+    long long  _madridType;
+    NSMutableArray * _mediaObjects;
+    NSString * _plainBody;
+    NSArray * _recipients;
+    NSString * _subject;
+    NSString * _text;
+    NSString * _voicemailString;
 }
 
 @property (nonatomic, readonly, retain) NSString *address;
@@ -46,7 +46,7 @@
 @property (nonatomic, readonly, retain) NSString *madridAccountGUID;
 @property (nonatomic, readonly, retain) NSString *madridAccountLogin;
 @property (nonatomic, readonly, retain) NSAttributedString *madridAttributedBody;
-@property (nonatomic, readonly) NSString *madridChatGUID;
+@property (nonatomic, readonly, copy) NSString *madridChatGUID;
 @property (nonatomic, readonly, retain) NSString *madridChatIdentifier;
 @property (nonatomic, readonly, retain) NSString *madridRoomname;
 @property (nonatomic, readonly, retain) NSString *madridService;

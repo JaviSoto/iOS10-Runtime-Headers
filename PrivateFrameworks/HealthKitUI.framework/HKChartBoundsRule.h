@@ -3,7 +3,7 @@
  */
 
 @interface HKChartBoundsRule : NSObject {
-    id /* block */ _descriptor;
+    id /* block */  _descriptor;
 }
 
 @property (nonatomic, copy) id /* block */ descriptor;

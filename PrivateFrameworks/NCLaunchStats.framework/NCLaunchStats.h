@@ -3,29 +3,34 @@
  */
 
 @interface NCLaunchStats : NSObject {
-    NSArray *activitySlots;
-    CDDHistoryWindow *allTimeWindow;
-    id /* block */ asyncRecommendHandler;
-    bool backgroundAppRefreshSwitchedOn;
-    CDAttribute *bundleAttr;
-    int classCLockedToken;
-    CDBudget *dataBudget;
-    CDBudget *energyBudget;
-    NSMutableArray *fireDates;
-    NSDate *fireWakeupDate;
-    NSDate *forecastStartDate;
-    bool isClassCLocked;
-    bool kEnableSyslog;
-    unsigned int kTimeGuardBand;
-    NSDate *lastTriggerTime;
-    NSObject<OS_dispatch_queue> *ncLaunchStatsQueue;
-    PCPersistentTimer *pcpTimer;
-    id /* block */ recommendHandler;
-    NSMutableDictionary *seqTracker;
-    CDSession *sessionDuet;
-    NSDate *startDate;
-    int timeZoneSecondsFromGMT;
-    CDAttribute *userEventAttr;
+    NSArray * activitySlots;
+    CDDHistoryWindow * allTimeWindow;
+    id /* block */  asyncRecommendHandler;
+    bool  backgroundAppRefreshSwitchedOn;
+    CDAttribute * bundleAttr;
+    int  classCLockedToken;
+    CDBudget * dataBudget;
+    CDBudget * energyBudget;
+    NSMutableArray * fireDates;
+    NSDate * fireWakeupDate;
+    NSDate * forecastStartDate;
+    bool  isClassCLocked;
+    bool  kEnableSyslog;
+    unsigned int  kTimeGuardBand;
+    NSDate * lastFetchDate;
+    NSDate * lastLaunchDate;
+    NSDate * lastTriggerTime;
+    NSMutableDictionary * launchTracker;
+    NSObject<OS_dispatch_queue> * ncLaunchStatsQueue;
+    int  numPrewarmedLaunches;
+    int  numRepeatedPrewarms;
+    PCPersistentTimer * pcpTimer;
+    NSMutableDictionary * prewarmTimeTracker;
+    id /* block */  recommendHandler;
+    NSMutableDictionary * seqTracker;
+    CDSession * sessionDuet;
+    int  timeZoneSecondsFromGMT;
+    CDAttribute * userEventAttr;
 }
 
 - (void).cxx_destruct;
@@ -42,6 +47,7 @@
 - (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)programTimer;
+- (void)recordPrewarmStatisticsRaw:(id)arg1;
 - (void)setNCLaunchRecommendationHandler:(id /* block */)arg1;
 - (void)setNCLaunchRecommendationHandlerWithCompletion:(id /* block */)arg1;
 - (BOOL)slotIsPredictedForLaunch:(unsigned int)arg1;

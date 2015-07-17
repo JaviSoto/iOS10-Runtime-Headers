@@ -3,8 +3,8 @@
  */
 
 @interface IMMessagePartChatItem : IMMessageChatItem {
-    int _index;
-    NSAttributedString *_text;
+    int  _index;
+    NSAttributedString * _text;
 }
 
 @property (nonatomic) int index;

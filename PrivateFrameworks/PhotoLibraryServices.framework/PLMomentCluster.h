@@ -3,16 +3,16 @@
  */
 
 @interface PLMomentCluster : NSObject {
-    CLLocation *__approximateLocation;
-    NSDate *__endingDate;
-    NSCountedSet *__mergeTags;
-    NSMutableArray *__mutableNodes;
-    NSMutableSet *__nodesWithLocation;
-    NSObject<NSCopying> *__objectID;
-    NSCountedSet *__splitTags;
-    NSDate *__startingDate;
-    NSString *__title;
-    short _generationType;
+    CLLocation * __approximateLocation;
+    NSDate * __endingDate;
+    NSCountedSet * __mergeTags;
+    NSMutableArray * __mutableNodes;
+    NSMutableSet * __nodesWithLocation;
+    NSObject<NSCopying> * __objectID;
+    NSCountedSet * __splitTags;
+    NSDate * __startingDate;
+    NSString * __title;
+    short  _generationType;
 }
 
 @property (setter=_setMergeTags:, nonatomic, retain) NSCountedSet *_mergeTags;

@@ -3,10 +3,10 @@
  */
 
 @interface PLAWDMetricsService : PLService {
-    AWDServerConnection *_awdServerConn;
-    NSMutableDictionary *_classDictionary;
-    NSMutableSet *_currRunningMetrics;
-    NSMutableSet *_updateRunningMetrics;
+    AWDServerConnection * _awdServerConn;
+    NSMutableDictionary * _classDictionary;
+    NSMutableSet * _currRunningMetrics;
+    NSMutableSet * _updateRunningMetrics;
 }
 
 @property (retain) AWDServerConnection *awdServerConn;

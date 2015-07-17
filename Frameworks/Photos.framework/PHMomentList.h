@@ -3,10 +3,10 @@
  */
 
 @interface PHMomentList : PHCollectionList {
-    short _generationType;
-    short _granularityLevel;
-    NSDate *_representativeDate;
-    int _sortIndex;
+    short  _generationType;
+    short  _granularityLevel;
+    NSDate * _representativeDate;
+    int  _sortIndex;
 }
 
 @property (nonatomic, readonly) short generationType;

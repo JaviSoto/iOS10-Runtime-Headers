@@ -3,7 +3,7 @@
  */
 
 @interface CPLStatistics : NSObject <CPLEngineComponent> {
-    BOOL _closed;
+    BOOL  _closed;
     struct { 
         int period; 
         struct { 
@@ -30,12 +30,12 @@
             long long pullErrors; 
             long long managementErrors; 
         } syncerrors; 
-    } _currentSnapshot;
-    long _lastServedAggregationWindow;
-    NSURL *_logfileURL;
-    NSObject<OS_dispatch_queue> *_persistanceQueue;
-    BOOL _statisticsEnabled;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    }  _currentSnapshot;
+    long  _lastServedAggregationWindow;
+    NSURL * _logfileURL;
+    NSObject<OS_dispatch_queue> * _persistanceQueue;
+    BOOL  _statisticsEnabled;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

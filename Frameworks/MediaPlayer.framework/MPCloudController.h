@@ -3,16 +3,16 @@
  */
 
 @interface MPCloudController : NSObject {
-    NSObject<HSCloudAvailability> *_cloudAvailabilityController;
-    HSCloudClient *_cloudClient;
-    SSVMediaContentTasteController *_contentTasteController;
-    BOOL _isCloudEnabled;
-    BOOL _isInitialImport;
-    BOOL _isUpdateInProgress;
-    BOOL _jaliscoGeniusEnabled;
-    int _preferencesChangedNotifyToken;
-    BOOL _preferencesChangedNotifyTokenIsValid;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<HSCloudAvailability> * _cloudAvailabilityController;
+    HSCloudClient * _cloudClient;
+    SSVMediaContentTasteController * _contentTasteController;
+    BOOL  _isCloudEnabled;
+    BOOL  _isInitialImport;
+    BOOL  _isUpdateInProgress;
+    BOOL  _jaliscoGeniusEnabled;
+    int  _preferencesChangedNotifyToken;
+    BOOL  _preferencesChangedNotifyTokenIsValid;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) BOOL canDefaultMediaLibraryShowCloudContent;

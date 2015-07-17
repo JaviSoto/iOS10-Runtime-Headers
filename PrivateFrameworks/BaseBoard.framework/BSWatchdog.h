@@ -3,16 +3,16 @@
  */
 
 @interface BSWatchdog : NSObject {
-    BOOL _completed;
-    id /* block */ _completion;
-    <BSWatchdogDelegate> *_delegate;
-    BOOL _hasFired;
-    BOOL _invalidated;
-    <BSWatchdogProviding> *_provider;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDate *_startDate;
-    double _timeout;
-    BSTimer *_timer;
+    BOOL  _completed;
+    id /* block */  _completion;
+    <BSWatchdogDelegate> * _delegate;
+    BOOL  _hasFired;
+    BOOL  _invalidated;
+    <BSWatchdogProviding> * _provider;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDate * _startDate;
+    double  _timeout;
+    BSTimer * _timer;
 }
 
 @property (nonatomic, retain) <BSWatchdogDelegate> *delegate;
@@ -28,6 +28,7 @@
 - (void)_stageOneTimerFired;
 - (void)_stageTwoTimerFired;
 - (void)_startWatchdogTimer;
+- (void)_watchdogInvalidated;
 - (void)_watchdogTimerFired;
 - (void)dealloc;
 - (id)delegate;

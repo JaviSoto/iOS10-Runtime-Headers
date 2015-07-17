@@ -3,8 +3,8 @@
  */
 
 @interface PLPhotoEditMutableModel : PLPhotoEditModel {
-    _UIDynamicValueAnimation *_currentCopyAnimation;
-    int _transactionDepth;
+    _UIDynamicValueAnimation * _currentCopyAnimation;
+    int  _transactionDepth;
 }
 
 @property (nonatomic) int appliedOrientation;

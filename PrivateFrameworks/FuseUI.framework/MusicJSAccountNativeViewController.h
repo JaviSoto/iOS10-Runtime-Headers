@@ -3,10 +3,10 @@
  */
 
 @interface MusicJSAccountNativeViewController : MusicJSNativeViewController <MusicJSAccountNativeViewController> {
-    IKAppDocument *_accountDocument;
-    NSDictionary *_accountDocumentOptions;
-    IKDOMDocument *_accountJSDocument;
-    <MusicJSAccountNativeViewControllerDelegate> *_delegate;
+    IKAppDocument * _accountDocument;
+    NSDictionary * _accountDocumentOptions;
+    IKDOMDocument * _accountJSDocument;
+    <MusicJSAccountNativeViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic, readonly) IKAppDocument *accountDocument;

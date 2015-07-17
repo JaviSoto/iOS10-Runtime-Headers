@@ -3,9 +3,9 @@
  */
 
 @interface MPUReportingPlaybackActivityEvent : NSObject <MPUReportingEvent> {
-    SSVPlayActivityEvent *_playActivityEvent;
-    NSString *_playbackSessionID;
-    BOOL _shouldReportToStore;
+    SSVPlayActivityEvent * _playActivityEvent;
+    NSString * _playbackSessionID;
+    BOOL  _shouldReportToStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

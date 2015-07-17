@@ -3,20 +3,20 @@
  */
 
 @interface ACDAccountStore : ACAccountStore <ACDAccountStoreProtocol> {
-    ACDAccessPluginManager *_accessPluginManager;
-    NSMutableArray *_accountChanges;
-    ACDAuthenticationDialogManager *_authenticationDialogManager;
-    ACDAuthenticationPluginManager *_authenticationPluginManager;
-    ACDClientAuthorizationManager *_authorizationManager;
-    ACDClient *_client;
-    ACDDatabase *_database;
-    ACDDataclassOwnersManager *_dataclassOwnersManager;
-    <ACDAccountStoreDelegate> *_delegate;
-    ACDFakeRemoteAccountStoreSession *_fakeRemoteAccountStoreSession;
-    ACDAccountStoreFilter *_filter;
-    BOOL _migrationInProgress;
-    BOOL _notificationsEnabled;
-    ACRemoteDeviceProxy *_remoteDeviceProxy;
+    ACDAccessPluginManager * _accessPluginManager;
+    NSMutableArray * _accountChanges;
+    ACDAuthenticationDialogManager * _authenticationDialogManager;
+    ACDAuthenticationPluginManager * _authenticationPluginManager;
+    ACDClientAuthorizationManager * _authorizationManager;
+    ACDClient * _client;
+    ACDDatabase * _database;
+    ACDDataclassOwnersManager * _dataclassOwnersManager;
+    <ACDAccountStoreDelegate> * _delegate;
+    ACDFakeRemoteAccountStoreSession * _fakeRemoteAccountStoreSession;
+    ACDAccountStoreFilter * _filter;
+    BOOL  _migrationInProgress;
+    BOOL  _notificationsEnabled;
+    ACRemoteDeviceProxy * _remoteDeviceProxy;
 }
 
 @property (nonatomic, retain) ACDAccessPluginManager *accessPluginManager;
@@ -44,7 +44,6 @@
 - (BOOL)_canManagedAccountType:(id)arg1 syncManagedDataclass:(id)arg2;
 - (BOOL)_canSaveAccount:(id)arg1;
 - (id)_childAccountsForAccountWithID:(id)arg1;
-- (BOOL)_clientIsEntitledForAdHocAccountType:(id)arg1;
 - (id)_clientTokenForAccountIdentifier:(id)arg1 error:(id)arg2;
 - (id)_clientTokenQueue;
 - (void)_completeSave:(id)arg1 dataclassActions:(id)arg2 completion:(id /* block */)arg3;
@@ -55,12 +54,12 @@
 - (id)_handleAccountMod:(id)arg1 withDataclassActions:(id)arg2;
 - (BOOL)_isManagedAccount:(id)arg1 enabledForManagedDataclass:(id)arg2;
 - (id)_legacyCredentialForAccount:(id)arg1 client:(id)arg2 error:(id*)arg3;
-- (void)_noteAccountStoreDidSaveAccountsWithAccountTypeIdentifiers:(id)arg1;
+- (void)_noteAccountStoreDidSaveAccountsWithAccountTypeIdentifiers:(id)arg1 accountIdentifiers:(id)arg2;
 - (id)_removeAccountNoSave:(id)arg1 withDataclassActions:(id)arg2;
 - (void)_removeClientTokenForAccountIdentifer:(id)arg1;
 - (void)_requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 allowUserInteraction:(BOOL)arg3 withHandler:(id /* block */)arg4;
 - (id)_save;
-- (void)_setAccountManagedObjectRelationships:(id)arg1 withAccount:(id)arg2 isNew:(BOOL)arg3 error:(id*)arg4;
+- (void)_setAccountManagedObjectRelationships:(id)arg1 withAccount:(id)arg2 oldAccount:(id)arg3 error:(id*)arg4;
 - (void)_updateAccountNoSave:(id)arg1 withDataclassActions:(id)arg2 error:(id*)arg3;
 - (void)_updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)accessKeysForAccountType:(id)arg1 handler:(id /* block */)arg2;
@@ -101,6 +100,7 @@
 - (id)delegate;
 - (void)deleteAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)disconnectFromRemoteAccountStore;
+- (void)discoverPropertiesForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (void)displayAccountTypeForAccountWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)enabledDataclassesForAccountWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (id)filter;
@@ -138,6 +138,7 @@
 - (void)setAuthenticationPluginManager:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setClientBundleID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)setCredential:(id)arg1 forAccount:(id)arg2 serviceID:(id)arg3 completion:(id /* block */)arg4;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;

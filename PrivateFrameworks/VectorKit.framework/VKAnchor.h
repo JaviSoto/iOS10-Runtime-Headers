@@ -6,7 +6,7 @@
     struct shared_ptr<vk::Anchor> { 
         struct Anchor {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _anchor;
+    }  _anchor;
 }
 
 @property (nonatomic) struct { double x1; double x2; } coordinate;

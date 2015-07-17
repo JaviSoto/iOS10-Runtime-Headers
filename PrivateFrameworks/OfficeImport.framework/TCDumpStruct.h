@@ -3,10 +3,10 @@
  */
 
 @interface TCDumpStruct : TCDumpType {
-    NSMutableArray *mMembers;
-    long mSize;
-    long mSizeCorrection;
-    NSString *mSizeFieldName;
+    NSMutableArray * mMembers;
+    long  mSize;
+    long  mSizeCorrection;
+    NSString * mSizeFieldName;
 }
 
 - (void)dealloc;

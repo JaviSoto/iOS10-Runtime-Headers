@@ -3,12 +3,12 @@
  */
 
 @interface _UIPreviewItemProxy : NSObject {
-    NSURL *_URL;
-    NSURL *_URLToDeleteOnDealloc;
-    NSURL *_URLsToDeleteOnDealloc;
-    NSString *_name;
-    NSString *_previewItemContentType;
-    NSURL *_previewURLOverride;
+    NSURL * _URL;
+    NSURL * _URLToDeleteOnDealloc;
+    NSURL * _URLsToDeleteOnDealloc;
+    NSString * _name;
+    NSString * _previewItemContentType;
+    NSURL * _previewURLOverride;
 }
 
 @property (nonatomic, copy) NSURL *URLToDeleteOnDealloc;
@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSURL *previewItemURL;
 @property (nonatomic, copy) NSURL *previewItemURLOverride;
 
+- (void).cxx_destruct;
 - (id)URLToDeleteOnDealloc;
 - (id)_primitive_previewItemContentType;
 - (void)dealloc;

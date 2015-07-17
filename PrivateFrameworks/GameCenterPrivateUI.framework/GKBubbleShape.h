@@ -3,11 +3,11 @@
  */
 
 @interface GKBubbleShape : NSObject {
-    float _controlpointVariance;
-    float _endpointVariance;
-    unsigned int _vertexCount;
-    struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; } *_vertexCurves;
-    float _vertexVariance;
+    float  _controlpointVariance;
+    float  _endpointVariance;
+    unsigned int  _vertexCount;
+    struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; } * _vertexCurves;
+    float  _vertexVariance;
 }
 
 @property (nonatomic) float controlpointVariance;

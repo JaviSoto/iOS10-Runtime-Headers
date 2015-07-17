@@ -8,11 +8,11 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    float _linkSpacing;
-    SKUIEditorialLinkView *_linkView;
-    SKUITextBoxView *_textBoxView;
-    float _totalHeight;
+    }  _contentInset;
+    float  _linkSpacing;
+    SKUIEditorialLinkView * _linkView;
+    SKUITextBoxView * _textBoxView;
+    float  _totalHeight;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

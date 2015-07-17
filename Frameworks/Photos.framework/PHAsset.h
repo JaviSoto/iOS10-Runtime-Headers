@@ -2,36 +2,39 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAsset : PHObject <_PLImageLoadingAsset> {
-    int _assetSource;
-    int _avalanchePickType;
-    NSString *_burstIdentifier;
-    NSString *_cloudIdentifier;
-    BOOL _cloudIsDeletable;
-    int _cloudPlaceholderKind;
-    BOOL _complete;
-    NSDate *_creationDate;
-    NSString *_directory;
-    double _duration;
-    int _exifOrientation;
-    NSArray *_faceRegions;
-    BOOL _favorite;
-    NSString *_filename;
-    BOOL _hasAdjustments;
-    BOOL _hidden;
-    NSData *_locationData;
-    unsigned int _mediaSubtypes;
-    int _mediaType;
-    NSDate *_modificationDate;
-    unsigned int _persistenceState;
-    unsigned int _pixelHeight;
-    unsigned int _pixelWidth;
-    unsigned int _thumbnailIndex;
-    NSDate *_trashedDate;
-    NSString *_uniformTypeIdentifier;
+@interface PHAsset : PHObject <PUDisplayAsset, _PLImageLoadingAsset> {
+    NSDate * _adjustmentTimestamp;
+    int  _avalanchePickType;
+    NSString * _burstIdentifier;
+    NSString * _cloudIdentifier;
+    BOOL  _cloudIsDeletable;
+    int  _cloudPlaceholderKind;
+    BOOL  _complete;
+    NSDate * _creationDate;
+    NSString * _directory;
+    double  _duration;
+    int  _exifOrientation;
+    NSArray * _faceRegions;
+    BOOL  _favorite;
+    NSString * _filename;
+    BOOL  _hasAdjustments;
+    BOOL  _hidden;
+    NSData * _locationData;
+    unsigned int  _mediaSubtypes;
+    int  _mediaType;
+    NSDate * _modificationDate;
+    unsigned int  _persistenceState;
+    unsigned int  _pixelHeight;
+    unsigned int  _pixelWidth;
+    short  _savedAssetType;
+    unsigned int  _thumbnailIndex;
+    NSDate * _trashedDate;
+    NSString * _uniformTypeIdentifier;
 }
 
 @property (nonatomic, readonly) NSURL *ALAssetURL;
+@property (nonatomic, readonly) NSDate *adjustmentTimestamp;
+@property (nonatomic, readonly) double aspectRatio;
 @property (nonatomic, readonly) int assetSource;
 @property (nonatomic, readonly) int avalanchePickType;
 @property (nonatomic, readonly) NSString *burstIdentifier;
@@ -49,6 +52,7 @@
 @property (nonatomic, readonly) NSArray *faceRegions;
 @property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
 @property (nonatomic, readonly) NSString *filename;
+@property (nonatomic, readonly) unsigned int fullsizeDataFormat;
 @property (nonatomic, readonly) BOOL hasAdjustments;
 @property (readonly) unsigned int hash;
 @property (getter=isHidden, nonatomic, readonly) BOOL hidden;
@@ -57,9 +61,12 @@
 @property (nonatomic, readonly) BOOL isJPEG;
 @property (nonatomic, readonly) BOOL isPartOfBurst;
 @property (nonatomic, readonly) BOOL isRAW;
+@property (nonatomic, readonly) BOOL isTemporaryPlaceholder;
+@property (nonatomic, readonly) NSString *localizedGeoDescription;
 @property (nonatomic, readonly) CLLocation *location;
 @property (nonatomic, readonly) NSData *locationData;
 @property (nonatomic, readonly) unsigned int mediaSubtypes;
+@property (nonatomic, readonly) unsigned int mediaType;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly) NSString *metadataDebugDescription;
 @property (nonatomic, readonly) NSDate *modificationDate;
@@ -67,13 +74,20 @@
 @property (nonatomic, readonly) unsigned int pixelHeight;
 @property (nonatomic, readonly) unsigned int pixelWidth;
 @property (nonatomic, readonly) BOOL representsBurst;
+@property (nonatomic, readonly) short savedAssetType;
+@property (nonatomic, readonly) unsigned int sourceType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int thumbnailIndex;
+@property (getter=isTrashed, nonatomic, readonly) BOOL trashed;
 @property (nonatomic, readonly) NSDate *trashedDate;
 @property (nonatomic, readonly) NSString *uniformTypeIdentifier;
+@property (nonatomic, readonly) NSString *uuid;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
++ (void)_computeFingerPrintsOfAsset:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)_fetchAssetsMatchingAdjustedFingerPrint:(id)arg1;
++ (id)_fetchAssetsMatchingMasterFingerPrint:(id)arg1;
 + (id)_transformMediaSubtypeComparisonPredicate:(id)arg1;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
@@ -89,13 +103,10 @@
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsBursts;
-+ (BOOL)managedObjectSupportsCloudSharedType;
 + (BOOL)managedObjectSupportsHiddenState;
-+ (BOOL)managedObjectSupportsPhotoStreamType;
++ (BOOL)managedObjectSupportsSavedAssetType;
 + (BOOL)managedObjectSupportsTrashedState;
 + (BOOL)managedObjectSupportsVisibilityState;
-+ (BOOL)managedObjectSupportsWallpaperType;
-+ (BOOL)managedObjectSupportsiTunesSyncType;
 + (id)pl_managedAssetsForAssets:(id)arg1;
 + (unsigned int)pl_phAssetMediaSubtypeForPLAssetSubtype:(short)arg1;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
@@ -104,10 +115,12 @@
 - (id)ALAssetURL;
 - (id)PTPProperties;
 - (id)__dictionaryWithContentsOfData:(id)arg1;
+- (id)_createCommentPropertyObject;
 - (id)_createPropertyObjectOfClass:(Class)arg1 properties:(id)arg2 isExtraObject:(BOOL)arg3;
 - (id)_fileURLForMetadataWithExtension:(id)arg1;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id /* block */)arg2;
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id /* block */)arg4;
+- (id)adjustmentTimestamp;
 - (id)adjustmentsDebugMetadata;
 - (double)aspectRatio;
 - (int)assetSource;
@@ -116,12 +129,14 @@
 - (id)burstIdentifier;
 - (unsigned int)burstSelectionTypes;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)canPerformSharingAction;
 - (void)cancelContentEditingInputRequest:(unsigned int)arg1;
 - (Class)changeRequestClass;
 - (id)cloudIdentifier;
 - (BOOL)cloudIsDeletable;
 - (int)cloudPlaceholderKind;
 - (int)cloudSharedAssetPlaceholderKind;
+- (id)commentProperties;
 - (BOOL)complete;
 - (id)creationDate;
 - (id)debugFilename;
@@ -179,6 +194,7 @@
 - (BOOL)isRAW;
 - (BOOL)isStreamedVideo;
 - (BOOL)isTimelapsePlaceholder;
+- (BOOL)isTrashed;
 - (BOOL)isVideo;
 - (short)kind;
 - (short)kindSubtype;
@@ -211,6 +227,7 @@
 - (id)reservedFileURLForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (id)reservedPathForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (short)savedAssetType;
+- (unsigned int)sourceType;
 - (id)thumbnailIdentifier;
 - (unsigned int)thumbnailIndex;
 - (id)trashedDate;
@@ -221,5 +238,10 @@
 + (int)_pu_mediaTypeForAssets:(id)arg1;
 + (id)pu_typeStringForAssets:(id)arg1;
 + (id)pu_typeStringForAssetsWithIdentifiers:(id)arg1;
+
+- (unsigned int)fullsizeDataFormat;
+- (unsigned int)isContentEqualTo:(id)arg1;
+- (BOOL)isTemporaryPlaceholder;
+- (id)localizedGeoDescription;
 
 @end

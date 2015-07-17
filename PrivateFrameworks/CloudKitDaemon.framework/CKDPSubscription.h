@@ -3,24 +3,24 @@
  */
 
 @interface CKDPSubscription : PBCodable <NSCopying> {
-    int _evaluationType;
-    NSMutableArray *_filters;
-    BOOL _fireOnce;
+    int  _evaluationType;
+    NSMutableArray * _filters;
+    BOOL  _fireOnce;
     struct { 
         unsigned int evaluationType : 1; 
         unsigned int owner : 1; 
         unsigned int fireOnce : 1; 
-    } _has;
-    CKDPIdentifier *_identifier;
+    }  _has;
+    CKDPIdentifier * _identifier;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _mutationTriggers;
-    CKDPSubscriptionNotification *_notification;
-    int _owner;
-    NSMutableArray *_recordTypes;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _mutationTriggers;
+    CKDPSubscriptionNotification * _notification;
+    int  _owner;
+    NSMutableArray * _recordTypes;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic) int evaluationType;

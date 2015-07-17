@@ -3,8 +3,8 @@
  */
 
 @interface MecabraFacemarkCandidate : NSObject {
-    NSString *_category;
-    NSString *_string;
+    NSString * _category;
+    NSString * _string;
 }
 
 @property (readonly) NSString *category;

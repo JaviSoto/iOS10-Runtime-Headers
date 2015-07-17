@@ -3,11 +3,11 @@
  */
 
 @interface CKTypingIndicatorLayer : CALayer {
-    CALayer *_largeBubble;
-    CALayer *_mediumBubble;
-    CALayer *_smallBubble;
-    CALayer *_thinkingDot;
-    CAReplicatorLayer *_thinkingDots;
+    CALayer * _largeBubble;
+    CALayer * _mediumBubble;
+    CALayer * _smallBubble;
+    CALayer * _thinkingDot;
+    CAReplicatorLayer * _thinkingDots;
 }
 
 @property (nonatomic, retain) CALayer *largeBubble;

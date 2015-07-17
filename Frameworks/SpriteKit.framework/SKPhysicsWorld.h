@@ -3,12 +3,12 @@
  */
 
 @interface SKPhysicsWorld : NSObject <NSCoding> {
-    <SKPhysicsContactDelegate> *_contactDelegate;
+    <SKPhysicsContactDelegate> * _contactDelegate;
     struct CGVector { 
         float dx; 
         float dy; 
-    } _gravity;
-    float speed;
+    }  _gravity;
+    float  speed;
 }
 
 @property (nonatomic) <SKPhysicsContactDelegate> *contactDelegate;
@@ -18,7 +18,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void)addBody:(id)arg1;
 - (void)addJoint:(id)arg1;
 - (id)bodies;

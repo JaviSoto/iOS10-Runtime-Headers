@@ -3,21 +3,21 @@
  */
 
 @interface GKSectionPresentationData : NSObject {
-    float _footerMaxY;
-    float _footerMinY;
-    float _headerMaxY;
-    float _headerMinY;
-    float _itemsMaxY;
-    float _itemsMinY;
-    float _maxY;
-    float _minY;
-    unsigned int _numFooters;
-    unsigned int _numHeaders;
-    unsigned int _numItems;
-    unsigned int _numOverlays;
-    unsigned int _overlayOffset;
-    int _section;
-    float _showMoreMaxY;
+    float  _footerMaxY;
+    float  _footerMinY;
+    float  _headerMaxY;
+    float  _headerMinY;
+    float  _itemsMaxY;
+    float  _itemsMinY;
+    float  _maxY;
+    float  _minY;
+    unsigned int  _numFooters;
+    unsigned int  _numHeaders;
+    unsigned int  _numItems;
+    unsigned int  _numOverlays;
+    unsigned int  _overlayOffset;
+    int  _section;
+    float  _showMoreMaxY;
 }
 
 @property (nonatomic) float footerMaxY;

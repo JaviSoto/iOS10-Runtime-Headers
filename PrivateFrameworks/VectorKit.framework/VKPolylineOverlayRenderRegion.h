@@ -9,21 +9,21 @@
         struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } _rectsForSnapping;
+    }  _rectsForSnapping;
     struct vector<VKTileKey, std::__1::allocator<VKTileKey> > { 
         struct VKTileKey {} *__begin_; 
         struct VKTileKey {} *__end_; 
         struct __compressed_pair<VKTileKey *, std::__1::allocator<VKTileKey> > { 
             struct VKTileKey {} *__first_; 
         } __end_cap_; 
-    } _snappedTileKeys;
-    NSSet *_tiles;
+    }  _snappedTileKeys;
+    NSSet * _tiles;
     struct { 
         double x0; 
         double x1; 
         double y0; 
         double y1; 
-    } _visibleRect;
+    }  _visibleRect;
 }
 
 @property (nonatomic, readonly) NSSet *tiles;

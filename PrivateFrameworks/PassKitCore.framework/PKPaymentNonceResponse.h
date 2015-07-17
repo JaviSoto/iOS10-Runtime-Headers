@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentNonceResponse : PKPaymentWebServiceResponse {
-    NSData *_nonceData;
+    NSData * _nonceData;
 }
 
 @property (nonatomic, retain) NSData *nonceData;

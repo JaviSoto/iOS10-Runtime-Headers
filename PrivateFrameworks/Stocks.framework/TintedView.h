@@ -3,8 +3,8 @@
  */
 
 @interface TintedView : UIView {
-    UIImage *_image;
-    UIColor *_tintColor;
+    UIImage * _image;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIImage *image;

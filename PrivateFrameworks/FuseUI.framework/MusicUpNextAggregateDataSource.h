@@ -3,16 +3,16 @@
  */
 
 @interface MusicUpNextAggregateDataSource : NSObject <MusicUpNextCompositeDataSourceDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_compositeDataSources;
-    <MusicUpNextAggregateDataSourceDelegate> *_delegate;
-    BOOL _hidesNowPlaying;
-    MusicUpNextPlaybackHistoryDataSource *_historyDataSource;
-    MusicEntityValueContext *_itemEntityValueContext;
-    MusicUpNextNowPlayingDataSource *_nowPlayingDataSource;
-    NSIndexPath *_nowPlayingIndexPath;
-    MPUAVPlayer *_player;
-    UIViewController *_presentingViewController;
-    MusicUpNextQueueDataSource *_queueDataSource;
+    NSArray * _compositeDataSources;
+    <MusicUpNextAggregateDataSourceDelegate> * _delegate;
+    BOOL  _hidesNowPlaying;
+    MusicUpNextPlaybackHistoryDataSource * _historyDataSource;
+    MusicEntityValueContext * _itemEntityValueContext;
+    MusicUpNextNowPlayingDataSource * _nowPlayingDataSource;
+    NSIndexPath * _nowPlayingIndexPath;
+    MPUAVPlayer * _player;
+    UIViewController * _presentingViewController;
+    MusicUpNextQueueDataSource * _queueDataSource;
 }
 
 @property (nonatomic, readonly) NSArray *compositeDataSources;

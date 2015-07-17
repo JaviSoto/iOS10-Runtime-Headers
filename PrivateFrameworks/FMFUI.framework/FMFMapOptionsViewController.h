@@ -3,12 +3,12 @@
  */
 
 @interface FMFMapOptionsViewController : UIViewController {
-    UIView *_bottomWhitePane;
-    <FMFMapOptionsViewControllerDelegate> *_delegate;
-    MKMapAttribution *_mapAttribution;
-    UIButton *_mapAttributionButton;
-    UISegmentedControl *_segmentedControl;
-    UIView *_topTapView;
+    UIView * _bottomWhitePane;
+    <FMFMapOptionsViewControllerDelegate> * _delegate;
+    MKMapAttribution * _mapAttribution;
+    UIButton * _mapAttributionButton;
+    UISegmentedControl * _segmentedControl;
+    UIView * _topTapView;
 }
 
 @property (nonatomic, retain) UIView *bottomWhitePane;

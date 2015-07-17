@@ -3,11 +3,11 @@
  */
 
 @interface NSAKDeserializerStream : NSObject <NSDeserializerStream> {
-    const char *current;
-    BOOL freeWhenDone;
-    unsigned int left;
-    unsigned int max;
-    const void *memory;
+    const char * current;
+    BOOL  freeWhenDone;
+    unsigned int  left;
+    unsigned int  max;
+    const void * memory;
 }
 
 - (void)dealloc;

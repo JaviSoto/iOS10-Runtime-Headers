@@ -3,12 +3,12 @@
  */
 
 @interface BRCLogState : NSObject {
-    struct __asl_object_s { } *_asl_client;
-    struct __asl_object_s { } *_asl_store;
-    NSString *_basename;
-    NSURL *_directory;
-    int _fd;
-    NSObject<OS_dispatch_source> *_fdDeletionWatcher;
+    struct __asl_object_s { } * _asl_client;
+    struct __asl_object_s { } * _asl_store;
+    NSString * _basename;
+    NSURL * _directory;
+    int  _fd;
+    NSObject<OS_dispatch_source> * _fdDeletionWatcher;
 }
 
 @property (nonatomic, retain) NSString *basename;

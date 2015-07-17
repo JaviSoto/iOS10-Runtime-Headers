@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotosSharingProgressOverlay : UIView {
-    BOOL _isShowing;
-    UIView *_progressView;
+    BOOL  _isShowing;
+    UIView * _progressView;
 }
 
 @property (nonatomic, retain) UIView *progressView;

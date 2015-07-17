@@ -3,10 +3,10 @@
  */
 
 @interface PLMoment : PLManagedObject <PLAssetContainer, PLMomentData_Private> {
-    PLMomentNameInfo *_cachedNameInfo;
-    BOOL _loadedNameInfo;
-    BOOL didRegisteredWithUserInterfaceContext;
-    BOOL isRegisteredForChanges;
+    PLMomentNameInfo * _cachedNameInfo;
+    BOOL  _loadedNameInfo;
+    BOOL  didRegisteredWithUserInterfaceContext;
+    BOOL  isRegisteredForChanges;
 }
 
 @property (nonatomic, readonly) unsigned int approximateCount;

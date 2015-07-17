@@ -3,9 +3,9 @@
  */
 
 @interface PLKeywordManager : NSObject {
-    PLGatekeeperClient *_assetsdClient;
-    PLManagedObjectContext *_libraryContext;
-    PLPhotoLibrary *_photoLibrary;
+    PLGatekeeperClient * _assetsdClient;
+    PLManagedObjectContext * _libraryContext;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 + (id)writeQueue;

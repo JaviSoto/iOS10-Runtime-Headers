@@ -3,11 +3,11 @@
  */
 
 @interface MPConcreteMediaItemCollection : MPMediaItemCollection <MPCacheableConcreteMediaEntity, NSCoding, NSCopying> {
-    int _grouping;
-    long long _identifier;
-    MPMediaQuery *_itemsQuery;
-    MPConcreteMediaEntityPropertiesCache *_propertiesCache;
-    MPMediaItem *_representativeItem;
+    int  _grouping;
+    long long  _identifier;
+    MPMediaQuery * _itemsQuery;
+    MPConcreteMediaEntityPropertiesCache * _propertiesCache;
+    MPMediaItem * _representativeItem;
 }
 
 @property (nonatomic, readonly, retain) MPConcreteMediaEntityPropertiesCache *cachedPropertyValues;

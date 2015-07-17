@@ -3,17 +3,17 @@
  */
 
 @interface AWDAirPlayPhotoSessionStartedOnServer : PBCodable <NSCopying> {
-    NSString *_clientModel;
-    NSString *_clientVersion;
+    NSString * _clientModel;
+    NSString * _clientVersion;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
-    } _has;
-    NSString *_sessionUUID;
-    int _status;
-    unsigned long long _timestamp;
-    unsigned int _transportType;
+    }  _has;
+    NSString * _sessionUUID;
+    int  _status;
+    unsigned long long  _timestamp;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic, retain) NSString *clientModel;

@@ -3,14 +3,14 @@
  */
 
 @interface EKPredicateSearch : NSObject <EKCancellableRemoteOperation> {
-    id /* block */ _callback;
-    id _cancellationToken;
-    Class _entityClass;
-    BOOL _finished;
-    BOOL _isCancelled;
-    NSPredicate *_predicate;
-    int _retryCount;
-    EKEventStore *_store;
+    id /* block */  _callback;
+    id  _cancellationToken;
+    Class  _entityClass;
+    BOOL  _finished;
+    BOOL  _isCancelled;
+    NSPredicate * _predicate;
+    int  _retryCount;
+    EKEventStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +21,7 @@
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 
 - (void)_startActualWithCompletion:(id /* block */)arg1;
+- (unsigned long long)_startOSActivity;
 - (void)cancel;
 - (void)dealloc;
 - (void)disconnect;

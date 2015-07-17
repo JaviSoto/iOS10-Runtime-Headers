@@ -2,26 +2,26 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKLinkedAppView : UITableViewCell <SKStoreProductViewControllerDelegate> {
-    UIActivityIndicatorView *_activityIndicator;
-    BOOL _appInstalled;
-    NSURL *_appLaunchURL;
-    UILabel *_appName;
-    BOOL _appNotAvailable;
-    UILabel *_appPublisher;
-    SSSoftwareLibraryItem *_foundLibraryItem;
-    NSDictionary *_foundStoreItem;
-    UIImageView *_iconView;
-    UILabel *_loadingLabel;
-    BOOL _lookupInitiated;
-    UIColor *_mainLabelColor;
-    UILabel *_price;
-    SKStoreProductViewController *_productViewController;
-    NSArray *_storeIDs;
-    UIColor *_subTextLabelColor;
-    UILabel *_tapToOpen;
-    PKLinkedAppUserRatingView *_userRatingView;
-    UIButton *_viewButton;
+@interface PKLinkedAppView : PKTableViewCell <SKStoreProductViewControllerDelegate> {
+    UIActivityIndicatorView * _activityIndicator;
+    BOOL  _appInstalled;
+    NSURL * _appLaunchURL;
+    UILabel * _appName;
+    BOOL  _appNotAvailable;
+    UILabel * _appPublisher;
+    SSSoftwareLibraryItem * _foundLibraryItem;
+    NSDictionary * _foundStoreItem;
+    UIImageView * _iconView;
+    UILabel * _loadingLabel;
+    BOOL  _lookupInitiated;
+    UIColor * _mainLabelColor;
+    UILabel * _price;
+    SKStoreProductViewController * _productViewController;
+    NSArray * _storeIDs;
+    UIColor * _subTextLabelColor;
+    UILabel * _tapToOpen;
+    PKLinkedAppUserRatingView * _userRatingView;
+    UIButton * _viewButton;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
@@ -49,21 +49,17 @@
 @property (nonatomic, retain) UIButton *viewButton;
 
 - (BOOL)_anyAppIsInstalled:(id)arg1;
-- (int)_bindingTypeForNewsstandItem:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
 - (void)_cleanupViews;
-- (struct CGSize { float x1; float x2; })_desiredSizeForNewsstandItem:(id)arg1;
 - (int)_iconOptionsForItem:(id)arg1;
 - (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
 - (int)_iconVariantForScale:(float)arg1 item:(id)arg2;
 - (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
 - (BOOL)_itemArtNeedsShine:(id)arg1;
-- (BOOL)_itemIsNewsstandApp:(id)arg1;
 - (void)_layoutLoadingView;
 - (void)_layoutLockupView;
 - (void)_layoutNotAvailableView;
-- (id)_newsstandArtworkForItem:(id)arg1;
 - (id)_priceForItem:(id)arg1;
 - (struct CGSize { float x1; float x2; })_sizeFromImage:(id)arg1;
 - (id)activityIndicator;
@@ -76,6 +72,7 @@
 - (id)foundLibraryItem;
 - (id)foundStoreItem;
 - (id)iconView;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2 reuseIdentifier:(id)arg3;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;

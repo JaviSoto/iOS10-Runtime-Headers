@@ -3,11 +3,11 @@
  */
 
 @interface CUIPSDLayerEffectOuterGlow : CUIPSDLayerEffectComponent {
-    int _blendMode;
-    unsigned int _blurSize;
-    CUIColor *_color;
-    float _opacity;
-    unsigned int _spread;
+    int  _blendMode;
+    unsigned int  _blurSize;
+    CUIColor * _color;
+    float  _opacity;
+    unsigned int  _spread;
 }
 
 @property int blendMode;

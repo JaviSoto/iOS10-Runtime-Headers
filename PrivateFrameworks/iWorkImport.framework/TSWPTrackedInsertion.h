@@ -3,9 +3,9 @@
  */
 
 @interface TSWPTrackedInsertion : NSObject <TSWPReplaceAction> {
-    TSWPChangeSession *_changeSession;
-    TSWPSelection *_selection;
-    NSString *_string;
+    TSWPChangeSession * _changeSession;
+    TSWPSelection * _selection;
+    NSString * _string;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIRoundedRectButton : UIButton {
-    UIView *_borderView;
-    UILabel *_subtitleLabel;
+    UIView * _borderView;
+    UILabel * _subtitleLabel;
 }
 
 - (void).cxx_destruct;

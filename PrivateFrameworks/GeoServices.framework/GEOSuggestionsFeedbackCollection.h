@@ -7,16 +7,16 @@
         unsigned int sessionID : 1; 
         unsigned int suggestionEntryIndex : 1; 
         unsigned int suggestionsEntryListIndex : 1; 
-    } _has;
+    }  _has;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionID;
-    GEOPDAutocompleteEntry *_suggestionEntry;
-    int _suggestionEntryIndex;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
-    int _suggestionsEntryListIndex;
+    }  _sessionID;
+    GEOPDAutocompleteEntry * _suggestionEntry;
+    int  _suggestionEntryIndex;
+    NSData * _suggestionEntryMetadata;
+    NSData * _suggestionMetadata;
+    int  _suggestionsEntryListIndex;
 }
 
 @property (nonatomic) BOOL hasSessionID;

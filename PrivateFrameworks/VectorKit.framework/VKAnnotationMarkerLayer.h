@@ -6,25 +6,25 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _accumulatedCenterOffset;
-    VKAnnotationMarker *_annotationMarker;
+    }  _accumulatedCenterOffset;
+    VKAnnotationMarker * _annotationMarker;
     struct CGPoint { 
         float x; 
         float y; 
-    } _centerOffset;
-    float _contentScale;
-    BOOL _hasMass;
-    BOOL _hasScreenRect;
-    VKAnnotationModel *_model;
+    }  _centerOffset;
+    float  _contentScale;
+    BOOL  _hasMass;
+    BOOL  _hasScreenRect;
+    VKAnnotationModel * _model;
     struct { 
         double x0; 
         double x1; 
         double y0; 
         double y1; 
-    } _screenRect;
-    int _styleType;
-    NSMutableArray *_sublayers;
-    VKAnnotationMarkerLayer *_superlayer;
+    }  _screenRect;
+    int  _styleType;
+    NSMutableArray * _sublayers;
+    VKAnnotationMarkerLayer * _superlayer;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } accumulatedCenterOffset;
@@ -39,14 +39,13 @@
 @property (nonatomic, readonly, copy) NSArray *sublayers;
 @property (nonatomic) VKAnnotationMarkerLayer *superlayer;
 
-- (id).cxx_construct;
 - (id)_styleAttributes;
 - (void)_updateStyle;
-- (int)_vectorType;
+- (unsigned char)_vectorType;
 - (struct CGPoint { float x1; float x2; })accumulatedCenterOffset;
 - (void)addSublayer:(id)arg1;
 - (id)annotationMarker;
-- (void)appendCommandsToBuffer:(struct CommandBuffer { int (**x1)(); char *x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned int x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long x_3_2_1; } x_9_1_3; } x9; id x10; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; in void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; in short x26; int x27; void*x28; in void*x29; double x30; void*x31; int x32; in void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; in short x40; int x41; void*x42; in void*x43; double x44; void*x45; int x46; in void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; short x53; void*x54; const void*x55; BOOL x56; void*x57; void*x58; unsigned char x59; void*x60; unsigned char x61; out long x62; out const unsigned short x63; void*x64; void*x65; BOOL x66; void*x67; void*x68; struct  {} x69; void*x70; char *x71; void*x72; void*x73; void*x74; void*x75; void*x76; in short x77; int x78; void*x79; in void*x80; double x81; void*x82; int x83; in void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; }*)arg1 inContext:(id)arg2;
+- (void)appendCommandsToBuffer:(struct CommandBuffer { int (**x1)(); char *x2; unsigned char x3; struct RenderQueue {} *x4; struct ClearItem {} *x5; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_6_1_1; struct RenderItem {} **x_6_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_7_1_1; struct Texture2DLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_8_1_1; struct BufferLoadItem {} *x_8_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_8_1_3; } x8; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_9_1_3; } x9; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_10_1_1; unsigned int x_10_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long x_3_2_1; } x_10_1_3; } x10; id x11; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; unsigned long x24; }*)arg1 inContext:(id)arg2;
 - (struct CGPoint { float x1; float x2; })centerOffset;
 - (float)contentScale;
 - (void)dealloc;
@@ -76,7 +75,7 @@
 - (id)sublayers;
 - (id)superlayer;
 - (void)updateWithContentScale:(float)arg1;
-- (void)updateWithStyleQuery:(const struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
+- (void)updateWithStyleQuery:(const struct shared_ptr<gss::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)willLayoutWithContext:(id)arg1;
 
 @end

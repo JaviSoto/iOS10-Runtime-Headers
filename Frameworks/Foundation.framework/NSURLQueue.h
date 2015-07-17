@@ -3,14 +3,14 @@
  */
 
 @interface NSURLQueue : NSObject {
-    BOOL _pad1;
-    BOOL _pad2;
-    BOOL _pad3;
-    unsigned int count;
-    NSURLQueueNode *head;
-    id monitor;
-    NSURLQueueNode *tail;
-    BOOL waitOnTake;
+    BOOL  _pad1;
+    BOOL  _pad2;
+    BOOL  _pad3;
+    unsigned int  count;
+    NSURLQueueNode * head;
+    id  monitor;
+    NSURLQueueNode * tail;
+    BOOL  waitOnTake;
 }
 
 + (id)newNode;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIMenuPopoverController : NSObject <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    <SKUIMenuPopoverDelegate> *_delegate;
-    SKUIMenuViewController *_menuViewController;
-    UIPopoverController *_popoverController;
+    <SKUIMenuPopoverDelegate> * _delegate;
+    SKUIMenuViewController * _menuViewController;
+    UIPopoverController * _popoverController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

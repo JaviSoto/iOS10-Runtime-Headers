@@ -3,18 +3,18 @@
  */
 
 @interface NSStringDrawingContext : NSObject {
-    float _actualScaleFactor;
-    float _actualTrackingAdjustment;
-    float _baselineOffset;
-    float _firstBaselineOffset;
-    id _layout;
-    NSDictionary *_linkAttributes;
-    unsigned int _maximumNumberOfLines;
-    float _minimumScaleFactor;
-    float _minimumTrackingAdjustment;
-    unsigned int _numberOfLineFragments;
-    float _scaledBaselineOffset;
-    float _scaledLineHeight;
+    float  _actualScaleFactor;
+    float  _actualTrackingAdjustment;
+    float  _baselineOffset;
+    float  _firstBaselineOffset;
+    id  _layout;
+    NSDictionary * _linkAttributes;
+    unsigned int  _maximumNumberOfLines;
+    float  _minimumScaleFactor;
+    float  _minimumTrackingAdjustment;
+    unsigned int  _numberOfLineFragments;
+    float  _scaledBaselineOffset;
+    float  _scaledLineHeight;
     struct { 
         unsigned int _wantsNumberOfLineFragments : 1; 
         unsigned int _wrapsForTruncationMode : 1; 
@@ -24,7 +24,8 @@
         unsigned int _drawsDebugBaselines : 1; 
         unsigned int _cachesLayout : 1; 
         unsigned int _usesSimpleTextEffects : 1; 
-    } _sdcFlags;
+        unsigned int _activeRenderers : 4; 
+    }  _sdcFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,11 +35,13 @@
             float width; 
             float height; 
         } size; 
-    } _totalBounds;
+    }  _totalBounds;
 }
 
+@property (nonatomic) unsigned int activeRenderers;
 @property (nonatomic) float actualScaleFactor;
 @property (nonatomic) float actualTrackingAdjustment;
+@property (nonatomic, readonly) float actualTrackingAdjustment;
 @property (nonatomic) float baselineOffset;
 @property (nonatomic) BOOL cachesLayout;
 @property (nonatomic) BOOL drawsDebugBaselines;
@@ -58,6 +61,7 @@
 @property (nonatomic) BOOL wantsScaledLineHeight;
 @property (nonatomic) BOOL wrapsForTruncationMode;
 
+- (unsigned int)activeRenderers;
 - (float)actualScaleFactor;
 - (float)actualTrackingAdjustment;
 - (float)baselineOffset;
@@ -74,6 +78,7 @@
 - (unsigned int)numberOfLineFragments;
 - (float)scaledBaselineOffset;
 - (float)scaledLineHeight;
+- (void)setActiveRenderers:(unsigned int)arg1;
 - (void)setActualScaleFactor:(float)arg1;
 - (void)setActualTrackingAdjustment:(float)arg1;
 - (void)setBaselineOffset:(float)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface TPNumberPadButton : UIControl <TPNumberPadButtonProtocol> {
-    UIColor *_color;
-    CALayer *_glyphLayer;
-    CALayer *_highlightedGlyphLayer;
-    TPRevealingRingView *_revealingRingView;
-    unsigned int character;
+    UIColor * _color;
+    CALayer * _glyphLayer;
+    CALayer * _highlightedGlyphLayer;
+    TPRevealingRingView * _revealingRingView;
+    unsigned int  character;
 }
 
 @property (nonatomic) float alphaOutsideAndInsideRing;
@@ -40,10 +40,10 @@
 + (BOOL)usesTelephonyGlyphsWhereAvailable;
 + (float)verticalPadding;
 
+- (void).cxx_destruct;
 - (float)alphaOutsideAndInsideRing;
 - (unsigned int)character;
 - (id)color;
-- (void)dealloc;
 - (id)defaultColor;
 - (id)glyphLayer;
 - (id)highlightedGlyphLayer;

@@ -3,7 +3,7 @@
  */
 
 @interface CITile2Filter : CITileFilter {
-    NSNumber *inputAcuteAngle;
+    NSNumber * inputAcuteAngle;
 }
 
 @property (nonatomic, retain) NSNumber *inputAcuteAngle;
@@ -11,7 +11,6 @@
 + (id)customAttributes;
 
 - (id)inputAcuteAngle;
-- (void)setDefaults;
 - (void)setInputAcuteAngle:(id)arg1;
 
 @end

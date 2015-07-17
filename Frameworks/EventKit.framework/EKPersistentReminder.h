@@ -3,7 +3,7 @@
  */
 
 @interface EKPersistentReminder : EKPersistentCalendarItem {
-    EKObjectID *_parentID;
+    EKObjectID * _parentID;
 }
 
 @property (getter=isCompleted, nonatomic) BOOL completed;

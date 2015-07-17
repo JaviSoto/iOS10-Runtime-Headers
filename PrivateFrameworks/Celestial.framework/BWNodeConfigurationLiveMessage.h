@@ -3,8 +3,8 @@
  */
 
 @interface BWNodeConfigurationLiveMessage : BWNodeMessage {
-    long long _configurationID;
-    BWFormat *_updatedFormat;
+    long long  _configurationID;
+    BWFormat * _updatedFormat;
 }
 
 @property (readonly) long long configurationID;

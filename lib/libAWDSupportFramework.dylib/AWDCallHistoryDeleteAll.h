@@ -6,9 +6,9 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int recordCount : 1; 
-    } _has;
-    unsigned int _recordCount;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _recordCount;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasRecordCount;

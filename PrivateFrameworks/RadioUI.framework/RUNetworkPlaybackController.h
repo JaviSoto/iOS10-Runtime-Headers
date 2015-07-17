@@ -3,10 +3,10 @@
  */
 
 @interface RUNetworkPlaybackController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    AVAssetCache *_assetCache;
-    NSString *_highQualityAssetFlavor;
-    double _minimumBitrateForHighQuality;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    AVAssetCache * _assetCache;
+    NSString * _highQualityAssetFlavor;
+    double  _minimumBitrateForHighQuality;
 }
 
 @property (nonatomic, readonly) AVAssetCache *assetCache;

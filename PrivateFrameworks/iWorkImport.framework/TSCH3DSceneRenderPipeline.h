@@ -3,15 +3,15 @@
  */
 
 @interface TSCH3DSceneRenderPipeline : TSCH3DRenderPipeline {
-    TSCH3DCamera *mCamera;
-    TSCH3DGLFramebuffer *mFramebuffer;
-    TSCH3DSceneRenderPipeline *mOriginal;
-    NSNumber *mPreserveFramebufferContent;
-    NSNumber *mSamples;
-    NSNumber *mScale;
-    TSCH3DScene *mScene;
-    TSCH3DSceneRenderSetup *mSetup;
-    NSNumber *mSuperSamples;
+    TSCH3DCamera * mCamera;
+    TSCH3DGLFramebuffer * mFramebuffer;
+    TSCH3DSceneRenderPipeline * mOriginal;
+    NSNumber * mPreserveFramebufferContent;
+    NSNumber * mSamples;
+    NSNumber * mScale;
+    TSCH3DScene * mScene;
+    TSCH3DSceneRenderSetup * mSetup;
+    NSNumber * mSuperSamples;
 }
 
 @property (nonatomic, readonly) TSCH3DCamera *camera;

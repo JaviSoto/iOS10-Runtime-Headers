@@ -3,15 +3,15 @@
  */
 
 @interface IDSDaemonListener : NSObject <IDSDaemonListenerProtocol> {
-    NSMutableDictionary *_accountToDevices;
-    NSHashTable *_handlers;
-    BOOL _hidingDisconnect;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    BOOL _postedSetupComplete;
-    NSProtocolChecker *_protocol;
-    BOOL _setupComplete;
-    NSMutableDictionary *_topicToAccountDictionaries;
-    NSMutableDictionary *_topicToEnabledAccounts;
+    NSMutableDictionary * _accountToDevices;
+    NSHashTable * _handlers;
+    BOOL  _hidingDisconnect;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    BOOL  _postedSetupComplete;
+    NSProtocolChecker * _protocol;
+    BOOL  _setupComplete;
+    NSMutableDictionary * _topicToAccountDictionaries;
+    NSMutableDictionary * _topicToEnabledAccounts;
 }
 
 @property (setter=_setHidingDisconnect:, nonatomic) BOOL _hidingDisconnect;

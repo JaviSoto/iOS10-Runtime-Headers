@@ -3,15 +3,15 @@
  */
 
 @interface GEORoadAccessPoint : PBCodable <NSCopying> {
-    int _drivingDirection;
+    int  _drivingDirection;
     struct { 
         unsigned int drivingDirection : 1; 
         unsigned int walkingDirection : 1; 
         unsigned int isApproximate : 1; 
-    } _has;
-    BOOL _isApproximate;
-    GEOLatLng *_location;
-    int _walkingDirection;
+    }  _has;
+    BOOL  _isApproximate;
+    GEOLatLng * _location;
+    int  _walkingDirection;
 }
 
 @property (nonatomic) int drivingDirection;

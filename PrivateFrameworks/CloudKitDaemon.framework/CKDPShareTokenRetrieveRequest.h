@@ -3,9 +3,9 @@
  */
 
 @interface CKDPShareTokenRetrieveRequest : PBRequest <NSCopying> {
-    NSString *_routingKey;
-    CKDPShareIdentifier *_shareId;
-    NSData *_shortTokenHash;
+    NSString * _routingKey;
+    CKDPShareIdentifier * _shareId;
+    NSData * _shortTokenHash;
 }
 
 @property (nonatomic, readonly) BOOL hasRoutingKey;

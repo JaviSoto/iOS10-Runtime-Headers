@@ -3,15 +3,15 @@
  */
 
 @interface TKVibrationRecorderTouchSurfaceRecordedDataWrapper : NSObject {
-    BOOL _displayLinkHasRefreshedAtLeastOnce;
-    unsigned int _maximumFramesPerSecondRate;
-    void *_recordedData;
-    unsigned long _recordedDataCursor;
-    unsigned long _recordedDataElementsCount;
-    double _vibrationPatternDidStartTimestamp;
-    double _vibrationPatternMaximumDuration;
-    double _warmUpModeDidStartTimestamp;
-    BOOL _warmUpModeEnabled;
+    BOOL  _displayLinkHasRefreshedAtLeastOnce;
+    unsigned int  _maximumFramesPerSecondRate;
+    void * _recordedData;
+    unsigned long  _recordedDataCursor;
+    unsigned long  _recordedDataElementsCount;
+    double  _vibrationPatternDidStartTimestamp;
+    double  _vibrationPatternMaximumDuration;
+    double  _warmUpModeDidStartTimestamp;
+    BOOL  _warmUpModeEnabled;
 }
 
 @property (setter=_setDisplayLinkHasRefreshedAtLeastOnce:, nonatomic) BOOL _displayLinkHasRefreshedAtLeastOnce;

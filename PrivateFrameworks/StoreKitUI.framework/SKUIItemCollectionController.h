@@ -3,22 +3,22 @@
  */
 
 @interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
-    SKUIItemArtworkContext *_artworkContext;
-    SKUIResourceLoader *_artworkLoader;
-    SKUIClientContext *_clientContext;
-    <SKUIItemCollectionDelegate> *_delegate;
-    BOOL _delegateProvidesScreenshots;
-    NSMutableDictionary *_iconArtworkRequestIDs;
-    SKUIStyledImageDataConsumer *_iconDataConsumer;
-    NSArray *_items;
-    SKUIScreenshotDataConsumer *_landscapeScreenshotDataConsumer;
-    UIImage *_landscapeScreenshotPlaceholderImage;
-    int _numberOfItemsPerPage;
-    float _numberOfPagesToCacheAhead;
-    UIImage *_placeholderImage;
-    SKUIScreenshotDataConsumer *_portraitScreenshotDataConsumer;
-    UIImage *_portraitScreenshotPlaceholderImage;
-    NSMutableDictionary *_screenshotArtworkRequestIDs;
+    SKUIItemArtworkContext * _artworkContext;
+    SKUIResourceLoader * _artworkLoader;
+    SKUIClientContext * _clientContext;
+    <SKUIItemCollectionDelegate> * _delegate;
+    BOOL  _delegateProvidesScreenshots;
+    NSMutableDictionary * _iconArtworkRequestIDs;
+    SKUIStyledImageDataConsumer * _iconDataConsumer;
+    NSArray * _items;
+    SKUIScreenshotDataConsumer * _landscapeScreenshotDataConsumer;
+    UIImage * _landscapeScreenshotPlaceholderImage;
+    int  _numberOfItemsPerPage;
+    float  _numberOfPagesToCacheAhead;
+    UIImage * _placeholderImage;
+    SKUIScreenshotDataConsumer * _portraitScreenshotDataConsumer;
+    UIImage * _portraitScreenshotPlaceholderImage;
+    NSMutableDictionary * _screenshotArtworkRequestIDs;
 }
 
 @property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;

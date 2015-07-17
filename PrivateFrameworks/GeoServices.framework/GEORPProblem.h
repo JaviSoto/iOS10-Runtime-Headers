@@ -6,16 +6,16 @@
     struct { 
         unsigned int problemType : 1; 
         unsigned int protocolVersion : 1; 
-    } _has;
-    GEORPProblemContext *_problemContext;
-    GEORPProblemCorrections *_problemCorrections;
-    int _problemType;
-    unsigned int _protocolVersion;
+    }  _has;
+    GEORPProblemContext * _problemContext;
+    GEORPProblemCorrections * _problemCorrections;
+    int  _problemType;
+    unsigned int  _protocolVersion;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _userPaths;
+    }  _userPaths;
 }
 
 @property (nonatomic, readonly) BOOL hasProblemContext;

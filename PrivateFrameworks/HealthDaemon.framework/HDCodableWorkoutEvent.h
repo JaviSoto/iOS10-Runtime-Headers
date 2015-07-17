@@ -3,12 +3,12 @@
  */
 
 @interface HDCodableWorkoutEvent : PBCodable <NSCopying> {
-    double _date;
+    double  _date;
     struct { 
         unsigned int date : 1; 
         unsigned int type : 1; 
-    } _has;
-    long long _type;
+    }  _has;
+    long long  _type;
 }
 
 @property (nonatomic) double date;

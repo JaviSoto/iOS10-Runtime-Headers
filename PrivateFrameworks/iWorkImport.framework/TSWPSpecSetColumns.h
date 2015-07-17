@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetColumns : TSWPSpecColumns {
-    TSWPColumns *_columns;
-    BOOL _unset;
+    TSWPColumns * _columns;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

@@ -6,12 +6,12 @@
     struct { 
         unsigned int caseSensitive : 1; 
         unsigned int  : 31; 
-    } flags;
-    NSCharacterSet *invertedSkipSet;
-    id locale;
-    unsigned int scanLocation;
-    NSString *scanString;
-    NSCharacterSet *skipSet;
+    }  flags;
+    NSCharacterSet * invertedSkipSet;
+    id  locale;
+    unsigned int  scanLocation;
+    NSString * scanString;
+    NSCharacterSet * skipSet;
 }
 
 - (id)_invertedSkipSet;

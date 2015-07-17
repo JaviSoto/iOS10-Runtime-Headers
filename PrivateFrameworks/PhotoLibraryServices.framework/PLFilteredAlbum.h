@@ -3,16 +3,16 @@
  */
 
 @interface PLFilteredAlbum : NSObject <PLCloudSharedAlbumProtocol, PLIndexMapperDataSource, PLIndexMappingCache, PLUserEditableAlbumProtocol> {
-    struct NSObject { Class x1; } *_backingAlbum;
-    BOOL _backingAlbumSupportsCloudShared;
-    BOOL _backingAlbumSupportsEdits;
-    NSArray *_filterParameters;
-    NSMutableIndexSet *_filteredIndexes;
-    PLIndexMapper *_indexMapper;
-    NSMutableOrderedSet *_weak_assets;
-    int filter;
-    BOOL isObservingContextChanges;
-    NSPredicate *predicate;
+    struct NSObject { Class x1; } * _backingAlbum;
+    BOOL  _backingAlbumSupportsCloudShared;
+    BOOL  _backingAlbumSupportsEdits;
+    NSArray * _filterParameters;
+    NSMutableIndexSet * _filteredIndexes;
+    PLIndexMapper * _indexMapper;
+    NSMutableOrderedSet * _weak_assets;
+    int  filter;
+    BOOL  isObservingContextChanges;
+    NSPredicate * predicate;
 }
 
 @property (nonatomic) NSMutableOrderedSet *_assets;
@@ -50,7 +50,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSDate *endDate;
 @property (nonatomic) int filter;
-@property (nonatomic, readonly) NSArray *filterParameters;
+@property (nonatomic, readonly, retain) NSArray *filterParameters;
 @property (nonatomic, readonly, copy) NSIndexSet *filteredIndexes;
 @property (nonatomic, readonly, retain) NSURL *groupURL;
 @property (nonatomic) BOOL hasUnseenContentBoolValue;

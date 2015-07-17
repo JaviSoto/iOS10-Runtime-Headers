@@ -3,7 +3,7 @@
  */
 
 @interface CKOperationFlowControlManager : NSObject {
-    NSMutableDictionary *_flowControlledOperationClasses;
+    NSMutableDictionary * _flowControlledOperationClasses;
 }
 
 @property (readonly) NSMutableDictionary *flowControlledOperationClasses;

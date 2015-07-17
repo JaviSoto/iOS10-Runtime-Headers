@@ -3,10 +3,10 @@
  */
 
 @interface MusicContextualActionsHeaderViewController : UIViewController <MusicContextualActionsHeaderViewDelegate> {
-    BOOL _allowsSelection;
-    MusicEntityValueContext *_entityValueContext;
-    MusicContextualActionsHeaderView *_headerView;
-    id /* block */ _selectionHandler;
+    BOOL  _allowsSelection;
+    MusicEntityValueContext * _entityValueContext;
+    MusicContextualActionsHeaderView * _headerView;
+    id /* block */  _selectionHandler;
 }
 
 @property (nonatomic) BOOL allowsSelection;

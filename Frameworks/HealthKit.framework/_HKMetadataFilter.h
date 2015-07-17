@@ -3,8 +3,8 @@
  */
 
 @interface _HKMetadataFilter : _HKFilter {
-    NSString *_key;
-    unsigned int _operatorType;
+    NSString * _key;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly, copy) NSString *key;

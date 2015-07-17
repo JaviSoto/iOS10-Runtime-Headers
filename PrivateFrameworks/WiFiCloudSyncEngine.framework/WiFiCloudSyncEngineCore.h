@@ -3,11 +3,11 @@
  */
 
 @interface WiFiCloudSyncEngineCore : NSObject {
-    int (*callback;
-    NSThread *clientThread;
-    void *context;
-    BOOL iCloudSyncingEnabled;
-    NSUbiquitousKeyValueStore *keyValueStore;
+    int (* callback;
+    NSThread * clientThread;
+    void * context;
+    BOOL  iCloudSyncingEnabled;
+    NSUbiquitousKeyValueStore * keyValueStore;
 }
 
 @property int (*callback;

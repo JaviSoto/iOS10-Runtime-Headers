@@ -3,22 +3,22 @@
  */
 
 @interface MPUExtrasMainMenuSectionMetrics : NSObject {
-    struct CGSize { float x1; float x2; } *_calculatedSizes;
-    <MPUExtrasMainMenuSectionMetricsDataSource> *_dataSource;
-    float _desiredCellSpacing;
-    UIFontDescriptor *_desiredFontDescriptor;
-    float _desiredWidth;
-    float _fittingCellSpacing;
-    UIFontDescriptor *_fittingFontDescriptor;
-    float _fittingWidth;
-    int _itemCount;
-    float _minimumCellSpacing;
-    UIFontDescriptor *_minimumFontDescriptor;
-    BOOL _needsUpdate;
+    struct CGSize { float x1; float x2; } * _calculatedSizes;
+    <MPUExtrasMainMenuSectionMetricsDataSource> * _dataSource;
+    float  _desiredCellSpacing;
+    UIFontDescriptor * _desiredFontDescriptor;
+    float  _desiredWidth;
+    float  _fittingCellSpacing;
+    UIFontDescriptor * _fittingFontDescriptor;
+    float  _fittingWidth;
+    int  _itemCount;
+    float  _minimumCellSpacing;
+    UIFontDescriptor * _minimumFontDescriptor;
+    BOOL  _needsUpdate;
     struct CGSize { 
         float width; 
         float height; 
-    } _totalFittingSize;
+    }  _totalFittingSize;
 }
 
 @property (nonatomic) <MPUExtrasMainMenuSectionMetricsDataSource> *dataSource;

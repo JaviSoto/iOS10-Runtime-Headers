@@ -3,7 +3,7 @@
  */
 
 @interface NTKClockStatusBarSettings : NSObject {
-    NPSManager *_npsManager;
+    NPSManager * _npsManager;
 }
 
 + (id)sharedInstance;

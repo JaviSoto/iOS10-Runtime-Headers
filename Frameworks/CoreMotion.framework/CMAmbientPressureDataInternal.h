@@ -6,10 +6,9 @@
     struct { 
         float pressure; 
         float temperature; 
-    } fPressure;
+    }  fPressure;
 }
 
-- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithPressure:(struct { float x1; float x2; })arg1;
 - (void)setAmbientPressure:(struct { float x1; float x2; })arg1;

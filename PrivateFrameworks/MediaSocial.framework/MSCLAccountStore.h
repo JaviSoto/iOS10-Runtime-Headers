@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAccountStore : NSObject {
-    NSMutableDictionary *_authenticationSecrets;
-    NSMutableDictionary *_authenticationTokens;
-    SKUIMediaSocialAuthor *_author;
+    NSMutableDictionary * _authenticationSecrets;
+    NSMutableDictionary * _authenticationTokens;
+    SKUIMediaSocialAuthor * _author;
 }
 
 @property (nonatomic, readonly) SKUIMediaSocialAuthor *author;

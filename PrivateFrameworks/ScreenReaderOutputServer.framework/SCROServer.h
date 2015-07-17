@@ -3,15 +3,15 @@
  */
 
 @interface SCROServer : NSObject {
-    long _clientCount;
-    NSLock *_contentLock;
-    unsigned int _deathPort;
-    struct __CFRunLoopSource { } *_deathSource;
-    struct __CFRunLoopTimer { } *_deathTimer;
-    <SCROServerDelegate> *_delegate;
-    BOOL _isRegisteredWithMach;
-    unsigned int _serverPort;
-    struct __CFRunLoopSource { } *_serverSource;
+    long  _clientCount;
+    NSLock * _contentLock;
+    unsigned int  _deathPort;
+    struct __CFRunLoopSource { } * _deathSource;
+    struct __CFRunLoopTimer { } * _deathTimer;
+    <SCROServerDelegate> * _delegate;
+    BOOL  _isRegisteredWithMach;
+    unsigned int  _serverPort;
+    struct __CFRunLoopSource { } * _serverSource;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

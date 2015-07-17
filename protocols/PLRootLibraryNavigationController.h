@@ -8,6 +8,7 @@
 - (BOOL)albumIsAvailableForNavigation:(struct NSObject { Class x1; }*)arg1;
 - (BOOL)assetIsAvailableForNavigation:(PLManagedAsset *)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
 - (BOOL)assetIsAvailableForNavigationInMoments:(PLManagedAsset *)arg1;
+- (BOOL)assetIsAvailableForNavigationInMoments:(PLManagedAsset *)arg1 refetchSectionsIfNeeded:(BOOL)arg2;
 - (BOOL)cloudFeedIsAvailableForNavigation;
 - (BOOL)commentIsAvailableForNavigation:(PLCloudSharedComment *)arg1 inAsset:(PLManagedAsset *)arg2;
 - (BOOL)contentModeIsAvailableForNavigation:(int)arg1;

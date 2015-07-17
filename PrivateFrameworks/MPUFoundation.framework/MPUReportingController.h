@@ -3,9 +3,9 @@
  */
 
 @interface MPUReportingController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableArray *_childReportingControllers;
-    MPUReportingController *_parentReportingController;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableArray * _childReportingControllers;
+    MPUReportingController * _parentReportingController;
 }
 
 @property (nonatomic, readonly, copy) NSArray *childReportingControllers;

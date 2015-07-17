@@ -3,14 +3,15 @@
  */
 
 @interface EDTableFilterColumn : NSObject {
-    unsigned int mColumnIndex;
-    NSMutableArray *mFilters;
-    int mFiltersRelation;
+    unsigned int  mColumnIndex;
+    NSMutableArray * mFilters;
+    int  mFiltersRelation;
 }
 
 - (void)addFilter:(id)arg1;
 - (unsigned int)columnIndex;
 - (void)dealloc;
+- (id)description;
 - (id)filterAtIndex:(unsigned int)arg1;
 - (unsigned int)filterCount;
 - (int)filtersRelation;

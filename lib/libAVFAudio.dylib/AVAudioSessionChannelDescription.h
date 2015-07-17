@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioSessionChannelDescription : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (readonly) unsigned long channelLabel;

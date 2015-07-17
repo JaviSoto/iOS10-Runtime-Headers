@@ -27,7 +27,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } mCellIDToMergeOrigin;
+    }  mCellIDToMergeOrigin;
     struct unordered_map<TSUColumnRowCoordinate, TSUColumnRowSize, std::__1::hash<TSUColumnRowCoordinate>, std::__1::equal_to<TSUColumnRowCoordinate>, std::__1::allocator<std::__1::pair<const TSUColumnRowCoordinate, TSUColumnRowSize> > > { 
         struct __hash_table<std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, std::__1::__unordered_map_hasher<TSUColumnRowCoordinate, std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, std::__1::hash<TSUColumnRowCoordinate>, true>, std::__1::__unordered_map_equal<TSUColumnRowCoordinate, std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, std::__1::equal_to<TSUColumnRowCoordinate>, true>, std::__1::allocator<std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *> > > { 
@@ -52,7 +52,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } mMergeOriginToSize;
+    }  mMergeOriginToSize;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -63,7 +63,7 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mUnionedMergeRange;
+    }  mUnionedMergeRange;
 }
 
 + (id)mergeRegionMapFromMap:(id)arg1 intersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;

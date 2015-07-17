@@ -3,15 +3,13 @@
  */
 
 @interface TIZephyrCandidate : TIKeyboardCandidateSingle {
-    BOOL _isFromPhraseDictionary;
-    BOOL _isFromTextChecker;
-    NSString *_label;
-    unsigned int _usageTrackingMask;
-    unsigned int _wordOriginFeedbackID;
-    BOOL extensionCandidate;
+    BOOL  _isFromPhraseDictionary;
+    BOOL  _isFromTextChecker;
+    NSString * _label;
+    unsigned int  _usageTrackingMask;
+    unsigned int  _wordOriginFeedbackID;
 }
 
-@property (getter=isExtensionCandidate, nonatomic) BOOL extensionCandidate;
 @property (nonatomic) BOOL isFromPhraseDictionary;
 @property (nonatomic) BOOL isFromTextChecker;
 @property (nonatomic, copy) NSString *label;
@@ -28,11 +26,9 @@
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isAutocorrection;
-- (BOOL)isExtensionCandidate;
 - (BOOL)isFromPhraseDictionary;
 - (BOOL)isFromTextChecker;
 - (id)label;
-- (void)setExtensionCandidate:(BOOL)arg1;
 - (void)setIsFromPhraseDictionary:(BOOL)arg1;
 - (void)setIsFromTextChecker:(BOOL)arg1;
 - (void)setLabel:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface ATDevicePairedSyncManager : NSObject <ATIDSServiceListener, ATMessageLinkObserver, ATSessionObserver, PSYProgressObserverDelegate> {
-    ATDeviceService *_deviceService;
-    ATIDSService *_idsService;
-    BOOL _initialSyncPhaseCompleted;
-    NSObject<OS_dispatch_queue> *_queue;
-    PSYProgressObserver *_syncProgressObserver;
+    ATDeviceService * _deviceService;
+    ATIDSService * _idsService;
+    BOOL  _initialSyncPhaseCompleted;
+    NSObject<OS_dispatch_queue> * _queue;
+    PSYProgressObserver * _syncProgressObserver;
 }
 
 @property (readonly, copy) NSString *debugDescription;

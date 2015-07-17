@@ -3,8 +3,8 @@
  */
 
 @interface TSDStyledLayout : TSDDrawableLayout {
-    float mDynamicOpacity;
-    BOOL mIsUpdatingOpacity;
+    float  mDynamicOpacity;
+    BOOL  mIsUpdatingOpacity;
 }
 
 @property (nonatomic, readonly) float opacity;

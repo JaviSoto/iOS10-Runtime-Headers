@@ -3,15 +3,15 @@
  */
 
 @interface GKComposedImageBrush : GKImageBrush {
-    UIImage *_backgroundImage;
-    UIImage *_maskImage;
+    UIImage * _backgroundImage;
+    UIImage * _maskImage;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _maskInsets;
-    UIImage *_overlayImage;
+    }  _maskInsets;
+    UIImage * _overlayImage;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;

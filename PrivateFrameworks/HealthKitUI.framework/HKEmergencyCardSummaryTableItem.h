@@ -3,7 +3,7 @@
  */
 
 @interface HKEmergencyCardSummaryTableItem : HKEmergencyCardTableItem {
-    HKMedicalIDPersonSummaryCell *_cell;
+    HKMedicalIDPersonSummaryCell * _cell;
 }
 
 - (void).cxx_destruct;

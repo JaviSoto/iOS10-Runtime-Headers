@@ -3,15 +3,15 @@
  */
 
 @interface EKUIInviteesViewNotRespondedInviteesCell : UITableViewCell {
-    UIImageView *_availabilityTypeImageView;
-    UILabel *_commentLabel;
-    NSLayoutConstraint *_minimumHeightConstraint;
-    NSLayoutConstraint *_nameBaselineToTopConstraint;
-    UILabel *_nameLabel;
-    NSArray *_persistentConstraints;
-    NSArray *_removableConstraints;
-    BOOL _showSpinner;
-    UIActivityIndicatorView *_spinner;
+    UIImageView * _availabilityTypeImageView;
+    UILabel * _commentLabel;
+    NSLayoutConstraint * _minimumHeightConstraint;
+    NSLayoutConstraint * _nameBaselineToTopConstraint;
+    UILabel * _nameLabel;
+    NSArray * _persistentConstraints;
+    NSArray * _removableConstraints;
+    BOOL  _showSpinner;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, retain) UIImageView *availabilityTypeImageView;

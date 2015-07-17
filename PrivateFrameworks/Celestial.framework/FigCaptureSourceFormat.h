@@ -3,9 +3,10 @@
  */
 
 @interface FigCaptureSourceFormat : NSObject <FigXPCCoding> {
-    struct opaqueCMFormatDescription { } *_formatDescription;
-    NSDictionary *_formatDictionary;
-    BOOL _isMultiStreamFormat;
+    struct opaqueCMFormatDescription { } * _formatDescription;
+    NSDictionary * _formatDictionary;
+    BOOL  _isExternalFormat;
+    BOOL  _isMultiStreamFormat;
 }
 
 @property (readonly) NSArray *AVCaptureSessionPresets;
@@ -17,6 +18,8 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isExperimental, readonly) BOOL experimental;
 @property (readonly) struct opaqueCMFormatDescription { }*formatDescription;
+@property (getter=isFormatFeature0Supported, readonly) BOOL formatFeature0Supported;
+@property (readonly) int formatFeature1PBandJ;
 @property (readonly) int frontEndScalerCompanionIndex;
 @property (readonly) BOOL hasFrontEndScalerCompanionIndex;
 @property (readonly) BOOL hasSensorHDRCompanionIndex;
@@ -26,7 +29,8 @@
 @property (getter=isHighResPhotoFormat, readonly) BOOL highResPhotoFormat;
 @property (readonly) struct { int x1; int x2; } highResStillImageDimensions;
 @property (getter=isHighResStillImageSupported, readonly) BOOL highResStillImageSupported;
-@property (readonly) BOOL ispChromaNoiseReduction;
+@property (readonly) BOOL isExternalFormat;
+@property (readonly) BOOL ispChromaNoiseReductionEnabled;
 @property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxExposureDuration;
 @property (readonly) float maxISO;
 @property (readonly) int maxIntegrationTimeOverride;
@@ -41,6 +45,7 @@
 @property (readonly) struct { int x1; int x2; } sensorDimensions;
 @property (readonly) int sensorHDRCompanionIndex;
 @property (readonly) struct { int x1; int x2; } sourceCropAspectRatio;
+@property (getter=isStillImageISPChromaNoiseReductionEnabled, readonly) BOOL stillImageISPChromaNoiseReductionEnabled;
 @property (getter=isStillImageStabilizationSupported, readonly) BOOL stillImageStabilizationSupported;
 @property (readonly) Class superclass;
 @property (readonly) int temporalNoiseReductionMode;
@@ -57,6 +62,7 @@
 @property (readonly) float videoMinSupportedFrameRate;
 @property (readonly) int videoRawBitDepth;
 @property (readonly) float videoScaleFactor;
+@property (readonly) int videoStabilizationTypeOverrideForCinematic;
 @property (readonly) int videoStabilizationTypeOverrideForStandard;
 @property (getter=isVideoZoomDynamicSensorCropSupported, readonly) BOOL videoZoomDynamicSensorCropSupported;
 @property (readonly) float videoZoomFactorUpscaleThreshold;
@@ -76,6 +82,7 @@
 - (void)dealloc;
 - (id)description;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
+- (int)formatFeature1PBandJ;
 - (int)frontEndScalerCompanionIndex;
 - (BOOL)hasFrontEndScalerCompanionIndex;
 - (BOOL)hasSensorHDRCompanionIndex;
@@ -85,19 +92,22 @@
 - (BOOL)isDefaultActiveFormat;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExperimental;
+- (BOOL)isExternalFormat;
+- (BOOL)isFormatFeature0Supported;
 - (BOOL)isHDRSupported;
 - (BOOL)isHighProfileH264Supported;
 - (BOOL)isHighResPhotoFormat;
 - (BOOL)isHighResStillImageSupported;
 - (BOOL)isMultiStreamFormat;
 - (BOOL)isPhotoFormat;
+- (BOOL)isStillImageISPChromaNoiseReductionEnabled;
 - (BOOL)isStillImageStabilizationSupported;
 - (BOOL)isVideoBinned;
 - (BOOL)isVideoLowLightBinningSwitchSupported;
 - (BOOL)isVideoStabilizationModeSupported:(int)arg1;
 - (BOOL)isVideoZoomDynamicSensorCropSupported;
 - (BOOL)isVideoZoomSupported;
-- (BOOL)ispChromaNoiseReduction;
+- (BOOL)ispChromaNoiseReductionEnabled;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxExposureDuration;
 - (float)maxISO;
 - (int)maxIntegrationTimeOverride;
@@ -122,6 +132,7 @@
 - (float)videoMinSupportedFrameRate;
 - (int)videoRawBitDepth;
 - (float)videoScaleFactor;
+- (int)videoStabilizationTypeOverrideForCinematic;
 - (int)videoStabilizationTypeOverrideForStandard;
 - (float)videoZoomFactorUpscaleThreshold;
 

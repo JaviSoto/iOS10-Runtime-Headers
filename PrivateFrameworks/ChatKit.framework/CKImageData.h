@@ -3,15 +3,15 @@
  */
 
 @interface CKImageData : NSObject {
-    unsigned int _count;
-    NSData *_data;
-    struct CGImageSource { } *_imageSource;
-    BOOL _initializedProperties;
-    int _orientation;
+    unsigned int  _count;
+    NSData * _data;
+    struct CGImageSource { } * _imageSource;
+    BOOL  _initializedProperties;
+    int  _orientation;
     struct CGSize { 
         float width; 
         float height; 
-    } _pxSize;
+    }  _pxSize;
 }
 
 @property (nonatomic, readonly, copy) NSString *MIMEType;

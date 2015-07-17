@@ -3,12 +3,12 @@
  */
 
 @interface UIWebTextRangeView : UIView {
-    UIWebDragDotView *_endDot;
-    BOOL _magnifying;
-    NSMutableArray *_rectViews;
-    NSArray *_rects;
-    UIWebDragDotView *_startDot;
-    UIView<UITextInput> *m_container;
+    UIWebDragDotView * _endDot;
+    BOOL  _magnifying;
+    NSMutableArray * _rectViews;
+    NSArray * _rects;
+    UIWebDragDotView * _startDot;
+    UIView<UITextInput> * m_container;
 }
 
 @property (nonatomic, readonly) UIView<UITextInput> *container;

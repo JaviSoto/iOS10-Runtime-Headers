@@ -3,51 +3,51 @@
  */
 
 @interface SKUIGridViewElementPageSectionConfiguration : NSObject {
-    int _cardVerticalSpacingStyle;
-    float _cellContentWidth;
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    float _cellPaddingInteriorHorizontal;
-    float _cellPaddingLeftEdgeHorizontal;
-    BOOL _cellPaddingNeedsReloading;
-    float _cellPaddingRightEdgeHorizontal;
-    <SKUIGridViewElementPageSectionConfigurationDataSource> *_dataSource;
+    int  _cardVerticalSpacingStyle;
+    float  _cellContentWidth;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    float  _cellPaddingInteriorHorizontal;
+    float  _cellPaddingLeftEdgeHorizontal;
+    BOOL  _cellPaddingNeedsReloading;
+    float  _cellPaddingRightEdgeHorizontal;
+    <SKUIGridViewElementPageSectionConfigurationDataSource> * _dataSource;
     struct { 
         unsigned int configurePositionForItemAtIndexPath : 1; 
-    } _dataSourceRespondsToSelectorFlags;
-    BOOL _gridIsEdgeToEdge;
+    }  _dataSourceRespondsToSelectorFlags;
+    BOOL  _gridIsEdgeToEdge;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _gridViewElementStyleElementPadding;
-    float _gridViewElementStyleItemWidth;
-    BOOL _gridViewElementStyleItemWidthIsPercentage;
-    BOOL _hasGridViewElementStyle;
-    BOOL _hasHeader;
-    int _lockupType;
-    float _minimumCellHeight;
-    int _numberOfColumns;
-    unsigned int _numberOfGridItems;
-    SKUIStorePageSectionContext *_pageSectionContext;
-    NSArray *_positions;
-    BOOL _rendersWithPerspective;
-    UIColor *_separatorColor;
+    }  _gridViewElementStyleElementPadding;
+    float  _gridViewElementStyleItemWidth;
+    BOOL  _gridViewElementStyleItemWidthIsPercentage;
+    BOOL  _hasGridViewElementStyle;
+    BOOL  _hasHeader;
+    int  _lockupType;
+    float  _minimumCellHeight;
+    int  _numberOfColumns;
+    unsigned int  _numberOfGridItems;
+    SKUIStorePageSectionContext * _pageSectionContext;
+    NSArray * _positions;
+    BOOL  _rendersWithPerspective;
+    UIColor * _separatorColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorMargins;
-    int _separatorStyle;
+    }  _separatorMargins;
+    int  _separatorStyle;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorWidths;
-    BOOL _showsEditMode;
-    NSArray *_viewElements;
+    }  _separatorWidths;
+    BOOL  _showsEditMode;
+    NSArray * _viewElements;
 }
 
 @property (nonatomic, retain) SKUIViewElementLayoutContext *cellLayoutContext;

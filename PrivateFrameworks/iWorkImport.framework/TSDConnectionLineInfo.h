@@ -3,12 +3,12 @@
  */
 
 @interface TSDConnectionLineInfo : TSDShapeInfo {
-    NSUUID *mConnectedFromID;
-    NSUUID *mConnectedToID;
+    NSUUID * mConnectedFromID;
+    NSUUID * mConnectedToID;
     struct { 
         unsigned int connectedFrom : 1; 
         unsigned int connectedTo : 1; 
-    } mInvalidFlags;
+    }  mInvalidFlags;
 }
 
 @property (nonatomic) TSDDrawableInfo *connectedFrom;

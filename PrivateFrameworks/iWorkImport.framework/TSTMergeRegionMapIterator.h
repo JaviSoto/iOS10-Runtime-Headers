@@ -7,8 +7,8 @@
         struct __hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *> { 
             struct __hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> {} *__node_; 
         } __i_; 
-    } mMergeRegionIterator;
-    TSTMergeRegionMap *mMergeRegionMap;
+    }  mMergeRegionIterator;
+    TSTMergeRegionMap * mMergeRegionMap;
 }
 
 - (id).cxx_construct;

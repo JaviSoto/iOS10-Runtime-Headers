@@ -3,7 +3,7 @@
  */
 
 @interface CHSynchronizable : NSObject <CHSynchronizableProtocol> {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) NSObject<OS_dispatch_queue> *queue;

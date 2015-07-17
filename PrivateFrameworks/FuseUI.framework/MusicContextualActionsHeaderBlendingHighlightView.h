@@ -3,8 +3,8 @@
  */
 
 @interface MusicContextualActionsHeaderBlendingHighlightView : UIView {
-    UIView *_colorBurnView;
-    UIView *_plusDView;
+    UIView * _colorBurnView;
+    UIView * _plusDView;
 }
 
 @property float cornerRadius;

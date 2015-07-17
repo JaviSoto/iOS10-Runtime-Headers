@@ -3,11 +3,11 @@
  */
 
 @interface PUCloudSharedCreateAlbumViewController : UIViewController {
-    NSArray *__albumRecipients;
-    PUPhotoStreamRecipientViewController *_composeRecipientController;
-    <PUCloudSharedCreateAlbumViewControllerDelegate> *_delegate;
-    UINavigationItem *_navItem;
-    NSString *_nextButtonTitle;
+    NSArray * __albumRecipients;
+    PUPhotoStreamRecipientViewController * _composeRecipientController;
+    <PUCloudSharedCreateAlbumViewControllerDelegate> * _delegate;
+    UINavigationItem * _navItem;
+    NSString * _nextButtonTitle;
 }
 
 @property (setter=_setAlbumRecipients:, nonatomic, retain) NSArray *_albumRecipients;

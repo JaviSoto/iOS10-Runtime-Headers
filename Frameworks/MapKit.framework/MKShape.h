@@ -3,8 +3,8 @@
  */
 
 @interface MKShape : NSObject <MKAnnotation> {
-    NSString *_subtitle;
-    NSString *_title;
+    NSString * _subtitle;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;

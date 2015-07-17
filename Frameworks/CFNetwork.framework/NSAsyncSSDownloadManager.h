@@ -3,10 +3,10 @@
  */
 
 @interface NSAsyncSSDownloadManager : NSObject <SSDownloadManagerObserver> {
-    NSMutableDictionary *_downloads;
-    SSDownloadManager *_manager;
-    NSOperationQueue *_queue;
-    BOOL _reconnectInProgress;
+    NSMutableDictionary * _downloads;
+    SSDownloadManager * _manager;
+    NSOperationQueue * _queue;
+    BOOL  _reconnectInProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;

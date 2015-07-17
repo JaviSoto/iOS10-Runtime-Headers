@@ -3,12 +3,12 @@
  */
 
 @interface XPCDecoder : NSCoder {
-    NSArray *_allowedClasses;
-    NSObject<OS_xpc_object> *_currentObject;
-    struct __CFDictionary { } *_decodedObjects;
-    NSObject<OS_xpc_object> *_encoding;
-    NSString *_errorDescription;
-    struct __CFSet { } *_requestedDecodedObjects;
+    NSArray * _allowedClasses;
+    NSObject<OS_xpc_object> * _currentObject;
+    struct __CFDictionary { } * _decodedObjects;
+    NSObject<OS_xpc_object> * _encoding;
+    NSString * _errorDescription;
+    struct __CFSet { } * _requestedDecodedObjects;
 }
 
 @property (nonatomic, copy) NSString *errorDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface CKTranscriptLocationShareCell : UITableViewCell {
-    double _offerTimeRemaining;
-    BOOL _showOfferTimeRemaining;
-    UILabel *_timeRemainingLabel;
+    double  _offerTimeRemaining;
+    BOOL  _showOfferTimeRemaining;
+    UILabel * _timeRemainingLabel;
 }
 
 @property (nonatomic) double offerTimeRemaining;

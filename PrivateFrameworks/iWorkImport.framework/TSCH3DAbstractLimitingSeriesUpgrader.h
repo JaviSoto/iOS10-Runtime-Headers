@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DAbstractLimitingSeriesUpgrader : NSObject {
-    TSCHChartInfo *mChartInfo;
-    id /* block */ mWillModifyBlock;
+    TSCHChartInfo * mChartInfo;
+    id /* block */  mWillModifyBlock;
 }
 
 @property (nonatomic, copy) id /* block */ willModifyBlock;

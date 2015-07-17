@@ -3,43 +3,43 @@
  */
 
 @interface BWNodeOutput : NSObject {
-    long long _configurationID;
-    <BWNodeOutputConsumer> *_consumer;
-    BOOL _consumerIsANodeConnection;
-    BOOL _discardsSampleData;
-    BOOL _dropsSampleBuffersWithUnexpectedPTS;
-    BWFormat *_format;
-    BWFormatRequirements *_formatRequirements;
-    int _indexOfInputWhichDrivesThisOutput;
+    long long  _configurationID;
+    <BWNodeOutputConsumer> * _consumer;
+    BOOL  _consumerIsANodeConnection;
+    BOOL  _discardsSampleData;
+    BOOL  _dropsSampleBuffersWithUnexpectedPTS;
+    BWFormat * _format;
+    BWFormatRequirements * _formatRequirements;
+    int  _indexOfInputWhichDrivesThisOutput;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastEmittedPTS;
+    }  _lastEmittedPTS;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastValidPTS;
-    long long _liveConfigurationID;
-    BWFormat *_liveFormat;
-    BWPixelBufferPool *_livePixelBufferPool;
-    unsigned long _livePixelBufferPoolSize;
-    float _maxSampleDataOutputRate;
-    unsigned long _mediaType;
-    BOOL _mediaTypeIsVideo;
-    NSString *_name;
-    BWNode *_node;
-    unsigned int _numberOfBuffersDropped;
-    unsigned int _numberOfBuffersEmitted;
-    unsigned long _owningNodeRetainedBufferCount;
-    int _passthroughMode;
-    unsigned long _preparedBufferPoolSize;
-    BWPixelBufferPool *_preparedPixelBufferPool;
-    BOOL _providesPixelBufferPool;
-    unsigned long _retainedBufferCount;
+    }  _lastValidPTS;
+    long long  _liveConfigurationID;
+    BWFormat * _liveFormat;
+    BWPixelBufferPool * _livePixelBufferPool;
+    unsigned long  _livePixelBufferPoolSize;
+    float  _maxSampleDataOutputRate;
+    unsigned long  _mediaType;
+    BOOL  _mediaTypeIsVideo;
+    NSString * _name;
+    BWNode * _node;
+    unsigned int  _numberOfBuffersDropped;
+    unsigned int  _numberOfBuffersEmitted;
+    unsigned long  _owningNodeRetainedBufferCount;
+    int  _passthroughMode;
+    unsigned long  _preparedBufferPoolSize;
+    BWPixelBufferPool * _preparedPixelBufferPool;
+    BOOL  _providesPixelBufferPool;
+    unsigned long  _retainedBufferCount;
 }
 
 @property (nonatomic) BOOL buffersOriginateUpstream;
@@ -69,7 +69,6 @@
 
 + (void)initialize;
 
-- (BOOL)_emitMessage:(id)arg1;
 - (id)_poolName;
 - (BOOL)buffersOriginateUpstream;
 - (long long)configurationID;

@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewIndexOverlaySelectionViewCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    float rightMargin;
+    float  rightMargin;
 }
 
 @property (nonatomic) float rightMargin;

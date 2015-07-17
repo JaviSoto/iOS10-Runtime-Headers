@@ -3,7 +3,7 @@
  */
 
 @interface MPRatingCommandEvent : MPRemoteCommandEvent {
-    float _rating;
+    float  _rating;
 }
 
 @property (nonatomic, readonly) float rating;

@@ -3,16 +3,16 @@
  */
 
 @interface MPPlayerPlaybackLeaseController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _isAutomaticLeaseRefreshEnabled;
-    BOOL _isPlayerEffectivelyPlaying;
-    BOOL _isStartingLeaseForPlaybackResumption;
-    NSMutableArray *_players;
-    unsigned int _preventionState;
-    BOOL _shouldStartLeaseForAssets;
-    BOOL _shouldStartLeaseForUserAction;
-    NSMutableArray *_startLeaseForPlaybackResumptionCompletionHandlers;
-    BOOL _usesSubscriptionLease;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _isAutomaticLeaseRefreshEnabled;
+    BOOL  _isPlayerEffectivelyPlaying;
+    BOOL  _isStartingLeaseForPlaybackResumption;
+    NSMutableArray * _players;
+    unsigned int  _preventionState;
+    BOOL  _shouldStartLeaseForAssets;
+    BOOL  _shouldStartLeaseForUserAction;
+    NSMutableArray * _startLeaseForPlaybackResumptionCompletionHandlers;
+    BOOL  _usesSubscriptionLease;
 }
 
 + (id)sharedController;

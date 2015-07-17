@@ -27,7 +27,7 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _roadsConsidered;
+    }  _roadsConsidered;
 }
 
 - (id).cxx_construct;

@@ -3,7 +3,7 @@
  */
 
 @interface AFWatchdogTimer : NSObject {
-    NSObject<OS_dispatch_source> *_timerSource;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 - (void).cxx_destruct;

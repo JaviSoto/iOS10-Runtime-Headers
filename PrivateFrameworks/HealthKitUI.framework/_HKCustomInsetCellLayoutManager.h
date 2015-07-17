@@ -3,8 +3,8 @@
  */
 
 @interface _HKCustomInsetCellLayoutManager : UITableViewCellLayoutManager {
-    float _textLabelLeftInset;
-    float _topInset;
+    float  _textLabelLeftInset;
+    float  _topInset;
 }
 
 @property (nonatomic) float textLabelLeftInset;

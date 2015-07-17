@@ -3,11 +3,11 @@
  */
 
 @interface IKStyleList : NSObject {
-    IKStyleList *_baseStyleList;
-    NSString *_classSelector;
-    BOOL _requiresMediaQueryEvaluation;
-    IKViewElementStyle *_resolvedStyle;
-    NSArray *_styles;
+    IKStyleList * _baseStyleList;
+    NSString * _classSelector;
+    BOOL  _requiresMediaQueryEvaluation;
+    IKViewElementStyle * _resolvedStyle;
+    NSArray * _styles;
 }
 
 @property (nonatomic, readonly, retain) IKStyleList *baseStyleList;

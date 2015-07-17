@@ -3,14 +3,14 @@
  */
 
 @interface MCD_OLD_TableViewController : UITableViewController {
-    BOOL _alwaysShowNavBar;
-    AVExternalDevice *_externalDevice;
-    BOOL _limitedUI;
-    UIView *_nowPlayingButton;
-    MPAVController *_player;
-    MPMediaQuery *_query;
-    <MCDCarDisplayServiceProvider> *_serviceProvider;
-    BOOL _viewHasAppeared;
+    BOOL  _alwaysShowNavBar;
+    AVExternalDevice * _externalDevice;
+    BOOL  _limitedUI;
+    UIView * _nowPlayingButton;
+    MPAVController * _player;
+    MPMediaQuery * _query;
+    <MCDCarDisplayServiceProvider> * _serviceProvider;
+    BOOL  _viewHasAppeared;
 }
 
 @property (nonatomic) BOOL alwaysShowNavBar;

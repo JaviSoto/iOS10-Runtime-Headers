@@ -3,10 +3,10 @@
  */
 
 @interface PLPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
-    UITextField *_accountTextField;
-    id /* block */ _completionHandler;
-    UITextField *_passwordTextField;
-    int _style;
+    UITextField * _accountTextField;
+    id /* block */  _completionHandler;
+    UITextField * _passwordTextField;
+    int  _style;
 }
 
 @property (nonatomic, copy) NSString *accountTextFieldPlaceholder;

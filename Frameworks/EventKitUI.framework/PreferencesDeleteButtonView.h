@@ -3,7 +3,7 @@
  */
 
 @interface PreferencesDeleteButtonView : UIView {
-    UIButton *_button;
+    UIButton * _button;
 }
 
 @property (nonatomic, readonly, retain) UIButton *button;

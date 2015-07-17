@@ -3,27 +3,27 @@
  */
 
 @interface NBBackup : NSObject <NSSecureCoding> {
-    NSNumber *_bcmWindowMaterial;
-    NSNumber *_bottomEnclosureMaterial;
-    NSString *_deviceColor;
-    NSString *_deviceEnclosureColor;
-    BOOL _diagnosticsOptInEnabled;
-    NSNumber *_fcmMaterial;
-    NSDate *_lastModificationDate;
-    BOOL _locationOptInEnabled;
-    NSString *_marketingVersion;
-    NSString *_material;
-    NSString *_model;
-    NSString *_name;
-    NSString *_productType;
-    BOOL _siriOptInEnabled;
-    NSNumber *_sizeInBytes;
-    NSString *_systemBuildVersion;
-    NSString *_systemVersion;
-    NSNumber *_topEnclosureMaterial;
-    NSUUID *_uuid;
-    NSString *_watchFace;
-    NSString *_watchFaceColor;
+    NSNumber * _bcmWindowMaterial;
+    NSNumber * _bottomEnclosureMaterial;
+    NSString * _deviceColor;
+    NSString * _deviceEnclosureColor;
+    BOOL  _diagnosticsOptInEnabled;
+    NSNumber * _fcmMaterial;
+    NSDate * _lastModificationDate;
+    BOOL  _locationOptInEnabled;
+    NSString * _marketingVersion;
+    NSString * _material;
+    NSString * _model;
+    NSString * _name;
+    NSString * _productType;
+    BOOL  _siriOptInEnabled;
+    NSNumber * _sizeInBytes;
+    NSString * _systemBuildVersion;
+    NSString * _systemVersion;
+    NSNumber * _topEnclosureMaterial;
+    NSUUID * _uuid;
+    NSString * _watchFace;
+    NSString * _watchFaceColor;
 }
 
 @property (nonatomic, retain) NSNumber *bcmWindowMaterial;

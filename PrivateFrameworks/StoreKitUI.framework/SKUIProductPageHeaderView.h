@@ -3,31 +3,31 @@
  */
 
 @interface SKUIProductPageHeaderView : UIView <SKUIContentRatingArtworkLoaderObserver, SKUIItemOfferButtonDelegate> {
-    UILabel *_ageBandLabel;
-    UIButton *_artistButton;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    SKUIItemContentRating *_contentRating;
-    SKUIContentRatingArtworkResourceLoader *_contentRatingArtworkLoader;
-    SKUIBadgeLabel *_editorialBadgeLabel;
-    float _headerImageHeight;
-    UIImageView *_headerImageView;
-    UIImageView *_iconImageView;
-    UILabel *_inAppPurchasesLabel;
-    SKUIItemOffer *_itemOffer;
-    SKUIItemOfferButton *_itemOfferButton;
-    UILabel *_itemOfferExplanationLabel;
-    UILabel *_itemOfferExplanationTitleLabel;
-    SKUIItemState *_itemState;
-    BOOL _needsLayoutAfterButtonAnimation;
-    int _numberOfUserRatings;
-    BOOL _restricted;
-    SKUIItemContentRating *_secondaryContentRating;
-    UIButton *_shareButton;
-    SKUIProductPageHeaderLabel *_titleLabel;
-    float _userRating;
-    UILabel *_userRatingLabel;
-    UIImageView *_userRatingStarsView;
+    UILabel * _ageBandLabel;
+    UIButton * _artistButton;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    SKUIItemContentRating * _contentRating;
+    SKUIContentRatingArtworkResourceLoader * _contentRatingArtworkLoader;
+    SKUIBadgeLabel * _editorialBadgeLabel;
+    float  _headerImageHeight;
+    UIImageView * _headerImageView;
+    UIImageView * _iconImageView;
+    UILabel * _inAppPurchasesLabel;
+    SKUIItemOffer * _itemOffer;
+    SKUIItemOfferButton * _itemOfferButton;
+    UILabel * _itemOfferExplanationLabel;
+    UILabel * _itemOfferExplanationTitleLabel;
+    SKUIItemState * _itemState;
+    BOOL  _needsLayoutAfterButtonAnimation;
+    int  _numberOfUserRatings;
+    BOOL  _restricted;
+    SKUIItemContentRating * _secondaryContentRating;
+    UIButton * _shareButton;
+    SKUIProductPageHeaderLabel * _titleLabel;
+    float  _userRating;
+    UILabel * _userRatingLabel;
+    UIImageView * _userRatingStarsView;
 }
 
 @property (nonatomic, copy) NSString *ageBandString;

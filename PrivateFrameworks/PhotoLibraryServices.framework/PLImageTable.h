@@ -3,26 +3,26 @@
  */
 
 @interface PLImageTable : NSObject <PLThumbPersistenceManager> {
-    NSMutableArray *_allSegments;
-    BOOL _dying;
-    int _entryCount;
-    int _entryLength;
-    int _fid;
-    long long _fileLength;
-    int _format;
-    int _imageLength;
-    int _imageRowBytes;
-    NSString *_path;
-    NSObject<OS_dispatch_queue> *_preheatIndexIsolation;
-    NSMutableIndexSet *_preheatIndexes;
-    NSObject<OS_dispatch_queue> *_preheatQueue;
-    BOOL _readOnly;
-    unsigned int _segmentCount;
-    unsigned long _segmentLength;
+    NSMutableArray * _allSegments;
+    BOOL  _dying;
+    int  _entryCount;
+    int  _entryLength;
+    int  _fid;
+    long long  _fileLength;
+    int  _format;
+    int  _imageLength;
+    int  _imageRowBytes;
+    NSString * _path;
+    NSObject<OS_dispatch_queue> * _preheatIndexIsolation;
+    NSMutableIndexSet * _preheatIndexes;
+    NSObject<OS_dispatch_queue> * _preheatQueue;
+    BOOL  _readOnly;
+    int  _segmentCount;
+    unsigned long  _segmentLength;
     struct CGSize { 
         float width; 
         float height; 
-    } _thumbnailSize;
+    }  _thumbnailSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

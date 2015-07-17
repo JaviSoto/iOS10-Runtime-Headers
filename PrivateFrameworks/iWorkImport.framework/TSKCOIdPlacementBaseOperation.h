@@ -3,11 +3,11 @@
  */
 
 @interface TSKCOIdPlacementBaseOperation : TSKCOAbstractOperation <TSKCOIdOperation, TSKCOTransforming> {
-    TSKCOIdAddress *mAddress;
-    BOOL mDominating;
-    int mFromIndex;
-    int mPlacementType;
-    int mToIndex;
+    TSKCOIdAddress * mAddress;
+    BOOL  mDominating;
+    int  mFromIndex;
+    int  mPlacementType;
+    int  mToIndex;
 }
 
 @property (nonatomic, readonly) TSKCOIdAddress *address;

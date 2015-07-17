@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator> {
-    <IKJSDOMDocumentAppBridge> *_appBridge;
-    unsigned int _itmlIDSequence;
+@interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator, JSExport> {
+    <IKJSDOMDocumentAppBridge> * _appBridge;
+    unsigned int  _itmlIDSequence;
 }
 
 @property (nonatomic) <IKJSDOMDocumentAppBridge> *appBridge;

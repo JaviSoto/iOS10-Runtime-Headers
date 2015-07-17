@@ -3,12 +3,12 @@
  */
 
 @interface PKPassBucketView : UIView {
-    int _background;
-    NSArray *_bucket;
-    PKPassBucketTemplate *_bucketTemplate;
-    PKPassColorProfile *_colorProfile;
-    NSMutableArray *_fieldViews;
-    PKPass *_pass;
+    int  _background;
+    NSArray * _bucket;
+    PKPassBucketTemplate * _bucketTemplate;
+    PKPassColorProfile * _colorProfile;
+    NSMutableArray * _fieldViews;
+    PKPass * _pass;
 }
 
 @property (nonatomic, retain) NSArray *bucket;

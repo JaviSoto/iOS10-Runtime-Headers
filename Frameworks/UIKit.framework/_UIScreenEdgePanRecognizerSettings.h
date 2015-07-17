@@ -3,14 +3,14 @@
  */
 
 @interface _UIScreenEdgePanRecognizerSettings : _UISettings {
-    BOOL _analysisFailureOverlayVisible;
-    BOOL _analysisLoggingEnabled;
-    BOOL _analysisLoggingOverlayVisible;
-    _UIScreenEdgePanRecognizerCornerSettings *_cornerSettings;
-    _UIScreenEdgePanRecognizerDwellSettings *_dwellSettings;
-    _UIScreenEdgePanRecognizerEdgeSettings *_edgeSettings;
-    NSString *_multitaskingGestureMode;
-    NSString *_navigationGestureMode;
+    BOOL  _analysisFailureOverlayVisible;
+    BOOL  _analysisLoggingEnabled;
+    BOOL  _analysisLoggingOverlayVisible;
+    _UIScreenEdgePanRecognizerCornerSettings * _cornerSettings;
+    _UIScreenEdgePanRecognizerDwellSettings * _dwellSettings;
+    _UIScreenEdgePanRecognizerEdgeSettings * _edgeSettings;
+    NSString * _multitaskingGestureMode;
+    NSString * _navigationGestureMode;
 }
 
 @property (nonatomic) BOOL analysisFailureOverlayVisible;
@@ -24,6 +24,7 @@
 
 + (id)settingsControllerModule;
 
+- (void).cxx_destruct;
 - (BOOL)analysisFailureOverlayVisible;
 - (BOOL)analysisLoggingEnabled;
 - (BOOL)analysisLoggingOverlayVisible;

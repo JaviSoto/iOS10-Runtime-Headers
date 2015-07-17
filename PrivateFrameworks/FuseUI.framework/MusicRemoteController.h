@@ -3,15 +3,15 @@
  */
 
 @interface MusicRemoteController : NSObject {
-    <MusicRemoteControllerDelegate> *_delegate;
-    BOOL _hasPlayCatalogContentCapability;
-    BOOL _isObservingAddToLibraryCommand;
-    BOOL _isObservingBookmarkCommand;
-    BOOL _isObservingDislikeCommand;
-    BOOL _isObservingLikeCommand;
-    BOOL _isObservingShuffleRepeatCommands;
-    NSString *_lastReloadPlaybackContextID;
-    MusicAVPlayer *_player;
+    <MusicRemoteControllerDelegate> * _delegate;
+    BOOL  _hasPlayCatalogContentCapability;
+    BOOL  _isObservingAddToLibraryCommand;
+    BOOL  _isObservingBookmarkCommand;
+    BOOL  _isObservingDislikeCommand;
+    BOOL  _isObservingLikeCommand;
+    BOOL  _isObservingShuffleRepeatCommands;
+    NSString * _lastReloadPlaybackContextID;
+    MusicAVPlayer * _player;
 }
 
 @property (nonatomic) <MusicRemoteControllerDelegate> *delegate;
@@ -21,6 +21,7 @@
 - (id)_addToLibraryActionForItem:(id)arg1;
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (void)_buyOffersDidChangeNotification:(id)arg1;
+- (void)_cloudLibraryEnabledDidChangeNotification:(id)arg1;
 - (id)_currentFeederContextID;
 - (int)_handleAddToLibraryCommand:(id)arg1;
 - (int)_handleAdvanceRepeatModeCommand:(id)arg1;

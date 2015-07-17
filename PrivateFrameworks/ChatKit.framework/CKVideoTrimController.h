@@ -3,10 +3,10 @@
  */
 
 @interface CKVideoTrimController : NSObject <UINavigationControllerDelegate, UIVideoEditorControllerDelegatePrivate> {
-    <CKTrimControllerDelegate> *_delegate;
-    UIVideoEditorController *_editVideoVC;
-    CKMediaObject *_originalMediaObject;
-    CKMediaObject *_trimmedMediaObject;
+    <CKTrimControllerDelegate> * _delegate;
+    UIVideoEditorController * _editVideoVC;
+    CKMediaObject * _originalMediaObject;
+    CKMediaObject * _trimmedMediaObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

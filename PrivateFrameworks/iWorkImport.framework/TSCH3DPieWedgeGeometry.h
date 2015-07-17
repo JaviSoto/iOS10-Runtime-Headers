@@ -3,17 +3,17 @@
  */
 
 @interface TSCH3DPieWedgeGeometry : TSCH3DGeometry {
-    int mAngleSteps;
-    int mBevelEdgeSteps;
-    float mBottomZ;
-    int mCapCount;
-    int mCapOffset;
-    float mEndAngle;
-    TSCH3DNormalDirectionMapper *mNormalDirectionMapper;
-    float mRadius;
-    int mRadiusSteps;
-    float mStartAngle;
-    float mTopZ;
+    int  mAngleSteps;
+    int  mBevelEdgeSteps;
+    float  mBottomZ;
+    int  mCapCount;
+    int  mCapOffset;
+    float  mEndAngle;
+    TSCH3DNormalDirectionMapper * mNormalDirectionMapper;
+    float  mRadius;
+    int  mRadiusSteps;
+    float  mStartAngle;
+    float  mTopZ;
 }
 
 @property (nonatomic) int angleSteps;

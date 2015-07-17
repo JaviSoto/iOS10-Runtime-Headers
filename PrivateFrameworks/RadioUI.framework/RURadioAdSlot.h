@@ -3,10 +3,10 @@
  */
 
 @interface RURadioAdSlot : NSObject <ADAdSlotDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    ADAdSlot *_adSlot;
-    NSArray *_adTracks;
-    BOOL _hasBegunPlayback;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    ADAdSlot * _adSlot;
+    NSArray * _adTracks;
+    BOOL  _hasBegunPlayback;
 }
 
 @property (nonatomic, readonly) ADAdSlot *adSlot;

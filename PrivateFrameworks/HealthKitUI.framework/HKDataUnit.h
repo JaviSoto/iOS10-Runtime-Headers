@@ -3,16 +3,16 @@
  */
 
 @interface HKDataUnit : NSObject <NSCopying> {
-    NSPredicate *_chartingPredicate;
-    HKObjectType *_dataType;
-    int _keyboardType;
-    NSString *_labelDisplayName;
-    float _scalarValue;
-    NSDictionary *_singularUnitNameOverrides;
-    NSDictionary *_unitNameOverrides;
+    NSDictionary * _chartingPredicatesByTimeScope;
+    HKObjectType * _dataType;
+    NSPredicate * _defaultChartingPredicate;
+    int  _keyboardType;
+    NSString * _labelDisplayName;
+    float  _scalarValue;
+    NSDictionary * _singularUnitNameOverrides;
+    NSDictionary * _unitNameOverrides;
 }
 
-@property (nonatomic, readonly) NSPredicate *chartingPredicate;
 @property (nonatomic, readonly) HKObjectType *dataType;
 @property (nonatomic) int keyboardType;
 @property (nonatomic, readonly) NSString *labelDisplayName;
@@ -25,7 +25,7 @@
 - (id)_initAsCopyOf:(id)arg1;
 - (id)adjustedValueForClientValue:(id)arg1;
 - (id)adjustedValueForDaemonValue:(id)arg1;
-- (id)chartingPredicate;
+- (id)chartingPredicateForTimeScope:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataType;
 - (id)description;

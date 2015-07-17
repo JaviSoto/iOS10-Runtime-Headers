@@ -3,11 +3,11 @@
  */
 
 @interface TSTCellDictionary : NSObject {
-    TSUIntegerKeyDictionary *mDict;
+    TSUIntegerKeyDictionary * mDict;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } mDictRWLock;
+    }  mDictRWLock;
 }
 
 - (id)allCells;

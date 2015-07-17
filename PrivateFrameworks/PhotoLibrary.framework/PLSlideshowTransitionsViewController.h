@@ -3,12 +3,12 @@
  */
 
 @interface PLSlideshowTransitionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_alternateLocalizations;
-    UIView *_containerView;
-    NSString *_selectedTransition;
-    UITableView *_table;
-    NSMutableArray *_tableCells;
-    NSArray *_transitionKeys;
+    NSArray * _alternateLocalizations;
+    UIView * _containerView;
+    NSString * _selectedTransition;
+    UITableView * _table;
+    NSMutableArray * _tableCells;
+    NSArray * _transitionKeys;
 }
 
 @property (nonatomic, retain) NSArray *alternateLocalizations;

@@ -3,11 +3,11 @@
  */
 
 @interface GEOExperimentConfiguration : NSObject <GEOExperimentServerProxyDelegate> {
-    NSMutableArray *_experimentObservers;
-    NSLock *_experimentObserversLock;
-    GEOABExperimentResponse *_experimentsInfo;
-    NSLock *_experimentsInfoLock;
-    <GEOExperimentServerProxy> *_serverProxy;
+    NSMutableArray * _experimentObservers;
+    NSLock * _experimentObserversLock;
+    GEOABExperimentResponse * _experimentsInfo;
+    NSLock * _experimentsInfoLock;
+    <GEOExperimentServerProxy> * _serverProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;

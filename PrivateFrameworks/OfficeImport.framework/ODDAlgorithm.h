@@ -3,9 +3,10 @@
  */
 
 @interface ODDAlgorithm : ODDLayoutObject {
-    int mType;
+    int  mType;
 }
 
+- (id)description;
 - (void)setType:(int)arg1;
 - (int)type;
 

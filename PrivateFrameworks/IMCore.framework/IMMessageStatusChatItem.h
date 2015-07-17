@@ -3,12 +3,12 @@
  */
 
 @interface IMMessageStatusChatItem : IMTranscriptChatItem {
-    unsigned int _count;
-    int _expireStatusType;
-    int _statusType;
-    NSDate *_time;
-    NSDate *_timeAdded;
-    NSDate *_timeStale;
+    unsigned int  _count;
+    int  _expireStatusType;
+    int  _statusType;
+    NSDate * _time;
+    NSDate * _timeAdded;
+    NSDate * _timeStale;
 }
 
 @property (nonatomic, readonly) unsigned int count;

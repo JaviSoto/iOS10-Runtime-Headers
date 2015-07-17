@@ -3,7 +3,7 @@
  */
 
 @interface PKTunableSwitchPref : PKTunablePref {
-    UIView *_view;
+    UIView * _view;
 }
 
 @property (retain) UIView *view;

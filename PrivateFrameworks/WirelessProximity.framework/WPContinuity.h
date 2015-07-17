@@ -3,10 +3,10 @@
  */
 
 @interface WPContinuity : NSObject <XPCClientDelegate> {
-    int _btBandwidthState;
-    XPCClient *_connection;
-    <WPContinuityDelegate> *_delegate;
-    int _state;
+    int  _btBandwidthState;
+    XPCClient * _connection;
+    <WPContinuityDelegate> * _delegate;
+    int  _state;
 }
 
 @property int btBandwidthState;

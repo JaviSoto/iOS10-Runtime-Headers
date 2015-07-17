@@ -3,12 +3,12 @@
  */
 
 @interface SKUICollectionViewLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
-    UIColor *_backgroundColor;
-    int _position;
-    float _zoomingImageAlpha;
-    float _zoomingImageImposedAlphaOfOtherViews;
-    float _zoomingImageLambda;
-    float _zoomingImageWidth;
+    UIColor * _backgroundColor;
+    int  _position;
+    float  _zoomingImageAlpha;
+    float  _zoomingImageImposedAlphaOfOtherViews;
+    float  _zoomingImageLambda;
+    float  _zoomingImageWidth;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;

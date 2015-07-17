@@ -3,18 +3,19 @@
  */
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
-    NSArray *metadata;
+    NSMutableArray * connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
+    NSArray * metadata;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } movieFragmentInterval;
-    BOOL paused;
-    BOOL recording;
-    NSMutableArray *recordingDelegatesArray;
-    BOOL sendLastVideoPreviewFrame;
-    AVWeakReference *weakReference;
+    }  movieFragmentInterval;
+    BOOL  paused;
+    BOOL  recording;
+    NSMutableArray * recordingDelegatesArray;
+    BOOL  sendLastVideoPreviewFrame;
+    AVWeakReference * weakReference;
 }
 
 - (void)dealloc;

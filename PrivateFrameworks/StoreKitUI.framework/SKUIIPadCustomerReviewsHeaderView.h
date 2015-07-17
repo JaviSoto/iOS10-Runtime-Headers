@@ -3,17 +3,17 @@
  */
 
 @interface SKUIIPadCustomerReviewsHeaderView : UIControl <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    UIButton *_appSupportButton;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    int _selectedSortIndex;
-    UIView *_separatorView;
-    UIButton *_sortButton;
-    UILabel *_sortLabel;
-    UIPopoverController *_sortPopoverController;
-    NSArray *_sortTitles;
-    UILabel *_titleLabel;
-    UIButton *_writeAReviewButton;
+    UIButton * _appSupportButton;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    int  _selectedSortIndex;
+    UIView * _separatorView;
+    UIButton * _sortButton;
+    UILabel * _sortLabel;
+    UIPopoverController * _sortPopoverController;
+    NSArray * _sortTitles;
+    UILabel * _titleLabel;
+    UIButton * _writeAReviewButton;
 }
 
 @property (nonatomic, readonly) UIControl *appSupportButton;

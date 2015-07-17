@@ -3,8 +3,8 @@
  */
 
 @interface CompassImageNode : NSObject {
-    NSString *_imageKey;
-    CompassImageNode *_leftChild;
+    NSString * _imageKey;
+    CompassImageNode * _leftChild;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,8 +14,8 @@
             float width; 
             float height; 
         } size; 
-    } _rect;
-    CompassImageNode *_rightChild;
+    }  _rect;
+    CompassImageNode * _rightChild;
 }
 
 @property (nonatomic, copy) NSString *imageKey;
@@ -23,7 +23,6 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
 @property (nonatomic, retain) CompassImageNode *rightChild;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)imageKey;
 - (id)insertImageWithSize:(struct CGSize { float x1; float x2; })arg1 key:(id)arg2;

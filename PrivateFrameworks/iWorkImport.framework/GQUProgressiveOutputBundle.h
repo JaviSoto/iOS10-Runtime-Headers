@@ -3,13 +3,13 @@
  */
 
 @interface GQUProgressiveOutputBundle : NSObject <GQUOutputBundle> {
-    struct __CFDictionary { } *mAttachmentsURLs;
-    struct __CFDictionary { } *mComputedAttachments;
-    GQUProgressiveHelper *mHelper;
-    BOOL mPreviewStarted;
-    struct __CFDictionary { } *mQuickLookProperties;
-    struct __CFString { } *mUriScheme;
-    struct __CFString { } *mUuidStr;
+    struct __CFDictionary { } * mAttachmentsURLs;
+    struct __CFDictionary { } * mComputedAttachments;
+    GQUProgressiveHelper * mHelper;
+    BOOL  mPreviewStarted;
+    struct __CFDictionary { } * mQuickLookProperties;
+    struct __CFString { } * mUriScheme;
+    struct __CFString { } * mUuidStr;
 }
 
 @property (readonly, copy) NSString *debugDescription;

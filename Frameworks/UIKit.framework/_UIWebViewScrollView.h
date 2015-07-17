@@ -3,9 +3,9 @@
  */
 
 @interface _UIWebViewScrollView : UIWebScrollView {
-    BOOL _bouncesSetExplicitly;
-    UIWebBrowserView *_browserView;
-    _UIWebViewScrollViewDelegateForwarder *_forwarder;
+    BOOL  _bouncesSetExplicitly;
+    UIWebBrowserView * _browserView;
+    _UIWebViewScrollViewDelegateForwarder * _forwarder;
 }
 
 - (void)_setWebView:(id)arg1;

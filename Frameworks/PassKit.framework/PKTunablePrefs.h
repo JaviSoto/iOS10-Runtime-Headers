@@ -3,9 +3,9 @@
  */
 
 @interface PKTunablePrefs : NSObject {
-    NSMutableDictionary *_prefs;
-    UIView *_prefsContainerView;
-    UIWindow *_window;
+    NSMutableDictionary * _prefs;
+    UIView * _prefsContainerView;
+    UIWindow * _window;
 }
 
 @property (retain) NSMutableDictionary *prefs;

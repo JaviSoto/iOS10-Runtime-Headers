@@ -3,14 +3,14 @@
  */
 
 @interface BTLEClientTransaction : NSObject {
-    BTLEClient *_client;
-    NSString *_readCharacteristic;
-    NSData *_readData;
-    id /* block */ _readHandler;
-    id /* block */ _replyHandler;
-    NSString *_writeCharacteristic;
-    NSData *_writeData;
-    id /* block */ _writeHandler;
+    BTLEClient * _client;
+    NSString * _readCharacteristic;
+    NSData * _readData;
+    id /* block */  _readHandler;
+    id /* block */  _replyHandler;
+    NSString * _writeCharacteristic;
+    NSData * _writeData;
+    id /* block */  _writeHandler;
 }
 
 @property (nonatomic, retain) BTLEClient *client;

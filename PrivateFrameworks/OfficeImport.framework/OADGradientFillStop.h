@@ -3,9 +3,11 @@
  */
 
 @interface OADGradientFillStop : NSObject <NSCopying> {
-    OADColor *mColor;
-    float mPosition;
+    OADColor * mColor;
+    float  mPosition;
 }
+
++ (void)addStopWithColor:(id)arg1 position:(float)arg2 toArray:(id)arg3;
 
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -15,5 +17,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (float)position;
 - (void)setStyleColor:(id)arg1;
+- (BOOL)usesPlaceholderColor;
 
 @end

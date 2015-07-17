@@ -3,8 +3,8 @@
  */
 
 @interface CKDPGetLikesResponse : PBCodable <NSCopying> {
-    CKDPLikeInfo *_likeInfo;
-    NSMutableArray *_likes;
+    CKDPLikeInfo * _likeInfo;
+    NSMutableArray * _likes;
 }
 
 @property (nonatomic, readonly) BOOL hasLikeInfo;

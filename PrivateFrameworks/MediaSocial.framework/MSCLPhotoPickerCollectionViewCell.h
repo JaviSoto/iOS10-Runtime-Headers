@@ -3,9 +3,9 @@
  */
 
 @interface MSCLPhotoPickerCollectionViewCell : UICollectionViewCell {
-    UIImageView *_checkmarkImageView;
-    UIImageView *_thumbnailImageView;
-    UIImageView *_videoGlyphImageView;
+    UIImageView * _checkmarkImageView;
+    UIImageView * _thumbnailImageView;
+    UIImageView * _videoGlyphImageView;
 }
 
 @property (nonatomic) BOOL showsSelectionCheckmark;

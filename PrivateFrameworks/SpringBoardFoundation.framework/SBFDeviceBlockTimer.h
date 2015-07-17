@@ -3,13 +3,13 @@
  */
 
 @interface SBFDeviceBlockTimer : NSObject {
-    NSString *_cachedLocalizedPlatformName;
-    SBFDeviceLockController *_deviceLockController;
-    BOOL _enabled;
-    id /* block */ _handler;
-    NSString *_subtitleText;
-    NSTimer *_timer;
-    NSString *_titleText;
+    NSString * _cachedLocalizedPlatformName;
+    SBFDeviceLockController * _deviceLockController;
+    BOOL  _enabled;
+    id /* block */  _handler;
+    NSString * _subtitleText;
+    NSTimer * _timer;
+    NSString * _titleText;
 }
 
 @property (nonatomic, copy) NSString *cachedLocalizedPlatformName;

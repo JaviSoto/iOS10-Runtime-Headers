@@ -3,25 +3,25 @@
  */
 
 @interface MSCLSoundBiteView : UIView <MSCLProximityObserver> {
-    UIView *_backgroundView;
-    <MSCLSoundBiteViewDelegate> *_delegate;
-    BOOL _detectedFaceProximity;
-    MSCLSoundBiteViewButton *_explicitToggleButton;
-    BOOL _isExplicit;
-    BOOL _isObservingProximity;
-    int _mode;
-    UIButton *_playButton;
-    float _playbackProgress;
-    UIImageView *_playbackProgressImageView;
-    UILabel *_promptExplicitLabel;
-    UILabel *_promptLabel;
-    UIButton *_recordButton;
-    float _recordingTimeLabelWidth;
-    CAMShutterButton *_stopRecordingIndicator;
-    UILabel *_timeLabel;
-    UIView *_waveformBackgroundView;
-    MSCLWaveformImageProducer *_waveformImageProducer;
-    UIImageView *_waveformImageView;
+    UIView * _backgroundView;
+    <MSCLSoundBiteViewDelegate> * _delegate;
+    BOOL  _detectedFaceProximity;
+    MSCLSoundBiteViewButton * _explicitToggleButton;
+    BOOL  _isExplicit;
+    BOOL  _isObservingProximity;
+    int  _mode;
+    UIButton * _playButton;
+    float  _playbackProgress;
+    UIImageView * _playbackProgressImageView;
+    UILabel * _promptExplicitLabel;
+    UILabel * _promptLabel;
+    UIButton * _recordButton;
+    float  _recordingTimeLabelWidth;
+    CMKShutterButton * _stopRecordingIndicator;
+    UILabel * _timeLabel;
+    UIView * _waveformBackgroundView;
+    MSCLWaveformImageProducer * _waveformImageProducer;
+    UIImageView * _waveformImageView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

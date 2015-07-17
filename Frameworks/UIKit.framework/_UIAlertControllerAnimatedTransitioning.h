@@ -3,17 +3,23 @@
  */
 
 @interface _UIAlertControllerAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL _presentation;
+    UIAlertController * _alertController;
+    BOOL  _presentation;
 }
 
+@property (nonatomic, retain) UIAlertController *alertController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (getter=isPresentation) BOOL presentation;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (id)_alertControllerForContext:(id)arg1;
+- (id)alertController;
 - (void)animateTransition:(id)arg1;
 - (BOOL)isPresentation;
+- (void)setAlertController:(id)arg1;
 - (void)setPresentation:(BOOL)arg1;
 - (double)transitionDuration:(id)arg1;
 

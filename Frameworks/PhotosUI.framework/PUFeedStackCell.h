@@ -6,8 +6,8 @@
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _stackOffset;
-    PUStackView *_stackView;
+    }  _stackOffset;
+    PUStackView * _stackView;
 }
 
 @property (nonatomic) struct UIOffset { float x1; float x2; } stackOffset;

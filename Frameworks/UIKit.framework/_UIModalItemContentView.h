@@ -3,37 +3,37 @@
  */
 
 @interface _UIModalItemContentView : UIView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    UIViewController *_accessoryViewController;
-    UIView *_accessoryViewControllerContrainerView;
+    UIViewController * _accessoryViewController;
+    UIView * _accessoryViewControllerContrainerView;
     struct CGSize { 
         float width; 
         float height; 
-    } _accessoryViewControllerSize;
+    }  _accessoryViewControllerSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _actualViewControllerSize;
-    UITableView *_buttonTable;
-    UIButton *_cancelButton;
-    int _cancelButtonIndex;
-    UIButton *_defaultButton;
-    int _defaultButtonIndex;
-    BOOL _enableFirstOtherButton;
-    UITextField *_loginTextField;
+    }  _actualViewControllerSize;
+    UITableView * _buttonTable;
+    UIButton * _cancelButton;
+    int  _cancelButtonIndex;
+    UIButton * _defaultButton;
+    int  _defaultButtonIndex;
+    BOOL  _enableFirstOtherButton;
+    UITextField * _loginTextField;
     struct CGSize { 
         float width; 
         float height; 
-    } _maxSize;
-    UILabel *_messageLabel;
-    _UIModalItem *_modalItem;
-    UITextField *_passwordTextField;
+    }  _maxSize;
+    UILabel * _messageLabel;
+    _UIModalItem * _modalItem;
+    UITextField * _passwordTextField;
     struct CGSize { 
         float width; 
         float height; 
-    } _presentingSize;
-    _UIModalItemsPresentingViewController *_presentingViewController;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    }  _presentingSize;
+    _UIModalItemsPresentingViewController * _presentingViewController;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, readonly) UIViewController *accessoryViewController;

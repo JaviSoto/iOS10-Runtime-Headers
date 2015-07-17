@@ -3,15 +3,15 @@
  */
 
 @interface BRCTreeEnumerator : NSObject {
-    BRCLocalContainer *_container;
-    NSObject<OS_dispatch_group> *_group;
-    id /* block */ _handler;
-    BRCItemID *_parentID;
-    unsigned int _rowID;
-    NSMutableIndexSet *_seen;
-    BRCAccountSession *_session;
-    NSMutableIndexSet *_toVisit;
-    id /* block */ _whenDone;
+    BRCLocalContainer * _container;
+    NSObject<OS_dispatch_group> * _group;
+    id /* block */  _handler;
+    BRCItemID * _parentID;
+    unsigned int  _rowID;
+    NSMutableIndexSet * _seen;
+    BRCAccountSession * _session;
+    NSMutableIndexSet * _toVisit;
+    id /* block */  _whenDone;
 }
 
 @property (nonatomic, copy) id /* block */ whenDone;

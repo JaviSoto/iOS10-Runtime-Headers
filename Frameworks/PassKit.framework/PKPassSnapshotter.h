@@ -3,10 +3,10 @@
  */
 
 @interface PKPassSnapshotter : NSObject {
-    PKPassLibrary *_passLibrary;
-    float _scale;
-    NSObject<OS_dispatch_semaphore> *_snapshotSem;
-    UIWindow *_snapshotWindow;
+    PKPassLibrary * _passLibrary;
+    float  _scale;
+    NSObject<OS_dispatch_semaphore> * _snapshotSem;
+    UIWindow * _snapshotWindow;
 }
 
 @property (nonatomic) BOOL runsInBackgroundProcess;

@@ -3,9 +3,9 @@
  */
 
 @interface TSDGradientStop : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    TSUColor *mColor;
-    float mFraction;
-    float mInflection;
+    TSUColor * mColor;
+    float  mFraction;
+    float  mInflection;
 }
 
 @property (nonatomic, readonly, copy) TSUColor *color;

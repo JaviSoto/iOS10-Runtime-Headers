@@ -3,8 +3,8 @@
  */
 
 @interface TSPMemoryReadChannel : NSObject <TSUReadChannel> {
-    NSObject<OS_dispatch_data> *_dispatchData;
-    NSObject<OS_dispatch_queue> *_readQueue;
+    NSObject<OS_dispatch_data> * _dispatchData;
+    NSObject<OS_dispatch_queue> * _readQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

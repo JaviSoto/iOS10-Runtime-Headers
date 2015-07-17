@@ -3,14 +3,14 @@
  */
 
 @interface CKDRecordFetcher : CKDDatabaseOperation {
-    NSSet *_desiredKeys;
-    BOOL _fetchAssetContents;
-    NSObject<OS_dispatch_group> *_fetchGroup;
-    NSMutableDictionary *_fetchedRecordInfoByRecordID;
-    BOOL _preserveOrdering;
-    id /* block */ _recordFetchedBlock;
-    NSMutableArray *_recordIDsToFetch;
-    NSArray *_recordResponsesToFetch;
+    NSSet * _desiredKeys;
+    BOOL  _fetchAssetContents;
+    NSObject<OS_dispatch_group> * _fetchGroup;
+    NSMutableDictionary * _fetchedRecordInfoByRecordID;
+    BOOL  _preserveOrdering;
+    id /* block */  _recordFetchedBlock;
+    NSMutableArray * _recordIDsToFetch;
+    NSArray * _recordResponsesToFetch;
 }
 
 @property (nonatomic, retain) NSSet *desiredKeys;
@@ -26,6 +26,7 @@
 - (void)_fetchRecordsFromServer:(id)arg1 fullRecords:(id)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_flushFetchedRecordsToConsumer;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (BOOL)fetchAssetContents;
 - (id)fetchGroup;

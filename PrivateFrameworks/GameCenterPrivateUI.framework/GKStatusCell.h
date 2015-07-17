@@ -3,7 +3,7 @@
  */
 
 @interface GKStatusCell : GKCollectionViewCell {
-    UILabel *_statusLabel;
+    UILabel * _statusLabel;
 }
 
 @property (nonatomic, retain) UILabel *statusLabel;

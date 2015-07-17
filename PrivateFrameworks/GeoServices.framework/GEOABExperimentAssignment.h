@@ -6,10 +6,10 @@
     struct { 
         unsigned int placeRequestType : 1; 
         unsigned int serviceType : 1; 
-    } _has;
-    int _placeRequestType;
-    NSString *_querySubstring;
-    int _serviceType;
+    }  _has;
+    int  _placeRequestType;
+    NSString * _querySubstring;
+    int  _serviceType;
 }
 
 @property (nonatomic) BOOL hasPlaceRequestType;

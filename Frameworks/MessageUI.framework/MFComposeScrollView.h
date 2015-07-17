@@ -3,15 +3,15 @@
  */
 
 @interface MFComposeScrollView : UIScrollView {
-    NSMutableSet *_disabledSubviews;
-    int _scrollBlocked;
-    BOOL _shouldScrollToFirstResponder;
-    UIGestureRecognizer *_singleTapGestureRecognizer;
-    BOOL _subviewsDisabled;
+    NSMutableSet * _disabledSubviews;
+    int  _scrollBlocked;
+    BOOL  _shouldScrollToFirstResponder;
+    UIGestureRecognizer * _singleTapGestureRecognizer;
+    BOOL  _subviewsDisabled;
     struct CGPoint { 
         float x; 
         float y; 
-    } _tapLocation;
+    }  _tapLocation;
 }
 
 @property (nonatomic, readonly) NSSet *disabledSubviews;

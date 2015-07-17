@@ -3,11 +3,11 @@
  */
 
 @interface SKUIReview : NSObject <SKUICacheCoding> {
-    NSString *_body;
-    NSString *_dateString;
-    float _rating;
-    NSString *_reviewer;
-    NSString *_title;
+    NSString * _body;
+    NSString * _dateString;
+    float  _rating;
+    NSString * _reviewer;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *body;

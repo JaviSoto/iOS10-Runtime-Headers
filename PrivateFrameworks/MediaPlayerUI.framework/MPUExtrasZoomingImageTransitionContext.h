@@ -3,10 +3,10 @@
  */
 
 @interface MPUExtrasZoomingImageTransitionContext : NSObject {
-    unsigned int _appearState;
-    BOOL _interactive;
-    unsigned int _itemIndex;
-    MPUExtrasBorderedImageView *_zoomingImageView;
+    unsigned int  _appearState;
+    BOOL  _interactive;
+    unsigned int  _itemIndex;
+    MPUExtrasBorderedImageView * _zoomingImageView;
 }
 
 @property (nonatomic) unsigned int appearState;

@@ -3,12 +3,12 @@
  */
 
 @interface ACAccountCredential : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_credentialItems;
-    NSString *_credentialType;
-    BOOL _dirty;
-    NSMutableSet *_dirtyProperties;
-    BOOL _empty;
-    ACAccount *_owningAccount;
+    NSMutableDictionary * _credentialItems;
+    NSString * _credentialType;
+    BOOL  _dirty;
+    NSMutableSet * _dirtyProperties;
+    BOOL  _empty;
+    ACAccount * _owningAccount;
 }
 
 @property (nonatomic, copy) NSString *credentialType;
@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSString *mapsToken;
 @property (nonatomic, copy) NSString *oauthRefreshToken;
 @property (nonatomic, copy) NSString *oauthToken;
+@property (nonatomic, copy) NSString *oauthTokenNoSync;
 @property (nonatomic, copy) NSString *oauthTokenSecret;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *token;

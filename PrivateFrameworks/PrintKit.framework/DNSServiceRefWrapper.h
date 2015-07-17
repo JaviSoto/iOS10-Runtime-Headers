@@ -3,7 +3,7 @@
  */
 
 @interface DNSServiceRefWrapper : NSObject {
-    struct _DNSServiceRef_t { } *ref;
+    struct _DNSServiceRef_t { } * ref;
 }
 
 - (void)dealloc;

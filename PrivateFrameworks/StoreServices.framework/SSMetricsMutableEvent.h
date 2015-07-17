@@ -3,7 +3,7 @@
  */
 
 @interface SSMetricsMutableEvent : SSMetricsEvent <NSMutableCopying> {
-    NSMutableDictionary *_mutableBody;
+    NSMutableDictionary * _mutableBody;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *bodyDictionary;

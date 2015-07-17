@@ -3,15 +3,15 @@
  */
 
 @interface HDCodableNanoSyncMessage : PBCodable <HDNanoSyncDescription, NSCopying> {
-    HDCodableNanoSyncActivationRestore *_activationRestore;
-    HDCodableNanoSyncChangeSet *_changeSet;
+    HDCodableNanoSyncActivationRestore * _activationRestore;
+    HDCodableNanoSyncChangeSet * _changeSet;
     struct { 
         unsigned int version : 1; 
-    } _has;
-    NSData *_healthPairingUUID;
-    NSData *_persistentPairingUUID;
-    HDCodableNanoSyncStatus *_status;
-    int _version;
+    }  _has;
+    NSData * _healthPairingUUID;
+    NSData * _persistentPairingUUID;
+    HDCodableNanoSyncStatus * _status;
+    int  _version;
 }
 
 @property (nonatomic, retain) HDCodableNanoSyncActivationRestore *activationRestore;
@@ -32,7 +32,7 @@
 @property (nonatomic) int version;
 
 + (id)messageFromPersistentUserInfo:(id)arg1;
-+ (id)messageWithPersistentPairingUUID:(id)arg1 healthPairingUUID:(id)arg2;
++ (id)messageWithSyncStore:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)activationRestore;
@@ -47,7 +47,6 @@
 - (BOOL)hasActivationRestore;
 - (BOOL)hasChangeSet;
 - (BOOL)hasHealthPairingUUID;
-- (BOOL)hasMinimumVersion;
 - (BOOL)hasPersistentPairingUUID;
 - (BOOL)hasStatus;
 - (BOOL)hasVersion;

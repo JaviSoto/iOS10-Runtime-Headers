@@ -3,24 +3,24 @@
  */
 
 @interface _UISwitchInternalViewNeueStyle1 : UIView <_UISwitchInternalViewProtocol> {
-    BOOL _isAlwaysAccessible;
-    UIImageView *_knobView;
-    UIView *_leftSwitchWellContainerView;
-    UIView *_leftSwitchWellView;
-    UIImage *_offImage;
-    BOOL _on;
-    UIImage *_onImage;
-    UIColor *_onTintColor;
-    BOOL _pressed;
-    BOOL _pressedIsHandledByGestureRecognizer;
-    UIView *_switchWellContainerView;
-    UIView *_switchWellImageViewContainer;
-    UIImageView *_switchWellOffImageView;
-    UIImageView *_switchWellOnImageView;
-    UIView *_switchWellView;
-    UIColor *_thumbTintColor;
-    UIColor *_tintColor;
-    BOOL _useAlternateColor;
+    BOOL  _isAlwaysAccessible;
+    UIImageView * _knobView;
+    UIView * _leftSwitchWellContainerView;
+    UIView * _leftSwitchWellView;
+    UIImage * _offImage;
+    BOOL  _on;
+    UIImage * _onImage;
+    UIColor * _onTintColor;
+    BOOL  _pressed;
+    BOOL  _pressedIsHandledByGestureRecognizer;
+    UIView * _switchWellContainerView;
+    UIView * _switchWellImageViewContainer;
+    UIImageView * _switchWellOffImageView;
+    UIImageView * _switchWellOnImageView;
+    UIView * _switchWellView;
+    UIColor * _thumbTintColor;
+    UIColor * _tintColor;
+    BOOL  _useAlternateColor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,6 +37,7 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) BOOL useAlternateColor;
 
+- (void).cxx_destruct;
 - (void)_accessibilitySettingChanged;
 - (id)_accessibleOffImage;
 - (id)_accessibleOnImage;

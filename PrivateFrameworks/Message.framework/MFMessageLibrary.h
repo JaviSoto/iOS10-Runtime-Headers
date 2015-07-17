@@ -3,8 +3,8 @@
  */
 
 @interface MFMessageLibrary : NSObject {
-    MFAttachmentLibraryDataProvider *_attachmentDataProvider;
-    NSString *_path;
+    MFAttachmentLibraryDataProvider * _attachmentDataProvider;
+    NSString * _path;
 }
 
 - (id)UIDsToDeleteInMailbox:(id)arg1;
@@ -17,6 +17,7 @@
 - (id)bodyDataForMessage:(id)arg1;
 - (id)bodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2;
 - (id)bodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3;
+- (BOOL)canProvideMinimumRemoteID;
 - (void)closeDatabaseConnections;
 - (void)commit;
 - (void)compactMailbox:(id)arg1;
@@ -33,10 +34,12 @@
 - (id)dataPathForMessage:(id)arg1;
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
 - (id)dataProvider;
+- (id)dateOfOldestNonIndexedNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
 - (void)dealloc;
 - (void)deleteAccount:(id)arg1;
-- (void)deleteMailboxes:(id)arg1;
+- (void)deleteDataForMessage:(id)arg1;
+- (void)deleteMailboxes:(id)arg1 account:(id)arg2;
 - (void)deleteOfflineCacheDataForAccount:(int)arg1;
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
 - (unsigned int)deletedCountForMailbox:(id)arg1;
@@ -52,6 +55,7 @@
 - (id)headerDataForMessage:(id)arg1;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
 - (id)initWithPath:(id)arg1;
+- (void)invalidateAccount:(id)arg1;
 - (BOOL)isBusy;
 - (BOOL)isMessageContentsLocallyAvailable:(id)arg1;
 - (BOOL)libraryExists;
@@ -82,6 +86,8 @@
 - (id)metadataForMessage:(id)arg1;
 - (id)metadataForMessage:(id)arg1 key:(id)arg2;
 - (unsigned int)minimumRemoteIDForMailbox:(id)arg1;
+- (unsigned int)nonDeletedCountForAggregatedMailboxes:(id)arg1;
+- (unsigned int)nonDeletedCountForAggregatedMailboxes:(id)arg1 includeServerSearchResults:(BOOL)arg2 includeThreadSearchResults:(BOOL)arg3;
 - (unsigned int)nonDeletedCountForMailbox:(id)arg1;
 - (unsigned int)nonDeletedCountForMailbox:(id)arg1 includeServerSearchResults:(BOOL)arg2 includeThreadSearchResults:(BOOL)arg3;
 - (id)offlineCacheOperationsForAccount:(int)arg1 lastTemporaryID:(unsigned int*)arg2;
@@ -115,6 +121,8 @@
 - (BOOL)shouldCancel;
 - (id)storedIntegerPropertyWithName:(id)arg1;
 - (unsigned int)totalCountForMailbox:(id)arg1;
+- (unsigned int)unreadCountForAggregatedMailboxes:(id)arg1;
+- (unsigned int)unreadCountForAggregatedMailboxes:(id)arg1 matchingCriterion:(id)arg2;
 - (unsigned int)unreadCountForMailbox:(id)arg1;
 - (unsigned int)unreadCountForMailbox:(id)arg1 matchingCriterion:(id)arg2;
 - (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;

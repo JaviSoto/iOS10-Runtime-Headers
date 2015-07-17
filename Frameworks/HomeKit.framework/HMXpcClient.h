@@ -3,14 +3,14 @@
  */
 
 @interface HMXpcClient : NSObject <HMMessageTransport> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _connectionValid;
-    HMMessageDispatcher *_messageDispatcher;
-    int _notifyRegisterToken;
-    BOOL _notifyRegistered;
-    id /* block */ _reconnectionHandler;
-    BOOL _requiresCheckin;
-    NSXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    BOOL  _connectionValid;
+    HMMessageDispatcher * _messageDispatcher;
+    int  _notifyRegisterToken;
+    BOOL  _notifyRegistered;
+    id /* block */  _reconnectionHandler;
+    BOOL  _requiresCheckin;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;

@@ -3,16 +3,16 @@
  */
 
 @interface FlickrPost : FlickrRequest <NSURLConnectionDelegate> {
-    NSURL *_assetURL;
-    int _contentType;
-    BOOL _hidden;
-    NSData *_photoData;
-    long long _photoSetID;
-    NSString *_postDescription;
-    int _safetyLevel;
-    NSArray *_tags;
-    NSString *_title;
-    unsigned int _visibility;
+    NSURL * _assetURL;
+    int  _contentType;
+    BOOL  _hidden;
+    NSData * _photoData;
+    long long  _photoSetID;
+    NSString * _postDescription;
+    int  _safetyLevel;
+    NSArray * _tags;
+    NSString * _title;
+    unsigned int  _visibility;
 }
 
 @property (nonatomic, retain) NSURL *assetURL;

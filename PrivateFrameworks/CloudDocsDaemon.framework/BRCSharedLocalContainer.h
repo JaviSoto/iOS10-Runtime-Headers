@@ -3,7 +3,7 @@
  */
 
 @interface BRCSharedLocalContainer : BRCLocalContainer {
-    NSString *_ownerName;
+    NSString * _ownerName;
 }
 
 @property (nonatomic, readonly) BOOL isPrivateContainer;

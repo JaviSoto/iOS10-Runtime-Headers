@@ -3,11 +3,11 @@
  */
 
 @interface CNFRegListController : PSListController <CNFRegAccountAuthorizationDelegate, CNFRegChangeAccountPasswordDelegate, IMSystemMonitorListener> {
-    id /* block */ _appearBlock;
-    BOOL _appeared;
-    CNFRegController *_regController;
-    BOOL _shouldRerootPreferences;
-    BOOL _showingChildController;
+    id /* block */  _appearBlock;
+    BOOL  _appeared;
+    CNFRegController * _regController;
+    BOOL  _shouldRerootPreferences;
+    BOOL  _showingChildController;
 }
 
 @property (nonatomic, copy) id /* block */ appearBlock;
@@ -21,6 +21,7 @@
 @property (nonatomic) BOOL showingChildController;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_existingLabelForSection:(int)arg1 header:(BOOL)arg2;
 - (id)_existingLabelForSpecifier:(id)arg1 header:(BOOL)arg2;
 - (BOOL)_handleURLDictionary:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface SKUICrossFadingTabBarButton : UIControl {
-    _Badge *_badge;
-    UIImage *_image;
-    UIImage *_selectedImage;
-    UIImageView *_selectedImageView;
-    UILabel *_selectedTitleLabel;
-    float _selectionProgress;
-    UIImageView *_standardImageView;
-    UILabel *_standardTitleLabel;
-    NSString *_title;
+    _Badge * _badge;
+    UIImage * _image;
+    UIImage * _selectedImage;
+    UIImageView * _selectedImageView;
+    UILabel * _selectedTitleLabel;
+    float  _selectionProgress;
+    UIImageView * _standardImageView;
+    UILabel * _standardTitleLabel;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) UIImage *image;

@@ -3,8 +3,8 @@
  */
 
 @interface AVGarbageCollectedWeakReference : AVWeakReference {
-    NSString *_cachedReferencedObjectDescription;
-    id _referencedObject;
+    NSString * _cachedReferencedObjectDescription;
+    id  _referencedObject;
 }
 
 - (id)description;

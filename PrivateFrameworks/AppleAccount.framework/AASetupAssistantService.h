@@ -3,14 +3,14 @@
  */
 
 @interface AASetupAssistantService : NSObject {
-    ACAccount *_account;
-    NSString *_appleID;
-    struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
-    NSString *_emailChoice;
-    NSString *_password;
-    NSOperationQueue *_requesterQueue;
-    AASigningSession *_signingSession;
-    NSDate *_signingSessionCreationDate;
+    ACAccount * _account;
+    NSString * _appleID;
+    struct OpaqueCFHTTPCookieStorage { } * _cookieStorage;
+    NSString * _emailChoice;
+    NSString * _password;
+    NSOperationQueue * _requesterQueue;
+    AASigningSession * _signingSession;
+    NSDate * _signingSessionCreationDate;
 }
 
 @property (nonatomic, copy) NSString *appleID;

@@ -3,13 +3,13 @@
  */
 
 @interface SKButtonNodeSprite : SKSpriteNode {
-    NSObject<SKButtonNodeSpriteDelegate> *_delegate;
-    SKAction *_downAction;
-    id /* block */ _downBlock;
-    int _touches;
-    SKAction *_upAction;
-    id /* block */ _upBlock;
-    id /* block */ _upInsideBlock;
+    NSObject<SKButtonNodeSpriteDelegate> * _delegate;
+    SKAction * _downAction;
+    id /* block */  _downBlock;
+    int  _touches;
+    SKAction * _upAction;
+    id /* block */  _upBlock;
+    id /* block */  _upInsideBlock;
 }
 
 @property (nonatomic) NSObject<SKButtonNodeSpriteDelegate> *delegate;

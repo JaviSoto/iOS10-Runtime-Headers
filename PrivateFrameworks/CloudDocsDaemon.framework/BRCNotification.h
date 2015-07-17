@@ -3,15 +3,15 @@
  */
 
 @interface BRCNotification : BRQueryItem {
-    NSString *_aliasContainerID;
-    BRCLocalContainer *_container;
-    NSMutableSet *_containerIDsWithReverseAliases;
-    BRCItemID *_itemID;
-    unsigned long long _oldParentFileID;
-    unsigned long long _parentFileID;
-    BRCItemID *_parentID;
-    NSSet *_parentIDs;
-    NSString *_unsaltedBookmarkData;
+    NSString * _aliasContainerID;
+    BRCLocalContainer * _container;
+    NSMutableSet * _containerIDsWithReverseAliases;
+    BRCItemID * _itemID;
+    unsigned long long  _oldParentFileID;
+    unsigned long long  _parentFileID;
+    BRCItemID * _parentID;
+    NSSet * _parentIDs;
+    NSString * _unsaltedBookmarkData;
 }
 
 @property (nonatomic, readonly) NSString *aliasContainerID;

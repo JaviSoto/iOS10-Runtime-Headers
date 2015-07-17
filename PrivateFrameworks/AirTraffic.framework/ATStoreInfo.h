@@ -3,8 +3,8 @@
  */
 
 @interface ATStoreInfo : NSObject {
-    NSMutableDictionary *_assetDictionary;
-    NSMutableDictionary *_downloadDictionary;
+    NSMutableDictionary * _assetDictionary;
+    NSMutableDictionary * _downloadDictionary;
 }
 
 @property (nonatomic, retain) NSNumber *DSID;

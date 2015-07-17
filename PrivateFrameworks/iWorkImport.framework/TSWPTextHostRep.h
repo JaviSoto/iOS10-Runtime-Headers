@@ -3,10 +3,10 @@
  */
 
 @interface TSWPTextHostRep : TSDRep <TSDContainerRep> {
-    NSObject<TSKSearchReference> *_activeSearchReference;
-    TSWPShapeRep *_editingRep;
-    NSArray *_searchReferences;
-    BOOL _useFindOverlayers;
+    NSObject<TSKSearchReference> * _activeSearchReference;
+    TSWPShapeRep * _editingRep;
+    NSArray * _searchReferences;
+    BOOL  _useFindOverlayers;
 }
 
 @property (nonatomic, retain) NSObject<TSKSearchReference> *activeSearchReference;

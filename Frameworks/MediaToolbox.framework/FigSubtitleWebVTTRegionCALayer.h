@@ -3,7 +3,7 @@
  */
 
 @interface FigSubtitleWebVTTRegionCALayer : CALayer {
-    struct OpaqueFigSubtitleWebVTTRegionCALayerInternal { id x1; struct OpaqueFigSubtitleRenderer {} *x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct __CFDictionary {} *x4; struct __CFArray {} *x5; unsigned int x6; } *layerInternal;
+    struct OpaqueFigSubtitleWebVTTRegionCALayerInternal { id x1; struct OpaqueFigSubtitleRenderer {} *x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct __CFDictionary {} *x4; struct __CFArray {} *x5; unsigned int x6; } * layerInternal;
 }
 
 - (void)dealloc;

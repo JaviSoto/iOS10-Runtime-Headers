@@ -3,10 +3,10 @@
  */
 
 @interface SCROScriptClient : NSObject {
-    SCROConnection *_connection;
-    BOOL _isReady;
-    NSLock *_lock;
-    SCRCTargetSelectorTimer *_timer;
+    SCROConnection * _connection;
+    BOOL  _isReady;
+    NSLock * _lock;
+    SCRCTargetSelectorTimer * _timer;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

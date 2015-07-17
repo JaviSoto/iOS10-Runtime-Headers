@@ -3,7 +3,7 @@
  */
 
 @interface WMParagraphStyle : WMStyle {
-    BOOL mIsInTextFrame;
+    BOOL  mIsInTextFrame;
 }
 
 + (BOOL)isShadingNull:(id)arg1;

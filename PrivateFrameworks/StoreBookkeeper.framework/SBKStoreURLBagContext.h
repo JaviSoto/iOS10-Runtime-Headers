@@ -3,15 +3,15 @@
  */
 
 @interface SBKStoreURLBagContext : NSObject <NSCopying, NSMutableCopying> {
-    SSURLBag *_bag;
-    NSString *_domain;
-    BOOL _domainDisabled;
-    double _pollingIntervalInSeconds;
-    NSURL *_pullAllKeyValueRequestURL;
-    NSURL *_pullKeyValueRequestURL;
-    NSURL *_pushAllKeyValueRequestURL;
-    NSURL *_pushKeyValueRequestURL;
-    NSURL *_syncRequestURL;
+    SSURLBag * _bag;
+    NSString * _domain;
+    BOOL  _domainDisabled;
+    double  _pollingIntervalInSeconds;
+    NSURL * _pullAllKeyValueRequestURL;
+    NSURL * _pullKeyValueRequestURL;
+    NSURL * _pushAllKeyValueRequestURL;
+    NSURL * _pushKeyValueRequestURL;
+    NSURL * _syncRequestURL;
 }
 
 @property (retain) SSURLBag *bag;

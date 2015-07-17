@@ -8,9 +8,9 @@
         unsigned int isSingleFile : 1; 
         unsigned int isSoftLink : 1; 
         unsigned int _pad : 13; 
-    } flags;
-    unsigned short mode;
-    long time;
+    }  flags;
+    unsigned short  mode;
+    long  time;
 }
 
 - (id)copy;

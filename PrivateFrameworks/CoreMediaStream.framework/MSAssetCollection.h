@@ -3,14 +3,14 @@
  */
 
 @interface MSAssetCollection : NSObject <NSSecureCoding> {
-    NSString *_assetCollectionID;
-    NSString *_ctag;
-    NSArray *_derivedAssets;
-    NSString *_fileName;
-    long long _initialFailureDate;
-    MSAsset *_masterAsset;
-    NSDate *_serverUploadedDate;
-    BOOL _wasDeleted;
+    NSString * _assetCollectionID;
+    NSString * _ctag;
+    NSArray * _derivedAssets;
+    NSString * _fileName;
+    long long  _initialFailureDate;
+    MSAsset * _masterAsset;
+    NSDate * _serverUploadedDate;
+    BOOL  _wasDeleted;
 }
 
 @property (nonatomic, retain) NSString *assetCollectionID;

@@ -3,7 +3,7 @@
  */
 
 @interface WKInterfaceDevice : NSObject {
-    NSString *_preferredContentSizeCategory;
+    NSString * _preferredContentSizeCategory;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +13,8 @@
             float width; 
             float height; 
         } size; 
-    } _screenBounds;
-    float _screenScale;
+    }  _screenBounds;
+    float  _screenScale;
 }
 
 @property (nonatomic, readonly) NSDictionary *cachedImages;
@@ -28,6 +28,7 @@
 - (BOOL)addCachedImage:(id)arg1 name:(id)arg2;
 - (BOOL)addCachedImageWithData:(id)arg1 name:(id)arg2;
 - (id)cachedImages;
+- (void)playHaptic:(int)arg1;
 - (id)preferredContentSizeCategory;
 - (void)removeAllCachedImages;
 - (void)removeCachedImageWithName:(id)arg1;

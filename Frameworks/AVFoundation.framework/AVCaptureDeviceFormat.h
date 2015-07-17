@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureDeviceFormat : NSObject {
-    AVCaptureDeviceFormatInternal *_internal;
+    AVCaptureDeviceFormatInternal * _internal;
 }
 
 @property (nonatomic, readonly) int autoFocusSystem;
@@ -21,6 +21,8 @@
 @property (getter=isVideoStabilizationSupported, nonatomic, readonly) BOOL videoStabilizationSupported;
 @property (nonatomic, readonly) NSArray *videoSupportedFrameRateRanges;
 @property (nonatomic, readonly) float videoZoomFactorUpscaleThreshold;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (void)initialize;
 
@@ -60,6 +62,7 @@
 - (int)supportedFormatsArrayIndex;
 - (int)supportedStabilizationMethod;
 - (BOOL)supportsDynamicCrop;
+- (BOOL)supportsFormatFeature0;
 - (BOOL)supportsHighProfileH264;
 - (BOOL)supportsHighResolutionStillImageOutput;
 - (BOOL)supportsLowLightBoost;
@@ -70,5 +73,14 @@
 - (id)videoZoomSupportedDownscaleStages;
 - (id)videoZoomSupportedUpscaleStages;
 - (id)vtScalingMode;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (struct { int x1; int x2; })_expectedVideoDimensionsForVideoConfiguration:(int)arg1;
+- (double)_framesPerSecondForVideoConfiguration:(int)arg1;
+- (int)cam_compareUsingDimensions:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })cam_frameDurationForVideoConfiguration:(int)arg1;
+- (BOOL)cam_supportsPanoramaConfiguration:(id)arg1;
+- (BOOL)cam_supportsVideoConfiguration:(int)arg1;
 
 @end

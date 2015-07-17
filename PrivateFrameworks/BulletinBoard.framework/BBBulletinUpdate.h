@@ -3,10 +3,10 @@
  */
 
 @interface BBBulletinUpdate : NSObject {
-    BBBulletin *_bulletin;
-    unsigned int _feeds;
-    BOOL _shouldSync;
-    int _type;
+    BBBulletin * _bulletin;
+    unsigned int  _feeds;
+    BOOL  _shouldSync;
+    int  _type;
 }
 
 @property (nonatomic, readonly, retain) BBBulletin *bulletin;

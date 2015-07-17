@@ -3,7 +3,7 @@
  */
 
 @interface PUReviewInstructionalView : UIView {
-    UILabel *__instructionalLabel;
+    UILabel * __instructionalLabel;
 }
 
 @property (nonatomic, readonly) UILabel *_instructionalLabel;

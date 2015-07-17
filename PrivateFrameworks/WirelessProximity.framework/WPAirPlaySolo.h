@@ -3,9 +3,9 @@
  */
 
 @interface WPAirPlaySolo : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WPAirPlaySoloDelegate> *_delegate;
-    int _state;
+    XPCClient * _connection;
+    <WPAirPlaySoloDelegate> * _delegate;
+    int  _state;
 }
 
 @property (nonatomic, retain) XPCClient *connection;

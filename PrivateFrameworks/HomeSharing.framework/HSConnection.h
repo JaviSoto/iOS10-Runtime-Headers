@@ -3,22 +3,22 @@
  */
 
 @interface HSConnection : NSObject {
-    NSObject<OS_dispatch_source> *_activityTimerSource;
-    unsigned int _basePlaylistContainerID;
-    NSURL *_baseURL;
-    NSURLSession *_connectionSession;
-    int _connectionState;
-    int _connectionType;
-    unsigned int _controlKey;
-    unsigned int _controlPort;
-    unsigned int _databaseID;
-    unsigned int _databaseRevision;
-    HSFairPlayInfo *_fairPlayInfo;
-    NSString *_homeSharingGroupID;
-    unsigned int _interfaceID;
-    unsigned int _promptID;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    unsigned int _sessionID;
+    NSObject<OS_dispatch_source> * _activityTimerSource;
+    unsigned int  _basePlaylistContainerID;
+    NSURL * _baseURL;
+    NSURLSession * _connectionSession;
+    int  _connectionState;
+    int  _connectionType;
+    unsigned int  _controlKey;
+    unsigned int  _controlPort;
+    unsigned int  _databaseID;
+    unsigned int  _databaseRevision;
+    HSFairPlayInfo * _fairPlayInfo;
+    NSString * _homeSharingGroupID;
+    unsigned int  _interfaceID;
+    unsigned int  _promptID;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    unsigned int  _sessionID;
 }
 
 @property unsigned int basePlaylistContainerID;

@@ -3,7 +3,7 @@
  */
 
 @interface UIAlertSheetTextField : UITextField {
-    UIThreePartImageView *_sheetBackgroundView;
+    UIThreePartImageView * _sheetBackgroundView;
 }
 
 - (id)backgroundView;

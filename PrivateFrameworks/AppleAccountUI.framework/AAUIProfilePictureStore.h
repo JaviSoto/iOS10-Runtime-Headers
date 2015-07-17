@@ -3,14 +3,14 @@
  */
 
 @interface AAUIProfilePictureStore : NSObject {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    BOOL _didBeginUsingAddressBookSingleton;
-    AAGrandSlamSigner *_grandSlamSigner;
-    ABMonogrammer *_monogrammer;
-    NSOperationQueue *_networkingQueue;
-    float _pictureDiameter;
-    int _pictureStyle;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    BOOL  _didBeginUsingAddressBookSingleton;
+    AAGrandSlamSigner * _grandSlamSigner;
+    ABMonogrammer * _monogrammer;
+    NSOperationQueue * _networkingQueue;
+    float  _pictureDiameter;
+    int  _pictureStyle;
 }
 
 @property (nonatomic) float pictureDiameter;

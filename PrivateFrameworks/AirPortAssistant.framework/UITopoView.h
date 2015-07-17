@@ -3,7 +3,7 @@
  */
 
 @interface UITopoView : UIView {
-    NetTopoMiniStaticLayout *netTopoMiniStaticLayout;
+    NetTopoMiniStaticLayout * netTopoMiniStaticLayout;
 }
 
 @property (nonatomic, retain) NetTopoMiniStaticLayout *netTopoMiniStaticLayout;

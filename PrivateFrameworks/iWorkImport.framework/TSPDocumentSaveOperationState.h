@@ -3,24 +3,24 @@
  */
 
 @interface TSPDocumentSaveOperationState : TSPSaveOperationState {
-    NSURL *_URL;
-    BOOL _didEndWriteOperation;
-    TSPObject *_documentObject;
-    TSPPackageWriter *_documentPackageWriter;
-    NSString *_documentPasswordHint;
-    TSPDocumentProperties *_documentProperties;
-    TSPDocumentRevision *_documentRevision;
-    NSUUID *_documentUUID;
-    SFUCryptoKey *_encryptionKey;
-    NSURL *_originalSupportURL;
-    int _packageType;
-    NSData *_passwordVerifier;
-    NSProgress *_progress;
-    NSURL *_relativeURLForExternalData;
-    unsigned long long _saveToken;
-    BOOL _shouldLeavePendingEndSave;
-    TSPObject *_supportObject;
-    TSPPackageWriter *_supportPackageWriter;
+    NSURL * _URL;
+    BOOL  _didEndWriteOperation;
+    TSPObject * _documentObject;
+    TSPPackageWriter * _documentPackageWriter;
+    NSString * _documentPasswordHint;
+    TSPDocumentProperties * _documentProperties;
+    TSPDocumentRevision * _documentRevision;
+    NSUUID * _documentUUID;
+    SFUCryptoKey * _encryptionKey;
+    NSURL * _originalSupportURL;
+    int  _packageType;
+    NSData * _passwordVerifier;
+    NSProgress * _progress;
+    NSURL * _relativeURLForExternalData;
+    unsigned long long  _saveToken;
+    BOOL  _shouldLeavePendingEndSave;
+    TSPObject * _supportObject;
+    TSPPackageWriter * _supportPackageWriter;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

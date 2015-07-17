@@ -3,8 +3,8 @@
  */
 
 @interface TPBottomBar : UIView {
-    int _orientation;
-    int _style;
+    int  _orientation;
+    int  _style;
 }
 
 + (float)defaultHeight;

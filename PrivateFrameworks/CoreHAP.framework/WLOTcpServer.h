@@ -3,10 +3,10 @@
  */
 
 @interface WLOTcpServer : NSObject {
-    <WLOTcpServerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_listenQueue;
-    int _port;
-    int _sockd;
+    <WLOTcpServerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _listenQueue;
+    int  _port;
+    int  _sockd;
 }
 
 @property (nonatomic) <WLOTcpServerDelegate> *delegate;

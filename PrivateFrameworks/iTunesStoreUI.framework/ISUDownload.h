@@ -3,8 +3,8 @@
  */
 
 @interface ISUDownload : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSDownload *_download;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSDownload * _download;
 }
 
 @property (nonatomic, readonly) NSString *artistName;

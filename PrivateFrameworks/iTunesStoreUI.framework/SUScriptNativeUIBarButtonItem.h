@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptNativeUIBarButtonItem : SUScriptButtonNativeObject {
-    BOOL _isBackButton;
+    BOOL  _isBackButton;
 }
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;

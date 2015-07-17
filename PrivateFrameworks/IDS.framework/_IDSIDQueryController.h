@@ -3,17 +3,17 @@
  */
 
 @interface _IDSIDQueryController : NSObject <IDSDaemonListenerProtocol> {
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    id _delegateContext;
-    NSMapTable *_delegateToInfo;
-    NSMutableDictionary *_idStatusCache;
-    NSMutableDictionary *_listenerIDToServicesMap;
-    NSMutableDictionary *_listeners;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_rerouteService;
-    NSString *_serviceToken;
-    NSMutableDictionary *_transactionIDToBlockMap;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    id  _delegateContext;
+    NSMapTable * _delegateToInfo;
+    NSMutableDictionary * _idStatusCache;
+    NSMutableDictionary * _listenerIDToServicesMap;
+    NSMutableDictionary * _listeners;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _rerouteService;
+    NSString * _serviceToken;
+    NSMutableDictionary * _transactionIDToBlockMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;

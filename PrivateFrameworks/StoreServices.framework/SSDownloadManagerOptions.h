@@ -3,11 +3,11 @@
  */
 
 @interface SSDownloadManagerOptions : NSObject <NSCopying> {
-    NSArray *_downloadKinds;
-    BOOL _filterExternalOriginatedDownloads;
-    NSString *_persistenceIdentifier;
-    NSArray *_prefetchedDownloadExternalProperties;
-    NSArray *_prefetchedDownloadProperties;
+    NSArray * _downloadKinds;
+    BOOL  _filterExternalOriginatedDownloads;
+    NSString * _persistenceIdentifier;
+    NSArray * _prefetchedDownloadExternalProperties;
+    NSArray * _prefetchedDownloadProperties;
 }
 
 @property (nonatomic, copy) NSArray *downloadKinds;

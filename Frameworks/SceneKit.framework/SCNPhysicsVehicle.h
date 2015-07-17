@@ -3,18 +3,17 @@
  */
 
 @interface SCNPhysicsVehicle : SCNPhysicsBehavior {
-    SCNPhysicsBody *_chassisBody;
-    float _speedKmHour;
-    struct btRaycastVehicle { int (**x1)(); struct btAlignedObjectArray<btVector3> { struct btAlignedAllocator<btVector3, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btVector3 {} *x_2_1_4; bool x_2_1_5; } x2; struct btAlignedObjectArray<btVector3> { struct btAlignedAllocator<btVector3, 16> { } x_3_1_1; int x_3_1_2; int x_3_1_3; struct btVector3 {} *x_3_1_4; bool x_3_1_5; } x3; struct btAlignedObjectArray<float> { struct btAlignedAllocator<float, 16> { } x_4_1_1; int x_4_1_2; int x_4_1_3; float *x_4_1_4; bool x_4_1_5; } x4; struct btAlignedObjectArray<float> { struct btAlignedAllocator<float, 16> { } x_5_1_1; int x_5_1_2; int x_5_1_3; float *x_5_1_4; bool x_5_1_5; } x5; int x6; int x7; float x8; float x9; struct btVehicleRaycaster {} *x10; float x11; float x12; float x13; struct btRigidBody {} *x14; int x15; int x16; int x17; struct btAlignedObjectArray<btWheelInfo> { struct btAlignedAllocator<btWheelInfo, 16> { } x_18_1_1; int x_18_1_2; int x_18_1_3; struct btWheelInfo {} *x_18_1_4; bool x_18_1_5; } x18; } *_vehicle;
-    NSArray *_wheels;
-    SCNPhysicsWorld *_world;
+    SCNPhysicsBody * _chassisBody;
+    float  _speedKmHour;
+    struct btRaycastVehicle { int (**x1)(); struct btAlignedObjectArray<btVector3> { struct btAlignedAllocator<btVector3, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btVector3 {} *x_2_1_4; bool x_2_1_5; } x2; struct btAlignedObjectArray<btVector3> { struct btAlignedAllocator<btVector3, 16> { } x_3_1_1; int x_3_1_2; int x_3_1_3; struct btVector3 {} *x_3_1_4; bool x_3_1_5; } x3; struct btAlignedObjectArray<float> { struct btAlignedAllocator<float, 16> { } x_4_1_1; int x_4_1_2; int x_4_1_3; float *x_4_1_4; bool x_4_1_5; } x4; struct btAlignedObjectArray<float> { struct btAlignedAllocator<float, 16> { } x_5_1_1; int x_5_1_2; int x_5_1_3; float *x_5_1_4; bool x_5_1_5; } x5; int x6; int x7; float x8; float x9; struct btVehicleRaycaster {} *x10; float x11; float x12; float x13; struct btRigidBody {} *x14; int x15; int x16; int x17; struct btAlignedObjectArray<btWheelInfo> { struct btAlignedAllocator<btWheelInfo, 16> { } x_18_1_1; int x_18_1_2; int x_18_1_3; struct btWheelInfo {} *x_18_1_4; bool x_18_1_5; } x18; } * _vehicle;
+    NSArray * _wheels;
+    SCNPhysicsWorld * _world;
 }
 
 @property (nonatomic, readonly) SCNPhysicsBody *chassisBody;
 @property (nonatomic, readonly) float speedInKilometersPerHour;
 @property (nonatomic, readonly) NSArray *wheels;
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
 + (id)vehicleWithChassisBody:(id)arg1 wheels:(id)arg2;
 
@@ -31,6 +30,7 @@
 - (id)chassisBody;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasReferenceToPhysicsBody:(id)arg1;
 - (id)initWithChassisBody:(id)arg1 wheels:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)physicsWorld;

@@ -3,12 +3,12 @@
  */
 
 @interface NSPhoneNumberCheckingResult : NSTextCheckingResult {
-    NSString *_phoneNumber;
+    NSString * _phoneNumber;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    id _underlyingResult;
+    }  _range;
+    id  _underlyingResult;
 }
 
 @property (readonly) void*underlyingResult;

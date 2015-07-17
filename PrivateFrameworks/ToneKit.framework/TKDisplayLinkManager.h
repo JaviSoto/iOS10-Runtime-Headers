@@ -3,12 +3,12 @@
  */
 
 @interface TKDisplayLinkManager : NSObject {
-    NSMutableSet *_activeTargetActions;
-    BOOL _handlingDisplayRefresh;
-    BOOL _hasUpdatedTargetActions;
-    CADisplayLink *_storedDisplayLink;
-    NSMutableSet *_updatedTargetActions;
-    unsigned int _warmUpModeRequirementsCount;
+    NSMutableSet * _activeTargetActions;
+    BOOL  _handlingDisplayRefresh;
+    BOOL  _hasUpdatedTargetActions;
+    CADisplayLink * _storedDisplayLink;
+    NSMutableSet * _updatedTargetActions;
+    unsigned int  _warmUpModeRequirementsCount;
 }
 
 @property (setter=_setActiveTargetActions:, nonatomic, retain) NSMutableSet *_activeTargetActions;

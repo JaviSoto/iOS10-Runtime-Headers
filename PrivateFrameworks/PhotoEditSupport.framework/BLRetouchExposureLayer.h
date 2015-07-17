@@ -3,9 +3,9 @@
  */
 
 @interface BLRetouchExposureLayer : BLRetouchEffectLayer {
-    float *_cubeData;
-    float _currentExposure;
-    float _exposure;
+    float * _cubeData;
+    float  _currentExposure;
+    float  _exposure;
 }
 
 @property (nonatomic) float exposure;

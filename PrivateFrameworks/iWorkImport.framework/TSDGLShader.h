@@ -3,12 +3,12 @@
  */
 
 @interface TSDGLShader : NSObject {
-    NSMutableDictionary *_attributeLocations;
-    BOOL _isActive;
-    NSString *_name;
-    unsigned int _programObject;
-    NSMutableDictionary *_uniforms;
-    NSMutableSet *_uniformsNeedingUpdate;
+    NSMutableDictionary * _attributeLocations;
+    BOOL  _isActive;
+    NSString * _name;
+    unsigned int  _programObject;
+    NSMutableDictionary * _uniforms;
+    NSMutableSet * _uniformsNeedingUpdate;
 }
 
 @property (nonatomic, readonly) BOOL isActive;

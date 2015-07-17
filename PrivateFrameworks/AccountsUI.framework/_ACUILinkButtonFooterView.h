@@ -3,8 +3,8 @@
  */
 
 @interface _ACUILinkButtonFooterView : UIView <PSHeaderFooterView> {
-    int _desiredTextAlignment;
-    ACUILinkButton *_linkButton;
+    int  _desiredTextAlignment;
+    ACUILinkButton * _linkButton;
 }
 
 - (void).cxx_destruct;

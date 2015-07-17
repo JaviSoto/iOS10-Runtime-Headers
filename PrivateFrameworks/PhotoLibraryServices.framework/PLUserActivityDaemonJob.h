@@ -3,10 +3,10 @@
  */
 
 @interface PLUserActivityDaemonJob : PLDaemonJob {
-    long long _actionType;
-    NSString *_albumUUID;
-    NSArray *_assetUUIDs;
-    int _cloudFeedContent;
+    long long  _actionType;
+    NSString * _albumUUID;
+    NSArray * _assetUUIDs;
+    int  _cloudFeedContent;
 }
 
 @property long long actionType;

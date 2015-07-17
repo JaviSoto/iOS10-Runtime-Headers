@@ -3,12 +3,12 @@
  */
 
 @interface MSServerSideConfigManager : NSObject <MSServerSideConfigProtocolDelegate> {
-    NSDictionary *_config;
-    NSString *_configPath;
-    MSMediaStreamDaemon *_daemon;
-    NSString *_personID;
-    MSServerSideConfigProtocol *_protocol;
-    int _state;
+    NSDictionary * _config;
+    NSString * _configPath;
+    MSMediaStreamDaemon * _daemon;
+    NSString * _personID;
+    MSServerSideConfigProtocol * _protocol;
+    int  _state;
 }
 
 @property (nonatomic, retain) NSDictionary *config;

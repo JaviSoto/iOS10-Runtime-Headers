@@ -3,17 +3,17 @@
  */
 
 @interface RadioGetHistoryRequest : RadioRequest {
-    NSNumber *_accountUniqueIdentifier;
-    BOOL _aggregateSessions;
-    BOOL _fetchForAccount;
-    BOOL _includesAds;
-    unsigned int _maxNumberOfTracks;
-    NSArray *_playActivityFeedEvents;
-    RadioPlayEventCollection *_playEventCollection;
-    SSURLConnectionRequest *_request;
-    BOOL _shouldProcessCategories;
-    NSString *_stationHash;
-    long long _stationID;
+    NSNumber * _accountUniqueIdentifier;
+    BOOL  _aggregateSessions;
+    BOOL  _fetchForAccount;
+    BOOL  _includesAds;
+    unsigned int  _maxNumberOfTracks;
+    NSArray * _playActivityFeedEvents;
+    RadioPlayEventCollection * _playEventCollection;
+    SSURLConnectionRequest * _request;
+    BOOL  _shouldProcessCategories;
+    NSString * _stationHash;
+    long long  _stationID;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *accountUniqueIdentifier;

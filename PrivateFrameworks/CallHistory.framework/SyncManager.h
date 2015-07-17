@@ -3,8 +3,8 @@
  */
 
 @interface SyncManager : CHLogger <SyncManagerProtocol> {
-    CallHistoryDBClientHandle *_dbHandle;
-    TransactionManager *_transactionManager;
+    CallHistoryDBClientHandle * _dbHandle;
+    TransactionManager * _transactionManager;
 }
 
 @property (nonatomic, readonly) CallHistoryDBClientHandle *dbHandle;

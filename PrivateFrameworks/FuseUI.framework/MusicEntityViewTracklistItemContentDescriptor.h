@@ -3,12 +3,12 @@
  */
 
 @interface MusicEntityViewTracklistItemContentDescriptor : MusicEntityViewContentDescriptor {
-    NSArray *_detailTextDescriptors;
-    MusicEntityViewContentTextDescriptor *_leadingTextDescriptor;
-    UIColor *_mediaTypeTintColor;
-    MusicEntityViewContentArtworkDescriptor *_trailingAccessoryArtworkDescriptor;
-    MusicEntityViewContentTextDescriptor *_trailingTextDescriptor;
-    BOOL _wantsMediaTypeImage;
+    NSArray * _detailTextDescriptors;
+    MusicEntityViewContentTextDescriptor * _leadingTextDescriptor;
+    UIColor * _mediaTypeTintColor;
+    MusicEntityViewContentArtworkDescriptor * _trailingAccessoryArtworkDescriptor;
+    MusicEntityViewContentTextDescriptor * _trailingTextDescriptor;
+    BOOL  _wantsMediaTypeImage;
 }
 
 @property (nonatomic, copy) NSArray *detailTextDescriptors;

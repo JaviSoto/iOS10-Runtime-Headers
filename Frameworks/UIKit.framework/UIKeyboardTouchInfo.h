@@ -3,22 +3,22 @@
  */
 
 @interface UIKeyboardTouchInfo : NSObject {
-    BOOL _dragged;
+    BOOL  _dragged;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialDragPoint;
-    int _initialKeyState;
+    }  _initialDragPoint;
+    int  _initialKeyState;
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialPoint;
-    UIKBTree *_key;
-    UIKBTree *_keyplane;
-    BOOL _maySuppressUpAction;
-    UIKBTree *_slidOffKey;
-    int _stage;
-    UITouch *_touch;
+    }  _initialPoint;
+    UIKBTree * _key;
+    UIKBTree * _keyplane;
+    BOOL  _maySuppressUpAction;
+    UIKBTree * _slidOffKey;
+    int  _stage;
+    UIKBTouchState * _touch;
 }
 
 @property (nonatomic) BOOL dragged;
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL maySuppressUpAction;
 @property (nonatomic, retain) UIKBTree *slidOffKey;
 @property (nonatomic) int stage;
-@property (nonatomic, retain) UITouch *touch;
+@property (nonatomic, retain) UIKBTouchState *touch;
 
 - (void)dealloc;
 - (BOOL)dragged;

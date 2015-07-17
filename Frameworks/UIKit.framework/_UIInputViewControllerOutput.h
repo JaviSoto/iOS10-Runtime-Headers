@@ -3,13 +3,13 @@
  */
 
 @interface _UIInputViewControllerOutput : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_keyboardOutputs;
-    NSString *_primaryLanguage;
-    BOOL _requiresInputManagerSync;
-    BOOL _shouldAdvanceInputMode;
-    BOOL _shouldAdvanceResponder;
-    BOOL _shouldDismiss;
-    BOOL _shouldPostReturnKeyNotification;
+    NSArray * _keyboardOutputs;
+    NSString * _primaryLanguage;
+    BOOL  _requiresInputManagerSync;
+    BOOL  _shouldAdvanceInputMode;
+    BOOL  _shouldAdvanceResponder;
+    BOOL  _shouldDismiss;
+    BOOL  _shouldPostReturnKeyNotification;
 }
 
 @property (nonatomic, retain) NSArray *keyboardOutputs;

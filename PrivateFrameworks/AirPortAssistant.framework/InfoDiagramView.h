@@ -3,20 +3,20 @@
  */
 
 @interface InfoDiagramView : UIView <InfoDiagramCablingAnchorDelegate> {
-    UIView *animatingCablingFrameView;
-    AUImageView *broadbandImageView;
-    AULabel *broadbandLabel;
-    UIView *fixedCablingFrameView;
-    AUImageView *insetImageView;
-    AULabel *internetLabel;
-    AULabel *portLabel;
-    AUImageView *replacementBaseImageView;
-    AULabel *replacementBaseLabel;
-    unsigned int replacementProductID;
-    int sizeClass;
-    unsigned int wanBaseProductID;
-    AUImageView *wanConnectedBaseImageView;
-    AULabel *wanConnectedBaseLabel;
+    UIView * animatingCablingFrameView;
+    AUImageView * broadbandImageView;
+    AULabel * broadbandLabel;
+    UIView * fixedCablingFrameView;
+    AUImageView * insetImageView;
+    AULabel * internetLabel;
+    AULabel * portLabel;
+    AUImageView * replacementBaseImageView;
+    AULabel * replacementBaseLabel;
+    unsigned int  replacementProductID;
+    int  sizeClass;
+    unsigned int  wanBaseProductID;
+    AUImageView * wanConnectedBaseImageView;
+    AULabel * wanConnectedBaseLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,42 +3,43 @@
  */
 
 @interface BWAudioSourceNode : BWSourceNode {
-    struct opaqueCMSession { } *_CMSession;
-    struct opaqueCMSimpleQueue { } *_activeBuffersQueue;
-    unsigned long _auSubType;
-    int _audioLevelUnits;
-    struct OpaqueAudioComponentInstance { } *_audioUnit;
+    struct opaqueCMSession { } * _CMSession;
+    struct opaqueCMSimpleQueue { } * _activeBuffersQueue;
+    unsigned long  _auSubType;
+    int  _audioLevelUnits;
+    struct OpaqueAudioComponentInstance { } * _audioUnit;
     struct { 
         unsigned int val[8]; 
-    } _clientAuditToken;
-    BOOL _clientAuditTokenIsValid;
-    int _clientPID;
-    struct OpaqueCMClock { } *_clock;
-    BOOL _configuresSession;
-    BOOL _didBeginInterruption;
-    struct opaqueCMFormatDescription { } *_formatDescription;
-    NSObject<OS_dispatch_queue> *_generateSamplesDispatchQueue;
-    struct opaqueCMSimpleQueue { } *_inactiveBuffersQueue;
-    BOOL _isAppAudioSession;
+    }  _clientAuditToken;
+    BOOL  _clientAuditTokenIsValid;
+    int  _clientPID;
+    struct OpaqueCMClock { } * _clock;
+    BOOL  _configuresSession;
+    BOOL  _didBeginInterruption;
+    struct opaqueCMFormatDescription { } * _formatDescription;
+    NSObject<OS_dispatch_queue> * _generateSamplesDispatchQueue;
+    struct opaqueCMSimpleQueue { } * _inactiveBuffersQueue;
+    BOOL  _isAppAudioSession;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _latencyOffset;
-    BOOL _levelMeteringEnabled;
+    }  _latencyOffset;
+    BOOL  _levelMeteringEnabled;
+    BOOL  _mixesWithOthers;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _nextExpectedSampleTime;
-    unsigned int _pullDuration;
-    struct opaqueCMSimpleQueue { } *_renderProcErrorQueue;
-    BOOL _selectsMicForFrontCamera;
-    BOOL _streamInterrupted;
-    BOOL _streamStarted;
-    BOOL _usesVideoCMSessionAudioMode;
+    }  _nextExpectedSampleTime;
+    unsigned int  _pullDuration;
+    struct opaqueCMSimpleQueue { } * _renderProcErrorQueue;
+    BOOL  _selectsMicForFrontCamera;
+    BOOL  _streamInterrupted;
+    BOOL  _streamStarted;
+    BOOL  _usesVideoCMSessionAudioMode;
 }
 
 @property (nonatomic, readonly) NSArray *audioLevels;
@@ -65,7 +66,7 @@
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
 - (BOOL)hasNonLiveConfigurationChanges;
-- (id)initWithCMSession:(struct opaqueCMSession { }*)arg1 configureSession:(BOOL)arg2 clientToken:(id)arg3 clientPID:(int)arg4;
+- (id)initWithCMSession:(struct opaqueCMSession { }*)arg1 configureSession:(BOOL)arg2 mixWithOthers:(BOOL)arg3 clientToken:(id)arg4 clientPID:(int)arg5;
 - (BOOL)interrupted;
 - (BOOL)levelMeteringEnabled;
 - (void)makeCurrentConfigurationLive;

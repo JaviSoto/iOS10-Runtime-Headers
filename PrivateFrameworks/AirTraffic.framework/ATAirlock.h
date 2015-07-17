@@ -3,8 +3,8 @@
  */
 
 @interface ATAirlock : NSObject {
-    NSString *_basePath;
-    NSFileManager *_fm;
+    NSString * _basePath;
+    NSFileManager * _fm;
 }
 
 + (id)sharedInstance;

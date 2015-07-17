@@ -3,9 +3,9 @@
  */
 
 @interface CTCallCenter : NSObject {
-    id /* block */ _callEventHandler;
-    NSSet *_currentCalls;
-    void *_server;
+    id /* block */  _callEventHandler;
+    NSSet * _currentCalls;
+    void * _server;
 }
 
 @property (nonatomic, copy) id /* block */ callEventHandler;

@@ -23,12 +23,12 @@
             float q; 
         } ; 
         float v[4]; 
-    } _ambientColor;
-    int _ambientColorLoc;
+    }  _ambientColor;
+    int  _ambientColorLoc;
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
-    } _colorMaterialEnabledMask;
+    }  _colorMaterialEnabledMask;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -49,9 +49,9 @@
             float q; 
         } ; 
         float v[4]; 
-    } _diffuseColor;
-    int _diffuseColorLoc;
-    unsigned long long *_effectDirtyUniforms;
+    }  _diffuseColor;
+    int  _diffuseColorLoc;
+    unsigned long long * _effectDirtyUniforms;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -72,10 +72,10 @@
             float q; 
         } ; 
         float v[4]; 
-    } _emissiveColor;
-    int _emissiveColorLoc;
-    float _shininess;
-    int _shininessLoc;
+    }  _emissiveColor;
+    int  _emissiveColorLoc;
+    float  _shininess;
+    int  _shininessLoc;
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -96,8 +96,8 @@
             float q; 
         } ; 
         float v[4]; 
-    } _specularColor;
-    int _specularColorLoc;
+    }  _specularColor;
+    int  _specularColorLoc;
 }
 
 @property (nonatomic) int _ambientColorLoc;

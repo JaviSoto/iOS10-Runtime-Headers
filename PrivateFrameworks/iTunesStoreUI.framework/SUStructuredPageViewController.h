@@ -3,9 +3,9 @@
  */
 
 @interface SUStructuredPageViewController : SUItemTableViewController <ISURLOperationDelegate> {
-    Class _dataSourceClass;
-    UILabel *_noItemsLabel;
-    SUStructuredPage *_structuredPage;
+    Class  _dataSourceClass;
+    UILabel * _noItemsLabel;
+    SUStructuredPage * _structuredPage;
 }
 
 @property (nonatomic, retain) Class dataSourceClass;

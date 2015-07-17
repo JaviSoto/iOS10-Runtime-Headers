@@ -3,21 +3,21 @@
  */
 
 @interface TSDAbstractLayout : NSObject {
-    NSMutableArray *mChildren;
-    TSDLayoutGeometry *mGeometry;
+    NSMutableArray * mChildren;
+    TSDLayoutGeometry * mGeometry;
     struct CGPoint { 
         float x; 
         float y; 
-    } mInterimPosition;
-    BOOL mInterimPositionXSet;
-    BOOL mInterimPositionYSet;
+    }  mInterimPosition;
+    BOOL  mInterimPositionXSet;
+    BOOL  mInterimPositionYSet;
     struct CGPoint { 
         float x; 
         float y; 
-    } mLastInterimPosition;
-    BOOL mLastInterimPositionXSet;
-    BOOL mLastInterimPositionYSet;
-    TSDAbstractLayout *mParent;
+    }  mLastInterimPosition;
+    BOOL  mLastInterimPositionXSet;
+    BOOL  mLastInterimPositionYSet;
+    TSDAbstractLayout * mParent;
 }
 
 @property (nonatomic, copy) NSArray *children;

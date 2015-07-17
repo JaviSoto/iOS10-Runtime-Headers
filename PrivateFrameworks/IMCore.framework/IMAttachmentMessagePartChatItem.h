@@ -3,8 +3,8 @@
  */
 
 @interface IMAttachmentMessagePartChatItem : IMMessagePartChatItem {
-    NSString *_transferGUID;
-    unsigned int _wantsAttachmentContiguous;
+    NSString * _transferGUID;
+    unsigned int  _wantsAttachmentContiguous;
 }
 
 @property (nonatomic, readonly, copy) NSString *transferGUID;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIShelfCollectionViewLayout : UICollectionViewLayout <SKUIShelfCollectionViewLayout> {
-    SKUIShelfLayoutData *_layoutData;
+    SKUIShelfLayoutData * _layoutData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

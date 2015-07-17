@@ -3,8 +3,8 @@
  */
 
 @interface CISepiaTone : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputIntensity;
+    CIImage * inputImage;
+    NSNumber * inputIntensity;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -17,7 +17,6 @@
 - (id)inputImage;
 - (id)inputIntensity;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputIntensity:(id)arg1;
 

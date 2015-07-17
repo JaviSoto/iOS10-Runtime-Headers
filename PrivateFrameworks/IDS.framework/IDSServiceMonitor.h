@@ -3,9 +3,9 @@
  */
 
 @interface IDSServiceMonitor : NSObject {
-    int _availability;
-    NSString *_service;
-    int _token;
+    int  _availability;
+    NSString * _service;
+    int  _token;
 }
 
 @property (nonatomic, readonly, retain) NSString *service;

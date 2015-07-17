@@ -3,7 +3,7 @@
  */
 
 @interface EKEventDetailExtendedNotesViewController : UIViewController <EKEditItemViewControllerProtocol> {
-    UITextView *_textView;
+    UITextView * _textView;
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;

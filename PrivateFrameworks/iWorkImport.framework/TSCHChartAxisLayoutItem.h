@@ -3,19 +3,19 @@
  */
 
 @interface TSCHChartAxisLayoutItem : TSCHChartLayoutItem {
-    TSCHChartAxisID *mAxisID;
-    TSCHChartAxisLineLayoutItem *mAxisLine;
-    TSCHChartAxisPaddingLayoutItem *mAxisPadding;
-    int mAxisPosition;
-    TSCHChartAxisTitleLayoutItem *mAxisTitle;
+    TSCHChartAxisID * mAxisID;
+    TSCHChartAxisLineLayoutItem * mAxisLine;
+    TSCHChartAxisPaddingLayoutItem * mAxisPadding;
+    int  mAxisPosition;
+    TSCHChartAxisTitleLayoutItem * mAxisTitle;
     struct CGSize { 
         float width; 
         float height; 
-    } mChartBodySize;
-    TSCHChartReferenceLineLabelPaddingLayoutItem *mRefLineLabelPadding;
-    TSCHChartReferenceLineLabelsLayoutItem *mRefLineLabels;
-    TSCHChartAxisID *mReferenceLineLabelAxisID;
-    TSCHChartAxisTickMarksLayoutItem *mTickMarks;
+    }  mChartBodySize;
+    TSCHChartReferenceLineLabelPaddingLayoutItem * mRefLineLabelPadding;
+    TSCHChartReferenceLineLabelsLayoutItem * mRefLineLabels;
+    TSCHChartAxisID * mReferenceLineLabelAxisID;
+    TSCHChartAxisTickMarksLayoutItem * mTickMarks;
 }
 
 @property (nonatomic, retain) TSCHChartAxisID *axisID;

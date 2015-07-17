@@ -3,11 +3,11 @@
  */
 
 @interface CDPClientConnection : NSObject {
-    BOOL _admissionOverride;
-    BOOL _admissionResult;
-    NSString *_clientName;
-    CDDXPCConnection *_connection;
-    CDDebug *_debug;
+    BOOL  _admissionOverride;
+    BOOL  _admissionResult;
+    NSString * _clientName;
+    CDDXPCConnection * _connection;
+    CDDebug * _debug;
 }
 
 @property BOOL admissionOverride;

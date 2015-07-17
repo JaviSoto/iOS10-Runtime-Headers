@@ -3,18 +3,18 @@
  */
 
 @interface UIKBThemedView : UIView <UIKBCacheableView> {
-    BOOL _active;
-    CALayer *_background;
-    CALayer *_borders;
+    BOOL  _active;
+    CALayer * _background;
+    CALayer * _borders;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _cacheInsets;
-    BOOL _lightKeyboard;
-    int _style;
-    BOOL _usePersistentCaching;
+    }  _cacheInsets;
+    BOOL  _lightKeyboard;
+    int  _style;
+    BOOL  _usePersistentCaching;
 }
 
 @property (nonatomic) BOOL active;
@@ -32,7 +32,7 @@
 
 - (BOOL)_canDrawContent;
 - (BOOL)_hasInsets;
-- (void)_popuplateLayer:(id)arg1 withContents:(id)arg2;
+- (void)_populateLayer:(id)arg1 withContents:(id)arg2;
 - (void)_setRenderConfig:(id)arg1;
 - (BOOL)active;
 - (id)borderFilterTypeForCurrentStyle;

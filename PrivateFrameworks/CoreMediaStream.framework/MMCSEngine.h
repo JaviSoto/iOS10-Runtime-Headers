@@ -3,14 +3,14 @@
  */
 
 @interface MMCSEngine : NSObject {
-    NSString *_appIDHeader;
-    BOOL _autoGenerateItemID;
-    NSMutableDictionary *_autoItemIDDictionary;
-    NSObject<OS_dispatch_queue> *_autoItemIDDictionaryQueue;
-    NSURL *_autoItemIDPersistenceURL;
-    NSString *_dataClass;
-    <MMCSEngineDelegate> *_delegate;
-    struct __MMCSEngine { } *_engine;
+    NSString * _appIDHeader;
+    BOOL  _autoGenerateItemID;
+    NSMutableDictionary * _autoItemIDDictionary;
+    NSObject<OS_dispatch_queue> * _autoItemIDDictionaryQueue;
+    NSURL * _autoItemIDPersistenceURL;
+    NSString * _dataClass;
+    <MMCSEngineDelegate> * _delegate;
+    struct _mmcs_engine { } * _engine;
     struct { 
         int version; 
         void *context; 
@@ -20,17 +20,17 @@
         int (*putItemProgressCallback)(); 
         int (*putItemDoneCallback)(); 
         int (*requestCompletedCallback)(); 
-    } _engineClientContext;
-    BOOL _isDone;
-    BOOL _isMetricsGatheringEnabled;
-    NSMutableDictionary *_itemIDToAssetMap;
-    NSObject<OS_dispatch_queue> *_itemIDToAssetMapQueue;
-    NSDictionary *_options;
-    NSObject<OS_dispatch_queue> *_reqestorContextQueue;
-    NSMutableArray *_requestorContexts;
-    NSTimer *_threadKeepAliveTimer;
-    NSURL *_workPathURL;
-    NSThread *_workThread;
+    }  _engineClientContext;
+    BOOL  _isDone;
+    BOOL  _isMetricsGatheringEnabled;
+    NSMutableDictionary * _itemIDToAssetMap;
+    NSObject<OS_dispatch_queue> * _itemIDToAssetMapQueue;
+    NSDictionary * _options;
+    NSObject<OS_dispatch_queue> * _reqestorContextQueue;
+    NSMutableArray * _requestorContexts;
+    NSTimer * _threadKeepAliveTimer;
+    NSURL * _workPathURL;
+    NSThread * _workThread;
 }
 
 @property (nonatomic) BOOL autoGenerateItemID;

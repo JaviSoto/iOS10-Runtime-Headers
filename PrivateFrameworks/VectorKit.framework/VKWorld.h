@@ -3,8 +3,8 @@
  */
 
 @interface VKWorld : NSObject {
-    <VKWorldDelegate> *_delegate;
-    VKModelObject *_modelRoot;
+    <VKWorldDelegate> * _delegate;
+    VKModelObject * _modelRoot;
 }
 
 @property (nonatomic) <VKWorldDelegate> *delegate;

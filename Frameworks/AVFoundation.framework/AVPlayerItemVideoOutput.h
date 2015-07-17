@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemVideoOutput : AVPlayerItemOutput {
-    AVPlayerItemVideoOutputInternal *_videoOutputInternal;
+    AVPlayerItemVideoOutputInternal * _videoOutputInternal;
 }
 
 @property (nonatomic, readonly) <AVPlayerItemOutputPullDelegate> *delegate;

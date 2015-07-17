@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DGetSelectionKnobsPositionsPipelineMergeLabelBounds : NSObject {
-    int mKnobsMode;
-    int mLabelType;
-    NSMutableArray *mLabelsBounds;
+    int  mKnobsMode;
+    int  mLabelType;
+    NSMutableArray * mLabelsBounds;
 }
 
 @property (nonatomic, readonly) int knobsMode;

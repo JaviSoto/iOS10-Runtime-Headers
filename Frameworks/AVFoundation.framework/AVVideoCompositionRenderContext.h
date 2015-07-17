@@ -3,7 +3,7 @@
  */
 
 @interface AVVideoCompositionRenderContext : NSObject {
-    AVVideoCompositionRenderContextInternal *_internal;
+    AVVideoCompositionRenderContextInternal * _internal;
 }
 
 @property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } edgeWidths;

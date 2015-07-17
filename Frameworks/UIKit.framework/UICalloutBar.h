@@ -3,7 +3,9 @@
  */
 
 @interface UICalloutBar : UIView {
-    int m_arrowDirection;
+    int  m_arrowDirection;
+    float  m_availableSpaceOnLeft;
+    float  m_availableSpaceOnRight;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,46 +15,44 @@
             float width; 
             float height; 
         } size; 
-    } m_controlFrame;
-    NSDictionary *m_currentAppearOrFadeContext;
-    int m_currentPage;
-    NSMutableArray *m_currentSystemButtons;
-    id m_delegate;
-    BOOL m_didPromptForReplace;
-    NSMutableArray *m_extraButtons;
-    NSArray *m_extraItems;
-    BOOL m_fadeAfterCommand;
-    double m_fadedTime;
-    BOOL m_ignoreFade;
-    BOOL m_ignoringEvents;
-    UICalloutBarButton *m_nextButton;
-    UICalloutBarBackground *m_overlay;
-    int m_pageCount;
+    }  m_controlFrame;
+    NSDictionary * m_currentAppearOrFadeContext;
+    int  m_currentPage;
+    NSMutableArray * m_currentSystemButtons;
+    id  m_delegate;
+    BOOL  m_didPromptForReplace;
+    NSMutableArray * m_extraButtons;
+    NSArray * m_extraItems;
+    BOOL  m_fadeAfterCommand;
+    double  m_fadedTime;
+    BOOL  m_ignoreFade;
+    UICalloutBarButton * m_nextButton;
+    UICalloutBarBackground * m_overlay;
+    int  m_pageCount;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_pointAboveControls;
+    }  m_pointAboveControls;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_pointBelowControls;
+    }  m_pointBelowControls;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_pointLeftOfControls;
+    }  m_pointLeftOfControls;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_pointRightOfControls;
-    UICalloutBarButton *m_previousButton;
-    BOOL m_recalcVisibleItems;
-    NSMutableArray *m_rectsToEvade;
-    NSArray *m_replacements;
-    id m_responderTarget;
-    BOOL m_shouldAppear;
-    BOOL m_showAllReplacements;
-    float m_supressedHorizontalMovementX;
-    BOOL m_supressesHorizontalMovement;
+    }  m_pointRightOfControls;
+    UICalloutBarButton * m_previousButton;
+    BOOL  m_recalcVisibleItems;
+    NSMutableArray * m_rectsToEvade;
+    NSArray * m_replacements;
+    id  m_responderTarget;
+    BOOL  m_showAllReplacements;
+    float  m_supressedHorizontalMovementX;
+    BOOL  m_supressesHorizontalMovement;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -62,14 +62,14 @@
             float width; 
             float height; 
         } size; 
-    } m_supressesHorizontalMovementFrame;
-    NSArray *m_systemButtonDescriptions;
-    int m_targetDirection;
-    BOOL m_targetHorizontal;
+    }  m_supressesHorizontalMovementFrame;
+    NSArray * m_systemButtonDescriptions;
+    int  m_targetDirection;
+    BOOL  m_targetHorizontal;
     struct CGPoint { 
         float x; 
         float y; 
-    } m_targetPoint;
+    }  m_targetPoint;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -79,8 +79,8 @@
             float width; 
             float height; 
         } size; 
-    } m_targetRect;
-    NSString *m_untruncatedString;
+    }  m_targetRect;
+    NSString * m_untruncatedString;
 }
 
 @property (nonatomic) int arrowDirection;
@@ -104,25 +104,29 @@
 @property (nonatomic, copy) NSString *untruncatedString;
 @property (nonatomic, readonly) BOOL visible;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
 + (void)fadeSharedCalloutBar;
-+ (void)fadeSharedCalloutBarIfNeededForTouchInView:(id)arg1 window:(id)arg2;
 + (void)hideSharedCalloutBar;
 + (id)sharedCalloutBar;
 + (BOOL)sharedCalloutBarIsVisible;
 
+- (void).cxx_destruct;
 - (void)_endOngoingAppearOrFadeAnimations;
 - (void)_fadeAfterCommand:(SEL)arg1;
 - (void)_showNextItems:(id)arg1;
 - (void)_showPreviousItems:(id)arg1;
+- (BOOL)_touchesInsideShouldHideCalloutBar;
 - (BOOL)_updateVisibleItemsAnimated:(BOOL)arg1;
 - (void)addRectToEvade:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)adjustFrameToAvoidDividerOnArrow;
 - (void)appear;
-- (void)appearAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)appearAnimationDidStopWithContext:(id)arg1;
+- (void)applicationDidAddDeactivationReason:(id)arg1;
 - (int)arrowDirection;
 - (void)buttonHighlighted:(id)arg1 highlighted:(BOOL)arg2;
-- (void)buttonPressed:(id)arg1;
 - (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 below:(BOOL)arg2;
 - (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 right:(BOOL)arg2;
 - (BOOL)calculateControlFrameInsideTargetRect:(struct CGSize { float x1; float x2; })arg1;
@@ -134,13 +138,9 @@
 - (id)currentAppearOrFadeContext;
 - (void)dealloc;
 - (id)delegate;
-- (void)expandAfterAlertOrBecomeActive:(id)arg1;
 - (id)extraItems;
-- (void)fade;
-- (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)flattenForAlertOrResignActive:(id)arg1;
+- (void)fadeAnimationDidStopWithContext:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)hasReplacements;
-- (void)hide;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pointAboveControls;
@@ -191,8 +191,16 @@
 - (id)untruncatedString;
 - (void)update;
 - (void)updateAnimated:(BOOL)arg1;
-- (void)updateAvailableButtons;
 - (void)updateForCurrentPage;
 - (BOOL)visible;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (void)buttonPressed:(id)arg1;
+- (void)fade;
+- (void)hide;
+- (void)updateAvailableButtons;
 
 @end

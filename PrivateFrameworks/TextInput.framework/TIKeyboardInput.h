@@ -3,8 +3,8 @@
  */
 
 @interface TIKeyboardInput : NSObject <NSSecureCoding> {
-    TIKeyboardCandidate *_acceptedCandidate;
-    BOOL _backspace;
+    TIKeyboardCandidate * _acceptedCandidate;
+    BOOL  _backspace;
     union { 
         int integerValue; 
         struct { 
@@ -15,16 +15,18 @@
             unsigned int flick : 1; 
             unsigned int synthesizedByAcceptingCandidate : 1; 
         } fields; 
-    } _flags;
-    <NSCopying><NSObject><NSSecureCoding> *_object;
-    NSString *_string;
-    TIKeyboardTouchEvent *_touchEvent;
+    }  _flags;
+    NSString * _inputManagerHint;
+    <NSCopying><NSObject><NSSecureCoding> * _object;
+    NSString * _string;
+    TIKeyboardTouchEvent * _touchEvent;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
 @property (getter=isAutoshifted, nonatomic) BOOL autoshifted;
 @property (getter=isBackspace, nonatomic) BOOL backspace;
 @property (getter=isFlick, nonatomic) BOOL flick;
+@property (nonatomic, copy) NSString *inputManagerHint;
 @property (getter=isMultitap, nonatomic) BOOL multitap;
 @property (nonatomic, copy) <NSCopying><NSObject><NSSecureCoding> *object;
 @property (getter=isPopupVariant, nonatomic) BOOL popupVariant;
@@ -40,6 +42,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)inputManagerHint;
 - (BOOL)isAutoshifted;
 - (BOOL)isBackspace;
 - (BOOL)isFlick;
@@ -52,6 +55,7 @@
 - (void)setAutoshifted:(BOOL)arg1;
 - (void)setBackspace:(BOOL)arg1;
 - (void)setFlick:(BOOL)arg1;
+- (void)setInputManagerHint:(id)arg1;
 - (void)setMultitap:(BOOL)arg1;
 - (void)setObject:(id)arg1;
 - (void)setPopupVariant:(BOOL)arg1;

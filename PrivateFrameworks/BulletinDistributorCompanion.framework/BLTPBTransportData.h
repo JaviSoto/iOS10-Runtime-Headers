@@ -6,9 +6,9 @@
     struct { 
         unsigned int sequenceNumber : 1; 
         unsigned int isInitialSequenceNumber : 1; 
-    } _has;
-    BOOL _isInitialSequenceNumber;
-    unsigned long long _sequenceNumber;
+    }  _has;
+    BOOL  _isInitialSequenceNumber;
+    unsigned long long  _sequenceNumber;
 }
 
 @property (nonatomic) BOOL hasIsInitialSequenceNumber;

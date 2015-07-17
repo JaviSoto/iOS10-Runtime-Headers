@@ -3,9 +3,9 @@
  */
 
 @interface UIPickerTableView : UITableView <UITableViewDelegate> {
-    NSMutableIndexSet *_checkedRows;
-    float _lastClickedOffset;
-    int _lastSelectedRow;
+    NSMutableIndexSet * _checkedRows;
+    float  _lastClickedOffset;
+    int  _lastSelectedRow;
     struct { 
         unsigned int allowsMultipleSelection : 1; 
         unsigned int scrollingDirection : 2; 
@@ -15,8 +15,8 @@
         unsigned int pickerViewImplementsSelectionBarChanged : 2; 
         unsigned int cancellingAnimation : 1; 
         unsigned int updatingContentInset : 1; 
-    } _pickerTableFlags;
-    NSMutableArray *_referencingCells;
+    }  _pickerTableFlags;
+    NSMutableArray * _referencingCells;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,10 +26,10 @@
             float width; 
             float height; 
         } size; 
-    } _selectionBarRect;
-    int _selectionBarRow;
-    UIColor *_textColor;
-    BOOL _usesModernStyle;
+    }  _selectionBarRect;
+    int  _selectionBarRow;
+    UIColor * _textColor;
+    BOOL  _usesModernStyle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -39,7 +39,7 @@
             float width; 
             float height; 
         } size; 
-    } _visibleRect;
+    }  _visibleRect;
 }
 
 @property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *_textColor;
@@ -52,6 +52,7 @@
 @property (nonatomic) int selectionBarRow;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_anyDateLabel;
 - (BOOL)_beginTrackingWithEvent:(id)arg1;
 - (id)_checkedRows;

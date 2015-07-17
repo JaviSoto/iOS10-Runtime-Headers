@@ -3,12 +3,12 @@
  */
 
 @interface CKDFetchRecordVersionsRequest : CKDURLRequest {
-    NSArray *_desiredKeys;
-    BOOL _isDeleted;
-    NSString *_minimumVersionETag;
-    NSMutableDictionary *_recordIDByRequestID;
-    NSArray *_recordIDs;
-    id /* block */ _recordVersionsFetchedBlock;
+    NSArray * _desiredKeys;
+    BOOL  _isDeleted;
+    NSString * _minimumVersionETag;
+    NSMutableDictionary * _recordIDByRequestID;
+    NSArray * _recordIDs;
+    id /* block */  _recordVersionsFetchedBlock;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;

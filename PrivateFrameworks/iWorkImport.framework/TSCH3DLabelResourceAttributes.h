@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DLabelResourceAttributes : NSObject <NSCopying> {
-    TSCH3DLabelBitmapContextInfo *mBitmapContextInfo;
-    float mLabelWidth;
-    TSWPParagraphStyle *mParagraphStyle;
-    float mRenderSamples;
-    NSString *mString;
+    TSCH3DLabelBitmapContextInfo * mBitmapContextInfo;
+    float  mLabelWidth;
+    TSWPParagraphStyle * mParagraphStyle;
+    float  mRenderSamples;
+    NSString * mString;
 }
 
 @property (nonatomic, readonly) TSCH3DLabelBitmapContextInfo *bitmapContextInfo;

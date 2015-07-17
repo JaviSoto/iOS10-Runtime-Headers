@@ -3,11 +3,11 @@
  */
 
 @interface MPAbstractFullScreenVideoViewController : MPVideoViewController <MPSwipableViewDelegate> {
-    unsigned int _autoHidingForItemChange;
-    unsigned int _requestExitAfterHidingControls;
-    unsigned int _rotateAfterHidingControls;
-    unsigned int _scheduledAutoHide;
-    unsigned int _showControlsAfterRotate;
+    unsigned int  _autoHidingForItemChange;
+    unsigned int  _requestExitAfterHidingControls;
+    unsigned int  _rotateAfterHidingControls;
+    unsigned int  _scheduledAutoHide;
+    unsigned int  _showControlsAfterRotate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

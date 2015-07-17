@@ -3,15 +3,15 @@
  */
 
 @interface SKUIFlexibleSegmentedControl : UIView {
-    <SKUIFlexibleSegmentedControlDelegate> *_delegate;
-    float _desiredSegmentWidth;
-    BOOL _isMoreListSelected;
-    NSArray *_itemTitles;
-    int _maximumNumberOfVisibleItems;
-    NSString *_moreListTitle;
-    int _previousSelectedSegmentIndex;
-    UISegmentedControl *_segmentedControl;
-    int _selectedSegmentIndex;
+    <SKUIFlexibleSegmentedControlDelegate> * _delegate;
+    float  _desiredSegmentWidth;
+    BOOL  _isMoreListSelected;
+    NSArray * _itemTitles;
+    int  _maximumNumberOfVisibleItems;
+    NSString * _moreListTitle;
+    int  _previousSelectedSegmentIndex;
+    UISegmentedControl * _segmentedControl;
+    int  _selectedSegmentIndex;
 }
 
 @property (nonatomic) <SKUIFlexibleSegmentedControlDelegate> *delegate;

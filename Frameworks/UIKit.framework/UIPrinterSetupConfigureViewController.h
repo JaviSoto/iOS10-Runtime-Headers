@@ -3,12 +3,12 @@
  */
 
 @interface UIPrinterSetupConfigureViewController : UITableViewController <UITableViewDataSource, UITextFieldDelegate> {
-    BOOL _addToNetwork;
-    UIPrinterSetupConnectingView *_connectingView;
-    NSString *_directPasscode;
-    BOOL _directPrinting;
-    UIButton *_finishButton;
-    PKPrinter *_printer;
+    BOOL  _addToNetwork;
+    UIPrinterSetupConnectingView * _connectingView;
+    NSString * _directPasscode;
+    BOOL  _directPrinting;
+    UIButton * _finishButton;
+    PKPrinter * _printer;
 }
 
 @property (nonatomic) BOOL addToNetwork;
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) PKPrinter *printer;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)addToNetwork;
 - (id)connectingView;
 - (void)dealloc;

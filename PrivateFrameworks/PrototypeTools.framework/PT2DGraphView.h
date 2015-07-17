@@ -3,32 +3,32 @@
  */
 
 @interface PT2DGraphView : UIView {
-    NSArray *_data;
-    UIColor *_dataColor;
+    NSArray * _data;
+    UIColor * _dataColor;
     struct CGSize { 
         float width; 
         float height; 
-    } _datumSize;
+    }  _datumSize;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    UIColor *_groundColor;
+    }  _edgeInsets;
+    UIColor * _groundColor;
     struct CGPoint { 
         float x; 
         float y; 
-    } _origin;
-    NSArray *_provisionalData;
-    UIColor *_provisionalDataColor;
-    NSMutableArray *_provisionalDataSubviews;
-    PT2DGraphAxisStyle *_xaxisStyle;
-    float _xmaximum;
-    float _xminimum;
-    PT2DGraphAxisStyle *_yaxisStyle;
-    float _ymaximum;
-    float _yminimum;
+    }  _origin;
+    NSArray * _provisionalData;
+    UIColor * _provisionalDataColor;
+    NSMutableArray * _provisionalDataSubviews;
+    PT2DGraphAxisStyle * _xaxisStyle;
+    float  _xmaximum;
+    float  _xminimum;
+    PT2DGraphAxisStyle * _yaxisStyle;
+    float  _ymaximum;
+    float  _yminimum;
 }
 
 @property (nonatomic, retain) NSArray *data;

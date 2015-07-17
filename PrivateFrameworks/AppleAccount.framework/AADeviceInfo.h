@@ -3,10 +3,10 @@
  */
 
 @interface AADeviceInfo : NSObject {
-    APSConnection *_apsConnection;
-    NSData *_token;
-    BOOL _tokenDone;
-    NSObject<OS_dispatch_semaphore> *_tokenSema;
+    APSConnection * _apsConnection;
+    NSData * _token;
+    BOOL  _tokenDone;
+    NSObject<OS_dispatch_semaphore> * _tokenSema;
 }
 
 + (id)apnsToken;

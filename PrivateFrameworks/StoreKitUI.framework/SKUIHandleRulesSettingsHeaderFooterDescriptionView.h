@@ -3,9 +3,9 @@
  */
 
 @interface SKUIHandleRulesSettingsHeaderFooterDescriptionView : SKUISettingsHeaderFooterDescriptionView {
-    NSMutableArray *_buttons;
-    SKUIHandleRulesSettingsHeaderFooterDescription *_description;
-    UILabel *_label;
+    NSMutableArray * _buttons;
+    SKUIHandleRulesSettingsHeaderFooterDescription * _description;
+    UILabel * _label;
 }
 
 + (id)_labelWithDescription:(id)arg1 forWidth:(float)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIQuicklinksPageSection : SKUIStorePageSection <SKUIQuicklinksViewControllerDelegate> {
-    SKUIQuicklinksViewController *_quicklinksViewController;
+    SKUIQuicklinksViewController * _quicklinksViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

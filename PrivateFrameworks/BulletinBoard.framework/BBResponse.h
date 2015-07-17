@@ -3,18 +3,18 @@
  */
 
 @interface BBResponse : NSObject <NSSecureCoding> {
-    NSString *_actionID;
-    int _actionType;
-    BOOL _activated;
-    NSString *_bulletinID;
-    NSString *_buttonID;
-    NSDictionary *_context;
-    BBAssertion *_lifeAssertion;
-    NSArray *_lifeAssertions;
-    NSString *_originID;
-    NSString *_replyText;
-    id /* block */ _sendBlock;
-    BOOL _sent;
+    NSString * _actionID;
+    int  _actionType;
+    BOOL  _activated;
+    NSString * _bulletinID;
+    NSString * _buttonID;
+    NSDictionary * _context;
+    BBAssertion * _lifeAssertion;
+    NSArray * _lifeAssertions;
+    NSString * _originID;
+    NSString * _replyText;
+    id /* block */  _sendBlock;
+    BOOL  _sent;
 }
 
 @property (nonatomic, copy) NSString *actionID;

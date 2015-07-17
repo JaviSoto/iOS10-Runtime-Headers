@@ -3,13 +3,13 @@
  */
 
 @interface TRTCPConnectionStream : NSObject {
-    BOOL _closed;
-    NSObject<OS_dispatch_queue> *_connectionAccessQueue;
-    <TRTCPConnectionStreamDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_readQueue;
-    NSInputStream *_readStream;
-    NSObject<OS_dispatch_queue> *_writeQueue;
-    NSOutputStream *_writeStream;
+    BOOL  _closed;
+    NSObject<OS_dispatch_queue> * _connectionAccessQueue;
+    <TRTCPConnectionStreamDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _readQueue;
+    NSInputStream * _readStream;
+    NSObject<OS_dispatch_queue> * _writeQueue;
+    NSOutputStream * _writeStream;
 }
 
 @property (getter=isClosed, nonatomic) BOOL closed;

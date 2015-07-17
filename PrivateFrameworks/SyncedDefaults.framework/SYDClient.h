@@ -3,11 +3,11 @@
  */
 
 @interface SYDClient : NSObject {
-    BOOL _additionalSource;
-    NSString *_bundleIdentifier;
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_storeIdentifier;
+    BOOL  _additionalSource;
+    NSString * _bundleIdentifier;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _storeIdentifier;
 }
 
 - (void)_createConnectionIfNecessary;

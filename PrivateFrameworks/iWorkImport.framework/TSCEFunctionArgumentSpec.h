@@ -3,24 +3,24 @@
  */
 
 @interface TSCEFunctionArgumentSpec : NSObject <NSCopying> {
-    int mAccessorMode;
-    int mArgumentContext;
-    int mArgumentType;
-    short mDefaultModeIndex;
-    BOOL mDisallowCurrency;
-    BOOL mDisallowDuration;
-    NSArray *mDisallowedTypes;
-    BOOL mForceArrayMode;
-    TSCEFunctionSpec *mFunctionSpec;
-    short mIndex;
-    BOOL mIsInteger;
-    BOOL mMaxInclusive;
-    double mMaxValue;
-    BOOL mMinInclusive;
-    double mMinValue;
-    struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; } *mModeValues;
-    int mRangeContext;
-    BOOL mReferenceForGeometryOnly;
+    int  mAccessorMode;
+    int  mArgumentContext;
+    int  mArgumentType;
+    short  mDefaultModeIndex;
+    BOOL  mDisallowCurrency;
+    BOOL  mDisallowDuration;
+    NSArray * mDisallowedTypes;
+    BOOL  mForceArrayMode;
+    TSCEFunctionSpec * mFunctionSpec;
+    short  mIndex;
+    BOOL  mIsInteger;
+    BOOL  mMaxInclusive;
+    double  mMaxValue;
+    BOOL  mMinInclusive;
+    double  mMinValue;
+    struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; } * mModeValues;
+    int  mRangeContext;
+    BOOL  mReferenceForGeometryOnly;
 }
 
 @property (nonatomic, readonly) int accessorMode;

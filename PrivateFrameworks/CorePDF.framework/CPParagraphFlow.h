@@ -3,19 +3,19 @@
  */
 
 @interface CPParagraphFlow : NSObject {
-    BOOL adjacentToCallout;
-    int calloutType;
-    float fBottom;
-    float fLeft;
-    float fRight;
-    float fTop;
-    CPParagraph *nextInColumn;
-    CPParagraph *paragraph;
-    NSMutableArray *paragraphsAbove;
-    NSMutableArray *paragraphsBelow;
-    NSMutableArray *paragraphsLeft;
-    NSMutableArray *paragraphsRight;
-    BOOL placed;
+    BOOL  adjacentToCallout;
+    int  calloutType;
+    float  fBottom;
+    float  fLeft;
+    float  fRight;
+    float  fTop;
+    CPParagraph * nextInColumn;
+    CPParagraph * paragraph;
+    NSMutableArray * paragraphsAbove;
+    NSMutableArray * paragraphsBelow;
+    NSMutableArray * paragraphsLeft;
+    NSMutableArray * paragraphsRight;
+    BOOL  placed;
 }
 
 @property int calloutType;

@@ -3,17 +3,17 @@
  */
 
 @interface MKTileOverlay : NSObject <MKOverlay> {
-    NSString *_URLTemplate;
-    BOOL _canReplaceMapContent;
-    BOOL _geometryFlipped;
-    int _maximumZ;
-    int _minimumZ;
-    unsigned int _providerID;
-    GEOTileCache *_tileCache;
+    NSString * _URLTemplate;
+    BOOL  _canReplaceMapContent;
+    BOOL  _geometryFlipped;
+    int  _maximumZ;
+    int  _minimumZ;
+    unsigned int  _providerID;
+    GEOTileCache * _tileCache;
     struct CGSize { 
         float width; 
         float height; 
-    } _tileSize;
+    }  _tileSize;
 }
 
 @property (readonly) NSString *URLTemplate;
@@ -31,7 +31,6 @@
 @property struct CGSize { float x1; float x2; } tileSize;
 @property (nonatomic, readonly, copy) NSString *title;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)URLForTilePath:(struct { int x1; int x2; int x3; float x4; })arg1;
 - (id)URLTemplate;

@@ -3,9 +3,9 @@
  */
 
 @interface CKWaiterWrapper : NSObject {
-    id /* block */ _completionHandler;
-    id _waiter;
-    NSArray *_zoneIDs;
+    id /* block */  _completionHandler;
+    id  _waiter;
+    NSArray * _zoneIDs;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

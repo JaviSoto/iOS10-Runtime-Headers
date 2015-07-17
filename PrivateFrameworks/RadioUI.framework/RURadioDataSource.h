@@ -3,13 +3,13 @@
  */
 
 @interface RURadioDataSource : MPUDataSource <RadioPushNotificationControllerDelegate> {
-    <RURadioDataSourceDelegate> *_delegate;
-    NSArray *_featuredStations;
-    BOOL _optedInToRadio;
-    RURadioPlaybackCoordinator *_playbackCoordinator;
-    RadioPushNotificationController *_pushNotificationController;
-    NSArray *_stations;
-    NSArray *_userStations;
+    <RURadioDataSourceDelegate> * _delegate;
+    NSArray * _featuredStations;
+    BOOL  _optedInToRadio;
+    RURadioPlaybackCoordinator * _playbackCoordinator;
+    RadioPushNotificationController * _pushNotificationController;
+    NSArray * _stations;
+    NSArray * _userStations;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,14 +23,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *userStations;
 
-+ (void)_accountStoreDidChangeNotification:(id)arg1;
-+ (void)_networkReachabilityDidChangeNotification:(id)arg1;
-+ (void)_reloadRadioAvailability;
-+ (void)_storeBagDidLoadNotification:(id)arg1;
-+ (void)_updateRadioAvailabilityWithStoreBag:(id)arg1 error:(id)arg2;
-+ (void)initialize;
 + (BOOL)isOptedInToRadio;
-+ (BOOL)isRadioAvailable;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;

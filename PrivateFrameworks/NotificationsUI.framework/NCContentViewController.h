@@ -3,7 +3,7 @@
  */
 
 @interface NCContentViewController : UIViewController <NCContentServiceInterface> {
-    NSDictionary *_context;
+    NSDictionary * _context;
 }
 
 @property (nonatomic, copy) NSDictionary *context;

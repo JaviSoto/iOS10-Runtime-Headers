@@ -3,8 +3,8 @@
  */
 
 @interface IMIDStatusController : NSObject {
-    NSRecursiveLock *_servicesLock;
-    NSMutableSet *_servicesRegistered;
+    NSRecursiveLock * _servicesLock;
+    NSMutableSet * _servicesRegistered;
 }
 
 @property (nonatomic, retain) NSRecursiveLock *_servicesLock;

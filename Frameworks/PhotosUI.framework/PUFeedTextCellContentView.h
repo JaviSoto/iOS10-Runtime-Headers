@@ -3,9 +3,9 @@
  */
 
 @interface PUFeedTextCellContentView : UIView {
-    UILabel *detailLabel;
-    UIImageView *iconImageView;
-    UILabel *label;
+    UILabel * detailLabel;
+    UIImageView * iconImageView;
+    UILabel * label;
 }
 
 @property (nonatomic, retain) UILabel *detailLabel;

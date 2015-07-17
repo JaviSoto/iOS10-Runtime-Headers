@@ -3,8 +3,8 @@
  */
 
 @interface WebCoreAuthenticationClientAsChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
-    struct _CFURLAuthChallenge { } *m_cfChallenge;
-    struct AuthenticationClient { int (**x1)(); } *m_client;
+    struct _CFURLAuthChallenge { } * m_cfChallenge;
+    struct AuthenticationClient { int (**x1)(); } * m_client;
 }
 
 @property (readonly, copy) NSString *debugDescription;

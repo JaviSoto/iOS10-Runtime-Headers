@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBSUIWallpaperPreviewViewController : UIViewController <SBFLegibilitySettingsProvider, SBFWallpaperViewLegibilityObserver> {
-    BOOL _allowScrolling;
-    BOOL _colorSamplingEnabled;
-    SBFLockScreenSimpleDateFormatter *_dateFormatter;
-    NSTimer *_dateTimer;
-    <SBFLegibilitySettingsProviderDelegate> *_delegate;
-    BOOL _motionEnabled;
-    NSString *_name;
-    NSDictionary *_proceduralWallpaper;
-    NSDictionary *_proceduralWallpaperOptions;
-    int _variant;
-    UIImage *_wallpaperImage;
+@interface SBSUIWallpaperPreviewViewController : UIViewController <SBFLegibilitySettingsProvider, SBFLegibilitySettingsProviderDelegate> {
+    BOOL  _allowScrolling;
+    BOOL  _colorSamplingEnabled;
+    NSTimer * _dateTimer;
+    <SBFLegibilitySettingsProviderDelegate> * _delegate;
+    BOOL  _motionEnabled;
+    NSString * _name;
+    NSDictionary * _proceduralWallpaper;
+    NSDictionary * _proceduralWallpaperOptions;
+    int  _variant;
+    UIImage * _wallpaperImage;
 }
 
-@property (nonatomic) BOOL colorSamplingEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBFLegibilitySettingsProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -26,7 +24,6 @@
 @property (readonly) Class superclass;
 @property (readonly) UIImage *wallpaperImage;
 
-- (id)_backdropWallpaperView;
 - (id)_dateView;
 - (float)_parallaxFactor;
 - (id)_previewView;
@@ -41,7 +38,6 @@
 - (BOOL)colorSamplingEnabled;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithColorSamplingEnabled:(BOOL)arg1;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 name:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -52,13 +48,14 @@
 - (void)loadView;
 - (BOOL)motionEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)setColorSamplingEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMotionEnabled:(BOOL)arg1;
+- (void)setMotionEnabled:(BOOL)arg1 updateParallaxOnWallpaperView:(BOOL)arg2;
 - (void)setWallpaperForLocations:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (id)wallpaperImage;
-- (void)wallpaperView:(id)arg1 legibilitySettingsDidChange:(id)arg2;
 
 @end

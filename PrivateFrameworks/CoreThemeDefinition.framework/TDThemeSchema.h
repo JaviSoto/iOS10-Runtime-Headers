@@ -3,7 +3,7 @@
  */
 
 @interface TDThemeSchema : NSObject {
-    CoreThemeDocument *_doc;
+    CoreThemeDocument * _doc;
 }
 
 + (BOOL)loadThemeConstantsForEntity:(id)arg1 inContext:(id)arg2;
@@ -38,6 +38,7 @@
 - (void)loadThemeDirections;
 - (void)loadThemeDrawingLayers;
 - (void)loadThemeElements;
+- (void)loadThemeGraphicsFeatureSetClasses;
 - (void)loadThemeIdioms;
 - (void)loadThemeLooks;
 - (void)loadThemeParts;

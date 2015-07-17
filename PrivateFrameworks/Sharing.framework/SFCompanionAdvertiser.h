@@ -3,9 +3,9 @@
  */
 
 @interface SFCompanionAdvertiser : NSObject {
-    <SFCompanionAdvertiserDelegate> *_delegate;
-    NSString *_serviceType;
-    BOOL _supportsStreams;
+    <SFCompanionAdvertiserDelegate> * _delegate;
+    NSString * _serviceType;
+    BOOL  _supportsStreams;
 }
 
 @property <SFCompanionAdvertiserDelegate> *delegate;

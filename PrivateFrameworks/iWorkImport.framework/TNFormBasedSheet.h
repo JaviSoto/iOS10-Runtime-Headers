@@ -3,9 +3,9 @@
  */
 
 @interface TNFormBasedSheet : TNSheet {
-    NSString *mImportedTargetName;
-    struct __CFUUID { } *mTableID;
-    TSTTableInfo *mTableInfo;
+    NSString * mImportedTargetName;
+    struct __CFUUID { } * mTableID;
+    TSTTableInfo * mTableInfo;
 }
 
 @property struct __CFUUID { }*tableID;

@@ -3,11 +3,11 @@
  */
 
 @interface CUIInnerGlowOrShadowFilter : CIFilter {
-    CIColor *inputColor;
-    CIImage *inputImage;
-    CIVector *inputOffset;
-    NSNumber *inputRadius;
-    NSNumber *inputRange;
+    CIColor * inputColor;
+    CIImage * inputImage;
+    CIVector * inputOffset;
+    NSNumber * inputRadius;
+    NSNumber * inputRange;
 }
 
 @property (nonatomic, retain) CIColor *inputColor;

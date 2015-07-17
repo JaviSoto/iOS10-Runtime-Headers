@@ -3,28 +3,28 @@
  */
 
 @interface KNBuildRenderer : KNAnimationRenderer {
-    KNAnimatedBuild *mAnimatedBuild;
-    NSMutableArray *mAnimatedBuildsToStartAtEnd;
-    NSDictionary *mAnimatedLayers;
-    KNAnimationInfo *mAnimationInfo;
-    BOOL mAreAnimationsPrepared;
-    SEL mBuildEndCallbackSelector;
-    id mBuildEndCallbackTarget;
-    KNBuildChunk *mBuildStage;
-    TSDFPSCounter *mFPSCounter;
-    TSDTextureSet *mFinalAttributesTextureSet;
-    TSDDrawableInfo *mInfo;
-    BOOL mInterrupted;
-    BOOL mIsAnimationForPlayback;
-    BOOL mIsNonCachedTextureValid;
-    BOOL mIsPreview;
-    BOOL mIsTextureCachedAtEndOfBuild;
-    int mNumberOfAnimationsStarted;
-    CALayer *mParentLayer;
-    BOOL mShouldUseMagicMoveTextures;
-    TSDTextureContext *mTextureContext;
-    TSDTextureSet *mTextureSet;
-    BOOL mUsingFinalTexture;
+    KNAnimatedBuild * mAnimatedBuild;
+    NSMutableArray * mAnimatedBuildsToStartAtEnd;
+    NSDictionary * mAnimatedLayers;
+    KNAnimationInfo * mAnimationInfo;
+    BOOL  mAreAnimationsPrepared;
+    SEL  mBuildEndCallbackSelector;
+    id  mBuildEndCallbackTarget;
+    KNBuildChunk * mBuildStage;
+    TSDFPSCounter * mFPSCounter;
+    TSDTextureSet * mFinalAttributesTextureSet;
+    TSDDrawableInfo * mInfo;
+    BOOL  mInterrupted;
+    BOOL  mIsAnimationForPlayback;
+    BOOL  mIsNonCachedTextureValid;
+    BOOL  mIsPreview;
+    BOOL  mIsTextureCachedAtEndOfBuild;
+    int  mNumberOfAnimationsStarted;
+    CALayer * mParentLayer;
+    BOOL  mShouldUseMagicMoveTextures;
+    TSDTextureContext * mTextureContext;
+    TSDTextureSet * mTextureSet;
+    BOOL  mUsingFinalTexture;
 }
 
 @property (nonatomic, readonly) KNAnimatedBuild *animatedBuild;

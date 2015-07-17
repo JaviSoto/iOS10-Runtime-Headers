@@ -2,33 +2,33 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NoteContext : NSObject {
-    struct __CXIndex { } *__SharedNoteStoreSearchIndex;
-    int __SharedNoteStoreSearchIndexCount;
-    CPExclusiveLock *__SharedNoteStoreSearchIndexLock;
-    AccountUtilities *_accountUtilities;
-    BOOL _hasPriorityInSaveConflicts;
-    BOOL _inMigrator;
-    BOOL _indexInBatches;
-    BOOL _isIndexing;
-    NoteAccountObject *_localAccount;
-    NoteStoreObject *_localStore;
-    BOOL _logChanges;
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    NSNumber *_nextId;
-    NSManagedObjectContext *_nextIdContext;
-    CPExclusiveLock *_nextIdLock;
-    NSMutableDictionary *_notePropertyObjectsRealized;
-    unsigned int _notificationCount;
-    CPExclusiveLock *_objectCreationLock;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSPredicate *_searchPredicate;
+@interface NoteContext : NSObject <ICSearchLegacyContext> {
+    AccountUtilities * _accountUtilities;
+    BOOL  _hasPriorityInSaveConflicts;
+    BOOL  _inMigrator;
+    BOOL  _indexInBatches;
+    NoteAccountObject * _localAccount;
+    NoteStoreObject * _localStore;
+    BOOL  _logChanges;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
+    NSNumber * _nextId;
+    NSManagedObjectContext * _nextIdContext;
+    CPExclusiveLock * _nextIdLock;
+    NSMutableDictionary * _notePropertyObjectsRealized;
+    unsigned int  _notificationCount;
+    CPExclusiveLock * _objectCreationLock;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
 }
 
 @property (nonatomic, retain) AccountUtilities *accountUtilities;
-@property (nonatomic, readonly) BOOL isIndexing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly, retain) NSManagedObjectContext *managedObjectContext;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
 + (void)clearTestsNotesRootPath;
 + (BOOL)databaseIsCorrupt:(id)arg1;
@@ -61,8 +61,6 @@
 - (id)collectionForInfo:(id)arg1;
 - (id)collectionForObjectID:(id)arg1;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
-- (id)copyNotesForSearch:(void*)arg1 complete:(char *)arg2;
-- (id)copyNotesForSearch:(void*)arg1 predicate:(id)arg2 complete:(char *)arg3;
 - (unsigned int)countOfNotes;
 - (unsigned int)countOfNotesInCollection:(id)arg1;
 - (unsigned int)countOfNotesMatchingPredicate:(id)arg1;
@@ -78,23 +76,18 @@
 - (void)deleteNote:(id)arg1;
 - (void)deleteNoteRegardlessOfConstraints:(id)arg1;
 - (BOOL)deleteStore:(id)arg1;
-- (void)destroySearchIndex;
 - (void)enableChangeLogging:(BOOL)arg1;
 - (id)faultedInStoresForAccounts:(id)arg1;
-- (id)findNotesWithText:(id)arg1 betweenDate:(id)arg2 andDate:(id)arg3;
 - (BOOL)forceDeleteAccount:(id)arg1;
 - (void)forceSetUpUniqueObjects;
 - (id)getNextIdObject;
 - (void)handleMigration;
 - (BOOL)hasMultipleEnabledStores;
-- (void)indexInBatches:(BOOL)arg1;
-- (void)indexNotes:(id)arg1;
 - (id)init;
 - (id)initForMigrator;
 - (id)initWithAccountUtilities:(id)arg1;
 - (id)initWithAccountUtilities:(id)arg1 inMigrator:(BOOL)arg2;
 - (void)invalidate;
-- (BOOL)isIndexing;
 - (id)liveNotesNeedingBodiesPredicate;
 - (id)localAccount;
 - (id)localStore;
@@ -104,7 +97,6 @@
 - (id)mostRecentlyModifiedNoteInCollection:(id)arg1;
 - (id)newFRCForCollection:(id)arg1 delegate:(id)arg2;
 - (id)newFetchRequestForNotes;
-- (void*)newSearchContextWithText:(id)arg1;
 - (id)newlyAddedAccount;
 - (id)newlyAddedAttachment;
 - (id)newlyAddedNote;
@@ -114,7 +106,6 @@
 - (id)noteChangeWithType:(int)arg1 store:(id)arg2;
 - (id)noteForObjectID:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;
-- (id)notesToResumeIndexing;
 - (id)pathForIndex;
 - (id)pathForPersistentStore;
 - (id)persistentStoreCoordinator;
@@ -123,12 +114,9 @@
 - (void)removeConflictingSqliteAndIdxFiles;
 - (void)removeSqliteAndIdxFiles;
 - (void)resetNotificationCount;
-- (void)resumeIndexing;
 - (BOOL)save:(id*)arg1;
-- (void)saveNotesToResumeIndexing:(id)arg1;
 - (BOOL)saveOutsideApp:(id*)arg1;
 - (BOOL)saveSilently:(id*)arg1;
-- (struct __CXIndex { }*)searchIndex:(char *)arg1;
 - (void)setAccountUtilities:(id)arg1;
 - (void)setHasPriorityInSaveConflicts:(BOOL)arg1;
 - (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
@@ -138,17 +126,24 @@
 - (void)setUpUniqueObjects;
 - (BOOL)shouldDisableLocalStore;
 - (BOOL)shouldObserveDarwinNotifications;
-- (BOOL)shouldResumeIndexing;
 - (void)sortNotes:(id)arg1;
 - (id)storeForObjectID:(id)arg1;
 - (id)storeOptions;
 - (void)tearDownCoreDataStack;
 - (void)trackChanges:(id)arg1;
-- (void)updateSearchIndex:(id)arg1;
 - (id)urlForPersistentStore;
 - (id)visibleNoteForObjectID:(id)arg1;
 - (id)visibleNotesForIntegerIds:(id)arg1;
 - (id)visibleNotesPredicate;
-- (void)wrapUpIndexing;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)searchLegacyContext;
++ (id)sharedContext;
+
+- (id)legacyAllSearchIndexableObjects;
+- (id)legacyManagedObjectContext;
+- (id)legacyNoteForIdentifier:(id)arg1 includeDeleted:(BOOL)arg2;
+- (id)legacyNoteForIntegerID:(id)arg1;
 
 @end

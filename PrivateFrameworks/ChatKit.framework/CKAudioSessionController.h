@@ -3,9 +3,9 @@
  */
 
 @interface CKAudioSessionController : NSObject {
-    BOOL _active;
-    BOOL _dirty;
-    BOOL _shouldUseSpeaker;
+    BOOL  _active;
+    BOOL  _dirty;
+    BOOL  _shouldUseSpeaker;
 }
 
 @property (getter=isActive) BOOL active;

@@ -3,14 +3,14 @@
  */
 
 @interface CKTranscriptManagementController : CKViewController <CKAttachmentViewControllerDelegate, CKTranscriptManagementNameFieldDelegate, FMFMapViewControllerDelegate, UIGestureRecognizerDelegate> {
-    CKAttachmentViewController *_attachmentsController;
-    CKConversation *_conversation;
-    BOOL _initialLoad;
-    CKTranscriptManagementView *_managementView;
-    FMFMapViewController *_mapController;
-    BOOL _mapHidden;
-    CKTranscriptManagementNameField *_nameField;
-    BOOL _removeMapViewAfterScrollAnimation;
+    CKAttachmentViewController * _attachmentsController;
+    CKConversation * _conversation;
+    BOOL  _initialLoad;
+    CKTranscriptManagementView * _managementView;
+    FMFMapViewController * _mapController;
+    BOOL  _mapHidden;
+    CKTranscriptManagementNameField * _nameField;
+    BOOL  _removeMapViewAfterScrollAnimation;
 }
 
 @property (nonatomic, retain) CKAttachmentViewController *attachmentsController;
@@ -46,6 +46,7 @@
 - (void)attachmentsController:(id)arg1 collectionViewWillBeginDragging:(id)arg2;
 - (id)conversation;
 - (void)dealloc;
+- (id)fmfMapHandles:(id)arg1;
 - (void)fmfMapViewController:(id)arg1 didDeselectHandle:(id)arg2;
 - (void)fmfMapViewController:(id)arg1 didSelectHandle:(id)arg2;
 - (void)fmfMapViewController:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
@@ -75,5 +76,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willMoveToParentViewController:(id)arg1;
 
 @end

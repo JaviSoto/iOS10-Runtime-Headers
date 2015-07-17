@@ -3,10 +3,10 @@
  */
 
 @interface GKRatingView : UIView {
-    UIImageView *_backgroundImageView;
-    UIImageView *_foregroundImageView;
-    NSLayoutConstraint *_foregroundWidthConstraint;
-    float _value;
+    UIImageView * _backgroundImageView;
+    UIImageView * _foregroundImageView;
+    NSLayoutConstraint * _foregroundWidthConstraint;
+    float  _value;
 }
 
 @property (nonatomic, retain) UIImageView *backgroundImageView;

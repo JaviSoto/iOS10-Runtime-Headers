@@ -3,12 +3,12 @@
  */
 
 @interface CKRaiseGesture : NSObject {
-    SEL _action;
-    BOOL _enabled;
-    CMGestureManager *_gestureManager;
-    int _gestureState;
-    BOOL _proximityState;
-    id _target;
+    SEL  _action;
+    BOOL  _enabled;
+    CMGestureManager * _gestureManager;
+    int  _gestureState;
+    BOOL  _proximityState;
+    id  _target;
 }
 
 @property (nonatomic) SEL action;

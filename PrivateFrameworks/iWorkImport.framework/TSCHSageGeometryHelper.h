@@ -3,8 +3,8 @@
  */
 
 @interface TSCHSageGeometryHelper : NSObject {
-    TSCHChartInfo *mChartInfo;
-    TSDInfoGeometry *mImportedInfoGeometry;
+    TSCHChartInfo * mChartInfo;
+    TSDInfoGeometry * mImportedInfoGeometry;
 }
 
 + (id)helperWithImportedChartInfo:(id)arg1 importedInfoGeometry:(id)arg2;

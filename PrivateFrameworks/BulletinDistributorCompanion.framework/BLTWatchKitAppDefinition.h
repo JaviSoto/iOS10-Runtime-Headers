@@ -3,9 +3,9 @@
  */
 
 @interface BLTWatchKitAppDefinition : NSObject {
-    NSString *_containerBundleID;
-    BOOL _isInstalled;
-    NSString *_watchKitAppBundleID;
+    NSString * _containerBundleID;
+    BOOL  _isInstalled;
+    NSString * _watchKitAppBundleID;
 }
 
 @property (nonatomic, readonly) NSString *containerBundleID;

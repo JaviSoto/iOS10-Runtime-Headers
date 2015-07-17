@@ -3,12 +3,12 @@
  */
 
 @interface SKUIBrickItem : NSObject {
-    NSString *_accessibilityLabel;
-    SKUIArtwork *_artwork;
-    long long _brickIdentifier;
-    SKUICountdown *_countdown;
-    SKUIEditorialComponent *_editorial;
-    SKUILink *_link;
+    NSString * _accessibilityLabel;
+    SKUIArtwork * _artwork;
+    long long  _brickIdentifier;
+    SKUICountdown * _countdown;
+    SKUIEditorialComponent * _editorial;
+    SKUILink * _link;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityLabel;

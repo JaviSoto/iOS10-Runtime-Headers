@@ -3,8 +3,8 @@
  */
 
 @interface BBDataProvider : NSObject <BBSectionIdentity> {
-    BBDataProviderIdentity *__identity;
-    NSObject<OS_dispatch_queue> *_identityQueue;
+    BBDataProviderIdentity * __identity;
+    NSObject<OS_dispatch_queue> * _identityQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,6 +29,7 @@
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
 - (id)description;
+- (id)displayNameForFilterID:(id)arg1;
 - (id)displayNameForSubsectionID:(id)arg1;
 - (id)identity;
 - (id)init;

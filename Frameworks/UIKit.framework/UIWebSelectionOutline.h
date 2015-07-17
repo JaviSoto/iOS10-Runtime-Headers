@@ -3,7 +3,7 @@
  */
 
 @interface UIWebSelectionOutline : UIView {
-    UIView *_lineViews;
+    UIView * _lineViews;
 }
 
 - (void)dealloc;

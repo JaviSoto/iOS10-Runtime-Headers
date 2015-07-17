@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDCanonicalLocationSearchParameters : PBCodable <NSCopying> {
-    NSString *_queryString;
+    NSString * _queryString;
 }
 
 @property (nonatomic, readonly) BOOL hasQueryString;

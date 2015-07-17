@@ -3,7 +3,7 @@
  */
 
 @interface TSDColorFill : TSDFill <NSCopying, NSMutableCopying, TSDMixing> {
-    TSUColor *mColor;
+    TSUColor * mColor;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;

@@ -24,6 +24,7 @@
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (float)dualStringBottomAdditionalOffsetForDisplayContents:(id)arg1;
+- (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (float)hintNoneKeyFontSize;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;

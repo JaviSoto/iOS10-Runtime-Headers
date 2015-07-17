@@ -3,15 +3,15 @@
  */
 
 @interface ABPersonTableView : UITableView <ABPersonTabsScrollView> {
-    ABPersonViewControllerHelper *_helper;
-    float _minimumBottomInset;
+    ABPersonViewControllerHelper * _helper;
+    float  _minimumBottomInset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _savedContentInset;
-    <ABPersonTabsLayoutManager> *_tabsLayoutManager;
+    }  _savedContentInset;
+    <ABPersonTabsLayoutManager> * _tabsLayoutManager;
 }
 
 @property (nonatomic, retain) UIView *backgroundView;

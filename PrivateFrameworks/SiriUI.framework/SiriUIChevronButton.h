@@ -3,13 +3,13 @@
  */
 
 @interface SiriUIChevronButton : UIButton {
-    UIImageView *_chevronImageView;
-    float _chevronRightInset;
-    BOOL _hasChevron;
-    SiriUIKeyline *_keyline;
-    int _keylineType;
-    float _leftSubviewInset;
-    UIView *_subview;
+    UIImageView * _chevronImageView;
+    float  _chevronRightInset;
+    BOOL  _hasChevron;
+    SiriUIKeyline * _keyline;
+    int  _keylineType;
+    float  _leftSubviewInset;
+    UIView * _subview;
 }
 
 @property (nonatomic) float chevronRightInset;

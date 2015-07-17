@@ -3,10 +3,10 @@
  */
 
 @interface TSPObjectInfo : NSObject {
-    NSArray *_referencedData;
-    NSHashTable *_referencedDataHashTable;
-    NSArray *_referencedObjects;
-    NSHashTable *_referencedObjectsHashTable;
+    NSArray * _referencedData;
+    NSHashTable * _referencedDataHashTable;
+    NSArray * _referencedObjects;
+    NSHashTable * _referencedObjectsHashTable;
 }
 
 @property (nonatomic, readonly) NSArray *referencedData;

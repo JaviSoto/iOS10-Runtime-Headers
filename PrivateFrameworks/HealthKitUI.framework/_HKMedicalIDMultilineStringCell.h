@@ -3,9 +3,9 @@
  */
 
 @interface _HKMedicalIDMultilineStringCell : UITableViewCell {
-    NSString *_stringValue;
-    UITextView *_textLabel;
-    UILabel *_titleLabel;
+    NSString * _stringValue;
+    UITextView * _textLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSString *stringValue;

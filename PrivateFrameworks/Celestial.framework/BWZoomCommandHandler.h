@@ -3,33 +3,33 @@
  */
 
 @interface BWZoomCommandHandler : NSObject {
-    float _appliedZoomFactor;
-    BOOL _clientCanCompensateForDelay;
+    float  _appliedZoomFactor;
+    BOOL  _clientCanCompensateForDelay;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastFramePTS;
-    float _lastRequestedZoomFactor;
-    float _rampAcceleration;
-    BOOL _rampActive;
-    int _rampCommandID;
-    float _rampCurrentVelocity;
-    float _rampStartFactor;
+    }  _lastFramePTS;
+    float  _lastRequestedZoomFactor;
+    float  _rampAcceleration;
+    BOOL  _rampActive;
+    int  _rampCommandID;
+    float  _rampCurrentVelocity;
+    float  _rampStartFactor;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _rampStartTime;
-    float _rampStartVelocity;
-    float _rampTargetFactor;
-    float _rampTargetVelocity;
-    <BWZoomCompletionDelegate> *_zoomCompletionDelegate;
-    BWZoomDelayBuffer *_zoomDelayBuffer;
-    BOOL _zoomFactorServiced;
-    int _zoomLock;
+    }  _rampStartTime;
+    float  _rampStartVelocity;
+    float  _rampTargetFactor;
+    float  _rampTargetVelocity;
+    <BWZoomCompletionDelegate> * _zoomCompletionDelegate;
+    BWZoomDelayBuffer * _zoomDelayBuffer;
+    BOOL  _zoomFactorServiced;
+    int  _zoomLock;
 }
 
 @property (readonly) float appliedZoomFactor;

@@ -3,10 +3,10 @@
  */
 
 @interface MPUExtrasTemplateViewController : MPUExtrasElementViewController <IKAppDocumentDelegate> {
-    MPUExtrasContext *_context;
-    IKViewElement *_displayedTemplate;
-    IKAppDocument *_document;
-    NSDictionary *_options;
+    MPUExtrasContext * _context;
+    IKViewElement * _displayedTemplate;
+    IKAppDocument * _document;
+    NSDictionary * _options;
 }
 
 @property (nonatomic, readonly) MPUExtrasContext *context;

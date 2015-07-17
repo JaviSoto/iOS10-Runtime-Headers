@@ -3,11 +3,11 @@
  */
 
 @interface PTSModule : NSObject <PTSSectionObserver, _UISettingsKeyPathObserver> {
-    NSMutableArray *_allSections;
-    NSMutableArray *_enabledSections;
-    NSHashTable *_observers;
-    _UISettings *_settings;
-    NSString *_title;
+    NSMutableArray * _allSections;
+    NSMutableArray * _enabledSections;
+    NSHashTable * _observers;
+    _UISettings * _settings;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSMutableArray *allSections;

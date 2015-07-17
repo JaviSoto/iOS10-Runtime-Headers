@@ -3,21 +3,21 @@
  */
 
 @interface BRCSharingAcceptFlowOperation : _BRCOperation <BRCForegroundClient, BRCOperationSubclass> {
-    NSArray *_acceptationFlow;
-    BRCPrivateLocalContainer *_aliasContainer;
-    BRCLocalContainer *_localContainer;
-    id _logSection;
-    BRCAccountSession *_session;
-    NSString *_shareDocumentFileProviderString;
-    NSURL *_shareDocumentURL;
-    CKShareID *_shareID;
-    CKShareInfo *_shareInfo;
-    NSURL *_shareURL;
-    BRCItemID *_sharedItemID;
-    unsigned int _stepIndex;
-    NSString *_unsaltedBookmarkData;
-    BRCUserNotification *_userNotification;
-    BRCXPCClient *_xpcClient;
+    NSArray * _acceptationFlow;
+    BRCPrivateLocalContainer * _aliasContainer;
+    BRCLocalContainer * _localContainer;
+    id  _logSection;
+    BRCAccountSession * _session;
+    NSString * _shareDocumentFileProviderString;
+    NSURL * _shareDocumentURL;
+    CKShareID * _shareID;
+    CKShareInfo * _shareInfo;
+    NSURL * _shareURL;
+    BRCItemID * _sharedItemID;
+    unsigned int  _stepIndex;
+    NSString * _unsaltedBookmarkData;
+    BRCUserNotification * _userNotification;
+    BRCXPCClient * _xpcClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,6 +38,7 @@
 - (void)_fetchShareInfo;
 - (void)_isAppInstalled;
 - (void)_isAppProfileEnabled;
+- (BOOL)_isItemDownloaded;
 - (BOOL)_isOwner;
 - (BOOL)_isOwnerOrShareAlreadyAccepted;
 - (void)_isURLWellFormed;
@@ -52,5 +53,7 @@
 - (id)initWithShareURL:(id)arg1 client:(id)arg2 session:(id)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
+- (id)subclassableDescriptionWithContext:(id)arg1;
 
 @end

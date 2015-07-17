@@ -3,11 +3,12 @@
  */
 
 @interface _UIFormSheetPresentationController : UIPresentationController {
-    UIDimmingView *_dimmingView;
-    UIDropShadowView *_dropShadowView;
-    BOOL _layoutStateShouldAvoidKeyboard;
+    UIDimmingView * _dimmingView;
+    UIDropShadowView * _dropShadowView;
+    BOOL  _layoutStateShouldAvoidKeyboard;
 }
 
+- (void).cxx_destruct;
 - (void)_changeLayoutModeToAvoidKeyboard:(BOOL)arg1;
 - (int)_defaultPresentationStyleForTraitCollection:(id)arg1;
 - (float)_dropShadowCornerRadius;

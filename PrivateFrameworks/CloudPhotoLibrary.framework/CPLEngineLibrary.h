@@ -3,26 +3,27 @@
  */
 
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
-    NSHashTable *_attachedObjects;
-    NSURL *_clientLibraryBaseURL;
-    BOOL _closed;
-    NSURL *_cloudLibraryResourceStorageURL;
-    NSURL *_cloudLibraryStateStorageURL;
-    NSArray *_components;
-    CPLConfiguration *_configuration;
-    NSString *_libraryIdentifier;
-    NSError *_openingError;
-    CPLPlatformObject *_platformObject;
-    NSObject<OS_dispatch_queue> *_queue;
-    CPLEngineScheduler *_scheduler;
-    CPLStatistics *_statistics;
-    CPLStatus *_status;
-    CPLEngineStore *_store;
-    CPLEngineSyncManager *_syncManager;
-    CPLEngineSystemMonitor *_systemMonitor;
-    unsigned int _totalAssetCount;
-    BOOL _totalAssetCountHasBeenCalculated;
-    CPLEngineTransport *_transport;
+    NSHashTable * _attachedObjects;
+    NSURL * _clientLibraryBaseURL;
+    BOOL  _closed;
+    NSURL * _cloudLibraryResourceStorageURL;
+    NSURL * _cloudLibraryStateStorageURL;
+    NSArray * _components;
+    CPLConfiguration * _configuration;
+    NSString * _libraryIdentifier;
+    BOOL  _libraryIsCorrupted;
+    NSError * _openingError;
+    CPLPlatformObject * _platformObject;
+    NSObject<OS_dispatch_queue> * _queue;
+    CPLEngineScheduler * _scheduler;
+    CPLStatistics * _statistics;
+    CPLStatus * _status;
+    CPLEngineStore * _store;
+    CPLEngineSyncManager * _syncManager;
+    CPLEngineSystemMonitor * _systemMonitor;
+    unsigned int  _totalAssetCount;
+    BOOL  _totalAssetCountHasBeenCalculated;
+    CPLEngineTransport * _transport;
 }
 
 @property (nonatomic, readonly, copy) NSURL *clientLibraryBaseURL;
@@ -38,6 +39,7 @@
 @property (nonatomic) BOOL iCloudLibraryHasBeenWiped;
 @property (nonatomic) BOOL isExceedingQuota;
 @property (nonatomic, readonly, copy) NSString *libraryIdentifier;
+@property (nonatomic, readonly) BOOL libraryIsCorrupted;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (nonatomic, readonly) CPLEngineScheduler *scheduler;
 @property (nonatomic, readonly) CPLStatistics *statistics;
@@ -61,6 +63,7 @@
 - (id)cloudLibraryStateStorageURL;
 - (id)componentName;
 - (id)configuration;
+- (id)corruptionInfo;
 - (id)description;
 - (void)detachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)exitDeleteTime;
@@ -73,6 +76,7 @@
 - (id)initWithClientLibraryBaseURL:(id)arg1 cloudLibraryStateStorageURL:(id)arg2 cloudLibraryResourceStorageURL:(id)arg3 libraryIdentifier:(id)arg4;
 - (BOOL)isExceedingQuota;
 - (id)libraryIdentifier;
+- (BOOL)libraryIsCorrupted;
 - (void)notifyAttachedObjectsPullQueueIsFull;
 - (void)notifyAttachedObjectsResourceDidDowloadInBackground:(id)arg1;
 - (void)notifyAttachedObjectsResourceDidFailBackgroundDownloadOfResource:(id)arg1;
@@ -83,6 +87,7 @@
 - (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)platformObject;
 - (void)reportLibraryCorrupted;
+- (void)reportRadar:(unsigned int)arg1;
 - (void)reportUnsuccessfulSync;
 - (id)scheduler;
 - (void)setExitDeleteTime:(id)arg1;

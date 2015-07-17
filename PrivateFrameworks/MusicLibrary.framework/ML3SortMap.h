@@ -3,14 +3,14 @@
  */
 
 @interface ML3SortMap : NSObject {
-    ML3DatabaseConnection *_connection;
-    NSMutableArray *_entries;
-    ML3MusicLibrary *_library;
-    NSData *_maxSortKey;
-    NSData *_minSortKey;
-    NSMutableDictionary *_nameOrders;
-    BOOL _preloadNames;
-    long long _smallestNameDelta;
+    ML3DatabaseConnection * _connection;
+    NSMutableArray * _entries;
+    ML3MusicLibrary * _library;
+    NSData * _maxSortKey;
+    NSData * _minSortKey;
+    NSMutableDictionary * _nameOrders;
+    BOOL  _preloadNames;
+    long long  _smallestNameDelta;
 }
 
 - (void).cxx_destruct;

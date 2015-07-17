@@ -3,9 +3,9 @@
  */
 
 @interface CPLChangeBatch : NSObject <NSFastEnumeration, NSSecureCoding> {
-    NSMutableDictionary *_additionalRecords;
-    NSMutableDictionary *_localResources;
-    NSMutableArray *_records;
+    NSMutableDictionary * _additionalRecords;
+    NSMutableDictionary * _localResources;
+    NSMutableArray * _records;
 }
 
 @property (nonatomic, readonly) NSArray *records;

@@ -3,7 +3,7 @@
  */
 
 @interface TSDFrameImageCache : NSObject {
-    NSMutableArray *mEntries;
+    NSMutableArray * mEntries;
 }
 
 + (id)sharedFrameImageCache;

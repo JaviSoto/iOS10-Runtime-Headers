@@ -3,13 +3,13 @@
  */
 
 @interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
-    NSMutableIndexSet *_everDisplayedContentModes;
-    NSMutableDictionary *_filteredAlbumListsByContentMode;
-    int _pendingSelectedContentMode;
-    PUSessionInfo *_sessionInfo;
-    BOOL _sharedTabBadgeIsDirty;
-    PUTabbedLibraryViewControllerSpec *_spec;
-    PUMomentsZoomLevelManager *_zoomLevelManager;
+    NSMutableIndexSet * _everDisplayedContentModes;
+    NSMutableDictionary * _filteredAlbumListsByContentMode;
+    int  _pendingSelectedContentMode;
+    PUSessionInfo * _sessionInfo;
+    BOOL  _sharedTabBadgeIsDirty;
+    PUTabbedLibraryViewControllerSpec * _spec;
+    PUMomentsZoomLevelManager * _zoomLevelManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -50,6 +50,7 @@
 - (void)assetContainerListDidChange:(id)arg1;
 - (BOOL)assetIsAvailableForNavigation:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
 - (BOOL)assetIsAvailableForNavigationInMoments:(id)arg1;
+- (BOOL)assetIsAvailableForNavigationInMoments:(id)arg1 refetchSectionsIfNeeded:(BOOL)arg2;
 - (BOOL)cloudFeedAssetIsAvailableForNavigation:(id)arg1;
 - (BOOL)cloudFeedCommentIsAvailableForNavigation:(id)arg1;
 - (BOOL)cloudFeedInvitationForAlbumIsAvailableForNavigation:(id)arg1;

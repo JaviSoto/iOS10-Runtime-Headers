@@ -3,8 +3,8 @@
  */
 
 @interface NSXPCCoder : NSCoder {
-    id _reserved1;
-    <NSObject> *_userInfo;
+    id  _reserved1;
+    <NSObject> * _userInfo;
 }
 
 @property (retain) <NSObject> *userInfo;

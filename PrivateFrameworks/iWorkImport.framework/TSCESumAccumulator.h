@@ -3,9 +3,9 @@
  */
 
 @interface TSCESumAccumulator : NSObject {
-    NSDate *mDateAccumulator;
-    BOOL mFoundANumber;
-    BOOL mMixedDurationsAndNumbers;
+    NSDate * mDateAccumulator;
+    BOOL  mFoundANumber;
+    BOOL  mMixedDurationsAndNumbers;
     struct TSCENumberValue { 
         int (**_vptr$TSCEAbstractValue)(); 
         double mDouble; 
@@ -63,8 +63,8 @@
             } mData; 
         } mFormat; 
         BOOL mIsUnitlessZero; 
-    } mNumberAccumulator;
-    double mSecondsToAdd;
+    }  mNumberAccumulator;
+    double  mSecondsToAdd;
 }
 
 - (id).cxx_construct;

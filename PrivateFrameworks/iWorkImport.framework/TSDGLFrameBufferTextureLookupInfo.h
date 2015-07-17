@@ -3,14 +3,14 @@
  */
 
 @interface TSDGLFrameBufferTextureLookupInfo : NSObject {
-    unsigned int _attachment;
-    int _indexOnAttachment;
-    NSString *_name;
-    unsigned int _textureName;
+    unsigned int  _attachment;
+    int  _indexOnAttachment;
+    NSString * _name;
+    unsigned int  _textureName;
     struct CGSize { 
         float width; 
         float height; 
-    } _textureSize;
+    }  _textureSize;
 }
 
 @property (nonatomic) unsigned int attachment;

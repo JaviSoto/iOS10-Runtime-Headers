@@ -3,11 +3,11 @@
  */
 
 @interface NFPowerObserver : NSObject {
-    <NFPowerObserverDelegate> *_delegate;
-    unsigned int _powerNotificationConnection;
-    unsigned int _powerNotificationNotifier;
-    struct IONotificationPort { } *_powerNotificationPort;
-    BOOL _willSleep;
+    <NFPowerObserverDelegate> * _delegate;
+    unsigned int  _powerNotificationConnection;
+    unsigned int  _powerNotificationNotifier;
+    struct IONotificationPort { } * _powerNotificationPort;
+    BOOL  _willSleep;
 }
 
 @property (readonly) BOOL willSleep;

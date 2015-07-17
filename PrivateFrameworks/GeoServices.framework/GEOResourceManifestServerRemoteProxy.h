@@ -3,20 +3,22 @@
  */
 
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy> {
-    NSString *_authToken;
-    NSLock *_authTokenLock;
-    NSHashTable *_cancellingConnections;
-    NSLock *_cancellingConnectionsLock;
-    GEOResourceManifestConfiguration *_configuration;
-    NSObject<OS_xpc_object> *_conn;
-    NSLock *_connLock;
-    <GEOResourceManifestServerProxyDelegate> *_delegate;
-    BOOL _isLoadingResources;
-    BOOL _isUpdatingManifest;
-    unsigned int _retryCount;
-    NSObject<OS_dispatch_queue> *_serverQueue;
+    int  _activeTileGroupChangedNotificationToken;
+    NSString * _authToken;
+    NSLock * _authTokenLock;
+    NSHashTable * _cancellingConnections;
+    NSLock * _cancellingConnectionsLock;
+    GEOResourceManifestConfiguration * _configuration;
+    NSObject<OS_xpc_object> * _conn;
+    NSLock * _connLock;
+    <GEOResourceManifestServerProxyDelegate> * _delegate;
+    BOOL  _isLoadingResources;
+    BOOL  _isUpdatingManifest;
+    unsigned int  _retryCount;
+    NSObject<OS_dispatch_queue> * _serverQueue;
 }
 
+@property (nonatomic, readonly) GEOActiveTileGroup *activeTileGroup;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GEOResourceManifestServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -25,6 +27,7 @@
 
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
 - (void)_setupConnection;
+- (id)activeTileGroup;
 - (id)authToken;
 - (void)closeConnection;
 - (id)configuration;

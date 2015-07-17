@@ -3,9 +3,9 @@
  */
 
 @interface _MFMailComposePlaceholderView : UIScrollView {
-    MFComposeHeaderView *_multiView;
-    MFComposeSubjectView *_subjectView;
-    MFComposeHeaderView *_toField;
+    MFComposeHeaderView * _multiView;
+    MFComposeSubjectView * _subjectView;
+    MFComposeHeaderView * _toField;
 }
 
 - (void)dealloc;

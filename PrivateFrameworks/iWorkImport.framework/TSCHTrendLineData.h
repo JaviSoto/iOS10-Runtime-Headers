@@ -12,21 +12,21 @@
             float width; 
             float height; 
         } size; 
-    } mCachedChartFrame;
-    BOOL mCachedChartVertical;
-    TSUBezierPath *mCachedTrendLinePath;
-    int mInputAxisType;
-    int mLineType;
-    double mMaxXValue;
-    double mMaxYValue;
-    double mMinXValue;
-    double mMinYValue;
-    double mOffsetInBody;
-    int mOutputAxisType;
-    TSURegressionModel *mRegression;
-    TSCHChartSeries *mSeries;
-    BOOL mShowTrendLine;
-    BOOL mTrendLineInvalid;
+    }  mCachedChartFrame;
+    BOOL  mCachedChartVertical;
+    TSUBezierPath * mCachedTrendLinePath;
+    int  mInputAxisType;
+    int  mLineType;
+    double  mMaxXValue;
+    double  mMaxYValue;
+    double  mMinXValue;
+    double  mMinYValue;
+    double  mOffsetInBody;
+    int  mOutputAxisType;
+    TSURegressionModel * mRegression;
+    TSCHChartSeries * mSeries;
+    BOOL  mShowTrendLine;
+    BOOL  mTrendLineInvalid;
 }
 
 @property (nonatomic, readonly) float equationTextOpacity;

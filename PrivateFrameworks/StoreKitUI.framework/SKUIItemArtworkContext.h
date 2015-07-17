@@ -3,14 +3,14 @@
  */
 
 @interface SKUIItemArtworkContext : NSObject {
-    UIColor *_backgroundColor;
-    SKUIColorScheme *_colorScheme;
-    SKUIProductImageDataConsumer *_generalImageConsumer;
-    SKUIStyledImageDataConsumer *_iconConsumer;
-    SKUIProductImageDataConsumer *_letterboxConsumer;
-    SKUIStyledImageDataConsumer *_newsstandConsumer;
-    NSMutableDictionary *_placeholders;
-    SKUIProductImageDataConsumer *_posterConsumer;
+    UIColor * _backgroundColor;
+    SKUIColorScheme * _colorScheme;
+    SKUIProductImageDataConsumer * _generalImageConsumer;
+    SKUIStyledImageDataConsumer * _iconConsumer;
+    SKUIProductImageDataConsumer * _letterboxConsumer;
+    SKUIStyledImageDataConsumer * _newsstandConsumer;
+    NSMutableDictionary * _placeholders;
+    SKUIProductImageDataConsumer * _posterConsumer;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

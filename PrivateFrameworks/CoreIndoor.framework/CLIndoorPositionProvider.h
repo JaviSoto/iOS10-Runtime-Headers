@@ -3,7 +3,7 @@
  */
 
 @interface CLIndoorPositionProvider : CLIndoorXPCProvider <CLIndoorXPCProviderImplementation> {
-    ServiceState *_state;
+    ServiceState * _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,6 @@
 + (int)locationType:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)defaultErrHandler;
 - (id)endpointName;
 - (void)gpsEstimateAvailable:(id)arg1;
 - (void)gpsSignalQualityAvailable:(id)arg1;

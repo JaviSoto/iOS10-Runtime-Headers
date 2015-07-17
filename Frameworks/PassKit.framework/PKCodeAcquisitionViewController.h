@@ -3,18 +3,18 @@
  */
 
 @interface PKCodeAcquisitionViewController : UIViewController <NSURLConnectionDataDelegate, PKCaptureDelegate, UIGestureRecognizerDelegate> {
-    UILabel *_captionLabel;
-    PKCaptureSession *_captureSession;
-    <PKCodeAcquisitionDelegate> *_delegate;
-    NSURLConnection *_downloadConnection;
-    NSMutableData *_downloadData;
-    long long _downloadExpectedContentSize;
-    UIProgressView *_downloadProgressView;
-    UILabel *_errorLabel;
-    UILabel *_helpLabel;
-    UINavigationBar *_navBar;
-    PKReticleView *_reticleView;
-    NSSet *_supportedBarcodeTypes;
+    UILabel * _captionLabel;
+    PKCaptureSession * _captureSession;
+    <PKCodeAcquisitionDelegate> * _delegate;
+    NSURLConnection * _downloadConnection;
+    NSMutableData * _downloadData;
+    long long  _downloadExpectedContentSize;
+    UIProgressView * _downloadProgressView;
+    UILabel * _errorLabel;
+    UILabel * _helpLabel;
+    UINavigationBar * _navBar;
+    PKReticleView * _reticleView;
+    NSSet * _supportedBarcodeTypes;
 }
 
 @property (readonly, copy) NSString *debugDescription;

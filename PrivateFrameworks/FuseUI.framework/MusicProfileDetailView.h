@@ -3,28 +3,28 @@
  */
 
 @interface MusicProfileDetailView : UIView {
-    BOOL _adminEnabled;
-    UIButton *_contextualActionsButton;
-    <MusicProfileDetailViewDelegate> *_delegate;
-    MusicMediaDetailTintInformation *_detailTintInformation;
-    MusicProfileFollowButton *_editButton;
-    NSString *_editText;
-    MusicProfileFollowButton *_followButton;
-    BOOL _followHidden;
-    NSString *_followText;
-    UILabel *_followersCountLabel;
-    NSString *_followersCountText;
-    UILabel *_followersLabel;
-    NSString *_followersText;
-    BOOL _following;
-    BOOL _followingInitialized;
-    NSString *_followingText;
-    UILabel *_profileLabel;
-    UITapGestureRecognizer *_profileLabelTapGestureRecognizer;
-    UIButton *_shareActionsButton;
-    int _tintStyle;
-    NSString *_title;
-    BOOL _titleShouldAllowSelection;
+    BOOL  _adminEnabled;
+    UIButton * _contextualActionsButton;
+    <MusicProfileDetailViewDelegate> * _delegate;
+    MusicMediaDetailTintInformation * _detailTintInformation;
+    MusicProfileFollowButton * _editButton;
+    NSString * _editText;
+    MusicProfileFollowButton * _followButton;
+    BOOL  _followHidden;
+    NSString * _followText;
+    UILabel * _followersCountLabel;
+    NSString * _followersCountText;
+    UILabel * _followersLabel;
+    NSString * _followersText;
+    BOOL  _following;
+    BOOL  _followingInitialized;
+    NSString * _followingText;
+    UILabel * _profileLabel;
+    UITapGestureRecognizer * _profileLabelTapGestureRecognizer;
+    UIButton * _shareActionsButton;
+    int  _tintStyle;
+    NSString * _title;
+    BOOL  _titleShouldAllowSelection;
 }
 
 @property (getter=isAdminEnabled, nonatomic) BOOL adminEnabled;

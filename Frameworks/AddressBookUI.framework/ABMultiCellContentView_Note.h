@@ -3,7 +3,7 @@
  */
 
 @interface ABMultiCellContentView_Note : ABMultiCellContentView <ABSwellTextViewDelegate> {
-    ABSwellTextView *_textView;
+    ABSwellTextView * _textView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

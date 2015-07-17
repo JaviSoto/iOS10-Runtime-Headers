@@ -3,17 +3,17 @@
  */
 
 @interface MPUExtrasBannerController : NSObject {
-    UIView *_anchorView;
-    NSLayoutConstraint *_anchorViewConstraint;
-    IKDocumentBannerElement *_bannerElement;
-    UIImageView *_bannerImageView;
-    NSLayoutConstraint *_bannerImageViewHeightConstraint;
-    NSArray *_installedConstraints;
-    UIView *_installedView;
-    UIView *_maskView;
-    UIScrollView *_trackingScrollView;
-    UIImageView *_vignetteImageView;
-    unsigned int _vignetteType;
+    UIView * _anchorView;
+    NSLayoutConstraint * _anchorViewConstraint;
+    IKDocumentBannerElement * _bannerElement;
+    UIImageView * _bannerImageView;
+    NSLayoutConstraint * _bannerImageViewHeightConstraint;
+    NSArray * _installedConstraints;
+    UIView * _installedView;
+    UIView * _maskView;
+    UIScrollView * _trackingScrollView;
+    UIImageView * _vignetteImageView;
+    unsigned int  _vignetteType;
 }
 
 @property (nonatomic, readonly) NSLayoutConstraint *anchorConstraint;

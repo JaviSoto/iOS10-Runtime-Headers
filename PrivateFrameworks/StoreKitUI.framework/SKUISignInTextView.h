@@ -3,7 +3,7 @@
  */
 
 @interface SKUISignInTextView : UITextField <UITextInputTraits> {
-    int _keyboardType;
+    int  _keyboardType;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -14,6 +14,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;

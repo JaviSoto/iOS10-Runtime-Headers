@@ -3,21 +3,21 @@
  */
 
 @interface AVRecorderAudioQueueImpl : NSObject <AVRecorderImpl> {
-    NSMutableDictionary *_attributes;
-    unsigned long _audioCodec;
-    struct OpaqueAudioFileID { } *_audioFile;
-    struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevels;
-    struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevelsDB;
-    struct OpaqueAudioQueue { } *_audioQueue;
-    BOOL _bufferUsed;
-    struct AudioQueueBuffer {} *_buffers;
-    unsigned long _fileType;
-    BOOL _haveRecordedMaxPCMFrames;
-    BOOL _isActive;
-    BOOL _isRecording;
-    BOOL _isWriting;
-    long long _maxPCMFramesToRecord;
-    unsigned long _numDeviceChannels;
+    NSMutableDictionary * _attributes;
+    unsigned long  _audioCodec;
+    struct OpaqueAudioFileID { } * _audioFile;
+    struct AudioQueueLevelMeterState { float x1; float x2; } * _audioLevels;
+    struct AudioQueueLevelMeterState { float x1; float x2; } * _audioLevelsDB;
+    struct OpaqueAudioQueue { } * _audioQueue;
+    BOOL  _bufferUsed;
+    struct AudioQueueBuffer {} * _buffers;
+    unsigned long  _fileType;
+    BOOL  _haveRecordedMaxPCMFrames;
+    BOOL  _isActive;
+    BOOL  _isRecording;
+    BOOL  _isWriting;
+    long long  _maxPCMFramesToRecord;
+    unsigned long  _numDeviceChannels;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -28,10 +28,10 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _recordingFormat;
-    unsigned long _totalBytesRecorded;
-    unsigned long _totalFramesRecorded;
-    unsigned long _totalPacketsRecorded;
+    }  _recordingFormat;
+    unsigned long  _totalBytesRecorded;
+    unsigned long  _totalFramesRecorded;
+    unsigned long  _totalPacketsRecorded;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -50,7 +50,7 @@
 - (void)deactivate;
 - (void)dealloc;
 - (id)filePath;
-- (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned int x_5_1_4; unsigned int x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned int x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;
+- (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned long x_5_1_4; unsigned long x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned long x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;
 - (id)init;
 - (id)initWithAttributes:(id)arg1;
 - (BOOL)isActive;

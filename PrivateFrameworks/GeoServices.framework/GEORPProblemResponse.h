@@ -6,10 +6,10 @@
     struct { 
         unsigned int statusCode : 1; 
         unsigned int isNotificationSupported : 1; 
-    } _has;
-    BOOL _isNotificationSupported;
-    NSString *_problemId;
-    int _statusCode;
+    }  _has;
+    BOOL  _isNotificationSupported;
+    NSString * _problemId;
+    int  _statusCode;
 }
 
 @property (nonatomic) BOOL hasIsNotificationSupported;

@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSLegacyPlayer : IKJSObject <IKJSLegacyPlayer> {
-    <IKJSPlayerAppBridge> *_appBridge;
+@interface IKJSLegacyPlayer : IKJSObject <IKJSLegacyPlayer, JSExport> {
+    <IKJSPlayerAppBridge> * _appBridge;
 }
 
 @property (nonatomic) <IKJSPlayerAppBridge> *appBridge;

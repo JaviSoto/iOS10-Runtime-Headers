@@ -3,14 +3,14 @@
  */
 
 @interface UIWebPDFView : UIView <UIGestureRecognizerDelegate, UIPDFAnnotationControllerDelegate, UIPDFPageViewDelegate, UIPopoverControllerDelegate, WebPDFViewPlaceholderDelegate> {
-    NSMutableArray *_backingLayerImageViews;
-    struct CGPDFDocument { } *_cgPDFDocument;
+    NSMutableArray * _backingLayerImageViews;
+    struct CGPDFDocument { } * _cgPDFDocument;
     struct CGPoint { 
         float x; 
         float y; 
-    } _contentOffsetAtScrollStart;
-    BOOL _delegateRespondsToDidScroll;
-    UIPDFDocument *_document;
+    }  _contentOffsetAtScrollStart;
+    BOOL  _delegateRespondsToDidScroll;
+    UIPDFDocument * _document;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,8 +20,8 @@
             float width; 
             float height; 
         } size; 
-    } _documentBounds;
-    float _documentScale;
+    }  _documentBounds;
+    float  _documentScale;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -29,24 +29,24 @@
         float d; 
         float tx; 
         float ty; 
-    } _documentTransform;
-    NSURL *_documentURL;
-    BOOL _hasScheduledCacheUpdate;
-    int _ignoreContentOffsetChanges;
-    float _initialZoomScale;
-    NSArray *_pageMinYs;
-    NSMutableArray *_pageViews;
-    NSObject<UIWebPDFViewDelegate> *_pdfDelegate;
-    BOOL _rotating;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    BOOL _zooming;
-    UIColor *backgroundColorForUnRenderedContent;
-    NSString *documentPassword;
-    BOOL hideActivityIndicatorForUnRenderedContent;
-    BOOL hidePageViewsUntilReadyToRender;
-    NSArray *pageRects;
-    WebPDFViewPlaceholder *pdfPlaceHolderView;
-    BOOL readyForSnapshot;
+    }  _documentTransform;
+    NSURL * _documentURL;
+    BOOL  _hasScheduledCacheUpdate;
+    int  _ignoreContentOffsetChanges;
+    float  _initialZoomScale;
+    NSArray * _pageMinYs;
+    NSMutableArray * _pageViews;
+    NSObject<UIWebPDFViewDelegate> * _pdfDelegate;
+    BOOL  _rotating;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    BOOL  _zooming;
+    UIColor * backgroundColorForUnRenderedContent;
+    NSString * documentPassword;
+    BOOL  hideActivityIndicatorForUnRenderedContent;
+    BOOL  hidePageViewsUntilReadyToRender;
+    NSArray * pageRects;
+    WebPDFViewPlaceholder * pdfPlaceHolderView;
+    BOOL  readyForSnapshot;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColorForUnRenderedContent;
@@ -95,6 +95,7 @@
 - (void)_removePageViewsNotInViewCoordsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_scheduleRemovePageViewsNotInViewCoordsRect;
 - (id)_selection;
+- (void)_share:(id)arg1;
 - (void)_tapGestureRecognized:(id)arg1;
 - (BOOL)_tryToUnlockDocumentWithPassword:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewCachingBoundsInUIViewCoords;

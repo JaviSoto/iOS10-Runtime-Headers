@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptDictionary : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (readonly) NSDictionary *dictionary;

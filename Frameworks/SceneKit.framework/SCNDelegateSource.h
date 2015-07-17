@@ -3,7 +3,7 @@
  */
 
 @interface SCNDelegateSource : SCNImageSource {
-    id _delegate;
+    id  _delegate;
 }
 
 @property (nonatomic, retain) id delegate;
@@ -12,6 +12,6 @@
 - (id)delegate;
 - (BOOL)isOpaque;
 - (void)setDelegate:(id)arg1;
-- (id)textureSourceForContext:(void*)arg1;
+- (id)textureSource;
 
 @end

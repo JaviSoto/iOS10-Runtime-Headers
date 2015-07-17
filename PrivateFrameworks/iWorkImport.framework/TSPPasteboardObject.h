@@ -3,17 +3,17 @@
  */
 
 @interface TSPPasteboardObject : TSPObject {
-    TSPObject *_appNativeObject;
-    NSArray *_drawables;
-    TSPObject *_guideStorage;
-    BOOL _isCrossAppPaste;
-    BOOL _isCrossDocumentPaste;
-    BOOL _isSmartCopyPaste;
-    BOOL _isTextPrimary;
-    NSArray *_styles;
-    TSPObject *_stylesheet;
-    TSPObject *_theme;
-    TSPObject *_wpStorage;
+    TSPObject * _appNativeObject;
+    NSArray * _drawables;
+    TSPObject * _guideStorage;
+    BOOL  _isCrossAppPaste;
+    BOOL  _isCrossDocumentPaste;
+    BOOL  _isSmartCopyPaste;
+    BOOL  _isTextPrimary;
+    NSArray * _styles;
+    TSPObject * _stylesheet;
+    TSPObject * _theme;
+    TSPObject * _wpStorage;
 }
 
 @property (nonatomic, retain) TSPObject *appNativeObject;

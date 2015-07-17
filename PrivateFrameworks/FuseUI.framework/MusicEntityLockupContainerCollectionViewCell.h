@@ -3,14 +3,14 @@
  */
 
 @interface MusicEntityLockupContainerCollectionViewCell : UICollectionViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityVerticalLockupViewDelegate, MusicEntityViewPlaybackStatusObserving> {
-    UITraitCollection *_cachedTraitCollection;
-    UIColor *_hairlineColor;
-    UIView *_hairlineView;
-    UIImageView *_highlightBackgroundView;
-    BOOL _highlightBackgroundViewVisible;
-    unsigned int _highlightBackgroundVisibilityTransactionCount;
-    MusicEntityVerticalLockupView *_lockupView;
-    BOOL _showsHairline;
+    UITraitCollection * _cachedTraitCollection;
+    UIColor * _hairlineColor;
+    UIView * _hairlineView;
+    UIImageView * _highlightBackgroundView;
+    BOOL  _highlightBackgroundViewVisible;
+    unsigned int  _highlightBackgroundVisibilityTransactionCount;
+    MusicEntityVerticalLockupView * _lockupView;
+    BOOL  _showsHairline;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

@@ -3,10 +3,12 @@
  */
 
 @interface HKObserverQuery : HKQuery {
-    id /* block */ _updateHandler;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, readonly) id /* block */ updateHandler;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
@@ -16,5 +18,9 @@
 - (void)dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 updateHandler:(id /* block */)arg3;
 - (id /* block */)updateHandler;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

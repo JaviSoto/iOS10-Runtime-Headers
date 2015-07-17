@@ -3,13 +3,13 @@
  */
 
 @interface SULoadingView : UIView {
-    UIColor *_activityIndicatorColor;
-    int _activityIndicatorStyle;
-    UILabel *_label;
-    UIActivityIndicatorView *_progressIndicator;
-    unsigned int _style;
-    UIColor *_textColor;
-    UIColor *_textShadowColor;
+    UIColor * _activityIndicatorColor;
+    int  _activityIndicatorStyle;
+    UILabel * _label;
+    UIActivityIndicatorView * _progressIndicator;
+    unsigned int  _style;
+    UIColor * _textColor;
+    UIColor * _textShadowColor;
 }
 
 @property (nonatomic, retain) UIColor *activityIndicatorColor;

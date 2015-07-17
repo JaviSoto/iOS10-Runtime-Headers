@@ -3,11 +3,11 @@
  */
 
 @interface UIKeyboardCandidateUnsplitKeyboardToggleButton : UIKeyboardCandidateToggleButton {
-    UIImage *_backgroundHighlighted;
-    UIImage *_backgroundNormal;
-    BOOL _drawsBackground;
-    BOOL _drawsPocketShadow;
-    UIKeyboardCandidatePocketShadow *_pocketShadow;
+    UIImage * _backgroundHighlighted;
+    UIImage * _backgroundNormal;
+    BOOL  _drawsBackground;
+    BOOL  _drawsPocketShadow;
+    UIKeyboardCandidatePocketShadow * _pocketShadow;
 }
 
 @property (nonatomic) BOOL drawsBackground;

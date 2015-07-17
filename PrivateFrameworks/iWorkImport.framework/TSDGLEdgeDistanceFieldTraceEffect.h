@@ -6,17 +6,17 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _bufferSize;
-    BOOL _canDraw;
-    BOOL _didTeardown;
-    TSDGLTextureInfo *_edgeDistanceFieldTextureInfo;
-    BOOL _isValid;
+    }  _bufferSize;
+    BOOL  _canDraw;
+    BOOL  _didTeardown;
+    TSDGLTextureInfo * _edgeDistanceFieldTextureInfo;
+    BOOL  _isValid;
     struct CGPoint { 
         float x; 
         float y; 
-    } _randomStrokePoint;
-    TSDGLShader *_shader;
-    NSArray *_strokeLineSegment;
+    }  _randomStrokePoint;
+    TSDGLShader * _shader;
+    NSArray * _strokeLineSegment;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -24,10 +24,10 @@
         float d; 
         float tx; 
         float ty; 
-    } _textureEdgeInsetsAdjustmentMatrix;
-    TSDGLTextureInfo *_traceTextureInfo;
-    int _traceTextureMaxValue;
-    struct __CFArray { } *_zeroesArray;
+    }  _textureEdgeInsetsAdjustmentMatrix;
+    TSDGLTextureInfo * _traceTextureInfo;
+    int  _traceTextureMaxValue;
+    struct __CFArray { } * _zeroesArray;
 }
 
 @property (nonatomic, readonly) TSDGLTextureInfo *edgeDistanceFieldTextureInfo;

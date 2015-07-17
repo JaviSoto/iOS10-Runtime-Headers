@@ -17,11 +17,11 @@
             int allocated_size_; 
             int total_size_; 
         } message_infos_; 
-    } _archiveInfo;
-    unsigned int _archiveInfoLength;
-    <TSPComponentParserDelegate> *_delegate;
-    unsigned int _messagesLength;
-    unsigned int _state;
+    }  _archiveInfo;
+    unsigned int  _archiveInfoLength;
+    <TSPComponentParserDelegate> * _delegate;
+    unsigned int  _messagesLength;
+    unsigned int  _state;
 }
 
 - (id).cxx_construct;

@@ -3,18 +3,18 @@
  */
 
 @interface UIActivityItemURLRep : NSObject {
-    NSURL *_URL;
-    int _attachmentURLType;
-    UIImage *_thumbnail;
+    NSURL * _URL;
+    int  _attachmentURLType;
+    UIImage * _thumbnail;
 }
 
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic) int attachmentURLType;
 @property (nonatomic, retain) UIImage *thumbnail;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (int)attachmentURLType;
-- (void)dealloc;
 - (BOOL)isFileURL;
 - (id)scheme;
 - (void)setAttachmentURLType:(int)arg1;

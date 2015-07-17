@@ -3,18 +3,18 @@
  */
 
 @interface VSSpeechSynthesizer : NSObject <VSSpeechConnectionDelegate> {
-    unsigned int _audioQueueFlags;
-    unsigned int _audioSessionID;
-    BOOL _audioSessionIDIsValid;
-    <VSSpeechSynthesizerDelegate> *_delegate;
-    int _footprint;
-    int _gender;
-    VSKeepAlive *_inactiveKeepAlive;
-    VSKeepAlive *_keepAlive;
-    float _pitch;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _rate;
-    VSSpeechConnection *_speechConnection;
+    unsigned int  _audioQueueFlags;
+    unsigned int  _audioSessionID;
+    BOOL  _audioSessionIDIsValid;
+    <VSSpeechSynthesizerDelegate> * _delegate;
+    int  _footprint;
+    int  _gender;
+    VSKeepAlive * _inactiveKeepAlive;
+    VSKeepAlive * _keepAlive;
+    float  _pitch;
+    NSObject<OS_dispatch_queue> * _queue;
+    float  _rate;
+    VSSpeechConnection * _speechConnection;
     struct { 
         unsigned int delegateStart : 1; 
         unsigned int delegateFinish : 1; 
@@ -29,11 +29,11 @@
         unsigned int delegateContinueWithRequest : 1; 
         unsigned int delegateWillSpeakWithRequest : 1; 
         unsigned int willUseInput : 1; 
-    } _synthesizerFlags;
-    BOOL _useCustomVoice;
-    BOOL _useSharedSession;
-    NSString *_voice;
-    float _volume;
+    }  _synthesizerFlags;
+    BOOL  _useCustomVoice;
+    BOOL  _useSharedSession;
+    NSString * _voice;
+    float  _volume;
 }
 
 @property (nonatomic) <VSSpeechSynthesizerDelegate> *delegate;
@@ -54,6 +54,7 @@
 + (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(int)arg2 gender:(int)arg3 custom:(BOOL)arg4 reply:(id /* block */)arg5;
 + (void)initialize;
 + (BOOL)isSystemSpeaking;
++ (BOOL)playVoicePreviewForLanguageCode:(id)arg1 gender:(int)arg2;
 + (void)setAutoDownloadedVoiceAssets:(id)arg1;
 + (void)setLogToFile:(BOOL)arg1;
 

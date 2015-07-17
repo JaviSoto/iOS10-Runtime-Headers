@@ -3,15 +3,15 @@
  */
 
 @interface PSWebContainerView : UIView {
-    NSData *_content;
-    UIWebView *_webView;
+    NSData * _content;
+    UIWebView * _webView;
 }
 
 @property (nonatomic, retain) NSData *content;
 @property (nonatomic, readonly) UIWebView *webView;
 
+- (void).cxx_destruct;
 - (id)content;
-- (void)dealloc;
 - (float)heightForWidth:(float)arg1;
 - (id)init;
 - (void)layoutSubviews;

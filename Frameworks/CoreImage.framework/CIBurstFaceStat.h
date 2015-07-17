@@ -3,12 +3,12 @@
  */
 
 @interface CIBurstFaceStat : NSObject <NSCopying> {
-    int FCRBlinkFeaturesSize;
-    int FCRLeftEyeFeaturesOffset;
-    int FCRRightEyeFeaturesOffset;
-    NSMutableArray *FCRSmileAndBlinkFeatures;
-    int FCRSmileFeaturesOffset;
-    int FCRSmileFeaturesSize;
+    int  FCRBlinkFeaturesSize;
+    int  FCRLeftEyeFeaturesOffset;
+    int  FCRRightEyeFeaturesOffset;
+    NSMutableArray * FCRSmileAndBlinkFeatures;
+    int  FCRSmileFeaturesOffset;
+    int  FCRSmileFeaturesSize;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,12 +18,12 @@
             float width; 
             float height; 
         } size; 
-    } _hwFaceRect;
-    BOOL _isSyncedWithImage;
-    float faceCropTime;
-    NSMutableArray *faceHOG;
-    float faceHOGTime;
-    int faceId;
+    }  _hwFaceRect;
+    BOOL  _isSyncedWithImage;
+    float  faceCropTime;
+    NSMutableArray * faceHOG;
+    float  faceHOGTime;
+    int  faceId;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -33,20 +33,20 @@
             float width; 
             float height; 
         } size; 
-    } faceRect;
-    float faceScore;
-    float faceScoreTime;
-    float focusScore;
-    BOOL foundByFaceCore;
-    int framesSinceLast;
-    BOOL hasLeftEye;
-    BOOL hasRightEye;
-    BOOL hasRollAngle;
-    BOOL hasYawAngle;
-    int hwFaceId;
-    float leftEyeBlinkScore;
-    BOOL leftEyeOpen;
-    BOOL leftEyePleasant;
+    }  faceRect;
+    float  faceScore;
+    float  faceScoreTime;
+    float  focusScore;
+    BOOL  foundByFaceCore;
+    int  framesSinceLast;
+    BOOL  hasLeftEye;
+    BOOL  hasRightEye;
+    BOOL  hasRollAngle;
+    BOOL  hasYawAngle;
+    int  hwFaceId;
+    float  leftEyeBlinkScore;
+    BOOL  leftEyeOpen;
+    BOOL  leftEyePleasant;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -56,8 +56,8 @@
             float width; 
             float height; 
         } size; 
-    } leftEyeRect;
-    BOOL mouthPleasant;
+    }  leftEyeRect;
+    BOOL  mouthPleasant;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -67,13 +67,13 @@
             float width; 
             float height; 
         } size; 
-    } normalizedFaceRect;
-    float normalizedFocusScore;
-    float normalizedSigma;
-    float normalizedSmileScore;
-    float rightEyeBlinkScore;
-    BOOL rightEyeOpen;
-    BOOL rightEyePleasant;
+    }  normalizedFaceRect;
+    float  normalizedFocusScore;
+    float  normalizedSigma;
+    float  normalizedSmileScore;
+    float  rightEyeBlinkScore;
+    BOOL  rightEyeOpen;
+    BOOL  rightEyePleasant;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -83,13 +83,13 @@
             float width; 
             float height; 
         } size; 
-    } rightEyeRect;
-    float rollAngle;
-    BOOL smallFace;
-    float smileScore;
-    BOOL smiling;
-    double timestamp;
-    float yawAngle;
+    }  rightEyeRect;
+    float  rollAngle;
+    BOOL  smallFace;
+    float  smileScore;
+    BOOL  smiling;
+    double  timestamp;
+    float  yawAngle;
 }
 
 @property int FCRBlinkFeaturesSize;

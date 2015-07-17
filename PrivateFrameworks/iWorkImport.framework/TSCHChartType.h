@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartType : NSObject <TSDMixing> {
-    TSCHChartFeature *mFeature;
+    TSCHChartFeature * mFeature;
 }
 
 + (id)allChartTypes;

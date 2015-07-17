@@ -3,23 +3,23 @@
  */
 
 @interface BLBlackAndWhiteFilter : CIFilter {
-    CIFilter *_colorCubeFilterBW;
-    CIFilter *_colorCubeFilterGrain;
-    BLPixelImageBuffer *_grainImage;
-    NSNumber *_inputAmount;
-    NSNumber *_inputApplyGrain;
-    NSNumber *_inputApplySepia;
-    CIVector *_inputDestinationRect;
-    CIVector *_inputHueStrengthArray;
-    CIImage *_inputImage;
-    NSNumber *_inputNeutralGamma;
-    NSNumber *_inputPadding;
-    NSNumber *_inputPhototone;
-    NSNumber *_inputPreset;
-    NSNumber *_inputVersion;
-    float _lastAmount;
-    BOOL _lastApplyGrain;
-    BOOL _lastAppySepia;
+    CIFilter * _colorCubeFilterBW;
+    CIFilter * _colorCubeFilterGrain;
+    BLPixelImageBuffer * _grainImage;
+    NSNumber * _inputAmount;
+    NSNumber * _inputApplyGrain;
+    NSNumber * _inputApplySepia;
+    CIVector * _inputDestinationRect;
+    CIVector * _inputHueStrengthArray;
+    CIImage * _inputImage;
+    NSNumber * _inputNeutralGamma;
+    NSNumber * _inputPadding;
+    NSNumber * _inputPhototone;
+    NSNumber * _inputPreset;
+    NSNumber * _inputVersion;
+    float  _lastAmount;
+    BOOL  _lastApplyGrain;
+    BOOL  _lastAppySepia;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -29,14 +29,14 @@
             float width; 
             float height; 
         } size; 
-    } _lastDestinationRect;
-    CIVector *_lastHueStrengthArray;
-    float _lastNeutralGamma;
-    float _lastPhototone;
-    int _lastPreset;
-    int _lastVersion;
-    BOOL _needsReprocess;
-    NSData *_precomputedCube;
+    }  _lastDestinationRect;
+    CIVector * _lastHueStrengthArray;
+    float  _lastNeutralGamma;
+    float  _lastPhototone;
+    int  _lastPreset;
+    int  _lastVersion;
+    BOOL  _needsReprocess;
+    NSData * _precomputedCube;
 }
 
 @property (nonatomic, retain) CIFilter *colorCubeFilterBW;

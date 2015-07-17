@@ -3,7 +3,7 @@
  */
 
 @interface RMList : NSObject {
-    NSMutableArray *_items;
+    NSMutableArray * _items;
 }
 
 @property (readonly) NSArray *listItems;

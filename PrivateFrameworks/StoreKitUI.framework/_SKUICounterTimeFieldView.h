@@ -3,9 +3,9 @@
  */
 
 @interface _SKUICounterTimeFieldView : UIView {
-    UILabel *_labelLabel;
-    UILabel *_valueLabel;
-    unsigned int _visibilityField;
+    UILabel * _labelLabel;
+    UILabel * _valueLabel;
+    unsigned int  _visibilityField;
 }
 
 @property (nonatomic, readonly) UILabel *labelLabel;

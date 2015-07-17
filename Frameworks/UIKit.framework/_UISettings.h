@@ -3,13 +3,13 @@
  */
 
 @interface _UISettings : NSObject <NSCopying, _UISettingsGroupObserver, _UISettingsKeyPathObserver> {
-    NSSet *_internal_childKeys;
-    BOOL _internal_isObservingPropertiesAndChildren;
-    NSDictionary *_internal_keyClasses;
-    NSHashTable *_internal_keyObservers;
-    NSHashTable *_internal_keyPathObservers;
-    NSDictionary *_internal_keyStructs;
-    NSSet *_internal_leafKeys;
+    NSSet * _internal_childKeys;
+    BOOL  _internal_isObservingPropertiesAndChildren;
+    NSDictionary * _internal_keyClasses;
+    NSHashTable * _internal_keyObservers;
+    NSHashTable * _internal_keyPathObservers;
+    NSDictionary * _internal_keyStructs;
+    NSSet * _internal_leafKeys;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,6 +22,7 @@
 + (id)settingsFromArchiveDictionary:(id)arg1;
 + (id)settingsFromArchiveFile:(id)arg1 error:(id*)arg2;
 
+- (void).cxx_destruct;
 - (void)_addInternalEntriesToArchiveDictionary:(id)arg1;
 - (id)_allKeys;
 - (id)_associatedName;

@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DVector : NSObject <NSCopying, NSMutableCopying> {
-    float _w;
-    float _x;
-    float _y;
-    float _z;
+    float  _w;
+    float  _x;
+    float  _y;
+    float  _z;
 }
 
 @property (nonatomic, readonly) float w;

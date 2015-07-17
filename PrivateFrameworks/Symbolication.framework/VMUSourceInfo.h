@@ -3,9 +3,9 @@
  */
 
 @interface VMUSourceInfo : NSObject {
-    NSString *_fileName;
-    unsigned int _lineNumber;
-    NSString *_path;
+    NSString * _fileName;
+    unsigned int  _lineNumber;
+    NSString * _path;
 }
 
 - (void)dealloc;

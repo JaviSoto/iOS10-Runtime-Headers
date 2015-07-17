@@ -3,11 +3,11 @@
  */
 
 @interface PHVideoRequestOptions : NSObject {
-    int _deliveryMode;
-    BOOL _networkAccessAllowed;
-    id /* block */ _progressHandler;
-    BOOL _streamingAllowed;
-    int _version;
+    int  _deliveryMode;
+    BOOL  _networkAccessAllowed;
+    id /* block */  _progressHandler;
+    BOOL  _streamingAllowed;
+    int  _version;
 }
 
 @property (nonatomic) int deliveryMode;

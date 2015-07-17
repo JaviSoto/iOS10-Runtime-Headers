@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    UILabel *_label;
-    float _preferredMaxLayoutWidth;
+    }  _contentInsets;
+    UILabel * _label;
+    float  _preferredMaxLayoutWidth;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;

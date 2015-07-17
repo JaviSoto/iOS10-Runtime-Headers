@@ -3,7 +3,7 @@
  */
 
 @interface VKModelObject : NSObject {
-    BOOL _active;
+    BOOL  _active;
     struct map<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> >, std::__1::less<md::CommandBufferId>, std::__1::allocator<std::__1::pair<const md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > > > > { 
         struct __tree<std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > >, std::__1::__map_value_compare<md::CommandBufferId, std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > >, std::__1::less<md::CommandBufferId>, true>, std::__1::allocator<std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > > > > { 
             struct __tree_node<std::__1::__value_type<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > >, void *> {} *__begin_node_; 
@@ -16,12 +16,12 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _commandBuffers;
-    NSObject<OS_dispatch_semaphore> *_drawReady;
-    unsigned int _needsDisplay;
-    unsigned int _needsLayout;
-    NSMutableArray *_submodels;
-    VKModelObject *_supermodel;
+    }  _commandBuffers;
+    NSObject<OS_dispatch_semaphore> * _drawReady;
+    unsigned int  _needsDisplay;
+    unsigned int  _needsLayout;
+    NSMutableArray * _submodels;
+    VKModelObject * _supermodel;
     struct CommandBufferIdSet { 
         struct vector<md::CommandBufferId, std::__1::allocator<md::CommandBufferId> > { 
             unsigned char *__begin_; 
@@ -30,12 +30,12 @@
                 unsigned char *__first_; 
             } __end_cap_; 
         } _ids; 
-    } _supportedPassIds;
-    VKWorld *_world;
+    }  _supportedPassIds;
+    VKWorld * _world;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (nonatomic, readonly) NSArray *submodels;
 @property (nonatomic, readonly) VKModelObject *supermodel;
 @property (nonatomic) VKWorld *world;
@@ -66,7 +66,7 @@
 - (void)setSupportedPasses:(const struct CommandBufferIdSet { struct vector<md::CommandBufferId, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_1_1_1; unsigned char *x_1_1_2; struct __compressed_pair<md::CommandBufferId *, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_3_2_1; } x_1_1_3; } x1; }*)arg1;
 - (void)setWorld:(id)arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (id)submodels;
 - (id)supermodel;
 - (const struct CommandBufferIdSet { struct vector<md::CommandBufferId, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_1_1_1; unsigned char *x_1_1_2; struct __compressed_pair<md::CommandBufferId *, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_3_2_1; } x_1_1_3; } x1; }*)supportedRenderPasses;

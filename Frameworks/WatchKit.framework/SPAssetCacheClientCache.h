@@ -3,11 +3,11 @@
  */
 
 @interface SPAssetCacheClientCache : NSObject {
-    NSMutableDictionary *_assets;
-    unsigned int _cacheType;
-    NSString *_gizmoCacheIdentifier;
-    NSMutableArray *_keys;
-    int _size;
+    NSMutableDictionary * _assets;
+    unsigned int  _cacheType;
+    NSString * _gizmoCacheIdentifier;
+    NSMutableArray * _keys;
+    int  _size;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assets;
@@ -36,7 +36,7 @@
 - (id)initWithIdentifier:(id)arg1 cacheType:(unsigned int)arg2;
 - (id)keys;
 - (id)pathForAssetDataWithName:(id)arg1;
-- (void)saveAssetData:(id)arg1 forAsset:(id)arg2;
+- (BOOL)saveAssetData:(id)arg1 forAsset:(id)arg2;
 - (void)setAssets:(id)arg1;
 - (void)setCacheType:(unsigned int)arg1;
 - (void)setGizmoCacheIdentifier:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface CKAnimatedImageView : UIImageView <CKAnimationTimerObserver> {
-    CKAnimatedImage *_animatedImage;
-    NSArray *_frames;
+    CKAnimatedImage * _animatedImage;
+    NSArray * _frames;
 }
 
 @property (nonatomic, retain) CKAnimatedImage *animatedImage;

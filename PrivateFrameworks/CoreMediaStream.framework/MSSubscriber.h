@@ -3,20 +3,20 @@
  */
 
 @interface MSSubscriber : MSCupidStateMachine <MSReauthorizationProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSSubscribeStreamsProtocolDelegate, MSSubscriber> {
-    NSMutableArray *_assetsBeingRetrieved;
-    BOOL _checkOneMoreTime;
-    MSMediaStreamDaemon *_daemon;
-    <MSSubscriberDelegate> *_delegate;
-    int _maxErrorCount;
-    NSMutableDictionary *_newSubscriptionsByStreamID;
-    MSSubscribeStreamsProtocol *_protocol;
-    MSReauthorizationProtocol *_reauthProtocol;
-    int _retrievalBatchSize;
-    MSObjectQueue *_retrievalQueue;
-    int _retrievalState;
-    int _state;
-    <MSSubscribeStorageProtocol> *_storageProtocol;
-    long long _targetRetrievalByteCount;
+    NSMutableArray * _assetsBeingRetrieved;
+    BOOL  _checkOneMoreTime;
+    MSMediaStreamDaemon * _daemon;
+    <MSSubscriberDelegate> * _delegate;
+    int  _maxErrorCount;
+    NSMutableDictionary * _newSubscriptionsByStreamID;
+    MSSubscribeStreamsProtocol * _protocol;
+    MSReauthorizationProtocol * _reauthProtocol;
+    int  _retrievalBatchSize;
+    MSObjectQueue * _retrievalQueue;
+    int  _retrievalState;
+    int  _state;
+    <MSSubscribeStorageProtocol> * _storageProtocol;
+    long long  _targetRetrievalByteCount;
 }
 
 @property (nonatomic) MSMediaStreamDaemon *daemon;

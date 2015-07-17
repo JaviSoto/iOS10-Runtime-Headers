@@ -3,10 +3,10 @@
  */
 
 @interface PHAdjustmentData : NSObject <NSSecureCoding> {
-    int _baseVersion;
-    NSData *_data;
-    NSString *_formatIdentifier;
-    NSString *_formatVersion;
+    int  _baseVersion;
+    NSData * _data;
+    NSString * _formatIdentifier;
+    NSString * _formatVersion;
 }
 
 @property (nonatomic) int baseVersion;

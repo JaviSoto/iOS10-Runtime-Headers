@@ -3,10 +3,10 @@
  */
 
 @interface MFVariableLayoutConstraint : NSObject {
-    float _cachedInterpolatedValue;
-    BOOL _cachedInterpolatedValueIsValid;
-    id /* block */ _interpolationFormula;
-    float _medianValue;
+    float  _cachedInterpolatedValue;
+    BOOL  _cachedInterpolatedValueIsValid;
+    id /* block */  _interpolationFormula;
+    float  _medianValue;
 }
 
 @property (nonatomic) id /* block */ interpolationFormula;

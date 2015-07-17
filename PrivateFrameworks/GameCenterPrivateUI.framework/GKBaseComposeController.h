@@ -3,13 +3,13 @@
  */
 
 @interface GKBaseComposeController : GKLoadableContentViewController <UITextViewDelegate> {
-    UIScrollView *_backgroundView;
-    NSArray *_composeHeaderFields;
-    NSLayoutConstraint *_contentHeightConstraint;
-    NSLayoutConstraint *_contentLeadingConstraint;
-    UIView *_contentView;
-    GKContiguousContainerView *_headerFieldContainer;
-    UIView *_intendedFirstResponder;
+    UIScrollView * _backgroundView;
+    NSArray * _composeHeaderFields;
+    NSLayoutConstraint * _contentHeightConstraint;
+    NSLayoutConstraint * _contentLeadingConstraint;
+    UIView * _contentView;
+    GKContiguousContainerView * _headerFieldContainer;
+    UIView * _intendedFirstResponder;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,10 +19,10 @@
             float width; 
             float height; 
         } size; 
-    } _lastKnownKeyboardFrame;
-    GKTextView *_messageField;
-    NSLayoutConstraint *_messageFieldTrailingConstraint;
-    float _scrollContentInsetAdjustY;
+    }  _lastKnownKeyboardFrame;
+    GKTextView * _messageField;
+    NSLayoutConstraint * _messageFieldTrailingConstraint;
+    float  _scrollContentInsetAdjustY;
 }
 
 @property (nonatomic, retain) UIScrollView *backgroundView;
@@ -50,8 +50,6 @@
 - (id)contentLeadingConstraint;
 - (id)contentView;
 - (void)dealloc;
-- (void)didEnterLoadedState;
-- (void)didEnterLoadingState;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)headerFieldContainer;
 - (id)init;

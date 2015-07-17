@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewControllerNullAnimationTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator> {
-    NSMutableArray *_alongsideAnimations;
-    NSMutableArray *_alongsideCompletions;
-    UIView *_containerView;
-    BOOL _transitionIsInFlight;
+    NSMutableArray * _alongsideAnimations;
+    NSMutableArray * _alongsideCompletions;
+    UIView * _containerView;
+    BOOL  _transitionIsInFlight;
 }
 
 @property (nonatomic) UIView *containerView;
@@ -15,6 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_alongsideAnimations:(BOOL)arg1;
 - (id)_alongsideCompletions:(BOOL)arg1;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id /* block */)arg2;
@@ -25,7 +26,6 @@
 - (int)completionCurve;
 - (float)completionVelocity;
 - (id)containerView;
-- (void)dealloc;
 - (BOOL)initiallyInteractive;
 - (BOOL)isAnimated;
 - (BOOL)isCancelled;

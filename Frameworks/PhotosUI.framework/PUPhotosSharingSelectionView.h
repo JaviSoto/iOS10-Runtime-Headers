@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotosSharingSelectionView : UICollectionReusableView {
-    UIImageView *_imageView;
-    BOOL _selected;
+    UIImageView * _imageView;
+    BOOL  _selected;
 }
 
 @property (getter=isSelected, nonatomic) BOOL selected;

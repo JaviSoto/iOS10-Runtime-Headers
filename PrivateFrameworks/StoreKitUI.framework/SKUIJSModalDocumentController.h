@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSModalDocumentController : IKJSObject <SKUIJSModalDocumentController> {
-    SKUIModalDocumentController *_modalDocumentController;
+    SKUIModalDocumentController * _modalDocumentController;
 }
 
 @property (nonatomic, readonly, retain) NSArray *documents;

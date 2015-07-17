@@ -3,23 +3,23 @@
  */
 
 @interface TKVibrationRecorderView : UIView <TKVibrationRecorderTouchSurfaceDelegate> {
-    BOOL _animatingProgress;
-    UIToolbar *_controlsToolbar;
-    NSLayoutConstraint *_controlsToolbarTopConstraint;
-    double _currentVibrationComponentDidStartTimestamp;
-    double _currentVibrationProgressDidStartTimestamp;
-    <TKVibrationRecorderViewDelegate> *_delegate;
-    UILabel *_instructionsLabel;
-    int _leftButtonIdentifier;
-    NSLayoutConstraint *_progressToolbarBottomConstraint;
-    TKVibrationRecorderProgressView *_progressView;
-    BOOL _replayModeEnabled;
-    int _rightButtonIdentifier;
-    <TKVibrationRecorderStyleProvider> *_styleProvider;
-    TKVibrationRecorderTouchSurface *_touchSurface;
-    NSLayoutConstraint *_touchSurfaceTopConstraint;
-    double _vibrationPatternMaximumDuration;
-    BOOL _waitingForEndOfCurrentVibrationComponent;
+    BOOL  _animatingProgress;
+    UIToolbar * _controlsToolbar;
+    NSLayoutConstraint * _controlsToolbarTopConstraint;
+    double  _currentVibrationComponentDidStartTimestamp;
+    double  _currentVibrationProgressDidStartTimestamp;
+    <TKVibrationRecorderViewDelegate> * _delegate;
+    UILabel * _instructionsLabel;
+    int  _leftButtonIdentifier;
+    NSLayoutConstraint * _progressToolbarBottomConstraint;
+    TKVibrationRecorderProgressView * _progressView;
+    BOOL  _replayModeEnabled;
+    int  _rightButtonIdentifier;
+    <TKVibrationRecorderStyleProvider> * _styleProvider;
+    TKVibrationRecorderTouchSurface * _touchSurface;
+    NSLayoutConstraint * _touchSurfaceTopConstraint;
+    double  _vibrationPatternMaximumDuration;
+    BOOL  _waitingForEndOfCurrentVibrationComponent;
 }
 
 @property (getter=_isAnimatingProgress, setter=_setAnimatingProgress:, nonatomic) BOOL _animatingProgress;

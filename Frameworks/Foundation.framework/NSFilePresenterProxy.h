@@ -3,19 +3,22 @@
  */
 
 @interface NSFilePresenterProxy : NSFileReactorProxy {
-    id _currentWriterPurposeID;
-    BOOL _didObserveMovingByWriter;
-    BOOL _didObserveVersionChangingByWriter;
-    BOOL _disconnected;
-    BOOL _inSubarbiter;
-    NSMutableArray *_previousWriterPurposeIDs;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSFileWatcher *_watcher;
-    unsigned int _writingRelinquishmentCount;
+    id  _currentWriterPurposeID;
+    BOOL  _didObserveMovingByWriter;
+    BOOL  _didObserveVersionChangingByWriter;
+    BOOL  _disconnected;
+    BOOL  _inSubarbiter;
+    NSMutableArray * _previousWriterPurposeIDs;
+    NSFileAccessProcessManager * _processManager;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _usesMainThreadDuringRelinquishing;
+    NSFileWatcher * _watcher;
+    unsigned int  _writingRelinquishmentCount;
 }
 
 @property (readonly) BOOL disconnected;
 @property BOOL inSubarbiter;
+@property BOOL usesMainThreadDuringReliquishing;
 
 + (id)urlWithItemURL:(id)arg1 subitemPath:(id)arg2;
 
@@ -40,6 +43,10 @@
 - (void)saveChangesWithCompletionHandler:(id /* block */)arg1;
 - (void)setInSubarbiter:(BOOL)arg1;
 - (void)setItemLocation:(id)arg1;
+- (void)setUsesMainThreadDuringReliquishing:(BOOL)arg1;
+- (void)startObservingApplicationStateWithQueue:(id)arg1 suspensionHandler:(id /* block */)arg2;
 - (void)startWatchingWithQueue:(id)arg1 lastEventID:(id)arg2 unannouncedMoveHandler:(id /* block */)arg3;
+- (void)stopObservingApplicationState;
+- (BOOL)usesMainThreadDuringReliquishing;
 
 @end

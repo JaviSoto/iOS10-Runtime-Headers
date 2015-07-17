@@ -3,10 +3,10 @@
  */
 
 @interface _CKDispatchQueueBlock : NSObject {
-    id /* block */ _block;
-    unsigned int _fifo;
-    NSString *_key;
-    int _priority;
+    id /* block */  _block;
+    unsigned int  _fifo;
+    NSString * _key;
+    int  _priority;
 }
 
 @property (nonatomic, copy) id /* block */ block;

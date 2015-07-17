@@ -3,8 +3,8 @@
  */
 
 @interface GEOSuggestionEntryList : PBCodable <NSCopying> {
-    NSString *_localizedSectionHeader;
-    NSMutableArray *_suggestionEntries;
+    NSString * _localizedSectionHeader;
+    NSMutableArray * _suggestionEntries;
 }
 
 @property (nonatomic, readonly) BOOL hasLocalizedSectionHeader;

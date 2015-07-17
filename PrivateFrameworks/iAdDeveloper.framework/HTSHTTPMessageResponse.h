@@ -3,13 +3,13 @@
  */
 
 @interface HTSHTTPMessageResponse : HTSHTTPMessage {
-    HTSHTTPMessageRequest *_request;
-    double _sendTime;
-    NSMutableData *_serializedData;
-    int _statusCode;
-    NSString *_statusDescription;
-    NSString *_trackingDescription;
-    unsigned long long _written;
+    HTSHTTPMessageRequest * _request;
+    double  _sendTime;
+    NSMutableData * _serializedData;
+    int  _statusCode;
+    NSString * _statusDescription;
+    NSString * _trackingDescription;
+    unsigned long long  _written;
 }
 
 @property (nonatomic, retain) HTSHTTPMessageRequest *request;

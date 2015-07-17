@@ -3,14 +3,14 @@
  */
 
 @interface NACVolumeControllerLocal : NSObject <MPAVRoutingControllerDelegate, MPVolumeControllerDelegate, NACVolumeController> {
-    NSString *_audioCategory;
-    <NACVolumeControllerDelegate> *_delegate;
-    NACEventThrottler *_hapticThrottler;
-    MPAVRoutingController *_routingController;
-    BOOL _systemMuted;
-    MPVolumeController *_volumeController;
-    NSCountedSet *_volumeSetHistory;
-    NACEventThrottler *_volumeThrottler;
+    NSString * _audioCategory;
+    <NACVolumeControllerDelegate> * _delegate;
+    NACEventThrottler * _hapticThrottler;
+    MPAVRoutingController * _routingController;
+    BOOL  _systemMuted;
+    MPVolumeController * _volumeController;
+    NSCountedSet * _volumeSetHistory;
+    NACEventThrottler * _volumeThrottler;
 }
 
 @property (nonatomic, readonly) float EUVolumeLimit;

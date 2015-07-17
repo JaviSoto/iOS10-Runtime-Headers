@@ -3,14 +3,14 @@
  */
 
 @interface MPAVPeriodicTimeObserverInfo : NSObject {
-    id /* block */ _block;
+    id /* block */  _block;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _interval;
-    NSObject<OS_dispatch_queue> *_queue;
+    }  _interval;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ block;

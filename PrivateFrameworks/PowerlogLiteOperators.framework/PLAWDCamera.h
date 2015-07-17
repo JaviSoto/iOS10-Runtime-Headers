@@ -3,16 +3,16 @@
  */
 
 @interface PLAWDCamera : PLAWDAuxMetrics {
-    double _backCameraTimestamp;
-    PLEntryNotificationOperatorComposition *_cameraEventCallbackBack;
-    PLEntryNotificationOperatorComposition *_cameraEventCallbackFront;
-    PLEntryNotificationOperatorComposition *_cameraEventCallbackTorch;
-    long _cameraSubmitCnt;
-    double _frontCameraTimestamp;
-    BOOL _prevBackCameraState;
-    BOOL _prevFrontCameraState;
-    BOOL _prevTorchCameraState;
-    double _torchCameraTimestamp;
+    double  _backCameraTimestamp;
+    PLEntryNotificationOperatorComposition * _cameraEventCallbackBack;
+    PLEntryNotificationOperatorComposition * _cameraEventCallbackFront;
+    PLEntryNotificationOperatorComposition * _cameraEventCallbackTorch;
+    long  _cameraSubmitCnt;
+    double  _frontCameraTimestamp;
+    BOOL  _prevBackCameraState;
+    BOOL  _prevFrontCameraState;
+    BOOL  _prevTorchCameraState;
+    double  _torchCameraTimestamp;
 }
 
 @property double backCameraTimestamp;
@@ -21,11 +21,9 @@
 @property (retain) PLEntryNotificationOperatorComposition *cameraEventCallbackTorch;
 @property long cameraSubmitCnt;
 @property double frontCameraTimestamp;
-@property PLOperator *operator;
 @property BOOL prevBackCameraState;
 @property BOOL prevFrontCameraState;
 @property BOOL prevTorchCameraState;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property double torchCameraTimestamp;
 
 + (id)entryAggregateDefinitionAwdCamera;

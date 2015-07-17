@@ -3,11 +3,11 @@
  */
 
 @interface MFModernComposeRecipientAtom : MFModernAtomView {
-    <MFComposeRecipientAtomDelegate> *_delegate;
-    MFComposeRecipient *_recipient;
-    unsigned int _touchesWereCancelled;
-    UITextInputTraits *_traits;
-    unsigned int _wasSelectedWhenTouchesBegan;
+    <MFComposeRecipientAtomDelegate> * _delegate;
+    MFComposeRecipient * _recipient;
+    unsigned int  _touchesWereCancelled;
+    UITextInputTraits * _traits;
+    unsigned int  _wasSelectedWhenTouchesBegan;
 }
 
 @property (nonatomic) <MFComposeRecipientAtomDelegate> *delegate;

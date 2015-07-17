@@ -3,12 +3,12 @@
  */
 
 @interface TSTTableTile : TSPObject {
-    unsigned char mMaxColumn;
-    unsigned short mMaxRow;
-    unsigned short mNumCells;
-    unsigned short mNumRows;
-    NSMutableArray *mRowInfos;
-    unsigned char mStorageVersion;
+    unsigned char  mMaxColumn;
+    unsigned short  mMaxRow;
+    unsigned short  mNumCells;
+    unsigned short  mNumRows;
+    NSMutableArray * mRowInfos;
+    unsigned char  mStorageVersion;
 }
 
 @property (nonatomic, readonly) unsigned char maxColumn;

@@ -3,15 +3,16 @@
  */
 
 @interface PDCommentAuthor : NSObject {
-    unsigned int mColorIndex;
-    unsigned int mId;
-    NSString *mInitials;
-    unsigned int mLastCommentIndex;
-    NSString *mName;
+    unsigned int  mColorIndex;
+    unsigned int  mId;
+    NSString * mInitials;
+    unsigned int  mLastCommentIndex;
+    NSString * mName;
 }
 
 - (unsigned int)colorIndex;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)id;
 - (id)init;
 - (id)initials;

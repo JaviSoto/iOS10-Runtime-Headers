@@ -3,7 +3,7 @@
  */
 
 @interface SUStructuredPageGroupedViewController : SUStructuredPageViewController {
-    SULoadingView *_loadingView;
+    SULoadingView * _loadingView;
 }
 
 - (BOOL)_addPurchaseBatch:(id)arg1 forIndexPath:(id)arg2;

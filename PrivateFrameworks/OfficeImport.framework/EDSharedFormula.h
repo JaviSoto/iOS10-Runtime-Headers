@@ -3,11 +3,11 @@
  */
 
 @interface EDSharedFormula : EDFormula {
-    unsigned int _baseFormulaIndex;
-    EDReference *_baseFormulaRange;
-    int _columnBaseOrOffset;
-    bool _forceNonBaseFormula;
-    int _rowBaseOrOffset;
+    unsigned int  _baseFormulaIndex;
+    EDReference * _baseFormulaRange;
+    int  _columnBaseOrOffset;
+    bool  _forceNonBaseFormula;
+    int  _rowBaseOrOffset;
 }
 
 @property (nonatomic) unsigned int baseFormulaIndex;
@@ -23,6 +23,7 @@
 - (int)columnBaseOrOffset;
 - (bool)convertTokensToShared;
 - (void)dealloc;
+- (id)description;
 - (bool)forceNonBaseFormula;
 - (id)init;
 - (id)initWithFormula:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface PRSMapsEngagementFeedback : PRSEngagementFeedback {
-    unsigned int _maps_action_target;
+    unsigned int  _maps_action_target;
 }
 
 @property unsigned int maps_action_target;

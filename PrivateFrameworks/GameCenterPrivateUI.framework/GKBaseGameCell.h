@@ -3,8 +3,8 @@
  */
 
 @interface GKBaseGameCell : GKCollectionViewCell {
-    UIImageView *_iconView;
-    UILabel *_nameLabel;
+    UIImageView * _iconView;
+    UILabel * _nameLabel;
 }
 
 @property (nonatomic, retain) GKGame *game;

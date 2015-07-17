@@ -3,23 +3,25 @@
  */
 
 @interface MPUTransportControlMediaRemoteController : NSObject {
-    BOOL _advertisement;
-    NSArray *_allowedTransportControlTypes;
-    BOOL _alwaysLive;
-    <MPUTransportControlMediaRemoteControllerDelegate> *_delegate;
-    double _displayedSkipBackwardInterval;
-    double _displayedSkipForwardInterval;
-    int _likeControlPresentationStyle;
-    int _likedState;
-    NSDictionary *_nowPlayingInfo;
-    BOOL _playing;
-    unsigned int _repeatType;
-    unsigned int _runningLongPressCommand;
-    BOOL _sharingEnabled;
-    unsigned int _shuffleType;
-    NSArray *_supportedCommands;
-    unsigned int _transportControlsCount;
-    MPUTransportControlsView *_transportControlsView;
+    BOOL  _advertisement;
+    NSArray * _allowedTransportControlTypes;
+    BOOL  _alwaysLive;
+    <MPUTransportControlMediaRemoteControllerDelegate> * _delegate;
+    double  _displayedSkipBackwardInterval;
+    double  _displayedSkipForwardInterval;
+    BOOL  _likeBanCyclesThroughPossibleStates;
+    int  _likeControlPresentationStyle;
+    int  _likedState;
+    BOOL  _nowPlayingAppIsRunning;
+    NSDictionary * _nowPlayingInfo;
+    BOOL  _playing;
+    unsigned int  _repeatType;
+    unsigned int  _runningLongPressCommand;
+    BOOL  _sharingEnabled;
+    unsigned int  _shuffleType;
+    NSArray * _supportedCommands;
+    unsigned int  _transportControlsCount;
+    MPUTransportControlsView * _transportControlsView;
 }
 
 @property (getter=isAdvertisement, nonatomic, readonly) BOOL advertisement;
@@ -28,8 +30,10 @@
 @property (nonatomic) <MPUTransportControlMediaRemoteControllerDelegate> *delegate;
 @property (nonatomic, readonly) double displayedSkipBackwardInterval;
 @property (nonatomic, readonly) double displayedSkipForwardInterval;
+@property (nonatomic) BOOL likeBanCyclesThroughPossibleStates;
 @property (nonatomic, readonly) int likeControlPresentationStyle;
 @property (nonatomic, readonly) int likedState;
+@property (nonatomic) BOOL nowPlayingAppIsRunning;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (getter=isPlaying, nonatomic) BOOL playing;
 @property (nonatomic, readonly) unsigned int repeatType;
@@ -57,18 +61,23 @@
 - (int)handleLongPressEndOnControlType:(int)arg1;
 - (void)handlePushingMediaRemoteCommand:(unsigned int)arg1;
 - (int)handleTapOnControlType:(int)arg1;
+- (id)init;
 - (id)initWithTransportControlsView:(id)arg1 allowedTransportControlTypes:(id)arg2;
 - (id)initWithTransportControlsView:(id)arg1 transportControlsCount:(unsigned int)arg2;
 - (BOOL)isAdvertisement;
 - (BOOL)isAlwaysLive;
 - (BOOL)isPlaying;
 - (BOOL)isSharingEnabled;
+- (BOOL)likeBanCyclesThroughPossibleStates;
 - (int)likeControlPresentationStyle;
 - (int)likedState;
+- (BOOL)nowPlayingAppIsRunning;
 - (id)nowPlayingInfo;
 - (unsigned int)repeatType;
 - (void)setAllowedTransportControlTypes:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLikeBanCyclesThroughPossibleStates:(BOOL)arg1;
+- (void)setNowPlayingAppIsRunning:(BOOL)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaying:(BOOL)arg1;
 - (void)setSupportedCommands:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface BWStillImageScalerNode : BWNode {
-    BOOL _defersCropToJPEGEncoderWhenPossible;
-    BWVideoFormat *_outputFormat;
-    struct opaqueCMFormatDescription { } *_outputFormatDescription;
-    BWPixelBufferPool *_pool;
-    int _poolCapacity;
-    struct OpaqueVTPixelTransferSession { } *_scalingSession;
+    BOOL  _defersCropToJPEGEncoderWhenPossible;
+    BWVideoFormat * _outputFormat;
+    struct opaqueCMFormatDescription { } * _outputFormatDescription;
+    BWPixelBufferPool * _pool;
+    int  _poolCapacity;
+    struct OpaqueVTPixelTransferSession { } * _scalingSession;
 }
 
 + (void)initialize;

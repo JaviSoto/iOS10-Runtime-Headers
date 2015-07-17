@@ -3,8 +3,8 @@
  */
 
 @interface SKUIVerticalLockupCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView, SKUIViewElementView> {
-    SKUIImageView *_highlightImageView;
-    SKUIVerticalLockupView *_lockupView;
+    SKUIImageView * _highlightImageView;
+    SKUIVerticalLockupView * _lockupView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

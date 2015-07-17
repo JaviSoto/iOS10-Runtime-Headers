@@ -3,10 +3,10 @@
  */
 
 @interface SFUMemoryInputStream : NSObject <SFUBufferedInputStream> {
-    const char *mCurrent;
-    NSData *mData;
-    const char *mEnd;
-    const char *mStart;
+    const char * mCurrent;
+    NSData * mData;
+    const char * mEnd;
+    const char * mStart;
 }
 
 @property (readonly, copy) NSString *debugDescription;

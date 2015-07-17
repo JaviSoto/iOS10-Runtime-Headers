@@ -3,8 +3,8 @@
  */
 
 @interface MCDBrowsableContentItem : NSObject {
-    struct _MRContentItem { } *_contentItem;
-    NSIndexPath *_indexPath;
+    struct _MRContentItem { } * _contentItem;
+    NSIndexPath * _indexPath;
 }
 
 @property (nonatomic, readonly) NSData *artworkData;

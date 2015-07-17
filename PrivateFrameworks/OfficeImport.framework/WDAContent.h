@@ -3,10 +3,10 @@
  */
 
 @interface WDAContent : NSObject <OADClient, OADTextClient> {
-    WDAAnchor *mAnchor;
-    OADDrawable *mDrawable;
-    WDATextBox *mTextBox;
-    int mTextType;
+    WDAAnchor * mAnchor;
+    OADDrawable * mDrawable;
+    WDATextBox * mTextBox;
+    int  mTextType;
 }
 
 @property (nonatomic, readonly) WDAAnchor *anchor;

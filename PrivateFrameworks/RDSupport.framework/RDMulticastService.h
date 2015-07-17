@@ -3,28 +3,28 @@
  */
 
 @interface RDMulticastService : NSObject {
-    int _connectionState;
-    id /* block */ _connectionStateChangedBlock;
-    BOOL _continueAfterHandshake;
-    BOOL _didCompleteHandshake;
-    id /* block */ _handshakeCompletionBlock;
-    NSObject<OS_dispatch_queue> *_handshakeWorkQueue;
-    NSString *_lastKnownIDSPairingRecordsState;
-    NSString *_localIP;
-    NSString *_localInterfaceName;
-    struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } *_multicastAddr;
-    id /* block */ _multicastPayloadCallback;
-    NSObject<OS_dispatch_source> *_multicastSendTimer;
-    NSObject<OS_dispatch_source> *_readSource;
-    int _receiveSocketFd;
-    NSString *_remoteIP;
-    int _repeatedSendFailureBails;
-    int _repeatedSendFailureCount;
-    int _sendSocketFd;
-    double _senderTime;
-    BOOL _shouldAllowIDSReset;
-    BOOL _shouldRefetchIDSPairingState;
-    int _unansweredMulticastCount;
+    int  _connectionState;
+    id /* block */  _connectionStateChangedBlock;
+    BOOL  _continueAfterHandshake;
+    BOOL  _didCompleteHandshake;
+    id /* block */  _handshakeCompletionBlock;
+    NSObject<OS_dispatch_queue> * _handshakeWorkQueue;
+    NSString * _lastKnownIDSPairingRecordsState;
+    NSString * _localIP;
+    NSString * _localInterfaceName;
+    struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } * _multicastAddr;
+    id /* block */  _multicastPayloadCallback;
+    NSObject<OS_dispatch_source> * _multicastSendTimer;
+    NSObject<OS_dispatch_source> * _readSource;
+    int  _receiveSocketFd;
+    NSString * _remoteIP;
+    int  _repeatedSendFailureBails;
+    int  _repeatedSendFailureCount;
+    int  _sendSocketFd;
+    double  _senderTime;
+    BOOL  _shouldAllowIDSReset;
+    BOOL  _shouldRefetchIDSPairingState;
+    int  _unansweredMulticastCount;
 }
 
 @property (nonatomic) int connectionState;

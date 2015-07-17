@@ -3,7 +3,7 @@
  */
 
 @interface CKTranscriptHeaderCell : CKTranscriptCell {
-    UIView *_loadingIndicator;
+    UIView * _loadingIndicator;
 }
 
 @property (nonatomic, retain) UIView *loadingIndicator;

@@ -3,8 +3,8 @@
  */
 
 @interface ICSRecurrenceRule : NSObject <ICSWriting, NSCoding> {
-    int _freq;
-    NSMutableDictionary *_parameters;
+    int  _freq;
+    NSMutableDictionary * _parameters;
 }
 
 @property (nonatomic, retain) NSArray *byday;
@@ -25,6 +25,7 @@
 + (id)recurrenceRuleFromICSCString:(const char *)arg1 withTokenizer:(id)arg2;
 + (id)recurrenceRuleFromICSString:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
@@ -39,7 +40,6 @@
 - (id)byyearday;
 - (void)cleanUpForStartDate:(id)arg1;
 - (id)count;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (int)freq;
 - (id)initWithCoder:(id)arg1;

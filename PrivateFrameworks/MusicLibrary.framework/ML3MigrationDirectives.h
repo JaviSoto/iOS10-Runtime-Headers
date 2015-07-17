@@ -3,17 +3,17 @@
  */
 
 @interface ML3MigrationDirectives : NSObject {
-    int _currentUserVersion;
-    BOOL _forceUpdateOriginals;
-    BOOL _needsAnalyze;
-    BOOL _needsToAutogenerateArtworkVariants;
-    BOOL _needsToRecreateIndexes;
-    BOOL _needsToRecreateTriggers;
-    BOOL _needsToReloadContainerMediaTypes;
-    BOOL _needsToReloadStoreBookmarkMetadataIdentifiers;
-    BOOL _needsToRemoveLocationsForItemsMissingAssets;
-    BOOL _needsToUpdateSortMap;
-    int _originalUserVersion;
+    int  _currentUserVersion;
+    BOOL  _forceUpdateOriginals;
+    BOOL  _needsAnalyze;
+    BOOL  _needsToAutogenerateArtworkVariants;
+    BOOL  _needsToRecreateIndexes;
+    BOOL  _needsToRecreateTriggers;
+    BOOL  _needsToReloadContainerMediaTypes;
+    BOOL  _needsToReloadStoreBookmarkMetadataIdentifiers;
+    BOOL  _needsToRemoveLocationsForItemsMissingAssets;
+    BOOL  _needsToUpdateSortMap;
+    int  _originalUserVersion;
 }
 
 @property (nonatomic) int currentUserVersion;

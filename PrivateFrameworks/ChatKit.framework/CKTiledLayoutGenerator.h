@@ -3,9 +3,9 @@
  */
 
 @interface CKTiledLayoutGenerator : NSObject {
-    int _cacheHeadLocation;
-    int _cacheTailLocation;
-    /* Warning: unhandled array encoding: '[20@]' */ id _cachedBatchID;
+    int  _cacheHeadLocation;
+    int  _cacheTailLocation;
+    /* Warning: unhandled array encoding: '[20@]' */ id  _cachedBatchID;
     struct { 
         int index; 
         struct CGSize { 
@@ -18,35 +18,35 @@
         } minimumSize; 
         BOOL hasCaption; 
         BOOL isBatchStart; 
-    } _cachedTileInfo;
+    }  _cachedTileInfo;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _captionPadding;
+    }  _captionPadding;
     struct CGSize { 
         float width; 
         float height; 
-    } _interTileSpacing;
+    }  _interTileSpacing;
     struct CGSize { 
         float width; 
         float height; 
-    } _noCaptionSpacing;
-    int _numberOfMagneticGuidelines;
-    id /* block */ _parsedFrameBlock;
-    float _roundingScale;
-    int _scanLocation;
-    int _scanSpecialSequenceCount;
-    BOOL _scannedBatchHasCaption;
-    id _scannedBatchID;
-    BOOL _shouldStop;
-    id /* block */ _tileBatchIDBlock;
-    id /* block */ _tileCaptionSizeBlock;
-    int _tileCount;
-    id /* block */ _tileHasCaptionBlock;
-    id /* block */ _tileImageSizeBlock;
-    id /* block */ _tileMinimumSizeBlock;
+    }  _noCaptionSpacing;
+    int  _numberOfMagneticGuidelines;
+    id /* block */  _parsedFrameBlock;
+    float  _roundingScale;
+    int  _scanLocation;
+    int  _scanSpecialSequenceCount;
+    BOOL  _scannedBatchHasCaption;
+    id  _scannedBatchID;
+    BOOL  _shouldStop;
+    id /* block */  _tileBatchIDBlock;
+    id /* block */  _tileCaptionSizeBlock;
+    int  _tileCount;
+    id /* block */  _tileHasCaptionBlock;
+    id /* block */  _tileImageSizeBlock;
+    id /* block */  _tileMinimumSizeBlock;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;

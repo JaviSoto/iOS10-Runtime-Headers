@@ -3,7 +3,7 @@
  */
 
 @interface IMGroupActionChatItem : IMTranscriptChatItem {
-    IMHandle *_sender;
+    IMHandle * _sender;
 }
 
 @property (nonatomic, readonly) long long actionType;

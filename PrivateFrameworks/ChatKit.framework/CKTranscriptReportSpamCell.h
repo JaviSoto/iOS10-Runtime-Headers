@@ -3,7 +3,7 @@
  */
 
 @interface CKTranscriptReportSpamCell : CKTranscriptLabelCell {
-    UIButton *_reportSpamButton;
+    UIButton * _reportSpamButton;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedButtonText;

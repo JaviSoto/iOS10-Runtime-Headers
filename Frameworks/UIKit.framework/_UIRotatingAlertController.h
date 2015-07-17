@@ -3,17 +3,18 @@
  */
 
 @interface _UIRotatingAlertController : UIAlertController {
-    unsigned int _arrowDirections;
-    BOOL _isRotating;
-    <UIPopoverPresentationControllerDelegate> *_popoverPresentationControllerDelegateWhileRotating;
-    UIViewController *_presentedViewControllerWhileRotating;
-    BOOL _readyToPresentAfterRotation;
-    <_UIRotatingAlertControllerDelegate> *_rotatingSheetDelegate;
+    unsigned int  _arrowDirections;
+    BOOL  _isRotating;
+    <UIPopoverPresentationControllerDelegate> * _popoverPresentationControllerDelegateWhileRotating;
+    UIViewController * _presentedViewControllerWhileRotating;
+    BOOL  _readyToPresentAfterRotation;
+    <_UIRotatingAlertControllerDelegate> * _rotatingSheetDelegate;
 }
 
 @property (nonatomic) unsigned int arrowDirections;
 @property (nonatomic) <_UIRotatingAlertControllerDelegate> *rotatingSheetDelegate;
 
+- (void).cxx_destruct;
 - (void)_didRotateAndLayout;
 - (void)_updateSheetPositionAfterRotation;
 - (unsigned int)arrowDirections;

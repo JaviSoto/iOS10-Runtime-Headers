@@ -3,7 +3,7 @@
  */
 
 @interface RUINavigationController : UINavigationController {
-    int _ruiSupportedInterfaceOrientations;
+    int  _ruiSupportedInterfaceOrientations;
 }
 
 - (BOOL)canBeShownFromSuspendedState;

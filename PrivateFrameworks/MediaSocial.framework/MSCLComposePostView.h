@@ -3,15 +3,15 @@
  */
 
 @interface MSCLComposePostView : UIView <NSLayoutManagerDelegate, UITextViewDelegate> {
-    int _allowedCharacterCount;
-    UIButton *_attachmentButton;
-    NSMutableArray *_attachmentViews;
-    UILabel *_characterCountLabel;
-    UIScrollView *_containerScrollView;
-    <MSCLComposePostViewDataSource> *_dataSource;
-    <MSCLComposePostViewDelegate> *_delegate;
-    NSArray *_footerViews;
-    NSArray *_headerViews;
+    int  _allowedCharacterCount;
+    UIButton * _attachmentButton;
+    NSMutableArray * _attachmentViews;
+    UILabel * _characterCountLabel;
+    UIScrollView * _containerScrollView;
+    <MSCLComposePostViewDataSource> * _dataSource;
+    <MSCLComposePostViewDelegate> * _delegate;
+    NSArray * _footerViews;
+    NSArray * _headerViews;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,13 +21,13 @@
             float width; 
             float height; 
         } size; 
-    } _keyboardFrame;
-    int _numberOfAttachments;
-    NSArray *_scrollableHeaderViews;
-    UITapGestureRecognizer *_tapRecognizer;
-    float _textCompletionEntryHeight;
-    UIViewController *_textCompletionViewController;
-    MSCLTokenTextView *_textView;
+    }  _keyboardFrame;
+    int  _numberOfAttachments;
+    NSArray * _scrollableHeaderViews;
+    UITapGestureRecognizer * _tapRecognizer;
+    float  _textCompletionEntryHeight;
+    UIViewController * _textCompletionViewController;
+    MSCLTokenTextView * _textView;
 }
 
 @property (nonatomic) int allowedCharacterCount;

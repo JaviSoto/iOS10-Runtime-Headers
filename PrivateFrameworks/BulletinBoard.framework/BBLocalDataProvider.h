@@ -3,12 +3,12 @@
  */
 
 @interface BBLocalDataProvider : BBDataProvider {
-    <BBDataProvider> *_dataProvider;
-    BOOL _invalidated;
-    NSObject<OS_dispatch_queue> *_localQueue;
-    NSObject<OS_dispatch_queue> *_remoteQueue;
-    BOOL _unresponsive;
-    NSObject<OS_dispatch_source> *_watchdogTimer;
+    <BBDataProvider> * _dataProvider;
+    BOOL  _invalidated;
+    NSObject<OS_dispatch_queue> * _localQueue;
+    NSObject<OS_dispatch_queue> * _remoteQueue;
+    BOOL  _unresponsive;
+    NSObject<OS_dispatch_source> * _watchdogTimer;
 }
 
 @property (nonatomic, retain) <BBDataProvider> *dataProvider;

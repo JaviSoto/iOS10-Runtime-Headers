@@ -3,18 +3,18 @@
  */
 
 @interface CPSpacerFinder : NSObject <CPDisposable> {
-    CPZone *contentZone;
-    struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct { float x_15_1_1; float x_15_1_2; } x15; struct { float x_16_1_1; float x_16_1_2; } x16; struct { float x_17_1_1; float x_17_1_2; } x17; struct { float x_18_1_1; float x_18_1_2; } x18; float x19; float x20; BOOL x21; BOOL x22; BOOL x23; } *qualityEntries;
-    unsigned int segmentationCount;
-    struct { id x1; struct { /* ? */ } *x2; } *segmentations;
+    CPZone * contentZone;
+    struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct { float x_15_1_1; float x_15_1_2; } x15; struct { float x_16_1_1; float x_16_1_2; } x16; struct { float x_17_1_1; float x_17_1_2; } x17; struct { float x_18_1_1; float x_18_1_2; } x18; float x19; float x20; BOOL x21; BOOL x22; BOOL x23; } * qualityEntries;
+    unsigned int  segmentationCount;
+    struct { id x1; struct { /* ? */ } *x2; } * segmentations;
     struct { 
         unsigned int allocatedSize; 
         unsigned int size; 
         unsigned int count; 
         struct { /* ? */ } *stats; 
         struct { /* ? */ } **ordered; 
-    } spacerSequence;
-    NSMutableArray *spacers;
+    }  spacerSequence;
+    NSMutableArray * spacers;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,7 +24,7 @@
             float width; 
             float height; 
         } size; 
-    } textBounds;
+    }  textBounds;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -34,7 +34,7 @@
             float width; 
             float height; 
         } size; 
-    } zoneBounds;
+    }  zoneBounds;
 }
 
 - (void)assessQuality;

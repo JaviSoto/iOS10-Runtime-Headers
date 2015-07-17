@@ -7,8 +7,8 @@
         unsigned int sparse : 1; 
         unsigned int parsingUpdatedTree : 1; 
         unsigned int parsingReorderedSiblings : 1; 
-    } _parsingFlags;
-    IKViewElementStyleFactory *_styleFactory;
+    }  _parsingFlags;
+    IKViewElementStyleFactory * _styleFactory;
 }
 
 @property (getter=isSparse, nonatomic) BOOL sparse;

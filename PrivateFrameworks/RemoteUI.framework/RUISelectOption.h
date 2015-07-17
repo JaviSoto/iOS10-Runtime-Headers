@@ -3,8 +3,8 @@
  */
 
 @interface RUISelectOption : NSObject {
-    NSString *_label;
-    NSString *_value;
+    NSString * _label;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *label;

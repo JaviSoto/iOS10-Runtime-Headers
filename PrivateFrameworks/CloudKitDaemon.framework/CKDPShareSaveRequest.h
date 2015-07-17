@@ -3,9 +3,9 @@
  */
 
 @interface CKDPShareSaveRequest : PBRequest <NSCopying> {
-    NSData *_protectedFullToken;
-    CKDPShare *_share;
-    NSData *_shortTokenHash;
+    NSData * _protectedFullToken;
+    CKDPShare * _share;
+    NSData * _shortTokenHash;
 }
 
 @property (nonatomic, readonly) BOOL hasProtectedFullToken;

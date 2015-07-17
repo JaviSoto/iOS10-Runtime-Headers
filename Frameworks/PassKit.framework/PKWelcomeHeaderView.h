@@ -3,11 +3,11 @@
  */
 
 @interface PKWelcomeHeaderView : UIView {
-    UIButton *_actionButton;
-    UIActivityIndicatorView *_activityIndicator;
-    unsigned int _passType;
-    BOOL _showActivityIndicator;
-    UIView *_titleView;
+    UIButton * _actionButton;
+    UIActivityIndicatorView * _activityIndicator;
+    unsigned int  _passType;
+    BOOL  _showActivityIndicator;
+    UIView * _titleView;
 }
 
 @property (nonatomic, readonly) unsigned int passType;

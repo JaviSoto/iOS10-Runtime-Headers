@@ -3,11 +3,11 @@
  */
 
 @interface MPMediaLibraryPlaybackItemMetadata : MPMediaPlaybackItemMetadata {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasValidMediaItemValuesForProperties;
-    MPMediaItem *_mediaItem;
-    NSDictionary *_mediaItemValuesForProperties;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasValidMediaItemValuesForProperties;
+    MPMediaItem * _mediaItem;
+    NSDictionary * _mediaItemValuesForProperties;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (nonatomic, retain) MPMediaItem *mediaItem;

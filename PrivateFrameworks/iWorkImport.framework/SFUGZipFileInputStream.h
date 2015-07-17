@@ -3,10 +3,10 @@
  */
 
 @interface SFUGZipFileInputStream : NSObject <SFUInputStream> {
-    int _fd;
-    void *_file;
-    BOOL _isCachingDisabled;
-    long long _offset;
+    int  _fd;
+    void * _file;
+    BOOL  _isCachingDisabled;
+    long long  _offset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

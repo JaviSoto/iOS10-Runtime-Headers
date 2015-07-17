@@ -3,16 +3,16 @@
  */
 
 @interface PLBBTelephonyActivityMsg : PLBBMsgRoot {
-    NSString *_activeBand;
-    NSString *_airplaneMode;
-    NSString *_callStatus;
-    NSString *_campedRat;
-    NSString *_currentRat;
-    NSString *_dataStatus;
-    NSString *_preferredRat;
-    NSNumber *_signalBars;
-    NSNumber *_signalStrength;
-    NSString *_simStatus;
+    NSString * _activeBand;
+    NSString * _airplaneMode;
+    NSString * _callStatus;
+    NSString * _campedRat;
+    NSString * _currentRat;
+    NSString * _dataStatus;
+    NSString * _preferredRat;
+    NSNumber * _signalBars;
+    NSNumber * _signalStrength;
+    NSString * _simStatus;
 }
 
 @property (retain) NSString *activeBand;
@@ -36,6 +36,7 @@
 - (id)currentRat;
 - (id)dataStatus;
 - (void)logPointIntervalTelephonyActivity;
+- (void)logPointIntervalTelephonyActivityAirplaneModeChange;
 - (id)preferredRat;
 - (void)refreshTelephonyActivity;
 - (void)sendAndLogPLEntry:(id)arg1 withName:(id)arg2 withType:(id)arg3;

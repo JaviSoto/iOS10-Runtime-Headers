@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryRecentlyAddedViewConfiguration : MusicLibraryAdaptiveViewConfiguration {
-    MusicLibraryRecentlyAddedCollectionViewConfiguration *_collectionViewConfiguration;
-    BOOL _shouldForwardBasePropertyValues;
+    MusicLibraryRecentlyAddedCollectionViewConfiguration * _collectionViewConfiguration;
+    BOOL  _shouldForwardBasePropertyValues;
 }
 
 @property (nonatomic, readonly) unsigned int entityLimit;

@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapLayerHostingView : UIView {
-    VKMapView *_mapView;
+    VKMapView * _mapView;
 }
 
 @property (nonatomic, retain) VKMapView *mapView;

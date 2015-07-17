@@ -3,16 +3,16 @@
  */
 
 @interface TSUASLClient : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    struct __asl_object_s { } *_client;
-    int _filter;
-    NSString *_identifier;
-    NSObject<OS_dispatch_queue> *_ioQueue;
-    NSString *_logFileMessageFormat;
-    NSHashTable *_logFiles;
-    NSMutableArray *_logSinks;
-    BOOL _overrideReleaseFilteringLimit;
-    NSString *_stderrMessageFormat;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    struct __asl_object_s { } * _client;
+    int  _filter;
+    NSString * _identifier;
+    NSObject<OS_dispatch_queue> * _ioQueue;
+    NSString * _logFileMessageFormat;
+    NSHashTable * _logFiles;
+    NSMutableArray * _logSinks;
+    BOOL  _overrideReleaseFilteringLimit;
+    NSString * _stderrMessageFormat;
 }
 
 @property int filter;

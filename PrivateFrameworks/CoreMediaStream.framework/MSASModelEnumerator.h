@@ -3,9 +3,9 @@
  */
 
 @interface MSASModelEnumerator : NSEnumerator {
-    struct sqlite3 { } *_db;
-    id /* block */ _stepBlock;
-    struct sqlite3_stmt { } *_stmt;
+    struct sqlite3 { } * _db;
+    id /* block */  _stepBlock;
+    struct sqlite3_stmt { } * _stmt;
 }
 
 @property (nonatomic) struct sqlite3 { }*db;

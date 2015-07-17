@@ -3,18 +3,18 @@
  */
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate> {
-    BOOL _databaseIsCorrupt;
-    NSMutableArray *_highPriorityJobs;
-    unsigned int _highPrioritySequentialJobCount;
-    NSMutableDictionary *_inProgressAvalancheFds;
-    int _jobQueueAvailabilityToken;
-    NSRecursiveLock *_jobsLock;
-    NSMutableArray *_lowPriorityJobs;
-    PLXPCTransaction *_transaction;
-    NSCountedSet *_unfinishedHighPriorityJobs;
-    int _unfinishedJobCount;
-    NSCountedSet *_unfinishedLowPriorityJobs;
-    BOOL _writerThreadRunning;
+    BOOL  _databaseIsCorrupt;
+    NSMutableArray * _highPriorityJobs;
+    unsigned int  _highPrioritySequentialJobCount;
+    NSMutableDictionary * _inProgressAvalancheFds;
+    int  _jobQueueAvailabilityToken;
+    NSRecursiveLock * _jobsLock;
+    NSMutableArray * _lowPriorityJobs;
+    PLXPCTransaction * _transaction;
+    NSCountedSet * _unfinishedHighPriorityJobs;
+    int  _unfinishedJobCount;
+    NSCountedSet * _unfinishedLowPriorityJobs;
+    BOOL  _writerThreadRunning;
 }
 
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -31,6 +31,7 @@
 - (void)_postJobQueueNotificationIsAvailable:(BOOL)arg1;
 - (void)_processAutodeleteEmptyAlbumJob:(id)arg1;
 - (void)_processAvalancheJob:(id)arg1;
+- (void)_processAvalanchesValidationJob:(id)arg1;
 - (void)_processBatchImageJob:(id)arg1;
 - (void)_processCrashRecoveryJob:(id)arg1;
 - (void)_processDaemonJob:(id)arg1;
@@ -48,7 +49,7 @@
 - (void)_removeInProgressExtendedAttributesForFileAtURL:(id)arg1;
 - (void)_removeTransientKeys:(id)arg1;
 - (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2;
-- (BOOL)_sufficientDiskSpaceToCopyVideoAtPath:(id)arg1;
+- (BOOL)_transferVideoIncomingPathToVideoDestinationPath:(id)arg1 shouldRemoveIncoming:(BOOL*)arg2 error:(id*)arg3;
 - (void)_writerThread;
 - (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
 - (BOOL)canEnqueueJob:(id)arg1;

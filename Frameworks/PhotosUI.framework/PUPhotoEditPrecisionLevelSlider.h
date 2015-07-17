@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoEditPrecisionLevelSlider : PUPhotoEditLevelSlider <PUPhotoEditPrecisionLevelContentViewDataSource> {
-    PUPhotoEditPrecisionLevelContentView *_precisionSliderContentView;
+    PUPhotoEditPrecisionLevelContentView * _precisionSliderContentView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

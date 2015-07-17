@@ -3,12 +3,12 @@
  */
 
 @interface WBUSheetController : NSObject <UITableViewDataSource, UITableViewDelegate> {
-    WebUIAlert *_alert;
-    UIAlertController *_alertController;
-    NSMutableArray *_alertInvocationQueue;
-    id _delegate;
-    BOOL _isDismissed;
-    UITableView *_tableView;
+    WebUIAlert * _alert;
+    UIAlertController * _alertController;
+    NSMutableArray * _alertInvocationQueue;
+    id  _delegate;
+    BOOL  _isDismissed;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)_alertDidDismissWithAction:(int)arg1;
-- (void)_showSheetForAlert:(id)arg1 inView:(id)arg2 withClass:(Class)arg3;
 - (void)hideSheet;
 - (id)initWithDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;

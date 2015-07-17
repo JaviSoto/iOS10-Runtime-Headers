@@ -3,21 +3,21 @@
  */
 
 @interface TSCHBarSeriesModelCache : NSObject {
-    float mBarGapRatio;
-    float mBarGroupGapRatio;
-    float mBarWidthRatio;
-    id mFill;
-    TSCHChartAxis *mGroupAxis;
-    unsigned int mLabelPosition;
-    float mOpacity;
-    TSWPParagraphStyle *mParagraphStyle;
-    TSCHChartSeries *mSeries;
-    unsigned int mSeriesIndex;
-    TSDShadow *mShadow;
-    TSDStroke *mStroke;
-    double mUnitSpaceIntercept;
-    TSCHChartValueAxis *mValueAxis;
-    BOOL mValueLabelsOn;
+    float  mBarGapRatio;
+    float  mBarGroupGapRatio;
+    float  mBarWidthRatio;
+    id  mFill;
+    TSCHChartAxis * mGroupAxis;
+    unsigned int  mLabelPosition;
+    float  mOpacity;
+    TSWPParagraphStyle * mParagraphStyle;
+    TSCHChartSeries * mSeries;
+    unsigned int  mSeriesIndex;
+    TSDShadow * mShadow;
+    TSDStroke * mStroke;
+    double  mUnitSpaceIntercept;
+    TSCHChartValueAxis * mValueAxis;
+    BOOL  mValueLabelsOn;
 }
 
 @property (readonly) float barGapRatio;

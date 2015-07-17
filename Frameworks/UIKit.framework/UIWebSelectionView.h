@@ -8,7 +8,7 @@
         double startTime; 
         int direction; 
         NSTimer *timer; 
-    } _autoscrollData;
+    }  _autoscrollData;
     struct { 
         UIWebSelectionHandle *activeHandle; 
         struct CGPoint { 
@@ -16,16 +16,16 @@
             float y; 
         } handleCenterStart; 
         float handleOffset; 
-    } _blockSelectionData;
-    UIWebSelectionHandle *_bottom;
-    BOOL _calloutBarIsHiddenBeforeRotation;
-    UIView *_center;
-    BOOL _creatingSelection;
-    UIWebDocumentView *_documentView;
-    float _growThreshold;
-    UIWebSelectionHandle *_left;
-    int _nestedLayoutCalls;
-    UIWebSelectionOutline *_outline;
+    }  _blockSelectionData;
+    UIWebSelectionHandle * _bottom;
+    BOOL  _calloutBarIsHiddenBeforeRotation;
+    UIView * _center;
+    BOOL  _creatingSelection;
+    UIWebDocumentView * _documentView;
+    float  _growThreshold;
+    UIWebSelectionHandle * _left;
+    int  _nestedLayoutCalls;
+    UIWebSelectionOutline * _outline;
     struct { 
         UIWebSelectionHandle *start; 
         UIWebSelectionHandle *end; 
@@ -48,9 +48,9 @@
                 } size; 
             } originalSelectionRect; 
         } flipData; 
-    } _rangedSelectionData;
-    UIWebSelectionHandle *_right;
-    BOOL _rotating;
+    }  _rangedSelectionData;
+    UIWebSelectionHandle * _right;
+    BOOL  _rotating;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -60,13 +60,13 @@
             float width; 
             float height; 
         } size; 
-    } _selectionFrame;
-    UIWebSelectionGraph *_selectionGraph;
-    int _selectionInFixedPosition;
-    UIWebSelectionNode *_selectionNode;
-    float _shrinkThreshold;
-    UIWebTextRangeView *_textRangeView;
-    UIWebSelectionHandle *_top;
+    }  _selectionFrame;
+    UIWebSelectionGraph * _selectionGraph;
+    int  _selectionInFixedPosition;
+    UIWebSelectionNode * _selectionNode;
+    float  _shrinkThreshold;
+    UIWebTextRangeView * _textRangeView;
+    UIWebSelectionHandle * _top;
 }
 
 @property (nonatomic, readonly) UIWebSelection *selection;

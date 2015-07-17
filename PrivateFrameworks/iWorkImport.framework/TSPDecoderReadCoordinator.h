@@ -3,13 +3,13 @@
  */
 
 @interface TSPDecoderReadCoordinator : TSPReadCoordinatorBase <TSPReadCoordinator> {
-    TSPObjectContext *_context;
-    NSObject<OS_dispatch_queue> *_dataQueue;
-    <TSPDecoder> *_decoder;
-    <TSPDecoderReadCoordinatorDelegate> *_delegate;
-    TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
-    NSMapTable *_objects;
-    TSPComponent *_rootObjectComponent;
+    TSPObjectContext * _context;
+    NSObject<OS_dispatch_queue> * _dataQueue;
+    <TSPDecoder> * _decoder;
+    <TSPDecoderReadCoordinatorDelegate> * _delegate;
+    TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
+    NSMapTable * _objects;
+    TSPComponent * _rootObjectComponent;
 }
 
 @property (readonly, copy) NSString *debugDescription;

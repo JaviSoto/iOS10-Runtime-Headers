@@ -3,7 +3,7 @@
  */
 
 @interface _PUSliderPlayheadBaseView : UIView <PUPhotoEditLayoutStaticAdaptable> {
-    int _layoutOrientation;
+    int  _layoutOrientation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

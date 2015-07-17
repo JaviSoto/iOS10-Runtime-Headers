@@ -3,15 +3,15 @@
  */
 
 @interface SKUISearchBarController : NSObject <SKUISearchFieldDelegate, UISearchBarDelegate> {
-    SKUIFocusedTouchGestureRecognizer *_cancelTouchGestureRecognizer;
-    SKUIClientContext *_clientContext;
-    BOOL _displaysSearchBarInNavigationBar;
-    UIViewController *_parentViewController;
-    UISearchBar *_searchBar;
-    SKUISearchFieldController *_searchFieldController;
-    BOOL _showsResultsForEmptyField;
-    BOOL _usesSearchFieldController;
-    SKUISearchBarViewElement *_viewElement;
+    SKUIFocusedTouchGestureRecognizer * _cancelTouchGestureRecognizer;
+    SKUIClientContext * _clientContext;
+    BOOL  _displaysSearchBarInNavigationBar;
+    UIViewController * _parentViewController;
+    UISearchBar * _searchBar;
+    SKUISearchFieldController * _searchFieldController;
+    BOOL  _showsResultsForEmptyField;
+    BOOL  _usesSearchFieldController;
+    SKUISearchBarViewElement * _viewElement;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

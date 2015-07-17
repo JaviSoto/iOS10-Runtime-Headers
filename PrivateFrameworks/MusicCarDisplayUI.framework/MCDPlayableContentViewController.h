@@ -3,10 +3,10 @@
  */
 
 @interface MCDPlayableContentViewController : UIViewController {
-    NSString *_bundleID;
-    BOOL _hasBrowsableContent;
-    MCDBrowsableContentModel *_model;
-    UINavigationController *_navigationController;
+    NSString * _bundleID;
+    BOOL  _hasBrowsableContent;
+    MCDBrowsableContentModel * _model;
+    UINavigationController * _navigationController;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleID;

@@ -3,8 +3,8 @@
  */
 
 @interface PBFilter : NSObject {
-    CIFilter *_ciFilter;
-    CIFilter *_wrapMirrorFilter;
+    CIFilter * _ciFilter;
+    CIFilter * _wrapMirrorFilter;
 }
 
 + (id)defaultValueForKey:(id)arg1;

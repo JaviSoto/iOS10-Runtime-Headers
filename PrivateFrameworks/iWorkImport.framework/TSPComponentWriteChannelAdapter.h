@@ -3,10 +3,10 @@
  */
 
 @interface TSPComponentWriteChannelAdapter : NSObject <TSPComponentWriteChannel> {
-    TSUFileIOChannel *_channel;
-    NSError *_error;
-    id /* block */ _handler;
-    NSObject<OS_dispatch_queue> *_queue;
+    TSUFileIOChannel * _channel;
+    NSError * _error;
+    id /* block */  _handler;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

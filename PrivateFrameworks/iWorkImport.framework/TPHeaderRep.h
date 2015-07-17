@@ -3,7 +3,7 @@
  */
 
 @interface TPHeaderRep : TSWPHeaderRep {
-    BOOL _hideKnobs;
+    BOOL  _hideKnobs;
 }
 
 @property (nonatomic) BOOL hideKnobs;

@@ -3,7 +3,7 @@
  */
 
 @interface CLInUseAssertion : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 + (id)newAssertionForBundle:(id)arg1 withReason:(id)arg2;

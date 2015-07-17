@@ -3,15 +3,15 @@
  */
 
 @interface PKUISpringAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-    id /* block */ _animationDelayHandler;
-    float _damping;
-    double _duration;
-    float _mass;
-    double _maximumVendedDelay;
-    BOOL _needsDurationUpdate;
-    float _stiffness;
-    CAMediaTimingFunction *_timing;
-    float _velocity;
+    id /* block */  _animationDelayHandler;
+    float  _damping;
+    double  _duration;
+    float  _mass;
+    double  _maximumVendedDelay;
+    BOOL  _needsDurationUpdate;
+    float  _stiffness;
+    CAMediaTimingFunction * _timing;
+    float  _velocity;
 }
 
 @property (nonatomic) float damping;

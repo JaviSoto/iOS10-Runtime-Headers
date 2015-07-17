@@ -3,11 +3,11 @@
  */
 
 @interface CKAudioProgressTableViewActionButton : _UITableViewCellActionButton <SBBulletinCellButton> {
-    double _currentProgress;
-    double _duration;
-    UILabel *_label;
-    double _lastProgress;
-    CKAudioProgressView *_progressView;
+    double  _currentProgress;
+    double  _duration;
+    UILabel * _label;
+    double  _lastProgress;
+    CKAudioProgressView * _progressView;
 }
 
 @property (nonatomic) double currentProgress;

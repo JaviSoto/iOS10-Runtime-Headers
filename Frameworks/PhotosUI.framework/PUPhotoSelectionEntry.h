@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoSelectionEntry : NSObject {
-    PHAssetCollection *_assetCollection;
-    PHFetchResult *_fetchResult;
-    BOOL _hasValidAssetIndexes;
-    NSMutableSet *_selectedAssets;
-    NSMutableIndexSet *_selectedIndexes;
+@interface PUPhotoSelectionEntry : NSObject <NSCopying> {
+    PHAssetCollection * _assetCollection;
+    PHFetchResult * _fetchResult;
+    BOOL  _hasValidAssetIndexes;
+    NSMutableSet * _selectedAssets;
+    NSMutableIndexSet * _selectedIndexes;
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)_ensureValidAssetIndexes;
 - (id)assetCollection;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)deselectAssetsAtIndexes:(id)arg1;
 - (void)enumerateSelectedAssetsWithBlock:(id /* block */)arg1;
 - (id)fetchResult;

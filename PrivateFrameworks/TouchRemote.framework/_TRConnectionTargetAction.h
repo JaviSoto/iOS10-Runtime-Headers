@@ -3,9 +3,9 @@
  */
 
 @interface _TRConnectionTargetAction : NSObject {
-    SEL _action;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _target;
+    SEL  _action;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _target;
 }
 
 @property (nonatomic, readonly) SEL action;

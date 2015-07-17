@@ -3,28 +3,28 @@
  */
 
 @interface PUCloudSharedPostCommentViewController : UIViewController <PLModalDimmingContained, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
-    NSString *_albumName;
-    NSMutableArray *_attachments;
-    NSArray *_backgroundConstraints;
-    UIView *_backgroundView;
-    <PUCloudSharedPostCommentViewControllerDelegate> *_commentDelegate;
-    id /* block */ _completionHandler;
-    PUCloudSharedBackdropView *_containerView;
+    NSString * _albumName;
+    NSMutableArray * _attachments;
+    NSArray * _backgroundConstraints;
+    UIView * _backgroundView;
+    <PUCloudSharedPostCommentViewControllerDelegate> * _commentDelegate;
+    id /* block */  _completionHandler;
+    PUCloudSharedBackdropView * _containerView;
     struct { 
         unsigned int hasDidCancelComment : 1; 
         unsigned int hasDidSendComment : 1; 
-    } _delegateFlags;
-    NSArray *_dialogConstraints;
-    UIView *_dialogView;
-    PUStackView *_imageStackView;
-    BOOL _isNewAlbum;
-    UIColor *_placeholderColor;
-    NSString *_placeholderText;
-    int _selectedAlbumIndex;
-    UIColor *_separatorColor;
-    UITableView *_tableView;
-    UILabel *_textPlaceholderLabel;
-    UITextView *_textView;
+    }  _delegateFlags;
+    NSArray * _dialogConstraints;
+    UIView * _dialogView;
+    PUStackView * _imageStackView;
+    BOOL  _isNewAlbum;
+    UIColor * _placeholderColor;
+    NSString * _placeholderText;
+    int  _selectedAlbumIndex;
+    UIColor * _separatorColor;
+    UITableView * _tableView;
+    UILabel * _textPlaceholderLabel;
+    UITextView * _textView;
 }
 
 @property (nonatomic) <PUCloudSharedPostCommentViewControllerDelegate> *commentDelegate;

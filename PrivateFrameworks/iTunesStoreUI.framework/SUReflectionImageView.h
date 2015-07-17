@@ -3,13 +3,13 @@
  */
 
 @interface SUReflectionImageView : UIView {
-    UIImageView *_imageView;
-    unsigned int _nonSquareImage;
-    SUReflectionView *_reflection;
-    float _reflectionAlpha;
-    float _reflectionHeight;
-    float _spacing;
-    BOOL _useImageSize;
+    UIImageView * _imageView;
+    unsigned int  _nonSquareImage;
+    SUReflectionView * _reflection;
+    float  _reflectionAlpha;
+    float  _reflectionHeight;
+    float  _spacing;
+    BOOL  _useImageSize;
 }
 
 @property (nonatomic) BOOL nonSquareImage;

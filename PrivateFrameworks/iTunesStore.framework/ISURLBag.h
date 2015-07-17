@@ -3,15 +3,15 @@
  */
 
 @interface ISURLBag : NSObject {
-    SSURLBagContext *_context;
-    SSNetworkConstraints *_defaultConstraints;
-    NSDictionary *_dictionary;
-    NSArray *_guidPatterns;
-    NSSet *_guidSchemes;
-    NSDictionary *_headerPatterns;
-    double _invalidationTime;
-    BOOL _loadedFromDiskCache;
-    NSString *_storeFrontIdentifier;
+    SSURLBagContext * _context;
+    SSNetworkConstraints * _defaultConstraints;
+    NSDictionary * _dictionary;
+    NSArray * _guidPatterns;
+    NSSet * _guidSchemes;
+    NSDictionary * _headerPatterns;
+    double  _invalidationTime;
+    BOOL  _loadedFromDiskCache;
+    NSString * _storeFrontIdentifier;
 }
 
 @property (nonatomic, copy) SSURLBagContext *URLBagContext;

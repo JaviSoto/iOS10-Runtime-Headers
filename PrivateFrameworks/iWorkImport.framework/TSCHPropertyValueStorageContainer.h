@@ -3,21 +3,21 @@
  */
 
 @interface TSCHPropertyValueStorageContainer : NSObject {
-    NSMutableArray *mCategoryAxisNonStyles;
-    NSMutableArray *mCategoryAxisStyles;
-    <TSCHStyleActAlike> *mChartNonStyle;
-    <TSCHStyleActAlike> *mChartStyle;
-    <TSCHStyleActAlike> *mLegendNonStyle;
-    <TSCHStyleActAlike> *mLegendStyle;
-    NSMutableArray *mParagraphStyles;
-    NSMutableDictionary *mReferenceLineNonStyles;
-    NSMutableDictionary *mReferenceLineStyles;
-    <TSCHStyleActAlike> *mReferenceLineThemeStyle;
-    NSMutableArray *mSeriesNonStyles;
-    NSMutableArray *mSeriesPrivateStyles;
-    NSMutableArray *mSeriesThemeStyles;
-    NSMutableArray *mValueAxisNonStyles;
-    NSMutableArray *mValueAxisStyles;
+    NSMutableArray * mCategoryAxisNonStyles;
+    NSMutableArray * mCategoryAxisStyles;
+    <TSCHStyleActAlike> * mChartNonStyle;
+    <TSCHStyleActAlike> * mChartStyle;
+    <TSCHStyleActAlike> * mLegendNonStyle;
+    <TSCHStyleActAlike> * mLegendStyle;
+    NSMutableArray * mParagraphStyles;
+    NSMutableDictionary * mReferenceLineNonStyles;
+    NSMutableDictionary * mReferenceLineStyles;
+    <TSCHStyleActAlike> * mReferenceLineThemeStyle;
+    NSMutableArray * mSeriesNonStyles;
+    NSMutableArray * mSeriesPrivateStyles;
+    NSMutableArray * mSeriesThemeStyles;
+    NSMutableArray * mValueAxisNonStyles;
+    NSMutableArray * mValueAxisStyles;
 }
 
 @property (setter=p_setCategoryAxisNonStyles:, nonatomic, copy) NSArray *p_categoryAxisNonStyles;

@@ -3,31 +3,31 @@
  */
 
 @interface WebEvent : NSObject {
-    int _characterSet;
-    NSString *_characters;
-    NSString *_charactersIgnoringModifiers;
-    float _deltaX;
-    float _deltaY;
-    float _gestureRotation;
-    float _gestureScale;
-    BOOL _isGesture;
-    unsigned short _keyCode;
-    BOOL _keyRepeating;
-    unsigned int _keyboardFlags;
+    int  _characterSet;
+    NSString * _characters;
+    NSString * _charactersIgnoringModifiers;
+    float  _deltaX;
+    float  _deltaY;
+    float  _gestureRotation;
+    float  _gestureScale;
+    BOOL  _isGesture;
+    unsigned short  _keyCode;
+    BOOL  _keyRepeating;
+    unsigned int  _keyboardFlags;
     struct CGPoint { 
         float x; 
         float y; 
-    } _locationInWindow;
-    unsigned int _modifierFlags;
-    BOOL _popupVariant;
-    BOOL _tabKey;
-    double _timestamp;
-    unsigned int _touchCount;
-    NSArray *_touchIdentifiers;
-    NSArray *_touchLocations;
-    NSArray *_touchPhases;
-    int _type;
-    BOOL _wasHandled;
+    }  _locationInWindow;
+    unsigned int  _modifierFlags;
+    BOOL  _popupVariant;
+    BOOL  _tabKey;
+    double  _timestamp;
+    unsigned int  _touchCount;
+    NSArray * _touchIdentifiers;
+    NSArray * _touchLocations;
+    NSArray * _touchPhases;
+    int  _type;
+    BOOL  _wasHandled;
 }
 
 @property (nonatomic, readonly) int characterSet;
@@ -53,7 +53,6 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic) BOOL wasHandled;
 
-- (id).cxx_construct;
 - (id)_characterSetDescription;
 - (id)_eventDescription;
 - (id)_modiferFlagsDescription;

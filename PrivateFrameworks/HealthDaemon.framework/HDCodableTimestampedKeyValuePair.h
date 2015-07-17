@@ -3,17 +3,17 @@
  */
 
 @interface HDCodableTimestampedKeyValuePair : PBCodable <NSCopying> {
-    NSData *_bytesValue;
+    NSData * _bytesValue;
     struct { 
         unsigned int numberDoubleValue : 1; 
         unsigned int numberIntValue : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_key;
-    double _numberDoubleValue;
-    long long _numberIntValue;
-    NSString *_stringValue;
-    double _timestamp;
+    }  _has;
+    NSString * _key;
+    double  _numberDoubleValue;
+    long long  _numberIntValue;
+    NSString * _stringValue;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSData *bytesValue;

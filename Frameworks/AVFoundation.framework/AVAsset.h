@@ -3,7 +3,7 @@
  */
 
 @interface AVAsset : NSObject <AVAsynchronousKeyValueLoading, NSCopying> {
-    AVAssetInternal *_asset;
+    AVAssetInternal * _asset;
 }
 
 @property (getter=MP_canAffectNetworkPlayability, setter=MP_setCanAffectNetworkPlayability:, nonatomic) BOOL MP_canAffectNetworkPlayability;
@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property (nonatomic, readonly) float preferredVolume;
 @property (nonatomic, readonly) id propertyListForProxy;
+@property (setter=rc_setComposedAVURL:, nonatomic, retain) NSURL *rc_composedAVURL;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -39,12 +40,20 @@
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_firstTrackGroupWithMediaType:(id)arg1;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
+- (double)_fragmentMindingInterval;
+- (void)_handleURLRequest:(id)arg1;
 - (BOOL)_hasResourceLoaderDelegate;
 - (BOOL)_isStreaming;
 - (void)_loadChapterInfo;
+- (void)_loadValuesSynchronouslyForKeys:(id)arg1 trackKeys:(id)arg2;
+- (id)_mediaSelectionGroupDictionaries;
+- (BOOL)_mindsFragments;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
+- (BOOL)_needsLegacyChangeNotifications;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_serverHasDied;
+- (void)_setFragmentMindingInterval:(double)arg1;
+- (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
 - (void)_tracksDidChange;
 - (id)_weakReference;
 - (id)alternateTrackGroups;
@@ -52,13 +61,13 @@
 - (id)availableChapterLocales;
 - (id)availableMediaCharacteristicsWithMediaSelectionOptions;
 - (id)availableMetadataFormats;
-- (BOOL)canContainMovieFragments;
+- (BOOL)canContainFragments;
 - (void)cancelLoading;
 - (id)chapterMetadataGroupsBestMatchingPreferredLanguages:(id)arg1;
 - (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)commonMetadata;
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
-- (BOOL)containsMovieFragments;
+- (BOOL)containsFragments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (void)dealloc;
@@ -66,6 +75,8 @@
 - (BOOL)hasProtectedContent;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isEqual:(id)arg1;
@@ -76,13 +87,14 @@
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
+- (id)makePropertyListForProxyWithOptions:(id)arg1;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)mediaSelectionGroupForPropertyList:(id)arg1 mediaSelectionOption:(id*)arg2;
-- (id)mediaSelectionGroups;
 - (id)metadata;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
+- (id)preferredMediaSelection;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
@@ -108,6 +120,15 @@
 - (BOOL)MP_canAffectNetworkPlayability;
 - (void)MP_setCanAffectNetworkPlayability:(BOOL)arg1;
 - (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (struct UIImage { Class x1; }*)previewImage;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (id)rc_composedAVURL;
+- (void)rc_setComposedAVURL:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

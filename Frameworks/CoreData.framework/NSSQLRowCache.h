@@ -3,8 +3,8 @@
  */
 
 @interface NSSQLRowCache : NSPersistentStoreCache {
-    int _debug;
-    NSSQLCore *_sqlCore;
+    int  _debug;
+    NSSQLCore * _sqlCore;
 }
 
 + (void)initialize;

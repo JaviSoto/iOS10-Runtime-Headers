@@ -3,16 +3,16 @@
  */
 
 @interface UIPasscodeField : UIView <UITextFieldDelegate> {
-    BOOL _centerHorizontally;
-    id _delegate;
-    int _emptyContentReturnKeyType;
-    NSMutableArray *_entryBackgrounds;
-    NSMutableArray *_entryFields;
-    int _keyboardAppearance;
-    int _keyboardType;
-    UIButton *_okButton;
-    BOOL _opaqueBackground;
-    NSMutableString *_value;
+    BOOL  _centerHorizontally;
+    id  _delegate;
+    int  _emptyContentReturnKeyType;
+    NSMutableArray * _entryBackgrounds;
+    NSMutableArray * _entryFields;
+    int  _keyboardAppearance;
+    int  _keyboardType;
+    UIButton * _okButton;
+    BOOL  _opaqueBackground;
+    NSMutableString * _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +23,7 @@
 + (float)defaultHeight;
 + (Class)textFieldClass;
 
+- (void).cxx_destruct;
 - (void)_textDidChange;
 - (void)_updateFields;
 - (void)appendString:(id)arg1;

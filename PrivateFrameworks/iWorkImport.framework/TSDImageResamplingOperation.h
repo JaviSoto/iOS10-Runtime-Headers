@@ -6,11 +6,11 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mDesiredSize;
-    NSString *mDisplayName;
-    TSDImageProvider *mImageProvider;
-    struct CGPath { } *mMaskingPath;
-    TSPObjectContext *mObjectContext;
+    }  mDesiredSize;
+    NSString * mDisplayName;
+    TSDImageProvider * mImageProvider;
+    struct CGPath { } * mMaskingPath;
+    TSPObjectContext * mObjectContext;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } desiredSize;

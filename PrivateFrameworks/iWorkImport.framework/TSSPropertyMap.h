@@ -3,7 +3,7 @@
  */
 
 @interface TSSPropertyMap : NSObject <NSCopying, TSSPropertySource> {
-    struct TSSPropertyStore { } *mStore;
+    struct TSSPropertyStore { } * mStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

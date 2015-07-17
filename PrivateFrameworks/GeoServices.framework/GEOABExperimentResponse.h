@@ -3,19 +3,19 @@
  */
 
 @interface GEOABExperimentResponse : PBCodable <NSCopying> {
-    NSMutableArray *_assignments;
+    NSMutableArray * _assignments;
     struct { 
         unsigned int refreshIntervalSeconds : 1; 
         unsigned int timestamp : 1; 
         unsigned int invalidatePoiCache : 1; 
         unsigned int invalidateTileCache : 1; 
-    } _has;
-    BOOL _invalidatePoiCache;
-    BOOL _invalidateTileCache;
-    unsigned long long _refreshIntervalSeconds;
-    NSString *_requestGuid;
-    NSString *_sourceURL;
-    double _timestamp;
+    }  _has;
+    BOOL  _invalidatePoiCache;
+    BOOL  _invalidateTileCache;
+    unsigned long long  _refreshIntervalSeconds;
+    NSString * _requestGuid;
+    NSString * _sourceURL;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *assignments;

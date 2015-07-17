@@ -3,15 +3,15 @@
  */
 
 @interface GEOETAResponse : PBCodable <NSCopying> {
-    NSMutableArray *_etaResults;
+    NSMutableArray * _etaResults;
     struct { 
         unsigned int status : 1; 
-    } _has;
-    GEOPlaceSearchResponse *_originPlaceSearchResponse;
-    struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_problemDetails;
-    unsigned int _problemDetailsCount;
-    unsigned int _problemDetailsSpace;
-    int _status;
+    }  _has;
+    GEOPlaceSearchResponse * _originPlaceSearchResponse;
+    struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _problemDetails;
+    unsigned int  _problemDetailsCount;
+    unsigned int  _problemDetailsSpace;
+    int  _status;
 }
 
 @property (nonatomic, retain) NSMutableArray *etaResults;

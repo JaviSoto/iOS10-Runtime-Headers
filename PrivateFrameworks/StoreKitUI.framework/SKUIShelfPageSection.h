@@ -3,13 +3,13 @@
  */
 
 @interface SKUIShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIObservableScrollViewDelegate, SKUIShelfPageSection, SKUIShelfPageSectionConfigurationDataSource, SKUIViewElementSlideshowDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    SKUIShelfPageSectionConfiguration *_configuration;
-    int _lastNeedsMoreCount;
-    <SKUIScrollViewDelegateObserver> *_scrollViewDelegateObserver;
-    SKUIShelfViewElement *_shelfViewElement;
-    SKUIViewElementSlideshowController *_slideshowController;
-    NSArray *_viewElements;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    SKUIShelfPageSectionConfiguration * _configuration;
+    int  _lastNeedsMoreCount;
+    <SKUIScrollViewDelegateObserver> * _scrollViewDelegateObserver;
+    SKUIShelfViewElement * _shelfViewElement;
+    SKUIViewElementSlideshowController * _slideshowController;
+    NSArray * _viewElements;
 }
 
 @property (nonatomic, readonly) SKUIShelfPageSectionConfiguration *configuration;

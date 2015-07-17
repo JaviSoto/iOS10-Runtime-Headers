@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _legendModelGeometryFrame;
-    TSCHChartInfo *mChartInfo;
+    }  _legendModelGeometryFrame;
+    TSCHChartInfo * mChartInfo;
     struct { 
         BOOL forceOmitLegend; 
         BOOL forceOmitTitle; 
@@ -22,8 +22,8 @@
         BOOL enable3DScaledDepthBounds; 
         BOOL enable3DSageMaxDepthRatio; 
         unsigned int max3DLimitingSeries; 
-    } mLayoutSettings;
-    BOOL mNeedsLayout;
+    }  mLayoutSettings;
+    BOOL  mNeedsLayout;
 }
 
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartAreaFrame;

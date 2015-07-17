@@ -3,9 +3,9 @@
  */
 
 @interface TSCHPieBodyLayoutItemPathCache : NSObject {
-    struct CGPath { } *pathLayoutRelative;
-    NSArray *pathSelectionKnobs;
-    struct CGPath { } *pathTransformRelative;
+    struct CGPath { } * pathLayoutRelative;
+    NSArray * pathSelectionKnobs;
+    struct CGPath { } * pathTransformRelative;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,12 +15,12 @@
             float width; 
             float height; 
         } size; 
-    } rootedLayoutRect;
-    unsigned int seriesIndex;
+    }  rootedLayoutRect;
+    unsigned int  seriesIndex;
     struct CGPoint { 
         float x; 
         float y; 
-    } wedgeCenterPoint;
+    }  wedgeCenterPoint;
 }
 
 @property (nonatomic, readonly) struct CGPath { }*pathLayoutRelative;

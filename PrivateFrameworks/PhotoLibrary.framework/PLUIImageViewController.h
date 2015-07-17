@@ -3,8 +3,8 @@
  */
 
 @interface PLUIImageViewController : UIViewController <PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate> {
-    unsigned int _allowEditing;
-    PLCropOverlay *_cropOverlay;
+    unsigned int  _allowEditing;
+    PLCropOverlay * _cropOverlay;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,23 +14,23 @@
             float width; 
             float height; 
         } size; 
-    } _cropRect;
-    UIImage *_image;
-    PLImageCache *_imageCache;
-    PLImageLoadingQueue *_imageLoadingQueue;
-    struct CGImage { } *_imageRef;
-    PLImageSource *_imageSource;
-    PLPhotoTileViewController *_imageTile;
-    unsigned int _isDisappearing;
-    unsigned int _isVideo;
-    int _newStatusBarStyle;
-    PLManagedAsset *_photo;
-    int _previousStatusBarStyle;
-    PLVideoRemaker *_remaker;
-    unsigned int _remaking;
-    unsigned int _statusBarWasHidden;
-    NSURL *_videoURL;
-    PLVideoView *_videoView;
+    }  _cropRect;
+    UIImage * _image;
+    PLImageCache * _imageCache;
+    PLImageLoadingQueue * _imageLoadingQueue;
+    struct CGImage { } * _imageRef;
+    PLImageSource * _imageSource;
+    PLPhotoTileViewController * _imageTile;
+    unsigned int  _isDisappearing;
+    unsigned int  _isVideo;
+    int  _newStatusBarStyle;
+    PLManagedAsset * _photo;
+    int  _previousStatusBarStyle;
+    PLVideoRemaker * _remaker;
+    unsigned int  _remaking;
+    unsigned int  _statusBarWasHidden;
+    NSURL * _videoURL;
+    PLVideoView * _videoView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -81,6 +81,8 @@
 - (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
 - (void)photoTileViewControllerSingleTap:(id)arg1;
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
+- (int)preferredStatusBarUpdateAnimation;
+- (BOOL)prefersStatusBarHidden;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setCropOverlayDone;

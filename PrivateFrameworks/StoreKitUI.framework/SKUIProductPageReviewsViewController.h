@@ -3,26 +3,26 @@
  */
 
 @interface SKUIProductPageReviewsViewController : UIViewController <SKComposeReviewDelegate, SKUILayoutCacheDelegate, SKUIProductPageChildViewController, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL _askPermission;
-    SKUIClientContext *_clientContext;
-    SKComposeReviewViewController *_composeViewController;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    NSMutableIndexSet *_expandedIndexSet;
-    SKUIReviewsFacebookViewController *_facebookViewController;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    SKUIReviewsHistogramViewController *_histogramViewController;
-    BOOL _isPad;
-    SKUILayoutCache *_layoutCache;
-    SSVLoadURLOperation *_loadOperation;
-    int _loadedPageCount;
-    NSOperationQueue *_operationQueue;
-    SKUIProductPage *_productPage;
-    SKUIReviewList *_reviewList;
-    SKUIIPadCustomerReviewsHeaderView *_reviewsHeaderView;
-    BOOL _showAllVersions;
-    int _sortOrder;
-    SKUIStarRatingQueue *_starRatingQueue;
-    SKUIProductPageTableView *_tableView;
+    BOOL  _askPermission;
+    SKUIClientContext * _clientContext;
+    SKComposeReviewViewController * _composeViewController;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    NSMutableIndexSet * _expandedIndexSet;
+    SKUIReviewsFacebookViewController * _facebookViewController;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    SKUIReviewsHistogramViewController * _histogramViewController;
+    BOOL  _isPad;
+    SKUILayoutCache * _layoutCache;
+    SSVLoadURLOperation * _loadOperation;
+    int  _loadedPageCount;
+    NSOperationQueue * _operationQueue;
+    SKUIProductPage * _productPage;
+    SKUIReviewList * _reviewList;
+    SKUIIPadCustomerReviewsHeaderView * _reviewsHeaderView;
+    BOOL  _showAllVersions;
+    int  _sortOrder;
+    SKUIStarRatingQueue * _starRatingQueue;
+    SKUIProductPageTableView * _tableView;
 }
 
 @property (nonatomic) BOOL askPermission;

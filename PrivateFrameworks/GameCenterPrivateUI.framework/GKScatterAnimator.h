@@ -3,7 +3,7 @@
  */
 
 @interface GKScatterAnimator : GKBubblePathAnimator {
-    int _focusBubbleType;
+    int  _focusBubbleType;
 }
 
 @property (nonatomic) int focusBubbleType;

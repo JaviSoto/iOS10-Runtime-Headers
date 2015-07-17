@@ -3,17 +3,17 @@
  */
 
 @interface CKShareParticipant : NSObject <NSCopying, NSSecureCoding> {
-    int _acceptanceStatus;
-    BOOL _isCurrentUser;
-    int _originalAcceptanceStatus;
-    int _originalParticipantType;
-    int _originalPermission;
-    CKUserIdentity *_originalUserIdentity;
-    NSString *_participantID;
-    int _permission;
-    CKShareID *_shareID;
-    int _type;
-    CKUserIdentity *_userIdentity;
+    int  _acceptanceStatus;
+    BOOL  _isCurrentUser;
+    int  _originalAcceptanceStatus;
+    int  _originalParticipantType;
+    int  _originalPermission;
+    CKUserIdentity * _originalUserIdentity;
+    NSString * _participantID;
+    int  _permission;
+    CKShareID * _shareID;
+    int  _type;
+    CKUserIdentity * _userIdentity;
 }
 
 @property (nonatomic) int acceptanceStatus;

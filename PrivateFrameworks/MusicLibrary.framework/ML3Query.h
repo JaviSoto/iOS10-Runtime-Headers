@@ -3,16 +3,16 @@
  */
 
 @interface ML3Query : NSObject <NSCoding, NSCopying> {
-    Class _entityClass;
-    BOOL _filtersOnDynamicProperties;
-    ML3MusicLibrary *_library;
-    unsigned int _limit;
-    ML3AggregateQuery *_nonDirectAggregateQuery;
-    long long _options;
-    NSArray *_orderingTerms;
-    ML3Predicate *_predicate;
-    NSString *_propertyToCount;
-    BOOL _usingSections;
+    Class  _entityClass;
+    BOOL  _filtersOnDynamicProperties;
+    ML3MusicLibrary * _library;
+    unsigned int  _limit;
+    ML3AggregateQuery * _nonDirectAggregateQuery;
+    long long  _options;
+    NSArray * _orderingTerms;
+    ML3Predicate * _predicate;
+    NSString * _propertyToCount;
+    BOOL  _usingSections;
 }
 
 @property (nonatomic, readonly) long long anyEntityPersistentID;

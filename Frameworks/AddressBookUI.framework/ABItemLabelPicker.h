@@ -3,24 +3,24 @@
  */
 
 @interface ABItemLabelPicker : UIView <ABSimpleTextInputViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL _addLabelDisabled;
-    NSMutableArray *_additionalLabels;
-    void *_addressBook;
-    id _delegate;
-    BOOL _didCreateNewLabel;
-    id _editedItem;
-    int _itemIndex;
-    int _property;
-    ABPropertyGroup *_propertyGroup;
-    NSString *_savedLabel;
-    NSString *_selectedLabel;
-    NSIndexPath *_selectedPath;
-    struct __CFArray { } *_sortedCustomItemLabelInfos;
-    void *_sortedCustomItemLabelInfosMemory;
-    struct __CFArray { } *_sortedDefaultItemLabelInfos;
-    void *_sortedDefaultItemLabelInfosMemory;
-    ABStyleProvider *_styleProvider;
-    UITableView *_tableView;
+    BOOL  _addLabelDisabled;
+    NSMutableArray * _additionalLabels;
+    void * _addressBook;
+    id  _delegate;
+    BOOL  _didCreateNewLabel;
+    id  _editedItem;
+    int  _itemIndex;
+    int  _property;
+    ABPropertyGroup * _propertyGroup;
+    NSString * _savedLabel;
+    NSString * _selectedLabel;
+    NSIndexPath * _selectedPath;
+    struct __CFArray { } * _sortedCustomItemLabelInfos;
+    void * _sortedCustomItemLabelInfosMemory;
+    struct __CFArray { } * _sortedDefaultItemLabelInfos;
+    void * _sortedDefaultItemLabelInfosMemory;
+    ABStyleProvider * _styleProvider;
+    UITableView * _tableView;
 }
 
 @property (getter=isAddLabelDisabled, nonatomic) BOOL addLabelDisabled;

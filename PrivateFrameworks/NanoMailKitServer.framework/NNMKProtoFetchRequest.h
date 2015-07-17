@@ -3,13 +3,13 @@
  */
 
 @interface NNMKProtoFetchRequest : PBRequest <NSCopying> {
-    NSString *_conversationId;
-    unsigned int _fullSyncVersion;
+    NSString * _conversationId;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int manuallyTriggered : 1; 
-    } _has;
-    BOOL _manuallyTriggered;
+    }  _has;
+    BOOL  _manuallyTriggered;
 }
 
 @property (nonatomic, retain) NSString *conversationId;

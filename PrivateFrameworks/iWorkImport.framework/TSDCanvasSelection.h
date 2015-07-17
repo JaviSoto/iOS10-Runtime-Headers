@@ -3,7 +3,7 @@
  */
 
 @interface TSDCanvasSelection : TSKSelection <TSDCanvasSelection> {
-    NSSet *mInfos;
+    NSSet * mInfos;
 }
 
 @property (readonly, copy) NSString *debugDescription;

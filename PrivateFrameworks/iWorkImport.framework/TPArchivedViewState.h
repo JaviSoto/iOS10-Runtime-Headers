@@ -3,25 +3,25 @@
  */
 
 @interface TPArchivedViewState : TSPObject {
-    TSWPSelection *_bodySelection;
-    BOOL _changeTrackingPaused;
-    NSMutableDictionary *_chartUIState;
-    BOOL _hasShowsCTDeletions;
-    BOOL _hasShowsCTMarkup;
-    BOOL _inspectorHidden;
-    BOOL _layoutBordersVisible;
-    BOOL _masterDrawablesSelectable;
-    BOOL _rulerVisible;
-    NSString *_selectedInspectorSwitchSegmentIdentifier;
-    TSKSelectionPath *_selectionPath;
-    BOOL _showUserDefinedGuides;
-    BOOL _showsActivitySidebar;
-    BOOL _showsCTDeletions;
-    BOOL _showsCTMarkup;
-    BOOL _showsComments;
-    BOOL _showsPageNavigator;
-    float _viewScale;
-    int _viewScaleMode;
+    TSWPSelection * _bodySelection;
+    BOOL  _changeTrackingPaused;
+    NSMutableDictionary * _chartUIState;
+    BOOL  _hasShowsCTDeletions;
+    BOOL  _hasShowsCTMarkup;
+    BOOL  _inspectorHidden;
+    BOOL  _layoutBordersVisible;
+    BOOL  _masterDrawablesSelectable;
+    BOOL  _rulerVisible;
+    NSString * _selectedInspectorSwitchSegmentIdentifier;
+    TSKSelectionPath * _selectionPath;
+    BOOL  _showUserDefinedGuides;
+    BOOL  _showsActivitySidebar;
+    BOOL  _showsCTDeletions;
+    BOOL  _showsCTMarkup;
+    BOOL  _showsComments;
+    BOOL  _showsPageNavigator;
+    float  _viewScale;
+    int  _viewScaleMode;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -31,7 +31,7 @@
             float width; 
             float height; 
         } size; 
-    } _visibleRect;
+    }  _visibleRect;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -41,16 +41,15 @@
             float width; 
             float height; 
         } size; 
-    } _windowFrame;
+    }  _windowFrame;
     struct CGPoint { 
         float x; 
         float y; 
-    } _wordCountHUDPosition;
-    int _wordCountHUDType;
-    BOOL _wordCountHUDVisible;
+    }  _wordCountHUDPosition;
+    int  _wordCountHUDType;
+    BOOL  _wordCountHUDVisible;
 }
 
-- (id).cxx_construct;
 - (void)captureViewStateWithProvider:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

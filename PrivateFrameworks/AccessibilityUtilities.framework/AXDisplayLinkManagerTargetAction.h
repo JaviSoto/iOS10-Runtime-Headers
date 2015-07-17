@@ -3,10 +3,10 @@
  */
 
 @interface AXDisplayLinkManagerTargetAction : NSObject {
-    SEL _actionSelector;
-    unsigned int _displayDidRefreshCount;
-    unsigned int _frameInterval;
-    id _target;
+    SEL  _actionSelector;
+    unsigned int  _displayDidRefreshCount;
+    unsigned int  _frameInterval;
+    id  _target;
 }
 
 @property (nonatomic) SEL actionSelector;

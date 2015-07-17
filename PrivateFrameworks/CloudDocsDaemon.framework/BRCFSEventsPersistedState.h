@@ -3,10 +3,10 @@
  */
 
 @interface BRCFSEventsPersistedState : NSObject <NSSecureCoding> {
-    unsigned long long _latestEventID;
-    unsigned long long _rootID;
-    BRCAccountSession *_session;
-    NSUUID *_streamUUID;
+    unsigned long long  _latestEventID;
+    unsigned long long  _rootID;
+    BRCAccountSession * _session;
+    NSUUID * _streamUUID;
 }
 
 @property (nonatomic) unsigned long long latestEventID;

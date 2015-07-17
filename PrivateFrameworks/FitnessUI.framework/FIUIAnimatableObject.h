@@ -3,7 +3,7 @@
  */
 
 @interface FIUIAnimatableObject : NSObject {
-    NSMutableDictionary *_animatableProperties;
+    NSMutableDictionary * _animatableProperties;
 }
 
 - (void).cxx_destruct;

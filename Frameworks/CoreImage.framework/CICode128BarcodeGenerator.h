@@ -3,7 +3,7 @@
  */
 
 @interface CICode128BarcodeGenerator : CICodeGenerator {
-    NSNumber *inputQuietSpace;
+    NSNumber * inputQuietSpace;
 }
 
 @property (nonatomic, copy) NSNumber *inputQuietSpace;

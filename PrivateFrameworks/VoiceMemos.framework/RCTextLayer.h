@@ -6,13 +6,13 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _cachedSize;
-    unsigned int _cachedSizeHash;
-    UIFont *_font;
-    int _preferredAlignment;
-    NSString *_text;
-    int _textAlignment;
-    UIColor *_textColor;
+    }  _cachedSize;
+    unsigned int  _cachedSizeHash;
+    UIFont * _font;
+    int  _preferredAlignment;
+    NSString * _text;
+    int  _textAlignment;
+    UIColor * _textColor;
 }
 
 @property (nonatomic, retain) UIFont *font;

@@ -3,10 +3,10 @@
  */
 
 @interface ISHashError : NSObject <NSCopying> {
-    NSString *_actualHashString;
-    NSString *_expectedHashString;
-    long long _rangeEnd;
-    long long _rangeStart;
+    NSString * _actualHashString;
+    NSString * _expectedHashString;
+    long long  _rangeEnd;
+    long long  _rangeStart;
 }
 
 @property (nonatomic, copy) NSString *actualHashString;

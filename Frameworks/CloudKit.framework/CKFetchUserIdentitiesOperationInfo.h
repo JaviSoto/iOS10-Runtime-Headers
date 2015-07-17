@@ -3,7 +3,7 @@
  */
 
 @interface CKFetchUserIdentitiesOperationInfo : CKOperationInfo <NSSecureCoding> {
-    NSArray *_identityInfos;
+    NSArray * _identityInfos;
 }
 
 @property (nonatomic, retain) NSArray *identityInfos;

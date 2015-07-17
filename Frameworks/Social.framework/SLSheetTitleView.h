@@ -3,10 +3,10 @@
  */
 
 @interface SLSheetTitleView : UIView {
-    NSMutableArray *_constraints;
-    UIImageView *_serviceIconView;
-    NSString *_title;
-    UILabel *_titleLabel;
+    NSMutableArray * _constraints;
+    UIImageView * _serviceIconView;
+    NSString * _title;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *title;

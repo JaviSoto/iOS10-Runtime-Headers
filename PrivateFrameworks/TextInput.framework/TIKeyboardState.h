@@ -9,14 +9,14 @@
             unsigned int displayed : 1; 
             unsigned int autoDisplayMode : 1; 
         } fields; 
-    } _autocorrectionListUIState;
-    NSString *_clientIdentifier;
-    TIKeyboardCandidate *_currentCandidate;
-    TIDocumentState *_documentState;
-    NSString *_inputForMarkedText;
-    NSString *_inputMode;
-    TIKeyboardLayout *_keyLayout;
-    TIKeyboardLayoutState *_layoutState;
+    }  _autocorrectionListUIState;
+    NSString * _clientIdentifier;
+    TIKeyboardCandidate * _currentCandidate;
+    TIDocumentState * _documentState;
+    NSString * _inputForMarkedText;
+    NSString * _inputMode;
+    TIKeyboardLayout * _keyLayout;
+    TIKeyboardLayoutState * _layoutState;
     union { 
         int integerValue; 
         struct { 
@@ -33,12 +33,12 @@
             unsigned int candidateSelectionPredictionEnabled : 1; 
             unsigned int autocapitalizationEnabled : 1; 
         } fields; 
-    } _mask;
-    NSString *_recipientIdentifier;
-    NSString *_responseContext;
-    NSString *_searchStringForMarkedText;
-    int _shiftState;
-    TITextInputTraits *_textInputTraits;
+    }  _mask;
+    NSString * _recipientIdentifier;
+    NSString * _responseContext;
+    NSString * _searchStringForMarkedText;
+    int  _shiftState;
+    TITextInputTraits * _textInputTraits;
 }
 
 @property (nonatomic) BOOL autocapitalizationEnabled;

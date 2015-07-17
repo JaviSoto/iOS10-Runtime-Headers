@@ -3,9 +3,10 @@
  */
 
 @interface WebPreferences : NSObject <NSCoding> {
-    struct WebPreferencesPrivate { struct RetainPtr<NSMutableDictionary> { void *x_1_1_1; } x1; BOOL x2; struct RetainPtr<NSString> { void *x_3_1_1; } x3; BOOL x4; BOOL x5; unsigned int x6; id x7; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; bycopy void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; unsigned short x94; unsigned long x95; void*x96; void*x97; long long x98; void*x99; void*x100; short x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; unsigned long x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; } *_private;
+    struct WebPreferencesPrivate { struct RetainPtr<NSMutableDictionary> { void *x_1_1_1; } x1; BOOL x2; struct RetainPtr<NSString> { void *x_3_1_1; } x3; BOOL x4; BOOL x5; unsigned int x6; id x7; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; unsigned int x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; unsigned char x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; unsigned short x64; void*x65; short x66; void*x67; void*x68; void*x69; void*x70; unsigned long x71; int x72; unsigned int x73/* : ? */; const void*x74; const void*x75; void*x76; void*x77; const int x78; void x79; void*x80; void*x81; void*x82; void*x83; const void*x84; void*x85; void*x86; void*x87; out const void*x88; short x89; void*x90; bycopy float x91; float x92; int x93; BOOL x94; void*x95; unsigned int x96; void*x97; void*x98; out const void*x99; void*x100; float x101; const void*x102; void*x103; void*x104; void*x105; out const void*x106; void*x107; bycopy float x108; float x109; int x110; BOOL x111; void*x112; unsigned int x113; void*x114; void*x115; out const void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; Class x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; bycopy void*x191; void*x192; void*x193; void*x194; void*x195; id x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; unsigned char x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; unsigned short x219; void*x220; unsigned short x221; void*x222; short x223; void*x224; void*x225; void*x226; void*x227; unsigned long x228; int x229; unsigned int x230/* : ? */; const void*x231; const void*x232; void*x233; void*x234; const int x235; void x236; void*x237; void*x238; void*x239; void*x240; const void*x241; void*x242; void*x243; void*x244; out const void*x245; short x246; void*x247; unsigned char x248; out const void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; long doublex255; void*x256; float x257; int x258; in int x259; void*x260; int x261; out in void*x262; float x263; const void*x264; void*x265; void*x266; void*x267; out const void*x268; void*x269; unsigned char x270; out const void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; long doublex277; void*x278; float x279; int x280; in int x281; void*x282; int x283; out in void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; unsigned char x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; unsigned int x330; long doublex331; out BOOL x332; void*x333; void*x334; void*x335; in void*x336; void*x337; void*x338; short x339; short x340; void*x341; out const double x342; oneway int x343; void*x344; void*x345; void*x346; void*x347; unsigned int x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; id x356; void*x357; void*x358; void*x359; void*x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; unsigned char x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; unsigned int x387; long doublex388; out BOOL x389; void*x390; void*x391; void*x392; in void*x393; void*x394; void*x395; short x396; short x397; void*x398; out const double x399; oneway int x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; void*x423; void*x424; void*x425; void*x426; void*x427; void*x428; void*x429; void*x430; void*x431; void*x432; void*x433; void*x434; void*x435; void*x436; unsigned char x437; void*x438; void*x439; void*x440; void*x441; void*x442; void*x443; void*x444; void*x445; void*x446; bycopy void*x447; void*x448; void*x449; BOOL x450; BOOL x451; void*x452; short x453; short x454; void*x455; void*x456; void*x457; void*x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; void*x465; void*x466; void*x467; void*x468; void*x469; void*x470; BOOL x471; void*x472; void*x473; void*x474; void*x475; struct  struct Node { {} x476; void*x477; char *x478; void*x479; void*x480; void*x481; void*x482; void*x483; void*x484; void*x485; void*x486; void*x487; } * _private;
 }
 
+@property (nonatomic) BOOL allowsAirPlayForMediaPlayback;
 @property (nonatomic) BOOL allowsAnimatedImageLooping;
 @property (nonatomic) BOOL allowsAnimatedImages;
 @property (nonatomic) BOOL autosaves;
@@ -20,6 +21,7 @@
 @property (getter=isJavaEnabled, nonatomic) BOOL javaEnabled;
 @property (nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
 @property (getter=isJavaScriptEnabled, nonatomic) BOOL javaScriptEnabled;
+@property (nonatomic) BOOL javaScriptMarkupEnabled;
 @property (nonatomic) BOOL loadsImagesAutomatically;
 @property (nonatomic) int minimumFontSize;
 @property (nonatomic) int minimumLogicalFontSize;
@@ -37,6 +39,7 @@
 
 + (id)_IBCreatorID;
 + (void)_checkLastReferenceForIdentifier:(id)arg1;
++ (void)_clearNetworkLoaderSession;
 + (id)_concatenateKeyWithIBCreatorID:(id)arg1;
 + (id)_getInstanceForIdentifier:(id)arg1;
 + (void)_removeReferenceForIdentifier:(id)arg1;
@@ -54,10 +57,8 @@
 - (BOOL)_allowPasswordEcho;
 - (BOOL)_alwaysRequestGeolocationPermission;
 - (BOOL)_alwaysUseAcceleratedOverflowScroll;
-- (BOOL)_alwaysUseBaselineOfPrimaryFont;
 - (double)_backForwardCacheExpirationInterval;
 - (BOOL)_boolValueForKey:(id)arg1;
-- (id)_diskImageCacheSavedCacheDirectory;
 - (float)_floatValueForKey:(id)arg1;
 - (BOOL)_forceFTPDirectoryListings;
 - (id)_ftpDirectoryTemplatePath;
@@ -69,8 +70,6 @@
 - (long long)_longLongValueForKey:(id)arg1;
 - (float)_maxParseDuration;
 - (float)_minimumZoomFontSize;
-- (int)_objectCacheSize;
-- (int)_pageCacheSize;
 - (float)_passwordEchoDuration;
 - (void)_postCacheModelChangedNotification;
 - (void)_postPreferencesChangedAPINotification;
@@ -78,9 +77,7 @@
 - (void)_setAllowMultiElementImplicitFormSubmission:(BOOL)arg1;
 - (void)_setAlwaysRequestGeolocationPermission:(BOOL)arg1;
 - (void)_setAlwaysUseAcceleratedOverflowScroll:(BOOL)arg1;
-- (void)_setAlwaysUseBaselineOfPrimaryFont:(BOOL)arg1;
 - (void)_setBoolValue:(BOOL)arg1 forKey:(id)arg2;
-- (void)_setDiskImageCacheSavedCacheDirectory:(id)arg1;
 - (void)_setFTPDirectoryTemplatePath:(id)arg1;
 - (void)_setFloatValue:(float)arg1 forKey:(id)arg2;
 - (void)_setForceFTPDirectoryListings:(BOOL)arg1;
@@ -91,8 +88,6 @@
 - (void)_setLongLongValue:(long long)arg1 forKey:(id)arg2;
 - (void)_setMaxParseDuration:(float)arg1;
 - (void)_setMinimumZoomFontSize:(float)arg1;
-- (void)_setObjectCacheSize:(int)arg1;
-- (void)_setPageCacheSize:(int)arg1;
 - (void)_setPreferenceForTestWithValue:(id)arg1 forKey:(id)arg2;
 - (void)_setStandalone:(BOOL)arg1;
 - (void)_setStringValue:(id)arg1 forKey:(id)arg2;
@@ -114,8 +109,12 @@
 - (BOOL)acceleratedDrawingEnabled;
 - (BOOL)allowFileAccessFromFileURLs;
 - (BOOL)allowUniversalAccessFromFileURLs;
+- (BOOL)allowsAirPlayForMediaPlayback;
+- (BOOL)allowsAlternateFullscreen;
 - (BOOL)allowsAnimatedImageLooping;
 - (BOOL)allowsAnimatedImages;
+- (BOOL)allowsPictureInPictureMediaPlayback;
+- (BOOL)antialiasedFontDilationEnabled;
 - (long long)applicationCacheDefaultOriginQuota;
 - (long long)applicationCacheTotalQuota;
 - (BOOL)applicationChromeModeEnabled;
@@ -140,9 +139,7 @@
 - (BOOL)developerExtrasEnabled;
 - (BOOL)diagnosticLoggingEnabled;
 - (void)didRemoveFromWebView;
-- (BOOL)diskImageCacheEnabled;
-- (unsigned int)diskImageCacheMaximumCacheSize;
-- (unsigned int)diskImageCacheMinimumImageSize;
+- (BOOL)domTimersThrottlingEnabled;
 - (int)editableLinkBehavior;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)experimentalNotificationsEnabled;
@@ -176,12 +173,14 @@
 - (BOOL)isXSSAuditorEnabled;
 - (BOOL)javaScriptCanAccessClipboard;
 - (BOOL)javaScriptCanOpenWindowsAutomatically;
-- (BOOL)javaScriptExperimentsEnabled;
+- (BOOL)javaScriptMarkupEnabled;
+- (int)javaScriptRuntimeFlags;
 - (BOOL)loadsImagesAutomatically;
 - (BOOL)loadsSiteIconsIgnoringImageLoadingPreference;
 - (BOOL)localFileContentSniffingEnabled;
 - (BOOL)localStorageEnabled;
 - (BOOL)lowPowerVideoAudioBufferSizeEnabled;
+- (id)mediaKeysStorageDirectory;
 - (BOOL)mediaPlaybackAllowsAirPlay;
 - (BOOL)mediaPlaybackAllowsInline;
 - (BOOL)mediaPlaybackRequiresUserGesture;
@@ -190,7 +189,6 @@
 - (int)minimumFontSize;
 - (int)minimumLogicalFontSize;
 - (BOOL)mockScrollbarsEnabled;
-- (BOOL)multithreadedWebGLEnabled;
 - (BOOL)networkDataUsageTrackingEnabled;
 - (id)networkInterfaceName;
 - (BOOL)notificationsEnabled;
@@ -202,8 +200,8 @@
 - (BOOL)privateBrowsingEnabled;
 - (BOOL)requestAnimationFrameEnabled;
 - (id)sansSerifFontFamily;
-- (BOOL)screenFontSubstitutionEnabled;
 - (id)serifFontFamily;
+- (BOOL)serviceControlsEnabled;
 - (void)setAVFoundationEnabled:(BOOL)arg1;
 - (void)setAVKitEnabled:(bool)arg1;
 - (void)setAccelerated2dCanvasEnabled:(BOOL)arg1;
@@ -211,8 +209,12 @@
 - (void)setAcceleratedDrawingEnabled:(BOOL)arg1;
 - (void)setAllowFileAccessFromFileURLs:(BOOL)arg1;
 - (void)setAllowUniversalAccessFromFileURLs:(BOOL)arg1;
+- (void)setAllowsAirPlayForMediaPlayback:(BOOL)arg1;
+- (void)setAllowsAlternateFullscreen:(BOOL)arg1;
 - (void)setAllowsAnimatedImageLooping:(BOOL)arg1;
 - (void)setAllowsAnimatedImages:(BOOL)arg1;
+- (void)setAllowsPictureInPictureMediaPlayback:(BOOL)arg1;
+- (void)setAntialiasedFontDilationEnabled:(BOOL)arg1;
 - (void)setApplicationCacheDefaultOriginQuota:(long long)arg1;
 - (void)setApplicationCacheTotalQuota:(long long)arg1;
 - (void)setApplicationChromeModeEnabled:(BOOL)arg1;
@@ -229,6 +231,7 @@
 - (void)setCursiveFontFamily:(id)arg1;
 - (void)setDNSPrefetchingEnabled:(BOOL)arg1;
 - (void)setDOMPasteAllowed:(BOOL)arg1;
+- (void)setDOMTimersThrottlingEnabled:(BOOL)arg1;
 - (void)setDatabasesEnabled:(BOOL)arg1;
 - (void)setDefaultFixedFontSize:(int)arg1;
 - (void)setDefaultFontSize:(int)arg1;
@@ -236,8 +239,6 @@
 - (void)setDeveloperExtrasEnabled:(BOOL)arg1;
 - (void)setDiagnosticLoggingEnabled:(BOOL)arg1;
 - (void)setDiskImageCacheEnabled:(BOOL)arg1;
-- (void)setDiskImageCacheMaximumCacheSize:(unsigned int)arg1;
-- (void)setDiskImageCacheMinimumImageSize:(unsigned int)arg1;
 - (void)setEditableLinkBehavior:(int)arg1;
 - (void)setEnableInheritURIQueryComponent:(BOOL)arg1;
 - (void)setExperimentalNotificationsEnabled:(BOOL)arg1;
@@ -257,12 +258,14 @@
 - (void)setJavaScriptCanAccessClipboard:(BOOL)arg1;
 - (void)setJavaScriptCanOpenWindowsAutomatically:(BOOL)arg1;
 - (void)setJavaScriptEnabled:(BOOL)arg1;
-- (void)setJavaScriptExperimentsEnabled:(BOOL)arg1;
+- (void)setJavaScriptMarkupEnabled:(BOOL)arg1;
+- (void)setJavaScriptRuntimeFlags:(int)arg1;
 - (void)setLoadsImagesAutomatically:(BOOL)arg1;
 - (void)setLoadsSiteIconsIgnoringImageLoadingPreference:(BOOL)arg1;
 - (void)setLocalFileContentSniffingEnabled:(BOOL)arg1;
 - (void)setLocalStorageEnabled:(BOOL)arg1;
 - (void)setLowPowerVideoAudioBufferSizeEnabled:(BOOL)arg1;
+- (void)setMediaKeysStorageDirectory:(id)arg1;
 - (void)setMediaPlaybackAllowsAirPlay:(BOOL)arg1;
 - (void)setMediaPlaybackAllowsInline:(BOOL)arg1;
 - (void)setMediaPlaybackRequiresUserGesture:(BOOL)arg1;
@@ -271,7 +274,6 @@
 - (void)setMinimumFontSize:(int)arg1;
 - (void)setMinimumLogicalFontSize:(int)arg1;
 - (void)setMockScrollbarsEnabled:(BOOL)arg1;
-- (void)setMultithreadedWebGLEnabled:(BOOL)arg1;
 - (void)setNetworkDataUsageTrackingEnabled:(bool)arg1;
 - (void)setNetworkInterfaceName:(id)arg1;
 - (void)setNotificationsEnabled:(BOOL)arg1;
@@ -285,8 +287,8 @@
 - (void)setQTKitEnabled:(BOOL)arg1;
 - (void)setRequestAnimationFrameEnabled:(BOOL)arg1;
 - (void)setSansSerifFontFamily:(id)arg1;
-- (void)setScreenFontSubstitutionEnabled:(BOOL)arg1;
 - (void)setSerifFontFamily:(id)arg1;
+- (void)setServiceControlsEnabled:(BOOL)arg1;
 - (void)setShouldConvertPositionStyleOnCopy:(BOOL)arg1;
 - (void)setShouldDisplayCaptions:(BOOL)arg1;
 - (void)setShouldDisplaySubtitles:(BOOL)arg1;
@@ -295,6 +297,7 @@
 - (void)setShowDebugBorders:(BOOL)arg1;
 - (void)setShowRepaintCounter:(BOOL)arg1;
 - (void)setShrinksStandaloneImagesToFit:(BOOL)arg1;
+- (void)setSimpleLineLayoutDebugBordersEnabled:(BOOL)arg1;
 - (void)setSpatialNavigationEnabled:(BOOL)arg1;
 - (void)setStandardFontFamily:(id)arg1;
 - (void)setStorageBlockingPolicy:(int)arg1;
@@ -324,6 +327,7 @@
 - (BOOL)showDebugBorders;
 - (BOOL)showRepaintCounter;
 - (BOOL)shrinksStandaloneImagesToFit;
+- (BOOL)simpleLineLayoutDebugBordersEnabled;
 - (id)standardFontFamily;
 - (int)storageBlockingPolicy;
 - (BOOL)storageTrackerEnabled;

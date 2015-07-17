@@ -3,23 +3,23 @@
  */
 
 @interface PTXParallaxEngineSettings : _UISettings {
-    float _delayBeforeIdle;
-    BOOL _directionalLockEnabled;
-    float _directionalLockSharpness;
-    float _directionalLockStickiness;
-    float _directionalLockThreshold;
-    unsigned int _frameInterval;
-    float _idleLeeway;
-    float _inputSmoothing;
-    BOOL _jumpEnabled;
-    float _jumpThreshold;
-    BOOL _playJumpSound;
-    float _shiftDistanceDependence;
-    BOOL _shiftEnabled;
-    float _shiftSpeed;
-    BOOL _showDirectionalLockIndicators;
-    BOOL _showIdleIndicator;
-    float _sigmoidDegree;
+    float  _delayBeforeIdle;
+    BOOL  _directionalLockEnabled;
+    float  _directionalLockSharpness;
+    float  _directionalLockStickiness;
+    float  _directionalLockThreshold;
+    unsigned int  _frameInterval;
+    float  _idleLeeway;
+    float  _inputSmoothing;
+    BOOL  _jumpEnabled;
+    float  _jumpThreshold;
+    BOOL  _playJumpSound;
+    float  _shiftDistanceDependence;
+    BOOL  _shiftEnabled;
+    float  _shiftSpeed;
+    BOOL  _showDirectionalLockIndicators;
+    BOOL  _showIdleIndicator;
+    float  _sigmoidDegree;
 }
 
 @property float delayBeforeIdle;

@@ -3,16 +3,16 @@
  */
 
 @interface _UIRemoteViewService : NSObject {
-    NSUUID *_contextToken;
-    NSExtension *_extension;
+    NSUUID * _contextToken;
+    NSExtension * _extension;
 }
 
 @property (nonatomic, copy) NSUUID *contextToken;
 @property (nonatomic, retain) NSExtension *extension;
 @property (nonatomic, retain) <PKPlugIn> *plugin;
 
+- (void).cxx_destruct;
 - (id)contextToken;
-- (void)dealloc;
 - (id)extension;
 - (id)initWithExtension:(id)arg1 andContextToken:(id)arg2;
 - (id)initWithPlugIn:(id)arg1 andContextToken:(id)arg2;

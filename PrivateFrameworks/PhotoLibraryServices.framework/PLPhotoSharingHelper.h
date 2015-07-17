@@ -11,6 +11,7 @@
 + (id)_processPhoneFailuresQueue;
 + (int)_serverLimitValueForKey:(id)arg1 withDefaultResult:(int)arg2;
 + (BOOL)_shouldDownloadAsset:(id)arg1 requestThumbnail:(BOOL)arg2;
++ (id)_transactionWithName:(const char *)arg1;
 + (void)acceptPendingInvitationForAlbum:(id)arg1 completion:(id /* block */)arg2;
 + (BOOL)accountMatchesEmail:(id)arg1;
 + (void)accountSettingsChanged;

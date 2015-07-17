@@ -3,17 +3,17 @@
  */
 
 @interface SKUIPINInputControl : UIControl <SKUIViewElementView, UIKeyInput> {
-    UIColor *_boxBackgroundColor;
-    UIColor *_boxBorderColor;
-    UIFont *_font;
-    int _keyboardType;
-    NSMutableArray *_labels;
-    BOOL _needsLabelReload;
-    int _numberOfCharacters;
-    BOOL _secureTextEntry;
-    NSMutableString *_text;
-    UIColor *_textColor;
-    SKUIViewElement *_viewElement;
+    UIColor * _boxBackgroundColor;
+    UIColor * _boxBorderColor;
+    UIFont * _font;
+    int  _keyboardType;
+    NSMutableArray * _labels;
+    BOOL  _needsLabelReload;
+    int  _numberOfCharacters;
+    BOOL  _secureTextEntry;
+    NSMutableString * _text;
+    UIColor * _textColor;
+    SKUIViewElement * _viewElement;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -28,6 +28,7 @@
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
 @property (nonatomic) int numberOfCharacters;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic) int returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;

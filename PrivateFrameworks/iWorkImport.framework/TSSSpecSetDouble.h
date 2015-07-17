@@ -3,8 +3,8 @@
  */
 
 @interface TSSSpecSetDouble : TSSSpecDouble {
-    BOOL _unset;
-    double _value;
+    BOOL  _unset;
+    double  _value;
 }
 
 - (id)apply:(id)arg1;

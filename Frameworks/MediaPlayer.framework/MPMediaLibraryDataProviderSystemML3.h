@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaLibraryDataProviderSystemML3 : MPMediaLibraryDataProviderML3 {
-    <MPArtworkDataSource> *_completeMyCollectionArtworkDataSource;
-    long long _currentRevision;
-    NSObject<OS_dispatch_queue> *_queue;
+    <MPArtworkDataSource> * _completeMyCollectionArtworkDataSource;
+    long long  _currentRevision;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (BOOL)_isGeniusEnabled;

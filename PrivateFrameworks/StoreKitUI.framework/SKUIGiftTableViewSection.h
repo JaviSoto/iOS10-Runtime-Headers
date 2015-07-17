@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftTableViewSection : SKUITableViewSection {
-    SKUIGiftConfiguration *_giftConfiguration;
+    SKUIGiftConfiguration * _giftConfiguration;
 }
 
 @property (nonatomic, readonly) SKUIGiftConfiguration *giftConfiguration;

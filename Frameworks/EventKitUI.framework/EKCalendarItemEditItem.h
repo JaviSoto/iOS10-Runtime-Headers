@@ -3,12 +3,12 @@
  */
 
 @interface EKCalendarItemEditItem : NSObject <EKEditItemViewControllerDelegate> {
-    EKCalendarItem *_calendarItem;
-    <EKCalendarItemEditItemDelegate> *_delegate;
-    UIResponder *_selectedResponder;
-    EKEventStore *_store;
-    <EKStyleProvider> *_styleProvider;
-    UIViewController<EKEditItemViewControllerProtocol> *_viewController;
+    EKCalendarItem * _calendarItem;
+    <EKCalendarItemEditItemDelegate> * _delegate;
+    UIResponder * _selectedResponder;
+    EKEventStore * _store;
+    <EKStyleProvider> * _styleProvider;
+    UIViewController<EKEditItemViewControllerProtocol> * _viewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

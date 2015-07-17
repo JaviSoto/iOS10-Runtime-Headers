@@ -3,9 +3,9 @@
  */
 
 @interface TIKeyboardCandidateResultSetCoder : NSObject {
-    NSData *_data;
-    NSMutableData *_mutableData;
-    unsigned int _offset;
+    NSData * _data;
+    NSMutableData * _mutableData;
+    unsigned int  _offset;
 }
 
 @property (nonatomic, readonly) const char *bytes;

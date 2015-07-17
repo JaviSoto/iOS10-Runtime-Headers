@@ -3,13 +3,13 @@
  */
 
 @interface PTXMotionWindow : NSObject {
-    float _center;
-    int _direction;
-    float _effectiveRadius;
-    float _lowerLimit;
-    float _maxIncrease;
-    float _radius;
-    float _upperLimit;
+    float  _center;
+    int  _direction;
+    float  _effectiveRadius;
+    float  _lowerLimit;
+    float  _maxIncrease;
+    float  _radius;
+    float  _upperLimit;
 }
 
 - (id)initWithRadius:(float)arg1 maxIncrease:(float)arg2 direction:(int)arg3;

@@ -3,12 +3,12 @@
  */
 
 @interface WPTransfer : NSObject <XPCClientDelegate> {
-    int _advertiserState;
-    XPCClient *_connection;
-    <WPTransferDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _scannerState;
-    NSObject<OS_xpc_object> *_server;
+    int  _advertiserState;
+    XPCClient * _connection;
+    <WPTransferDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _scannerState;
+    NSObject<OS_xpc_object> * _server;
 }
 
 @property int advertiserState;

@@ -3,9 +3,9 @@
  */
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
-    NSMutableArray *_problemIds;
-    NSString *_statusNotificationId;
-    GEORPUserCredentials *_userCredentials;
+    NSMutableArray * _problemIds;
+    NSString * _statusNotificationId;
+    GEORPUserCredentials * _userCredentials;
 }
 
 @property (nonatomic, readonly) BOOL hasStatusNotificationId;

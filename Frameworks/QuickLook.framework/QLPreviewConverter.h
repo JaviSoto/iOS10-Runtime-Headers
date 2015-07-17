@@ -3,8 +3,8 @@
  */
 
 @interface QLPreviewConverter : NSObject {
-    NSDictionary *_options;
-    QLPreviewParts *_previewParts;
+    NSDictionary * _options;
+    QLPreviewParts * _previewParts;
 }
 
 @property (nonatomic, readonly) NSString *previewFileName;

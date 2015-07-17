@@ -3,8 +3,8 @@
  */
 
 @interface MCDependencyReader : NSObject {
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSMutableDictionary *_memberQueueDomainsDict;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSMutableDictionary * _memberQueueDomainsDict;
 }
 
 @property (nonatomic, readonly) NSDictionary *domainsDict;

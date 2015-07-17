@@ -3,12 +3,12 @@
  */
 
 @interface PSYActivityInfo : NSObject <NSSecureCoding> {
-    NSString *_backboardPrelaunchBundleIdentifier;
-    NSArray *_dependencies;
-    NSString *_label;
-    NSString *_machServiceName;
-    NSString *_priority;
-    NSNumber *_timeoutSeconds;
+    NSString * _backboardPrelaunchBundleIdentifier;
+    NSArray * _dependencies;
+    NSString * _label;
+    NSString * _machServiceName;
+    NSString * _priority;
+    NSNumber * _timeoutSeconds;
 }
 
 @property (nonatomic, copy) NSString *backboardPrelaunchBundleIdentifier;

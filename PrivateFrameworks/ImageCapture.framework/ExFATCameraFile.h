@@ -3,7 +3,7 @@
  */
 
 @interface ExFATCameraFile : ICCameraFile {
-    void *_exFATCameraFileProperties;
+    void * _exFATCameraFileProperties;
 }
 
 @property int bitsPerPixel;

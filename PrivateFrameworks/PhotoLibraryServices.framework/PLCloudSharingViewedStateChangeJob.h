@@ -3,13 +3,13 @@
  */
 
 @interface PLCloudSharingViewedStateChangeJob : PLCloudSharingJob {
-    NSString *_albumGUID;
-    BOOL _albumHasUnseenContent;
-    long long _albumUnviewedAssetCount;
-    NSString *_assetCollectionGUID;
-    BOOL _assetCollectionHasUnreadComments;
-    NSDate *_assetCollectionLastViewedCommentDate;
-    long long _jobType;
+    NSString * _albumGUID;
+    BOOL  _albumHasUnseenContent;
+    long long  _albumUnviewedAssetCount;
+    NSString * _assetCollectionGUID;
+    BOOL  _assetCollectionHasUnreadComments;
+    NSDate * _assetCollectionLastViewedCommentDate;
+    long long  _jobType;
 }
 
 @property (nonatomic, retain) NSString *albumGUID;

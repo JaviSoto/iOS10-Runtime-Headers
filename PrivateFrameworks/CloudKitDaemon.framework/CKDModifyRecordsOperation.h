@@ -3,28 +3,28 @@
  */
 
 @interface CKDModifyRecordsOperation : CKDDatabaseOperation {
-    BOOL _atomic;
-    CKDRecordCache *_cache;
-    BOOL _canSetPreviousProtectionEtag;
-    NSData *_clientChangeTokenData;
-    NSDictionary *_conflictLosersToResolveByRecordID;
-    id /* block */ _deleteCompletionBlock;
-    BOOL _haveOutstandingMetadatas;
-    NSDictionary *_metadatasByRecordID;
-    NSMutableDictionary *_modifyMetadatasByZoneID;
-    int _numPCSRetries;
-    NSArray *_recordIDsToDelete;
-    NSDictionary *_recordIDsToDeleteToEtags;
-    NSMutableDictionary *_recordsByServerID;
-    NSArray *_recordsToSave;
-    BOOL _retriedRecords;
-    BOOL _retryPCSFailures;
-    id /* block */ _saveCompletionBlock;
-    int _savePolicy;
-    id /* block */ _saveProgressBlock;
-    BOOL _shouldOnlySaveAssetContent;
-    CKDProtocolTranslator *_translator;
-    id /* block */ _uploadCompletionBlock;
+    BOOL  _atomic;
+    CKDRecordCache * _cache;
+    BOOL  _canSetPreviousProtectionEtag;
+    NSData * _clientChangeTokenData;
+    NSDictionary * _conflictLosersToResolveByRecordID;
+    id /* block */  _deleteCompletionBlock;
+    BOOL  _haveOutstandingMetadatas;
+    NSDictionary * _metadatasByRecordID;
+    NSMutableDictionary * _modifyMetadatasByZoneID;
+    int  _numPCSRetries;
+    NSArray * _recordIDsToDelete;
+    NSDictionary * _recordIDsToDeleteToEtags;
+    NSMutableDictionary * _recordsByServerID;
+    NSArray * _recordsToSave;
+    BOOL  _retriedRecords;
+    BOOL  _retryPCSFailures;
+    id /* block */  _saveCompletionBlock;
+    int  _savePolicy;
+    id /* block */  _saveProgressBlock;
+    BOOL  _shouldOnlySaveAssetContent;
+    CKDProtocolTranslator * _translator;
+    id /* block */  _uploadCompletionBlock;
 }
 
 @property (nonatomic) BOOL atomic;
@@ -82,6 +82,7 @@
 - (id)_wrapAssetKey:(id)arg1 forRecord:(id)arg2 withError:(id*)arg3;
 - (BOOL)_wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 forField:(id)arg3;
 - (BOOL)_wrapEncryptedDataOnRecord:(id)arg1;
+- (unsigned long long)activityStart;
 - (BOOL)atomic;
 - (id)cache;
 - (BOOL)canSetPreviousProtectionEtag;

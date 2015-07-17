@@ -3,7 +3,7 @@
  */
 
 @interface EKSocialURLSearchDelegate : NSObject <ABSearchOperationDelegate> {
-    id /* block */ _searchCompleteHandler;
+    id /* block */  _searchCompleteHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface TSUNetworkReachability : NSObject {
-    int _enableCount;
-    BOOL _localWiFi;
-    BOOL _notifierActive;
-    struct __SCNetworkReachability { } *_reachabilityRef;
+    int  _enableCount;
+    BOOL  _localWiFi;
+    BOOL  _notifierActive;
+    struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
 @property (nonatomic, readonly) BOOL connectionRequired;

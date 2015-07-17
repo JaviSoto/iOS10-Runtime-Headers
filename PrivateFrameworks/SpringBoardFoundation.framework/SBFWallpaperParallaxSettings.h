@@ -3,9 +3,9 @@
  */
 
 @interface SBFWallpaperParallaxSettings : SBFParallaxSettings {
-    float _overhangX;
-    float _overhangY;
-    float _perspectiveTransform;
+    float  _overhangX;
+    float  _overhangY;
+    float  _perspectiveTransform;
 }
 
 @property float overhangX;

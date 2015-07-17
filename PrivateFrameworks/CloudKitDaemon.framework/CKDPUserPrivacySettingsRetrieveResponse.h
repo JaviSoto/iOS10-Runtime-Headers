@@ -3,8 +3,8 @@
  */
 
 @interface CKDPUserPrivacySettingsRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_applicationBundles;
-    CKDPUserPrivacySettings *_userPrivacySettings;
+    NSMutableArray * _applicationBundles;
+    CKDPUserPrivacySettings * _userPrivacySettings;
 }
 
 @property (nonatomic, retain) NSMutableArray *applicationBundles;

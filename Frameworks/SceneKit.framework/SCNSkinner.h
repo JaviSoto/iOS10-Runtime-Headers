@@ -3,8 +3,7 @@
  */
 
 @interface SCNSkinner : NSObject <NSSecureCoding> {
-    id _reserved;
-    struct __C3DSkinner { } *_skinner;
+    struct __C3DSkinner { } * _skinner;
 }
 
 @property (nonatomic, retain) SCNGeometry *baseGeometry;

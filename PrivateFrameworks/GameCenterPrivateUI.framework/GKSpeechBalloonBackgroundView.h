@@ -3,10 +3,10 @@
  */
 
 @interface GKSpeechBalloonBackgroundView : UIView {
-    _GKCustomDrawnSpeechBalloonBackgroundView *_customDrawnView;
-    unsigned char _drawStyle;
-    _GKImageSpeechBalloonBackgroundView *_strokedImageView;
-    unsigned char _tipDirection;
+    _GKCustomDrawnSpeechBalloonBackgroundView * _customDrawnView;
+    unsigned char  _drawStyle;
+    _GKImageSpeechBalloonBackgroundView * _strokedImageView;
+    unsigned char  _tipDirection;
 }
 
 @property (nonatomic, retain) _GKCustomDrawnSpeechBalloonBackgroundView *customDrawnView;

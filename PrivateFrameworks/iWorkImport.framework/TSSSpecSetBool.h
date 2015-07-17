@@ -3,8 +3,8 @@
  */
 
 @interface TSSSpecSetBool : TSSSpecBool {
-    BOOL _unset;
-    BOOL _value;
+    BOOL  _unset;
+    BOOL  _value;
 }
 
 - (id)apply:(id)arg1;

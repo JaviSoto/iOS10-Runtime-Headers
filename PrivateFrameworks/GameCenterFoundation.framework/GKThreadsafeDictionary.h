@@ -3,8 +3,8 @@
  */
 
 @interface GKThreadsafeDictionary : NSObject {
-    NSMutableDictionary *_dictionary;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _dictionary;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *dictionary;

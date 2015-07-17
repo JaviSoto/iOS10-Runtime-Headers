@@ -3,10 +3,10 @@
  */
 
 @interface WKInterfaceTable : WKInterfaceObject {
-    WKInterfaceController *_controller;
-    NSMutableArray *_rowControllerProperties;
-    NSMutableArray *_rowControllers;
-    NSDictionary *_rowDescriptions;
+    WKInterfaceController * _controller;
+    NSMutableArray * _rowControllerProperties;
+    NSMutableArray * _rowControllers;
+    NSDictionary * _rowDescriptions;
 }
 
 @property (nonatomic) WKInterfaceController *controller;

@@ -3,9 +3,9 @@
  */
 
 @interface GEORouteIncident : PBCodable <NSCopying> {
-    NSString *_crossStreet;
-    long long _endTime;
-    BOOL _endTimeReliable;
+    NSString * _crossStreet;
+    long long  _endTime;
+    BOOL  _endTimeReliable;
     struct { 
         unsigned int endTime : 1; 
         unsigned int startTime : 1; 
@@ -15,17 +15,17 @@
         unsigned int significance : 1; 
         unsigned int type : 1; 
         unsigned int endTimeReliable : 1; 
-    } _has;
-    NSString *_incidentId;
-    NSString *_info;
-    unsigned int _laneClosureCount;
-    int _laneClosureType;
-    GEOLatLng *_position;
-    int _significance;
-    long long _startTime;
-    NSString *_street;
-    int _type;
-    long long _updateTime;
+    }  _has;
+    NSString * _incidentId;
+    NSString * _info;
+    unsigned int  _laneClosureCount;
+    int  _laneClosureType;
+    GEOLatLng * _position;
+    int  _significance;
+    long long  _startTime;
+    NSString * _street;
+    int  _type;
+    long long  _updateTime;
 }
 
 @property (nonatomic, retain) NSString *crossStreet;

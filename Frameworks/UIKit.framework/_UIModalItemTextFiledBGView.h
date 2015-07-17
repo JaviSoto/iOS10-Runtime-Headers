@@ -3,10 +3,10 @@
  */
 
 @interface _UIModalItemTextFiledBGView : _UITextFieldRoundedRectBackgroundViewNeue {
-    UIColor *_backgroundColor;
-    UIView *_separatorView;
-    UIColor *_separatorsColor;
-    int _textFieldsCount;
+    UIColor * _backgroundColor;
+    UIView * _separatorView;
+    UIColor * _separatorsColor;
+    int  _textFieldsCount;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

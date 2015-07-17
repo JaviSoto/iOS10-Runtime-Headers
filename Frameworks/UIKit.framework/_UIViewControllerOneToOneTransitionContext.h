@@ -12,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } _fromEndFrame;
+    }  _fromEndFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,11 +22,11 @@
             float width; 
             float height; 
         } size; 
-    } _fromStartFrame;
-    UIView *_fromView;
-    UIViewController *_fromViewController;
-    BOOL _isFromViewSet;
-    BOOL _isToViewSet;
+    }  _fromStartFrame;
+    UIView * _fromView;
+    UIViewController * _fromViewController;
+    BOOL  _isFromViewSet;
+    BOOL  _isToViewSet;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -36,7 +36,7 @@
             float width; 
             float height; 
         } size; 
-    } _toEndFrame;
+    }  _toEndFrame;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -46,9 +46,9 @@
             float width; 
             float height; 
         } size; 
-    } _toStartFrame;
-    UIView *_toView;
-    UIViewController *_toViewController;
+    }  _toStartFrame;
+    UIView * _toView;
+    UIViewController * _toViewController;
 }
 
 @property (setter=_setFromEndFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } fromEndFrame;
@@ -60,6 +60,7 @@
 @property (getter=_toView, setter=_setToView:, nonatomic, retain) UIView *toView;
 @property (setter=_setToViewController:, nonatomic, retain) UIViewController *toViewController;
 
+- (void).cxx_destruct;
 - (id)_fromView;
 - (void)_setFromEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setFromStartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

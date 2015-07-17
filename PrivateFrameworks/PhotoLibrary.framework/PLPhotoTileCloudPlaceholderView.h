@@ -3,7 +3,7 @@
  */
 
 @interface PLPhotoTileCloudPlaceholderView : UIView <PLTilePlaceholderView> {
-    <PLPhotoTileCloudPlaceholderViewDelegate> *_delegate;
+    <PLPhotoTileCloudPlaceholderViewDelegate> * _delegate;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,15 +13,15 @@
             float width; 
             float height; 
         } size; 
-    } _imageRect;
-    BOOL _indicatorIsVisible;
-    double _lastViewPhaseChangeDate;
-    UIView *_loadingContainerView;
-    UIButton *_loadingErrorButton;
-    PLRoundProgressView *_loadingIndicatorView;
-    BOOL _showingError;
-    BOOL _showingLoading;
-    BOOL _toolbarVisible;
+    }  _imageRect;
+    BOOL  _indicatorIsVisible;
+    double  _lastViewPhaseChangeDate;
+    UIView * _loadingContainerView;
+    UIButton * _loadingErrorButton;
+    PLRoundProgressView * _loadingIndicatorView;
+    BOOL  _showingError;
+    BOOL  _showingLoading;
+    BOOL  _toolbarVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIDividerView : UIView {
-    int _dividerOrientation;
-    float _dividerSize;
+    int  _dividerOrientation;
+    float  _dividerSize;
 }
 
 @property (nonatomic, retain) UIColor *dividerColor;

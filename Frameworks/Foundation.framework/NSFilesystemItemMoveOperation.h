@@ -3,10 +3,10 @@
  */
 
 @interface NSFilesystemItemMoveOperation : NSOperation {
-    id _delegate;
-    NSString *_destinationPath;
-    NSError *_error;
-    NSString *_sourcePath;
+    id  _delegate;
+    NSString * _destinationPath;
+    NSError * _error;
+    NSString * _sourcePath;
 }
 
 + (id)_errorWithErrno:(int)arg1 sourcePath:(id)arg2 destinationPath:(id)arg3;

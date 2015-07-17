@@ -3,8 +3,8 @@
  */
 
 @interface HDDataDeletionContext : NSObject {
-    HDSQLiteDatabase *_database;
-    NSMutableDictionary *_deleteStatementsByClassName;
+    HDSQLiteDatabase * _database;
+    NSMutableDictionary * _deleteStatementsByClassName;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;

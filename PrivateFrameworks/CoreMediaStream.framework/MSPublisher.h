@@ -3,25 +3,25 @@
  */
 
 @interface MSPublisher : MSCupidStateMachine <MSPublishStorageProtocolDelegate, MSPublishStreamsProtocolDelegate, MSPublisher> {
-    MSMediaStreamDaemon *_daemon;
-    <MSPublisherDelegate> *_delegate;
-    MSObjectQueue *_derivativesQueue;
-    NSMutableDictionary *_fileHashToAssetMap;
-    int _maxErrorCount;
-    NSMutableDictionary *_maxSizeByUTI;
-    NSArray *_pendingDerivativesQueue;
-    MSPublishStreamsProtocol *_protocol;
-    int _publishBatchSize;
-    long long _publishTargetByteCount;
-    MSObjectQueue *_quarantinedQueue;
-    NSMutableArray *_requestAuthQueue;
-    NSMutableArray *_sendingQueue;
-    unsigned int _sendingQueueCount;
-    int _state;
-    <MSPublishStorageProtocol> *_storageProtocol;
-    NSURL *_storageProtocolURL;
-    NSMutableArray *_tempFiles;
-    MSObjectQueue *_uploadQueue;
+    MSMediaStreamDaemon * _daemon;
+    <MSPublisherDelegate> * _delegate;
+    MSObjectQueue * _derivativesQueue;
+    NSMutableDictionary * _fileHashToAssetMap;
+    int  _maxErrorCount;
+    NSMutableDictionary * _maxSizeByUTI;
+    NSArray * _pendingDerivativesQueue;
+    MSPublishStreamsProtocol * _protocol;
+    int  _publishBatchSize;
+    long long  _publishTargetByteCount;
+    MSObjectQueue * _quarantinedQueue;
+    NSMutableArray * _requestAuthQueue;
+    NSMutableArray * _sendingQueue;
+    unsigned int  _sendingQueueCount;
+    int  _state;
+    <MSPublishStorageProtocol> * _storageProtocol;
+    NSURL * _storageProtocolURL;
+    NSMutableArray * _tempFiles;
+    MSObjectQueue * _uploadQueue;
 }
 
 @property (nonatomic) MSMediaStreamDaemon *daemon;

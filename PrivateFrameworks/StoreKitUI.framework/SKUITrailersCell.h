@@ -3,9 +3,9 @@
  */
 
 @interface SKUITrailersCell : UICollectionViewCell {
-    UIImageView *_imageView;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    UIImageView * _imageView;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *image;

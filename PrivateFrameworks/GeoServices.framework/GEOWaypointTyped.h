@@ -6,12 +6,12 @@
     struct { 
         unsigned int waypointType : 1; 
         unsigned int isCurrentLocation : 1; 
-    } _has;
-    BOOL _isCurrentLocation;
-    GEOWaypointID *_waypointId;
-    GEOWaypointLocation *_waypointLocation;
-    GEOWaypointPlace *_waypointPlace;
-    int _waypointType;
+    }  _has;
+    BOOL  _isCurrentLocation;
+    GEOWaypointID * _waypointId;
+    GEOWaypointLocation * _waypointLocation;
+    GEOWaypointPlace * _waypointPlace;
+    int  _waypointType;
 }
 
 @property (nonatomic) BOOL hasIsCurrentLocation;

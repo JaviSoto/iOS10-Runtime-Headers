@@ -3,11 +3,11 @@
  */
 
 @interface NACVolumeValueMessage : PBCodable <NSCopying> {
-    NSString *_category;
+    NSString * _category;
     struct { 
         unsigned int volumeValue : 1; 
-    } _has;
-    float _volumeValue;
+    }  _has;
+    float  _volumeValue;
 }
 
 @property (nonatomic, retain) NSString *category;

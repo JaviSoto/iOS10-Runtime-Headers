@@ -3,12 +3,12 @@
  */
 
 @interface BLTBulletinDistributorSubscriber : NSObject <BLTPingService> {
-    <BLTPingSubscribing> *_client;
-    NSXPCConnection *_connection;
-    <BLTBulletinDistributorSubscriberDelegate> *_delegate;
-    NSString *_machServiceName;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_subscriptions;
+    <BLTPingSubscribing> * _client;
+    NSXPCConnection * _connection;
+    <BLTBulletinDistributorSubscriberDelegate> * _delegate;
+    NSString * _machServiceName;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _subscriptions;
 }
 
 @property (nonatomic, retain) <BLTPingSubscribing> *client;
@@ -28,6 +28,7 @@
 - (id)delegate;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
+- (id)init;
 - (id)initWithClient:(id)arg1;
 - (id)machServiceName;
 - (void)pingWithBulletin:(id)arg1;

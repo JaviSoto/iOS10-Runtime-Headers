@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentOptionGroupButtonItem : PKPaymentOptionGroupItem {
-    id /* block */ _buttonHandler;
+    id /* block */  _buttonHandler;
 }
 
 @property (nonatomic, copy) id /* block */ buttonHandler;

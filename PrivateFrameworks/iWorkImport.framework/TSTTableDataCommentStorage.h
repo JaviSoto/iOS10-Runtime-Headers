@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataCommentStorage : TSTTableDataObject {
-    TSDCommentStorage *mCommentStorage;
+    TSDCommentStorage * mCommentStorage;
 }
 
 - (void)dealloc;

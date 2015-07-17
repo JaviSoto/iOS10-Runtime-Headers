@@ -3,19 +3,19 @@
  */
 
 @interface MCNearbyServiceAdvertiser : NSObject <NSNetServiceDelegate> {
-    NSData *_TXTRecordData;
-    <MCNearbyServiceAdvertiserDelegate> *_delegate;
-    NSDictionary *_discoveryInfo;
-    NSString *_formattedServiceType;
-    NSMutableDictionary *_invites;
-    BOOL _isAdvertising;
-    MCPeerID *_myPeerID;
-    NSNetService *_networkServer;
-    int _outgoingInviteID;
-    NSMutableDictionary *_peers;
-    NSString *_serviceType;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    BOOL _wasAdvertising;
+    NSData * _TXTRecordData;
+    <MCNearbyServiceAdvertiserDelegate> * _delegate;
+    NSDictionary * _discoveryInfo;
+    NSString * _formattedServiceType;
+    NSMutableDictionary * _invites;
+    BOOL  _isAdvertising;
+    MCPeerID * _myPeerID;
+    NSNetService * _networkServer;
+    int  _outgoingInviteID;
+    NSMutableDictionary * _peers;
+    NSString * _serviceType;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    BOOL  _wasAdvertising;
 }
 
 @property (nonatomic, retain) NSData *TXTRecordData;

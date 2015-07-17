@@ -3,14 +3,14 @@
  */
 
 @interface ATPError : PBCodable <NSCopying> {
-    int _code;
-    NSString *_domain;
-    long long _domainCode;
-    NSString *_errorDescription;
+    int  _code;
+    NSString * _domain;
+    long long  _domainCode;
+    NSString * _errorDescription;
     struct { 
         unsigned int domainCode : 1; 
         unsigned int code : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int code;

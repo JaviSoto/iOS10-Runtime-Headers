@@ -3,17 +3,17 @@
  */
 
 @interface _IDSAccount : NSObject <IDSDaemonListenerProtocol> {
-    NSDictionary *_accountConfig;
-    id _delegateContext;
-    NSMapTable *_delegateToInfo;
-    NSMutableArray *_devices;
-    BOOL _devicesLoaded;
-    BOOL _isEnabled;
-    IDSDevice *_localDevice;
-    NSMapTable *_registrationDelegateToInfo;
-    NSString *_service;
-    NSString *_serviceToken;
-    NSString *_uniqueID;
+    NSDictionary * _accountConfig;
+    id  _delegateContext;
+    NSMapTable * _delegateToInfo;
+    NSMutableArray * _devices;
+    BOOL  _devicesLoaded;
+    BOOL  _isEnabled;
+    IDSDevice * _localDevice;
+    NSMapTable * _registrationDelegateToInfo;
+    NSString * _service;
+    NSString * _serviceToken;
+    NSString * _uniqueID;
 }
 
 @property (setter=_setIsEnabled:, nonatomic) BOOL _isEnabled;

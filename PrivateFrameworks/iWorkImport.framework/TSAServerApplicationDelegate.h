@@ -3,7 +3,7 @@
  */
 
 @interface TSAServerApplicationDelegate : NSObject {
-    TSABaseApplicationDelegate *_baseApplicationDelegate;
+    TSABaseApplicationDelegate * _baseApplicationDelegate;
 }
 
 @property (nonatomic, retain) TSABaseApplicationDelegate *baseApplicationDelegate;

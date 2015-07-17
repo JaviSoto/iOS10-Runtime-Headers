@@ -3,10 +3,10 @@
  */
 
 @interface NSItemProvider : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableDictionary *__loadHandlers;
-    <_NSItemProviderLoading> *__loadOperator;
-    id /* block */ __previewImageHandler;
-    NSDictionary *_userInfo;
+    NSMutableDictionary * __loadHandlers;
+    <_NSItemProviderLoading> * __loadOperator;
+    id /* block */  __previewImageHandler;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *_loadHandlers;

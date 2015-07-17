@@ -25,11 +25,11 @@
             int total_size_; 
         } data_references_; 
         int _data_references_cached_byte_size_; 
-    } _fieldInfo;
+    }  _fieldInfo;
     struct shared_ptr<google::protobuf::UnknownFieldSet> { 
         struct UnknownFieldSet {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _fieldSet;
+    }  _fieldSet;
 }
 
 + (id)unknownFieldWithFieldSet:(struct shared_ptr<google::protobuf::UnknownFieldSet> { struct UnknownFieldSet {} *x1; struct __shared_weak_count {} *x2; }*)arg1 fieldInfo:(const struct FieldInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FieldPath {} *x5; int x6; int x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; }*)arg2;

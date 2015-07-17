@@ -3,10 +3,10 @@
  */
 
 @interface CKDContainerInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_containerScopedUserID;
-    NSURL *_publicCloudDBURL;
-    NSURL *_publicDeviceServiceURL;
-    NSURL *_publicShareServiceURL;
+    NSString * _containerScopedUserID;
+    NSURL * _publicCloudDBURL;
+    NSURL * _publicDeviceServiceURL;
+    NSURL * _publicShareServiceURL;
 }
 
 @property (nonatomic, copy) NSString *containerScopedUserID;

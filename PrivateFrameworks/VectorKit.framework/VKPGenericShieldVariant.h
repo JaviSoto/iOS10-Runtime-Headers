@@ -3,8 +3,8 @@
  */
 
 @interface VKPGenericShieldVariant : PBCodable <NSCopying> {
-    NSString *_fontName;
-    float _fontSize;
+    NSString * _fontName;
+    float  _fontSize;
     struct { 
         unsigned int fontSize : 1; 
         unsigned int leftCapWidth : 1; 
@@ -14,17 +14,17 @@
         unsigned int rightCapWidth : 1; 
         unsigned int rightPadding : 1; 
         unsigned int textBaseline : 1; 
-    } _has;
-    struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; } *_layers;
-    unsigned int _layersCount;
-    unsigned int _layersSpace;
-    float _leftCapWidth;
-    float _leftPadding;
-    float _lineSpacing;
-    unsigned int _numberOfLines;
-    float _rightCapWidth;
-    float _rightPadding;
-    float _textBaseline;
+    }  _has;
+    struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; } * _layers;
+    unsigned int  _layersCount;
+    unsigned int  _layersSpace;
+    float  _leftCapWidth;
+    float  _leftPadding;
+    float  _lineSpacing;
+    unsigned int  _numberOfLines;
+    float  _rightCapWidth;
+    float  _rightPadding;
+    float  _textBaseline;
 }
 
 @property (nonatomic, retain) NSString *fontName;

@@ -3,9 +3,9 @@
  */
 
 @interface CPZoneBorderIntersection : NSObject <CPCopying, NSCopying> {
-    BOOL backwardVector;
-    BOOL forwardVector;
-    CPZoneBorder *intersectingBorder;
+    BOOL  backwardVector;
+    BOOL  forwardVector;
+    CPZoneBorder * intersectingBorder;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,7 +15,7 @@
             float width; 
             float height; 
         } size; 
-    } intersectionRect;
+    }  intersectionRect;
 }
 
 - (BOOL)backwardVector;

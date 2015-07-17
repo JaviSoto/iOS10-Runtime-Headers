@@ -12,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } _bounds;
+    }  _bounds;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -22,15 +22,15 @@
             float width; 
             float height; 
         } size; 
-    } _box;
-    UIPDFDocument *_document;
-    struct CGColor { } *_highlightColor;
-    BOOL _isCancelled;
-    int _lock;
-    CALayer *_owner;
-    unsigned int _pageIndex;
-    unsigned int _pageRotation;
-    unsigned int _threadCount;
+    }  _box;
+    UIPDFDocument * _document;
+    struct CGColor { } * _highlightColor;
+    BOOL  _isCancelled;
+    int  _lock;
+    CALayer * _owner;
+    unsigned int  _pageIndex;
+    unsigned int  _pageRotation;
+    unsigned int  _threadCount;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -38,9 +38,9 @@
         float d; 
         float tx; 
         float ty; 
-    } _transform;
-    UIPDFPageView *_view;
-    struct CGColor { } *_white;
+    }  _transform;
+    UIPDFPageView * _view;
+    struct CGColor { } * _white;
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } box;

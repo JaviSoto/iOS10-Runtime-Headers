@@ -3,10 +3,10 @@
  */
 
 @interface EKEventAttendeesDetailItem : EKEventDetailItem {
-    NSArray *_attendees;
-    NSMutableDictionary *_attendeesCells;
-    EKEventDetailAttendeesCell *_cell;
-    int _status;
+    NSArray * _attendees;
+    NSMutableDictionary * _attendeesCells;
+    EKEventDetailAttendeesCell * _cell;
+    int  _status;
 }
 
 @property (nonatomic, retain) NSArray *attendees;

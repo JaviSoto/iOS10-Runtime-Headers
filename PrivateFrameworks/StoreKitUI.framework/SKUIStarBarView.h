@@ -3,12 +3,12 @@
  */
 
 @interface SKUIStarBarView : UIView {
-    UIColor *_emptyColor;
-    UIImage *_emptyStarImage;
-    UIColor *_filledColor;
-    UIImage *_filledStarImage;
-    int _numberOfStars;
-    float _value;
+    UIColor * _emptyColor;
+    UIImage * _emptyStarImage;
+    UIColor * _filledColor;
+    UIImage * _filledStarImage;
+    int  _numberOfStars;
+    float  _value;
 }
 
 @property (nonatomic, copy) UIColor *emptyColor;

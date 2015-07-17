@@ -3,24 +3,24 @@
  */
 
 @interface RenderedHandViewFactory : NSObject {
-    BOOL _allowCaching;
-    NSMutableDictionary *_angleCache;
-    NSString *_imagePath;
+    BOOL  _allowCaching;
+    NSMutableDictionary * _angleCache;
+    NSString * _imagePath;
     struct CGPoint { 
         float x; 
         float y; 
-    } _offset;
-    struct CGPDFPage { } *_page;
-    unsigned int _registeredClientsCount;
-    NSBundle *_resourcesBundle;
+    }  _offset;
+    struct CGPDFPage { } * _page;
+    unsigned int  _registeredClientsCount;
+    NSBundle * _resourcesBundle;
     struct CGSize { 
         float width; 
         float height; 
-    } _scale;
+    }  _scale;
     struct CGSize { 
         float width; 
         float height; 
-    } _viewSize;
+    }  _viewSize;
 }
 
 @property (nonatomic, readonly) BOOL allowCaching;
@@ -32,6 +32,7 @@
 + (id)registerForFactoryWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4 allowCaching:(BOOL)arg5;
 + (void)unregisterForFactory:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)allowCaching;
 - (void)dealloc;
 - (void)flushCache;

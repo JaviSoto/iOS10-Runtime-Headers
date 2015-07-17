@@ -3,9 +3,9 @@
  */
 
 @interface GKShowcaseCellView : UICollectionReusableView {
-    UICollectionViewCell *_cell;
-    SEL _touchedShowcaseCellAction;
-    GKHairlineView *_underlineView;
+    UICollectionViewCell * _cell;
+    SEL  _touchedShowcaseCellAction;
+    GKHairlineView * _underlineView;
 }
 
 @property (nonatomic, retain) UICollectionViewCell *cell;

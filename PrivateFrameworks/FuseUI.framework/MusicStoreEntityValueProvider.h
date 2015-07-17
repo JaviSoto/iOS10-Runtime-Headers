@@ -3,8 +3,8 @@
  */
 
 @interface MusicStoreEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    <MusicEntityProviding> *_childrenEntityProvider;
-    MusicStoreItemMetadataContext *_storeItemMetadataContext;
+    <MusicEntityProviding> * _childrenEntityProvider;
+    MusicStoreItemMetadataContext * _storeItemMetadataContext;
 }
 
 @property (nonatomic, retain) <MusicEntityProviding> *childrenEntityProvider;

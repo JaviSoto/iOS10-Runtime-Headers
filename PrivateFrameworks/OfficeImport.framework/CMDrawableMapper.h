@@ -12,18 +12,18 @@
             float width; 
             float height; 
         } size; 
-    } mBox;
-    OADDrawable *mDrawable;
-    NSString *mExtension;
-    NSData *mImageBinaryData;
-    BOOL mIsCropped;
-    BOOL mIsSupported;
-    NSString *mName;
-    OADOrientedBounds *mOrientedBounds;
-    int mResourceType;
-    float mRotation;
-    NSString *mSourcePath;
-    CMDrawableStyle *mStyle;
+    }  mBox;
+    OADDrawable * mDrawable;
+    NSString * mExtension;
+    NSData * mImageBinaryData;
+    BOOL  mIsCropped;
+    BOOL  mIsSupported;
+    NSString * mName;
+    OADOrientedBounds * mOrientedBounds;
+    int  mResourceType;
+    float  mRotation;
+    NSString * mSourcePath;
+    CMDrawableStyle * mStyle;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -33,10 +33,9 @@
             float width; 
             float height; 
         } size; 
-    } mUncroppedBox;
+    }  mUncroppedBox;
 }
 
-- (id).cxx_construct;
 - (id)blipAtIndex:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 - (void)calculateUncroppedBox:(id)arg1;

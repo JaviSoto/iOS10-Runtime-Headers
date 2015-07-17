@@ -3,21 +3,21 @@
  */
 
 @interface PLCPLStatus : NSObject <CPLStatusDelegate> {
-    CPLStatus *_cplStatus;
-    <PLCPLStatusDelegate> *_delegate;
-    BOOL _isCPLDataClassEnabled;
-    BOOL _isCPLDataClassEnabledValid;
-    unsigned int _numberOfImagesToDownload;
-    unsigned int _numberOfImagesToUpload;
-    unsigned int _numberOfPulledAssets;
-    unsigned int _numberOfPushedAsset;
-    unsigned int _numberOfVideosToDownload;
-    unsigned int _numberOfVideosToUpload;
-    NSProgress *_progress;
-    id _progressSubscriber;
-    double _syncProgress;
-    unsigned int _syncProgressState;
-    unsigned int _totalAssetsOnServer;
+    CPLStatus * _cplStatus;
+    <PLCPLStatusDelegate> * _delegate;
+    BOOL  _isCPLDataClassEnabled;
+    BOOL  _isCPLDataClassEnabledValid;
+    unsigned int  _numberOfImagesToDownload;
+    unsigned int  _numberOfImagesToUpload;
+    unsigned int  _numberOfPulledAssets;
+    unsigned int  _numberOfPushedAsset;
+    unsigned int  _numberOfVideosToDownload;
+    unsigned int  _numberOfVideosToUpload;
+    NSProgress * _progress;
+    id  _progressSubscriber;
+    double  _syncProgress;
+    unsigned int  _syncProgressState;
+    unsigned int  _totalAssetsOnServer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

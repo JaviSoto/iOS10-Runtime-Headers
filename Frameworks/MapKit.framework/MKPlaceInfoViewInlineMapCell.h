@@ -3,9 +3,9 @@
  */
 
 @interface MKPlaceInfoViewInlineMapCell : ABContactCell {
-    UIImage *_inlineMap;
-    UIImageView *_inlineMapView;
-    NSArray *_marginConstraints;
+    UIImage * _inlineMap;
+    UIImageView * _inlineMapView;
+    NSArray * _marginConstraints;
 }
 
 @property (nonatomic, retain) UIImage *inlineMap;

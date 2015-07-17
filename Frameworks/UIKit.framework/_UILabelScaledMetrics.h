@@ -3,19 +3,19 @@
  */
 
 @interface _UILabelScaledMetrics : NSObject {
-    float _actualScaleFactor;
-    float _baselineOffset;
-    NSAttributedString *_scaledAttributedText;
-    float _scaledBaselineOffset;
-    float _scaledLineHeight;
+    float  _actualScaleFactor;
+    float  _baselineOffset;
+    NSAttributedString * _scaledAttributedText;
+    float  _scaledBaselineOffset;
+    float  _scaledLineHeight;
     struct CGSize { 
         float width; 
         float height; 
-    } _scaledSize;
+    }  _scaledSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _targetSize;
+    }  _targetSize;
 }
 
 @property (nonatomic) float actualScaleFactor;
@@ -26,9 +26,9 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } scaledSize;
 @property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
 
+- (void).cxx_destruct;
 - (float)actualScaleFactor;
 - (float)baselineOffset;
-- (void)dealloc;
 - (id)scaledAttributedText;
 - (float)scaledBaselineOffset;
 - (float)scaledLineHeight;

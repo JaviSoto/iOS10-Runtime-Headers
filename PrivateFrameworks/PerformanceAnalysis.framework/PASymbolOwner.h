@@ -3,17 +3,17 @@
  */
 
 @interface PASymbolOwner : NSObject <PASerializable> {
-    NSString *_binaryVersion;
-    NSString *_bundleIdentifier;
-    NSString *_bundleShortVersion;
-    NSString *_bundleVersion;
-    NSString *_name;
-    NSArray *_oldSymbols;
-    NSString *_path;
-    NSMutableArray *_symbols;
-    PASymbol *_testSymbol;
-    unsigned long long _textSegmentLength;
-    NSUUID *_uuid;
+    NSString * _binaryVersion;
+    NSString * _bundleIdentifier;
+    NSString * _bundleShortVersion;
+    NSString * _bundleVersion;
+    NSString * _name;
+    NSArray * _oldSymbols;
+    NSString * _path;
+    NSMutableArray * _symbols;
+    PASymbol * _testSymbol;
+    unsigned long long  _textSegmentLength;
+    NSUUID * _uuid;
 }
 
 @property (readonly) NSString *binaryVersion;

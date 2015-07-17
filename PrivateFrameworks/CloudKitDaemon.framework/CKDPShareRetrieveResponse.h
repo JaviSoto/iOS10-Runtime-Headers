@@ -3,7 +3,7 @@
  */
 
 @interface CKDPShareRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_shares;
+    NSMutableArray * _shares;
 }
 
 @property (nonatomic, retain) NSMutableArray *shares;

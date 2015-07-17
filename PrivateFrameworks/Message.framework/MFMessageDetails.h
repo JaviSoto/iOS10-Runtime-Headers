@@ -3,18 +3,18 @@
  */
 
 @interface MFMessageDetails : NSObject {
-    long long conversationHash;
-    unsigned int dateReceived;
-    unsigned int dateSent;
-    unsigned long encoding;
-    NSString *externalID;
-    BOOL isInvalid;
-    MFMessageLibrary *library;
-    unsigned int libraryID;
-    unsigned int mailboxID;
-    unsigned long long messageFlags;
-    long long messageIDHash;
-    unsigned long uid;
+    long long  conversationHash;
+    unsigned int  dateReceived;
+    unsigned int  dateSent;
+    unsigned long  encoding;
+    NSString * externalID;
+    BOOL  isInvalid;
+    MFMessageLibrary * library;
+    unsigned int  libraryID;
+    unsigned int  mailboxID;
+    unsigned long long  messageFlags;
+    long long  messageIDHash;
+    unsigned long  uid;
 }
 
 - (id)copyMessageInfo;

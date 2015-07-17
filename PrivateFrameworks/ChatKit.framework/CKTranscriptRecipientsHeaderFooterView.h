@@ -3,12 +3,12 @@
  */
 
 @interface CKTranscriptRecipientsHeaderFooterView : UITableViewHeaderFooterView {
-    UIView *_bottomSeparator;
-    UILabel *_headerLabel;
-    UITextView *_locationSharingTextView;
-    float _margin;
-    UILabel *_preceedingSectionFooterLabel;
-    UIView *_topSeparator;
+    UIView * _bottomSeparator;
+    UILabel * _headerLabel;
+    UITextView * _locationSharingTextView;
+    float  _margin;
+    UILabel * _preceedingSectionFooterLabel;
+    UIView * _topSeparator;
 }
 
 @property (nonatomic, retain) UIView *bottomSeparator;
@@ -28,6 +28,7 @@
 - (id)locationSharingTextView;
 - (float)margin;
 - (id)preceedingSectionFooterLabel;
+- (void)prepareForReuse;
 - (void)setBottomSeparator:(id)arg1;
 - (void)setHeaderLabel:(id)arg1;
 - (void)setLocationSharingTextView:(id)arg1;

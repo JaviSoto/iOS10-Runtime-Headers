@@ -3,7 +3,7 @@
  */
 
 @interface _HKUUIDFilter : _HKFilter {
-    NSSet *_UUIDs;
+    NSSet * _UUIDs;
 }
 
 @property (nonatomic, readonly) NSSet *UUIDs;

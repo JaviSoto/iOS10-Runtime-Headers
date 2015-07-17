@@ -3,12 +3,12 @@
  */
 
 @interface PLCloudSharedCommentsJob : PLCloudSharingJob {
-    NSString *_albumGUID;
-    NSString *_assetGUID;
-    NSString *_commentGUID;
-    long long _jobType;
-    NSArray *_msASComments;
-    NSDictionary *_mstreamdInfoDictionary;
+    NSString * _albumGUID;
+    NSString * _assetGUID;
+    NSString * _commentGUID;
+    long long  _jobType;
+    NSArray * _msASComments;
+    NSDictionary * _mstreamdInfoDictionary;
 }
 
 @property (nonatomic, retain) NSString *albumGUID;

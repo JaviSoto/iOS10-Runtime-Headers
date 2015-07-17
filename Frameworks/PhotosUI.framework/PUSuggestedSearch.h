@@ -3,18 +3,18 @@
  */
 
 @interface PUSuggestedSearch : NSObject <PUSearchResult> {
-    unsigned int __approximateCount;
-    id _albumUUID;
-    <PUSuggestedSearchDelegate> *_delegate;
-    NSString *_displaySubtitle;
-    NSString *_displayTitle;
-    BOOL _hasPendingChanges;
-    PSIQuery *_query;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_searchString;
-    unsigned int _taskId;
-    NSMutableArray *_uncommittedUUIDs;
-    NSArray *_uuids;
+    unsigned int  __approximateCount;
+    id  _albumUUID;
+    <PUSuggestedSearchDelegate> * _delegate;
+    NSString * _displaySubtitle;
+    NSString * _displayTitle;
+    BOOL  _hasPendingChanges;
+    PSIQuery * _query;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _searchString;
+    unsigned int  _taskId;
+    NSMutableArray * _uncommittedUUIDs;
+    NSArray * _uuids;
 }
 
 @property (setter=_setApproximateCount:) unsigned int _approximateCount;

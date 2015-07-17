@@ -3,9 +3,9 @@
  */
 
 @interface BLTBulletinLightsAndSirensReplyInfo : NSObject {
-    BOOL _didPlayLightsAndSirens;
-    BOOL _handledLightsAndSirens;
-    id /* block */ _reply;
+    BOOL  _didPlayLightsAndSirens;
+    BOOL  _handledLightsAndSirens;
+    id /* block */  _reply;
 }
 
 @property (nonatomic) BOOL didPlayLightsAndSirens;

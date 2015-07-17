@@ -3,10 +3,10 @@
  */
 
 @interface SBUIAlphanumericPasscodeEntryField : SBUIPasscodeEntryField {
-    UIView *_leftPaddingView;
-    UIView *_rightPaddingView;
-    UIView *_springView;
-    UIView *_springViewParent;
+    UIView * _leftPaddingView;
+    UIView * _rightPaddingView;
+    UIView * _springView;
+    UIView * _springViewParent;
 }
 
 @property (nonatomic, readonly) UITextInputTraits *textInputTraits;

@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaLibraryArtwork : NSObject {
-    ML3Artwork *_artwork;
-    MPMediaLibraryArtworkRequest *_artworkRequest;
-    NSArray *_validSizes;
+    ML3Artwork * _artwork;
+    MPMediaLibraryArtworkRequest * _artworkRequest;
+    NSArray * _validSizes;
 }
 
 @property (nonatomic, retain) ML3Artwork *artwork;

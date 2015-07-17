@@ -3,7 +3,7 @@
  */
 
 @interface CKDNDList : NSObject {
-    NPSManager *_syncManager;
+    NPSManager * _syncManager;
 }
 
 @property (nonatomic, retain) NPSManager *syncManager;

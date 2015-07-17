@@ -3,9 +3,9 @@
  */
 
 @interface AVVideoCompositionInstructionInternal : NSObject {
-    struct CGColor { } *backgroundColor;
-    BOOL enablePostProcessing;
-    NSArray *layerInstructions;
+    struct CGColor { } * backgroundColor;
+    BOOL  enablePostProcessing;
+    NSArray * layerInstructions;
     struct { 
         struct { 
             long long value; 
@@ -19,7 +19,7 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
-    } timeRange;
+    }  timeRange;
 }
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface GKTabBarController : UITabBarController {
-    GKBubbleFlowRootViewController *_bubbleFlowRootViewController;
-    unsigned int _deferedRotationCount;
+    GKBubbleFlowRootViewController * _bubbleFlowRootViewController;
+    unsigned int  _deferedRotationCount;
 }
 
 @property (nonatomic, retain) GKBubbleFlowRootViewController *bubbleFlowRootViewController;
@@ -33,5 +33,6 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)tabBarCovered;
 - (id)viewControllers;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -7,28 +7,28 @@
         struct __compressed_pair<ggl::AlphaAtlas *, std::__1::default_delete<ggl::AlphaAtlas> > { 
             struct AlphaAtlas {} *__first_; 
         } __ptr_; 
-    } _alphaAtlas;
+    }  _alphaAtlas;
     struct shared_ptr<ggl::Device> { 
         struct Device {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _device;
-    VKGGLTextureManager *_gglTextureManager;
+    }  _device;
+    VKGGLTextureManager * _gglTextureManager;
     struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
         struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
             struct IsoAlphaAtlas {} *__first_; 
         } __ptr_; 
-    } _highInflationAlphaAtlas;
-    VKIconManager *_iconManager;
+    }  _highInflationAlphaAtlas;
+    VKIconManager * _iconManager;
     struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
         struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
             struct IsoAlphaAtlas {} *__first_; 
         } __ptr_; 
-    } _isoAlphaAtlas;
-    VKResourceManager *_resourceManager;
-    VKShieldManager *_shieldManager;
-    VKStylesheetVendor *_stylesheetVendor;
-    unsigned int _tileGroupIdentifier;
-    VKTrafficIncidentImageManager *_trafficIncidentImageManager;
+    }  _isoAlphaAtlas;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    VKResourceManager * _resourceManager;
+    VKShieldManager * _shieldManager;
+    VKStylesheetVendor * _stylesheetVendor;
+    VKTrafficIncidentImageManager * _trafficIncidentImageManager;
 }
 
 @property (nonatomic, readonly) struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*alphaAtlas;
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) VKStylesheetVendor *stylesheetVendor;
 @property (nonatomic, readonly) VKTrafficIncidentImageManager *trafficIncidentImageManager;
 
-+ (id)sharedResourcesForTileGroupIdentifier:(unsigned int)arg1;
++ (id)sharedResourcesForConfiguration:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -52,7 +52,7 @@
 - (id)gglTextureManager;
 - (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)highInflationAlphaAtlas;
 - (id)iconManager;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1;
+- (id)initWithConfiguration:(id)arg1;
 - (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)isoAlphaAtlas;
 - (id)resourceManager;
 - (id)shieldManager;

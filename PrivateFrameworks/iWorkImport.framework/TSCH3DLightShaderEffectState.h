@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DLightShaderEffectState : NSObject {
-    NSMutableArray *mLights;
+    NSMutableArray * mLights;
     struct LightingPackageShaderEffectState { 
         struct array<glm::detail::tmat4x4<float>, 2> { 
             struct tmat4x4<float> { 
@@ -31,7 +31,7 @@
                 } value[4]; 
             } __elems_[2]; 
         } transforms; 
-    } mPackageState;
+    }  mPackageState;
 }
 
 + (id)effectState;

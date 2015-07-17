@@ -3,7 +3,7 @@
  */
 
 @interface KNNoteRep : TSDRep <TSDContainerRep, TSWPStorageObserver> {
-    TSWPRep *mContainedRep;
+    TSWPRep * mContainedRep;
 }
 
 @property (nonatomic, readonly) TSWPRep *containedRep;

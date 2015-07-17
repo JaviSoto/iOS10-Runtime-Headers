@@ -3,18 +3,18 @@
  */
 
 @interface QLPreviewRemoteItem : NSObject <QLPreviewItem> {
-    id /* block */ _completionBlock;
-    QLServicePreviewContentController *_contentController;
-    int _index;
-    QLPreviewItemProxy *_proxy;
-    BOOL _resolving;
+    id /* block */  _completionBlock;
+    QLServicePreviewContentController * _contentController;
+    int  _index;
+    QLPreviewItemProxy * _proxy;
+    BOOL  _resolving;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (readonly) NSString *previewItemTitle;
-@property (readonly) NSURL *previewItemURL;
+@property (nonatomic, readonly) NSString *previewItemTitle;
+@property (nonatomic, readonly) NSURL *previewItemURL;
 @property (readonly) QLPreviewItemProxy *proxy;
 @property (readonly) Class superclass;
 
@@ -32,5 +32,6 @@
 - (id)previewItemURLForDisplay;
 - (id)proxy;
 - (void)resolveWithCompletionBlock:(id /* block */)arg1;
+- (BOOL)wantsDefaultMediaPlayer;
 
 @end

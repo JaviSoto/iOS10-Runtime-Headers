@@ -8,9 +8,9 @@
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    SKUICounterView *_counterView;
-    SKUIImageView *_highlightImageView;
+    }  _contentInset;
+    SKUICounterView * _counterView;
+    SKUIImageView * _highlightImageView;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

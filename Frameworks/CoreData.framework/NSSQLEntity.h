@@ -3,50 +3,52 @@
  */
 
 @interface NSSQLEntity : NSStoreMapping {
-    NSMutableArray *_attrColumns;
-    NSMutableArray *_columnsToFetch;
-    struct __CFDictionary { } *_correlationDeleteCache;
-    struct __CFDictionary { } *_correlationInsertCache;
-    struct __CFDictionary { } *_correlationMasterReorderCache;
-    struct __CFDictionary { } *_correlationMasterReorderCachePart2;
-    struct __CFDictionary { } *_correlationReorderCache;
-    NSSQLStatement *_deletionStatementCache;
-    NSMutableArray *_ekColumns;
-    NSEntityDescription *_entityDescription;
-    unsigned int _entityID;
-    NSSQLEntityKey *_entityKey;
-    NSSQLStatement *_faultingStatementCache;
-    void *_fetch_entity_plan;
-    NSMutableArray *_fkColumns;
-    NSMutableArray *_fokColumns;
-    NSSQLStatement *_insertStatementCache;
-    NSSQLStoreMappingGenerator *_mappingGenerator;
-    long long _maxPK;
-    NSSQLModel *_model;
-    void *_odiousHashHackStorage;
-    NSSQLOptLockKey *_optLockKey;
-    unsigned int _pkCount;
-    NSSQLPrimaryKey *_primaryKey;
-    NSMutableDictionary *_properties;
-    NSArray *_propertiesAllToManysCache;
-    NSArray *_propertyAllCache;
-    NSArray *_propertyManyToManyCache;
-    NSKnownKeysMappingStrategy *_propertyMapping;
-    NSSQLEntity *_rootEntity;
+    NSMutableArray * _attrColumns;
+    NSMutableArray * _columnsToFetch;
+    struct __CFDictionary { } * _correlationDeleteCache;
+    struct __CFDictionary { } * _correlationInsertCache;
+    struct __CFDictionary { } * _correlationMasterReorderCache;
+    struct __CFDictionary { } * _correlationMasterReorderCachePart2;
+    struct __CFDictionary { } * _correlationReorderCache;
+    NSSQLStatement * _deletionStatementCache;
+    NSMutableArray * _ekColumns;
+    NSEntityDescription * _entityDescription;
+    unsigned int  _entityID;
+    NSSQLEntityKey * _entityKey;
+    NSSQLStatement * _faultingStatementCache;
+    void * _fetch_entity_plan;
+    NSMutableArray * _fkColumns;
+    NSMutableArray * _fokColumns;
+    NSSQLStatement * _insertStatementCache;
+    NSSQLStoreMappingGenerator * _mappingGenerator;
+    long long  _maxPK;
+    NSSQLModel * _model;
+    NSMutableArray * _multicolumnUniquenessConstraints;
+    void * _odiousHashHackStorage;
+    NSSQLOptLockKey * _optLockKey;
+    unsigned int  _pkCount;
+    NSSQLPrimaryKey * _primaryKey;
+    NSMutableDictionary * _properties;
+    NSArray * _propertiesAllToManysCache;
+    NSArray * _propertyAllCache;
+    NSArray * _propertyManyToManyCache;
+    NSKnownKeysMappingStrategy * _propertyMapping;
+    NSSQLEntity * _rootEntity;
     struct __sqlentityFlags { 
         unsigned int _hasAttributesWithExternalDataReferences : 1; 
         unsigned int _reserved : 31; 
-    } _sqlentityFlags;
-    NSMutableArray *_subentities;
-    unsigned int _subentityMaxID;
-    NSSQLEntity *_superentity;
-    NSString *_tableName;
-    NSMutableDictionary *_toManyRelationshipStatementCache;
+    }  _sqlentityFlags;
+    NSMutableArray * _subentities;
+    unsigned int  _subentityMaxID;
+    NSSQLEntity * _superentity;
+    NSString * _tableName;
+    NSMutableDictionary * _toManyRelationshipStatementCache;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _toOneRange;
-    NSMutableArray *_virtualFKs;
+    }  _toOneRange;
+    NSMutableArray * _uniqueAttributes;
+    NSMutableArray * _virtualFKs;
 }
 
 - (void)_addColumnToFetch:(id)arg1;
@@ -59,8 +61,10 @@
 - (BOOL)_entityIsBroken:(id*)arg1;
 - (unsigned int)_generateIDWithSuperEntity:(id)arg1 nextID:(unsigned int)arg2;
 - (void)_generateInverseRelationshipsAndMore;
+- (void)_generateMulticolumnUniquenessConstraints;
 - (void)_generateProperties;
 - (void*)_odiousHashHack;
+- (void)_organizeConstraints;
 - (unsigned int)_pkCount;
 - (id)_propertySearchMapping;
 - (void)_resetPKCount;
@@ -69,6 +73,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_toOneRange;
 - (void)addInsertedObject:(id)arg1 toArray:(id)arg2;
 - (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
+- (void)addUniqueAttribute:(id)arg1;
 - (id)attributeColumns;
 - (id)attributeNamed:(id)arg1;
 - (id)attributes;
@@ -114,6 +119,7 @@
 - (id)manyToManyRelationships;
 - (id)mappingGenerator;
 - (id)model;
+- (id)multicolumnUniquenessConstraints;
 - (id)name;
 - (long long)nextPrimaryKey64;
 - (id)optLockKey;
@@ -133,6 +139,7 @@
 - (id)superentity;
 - (id)tableName;
 - (id)toManyRelationships;
+- (id)uniqueAttributes;
 - (id)virtualForeignKeyColumns;
 
 @end

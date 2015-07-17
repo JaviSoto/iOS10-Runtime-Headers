@@ -3,24 +3,24 @@
  */
 
 @interface EKDayAllDayView : UIView {
-    UILabel *_allDay;
-    BOOL _allDayLabelHighlighted;
-    BOOL _allowSelection;
-    <EKDayAllDayViewDelegate> *_delegate;
-    EKEvent *_dimmedOccurrence;
-    UIView *_dividerLineViewBottom;
-    UIView *_dividerLineViewTop;
-    float _fixedHeight;
-    int _maxVisibleRows;
-    float _occurrenceInset;
-    NSMutableArray *_occurrenceViews;
-    int _orientation;
-    UIScrollView *_scroller;
-    EKEvent *_selectedEvent;
-    BOOL _showSelection;
-    BOOL _showsBorderLines;
-    BOOL _showsLabel;
-    BOOL _usesSmallText;
+    UILabel * _allDay;
+    BOOL  _allDayLabelHighlighted;
+    BOOL  _allowSelection;
+    <EKDayAllDayViewDelegate> * _delegate;
+    EKEvent * _dimmedOccurrence;
+    UIView * _dividerLineViewBottom;
+    UIView * _dividerLineViewTop;
+    float  _fixedHeight;
+    int  _maxVisibleRows;
+    float  _occurrenceInset;
+    NSMutableArray * _occurrenceViews;
+    int  _orientation;
+    UIScrollView * _scroller;
+    EKEvent * _selectedEvent;
+    BOOL  _showSelection;
+    BOOL  _showsBorderLines;
+    BOOL  _showsLabel;
+    BOOL  _usesSmallText;
 }
 
 @property (nonatomic) BOOL allowsOccurrenceSelection;

@@ -3,13 +3,14 @@
  */
 
 @interface WDNote : WDRun {
-    BOOL mAutomaticNumbering;
-    WDCharacterRun *mReference;
-    WDText *mText;
+    BOOL  mAutomaticNumbering;
+    WDCharacterRun * mReference;
+    WDText * mText;
 }
 
 - (BOOL)automaticNumbering;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1 footnote:(BOOL)arg2;
 - (id)reference;
 - (int)runType;

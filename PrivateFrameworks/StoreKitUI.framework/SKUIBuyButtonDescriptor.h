@@ -3,13 +3,13 @@
  */
 
 @interface SKUIBuyButtonDescriptor : NSObject <NSCopying, NSMutableCopying> {
-    NSString *_buttonText;
-    int _buttonType;
-    NSString *_confirmationText;
-    unsigned int _elementType;
-    long long _itemIdentifier;
-    SKUIStoreIdentifier *_storeIdentifier;
-    NSString *_variantIdentifier;
+    NSString * _buttonText;
+    int  _buttonType;
+    NSString * _confirmationText;
+    unsigned int  _elementType;
+    long long  _itemIdentifier;
+    SKUIStoreIdentifier * _storeIdentifier;
+    NSString * _variantIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSString *buttonText;

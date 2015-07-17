@@ -5,6 +5,8 @@
 
 @required
 
+- (void)photoCommentEntryViewDidEndEditing:(PLPhotoCommentEntryView *)arg1;
 - (void)photoCommentEntryViewHeightDidChange:(PLPhotoCommentEntryView *)arg1;
+- (void)photoCommentEntryViewWillBeginEditing:(PLPhotoCommentEntryView *)arg1;
 
 @end

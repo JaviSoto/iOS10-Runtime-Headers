@@ -3,19 +3,19 @@
  */
 
 @interface PLCloudSharedAssetSaveJob : PLCloudSharingJob {
-    NSArray *_assetCollectionInfos;
-    NSString *_cloudAlbumGUID;
-    NSArray *_cloudAssetGUIDsToDelete;
-    NSString *_cloudPersonID;
-    AssetCollectionInfo *_currentAssetCollectionInfo;
-    MSASAssetCollection *_currentCloudAssetCollection;
-    NSString *_currentCloudAssetGUID;
-    unsigned int _currentCloudAssetMediaAssetType;
-    NSString *_currentFilePath;
-    BOOL _isVideo;
-    long long _jobType;
-    NSDictionary *_mstreamdInfoDictionary;
-    BOOL _replacingOriginalWithDerivative;
+    NSArray * _assetCollectionInfos;
+    NSString * _cloudAlbumGUID;
+    NSArray * _cloudAssetGUIDsToDelete;
+    NSString * _cloudPersonID;
+    AssetCollectionInfo * _currentAssetCollectionInfo;
+    MSASAssetCollection * _currentCloudAssetCollection;
+    NSString * _currentCloudAssetGUID;
+    unsigned int  _currentCloudAssetMediaAssetType;
+    NSString * _currentFilePath;
+    BOOL  _isVideo;
+    long long  _jobType;
+    NSDictionary * _mstreamdInfoDictionary;
+    BOOL  _replacingOriginalWithDerivative;
 }
 
 @property (nonatomic, retain) NSArray *assetCollectionInfos;
@@ -40,7 +40,7 @@
 + (id)placeholderImageProperties;
 + (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 + (void)replaceRecentlyUploadedOriginalWithDerivativeForCollection:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
-+ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollectionWithGUID:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
++ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
 
 - (BOOL)_createPlaceHolderInSharedAlbum:(id)arg1;
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;

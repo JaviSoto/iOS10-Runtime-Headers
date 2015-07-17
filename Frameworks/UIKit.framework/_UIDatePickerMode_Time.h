@@ -3,20 +3,20 @@
  */
 
 @interface _UIDatePickerMode_Time : _UIDatePickerMode {
-    NSString *_hourFormat;
-    NSString *_minuteFormat;
-    float _timeAMPMWidth;
-    float _timeHourWidth;
-    float _timeMinuteWidth;
+    NSString * _hourFormat;
+    NSString * _minuteFormat;
+    float  _timeAMPMWidth;
+    float  _timeHourWidth;
+    float  _timeMinuteWidth;
 }
 
 + (int)datePickerMode;
 + (unsigned int)extractableCalendarUnits;
 
+- (void).cxx_destruct;
 - (BOOL)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
 - (void)_shouldReset:(id)arg1;
 - (id)dateFormatForCalendarUnit:(unsigned int)arg1;
-- (void)dealloc;
 - (int)displayedCalendarUnits;
 - (id)font;
 - (id)localizedFormatString;

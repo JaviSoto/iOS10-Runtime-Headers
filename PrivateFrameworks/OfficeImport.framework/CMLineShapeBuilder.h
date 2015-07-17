@@ -3,7 +3,7 @@
  */
 
 @interface CMLineShapeBuilder : CMShapeBuilder {
-    OADStroke *_stroke;
+    OADStroke * _stroke;
 }
 
 - (float)_adjustedCoefAtIndex:(int)arg1;

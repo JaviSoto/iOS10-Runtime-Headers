@@ -3,13 +3,13 @@
  */
 
 @interface HKWorkout : HKSample <HDCoding> {
-    double _duration;
-    HKQuantity *_goal;
-    unsigned int _goalType;
-    HKQuantity *_totalDistance;
-    HKQuantity *_totalEnergyBurned;
-    unsigned int _workoutActivityType;
-    NSArray *_workoutEvents;
+    double  _duration;
+    HKQuantity * _goal;
+    unsigned int  _goalType;
+    HKQuantity * _totalDistance;
+    HKQuantity * _totalEnergyBurned;
+    unsigned int  _workoutActivityType;
+    NSArray * _workoutEvents;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,15 +27,18 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_activityTypeMappings;
++ (id)_allWorkoutTypeNames;
 + (BOOL)_isConcreteObjectClass;
 + (id)_stringFromWorkoutActivityType:(unsigned int)arg1;
 + (unsigned int)_workoutActivityTypeFromString:(id)arg1;
-+ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 metadata:(id)arg10;
-+ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 metadata:(id)arg10 config:(id /* block */)arg11;
++ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 device:(id)arg10 metadata:(id)arg11;
++ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 device:(id)arg10 metadata:(id)arg11 config:(id /* block */)arg12;
 + (id)_workoutWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 workoutType:(id)arg7 activityType:(unsigned int)arg8 workoutEvents:(id)arg9 duration:(double)arg10 totalEnergyBurned:(id)arg11 totalDistance:(id)arg12 goalType:(unsigned int)arg13 goal:(id)arg14;
 + (BOOL)supportsSecureCoding;
 + (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
++ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
 + (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
++ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
 + (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
 
 - (void).cxx_destruct;
@@ -71,17 +74,20 @@
 + (id)FU_supportedWorkoutMetricsForActivityType:(unsigned int)arg1 isIndoor:(BOOL)arg2;
 + (BOOL)_isHeartRateSupportedInPowerSettingsForActivityType:(unsigned int)arg1;
 + (BOOL)_isHeartRateSupportedInPrivacySettings;
++ (double)fiui_weightedAverageHeartRateWithSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 
 - (double)FU_completionFactor;
 - (id)FU_fitnessLocalizedGoalDescriptionWithValue:(id*)arg1;
 - (id)FU_localizedGoalDescription;
-- (id)FU_localizedKeyMetricCalorieStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedKeyMetricCyclingStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedKeyMetricDistanceStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedKeyMetricDurationString;
+- (id)FU_localizedKeyMetricEnergyBurnedStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedKeyMetricStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedOpenGoalKeyMetricStringWithUnitStyle:(int)arg1;
+- (id)FU_localizedShareTextWithShareValue:(id)arg1;
 - (id)_localizedGoalDescriptionWithActivity:(id)arg1 formattedValue:(id*)arg2 useCustomMetrics:(BOOL)arg3;
+- (id)fiui_splitsFromDistanceSamples:(id)arg1 userPreferredUnit:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
@@ -90,6 +96,11 @@
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
 - (id)codableWorkoutEvents;
-- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entity:(id)arg3 error:(id*)arg4;
+- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (int)hk_integerValue;
+- (id)hk_timePeriods;
 
 @end

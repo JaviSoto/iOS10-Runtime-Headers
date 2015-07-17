@@ -3,7 +3,7 @@
  */
 
 @interface SPMatcher : NSObject {
-    void *_matcher;
+    void * _matcher;
 }
 
 + (id)transcriptionForString:(id)arg1 withLanguage:(id)arg2;

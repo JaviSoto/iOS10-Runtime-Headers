@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartRepAs2D : TSCHChartRep {
-    TSCHChartRep *m2DRep;
+    TSCHChartRep * m2DRep;
 }
 
 - (void)dealloc;

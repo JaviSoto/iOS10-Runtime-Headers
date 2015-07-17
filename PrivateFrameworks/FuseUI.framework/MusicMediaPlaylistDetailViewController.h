@@ -3,7 +3,7 @@
  */
 
 @interface MusicMediaPlaylistDetailViewController : MusicMediaProductDetailViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    NSString *_curatorStoreID;
+    NSString * _curatorStoreID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,6 +18,8 @@
 - (id)_loadProductHeaderContentViewController;
 - (id)_loadProductSplitDetailViewController;
 - (id)_loadProductSplitMainViewController;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4 forContentCreation:(BOOL)arg5;

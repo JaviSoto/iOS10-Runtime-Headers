@@ -3,15 +3,15 @@
  */
 
 @interface CKDPQuery : PBCodable <NSCopying> {
-    BOOL _distinct;
-    NSMutableArray *_filters;
+    BOOL  _distinct;
+    NSMutableArray * _filters;
     struct { 
         unsigned int queryOperator : 1; 
         unsigned int distinct : 1; 
-    } _has;
-    int _queryOperator;
-    NSMutableArray *_sorts;
-    NSMutableArray *_types;
+    }  _has;
+    int  _queryOperator;
+    NSMutableArray * _sorts;
+    NSMutableArray * _types;
 }
 
 @property (nonatomic) BOOL distinct;

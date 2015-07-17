@@ -3,15 +3,15 @@
  */
 
 @interface HSRequest : NSObject {
-    BOOL _acceptsGzipEncoding;
-    NSString *_action;
-    NSDictionary *_arguments;
-    NSData *_bodyData;
-    BOOL _concurrent;
-    BOOL _excludeSessionIDFromURL;
-    int _method;
-    NSURL *_responseDataDestinationFileURL;
-    BOOL _shouldPromptForAuthentication;
+    BOOL  _acceptsGzipEncoding;
+    NSString * _action;
+    NSDictionary * _arguments;
+    NSData * _bodyData;
+    BOOL  _concurrent;
+    BOOL  _excludeSessionIDFromURL;
+    int  _method;
+    NSURL * _responseDataDestinationFileURL;
+    BOOL  _shouldPromptForAuthentication;
 }
 
 @property (nonatomic) BOOL acceptsGzipEncoding;

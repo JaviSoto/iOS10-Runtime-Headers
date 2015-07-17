@@ -8,10 +8,10 @@
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
-    UIImageView *_imageView;
-    UILabel *_messageLabel;
-    UILabel *_titleLabel;
+    }  _edgeInsets;
+    UIImageView * _imageView;
+    UILabel * _messageLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;

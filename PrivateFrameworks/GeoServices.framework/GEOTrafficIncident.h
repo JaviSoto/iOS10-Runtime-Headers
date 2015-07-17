@@ -3,7 +3,7 @@
  */
 
 @interface GEOTrafficIncident : PBCodable <NSCopying> {
-    double _endTime;
+    double  _endTime;
     struct { 
         unsigned int endTime : 1; 
         unsigned int lastUpdated : 1; 
@@ -12,16 +12,16 @@
         unsigned int type : 1; 
         unsigned int vertexCount : 1; 
         unsigned int vertexOffset : 1; 
-    } _has;
-    NSString *_info;
-    double _lastUpdated;
-    NSString *_location;
-    double _startTime;
-    NSString *_title;
-    int _type;
-    long long _uID;
-    int _vertexCount;
-    int _vertexOffset;
+    }  _has;
+    NSString * _info;
+    double  _lastUpdated;
+    NSString * _location;
+    double  _startTime;
+    NSString * _title;
+    int  _type;
+    long long  _uID;
+    int  _vertexCount;
+    int  _vertexOffset;
 }
 
 @property (nonatomic) double endTime;

@@ -3,29 +3,29 @@
  */
 
 @interface SSVPlayActivityEvent : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
-    BOOL _SBEnabled;
-    NSString *_containerID;
-    unsigned int _containerType;
-    NSString *_deviceName;
-    unsigned int _endReasonType;
-    NSDate *_eventDate;
-    NSTimeZone *_eventTimeZone;
-    NSString *_externalID;
-    NSString *_featureName;
-    double _itemDuration;
-    double _itemEndTime;
-    double _itemStartTime;
-    unsigned int _itemType;
-    unsigned int _mediaType;
-    BOOL _offline;
-    long long _persistentID;
-    NSString *_personalizedContainerID;
-    NSData *_recommendationData;
-    unsigned int _sourceType;
-    unsigned long long _storeAccountID;
-    NSString *_storeID;
-    NSData *_timedMetadata;
-    NSData *_trackInfo;
+    BOOL  _SBEnabled;
+    NSString * _containerID;
+    unsigned int  _containerType;
+    NSString * _deviceName;
+    unsigned int  _endReasonType;
+    NSDate * _eventDate;
+    NSTimeZone * _eventTimeZone;
+    NSString * _externalID;
+    NSString * _featureName;
+    double  _itemDuration;
+    double  _itemEndTime;
+    double  _itemStartTime;
+    unsigned int  _itemType;
+    unsigned int  _mediaType;
+    BOOL  _offline;
+    long long  _persistentID;
+    NSString * _personalizedContainerID;
+    NSData * _recommendationData;
+    unsigned int  _sourceType;
+    unsigned long long  _storeAccountID;
+    NSString * _storeID;
+    NSData * _timedMetadata;
+    NSData * _trackInfo;
 }
 
 @property (getter=isSBEnabled, nonatomic, readonly) BOOL SBEnabled;

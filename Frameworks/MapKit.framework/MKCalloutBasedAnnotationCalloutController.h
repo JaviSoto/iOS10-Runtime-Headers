@@ -3,7 +3,7 @@
  */
 
 @interface MKCalloutBasedAnnotationCalloutController : MKAnnotationCalloutController {
-    UICalloutView *_calloutView;
+    UICalloutView * _calloutView;
 }
 
 - (void).cxx_destruct;

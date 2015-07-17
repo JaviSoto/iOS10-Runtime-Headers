@@ -3,10 +3,10 @@
  */
 
 @interface PKPaymentAuthorizationInvalidDataParam : PKPaymentAuthorizationParam {
-    BOOL _animated;
-    int _dataType;
-    NSError *_error;
-    int _status;
+    BOOL  _animated;
+    int  _dataType;
+    NSError * _error;
+    int  _status;
 }
 
 @property (nonatomic) BOOL animated;

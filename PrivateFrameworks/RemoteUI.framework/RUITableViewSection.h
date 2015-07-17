@@ -3,25 +3,25 @@
  */
 
 @interface RUITableViewSection : RUIElement <RUITableFooterDelegate, RUITableHeaderDelegate> {
-    NSString *_HTMLFooterContent;
-    NSString *_HTMLHeaderContent;
-    BOOL _configured;
-    <RUITableViewSectionDelegate> *_delegate;
-    NSString *_detailHeaderText;
-    int _disclosureLimit;
-    NSNumber *_drawsTopSeparator;
-    NSDictionary *_footerAttributes;
-    float _footerHeight;
-    NSString *_footerText;
-    UIView<RemoteUITableFooter> *_footerView;
-    NSDictionary *_headerAttributes;
-    float _headerHeight;
-    NSString *_headerText;
-    UIView<RemoteUITableHeader> *_headerView;
-    NSMutableArray *_rows;
-    RUITableViewRow *_showAllRow;
-    NSDictionary *_subHeaderAttributes;
-    NSString *_subHeaderText;
+    NSString * _HTMLFooterContent;
+    NSString * _HTMLHeaderContent;
+    BOOL  _configured;
+    <RUITableViewSectionDelegate> * _delegate;
+    NSString * _detailHeaderText;
+    int  _disclosureLimit;
+    NSNumber * _drawsTopSeparator;
+    NSDictionary * _footerAttributes;
+    float  _footerHeight;
+    NSString * _footerText;
+    UIView<RemoteUITableFooter> * _footerView;
+    NSDictionary * _headerAttributes;
+    float  _headerHeight;
+    NSString * _headerText;
+    UIView<RemoteUITableHeader> * _headerView;
+    NSMutableArray * _rows;
+    RUITableViewRow * _showAllRow;
+    NSDictionary * _subHeaderAttributes;
+    NSString * _subHeaderText;
 }
 
 @property (nonatomic, copy) NSString *HTMLFooterContent;
@@ -39,6 +39,7 @@
 @property (nonatomic, copy) NSString *headerText;
 @property (nonatomic, retain) UIView<RemoteUITableHeader> *headerView;
 @property (nonatomic, readonly) NSArray *rows;
+@property (nonatomic, retain) RUITableViewRow *showAllRow;
 @property (nonatomic, copy) NSDictionary *subHeaderAttributes;
 @property (nonatomic, copy) NSString *subHeaderText;
 
@@ -52,7 +53,6 @@
 - (BOOL)configured;
 - (id)delegate;
 - (id)detailHeaderText;
-- (void)didTapShowAllRowWithTable:(id)arg1;
 - (BOOL)drawTopSeparator;
 - (id)footerAttributes;
 - (float)footerHeight;
@@ -90,11 +90,14 @@
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShowAllRow:(id)arg1;
 - (void)setSubHeaderAttributes:(id)arg1;
 - (void)setSubHeaderText:(id)arg1;
+- (id)showAllRow;
 - (id)sourceURL;
 - (id)subElementsWithName:(id)arg1;
 - (id)subHeaderAttributes;
 - (id)subHeaderText;
+- (void)tappedShowAllRowWithTable:(id)arg1;
 
 @end

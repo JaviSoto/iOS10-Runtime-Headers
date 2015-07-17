@@ -3,7 +3,7 @@
  */
 
 @interface MusicContextualShareAlertAction : UIAlertAction {
-    MusicContextualActionsAlertController *_alertController;
+    MusicContextualActionsAlertController * _alertController;
 }
 
 + (id)actionsForEntityValueContext:(id)arg1 extraInfo:(id)arg2 alertController:(id)arg3;

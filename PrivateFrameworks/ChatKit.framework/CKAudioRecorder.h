@@ -3,18 +3,18 @@
  */
 
 @interface CKAudioRecorder : NSObject <CKVoiceControllerDelegate> {
-    BOOL _cancelled;
-    id /* block */ _completion;
-    <CKAudioRecorderDelegate> *_delegate;
-    struct OpaqueAudioFileID { } *_fileID;
-    NSURL *_fileURL;
-    BOOL _recording;
-    BOOL _recordingEmpty;
-    BOOL _shouldPlayStartSound;
-    BOOL _shouldPlayStopSound;
-    NSDate *_startDate;
-    long long _totalPacketsCount;
-    CKVoiceController *_voiceController;
+    BOOL  _cancelled;
+    id /* block */  _completion;
+    <CKAudioRecorderDelegate> * _delegate;
+    struct OpaqueAudioFileID { } * _fileID;
+    NSURL * _fileURL;
+    BOOL  _recording;
+    BOOL  _recordingEmpty;
+    BOOL  _shouldPlayStartSound;
+    BOOL  _shouldPlayStopSound;
+    NSDate * _startDate;
+    long long  _totalPacketsCount;
+    CKVoiceController * _voiceController;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;

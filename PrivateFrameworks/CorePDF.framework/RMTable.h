@@ -3,13 +3,13 @@
  */
 
 @interface RMTable : NSObject <NSFastEnumeration> {
-    NSMutableArray *_columnFirstElements;
-    unsigned int _elementCount;
-    struct CGPDFLayout { } *_layout;
-    NSMutableArray *_matrix;
-    NSMutableArray *_rowFirstElements;
-    BOOL _rowOrder;
-    struct CGPDFNode { } *_tableRoot;
+    NSMutableArray * _columnFirstElements;
+    unsigned int  _elementCount;
+    struct CGPDFLayout { } * _layout;
+    NSMutableArray * _matrix;
+    NSMutableArray * _rowFirstElements;
+    BOOL  _rowOrder;
+    struct CGPDFNode { } * _tableRoot;
 }
 
 @property (readonly) struct CGPDFPage { }*page;

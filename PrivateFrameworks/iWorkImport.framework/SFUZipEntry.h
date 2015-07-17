@@ -3,17 +3,17 @@
  */
 
 @interface SFUZipEntry : SFUDataRepresentation {
-    SFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;
-    unsigned long long mCompressedSize;
-    int mCompressionMethod;
-    unsigned int mCrc;
-    SFUCryptoKey *mCryptoKey;
-    unsigned long long mDataOffset;
-    unsigned long long mEncodedLength;
-    BOOL mHasDataOffset;
-    BOOL mHasEncodedLength;
-    unsigned long long mOffset;
-    unsigned long long mUncompressedSize;
+    SFUDataRepresentation<SFUZipArchiveDataRepresentation> * mArchiveDataRepresentation;
+    unsigned long long  mCompressedSize;
+    int  mCompressionMethod;
+    unsigned int  mCrc;
+    SFUCryptoKey * mCryptoKey;
+    unsigned long long  mDataOffset;
+    unsigned long long  mEncodedLength;
+    BOOL  mHasDataOffset;
+    BOOL  mHasEncodedLength;
+    unsigned long long  mOffset;
+    unsigned long long  mUncompressedSize;
 }
 
 - (unsigned long long)backingFileDataOffset;

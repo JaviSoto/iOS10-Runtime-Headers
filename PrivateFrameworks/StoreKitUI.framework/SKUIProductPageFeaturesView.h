@@ -3,14 +3,14 @@
  */
 
 @interface SKUIProductPageFeaturesView : UIView {
-    UIView *_bottomBorderView;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    NSMutableArray *_featureViews;
-    int _features;
-    unsigned int _gameCenterFeatures;
-    UILabel *_titleLabel;
-    UIView *_topBorderView;
+    UIView * _bottomBorderView;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    NSMutableArray * _featureViews;
+    int  _features;
+    unsigned int  _gameCenterFeatures;
+    UILabel * _titleLabel;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

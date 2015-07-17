@@ -3,30 +3,30 @@
  */
 
 @interface AVChapterMetadataItemInternal : NSObject {
-    NSString *chapterDataType;
-    long chapterGroupIndex;
-    long chapterIndex;
-    NSString *chapterType;
-    NSMutableArray *completions;
+    NSString * chapterDataType;
+    long  chapterGroupIndex;
+    long  chapterIndex;
+    NSString * chapterType;
+    NSMutableArray * completions;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } duration;
-    struct OpaqueFigAsset { } *figAsset;
-    NSLocale *locale;
-    NSObject<OS_dispatch_queue> *readWriteQueue;
+    }  duration;
+    struct OpaqueFigAsset { } * figAsset;
+    NSLocale * locale;
+    NSObject<OS_dispatch_queue> * readWriteQueue;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } time;
-    <NSObject><NSCopying> *value;
-    long valueErrorCode;
-    int valueStatus;
-    AVWeakReference *weakReference;
+    }  time;
+    <NSObject><NSCopying> * value;
+    long  valueErrorCode;
+    int  valueStatus;
+    AVWeakReference * weakReference;
 }
 
 @end

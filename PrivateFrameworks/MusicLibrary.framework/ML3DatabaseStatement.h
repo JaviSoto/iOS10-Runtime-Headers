@@ -3,11 +3,11 @@
  */
 
 @interface ML3DatabaseStatement : NSObject {
-    BOOL _clearBindingsAfterRunning;
-    ML3DatabaseConnection *_connection;
-    BOOL _isExecuting;
-    NSString *_sql;
-    struct sqlite3_stmt { } *_sqliteStatement;
+    BOOL  _clearBindingsAfterRunning;
+    ML3DatabaseConnection * _connection;
+    BOOL  _isExecuting;
+    NSString * _sql;
+    struct sqlite3_stmt { } * _sqliteStatement;
 }
 
 @property (nonatomic) BOOL clearBindingsAfterRunning;

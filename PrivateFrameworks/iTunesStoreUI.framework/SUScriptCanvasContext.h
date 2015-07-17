@@ -3,19 +3,19 @@
  */
 
 @interface SUScriptCanvasContext : SUScriptObject {
-    struct CGContext { } *_context;
-    struct CGPath { } *_contextPath;
-    id _fillStyle;
-    int _fillStyleType;
-    float _height;
-    float _scale;
-    float _shadowBlur;
-    SUScriptColor *_shadowColor;
-    float _shadowOffsetX;
-    float _shadowOffsetY;
-    id _strokeStyle;
-    int _strokeStyleType;
-    float _width;
+    struct CGContext { } * _context;
+    struct CGPath { } * _contextPath;
+    id  _fillStyle;
+    int  _fillStyleType;
+    float  _height;
+    float  _scale;
+    float  _shadowBlur;
+    SUScriptColor * _shadowColor;
+    float  _shadowOffsetX;
+    float  _shadowOffsetY;
+    id  _strokeStyle;
+    int  _strokeStyleType;
+    float  _width;
 }
 
 @property (retain) id fillStyle;

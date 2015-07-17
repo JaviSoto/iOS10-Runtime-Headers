@@ -3,11 +3,11 @@
  */
 
 @interface SKUIButtonCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
-    UIControl *_button;
-    id _buttonImageResourceCacheKey;
-    SKUIBuyButtonDescriptor *_buyButtonDescriptor;
-    SKUIButtonViewElement *_viewElement;
-    IKViewElementStyle *_viewElementStyle;
+    UIControl * _button;
+    id  _buttonImageResourceCacheKey;
+    SKUIBuyButtonDescriptor * _buyButtonDescriptor;
+    SKUIButtonViewElement * _viewElement;
+    IKViewElementStyle * _viewElementStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

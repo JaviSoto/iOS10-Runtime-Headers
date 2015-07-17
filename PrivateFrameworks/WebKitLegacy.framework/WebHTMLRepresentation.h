@@ -3,7 +3,7 @@
  */
 
 @interface WebHTMLRepresentation : NSObject <WebDocumentDOM, WebDocumentRepresentation> {
-    WebHTMLRepresentationPrivate *_private;
+    WebHTMLRepresentationPrivate * _private;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +13,7 @@
 
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
++ (id)supportedMediaMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (id)unsupportedTextMIMETypes;
 

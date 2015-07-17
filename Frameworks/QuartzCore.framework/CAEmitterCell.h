@@ -3,9 +3,9 @@
  */
 
 @interface CAEmitterCell : NSObject <CAMediaTiming, CAPropertyInfo, NSCoding, NSCopying> {
-    void *_attr;
-    unsigned int _flags;
-    void *_state;
+    void * _attr;
+    unsigned int  _flags;
+    void * _state;
 }
 
 @property float alphaRange;

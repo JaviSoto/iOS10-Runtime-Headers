@@ -3,50 +3,51 @@
  */
 
 @interface TSWPRep : TSDContainerRep {
-    TSWPSearchReference *_activeSearchReference;
-    BOOL _caretAnimationDisabled;
-    CALayer *_caretLayer;
-    CALayer *_dragAndDropCaretLayer;
+    TSWPSearchReference * _activeSearchReference;
+    BOOL  _caretAnimationDisabled;
+    CALayer * _caretLayer;
+    CALayer * _dragAndDropCaretLayer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _dragRange;
-    TSWPSelection *_dropSelection;
-    BOOL _findIsShowing;
-    BOOL _hudStateDirty;
-    CALayer *_indentAnimationLayer;
-    BOOL _indentAnimationRunning;
-    int _indentDelta;
-    SEL _indentSelector;
-    id _indentTarget;
-    BOOL _invalidateHUDState;
-    BOOL _isEditing;
-    BOOL _isShowingCommentKnobs;
-    TSWPSelection *_lastSelection;
-    BOOL _markChanged;
-    CAShapeLayer *_markHighlightLayer;
-    unsigned long long _newSelectionFlags;
-    BOOL _repFieldsAreActive;
-    NSArray *_searchReferences;
-    CAShapeLayer *_secondaryHighlightLayer;
-    int _secondaryHighlightPathStyle;
+    }  _dragRange;
+    TSWPSelection * _dropSelection;
+    BOOL  _findIsShowing;
+    BOOL  _hudStateDirty;
+    CALayer * _indentAnimationLayer;
+    BOOL  _indentAnimationRunning;
+    int  _indentDelta;
+    SEL  _indentSelector;
+    id  _indentTarget;
+    BOOL  _invalidateHUDState;
+    BOOL  _isEditing;
+    BOOL  _isShowingCommentKnobs;
+    TSWPSelection * _lastSelection;
+    BOOL  _markChanged;
+    CAShapeLayer * _markHighlightLayer;
+    unsigned long long  _newSelectionFlags;
+    BOOL  _repFieldsAreActive;
+    NSArray * _searchReferences;
+    CAShapeLayer * _secondaryHighlightLayer;
+    int  _secondaryHighlightPathStyle;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _secondaryHighlightRange;
-    BOOL _selectionChanged;
-    CAShapeLayer *_selectionHighlightLayer;
-    CAShapeLayer *_selectionLineLayers;
-    CAShapeLayer *_selectionParagraphBorderLayer;
-    CAShapeLayer *_smartFieldHighlightLayer;
-    BOOL _suppressCaret;
-    BOOL _suppressSelectionHighlight;
+    }  _secondaryHighlightRange;
+    BOOL  _selectionChanged;
+    CAShapeLayer * _selectionHighlightLayer;
+    CAShapeLayer * _selectionLineLayers;
+    CAShapeLayer * _selectionParagraphBorderLayer;
+    CAShapeLayer * _smartFieldHighlightLayer;
+    BOOL  _suppressCaret;
+    BOOL  _suppressSelectionHighlight;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _suppressedMisspellingRange;
-    TSWPEditingController *_textEditor;
-    CALayer *_textLayers;
+    }  _suppressedMisspellingRange;
+    TSWPEditingController * _textEditor;
+    CALayer * _textLayers;
+    BOOL  _tornDown;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -54,9 +55,9 @@
         float d; 
         float tx; 
         float ty; 
-    } _transformToConvertNaturalToScaledRoot;
-    BOOL _updatingHighlights;
-    BOOL _useKeyboardWhenEditing;
+    }  _transformToConvertNaturalToScaledRoot;
+    BOOL  _updatingHighlights;
+    BOOL  _useKeyboardWhenEditing;
 }
 
 @property (nonatomic, retain) TSWPSearchReference *activeSearchReference;
@@ -75,7 +76,6 @@
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToConvertNaturalToScaledRoot;
 @property (nonatomic) BOOL useKeyboardWhenEditing;
 
-- (id).cxx_construct;
 - (id)activeSearchReference;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForCharIndex:(unsigned int)arg1 caretAffinity:(int)arg2;

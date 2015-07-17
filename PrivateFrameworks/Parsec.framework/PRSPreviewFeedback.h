@@ -3,8 +3,8 @@
  */
 
 @interface PRSPreviewFeedback : PRSFeedback {
-    NSString *_fbr;
-    NSString *_local_result;
+    NSString * _fbr;
+    NSString * _local_result;
 }
 
 @property (nonatomic, retain) NSString *fbr;

@@ -3,7 +3,7 @@
  */
 
 @interface GKVoiceChatService : NSObject {
-    id _voiceChatService;
+    id  _voiceChatService;
 }
 
 @property <GKVoiceChatClient> *client;

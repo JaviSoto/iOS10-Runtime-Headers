@@ -3,8 +3,8 @@
  */
 
 @interface CKFetchChangedRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    CKServerChangeToken *_previousServerChangeToken;
-    unsigned int _resultsLimit;
+    CKServerChangeToken * _previousServerChangeToken;
+    unsigned int  _resultsLimit;
 }
 
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;

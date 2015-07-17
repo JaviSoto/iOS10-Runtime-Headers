@@ -3,21 +3,21 @@
  */
 
 @interface TSCHErrorBarData : NSObject <TSCHUnretainedParent> {
-    BOOL mErrorBarsInvalid;
-    double mMaxValue;
-    int mMaxValueGroupIndex;
-    double mMaxValueScatterX;
-    double mMinValue;
-    int mMinValueGroupIndex;
-    double mMinValueScatterX;
-    TSCHChartSeries *mSeries;
-    double mStandardDeviation;
-    double mStandardDeviationMean;
-    double mStandardDeviationMeanScatterX;
-    double mStandardDeviationScatterX;
-    double mStandardError;
-    double mStandardErrorScatterX;
-    BOOL mSupportsXAxisBars;
+    BOOL  mErrorBarsInvalid;
+    double  mMaxValue;
+    int  mMaxValueGroupIndex;
+    double  mMaxValueScatterX;
+    double  mMinValue;
+    int  mMinValueGroupIndex;
+    double  mMinValueScatterX;
+    TSCHChartSeries * mSeries;
+    double  mStandardDeviation;
+    double  mStandardDeviationMean;
+    double  mStandardDeviationMeanScatterX;
+    double  mStandardDeviationScatterX;
+    double  mStandardError;
+    double  mStandardErrorScatterX;
+    BOOL  mSupportsXAxisBars;
 }
 
 @property (nonatomic, readonly) int maxValueGroupIndex;

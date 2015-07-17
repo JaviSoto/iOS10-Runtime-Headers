@@ -3,33 +3,7 @@
  */
 
 @interface SKLabelNode : SKNode {
-    SKBitmapFont *_bmf;
-    struct { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    } _fontColor;
-    NSString *_fontName;
-    float _fontSize;
-    int _horizontalAlignmentMode;
-    int _labelBlendMode;
-    UIColor *_labelColor;
-    float _labelColorBlend;
-    NSString *_text;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _textRect;
-    SKSpriteNode *_textSprite;
-    NSMutableArray *_textSprites;
-    int _verticalAlignmentMode;
+    struct SKCLabelNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; id x22; id x23; int x24; int x25; struct __CTFont {} *x26; id x27; bool x28; bool x29; struct vector<SKCSpriteNode *, std::__1::allocator<SKCSpriteNode *> > { struct SKCSpriteNode {} **x_30_1_1; struct SKCSpriteNode {} **x_30_1_2; struct __compressed_pair<SKCSpriteNode **, std::__1::allocator<SKCSpriteNode *> > { struct SKCSpriteNode {} **x_3_2_1; } x_30_1_3; } x30; } * _skcLabelNode;
 }
 
 @property (nonatomic) int blendMode;
@@ -47,20 +21,15 @@
 + (id)labelNodeWithFontNamed:(id)arg1;
 + (id)labelNodeWithText:(id)arg1;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)_flippedChangedFrom:(BOOL)arg1 to:(BOOL)arg2;
+- (void)_didMakeBackingNode;
 - (id)_getTextSprites;
 - (void)_initialize;
-- (void)_scaleFactorChangedFrom:(float)arg1 to:(float)arg2;
+- (struct SKCNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; }*)_makeBackingNode;
 - (int)blendMode;
-- (id)childrenInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)color;
 - (float)colorBlendFactor;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)createBitmapSpritesForText;
-- (void)createSpritesForText;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fontColor;
@@ -72,11 +41,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFontNamed:(id)arg1;
 - (BOOL)isEqualToNode:(id)arg1;
-- (id)nodeAtPoint:(struct CGPoint { float x1; float x2; })arg1 recursive:(BOOL)arg2;
-- (id)nodesAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setColor:(id)arg1;
 - (void)setColorBlendFactor:(float)arg1;
+- (void)setFont:(struct __CTFont { }*)arg1;
 - (void)setFontColor:(id)arg1;
 - (void)setFontName:(id)arg1;
 - (void)setFontSize:(float)arg1;

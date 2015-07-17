@@ -3,15 +3,19 @@
  */
 
 @interface BWVideoCompressorNode : BWNode {
-    struct OpaqueVTCompressionSession { } *_compressionSession;
-    NSDictionary *_compressionSettings;
-    BOOL _didPrepareToEncode;
-    NSObject<OS_dispatch_queue> *_emitterQueue;
-    float _maxVideoFrameRate;
-    BOOL _nextFrameEncodeAsKeyFrame;
-    BOOL _shouldAttachDebugSEI;
-    BOOL _sourceIsHDResolution;
-    unsigned long _sourcePixelFormatType;
+    struct OpaqueVTCompressionSession { } * _compressionSession;
+    NSDictionary * _compressionSettings;
+    BOOL  _didPrepareToEncode;
+    NSObject<OS_dispatch_queue> * _emitterQueue;
+    int  _encodedFramesStats;
+    int  _frameDelayStats;
+    int  _maxFrameDelayStats;
+    float  _maxVideoFrameRate;
+    BOOL  _nextFrameEncodeAsKeyFrame;
+    int  _receivedFramesStats;
+    BOOL  _shouldAttachDebugSEI;
+    BOOL  _sourceIsHDResolution;
+    unsigned long  _sourcePixelFormatType;
 }
 
 + (id)_formatRequirementsForCompressionSettings:(id)arg1 maxVideoFrameRate:(float)arg2 retainedBufferCountHint:(int*)arg3;

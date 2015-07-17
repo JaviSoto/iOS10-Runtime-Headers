@@ -3,8 +3,8 @@
  */
 
 @interface CKImageAlertView : UIView {
-    UIImage *_image;
-    UIImageView *_imageView;
+    UIImage * _image;
+    UIImageView * _imageView;
 }
 
 @property (nonatomic, retain) UIImage *image;

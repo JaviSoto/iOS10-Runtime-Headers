@@ -3,9 +3,9 @@
  */
 
 @interface PLMomentTemporalSnapshot : NSObject {
-    double __distance;
-    NSMutableSet *__nodes;
-    double __range;
+    double  __distance;
+    NSMutableSet * __nodes;
+    double  __range;
 }
 
 @property (nonatomic, readonly) double distance;

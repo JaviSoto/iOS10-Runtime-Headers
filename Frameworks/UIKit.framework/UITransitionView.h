@@ -3,15 +3,15 @@
  */
 
 @interface UITransitionView : UIView <NSCoding> {
-    int _animationTimingCurve;
-    float _curlUpRevealedHeight;
-    id _delegate;
-    UIResponder *_firstResponderToRemember;
-    UIView *_fromView;
-    NSMutableArray *_frozenSubviews;
-    BOOL _ignoreDirectTouchEvents;
-    UIWindow *_originalWindow;
-    UIView *_toView;
+    int  _animationTimingCurve;
+    float  _curlUpRevealedHeight;
+    id  _delegate;
+    UIResponder * _firstResponderToRemember;
+    UIView * _fromView;
+    NSMutableArray * _frozenSubviews;
+    BOOL  _ignoreDirectTouchEvents;
+    UIWindow * _originalWindow;
+    UIView * _toView;
     struct { 
         unsigned int animationInProgress : 1; 
         unsigned int ignoresInteractionEvents : 1; 
@@ -21,7 +21,7 @@
         unsigned int shouldRasterize : 1; 
         unsigned int enableRotationAfterTransition : 1; 
         unsigned int removeFromView : 1; 
-    } _transitionViewFlags;
+    }  _transitionViewFlags;
 }
 
 @property (nonatomic) int animationTimingCurve;
@@ -30,6 +30,7 @@
 
 + (double)defaultDurationForTransition:(int)arg1;
 
+- (void).cxx_destruct;
 - (float)_curlUpRevealedHeight;
 - (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
@@ -37,7 +38,6 @@
 - (void)_startTransition:(int)arg1 withDuration:(double)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (int)animationTimingCurve;
-- (void)dealloc;
 - (id)delegate;
 - (double)durationForTransition:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface CITriangleKaleidoscope : CIFilter {
-    NSNumber *inputDecay;
-    CIImage *inputImage;
-    CIVector *inputPoint;
-    NSNumber *inputRotation;
-    NSNumber *inputSize;
+    NSNumber * inputDecay;
+    CIImage * inputImage;
+    CIVector * inputPoint;
+    NSNumber * inputRotation;
+    NSNumber * inputSize;
 }
 
 @property (nonatomic, retain) NSNumber *inputDecay;
@@ -26,7 +26,6 @@
 - (id)inputRotation;
 - (id)inputSize;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputDecay:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputPoint:(id)arg1;

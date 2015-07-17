@@ -3,23 +3,23 @@
  */
 
 @interface KNAbstractSlide : TSPObject <TSDDrawableContainerInfo, TSKDocumentObject, TSKTransformableObject, TSSPropertySource, TSSStyleClient> {
-    NSArray *_buildChunks;
-    NSSet *_builds;
-    KNSlideBackgroundInfo *mBackground;
-    KNBodyPlaceholderInfo *mBodyPlaceholder;
-    NSOrderedSet *mChildInfos;
-    TSUPointerKeyDictionary *mDrawableToGhostInfosMap;
-    TSUMutablePointerSet *mDrawablesWithInvalidGhosts;
-    BOOL mInDocument;
-    BOOL mNeedsSlideNodeEventCountUpdate;
-    KNObjectPlaceholderInfo *mObjectPlaceholder;
-    NSMutableDictionary *mPlaceholdersForTags;
-    BOOL mShouldConsiderAllChunksActive;
-    KNSlideNode *mSlideNode;
-    KNSlideNumberPlaceholderInfo *mSlideNumberPlaceholder;
-    KNSlideStyle *mStyle;
-    KNTitlePlaceholderInfo *mTitlePlaceholder;
-    KNTransition *mTransition;
+    NSArray * _buildChunks;
+    NSSet * _builds;
+    KNSlideBackgroundInfo * mBackground;
+    KNBodyPlaceholderInfo * mBodyPlaceholder;
+    NSOrderedSet * mChildInfos;
+    TSUPointerKeyDictionary * mDrawableToGhostInfosMap;
+    TSUMutablePointerSet * mDrawablesWithInvalidGhosts;
+    BOOL  mInDocument;
+    BOOL  mNeedsSlideNodeEventCountUpdate;
+    KNObjectPlaceholderInfo * mObjectPlaceholder;
+    NSMutableDictionary * mPlaceholdersForTags;
+    BOOL  mShouldConsiderAllChunksActive;
+    KNSlideNode * mSlideNode;
+    KNSlideNumberPlaceholderInfo * mSlideNumberPlaceholder;
+    KNSlideStyle * mStyle;
+    KNTitlePlaceholderInfo * mTitlePlaceholder;
+    KNTransition * mTransition;
 }
 
 @property (nonatomic, readonly) NSArray *activeBuildChunks;
@@ -181,6 +181,7 @@
 - (void)p_updateChartBuildChunksImmediatelyWithoutUndoHistory;
 - (void)p_updateOverlappingBuildEventTriggers;
 - (void)p_updatePreUFFBuildEffects;
+- (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned long long)arg1;
 - (id)parentInfo;
 - (id)pdfDataUsingDocumentRoot:(id)arg1;
 - (void)performBlockOnInfos:(id /* block */)arg1;

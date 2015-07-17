@@ -3,11 +3,11 @@
  */
 
 @interface SFUCryptoKey : NSObject <TSPMutableCryptoInfo> {
-    NSString *_passphrase;
-    unsigned int mIterationCount;
-    char *mKey;
-    unsigned long mKeyLength;
-    NSData *mSaltData;
+    NSString * _passphrase;
+    unsigned int  mIterationCount;
+    char * mKey;
+    unsigned long  mKeyLength;
+    NSData * mSaltData;
 }
 
 @property (nonatomic, readonly) NSArray *blockInfos;

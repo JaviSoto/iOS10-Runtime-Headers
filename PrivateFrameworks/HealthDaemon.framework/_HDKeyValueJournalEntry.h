@@ -3,12 +3,12 @@
  */
 
 @interface _HDKeyValueJournalEntry : HDJournalEntry {
-    int _category;
-    NSString *_domain;
-    NSString *_key;
-    NSDate *_modificationDate;
-    int _provenance;
-    <NSSecureCoding> *_value;
+    int  _category;
+    NSString * _domain;
+    NSString * _key;
+    NSDate * _modificationDate;
+    int  _provenance;
+    <NSSecureCoding> * _value;
 }
 
 @property (nonatomic, readonly) int category;

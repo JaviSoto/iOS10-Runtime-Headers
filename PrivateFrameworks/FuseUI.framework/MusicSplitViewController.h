@@ -3,25 +3,25 @@
  */
 
 @interface MusicSplitViewController : UIViewController <SKUIProxyScrollViewDelegate> {
-    UIViewController *_detailViewController;
+    UIViewController * _detailViewController;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _detailViewControllerContentInsetAdditions;
-    UIView *_gutterView;
-    BOOL _isHorizontallyCompact;
-    UIViewController *_preservedDetailViewController;
-    UIViewController *_primaryViewController;
+    }  _detailViewControllerContentInsetAdditions;
+    UIView * _gutterView;
+    BOOL  _isHorizontallyCompact;
+    UIViewController * _preservedDetailViewController;
+    UIViewController * _primaryViewController;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _primaryViewControllerContentInsetAdditions;
-    SKUIProxyScrollView *_proxyScrollView;
-    float _staticPrimaryColumnWidth;
+    }  _primaryViewControllerContentInsetAdditions;
+    SKUIProxyScrollView * _proxyScrollView;
+    float  _staticPrimaryColumnWidth;
 }
 
 @property (nonatomic, readonly) UIViewController *_detailViewController;
@@ -39,6 +39,7 @@
 - (id)_detailViewControllerOverrideTraitCollection;
 - (void)_didChangeDetailViewController;
 - (void)_didChangePrimaryViewController;
+- (void)_handleDetailViewController:(id)arg1;
 - (float)_preferredPrimaryWColumnWidthWhenWithDetailForWidth:(float)arg1;
 - (id)_primaryViewControllerOverrideTraitCollection;
 - (void)_requestInitialStateDetailViewController;
@@ -47,8 +48,10 @@
 - (void)_updateHorizontallyCompactState;
 - (void)_willChangeDetailViewController:(id)arg1;
 - (void)_willChangePrimaryViewController:(id)arg1;
+- (void)clearDetailViewController;
 - (id)contentScrollView;
 - (void)dealloc;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)primaryViewController;
 - (void)scrollViewDidChangeContentInset:(id)arg1;
 - (void)setPrimaryViewController:(id)arg1;

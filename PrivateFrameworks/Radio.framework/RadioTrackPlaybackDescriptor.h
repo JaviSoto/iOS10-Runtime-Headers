@@ -3,12 +3,12 @@
  */
 
 @interface RadioTrackPlaybackDescriptor : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    BOOL _current;
-    NSDate *_expirationDate;
-    double _pauseTime;
-    NSDate *_skipDate;
-    long long _storeID;
-    NSDictionary *_trackInfo;
+    BOOL  _current;
+    NSDate * _expirationDate;
+    double  _pauseTime;
+    NSDate * _skipDate;
+    long long  _storeID;
+    NSDictionary * _trackInfo;
 }
 
 @property (getter=isCurrent, nonatomic, readonly) BOOL current;

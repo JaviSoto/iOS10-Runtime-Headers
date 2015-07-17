@@ -3,8 +3,8 @@
  */
 
 @interface CUIKUserActivityCalendarDate : CUIKUserActivity {
-    NSDate *_date;
-    unsigned int _view;
+    NSDate * _date;
+    unsigned int  _view;
 }
 
 @property (nonatomic, readonly) NSDate *date;
@@ -14,6 +14,7 @@
 - (id)date;
 - (id)dictionary;
 - (id)initWithDate:(id)arg1 view:(unsigned int)arg2;
+- (id)initWithDate:(id)arg1 view:(unsigned int)arg2 calendar:(id)arg3;
 - (id)initWithDictionary:(id)arg1;
 - (unsigned int)view;
 

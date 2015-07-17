@@ -3,10 +3,10 @@
  */
 
 @interface UITableViewHeaderFooterView : UIView <UITableViewSubviewReusing> {
-    UIImage *_backgroundImage;
-    UIView *_backgroundView;
-    UIView *_contentView;
-    _UITableViewHeaderFooterViewLabel *_detailLabel;
+    UIImage * _backgroundImage;
+    UIView * _backgroundView;
+    UIView * _contentView;
+    _UITableViewHeaderFooterViewLabel * _detailLabel;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,7 +16,7 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
+    }  _frame;
     struct { 
         unsigned int isHeader : 1; 
         unsigned int labelBackgroundColorNeedsUpdate : 1; 
@@ -24,28 +24,28 @@
         unsigned int floating : 1; 
         unsigned int stripPadding : 1; 
         unsigned int isTopHeader : 1; 
-    } _headerFooterFlags;
-    _UITableViewHeaderFooterViewLabel *_label;
-    float _maxTitleWidth;
-    NSString *_reuseIdentifier;
+    }  _headerFooterFlags;
+    _UITableViewHeaderFooterViewLabel * _label;
+    float  _maxTitleWidth;
+    NSString * _reuseIdentifier;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorInset;
-    UITableView *_tableView;
-    int _tableViewStyle;
-    int _textAlignment;
-    UIColor *_tintColor;
+    }  _separatorInset;
+    UITableView * _tableView;
+    int  _tableViewStyle;
+    int  _textAlignment;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (nonatomic, retain) UIView *backgroundView;
-@property (nonatomic, readonly, retain) UIView *contentView;
+@property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) UILabel *detailTextLabel;
+@property (nonatomic, readonly) UILabel *detailTextLabel;
 @property (nonatomic) BOOL floating;
 @property (readonly) unsigned int hash;
 @property (getter=_marginWidth, setter=_setMarginWidth:, nonatomic) float marginWidth;
@@ -59,20 +59,23 @@
 @property (nonatomic) int tableViewStyle;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) int textAlignment;
-@property (nonatomic, readonly, retain) UILabel *textLabel;
+@property (nonatomic, readonly) UILabel *textLabel;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (getter=_isTopHeader, setter=_setTopHeader:, nonatomic) BOOL topHeader;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
-+ (id)_defaultPlainHeaderFooterFont;
 + (id)_defaultTextColorForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailLabelFrame;
 - (struct CGSize { float x1; float x2; })_detailTextSizeForWidth:(float)arg1;
 - (void)_invalidateDetailLabelBackgroundColor;
 - (void)_invalidateLabelBackgroundColor;
 - (BOOL)_isTopHeader;
+- (BOOL)_isTransparentFocusRegion;
 - (id)_label:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (float)_marginWidth;
@@ -89,7 +92,6 @@
 - (BOOL)_stripPadding;
 - (void)_tableViewDidUpdateMarginWidth;
 - (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
-- (BOOL)_transparentFocusContainer;
 - (void)_updateBackgroundImage;
 - (void)_updateContentAndBackgroundView;
 - (void)_updateDetailLabelBackgroundColor;
@@ -101,12 +103,13 @@
 - (id)backgroundImage;
 - (id)backgroundView;
 - (id)contentView;
-- (void)dealloc;
 - (id)detailTextLabel;
 - (BOOL)floating;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (float)maxTitleWidth;
 - (void)prepareForReuse;
@@ -135,5 +138,9 @@
 - (int)textAlignment;
 - (id)textLabel;
 - (id)tintColor;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyContactStyle;
 
 @end

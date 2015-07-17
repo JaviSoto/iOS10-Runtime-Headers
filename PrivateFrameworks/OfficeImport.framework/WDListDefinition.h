@@ -3,12 +3,12 @@
  */
 
 @interface WDListDefinition : NSObject <NSCopying> {
-    WDDocument *mDocument;
-    NSMutableArray *mLevels;
-    long mListDefinitionId;
-    NSString *mStyleId;
-    NSString *mStyleRefId;
-    int mType;
+    WDDocument * mDocument;
+    NSMutableArray * mLevels;
+    long  mListDefinitionId;
+    NSString * mStyleId;
+    NSString * mStyleRefId;
+    int  mType;
 }
 
 @property (nonatomic, readonly) long listDefinitionId;
@@ -18,6 +18,7 @@
 - (id)addLevel;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithDocument:(id)arg1 listDefinitionId:(long)arg2 styleId:(id)arg3;
 - (id)levelAt:(int)arg1;
 - (int)levelCount;

@@ -3,7 +3,7 @@
  */
 
 @interface SSVSubscriptionResponse : NSObject <NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_accountUniqueIdentifierToSubscriptionStatus;
+    NSMutableDictionary * _accountUniqueIdentifierToSubscriptionStatus;
 }
 
 @property (readonly, copy) NSString *debugDescription;

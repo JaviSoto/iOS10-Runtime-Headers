@@ -3,24 +3,24 @@
  */
 
 @interface PLThumbnailManager : NSObject {
-    NSMutableArray *_alreadyFailedAssetObjectIDsForRebuild;
-    NSArray *_changedPhotos;
-    NSDictionary *_changedPhotosMap;
-    PLLargeImageLoader *_largeImageLoaderFilledHalfScreen;
-    PLLargeImageLoader *_largeImageLoaderFilledScreen;
-    PLLargeImageLoader *_largeImageLoaderFullScreen;
-    PLLargeImageLoader *_largeImageLoaderFullSize;
-    <PLThumbPersistenceManager> *_lastUsedThumbManager;
-    int _lastUsedThumbManagerFormat;
-    NSLock *_lock;
-    id _observerToken;
-    NSIndexSet *_occupiedIndexes;
-    PLPhotoLibrary *_photoLibrary;
-    NSMutableSet *_previouslyRequestedThumbnailFixOIDs;
-    NSMutableSet *_requestedThumbnailFixAssets;
-    NSMutableDictionary *_thumbManagersByFormat;
-    struct _FigCascadeContext { } *_unicornContextLandscape;
-    struct _FigCascadeContext { } *_unicornContextPortrait;
+    NSMutableArray * _alreadyFailedAssetObjectIDsForRebuild;
+    NSArray * _changedPhotos;
+    NSDictionary * _changedPhotosMap;
+    PLLargeImageLoader * _largeImageLoaderFilledHalfScreen;
+    PLLargeImageLoader * _largeImageLoaderFilledScreen;
+    PLLargeImageLoader * _largeImageLoaderFullScreen;
+    PLLargeImageLoader * _largeImageLoaderFullSize;
+    <PLThumbPersistenceManager> * _lastUsedThumbManager;
+    int  _lastUsedThumbManagerFormat;
+    NSLock * _lock;
+    id  _observerToken;
+    NSIndexSet * _occupiedIndexes;
+    PLPhotoLibrary * _photoLibrary;
+    NSMutableSet * _previouslyRequestedThumbnailFixOIDs;
+    NSMutableSet * _requestedThumbnailFixAssets;
+    NSMutableDictionary * _thumbManagersByFormat;
+    struct _FigCascadeContext { } * _unicornContextLandscape;
+    struct _FigCascadeContext { } * _unicornContextPortrait;
 }
 
 @property (nonatomic, retain) id observerToken;

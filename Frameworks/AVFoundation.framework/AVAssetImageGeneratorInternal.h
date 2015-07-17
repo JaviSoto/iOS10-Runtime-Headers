@@ -3,34 +3,34 @@
  */
 
 @interface AVAssetImageGeneratorInternal : NSObject {
-    NSString *apertureMode;
-    BOOL appliesPreferredTrackTransform;
-    AVAsset *asset;
-    int cancelledRequestIDThreshold;
-    AVCustomVideoCompositorSession *customVideoCompositorSession;
-    struct OpaqueFigAssetImageGenerator { } *generator;
-    NSObject<OS_dispatch_queue> *imageRequestQueue;
+    NSString * apertureMode;
+    BOOL  appliesPreferredTrackTransform;
+    AVAsset * asset;
+    int  cancelledRequestIDThreshold;
+    AVCustomVideoCompositorSession * customVideoCompositorSession;
+    struct OpaqueFigAssetImageGenerator { } * generator;
+    NSObject<OS_dispatch_queue> * imageRequestQueue;
     struct CGSize { 
         float width; 
         float height; 
-    } maximumSize;
-    int nextRequestID;
+    }  maximumSize;
+    int  nextRequestID;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } requestedTimeToleranceAfter;
+    }  requestedTimeToleranceAfter;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } requestedTimeToleranceBefore;
-    NSMutableArray *requests;
-    NSObject<OS_dispatch_queue> *requestsQueue;
-    AVVideoComposition *videoComposition;
-    AVWeakReference *weakReference;
+    }  requestedTimeToleranceBefore;
+    NSMutableArray * requests;
+    NSObject<OS_dispatch_queue> * requestsQueue;
+    AVVideoComposition * videoComposition;
+    AVWeakReference * weakReference;
 }
 
 @end

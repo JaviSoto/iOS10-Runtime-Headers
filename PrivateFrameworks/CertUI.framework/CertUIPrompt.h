@@ -3,11 +3,11 @@
  */
 
 @interface CertUIPrompt : NSObject {
-    NSString *_connectionDisplayName;
-    NSString *_host;
-    id /* block */ _responseBlock;
-    NSString *_service;
-    struct __SecTrust { } *_trust;
+    NSString * _connectionDisplayName;
+    NSString * _host;
+    id /* block */  _responseBlock;
+    NSString * _service;
+    struct __SecTrust { } * _trust;
 }
 
 @property (nonatomic, copy) NSString *connectionDisplayName;

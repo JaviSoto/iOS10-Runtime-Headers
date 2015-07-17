@@ -3,12 +3,12 @@
  */
 
 @interface _UITintColorVisitor : _UIViewVisitor {
-    UIView *_changedSubview;
-    UIView *_originalVisitedView;
-    unsigned int _reasons;
-    BOOL _viewHasDefinedTintColor;
-    BOOL _viewHasNonAutomaticTintAdjustmentMode;
-    BOOL _visitedViewIsWindow;
+    UIView * _changedSubview;
+    UIView * _originalVisitedView;
+    unsigned int  _reasons;
+    BOOL  _viewHasDefinedTintColor;
+    BOOL  _viewHasNonAutomaticTintAdjustmentMode;
+    BOOL  _visitedViewIsWindow;
 }
 
 - (void)_prepareForView:(id)arg1 trackingHierarchy:(BOOL)arg2;

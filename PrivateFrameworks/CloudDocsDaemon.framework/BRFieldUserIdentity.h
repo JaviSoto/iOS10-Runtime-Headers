@@ -3,9 +3,9 @@
  */
 
 @interface BRFieldUserIdentity : PBCodable <NSCopying> {
-    NSString *_displayName;
-    NSString *_firstName;
-    NSString *_lastName;
+    NSString * _displayName;
+    NSString * _firstName;
+    NSString * _lastName;
 }
 
 @property (nonatomic, retain) NSString *displayName;

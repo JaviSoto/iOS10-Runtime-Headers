@@ -3,13 +3,13 @@
  */
 
 @interface CKDPUserPrivacySettingsBatchLookupResponseContainerPrivacySettings : PBCodable <NSCopying> {
-    NSMutableArray *_applicationBundles;
-    NSString *_applicationContainer;
-    int _applicationContainerEnvironment;
+    NSMutableArray * _applicationBundles;
+    NSString * _applicationContainer;
+    int  _applicationContainerEnvironment;
     struct { 
         unsigned int applicationContainerEnvironment : 1; 
-    } _has;
-    CKDPUserPrivacySettings *_userPrivacySettings;
+    }  _has;
+    CKDPUserPrivacySettings * _userPrivacySettings;
 }
 
 @property (nonatomic, retain) NSMutableArray *applicationBundles;

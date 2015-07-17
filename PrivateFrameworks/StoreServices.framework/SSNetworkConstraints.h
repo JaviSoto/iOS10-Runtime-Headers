@@ -3,8 +3,8 @@
  */
 
 @interface SSNetworkConstraints : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableDictionary *_sizeLimits;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableDictionary * _sizeLimits;
 }
 
 @property (getter=isAnyNetworkTypeEnabled, readonly) BOOL anyNetworkTypeEnabled;

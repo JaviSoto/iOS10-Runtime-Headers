@@ -3,13 +3,13 @@
  */
 
 @interface SUTabBarAppearance : NSObject <NSCopying> {
-    UIImage *_backgroundImage;
-    UIImage *_dividerImage;
-    UIImage *_selectedDividerImage;
-    UIImage *_selectionIndicatorImage;
-    float _tabBarButtonSpacing;
-    float _tabBarButtonWidth;
-    NSMutableDictionary *_titleTextAttributes;
+    UIImage * _backgroundImage;
+    UIImage * _dividerImage;
+    UIImage * _selectedDividerImage;
+    UIImage * _selectionIndicatorImage;
+    float  _tabBarButtonSpacing;
+    float  _tabBarButtonWidth;
+    NSMutableDictionary * _titleTextAttributes;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;

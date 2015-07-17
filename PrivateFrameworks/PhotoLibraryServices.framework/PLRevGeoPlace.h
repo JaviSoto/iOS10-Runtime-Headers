@@ -3,8 +3,8 @@
  */
 
 @interface PLRevGeoPlace : NSObject {
-    BOOL _isHome;
-    NSMutableArray *_placeTypeInfoMap;
+    BOOL  _isHome;
+    NSMutableArray * _placeTypeInfoMap;
 }
 
 @property (nonatomic) BOOL isHome;

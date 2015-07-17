@@ -3,9 +3,9 @@
  */
 
 @interface SKUILoadingView : UIView {
-    SKUIColorScheme *_colorScheme;
-    UILabel *_label;
-    UIActivityIndicatorView *_spinner;
+    SKUIColorScheme * _colorScheme;
+    UILabel * _label;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, copy) SKUIColorScheme *colorScheme;

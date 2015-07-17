@@ -3,9 +3,9 @@
  */
 
 @interface ML3DAAPExportSession : ML3ExportSession {
-    unsigned int _currentListingContainerCode;
-    unsigned int _currentSongsContainerCode;
-    int _updateType;
+    unsigned int  _currentListingContainerCode;
+    unsigned int  _currentSongsContainerCode;
+    int  _updateType;
 }
 
 - (void)_endCurrentListingContainer;

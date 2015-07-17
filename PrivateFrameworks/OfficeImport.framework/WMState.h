@@ -3,22 +3,22 @@
  */
 
 @interface WMState : CMState {
-    CMOutlineState *currentListState;
-    NSMutableDictionary *listStates;
-    unsigned int mBlockIndex;
-    unsigned int mCurrentPage;
-    BOOL mIsFrame;
-    BOOL mIsFrameEnd;
-    BOOL mIsFrameStart;
-    BOOL mIsHeaderOrFooter;
-    WDText *mLastFooter;
-    WDText *mLastHeader;
-    float mLeftMargin;
-    float mPageHeight;
-    unsigned int mRunIndex;
-    float mTopMargin;
-    float mTotalPageHeight;
-    CMOutlineState *outlineState;
+    CMOutlineState * currentListState;
+    NSMutableDictionary * listStates;
+    unsigned int  mBlockIndex;
+    unsigned int  mCurrentPage;
+    BOOL  mIsFrame;
+    BOOL  mIsFrameEnd;
+    BOOL  mIsFrameStart;
+    BOOL  mIsHeaderOrFooter;
+    WDText * mLastFooter;
+    WDText * mLastHeader;
+    float  mLeftMargin;
+    float  mPageHeight;
+    unsigned int  mRunIndex;
+    float  mTopMargin;
+    float  mTotalPageHeight;
+    CMOutlineState * outlineState;
 }
 
 - (unsigned int)blockIndex;

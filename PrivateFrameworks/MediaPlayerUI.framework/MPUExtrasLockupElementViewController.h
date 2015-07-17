@@ -3,28 +3,28 @@
  */
 
 @interface MPUExtrasLockupElementViewController : MPUExtrasViewElementViewController {
-    NSLayoutConstraint *_artworkContainerHeightConstraint;
-    NSLayoutConstraint *_artworkContainerTopConstraint;
-    MPUExtrasConstrainedArtworkContainerView *_artworkContainerView;
-    NSLayoutConstraint *_artworkContainerWidthConstraint;
-    NSLayoutConstraint *_artworkContainerXConstraint;
+    NSLayoutConstraint * _artworkContainerHeightConstraint;
+    NSLayoutConstraint * _artworkContainerTopConstraint;
+    MPUExtrasConstrainedArtworkContainerView * _artworkContainerView;
+    NSLayoutConstraint * _artworkContainerWidthConstraint;
+    NSLayoutConstraint * _artworkContainerXConstraint;
     struct CGSize { 
         float width; 
         float height; 
-    } _artworkSize;
-    MPUContentSizeLayoutConstraint *_descriptionBaselineConstraint;
-    UILabel *_descriptionLabel;
-    MPUContentSizeLayoutConstraint *_subtitleBaselineConstraint;
-    UILabel *_subtitleLabel;
-    NSLayoutConstraint *_textBottomConstraint;
-    NSLayoutConstraint *_textCenterYConstraint;
-    UIView *_textContainmentView;
-    NSLayoutConstraint *_textHeightConstraint;
-    NSLayoutConstraint *_textLeadingConstraint;
-    NSLayoutConstraint *_textTopConstraint;
-    NSLayoutConstraint *_textTrailingConstraint;
-    UILabel *_titleLabel;
-    NSLayoutConstraint *_titleVerticalConstraint;
+    }  _artworkSize;
+    MPUContentSizeLayoutConstraint * _descriptionBaselineConstraint;
+    UILabel * _descriptionLabel;
+    MPUContentSizeLayoutConstraint * _subtitleBaselineConstraint;
+    UILabel * _subtitleLabel;
+    NSLayoutConstraint * _textBottomConstraint;
+    NSLayoutConstraint * _textCenterYConstraint;
+    UIView * _textContainmentView;
+    NSLayoutConstraint * _textHeightConstraint;
+    NSLayoutConstraint * _textLeadingConstraint;
+    NSLayoutConstraint * _textTopConstraint;
+    NSLayoutConstraint * _textTrailingConstraint;
+    UILabel * _titleLabel;
+    NSLayoutConstraint * _titleVerticalConstraint;
 }
 
 @property (readonly) NSString *descriptionTextStyle;

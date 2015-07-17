@@ -3,7 +3,7 @@
  */
 
 @interface IMAggregateMessagePartChatItem : IMTextMessagePartChatItem {
-    NSArray *_subparts;
+    NSArray * _subparts;
 }
 
 @property (nonatomic, readonly, copy) NSArray *subparts;

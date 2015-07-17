@@ -3,9 +3,9 @@
  */
 
 @interface FTCServiceMonitor : NSObject {
-    int _availability;
-    int _token;
-    int _type;
+    int  _availability;
+    int  _token;
+    int  _type;
 }
 
 @property (nonatomic, readonly) int serviceType;

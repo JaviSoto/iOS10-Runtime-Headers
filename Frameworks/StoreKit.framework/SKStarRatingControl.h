@@ -3,23 +3,23 @@
  */
 
 @interface SKStarRatingControl : UIControl {
-    UIImageView *_backgroundImageView;
-    UILabel *_explanationLabel;
-    UIImageView *_foregroundImageView;
+    UIImageView * _backgroundImageView;
+    UILabel * _explanationLabel;
+    UIImageView * _foregroundImageView;
     struct CGSize { 
         float width; 
         float height; 
-    } _hitPadding;
-    float _starWidth;
+    }  _hitPadding;
+    float  _starWidth;
     struct CGPoint { 
         float x; 
         float y; 
-    } _trackingLastPoint;
+    }  _trackingLastPoint;
     struct CGPoint { 
         float x; 
         float y; 
-    } _trackingStartPoint;
-    float _value;
+    }  _trackingStartPoint;
+    float  _value;
 }
 
 @property (nonatomic, copy) NSString *explanationText;

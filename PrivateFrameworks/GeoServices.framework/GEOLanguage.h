@@ -3,8 +3,8 @@
  */
 
 @interface GEOLanguage : PBCodable <NSCopying> {
-    unsigned int _identifier;
-    NSMutableArray *_languages;
+    unsigned int  _identifier;
+    NSMutableArray * _languages;
 }
 
 @property (nonatomic) unsigned int identifier;

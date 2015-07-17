@@ -3,14 +3,14 @@
  */
 
 @interface MCDNowPlayingView : UIView {
-    UILabel *_albumLabel;
-    UILabel *_artistLabel;
-    UIImageView *_artworkView;
-    UIImageView *_explicitImageView;
-    BOOL _explicitTrack;
-    MPUGradientView *_gradientView;
-    MCDProgressView *_progressView;
-    UILabel *_titleLabel;
+    UILabel * _albumLabel;
+    UILabel * _artistLabel;
+    UIImageView * _artworkView;
+    UIImageView * _explicitImageView;
+    BOOL  _explicitTrack;
+    MPUGradientView * _gradientView;
+    MCDProgressView * _progressView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, readonly) UILabel *albumLabel;

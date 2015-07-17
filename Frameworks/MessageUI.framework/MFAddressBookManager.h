@@ -3,9 +3,9 @@
  */
 
 @interface MFAddressBookManager : NSObject {
-    void *_addressBook;
-    struct __CFDictionary { } *_clients;
-    int _lock;
+    void * _addressBook;
+    struct __CFDictionary { } * _clients;
+    int  _lock;
 }
 
 + (BOOL)isAuthorizedToUseAddressBook;

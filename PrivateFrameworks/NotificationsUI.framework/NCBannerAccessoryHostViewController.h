@@ -3,7 +3,7 @@
  */
 
 @interface NCBannerAccessoryHostViewController : _UIRemoteViewController <NCBannerAccessoryHostInterface> {
-    <NCBannerAccessoryHostViewControllerDelegate> *_delegate;
+    <NCBannerAccessoryHostViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <NCBannerAccessoryHostViewControllerDelegate> *delegate;

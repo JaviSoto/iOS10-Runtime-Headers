@@ -3,14 +3,14 @@
  */
 
 @interface UIWebSelection : NSObject {
-    <UIWebSelectionBlock> *_base;
+    <UIWebSelectionBlock> * _base;
     struct CGSize { 
         float width; 
         float height; 
-    } _desiredSize;
-    UIWebDocumentView *_documentView;
-    <UIWebSelectionBlock> *_extent;
-    UITextSelection *_textSelection;
+    }  _desiredSize;
+    UIWebDocumentView * _documentView;
+    <UIWebSelectionBlock> * _extent;
+    UITextSelection * _textSelection;
 }
 
 @property (nonatomic, retain) <UIWebSelectionBlock> *base;

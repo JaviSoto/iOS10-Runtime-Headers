@@ -44,7 +44,7 @@
         int _file_format_version_cached_byte_size_; 
         unsigned long long save_token_; 
         int preferred_package_type_; 
-    } _message;
+    }  _message;
 }
 
 - (id).cxx_construct;

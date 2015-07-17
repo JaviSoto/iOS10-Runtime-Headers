@@ -2,20 +2,10 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTransition : NSObject {
-    struct { 
-        int type; 
-        float duration; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } color; 
-    } _data;
-    CIFilter *_filter;
-    BOOL _pauseIncoming;
-    BOOL _pauseOutgoing;
+@interface SKTransition : NSObject <NSCopying> {
+    BOOL  _pauseIncoming;
+    BOOL  _pauseOutgoing;
+    struct SKCTransitionNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; int x22; id x23; bool x24; float x25; float x26; struct SKCSceneNode {} *x27; struct SKCSceneNode {} *x28; struct shared_ptr<jet_texture> { struct jet_texture {} *x_29_1_1; struct __shared_weak_count {} *x_29_1_2; } x29; struct shared_ptr<jet_texture> { struct jet_texture {} *x_30_1_1; struct __shared_weak_count {} *x_30_1_2; } x30; struct shared_ptr<jet_texture> { struct jet_texture {} *x_31_1_1; struct __shared_weak_count {} *x_31_1_2; } x31; struct shared_ptr<jet_texture> { struct jet_texture {} *x_32_1_1; struct __shared_weak_count {} *x_32_1_2; } x32; struct shared_ptr<jet_framebuffer> { struct jet_framebuffer {} *x_33_1_1; struct __shared_weak_count {} *x_33_1_2; } x33; struct shared_ptr<jet_framebuffer> { struct jet_framebuffer {} *x_34_1_1; struct __shared_weak_count {} *x_34_1_2; } x34; float x35; bool x36; bool x37; bool x38; bool x39; } * _skcTransitionNode;
 }
 
 @property (nonatomic) BOOL pausesIncomingScene;
@@ -48,10 +38,11 @@
 + (id)revealWithDirection:(int)arg1 duration:(double)arg2;
 + (id)transitionWithCIFilter:(id)arg1 duration:(double)arg2;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (struct { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; })_data;
+- (struct SKCTransitionNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; int x22; id x23; bool x24; float x25; float x26; struct SKCSceneNode {} *x27; struct SKCSceneNode {} *x28; struct shared_ptr<jet_texture> { struct jet_texture {} *x_29_1_1; struct __shared_weak_count {} *x_29_1_2; } x29; struct shared_ptr<jet_texture> { struct jet_texture {} *x_30_1_1; struct __shared_weak_count {} *x_30_1_2; } x30; struct shared_ptr<jet_texture> { struct jet_texture {} *x_31_1_1; struct __shared_weak_count {} *x_31_1_2; } x31; struct shared_ptr<jet_texture> { struct jet_texture {} *x_32_1_1; struct __shared_weak_count {} *x_32_1_2; } x32; struct shared_ptr<jet_framebuffer> { struct jet_framebuffer {} *x_33_1_1; struct __shared_weak_count {} *x_33_1_2; } x33; struct shared_ptr<jet_framebuffer> { struct jet_framebuffer {} *x_34_1_1; struct __shared_weak_count {} *x_34_1_2; } x34; float x35; bool x36; bool x37; bool x38; bool x39; }*)_backingNode;
+- (float)_duration;
 - (id)_filter;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)init;
 - (BOOL)pausesIncomingScene;
 - (BOOL)pausesOutgoingScene;

@@ -5,7 +5,7 @@
 @interface WKDOMNode : NSObject {
     struct RefPtr<WebCore::Node> { 
         struct Node {} *m_ptr; 
-    } _impl;
+    }  _impl;
 }
 
 @property (readonly) WKDOMDocument *document;

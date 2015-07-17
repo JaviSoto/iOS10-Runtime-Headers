@@ -15,12 +15,12 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _items;
-    CompassImageNode *_rootNode;
+    }  _items;
+    CompassImageNode * _rootNode;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;

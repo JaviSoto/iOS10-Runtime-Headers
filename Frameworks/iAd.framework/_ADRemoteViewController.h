@@ -3,8 +3,8 @@
  */
 
 @interface _ADRemoteViewController : _UIRemoteViewController {
-    BOOL _hasBeenDismissed;
-    unsigned int _remoteSupportedInterfaceOrientations;
+    BOOL  _hasBeenDismissed;
+    unsigned int  _remoteSupportedInterfaceOrientations;
 }
 
 @property (nonatomic) BOOL hasBeenDismissed;

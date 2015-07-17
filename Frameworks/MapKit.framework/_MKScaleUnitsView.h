@@ -3,18 +3,18 @@
  */
 
 @interface _MKScaleUnitsView : UIView {
-    NSNumberFormatter *_floatNumberFormatter;
-    float _justUnitsWidth;
-    NSDictionary *_legendAttributes;
-    NSString *_legendBaseString;
-    NSMutableDictionary *_legendStringForDistanceStringCache;
-    NSMapTable *_legendStringWidthCache;
-    double _segmentLengthInPixels;
-    NSMutableArray *_strings;
-    NSString *_unitsString;
-    float _unitsWidth;
-    NSString *_unpaddedUnitsString;
-    BOOL _useLightText;
+    NSNumberFormatter * _floatNumberFormatter;
+    float  _justUnitsWidth;
+    NSDictionary * _legendAttributes;
+    NSString * _legendBaseString;
+    NSMutableDictionary * _legendStringForDistanceStringCache;
+    NSMapTable * _legendStringWidthCache;
+    double  _segmentLengthInPixels;
+    NSMutableArray * _strings;
+    NSString * _unitsString;
+    float  _unitsWidth;
+    NSString * _unpaddedUnitsString;
+    BOOL  _useLightText;
 }
 
 @property (nonatomic, retain) NSNumberFormatter *floatNumberFormatter;

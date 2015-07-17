@@ -3,9 +3,9 @@
  */
 
 @interface BLBaseLayerStack : NSObject {
-    struct CGImage { } *_brushImageRef;
-    float _brushSize;
-    float _brushSoftness;
+    struct CGImage { } * _brushImageRef;
+    float  _brushSize;
+    float  _brushSoftness;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -13,7 +13,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _flippedViewToMaskTransform;
+    }  _flippedViewToMaskTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -21,7 +21,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _inverseFlippedViewToMaskTransform;
+    }  _inverseFlippedViewToMaskTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -29,14 +29,14 @@
         float d; 
         float tx; 
         float ty; 
-    } _inverseViewToMaskTransform;
-    NSMutableArray *_layers;
-    int _maskLongEdgeSize;
+    }  _inverseViewToMaskTransform;
+    NSMutableArray * _layers;
+    int  _maskLongEdgeSize;
     struct CGSize { 
         float width; 
         float height; 
-    } _maskSize;
-    BOOL _shouldNotify;
+    }  _maskSize;
+    BOOL  _shouldNotify;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -44,13 +44,13 @@
         float d; 
         float tx; 
         float ty; 
-    } _viewToMaskTransform;
+    }  _viewToMaskTransform;
 }
 
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } flippedViewToMaskTransform;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } inverseFlippedViewToMaskTransform;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } inverseViewToMaskTransform;
-@property (nonatomic, readonly) NSMutableArray *layers;
+@property (nonatomic, readonly, retain) NSMutableArray *layers;
 @property (nonatomic) int maskLongEdgeSize;
 @property (nonatomic) struct CGSize { float x1; float x2; } maskSize;
 @property (nonatomic) BOOL shouldNotify;

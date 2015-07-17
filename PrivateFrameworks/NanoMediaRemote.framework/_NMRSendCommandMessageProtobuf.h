@@ -3,13 +3,13 @@
  */
 
 @interface _NMRSendCommandMessageProtobuf : PBCodable <NSCopying> {
-    int _command;
+    int  _command;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int command : 1; 
-    } _has;
-    _NMRCommandOptionsProtobuf *_options;
-    double _timestamp;
+    }  _has;
+    _NMRCommandOptionsProtobuf * _options;
+    double  _timestamp;
 }
 
 @property (nonatomic) int command;

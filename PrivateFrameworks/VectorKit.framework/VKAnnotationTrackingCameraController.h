@@ -3,36 +3,36 @@
  */
 
 @interface VKAnnotationTrackingCameraController : VKCameraController {
-    <VKTrackableAnnotation> *_annotation;
-    <VKTrackableAnnotationPresentation> *_annotationPresentation;
-    VKAnimation *_currentAnimation;
+    <VKTrackableAnnotation> * _annotation;
+    <VKTrackableAnnotationPresentation> * _annotationPresentation;
+    VKTimedAnimation * _currentAnimation;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _currentAnimationEndCameraPosition;
+    }  _currentAnimationEndCameraPosition;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _currentAnimationEndPoint;
+    }  _currentAnimationEndPoint;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _currentAnimationStartCameraPosition;
+    }  _currentAnimationStartCameraPosition;
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    } _currentAnimationStartPoint;
-    VKAnimation *_currentHeadingAnimation;
+    }  _currentAnimationStartPoint;
+    VKTimedAnimation * _currentHeadingAnimation;
     struct VKEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _edgeInsets;
+    }  _edgeInsets;
     struct { 
         unsigned int hasPendingChange : 1; 
         unsigned int paused : 1; 
@@ -43,13 +43,13 @@
         unsigned int annotationImplementsAccuracy : 1; 
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
-        unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
-    } _flags;
-    float _headingAnimationCompletedAngle;
-    int _headingAnimationDisplayRate;
-    double _pendingChangeDuration;
-    double _pendingHeadingChangeDuration;
-    int _zoomStyle;
+    }  _flags;
+    float  _headingAnimationCompletedAngle;
+    int  _headingAnimationDisplayRate;
+    VKTimer * _headingRegionChangeEndTimer;
+    double  _pendingChangeDuration;
+    double  _pendingHeadingChangeDuration;
+    int  _zoomStyle;
 }
 
 @property (nonatomic, readonly) <VKTrackableAnnotation> *annotation;
@@ -60,6 +60,7 @@
 
 - (id).cxx_construct;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
+- (void)_headingRegionChangeTimerFired:(id)arg1;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (id)annotation;
 - (void)dealloc;

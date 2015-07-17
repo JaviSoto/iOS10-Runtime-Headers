@@ -3,8 +3,8 @@
  */
 
 @interface _FIUIFakeStatisticsCollection : NSObject {
-    NSMutableArray *_buckets;
-    NSCalendar *_calendar;
+    NSMutableArray * _buckets;
+    NSCalendar * _calendar;
 }
 
 - (void).cxx_destruct;

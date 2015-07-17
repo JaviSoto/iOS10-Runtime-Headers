@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonLinker : NSObject {
-    void *_addressBook;
-    NSMutableDictionary *_peopleByFirstName;
-    NSMutableDictionary *_peopleByLastName;
-    NSMutableDictionary *_peopleByOrganization;
+    void * _addressBook;
+    NSMutableDictionary * _peopleByFirstName;
+    NSMutableDictionary * _peopleByLastName;
+    NSMutableDictionary * _peopleByOrganization;
 }
 
 + (BOOL)isAutoLinkingEnabled;

@@ -6,8 +6,8 @@
     struct { 
         unsigned int didLayoutSubviews : 1; 
         unsigned int contentSizeDidChange : 1; 
-    } _delegateRespondsToSelector;
-    BOOL _performingLayout;
+    }  _delegateRespondsToSelector;
+    BOOL  _performingLayout;
 }
 
 @property (nonatomic) <MusicVerticalScrollingContainerCollectionViewDelegate> *delegate;

@@ -3,14 +3,14 @@
  */
 
 @interface MKMapCamera : NSObject <NSCopying, NSSecureCoding> {
-    double _altitude;
+    double  _altitude;
     struct { 
         double latitude; 
         double longitude; 
-    } _centerCoordinate;
-    double _heading;
-    MKMapView *_mapView;
-    double _pitch;
+    }  _centerCoordinate;
+    double  _heading;
+    MKMapView * _mapView;
+    double  _pitch;
 }
 
 @property (nonatomic) double altitude;
@@ -22,6 +22,7 @@
 + (id)_cameraLookingAtGEOMapRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 aspectRatio:(float)arg2;
 + (id)_cameraLookingAtMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 forViewSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)camera;
++ (id)cameraLookingAtCenterCoordinate:(struct { double x1; double x2; })arg1 fromDistance:(double)arg2 pitch:(float)arg3 heading:(double)arg4;
 + (id)cameraLookingAtCenterCoordinate:(struct { double x1; double x2; })arg1 fromEyeCoordinate:(struct { double x1; double x2; })arg2 eyeAltitude:(double)arg3;
 + (BOOL)supportsSecureCoding;
 

@@ -3,9 +3,9 @@
  */
 
 @interface MSTonePurchaseContinuation : SUPurchaseContinuation <ABPeoplePickerNavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
-    UIActionSheet *_actionSheet;
-    UIAlertView *_alertView;
-    ABPeoplePickerNavigationController *_peoplePicker;
+    UIActionSheet * _actionSheet;
+    UIAlertView * _alertView;
+    ABPeoplePickerNavigationController * _peoplePicker;
 }
 
 @property (readonly, copy) NSString *debugDescription;

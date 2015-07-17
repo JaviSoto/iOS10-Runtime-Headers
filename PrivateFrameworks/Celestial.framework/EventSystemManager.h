@@ -3,12 +3,12 @@
  */
 
 @interface EventSystemManager : NSObject {
-    int accelEventIndex;
-    int accelUpdateInternalUS;
-    NSMutableArray *clientList;
-    struct __IOHIDEventSystemClient { } *eventSystemClient;
-    BOOL manageAccel;
-    struct __CFRunLoop { } *runLoop;
+    int  accelEventIndex;
+    int  accelUpdateInternalUS;
+    NSMutableArray * clientList;
+    struct __IOHIDEventSystemClient { } * eventSystemClient;
+    BOOL  manageAccel;
+    struct __CFRunLoop { } * runLoop;
 }
 
 + (id)sharedEventSystem;

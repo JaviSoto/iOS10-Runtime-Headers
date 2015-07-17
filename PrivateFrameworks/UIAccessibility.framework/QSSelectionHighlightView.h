@@ -3,8 +3,8 @@
  */
 
 @interface QSSelectionHighlightView : UIView {
-    NSArray *_highlightSelectionRects;
-    UIColor *_selectionColor;
+    NSArray * _highlightSelectionRects;
+    UIColor * _selectionColor;
 }
 
 @property (nonatomic, retain) NSArray *highlightSelectionRects;

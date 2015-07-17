@@ -3,21 +3,27 @@
  */
 
 @interface PXPresentationState : OCXReadState {
-    CXNamespace *_PXPresentationMLNamespace;
-    <TCCancelDelegate> *mCancel;
-    NSMutableDictionary *mModelObjects;
-    OAVReadState *mOAVState;
-    OAXDrawingState *mOfficeArtState;
-    NSMutableDictionary *mSlideURLToIndexMap;
-    OAXTableStyleCache *mTableStyleCache;
-    PDPresentation *mTgtPresentation;
+    CXNamespace * _PXPresentationMLNamespace;
+    <TCCancelDelegate> * mCancel;
+    NSMutableDictionary * mCommentAuthorIdToIndexMap;
+    NSMutableDictionary * mModelObjects;
+    OAVReadState * mOAVState;
+    OAXDrawingState * mOfficeArtState;
+    CXNamespace * mPXPresentationMLNamespace;
+    NSMutableDictionary * mSlideURLToIndexMap;
+    OAXTableStyleCache * mTableStyleCache;
+    PDPresentation * mTgtPresentation;
 }
 
 @property (nonatomic, retain) CXNamespace *PXPresentationMLNamespace;
 @property (nonatomic, retain) <TCCancelDelegate> *cancelDelegate;
+@property (nonatomic, readonly) NSMutableDictionary *commentAuthorIdToIndexMap;
+
++ (void)setPptChartGraphicPropertyDefaultBlock:(id)arg1;
 
 - (id)PXPresentationMLNamespace;
 - (id)cancelDelegate;
+- (id)commentAuthorIdToIndexMap;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isCancelled;

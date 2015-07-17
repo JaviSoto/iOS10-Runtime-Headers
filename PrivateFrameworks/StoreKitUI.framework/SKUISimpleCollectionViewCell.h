@@ -3,13 +3,13 @@
  */
 
 @interface SKUISimpleCollectionViewCell : UICollectionViewCell {
-    UIView *_contentChildView;
+    UIView * _contentChildView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
+    }  _contentInsets;
 }
 
 @property (nonatomic, retain) UIView *contentChildView;

@@ -3,13 +3,13 @@
  */
 
 @interface MSCLPhotoPickerShelfViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    PHFetchResult *_assets;
-    UICollectionView *_collectionView;
-    <MSCLPhotoPickerDelegate> *_delegate;
-    PHCachingImageManager *_imageManager;
-    NSMutableDictionary *_imageRequestsByAssetIDs;
-    BOOL _isZoomed;
-    NSMutableDictionary *_selectedAttachmentsByAssetID;
+    PHFetchResult * _assets;
+    UICollectionView * _collectionView;
+    <MSCLPhotoPickerDelegate> * _delegate;
+    PHCachingImageManager * _imageManager;
+    NSMutableDictionary * _imageRequestsByAssetIDs;
+    BOOL  _isZoomed;
+    NSMutableDictionary * _selectedAttachmentsByAssetID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface _HDActivityCacheUpdateJournalEntry : HDJournalEntry {
-    HKActivityCache *_activityCache;
+    HKActivityCache * _activityCache;
 }
 
 @property (nonatomic, readonly) HKActivityCache *activityCache;

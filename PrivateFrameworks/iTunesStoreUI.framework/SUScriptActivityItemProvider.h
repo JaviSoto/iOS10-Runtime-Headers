@@ -3,13 +3,13 @@
  */
 
 @interface SUScriptActivityItemProvider : SUScriptObject <SUActivityItemProviderDelegate> {
-    id _item;
-    id /* block */ _itemBlock;
-    SUScriptFunction *_itemFunction;
-    int _loadState;
-    NSString *_mimeType;
-    SUActivityItemProvider *_nativeProvider;
-    int _previewLoadState;
+    id  _item;
+    id /* block */  _itemBlock;
+    SUScriptFunction * _itemFunction;
+    int  _loadState;
+    NSString * _mimeType;
+    SUActivityItemProvider * _nativeProvider;
+    int  _previewLoadState;
 }
 
 @property (readonly) NSString *MIMEType;

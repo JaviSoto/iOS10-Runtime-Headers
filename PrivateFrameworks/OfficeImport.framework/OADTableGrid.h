@@ -3,13 +3,15 @@
  */
 
 @interface OADTableGrid : NSObject {
-    NSMutableArray *mColumns;
+    NSMutableArray * mColumns;
 }
 
 - (id)addColumn;
 - (id)columnAtIndex:(unsigned int)arg1;
 - (unsigned int)columnCount;
 - (void)dealloc;
+- (id)description;
+- (void)flipColumnsRTL;
 - (id)init;
 
 @end

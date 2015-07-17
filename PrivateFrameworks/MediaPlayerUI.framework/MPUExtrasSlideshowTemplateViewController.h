@@ -3,11 +3,11 @@
  */
 
 @interface MPUExtrasSlideshowTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasSlideshowViewControllerDataSource, MPUExtrasZoomingImageTransitionParticipant> {
-    NSArray *_imageElements;
-    BOOL _overlayHidden;
-    BOOL _preventNavbarAutohide;
-    MPUExtrasSlideshowViewController *_slideshowViewController;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    NSArray * _imageElements;
+    BOOL  _overlayHidden;
+    BOOL  _preventNavbarAutohide;
+    MPUExtrasSlideshowViewController * _slideshowViewController;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

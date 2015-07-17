@@ -3,14 +3,14 @@
  */
 
 @interface SSItem : NSObject <SSURLConnectionRequestDelegate> {
-    NSDate *_expirationDate;
-    NSArray *_offers;
-    NSDictionary *_properties;
-    NSString *_tellAFriendBody;
-    NSString *_tellAFriendBodyMIMEType;
-    NSMutableArray *_tellAFriendHandlers;
-    SSURLConnectionRequest *_tellAFriendRequest;
-    NSString *_tellAFriendSubject;
+    NSDate * _expirationDate;
+    NSArray * _offers;
+    NSDictionary * _properties;
+    NSString * _tellAFriendBody;
+    NSString * _tellAFriendBodyMIMEType;
+    NSMutableArray * _tellAFriendHandlers;
+    SSURLConnectionRequest * _tellAFriendRequest;
+    NSString * _tellAFriendSubject;
 }
 
 @property (nonatomic, readonly) NSNumber *ITunesStoreIdentifier;

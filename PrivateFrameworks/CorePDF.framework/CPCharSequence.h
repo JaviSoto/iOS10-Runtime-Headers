@@ -3,12 +3,12 @@
  */
 
 @interface CPCharSequence : NSObject <CPCopying, CPDisposable, NSCopying> {
-    struct CPPDFChar {} **charArray;
-    unsigned int length;
-    unsigned int previousSize;
-    CPMemoryOwner *sharedMemory;
-    unsigned int size;
-    BOOL wasMerged;
+    struct CPPDFChar {} ** charArray;
+    unsigned int  length;
+    unsigned int  previousSize;
+    CPMemoryOwner * sharedMemory;
+    unsigned int  size;
+    BOOL  wasMerged;
 }
 
 - (void)addChar:(struct CPPDFChar { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned short x2; unsigned short x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; struct CPPDFStyle {} *x6; float x7; int x8; }*)arg1;

@@ -3,13 +3,12 @@
  */
 
 @interface UIKeyboardLayoutDictation : UIKeyboardLayout {
-    UIKBBackgroundView *_backgroundView;
-    UIKBTree *_keyplane;
+    UIKBBackgroundView * _backgroundView;
+    UIKBTree * _keyplane;
 }
 
 + (id)activeInstance;
-+ (float)landscapeHeight;
-+ (float)portraitHeight;
++ (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
 
 - (int)_clipCornersOfView:(id)arg1;
 - (id)currentKeyplane;

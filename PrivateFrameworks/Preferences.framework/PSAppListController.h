@@ -3,7 +3,7 @@
  */
 
 @interface PSAppListController : PSListController {
-    PSSystemPolicyForApp *_systemPolicy;
+    PSSystemPolicyForApp * _systemPolicy;
 }
 
 @property (nonatomic, retain) PSSystemPolicyForApp *systemPolicy;
@@ -19,12 +19,12 @@
 + (id)titleValueSpecifierFromDictionary:(id)arg1 stringsTable:(id)arg2 parentSpecifier:(id)arg3 target:(id)arg4;
 + (id)toggleSwitchSpecifierFromDictionary:(id)arg1 stringsTable:(id)arg2 parentSpecifier:(id)arg3 target:(id)arg4;
 
+- (void).cxx_destruct;
 - (id)_readToggleSwitchSpecifierValue:(id)arg1;
 - (void)_setToggleSwitchSpecifierValue:(id)arg1 specifier:(id)arg2;
 - (id)_uiValueFromValue:(id)arg1 specifier:(id)arg2;
 - (id)_valueFromUIValue:(id)arg1 specifier:(id)arg2;
 - (id)bundle;
-- (void)dealloc;
 - (void)postThirdPartySettingDidChangeNotificationForSpecifier:(id)arg1;
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 - (void)setSystemPolicy:(id)arg1;

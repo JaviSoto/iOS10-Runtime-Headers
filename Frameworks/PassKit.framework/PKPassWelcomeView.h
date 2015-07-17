@@ -3,7 +3,7 @@
  */
 
 @interface PKPassWelcomeView : PKWelcomeView {
-    UIButton *_appStoreButton;
+    UIButton * _appStoreButton;
 }
 
 + (float)headerImageRegionHeight;

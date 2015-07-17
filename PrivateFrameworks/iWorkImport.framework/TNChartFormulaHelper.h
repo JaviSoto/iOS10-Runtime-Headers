@@ -3,8 +3,8 @@
  */
 
 @interface TNChartFormulaHelper : NSObject {
-    TNChartMediator *mChartMediator;
-    BOOL mCreateSpanningReferences;
+    TNChartMediator * mChartMediator;
+    BOOL  mCreateSpanningReferences;
 }
 
 @property (nonatomic, readonly) TNChartMediator *chartMediator;

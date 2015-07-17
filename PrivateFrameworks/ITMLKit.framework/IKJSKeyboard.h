@@ -3,8 +3,7 @@
  */
 
 @interface IKJSKeyboard : IKJSObject <IKJSKeyboard> {
-    <IKAppKeyboardBridge> *_appBridge;
-    NSString *_text;
+    <IKAppKeyboardBridge> * _appBridge;
 }
 
 @property (nonatomic, retain) <IKAppKeyboardBridge> *appBridge;
@@ -12,9 +11,9 @@
 
 - (void).cxx_destruct;
 - (id)appBridge;
+- (void)jsTextDidChange;
 - (void)setAppBridge:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setUserInputText:(id)arg1;
 - (id)text;
 
 @end

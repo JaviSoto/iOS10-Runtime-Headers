@@ -3,7 +3,7 @@
  */
 
 @interface __NSConcreteUUID : NSUUID {
-    unsigned char _uuidBytes;
+    unsigned char  _uuidBytes;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;

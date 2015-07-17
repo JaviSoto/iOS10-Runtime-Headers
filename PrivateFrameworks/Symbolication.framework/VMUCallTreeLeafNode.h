@@ -3,8 +3,8 @@
  */
 
 @interface VMUCallTreeLeafNode : VMUCallTreeNode {
-    NSCountedSet *_addresses;
-    NSString *_combinedName;
+    NSCountedSet * _addresses;
+    NSString * _combinedName;
 }
 
 - (void)addAddress:(unsigned long long)arg1;

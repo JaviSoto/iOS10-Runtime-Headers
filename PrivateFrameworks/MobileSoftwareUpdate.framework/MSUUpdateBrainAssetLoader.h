@@ -3,7 +3,7 @@
  */
 
 @interface MSUUpdateBrainAssetLoader : NSObject {
-    ASAsset *_updateAsset;
+    ASAsset * _updateAsset;
 }
 
 @property (nonatomic, retain) ASAsset *updateAsset;

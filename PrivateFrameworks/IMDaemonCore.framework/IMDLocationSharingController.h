@@ -3,7 +3,7 @@
  */
 
 @interface IMDLocationSharingController : NSObject {
-    FMFSession *_session;
+    FMFSession * _session;
 }
 
 + (id)sharedInstance;

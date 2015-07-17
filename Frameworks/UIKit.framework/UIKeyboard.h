@@ -2,22 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboard : UIView <UIKeyboardImplGeometryDelegate> {
-    UITextInputTraits *m_defaultTraits;
-    BOOL m_hasExplicitOrientation;
-    int m_idiom;
-    BOOL m_minimized;
-    int m_orientation;
-    BOOL m_respondingToImplGeometryChange;
-    UIView *m_snapshot;
-    BOOL m_typingDisabled;
+@interface UIKeyboard : UIView <UIKBFocusGuideDelegate, UIKeyboardImplGeometryDelegate> {
+    UITextInputTraits * m_defaultTraits;
+    NSMutableDictionary * m_focusGuides;
+    BOOL  m_hasExplicitOrientation;
+    int  m_idiom;
+    BOOL  m_minimized;
+    int  m_orientation;
+    BOOL  m_respondingToImplGeometryChange;
+    UIView * m_snapshot;
+    BOOL  m_typingDisabled;
 }
 
 @property (nonatomic) BOOL caretBlinks;
 @property (nonatomic) BOOL caretVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardIdiom;
 @property (getter=isMinimized, nonatomic) BOOL minimized;
 @property (nonatomic) BOOL showsCandidatesInline;
+@property (readonly) Class superclass;
 @property (nonatomic) BOOL typingEnabled;
 
 + (void)_clearActiveKeyboard;
@@ -42,6 +47,8 @@
 - (id)_baseKeyForRepresentedString:(id)arg1;
 - (void)_changeToKeyplane:(id)arg1;
 - (void)_deactivateForBackgrounding;
+- (void)_didChangeKeyplaneWithContext:(id)arg1;
+- (int)_focusedSound;
 - (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
@@ -52,25 +59,24 @@
 - (id)_keyplaneForKey:(id)arg1;
 - (id)_keyplaneNamed:(id)arg1;
 - (BOOL)_mayRemainFocused;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (int)_positionInCandidateList:(id)arg1;
-- (void)_resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1 splitWidthsChanged:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_sensitivitySize;
 - (void)_setAutocorrects:(BOOL)arg1;
+- (void)_setDisableTouchInput:(BOOL)arg1;
 - (void)_setInputMode:(id)arg1;
 - (void)_setPasscodeOutlineAlpha:(float)arg1;
+- (void)_setPreferredHeight:(float)arg1;
 - (void)_setRenderConfig:(id)arg1;
 - (void)_setSplit:(BOOL)arg1;
 - (void)_setUndocked:(BOOL)arg1;
 - (id)_touchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_touchesInsideShouldHideCalloutBar;
 - (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)activate;
-- (BOOL)allowExternalChangeForFocusHeading:(unsigned int)arg1 cursorLocation:(int)arg2;
+- (BOOL)allowExternalChangeForFocusHeading:(unsigned int)arg1 cursorLocation:(unsigned int)arg2;
 - (void)autoAdjustOrientation;
-- (void)autoAdjustOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)canBecomeFocused;
 - (BOOL)canDismiss;
 - (BOOL)canHandleEvent:(id)arg1;
@@ -78,14 +84,16 @@
 - (BOOL)caretVisible;
 - (void)clearActivePerScreenIfNeeded;
 - (void)clearSnapshot;
-- (int)cursorLocation;
+- (unsigned int)cursorLocation;
 - (void)deactivate;
 - (void)dealloc;
 - (id)defaultTextInputTraits;
 - (id)delegate;
+- (void)didFocusGuideWithHeading:(unsigned int)arg1;
 - (void)didMoveToWindow;
 - (BOOL)disableInteraction;
 - (void)displayLayer:(id)arg1;
+- (void)focusedViewDidChange;
 - (void)geometryChangeDone:(BOOL)arg1;
 - (struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })geometryForImplHeightDelta:(float)arg1;
 - (struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })geometryForMinimize:(BOOL)arg1;
@@ -99,6 +107,7 @@
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isActive;
 - (BOOL)isActivePerScreen;
+- (BOOL)isAutomatic;
 - (BOOL)isMinimized;
 - (int)keyboardIdiom;
 - (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -112,6 +121,10 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForGeometryChange;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)removeAutocorrectPrompt;
 - (void)responseContextDidChange;
@@ -120,7 +133,7 @@
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setCaretVisible:(BOOL)arg1;
 - (void)setCorrectionLearningAllowed:(BOOL)arg1;
-- (void)setCursorLocation:(int)arg1;
+- (void)setCursorLocation:(unsigned int)arg1;
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (void)setDisableInteraction:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -132,6 +145,7 @@
 - (void)setShowPredictionBar:(BOOL)arg1;
 - (void)setShowsCandidatesInline:(BOOL)arg1;
 - (void)setTypingEnabled:(BOOL)arg1;
+- (void)setupKeyFocusGuides;
 - (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (BOOL)shouldSaveMinimizationState;
 - (BOOL)showPredictionBar;
@@ -145,6 +159,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)typingEnabled;
+- (void)updateKeyFocusGuides;
 - (void)updateLayout;
 - (void)willMoveToWindow:(id)arg1;
 

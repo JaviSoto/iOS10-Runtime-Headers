@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardEmojiLayout : UICollectionViewFlowLayout {
-    int _arrayLength;
-    id *_attributes;
-    float *_headerWidths;
+    int  _arrayLength;
+    id * _attributes;
+    float * _headerWidths;
 }
 
 + (Class)invalidationContextClass;

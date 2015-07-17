@@ -3,8 +3,8 @@
  */
 
 @interface CALight : NSObject <NSCoding, NSCopying> {
-    void *_attr;
-    void *_priv;
+    void * _attr;
+    void * _priv;
 }
 
 @property float ambientIntensity;

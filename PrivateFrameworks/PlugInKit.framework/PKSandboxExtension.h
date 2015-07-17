@@ -3,8 +3,8 @@
  */
 
 @interface PKSandboxExtension : NSObject {
-    long long _handle;
-    NSString *_token;
+    long long  _handle;
+    NSString * _token;
 }
 
 @property long long handle;

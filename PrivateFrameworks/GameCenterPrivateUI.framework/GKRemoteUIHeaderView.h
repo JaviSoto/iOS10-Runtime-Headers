@@ -3,10 +3,10 @@
  */
 
 @interface GKRemoteUIHeaderView : UIView <RemoteUITableHeader> {
-    float _bottomMargin;
-    float _height;
-    BOOL _isFirstSection;
-    GKLabel *_textLabel;
+    float  _bottomMargin;
+    float  _height;
+    BOOL  _isFirstSection;
+    GKLabel * _textLabel;
 }
 
 @property (nonatomic) float bottomMargin;

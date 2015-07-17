@@ -3,8 +3,8 @@
  */
 
 @interface BRCItemID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
-    unsigned char _kind;
-    unsigned char _uuid;
+    unsigned char  _kind;
+    unsigned char  _uuid;
 }
 
 @property (nonatomic, readonly) const char *UTF8String;

@@ -3,7 +3,7 @@
  */
 
 @interface GKPlayerPhotoButton : GKRoundButton <GKPlayerPhotoContainer> {
-    GKPlayer *_player;
+    GKPlayer * _player;
 }
 
 @property (readonly, copy) NSString *debugDescription;

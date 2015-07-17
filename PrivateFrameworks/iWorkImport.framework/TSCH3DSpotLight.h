@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DSpotLight : TSCH3DLight <TSCH3DLightDirectional, TSCH3DLightPositionable> {
-    float _cutOff;
-    TSCH3DVector *_direction;
-    float _dropOff;
-    TSCH3DVector *_position;
+    float  _cutOff;
+    TSCH3DVector * _direction;
+    float  _dropOff;
+    TSCH3DVector * _position;
 }
 
 @property (nonatomic) float cutOff;

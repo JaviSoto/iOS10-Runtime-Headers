@@ -3,10 +3,10 @@
  */
 
 @interface PMShapeTextMapper : CMMapper {
-    OADOrientedBounds *mBounds;
-    BOOL mRectangular;
-    CMStyle *mStyle;
-    OADTextBody *mTextBody;
+    OADOrientedBounds * mBounds;
+    BOOL  mRectangular;
+    CMStyle * mStyle;
+    OADTextBody * mTextBody;
 }
 
 - (void)dealloc;
@@ -14,6 +14,6 @@
 - (BOOL)isTableCellContent;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)setRectangular:(BOOL)arg1;
-- (int)textAnchor;
+- (unsigned char)textAnchor;
 
 @end

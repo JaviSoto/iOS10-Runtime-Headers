@@ -3,16 +3,16 @@
  */
 
 @interface CKRecordingElapsedTimeView : UIView {
-    UIView *__recordingDotView;
-    NSDate *__startTime;
-    UILabel *__timeLabel;
-    NSTimer *__updateTimer;
+    UIView * __recordingDotView;
+    NSDate * __startTime;
+    UILabel * __timeLabel;
+    NSTimer * __updateTimer;
 }
 
-@property (nonatomic, readonly) UIView *_recordingDotView;
-@property (nonatomic, readonly) NSDate *_startTime;
-@property (nonatomic, readonly) UILabel *_timeLabel;
-@property (nonatomic, readonly) NSTimer *_updateTimer;
+@property (nonatomic, readonly, retain) UIView *_recordingDotView;
+@property (nonatomic, readonly, retain) NSDate *_startTime;
+@property (nonatomic, readonly, retain) UILabel *_timeLabel;
+@property (nonatomic, readonly, retain) NSTimer *_updateTimer;
 
 - (void)_beginRecordingAnimation;
 - (void)_commonCAMElapsedTimeViewInitialization;

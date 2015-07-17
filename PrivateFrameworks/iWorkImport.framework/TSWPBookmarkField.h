@@ -3,9 +3,9 @@
  */
 
 @interface TSWPBookmarkField : TSWPSmartField {
-    BOOL _forRange;
-    BOOL _hidden;
-    NSString *_name;
+    BOOL  _forRange;
+    BOOL  _hidden;
+    NSString * _name;
 }
 
 @property (nonatomic) BOOL forRange;

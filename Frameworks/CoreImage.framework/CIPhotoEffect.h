@@ -3,15 +3,19 @@
  */
 
 @interface CIPhotoEffect : CIFilter {
-    CIImage *inputImage;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 
+- (int)_defaultVersion;
+- (int)_maxVersion;
+- (id)init;
 - (id)inputImage;
 - (id)outputImage;
+- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 
 @end

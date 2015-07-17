@@ -3,16 +3,16 @@
  */
 
 @interface GEOBusinessOptions : PBCodable <NSCopying> {
-    NSMutableArray *_attributeKeys;
+    NSMutableArray * _attributeKeys;
     struct { 
         unsigned int maxBusinessResults : 1; 
         unsigned int includeBusinessHours : 1; 
         unsigned int includeCenter : 1; 
-    } _has;
-    BOOL _includeBusinessHours;
-    BOOL _includeCenter;
-    int _maxBusinessResults;
-    NSMutableArray *_photoOptions;
+    }  _has;
+    BOOL  _includeBusinessHours;
+    BOOL  _includeCenter;
+    int  _maxBusinessResults;
+    NSMutableArray * _photoOptions;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributeKeys;

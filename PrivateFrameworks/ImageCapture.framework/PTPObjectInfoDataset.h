@@ -3,28 +3,28 @@
  */
 
 @interface PTPObjectInfoDataset : NSObject {
-    unsigned long _associationDesc;
-    unsigned short _associationType;
-    NSString *_captureDate;
-    NSString *_filename;
-    unsigned long _imageBitDepth;
-    unsigned long _imagePixHeight;
-    unsigned long _imagePixWidth;
-    NSString *_keywords;
-    NSString *_modificationDate;
-    unsigned long long _objectCompressedSize;
-    unsigned short _objectFormat;
-    unsigned long _objectHandle;
-    unsigned long _parentObject;
-    unsigned short _protectionStatus;
-    unsigned long _sequenceNumber;
-    unsigned long _storageID;
-    unsigned long _thmFileSize;
-    unsigned long _thumbCompressedSize;
-    unsigned short _thumbFormat;
-    unsigned long _thumbOffset;
-    unsigned long _thumbPixHeight;
-    unsigned long _thumbPixWidth;
+    unsigned long  _associationDesc;
+    unsigned short  _associationType;
+    NSString * _captureDate;
+    NSString * _filename;
+    unsigned long  _imageBitDepth;
+    unsigned long  _imagePixHeight;
+    unsigned long  _imagePixWidth;
+    NSString * _keywords;
+    NSString * _modificationDate;
+    unsigned long long  _objectCompressedSize;
+    unsigned short  _objectFormat;
+    unsigned long  _objectHandle;
+    unsigned long  _parentObject;
+    unsigned short  _protectionStatus;
+    unsigned long  _sequenceNumber;
+    unsigned long  _storageID;
+    unsigned long  _thmFileSize;
+    unsigned long  _thumbCompressedSize;
+    unsigned short  _thumbFormat;
+    unsigned long  _thumbOffset;
+    unsigned long  _thumbPixHeight;
+    unsigned long  _thumbPixWidth;
 }
 
 - (unsigned long)associationDesc;

@@ -3,12 +3,12 @@
  */
 
 @interface AVCaptureStillImageRequest : NSObject {
-    id /* block */ _bracketedCaptureCompletionBlock;
-    AVCaptureBracketedStillImageSettings *_bracketedSettings;
-    id /* block */ _iosurfaceCompletionBlock;
-    id /* block */ _sbufCompletionBlock;
-    long long _settingsID;
-    unsigned long _shutterSoundID;
+    id /* block */  _bracketedCaptureCompletionBlock;
+    AVCaptureBracketedStillImageSettings * _bracketedSettings;
+    id /* block */  _iosurfaceCompletionBlock;
+    id /* block */  _sbufCompletionBlock;
+    long long  _settingsID;
+    unsigned long  _shutterSoundID;
 }
 
 @property (copy) id /* block */ bracketedCaptureCompletionBlock;

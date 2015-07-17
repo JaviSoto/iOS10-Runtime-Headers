@@ -3,13 +3,13 @@
  */
 
 @interface PUPhotoEditVisualLevelSlider : PUPhotoEditLevelSlider <UICollectionViewDataSource> {
-    <PUPhotoEditVisualLevelSliderDataSource> *_dataSource;
+    <PUPhotoEditVisualLevelSliderDataSource> * _dataSource;
     struct CGSize { 
         float width; 
         float height; 
-    } _thumbnailSize;
-    UICollectionView *_thumbnailsStripCollectionView;
-    UICollectionViewFlowLayout *_thumbnailsStripFlowLayout;
+    }  _thumbnailSize;
+    UICollectionView * _thumbnailsStripCollectionView;
+    UICollectionViewFlowLayout * _thumbnailsStripFlowLayout;
 }
 
 @property (nonatomic) <PUPhotoEditVisualLevelSliderDataSource> *dataSource;

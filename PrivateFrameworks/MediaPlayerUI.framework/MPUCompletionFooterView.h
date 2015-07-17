@@ -3,30 +3,30 @@
  */
 
 @interface MPUCompletionFooterView : UITableViewHeaderFooterView <SKUIItemOfferButtonDelegate> {
-    UIView *_bottomSeparatorView;
-    NSString *_completeMyCollectionTitle;
-    NSString *_completeSubtitleFormat;
-    NSString *_completeTitleFormat;
-    MPStoreCompletionOffering *_completionOffering;
-    NSString *_completionTotalFormat;
+    UIView * _bottomSeparatorView;
+    NSString * _completeMyCollectionTitle;
+    NSString * _completeSubtitleFormat;
+    NSString * _completeTitleFormat;
+    MPStoreCompletionOffering * _completionOffering;
+    NSString * _completionTotalFormat;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    <MPUCompletionFooterViewDelegate> *_delegate;
-    MPUItemOfferButton *_itemOfferButton;
-    int _preferredVariant;
-    BOOL _purchasing;
-    BOOL _showsVariants;
-    int _style;
-    UILabel *_subtitleLabel;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    NSString *_title;
-    UILabel *_titleLabel;
-    UIView *_topSeparatorView;
-    UISegmentedControl *_variantSegmentedControl;
+    }  _contentInsets;
+    <MPUCompletionFooterViewDelegate> * _delegate;
+    MPUItemOfferButton * _itemOfferButton;
+    int  _preferredVariant;
+    BOOL  _purchasing;
+    BOOL  _showsVariants;
+    int  _style;
+    UILabel * _subtitleLabel;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    NSString * _title;
+    UILabel * _titleLabel;
+    UIView * _topSeparatorView;
+    UISegmentedControl * _variantSegmentedControl;
 }
 
 @property (nonatomic, retain) UIView *bottomSeparatorView;

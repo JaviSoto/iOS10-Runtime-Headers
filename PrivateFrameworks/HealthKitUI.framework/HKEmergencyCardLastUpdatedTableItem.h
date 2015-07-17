@@ -3,9 +3,9 @@
  */
 
 @interface HKEmergencyCardLastUpdatedTableItem : HKEmergencyCardTableItem {
-    UITableViewCell *_cell;
-    NSDateFormatter *_dateFormatter;
-    UILabel *_lastUpdatedLabel;
+    UITableViewCell * _cell;
+    NSDateFormatter * _dateFormatter;
+    UILabel * _lastUpdatedLabel;
 }
 
 - (void).cxx_destruct;

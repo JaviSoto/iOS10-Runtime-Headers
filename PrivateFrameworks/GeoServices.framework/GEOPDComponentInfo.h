@@ -3,19 +3,19 @@
  */
 
 @interface GEOPDComponentInfo : PBCodable <NSCopying> {
-    unsigned int _count;
-    GEOPDComponentFilter *_filter;
+    unsigned int  _count;
+    GEOPDComponentFilter * _filter;
     struct { 
         unsigned int count : 1; 
         unsigned int startIndex : 1; 
         unsigned int type : 1; 
         unsigned int urgency : 1; 
         unsigned int includeSource : 1; 
-    } _has;
-    BOOL _includeSource;
-    unsigned int _startIndex;
-    int _type;
-    int _urgency;
+    }  _has;
+    BOOL  _includeSource;
+    unsigned int  _startIndex;
+    int  _type;
+    int  _urgency;
 }
 
 @property (nonatomic) unsigned int count;

@@ -3,14 +3,14 @@
  */
 
 @interface RTLocationOfInterest : NSObject <NSCopying, NSSecureCoding> {
-    double _confidence;
-    <GEOMapItem> *_geoMapItem;
-    NSUUID *_identifier;
-    double _latitude;
-    double _longitude;
-    int _type;
-    double _uncertainty;
-    NSArray *_visits;
+    double  _confidence;
+    <GEOMapItem> * _geoMapItem;
+    NSUUID * _identifier;
+    double  _latitude;
+    double  _longitude;
+    int  _type;
+    double  _uncertainty;
+    NSArray * _visits;
 }
 
 @property (nonatomic, readonly) double confidence;
@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) double uncertainty;
 @property (nonatomic, readonly) NSArray *visits;
 
++ (id)locationOfInterestSourceToString:(int)arg1;
 + (id)locationOfInterestTypeToString:(int)arg1;
 + (BOOL)supportsSecureCoding;
 

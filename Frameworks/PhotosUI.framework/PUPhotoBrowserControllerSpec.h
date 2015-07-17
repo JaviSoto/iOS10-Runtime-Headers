@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoBrowserControllerSpec : NSObject {
-    PUAvalancheReviewControllerSpec *_avalancheReviewControllerSpec;
+    PUAvalancheReviewControllerSpec * _avalancheReviewControllerSpec;
 }
 
 @property (nonatomic, readonly) PUAvalancheReviewControllerSpec *avalancheReviewControllerSpec;

@@ -3,23 +3,24 @@
  */
 
 @interface KeychainSyncPhoneSettingsFragment : NSObject {
-    KeychainSyncCountryInfo *_countryInfo;
-    PSSpecifier *_countrySpecifier;
-    <KeychainSyncPhoneSettingsFragmentDelegate> *_delegate;
-    PSListController *_listController;
-    NSString *_phoneNumber;
-    PSPhoneNumberSpecifier *_phoneNumberSpecifier;
-    NSArray *_specifiers;
-    NSString *_title;
+    KeychainSyncCountryInfo * _countryInfo;
+    PSSpecifier * _countrySpecifier;
+    <KeychainSyncPhoneSettingsFragmentDelegate> * _delegate;
+    PSListController * _listController;
+    NSString * _phoneNumber;
+    PSPhoneNumberSpecifier * _phoneNumberSpecifier;
+    NSArray * _specifiers;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) KeychainSyncCountryInfo *countryInfo;
 @property (nonatomic) <KeychainSyncPhoneSettingsFragmentDelegate> *delegate;
 @property (nonatomic, retain) NSString *phoneNumber;
-@property (nonatomic, readonly, retain) PSEditableTableCell *phoneNumberCell;
-@property (nonatomic, readonly, retain) NSArray *specifiers;
+@property (nonatomic, readonly) PSEditableTableCell *phoneNumberCell;
+@property (nonatomic, readonly) NSArray *specifiers;
 @property (nonatomic, retain) NSString *title;
 
+- (void).cxx_destruct;
 - (id)countryInfo;
 - (void)dealloc;
 - (id)delegate;

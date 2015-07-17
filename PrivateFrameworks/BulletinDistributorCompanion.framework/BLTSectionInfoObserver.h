@@ -3,10 +3,10 @@
  */
 
 @interface BLTSectionInfoObserver : NSObject <BBObserverDelegate> {
-    <BLTSectionInfoObserverDelegate> *_delegate;
-    BBObserver *_observer;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _reloadSectionInfoCompletion;
+    <BLTSectionInfoObserverDelegate> * _delegate;
+    BBObserver * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _reloadSectionInfoCompletion;
 }
 
 @property (readonly, copy) NSString *debugDescription;

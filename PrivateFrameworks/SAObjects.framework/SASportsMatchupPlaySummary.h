@@ -20,8 +20,12 @@
 - (BOOL)appliesToHomeTeam;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)nonFormattedTime;
+- (id)offensivePlayer;
 - (void)setAppliesToAwayTeam:(BOOL)arg1;
 - (void)setAppliesToHomeTeam:(BOOL)arg1;
+- (void)setNonFormattedTime:(id)arg1;
+- (void)setOffensivePlayer:(id)arg1;
 - (void)setSummaryDescription:(id)arg1;
 - (void)setTime:(id)arg1;
 - (id)summaryDescription;

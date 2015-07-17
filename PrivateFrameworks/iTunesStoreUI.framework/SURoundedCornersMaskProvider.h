@@ -3,7 +3,7 @@
  */
 
 @interface SURoundedCornersMaskProvider : SUMaskProvider {
-    float _cornerRadius;
+    float  _cornerRadius;
 }
 
 @property (nonatomic) float cornerRadius;

@@ -3,9 +3,9 @@
  */
 
 @interface MPUBorderDrawingCache : NSObject {
-    MPUBorderView *_borderView;
-    float _displayScale;
-    NSCache *_images;
+    MPUBorderView * _borderView;
+    float  _displayScale;
+    NSCache * _images;
 }
 
 @property (nonatomic) float displayScale;

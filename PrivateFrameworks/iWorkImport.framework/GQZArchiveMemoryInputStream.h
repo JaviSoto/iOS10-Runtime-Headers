@@ -3,9 +3,9 @@
  */
 
 @interface GQZArchiveMemoryInputStream : NSObject <GQZArchiveInputStream> {
-    const char *mBytes;
-    NSData *mData;
-    long long mSize;
+    const char * mBytes;
+    NSData * mData;
+    long long  mSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

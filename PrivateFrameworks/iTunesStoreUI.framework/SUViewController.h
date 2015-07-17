@@ -3,26 +3,26 @@
  */
 
 @interface SUViewController : UIViewController <ISOperationDelegate, SUScriptNativeObject> {
-    SUViewControllerScriptProperties *_cachedScriptProperties;
-    BOOL _canBeWeakScriptReference;
-    NSMutableArray *_cancelOnDeallocOperations;
-    SUClientInterface *_clientInterface;
-    BOOL _excludeFromNavigationHistory;
-    UIBarButtonItem *_exitStoreButton;
-    UIViewController *_footerViewController;
-    UIViewController *_inputAccessoryViewController;
-    BOOL _isEnteringForeground;
-    BOOL _loading;
-    SUViewControllerContext *_memoryPurgeContext;
-    NSMutableArray *_operations;
-    NSMutableArray *_pendingDialogs;
-    SUViewControllerContext *_restoredContext;
-    SURotationController *_rotationController;
-    int _rotationState;
-    BOOL _shouldAdjustContentOffsets;
-    BOOL _shouldInvalidateForMemoryPurge;
-    BOOL _showsLibraryButton;
-    int _transitionSafetyCount;
+    SUViewControllerScriptProperties * _cachedScriptProperties;
+    BOOL  _canBeWeakScriptReference;
+    NSMutableArray * _cancelOnDeallocOperations;
+    SUClientInterface * _clientInterface;
+    BOOL  _excludeFromNavigationHistory;
+    UIBarButtonItem * _exitStoreButton;
+    UIViewController * _footerViewController;
+    UIViewController * _inputAccessoryViewController;
+    BOOL  _isEnteringForeground;
+    BOOL  _loading;
+    SUViewControllerContext * _memoryPurgeContext;
+    NSMutableArray * _operations;
+    NSMutableArray * _pendingDialogs;
+    SUViewControllerContext * _restoredContext;
+    SURotationController * _rotationController;
+    int  _rotationState;
+    BOOL  _shouldAdjustContentOffsets;
+    BOOL  _shouldInvalidateForMemoryPurge;
+    BOOL  _showsLibraryButton;
+    int  _transitionSafetyCount;
 }
 
 @property (getter=_cachedScriptProperties, nonatomic, readonly) SUViewControllerScriptProperties *_cachedScriptProperties;

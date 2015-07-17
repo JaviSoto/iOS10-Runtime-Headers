@@ -6,20 +6,25 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mBy;
+    }  mBy;
     struct CGPoint { 
         float x; 
         float y; 
-    } mFrom;
+    }  mFrom;
+    BOOL  mHasBy;
+    BOOL  mHasFrom;
+    BOOL  mHasTo;
     struct CGPoint { 
         float x; 
         float y; 
-    } mTo;
+    }  mTo;
 }
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })by;
 - (struct CGPoint { float x1; float x2; })from;
+- (BOOL)hasBy;
+- (BOOL)hasFrom;
+- (BOOL)hasTo;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (void)setBy:(struct CGPoint { float x1; float x2; })arg1;

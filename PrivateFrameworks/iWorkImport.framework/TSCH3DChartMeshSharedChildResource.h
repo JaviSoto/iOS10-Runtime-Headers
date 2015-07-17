@@ -10,11 +10,11 @@
         unsigned int byteSize; 
         unsigned int componentByteSize; 
         unsigned int elementByteSize; 
-    } mBufferInfo;
-    int mCaching;
-    BOOL mChildRegenerated;
-    TSCH3DChartMeshResources *mParent;
-    unsigned long long mResourceIdentifier;
+    }  mBufferInfo;
+    int  mCaching;
+    BOOL  mChildRegenerated;
+    TSCH3DChartMeshResources * mParent;
+    unsigned long long  mResourceIdentifier;
 }
 
 @property (readonly) struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } bufferInfo;

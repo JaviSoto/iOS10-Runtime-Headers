@@ -3,8 +3,8 @@
  */
 
 @interface TSWPRuleOffset : NSObject <NSCopying> {
-    float _dX;
-    float _dY;
+    float  _dX;
+    float  _dY;
 }
 
 @property (nonatomic, readonly) float dX;

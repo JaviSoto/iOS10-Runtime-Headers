@@ -3,19 +3,19 @@
  */
 
 @interface SKUIRedeem : NSObject {
-    double _ITunesPassLearnMoreAlertInterval;
-    NSString *_balance;
-    NSString *_credit;
-    SKUIArtworkList *_headerArtworkList;
-    UIImage *_headerImage;
-    BOOL _hideItemView;
-    NSString *_inAppPurchase;
-    NSArray *_items;
-    NSArray *_links;
-    NSString *_message;
-    NSURL *_redirectURL;
-    NSDictionary *_thankYouDictionary;
-    NSString *_title;
+    double  _ITunesPassLearnMoreAlertInterval;
+    NSString * _balance;
+    NSString * _credit;
+    SKUIArtworkList * _headerArtworkList;
+    UIImage * _headerImage;
+    BOOL  _hideItemView;
+    NSString * _inAppPurchase;
+    NSArray * _items;
+    NSArray * _links;
+    NSString * _message;
+    NSURL * _redirectURL;
+    NSDictionary * _thankYouDictionary;
+    NSString * _title;
 }
 
 @property (nonatomic) double ITunesPassLearnMoreAlertInterval;

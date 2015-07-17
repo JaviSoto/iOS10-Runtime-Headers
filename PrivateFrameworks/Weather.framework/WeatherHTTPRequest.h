@@ -3,9 +3,9 @@
  */
 
 @interface WeatherHTTPRequest : NSObject <NSURLConnectionDataDelegate> {
-    NSURLConnection *_connection;
-    NSMutableData *_rawData;
-    NSMutableURLRequest *_request;
+    NSURLConnection * _connection;
+    NSMutableData * _rawData;
+    NSMutableURLRequest * _request;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +16,7 @@
 + (void)appendDebugString:(id)arg1;
 + (void)saveDebugString;
 
+- (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (id)connection;

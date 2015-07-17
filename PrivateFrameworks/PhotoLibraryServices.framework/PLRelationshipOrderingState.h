@@ -3,9 +3,9 @@
  */
 
 @interface PLRelationshipOrderingState : NSObject {
-    id _foks;
-    BOOL _isMutable;
-    id _oids;
+    id  _foks;
+    BOOL  _isMutable;
+    id  _oids;
 }
 
 - (void)dealloc;

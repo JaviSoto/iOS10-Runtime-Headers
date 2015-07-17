@@ -3,27 +3,27 @@
  */
 
 @interface EKEventDateEditItem : EKEventEditItem <EKCellShortener, EKTimeZoneViewControllerDelegate> {
-    BOOL _allDay;
-    UITableViewCell *_allDayCell;
-    BOOL _changingDate;
-    NSDateComponents *_endComponents;
-    PreferencesTwoPartValueCell *_endDateCell;
-    UIDatePicker *_endDatePicker;
-    UITableViewCell *_endDatePickerCell;
-    BOOL _endTimeWasMessedUp;
-    NSTimeZone *_endTimeZone;
-    UITableViewCell *_endTimeZoneCell;
-    BOOL _pushingTZController;
-    int _selectedSubitem;
-    int _shorteningStatus;
-    BOOL _showTimeZones;
-    BOOL _showsAllDay;
-    NSDateComponents *_startComponents;
-    PreferencesTwoPartValueCell *_startDateCell;
-    UIDatePicker *_startDatePicker;
-    UITableViewCell *_startDatePickerCell;
-    NSTimeZone *_startTimeZone;
-    UITableViewCell *_startTimeZoneCell;
+    BOOL  _allDay;
+    UITableViewCell * _allDayCell;
+    BOOL  _changingDate;
+    NSDateComponents * _endComponents;
+    PreferencesTwoPartValueCell * _endDateCell;
+    UIDatePicker * _endDatePicker;
+    UITableViewCell * _endDatePickerCell;
+    BOOL  _endTimeWasMessedUp;
+    NSTimeZone * _endTimeZone;
+    UITableViewCell * _endTimeZoneCell;
+    BOOL  _pushingTZController;
+    int  _selectedSubitem;
+    int  _shorteningStatus;
+    BOOL  _showTimeZones;
+    BOOL  _showsAllDay;
+    NSDateComponents * _startComponents;
+    PreferencesTwoPartValueCell * _startDateCell;
+    UIDatePicker * _startDatePicker;
+    UITableViewCell * _startDatePickerCell;
+    NSTimeZone * _startTimeZone;
+    UITableViewCell * _startTimeZoneCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,6 +33,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_adjustDatePickerFrame:(id)arg1 toFillEnclosingViewWidth:(id)arg2;
 - (id)_allDayCell;
 - (void)_allDayChanged:(id)arg1;
 - (id)_calendarForEventComponents:(BOOL)arg1;

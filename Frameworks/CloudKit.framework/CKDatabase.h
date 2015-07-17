@@ -3,10 +3,10 @@
  */
 
 @interface CKDatabase : NSObject {
-    CKContainer *_container;
-    NSOperationQueue *_operationQueue;
-    int _scope;
-    int _statusReportToken;
+    CKContainer * _container;
+    NSOperationQueue * _operationQueue;
+    int  _scope;
+    int  _statusReportToken;
 }
 
 @property (nonatomic) CKContainer *container;

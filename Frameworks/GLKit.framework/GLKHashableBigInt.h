@@ -6,7 +6,7 @@
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
-    } _bigInt;
+    }  _bigInt;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

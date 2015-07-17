@@ -3,11 +3,11 @@
  */
 
 @interface PHMoment : PHAssetCollection {
-    NSData *_approximateLocationData;
-    short _generationType;
-    NSDate *_representativeDate;
-    NSData *_reverseLocationData;
-    BOOL _reverseLocationDataIsValid;
+    NSData * _approximateLocationData;
+    short  _generationType;
+    NSDate * _representativeDate;
+    NSData * _reverseLocationData;
+    BOOL  _reverseLocationDataIsValid;
 }
 
 @property (nonatomic, readonly) short generationType;

@@ -3,7 +3,7 @@
  */
 
 @interface UIMenuController : NSObject <UICalloutBarDelegate> {
-    int _arrowDirection;
+    int  _arrowDirection;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _targetRect;
+    }  _targetRect;
 }
 
 @property (nonatomic) int arrowDirection;

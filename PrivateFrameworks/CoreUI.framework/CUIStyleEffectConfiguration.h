@@ -3,11 +3,11 @@
  */
 
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
-    BOOL _foregroundColorShouldTintEffects;
-    int _presentationState;
-    int _state;
-    BOOL _useSimplifiedEffect;
-    int _value;
+    BOOL  _foregroundColorShouldTintEffects;
+    int  _presentationState;
+    int  _state;
+    BOOL  _useSimplifiedEffect;
+    int  _value;
 }
 
 @property (nonatomic) BOOL foregroundColorShouldTintEffects;

@@ -3,13 +3,13 @@
  */
 
 @interface TLVibrationManager : NSObject {
-    TLAccessQueue *_accessQueue;
-    BOOL _allowsAutoRefresh;
-    NSDictionary *_cachedSystemVibrationPatterns;
-    NSDictionary *_cachedUserGeneratedVibrationPatterns;
-    BOOL _needsRefresh;
-    unsigned int _specialBehaviors;
-    NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
+    TLAccessQueue * _accessQueue;
+    BOOL  _allowsAutoRefresh;
+    NSDictionary * _cachedSystemVibrationPatterns;
+    NSDictionary * _cachedUserGeneratedVibrationPatterns;
+    BOOL  _needsRefresh;
+    unsigned int  _specialBehaviors;
+    NPSDomainAccessor * _transientNanoPreferencesDomainAccessor;
 }
 
 @property (setter=_setAccessQueue:, retain) TLAccessQueue *_accessQueue;

@@ -3,17 +3,17 @@
  */
 
 @interface HKMedicalIDEditorMultilineStringCell : HKMedicalIDEditorCell <UITextViewDelegate> {
-    <HKMedicalIDEditorCellHeightChangeDelegate> *_heightChangeDelegate;
-    UILabel *_labelLabel;
-    float _lastSeenTextViewContentHeight;
-    UILabel *_placeholderLabel;
-    UITextView *_textView;
+    <HKMedicalIDEditorCellHeightChangeDelegate> * _heightChangeDelegate;
+    UILabel * _labelLabel;
+    float  _lastSeenTextViewContentHeight;
+    UILabel * _placeholderLabel;
+    UITextView * _textView;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _textViewExtraMargins;
+    }  _textViewExtraMargins;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -46,6 +46,7 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stringValue;
 - (id)textView;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textViewExtraMargins;

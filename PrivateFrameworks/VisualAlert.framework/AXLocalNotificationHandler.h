@@ -3,7 +3,7 @@
  */
 
 @interface AXLocalNotificationHandler : AXNotificationHandler {
-    id _opaqueObserver;
+    id  _opaqueObserver;
 }
 
 @property (setter=_setOpaqueObserver:, nonatomic, retain) id _opaqueObserver;

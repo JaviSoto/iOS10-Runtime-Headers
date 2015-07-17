@@ -3,12 +3,12 @@
  */
 
 @interface QLArchiveViewer : NSObject <UINavigationControllerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIDocumentInteractionController *_documentInteractionController;
-    UINavigationController *_navigationController;
-    UIPopoverPresentationController *_presentationController;
-    QLPreviewController *_previewController;
-    QLArchiveTableViewController *_tableViewController;
-    BOOL _visible;
+    UIDocumentInteractionController * _documentInteractionController;
+    UINavigationController * _navigationController;
+    UIPopoverPresentationController * _presentationController;
+    QLPreviewController * _previewController;
+    QLArchiveTableViewController * _tableViewController;
+    BOOL  _visible;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface TKLabelContainerView : UIView {
-    UILabel *_label;
+    UILabel * _label;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _labelPaddingInsets;
+    }  _labelPaddingInsets;
 }
 
 @property (setter=_setLabel:, nonatomic, retain) UILabel *_label;

@@ -3,12 +3,12 @@
  */
 
 @interface AppEntry : NSObject {
-    unsigned long long _admissions;
-    unsigned long long _negativeHits;
-    unsigned long long _positiveHits;
-    unsigned long long _rejections;
-    unsigned long long _type1Errors;
-    unsigned long long _type2Errors;
+    unsigned long long  _admissions;
+    unsigned long long  _negativeHits;
+    unsigned long long  _positiveHits;
+    unsigned long long  _rejections;
+    unsigned long long  _type1Errors;
+    unsigned long long  _type2Errors;
 }
 
 @property unsigned long long admissions;

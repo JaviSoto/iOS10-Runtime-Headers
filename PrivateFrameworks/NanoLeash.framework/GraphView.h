@@ -3,9 +3,9 @@
  */
 
 @interface GraphView : UIView {
-    GraphViewSegment *_current;
-    NSMutableArray *_segments;
-    GraphTextView *_text;
+    GraphViewSegment * _current;
+    NSMutableArray * _segments;
+    GraphTextView * _text;
 }
 
 @property (nonatomic) GraphViewSegment *current;

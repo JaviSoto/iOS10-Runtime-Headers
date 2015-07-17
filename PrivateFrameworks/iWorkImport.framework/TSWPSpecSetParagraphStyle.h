@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetParagraphStyle : TSWPSpecParagraphStyle {
-    TSWPParagraphStyle *_paragraphStyle;
-    BOOL _unset;
+    TSWPParagraphStyle * _paragraphStyle;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

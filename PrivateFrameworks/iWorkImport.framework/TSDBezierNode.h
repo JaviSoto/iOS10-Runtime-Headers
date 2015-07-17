@@ -6,18 +6,18 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mIn;
+    }  mIn;
     struct CGPoint { 
         float x; 
         float y; 
-    } mNode;
+    }  mNode;
     struct CGPoint { 
         float x; 
         float y; 
-    } mOut;
-    int mReflectedState;
-    BOOL mSelected;
-    int mType;
+    }  mOut;
+    int  mReflectedState;
+    BOOL  mSelected;
+    int  mType;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } inControlPoint;

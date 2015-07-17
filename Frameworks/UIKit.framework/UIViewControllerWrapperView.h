@@ -3,7 +3,7 @@
  */
 
 @interface UIViewControllerWrapperView : UIView {
-    BOOL _tightWrappingDisabled;
+    BOOL  _tightWrappingDisabled;
 }
 
 @property (nonatomic) BOOL tightWrappingDisabled;

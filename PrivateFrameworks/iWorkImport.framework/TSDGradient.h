@@ -3,11 +3,11 @@
  */
 
 @interface TSDGradient : TSDFill <NSCopying, NSMutableCopying, TSDMixing, TSSPreset, TSSPresetSource> {
-    BOOL mIsAdvancedGradient;
-    float mOpacity;
-    struct CGShading { } *mShadingRef;
-    NSMutableArray *mStops;
-    unsigned int mType;
+    BOOL  mIsAdvancedGradient;
+    float  mOpacity;
+    struct CGShading { } * mShadingRef;
+    NSMutableArray * mStops;
+    unsigned int  mType;
 }
 
 @property (nonatomic, readonly) TSUColor *firstColor;

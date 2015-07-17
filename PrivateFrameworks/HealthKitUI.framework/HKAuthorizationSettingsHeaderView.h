@@ -3,10 +3,10 @@
  */
 
 @interface HKAuthorizationSettingsHeaderView : UIView {
-    UIImageView *_iconImageView;
-    NSString *_sourceName;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    UIImageView * _iconImageView;
+    NSString * _sourceName;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImageView *iconImageView;

@@ -3,12 +3,12 @@
  */
 
 @interface CUIKSingleDayTimelineLayout : NSObject {
-    NSCalendar *_calendar;
-    NSMutableArray *_collidingOccurrences;
-    <CUIKSingleDayTimelineViewItem> *_currentOccurrence;
-    unsigned int _currentOccurrenceIndex;
-    NSDate *_endOfDay;
-    double _endOfDayAbsoluteTime;
+    NSCalendar * _calendar;
+    NSMutableArray * _collidingOccurrences;
+    <CUIKSingleDayTimelineViewItem> * _currentOccurrence;
+    unsigned int  _currentOccurrenceIndex;
+    NSDate * _endOfDay;
+    double  _endOfDayAbsoluteTime;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,14 +18,14 @@
             float width; 
             float height; 
         } size; 
-    } _frame;
-    <CUIKSingleDayTimelineGeometryDelegate> *_geometryDelegate;
-    NSMutableArray *_occurrenceBuckets;
-    NSArray *_occurrences;
-    NSMutableArray *_partitions;
-    <CUIKSingleDayTimelineLayoutScreenUtils> *_screenUtilsDelegate;
-    NSDate *_startOfDay;
-    double _startOfDayAbsoluteTime;
+    }  _frame;
+    <CUIKSingleDayTimelineGeometryDelegate> * _geometryDelegate;
+    NSMutableArray * _occurrenceBuckets;
+    NSArray * _occurrences;
+    NSMutableArray * _partitions;
+    <CUIKSingleDayTimelineLayoutScreenUtils> * _screenUtilsDelegate;
+    NSDate * _startOfDay;
+    double  _startOfDayAbsoluteTime;
 }
 
 - (void).cxx_destruct;
@@ -35,6 +35,7 @@
 - (void)_capVisibleTextForBucket:(id)arg1;
 - (float)_combinedWidthOfPartitions;
 - (double)_effectiveEndTimeForOccurrence:(id)arg1;
+- (float)_endOfCollisionZoneForY:(float)arg1 occurrence:(id)arg2;
 - (void)_findCollidingOccurrences;
 - (void)_generateNewPartitions;
 - (void)_initializeFirstGridStripe;

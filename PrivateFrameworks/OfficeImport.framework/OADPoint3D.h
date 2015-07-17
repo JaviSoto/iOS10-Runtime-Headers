@@ -3,9 +3,9 @@
  */
 
 @interface OADPoint3D : NSObject <NSCopying> {
-    float mX;
-    float mY;
-    float mZ;
+    float  mX;
+    float  mY;
+    float  mZ;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

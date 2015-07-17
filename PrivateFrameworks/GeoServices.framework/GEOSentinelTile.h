@@ -3,8 +3,8 @@
  */
 
 @interface GEOSentinelTile : PBCodable <NSCopying> {
-    NSString *_resourceName;
-    int _type;
+    NSString * _resourceName;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *resourceName;

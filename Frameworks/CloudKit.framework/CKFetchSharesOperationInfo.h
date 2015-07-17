@@ -3,8 +3,8 @@
  */
 
 @interface CKFetchSharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_shareIDs;
-    NSArray *_zoneIDs;
+    NSArray * _shareIDs;
+    NSArray * _zoneIDs;
 }
 
 @property (nonatomic, retain) NSArray *shareIDs;

@@ -3,25 +3,25 @@
  */
 
 @interface GEOCompanionDriveStep : PBCodable <GEOCompanionManeuverStep, NSCopying> {
-    int _drivingSide;
-    GEONameInfo *_exitNumber;
+    int  _drivingSide;
+    GEONameInfo * _exitNumber;
     struct { 
         unsigned int drivingSide : 1; 
         unsigned int junctionType : 1; 
         unsigned int maneuverType : 1; 
         unsigned int shieldType : 1; 
         unsigned int toFreeway : 1; 
-    } _has;
-    struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_junctionElements;
-    unsigned int _junctionElementsCount;
-    unsigned int _junctionElementsSpace;
-    int _junctionType;
-    NSMutableArray *_maneuverNames;
-    int _maneuverType;
-    NSString *_shield;
-    int _shieldType;
-    NSMutableArray *_signposts;
-    BOOL _toFreeway;
+    }  _has;
+    struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _junctionElements;
+    unsigned int  _junctionElementsCount;
+    unsigned int  _junctionElementsSpace;
+    int  _junctionType;
+    NSMutableArray * _maneuverNames;
+    int  _maneuverType;
+    NSString * _shield;
+    int  _shieldType;
+    NSMutableArray * _signposts;
+    BOOL  _toFreeway;
 }
 
 @property (readonly, copy) NSString *debugDescription;

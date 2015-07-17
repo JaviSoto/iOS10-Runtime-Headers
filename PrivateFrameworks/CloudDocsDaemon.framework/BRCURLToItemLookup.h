@@ -3,18 +3,18 @@
  */
 
 @interface BRCURLToItemLookup : NSObject <NSSecureCoding> {
-    BRCRelativePath *__relpath;
-    unsigned long long _byIDDiffs;
-    BRCLocalItem *_byIDLocalItem;
-    BRCServerItem *_byIDServerItem;
-    unsigned long long _byPathDiffs;
-    BRCLocalItem *_byPathLocalItem;
-    BRCServerItem *_byPathServerItem;
-    unsigned long long _faultedDiffs;
-    BRCLocalItem *_faultedLocalItem;
-    BRCRelativePath *_faultedRelpath;
-    BRCServerItem *_faultedServerItem;
-    NSString *_filename;
+    BRCRelativePath * __relpath;
+    unsigned long long  _byIDDiffs;
+    BRCLocalItem * _byIDLocalItem;
+    BRCServerItem * _byIDServerItem;
+    unsigned long long  _byPathDiffs;
+    BRCLocalItem * _byPathLocalItem;
+    BRCServerItem * _byPathServerItem;
+    unsigned long long  _faultedDiffs;
+    BRCDocumentItem * _faultedLocalItem;
+    BRCRelativePath * _faultedRelpath;
+    BRCServerItem * _faultedServerItem;
+    NSString * _filename;
     union { 
         struct { 
             unsigned int parentItemID : 1; 
@@ -25,13 +25,13 @@
             unsigned int reservedMatch : 1; 
         } ; 
         unsigned int value; 
-    } _hasFetched;
-    BRCItemID *_parentItemID;
-    BRCRelativePath *_parentRelpath;
-    BRCLocalItem *_reservedLocalItem;
-    BRCServerItem *_reservedServerItem;
-    BRCAccountSession *_session;
-    NSURL *_url;
+    }  _hasFetched;
+    BRCItemID * _parentItemID;
+    BRCRelativePath * _parentRelpath;
+    BRCLocalItem * _reservedLocalItem;
+    BRCServerItem * _reservedServerItem;
+    BRCAccountSession * _session;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) unsigned long long byIDDiffs;
@@ -46,7 +46,7 @@
 @property (nonatomic, readonly) BRCServerItem *byPathServerItem;
 @property (nonatomic, readonly) BRCDocumentItem *bySharedEnclosureDocItem;
 @property (nonatomic, readonly) unsigned long long faultedDiffs;
-@property (nonatomic, readonly) BRCLocalItem *faultedLocalItem;
+@property (nonatomic, readonly) BRCDocumentItem *faultedLocalItem;
 @property (nonatomic, readonly) struct { id x1; id x2; unsigned long long x3; } faultedMatch;
 @property (nonatomic, readonly) BRCRelativePath *faultedRelpath;
 @property (nonatomic, readonly) BRCServerItem *faultedServerItem;

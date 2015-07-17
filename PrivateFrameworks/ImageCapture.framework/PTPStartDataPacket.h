@@ -3,8 +3,8 @@
  */
 
 @interface PTPStartDataPacket : NSObject {
-    unsigned long long _totalDataSize;
-    unsigned long _transactionID;
+    unsigned long long  _totalDataSize;
+    unsigned long  _transactionID;
 }
 
 - (id)contentForTCP;

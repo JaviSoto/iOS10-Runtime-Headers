@@ -3,9 +3,9 @@
  */
 
 @interface TSWPChangeDetails : NSObject <TSDAnnotationHosting> {
-    TSWPChange *_change;
-    NSString *mChangeTrackingContentString;
-    NSString *mChangeTrackingTitleString;
+    TSWPChange * _change;
+    NSString * mChangeTrackingContentString;
+    NSString * mChangeTrackingTitleString;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
@@ -31,7 +31,6 @@
 - (id)changeTrackingContentString;
 - (id)changeTrackingTitleString;
 - (void)commentWillBeAddedToDocumentRoot;
-- (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;

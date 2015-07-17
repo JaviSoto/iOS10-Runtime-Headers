@@ -3,14 +3,15 @@
  */
 
 @interface UITableViewCellDeleteConfirmationControl_Legacy : UIControl {
-    UITableViewCellDeleteConfirmationGestureRecognizer *_deleteConfirmationGesture;
-    BOOL _visible;
+    UITableViewCellDeleteConfirmationGestureRecognizer * _deleteConfirmationGesture;
+    BOOL  _visible;
 }
 
 @property (getter=isVisible, nonatomic) BOOL visible;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForTitle:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_confirmationAnimationDidEnd;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelDeleteConfirmationWithGesture:(id)arg1;

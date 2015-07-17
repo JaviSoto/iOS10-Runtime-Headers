@@ -3,12 +3,12 @@
  */
 
 @interface SKUIScreenshotDataConsumer : SKUIImageDataConsumer {
-    BOOL _drawsBorder;
-    BOOL _forcesPortrait;
+    BOOL  _drawsBorder;
+    BOOL  _forcesPortrait;
     struct CGSize { 
         float width; 
         float height; 
-    } _screenshotSize;
+    }  _screenshotSize;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } constraintSize;

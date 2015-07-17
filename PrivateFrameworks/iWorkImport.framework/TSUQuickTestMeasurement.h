@@ -3,8 +3,8 @@
  */
 
 @interface TSUQuickTestMeasurement : NSObject {
-    TSMTraceBuffer *mBuffer;
-    NSDictionary *mPrevious;
+    TSMTraceBuffer * mBuffer;
+    NSDictionary * mPrevious;
 }
 
 + (id)_singletonAlloc;

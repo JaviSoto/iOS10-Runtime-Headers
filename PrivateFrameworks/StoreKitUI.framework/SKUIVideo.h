@@ -3,8 +3,8 @@
  */
 
 @interface SKUIVideo : NSObject {
-    SKUIArtworkList *_artworks;
-    NSURL *_url;
+    SKUIArtworkList * _artworks;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

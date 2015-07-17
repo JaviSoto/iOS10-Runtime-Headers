@@ -3,10 +3,10 @@
  */
 
 @interface GKTurnBasedMatch : NSObject <GKSessionDelegate> {
-    NSArray *_exchanges;
-    GKTurnBasedMatchInternal *_internal;
-    NSArray *_participants;
-    unsigned int _state;
+    NSArray * _exchanges;
+    GKTurnBasedMatchInternal * _internal;
+    NSArray * _participants;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly, retain) NSArray *activeExchanges;

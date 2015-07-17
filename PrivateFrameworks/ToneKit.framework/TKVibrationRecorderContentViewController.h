@@ -3,21 +3,21 @@
  */
 
 @interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UITextFieldDelegate> {
-    UIBarButtonItem *_cancelButton;
-    double _currentVibrationComponentDidStartTimeStamp;
-    double _currentVibrationProgressDidStartTimestamp;
-    <TKVibrationRecorderViewControllerDelegate> *_delegate;
-    NSDictionary *_indefiniteVibrationPattern;
-    int _mode;
-    TKVibrationRecorderViewController *_parentVibrationRecorderViewController;
-    TLVibrationPattern *_recordedVibrationPattern;
-    UIBarButtonItem *_saveButton;
-    UIAlertController *_vibrationNameAlertController;
-    UIAlertAction *_vibrationNameAlertSaveAction;
-    UITextField *_vibrationNameAlertTextField;
-    TKVibrationRecorderView *_vibrationRecorderView;
-    TKVibratorController *_vibratorController;
-    BOOL _waitingForEndOfCurrentVibrationComponent;
+    UIBarButtonItem * _cancelButton;
+    double  _currentVibrationComponentDidStartTimeStamp;
+    double  _currentVibrationProgressDidStartTimestamp;
+    <TKVibrationRecorderViewControllerDelegate> * _delegate;
+    NSDictionary * _indefiniteVibrationPattern;
+    int  _mode;
+    TKVibrationRecorderViewController * _parentVibrationRecorderViewController;
+    TLVibrationPattern * _recordedVibrationPattern;
+    UIBarButtonItem * _saveButton;
+    UIAlertController * _vibrationNameAlertController;
+    UIAlertAction * _vibrationNameAlertSaveAction;
+    UITextField * _vibrationNameAlertTextField;
+    TKVibrationRecorderView * _vibrationRecorderView;
+    TKVibratorController * _vibratorController;
+    BOOL  _waitingForEndOfCurrentVibrationComponent;
 }
 
 @property (setter=_setCancelButton:, nonatomic, retain) UIBarButtonItem *_cancelButton;

@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
-    struct CGPDFDocument { } *mPDFDocument;
+    }  mNaturalSize;
+    struct CGPDFDocument { } * mPDFDocument;
 }
 
 - (struct CGPDFDocument { }*)CGPDFDocument;

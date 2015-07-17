@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKTonePickerViewController : UITableViewController <MPMediaPickerControllerDelegate, TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKTonePickerTableViewControllerHelper, TKTonePickerTableViewLayoutMarginsObserver, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate> {
-    UIImage *_checkmarkImage;
-    UIView *_defaultSectionHeaderView;
-    <TKTonePickerViewControllerDelegate> *_delegate;
-    NSMutableArray *_mediaItems;
-    MPMediaPickerController *_mediaPickerController;
-    UIView *_mediaSectionHeaderView;
-    BOOL _needsScrollPositionReset;
-    NSMutableArray *_regularToneSectionHeaderViews;
-    BOOL _showsMedia;
-    BOOL _showsStoreButtonInNavigationBar;
-    UIBarButtonItem *_storeBarButtonItem;
-    MPMusicPlayerController *_storedMusicPlayer;
-    <TKTonePickerStyleProvider> *_styleProvider;
-    TKTonePickerTableViewCellLayoutManager *_tableViewCellLayoutManager;
-    TKToneClassicsTableViewController *_toneClassicsTableViewController;
-    TKTonePickerController *_tonePickerController;
-    TKVibrationPickerViewController *_vibrationPickerViewController;
+@interface TKTonePickerViewController : UITableViewController <MPMediaPickerControllerDelegate, TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKTonePickerTableViewControllerHelper, TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate> {
+    UIImage * _checkmarkImage;
+    UIView * _defaultSectionHeaderView;
+    <TKTonePickerViewControllerDelegate> * _delegate;
+    NSMutableArray * _mediaItems;
+    MPMediaPickerController * _mediaPickerController;
+    UIView * _mediaSectionHeaderView;
+    BOOL  _needsScrollPositionReset;
+    NSMutableArray * _regularToneSectionHeaderViews;
+    BOOL  _showsMedia;
+    BOOL  _showsStoreButtonInNavigationBar;
+    UIBarButtonItem * _storeBarButtonItem;
+    MPMusicPlayerController * _storedMusicPlayer;
+    <TKTonePickerStyleProvider> * _styleProvider;
+    TKTonePickerTableViewCellLayoutManager * _tableViewCellLayoutManager;
+    TKToneClassicsTableViewController * _toneClassicsTableViewController;
+    TKTonePickerController * _tonePickerController;
+    TKVibrationPickerViewController * _vibrationPickerViewController;
 }
 
 @property (setter=_setCheckmarkImage:, nonatomic, retain) UIImage *_checkmarkImage;
@@ -133,6 +133,7 @@
 - (id)selectedToneIdentifier;
 - (id)selectedTonePickerItem;
 - (id)selectedVibrationIdentifier;
+- (void)separatorColorDidChangeInTonePickerTableView:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setDefaultToneIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -188,6 +189,7 @@
 - (void)tonePickerTableViewWillDisappear:(BOOL)arg1;
 - (void)updateCell:(id)arg1 withCheckedStatus:(BOOL)arg2;
 - (void)updateCell:(id)arg1 withDetailText:(id)arg2;
+- (void)updateDividerContentColorToMatchSeparatorColorInTableView:(id)arg1;
 - (void)vibrationPickerViewController:(id)arg1 selectedVibrationWithIdentifier:(id)arg2;
 - (void)vibrationPickerViewControllerWasDismissed:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

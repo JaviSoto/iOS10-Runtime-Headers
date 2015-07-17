@@ -3,16 +3,16 @@
  */
 
 @interface _MPUExtrasGridHeaderView : UIView {
-    NSArray *_artworkSizeConstraints;
-    MPUArtworkView *_artworkView;
-    NSLayoutConstraint *_bottomLabelConstraint;
-    UIView *_bottomLabelSpacer;
-    MPUContentSizeLayoutConstraint *_bottomLabelSpacerHeight;
-    MPUContentSizeLayoutConstraint *_subtitleBaselineConstraint;
-    UILabel *_subtitleLabel;
-    NSArray *_textLeadingConstraints;
-    UILabel *_titleLabel;
-    MPUContentSizeLayoutConstraint *_topLabelConstraint;
+    NSArray * _artworkSizeConstraints;
+    MPUArtworkView * _artworkView;
+    NSLayoutConstraint * _bottomLabelConstraint;
+    UIView * _bottomLabelSpacer;
+    MPUContentSizeLayoutConstraint * _bottomLabelSpacerHeight;
+    MPUContentSizeLayoutConstraint * _subtitleBaselineConstraint;
+    UILabel * _subtitleLabel;
+    NSArray * _textLeadingConstraints;
+    UILabel * _titleLabel;
+    MPUContentSizeLayoutConstraint * _topLabelConstraint;
 }
 
 @property (nonatomic, readonly) UILabel *titleLabel;

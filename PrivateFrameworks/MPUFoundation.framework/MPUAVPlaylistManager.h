@@ -3,21 +3,21 @@
  */
 
 @interface MPUAVPlaylistManager : MPAVPlaylistManager <MPUQueueBehaviorManaging> {
-    BOOL _disableQueueModifications;
-    BOOL _disableSoftQueueFaulting;
-    NSMutableIndexSet *_failedSoftQueueIndexes;
-    int _hardQueueInsertionIndex;
-    NSMutableArray *_hardQueueSourceContexts;
-    MPMutableBidirectionalDictionary *_identifiersToIndexes;
-    BOOL _ignoreNextIndexChanges;
-    NSMutableDictionary *_iterationIndexToQueueModifications;
-    MPAVItem *_lastPlayedSoftQueueItem;
-    unsigned int _maximumModifiedPlaylistIterationIndex;
-    unsigned int _maximumPlaylistIndex;
-    unsigned int _minimumPlaylistIndex;
-    int _nextCurrentIndex;
-    int _repeatStartIndex;
-    MPQueueFeeder *_softQueueFeeder;
+    BOOL  _disableQueueModifications;
+    BOOL  _disableSoftQueueFaulting;
+    NSMutableIndexSet * _failedSoftQueueIndexes;
+    int  _hardQueueInsertionIndex;
+    NSMutableArray * _hardQueueSourceContexts;
+    MPMutableBidirectionalDictionary * _identifiersToIndexes;
+    BOOL  _ignoreNextIndexChanges;
+    NSMutableDictionary * _iterationIndexToQueueModifications;
+    MPAVItem * _lastPlayedSoftQueueItem;
+    unsigned int  _maximumModifiedPlaylistIterationIndex;
+    unsigned int  _maximumPlaylistIndex;
+    unsigned int  _minimumPlaylistIndex;
+    int  _nextCurrentIndex;
+    int  _repeatStartIndex;
+    MPQueueFeeder * _softQueueFeeder;
 }
 
 @property (nonatomic, readonly) BOOL allowsUserVisibleUpcomingItems;

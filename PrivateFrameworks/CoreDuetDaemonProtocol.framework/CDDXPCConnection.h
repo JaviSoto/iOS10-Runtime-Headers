@@ -3,13 +3,13 @@
  */
 
 @interface CDDXPCConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    CDDebug *_debug;
-    BOOL _hasValidConnection;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    long long _sequenceNumber;
-    NSString *_serviceName;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    CDDebug * _debug;
+    BOOL  _hasValidConnection;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    long long  _sequenceNumber;
+    NSString * _serviceName;
 }
 
 @property (readonly) CDDebug *debug;

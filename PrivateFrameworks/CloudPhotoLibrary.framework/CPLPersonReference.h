@@ -3,8 +3,8 @@
  */
 
 @interface CPLPersonReference : NSObject <NSCopying, NSSecureCoding> {
-    NSDictionary *_extraProperties;
-    NSString *_personIdentifier;
+    NSDictionary * _extraProperties;
+    NSString * _personIdentifier;
 }
 
 @property (nonatomic, copy) NSDictionary *extraProperties;

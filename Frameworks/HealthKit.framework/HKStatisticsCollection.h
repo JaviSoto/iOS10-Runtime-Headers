@@ -3,19 +3,17 @@
  */
 
 @interface HKStatisticsCollection : NSObject {
-    NSDate *_anchorDate;
-    double _approximateStatisticsInterval;
-    NSSet *_cachedSources;
-    id /* block */ _emptyStatisticsConstructor;
-    NSMutableDictionary *_statisticsByIndex;
-    NSDateComponents *_statisticsInterval;
-    NSLock *_statisticsLock;
+    NSDate * _anchorDate;
+    double  _approximateStatisticsInterval;
+    NSSet * _cachedSources;
+    id /* block */  _emptyStatisticsConstructor;
+    NSMutableDictionary * _statisticsByIndex;
+    NSDateComponents * _statisticsInterval;
+    NSLock * _statisticsLock;
 }
 
 @property (nonatomic, readonly) NSDate *anchorDate;
 @property (nonatomic, readonly) NSDateComponents *statisticsInterval;
-
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void).cxx_destruct;
 - (void)_clearSourcesCache;
@@ -39,11 +37,5 @@
 - (id)statistics;
 - (id)statisticsForDate:(id)arg1;
 - (id)statisticsInterval;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (id)_fakeDataWithUnit:(id)arg1;
-- (id)_fakingValueForKey:(id)arg1;
-- (double)totalWithUnit:(id)arg1;
 
 @end

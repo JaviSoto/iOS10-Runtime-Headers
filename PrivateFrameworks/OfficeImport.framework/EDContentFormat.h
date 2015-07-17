@@ -3,10 +3,10 @@
  */
 
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
-    bool mBuiltIn;
-    unsigned int mFormatId;
-    EDString *mFormatString;
-    bool mReferenced;
+    bool  mBuiltIn;
+    unsigned int  mFormatId;
+    EDString * mFormatString;
+    bool  mReferenced;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +21,7 @@
 - (bool)builtIn;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)formatId;
 - (id)formatString;
 - (unsigned int)hash;

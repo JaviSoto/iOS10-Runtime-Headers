@@ -3,10 +3,10 @@
  */
 
 @interface BBObserverGatewayAddBulletinRequest : NSObject {
-    NSString *_bulletinID;
-    NSString *_sectionID;
-    NSDate *_timeout;
-    id /* block */ _timeoutHandler;
+    NSString * _bulletinID;
+    NSString * _sectionID;
+    NSDate * _timeout;
+    id /* block */  _timeoutHandler;
 }
 
 @property (nonatomic, retain) NSString *bulletinID;

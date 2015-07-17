@@ -6,6 +6,12 @@
 
 + (BOOL)alsCurveHigherThanDefault;
 + (double)defaultBatteryEnergyCapacity;
++ (double)duetDiscretionaryBudget;
 + (BOOL)internalBuild;
++ (BOOL)isIPod;
++ (BOOL)isLowPowerModeSupported;
++ (BOOL)isNarrowScreen;
++ (BOOL)isiPad;
++ (id)valueForMobileGestaltCapability:(id)arg1;
 
 @end

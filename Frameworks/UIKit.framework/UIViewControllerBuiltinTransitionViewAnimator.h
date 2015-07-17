@@ -3,12 +3,12 @@
  */
 
 @interface UIViewControllerBuiltinTransitionViewAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
-    id _delegate;
-    UIView *_fromView;
-    BOOL _removeFromView;
-    UIView *_toView;
-    int _transition;
-    <UIViewControllerContextTransitioning> *_transitionContext;
+    id  _delegate;
+    UIView * _fromView;
+    BOOL  _removeFromView;
+    UIView * _toView;
+    int  _transition;
+    <UIViewControllerContextTransitioning> * _transitionContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +21,7 @@
 @property (nonatomic) UIView *toView;
 @property (nonatomic) int transition;
 
+- (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_adjustOrigin:(struct CGPoint { float x1; float x2; })arg1 givenOtherOrigin:(struct CGPoint { float x1; float x2; })arg2 forTransition:(int)arg3;
 - (void)_prepareKeyboardForTransition:(int)arg1 fromView:(id)arg2;
 - (void)animateTransition:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface CMDrawingAction : NSObject {
-    float _floatValue;
-    int _type;
-    id _value;
+    float  _floatValue;
+    int  _type;
+    id  _value;
 }
 
 - (void)dealloc;

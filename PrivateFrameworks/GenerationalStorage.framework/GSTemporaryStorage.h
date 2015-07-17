@@ -3,10 +3,10 @@
  */
 
 @interface GSTemporaryStorage : NSObject <GSAdditionStoring, GSAdditionStoringPrivate> {
-    NSURL *_documentURL;
-    NSURL *_libraryURL;
-    int _lockFd;
-    NSURL *_stagingURL;
+    NSURL * _documentURL;
+    NSURL * _libraryURL;
+    int  _lockFd;
+    NSURL * _stagingURL;
 }
 
 @property (retain) NSURL *documentURL;

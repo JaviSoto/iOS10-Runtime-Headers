@@ -3,9 +3,9 @@
  */
 
 @interface ABPersonCellContentView : UIView {
-    UIImageView *_badge;
-    BOOL _editing;
-    UILabel *_label;
+    UIImageView * _badge;
+    BOOL  _editing;
+    UILabel * _label;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,8 +15,8 @@
             float width; 
             float height; 
         } size; 
-    } _labelViewRect;
-    <ABStyleProvider> *_styleProvider;
+    }  _labelViewRect;
+    <ABStyleProvider> * _styleProvider;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,7 +26,7 @@
             float width; 
             float height; 
         } size; 
-    } _valueViewRect;
+    }  _valueViewRect;
 }
 
 @property (nonatomic, readonly) UILabel *label;

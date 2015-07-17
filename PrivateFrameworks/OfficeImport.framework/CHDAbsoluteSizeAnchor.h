@@ -6,14 +6,13 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mFrom;
+    }  mFrom;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
+    }  mSize;
 }
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })from;
 - (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

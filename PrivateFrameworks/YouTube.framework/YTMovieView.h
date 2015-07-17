@@ -3,23 +3,23 @@
  */
 
 @interface YTMovieView : UIView {
-    UIImageView *_bugView;
-    BOOL _canAutoPlay;
-    BOOL _controlsShown;
-    id _delegate;
-    UIImageView *_gradientView;
-    BOOL _isShown;
-    UILabel *_logLabel;
-    UIMoviePlayerController *_moviePlayer;
-    double _seekTime;
-    BOOL _showControlsAfterFullscreenExit;
-    BOOL _shownFromExternalURL;
-    BOOL _switchingVideos;
-    BOOL _useSmallLogo;
-    YTVideo *_video;
-    YTSearchRequest *_videoInfoRequest;
-    NSArray *_videoList;
-    NSURL *_youTubeURL;
+    UIImageView * _bugView;
+    BOOL  _canAutoPlay;
+    BOOL  _controlsShown;
+    id  _delegate;
+    UIImageView * _gradientView;
+    BOOL  _isShown;
+    UILabel * _logLabel;
+    UIMoviePlayerController * _moviePlayer;
+    double  _seekTime;
+    BOOL  _showControlsAfterFullscreenExit;
+    BOOL  _shownFromExternalURL;
+    BOOL  _switchingVideos;
+    BOOL  _useSmallLogo;
+    YTVideo * _video;
+    YTSearchRequest * _videoInfoRequest;
+    NSArray * _videoList;
+    NSURL * _youTubeURL;
 }
 
 - (BOOL)_canBookmark;

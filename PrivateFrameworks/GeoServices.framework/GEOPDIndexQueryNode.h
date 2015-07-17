@@ -3,10 +3,10 @@
  */
 
 @interface GEOPDIndexQueryNode : PBCodable <NSCopying> {
-    NSString *_field;
-    NSMutableArray *_operands;
-    int _type;
-    NSString *_value;
+    NSString * _field;
+    NSMutableArray * _operands;
+    int  _type;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *field;

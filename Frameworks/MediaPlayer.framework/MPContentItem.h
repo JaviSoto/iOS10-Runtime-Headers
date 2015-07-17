@@ -3,8 +3,8 @@
  */
 
 @interface MPContentItem : NSObject {
-    MPMediaItemArtwork *_artwork;
-    struct _MRContentItem { } *_mrContentItem;
+    MPMediaItemArtwork * _artwork;
+    struct _MRContentItem { } * _mrContentItem;
 }
 
 @property (nonatomic, retain) MPMediaItemArtwork *artwork;
@@ -23,6 +23,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
+- (id)init;
 - (id)initWithIdentifier:(id)arg1;
 - (BOOL)isContainer;
 - (BOOL)isPlayable;

@@ -3,8 +3,8 @@
  */
 
 @interface MPUTextDrawingView : UIView {
-    float _cachedDisplayScale;
-    MPUTextDrawingContext *_textDrawingContext;
+    float  _cachedDisplayScale;
+    MPUTextDrawingContext * _textDrawingContext;
 }
 
 @property (nonatomic, readonly) NSString *text;

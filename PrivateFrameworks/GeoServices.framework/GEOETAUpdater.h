@@ -3,21 +3,21 @@
  */
 
 @interface GEOETAUpdater : NSObject {
-    BOOL _allowRequests;
-    GEOETATrafficUpdateRequest *_currentETARequest;
-    double _debugTimeWindowDuration;
-    <GEOETAUpdaterDelegate> *_delegate;
-    GEOComposedWaypoint *_destination;
-    NSData *_directionsResponseID;
-    NSTimer *_etaIdleTimer;
-    int _etaState;
-    double _lastETARequestTime;
-    double _requestInterval;
-    GEOComposedRoute *_route;
-    GEORouteAttributes *_routeAttributes;
-    GEORouteMatch *_routeMatch;
-    BOOL _shouldUseConditionalRequest;
-    GEOLocation *_userLocation;
+    BOOL  _allowRequests;
+    GEOETATrafficUpdateRequest * _currentETARequest;
+    double  _debugTimeWindowDuration;
+    <GEOETAUpdaterDelegate> * _delegate;
+    GEOComposedWaypoint * _destination;
+    NSData * _directionsResponseID;
+    NSTimer * _etaIdleTimer;
+    int  _etaState;
+    double  _lastETARequestTime;
+    double  _requestInterval;
+    GEOComposedRoute * _route;
+    GEORouteAttributes * _routeAttributes;
+    GEORouteMatch * _routeMatch;
+    BOOL  _shouldUseConditionalRequest;
+    GEOLocation * _userLocation;
 }
 
 @property (nonatomic) BOOL allowRequests;
@@ -45,6 +45,7 @@
 - (BOOL)_updateETAResponse:(id)arg1 withRemainingDistanceFromRequest:(id)arg2;
 - (BOOL)_updateRouteWithETATrafficUpdateResponse:(id)arg1;
 - (BOOL)allowRequests;
+- (void)cancelRequest;
 - (id)currentStep;
 - (void)dealloc;
 - (double)debugTimeWindowDuration;

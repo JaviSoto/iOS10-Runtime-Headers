@@ -3,13 +3,14 @@
  */
 
 @interface BRCNotificationGatherer : NSObject {
-    id /* block */ _gatherReply;
-    BRCNotificationPipe *_pipe;
+    id /* block */  _gatherReply;
+    BRCNotificationPipe * _pipe;
 }
 
 - (void).cxx_destruct;
 - (BOOL)continueGatheringWithBatchSize:(int)arg1;
 - (void)done;
+- (id)init;
 - (id)initWithNotificationPipe:(id)arg1 reply:(id /* block */)arg2;
 - (void)invalidate;
 

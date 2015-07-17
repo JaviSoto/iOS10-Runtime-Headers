@@ -3,8 +3,8 @@
  */
 
 @interface MSPDirectionsSearch : PBCodable <NSCopying> {
-    GEOStorageRouteRequestStorage *_routeRequestStorage;
-    PBUnknownFields *_unknownFields;
+    GEOStorageRouteRequestStorage * _routeRequestStorage;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasRouteRequestStorage;

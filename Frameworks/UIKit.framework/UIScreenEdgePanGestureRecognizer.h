@@ -3,7 +3,7 @@
  */
 
 @interface UIScreenEdgePanGestureRecognizer : UIPanGestureRecognizer <_UIScreenEdgePanRecognizerDelegate> {
-    _UIScreenEdgePanRecognizer *_recognizer;
+    _UIScreenEdgePanRecognizer * _recognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,8 +12,16 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)_shouldDefaultToTouches;
+
+- (void).cxx_destruct;
 - (float)_edgeRegionSize;
+- (struct CGPoint { float x1; float x2; })_locationForTouch:(id)arg1;
+- (void)_setEdgeRegionSize:(float)arg1;
+- (void)_setHysteresis:(float)arg1;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (BOOL)_shouldUseGrapeFlags;
+- (int)_touchInterfaceOrientation;
 - (void)dealloc;
 - (unsigned int)edges;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

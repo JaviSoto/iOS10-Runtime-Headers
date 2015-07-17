@@ -3,11 +3,11 @@
  */
 
 @interface CPLProxyLibraryManagerOutstandingInvocation : NSObject {
-    BOOL _didFinish;
-    BOOL _didStart;
-    NSError *_finalError;
-    CPLResource *_finalResource;
-    float _progress;
+    BOOL  _didFinish;
+    BOOL  _didStart;
+    NSError * _finalError;
+    CPLResource * _finalResource;
+    float  _progress;
 }
 
 @property (nonatomic) BOOL didFinish;

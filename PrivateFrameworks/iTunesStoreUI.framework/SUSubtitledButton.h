@@ -3,8 +3,8 @@
  */
 
 @interface SUSubtitledButton : UIButton {
-    struct __CFDictionary { } *_subtitleContentLookup;
-    UILabel *_subtitleView;
+    struct __CFDictionary { } * _subtitleContentLookup;
+    UILabel * _subtitleView;
 }
 
 @property (nonatomic, readonly, retain) NSString *currentSubtitle;

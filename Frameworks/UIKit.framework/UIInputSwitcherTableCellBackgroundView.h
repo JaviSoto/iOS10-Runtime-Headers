@@ -3,9 +3,9 @@
  */
 
 @interface UIInputSwitcherTableCellBackgroundView : UIView {
-    UITableViewCell *_cell;
-    UIKeyboardMenuView *_menu;
-    UITableView *_tableView;
+    UITableViewCell * _cell;
+    UIKeyboardMenuView * _menu;
+    UITableView * _tableView;
 }
 
 @property (nonatomic) UITableViewCell *cell;

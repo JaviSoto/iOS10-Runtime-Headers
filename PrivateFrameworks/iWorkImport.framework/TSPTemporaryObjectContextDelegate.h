@@ -3,9 +3,9 @@
  */
 
 @interface TSPTemporaryObjectContextDelegate : NSObject <TSPObjectContextDelegate> {
-    NSError *_error;
-    BOOL _ignoreDocumentSupport;
-    NSMutableSet *_persistenceWarnings;
+    NSError * _error;
+    BOOL  _ignoreDocumentSupport;
+    NSMutableSet * _persistenceWarnings;
 }
 
 @property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
@@ -20,7 +20,6 @@
 @property (nonatomic, readonly) BOOL isInCollaborationMode;
 @property (nonatomic, readonly) BOOL isInReadOnlyMode;
 @property (nonatomic, readonly) NSSet *persistenceWarnings;
-@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface NSExternalRefCountedData : NSObject {
-    double _birth;
-    int _cd_rc;
+    double  _birth;
+    int  _cd_rc;
     struct _externalRefFlags_st { 
         unsigned int _invalidToOnes : 1; 
         unsigned int _hasTemporaryID : 1; 
@@ -12,9 +12,9 @@
         unsigned int _reservedFlags : 1; 
         unsigned int _virtualfk_count : 14; 
         unsigned int _ordkey_count : 14; 
-    } _externalRefFlags;
-    int _externalReferenceCount;
-    id *_toManyMap;
+    }  _externalRefFlags;
+    int  _externalReferenceCount;
+    id * _toManyMap;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

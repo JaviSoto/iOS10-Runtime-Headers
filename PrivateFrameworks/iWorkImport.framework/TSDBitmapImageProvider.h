@@ -3,20 +3,20 @@
  */
 
 @interface TSDBitmapImageProvider : TSDImageProvider {
-    long mCheckIfValidToken;
-    unsigned int mDPI;
-    struct CGImage { } *mHalfSizeImage;
-    struct CGImage { } *mImage;
-    NSObject<OS_dispatch_semaphore> *mImageLock;
-    struct CGImageSource { } *mImageSource;
-    BOOL mIsOpaque;
-    BOOL mIsValid;
+    long  mCheckIfValidToken;
+    unsigned int  mDPI;
+    struct CGImage { } * mHalfSizeImage;
+    struct CGImage { } * mImage;
+    NSObject<OS_dispatch_semaphore> * mImageLock;
+    struct CGImageSource { } * mImageSource;
+    BOOL  mIsOpaque;
+    BOOL  mIsValid;
     struct CGSize { 
         float width; 
         float height; 
-    } mNaturalSize;
-    int mOrientation;
-    struct CGImage { } *mQuarterSizeImage;
+    }  mNaturalSize;
+    int  mOrientation;
+    struct CGImage { } * mQuarterSizeImage;
 }
 
 + (struct CGImage { }*)CGImageForImageData:(id)arg1;

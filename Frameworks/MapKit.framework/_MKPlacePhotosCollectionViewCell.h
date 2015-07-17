@@ -3,7 +3,7 @@
  */
 
 @interface _MKPlacePhotosCollectionViewCell : UITableViewCell {
-    _MKPlacePhotosCollectionView *_photoGrid;
+    _MKPlacePhotosCollectionView * _photoGrid;
 }
 
 @property (nonatomic, readonly) _MKPlacePhotosCollectionView *photoGrid;

@@ -3,8 +3,8 @@
  */
 
 @interface TPFootnoteLayoutController : NSObject {
-    BOOL _bumpedDocumentEndnotesForPageBreak;
-    TPDocumentRoot *_documentRoot;
+    BOOL  _bumpedDocumentEndnotesForPageBreak;
+    TPDocumentRoot * _documentRoot;
 }
 
 @property (nonatomic, readonly) <TSWPFootnoteMarkProvider> *footnoteMarkProvider;

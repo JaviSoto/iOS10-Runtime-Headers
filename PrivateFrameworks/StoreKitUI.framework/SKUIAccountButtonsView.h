@@ -3,14 +3,14 @@
  */
 
 @interface SKUIAccountButtonsView : UIView {
-    UILabel *_accountCreditsLabel;
-    SKUIRoundedRectButton *_appleIDButton;
-    SKUIClientContext *_clientContext;
-    SKUILinkButton *_ecommerceButton;
-    SKUIRoundedRectButton *_giftingButton;
-    UIButton *_redeemButton;
-    UIButton *_termsAndConditionsButton;
-    SKUIRoundedRectButton *_usernameButton;
+    UILabel * _accountCreditsLabel;
+    SKUIRoundedRectButton * _appleIDButton;
+    SKUIClientContext * _clientContext;
+    SKUILinkButton * _ecommerceButton;
+    SKUIRoundedRectButton * _giftingButton;
+    UIButton * _redeemButton;
+    UIButton * _termsAndConditionsButton;
+    SKUIRoundedRectButton * _usernameButton;
 }
 
 @property (nonatomic, readonly) UIControl *ECommerceButton;

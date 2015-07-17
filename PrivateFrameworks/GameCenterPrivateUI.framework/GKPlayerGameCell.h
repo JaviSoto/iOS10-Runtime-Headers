@@ -3,8 +3,8 @@
  */
 
 @interface GKPlayerGameCell : GKBaseGameCell {
-    UILabel *_dateLabel;
-    UILabel *_statsLabel;
+    UILabel * _dateLabel;
+    UILabel * _statsLabel;
 }
 
 @property (nonatomic, retain) UILabel *dateLabel;

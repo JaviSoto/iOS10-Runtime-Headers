@@ -3,16 +3,16 @@
  */
 
 @interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <MKSmallCalloutViewControllerDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate, _MKPopoverEmbeddingViewWindowDelegate, _UIPopoverControllerMapsTransitionDelegate> {
-    id /* block */ _afterMoveToWindowBlock;
-    BOOL _allowsPopoverWhenNotInWindow;
-    BOOL _animatingIn;
-    MKSmallCalloutViewController *_calloutViewController;
-    _MKPopoverEmbeddingView *_embeddingView;
-    BOOL _isCalloutExpanded;
-    BOOL _isHidingForImplementationReasons;
-    BOOL _isShowingPopover;
-    UIView *_layoutConstraintsView;
-    UIPopoverController *_popoverController;
+    id /* block */  _afterMoveToWindowBlock;
+    BOOL  _allowsPopoverWhenNotInWindow;
+    BOOL  _animatingIn;
+    MKSmallCalloutViewController * _calloutViewController;
+    _MKPopoverEmbeddingView * _embeddingView;
+    BOOL  _isCalloutExpanded;
+    BOOL  _isHidingForImplementationReasons;
+    BOOL  _isShowingPopover;
+    UIView * _layoutConstraintsView;
+    UIPopoverController * _popoverController;
 }
 
 @property (nonatomic) BOOL allowsPopoverWhenNotInWindow;
@@ -48,7 +48,7 @@
 - (id)popoverController;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (void)setAllowsPopoverWhenNotInWindow:(BOOL)arg1;
-- (void)setMapDisplayStyle:(unsigned int)arg1;
+- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)smallCalloutViewControllerDidAppear:(id)arg1;
 

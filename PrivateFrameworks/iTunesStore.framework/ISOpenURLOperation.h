@@ -3,7 +3,7 @@
  */
 
 @interface ISOpenURLOperation : ISOperation {
-    ISOpenURLRequest *_request;
+    ISOpenURLRequest * _request;
 }
 
 @property (readonly) ISOpenURLRequest *openURLRequest;

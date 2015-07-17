@@ -3,7 +3,7 @@
  */
 
 @interface SKUIReviewListPageSection : SKUIStorePageSection {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
 }
 
 @property (nonatomic, readonly) SKUIReviewListPageComponent *pageComponent;

@@ -3,12 +3,12 @@
  */
 
 @interface __NSDictionaryM : NSMutableDictionary {
-    id *_keys;
-    unsigned int _kvo;
-    unsigned long _mutations;
-    id *_objs;
-    unsigned int _size;
-    unsigned int _used;
+    id * _keys;
+    unsigned int  _kvo;
+    unsigned long  _mutations;
+    id * _objs;
+    unsigned int  _size;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;
@@ -16,6 +16,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
 
+- (void)__apply:(int (*)arg1 context:(void*)arg2;
 - (void)__setObject:(id)arg1 forKey:(id)arg2;
 - (double)_clumpingFactor;
 - (double)_clumpingInterestingThreshold;

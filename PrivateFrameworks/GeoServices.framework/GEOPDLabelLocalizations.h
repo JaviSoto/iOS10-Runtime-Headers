@@ -3,12 +3,13 @@
  */
 
 @interface GEOPDLabelLocalizations : PBCodable <NSCopying> {
-    NSMutableArray *_localizedStrings;
+    NSMutableArray * _localizedStrings;
 }
 
 @property (nonatomic, retain) NSMutableArray *localizedStrings;
 
 - (void)addLocalizedString:(id)arg1;
+- (id)bestLocalizedName;
 - (void)clearLocalizedStrings;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

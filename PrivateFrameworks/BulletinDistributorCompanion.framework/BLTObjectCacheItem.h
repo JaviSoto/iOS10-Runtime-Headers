@@ -3,8 +3,8 @@
  */
 
 @interface BLTObjectCacheItem : NSObject {
-    double _lastAccessedDate;
-    NSObject *_object;
+    double  _lastAccessedDate;
+    NSObject * _object;
 }
 
 @property (nonatomic, readonly) double lastAccessedDate;

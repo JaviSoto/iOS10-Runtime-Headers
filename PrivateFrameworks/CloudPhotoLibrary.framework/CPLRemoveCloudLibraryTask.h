@@ -3,7 +3,7 @@
  */
 
 @interface CPLRemoveCloudLibraryTask : CPLEngineSyncEmergencyTask {
-    <CPLEngineTransportRemoveLibraryTask> *_removeLibraryTask;
+    <CPLEngineTransportRemoveLibraryTask> * _removeLibraryTask;
 }
 
 + (BOOL)shouldCoalesceTasks;

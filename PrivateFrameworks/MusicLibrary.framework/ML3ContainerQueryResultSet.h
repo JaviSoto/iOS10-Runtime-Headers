@@ -3,11 +3,11 @@
  */
 
 @interface ML3ContainerQueryResultSet : ML3QueryResultSet {
-    long long _containerPID;
-    unsigned int _entityLimit;
-    BOOL _needsReversing;
-    BOOL _needsSorting;
-    ML3QueryResultSet_BackingStore *_sortedBackingStore;
+    long long  _containerPID;
+    unsigned int  _entityLimit;
+    BOOL  _needsReversing;
+    BOOL  _needsSorting;
+    ML3QueryResultSet_BackingStore * _sortedBackingStore;
 }
 
 - (void).cxx_destruct;

@@ -3,13 +3,13 @@
  */
 
 @interface PLImageDataInfo : NSObject {
-    int _EXIFOrientation;
-    NSURL *_URL;
-    NSString *_UTI;
-    BOOL _canDownloadFromCloud;
-    int _deliveredFormat;
-    BOOL _deliveredPlaceholder;
-    NSString *_sandboxExtensionToken;
+    int  _EXIFOrientation;
+    NSURL * _URL;
+    NSString * _UTI;
+    BOOL  _canDownloadFromCloud;
+    int  _deliveredFormat;
+    BOOL  _deliveredPlaceholder;
+    NSString * _sandboxExtensionToken;
 }
 
 @property int EXIFOrientation;

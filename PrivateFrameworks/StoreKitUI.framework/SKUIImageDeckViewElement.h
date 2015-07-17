@@ -3,10 +3,10 @@
  */
 
 @interface SKUIImageDeckViewElement : SKUIViewElement {
-    float _additionalDragLeft;
-    float _additionalDragRight;
-    float _initialDragLeft;
-    float _initialDragRight;
+    float  _additionalDragLeft;
+    float  _additionalDragRight;
+    float  _initialDragLeft;
+    float  _initialDragRight;
 }
 
 @property (nonatomic, readonly) float additionalDragLeft;

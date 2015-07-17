@@ -3,21 +3,21 @@
  */
 
 @interface PUZoomableGridViewController : PUPhotosGridViewController <PLCPLStatusDelegate, PUMagnfiedViewControllerDelegate> {
-    PLCPLStatus *__cplStatus;
-    NSTimer *__cplStatusUpdateTimer;
-    PUGridPinchGestureRecognizer *__gridPinchGestureRecognizer;
-    BOOL __hasAppearedOnce;
-    float __lastUpdateWidth;
-    NSIndexPath *__lastZoomInTransitionAnchorIndexPath;
-    NSArray *__syncProgressAlbums;
-    UITapGestureRecognizer *__tapGestureRecognizer;
-    NSIndexPath *__transitionExplicitAnchorIndexPath;
-    PUGridZoomLevelInfo *__zoomLevelInfo;
-    PUZoomableGridTransition *_currentGridZoomTransitionInfo;
-    PUGridMagnifiedImageViewController *_magnifiedImageViewController;
-    unsigned int _zoomLevel;
-    PUMomentsZoomLevelManager *_zoomLevelManager;
-    PUZoomableGridViewControllerSpec *_zoomableGridSpec;
+    PLCPLStatus * __cplStatus;
+    NSTimer * __cplStatusUpdateTimer;
+    PUGridPinchGestureRecognizer * __gridPinchGestureRecognizer;
+    BOOL  __hasAppearedOnce;
+    float  __lastUpdateWidth;
+    NSIndexPath * __lastZoomInTransitionAnchorIndexPath;
+    NSArray * __syncProgressAlbums;
+    UITapGestureRecognizer * __tapGestureRecognizer;
+    NSIndexPath * __transitionExplicitAnchorIndexPath;
+    PUGridZoomLevelInfo * __zoomLevelInfo;
+    PUZoomableGridTransition * _currentGridZoomTransitionInfo;
+    PUGridMagnifiedImageViewController * _magnifiedImageViewController;
+    unsigned int  _zoomLevel;
+    PUMomentsZoomLevelManager * _zoomLevelManager;
+    PUZoomableGridViewControllerSpec * _zoomableGridSpec;
 }
 
 @property (setter=_setCplStatus:, nonatomic, retain) PLCPLStatus *_cplStatus;
@@ -44,6 +44,7 @@
 - (void).cxx_destruct;
 - (id)_beginInteractiveTransitionWithReferenceItemPath:(id)arg1 zoomingOut:(BOOL)arg2;
 - (BOOL)_collectionView:(id)arg1 shouldApplyTransitionContentOffset:(struct CGPoint { float x1; float x2; })arg2 contentSize:(struct CGSize { float x1; float x2; })arg3;
+- (void)_configureMagnifiedImageViewController:(id)arg1 forIndexPath:(id)arg2 gestureLocationInWindow:(struct CGPoint { float x1; float x2; })arg3;
 - (id)_cplStatus;
 - (id)_cplStatusUpdateTimer;
 - (void)_cplStatusUpdateTimerFired:(id)arg1;
@@ -102,7 +103,7 @@
 - (void)gridZoomTransitionDidFinish:(BOOL)arg1;
 - (void)handleLongPressGesture:(id)arg1;
 - (int)imageDeliveryMode;
-- (id)imageWithFormat:(int)arg1 forIndexPath:(id)arg2;
+- (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1 forIndexPath:(id)arg2;
 - (id)initWithSpec:(id)arg1 zoomLevelManager:(id)arg2 zoomLevel:(unsigned int)arg3;
 - (void)installGestureRecognizers;
 - (BOOL)isCurrentCollectionViewDataSource;
@@ -137,9 +138,7 @@
 - (BOOL)wantsGlobalFooter;
 - (unsigned int)zoomLevel;
 - (id)zoomLevelManager;
-- (void)zoomTransition:(id)arg1 didFinishAnimationForOperation:(int)arg2;
 - (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 forPhotoToken:(id)arg4 operation:(int)arg5;
-- (void)zoomTransition:(id)arg1 willBeginAnimationForOperation:(int)arg2;
 - (id)zoomableGridSpec;
 
 @end

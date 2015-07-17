@@ -3,13 +3,13 @@
  */
 
 @interface UILayoutContainerView : UIView <NSCoding> {
-    float _cornerRadius;
-    id _delegate;
-    BOOL _forwardMoveToWindowCallbacks;
-    UIView *_shadowView;
-    BOOL _shadowViewsInstalled;
-    BOOL _usesInnerShadow;
-    BOOL _usesRoundedCorners;
+    float  _cornerRadius;
+    id  _delegate;
+    BOOL  _forwardMoveToWindowCallbacks;
+    UIView * _shadowView;
+    BOOL  _shadowViewsInstalled;
+    BOOL  _usesInnerShadow;
+    BOOL  _usesRoundedCorners;
 }
 
 @property (nonatomic) id delegate;
@@ -17,6 +17,7 @@
 @property (nonatomic) BOOL usesInnerShadow;
 @property (nonatomic) BOOL usesRoundedCorners;
 
+- (void).cxx_destruct;
 - (void)_installShadowViews;
 - (void)_tearDownShadowViews;
 - (void)addSubview:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface RadioAddToWishListRequest : RadioRequest {
-    int _action;
-    SSURLConnectionRequest *_request;
-    NSString *_stationHash;
-    long long _stationID;
-    NSString *_stationStringID;
-    RadioTrack *_track;
-    long long _trackStoreID;
+    int  _action;
+    SSURLConnectionRequest * _request;
+    NSString * _stationHash;
+    long long  _stationID;
+    NSString * _stationStringID;
+    RadioTrack * _track;
+    long long  _trackStoreID;
 }
 
 @property (nonatomic) int action;

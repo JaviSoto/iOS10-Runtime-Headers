@@ -3,10 +3,10 @@
  */
 
 @interface GEOPDAnalyticMetadata : PBCodable <NSCopying> {
-    NSString *_appIdentifier;
-    NSString *_appMajorVersion;
-    NSString *_appMinorVersion;
-    NSString *_hardwareModel;
+    NSString * _appIdentifier;
+    NSString * _appMajorVersion;
+    NSString * _appMinorVersion;
+    NSString * _hardwareModel;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int requestSource : 1; 
@@ -14,18 +14,18 @@
         unsigned int isFromApi : 1; 
         unsigned int isInternalInstall : 1; 
         unsigned int isInternalTool : 1; 
-    } _has;
-    BOOL _isFromApi;
-    BOOL _isInternalInstall;
-    BOOL _isInternalTool;
-    NSString *_osVersion;
-    int _requestSource;
-    unsigned int _sequenceNumber;
-    NSMutableArray *_serviceTags;
+    }  _has;
+    BOOL  _isFromApi;
+    BOOL  _isInternalInstall;
+    BOOL  _isInternalTool;
+    NSString * _osVersion;
+    int  _requestSource;
+    unsigned int  _sequenceNumber;
+    NSMutableArray * _serviceTags;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _sessionId;
+    }  _sessionId;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;

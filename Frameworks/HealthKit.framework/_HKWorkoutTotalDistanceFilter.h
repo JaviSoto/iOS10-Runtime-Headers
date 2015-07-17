@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutTotalDistanceFilter : _HKFilter {
-    unsigned int _operatorType;
-    HKQuantity *_totalDistance;
+    unsigned int  _operatorType;
+    HKQuantity * _totalDistance;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;

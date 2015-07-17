@@ -3,14 +3,14 @@
  */
 
 @interface CalLogASLWriter : CalLogWriter {
-    struct __asl_object_s { } *log_client;
+    struct __asl_object_s { } * log_client;
 }
 
 + (id)aslNamespaces;
 
 - (void)_configureASLClient;
 - (void)_configureASLNamespaces;
-- (int)aslLevelForLogLevel:(int)arg1;
+- (char *)aslLevelForLogLevel:(int)arg1;
 - (void)dealloc;
 - (id)initWithParameters:(id)arg1;
 - (void)write:(id)arg1;

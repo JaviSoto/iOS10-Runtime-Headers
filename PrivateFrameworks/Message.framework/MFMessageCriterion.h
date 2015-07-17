@@ -3,21 +3,21 @@
  */
 
 @interface MFMessageCriterion : NSObject {
-    unsigned int _allCriteriaMustBeSatisfied;
-    NSArray *_criteria;
-    NSString *_criterionIdentifier;
-    unsigned int _dateIsRelative;
-    int _dateUnitType;
-    NSString *_expression;
-    BOOL _expressionIsSanitized;
-    unsigned int _includeRelatedMessages;
-    NSIndexSet *_libraryIdentifiers;
-    NSString *_name;
-    int _qualifier;
-    NSArray *_requiredHeaders;
-    int _type;
-    NSString *_uniqueId;
-    BOOL _useFlaggedForUnreadCount;
+    unsigned int  _allCriteriaMustBeSatisfied;
+    NSArray * _criteria;
+    NSString * _criterionIdentifier;
+    unsigned int  _dateIsRelative;
+    int  _dateUnitType;
+    NSString * _expression;
+    BOOL  _expressionIsSanitized;
+    unsigned int  _includeRelatedMessages;
+    NSIndexSet * _libraryIdentifiers;
+    NSString * _name;
+    int  _qualifier;
+    NSArray * _requiredHeaders;
+    int  _type;
+    NSString * _uniqueId;
+    BOOL  _useFlaggedForUnreadCount;
 }
 
 @property (nonatomic) BOOL expressionIsSanitized;
@@ -25,7 +25,6 @@
 @property (nonatomic, retain) NSIndexSet *libraryIdentifiers;
 @property (nonatomic) BOOL useFlaggedForUnreadCount;
 
-+ (id)ThreadNotifyMessageCriterion;
 + (id)VIPSenderMessageCriterion;
 + (void)_updateAddressComments:(id)arg1;
 + (id)andCompoundCriterionWithCriteria:(id)arg1;
@@ -42,13 +41,17 @@
 + (id)notCriterionWithCriterion:(id)arg1;
 + (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)stringForCriterionType:(int)arg1;
++ (id)threadMuteMessageCriterion;
++ (id)threadNotifyMessageCriterion;
 + (id)todayMessageCriterion;
 + (id)unreadMessageCriterion;
 
 - (id)SQLExpressionWithContext:(struct { id x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; BOOL x6; }*)arg1 depth:(unsigned int)arg2;
-- (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3 contentIndex:(id)arg4 mailboxIDs:(id)arg5;
+- (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3 searchableIndex:(id)arg4 mailboxIDs:(id)arg5;
 - (void)_addCriteriaSatisfyingPredicate:(int (*)arg1 toCollector:(id)arg2;
+- (id)_attributesForHeaderCriterion;
 - (id)_collapsedMessageNumberCriterion:(id)arg1 allMustBeSatisfied:(BOOL)arg2 collapsedIndexes:(id*)arg3;
+- (id)_compoundPredicateOfType:(unsigned int)arg1 subpredicates:(id)arg2;
 - (id)_criterionForSQL;
 - (BOOL)_evaluateAccountCriterion:(id)arg1;
 - (BOOL)_evaluateAddressBookCriterion:(id)arg1;
@@ -67,8 +70,11 @@
 - (BOOL)_evaluatePriorityIsNormalCriterion:(id)arg1;
 - (BOOL)_evaluateSenderHeaderCriterion:(id)arg1;
 - (id)_headersRequiredForEvaluation;
+- (id)_predicateOperand;
+- (id)_predicateWithAttributes:(id)arg1 matchingValue:(id)arg2;
 - (id)_qualifierString;
 - (id)_resolveWithIndex:(id)arg1 mailboxIDs:(id)arg2;
+- (id)_searchQueryPredicate;
 - (BOOL)allCriteriaMustBeSatisfied;
 - (unsigned int)bestBaseTable;
 - (id)criteria;
@@ -106,6 +112,7 @@
 - (int)messageRuleQualifierForString:(id)arg1;
 - (id)name;
 - (int)qualifier;
+- (id)searchQueryPredicate;
 - (void)setAllCriteriaMustBeSatisfied:(BOOL)arg1;
 - (void)setCriteria:(id)arg1;
 - (void)setCriterionIdentifier:(id)arg1;
@@ -122,6 +129,7 @@
 - (id)simplifiedCriterion;
 - (id)simplifyOnce;
 - (id)stringForMessageRuleQualifier:(int)arg1;
+- (id)unreadCountCriterion;
 - (BOOL)useFlaggedForUnreadCount;
 
 @end

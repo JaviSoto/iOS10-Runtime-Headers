@@ -3,8 +3,8 @@
  */
 
 @interface CKUserIdentityFetchInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_emailAddress;
-    CKRecordID *_recordID;
+    NSString * _emailAddress;
+    CKRecordID * _recordID;
 }
 
 @property (nonatomic, copy) NSString *emailAddress;

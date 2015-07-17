@@ -3,33 +3,33 @@
  */
 
 @interface TSCHPieSeriesModelCache : NSObject {
-    TSCHChartAxis *mAxis;
-    TSCHChartInfo *mChartInfo;
-    TSCHChartModel *mChartModel;
-    TSCHChartSeries *mCurrentSeries;
-    double mCurrentSeriesAngleSweep;
-    double mCurrentSeriesAxisValue;
-    unsigned int mCurrentSeriesIndex;
-    BOOL mCurrentSeriesNullData;
-    double mCurrentSeriesPercentage;
-    double mCurrentSeriesStartAngle;
-    float mEffectiveLabelExplosion;
-    float mEffectiveWedgeExplosion;
-    double mEndAngle;
-    BOOL mGroupedShadow;
-    BOOL mIsSingleCircleSpecialCase;
-    float mLabelExplosion;
-    NSString *mLabelString;
-    double mMidAngle;
-    unsigned int mNumberOfSeries;
-    TSWPParagraphStyle *mParagraphStyle;
-    TSDFill *mSeriesFill;
-    float mSeriesOpacity;
-    TSDShadow *mSeriesShadow;
-    TSDStroke *mSeriesStroke;
-    TSCHChartSeries *mSingleCircleSeriesElement;
-    double mTotalValue;
-    float mWedgeExplosion;
+    TSCHChartAxis * mAxis;
+    TSCHChartInfo * mChartInfo;
+    TSCHChartModel * mChartModel;
+    TSCHChartSeries * mCurrentSeries;
+    double  mCurrentSeriesAngleSweep;
+    double  mCurrentSeriesAxisValue;
+    unsigned int  mCurrentSeriesIndex;
+    BOOL  mCurrentSeriesNullData;
+    double  mCurrentSeriesPercentage;
+    double  mCurrentSeriesStartAngle;
+    float  mEffectiveLabelExplosion;
+    float  mEffectiveWedgeExplosion;
+    double  mEndAngle;
+    BOOL  mGroupedShadow;
+    BOOL  mIsSingleCircleSpecialCase;
+    float  mLabelExplosion;
+    NSString * mLabelString;
+    double  mMidAngle;
+    unsigned int  mNumberOfSeries;
+    TSWPParagraphStyle * mParagraphStyle;
+    TSDFill * mSeriesFill;
+    float  mSeriesOpacity;
+    TSDShadow * mSeriesShadow;
+    TSDStroke * mSeriesStroke;
+    TSCHChartSeries * mSingleCircleSeriesElement;
+    double  mTotalValue;
+    float  mWedgeExplosion;
 }
 
 @property (readonly) TSCHChartAxis *axis;

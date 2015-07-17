@@ -3,15 +3,15 @@
  */
 
 @interface DASearchQuery : NSObject {
-    <DASearchQueryConsumer> *_consumer;
+    <DASearchQueryConsumer> * _consumer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_searchID;
-    NSString *_searchString;
-    int _state;
-    int _timeLimit;
+    }  _range;
+    NSString * _searchID;
+    NSString * _searchString;
+    int  _state;
+    int  _timeLimit;
 }
 
 @property (nonatomic) <DASearchQueryConsumer> *consumer;

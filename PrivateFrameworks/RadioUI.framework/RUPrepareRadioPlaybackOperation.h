@@ -3,14 +3,14 @@
  */
 
 @interface RUPrepareRadioPlaybackOperation : NSOperation {
-    id /* block */ _firstTrackBlock;
-    RURadioGetTracksOperation *_getTracksOperation;
-    NSLock *_lock;
-    SSVPlaybackLease *_playbackLease;
-    id /* block */ _preparedBlock;
-    RadioRequestContext *_requestContext;
-    RadioStation *_station;
-    RadioStationMatchContext *_stationMatchContext;
+    id /* block */  _firstTrackBlock;
+    RURadioGetTracksOperation * _getTracksOperation;
+    NSLock * _lock;
+    SSVPlaybackLease * _playbackLease;
+    id /* block */  _preparedBlock;
+    RadioRequestContext * _requestContext;
+    RadioStation * _station;
+    RadioStationMatchContext * _stationMatchContext;
 }
 
 @property (retain) SSVPlaybackLease *playbackLease;

@@ -3,7 +3,7 @@
  */
 
 @interface TSUEncodedBlockInfoInternal : NSObject <TSUEncodedBlockInfo> {
-    unsigned long _encodedLength;
+    unsigned long  _encodedLength;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIGiftRecipientTableViewCell : UITableViewCell <ABPeoplePickerNavigationControllerDelegate, MFComposeRecipientViewDelegate, SKUIGiftContactSearchDelegate> {
-    void *_addressBook;
-    ABPeoplePickerNavigationController *_peoplePickerController;
-    UILabel *_placeholderLabel;
-    SKUIGiftComposeRecipientView *_recipientView;
-    SKUIGiftContactSearchController *_searchController;
-    UIView *_topBorderView;
+    void * _addressBook;
+    ABPeoplePickerNavigationController * _peoplePickerController;
+    UILabel * _placeholderLabel;
+    SKUIGiftComposeRecipientView * _recipientView;
+    SKUIGiftContactSearchController * _searchController;
+    UIView * _topBorderView;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedPlaceholder;

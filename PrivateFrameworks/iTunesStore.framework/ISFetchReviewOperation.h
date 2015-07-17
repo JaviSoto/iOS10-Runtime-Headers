@@ -3,12 +3,12 @@
  */
 
 @interface ISFetchReviewOperation : ISOperation {
-    int _assetType;
-    BOOL _backgroundReview;
-    unsigned long long _itemIdentifier;
-    ISReview *_review;
-    unsigned int _softwareVersionIdentifier;
-    NSURL *_url;
+    int  _assetType;
+    BOOL  _backgroundReview;
+    unsigned long long  _itemIdentifier;
+    ISReview * _review;
+    unsigned int  _softwareVersionIdentifier;
+    NSURL * _url;
 }
 
 @property int assetType;

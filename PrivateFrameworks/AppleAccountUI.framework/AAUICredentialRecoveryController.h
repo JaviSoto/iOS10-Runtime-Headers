@@ -3,19 +3,19 @@
  */
 
 @interface AAUICredentialRecoveryController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
-    NSObject<AAUICredentialRecoveryPresentationDelegate> *_delegate;
-    BOOL _isModal;
-    BOOL _isShowingSpinner;
-    RUIPage *_loadingPage;
-    UIViewController *_navigationBaseViewController;
-    UINavigationController *_navigationController;
-    UINavigationItem *_navigationItemShowingSpinner;
-    NSMutableArray *_objectModels;
-    UIBarButtonItem *_originalRightBarButtonItem;
-    UIViewController *_presentationViewController;
-    RUILoader *_remoteUILoader;
-    NSURL *_remoteUIURL;
-    UIActivityIndicatorView *_spinnerView;
+    NSObject<AAUICredentialRecoveryPresentationDelegate> * _delegate;
+    BOOL  _isModal;
+    BOOL  _isShowingSpinner;
+    RUIPage * _loadingPage;
+    UIViewController * _navigationBaseViewController;
+    UINavigationController * _navigationController;
+    UINavigationItem * _navigationItemShowingSpinner;
+    NSMutableArray * _objectModels;
+    UIBarButtonItem * _originalRightBarButtonItem;
+    UIViewController * _presentationViewController;
+    RUILoader * _remoteUILoader;
+    NSURL * _remoteUIURL;
+    UIActivityIndicatorView * _spinnerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

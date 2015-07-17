@@ -3,13 +3,13 @@
  */
 
 @interface SKUISignInView : UIView <SKUIViewElementView, UITextFieldDelegate> {
-    UIColor *_borderColor;
-    SKUIShapeView *_borderView;
-    <SKUISignInViewDelegate> *_delegate;
-    NSMutableArray *_labels;
-    NSMutableArray *_textFields;
-    SKUIViewElement *_viewElement;
-    NSMapTable *_viewFontDescriptors;
+    UIColor * _borderColor;
+    SKUIShapeView * _borderView;
+    <SKUISignInViewDelegate> * _delegate;
+    NSMutableArray * _labels;
+    NSMutableArray * _textFields;
+    SKUIViewElement * _viewElement;
+    NSMapTable * _viewFontDescriptors;
 }
 
 @property (readonly, copy) NSString *debugDescription;

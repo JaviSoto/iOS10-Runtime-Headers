@@ -3,16 +3,16 @@
  */
 
 @interface UICollectionReusableView : UIView {
-    UICollectionView *_collectionView;
-    UICollectionViewLayoutAttributes *_layoutAttributes;
-    BOOL _preferredAttributesValid;
+    UICollectionView * _collectionView;
+    UICollectionViewLayoutAttributes * _layoutAttributes;
+    BOOL  _preferredAttributesValid;
     struct { 
         unsigned int wasDequeued : 1; 
         unsigned int preferredAttributesValid : 1; 
         unsigned int generatingPreferredAttributes : 1; 
-    } _reusableViewFlags;
-    NSString *_reuseIdentifier;
-    int _updateAnimationCount;
+    }  _reusableViewFlags;
+    NSString * _reuseIdentifier;
+    int  _updateAnimationCount;
 }
 
 @property (getter=_collectionView, setter=_setCollectionView:, nonatomic) UICollectionView *collectionView;
@@ -23,6 +23,7 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
+- (void).cxx_destruct;
 - (void)_addUpdateAnimation;
 - (BOOL)_arePreferredAttributesValid;
 - (void)_clearUpdateAnimation;
@@ -39,7 +40,6 @@
 - (void)_setReuseIdentifier:(id)arg1;
 - (BOOL)_wasDequeued;
 - (void)applyLayoutAttributes:(id)arg1;
-- (void)dealloc;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -14,5 +14,6 @@
 - (NSString *)productType;
 - (NSString *)systemVersion;
 - (NSString *)vendorID;
+- (NSString *)vendorIdentifier;
 
 @end

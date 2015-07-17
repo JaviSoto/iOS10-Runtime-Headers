@@ -3,13 +3,13 @@
  */
 
 @interface CPParagraph : CPRegion {
-    unsigned int alignment;
-    BOOL below;
-    id flowProperties;
-    BOOL hasDropCap;
-    CPListItem *listItem;
-    BOOL noIndentation;
-    float preformatWidth;
+    unsigned int  alignment;
+    BOOL  below;
+    id  flowProperties;
+    BOOL  hasDropCap;
+    CPListItem * listItem;
+    BOOL  noIndentation;
+    float  preformatWidth;
 }
 
 @property (nonatomic, retain) CPListItem *listItem;

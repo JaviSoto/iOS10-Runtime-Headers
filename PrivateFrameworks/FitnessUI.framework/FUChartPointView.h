@@ -3,9 +3,9 @@
  */
 
 @interface FUChartPointView : UIView {
-    UIColor *_color;
-    int _pointStyle;
-    float _radius;
+    UIColor * _color;
+    int  _pointStyle;
+    float  _radius;
 }
 
 @property (nonatomic) UIColor *color;

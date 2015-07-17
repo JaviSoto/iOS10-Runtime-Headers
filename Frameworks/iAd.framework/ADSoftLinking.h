@@ -3,17 +3,17 @@
  */
 
 @interface ADSoftLinking : NSObject {
-    Class _MPMoviePlayerController;
-    NSString *_MPMoviePlayerDidEnterFullscreenNotification;
-    NSString *_MPMoviePlayerDidExitFullscreenNotification;
-    NSString *_MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification;
-    Class _MPMoviePlayerViewController;
-    NSString *_MPMoviePlayerWillEnterFullscreenNotification;
-    NSString *_MPMoviePlayerWillExitFullscreenNotification;
-    Class _MPNetworkPlayabilityMonitor;
-    NSMutableDictionary *_boundSymbols;
-    NSObject<OS_dispatch_queue> *_loadQueue;
-    NSMutableDictionary *_loadedFrameworks;
+    Class  _MPMoviePlayerController;
+    NSString * _MPMoviePlayerDidEnterFullscreenNotification;
+    NSString * _MPMoviePlayerDidExitFullscreenNotification;
+    NSString * _MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification;
+    Class  _MPMoviePlayerViewController;
+    NSString * _MPMoviePlayerWillEnterFullscreenNotification;
+    NSString * _MPMoviePlayerWillExitFullscreenNotification;
+    Class  _MPNetworkPlayabilityMonitor;
+    NSMutableDictionary * _boundSymbols;
+    NSObject<OS_dispatch_queue> * _loadQueue;
+    NSMutableDictionary * _loadedFrameworks;
 }
 
 @property (nonatomic, readonly) Class ABNewPersonViewController;
@@ -66,7 +66,6 @@
 @property (nonatomic, readonly) Class PKShippingMethod;
 @property (nonatomic, readonly) Class PLStaticWallpaperImageViewController;
 @property (nonatomic, readonly) NSString *SKStoreProductParameterITunesItemIdentifier;
-@property (nonatomic, readonly) NSString *SKStoreProductParameterQToken;
 @property (nonatomic, readonly) Class SKStoreProductViewController;
 @property (nonatomic, readonly) Class SLComposeViewController;
 @property (nonatomic, readonly) Class SLRequest;
@@ -147,7 +146,6 @@
 - (Class)PKShippingMethod;
 - (Class)PLStaticWallpaperImageViewController;
 - (id)SKStoreProductParameterITunesItemIdentifier;
-- (id)SKStoreProductParameterQToken;
 - (Class)SKStoreProductViewController;
 - (Class)SLComposeViewController;
 - (Class)SLRequest;

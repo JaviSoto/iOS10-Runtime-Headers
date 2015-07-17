@@ -3,11 +3,11 @@
  */
 
 @interface UIWebSelectionAssistant : NSObject <UIGestureRecognizerDelegate> {
-    BOOL _enabled;
-    UILongPressGestureRecognizer *_longPressGestureRecognizer;
-    UIWebSelectionView *_selectionView;
-    UITapAndAHalfRecognizer *_tapAndAHalfGestureRecognizer;
-    UIView *_view;
+    BOOL  _enabled;
+    UILongPressGestureRecognizer * _longPressGestureRecognizer;
+    UIWebSelectionView * _selectionView;
+    UITapAndAHalfRecognizer * _tapAndAHalfGestureRecognizer;
+    UIView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;

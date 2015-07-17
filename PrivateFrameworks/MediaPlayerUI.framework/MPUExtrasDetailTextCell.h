@@ -3,7 +3,7 @@
  */
 
 @interface MPUExtrasDetailTextCell : UICollectionViewCell {
-    UILabel *_label;
+    UILabel * _label;
 }
 
 - (void).cxx_destruct;

@@ -3,10 +3,10 @@
  */
 
 @interface EDComment : NSObject {
-    EDString *_author;
-    int _columnIndex;
-    int _rowIndex;
-    BOOL _visible;
+    EDString * _author;
+    int  _columnIndex;
+    int  _rowIndex;
+    BOOL  _visible;
 }
 
 @property (nonatomic, retain) EDString *author;
@@ -17,6 +17,7 @@
 - (id)author;
 - (int)columnIndex;
 - (void)dealloc;
+- (id)description;
 - (int)rowIndex;
 - (void)setAuthor:(id)arg1;
 - (void)setColumnIndex:(int)arg1;

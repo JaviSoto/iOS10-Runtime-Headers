@@ -3,22 +3,22 @@
  */
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
-    NSDictionary *_attributesForExtraLineFragment;
-    float _cacheBoundsMaxY;
-    float _cacheBoundsMinY;
-    struct CGPath { } *_cachedBoundingPath;
-    struct __CFArray { } *_cachedBounds;
-    struct __CFArray { } *_cachedClippingAttributes;
-    NSArray *_exclusionPaths;
-    NSLayoutManager *_layoutManager;
-    int _layoutOrientation;
-    float _lineFragmentPadding;
-    unsigned int _maximumLines;
-    float _minimumWidth;
+    NSDictionary * _attributesForExtraLineFragment;
+    float  _cacheBoundsMaxY;
+    float  _cacheBoundsMinY;
+    struct CGPath { } * _cachedBoundingPath;
+    struct __CFArray { } * _cachedBounds;
+    struct __CFArray { } * _cachedClippingAttributes;
+    NSArray * _exclusionPaths;
+    NSLayoutManager * _layoutManager;
+    int  _layoutOrientation;
+    float  _lineFragmentPadding;
+    unsigned int  _maximumLines;
+    float  _minimumWidth;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
     struct __tcFlags { 
         unsigned int widthTracksTextView : 1; 
         unsigned int heightTracksTextView : 1; 
@@ -26,18 +26,19 @@
         unsigned int lineBreakMode : 4; 
         unsigned int oldAPI : 1; 
         unsigned int _reserved : 8; 
-    } _tcFlags;
-    id _textView;
+    }  _tcFlags;
+    id  _textView;
 }
 
 @property (nonatomic, copy) NSArray *exclusionPaths;
 @property (nonatomic) BOOL heightTracksTextView;
 @property (readonly) BOOL isSimpleRectangularTextContainer;
 @property (nonatomic) NSLayoutManager *layoutManager;
-@property (nonatomic) int layoutOrientation;
+@property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic) int lineBreakMode;
 @property (nonatomic) float lineFragmentPadding;
 @property (nonatomic) unsigned int maximumNumberOfLines;
+@property (getter=isSimpleRectangularTextContainer, nonatomic, readonly) BOOL simpleRectangularTextContainer;
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) BOOL widthTracksTextView;
 
@@ -86,6 +87,12 @@
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (id)textView;
 - (BOOL)widthTracksTextView;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (struct CGSize { float x1; float x2; })akContainerSize;
+- (void)akSetContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

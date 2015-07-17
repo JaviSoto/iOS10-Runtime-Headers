@@ -3,13 +3,13 @@
  */
 
 @interface IMFileTransferCenter : NSObject {
-    NSMutableDictionary *_accountIDToTransferGUIDsMap;
-    NSMutableSet *_activeTransfers;
-    NSMutableDictionary *_guidToRemovedTransferMap;
-    NSMutableDictionary *_guidToTransferMap;
-    NSMutableSet *_pendingTransfers;
-    NSMutableArray *_preauthorizedGUIDs;
-    NSMutableArray *_preauthorizedInfos;
+    NSMutableDictionary * _accountIDToTransferGUIDsMap;
+    NSMutableSet * _activeTransfers;
+    NSMutableDictionary * _guidToRemovedTransferMap;
+    NSMutableDictionary * _guidToTransferMap;
+    NSMutableSet * _pendingTransfers;
+    NSMutableArray * _preauthorizedGUIDs;
+    NSMutableArray * _preauthorizedInfos;
 }
 
 @property (nonatomic, readonly) NSArray *activeTransferGUIDs;
@@ -60,9 +60,12 @@
 - (id)orderedTransfersGUIDs;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
 - (BOOL)registerGUID:(id)arg1 forNewOutgoingTransferWithLocalURL:(id)arg2;
+- (void)registerTransferWithDaemon:(id)arg1;
 - (void)removeTransfer:(id)arg1;
 - (void)retargetTransfer:(id)arg1 toPath:(id)arg2;
 - (void)sendTransfer:(id)arg1;
+- (void)setAuxImageForTransfer:(id)arg1 value:(BOOL)arg2;
+- (void)setAuxVideoForTransfer:(id)arg1 value:(BOOL)arg2;
 - (void)stopTransfer:(id)arg1;
 - (id)transferForGUID:(id)arg1;
 - (id)transferForGUID:(id)arg1 includeRemoved:(BOOL)arg2;

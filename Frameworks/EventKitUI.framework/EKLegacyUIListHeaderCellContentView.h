@@ -3,9 +3,9 @@
  */
 
 @interface EKLegacyUIListHeaderCellContentView : UIView {
-    double _date;
-    BOOL _indentsForDots;
-    BOOL _showWeekNumber;
+    double  _date;
+    BOOL  _indentsForDots;
+    BOOL  _showWeekNumber;
 }
 
 @property (nonatomic) double date;

@@ -3,7 +3,7 @@
  */
 
 @interface SPFeedbackAbandonment : SPFeedback {
-    unsigned int _reason;
+    unsigned int  _reason;
 }
 
 @property (nonatomic) unsigned int reason;

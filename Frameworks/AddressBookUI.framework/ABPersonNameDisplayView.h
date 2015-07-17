@@ -3,23 +3,23 @@
  */
 
 @interface ABPersonNameDisplayView : ABPasteboardControl {
-    BOOL _alignOnBottom;
-    NSString *_customHeadline;
-    NSString *_customMessage;
-    NSString *_customMessageDetail;
-    UIView *_customMessageView;
-    NSString *_customTagLine;
-    UILabel *_headlineLabel;
-    UIFont *_messageDetailFont;
-    UILabel *_messageDetailLabel;
-    UIFont *_messageFont;
-    UILabel *_messageLabel;
-    float _minimumHeight;
-    ABNamePropertyGroup *_namePropertyGroup;
-    int _primaryProperty;
-    NSString *_primaryPropertyFormattingCountryCode;
-    ABStyleProvider *_styleProvider;
-    UILabel *_tagLineLabel;
+    BOOL  _alignOnBottom;
+    NSString * _customHeadline;
+    NSString * _customMessage;
+    NSString * _customMessageDetail;
+    UIView * _customMessageView;
+    NSString * _customTagLine;
+    UILabel * _headlineLabel;
+    UIFont * _messageDetailFont;
+    UILabel * _messageDetailLabel;
+    UIFont * _messageFont;
+    UILabel * _messageLabel;
+    float  _minimumHeight;
+    ABNamePropertyGroup * _namePropertyGroup;
+    int  _primaryProperty;
+    NSString * _primaryPropertyFormattingCountryCode;
+    ABStyleProvider * _styleProvider;
+    UILabel * _tagLineLabel;
 }
 
 @property (nonatomic) BOOL alignOnBottom;

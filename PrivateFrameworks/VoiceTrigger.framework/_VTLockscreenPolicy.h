@@ -3,9 +3,9 @@
  */
 
 @interface _VTLockscreenPolicy : _VTStatePolicy <MCProfileConnectionObserver> {
-    unsigned char _lockedState;
-    int _lockscreenNotifyToken;
-    BOOL _siriRestrictedOnLockScreen;
+    unsigned char  _lockedState;
+    int  _lockscreenNotifyToken;
+    BOOL  _siriRestrictedOnLockScreen;
 }
 
 @property (readonly, copy) NSString *debugDescription;

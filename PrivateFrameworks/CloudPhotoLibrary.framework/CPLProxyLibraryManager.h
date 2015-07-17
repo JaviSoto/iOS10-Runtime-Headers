@@ -3,18 +3,18 @@
  */
 
 @interface CPLProxyLibraryManager : CPLPlatformObject <CPLClientLibraryManagerProtocol, CPLLibraryManagerImplementation, NSXPCConnectionDelegate> {
-    NSXPCConnection *_connection;
-    BOOL _diagnosticsEnabled;
-    NSCountedSet *_disablingReasons;
-    NSMutableDictionary *_downloadTasks;
-    unsigned int _foregroundCalls;
-    int _notifyToken;
-    int _openingStatus;
-    NSMutableDictionary *_outstandingInvocations;
-    unsigned int _outstandingInvocationsCount;
-    NSMutableArray *_pendingBlocksAfterOpening;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_uploadTasks;
+    NSXPCConnection * _connection;
+    BOOL  _diagnosticsEnabled;
+    NSCountedSet * _disablingReasons;
+    NSMutableDictionary * _downloadTasks;
+    unsigned int  _foregroundCalls;
+    int  _notifyToken;
+    int  _openingStatus;
+    NSMutableDictionary * _outstandingInvocations;
+    unsigned int  _outstandingInvocationsCount;
+    NSMutableArray * _pendingBlocksAfterOpening;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _uploadTasks;
 }
 
 @property (readonly, copy) NSString *debugDescription;

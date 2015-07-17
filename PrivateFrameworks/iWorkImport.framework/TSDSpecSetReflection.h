@@ -3,8 +3,8 @@
  */
 
 @interface TSDSpecSetReflection : TSDSpecReflection {
-    TSDReflection *_reflection;
-    BOOL _unset;
+    TSDReflection * _reflection;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

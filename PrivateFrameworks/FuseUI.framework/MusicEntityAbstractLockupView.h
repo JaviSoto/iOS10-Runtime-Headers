@@ -3,26 +3,26 @@
  */
 
 @interface MusicEntityAbstractLockupView : UIView <MPUTextDrawingCacheInvalidationObserver, MusicArtworkViewDelegate, MusicEntityViewPlaybackStatusObserving> {
-    BOOL _artworkConfigurationBlockEnabled;
-    UIImage *_artworkOverrideImage;
-    MusicArtworkView *_artworkView;
-    UITraitCollection *_cachedTraitCollection;
-    MusicEntityViewContentDescriptor *_contentDescriptor;
-    MusicEntityPlaybackStatus *_currentPlaybackStatus;
-    BOOL _entityDisabled;
-    <MusicEntityValueProviding> *_entityValueProvider;
-    BOOL _hasDirtyPlaybackStatusUpdate;
-    BOOL _highlighted;
-    float _lastUsedArtworkViewAspectRatio;
-    MusicPlayButton *_playButton;
-    double _playbackCurrentTimeOriginatingTime;
-    MusicEntityPlaybackProgressApplier *_playbackProgressApplier;
-    MusicEntityPlaybackStatus *_playbackStatus;
-    NSMutableArray *_recycledTextButtons;
-    NSMutableArray *_recycledTextDrawingViews;
-    NSMapTable *_textDescriptorsToRecycledTextButtons;
-    NSMapTable *_textDescriptorsToTextDrawingViews;
-    BOOL _usingPlaceholderArt;
+    BOOL  _artworkConfigurationBlockEnabled;
+    UIImage * _artworkOverrideImage;
+    MusicArtworkView * _artworkView;
+    UITraitCollection * _cachedTraitCollection;
+    MusicEntityViewContentDescriptor * _contentDescriptor;
+    MusicEntityPlaybackStatus * _currentPlaybackStatus;
+    BOOL  _entityDisabled;
+    <MusicEntityValueProviding> * _entityValueProvider;
+    BOOL  _hasDirtyPlaybackStatusUpdate;
+    BOOL  _highlighted;
+    float  _lastUsedArtworkViewAspectRatio;
+    MusicPlayButton * _playButton;
+    double  _playbackCurrentTimeOriginatingTime;
+    MusicEntityPlaybackProgressApplier * _playbackProgressApplier;
+    MusicEntityPlaybackStatus * _playbackStatus;
+    NSMutableArray * _recycledTextButtons;
+    NSMutableArray * _recycledTextDrawingViews;
+    NSMapTable * _textDescriptorsToRecycledTextButtons;
+    NSMapTable * _textDescriptorsToTextDrawingViews;
+    BOOL  _usingPlaceholderArt;
 }
 
 @property (getter=_currentTextLabelAlpha, nonatomic, readonly) float _currentTextLabelAlpha;

@@ -3,13 +3,14 @@
  */
 
 @interface HDSQLiteStatement : NSObject {
-    HDSQLiteDatabase *_database;
-    BOOL _didCache;
-    struct sqlite3_stmt { } *_stmt;
+    HDSQLiteDatabase * _database;
+    BOOL  _didCache;
+    struct sqlite3_stmt { } * _stmt;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;
 
+- (void).cxx_destruct;
 - (id)database;
 - (void)dealloc;
 - (void)finish;

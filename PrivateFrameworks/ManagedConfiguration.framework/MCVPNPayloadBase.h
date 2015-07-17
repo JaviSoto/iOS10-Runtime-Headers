@@ -3,16 +3,16 @@
  */
 
 @interface MCVPNPayloadBase : MCPayload {
-    NSMutableDictionary *_configurationDictionary;
-    <NEProfilePayloadBaseDelegate> *_nePayloadBase;
-    NSString *_passwordKey;
-    NSString *_pinKey;
-    NSString *_proxyPasswordKey;
-    NSString *_proxyUserNameKey;
-    NSString *_serviceName;
-    NSString *_sharedSecretKey;
-    NSString *_userNameKey;
-    NSString *_vpnType;
+    NSMutableDictionary * _configurationDictionary;
+    <NEProfilePayloadBaseDelegate> * _nePayloadBase;
+    NSString * _passwordKey;
+    NSString * _pinKey;
+    NSString * _proxyPasswordKey;
+    NSString * _proxyUserNameKey;
+    NSString * _serviceName;
+    NSString * _sharedSecretKey;
+    NSString * _userNameKey;
+    NSString * _vpnType;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *configurationDictionary;
@@ -34,6 +34,7 @@
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
+- (BOOL)isPayloadAllowed;
 - (id)nePayloadBase;
 - (id)passwordKey;
 - (id)payloadDescriptionKeyValueSections;

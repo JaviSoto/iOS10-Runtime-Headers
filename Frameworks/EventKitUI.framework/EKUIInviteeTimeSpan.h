@@ -3,9 +3,9 @@
  */
 
 @interface EKUIInviteeTimeSpan : NSObject <NSCopying> {
-    NSMutableArray *_conflictedParticipants;
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSMutableArray * _conflictedParticipants;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, retain) NSMutableArray *conflictedParticipants;

@@ -3,12 +3,12 @@
  */
 
 @interface MPStoreRedownloadProductOperation : NSOperation {
-    SSURLConnectionRequest *_URLConnectionRequest;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSString *_buyParameters;
-    unsigned int _endpointType;
-    MPStoreRedownloadProductResponse *_redownloadProductResponse;
-    NSError *_responseError;
+    SSURLConnectionRequest * _URLConnectionRequest;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSString * _buyParameters;
+    unsigned int  _endpointType;
+    MPStoreRedownloadProductResponse * _redownloadProductResponse;
+    NSError * _responseError;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;

@@ -3,12 +3,12 @@
  */
 
 @interface GEOPDAutocompleteEntryAddress : PBCodable <NSCopying> {
-    GEOLatLng *_center;
+    GEOLatLng * _center;
     struct { 
         unsigned int opaqueGeoId : 1; 
-    } _has;
-    unsigned long long _opaqueGeoId;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    unsigned long long  _opaqueGeoId;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOLatLng *center;

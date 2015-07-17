@@ -3,37 +3,37 @@
  */
 
 @interface MFComposeRecipientView : MFComposeHeaderView <MFComposeRecipientAtomDelegate, MFCorecipientsIndicatorAtomDelegate, MFDragDestination, MFDragSource, UIGestureRecognizerDelegate, UITextFieldDelegate> {
-    UIButton *_addButton;
-    BOOL _allowsDragAndDrop;
-    struct __CFDictionary { } *_atomPresentationOptionsByRecipient;
-    NSMutableDictionary *_atoms;
-    UIFont *_baseFont;
-    BOOL _clearSelectionUIAfterFirstResponder;
-    MFCorecipientsIndicatorAtom *_corecipientsIndicatorAtom;
-    unsigned int _defaultAtomPresentationOptions;
-    NSTimer *_delayTimer;
-    <MFComposeRecipientViewDelegate> *_delegate;
-    BOOL _deselectOnNextKeyboardInput;
-    BOOL _didIgnoreFirstResponderResign;
-    int _dragSourceOriginalIndex;
-    BOOL _editable;
-    BOOL _expanded;
-    int _hideLastAtomComma;
-    double _inputDelay;
-    int _maxRecipients;
-    BOOL _needsLayoutConstraintUpdate;
-    BOOL _needsReflow;
-    BOOL _parentIsClosing;
-    BOOL _picking;
-    MFComposeRecipient *_placeholderRecipient;
-    NSArray *_properties;
-    NSMutableArray *_recipients;
-    MFModernComposeRecipientAtom *_selectedAtom;
-    BOOL _separatorHidden;
-    UITapGestureRecognizer *_tapGestureRecognizer;
-    _MFMailRecipientTextField *_textField;
-    NSArray *_textFieldConstraints;
-    NSCountedSet *_uncommentedAddresses;
+    UIButton * _addButton;
+    BOOL  _allowsDragAndDrop;
+    struct __CFDictionary { } * _atomPresentationOptionsByRecipient;
+    NSMutableDictionary * _atoms;
+    UIFont * _baseFont;
+    BOOL  _clearSelectionUIAfterFirstResponder;
+    MFCorecipientsIndicatorAtom * _corecipientsIndicatorAtom;
+    unsigned int  _defaultAtomPresentationOptions;
+    NSTimer * _delayTimer;
+    <MFComposeRecipientViewDelegate> * _delegate;
+    BOOL  _deselectOnNextKeyboardInput;
+    BOOL  _didIgnoreFirstResponderResign;
+    int  _dragSourceOriginalIndex;
+    BOOL  _editable;
+    BOOL  _expanded;
+    int  _hideLastAtomComma;
+    double  _inputDelay;
+    int  _maxRecipients;
+    BOOL  _needsLayoutConstraintUpdate;
+    BOOL  _needsReflow;
+    BOOL  _parentIsClosing;
+    BOOL  _picking;
+    MFComposeRecipient * _placeholderRecipient;
+    NSArray * _properties;
+    NSMutableArray * _recipients;
+    MFModernComposeRecipientAtom * _selectedAtom;
+    BOOL  _separatorHidden;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    _MFMailRecipientTextField * _textField;
+    NSArray * _textFieldConstraints;
+    NSCountedSet * _uncommentedAddresses;
 }
 
 @property (nonatomic, readonly) UIView *addButton;

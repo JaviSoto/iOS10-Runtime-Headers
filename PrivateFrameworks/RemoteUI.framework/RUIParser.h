@@ -3,18 +3,20 @@
  */
 
 @interface RUIParser : NSObject <NSXMLParserDelegate> {
-    NSMutableString *_accumulator;
-    int _actionSignal;
-    NSURL *_baseURL;
-    NSDictionary *_currentElementAttributes;
-    NSMutableArray *_currentPageStack;
-    <RUIParserDelegate> *_delegate;
-    NSMutableArray *_pages;
-    NSXMLParser *_parser;
-    int _parserState;
-    BOOL _succeeded;
-    RUIObjectModel *_uiObjectModel;
-    NSData *_xmlData;
+    NSMutableString * _accumulator;
+    int  _actionSignal;
+    NSURL * _baseURL;
+    RUIAlertView * _currentAlert;
+    NSDictionary * _currentElementAttributes;
+    NSMutableArray * _currentPageStack;
+    <RUIParserDelegate> * _delegate;
+    NSMutableArray * _elementStack;
+    NSMutableArray * _pages;
+    NSXMLParser * _parser;
+    int  _parserState;
+    BOOL  _succeeded;
+    RUIObjectModel * _uiObjectModel;
+    NSData * _xmlData;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;
@@ -36,12 +38,15 @@
 - (void)_addSectionSubHeaderText:(id)arg1 withAttributes:(id)arg2;
 - (void)_addSectionWithAttributes:(id)arg1;
 - (void)_addTableFooterViewWithAttributes:(id)arg1;
-- (void)_addTableHeaderViewWithAttributes:(id)arg1;
+- (void)_convertAttributeMap:(id)arg1 toPropertiesOnElement:(id)arg2;
 - (id)_createAndAddPageWithAttributes:(id)arg1;
 - (id)_createPageWithName:(id)arg1 attributes:(id)arg2;
+- (void)_finalizeElement:(id)arg1;
+- (void)_finalizePinView;
 - (void)_finalizeSection;
 - (id)_lastPageCreateIfNeeded;
 - (id)_lastRow;
+- (void)_logDeprecation:(id)arg1 value:(id)arg2;
 - (void)_newRowWithAttributeDict:(id)arg1;
 - (int)actionSignal;
 - (id)baseURL;
@@ -55,6 +60,7 @@
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
+- (void)parserDidEndDocument:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setXmlData:(id)arg1;

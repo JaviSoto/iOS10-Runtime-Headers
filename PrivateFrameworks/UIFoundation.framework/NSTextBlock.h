@@ -3,13 +3,13 @@
  */
 
 @interface NSTextBlock : NSObject <NSCoding, NSCopying> {
-    void *_blockPrimary;
-    void *_blockSecondary;
-    id _otherParamVals;
-    id _primParamVal;
-    unsigned int _propMask;
-    void *_propVals;
-    unsigned int _typeMask;
+    void * _blockPrimary;
+    void * _blockSecondary;
+    id  _otherParamVals;
+    id  _primParamVal;
+    unsigned int  _propMask;
+    void * _propVals;
+    unsigned int  _typeMask;
 }
 
 + (void)initialize;

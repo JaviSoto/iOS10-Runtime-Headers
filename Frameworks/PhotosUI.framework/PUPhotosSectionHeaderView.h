@@ -3,55 +3,55 @@
  */
 
 @interface PUPhotosSectionHeaderView : UICollectionReusableView {
-    UIButton *_actionButton;
+    UIButton * _actionButton;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _actionButtonInitialContentInsets;
+    }  _actionButtonInitialContentInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _actionButtonInitialSize;
-    float _actionButtonLabelInitialMaxY;
-    NSString *_actionButtonTitle;
-    BOOL _allowsLocationInteraction;
-    _UIBackdropView *_backdropView;
-    NSString *_backdropViewGroupName;
-    unsigned int _backgroundStyle;
+    }  _actionButtonInitialSize;
+    float  _actionButtonLabelInitialMaxY;
+    NSString * _actionButtonTitle;
+    BOOL  _allowsLocationInteraction;
+    _UIBackdropView * _backdropView;
+    NSString * _backdropViewGroupName;
+    unsigned int  _backgroundStyle;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    PUPhotosSectionHeaderContentView *_contentView;
-    UILabel *_dateLabel;
-    <PUPhotosSectionHeaderViewDelegate> *_delegate;
-    BOOL _generateDefaultTitleFromDates;
+    }  _contentInsets;
+    PUPhotosSectionHeaderContentView * _contentView;
+    UILabel * _dateLabel;
+    <PUPhotosSectionHeaderViewDelegate> * _delegate;
+    BOOL  _generateDefaultTitleFromDates;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _highlightInsets;
-    UIView *_highlightView;
-    BOOL _highlightViewVisible;
-    BOOL _inLayoutTransition;
-    UIImageView *_locationsIconView;
-    UILabel *_locationsLabel;
-    BOOL _performingBatchDateDependentUpdate;
-    NSDate *_sectionEndDate;
-    int _sectionIndex;
-    NSArray *_sectionLocations;
-    NSDate *_sectionStartDate;
-    NSString *_sectionTitle;
-    BOOL _showsActionButton;
-    int _style;
-    UILabel *_titleLabel;
-    BOOL _useYearOnlyForDefaultTitle;
-    BOOL _usingBackgroundBlur;
+    }  _highlightInsets;
+    UIView * _highlightView;
+    BOOL  _highlightViewVisible;
+    BOOL  _inLayoutTransition;
+    UIImageView * _locationsIconView;
+    UILabel * _locationsLabel;
+    BOOL  _performingBatchDateDependentUpdate;
+    NSDate * _sectionEndDate;
+    int  _sectionIndex;
+    NSArray * _sectionLocations;
+    NSDate * _sectionStartDate;
+    NSString * _sectionTitle;
+    BOOL  _showsActionButton;
+    int  _style;
+    UILabel * _titleLabel;
+    BOOL  _useYearOnlyForDefaultTitle;
+    BOOL  _usingBackgroundBlur;
 }
 
 @property (nonatomic, copy) NSString *actionButtonTitle;
@@ -76,6 +76,7 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)_dateRangeCompactFormatter;
 - (void)_dateRangeFormatterChanged:(id)arg1;
 - (id)_dateRangeLongFormatter;

@@ -3,7 +3,7 @@
  */
 
 @interface SiriUIMapCollectionViewCell : SiriUIContentCollectionViewCell {
-    MKMapView *_mapView;
+    MKMapView * _mapView;
 }
 
 - (void).cxx_destruct;

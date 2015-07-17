@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFBackgroundDownloadTask : __NSCFBackgroundSessionTask {
-    BOOL _finished;
+    BOOL  _finished;
 }
 
 @property BOOL finished;

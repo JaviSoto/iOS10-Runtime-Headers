@@ -3,9 +3,9 @@
  */
 
 @interface PHAssetMomentProperties : NSObject {
-    PHAsset *_asset;
-    NSData *_reverseLocationData;
-    BOOL _reverseLocationDataIsValid;
+    PHAsset * _asset;
+    NSData * _reverseLocationData;
+    BOOL  _reverseLocationDataIsValid;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

@@ -3,7 +3,7 @@
  */
 
 @interface CKEditableCollectionViewCell : UICollectionViewCell {
-    UIImageView *_checkmark;
+    UIImageView * _checkmark;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,20 +13,20 @@
             float width; 
             float height; 
         } size; 
-    } _contentAlignmentRect;
+    }  _contentAlignmentRect;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInsets;
-    BOOL _editing;
+    }  _contentInsets;
+    BOOL  _editing;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _marginInsets;
+    }  _marginInsets;
 }
 
 @property (nonatomic, retain) UIImageView *checkmark;

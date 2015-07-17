@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureConnection : NSObject {
-    AVCaptureConnectionInternal *_internal;
+    AVCaptureConnectionInternal * _internal;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
@@ -29,7 +29,6 @@
 @property (nonatomic) float videoScaleAndCropFactor;
 @property (getter=isVideoStabilizationEnabled, nonatomic, readonly) BOOL videoStabilizationEnabled;
 
-+ (id)alloc;
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;

@@ -7,10 +7,10 @@
         unsigned int newValue : 1; 
         unsigned int oldValue : 1; 
         unsigned int stateType : 1; 
-    } _has;
-    int _newValue;
-    int _oldValue;
-    int _stateType;
+    }  _has;
+    int  _newValue;
+    int  _oldValue;
+    int  _stateType;
 }
 
 @property (nonatomic) BOOL hasNewValue;

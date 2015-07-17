@@ -3,9 +3,9 @@
  */
 
 @interface FigNeroLayer : CALayer {
-    <FigNeroLayerDelegate> *_neroDelegate;
-    NSObject<OS_dispatch_queue> *_neroQueue;
-    struct OpaqueFigNeroid { } *_neroid;
+    <FigNeroLayerDelegate> * _neroDelegate;
+    NSObject<OS_dispatch_queue> * _neroQueue;
+    struct OpaqueFigNeroid { } * _neroid;
 }
 
 @property (nonatomic) <FigNeroLayerDelegate> *neroDelegate;

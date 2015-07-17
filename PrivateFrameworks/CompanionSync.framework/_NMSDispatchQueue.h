@@ -3,8 +3,8 @@
  */
 
 @interface _NMSDispatchQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_q;
-    int _r;
+    NSObject<OS_dispatch_queue> * _q;
+    int  _r;
 }
 
 @property (getter=isSuspended, nonatomic, readonly) BOOL suspended;

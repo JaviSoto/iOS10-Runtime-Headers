@@ -3,11 +3,11 @@
  */
 
 @interface FUDashedBackgroundView : FUChartBackgroundView {
-    UIColor *_color;
-    int _direction;
-    NSArray *_linePositions;
-    int _lineType;
-    unsigned int _numLines;
+    UIColor * _color;
+    int  _direction;
+    NSArray * _linePositions;
+    int  _lineType;
+    unsigned int  _numLines;
 }
 
 @property (nonatomic, retain) UIColor *color;

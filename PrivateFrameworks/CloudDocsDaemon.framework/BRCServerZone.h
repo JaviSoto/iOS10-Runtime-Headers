@@ -3,15 +3,15 @@
  */
 
 @interface BRCServerZone : NSObject <BRCContainer> {
-    BRCServerChangeState *_changeState;
-    NSString *_containerMetadataEtag;
-    PQLConnection *_db;
-    NSNumber *_dbRowID;
-    BRCLocalContainer *_localContainer;
-    BOOL _needsSave;
-    BRCAccountSession *_session;
-    BRCSyncContext *_syncContext;
-    NSString *_zoneName;
+    BRCServerChangeState * _changeState;
+    NSString * _containerMetadataEtag;
+    PQLConnection * _db;
+    NSNumber * _dbRowID;
+    BRCLocalContainer * _localContainer;
+    BOOL  _needsSave;
+    BRCAccountSession * _session;
+    BRCSyncContext * _syncContext;
+    NSString * _zoneName;
 }
 
 @property (readonly) BRCServerChangeState *changeState;
@@ -33,7 +33,6 @@
 - (void).cxx_destruct;
 - (void)_collectTombstoneForRank:(unsigned long long)arg1;
 - (struct PQLResultSet { Class x1; }*)_enumeratePendingFetchDeletedRecordIDs;
-- (struct PQLResultSet { Class x1; }*)_enumeratePendingFetchRecords;
 - (BOOL)_markItemIDDead:(id)arg1 recordID:(id)arg2;
 - (BOOL)_saveEditedAliasRecord:(id)arg1;
 - (BOOL)_saveEditedContentRecords:(id)arg1 syncStatus:(int)arg2;
@@ -56,6 +55,7 @@
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
 - (unsigned long long)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 syncStatus:(int)arg5;
+- (BOOL)dumpStatusToContext:(id)arg1 error:(id*)arg2;
 - (BOOL)dumpTablesToContext:(id)arg1 error:(id*)arg2;
 - (void)handleBrokenStructure;
 - (BOOL)hasXattrWithSignature:(id)arg1;
@@ -70,6 +70,7 @@
 - (id)localContainer;
 - (BOOL)needsSave;
 - (id)ownerName;
+- (struct PQLResultSet { Class x1; }*)pendingFetchRecordsEnumerator;
 - (id)plist;
 - (BOOL)resetServerTruth;
 - (id)session;

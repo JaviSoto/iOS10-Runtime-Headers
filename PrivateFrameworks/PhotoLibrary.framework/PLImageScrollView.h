@@ -3,7 +3,7 @@
  */
 
 @interface PLImageScrollView : UIScrollView {
-    BOOL _adjustZoomScaleAfterRotation;
+    BOOL  _adjustZoomScaleAfterRotation;
 }
 
 @property (nonatomic) BOOL adjustZoomScaleAfterRotation;

@@ -3,9 +3,9 @@
  */
 
 @interface TSWPListLabelGeometry : NSObject {
-    float mBaselineOffset;
-    float mScale;
-    BOOL mScaleWithText;
+    float  mBaselineOffset;
+    float  mScale;
+    BOOL  mScaleWithText;
 }
 
 @property (nonatomic) float baselineOffset;

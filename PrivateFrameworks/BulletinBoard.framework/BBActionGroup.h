@@ -3,7 +3,7 @@
  */
 
 @interface BBActionGroup : BBAction {
-    NSArray *_actions;
+    NSArray * _actions;
 }
 
 @property (nonatomic, copy) NSArray *actions;

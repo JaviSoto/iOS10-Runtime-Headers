@@ -3,21 +3,21 @@
  */
 
 @interface GLKShaderBlockNode : NSObject <NSCopying, NSXMLParserDelegate> {
-    NSMutableString *_blockText;
-    GLKShaderBlockNode *_children;
-    unsigned int _index;
-    BOOL _indexedMask;
-    NSString *_label;
-    NSString *_loopVar;
+    NSMutableString * _blockText;
+    GLKShaderBlockNode * _children;
+    unsigned int  _index;
+    BOOL  _indexedMask;
+    NSString * _label;
+    NSString * _loopVar;
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
-    } _mask;
-    GLKShaderBlockNode *_next;
-    GLKShaderBlockNode *_parent;
-    int _propertyClass;
-    int _type;
-    int _unrollCt;
+    }  _mask;
+    GLKShaderBlockNode * _next;
+    GLKShaderBlockNode * _parent;
+    int  _propertyClass;
+    int  _type;
+    int  _unrollCt;
 }
 
 @property (nonatomic, retain) NSMutableString *blockText;

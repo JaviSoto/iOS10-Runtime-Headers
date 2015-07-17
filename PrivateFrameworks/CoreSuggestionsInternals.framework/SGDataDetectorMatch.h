@@ -6,17 +6,17 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _labelRange;
-    unsigned int _matchType;
+    }  _labelRange;
+    unsigned int  _matchType;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _valueRange;
-    NSString *_valueString;
+    }  _valueRange;
+    NSString * _valueString;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } labelRange;
@@ -26,7 +26,6 @@
 @property (nonatomic, readonly) NSString *valueString;
 
 - (void).cxx_destruct;
-- (id)description;
 - (id)initWithMatchType:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 labelRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 valueRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 valueString:(id)arg5;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })labelRange;
 - (unsigned int)matchType;

@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DSageLightingPackageData : NSObject <TSCH3DSageLightingPackageData> {
-    NSArray *mLights;
-    NSDictionary *mPackage;
+    NSArray * mLights;
+    NSDictionary * mPackage;
 }
 
 + (id)dataWithDictionary:(id)arg1;

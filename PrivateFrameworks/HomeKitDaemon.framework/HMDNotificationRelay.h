@@ -3,11 +3,11 @@
  */
 
 @interface HMDNotificationRelay : NSObject <HMMessageReceiver> {
-    HMDIDSMessageDispatcher *_msgDispatcher;
-    HMMessageDispatcher *_notificationRelayDispatcher;
-    NSMutableDictionary *_pendingNotifications;
-    NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    HMDIDSMessageDispatcher * _msgDispatcher;
+    HMMessageDispatcher * _notificationRelayDispatcher;
+    NSMutableDictionary * _pendingNotifications;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,7 +35,6 @@
 - (id)notificationRelayDispatcher;
 - (id)pendingNotifications;
 - (void)removePendingNotification:(id)arg1;
-- (void)sendResponse:(id)arg1 error:(id)arg2 forMessage:(id)arg3;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setNotificationRelayDispatcher:(id)arg1;
 - (void)setPendingNotifications:(id)arg1;

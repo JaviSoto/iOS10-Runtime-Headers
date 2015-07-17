@@ -3,7 +3,7 @@
  */
 
 @interface CKDatabaseOperation : CKOperation {
-    CKDatabase *_database;
+    CKDatabase * _database;
 }
 
 @property (nonatomic, retain) CKDatabase *database;

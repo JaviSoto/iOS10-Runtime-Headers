@@ -3,20 +3,20 @@
  */
 
 @interface PUPhotoEditToolController : UIViewController <PUPhotoEditLayoutDynamicAdaptable, UIScrollViewDelegate> {
-    UIView *__dummyScrollContentView;
-    UIScrollView *__toolControllerScrollView;
-    PLPhotoEditAggregateSession *_aggregateSession;
-    <PUPhotoEditToolControllerDelegate> *_delegate;
-    int _layoutOrientation;
-    NSString *_localizedName;
-    BOOL _performingLiveInteraction;
-    PLPhotoEditMutableModel *_photoEditModel;
-    UIButton *_preferredAlternateToolbarButton;
-    unsigned int _preferredRenderMode;
-    UIImage *_selectedToolbarIcon;
-    PUPhotoEditToolControllerSpec *_spec;
-    UIImage *_toolbarIcon;
-    PUPhotoEditValuesCalculator *_valuesCalculator;
+    UIView * __dummyScrollContentView;
+    UIScrollView * __toolControllerScrollView;
+    PLPhotoEditAggregateSession * _aggregateSession;
+    <PUPhotoEditToolControllerDelegate> * _delegate;
+    int  _layoutOrientation;
+    NSString * _localizedName;
+    BOOL  _performingLiveInteraction;
+    PLPhotoEditMutableModel * _photoEditModel;
+    UIButton * _preferredAlternateToolbarButton;
+    unsigned int  _preferredRenderMode;
+    UIImage * _selectedToolbarIcon;
+    PUPhotoEditToolControllerSpec * _spec;
+    UIImage * _toolbarIcon;
+    PUPhotoEditValuesCalculator * _valuesCalculator;
 }
 
 @property (setter=_setDummyScrollContentView:, nonatomic, retain) UIView *_dummyScrollContentView;

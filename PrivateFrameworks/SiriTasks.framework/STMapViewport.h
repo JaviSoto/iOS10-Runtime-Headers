@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STMapViewport : AFSiriModelObject {
-    double _eastLongitude;
-    double _northLatitude;
-    double _southLatitude;
-    double _timeSinceViewportChanged;
-    double _timeSinceViewportEnteredForeground;
-    NSArray *_viewportVertices;
-    double _westLongitude;
+@interface STMapViewport : STSiriModelObject {
+    double  _eastLongitude;
+    double  _northLatitude;
+    double  _southLatitude;
+    double  _timeSinceViewportChanged;
+    double  _timeSinceViewportEnteredForeground;
+    NSArray * _viewportVertices;
+    double  _westLongitude;
 }
 
 @property (nonatomic) double eastLongitude;

@@ -3,17 +3,17 @@
  */
 
 @interface NSCheapMutableString : NSMutableString {
-    void *_reserved;
+    void * _reserved;
     union { 
         unsigned short *fat; 
         char *thin; 
-    } contents;
+    }  contents;
     struct { 
         unsigned int isFat : 1; 
         unsigned int freeWhenDone : 1; 
         unsigned int refs : 30; 
-    } flags;
-    unsigned int numCharacters;
+    }  flags;
+    unsigned int  numCharacters;
 }
 
 - (const char *)cString;

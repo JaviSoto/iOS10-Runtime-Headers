@@ -3,8 +3,8 @@
  */
 
 @interface _HKHeartRateReading : NSObject <NSSecureCoding> {
-    int _confidence;
-    HKQuantity *_heartRate;
+    int  _confidence;
+    HKQuantity * _heartRate;
 }
 
 @property (nonatomic) int confidence;

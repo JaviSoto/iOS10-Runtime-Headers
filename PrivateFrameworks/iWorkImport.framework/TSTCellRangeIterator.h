@@ -3,9 +3,9 @@
  */
 
 @interface TSTCellRangeIterator : NSObject {
-    TSTCellIterator *mCellIterator;
-    BOOL mCellValidForDelegate;
-    <TSTCellRangeIteratorDelegate> *mDelegate;
+    TSTCellIterator * mCellIterator;
+    BOOL  mCellValidForDelegate;
+    <TSTCellRangeIteratorDelegate> * mDelegate;
     struct { 
         struct { 
             unsigned short row; 
@@ -35,13 +35,12 @@
         BOOL mHidden; 
         BOOL mHiddenRow; 
         BOOL mHiddenColumn; 
-    } mIterData;
-    BOOL mIterDataValid;
+    }  mIterData;
+    BOOL  mIterDataValid;
 }
 
 @property (nonatomic, readonly) BOOL cellValid;
 
-- (id).cxx_construct;
 - (BOOL)cellValid;
 - (void)dealloc;
 - (id)initWithTableModel:(id)arg1 delegate:(id)arg2;

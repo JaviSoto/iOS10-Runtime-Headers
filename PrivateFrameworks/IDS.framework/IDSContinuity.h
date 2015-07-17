@@ -3,7 +3,7 @@
  */
 
 @interface IDSContinuity : NSObject {
-    _IDSContinuity *_internal;
+    _IDSContinuity * _internal;
 }
 
 @property (readonly) int state;

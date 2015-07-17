@@ -3,33 +3,33 @@
  */
 
 @interface GraphRenderOperation : NSObject {
-    BOOL _cancelled;
-    <GraphRenderOperationDelegate> *_delegate;
-    StockChartDisplayMode *_displayMode;
-    NSArray *_dottedLinePositions;
-    NSArray *_dottedLinePositionsForStyleOnly;
-    StockGraphImageSet *_graphImageSet;
+    BOOL  _cancelled;
+    <GraphRenderOperationDelegate> * _delegate;
+    StockChartDisplayMode * _displayMode;
+    NSArray * _dottedLinePositions;
+    NSArray * _dottedLinePositionsForStyleOnly;
+    StockGraphImageSet * _graphImageSet;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _graphInsets;
+    }  _graphInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _graphSize;
-    NSArray *_linePointCounts;
-    unsigned long long _maxVolume;
-    struct CGPoint { float x1; float x2; } *_points;
-    BOOL _roundLineCaps;
-    float _volumeBarWidth;
-    struct { float x1; unsigned long long x2; } *_volumeBars;
-    unsigned int _volumeCount;
+    }  _graphSize;
+    NSArray * _linePointCounts;
+    unsigned long long  _maxVolume;
+    struct CGPoint { float x1; float x2; } * _points;
+    BOOL  _roundLineCaps;
+    float  _volumeBarWidth;
+    struct { float x1; unsigned long long x2; } * _volumeBars;
+    unsigned int  _volumeCount;
     struct CGSize { 
         float width; 
         float height; 
-    } _volumeGraphSize;
+    }  _volumeGraphSize;
 }
 
 @property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;

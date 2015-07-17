@@ -3,8 +3,8 @@
  */
 
 @interface EKEventNotesInlineEditItem : EKEventEditItem <EKCalendarItemInlineEditItem, UITextViewDelegate> {
-    CalendarNotesCell *_cell;
-    NSString *_lastTextChange;
+    CalendarNotesCell * _cell;
+    NSString * _lastTextChange;
 }
 
 @property (readonly, copy) NSString *debugDescription;

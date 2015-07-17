@@ -3,14 +3,14 @@
  */
 
 @interface CKDSharePCSData : CKDPCSData {
-    int _myParticipantPermission;
-    int _myParticipantType;
-    struct _OpaquePCSShareProtection { } *_publicPCS;
-    NSData *_publicPCSData;
-    NSString *_publicPCSEtag;
-    int _publicPermission;
-    NSString *_shareEtag;
-    CKShareID *_shareID;
+    int  _myParticipantPermission;
+    int  _myParticipantType;
+    struct _OpaquePCSShareProtection { } * _publicPCS;
+    NSData * _publicPCSData;
+    NSString * _publicPCSEtag;
+    int  _publicPermission;
+    NSString * _shareEtag;
+    CKShareID * _shareID;
 }
 
 @property (nonatomic) int myParticipantPermission;

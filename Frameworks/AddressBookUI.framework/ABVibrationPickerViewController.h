@@ -3,9 +3,9 @@
  */
 
 @interface ABVibrationPickerViewController : ABPickerViewController {
-    BOOL _canEnterEditingMode;
-    UIBarButtonItem *_saveButton;
-    TKVibrationPickerViewController *_vibrationPickerViewController;
+    BOOL  _canEnterEditingMode;
+    UIBarButtonItem * _saveButton;
+    TKVibrationPickerViewController * _vibrationPickerViewController;
 }
 
 @property (setter=_setSaveButton:, nonatomic, retain) UIBarButtonItem *_saveButton;

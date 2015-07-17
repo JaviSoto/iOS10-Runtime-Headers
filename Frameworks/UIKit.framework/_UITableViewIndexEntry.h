@@ -6,7 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _baselinePoint;
+    }  _baselinePoint;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,9 +16,9 @@
             float width; 
             float height; 
         } size; 
-    } _bounds;
-    UIImage *_image;
-    id _line;
+    }  _bounds;
+    UIImage * _image;
+    id  _line;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,7 +28,7 @@
             float width; 
             float height; 
         } size; 
-    } _typeBounds;
+    }  _typeBounds;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } baselinePoint;
@@ -37,9 +37,9 @@
 @property (nonatomic, retain) id line;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } typeBounds;
 
+- (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })baselinePoint;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)dealloc;
 - (id)description;
 - (id)image;
 - (id)line;

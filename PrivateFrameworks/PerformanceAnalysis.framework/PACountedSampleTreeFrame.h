@@ -3,8 +3,8 @@
  */
 
 @interface PACountedSampleTreeFrame : PACountedSampleFrame {
-    NSMutableSet *_children;
-    unsigned int _state;
+    NSMutableSet * _children;
+    unsigned int  _state;
 }
 
 @property (readonly) NSMutableSet *children;

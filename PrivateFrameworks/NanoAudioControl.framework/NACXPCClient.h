@@ -3,10 +3,10 @@
  */
 
 @interface NACXPCClient : NSObject <NACXPCInterface> {
-    BOOL _isObservingVolume;
-    NSMutableSet *_routeObservingCategories;
-    NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
+    BOOL  _isObservingVolume;
+    NSMutableSet * _routeObservingCategories;
+    NSXPCConnection * _xpcConnection;
+    NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

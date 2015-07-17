@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DChartAxisLabelsSceneObject : TSCH3DChartLabelsContainingSceneObject {
-    <TSCH3DAxisLabelPositioner><NSObject> *mCategoryLabelPositioner;
-    <TSCH3DAxisLabelPositioner><NSObject> *mValueLabelPositioner;
+    <TSCH3DAxisLabelPositioner><NSObject> * mCategoryLabelPositioner;
+    <TSCH3DAxisLabelPositioner><NSObject> * mValueLabelPositioner;
 }
 
 @property (retain) <TSCH3DAxisLabelPositioner> *categoryLabelPositioner;

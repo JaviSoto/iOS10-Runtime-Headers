@@ -3,9 +3,9 @@
  */
 
 @interface NSURLDirectoryEnumerator : NSDirectoryEnumerator {
-    struct __CFURLEnumerator { } *_enumerator;
-    id /* block */ _errorHandler;
-    BOOL shouldContinue;
+    struct __CFURLEnumerator { } * _enumerator;
+    id /* block */  _errorHandler;
+    BOOL  shouldContinue;
 }
 
 @property (copy) id /* block */ errorHandler;

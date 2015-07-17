@@ -3,16 +3,16 @@
  */
 
 @interface SKUISearchCollectionViewFlowLayout : SKUIItemGridCollectionViewLayout {
-    BOOL _backfills;
-    UICollectionView *_collectionView;
+    BOOL  _backfills;
+    UICollectionView * _collectionView;
     struct CGSize { 
         float width; 
         float height; 
-    } _headerSize;
-    float _horizontalPadding;
-    int _numberOfColumns;
-    int _numberOfRows;
-    float _verticalPadding;
+    }  _headerSize;
+    float  _horizontalPadding;
+    int  _numberOfColumns;
+    int  _numberOfRows;
+    float  _verticalPadding;
 }
 
 @property (nonatomic) BOOL backfills;

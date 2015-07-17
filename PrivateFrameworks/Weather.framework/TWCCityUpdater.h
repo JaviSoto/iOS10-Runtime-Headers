@@ -3,9 +3,9 @@
  */
 
 @interface TWCCityUpdater : TWCUpdater {
-    NSMutableArray *_parsedCities;
-    NSArray *_requestedCities;
-    id /* block */ _weatherUpdateCompletion;
+    NSMutableArray * _parsedCities;
+    NSArray * _requestedCities;
+    id /* block */  _weatherUpdateCompletion;
 }
 
 @property (nonatomic, retain) NSMutableArray *parsedCities;
@@ -14,9 +14,9 @@
 + (void)clearSharedCityUpdater;
 + (id)sharedCityUpdater;
 
+- (void).cxx_destruct;
 - (void)_failed:(unsigned int)arg1;
 - (id)aggregateDictionaryDomain;
-- (void)dealloc;
 - (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
 - (id)parsedCities;
 - (id)requestedCities;

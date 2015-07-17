@@ -3,25 +3,25 @@
  */
 
 @interface StockChartData : NSObject {
-    int _chartInterval;
-    double _expirationTime;
-    BOOL _hasVolume;
-    NSMutableDictionary *_imageSetCache;
-    NSArray *_interestingIndexes;
-    BOOL _isUnavailable;
-    NSMutableDictionary *_labelPlacementCache;
-    NSDate *_marketCloseDate;
-    NSDate *_marketOpenDate;
-    NSTimeZone *_marketTimeZone;
-    struct { double x1; double x2; unsigned long long x3; } *_maxValue;
-    struct { double x1; double x2; unsigned long long x3; } *_minValue;
-    float _previousClosePrice;
-    Stock *_stock;
-    unsigned int _stockValueCount;
-    struct { double x1; double x2; unsigned long long x3; } *_stockValues;
-    NSMutableDictionary *_xAxisLabelInfoCache;
-    int _yAxisFractionDigits;
-    NSMutableDictionary *_yAxisLabelInfoCache;
+    int  _chartInterval;
+    double  _expirationTime;
+    BOOL  _hasVolume;
+    NSMutableDictionary * _imageSetCache;
+    NSArray * _interestingIndexes;
+    BOOL  _isUnavailable;
+    NSMutableDictionary * _labelPlacementCache;
+    NSDate * _marketCloseDate;
+    NSDate * _marketOpenDate;
+    NSTimeZone * _marketTimeZone;
+    struct { double x1; double x2; unsigned long long x3; } * _maxValue;
+    struct { double x1; double x2; unsigned long long x3; } * _minValue;
+    float  _previousClosePrice;
+    Stock * _stock;
+    unsigned int  _stockValueCount;
+    struct { double x1; double x2; unsigned long long x3; } * _stockValues;
+    NSMutableDictionary * _xAxisLabelInfoCache;
+    int  _yAxisFractionDigits;
+    NSMutableDictionary * _yAxisLabelInfoCache;
 }
 
 @property (nonatomic) int chartInterval;

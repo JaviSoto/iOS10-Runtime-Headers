@@ -3,13 +3,13 @@
  */
 
 @interface PUPhotoEditSaveRequest : NSObject {
-    double _beginTimestamp;
-    id /* block */ _completionHandler;
-    PHContentEditingOutput *_contentEditingOutput;
-    int _currentState;
-    PLPhotoEditModel *_editModel;
-    PHAsset *_photo;
-    int _workImageVersion;
+    double  _beginTimestamp;
+    id /* block */  _completionHandler;
+    PHContentEditingOutput * _contentEditingOutput;
+    int  _currentState;
+    PLPhotoEditModel * _editModel;
+    PHAsset * _photo;
+    int  _workImageVersion;
 }
 
 @property (nonatomic, readonly) PHContentEditingOutput *contentEditingOutput;

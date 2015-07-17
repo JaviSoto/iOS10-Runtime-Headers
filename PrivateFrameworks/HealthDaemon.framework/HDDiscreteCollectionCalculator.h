@@ -15,14 +15,14 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _bySource;
+    }  _bySource;
     struct { 
         double avg; 
         double max; 
         double min; 
         unsigned int count; 
-    } _currentStats;
-    BOOL _detailBySource;
+    }  _currentStats;
+    BOOL  _detailBySource;
 }
 
 @property (nonatomic) BOOL detailBySource;

@@ -3,12 +3,12 @@
  */
 
 @interface HDCodableCategoryDomainDictionary : PBCodable <HDSyncCodable, NSCopying> {
-    long long _category;
-    NSString *_domain;
+    long long  _category;
+    NSString * _domain;
     struct { 
         unsigned int category : 1; 
-    } _has;
-    NSMutableArray *_keyValuePairs;
+    }  _has;
+    NSMutableArray * _keyValuePairs;
 }
 
 @property (nonatomic) long long category;

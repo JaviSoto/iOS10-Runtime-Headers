@@ -3,11 +3,11 @@
  */
 
 @interface MPUExtrasStackCollectionCell : UICollectionViewCell {
-    NSArray *_fitConstraints;
-    BOOL _needsViewWillAppear;
-    MPUExtrasStackTemplateViewController *_parentViewController;
-    MPUExtrasGridSectionHeaderStyle *_sectionStyle;
-    MPUExtrasGridElementViewController *_viewController;
+    NSArray * _fitConstraints;
+    BOOL  _needsViewWillAppear;
+    MPUExtrasStackTemplateViewController * _parentViewController;
+    MPUExtrasGridSectionHeaderStyle * _sectionStyle;
+    MPUExtrasGridElementViewController * _viewController;
 }
 
 @property (nonatomic, retain) MPUExtrasStackTemplateViewController *parentViewController;

@@ -3,9 +3,9 @@
  */
 
 @interface _UIVisualEffectLayerConfig : NSObject {
-    UIColor *_fillColor;
-    NSString *_filterType;
-    float _opacity;
+    UIColor * _fillColor;
+    NSString * _filterType;
+    float  _opacity;
 }
 
 @property (nonatomic, readonly) UIColor *fillColor;
@@ -14,8 +14,9 @@
 
 + (id)layerWithFillColor:(id)arg1 opacity:(float)arg2 filterType:(id)arg3;
 
+- (void).cxx_destruct;
 - (void)configureLayerView:(id)arg1;
-- (void)dealloc;
+- (void)deconfigureLayerView:(id)arg1;
 - (id)fillColor;
 - (id)filterType;
 - (float)opacity;

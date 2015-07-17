@@ -3,15 +3,17 @@
  */
 
 @interface AVPlayerLayerInternal : NSObject {
-    AVPlayer *_player;
-    CALayer *closedCaptionLayer;
-    BOOL hasPlayerToObserve;
-    BOOL isInPIPMode;
-    BOOL isObservingPlayer;
-    BOOL isPresentationLayer;
-    BOOL isReadyForDisplay;
-    struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
-    AVPlayerItem *itemMarkedReadyForDisplay;
+    AVPlayer * _player;
+    AVPlayerLayer * associatedPlayerLayerForPIP;
+    BOOL  canEnterPIPMode;
+    CALayer * closedCaptionLayer;
+    BOOL  hasPlayerToObserve;
+    BOOL  isObservingPlayer;
+    BOOL  isPIPModeEnabled;
+    BOOL  isPresentationLayer;
+    BOOL  isReadyForDisplay;
+    struct OpaqueFigSimpleMutex { } * isReadyForDisplayMutex;
+    AVPlayerItem * itemMarkedReadyForDisplay;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -21,11 +23,11 @@
             float width; 
             float height; 
         } size; 
-    } latestPlayerLayerBoundsAtRendering;
+    }  latestPlayerLayerBoundsAtRendering;
     struct CGSize { 
         float width; 
         float height; 
-    } latestPresentationSizeAtRendering;
+    }  latestPresentationSizeAtRendering;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -35,19 +37,38 @@
             float width; 
             float height; 
         } size; 
-    } latestSubtitleLayoutAtRendering;
-    CALayer *maskLayer;
-    NSDictionary *pixelBufferAttributes;
+    }  latestSubtitleLayoutAtRendering;
+    CALayer * maskLayer;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
+    }  oldSublayerTransform;
+    NSDictionary * pixelBufferAttributes;
     struct CGSize { 
         float width; 
         float height; 
-    } presentationSize;
-    NSObject<OS_dispatch_queue> *serialQueue;
-    BOOL shouldObservePlayer;
-    NSString *subtitleGravity;
-    FigSubtitleCALayer *subtitleLayer;
-    NSString *videoGravity;
-    CALayer *videoLayer;
+    }  presentationSize;
+    NSObject<OS_dispatch_queue> * serialQueue;
+    BOOL  shouldObservePlayer;
+    NSString * subtitleGravity;
+    FigSubtitleCALayer * subtitleLayer;
+    NSString * videoGravity;
+    CALayer * videoLayer;
+    BOOL  willManageSublayersAsSwappedLayers;
 }
 
 @end

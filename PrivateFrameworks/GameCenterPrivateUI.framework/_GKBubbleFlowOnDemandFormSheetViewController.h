@@ -3,8 +3,8 @@
  */
 
 @interface _GKBubbleFlowOnDemandFormSheetViewController : GKBubbleFlowRootViewController {
-    BOOL _falseDismissSkippedOrCompleted;
-    _GKBubbleFlowPseudoModalViewController *_pseudoModalViewController;
+    BOOL  _falseDismissSkippedOrCompleted;
+    _GKBubbleFlowPseudoModalViewController * _pseudoModalViewController;
 }
 
 @property (nonatomic) BOOL falseDismissSkippedOrCompleted;

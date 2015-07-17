@@ -3,17 +3,17 @@
  */
 
 @interface PLInFlightAssetsAlbum : NSObject <PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappingCache> {
-    NSCache *__assetCache;
-    BOOL __notificationsEnabled;
-    NSMutableOrderedSet *_albumOIDs;
-    PLManagedAlbum *_backingAlbum;
-    NSObject<PLIndexMappingCache> *_derivedAlbums;
-    NSFetchRequest *_fetchRequest;
-    NSMutableOrderedSet *_inflightAssets;
-    unsigned int _photosCount;
-    BOOL _sessionLimited;
-    unsigned int _videosCount;
-    id _weak_assets;
+    NSCache * __assetCache;
+    BOOL  __notificationsEnabled;
+    NSMutableOrderedSet * _albumOIDs;
+    PLManagedAlbum * _backingAlbum;
+    NSObject<PLIndexMappingCache> * _derivedAlbums;
+    NSFetchRequest * _fetchRequest;
+    NSMutableOrderedSet * _inflightAssets;
+    unsigned int  _photosCount;
+    BOOL  _sessionLimited;
+    unsigned int  _videosCount;
+    id  _weak_assets;
 }
 
 @property (nonatomic) NSMutableOrderedSet *_assets;

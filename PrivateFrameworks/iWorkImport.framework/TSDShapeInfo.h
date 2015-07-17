@@ -3,8 +3,8 @@
  */
 
 @interface TSDShapeInfo : TSDStyledInfo <TSDInfoWithPathSource, TSDMixing, TSDReducableInfo, TSKSearchable> {
-    TSDPathSource *mPathSource;
-    TSDShapeStyle *mStyle;
+    TSDPathSource * mPathSource;
+    TSDShapeStyle * mStyle;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;

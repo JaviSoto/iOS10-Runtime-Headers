@@ -3,16 +3,16 @@
  */
 
 @interface CUTPowerMonitor : NSObject {
-    struct IONotificationPort { } *_batteryIONotifyPort;
-    unsigned int _batteryNotificationRef;
-    struct __CFRunLoopSource { } *_batteryRunLoopSource;
-    double _currentLevel;
-    NSMutableArray *_delegates;
-    CUTWeakReference *_iokitDelegate;
-    BOOL _isExternalPowerConnected;
-    unsigned int _pmConnection;
-    unsigned int _pmNotifier;
-    struct IONotificationPort { } *_pmPort;
+    struct IONotificationPort { } * _batteryIONotifyPort;
+    unsigned int  _batteryNotificationRef;
+    struct __CFRunLoopSource { } * _batteryRunLoopSource;
+    double  _currentLevel;
+    NSMutableArray * _delegates;
+    CUTWeakReference * _iokitDelegate;
+    BOOL  _isExternalPowerConnected;
+    unsigned int  _pmConnection;
+    unsigned int  _pmNotifier;
+    struct IONotificationPort { } * _pmPort;
 }
 
 @property (nonatomic, readonly) double batteryPercentRemaining;

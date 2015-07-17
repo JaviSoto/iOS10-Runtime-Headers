@@ -3,7 +3,7 @@
  */
 
 @interface PBDataWriter : NSObject {
-    PBMutableData *_data;
+    PBMutableData * _data;
 }
 
 - (id)data;

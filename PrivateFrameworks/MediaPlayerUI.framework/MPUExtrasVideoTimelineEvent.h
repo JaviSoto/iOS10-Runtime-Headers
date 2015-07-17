@@ -3,13 +3,13 @@
  */
 
 @interface MPUExtrasVideoTimelineEvent : NSObject {
-    double _duration;
-    UIImage *_image;
-    BOOL _isFirstEvent;
-    IKLockupElement *_lockup;
-    MPUExtrasVideoTimelineEvent *_next;
-    double _offset;
-    MPUExtrasVideoTimelineEvent *_previous;
+    double  _duration;
+    UIImage * _image;
+    BOOL  _isFirstEvent;
+    IKLockupElement * _lockup;
+    MPUExtrasVideoTimelineEvent * _next;
+    double  _offset;
+    MPUExtrasVideoTimelineEvent * _previous;
 }
 
 @property (nonatomic, readonly) double duration;

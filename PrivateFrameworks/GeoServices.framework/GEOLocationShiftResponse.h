@@ -10,7 +10,7 @@
         struct { 
             unsigned int z : 1; 
         } _has; 
-    } _shiftedPixel;
+    }  _shiftedPixel;
 }
 
 @property (readonly) struct { double x1; double x2; } shiftedCoordinate;

@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryRecentlyAddedOverviewEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    BOOL _hasValidItemCount;
-    unsigned int _itemCount;
-    MPMediaQuery *_query;
+    BOOL  _hasValidItemCount;
+    unsigned int  _itemCount;
+    MPMediaQuery * _query;
 }
 
 @property (readonly, copy) NSString *debugDescription;

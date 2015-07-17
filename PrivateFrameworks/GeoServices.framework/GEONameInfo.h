@@ -7,14 +7,14 @@
         unsigned int phoneticType : 1; 
         unsigned int shieldType : 1; 
         unsigned int signType : 1; 
-    } _has;
-    NSString *_locale;
-    NSString *_name;
-    NSString *_phoneticName;
-    int _phoneticType;
-    NSString *_shield;
-    int _shieldType;
-    int _signType;
+    }  _has;
+    NSString * _locale;
+    NSString * _name;
+    NSString * _phoneticName;
+    int  _phoneticType;
+    NSString * _shield;
+    int  _shieldType;
+    int  _signType;
 }
 
 @property (nonatomic, readonly) BOOL hasLocale;

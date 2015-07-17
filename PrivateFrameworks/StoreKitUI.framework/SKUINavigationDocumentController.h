@@ -3,12 +3,12 @@
  */
 
 @interface SKUINavigationDocumentController : NSObject <IKAppNavigationController> {
-    SKUIClientContext *_clientContext;
-    <SKUINavigationDocumentDelegate> *_delegate;
-    UINavigationController *_navigationController;
-    UINavigationController *_overrideNavigationController;
-    NSMutableArray *_pendingNavigationStackEnsureConsistencyRequests;
-    NSMutableArray *_stackItems;
+    SKUIClientContext * _clientContext;
+    <SKUINavigationDocumentDelegate> * _delegate;
+    UINavigationController * _navigationController;
+    UINavigationController * _overrideNavigationController;
+    NSMutableArray * _pendingNavigationStackEnsureConsistencyRequests;
+    NSMutableArray * _stackItems;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

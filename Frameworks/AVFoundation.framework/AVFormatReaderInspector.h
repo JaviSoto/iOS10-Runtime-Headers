@@ -3,9 +3,9 @@
  */
 
 @interface AVFormatReaderInspector : AVAssetInspector {
-    struct OpaqueFigFormatReader { } *_formatReader;
-    BOOL didCheckForSaveRestriction;
-    BOOL hasSaveRestriction;
+    struct OpaqueFigFormatReader { } * _formatReader;
+    BOOL  didCheckForSaveRestriction;
+    BOOL  hasSaveRestriction;
 }
 
 @property (getter=_formatReader, setter=_setFormatReader:, nonatomic, retain) struct OpaqueFigFormatReader { }*formatReader;
@@ -16,9 +16,9 @@
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
-- (BOOL)canContainMovieFragments;
+- (BOOL)canContainFragments;
 - (id)commonMetadata;
-- (BOOL)containsMovieFragments;
+- (BOOL)containsFragments;
 - (void)dealloc;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;

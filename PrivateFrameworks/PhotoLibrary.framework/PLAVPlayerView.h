@@ -3,7 +3,7 @@
  */
 
 @interface PLAVPlayerView : UIView {
-    unsigned int _scaleMode;
+    unsigned int  _scaleMode;
 }
 
 @property (nonatomic, readonly, retain) AVPlayerLayer *layer;

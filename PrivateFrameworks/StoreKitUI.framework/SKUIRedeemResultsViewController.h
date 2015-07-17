@@ -3,19 +3,19 @@
  */
 
 @interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
-    UIButton *_anotherButton;
-    BOOL _extendedMessageIsExpanded;
-    SKUITextLayout *_extendedMessageTextLayout;
-    SKUITextBoxView *_extendedMessageView;
-    UIImageView *_headerImageView;
-    UIImage *_itemImage;
-    SKUIItemStateCenter *_itemStateCenter;
-    SKUIGiftItemView *_itemView;
-    SKUIRedeemResultMessageView *_messageView;
-    NSOperationQueue *_operationQueue;
-    SKUIRedeemITunesPassLockup *_passbookLockup;
-    SKUIRedeem *_redeem;
-    int _redeemCategory;
+    UIButton * _anotherButton;
+    BOOL  _extendedMessageIsExpanded;
+    SKUITextLayout * _extendedMessageTextLayout;
+    SKUITextBoxView * _extendedMessageView;
+    UIImageView * _headerImageView;
+    UIImage * _itemImage;
+    SKUIItemStateCenter * _itemStateCenter;
+    SKUIGiftItemView * _itemView;
+    SKUIRedeemResultMessageView * _messageView;
+    NSOperationQueue * _operationQueue;
+    SKUIRedeemITunesPassLockup * _passbookLockup;
+    SKUIRedeem * _redeem;
+    int  _redeemCategory;
 }
 
 @property (readonly, copy) NSString *debugDescription;

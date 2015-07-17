@@ -3,9 +3,9 @@
  */
 
 @interface ADDimmerView : UIView {
-    <ADDimmerViewDelegate> *_delegate;
-    BOOL _dimmed;
-    ADTapGestureRecognizer *_gestureRecognizer;
+    <ADDimmerViewDelegate> * _delegate;
+    BOOL  _dimmed;
+    ADTapGestureRecognizer * _gestureRecognizer;
 }
 
 @property (nonatomic) <ADDimmerViewDelegate> *delegate;

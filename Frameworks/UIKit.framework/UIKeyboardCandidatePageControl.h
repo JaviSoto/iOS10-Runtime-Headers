@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardCandidatePageControl : UIView {
-    UIKeyboardCandidateBarSegmentControl *_pageControl;
-    BOOL _usingVerticalArrows;
+    UIKeyboardCandidateBarSegmentControl * _pageControl;
+    BOOL  _usingVerticalArrows;
 }
 
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;

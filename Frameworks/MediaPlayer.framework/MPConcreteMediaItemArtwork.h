@@ -12,8 +12,8 @@
             float width; 
             float height; 
         } size; 
-    } _bounds;
-    MPArtworkCatalog *_catalog;
+    }  _bounds;
+    MPArtworkCatalog * _catalog;
 }
 
 @property (nonatomic, readonly) MPArtworkCatalog *artworkCatalog;

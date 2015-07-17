@@ -3,10 +3,10 @@
  */
 
 @interface _GKURLRequestDictionaryKey : NSObject <NSCopying> {
-    NSURLRequest *_request;
+    NSURLRequest * _request;
 }
 
-@property (nonatomic, readonly) NSURLRequest *request;
+@property (nonatomic, retain) NSURLRequest *request;
 
 + (id)keyWithRequest:(id)arg1;
 
@@ -17,5 +17,6 @@
 - (id)initWithRequest:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)request;
+- (void)setRequest:(id)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PAMountStatus : NSObject {
-    NSString *_path;
-    NSMutableArray *_snapshots;
-    NSString *_type;
+    NSString * _path;
+    NSMutableArray * _snapshots;
+    NSString * _type;
 }
 
 + (id)classDictionaryKey;

@@ -3,9 +3,9 @@
  */
 
 @interface TSUASLLogCategoryController : NSObject {
-    BOOL _allCategoriesEnabledOverride;
-    NSMutableDictionary *_dictionary;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _allCategoriesEnabledOverride;
+    NSMutableDictionary * _dictionary;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) BOOL allCategoriesEnabledOverride;

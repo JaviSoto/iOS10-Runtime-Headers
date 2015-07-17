@@ -3,12 +3,14 @@
  */
 
 @interface OADImageProperties : OADGraphicProperties {
-    OADImageFill *mImageFill;
+    OADImageFill * mImageFill;
 }
 
 + (id)defaultProperties;
 
 - (void)dealloc;
+- (id)description;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasImageFill;
 - (id)imageFill;
 - (void)setImageFill:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface CKSMSComposeRemoteViewController : _UIRemoteViewController <CKSMSComposeRemoteViewControllerDelegate> {
-    <CKSMSComposeRemoteViewControllerDelegate> *_delegate;
+    <CKSMSComposeRemoteViewControllerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

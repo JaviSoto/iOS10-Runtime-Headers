@@ -9,7 +9,7 @@
         struct __compressed_pair<TrafficSegment *, std::__1::allocator<TrafficSegment> > { 
             struct TrafficSegment {} *__first_; 
         } __end_cap_; 
-    } _segments;
+    }  _segments;
 }
 
 - (id).cxx_construct;

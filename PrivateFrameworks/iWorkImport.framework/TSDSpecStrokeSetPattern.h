@@ -3,17 +3,17 @@
  */
 
 @interface TSDSpecStrokeSetPattern : TSDSpecStroke {
-    TSUColor *_color;
-    BOOL _definedColor;
-    BOOL _definedLineCap;
-    BOOL _definedLineJoin;
-    BOOL _definedMiterLimit;
-    BOOL _definedWidth;
-    int _lineCap;
-    int _lineJoin;
-    double _miterLimit;
-    TSDStrokePattern *_pattern;
-    double _width;
+    TSUColor * _color;
+    BOOL  _definedColor;
+    BOOL  _definedLineCap;
+    BOOL  _definedLineJoin;
+    BOOL  _definedMiterLimit;
+    BOOL  _definedWidth;
+    int  _lineCap;
+    int  _lineJoin;
+    double  _miterLimit;
+    TSDStrokePattern * _pattern;
+    double  _width;
 }
 
 + (id)newFromArchive:(const struct SpecStrokeSetPatternArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; int x6; double x7; double x8; struct Color {} *x9; struct StrokePatternArchive {} *x10; }*)arg1 unarchiver:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface BSHashBuilder : NSObject {
-    unsigned int _hash;
+    unsigned int  _hash;
 }
 
 + (id)builder;

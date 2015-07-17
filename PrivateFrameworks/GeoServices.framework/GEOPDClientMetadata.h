@@ -3,56 +3,54 @@
  */
 
 @interface GEOPDClientMetadata : PBCodable <NSCopying> {
-    NSString *_deviceCountryCode;
-    NSString *_deviceDisplayLocale;
-    NSMutableArray *_deviceInstalledKeyboardLocales;
-    NSString *_deviceKeyboardLocale;
-    GEOLatLng *_deviceLocation;
-    NSString *_deviceSpokenLocale;
+    GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
+    NSString * _deviceCountryCode;
+    NSString * _deviceDisplayLanguage;
+    NSString * _deviceKeyboardLanguage;
+    GEOLatLng * _deviceLocation;
+    NSString * _deviceSpokenLanguage;
     struct { 
         unsigned int resultListAttributionSupport : 1; 
         unsigned int timeSinceMapEnteredForeground : 1; 
-    } _has;
-    int _resultListAttributionSupport;
-    unsigned int _timeSinceMapEnteredForeground;
+    }  _has;
+    int  _resultListAttributionSupport;
+    unsigned int  _timeSinceMapEnteredForeground;
 }
 
+@property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic, retain) NSString *deviceCountryCode;
-@property (nonatomic, retain) NSString *deviceDisplayLocale;
-@property (nonatomic, retain) NSMutableArray *deviceInstalledKeyboardLocales;
-@property (nonatomic, retain) NSString *deviceKeyboardLocale;
+@property (nonatomic, retain) NSString *deviceDisplayLanguage;
+@property (nonatomic, retain) NSString *deviceKeyboardLanguage;
 @property (nonatomic, retain) GEOLatLng *deviceLocation;
-@property (nonatomic, retain) NSString *deviceSpokenLocale;
+@property (nonatomic, retain) NSString *deviceSpokenLanguage;
+@property (nonatomic, readonly) BOOL hasAdditionalEnabledMarkets;
 @property (nonatomic, readonly) BOOL hasDeviceCountryCode;
-@property (nonatomic, readonly) BOOL hasDeviceDisplayLocale;
-@property (nonatomic, readonly) BOOL hasDeviceKeyboardLocale;
+@property (nonatomic, readonly) BOOL hasDeviceDisplayLanguage;
+@property (nonatomic, readonly) BOOL hasDeviceKeyboardLanguage;
 @property (nonatomic, readonly) BOOL hasDeviceLocation;
-@property (nonatomic, readonly) BOOL hasDeviceSpokenLocale;
+@property (nonatomic, readonly) BOOL hasDeviceSpokenLanguage;
 @property (nonatomic) BOOL hasResultListAttributionSupport;
 @property (nonatomic) BOOL hasTimeSinceMapEnteredForeground;
 @property (nonatomic) int resultListAttributionSupport;
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 
-- (void)addDeviceInstalledKeyboardLocale:(id)arg1;
-- (void)clearDeviceInstalledKeyboardLocales;
+- (id)additionalEnabledMarkets;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)deviceCountryCode;
-- (id)deviceDisplayLocale;
-- (id)deviceInstalledKeyboardLocaleAtIndex:(unsigned int)arg1;
-- (id)deviceInstalledKeyboardLocales;
-- (unsigned int)deviceInstalledKeyboardLocalesCount;
-- (id)deviceKeyboardLocale;
+- (id)deviceDisplayLanguage;
+- (id)deviceKeyboardLanguage;
 - (id)deviceLocation;
-- (id)deviceSpokenLocale;
+- (id)deviceSpokenLanguage;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAdditionalEnabledMarkets;
 - (BOOL)hasDeviceCountryCode;
-- (BOOL)hasDeviceDisplayLocale;
-- (BOOL)hasDeviceKeyboardLocale;
+- (BOOL)hasDeviceDisplayLanguage;
+- (BOOL)hasDeviceKeyboardLanguage;
 - (BOOL)hasDeviceLocation;
-- (BOOL)hasDeviceSpokenLocale;
+- (BOOL)hasDeviceSpokenLanguage;
 - (BOOL)hasResultListAttributionSupport;
 - (BOOL)hasTimeSinceMapEnteredForeground;
 - (unsigned int)hash;
@@ -61,12 +59,12 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)resultListAttributionSupport;
+- (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setDeviceCountryCode:(id)arg1;
-- (void)setDeviceDisplayLocale:(id)arg1;
-- (void)setDeviceInstalledKeyboardLocales:(id)arg1;
-- (void)setDeviceKeyboardLocale:(id)arg1;
+- (void)setDeviceDisplayLanguage:(id)arg1;
+- (void)setDeviceKeyboardLanguage:(id)arg1;
 - (void)setDeviceLocation:(id)arg1;
-- (void)setDeviceSpokenLocale:(id)arg1;
+- (void)setDeviceSpokenLanguage:(id)arg1;
 - (void)setHasResultListAttributionSupport:(BOOL)arg1;
 - (void)setHasTimeSinceMapEnteredForeground:(BOOL)arg1;
 - (void)setResultListAttributionSupport:(int)arg1;

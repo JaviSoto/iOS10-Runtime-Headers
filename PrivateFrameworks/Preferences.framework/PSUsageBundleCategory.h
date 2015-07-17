@@ -3,9 +3,9 @@
  */
 
 @interface PSUsageBundleCategory : NSObject {
-    NSString *_identifier;
-    NSString *_name;
-    PSUsageBundleApp *_usageBundleApp;
+    NSString * _identifier;
+    NSString * _name;
+    PSUsageBundleApp * _usageBundleApp;
 }
 
 @property (nonatomic, retain) NSString *identifier;
@@ -14,7 +14,7 @@
 
 + (id)categoryNamed:(id)arg1 withIdentifier:(id)arg2 forUsageBundleApp:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
 - (id)name;

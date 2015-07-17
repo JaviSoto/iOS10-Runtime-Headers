@@ -3,10 +3,10 @@
  */
 
 @interface BSAnimationSettings : NSObject <BSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
-    double _delay;
-    double _duration;
-    double _frameInterval;
-    CAMediaTimingFunction *_timingFunction;
+    double  _delay;
+    double  _duration;
+    double  _frameInterval;
+    CAMediaTimingFunction * _timingFunction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

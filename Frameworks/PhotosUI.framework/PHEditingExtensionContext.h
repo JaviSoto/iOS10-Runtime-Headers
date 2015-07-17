@@ -3,9 +3,9 @@
  */
 
 @interface PHEditingExtensionContext : NSExtensionContext <PUEditingExtensionVendor> {
-    PUEditingInitialPayload *__initialPayload;
-    long long _fullSizeImageExtensionHandle;
-    long long _videoPathExtensionHandle;
+    PUEditingInitialPayload * __initialPayload;
+    long long  _fullSizeImageExtensionHandle;
+    long long  _videoPathExtensionHandle;
 }
 
 @property (readonly) PUEditingInitialPayload *_initialPayload;

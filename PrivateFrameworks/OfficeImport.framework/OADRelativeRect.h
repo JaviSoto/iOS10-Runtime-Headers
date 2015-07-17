@@ -3,10 +3,10 @@
  */
 
 @interface OADRelativeRect : NSObject <NSCopying> {
-    float mBottom;
-    float mLeft;
-    float mRight;
-    float mTop;
+    float  mBottom;
+    float  mLeft;
+    float  mRight;
+    float  mTop;
 }
 
 - (float)bottom;

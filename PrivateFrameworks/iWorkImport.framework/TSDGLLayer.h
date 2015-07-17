@@ -3,9 +3,9 @@
  */
 
 @interface TSDGLLayer : CAEAGLLayer {
-    <TSDGLLayerContext> *mContext;
-    NSObject<TSDGLLayerDelegate> *mDelegate;
-    CADisplayLink *mDisplayLink;
+    <TSDGLLayerContext> * mContext;
+    NSObject<TSDGLLayerDelegate> * mDelegate;
+    CADisplayLink * mDisplayLink;
 }
 
 @property NSObject<TSDGLLayerDelegate> *delegate;

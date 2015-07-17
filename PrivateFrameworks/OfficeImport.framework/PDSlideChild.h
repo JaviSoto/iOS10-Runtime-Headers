@@ -3,16 +3,18 @@
  */
 
 @interface PDSlideChild : PDSlideBase {
-    OADColorMap *mColorMapOverride;
-    BOOL mShowMasterPlaceholderAnimations;
-    BOOL mShowMasterShapes;
-    OADThemeOverrides *mThemeOverrides;
+    OADColorMap * mColorMapOverride;
+    BOOL  mShowMasterPlaceholderAnimations;
+    BOOL  mShowMasterShapes;
+    OADThemeOverrides * mThemeOverrides;
 }
 
 - (id)colorMap;
 - (id)colorMapOverride;
 - (id)colorScheme;
 - (void)dealloc;
+- (id)defaultTextListStyle;
+- (id)description;
 - (void)doneWithContent;
 - (id)drawingTheme;
 - (id)fontScheme;

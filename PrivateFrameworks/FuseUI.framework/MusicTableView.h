@@ -3,11 +3,11 @@
  */
 
 @interface MusicTableView : MusicBasicTableView {
-    BOOL _enforcesMinimumLayoutMargin;
-    int _highlightedSectionHeaderViewIndex;
-    BOOL _rightSeparatorInsetFollowsLayoutMargin;
-    int _selectedSectionHeaderViewIndex;
-    BOOL _shouldTreatContentOffsetChangesAsDeltas;
+    BOOL  _enforcesMinimumLayoutMargin;
+    int  _highlightedSectionHeaderViewIndex;
+    BOOL  _rightSeparatorInsetFollowsLayoutMargin;
+    int  _selectedSectionHeaderViewIndex;
+    BOOL  _shouldTreatContentOffsetChangesAsDeltas;
 }
 
 @property (nonatomic) <MusicTableViewDelegate> *delegate;

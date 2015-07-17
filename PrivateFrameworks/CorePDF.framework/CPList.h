@@ -3,10 +3,10 @@
  */
 
 @interface CPList : NSObject <CPDisposable> {
-    struct __CFArray { } *items;
-    unsigned int ordinalPrefixLength;
-    unsigned int ordinalSuffixLength;
-    CPListItem *parentItem;
+    struct __CFArray { } * items;
+    unsigned int  ordinalPrefixLength;
+    unsigned int  ordinalSuffixLength;
+    CPListItem * parentItem;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,8 +16,8 @@
             float width; 
             float height; 
         } size; 
-    } spacer;
-    int type;
+    }  spacer;
+    int  type;
 }
 
 @property (nonatomic) unsigned int ordinalPrefixLength;

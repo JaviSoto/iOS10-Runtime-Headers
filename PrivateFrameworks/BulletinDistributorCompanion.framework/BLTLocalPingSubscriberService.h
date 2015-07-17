@@ -3,8 +3,8 @@
  */
 
 @interface BLTLocalPingSubscriberService : NSObject <BLTPingService> {
-    <BLTPingSubscribing> *_delegate;
-    BLTBulletinDistributorSubscriber *_subscriber;
+    <BLTPingSubscribing> * _delegate;
+    BLTBulletinDistributorSubscriber * _subscriber;
 }
 
 @property (readonly, copy) NSString *debugDescription;

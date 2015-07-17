@@ -3,19 +3,19 @@
  */
 
 @interface MPViewController : UIViewController <MPAVControllerNode, MPControllerProtocol> {
-    unsigned int _appearing;
-    id _delegate;
-    BOOL _idleTimerDisabled;
-    int _interfaceOrientation;
-    MPAVItem *_item;
-    unsigned int _observesApplicationSuspendResumeEventsOnly;
-    MPAVController *_player;
-    int _playerLockedCount;
-    id /* block */ _popViewControllerHandler;
-    MPTransitionController *_pushedTransitionController;
-    MPViewController *_pushedViewController;
-    BOOL _registeredForPlayerNotifications;
-    unsigned int _showOverlayWhileAppearingDisabled;
+    unsigned int  _appearing;
+    id  _delegate;
+    BOOL  _idleTimerDisabled;
+    int  _interfaceOrientation;
+    MPAVItem * _item;
+    unsigned int  _observesApplicationSuspendResumeEventsOnly;
+    MPAVController * _player;
+    int  _playerLockedCount;
+    id /* block */  _popViewControllerHandler;
+    MPTransitionController * _pushedTransitionController;
+    MPViewController * _pushedViewController;
+    BOOL  _registeredForPlayerNotifications;
+    unsigned int  _showOverlayWhileAppearingDisabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

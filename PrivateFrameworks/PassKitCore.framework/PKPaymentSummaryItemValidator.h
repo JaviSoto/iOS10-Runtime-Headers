@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentSummaryItemValidator : NSObject <PKPaymentValidating> {
-    PKPaymentSummaryItem *_item;
+    PKPaymentSummaryItem * _item;
 }
 
 @property (readonly, copy) NSString *debugDescription;

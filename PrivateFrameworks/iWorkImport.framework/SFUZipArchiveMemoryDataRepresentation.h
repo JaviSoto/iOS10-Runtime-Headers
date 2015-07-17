@@ -3,7 +3,7 @@
  */
 
 @interface SFUZipArchiveMemoryDataRepresentation : SFUDataRepresentation <SFUZipArchiveDataRepresentation> {
-    NSData *mData;
+    NSData * mData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

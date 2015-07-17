@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardEmojiCategoryController : NSObject {
-    int _currentCategory;
+    int  _currentCategory;
 }
 
 + (Class)classForCategoryControl;

@@ -3,14 +3,14 @@
  */
 
 @interface BRCTermDumper : NSObject {
-    int _curAttrs;
-    int _curBg;
-    int _curFg;
-    int _fd;
-    BOOL _isatty;
-    unsigned long _termWidth;
-    BOOL _useColor;
-    unsigned long _usedTermWidth;
+    int  _curAttrs;
+    int  _curBg;
+    int  _curFg;
+    int  _fd;
+    BOOL  _isatty;
+    unsigned long  _termWidth;
+    BOOL  _useColor;
+    unsigned long  _usedTermWidth;
 }
 
 @property (nonatomic, readonly) BOOL isatty;

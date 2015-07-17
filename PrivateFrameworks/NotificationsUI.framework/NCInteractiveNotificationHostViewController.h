@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NotificationsUI.framework/NotificationsUI
  */
 
-@interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
-    NCViewServiceDescriptor *_accessoryViewService;
-    float _bottomOverhangHeight;
-    <NCInteractiveNotificationHostDelegate> *_delegate;
-    NCViewServiceDescriptor *_inlayViewService;
-    float _maximumHeight;
-    BOOL _modal;
-    BOOL _proximityMonitoringEnabled;
-    BOOL _showsKeyboard;
+@interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHost, NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
+    NCViewServiceDescriptor * _accessoryViewService;
+    float  _bottomOverhangHeight;
+    <NCInteractiveNotificationHostDelegate> * _delegate;
+    NCViewServiceDescriptor * _inlayViewService;
+    float  _maximumHeight;
+    BOOL  _modal;
+    BOOL  _proximityMonitoringEnabled;
+    BOOL  _showsKeyboard;
 }
 
 @property (nonatomic, retain) NCViewServiceDescriptor *accessoryViewService;

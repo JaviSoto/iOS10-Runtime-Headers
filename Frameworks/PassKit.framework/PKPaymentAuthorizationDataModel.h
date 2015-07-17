@@ -3,31 +3,33 @@
  */
 
 @interface PKPaymentAuthorizationDataModel : NSObject <PKPaymentValidating> {
-    NSArray *_acceptedPasses;
-    CNContact *_billingAddress;
-    CNContact *_cachedRecentAddress;
-    PKPaymentOptionsDefaults *_defaults;
-    unsigned int _holdPendingUpdatesCount;
-    NSString *_hostAppLocalizedName;
-    NSMutableArray *_items;
-    PKPassLibrary *_library;
-    PKPaymentPass *_pass;
-    PKPaymentApplication *_paymentApplication;
-    PKPaymentRequest *_paymentRequest;
-    PKPaymentTransaction *_pendingTransaction;
-    PKPaymentOptionsRecents *_recents;
-    CNContact *_shippingAddress;
-    BOOL _shippingEditable;
-    NSString *_shippingEditableMessage;
-    CNContact *_shippingEmail;
-    PKShippingMethod *_shippingMethod;
-    CNContact *_shippingName;
-    CNContact *_shippingPhone;
-    NSString *_shippingType;
-    NSMutableDictionary *_statusForPasses;
-    NSDecimalNumber *_transactionAmount;
-    NSMutableDictionary *_typeToItemMap;
-    id /* block */ _updateHandler;
+    NSArray * _acceptedPasses;
+    CNContact * _billingAddress;
+    CNContact * _cachedRecentAddress;
+    PKPaymentOptionsDefaults * _defaults;
+    unsigned int  _holdPendingUpdatesCount;
+    NSString * _hostAppBundleIdentifier;
+    NSString * _hostAppLocalizedName;
+    NSMutableArray * _items;
+    PKPassLibrary * _library;
+    PKPaymentPass * _pass;
+    PKPaymentApplication * _paymentApplication;
+    PKPaymentRequest * _paymentRequest;
+    PKPaymentTransaction * _pendingTransaction;
+    PKPaymentOptionsRecents * _recents;
+    CNContact * _shippingAddress;
+    BOOL  _shippingEditable;
+    NSString * _shippingEditableMessage;
+    CNContact * _shippingEmail;
+    PKShippingMethod * _shippingMethod;
+    CNContact * _shippingName;
+    CNContact * _shippingPhone;
+    NSString * _shippingType;
+    NSMutableDictionary * _statusForPasses;
+    NSDecimalNumber * _transactionAmount;
+    NSMutableDictionary * _typeToItemMap;
+    NSArray * _unavailablePasses;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, readonly) NSArray *acceptedPasses;
@@ -38,6 +40,7 @@
 @property (nonatomic, retain) PKPaymentOptionsDefaults *defaults;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *hostAppBundleIdentifier;
 @property (nonatomic, retain) NSString *hostAppLocalizedName;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, retain) PKPassLibrary *library;
@@ -59,17 +62,20 @@
 @property (nonatomic, retain) NSString *shippingType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDecimalNumber *transactionAmount;
+@property (nonatomic, readonly) NSArray *unavailablePasses;
 @property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
 - (void)_ensurePlaceholderItems;
-- (id)_inAppPaymentPassesForNetworks:(id)arg1;
-- (id)_initialBillingContactForPropertyID:(int)arg1;
-- (id)_initialShippingContactForPropertyID:(int)arg1;
+- (id)_inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2;
+- (id)_inAppPrivateLabelPaymentPasses;
+- (id)_initialBillingContactForProperty:(id)arg1;
+- (id)_initialShippingContactForProperty:(id)arg1;
 - (void)_notifyModelChanged;
 - (void)_setDataItem:(id)arg1;
 - (void)_setStatus:(int)arg1 forPaymentPass:(id)arg2;
+- (id)_simulatorPasses;
 - (id)acceptedPasses;
 - (void)beginUpdates;
 - (id)billingAddress;
@@ -78,6 +84,7 @@
 - (void)dealloc;
 - (id)defaults;
 - (void)endUpdates;
+- (id)hostAppBundleIdentifier;
 - (id)hostAppLocalizedName;
 - (id)init;
 - (BOOL)isShippingEditable;
@@ -96,6 +103,7 @@
 - (void)setBillingAddress:(id)arg1;
 - (void)setCachedRecentAddress:(id)arg1;
 - (void)setDefaults:(id)arg1;
+- (void)setHostAppBundleIdentifier:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPass:(id)arg1;
@@ -124,6 +132,7 @@
 - (id)shippingType;
 - (int)statusForPass:(id)arg1;
 - (id)transactionAmount;
+- (id)unavailablePasses;
 - (id /* block */)updateHandler;
 
 @end

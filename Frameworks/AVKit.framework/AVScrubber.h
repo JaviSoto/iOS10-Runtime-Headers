@@ -3,12 +3,12 @@
  */
 
 @interface AVScrubber : UISlider {
-    float _beginTouchLocationInViewY;
-    NSArray *_loadedTimeRanges;
-    AVLoadedTimeRangesView *_loadedTimeRangesMaxTrackView;
-    int _scrubbingSpeed;
-    UIImageView *_thumbView;
-    float _touchLocationOffsetFromThumbViewCenter;
+    float  _beginTouchLocationInViewY;
+    NSArray * _loadedTimeRanges;
+    AVLoadedTimeRangesView * _loadedTimeRangesMaxTrackView;
+    int  _scrubbingSpeed;
+    UIImageView * _thumbView;
+    float  _touchLocationOffsetFromThumbViewCenter;
 }
 
 @property (nonatomic, retain) NSArray *loadedTimeRanges;

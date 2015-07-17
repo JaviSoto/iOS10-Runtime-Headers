@@ -3,20 +3,19 @@
  */
 
 @interface GQDCallout2Path : GQDPath {
-    double mCornerRadius;
+    double  mCornerRadius;
     struct CGSize { 
         float width; 
         float height; 
-    } mSize;
-    BOOL mTailAtCenter;
+    }  mSize;
+    BOOL  mTailAtCenter;
     struct CGPoint { 
         float x; 
         float y; 
-    } mTailPosition;
-    double mTailSize;
+    }  mTailPosition;
+    double  mTailSize;
 }
 
-- (id).cxx_construct;
 - (double)cornerRadius;
 - (struct CGPath { }*)createBezierPath;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;

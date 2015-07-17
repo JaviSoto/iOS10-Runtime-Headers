@@ -3,10 +3,10 @@
  */
 
 @interface SKUIStackViewItemView : UIView {
-    UIColor *_borderColor;
-    UIImage *_image;
-    BOOL _shouldFlipImageHorizontal;
-    BOOL _shouldFlipImageVertical;
+    UIColor * _borderColor;
+    UIImage * _image;
+    BOOL  _shouldFlipImageHorizontal;
+    BOOL  _shouldFlipImageVertical;
 }
 
 @property (nonatomic, copy) UIColor *borderColor;

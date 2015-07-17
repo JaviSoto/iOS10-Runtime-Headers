@@ -3,17 +3,17 @@
  */
 
 @interface BLImage : NSObject <NSCopying> {
-    struct CGImage { } *_CGImage;
-    CIImage *_CIImage;
-    UIImage *_UIImage;
-    int _askedImageType;
-    BOOL _isPlaceholder;
-    int _obtainedImageType;
+    struct CGImage { } * _CGImage;
+    CIImage * _CIImage;
+    UIImage * _UIImage;
+    int  _askedImageType;
+    BOOL  _isPlaceholder;
+    int  _obtainedImageType;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
-    int _storageType;
+    }  _size;
+    int  _storageType;
 }
 
 @property (nonatomic) int askedImageType;

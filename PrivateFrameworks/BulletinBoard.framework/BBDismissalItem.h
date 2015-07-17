@@ -3,8 +3,8 @@
  */
 
 @interface BBDismissalItem : NSObject {
-    NSDate *_expiration;
-    unsigned int _feeds;
+    NSDate * _expiration;
+    unsigned int  _feeds;
 }
 
 @property (nonatomic, readonly, retain) NSDate *expiration;

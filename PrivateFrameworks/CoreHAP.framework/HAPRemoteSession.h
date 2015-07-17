@@ -3,30 +3,35 @@
  */
 
 @interface HAPRemoteSession : NSObject {
-    unsigned char _cipherReadKey;
-    unsigned char _cipherReadNonce;
-    unsigned char _cipherWriteKey;
-    unsigned char _cipherWriteNonce;
-    BOOL _commitResponded;
-    id /* block */ _findPeerHandler;
-    NSObject<OS_dispatch_source> *_idleTimer;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    id /* block */ _internalRequestHandler;
-    const char *_label;
-    unsigned char _pairVerifyDone;
-    struct PairingSessionPrivate { } *_pairVerifySession;
-    NSMutableDictionary *_prepareRequests;
-    BOOL _prepareResponded;
-    id /* block */ _requestHandler;
-    NSString *_sessionID;
-    BOOL _started;
-    int _state;
-    id /* block */ _stoppedHandler;
-    NSMutableDictionary *_transactions;
-    id /* block */ _transportSendMessage;
-    int _type;
-    NSObject<OS_dispatch_queue> *_userQueue;
-    NSMutableArray *_userTransactions;
+    unsigned char  _cipherReadKey;
+    unsigned char  _cipherReadNonce;
+    unsigned char  _cipherWriteKey;
+    unsigned char  _cipherWriteNonce;
+    unsigned long long  _clientIdleTimeoutNanos;
+    BOOL  _commitResponded;
+    unsigned long long  _commitTimeoutNanos;
+    id /* block */  _findPeerHandler;
+    NSObject<OS_dispatch_source> * _idleTimer;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    id /* block */  _internalRequestHandler;
+    const char * _label;
+    unsigned char  _pairVerifyDone;
+    struct PairingSessionPrivate { } * _pairVerifySession;
+    NSMutableDictionary * _prepareRequests;
+    BOOL  _prepareResponded;
+    id /* block */  _requestHandler;
+    unsigned long long  _sendInternalTimeoutNanos;
+    unsigned long long  _sendUserTimeoutNanos;
+    unsigned long long  _serverIdleTimeoutNanos;
+    NSString * _sessionID;
+    BOOL  _started;
+    int  _state;
+    id /* block */  _stoppedHandler;
+    NSMutableDictionary * _transactions;
+    id /* block */  _transportSendMessage;
+    int  _type;
+    NSObject<OS_dispatch_queue> * _userQueue;
+    NSMutableArray * _userTransactions;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;
@@ -64,7 +69,7 @@
 - (id)dispatchQueue;
 - (id /* block */)findPeerHandler;
 - (id)init;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(int)arg1 commitTimeout:(unsigned long long)arg2 clientIdleTimeout:(unsigned long long)arg3 serverIdleTimeout:(unsigned long long)arg4 sendInternalTimeout:(unsigned long long)arg5 sendUserTimeout:(unsigned long long)arg6;
 - (id /* block */)internalRequestHandler;
 - (id /* block */)requestHandler;
 - (void)sendRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;

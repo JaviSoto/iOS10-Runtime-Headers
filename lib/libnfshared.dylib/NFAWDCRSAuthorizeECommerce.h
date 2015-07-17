@@ -3,18 +3,18 @@
  */
 
 @interface NFAWDCRSAuthorizeECommerce : NSObject <NFAWDEventProtocol> {
-    AWDNFCSECRSAuthorizeECommerce *_metric;
-    NSData *aid;
-    unsigned int countryCode;
-    unsigned int currencyCode;
-    unsigned int merchantCapabilities;
-    NSData *merchantId;
-    unsigned int method;
-    unsigned long long otherAmount;
-    unsigned int status;
-    NSData *transactionId;
-    unsigned long long transactionTotal;
-    unsigned int transactionType;
+    AWDNFCSECRSAuthorizeECommerce * _metric;
+    NSData * aid;
+    unsigned int  countryCode;
+    unsigned int  currencyCode;
+    unsigned int  merchantCapabilities;
+    NSData * merchantId;
+    unsigned int  method;
+    unsigned long long  otherAmount;
+    unsigned int  status;
+    NSData * transactionId;
+    unsigned long long  transactionTotal;
+    unsigned int  transactionType;
 }
 
 @property (nonatomic, retain) NSData *aid;
@@ -26,7 +26,7 @@
 @property (nonatomic) unsigned int merchantCapabilities;
 @property (nonatomic, retain) NSData *merchantId;
 @property (nonatomic) unsigned int method;
-@property AWDNFCSECRSAuthorizeECommerce *metric;
+@property (nonatomic, retain) AWDNFCSECRSAuthorizeECommerce *metric;
 @property (nonatomic) unsigned long long otherAmount;
 @property (nonatomic) unsigned int status;
 @property (readonly) Class superclass;
@@ -62,6 +62,7 @@
 - (id)transactionId;
 - (unsigned long long)transactionTotal;
 - (unsigned int)transactionType;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

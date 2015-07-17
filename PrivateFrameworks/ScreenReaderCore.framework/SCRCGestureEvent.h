@@ -6,11 +6,11 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _averageLocation;
-    unsigned int _deviceIdentifier;
-    SCRCGestureFinger *_finger;
-    unsigned int _fingerCount;
-    double _time;
+    }  _averageLocation;
+    unsigned int  _deviceIdentifier;
+    SCRCGestureFinger * _finger;
+    unsigned int  _fingerCount;
+    double  _time;
 }
 
 - (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentAuthorizationNavigationBarBackgroundView : UIView {
-    _UIBackdropView *_backdropView;
+    _UIBackdropView * _backdropView;
 }
 
 - (void)_createSubviews;

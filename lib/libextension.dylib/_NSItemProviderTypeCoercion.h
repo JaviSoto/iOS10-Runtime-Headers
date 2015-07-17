@@ -3,8 +3,8 @@
  */
 
 @interface _NSItemProviderTypeCoercion : NSObject {
-    Class _targetClass;
-    id _value;
+    Class  _targetClass;
+    id  _value;
 }
 
 @property (nonatomic, copy) Class targetClass;

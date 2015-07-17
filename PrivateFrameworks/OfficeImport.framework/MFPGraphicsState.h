@@ -10,7 +10,7 @@
         float d; 
         float tx; 
         float ty; 
-    } mPageTransform;
+    }  mPageTransform;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -18,10 +18,9 @@
         float d; 
         float tx; 
         float ty; 
-    } mWorldTransform;
+    }  mWorldTransform;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithDefaults;
 - (id)initWithGraphicsState:(id)arg1;

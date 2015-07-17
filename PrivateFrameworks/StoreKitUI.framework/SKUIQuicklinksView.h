@@ -3,10 +3,10 @@
  */
 
 @interface SKUIQuicklinksView : UIView {
-    UIView *_borderView;
-    UIView *_collectionView;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
+    UIView * _borderView;
+    UIView * _collectionView;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIView *collectionView;

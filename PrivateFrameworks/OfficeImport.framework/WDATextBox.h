@@ -3,14 +3,15 @@
  */
 
 @interface WDATextBox : NSObject {
-    WDDocument *mDocument;
-    unsigned long mNextTextBoxId;
-    bool mOle;
-    WDAContent *mParent;
-    WDText *mText;
+    WDDocument * mDocument;
+    unsigned long  mNextTextBoxId;
+    bool  mOle;
+    WDAContent * mParent;
+    WDText * mText;
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)document;
 - (id)init;
 - (BOOL)isOle;

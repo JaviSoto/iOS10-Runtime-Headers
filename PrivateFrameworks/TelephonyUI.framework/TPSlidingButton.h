@@ -3,11 +3,11 @@
  */
 
 @interface TPSlidingButton : UIView <_UIActionSliderDelegate> {
-    _UIActionSlider *_acceptButton;
-    <TPSlidingButtonDelegateProtocol> *_delegate;
-    UIImageView *_dialImageView;
-    UIButton *_sideButtonRight;
-    int _type;
+    _UIActionSlider * _acceptButton;
+    <TPSlidingButtonDelegateProtocol> * _delegate;
+    UIImageView * _dialImageView;
+    UIButton * _sideButtonRight;
+    int  _type;
 }
 
 @property (retain) _UIActionSlider *acceptButton;
@@ -20,7 +20,7 @@
 @property (readonly) Class superclass;
 @property int type;
 
-- (struct CGSize { float x1; float x2; })_knobSize;
+- (void).cxx_destruct;
 - (id)acceptButton;
 - (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(float)arg2;
 - (void)actionSliderDidCompleteSlide:(id)arg1;

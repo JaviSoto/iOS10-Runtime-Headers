@@ -14,7 +14,7 @@
         unsigned int expires : 1; 
         unsigned int reserved1 : 7; 
         unsigned char reserved2[4]; 
-    } _downloadKey;
+    }  _downloadKey;
     struct unordered_multimap<long long, const zilch::TrafficDynamicTile::Flow *, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, const zilch::TrafficDynamicTile::Flow *> > > { 
         struct __hash_table<std::__1::__hash_value_type<long long, const zilch::TrafficDynamicTile::Flow *>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, const zilch::TrafficDynamicTile::Flow *>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, const zilch::TrafficDynamicTile::Flow *>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, const zilch::TrafficDynamicTile::Flow *> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<long long, const zilch::TrafficDynamicTile::Flow *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, const zilch::TrafficDynamicTile::Flow *>, void *> *> > > { 
@@ -39,11 +39,11 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _flows;
+    }  _flows;
     struct shared_ptr<zilch::TrafficDynamicTile> { 
         struct TrafficDynamicTile {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _tile;
+    }  _tile;
 }
 
 @property (nonatomic, readonly) unsigned long incidentCount;

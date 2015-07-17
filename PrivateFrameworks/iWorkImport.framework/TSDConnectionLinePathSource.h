@@ -3,9 +3,9 @@
  */
 
 @interface TSDConnectionLinePathSource : TSDBezierPathSource <TSDSmartPathSource> {
-    float mOutsetFrom;
-    float mOutsetTo;
-    int mType;
+    float  mOutsetFrom;
+    float  mOutsetTo;
+    int  mType;
 }
 
 @property (nonatomic) float outsetFrom;

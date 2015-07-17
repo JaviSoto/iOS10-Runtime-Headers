@@ -3,13 +3,13 @@
  */
 
 @interface BRFieldCKInfo : PBCodable <NSCopying, PQLValuable> {
-    NSString *_etag;
+    NSString * _etag;
     struct { 
         unsigned int knownToServer : 1; 
         unsigned int wasCached : 1; 
-    } _has;
-    BOOL _knownToServer;
-    BOOL _wasCached;
+    }  _has;
+    BOOL  _knownToServer;
+    BOOL  _wasCached;
 }
 
 @property (readonly, copy) NSString *debugDescription;

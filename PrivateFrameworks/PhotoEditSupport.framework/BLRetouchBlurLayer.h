@@ -3,9 +3,9 @@
  */
 
 @interface BLRetouchBlurLayer : BLRetouchEffectLayer {
-    int _radius;
-    float _radiusScale;
-    BOOL _sharpen;
+    int  _radius;
+    float  _radiusScale;
+    BOOL  _sharpen;
 }
 
 @property (nonatomic) int radius;

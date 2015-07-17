@@ -3,10 +3,10 @@
  */
 
 @interface AXServer : NSObject {
-    AXIPCClient *_client;
-    AXIPCServer *_server;
-    NSString *_serverIdentifier;
-    BOOL _shouldRegisterClientCallbackSourceOnMainRunloop;
+    AXIPCClient * _client;
+    AXIPCServer * _server;
+    NSString * _serverIdentifier;
+    BOOL  _shouldRegisterClientCallbackSourceOnMainRunloop;
 }
 
 @property (nonatomic, retain) AXIPCClient *client;
@@ -25,8 +25,12 @@
 - (id)client;
 - (void)dealloc;
 - (void)relinquishAssertionWithType:(id)arg1 identifier:(id)arg2;
+- (void)sendAsynchronousMessage:(id)arg1 replyOnQueue:(id)arg2 boolResultHandler:(id /* block */)arg3;
+- (void)sendAsynchronousMessage:(id)arg1 replyOnQueue:(id)arg2 handler:(id /* block */)arg3;
+- (void)sendAsynchronousMessage:(id)arg1 replyOnQueue:(id)arg2 objectResultHandler:(id /* block */)arg3;
 - (id)sendMessage:(id)arg1;
 - (void)sendSimpleMessage:(id)arg1;
+- (BOOL)sendSimpleMessage:(id)arg1 enqueueError:(id*)arg2;
 - (id)sendSimpleMessageWithObjectResult:(id)arg1;
 - (BOOL)sendSimpleMessageWithResult:(id)arg1;
 - (id)server;

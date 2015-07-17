@@ -3,15 +3,16 @@
  */
 
 @interface CNFRegAccountAuthorizationController : CNFRegAccountWebViewController {
-    NSString *_authID;
-    NSString *_authToken;
-    <CNFRegAccountAuthorizationDelegate> *_delegate;
+    NSString * _authID;
+    NSString * _authToken;
+    <CNFRegAccountAuthorizationDelegate> * _delegate;
 }
 
 @property (nonatomic, copy) NSString *authID;
 @property (nonatomic, copy) NSString *authToken;
 @property (nonatomic) <CNFRegAccountAuthorizationDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (id)authID;
 - (id)authIdHeaderValue;
 - (id)authToken;

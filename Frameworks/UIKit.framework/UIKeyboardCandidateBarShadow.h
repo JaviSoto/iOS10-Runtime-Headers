@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardCandidateBarShadow : UIView {
-    BOOL _inverted;
+    BOOL  _inverted;
 }
 
 @property (getter=isInverted, nonatomic) BOOL inverted;

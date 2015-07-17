@@ -3,8 +3,8 @@
  */
 
 @interface HDDiagnosticManager : NSObject {
-    int _lock;
-    NSHashTable *_objects;
+    int  _lock;
+    NSHashTable * _objects;
 }
 
 + (id)sharedDiagnosticManager;

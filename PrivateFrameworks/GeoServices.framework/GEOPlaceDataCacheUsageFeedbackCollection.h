@@ -3,7 +3,7 @@
  */
 
 @interface GEOPlaceDataCacheUsageFeedbackCollection : PBCodable <NSCopying> {
-    NSMutableArray *_cacheFeedbacks;
+    NSMutableArray * _cacheFeedbacks;
 }
 
 @property (nonatomic, retain) NSMutableArray *cacheFeedbacks;

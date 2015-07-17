@@ -3,25 +3,25 @@
  */
 
 @interface CompassBackgroundView : CompassRotatingView <GLKViewDelegate> {
-    float _bearing;
+    float  _bearing;
     struct CGPoint { 
         float x; 
         float y; 
-    } _compassCenter;
-    EAGLContext *_context;
+    }  _compassCenter;
+    EAGLContext * _context;
     struct CGPoint { 
         float x; 
         float y; 
-    } _currentOffset;
-    GLKView *_glView;
-    CompassAtlas *_imageAtlas;
-    CompassShader *_knockoutShader;
-    unsigned int _labelsIndexBuffer;
-    unsigned int *_labelsIndexes;
-    struct { float x1; float x2; float x3; float x4; struct { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; } *_labelsPoints;
-    unsigned int _labelsVertexArray;
-    unsigned int _labelsVertexBuffer;
-    CompassShader *_lineShader;
+    }  _currentOffset;
+    GLKView * _glView;
+    CompassAtlas * _imageAtlas;
+    CompassShader * _knockoutShader;
+    unsigned int  _labelsIndexBuffer;
+    unsigned int * _labelsIndexes;
+    struct { float x1; float x2; float x3; float x4; struct { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; } * _labelsPoints;
+    unsigned int  _labelsVertexArray;
+    unsigned int  _labelsVertexBuffer;
+    CompassShader * _lineShader;
     union _GLKMatrix4 { 
         struct { 
             float m00; 
@@ -42,11 +42,11 @@
             float m33; 
         } ; 
         float m[16]; 
-    } _modelViewMatrix;
-    CompassShader *_normalShader;
-    unsigned int _otherLinesIndexBuffer;
-    unsigned int _otherLinesVertexArray;
-    unsigned int _otherLinesVertexBuffer;
+    }  _modelViewMatrix;
+    CompassShader * _normalShader;
+    unsigned int  _otherLinesIndexBuffer;
+    unsigned int  _otherLinesVertexArray;
+    unsigned int  _otherLinesVertexBuffer;
     union _GLKMatrix4 { 
         struct { 
             float m00; 
@@ -67,16 +67,16 @@
             float m33; 
         } ; 
         float m[16]; 
-    } _projectionMatrix;
-    BOOL _shownInCompass;
-    CompassShader *_textureShader;
-    unsigned int _ticIndexBuffer;
-    unsigned int *_ticIndexes;
-    float _ticLength;
-    struct { float x1; float x2; float x3; float x4; float x5; float x6; struct { float x_7_1_1; float x_7_1_2; float x_7_1_3; float x_7_1_4; } x7; } *_ticPoints;
-    float _ticRadius;
-    unsigned int _ticVertexArray;
-    unsigned int _ticVertexBuffer;
+    }  _projectionMatrix;
+    BOOL  _shownInCompass;
+    CompassShader * _textureShader;
+    unsigned int  _ticIndexBuffer;
+    unsigned int * _ticIndexes;
+    float  _ticLength;
+    struct { float x1; float x2; float x3; float x4; float x5; float x6; struct { float x_7_1_1; float x_7_1_2; float x_7_1_3; float x_7_1_4; } x7; } * _ticPoints;
+    float  _ticRadius;
+    unsigned int  _ticVertexArray;
+    unsigned int  _ticVertexBuffer;
 }
 
 @property (nonatomic) float bearing;

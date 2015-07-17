@@ -3,7 +3,7 @@
  */
 
 @interface TKPickerSectionItem : TKPickerItem {
-    NSString *_text;
+    NSString * _text;
 }
 
 @property (nonatomic, copy) NSString *text;

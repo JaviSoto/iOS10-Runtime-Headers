@@ -3,11 +3,11 @@
  */
 
 @interface TSWPChange : TSPObject <TSKDocumentObject, TSPCopying> {
-    BOOL _changeWasAddedToDocumentRoot;
-    NSDate *_date;
-    int _kind;
-    TSWPStorage *_parentStorage;
-    TSWPChangeSession *_session;
+    BOOL  _changeWasAddedToDocumentRoot;
+    NSDate * _date;
+    int  _kind;
+    TSWPStorage * _parentStorage;
+    TSWPChangeSession * _session;
 }
 
 @property (nonatomic, readonly) TSUColor *changeAdornmentsColor;

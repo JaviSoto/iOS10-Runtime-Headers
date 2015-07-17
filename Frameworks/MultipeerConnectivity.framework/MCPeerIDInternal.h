@@ -3,9 +3,9 @@
  */
 
 @interface MCPeerIDInternal : NSObject {
-    NSString *_displayName;
-    NSString *_idString;
-    unsigned long long _pid64;
+    NSString * _displayName;
+    NSString * _idString;
+    unsigned long long  _pid64;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

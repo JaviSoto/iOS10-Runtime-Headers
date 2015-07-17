@@ -3,17 +3,17 @@
  */
 
 @interface PTPStorageInfoDataset : NSObject {
-    unsigned short _accessCapability;
-    NSMutableData *_content;
-    BOOL _dirty;
-    unsigned short _filesystemType;
-    unsigned long long _freeSpaceInBytes;
-    unsigned long _freeSpaceInImages;
-    unsigned long long _maxCapacity;
-    BOOL _readOnlyObject;
-    NSString *_storageDescription;
-    unsigned short _storageType;
-    NSString *_volumeLabel;
+    unsigned short  _accessCapability;
+    NSMutableData * _content;
+    BOOL  _dirty;
+    unsigned short  _filesystemType;
+    unsigned long long  _freeSpaceInBytes;
+    unsigned long  _freeSpaceInImages;
+    unsigned long long  _maxCapacity;
+    BOOL  _readOnlyObject;
+    NSString * _storageDescription;
+    unsigned short  _storageType;
+    NSString * _volumeLabel;
 }
 
 - (unsigned short)accessCapability;

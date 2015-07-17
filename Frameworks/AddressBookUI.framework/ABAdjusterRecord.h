@@ -3,10 +3,10 @@
  */
 
 @interface ABAdjusterRecord : NSObject {
-    float _adjustment;
-    NSTimer *_delayedScrollTimer;
-    BOOL _manuallyAdjusted;
-    UIScrollView *_scrollView;
+    float  _adjustment;
+    NSTimer * _delayedScrollTimer;
+    BOOL  _manuallyAdjusted;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic) float adjustment;

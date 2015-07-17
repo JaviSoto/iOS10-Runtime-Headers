@@ -3,13 +3,13 @@
  */
 
 @interface TPStarkInCallButtonsView : UIView {
-    float _buttonDistributionScalingFactor;
-    NSMutableArray *_buttonDividerViews;
-    NSArray *_buttonsArray;
-    NSMutableDictionary *_buttonsDictionary;
-    int _buttonsMode;
-    <TPStarkInCallButtonsViewDelegate> *_delegate;
-    int _highlightedControlIndex;
+    float  _buttonDistributionScalingFactor;
+    NSMutableArray * _buttonDividerViews;
+    NSArray * _buttonsArray;
+    NSMutableDictionary * _buttonsDictionary;
+    int  _buttonsMode;
+    <TPStarkInCallButtonsViewDelegate> * _delegate;
+    int  _highlightedControlIndex;
 }
 
 @property float buttonDistributionScalingFactor;
@@ -21,6 +21,7 @@
 @property (nonatomic) int highlightedControlIndex;
 @property (readonly) int numberOfControls;
 
+- (void).cxx_destruct;
 - (void)applyHorizontalPositioningConstraintWithFraction:(float)arg1 forButton:(id)arg2;
 - (void)applyHorizontalPositioningConstraintWithFraction:(float)arg1 forDividerView:(id)arg2;
 - (float)buttonDistributionScalingFactor;

@@ -3,9 +3,9 @@
  */
 
 @interface RURadioStationPreparationContext : NSObject {
-    RadioGetTracksResponse *_getTracksResponse;
-    NSMapTable *_preparedAdSlotByRadioTrack;
-    RadioStation *_station;
+    RadioGetTracksResponse * _getTracksResponse;
+    NSMapTable * _preparedAdSlotByRadioTrack;
+    RadioStation * _station;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;

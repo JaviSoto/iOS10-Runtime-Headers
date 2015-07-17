@@ -3,13 +3,13 @@
  */
 
 @interface CNFRegCallerIdDetailController : PSListItemsController {
-    CNFRegController *_regController;
+    CNFRegController * _regController;
 }
 
 @property (nonatomic, readonly, retain) CNFRegController *regController;
 
+- (void).cxx_destruct;
 - (void)_setupAccountHandlers;
-- (void)dealloc;
 - (id)initWithRegController:(id)arg1;
 - (id)regController;
 - (void)reloadCallerIdValues;

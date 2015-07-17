@@ -3,8 +3,8 @@
  */
 
 @interface _UIViewServiceImplicitAnimationDecodingProxy : _UITargetedProxy <_UIViewServiceImplicitAnimationDecodingProxy_EncodingProxyInterface> {
-    _UIViewAnimationAttributes *_animationAttributes;
-    SEL _implicitAnimationSelector;
+    _UIViewAnimationAttributes * _animationAttributes;
+    SEL  _implicitAnimationSelector;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,8 +14,8 @@
 
 + (id)proxyDecodingAnimationsForTarget:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)__animateNextInvocationOfSelector:(id)arg1 withAnimationAttributes:(id)arg2;
-- (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 
 @end

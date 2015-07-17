@@ -3,10 +3,10 @@
  */
 
 @interface AXElementGrouper : NSObject {
-    unsigned int _maximumGroupSize;
-    unsigned int _minimumGroupSize;
-    unsigned int _preferredGroupSize;
-    float _thresholdForDeterminingEqualSize;
+    unsigned int  _maximumGroupSize;
+    unsigned int  _minimumGroupSize;
+    unsigned int  _preferredGroupSize;
+    float  _thresholdForDeterminingEqualSize;
 }
 
 @property (nonatomic) unsigned int maximumGroupSize;

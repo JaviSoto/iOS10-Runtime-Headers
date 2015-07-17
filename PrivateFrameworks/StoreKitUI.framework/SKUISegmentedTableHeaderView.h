@@ -3,9 +3,9 @@
  */
 
 @interface SKUISegmentedTableHeaderView : UIView {
-    _UIBackdropView *_backdropView;
-    UIView *_borderView;
-    UIView *_segmentedControl;
+    _UIBackdropView * _backdropView;
+    UIView * _borderView;
+    UIView * _segmentedControl;
 }
 
 @property (nonatomic, readonly) _UIBackdropView *backdropView;

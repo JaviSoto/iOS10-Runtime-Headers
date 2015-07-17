@@ -3,35 +3,39 @@
  */
 
 @interface SBUIBannerContext : NSObject {
-    BOOL _isValid;
-    SBUIBannerItem *_item;
-    NSString *_presentingActionIdentifier;
-    BOOL _requestsModalPresentation;
-    <SBUIBannerSource> *_source;
-    <SBUIBannerTarget> *_target;
+    BOOL  _isValid;
+    SBUIBannerItem * _item;
+    NSString * _presentingActionIdentifier;
+    BOOL  _requestsModalPresentation;
+    <SBUIBannerSource> * _source;
+    <SBUIBannerTarget> * _target;
 }
 
-@property (nonatomic, readonly) SBUIBannerAction *interactiveAction;
 @property (nonatomic, readonly, retain) SBUIBannerItem *item;
 @property (nonatomic, copy) NSString *presentingActionIdentifier;
+@property (nonatomic, readonly) SBUIBannerAction *remoteInteractiveAction;
 @property (nonatomic) BOOL requestsModalPresentation;
 @property (nonatomic, readonly, retain) <SBUIBannerSource> *source;
 @property (nonatomic, readonly, retain) <SBUIBannerTarget> *target;
+@property (nonatomic, readonly) SBUIBannerAction *textInputAction;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
+- (id)_presentingAction;
+- (id)actionForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3 presentingActionIdentifier:(id)arg4 requestModalPresentation:(BOOL)arg5;
-- (id)interactiveAction;
 - (void)invalidate;
 - (BOOL)isValid;
 - (id)item;
 - (id)presentingActionIdentifier;
+- (id)remoteInteractiveAction;
 - (BOOL)requestsModalPresentation;
 - (void)setPresentingActionIdentifier:(id)arg1;
 - (void)setRequestsModalPresentation:(BOOL)arg1;
 - (id)source;
 - (id)target;
+- (id)textInputAction;
 
 @end

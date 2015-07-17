@@ -3,32 +3,32 @@
  */
 
 @interface BBSectionInfo : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _alertType;
-    BOOL _allowsNotifications;
-    NSArray *_dataProviderIDs;
-    NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
-    NSString *_factorySectionID;
-    BOOL _hideWeeApp;
-    BBSectionIcon *_icon;
-    unsigned int _notificationCenterLimit;
-    BBSectionInfo *_parentSection;
-    NSString *_pathToWeeAppPluginBundle;
-    unsigned int _pushSettings;
-    int _sectionCategory;
-    NSString *_sectionID;
-    int _sectionType;
-    BOOL _showsInLockScreen;
-    BOOL _showsInNotificationCenter;
-    BOOL _showsMessagePreview;
-    BOOL _showsOnBluetoothDevices;
-    BOOL _showsOnExternalDevices;
-    NSString *_subsectionID;
-    int _subsectionPriority;
-    NSArray *_subsections;
-    BOOL _suppressFromSettings;
-    unsigned int _suppressedSettings;
-    unsigned int _version;
+    unsigned int  _alertType;
+    BOOL  _allowsNotifications;
+    NSArray * _dataProviderIDs;
+    NSString * _displayName;
+    BOOL  _displaysCriticalBulletins;
+    NSString * _factorySectionID;
+    NSArray * _filters;
+    BOOL  _hideWeeApp;
+    BBSectionIcon * _icon;
+    BBSectionInfo * _parentSection;
+    NSString * _pathToWeeAppPluginBundle;
+    unsigned int  _pushSettings;
+    int  _sectionCategory;
+    NSString * _sectionID;
+    int  _sectionType;
+    BOOL  _showsInLockScreen;
+    BOOL  _showsInNotificationCenter;
+    BOOL  _showsMessagePreview;
+    BOOL  _showsOnBluetoothDevices;
+    BOOL  _showsOnExternalDevices;
+    NSString * _subsectionID;
+    int  _subsectionPriority;
+    NSArray * _subsections;
+    BOOL  _suppressFromSettings;
+    unsigned int  _suppressedSettings;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned int alertType;
@@ -39,6 +39,7 @@
 @property (nonatomic) BOOL displaysCriticalBulletins;
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *factorySectionID;
+@property (nonatomic, copy) NSArray *filters;
 @property (nonatomic) BOOL hideWeeApp;
 @property (nonatomic, copy) BBSectionIcon *icon;
 @property (nonatomic, readonly, copy) NSData *iconData;
@@ -59,6 +60,8 @@
 @property (nonatomic) BOOL suppressFromSettings;
 @property (nonatomic) unsigned int suppressedSettings;
 @property (nonatomic) unsigned int version;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
 
 + (id)defaultSectionInfoForSection:(id)arg1;
 + (id)defaultSectionInfoForType:(int)arg1;
@@ -85,6 +88,7 @@
 - (BOOL)enabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)factorySectionID;
+- (id)filters;
 - (BOOL)hideWeeApp;
 - (id)icon;
 - (id)iconData;
@@ -105,6 +109,7 @@
 - (void)setDisplaysCriticalBulletins:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFactorySectionID:(id)arg1;
+- (void)setFilters:(id)arg1;
 - (void)setHideWeeApp:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setNotificationCenterLimit:(unsigned int)arg1;
@@ -133,7 +138,14 @@
 - (id)subsections;
 - (BOOL)suppressFromSettings;
 - (unsigned int)suppressedSettings;
+- (void)updateWithDefaultFilters:(id)arg1;
 - (void)updateWithDefaultSectionInfo:(id)arg1;
 - (unsigned int)version;
+
+// Image: /System/Library/PrivateFrameworks/UserNotification.framework/UserNotification
+
+- (unsigned int)un_effectiveNotificationTypes;
+- (BOOL)un_isEnabled;
+- (id)un_sectionInfoWithNotificationTypes:(unsigned int)arg1;
 
 @end

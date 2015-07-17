@@ -3,7 +3,7 @@
  */
 
 @interface _MKPopoverEmbeddingView : UIView {
-    <_MKPopoverEmbeddingViewWindowDelegate> *_windowDelegate;
+    <_MKPopoverEmbeddingViewWindowDelegate> * _windowDelegate;
 }
 
 @property (nonatomic) <_MKPopoverEmbeddingViewWindowDelegate> *windowDelegate;

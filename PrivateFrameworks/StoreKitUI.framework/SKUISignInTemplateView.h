@@ -3,9 +3,9 @@
  */
 
 @interface SKUISignInTemplateView : SKUIViewReuseView <SKUIViewElementView> {
-    <SKUISignInViewDelegate> *_delegate;
-    NSMapTable *_viewElements;
-    NSMapTable *_viewMargins;
+    <SKUISignInViewDelegate> * _delegate;
+    NSMapTable * _viewElements;
+    NSMapTable * _viewMargins;
 }
 
 @property (readonly, copy) NSString *debugDescription;

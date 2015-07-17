@@ -3,19 +3,19 @@
  */
 
 @interface PUGridMagnifiedView : UIView {
-    UIImageView *_imageView;
-    UIImage *_itemImage;
-    NSIndexPath *_itemIndexPath;
+    UIImageView * _imageView;
+    UIImage * _itemImage;
+    NSIndexPath * _itemIndexPath;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _magnifiedDragEdgeInsets;
+    }  _magnifiedDragEdgeInsets;
     struct CGSize { 
         float width; 
         float height; 
-    } _magnifiedImageSize;
+    }  _magnifiedImageSize;
 }
 
 @property (nonatomic, retain) UIImageView *imageView;

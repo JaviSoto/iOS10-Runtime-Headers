@@ -3,14 +3,14 @@
  */
 
 @interface ABPersonContainerView : UIView <ABPersonTabsLayoutManager> {
-    UISegmentedControl *_contentSwitchingTabs;
-    UIImageView *_contentSwitchingTabsBorder;
-    UIImageView *_contentSwitchingTabsPocketShadow;
-    ABPersonTableViewDataSource *_dataSource;
-    BOOL _hidesContentSwitchingTabs;
-    UIView *_nonScrollableHeaderView;
-    ABPersonOverlayingContainerView *_overlayingContainerView;
-    ABPersonTableView *_tableView;
+    UISegmentedControl * _contentSwitchingTabs;
+    UIImageView * _contentSwitchingTabsBorder;
+    UIImageView * _contentSwitchingTabsPocketShadow;
+    ABPersonTableViewDataSource * _dataSource;
+    BOOL  _hidesContentSwitchingTabs;
+    UIView * _nonScrollableHeaderView;
+    ABPersonOverlayingContainerView * _overlayingContainerView;
+    ABPersonTableView * _tableView;
 }
 
 @property (nonatomic, retain) UISegmentedControl *contentSwitchingTabs;

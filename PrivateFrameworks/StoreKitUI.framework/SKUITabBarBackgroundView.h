@@ -3,15 +3,15 @@
  */
 
 @interface SKUITabBarBackgroundView : UIView {
-    int _backdropStyle;
-    _UIBackdropView *_backdropView;
-    UIView *_borderView;
-    UIView *_shadowView;
-    _UINavigationBarAppearanceStorage *appearanceStorage;
-    int barStyle;
-    UIColor *barTintColor;
-    BOOL barWantsAdaptiveBackdrop;
-    BOOL translucent;
+    int  _backdropStyle;
+    _UIBackdropView * _backdropView;
+    UIView * _borderView;
+    UIView * _shadowView;
+    _UINavigationBarAppearanceStorage * appearanceStorage;
+    int  barStyle;
+    UIColor * barTintColor;
+    BOOL  barWantsAdaptiveBackdrop;
+    BOOL  translucent;
 }
 
 @property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;

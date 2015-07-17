@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptDevice : SUScriptObject {
-    NSMutableArray *_scriptFunctions;
+    NSMutableArray * _scriptFunctions;
 }
 
 @property (readonly) NSString *UTIImage;

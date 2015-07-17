@@ -3,11 +3,11 @@
  */
 
 @interface PHUnauthorizedFetchResult : PHFetchResult {
-    id /* block */ _fetchBlock;
-    NSString *_identifier;
-    NSOrderedSet *_objectIDs;
-    NSArray *_objects;
-    PHFetchOptions *_options;
+    id /* block */  _fetchBlock;
+    NSString * _identifier;
+    NSOrderedSet * _objectIDs;
+    NSArray * _objects;
+    PHFetchOptions * _options;
 }
 
 @property (readonly) id /* block */ fetchBlock;
@@ -21,6 +21,7 @@
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (int)collectionFetchType;
 - (id)containerIdentifier;
+- (id)copyWithOptions:(id)arg1;
 - (id)description;
 - (id /* block */)fetchBlock;
 - (id)fetchRequest;
@@ -31,13 +32,13 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
-- (BOOL)interestedInChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)objectIDAtIndex:(unsigned int)arg1;
 - (id)objectIDs;
 - (id)objects;
 - (id)options;
 - (id)photoLibrary;
+- (unsigned int)possibleChangesForChange:(id)arg1;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
 - (void)updateRegistrationForChangeNotificationDeltas;
 

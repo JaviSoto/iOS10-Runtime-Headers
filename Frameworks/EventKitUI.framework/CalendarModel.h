@@ -3,22 +3,22 @@
  */
 
 @interface CalendarModel : NSObject <CalendarEventLoaderDelegate> {
-    int _cachedFakeTodayIndex;
-    NSCalendar *_calendar;
-    CalendarEventLoader *_eventLoader;
-    EKEventStore *_eventStore;
-    NSLock *_filterLock;
-    unsigned int _firstVisibleSecond;
-    int _invitationBearingStoresExist;
-    _EKNotificationMonitor *_notificationMonitor;
-    <OccurrenceCacheDataSourceProtocol> *_occurrenceCacheDataSource;
-    <OccurrenceCacheDataSourceProtocol> *_occurrenceCacheFilteredDataSource;
-    int _readWriteCalendarCount;
-    NSString *_searchString;
-    NSSet *_selectedCalendars;
-    EKCalendarDate *_selectedDate;
-    EKEvent *_selectedOccurrence;
-    NSArray *_visibleCalendars;
+    int  _cachedFakeTodayIndex;
+    NSCalendar * _calendar;
+    CalendarEventLoader * _eventLoader;
+    EKEventStore * _eventStore;
+    NSLock * _filterLock;
+    unsigned int  _firstVisibleSecond;
+    int  _invitationBearingStoresExist;
+    _EKNotificationMonitor * _notificationMonitor;
+    <OccurrenceCacheDataSourceProtocol> * _occurrenceCacheDataSource;
+    <OccurrenceCacheDataSourceProtocol> * _occurrenceCacheFilteredDataSource;
+    int  _readWriteCalendarCount;
+    NSString * _searchString;
+    NSSet * _selectedCalendars;
+    EKCalendarDate * _selectedDate;
+    EKEvent * _selectedOccurrence;
+    NSArray * _visibleCalendars;
 }
 
 @property (nonatomic, copy) NSCalendar *calendar;

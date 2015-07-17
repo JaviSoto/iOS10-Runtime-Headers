@@ -3,10 +3,10 @@
  */
 
 @interface CKMediaObjectManager : NSObject {
-    NSDictionary *_UTITypes;
-    NSArray *_classes;
-    NSDictionary *_dynTypes;
-    NSMutableDictionary *_transfers;
+    NSDictionary * _UTITypes;
+    NSArray * _classes;
+    NSDictionary * _dynTypes;
+    NSMutableDictionary * _transfers;
 }
 
 @property (nonatomic, copy) NSDictionary *UTITypes;

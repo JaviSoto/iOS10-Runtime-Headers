@@ -3,7 +3,7 @@
  */
 
 @interface PLExpandableView : UIView {
-    id /* block */ _collapsingCompletionHandler;
+    id /* block */  _collapsingCompletionHandler;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,8 +13,8 @@
             float width; 
             float height; 
         } size; 
-    } _contractedFrame;
-    <PLExpandableViewDelegate> *_delegate;
+    }  _contractedFrame;
+    <PLExpandableViewDelegate> * _delegate;
     struct { 
         unsigned int state : 3; 
         unsigned int prevState : 3; 
@@ -35,7 +35,7 @@
         unsigned int delegateWillCancelCollapsing : 1; 
         unsigned int delegateDidCancelCollapsing : 1; 
         unsigned int delegateExpandedFractionChanged : 1; 
-    } _expandFlags;
+    }  _expandFlags;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -45,29 +45,29 @@
             float width; 
             float height; 
         } size; 
-    } _expandedFrame;
-    id /* block */ _expansionCompletionHandler;
-    float _expansionFraction;
-    unsigned int _leftTouchIndex;
+    }  _expandedFrame;
+    id /* block */  _expansionCompletionHandler;
+    float  _expansionFraction;
+    unsigned int  _leftTouchIndex;
     struct CGPoint { 
         float x; 
         float y; 
-    } _leftTouchLocation;
-    float _pinchVelocity;
+    }  _leftTouchLocation;
+    float  _pinchVelocity;
     struct CGPoint { 
         float x; 
         float y; 
-    } _previousLeftLocation;
+    }  _previousLeftLocation;
     struct CGPoint { 
         float x; 
         float y; 
-    } _previousRightLocation;
-    unsigned int _rightTouchIndex;
+    }  _previousRightLocation;
+    unsigned int  _rightTouchIndex;
     struct CGPoint { 
         float x; 
         float y; 
-    } _rightTouchLocation;
-    double _trackingTimeInterval;
+    }  _rightTouchLocation;
+    double  _trackingTimeInterval;
 }
 
 @property (nonatomic) BOOL allowsExpansion;

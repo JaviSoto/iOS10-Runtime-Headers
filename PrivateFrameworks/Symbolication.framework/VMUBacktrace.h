@@ -15,8 +15,8 @@
         unsigned long long *frames; 
         char *frame_types; 
         unsigned int length; 
-    } _callstack;
-    int _flavor;
+    }  _callstack;
+    int  _flavor;
 }
 
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;

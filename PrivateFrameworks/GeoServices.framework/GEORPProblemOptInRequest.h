@@ -3,14 +3,14 @@
  */
 
 @interface GEORPProblemOptInRequest : PBRequest <NSCopying> {
-    NSData *_devicePushToken;
-    BOOL _didOptIn;
+    NSData * _devicePushToken;
+    BOOL  _didOptIn;
     struct { 
         unsigned int didOptIn : 1; 
-    } _has;
-    NSString *_problemId;
-    GEORPUserCredentials *_userCredentials;
-    NSString *_userEmail;
+    }  _has;
+    NSString * _problemId;
+    GEORPUserCredentials * _userCredentials;
+    NSString * _userEmail;
 }
 
 @property (nonatomic, retain) NSData *devicePushToken;
@@ -37,7 +37,7 @@
 - (BOOL)hasUserCredentials;
 - (BOOL)hasUserEmail;
 - (unsigned int)hash;
-- (id)initWithSubmissionID:(id)arg1 allowNotificationsAtPushToken:(id)arg2 allowContactBackAtEmailAddress:(id)arg3 traits:(id)arg4;
+- (id)initWithSubmissionID:(id)arg1 allowContactBackAtEmailAddress:(id)arg2 traits:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problemId;

@@ -3,27 +3,27 @@
  */
 
 @interface SiriUIReviewsViewController : SiriUISnippetViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    NSMutableArray *_cellSizeForRowCache;
+    NSMutableArray * _cellSizeForRowCache;
     struct { 
         unsigned int didLoadCollectionView : 1; 
         unsigned int viewForRatingForReview : 1; 
         unsigned int offsetForRatingView : 1; 
-    } _delegateFlags;
-    NSString *_providerName;
-    UIView *_providerView;
+    }  _delegateFlags;
+    NSString * _providerName;
+    UIView * _providerView;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _providerViewOffset;
-    int _reviewCharacterLimit;
-    SALocalSearchReviewList *_reviewList;
-    <SiriUIReviewsViewControllerDelegate> *_reviewsDelegate;
-    UIView *_totalRatingView;
+    }  _providerViewOffset;
+    int  _reviewCharacterLimit;
+    SALocalSearchReviewList * _reviewList;
+    <SiriUIReviewsViewControllerDelegate> * _reviewsDelegate;
+    UIView * _totalRatingView;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _totalRatingViewOffset;
-    float _verticalSpaceNeededForRatingView;
+    }  _totalRatingViewOffset;
+    float  _verticalSpaceNeededForRatingView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

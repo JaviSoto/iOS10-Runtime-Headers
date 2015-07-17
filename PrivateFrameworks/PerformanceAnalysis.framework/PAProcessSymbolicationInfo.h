@@ -3,9 +3,9 @@
  */
 
 @interface PAProcessSymbolicationInfo : NSObject {
-    NSArray *_imageInfos;
-    unsigned long long _sharedCacheOffset;
-    NSUUID *_sharedCacheUUID;
+    NSArray * _imageInfos;
+    unsigned long long  _sharedCacheOffset;
+    NSUUID * _sharedCacheUUID;
 }
 
 @property (readonly) NSArray *imageInfos;

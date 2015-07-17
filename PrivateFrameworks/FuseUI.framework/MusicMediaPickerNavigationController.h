@@ -3,21 +3,21 @@
  */
 
 @interface MusicMediaPickerNavigationController : MPUNavigationController <MusicClientContextConsuming, MusicSearchBarDelegate, MusicSearchViewControllerMediaPickerDelegate> {
-    BOOL _allowsCollectionsInSelectedEntities;
-    BOOL _allowsMultipleSelection;
-    MusicClientContext *_clientContext;
-    NSString *_collectionName;
-    BOOL _hidesRightBarButtonItem;
-    BOOL _includeStoreItemsInSearch;
-    BOOL _invokedForPlaylistEditing;
-    <MusicMediaPickerDelegate> *_mediaPickerDelegate;
-    NSMutableArray *_pickedEntities;
-    unsigned int _pickedEntitiesCount;
-    NSString *_prompt;
-    UIBarButtonItem *_rightBarButtonItem;
-    BOOL _showsOnlyStoreItems;
-    int _state;
-    NSMutableArray *_storeItemIDs;
+    BOOL  _allowsCollectionsInSelectedEntities;
+    BOOL  _allowsMultipleSelection;
+    MusicClientContext * _clientContext;
+    NSString * _collectionName;
+    BOOL  _hidesRightBarButtonItem;
+    BOOL  _includeStoreItemsInSearch;
+    BOOL  _invokedForPlaylistEditing;
+    <MusicMediaPickerDelegate> * _mediaPickerDelegate;
+    NSMutableArray * _pickedEntities;
+    unsigned int  _pickedEntitiesCount;
+    NSString * _prompt;
+    UIBarButtonItem * _rightBarButtonItem;
+    BOOL  _showsOnlyStoreItems;
+    int  _state;
+    NSMutableArray * _storeItemIDs;
 }
 
 @property (nonatomic) BOOL allowsCollectionsInSelectedEntities;

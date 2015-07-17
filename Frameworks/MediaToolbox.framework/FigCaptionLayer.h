@@ -3,7 +3,7 @@
  */
 
 @interface FigCaptionLayer : CALayer {
-    FigCaptionLayerPrivate *_priv;
+    FigCaptionLayerPrivate * _priv;
 }
 
 - (void)dealloc;

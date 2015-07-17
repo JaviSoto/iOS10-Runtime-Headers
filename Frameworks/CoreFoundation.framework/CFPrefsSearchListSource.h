@@ -3,10 +3,10 @@
  */
 
 @interface CFPrefsSearchListSource : CFPrefsSource {
-    struct __CFString { } *_identifier;
-    struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; } *_searchListLock;
-    struct __CFArray { } *_sourceList;
-    BOOL initialized;
+    struct __CFString { } * _identifier;
+    struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; } * _searchListLock;
+    struct __CFArray { } * _sourceList;
+    BOOL  initialized;
 }
 
 + (void)withSearchListForIdentifier:(struct __CFString { }*)arg1 container:(struct __CFString { }*)arg2 perform:(id /* block */)arg3;

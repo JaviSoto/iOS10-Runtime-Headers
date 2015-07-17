@@ -3,21 +3,21 @@
  */
 
 @interface _NSSQLiteStoreMigrator : NSObject {
-    NSSQLAdapter *_adapter;
-    NSMutableDictionary *_addedEntityMigrations;
-    NSSQLConnection *_connection;
-    NSMutableDictionary *_copiedEntityMigrations;
-    NSSQLModel *_dstModel;
-    BOOL _hasPKTableChanges;
-    NSMappingModel *_mappingModel;
-    NSMutableDictionary *_reindexedEntities;
-    NSMutableDictionary *_reindexedPropertiesByEntity;
-    NSMutableDictionary *_removedEntityMigrations;
-    NSMutableDictionary *_sourceToDestinationEntityMap;
-    NSSQLModel *_srcModel;
-    NSSQLCore *_store;
-    NSMutableDictionary *_tableMigrationDescriptionsByEntity;
-    NSMutableDictionary *_transformedEntityMigrations;
+    NSSQLAdapter * _adapter;
+    NSMutableDictionary * _addedEntityMigrations;
+    NSSQLConnection * _connection;
+    NSMutableDictionary * _copiedEntityMigrations;
+    NSSQLModel * _dstModel;
+    BOOL  _hasPKTableChanges;
+    NSMappingModel * _mappingModel;
+    NSMutableDictionary * _reindexedEntities;
+    NSMutableDictionary * _reindexedPropertiesByEntity;
+    NSMutableDictionary * _removedEntityMigrations;
+    NSMutableDictionary * _sourceToDestinationEntityMap;
+    NSSQLModel * _srcModel;
+    NSSQLCore * _store;
+    NSMutableDictionary * _tableMigrationDescriptionsByEntity;
+    NSMutableDictionary * _transformedEntityMigrations;
 }
 
 @property (readonly) NSSQLAdapter *adapter;

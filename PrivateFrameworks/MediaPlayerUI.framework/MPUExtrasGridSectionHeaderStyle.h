@@ -3,17 +3,17 @@
  */
 
 @interface MPUExtrasGridSectionHeaderStyle : NSObject {
-    NSDictionary *_defaultFontAttributes;
+    NSDictionary * _defaultFontAttributes;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _insets;
-    float _textBaselineDescender;
-    float _textBaselineHeight;
-    UIColor *_textColor;
-    NSString *_textStyle;
+    }  _insets;
+    float  _textBaselineDescender;
+    float  _textBaselineHeight;
+    UIColor * _textColor;
+    NSString * _textStyle;
 }
 
 @property (nonatomic, retain) NSDictionary *defaultFontAttributes;

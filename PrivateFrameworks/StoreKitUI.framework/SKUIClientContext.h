@@ -3,31 +3,32 @@
  */
 
 @interface SKUIClientContext : NSObject <SUClientInterfaceDelegatePrivate> {
-    NSString *_additionalPurchaseParameters;
-    SKUIApplicationController *_applicationController;
-    NSBundle *_bundle;
-    SUClientInterface *_clientInterface;
-    NSDictionary *_configurationDictionary;
-    SKUIStoreDialogController *_dialogController;
-    SKUILocalizedStringDictionary *_localizedStrings;
-    NSString *_metricsConfigurationIdentifier;
-    NSMapTable *_metricsPageContexts;
-    NSMutableArray *_navigationHistory;
-    NSString *_navigationHistoryPersistenceKey;
-    NSString *_purchaseAffiliateIdentifier;
-    SKUIURL *_purchaseReferrerURL;
-    int _purchaseURLBagType;
-    IKAppContext *_scriptAppContext;
-    NSString *_storeFrontIdentifier;
-    SSUpdatableAssetController *_updatableAssetController;
-    SKUIURLBag *_urlBag;
-    int _userInterfaceIdiomOverride;
+    NSString * _additionalPurchaseParameters;
+    SKUIApplicationController * _applicationController;
+    NSBundle * _bundle;
+    SUClientInterface * _clientInterface;
+    NSDictionary * _configurationDictionary;
+    SKUIStoreDialogController * _dialogController;
+    SKUILocalizedStringDictionary * _localizedStrings;
+    NSString * _metricsConfigurationIdentifier;
+    NSMapTable * _metricsPageContexts;
+    NSMutableArray * _navigationHistory;
+    NSString * _navigationHistoryPersistenceKey;
+    NSString * _purchaseAffiliateIdentifier;
+    SKUIURL * _purchaseReferrerURL;
+    int  _purchaseURLBagType;
+    IKAppContext * _scriptAppContext;
+    NSString * _storeFrontIdentifier;
+    SSUpdatableAssetController * _updatableAssetController;
+    SKUIURLBag * _urlBag;
+    int  _userInterfaceIdiomOverride;
 }
 
 @property (nonatomic, readonly) SSURLBag *URLBag;
 @property (getter=_applicationController, setter=_setApplicationController:, nonatomic) SKUIApplicationController *_applicationController;
 @property (getter=_scriptAppContext, setter=_setScriptAppContext:, nonatomic, retain) IKAppContext *_scriptAppContext;
 @property (nonatomic, readonly) SUClientInterface *clientInterface;
+@property (nonatomic, readonly, copy) NSDictionary *configurationDictionary;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -64,6 +65,7 @@
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
 - (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
+- (id)configurationDictionary;
 - (void)customizePurchase:(id)arg1;
 - (void)dealloc;
 - (id)description;

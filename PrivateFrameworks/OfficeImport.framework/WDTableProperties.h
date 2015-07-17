@@ -3,8 +3,8 @@
  */
 
 @interface WDTableProperties : NSObject <NSCopying> {
-    WDDocument *mDocument;
-    unsigned int mOriginal;
+    WDDocument * mDocument;
+    unsigned int  mOriginal;
     struct { 
         WDStyle *baseStyle; 
         unsigned short look; 
@@ -76,9 +76,9 @@
         unsigned int deletionDateOverridden : 1; 
         unsigned int editDateOverridden : 1; 
         unsigned int formattingChangeDateOverridden : 1; 
-    } mOriginalProperties;
-    unsigned int mResolved;
-    unsigned int mTracked;
+    }  mOriginalProperties;
+    unsigned int  mResolved;
+    unsigned int  mTracked;
     struct { 
         WDStyle *baseStyle; 
         unsigned short look; 
@@ -150,10 +150,9 @@
         unsigned int deletionDateOverridden : 1; 
         unsigned int editDateOverridden : 1; 
         unsigned int formattingChangeDateOverridden : 1; 
-    } mTrackedProperties;
+    }  mTrackedProperties;
 }
 
-- (id).cxx_construct;
 - (int)alignment;
 - (id)baseStyle;
 - (BOOL)biDirectional;
@@ -172,6 +171,7 @@
 - (void)dealloc;
 - (int)deleted;
 - (id)deletionDate;
+- (id)description;
 - (id)document;
 - (id)editDate;
 - (int)edited;

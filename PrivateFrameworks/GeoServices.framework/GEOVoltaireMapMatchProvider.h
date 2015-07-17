@@ -3,10 +3,10 @@
  */
 
 @interface GEOVoltaireMapMatchProvider : NSObject <PBRequesterDelegate> {
-    BOOL _cancelled;
-    id /* block */ _errorHandler;
-    id /* block */ _finishedHandler;
-    GEORequester *_requester;
+    BOOL  _cancelled;
+    id /* block */  _errorHandler;
+    id /* block */  _finishedHandler;
+    GEORequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;

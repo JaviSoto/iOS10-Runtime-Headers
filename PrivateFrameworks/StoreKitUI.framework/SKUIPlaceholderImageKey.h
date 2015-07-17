@@ -3,10 +3,10 @@
  */
 
 @interface SKUIPlaceholderImageKey : NSObject {
-    int _height;
-    int _imageTreatment;
-    IKColor *_placeholdeBackgroundColor;
-    int _width;
+    int  _height;
+    int  _imageTreatment;
+    IKColor * _placeholdeBackgroundColor;
+    int  _width;
 }
 
 - (void).cxx_destruct;

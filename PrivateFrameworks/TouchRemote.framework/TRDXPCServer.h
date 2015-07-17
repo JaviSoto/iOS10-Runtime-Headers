@@ -3,10 +3,10 @@
  */
 
 @interface TRDXPCServer : NSObject <NSXPCConnectionDelegate, NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableArray *_connections;
-    NSXPCListener *_listener;
-    unsigned int _serverStartCount;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableArray * _connections;
+    NSXPCListener * _listener;
+    unsigned int  _serverStartCount;
 }
 
 @property (nonatomic, readonly) NSArray *connections;

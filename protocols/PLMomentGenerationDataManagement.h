@@ -48,6 +48,7 @@
 - (NSSet *)deletedObjects;
 - (unsigned int)hardGenerationBatchSizeLimit;
 - (NSSet *)insertedObjects;
+- (<PLMomentAnalysisTransaction> *)momentAnalysisTransactionWithName:(const char *)arg1;
 - (void)pendingChangesUpdated:(unsigned int)arg1;
 - (NSString *)replayLogPath;
 - (NSSet *)updatedObjects;

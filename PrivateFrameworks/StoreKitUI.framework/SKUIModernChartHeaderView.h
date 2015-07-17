@@ -3,8 +3,8 @@
  */
 
 @interface SKUIModernChartHeaderView : UIView {
-    UIView *_contentView;
-    UILabel *_label;
+    UIView * _contentView;
+    UILabel * _label;
 }
 
 - (void).cxx_destruct;

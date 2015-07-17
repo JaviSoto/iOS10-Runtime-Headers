@@ -3,11 +3,11 @@
  */
 
 @interface SUItemReviewStatistics : NSObject <NSCopying> {
-    float _averageUserRating;
-    int _numberOfUserRatings;
-    NSString *_numberOfUserRatingsString;
-    int _numberOfUserReviews;
-    NSString *_numberOfUserReviewsString;
+    float  _averageUserRating;
+    int  _numberOfUserRatings;
+    NSString * _numberOfUserRatingsString;
+    int  _numberOfUserReviews;
+    NSString * _numberOfUserReviewsString;
 }
 
 @property (nonatomic) float averageUserRating;

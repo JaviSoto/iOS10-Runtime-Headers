@@ -3,12 +3,12 @@
  */
 
 @interface PUMomentsZoomLevelManager : NSObject <PUPhotosDataSourceChangeObserver> {
-    NSMutableArray *_allLevelInfos;
-    BOOL _isInvalidatingLayoutOfZoomLevels;
-    PUPhotosDataSource *_momentsDataSource;
-    PUSessionInfo *_sessionInfo;
-    PUCollectionViewIntermediateDataSource *_sharedIntermediateDataSource;
-    PUZoomableGridViewControllerSpec *_zoomableGridSpec;
+    NSMutableArray * _allLevelInfos;
+    BOOL  _isInvalidatingLayoutOfZoomLevels;
+    PUPhotosDataSource * _momentsDataSource;
+    PUSessionInfo * _sessionInfo;
+    PUCollectionViewIntermediateDataSource * _sharedIntermediateDataSource;
+    PUZoomableGridViewControllerSpec * _zoomableGridSpec;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,7 +29,7 @@
 - (id)existingViewControllerForZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
 - (unsigned int)highestZoomLevel;
 - (id)initWithSpec:(id)arg1;
-- (id)jumpToZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
+- (id)jumpToZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2 usingTopControllerConfigurationBlock:(id /* block */)arg3;
 - (unsigned int)lowestZoomLevel;
 - (void)markZoomInfosInvalidWithWidth:(float)arg1;
 - (id)momentsDataSource;

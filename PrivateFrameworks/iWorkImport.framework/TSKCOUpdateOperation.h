@@ -3,7 +3,7 @@
  */
 
 @interface TSKCOUpdateOperation : TSKCOAbstractOperation {
-    NSString *mPropertyName;
+    NSString * mPropertyName;
 }
 
 @property (nonatomic, readonly) NSString *propertyName;

@@ -3,9 +3,9 @@
  */
 
 @interface SBFWallpaperSettings : _UISettings {
-    int _blurReplacementMode;
-    unsigned int _colorBoxSize;
-    BOOL _replaceBlurs;
+    int  _blurReplacementMode;
+    unsigned int  _colorBoxSize;
+    BOOL  _replaceBlurs;
 }
 
 @property (nonatomic) int blurReplacementMode;

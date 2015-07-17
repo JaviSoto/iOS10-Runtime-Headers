@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableDataConditionalStyleSet : TSTTableDataObject {
-    TSTConditionalStyleSet *mConditionalStyleSet;
+    TSTConditionalStyleSet * mConditionalStyleSet;
 }
 
 - (void)dealloc;

@@ -3,17 +3,17 @@
  */
 
 @interface ABCountryPickerViewController : ABPickerViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_allCountries;
-    UILocalizedIndexedCollation *_collation;
-    NSArray *_filteredCountries;
-    NSDictionary *_indexToSections;
-    UISearchBar *_searchBar;
-    UISearchDisplayController *_searchController;
-    NSArray *_sectionIndexTitles;
-    NSArray *_sections;
-    NSString *_selectedCountryCode;
-    NSIndexPath *_selectedIndexPath;
-    UITableView *_tableView;
+    NSArray * _allCountries;
+    UILocalizedIndexedCollation * _collation;
+    NSArray * _filteredCountries;
+    NSDictionary * _indexToSections;
+    UISearchBar * _searchBar;
+    UISearchDisplayController * _searchController;
+    NSArray * _sectionIndexTitles;
+    NSArray * _sections;
+    NSString * _selectedCountryCode;
+    NSIndexPath * _selectedIndexPath;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

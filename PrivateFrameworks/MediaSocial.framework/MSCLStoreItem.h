@@ -3,14 +3,14 @@
  */
 
 @interface MSCLStoreItem : NSObject <NSCopying> {
-    NSString *_artistName;
-    MPArtworkCatalog *_artworkCatalog;
-    SKUIArtworkList *_artworkList;
-    SSLookupItemArtwork *_artworkTemplate;
-    NSString *_collectionName;
-    NSString *_displayName;
-    NSString *_itemIdentifier;
-    NSString *_kind;
+    NSString * _artistName;
+    MPArtworkCatalog * _artworkCatalog;
+    SKUIArtworkList * _artworkList;
+    SSLookupItemArtwork * _artworkTemplate;
+    NSString * _collectionName;
+    NSString * _displayName;
+    NSString * _itemIdentifier;
+    NSString * _kind;
 }
 
 @property (nonatomic, copy) NSString *artistName;

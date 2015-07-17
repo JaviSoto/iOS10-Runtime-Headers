@@ -3,7 +3,7 @@
  */
 
 @interface PUAdjustmentsToolControllerView : UIView {
-    PUAdjustmentsModeBar *_modeBar;
+    PUAdjustmentsModeBar * _modeBar;
 }
 
 @property (nonatomic) PUAdjustmentsModeBar *modeBar;

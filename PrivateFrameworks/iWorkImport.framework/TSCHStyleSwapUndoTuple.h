@@ -3,13 +3,13 @@
  */
 
 @interface TSCHStyleSwapUndoTuple : NSObject {
-    unsigned int mIndex;
-    TSSPropertySet *mMutatedProperties;
-    TSSStyle *mNewValue;
-    TSSStyle *mOldValue;
-    NSUUID *mRefLineUUID;
-    TSPObject<TSCHStyleSwapSupporting> *mStyleSwapSupporting;
-    int mSwapType;
+    unsigned int  mIndex;
+    TSSPropertySet * mMutatedProperties;
+    TSSStyle * mNewValue;
+    TSSStyle * mOldValue;
+    NSUUID * mRefLineUUID;
+    TSPObject<TSCHStyleSwapSupporting> * mStyleSwapSupporting;
+    int  mSwapType;
 }
 
 @property (readonly) TSSStyle *afterValue;

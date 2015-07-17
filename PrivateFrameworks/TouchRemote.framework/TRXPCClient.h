@@ -3,8 +3,8 @@
  */
 
 @interface TRXPCClient : NSObject <NSXPCConnectionDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSXPCConnection *_connection;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

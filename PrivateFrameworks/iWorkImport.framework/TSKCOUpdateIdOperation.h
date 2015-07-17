@@ -3,7 +3,7 @@
  */
 
 @interface TSKCOUpdateIdOperation : TSKCOUpdateOperation <TSKCOIdOperation, TSKCOTransforming, TSKCOUpdateIdOperationSubset> {
-    TSKCOIdAddress *mAddress;
+    TSKCOIdAddress * mAddress;
 }
 
 @property (nonatomic, readonly) TSKCOIdAddress *address;

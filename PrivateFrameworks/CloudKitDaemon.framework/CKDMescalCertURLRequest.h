@@ -3,7 +3,7 @@
  */
 
 @interface CKDMescalCertURLRequest : CKDURLRequest {
-    NSData *_mescalCert;
+    NSData * _mescalCert;
 }
 
 @property (nonatomic, retain) NSData *mescalCert;

@@ -6,8 +6,8 @@
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _sharingBadgeOffset;
-    NSIndexPath *_zoomingCellIndexPath;
+    }  _sharingBadgeOffset;
+    NSIndexPath * _zoomingCellIndexPath;
 }
 
 @property (nonatomic) <PUAvalancheReviewCollectionViewLayoutDelegate> *delegate;

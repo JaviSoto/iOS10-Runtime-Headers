@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVCalendarServerNotificationTypeItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_inviteNotification;
-    CoreDAVItemWithNoChildren *_inviteReply;
-    CoreDAVItemWithNoChildren *_resourceChanged;
+    CoreDAVItemWithNoChildren * _inviteNotification;
+    CoreDAVItemWithNoChildren * _inviteReply;
+    CoreDAVItemWithNoChildren * _resourceChanged;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *inviteNotification;
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) BOOL isResourceChanged;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *resourceChanged;
 
+- (void).cxx_destruct;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
 - (id)inviteNotification;
 - (id)inviteReply;

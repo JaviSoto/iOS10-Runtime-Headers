@@ -3,7 +3,7 @@
  */
 
 @interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring> {
-    <MusicEntityVerticalLockupViewDelegate> *_delegate;
+    <MusicEntityVerticalLockupViewDelegate> * _delegate;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

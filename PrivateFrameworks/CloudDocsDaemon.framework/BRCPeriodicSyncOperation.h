@@ -3,8 +3,8 @@
  */
 
 @interface BRCPeriodicSyncOperation : _BRCOperation <BRCOperationSubclass> {
-    CKServerChangeToken *_metadataChangeToken;
-    BRCContainerScheduler *_scheduler;
+    CKServerChangeToken * _metadataChangeToken;
+    BRCContainerScheduler * _scheduler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,5 +20,6 @@
 - (id)metadataChangeToken;
 - (id)scheduler;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

@@ -6,38 +6,38 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _controlPointSize;
-    float _enlargementScale;
-    struct CGColor { } *_grabberColor;
-    CALayer *_hiLayer;
-    CALayer *_imageContainer;
-    CALayer *_imageLayer;
-    CALayer *_leftBar;
-    CALayer *_leftGrabber;
-    CALayer *_loLayer;
-    BOOL _loupe;
+    }  _controlPointSize;
+    float  _enlargementScale;
+    struct CGColor { } * _grabberColor;
+    CALayer * _hiLayer;
+    CALayer * _imageContainer;
+    CALayer * _imageLayer;
+    CALayer * _leftBar;
+    CALayer * _leftGrabber;
+    CALayer * _loLayer;
+    BOOL  _loupe;
     struct CGSize { 
         float width; 
         float height; 
-    } _magnifierSize;
-    CALayer *_maskLayer;
-    unsigned int _pageRotation;
+    }  _magnifierSize;
+    CALayer * _maskLayer;
+    unsigned int  _pageRotation;
     struct CGPoint { 
         float x; 
         float y; 
-    } _pointToMagnify;
-    float _power;
-    CALayer *_rightBar;
-    CALayer *_rightGrabber;
-    CAShapeLayer *_selectionLayer;
-    UIView *_textEffectsSubView;
-    UIWindow *_textEffectsWindow;
+    }  _pointToMagnify;
+    float  _power;
+    CALayer * _rightBar;
+    CALayer * _rightGrabber;
+    CAShapeLayer * _selectionLayer;
+    UIView * _textEffectsSubView;
+    UIWindow * _textEffectsWindow;
     struct CGPoint { 
         float x; 
         float y; 
-    } _touchPoint;
-    BOOL _visible;
-    UIPDFPageView *pageView;
+    }  _touchPoint;
+    BOOL  _visible;
+    UIPDFPageView * pageView;
 }
 
 @property (nonatomic) UIPDFPageView *pageView;

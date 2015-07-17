@@ -3,9 +3,9 @@
  */
 
 @interface RURadioStreamPing : NSObject {
-    double _timestamp;
-    int _type;
-    NSData *_value;
+    double  _timestamp;
+    int  _type;
+    NSData * _value;
 }
 
 @property (nonatomic, readonly) double timestamp;

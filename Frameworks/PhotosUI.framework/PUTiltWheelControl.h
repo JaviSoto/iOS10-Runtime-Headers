@@ -3,18 +3,18 @@
  */
 
 @interface PUTiltWheelControl : UIControl <PUTiltWheelDataSource> {
-    BOOL __needsDataReload;
+    BOOL  __needsDataReload;
     struct CGPoint { 
         float x; 
         float y; 
-    } __panPreviousPoint;
-    PUSnappingController *__snappingController;
-    PUTiltWheel *__tiltWheel;
-    PUTiltWheelTriangleView *__triangleView;
-    float _maxTiltAngle;
-    float _minTiltAngle;
-    float _tiltAngle;
-    int _wheelOrientation;
+    }  __panPreviousPoint;
+    PUSnappingController * __snappingController;
+    PUTiltWheel * __tiltWheel;
+    PUTiltWheelTriangleView * __triangleView;
+    float  _maxTiltAngle;
+    float  _minTiltAngle;
+    float  _tiltAngle;
+    int  _wheelOrientation;
 }
 
 @property (setter=_setNeedsDataReload:, nonatomic) BOOL _needsDataReload;

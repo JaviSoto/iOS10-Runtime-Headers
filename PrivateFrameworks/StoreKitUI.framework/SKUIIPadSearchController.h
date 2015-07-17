@@ -3,9 +3,9 @@
  */
 
 @interface SKUIIPadSearchController : NSObject <SKUISearchFieldDelegate> {
-    SKUIClientContext *_clientContext;
-    UIViewController *_parentViewController;
-    SKUISearchFieldController *_searchFieldController;
+    SKUIClientContext * _clientContext;
+    UIViewController * _parentViewController;
+    SKUISearchFieldController * _searchFieldController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

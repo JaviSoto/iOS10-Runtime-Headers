@@ -3,26 +3,26 @@
  */
 
 @interface _NCWidgetViewController : UIViewController <SBUISizeObservingViewDelegate, _NCWidgetViewController_Service_IPC> {
-    _UIViewControllerTransitionContext *_activeTransitionContext;
-    NSMapTable *_activeTransitionContextsByRequestID;
+    _UIViewControllerTransitionContext * _activeTransitionContext;
+    NSMapTable * _activeTransitionContextsByRequestID;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _clientMarginInsets;
-    float _clientPreferredViewHeight;
-    UIViewController<NCWidgetProviding> *_contentProvidingViewController;
+    }  _clientMarginInsets;
+    float  _clientPreferredViewHeight;
+    UIViewController<NCWidgetProviding> * _contentProvidingViewController;
     struct { 
         unsigned int implementsPerformUpdateWithCompletionHandler : 1; 
         unsigned int implementsMarginInsets : 1; 
         unsigned int implementsContentWidthDidChange : 1; 
-    } _contentProvidingViewControllerFlags;
-    UIView *_contentView;
-    NSObject<OS_dispatch_queue> *_remoteViewControllerProxyQueue;
-    <UIViewControllerAnimatedTransitioning> *_transitionController;
-    NSString *_widgetIdentifier;
-    NSMapTable *_wrappedAppearStatesToOpenTransactionIDs;
+    }  _contentProvidingViewControllerFlags;
+    UIView * _contentView;
+    NSObject<OS_dispatch_queue> * _remoteViewControllerProxyQueue;
+    <UIViewControllerAnimatedTransitioning> * _transitionController;
+    NSString * _widgetIdentifier;
+    NSMapTable * _wrappedAppearStatesToOpenTransactionIDs;
 }
 
 @property (getter=_contentProvidingViewController, nonatomic, retain) UIViewController<NCWidgetProviding> *contentProvidingViewController;

@@ -3,10 +3,10 @@
  */
 
 @interface CKMovieBalloonView : CKImageBalloonView {
-    AVPlayer *_avPlayer;
-    AVPlayerItem *_avPlayerItem;
-    AVPlayerLayer *_avPlayerLayer;
-    CKMovieMediaObject *_mediaObject;
+    AVPlayer * _avPlayer;
+    AVPlayerItem * _avPlayerItem;
+    AVPlayerLayer * _avPlayerLayer;
+    CKMovieMediaObject * _mediaObject;
 }
 
 @property (setter=setAVPlayer:, nonatomic, retain) AVPlayer *avPlayer;

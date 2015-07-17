@@ -3,13 +3,12 @@
  */
 
 @interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
-    int bundle;
-    int chatMode;
-    <GKVoiceChatClient> *client;
-    BOOL clientHasRTChannel;
-    NSLock *clientLock;
-    VideoConference *conf;
-    unsigned long curCallID;
+    int  chatMode;
+    <GKVoiceChatClient> * client;
+    BOOL  clientHasRTChannel;
+    NSLock * clientLock;
+    VideoConference * conf;
+    unsigned long  curCallID;
     struct tagCONNRESULT { 
         unsigned int dwCallID; 
         int iResultCount; 
@@ -84,20 +83,17 @@
         int bIfPrimary; 
         int bIfReplaceOnly; 
         struct tagCONNRESULT {} *next; 
-    } currentConnResult;
-    int didUseICE;
-    BOOL focus;
-    BOOL forceNoICE;
-    GKVoiceChatDictionary *incomingCallDict;
-    BOOL inputMeteringEnabled;
-    BOOL microphoneMuted;
-    GKVoiceChatDictionary *outgoingCallDict;
-    BOOL outputMeteringEnabled;
-    NSString *sdp;
-    int state;
-    NSRecursiveLock *stateLock;
-    LoopbackSocketTunnel *tunnel;
-    GKVoiceChatService *wrapperService;
+    }  currentConnResult;
+    BOOL  focus;
+    BOOL  forceNoICE;
+    GKVoiceChatDictionary * incomingCallDict;
+    BOOL  inputMeteringEnabled;
+    BOOL  microphoneMuted;
+    GKVoiceChatDictionary * outgoingCallDict;
+    BOOL  outputMeteringEnabled;
+    int  state;
+    NSRecursiveLock * stateLock;
+    GKVoiceChatService * wrapperService;
 }
 
 @property int chatMode;

@@ -3,7 +3,7 @@
  */
 
 @interface IDSSession : NSObject {
-    _IDSSession *_internal;
+    _IDSSession * _internal;
 }
 
 @property (nonatomic) int invitationTimeOut;

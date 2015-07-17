@@ -6,7 +6,7 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } lock;
+    }  lock;
 }
 
 - (void)dealloc;

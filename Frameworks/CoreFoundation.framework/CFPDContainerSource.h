@@ -3,7 +3,7 @@
  */
 
 @interface CFPDContainerSource : CFPDSource {
-    struct __CFString { } *_containerPath;
+    struct __CFString { } * _containerPath;
 }
 
 - (struct __CFString { }*)container;

@@ -3,11 +3,11 @@
  */
 
 @interface SSRentalCheckoutRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    long long _downloadIdentifier;
-    NSNumber *_rentalKeyIdentifier;
-    BOOL _shouldValidateRentalInfo;
-    NSArray *_sinfs;
+    NSNumber * _accountIdentifier;
+    long long  _downloadIdentifier;
+    NSNumber * _rentalKeyIdentifier;
+    BOOL  _shouldValidateRentalInfo;
+    NSArray * _sinfs;
 }
 
 @property (readonly) NSNumber *accountIdentifier;

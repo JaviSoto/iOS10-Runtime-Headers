@@ -3,13 +3,15 @@
  */
 
 @interface BRCUserNotification : NSObject {
-    struct __CFUserNotification { } *_cfUserNotification;
-    NSMutableDictionary *_dialogInfo;
-    NSObject<OS_dispatch_source> *_displaySource;
-    unsigned long long _nextDisplayBeginTime;
-    id _progressSubscriber;
-    struct __CFRunLoopSource { } *_source;
+    struct __CFUserNotification { } * _cfUserNotification;
+    NSMutableDictionary * _dialogInfo;
+    NSObject<OS_dispatch_source> * _displaySource;
+    unsigned long long  _nextDisplayBeginTime;
+    id  _progressSubscriber;
+    struct __CFRunLoopSource { } * _source;
 }
+
++ (void)showUploadNotificationForDocWithName:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_displayDialogWithType:(unsigned long)arg1 dict:(id)arg2 options:(id)arg3 userReplyBlock:(id /* block */)arg4;
@@ -23,12 +25,12 @@
 - (void)dealloc;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)showCloudDriveAppUpSellNotificationWithUserReplyBlock:(id /* block */)arg1;
 - (void)showErrorApplicationNotInstalledForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErrorApplicationProfileDisabledForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErrorDeviceOfflineForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErrorItemIsNoLongerSharedForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErrorParticipantLimitReachedForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorSaveShareForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErrorSetupiCloudForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErrorTurnOniCloudDriveForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
 - (void)showErroriCloudNotReachableForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;

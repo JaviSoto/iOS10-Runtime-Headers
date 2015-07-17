@@ -3,45 +3,45 @@
  */
 
 @interface PUStackView : UIView {
-    UIView *__backgroundView;
-    NSPointerArray *__imageSizes;
-    int __numberOfViews;
-    NSArray *__photoDecorationVariants;
-    NSArray *__photoViews;
-    UIImageView *_combinedPhotoDecorationImageView;
-    BOOL _combinesPhotoDecorations;
-    UIImage *_emptyPlaceholderImage;
-    UIColor *_gridBackgroundColor;
-    float _gridBackgroundCornerRadius;
-    float _gridItemSpacing;
-    float _gridMargin;
-    BOOL _imageHidden;
-    BOOL _needsDynamicLayout;
-    int _numberOfVisibleItems;
-    PUPhotoDecoration *_photoDecoration;
+    UIView * __backgroundView;
+    NSPointerArray * __imageSizes;
+    int  __numberOfViews;
+    NSArray * __photoDecorationVariants;
+    NSArray * __photoViews;
+    UIImageView * _combinedPhotoDecorationImageView;
+    BOOL  _combinesPhotoDecorations;
+    UIImage * _emptyPlaceholderImage;
+    UIColor * _gridBackgroundColor;
+    float  _gridBackgroundCornerRadius;
+    float  _gridItemSpacing;
+    float  _gridMargin;
+    BOOL  _imageHidden;
+    BOOL  _needsDynamicLayout;
+    int  _numberOfVisibleItems;
+    PUPhotoDecoration * _photoDecoration;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _stackOffset;
+    }  _stackOffset;
     struct CGPoint { 
         float x; 
         float y; 
-    } _stackPerspectiveFactor;
+    }  _stackPerspectiveFactor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _stackPerspectiveInsets;
+    }  _stackPerspectiveInsets;
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    } _stackPerspectiveOffset;
+    }  _stackPerspectiveOffset;
     struct CGSize { 
         float width; 
         float height; 
-    } _stackSize;
-    unsigned int _style;
+    }  _stackSize;
+    unsigned int  _style;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -49,7 +49,7 @@
         float d; 
         float tx; 
         float ty; 
-    } _transforms;
+    }  _transforms;
 }
 
 @property (setter=_setBackgroundView:, nonatomic, retain) UIView *_backgroundView;

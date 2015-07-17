@@ -3,11 +3,11 @@
  */
 
 @interface BBObserverBulletinAttachmentInfo : NSObject {
-    NSMutableDictionary *_imageSizePairs;
-    BOOL _imagesFetched;
-    NSString *_imagesRecordID;
-    BOOL _sizesFetched;
-    NSString *_sizesRecordID;
+    NSMutableDictionary * _imageSizePairs;
+    BOOL  _imagesFetched;
+    NSString * _imagesRecordID;
+    BOOL  _sizesFetched;
+    NSString * _sizesRecordID;
 }
 
 @property (nonatomic) BOOL imagesFetched;

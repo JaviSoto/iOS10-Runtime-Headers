@@ -3,8 +3,8 @@
  */
 
 @interface SSSQLiteEntity : NSObject <SSSQLiteEntity> {
-    SSSQLiteDatabase *_database;
-    long long _persistentID;
+    SSSQLiteDatabase * _database;
+    long long  _persistentID;
 }
 
 @property (nonatomic, readonly) SSSQLiteDatabase *database;

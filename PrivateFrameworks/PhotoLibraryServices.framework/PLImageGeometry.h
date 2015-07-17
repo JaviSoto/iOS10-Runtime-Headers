@@ -3,7 +3,7 @@
  */
 
 @interface PLImageGeometry : NSObject <NSCopying> {
-    int _appliedOrientation;
+    int  _appliedOrientation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -13,7 +13,7 @@
             float width; 
             float height; 
         } size; 
-    } _inputRect;
+    }  _inputRect;
 }
 
 @property (nonatomic) int appliedOrientation;

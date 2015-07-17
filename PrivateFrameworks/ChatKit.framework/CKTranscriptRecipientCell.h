@@ -3,27 +3,27 @@
  */
 
 @interface CKTranscriptRecipientCell : UITableViewCell {
-    UIImage *_contactImage;
-    UIImageView *_contactImageView;
-    NSString *_entityName;
-    UIButton *_facetimeVideoButton;
-    UIButton *_infoButton;
-    UILabel *_locationLabel;
-    NSString *_locationString;
-    UIButton *_mailButton;
-    float _margin;
-    UILabel *_nameLabel;
-    UIButton *_phoneButton;
-    BOOL _showFaceTimeVideoButton;
-    BOOL _showInfoButton;
-    BOOL _showMailButton;
-    BOOL _showPhoneButton;
-    BOOL _showsLocation;
-    NSMutableArray *_visibleButtons;
+    CNContact * _contact;
+    CNAvatarView * _contactAvatarView;
+    NSString * _entityName;
+    UIButton * _facetimeVideoButton;
+    UIButton * _infoButton;
+    UILabel * _locationLabel;
+    NSString * _locationString;
+    UIButton * _mailButton;
+    float  _margin;
+    UILabel * _nameLabel;
+    UIButton * _phoneButton;
+    BOOL  _showFaceTimeVideoButton;
+    BOOL  _showInfoButton;
+    BOOL  _showMailButton;
+    BOOL  _showPhoneButton;
+    BOOL  _showsLocation;
+    NSMutableArray * _visibleButtons;
 }
 
-@property (nonatomic, retain) UIImage *contactImage;
-@property (nonatomic, retain) UIImageView *contactImageView;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, retain) CNAvatarView *contactAvatarView;
 @property (nonatomic, copy) NSString *entityName;
 @property (nonatomic, retain) UIButton *facetimeVideoButton;
 @property (nonatomic, retain) UIButton *infoButton;
@@ -45,8 +45,8 @@
 + (float)preferredHeight;
 
 - (void)_updateVisibleButtons;
-- (id)contactImage;
-- (id)contactImageView;
+- (id)contact;
+- (id)contactAvatarView;
 - (void)dealloc;
 - (id)entityName;
 - (id)facetimeVideoButton;
@@ -59,8 +59,8 @@
 - (float)margin;
 - (id)nameLabel;
 - (id)phoneButton;
-- (void)setContactImage:(id)arg1;
-- (void)setContactImageView:(id)arg1;
+- (void)setContact:(id)arg1;
+- (void)setContactAvatarView:(id)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setFacetimeVideoButton:(id)arg1;
 - (void)setInfoButton:(id)arg1;

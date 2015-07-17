@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramPyramidMapper : CMDiagramShapeMapper {
-    BOOL mIsFlipped;
+    BOOL  mIsFlipped;
 }
 
 - (id)_suggestedBoundsForNodeAtIndex:(unsigned int)arg1;

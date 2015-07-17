@@ -3,7 +3,7 @@
  */
 
 @interface NSURLResponse : NSObject <NSCopying, NSSecureCoding> {
-    NSURLResponseInternal *_internal;
+    NSURLResponseInternal * _internal;
 }
 
 @property (readonly, copy) NSString *MIMEType;

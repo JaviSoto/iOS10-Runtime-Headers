@@ -3,10 +3,11 @@
  */
 
 @interface _UIMotionEffectEngineClient : NSObject {
-    UIMotionEffect *_effect;
-    UIView *_view;
+    UIMotionEffect * _effect;
+    UIView * _view;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithMotionEffect:(id)arg1 view:(id)arg2;

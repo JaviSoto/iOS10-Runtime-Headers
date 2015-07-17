@@ -3,11 +3,11 @@
  */
 
 @interface IKImageElement : IKViewElement {
-    NSURL *_defaultURL;
-    unsigned int _imageType;
-    float _srcHeight;
-    float _srcWidth;
-    NSDictionary *_srcset;
+    NSURL * _defaultURL;
+    unsigned int  _imageType;
+    float  _srcHeight;
+    float  _srcWidth;
+    NSDictionary * _srcset;
 }
 
 @property (nonatomic, readonly) UIColor *borderColor;

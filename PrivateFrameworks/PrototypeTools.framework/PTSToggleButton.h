@@ -3,16 +3,16 @@
  */
 
 @interface PTSToggleButton : PTSButton <PTSHUDControl, _UISettingsKeyPathObserver> {
-    NSString *_titleForOffState;
-    NSString *_titleForOnState;
-    id _valueForOffState;
-    id _valueForOnState;
+    NSString * _titleForOffState;
+    NSString * _titleForOnState;
+    id  _valueForOffState;
+    id  _valueForOnState;
 }
 
 @property (nonatomic) int alignment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic) _UISettings *settings;
 @property (readonly) Class superclass;

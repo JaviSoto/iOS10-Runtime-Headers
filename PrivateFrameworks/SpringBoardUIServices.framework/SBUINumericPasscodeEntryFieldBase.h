@@ -3,15 +3,17 @@
  */
 
 @interface SBUINumericPasscodeEntryFieldBase : SBUIPasscodeEntryField {
-    BOOL _allowsNewlineAcceptance;
-    BOOL _autoAcceptWhenMaxNumbersMet;
-    unsigned int _maxNumbersAllowed;
-    NSMutableCharacterSet *_numericTrimmingSet;
+    BOOL  _allowsNewlineAcceptance;
+    BOOL  _autoAcceptWhenMaxNumbersMet;
+    unsigned int  _maxNumbersAllowed;
+    NSMutableCharacterSet * _numericTrimmingSet;
 }
 
 @property (nonatomic) BOOL allowsNewlineAcceptance;
 @property (nonatomic) BOOL autoAcceptWhenMaxNumbersMet;
 @property (nonatomic) unsigned int maxNumbersAllowed;
+
++ (BOOL)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
 
 - (void)_appendString:(id)arg1;
 - (void)_deleteLastCharacter;

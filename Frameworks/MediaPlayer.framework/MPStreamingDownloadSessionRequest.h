@@ -3,13 +3,13 @@
  */
 
 @interface MPStreamingDownloadSessionRequest : NSObject {
-    NSString *_buyParameters;
-    int _endpointType;
-    MPMediaPlaybackItemMetadata *_playbackItemMetadata;
-    unsigned int _preferredAssetQuality;
-    BOOL _shouldStartLeaseSession;
-    BOOL _shouldUseAccountLessStreaming;
-    long long _storeAdamID;
+    NSString * _buyParameters;
+    int  _endpointType;
+    MPMediaPlaybackItemMetadata * _playbackItemMetadata;
+    unsigned int  _preferredAssetQuality;
+    BOOL  _shouldStartLeaseSession;
+    BOOL  _shouldUseAccountLessStreaming;
+    long long  _storeAdamID;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIBrickSwooshPageSection : SKUIStorePageSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
-    SKUIBrickSwooshArtworkLoader *_artworkLoader;
-    SKUIMissingItemLoader *_missingItemLoader;
-    SKUIBrickSwooshViewController *_swooshViewController;
+    SKUIBrickSwooshArtworkLoader * _artworkLoader;
+    SKUIMissingItemLoader * _missingItemLoader;
+    SKUIBrickSwooshViewController * _swooshViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicEntityHorizontalLockupTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityViewPlaybackStatusObserving> {
-    MusicEntityHorizontalLockupView *_lockupView;
+    MusicEntityHorizontalLockupView * _lockupView;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

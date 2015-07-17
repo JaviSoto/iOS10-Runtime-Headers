@@ -3,12 +3,12 @@
  */
 
 @interface BLImagePatchList : NSObject {
-    struct CGImage { } *_baseImage;
-    NSMutableArray *_patchArray;
+    struct CGImage { } * _baseImage;
+    NSMutableArray * _patchArray;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 + (id)imagePatchListWithSingleImage:(struct CGImage { }*)arg1;

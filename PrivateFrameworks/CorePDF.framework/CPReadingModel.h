@@ -3,36 +3,36 @@
  */
 
 @interface CPReadingModel : NSObject {
-    NSAttributedString *_cachedAttributedString;
-    NSString *_cachedString;
-    long _count;
-    RMList *_currentList;
-    struct CGPDFDocument { } *_document;
-    NSMutableArray *_headings;
-    NSMutableArray *_lists;
-    long _numberOfColumns;
-    long _numberOfLayoutAreas;
-    long _numberOfLines;
-    long _numberOfParagraphs;
-    long _pageNumber;
-    int _pageNumberMemo;
-    int *_pageNumbers;
+    NSAttributedString * _cachedAttributedString;
+    NSString * _cachedString;
+    long  _count;
+    RMList * _currentList;
+    struct CGPDFDocument { } * _document;
+    NSMutableArray * _headings;
+    NSMutableArray * _lists;
+    long  _numberOfColumns;
+    long  _numberOfLayoutAreas;
+    long  _numberOfLines;
+    long  _numberOfParagraphs;
+    long  _pageNumber;
+    int  _pageNumberMemo;
+    int * _pageNumbers;
     struct { 
         int location; 
         int length; 
-    } _pageRange;
-    long _pos;
+    }  _pageRange;
+    long  _pos;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rangeMemo;
-    struct { int x1; int x2; } *_stringLineRanges;
-    NSMutableArray *_tables;
-    struct { int x1; int x2; } *_textLineRanges;
+    }  _rangeMemo;
+    struct { int x1; int x2; } * _stringLineRanges;
+    NSMutableArray * _tables;
+    struct { int x1; int x2; } * _textLineRanges;
     struct { 
         int location; 
         int length; 
-    } _textRangeMemo;
+    }  _textRangeMemo;
 }
 
 - (void)addListsInColumn:(struct CGPDFNode { }*)arg1;

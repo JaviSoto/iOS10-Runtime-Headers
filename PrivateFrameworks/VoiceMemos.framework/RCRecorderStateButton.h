@@ -3,12 +3,12 @@
  */
 
 @interface RCRecorderStateButton : UIButton {
-    int _AVCaptureState;
-    UIColor *_innerColor;
-    CALayer *_innerLayer;
-    BOOL _isForceDisabled;
-    UIColor *_outerColor;
-    BOOL _realEnabledState;
+    int  _AVCaptureState;
+    UIColor * _innerColor;
+    CALayer * _innerLayer;
+    BOOL  _isForceDisabled;
+    UIColor * _outerColor;
+    BOOL  _realEnabledState;
 }
 
 @property (nonatomic) int AVCaptureState;

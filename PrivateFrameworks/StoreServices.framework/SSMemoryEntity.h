@@ -3,9 +3,9 @@
  */
 
 @interface SSMemoryEntity : NSObject <NSCopying> {
-    long long _databaseID;
-    NSMutableDictionary *_externalPropertyValues;
-    NSMutableDictionary *_propertyValues;
+    long long  _databaseID;
+    NSMutableDictionary * _externalPropertyValues;
+    NSMutableDictionary * _propertyValues;
 }
 
 @property (nonatomic) long long databaseID;

@@ -3,10 +3,10 @@
  */
 
 @interface SULinkControl : UIControl {
-    UILabel *_label;
-    BOOL _shouldDrawUnderline;
-    unsigned int _sizeIsDirty;
-    int _style;
+    UILabel * _label;
+    BOOL  _shouldDrawUnderline;
+    unsigned int  _sizeIsDirty;
+    int  _style;
 }
 
 @property (nonatomic) BOOL shouldDrawUnderline;

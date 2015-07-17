@@ -6,8 +6,8 @@
     struct CGSize { 
         float width; 
         float height; 
-    } mAdjustableTableSize;
-    NSMutableDictionary *mAttachmentCellLayouts;
+    }  mAdjustableTableSize;
+    NSMutableDictionary * mAttachmentCellLayouts;
     struct { 
         float tableNameHeight; 
         struct CGSize { 
@@ -18,14 +18,14 @@
             float width; 
             float height; 
         } scaleToFitEnclosingTextColumn; 
-    } mCached;
+    }  mCached;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } mCachedPaddingForEditingCell;
-    int mCachedVerticalAlignmentForEditingCell;
+    }  mCachedPaddingForEditingCell;
+    int  mCachedVerticalAlignmentForEditingCell;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -35,11 +35,11 @@
             float width; 
             float height; 
         } size; 
-    } mCanvasVisibleRect;
+    }  mCanvasVisibleRect;
     struct CGSize { 
         float width; 
         float height; 
-    } mCapturedStrokeFrameSizeForInline;
+    }  mCapturedStrokeFrameSizeForInline;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -49,12 +49,12 @@
             float width; 
             float height; 
         } size; 
-    } mComputedEditingCellContentFrame;
-    TSWPLayout *mContainedTextEditingLayout;
-    int mContainedTextEditorParagraphAlignment;
-    BOOL mContainedTextEditorSpills;
-    BOOL mContainedTextEditorTextWraps;
-    int mCoordinatesChangedMaskForChrome;
+    }  mComputedEditingCellContentFrame;
+    TSWPLayout * mContainedTextEditingLayout;
+    int  mContainedTextEditorParagraphAlignment;
+    BOOL  mContainedTextEditorSpills;
+    BOOL  mContainedTextEditorTextWraps;
+    int  mCoordinatesChangedMaskForChrome;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -65,16 +65,16 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mEditingSpillingTextRange;
+    }  mEditingSpillingTextRange;
     struct CGSize { 
         float width; 
         float height; 
-    } mFixedTableSize;
-    BOOL mLayoutDirectionIsLeftToRight;
-    TSTLayoutHint *mLayoutHint;
-    TSTMasterLayout *mMasterLayout;
-    BOOL mNewCanvasRevealedHorizontally;
-    BOOL mNewCanvasRevealedVertically;
+    }  mFixedTableSize;
+    BOOL  mLayoutDirectionIsLeftToRight;
+    TSTLayoutHint * mLayoutHint;
+    TSTMasterLayout * mMasterLayout;
+    BOOL  mNewCanvasRevealedHorizontally;
+    BOOL  mNewCanvasRevealedVertically;
     struct TSUColumnRowRect { 
         struct { 
             unsigned short row; 
@@ -85,7 +85,7 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mPrevEditingSpillingTextRange;
+    }  mPrevEditingSpillingTextRange;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -95,8 +95,8 @@
             float width; 
             float height; 
         } size; 
-    } mPreviousVisibleStrokeFrame;
-    BOOL mProcessChangesFiltering;
+    }  mPreviousVisibleStrokeFrame;
+    BOOL  mProcessChangesFiltering;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -106,16 +106,16 @@
             float width; 
             float height; 
         } size; 
-    } mRenderingFrameForLayoutGeometryFromInfo;
-    BOOL mShouldUpdateAttachmentChildren;
-    TSTLayoutSpaceBundle *mSpaceBundle;
+    }  mRenderingFrameForLayoutGeometryFromInfo;
+    BOOL  mShouldUpdateAttachmentChildren;
+    TSTLayoutSpaceBundle * mSpaceBundle;
     struct CGSize { 
         float width; 
         float height; 
-    } mSpillingTextSize;
-    BOOL mTableNameVisibilityIsValid;
-    BOOL mTableNameVisible;
-    BOOL mTabsVisible;
+    }  mSpillingTextSize;
+    BOOL  mTableNameVisibilityIsValid;
+    BOOL  mTableNameVisible;
+    BOOL  mTabsVisible;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
@@ -130,7 +130,7 @@
 @property (nonatomic, readonly) BOOL layoutDirectionIsLeftToRight;
 @property (nonatomic, retain) TSTLayoutHint *layoutHint;
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
-@property (nonatomic) TSTMasterLayout *masterLayout;
+@property (nonatomic, retain) TSTMasterLayout *masterLayout;
 @property (nonatomic) BOOL newCanvasRevealedHorizontally;
 @property (nonatomic) BOOL newCanvasRevealedVertically;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingForEditingCell;
@@ -146,7 +146,7 @@
 @property (nonatomic, readonly) TSTTableModel *tableModel;
 @property (nonatomic, readonly) float textScaleFactor;
 
-- (id).cxx_construct;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
 - (BOOL)alwaysStartsNewTarget;

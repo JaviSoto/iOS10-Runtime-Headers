@@ -3,8 +3,8 @@
  */
 
 @interface IMAttachment : NSObject {
-    NSString *_guid;
-    NSString *_path;
+    NSString * _guid;
+    NSString * _path;
 }
 
 - (void)dealloc;

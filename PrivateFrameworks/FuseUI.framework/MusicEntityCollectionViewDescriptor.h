@@ -3,17 +3,17 @@
  */
 
 @interface MusicEntityCollectionViewDescriptor : MusicEntityViewDescriptor {
-    id /* block */ _layoutMetricsBlock;
-    float _sectionHeaderBottomContentInset;
-    BOOL _shouldFlattenToSingleSectionInRegularWidthAndHeight;
-    BOOL _shouldShowOnlyFirstRowOfContent;
-    BOOL _showsSectionHeaders;
-    float _verticalLockupMaximumWidth;
+    id /* block */  _layoutMetricsBlock;
+    float  _sectionHeaderBottomContentInset;
+    BOOL  _shouldFlattenToSingleSectionInRegularWidthAndHeight;
+    BOOL  _shouldShowOnlyFirstRowOfContent;
+    BOOL  _showsSectionHeaders;
+    float  _verticalLockupMaximumWidth;
     struct { 
         float multiplier; 
         float constant; 
-    } _verticalLockupWidthFromCollectionViewWidthLinearRelation;
-    BOOL _wantsEdgeToEdgeLayout;
+    }  _verticalLockupWidthFromCollectionViewWidthLinearRelation;
+    BOOL  _wantsEdgeToEdgeLayout;
 }
 
 @property (nonatomic, copy) id /* block */ layoutMetricsBlock;

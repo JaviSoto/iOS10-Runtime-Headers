@@ -3,13 +3,13 @@
  */
 
 @interface CKDFetchChangedRecordZonesURLRequest : CKDURLRequest {
-    NSMutableArray *_changedZoneIDs;
-    NSMutableArray *_deletedZoneIDs;
-    NSData *_previousServerChangeTokenData;
-    CKRecordZoneID *_recordZoneID;
-    unsigned int _resultsLimit;
-    NSData *_serverChangeTokenData;
-    int _status;
+    NSMutableArray * _changedZoneIDs;
+    NSMutableArray * _deletedZoneIDs;
+    NSData * _previousServerChangeTokenData;
+    CKRecordZoneID * _recordZoneID;
+    unsigned int  _resultsLimit;
+    NSData * _serverChangeTokenData;
+    int  _status;
 }
 
 @property (nonatomic, readonly) NSArray *changedZoneIDs;

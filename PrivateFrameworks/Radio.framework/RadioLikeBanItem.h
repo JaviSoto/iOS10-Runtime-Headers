@@ -3,12 +3,12 @@
  */
 
 @interface RadioLikeBanItem : NSObject <NSCopying, NSMutableCopying> {
-    long long _albumID;
-    RadioArtworkCollection *_artworkCollection;
-    BOOL _isSeed;
-    RadioSeedMetadata *_seedMetadata;
-    long long _storeID;
-    int _type;
+    long long  _albumID;
+    RadioArtworkCollection * _artworkCollection;
+    BOOL  _isSeed;
+    RadioSeedMetadata * _seedMetadata;
+    long long  _storeID;
+    int  _type;
 }
 
 @property (nonatomic, readonly) long long albumID;

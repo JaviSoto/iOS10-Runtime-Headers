@@ -3,7 +3,7 @@
  */
 
 @interface MPCloudControllerItemIDList : NSObject {
-    HSCloudItemIDList *_cloudItemIDList;
+    HSCloudItemIDList * _cloudItemIDList;
 }
 
 - (void).cxx_destruct;

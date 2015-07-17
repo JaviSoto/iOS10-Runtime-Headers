@@ -3,20 +3,20 @@
  */
 
 @interface TSPPackageWriter : NSObject <TSPPackageDataWriter> {
-    NSURL *_URL;
-    <TSPComponentWriteChannel> *_componentWriteChannel;
-    NSURL *_documentTargetURL;
-    SFUCryptoKey *_encryptionKey;
-    NSError *_error;
-    NSObject<OS_dispatch_queue> *_errorQueue;
-    BOOL _isOpened;
-    TSPPackage *_originalDocumentPackage;
-    TSPPackage *_originalSupportPackage;
-    NSProgress *_progress;
-    NSURL *_relativeURLForExternalData;
-    int _updateType;
-    TSPPackage *_writtenPackage;
-    TSUZipFileWriter *_zipArchiveWriter;
+    NSURL * _URL;
+    <TSPComponentWriteChannel> * _componentWriteChannel;
+    NSURL * _documentTargetURL;
+    SFUCryptoKey * _encryptionKey;
+    NSError * _error;
+    NSObject<OS_dispatch_queue> * _errorQueue;
+    BOOL  _isOpened;
+    TSPPackage * _originalDocumentPackage;
+    TSPPackage * _originalSupportPackage;
+    NSProgress * _progress;
+    NSURL * _relativeURLForExternalData;
+    int  _updateType;
+    TSPPackage * _writtenPackage;
+    TSUZipFileWriter * _zipArchiveWriter;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

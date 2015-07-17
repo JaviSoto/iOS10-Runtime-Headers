@@ -3,9 +3,9 @@
  */
 
 @interface MPContentTasteController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableDictionary *_pendingUpdateRecordByPlaylistGlobalID;
-    NSMutableDictionary *_pendingUpdateRecordByStoreAdamID;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableDictionary * _pendingUpdateRecordByPlaylistGlobalID;
+    NSMutableDictionary * _pendingUpdateRecordByStoreAdamID;
 }
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer

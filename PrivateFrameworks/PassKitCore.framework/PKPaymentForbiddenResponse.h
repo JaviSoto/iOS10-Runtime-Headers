@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentForbiddenResponse : PKPaymentWebServiceResponse {
-    NSNumber *_errorCode;
-    NSString *_localizedDescription;
-    NSString *_localizedTitle;
+    NSNumber * _errorCode;
+    NSString * _localizedDescription;
+    NSString * _localizedTitle;
 }
 
 @property (nonatomic, retain) NSNumber *errorCode;

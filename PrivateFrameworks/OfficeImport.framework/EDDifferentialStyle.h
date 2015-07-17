@@ -3,12 +3,12 @@
  */
 
 @interface EDDifferentialStyle : NSObject <NSCopying> {
-    EDAlignmentInfo *mAlignmentInfo;
-    EDBorders *mBorders;
-    EDContentFormat *mContentFormat;
-    EDFill *mFill;
-    EDFont *mFont;
-    EDProtection *mProtection;
+    EDAlignmentInfo * mAlignmentInfo;
+    EDBorders * mBorders;
+    EDContentFormat * mContentFormat;
+    EDFill * mFill;
+    EDFont * mFont;
+    EDProtection * mProtection;
 }
 
 @property (nonatomic, retain) EDAlignmentInfo *alignmentInfo;
@@ -25,6 +25,7 @@
 - (id)contentFormat;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)fill;
 - (id)font;
 - (id)protection;

@@ -3,30 +3,30 @@
  */
 
 @interface ACUIDataclassConfigurationViewController : ACUIViewController {
-    ACAccount *_account;
-    NSString *_accountIdentifier;
-    PSSpecifier *_accountSummaryCellSpecifier;
-    NSMutableDictionary *_allDesiredDataclassActions;
-    id /* block */ _configurationCompletion;
-    PSSpecifier *_dataclassGroupSpecifier;
-    NSArray *_dataclassSpecifiers;
-    PSSpecifier *_deleteButtonSpecifier;
-    BOOL _didShowDataclassActionPickerDuringRemoval;
-    NSMutableArray *_dirtyDataclassCells;
-    BOOL _firstTimeSetup;
-    BOOL _forceMailSetup;
-    BOOL _isMailSetupForced;
-    BOOL _isMergingSyncData;
-    NSArray *_otherSpecifiers;
-    NSArray *_preEnabledDataclasses;
-    BOOL _shouldEnableAccountSummaryCell;
-    BOOL _shouldEnableDeleteAccountButton;
-    BOOL _shouldShowDeleteAccountButton;
+    ACAccount * _account;
+    NSString * _accountIdentifier;
+    PSSpecifier * _accountSummaryCellSpecifier;
+    NSMutableDictionary * _allDesiredDataclassActions;
+    id /* block */  _configurationCompletion;
+    PSSpecifier * _dataclassGroupSpecifier;
+    NSArray * _dataclassSpecifiers;
+    PSSpecifier * _deleteButtonSpecifier;
+    BOOL  _didShowDataclassActionPickerDuringRemoval;
+    NSMutableArray * _dirtyDataclassCells;
+    BOOL  _firstTimeSetup;
+    BOOL  _forceMailSetup;
+    BOOL  _isMailSetupForced;
+    BOOL  _isMergingSyncData;
+    NSArray * _otherSpecifiers;
+    NSArray * _preEnabledDataclasses;
+    BOOL  _shouldEnableAccountSummaryCell;
+    BOOL  _shouldEnableDeleteAccountButton;
+    BOOL  _shouldShowDeleteAccountButton;
 }
 
 @property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, copy) id /* block */ configurationCompletion;
-@property (nonatomic) PSSpecifier *dataclassGroupSpecifier;
+@property (nonatomic, retain) PSSpecifier *dataclassGroupSpecifier;
 @property (nonatomic, readonly) PSSpecifier *deleteButtonSpecifier;
 @property (getter=isFirstTimeSetup, nonatomic) BOOL firstTimeSetup;
 @property (nonatomic) BOOL isMailSetupForced;

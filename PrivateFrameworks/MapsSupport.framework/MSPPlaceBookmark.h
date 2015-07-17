@@ -3,14 +3,14 @@
  */
 
 @interface MSPPlaceBookmark : PBCodable <NSCopying> {
-    GEOLatLng *_droppedPinCoordinate;
+    GEOLatLng * _droppedPinCoordinate;
     struct { 
         unsigned int origin : 1; 
-    } _has;
-    GEOMapItemStorage *_mapItemStorage;
-    int _origin;
-    NSString *_title;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    GEOMapItemStorage * _mapItemStorage;
+    int  _origin;
+    NSString * _title;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOLatLng *droppedPinCoordinate;

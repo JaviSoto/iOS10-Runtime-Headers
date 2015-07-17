@@ -3,13 +3,13 @@
  */
 
 @interface MFModernAtomBackgroundView : UIView {
-    MFModernAtomView *_hostAtomView;
-    float _scalingFactor;
-    BOOL _selected;
-    UIView *_selectedView;
-    unsigned int _selectionStyle;
-    int _separatorStyle;
-    UIView *_separatorView;
+    MFModernAtomView * _hostAtomView;
+    float  _scalingFactor;
+    BOOL  _selected;
+    UIView * _selectedView;
+    unsigned int  _selectionStyle;
+    int  _separatorStyle;
+    UIView * _separatorView;
 }
 
 @property (nonatomic) MFModernAtomView *hostAtomView;

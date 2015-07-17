@@ -3,14 +3,14 @@
  */
 
 @interface GKImageKey : NSObject {
-    NSString *_basename;
-    NSString *_cacheKey;
-    NSString *_filePath;
-    NSString *_imageID;
+    NSString * _basename;
+    NSString * _cacheKey;
+    NSString * _filePath;
+    NSString * _imageID;
     struct CGSize { 
         float width; 
         float height; 
-    } _size;
+    }  _size;
 }
 
 @property (nonatomic, retain) NSString *basename;

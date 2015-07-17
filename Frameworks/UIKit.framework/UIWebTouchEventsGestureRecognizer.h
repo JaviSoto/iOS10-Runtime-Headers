@@ -3,8 +3,8 @@
  */
 
 @interface UIWebTouchEventsGestureRecognizer : UIGestureRecognizer {
-    BOOL _defaultPrevented;
-    BOOL _dispatchingTouchEvents;
+    BOOL  _defaultPrevented;
+    BOOL  _dispatchingTouchEvents;
     struct _UIWebTouchEvent { 
         int type; 
         double timestamp; 
@@ -21,13 +21,13 @@
         bool inJavaScriptGesture; 
         struct _UIWebTouchPoint {} *touchPoints; 
         unsigned int touchPointCount; 
-    } _lastTouchEvent;
-    float _originalGestureAngle;
-    float _originalGestureDistance;
-    BOOL _passedHitTest;
-    SEL _touchAction;
-    id _touchTarget;
-    <UIWebTouchEventsGestureRecognizerDelegate> *_webTouchDelegate;
+    }  _lastTouchEvent;
+    float  _originalGestureAngle;
+    float  _originalGestureDistance;
+    BOOL  _passedHitTest;
+    SEL  _touchAction;
+    id  _touchTarget;
+    <UIWebTouchEventsGestureRecognizerDelegate> * _webTouchDelegate;
 }
 
 @property (getter=isDefaultPrevented, nonatomic) BOOL defaultPrevented;
@@ -44,6 +44,7 @@
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_processTouches:(id)arg1 withEvent:(id)arg2 type:(int)arg3;
 - (void)_recordTouches:(id)arg1 type:(int)arg2;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;

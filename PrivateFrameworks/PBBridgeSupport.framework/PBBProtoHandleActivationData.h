@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoHandleActivationData : PBCodable <NSCopying> {
-    NSData *_activationData;
+    NSData * _activationData;
 }
 
 @property (nonatomic, retain) NSData *activationData;

@@ -3,15 +3,14 @@
  */
 
 @interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSPreset> {
-    NSArray *mCategoryAxisStyles;
-    <TSCHStyleActAlike> *mChartStyle;
-    <TSCHStyleActAlike> *mLegendStyle;
-    NSArray *mParagraphStyles;
-    <TSCHStyleActAlike> *mRefLineStyle;
-    NSArray *mRefLineStyles;
-    NSArray *mSeriesStyles;
-    struct __CFUUID { } *mUUID;
-    NSArray *mValueAxisStyles;
+    NSArray * mCategoryAxisStyles;
+    <TSCHStyleActAlike> * mChartStyle;
+    <TSCHStyleActAlike> * mLegendStyle;
+    NSArray * mParagraphStyles;
+    <TSCHStyleActAlike> * mRefLineStyle;
+    NSArray * mSeriesStyles;
+    struct __CFUUID { } * mUUID;
+    NSArray * mValueAxisStyles;
 }
 
 @property (nonatomic, readonly) NSArray *categoryAxisStyles;

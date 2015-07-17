@@ -9,51 +9,51 @@
         struct __compressed_pair<std::__1::shared_ptr<vk::NavLabel> *, std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > > { 
             struct shared_ptr<vk::NavLabel> {} *__first_; 
         } __end_cap_; 
-    } _activeSigns;
-    BOOL _checkIfRouteSubrangeChanged;
-    BOOL _checkOnRouteLabelsAlignment;
-    unsigned int _countVisibleOnRouteRoadSigns;
-    unsigned int _countVisibleRoadSigns;
-    NSString *_currentLocationText;
-    NSString *_currentRoadName;
-    int _currentRoadNameIndex;
-    NSString *_currentShieldGroup;
-    BOOL _disableTileParseForOneLayout;
-    BOOL _drawRoadSigns;
-    NSMutableArray *_fadingLabels;
-    NSMutableArray *_guidanceStepInfos;
-    BOOL _isOnRoute;
-    NSMutableArray *_junctions;
-    unsigned int _maxOnRoadGraphRoadSigns;
-    unsigned int _maxVisibleRoadSigns;
-    float _minSignOffsetDistance;
-    unsigned int _minVisibleOnRouteRoadSigns;
-    unsigned int _minVisibleProceedToRouteRoadSigns;
-    unsigned int _minVisibleRoadSigns;
-    BOOL _needsLayout;
-    NSMutableSet *_pendingTiles;
-    BOOL _preferRightSideLabelPlacement;
-    VKLabelNavRoadGraph *_roadGraph;
-    NSMutableSet *_roadNamesInGuidance;
-    VKPolylineOverlayPainter *_route;
-    NSMutableArray *_routeRoadInfos;
+    }  _activeSigns;
+    BOOL  _checkIfRouteSubrangeChanged;
+    BOOL  _checkOnRouteLabelsAlignment;
+    unsigned int  _countVisibleOnRouteRoadSigns;
+    unsigned int  _countVisibleRoadSigns;
+    NSString * _currentLocationText;
+    NSString * _currentRoadName;
+    int  _currentRoadNameIndex;
+    NSString * _currentShieldGroup;
+    BOOL  _disableTileParseForOneLayout;
+    BOOL  _drawRoadSigns;
+    NSMutableArray * _fadingLabels;
+    NSMutableArray * _guidanceStepInfos;
+    BOOL  _isOnRoute;
+    NSMutableArray * _junctions;
+    unsigned int  _maxOnRoadGraphRoadSigns;
+    unsigned int  _maxVisibleRoadSigns;
+    float  _minSignOffsetDistance;
+    unsigned int  _minVisibleOnRouteRoadSigns;
+    unsigned int  _minVisibleProceedToRouteRoadSigns;
+    unsigned int  _minVisibleRoadSigns;
+    BOOL  _needsLayout;
+    NSMutableSet * _pendingTiles;
+    BOOL  _preferRightSideLabelPlacement;
+    VKLabelNavRoadGraph * _roadGraph;
+    NSMutableSet * _roadNamesInGuidance;
+    VKPolylineOverlayPainter * _route;
+    NSMutableArray * _routeRoadInfos;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeSubrangeEnd;
+    }  _routeSubrangeEnd;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeSubrangeStart;
+    }  _routeSubrangeStart;
     struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    } _routeUserOffset;
-    unsigned int _stepIndex;
-    NSMutableSet *_tiles;
-    BOOL _useRouteSubrange;
-    NSMutableArray *_visibleLabels;
-    NSMutableDictionary *_visibleLabelsByName;
+    }  _routeUserOffset;
+    unsigned int  _stepIndex;
+    NSMutableSet * _tiles;
+    BOOL  _useRouteSubrange;
+    NSMutableArray * _visibleLabels;
+    NSMutableDictionary * _visibleLabelsByName;
 }
 
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<vk::NavLabel>' */ struct *activeSigns; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > >=^{shared_ptr<vk::NavLabel>}}} */
@@ -106,6 +106,6 @@
 - (void)setDrawRoadSigns:(BOOL)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
-- (void)setStyleManager:(id)arg1;
+- (void)setStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
 
 @end

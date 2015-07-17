@@ -3,7 +3,7 @@
  */
 
 @interface ABMultiCellContentView_DisplayAlternate : ABMultiCellContentView_Rows {
-    UILabel *_displayLabel;
+    UILabel * _displayLabel;
 }
 
 @property (nonatomic, readonly) NSString *displayText;

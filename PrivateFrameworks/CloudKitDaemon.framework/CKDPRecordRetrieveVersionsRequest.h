@@ -3,9 +3,9 @@
  */
 
 @interface CKDPRecordRetrieveVersionsRequest : PBRequest <NSCopying> {
-    NSString *_minimumVersionEtag;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPRequestedFields *_requestedFields;
+    NSString * _minimumVersionEtag;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPRequestedFields * _requestedFields;
 }
 
 @property (nonatomic, readonly) BOOL hasMinimumVersionEtag;

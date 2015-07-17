@@ -3,9 +3,9 @@
  */
 
 @interface RCExtAudioFilePipe : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long _accessQueueID;
-    struct OpaqueExtAudioFile { } *_audioFileRef;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned long  _accessQueueID;
+    struct OpaqueExtAudioFile { } * _audioFileRef;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -16,8 +16,8 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _outputFormatDescriptionStruct;
-    unsigned long long _sourceFileSize;
+    }  _outputFormatDescriptionStruct;
+    unsigned long long  _sourceFileSize;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -28,8 +28,8 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _sourceFormatDescriptionStruct;
-    NSURL *_sourceURL;
+    }  _sourceFormatDescriptionStruct;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic, readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*outputFormatDescription;

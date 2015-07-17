@@ -3,30 +3,30 @@
  */
 
 @interface ML3DatabaseConnection : NSObject {
-    BOOL _automaticCheckpointingEnabled;
-    unsigned int _checkpointStatementThreshold;
-    <ML3DatabaseConnectionDelegate> *_connectionDelegate;
-    NSUUID *_currentTransactionID;
-    NSString *_databasePath;
-    NSMutableArray *_enqueuedTransactionCommitBlocks;
-    const void *_iTunesExtensions;
-    BOOL _isOpen;
-    BOOL _isReadOnly;
-    unsigned int _journalingMode;
-    NSString *_lastTracedStatement;
-    BOOL _logQueryPlans;
-    BOOL _nestedTransactionWantsToRollback;
-    ML3DatabaseConnectionPool *_owningPool;
-    int _profilingLevel;
-    unsigned int _protectionLevel;
-    NSMutableArray *_registeredFunctions;
-    NSMutableArray *_registeredModules;
-    struct sqlite3 { } *_sqlitedb;
-    ML3DatabaseStatementCache *_statementCache;
-    unsigned int _statementsSinceLastCheckpoint;
-    unsigned int _transactionLevel;
-    NSUUID *_uniqueIdentifier;
-    int _willDeleteDatabaseNotifyToken;
+    BOOL  _automaticCheckpointingEnabled;
+    unsigned int  _checkpointStatementThreshold;
+    <ML3DatabaseConnectionDelegate> * _connectionDelegate;
+    NSUUID * _currentTransactionID;
+    NSString * _databasePath;
+    NSMutableArray * _enqueuedTransactionCommitBlocks;
+    const void * _iTunesExtensions;
+    BOOL  _isOpen;
+    BOOL  _isReadOnly;
+    unsigned int  _journalingMode;
+    NSString * _lastTracedStatement;
+    BOOL  _logQueryPlans;
+    BOOL  _nestedTransactionWantsToRollback;
+    ML3DatabaseConnectionPool * _owningPool;
+    int  _profilingLevel;
+    unsigned int  _protectionLevel;
+    NSMutableArray * _registeredFunctions;
+    NSMutableArray * _registeredModules;
+    struct sqlite3 { } * _sqlitedb;
+    ML3DatabaseStatementCache * _statementCache;
+    unsigned int  _statementsSinceLastCheckpoint;
+    unsigned int  _transactionLevel;
+    NSUUID * _uniqueIdentifier;
+    int  _willDeleteDatabaseNotifyToken;
 }
 
 @property (nonatomic) BOOL automaticCheckpointingEnabled;

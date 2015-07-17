@@ -3,23 +3,23 @@
  */
 
 @interface FUChart : UIView <FUChartDataGroupDataSource, FUChartSeriesDataSource> {
-    double _animationDuration;
-    FUChartBackgroundView *_backgroundView;
-    NSArray *_chartSeries;
-    FUChartDataGroup *_dataGroup;
-    <FUChartDataSource> *_dataSource;
-    BOOL _labelsInsetChartBackground;
-    NSDate *_maxXValue;
-    NSNumber *_maxYValue;
-    NSDate *_minXValue;
-    NSNumber *_minYValue;
-    BOOL _needsAnimation;
-    UIScrollView *_scrollView;
-    FUTimeAxisDescriptor *_xAxisDescriptor;
-    NSArray *_xAxisLabels;
-    NSArray *_xAxisSubLabels;
-    float _xAxisToLabelPadding;
-    float _yAxisEdgeInset;
+    double  _animationDuration;
+    FUChartBackgroundView * _backgroundView;
+    NSArray * _chartSeries;
+    FUChartDataGroup * _dataGroup;
+    <FUChartDataSource> * _dataSource;
+    BOOL  _labelsInsetChartBackground;
+    NSDate * _maxXValue;
+    NSNumber * _maxYValue;
+    NSDate * _minXValue;
+    NSNumber * _minYValue;
+    BOOL  _needsAnimation;
+    UIScrollView * _scrollView;
+    FUTimeAxisDescriptor * _xAxisDescriptor;
+    NSArray * _xAxisLabels;
+    NSArray * _xAxisSubLabels;
+    float  _xAxisToLabelPadding;
+    float  _yAxisEdgeInset;
 }
 
 @property (nonatomic) double animationDuration;

@@ -3,8 +3,8 @@
  */
 
 @interface MusicUpNextTableViewCell : MusicEntityHorizontalLockupTableViewCell {
-    UIView *_hairlineView;
-    <MusicUpNextReorderLayoutDelegate> *_layoutDelegate;
+    UIView * _hairlineView;
+    <MusicUpNextReorderLayoutDelegate> * _layoutDelegate;
 }
 
 @property (nonatomic) <MusicUpNextReorderLayoutDelegate> *layoutDelegate;

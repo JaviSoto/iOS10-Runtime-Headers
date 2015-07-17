@@ -3,11 +3,11 @@
  */
 
 @interface _UIAssociationTable : NSObject {
-    NSMapTable *_leftToRightHashTables;
-    NSMapTable *_rightToLeftHashTables;
+    NSMapTable * _leftToRightHashTables;
+    NSMapTable * _rightToLeftHashTables;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)hasLeftValuesForRightValue:(id)arg1;
 - (BOOL)hasRightValuesForLeftValue:(id)arg1;

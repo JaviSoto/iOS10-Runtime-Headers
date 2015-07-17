@@ -3,9 +3,9 @@
  */
 
 @interface TimerManager : NSObject {
-    UILocalNotification *_notification;
-    double _remainingTime;
-    int _state;
+    UILocalNotification * _notification;
+    double  _remainingTime;
+    int  _state;
 }
 
 @property (nonatomic) double defaultDuration;
@@ -22,6 +22,7 @@
 + (id)sharedManager;
 + (BOOL)upgrade;
 
+- (void).cxx_destruct;
 - (BOOL)cancel;
 - (void)changeSound:(id)arg1;
 - (double)defaultDuration;

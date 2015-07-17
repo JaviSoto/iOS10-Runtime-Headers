@@ -3,9 +3,9 @@
  */
 
 @interface SKUIMenuBarTemplateShelfPageSectionConfiguration : SKUIShelfPageSectionConfiguration {
-    id _fixedElementsCollectionViewCell;
-    int _focusedIndex;
-    unsigned int _numberOfIterations;
+    id  _fixedElementsCollectionViewCell;
+    int  _focusedIndex;
+    unsigned int  _numberOfIterations;
 }
 
 - (void).cxx_destruct;

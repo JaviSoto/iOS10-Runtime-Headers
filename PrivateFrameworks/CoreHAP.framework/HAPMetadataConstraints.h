@@ -3,11 +3,11 @@
  */
 
 @interface HAPMetadataConstraints : NSObject {
-    NSNumber *_maxLength;
-    NSNumber *_maximumValue;
-    NSNumber *_minLength;
-    NSNumber *_minimumValue;
-    NSNumber *_stepValue;
+    NSNumber * _maxLength;
+    NSNumber * _maximumValue;
+    NSNumber * _minLength;
+    NSNumber * _minimumValue;
+    NSNumber * _stepValue;
 }
 
 @property (nonatomic, retain) NSNumber *maxLength;

@@ -3,17 +3,17 @@
  */
 
 @interface SUAudioPlayer : NSObject <AVAssetResourceLoaderDelegate> {
-    AVURLAsset *_asset;
-    NSURL *_certificateUrl;
-    BOOL _didPostForPreviewHistory;
-    NSURL *_keyUrl;
-    NSMutableDictionary *_nowPlayingInfo;
-    AVPlayer *_player;
-    AVPlayerItem *_playerItem;
-    SUPlayerStatus *_status;
-    long long _storeItemIdentifier;
-    id _timeObserver;
-    NSURL *_url;
+    AVURLAsset * _asset;
+    NSURL * _certificateUrl;
+    BOOL  _didPostForPreviewHistory;
+    NSURL * _keyUrl;
+    NSMutableDictionary * _nowPlayingInfo;
+    AVPlayer * _player;
+    AVPlayerItem * _playerItem;
+    SUPlayerStatus * _status;
+    long long  _storeItemIdentifier;
+    id  _timeObserver;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

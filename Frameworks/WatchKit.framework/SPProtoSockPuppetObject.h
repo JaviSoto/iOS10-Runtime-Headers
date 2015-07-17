@@ -3,7 +3,7 @@
  */
 
 @interface SPProtoSockPuppetObject : PBCodable <NSCopying> {
-    SPProtoCacheMessage *_cacheMessage;
+    SPProtoCacheMessage * _cacheMessage;
     struct { 
         unsigned int ndouble : 1; 
         unsigned int nint64 : 1; 
@@ -13,19 +13,19 @@
         unsigned int nuint32 : 1; 
         unsigned int subtype : 1; 
         unsigned int nbool : 1; 
-    } _has;
-    NSString *_key;
-    BOOL _nbool;
-    double _ndouble;
-    float _nfloat;
-    int _nint32;
-    long long _nint64;
-    unsigned int _nuint32;
-    unsigned long long _nuint64;
-    NSData *_object;
-    int _subtype;
-    NSString *_text;
-    int _type;
+    }  _has;
+    NSString * _key;
+    BOOL  _nbool;
+    double  _ndouble;
+    float  _nfloat;
+    int  _nint32;
+    long long  _nint64;
+    unsigned int  _nuint32;
+    unsigned long long  _nuint64;
+    NSData * _object;
+    int  _subtype;
+    NSString * _text;
+    int  _type;
 }
 
 @property (nonatomic, retain) SPProtoCacheMessage *cacheMessage;

@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotosPickerSessionInfo : PUSessionInfo {
-    NSString *__targetAlbumName;
+    NSString * __targetAlbumName;
 }
 
 @property (setter=_setTargetAlbumName:, nonatomic, copy) NSString *_targetAlbumName;

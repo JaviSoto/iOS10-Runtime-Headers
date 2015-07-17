@@ -3,9 +3,9 @@
  */
 
 @interface SUControlAppearance : NSObject <NSCopying> {
-    NSMutableDictionary *_images;
-    NSMutableDictionary *_textAttributes;
-    NSMutableDictionary *_titlePositions;
+    NSMutableDictionary * _images;
+    NSMutableDictionary * _textAttributes;
+    NSMutableDictionary * _titlePositions;
 }
 
 @property (nonatomic, readonly) int numberOfImages;

@@ -3,11 +3,11 @@
  */
 
 @interface TCDumpContainer : TCDumpType {
-    int mByteSize;
-    int mByteSizeCorrection;
-    NSString *mByteSizeFieldName;
-    int mByteSizeFieldType;
-    TCDumpType *mElementType;
+    int  mByteSize;
+    int  mByteSizeCorrection;
+    NSString * mByteSizeFieldName;
+    int  mByteSizeFieldType;
+    TCDumpType * mElementType;
 }
 
 - (void)dealloc;

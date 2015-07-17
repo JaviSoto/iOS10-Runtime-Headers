@@ -3,10 +3,10 @@
  */
 
 @interface CKDCloudDatabaseServer : NSObject <NSXPCListenerDelegate> {
-    NSOperationQueue *_clientTeardownQueue;
-    NSMutableArray *_connectedClients;
-    NSObject<OS_dispatch_source> *_sighandlerSource;
-    NSXPCListener *_xpcListener;
+    NSOperationQueue * _clientTeardownQueue;
+    NSMutableArray * _connectedClients;
+    NSObject<OS_dispatch_source> * _sighandlerSource;
+    NSXPCListener * _xpcListener;
 }
 
 @property (nonatomic, retain) NSOperationQueue *clientTeardownQueue;

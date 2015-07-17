@@ -3,13 +3,13 @@
  */
 
 @interface _CertInfoTrustSummaryHeaderCell : UITableViewCell {
-    _CertInfoActionButton *_actionButton;
-    UIImage *_certificateImage;
-    UIImage *_notTrustedGradient;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    BOOL _trusted;
-    _CertInfoGradientLabel *_trustedLabel;
+    _CertInfoActionButton * _actionButton;
+    UIImage * _certificateImage;
+    UIImage * _notTrustedGradient;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    BOOL  _trusted;
+    _CertInfoGradientLabel * _trustedLabel;
 }
 
 @property (nonatomic, readonly) _CertInfoActionButton *actionButton;

@@ -3,11 +3,11 @@
  */
 
 @interface FTNetworkSupport : NSObject {
-    Class _APSConnectionClass;
-    APSConnection *_apsConnection;
-    BOOL _criticalReliabilityEnabledState;
-    BOOL _enableCriticalReliability;
-    NSTimer *_reliabilityAttemptTimer;
+    Class  _APSConnectionClass;
+    APSConnection * _apsConnection;
+    BOOL  _criticalReliabilityEnabledState;
+    BOOL  _enableCriticalReliability;
+    NSTimer * _reliabilityAttemptTimer;
 }
 
 @property (nonatomic, readonly) BOOL allowAnyNetwork;

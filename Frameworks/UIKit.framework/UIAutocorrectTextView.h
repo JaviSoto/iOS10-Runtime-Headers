@@ -3,12 +3,12 @@
  */
 
 @interface UIAutocorrectTextView : UIView {
-    BOOL m_animating;
-    int m_edgeType;
-    BOOL m_isLongString;
-    NSString *m_string;
-    UIFont *m_textFont;
-    int m_type;
+    BOOL  m_animating;
+    int  m_edgeType;
+    BOOL  m_isLongString;
+    NSString * m_string;
+    UIFont * m_textFont;
+    int  m_type;
 }
 
 @property (nonatomic) BOOL animating;

@@ -3,9 +3,9 @@
  */
 
 @interface CKNanoEventManager : NSObject {
-    BOOL _accessToEventsGranted;
-    EKEventStore *_eventStore;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _accessToEventsGranted;
+    EKEventStore * _eventStore;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) BOOL accessToEventsGranted;

@@ -3,9 +3,9 @@
  */
 
 @interface ABDatePickerViewController : UIViewController {
-    void *_context;
-    UIDatePicker *_datePicker;
-    <ABDatePickerViewControllerDismissDelegate> *_dismissDelegate;
+    void * _context;
+    UIDatePicker * _datePicker;
+    <ABDatePickerViewControllerDismissDelegate> * _dismissDelegate;
 }
 
 @property (nonatomic) void*context;

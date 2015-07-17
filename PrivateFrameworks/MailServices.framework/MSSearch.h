@@ -3,7 +3,7 @@
  */
 
 @interface MSSearch : MSXPCService <MSDSearchResultsProtocol> {
-    <MSSearchDelegate> *_delegate;
+    <MSSearchDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)foundResults:(id)arg1 error:(id)arg2;
+- (id)initWithRemoteObjectInterface:(id)arg1;
 - (id)newConnectionForInterface:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

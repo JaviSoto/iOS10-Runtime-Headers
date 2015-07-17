@@ -3,8 +3,8 @@
  */
 
 @interface SKUIScreenshotsView : UIView {
-    UIView *_primaryView;
-    UIView *_separatorView;
+    UIView * _primaryView;
+    UIView * _separatorView;
 }
 
 @property (nonatomic, retain) UIView *primaryView;

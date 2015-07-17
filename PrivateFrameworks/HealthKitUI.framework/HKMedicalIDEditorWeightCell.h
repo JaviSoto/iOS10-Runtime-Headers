@@ -3,10 +3,10 @@
  */
 
 @interface HKMedicalIDEditorWeightCell : HKMedicalIDEditorCell <UIPickerViewDataSource, UIPickerViewDelegate> {
-    NSNumber *_kilogramValue;
-    int _localWeightUnit;
-    NSMassFormatter *_massFormatter;
-    UIPickerView *_picker;
+    NSNumber * _kilogramValue;
+    int  _localWeightUnit;
+    NSMassFormatter * _massFormatter;
+    UIPickerView * _picker;
 }
 
 @property (readonly, copy) NSString *debugDescription;

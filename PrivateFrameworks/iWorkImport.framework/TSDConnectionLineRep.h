@@ -3,13 +3,14 @@
  */
 
 @interface TSDConnectionLineRep : TSDShapeRep {
-    TSDPathSource *mLastPathSource;
+    TSDPathSource * mLastPathSource;
 }
 
 - (id)connectionLineLayout;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (float)shortestDistanceToPoint:(struct CGPoint { float x1; float x2; })arg1 countAsHit:(BOOL*)arg2;
+- (BOOL)shouldSetPathSourceWhenChangingInfoGeometry;
 - (void)updateFromLayout;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface UIPDFPlacementController : NSObject {
-    NSMutableArray *_popups;
+    NSMutableArray * _popups;
     struct CGSize { 
         float width; 
         float height; 
-    } _viewSize;
-    UIPDFPageView *pageView;
+    }  _viewSize;
+    UIPDFPageView * pageView;
 }
 
 @property (nonatomic) UIPDFPageView *pageView;

@@ -3,10 +3,10 @@
  */
 
 @interface UIKeyboardAutomatic : UIKeyboard {
-    BOOL caretBlinks;
-    BOOL receivedCandidatesInCurrentInputMode;
-    BOOL showsCandidateBar;
-    BOOL showsCandidateInline;
+    BOOL  caretBlinks;
+    BOOL  receivedCandidatesInCurrentInputMode;
+    BOOL  showsCandidateBar;
+    BOOL  showsCandidateInline;
 }
 
 @property (nonatomic) BOOL caretBlinks;
@@ -23,6 +23,7 @@
 - (void)implBoundsHeightChangeDone:(float)arg1 suppressNotification:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isActive;
+- (BOOL)isAutomatic;
 - (void)maximize;
 - (void)minimize;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;

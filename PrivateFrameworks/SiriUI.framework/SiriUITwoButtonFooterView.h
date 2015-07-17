@@ -3,10 +3,10 @@
  */
 
 @interface SiriUITwoButtonFooterView : SiriUIReusableFooterView {
-    SiriUIKeyline *_horizontalKeyline;
-    SiriUIContentButton *_leftButton;
-    SiriUIContentButton *_rightButton;
-    SiriUIKeyline *_verticalKeyline;
+    SiriUIKeyline * _horizontalKeyline;
+    SiriUIContentButton * _leftButton;
+    SiriUIContentButton * _rightButton;
+    SiriUIKeyline * _verticalKeyline;
 }
 
 @property (nonatomic, readonly) SiriUIContentButton *leftButton;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUILibraryItem : NSObject <NSCopying> {
-    NSString *_storeFlavorIdentifier;
-    SKUIStoreIdentifier *_storeIdentifer;
-    SKUIStoreIdentifier *_storeIdentifier;
-    NSNumber *_storeItemIdentifier;
+    NSString * _storeFlavorIdentifier;
+    SKUIStoreIdentifier * _storeIdentifer;
+    SKUIStoreIdentifier * _storeIdentifier;
+    NSNumber * _storeItemIdentifier;
 }
 
 @property (nonatomic, copy) NSString *storeFlavorIdentifier;

@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutGoalTypeFilter : _HKFilter {
-    unsigned int _goalType;
-    unsigned int _operatorType;
+    unsigned int  _goalType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) unsigned int goalType;

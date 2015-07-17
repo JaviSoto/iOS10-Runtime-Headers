@@ -3,7 +3,7 @@
  */
 
 @interface MSCameraFile : ICCameraFile {
-    void *_msCameraFileProperties;
+    void * _msCameraFileProperties;
 }
 
 @property int bitsPerPixel;

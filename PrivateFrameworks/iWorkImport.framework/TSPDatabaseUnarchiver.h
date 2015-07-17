@@ -3,7 +3,7 @@
  */
 
 @interface TSPDatabaseUnarchiver : TSPUnarchiver {
-    unsigned long long _databaseVersion;
+    unsigned long long  _databaseVersion;
 }
 
 @property (nonatomic, readonly) unsigned long long preUFFVersion;

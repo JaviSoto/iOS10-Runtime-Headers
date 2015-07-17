@@ -37,15 +37,15 @@
             float x; 
             float y; 
         } vanishingPoint; 
-    } _configuration;
-    <MPUStackViewDataSource> *_dataSource;
-    int _distanceIgnoreCount;
-    Class _itemClass;
-    NSString *_itemReuseIdentifier;
-    NSMutableArray *_items;
-    int _numberOfItems;
-    UIView *_perspectiveTargetView;
-    UIWindow *_window;
+    }  _configuration;
+    <MPUStackViewDataSource> * _dataSource;
+    int  _distanceIgnoreCount;
+    Class  _itemClass;
+    NSString * _itemReuseIdentifier;
+    NSMutableArray * _items;
+    int  _numberOfItems;
+    UIView * _perspectiveTargetView;
+    UIWindow * _window;
 }
 
 @property (nonatomic) struct CGSize { float x1; float x2; } baseSize;

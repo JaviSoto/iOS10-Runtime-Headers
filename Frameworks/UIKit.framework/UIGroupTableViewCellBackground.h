@@ -3,24 +3,24 @@
  */
 
 @interface UIGroupTableViewCellBackground : UIView {
-    int _animationCount;
-    UIView *_bottomSeparatorView;
+    int  _animationCount;
+    UIView * _bottomSeparatorView;
     struct { 
         unsigned int selected : 1; 
-    } _groupBackgroundFlags;
-    int _newSectionLocation;
-    float _sectionBorderWidth;
-    int _sectionLocation;
-    int _selectionStyle;
-    UIColor *_selectionTintColor;
+    }  _groupBackgroundFlags;
+    int  _newSectionLocation;
+    float  _sectionBorderWidth;
+    int  _sectionLocation;
+    int  _selectionStyle;
+    UIColor * _selectionTintColor;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _separatorInset;
-    int _separatorStyle;
-    UIView *_topSeparatorView;
+    }  _separatorInset;
+    int  _separatorStyle;
+    UIView * _topSeparatorView;
 }
 
 @property (nonatomic) float sectionBorderWidth;

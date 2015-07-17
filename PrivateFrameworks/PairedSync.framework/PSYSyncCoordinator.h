@@ -3,21 +3,21 @@
  */
 
 @interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYSyncRestrictionProviderDelegate> {
-    NSXPCConnection *_connection;
-    <PSYSyncCoordinatorDelegate> *_delegate;
+    NSXPCConnection * _connection;
+    <PSYSyncCoordinatorDelegate> * _delegate;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _delegateLock;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _hasStartedListening;
-    BOOL _isFullSyncInProgress;
-    NSXPCListener *_listener;
-    id /* block */ _pendingCompletion;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_serviceName;
-    unsigned int _syncRestriction;
-    PSYSyncRestrictionProvider *_syncRestrictionProvider;
+    }  _delegateLock;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _hasStartedListening;
+    BOOL  _isFullSyncInProgress;
+    NSXPCListener * _listener;
+    id /* block */  _pendingCompletion;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _serviceName;
+    unsigned int  _syncRestriction;
+    PSYSyncRestrictionProvider * _syncRestrictionProvider;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

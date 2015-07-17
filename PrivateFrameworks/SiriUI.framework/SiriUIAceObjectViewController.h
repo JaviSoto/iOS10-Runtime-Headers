@@ -3,9 +3,9 @@
  */
 
 @interface SiriUIAceObjectViewController : UIViewController <SiriUIViewController> {
-    AceObject *_aceObject;
-    <SiriUIAceObjectViewControllerDelegate> *_delegate;
-    BOOL _virgin;
+    AceObject * _aceObject;
+    <SiriUIAceObjectViewControllerDelegate> * _delegate;
+    BOOL  _virgin;
 }
 
 @property (nonatomic, retain) AceObject *aceObject;

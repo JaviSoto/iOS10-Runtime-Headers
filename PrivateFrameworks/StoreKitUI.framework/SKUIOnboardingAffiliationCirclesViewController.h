@@ -3,16 +3,16 @@
  */
 
 @interface SKUIOnboardingAffiliationCirclesViewController : UIViewController <SKUIPhysicalCirclesDataSource, SKUIPhysicalCirclesDelegate> {
-    NSMutableArray *_affiliationItems;
-    SKUIPhysicalCirclesView *_circlesView;
-    SKUIClientContext *_clientContext;
-    <SKUIOnboardingAffiliationCirclesDelegate> *_delegate;
-    NSObject<OS_dispatch_source> *_deletionTimer;
-    BOOL _didPerformFinishAnimation;
-    UIView *_footerView;
-    NSMapTable *_images;
-    SKUIOnboardingInstructionsView *_instructionsView;
-    BOOL _needsReloadOnDidAppear;
+    NSMutableArray * _affiliationItems;
+    SKUIPhysicalCirclesView * _circlesView;
+    SKUIClientContext * _clientContext;
+    <SKUIOnboardingAffiliationCirclesDelegate> * _delegate;
+    NSObject<OS_dispatch_source> * _deletionTimer;
+    BOOL  _didPerformFinishAnimation;
+    UIView * _footerView;
+    NSMapTable * _images;
+    SKUIOnboardingInstructionsView * _instructionsView;
+    BOOL  _needsReloadOnDidAppear;
 }
 
 @property (nonatomic, copy) NSArray *affiliationItems;

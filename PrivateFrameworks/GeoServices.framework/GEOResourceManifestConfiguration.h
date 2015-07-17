@@ -3,16 +3,16 @@
  */
 
 @interface GEOResourceManifestConfiguration : NSObject {
-    NSString *_applicationIdentifier;
-    NSString *_applicationVersion;
-    NSString *_countryCode;
-    NSString *_dataDirectory;
-    NSString *_environment;
-    NSString *_hardwareIdentifier;
-    NSString *_os;
-    NSString *_osBuild;
-    NSString *_osVersion;
-    unsigned int _tileGroupIdentifier;
+    NSString * _applicationIdentifier;
+    NSString * _applicationVersion;
+    NSString * _countryCode;
+    NSString * _dataDirectory;
+    NSString * _environment;
+    NSString * _hardwareIdentifier;
+    NSString * _os;
+    NSString * _osBuild;
+    NSString * _osVersion;
+    unsigned int  _tileGroupIdentifier;
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
@@ -26,6 +26,9 @@
 @property (nonatomic, copy) NSString *osBuild;
 @property (nonatomic, copy) NSString *osVersion;
 @property (nonatomic) unsigned int tileGroupIdentifier;
+
++ (id)configurationWithPairedDevice:(id)arg1;
++ (id)defaultConfiguration;
 
 - (id)applicationIdentifier;
 - (id)applicationVersion;

@@ -3,13 +3,13 @@
  */
 
 @interface _UIToolbarAppearanceStorage : _UIBarAppearanceStorage {
-    UIImage *_backgroundImage;
-    UIImage *_miniBackgroundImage;
-    UIImage *_miniTopBackgroundImage;
-    UIImage *_topBackgroundImage;
-    BOOL hidesShadow;
-    UIImage *shadowImage;
-    UIImage *topShadowImage;
+    UIImage * _backgroundImage;
+    BOOL  _hidesShadow;
+    UIImage * _miniBackgroundImage;
+    UIImage * _miniTopBackgroundImage;
+    UIImage * _shadowImage;
+    UIImage * _topBackgroundImage;
+    UIImage * _topShadowImage;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;

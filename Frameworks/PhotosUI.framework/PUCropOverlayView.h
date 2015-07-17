@@ -3,11 +3,11 @@
  */
 
 @interface PUCropOverlayView : UIView {
-    UIView *__cropWindowView;
-    NSArray *__maskViews;
-    NSArray *__oneNinthCropLines;
-    NSArray *__oneThirdCropLines;
-    BOOL _cropGridVisible;
+    UIView * __cropWindowView;
+    NSArray * __maskViews;
+    NSArray * __oneNinthCropLines;
+    NSArray * __oneThirdCropLines;
+    BOOL  _cropGridVisible;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,9 +17,9 @@
             float width; 
             float height; 
         } size; 
-    } _cropRect;
-    BOOL _maskedContentVisible;
-    BOOL _straightenGridVisible;
+    }  _cropRect;
+    BOOL  _maskedContentVisible;
+    BOOL  _straightenGridVisible;
 }
 
 @property (setter=_setCropWindowView:, nonatomic, retain) UIView *_cropWindowView;

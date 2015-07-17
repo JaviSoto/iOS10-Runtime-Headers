@@ -3,21 +3,21 @@
  */
 
 @interface EKCalendarResourceChangeNotification : EKCalendarNotification {
-    BOOL _allDay;
-    NSString *_calendarName;
-    unsigned int _changeType;
-    NSNumber *_createCount;
-    BOOL _dateChanged;
-    NSNumber *_deleteCount;
-    NSDate *_endDate;
-    NSString *_eventID;
-    NSString *_location;
-    BOOL _locationChanged;
-    NSDate *_startDate;
-    NSDate *_startDateForNextOccurrence;
-    BOOL _timeChanged;
-    BOOL _titleChanged;
-    NSNumber *_updateCount;
+    BOOL  _allDay;
+    NSString * _calendarName;
+    unsigned int  _changeType;
+    NSNumber * _createCount;
+    BOOL  _dateChanged;
+    NSNumber * _deleteCount;
+    NSDate * _endDate;
+    NSString * _eventID;
+    NSString * _location;
+    BOOL  _locationChanged;
+    NSDate * _startDate;
+    NSDate * _startDateForNextOccurrence;
+    BOOL  _timeChanged;
+    BOOL  _titleChanged;
+    NSNumber * _updateCount;
 }
 
 @property (nonatomic) BOOL allDay;
@@ -35,6 +35,8 @@
 @property (nonatomic) BOOL timeChanged;
 @property (nonatomic) BOOL titleChanged;
 @property (nonatomic, retain) NSNumber *updateCount;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 - (BOOL)allDay;
 - (id)calendarName;
@@ -70,5 +72,12 @@
 - (BOOL)timeChanged;
 - (BOOL)titleChanged;
 - (id)updateCount;
+
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (int)_changedPropertyCount;
+- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
+- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (BOOL)supportsDisplay;
 
 @end

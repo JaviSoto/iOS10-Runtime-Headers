@@ -3,8 +3,8 @@
  */
 
 @interface AVTimedMetadataGroupInternal : NSObject {
-    struct opaqueCMSampleBuffer { } *backingSBuf;
-    NSArray *items;
+    struct opaqueCMSampleBuffer { } * backingSBuf;
+    NSArray * items;
     struct { 
         struct { 
             long long value; 
@@ -18,7 +18,7 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
-    } timeRange;
+    }  timeRange;
 }
 
 @end

@@ -3,12 +3,13 @@
  */
 
 @interface PSIQuery : NSObject {
-    BOOL _didStart;
-    PSIDatabase *_idx;
-    BOOL _isCanceled;
-    int _queryId;
-    NSString *_searchText;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    BOOL  _didStart;
+    id /* block */  _earlyNotificationHandler;
+    PSIDatabase * _idx;
+    BOOL  _isCanceled;
+    int  _queryId;
+    NSString * _searchText;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 @property (getter=isCanceled, readonly) BOOL canceled;
@@ -22,5 +23,6 @@
 - (int)queryId;
 - (void)runWithResultsHandler:(id /* block */)arg1;
 - (id)searchText;
+- (void)setEarlyResultsNotificationHandler:(id /* block */)arg1;
 
 @end

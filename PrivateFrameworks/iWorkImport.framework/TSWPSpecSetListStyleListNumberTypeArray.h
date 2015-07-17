@@ -3,8 +3,8 @@
  */
 
 @interface TSWPSpecSetListStyleListNumberTypeArray : TSWPSpecListStyleListNumberTypeArray {
-    NSArray *_listStyleListNumberTypeArray;
-    BOOL _unset;
+    NSArray * _listStyleListNumberTypeArray;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;

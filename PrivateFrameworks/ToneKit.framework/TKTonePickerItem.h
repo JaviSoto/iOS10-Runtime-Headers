@@ -3,9 +3,9 @@
  */
 
 @interface TKTonePickerItem : TKPickerSelectableItem <TKPickerContainerItem> {
-    unsigned int _itemKind;
-    int _numberOfChildren;
-    TKTonePickerController *_parentTonePickerController;
+    unsigned int  _itemKind;
+    int  _numberOfChildren;
+    TKTonePickerController * _parentTonePickerController;
 }
 
 @property (setter=_setParentTonePickerController:, nonatomic) TKTonePickerController *_parentTonePickerController;

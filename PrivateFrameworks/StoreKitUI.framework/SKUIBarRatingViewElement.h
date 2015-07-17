@@ -3,7 +3,7 @@
  */
 
 @interface SKUIBarRatingViewElement : SKUIViewElement {
-    float _ratingValue;
+    float  _ratingValue;
 }
 
 @property (nonatomic, readonly) float ratingValue;

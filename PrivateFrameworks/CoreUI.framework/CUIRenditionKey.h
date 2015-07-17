@@ -3,15 +3,14 @@
  */
 
 @interface CUIRenditionKey : NSObject <NSCoding, NSCopying> {
-    unsigned short _highwaterKeyCount;
-    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_key;
+    unsigned short  _highwaterKeyCount;
+    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _key;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } _stackKey;
+    }  _stackKey;
 }
 
-+ (id)_placeHolderKey;
 + (void)initialize;
 + (id)renditionKey;
 + (id)renditionKeyWithKeyList:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;

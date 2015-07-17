@@ -3,16 +3,16 @@
  */
 
 @interface CKTimeLogger : NSObject <NSCoding> {
-    NSMutableArray *_childLoggers;
-    NSMutableDictionary *_currentSessions;
-    NSMutableDictionary *_logs;
-    NSString *_observedObjectClassName;
-    NSString *_observedObjectDescription;
-    CKTimeLogger *_parentLogger;
-    NSString *_parentLoggerDescription;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_relationMessage;
-    double _relationTime;
+    NSMutableArray * _childLoggers;
+    NSMutableDictionary * _currentSessions;
+    NSMutableDictionary * _logs;
+    NSString * _observedObjectClassName;
+    NSString * _observedObjectDescription;
+    CKTimeLogger * _parentLogger;
+    NSString * _parentLoggerDescription;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _relationMessage;
+    double  _relationTime;
 }
 
 @property (readonly) NSArray *childLoggers;

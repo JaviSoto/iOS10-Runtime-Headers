@@ -3,7 +3,7 @@
  */
 
 @interface EKUIDividedGridView : UIView {
-    EKUIDividedGridViewController *_viewController;
+    EKUIDividedGridViewController * _viewController;
 }
 
 @property EKUIDividedGridViewController *viewController;

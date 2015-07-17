@@ -3,15 +3,15 @@
  */
 
 @interface BRCFSReader : BRCFSSchedulerBase <BRCFSEventsDelegate, BRCFileCoordinationReading, BRCModule> {
-    BRCCountedSet *_coordinatedReaders;
-    BRCRelativePath *_currentScan;
-    BRCMinHeap *_lostHeap;
-    NSObject<OS_dispatch_source> *_lostScanDelay;
-    NSObject<OS_dispatch_group> *_lostScanGroup;
-    NSObject<OS_dispatch_queue> *_lostScanQueue;
-    NSObject<OS_dispatch_source> *_lostScanSource;
-    BOOL _readerCountReachedMax;
-    BOOL _resumed;
+    BRCCountedSet * _coordinatedReaders;
+    BRCRelativePath * _currentScan;
+    BRCMinHeap * _lostHeap;
+    NSObject<OS_dispatch_source> * _lostScanDelay;
+    NSObject<OS_dispatch_group> * _lostScanGroup;
+    NSObject<OS_dispatch_queue> * _lostScanQueue;
+    NSObject<OS_dispatch_source> * _lostScanSource;
+    BOOL  _readerCountReachedMax;
+    BOOL  _resumed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 - (void)_close;
 - (void)_continueScan:(id)arg1;
 - (void)_createOrRetryThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3 throttle:(id)arg4 hasBeenTried:(BOOL)arg5;
+- (void)_delayThrottleID:(long long)arg1 zone:(id)arg2 by:(double)arg3;
 - (void)_didResolvedDocumentID:(unsigned int)arg1 fileID:(unsigned long long)arg2 zone:(id)arg3;
 - (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 item:(id)arg3 lookup:(id)arg4;
 - (void)_lostScanSchedule;
@@ -44,7 +45,9 @@
 - (BOOL)_scheduleOne:(id)arg1;
 - (void)_slowScanDirectoryAtPath:(id)arg1;
 - (void)_startScan:(id)arg1;
+- (void)cancel;
 - (void)createThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
+- (void)dealloc;
 - (void)didChangeLostScanStatusForContainer:(id)arg1;
 - (void)endReadCoordinationInZone:(id)arg1;
 - (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2;

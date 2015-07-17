@@ -3,14 +3,15 @@
  */
 
 @interface PKPassBoardingPassFrontFaceView : PKPassFrontFaceView {
-    UIImageView *_footerImageView;
-    UIImageView *_transitImageView;
+    UIImageView * _footerImageView;
+    UIImageView * _transitImageView;
 }
 
 - (id)_transitGlyphForTransitType:(int)arg1;
 - (void)createBodyContentViews;
 - (void)dealloc;
 - (void)layoutSubviews;
+- (void)setShowsBarcodeView:(BOOL)arg1;
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
 - (id)tallFaceTemplate;

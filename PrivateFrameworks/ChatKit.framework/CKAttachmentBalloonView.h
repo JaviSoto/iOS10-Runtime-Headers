@@ -3,7 +3,7 @@
  */
 
 @interface CKAttachmentBalloonView : CKColoredBalloonView {
-    UIView<CKAttachmentView> *_attachmentView;
+    UIView<CKAttachmentView> * _attachmentView;
 }
 
 @property (nonatomic, retain) UIView<CKAttachmentView> *attachmentView;

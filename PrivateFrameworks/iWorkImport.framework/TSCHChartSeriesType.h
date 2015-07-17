@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartSeriesType : NSObject {
-    NSArray *mSeriesRendererClasses;
+    NSArray * mSeriesRendererClasses;
 }
 
 + (id)_singletonAlloc;

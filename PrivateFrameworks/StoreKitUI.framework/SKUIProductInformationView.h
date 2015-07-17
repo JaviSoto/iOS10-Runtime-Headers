@@ -3,19 +3,19 @@
  */
 
 @interface SKUIProductInformationView : UIView {
-    SKUIColorScheme *_colorScheme;
+    SKUIColorScheme * _colorScheme;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    } _contentInset;
-    NSMutableArray *_imageValues;
-    NSArray *_informationLines;
-    NSMutableArray *_keyLabels;
-    UIView *_separatorView;
-    UILabel *_titleLabel;
-    NSMutableArray *_valueLabels;
+    }  _contentInset;
+    NSMutableArray * _imageValues;
+    NSArray * _informationLines;
+    NSMutableArray * _keyLabels;
+    UIView * _separatorView;
+    UILabel * _titleLabel;
+    NSMutableArray * _valueLabels;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

@@ -3,9 +3,9 @@
  */
 
 @interface ATSessionProxyListener : NSObject <ATSessionObserver, NSXPCListenerDelegate> {
-    NSMutableArray *_connections;
-    NSXPCListener *_listener;
-    ATSession *_session;
+    NSMutableArray * _connections;
+    NSXPCListener * _listener;
+    ATSession * _session;
 }
 
 @property (readonly, copy) NSString *debugDescription;

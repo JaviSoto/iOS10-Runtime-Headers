@@ -3,11 +3,11 @@
  */
 
 @interface NSConcretePointerArray : NSPointerArray {
-    unsigned int capacity;
-    unsigned int count;
-    unsigned int mutations;
-    BOOL needsCompaction;
-    unsigned int options;
+    unsigned int  capacity;
+    unsigned int  count;
+    unsigned int  mutations;
+    BOOL  needsCompaction;
+    unsigned int  options;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -33,7 +33,7 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } slice;
+    }  slice;
 }
 
 - (void)_initBlock;

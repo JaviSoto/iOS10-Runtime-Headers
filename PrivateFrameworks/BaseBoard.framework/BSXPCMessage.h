@@ -3,9 +3,11 @@
  */
 
 @interface BSXPCMessage : NSObject {
-    NSObject<OS_xpc_object> *_message;
-    id /* block */ _replyHandler;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    int  _invalidated;
+    NSObject<OS_xpc_object> * _message;
+    int  _replied;
+    id /* block */  _replyHandler;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 + (id)message:(long long)arg1 withPacker:(id /* block */)arg2;

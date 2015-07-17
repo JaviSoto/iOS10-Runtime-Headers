@@ -3,8 +3,8 @@
  */
 
 @interface CKDiscoverAllContactsOperation : CKOperation {
-    id /* block */ _discoverAllContactsCompletionBlock;
-    NSMutableArray *_discoveredUserInfos;
+    id /* block */  _discoverAllContactsCompletionBlock;
+    NSMutableArray * _discoveredUserInfos;
 }
 
 @property (nonatomic, copy) id /* block */ discoverAllContactsCompletionBlock;
@@ -14,6 +14,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)discoverAllContactsCompletionBlock;
 - (id)discoveredUserInfos;
 - (id)init;

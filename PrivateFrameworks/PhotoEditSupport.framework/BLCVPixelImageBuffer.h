@@ -3,8 +3,8 @@
  */
 
 @interface BLCVPixelImageBuffer : BLPixelImageBuffer {
-    struct CGContext { } *_cgcontext;
-    struct __CVBuffer { } *_pixelBuffer;
+    struct CGContext { } * _cgcontext;
+    struct __CVBuffer { } * _pixelBuffer;
 }
 
 - (void)accessPixelsByAddressInBlock:(id /* block */)arg1;

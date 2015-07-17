@@ -3,7 +3,7 @@
  */
 
 @interface MusicSocialRequestFollowingOperation : MusicSocialAbstractOperation {
-    NSNumber *_dsid;
+    NSNumber * _dsid;
 }
 
 - (void).cxx_destruct;

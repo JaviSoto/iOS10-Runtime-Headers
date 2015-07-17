@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramListMapper : CMDiagramShapeMapper {
-    float mMaxLineCount;
+    float  mMaxLineCount;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;

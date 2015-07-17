@@ -3,18 +3,18 @@
  */
 
 @interface MPUMarqueeView : UIView {
-    float _contentGap;
+    float  _contentGap;
     struct CGSize { 
         float width; 
         float height; 
-    } _contentSize;
-    UIView *_contentView;
-    NSUUID *_currentAnimationID;
-    <MPUMarqueeViewDelegate> *_delegate;
-    long long _lastEnableOptions;
-    double _marqueeDelay;
-    BOOL _marqueeEnabled;
-    double _marqueeScrollRate;
+    }  _contentSize;
+    UIView * _contentView;
+    NSUUID * _currentAnimationID;
+    <MPUMarqueeViewDelegate> * _delegate;
+    long long  _lastEnableOptions;
+    double  _marqueeDelay;
+    BOOL  _marqueeEnabled;
+    double  _marqueeScrollRate;
 }
 
 @property (nonatomic) float contentGap;

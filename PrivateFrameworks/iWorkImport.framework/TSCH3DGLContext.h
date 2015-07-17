@@ -8,7 +8,7 @@
         struct UpdatableValue<unsigned int> { 
             unsigned int value; 
         } handle; 
-    } mBufferArraysStates;
+    }  mBufferArraysStates;
     struct BufferStates { 
         struct array<TSCH3D::GLSingleState, 2> { 
             struct GLSingleState { 
@@ -18,13 +18,13 @@
                 } handle; 
             } __elems_[2]; 
         } states; 
-    } mBufferStates;
-    NSMutableIndexSet *mChangeMask;
-    NSMutableSet *mChildrenContexts;
-    NSIndexSet *mEnabledArrays;
-    NSMutableDictionary *mExtensionsNamesDict;
-    BOOL mIsSharable;
-    TSCH3DGLContext *mSharedContext;
+    }  mBufferStates;
+    NSMutableIndexSet * mChangeMask;
+    NSMutableSet * mChildrenContexts;
+    NSIndexSet * mEnabledArrays;
+    NSMutableDictionary * mExtensionsNamesDict;
+    BOOL  mIsSharable;
+    TSCH3DGLContext * mSharedContext;
     struct RenderState { 
         bool mBlend; 
         int blendMode; 
@@ -40,7 +40,7 @@
                 BOOL __elems_[8]; 
             } states; 
         } enableClipDistances; 
-    } mState;
+    }  mState;
     struct TextureUnitStates { 
         struct UpdatableValue<unsigned int> { 
             unsigned int value; 
@@ -53,8 +53,8 @@
                 } handle; 
             } __elems_[4]; 
         } states; 
-    } mTextureUnitStates;
-    TSCH3DGLVersion *mVersion;
+    }  mTextureUnitStates;
+    TSCH3DGLVersion * mVersion;
     struct box<glm::detail::tvec2<int> > { 
         struct tvec2<int> { 
             union { 
@@ -80,8 +80,8 @@
                 int t; 
             } ; 
         } mMax; 
-    } mViewport;
-    NSMutableDictionary *mVirtualScreenToCapabilitiesMap;
+    }  mViewport;
+    NSMutableDictionary * mVirtualScreenToCapabilitiesMap;
 }
 
 @property (nonatomic, readonly) NSSet *childrenContexts;

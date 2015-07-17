@@ -3,7 +3,7 @@
  */
 
 @interface BLTAggdObserverHolder : NSObject <BBObserverDelegate> {
-    BBObserver *_observer;
+    BBObserver * _observer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSITunesStore : IKJSITunesStore <SKUIItemStateCenterObserver, SKUIJSITunesStore> {
-    SKUIClientContext *_clientContext;
+    SKUIClientContext * _clientContext;
 }
 
 @property (nonatomic) int applicationIconBadgeNumber;

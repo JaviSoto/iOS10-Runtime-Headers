@@ -3,52 +3,53 @@
  */
 
 @interface EKEventGestureController : NSObject <UIAlertViewDelegate, UIGestureRecognizerDelegate> {
-    BOOL _commitBlocked;
-    int _consecutivePageTurnCount;
-    EKCalendarDate *_currentDay;
-    int _currentDragType;
-    double _dateAtFirstTouchPoint;
-    <EKEventGestureControllerDelegate> *_delegate;
-    BOOL _dragLockDisabled;
-    EKDayOccurrenceView *_draggingView;
-    EKDayOccurrenceView *_draggingViewSource;
-    EKEvent *_event;
-    float _firstContactOfDraggingViewTop;
+    BOOL  _commitBlocked;
+    int  _consecutivePageTurnCount;
+    EKCalendarDate * _currentDay;
+    int  _currentDragType;
+    double  _dateAtFirstTouchPoint;
+    <EKEventGestureControllerDelegate> * _delegate;
+    BOOL  _dragLockDisabled;
+    UILongPressGestureRecognizer * _draggingGestureRecognizer;
+    EKDayOccurrenceView * _draggingView;
+    EKDayOccurrenceView * _draggingViewSource;
+    EKEvent * _event;
+    float  _firstContactOfDraggingViewTop;
     struct CGPoint { 
         float x; 
         float y; 
-    } _firstTouchPoint;
-    double _firstTouchTime;
-    BOOL _forcedStart;
-    BOOL _hasStartedScrolling;
-    BOOL _horizontalDragLocked;
-    BOOL _isInCancelRegion;
-    BOOL _isMultiDayTimedEvent;
-    BOOL _isNewEvent;
+    }  _firstTouchPoint;
+    double  _firstTouchTime;
+    BOOL  _forcedStart;
+    BOOL  _hasStartedScrolling;
+    BOOL  _horizontalDragLocked;
+    BOOL  _isInCancelRegion;
+    BOOL  _isMultiDayTimedEvent;
+    BOOL  _isNewEvent;
     struct CGPoint { 
         float x; 
         float y; 
-    } _latestTouchPoint;
-    BOOL _needsCommit;
+    }  _latestTouchPoint;
+    BOOL  _needsCommit;
     struct CGPoint { 
         float x; 
         float y; 
-    } _previousTouchPoint;
-    double _previousTouchTime;
-    float _previousTouchVelocity;
-    UILongPressGestureRecognizer *_recognizer;
-    id /* block */ _recurrenceSheetCompletionHandler;
-    NSTimer *_scrollTimer;
-    NSString *_sessionIdentifierForDebug;
-    double _timeSinceEnteredPageMargin;
+    }  _previousTouchPoint;
+    double  _previousTouchTime;
+    float  _previousTouchVelocity;
+    id /* block */  _recurrenceSheetCompletionHandler;
+    NSTimer * _scrollTimer;
+    NSString * _sessionIdentifierForDebug;
+    UITapGestureRecognizer * _tapGestureRecognizer;
+    double  _timeSinceEnteredPageMargin;
     struct CGPoint { 
         float x; 
         float y; 
-    } _touchOffset;
-    int _touchOffsetDays;
-    <EKEventGestureControllerUntimedDelegate> *_untimedDelegate;
-    BOOL _usesHorizontalDragLocking;
-    BOOL _usesXDragOffsetInCancelRegion;
+    }  _touchOffset;
+    int  _touchOffsetDays;
+    <EKEventGestureControllerUntimedDelegate> * _untimedDelegate;
+    BOOL  _usesHorizontalDragLocking;
+    BOOL  _usesXDragOffsetInCancelRegion;
 }
 
 @property (nonatomic) BOOL commitBlocked;
@@ -90,6 +91,7 @@
 - (void)_setTouchOffsetsFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setUpAfterForcedStartFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setUpAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_tapGesture:(id)arg1;
 - (void)_update;
 - (void)_updateHorizontalDragLockForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;

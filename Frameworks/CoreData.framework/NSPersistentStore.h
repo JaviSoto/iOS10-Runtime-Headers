@@ -3,21 +3,21 @@
  */
 
 @interface NSPersistentStore : NSObject {
-    NSString *_configurationName;
-    NSPersistentStoreCoordinator *_coordinator;
-    id _defaultFaultHandler;
-    id _externalRecordsMonitor;
+    NSString * _configurationName;
+    NSPersistentStoreCoordinator * _coordinator;
+    id  _defaultFaultHandler;
+    id  _externalRecordsMonitor;
     struct _objectStoreFlags { 
         unsigned int isReadOnly : 1; 
         unsigned int cleanOnRemove : 1; 
         unsigned int isMDDirty : 1; 
         unsigned int _RESERVED : 29; 
-    } _flags;
-    id *_oidFactories;
-    NSDictionary *_options;
-    void *_reserved3;
-    void *_temporaryIDClass;
-    NSURL *_url;
+    }  _flags;
+    id * _oidFactories;
+    NSDictionary * _options;
+    void * _reserved3;
+    void * _temporaryIDClass;
+    NSURL * _url;
 }
 
 @property (retain) NSURL *URL;

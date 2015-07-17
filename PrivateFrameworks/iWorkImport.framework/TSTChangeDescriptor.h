@@ -7,11 +7,11 @@
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mCellID;
-    TSTCellRegion *mCellRegion;
-    int mChangeDescriptor;
-    NSHashTable *mReferenceIdentifiers;
-    TSTCellRegion *mStrokeRegion;
+    }  mCellID;
+    TSTCellRegion * mCellRegion;
+    int  mChangeDescriptor;
+    NSHashTable * mReferenceIdentifiers;
+    TSTCellRegion * mStrokeRegion;
 }
 
 @property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cellID;

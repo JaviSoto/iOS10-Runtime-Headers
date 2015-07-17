@@ -3,13 +3,13 @@
  */
 
 @interface CKDispatchQueue : NSObject {
-    BOOL _cancelled;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableDictionary *_dispatchQueueBlocks;
-    unsigned int _fifo;
-    struct __CFBinaryHeap { } *_heap;
-    NSObject<OS_dispatch_queue> *_lockQueue;
-    BOOL _suspended;
+    BOOL  _cancelled;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableDictionary * _dispatchQueueBlocks;
+    unsigned int  _fifo;
+    struct __CFBinaryHeap { } * _heap;
+    NSObject<OS_dispatch_queue> * _lockQueue;
+    BOOL  _suspended;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;

@@ -3,7 +3,7 @@
  */
 
 @interface PTXLiveView : UIView {
-    NSString *_resourceName;
+    NSString * _resourceName;
 }
 
 - (void).cxx_destruct;

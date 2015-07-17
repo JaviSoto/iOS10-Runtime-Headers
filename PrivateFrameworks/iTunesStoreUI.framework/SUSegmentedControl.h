@@ -3,20 +3,20 @@
  */
 
 @interface SUSegmentedControl : UIControl <SUMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    BOOL _autosizesText;
-    NSString *_cancelButtonTitle;
-    SUClientInterface *_clientInterface;
-    BOOL _hidingPopoverForRotation;
-    NSMutableArray *_items;
-    int _maximumNumberOfItems;
-    float _maximumWidth;
-    SUSimpleMenuViewController *_menuViewController;
-    NSString *_moreListTitle;
-    UIPopoverController *_popoverController;
-    UISegmentedControl *_segmentedControl;
-    int _selectionIndex;
-    BOOL _showsMoreListAutomatically;
-    int _tintStyle;
+    BOOL  _autosizesText;
+    NSString * _cancelButtonTitle;
+    SUClientInterface * _clientInterface;
+    BOOL  _hidingPopoverForRotation;
+    NSMutableArray * _items;
+    int  _maximumNumberOfItems;
+    float  _maximumWidth;
+    SUSimpleMenuViewController * _menuViewController;
+    NSString * _moreListTitle;
+    UIPopoverController * _popoverController;
+    UISegmentedControl * _segmentedControl;
+    int  _selectionIndex;
+    BOOL  _showsMoreListAutomatically;
+    int  _tintStyle;
 }
 
 @property (nonatomic, copy) NSString *cancelButtonTitle;

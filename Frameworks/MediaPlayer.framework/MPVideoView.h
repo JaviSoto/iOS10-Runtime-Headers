@@ -3,13 +3,13 @@
  */
 
 @interface MPVideoView : UIView {
-    NSDictionary *_AVURLAssetOptions;
-    NSString *_movieSubtitle;
-    NSString *_movieTitle;
-    MPAVController *_player;
-    unsigned int _scaleMode;
-    double _startTime;
-    double _stopTime;
+    NSDictionary * _AVURLAssetOptions;
+    NSString * _movieSubtitle;
+    NSString * _movieTitle;
+    MPAVController * _player;
+    unsigned int  _scaleMode;
+    double  _startTime;
+    double  _stopTime;
 }
 
 @property (nonatomic, retain) NSDictionary *AVURLAssetOptions;

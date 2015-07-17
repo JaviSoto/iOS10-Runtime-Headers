@@ -3,7 +3,7 @@
  */
 
 @interface BBSectionIcon : NSObject <NSCopying, NSSecureCoding> {
-    NSSet *_variants;
+    NSSet * _variants;
 }
 
 @property (nonatomic, copy) NSSet *variants;

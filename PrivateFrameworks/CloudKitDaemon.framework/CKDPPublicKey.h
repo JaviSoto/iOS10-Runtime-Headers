@@ -3,9 +3,9 @@
  */
 
 @interface CKDPPublicKey : PBCodable <NSCopying> {
-    NSData *_keyData;
-    NSString *_keyHash;
-    CKDPIdentifier *_userId;
+    NSData * _keyData;
+    NSString * _keyHash;
+    CKDPIdentifier * _userId;
 }
 
 @property (nonatomic, readonly) BOOL hasKeyData;

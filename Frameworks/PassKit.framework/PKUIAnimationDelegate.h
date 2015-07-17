@@ -3,8 +3,8 @@
  */
 
 @interface PKUIAnimationDelegate : NSObject {
-    id /* block */ _completionHandler;
-    id /* block */ _didStartHandler;
+    id /* block */  _completionHandler;
+    id /* block */  _didStartHandler;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

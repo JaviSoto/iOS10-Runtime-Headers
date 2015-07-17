@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicProfileTemplateDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUINavigationBarDisplayConfiguring> {
-    UIViewController<MusicClientContextConsuming><SKUINavigationBarDisplayConfiguring> *_profileViewController;
+@interface MusicProfileTemplateDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIModalSourceViewProvider, SKUINavigationBarDisplayConfiguring> {
+    UIViewController<MusicClientContextConsuming><SKUINavigationBarDisplayConfiguring> * _profileViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +16,7 @@
 - (id)childViewControllerForStatusBarStyle;
 - (void)dealloc;
 - (void)documentDidUpdate:(id)arg1;
+- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithTemplateViewElement:(id)arg1 clientContext:(id)arg2;
 - (BOOL)managesNavigationBarContents;
 - (int)navigationBarTintAdjustmentMode;

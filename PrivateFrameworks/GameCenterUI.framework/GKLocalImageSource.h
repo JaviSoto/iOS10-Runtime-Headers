@@ -3,7 +3,7 @@
  */
 
 @interface GKLocalImageSource : GKImageSource {
-    NSMapTable *_keysForSizes;
+    NSMapTable * _keysForSizes;
 }
 
 @property (nonatomic, retain) NSMapTable *keysForSizes;

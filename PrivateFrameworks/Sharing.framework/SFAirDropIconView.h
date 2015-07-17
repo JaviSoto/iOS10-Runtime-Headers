@@ -3,7 +3,7 @@
  */
 
 @interface SFAirDropIconView : UIControl {
-    UIImageView *_imageView;
+    UIImageView * _imageView;
 }
 
 - (void).cxx_destruct;

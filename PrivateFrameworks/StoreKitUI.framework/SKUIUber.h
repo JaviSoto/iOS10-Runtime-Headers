@@ -3,9 +3,9 @@
  */
 
 @interface SKUIUber : NSObject {
-    SKUIArtworkList *_artworkList;
-    SKUIColorScheme *_colorScheme;
-    NSString *_text;
+    SKUIArtworkList * _artworkList;
+    SKUIColorScheme * _colorScheme;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) SKUIArtworkList *artworkList;

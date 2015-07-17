@@ -3,9 +3,9 @@
  */
 
 @interface MCDNowPlayingButton : UIButton {
-    CALayer *_focusColorLayer;
-    BOOL _hidesLeftBorder;
-    CALayer *_leftBorder;
+    CALayer * _focusColorLayer;
+    BOOL  _hidesLeftBorder;
+    CALayer * _leftBorder;
 }
 
 @property (nonatomic) BOOL hidesLeftBorder;

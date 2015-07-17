@@ -3,23 +3,23 @@
  */
 
 @interface TSPObjectContext : NSObject <TSPDocumentResourceDownloader, TSPFileCoordinatorDelegate, TSPLazyReferenceDelegate, TSPObjectDelegate, TSPPassphraseConsumer, TSPSupportDirectoryDelegate> {
-    TSPComponentManager *_componentManager;
-    TSPDataDownloadManager *_dataDownloadManager;
-    TSPDataManager *_dataManager;
-    SFUCryptoKey *_decryptionKey;
-    <TSPObjectContextDelegate> *_delegate;
-    TSPDocumentMetadata *_documentMetadata;
-    TSPObject *_documentObject;
-    TSPObjectContainer *_documentObjectContainer;
-    TSPPackage *_documentPackage;
-    NSString *_documentPasswordHint;
-    TSPDocumentProperties *_documentProperties;
-    TSPDocumentResourceDataProvider *_documentResourceDataProvider;
-    NSObject<OS_dispatch_queue> *_documentResourceDataProviderQueue;
-    TSPDocumentResourceManager *_documentResourceManager;
-    TSPDocumentRevision *_documentRevision;
-    NSObject<OS_dispatch_queue> *_documentStateQueue;
-    NSURL *_documentURL;
+    TSPComponentManager * _componentManager;
+    TSPDataDownloadManager * _dataDownloadManager;
+    TSPDataManager * _dataManager;
+    SFUCryptoKey * _decryptionKey;
+    <TSPObjectContextDelegate> * _delegate;
+    TSPDocumentMetadata * _documentMetadata;
+    TSPObject * _documentObject;
+    TSPObjectContainer * _documentObjectContainer;
+    TSPPackage * _documentPackage;
+    NSString * _documentPasswordHint;
+    TSPDocumentProperties * _documentProperties;
+    TSPDocumentResourceDataProvider * _documentResourceDataProvider;
+    NSObject<OS_dispatch_queue> * _documentResourceDataProviderQueue;
+    TSPDocumentResourceManager * _documentResourceManager;
+    TSPDocumentRevision * _documentRevision;
+    NSObject<OS_dispatch_queue> * _documentStateQueue;
+    NSURL * _documentURL;
     struct { 
         unsigned int delegateRespondsToAdditionalDocumentPropertiesForWrite : 1; 
         unsigned int delegateRespondsToDocumentPasswordHintForWrite : 1; 
@@ -27,8 +27,9 @@
         unsigned int delegateRespondsToAreNewExternalReferencesToDataAllowed : 1; 
         unsigned int delegateRespondsToAreExternalReferencesToDataAllowedAtURL : 1; 
         unsigned int delegateRespondsToBaseUUIDForObjectUUID : 1; 
-        unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSequenceZero : 1; 
+        unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSaveURL : 1; 
         unsigned int delegateRespondsToFilePresenter : 1; 
+        unsigned int delegateRespondsToSupportDirectoryURLReturningIsUnique : 1; 
         unsigned int delegateRespondsToSupportDirectoryURL : 1; 
         unsigned int delegateRespondsToIgnoreDocumentSupport : 1; 
         unsigned int delegateRespondsToIsDocumentSupportTemporary : 1; 
@@ -36,9 +37,9 @@
         unsigned int delegateRespondsToIsInCollaborationMode : 1; 
         unsigned int delegateRespondsToIsInReadOnlyMode : 1; 
         unsigned int skipDocumentUpgrade : 1; 
-    } _flags;
-    BOOL _isWaitingForEndSave;
-    long long _lastObjectIdentifier;
+    }  _flags;
+    BOOL  _isWaitingForEndSave;
+    long long  _lastObjectIdentifier;
     struct hash_map<const long long, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *> > > { 
         struct __hash_table<std::__1::pair<const long long, NSMutableArray *>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, NSMutableArray *>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, NSMutableArray *>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, NSMutableArray *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, NSMutableArray *>, void *> *> > > { 
@@ -63,37 +64,38 @@
                 float __first_; 
             } __p3_; 
         } __table_; 
-    } _loadObservers;
-    NSObject<OS_dispatch_queue> *_loadObserversQueue;
-    unsigned int _mode;
-    int _modifyObjectCount;
-    long long _modifyObjectToken;
-    NSProgress *_nextSaveProgress;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    NSHashTable *_objectModifyDelegates;
-    TSPObjectUUIDMap *_objectUUIDMap;
-    NSMapTable *_objects;
-    NSObject<OS_dispatch_queue> *_objectsQueue;
-    NSObject<OS_dispatch_group> *_outstandingReadsGroup;
-    TSPPackageWriteCoordinator *_packageWriteCoordinator;
-    NSData *_passwordVerifier;
-    NSObject<OS_dispatch_group> *_pendingEndSaveGroup;
-    int _preferredPackageType;
-    NSRecursiveLock *_readLock;
-    NSObject<OS_dispatch_queue> *_runLoadObserversForKnownObjectQueue;
-    NSObject<OS_dispatch_queue> *_runLoadObserversQueue;
-    TSPDocumentSaveOperationState *_saveOperationState;
-    unsigned long long _saveToken;
-    TSPSupportManager *_supportManager;
-    TSPSupportMetadata *_supportMetadata;
-    TSPObject *_supportObject;
-    TSPObjectContainer *_supportObjectContainer;
-    TSPPackage *_supportPackage;
-    NSURL *_supportURL;
-    TSPPackageWriteCoordinator *_supportWriteCoordinator;
-    TSUTemporaryDirectory *_temporaryDirectory;
-    NSObject<OS_dispatch_queue> *_temporaryDirectoryQueue;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    }  _loadObservers;
+    NSObject<OS_dispatch_queue> * _loadObserversQueue;
+    unsigned int  _mode;
+    int  _modifyObjectCount;
+    long long  _modifyObjectToken;
+    NSProgress * _nextSaveProgress;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    NSHashTable * _objectModifyDelegates;
+    TSPObjectUUIDMap * _objectUUIDMap;
+    NSMapTable * _objects;
+    NSObject<OS_dispatch_queue> * _objectsQueue;
+    NSHashTable * _objectsToIgnoreModifications;
+    NSObject<OS_dispatch_group> * _outstandingReadsGroup;
+    TSPPackageWriteCoordinator * _packageWriteCoordinator;
+    NSData * _passwordVerifier;
+    NSObject<OS_dispatch_group> * _pendingEndSaveGroup;
+    int  _preferredPackageType;
+    NSRecursiveLock * _readLock;
+    NSObject<OS_dispatch_queue> * _runLoadObserversForKnownObjectQueue;
+    NSObject<OS_dispatch_queue> * _runLoadObserversQueue;
+    TSPDocumentSaveOperationState * _saveOperationState;
+    unsigned long long  _saveToken;
+    TSPSupportManager * _supportManager;
+    TSPSupportMetadata * _supportMetadata;
+    TSPObject * _supportObject;
+    TSPObjectContainer * _supportObjectContainer;
+    TSPPackage * _supportPackage;
+    NSURL * _supportURL;
+    TSPPackageWriteCoordinator * _supportWriteCoordinator;
+    TSUTemporaryDirectory * _temporaryDirectory;
+    NSObject<OS_dispatch_queue> * _temporaryDirectoryQueue;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
@@ -156,7 +158,7 @@
 + (void)removeDefaultSupportDirectory;
 + (id)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2;
 + (BOOL)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2 usingDataProvider:(id)arg3;
-+ (id)supportBundleURLForUUID:(id)arg1 delegate:(id)arg2;
++ (id)supportBundleURLForDocumentUUID:(id)arg1 delegate:(id)arg2;
 + (void)waitForPendingEndSaveGroup:(id)arg1;
 
 - (id).cxx_construct;
@@ -172,6 +174,7 @@
 - (id)baseUUIDForObjectUUID;
 - (void)beginAssertOnModify;
 - (void)beginIgnoringCachedObjectEviction;
+- (void)beginIgnoringModificationsForObject:(id)arg1;
 - (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3;
 - (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3 documentUUID:(id)arg4;
 - (void)beginWriteOperation;
@@ -221,6 +224,7 @@
 - (id)downloadWithDelegate:(id)arg1 description:(id)arg2;
 - (void)endAssertOnModify;
 - (void)endIgnoringCachedObjectEviction;
+- (void)endIgnoringModificationsForObject:(id)arg1;
 - (void)endSaveWithSuccess:(BOOL)arg1;
 - (void)endWriteOperation;
 - (BOOL)endWriteWithSuccess:(BOOL)arg1 error:(id*)arg2;
@@ -263,6 +267,7 @@
 - (id)objectUUIDMap;
 - (id)objectWithUUID:(id)arg1;
 - (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
+- (id)objectWithUUIDIfAvailable:(id)arg1;
 - (id)objectWithUUIDPath:(id)arg1;
 - (id)objectsFromUUIDs:(id)arg1;
 - (int)packageType;
@@ -307,7 +312,7 @@
 - (void)setSupportObject:(id)arg1;
 - (void)setSupportObjectContainer:(id)arg1;
 - (void)setSupportObjectImpl:(id)arg1;
-- (id)supportDirectoryURL;
+- (id)supportDirectoryURLReturningIsBundleURL:(BOOL*)arg1;
 - (id)supportManager;
 - (id)supportMetadata;
 - (id)supportObject;

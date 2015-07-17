@@ -3,10 +3,10 @@
  */
 
 @interface SSErrorHandlerSession : NSObject {
-    SSXPCConnection *_controlConnection;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSDictionary *_properties;
-    long long _sessionID;
+    SSXPCConnection * _controlConnection;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSDictionary * _properties;
+    long long  _sessionID;
 }
 
 - (void)_setControlConnection:(id)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface GKMatchRequestInternal : GKInternalRepresentation {
-    unsigned char _defaultNumberOfPlayers;
-    NSString *_inviteMessage;
-    NSDictionary *_localizableInviteMessage;
-    unsigned int _matchType;
-    unsigned char _maxPlayers;
-    unsigned char _minPlayers;
-    unsigned int _playerAttributes;
-    int _playerGroup;
-    NSArray *_recipientPlayerIDs;
-    NSArray *_recipients;
-    NSString *_rid;
-    NSData *_sessionToken;
-    unsigned int _version;
+    unsigned char  _defaultNumberOfPlayers;
+    NSString * _inviteMessage;
+    NSDictionary * _localizableInviteMessage;
+    unsigned int  _matchType;
+    unsigned char  _maxPlayers;
+    unsigned char  _minPlayers;
+    unsigned int  _playerAttributes;
+    int  _playerGroup;
+    NSArray * _recipientPlayerIDs;
+    NSArray * _recipients;
+    NSString * _rid;
+    NSData * _sessionToken;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned char defaultNumberOfPlayers;
@@ -36,6 +36,7 @@
 
 - (void)dealloc;
 - (unsigned char)defaultNumberOfPlayers;
+- (BOOL)hasGuestPlayers;
 - (unsigned int)hash;
 - (id)init;
 - (id)inviteMessage;

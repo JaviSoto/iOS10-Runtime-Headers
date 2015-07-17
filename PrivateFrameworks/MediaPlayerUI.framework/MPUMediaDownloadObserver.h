@@ -3,12 +3,12 @@
  */
 
 @interface MPUMediaDownloadObserver : NSObject {
-    BOOL _hasPendingProgressHandlerExecution;
-    BOOL _invalidated;
-    BOOL _paused;
-    long long _pid;
-    id /* block */ _progressHandler;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _hasPendingProgressHandlerExecution;
+    BOOL  _invalidated;
+    BOOL  _paused;
+    long long  _pid;
+    id /* block */  _progressHandler;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) BOOL canCancel;

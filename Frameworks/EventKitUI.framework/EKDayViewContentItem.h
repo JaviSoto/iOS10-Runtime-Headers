@@ -3,12 +3,12 @@
  */
 
 @interface EKDayViewContentItem : NSObject <CUIKSingleDayTimelineViewItem> {
-    float _bottomPinningProximity;
-    EKCalendarDate *_endDate;
-    unsigned int _eventIndex;
-    EKCalendarDate *_startDate;
-    float _topPinningProximity;
-    double _travelTime;
+    float  _bottomPinningProximity;
+    EKCalendarDate * _endDate;
+    unsigned int  _eventIndex;
+    EKCalendarDate * _startDate;
+    float  _topPinningProximity;
+    double  _travelTime;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,8 +18,8 @@
             float width; 
             float height; 
         } size; 
-    } _unPinnedViewFrame;
-    EKDayOccurrenceView *_view;
+    }  _unPinnedViewFrame;
+    EKDayOccurrenceView * _view;
 }
 
 @property (nonatomic) float bottomPinningProximity;

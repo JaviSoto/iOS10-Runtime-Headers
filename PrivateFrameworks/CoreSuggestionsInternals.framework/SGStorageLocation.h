@@ -2,23 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGStorageLocation : NSObject <NSCopying, NSSecureCoding> {
-    double _accuracy;
-    NSString *_address;
-    NSString *_label;
-    double _latitude;
-    unsigned int _locationType;
-    double _longitude;
-    double _quality;
+@interface SGStorageLocation : NSObject <NSCopying, NSSecureCoding, SGEventLocationForGeocode> {
+    double  _accuracy;
+    NSString * _address;
+    NSString * _label;
+    double  _latitude;
+    unsigned int  _locationType;
+    double  _longitude;
+    double  _quality;
 }
 
 @property (nonatomic, readonly) double accuracy;
 @property (nonatomic, readonly) NSString *address;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *label;
 @property (nonatomic, readonly) double latitude;
 @property (nonatomic, readonly) unsigned int locationType;
 @property (nonatomic, readonly) double longitude;
 @property (nonatomic, readonly) double quality;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 
@@ -26,10 +30,16 @@
 - (double)accuracy;
 - (id)address;
 - (int)compare:(id)arg1;
-- (id)convertToLocation;
+- (id)convertToLocationWithId:(id)arg1 origin:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (double)geocodeAccuracy;
+- (id)geocodeAddress;
+- (BOOL)geocodeIsEnd;
+- (BOOL)geocodeIsStart;
+- (double)geocodeLatitude;
+- (double)geocodeLongitude;
+- (id)geocodedLocationWithLatitude:(double)arg1 longitude:(double)arg2 accuracy:(double)arg3;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 accuracy:(double)arg4 quality:(double)arg5;

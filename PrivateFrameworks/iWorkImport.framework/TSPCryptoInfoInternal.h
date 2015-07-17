@@ -3,10 +3,10 @@
  */
 
 @interface TSPCryptoInfoInternal : NSObject <TSPCryptoInfo> {
-    NSArray *_blockInfos;
-    SFUCryptoKey *_cryptoKey;
-    unsigned long _decodedLength;
-    unsigned long _preferredBlockSize;
+    NSArray * _blockInfos;
+    SFUCryptoKey * _cryptoKey;
+    unsigned long  _decodedLength;
+    unsigned long  _preferredBlockSize;
 }
 
 @property (nonatomic, retain) NSArray *blockInfos;

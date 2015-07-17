@@ -3,10 +3,10 @@
  */
 
 @interface SKUILoadResourceOperation : NSOperation {
-    SKUIClientContext *_clientContext;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
-    SKUIResourceRequest *_request;
+    SKUIClientContext * _clientContext;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
+    SKUIResourceRequest * _request;
 }
 
 @property (retain) SKUIClientContext *clientContext;

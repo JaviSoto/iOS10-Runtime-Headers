@@ -3,22 +3,22 @@
  */
 
 @interface SUScriptInterface : SUScriptObject <SUScriptXMLHTTPRequestDelegate> {
-    SUScriptAccountManager *_accountManager;
-    SUScriptKeyValueStore *_applicationLocalStorage;
-    SSAuthenticationContext *_authenticationContext;
-    SUClientInterface *_clientInterface;
-    <SUScriptInterfaceDelegate> *_delegate;
-    SUScriptKeyValueStore *_deviceLocalStorage;
-    NSMutableDictionary *_downloadQueues;
-    WebFrame *_frame;
-    SUScriptMediaLibrary *_mediaLibrary;
-    SUScriptNotificationObserver *_notificationObserver;
-    SUScriptPreviewOverlay *_previewOverlay;
-    SUScriptPurchaseManager *_purchaseManager;
-    NSMutableSet *_requireCellularURLs;
-    SUScriptOperationDelegate *_scriptOperationDelegate;
-    SUScriptWindowContext *_scriptWindowContext;
-    id _threadSafeDelegate;
+    SUScriptAccountManager * _accountManager;
+    SUScriptKeyValueStore * _applicationLocalStorage;
+    SSAuthenticationContext * _authenticationContext;
+    SUClientInterface * _clientInterface;
+    <SUScriptInterfaceDelegate> * _delegate;
+    SUScriptKeyValueStore * _deviceLocalStorage;
+    NSMutableDictionary * _downloadQueues;
+    WebFrame * _frame;
+    SUScriptMediaLibrary * _mediaLibrary;
+    SUScriptNotificationObserver * _notificationObserver;
+    SUScriptPreviewOverlay * _previewOverlay;
+    SUScriptPurchaseManager * _purchaseManager;
+    NSMutableSet * _requireCellularURLs;
+    SUScriptOperationDelegate * _scriptOperationDelegate;
+    SUScriptWindowContext * _scriptWindowContext;
+    id  _threadSafeDelegate;
 }
 
 @property (readonly) SUScriptFairPlayContext *accountCreationSecureContext;

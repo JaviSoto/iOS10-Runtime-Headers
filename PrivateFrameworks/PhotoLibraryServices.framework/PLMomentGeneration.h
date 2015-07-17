@@ -3,12 +3,12 @@
  */
 
 @interface PLMomentGeneration : NSObject {
-    PLMomentAnalyzer *_analyzer;
-    <PLMomentGenerationDataManagement> *_momentGenerationDataManager;
-    PLMomentAnalyzer *_pairedAnalyzer;
-    NSMutableDictionary *_pendingDeletes;
-    NSMutableSet *_pendingInsertsAndUpdates;
-    NSObject<OS_dispatch_queue> *_pendingIsolation;
+    PLMomentAnalyzer * _analyzer;
+    <PLMomentGenerationDataManagement> * _momentGenerationDataManager;
+    PLMomentAnalyzer * _pairedAnalyzer;
+    NSMutableDictionary * _pendingDeletes;
+    NSMutableSet * _pendingInsertsAndUpdates;
+    NSObject<OS_dispatch_queue> * _pendingIsolation;
 }
 
 @property (nonatomic) PLMomentAnalyzer *analyzer;

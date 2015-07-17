@@ -3,10 +3,10 @@
  */
 
 @interface GKFloatInAnimator : GKBubblePathAnimator {
-    float _additionalDelay;
-    float _delayIncrement;
-    int _focusBubbleType;
-    BOOL _useWelcomeSpringValues;
+    float  _additionalDelay;
+    float  _delayIncrement;
+    int  _focusBubbleType;
+    BOOL  _useWelcomeSpringValues;
 }
 
 @property (nonatomic) float additionalDelay;

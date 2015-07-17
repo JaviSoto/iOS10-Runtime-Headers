@@ -3,7 +3,7 @@
  */
 
 @interface MPHomeSharingArtworkDataSource : MPAbstractNetworkArtworkDataSource {
-    HSHomeSharingLibrary *_library;
+    HSHomeSharingLibrary * _library;
 }
 
 @property (nonatomic, retain) HSHomeSharingLibrary *library;

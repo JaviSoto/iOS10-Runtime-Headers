@@ -8,8 +8,8 @@
         float left; 
         float bottom; 
         float right; 
-    } _textBoxInsets;
-    SKUITextBoxView *_textBoxView;
+    }  _textBoxInsets;
+    SKUITextBoxView * _textBoxView;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textBoxInsets;

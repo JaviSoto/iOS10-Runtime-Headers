@@ -3,18 +3,18 @@
  */
 
 @interface _PFTask : NSObject {
-    int _cd_rc;
-    void *_task;
-    void *arguments;
+    int  _cd_rc;
+    void * _task;
+    void * arguments;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } condition;
-    int isFinishedFlag;
+    }  condition;
+    int  isFinishedFlag;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } lock;
+    }  lock;
 }
 
 + (int)getNumActiveProcessors;

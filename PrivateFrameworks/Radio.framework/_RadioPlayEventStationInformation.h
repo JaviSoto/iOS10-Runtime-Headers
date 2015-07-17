@@ -3,8 +3,8 @@
  */
 
 @interface _RadioPlayEventStationInformation : NSObject {
-    NSString *_stationHash;
-    long long _stationID;
+    NSString * _stationHash;
+    long long  _stationID;
 }
 
 @property (nonatomic, copy) NSString *stationHash;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartMeshResource : TSCH3DResource {
-    TSCH3DChartMeshSharedChildResource *mShared;
+    TSCH3DChartMeshSharedChildResource * mShared;
 }
 
 + (id)resourceWithSharedResource:(id)arg1;

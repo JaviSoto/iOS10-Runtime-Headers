@@ -3,13 +3,13 @@
  */
 
 @interface SSEntity : NSObject <SSXPCCoding> {
-    SSXPCConnection *_connection;
-    NSArray *_dirtyLocalExternalProperties;
-    NSArray *_dirtyLocalProperties;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableDictionary *_localExternalValues;
-    NSMutableDictionary *_localValues;
-    long long _pid;
+    SSXPCConnection * _connection;
+    NSArray * _dirtyLocalExternalProperties;
+    NSArray * _dirtyLocalProperties;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableDictionary * _localExternalValues;
+    NSMutableDictionary * _localValues;
+    long long  _pid;
 }
 
 @property (getter=_localExternalValues, setter=_setLocalExternalValues:, copy) NSDictionary *_localExternalValues;
