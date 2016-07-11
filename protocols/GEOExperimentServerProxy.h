@@ -5,9 +5,9 @@
 
 @required
 
-- (void)_debug_setQuerySubstring:(NSString *)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
+- (void)_debug_setQuerySubstring:(NSString *)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
 - (<GEOExperimentServerProxyDelegate> *)delegate;
-- (GEOABExperimentResponse *)experimentsInfo;
+- (GEOABAssignmentResponse *)experimentsInfo;
 - (void)forceUpdate;
 - (id)initWithDelegate:(id <GEOExperimentServerProxyDelegate>)arg1;
 - (void)setDelegate:(id <GEOExperimentServerProxyDelegate>)arg1;

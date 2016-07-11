@@ -7,11 +7,15 @@
     NSString * _applicationVersion;
     NSString * _countryCode;
     NSString * _dataDirectory;
+    int  _defaultScale;
+    NSString * _disputedBorderCountryOverride;
+    NSString * _disputedBorderRegionOverride;
     NSString * _environment;
     NSString * _hardwareIdentifier;
     NSString * _os;
     NSString * _osBuild;
     NSString * _osVersion;
+    bool  _requiresLegacyFormat;
     unsigned int  _tileGroupIdentifier;
 }
 
@@ -19,12 +23,16 @@
 @property (nonatomic, copy) NSString *applicationVersion;
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSString *dataDirectory;
+@property (nonatomic, readonly) int defaultScale;
 @property (nonatomic, readonly) NSString *directorySuffix;
+@property (nonatomic, copy) NSString *disputedBorderCountryOverride;
+@property (nonatomic, copy) NSString *disputedBorderRegionOverride;
 @property (nonatomic, copy) NSString *environment;
 @property (nonatomic, copy) NSString *hardwareIdentifier;
 @property (nonatomic, copy) NSString *os;
 @property (nonatomic, copy) NSString *osBuild;
 @property (nonatomic, copy) NSString *osVersion;
+@property (nonatomic, readonly) bool requiresLegacyFormat;
 @property (nonatomic) unsigned int tileGroupIdentifier;
 
 + (id)configurationWithPairedDevice:(id)arg1;
@@ -36,21 +44,27 @@
 - (id)countryCode;
 - (id)dataDirectory;
 - (void)dealloc;
+- (int)defaultScale;
 - (id)directorySuffix;
+- (id)disputedBorderCountryOverride;
+- (id)disputedBorderRegionOverride;
 - (id)environment;
 - (id)hardwareIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithConciseDictionaryRepresentation:(id)arg1;
-- (BOOL)isDefaultConfiguration;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDefaultConfiguration;
+- (bool)isEqual:(id)arg1;
 - (id)os;
 - (id)osBuild;
 - (id)osVersion;
+- (bool)requiresLegacyFormat;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDataDirectory:(id)arg1;
+- (void)setDisputedBorderCountryOverride:(id)arg1;
+- (void)setDisputedBorderRegionOverride:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setHardwareIdentifier:(id)arg1;
 - (void)setOs:(id)arg1;

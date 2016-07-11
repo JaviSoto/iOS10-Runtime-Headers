@@ -2,52 +2,61 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventDetailAttendeesListView : UIView {
-    NSArray * _acceptedNames;
-    NSArray * _declinedNames;
-    BOOL  _groupsNames;
-    BOOL  _highlighted;
+@interface EKEventDetailAttendeesListView : UIView <EKEventDetailAttendeesList> {
+    NSArray * _accepted;
+    NSArray * _declined;
+    bool  _groupsNames;
+    bool  _highlighted;
     UIColor * _highlightedTextColor;
-    NSArray * _maybeNames;
-    NSArray * _noReplyNames;
+    NSArray * _maybe;
+    NSArray * _noReply;
     UIColor * _textColor;
-    NSArray * _ungroupedNames;
+    NSArray * _ungrouped;
+    UIViewController * _viewController;
 }
 
-@property (nonatomic, retain) NSArray *acceptedNames;
-@property (nonatomic, retain) NSArray *declinedNames;
-@property (nonatomic) BOOL groupsNames;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) NSArray *accepted;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSArray *declined;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool groupsNames;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, retain) UIColor *highlightedTextColor;
-@property (nonatomic, retain) NSArray *maybeNames;
-@property (nonatomic, retain) NSArray *noReplyNames;
+@property (nonatomic, retain) NSArray *maybe;
+@property (nonatomic, retain) NSArray *noReply;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic, retain) NSArray *ungroupedNames;
+@property (nonatomic, retain) NSArray *ungrouped;
+@property (nonatomic) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
-- (float)_heightForGroupOfAttendeeNames:(id)arg1;
-- (float)_offsetFromOffsetToBaseline:(float)arg1 withFont:(id)arg2;
-- (id)acceptedNames;
-- (id)declinedNames;
-- (void)drawInvitees:(id)arg1 withStatus:(id)arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)groupsNames;
+- (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 startingAtPoint:(struct CGPoint { double x1; double x2; })arg3 givenWidth:(double)arg4;
+- (double)_heightForGroupOfAttendeeNames:(id)arg1;
+- (double)_offsetFromOffsetToBaseline:(double)arg1 withFont:(id)arg2;
+- (id)accepted;
+- (id)declined;
+- (void)drawInvitees:(id)arg1 withStatus:(id)arg2 startingAtPoint:(struct CGPoint { double x1; double x2; })arg3 givenWidth:(double)arg4;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)groupsNames;
 - (id)highlightedTextColor;
-- (BOOL)isHighlighted;
-- (id)maybeNames;
-- (id)noReplyNames;
-- (void)setAcceptedNames:(id)arg1;
-- (void)setDeclinedNames:(id)arg1;
-- (void)setGroupsNames:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (bool)isHighlighted;
+- (id)maybe;
+- (id)noReply;
+- (void)setAccepted:(id)arg1;
+- (void)setDeclined:(id)arg1;
+- (void)setGroupsNames:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
-- (void)setMaybeNames:(id)arg1;
-- (void)setNoReplyNames:(id)arg1;
+- (void)setMaybe:(id)arg1;
+- (void)setNoReply:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setUngroupedNames:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUngrouped:(id)arg1;
+- (void)setViewController:(id)arg1;
+- (void)setup;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)textColor;
-- (id)ungroupedNames;
+- (id)ungrouped;
+- (id)viewController;
 
 @end

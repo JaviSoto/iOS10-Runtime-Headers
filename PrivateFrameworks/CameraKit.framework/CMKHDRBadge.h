@@ -6,8 +6,6 @@
 
 - (id)_text;
 - (id)_textAttributes;
-- (float)_textHorizontalInset;
-- (float)_textHorizontalKerningOffset;
-- (float)_textVerticalInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_textInsets;
 
 @end

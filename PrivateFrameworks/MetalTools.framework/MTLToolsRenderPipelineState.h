@@ -7,12 +7,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSString *label;
 @property (readonly) Class superclass;
 
 - (void)acceptVisitor:(id)arg1;
 - (id)device;
 - (id)label;
+- (id)newFragmentShaderDebugInfo;
+- (id)newVertexShaderDebugInfo;
 
 @end

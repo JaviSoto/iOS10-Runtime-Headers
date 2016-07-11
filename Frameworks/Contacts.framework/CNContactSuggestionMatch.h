@@ -12,12 +12,12 @@
 @property (nonatomic, retain) SGContactMatch *contactMatch;
 @property (nonatomic, retain) NSString *mainStoreLinkedIdentifier;
 
++ (void)fetchLinkedIdentifiersForContactSuggestionMatches:(id)arg1 fromSuggestionService:(id)arg2;
 + (id)suggestionFromContactMatch:(id)arg1;
 
 - (id)contact;
 - (id)contactMatch;
 - (void)dealloc;
-- (void)fetchLinkedIdentifierFromSuggestionService:(id)arg1;
 - (id)mainStoreLinkedIdentifier;
 - (void)setContact:(id)arg1;
 - (void)setContactMatch:(id)arg1;

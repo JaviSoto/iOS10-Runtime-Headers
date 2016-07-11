@@ -6,41 +6,44 @@
     struct { 
         unsigned int matchIndex; 
         unsigned long long *commandArray; 
-        unsigned int commandCount; 
+        unsigned long long commandCount; 
         unsigned long long *repeatArray; 
-        unsigned int repeatCount; 
-        unsigned int command; 
+        unsigned long long repeatCount; 
+        unsigned long long command; 
     }  _buttonArray;
-    unsigned long  _buttonCount;
+    unsigned long long  _buttonCount;
     NSMutableSet * _commandMappings;
-    const struct { unsigned int x1; unsigned long long *x2; unsigned int x3; unsigned long long *x4; unsigned int x5; unsigned int x6; } * _lastButtonPressed;
-    unsigned long long  _lastCommandTicks;
+    const struct { unsigned int x1; unsigned long long *x2; unsigned long long x3; unsigned long long *x4; unsigned long long x5; unsigned long long x6; } * _lastButtonPressed;
+    unsigned long long  _lastCommandTimestamp;
     NSDictionary * _matchingDict;
-    unsigned long long  _maxRecentDelayTicks;
     unsigned long long  _pressAndHoldTimeoutGenerationCount;
 }
 
 @property (nonatomic, copy) NSDictionary *matchingDict;
 @property (nonatomic, copy) NSDictionary *persistentProperties;
 
-+ (BOOL)supportsSecureCoding;
++ (void)load;
++ (bool)supportsSecureCoding;
 
-- (long)_setInfraredCommandPattern:(id)arg1 repeatPattern:(id)arg2 forCommand:(unsigned int)arg3;
+- (struct { unsigned int x1; unsigned long long *x2; unsigned long long x3; unsigned long long *x4; unsigned long long x5; unsigned long long x6; }*)_findButtonWithCommand:(unsigned long long)arg1;
+- (void)_removeMappingForCommand:(unsigned long long)arg1;
+- (int)_setInfraredCommandPattern:(id)arg1 repeatPattern:(id)arg2 forCommand:(unsigned long long)arg3;
 - (id)busProvider;
 - (void)cancelPressAndHoldTimer;
 - (Class)classForCoder;
-- (BOOL)clearAllStoredCommands:(id*)arg1;
+- (bool)clearAllStoredCommands:(id*)arg1;
 - (void)dealloc;
-- (BOOL)disableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
-- (BOOL)dispatch3rdPartyButtonEventWithCommand:(unsigned int)arg1 pressed:(BOOL)arg2 toDevice:(id)arg3;
-- (BOOL)dispatchEventForCommand:(id)arg1 matchingButton:(const struct { unsigned int x1; unsigned long long *x2; unsigned int x3; unsigned long long *x4; unsigned int x5; unsigned int x6; }*)arg2 toDevice:(id)arg3;
-- (BOOL)dispatchEventsForCommand:(id)arg1 toDevice:(id)arg2;
-- (BOOL)enableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
+- (bool)disableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
+- (bool)dispatchButtonEventWithCommand:(unsigned long long)arg1 pressed:(bool)arg2 timestamp:(unsigned long long)arg3 toDevice:(id)arg4;
+- (bool)dispatchEventForCommand:(id)arg1 matchingButton:(const struct { unsigned int x1; unsigned long long *x2; unsigned long long x3; unsigned long long *x4; unsigned long long x5; unsigned long long x6; }*)arg2 timestamp:(unsigned long long)arg3 toDevice:(id)arg4;
+- (bool)dispatchEventsForCommand:(id)arg1 toDevice:(id)arg2;
+- (bool)enableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extendedPropertyForKey:(id)arg1 error:(id*)arg2;
+- (unsigned long long)findDuplicateIRCommand:(id)arg1 forCommand:(unsigned long long)arg2 device:(id*)arg3;
 - (void)handleIRCommand:(id)arg1;
-- (id)infraredCommandForCommand:(unsigned int)arg1;
-- (id)initWithBus:(id)arg1 local:(BOOL)arg2 deviceType:(unsigned int)arg3;
+- (id)infraredCommandForCommand:(unsigned long long)arg1;
+- (id)initWithBus:(id)arg1 local:(bool)arg2 deviceType:(unsigned long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (id)interface;
@@ -48,17 +51,18 @@
 - (id)matchingDict;
 - (id)persistentProperties;
 - (void)schedulePressAndHoldTimer;
-- (BOOL)sendCommand:(id)arg1 error:(id*)arg2;
-- (BOOL)sendCommand:(unsigned int)arg1 target:(id)arg2 withDuration:(unsigned int)arg3 error:(id*)arg4;
-- (BOOL)sendHIDEvent:(id)arg1 target:(id)arg2 error:(id*)arg3;
-- (BOOL)setCommand:(unsigned int)arg1 target:(id)arg2 forButtonCombination:(id)arg3 delay:(double)arg4 error:(id*)arg5;
-- (BOOL)setExtendedProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (BOOL)setInfraredCommand:(id)arg1 forCommand:(unsigned int)arg2 error:(id*)arg3;
+- (bool)sendCommand:(id)arg1 error:(id*)arg2;
+- (bool)sendCommand:(unsigned long long)arg1 target:(id)arg2 withDuration:(unsigned long long)arg3 error:(id*)arg4;
+- (bool)sendHIDEvent:(id)arg1 target:(id)arg2 error:(id*)arg3;
+- (bool)setCommand:(unsigned long long)arg1 target:(id)arg2 forButtonCombination:(id)arg3 delay:(double)arg4 error:(id*)arg5;
+- (bool)setExtendedProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)setInfraredCommand:(id)arg1 forCommand:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)setMappingWithSession:(id)arg1 error:(id*)arg2;
 - (void)setMatchingDict:(id)arg1;
-- (BOOL)setOSDName:(id)arg1 error:(id*)arg2;
+- (bool)setOSDName:(id)arg1 error:(id*)arg2;
 - (void)setPersistentProperties:(id)arg1;
-- (id)startLearningSessionWithReason:(unsigned int)arg1 error:(id*)arg2;
-- (void)synthesizeButtonRelease;
-- (BOOL)updateMappingWithSession:(id)arg1 error:(id*)arg2;
+- (id)startLearningSessionWithReason:(unsigned long long)arg1 error:(id*)arg2;
+- (void)synthesizeButtonReleaseWithTimestamp:(unsigned long long)arg1;
+- (bool)updateMappingWithSession:(id)arg1 error:(id*)arg2;
 
 @end

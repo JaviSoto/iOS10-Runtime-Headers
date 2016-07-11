@@ -4,11 +4,10 @@
 
 @interface CoreSpotlightUtils : NSObject
 
-+ (char *)aslLevelForLogLevel:(unsigned int)arg1;
-+ (BOOL)detailedLoggingEnabled;
-+ (BOOL)fastUserActivites;
++ (bool)detailedLoggingEnabled;
++ (bool)disabledUserActivities;
++ (bool)fastUserActivites;
++ (bool)forceDataMigration;
 + (void)initialize;
-+ (BOOL)logsToConsole;
-+ (BOOL)logsToFile;
 
 @end

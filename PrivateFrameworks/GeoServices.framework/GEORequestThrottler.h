@@ -9,8 +9,11 @@
 
 + (id)sharedThrottler;
 
-- (BOOL)allowRequestForKey:(id)arg1;
+- (id)_throttlePolicyForKey:(id)arg1;
+- (bool)allowRequestForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (unsigned long long)throttleStateLevelForKey:(id)arg1;
+- (double)throttleStateResetTimeRemainingForKey:(id)arg1;
 
 @end

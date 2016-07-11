@@ -2,36 +2,40 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface NSAttributedString : NSObject <HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *string;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (void)_setAttributedDictionaryClass:(Class)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned long)_cfTypeID;
-- (id)_createAttributedSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (unsigned long long)_cfTypeID;
+- (id)_createAttributedSubstringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)attribute:(id)arg1 atIndex:(unsigned long long)arg2 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (id)attribute:(id)arg1 atIndex:(unsigned long long)arg2 longestEffectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (id)attributedStringByWeaklyAddingAttributes:(id)arg1;
-- (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacingCharactersInRanges:(const struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 numberOfRanges:(int)arg3 withString:(id)arg4;
-- (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (id)attributesAtIndex:(unsigned int)arg1 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)attributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)attributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 replacingCharactersInRanges:(const struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 numberOfRanges:(long long)arg3 withString:(id)arg4;
+- (id)attributesAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (id)attributesAtIndex:(unsigned long long)arg1 longestEffectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
-- (void)enumerateAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
-- (unsigned int)hash;
+- (void)enumerateAttribute:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 options:(unsigned long long)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateAttributesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToAttributedString:(id)arg1;
-- (unsigned int)length;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAttributedString:(id)arg1;
+- (unsigned long long)length;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)string;
@@ -49,78 +53,116 @@
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 startTokenDelimiter:(id)arg3 endTokenDelimiter:(id)arg4 error:(id*)arg5;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 error:(id*)arg2;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
-
-- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2 forceWordWrap:(BOOL)arg3;
-
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (id)pu_attributedStringWithHTMLString:(id)arg1 defaultAttributes:(id)arg2;
 + (id)pu_localizedAttributedStringForCommentWithCommenterFullName:(id)arg1 text:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
-+ (id)pu_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 streamName:(id)arg2 accepted:(BOOL)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
-+ (id)pu_localizedAttributedStringForLikesFromUser:(BOOL)arg1 orPersonFullName:(id)arg2 photoCount:(int)arg3 videoCount:(int)arg4 streamName:(id)arg5 defaultTextAttributes:(id)arg6 emphasizedTextAttributes:(id)arg7;
-+ (id)pu_localizedAttributedStringForLikesFromUser:(BOOL)arg1 otherPeopleFullNames:(id)arg2 isVideo:(BOOL)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
-+ (id)pu_localizedAttributedStringForLikesWithLikerCount:(int)arg1 isVideo:(BOOL)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
-+ (id)pu_localizedAttributedStringForPostWithSubjectFullName:(id)arg1 photoCount:(int)arg2 videoCount:(int)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)pu_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 streamName:(id)arg2 accepted:(bool)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)pu_localizedAttributedStringForLikesFromUser:(bool)arg1 orPersonFullName:(id)arg2 photoCount:(long long)arg3 videoCount:(long long)arg4 streamName:(id)arg5 defaultTextAttributes:(id)arg6 emphasizedTextAttributes:(id)arg7;
++ (id)pu_localizedAttributedStringForLikesFromUser:(bool)arg1 otherPeopleFullNames:(id)arg2 isVideo:(bool)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)pu_localizedAttributedStringForLikesWithLikerCount:(long long)arg1 isVideo:(bool)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)pu_localizedAttributedStringForPostWithSubjectFullName:(id)arg1 photoCount:(long long)arg2 videoCount:(long long)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
 + (id)pu_localizedAttributedStringForUserCommentWithText:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 + (id)pu_localizedAttributedStringForUserCreatingStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 + (id)pu_localizedAttributedStringForUserJoiningStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
-+ (id)pu_localizedAttributedStringForUserPostWithPhotoCount:(int)arg1 videoCount:(int)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)pu_localizedAttributedStringForUserPostWithPhotoCount:(long long)arg1 videoCount:(long long)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (id)_ui_attributedStringWithOriginalFontAttributes;
-- (id)_ui_fontsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultFont:(id)arg2;
-- (int)_ui_resolvedTextAlignment;
-- (id)_ui_secureStringWithPointSize:(float)arg1;
-- (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultAttributes:(id)arg2;
+- (id)_ui_fontsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultFont:(id)arg2;
+- (id)_ui_glyphImageViewsScale:(double)arg1 outImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outLineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 outBaselineOffset:(double*)arg4;
+- (long long)_ui_resolvedTextAlignment;
+- (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
+- (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultAttributes:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-- (BOOL)containsAttribute:(id)arg1;
+- (bool)containsAttribute:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
+
+- (id)_attributedStringWithParagraphStyleFromStyle:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
 
 - (id)dd_attributedStringByAppendingAttributedString:(id)arg1;
-- (id)dd_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)dd_attributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
-- (id)dd_contextAtLocation:(int)arg1;
-- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; int x10; }*)dd_resultAtLocation:(int)arg1;
+- (id)dd_contextAtLocation:(long long)arg1;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __DDQueryRange { struct __DDQueryOffset { unsigned int x_1_2_1 : 32; unsigned int x_1_2_2 : 32; } x_2_1_1; struct __DDQueryOffset { unsigned int x_2_2_1 : 32; unsigned int x_2_2_2 : 32; } x_2_1_2; } x2; struct { long long x_3_1_1; long long x_3_1_2; } x3; long long x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; struct __CFDictionary {} *x9; long long x10; unsigned char x11; float x12; }*)dd_resultAtLocation:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
 - (id)FU_uppercaseAttributedString;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
-+ (id)hk_attributedStringForSpacing:(float)arg1;
++ (id)hk_attributedStringForSpacing:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
+- (bool)prefersDynamicString;
+- (id)stringWithAttributes:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_attributedStringScaledByFactor:(double)arg1;
+- (double)hu_scaleFactorForBoundingSize:(struct CGSize { double x1; double x2; })arg1 minimumScaleFactor:(double)arg2 maximumNumberOfLines:(unsigned long long)arg3;
+- (id)hu_scaledAttributedStringWithBoundingSize:(struct CGSize { double x1; double x2; })arg1 minimumScaleFactor:(double)arg2 maximumNumberOfLines:(unsigned long long)arg3;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
-- (BOOL)attribute:(id)arg1 existsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (bool)attribute:(id)arg1 existsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)trimmedString;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)MPU_attributedStringByUpdatingTextStyleFontsToPreferredTextStyleFonts;
-- (BOOL)MPU_hasUniformFont;
+- (bool)MPU_hasUniformFont;
 - (id)MPU_tallestFontFromAttributes;
 
-// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
-+ (id)attributedStringWithTextElement:(id)arg1 baseFont:(id)arg2;
++ (id)attributedStringConcatenatingString:(id)arg1 withString:(id)arg2 font:(id)arg3 secondaryFont:(id)arg4 paragraphStyle:(id)arg5;
+
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
+
++ (id)NTKCountdownToDate:(id)arg1 useShort:(bool)arg2 withDesignatorFont:(id)arg3;
++ (id)NTKDesignatorAttributedTimeWithDate:(id)arg1;
++ (id)NTKHyphenatableString:(id)arg1;
++ (id)NTKHyphenatableString:(id)arg1 factor:(float)arg2;
++ (id)NTKHyphenationParagraphStyle;
++ (id)NTKHyphenationParagraphStyleWithFactor:(float)arg1;
++ (id)NTKReplaceTimeDesignatorAttributesFrom:(id)arg1 withDesignatorFont:(id)arg2;
++ (id)NTKSwapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4;
++ (id)NTKSwapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 timeZone:(id)arg5 options:(unsigned long long)arg6;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorAttributes:(id)arg2 timeZone:(id)arg3 options:(unsigned long long)arg4;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorFont:(id)arg2;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorFont:(id)arg2 options:(unsigned long long)arg3;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorFont:(id)arg2 timeZone:(id)arg3 options:(unsigned long long)arg4;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-+ (id)TT_attributedStringWithArchive:(const struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 createNewAttachmentsInNote:(id)arg2 error:(id*)arg3;
++ (id)TT_attributedStringWithArchive:(const struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 createNewAttachmentsInNote:(id)arg2 error:(id*)arg3;
 + (id)TT_attributedStringWithData:(id)arg1 createNewAttachmentsInNote:(id)arg2 error:(id*)arg3;
 
-- (void)TT_saveToArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 saveAttachments:(BOOL)arg2;
-- (id)TT_serializeWithAttachments:(BOOL)arg1;
+- (unsigned long long)TT_approximateAttachmentsSizeIncludingPreviews:(bool)arg1;
+- (bool)TT_isCopyableSize;
+- (void)TT_saveToArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 flags:(unsigned long long)arg2 managedObjectContext:(id)arg3;
+- (id)TT_serializeWithFlags:(unsigned long long)arg1 managedObjectContext:(id)arg2;
+- (void)enumerateClampedAttribute:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 options:(unsigned long long)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateUnclampedAttribute:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 options:(unsigned long long)arg3 usingBlock:(id /* block */)arg4;
+- (id)ic_attributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withNumberOfLines:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withNumberOfLines:(unsigned long long)arg2 forceWordWrap:(bool)arg3;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
@@ -128,7 +170,7 @@
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
-+ (id)_scrcStringWithFormat:(id)arg1 args:(void*)arg2;
++ (id)_scrcStringWithFormat:(id)arg1 args:(char *)arg2;
 + (id)scrcPauseString;
 + (id)scrcSpaceString;
 + (id)scrcString;
@@ -139,10 +181,10 @@
 + (id)scrcStringWithString:(id)arg1;
 + (id)scrcStringWithString:(id)arg1 treePosition:(id)arg2;
 
-- (BOOL)_scrcHasPauseCommaAtIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_scrcRangeOfFormatSpecifierWithIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_scrcRangeOfVanillaFormatSpecifier;
-- (BOOL)scrcContainsPause;
+- (bool)_scrcHasPauseCommaAtIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_scrcRangeOfFormatSpecifierWithIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_scrcRangeOfVanillaFormatSpecifier;
+- (bool)scrcContainsPause;
 - (id)scrcStringByAddingAttribute:(id)arg1 value:(id)arg2;
 - (id)scrcStringByAppendingAttributedString:(id)arg1;
 - (id)scrcStringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2;
@@ -150,14 +192,14 @@
 // Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
 
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)getRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 ofAttribute:(id)arg2;
-- (BOOL)getRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
+- (bool)getRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 ofAttribute:(id)arg2;
+- (bool)getRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
 
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)getRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 ofAttribute:(id)arg2;
-- (BOOL)getRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
+- (bool)getRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 ofAttribute:(id)arg2;
+- (bool)getRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
@@ -172,39 +214,40 @@
 + (id)_documentTypeForFileType:(id)arg1;
 + (id)attributedStringWithAttachment:(id)arg1;
 
-- (id)RTFDFileWrapperFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;
-- (id)RTFDFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;
-- (id)RTFFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;
-- (BOOL)_atEndOfTextTable:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)_atEndOfTextTableRow:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)_atStartOfTextTable:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)_atStartOfTextTableRow:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)_documentFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 document:(id)arg2 documentAttributes:(id)arg3 subresources:(id*)arg4;
+- (id)RTFDFileWrapperFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2;
+- (id)RTFDFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2;
+- (id)RTFFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2;
+- (bool)_atEndOfTextTable:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)_atEndOfTextTableRow:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)_atStartOfTextTable:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)_atStartOfTextTableRow:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)_documentFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 document:(id)arg2 documentAttributes:(id)arg3 subresources:(id*)arg4;
 - (id)_initWithDOMRange:(id)arg1;
 - (id)_initWithRTFSelector:(SEL)arg1 argument:(id)arg2 documentAttributes:(id*)arg3;
 - (id)_initWithURLFunnel:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
-- (BOOL)_isStringDrawingTextStorage;
-- (unsigned int)_lineBreakBeforeIndex:(unsigned int)arg1 withinRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usesAlternativeBreaker:(BOOL)arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfTextTableRow:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfTextTableRow:(id)arg1 atIndex:(unsigned int)arg2 completeRow:(BOOL*)arg3;
-- (void)_readDocumentFragment:(id)arg1 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 documentAttributes:(id)arg3 subresources:(id*)arg4;
-- (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scaledByScaleFactor:(float)arg2;
-- (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withTrackingAdjustment:(float)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 context:(id)arg3;
-- (BOOL)containsAttachments;
-- (BOOL)containsAttachmentsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)dataFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
+- (bool)_isStringDrawingTextStorage;
+- (unsigned long long)_lineBreakBeforeIndex:(unsigned long long)arg1 withinRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 usesAlternativeBreaker:(bool)arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfTextTableRow:(id)arg1 atIndex:(unsigned long long)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfTextTableRow:(id)arg1 atIndex:(unsigned long long)arg2 completeRow:(bool*)arg3;
+- (void)_readDocumentFragment:(id)arg1 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 documentAttributes:(id)arg3 subresources:(id*)arg4;
+- (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 scaledByScaleFactor:(double)arg2;
+- (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withTrackingAdjustment:(double)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(long long)arg2 context:(id)arg3;
+- (bool)containsAttachments;
+- (bool)containsAttachmentsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)dataFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
 - (id)defaultLanguage;
-- (id)docFormatFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })doubleClickAtIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })doubleClickAtIndex:(unsigned int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2 context:(id)arg3;
-- (id)fileWrapperFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
-- (id)fontAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)docFormatFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })doubleClickAtIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })doubleClickAtIndex:(unsigned long long)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(long long)arg2;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(long long)arg2 context:(id)arg3;
+- (id)fileWrapperFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
+- (id)fontAttributesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)hasColorGlyphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)initWithData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (id)initWithDocFormat:(id)arg1 documentAttributes:(id*)arg2;
 - (id)initWithFileURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
@@ -217,19 +260,29 @@
 - (id)initWithRTFDFileWrapper:(id)arg1 documentAttributes:(id*)arg2;
 - (id)initWithURL:(id)arg1 documentAttributes:(id*)arg2;
 - (id)initWithURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
-- (int)itemNumberInTextList:(id)arg1 atIndex:(unsigned int)arg2;
-- (unsigned int)lineBreakBeforeIndex:(unsigned int)arg1 withinRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)lineBreakByHyphenatingBeforeIndex:(unsigned int)arg1 withinRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)nextWordFromIndex:(unsigned int)arg1 forward:(BOOL)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextBlock:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextList:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextTable:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)rulerAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (id)stringByStrippingAttachmentCharactersAndConvertingWritingDirectionToBidiControlCharactersFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (long long)itemNumberInTextList:(id)arg1 atIndex:(unsigned long long)arg2;
+- (unsigned long long)lineBreakBeforeIndex:(unsigned long long)arg1 withinRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)lineBreakByHyphenatingBeforeIndex:(unsigned long long)arg1 withinRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)nextWordFromIndex:(unsigned long long)arg1 forward:(bool)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfTextBlock:(id)arg1 atIndex:(unsigned long long)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfTextList:(id)arg1 atIndex:(unsigned long long)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfTextTable:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)rulerAttributesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (id)stringByStrippingAttachmentCharactersAndConvertingWritingDirectionToBidiControlCharactersFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+
++ (id)attributedStringWithTextElement:(id)arg1 baseFont:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
 
 + (id)attributedStringWithFormatAndAttributes:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iCloudQuotaUI.framework/iCloudQuotaUI
+
++ (id)attributedStringWithFormat:(id)arg1 attributes:(id)arg2 links:(id)arg3;
++ (id)attributesForIndex:(long long)arg1 baseAttributes:(id)arg2;
++ (id)spaceArrowAttributedStringWithBaseAttributes:(id)arg1;
 
 @end

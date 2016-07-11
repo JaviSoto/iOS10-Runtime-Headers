@@ -13,8 +13,9 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)fetchUserQuotaCompletionBlock;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;

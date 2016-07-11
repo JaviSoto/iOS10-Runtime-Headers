@@ -10,5 +10,6 @@
 - (void)addQualificationEventIntervalWithLastQualificationEventForward:(PLAccountingQualificationEventForwardEntry *)arg1 withQualificationEventForward:(PLAccountingQualificationEventForwardEntry *)arg2;
 - (void)addQualificationEventPoint:(PLAccountingQualificationEventPointEntry *)arg1;
 - (void)didQualifyEnergyEvent:(PLAccountingEnergyEventEntry *)arg1 withRootNodeID:(NSNumber *)arg2 withQualificationID:(NSNumber *)arg3;
+- (NSObject<OS_dispatch_queue> *)workQueue;
 
 @end

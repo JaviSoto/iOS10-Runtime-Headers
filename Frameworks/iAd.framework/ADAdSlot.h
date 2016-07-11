@@ -5,11 +5,11 @@
 @interface ADAdSlot : NSObject <ADBannerViewInternalDelegate, NSSecureCoding> {
     id /* block */  _completionHandler;
     <ADAdSlotDelegate> * _delegate;
-    BOOL  _didBeginPlayback;
-    BOOL  _didReportFinish;
-    BOOL  _didRequest;
+    bool  _didBeginPlayback;
+    bool  _didReportFinish;
+    bool  _didRequest;
     NSData * _followingSongData;
-    BOOL  _gatewayAdSlot;
+    bool  _gatewayAdSlot;
     NSString * _identifier;
     NSMutableArray * _pendingBannerLoads;
     NSData * _previousSongData;
@@ -23,12 +23,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ADAdSlotDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didBeginPlayback;
-@property (nonatomic) BOOL didReportFinish;
-@property (nonatomic) BOOL didRequest;
+@property (nonatomic) bool didBeginPlayback;
+@property (nonatomic) bool didReportFinish;
+@property (nonatomic) bool didRequest;
 @property (nonatomic, copy) NSData *followingSongData;
-@property (nonatomic) BOOL gatewayAdSlot;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool gatewayAdSlot;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) NSMutableArray *pendingBannerLoads;
 @property (nonatomic, copy) NSData *previousSongData;
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) NSMutableArray *visuallyDisengagedBanners;
 @property (nonatomic, retain) NSMutableArray *visuallyEngagedBanners;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_bannersForAds:(id)arg1;
 - (void)_considerInvokingCompletionHandler;
@@ -49,13 +49,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (BOOL)didBeginPlayback;
-- (void)didFinishPlaybackOfAds:(id)arg1 skippedCount:(int)arg2;
-- (BOOL)didReportFinish;
-- (BOOL)didRequest;
+- (bool)didBeginPlayback;
+- (void)didFinishPlaybackOfAds:(id)arg1 skippedCount:(long long)arg2;
+- (bool)didReportFinish;
+- (bool)didRequest;
 - (void)encodeWithCoder:(id)arg1;
 - (id)followingSongData;
-- (BOOL)gatewayAdSlot;
+- (bool)gatewayAdSlot;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -64,11 +64,11 @@
 - (id)previousSongData;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDidBeginPlayback:(BOOL)arg1;
-- (void)setDidReportFinish:(BOOL)arg1;
-- (void)setDidRequest:(BOOL)arg1;
+- (void)setDidBeginPlayback:(bool)arg1;
+- (void)setDidReportFinish:(bool)arg1;
+- (void)setDidRequest:(bool)arg1;
 - (void)setFollowingSongData:(id)arg1;
-- (void)setGatewayAdSlot:(BOOL)arg1;
+- (void)setGatewayAdSlot:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPendingBannerLoads:(id)arg1;
 - (void)setPreviousSongData:(id)arg1;

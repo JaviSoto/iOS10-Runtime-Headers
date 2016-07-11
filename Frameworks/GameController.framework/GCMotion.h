@@ -10,13 +10,21 @@
         double w; 
     }  _attitude;
     GCController * _controller;
+    bool  _emulatedMotionEnabled;
     struct { 
         double x; 
         double y; 
         double z; 
     }  _gravity;
-    BOOL  _motionLite;
+    id /* block */  _internalValueChangedHandler;
+    bool  _motionLite;
     CMMotionManager * _motionMgr;
+    bool  _motionUpdatedEnabled;
+    struct { 
+        double x; 
+        double y; 
+        double z; 
+    }  _prevGravity;
     struct { 
         double x; 
         double y; 
@@ -40,11 +48,11 @@
 @property (nonatomic, copy) id /* block */ valueChangedHandler;
 
 - (void).cxx_destruct;
-- (BOOL)_isUpdatingDeviceMotion;
-- (void)_pauseMotionUpdates:(BOOL)arg1;
+- (bool)_isUpdatingDeviceMotion;
+- (void)_pauseMotionUpdates:(bool)arg1;
 - (void)_setAttitude:(struct GCQuaternion { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setGravity:(struct { double x1; double x2; double x3; })arg1;
-- (void)_setMotionLite:(BOOL)arg1;
+- (void)_setMotionLite:(bool)arg1;
 - (void)_setRotationRate:(struct { double x1; double x2; double x3; })arg1;
 - (void)_setUserAcceleration:(struct { double x1; double x2; double x3; })arg1;
 - (void)_startDeviceMotionUpdates;
@@ -53,10 +61,12 @@
 - (float)_tip;
 - (struct GCQuaternion { double x1; double x2; double x3; double x4; })attitude;
 - (id)controller;
-- (id /* block */)getValueChangedHandler;
 - (struct { double x1; double x2; double x3; })gravity;
 - (id)initWithController:(id)arg1;
+- (id /* block */)internalValueChangedHandler;
+- (bool)isEmulatedMicroGamepad;
 - (struct { double x1; double x2; double x3; })rotationRate;
+- (void)setInternalValueChangedHandler:(id /* block */)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (struct { double x1; double x2; double x3; })userAcceleration;
 - (id /* block */)valueChangedHandler;

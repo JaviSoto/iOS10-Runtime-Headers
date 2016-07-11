@@ -10,14 +10,17 @@
 + (id)mapTable;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
-- (void)dispatchIsolatedWrite:(id /* block */)arg1;
+- (void)_dispatchIsolatedRead:(id /* block */)arg1;
+- (void)_dispatchIsolatedWriteAsync:(id /* block */)arg1;
+- (void)_dispatchIsolatedWriteSync:(id /* block */)arg1;
+- (id)allKeys;
+- (unsigned long long)count;
 - (id)init;
+- (void)lockedEnumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (id)objectForKey:(id)arg1;
-- (void)performLockedKeyEnumeration:(id /* block */)arg1;
-- (id)queue;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (bool)tryRemoveObjectForKey:(id)arg1;
 
 @end

@@ -4,30 +4,30 @@
 
 @interface SKUIBuyButtonDescriptor : NSObject <NSCopying, NSMutableCopying> {
     NSString * _buttonText;
-    int  _buttonType;
+    long long  _buttonType;
     NSString * _confirmationText;
-    unsigned int  _elementType;
+    unsigned long long  _elementType;
     long long  _itemIdentifier;
     SKUIStoreIdentifier * _storeIdentifier;
     NSString * _variantIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSString *buttonText;
-@property (nonatomic, readonly) int buttonType;
+@property (nonatomic, readonly) long long buttonType;
 @property (nonatomic, readonly, copy) NSString *confirmationText;
-@property (nonatomic, readonly) unsigned int elementType;
+@property (nonatomic, readonly) unsigned long long elementType;
 @property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly) SKUIStoreIdentifier *storeIdentifier;
 @property (nonatomic, readonly) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
 - (id)buttonText;
-- (int)buttonType;
-- (BOOL)canPerformLocalActionWithItemState:(id)arg1;
-- (BOOL)canPersonalizeUsingItemState:(id)arg1;
+- (long long)buttonType;
+- (bool)canPerformLocalActionWithItemState:(id)arg1;
+- (bool)canPersonalizeUsingItemState:(id)arg1;
 - (id)confirmationText;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)elementType;
+- (unsigned long long)elementType;
 - (long long)itemIdentifier;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)storeIdentifier;

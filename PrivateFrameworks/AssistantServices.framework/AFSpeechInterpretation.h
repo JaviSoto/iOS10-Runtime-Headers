@@ -8,13 +8,19 @@
 
 @property (nonatomic, copy) NSArray *tokens;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)confidenceScore;
+- (long long)averageConfidenceScore;
+- (long long)confidenceScore;
+- (long long)confidenceScoreAvg;
+- (long long)confidenceScoreMax;
+- (long long)confidenceScoreMin;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setTokens:(id)arg1;
 - (id)text;
 - (id)tokens;

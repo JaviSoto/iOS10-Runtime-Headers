@@ -3,24 +3,22 @@
  */
 
 @interface HDUserCharacteristicsManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver> {
-    <HDHealthDaemon> * _healthDaemon;
     NSDictionary * _lastUserProfile;
-    BOOL  _needsUpdateAfterUnlock;
+    bool  _needsUpdateAfterUnlock;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _shouldUpdateQuantityCharacteristics;
-    BOOL  _shouldUpdateUserProfile;
+    bool  _shouldUpdateQuantityCharacteristics;
     NSDate * _userProfileLastUpdated;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) <HDHealthDaemon> *healthDaemon;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *lastUserProfile;
-@property (nonatomic) BOOL needsUpdateAfterUnlock;
+@property (nonatomic) bool needsUpdateAfterUnlock;
+@property (nonatomic) HDProfile *profile;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, readonly) BOOL shouldUpdateQuantityCharacteristics;
-@property (nonatomic, readonly) BOOL shouldUpdateUserProfile;
+@property (nonatomic, readonly) bool shouldUpdateQuantityCharacteristics;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDate *userProfileLastUpdated;
 
@@ -29,30 +27,29 @@
 - (void)_queue_updateQuantityCharacteristics;
 - (void)_queue_updateQuantityCharacteristicsAndUserProfileIfNeeded;
 - (void)_queue_updateUserProfile;
-- (BOOL)_setUserCharacteristic:(id)arg1 forType:(id)arg2 shouldInsertSample:(BOOL)arg3 updateProfileAndSync:(BOOL)arg4 error:(id*)arg5;
+- (bool)_setUserCharacteristic:(id)arg1 forType:(id)arg2 shouldInsertSample:(bool)arg3 updateProfileAndSync:(bool)arg4 error:(id*)arg5;
 - (void)_updateQuantityCharacteristicsAndUserProfile;
-- (void)_updateUserProfileForRestoreCompletion:(id)arg1;
 - (id)_userCharacteristicForType:(id)arg1 entity:(id*)arg2 error:(id*)arg3;
-- (void)_userCharacteristicsDidChangeShouldUpdateUserProfile:(BOOL)arg1 shouldSync:(BOOL)arg2;
+- (void)_userCharacteristicsDidChangeShouldUpdateUserProfile:(bool)arg1 shouldSync:(bool)arg2;
 - (void)daemonReady:(id)arg1;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 - (void)dealloc;
 - (id)diagnosticDescription;
-- (id)healthDaemon;
-- (id)initWithHealthDaemon:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (id)lastUserProfile;
-- (BOOL)needsUpdateAfterUnlock;
+- (bool)needsUpdateAfterUnlock;
+- (id)profile;
 - (id)queue;
+- (double)restingCaloriesFromTotalCalories:(double)arg1 timeInterval:(double)arg2 authorizedToRead:(bool)arg3;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
-- (void)samplesOfTypeWereRemoved:(id)arg1;
-- (void)setHealthDaemon:(id)arg1;
+- (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)setLastUserProfile:(id)arg1;
-- (void)setNeedsUpdateAfterUnlock:(BOOL)arg1;
+- (void)setNeedsUpdateAfterUnlock:(bool)arg1;
+- (void)setProfile:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (BOOL)setUserCharacteristic:(id)arg1 forType:(id)arg2 error:(id*)arg3;
+- (bool)setUserCharacteristic:(id)arg1 forType:(id)arg2 error:(id*)arg3;
 - (void)setUserProfileLastUpdated:(id)arg1;
-- (BOOL)shouldUpdateQuantityCharacteristics;
-- (BOOL)shouldUpdateUserProfile;
+- (bool)shouldUpdateQuantityCharacteristics;
 - (id)userCharacteristicForType:(id)arg1 error:(id*)arg2;
 - (id)userProfileLastUpdated;
 

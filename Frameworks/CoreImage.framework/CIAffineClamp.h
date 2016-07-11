@@ -12,7 +12,6 @@
 
 + (id)customAttributes;
 
-- (id)_kernel;
 - (id)inputImage;
 - (id)inputTransform;
 - (id)outputImage;

@@ -3,38 +3,38 @@
  */
 
 @interface SCNDisplayLink : NSObject {
-    BOOL  _asynchronous;
+    bool  _asynchronous;
     id /* block */  _block;
     CADisplayLink * _caDisplayLink;
-    int  _frameInterval;
-    BOOL  _invalidated;
-    double  _lastVideoOutput;
+    bool  _invalidated;
+    double  _lastFrameTime;
     id  _owner;
-    BOOL  _paused;
+    bool  _paused;
+    float  _preferredFrameRate;
     NSObject<OS_dispatch_queue> * _queue;
     int  _queuedFrameCount;
 }
 
-@property (nonatomic) int frameInterval;
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic) float preferredFrameRate;
 
 - (void)_caDisplayLinkCallback;
-- (void)_callbackWithTime:(double)arg1 andDeltaTime:(double)arg2;
-- (BOOL)_isInvalidated;
+- (void)_callbackWithTime:(double)arg1;
+- (bool)_isInvalidated;
 - (void)_pause;
 - (void)_resume;
 - (void)_teardown;
 - (void)dealloc;
-- (int)frameInterval;
 - (id)init;
 - (id)initWithOwner:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
 - (void)invalidate;
-- (BOOL)isPaused;
+- (bool)isPaused;
+- (float)preferredFrameRate;
 - (int)queuedFrameCount;
-- (void)setFrameInterval:(int)arg1;
 - (void)setNeedsDisplay;
-- (void)setPaused:(BOOL)arg1;
-- (void)setPaused:(BOOL)arg1 nextFrameTimeHint:(double)arg2;
+- (void)setPaused:(bool)arg1;
+- (bool)setPaused:(bool)arg1 nextFrameTimeHint:(double)arg2 lastUpdate:(double)arg3;
+- (void)setPreferredFrameRate:(float)arg1;
 - (void)willDie;
 
 @end

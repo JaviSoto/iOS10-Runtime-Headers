@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebResourceLoaderQuickLookDelegate : NSObject <NSURLConnectionDelegate> {
-    BOOL  _hasFailed;
-    BOOL  _hasSentDidReceiveResponse;
+@interface WebResourceLoaderQuickLookDelegate : NSObject <NSURLConnectionDelegate, WebCoreResourceLoaderDelegate> {
+    bool  _hasFailed;
+    bool  _hasSentDidReceiveResponse;
     struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; } * _quickLookHandle;
     struct RefPtr<WebCore::ResourceLoader> { 
         struct ResourceLoader {} *m_ptr; 
@@ -13,18 +13,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*quickLookHandle;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_sendDidReceiveResponseIfNecessary;
-- (void)clearHandle;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)connection:(id)arg1 didReceiveDataArray:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (void)detachHandle;
 - (id)initWithResourceLoader:(struct PassRefPtr<WebCore::ResourceLoader> { struct ResourceLoader {} *x1; })arg1;
 - (struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*)quickLookHandle;
 - (void)setQuickLookHandle:(struct QuickLookHandle { struct RetainPtr<NSURL> { void *x_1_1_1; } x1; struct RetainPtr<QLPreviewConverter> { void *x_2_1_1; } x2; struct RetainPtr<id> { void *x_3_1_1; } x3; bool x4; struct RetainPtr<NSFileHandle *> { void *x_5_1_1; } x5; struct RetainPtr<NSURLResponse> { void *x_6_1_1; } x6; struct RefPtr<WebCore::QuickLookHandleClient> { struct QuickLookHandleClient {} *x_7_1_1; } x7; }*)arg1;

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)pollingOperation:(CECBusPollingOperation *)arg1 shouldSkipAddress:(unsigned char)arg2;
+- (bool)pollingOperation:(CECBusPollingOperation *)arg1 shouldSkipAddress:(unsigned char)arg2;
 - (void)pollingOperationCompleted:(CECBusPollingOperation *)arg1;
 
 @optional

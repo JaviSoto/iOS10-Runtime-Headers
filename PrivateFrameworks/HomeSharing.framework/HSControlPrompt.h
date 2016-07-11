@@ -6,7 +6,7 @@
     unsigned int  _keyboardType;
     unsigned int  _messageType;
     unsigned int  _promptID;
-    BOOL  _secureText;
+    bool  _secureText;
     unsigned long long  _sessionID;
     NSString * _string;
     NSString * _subText;
@@ -17,7 +17,7 @@
 @property (nonatomic) unsigned int keyboardType;
 @property (nonatomic) unsigned int messageType;
 @property (nonatomic) unsigned int promptID;
-@property (getter=isSecureText, nonatomic) BOOL secureText;
+@property (getter=isSecureText, nonatomic) bool secureText;
 @property (nonatomic) unsigned long long sessionID;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, copy) NSString *subText;
@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)isSecureText;
+- (bool)isSecureText;
 - (unsigned int)keyboardType;
 - (unsigned int)messageType;
 - (unsigned int)promptID;
@@ -34,7 +34,7 @@
 - (void)setKeyboardType:(unsigned int)arg1;
 - (void)setMessageType:(unsigned int)arg1;
 - (void)setPromptID:(unsigned int)arg1;
-- (void)setSecureText:(BOOL)arg1;
+- (void)setSecureText:(bool)arg1;
 - (void)setSessionID:(unsigned long long)arg1;
 - (void)setString:(id)arg1;
 - (void)setSubText:(id)arg1;

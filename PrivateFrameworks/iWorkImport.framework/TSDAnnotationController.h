@@ -2,34 +2,46 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDAnnotationController : NSObject
+@interface TSDAnnotationController : NSObject {
+    <TSDAnnotationDelegate> * _delegate;
+    TSKSelectionPath * _displayedAnnotationSelectionPath;
+}
 
-@property (nonatomic, readonly) unsigned int annotationCount;
+@property (nonatomic, readonly) unsigned long long annotationCount;
 @property (nonatomic, readonly) NSString *annotationNavigationString;
-@property (nonatomic, readonly) unsigned int filteredAnnotationCount;
-@property (nonatomic, readonly) BOOL hasAnnotations;
-@property (nonatomic) BOOL textSelectionChangeShouldDismissAnnotations;
+@property (nonatomic) <TSDAnnotationDelegate> *delegate;
+@property (nonatomic, retain) TSKSelectionPath *displayedAnnotationSelectionPath;
+@property (nonatomic, readonly) unsigned long long filteredAnnotationCount;
+@property (nonatomic, readonly) bool hasAnnotations;
+@property (nonatomic) bool textSelectionChangeShouldDismissAnnotations;
 
-+ (float)commentFontSize;
++ (double)commentFontSize;
++ (id)commentPossibleFontSizes;
 
-- (unsigned int)annotationCount;
+- (unsigned long long)annotationCount;
 - (id)annotationMenuItemTextShowNext;
 - (id)annotationMenuItemTextShowPrevious;
 - (id)annotationNavigationString;
 - (id)annotationToolTipTextGoToNext;
 - (id)annotationToolTipTextGoToPrevious;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
+- (id)connectionLineUnscaledEndPointForAnnotation:(id)arg1;
+- (void)dealloc;
+- (id)delegate;
 - (void)didShowAnnotation:(id)arg1;
-- (unsigned int)filteredAnnotationCount;
-- (BOOL)hasAnnotations;
+- (id)displayedAnnotationSelectionPath;
+- (unsigned long long)filteredAnnotationCount;
+- (bool)hasAnnotations;
+- (id)init;
 - (void)invalidateAnnotationAuthors;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;
-- (void)registerDelegate:(id)arg1;
-- (void)setFilteredAuthors:(id)arg1;
-- (void)setTextSelectionChangeShouldDismissAnnotations:(BOOL)arg1;
-- (BOOL)textSelectionChangeShouldDismissAnnotations;
-- (void)unregisterDelegate:(id)arg1;
+- (void)setAuthorFilter:(id)arg1;
+- (void)setConnectionLineUnscaledEndPoint:(struct CGPoint { double x1; double x2; })arg1 forAnnotation:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setDisplayedAnnotationSelectionPath:(id)arg1;
+- (void)setTextSelectionChangeShouldDismissAnnotations:(bool)arg1;
+- (bool)textSelectionChangeShouldDismissAnnotations;
 - (void)updateCurrentAnnotation:(id)arg1;
 - (void)willShowAnnotation:(id)arg1;
 

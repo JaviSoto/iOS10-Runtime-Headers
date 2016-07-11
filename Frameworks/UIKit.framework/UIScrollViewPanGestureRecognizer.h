@@ -3,53 +3,57 @@
  */
 
 @interface UIScrollViewPanGestureRecognizer : UIPanGestureRecognizer {
-    unsigned int  _asksScrollViewForTouchCentroidAdjustment;
     unsigned int  _caughtDeceleratingScrollView;
     unsigned int  _directionalLockEnabled;
     unsigned int  _hasChildScrollView;
     unsigned int  _hasParentScrollView;
     unsigned int  _lastLockingAxis;
     unsigned int  _lockingAxis;
+    unsigned int  _movedAfterCaughtDeceleratingScrollViewButBeganNotYetDelivered;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _reconsideredLockingLocation;
     UIScrollView * _scrollView;
     SEL  _scrollViewAction;
     unsigned int  _transfersTrackingFromParentScrollView;
+    double  _translationScaleFactor;
 }
 
-@property (nonatomic) BOOL asksScrollViewForTouchCentroidAdjustment;
-@property (getter=_caughtDeceleratingScrollView, nonatomic, readonly) BOOL caughtDeceleratingScrollView;
-@property (getter=isDirectionalLockEnabled, nonatomic) BOOL directionalLockEnabled;
+@property (getter=_beganCaughtDeceleratingScrollViewAndMoved, nonatomic, readonly) bool beganCaughtDeceleratingScrollViewAndMoved;
+@property (getter=_caughtDeceleratingScrollView, nonatomic, readonly) bool caughtDeceleratingScrollView;
+@property (getter=isDirectionalLockEnabled, nonatomic) bool directionalLockEnabled;
 @property (nonatomic) UIScrollView *scrollView;
+@property (nonatomic) double translationScaleFactor;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })_adjustSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_canTransferTrackingFromParentPagingScrollView;
-- (BOOL)_caughtDeceleratingScrollView;
-- (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
-- (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
-- (float)_hysteresis;
+- (struct CGPoint { double x1; double x2; })_adjustSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_beganCaughtDeceleratingScrollViewAndMoved;
+- (bool)_canTransferTrackingFromParentPagingScrollView;
+- (bool)_caughtDeceleratingScrollView;
+- (void)_centroidMovedTo:(struct CGPoint { double x1; double x2; })arg1 atTime:(double)arg2;
+- (double)_hysteresis;
 - (void)_resetGestureRecognizer;
 - (void)_scrollViewDidEndZooming;
-- (BOOL)_shouldContinueToWaitToTransferTrackingFromParentScrollView;
-- (BOOL)_shouldTransferTrackingFromParentScrollViewForCurrentOffset;
-- (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
-- (BOOL)asksScrollViewForTouchCentroidAdjustment;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)_shouldContinueToWaitToTransferTrackingFromParentScrollView;
+- (bool)_shouldTransferTrackingFromParentScrollViewForCurrentOffset;
+- (bool)_shouldTryToBeginWithEvent:(id)arg1;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)delaysTouchesBegan;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isDirectionalLockEnabled;
+- (bool)isDirectionalLockEnabled;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (id)scrollView;
-- (void)setAsksScrollViewForTouchCentroidAdjustment:(BOOL)arg1;
+- (void)setAllowedTouchTypes:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDirectionalLockEnabled:(BOOL)arg1;
+- (void)setDirectionalLockEnabled:(bool)arg1;
 - (void)setScrollView:(id)arg1;
+- (void)setTranslationScaleFactor:(double)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (struct CGPoint { float x1; float x2; })translationInView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })velocityInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })translationInView:(id)arg1;
+- (double)translationScaleFactor;
+- (struct CGPoint { double x1; double x2; })velocityInView:(id)arg1;
 
 @end

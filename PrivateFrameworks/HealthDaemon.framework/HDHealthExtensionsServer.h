@@ -4,47 +4,61 @@
 
 @interface HDHealthExtensionsServer : NSObject <HDDiagnosticObject, HKExtendedServerInterface> {
     HDClient * _client;
-    <HDHealthDaemon> * _healthDaemon;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _registeredForAchievementNotifications;
+    bool  _registeredForAchievementDefinitionUnviewedCountChangeNotifications;
+    bool  _registeredForAchievementNotifications;
 }
 
 @property (nonatomic, retain) HDClient *client;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) <HDHealthDaemon> *healthDaemon;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) BOOL registeredForAchievementNotifications;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HDProfile *profile;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) bool registeredForAchievementDefinitionUnviewedCountChangeNotifications;
+@property (nonatomic) bool registeredForAchievementNotifications;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldAcceptConnectionForClient:(id)arg1 error:(id*)arg2;
-+ (id)serverWithClient:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
++ (bool)_shouldAcceptConnectionForClient:(id)arg1 error:(id*)arg2;
++ (id)serverWithClient:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
+- (void)_achievementDefinitionUnviewedCountChanged:(id)arg1;
 - (void)_achievementsAdded:(id)arg1;
-- (void)addAchievement:(id)arg1 completion:(id /* block */)arg2;
+- (void)_checkForUpdatedAchievementAssetsOnce;
 - (id)client;
 - (id)clientInterface;
 - (void)dealloc;
 - (id)diagnosticDescription;
-- (void)fetchAchievementsWithCompletedDateBetweenStart:(id)arg1 end:(id)arg2 completion:(id /* block */)arg3;
-- (void)fetchNumberOfUnviewedAchievementsWithCompletion:(id /* block */)arg1;
-- (void)fetchUnalertedAchievementsWithCompletion:(id /* block */)arg1;
-- (id)healthDaemon;
-- (id)initWithClient:(id)arg1 healthDaemon:(id)arg2;
+- (id)initWithClient:(id)arg1 profile:(id)arg2;
 - (void)invalidate;
-- (void)markAchievementAsViewed:(id)arg1 completion:(id /* block */)arg2;
-- (void)markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
+- (id)profile;
 - (id)queue;
-- (void)registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(id /* block */)arg1;
-- (BOOL)registeredForAchievementNotifications;
+- (bool)registeredForAchievementDefinitionUnviewedCountChangeNotifications;
+- (bool)registeredForAchievementNotifications;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (void)runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)remote_addAchievement:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_deleteAchievementWithUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_deleteAllAchievementsWithCompletion:(id /* block */)arg1;
+- (void)remote_fetchAchievementAssetsServerURLWithCompletion:(id /* block */)arg1;
+- (void)remote_fetchAchievementsWithCompletedDateBetweenStart:(id)arg1 end:(id)arg2 completion:(id /* block */)arg3;
+- (void)remote_fetchHiddenUnearnedAchievementDefinitionIdentifiersAmongIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_fetchNumberOfUnviewedAchievementsWithCompletion:(id /* block */)arg1;
+- (void)remote_fetchUnviewedAchievementDefinitionIdentifiersWithCompletion:(id /* block */)arg1;
+- (void)remote_markAchievementAsViewed:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_markAchievementDefinitionIdentifierAlertViewed:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_registerForAchievementDefinitionNotificationsWithCompletion:(id /* block */)arg1;
+- (void)remote_registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(id /* block */)arg1;
+- (void)remote_runAchievementsFixupAsDryRun:(bool)arg1 completion:(id /* block */)arg2;
+- (void)remote_setAchievementAssetsServerURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_setCurrentActivityCacheOverrideDate:(id)arg1 timeZone:(id)arg2 completion:(id /* block */)arg3;
+- (void)remote_updateAllAchievementAssetsWithCompletion:(id /* block */)arg1;
 - (id)serverInterface;
 - (void)setClient:(id)arg1;
-- (void)setHealthDaemon:(id)arg1;
-- (void)setQueue:(id)arg1;
-- (void)setRegisteredForAchievementNotifications:(BOOL)arg1;
+- (void)setProfile:(id)arg1;
+- (void)setRegisteredForAchievementDefinitionUnviewedCountChangeNotifications:(bool)arg1;
+- (void)setRegisteredForAchievementNotifications:(bool)arg1;
 
 @end

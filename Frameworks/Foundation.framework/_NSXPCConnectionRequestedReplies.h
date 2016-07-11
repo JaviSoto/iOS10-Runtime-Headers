@@ -7,12 +7,11 @@
     struct __CFDictionary { } * _replyTable;
 }
 
-- (void)addSequence:(unsigned long)arg1 withProgress:(id)arg2 cleanupBlock:(id /* block */)arg3;
+- (void)addSequence:(unsigned long long)arg1 withProgress:(id)arg2 cleanupBlock:(id /* block */)arg3;
 - (void)cleanup;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
-- (id)progressForSequence:(unsigned long)arg1;
-- (BOOL)removeSequence:(unsigned long)arg1;
+- (id)progressForSequence:(unsigned long long)arg1;
+- (bool)removeSequence:(unsigned long long)arg1;
 
 @end

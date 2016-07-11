@@ -2,45 +2,50 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISProtocolDataProvider : ISDataProvider <NSCopying> {
-    BOOL  _shouldPostFooterSectionChanged;
-    BOOL  _shouldProcessAccount;
-    BOOL  _shouldProcessAuthenticationDialogs;
-    BOOL  _shouldProcessDialogs;
-    BOOL  _shouldProcessProtocol;
-    BOOL  _shouldTriggerDownloads;
+@interface ISProtocolDataProvider : ISDataProvider <ISBiometricTouchIDDelegate, NSCopying> {
+    NSMutableSet * _authDialogInterrupts;
+    bool  _shouldPostFooterSectionChanged;
+    bool  _shouldProcessAccount;
+    bool  _shouldProcessAuthenticationDialogs;
+    bool  _shouldProcessDialogs;
+    bool  _shouldProcessProtocol;
+    bool  _shouldTriggerDownloads;
 }
 
-@property BOOL shouldPostFooterSectionChanged;
-@property BOOL shouldProcessAccount;
-@property BOOL shouldProcessAuthenticationDialogs;
-@property BOOL shouldProcessDialogs;
-@property BOOL shouldProcessProtocol;
-@property BOOL shouldTriggerDownloads;
+@property bool shouldPostFooterSectionChanged;
+@property bool shouldProcessAccount;
+@property bool shouldProcessAuthenticationDialogs;
+@property bool shouldProcessDialogs;
+@property bool shouldProcessProtocol;
+@property bool shouldTriggerDownloads;
 
+- (void).cxx_destruct;
 - (void)_checkDownloadQueues;
 - (void)_checkInAppPurchaseQueueForAction:(id)arg1;
 - (void)_performActionsForResponse:(id)arg1;
 - (void)_presentDialog:(id)arg1;
-- (BOOL)_processFailureTypeFromDictionary:(id)arg1 error:(id*)arg2;
+- (bool)_processFailureTypeFromDictionary:(id)arg1 error:(id*)arg2;
+- (void)_refreshSubscriptionStatus;
 - (void)_selectFooterSection:(id)arg1;
-- (BOOL)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
+- (bool)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
+- (bool)_shouldInterruptAuthenticationDialogProcessingForResponse:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
-- (BOOL)processDialogFromDictionary:(id)arg1 error:(id*)arg2;
-- (BOOL)processDictionary:(id)arg1 error:(id*)arg2;
-- (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
-- (void)setShouldProcessAccount:(BOOL)arg1;
-- (void)setShouldProcessAuthenticationDialogs:(BOOL)arg1;
-- (void)setShouldProcessDialogs:(BOOL)arg1;
-- (void)setShouldProcessProtocol:(BOOL)arg1;
-- (void)setShouldTriggerDownloads:(BOOL)arg1;
-- (BOOL)shouldPostFooterSectionChanged;
-- (BOOL)shouldProcessAccount;
-- (BOOL)shouldProcessAuthenticationDialogs;
-- (BOOL)shouldProcessDialogs;
-- (BOOL)shouldProcessProtocol;
-- (BOOL)shouldTriggerDownloads;
+- (void)operationShouldInterruptAuthorizationDialogs:(id)arg1 forFailureType:(long long)arg2;
+- (bool)parseData:(id)arg1 returningError:(id*)arg2;
+- (bool)processDialogFromDictionary:(id)arg1 error:(id*)arg2;
+- (bool)processDictionary:(id)arg1 error:(id*)arg2;
+- (void)setShouldPostFooterSectionChanged:(bool)arg1;
+- (void)setShouldProcessAccount:(bool)arg1;
+- (void)setShouldProcessAuthenticationDialogs:(bool)arg1;
+- (void)setShouldProcessDialogs:(bool)arg1;
+- (void)setShouldProcessProtocol:(bool)arg1;
+- (void)setShouldTriggerDownloads:(bool)arg1;
+- (bool)shouldPostFooterSectionChanged;
+- (bool)shouldProcessAccount;
+- (bool)shouldProcessAuthenticationDialogs;
+- (bool)shouldProcessDialogs;
+- (bool)shouldProcessProtocol;
+- (bool)shouldTriggerDownloads;
 
 @end

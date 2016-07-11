@@ -5,12 +5,12 @@
 @interface RWIProtocolDebuggerScope : RWIProtocolJSONObject
 
 @property (nonatomic, retain) RWIProtocolRuntimeRemoteObject *object;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-- (id)initWithType:(int)arg1 object:(id)arg2;
+- (id)initWithType:(long long)arg1 object:(id)arg2;
 - (id)object;
 - (void)setObject:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

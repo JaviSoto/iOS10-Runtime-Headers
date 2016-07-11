@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMessageInfo : NSObject {
+@interface MFMessageInfo : NSObject <MFBaseMessage, NSCopying> {
     long long  _conversationHash;
     unsigned int  _dateReceivedInterval;
     unsigned int  _dateSentInterval;
@@ -10,60 +10,77 @@
     unsigned int  _flagged;
     long long  _generationNumber;
     unsigned int  _hasAttachments;
+    unsigned int  _isHighPriority;
     unsigned int  _isVIP;
     unsigned int  _mailboxID;
-    long long  _messageID;
+    long long  _messageIDHash;
     unsigned int  _read;
     unsigned int  _uid;
     unsigned int  _uidIsLibraryID;
 }
 
+@property (nonatomic, readonly) long long conversationHash;
 @property (nonatomic) long long conversationHash;
+@property (nonatomic, readonly) unsigned int dateReceivedInterval;
 @property (nonatomic) unsigned int dateReceivedInterval;
+@property (nonatomic, readonly) unsigned int dateSentInterval;
 @property (nonatomic) unsigned int dateSentInterval;
-@property (nonatomic) BOOL deleted;
-@property (nonatomic) BOOL flagged;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) bool deleted;
+@property (nonatomic) bool deleted;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool flagged;
+@property (nonatomic) bool flagged;
 @property (nonatomic, readonly) long long generationNumber;
-@property (nonatomic) BOOL isVIP;
-@property (getter=isKnownToHaveAttachments, nonatomic) BOOL knownToHaveAttachments;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isVIP;
+@property (nonatomic) bool isVIP;
+@property (getter=isKnownToHaveAttachments, nonatomic, readonly) bool knownToHaveAttachments;
+@property (getter=isKnownToHaveAttachments, nonatomic) bool knownToHaveAttachments;
+@property (nonatomic, readonly) unsigned int mailboxID;
 @property (nonatomic) unsigned int mailboxID;
-@property (nonatomic) long long messageID;
-@property (nonatomic) BOOL read;
+@property (nonatomic, readonly) long long messageIDHash;
+@property (nonatomic) long long messageIDHash;
+@property (nonatomic, readonly) bool read;
+@property (nonatomic) bool read;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int uid;
 @property (nonatomic) unsigned int uid;
-@property (nonatomic) BOOL uidIsLibraryID;
+@property (nonatomic) bool uidIsLibraryID;
 
 + (long long)newGenerationNumber;
 
 - (long long)conversationHash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)dateReceivedInterval;
 - (unsigned int)dateSentInterval;
-- (BOOL)deleted;
+- (bool)deleted;
 - (id)description;
-- (BOOL)flagged;
-- (int)generationCompare:(id)arg1;
+- (bool)flagged;
+- (long long)generationCompare:(id)arg1;
 - (long long)generationNumber;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 messageID:(long long)arg3 dateReceivedInterval:(unsigned int)arg4 dateSentInterval:(unsigned int)arg5 conversationHash:(long long)arg6 read:(BOOL)arg7 knownToHaveAttachments:(BOOL)arg8 flagged:(BOOL)arg9 isVIP:(BOOL)arg10;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKnownToHaveAttachments;
-- (BOOL)isVIP;
+- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 messageID:(long long)arg3 dateReceivedInterval:(unsigned int)arg4 dateSentInterval:(unsigned int)arg5 conversationHash:(long long)arg6 read:(bool)arg7 knownToHaveAttachments:(bool)arg8 flagged:(bool)arg9 isVIP:(bool)arg10;
+- (bool)isEqual:(id)arg1;
+- (bool)isKnownToHaveAttachments;
+- (bool)isVIP;
 - (unsigned int)mailboxID;
-- (long long)messageID;
-- (BOOL)read;
+- (long long)messageIDHash;
+- (bool)read;
 - (void)setConversationHash:(long long)arg1;
 - (void)setDateReceivedInterval:(unsigned int)arg1;
 - (void)setDateSentInterval:(unsigned int)arg1;
-- (void)setDeleted:(BOOL)arg1;
-- (void)setFlagged:(BOOL)arg1;
-- (void)setIsVIP:(BOOL)arg1;
-- (void)setKnownToHaveAttachments:(BOOL)arg1;
+- (void)setDeleted:(bool)arg1;
+- (void)setFlagged:(bool)arg1;
+- (void)setIsVIP:(bool)arg1;
+- (void)setKnownToHaveAttachments:(bool)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
-- (void)setMessageID:(long long)arg1;
-- (void)setRead:(BOOL)arg1;
+- (void)setMessageIDHash:(long long)arg1;
+- (void)setRead:(bool)arg1;
 - (void)setUid:(unsigned int)arg1;
-- (void)setUidIsLibraryID:(BOOL)arg1;
+- (void)setUidIsLibraryID:(bool)arg1;
 - (unsigned int)uid;
-- (BOOL)uidIsLibraryID;
+- (bool)uidIsLibraryID;
 
 @end

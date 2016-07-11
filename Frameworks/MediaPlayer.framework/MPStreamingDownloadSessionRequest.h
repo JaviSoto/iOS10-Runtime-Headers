@@ -4,35 +4,43 @@
 
 @interface MPStreamingDownloadSessionRequest : NSObject {
     NSString * _buyParameters;
-    int  _endpointType;
+    long long  _endpointType;
     MPMediaPlaybackItemMetadata * _playbackItemMetadata;
-    unsigned int  _preferredAssetQuality;
-    BOOL  _shouldStartLeaseSession;
-    BOOL  _shouldUseAccountLessStreaming;
+    unsigned long long  _preferredAssetQuality;
+    bool  _prefersHLS;
+    bool  _shouldStartLeaseSession;
+    bool  _shouldUseAccountLessStreaming;
+    bool  _shouldUseStreamingRedownload;
     long long  _storeAdamID;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;
-@property (nonatomic, readonly) int endpointType;
+@property (nonatomic, readonly) long long endpointType;
 @property (nonatomic, retain) MPMediaPlaybackItemMetadata *playbackItemMetadata;
-@property (nonatomic) unsigned int preferredAssetQuality;
-@property (nonatomic) BOOL shouldStartLeaseSession;
-@property (nonatomic) BOOL shouldUseAccountLessStreaming;
+@property (nonatomic) unsigned long long preferredAssetQuality;
+@property (nonatomic) bool prefersHLS;
+@property (nonatomic) bool shouldStartLeaseSession;
+@property (nonatomic) bool shouldUseAccountLessStreaming;
+@property (nonatomic) bool shouldUseStreamingRedownload;
 @property (nonatomic, readonly) long long storeAdamID;
-@property (nonatomic, readonly) BOOL usesSubscriptionLease;
+@property (nonatomic, readonly) bool usesSubscriptionLease;
 
 - (void).cxx_destruct;
 - (id)buyParameters;
-- (int)endpointType;
+- (long long)endpointType;
 - (id)playbackItemMetadata;
-- (unsigned int)preferredAssetQuality;
+- (unsigned long long)preferredAssetQuality;
+- (bool)prefersHLS;
 - (void)setPlaybackItemMetadata:(id)arg1;
-- (void)setPreferredAssetQuality:(unsigned int)arg1;
-- (void)setShouldStartLeaseSession:(BOOL)arg1;
-- (void)setShouldUseAccountLessStreaming:(BOOL)arg1;
-- (BOOL)shouldStartLeaseSession;
-- (BOOL)shouldUseAccountLessStreaming;
+- (void)setPreferredAssetQuality:(unsigned long long)arg1;
+- (void)setPrefersHLS:(bool)arg1;
+- (void)setShouldStartLeaseSession:(bool)arg1;
+- (void)setShouldUseAccountLessStreaming:(bool)arg1;
+- (void)setShouldUseStreamingRedownload:(bool)arg1;
+- (bool)shouldStartLeaseSession;
+- (bool)shouldUseAccountLessStreaming;
+- (bool)shouldUseStreamingRedownload;
 - (long long)storeAdamID;
-- (BOOL)usesSubscriptionLease;
+- (bool)usesSubscriptionLease;
 
 @end

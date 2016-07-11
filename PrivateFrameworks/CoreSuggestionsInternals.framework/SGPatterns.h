@@ -12,24 +12,28 @@
 }
 
 + (void)_reinstateDeath;
++ (id)calculateCurrentLanguagesFromPreferredLocaleCodes:(id)arg1;
++ (id)calculateLangResolutionOrder;
 + (void)changeLanguageOrPatternData;
 + (void)clearAllRegexCaches;
 + (id)countryCodeFromLanguageCode:(id)arg1;
 + (id)fallbackLanguageCodeForCountryCode:(id)arg1;
-+ (void)forceLanguageTo:(id)arg1;
++ (void)forceLanguagesTo:(id)arg1;
 + (void)initialize;
 + (id)languagePartOfLanguageCode:(id)arg1;
 + (id)patternsForClass:(Class)arg1;
 + (void)pauseCacheEvictionTemporarily;
-+ (void)useAllLanguagesAtOnce:(BOOL)arg1;
++ (void)resetToDefaultPatternsForTesting;
++ (void)setPatternsDictForTesting:(id)arg1;
++ (void)useAllLanguagesAtOnce:(bool)arg1;
 
 - (void).cxx_destruct;
 - (void)_becomeImmuneToDeath;
-- (id)_calculateLangResolutionOrder;
 - (void)_clearRegexCache;
 - (void)dealloc;
 - (id)init;
 - (id)rawValueForKey:(id)arg1;
+- (id)rawValueOrDataForKey:(id)arg1;
 - (id)rawValuesForKey:(id)arg1;
 - (id)regex2ForKey:(id)arg1;
 - (void)reset;

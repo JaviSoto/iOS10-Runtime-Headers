@@ -4,23 +4,23 @@
 
 @interface RUIAlertView : RUIElement {
     UIAlertController * _alertController;
-    int  _buttonIndex;
+    long long  _buttonIndex;
     id /* block */  _completion;
     NSString * _message;
     RUIObjectModel<RUIAlertViewDelegate> * _objectModel;
     NSString * _title;
 }
 
-@property (nonatomic, readonly) int buttonIndex;
+@property (nonatomic, readonly) long long buttonIndex;
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic) RUIObjectModel<RUIAlertViewDelegate> *objectModel;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
-- (void)addButtonWithTitle:(id)arg1 URL:(id)arg2 destructive:(BOOL)arg3 attributes:(id)arg4;
+- (void)addButtonWithTitle:(id)arg1 URL:(id)arg2 destructive:(bool)arg3 attributes:(id)arg4;
 - (id)alertController;
-- (int)buttonIndex;
+- (long long)buttonIndex;
 - (id /* block */)completion;
 - (void)dealloc;
 - (id)init;

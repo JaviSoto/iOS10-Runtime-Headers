@@ -5,7 +5,8 @@
 
 @required
 
-- (WBSParsecSearchSession *)parsecSearchSession;
-- (void)setParsecSearchSession:(WBSParsecSearchSession *)arg1;
+- (<WBSParsecSearchSession> *)parsecSearchSession;
+- (void)setParsecSearchSession:(id <WBSParsecSearchSession>)arg1;
+- (bool)willPresentResultInCard;
 
 @end

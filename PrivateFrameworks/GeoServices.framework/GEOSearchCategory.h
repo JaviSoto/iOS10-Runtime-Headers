@@ -19,7 +19,7 @@
 
 + (id)categoryForURL:(id)arg1;
 + (void)sendFeedbackForVisibleCategories:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_autocompleteEntry;
 - (id)_browseCategory;
@@ -34,6 +34,7 @@
 - (id)mapsURL;
 - (id)popularTokenString;
 - (void)sendFeedback;
+- (id)serverMetadata;
 - (id)shortDisplayString;
 - (id)styleAttributes;
 - (id)subcategories;

@@ -3,67 +3,63 @@
  */
 
 @interface SBFLockScreenDateView : UIView {
-    UIColor * _customSubtitleColor;
-    NSString * _customSubtitleText;
+    double  _alignmentPercent;
+    SBFLockScreenDateSubtitleView * _customSubtitleView;
     NSDate * _date;
-    float  _dateAlpha;
-    float  _dateAlphaPercentage;
-    UILabel * _dateLabel;
-    float  _dateStrength;
-    _UILegibilityLabel * _legibilityDateLabel;
+    SBFLockScreenDateSubtitleDateView * _dateSubtitleView;
     _UILegibilitySettings * _legibilitySettings;
-    _UILegibilityLabel * _legibilityTimeLabel;
-    UIColor * _textColor;
-    float  _timeAlpha;
-    UILabel * _timeLabel;
-    float  _timeStrength;
-    BOOL  _useLegibilityLabels;
+    UIColor * _overrideTextColor;
+    double  _subtitleAlpha;
+    double  _timeAlpha;
+    SBUILegibilityLabel * _timeLabel;
+    bool  _useDashBoardValues;
 }
 
+@property (nonatomic) double alignmentPercent;
+@property (nonatomic, readonly) double contentAlpha;
+@property (nonatomic, retain) SBFLockScreenDateSubtitleView *customSubtitleView;
 @property (nonatomic, retain) NSDate *date;
-@property (nonatomic) float dateAlphaPercentage;
-@property (getter=isDateHidden, nonatomic) BOOL dateHidden;
-@property (nonatomic) float dateStrength;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly) double subtitleBaselineOffsetFromOrigin;
+@property (getter=isSubtitleHidden, nonatomic) bool subtitleHidden;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) float timeStrength;
+@property (nonatomic, readonly) double timeBaselineOffsetFromOrigin;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 
-- (void)_addLabels;
-- (id)_dateColor;
-- (id)_dateFont;
-- (id)_dateText;
-- (float)_effectiveDateAlpha;
-- (void)_layoutDateLabel;
-- (void)_layoutTimeLabel;
-- (void)_setDateAlpha:(float)arg1;
+- (void).cxx_destruct;
+- (void)_layoutDateView;
+- (void)_layoutLegacyDateLabel;
+- (void)_layoutLegacyTimeLabel;
+- (void)_layoutSubtitleViews;
+- (id)_legacyTimeFont;
+- (void)_setSubtitleAlpha:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_subtitleViewFrameForView:(id)arg1 alignmentPercent:(double)arg2;
 - (id)_timeFont;
+- (id)_timeLabel;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_timeLabelFrameForAlignmentPercent:(double)arg1;
 - (void)_updateLabelAlpha;
 - (void)_updateLabels;
-- (void)_updateLegibilityLabelsWithUpdatedDateString:(BOOL)arg1;
-- (void)_useLegibilityLabels:(BOOL)arg1;
+- (double)alignmentPercent;
+- (double)contentAlpha;
+- (id)customSubtitleView;
 - (id)date;
-- (float)dateAlphaPercentage;
-- (float)dateBaselineOffsetFromOrigin;
-- (float)dateStrength;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDateHidden;
+- (id)initForDashBoard:(bool)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isSubtitleHidden;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
-- (void)setContentAlpha:(float)arg1 withDateVisible:(BOOL)arg2;
-- (void)setCustomSubtitleText:(id)arg1 withColor:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationExtentForAlignmentPercent:(double)arg1;
+- (void)setAlignmentPercent:(double)arg1;
+- (void)setContentAlpha:(double)arg1 withSubtitleVisible:(bool)arg2;
+- (void)setCustomSubtitleView:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setDateAlphaPercentage:(float)arg1;
-- (void)setDateHidden:(BOOL)arg1;
-- (void)setDateStrength:(float)arg1;
 - (void)setLegibilitySettings:(id)arg1;
+- (void)setSubtitleHidden:(bool)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTimeStrength:(float)arg1;
+- (double)subtitleBaselineOffsetFromOrigin;
 - (id)textColor;
-- (float)timeBaselineOffsetFromOrigin;
-- (float)timeStrength;
+- (double)timeBaselineOffsetFromOrigin;
 - (void)updateFormat;
 
 @end

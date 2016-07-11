@@ -3,32 +3,31 @@
  */
 
 @interface MFMailDropMailDelivery : MFOutgoingMessageDelivery {
-    NSString * _attachmentContext;
-    NSMutableArray * _attachments;
-    MFMailDropMetadata * _mailDropMetaData;
+    NSArray * _attachments;
+    MFMailDropMetadata * _imageArchiveMetadata;
+    long long  _mailDropState;
 }
 
-@property (nonatomic, retain) NSString *attachmentContext;
-@property (nonatomic, retain) NSMutableArray *attachments;
-@property (nonatomic, retain) MFMailDropMetadata *mailDropMetaData;
+@property (nonatomic, retain) NSArray *attachments;
+@property (nonatomic, retain) MFMailDropMetadata *imageArchiveMetadata;
+@property (nonatomic) long long mailDropState;
 
 + (id)_mailDropZone;
 
-- (int)_processAttachments;
+- (id)_attachmentManager;
+- (long long)_processAttachments;
+- (id)_publishRecord:(id)arg1 database:(id)arg2 attachmentRecords:(id)arg3 images:(id)arg4 allowsCellularAccess:(bool)arg5;
 - (void)_recordZoneIDInDatabase:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)_uploadAttachmentsViaCloudKit:(id)arg1 zone:(id)arg2 records:(id)arg3 zippedPhotos:(id)arg4 attachmentRecords:(id)arg5 images:(id)arg6;
-- (id)attachmentContext;
+- (bool)_uploadAttachmentsViaCloudKit:(id)arg1 zone:(id)arg2 records:(id)arg3 zippedPhotos:(id)arg4 attachmentRecords:(id)arg5 images:(id)arg6;
 - (id)attachments;
 - (void)dealloc;
-- (id)deliverSynchronously;
-- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
-- (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
-- (id)initWithMessage:(id)arg1;
-- (id)mailDropMetaData;
-- (BOOL)scaleImages:(id)arg1;
-- (void)setAttachmentContext:(id)arg1;
+- (id)deliverSynchronouslyWithCompletion:(id /* block */)arg1;
+- (id)imageArchiveMetadata;
+- (long long)mailDropState;
+- (id)scaledImages:(id)arg1;
 - (void)setAttachments:(id)arg1;
-- (void)setMailDropMetaData:(id)arg1;
-- (BOOL)updateMessageWithAttachmentsSynchronously;
+- (void)setImageArchiveMetadata:(id)arg1;
+- (void)setMailDropState:(long long)arg1;
+- (bool)updateMessageWithAttachmentsSynchronously;
 
 @end

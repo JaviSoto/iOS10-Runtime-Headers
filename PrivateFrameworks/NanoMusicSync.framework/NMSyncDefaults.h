@@ -3,55 +3,69 @@
  */
 
 @interface NMSyncDefaults : NSObject {
-    BOOL  _assetSyncEnabled;
+    NSArray * _assetSyncAutofillSyncIDs;
     NSNumber * _assetSyncLimit;
-    unsigned int  _assetSyncLimitType;
+    unsigned long long  _assetSyncLimitType;
     NSNumber * _assetSyncPlaylistPersistentID;
+    unsigned long long  _assetSyncType;
+    NPSDomainAccessor * _domainAccessor;
+    NSObject<OS_dispatch_queue> * _domainAccessorQueue;
     NSNumber * _lastFullySentAssetSyncPlaylistPersistentID;
     NSNumber * _lastFullySentAssetSyncPlaylistVersion;
     NSDate * _modificationDate;
-    BOOL  _needsSync;
+    bool  _needsSync;
     int  _notifyToken;
     NSNumber * _numberOfSyncedAssetSyncPlaylistSongs;
     NSString * _pairingID;
+    NSDate * _previousRandomAutofillDate;
 }
 
-@property (getter=isAssetSyncEnabled, nonatomic) BOOL assetSyncEnabled;
+@property (nonatomic, copy) NSArray *assetSyncAutofillSyncIDs;
+@property (getter=isAssetSyncEnabled, nonatomic, readonly) bool assetSyncEnabled;
 @property (nonatomic, copy) NSNumber *assetSyncLimit;
-@property (nonatomic) unsigned int assetSyncLimitType;
+@property (nonatomic) unsigned long long assetSyncLimitType;
 @property (nonatomic, retain) MPMediaPlaylist *assetSyncPlaylist;
 @property (nonatomic, copy) NSNumber *assetSyncPlaylistPersistentID;
+@property (nonatomic) unsigned long long assetSyncType;
 @property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistPersistentID;
 @property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistVersion;
 @property (nonatomic, readonly) NSDate *modificationDate;
 @property (nonatomic, copy) NSNumber *numberOfSyncedAssetSyncPlaylistSongs;
+@property (nonatomic, readonly) NSDate *previousRandomAutofillDate;
 
 + (id)sharedDefaults;
 
 - (void).cxx_destruct;
 - (id)_associatedObject;
 - (void)_clearAssetSyncPlaylistDependentDefaults;
-- (void)_handleRemoteChangeIgnoringSenderPID:(BOOL)arg1;
+- (id)_companionSidePerDeviceDefaults;
+- (void)_handleRemoteChangeIgnoringSenderPID:(bool)arg1;
 - (void)_perDeviceSettingsDidResetNotification:(id)arg1;
 - (void)_reloadPropertiesFromDefaults;
+- (void)_resetDomainAccessor;
 - (void)_setNeedsSynchronize;
+- (void)_transferObsoleteFields;
 - (void)_writePropertiesToDefaults;
+- (id)assetSyncAutofillSyncIDs;
 - (id)assetSyncLimit;
-- (unsigned int)assetSyncLimitType;
+- (unsigned long long)assetSyncLimitType;
 - (id)assetSyncPlaylist;
 - (id)assetSyncPlaylistPersistentID;
+- (unsigned long long)assetSyncType;
 - (id)description;
 - (id)init;
-- (BOOL)isAssetSyncEnabled;
+- (bool)isAssetSyncEnabled;
 - (id)lastFullySentAssetSyncPlaylistPersistentID;
 - (id)lastFullySentAssetSyncPlaylistVersion;
 - (id)modificationDate;
 - (id)numberOfSyncedAssetSyncPlaylistSongs;
-- (void)setAssetSyncEnabled:(BOOL)arg1;
+- (id)previousRandomAutofillDate;
+- (void)setAssetSyncAutofillSyncIDs:(id)arg1;
 - (void)setAssetSyncLimit:(id)arg1;
-- (void)setAssetSyncLimitType:(unsigned int)arg1;
+- (void)setAssetSyncLimitType:(unsigned long long)arg1;
 - (void)setAssetSyncPlaylist:(id)arg1;
 - (void)setAssetSyncPlaylistPersistentID:(id)arg1;
+- (void)setAssetSyncType:(unsigned long long)arg1;
 - (void)setLastFullySentAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistVersion:(id)arg1;
 - (void)setNumberOfSyncedAssetSyncPlaylistSongs:(id)arg1;

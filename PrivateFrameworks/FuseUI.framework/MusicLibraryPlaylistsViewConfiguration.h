@@ -4,13 +4,15 @@
 
 @interface MusicLibraryPlaylistsViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
     NSMutableSet * _additionalQueryFilterPredicates;
-    unsigned int  _playlistsConfigurationOptions;
+    NSNumber * _parentFolderPersistentID;
+    unsigned long long  _playlistsConfigurationOptions;
     NSString * _playlistsFilter;
-    BOOL  _playlistsFilterIsCuratorID;
+    bool  _playlistsFilterIsCuratorID;
 }
 
 @property (nonatomic, readonly, copy) NSSet *additionalQueryFilterPredicates;
-@property (nonatomic) unsigned int playlistsConfigurationOptions;
+@property (nonatomic, retain) NSNumber *parentFolderPersistentID;
+@property (nonatomic) unsigned long long playlistsConfigurationOptions;
 @property (nonatomic, copy) NSString *playlistsFilter;
 
 + (void)getDetailViewController:(id*)arg1 playbackContext:(id*)arg2 forEntityValueContext:(id)arg3 sourceViewController:(id)arg4;
@@ -21,15 +23,22 @@
 - (void)addQueryFilterPredicate:(id)arg1;
 - (id)additionalQueryFilterPredicates;
 - (void)applyEntityProviderChangeRecords:(id)arg1;
-- (BOOL)canDeleteEntityValueContext:(id)arg1;
-- (int)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (bool)canDeleteEntityValueContext:(id)arg1;
+- (bool)canPreviewEntityValueContext:(id)arg1;
+- (id)folderDetailViewControllerWithEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionOfUnplayableEntityValueContext:(id)arg1 withPlayabilityResult:(unsigned long long)arg2 fromViewController:(id)arg3;
 - (id)init;
-- (id)initWithPlaylistsFilter:(id)arg1 playlistsConfigurationOptions:(unsigned int)arg2;
+- (id)initWithPlaylistsFilter:(id)arg1 playlistsConfigurationOptions:(unsigned long long)arg2;
 - (id)loadEntityViewDescriptor;
-- (unsigned int)playlistsConfigurationOptions;
+- (id)parentFolderPersistentID;
+- (unsigned long long)playlistsConfigurationOptions;
 - (id)playlistsFilter;
-- (void)setPlaylistsConfigurationOptions:(unsigned int)arg1;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (void)setParentFolderPersistentID:(id)arg1;
+- (void)setPlaylistsConfigurationOptions:(unsigned long long)arg1;
 - (void)setPlaylistsFilter:(id)arg1;
 
 @end

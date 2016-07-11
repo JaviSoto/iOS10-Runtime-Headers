@@ -6,8 +6,9 @@
 @required
 
 - (void)_invalidateCachedCoordinate;
-- (void)_setHiddenForOffscreen:(BOOL)arg1;
-- (BOOL)isPersistent;
+- (bool)_isPendingSelectionAnimated;
+- (void)_setHiddenForOffscreen:(bool)arg1;
+- (bool)isPersistent;
 - (void)prepareForReuse;
 - (NSString *)reuseIdentifier;
 

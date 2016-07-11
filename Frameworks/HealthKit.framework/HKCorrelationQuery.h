@@ -3,13 +3,13 @@
  */
 
 @interface HKCorrelationQuery : HKQuery {
-    int  _behaviorVersion;
+    long long  _behaviorVersion;
     id /* block */  _completionHandler;
     NSDictionary * _filterDictionary;
     NSDictionary * _samplePredicates;
 }
 
-@property (getter=_behaviorVersion, setter=_setBehaviorVersion:, nonatomic) int behaviorVersion;
+@property (getter=_behaviorVersion, setter=_setBehaviorVersion:, nonatomic) long long behaviorVersion;
 @property (nonatomic, readonly) id /* block */ completionHandler;
 @property (readonly, copy) HKCorrelationType *correlationType;
 @property (nonatomic, readonly) NSDictionary *filterDictionary;
@@ -18,15 +18,16 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
++ (bool)shouldApplyPredicateForObjectType:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)_behaviorVersion;
+- (long long)_behaviorVersion;
 - (id)_predicateFilterClasses;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id /* block */)_queue_errorHandler;
 - (void)_queue_validate;
-- (void)_setBehaviorVersion:(int)arg1;
+- (void)_setBehaviorVersion:(long long)arg1;
 - (id /* block */)completionHandler;
 - (id)correlationType;
 - (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;

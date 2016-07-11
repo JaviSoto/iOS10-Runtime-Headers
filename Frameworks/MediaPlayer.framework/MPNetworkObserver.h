@@ -3,12 +3,16 @@
  */
 
 @interface MPNetworkObserver : NSObject {
-    int  _networkUsageCount;
+    bool  _isMusicCellularDownloadingAllowed;
+    int  _musicCellularNetworkingAllowedNotifyToken;
+    long long  _networkUsageCount;
     NSObject<OS_dispatch_queue> * _networkUsageQueue;
 }
 
-@property (nonatomic, readonly) BOOL isCellularNetworkingAllowed;
-@property (nonatomic, readonly) BOOL isUsingNetwork;
+@property (nonatomic, readonly) bool isMusicCellularDownloadingAllowed;
+@property (nonatomic, readonly) bool isMusicCellularStreamingAllowed;
+@property (nonatomic, readonly) bool isStoreCellularNetworkingAllowed;
+@property (nonatomic, readonly) bool isUsingNetwork;
 
 + (id)sharedNetworkObserver;
 
@@ -19,7 +23,10 @@
 - (void)dealloc;
 - (void)endUsingNetwork;
 - (id)init;
-- (BOOL)isCellularNetworkingAllowed;
-- (BOOL)isUsingNetwork;
+- (bool)isMusicCellularDownloadingAllowed;
+- (bool)isMusicCellularDownloadsAllowed;
+- (bool)isMusicCellularStreamingAllowed;
+- (bool)isStoreCellularNetworkingAllowed;
+- (bool)isUsingNetwork;
 
 @end

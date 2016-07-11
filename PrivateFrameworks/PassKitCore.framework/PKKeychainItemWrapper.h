@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSMutableDictionary *genericPasswordQuery;
 @property (nonatomic, retain) NSMutableDictionary *keychainItemData;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dictionaryToSecItemFormat:(id)arg1;
 - (id)genericPasswordQuery;
 - (id)initWithIdentifier:(id)arg1 accessGroup:(id)arg2;

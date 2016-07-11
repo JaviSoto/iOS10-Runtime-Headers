@@ -3,20 +3,23 @@
  */
 
 @interface STContactAddress : STSiriModelObject {
+    NSURL * _contactIdentifier;
     NSString * _stringValue;
-    int  _type;
+    long long  _type;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
+- (id)contactIdentifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStringValue:(id)arg1;
-- (id)initWithType:(int)arg1 stringValue:(id)arg2;
+- (id)initWithType:(long long)arg1 stringValue:(id)arg2;
+- (id)initWithType:(long long)arg1 stringValue:(id)arg2 contactIdentifier:(id)arg3;
 - (id)stringValue;
-- (int)type;
+- (long long)type;
 
 @end

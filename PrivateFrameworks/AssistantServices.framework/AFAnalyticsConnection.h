@@ -5,16 +5,17 @@
 @interface AFAnalyticsConnection : NSObject <AFAnalyticsService> {
     NSXPCConnection * _connection;
     NSObject<OS_dispatch_source> * _houseKeepingTimer;
-    BOOL  _needsCleanUpConnection;
+    bool  _needsCleanUpConnection;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableSet * _stagedEventsBeingSent;
     NSMutableSet * _stagedEventsToBeSent;
+    NSObject<OS_os_transaction> * _transaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL needsCleanUpConnection;
+@property (readonly) unsigned long long hash;
+@property bool needsCleanUpConnection;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,7 +29,7 @@
 - (void)_handleFailureCallbackForEvents:(id)arg1 error:(id)arg2;
 - (void)_houseKeeperArrived;
 - (void)_mutateStagedEventsSynchronouslyUsingBlock:(id /* block */)arg1;
-- (unsigned int)_numberOfStagedEvents;
+- (unsigned long long)_numberOfStagedEvents;
 - (void)_processStagedEvents;
 - (void)_sendEvents:(id)arg1;
 - (void)_stageEvent:(id)arg1;
@@ -37,8 +38,8 @@
 - (void)_stopHouseKeepingTimer;
 - (void)dealloc;
 - (id)init;
-- (BOOL)needsCleanUpConnection;
-- (void)setNeedsCleanUpConnection:(BOOL)arg1;
+- (bool)needsCleanUpConnection;
+- (void)setNeedsCleanUpConnection:(bool)arg1;
 - (oneway void)stageEvent:(id)arg1;
 - (oneway void)stageEvents:(id)arg1;
 

@@ -16,6 +16,8 @@
 
 + (id)defaultLogState;
 
+- (void).cxx_destruct;
+- (void)_setLevel:(int)arg1;
 - (id)basename;
 - (void)closeLog;
 - (const char *)currentSectionID;
@@ -26,7 +28,6 @@
 - (void)openASLStoreIfNeeded;
 - (void)setBasename:(id)arg1;
 - (void)setDirectory:(id)arg1;
-- (void)setLevel:(int)arg1;
 - (void)setPath:(const char *)arg1 base:(const char *)arg2;
 
 @end

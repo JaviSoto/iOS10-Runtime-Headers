@@ -3,7 +3,7 @@
  */
 
 @interface WKProcessAssertionBackgroundTaskManager : NSObject {
-    unsigned int  _backgroundTask;
+    unsigned long long  _backgroundTask;
     struct HashSet<WebKit::ProcessAssertionClient *, WTF::PtrHash<WebKit::ProcessAssertionClient *>, WTF::HashTraits<WebKit::ProcessAssertionClient *> > { 
         struct HashTable<WebKit::ProcessAssertionClient *, WebKit::ProcessAssertionClient *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::ProcessAssertionClient *>, WTF::HashTraits<WebKit::ProcessAssertionClient *>, WTF::HashTraits<WebKit::ProcessAssertionClient *> > { 
             struct ProcessAssertionClient {} **m_table; 
@@ -20,8 +20,6 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_applicationDidEnterBackground;
-- (void)_applicationWillEnterForeground;
 - (void)_updateBackgroundTask;
 - (void)addClient:(struct ProcessAssertionClient { int (**x1)(); }*)arg1;
 - (void)dealloc;

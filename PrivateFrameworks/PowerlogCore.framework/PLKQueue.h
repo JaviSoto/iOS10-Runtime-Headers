@@ -4,7 +4,7 @@
 
 @interface PLKQueue : NSObject {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _enabled;
+    bool  _enabled;
     int  _fileDescriptor;
     int  _kQueue;
     id /* block */  _kQueueBlock;
@@ -14,7 +14,7 @@
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property int fileDescriptor;
 @property int kQueue;
 @property (nonatomic, copy) id /* block */ kQueueBlock;
@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)dispatchQueue;
-- (BOOL)enabled;
+- (bool)enabled;
 - (int)fileDescriptor;
 - (id)initWithPath:(id)arg1 withDispatchQueue:(id)arg2 withBlock:(id /* block */)arg3;
 - (int)kQueue;
@@ -33,7 +33,7 @@
 - (struct __CFRunLoopSource { }*)kqueueDescriptorSource;
 - (id)path;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFileDescriptor:(int)arg1;
 - (void)setKQueue:(int)arg1;
 - (void)setKQueueBlock:(id /* block */)arg1;

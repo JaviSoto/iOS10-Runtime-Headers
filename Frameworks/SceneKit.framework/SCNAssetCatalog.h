@@ -13,6 +13,9 @@
 + (id)assetCatalogForResourceURL:(id)arg1;
 + (id)assetCatalogNamed:(id)arg1;
 + (id)assetCatalogWithURL:(id)arg1;
++ (void)clearCache;
++ (id)objectWithName:(id)arg1 class:(Class)arg2;
++ (id)recursivePathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
 
 - (id)URLOfResourceNamed:(id)arg1;
 - (id)actionNamed:(id)arg1;

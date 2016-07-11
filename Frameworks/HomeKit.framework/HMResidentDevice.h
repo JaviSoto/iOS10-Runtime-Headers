@@ -2,25 +2,74 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMResidentDevice : HMUser {
-    unsigned int  _configurationState;
-    NSString * _deviceIdentifier;
+@interface HMResidentDevice : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+    unsigned long long  _capabilities;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    bool  _currentDevice;
+    <HMResidentDeviceDelegate> * _delegate;
+    HMDelegateCaller * _delegateCaller;
+    bool  _enabled;
+    HMHome * _home;
+    HMFMessageDispatcher * _messageDispatcher;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    unsigned long long  _status;
+    NSUUID * _uniqueIdentifier;
+    NSUUID * _uuid;
 }
 
-@property (nonatomic) unsigned int configurationState;
-@property (nonatomic, retain) NSString *deviceIdentifier;
+@property (readonly) unsigned long long capabilities;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (getter=isCurrentDevice, readonly) bool currentDevice;
+@property (readonly, copy) NSString *debugDescription;
+@property <HMResidentDeviceDelegate> *delegate;
+@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled) bool enabled;
+@property (readonly) unsigned long long hash;
+@property HMHome *home;
+@property (nonatomic, retain) HMFMessageDispatcher *messageDispatcher;
+@property (copy) NSString *name;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
+@property unsigned long long status;
+@property (readonly) Class superclass;
+@property (readonly, copy) NSUUID *uniqueIdentifier;
+@property (nonatomic, readonly, copy) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
-- (unsigned int)configurationState;
-- (id)deviceIdentifier;
+- (void)_configure:(id)arg1 messageDispatcher:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (unsigned long long)capabilities;
+- (id)clientQueue;
+- (id)delegate;
+- (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
+- (id)home;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 uuid:(id)arg2 deviceIdentifier:(id)arg3 home:(id)arg4;
-- (void)setConfigurationState:(unsigned int)arg1;
-- (void)setDeviceIdentifier:(id)arg1;
-- (void)updateConfigurationState:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (bool)isCurrentDevice;
+- (bool)isEnabled;
+- (id)messageDispatcher;
+- (id)name;
+- (id)propertyQueue;
+- (void)setClientQueue:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDelegateCaller:(id)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHome:(id)arg1;
+- (void)setMessageDispatcher:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setStatus:(unsigned long long)arg1;
+- (unsigned long long)status;
+- (id)uniqueIdentifier;
+- (void)updatedEnabled:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (id)uuid;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescription;
 
 @end

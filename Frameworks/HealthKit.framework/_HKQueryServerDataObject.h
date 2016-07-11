@@ -3,25 +3,37 @@
  */
 
 @interface _HKQueryServerDataObject : NSObject <NSSecureCoding> {
+    double  _collectionInterval;
     _HKFilter * _filter;
-    HKSampleType * _sampleType;
-    BOOL  _shouldStayAliveAfterInitialResults;
+    HKObjectType * _objectType;
+    int  _samplesDeliveredBeforeSuspend;
+    bool  _shouldStayAliveAfterInitialResults;
+    bool  _waitForStart;
 }
 
+@property (nonatomic) double collectionInterval;
 @property (nonatomic, retain) _HKFilter *filter;
-@property (nonatomic, retain) HKSampleType *sampleType;
-@property (nonatomic) BOOL shouldStayAliveAfterInitialResults;
+@property (nonatomic, retain) HKObjectType *objectType;
+@property (nonatomic) int samplesDeliveredBeforeSuspend;
+@property (nonatomic) bool shouldStayAliveAfterInitialResults;
+@property (nonatomic) bool waitForStart;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)collectionInterval;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filter;
 - (id)initWithCoder:(id)arg1;
-- (id)sampleType;
+- (id)objectType;
+- (int)samplesDeliveredBeforeSuspend;
+- (void)setCollectionInterval:(double)arg1;
 - (void)setFilter:(id)arg1;
-- (void)setSampleType:(id)arg1;
-- (void)setShouldStayAliveAfterInitialResults:(BOOL)arg1;
-- (BOOL)shouldStayAliveAfterInitialResults;
+- (void)setObjectType:(id)arg1;
+- (void)setSamplesDeliveredBeforeSuspend:(int)arg1;
+- (void)setShouldStayAliveAfterInitialResults:(bool)arg1;
+- (void)setWaitForStart:(bool)arg1;
+- (bool)shouldStayAliveAfterInitialResults;
+- (bool)waitForStart;
 
 @end

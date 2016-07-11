@@ -8,7 +8,9 @@
 
 - (void).cxx_destruct;
 - (id)_appBundleIdentifier;
+- (long long)buttonType;
 - (void)layoutSubviews;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)neededSizeForImageSet:(id)arg1;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

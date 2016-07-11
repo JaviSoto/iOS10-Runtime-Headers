@@ -3,13 +3,15 @@
  */
 
 @interface BRCTransferStream : NSObject <BRCLifeCycle> {
-    BOOL  _hasReachedCap;
+    bool  _hasReachedCap;
     NSMutableDictionary * _inFlightOpByID;
     unsigned long long  _inFlightSize;
-    BOOL  _isCancelled;
-    BOOL  _isWaitingForTransferBatch;
+    bool  _isCancelled;
+    bool  _isWaitingForTransferBatch;
+    unsigned long long  _maxCountOfBatchesInFlight;
+    int  _multipleItemsInteractiveSchedulingCount;
     long long  _nextFire;
-    BRCDeadlineToken * _schedulingToken;
+    BRCDeadlineSource * _schedulingSource;
     BRCAccountSession * _session;
     id /* block */  _streamDidBecomeReadyToTransferRecords;
     BRCSyncContext * _syncContext;
@@ -19,9 +21,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long inFlightSize;
-@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) bool isCancelled;
+@property (nonatomic) unsigned long long maxCountOfBatchesInFlight;
 @property (readonly) NSArray *operations;
 @property (nonatomic, copy) id /* block */ streamDidBecomeReadyToTransferRecords;
 @property (readonly) Class superclass;
@@ -30,22 +33,28 @@
 - (void)_addBatchOperation:(id)arg1;
 - (void)_evaluateCap;
 - (void)_schedule;
-- (void)_setReachedCap:(BOOL)arg1;
+- (void)_scheduleOneBatchWithQoS:(long long)arg1;
+- (void)_setReachedCap:(bool)arg1;
 - (void)addAliasItem:(id)arg1 toTransferWithID:(id)arg2 operationID:(id)arg3;
 - (void)addBatchOperation:(id)arg1;
 - (void)cancel;
 - (void)cancelTransferID:(id)arg1 operationID:(id)arg2;
 - (void)close;
+- (void)endSchedulingMultipleItemsInteractively;
+- (void)forceSchedulingPendingInteractiveTransfers;
 - (unsigned long long)inFlightSize;
 - (id)initWithSyncContext:(id)arg1 name:(id)arg2 scheduler:(id)arg3;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
+- (unsigned long long)maxCountOfBatchesInFlight;
 - (id)operations;
 - (double)progressForTransferID:(id)arg1 operationID:(id)arg2;
 - (void)resume;
-- (void)setIsCancelled:(BOOL)arg1;
+- (void)setMaxCountOfBatchesInFlight:(unsigned long long)arg1;
 - (void)setStreamDidBecomeReadyToTransferRecords:(id /* block */)arg1;
+- (void)signal;
+- (void)signalWithDeadline:(long long)arg1;
+- (void)startSchedulingMultipleItemsInteractively;
 - (id /* block */)streamDidBecomeReadyToTransferRecords;
 - (void)suspend;
-- (void)wakeUpForNextWorkAt:(long long)arg1;
 
 @end

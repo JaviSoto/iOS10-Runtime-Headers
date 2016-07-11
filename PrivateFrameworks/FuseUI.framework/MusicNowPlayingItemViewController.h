@@ -3,27 +3,31 @@
  */
 
 @interface MusicNowPlayingItemViewController : UIViewController <MusicNowPlayingVideoViewControllerDelegate> {
-    ADBannerView * _adBannerView;
     MPArtworkCatalog * _artworkCatalog;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _artworkFittingSize;
     UIImage * _artworkImage;
     id /* block */  _deferTransitionBlock;
     <MusicNowPlayingItemViewControllerDelegate> * _delegate;
-    BOOL  _hasProperApplicationStateForWantingVideoLayer;
-    BOOL  _hasVisibilityForWantingVideoLayer;
+    bool  _hasProperApplicationStateForWantingVideoLayer;
+    bool  _hasVisibilityForWantingVideoLayer;
     MusicArtworkView * _imageView;
+    bool  _isConnectedToTVOutScreen;
     MPAVItem * _item;
-    unsigned int  _itemType;
+    long long  _itemType;
     MusicNowPlayingVideoViewController * _videoViewController;
-    BOOL  _wantsVideoLayer;
+    bool  _wantsVideoLayer;
 }
 
-@property (nonatomic) BOOL canShowOverlayControls;
+@property (nonatomic) bool canShowOverlayControls;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicNowPlayingItemViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPAVItem *item;
-@property (nonatomic) BOOL overlayVideoControlsHidden;
+@property (nonatomic) bool overlayVideoControlsHidden;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,17 +37,19 @@
 - (void)_itemTypeAvailableNotification:(id)arg1;
 - (id)_placeholderArtwork;
 - (void)_playerFirstVideoFrameDidDisplayNotification:(id)arg1;
-- (void)_removeAdBannerView;
+- (void)_registerForVideoViewControllerNotifications:(id)arg1;
 - (void)_removeArtworkImageView;
 - (void)_removeVideoViewController;
 - (void)_setArtworkImage:(id)arg1;
-- (void)_setWantsVideoLayer:(BOOL)arg1;
-- (void)_updateArtworkCatalogWithReload:(BOOL)arg1;
-- (void)_updateContentViewWithReload:(BOOL)arg1;
+- (void)_setWantsVideoLayer:(bool)arg1;
+- (void)_tvOutCapabiltiesDidChangeNotification:(id)arg1;
+- (void)_unregisterForVideoViewControllerNotifications:(id)arg1;
+- (void)_updateArtworkCatalogWithReload:(bool)arg1;
+- (void)_updateContentViewWithReload:(bool)arg1;
 - (void)_updatePreferredContentSize;
 - (void)_updateWantsVideoLayer;
 - (id)artworkImage;
-- (BOOL)canShowOverlayControls;
+- (bool)canShowOverlayControls;
 - (void)dealloc;
 - (void)deferItemTransitionIfNeeded:(id /* block */)arg1;
 - (id)delegate;
@@ -52,18 +58,18 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)item;
 - (void)overlayBackButtonTapped:(id)arg1;
-- (BOOL)overlayVideoControlsHidden;
-- (void)setCanShowOverlayControls:(BOOL)arg1;
+- (bool)overlayVideoControlsHidden;
+- (void)setCanShowOverlayControls:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setOverlayVideoControlsHidden:(BOOL)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setOverlayVideoControlsHidden:(bool)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)traitCollectionDidChange:(id)arg1;
-- (int)transitionFromItemViewController:(id)arg1;
-- (BOOL)videoController:(id)arg1 shouldDisplayAlertForError:(id)arg2;
-- (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (long long)transitionFromItemViewController:(id)arg1;
+- (void)updateArtworkImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)videoController:(id)arg1 shouldDisplayAlertForError:(id)arg2;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

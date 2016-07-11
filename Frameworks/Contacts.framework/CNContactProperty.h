@@ -19,22 +19,25 @@
 
 + (id)contactPropertyWithContact:(id)arg1 propertyKey:(id)arg2 identifier:(id)arg3;
 + (id)contactPropertyWithContactNoCopy:(id)arg1 propertyKey:(id)arg2 identifier:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)internalContact;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isMultiValueProperty;
 - (id)key;
 - (id)label;
 - (id)labeledValue;
+- (id)labeledValueForContact:(id)arg1;
 - (int)multiValueIdentifier;
+- (id)primitiveValue;
 - (void)setIdentifier:(id)arg1;
 - (void)setInternalContact:(id)arg1;
 - (void)setKey:(id)arg1;

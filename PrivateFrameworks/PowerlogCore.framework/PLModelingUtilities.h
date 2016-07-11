@@ -4,14 +4,14 @@
 
 @interface PLModelingUtilities : NSObject
 
-+ (BOOL)alsCurveHigherThanDefault;
++ (bool)alsCurveHigherThanDefault;
 + (double)defaultBatteryEnergyCapacity;
 + (double)duetDiscretionaryBudget;
-+ (BOOL)internalBuild;
-+ (BOOL)isIPod;
-+ (BOOL)isLowPowerModeSupported;
-+ (BOOL)isNarrowScreen;
-+ (BOOL)isiPad;
++ (bool)internalBuild;
++ (bool)isIPod;
++ (bool)isLowPowerModeSupported;
++ (bool)isNarrowScreen;
++ (bool)isiPad;
 + (id)valueForMobileGestaltCapability:(id)arg1;
 
 @end

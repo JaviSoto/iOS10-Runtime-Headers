@@ -3,21 +3,22 @@
  */
 
 @interface CLLocationManagerInternal : NSObject {
-    int  fActivityType;
-    BOOL  fAllowsBackgroundLocationUpdates;
-    BOOL  fAllowsLocationPrompts;
-    BOOL  fAllowsMapCorrection;
-    BOOL  fBatchingLocation;
+    long long  fActivityType;
+    bool  fAllowsAlteredAccessoryLocations;
+    bool  fAllowsBackgroundLocationUpdates;
+    bool  fAllowsLocationPrompts;
+    bool  fAllowsMapCorrection;
+    bool  fBatchingLocation;
     struct { 
         double bestAccuracy; 
     }  fCapabilities;
-    BOOL  fCapabilitiesValid;
+    bool  fCapabilitiesValid;
     struct __CLClient { } * fClient;
-    BOOL  fCourtesyPromptNeeded;
+    bool  fCourtesyPromptNeeded;
     <CLLocationManagerDelegate> * fDelegate;
     double  fDesiredAccuracy;
     double  fDistanceFilter;
-    BOOL  fDynamicAccuracyReductionEnabled;
+    bool  fDynamicAccuracyReductionEnabled;
     double  fHeadingFilter;
     int  fHeadingOrientation;
     struct { 
@@ -49,30 +50,35 @@
     NSString * fLocationEventType;
     double  fLocationRequestTimeout;
     struct __CFRunLoopTimer { } * fLocationRequestTimer;
-    BOOL  fMatchInfoEnabled;
-    BOOL  fPaused;
+    bool  fMatchInfoEnabled;
+    bool  fPaused;
     int  fPausesLocationUpdatesAutomatically;
-    BOOL  fPersistentMonitoringEnabled;
+    bool  fPersistentMonitoringEnabled;
     int  fPreviousAuthorizationStatus;
-    BOOL  fPreviousAuthorizationStatusValid;
+    bool  fPreviousAuthorizationStatusValid;
     NSMutableSet * fRangedRegions;
-    BOOL  fRequestingLocation;
-    BOOL  fUpdatingHeading;
-    BOOL  fUpdatingLocation;
-    BOOL  fUpdatingVehicleHeading;
-    BOOL  fUpdatingVehicleSpeed;
+    double  fRangingRequestTimeout;
+    struct __CFRunLoopTimer { } * fRangingRequestTimer;
+    bool  fRequestingLocation;
+    bool  fRequestingRanging;
+    bool  fUpdatingHeading;
+    bool  fUpdatingLocation;
+    bool  fUpdatingRanging;
+    bool  fUpdatingVehicleHeading;
+    bool  fUpdatingVehicleSpeed;
 }
 
 @property (nonatomic, readonly) NSMutableSet *rangedRegions;
 
 - (int)PausesLocationUpdatesAutomatically;
-- (BOOL)allowsBackgroundLocationUpdates;
+- (bool)allowsBackgroundLocationUpdates;
 - (void)cancelLocationRequest;
+- (void)cancelRangingRequest;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
 - (void)performCourtesyPromptIfNeeded;
 - (id)rangedRegions;
-- (void)setAllowsBackgroundLocationUpdates:(BOOL)arg1;
+- (void)setAllowsBackgroundLocationUpdates:(bool)arg1;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;
 - (void)stopUpdatingLocationAutoPaused;
 

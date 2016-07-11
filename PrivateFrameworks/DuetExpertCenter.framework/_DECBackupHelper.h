@@ -10,17 +10,21 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)_currentBackupVersionPath;
+- (bool)backupNewerThanCurrentState;
 - (id)backupPathForExpert:(id)arg1;
-- (BOOL)canBackup;
-- (BOOL)canRestore;
-- (BOOL)createBackupDirectoriesIfMissing;
-- (BOOL)finishBackup;
+- (bool)canBackup;
+- (bool)canRestore;
+- (bool)createBackupDirectoriesIfMissing;
+- (bool)finishBackup;
 - (id)init;
-- (BOOL)isClassCLocked;
-- (BOOL)probePathAt:(id)arg1;
-- (BOOL)restoreDone;
+- (bool)isClassCLocked;
+- (bool)markRestoreAsNotDone;
+- (bool)markVersionOfBackupDirectoryAsCurrent;
+- (bool)probePathAt:(id)arg1;
+- (bool)restoreDone;
 - (id)restorePathForExpert:(id)arg1;
-- (BOOL)restoreStart;
-- (BOOL)restoredAlready;
+- (bool)restoreStart;
+- (bool)restoredAlready;
 
 @end

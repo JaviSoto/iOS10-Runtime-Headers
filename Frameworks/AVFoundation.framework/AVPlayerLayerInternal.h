@@ -3,72 +3,38 @@
  */
 
 @interface AVPlayerLayerInternal : NSObject {
-    AVPlayer * _player;
-    AVPlayerLayer * associatedPlayerLayerForPIP;
-    BOOL  canEnterPIPMode;
-    CALayer * closedCaptionLayer;
-    BOOL  hasPlayerToObserve;
-    BOOL  isObservingPlayer;
-    BOOL  isPIPModeEnabled;
-    BOOL  isPresentationLayer;
-    BOOL  isReadyForDisplay;
+    NSSet * KVOInvokers;
+    AVPlayerLayer * associatedPIPLayer;
+    bool  canEnterPIPMode;
+    NSDictionary * clientLayers;
+    FigBaseCALayer * closedCaptionLayer;
+    NSObject<OS_dispatch_queue> * configurationQueue;
+    AVKeyPathDependencyManager * dependencyManager;
+    AVNetworkPlaybackPerfHUDLayer * hudLayer;
+    bool  isPIPModeEnabled;
+    bool  isPresentationLayer;
+    bool  isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } * isReadyForDisplayMutex;
     AVPlayerItem * itemMarkedReadyForDisplay;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  latestPlayerLayerBoundsAtRendering;
+    bool  lanczosDownscalingEnabled;
+    long long  lanczosDownscalingFactor;
     struct CGSize { 
-        float width; 
-        float height; 
-    }  latestPresentationSizeAtRendering;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  latestSubtitleLayoutAtRendering;
-    CALayer * maskLayer;
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    }  oldSublayerTransform;
+        double width; 
+        double height; 
+    }  latestAppliedPresentationSize;
+    FigBaseCALayer * maskLayer;
     NSDictionary * pixelBufferAttributes;
-    struct CGSize { 
-        float width; 
-        float height; 
-    }  presentationSize;
+    CALayer * placeholderContentLayerDuringPIPMode;
+    AVPlayer * player;
+    AVPlayer * playerBeingObserved;
+    bool  preventsChangesToSublayerHierarchy;
     NSObject<OS_dispatch_queue> * serialQueue;
-    BOOL  shouldObservePlayer;
+    bool  shouldObservePlayer;
     NSString * subtitleGravity;
     FigSubtitleCALayer * subtitleLayer;
     NSString * videoGravity;
-    CALayer * videoLayer;
-    BOOL  willManageSublayersAsSwappedLayers;
+    FigVideoContainerLayer * videoLayer;
+    bool  willManageSublayersAsSwappedLayers;
 }
 
 @end

@@ -2,19 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ContactsAutocomplete.framework/ContactsAutocomplete
  */
 
-@interface _CNDiagnosticResponsePreparer : CNAutocompleteQueryResponsePreparer {
+@interface _CNDiagnosticResponsePreparer : _CNAutocompleteResponsePreparerDecorator {
     <CNFuture> * _logFuture;
-    CNAutocompleteQueryResponsePreparer * _preparer;
 }
 
 @property (readonly) <CNFuture> *logFuture;
-@property (readonly) CNAutocompleteQueryResponsePreparer *preparer;
 
 - (void).cxx_destruct;
-- (id)initWithResponsePreparer:(id)arg1 log:(id /* block */)arg2;
+- (id)initWithResponsePreparer:(id)arg1 delegate:(id)arg2 log:(id /* block */)arg3;
 - (id)logFuture;
 - (id)prepareResults:(id)arg1;
-- (id)preparer;
-- (void)setPriorityResultsFuture:(id)arg1;
 
 @end

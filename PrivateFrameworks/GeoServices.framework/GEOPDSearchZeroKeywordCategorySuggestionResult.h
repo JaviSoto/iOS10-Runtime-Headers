@@ -10,11 +10,14 @@
 @property (nonatomic, retain) NSMutableArray *categorys;
 @property (nonatomic, retain) NSMutableArray *zeroKeywordEntrys;
 
++ (Class)categoryType;
++ (Class)zeroKeywordEntryType;
+
 - (void)addCategory:(id)arg1;
 - (void)addZeroKeywordEntry:(id)arg1;
-- (id)categoryAtIndex:(unsigned int)arg1;
+- (id)categoryAtIndex:(unsigned long long)arg1;
 - (id)categorys;
-- (unsigned int)categorysCount;
+- (unsigned long long)categorysCount;
 - (void)clearCategorys;
 - (void)clearZeroKeywordEntrys;
 - (void)copyTo:(id)arg1;
@@ -22,15 +25,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCategorys:(id)arg1;
 - (void)setZeroKeywordEntrys:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)zeroKeywordEntryAtIndex:(unsigned int)arg1;
+- (id)zeroKeywordEntryAtIndex:(unsigned long long)arg1;
 - (id)zeroKeywordEntrys;
-- (unsigned int)zeroKeywordEntrysCount;
+- (unsigned long long)zeroKeywordEntrysCount;
 
 @end

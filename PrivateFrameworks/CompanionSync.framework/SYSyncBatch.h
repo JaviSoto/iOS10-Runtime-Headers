@@ -14,22 +14,24 @@
 @property (nonatomic) unsigned long long index;
 @property (nonatomic, retain) NSString *sessionID;
 
++ (Class)changesType;
+
 - (void).cxx_destruct;
 - (void)addChanges:(id)arg1;
 - (id)changes;
-- (id)changesAtIndex:(unsigned int)arg1;
-- (unsigned int)changesCount;
+- (id)changesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)changesCount;
 - (void)clearChanges;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)header;
 - (unsigned long long)index;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionID;
 - (void)setChanges:(id)arg1;
 - (void)setHeader:(id)arg1;

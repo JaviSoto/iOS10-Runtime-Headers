@@ -3,29 +3,32 @@
  */
 
 @interface BWHDRNode : BWNode <BWBracketSettingsProvider> {
+    bool  _alwaysRequestsPreBracketedEV0;
     int  _bracketCount;
     int  _clientPID;
     int (* _createSampleBufferProcessorFunction;
     FigCaptureStillImageSettings * _currentCaptureSettings;
     NSArray * _exposureValues;
     struct opaqueCMSampleBuffer {} * _pendingBracketBuffers;
-    BOOL  _preBracketedFrameReceived;
+    bool  _preBracketedFrameReceived;
     struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
     NSDictionary * _sensorIDDictionary;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)initialize;
 
 - (void)_clearCaptureRequestState;
-- (void)_hdrProcessorOutputReady:(long)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
-- (long)_setupSampleBufferProcessor;
-- (BOOL)attachBracketToOutputSampleBuffer;
-- (int)bracketCountForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 stillImageSettings:(id)arg3;
+- (void)_hdrProcessorOutputReady:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (id)_initWithClientPID:(int)arg1 sensorIDDictionary:(id)arg2 sbpCreationFunction:(int (*)arg3;
+- (bool)_receivedExpectedNumberOfInputFrames;
+- (int)_setupSampleBufferProcessor;
+- (bool)alwaysRequestsPreBracketedEV0;
+- (bool)attachesInputBracketToOutputSampleBuffer;
 - (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 stillImageSettings:(id)arg3;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
@@ -35,7 +38,8 @@
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setAttachBracketToOutputSampleBuffer:(BOOL)arg1;
+- (void)setAlwaysRequestsPreBracketedEV0:(bool)arg1;
+- (void)setAttachesInputBracketToOutputSampleBuffer:(bool)arg1;
 - (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;
 
 @end

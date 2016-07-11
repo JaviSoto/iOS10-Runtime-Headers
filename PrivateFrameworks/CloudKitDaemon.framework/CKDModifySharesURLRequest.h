@@ -3,14 +3,12 @@
  */
 
 @interface CKDModifySharesURLRequest : CKDURLRequest {
-    NSMutableDictionary * _participantIDByRequestID;
     NSMutableDictionary * _shareIDByRequestID;
     id /* block */  _shareModifiedBlock;
     NSArray * _sharesToDelete;
     NSMutableDictionary * _sharesToSaveByID;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *participantIDByRequestID;
 @property (nonatomic, retain) NSMutableDictionary *shareIDByRequestID;
 @property (nonatomic, copy) id /* block */ shareModifiedBlock;
 @property (nonatomic, retain) NSArray *sharesToDelete;
@@ -19,12 +17,10 @@
 - (void).cxx_destruct;
 - (id)initWithSharesToSave:(id)arg1 sharesToDelete:(id)arg2;
 - (int)operationType;
-- (id)participantIDByRequestID;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setParticipantIDByRequestID:(id)arg1;
 - (void)setShareIDByRequestID:(id)arg1;
 - (void)setShareModifiedBlock:(id /* block */)arg1;
 - (void)setSharesToDelete:(id)arg1;

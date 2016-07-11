@@ -5,39 +5,55 @@
 @interface GEORouteDisplayHints : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _availablePrioritizations;
+    NSMutableArray * _availableTransitSurcharges;
     struct { 
         unsigned int showTransitSchedules : 1; 
     }  _has;
-    BOOL  _showTransitSchedules;
+    bool  _showTransitSchedules;
 }
 
 @property (nonatomic, readonly) int*availablePrioritizations;
-@property (nonatomic, readonly) unsigned int availablePrioritizationsCount;
-@property (nonatomic) BOOL hasShowTransitSchedules;
-@property (nonatomic) BOOL showTransitSchedules;
+@property (nonatomic, readonly) unsigned long long availablePrioritizationsCount;
+@property (nonatomic, retain) NSMutableArray *availableTransitSurcharges;
+@property (nonatomic) bool hasShowTransitSchedules;
+@property (nonatomic, readonly) NSArray *prioritizationOptions;
+@property (nonatomic) bool showTransitSchedules;
+@property (nonatomic, readonly) NSArray *surchargeOptions;
 
++ (Class)availableTransitSurchargeType;
+
+- (int)StringAsAvailablePrioritizations:(id)arg1;
 - (void)addAvailablePrioritization:(int)arg1;
-- (int)availablePrioritizationAtIndex:(unsigned int)arg1;
+- (void)addAvailableTransitSurcharge:(id)arg1;
+- (int)availablePrioritizationAtIndex:(unsigned long long)arg1;
 - (int*)availablePrioritizations;
-- (unsigned int)availablePrioritizationsCount;
+- (id)availablePrioritizationsAsString:(int)arg1;
+- (unsigned long long)availablePrioritizationsCount;
+- (id)availableTransitSurchargeAtIndex:(unsigned long long)arg1;
+- (id)availableTransitSurcharges;
+- (unsigned long long)availableTransitSurchargesCount;
 - (void)clearAvailablePrioritizations;
+- (void)clearAvailableTransitSurcharges;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShowTransitSchedules;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShowTransitSchedules;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAvailablePrioritizations:(int*)arg1 count:(unsigned int)arg2;
-- (void)setHasShowTransitSchedules:(BOOL)arg1;
-- (void)setShowTransitSchedules:(BOOL)arg1;
-- (BOOL)showTransitSchedules;
+- (id)prioritizationOptions;
+- (bool)readFrom:(id)arg1;
+- (void)setAvailablePrioritizations:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setAvailableTransitSurcharges:(id)arg1;
+- (void)setHasShowTransitSchedules:(bool)arg1;
+- (void)setShowTransitSchedules:(bool)arg1;
+- (bool)showTransitSchedules;
+- (id)surchargeOptions;
 - (void)writeTo:(id)arg1;
 
 @end

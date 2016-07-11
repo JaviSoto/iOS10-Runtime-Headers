@@ -3,12 +3,12 @@
  */
 
 @interface HKSampleQuery : HKQuery {
-    unsigned int  _limit;
+    unsigned long long  _limit;
     id /* block */  _resultHandler;
     NSArray * _sortDescriptors;
 }
 
-@property (readonly) unsigned int limit;
+@property (readonly) unsigned long long limit;
 @property (nonatomic, readonly) id /* block */ resultHandler;
 @property (readonly, copy) NSArray *sortDescriptors;
 
@@ -17,13 +17,14 @@
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
+- (bool)_prepareSamplesForDelivery:(id)arg1 error:(id*)arg2;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id /* block */)_queue_errorHandler;
 - (void)_queue_validate;
 - (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
-- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 sortDescriptors:(id)arg4 resultsHandler:(id /* block */)arg5;
-- (unsigned int)limit;
+- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 resultsHandler:(id /* block */)arg5;
+- (unsigned long long)limit;
 - (id /* block */)resultHandler;
 - (id)sortDescriptors;
 

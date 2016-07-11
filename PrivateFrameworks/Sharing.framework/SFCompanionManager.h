@@ -18,16 +18,17 @@
 @property (copy) NSString *deviceID;
 @property (copy) NSString *deviceIP;
 @property (copy) NSString *deviceName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *identifier;
 @property (retain) <SFCompanionServiceManagerProtocol> *managerProxy;
-@property NSObject<OS_dispatch_semaphore> *managerSemaphore;
+@property (retain) NSObject<OS_dispatch_semaphore> *managerSemaphore;
 @property (retain) NSMutableDictionary *services;
 @property (retain) NSMutableDictionary *streamHandlers;
 @property (readonly) Class superclass;
 
 + (id)serviceManager;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)deviceID;
 - (id)deviceIP;

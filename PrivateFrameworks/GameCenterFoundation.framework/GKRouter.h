@@ -8,7 +8,7 @@
 }
 
 - (void)dealloc;
-- (BOOL)dispatch:(id)arg1;
+- (bool)dispatch:(id)arg1;
 - (void)from:(id)arg1 to:(id /* block */)arg2;
 - (id)init;
 - (void)scheme:(id)arg1 from:(id)arg2 to:(id /* block */)arg3;

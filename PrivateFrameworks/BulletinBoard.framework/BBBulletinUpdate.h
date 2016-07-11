@@ -2,27 +2,26 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBBulletinUpdate : NSObject {
+@interface BBBulletinUpdate : NSObject <NSCopying, NSSecureCoding> {
     BBBulletin * _bulletin;
-    unsigned int  _feeds;
-    BOOL  _shouldSync;
-    int  _type;
+    unsigned long long  _feeds;
 }
 
-@property (nonatomic, readonly, retain) BBBulletin *bulletin;
-@property (nonatomic, readonly) unsigned int feeds;
-@property (nonatomic, readonly) BOOL shouldSync;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly, copy) BBBulletin *bulletin;
+@property (nonatomic, readonly) unsigned long long feeds;
 
-+ (id)modifyForBulletin:(id)arg1 feeds:(unsigned int)arg2;
-+ (id)removeForBulletin:(id)arg1 feeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)bulletin;
-- (void)dealloc;
-- (unsigned int)feeds;
-- (id)initWithBulletin:(id)arg1 feeds:(unsigned int)arg2 type:(int)arg3 shouldSync:(BOOL)arg4;
-- (BOOL)shouldSync;
-- (int)type;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)feeds;
+- (unsigned long long)hash;
+- (id)initWithBulletin:(id)arg1 feeds:(unsigned long long)arg2;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)typeDescription;
 
 @end

@@ -7,8 +7,8 @@
     <CNObservable> * _observable;
 }
 
-- (BOOL)_resultIsDistinctFromLastResult:(id)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)_resultIsDistinctFromLastResult:(id)arg1;
 - (id)initWithObservable:(id)arg1;
 - (id)subscribe:(id)arg1;
 

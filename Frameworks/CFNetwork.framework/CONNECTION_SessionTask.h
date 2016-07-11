@@ -5,7 +5,7 @@
 @interface CONNECTION_SessionTask : NSObject {
     struct __CFDictionary { } * __atsContext;
     struct __PerformanceTiming { } * __performanceTiming;
-    BOOL  __shouldSkipPreferredClientCertificateLookup;
+    bool  __shouldSkipPreferredClientCertificateLookup;
     struct __CFDictionary { } * _connectionProperties;
     struct _CFURLRequest { } * _currentRequest;
     bool  _is_cellular;
@@ -15,14 +15,16 @@
     struct _CFURLRequest { } * _originalRequest;
     __NSCFURLSession * _session;
     struct __CFDictionary { } * _socketProperties;
+    NSMutableArray * _transactionMetrics;
 }
 
-- (unsigned long)_allowedProtocolTypes;
+- (const struct __CFDictionary {}**)_DuetActivityProperties;
+- (unsigned long long)_allowedProtocolTypes;
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
 - (id)_boundInterfaceIdentifier;
 - (long long)_bytesPerSecondLimit;
-- (BOOL)_cacheOnly;
+- (bool)_cacheOnly;
 - (int)_cachePolicy;
 - (id)_cfCache;
 - (id)_cfCookies;
@@ -30,7 +32,7 @@
 - (id)_cfHSTS;
 - (id)_connectionPropertyDuet;
 - (id)_contentDispositionFallbackArray;
-- (id)_cookieAcceptPolicy;
+- (int)_cookieAcceptPolicy;
 - (struct __CFDictionary { }*)_copyATSState;
 - (struct _CFURLRequest { }*)_copyCurrentCFURLRequest;
 - (struct _CFHSTSPolicy { }*)_copyHSTSPolicy;
@@ -40,6 +42,7 @@
 - (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
 - (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (struct _CFURLRequest { }*)_currentCFURLRequest;
+- (struct __CFDictionary { }*)_dependencyInfo;
 - (id)_disallowCellular;
 - (id)_expectedWorkload;
 - (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse { }*)arg1 completionHandler:(id /* block */)arg2;
@@ -47,6 +50,7 @@
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (id)_networkServiceType;
 - (struct __PerformanceTiming { }*)_performanceTiming;
+- (void)_prepareNewTimingDataContainer;
 - (unsigned char)_preventsIdleSystemSleep;
 - (id)_priorityValue;
 - (void)_processConnectionProperties;
@@ -54,21 +58,24 @@
 - (id)_protocolForTask;
 - (struct __CFDictionary { }*)_proxySettings;
 - (void)_releasePreventIdleSleepAssertionIfAppropriate;
-- (long)_requestPriority;
+- (long long)_requestPriority;
 - (void)_setConnectionIsCellular:(bool)arg1;
 - (void)_setSocketProperties:(struct __CFDictionary { }*)arg1 connectionProperties:(struct __CFDictionary { }*)arg2;
 - (id)_shouldHandleCookies;
 - (unsigned char)_shouldPipelineHTTP;
 - (unsigned char)_shouldSkipPipelineProbe;
-- (BOOL)_shouldSkipPreferredClientCertificateLookup;
+- (bool)_shouldSkipPreferredClientCertificateLookup;
 - (unsigned char)_shouldUsePipelineHeuristics;
 - (struct __CFDictionary { }*)_sslSettings;
+- (id)_storagePartitionIdentifier;
 - (unsigned char)_strictContentLength;
 - (long long)_suspensionThreshhold;
 - (void)_takePreventIdleSleepAssertionIfAppropriate;
 - (id)_timeWindowDelay;
 - (id)_timeWindowDuration;
 - (double)_timeoutInterval;
+- (id)_trailers;
+- (id)_transactionMetrics;
 - (id)countOfBytesExpectedToReceive;
 - (id)countOfBytesExpectedToSend;
 - (id)countOfBytesReceived;
@@ -83,6 +90,7 @@
 - (float)priority;
 - (id)session;
 - (void)set_protocolForTask:(id)arg1;
+- (void)set_trailers:(id)arg1;
 - (bool)shouldHandleCookiesAndSchemeIsAppropriate;
 - (id)startTime;
 - (id)state;

@@ -4,23 +4,23 @@
 
 @interface TSTCellRangeIterator : NSObject {
     TSTCellIterator * mCellIterator;
-    BOOL  mCellValidForDelegate;
+    bool  mCellValidForDelegate;
     <TSTCellRangeIteratorDelegate> * mDelegate;
     struct { 
-        struct { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
         } mPreviousCellID; 
-        struct { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
         } mCellID; 
         TSTCell *mCell; 
         struct TSTCellStorage {} *mCellRef; 
-        struct TSUColumnRowRect { 
-            struct { 
+        struct TSUCellRect { 
+            struct TSUCellCoord { 
                 unsigned short row; 
                 unsigned char column; 
                 unsigned char reserved; 
@@ -30,22 +30,22 @@
                 unsigned short numberOfRows; 
             } size; 
         } mMergeRange; 
-        BOOL mStyleOnly; 
-        BOOL mCommentStorageOnly; 
-        BOOL mHidden; 
-        BOOL mHiddenRow; 
-        BOOL mHiddenColumn; 
+        bool mStyleOnly; 
+        bool mCommentStorageOnly; 
+        bool mHidden; 
+        bool mHiddenRow; 
+        bool mHiddenColumn; 
     }  mIterData;
-    BOOL  mIterDataValid;
+    bool  mIterDataValid;
 }
 
-@property (nonatomic, readonly) BOOL cellValid;
+@property (nonatomic, readonly) bool cellValid;
 
-- (BOOL)cellValid;
+- (bool)cellValid;
 - (void)dealloc;
 - (id)initWithTableModel:(id)arg1 delegate:(id)arg2;
-- (id)initWithTableModel:(id)arg1 range:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 delegate:(id)arg3;
+- (id)initWithTableModel:(id)arg1 range:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 delegate:(id)arg3;
 - (id)initWithTableModel:(id)arg1 region:(id)arg2 delegate:(id)arg3;
-- (BOOL)processRange;
+- (bool)processRange;
 
 @end

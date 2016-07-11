@@ -5,31 +5,33 @@
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
     NSString * _containerIdentifier;
     CKDContainerInfo * _containerInfo;
-    BOOL  _needUserID;
+    bool  _needUserID;
 }
 
 @property (nonatomic) NSString *containerIdentifier;
 @property (nonatomic, copy) CKDContainerInfo *containerInfo;
-@property (nonatomic) BOOL needUserID;
+@property (nonatomic) bool needUserID;
 
 - (void).cxx_destruct;
 - (id)additionalHeaderValues;
-- (BOOL)allowsAnonymousAccount;
-- (BOOL)allowsAuthedAccount;
+- (bool)allowsAnonymousAccount;
+- (bool)allowsAuthedAccount;
 - (id)containerIdentifier;
 - (id)containerInfo;
-- (BOOL)hasRequestBody;
+- (bool)hasRequestBody;
 - (id)initWithContainerIdentifier:(id)arg1;
-- (BOOL)needUserID;
-- (int)partitionType;
+- (bool)needUserID;
+- (long long)partitionType;
 - (void)requestDidParseJSONObject:(id)arg1;
-- (BOOL)requiresConfiguration;
-- (BOOL)requiresDeviceID;
-- (BOOL)requiresSignature;
-- (int)serverType;
+- (bool)requiresConfiguration;
+- (bool)requiresDeviceID;
+- (bool)requiresSignature;
+- (long long)serverType;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setContainerInfo:(id)arg1;
-- (void)setNeedUserID:(BOOL)arg1;
+- (void)setNeedUserID:(bool)arg1;
+- (id)sourceApplicationBundleIdentifier;
+- (id)sourceApplicationSecondaryIdentifier;
 - (id)url;
 
 @end

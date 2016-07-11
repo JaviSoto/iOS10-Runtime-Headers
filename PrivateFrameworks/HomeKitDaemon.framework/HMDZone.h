@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDZone : NSObject <HMMessageReceiver, NSSecureCoding> {
+@interface HMDZone : NSObject <HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
     NSMutableArray * _currentRooms;
     HMDHome * _home;
-    HMMessageDispatcher * _msgDispatcher;
+    HMFMessageDispatcher * _msgDispatcher;
     NSString * _name;
     NSUUID * _uuid;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -14,26 +14,28 @@
 @property (nonatomic, retain) NSMutableArray *currentRooms;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleAddRoom:(id)arg1;
 - (void)_handleRemoveRoom:(id)arg1;
 - (void)_handleRename:(id)arg1;
 - (void)_registerForMessages;
+- (id)assistantObject;
 - (void)configure:(id)arg1 queue:(id)arg2;
 - (id)currentRooms;
 - (void)dealloc;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
@@ -51,6 +53,7 @@
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)url;
 - (id)uuid;
 - (id)workQueue;
 

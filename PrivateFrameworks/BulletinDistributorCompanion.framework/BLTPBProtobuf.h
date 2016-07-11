@@ -3,30 +3,25 @@
  */
 
 @interface BLTPBProtobuf : IDSProtobuf {
-    BOOL  _hasSequenceNumber;
     IDSProtobuf * _idsProtobuf;
-    BOOL  _isInitialSequenceNumber;
     PBCodable * _protobuf;
-    unsigned long long  _sequenceNumber;
+    long long  _sequenceNumberError;
+    unsigned long long  _sessionState;
 }
 
-@property (nonatomic) BOOL hasSequenceNumber;
 @property (nonatomic, retain) IDSProtobuf *idsProtobuf;
-@property (nonatomic, readonly) BOOL isInitialSequenceNumber;
 @property (nonatomic, retain) PBCodable *protobuf;
-@property (nonatomic) unsigned long long sequenceNumber;
+@property (nonatomic, readonly) long long sequenceNumberError;
+@property (nonatomic, readonly) unsigned long long sessionState;
 
 - (void).cxx_destruct;
-- (BOOL)hasSequenceNumber;
 - (id)idsProtobuf;
-- (id)initWithIDSProtobuf:(id)arg1;
-- (id)initWithProtobuf:(id)arg1 type:(unsigned short)arg2 isResponse:(BOOL)arg3 sequenceNumber:(unsigned long long)arg4 isInitialSequenceNumber:(BOOL)arg5;
-- (BOOL)isInitialSequenceNumber;
+- (id)initWithIDSProtobuf:(id)arg1 sequenceNumberManager:(id)arg2;
+- (id)initWithProtobuf:(id)arg1 type:(unsigned short)arg2 isResponse:(bool)arg3 sequenceNumberManager:(id)arg4;
 - (id)protobuf;
-- (unsigned long long)sequenceNumber;
-- (void)setHasSequenceNumber:(BOOL)arg1;
+- (long long)sequenceNumberError;
+- (unsigned long long)sessionState;
 - (void)setIdsProtobuf:(id)arg1;
 - (void)setProtobuf:(id)arg1;
-- (void)setSequenceNumber:(unsigned long long)arg1;
 
 @end

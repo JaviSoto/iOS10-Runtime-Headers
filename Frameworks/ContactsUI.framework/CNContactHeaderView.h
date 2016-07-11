@@ -2,74 +2,84 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactHeaderView : UIView <CNContactPhotoViewDelegate> {
-    BOOL  _alwaysShowsMonogram;
+@interface CNContactHeaderView : UIView <CNContactPhotoViewDelegate, CNUIReusableView> {
+    NSArray * _activatedConstraints;
+    bool  _alwaysShowsMonogram;
     NSArray * _contacts;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentMargins;
     <CNPresenterDelegate> * _delegate;
-    NSMutableArray * _headerConstraints;
     <CNContactHeaderViewDelegate> * _headerDelegate;
+    UILabel * _nameLabel;
     NSDictionary * _nameTextAttributes;
-    BOOL  _needsReload;
+    bool  _needsReload;
     CNContactPhotoView * _photoView;
-    BOOL  _shouldUseExpandedContentStyle;
+    bool  _shouldUseExpandedContentStyle;
+    bool  _visibleToScrollViews;
 }
 
-@property (nonatomic) BOOL alwaysShowsMonogram;
+@property (nonatomic, retain) NSArray *activatedConstraints;
+@property (nonatomic) bool alwaysShowsMonogram;
 @property (nonatomic, retain) NSArray *contacts;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentMargins;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNPresenterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSMutableArray *headerConstraints;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <CNContactHeaderViewDelegate> *headerDelegate;
+@property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, copy) NSDictionary *nameTextAttributes;
 @property (nonatomic, readonly) CNContactPhotoView *photoView;
-@property (nonatomic) BOOL shouldUseExpandedContentStyle;
+@property (nonatomic) bool shouldUseExpandedContentStyle;
 @property (readonly) Class superclass;
+@property (nonatomic) bool visibleToScrollViews;
 
 + (id)descriptorForRequiredKeys;
-+ (BOOL)requiresConstraintBasedLayout;
++ (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(bool)arg1;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (BOOL)alwaysShowsMonogram;
-- (BOOL)canBecomeFirstResponder;
+- (id)activatedConstraints;
+- (bool)alwaysShowsMonogram;
+- (bool)canBecomeFirstResponder;
 - (id)contactStoreForPhotoView:(id)arg1;
 - (id)contacts;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargins;
 - (void)dealloc;
 - (id)delegate;
-- (id)headerConstraints;
+- (id)descriptorForRequiredKeys;
 - (id)headerDelegate;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 monogrammerStyle:(int)arg3;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 monogrammerStyle:(long long)arg3;
+- (id)nameLabel;
 - (id)nameTextAttributes;
 - (id)photoView;
 - (void)photoViewDidUpdate:(id)arg1;
+- (void)prepareForReuse;
 - (void)reloadDataIfNeeded;
-- (void)reloadDataPreservingChanges:(BOOL)arg1;
+- (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)saveContactPhoto;
-- (void)setAlwaysShowsMonogram:(BOOL)arg1;
+- (void)setActivatedConstraints:(id)arg1;
+- (void)setAlwaysShowsMonogram:(bool)arg1;
 - (void)setContacts:(id)arg1;
-- (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHeaderConstraints:(id)arg1;
 - (void)setHeaderDelegate:(id)arg1;
+- (void)setNameLabel:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;
 - (void)setNeedsReload;
-- (void)setShouldUseExpandedContentStyle:(BOOL)arg1;
-- (BOOL)shouldOffsetPhotoView;
-- (BOOL)shouldUseExpandedContentStyle;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (void)setShouldUseExpandedContentStyle:(bool)arg1;
+- (void)setVisibleToScrollViews:(bool)arg1;
+- (bool)shouldOffsetPhotoView;
+- (bool)shouldUseExpandedContentStyle;
 - (void)updateConstraints;
 - (void)updateFontSizes;
 - (void)updateWithContacts:(id)arg1;
 - (void)updateWithNewContact:(id)arg1;
 - (id)viewControllerForPhotoView:(id)arg1;
+- (bool)visibleToScrollViews;
 
 @end

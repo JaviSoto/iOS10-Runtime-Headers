@@ -6,33 +6,19 @@
     <VKTrackableAnnotation> * _annotation;
     <VKTrackableAnnotationPresentation> * _annotationPresentation;
     VKTimedAnimation * _currentAnimation;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
     }  _currentAnimationEndCameraPosition;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
     }  _currentAnimationEndPoint;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
     }  _currentAnimationStartCameraPosition;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
     }  _currentAnimationStartPoint;
     VKTimedAnimation * _currentHeadingAnimation;
-    struct VKEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    }  _edgeInsets;
     struct { 
         unsigned int hasPendingChange : 1; 
         unsigned int paused : 1; 
@@ -43,42 +29,39 @@
         unsigned int annotationImplementsAccuracy : 1; 
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
+        unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
     }  _flags;
     float  _headingAnimationCompletedAngle;
-    int  _headingAnimationDisplayRate;
-    VKTimer * _headingRegionChangeEndTimer;
+    long long  _headingAnimationDisplayRate;
     double  _pendingChangeDuration;
     double  _pendingHeadingChangeDuration;
-    int  _zoomStyle;
+    long long  _zoomStyle;
 }
 
 @property (nonatomic, readonly) <VKTrackableAnnotation> *annotation;
-@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property (nonatomic) int headingAnimationDisplayRate;
-@property (getter=isTrackingHeading, nonatomic, readonly) BOOL trackingHeading;
-@property (nonatomic) int zoomStyle;
+@property (nonatomic) long long headingAnimationDisplayRate;
+@property (getter=isTrackingHeading, nonatomic, readonly) bool trackingHeading;
+@property (nonatomic) long long zoomStyle;
 
 - (id).cxx_construct;
-- (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
-- (void)_headingRegionChangeTimerFired:(id)arg1;
-- (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
+- (void)_goToAnnotationAnimated:(bool)arg1 duration:(double)arg2 isInitial:(bool)arg3;
+- (void)_rotateToHeadingAnimated:(bool)arg1 duration:(double)arg2;
 - (id)annotation;
 - (void)dealloc;
-- (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (int)headingAnimationDisplayRate;
+- (long long)headingAnimationDisplayRate;
 - (id)init;
-- (BOOL)isAnimating;
-- (BOOL)isTrackingHeading;
+- (bool)isAnimating;
+- (bool)isTrackingHeading;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pauseAnimation;
 - (void)resumeAnimation;
-- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setGesturing:(BOOL)arg1;
-- (void)setHeadingAnimationDisplayRate:(int)arg1;
-- (void)setZoomStyle:(int)arg1;
-- (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)setEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setGesturing:(bool)arg1;
+- (void)setHeadingAnimationDisplayRate:(long long)arg1;
+- (void)setZoomStyle:(long long)arg1;
+- (void)startTrackingAnnotation:(id)arg1 trackHeading:(bool)arg2 animated:(bool)arg3;
 - (void)stopTrackingAnnotation;
 - (void)updateFramerate;
-- (int)zoomStyle;
+- (long long)zoomStyle;
 
 @end

@@ -3,9 +3,10 @@
  */
 
 @interface UIKeyboardInputMode : UITextInputMode <NSCopying> {
+    NSArray * _multilingualLanguages;
     NSString * hardwareLayout;
     NSString * identifier;
-    BOOL  isDisplayed;
+    bool  isDisplayed;
     NSString * languageWithRegion;
     NSString * normalizedIdentifier;
     NSString * primaryLanguage;
@@ -14,17 +15,18 @@
 
 @property (nonatomic, readonly) NSBundle *containingBundle;
 @property (nonatomic, readonly) NSString *containingBundleDisplayName;
-@property (nonatomic, readonly) BOOL defaultLayoutIsASCIICapable;
+@property (nonatomic, readonly) bool defaultLayoutIsASCIICapable;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *extendedDisplayName;
 @property (nonatomic, readonly) NSExtension *extension;
 @property (nonatomic, retain) NSString *hardwareLayout;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) NSString *identifierWithLayouts;
-@property (nonatomic, readonly) BOOL isDefaultRightToLeft;
-@property (nonatomic) BOOL isDisplayed;
-@property (nonatomic, readonly) BOOL isExtensionInputMode;
+@property (nonatomic, readonly) bool isDefaultRightToLeft;
+@property (nonatomic) bool isDisplayed;
+@property (nonatomic, readonly) bool isExtensionInputMode;
 @property (nonatomic, retain) NSString *languageWithRegion;
+@property (nonatomic, retain) NSArray *multilingualLanguages;
 @property (nonatomic, retain) NSString *normalizedIdentifier;
 @property (nonatomic, readonly, retain) NSArray *normalizedIdentifierLevels;
 @property (nonatomic, retain) NSString *primaryLanguage;
@@ -36,12 +38,13 @@
 + (id)intlInputMode;
 + (id)keyboardInputModeWithIdentifier:(id)arg1;
 + (id)softwareLayoutFromIdentifier:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)containingBundle;
 - (id)containingBundleDisplayName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)defaultLayoutIsASCIICapable;
+- (bool)defaultLayoutIsASCIICapable;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extendedDisplayName;
@@ -51,20 +54,22 @@
 - (id)identifierWithLayouts;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isAllowedForTraits:(id)arg1;
-- (BOOL)isDefaultRightToLeft;
-- (BOOL)isDesiredForTraits:(id)arg1 forceASCIICapable:(BOOL)arg2;
-- (BOOL)isDisplayed;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExtensionInputMode;
+- (bool)isAllowedForTraits:(id)arg1;
+- (bool)isDefaultRightToLeft;
+- (bool)isDesiredForTraits:(id)arg1;
+- (bool)isDisplayed;
+- (bool)isEqual:(id)arg1;
+- (bool)isExtensionInputMode;
 - (id)languageWithRegion;
+- (id)multilingualLanguages;
 - (id)normalizedIdentifier;
 - (id)normalizedIdentifierLevels;
 - (id)primaryLanguage;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsDisplayed:(BOOL)arg1;
+- (void)setIsDisplayed:(bool)arg1;
 - (void)setLanguageWithRegion:(id)arg1;
+- (void)setMultilingualLanguages:(id)arg1;
 - (void)setNormalizedIdentifier:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
 - (void)setSoftwareLayout:(id)arg1;

@@ -6,22 +6,24 @@
     SSURLConnectionRequest * _URLConnectionRequest;
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSString * _buyParameters;
-    unsigned int  _endpointType;
+    unsigned long long  _endpointType;
     MPStoreRedownloadProductResponse * _redownloadProductResponse;
     NSError * _responseError;
+    bool  _shouldUseStreamingRedownload;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;
-@property (nonatomic, readonly) unsigned int endpointType;
+@property (nonatomic, readonly) unsigned long long endpointType;
 @property (nonatomic, readonly) MPStoreRedownloadProductResponse *redownloadProductResponse;
 @property (nonatomic, readonly, copy) NSError *responseError;
 
 - (void).cxx_destruct;
 - (id)buyParameters;
 - (void)cancel;
-- (unsigned int)endpointType;
+- (unsigned long long)endpointType;
 - (id)init;
-- (id)initWithBuyParameters:(id)arg1 endpointType:(unsigned int)arg2;
+- (id)initWithBuyParameters:(id)arg1 endpointType:(unsigned long long)arg2;
+- (id)initWithBuyParameters:(id)arg1 endpointType:(unsigned long long)arg2 shouldUseStreamingRedownload:(bool)arg3;
 - (void)main;
 - (id)redownloadProductResponse;
 - (id)responseError;

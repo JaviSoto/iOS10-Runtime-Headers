@@ -5,11 +5,11 @@
 
 @required
 
-- (int)numberOfItemsInSlideshowViewController:(UIViewController *)arg1;
+- (long long)numberOfItemsInSlideshowViewController:(UIViewController *)arg1;
 
 @optional
 
-- (UIImage *)slideshowViewController:(UIViewController *)arg1 imageAtIndex:(int)arg2;
-- (NSURL *)slideshowViewController:(UIViewController *)arg1 imageURLAtIndex:(int)arg2 size:(struct CGSize { float x1; float x2; }*)arg3;
+- (UIImage *)slideshowViewController:(UIViewController *)arg1 imageAtIndex:(long long)arg2;
+- (NSURL *)slideshowViewController:(UIViewController *)arg1 imageURLAtIndex:(long long)arg2 size:(struct CGSize { double x1; double x2; }*)arg3;
 
 @end

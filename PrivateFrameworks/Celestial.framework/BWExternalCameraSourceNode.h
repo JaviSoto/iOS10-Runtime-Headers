@@ -5,7 +5,7 @@
 @interface BWExternalCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     BWFigExternalVideoCaptureDevice * _captureDevice;
     int  _livePreviewFormatIndex;
-    BOOL  _makeCurrentConfigurationLive;
+    bool  _makeCurrentConfigurationLive;
     struct { 
         int width; 
         int height; 
@@ -18,10 +18,11 @@
 }
 
 @property (readonly) BWFigVideoCaptureDevice *captureDevice;
+@property (readonly) BWFigVideoCaptureStream *captureStream;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) BWNodeOutput *detectedFacesOutput;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
 @property (readonly) BWNodeOutput *videoCaptureOutput;
@@ -34,20 +35,22 @@
 - (void)_resolveSensorFormatIndex;
 - (void)_updateFormatRequirements;
 - (id)captureDevice;
+- (id)captureStream;
 - (id)colorInfoForOutput:(id)arg1;
 - (void)dealloc;
 - (id)detectedFacesOutput;
-- (BOOL)detectedFacesOutputEnabled;
+- (bool)detectedFacesOutputEnabled;
 - (int)livePreviewFormatIndex;
 - (struct { int x1; int x2; })outputDimensions;
-- (void)setDetectedFacesOutputEnabled:(BOOL)arg1;
+- (void)setDetectedFacesOutputEnabled:(bool)arg1;
 - (void)setLivePreviewFormatIndex:(int)arg1;
 - (void)setOutputDimensions:(struct { int x1; int x2; })arg1;
 - (void)setStillImageCaptureFormatIndex:(int)arg1;
-- (BOOL)start:(id*)arg1;
+- (bool)start:(id*)arg1;
 - (int)stillImageCaptureFormatIndex;
 - (id)stillImageOutput;
-- (BOOL)stop:(id*)arg1;
+- (bool)stop:(id*)arg1;
 - (id)videoCaptureOutput;
+- (void)willStop;
 
 @end

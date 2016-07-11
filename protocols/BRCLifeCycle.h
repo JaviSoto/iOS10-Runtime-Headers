@@ -7,9 +7,7 @@
 
 - (void)cancel;
 - (void)close;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)resume;
-- (void)setIsCancelled:(BOOL)arg1;
-- (void)suspend;
 
 @end

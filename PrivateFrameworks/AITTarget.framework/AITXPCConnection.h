@@ -12,7 +12,7 @@
     int  _pid;
 }
 
-@property (nonatomic, readonly) BOOL available;
+@property (nonatomic, readonly) bool available;
 @property (nonatomic, copy) NSString *bundleId;
 @property (nonatomic) NSObject<OS_xpc_object> *connection;
 @property (nonatomic) NSObject<OS_xpc_object> *currentMessage;
@@ -23,7 +23,7 @@
 
 - (id)_deserializeMessage:(id)arg1;
 - (void)_handleEvent:(id)arg1;
-- (BOOL)available;
+- (bool)available;
 - (void)barrierWithCompletionHandler:(id /* block */)arg1;
 - (id)bundleId;
 - (void)closeConnection;

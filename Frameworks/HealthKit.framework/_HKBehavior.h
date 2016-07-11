@@ -2,24 +2,99 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKBehavior : NSObject
+@interface _HKBehavior : NSObject {
+    bool  _canCreateSources;
+    bool  _hasTelephonyCapability;
+    bool  _isAppleInternalInstall;
+    bool  _isAppleWatch;
+    bool  _isCoachingEventLoggingEnabled;
+    bool  _isCompanionCapable;
+    bool  _isDeviceSupported;
+    bool  _requestsRemoteAuthorization;
+    bool  _shouldPruneOldSamples;
+}
 
+@property (nonatomic, readonly) bool canCreateSources;
+@property (nonatomic, readonly, copy) NSString *currentDeviceClass;
+@property (nonatomic, readonly, copy) NSString *currentDeviceDisplayName;
+@property (nonatomic, readonly, copy) NSString *currentDeviceManufacturer;
+@property (nonatomic, readonly, copy) NSString *currentDeviceName;
+@property (nonatomic, readonly, copy) NSString *currentDeviceProductType;
+@property (nonatomic, readonly) unsigned long long currentDiskSpaceAvailable;
+@property (nonatomic, readonly) NSDictionary *currentDiskUsage;
+@property (nonatomic, readonly, copy) NSString *currentInternalDeviceModel;
+@property (nonatomic, readonly, copy) NSString *currentOSBuild;
+@property (nonatomic, readonly, copy) NSString *currentOSVersion;
+@property (nonatomic, readonly) bool hasTelephonyCapability;
+@property (nonatomic, readonly, copy) NSString *hostReadAuthorizationUsageDescription;
+@property (nonatomic, readonly, copy) NSString *hostWriteAuthorizationUsageDescription;
+@property (nonatomic, readonly) bool isAppleInternalInstall;
+@property (nonatomic, readonly) bool isAppleWatch;
+@property (nonatomic, readonly) bool isCoachingEventLoggingEnabled;
+@property (nonatomic, readonly) bool isCompanionCapable;
+@property (nonatomic, readonly) bool isDeviceSupported;
+@property (nonatomic, readonly) bool isTestingDevice;
+@property (nonatomic, readonly, copy) NSTimeZone *localTimeZone;
+@property (nonatomic, readonly) bool requestsRemoteAuthorization;
+@property (nonatomic, readonly) bool shouldPruneOldSamples;
+@property (nonatomic, readonly) unsigned long long totalDiskCapacity;
+
++ (bool)_hasCompletedBuddy;
++ (bool)_hasTelephonyCapability;
++ (bool)_isAppleInternalInstall;
++ (bool)_isDeviceSupported;
++ (bool)_isForceBuddyEnabled;
++ (bool)_isSkipBuddyEnabled;
++ (bool)_shouldShowBuddy;
++ (bool)allPairedWatchesMeetMinimumVersion:(int)arg1;
++ (id)behaviorQueue;
 + (id)currentDeviceClass;
 + (id)currentDeviceDisplayName;
 + (id)currentDeviceManufacturer;
-+ (id)currentDeviceMarketingName;
 + (id)currentDeviceName;
 + (id)currentDeviceProductType;
-+ (unsigned long long)currentDiskSpaceAvailable;
-+ (id)currentDiskUsage;
-+ (id)currentInternalDeviceModel;
 + (id)currentOSBuild;
 + (id)currentOSVersion;
-+ (BOOL)isAppleInternalInstall;
-+ (BOOL)isCoachingEventLoggingEnabled;
-+ (BOOL)isCompanionCapable;
-+ (BOOL)isDeviceSupported;
-+ (BOOL)isNano;
-+ (unsigned long long)totalDiskCapacity;
++ (void)disableForceBuddy;
++ (void)disableSkipBuddy;
++ (bool)hasCompletedBuddy;
++ (bool)hasPairedWatch;
++ (bool)hasTelephonyCapability;
++ (bool)isAppleInternalInstall;
++ (bool)isCompanionCapable;
++ (bool)isDeviceSupported;
++ (bool)isRunningStoreDemoMode;
++ (bool)isTestingDevice;
++ (int)protocolVersionForNRDevice:(id)arg1;
++ (void)resetSharedBehavior;
++ (void)setSharedBehavior:(id)arg1;
++ (id)sharedBehavior;
++ (bool)shouldShowBuddy;
+
+- (bool)canCreateSources;
+- (id)currentDeviceClass;
+- (id)currentDeviceDisplayName;
+- (id)currentDeviceManufacturer;
+- (id)currentDeviceName;
+- (id)currentDeviceProductType;
+- (unsigned long long)currentDiskSpaceAvailable;
+- (id)currentDiskUsage;
+- (id)currentInternalDeviceModel;
+- (id)currentOSBuild;
+- (id)currentOSVersion;
+- (bool)hasTelephonyCapability;
+- (id)hostReadAuthorizationUsageDescription;
+- (id)hostWriteAuthorizationUsageDescription;
+- (id)init;
+- (bool)isAppleInternalInstall;
+- (bool)isAppleWatch;
+- (bool)isCoachingEventLoggingEnabled;
+- (bool)isCompanionCapable;
+- (bool)isDeviceSupported;
+- (bool)isTestingDevice;
+- (id)localTimeZone;
+- (bool)requestsRemoteAuthorization;
+- (bool)shouldPruneOldSamples;
+- (unsigned long long)totalDiskCapacity;
 
 @end

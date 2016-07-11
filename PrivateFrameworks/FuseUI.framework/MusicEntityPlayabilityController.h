@@ -5,18 +5,21 @@
 @interface MusicEntityPlayabilityController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
     BOOL  _cellularNetworkAllowed;
-    BOOL  _hasValidNetworkType;
-    int  _networkType;
+    bool  _hasValidNetworkType;
+    long long  _networkType;
+    bool  _showCloudMediaEnabled;
 }
 
 - (void).cxx_destruct;
+- (void)_allowsExplicitContentDidChangeNotification:(id)arg1;
 - (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (void)_fairPlaySubscriptionStatusDidChangeNotification:(id)arg1;
-- (BOOL)_isCellularNetworkAllowed;
-- (int)_networkType;
+- (bool)_isCellularNetworkAllowed;
+- (void)_musicDefaultsDidChangeNotification:(id)arg1;
+- (long long)_networkType;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)dealloc;
+- (unsigned long long)entityPlayabilityResultForEntityValueContext:(id)arg1;
 - (id)init;
-- (BOOL)isEntityValueContextPlayable:(id)arg1;
 
 @end

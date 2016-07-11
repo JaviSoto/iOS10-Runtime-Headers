@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithValidInterfaceOrientationsBlock:(id /* block */)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

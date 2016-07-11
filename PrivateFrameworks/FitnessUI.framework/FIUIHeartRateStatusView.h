@@ -3,16 +3,23 @@
  */
 
 @interface FIUIHeartRateStatusView : UIView {
-    UIImageView * _animatingImageView;
-    BOOL  _delayedStartMeasuringAnimation;
+    FIUIAnimatingSpriteImageView * _animatingImageView;
+    bool  _animationsSuspended;
+    bool  _delayedStartMeasuringAnimation;
     UIImageView * _fullHeartImageView;
     double  _heartRate;
+    long long  _heartSpriteImageColumnCount;
+    long long  _heartSpriteImageFrameCount;
+    NSString * _heartSpriteImageName;
+    bool  _isBeatingHeart;
     UIImageView * _reloadArrowView;
     UIImageView * _reloadOutlineView;
-    unsigned int  _state;
+    NSBundle * _resourceBundle;
+    unsigned long long  _state;
 }
 
-@property (nonatomic, retain) UIImageView *animatingImageView;
+@property (nonatomic, retain) FIUIAnimatingSpriteImageView *animatingImageView;
+@property (nonatomic) bool animationsSuspended;
 @property (nonatomic, retain) UIImageView *fullHeartImageView;
 @property (nonatomic, retain) UIImageView *reloadArrowView;
 @property (nonatomic, retain) UIImageView *reloadOutlineView;
@@ -20,26 +27,28 @@
 - (void).cxx_destruct;
 - (void)_beatFullHeartOnce;
 - (void)_finishedHeartBeat;
+- (id)_loadHeartMeasuringImage;
 - (void)_resumeAnimations;
-- (void)_startMeasuringAnimation;
+- (void)_startBeatingHeart;
+- (void)_startMeasuringAnimationAnimated:(bool)arg1;
 - (void)_suspendAnimations;
 - (id)animatingImageView;
-- (void)dealloc;
+- (bool)animationsSuspended;
 - (id)fullHeartImageView;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heartImageNameFormat:(id)arg2 frameRateDivider:(int)arg3 resourceBundle:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 heartSpriteImageName:(id)arg2 spriteFrameCount:(long long)arg3 spriteColumnCount:(long long)arg4 resourceBundle:(id)arg5;
 - (void)layoutSubviews;
 - (id)reloadArrowView;
 - (id)reloadOutlineView;
 - (void)setAnimatingImageView:(id)arg1;
+- (void)setAnimationsSuspended:(bool)arg1;
 - (void)setFullHeartImageView:(id)arg1;
 - (void)setHeartRate:(double)arg1;
 - (void)setReloadArrowImage:(id)arg1;
 - (void)setReloadArrowView:(id)arg1;
 - (void)setReloadHeartOutlineImage:(id)arg1;
 - (void)setReloadOutlineView:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setState:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)unloadAnimationAssets;
 
 @end

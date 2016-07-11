@@ -14,12 +14,13 @@
 @property (nonatomic, copy) id targetValue;
 @property (nonatomic, readonly, copy) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actionSet;
 - (id)characteristic;
 - (void)configure:(id)arg1 actionSet:(id)arg2;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;

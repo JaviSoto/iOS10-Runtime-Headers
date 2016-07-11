@@ -2,19 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosPickerSessionInfo : PUSessionInfo {
-    NSString * __targetAlbumName;
-}
+@interface PUPhotosPickerSessionInfo : PUSessionInfo
 
-@property (setter=_setTargetAlbumName:, nonatomic, copy) NSString *_targetAlbumName;
-
-- (void).cxx_destruct;
-- (id)_initWithTargetAlbum:(struct NSObject { Class x1; }*)arg1 orTargetAlbumName:(id)arg2 isLocal:(BOOL)arg3;
-- (void)_setTargetAlbumName:(id)arg1;
-- (id)_targetAlbumName;
+- (id)_initWithTargetAlbum:(struct NSObject { Class x1; }*)arg1 orTargetAlbumName:(id)arg2 isLocal:(bool)arg3;
 - (id)initWithTargetAlbum:(struct NSObject { Class x1; }*)arg1;
-- (id)initWithTargetAlbumName:(id)arg1 isLocal:(BOOL)arg2;
-- (BOOL)isSelectingAssets;
+- (id)initWithTargetAlbumName:(id)arg1 isLocal:(bool)arg2;
+- (bool)isSelectingAssets;
 - (id)localizedPrompt;
 
 @end

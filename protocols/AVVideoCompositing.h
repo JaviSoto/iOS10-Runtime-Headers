@@ -13,5 +13,6 @@
 @optional
 
 - (void)cancelAllPendingVideoCompositionRequests;
+- (bool)supportsWideColorSourceFrames;
 
 @end

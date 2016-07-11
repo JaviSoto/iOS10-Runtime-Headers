@@ -6,39 +6,49 @@
     struct { 
         unsigned int requestLocalTimestamp : 1; 
         unsigned int maxNumCategoriesPerEntry : 1; 
+        unsigned int userPreferredTransportType : 1; 
     }  _has;
     unsigned int  _maxNumCategoriesPerEntry;
     double  _requestLocalTimestamp;
     GEOLatLng * _significantLocation;
+    int  _userPreferredTransportType;
 }
 
-@property (nonatomic) BOOL hasMaxNumCategoriesPerEntry;
-@property (nonatomic) BOOL hasRequestLocalTimestamp;
-@property (nonatomic, readonly) BOOL hasSignificantLocation;
+@property (nonatomic) bool hasMaxNumCategoriesPerEntry;
+@property (nonatomic) bool hasRequestLocalTimestamp;
+@property (nonatomic, readonly) bool hasSignificantLocation;
+@property (nonatomic) bool hasUserPreferredTransportType;
 @property (nonatomic) unsigned int maxNumCategoriesPerEntry;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) GEOLatLng *significantLocation;
+@property (nonatomic) int userPreferredTransportType;
 
+- (int)StringAsUserPreferredTransportType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxNumCategoriesPerEntry;
-- (BOOL)hasRequestLocalTimestamp;
-- (BOOL)hasSignificantLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxNumCategoriesPerEntry;
+- (bool)hasRequestLocalTimestamp;
+- (bool)hasSignificantLocation;
+- (bool)hasUserPreferredTransportType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxNumCategoriesPerEntry;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)requestLocalTimestamp;
-- (void)setHasMaxNumCategoriesPerEntry:(BOOL)arg1;
-- (void)setHasRequestLocalTimestamp:(BOOL)arg1;
+- (void)setHasMaxNumCategoriesPerEntry:(bool)arg1;
+- (void)setHasRequestLocalTimestamp:(bool)arg1;
+- (void)setHasUserPreferredTransportType:(bool)arg1;
 - (void)setMaxNumCategoriesPerEntry:(unsigned int)arg1;
 - (void)setRequestLocalTimestamp:(double)arg1;
 - (void)setSignificantLocation:(id)arg1;
+- (void)setUserPreferredTransportType:(int)arg1;
 - (id)significantLocation;
+- (int)userPreferredTransportType;
+- (id)userPreferredTransportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,36 +3,47 @@
  */
 
 @interface CAMCaptureConfiguration : NSObject {
-    int  _HDRMode;
-    int  _device;
-    int  _flashMode;
-    int  _mode;
-    int  _photoModeEffectFilterType;
-    int  _squareModeEffectFilterType;
-    int  _timerDuration;
-    int  _torchMode;
+    long long  _HDRMode;
+    long long  _audioConfiguration;
+    long long  _device;
+    long long  _flashMode;
+    long long  _irisMode;
+    long long  _mode;
+    long long  _photoModeEffectFilterType;
+    long long  _squareModeEffectFilterType;
+    long long  _timerDuration;
+    long long  _torchMode;
+    long long  _videoConfiguration;
 }
 
-@property (nonatomic, readonly) int HDRMode;
-@property (nonatomic, readonly) int device;
-@property (nonatomic, readonly) int flashMode;
-@property (nonatomic, readonly) int mode;
-@property (nonatomic, readonly) int photoModeEffectFilterType;
-@property (nonatomic, readonly) int squareModeEffectFilterType;
-@property (nonatomic, readonly) int timerDuration;
-@property (nonatomic, readonly) int torchMode;
+@property (nonatomic, readonly) long long HDRMode;
+@property (nonatomic, readonly) long long audioConfiguration;
+@property (nonatomic, readonly) long long device;
+@property (nonatomic, readonly) long long flashMode;
+@property (nonatomic, readonly) long long irisMode;
+@property (nonatomic, readonly) long long mode;
+@property (nonatomic, readonly) long long photoModeEffectFilterType;
+@property (nonatomic, readonly) long long squareModeEffectFilterType;
+@property (nonatomic, readonly) long long timerDuration;
+@property (nonatomic, readonly) long long torchMode;
+@property (nonatomic, readonly) long long videoConfiguration;
 
-+ (int)audioConfigurationForMode:(int)arg1 device:(int)arg2;
++ (long long)_fallbackVideoConfigurationForUnsupportedConfiguration:(long long)arg1;
++ (long long)audioConfigurationForMode:(long long)arg1 device:(long long)arg2 emulationMode:(long long)arg3 duringCall:(bool)arg4;
++ (id)captureGraphConfigurationUsingConfiguration:(id)arg1;
++ (long long)sanitizeVideoConfigurationForDesiredConfiguration:(long long)arg1 mode:(long long)arg2 device:(long long)arg3;
 
-- (int)HDRMode;
-- (struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })currentModeWithOptions;
-- (int)device;
-- (int)flashMode;
-- (id)initWithCaptureMode:(int)arg1 captureDevice:(int)arg2 flashMode:(int)arg3 torchMode:(int)arg4 HDRMode:(int)arg5 timerDuration:(int)arg6 photoModeEffectFilterType:(int)arg7 squareModeEffectFilterType:(int)arg8;
-- (int)mode;
-- (int)photoModeEffectFilterType;
-- (int)squareModeEffectFilterType;
-- (int)timerDuration;
-- (int)torchMode;
+- (long long)HDRMode;
+- (long long)audioConfiguration;
+- (long long)device;
+- (long long)flashMode;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 flashMode:(long long)arg5 torchMode:(long long)arg6 HDRMode:(long long)arg7 irisMode:(long long)arg8 timerDuration:(long long)arg9 photoModeEffectFilterType:(long long)arg10 squareModeEffectFilterType:(long long)arg11;
+- (long long)irisMode;
+- (long long)mode;
+- (long long)photoModeEffectFilterType;
+- (long long)squareModeEffectFilterType;
+- (long long)timerDuration;
+- (long long)torchMode;
+- (long long)videoConfiguration;
 
 @end

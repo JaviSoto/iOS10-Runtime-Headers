@@ -3,27 +3,36 @@
  */
 
 @interface MPAVRoute : NSObject {
+    NSArray * _auxiliaryDevices;
     NSDictionary * _avRouteDescription;
-    int  _displayRouteType;
-    int  _pickableRouteType;
-    BOOL  _picked;
-    BOOL  _requiresPassword;
+    MPAVBatteryLevel * _batteryLevel;
+    long long  _displayRouteType;
+    long long  _pickableRouteType;
+    bool  _picked;
+    bool  _pickedOnPairedDevice;
+    bool  _playingOnPairedDevice;
+    bool  _requiresPassword;
     NSString * _routeName;
-    int  _routeSubtype;
-    int  _routeType;
+    long long  _routeSubtype;
+    long long  _routeType;
     NSString * _routeUID;
     MPAVRoute * _wirelessDisplayRoute;
 }
 
-@property (nonatomic, readonly) BOOL displayIsPicked;
-@property (nonatomic, readonly) int displayRouteType;
-@property (nonatomic, readonly) int passwordType;
-@property (nonatomic, readonly) int pickableRouteType;
-@property (getter=isPicked, nonatomic, readonly) BOOL picked;
-@property (nonatomic, readonly) BOOL requiresPassword;
+@property (nonatomic, readonly) NSArray *auxiliaryDevices;
+@property (nonatomic, readonly) MPAVBatteryLevel *batteryLevel;
+@property (nonatomic, readonly) bool displayIsPicked;
+@property (nonatomic, readonly) long long displayRouteType;
+@property (nonatomic, readonly) bool isDeviceRoute;
+@property (nonatomic, readonly) long long passwordType;
+@property (nonatomic, readonly) long long pickableRouteType;
+@property (getter=isPicked, nonatomic, readonly) bool picked;
+@property (getter=isPickedOnPairedDevice, nonatomic, readonly) bool pickedOnPairedDevice;
+@property (getter=isPlayingOnPairedDevice, nonatomic, readonly) bool playingOnPairedDevice;
+@property (nonatomic, readonly) bool requiresPassword;
 @property (nonatomic, readonly) NSString *routeName;
-@property (nonatomic, readonly) int routeSubtype;
-@property (nonatomic, readonly) int routeType;
+@property (nonatomic, readonly) long long routeSubtype;
+@property (nonatomic, readonly) long long routeType;
 @property (nonatomic, readonly) NSString *routeUID;
 @property (nonatomic, readonly) MPAVRoute *wirelessDisplayRoute;
 
@@ -32,31 +41,36 @@
 - (void).cxx_destruct;
 - (id)_initWithAVRouteDescription:(id)arg1;
 - (void)_routingControllerPickedRouteNotification:(id)arg1;
+- (id)auxiliaryDevices;
 - (id)avRouteDescription;
+- (id)batteryLevel;
 - (void)dealloc;
 - (id)description;
-- (BOOL)displayIsPicked;
-- (int)displayRouteType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPicked;
-- (int)passwordType;
-- (int)pickableRouteType;
-- (BOOL)requiresPassword;
+- (bool)displayIsPicked;
+- (long long)displayRouteType;
+- (unsigned long long)hash;
+- (bool)isDeviceRoute;
+- (bool)isEqual:(id)arg1;
+- (bool)isPicked;
+- (bool)isPickedOnPairedDevice;
+- (bool)isPlayingOnPairedDevice;
+- (long long)passwordType;
+- (long long)pickableRouteType;
+- (bool)requiresPassword;
 - (id)routeName;
-- (int)routeSubtype;
-- (int)routeType;
+- (long long)routeSubtype;
+- (long long)routeType;
 - (id)routeUID;
 - (void)setAVRouteDescription:(id)arg1;
-- (void)setDisplayRouteType:(int)arg1;
-- (void)setPicked:(BOOL)arg1;
+- (void)setDisplayRouteType:(long long)arg1;
+- (void)setPicked:(bool)arg1;
 - (void)setRouteName:(id)arg1;
 - (void)setWirelessDisplayRoute:(id)arg1;
 - (id)wirelessDisplayRoute;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
-- (int)rc_audioRouteType;
-- (BOOL)rc_shouldExpectFaceContact;
+- (long long)rc_audioRouteType;
+- (bool)rc_shouldExpectFaceContact;
 
 @end

@@ -16,15 +16,15 @@
 @property (nonatomic) <SKUINavigationDocumentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *documentStackItems;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (nonatomic, retain) UINavigationController *overrideNavigationController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activeNavigationController;
-- (void)_applyDocumentReplacementForOldStackItem:(id)arg1 atOldIndex:(int)arg2 withStackItem:(id)arg3;
-- (void)_ensureStackConsistencyForNavigationControllerOperation:(int)arg1 operationDidComplete:(BOOL)arg2;
+- (void)_applyDocumentReplacementForOldStackItem:(id)arg1 atOldIndex:(long long)arg2 withStackItem:(id)arg3;
+- (void)_ensureStackConsistencyForNavigationControllerOperation:(long long)arg1 operationDidComplete:(bool)arg2;
 - (void)_handleStackDidChange;
 - (void)_scheduleFlushingPendingNavigationStackEnsureConsistencyRequestsWithTransitionCoordinator:(id)arg1;
 - (void)_unloadAllStackItems;
@@ -33,7 +33,7 @@
 - (id)delegate;
 - (id)documentStackItems;
 - (id)documents;
-- (void)ensureStackConsistencyForNavigationControllerOperation:(int)arg1 operationDidComplete:(BOOL)arg2;
+- (void)ensureStackConsistencyForNavigationControllerOperation:(long long)arg1 operationDidComplete:(bool)arg2;
 - (id)initWithNavigationController:(id)arg1;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (id)navigationController;
@@ -48,6 +48,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOverrideNavigationController:(id)arg1;
-- (void)setStackItems:(id)arg1 animated:(BOOL)arg2;
+- (void)setStackItems:(id)arg1 animated:(bool)arg2;
 
 @end

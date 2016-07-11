@@ -7,7 +7,7 @@
     <DATask> * _activeExclusiveTask;
     <DATask> * _activeModalTask;
     <DATask> * _activeQueuedTask;
-    BOOL  _didLogSyncStart;
+    bool  _didLogSyncStart;
     DADuetReporter * _duetReporter;
     NSMutableSet * _heldIndependentTasks;
     NSMutableSet * _independentTasks;
@@ -19,7 +19,9 @@
     NSMutableArray * _queuedExclusiveTasks;
     NSMutableArray * _queuedModalTasks;
     int  _state;
+    DATransaction * _transaction;
     NSTimer * _userInitiatedSyncTimer;
+    NSTimer * _xpcTransactionTimer;
 }
 
 @property (nonatomic) DAAccount *account;
@@ -27,7 +29,7 @@
 @property (nonatomic, retain) <DATask> *activeModalTask;
 @property (nonatomic, retain) <DATask> *activeQueuedTask;
 @property (nonatomic, readonly) NSArray *allTasks;
-@property (nonatomic) BOOL didLogSyncStart;
+@property (nonatomic) bool didLogSyncStart;
 @property (nonatomic, retain) DADuetReporter *duetReporter;
 @property (nonatomic, retain) NSMutableSet *heldIndependentTasks;
 @property (nonatomic, retain) NSMutableSet *independentTasks;
@@ -41,12 +43,15 @@
 @property (nonatomic, readonly) NSArray *queuedTasks;
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSTimer *userInitiatedSyncTimer;
+@property (nonatomic, retain) NSTimer *xpcTransactionTimer;
 
 - (void).cxx_destruct;
+- (id)OAuth2Token;
 - (void)_cancelTasksWithReason:(int)arg1;
 - (void)_clearUserInitiatedSyncTimer;
-- (BOOL)_hasTasksForcingNetworkConnection;
-- (BOOL)_hasTasksIndicatingARunningSync;
+- (void)_endXpcTransaction;
+- (bool)_hasTasksForcingNetworkConnection;
+- (bool)_hasTasksIndicatingARunningSync;
 - (void)_logSyncEnd;
 - (void)_makeStateTransition;
 - (void)_performTask:(id)arg1;
@@ -60,9 +65,9 @@
 - (void)_scheduleSelector:(SEL)arg1 withArgument:(id)arg2;
 - (void)_scheduleStartModal:(id)arg1;
 - (void)_startModal:(id)arg1;
-- (BOOL)_taskForcesNetworking:(id)arg1;
-- (BOOL)_taskInQueueForcesNetworkConnection:(id)arg1;
-- (BOOL)_useFakeDescriptions;
+- (bool)_taskForcesNetworking:(id)arg1;
+- (bool)_taskInQueueForcesNetworkConnection:(id)arg1;
+- (bool)_useFakeDescriptions;
 - (void)_useOpportunisticSocketsAgain;
 - (id)_version;
 - (id)account;
@@ -77,20 +82,20 @@
 - (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
 - (void)dealloc;
 - (id)deviceType;
-- (BOOL)didLogSyncStart;
+- (bool)didLogSyncStart;
 - (id)duetReporter;
 - (id)heldIndependentTasks;
 - (id)identityPersist;
 - (id)independentTasks;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
-- (BOOL)isShutdown;
+- (bool)isShutdown;
 - (id)mQueuedTasks;
 - (id)managerIdleTimer;
 - (id)modalHeldActiveQueuedTask;
 - (id)modalHeldIndependentTasks;
 - (id)password;
-- (int)port;
+- (long long)port;
 - (id)powerLogIdleTimer;
 - (id)queuedExclusiveTasks;
 - (id)queuedModalTasks;
@@ -100,7 +105,7 @@
 - (void)setActiveExclusiveTask:(id)arg1;
 - (void)setActiveModalTask:(id)arg1;
 - (void)setActiveQueuedTask:(id)arg1;
-- (void)setDidLogSyncStart:(BOOL)arg1;
+- (void)setDidLogSyncStart:(bool)arg1;
 - (void)setDuetReporter:(id)arg1;
 - (void)setHeldIndependentTasks:(id)arg1;
 - (void)setIndependentTasks:(id)arg1;
@@ -113,22 +118,24 @@
 - (void)setQueuedModalTasks:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setUserInitiatedSyncTimer:(id)arg1;
+- (void)setXpcTransactionTimer:(id)arg1;
 - (void)shutdown;
 - (int)state;
 - (id)stateString;
 - (void)submitExclusiveTask:(id)arg1;
-- (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
+- (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(bool)arg2;
 - (void)submitIndependentTask:(id)arg1;
 - (void)submitQueuedTask:(id)arg1;
 - (void)taskDidFinish:(id)arg1;
 - (void)taskEndModal:(id)arg1;
-- (BOOL)taskIsModal:(id)arg1;
+- (bool)taskIsModal:(id)arg1;
 - (void)taskManagerDidAddTask:(id)arg1;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskRequestModal:(id)arg1;
-- (BOOL)useSSL;
+- (bool)useSSL;
 - (id)user;
 - (id)userAgent;
 - (id)userInitiatedSyncTimer;
+- (id)xpcTransactionTimer;
 
 @end

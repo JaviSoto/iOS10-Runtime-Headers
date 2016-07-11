@@ -2,50 +2,56 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDAchievementDoctor : NSObject <HDAchievementEngineDelegate> {
+@interface HDAchievementDoctor : NSObject <HDAchievementEngineDelegate, _HKAchievementPredicateWorkoutsEnvironmentDataSource> {
     NSCalendar * _calendar;
-    HKActivityCache * _currentActivityCache;
-    <HDHealthDaemon> * _healthDaemon;
+    HKActivitySummary * _currentActivitySummary;
+    HDTransientAchievementDataStore * _dataStore;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    NSArray * _workouts;
-    HKActivityCache * _yesterdayActivityCache;
+    NSMutableArray * _workoutEndDates;
+    NSMutableArray * _workouts;
+    HKActivitySummary * _yesterdayActivitySummary;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_achievementsInSet:(id)arg1 missingFromSet:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_achievementsGroupedByActivityCacheIndex:(id)arg1;
+- (void)_addWorkout:(id)arg1;
 - (id)_fetchAchievementsWithError:(id*)arg1;
-- (id)_fetchActivityCachesOrderedByCacheIndexWithError:(id*)arg1;
-- (id)_fetchAppleWatchSourcePersistentIDs;
+- (id)_fetchActivitySummariesOrderedByCacheIndexWithError:(id*)arg1;
 - (id)_fetchWorkoutsSortedByEndDateWithError:(id*)arg1;
-- (BOOL)_isActivityCache:(id)arg1 oneDayAfterActivityCache:(id)arg2;
-- (id)_newEmptyActivityCacheWithStartDate:(id)arg1 startDateComponents:(id)arg2 calorieGoal:(id)arg3;
-- (id)_queue_detectAchievementsForActivityCaches:(id)arg1 workouts:(id)arg2;
-- (id)_queue_detectMissingAchievementsWithError:(id*)arg1;
+- (bool)_isActivitySummary:(id)arg1 oneDayAfterActivitySummary:(id)arg2;
+- (id)_newEmptyActivitySummaryWithStartDate:(id)arg1 startDateComponents:(id)arg2 calorieGoal:(id)arg3;
+- (id)_queue_detectAchievementsForActivitySummaries:(id)arg1 workouts:(id)arg2 getResultingKeyValues:(id*)arg3;
+- (bool)_queue_detectMissingAchievements:(id*)arg1 resultingKeyValues:(id*)arg2 error:(id*)arg3;
 - (id)_queue_findExpectedAchievements:(id)arg1 missingFromAchievements:(id)arg2;
-- (BOOL)_queue_saveMissingAchievements:(id)arg1 error:(id*)arg2;
-- (long long)activityCacheIndexToday;
+- (bool)_queue_saveMissingAchievements:(id)arg1 keyValues:(id)arg2 error:(id*)arg3;
+- (id)_runAchievementEngine:(id)arg1 withPredicateEnvironment:(id)arg2 dataStore:(id)arg3 todayActivitySummary:(id)arg4 yesterdayActivitySummary:(id)arg5 currentDate:(id)arg6 addedWorkouts:(id)arg7;
+- (long long)activitySummaryIndexToday;
 - (double)briskMinutesToday;
 - (double)briskMinutesYesterday;
-- (id)calorieGoalToday;
-- (id)calorieGoalYesterday;
 - (double)caloriesBurnedToday;
 - (double)caloriesBurnedYesterday;
 - (id)currentDate;
+- (id)energyBurnedGoalToday;
+- (id)energyBurnedGoalYesterday;
 - (id)init;
-- (id)initWithHealthDaemon:(id)arg1 targetQueue:(id)arg2;
-- (unsigned int)numberOfSessionsCompletedAfterDate:(id)arg1 beforeDate:(id)arg2 minimumSessionDuration:(double)arg3;
-- (void)runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
-- (id)sessionsEndingAfterDate:(id)arg1;
-- (unsigned int)standingHoursToday;
-- (unsigned int)standingHoursYesterday;
-- (unsigned int)stepsTakenToday;
-- (unsigned int)stepsTakenYesterday;
+- (id)initWithProfile:(id)arg1 targetQueue:(id)arg2;
+- (long long)mostRecentWorkoutAnchor;
+- (unsigned long long)numberOfWorkoutsCompletedAfterDate:(id)arg1 beforeDate:(id)arg2 minimumWorkoutDuration:(double)arg3;
+- (void)runAchievementsFixupAsDryRun:(bool)arg1 persistingResultingKeyValues:(bool)arg2 completion:(id /* block */)arg3;
+- (unsigned long long)standingHoursToday;
+- (unsigned long long)standingHoursYesterday;
+- (unsigned long long)stepsTakenToday;
+- (unsigned long long)stepsTakenYesterday;
+- (id)workoutsEndingAfterAnchor:(long long)arg1 newAnchor:(long long*)arg2;
+- (id)workoutsInDateRangeStart:(id)arg1 end:(id)arg2;
+- (id)workoutsOfType:(id)arg1;
 
 @end

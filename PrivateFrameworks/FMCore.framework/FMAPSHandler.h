@@ -5,11 +5,10 @@
 @interface FMAPSHandler : NSObject <APSConnectionDelegate> {
     APSConnection * _apsConnection;
     NSString * _environmentName;
-    id  _kvoToken;
     NSMutableArray * _pendingPushes;
-    BOOL  _registerForDarkWake;
+    bool  _registerForDarkWake;
     NSMutableArray * _registeredDelegates;
-    BOOL  _suspendRegistrations;
+    bool  _registrationsSuspended;
 }
 
 @property (nonatomic, retain) APSConnection *apsConnection;
@@ -17,13 +16,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *environmentName;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) id kvoToken;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *pendingPushes;
-@property (nonatomic) BOOL registerForDarkWake;
+@property (nonatomic) bool registerForDarkWake;
 @property (nonatomic, retain) NSMutableArray *registeredDelegates;
+@property (nonatomic) bool registrationsSuspended;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL suspendRegistrations;
 
 + (id)constantForEnvironmentString:(id)arg1;
 
@@ -42,18 +40,18 @@
 - (id)initWithEnvironmentName:(id)arg1;
 - (id)initWithEnvironmentName:(id)arg1 launchOnDemandPort:(id)arg2;
 - (void)invalidate;
-- (id)kvoToken;
 - (id)pendingPushes;
 - (void)registerDelegate:(id)arg1 forTopic:(id)arg2;
-- (BOOL)registerForDarkWake;
+- (bool)registerForDarkWake;
 - (id)registeredDelegates;
+- (bool)registrationsSuspended;
+- (void)resumeRegistrations;
 - (void)setApsConnection:(id)arg1;
 - (void)setEnvironmentName:(id)arg1;
-- (void)setKvoToken:(id)arg1;
 - (void)setPendingPushes:(id)arg1;
-- (void)setRegisterForDarkWake:(BOOL)arg1;
+- (void)setRegisterForDarkWake:(bool)arg1;
 - (void)setRegisteredDelegates:(id)arg1;
-- (void)setSuspendRegistrations:(BOOL)arg1;
-- (BOOL)suspendRegistrations;
+- (void)setRegistrationsSuspended:(bool)arg1;
+- (void)suspendRegistrations;
 
 @end

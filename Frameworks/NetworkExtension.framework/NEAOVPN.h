@@ -3,44 +3,48 @@
  */
 
 @interface NEAOVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL  _allowAllCaptiveNetworkPlugins;
-    BOOL  _allowCaptiveWebSheet;
+    NSString * _activeInterfaceProtocolKey;
+    bool  _allowAllCaptiveNetworkPlugins;
+    bool  _allowCaptiveWebSheet;
     NSDictionary * _allowedCaptiveNetworkPlugins;
-    BOOL  _enabled;
+    bool  _enabled;
     NSDictionary * _interfaceProtocolMapping;
     NSDictionary * _serviceExceptions;
-    BOOL  _toggleEnabled;
+    bool  _toggleEnabled;
 }
 
-@property (getter=isAllowAllCaptiveNetworkPlugins) BOOL allowAllCaptiveNetworkPlugins;
-@property (getter=isAllowCaptiveWebSheet) BOOL allowCaptiveWebSheet;
+@property (copy) NSString *activeInterfaceProtocolKey;
+@property (getter=isAllowAllCaptiveNetworkPlugins) bool allowAllCaptiveNetworkPlugins;
+@property (getter=isAllowCaptiveWebSheet) bool allowCaptiveWebSheet;
 @property (copy) NSDictionary *allowedCaptiveNetworkPlugins;
-@property (getter=isEnabled) BOOL enabled;
+@property (getter=isEnabled) bool enabled;
 @property (copy) NSDictionary *interfaceProtocolMapping;
 @property (copy) NSDictionary *serviceExceptions;
-@property (getter=isToggleEnabled) BOOL toggleEnabled;
+@property (getter=isToggleEnabled) bool toggleEnabled;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)activeInterfaceProtocolKey;
 - (id)allowedCaptiveNetworkPlugins;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)interfaceProtocolMapping;
-- (BOOL)isAllowAllCaptiveNetworkPlugins;
-- (BOOL)isAllowCaptiveWebSheet;
-- (BOOL)isEnabled;
-- (BOOL)isToggleEnabled;
+- (bool)isAllowAllCaptiveNetworkPlugins;
+- (bool)isAllowCaptiveWebSheet;
+- (bool)isEnabled;
+- (bool)isToggleEnabled;
 - (id)serviceExceptions;
-- (void)setAllowAllCaptiveNetworkPlugins:(BOOL)arg1;
-- (void)setAllowCaptiveWebSheet:(BOOL)arg1;
+- (void)setActiveInterfaceProtocolKey:(id)arg1;
+- (void)setAllowAllCaptiveNetworkPlugins:(bool)arg1;
+- (void)setAllowCaptiveWebSheet:(bool)arg1;
 - (void)setAllowedCaptiveNetworkPlugins:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setInterfaceProtocolMapping:(id)arg1;
 - (void)setServiceExceptions:(id)arg1;
-- (void)setToggleEnabled:(BOOL)arg1;
+- (void)setToggleEnabled:(bool)arg1;
 
 @end

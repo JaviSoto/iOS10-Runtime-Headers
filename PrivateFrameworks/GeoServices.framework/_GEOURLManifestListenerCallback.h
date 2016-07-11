@@ -9,6 +9,6 @@
 
 - (void)dealloc;
 - (id)initWithRunLoop:(struct __CFRunLoop { }*)arg1 handler:(id /* block */)arg2;
-- (void)performHandler:(BOOL)arg1;
+- (void)performHandler:(bool)arg1;
 
 @end

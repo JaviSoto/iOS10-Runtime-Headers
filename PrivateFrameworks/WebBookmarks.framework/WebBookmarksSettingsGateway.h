@@ -10,7 +10,7 @@
 - (void)clearAllSafariHistory;
 - (void)deleteAllSafariSecurityOrigins;
 - (void)deleteSafariPersistentURLCacheStorage;
-- (void)deleteSafariSecurityOrigin:(id)arg1;
+- (void)deleteSafariWebsiteDataRecord:(id)arg1;
 - (void)getCurrentlySelectedSearchEngineWithCompletion:(id /* block */)arg1;
 - (void)getSafariDataUsageByteCountWithCompletionHandler:(id /* block */)arg1;
 - (void)getSafariWebDataUsageWithCompletion:(id /* block */)arg1;

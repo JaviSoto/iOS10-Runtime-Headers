@@ -3,8 +3,7 @@
  */
 
 @interface WLSourceDevice : NSObject <NSSecureCoding> {
-    NSString * _bonjourServiceName;
-    unsigned int  _dataTypes;
+    unsigned long long  _dataTypes;
     NSString * _hardwareBrand;
     NSString * _hardwareDesign;
     NSString * _hardwareMaker;
@@ -18,8 +17,7 @@
     unsigned short  _socketPort;
 }
 
-@property (nonatomic, copy) NSString *bonjourServiceName;
-@property (nonatomic) unsigned int dataTypes;
+@property (nonatomic) unsigned long long dataTypes;
 @property (nonatomic, copy) NSString *hardwareBrand;
 @property (nonatomic, copy) NSString *hardwareDesign;
 @property (nonatomic, copy) NSString *hardwareMaker;
@@ -32,11 +30,10 @@
 @property (nonatomic, copy) NSString *persistentIdentifier;
 @property (nonatomic) unsigned short socketPort;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)bonjourServiceName;
-- (unsigned int)dataTypes;
+- (unsigned long long)dataTypes;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hardwareBrand;
 - (id)hardwareDesign;
@@ -49,8 +46,7 @@
 - (id)name;
 - (id)osAPIVersion;
 - (id)persistentIdentifier;
-- (void)setBonjourServiceName:(id)arg1;
-- (void)setDataTypes:(unsigned int)arg1;
+- (void)setDataTypes:(unsigned long long)arg1;
 - (void)setHardwareBrand:(id)arg1;
 - (void)setHardwareDesign:(id)arg1;
 - (void)setHardwareMaker:(id)arg1;

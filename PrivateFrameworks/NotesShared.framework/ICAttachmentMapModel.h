@@ -2,22 +2,16 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICAttachmentMapModel : ICAttachmentModel {
-    MKMapSnapshotter * _mapSnapshotter;
-}
+@interface ICAttachmentMapModel : ICAttachmentModel
 
-@property (retain) MKMapSnapshotter *mapSnapshotter;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
-
-- (void).cxx_destruct;
-- (BOOL)generateAsynchronousPreviews;
+- (bool)generateAsynchronousPreviews;
 - (void)generatePreviews;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (id)mapSnapshotter;
-- (BOOL)needToGeneratePreviews;
-- (void)setMapSnapshotter:(id)arg1;
+- (bool)hasPreviews;
+- (bool)needToGeneratePreviews;
+- (bool)requiresNetworkToGeneratePreview;
 
 @end

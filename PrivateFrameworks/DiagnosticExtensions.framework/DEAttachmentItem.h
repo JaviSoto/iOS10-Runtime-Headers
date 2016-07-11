@@ -26,7 +26,7 @@
 + (id)attachmentWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;
 + (id)attachmentWithPathURL:(id)arg1;
 + (id)newAttachmentWithPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)attachWithDestinationDir:(id)arg1;
@@ -54,6 +54,5 @@
 - (void)setPath:(id)arg1;
 - (void)setShouldCompress:(id)arg1;
 - (id)shouldCompress;
-- (id)writeAssetToDiskWithURL:(id)arg1 toDirectory:(id)arg2;
 
 @end

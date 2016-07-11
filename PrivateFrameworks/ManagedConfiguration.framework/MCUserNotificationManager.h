@@ -4,14 +4,14 @@
 
 @interface MCUserNotificationManager : NSObject
 
-@property (nonatomic, readonly) BOOL hasOutstandingNotifications;
+@property (nonatomic, readonly) bool hasOutstandingNotifications;
 
 + (id)sharedManager;
 
 - (void)cancelAllNotificationsCompletionBlock:(id /* block */)arg1;
 - (void)dealloc;
-- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 otherButtonText:(id)arg5 displayOnLockScreen:(BOOL)arg6 displayInAppWhitelistModes:(BOOL)arg7 dismissAfterTimeInterval:(double)arg8 assertion:(id)arg9 completionBlock:(id /* block */)arg10;
-- (BOOL)hasOutstandingNotifications;
+- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 otherButtonText:(id)arg5 displayOnLockScreen:(bool)arg6 displayInAppWhitelistModes:(bool)arg7 dismissAfterTimeInterval:(double)arg8 assertion:(id)arg9 completionBlock:(id /* block */)arg10;
+- (bool)hasOutstandingNotifications;
 - (id)init;
 - (void)inviteUserToVPPWithTitle:(id)arg1 message:(id)arg2 assertion:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)mainQueueDidReceiveAppWhitelistChangedNotification;

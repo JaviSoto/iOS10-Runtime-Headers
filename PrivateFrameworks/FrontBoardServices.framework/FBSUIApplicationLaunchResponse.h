@@ -3,23 +3,18 @@
  */
 
 @interface FBSUIApplicationLaunchResponse : FBSWorkspaceResponse {
-    BOOL  _supportsTaskSuspension;
-    BOOL  _supportsTaskSuspensionOnLock;
-    BSMachPortSendRight * _taskPort;
+    bool  _supportsTaskSuspension;
+    bool  _supportsTaskSuspensionOnLock;
 }
 
-@property (nonatomic) BOOL supportsTaskSuspension;
-@property (nonatomic) BOOL supportsTaskSuspensionOnLock;
-@property (nonatomic, retain) BSMachPortSendRight *taskPort;
+@property (nonatomic) bool supportsTaskSuspension;
+@property (nonatomic) bool supportsTaskSuspensionOnLock;
 
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (void)setSupportsTaskSuspension:(BOOL)arg1;
-- (void)setSupportsTaskSuspensionOnLock:(BOOL)arg1;
-- (void)setTaskPort:(id)arg1;
-- (BOOL)supportsTaskSuspension;
-- (BOOL)supportsTaskSuspensionOnLock;
-- (id)taskPort;
+- (void)setSupportsTaskSuspension:(bool)arg1;
+- (void)setSupportsTaskSuspensionOnLock:(bool)arg1;
+- (bool)supportsTaskSuspension;
+- (bool)supportsTaskSuspensionOnLock;
 
 @end

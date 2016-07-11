@@ -2,32 +2,38 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKRecordID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
+@interface CKRecordID : NSObject <CKSQLiteItem, CKXPCSuitableString, ICHasDatabaseScope, NSCopying, NSSecureCoding, PQLValuable> {
     NSString * _recordName;
     CKRecordZoneID * _zoneID;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *recordName;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)CKPropertiesDescriptionWithProperties:(id)arg1;
+- (id)CKPropertiesToDescribe:(bool)arg1;
 - (id)CKXPCSuitableString;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordName:(id)arg1;
 - (id)initWithRecordName:(id)arg1 zoneID:(id)arg2;
 - (id)initWithSqliteRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)recordName;
 - (void)setRecordName:(id)arg1;
 - (void)setZoneID:(id)arg1;
@@ -36,7 +42,33 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
-- (id)brc_itemID;
+- (id)brc_appLibraryDocumentsZoneName;
+- (id)brc_appLibraryRootZoneName;
+- (bool)brc_isAppLibraryDocumentsRecordID;
+- (bool)brc_isAppLibraryRootRecordID;
+- (bool)brc_isZoneRootRecordID;
+- (id)brc_itemIDOfTargetWithLibraryRowID:(id)arg1 session:(id)arg2;
+- (id)brc_itemIDWithSession:(id)arg1;
 - (BOOL)brc_itemType;
+- (id)brc_shareItemIDWithLibraryRowID:(id)arg1;
+- (id)brc_shareOwnerItemID;
+- (id)brc_shareZoneName;
+- (id)initShareIDWithDocumentItem:(id)arg1;
+- (id)initShareIDWithItemID:(id)arg1 zoneID:(id)arg2;
+- (id)initShareIDWithRecordID:(id)arg1 serverZone:(id)arg2;
+- (id)initShareIDWithRecordID:(id)arg1 zoneID:(id)arg2 session:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (long long)databaseScope;
+- (bool)ic_isOwnedByCurrentUser;
+- (id)ic_loggingDescription;
+- (id)ic_loggingDescriptionIncludingBrackets:(bool)arg1;
 
 @end

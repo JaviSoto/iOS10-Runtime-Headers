@@ -9,7 +9,7 @@
     NSHashTable * _components;
     TSPObjectContext * _context;
     int  _ignoreCachedObjectEvictionCount;
-    BOOL  _isTornDown;
+    bool  _isTornDown;
     TSPComponent * _packageMetadataComponent;
     NSObject<OS_dispatch_queue> * _readFlushedComponentQueue;
     TSPComponent * _viewStateComponent;
@@ -21,9 +21,9 @@
 @property (nonatomic, readonly) TSPComponent *documentComponent;
 @property (nonatomic, readonly) TSPComponent *documentMetadataComponent;
 @property (nonatomic, readonly) TSPComponent *documentObjectContainerComponent;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isDocumentComponentTreeModified;
-@property (nonatomic, readonly) BOOL isSupportComponentTreeModified;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isDocumentComponentTreeModified;
+@property (nonatomic, readonly) bool isSupportComponentTreeModified;
 @property (nonatomic, readonly) TSPComponent *packageMetadataComponent;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TSPComponent *supportComponent;
@@ -33,7 +33,7 @@
 
 - (void).cxx_destruct;
 - (void)beginIgnoringCachedObjectEviction;
-- (void)cacheComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
+- (void)cacheComponent:(id)arg1 isDiscardingContent:(bool)arg2;
 - (id)componentForRootObjectIdentifier:(long long)arg1;
 - (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)componentForRootObjectOfLazyReference:(id)arg1;
@@ -51,21 +51,22 @@
 - (void)endIgnoringCachedObjectEviction;
 - (void)enumerateComponents:(id /* block */)arg1;
 - (void)evictAllCachedObjects;
-- (void)flushComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
+- (void)flushComponent:(id)arg1 isDiscardingContent:(bool)arg2;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isDocumentComponentTreeModified;
-- (BOOL)isSupportComponentTreeModified;
+- (bool)isActive;
+- (bool)isDocumentComponentTreeModified;
+- (bool)isSupportComponentTreeModified;
 - (void)loadFromPackage:(id)arg1 metadata:(id)arg2;
 - (id)objectForIdentifier:(long long)arg1;
+- (unsigned long long)objectTargetType;
 - (id)packageMetadataComponent;
 - (void)resumeLoadingModifiedFlushedComponents;
 - (void)retrieveOrCreateComponentForRootObject:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)rootComponentForPackageIdentifier:(unsigned char)arg1;
 - (id)rootComponentWithIdentifierImpl:(long long)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)setViewStateComponent:(id)arg1;
-- (BOOL)shouldKeepAllCachedObjectsInMemory;
+- (bool)shouldKeepAllCachedObjectsInMemory;
 - (id)supportComponent;
 - (id)supportComponentImpl;
 - (id)supportMetadataComponent;
@@ -74,6 +75,6 @@
 - (void)tearDown;
 - (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id /* block */)arg2;
 - (id)viewStateComponent;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(bool)arg2 shouldCaptureSnapshot:(bool)arg3;
 
 @end

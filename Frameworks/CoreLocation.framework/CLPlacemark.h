@@ -9,8 +9,10 @@
 @property (nonatomic, readonly, copy) NSString *ISOcountryCode;
 @property (nonatomic, readonly, copy) NSDictionary *addressDictionary;
 @property (nonatomic, readonly, copy) NSString *administrativeArea;
+@property (nonatomic, readonly) NSString *administrativeAreaCode;
 @property (nonatomic, readonly, copy) NSArray *areasOfInterest;
 @property (nonatomic, readonly, copy) NSString *country;
+@property (nonatomic, readonly) NSString *fullAdministrativeArea;
 @property (nonatomic, readonly, copy) NSString *inlandWater;
 @property (nonatomic, readonly, copy) NSString *locality;
 @property (nonatomic, readonly, copy) CLLocation *location;
@@ -24,8 +26,10 @@
 @property (nonatomic, readonly, copy) NSString *thoroughfare;
 @property (nonatomic, readonly, copy) NSTimeZone *timeZone;
 
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
 + (id)placemarkWithGEOMapItem:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ISOcountryCode;
 - (id)_geoMapItem;
@@ -55,5 +59,30 @@
 - (id)subThoroughfare;
 - (id)thoroughfare;
 - (id)timeZone;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
++ (id)placemarkWithLocation:(id)arg1 name:(id)arg2 postalAddress:(id)arg3;
+
+- (id)initIntentPlacemarkWithLocation:(id)arg1 addressDictionary:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
++ (id)commonPresentationStringWithPlacemarks:(id)arg1 options:(unsigned long long*)arg2;
++ (id)placemarkFromLitePlacemark:(id)arg1;
++ (unsigned long long)presentationOptionsForPlacemarks:(id)arg1;
++ (id)presentationStringForPlacemarks:(id)arg1 options:(unsigned long long)arg2;
+
+- (id)administrativeAreaCode;
+- (id)fullAdministrativeArea;
+- (bool)isEqualToPlacemark:(id)arg1;
+- (id)presentationString:(unsigned long long*)arg1;
+- (id)timeZone;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (id)_px_dynamicLocationString;
+- (id)px_subtitle;
+- (id)px_title;
 
 @end

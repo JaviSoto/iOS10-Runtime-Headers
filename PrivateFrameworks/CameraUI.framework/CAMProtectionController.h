@@ -18,27 +18,27 @@
 @property (nonatomic, readonly) NSCountedSet *_persistenceProtectionInflightRequestsByType;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_protectionQueue;
 
-+ (BOOL)isCameraPerformingHighPriorityDiskActivity;
++ (bool)isCameraPerformingHighPriorityDiskActivity;
 + (id)pathForProtectNebulaDaemonWritesIndicator;
 
 - (void).cxx_destruct;
 - (void)_addBurstProcessingProtectionIndicatorForIdentifier:(id)arg1;
-- (void)_addPersistenceProtectionIndicatorForType:(int)arg1;
+- (void)_addPersistenceProtectionIndicatorForType:(long long)arg1;
 - (int)_burstProcessingProtectionFileDescriptorForIdentifier:(id)arg1;
 - (id)_burstProcessingProtectionFileDescriptorsByIdentifier;
 - (id)_burstProcessingProtectionPathForIdentifier:(id)arg1;
 - (int)_nebulaDaemonWriteProtectionFileDescriptor;
 - (id)_nebulaDaemonWriteProtectionInflightIdentifiers;
-- (int)_persistenceProtectionFileDescriptorForType:(int)arg1;
+- (int)_persistenceProtectionFileDescriptorForType:(long long)arg1;
 - (id)_persistenceProtectionFileDescriptorsByType;
 - (id)_persistenceProtectionInflightRequestsByType;
-- (id)_persistenceProtectionPathForType:(int)arg1;
-- (int)_persistenceProtectionTypeForRequest:(id)arg1;
+- (id)_persistenceProtectionPathForType:(long long)arg1;
+- (long long)_persistenceProtectionTypeForRequest:(id)arg1;
 - (id)_protectionQueue;
-- (void)_protectionQueueStartProtectingPersistenceForType:(int)arg1;
-- (void)_protectionQueueStopProtectingPersistenceForType:(int)arg1;
+- (void)_protectionQueueStartProtectingPersistenceForType:(long long)arg1;
+- (void)_protectionQueueStopProtectingPersistenceForType:(long long)arg1;
 - (void)_removeBurstProcessingProtectionIndicatorForIdentifier:(id)arg1;
-- (void)_removePersistenceProtectionIndicatorForType:(int)arg1;
+- (void)_removePersistenceProtectionIndicatorForType:(long long)arg1;
 - (id)init;
 - (void)startProtectingBurstProcessingForIdentifier:(id)arg1;
 - (void)startProtectingNebulaDaemonWritesForIdentifier:(id)arg1;

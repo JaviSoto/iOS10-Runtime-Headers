@@ -3,36 +3,37 @@
  */
 
 @interface AVCaptureSessionInternal : NSObject {
+    bool  adjustingDeviceActiveColorSpace;
     AVCaptureDevice * adjustingDeviceActiveFormat;
-    BOOL  adjustingVideoDeviceHDREnabled;
-    BOOL  authorizedToUseCameraInMultipleForegroundAppLayout;
-    BOOL  automaticallyConfiguresApplicationAudioSession;
+    bool  adjustingVideoDeviceHDREnabled;
+    bool  authorizedToUseCameraInMultipleForegroundAppLayout;
+    bool  automaticallyConfiguresApplicationAudioSession;
+    bool  automaticallyConfiguresCaptureDeviceForWideColor;
     int  beginConfigRefCount;
     NSMutableArray * committedAVCaptureSessionConfigurations;
     NSMutableArray * connections;
     struct OpaqueFigCaptureSession { } * figCaptureSession;
-    BOOL  figCaptureSessionRunning;
-    BOOL  figCaptureSessionStarted;
+    bool  figCaptureSessionRunning;
+    bool  figCaptureSessionStarted;
     NSMutableArray * inputs;
-    BOOL  interrupted;
+    bool  interrupted;
     AVCaptureSessionConfiguration * liveAVCaptureSessionConfiguration;
     struct OpaqueCMClock { } * masterClock;
-    BOOL  notifiesOnMainThread;
+    bool  notifiesOnMainThread;
     NSMutableArray * outputs;
-    BOOL  resetVideoZoomFactorAndMinMaxFrameDurations;
+    bool  resetVideoZoomFactorAndMinMaxFrameDurations;
     AVRunLoopCondition * runLoopCondition;
-    BOOL  running;
+    bool  running;
     id  serverConnectionDiedNotificationToken;
     NSObject<OS_dispatch_semaphore> * serverConnectionDiedSemaphore;
     FigCaptureSessionConfiguration * sessionConfig;
     NSString * sessionPreset;
     NSError * stopError;
-    BOOL  usesApplicationAudioSession;
+    bool  usesApplicationAudioSession;
     NSHashTable * videoPreviewLayers;
-    BOOL  waitingForFigCaptureSessionConfigurationToBecomeLive;
-    BOOL  waitingForFigCaptureSessionToStart;
-    BOOL  waitingForFigCaptureSessionToStop;
-    BOOL  waitingForFigCaptureSessionToStopDueToEmptyConfig;
+    bool  waitingForFigCaptureSessionConfigurationToBecomeLive;
+    bool  waitingForFigCaptureSessionToStart;
+    bool  waitingForFigCaptureSessionToStop;
     AVWeakReference * weakReference;
 }
 

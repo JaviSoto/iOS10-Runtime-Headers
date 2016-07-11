@@ -4,26 +4,45 @@
 
 @interface BSPlatform : NSObject
 
-@property (nonatomic, readonly) BOOL hasGasGauge;
-@property (getter=isInternalInstall, nonatomic, readonly) BOOL internalInstall;
+@property (getter=isCarrierInstall, nonatomic, readonly) bool carrierInstall;
+@property (getter=isDeveloperInstall, nonatomic, readonly) bool developerInstall;
+@property (nonatomic, readonly) int deviceClass;
+@property (nonatomic, readonly) bool hasGasGauge;
+@property (nonatomic, readonly) bool hasOrbCapability;
+@property (getter=isInternalInstall, nonatomic, readonly) bool internalInstall;
 @property (nonatomic, readonly, copy) NSString *localizedProductName;
-@property (getter=isMultiCore, nonatomic, readonly) BOOL multiCore;
+@property (nonatomic, readonly) double mainScreenOrientation;
+@property (nonatomic, readonly) int mainScreenPitch;
+@property (nonatomic, readonly) double mainScreenScale;
+@property (getter=isMultiCore, nonatomic, readonly) bool multiCore;
+@property (nonatomic, readonly, copy) NSString *operatingSystemName;
 @property (nonatomic, readonly, copy) NSString *productBuildVersion;
 @property (nonatomic, readonly, copy) NSString *productClass;
 @property (nonatomic, readonly, copy) NSString *productHardwareModel;
+@property (nonatomic, readonly, copy) NSString *productHardwareModelName;
 @property (nonatomic, readonly, copy) NSString *productType;
 @property (nonatomic, readonly, copy) NSString *productVersion;
 @property (nonatomic, readonly, copy) NSString *uniqueDeviceIdentifier;
 
 + (id)sharedInstance;
 
-- (BOOL)hasGasGauge;
-- (BOOL)isInternalInstall;
-- (BOOL)isMultiCore;
+- (int)deviceClass;
+- (bool)hasGasGauge;
+- (bool)hasOrbCapability;
+- (id)init;
+- (bool)isCarrierInstall;
+- (bool)isDeveloperInstall;
+- (bool)isInternalInstall;
+- (bool)isMultiCore;
 - (id)localizedProductName;
+- (double)mainScreenOrientation;
+- (int)mainScreenPitch;
+- (double)mainScreenScale;
+- (id)operatingSystemName;
 - (id)productBuildVersion;
 - (id)productClass;
 - (id)productHardwareModel;
+- (id)productHardwareModelName;
 - (id)productType;
 - (id)productVersion;
 - (id)uniqueDeviceIdentifier;

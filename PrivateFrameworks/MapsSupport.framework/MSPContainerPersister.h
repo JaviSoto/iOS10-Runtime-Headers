@@ -4,13 +4,18 @@
 
 @interface MSPContainerPersister : NSObject {
     <MSPContainerPersisterDelegate> * _delegate;
+    long long  _duplicatesPolicy;
 }
 
 @property (nonatomic) <MSPContainerPersisterDelegate> *delegate;
+@property (nonatomic, readonly) long long duplicatesPolicy;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)commitEditedContents:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
+- (long long)duplicatesPolicy;
 - (void)fetchContentsWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 

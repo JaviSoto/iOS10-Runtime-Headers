@@ -2,40 +2,59 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoEditSaveRequest : NSObject {
+@interface PUPhotoEditSaveRequest : NSObject <PXRunNodeDelegate> {
+    NSArray * __runGraph;
     double  _beginTimestamp;
     id /* block */  _completionHandler;
     PHContentEditingOutput * _contentEditingOutput;
-    int  _currentState;
+    long long  _currentState;
     PLPhotoEditModel * _editModel;
+    int  _identifier;
+    PUPhotoEditIrisModel * _irisModel;
+    PUPhotoKitAdjustmentSaveNode * _outputNode;
     PHAsset * _photo;
-    int  _workImageVersion;
+    long long  _workImageVersion;
 }
 
+@property (setter=_setRunGraph:, nonatomic, copy) NSArray *_runGraph;
 @property (nonatomic, readonly) PHContentEditingOutput *contentEditingOutput;
-@property (nonatomic, readonly) int currentState;
+@property (nonatomic, readonly) long long currentState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) PLPhotoEditModel *editModel;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) int identifier;
+@property (nonatomic, readonly, copy) PUPhotoEditIrisModel *irisModel;
 @property (nonatomic, readonly) PHAsset *photo;
-@property (nonatomic, readonly) int workImageVersion;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long workImageVersion;
 
 - (void).cxx_destruct;
-- (void)_finishWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_finishWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)_handleOutputNodeFinishedWithError:(id)arg1;
+- (long long)_imageRequestVersion;
 - (void)_performRevertToOriginalOperation;
 - (void)_performSaveContentEditingOutput;
 - (void)_performSaveEditsOperation;
-- (void)_renderAndSaveBaseImage:(id)arg1 withOrientation:(int)arg2 orientationForModelData:(int)arg3 baseImageURL:(id)arg4;
-- (void)_transitionToState:(int)arg1;
+- (id)_runGraph;
+- (void)_setRunGraph:(id)arg1;
+- (void)_transitionToState:(long long)arg1;
+- (long long)_videoRequestVersion;
 - (void)beginSaveOperationWithCompletionHandler:(id /* block */)arg1;
 - (void)cancelSaveOperation;
 - (id)contentEditingOutput;
-- (int)currentState;
+- (long long)currentState;
 - (id)editModel;
+- (int)identifier;
 - (id)init;
-- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(int)arg3;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(int)arg4;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(int)arg3;
+- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(long long)arg4 irisEditModel:(id)arg5;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4;
 - (id)initWithPhotoToRevertToOriginal:(id)arg1;
+- (id)irisModel;
 - (id)photo;
-- (int)workImageVersion;
+- (void)runNode:(id)arg1 didCancelWithError:(id)arg2;
+- (void)runNode:(id)arg1 didCompleteWithError:(id)arg2;
+- (long long)workImageVersion;
 
 @end

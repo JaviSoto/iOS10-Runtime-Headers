@@ -14,7 +14,10 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
+- (id)_kernelCombine;
+- (id)_kernelD2;
+- (id)downTwo:(id)arg1;
 - (id)inputImage;
 - (id)inputMask;
 - (id)inputRadius;
@@ -22,5 +25,6 @@
 - (void)setInputImage:(id)arg1;
 - (void)setInputMask:(id)arg1;
 - (void)setInputRadius:(id)arg1;
+- (id)upCubic:(id)arg1 scale:(float)arg2;
 
 @end

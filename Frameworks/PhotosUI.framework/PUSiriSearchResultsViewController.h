@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSiriSearchResultsViewController : PUSearchResultsViewController {
+@interface PUSiriSearchResultsViewController : PUSearchGridViewController {
     NSString * _siriSearchString;
 }
 

@@ -8,7 +8,6 @@
 }
 
 @property (readonly, copy) NSString *emailAddress;
-@property (readonly) NSError *error;
 
 - (void).cxx_destruct;
 - (id)emailAddress;

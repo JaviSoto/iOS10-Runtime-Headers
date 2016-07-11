@@ -2,42 +2,73 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessageEntryTextView : UITextView {
+@interface CKMessageEntryTextView : EMKTextView {
     NSString * _autocorrectionContext;
+    bool  _hideCaret;
+    UIColor * _placeholderColor;
     UILabel * _placeholderLabel;
+    bool  _preventingResignFirstResponder;
     NSString * _responseContext;
-    BOOL  _showingDictationPlaceholder;
+    UIKeyboardInputMode * _savedKeyboardInputMode;
+    bool  _sendCurrentLocationFromKeyboardEnabled;
+    bool  _showingDictationPlaceholder;
+    bool  _updatesFontOnTextChange;
 }
 
 @property (nonatomic, copy) NSString *autocorrectionContext;
 @property (nonatomic, copy) NSAttributedString *compositionText;
+@property (nonatomic) bool hideCaret;
+@property (nonatomic, copy) UIColor *placeholderColor;
 @property (nonatomic, retain) UILabel *placeholderLabel;
 @property (nonatomic, copy) NSString *placeholderText;
+@property (getter=isPreventingResignFirstResponder, nonatomic) bool preventingResignFirstResponder;
 @property (nonatomic, copy) NSString *responseContext;
-@property (getter=isShowingDictationPlaceholder, nonatomic) BOOL showingDictationPlaceholder;
-@property (getter=isSingleLine, nonatomic, readonly) BOOL singleLine;
+@property (nonatomic, retain) UIKeyboardInputMode *savedKeyboardInputMode;
+@property (nonatomic) bool sendCurrentLocationFromKeyboardEnabled;
+@property (getter=isShowingDictationPlaceholder, nonatomic) bool showingDictationPlaceholder;
+@property (getter=isSingleLine, nonatomic, readonly) bool singleLine;
+@property (nonatomic) bool updatesFontOnTextChange;
 
+- (void).cxx_destruct;
+- (SEL)_sendCurrentLocationAction;
 - (id)autocorrectionContext;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
 - (id)compositionText;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (bool)hideCaret;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (id)insertDictationResultPlaceholder;
-- (BOOL)isShowingDictationPlaceholder;
-- (BOOL)isSingleLine;
+- (bool)isPreventingResignFirstResponder;
+- (bool)isShowingDictationPlaceholder;
+- (bool)isSingleLine;
 - (void)layoutSubviews;
+- (id)placeholderColor;
 - (id)placeholderLabel;
 - (id)placeholderText;
-- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(bool)arg2;
+- (bool)resignFirstResponder;
 - (id)responseContext;
+- (void)restoreKeyboardInputMode;
+- (void)saveKeyboardInputMode;
+- (id)savedKeyboardInputMode;
+- (bool)sendCurrentLocationFromKeyboardEnabled;
 - (void)setAttributedText:(id)arg1;
 - (void)setAutocorrectionContext:(id)arg1;
 - (void)setCompositionText:(id)arg1;
 - (void)setFont:(id)arg1;
+- (void)setHideCaret:(bool)arg1;
+- (void)setPlaceholderColor:(id)arg1;
 - (void)setPlaceholderLabel:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
+- (void)setPreventingResignFirstResponder:(bool)arg1;
 - (void)setResponseContext:(id)arg1;
-- (void)setShowingDictationPlaceholder:(BOOL)arg1;
+- (void)setSavedKeyboardInputMode:(id)arg1;
+- (void)setSendCurrentLocationFromKeyboardEnabled:(bool)arg1;
+- (void)setShowingDictationPlaceholder:(bool)arg1;
+- (void)setUpdatesFontOnTextChange:(bool)arg1;
 - (void)textViewDidChange:(id)arg1;
+- (void)updateFontIfNeeded;
 - (void)updateTextView;
+- (bool)updatesFontOnTextChange;
 
 @end

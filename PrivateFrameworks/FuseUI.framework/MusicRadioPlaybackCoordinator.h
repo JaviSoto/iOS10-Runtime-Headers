@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicRadioPlaybackCoordinator : RURadioPlaybackCoordinator
+@interface MusicRadioPlaybackCoordinator : MPCRadioPlaybackCoordinator
 
 + (id)sharedCoordinator;
 

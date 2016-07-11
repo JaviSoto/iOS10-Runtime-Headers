@@ -6,12 +6,15 @@
     NSDictionary * _responseDictionary;
 }
 
+@property (nonatomic, readonly) NSURL *HLSPlaylistURL;
 @property (nonatomic, readonly, copy) NSArray *allFlavors;
 @property (nonatomic, readonly) MPStoreRedownloadProductItemAsset *asset;
 @property (nonatomic, readonly, copy) NSString *fileExtension;
 @property (nonatomic, readonly) MPStoreRedownloadProductItemAsset *firstAsset;
+@property (nonatomic, readonly) NSDictionary *responseDictionary;
 
 - (void).cxx_destruct;
+- (id)HLSPlaylistURL;
 - (void)_enumerateAssetDictionariesWithBlock:(id /* block */)arg1;
 - (id)_initWithResponseDictionary:(id)arg1;
 - (id)allFlavors;
@@ -19,5 +22,6 @@
 - (id)assetForFlavor:(id)arg1;
 - (id)fileExtension;
 - (id)firstAsset;
+- (id)responseDictionary;
 
 @end

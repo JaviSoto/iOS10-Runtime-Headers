@@ -17,7 +17,7 @@
 - (id)cacheQueue;
 - (id)containerInfoForContainerID:(id)arg1;
 - (id)dateOfLastTokenUpdate;
-- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(BOOL)arg2;
+- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(bool)arg2;
 - (id)globalConfiguration;
 - (id)init;
 - (id)inlock_applicationMetadataForApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2;
@@ -26,6 +26,7 @@
 - (id)knownAppContainerTuples;
 - (id)knownApplicationBundleIDs;
 - (id)pushTokenForAppContainerTuple:(id)arg1;
+- (void)removeContainerID:(id)arg1;
 - (void)removeKnownApplicationBundleID:(id)arg1;
 - (void)setAppContainerIntersectionMetadata:(id)arg1 forAppContainerTuple:(id)arg2;
 - (void)setApplicationMetadata:(id)arg1 forApplicationBundleID:(id)arg2 sourceApplicationBundleID:(id)arg3;

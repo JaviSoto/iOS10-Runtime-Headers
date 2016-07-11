@@ -9,14 +9,17 @@
 }
 
 + (id)addParams:(id)arg1 toParameterizedString:(id)arg2;
++ (id)addParams:(id)arg1 toParameterizedString:(id)arg2 allowAlternatives:(bool)arg3;
 + (id)addressDictionaryToString:(id)arg1;
 + (id)parseISO8601:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)dissectInternal:(id)arg1;
-- (id)entityForOutputItem:(id)arg1 parentEntity:(id)arg2;
+- (void)dissectInternal:(id)arg1 inContext:(id)arg2;
+- (id)entityForOutputItem:(id)arg1 templateShortname:(id)arg2 parentEntity:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5;
+- (id)eventsFromSchemaOrgItems:(id)arg1;
 - (id)init;
+- (id)jsonLdOutputFromEntity:(id)arg1;
 - (id)packedEntityForJS:(id)arg1;
-- (BOOL)shouldIgnoreEmail:(id)arg1;
+- (bool)shouldIgnorePipelineEntity:(id)arg1;
 
 @end

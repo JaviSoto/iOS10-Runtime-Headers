@@ -4,9 +4,9 @@
 
 @interface CADNotificationMonitorOperationGroup : CADOperationGroup <CADNotificationMonitorInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 + (id)whitelistedBundles;
 
 - (void)CADCalendar:(struct { int x1; int x2; })arg1 setAlertedWithError:(id /* block */)arg2;

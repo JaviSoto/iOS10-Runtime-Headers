@@ -6,20 +6,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-
-// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
 - (id)basicAccountIdentifier;
 - (id)collectionInfo;
-- (id)predicateForNotes;
-
-// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
-
 - (id)noteVisibilityTestingForSearchingAccount;
-- (id)predicateForVisibleAttachments;
-- (id)predicateForVisibleNotes;
-- (BOOL)supportsVisibilityTestingType:(int)arg1;
+- (id)predicateForNotes;
+- (id)predicateForSearchableAttachments;
+- (id)predicateForSearchableNotes;
+- (bool)supportsVisibilityTestingType:(long long)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SZExtractor : NSObject {
-    BOOL  _errorOccurred;
+    bool  _errorOccurred;
     SZExtractorInternalDelegate * _extractorDelegate;
     StreamingUnzipper * _inProcessUnzipper;
     NSObject<OS_dispatch_queue> * _serialQueue;

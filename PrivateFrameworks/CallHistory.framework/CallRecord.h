@@ -6,6 +6,7 @@
 
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, retain) NSNumber *answered;
+@property (nonatomic, retain) NSNumber *call_category;
 @property (nonatomic, retain) NSNumber *calltype;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) NSString *device_id;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSNumber *number_availability;
 @property (nonatomic, retain) NSNumber *originated;
 @property (nonatomic, retain) NSNumber *read;
+@property (nonatomic, retain) NSString *service_provider;
 @property (nonatomic, retain) NSString *unique_id;
 
 @end

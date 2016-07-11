@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -20,9 +20,9 @@
 - (void)hostDidChangeLeaderboardTimeScope:(id)arg1;
 - (void)hostDidChangeViewState:(id)arg1;
 - (void)hostDidParseDashboardImageNames:(id)arg1 leaderboardSetNames:(id)arg2 leaderboardNames:(id)arg3;
-- (void)hostSupportsShowingPlayForChallenge:(BOOL)arg1;
-- (void)hostSupportsShowingPlayForTurnBasedMatch:(BOOL)arg1;
-- (void)hostSupportsShowingQuitForTurnBasedMatch:(BOOL)arg1;
+- (void)hostSupportsShowingPlayForChallenge:(bool)arg1;
+- (void)hostSupportsShowingPlayForTurnBasedMatch:(bool)arg1;
+- (void)hostSupportsShowingQuitForTurnBasedMatch:(bool)arg1;
 - (void)playPressedForChallenge:(id)arg1;
 - (void)playerQuitMatch:(id)arg1;
 - (void)remoteControllerDidChangeViewState:(id)arg1;

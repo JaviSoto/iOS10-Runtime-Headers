@@ -10,7 +10,7 @@
 @property double endTime;
 @property double startTime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (double)endTime;

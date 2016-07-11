@@ -14,5 +14,6 @@
 - (void)clearScriptWorld;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue { }*)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)scriptWorld;
+- (bool)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 
 @end

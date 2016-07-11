@@ -5,7 +5,8 @@
 
 @required
 
-- (void)invalidateCurrentSubscriptionService;
 - (void)registerSubscriptionWithInfo:(NSString *)arg1 expirationDate:(NSDate *)arg2;
+- (void)unregisterAllSubscriptions;
+- (void)unregisterSubscriptionWithInfo:(NSString *)arg1;
 
 @end

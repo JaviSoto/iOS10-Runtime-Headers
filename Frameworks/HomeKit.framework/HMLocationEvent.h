@@ -10,11 +10,12 @@
 @property (nonatomic) int locationAuthorization;
 @property (nonatomic, retain) CLRegion *region;
 
-+ (BOOL)supportsSecureCoding;
++ (id)createWithDictionary:(id)arg1 home:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_configure:(id)arg1 eventTrigger:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;
 - (void)_updateRegion:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)didUpdateAuthorization:(int)arg1;

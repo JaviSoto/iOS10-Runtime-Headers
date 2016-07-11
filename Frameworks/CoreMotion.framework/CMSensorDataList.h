@@ -14,24 +14,24 @@
     unsigned long long  fBlockOffset;
     NSMutableArray * fCachedAccel;
     CLSensorRecorderAccelMeta * fCurrentBlock;
-    unsigned long long  fCurrentBlockDataIdentifier;
+    long long  fCurrentBlockDataIdentifier;
     unsigned long long  fCurrentBlockIdentifier;
     double  fCurrentBlockStartTime;
     unsigned long long  fCurrentBlockTimestamp;
     unsigned long long  fCurrentIdentifier;
     NSObject<OS_xpc_object> * fDataBuffer;
-    unsigned long  fDataBufferLength;
+    unsigned long long  fDataBufferLength;
     char * fDataBufferPtr;
     NSArray * fMetaArray;
     CMSensorRecorderInternal * fProxy;
-    unsigned long long  fRetrievedDataBufferIdentifier;
+    long long  fRetrievedDataBufferIdentifier;
     unsigned long long  fStartingIdentifier;
 }
 
 - (id).cxx_construct;
 - (void)_updateCurrentBlockProperties;
-- (BOOL)_updatePointers;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (bool)_updatePointers;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)initFrom:(double)arg1 to:(double)arg2;
 - (id)initWithIdentifier:(unsigned long long)arg1;

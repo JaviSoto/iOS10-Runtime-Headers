@@ -4,7 +4,7 @@
 
 @interface MusicColorAnalysisUtilities : NSObject
 
-+ (BOOL)_needsLightContentForArtworkBackgroundColor:(id)arg1;
++ (bool)_needsLightContentForArtworkBackgroundColor:(id)arg1;
 + (void)configureColorsBasedOnBackgroundColorOfArtworkCatalog:(id)arg1 usingBlock:(id /* block */)arg2;
 
 @end

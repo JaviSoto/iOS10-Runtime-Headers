@@ -3,43 +3,44 @@
  */
 
 @interface SUTermsAndConditionsView : UIView {
-    UIAlertView * _accountButtonAlert;
     SUSubtitledButton * _button;
     SUClientInterface * _clientInterface;
-    BOOL  _hideAccountButton;
-    float  _rightMargin;
-    int  _style;
+    <SUTermsAndConditionsViewDelegate> * _delegate;
+    bool  _hideAccountButton;
+    double  _rightMargin;
+    long long  _style;
     SULinkControl * _termsAndConditionsControl;
-    SUClientInterface * clientInterface;
 }
 
 @property (nonatomic, retain) SUClientInterface *clientInterface;
-@property (nonatomic) BOOL hideAccountButton;
-@property (nonatomic) float rightMargin;
-@property (nonatomic) int style;
+@property (nonatomic) <SUTermsAndConditionsViewDelegate> *delegate;
+@property (nonatomic) bool hideAccountButton;
+@property (nonatomic) double rightMargin;
+@property (nonatomic) long long style;
 
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)_button;
 - (void)_buttonAction:(id)arg1;
-- (float)_buttonHeightForStyle:(int)arg1;
+- (double)_buttonHeightForStyle:(long long)arg1;
 - (void)_clearButtonSelection:(id)arg1;
 - (void)_destroyButton;
-- (int)_linkStyleForStyle:(int)arg1;
+- (long long)_linkStyleForStyle:(long long)arg1;
 - (void)_termsAndConditionsAction:(id)arg1;
 - (id)_termsAndConditionsControl;
 - (void)_updateButton;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)clientInterface;
 - (void)dealloc;
-- (BOOL)hideAccountButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)delegate;
+- (bool)hideAccountButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)rightMargin;
+- (double)rightMargin;
 - (void)setClientInterface:(id)arg1;
-- (void)setHideAccountButton:(BOOL)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setHideAccountButton:(bool)arg1;
+- (void)setRightMargin:(double)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)sizeToFit;
-- (int)style;
+- (long long)style;
 
 @end

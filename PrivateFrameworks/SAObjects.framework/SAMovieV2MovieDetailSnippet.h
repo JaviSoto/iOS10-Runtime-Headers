@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSArray *genres;
 @property (nonatomic, copy) NSURL *hiresTrailerUri;
 @property (nonatomic, copy) NSURL *iTunesUri;
-@property (nonatomic) BOOL is3d;
+@property (nonatomic) bool is3d;
 @property (nonatomic, copy) NSURL *lowresTrailerUri;
 @property (nonatomic, copy) NSURL *movieIdentifier;
 @property (nonatomic, retain) SAMovieV2ReviewListSnippet *movieReviewListSnippet;
@@ -23,7 +23,7 @@
 @property (nonatomic, copy) NSArray *posterImages;
 @property (nonatomic, copy) NSNumber *qualityRating;
 @property (nonatomic, copy) NSString *rating;
-@property (nonatomic) int runtimeInMinutes;
+@property (nonatomic) long long runtimeInMinutes;
 @property (nonatomic, retain) SAMovieV2ShowtimeSnippet *showtimeSnippet;
 @property (nonatomic, copy) NSArray *studios;
 @property (nonatomic, copy) NSString *synopsis;
@@ -45,7 +45,7 @@
 - (id)groupIdentifier;
 - (id)hiresTrailerUri;
 - (id)iTunesUri;
-- (BOOL)is3d;
+- (bool)is3d;
 - (id)lowresTrailerUri;
 - (id)movieIdentifier;
 - (id)movieReviewListSnippet;
@@ -55,7 +55,7 @@
 - (id)posterImages;
 - (id)qualityRating;
 - (id)rating;
-- (int)runtimeInMinutes;
+- (long long)runtimeInMinutes;
 - (void)setActors:(id)arg1;
 - (void)setAdamId:(id)arg1;
 - (void)setAlternateProviderPunchouts:(id)arg1;
@@ -65,7 +65,7 @@
 - (void)setGenres:(id)arg1;
 - (void)setHiresTrailerUri:(id)arg1;
 - (void)setITunesUri:(id)arg1;
-- (void)setIs3d:(BOOL)arg1;
+- (void)setIs3d:(bool)arg1;
 - (void)setLowresTrailerUri:(id)arg1;
 - (void)setMovieIdentifier:(id)arg1;
 - (void)setMovieReviewListSnippet:(id)arg1;
@@ -75,7 +75,7 @@
 - (void)setPosterImages:(id)arg1;
 - (void)setQualityRating:(id)arg1;
 - (void)setRating:(id)arg1;
-- (void)setRuntimeInMinutes:(int)arg1;
+- (void)setRuntimeInMinutes:(long long)arg1;
 - (void)setShowtimeSnippet:(id)arg1;
 - (void)setStudios:(id)arg1;
 - (void)setSynopsis:(id)arg1;

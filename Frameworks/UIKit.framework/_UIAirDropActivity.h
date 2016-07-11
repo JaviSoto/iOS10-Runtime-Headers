@@ -5,19 +5,23 @@
 @interface _UIAirDropActivity : UIActivity {
     SFAirDropActivityViewController * _airDropViewController;
     id /* block */  _airdropCompletion;
+    long long  _maxPreviews;
 }
 
 @property (nonatomic, retain) SFAirDropActivityViewController *airDropViewController;
 @property (nonatomic, copy) id /* block */ airdropCompletion;
+@property (nonatomic) long long maxPreviews;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_thumbnailSize;
+- (struct CGSize { double x1; double x2; })_thumbnailSize;
 - (id)activityType;
 - (id)airDropViewController;
 - (id /* block */)airdropCompletion;
+- (long long)maxPreviews;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setAirDropViewController:(id)arg1;
 - (void)setAirdropCompletion:(id /* block */)arg1;
+- (void)setMaxPreviews:(long long)arg1;
 
 @end

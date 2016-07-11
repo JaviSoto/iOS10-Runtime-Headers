@@ -10,6 +10,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_runningQueries;
 - (void)databaseFull;
 - (void)databaseNoLongerFull;

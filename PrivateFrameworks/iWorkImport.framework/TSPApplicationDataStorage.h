@@ -3,14 +3,14 @@
  */
 
 @interface TSPApplicationDataStorage : TSPDocumentResourceDataStorage {
-    BOOL  _isValidated;
+    bool  _isValidated;
 }
 
 - (id)fileURLForInfo:(id)arg1;
 - (id)filenameForPreferredFilename:(id)arg1;
 - (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2;
-- (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(BOOL)arg3;
-- (BOOL)isReadable;
+- (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(bool)arg3;
+- (bool)isReadable;
 - (void)performReadWithAccessor:(id /* block */)arg1;
 - (void)validateIfNeeded;
 

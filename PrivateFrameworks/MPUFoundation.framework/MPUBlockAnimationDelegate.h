@@ -9,7 +9,7 @@
 @property (nonatomic, readonly, copy) id /* block */ completionHandler;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id /* block */)completionHandler;
 - (id)initWithCompletionHandler:(id /* block */)arg1;
 

@@ -7,29 +7,29 @@
     NSString * _categoryName;
     NSString * _identifier;
     NSString * _name;
-    int  _numberOfLikes;
+    long long  _numberOfLikes;
 }
 
 @property (nonatomic, copy) NSString *accessToken;
 @property (nonatomic, copy) NSString *categoryName;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) int numberOfLikes;
+@property (nonatomic) long long numberOfLikes;
 
 - (void).cxx_destruct;
 - (id)accessToken;
 - (id)categoryName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithGraphDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
-- (int)numberOfLikes;
+- (long long)numberOfLikes;
 - (void)setAccessToken:(id)arg1;
 - (void)setCategoryName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNumberOfLikes:(int)arg1;
+- (void)setNumberOfLikes:(long long)arg1;
 
 @end

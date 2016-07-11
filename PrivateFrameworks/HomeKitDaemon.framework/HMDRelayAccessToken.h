@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) NSUUID *accessoryIdentifier;
 @property (nonatomic, readonly) NSUUID *identifier;
 @property (nonatomic) HMDUser *user;
-@property (nonatomic, readonly) NSUUID *userIdentifier;
+@property (nonatomic, retain) NSUUID *userIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessToken;
@@ -26,14 +26,15 @@
 - (id)accessoryIdentifier;
 - (void)configureWithHome:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithAccessToken:(id)arg1 consentToken:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAccessory:(id)arg1;
 - (void)setUser:(id)arg1;
+- (void)setUserIdentifier:(id)arg1;
 - (id)user;
 - (id)userIdentifier;
 

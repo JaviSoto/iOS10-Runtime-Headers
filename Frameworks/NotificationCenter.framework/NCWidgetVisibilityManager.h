@@ -4,7 +4,7 @@
 
 @interface NCWidgetVisibilityManager : NSObject {
     <NCWidgetVisibilityDelegate> * _delegate;
-    BOOL  _delegateRespondsToWidgetVisibilityDidChange;
+    bool  _delegateRespondsToWidgetVisibilityDidChange;
     NSMutableDictionary * _extensionHashByIdentifier;
     NSMutableDictionary * _mobileGestaltAnswerByWidgetTag;
     struct MGNotificationTokenStruct { } * _mobileGestaltNotificationToken;
@@ -18,6 +18,7 @@
 @property (nonatomic) <NCWidgetVisibilityDelegate> *delegate;
 @property (getter=_mobileGestaltAnswerByWidgetTag, nonatomic, retain) NSMutableDictionary *mobileGestaltAnswerByWidgetTag;
 
+- (void).cxx_destruct;
 - (id)_allWidgetTags;
 - (id)_mobileGestaltAnswerByWidgetTag;
 - (void)_registerForVisiblityPreferenceChanges;
@@ -25,15 +26,15 @@
 - (void)_updateMobileGestaltQuestions;
 - (void)_updateWidgetTagsAndIconVisibilityForExtension:(id)arg1;
 - (void)_updateWidgetTagsAndVisibilityForExtensions:(id)arg1;
-- (BOOL)_updateWidgetVisibilityPreference:(id)arg1;
-- (BOOL)_updateWidgetVisibilityPreferences;
+- (bool)_updateWidgetVisibilityPreference:(id)arg1;
+- (bool)_updateWidgetVisibilityPreferences;
 - (id)_widgetTagsForWidgetExtensionInfoDictionary:(id)arg1;
 - (void)_widgetVisibilityChanged;
 - (void)_widgetVisibilityPreferencesChanged;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isWidgetWithIdentifierVisible:(id)arg1;
+- (bool)isWidgetWithIdentifierVisible:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMobileGestaltAnswerByWidgetTag:(id)arg1;
 - (void)updateVisibilityForExtensions:(id)arg1;

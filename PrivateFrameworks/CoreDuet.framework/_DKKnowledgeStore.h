@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKKnowledgeStore : NSObject {
+@interface _DKKnowledgeStore : NSObject <_DKKnowledgeDeleting, _DKKnowledgeEventStreamDeleting, _DKKnowledgeQuerying, _DKKnowledgeSaving> {
     NSXPCConnection * _connection;
     NSObject<OS_dispatch_queue> * _defaultQueue;
     _DKPrivacyPolicyEnforcer * _privacyEnforcer;
@@ -15,16 +15,23 @@
 @property (readonly) _DKRateLimitPolicyEnforcer *rateLimitEnforcer;
 
 + (id)knowledgeStore;
++ (id)knowledgeStoreWithDirectReadOnlyAccess;
 
 - (void).cxx_destruct;
 - (id)connection;
+- (void)dealloc;
 - (id)defaultQueue;
+- (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
+- (bool)deleteObjects:(id)arg1 error:(id*)arg2;
 - (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)executeQuery:(id)arg1 error:(id*)arg2;
 - (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1;
 - (id)privacyEnforcer;
 - (id)rateLimitEnforcer;
+- (bool)saveObjects:(id)arg1 error:(id*)arg2;
 - (void)saveObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setConnection:(id)arg1;
 - (void)setDefaultQueue:(id)arg1;

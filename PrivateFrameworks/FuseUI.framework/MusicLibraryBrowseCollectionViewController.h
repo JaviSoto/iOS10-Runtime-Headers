@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryBrowseCollectionViewController : UIViewController <MusicClientContextConsuming, MusicCollectionViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicEntityVerticalSectionHeaderViewDelegate, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLayoutMarginProxyViewDelegate, MusicLibraryViewConfigurationConsuming, MusicSplitInitialStateProviding, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+@interface MusicLibraryBrowseCollectionViewController : UIViewController <MusicClientContextConsuming, MusicCollectionViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicEntityVerticalSectionHeaderViewDelegate, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryViewConfigurationConsuming, MusicSplitInitialStateProviding, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
+    MusicAsynchronousPropertyLoadingController * _asynchronousPropertyLoadingController;
     Class  _cellClass;
     NSString * _cellReuseIdentifier;
     MusicClientContext * _clientContext;
     MusicCollectionView * _collectionView;
     MusicLibraryBrowseCollectionViewConfiguration * _collectionViewConfiguration;
     <MusicLibraryBrowseCollectionViewControllerDelegate> * _delegate;
+    MusicEntityDownloadInformationController * _entityDownloadInformationController;
     MusicEntityCollectionViewDescriptor * _entityViewDescriptor;
     SKUIDynamicPageSectionIndexMapper * _indexMapper;
     MusicEntityValueContext * _itemEntityValueContext;
-    int  _lastSelectionBehavior;
+    long long  _lastSelectionBehavior;
     MusicLibraryBrowseCollectionViewLayoutMetrics * _layoutMetrics;
     MusicEntityPlayabilityController * _playabilityController;
     MusicEntityPlaybackStatusController * _playbackStatusController;
@@ -20,9 +22,11 @@
     NSMutableArray * _reusableCoalescingEntityValueProviders;
     MusicSectionEntityValueContext * _sectionEntityValueContext;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _sizeForLayoutMetrics;
+    <UIViewControllerPreviewing> * _viewControllerPreviewing;
+    NSMapTable * _viewToDownloadInformationObserverToken;
 }
 
 @property (getter=_cellClass, nonatomic, readonly) Class _cellClass;
@@ -34,30 +38,33 @@
 @property (nonatomic) <MusicLibraryBrowseCollectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) MusicEntityCollectionViewDescriptor *entityViewDescriptor;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MusicLibraryBrowseCollectionViewConfiguration *libraryViewConfiguration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (Class)_cellClass;
 - (id)_cellReuseIdentifier;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_collectionViewLayoutMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_collectionViewLayoutMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_collectionViewLayoutMarginsForLayoutMetricsContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (id)_dequeueCoalescingEntityValueProvider;
-- (void)_entityPlayabilityControllerDidChangeNotification:(id)arg1;
+- (unsigned long long)_entityPlayabilityResultForEntityValueContext:(id)arg1;
 - (id)_entityValueContextAtIndexPath:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)_handleEntityPlayabilityControllerDidChangeNotification:(id)arg1;
 - (void)_handleEntityProviderDidInvalidateNotification:(id)arg1;
 - (void)_invalidateLayoutMetrics;
-- (BOOL)_isEntityValueContextDisabled:(id)arg1;
+- (id)_itemEntityValueContext;
 - (id)_layoutMetrics;
 - (void)_presentContextualActionsWithEntityValueContext:(id)arg1 fromButton:(id)arg2;
 - (void)_recycleCoalescingEntityValueProvider:(id)arg1;
-- (id)_sectionEntityValueContextForIndex:(unsigned int)arg1;
+- (double)_secondaryReferenceMetricForQueryingLayoutInterpolators;
+- (id)_sectionEntityValueContextForIndex:(unsigned long long)arg1;
+- (void)_updateCollectionViewFlowLayoutMetricsAndNotifyDelegate:(bool)arg1;
 - (void)_updateEntityDisabledStateForCell:(id)arg1 withEntityValueContext:(id)arg2;
 - (void)_updateEntityDisabledStateForVisibleCells;
-- (void)_updateFlatteningToSingleSectionPolicyAllowingCollectionViewReload:(BOOL)arg1;
-- (void)_updateMetricsOfCollectionViewFlowLayout:(id)arg1 notifyDelegate:(BOOL)arg2;
+- (void)_updateFlatteningToSingleSectionPolicyAllowingCollectionViewReload:(bool)arg1;
 - (void)_updatePlaybackStatusForCell:(id)arg1 withEntityValueContext:(id)arg2;
 - (void)_updatePlaybackStatusForVisibleCells;
 - (id)clientContext;
@@ -68,9 +75,9 @@
 - (void)collectionView:(id)arg1 didSelectAddButtonForCell:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectContextualActionsButton:(id)arg2 forCell:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (void)collectionView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2 forCell:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectPlayButtonAction:(unsigned long long)arg2 forCell:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
@@ -79,34 +86,37 @@
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
-- (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
+- (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(long long)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)entityViewDescriptor;
-- (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
+- (bool)getContentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned long long)arg2;
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
-- (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)indexBarEntryAtIndex:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)layoutMarginProxyViewLayoutMarginsDidChange:(id)arg1;
 - (id)libraryViewConfiguration;
 - (id)loadEntityViewDescriptor;
-- (void)loadView;
-- (unsigned int)maximumItemsPerRow;
-- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
-- (unsigned int)numberOfIndexBarEntries;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (unsigned long long)maximumItemsPerRow;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (void)music_viewInheritedLayoutInsetsDidChange;
+- (unsigned long long)numberOfIndexBarEntries;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)sectionHeaderViewDidSelectButton:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)showInitialStateForSplitViewController;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 
 @end

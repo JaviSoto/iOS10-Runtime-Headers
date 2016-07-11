@@ -4,8 +4,9 @@
 
 @interface _NSPersonNameComponentsStyleFormatterFamilyInitialVariant : _NSPersonNameComponentsStyleFormatterShortVariantGeneral
 
-- (id)alterations;
-- (BOOL)fullComponentsAreValid:(id)arg1;
+- (id)abbreviatedKeys;
+- (bool)fullComponentsAreValid:(id)arg1;
 - (id)keysOfInterest;
+- (long long)shortNameFormat;
 
 @end

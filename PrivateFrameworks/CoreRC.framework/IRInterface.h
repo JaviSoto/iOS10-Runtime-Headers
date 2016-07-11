@@ -4,34 +4,34 @@
 
 @interface IRInterface : CoreRCInterface {
     <IRInterfaceDelegate> * _delegate;
-    BOOL  _isRxInterface;
-    BOOL  _isTxInterface;
+    bool  _isRxInterface;
+    bool  _isTxInterface;
 }
 
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic) <IRInterfaceDelegate> *delegate;
-@property (nonatomic) BOOL isRxInterface;
-@property (nonatomic) BOOL isTxInterface;
-@property (nonatomic, readonly) unsigned int maxStoredCommands;
+@property (nonatomic) bool isRxInterface;
+@property (nonatomic) bool isTxInterface;
+@property (nonatomic, readonly) unsigned long long maxStoredCommands;
 
 - (id)buttons;
-- (BOOL)clearAllStoredCommands:(id*)arg1;
+- (bool)clearAllStoredCommands:(id*)arg1;
 - (id)delegate;
-- (BOOL)disableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
-- (BOOL)enableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
-- (BOOL)isRxInterface;
-- (BOOL)isTxInterface;
-- (unsigned int)maxStoredCommands;
-- (BOOL)processSubframe:(unsigned int*)arg1 start:(int)arg2 count:(int)arg3 timestamp:(unsigned long long)arg4;
+- (bool)disableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
+- (bool)enableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
+- (bool)isRxInterface;
+- (bool)isTxInterface;
+- (unsigned long long)maxStoredCommands;
+- (bool)processSubframe:(unsigned int*)arg1 start:(int)arg2 count:(int)arg3 timestamp:(unsigned long long)arg4;
 - (void)receivedCommand:(id)arg1;
 - (void)receivedFrame:(id)arg1;
-- (void)receivedHIDEvent:(id)arg1;
-- (BOOL)resetAllButtons:(id*)arg1;
-- (BOOL)setCommand:(id)arg1 forButtonCombination:(id)arg2 delay:(double)arg3 error:(id*)arg4;
+- (bool)resetAllButtons:(id*)arg1;
+- (bool)setCommand:(id)arg1 forButtonCombination:(id)arg2 delay:(double)arg3 error:(id*)arg4;
 - (void)setDelegate:(id)arg1;
-- (void)setIsRxInterface:(BOOL)arg1;
-- (void)setIsTxInterface:(BOOL)arg1;
-- (BOOL)transmitCommand:(id)arg1 pressDuration:(double)arg2 error:(id*)arg3;
-- (BOOL)transmitFrame:(id)arg1 error:(id*)arg2;
+- (void)setIsRxInterface:(bool)arg1;
+- (void)setIsTxInterface:(bool)arg1;
+- (bool)setPairState:(bool)arg1 forDeviceUID:(unsigned char)arg2 error:(id*)arg3;
+- (bool)transmitCommand:(id)arg1 pressDuration:(double)arg2 error:(id*)arg3;
+- (bool)transmitFrame:(id)arg1 error:(id*)arg2;
 
 @end

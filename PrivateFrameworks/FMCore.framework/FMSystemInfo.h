@@ -6,14 +6,16 @@
 
 + (id)sharedInstance;
 
-- (void)authTokenOfType:(int)arg1 completionBlock:(id /* block */)arg2;
+- (id)btMacAddress;
 - (id)deviceClass;
 - (id)deviceModelName;
 - (id)deviceName;
 - (id)deviceUDID;
+- (id)ecid;
+- (bool)hasSEP;
 - (id)imei;
-- (BOOL)isDeviceSecured;
-- (BOOL)isInternalBuild;
+- (bool)isDeviceSecured;
+- (bool)isInternalBuild;
 - (id)meid;
 - (id)osBuildVersion;
 - (id)osVersion;
@@ -21,5 +23,6 @@
 - (id)productName;
 - (id)productType;
 - (id)serialNumber;
+- (id)wifiMacAddress;
 
 @end

@@ -10,13 +10,13 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _scenesByIdentifier;
     NSObject<OS_dispatch_queue> * _scenesQueue;
-    BOOL  _synchronizingFence;
+    bool  _synchronizingFence;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSWorkspaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) FBSSerialQueue *queue;
 @property (nonatomic, readonly, copy) NSArray *scenes;
 @property (readonly) Class superclass;
@@ -39,8 +39,8 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithSerialQueue:(id)arg1;
-- (BOOL)isTrackingAnySystemAnimationFence;
-- (BOOL)isUIApplicationWorkspace;
+- (bool)isTrackingAnySystemAnimationFence;
+- (bool)isUIApplicationWorkspace;
 - (id)queue;
 - (void)requestDestructionOfScene:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)requestSceneCreationWithIdentifier:(id)arg1 initialClientSettings:(id)arg2 completion:(id /* block */)arg3;
@@ -49,7 +49,8 @@
 - (id)sceneWithIdentifier:(id)arg1;
 - (id)scenes;
 - (void)setDelegate:(id)arg1;
+- (void)synchronizeSystemAnimationFencesWithCleanUpBlock:(id /* block */)arg1;
 - (void)synchronizeSystemAnimationFencesWithSpinCleanUpBlock:(id /* block */)arg1;
-- (BOOL)trackSystemAnimationFence:(id)arg1;
+- (bool)trackSystemAnimationFence:(id)arg1;
 
 @end

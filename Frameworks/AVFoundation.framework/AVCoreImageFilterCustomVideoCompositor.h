@@ -7,18 +7,18 @@
     NSObject<OS_dispatch_queue> * _defaultCIContextThreadSafety;
     struct CGColorSpace { } * _dstColorSpace;
     NSObject<OS_dispatch_group> * _filteringRequestsInFlight;
-    BOOL  _shouldCancelAllRequests;
+    bool  _shouldCancelAllRequests;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) struct CGColorSpace { }*dstColorSpace;
 @property (readonly) NSObject<OS_dispatch_group> *filteringRequestsInFlight;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *requiredPixelBufferAttributesForRenderContext;
-@property BOOL shouldCancelAllRequests;
+@property bool shouldCancelAllRequests;
 @property (nonatomic, readonly) NSDictionary *sourcePixelBufferAttributes;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsWideColorSourceFrames;
 
 + (void)initialize;
 
@@ -26,16 +26,15 @@
 - (void)cancelAllPendingVideoCompositionRequests;
 - (void)dealloc;
 - (id)defaultCIContext;
-- (struct CGColorSpace { }*)dstColorSpace;
 - (id)filteringRequestsInFlight;
 - (void)finalize;
 - (id)init;
 - (void)renderContextChanged:(id)arg1;
 - (id)requiredPixelBufferAttributesForRenderContext;
-- (void)setDstColorSpace:(struct CGColorSpace { }*)arg1;
-- (void)setShouldCancelAllRequests:(BOOL)arg1;
-- (BOOL)shouldCancelAllRequests;
+- (void)setShouldCancelAllRequests:(bool)arg1;
+- (bool)shouldCancelAllRequests;
 - (id)sourcePixelBufferAttributes;
 - (void)startVideoCompositionRequest:(id)arg1;
+- (bool)supportsWideColorSourceFrames;
 
 @end

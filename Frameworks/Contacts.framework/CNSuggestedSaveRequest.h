@@ -14,6 +14,7 @@
 
 - (void)confirmSuggestion:(id)arg1;
 - (id)confirmedSuggestions;
+- (void)dealloc;
 - (id)mutableConfirmedSuggestions;
 - (id)mutableRejectedSuggestions;
 - (void)rejectSuggestion:(id)arg1;

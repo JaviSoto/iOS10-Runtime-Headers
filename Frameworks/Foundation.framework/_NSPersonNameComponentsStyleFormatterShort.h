@@ -3,29 +3,31 @@
  */
 
 @interface _NSPersonNameComponentsStyleFormatterShort : _NSPersonNameComponentsStyleFormatter {
-    BOOL  _forceShortNameEnabled;
-    int  _shortNameFormat;
+    bool  _forceShortNameEnabled;
+    long long  _shortNameFormat;
     _NSPersonNameComponentsStyleFormatter * _subFormatter;
     _NSPersonNameComponentsStyleFormatterShortVariantGeneral * _variantFormatter;
 }
 
-@property BOOL forceShortNameEnabled;
-@property int shortNameFormat;
-@property (readonly) _NSPersonNameComponentsStyleFormatterShortVariantGeneral *subFormatter;
+@property bool forceShortNameEnabled;
+@property long long shortNameFormat;
+@property (retain) _NSPersonNameComponentsStyleFormatter *subFormatter;
 @property (readonly) _NSPersonNameComponentsStyleFormatterShortVariantGeneral *variantFormatter;
 
 - (id)_formattedStringFromOrderedKeys:(id)arg1 components:(id)arg2 attributesByRange:(id)arg3;
-- (id)alterations;
+- (id)abbreviatedKeys;
 - (void)dealloc;
 - (id)fallbackStyleFormatter;
-- (BOOL)forceShortNameEnabled;
+- (bool)forceShortNameEnabled;
 - (id)initWithMasterFormatter:(id)arg1;
+- (bool)isEnabled;
 - (id)keysOfInterest;
 - (id)orderedKeysOfInterest;
-- (void)setForceShortNameEnabled:(BOOL)arg1;
-- (void)setShortNameFormat:(int)arg1;
-- (int)shortNameFormat;
-- (BOOL)shouldFallBack;
+- (void)setForceShortNameEnabled:(bool)arg1;
+- (void)setShortNameFormat:(long long)arg1;
+- (void)setSubFormatter:(id)arg1;
+- (long long)shortNameFormat;
+- (bool)shouldFallBack;
 - (id)subFormatter;
 - (id)variantFormatter;
 

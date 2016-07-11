@@ -9,7 +9,7 @@
 @property (nonatomic, readonly, retain) NSSet *accounts;
 
 - (id)_initWithService:(id)arg1;
-- (id)_initWithService:(id)arg1 onIDSQueue:(BOOL)arg2;
+- (id)_initWithService:(id)arg1 onIDSQueue:(bool)arg2;
 - (id)_internal;
 - (void)_removeAccount:(id)arg1;
 - (id)accountWithLoginID:(id)arg1 service:(id)arg2;

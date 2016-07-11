@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     ADAdSlot * _adSlot;
     NSArray * _adTracks;
-    BOOL  _hasBegunPlayback;
+    bool  _hasBegunPlayback;
 }
 
 @property (nonatomic, readonly) ADAdSlot *adSlot;
@@ -14,34 +14,31 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSData *followingSongData;
-@property (getter=isGatewayAdSlot, nonatomic) BOOL gatewayAdSlot;
-@property (readonly) unsigned int hash;
+@property (getter=isGatewayAdSlot, nonatomic) bool gatewayAdSlot;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSData *previousSongData;
 @property (nonatomic, copy) NSData *stationData;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL wasPreparedAsStationEntryAdSlot;
 
 - (void).cxx_destruct;
 - (id)adSlot;
 - (void)adSlot:(id)arg1 didChangeSelectedAds:(id)arg2 previousAds:(id)arg3;
 - (id)adTracks;
 - (void)dealloc;
-- (void)didFinishPlaybackOfAdTracks:(id)arg1 skippedCount:(int)arg2;
+- (void)didFinishPlaybackOfAdTracks:(id)arg1 skippedCount:(long long)arg2;
 - (id)followingSongData;
 - (id)identifier;
 - (id)init;
 - (id)initWithAdSlot:(id)arg1;
-- (BOOL)isGatewayAdSlot;
+- (bool)isGatewayAdSlot;
 - (id)previousSongData;
 - (void)setFollowingSongData:(id)arg1;
-- (void)setGatewayAdSlot:(BOOL)arg1;
+- (void)setGatewayAdSlot:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPreviousSongData:(id)arg1;
 - (void)setStationData:(id)arg1;
-- (void)setWasPreparedAsStationEntryAdSlot:(BOOL)arg1;
 - (id)stationData;
-- (BOOL)wasPreparedAsStationEntryAdSlot;
-- (void)willBeginPlaybackOfAdTracks:(id)arg1 forSpaceType:(int)arg2;
+- (void)willBeginPlaybackOfAdTracks:(id)arg1 forSpaceType:(long long)arg2;
 
 @end

@@ -3,6 +3,8 @@
  */
 
 @interface _ATXTimeHistogram : NSObject <NSSecureCoding> {
+    bool  _applyFilter;
+    unsigned short  _bucketCount;
     unsigned int  _capacity;
     unsigned int  _count;
     struct { double x1; unsigned int x2; unsigned short x3; } * _entries;
@@ -10,10 +12,11 @@
 
 @property (nonatomic, readonly) unsigned int count;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2;
 - (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2 count:(double)arg3;
+- (unsigned short)circleDifference:(unsigned short)arg1 atTime:(unsigned short)arg2;
 - (void)clear;
 - (double)computeCountWithEventId:(unsigned int)arg1;
 - (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2;
@@ -26,8 +29,10 @@
 - (id)description;
 - (id)descriptionWithEventNames:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
+- (id)initWithBucketCount:(unsigned short)arg1 filter:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
-- (unsigned short)pointsPerDay;
+- (unsigned short)pointsPerTimeInterval;
 - (void)removeEventsWithId:(unsigned int)arg1;
 - (void)sortBuckets;
 - (double)totalCounts;

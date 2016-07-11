@@ -5,9 +5,10 @@
 @interface SAMPQueueState : AceObject <SABackgroundContextObject>
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
+@property (nonatomic, retain) SANPVideoAudioAndSubtitleLanguageOptions *audioAndSubtitleLanguageOptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAMPMediaItem *listeningToItem;
 @property (nonatomic, retain) SANPCommandInfo *nowPlayingCommandInfo;
 @property (nonatomic, retain) SAMPNowPlayingQueuePosition *playbackQueuePosition;
@@ -20,6 +21,7 @@
 + (id)queueStateWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)applicationIdentifier;
+- (id)audioAndSubtitleLanguageOptions;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)listeningToItem;
@@ -27,6 +29,7 @@
 - (id)playbackQueuePosition;
 - (id)playbackRate;
 - (void)setApplicationIdentifier:(id)arg1;
+- (void)setAudioAndSubtitleLanguageOptions:(id)arg1;
 - (void)setListeningToItem:(id)arg1;
 - (void)setNowPlayingCommandInfo:(id)arg1;
 - (void)setPlaybackQueuePosition:(id)arg1;

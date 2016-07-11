@@ -3,8 +3,8 @@
  */
 
 @interface BKSProcessAssertion : NSObject <BKSProcessAssertionClientHandler> {
-    BOOL  _acquired;
-    BOOL  _acquiring;
+    bool  _acquired;
+    bool  _acquiring;
     id /* block */  _acquisitionHandler;
     NSString * _bundleIdentifier;
     BKSProcessAssertionClient * _client;
@@ -21,33 +21,40 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int flags;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) unsigned int reason;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL valid;
+@property (nonatomic, readonly) bool valid;
 
 + (id)NameForReason:(unsigned int)arg1;
 
+- (bool)_acquireAssertionSync;
 - (void)_clientQueue_acquireAssertion;
-- (void)_clientQueue_invalidate:(BOOL)arg1;
-- (void)_clientQueue_notifyAssertionAcquired:(BOOL)arg1;
+- (void)_clientQueue_invalidate:(bool)arg1;
+- (void)_clientQueue_notifyAssertionAcquired:(bool)arg1;
 - (void)_clientQueue_updateAssertion;
+- (bool)acquire;
 - (void)assertionDidInvalidate;
 - (void)dealloc;
 - (unsigned int)flags;
 - (id)init;
+- (id)initWithBundleIdentifier:(id)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4;
 - (id)initWithBundleIdentifier:(id)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id /* block */)arg5;
+- (id)initWithBundleIdentifier:(id)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id /* block */)arg5 acquire:(bool)arg6;
+- (id)initWithPID:(int)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4;
 - (id)initWithPID:(int)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id /* block */)arg5;
+- (id)initWithPID:(int)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id /* block */)arg5 acquire:(bool)arg6;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
 - (id)name;
+- (id)newCreateEvent;
 - (unsigned int)reason;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setName:(id)arg1;
 - (void)setReason:(unsigned int)arg1;
-- (BOOL)valid;
+- (bool)valid;
 
 @end

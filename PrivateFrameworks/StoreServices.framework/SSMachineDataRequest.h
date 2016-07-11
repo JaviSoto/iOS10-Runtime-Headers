@@ -6,38 +6,43 @@
     NSNumber * _accountID;
     NSData * _actionData;
     NSString * _actionName;
-    BOOL  _allowsBootstrapCellularData;
-    int  _protocolVersion;
-    BOOL  _waitsForPurchaseOperations;
+    bool  _allowsBootstrapCellularData;
+    long long  _protocolVersion;
+    NSString * _userAgent;
+    bool  _waitsForPurchaseOperations;
 }
 
 @property (copy) NSNumber *accountIdentifier;
 @property (copy) NSData *actionData;
 @property (copy) NSString *actionName;
-@property BOOL allowsBootstrapCellularData;
+@property bool allowsBootstrapCellularData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property int protocolVersion;
+@property (readonly) unsigned long long hash;
+@property long long protocolVersion;
 @property (readonly) Class superclass;
-@property BOOL waitsForPurchaseOperations;
+@property (copy) NSString *userAgent;
+@property bool waitsForPurchaseOperations;
 
 - (id)accountIdentifier;
 - (id)actionData;
 - (id)actionName;
-- (BOOL)allowsBootstrapCellularData;
+- (bool)allowsBootstrapCellularData;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithURLResponse:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (int)protocolVersion;
+- (long long)protocolVersion;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setActionData:(id)arg1;
 - (void)setActionName:(id)arg1;
-- (void)setAllowsBootstrapCellularData:(BOOL)arg1;
-- (void)setProtocolVersion:(int)arg1;
-- (void)setWaitsForPurchaseOperations:(BOOL)arg1;
+- (void)setAllowsBootstrapCellularData:(bool)arg1;
+- (void)setProtocolVersion:(long long)arg1;
+- (void)setUserAgent:(id)arg1;
+- (void)setWaitsForPurchaseOperations:(bool)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)waitsForPurchaseOperations;
+- (void)startWithDetailedCompletionBlock:(id /* block */)arg1;
+- (id)userAgent;
+- (bool)waitsForPurchaseOperations;
 
 @end

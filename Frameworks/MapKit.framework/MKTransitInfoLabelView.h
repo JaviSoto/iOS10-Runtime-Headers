@@ -2,48 +2,59 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitInfoLabelView : UILabel {
-    BOOL  _containsText;
-    BOOL  _hasCustomFont;
-    BOOL  _hasCustomShieldSize;
+@interface MKTransitInfoLabelView : _MKUILabel {
+    bool  _containsText;
+    bool  _hasCustomFont;
+    bool  _hasCustomIconSize;
+    bool  _hasCustomShieldSize;
+    long long  _iconSize;
     NSArray * _labelItems;
     MKMapItem * _mapItem;
-    float  _maxImageY;
-    float  _maxWidth;
-    int  _shieldSize;
-    float  _spaceBetweenShields;
+    double  _maxWidth;
+    long long  _shieldSize;
+    double  _spaceBetweenShields;
+    bool  _truncateBySwitchingToTextOnly;
 }
 
-@property (nonatomic, readonly) BOOL containsText;
-@property (nonatomic, retain) NSArray *labelItems;
+@property (nonatomic, readonly) bool containsText;
+@property (nonatomic) long long iconSize;
+@property (nonatomic, copy) NSArray *labelItems;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) int shieldSize;
-@property (nonatomic) float spaceBetweenShields;
+@property (nonatomic) double maxWidth;
+@property (nonatomic) long long shieldSize;
+@property (nonatomic) double spaceBetweenShields;
+@property (nonatomic) bool truncateBySwitchingToTextOnly;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
+- (id)_generateText:(bool)arg1 allowElipsis:(bool)arg2;
+- (long long)_iconSizeForContentSizeCategory:(id)arg1;
 - (id)_imageForArtworkDataSource:(id)arg1;
 - (id)_imageForLabelItem:(id)arg1;
 - (id)_imageForShieldDataSource:(id)arg1;
-- (void)_setFont:(id)arg1 custom:(BOOL)arg2;
+- (void)_setFont:(id)arg1 custom:(bool)arg2;
 - (void)_setupLabelInfo;
-- (int)_shieldSizeForContentSizeCategory:(id)arg1;
-- (BOOL)containsText;
+- (long long)_shieldSizeForContentSizeCategory:(id)arg1;
+- (id)_stringAttributes;
+- (bool)containsText;
 - (void)dealloc;
-- (id)font;
+- (long long)iconSize;
 - (id)init;
 - (id)initWithMapItem:(id)arg1;
-- (id)initWithMapItem:(id)arg1 maxWidth:(float)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithMapItem:(id)arg1 maxWidth:(double)arg2;
 - (id)labelItems;
 - (id)mapItem;
+- (double)maxWidth;
 - (void)setFont:(id)arg1;
+- (void)setIconSize:(long long)arg1;
 - (void)setLabelItems:(id)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setShieldSize:(int)arg1;
-- (void)setSpaceBetweenShields:(float)arg1;
-- (int)shieldSize;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (float)spaceBetweenShields;
+- (void)setMaxWidth:(double)arg1;
+- (void)setShieldSize:(long long)arg1;
+- (void)setSpaceBetweenShields:(double)arg1;
+- (void)setTruncateBySwitchingToTextOnly:(bool)arg1;
+- (long long)shieldSize;
+- (double)spaceBetweenShields;
+- (bool)truncateBySwitchingToTextOnly;
 
 @end

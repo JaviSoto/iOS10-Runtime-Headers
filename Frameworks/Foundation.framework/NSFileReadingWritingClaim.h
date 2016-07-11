@@ -3,30 +3,33 @@
  */
 
 @interface NSFileReadingWritingClaim : NSFileAccessClaim {
-    int  _readingLinkResolutionCount;
+    long long  _readingLinkResolutionCount;
     NSFileAccessNode * _readingLocation;
-    unsigned int  _readingOptions;
+    unsigned long long  _readingOptions;
     NSURL * _readingURL;
-    BOOL  _readingURLDidChange;
+    bool  _readingURLDidChange;
     NSFileAccessNode * _rootNode;
     NSFileAccessNode * _writingLocation;
-    unsigned int  _writingOptions;
+    unsigned long long  _writingOptions;
     NSURL * _writingURL;
-    BOOL  _writingURLDidChange;
+    bool  _writingURLDidChange;
 }
 
++ (bool)supportsSecureCoding;
+
 - (id)allURLs;
-- (BOOL)blocksClaim:(id)arg1;
+- (bool)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
-- (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
+- (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
-- (id)initWithPurposeID:(id)arg1 readingURL:(id)arg2 options:(unsigned int)arg3 writingURL:(id)arg4 options:(unsigned int)arg5 claimer:(id /* block */)arg6;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPurposeID:(id)arg1 readingURL:(id)arg2 options:(unsigned long long)arg3 writingURL:(id)arg4 options:(unsigned long long)arg5 claimer:(id /* block */)arg6;
 - (void)invokeClaimer;
-- (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
+- (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)resolveURLsThenMaybeContinueInvokingClaimer:(id /* block */)arg1;
 

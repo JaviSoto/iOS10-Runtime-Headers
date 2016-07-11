@@ -2,28 +2,32 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKGlobeCameraController : VKScreenCameraController <VKInteractiveCameraController> {
+@interface VKGlobeCameraController : VKScreenCameraController <VKGesturingCameraController> {
+    double  _beganDoublePanPitch;
     struct CameraManager { 
         int (**_vptr$CameraManager)(); 
         bool _panBegin; 
         bool _panInProgress; 
         bool _panEnd; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _panCurrentCursor; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _panPreviousCursor; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _panStartCursor; 
-        struct Position3d { 
-            double _latitude; 
-            double _longitude; 
-            double _height; 
+        struct Coordinate3D<Radians, double> { 
+            struct Unit<RadianUnitDescription, double> { 
+                double _value; 
+            } latitude; 
+            struct Unit<RadianUnitDescription, double> { 
+                double _value; 
+            } longitude; 
+            struct Unit<MeterUnitDescription, double> { 
+                double _value; 
+            } altitude; 
         } _panStartPosition; 
         double _panDistance; 
         bool _panAtStartPosition; 
@@ -35,9 +39,8 @@
             double _longitude; 
             double _height; 
         } _rotateStartPosition; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _rotateCurrentCursor; 
         double _rotateAngle; 
         bool _tiltBegin; 
@@ -48,13 +51,11 @@
             double _longitude; 
             double _height; 
         } _tiltStartPosition; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _tiltCurrentCursor; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _tiltPreviousCursor; 
         double _tiltAngle; 
         bool _zoomBegin; 
@@ -65,9 +66,8 @@
             double _longitude; 
             double _height; 
         } _zoomStartPosition; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _zoomCurrentCursor; 
         double _zoomFactor; 
         double _zoomStartDistance; 
@@ -85,117 +85,115 @@
             double _y; 
             double _z; 
         } _startTiltLimitPosition; 
-        struct Vector3d { 
-            double _x; 
-            double _y; 
-            double _z; 
+        struct Matrix<double, 3, 1> { 
+            double _e[3]; 
         } _startTiltLimitDirection; 
         double _fullZoomTiltLimitFactor; 
     }  _cameraManager;
-    BOOL  _couldEnter3DMode;
+    bool  _couldEnter3DMode;
     double  _currentDoublePanPitch;
+    double  _currentZoomLevel;
     int  _flyoverMode;
-    struct GlobeView { int (**x1)(); } * _globeView;
-    BOOL  _isPitching;
-    BOOL  _isRotating;
-    BOOL  _wasPitched;
+    struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_12_1_1; } x12; struct vector<altitude::TileBound, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_13_1_1; struct TileBound {} *x_13_1_2; struct __compressed_pair<altitude::TileBound *, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_3_2_1; } x_13_1_3; } x13; struct vector<altitude::SimpleTileKey, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_14_1_1; struct SimpleTileKey {} *x_14_1_2; struct __compressed_pair<altitude::SimpleTileKey *, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_3_2_1; } x_14_1_3; } x14; bool x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; struct VKClassicGlobeCanvas { } *x20; bool x21; bool x22; int x23; struct AnimationManager { struct AnimationTimer { struct AnimationReferenceTimer {} *x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_24_1_1; double x_24_1_2; struct vector<altitude::AnimationObjectHolder, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_2_1; struct AnimationObjectHolder {} *x_3_2_2; struct __compressed_pair<altitude::AnimationObjectHolder *, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_3_1; } x_3_2_3; } x_24_1_3; } x24; struct Timer { double x_25_1_1; } x25; double x26; bool x27; double x28; double x29; double x30; struct FrameLatLon { double x_31_1_1; double x_31_1_2; double x_31_1_3; double x_31_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_31_1_5; } x31; struct C3mmRequestManager {} *x32; struct RenderableGroup {} *x33; unsigned int x34; double x35; bool x36; bool x37; struct LabelDataManagerPrivate {} *x38; bool x39; bool x40; bool x41; bool x42; struct RouteLineManager {} *x43; struct GlobeCleanupLoader {} *x44; struct CompleteGlobeTileSetCullingGraph {} *x45; struct CompleteGlobeTileSetLoader {} *x46; struct TileSetNode {} *x47; struct GlobeTileRenderManager {} *x48; struct CullingNode {} *x49; struct EarthAdjustedViewNode {} *x50; struct UserViewNode {} *x51; struct View {} *x52; struct BasicViewNode {} *x53; struct GlobeMainViewNode {} *x54; struct C3bRequestManager {} *x55; float x56; bool x57; struct shared_ptr<bool> { bool *x_58_1_1; struct __shared_weak_count {} *x_58_1_2; } x58; struct HeightRequestManager {} *x59; struct map<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d>, altitude::GlobeView::LessVector2i, std::__1::allocator<std::__1::pair<const gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true>, std::__1::allocator<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true> > { unsigned long long x_3_3_1; } x_1_2_3; } x_60_1_1; } x60; struct Mutex { void *x_61_1_1; } x61; struct shared_ptr<altitude::Stylesheet> { struct Stylesheet {} *x_62_1_1; struct __shared_weak_count {} *x_62_1_2; } x62; struct FlyoverTour {} *x63; bool x64; struct TriggerManager {} *x65; struct Viewport { int x_66_1_1; int x_66_1_2; int x_66_1_3; int x_66_1_4; } x66; struct AnimationReferenceTimer { double x_67_1_1; double x_67_1_2; double x_67_1_3; } x67; bool x68; struct set<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree_node<altitude::ManifestListener *, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<altitude::ManifestListener *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::less<altitude::ManifestListener *> > { unsigned long long x_3_3_1; } x_1_2_3; } x_69_1_1; } x69; struct GeoServicesLoader {} *x70; struct ManifestManager {} *x71; struct GlobeDispatch {} *x72; } * _globeView;
+    bool  _isPitching;
+    bool  _isRotating;
+    double  _lastRotation;
+    double  _maxZoomLevel;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _panLastScreenPoint;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _panStartScreenPoint;
+    bool  _wasPitched;
 }
 
-@property (nonatomic, readonly) struct { double x1; double x2; double x3; } centerCoordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int flyoverMode;
-@property (nonatomic) struct GlobeView { int (**x1)(); }*globeView;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) GEOMapRegion *mapRegion;
-@property (nonatomic, readonly) GEOMapRegion *mapRegionOfInterest;
-@property (nonatomic, readonly) double pitch;
-@property (nonatomic, readonly) double presentationYaw;
+@property (nonatomic) struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; /* Warning: unhandled struct encoding: '{basic_string<char' */ struct x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; union x25; void*x26; void*x27; void*x28; const void*x29; void*x30; void*x31; void*x32; void*x33; out void*x34; void*x35; void*x36; struct x37; void*x38; void*x39; void*x40; double x41; void*x42; out void*x43; void*x44; void*x45; unsigned int x46/* : ? */; void*x47; long x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; double x72; void*x73; out void*x74; void*x75; void*x76; unsigned int x77/* : ? */; void*x78; long x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; double x103; void*x104; out void*x105; void*x106; void*x107; unsigned int x108/* : ? */; void*x109; long x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; double x134; void*x135; out void*x136; void*x137; void*x138; unsigned int x139/* : ? */; void*x140; long x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; double x165; void*x166; out void*x167; void*x168; void*x169; unsigned int x170/* : ? */; void*x171; long x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; double x196; void*x197; out void*x198; void*x199; void*x200; unsigned int x201/* : ? */; void*x202; long x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; }*globeView; /* unknown property attribute:  std::__1::less<altitude::ManifestListener *> >=Q}}}^{GeoServicesLoader}^{ManifestManager}^{GlobeDispatch}} */
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double yaw;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct { double x1; double x2; })_centerCoordinateForMapRegion:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_centerScreenPoint;
-- (struct Vector2i { int x1; int x2; })_cursorFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_rotateAroundTargetWithDuration:(double)arg1 rotations:(double)arg2 completion:(id /* block */)arg3;
-- (struct CGPoint { float x1; float x2; })_scaledScreenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (double)_fovAdjustment;
 - (void)_updateCanEnter3DMode;
+- (void)_updateGlobeFromCamera;
 - (void)_updateIsPitched;
 - (void)adjustLoadingForAnimation:(float)arg1 progressFactor:(float)arg2;
 - (double)altitude;
-- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id /* block */)arg5;
 - (struct PositionGeo3d { double x1; double x2; double x3; })cameraPosition;
-- (BOOL)canEnter3DMode;
-- (struct { double x1; double x2; double x3; })centerCoordinate;
-- (BOOL)currentZoomLevelAllowsRotation;
+- (bool)canEnter3DMode;
+- (struct { double x1; double x2; })centerCoordinate;
+- (id /* block */)createMoveToZoomOutZoomInFrameFunction:(struct FrameLatLon { double x1; double x2; double x3; double x4; struct PositionLatLonAlt { double x_5_1_1; double x_5_1_2; double x_5_1_3; } x5; })arg1 toLatLon:(struct FrameLatLon { double x1; double x2; double x3; double x4; struct PositionLatLonAlt { double x_5_1_1; double x_5_1_2; double x_5_1_3; } x5; })arg2;
+- (double)currentZoomLevel;
 - (void)dealloc;
+- (double)distanceFromCenterCoordinate;
 - (double)durationToAnimateToMapRegion:(id)arg1;
+- (double)earthRadiusAt:(double)arg1;
 - (void)enter3DMode;
 - (void)exit3DMode;
 - (int)flyoverMode;
-- (void)flyoverTourAnimation:(id)arg1 animateToStart:(BOOL)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
-- (struct GlobeView { int (**x1)(); }*)globeView;
+- (void)flyoverTourAnimation:(id)arg1 animateToStart:(bool)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
+- (double)geocAngleBetween:(struct { double x1; double x2; })arg1 andCoordinate:(struct { double x1; double x2; })arg2;
+- (struct Matrix<double, 3, 1> { double x1[3]; })geocentricFromPosition:(struct PositionLatLonAlt { double x1; double x2; double x3; })arg1;
+- (struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_12_1_1; } x12; struct vector<altitude::TileBound, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_13_1_1; struct TileBound {} *x_13_1_2; struct __compressed_pair<altitude::TileBound *, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_3_2_1; } x_13_1_3; } x13; struct vector<altitude::SimpleTileKey, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_14_1_1; struct SimpleTileKey {} *x_14_1_2; struct __compressed_pair<altitude::SimpleTileKey *, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_3_2_1; } x_14_1_3; } x14; bool x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; struct VKClassicGlobeCanvas { } *x20; bool x21; bool x22; int x23; struct AnimationManager { struct AnimationTimer { struct AnimationReferenceTimer {} *x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_24_1_1; double x_24_1_2; struct vector<altitude::AnimationObjectHolder, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_2_1; struct AnimationObjectHolder {} *x_3_2_2; struct __compressed_pair<altitude::AnimationObjectHolder *, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_3_1; } x_3_2_3; } x_24_1_3; } x24; struct Timer { double x_25_1_1; } x25; double x26; bool x27; double x28; double x29; double x30; struct FrameLatLon { double x_31_1_1; double x_31_1_2; double x_31_1_3; double x_31_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_31_1_5; } x31; struct C3mmRequestManager {} *x32; struct RenderableGroup {} *x33; unsigned int x34; double x35; bool x36; bool x37; struct LabelDataManagerPrivate {} *x38; bool x39; bool x40; bool x41; bool x42; struct RouteLineManager {} *x43; struct GlobeCleanupLoader {} *x44; struct CompleteGlobeTileSetCullingGraph {} *x45; struct CompleteGlobeTileSetLoader {} *x46; struct TileSetNode {} *x47; struct GlobeTileRenderManager {} *x48; struct CullingNode {} *x49; struct EarthAdjustedViewNode {} *x50; struct UserViewNode {} *x51; struct View {} *x52; struct BasicViewNode {} *x53; struct GlobeMainViewNode {} *x54; struct C3bRequestManager {} *x55; float x56; bool x57; struct shared_ptr<bool> { bool *x_58_1_1; struct __shared_weak_count {} *x_58_1_2; } x58; struct HeightRequestManager {} *x59; struct map<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d>, altitude::GlobeView::LessVector2i, std::__1::allocator<std::__1::pair<const gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true>, std::__1::allocator<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true> > { unsigned long long x_3_3_1; } x_1_2_3; } x_60_1_1; } x60; struct Mutex { void *x_61_1_1; } x61; struct shared_ptr<altitude::Stylesheet> { struct Stylesheet {} *x_62_1_1; struct __shared_weak_count {} *x_62_1_2; } x62; struct FlyoverTour {} *x63; bool x64; struct TriggerManager {} *x65; struct Viewport { int x_66_1_1; int x_66_1_2; int x_66_1_3; int x_66_1_4; } x66; struct AnimationReferenceTimer { double x_67_1_1; double x_67_1_2; double x_67_1_3; } x67; bool x68; struct set<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree_node<altitude::ManifestListener *, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<altitude::ManifestListener *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::less<altitude::ManifestListener *> > { unsigned long long x_3_3_1; } x_1_2_3; } x_69_1_1; } x69; struct GeoServicesLoader {} *x70; struct ManifestManager {} *x71; struct GlobeDispatch {} *x72; }*)globeView;
+- (double)greatCircleMidPointLatitude:(double)arg1 deltaLongitude:(double)arg2;
+- (double)heading;
 - (id)init;
 - (void)interruptFlyoverTourAnimation;
-- (BOOL)isFlyoverTourStarted;
-- (BOOL)isFullyPitched;
-- (BOOL)isPitched;
+- (bool)isFlyoverTourStarted;
+- (bool)isFullyPitched;
+- (bool)isPitched;
 - (id)mapRegion;
-- (id)mapRegionOfInterest;
-- (int)maximumNormalizedZoomLevel;
-- (int)minimumNormalizedZoomLevel;
-- (void)moveTo:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
+- (double)maximumZoomLevel;
+- (double)minimumZoomLevel;
+- (void)moveTo:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(bool)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
 - (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
-- (void)moveToZoomOutZoomInTransition:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
-- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
+- (void)moveToZoomOutZoomInTransition:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(bool)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
+- (void)panWithOffset:(struct CGPoint { double x1; double x2; })arg1 relativeToScreenPoint:(struct CGPoint { double x1; double x2; })arg2 animated:(bool)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
 - (void)pauseFlyoverTourAnimation;
 - (double)pitch;
-- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
+- (void)pitch:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
 - (double)presentationYaw;
-- (BOOL)restoreViewportFromInfo:(id)arg1;
+- (bool)restoreViewportFromInfo:(id)arg1;
 - (void)resumeFlyoverTourAnimation;
-- (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)rotateTo:(double)arg1 animated:(BOOL)arg2;
-- (void)setCenterCoordinate3D:(struct { double x1; double x2; double x3; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
-- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)rotateTo:(double)arg1 animated:(bool)arg2;
+- (void)setCenterCoordinate3D:(struct { double x1; double x2; double x3; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(long long)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(long long)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)setCurrentZoomLevel:(double)arg1;
 - (void)setFlyoverMode:(int)arg1;
-- (void)setGesturing:(BOOL)arg1;
-- (void)setGlobeView:(struct GlobeView { int (**x1)(); }*)arg1;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
-- (void)setYaw:(double)arg1 animated:(BOOL)arg2;
-- (void)showSearchResultAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withZoom:(double)arg2;
+- (void)setGesturing:(bool)arg1;
+- (void)setGlobeView:(struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_12_1_1; } x12; struct vector<altitude::TileBound, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_13_1_1; struct TileBound {} *x_13_1_2; struct __compressed_pair<altitude::TileBound *, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_3_2_1; } x_13_1_3; } x13; struct vector<altitude::SimpleTileKey, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_14_1_1; struct SimpleTileKey {} *x_14_1_2; struct __compressed_pair<altitude::SimpleTileKey *, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_3_2_1; } x_14_1_3; } x14; bool x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; struct VKClassicGlobeCanvas { } *x20; bool x21; bool x22; int x23; struct AnimationManager { struct AnimationTimer { struct AnimationReferenceTimer {} *x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_24_1_1; double x_24_1_2; struct vector<altitude::AnimationObjectHolder, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_2_1; struct AnimationObjectHolder {} *x_3_2_2; struct __compressed_pair<altitude::AnimationObjectHolder *, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_3_1; } x_3_2_3; } x_24_1_3; } x24; struct Timer { double x_25_1_1; } x25; double x26; bool x27; double x28; double x29; double x30; struct FrameLatLon { double x_31_1_1; double x_31_1_2; double x_31_1_3; double x_31_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_31_1_5; } x31; struct C3mmRequestManager {} *x32; struct RenderableGroup {} *x33; unsigned int x34; double x35; bool x36; bool x37; struct LabelDataManagerPrivate {} *x38; bool x39; bool x40; bool x41; bool x42; struct RouteLineManager {} *x43; struct GlobeCleanupLoader {} *x44; struct CompleteGlobeTileSetCullingGraph {} *x45; struct CompleteGlobeTileSetLoader {} *x46; struct TileSetNode {} *x47; struct GlobeTileRenderManager {} *x48; struct CullingNode {} *x49; struct EarthAdjustedViewNode {} *x50; struct UserViewNode {} *x51; struct View {} *x52; struct BasicViewNode {} *x53; struct GlobeMainViewNode {} *x54; struct C3bRequestManager {} *x55; float x56; bool x57; struct shared_ptr<bool> { bool *x_58_1_1; struct __shared_weak_count {} *x_58_1_2; } x58; struct HeightRequestManager {} *x59; struct map<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d>, altitude::GlobeView::LessVector2i, std::__1::allocator<std::__1::pair<const gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true>, std::__1::allocator<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true> > { unsigned long long x_3_3_1; } x_1_2_3; } x_60_1_1; } x60; struct Mutex { void *x_61_1_1; } x61; struct shared_ptr<altitude::Stylesheet> { struct Stylesheet {} *x_62_1_1; struct __shared_weak_count {} *x_62_1_2; } x62; struct FlyoverTour {} *x63; bool x64; struct TriggerManager {} *x65; struct Viewport { int x_66_1_1; int x_66_1_2; int x_66_1_3; int x_66_1_4; } x66; struct AnimationReferenceTimer { double x_67_1_1; double x_67_1_2; double x_67_1_3; } x67; bool x68; struct set<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree_node<altitude::ManifestListener *, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<altitude::ManifestListener *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::less<altitude::ManifestListener *> > { unsigned long long x_3_3_1; } x_1_2_3; } x_69_1_1; } x69; struct GeoServicesLoader {} *x70; struct ManifestManager {} *x71; struct GlobeDispatch {} *x72; }*)arg1;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id /* block */)arg5;
+- (void)setMaxZoomLevel:(double)arg1;
+- (void)setYaw:(double)arg1 animated:(bool)arg2;
 - (float)slowDownFactorFromLoadProgress;
-- (BOOL)snapMapIfNecessary:(const struct VKPoint { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;
-- (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
-- (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
+- (bool)snapMapIfNecessary:(bool)arg1;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startTrackingAnnotation:(id)arg1 trackHeading:(bool)arg2 animated:(bool)arg3;
 - (void)stopFlyoverTourAnimation;
 - (void)stopGlobeAnimations;
-- (void)stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopSearchResultAnimation;
-- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
-- (int)tileSize;
-- (void)tiltTo:(double)arg1 animated:(BOOL)arg2 exaggerate:(BOOL)arg3;
-- (void)transitionToFlyoverMode:(int)arg1 animated:(BOOL)arg2;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)tapZoom:(struct CGPoint { double x1; double x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
+- (long long)tileSize;
+- (void)tiltTo:(double)arg1 animated:(bool)arg2 exaggerate:(bool)arg3;
+- (double)topDownMinimumZoomLevel;
+- (void)transitionToFlyoverMode:(int)arg1 animated:(bool)arg2;
 - (void)updateCameraManager;
 - (void)updateFlyoverMode;
-- (void)updateGlobeFromCamera;
-- (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
-- (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
-- (void)updateRotationWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 newValue:(double)arg2;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updateState;
 - (id)viewportInfo;
-- (double)yaw;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
+- (double)widestLatitudeForMapRegion:(id)arg1;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
 - (double)zoomForMapRegion:(id)arg1;
-- (void)zoomToDistance:(struct CGPoint { float x1; float x2; })arg1 distance:(double)arg2 time:(double)arg3;
-- (void)zoomToDistance:(struct CGPoint { float x1; float x2; })arg1 distance:(double)arg2 time:(double)arg3 completionHandler:(id /* block */)arg4;
+- (void)zoomToDistance:(struct CGPoint { double x1; double x2; })arg1 distance:(double)arg2 time:(double)arg3;
+- (void)zoomToDistance:(struct CGPoint { double x1; double x2; })arg1 distance:(double)arg2 time:(double)arg3 completionHandler:(id /* block */)arg4;
 
 @end

@@ -4,7 +4,6 @@
 
 @interface FBApplicationDataStoreRepositoryServer : FBSystemServiceFacility <FBApplicationDataStoreRepositoryServerClientDelegate> {
     <FBApplicationDataStoreRepository> * _dataStore;
-    FBApplicationDataStoreRepositoryManager * _dataStoreManager;
 }
 
 @property (nonatomic, retain) <FBApplicationDataStoreRepository> *dataStore;
@@ -15,6 +14,7 @@
 - (void)_handleGetObjectForKey:(id)arg1;
 - (void)_handleRemoveAllObjects:(id)arg1;
 - (void)_handleRemoveObjectForKey:(id)arg1 client:(id)arg2;
+- (void)_handleSetChangesInterest:(id)arg1 client:(id)arg2;
 - (void)_handleSetObjectForKey:(id)arg1 client:(id)arg2;
 - (void)_handleSetPrefetchedKeys:(id)arg1 client:(id)arg2;
 - (void)_handleSynchronize:(id)arg1;

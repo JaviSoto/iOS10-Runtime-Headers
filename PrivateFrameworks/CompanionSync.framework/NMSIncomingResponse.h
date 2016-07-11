@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface NMSIncomingResponse : NSObject <NMSObfuscatableDescriptionProviding> {
+@interface NMSIncomingResponse : NSObject <NMSDeviceSourced, NMSObfuscatableDescriptionProviding> {
     NSData * _data;
     NSString * _idsIdentifier;
     unsigned short  _messageID;
@@ -10,18 +10,20 @@
     NSString * _requestIDSIdentifier;
     NSDictionary * _requestPersistentUserInfo;
     NSDate * _requestSent;
+    NSString * sourceDeviceID;
 }
 
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic) unsigned short messageID;
 @property (nonatomic, retain) id pbResponse;
 @property (nonatomic, copy) NSString *requestIDSIdentifier;
 @property (nonatomic, retain) NSDictionary *requestPersistentUserInfo;
 @property (nonatomic, retain) NSDate *requestSent;
+@property (nonatomic, retain) NSString *sourceDeviceID;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -41,5 +43,7 @@
 - (void)setRequestIDSIdentifier:(id)arg1;
 - (void)setRequestPersistentUserInfo:(id)arg1;
 - (void)setRequestSent:(id)arg1;
+- (void)setSourceDeviceID:(id)arg1;
+- (id)sourceDeviceID;
 
 @end

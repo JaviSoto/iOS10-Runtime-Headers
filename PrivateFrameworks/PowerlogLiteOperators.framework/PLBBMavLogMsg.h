@@ -171,6 +171,7 @@
 + (id)entryEventBackwardMavBBHwOtherPerRAT;
 + (id)entryEventMavBBMav10HwOther;
 + (id)entryEventMavBBMav13HwOther;
++ (id)entryEventMavBBMav16HwOther;
 + (id)entryEventMavBBMav1HwOther;
 + (id)entryEventMavBBMav2HwOther;
 + (id)entryEventMavBBMav4HwOther;
@@ -180,6 +181,7 @@
 - (void)addPairWithKey:(id)arg1 andWithVal:(id)arg2;
 - (void)addToGroupPLBBMav10HwOther;
 - (void)addToGroupPLBBMav13HwOther;
+- (void)addToGroupPLBBMav16HwOther;
 - (void)addToGroupPLBBMav1HwOther;
 - (void)addToGroupPLBBMav2HwOther;
 - (void)addToGroupPLBBMav4HwOther;
@@ -240,11 +242,13 @@
 - (id)kvPairs;
 - (void)logEventBackwardGrpEntriesBBMav10Hw;
 - (void)logEventBackwardGrpEntriesBBMav13Hw;
+- (void)logEventBackwardGrpEntriesBBMav16Hw;
 - (id)logEventBackwardGrpEntriesBBMav1HwOtherPerRAT;
 - (void)logEventBackwardGrpEntriesBBMavHw;
 - (id)logEventBackwardGrpEntriesBBMavHwOtherPerRAT;
 - (void)logEventBackwardMav10BBHwOther;
 - (void)logEventBackwardMav13BBHwOther;
+- (void)logEventBackwardMav16BBHwOther;
 - (void)logEventBackwardMav1BBHwOtherPerRAT;
 - (void)logEventBackwardMavBBHwOther;
 - (void)logEventBackwardMavBBHwOtherPerRAT;
@@ -261,6 +265,7 @@
 - (id)pcieStateHistogram;
 - (void)populateEntryBBMav10HwOther:(id)arg1;
 - (void)populateEntryBBMav13HwOther:(id)arg1;
+- (void)populateEntryBBMav16HwOther:(id)arg1;
 - (void)populateEntryBBMav1HwOtherPerRAT:(id)arg1;
 - (void)populateEntryBBMav2HwOther:(id)arg1;
 - (void)populateEntryBBMav4HwOther:(id)arg1;
@@ -272,6 +277,7 @@
 - (id)radioTech;
 - (void)refreshBBMav10HwOther;
 - (void)refreshBBMav13HwOther;
+- (void)refreshBBMav16HwOther;
 - (void)refreshBBMav2HwOther;
 - (void)refreshBBMav4HwOther;
 - (void)refreshMav1BBHwOtherPerRAT;

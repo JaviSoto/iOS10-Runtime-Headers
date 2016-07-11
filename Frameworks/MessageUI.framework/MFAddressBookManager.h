@@ -5,10 +5,12 @@
 @interface MFAddressBookManager : NSObject {
     void * _addressBook;
     struct __CFDictionary { } * _clients;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
 }
 
-+ (BOOL)isAuthorizedToUseAddressBook;
++ (bool)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
 - (void)_applicationResumed:(id)arg1;

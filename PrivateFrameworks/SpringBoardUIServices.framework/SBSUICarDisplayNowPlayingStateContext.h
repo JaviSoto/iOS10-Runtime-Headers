@@ -3,26 +3,24 @@
  */
 
 @interface SBSUICarDisplayNowPlayingStateContext : NSObject <NSSecureCoding> {
-    NSString * _animationName;
     NSString * _associatedBundleID;
     NSString * _stateName;
 }
 
-@property (nonatomic, copy) NSString *animationName;
+@property (nonatomic, readonly, copy) NSString *animationName;
 @property (nonatomic, copy) NSString *associatedBundleID;
 @property (nonatomic, copy) NSString *stateName;
 
-+ (id)contextWithState:(id)arg1 animationName:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)contextWithState:(id)arg1;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)animationName;
 - (id)associatedBundleID;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithState:(id)arg1 animationName:(id)arg2;
-- (void)setAnimationName:(id)arg1;
+- (id)initWithState:(id)arg1;
 - (void)setAssociatedBundleID:(id)arg1;
 - (void)setStateName:(id)arg1;
 - (id)stateName;

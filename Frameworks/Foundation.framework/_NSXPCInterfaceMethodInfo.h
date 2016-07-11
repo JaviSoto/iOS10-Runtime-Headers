@@ -15,7 +15,6 @@
 
 - (id)arguments;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (id)replyArguments;
 - (int)replyPosition;

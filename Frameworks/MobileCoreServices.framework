@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<TITLE>MobileCoreServices.framework</TITLE>
+</HEAD>
+<BODY>
+<code>
+<pre>
+   ___          _   _             ___
+  | _ \_  _ _ _| |_(_)_ __  ___  | _ )_ _ _____ __ _____ ___ _ _
+  |   / || | ' \  _| | '  \/ -_) | _ \ '_/ _ \ V  V (_-// -_) '_|
+  |_|_\\_,_|_||_\__|_|_|_|_\___| |___/_| \___/\_/\_//__/\___|_|
+  
+ -------------------------------------------------------------------------------
+
+
+/Frameworks/MobileCoreServices.framework
+94 classes
+
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSAppLink.h">LSAppLink.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSApplicationProxy.h">LSApplicationProxy.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSApplicationRestrictionsManager.h">LSApplicationRestrictionsManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSApplicationWorkspace.h">LSApplicationWorkspace.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSApplicationWorkspaceObserver.h">LSApplicationWorkspaceObserver.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSApplicationWorkspaceRemoteObserver.h">LSApplicationWorkspaceRemoteObserver.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSBestAppSuggestion.h">LSBestAppSuggestion.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSBestAppSuggestionManager.h">LSBestAppSuggestionManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSBundleProxy.h">LSBundleProxy.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSDatabaseBuilder.h">LSDatabaseBuilder.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSDocumentProxy.h">LSDocumentProxy.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSInstallProgressDelegate.h">LSInstallProgressDelegate.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSInstallProgressList.h">LSInstallProgressList.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSObserverTimer.h">LSObserverTimer.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSOpenOperation.h">LSOpenOperation.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSPingResults.h">LSPingResults.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSPlugInKitProxy.h">LSPlugInKitProxy.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSPlugInQuery.h">LSPlugInQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSPlugInQueryWithIdentifier.h">LSPlugInQueryWithIdentifier.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSPlugInQueryWithQueryDictionary.h">LSPlugInQueryWithQueryDictionary.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSPlugInQueryWithURL.h">LSPlugInQueryWithURL.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSRegistrationInfo.h">LSRegistrationInfo.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSResourceProxy.h">LSResourceProxy.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSResumableActivitiesControlManager.h">LSResumableActivitiesControlManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSUserActivity.h">LSUserActivity.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSUserActivityDebuggingManager.h">LSUserActivityDebuggingManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSUserActivityInfo.h">LSUserActivityInfo.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSUserActivityManager.h">LSUserActivityManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/LSVPNPluginProxy.h">LSVPNPluginProxy.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_CSStoreXPCRepresentation.h">_CSStoreXPCRepresentation.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSAllURLSchemesQuery.h">_LSAllURLSchemesQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSAppLinkOpenState.h">_LSAppLinkOpenState.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSAppLinkPattern.h">_LSAppLinkPattern.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSAppLinkPlugIn.h">_LSAppLinkPlugIn.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSApplicationIsInstalledQuery.h">_LSApplicationIsInstalledQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSApplicationProxiesOfTypeQuery.h">_LSApplicationProxiesOfTypeQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSApplicationProxiesWithFlagsQuery.h">_LSApplicationProxiesWithFlagsQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSApplicationProxyForUserActivityQuery.h">_LSApplicationProxyForUserActivityQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSApplicationState.h">_LSApplicationState.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSApplicationsForSiriQuery.h">_LSApplicationsForSiriQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSAvailableApplicationsForURLQuery.h">_LSAvailableApplicationsForURLQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSBundleProxiesOfTypeQuery.h">_LSBundleProxiesOfTypeQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSCanOpenURLManager.h">_LSCanOpenURLManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSCompoundLazyPropertyList.h">_LSCompoundLazyPropertyList.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSConcreteLazyPropertyList.h">_LSConcreteLazyPropertyList.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSCurrentBundleProxyQuery.h">_LSCurrentBundleProxyQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDClient.h">_LSDClient.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDDeviceIdentifierClient.h">_LSDDeviceIdentifierClient.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDDeviceIdentifierService.h">_LSDDeviceIdentifierService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDModifyClient.h">_LSDModifyClient.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDModifyService.h">_LSDModifyService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDOpenClient.h">_LSDOpenClient.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDOpenService.h">_LSDOpenService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDReadClient.h">_LSDReadClient.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDReadService.h">_LSDReadService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDService.h">_LSDService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDefaults.h">_LSDefaults.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDeviceIdentifierCache.h">_LSDeviceIdentifierCache.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDiskUsage.h">_LSDiskUsage.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDispatchWithTimeoutResult.h">_LSDispatchWithTimeoutResult.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSDocumentProxyBindingQuery.h">_LSDocumentProxyBindingQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSFeldsparAppLinkPlugIn.h">_LSFeldsparAppLinkPlugIn.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSHandoffCompatibilityAppLinkPlugIn.h">_LSHandoffCompatibilityAppLinkPlugIn.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSHardCodedAppLinkPlugIn.h">_LSHardCodedAppLinkPlugIn.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSIconCache.h">_LSIconCache.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSIconCacheClient.h">_LSIconCacheClient.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSIconCacheService.h">_LSIconCacheService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSInstallationManager.h">_LSInstallationManager.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSInstallationService.h">_LSInstallationService.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSLazyPlugInPropertyList.h">_LSLazyPlugInPropertyList.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSLazyPropertyList.h">_LSLazyPropertyList.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSLocalContext.h">_LSLocalContext.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSOpenCopierContext.h">_LSOpenCopierContext.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSPendingOpenOperation.h">_LSPendingOpenOperation.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSQuery.h">_LSQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSQueryCache.h">_LSQueryCache.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSQueryContext.h">_LSQueryContext.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSQueryResult.h">_LSQueryResult.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSQueryResultWithPropertyList.h">_LSQueryResultWithPropertyList.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSSharedWebCredentialsAppLinkPlugIn.h">_LSSharedWebCredentialsAppLinkPlugIn.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSSharedWebCredentialsConcreteAppLinkPlugIn.h">_LSSharedWebCredentialsConcreteAppLinkPlugIn.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSSpringBoardCall.h">_LSSpringBoardCall.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSStringLocalizer.h">_LSStringLocalizer.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_LSXPCContext.h">_LSXPCContext.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTConcreteType.h">_UTConcreteType.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTDeclaredType.h">_UTDeclaredType.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTDeclaredTypeSortableWrapper.h">_UTDeclaredTypeSortableWrapper.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTDynamicType.h">_UTDynamicType.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTType.h">_UTType.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTTypeQuery.h">_UTTypeQuery.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTTypeQueryForAllIdentifiers.h">_UTTypeQueryForAllIdentifiers.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTTypeQueryWithIdentifier.h">_UTTypeQueryWithIdentifier.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTTypeQueryWithParentIdentifier.h">_UTTypeQueryWithParentIdentifier.h</A>
+<A HREF="/tree/Frameworks/MobileCoreServices.framework/_UTTypeQueryWithTags.h">_UTTypeQueryWithTags.h</A>
+
+
+ -------------------------------------------------------------------------------
+
+ Source code: https://github.com/nst/RuntimeBrowser
+
+ Authors: Ezra Epstein (eepstein@prajna.com)
+          Nicolas Seriot (nicolas@seriot.ch)
+
+ Copyright (c) 2002 by Prajna IT Consulting.
+                       http://www.prajna.com
+               2015 by Nicolas Seriot
+                       http://www.seriot.ch
+
+ ========================================================================
+
+ THIS PROGRAM AND THIS CODE COME WITH ABSOLUTELY NO WARRANTY.
+ THIS CODE HAS BEEN PROVIDED "AS IS" AND THE RESPONSIBILITY
+ FOR ITS OPERATIONS IS 100% YOURS.
+
+ ========================================================================
+ 
+ RuntimeBrowser is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ RuntimeBrowser is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with RuntimeBrowser (in a file called "COPYING.txt"); if not,
+ write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+ Boston, MA  02111-1307  USA
+
+</pre>
+</code>
+</BODY>

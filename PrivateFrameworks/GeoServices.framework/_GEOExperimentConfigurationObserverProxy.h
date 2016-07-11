@@ -15,7 +15,7 @@
 - (id)description;
 - (void)forEachObserver:(id /* block */)arg1;
 - (id)init;
-- (unsigned int)observersCount;
+- (unsigned long long)observersCount;
 - (id)queue;
 - (void)removeObserver:(id)arg1;
 - (void)setQueue:(id)arg1;

@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *preferredAddress;
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)displayName;
 - (id)preferredAddress;

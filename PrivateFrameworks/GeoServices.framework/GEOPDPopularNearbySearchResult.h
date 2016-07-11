@@ -7,15 +7,15 @@
     struct { 
         unsigned int isChainResultSet : 1; 
     }  _has;
-    BOOL  _isChainResultSet;
+    bool  _isChainResultSet;
     NSString * _sectionHeader;
 }
 
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
-@property (nonatomic, readonly) BOOL hasDisplayMapRegion;
-@property (nonatomic) BOOL hasIsChainResultSet;
-@property (nonatomic, readonly) BOOL hasSectionHeader;
-@property (nonatomic) BOOL isChainResultSet;
+@property (nonatomic, readonly) bool hasDisplayMapRegion;
+@property (nonatomic) bool hasIsChainResultSet;
+@property (nonatomic, readonly) bool hasSectionHeader;
+@property (nonatomic) bool isChainResultSet;
 @property (nonatomic, retain) NSString *sectionHeader;
 
 - (void)copyTo:(id)arg1;
@@ -24,18 +24,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayMapRegion;
-- (BOOL)hasDisplayMapRegion;
-- (BOOL)hasIsChainResultSet;
-- (BOOL)hasSectionHeader;
-- (unsigned int)hash;
-- (BOOL)isChainResultSet;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayMapRegion;
+- (bool)hasIsChainResultSet;
+- (bool)hasSectionHeader;
+- (unsigned long long)hash;
+- (bool)isChainResultSet;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sectionHeader;
 - (void)setDisplayMapRegion:(id)arg1;
-- (void)setHasIsChainResultSet:(BOOL)arg1;
-- (void)setIsChainResultSet:(BOOL)arg1;
+- (void)setHasIsChainResultSet:(bool)arg1;
+- (void)setIsChainResultSet:(bool)arg1;
 - (void)setSectionHeader:(id)arg1;
 - (void)writeTo:(id)arg1;
 

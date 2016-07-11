@@ -2,10 +2,33 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFAirDropTransferDataProvider : NSObject
+@interface SFAirDropTransferDataProvider : NSObject <SFAirDropTransferDataProviderClient, SFCompanionXPCManagerObserver> {
+    <SFAirDropTransferDataProviderDelegate> * _delegate;
+}
+
+@property (readonly, copy) NSString *debugDescription;
+@property <SFAirDropTransferDataProviderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (id)sharedAlertDataProvider;
 
+- (void).cxx_destruct;
+- (id)delegate;
+- (void)performAppStoreSearchForRecordID:(id)arg1;
+- (void)performSaveToiCloudForRecordID:(id)arg1;
+- (void)registerAsAirDropClient;
+- (void)setDelegate:(id)arg1;
+- (void)showAcceptAlertForRecordID:(id)arg1;
+- (void)showCancelledAlertForRecordID:(id)arg1;
+- (void)showFailedAlertForRecordID:(id)arg1;
+- (void)showProgressAlertForRecordID:(id)arg1;
 - (void)transferDataWithRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)userDidAcceptTransferWithRecordID:(id)arg1;
+- (void)userDidCancelTransferWithRecordID:(id)arg1;
+- (void)userDidSelectAppWithIndex:(id)arg1 forRecordID:(id)arg2;
+- (void)withdrawTransferDataWithRecordID:(id)arg1;
+- (void)xpcManagerConnectionInterrupted;
 
 @end

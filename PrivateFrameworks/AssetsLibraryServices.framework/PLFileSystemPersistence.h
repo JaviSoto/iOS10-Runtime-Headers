@@ -15,7 +15,7 @@
 + (id)persistedAttributesForFileAtURL:(id)arg1;
 + (id)sharedInstance;
 
-- (void)backgroundWriteData:(id)arg1 toFileAtURL:(id)arg2;
+- (void)_backgroundWriteData:(id)arg1 toFileAtURL:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

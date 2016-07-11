@@ -4,47 +4,47 @@
 
 @interface IKImageElement : IKViewElement {
     NSURL * _defaultURL;
-    unsigned int  _imageType;
-    float  _srcHeight;
-    float  _srcWidth;
+    unsigned long long  _imageType;
+    double  _srcHeight;
+    double  _srcWidth;
     NSDictionary * _srcset;
 }
 
 @property (nonatomic, readonly) UIColor *borderColor;
 @property (nonatomic, retain) NSURL *defaultURL;
-@property (nonatomic, readonly) int fill;
-@property (nonatomic, readonly) float height;
-@property (nonatomic, readonly) unsigned int imageType;
+@property (nonatomic, readonly) long long fill;
+@property (nonatomic, readonly) double height;
+@property (nonatomic, readonly) unsigned long long imageType;
 @property (nonatomic, readonly, retain) NSURL *placeholderURL;
-@property (nonatomic, readonly) unsigned int position;
-@property (nonatomic, readonly) int reflect;
+@property (nonatomic, readonly) unsigned long long position;
+@property (nonatomic, readonly) long long reflect;
 @property (nonatomic, readonly, retain) NSDictionary *srcset;
 @property (nonatomic, readonly) NSURL *url;
-@property (nonatomic, readonly) float width;
+@property (nonatomic, readonly) double width;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
-- (unsigned int)_imageTypeForTagName:(id)arg1;
+- (unsigned long long)_imageTypeForTagName:(id)arg1;
 - (id)borderColor;
 - (id)defaultURL;
-- (int)fill;
-- (float)height;
-- (unsigned int)imageType;
+- (long long)fill;
+- (double)height;
+- (unsigned long long)imageType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)placeholderURL;
-- (unsigned int)position;
-- (int)reflect;
+- (unsigned long long)position;
+- (long long)reflect;
 - (void)setDefaultURL:(id)arg1;
 - (id)srcset;
 - (id)url;
-- (float)width;
+- (double)width;
 
-// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 
-- (int)accessoryType;
+- (long long)accessoryType;
 - (id)artworkCatalog;
 - (id)bestURL;
 - (id)cachePath;

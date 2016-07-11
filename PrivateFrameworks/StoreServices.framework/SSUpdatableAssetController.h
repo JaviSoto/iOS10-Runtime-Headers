@@ -5,6 +5,7 @@
 @interface SSUpdatableAssetController : NSObject <SKUIExternalResourceManager> {
     SSUpdatableAssetManifest * _bundledManifest;
     NSURL * _bundledManifestURL;
+    NSString * _bundledManifestVersion;
     SSUpdatableAssetCacheManager * _cacheManager;
     SSXPCConnection * _connection;
     SSUpdatableAssetManifest * _currentManifest;
@@ -16,7 +17,7 @@
 @property (nonatomic, readonly) SSUpdatableAssetManifest *currentManifest;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURL *manifestURL;
 @property (nonatomic, readonly) SSUpdatableAssetManifest *newestCachedManifest;
 @property (readonly) Class superclass;
@@ -25,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)_bundledManifest;
+- (id)_bundledManifestVersion;
 - (id)_connection;
 - (id)bundledManifestURL;
 - (void)clearCache:(id /* block */)arg1;

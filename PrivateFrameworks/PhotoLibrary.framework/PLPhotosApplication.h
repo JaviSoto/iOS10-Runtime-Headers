@@ -6,17 +6,16 @@
     NSString * _currentTestName;
     NSDictionary * _currentTestOptions;
     BLActivityAlert * _iPhotoMigrationActivityAlert;
-    BOOL  _isOnWifi;
-    BOOL  _isReachable;
+    bool  _isOnWifi;
+    bool  _isReachable;
     int  _observeForRechabilityChanges;
     int  _photoStreamActivityToken;
-    BOOL  _photoStreamIsBusy;
-    BOOL  _receivingRemoteControlEvents;
+    bool  _photoStreamIsBusy;
+    bool  _receivingRemoteControlEvents;
     int  _sharedPhotoStreamActivityToken;
     int  _sharedPhotoStreamInvitationFailureToken;
-    BOOL  _sharedPhotoStreamIsBusy;
-    PLUIController * _uiController;
-    BOOL  _urlNeedsHandling;
+    bool  _sharedPhotoStreamIsBusy;
+    bool  _urlNeedsHandling;
     UIWindow * _window;
 }
 
@@ -24,10 +23,10 @@
 @property (nonatomic, retain) NSDictionary *currentTestOptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BLActivityAlert *iPhotoMigrationActivityAlert;
-@property (nonatomic, readonly) BOOL isOnWifi;
-@property (nonatomic, readonly) BOOL isReachable;
+@property (nonatomic, readonly) bool isOnWifi;
+@property (nonatomic, readonly) bool isReachable;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWindow *window;
 
@@ -35,6 +34,7 @@
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
+- (void)_cleanUpOutboundSharingAssets;
 - (void)_finishExtendedTest;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;
@@ -51,24 +51,25 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (id)currentTestName;
 - (id)currentTestOptions;
-- (id)currentUIConfiguration;
 - (void)dealloc;
 - (void)disableNetworkObservation;
 - (void)enableNetworkObservation;
 - (void*)getSharedAddressBook;
+- (id)getSharedContactStore;
+- (void)handleImportCompleteAlertResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long long)arg2;
 - (id)iPhotoMigrationActivityAlert;
-- (BOOL)isOnWifi;
-- (BOOL)isReachable;
+- (bool)isOnWifi;
+- (bool)isReachable;
 - (id)mainWindow;
 - (void)photosPreferencesChanged;
 - (id)rootViewController;
 - (void)setCurrentTestName:(id)arg1;
 - (void)setCurrentTestOptions:(id)arg1;
 - (void)setIPhotoMigrationActivityAlert:(id)arg1;
-- (void)setReceivingRemoteControlEvents:(BOOL)arg1;
-- (void)sharedFinishedLaunching:(BOOL)arg1;
-- (BOOL)shouldAllowSBAlertSupression;
-- (BOOL)useCompatibleSuspensionAnimation;
-- (BOOL)visitViewControllersWithBlock:(id /* block */)arg1;
+- (void)setReceivingRemoteControlEvents:(bool)arg1;
+- (void)sharedFinishedLaunching:(bool)arg1;
+- (bool)shouldAllowSBAlertSupression;
+- (bool)useCompatibleSuspensionAnimation;
+- (bool)visitViewControllersWithBlock:(id /* block */)arg1;
 
 @end

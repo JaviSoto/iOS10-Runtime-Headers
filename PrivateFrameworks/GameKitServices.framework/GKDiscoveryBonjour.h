@@ -38,7 +38,7 @@
 - (id)initWithDomain:(id)arg1 type:(id)arg2;
 - (int)ipV4Socket;
 - (int)ipV6Socket;
-- (BOOL)isAppleTV;
+- (bool)isAppleTV;
 - (id)launchdSources;
 - (id)resolveContainers;
 - (id)resolveContainersSyncQueue;

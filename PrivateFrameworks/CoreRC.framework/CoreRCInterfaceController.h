@@ -12,13 +12,13 @@
 @property (nonatomic) <CoreRCInterfaceControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CECFakeInterfaceListener *fakeInterfaceListener;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *interfaceListeners;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
-- (BOOL)addBundlesFromPaths:(id)arg1 expectedClass:(Class)arg2;
-- (BOOL)addInterfaceListenerClass:(Class)arg1;
+- (bool)addBundlesFromPaths:(id)arg1 expectedClass:(Class)arg2;
+- (bool)addInterfaceListenerClass:(Class)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)fakeInterfaceListener;

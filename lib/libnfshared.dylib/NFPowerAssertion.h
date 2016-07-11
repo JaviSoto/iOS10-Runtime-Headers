@@ -13,8 +13,8 @@
 + (id)sharedPowerAssertion;
 
 - (void)dealloc;
-- (BOOL)holdPowerAssertion:(id)arg1;
+- (bool)holdPowerAssertion:(id)arg1;
 - (id)init;
-- (void)releasePowerAssertion:(id)arg1;
+- (bool)releasePowerAssertion:(id)arg1;
 
 @end

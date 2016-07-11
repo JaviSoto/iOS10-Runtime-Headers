@@ -2,29 +2,23 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVAssetCache : NSObject {
-    AVAssetCacheInternal * _priv;
-}
+@interface AVAssetCache : NSObject
 
-@property (nonatomic, readonly, copy) NSURL *URL;
-@property (nonatomic, readonly) long long currentSize;
-@property (nonatomic) long long maxEntrySize;
-@property (nonatomic) long long maxSize;
+@property (getter=isPlayableOffline, nonatomic, readonly) bool playableOffline;
 
 + (id)assetCacheWithURL:(id)arg1;
 
 - (id)URL;
+- (id)_init;
 - (id)allKeys;
 - (long long)currentSize;
-- (void)dealloc;
-- (void)finalize;
 - (id)initWithURL:(id)arg1;
+- (bool)isPlayableOffline;
 - (id)lastModifiedDateOfEntryForKey:(id)arg1;
 - (long long)maxEntrySize;
 - (long long)maxSize;
+- (id)mediaSelectionOptionsInMediaSelectionGroup:(id)arg1;
 - (void)removeEntryForKey:(id)arg1;
-- (void)setMaxEntrySize:(long long)arg1;
-- (void)setMaxSize:(long long)arg1;
 - (long long)sizeOfEntryForKey:(id)arg1;
 
 @end

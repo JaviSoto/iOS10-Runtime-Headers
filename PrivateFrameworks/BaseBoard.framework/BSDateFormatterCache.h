@@ -15,6 +15,7 @@
     NSDateFormatter * _longYMDHMSNoSpaceFormatter;
     NSDateFormatter * _longYMDHMSZFormatter;
     NSDateFormatter * _longYMDHMSZPosixLocaleFormatter;
+    NSDateFormatter * _multiLineDayOfWeekMonthDayFormatter;
     NSDateFormatter * _relativeDateFormatter;
     NSDateFormatter * _relativeDateTimeFormatter;
     NSDateFormatter * _shortDayMonthFormatter;
@@ -27,7 +28,7 @@
 + (id)sharedInstance;
 
 - (void)_resetFormatters;
-- (BOOL)_shouldShowHoursForTimerDuration:(double)arg1;
+- (bool)_shouldShowHoursForTimerDuration:(double)arg1;
 - (void)dealloc;
 - (id)formatAbbreviatedTimerDuration:(double)arg1;
 - (id)formatAlarmSnoozeDuration:(double)arg1;
@@ -40,6 +41,7 @@
 - (id)formatDateAsLongYMDHMSNoSpacesWithDate:(id)arg1;
 - (id)formatDateAsLongYMDHMSZPosixLocaleWithDate:(id)arg1;
 - (id)formatDateAsLongYMDHMSZWithDate:(id)arg1;
+- (id)formatDateAsMultiLineDayOfWeekMonthDayStyle:(id)arg1;
 - (id)formatDateAsRelativeDateAndTimeStyle:(id)arg1;
 - (id)formatDateAsRelativeDateStyle:(id)arg1;
 - (id)formatDateAsShortDayMonthWithTimeStyle:(id)arg1;
@@ -48,6 +50,7 @@
 - (id)formatNumberAsDecimal:(id)arg1;
 - (id)formatTimerDuration:(double)arg1;
 - (id)init;
+- (id)multiLineDayOfWeekMonthDayFormatForLocale:(id)arg1;
 - (void)resetFormatters:(id)arg1;
 - (void)resetFormattersIfNecessary;
 

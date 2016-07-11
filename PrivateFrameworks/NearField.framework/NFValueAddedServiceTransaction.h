@@ -9,6 +9,7 @@
     NSNumber * _filterType;
     NSData * _merchantId;
     NSData * _passData;
+    unsigned int  _result;
     NSString * _signupUrl;
     NSNumber * _terminalAppVersion;
     NSNumber * _terminalMode;
@@ -21,12 +22,13 @@
 @property (nonatomic, readonly) NSNumber *filterType;
 @property (nonatomic, readonly) NSData *merchantId;
 @property (nonatomic, readonly) NSData *passData;
+@property (nonatomic, readonly) unsigned int result;
 @property (nonatomic, readonly) NSString *signupUrl;
 @property (nonatomic, readonly) NSNumber *terminalAppVersion;
 @property (nonatomic, readonly) NSNumber *terminalMode;
 @property (nonatomic, readonly) NSData *token;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)asDictionary;
 - (void)dealloc;
@@ -40,6 +42,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)merchantId;
 - (id)passData;
+- (unsigned int)result;
 - (id)signupUrl;
 - (id)terminalAppVersion;
 - (id)terminalMode;

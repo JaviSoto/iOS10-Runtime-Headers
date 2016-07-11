@@ -11,8 +11,9 @@
 - (void).cxx_destruct;
 - (id)clientId;
 - (id)initWithClientId:(id)arg1;
-- (void)invalidateCurrentSubscriptionService;
 - (void)registerSubscriptionWithInfo:(id)arg1 expirationDate:(id)arg2;
 - (void)setClientId:(id)arg1;
+- (void)unregisterAllSubscriptions;
+- (void)unregisterSubscriptionWithInfo:(id)arg1;
 
 @end

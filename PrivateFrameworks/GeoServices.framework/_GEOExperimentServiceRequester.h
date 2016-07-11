@@ -4,7 +4,7 @@
 
 @interface _GEOExperimentServiceRequester : GEOServiceRequester
 
-+ (unsigned int)_urlType;
++ (unsigned long long)_urlType;
 + (id)sharedInstance;
 
 - (void)cancelRequest:(id)arg1;

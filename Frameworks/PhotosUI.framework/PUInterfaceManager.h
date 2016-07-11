@@ -21,10 +21,12 @@
 + (void)_handleInteractionDisablingTimeoutForSearchSelectResult;
 + (void)_handleInteractionDisablingTimeoutForSearchSelectSuggestion;
 + (void)_handleInteractionDisablingTimeoutForStartSlideshowFromGrid;
-+ (id)beginDisablingUserInteractionForReason:(int)arg1;
-+ (id)beginDisablingUserInteractionForReason:(int)arg1 withExpectedTimeout:(double)arg2;
++ (id)beginDisablingUserInteractionForReason:(long long)arg1;
++ (id)beginDisablingUserInteractionForReason:(long long)arg1 withExpectedTimeout:(double)arg2;
++ (void)beginUsingOrbTheme;
 + (id)currentTheme;
 + (void)endDisablingUserInteraction:(id)arg1;
-+ (BOOL)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
++ (void)endUsingOrbTheme;
++ (bool)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
 
 @end

@@ -3,22 +3,25 @@
  */
 
 @interface SYMessengerSyncEngine : SYSyncEngine <NMSMessageCenterDelegate> {
+    SYDevice * _activeDevice;
     struct NSMapTable { Class x1; } * _callbackLookup;
     NSDictionary * _customIDSOptions;
     NSObject<OS_dispatch_queue> * _idsQueue;
+    NSObject<OS_dispatch_semaphore> * _lookupLock;
     NMSMessageCenter * _messageCenter;
     struct NSMapTable { Class x1; } * _requestLookup;
+    NSString * _sessionDeviceID;
 }
 
 @property (nonatomic, copy) NSDictionary *customIDSOptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *idsQueue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_checkMessageHeader:(id)arg1 messageID:(id)arg2;
+- (bool)_checkMessageHeader:(id)arg1 messageID:(id)arg2;
 - (id)_fileTransferHeader;
 - (id)_getRequestHeader:(id)arg1;
 - (id)_getResponseHeader:(id)arg1;
@@ -29,10 +32,14 @@
 - (void)_suspendIncomingMessages;
 - (void)_updateMessageCenterPrefs:(id)arg1;
 - (id)_wrapMessage:(id)arg1 ofType:(unsigned short)arg2 userInfo:(id)arg3;
+- (void)beginSession;
+- (id)cancelMessagesReturningFailures:(id)arg1;
 - (id)customIDSOptions;
-- (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(int)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
+- (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(long long)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
 - (id)idsQueue;
 - (id)initWithService:(id)arg1 queue:(id)arg2;
+- (id)messageCenter;
+- (void)messageCenter:(id)arg1 activeDeviceChanged:(id)arg2 acknowledgement:(id /* block */)arg3;
 - (void)messageCenter:(id)arg1 didReceiveIncomingFileTransfer:(id)arg2;
 - (void)messageCenter:(id)arg1 didReceiveUnknownRequest:(id)arg2;
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifier:(id)arg2 forFileTransfer:(id)arg3;
@@ -40,9 +47,11 @@
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifierForRequest:(id)arg2;
 - (void)messageCenter:(id)arg1 didSuccessfullyDeliverRequestWithIdentifier:(id)arg2 userInfo:(id)arg3;
 - (void)messageCenter:(id)arg1 didSuccessfullySendRequestWithIdentifier:(id)arg2 userInfo:(id)arg3;
-- (id)outputStreamWithMetadata:(id)arg1 priority:(int)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
-- (BOOL)resume:(id*)arg1;
+- (void)messageCenter:(id)arg1 failedToSendMessageWithIdentifier:(id)arg2 error:(id)arg3 userInfo:(id)arg4;
+- (id)outputStreamWithMetadata:(id)arg1 priority:(long long)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
+- (bool)resume:(id*)arg1;
 - (void)setCustomIDSOptions:(id)arg1;
+- (id)stateForLogging;
 - (void)suspend;
 
 @end

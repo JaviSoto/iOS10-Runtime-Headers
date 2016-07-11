@@ -4,30 +4,36 @@
 
 @interface WeatherCloudPersistence : NSObject <WeatherPreferencesPersistence> {
     NSUbiquitousKeyValueStore * _cloudStore;
+    <WeatherCloudPersistenceDelegate> * _delegate;
 }
 
 @property (retain) NSUbiquitousKeyValueStore *cloudStore;
 @property (readonly, copy) NSString *debugDescription;
+@property <WeatherCloudPersistenceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)cloudPersistence;
-+ (BOOL)processIsWhitelistedForSync;
++ (id)cloudPersistenceWithDelegate:(id)arg1;
++ (bool)processIsWhitelistedForSync;
 
 - (void).cxx_destruct;
 - (id)arrayForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1;
 - (void)cloudCitiesChangedExternally:(id)arg1;
 - (id)cloudStore;
+- (id)delegate;
 - (id)dictionaryForKey:(id)arg1;
 - (id)init;
-- (BOOL)isInitialSyncNotification:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
+- (bool)isInitialSyncNotification:(id)arg1;
 - (id)objectForKey:(id)arg1;
-- (void)setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)removeObjectForKey:(id)arg1;
+- (void)setBool:(bool)arg1 forKey:(id)arg2;
 - (void)setCloudStore:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
-- (void)synchronize;
+- (bool)synchronize;
 
 @end

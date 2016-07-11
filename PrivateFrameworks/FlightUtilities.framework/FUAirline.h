@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUAirline : NSObject <NSCopying> {
+@interface FUAirline : NSObject <NSCopying, NSSecureCoding> {
     NSString * _FAACode;
     NSString * _IATACode;
     NSURL * _URL;
@@ -16,13 +16,17 @@
 @property (retain) NSString *name;
 @property (retain) NSString *phoneNumber;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)FAACode;
 - (id)IATACode;
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)phoneNumber;
 - (void)setFAACode:(id)arg1;

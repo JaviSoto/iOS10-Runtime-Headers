@@ -3,7 +3,7 @@
  */
 
 @interface CNLoggingContext : NSObject {
-    struct __asl_object_s { } * _aslClient;
+    void * _aslClient;
     NSObject<OS_dispatch_queue> * _aslQueue;
     NSString * _category;
     NSString * _subsystem;

@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDApplicationRegistry : NSObject <HMMessageReceiver, LSApplicationWorkspaceObserverProtocol> {
+@interface HMDApplicationRegistry : NSObject <HMFMessageReceiver, LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace * _appWorkspace;
     NSMutableDictionary * _applications;
-    HMMessageDispatcher * _messageDispatcher;
+    HMFMessageDispatcher * _messageDispatcher;
     HMDApplicationMonitor * _monitor;
-    BKSSystemService * _system;
     NSUUID * _uuid;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -16,13 +15,12 @@
 @property (nonatomic, retain) NSMutableDictionary *applications;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) HMMessageDispatcher *messageDispatcher;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) HMFMessageDispatcher *messageDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMDApplicationMonitor *monitor;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) BKSSystemService *system;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -44,12 +42,10 @@
 - (void)setApplications:(id)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setMonitor:(id)arg1;
-- (void)setSystem:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)startMonitoringConnection:(id)arg1;
 - (void)stopMonitoringConnection:(id)arg1;
-- (id)system;
 - (id)uuid;
 - (id)workQueue;
 

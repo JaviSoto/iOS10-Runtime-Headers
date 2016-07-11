@@ -8,23 +8,26 @@
     NSData * _cachedPushToken;
     NSMapTable * _handlerMap;
     NSObject<OS_dispatch_queue> * _ivarQueue;
+    bool  _shouldWaitToSetTopics;
     NSMutableSet * _topicsCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isConnected;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isConnected;
 @property (nonatomic, readonly) NSData *pushToken;
+@property (nonatomic) bool shouldWaitToSetTopics;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
++ (id)sharedInstanceWithPortName:(id)arg1;
 
 - (void)_recalculateTopicsCacheOnIvarQueue;
 - (void)_updateTopicsOnIvarQueue;
 - (void)addListener:(id)arg1 topics:(id)arg2 commands:(id)arg3 queue:(id)arg4;
 - (void)configureAsMacNotificationCenterObserver:(id)arg1;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(bool)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
@@ -32,10 +35,13 @@
 - (void)connectionDidReconnect:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isConnected;
+- (id)initWithPort:(id)arg1;
+- (bool)isConnected;
 - (id)pushToken;
 - (void)removeListener:(id)arg1;
 - (void)setCommands:(id)arg1 forListener:(id)arg2;
+- (void)setShouldWaitToSetTopics:(bool)arg1;
 - (void)setTopics:(id)arg1 forListener:(id)arg2;
+- (bool)shouldWaitToSetTopics;
 
 @end

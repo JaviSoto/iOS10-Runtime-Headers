@@ -3,24 +3,27 @@
  */
 
 @interface CKStarkManager : NSObject {
-    BOOL  _isStarkConnected;
+    bool  _isStarkConnected;
     UIViewController * _starkRootViewController;
     UIScreen * _starkScreen;
     UIWindow * _starkWindow;
 }
 
-@property (nonatomic, readonly) BOOL isStarkConnected;
+@property (nonatomic, readonly) bool isStarkConnected;
 @property (nonatomic, retain) UIViewController *starkRootViewController;
 @property (nonatomic, retain) UIScreen *starkScreen;
 @property (nonatomic, retain) UIWindow *starkWindow;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
+- (void)activateForConversation:(id)arg1;
+- (void)activateForRecipient:(id)arg1;
 - (void)attachStarkToScreen:(id)arg1;
 - (void)dealloc;
 - (void)detachStarkScreen:(id)arg1;
 - (id)init;
-- (BOOL)isStarkConnected;
+- (bool)isStarkConnected;
 - (void)screenDidConnectNotification:(id)arg1;
 - (void)screenDidDisconnectNotification:(id)arg1;
 - (void)setStarkRootViewController:(id)arg1;

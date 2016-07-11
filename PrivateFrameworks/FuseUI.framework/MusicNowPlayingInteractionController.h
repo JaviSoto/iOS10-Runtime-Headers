@@ -7,14 +7,14 @@
     <UIViewControllerContextTransitioning> * _context;
     UIPanGestureRecognizer * _gestureRecognizer;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _initialLocation;
-    BOOL  _isRubberbanding;
+    bool  _isRubberbanding;
     MusicNowPlayingPresentationController * _presentationController;
-    BOOL  _transitionCanceled;
-    BOOL  _transitionFinished;
-    BOOL  _transitionStarted;
+    bool  _transitionCanceled;
+    bool  _transitionFinished;
+    bool  _transitionStarted;
 }
 
 @property (nonatomic, retain) MusicNowPlayingTransitionController *animationController;
@@ -34,6 +34,6 @@
 - (void)setPresentationController:(id)arg1;
 - (void)startInteractiveTransition:(id)arg1;
 - (void)stopInteractiveTransition;
-- (void)updateInteractiveTransition:(float)arg1;
+- (void)updateInteractiveTransition:(double)arg1;
 
 @end

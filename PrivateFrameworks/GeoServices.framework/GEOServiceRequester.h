@@ -9,11 +9,12 @@
 
 + (id)_debugRequestName;
 + (int)_experimentDispatcherRequestTypeForRequest:(id)arg1;
-+ (int)_experimentType;
++ (long long)_experimentType;
++ (unsigned char)_requestCounterInfoTypeForRequest:(id)arg1;
 + (id)_serviceTypeNumber;
-+ (BOOL)_shouldThrottleRequests;
++ (bool)_shouldThrottleRequests;
 + (id)_throttleKey;
-+ (unsigned int)_urlType;
++ (unsigned long long)_urlType;
 
 - (void)_cancelRequest:(id)arg1;
 - (void)_startWithRequest:(id)arg1 traits:(id)arg2 auditToken:(id)arg3 completionHandler:(id /* block */)arg4;

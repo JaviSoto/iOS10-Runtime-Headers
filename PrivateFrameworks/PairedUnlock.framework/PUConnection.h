@@ -4,45 +4,52 @@
 
 @interface PUConnection : NSObject <PUUnlockClient> {
     NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
     <PUConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     id /* block */  _getRemoteDevicePasscodeStateHandler;
-    BOOL  _invalidated;
     id /* block */  _remoteDeviceRemoveLockoutHandler;
 }
 
-@property (nonatomic, readonly) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <PUConnectionDelegate> *delegate;
+@property <PUConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL invalidated;
-@property (nonatomic, readonly) BOOL isInvalid;
+@property (nonatomic, copy) id /* block */ getRemoteDevicePasscodeStateHandler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id /* block */ remoteDeviceRemoveLockoutHandler;
 @property (readonly) Class superclass;
+
++ (void)syncPasscodeState;
 
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
 - (id)delegate;
-- (void)didDisableOnlyRemoteUnlock:(BOOL)arg1 error:(id)arg2;
-- (void)didEnableOnlyRemoteUnlock:(BOOL)arg1 error:(id)arg2;
-- (void)didGetRemoteDeviceHasPasscode:(BOOL)arg1 isLocked:(BOOL)arg2 isUnlockOnly:(BOOL)arg3 error:(id)arg4;
-- (void)didPairForUnlock:(BOOL)arg1 error:(id)arg2;
-- (void)didUnpairForUnlock:(BOOL)arg1 error:(id)arg2;
+- (id)delegateIfRespondsToSelector:(SEL)arg1;
+- (void)didDisableOnlyRemoteUnlock:(bool)arg1 error:(id)arg2;
+- (void)didEnableOnlyRemoteUnlock:(bool)arg1 error:(id)arg2;
+- (void)didGetRemoteDeviceHasPasscode:(bool)arg1 isLocked:(bool)arg2 isUnlockOnly:(bool)arg3 error:(id)arg4;
+- (void)didPairForUnlock:(bool)arg1 error:(id)arg2;
+- (void)didUnpairForUnlock:(bool)arg1 error:(id)arg2;
 - (void)disableOnlyRemoteUnlock;
 - (void)enableOnlyRemoteUnlockWithPasscode:(id)arg1;
+- (id /* block */)getRemoteDevicePasscodeStateHandler;
 - (void)getRemoteDeviceState:(id /* block */)arg1;
 - (id)init;
-- (BOOL)invalidated;
-- (BOOL)isInvalid;
+- (id)initWithDelegate:(id)arg1;
 - (void)pairForUnlockWithPasscode:(id)arg1;
-- (void)remoteDeviceDidCompletePasscodeAction:(BOOL)arg1 error:(id)arg2;
-- (void)remoteDeviceDidRemoveLockout:(BOOL)arg1 error:(id)arg2;
+- (const char *)queueNameWithSuffix:(id)arg1;
+- (void)remoteDeviceDidCompletePasscodeAction:(bool)arg1 error:(id)arg2;
+- (void)remoteDeviceDidRemoveLockout:(bool)arg1 error:(id)arg2;
 - (void)remoteDeviceDidUnlock;
-- (void)requestRemoteDevicePasscodeAction:(int)arg1 type:(int)arg2;
+- (id /* block */)remoteDeviceRemoveLockoutHandler;
+- (void)requestRemoteDevicePasscodeAction:(long long)arg1 type:(long long)arg2;
 - (void)requestRemoteDeviceRemoveLockout:(id /* block */)arg1;
 - (void)requestRemoteDeviceUnlockNotification;
+- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setInvalidated:(BOOL)arg1;
+- (void)setGetRemoteDevicePasscodeStateHandler:(id /* block */)arg1;
+- (void)setRemoteDeviceRemoveLockoutHandler:(id /* block */)arg1;
 - (void)unpairForUnlock;
 
 @end

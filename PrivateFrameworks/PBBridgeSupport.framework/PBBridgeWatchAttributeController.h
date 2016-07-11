@@ -4,40 +4,49 @@
 
 @interface PBBridgeWatchAttributeController : NSObject {
     NRDevice * _device;
-    unsigned int  _edition;
-    int  _material;
-    unsigned int  _size;
+    unsigned long long  _edition;
+    unsigned long long  _hardwareBehavior;
+    unsigned long long  _internalSize;
+    unsigned long long  _material;
     NSCache * _stringCache;
 }
 
 @property (nonatomic, retain) NRDevice *device;
-@property (nonatomic, readonly) unsigned int edition;
-@property (nonatomic, readonly) int material;
-@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, readonly) unsigned long long edition;
+@property (nonatomic, readonly) unsigned long long hardwareBehavior;
+@property (nonatomic, readonly) unsigned long long internalSize;
+@property (nonatomic, readonly) unsigned long long material;
+@property (nonatomic, readonly) unsigned long long size;
 @property (nonatomic, retain) NSCache *stringCache;
 
-+ (id)editionDescription:(unsigned int)arg1;
-+ (id)materialDescription:(int)arg1;
-+ (id)materialKeyColorForMaterial:(int)arg1;
-+ (id)resourceString:(id)arg1 material:(int)arg2 size:(unsigned int)arg3 forAttributes:(unsigned int)arg4;
++ (id)editionDescription:(unsigned long long)arg1;
++ (id)hwBehaviorDescription:(unsigned long long)arg1;
++ (id)materialDescription:(unsigned long long)arg1;
++ (unsigned long long)materialFromDevice:(id)arg1;
++ (id)materialKeyColorForMaterial:(unsigned long long)arg1;
++ (id)resourceString:(id)arg1 material:(unsigned long long)arg2 size:(unsigned long long)arg3 forAttributes:(unsigned long long)arg4;
 + (id)sharedDeviceController;
-+ (id)sizeDescription:(unsigned int)arg1;
++ (id)sizeDescription:(unsigned long long)arg1;
++ (unsigned long long)sizeFromDevice:(id)arg1;
++ (unsigned short)sizeFromInternalSize:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_populateMaterialDetailsWithDMinProperities:(id)arg1;
 - (id)attributesDescription;
 - (id)device;
-- (unsigned int)edition;
+- (unsigned long long)edition;
 - (id)getGestaltDmin;
+- (unsigned long long)hardwareBehavior;
 - (id)init;
-- (int)material;
+- (unsigned long long)internalSize;
+- (unsigned long long)material;
 - (id)materialKeyColor;
-- (id)resourceString:(id)arg1 forAttributes:(unsigned int)arg2;
+- (id)resourceString:(id)arg1 forAttributes:(unsigned long long)arg2;
 - (void)setDevice:(id)arg1;
-- (void)setMaterial:(int)arg1;
-- (void)setSize:(unsigned int)arg1;
+- (void)setInternalSize:(unsigned long long)arg1;
+- (void)setMaterial:(unsigned long long)arg1;
 - (void)setStringCache:(id)arg1;
-- (unsigned int)size;
+- (unsigned long long)size;
 - (id)stringCache;
 
 @end

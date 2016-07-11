@@ -4,29 +4,27 @@
 
 @interface BBAttachments : NSObject <NSCopying, NSSecureCoding> {
     NSCountedSet * _additionalAttachments;
-    NSMutableDictionary * _clientSideComposedImageInfos;
-    int  primaryType;
+    long long  primaryType;
 }
 
 @property (nonatomic, retain) NSCountedSet *additionalAttachments;
-@property (nonatomic, retain) NSMutableDictionary *clientSideComposedImageInfos;
-@property (nonatomic) int primaryType;
+@property (nonatomic) long long primaryType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)addAttachmentOfType:(int)arg1;
+- (void).cxx_destruct;
+- (void)addAttachmentOfType:(long long)arg1;
 - (id)additionalAttachments;
-- (id)clientSideComposedImageInfos;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToAttachments:(id)arg1;
-- (unsigned int)numberOfAdditionalAttachments;
-- (unsigned int)numberOfAdditionalAttachmentsOfType:(int)arg1;
-- (int)primaryType;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAttachments:(id)arg1;
+- (unsigned long long)numberOfAdditionalAttachments;
+- (unsigned long long)numberOfAdditionalAttachmentsOfType:(long long)arg1;
+- (long long)primaryType;
 - (void)setAdditionalAttachments:(id)arg1;
-- (void)setClientSideComposedImageInfos:(id)arg1;
-- (void)setPrimaryType:(int)arg1;
+- (void)setPrimaryType:(long long)arg1;
 
 @end

@@ -3,35 +3,50 @@
  */
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
+    GEOPDAnalyticMetadata * _analyticMetadata;
+    GEORPClientCapabilities * _clientCapabilities;
     NSMutableArray * _problemIds;
     NSString * _statusNotificationId;
     GEORPUserCredentials * _userCredentials;
 }
 
-@property (nonatomic, readonly) BOOL hasStatusNotificationId;
-@property (nonatomic, readonly) BOOL hasUserCredentials;
+@property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
+@property (nonatomic, retain) GEORPClientCapabilities *clientCapabilities;
+@property (nonatomic, readonly) bool hasAnalyticMetadata;
+@property (nonatomic, readonly) bool hasClientCapabilities;
+@property (nonatomic, readonly) bool hasStatusNotificationId;
+@property (nonatomic, readonly) bool hasUserCredentials;
 @property (nonatomic, retain) NSMutableArray *problemIds;
 @property (nonatomic, retain) NSString *statusNotificationId;
 @property (nonatomic, retain) GEORPUserCredentials *userCredentials;
 
++ (Class)problemIdType;
+
 - (void)addProblemId:(id)arg1;
+- (id)analyticMetadata;
 - (void)clearProblemIds;
+- (id)clientCapabilities;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatusNotificationId;
-- (BOOL)hasUserCredentials;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAnalyticMetadata;
+- (bool)hasClientCapabilities;
+- (bool)hasStatusNotificationId;
+- (bool)hasUserCredentials;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)problemIdAtIndex:(unsigned int)arg1;
+- (void)populateAnalyticsMetadata;
+- (id)problemIdAtIndex:(unsigned long long)arg1;
 - (id)problemIds;
-- (unsigned int)problemIdsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)problemIdsCount;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (void)setAnalyticMetadata:(id)arg1;
+- (void)setClientCapabilities:(id)arg1;
 - (void)setProblemIds:(id)arg1;
 - (void)setStatusNotificationId:(id)arg1;
 - (void)setUserCredentials:(id)arg1;

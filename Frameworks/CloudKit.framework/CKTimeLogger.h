@@ -28,12 +28,13 @@
 + (id)loggerForObject:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)CKStatusReportArray;
 - (void)addChildLogger:(id)arg1;
 - (void)addCustomLogOfType:(id)arg1 message:(id)arg2 from:(double)arg3 to:(double)arg4;
 - (void)addLog:(id)arg1 forType:(id)arg2;
 - (void)appendBriefStatusReportToString:(id)arg1;
-- (void)appendStatusReportForType:(id)arg1 toString:(id)arg2 withIndent:(unsigned int)arg3 showingPointers:(BOOL)arg4;
-- (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned int)arg2 showingPointers:(BOOL)arg3;
+- (void)appendStatusReportForType:(id)arg1 toString:(id)arg2 withIndent:(unsigned long long)arg3 showingPointers:(bool)arg4;
+- (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned long long)arg2 showingPointers:(bool)arg3;
 - (void)beginLoggingSessionOfType:(id)arg1 message:(id)arg2;
 - (id)childLoggers;
 - (id)currentSessions;
@@ -65,7 +66,6 @@
 - (void)setParentLoggerDescription:(id)arg1;
 - (void)setRelationMessage:(id)arg1;
 - (void)setRelationTime:(double)arg1;
-- (id)statusReport;
 - (void)togglePauseLoggingSessionOfType:(id)arg1 message:(id)arg2;
 - (void)treeTraversalWithBlock:(id /* block */)arg1;
 

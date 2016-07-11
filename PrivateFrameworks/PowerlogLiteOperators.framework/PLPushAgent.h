@@ -3,18 +3,26 @@
  */
 
 @interface PLPushAgent : PLAgent {
+    unsigned long long  _numKeepAlives;
     PLXPCListenerOperatorComposition * _receivedPushListener;
+    PLTimer * _runTimeAggregatorTimer;
+    PLXPCListenerOperatorComposition * _sentKeepAliveListener;
 }
 
+@property unsigned long long numKeepAlives;
 @property (retain) PLXPCListenerOperatorComposition *receivedPushListener;
+@property (retain) PLTimer *runTimeAggregatorTimer;
+@property (retain) PLXPCListenerOperatorComposition *sentKeepAliveListener;
 
 + (id)bundleIdFromTopic:(id)arg1;
++ (id)defaults;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
 + (id)entryEventPointDefinitionsReceivedPush;
-+ (BOOL)isHighPriorityPushEntry:(id)arg1;
++ (id)entryEventPointDefinitionsSentKeepAlive;
++ (bool)isHighPriorityPushEntry:(id)arg1;
 + (void)load;
 
 - (void).cxx_destruct;
@@ -22,7 +30,13 @@
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
+- (unsigned long long)numKeepAlives;
 - (id)receivedPushListener;
+- (id)runTimeAggregatorTimer;
+- (id)sentKeepAliveListener;
+- (void)setNumKeepAlives:(unsigned long long)arg1;
 - (void)setReceivedPushListener:(id)arg1;
+- (void)setRunTimeAggregatorTimer:(id)arg1;
+- (void)setSentKeepAliveListener:(id)arg1;
 
 @end

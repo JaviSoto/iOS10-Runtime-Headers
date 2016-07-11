@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)initWithData:(id)arg1;
 - (id)regexpIdsThatMightMatchUtf8:(const char *)arg1;
 

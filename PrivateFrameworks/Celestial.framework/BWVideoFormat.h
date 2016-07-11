@@ -3,58 +3,62 @@
  */
 
 @interface BWVideoFormat : BWFormat {
-    unsigned long  _bytesPerRowAlignment;
+    unsigned long long  _bytesPerRowAlignment;
     unsigned int  _cacheMode;
-    unsigned long  _extendedHeight;
-    unsigned long  _extendedWidth;
-    unsigned long  _height;
+    int  _colorSpaceProperties;
+    unsigned long long  _extendedHeight;
+    unsigned long long  _extendedWidth;
+    unsigned long long  _height;
     NSDictionary * _pixelBufferAttributes;
-    unsigned long  _pixelFormat;
-    unsigned long  _planeAlignment;
-    BOOL  _prewireBuffers;
-    unsigned long  _width;
+    unsigned int  _pixelFormat;
+    unsigned long long  _planeAlignment;
+    bool  _prewireBuffers;
+    unsigned long long  _width;
 }
 
-@property (nonatomic) unsigned long bytesPerRowAlignment;
+@property (nonatomic) unsigned long long bytesPerRowAlignment;
 @property (nonatomic) unsigned int cacheMode;
-@property (nonatomic) unsigned long extendedHeight;
-@property (nonatomic) unsigned long extendedWidth;
-@property (nonatomic) unsigned long height;
+@property (nonatomic, readonly) int colorSpaceProperties;
+@property (nonatomic) unsigned long long extendedHeight;
+@property (nonatomic) unsigned long long extendedWidth;
+@property (nonatomic) unsigned long long height;
 @property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
-@property (nonatomic) unsigned long pixelFormat;
-@property (nonatomic) unsigned long planeAlignment;
-@property (nonatomic) BOOL prewireBuffers;
-@property (nonatomic) unsigned long width;
+@property (nonatomic) unsigned int pixelFormat;
+@property (nonatomic) unsigned long long planeAlignment;
+@property (nonatomic) bool prewireBuffers;
+@property (nonatomic) unsigned long long width;
 
 + (id)_formatRequirementsByResolvingFormatRequirements:(id)arg1 withFormatRequirements:(id)arg2;
 + (id)formatByResolvingRequirements:(id)arg1;
 + (void)initialize;
++ (id)pixelBufferAttachmentsForColorSpaceProperties:(int)arg1;
 
-- (id)_initWithResolvedPixelBufferAttributes:(id)arg1;
-- (unsigned long)bytesPerRowAlignment;
+- (id)_initWithResolvedPixelBufferAttributes:(id)arg1 colorSpaceProperties:(int)arg2;
+- (unsigned long long)bytesPerRowAlignment;
 - (unsigned int)cacheMode;
+- (int)colorSpaceProperties;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (unsigned long)extendedHeight;
-- (unsigned long)extendedWidth;
+- (unsigned long long)extendedHeight;
+- (unsigned long long)extendedWidth;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
-- (unsigned long)height;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned long)mediaType;
+- (unsigned long long)height;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)mediaType;
 - (id)pixelBufferAttributes;
-- (unsigned long)pixelFormat;
-- (unsigned long)planeAlignment;
-- (BOOL)prewireBuffers;
-- (void)setBytesPerRowAlignment:(unsigned long)arg1;
+- (unsigned int)pixelFormat;
+- (unsigned long long)planeAlignment;
+- (bool)prewireBuffers;
+- (void)setBytesPerRowAlignment:(unsigned long long)arg1;
 - (void)setCacheMode:(unsigned int)arg1;
-- (void)setExtendedHeight:(unsigned long)arg1;
-- (void)setExtendedWidth:(unsigned long)arg1;
-- (void)setHeight:(unsigned long)arg1;
-- (void)setPixelFormat:(unsigned long)arg1;
-- (void)setPlaneAlignment:(unsigned long)arg1;
-- (void)setPrewireBuffers:(BOOL)arg1;
-- (void)setWidth:(unsigned long)arg1;
-- (unsigned long)width;
+- (void)setExtendedHeight:(unsigned long long)arg1;
+- (void)setExtendedWidth:(unsigned long long)arg1;
+- (void)setHeight:(unsigned long long)arg1;
+- (void)setPixelFormat:(unsigned int)arg1;
+- (void)setPlaneAlignment:(unsigned long long)arg1;
+- (void)setPrewireBuffers:(bool)arg1;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)width;
 
 @end

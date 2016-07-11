@@ -4,12 +4,12 @@
 
 @interface CNContactVCardParsedResultBuilder : NSObject <CNVCardParsedResultBuilder> {
     CNMutableContact * _contact;
-    BOOL  _empty;
+    bool  _empty;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)contactKeyForVCardKey:(id)arg1;
@@ -19,19 +19,17 @@
 + (id /* block */)socialProfileFromDictionaryTransform;
 
 - (id)build;
-- (BOOL)canSetValueForProperty:(id)arg1;
-- (int)contactTypeFromPersonFlags:(int)arg1;
+- (bool)canSetValueForProperty:(id)arg1;
+- (long long)contactTypeFromPersonFlags:(long long)arg1;
 - (void)dealloc;
-- (int)displayNameOrderFromPersonFlags:(int)arg1;
 - (id)init;
-- (int)personFlags;
-- (int)personFlagsByAddingContactType:(int)arg1 toFlags:(int)arg2;
-- (int)personFlagsByAddingDisplayNameOrder:(int)arg1 toFlags:(int)arg2;
-- (BOOL)setImageData:(id)arg1 forReference:(id)arg2 clipRects:(id)arg3;
-- (BOOL)setPersonFlags:(int)arg1;
+- (long long)personFlags;
+- (long long)personFlagsByAddingContactType:(long long)arg1 toFlags:(long long)arg2;
+- (bool)setImageData:(id)arg1 forReference:(id)arg2 clipRects:(id)arg3;
+- (bool)setPersonFlags:(long long)arg1;
 - (void)setUnknownProperties:(id)arg1;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
-- (BOOL)setValues:(id)arg1 labels:(id)arg2 isPrimaries:(id)arg3 forProperty:(id)arg4;
+- (bool)setValue:(id)arg1 forProperty:(id)arg2;
+- (bool)setValues:(id)arg1 labels:(id)arg2 isPrimaries:(id)arg3 forProperty:(id)arg4;
 - (id)validCountryCodes;
 - (id)valueForProperty:(id)arg1;
 

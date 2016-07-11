@@ -4,14 +4,14 @@
 
 @interface HDBatteryService : HDHealthService {
     CBCharacteristic * _batteryCharacteristic;
-    HDHealthDevicePropertyManager * _propertyManager;
+    HDHealthServicePropertyManager * _propertyManager;
 }
 
 @property (nonatomic, retain) CBCharacteristic *batteryCharacteristic;
-@property (nonatomic) HDHealthDevicePropertyManager *propertyManager;
+@property (nonatomic) HDHealthServicePropertyManager *propertyManager;
 
 + (id)implementedProperties;
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
 - (void).cxx_destruct;

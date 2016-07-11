@@ -21,6 +21,7 @@
 - (id)author;
 - (id)bundleID;
 - (id)categories;
+- (id)dictionary;
 - (id)itemURL;
 - (void)setAppName:(id)arg1;
 - (void)setAuthor:(id)arg1;

@@ -4,32 +4,33 @@
 
 @interface HDSQLiteJoinClause : NSObject {
     NSString * _joinAsName;
-    int  _joinType;
-    Class  _localEntityClass;
+    long long  _joinType;
     NSString * _localReferenceProperty;
+    NSString * _localTable;
     Class  _targetEntityClass;
     NSString * _targetKeyProperty;
 }
 
 @property (nonatomic, readonly, copy) NSString *joinAsName;
-@property (nonatomic, readonly) int joinType;
-@property (nonatomic, readonly) Class localEntityClass;
+@property (nonatomic, readonly) long long joinType;
 @property (nonatomic, readonly, copy) NSString *localReferenceProperty;
+@property (nonatomic, readonly, copy) NSString *localTable;
 @property (nonatomic, readonly) Class targetEntityClass;
 @property (nonatomic, readonly, copy) NSString *targetKeyProperty;
 
-+ (id)innerJoinClauseFromEntity:(Class)arg1 toTargetEntity:(Class)arg2 as:(id)arg3 localReference:(id)arg4 targetKey:(id)arg5;
-+ (id)leftJoinClauseFromEntity:(Class)arg1 toTargetEntity:(Class)arg2 as:(id)arg3 localReference:(id)arg4 targetKey:(id)arg5;
++ (id)innerJoinClauseFromTable:(id)arg1 toTargetEntity:(Class)arg2 as:(id)arg3 localReference:(id)arg4 targetKey:(id)arg5;
++ (id)leftJoinClauseFromTable:(id)arg1 toTargetEntity:(Class)arg2 as:(id)arg3 localReference:(id)arg4 targetKey:(id)arg5;
 
 - (void).cxx_destruct;
 - (id)SQLJoinClause;
-- (id)_initWithJoinType:(int)arg1 fromEntity:(Class)arg2 toTargetEntity:(Class)arg3 as:(id)arg4 localReference:(id)arg5 targetKey:(id)arg6;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)_initWithJoinType:(long long)arg1 fromTable:(id)arg2 toTargetEntity:(Class)arg3 as:(id)arg4 localReference:(id)arg5 targetKey:(id)arg6;
+- (id)description;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)joinAsName;
-- (int)joinType;
-- (Class)localEntityClass;
+- (long long)joinType;
 - (id)localReferenceProperty;
+- (id)localTable;
 - (Class)targetEntityClass;
 - (id)targetKeyProperty;
 

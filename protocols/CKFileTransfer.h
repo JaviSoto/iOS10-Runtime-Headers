@@ -6,22 +6,30 @@
 @required
 
 - (IMMessage *)IMMessage;
+- (NSDictionary *)attributionInfo;
 - (unsigned long long)currentBytes;
 - (NSError *)error;
 - (NSURL *)fileURL;
 - (NSString *)filename;
 - (NSString *)guid;
-- (id)initWithFileURL:(NSURL *)arg1 transcoderUserInfo:(NSDictionary *)arg2;
+- (bool)hideAttachment;
+- (id)initWithFileURL:(NSURL *)arg1 transcoderUserInfo:(NSDictionary *)arg2 attributionInfo:(NSDictionary *)arg3 hideAttachment:(bool)arg4;
 - (id)initWithTransferGUID:(NSString *)arg1 imMessage:(IMMessage *)arg2;
-- (BOOL)isDownloadable;
-- (BOOL)isDownloading;
-- (BOOL)isFileDataReady;
-- (BOOL)isFileURLFinalized;
-- (BOOL)isRestoring;
+- (bool)isDownloadable;
+- (bool)isDownloading;
+- (bool)isFileDataReady;
+- (bool)isFileURLFinalized;
+- (bool)isRestoring;
+- (bool)isSticker;
 - (void)mediaObjectAdded;
 - (void)mediaObjectRemoved;
 - (void)setIMMessage:(IMMessage *)arg1;
+- (NSDictionary *)stickerUserInfo;
 - (unsigned long long)totalBytes;
 - (NSDictionary *)transcoderUserInfo;
+
+@optional
+
+- (id)initWithStickerFileURL:(NSURL *)arg1 transferUserInfo:(NSDictionary *)arg2 attributionInfo:(NSDictionary *)arg3;
 
 @end

@@ -16,24 +16,23 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (id)__componentsRequiredForScriptDetectionWithPhoneticDesired:(BOOL)arg1;
++ (id)__componentsRequiredForScriptDetectionWithPhoneticDesired:(bool)arg1;
 + (id)_allComponents;
 + (id)_allProperties;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isEmpty;
-- (id)_scriptDeterminingStringRepresentationWithPhoneticDesired:(BOOL)arg1;
+- (bool)_isEmpty;
+- (id)_scriptDeterminingStringRepresentationWithPhoneticDesired:(bool)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
-- (void)finalize;
 - (id)givenName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToComponents:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToComponents:(id)arg1;
 - (id)middleName;
 - (id)namePrefix;
 - (id)nameSuffix;
@@ -47,9 +46,28 @@
 - (void)setNickname:(id)arg1;
 - (void)setPhoneticRepresentation:(id)arg1;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (id)CKPropertiesToDescribe:(bool)arg1;
+
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
 + (id)componentsForContact:(id)arg1;
 + (id)keyPathMapping;
+
+- (void)overrideComponentsInContact:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (id)br_formattedName;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (bool)isGivenNameFirst;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (id)ic_componentsForSearchHighlighting;
+- (id)ic_localizedNameWithDefaultFormattingStyle;
 
 @end

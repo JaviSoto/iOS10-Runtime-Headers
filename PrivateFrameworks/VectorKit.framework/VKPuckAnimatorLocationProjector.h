@@ -4,10 +4,8 @@
 
 @interface VKPuckAnimatorLocationProjector : NSObject {
     double  _projectedCourse;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
     }  _projectedPosition;
     GEORouteMatch * _projectedRouteMatch;
     GEORouteMatch * _routeMatch;
@@ -15,8 +13,8 @@
 
 @property (nonatomic, readonly) double projectedCourse;
 @property (nonatomic, readonly) struct { double x1; double x2; } projectedLocation;
-@property (nonatomic, readonly) BOOL projectedLocationOnRoute;
-@property (nonatomic, readonly) struct VKPoint { double x1; double x2; double x3; } projectedPosition;
+@property (nonatomic, readonly) bool projectedLocationOnRoute;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  projectedPosition; /* unknown property attribute:  1>=[3d]} */
 @property (nonatomic, retain) GEORouteMatch *projectedRouteMatch;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
 
@@ -27,8 +25,8 @@
 - (void)projectFromLocation:(id)arg1 routeMatch:(id)arg2 speedMultiplier:(double)arg3;
 - (double)projectedCourse;
 - (struct { double x1; double x2; })projectedLocation;
-- (BOOL)projectedLocationOnRoute;
-- (struct VKPoint { double x1; double x2; double x3; })projectedPosition;
+- (bool)projectedLocationOnRoute;
+- (struct Matrix<double, 3, 1> { double x1[3]; })projectedPosition;
 - (id)projectedRouteMatch;
 - (void)reset;
 - (id)routeMatch;

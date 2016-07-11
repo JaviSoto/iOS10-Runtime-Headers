@@ -4,10 +4,12 @@
 
 @interface HDSampleSyncEntity : HDDataSyncEntity
 
-+ (id)_predicateWithDeviceSourceIdentifier:(id)arg1 nowDate:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-+ (long long)finalAnchorForNanoSyncRestoreWithStore:(id)arg1 nowDate:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (id)_appleWatchSamplesPredicateForSession:(id)arg1;
++ (id)_companionNanoSyncPredicateConjunctionForSession:(id)arg1;
++ (id)_defaultCompanionNanoSyncSampleAgePredicateForSession:(id)arg1;
 + (int)nanoSyncObjectType;
-+ (id)objectsForNanoSyncRestoreWithStore:(id)arg1 nowDate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
-+ (id)sampleTypesByAgeInDaysForNanoSyncRestore;
++ (id)nanoSyncPredicateForSession:(id)arg1;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (bool)supportsSpeculativeNanoSyncChanges;
 
 @end

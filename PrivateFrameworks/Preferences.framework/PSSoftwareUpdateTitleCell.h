@@ -2,48 +2,62 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSoftwareUpdateTitleCell : PSTableCell <UIWebViewDelegate> {
+@interface PSSoftwareUpdateTitleCell : PSTableCell {
     PSSoftwareUpdateAnimatedIcon * _animatedGearView;
-    BOOL  _animatingGearView;
+    bool  _animatingGearView;
+    UIImageView * _gearBackgroundImageView;
     UIProgressView * _progressBar;
     int  _progressStyle;
     PSWebContainerView * _releaseNotesSummaryView;
     UILabel * _updateStatusLabel;
+    NSLayoutConstraint * _updateStatusLabelVerticalConstraint;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) UIImage *gearBackgroundImage;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) UIProgressView *progressBar;
+@property (nonatomic, readonly) UIImage *gearBackgroundImage;
+@property (nonatomic, retain) UIImageView *gearBackgroundImageView;
+@property (nonatomic, readonly) UIProgressView *progressBar;
 @property (nonatomic) int progressDisplayStyle;
-@property (nonatomic, retain) PSWebContainerView *releaseNotesSummaryView;
-@property (readonly) Class superclass;
-@property (nonatomic, retain) UILabel *updateStatusLabel;
+@property (nonatomic, readonly) PSWebContainerView *releaseNotesSummaryView;
+@property (nonatomic, readonly) UILabel *updateStatusLabel;
+@property (nonatomic, retain) NSLayoutConstraint *updateStatusLabelVerticalConstraint;
 
-+ (int)cellStyle;
++ (long long)cellStyle;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)configureAnimatedGearViewFromImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)configureImageView;
+- (void)configureProgressBar;
+- (void)configurePublisherLabel;
+- (void)configureReleaseNotesSummaryView;
+- (void)configureUpdateNameLabel;
+- (void)configureUpdateStatusLabel;
+- (void)createGearIconConstraints;
 - (void)didMoveToSuperview;
 - (id)gearBackgroundImage;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (void)layoutSubviews;
-- (id)newSoftwareUpdateAnimatedIconWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)preferredHeightWithTable:(id)arg1;
+- (id)gearBackgroundImageView;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)newGearBackgroundImageView;
+- (id)newProgressBar;
+- (id)newSoftwareUpdateAnimatedIconWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)newUpdateStatusLabel;
+- (double)preferredHeightWithTable:(id)arg1;
 - (id)progressBar;
 - (int)progressDisplayStyle;
 - (id)releaseNotesSummaryView;
-- (void)setAnimatingGearView:(BOOL)arg1;
+- (void)setAnimatingGearView:(bool)arg1;
+- (void)setGearBackgroundImageView:(id)arg1;
 - (void)setProgress:(float)arg1;
-- (void)setProgressBar:(id)arg1;
 - (void)setProgressDisplayStyle:(int)arg1;
+- (void)setPublisherText:(id)arg1;
 - (void)setReleaseNotesSummary:(id)arg1;
-- (void)setReleaseNotesSummaryView:(id)arg1;
 - (void)setStatusMessage:(id)arg1;
-- (void)setUpdateStatusLabel:(id)arg1;
-- (void)sizeToFitWithTable:(id)arg1;
+- (void)setUpdateName:(id)arg1;
+- (void)setUpdateStatusLabelVerticalConstraint:(id)arg1;
+- (void)setupViews;
+- (void)updateConstraints;
+- (void)updateProgressTintColor;
 - (id)updateStatusLabel;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (id)updateStatusLabelVerticalConstraint;
 
 @end

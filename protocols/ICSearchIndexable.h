@@ -5,20 +5,27 @@
 
 @required
 
-- (void)deleteFromNoteContextUsingIndexerContext:(ICSearchIndexerContext *)arg1;
+- (NSArray *)authorsExcludingCurrentUser;
 - (NSString *)identifier;
-- (BOOL)isDeletedOrInTrash;
+- (bool)isHiddenFromSearch;
+- (NSManagedObjectContext *)managedObjectContext;
 - (NSDate *)modificationDate;
-- (NSArray *)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
-- (NSString *)searchIndexableIdentifier;
-- (NSString *)searchIndexableTitle;
-- (BOOL)searchResultCanBeDeletedFromNoteContext;
-- (unsigned int)searchResultsSection;
-- (BOOL)shouldUpdateIndexForChangedValues:(NSDictionary *)arg1;
-- (int)visibilityTestingType;
+- (NSManagedObjectID *)objectID;
+- (NSString *)objectIdentifier;
+- (NSString *)searchDomainIdentifier;
+- (NSArray *)searchIndexStringsOutHasAdditionalStrings:(bool*)arg1;
+- (NSString *)searchIndexableTitleUsingContentTextIfNecessary:(NSString *)arg1;
+- (bool)searchResultCanBeDeletedFromNoteContext;
+- (unsigned long long)searchResultsSection;
+- (CSSearchableItemAttributeSet *)searchableItemAttributeSet;
+- (NSString *)searchableItemIdentifier;
+- (bool)shouldUpdateIndexForChangedValues:(NSDictionary *)arg1;
+- (long long)visibilityTestingType;
 
 @optional
 
 - (ICGenerateSearchIndexStringsOperation *)generateSearchIndexStringsOperation;
+- (bool)ignoreInSearchIndexer;
+- (void)releaseMemoryForIndexing;
 
 @end

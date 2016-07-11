@@ -4,12 +4,12 @@
 
 @interface CADSpotlightOperationGroup : CADOperationGroup
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 + (id)whitelistedBundles;
 
 - (void)CADPushItemsToSpotlight:(id)arg1 reply:(id /* block */)arg2;
-- (BOOL)accessGrantedToPerformSelector:(SEL)arg1;
+- (bool)accessGrantedToPerformSelector:(SEL)arg1;
 
 @end

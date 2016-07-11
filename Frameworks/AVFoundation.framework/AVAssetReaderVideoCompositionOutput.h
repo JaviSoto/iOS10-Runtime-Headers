@@ -11,15 +11,20 @@
 @property (nonatomic, readonly) NSDictionary *videoSettings;
 @property (nonatomic, readonly) NSArray *videoTracks;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
++ (id)_videoCompositionProcessorPropertiesByAddingColorProperties:(id)arg1 toVideoCompositionProcessorProperties:(id)arg2;
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 
 - (id)_asset;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (id)_errorForOSStatus:(long)arg1;
-- (BOOL)_prepareForReadingReturningError:(id*)arg1;
+- (bool)_enableTrackExtractionReturningError:(id*)arg1;
+- (id)_errorForOSStatus:(int)arg1;
+- (id)_formatDescriptions;
+- (bool)_prepareForReadingReturningError:(id*)arg1;
 - (void)_setVideoComposition:(id)arg1;
 - (void)_setVideoComposition:(id)arg1 customVideoCompositorSession:(id)arg2;
-- (BOOL)alwaysCopiesSampleData;
+- (id)_videoCompositionProcessorColorProperties;
+- (bool)alwaysCopiesSampleData;
 - (id)customVideoCompositor;
 - (void)dealloc;
 - (id)description;
@@ -31,5 +36,9 @@
 - (id)videoComposition;
 - (id)videoSettings;
 - (id)videoTracks;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
++ (id)assetReaderVideoCompositionOutputWithVideoComposition:(id)arg1 appliedToAsset:(id)arg2 videoSettings:(id)arg3;
 
 @end

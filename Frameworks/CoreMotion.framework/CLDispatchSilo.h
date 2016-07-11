@@ -3,6 +3,7 @@
  */
 
 @interface CLDispatchSilo : CLSilo {
+    NSOperationQueue * _operationQueue;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -16,6 +17,7 @@
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithUnderlyingQueue:(id)arg1;
 - (id)newTimer;
+- (id)operationQueue;
 - (id)queue;
 - (void)sync:(id /* block */)arg1;
 

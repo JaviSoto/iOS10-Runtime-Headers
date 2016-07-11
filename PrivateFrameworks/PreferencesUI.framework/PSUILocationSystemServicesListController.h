@@ -8,6 +8,8 @@
 
 @property (nonatomic, retain) RTRoutineManager *routineManager;
 
++ (id)locationBasedAlertBundlesForSystemVersion:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_areLocationBasedAlertsAuthorized;
 - (id)_locationBasedAlertBundles;

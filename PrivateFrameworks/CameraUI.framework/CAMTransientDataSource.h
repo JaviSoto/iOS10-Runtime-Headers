@@ -7,10 +7,9 @@
     NSMutableDictionary * __assetsByUUID;
     NSMutableDictionary * __enqueuedBurstAssetUUIDByBurstIdentifier;
     NSMutableDictionary * __enqueuedBurstConvertiblesByAssetUUID;
-    NSMutableDictionary * __enqueuedBurstResponsesByAssetUUID;
-    int  __nestedPerformChanges;
+    long long  __nestedPerformChanges;
     NSHashTable * __observers;
-    int  __pendingChangeNotifications;
+    long long  __pendingChangeNotifications;
     NSMutableDictionary * __representativeAssetsByBurstIdentifier;
 }
 
@@ -18,14 +17,13 @@
 @property (nonatomic, readonly) NSMutableDictionary *_assetsByUUID;
 @property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstAssetUUIDByBurstIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstConvertiblesByAssetUUID;
-@property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstResponsesByAssetUUID;
-@property (setter=_setNestedPerformChanges:, nonatomic) int _nestedPerformChanges;
+@property (setter=_setNestedPerformChanges:, nonatomic) long long _nestedPerformChanges;
 @property (nonatomic, readonly) NSHashTable *_observers;
-@property (setter=_setPendingChangeNotifications:, nonatomic) int _pendingChangeNotifications;
+@property (setter=_setPendingChangeNotifications:, nonatomic) long long _pendingChangeNotifications;
 @property (nonatomic, readonly) NSMutableDictionary *_representativeAssetsByBurstIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,14 +31,15 @@
 - (id)_assetsByUUID;
 - (id)_enqueuedBurstAssetUUIDByBurstIdentifier;
 - (id)_enqueuedBurstConvertiblesByAssetUUID;
-- (id)_enqueuedBurstResponsesByAssetUUID;
-- (int)_nestedPerformChanges;
+- (long long)_nestedPerformChanges;
 - (void)_notifyObserversOfDataSourceChange;
 - (id)_observers;
-- (int)_pendingChangeNotifications;
+- (long long)_pendingChangeNotifications;
+- (bool)_removeAssetWithUUID:(id)arg1;
 - (id)_representativeAssetsByBurstIdentifier;
-- (void)_setNestedPerformChanges:(int)arg1;
-- (void)_setPendingChangeNotifications:(int)arg1;
+- (void)_setNestedPerformChanges:(long long)arg1;
+- (void)_setPendingChangeNotifications:(long long)arg1;
+- (id)description;
 - (void)enqueuePendingBurstAssetWithConvertible:(id)arg1;
 - (id)existingAssetForUUID:(id)arg1;
 - (id)existingRepresentativeAssetForBurstIdentifier:(id)arg1;
@@ -49,6 +48,7 @@
 - (void)performChanges:(id /* block */)arg1;
 - (void)processPendingBurstAssets;
 - (void)registerChangeObserver:(id)arg1;
+- (void)removeAllAssets;
 - (void)removeAssetWithUUID:(id)arg1;
 - (void)removeRepresentativeAssetForBurstIdentifier:(id)arg1;
 - (id)transientAssetMapping;

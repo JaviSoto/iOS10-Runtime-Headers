@@ -3,33 +3,45 @@
  */
 
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
-    BOOL  _foregroundColorShouldTintEffects;
-    int  _presentationState;
-    int  _state;
-    BOOL  _useSimplifiedEffect;
-    int  _value;
+    double  _brightnessMultiplier;
+    unsigned long long  _colorTemperature;
+    double  _effectScale;
+    bool  _foregroundColorShouldTintEffects;
+    long long  _presentationState;
+    long long  _state;
+    bool  _useSimplifiedEffect;
+    long long  _value;
 }
 
-@property (nonatomic) BOOL foregroundColorShouldTintEffects;
-@property (nonatomic) int presentationState;
-@property (nonatomic) int state;
-@property (nonatomic) BOOL useSimplifiedEffect;
-@property (nonatomic) int value;
+@property (nonatomic) double brightnessMultiplier;
+@property (nonatomic) unsigned long long colorTemperature;
+@property (nonatomic) double effectScale;
+@property (nonatomic) bool foregroundColorShouldTintEffects;
+@property (nonatomic) long long presentationState;
+@property (nonatomic) long long state;
+@property (nonatomic) bool useSimplifiedEffect;
+@property (nonatomic) long long value;
 
+- (double)brightnessMultiplier;
+- (unsigned long long)colorTemperature;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)foregroundColorShouldTintEffects;
+- (double)effectScale;
+- (bool)foregroundColorShouldTintEffects;
 - (id)init;
-- (int)presentationState;
-- (void)setForegroundColorShouldTintEffects:(BOOL)arg1;
-- (void)setPresentationState:(int)arg1;
-- (void)setState:(int)arg1;
-- (void)setUseSimplifiedEffect:(BOOL)arg1;
-- (void)setValue:(int)arg1;
-- (BOOL)shouldIgnoreForegroundColor;
-- (BOOL)shouldRespectOutputBlending;
-- (int)state;
-- (BOOL)useSimplifiedEffect;
-- (int)value;
+- (long long)presentationState;
+- (void)setBrightnessMultiplier:(double)arg1;
+- (void)setColorTemperature:(unsigned long long)arg1;
+- (void)setEffectScale:(double)arg1;
+- (void)setForegroundColorShouldTintEffects:(bool)arg1;
+- (void)setPresentationState:(long long)arg1;
+- (void)setState:(long long)arg1;
+- (void)setUseSimplifiedEffect:(bool)arg1;
+- (void)setValue:(long long)arg1;
+- (bool)shouldIgnoreForegroundColor;
+- (bool)shouldRespectOutputBlending;
+- (long long)state;
+- (bool)useSimplifiedEffect;
+- (long long)value;
 
 @end

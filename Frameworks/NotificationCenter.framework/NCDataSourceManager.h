@@ -3,27 +3,26 @@
  */
 
 @interface NCDataSourceManager : NSObject <_NCParentDataSourceManager> {
-    NSMutableDictionary * _identifiersToSnippetChangeHandlers;
+    bool  _didBegin;
     NSMutableDictionary * _identifiersToWidgetChangeHandlers;
-    NCSnippetDataSourceManager * _snippetDataSourceManager;
     NCWidgetDataSourceManager * _widgetDataSourceManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)__sharedInstance;
 + (void)requestSharedDataSourceManager:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (void)_begin:(id /* block */)arg1;
 - (void)_start:(id /* block */)arg1;
 - (void)_stop:(id /* block */)arg1;
-- (void)addSnippetDataSourceChangeHandler:(id /* block */)arg1 forIdentifier:(id)arg2;
 - (void)addWidgetDataSourceChangeHandler:(id /* block */)arg1 forIdentifier:(id)arg2;
+- (void)availableWidgetsWithCompletion:(id /* block */)arg1;
 - (void)childDataSourceManagerDataSourcesDidChange:(id)arg1;
-- (void)dealloc;
 - (void)removeChangeHandlersWithIdentifier:(id)arg1;
 
 @end

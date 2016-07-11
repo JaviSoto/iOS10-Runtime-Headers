@@ -4,19 +4,19 @@
 
 @interface GEOMapRequest : NSObject {
     id /* block */  _completionHandler;
-    BOOL  _isFinished;
+    bool  _isFinished;
     GEOMapRequestManager * _requestManager;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic, readonly) BOOL isFinished;
+@property (nonatomic, readonly) bool isFinished;
 
 - (void)cancel;
 - (void)complete;
 - (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)initWithManager:(id)arg1;
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

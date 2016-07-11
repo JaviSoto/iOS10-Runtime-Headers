@@ -10,7 +10,9 @@
         unsigned int vertexRegisterSpill : 1; 
         unsigned int fragmentRegisterSpill : 1; 
         unsigned int fragmentReadsFramebufferValues : 1; 
-        unsigned int reserved : 58; 
+        unsigned int fragmentPunchThrough : 1; 
+        unsigned int vertexWritesPointSize : 1; 
+        unsigned int reserved : 56; 
     }  _flags;
     NSArray * _fragmentArguments;
     NSDictionary * _performanceStatistics;
@@ -21,9 +23,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)fragmentArguments;
-- (id)initWithVertexData:(id)arg1 fragmentData:(id)arg2 serializedVertexDescriptor:(id)arg3 device:(id)arg4 options:(unsigned int)arg5 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 58; })arg6;
+- (id)initWithVertexData:(id)arg1 fragmentData:(id)arg2 serializedVertexDescriptor:(id)arg3 device:(id)arg4 options:(unsigned long long)arg5 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 56; })arg6;
 - (id)performanceStatistics;
 - (void)setPerformanceStatistics:(id)arg1;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 56; })usageFlags;
 - (id)vertexArguments;
 - (id)vertexBuiltInArguments;
 

@@ -4,28 +4,41 @@
 
 @interface _DECConsumer : NSObject {
     _DECResult * _cachedResult;
-    unsigned int  _category;
+    unsigned long long  _category;
     NSXPCConnection * _connection;
-    unsigned int  _consumerType;
+    PETScalarEventTracker * _consumerInitTracker;
+    unsigned long long  _consumerType;
+    _DECDataProtectionMonitor * _dataProtectionMonitor;
     id /* block */  _handler;
-    unsigned int  _limit;
+    unsigned long long  _limit;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _startedMonitoring;
+    bool  _startedMonitoring;
+    unsigned long long  _timeout;
 }
 
-@property (nonatomic) unsigned int category;
+@property (nonatomic) unsigned long long category;
+@property (nonatomic) unsigned long long consumerType;
 
 - (void).cxx_destruct;
 - (void)_setupConnection;
-- (unsigned int)category;
-- (void)fetchPredictionsWithLimit:(unsigned int)arg1 handler:(id /* block */)arg2;
-- (void)fetchPredictionsWithLimit:(unsigned int)arg1 providesFeedback:(BOOL)arg2 handler:(id /* block */)arg3;
+- (unsigned long long)category;
+- (unsigned long long)consumerType;
+- (void)fetchPredictionsWithLimit:(unsigned long long)arg1 criteria:(id)arg2 handler:(id /* block */)arg3;
+- (void)fetchPredictionsWithLimit:(unsigned long long)arg1 criteria:(id)arg2 timeout:(unsigned long long)arg3 handler:(id /* block */)arg4;
+- (void)fetchPredictionsWithLimit:(unsigned long long)arg1 handler:(id /* block */)arg2;
+- (void)fetchPredictionsWithLimit:(unsigned long long)arg1 providesFeedback:(bool)arg2 criteria:(id)arg3 handler:(id /* block */)arg4;
+- (void)fetchPredictionsWithLimit:(unsigned long long)arg1 providesFeedback:(bool)arg2 criteria:(id)arg3 timeout:(unsigned long long)arg4 handler:(id /* block */)arg5;
+- (void)fetchPredictionsWithLimit:(unsigned long long)arg1 providesFeedback:(bool)arg2 handler:(id /* block */)arg3;
+- (void)handleDaemonStart;
 - (id)init;
-- (id)initWithCategory:(unsigned int)arg1 consumerType:(unsigned int)arg2;
-- (id)initWithCategory:(unsigned int)arg1 consumerType:(unsigned int)arg2 queue:(id)arg3;
-- (void)receivePrediction:(id)arg1 consumer:(unsigned int)arg2 reply:(id /* block */)arg3;
-- (void)setCategory:(unsigned int)arg1;
-- (void)startMonitoringForPredictionsWithLimit:(unsigned int)arg1 handler:(id /* block */)arg2;
+- (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2;
+- (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2 queue:(id)arg3;
+- (void)provideAppWidgetFeedback:(id)arg1 handler:(id /* block */)arg2;
+- (void)provideZkwSpotlightFeedback:(id)arg1 handler:(id /* block */)arg2;
+- (void)receivePrediction:(id)arg1 consumer:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (void)setCategory:(unsigned long long)arg1;
+- (void)setConsumerType:(unsigned long long)arg1;
+- (void)startMonitoringForPredictionsWithLimit:(unsigned long long)arg1 handler:(id /* block */)arg2;
 - (void)stopMonitoringForPredictions;
 
 @end

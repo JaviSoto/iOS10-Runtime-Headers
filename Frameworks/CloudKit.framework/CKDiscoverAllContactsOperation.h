@@ -11,16 +11,18 @@
 @property (nonatomic, retain) NSMutableArray *discoveredUserInfos;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)discoverAllContactsCompletionBlock;
 - (id)discoveredUserInfos;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
 - (void)setDiscoverAllContactsCompletionBlock:(id /* block */)arg1;
 - (void)setDiscoveredUserInfos:(id)arg1;
+- (void)setLongLived:(bool)arg1;
 
 @end

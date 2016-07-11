@@ -3,35 +3,41 @@
  */
 
 @interface _ATXAppLaunchMonitor : NSObject {
-    _ATXAppLaunchBuffer * _appLaunchHistory;
+    _ATXAppInfoManager * _appInfoManager;
+    _ATXAppLaunchHistogramManager * _appLaunchHistogramManager;
     NSObject<OS_dispatch_queue> * _appLaunchHistoryQueue;
-    CDContextStore * _ctxStore;
-    _ATXDataStore * _dataStore;
+    _ATXAppLaunchSequenceManager * _appLaunchSequenceManager;
+    <_CDLocalContext> * _context;
+    NSMutableArray * _deltaLog;
+    _ATXDuetHelper * _duetHelper;
     NSMutableDictionary * _launchedBundleIds;
-    NSObject<OS_dispatch_queue> * _registrationQueue;
-    _ATXAppLaunchBuffer * _spotlightAppLaunchHistory;
+    NSMutableSet * _registrations;
+    PETScalarEventTracker * _updateLaunchHistoryTracker;
 }
 
-@property (readonly) NSOrderedSet *history;
-@property (readonly) NSOrderedSet *spotlightHistory;
-
 - (void).cxx_destruct;
-- (id)_timeSinceLastLaunchesOfType:(int)arg1;
+- (void)_addLaunchWithBundleIdNoLock:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (id)appInfoManager;
+- (id)appLaunchHistogramManager;
+- (id)appLaunchSequenceManager;
+- (void)clearHistory;
 - (void)dealloc;
-- (id)getMostRecentAppLaunchesSyncForTimeInterval:(double)arg1;
 - (void)handleAppLaunchNotification:(id)arg1 reason:(id)arg2;
-- (id)history;
+- (void)handleBacklightChangeNotificationWithValue:(int)arg1;
 - (id)init;
-- (id)initWithDiskPersistence:(BOOL)arg1;
+- (id)initWithAppInfoManager:(id)arg1 appLaunchHistogramManager:(id)arg2 appLaunchSequenceManager:(id)arg3 duetHelper:(id)arg4;
 - (id)initWithInMemoryStore;
-- (id)initWithPersistentStore;
+- (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id /* block */)arg3;
 - (void)registerForAppChange;
-- (id)spotlightHistory;
+- (void)registerForBacklightChange;
 - (void)start;
+- (void)startDeltaRecording;
 - (void)stop;
-- (id)timesSinceLastLaunches;
-- (id)timesSinceLastSpotlightLaunches;
+- (id)stopDeltaRecording;
+- (void)swapDuetHelper:(id)arg1;
+- (void)syncForTests;
 - (void)updateLaunchHistoryFromDuet;
-- (void)updateLaunchHistoryFromDuet:(double)arg1;
+- (void)updateLaunchHistoryFromDuet:(double)arg1 completionBlock:(id /* block */)arg2;
 
 @end

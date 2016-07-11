@@ -3,35 +3,42 @@
  */
 
 @interface PRCandidate : NSObject {
-    BOOL  _blacklisted;
+    bool  _blacklisted;
+    NSArray * _candidateWords;
     double  _errorScore;
     double  _lmScore;
-    NSString * _string;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _replacementRange;
 }
 
-+ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 errorType:(unsigned int)arg3;
-+ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorScore:(double)arg4;
-+ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorType:(unsigned int)arg4;
-+ (id)candidateWithString:(id)arg1 errorScore:(double)arg2;
-+ (id)candidateWithString:(id)arg1 errorType:(unsigned int)arg2;
-+ (double)errorScoreForType:(unsigned int)arg1;
-+ (id)replacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 intendedCharacter:(unsigned short)arg3 actualCharacter:(unsigned short)arg4;
-+ (id)replacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedCharacter:(unsigned short)arg4 actualCharacter:(unsigned short)arg5;
-+ (id)replacementCandidateWithString:(id)arg1 intendedCharacter:(unsigned short)arg2 actualCharacter:(unsigned short)arg3;
++ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 errorScore:(double)arg5;
++ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 errorType:(unsigned long long)arg5;
++ (id)candidateWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorScore:(double)arg3;
++ (id)candidateWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorType:(unsigned long long)arg3;
++ (id)candidateWithWords:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorScore:(double)arg3;
++ (id)candidateWithWords:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorType:(unsigned long long)arg3;
++ (double)errorScoreForType:(unsigned long long)arg1;
++ (id)replacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 intendedCharacter:(unsigned short)arg5 actualCharacter:(unsigned short)arg6;
++ (id)replacementCandidateWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 intendedCharacter:(unsigned short)arg3 actualCharacter:(unsigned short)arg4;
 + (double)replacementErrorScoreForIntendedCharacter:(unsigned short)arg1 actualCharacter:(unsigned short)arg2;
-+ (id)transpositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 intendedFirstCharacter:(unsigned short)arg3 intendedSecondCharacter:(unsigned short)arg4;
-+ (id)transpositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedFirstCharacter:(unsigned short)arg4 intendedSecondCharacter:(unsigned short)arg5;
-+ (id)transpositionCandidateWithString:(id)arg1 intendedFirstCharacter:(unsigned short)arg2 intendedSecondCharacter:(unsigned short)arg3;
++ (id)transpositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 intendedFirstCharacter:(unsigned short)arg5 intendedSecondCharacter:(unsigned short)arg6;
++ (id)transpositionCandidateWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 intendedFirstCharacter:(unsigned short)arg3 intendedSecondCharacter:(unsigned short)arg4;
 + (double)transpositionErrorScoreForIntendedFirstCharacter:(unsigned short)arg1 intendedSecondCharacter:(unsigned short)arg2;
 
+- (id)candidateWords;
 - (void)dealloc;
 - (id)description;
 - (double)errorScore;
-- (id)initWithString:(id)arg1 errorScore:(double)arg2;
-- (BOOL)isBlacklisted;
+- (id)initWithCandidateWords:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorScore:(double)arg3;
+- (id)initWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorScore:(double)arg3;
+- (bool)isBlacklisted;
 - (double)languageModelScore;
+- (unsigned long long)numberOfWords;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })replacementRange;
 - (double)score;
-- (void)setBlacklisted:(BOOL)arg1;
+- (void)setBlacklisted:(bool)arg1;
 - (void)setErrorScore:(double)arg1;
 - (void)setLanguageModelScore:(double)arg1;
 - (id)string;

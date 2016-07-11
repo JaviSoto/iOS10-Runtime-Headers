@@ -10,6 +10,7 @@
         double z; 
     }  fGravity;
     unsigned long long  fMachTimestamp;
+    NSString * fPhysicalDeviceUniqueID;
     struct { 
         double x; 
         double y; 
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly) CMAttitude *attitude;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } gravity;
 @property (nonatomic, readonly) unsigned long long machTimestamp;
+@property (nonatomic, readonly, retain) NSString *physicalDeviceUniqueID;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } rawAcceleration;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } rawRotationRate;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } rotationRate;
@@ -42,7 +44,7 @@
 @property (nonatomic, readonly) float tip;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } userAcceleration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)attitude;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -52,8 +54,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (struct { double x1; double x2; double x3; })gravity;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDeviceMotionLite:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; unsigned long long x6; })arg1;
+- (id)initWithDeviceMotionLite:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; unsigned long long x6; })arg1 andDeviceID:(id)arg2;
 - (unsigned long long)machTimestamp;
+- (id)physicalDeviceUniqueID;
 - (struct { double x1; double x2; double x3; })rawAcceleration;
 - (struct { double x1; double x2; double x3; })rawRotationRate;
 - (struct { double x1; double x2; double x3; })rotationRate;

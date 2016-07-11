@@ -3,26 +3,28 @@
  */
 
 @interface PLAccountingEngine : NSObject <PLAccountingCorrectionManagerDelegate, PLAccountingDistributionManagerDelegate, PLAccountingQualificationManagerDelegate> {
+    PLEntryNotificationOperatorComposition * _batteryListener;
     PLActivity * _chunkActivity;
     PLAccountingCorrectionManager * _correctionManager;
     PLAccountingDistributionManager * _distributionManager;
-    PLEntryNotificationOperatorComposition * _gasGaugeListener;
+    bool  _pluggedIn;
     PLAccountingQualificationManager * _qualificationManager;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (retain) PLEntryNotificationOperatorComposition *batteryListener;
 @property (retain) PLActivity *chunkActivity;
 @property (nonatomic, retain) PLAccountingCorrectionManager *correctionManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PLAccountingDistributionManager *distributionManager;
-@property (retain) PLEntryNotificationOperatorComposition *gasGaugeListener;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property bool pluggedIn;
 @property (nonatomic, retain) PLAccountingQualificationManager *qualificationManager;
 @property (readonly) Class superclass;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)accountingDebugEnabled;
++ (bool)accountingDebugEnabled;
 + (id)allBBRootNodeIDs;
 + (id)allDistributionIDs;
 + (id)allQualificationIDs;
@@ -52,6 +54,7 @@
 - (void)addQualificationEventIntervalWithLastQualificationEventBackward:(id)arg1 withQualificationEventBackward:(id)arg2;
 - (void)addQualificationEventIntervalWithLastQualificationEventForward:(id)arg1 withQualificationEventForward:(id)arg2;
 - (void)addQualificationEventPoint:(id)arg1;
+- (id)batteryListener;
 - (id)chunkActivity;
 - (void)chunkWithLastChunkDate:(id)arg1 withNow:(id)arg2;
 - (id)correctionManager;
@@ -72,25 +75,25 @@
 - (void)createQualificationEventForwardWithQualificationID:(int)arg1 withRemovingChildNodeName:(id)arg2 withStartDate:(id)arg3;
 - (void)createQualificationEventIntervalWithQualificationID:(int)arg1 withChildNodeNames:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (void)createQualificationEventPointWithQualificationID:(int)arg1 withChildNodeNames:(id)arg2 withStartDate:(id)arg3;
+- (id)currentDistributionEventForwardWithDistributionID:(int)arg1;
 - (void)didCorrectEnergyEstimate:(id)arg1;
 - (void)didCreateChildEnergyEstimate:(id)arg1 withParentEnergyEstimate:(id)arg2;
 - (void)didDistributeEnergyEstimate:(id)arg1;
 - (void)didQualifyEnergyEvent:(id)arg1 withRootNodeID:(id)arg2 withQualificationID:(id)arg3;
 - (id)distributionManager;
-- (id)gasGaugeListener;
 - (id)init;
-- (double)oldestTimeInterval;
+- (bool)pluggedIn;
 - (id)qualificationManager;
 - (void)reload;
 - (void)reloadLastDistributionEventsWithLastDeviceBootDate:(id)arg1;
 - (void)reloadLastPowerEventsWithLastDeviceBootDate:(id)arg1;
 - (void)reloadLastQualificationEventsWithLastDeviceBootDate:(id)arg1;
-- (void)reloadUnfinishedEnergyEventsWithLastDeviceBootDate:(id)arg1;
 - (void)reset;
+- (void)setBatteryListener:(id)arg1;
 - (void)setChunkActivity:(id)arg1;
 - (void)setCorrectionManager:(id)arg1;
 - (void)setDistributionManager:(id)arg1;
-- (void)setGasGaugeListener:(id)arg1;
+- (void)setPluggedIn:(bool)arg1;
 - (void)setQualificationManager:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;

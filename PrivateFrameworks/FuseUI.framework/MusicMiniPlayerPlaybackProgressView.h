@@ -3,59 +3,59 @@
  */
 
 @interface MusicMiniPlayerPlaybackProgressView : UIView <MusicPlaybackProgressScrubbing> {
-    BOOL  _alwaysLive;
+    bool  _alwaysLive;
     double  _currentTime;
     double  _currentTimeSetTimeInterval;
     UIView * _minimumTrackView;
-    BOOL  _needsAnimationUpdate;
+    bool  _needsAnimationUpdate;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _previousKnownSize;
     float  _rate;
     <MusicPlaybackProgressScrubberDelegate> * _scrubberDelegate;
     double  _totalDuration;
 }
 
-@property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;
-@property (nonatomic, readonly) int currentScrubSpeed;
+@property (getter=isAlwaysLive, nonatomic) bool alwaysLive;
+@property (nonatomic, readonly) long long currentScrubSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double effectiveCurrentTime;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) float rate;
 @property (nonatomic) <MusicPlaybackProgressScrubberDelegate> *scrubberDelegate;
-@property (getter=isScrubbingEnabled, nonatomic) BOOL scrubbingEnabled;
+@property (getter=isScrubbingEnabled, nonatomic) bool scrubbingEnabled;
 @property (readonly) Class superclass;
 @property (nonatomic) double totalDuration;
 
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_layoutTrackViewsForValue:(float)arg1;
+- (void)_layoutTrackViewsForValue:(double)arg1;
 - (void)_removeAllTrackAnimations;
-- (BOOL)_setCurrentTime:(double)arg1;
+- (bool)_setCurrentTime:(double)arg1;
 - (void)_setNeedsAnimationUpdate;
 - (void)_updateAnimations;
-- (float)_valueForTime:(double)arg1;
+- (double)_valueForTime:(double)arg1;
 - (void)cancelScrubbing;
-- (int)currentScrubSpeed;
+- (long long)currentScrubSpeed;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (double)effectiveCurrentTime;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAlwaysLive;
-- (BOOL)isScrubbingEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAlwaysLive;
+- (bool)isScrubbingEnabled;
 - (void)layoutSubviews;
 - (float)rate;
 - (id)scrubberDelegate;
-- (void)setAlwaysLive:(BOOL)arg1;
+- (void)setAlwaysLive:(bool)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setRate:(float)arg1;
 - (void)setScrubberDelegate:(id)arg1;
-- (void)setScrubbingEnabled:(BOOL)arg1;
+- (void)setScrubbingEnabled:(bool)arg1;
 - (void)setTotalDuration:(double)arg1;
 - (void)tintColorDidChange;
 - (double)totalDuration;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

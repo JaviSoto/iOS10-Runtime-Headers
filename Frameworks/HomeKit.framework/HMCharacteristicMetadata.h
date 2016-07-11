@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicMetadata : NSObject <HMObjectMerge, NSSecureCoding> {
+@interface HMCharacteristicMetadata : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
     NSString * _format;
     NSString * _manufacturerDescription;
     NSNumber * _maxLength;
@@ -11,12 +11,14 @@
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSNumber * _stepValue;
     NSString * _units;
+    NSArray * _validValues;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *format;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSNumber *hf_effectiveStepValue;
 @property (nonatomic, copy) NSString *manufacturerDescription;
 @property (nonatomic, retain) NSNumber *maxLength;
 @property (nonatomic, retain) NSNumber *maximumValue;
@@ -26,11 +28,14 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 @property (nonatomic, copy) NSString *units;
+@property (nonatomic, copy) NSArray *validValues;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)format;
@@ -49,8 +54,17 @@
 - (void)setPropertyQueue:(id)arg1;
 - (void)setStepValue:(id)arg1;
 - (void)setUnits:(id)arg1;
+- (void)setValidValues:(id)arg1;
 - (id)stepValue;
 - (id)uniqueIdentifier;
 - (id)units;
+- (id)validValues;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_effectiveStepValue;
+- (bool)hf_isEqualToMetadata:(id)arg1;
+- (id)hf_normalizedValueForValue:(id)arg1;
+- (id)hf_prettyDescription;
 
 @end

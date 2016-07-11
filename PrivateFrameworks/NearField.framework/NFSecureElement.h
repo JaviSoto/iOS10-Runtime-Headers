@@ -4,25 +4,39 @@
 
 @interface NFSecureElement : NSObject {
     NFHardwareSecureElementInfo * _info;
+    bool  _isDirty;
 }
 
+@property (readonly) unsigned long long OSVersion;
 @property (readonly) NSString *eccCertificate;
-@property (readonly) BOOL isInRestrictedMode;
-@property (readonly) BOOL isProductionSigned;
+@property (readonly) NSString *eckaCertificate;
+@property (readonly) bool isInRestrictedMode;
+@property (readonly) bool isProductionSigned;
 @property (readonly) NSString *rsaCertificate;
+@property (readonly) NSNumber *sequenceCounter;
 @property (readonly) NSString *serialNumber;
+@property (readonly) unsigned int supportedTechnologies;
 
 + (id)embeddedSecureElement;
++ (unsigned int)supportedTechnologies;
 
+- (unsigned long long)OSVersion;
 - (id)_initWithInfo:(id)arg1;
-- (void)_setIsInRestrictedMode:(BOOL)arg1;
+- (void)_markDirty;
+- (void)_setIsInRestrictedMode:(bool)arg1;
+- (void)_updateIfDirty;
+- (void)_updateSecureElementInfo:(id)arg1;
 - (void)dealloc;
 - (id)eccCertificate;
+- (id)eckaCertificate;
 - (id)identifier;
 - (id)info;
-- (BOOL)isInRestrictedMode;
-- (BOOL)isProductionSigned;
+- (bool)isInRestrictedMode;
+- (bool)isProductionSigned;
+- (id)manifestQueryBlob;
 - (id)rsaCertificate;
+- (id)sequenceCounter;
 - (id)serialNumber;
+- (unsigned int)supportedTechnologies;
 
 @end

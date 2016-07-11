@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSSet *people;
 @property (nonatomic, retain) NSSet *resources;
 
+- (void).cxx_destruct;
 - (id)groups;
 - (id)locations;
 - (id)people;

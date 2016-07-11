@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCClientRanksPersistedState : NSObject <NSSecureCoding> {
+@interface BRCClientRanksPersistedState : BRCPersistedState {
     unsigned long long  _nextItemRowID;
     unsigned long long  _nextNotifRank;
     unsigned long long  _nextPackageItemRank;
-    BRCAccountSession * _session;
 }
 
 @property (nonatomic, readonly) unsigned long long nextItemRowID;
 @property (nonatomic) unsigned long long nextNotifRank;
 @property (nonatomic) unsigned long long nextPackageItemRank;
 
-+ (id)loadFromClientStateInSession:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
++ (bool)supportsSecureCoding;
 
-- (void).cxx_destruct;
 - (unsigned long long)allocateItemRowID;
 - (unsigned long long)allocateNotifRank;
 - (unsigned long long)allocatePackageItemRank;

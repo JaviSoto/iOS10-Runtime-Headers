@@ -15,23 +15,25 @@
 @property (nonatomic, readonly) int state;
 
 + (id)copyFetchScheduledNotification;
-+ (BOOL)discardOldVersion;
-+ (BOOL)isTimerNotification:(id)arg1;
++ (bool)discardOldVersion;
++ (bool)isTimerNotification:(id)arg1;
 + (id)newNotificationAt:(double)arg1 withSound:(id)arg2;
 + (void)setSoundID:(id)arg1 forNotification:(id)arg2;
 + (id)sharedManager;
-+ (BOOL)upgrade;
++ (void)updateTimerShortcutItem;
++ (bool)upgrade;
 
 - (void).cxx_destruct;
-- (BOOL)cancel;
+- (void)_reloadStateAndRefreshLocalNotificationsWithCompletion:(id /* block */)arg1;
+- (bool)cancel;
 - (void)changeSound:(id)arg1;
 - (double)defaultDuration;
 - (id)defaultSound;
 - (double)fireTime;
-- (BOOL)pause;
+- (bool)pause;
 - (void)reloadState;
 - (double)remainingTime;
-- (BOOL)resume;
+- (bool)resume;
 - (void)scheduleAt:(double)arg1 withSound:(id)arg2;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDefaultSound:(id)arg1;

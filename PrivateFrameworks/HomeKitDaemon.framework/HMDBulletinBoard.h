@@ -6,7 +6,7 @@
     HMDBulletinProvider * _bulletinProvider;
     NSArray * _categories;
     BBDataProviderConnection * _dataProviderConnection;
-    BOOL  _enabled;
+    bool  _enabled;
     HMDHomeManager * _homeManager;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -14,17 +14,18 @@
 @property (nonatomic, retain) HMDBulletinProvider *bulletinProvider;
 @property (nonatomic, readonly) NSArray *categories;
 @property (nonatomic, retain) BBDataProviderConnection *dataProviderConnection;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (void)archive;
 + (id)sharedBulletinBoard;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)unarchive;
 
 - (void).cxx_destruct;
-- (void)_insertBulletinWithTitle:(id)arg1 message:(id)arg2 recordID:(id)arg3 context:(struct NSDictionary { Class x1; }*)arg4;
+- (void)_insertBulletinWithTitle:(id)arg1 imageURL:(id)arg2 message:(id)arg3 recordID:(id)arg4 bulletinContext:(struct NSDictionary { Class x1; }*)arg5 actionContext:(struct NSDictionary { Class x1; }*)arg6;
+- (void)_insertImageBulletinsForChangedCharacteristics:(id)arg1 imageURL:(id)arg2 completion:(id /* block */)arg3;
 - (id)_lookupBulletinForCharacteristic:(id)arg1;
 - (void)_removeBulletinsUsingPredicate:(id)arg1;
 - (void)_updateBulletin:(id)arg1;
@@ -40,7 +41,10 @@
 - (id)insertBulletinForIncomingInvitation:(id)arg1;
 - (id)insertBulletinWithTitle:(id)arg1 message:(id)arg2;
 - (void)insertBulletinsForChangedCharacteristics:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)isEnabled;
+- (void)insertImageBulletinsForChangedCharacteristics:(id)arg1 imageURL:(id)arg2 completion:(id /* block */)arg3;
+- (bool)isEnabled;
+- (void)refreshHomeBadgeNumber;
+- (void)refreshHomeConfiguration;
 - (void)reloadDefaultSectionInfo;
 - (void)removeAllBulletins;
 - (void)removeBulletinWithRecordID:(id)arg1;
@@ -49,7 +53,7 @@
 - (void)removeBulletinsForService:(id)arg1;
 - (void)setBulletinProvider:(id)arg1;
 - (void)setDataProviderConnection:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;

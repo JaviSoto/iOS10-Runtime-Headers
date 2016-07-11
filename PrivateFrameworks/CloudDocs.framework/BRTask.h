@@ -22,8 +22,8 @@
 + (id)taskWithCommand:(id)arg1;
 + (id)taskWithCommandWithArguments:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)argv;
-- (void)dealloc;
 - (int)exec;
 - (id)init;
 - (id)redirectStderrToFileAtPath;

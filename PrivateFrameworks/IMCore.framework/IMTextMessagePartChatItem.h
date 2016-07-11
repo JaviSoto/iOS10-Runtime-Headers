@@ -10,9 +10,10 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 subject:(id)arg4;
+- (void).cxx_destruct;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 subject:(id)arg5;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 subject:(id)arg5 visibleAssociatedMessageChatItems:(id)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)subject;
 

@@ -5,10 +5,16 @@
 @interface BRCSharedDocumentItem : BRCDocumentItem
 
 @property (nonatomic, readonly) NSString *enclosurePathRelativeToRoot;
+@property (nonatomic, readonly) bool isShareAcceptationFault;
 
-- (id)aliasItemID;
+- (id)aliasItemIDForAppLibrary:(id)arg1;
+- (id)asSharedDocument;
 - (id)enclosurePathRelativeToRoot;
+- (id)initAsShareAcceptationFaultWithFilename:(id)arg1 itemID:(id)arg2 appLibrary:(id)arg3;
+- (bool)isShareAcceptationFault;
+- (void)markLiveFromStageAsShareAcceptationFault;
 - (id)parentFileID;
 - (float)prepareDeletionSyncUpWithOperation:(id)arg1 defaults:(id)arg2;
+- (void)stageShareAcceptationFaultWithName:(id)arg1;
 
 @end

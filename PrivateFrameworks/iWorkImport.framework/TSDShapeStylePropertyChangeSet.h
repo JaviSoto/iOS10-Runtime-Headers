@@ -3,13 +3,13 @@
  */
 
 @interface TSDShapeStylePropertyChangeSet : TSSStylePropertyChangeSet {
-    BOOL  _definedFill;
-    BOOL  _definedHeadLineEnd;
-    BOOL  _definedOpacity;
-    BOOL  _definedReflection;
-    BOOL  _definedShadow;
-    BOOL  _definedStroke;
-    BOOL  _definedTailLineEnd;
+    bool  _definedFill;
+    bool  _definedHeadLineEnd;
+    bool  _definedOpacity;
+    bool  _definedReflection;
+    bool  _definedShadow;
+    bool  _definedStroke;
+    bool  _definedTailLineEnd;
     TSDSpecFill * _fill;
     TSDSpecLineEnd * _headLineEnd;
     TSSSpecDouble * _opacity;

@@ -9,10 +9,11 @@
 @property (copy) id /* block */ reply;
 
 - (void).cxx_destruct;
-- (BOOL)allowLocation;
+- (bool)allowLocation;
 - (id)initWithReply:(id /* block */)arg1;
+- (bool)needsBag;
 - (id /* block */)reply;
 - (void)setReply:(id /* block */)arg1;
-- (void)triggerQuery:(BOOL)arg1;
+- (void)triggerQuery:(bool)arg1;
 
 @end

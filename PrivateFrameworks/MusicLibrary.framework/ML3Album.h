@@ -17,14 +17,13 @@
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
 + (id)propertiesForGroupingUniqueCollections;
-+ (BOOL)propertyIsCountProperty:(id)arg1;
++ (bool)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
-+ (int)revisionTrackingCode;
++ (long long)revisionTrackingCode;
 + (id)trackForeignPersistentID;
 
 - (id)multiverseIdentifier;
 - (id)protocolItem;
-- (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2;
 - (void)updateTrackValues:(id)arg1;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer

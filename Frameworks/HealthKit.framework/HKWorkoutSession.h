@@ -2,38 +2,44 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKWorkoutSession : NSObject <NSSecureCoding> {
-    NSUUID * _UUID;
-    unsigned int  _activityType;
+@interface HKWorkoutSession : NSObject <NSSecureCoding, _HKWorkoutSessionDelegate> {
     <HKWorkoutSessionDelegate> * _delegate;
-    int  _locationType;
+    _HKWorkoutSession * _privateSession;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _state;
 }
 
-@property (getter=_UUID, nonatomic, readonly) NSUUID *UUID;
-@property (readonly) unsigned int activityType;
+@property (readonly) unsigned long long activityType;
+@property (readonly, copy) NSString *debugDescription;
 @property <HKWorkoutSessionDelegate> *delegate;
-@property (readonly) int locationType;
-@property int state;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSDate *endDate;
+@property (readonly) unsigned long long hash;
+@property (readonly) long long locationType;
+@property (getter=_privateSession, nonatomic, readonly) _HKWorkoutSession *privateSession;
+@property (readonly) NSDate *startDate;
+@property (readonly) long long state;
+@property (readonly) Class superclass;
+@property (readonly, copy) HKWorkoutConfiguration *workoutConfiguration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_UUID;
-- (void)_didChangeToState:(int)arg1 fromState:(int)arg2 date:(id)arg3;
-- (void)_didFailWithError:(id)arg1;
 - (id)_init;
-- (id)_initWithActivityType:(unsigned int)arg1 locationType:(int)arg2;
-- (void)_setState:(int)arg1;
-- (void)_validateWorkoutSession;
-- (unsigned int)activityType;
+- (id)_privateSession;
+- (unsigned long long)activityType;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithActivityType:(unsigned int)arg1 locationType:(int)arg2;
+- (id)endDate;
+- (id)initWithActivityType:(unsigned long long)arg1 locationType:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
-- (int)locationType;
+- (id)initWithConfiguration:(id)arg1 error:(id*)arg2;
+- (long long)locationType;
 - (void)setDelegate:(id)arg1;
-- (int)state;
+- (id)startDate;
+- (long long)state;
+- (id)workoutConfiguration;
+- (void)workoutSession:(id)arg1 didChangeToState:(long long)arg2 fromState:(long long)arg3 date:(id)arg4;
+- (void)workoutSession:(id)arg1 didFailWithError:(id)arg2;
+- (void)workoutSession:(id)arg1 didGenerateEvent:(id)arg2;
 
 @end

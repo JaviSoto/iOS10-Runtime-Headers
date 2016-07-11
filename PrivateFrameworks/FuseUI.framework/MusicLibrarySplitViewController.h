@@ -9,28 +9,29 @@
     MusicSwitcherButtonContainerView * _librarySwitcherButtonContainerView;
     MusicLibraryViewController * _musicLibraryViewController;
     MusicNoContentView * _noContentView;
-    BOOL  _shouldShowMatchLoadingViewController;
-    BOOL  _shouldShowNoContentViewController;
-    BOOL  _shouldShowTurnOnCloudMediaSwitchInNoContentView;
+    bool  _shouldShowMatchLoadingViewController;
+    bool  _shouldShowNoContentViewController;
+    bool  _shouldShowTurnOnCloudMediaSwitchInNoContentView;
+    MusicLibraryTopBarController * _topBarController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MusicLibraryViewController *libraryViewController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_accountStoreChangedNotification:(id)arg1;
 - (void)_alertShowOfflineSwitchValueChangedAction:(id)arg1;
-- (void)_alertShowPurchasesSwitchValueChangedAction:(id)arg1;
 - (void)_cloudUpdateInProgressDidChangeNotification:(id)arg1;
 - (void)_delayedDismissFilterAlertController;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_handleFilterAlertControllerDismissal;
 - (void)_handleLibraryContentQuantityDidChangeNotification:(id)arg1;
 - (void)_musicDefaultsDidChangeNotification:(id)arg1;
+- (void)_presentHomeSharingPicker;
 - (void)_registerForNotifications;
 - (id)_selectViewConfiguration:(id)arg1;
 - (void)_setClientContextForViewController:(id)arg1;
@@ -47,14 +48,17 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTabBarItem:(id)arg1;
 - (id)libraryViewController;
-- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (void)noContentViewDidTapButton:(id)arg1;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)presentViewSwitcherSheet;
+- (void)scrollViewDidChangeContentInset:(id)arg1;
 - (id)selectViewConfigurationWithIdentifier:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)switcherButtonWasSelectedInContainerView:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 
 @end

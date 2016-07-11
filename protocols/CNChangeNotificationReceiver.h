@@ -5,6 +5,8 @@
 
 @required
 
-- (void)receiveNotificationName:(NSString *)arg1 fromSender:(id <NSObject>)arg2 userInfo:(NSDictionary *)arg3;
+- (bool)forwardsSelfGeneratedDistributedSaveNotifications;
+- (void)receiveNotificationName:(NSString *)arg1 fromSender:(id <NSObject>)arg2 saveIdentifier:(NSString *)arg3 userInfo:(NSDictionary *)arg4 isFromExternalProcess:(bool)arg5;
+- (void)setForwardsSelfGeneratedDistributedSaveNotifications:(bool)arg1;
 
 @end

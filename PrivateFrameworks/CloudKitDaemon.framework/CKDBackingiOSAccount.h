@@ -19,16 +19,20 @@
 - (id)_initWithParentAccount:(id)arg1 inStore:(id)arg2;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)accountStore;
-- (BOOL)allowsCellularAccess;
 - (id)ckAccount;
 - (id)cloudKitAuthToken;
-- (BOOL)cloudKitIsEnabled;
-- (BOOL)cloudPhotosIsEnabled;
+- (bool)cloudKitIsEnabled;
+- (bool)cloudPhotosIsEnabled;
 - (id)dsid;
+- (id)fullName;
 - (id)iCloudAuthToken;
+- (bool)iCloudDriveAllowsCellularAccess;
 - (id)identifier;
+- (bool)isDataclassEnabled:(id)arg1;
 - (id)parentAppleAccount;
 - (id)primaryEmail;
 - (void)setParentAppleAccount:(id)arg1;
+- (void)updateAccountProperiesInStore:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)username;
 
 @end

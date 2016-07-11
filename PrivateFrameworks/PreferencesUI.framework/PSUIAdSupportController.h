@@ -2,49 +2,63 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIAdSupportController : PSUIAdvertisingController {
+@interface PSUIAdSupportController : PSListController <ADPrivacyViewControllerDelegate> {
+    ADPrivacyViewController * _adPrivacyController;
     id  _effectiveSettingsChangedObserver;
-    BOOL  _hasRefreshedStatus;
     UITableViewCell * _limitAdTrackingCell;
-    BOOL  _limitAdTrackingURLIsReachable;
+    bool  _limitAdTrackingURLIsReachable;
+    long long  _optInStatus;
     UIView * _originalAccessoryView;
-    struct __SCNetworkReachability { } * _reachability;
+    id  _reachabilityAsObject;
     id  _restrictionsChangedObserver;
 }
 
+@property (nonatomic, retain) ADPrivacyViewController *adPrivacyController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) id effectiveSettingsChangedObserver;
-@property (nonatomic) BOOL hasRefreshedStatus;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UITableViewCell *limitAdTrackingCell;
-@property (nonatomic) BOOL limitAdTrackingURLIsReachable;
+@property (nonatomic) bool limitAdTrackingURLIsReachable;
+@property (nonatomic) long long optInStatus;
 @property (nonatomic, retain) UIView *originalAccessoryView;
-@property (nonatomic) struct __SCNetworkReachability { }*reachability;
+@property (nonatomic, readonly) struct __SCNetworkReachability { }*reachability;
+@property (nonatomic, retain) id reachabilityAsObject;
 @property (nonatomic, retain) id restrictionsChangedObserver;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)canChangeLimitAdTracking;
+- (id)adPrivacyController;
+- (void)adPrivacyViewController:(id)arg1 didFailWithError:(id)arg2;
+- (void)adPrivacyViewControllerDidDismiss:(id)arg1;
+- (void)adPrivacyViewControllerDidLoad:(id)arg1;
+- (bool)canChangeLimitAdTracking;
 - (void)dealloc;
 - (id)effectiveSettingsChangedObserver;
-- (BOOL)hasRefreshedStatus;
 - (id)limitAdTrackingCell;
 - (id)limitAdTrackingEnabled:(id)arg1;
-- (BOOL)limitAdTrackingURLIsReachable;
+- (bool)limitAdTrackingURLIsReachable;
+- (long long)optInStatus;
 - (id)originalAccessoryView;
 - (struct __SCNetworkReachability { }*)reachability;
+- (id)reachabilityAsObject;
+- (void)reloadLimitAdTrackingSpecifier;
 - (void)resetAdID;
 - (id)restrictionsChangedObserver;
+- (void)setAdPrivacyController:(id)arg1;
 - (void)setEffectiveSettingsChangedObserver:(id)arg1;
-- (void)setHasRefreshedStatus:(BOOL)arg1;
 - (void)setLimitAdTrackingCell:(id)arg1;
 - (void)setLimitAdTrackingEnabled:(id)arg1 specifier:(id)arg2;
-- (void)setLimitAdTrackingURLIsReachable:(BOOL)arg1;
+- (void)setLimitAdTrackingURLIsReachable:(bool)arg1;
+- (void)setOptInStatus:(long long)arg1;
 - (void)setOriginalAccessoryView:(id)arg1;
-- (void)setReachability:(struct __SCNetworkReachability { }*)arg1;
+- (void)setReachabilityAsObject:(id)arg1;
 - (void)setRestrictionsChangedObserver:(id)arg1;
 - (id)specifiers;
+- (void)userDidTapAdPreferences:(id)arg1;
 - (void)userDidTapDoneButton:(id)arg1;
 - (void)userDidTapLearnMoreLink:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

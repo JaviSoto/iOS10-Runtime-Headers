@@ -2,31 +2,27 @@
    Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
  */
 
-@interface _DECPredictionItem : NSObject <NSSecureCoding> {
-    unsigned int  _appDeeplinkHeuristic;
+@interface _DECPredictionItem : NSObject <NSCopying, NSSecureCoding> {
     double  _confidence;
     _DECItem * _item;
 }
 
-@property (nonatomic) unsigned int appDeeplinkHeuristic;
 @property (nonatomic) double confidence;
 @property (nonatomic, readonly) _DECItem *item;
 
 + (id)predictionItemWithItem:(id)arg1 confidence:(double)arg2;
-+ (id)predictionItemWithItem:(id)arg1 confidence:(double)arg2 appDeeplinkHeuristic:(unsigned int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)appDeeplinkHeuristic;
 - (double)confidence;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItem:(id)arg1 confidence:(double)arg2 appDeeplinkHeuristic:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithItem:(id)arg1 confidence:(double)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)item;
-- (void)setAppDeeplinkHeuristic:(unsigned int)arg1;
 - (void)setConfidence:(double)arg1;
 
 @end

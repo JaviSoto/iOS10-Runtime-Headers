@@ -15,17 +15,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKPhotoPickerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKPhotoPickerCollectionViewController *photosCollectionView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIAlertAction *topAlertAction;
 
+- (void).cxx_destruct;
 - (void)_bottomAlertActionHandler;
 - (void)_cancelButtonPressed;
-- (BOOL)_shouldAlignToKeyboard;
+- (bool)_shouldAlignToKeyboard;
 - (void)_topAlertActionHandler;
 - (void)_updateAlertTitles;
-- (BOOL)allowsRotation;
+- (bool)allowsRotation;
 - (id)bottomAlertAction;
 - (id)captureLabelText;
 - (void)dealloc;
@@ -38,7 +39,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPhotosCollectionView:(id)arg1;
 - (void)setTopAlertAction:(id)arg1;
-- (BOOL)shouldAutorotate;
+- (bool)shouldAutorotate;
 - (id)topAlertAction;
 - (void)viewDidLoad;
 

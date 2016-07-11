@@ -2,73 +2,97 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMZoomSlider : UISlider {
-    BOOL  __autozooming;
+@interface CAMZoomSlider : UISlider <UIGestureRecognizerDelegate> {
+    bool  __autozooming;
     UIView * __maxTrackMaskView;
     UIView * __minTrackMaskView;
-    UIImageView * __thumbImageView;
     NSTimer * __visibilityTimer;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _alignmentRectInsets;
     <CAMZoomSliderDelegate> * _delegate;
-    BOOL  _maximumAutozooming;
-    BOOL  _minimumAutozooming;
+    long long  _layoutStyle;
+    bool  _maximumAutozooming;
+    bool  _minimumAutozooming;
+    long long  _orientation;
+    bool  _visibilityTimerSuspended;
 }
 
-@property (getter=_isAutozooming, setter=_setAutozooming:, nonatomic) BOOL _autozooming;
+@property (getter=_isAutozooming, setter=_setAutozooming:, nonatomic) bool _autozooming;
 @property (nonatomic, readonly) UIView *_maxTrackMaskView;
 @property (nonatomic, readonly) UIView *_minTrackMaskView;
-@property (nonatomic, readonly) UIImageView *_thumbImageView;
 @property (nonatomic, readonly) NSTimer *_visibilityTimer;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentRectInsets;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CAMZoomSliderDelegate> *delegate;
-@property (getter=isMaximumAutozooming, nonatomic) BOOL maximumAutozooming;
-@property (getter=isMinimumAutozooming, nonatomic) BOOL minimumAutozooming;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long layoutStyle;
+@property (getter=isMaximumAutozooming, setter=_setMaximumAutozooming:, nonatomic) bool maximumAutozooming;
+@property (getter=isMinimumAutozooming, setter=_setMinimumAutozooming:, nonatomic) bool minimumAutozooming;
+@property (nonatomic) long long orientation;
+@property (readonly) Class superclass;
+@property (getter=isVisibilityTimerSuspended, nonatomic) bool visibilityTimerSuspended;
+
++ (bool)shouldFadeOutZoomSliderForLayoutStyle:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_beginAutozooming;
-- (void)_commonCAMZoomSliderInitialization;
+- (void)_commonCAMZoomSliderInitializationWithLayoutStyle:(long long)arg1;
 - (void)_endAutozooming;
+- (void)_handleTouchUpInside:(id)arg1;
 - (void)_hideZoomSlider:(id)arg1;
-- (BOOL)_isAutozooming;
-- (BOOL)_isMinimumOrMaximumAutozooming;
+- (bool)_isAutozooming;
+- (bool)_isMinimumOrMaximumAutozooming;
+- (void)_makeInvisibleAnimationDuration:(double)arg1;
 - (id)_maxTrackMaskView;
 - (id)_minTrackMaskView;
-- (void)_postHideZoomSliderAnimation;
-- (void)_setAutozooming:(BOOL)arg1;
-- (void)_setMaximumAutozooming:(BOOL)arg1;
-- (void)_setMinimumAutozooming:(BOOL)arg1;
+- (void)_setAutozooming:(bool)arg1;
+- (void)_setMaximumAutozooming:(bool)arg1;
+- (void)_setMinimumAutozooming:(bool)arg1;
 - (void)_startVisibilityTimer;
 - (void)_stopVisibilityTimer;
-- (id)_thumbImageView;
+- (double)_thumbCenterMaximumXForTrackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)_thumbCenterMinimumXForTrackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)_thumbCenterXForValue:(float)arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_updateAutozooming;
+- (void)_updateForLayoutStyle;
+- (float)_valueForThumbCenterX:(double)arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)_visibilityTimer;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)createThumbView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isMaximumAutozooming;
-- (BOOL)isMinimumAutozooming;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isMaximumAutozooming;
+- (bool)isMinimumAutozooming;
+- (bool)isVisibilityTimerSuspended;
+- (long long)layoutStyle;
 - (void)layoutSubviews;
-- (int)locationOfTouch:(id)arg1;
-- (void)makeInvisible;
-- (void)makeVisible;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (long long)locationOfTouch:(id)arg1;
+- (void)makeInvisibleAnimated:(bool)arg1;
+- (void)makeVisibleAnimated:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)orientation;
+- (void)setAlignmentRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)visibilityTimerIsValid;
+- (void)setLayoutStyle:(long long)arg1;
+- (void)setOrientation:(long long)arg1;
+- (void)setOrientation:(long long)arg1 animated:(bool)arg2;
+- (void)setUserInitiatedValue:(float)arg1;
+- (void)setVisibilityTimerSuspended:(bool)arg1;
+- (bool)shouldHideForExpiredVisibilityTimer;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

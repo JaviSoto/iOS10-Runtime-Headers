@@ -4,34 +4,33 @@
 
 @interface BLTLightsAndSirensReplyInfo : NSObject {
     NSDate * _bulletinPublicationDate;
+    NSDate * _creation;
     bool  _didLogAggd;
-    unsigned int  _didPlayLightsAndSirens;
-    NSDate * _expiration;
+    unsigned long long  _didPlayLightsAndSirens;
     id /* block */  _reply;
-    BOOL  _replySent;
+    bool  _replySent;
 }
 
 @property (nonatomic, retain) NSDate *bulletinPublicationDate;
+@property (nonatomic, readonly) NSDate *creation;
 @property (nonatomic) bool didLogAggd;
-@property (nonatomic) unsigned int didPlayLightsAndSirens;
-@property (nonatomic, retain) NSDate *expiration;
+@property (nonatomic) unsigned long long didPlayLightsAndSirens;
 @property (nonatomic, copy) id /* block */ reply;
-@property (nonatomic, readonly) BOOL replySent;
+@property (nonatomic, readonly) bool replySent;
 
 - (void).cxx_destruct;
 - (id)bulletinPublicationDate;
+- (id)creation;
 - (bool)didLogAggd;
-- (unsigned int)didPlayLightsAndSirens;
-- (id)expiration;
-- (BOOL)hasExpired;
+- (unsigned long long)didPlayLightsAndSirens;
+- (bool)hasExpired;
 - (id)init;
 - (id /* block */)reply;
-- (BOOL)replySent;
-- (BOOL)sendReply;
+- (bool)replySent;
+- (bool)sendReply;
 - (void)setBulletinPublicationDate:(id)arg1;
 - (void)setDidLogAggd:(bool)arg1;
-- (void)setDidPlayLightsAndSirens:(unsigned int)arg1;
-- (void)setExpiration:(id)arg1;
+- (void)setDidPlayLightsAndSirens:(unsigned long long)arg1;
 - (void)setReply:(id /* block */)arg1;
 
 @end

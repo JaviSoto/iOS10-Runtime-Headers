@@ -5,19 +5,25 @@
 @interface IMDChatRegistry : NSObject {
     NSMutableDictionary * _chats;
     NSRecursiveLock * _chatsLock;
-    BOOL  _doneLoadingAfterMerge;
-    BOOL  _isLoading;
+    bool  _doneLoadingAfterMerge;
+    bool  _isLoading;
 }
 
 @property (nonatomic, readonly) NSArray *chats;
 
 + (id)sharedInstance;
 
+- (bool)_chat:(id)arg1 isDuplicateOfChat:(id)arg2;
 - (id)_chatInfo;
 - (id)_chatInfoForSaving;
-- (void)_forceReloadChats:(BOOL)arg1;
+- (struct NSArray { Class x1; }*)_createGroupChatsArray;
+- (id)_findChatWinnerInDuplicateChatArray:(struct NSArray { Class x1; }*)arg1;
+- (id)_findLosingChatGUIDsInArrayOfChats:(struct NSArray { Class x1; }*)arg1 withWinner:(id)arg2;
+- (void)_forceReloadChats:(bool)arg1;
 - (void)_makeAllAttachmentsClassC;
-- (BOOL)_saveChats;
+- (bool)_mergeDuplicateGroupsIfNeeded;
+- (bool)_saveChats;
+- (bool)_updateDuplicateUnnamedGroupsWithNewGroupIDIfNeeded;
 - (void)addChat:(id)arg1;
 - (void)addItem:(id)arg1 toChat:(id)arg2;
 - (void)addMessage:(id)arg1 toChat:(id)arg2;
@@ -34,20 +40,22 @@
 - (id)existingChatWithGUID:(id)arg1;
 - (id)existingChatWithIdentifier:(id)arg1 account:(id)arg2;
 - (id)existingChatsForIDs:(id)arg1 onService:(id)arg2 style:(unsigned char)arg3;
+- (struct NSArray { Class x1; }*)findDuplicateChats:(struct NSArray { Class x1; }*)arg1;
+- (struct NSArray { Class x1; }*)findDuplicateUnnamedGroups:(struct NSArray { Class x1; }*)arg1;
 - (id)init;
-- (BOOL)loadChatsWithCompletionBlock:(id /* block */)arg1;
+- (bool)loadChatsWithCompletionBlock:(id /* block */)arg1;
 - (void)removeChat:(id)arg1;
 - (void)removeItem:(id)arg1 fromChat:(id)arg2;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
-- (BOOL)saveChats;
+- (bool)repairDuplicateChatsIfNeeded;
+- (bool)saveChats;
 - (void)systemDidLeaveFirstDataProtectionLock;
 - (void)systemDidUnlock;
-- (void)updateLastMessageForChat:(id)arg1;
 - (void)updateLastMessageForChat:(id)arg1 hintMessage:(id)arg2;
-- (BOOL)updateProperties:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3;
-- (void)updateStateForChat:(id)arg1;
-- (void)updateStateForChat:(id)arg1 forcePost:(BOOL)arg2;
-- (void)updateStateForChat:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 forcePost:(BOOL)arg4;
-- (BOOL)updateUnreadCountForChat:(id)arg1;
+- (bool)updateProperties:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3;
+- (void)updateStateForChat:(id)arg1 forcePost:(bool)arg2;
+- (void)updateStateForChat:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 forcePost:(bool)arg4 hintMessage:(id)arg5;
+- (void)updateStateForChat:(id)arg1 hintMessage:(id)arg2;
+- (bool)updateUnreadCountForChat:(id)arg1;
 
 @end

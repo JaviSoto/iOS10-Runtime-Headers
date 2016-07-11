@@ -11,7 +11,7 @@
     }  _delegateFlags;
     UILabel * _finePrintLabel;
     UIButton * _goButton;
-    BOOL  _goButtonEnabled;
+    bool  _goButtonEnabled;
     NSLayoutConstraint * _goButtonWidthConstraint;
     UIImageView * _graphicImageView;
     UILabel * _titleLabel;
@@ -21,7 +21,7 @@
 @property (nonatomic) <PUCloudPhotoWelcomeViewDelegate> *delegate;
 @property (nonatomic, retain) UILabel *finePrintLabel;
 @property (nonatomic, retain) UIButton *goButton;
-@property (getter=goButtonIsEnabled, nonatomic) BOOL goButtonEnabled;
+@property (getter=goButtonIsEnabled, nonatomic) bool goButtonEnabled;
 @property (nonatomic, retain) UIImageView *graphicImageView;
 @property (nonatomic, retain) UILabel *titleLabel;
 
@@ -36,15 +36,15 @@
 - (id)delegate;
 - (id)finePrintLabel;
 - (id)goButton;
-- (BOOL)goButtonIsEnabled;
+- (bool)goButtonIsEnabled;
 - (id)graphicImageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setBodyLabel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFinePrintLabel:(id)arg1;
 - (void)setGoButton:(id)arg1;
-- (void)setGoButtonEnabled:(BOOL)arg1;
+- (void)setGoButtonEnabled:(bool)arg1;
 - (void)setGraphicImageView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)titleLabel;

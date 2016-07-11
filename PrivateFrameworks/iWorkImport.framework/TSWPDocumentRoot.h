@@ -2,22 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex>
+@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
+    bool  _didRemoveMissingAttachments;
+    TSSStylesheet * _stylesheet;
+}
 
-@property (getter=isChangeTrackingEnabled, nonatomic, readonly) BOOL changeTrackingEnabled;
-@property (nonatomic, readonly) BOOL supportHeaderFooterParagraphAlignmentInInspectors;
+@property (getter=isChangeTrackingEnabled, nonatomic, readonly) bool changeTrackingEnabled;
+@property (nonatomic) bool didRemoveMissingAttachments;
+@property (nonatomic, retain) TSSStylesheet *stylesheet;
+@property (nonatomic, readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
 
+- (bool)cellCommentsAllowedOnInfo:(id)arg1;
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
+- (bool)didRemoveMissingAttachments;
 - (void)documentDidLoad;
 - (id)documentFonts;
 - (struct __CFLocale { }*)hyphenationLocale;
-- (BOOL)isChangeTrackingEnabled;
-- (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
-- (BOOL)shouldHyphenate;
-- (BOOL)supportHeaderFooterParagraphAlignmentInInspectors;
+- (bool)isChangeTrackingEnabled;
+- (int)naturalAlignmentAtCharIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
+- (void)setDidRemoveMissingAttachments:(bool)arg1;
+- (void)setStylesheet:(id)arg1;
+- (bool)shouldHyphenate;
+- (id)stylesheet;
+- (bool)supportHeaderFooterParagraphAlignmentInInspectors;
 - (id)unavailableDocumentFonts;
-- (BOOL)useLigatures;
+- (bool)useLigatures;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
 - (void)willClose;
 

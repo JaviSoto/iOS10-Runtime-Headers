@@ -12,8 +12,8 @@
     }  _seekTime;
 }
 
-@property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } seekTime;
+@property (setter=_setImage:, nonatomic, retain) UIImage *image;
+@property (setter=_setSeekTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } seekTime;
 
 + (id)oneUpAssetTransitionInfoWithImage:(id)arg1;
 + (id)oneUpAssetTransitionInfoWithImage:(id)arg1 andSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;

@@ -10,6 +10,7 @@
 
 @property (nonatomic, readonly) NSData *bytes;
 @property (nonatomic, readonly) NSData *historicalBytes;
+@property (nonatomic, readonly) NSArray *historicalRecords;
 @property (nonatomic, readonly) NSArray *protocols;
 
 - (void).cxx_destruct;
@@ -20,8 +21,8 @@
 - (id)historicalRecords;
 - (id)initWithBytes:(id)arg1;
 - (id)initWithSource:(id /* block */)arg1;
-- (id)interfaceGroupAtIndex:(int)arg1;
-- (id)interfaceGroupForProtocol:(unsigned int)arg1;
+- (id)interfaceGroupAtIndex:(long long)arg1;
+- (id)interfaceGroupForProtocol:(unsigned long long)arg1;
 - (id)parseFromSource:(id /* block */)arg1;
 - (id)protocols;
 

@@ -6,6 +6,8 @@
 
 + (id)dateFromDayComponents:(id)arg1;
 + (id)dayComponentsFromDate:(id)arg1;
++ (id)gmtBuddhistCalendar;
 + (id)gmtGregorianCalendar;
++ (id)gmtJapaneseCalendar;
 
 @end

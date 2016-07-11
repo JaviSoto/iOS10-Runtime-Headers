@@ -2,58 +2,44 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUISignInFlowController : NSObject <AAUIAccountRepairRemoteUIDelegate, AAUIGenericTermsRemoteUIDelegate, CDPStateUIProvider, DevicePINControllerDelegate> {
+@interface AAUISignInFlowController : NSObject <AAUIAccountRepairRemoteUIDelegate, AAUIGenericTermsRemoteUIDelegate> {
     AAUIAccountRepairRemoteUI * _accountRepairRemoteUI;
     ACAccountStore * _accountStore;
-    CDPLocalDeviceSecretHandler * _activeCDPLocalSecretHandler;
-    CDPRemoteDeviceSecretValidator * _activeCDPRemoteSecretValidator;
     ACAccountType * _appleAccountType;
     NSMutableDictionary * _cdpContextsByAccountID;
     NSLock * _cdpContextsByAccountIDLock;
-    NSArray * _devicesForCDPSecretValidation;
     AAUIGenericTermsRemoteUI * _genericTermsRemoteUI;
     id /* block */  _pendingCompletion;
     UIViewController * _presentingViewController;
-    CDPDevice * _selectedDeviceForCDPSecretValidation;
-    BOOL  _shouldAutomaticallySaveSignInResults;
+    bool  _shouldAutomaticallySaveSignInResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *presentingViewController;
-@property (nonatomic) BOOL shouldAutomaticallySaveSignInResults;
+@property (nonatomic) bool shouldAutomaticallySaveSignInResults;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_appleAccountType;
-- (void)_handlePasscodeValidationResult:(BOOL)arg1 error:(id)arg2 validator:(id)arg3 cleanupBlock:(id /* block */)arg4;
-- (BOOL)_isCDPValidationEnabled;
 - (void)_loadAccountRepairRemoteUIWithAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentExistingAccountAlert:(id)arg1;
 - (void)_presentUnableToSaveAccountAlert;
 - (void)_presentValidationErrorAlert:(id)arg1 forAccount:(id)arg2 completion:(id /* block */)arg3;
-- (void)_pushPasscodeScreenWithReason:(id)arg1 inNavigationController:(id)arg2 validatePIN:(BOOL)arg3;
 - (void)_saveAccount:(id)arg1 withAllDataclassesEnabledIfPossibleWithCompletion:(id /* block */)arg2;
 - (void)_showGenericTermsUIforAccount:(id)arg1 completion:(id /* block */)arg2;
-- (void)_showModalPasscodeScreenWithReason:(id)arg1 validatePIN:(BOOL)arg2;
 - (void)_showSecondFactorUIForAccount:(id)arg1 loginResponse:(id)arg2 completion:(id /* block */)arg3;
 - (id)_titleForError:(id)arg1 account:(id)arg2;
-- (id)_userFriendlyDescriptionForDevice:(id)arg1;
 - (void)_validateCDPStateForAccount:(id)arg1 withCDPContext:(id)arg2 completion:(id /* block */)arg3;
-- (void)_verifyLoginResponseForiCloudAccount:(id)arg1 withSuccess:(BOOL)arg2 response:(id)arg3 error:(id)arg4 completion:(id /* block */)arg5;
-- (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(BOOL)arg3;
-- (void)cdpContext:(id)arg1 promptForAccountPasswordWithCompletion:(id /* block */)arg2;
-- (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
-- (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 validator:(id)arg3;
-- (void)didAcceptEnteredPIN:(id)arg1;
-- (void)didCancelEnteringPIN;
-- (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)_verifyLoginResponseForiCloudAccount:(id)arg1 withSuccess:(bool)arg2 response:(id)arg3 error:(id)arg4 completion:(id /* block */)arg5;
+- (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(bool)arg3;
+- (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(bool)arg2;
 - (id)init;
 - (id)presentingViewController;
 - (void)setPresentingViewController:(id)arg1;
-- (void)setShouldAutomaticallySaveSignInResults:(BOOL)arg1;
-- (BOOL)shouldAutomaticallySaveSignInResults;
+- (void)setShouldAutomaticallySaveSignInResults:(bool)arg1;
+- (bool)shouldAutomaticallySaveSignInResults;
 - (void)signInWithIDMSAuthenticationResults:(id)arg1 completion:(id /* block */)arg2;
 
 @end

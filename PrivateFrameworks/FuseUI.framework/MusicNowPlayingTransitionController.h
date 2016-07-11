@@ -4,8 +4,8 @@
 
 @interface MusicNowPlayingTransitionController : NSObject <UIViewControllerAnimatedTransitioning> {
     UIView * _dimmingView;
-    BOOL  _dismissal;
-    BOOL  _hasFinishedTransition;
+    bool  _dismissal;
+    bool  _hasFinishedTransition;
     MusicTabBarController * _tabBarController;
     id /* block */  _transitionEndBlock;
     id /* block */  _transitionFinishBlock;
@@ -16,22 +16,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isDismissal, nonatomic) BOOL dismissal;
-@property (readonly) unsigned int hash;
+@property (getter=isDismissal, nonatomic) bool dismissal;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MusicTabBarController *tabBarController;
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
-- (void)animateTransition:(id)arg1 withDuration:(double)arg2 initialVelocity:(float)arg3 interactively:(BOOL)arg4 toFinalPositions:(BOOL)arg5 completion:(id /* block */)arg6;
+- (void)animateTransition:(id)arg1 withDuration:(double)arg2 initialVelocity:(double)arg3 interactively:(bool)arg4 toFinalPositions:(bool)arg5 completion:(id /* block */)arg6;
 - (void)cleanupTransition:(id)arg1;
-- (BOOL)isDismissal;
+- (bool)isDismissal;
 - (void)prepareTransition:(id)arg1;
-- (void)setDismissal:(BOOL)arg1;
+- (void)setDismissal:(bool)arg1;
 - (void)setTabBarController:(id)arg1;
 - (void)stopAnimation;
 - (id)tabBarController;
 - (double)transitionDuration:(id)arg1;
-- (void)updateRubberbandingWithDistance:(float)arg1;
+- (void)updateRubberbandingWithDistance:(double)arg1;
 
 @end

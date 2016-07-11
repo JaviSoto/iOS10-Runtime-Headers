@@ -5,6 +5,6 @@
 
 @required
 
-- (void)captureController:(CUCaptureController *)arg1 didOutputVideoZoomFactor:(float)arg2;
+- (void)captureController:(CUCaptureController *)arg1 didOutputVideoZoomFactor:(double)arg2;
 
 @end

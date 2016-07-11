@@ -4,27 +4,35 @@
 
 @interface CKRemoteItemForSending : NSObject <NSSecureCoding> {
     NSURL * _appendedBundleURL;
+    NSData * _appendedRichLinkData;
+    NSURL * _appendedRichLinkURL;
     NSURL * _appendedVideoURL;
     NSString * _attachmentDescription;
     NSURL * _attachmentURL;
     struct CGImageBlockSet { } * _blockSet;
-    NSObject<OS_dispatch_semaphore> * _outstandingWork;
     struct __IOSurface { } * _previewImage;
-    BOOL  _previewIsFullyRealizedByChatKit;
+    bool  _previewIsFullyRealizedByChatKit;
 }
 
 @property (nonatomic, retain) NSURL *appendedBundleURL;
+@property (nonatomic, copy) NSData *appendedRichLinkData;
+@property (nonatomic, retain) NSURL *appendedRichLinkURL;
 @property (nonatomic, retain) NSURL *appendedVideoURL;
 @property (nonatomic, retain) NSString *attachmentDescription;
 @property (nonatomic, retain) NSURL *attachmentURL;
 @property (nonatomic) struct CGImageBlockSet { }*blockSet;
 @property (nonatomic) struct __IOSurface { }*previewImage;
-@property (nonatomic) BOOL previewIsFullyRealizedByChatKit;
+@property (nonatomic) bool previewIsFullyRealizedByChatKit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)hasAppendedVideo:(id)arg1;
++ (id)previewQueue;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_setPreviewUIImage:(id)arg1;
 - (id)appendedBundleURL;
+- (id)appendedRichLinkData;
+- (id)appendedRichLinkURL;
 - (id)appendedVideoURL;
 - (id)attachmentDescription;
 - (id)attachmentURL;
@@ -36,16 +44,19 @@
 - (id)initWithAttachmentURL:(id)arg1 description:(id)arg2;
 - (id)initWithAttachmentURL:(id)arg1 description:(id)arg2 previewImage:(id)arg3;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithRichLinkWithURL:(id)arg1 data:(id)arg2;
 - (struct __IOSurface { }*)previewImage;
-- (BOOL)previewIsFullyRealizedByChatKit;
+- (bool)previewIsFullyRealizedByChatKit;
 - (id)previewUIImage;
 - (void)setAppendedBundleURL:(id)arg1;
+- (void)setAppendedRichLinkData:(id)arg1;
+- (void)setAppendedRichLinkURL:(id)arg1;
 - (void)setAppendedVideoURL:(id)arg1;
 - (void)setAttachmentDescription:(id)arg1;
 - (void)setAttachmentURL:(id)arg1;
 - (void)setBlockSet:(struct CGImageBlockSet { }*)arg1;
 - (void)setPreviewImage:(struct __IOSurface { }*)arg1;
-- (void)setPreviewIsFullyRealizedByChatKit:(BOOL)arg1;
+- (void)setPreviewIsFullyRealizedByChatKit:(bool)arg1;
 - (void)waitForPreviewCreation;
 
 @end

@@ -31,14 +31,13 @@
 - (id)delegate;
 - (id)description;
 - (id)endpoint;
-- (void)finalize;
 - (id)initWithMachServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (void)invalidate;
 - (void)resume;
 - (id)serviceName;
 - (void)setDelegate:(id)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)stop;
 - (void)suspend;
 

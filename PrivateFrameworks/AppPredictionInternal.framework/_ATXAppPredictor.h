@@ -3,32 +3,47 @@
  */
 
 @interface _ATXAppPredictor : NSObject {
-    NSString * _ABGroupIdentifier;
-    _ATXABHelper * _abHelper;
+    NSString * _abGroupIdentifier;
+    _ATXAppInstallMonitor * _appInstallMonitor;
+    _ATXAppLaunchLocation * _appLaunchLocation;
     _ATXAppLaunchMonitor * _appLaunchMonitor;
+    _DECAsset * _asset;
+    NSString * _dayZeroABGroupIdentifier;
     _DECAsset * _dayZeroAsset;
     NSDictionary * _dayZeroParameters;
     _ATXScoreInterpreter * _interpreter;
-    struct { char *x1; double x2[16]; double x3; } * _lastPredictionItems;
+    struct { char *x1; double x2[23]; double x3; } * _lastPredictionItems;
     int  _nLastPredictionItems;
-    NSMutableDictionary * _subscoreHistory;
-    BOOL  _waitingForFeedback;
+    _ATXRecentInstallCache * _recentInstallCache;
 }
+
+@property (nonatomic, readonly) _ATXAppInstallMonitor *appInstallMonitor;
+@property (nonatomic, readonly) _ATXAppLaunchMonitor *appLaunchMonitor;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_asyncFlushSubscoreHistory;
-- (struct { char *x1; double x2[16]; double x3; }*)getPredictionItemsWithCount:(int*)arg1;
+- (id)appInstallMonitor;
+- (id)appLaunchMonitor;
+- (id)constructSessionLogDictionaryFor:(int)arg1 appsWithFeedback:(id)arg2 outcome:(unsigned long long)arg3;
+- (void)dealloc;
+- (id)getParseTree;
+- (struct { char *x1; double x2[23]; double x3; }*)getPredictionItemsWithCount:(int*)arg1 scoreLogger:(id)arg2;
+- (id)getPredictionModelDetails;
 - (id)init;
-- (id)initWithABHelper:(id)arg1;
-- (void)logInputsForPredictionItem:(struct { char *x1; double x2[16]; double x3; })arg1 withOutcome:(unsigned int)arg2;
+- (id)initWithAsset:(id)arg1 withDayZeroAsset:(id)arg2;
+- (void)logPredictionEventWithShown:(id)arg1 outcome:(unsigned long long)arg2 consumerType:(unsigned long long)arg3 consumerSubType:(unsigned char)arg4;
+- (id)oldPathsToRestore;
 - (id)pathsToBackUp;
-- (id)predictWithLimit:(unsigned int)arg1;
-- (double)predictionScoreForItem:(struct { char *x1; double x2[16]; double x3; }*)arg1;
-- (void)receiveFeedback:(id)arg1;
+- (id)predictWithLimit:(unsigned long long)arg1 scoreLogger:(id)arg2;
+- (double)predictionScoreForItem:(const struct { char *x1; double x2[23]; double x3; }*)arg1;
+- (double)predictionScoreForItem:(const struct { char *x1; double x2[23]; double x3; }*)arg1 scoreLogger:(id)arg2;
+- (unsigned long long)receiveAppWidgetFeedback:(id)arg1 consumerType:(unsigned long long)arg2;
+- (unsigned long long)receiveFeedback:(id)arg1 launchSource:(long long)arg2 consumerType:(unsigned long long)arg3 query:(id)arg4 consumerSubType:(unsigned char)arg5;
+- (unsigned long long)receiveZkwSpotlightFeedback:(id)arg1 consumerType:(unsigned long long)arg2;
 - (void)restoreSerializedState:(id)arg1;
 - (id)serializeState;
+- (void)sessionObjectLoggingForFeedback:(id)arg1 andOutcome:(unsigned long long)arg2;
 - (void)train;
 - (void)updateLaunchHistoryFromDuet;
 

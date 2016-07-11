@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)command;
+- (id)contentItemID;
 - (id)contextID;
 - (id)init;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;

@@ -4,43 +4,42 @@
 
 @interface ICTextAttachment : NSTextAttachment <TTAttachment> {
     ICAttachment * _attachment;
-    NSMutableSet * _swappedViewsSet;
-    NSMapTable * _viewsMapTable;
 }
 
 @property (retain) ICAttachment *attachment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSMutableSet *swappedViewsSet;
-@property (nonatomic, retain) NSMapTable *viewsMapTable;
+@property (nonatomic, readonly) NSString *viewIdentifier;
 
-+ (BOOL)textAttachmentIsContent:(id)arg1;
++ (double)defaultAttachmentThumbnailViewHeight;
++ (Class)textAttachmentClassForAttachment:(id)arg1;
++ (bool)textAttachmentIsContent:(id)arg1;
 + (id)textAttachmentWithAttachment:(id)arg1;
 + (id)textAttachmentWithIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)allViews;
 - (id)attachment;
 - (id)attachmentAsNSTextAttachment;
 - (id)attachmentAttributesForAttributedString;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { float x1; float x2; })arg3 characterIndex:(unsigned int)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { double x1; double x2; })arg3 characterIndex:(unsigned long long)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attachmentBoundsIncludingMarginsFromAttachmentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { double x1; double x2; double x3; double x4; })attachmentBoundsMargins;
+- (id)attachmentFileWrapper;
 - (id)attachmentIdentifier;
+- (struct CGSize { double x1; double x2; })attachmentSizeForTextContainer:(id)arg1;
 - (id)attachmentUTI;
-- (void)clearViewForLayoutManager:(id)arg1;
-- (void)dealloc;
-- (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (Class)attachmentViewClass;
+- (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithAttachment:(id)arg1;
+- (bool)isEqualToModelComparable:(id)arg1;
 - (struct UIView { Class x1; }*)newlyCreatedView;
+- (struct UIView { Class x1; }*)newlyCreatedViewForManualRendering;
+- (bool)requiresSpaceAfterAttachmentForPrinting;
 - (void)setAttachment:(id)arg1;
-- (void)setSwappedViewsSet:(id)arg1;
-- (void)setViewsMapTable:(id)arg1;
-- (void)swapBackOldView:(struct UIView { Class x1; }*)arg1 forLayoutManager:(id)arg2;
-- (struct UIView { Class x1; }*)swapOutOldViewByRecreatingViewForLayoutManager:(id)arg1;
-- (id)swappedViewsSet;
-- (struct UIView { Class x1; }*)viewForLayoutManager:(id)arg1;
-- (struct UIView { Class x1; }*)viewForLayoutManagerNoCreate:(id)arg1;
-- (id)viewsMapTable;
+- (bool)supportsMultipleThumbnailsOnSameLine;
+- (bool)supportsThumbnailView;
+- (id)viewIdentifier;
 
 @end

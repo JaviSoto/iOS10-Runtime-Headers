@@ -4,13 +4,16 @@
 
 @interface _GEOSimpleTileRequesterScheduler : NSObject {
     NSMutableArray * _inProgress;
-    NSMutableArray * _requesters;
+    NSObject<OS_dispatch_queue> * _isolation;
+    NSPointerArray * _requesters;
 }
 
 + (id)sharedScheduler;
 
+- (id)_highestPriorityRequester;
 - (void)addTileRequester:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (void)operationDidStop:(id)arg1;
 - (void)removeTileRequester:(id)arg1;
 - (void)sendNextRequestIfNecessary;

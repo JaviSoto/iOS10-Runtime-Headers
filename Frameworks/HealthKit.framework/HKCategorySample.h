@@ -3,43 +3,40 @@
  */
 
 @interface HKCategorySample : HKSample <HDCoding> {
-    int  _value;
+    long long  _value;
 }
 
 @property (readonly) HKCategoryType *categoryType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (readonly) int value;
+@property (readonly) long long value;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_categorySampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 categoryType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7 value:(int)arg8;
-+ (BOOL)_isConcreteObjectClass;
-+ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4;
-+ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
-+ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
-+ (BOOL)supportsSecureCoding;
++ (bool)_isConcreteObjectClass;
++ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4;
++ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
++ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
++ (bool)supportsSecureCoding;
 
-- (void)_setValue:(int)arg1;
+- (void)_setValue:(long long)arg1;
 - (id)_validateConfiguration;
 - (id)_valueDescription;
 - (id)categoryType;
 - (void)encodeWithCoder:(id)arg1;
+- (long long)hk_integerValue;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)value;
+- (long long)value;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (Class)hd_dataEntityClass;
 
-- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
-
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
-
-- (int)hk_integerValue;
 
 @end

@@ -3,35 +3,50 @@
  */
 
 @interface SBFColorBoxes : NSObject {
-    struct { /* ? */ } ** _colorBoxes;
-    unsigned int  _columnCount;
-    float  _contrast;
+    struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; } * _colorBoxesRowMajor;
+    unsigned long long  _columnCount;
+    unsigned long long  _downsampledBoxSize;
+    unsigned long long  _effectiveDownsampleFactor;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
-    unsigned int  _rowCount;
-    unsigned int  _size;
+    unsigned long long  _pixelHeight;
+    unsigned long long  _pixelWidth;
+    unsigned long long  _rowCount;
+    unsigned long long  _size;
+    unsigned char  _totalContrast8;
 }
 
-@property (nonatomic, readonly) struct { /* ? */ }**colorBoxes;
-@property (nonatomic, readonly) unsigned int columnCount;
-@property (nonatomic, readonly) float contrast;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
-@property (nonatomic, readonly) unsigned int rowCount;
-@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, readonly) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; }*colorBoxesRowMajor;
+@property (nonatomic, readonly) unsigned long long columnCount;
+@property (nonatomic, readonly) unsigned long long downsampledBoxSize;
+@property (nonatomic, readonly) unsigned long long effectiveDownsampleFactor;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic, readonly) unsigned long long pixelHeight;
+@property (nonatomic, readonly) unsigned long long pixelWidth;
+@property (nonatomic, readonly) unsigned long long rowCount;
+@property (nonatomic, readonly) unsigned long long size;
+@property (nonatomic, readonly) unsigned char totalContrast8;
 
-+ (id)colorBoxesForImage:(id)arg1 colorBoxSize:(unsigned int)arg2;
++ (id)colorBoxesForImage:(id)arg1 colorBoxSize:(unsigned long long)arg2;
 
 - (void)_freeColorBoxes;
-- (struct { /* ? */ }**)colorBoxes;
-- (unsigned int)columnCount;
-- (float)contrast;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; }*)colorBoxAtRow:(unsigned long long)arg1 col:(unsigned long long)arg2;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; }*)colorBoxesRowMajor;
+- (unsigned long long)columnCount;
+- (double)contrast;
 - (void)dealloc;
 - (id)description;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)initWithColorBoxes:(struct { /* ? */ }**)arg1 size:(unsigned int)arg2 rowCount:(unsigned int)arg3 columnCount:(unsigned int)arg4 contrast:(float)arg5 imageSize:(struct CGSize { float x1; float x2; })arg6;
-- (unsigned int)rowCount;
-- (unsigned int)size;
+- (unsigned long long)downsampledBoxSize;
+- (unsigned long long)effectiveDownsampleFactor;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (id)initWithColorBoxes:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; }*)arg1 size:(unsigned long long)arg2 rowCount:(unsigned long long)arg3 columnCount:(unsigned long long)arg4 totalContrast8:(unsigned char)arg5 imageSize:(struct CGSize { double x1; double x2; })arg6 downsampledBoxSize:(unsigned long long)arg7 effectiveDownsampleFactor:(unsigned long long)arg8 pixelHeight:(unsigned long long)arg9 pixelWidth:(unsigned long long)arg10;
+- (unsigned long long)pixelHeight;
+- (unsigned long long)pixelWidth;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForColorBoxAtRow:(unsigned long long)arg1 col:(unsigned long long)arg2;
+- (unsigned long long)rowCount;
+- (unsigned long long)size;
+- (unsigned char)totalContrast8;
 
 @end

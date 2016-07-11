@@ -20,7 +20,9 @@
 + (id)fileAtRelativePath:(id)arg1;
 + (id)fileResourceTypeAtRelativePath:(id)arg1;
 + (id)itemAtRelativePath:(id)arg1;
-+ (id)itemWithDocumentIdentifier:(id)arg1 forService:(id)arg2;
++ (id)itemWithDocumentIdentifier:(id)arg1 parent:(id)arg2;
++ (id)itemsWithDocumentIdentifier:(id)arg1 forService:(id)arg2;
++ (void)removeCachedItemManagerForService:(id)arg1;
 + (id)thumbnailForUnderlyingItem:(id)arg1;
 
 - (void).cxx_destruct;
@@ -31,8 +33,8 @@
 - (id)_parentFromChildRelativePath:(id)arg1;
 - (id)_thumbnailForUnderlyingItem:(id)arg1;
 - (void)coordinateReadingForUploadingItem:(id)arg1 error:(id*)arg2 byAccessor:(id /* block */)arg3;
-- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
-- (void)coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
+- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
+- (void)coordinateWritingItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
 - (void)evictItem:(id)arg1;
 - (id)fileForUploadTaskIdentifier:(id)arg1 sessionIdentifier:(id)arg2;
 - (void)moveItem:(id)arg1 withDocumentIdentifier:(id)arg2 versionIdentifier:(id)arg3 toRelativePath:(id)arg4;

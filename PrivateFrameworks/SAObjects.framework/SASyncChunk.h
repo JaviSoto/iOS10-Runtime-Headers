@@ -6,9 +6,10 @@
 
 @property (nonatomic, copy) NSString *aceId;
 @property (nonatomic, copy) NSString *appBundleId;
+@property (nonatomic, retain) SASyncAppMetaData *appMetaData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *intentSlotName;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *postGen;
@@ -25,6 +26,7 @@
 + (id)chunkWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)appBundleId;
+- (id)appMetaData;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)intentSlotName;
@@ -32,6 +34,7 @@
 - (id)postGen;
 - (id)preGen;
 - (void)setAppBundleId:(id)arg1;
+- (void)setAppMetaData:(id)arg1;
 - (void)setIntentSlotName:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setPostGen:(id)arg1;
@@ -43,8 +46,8 @@
 - (id)toRemove;
 - (id)validity;
 
-// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)af_bufferingAllowedDuringActiveSession;
+- (bool)siriCore_bufferingAllowedDuringActiveSession;
 
 @end

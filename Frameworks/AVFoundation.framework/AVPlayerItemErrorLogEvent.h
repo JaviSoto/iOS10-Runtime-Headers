@@ -10,17 +10,18 @@
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) NSString *errorComment;
 @property (nonatomic, readonly) NSString *errorDomain;
-@property (nonatomic, readonly) int errorStatusCode;
+@property (nonatomic, readonly) long long errorStatusCode;
 @property (nonatomic, readonly) NSString *playbackSessionID;
 @property (nonatomic, readonly) NSString *serverAddress;
 
 - (id)URI;
+- (id)_common_init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)errorComment;
 - (id)errorDomain;
-- (int)errorStatusCode;
+- (long long)errorStatusCode;
 - (void)finalize;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

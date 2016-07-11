@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (id /* block */)completionHandler;
 - (void)deliverSources:(id)arg1 forQuery:(id)arg2;

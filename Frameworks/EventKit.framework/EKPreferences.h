@@ -6,30 +6,31 @@
     CalPreferences * _preferences;
 }
 
-@property (nonatomic) BOOL alwaysSetArrivedAndSettledForReminders;
-@property (nonatomic) BOOL privacyPaneHasBeenAcknowledged;
-@property (nonatomic) BOOL refiringReminderAlarmsEnabled;
-@property (nonatomic) BOOL remindMeAboutThisInCalendarWidgetEnabled;
+@property (nonatomic) bool alwaysSetArrivedAndSettledForReminders;
+@property (nonatomic) bool privacyPaneHasBeenAcknowledged;
+@property (nonatomic) bool refiringReminderAlarmsEnabled;
+@property (nonatomic) bool remindMeAboutThisInCalendarWidgetEnabled;
 @property (nonatomic) double travelEngineThrottlePeriod;
-@property (nonatomic) BOOL useShortReminderRefireInterval;
-@property (nonatomic) BOOL useShortReminderSnoozeInterval;
+@property (nonatomic) bool useShortReminderRefireInterval;
+@property (nonatomic) bool useShortReminderSnoozeInterval;
 
 + (id)shared;
 
-- (BOOL)alwaysSetArrivedAndSettledForReminders;
+- (void).cxx_destruct;
+- (bool)alwaysSetArrivedAndSettledForReminders;
 - (id)init;
-- (BOOL)privacyPaneHasBeenAcknowledged;
-- (BOOL)refiringReminderAlarmsEnabled;
-- (BOOL)remindMeAboutThisInCalendarWidgetEnabled;
-- (void)setAlwaysSetArrivedAndSettledForReminders:(BOOL)arg1;
-- (void)setPrivacyPaneHasBeenAcknowledged:(BOOL)arg1;
-- (void)setRefiringReminderAlarmsEnabled:(BOOL)arg1;
-- (void)setRemindMeAboutThisInCalendarWidgetEnabled:(BOOL)arg1;
+- (bool)privacyPaneHasBeenAcknowledged;
+- (bool)refiringReminderAlarmsEnabled;
+- (bool)remindMeAboutThisInCalendarWidgetEnabled;
+- (void)setAlwaysSetArrivedAndSettledForReminders:(bool)arg1;
+- (void)setPrivacyPaneHasBeenAcknowledged:(bool)arg1;
+- (void)setRefiringReminderAlarmsEnabled:(bool)arg1;
+- (void)setRemindMeAboutThisInCalendarWidgetEnabled:(bool)arg1;
 - (void)setTravelEngineThrottlePeriod:(double)arg1;
-- (void)setUseShortReminderRefireInterval:(BOOL)arg1;
-- (void)setUseShortReminderSnoozeInterval:(BOOL)arg1;
+- (void)setUseShortReminderRefireInterval:(bool)arg1;
+- (void)setUseShortReminderSnoozeInterval:(bool)arg1;
 - (double)travelEngineThrottlePeriod;
-- (BOOL)useShortReminderRefireInterval;
-- (BOOL)useShortReminderSnoozeInterval;
+- (bool)useShortReminderRefireInterval;
+- (bool)useShortReminderSnoozeInterval;
 
 @end

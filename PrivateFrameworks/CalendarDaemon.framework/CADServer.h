@@ -5,26 +5,26 @@
 @interface CADServer : NSObject <ClientConnectionDelegate, NSXPCListenerDelegate> {
     NSXPCListener * _NSXPCListener;
     int  _backgroundTaskCount;
+    NSObject * _bbProvider;
     BirthdayCalendarManager * _birthdayManager;
-    unsigned int  _birthdayManagerGeneration;
+    unsigned long long  _birthdayManagerGeneration;
     NSMutableSet * _clientConnections;
     NSLock * _connectionLock;
+    CDBDataProtectionObserver * _dataProtectionObserver;
     LocalAttachmentCleanUpSupport * _localAttachmentCleanupManager;
     NSObject<OS_dispatch_queue> * _notificationQueue;
-    BOOL  _running;
+    bool  _running;
     NSObject<OS_dispatch_queue> * _serverQueue;
     NSArray * _signalSensors;
     NSObject<OS_xpc_object> * _xpcConnection;
     NSObject<OS_dispatch_queue> * _xpcQueue;
 }
 
+@property (nonatomic, retain) CDBDataProtectionObserver *dataProtectionObserver;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-
-+ (id)_serverIdentifier;
-+ (id)server;
 
 - (void).cxx_destruct;
 - (void)_dumpState;
@@ -38,15 +38,15 @@
 - (void)_startBirthdayManager;
 - (void)_stopBirthdayManager;
 - (void)_tearDownSignalHandlers;
-- (BOOL)_trimAndExtendOccurrenceCache;
+- (bool)_trimAndExtendOccurrenceCache;
 - (void)_updateOccurrenceCacheTimeZone;
 - (void)clientConnectionDied:(id)arg1;
-- (id)clientConnectionForIdentifier:(int)arg1;
+- (id)dataProtectionObserver;
 - (void)dealloc;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)run;
-- (void)runForTesting;
+- (void)setDataProtectionObserver:(id)arg1;
 - (void)shutDown;
 
 @end

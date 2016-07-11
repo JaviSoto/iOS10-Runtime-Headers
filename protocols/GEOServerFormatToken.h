@@ -5,9 +5,13 @@
 
 @required
 
+- (<GEOTransitArtworkDataSource> *)artworkValue;
+- (<GEOServerFormatTokenPriceValue> *)priceValue;
+- (NSString *)stringValue;
 - (NSString *)token;
-- (int)type;
+- (long long)type;
 - (unsigned int)value1;
 - (unsigned int)value2;
+- (NSArray *)value3s;
 
 @end

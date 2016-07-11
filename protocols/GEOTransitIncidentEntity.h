@@ -5,7 +5,8 @@
 
 @required
 
+- (bool)hasNextStopIDs;
 - (unsigned long long)muid;
-- (int)type;
+- (NSSet *)nextStopIDs;
 
 @end

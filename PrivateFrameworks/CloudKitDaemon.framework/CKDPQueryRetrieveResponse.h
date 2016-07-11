@@ -8,8 +8,10 @@
 }
 
 @property (nonatomic, retain) NSData *continuationMarker;
-@property (nonatomic, readonly) BOOL hasContinuationMarker;
+@property (nonatomic, readonly) bool hasContinuationMarker;
 @property (nonatomic, retain) NSMutableArray *queryResults;
+
++ (Class)queryResultsType;
 
 - (void).cxx_destruct;
 - (void)addQueryResults:(id)arg1;
@@ -19,14 +21,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContinuationMarker;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContinuationMarker;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)queryResults;
-- (id)queryResultsAtIndex:(unsigned int)arg1;
-- (unsigned int)queryResultsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)queryResultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)queryResultsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setContinuationMarker:(id)arg1;
 - (void)setQueryResults:(id)arg1;
 - (void)writeTo:(id)arg1;

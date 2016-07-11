@@ -9,7 +9,8 @@
 @property (nonatomic, copy) NSURL *domainObjectIdentifier;
 @property (nonatomic, copy) NSString *domainObjectPropertyIdentifier;
 @property (nonatomic, copy) NSString *fullName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *language;
 @property (nonatomic, copy) NSString *orthography;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSNumber *tokenOffset;
@@ -22,10 +23,12 @@
 - (id)encodedClassName;
 - (id)fullName;
 - (id)groupIdentifier;
+- (id)language;
 - (id)orthography;
 - (void)setDomainObjectIdentifier:(id)arg1;
 - (void)setDomainObjectPropertyIdentifier:(id)arg1;
 - (void)setFullName:(id)arg1;
+- (void)setLanguage:(id)arg1;
 - (void)setOrthography:(id)arg1;
 - (void)setTokenOffset:(id)arg1;
 - (id)tokenOffset;

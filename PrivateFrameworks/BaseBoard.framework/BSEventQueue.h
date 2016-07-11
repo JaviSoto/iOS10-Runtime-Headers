@@ -7,13 +7,14 @@
     NSHashTable * _eventQueueLocks;
     BSEventQueueEvent * _executingEvent;
     NSString * _name;
+    bool  _processingEvents;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) BSEventQueueEvent *executingEvent;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *pendingEvents;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -21,14 +22,15 @@
 
 - (void)_addEventQueueLock:(id)arg1;
 - (void)_executeOrPendEvents:(id)arg1 position:(int)arg2;
+- (void)_noteQueueDidDrain;
 - (void)_noteQueueDidLock;
 - (void)_noteQueueDidUnlock;
-- (void)_noteWillCancelEventsWithName:(id)arg1 count:(unsigned int)arg2;
+- (void)_noteWillCancelEventsWithName:(id)arg1 count:(unsigned long long)arg2;
 - (void)_noteWillExecuteEvent:(id)arg1;
 - (void)_noteWillPendEvents:(id)arg1 atPosition:(int)arg2;
 - (void)_processNextEvent;
 - (void)_removeEventQueueLock:(id)arg1;
-- (BOOL)_shouldProcessEvent:(id)arg1 enqueuedDuringExecutionOfEvent:(id)arg2;
+- (bool)_shouldProcessEvent:(id)arg1 enqueuedDuringExecutionOfEvent:(id)arg2;
 - (id)acquireLockForReason:(id)arg1;
 - (void)cancelEventsWithName:(id)arg1;
 - (void)dealloc;
@@ -41,11 +43,11 @@
 - (void)flushAllEvents;
 - (void)flushEvents:(id)arg1;
 - (void)flushPendingEvents;
-- (BOOL)hasEventWithName:(id)arg1;
-- (BOOL)hasEventWithPrefix:(id)arg1;
+- (bool)hasEventWithName:(id)arg1;
+- (bool)hasEventWithPrefix:(id)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1 onQueue:(id)arg2;
-- (BOOL)isLocked;
+- (bool)isLocked;
 - (id)name;
 - (id)pendingEvents;
 - (id)queue;

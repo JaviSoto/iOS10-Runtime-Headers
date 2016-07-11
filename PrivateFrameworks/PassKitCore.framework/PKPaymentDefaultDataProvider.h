@@ -12,25 +12,36 @@
 @property (nonatomic, retain) NSString *defaultPaymentPassIdentifier;
 @property (nonatomic) <PKPaymentDataProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isDeviceInRestrictedMode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isDeviceInRestrictedMode;
+@property (nonatomic, readonly) bool isPaymentHandoffDisabled;
 @property (nonatomic, readonly) NSString *secureElementIdentifier;
+@property (nonatomic, readonly) bool secureElementIsProductionSigned;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)defaultPaymentApplicationForPassUniqueIdentifier:(id)arg1;
 - (id)defaultPaymentPassIdentifier;
 - (id)delegate;
 - (id)init;
-- (BOOL)isDeviceInRestrictedMode;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(BOOL)arg2;
+- (bool)isDeviceInRestrictedMode;
+- (bool)isPaymentHandoffDisabled;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(bool)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (id)secureElementIdentifier;
+- (bool)secureElementIsProductionSigned;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassUniqueIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultPaymentPassIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setPaymentHandoffDisabled:(bool)arg1;
+- (bool)supportsInAppPaymentsForPass:(id)arg1;
+- (bool)supportsMessagesForPass:(id)arg1;
+- (bool)supportsNotificationsForPass:(id)arg1;
+- (bool)supportsTransactionsForPass:(id)arg1;
 - (id)transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 includingSources:(unsigned int)arg2 limit:(int)arg3 completion:(id /* block */)arg4;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(id /* block */)arg5;
 
 @end

@@ -6,24 +6,26 @@
     NSObject<OS_dispatch_queue> * _callOutQueue;
     NSObject<OS_dispatch_semaphore> * _checkinSemaphore;
     <BKSSystemApplicationClientDelegate> * _delegate;
-    BOOL  _pendingCheckIn;
-    BOOL  _sentConnect;
+    bool  _pendingCheckIn;
+    NSObject<OS_dispatch_semaphore> * _pingSemaphore;
+    bool  _sentConnect;
+    bool  _waitingForPing;
 }
 
 @property (nonatomic) <BKSSystemApplicationClientDelegate> *delegate;
 
 - (void)_connect;
 - (void)_queue_handleWatchdogPing:(id)arg1;
-- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2;
-- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3;
-- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4 waitDuration:(unsigned long long)arg5;
-- (void)checkIn;
+- (void)_sendMessageOfType:(long long)arg1 packer:(id /* block */)arg2;
+- (void)_sendMessageOfType:(long long)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3;
+- (void)_sendMessageOfType:(long long)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(bool)arg4 waitDuration:(unsigned long long)arg5;
+- (void)checkInAndWaitForDataMigration:(bool)arg1;
 - (void)connect;
 - (void)dealloc;
 - (id)delegate;
 - (void)finishBooting;
 - (id)initWithCalloutQueue:(id)arg1;
-- (BOOL)ping;
+- (bool)ping;
 - (void)queue_connectionWasInterrupted;
 - (void)queue_connectionWasInvalidated;
 - (void)queue_connectionWasResumed;

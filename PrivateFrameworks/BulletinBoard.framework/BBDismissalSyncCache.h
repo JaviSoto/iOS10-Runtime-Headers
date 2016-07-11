@@ -10,11 +10,11 @@
 @property (nonatomic, retain) NSMutableDictionary *cache;
 @property (nonatomic, retain) NSDate *timeToCheck;
 
+- (void).cxx_destruct;
 - (void)_checkCache;
-- (BOOL)_isTimeToCheck;
+- (bool)_isTimeToCheck;
 - (id)cache;
-- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 inSection:(id)arg3 forFeeds:(unsigned int)arg4;
-- (void)dealloc;
+- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 inSection:(id)arg3 forFeeds:(unsigned long long)arg4;
 - (id)description;
 - (id)findBulletinMatch:(id)arg1;
 - (id)init;

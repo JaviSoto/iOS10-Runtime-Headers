@@ -3,18 +3,22 @@
  */
 
 @interface CNNameStringTokenizer : NSObject {
+    NSObject<OS_dispatch_queue> * _syncQueue;
     struct __CFStringTokenizer { } * _tokenizer;
 }
 
-@property (nonatomic) struct __CFStringTokenizer { }*tokenizer;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic, readonly) struct __CFStringTokenizer { }*tokenizer;
 
++ (void)setInferredNameOrder:(long long*)arg1 toTokenizerNameOrder:(int)arg2;
 + (id)tokenizeNameString:(id)arg1;
-+ (id)tokenizeNameString:(id)arg1 usingLocale:(id)arg2 inferredNameOrder:(int*)arg3;
++ (id)tokenizeNameString:(id)arg1 usingLocale:(id)arg2 inferredNameOrder:(long long*)arg3;
 
 - (void)dealloc;
+- (id)init;
 - (id)initWithLocale:(id)arg1;
-- (void)setTokenizer:(struct __CFStringTokenizer { }*)arg1;
-- (id)tokenizeNameString:(id)arg1 inferredNameOrder:(int*)arg2;
+- (id)syncQueue;
+- (id)tokenizeNameString:(id)arg1 inferredNameOrder:(long long*)arg2;
 - (struct __CFStringTokenizer { }*)tokenizer;
 
 @end

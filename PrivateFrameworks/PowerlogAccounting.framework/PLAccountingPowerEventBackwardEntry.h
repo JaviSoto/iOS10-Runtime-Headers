@@ -9,6 +9,5 @@
 + (void)load;
 
 - (id)initWithRootNodeID:(id)arg1 withPower:(double)arg2 withEndDate:(id)arg3;
-- (void)mergeWithEvent:(id)arg1;
 
 @end

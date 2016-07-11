@@ -9,10 +9,10 @@
 @property (nonatomic, retain) UISwitch *muteSwitch;
 
 + (id)identifier;
-+ (float)preferredHeight;
++ (double)preferredHeight;
 
-- (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void).cxx_destruct;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)muteSwitch;
 - (void)setMuteSwitch:(id)arg1;

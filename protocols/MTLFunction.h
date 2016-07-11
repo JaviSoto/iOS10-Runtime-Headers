@@ -6,8 +6,15 @@
 @required
 
 - (<MTLDevice> *)device;
-- (unsigned int)functionType;
+- (unsigned long long)functionConstantIndexByName:(NSString *)arg1 type:(unsigned long long*)arg2;
+- (NSArray *)functionConstants;
+- (unsigned long long)functionType;
+- (NSString *)label;
 - (NSString *)name;
+- (long long)patchControlPointCount;
+- (unsigned long long)patchType;
+- (void)setLabel:(NSString *)arg1;
+- (NSArray *)stageInputAttributes;
 - (NSArray *)vertexAttributes;
 
 @end

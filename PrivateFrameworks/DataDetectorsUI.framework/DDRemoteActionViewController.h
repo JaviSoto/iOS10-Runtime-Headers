@@ -5,12 +5,12 @@
 @interface DDRemoteActionViewController : _UIRemoteViewController <DDRemoteActionPresenter> {
     DDAction * _action;
     DDActionController * _actionController;
-    BOOL  _proxyConfigured;
-    BOOL  _receivedActionDidFinish;
-    BOOL  _waitingForRemoteConfiguration;
+    bool  _proxyConfigured;
+    bool  _receivedActionDidFinish;
+    bool  _waitingForRemoteConfiguration;
 }
 
-@property (retain) DDAction *action;
+@property DDAction *action;
 @property DDActionController *actionController;
 
 + (id)exportedInterface;
@@ -21,10 +21,11 @@
 - (id)action;
 - (id)actionController;
 - (void)actionDidFinish;
+- (void)adaptForPresentationInPopover:(bool)arg1;
 - (void)getIsBeingPresentedInPopover:(id /* block */)arg1;
 - (void)setAction:(id)arg1;
 - (void)setActionController:(id)arg1;
-- (void)viewControllerReadyAndIsModal:(BOOL)arg1;
+- (void)viewControllerReadyAndIsModal:(bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

@@ -4,9 +4,9 @@
 
 @interface CADObjectOperationGroup : CADOperationGroup <CADObjectInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
 - (void)CADDatabaseDeleteObjectsWithObjectIDs:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseInsertObjectsWithTempObjectIDs:(id)arg1 reply:(id /* block */)arg2;

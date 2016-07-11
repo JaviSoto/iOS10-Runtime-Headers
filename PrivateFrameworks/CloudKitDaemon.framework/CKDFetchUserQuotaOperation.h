@@ -8,7 +8,7 @@
 
 @property (nonatomic) unsigned long long quotaAvailable;
 
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

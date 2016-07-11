@@ -4,7 +4,6 @@
 
 @interface CIFilterClassCategories : NSObject
 
-+ (id)_categoriesWithClass:(Class)arg1;
 + (id)classCategoriesForClass:(Class)arg1;
 
 @end

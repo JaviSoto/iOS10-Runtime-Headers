@@ -7,7 +7,7 @@
     <CNScheduler> * _scheduler;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithObservable:(id)arg1 scheduler:(id)arg2;
 - (id)subscribe:(id)arg1;
 

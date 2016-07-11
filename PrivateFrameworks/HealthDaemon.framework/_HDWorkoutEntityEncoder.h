@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface _HDWorkoutEntityEncoder : HDEncoder {
-    HDEncoder * _sampleEncoder;
-    struct sqlite3_stmt { } * _workoutEntryLookupStatement;
+@interface _HDWorkoutEntityEncoder : HDEntityEncoder {
+    HDSQLiteStatement * _workoutEntryLookupStatement;
 }
 
++ (long long)estimatedEncodedSize;
+
 - (void).cxx_destruct;
-- (id)codableRepresentationOfEntity:(id)arg1 collection:(id)arg2 row:(struct HDSQLiteRow { }*)arg3;
-- (void)finish;
-- (id)initForHealthDaemon:(id)arg1 database:(id)arg2;
+- (void)applyPropertiesToObject:(id)arg1 persistentID:(long long)arg2 row:(struct HDSQLiteRow { }*)arg3;
+- (id)codableRepresentationForPersistentID:(long long)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
+- (id)initWithHealthEntityClass:(Class)arg1 profile:(id)arg2 database:(id)arg3 purpose:(long long)arg4 encodingOptions:(id)arg5 authorizationFilter:(id /* block */)arg6;
+- (id)objectForPersistentID:(long long)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
 - (id)orderedProperties;
 
 @end

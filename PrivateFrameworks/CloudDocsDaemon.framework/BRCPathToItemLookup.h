@@ -34,12 +34,14 @@
 + (id)lookupForRelativePath:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_fetchByDocumentID;
-- (BOOL)_fetchByFileID;
-- (BOOL)_fetchByPath;
+- (id)_byPathWithLastPathComponent:(id)arg1;
+- (bool)_fetchByDocumentID;
+- (bool)_fetchByFileID;
+- (bool)_fetchByPath;
 - (id)byDocumentID;
 - (id)byFileID;
 - (id)byPath;
+- (id)byPathWithLastPathComponent:(id)arg1;
 - (id)description;
 - (id)initWithRelativePath:(id)arg1;
 - (id)parentID;

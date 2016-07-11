@@ -12,7 +12,7 @@
     NSMutableArray * _nsRoutingNotifications;
     PLXPCListenerOperatorComposition * _screenMirroringXPCListener;
     PLXPCListenerOperatorComposition * _speakerAmpXPCListener;
-    BOOL  _speakerIsPlayingAudio;
+    bool  _speakerIsPlayingAudio;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *audioAppXPCListener;
@@ -24,9 +24,10 @@
 @property (readonly) NSMutableArray *nsRoutingNotifications;
 @property (retain) PLXPCListenerOperatorComposition *screenMirroringXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *speakerAmpXPCListener;
-@property BOOL speakerIsPlayingAudio;
+@property bool speakerIsPlayingAudio;
 
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionNowPlaying;
 + (id)entryEventForwardDefinitionOutput;
 + (id)entryEventForwardDefinitionRouting;
 + (id)entryEventForwardDefinitions;
@@ -37,7 +38,7 @@
 + (void)load;
 
 - (void).cxx_destruct;
-- (BOOL)active;
+- (bool)active;
 - (id)activeRoute;
 - (id)audioAppXPCListener;
 - (id)audioHardware;
@@ -48,9 +49,11 @@
 - (void)createAudioAccountingEvents:(id)arg1;
 - (void)createBluetoothAccountingEvents:(id)arg1;
 - (void)createCarPlayAccountingEvents:(id)arg1;
+- (void)dealloc;
 - (id)entryRoutingOld;
-- (BOOL)headphonesConnected;
-- (BOOL)headsetHasInput;
+- (void)handleNowPlayingApplicationIsPlayingDidChange;
+- (bool)headphonesConnected;
+- (bool)headsetHasInput;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)lastModeledEntryDate;
@@ -62,7 +65,7 @@
 - (void)modelAudioPower;
 - (void)modelAudioPowerSpeaker:(id)arg1;
 - (double)modelAudioPowerWithVolume:(double)arg1;
-- (BOOL)muted;
+- (bool)muted;
 - (int)nowPlayingAppPID;
 - (id)nsOutputNotifications;
 - (id)nsRoutingNotifications;
@@ -74,11 +77,11 @@
 - (void)setLastModeledEntryDate:(id)arg1;
 - (void)setScreenMirroringXPCListener:(id)arg1;
 - (void)setSpeakerAmpXPCListener:(id)arg1;
-- (void)setSpeakerIsPlayingAudio:(BOOL)arg1;
+- (void)setSpeakerIsPlayingAudio:(bool)arg1;
 - (void)setupAVSystemController;
-- (BOOL)shouldModelAsK94orJ2;
+- (bool)shouldModelAsK94orJ2;
 - (id)speakerAmpXPCListener;
-- (BOOL)speakerIsPlayingAudio;
+- (bool)speakerIsPlayingAudio;
 - (id)volume;
 
 @end

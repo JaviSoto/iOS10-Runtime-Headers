@@ -13,8 +13,10 @@
 @property (retain) NSString *name;
 @property unsigned int ttStyle;
 
++ (bool)autoListInsertionEnabled;
 + (id)defaultTextStyles;
 + (unsigned int)noteDefaultNamedStyle;
++ (void)setAutoListInsertionEnabled:(bool)arg1;
 + (void)setNoteDefaultNamedStyle:(unsigned int)arg1;
 + (id)titleForNamedStyle:(unsigned int)arg1;
 + (unsigned int)validatedNamedStyle:(unsigned int)arg1;

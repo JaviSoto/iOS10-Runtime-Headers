@@ -2,52 +2,75 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKUserIdentity : NSObject <NSSecureCoding> {
-    NSString * _emailAddress;
+@interface CKUserIdentity : NSObject <NSCopying, NSSecureCoding> {
+    NSData * _encryptedPersonalInfo;
     NSString * _firstName;
-    BOOL  _hasiCloudAccount;
-    BOOL  _hasiCloudAccountSupportingSharing;
+    bool  _hasiCloudAccount;
+    bool  _isCached;
     NSString * _lastName;
-    NSData * _protectionData;
+    CKUserIdentityLookupInfo * _lookupInfo;
+    NSPersonNameComponents * _nameComponents;
+    NSData * _outOfNetworkPrivateKey;
+    unsigned long long  _publicKeyVersion;
+    NSData * _publicSharingKey;
     CKRecordID * _userRecordID;
 }
 
-@property (nonatomic, copy) NSString *emailAddress;
-@property (nonatomic, copy) NSString *firstName;
-@property (nonatomic) BOOL hasiCloudAccount;
-@property (nonatomic) BOOL hasiCloudAccountSupportingSharing;
-@property (nonatomic, copy) NSString *lastName;
-@property (nonatomic, readonly, copy) NSString *localizedDisplayName;
-@property (nonatomic, retain) NSData *protectionData;
+@property (nonatomic, retain) NSData *encryptedPersonalInfo;
+@property (nonatomic, readonly, copy) NSString *firstName;
+@property (nonatomic) bool hasiCloudAccount;
+@property (nonatomic) bool isCached;
+@property (nonatomic, readonly, copy) NSString *lastName;
+@property (nonatomic, copy) CKUserIdentityLookupInfo *lookupInfo;
+@property (nonatomic, copy) NSPersonNameComponents *nameComponents;
+@property (nonatomic, retain) NSData *outOfNetworkPrivateKey;
+@property (nonatomic) unsigned long long publicKeyVersion;
+@property (nonatomic, retain) NSData *publicSharingKey;
 @property (nonatomic, copy) CKRecordID *userRecordID;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)CKPropertiesDescription;
+- (id)CKPropertiesToDescribe:(bool)arg1;
 - (id)_init;
 - (id)ckShortDescription;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
+- (id)encryptedPersonalInfo;
 - (id)firstName;
-- (unsigned int)hash;
-- (BOOL)hasiCloudAccount;
-- (BOOL)hasiCloudAccountSupportingSharing;
+- (unsigned long long)hash;
+- (bool)hasiCloudAccount;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEmailAddress:(id)arg1;
 - (id)initWithUserRecordID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCached;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalentToUserIdentity:(id)arg1;
+- (bool)isEquivalentToUserIdentityOrPublicKey:(id)arg1;
+- (bool)isOutOfNetwork;
 - (id)lastName;
-- (id)localizedDisplayName;
-- (id)protectionData;
-- (void)setEmailAddress:(id)arg1;
-- (void)setFirstName:(id)arg1;
-- (void)setHasiCloudAccount:(BOOL)arg1;
-- (void)setHasiCloudAccountSupportingSharing:(BOOL)arg1;
-- (void)setLastName:(id)arg1;
-- (void)setProtectionData:(id)arg1;
+- (id)lookupInfo;
+- (id)nameComponents;
+- (id)outOfNetworkPrivateKey;
+- (unsigned long long)publicKeyVersion;
+- (id)publicSharingKey;
+- (void)setEncryptedPersonalInfo:(id)arg1;
+- (void)setHasiCloudAccount:(bool)arg1;
+- (void)setIsCached:(bool)arg1;
+- (void)setLookupInfo:(id)arg1;
+- (void)setNameComponents:(id)arg1;
+- (void)setOutOfNetworkPrivateKey:(id)arg1;
+- (void)setPublicKeyVersion:(unsigned long long)arg1;
+- (void)setPublicSharingKey:(id)arg1;
 - (void)setUserRecordID:(id)arg1;
 - (id)userRecordID;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)_decryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2 participantID:(id)arg3;
+- (void)_encryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2 participantID:(id)arg3;
+- (bool)hasEncryptedPersonalInfo;
 
 @end

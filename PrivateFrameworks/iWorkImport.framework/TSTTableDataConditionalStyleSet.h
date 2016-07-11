@@ -6,10 +6,13 @@
     TSTConditionalStyleSet * mConditionalStyleSet;
 }
 
+@property (nonatomic, readonly) TSTConditionalStyleSet *conditionalStyleSet;
+
+- (id)conditionalStyleSet;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (id)initObjectWithConditionalStyleSet:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initObjectWithConditionalStyleSet:(id)arg1 refCount:(unsigned int)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

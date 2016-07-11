@@ -3,40 +3,43 @@
  */
 
 @interface SPUISearchTableHeaderView : UITableViewHeaderFooterView {
-    SPUISearchBackdropView * _backdropView;
     <SPUISearchTableHeaderViewDelegate> * _delegate;
     UIButton * _moreButton;
-    unsigned int  _section;
-    NSArray * _tableHeaderViewMarginConstraints;
+    NSLayoutConstraint * _moreButtonHiddenConstraint;
+    NSLayoutConstraint * _moreButtonVisibleConstraint;
+    SFResultSection * _section;
     UILabel * _titleLabel;
 }
 
-@property (nonatomic, retain) SPUISearchBackdropView *backdropView;
-@property (nonatomic) <SPUISearchTableHeaderViewDelegate> *delegate;
+@property <SPUISearchTableHeaderViewDelegate> *delegate;
 @property (nonatomic, retain) UIButton *moreButton;
-@property (nonatomic) unsigned int section;
-@property (retain) NSArray *tableHeaderViewMarginConstraints;
+@property (nonatomic, retain) NSLayoutConstraint *moreButtonHiddenConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *moreButtonVisibleConstraint;
+@property (nonatomic, retain) SFResultSection *section;
 @property (nonatomic, retain) UILabel *titleLabel;
 
++ (bool)canCellExpand:(id)arg1;
+
 - (void).cxx_destruct;
-- (id)backdropView;
 - (id)delegate;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)moreButton;
+- (id)moreButtonHiddenConstraint;
 - (void)moreButtonPressed;
-- (unsigned int)section;
-- (void)setBackdropView:(id)arg1;
+- (id)moreButtonVisibleConstraint;
+- (id)moreResultsPunchout;
+- (id)section;
 - (void)setDelegate:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
+- (void)setFloating:(bool)arg1;
 - (void)setMoreButton:(id)arg1;
-- (void)setMoreButtonVisible:(BOOL)arg1;
-- (void)setSection:(unsigned int)arg1;
-- (void)setTableHeaderViewMarginConstraints:(id)arg1;
+- (void)setMoreButtonHiddenConstraint:(id)arg1;
+- (void)setMoreButtonVisibleConstraint:(id)arg1;
+- (void)setSection:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (id)tableHeaderViewMarginConstraints;
+- (bool)supportsShowMoreInApp;
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateLayoutOnOrientation;
-- (void)updateWithTitle:(id)arg1 section:(unsigned int)arg2 isExpanded:(BOOL)arg3;
+- (void)updateShowMoreButtonVisibility;
+- (void)updateWithSection:(id)arg1 isExpanded:(bool)arg2;
 
 @end

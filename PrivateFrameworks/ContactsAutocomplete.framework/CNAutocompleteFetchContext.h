@@ -8,6 +8,7 @@
     NSString * _domainIdentifier;
     NSString * _locationUUID;
     NSArray * _otherAddressesAlreadyChosen;
+    bool  _predictsBasedOnOutgoingInteraction;
     NSArray * _relatedContacts;
     NSString * _sendingAddress;
     NSString * _sendingAddressAccountIdentifier;
@@ -19,6 +20,7 @@
 @property (copy) NSString *domainIdentifier;
 @property (copy) NSString *locationUUID;
 @property (copy) NSArray *otherAddressesAlreadyChosen;
+@property bool predictsBasedOnOutgoingInteraction;
 @property (copy) NSArray *relatedContacts;
 @property (copy) NSString *sendingAddress;
 @property (copy) NSString *sendingAddressAccountIdentifier;
@@ -30,10 +32,12 @@
 - (id)date;
 - (id)description;
 - (id)domainIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid:(id*)arg1;
 - (id)locationUUID;
 - (id)otherAddressesAlreadyChosen;
+- (bool)predictsBasedOnOutgoingInteraction;
 - (id)relatedContacts;
 - (id)sendingAddress;
 - (id)sendingAddressAccountIdentifier;
@@ -42,6 +46,7 @@
 - (void)setDomainIdentifier:(id)arg1;
 - (void)setLocationUUID:(id)arg1;
 - (void)setOtherAddressesAlreadyChosen:(id)arg1;
+- (void)setPredictsBasedOnOutgoingInteraction:(bool)arg1;
 - (void)setRelatedContacts:(id)arg1;
 - (void)setSendingAddress:(id)arg1;
 - (void)setSendingAddressAccountIdentifier:(id)arg1;

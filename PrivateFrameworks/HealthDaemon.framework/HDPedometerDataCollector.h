@@ -14,10 +14,10 @@
 - (void)beginUpdatesFromDatum:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)fetchHistoricalSensorDataSinceDatum:(id)arg1 databaseIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (id)hkObjectsFromSensorData:(id)arg1 baseSensorDatum:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
-- (id)initWithHealthDaemon:(id)arg1;
+- (id)initWithPrimaryProfile:(id)arg1;
 - (id)pedometer;
-- (id)quantitySampleFromPedometerData:(id)arg1 toPedometerData:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
+- (id)quantitySamplesFromPedometerData:(id)arg1 toPedometerData:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
 - (void)setPedometer:(id)arg1;
-- (void)stopPerformingUpdatesWithErrorEncountered:(BOOL)arg1;
+- (void)stopPerformingUpdatesWithErrorEncountered:(bool)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface PLSpringBoardAgent : PLAgent {
-    BOOL  _autoLockIsNil;
+    bool  _autoLockIsNil;
     PLMonotonicTimer * _autolockEnergyPeriodicTimer;
     PLTimer * _dailyWallpaperPoll;
     PLEntryNotificationOperatorComposition * _displayOffNotification;
@@ -13,16 +13,16 @@
     PLEntry * _lastSBEntry;
     PLNSNotificationOperatorComposition * _notificationSBAutoLockTimerFiredNotification;
     PLCFNotificationOperatorComposition * _notificationSBBlankTrackingChanged;
-    PLNSNotificationOperatorComposition * _notificationSBLocalNotificationFired;
     PLCFNotificationOperatorComposition * _notificationSBLockTrackingChanged;
-    PLNSNotificationOperatorComposition * _notificationSBRemoteNotificationReceived;
     PLNSNotificationOperatorComposition * _notificationSBScreenTimeTrackingChanged;
     PLNSNotificationOperatorComposition * _notificationSBWallpaperTrackingChanged;
     PLEntryNotificationOperatorComposition * _receivedPushNotification;
     NSDictionary * _screenNumberToName;
+    PLXPCListenerOperatorComposition * _userNotificationRequestEvent;
+    PLXPCListenerOperatorComposition * _userNotificationTriggerEvent;
 }
 
-@property BOOL autoLockIsNil;
+@property bool autoLockIsNil;
 @property (retain) PLMonotonicTimer *autolockEnergyPeriodicTimer;
 @property (retain) PLTimer *dailyWallpaperPoll;
 @property (retain) PLEntryNotificationOperatorComposition *displayOffNotification;
@@ -32,15 +32,18 @@
 @property (retain) PLEntry *lastSBEntry;
 @property (readonly) PLNSNotificationOperatorComposition *notificationSBAutoLockTimerFiredNotification;
 @property (readonly) PLCFNotificationOperatorComposition *notificationSBBlankTrackingChanged;
-@property (readonly) PLNSNotificationOperatorComposition *notificationSBLocalNotificationFired;
 @property (readonly) PLCFNotificationOperatorComposition *notificationSBLockTrackingChanged;
-@property (readonly) PLNSNotificationOperatorComposition *notificationSBRemoteNotificationReceived;
 @property (readonly) PLNSNotificationOperatorComposition *notificationSBScreenTimeTrackingChanged;
 @property (readonly) PLNSNotificationOperatorComposition *notificationSBWallpaperTrackingChanged;
 @property (retain) PLEntryNotificationOperatorComposition *receivedPushNotification;
 @property (retain) NSDictionary *screenNumberToName;
+@property (readonly) PLXPCListenerOperatorComposition *userNotificationRequestEvent;
+@property (readonly) PLXPCListenerOperatorComposition *userNotificationTriggerEvent;
 
 + (id)defaults;
++ (id)entryAggregateDefinitionBulletins;
++ (id)entryAggregateDefinitionNotifications;
++ (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionBlank;
 + (id)entryEventForwardDefinitionLock;
@@ -48,13 +51,14 @@
 + (id)entryEventForwardDefinitionWallpaper;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointAutoLock;
++ (id)entryEventPointBulletins;
 + (id)entryEventPointDefinitions;
 + (id)entryEventPointLocalRemoteNotifications;
 + (void)load;
 
 - (void).cxx_destruct;
 - (void)addAccountingEvent:(id)arg1;
-- (BOOL)autoLockIsNil;
+- (bool)autoLockIsNil;
 - (id)autolockEnergyPeriodicTimer;
 - (void)closeLastOpenEventsWithStopDate:(id)arg1;
 - (void)computeAutolockEnergyWithNow:(id)arg1;
@@ -62,26 +66,25 @@
 - (void)dealloc;
 - (id)displayOffNotification;
 - (id)displayOnNotification;
-- (id)fetchSBWallpaperTypeForHomescreen:(BOOL)arg1;
+- (id)fetchSBWallpaperForType:(int)arg1;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)lastEligibleAutolockEnergyComputationDate;
 - (id)lastReceivedPushEntry;
 - (id)lastSBEntry;
 - (void)log;
-- (void)logNotification:(id)arg1 ofType:(id)arg2;
+- (void)logBulletin:(id)arg1;
+- (void)logNotification:(id)arg1;
 - (id)notificationSBAutoLockTimerFiredNotification;
 - (id)notificationSBBlankTrackingChanged;
-- (id)notificationSBLocalNotificationFired;
 - (id)notificationSBLockTrackingChanged;
-- (id)notificationSBRemoteNotificationReceived;
 - (id)notificationSBScreenTimeTrackingChanged;
 - (id)notificationSBWallpaperTrackingChanged;
 - (id)receivedPushNotification;
 - (void)resetAutoLockIsNil;
 - (id)screenLock:(id)arg1;
 - (id)screenNumberToName;
-- (void)setAutoLockIsNil:(BOOL)arg1;
+- (void)setAutoLockIsNil:(bool)arg1;
 - (void)setAutolockEnergyPeriodicTimer:(id)arg1;
 - (void)setDailyWallpaperPoll:(id)arg1;
 - (void)setDisplayOffNotification:(id)arg1;
@@ -95,5 +98,7 @@
 - (void)settingsChangedNotification:(id)arg1;
 - (void)startAutolockEnergyPeriodicTimer;
 - (void)stopAutolockEnergyPeriodicTimer;
+- (id)userNotificationRequestEvent;
+- (id)userNotificationTriggerEvent;
 
 @end

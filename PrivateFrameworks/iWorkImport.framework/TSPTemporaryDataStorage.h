@@ -5,27 +5,28 @@
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
     NSURL * _URL;
     <TSPCryptoInfo> * _decryptionInfo;
-    BOOL  _gilligan_isRemote;
-    BOOL  _isMissingData;
-    BOOL  _isMissingOriginalData;
+    bool  _gilligan_isRemote;
+    bool  _isMissingData;
+    bool  _isMissingOriginalData;
 }
 
-@property (nonatomic) BOOL isMissingData;
-@property (nonatomic) BOOL isMissingOriginalData;
+@property (nonatomic, readonly) bool isMissingData;
+@property (nonatomic, readonly) bool isMissingOriginalData;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)decryptionInfo;
-- (BOOL)gilligan_isRemote;
+- (bool)gilligan_isRemote;
+- (id)init;
 - (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2;
-- (BOOL)isMissingData;
-- (BOOL)isMissingOriginalData;
+- (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2 isMissingOriginalData:(bool)arg3 isMissingData:(bool)arg4;
+- (id)initWithURL:(id)arg1 decryptionInfo:(id)arg2 isMissingOriginalData:(bool)arg3 isMissingData:(bool)arg4 gilligan_isRemote:(bool)arg5;
+- (bool)isMissingData;
+- (bool)isMissingOriginalData;
 - (unsigned long long)length;
 - (void)performIOChannelReadWithAccessor:(id /* block */)arg1;
 - (void)performReadWithAccessor:(id /* block */)arg1;
-- (void)setGilligan_isRemote:(BOOL)arg1;
-- (void)setIsMissingData:(BOOL)arg1;
-- (void)setIsMissingOriginalData:(BOOL)arg1;
+- (void)setGilligan_isRemote:(bool)arg1;
 - (id)writeData:(id)arg1 toPackageWriter:(id)arg2 infoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg3 preferredFilename:(id)arg4;
 
 @end

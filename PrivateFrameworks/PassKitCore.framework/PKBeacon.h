@@ -16,9 +16,9 @@
 @property (nonatomic, retain) NSUUID *proximityUUID;
 @property (nonatomic, retain) NSString *relevantText;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

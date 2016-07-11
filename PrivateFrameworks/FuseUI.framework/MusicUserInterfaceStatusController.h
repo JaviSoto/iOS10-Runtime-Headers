@@ -2,58 +2,70 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicUserInterfaceStatusController : NSObject <MCProfileConnectionObserver> {
-    ISSSURLBag * _URLBag;
+@interface MusicUserInterfaceStatusController : NSObject <ISURLBagObserver, MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _canShowConnect;
-    BOOL  _canShowRadio;
-    BOOL  _canShowSubscriptionContent;
-    BOOL  _hasSuccessfullyLoadedBag;
-    unsigned int  _observersCount;
+    bool  _canShowConnect;
+    bool  _canShowRadio;
+    bool  _canShowSubscriptionContent;
+    bool  _displayingLocalLibrary;
+    bool  _hasSuccessfullyLoadedBagOnce;
+    unsigned long long  _observersCount;
     RadioAvailabilityController * _radioAvailabilityController;
     MusicStoreBag * _storeBag;
+    NSString * _storeFrontID;
     NSArray * _supportedTabIdentifiers;
     NSDictionary * _tabConfigurations;
-    int  _tabState;
+    long long  _tabState;
 }
 
-@property (nonatomic, readonly) BOOL canShowConnect;
-@property (nonatomic, readonly) BOOL canShowRadio;
-@property (nonatomic, readonly) BOOL canShowSubscriptionContent;
+@property (nonatomic, readonly) bool canShowConnect;
+@property (nonatomic, readonly) bool canShowRadio;
+@property (nonatomic, readonly) bool canShowSubscriptionContent;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (getter=isDisplayingLocalLibrary, nonatomic, readonly) bool displayingLocalLibrary;
+@property (nonatomic, readonly) bool hasLoadedStoreBagOnce;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) RadioAvailabilityController *radioAvailabilityController;
+@property (nonatomic, readonly) NSString *storeFrontID;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int tabState;
+@property (nonatomic, readonly) long long tabState;
 
 + (id)sharedUserInterfaceStatusController;
 
 - (void).cxx_destruct;
+- (id)_calculateCurrentStoreFrontID;
 - (id)_defaultTabConfigurations;
-- (void)_didCompleteLoadingBagDictionary:(id)arg1 withError:(id)arg2;
 - (void)_handleAccountStoreDidChangeNotification:(id)arg1;
+- (void)_handleDefaultLibraryDidDhangeNotification:(id)arg1;
 - (void)_handleDefaultsDidChangeNotification:(id)arg1;
-- (void)_handleNetworkReachabilityFlagsDidChangeNotification:(id)arg1;
 - (void)_handleRadioAvailabilityDidChangeNotification:(id)arg1;
 - (void)_handleStoreFrontDidChangeNotification:(id)arg1;
 - (void)_handleSubscriptionAvailabilityDidChangeNotification:(id)arg1;
 - (void)_handleSubscriptionStatusDidChangeNotification:(id)arg1;
-- (BOOL)_isConnectRestricted;
-- (void)_reloadStoreURLBagAllowingUpdateUsingExistingBagDictionary:(BOOL)arg1;
+- (bool)_iOSVersions:(id)arg1 traverseCurrentVersionSinceVersion:(id)arg2;
+- (bool)_isConnectRestricted;
+- (bool)_isMusicSubscriptionServiceRestricted;
 - (void)_updateAllowedUserInterfaceComponents;
-- (void)_updateAllowedUserInterfaceComponentsWithBagDictionary:(id)arg1;
+- (void)_updateAllowedUserInterfaceComponentsWithStoreBag:(id)arg1;
+- (void)_updateAllowedUserInterfaceComponentsWithStoreBagDictionary:(id)arg1;
+- (void)bagDidChange:(id)arg1;
 - (void)beginObservingAllowedUserInterfaceComponents;
-- (BOOL)canShowConnect;
-- (BOOL)canShowRadio;
-- (BOOL)canShowSubscriptionContent;
+- (bool)canShowConnect;
+- (bool)canShowRadio;
+- (bool)canShowSubscriptionContent;
 - (void)dealloc;
 - (void)endObservingAllowedUserInterfaceComponents;
+- (bool)hasLoadedStoreBagOnce;
 - (id)init;
+- (bool)isDisplayingLocalLibrary;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)radioAvailabilityController;
+- (long long)reasonForWelcomScreenPresentation;
+- (id)storeFrontID;
 - (id)supportedTabIdentifiersForTraitCollection:(id)arg1;
-- (int)tabState;
+- (long long)tabState;
+- (void)updateWelcomeScreenAcknowledgmentDefaults:(bool)arg1;
 
 @end

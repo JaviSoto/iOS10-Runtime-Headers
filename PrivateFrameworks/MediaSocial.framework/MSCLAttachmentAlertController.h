@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, copy) MSCLConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *selectedAttachments;
 @property (readonly) Class superclass;
 
@@ -25,7 +25,7 @@
 - (id)_cameraButtonTitle;
 - (id)_cancelButtonTitle;
 - (id)_chooseSongButtonTitle;
-- (void)_finishWithAttachmentResult:(int)arg1;
+- (void)_finishWithAttachmentResult:(long long)arg1;
 - (void)_music_button0Action;
 - (id)_photoLibraryButtonTitle;
 - (id)_recordAudioTitle;

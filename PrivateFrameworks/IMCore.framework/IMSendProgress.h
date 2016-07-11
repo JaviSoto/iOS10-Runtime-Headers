@@ -8,13 +8,17 @@
     <IMSendProgressDelegate> * _delegate;
     NSTimer * _sendProgressTimer;
     NSDictionary * _sendingItems;
+    bool  _startSendProgressImmediately;
+    bool  _wasShowing;
 }
 
 @property (nonatomic) id context;
 @property (nonatomic) <IMSendProgressDelegate> *delegate;
 @property (nonatomic, copy) NSDictionary *sendingItems;
+@property (nonatomic) bool startSendProgressImmediately;
 
-- (BOOL)_hasSendingMessages;
+- (void).cxx_destruct;
+- (bool)_hasSendingMessages;
 - (void)_resetSendProgress;
 - (void)_scheduleSendProgressTimerIfNeeded;
 - (void)_sendProgressTimerFired:(id)arg1;
@@ -29,6 +33,8 @@
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSendingItems:(id)arg1;
-- (void)updateForItems:(id)arg1 forced:(BOOL)arg2;
+- (void)setStartSendProgressImmediately:(bool)arg1;
+- (bool)startSendProgressImmediately;
+- (void)updateForItems:(id)arg1 forced:(bool)arg2;
 
 @end

@@ -5,7 +5,6 @@
 
 @required
 
-- (NSString *)affectedEntityName;
 - (NSString *)routingMessage;
 - (NSArray *)transitIncidents;
 

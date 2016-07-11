@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualPlaylistPickerViewConfiguration : MusicLibraryPlaylistsViewConfiguration {
+@interface MusicContextualPlaylistPickerViewConfiguration : MusicPlaylistsWithNewActionViewConfiguration {
+    bool  _includesRecentlyModifiedPlaylistsSection;
     <MusicContextualPlaylistPickerDelegate> * _playlistPickerDelegate;
 }
 
+@property (nonatomic, readonly) bool includesRecentlyModifiedPlaylistsSection;
 @property (nonatomic) <MusicContextualPlaylistPickerDelegate> *playlistPickerDelegate;
 
 - (void).cxx_destruct;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
-- (id)initWithPlaylistsFilter:(id)arg1 playlistsConfigurationOptions:(unsigned int)arg2;
+- (bool)canPreviewEntityValueContext:(id)arg1;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (bool)includesRecentlyModifiedPlaylistsSection;
+- (id)initWithPlaylistsFilter:(id)arg1 playlistsConfigurationOptions:(unsigned long long)arg2;
 - (id)loadEntityViewDescriptor;
 - (id)newViewController;
 - (id)playlistPickerDelegate;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (void)setPlaylistPickerDelegate:(id)arg1;
 
 @end

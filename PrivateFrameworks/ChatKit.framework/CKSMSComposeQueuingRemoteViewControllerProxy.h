@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSMutableArray *queuedInvocations;
 @property (nonatomic, retain) <CKSMSCompose> *serviceViewControllerProxy;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;

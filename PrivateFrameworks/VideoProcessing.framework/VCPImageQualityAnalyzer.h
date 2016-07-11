@@ -2,8 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
  */
 
-@interface VCPImageQualityAnalyzer : VCPImageAnalyzer
+@interface VCPImageQualityAnalyzer : VCPImageAnalyzer {
+    float  _qualityScore;
+}
 
-- (long)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 flags:(unsigned int*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
+@property (readonly) float qualityScore;
+
+- (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 flags:(unsigned long long*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
+- (float)qualityScore;
 
 @end

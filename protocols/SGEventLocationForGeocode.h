@@ -7,10 +7,12 @@
 
 - (double)geocodeAccuracy;
 - (NSString *)geocodeAddress;
-- (BOOL)geocodeIsEnd;
-- (BOOL)geocodeIsStart;
+- (NSData *)geocodeHandle;
+- (bool)geocodeIsEnd;
+- (bool)geocodeIsStart;
+- (NSString *)geocodeLabel;
 - (double)geocodeLatitude;
 - (double)geocodeLongitude;
-- (id)geocodedLocationWithLatitude:(double)arg1 longitude:(double)arg2 accuracy:(double)arg3;
+- (id)geocodedLocationWithLatitude:(double)arg1 longitude:(double)arg2 accuracy:(double)arg3 handle:(NSData *)arg4;
 
 @end

@@ -6,9 +6,9 @@
     UIWebPaginationInfo * _paginationInfo;
 }
 
+- (void).cxx_destruct;
 - (id)_paginationInfo;
-- (void)dealloc;
-- (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1 printingDone:(BOOL*)arg2;
+- (long long)numberOfPages;
+- (id)pdfDataForPageAtIndex:(long long)arg1;
 
 @end

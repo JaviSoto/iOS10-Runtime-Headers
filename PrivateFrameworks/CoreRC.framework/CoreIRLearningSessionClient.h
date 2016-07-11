@@ -11,6 +11,6 @@
 - (void)endLearning;
 - (id)manager;
 - (void)setManager:(id)arg1;
-- (BOOL)startLearningCommand:(unsigned int)arg1;
+- (bool)startLearningCommand:(unsigned long long)arg1;
 
 @end

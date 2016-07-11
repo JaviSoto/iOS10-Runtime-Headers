@@ -4,9 +4,12 @@
 
 @interface AVVideoCompositionInternal : NSObject {
     AVVideoCompositionCoreAnimationTool * animationTool;
-    BOOL  auxiliaryTrackLayerSetLast;
+    bool  auxiliaryTrackLayerSetLast;
     NSString * builtInCompositorName;
-    unsigned int  changeSeed;
+    unsigned long long  changeSeed;
+    NSString * colorPrimaries;
+    NSString * colorTransferFunction;
+    NSString * colorYCbCrMatrix;
     Class  customCompositorClass;
     struct { 
         long long value; 
@@ -17,9 +20,10 @@
     NSArray * instructions;
     float  renderScale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  renderSize;
+    int  sourceTrackIDForFrameTiming;
 }
 
 @end

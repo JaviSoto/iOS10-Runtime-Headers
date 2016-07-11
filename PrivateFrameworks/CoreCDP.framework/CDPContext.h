@@ -2,47 +2,96 @@
    Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
  */
 
-@interface CDPContext : NSObject {
-    BOOL  __useSecureBackupCachedPassphrase;
+@interface CDPContext : NSObject <NSCopying, NSSecureCoding> {
+    bool  __alwaysCreateEscrowRecord;
+    <CDPAuthProviderInternal> * __authProvider;
+    bool  __guestMode;
+    bool  __idmsRecovery;
+    NSString * __recoveryToken;
+    bool  __useSecureBackupCachedPassphrase;
     NSString * _appleID;
     NSDictionary * _authenticationResults;
     NSString * _cachedLocalSecret;
-    unsigned int  _cachedLocalSecretType;
-    BOOL  _didUseSMSVerification;
+    unsigned long long  _cachedLocalSecretType;
+    bool  _didUseSMSVerification;
     NSNumber * _dsid;
+    KCAESGCMDuplexSession * _duplexSession;
+    bool  _isHSA2Account;
     NSString * _password;
     NSString * _passwordEquivToken;
+    AKCircleRequestContext * _resumeContext;
+    long long  _type;
 }
 
-@property (nonatomic) BOOL _useSecureBackupCachedPassphrase;
+@property (nonatomic) bool _alwaysCreateEscrowRecord;
+@property (nonatomic, retain) <CDPAuthProviderInternal> *_authProvider;
+@property (nonatomic) bool _guestMode;
+@property (nonatomic) bool _idmsRecovery;
+@property (nonatomic, copy) NSString *_recoveryToken;
+@property (nonatomic) bool _useSecureBackupCachedPassphrase;
 @property (nonatomic, copy) NSString *appleID;
 @property (nonatomic, copy) NSDictionary *authenticationResults;
 @property (nonatomic, copy) NSString *cachedLocalSecret;
-@property (nonatomic) unsigned int cachedLocalSecretType;
-@property (nonatomic) BOOL didUseSMSVerification;
+@property (nonatomic) unsigned long long cachedLocalSecretType;
+@property (nonatomic) bool didUseSMSVerification;
 @property (nonatomic, copy) NSNumber *dsid;
+@property (nonatomic, retain) KCAESGCMDuplexSession *duplexSession;
+@property (nonatomic) bool isHSA2Account;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *passwordEquivToken;
+@property (nonatomic, retain) AKCircleRequestContext *resumeContext;
+@property (nonatomic) long long type;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_useSecureBackupCachedPassphrase;
+- (bool)_alwaysCreateEscrowRecord;
+- (id)_authProvider;
+- (bool)_guestMode;
+- (bool)_idmsRecovery;
+- (id)_recoveryToken;
+- (bool)_useSecureBackupCachedPassphrase;
 - (id)appleID;
 - (id)authenticationResults;
 - (id)cachedLocalSecret;
-- (unsigned int)cachedLocalSecretType;
-- (BOOL)didUseSMSVerification;
+- (unsigned long long)cachedLocalSecretType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)didUseSMSVerification;
 - (id)dsid;
+- (id)duplexSession;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithAuthenticationResults:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (bool)isHSA2Account;
 - (id)password;
 - (id)passwordEquivToken;
+- (void)purgeResumeData;
+- (id)resumeContext;
 - (void)setAppleID:(id)arg1;
 - (void)setAuthenticationResults:(id)arg1;
 - (void)setCachedLocalSecret:(id)arg1;
-- (void)setCachedLocalSecretType:(unsigned int)arg1;
-- (void)setDidUseSMSVerification:(BOOL)arg1;
+- (void)setCachedLocalSecretType:(unsigned long long)arg1;
+- (void)setDidUseSMSVerification:(bool)arg1;
 - (void)setDsid:(id)arg1;
+- (void)setDuplexSession:(id)arg1;
+- (void)setIsHSA2Account:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPasswordEquivToken:(id)arg1;
-- (void)set_useSecureBackupCachedPassphrase:(BOOL)arg1;
+- (void)setResumeContext:(id)arg1;
+- (void)setType:(long long)arg1;
+- (void)set_alwaysCreateEscrowRecord:(bool)arg1;
+- (void)set_authProvider:(id)arg1;
+- (void)set_guestMode:(bool)arg1;
+- (void)set_idmsRecovery:(bool)arg1;
+- (void)set_recoveryToken:(id)arg1;
+- (void)set_useSecureBackupCachedPassphrase:(bool)arg1;
+- (long long)type;
+- (void)updateWithAuthenticationResults:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (void)reauthenticateUserWithCompletion:(id /* block */)arg1;
 
 @end

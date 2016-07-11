@@ -5,11 +5,22 @@
 
 @required
 
+- (void)cameraRollController:(CAMCameraRollController *)arg1 didDismissPreviewControllerShouldStartCaptureSession:(bool)arg2;
+- (void)cameraRollController:(CAMCameraRollController *)arg1 willShowPresentingViewControllerShouldStartCaptureSession:(bool)arg2;
+- (void)cameraRollControllerDidDismissFullyPresentedCameraRoll:(CAMCameraRollController *)arg1;
+- (void)cameraRollControllerDidFullyPresentCameraRoll:(CAMCameraRollController *)arg1;
 - (UIViewController *)cameraRollControllerPresentingViewController:(CAMCameraRollController *)arg1;
+- (void)cameraRollControllerRequestsCaptureSessionStopped:(CAMCameraRollController *)arg1;
+- (void)cameraRollControllerWillPresentPreviewController:(CAMCameraRollController *)arg1;
 
 @optional
 
-- (void)cameraRollController:(CAMCameraRollController *)arg1 shouldHideSourceAsset:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cameraRollControllerSourceAssetRect:(CAMCameraRollController *)arg1;
+- (void)cameraRollController:(CAMCameraRollController *)arg1 shouldHideSourceAsset:(bool)arg2;
+- (UIImage *)cameraRollControllerImageForReveal:(CAMCameraRollController *)arg1;
+- (void)cameraRollControllerPreviewGestureDidBecomeAvailable:(CAMCameraRollController *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cameraRollControllerPreviewSourceRect:(CAMCameraRollController *)arg1;
+- (void)cameraRollControllerRevealDidEnd:(CAMCameraRollController *)arg1;
+- (void)cameraRollControllerRevealWillBegin:(CAMCameraRollController *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cameraRollControllerSourceAssetRect:(CAMCameraRollController *)arg1;
 
 @end

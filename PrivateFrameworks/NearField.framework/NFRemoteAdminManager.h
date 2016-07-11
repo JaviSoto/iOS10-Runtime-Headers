@@ -5,27 +5,34 @@
 @interface NFRemoteAdminManager : NSObject <NFRemoteAdminManagerCallbacks, NSXPCConnectionDelegate> {
     NSXPCConnection * _connection;
     NSMutableSet * _eventListeners;
-    BOOL  _hasEventListener;
+    bool  _hasEventListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedRemoteAdminManager;
 
+- (void)_connectIfNeeded;
 - (void)connectToServer:(id)arg1 callback:(id /* block */)arg2;
 - (void)dealloc;
-- (void)didCloseXPCConnection:(id)arg1;
+- (void)didInterruptXPCConnection:(id)arg1;
+- (void)didInvalidateXPCConnection:(id)arg1;
+- (id)getAPNPublicToken;
+- (void)getSELDInfoForBroker:(id /* block */)arg1;
 - (id)init;
 - (id)nextRequestForServer:(id)arg1;
-- (BOOL)queueServerConnection:(id)arg1;
-- (BOOL)queueServerConnectionForApplets:(id)arg1;
+- (id)primaryRegionTopic;
+- (bool)queueServerConnection:(id)arg1;
+- (bool)queueServerConnectionForApplets:(id)arg1;
 - (void)registerEventListener:(id)arg1;
 - (id)registrationInfo;
 - (void)remoteAdminCleanupProgress:(double)arg1;
-- (BOOL)setRegistrationInfo:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (bool)setRegistrationInfo:(id)arg1;
+- (bool)setRegistrationInfo:(id)arg1 primaryRegionTopic:(id)arg2;
 - (void)unregisterEventListener:(id)arg1;
 
 @end

@@ -6,17 +6,17 @@
 @required
 
 - (void)cancelScrubbing;
-- (int)currentScrubSpeed;
+- (long long)currentScrubSpeed;
 - (double)effectiveCurrentTime;
-- (BOOL)isAlwaysLive;
-- (BOOL)isScrubbingEnabled;
+- (bool)isAlwaysLive;
+- (bool)isScrubbingEnabled;
 - (float)rate;
 - (<MusicPlaybackProgressScrubberDelegate> *)scrubberDelegate;
-- (void)setAlwaysLive:(BOOL)arg1;
+- (void)setAlwaysLive:(bool)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setRate:(float)arg1;
 - (void)setScrubberDelegate:(id <MusicPlaybackProgressScrubberDelegate>)arg1;
-- (void)setScrubbingEnabled:(BOOL)arg1;
+- (void)setScrubbingEnabled:(bool)arg1;
 - (void)setTotalDuration:(double)arg1;
 - (double)totalDuration;
 

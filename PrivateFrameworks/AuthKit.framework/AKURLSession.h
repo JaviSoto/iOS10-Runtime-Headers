@@ -3,18 +3,16 @@
  */
 
 @interface AKURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    BOOL  __usesAppleIDContext;
-    NSMutableDictionary * _pendingCompletionsByTask;
-    NSMutableDictionary * _receivedDataByTask;
-    NSMutableDictionary * _retryCountByURL;
+    bool  __usesAppleIDContext;
     NSObject<OS_dispatch_queue> * _sessionQueue;
+    NSMutableDictionary * _tasksByIdentifier;
     NSURLSession * _urlSession;
 }
 
-@property (nonatomic) BOOL _usesAppleIDContext;
+@property (nonatomic) bool _usesAppleIDContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedAnisetteFreeURLSession;
@@ -26,11 +24,13 @@
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)_URLSession;
-- (BOOL)_isRecoverableError:(id)arg1;
-- (BOOL)_unsafe_retryTaskIfPossible:(id)arg1;
-- (BOOL)_usesAppleIDContext;
-- (void)beginDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)_isRecoverableError:(id)arg1;
+- (void)_unsafe_completeTask:(id)arg1 withError:(id)arg2;
+- (bool)_unsafe_retryTaskIfPossible:(id)arg1;
+- (bool)_usesAppleIDContext;
+- (id)beginDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cancelDataTask:(id)arg1;
 - (id)init;
-- (void)set_usesAppleIDContext:(BOOL)arg1;
+- (void)set_usesAppleIDContext:(bool)arg1;
 
 @end

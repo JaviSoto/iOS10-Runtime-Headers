@@ -4,42 +4,44 @@
 
 @interface GEOPDViewportInfo : PBCodable <NSCopying> {
     struct { 
-        unsigned int mapMode : 1; 
+        unsigned int mapType : 1; 
         unsigned int timeSinceMapViewportChanged : 1; 
     }  _has;
-    int  _mapMode;
     GEOMapRegion * _mapRegion;
+    int  _mapType;
     unsigned int  _timeSinceMapViewportChanged;
 }
 
-@property (nonatomic) BOOL hasMapMode;
-@property (nonatomic, readonly) BOOL hasMapRegion;
-@property (nonatomic) BOOL hasTimeSinceMapViewportChanged;
-@property (nonatomic) int mapMode;
+@property (nonatomic, readonly) bool hasMapRegion;
+@property (nonatomic) bool hasMapType;
+@property (nonatomic) bool hasTimeSinceMapViewportChanged;
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic) int mapType;
 @property (nonatomic) unsigned int timeSinceMapViewportChanged;
 
 + (id)viewportInfoForTraits:(id)arg1;
 
+- (int)StringAsMapType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMapMode;
-- (BOOL)hasMapRegion;
-- (BOOL)hasTimeSinceMapViewportChanged;
-- (unsigned int)hash;
+- (bool)hasMapRegion;
+- (bool)hasMapType;
+- (bool)hasTimeSinceMapViewportChanged;
+- (unsigned long long)hash;
 - (id)initWithTraits:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)mapMode;
+- (bool)isEqual:(id)arg1;
 - (id)mapRegion;
+- (int)mapType;
+- (id)mapTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMapMode:(BOOL)arg1;
-- (void)setHasTimeSinceMapViewportChanged:(BOOL)arg1;
-- (void)setMapMode:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMapType:(bool)arg1;
+- (void)setHasTimeSinceMapViewportChanged:(bool)arg1;
 - (void)setMapRegion:(id)arg1;
+- (void)setMapType:(int)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;
 - (unsigned int)timeSinceMapViewportChanged;
 - (void)writeTo:(id)arg1;

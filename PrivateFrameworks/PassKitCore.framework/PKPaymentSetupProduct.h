@@ -3,43 +3,67 @@
  */
 
 @interface PKPaymentSetupProduct : NSObject <NSSecureCoding> {
+    NSURL * _appLaunchURL;
+    NSArray * _associatedStoreIdentifiers;
     NSString * _displayName;
-    NSString * _partnerIdentifier;
+    NSString * _identifier;
     NSString * _productIdentifier;
-    NSDictionary * _rawPartnerDictionary;
+    NSDictionary * _rawDictionary;
+    NSString * _redirectURI;
     NSString * _region;
     NSArray * _requiredFields;
-    unsigned int  _type;
+    NSArray * _supportedProtocols;
+    NSURL * _termsURL;
+    unsigned long long  _type;
 }
 
+@property (nonatomic, copy) NSURL *appLaunchURL;
+@property (nonatomic, copy) NSArray *associatedStoreIdentifiers;
 @property (nonatomic, copy) NSString *displayName;
-@property (nonatomic, copy) NSString *partnerIdentifier;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, readonly, copy) NSString *partnerName;
 @property (nonatomic, copy) NSString *productIdentifier;
-@property (nonatomic, copy) NSDictionary *rawPartnerDictionary;
+@property (nonatomic, copy) NSDictionary *rawDictionary;
+@property (nonatomic, copy) NSString *redirectURI;
 @property (nonatomic, copy) NSString *region;
 @property (nonatomic, copy) NSArray *requiredFields;
-@property (nonatomic) unsigned int type;
+@property (nonatomic, copy) NSArray *supportedProtocols;
+@property (nonatomic, copy) NSURL *termsURL;
+@property (nonatomic) unsigned long long type;
 
 + (id)partnerProductsFromArrayOfPartners:(id)arg1 andProducts:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 redirectURI:(id)arg4 requiredFields:(id)arg5 termsURL:(id)arg6;
+- (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 requiredFields:(id)arg4;
+- (id)appLaunchURL;
+- (id)associatedStoreIdentifiers;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
+- (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 requiredFields:(id)arg4;
-- (id)partnerIdentifier;
+- (id)initWithProductDictionary:(id)arg1;
+- (id)partnerName;
 - (id)productIdentifier;
-- (id)rawPartnerDictionary;
+- (id)rawDictionary;
+- (id)redirectURI;
 - (id)region;
 - (id)requiredFields;
+- (void)setAppLaunchURL:(id)arg1;
+- (void)setAssociatedStoreIdentifiers:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setPartnerIdentifier:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setProductIdentifier:(id)arg1;
-- (void)setRawPartnerDictionary:(id)arg1;
+- (void)setRawDictionary:(id)arg1;
+- (void)setRedirectURI:(id)arg1;
 - (void)setRegion:(id)arg1;
 - (void)setRequiredFields:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setSupportedProtocols:(id)arg1;
+- (void)setTermsURL:(id)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (id)supportedProtocols;
+- (id)termsURL;
+- (unsigned long long)type;
 
 @end

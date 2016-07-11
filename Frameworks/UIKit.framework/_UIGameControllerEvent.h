@@ -3,21 +3,27 @@
  */
 
 @interface _UIGameControllerEvent : UIEvent {
+    unsigned long long  _activeComponent;
     struct { 
-        float controllerState[16]; 
-        float normalizedLeftStickState[4]; 
-        float normalizedShoulderButtonState[4]; 
-        BOOL didSendEvent; 
-        BOOL dPadActive; 
-        BOOL leftStickActive; 
-        BOOL shoulderButtonActive; 
-    }  previousState;
+        unsigned long long senderID; 
+        double controllerState[16]; 
+        double normalizedLeftStickState[4]; 
+        double normalizedRightStickState[4]; 
+        double normalizedShoulderButtonState[4]; 
+    }  _previousState;
 }
 
-- (struct CGPoint { float x1; float x2; })_leftStickPosition;
+- (bool)_determineInputTypeAndProcess:(struct { unsigned long long x1; double x2[16]; double x3[4]; double x4[4]; double x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (struct CGPoint { double x1; double x2; })_leftStickPosition;
 - (void)_maybeConvertAndSendAsPressesEvent;
+- (bool)_processDPad:(struct { unsigned long long x1; double x2[16]; double x3[4]; double x4[4]; double x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (bool)_processLeftStick:(struct { unsigned long long x1; double x2[16]; double x3[4]; double x4[4]; double x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (bool)_processRightStick:(struct { unsigned long long x1; double x2[16]; double x3[4]; double x4[4]; double x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (bool)_processShoulder:(struct { unsigned long long x1; double x2[16]; double x3[4]; double x4[4]; double x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (bool)_processStandardButtons:(struct { unsigned long long x1; double x2[16]; double x3[4]; double x4[4]; double x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (void)_reset;
 - (void)_sendEventToResponder:(id)arg1;
-- (int)subtype;
-- (int)type;
+- (long long)subtype;
+- (long long)type;
 
 @end

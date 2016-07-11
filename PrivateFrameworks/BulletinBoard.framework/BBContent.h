@@ -13,14 +13,16 @@
 @property (nonatomic, copy) NSString *title;
 
 + (id)contentWithTitle:(id)arg1 subtitle:(id)arg2 message:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToContent:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToContent:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (void)setSubtitle:(id)arg1;

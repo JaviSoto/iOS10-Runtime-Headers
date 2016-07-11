@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSArray *array;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly, copy) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, readonly, copy) NSMutableArray *mutableArray;
 
@@ -19,14 +19,16 @@
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (id)array;
-- (BOOL)containsObject:(id)arg1;
-- (unsigned int)count;
+- (bool)containsObject:(id)arg1;
+- (unsigned long long)count;
 - (id)dispatchQueue;
 - (id)filteredArrayUsingPredicate:(id)arg1;
 - (id)initWithArray:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableArray;
 - (void)removeObject:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)setArray:(id)arg1;
+- (void)setIfDifferent:(id)arg1;
 
 @end

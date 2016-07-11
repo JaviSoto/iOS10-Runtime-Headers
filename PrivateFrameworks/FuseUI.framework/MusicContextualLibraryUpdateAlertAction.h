@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualLibraryUpdateAlertAction : UIAlertAction {
-    BOOL  _isAddAction;
-    BOOL  _isDeleteLibraryUpdate;
-    id /* block */  _libraryUpdateActionHandler;
+@interface MusicContextualLibraryUpdateAlertAction : MusicContextualAlertAction {
+    bool  _isAddAction;
+    bool  _isKeepLocalAction;
+    bool  _isRemoveAction;
 }
 
-@property (nonatomic, readonly) BOOL isAddAction;
-@property (nonatomic, readonly) BOOL isDeleteLibraryUpdate;
-@property (nonatomic, readonly, copy) id /* block */ libraryUpdateActionHandler;
+@property (nonatomic, readonly) bool isAddAction;
+@property (nonatomic, readonly) bool isKeepLocalAction;
+@property (nonatomic, readonly) bool isRemoveAction;
 
-+ (void)_showDeleteConfirmationActionAlertControllerWithTitle:(id)arg1 deleteActionTitle:(id)arg2 additionalPresentationHandler:(id /* block */)arg3 deletionHandler:(id /* block */)arg4 didDismissHandler:(id /* block */)arg5;
-+ (void)getContextualLibraryAddRemoveAction:(id*)arg1 keepLocalAction:(id*)arg2 forEntityValueContext:(id)arg3 overrideItemEntityProvider:(id)arg4 shouldDismissHandler:(id /* block */)arg5 additionalPresentationHandler:(id /* block */)arg6 didDismissHandler:(id /* block */)arg7;
-+ (id)notificationObserversForOverrideItemEntityProvider:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)getContextualLibraryAddAction:(id*)arg1 removeAction:(id*)arg2 keepLocalAction:(id*)arg3 forEntityValueContext:(id)arg4 overrideItemEntityProvider:(id)arg5 allowAssetRemoval:(bool)arg6 shouldDismissHandler:(id /* block */)arg7 additionalPresentationHandler:(id /* block */)arg8 didDismissHandler:(id /* block */)arg9;
++ (id)newAddExplicitContentWarningAlertControllerWithContentItemType:(unsigned long long)arg1 didDismissBlock:(id /* block */)arg2;
++ (id)notificationTokenForOverrideItemEntityProvider:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
 
-- (void).cxx_destruct;
-- (BOOL)isAddAction;
-- (BOOL)isDeleteLibraryUpdate;
-- (id /* block */)libraryUpdateActionHandler;
+- (bool)isAddAction;
+- (bool)isKeepLocalAction;
+- (bool)isRemoveAction;
 
 @end

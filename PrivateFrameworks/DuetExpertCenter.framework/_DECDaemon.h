@@ -6,22 +6,22 @@
     _DECInternalConsumerManager * _consumerManager;
     _DECExpertManager * _expertManager;
     NSXPCListener * _listener;
-    _DECPrewarmManager * _prewarmManager;
     NSObject<OS_dispatch_queue> * _queue;
     _DECServerResponder * _serverResponder;
+    _DECDailyTrainingScheduler * _trainingScheduler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_prewarm;
+- (id)_getServerResponder;
 - (void)_runDelayedInitializationOperations;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

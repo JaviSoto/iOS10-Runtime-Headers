@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int iOSLegacyIdentifier;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *label;
@@ -23,7 +23,8 @@
 @property (nonatomic, readonly) int multiValueIdentifier;
 @property (nonatomic, copy) NSString *storeIdentifier;
 @property (nonatomic, copy) NSDictionary *storeInfo;
-@property (getter=isSuggested, nonatomic, readonly) BOOL suggested;
+@property (getter=isSuggested, nonatomic, readonly) bool suggested;
+@property (nonatomic, readonly) NSString *suggestionFoundInBundleId;
 @property (nonatomic, readonly) SGRecordId *suggestionRecordId;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) <NSCopying><NSSecureCoding> *value;
@@ -37,13 +38,13 @@
 + (id)entryWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
 + (id)firstLabeledValueWithValue:(id)arg1 inArray:(id)arg2;
 + (id)identifierProvider;
-+ (BOOL)isArrayOfEntries:(id)arg1 equalToArrayOfEntriesIgnoringIdentifiers:(id)arg2;
++ (bool)isArrayOfEntries:(id)arg1 equalToArrayOfEntriesIgnoringIdentifiers:(id)arg2;
 + (id)labelForIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)labeledValueWithIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
 + (id)localizedStringForLabel:(id)arg1;
 + (id)makeIdentifier;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id /* block */)testMatchingIdentifier:(id)arg1;
 + (id)valueForIdentifier:(id)arg1 inArray:(id)arg2;
 
@@ -51,17 +52,17 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)iOSLegacyIdentifier;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualIgnoringIdentifiers:(id)arg1;
-- (BOOL)isEqualToLabeledValue:(id)arg1;
-- (BOOL)isEqualToLabeledValue:(id)arg1 includeIdentifiers:(BOOL)arg2;
-- (BOOL)isSuggested;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualIgnoringIdentifiers:(id)arg1;
+- (bool)isEqualToLabeledValue:(id)arg1;
+- (bool)isEqualToLabeledValue:(id)arg1 includeIdentifiers:(bool)arg2;
+- (bool)isSuggested;
 - (id)label;
 - (id)labelValuePair;
 - (id)labeledValueBySettingLabel:(id)arg1;
@@ -74,6 +75,7 @@
 - (void)setStoreInfo:(id)arg1;
 - (id)storeIdentifier;
 - (id)storeInfo;
+- (id)suggestionFoundInBundleId;
 - (id)suggestionRecordId;
 - (id)value;
 

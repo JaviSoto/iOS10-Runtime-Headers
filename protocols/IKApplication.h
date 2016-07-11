@@ -8,14 +8,15 @@
 - (NSString *)appIdentifier;
 - (NSURL *)appJSURL;
 - (<IKAppDataStoring> *)localStorage;
-- (BOOL)shouldIgnoreJSValidation;
+- (bool)shouldIgnoreJSValidation;
+- (<IKAppUserDefaultsStoring> *)userDefaultsStorage;
 - (NSString *)vendorIdentifier;
 - (<IKAppDataStoring> *)vendorStorage;
 
 @optional
 
 - (IKAppDocument *)activeDocument;
-- (BOOL)appIsTrusted;
+- (bool)appIsTrusted;
 - (NSDictionary *)appLaunchParams;
 
 @end

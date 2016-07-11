@@ -3,10 +3,10 @@
  */
 
 @interface RDMulticastService : NSObject {
-    int  _connectionState;
+    long long  _connectionState;
     id /* block */  _connectionStateChangedBlock;
-    BOOL  _continueAfterHandshake;
-    BOOL  _didCompleteHandshake;
+    bool  _continueAfterHandshake;
+    bool  _didCompleteHandshake;
     id /* block */  _handshakeCompletionBlock;
     NSObject<OS_dispatch_queue> * _handshakeWorkQueue;
     NSString * _lastKnownIDSPairingRecordsState;
@@ -22,15 +22,15 @@
     int  _repeatedSendFailureCount;
     int  _sendSocketFd;
     double  _senderTime;
-    BOOL  _shouldAllowIDSReset;
-    BOOL  _shouldRefetchIDSPairingState;
+    bool  _shouldAllowIDSReset;
+    bool  _shouldRefetchIDSPairingState;
     int  _unansweredMulticastCount;
 }
 
-@property (nonatomic) int connectionState;
+@property (nonatomic) long long connectionState;
 @property (nonatomic, copy) id /* block */ connectionStateChangedBlock;
-@property (nonatomic) BOOL continueAfterHandshake;
-@property (nonatomic) BOOL didCompleteHandshake;
+@property (nonatomic) bool continueAfterHandshake;
+@property (nonatomic) bool didCompleteHandshake;
 @property (nonatomic, copy) id /* block */ handshakeCompletionBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *handshakeWorkQueue;
 @property (nonatomic, copy) NSString *lastKnownIDSPairingRecordsState;
@@ -46,8 +46,8 @@
 @property (nonatomic) int repeatedSendFailureCount;
 @property (nonatomic) int sendSocketFd;
 @property (nonatomic) double senderTime;
-@property (nonatomic) BOOL shouldAllowIDSReset;
-@property (nonatomic) BOOL shouldRefetchIDSPairingState;
+@property (nonatomic) bool shouldAllowIDSReset;
+@property (nonatomic) bool shouldRefetchIDSPairingState;
 @property (nonatomic) int unansweredMulticastCount;
 
 + (id)ipv4AddressForInterface:(id)arg1;
@@ -55,11 +55,11 @@
 
 - (void).cxx_destruct;
 - (void)beginMulticastConnectionWithPayloadCallBack:(id /* block */)arg1;
-- (int)connectionState;
+- (long long)connectionState;
 - (id /* block */)connectionStateChangedBlock;
-- (BOOL)continueAfterHandshake;
-- (BOOL)didCompleteHandshake;
-- (BOOL)discoverLocalInterface;
+- (bool)continueAfterHandshake;
+- (bool)didCompleteHandshake;
+- (bool)discoverLocalInterface;
 - (id /* block */)handshakeCompletionBlock;
 - (id)handshakeWorkQueue;
 - (id)init;
@@ -71,20 +71,20 @@
 - (id)multicastSendTimer;
 - (void)performHandshakeWithCompletionBlock:(id /* block */)arg1;
 - (id)readSource;
-- (BOOL)receiveHandshakeMulticast;
+- (bool)receiveHandshakeMulticast;
 - (int)receiveSocketFd;
 - (id)remoteIP;
 - (int)repeatedSendFailureBails;
 - (int)repeatedSendFailureCount;
 - (void)resetHandshakeState;
-- (BOOL)sendHandshakeMulticast;
+- (bool)sendHandshakeMulticast;
 - (void)sendMulticastPayload:(id)arg1;
 - (int)sendSocketFd;
 - (double)senderTime;
-- (void)setConnectionState:(int)arg1;
+- (void)setConnectionState:(long long)arg1;
 - (void)setConnectionStateChangedBlock:(id /* block */)arg1;
-- (void)setContinueAfterHandshake:(BOOL)arg1;
-- (void)setDidCompleteHandshake:(BOOL)arg1;
+- (void)setContinueAfterHandshake:(bool)arg1;
+- (void)setDidCompleteHandshake:(bool)arg1;
 - (void)setHandshakeCompletionBlock:(id /* block */)arg1;
 - (void)setHandshakeWorkQueue:(id)arg1;
 - (void)setLastKnownIDSPairingRecordsState:(id)arg1;
@@ -100,15 +100,15 @@
 - (void)setRepeatedSendFailureCount:(int)arg1;
 - (void)setSendSocketFd:(int)arg1;
 - (void)setSenderTime:(double)arg1;
-- (void)setShouldAllowIDSReset:(BOOL)arg1;
-- (void)setShouldRefetchIDSPairingState:(BOOL)arg1;
+- (void)setShouldAllowIDSReset:(bool)arg1;
+- (void)setShouldRefetchIDSPairingState:(bool)arg1;
 - (void)setUnansweredMulticastCount:(int)arg1;
-- (BOOL)setUpMulticastReceiveSocket;
-- (BOOL)setUpMulticastSendSocket;
-- (BOOL)setUpMulticastSendTimer;
-- (BOOL)setUpReceiveDispatchSource;
-- (BOOL)shouldAllowIDSReset;
-- (BOOL)shouldRefetchIDSPairingState;
+- (bool)setUpMulticastReceiveSocket;
+- (bool)setUpMulticastSendSocket;
+- (bool)setUpMulticastSendTimer;
+- (bool)setUpReceiveDispatchSource;
+- (bool)shouldAllowIDSReset;
+- (bool)shouldRefetchIDSPairingState;
 - (void)syncTimeWithSender:(double)arg1;
 - (void)tearDownMulticastSendReceiveState;
 - (int)unansweredMulticastCount;

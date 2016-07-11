@@ -9,16 +9,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) BBSectionInfo *sectionInfo;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *universalSectionIdentifier;
 
 + (id)factoryFromSectionInfo:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)dataProviders;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSectionInfo:(id)arg1;

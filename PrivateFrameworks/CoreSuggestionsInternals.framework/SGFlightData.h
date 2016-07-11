@@ -20,14 +20,17 @@
     <SGSeekable> * _flightsUpdateFh;
 }
 
++ (id)airportNameNoiseKeywords;
++ (id)sanitizeAirportName:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)airportCodeForAirportName:(id)arg1 flightCarrier:(id)arg2 flightNumber:(unsigned short)arg3;
+- (id)airportCodeForAirportName:(id)arg1 flightCarrier:(id)arg2 flightNumber:(unsigned short)arg3 outputInfos:(id)arg4;
 - (id)airportIataCodes;
 - (id)airportIataCodesForDataOffset:(id)arg1;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2 withDataOffset:(id)arg3 andFileHandle:(id)arg4;
+- (id)bestLocalizedNameForAirport:(id)arg1;
 - (id)carrierIataCodeForCarrierName:(id)arg1;
 - (id)carrierIataCodes;
 - (id)init;

@@ -7,16 +7,19 @@
     NSString * _emailAddress;
     NSString * _firstName;
     NSString * _lastName;
+    NSString * _phoneNumber;
 }
 
 @property (nonatomic, retain) NSString *containerScopedUserId;
 @property (nonatomic, retain) NSString *emailAddress;
 @property (nonatomic, retain) NSString *firstName;
-@property (nonatomic, readonly) BOOL hasContainerScopedUserId;
-@property (nonatomic, readonly) BOOL hasEmailAddress;
-@property (nonatomic, readonly) BOOL hasFirstName;
-@property (nonatomic, readonly) BOOL hasLastName;
+@property (nonatomic, readonly) bool hasContainerScopedUserId;
+@property (nonatomic, readonly) bool hasEmailAddress;
+@property (nonatomic, readonly) bool hasFirstName;
+@property (nonatomic, readonly) bool hasLastName;
+@property (nonatomic, readonly) bool hasPhoneNumber;
 @property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *phoneNumber;
 
 - (void).cxx_destruct;
 - (id)containerScopedUserId;
@@ -26,19 +29,22 @@
 - (id)dictionaryRepresentation;
 - (id)emailAddress;
 - (id)firstName;
-- (BOOL)hasContainerScopedUserId;
-- (BOOL)hasEmailAddress;
-- (BOOL)hasFirstName;
-- (BOOL)hasLastName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContainerScopedUserId;
+- (bool)hasEmailAddress;
+- (bool)hasFirstName;
+- (bool)hasLastName;
+- (bool)hasPhoneNumber;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)phoneNumber;
+- (bool)readFrom:(id)arg1;
 - (void)setContainerScopedUserId:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

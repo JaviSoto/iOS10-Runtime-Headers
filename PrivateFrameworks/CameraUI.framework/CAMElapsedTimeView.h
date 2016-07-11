@@ -7,30 +7,38 @@
     NSDate * __startTime;
     UILabel * __timeLabel;
     NSTimer * __updateTimer;
+    long long  _layoutStyle;
 }
 
 @property (nonatomic, readonly) UIImageView *_recordingImageView;
 @property (nonatomic, readonly) NSDate *_startTime;
 @property (nonatomic, readonly) UILabel *_timeLabel;
 @property (nonatomic, readonly) NSTimer *_updateTimer;
+@property (nonatomic) long long layoutStyle;
 
 - (void).cxx_destruct;
 - (void)_beginRecordingAnimation;
-- (void)_commonCAMElapsedTimeViewInitialization;
+- (void)_commonCAMElapsedTimeViewInitializationWithLayoutStyle:(long long)arg1;
 - (void)_endRecordingAnimation;
 - (id)_recordingImageView;
 - (void)_setStartTime:(id)arg1;
 - (id)_startTime;
 - (id)_timeLabel;
-- (void)_update:(id)arg1;
+- (void)_updateFont;
+- (void)_updateForTimer:(id)arg1;
+- (void)_updateText;
 - (id)_updateTimer;
 - (void)dealloc;
 - (void)endTimer;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (long long)layoutStyle;
 - (void)layoutSubviews;
 - (void)resetTimer;
+- (void)setLayoutStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startTimer;
 - (void)updateToContentSize:(id)arg1;
 

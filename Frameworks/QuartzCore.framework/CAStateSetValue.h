@@ -20,7 +20,7 @@
 - (void)foreachLayer:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (void)setKeyPath:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

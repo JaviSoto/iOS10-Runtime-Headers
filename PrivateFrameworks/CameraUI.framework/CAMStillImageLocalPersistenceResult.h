@@ -6,35 +6,41 @@
     CAMStillImageCaptureResult * _captureResult;
     NSDate * _creationDate;
     NSError * _error;
-    int  _imageOrientation;
+    long long  _imageOrientation;
+    NSURL * _linkedDestinationURL;
     NSURL * _localDestinationURL;
     NSString * _localDiagnosticsPath;
     NSString * _localFilteredPreviewPath;
     NSString * _localPersistenceUUID;
+    NSDictionary * _metadata;
     NSString * _uniformTypeIdentifier;
 }
 
 @property (nonatomic, readonly) CAMStillImageCaptureResult *captureResult;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic, readonly) long long imageOrientation;
+@property (nonatomic, readonly, copy) NSURL *linkedDestinationURL;
 @property (nonatomic, readonly, copy) NSURL *localDestinationURL;
 @property (nonatomic, readonly, copy) NSString *localDiagnosticsPath;
 @property (nonatomic, readonly, copy) NSString *localFilteredPreviewPath;
 @property (nonatomic, readonly, copy) NSString *localPersistenceUUID;
+@property (nonatomic, readonly, copy) NSDictionary *metadata;
 @property (nonatomic, readonly, copy) NSString *uniformTypeIdentifier;
 
 - (void).cxx_destruct;
 - (id)captureResult;
 - (id)creationDate;
 - (id)error;
-- (int)imageOrientation;
+- (long long)imageOrientation;
 - (id)init;
-- (id)initWithCaptureResult:(id)arg1 atURL:(id)arg2 diagnosticsPath:(id)arg3 filteredPreviewPath:(id)arg4 withUUID:(id)arg5 creationDate:(id)arg6 uniformTypeIdentifier:(id)arg7 orientation:(int)arg8 error:(id)arg9;
+- (id)initWithCaptureResult:(id)arg1 atURL:(id)arg2 linkedURL:(id)arg3 diagnosticsPath:(id)arg4 filteredPreviewPath:(id)arg5 withUUID:(id)arg6 creationDate:(id)arg7 uniformTypeIdentifier:(id)arg8 orientation:(long long)arg9 metadata:(id)arg10 error:(id)arg11;
+- (id)linkedDestinationURL;
 - (id)localDestinationURL;
 - (id)localDiagnosticsPath;
 - (id)localFilteredPreviewPath;
 - (id)localPersistenceUUID;
+- (id)metadata;
 - (id)uniformTypeIdentifier;
 
 @end

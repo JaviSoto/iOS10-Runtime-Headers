@@ -7,29 +7,27 @@
     NSMutableDictionary * _handlers;
     NSMutableArray * _observers;
     NSObject<OS_dispatch_queue> * _queue;
-    <GEONavdXPCInterface> * _remoteObjectProxy;
 }
 
-@property (nonatomic, readonly, retain) <GEONavdXPCInterface> *remoteObjectProxy;
+@property (nonatomic, readonly, retain) <GEONavdXPCInterface> *remoteObjectProxyThreadUnsafe;
 
-- (void)_connectToDaemonIfNeeded;
+- (void)_connectToDaemonIfNeededThreadUnsafe;
 - (void)addObserver:(id)arg1;
 - (void)close;
-- (id)connection;
 - (void)dealloc;
+- (void)didPostUINotification:(unsigned long long)arg1 forDestination:(id)arg2 fromClient:(id)arg3;
 - (void)forceCacheRefresh;
 - (id)init;
 - (void)navdProxyReceivedData:(id)arg1 ofType:(id)arg2;
 - (void)navdProxyReceivedHypothesis:(id)arg1 forClient:(id)arg2;
-- (void)navdProxyReceivedSuggestions:(id)arg1 forClient:(id)arg2;
+- (void)onlyPerformLocalUpdatesForPlannedDestination:(id)arg1 client:(id)arg2;
 - (void)open;
-- (id)remoteObjectProxy;
+- (id)remoteObjectProxyThreadUnsafe;
 - (void)removeObserver:(id)arg1;
-- (void)shouldPostDarwinNotificationForNextUpdate:(BOOL)arg1;
-- (void)startMonitoringDestination:(id)arg1 forClient:(id)arg2 handler:(id /* block */)arg3;
-- (void)startMonitoringSuggestionsForClient:(id)arg1 handler:(id /* block */)arg2;
+- (void)requestRefreshForPlannedDestination:(id)arg1 client:(id)arg2;
+- (void)shouldPostDarwinNotificationForNextUpdate:(bool)arg1;
+- (void)startMonitoringDestination:(id)arg1 forClient:(id)arg2 uuid:(id)arg3 handler:(id /* block */)arg4;
 - (void)statusWithCallback:(id /* block */)arg1;
-- (void)stopMonitoringDestination:(id)arg1 forClient:(id)arg2;
-- (void)stopMonitoringSuggestionsForClient:(id)arg1;
+- (void)stopMonitoringDestination:(id)arg1 forClient:(id)arg2 uuid:(id)arg3;
 
 @end

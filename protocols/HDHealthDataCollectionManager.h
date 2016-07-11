@@ -5,7 +5,8 @@
 
 @required
 
-- (void)sensorDataArrayReceived:(void *)arg1 deviceEntity:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: NSArray *, HDDeviceEntity *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (double)defaultCollectionIntervalForType:(HKObjectType *)arg1;
+- (void)sensorDataArrayReceived:(void *)arg1 deviceEntity:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: NSArray *, HDDeviceEntity *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)sensorDataReceived:(HKObject *)arg1 deviceEntity:(HDDeviceEntity *)arg2;
 - (void)startDataCollectionForType:(HKObjectType *)arg1 observer:(id)arg2 collectionInterval:(double)arg3;
 - (void)stopDataCollectionForType:(HKObjectType *)arg1 observer:(id)arg2;

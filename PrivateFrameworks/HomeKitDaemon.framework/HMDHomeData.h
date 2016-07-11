@@ -4,30 +4,54 @@
 
 @interface HMDHomeData : NSObject {
     NSArray * _accessories;
+    HMDAccount * _account;
+    HMDApplicationData * _applicationData;
+    unsigned long long  _assistantGenerationCounter;
+    NSString * _currentDevice;
     NSUUID * _dataTag;
-    int  _dataVersion;
+    long long  _dataVersion;
     NSArray * _homes;
     NSArray * _incomingInvitations;
+    NSUUID * _lastCurrentHomeUUID;
+    NSArray * _pendingReasonSaved;
+    NSArray * _pendingUserManagementOperations;
     NSUUID * _primaryHomeUUID;
+    long long  _residentEnabledState;
     NSArray * _uuidsOfRemovedHomes;
 }
 
 @property (nonatomic, readonly, copy) NSArray *accessories;
+@property (nonatomic, readonly) HMDAccount *account;
+@property (nonatomic, readonly, copy) HMDApplicationData *applicationData;
+@property (nonatomic, readonly) unsigned long long assistantGenerationCounter;
+@property (nonatomic, readonly, copy) NSString *currentDevice;
 @property (nonatomic, readonly, copy) NSUUID *dataTag;
-@property (nonatomic, readonly) int dataVersion;
+@property (nonatomic, readonly) long long dataVersion;
 @property (nonatomic, readonly, copy) NSArray *homes;
 @property (nonatomic, readonly, copy) NSArray *incomingInvitations;
+@property (nonatomic, readonly, copy) NSUUID *lastCurrentHomeUUID;
+@property (nonatomic, readonly, copy) NSArray *pendingReasonSaved;
+@property (nonatomic, readonly, copy) NSArray *pendingUserManagementOperations;
 @property (nonatomic, readonly, copy) NSUUID *primaryHomeUUID;
+@property (nonatomic, readonly) long long residentEnabledState;
 @property (nonatomic, readonly, copy) NSArray *uuidsOfRemovedHomes;
 
 - (void).cxx_destruct;
 - (id)accessories;
+- (id)account;
+- (id)applicationData;
+- (unsigned long long)assistantGenerationCounter;
+- (id)currentDevice;
 - (id)dataTag;
-- (int)dataVersion;
+- (long long)dataVersion;
 - (id)homes;
 - (id)incomingInvitations;
-- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 dataVersion:(int)arg4 dataTag:(id)arg5 uuidsOfRemovedHomes:(id)arg6 incomingInvitations:(id)arg7;
+- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 lastCurrentHomeUUID:(id)arg4 dataVersion:(long long)arg5 dataTag:(id)arg6 uuidsOfRemovedHomes:(id)arg7 incomingInvitations:(id)arg8 assistantGenerationCounter:(unsigned long long)arg9 currentDevice:(id)arg10 pendingReasonSaved:(id)arg11 pendingUserManagementOperations:(id)arg12 applicationData:(id)arg13 residentEnabledState:(long long)arg14 account:(id)arg15;
+- (id)lastCurrentHomeUUID;
+- (id)pendingReasonSaved;
+- (id)pendingUserManagementOperations;
 - (id)primaryHomeUUID;
+- (long long)residentEnabledState;
 - (id)uuidsOfRemovedHomes;
 
 @end

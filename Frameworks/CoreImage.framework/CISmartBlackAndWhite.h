@@ -8,6 +8,7 @@
     CIImage * inputImage;
     NSNumber * inputNeutralGamma;
     NSNumber * inputScaleFactor;
+    NSNumber * inputSeed;
     NSNumber * inputStrength;
     NSNumber * inputTone;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) CIImage *inputImage;
 @property (nonatomic, copy) NSNumber *inputNeutralGamma;
 @property (nonatomic, copy) NSNumber *inputScaleFactor;
+@property (nonatomic, copy) NSNumber *inputSeed;
 @property (nonatomic, copy) NSNumber *inputStrength;
 @property (nonatomic, copy) NSNumber *inputTone;
 
@@ -31,6 +33,7 @@
 - (id)inputImage;
 - (id)inputNeutralGamma;
 - (id)inputScaleFactor;
+- (id)inputSeed;
 - (id)inputStrength;
 - (id)inputTone;
 - (id)outputImage;
@@ -39,6 +42,7 @@
 - (void)setInputImage:(id)arg1;
 - (void)setInputNeutralGamma:(id)arg1;
 - (void)setInputScaleFactor:(id)arg1;
+- (void)setInputSeed:(id)arg1;
 - (void)setInputStrength:(id)arg1;
 - (void)setInputTone:(id)arg1;
 

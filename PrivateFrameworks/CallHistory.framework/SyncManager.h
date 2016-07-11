@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) CallHistoryDBClientHandle *dbHandle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,6 +29,9 @@
 - (void)insert:(id)arg1;
 - (void)insertRecordsWithoutTransactions:(id)arg1;
 - (void)insertWithoutTransaction:(id)arg1;
+- (id)predicateForCallKind:(id)arg1;
+- (id)predicateForCallKinds:(id)arg1;
+- (id)predicateForLimits:(id)arg1;
 - (void)resetTimers;
 - (double)timerIncoming;
 - (double)timerLifetime;

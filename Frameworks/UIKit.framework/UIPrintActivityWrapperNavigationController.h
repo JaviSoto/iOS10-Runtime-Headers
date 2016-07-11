@@ -4,16 +4,16 @@
 
 @interface UIPrintActivityWrapperNavigationController : UINavigationController {
     id /* block */  _completionHandler;
-    BOOL  _presentedPrintInteractionController;
+    bool  _presentedPrintInteractionController;
 }
 
-@property (nonatomic) BOOL presentedPrintInteractionController;
+@property (nonatomic) bool presentedPrintInteractionController;
 
 - (void).cxx_destruct;
 - (id)initWithCompletion:(id /* block */)arg1;
-- (BOOL)presentedPrintInteractionController;
-- (void)setPresentedPrintInteractionController:(BOOL)arg1;
+- (bool)presentedPrintInteractionController;
+- (void)setPresentedPrintInteractionController:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

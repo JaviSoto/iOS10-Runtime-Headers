@@ -6,10 +6,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *phrases;
-@property (nonatomic) int sentenceConfidence;
+@property (nonatomic) long long sentenceConfidence;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *utterances;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -19,12 +20,15 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)phrases;
-- (int)sentenceConfidence;
+- (long long)sentenceConfidence;
 - (void)setPhrases:(id)arg1;
-- (void)setSentenceConfidence:(int)arg1;
+- (void)setSentenceConfidence:(long long)arg1;
+- (void)setUtterances:(id)arg1;
+- (id)utterances;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 - (id)af_speechPhrases;
+- (id)af_speechUtterances;
 
 @end

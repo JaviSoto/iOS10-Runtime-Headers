@@ -7,29 +7,36 @@
 }
 
 @property (nonatomic, readonly) ICDrawing *drawing;
+@property (nonatomic, readonly) UIImage *imageForActivityItem;
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)activityItem;
 - (id)activityItems;
+- (void)dealloc;
 - (id)drawing;
 - (id)drawingDocument;
+- (void)drawingPreviewIsUpToDate;
 - (void)generatePreviews;
+- (bool)generatePreviewsDuringCloudActivity;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
+- (bool)hasPreviews;
 - (struct UIImage { Class x1; }*)imageForActivityItem;
+- (id)initWithAttachment:(id)arg1;
+- (bool)isReadyToPresent;
 - (void)mergeWithMergeableData:(id)arg1;
-- (BOOL)needToGeneratePreviews;
-- (int)previewImageOrientation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })previewImageOrientationTransform;
+- (bool)needToGeneratePreviews;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (long long)previewImageOrientation;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })previewImageOrientationTransform;
 - (id)previewImageURL;
 - (id)previewItemTitle;
 - (id)previewItemURL;
-- (void)setImage:(struct UIImage { Class x1; }*)arg1 forDrawing:(id)arg2 updateChangeCount:(BOOL)arg3;
+- (void)saveDrawing:(id)arg1 withImage:(struct UIImage { Class x1; }*)arg2 forImageDrawing:(id)arg3;
 - (id)sharedDrawingController;
-- (BOOL)showThumbnailInNoteList;
+- (bool)showThumbnailInNoteList;
 - (void)writeMergeableData;
 
 @end

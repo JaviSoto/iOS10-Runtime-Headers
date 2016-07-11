@@ -6,11 +6,8 @@
 
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
 
-- (BOOL)inspectPreferredInterfaceOrientation:(int*)arg1;
-- (BOOL)inspectPreferredLevel:(float*)arg1;
-- (BOOL)inspectPreferredSceneHostIdentifier:(id*)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)settingsByApplyingToMutableCopyOfSettings:(id)arg1;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

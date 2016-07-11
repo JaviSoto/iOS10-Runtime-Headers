@@ -3,6 +3,7 @@
  */
 
 @interface EKUILocationSearchModel : NSObject <ABSearchOperationDelegate, CLLocationManagerDelegate, MKSearchCompleterDelegate> {
+    EKUILocationSearchABSearchMatchProcessor * _abSearchMatchProcessor;
     ABSearchOperation * _abSearchOperation;
     NSOperationQueue * _abSearchQueue;
     MKLocalSearchCompleter * _completer;
@@ -36,27 +37,26 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *eventsSearchResults;
 @property (nonatomic, readonly) NSArray *frequentsSearchResults;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <GEOMapServiceCompletionTicket> *lastTicket;
 @property (nonatomic, readonly) NSArray *mapCompletionSearchResults;
 @property (nonatomic, readonly) NSArray *recentsSearchResults;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)CLLocationForDictionary:(id)arg1;
 - (void)_addDiscoveredConferenceRooms:(id)arg1;
 - (void)_handleAvailabilityResults:(id)arg1 forOperation:(id)arg2;
 - (void)_processDirectorySearchResultSet:(id)arg1 forOperation:(id)arg2;
 - (void)addLocationToRecents:(id)arg1 addressString:(id)arg2;
 - (void)beginSearchForTerm:(id)arg1;
 - (void)cancelSearch;
-- (void)completerDidUpdateResults:(id)arg1 finished:(BOOL)arg2;
+- (void)completerDidUpdateResults:(id)arg1 finished:(bool)arg2;
 - (id)conferenceRoomSearchResults;
 - (id)contactsSearchResults;
 - (id)currentLocation;
 - (void)dealloc;
 - (void)dedupeResults;
 - (id)delegate;
-- (id)dictionaryForCLLocation:(id)arg1;
 - (id)eventsSearchResults;
 - (id)frequentsSearchResults;
 - (void)getCurrentLocation;
@@ -65,13 +65,14 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)mapCompletionSearchResults;
 - (id)recentsSearchResults;
+- (bool)removeRecentLocation:(id)arg1;
 - (void)resetConferenceRoomSearchResults;
 - (void)resetContactsSearchResults;
 - (void)resetEventsSearchResults;
-- (void)resetSearchResults:(BOOL)arg1;
+- (void)resetSearchResults:(bool)arg1;
 - (void)searchConferenceRooms:(id)arg1;
 - (void)searchFrequentLocations:(id)arg1;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(bool)arg3;
 - (void)selectCurrentLocation;
 - (void)selectLocation:(id)arg1;
 - (void)selectMapSearchCompletion:(id)arg1;

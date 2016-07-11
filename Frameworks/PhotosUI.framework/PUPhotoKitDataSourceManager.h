@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoKitDataSourceManager : PUAssetsDataSourceManager <PUPhotosDataSourceChangeObserver> {
-    PUPhotosDataSource * _photosDataSource;
+@interface PUPhotoKitDataSourceManager : PUAssetsDataSourceManager <PXPhotosDataSourceChangeObserver> {
+    PXPhotosDataSource * _photosDataSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) PUPhotosDataSource *photosDataSource;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PXPhotosDataSource *photosDataSource;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -18,6 +18,7 @@
 - (id)initWithPhotosDataSource:(id)arg1;
 - (id)photosDataSource;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
+- (id)photosDataSourceInterestingAssetReferences:(id)arg1;
 - (void)setPhotosDataSource:(id)arg1;
 - (void)updateWithPhotosDataSource:(id)arg1 andDataSourceChange:(id)arg2;
 

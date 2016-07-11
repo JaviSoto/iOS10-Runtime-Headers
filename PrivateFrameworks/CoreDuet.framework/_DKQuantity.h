@@ -10,18 +10,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property double doubleValue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) _DKQuantityType *quantityType;
 @property (readonly) Class superclass;
 
 + (id)entityName;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
 + (id)quantityWithDouble:(double)arg1 type:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)compareValue:(id)arg1;
-- (BOOL)copyFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (long long)compareValue:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
@@ -32,7 +32,6 @@
 - (id)quantityType;
 - (void)setDoubleValue:(double)arg1;
 - (void)setQuantityType:(id)arg1;
-- (double)valueDouble;
-- (long long)valueInteger;
+- (id)stringValue;
 
 @end

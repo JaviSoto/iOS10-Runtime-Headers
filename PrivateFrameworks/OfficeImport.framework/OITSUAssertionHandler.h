@@ -4,7 +4,7 @@
 
 @interface OITSUAssertionHandler : NSObject
 
-+ (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4;
++ (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(long long)arg3 description:(id)arg4;
 + (void)logBacktrace;
 + (id)performBlockIgnoringAssertions:(id /* block */)arg1;
 

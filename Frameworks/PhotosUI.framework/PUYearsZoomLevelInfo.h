@@ -9,32 +9,33 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_yearsFetchResult;
 - (struct __CFString { }*)aggregateLevelKey;
-- (id)assetsToDisplayInMapForVisualSection:(int)arg1;
+- (id)assetsToDisplayInMapForVisualSection:(long long)arg1;
 - (double)cellAspectRatioHint;
-- (int)cellFillMode;
-- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
-- (id)diagnosticsProviderForVisualSection:(int)arg1;
+- (long long)cellFillMode;
+- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(long long)arg2;
+- (unsigned long long)dateRangeFormatterPreset;
+- (id)diagnosticsProviderForVisualSection:(long long)arg1;
 - (id)displayTitle;
-- (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
-- (int)imageDeliveryMode;
-- (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
-- (int)maxRowsPerSection;
+- (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(long long)arg3;
+- (long long)imageDeliveryMode;
+- (id)initWithZoomLevel:(unsigned long long)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
+- (long long)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
 - (id)momentsInCollectionList:(id)arg1;
 - (id)newCollectionViewLayout;
-- (int)numberOfVisualSectionsForSectionedGridLayout:(id)arg1;
+- (long long)numberOfVisualSectionsForSectionedGridLayout:(id)arg1;
 - (id)renderedStripsElementKind;
 - (id)sectionHeaderElementKind;
-- (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(int)arg2;
-- (BOOL)supportsIncrementalChangeNotifications;
-- (struct CGSize { float x1; float x2; })thumbnailImageSize;
-- (void)updateLayoutMetricsForWidth:(float)arg1;
+- (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(long long)arg2;
+- (bool)supportsIncrementalChangeNotifications;
+- (struct CGSize { double x1; double x2; })thumbnailImageSize;
+- (void)updateLayoutMetricsForWidth:(double)arg1;
 - (void)willShowMagnifiedViewController:(id)arg1;
 
 @end

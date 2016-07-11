@@ -19,6 +19,7 @@
 - (id)serverRepresentationForReceivingPlayer:(id)arg1;
 - (void)setLeaderboard:(id)arg1;
 - (void)setScore:(id)arg1;
-- (unsigned int)type;
+- (id)titleText;
+- (unsigned long long)type;
 
 @end

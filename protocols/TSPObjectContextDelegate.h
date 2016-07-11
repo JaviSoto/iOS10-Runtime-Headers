@@ -7,27 +7,30 @@
 
 - (void)addPersistenceWarnings:(NSSet *)arg1;
 - (NSDictionary *)additionalDocumentPropertiesForWrite;
-- (BOOL)areExternalReferencesToDataAllowedAtURL:(NSURL *)arg1;
-- (BOOL)areNewExternalReferencesToDataAllowed;
+- (NSDictionary *)additionalDocumentSupportPropertiesForWrite;
+- (bool)areExternalReferencesToDataAllowedAtURL:(NSURL *)arg1;
+- (bool)areNewExternalReferencesToDataAllowed;
 - (NSUUID *)baseUUIDForObjectUUID;
 - (void)context:(TSPObjectContext *)arg1 didDownloadDocumentResources:(NSArray *)arg2 failedOrCancelledDocumentResources:(NSArray *)arg3 error:(NSError *)arg4;
 - (void)context:(TSPObjectContext *)arg1 didDownloadRemoteData:(TSPData *)arg2 error:(NSError *)arg3;
+- (void)context:(TSPObjectContext *)arg1 willFailToAutosaveDueToDuplicateUUIDs:(NSSet *)arg2 objectReferenceMap:(TSPObjectReferenceMap *)arg3;
 - (void)didLoadDocumentWrittenByPreviousVersion;
 - (NSString *)documentPasswordHintForWrite;
 - (<NSFilePresenter> *)filePresenter;
 - (void)gilligan_data:(TSPData *)arg1 didMoveFromPackageIdentifier:(unsigned char)arg2 packageLocator:(NSString *)arg3 toPackageIdentifier:(unsigned char)arg4 packageLocator:(NSString *)arg5;
-- (BOOL)gilligan_isRemoteData:(TSPData *)arg1;
-- (BOOL)ignoreDocumentSupport;
-- (BOOL)isDocumentSupportTemporary;
-- (BOOL)isInCollaborationMode;
-- (BOOL)isInReadOnlyMode;
+- (bool)gilligan_isRemoteData:(TSPData *)arg1;
+- (bool)ignoreDocumentSupport;
+- (bool)isDocumentSupportTemporary;
+- (bool)isInCollaborationModeForContext:(TSPObjectContext *)arg1;
+- (bool)isInReadOnlyModeForContext:(TSPObjectContext *)arg1;
 - (void)makeDocumentReadOnly;
 - (NSDictionary *)packageDataForWrite;
-- (NSSet *)persistenceWarningsForData:(TSPData *)arg1 flags:(unsigned int)arg2;
+- (NSSet *)persistenceWarningsForData:(TSPData *)arg1 flags:(unsigned long long)arg2;
 - (void)presentPersistenceError:(NSError *)arg1;
-- (BOOL)preserveDocumentRevisionIdentifierForSaveURL:(NSURL *)arg1;
+- (bool)preserveDocumentRevisionIdentifierForSaveURL:(NSURL *)arg1;
+- (void)requestAutosave;
 - (void)resumeAutosave;
-- (BOOL)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1;
+- (bool)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1;
 - (void)suspendAutosave;
 
 @end

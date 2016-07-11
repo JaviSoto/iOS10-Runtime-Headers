@@ -4,7 +4,7 @@
 
 @interface AXMutableReplayableGesture : AXReplayableGesture
 
-- (void)addPointsByFingerIdentifier:(id)arg1 atTime:(double)arg2;
+- (void)addPointsByFingerIdentifier:(id)arg1 forces:(id)arg2 atTime:(double)arg3;
 - (void)addPointsFromReplayableGesture:(id)arg1;
 
 @end

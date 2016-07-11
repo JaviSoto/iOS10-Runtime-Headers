@@ -48,6 +48,7 @@
 @property (nonatomic, retain) NSMutableDictionary *kvPairs;
 @property (retain) NSNumber *logDuration;
 
++ (id)entryEventBackwardDefinitionBBMav16HwRfWCDMA;
 + (id)entryEventBackwardDefinitionBBMavHwRfWCDMA;
 
 - (void).cxx_destruct;

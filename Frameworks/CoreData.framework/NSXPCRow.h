@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSXPCRow : NSExternalRefCountedData {
+@interface NSXPCRow : NSPersistentCacheRow {
     id  _node;
 }
 

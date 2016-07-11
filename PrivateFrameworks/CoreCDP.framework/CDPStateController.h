@@ -2,32 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
  */
 
-@interface CDPStateController : NSObject {
-    CDPContext * _context;
-    BOOL  _didAttemptToEnableiCDP;
-    struct __MKBAssertion { } * _lockAssertion;
-    <CDPStateUIProvider> * _uiProvider;
-}
+@interface CDPStateController : CDPController
 
-@property (nonatomic, readonly) CDPContext *context;
-@property (nonatomic, retain) <CDPStateUIProvider> *uiProvider;
-
-- (void).cxx_destruct;
-- (void)_attemptBackupRecoveryWithLocalSecret:(id)arg1 type:(unsigned int)arg2 useCachedSecret:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)_cancelPendingCircleJoinWithCompletion:(id /* block */)arg1;
-- (void)_checkiCDPStatusWithCompletion:(id /* block */)arg1;
-- (void)_enableCDPWithCompletion:(id /* block */)arg1;
-- (void)_enableSecureBackupWithCompletion:(id /* block */)arg1;
-- (void)_handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
-- (void)_joinCDPCircleWithCompletion:(id /* block */)arg1;
-- (void)_preflightAccountStateCompletion:(id /* block */)arg1;
-- (void)_recoverSecureBackupWithCompletion:(id /* block */)arg1;
-- (void)_resetAccountCDPStateWithCompletion:(id /* block */)arg1;
-- (void)_secureBackupRecordsArePresentWithCompletion:(id /* block */)arg1;
-- (id)context;
+- (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
+- (void)getStingrayDisableEligibilityWithCompletion:(id /* block */)arg1;
+- (void)getStringrayStatusWithCompletion:(id /* block */)arg1;
 - (void)handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
-- (id)initWithContext:(id)arg1;
-- (void)setUiProvider:(id)arg1;
-- (id)uiProvider;
+- (void)handleURLActionWithInfo:(id)arg1;
+- (void)handleURLActionWithInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)preflightStingrayDisableWithCompletion:(id /* block */)arg1;
+- (void)repairCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
+- (void)setStingrayState:(bool)arg1 completion:(id /* block */)arg2;
+- (bool)shouldPerformRepair:(id*)arg1;
 
 @end

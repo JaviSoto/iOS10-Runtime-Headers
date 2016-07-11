@@ -4,23 +4,23 @@
 
 @interface SUAutoInstallOperation : NSObject <SUAutoInstallOperationClientHandler> {
     int  _agreementStatus;
-    BOOL  _canceled;
+    bool  _canceled;
     SUManagerClient * _client;
     <SUAutoInstallOperationDelegate> * _delegate;
-    BOOL  _expired;
+    bool  _expired;
     SUAutoInstallForecast * _forecast;
     NSUUID * _id;
     SUAutoInstallForecast * forecast;
 }
 
 @property (nonatomic) int agreementStatus;
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
+@property (getter=isCanceled, nonatomic, readonly) bool canceled;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUAutoInstallOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (nonatomic, readonly, retain) SUAutoInstallForecast *forecast;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSUUID *id;
 @property (readonly) Class superclass;
 
@@ -37,8 +37,8 @@
 - (id)id;
 - (id)init;
 - (id)initWithAutoInstallOperationModel:(id)arg1 client:(id)arg2;
-- (BOOL)isCanceled;
-- (BOOL)isExpired;
+- (bool)isCanceled;
+- (bool)isExpired;
 - (void)setAgreementStatus:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)uniqueIdentifier;

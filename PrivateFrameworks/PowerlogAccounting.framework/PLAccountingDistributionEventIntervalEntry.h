@@ -10,6 +10,5 @@
 
 - (id)initWithDistributionID:(id)arg1 withChildNodeIDToWeight:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (id)initWithDistributionID:(id)arg1 withChildNodeNameToWeight:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
-- (void)mergeWithEvent:(id)arg1;
 
 @end

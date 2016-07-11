@@ -4,7 +4,8 @@
 
 @interface PUPhotoKitShareActionPerformer : PUPhotoKitActionPerformer
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 - (id)_assetsFetchResultByAssetCollectionFromCollectionListFetchResult:(id)arg1 inDataSource:(id)arg2;
 - (void)_displayShareSheetWithCompletion:(id /* block */)arg1;

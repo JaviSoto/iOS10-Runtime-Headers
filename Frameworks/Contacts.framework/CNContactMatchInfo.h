@@ -2,21 +2,30 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNContactMatchInfo : NSObject {
+@interface CNContactMatchInfo : NSObject <NSSecureCoding> {
     NSAttributedString * _excerpt;
+    bool  _matchedNameProperty;
     NSDictionary * _matchedProperties;
     NSNumber * _relevanceScore;
 }
 
 @property (nonatomic, retain) NSAttributedString *excerpt;
+@property (nonatomic) bool matchedNameProperty;
 @property (nonatomic, copy) NSDictionary *matchedProperties;
 @property (nonatomic, copy) NSNumber *relevanceScore;
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)excerpt;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)matchedNameProperty;
 - (id)matchedProperties;
 - (id)relevanceScore;
 - (void)setExcerpt:(id)arg1;
+- (void)setMatchedNameProperty:(bool)arg1;
 - (void)setMatchedProperties:(id)arg1;
 - (void)setRelevanceScore:(id)arg1;
 

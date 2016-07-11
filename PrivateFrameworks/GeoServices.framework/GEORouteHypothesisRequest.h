@@ -5,8 +5,10 @@
 @interface GEORouteHypothesisRequest : PBRequest <NSCopying> {
     double  _arrivalDate;
     GEOMapItemStorage * _destinationLocation;
+    double  _expirationDate;
     struct { 
         unsigned int arrivalDate : 1; 
+        unsigned int expirationDate : 1; 
         unsigned int transportType : 1; 
     }  _has;
     int  _transportType;
@@ -14,11 +16,14 @@
 
 @property (nonatomic) double arrivalDate;
 @property (nonatomic, retain) GEOMapItemStorage *destinationLocation;
-@property (nonatomic) BOOL hasArrivalDate;
-@property (nonatomic, readonly) BOOL hasDestinationLocation;
-@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) double expirationDate;
+@property (nonatomic) bool hasArrivalDate;
+@property (nonatomic, readonly) bool hasDestinationLocation;
+@property (nonatomic) bool hasExpirationDate;
+@property (nonatomic) bool hasTransportType;
 @property (nonatomic) int transportType;
 
+- (int)StringAsTransportType:(id)arg1;
 - (double)arrivalDate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,19 +31,24 @@
 - (id)description;
 - (id)destinationLocation;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArrivalDate;
-- (BOOL)hasDestinationLocation;
-- (BOOL)hasTransportType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (double)expirationDate;
+- (bool)hasArrivalDate;
+- (bool)hasDestinationLocation;
+- (bool)hasExpirationDate;
+- (bool)hasTransportType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArrivalDate:(double)arg1;
 - (void)setDestinationLocation:(id)arg1;
-- (void)setHasArrivalDate:(BOOL)arg1;
-- (void)setHasTransportType:(BOOL)arg1;
+- (void)setExpirationDate:(double)arg1;
+- (void)setHasArrivalDate:(bool)arg1;
+- (void)setHasExpirationDate:(bool)arg1;
+- (void)setHasTransportType:(bool)arg1;
 - (void)setTransportType:(int)arg1;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

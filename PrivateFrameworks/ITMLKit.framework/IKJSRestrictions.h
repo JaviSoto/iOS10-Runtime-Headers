@@ -4,30 +4,30 @@
 
 @interface IKJSRestrictions : IKJSObject <IKJSRestrictions, JSExport>
 
-@property (nonatomic, readonly) BOOL allowArtistActivity;
-@property (nonatomic, readonly) BOOL allowsErotica;
-@property (nonatomic, readonly) BOOL allowsExplicit;
-@property (nonatomic, readonly) BOOL appAnalyticsAllowed;
-@property (nonatomic, readonly) BOOL appInstallationAllowed;
-@property (nonatomic, readonly) int maxAppRank;
+@property (nonatomic, readonly) bool allowArtistActivity;
+@property (nonatomic, readonly) bool allowsErotica;
+@property (nonatomic, readonly) bool allowsExplicit;
+@property (nonatomic, readonly) bool appAnalyticsAllowed;
+@property (nonatomic, readonly) bool appInstallationAllowed;
+@property (nonatomic, readonly) long long maxAppRank;
 @property (nonatomic, readonly) NSString *maxAppRating;
-@property (nonatomic, readonly) int maxMovieRank;
-@property (nonatomic, readonly) int maxTVShowRank;
+@property (nonatomic, readonly) long long maxMovieRank;
+@property (nonatomic, readonly) long long maxTVShowRank;
 
 + (id)restrictionsDidChangeNotificationName;
 
 - (id)_contentRestrictionsCountryCode;
 - (id)_ratingForSetting:(id)arg1 domain:(id)arg2 countryCode:(id)arg3;
-- (BOOL)allowArtistActivity;
-- (BOOL)allowsErotica;
-- (BOOL)allowsExplicit;
-- (BOOL)appAnalyticsAllowed;
-- (BOOL)appInstallationAllowed;
-- (int)maxAppRank;
+- (bool)allowArtistActivity;
+- (bool)allowsErotica;
+- (bool)allowsExplicit;
+- (bool)appAnalyticsAllowed;
+- (bool)appInstallationAllowed;
+- (long long)maxAppRank;
 - (id)maxAppRating;
-- (int)maxMovieRank;
+- (long long)maxMovieRank;
 - (id)maxMovieRatingForCountry:(id)arg1;
-- (int)maxTVShowRank;
+- (long long)maxTVShowRank;
 - (id)maxTVShowRatingForCountry:(id)arg1;
 
 @end

@@ -2,16 +2,30 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPDSearchFieldPlaceholderParameters : PBCodable <NSCopying>
+@interface GEOPDSearchFieldPlaceholderParameters : PBCodable <NSCopying> {
+    struct { 
+        unsigned int version : 1; 
+    }  _has;
+    int  _version;
+}
 
+@property (nonatomic) bool hasVersion;
+@property (nonatomic) int version;
+
+- (int)StringAsVersion:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasVersion:(bool)arg1;
+- (void)setVersion:(int)arg1;
+- (int)version;
+- (id)versionAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -7,16 +7,19 @@
     NSString * _cookieURL;
     id  _isURLBagDidLoadToken;
     NSNumber * _lastAccountDSID;
+    NSDictionary * _lastKnownStatusDictionary;
     SSMetricsController * _metricsController;
     ISLoadURLBagOperation * _pendingBagOperation;
     id  _ssAccountStoreChangedToken;
     NSString * _storeFrontSuffix;
+    id  _subscriptionStatusDidChangeToken;
 }
 
 @property (nonatomic, readonly) NSString *DSID;
 @property (nonatomic, readonly) NSDictionary *accountInfo;
 @property (nonatomic, retain) id cookie;
 @property (nonatomic, retain) NSString *cookieURL;
+@property (getter=isManagedAppleID, nonatomic, readonly) bool managedAppleID;
 @property (nonatomic, readonly) NSString *networkConnectionType;
 @property (nonatomic) ISLoadURLBagOperation *pendingBagOperation;
 @property (nonatomic, retain) NSString *storefront;
@@ -30,8 +33,9 @@
 - (id)DSID;
 - (void)_accountStoreChanged;
 - (void)_bagDidLoadNotification:(id)arg1;
-- (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(BOOL)arg2;
-- (void)_updateBag:(BOOL)arg1;
+- (void)_subscriptionStatusChanged;
+- (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(bool)arg2;
+- (void)_updateBag:(bool)arg1;
 - (void)_updateWithBag:(id)arg1;
 - (id)accountInfo;
 - (void)authenticate:(id)arg1 :(id)arg2;
@@ -46,6 +50,7 @@
 - (void)getServiceEligibility:(id)arg1 :(id)arg2;
 - (id)initWithAppContext:(id)arg1;
 - (void)invalidateBag;
+- (bool)isManagedAppleID;
 - (void)loadStoreContent:(id)arg1 :(id)arg2;
 - (id)makeStoreXMLHttpRequest;
 - (id)networkConnectionType;

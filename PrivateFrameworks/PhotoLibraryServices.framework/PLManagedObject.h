@@ -4,15 +4,17 @@
 
 @interface PLManagedObject : NSManagedObject
 
-@property (nonatomic, readonly) BOOL isRegisteredWithUserInterfaceContext;
+@property (nonatomic, readonly) bool isRegisteredWithUserInterfaceContext;
 @property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 @property (nonatomic, readonly, copy) NSString *pl_shortDescription;
 @property (nonatomic, readonly, copy) NSString *shortObjectIDURI;
 
-- (BOOL)isRegisteredWithUserInterfaceContext;
+- (bool)isRegisteredWithUserInterfaceContext;
+- (bool)isSyncableChange;
 - (id)photoLibrary;
 - (id)pl_shortDescription;
 - (id)shortObjectIDURI;
+- (bool)supportsCloudUpload;
 - (void)willSave;
 
 @end

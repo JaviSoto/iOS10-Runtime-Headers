@@ -15,9 +15,9 @@
 - (id)assetForFlavor:(id)arg1;
 - (id)assets;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithItemDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)itemDictionary;
 - (id)itemIdentifier;
 

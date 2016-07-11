@@ -21,15 +21,18 @@
 @property (nonatomic, copy) id /* block */ sectionParametersProvider;
 
 - (void).cxx_destruct;
-- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(BOOL)arg2 withQueue:(id)arg3 andCompletion:(id /* block */)arg4;
-- (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 waitForAcknowledgement:(BOOL)arg4 withQueue:(id)arg5 andCompletion:(id /* block */)arg6;
+- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(bool)arg2 withQueue:(id)arg3 spoolToFile:(bool)arg4 andCompletion:(id /* block */)arg5;
+- (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(long long)arg3 waitForAcknowledgement:(bool)arg4 withQueue:(id)arg5 spoolToFile:(bool)arg6 andCompletion:(id /* block */)arg7;
+- (void)_sendSectionInfoWithSectionID:(unsigned long long)arg1 usingProvider:(id /* block */)arg2 updateProgress:(id /* block */)arg3 sendCompleted:(id /* block */)arg4 sendAttempt:(unsigned long long)arg5 waitForAcknowledgement:(bool)arg6 group:(id)arg7 spoolToFile:(bool)arg8;
 - (id)iconWhitelist;
 - (id)init;
+- (id)initWithMaxConcurrentSendCount:(unsigned long long)arg1;
 - (id /* block */)sectionIconSender;
 - (id /* block */)sectionInfoSender;
 - (id /* block */)sectionParametersProvider;
-- (void)sendEffectiveSectionInfos:(id)arg1 usingProvider:(id /* block */)arg2 count:(unsigned int)arg3 completion:(id /* block */)arg4 progress:(id /* block */)arg5;
-- (void)sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)sendEffectiveSectionInfosUsingProvider:(id /* block */)arg1 count:(unsigned long long)arg2 sectionInfoSendCompleted:(id /* block */)arg3 completion:(id /* block */)arg4 progress:(id /* block */)arg5 spoolToFile:(bool)arg6;
+- (void)sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(bool)arg3 spoolToFile:(bool)arg4 completion:(id /* block */)arg5;
+- (void)sendSpooledRequestsNowWithSender:(id /* block */)arg1 completion:(id /* block */)arg2 progress:(id /* block */)arg3;
 - (void)setIconWhitelist:(id)arg1;
 - (void)setSectionIconSender:(id /* block */)arg1;
 - (void)setSectionInfoSender:(id /* block */)arg1;

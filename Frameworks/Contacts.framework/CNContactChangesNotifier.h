@@ -4,34 +4,31 @@
 
 @interface CNContactChangesNotifier : NSObject {
     CNContactStore * _contactStore;
-    NSArray * _fetchers;
-    BOOL  _observingNotification;
+    bool  _observingNotification;
     CNMutableMultiDictionary * _registeredObservers;
 }
 
 @property (nonatomic, retain) CNContactStore *contactStore;
-@property (nonatomic, retain) NSArray *fetchers;
-@property BOOL observingNotification;
+@property bool observingNotification;
 @property (nonatomic, retain) CNMutableMultiDictionary *registeredObservers;
 
 + (id)sharedNotifier;
 
 - (void).cxx_destruct;
-- (BOOL)_unregisterObserver:(id)arg1 forIdentifier:(id)arg2;
-- (void)_updateFetchers;
+- (id)_fetchers;
+- (bool)_unregisterObserver:(id)arg1 forIdentifier:(id)arg2;
 - (void)_updateObservers;
 - (void)_updateObserving;
 - (id)contactStore;
 - (void)contactStoreDidChange:(id)arg1;
-- (id)fetchers;
 - (id)init;
 - (id)initWithContactStore:(id)arg1;
-- (BOOL)observingNotification;
+- (bool)observingNotification;
 - (void)registerObserver:(id)arg1 forContact:(id)arg2;
+- (void)registerObserver:(id)arg1 forContact:(id)arg2 keysToFetch:(id)arg3;
 - (id)registeredObservers;
 - (void)setContactStore:(id)arg1;
-- (void)setFetchers:(id)arg1;
-- (void)setObservingNotification:(BOOL)arg1;
+- (void)setObservingNotification:(bool)arg1;
 - (void)setRegisteredObservers:(id)arg1;
 - (void)unregisterObserver:(id)arg1 forContact:(id)arg2;
 

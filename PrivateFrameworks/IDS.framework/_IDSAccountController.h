@@ -3,12 +3,12 @@
  */
 
 @interface _IDSAccountController : NSObject <IDSDaemonListenerProtocol> {
-    BOOL  _accountsLoaded;
+    bool  _accountsLoaded;
     NSMutableSet * _cachedAccounts;
     id  _delegateContext;
     NSMapTable * _delegateToInfo;
     NSMutableSet * _enabledAccounts;
-    BOOL  _isLocalAccountVisible;
+    bool  _isLocalAccountVisible;
     NSString * _service;
     NSString * _serviceToken;
     NSMutableDictionary * _transactionIDToHandlersMap;
@@ -18,10 +18,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSSet *enabledAccounts;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
 
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4;
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4 group:(id)arg5;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_connect;

@@ -2,26 +2,28 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-@interface CacheDeleteRecentServiceInfo : NSObject <NSSecureCoding> {
-    NSNumber * _amount;
-    NSDate * _timestamp;
+@interface CacheDeleteRecentServiceInfo : CacheDeleteRecent <NSCopying, NSSecureCoding> {
+    NSDictionary * diagnostics;
+    struct { 
+        double timestamp; 
+        unsigned long long amount; 
+    }  urgencies;
 }
 
-@property (nonatomic, retain) NSNumber *amount;
-@property (nonatomic, retain) NSDate *timestamp;
-
-+ (id)cacheDeleteRecentServiceInfo:(id)arg1 timestamp:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)cacheDeleteRecentServiceInfo:(id)arg1 atUrgency:(int)arg2 pushed:(bool)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)amount;
+- (id)amountAtUrgency:(int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)diagnosticsAtUrgency:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAmount:(id)arg1 timestamp:(id)arg2;
+- (id)initWithAmount:(id)arg1 atUrgency:(int)arg2 pushed:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
-- (void)setAmount:(id)arg1;
-- (void)setTimestamp:(id)arg1;
-- (id)timestamp;
-- (BOOL)validateTimeStamp:(double)arg1;
+- (void)log;
+- (bool)updateAmount:(id)arg1 atUrgency:(int)arg2;
+- (void)updateDiagnostics:(id)arg1 atUrgency:(int)arg2;
+- (bool)validate:(double)arg1 atUrgency:(int)arg2;
 
 @end

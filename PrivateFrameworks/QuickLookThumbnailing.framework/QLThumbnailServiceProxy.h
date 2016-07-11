@@ -4,6 +4,7 @@
 
 @interface QLThumbnailServiceProxy : NSObject {
     NSXPCConnection * _connection;
+    NSObject<QLThumbnailAdditionIndexInterface> * _indexProxy;
     NSObject<QLThumbnailsInterface> * _proxy;
 }
 
@@ -14,5 +15,6 @@
 - (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)init;
+- (void)touchOrAddThumbnailAddition:(id)arg1 forURL:(id)arg2;
 
 @end

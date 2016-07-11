@@ -14,7 +14,6 @@
 - (void)addExecutionBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (id)executionBlocks;
-- (void)finalize;
 - (id)init;
 - (id)initWithBlock:(id /* block */)arg1;
 - (void)main;

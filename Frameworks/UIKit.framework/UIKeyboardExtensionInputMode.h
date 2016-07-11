@@ -11,18 +11,19 @@
 - (id)containingBundle;
 - (id)containingBundleDisplayName;
 - (void)dealloc;
-- (BOOL)defaultLayoutIsASCIICapable;
+- (bool)defaultLayoutIsASCIICapable;
 - (id)displayName;
 - (id)extendedDisplayName;
 - (id)extension;
 - (id)hardwareLayout;
 - (id)identifierWithLayouts;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isAllowedForTraits:(id)arg1;
-- (BOOL)isDefaultRightToLeft;
-- (BOOL)isDesiredForTraits:(id)arg1 forceASCIICapable:(BOOL)arg2;
-- (BOOL)isExtensionInputMode;
+- (bool)isAllowedForTraits:(id)arg1;
+- (bool)isDefaultRightToLeft;
+- (bool)isDesiredForTraits:(id)arg1;
+- (bool)isExtensionInputMode;
 - (id)normalizedIdentifierLevels;
 - (void)setExtension:(id)arg1;
+- (void)setPrimaryLanguage:(id)arg1;
 
 @end

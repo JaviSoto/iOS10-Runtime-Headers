@@ -18,6 +18,7 @@
 
 @property (nonatomic, retain) TDThemeDirection *direction;
 @property (nonatomic, retain) TDThemeElement *element;
+@property (nonatomic, retain) TDThemeDisplayGamut *gamut;
 @property (nonatomic, retain) TDThemeGraphicsFeatureSetClass *graphicsFeatureSetClass;
 @property (nonatomic, retain) TDThemeIdiom *idiom;
 @property (nonatomic, retain) TDThemeDrawingLayer *layer;
@@ -29,11 +30,12 @@
 @property (nonatomic, retain) TDThemeUISizeClass *sizeClassHorizontal;
 @property (nonatomic, retain) TDThemeUISizeClass *sizeClassVertical;
 @property (nonatomic, retain) TDThemeState *state;
+@property (nonatomic, retain) TDThemeDeploymentTarget *target;
 @property (nonatomic, retain) TDThemeValue *value;
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
-- (int)attributeCount;
+- (long long)attributeCount;
 - (void)copyAttributesInto:(id)arg1;
 - (id)copyDataFromAttributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

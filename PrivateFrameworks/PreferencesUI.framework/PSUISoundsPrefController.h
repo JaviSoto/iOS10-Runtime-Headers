@@ -3,18 +3,18 @@
  */
 
 @interface PSUISoundsPrefController : PSListController {
-    BOOL  _hasTelephony;
+    bool  _hasTelephony;
     int  _lastPlayedSound;
     double  _lastTime;
     float  _rateLimitedVolume;
     PSSpecifier * _voiceMailSpecifier;
-    int  _voiceMailSpecifierIndex;
+    long long  _voiceMailSpecifierIndex;
     float  _volume;
-    BOOL  _volumeHUDSupressed;
+    bool  _volumeHUDSupressed;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_canChangeRingtoneWithButtons;
+- (bool)_canChangeRingtoneWithButtons;
 - (int)_deviceType;
 - (id)canChangeRingtoneWithButtons:(id)arg1;
 - (void)dealloc;
@@ -23,7 +23,7 @@
 - (void)didLock;
 - (void)endInterruption;
 - (id)init;
-- (void)playSound:(int)arg1;
+- (void)playSystemSound:(int)arg1;
 - (void)setCanChangeRingtoneWithButtons:(id)arg1 specifier:(id)arg2;
 - (void)setPlayKeyboardSound:(id)arg1 specifier:(id)arg2;
 - (void)setPlayLockSound:(id)arg1 specifier:(id)arg2;
@@ -31,17 +31,17 @@
 - (void)setVibrate:(id)arg1 specifier:(id)arg2;
 - (void)setVolume:(id)arg1 specifier:(id)arg2;
 - (void)setVolumeAfterRateLimiting;
-- (void)setVolumeHUDSupression:(BOOL)arg1;
+- (void)setVolumeHUDSupression:(bool)arg1;
 - (id)shouldPlayCalendarSound:(id)arg1;
-- (void)showController:(id)arg1 animate:(BOOL)arg2;
+- (void)showController:(id)arg1 animate:(bool)arg2;
 - (id)soundEffects:(id)arg1;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)updateVoiceMailVisibility;
 - (void)updateVolume;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)volume:(id)arg1;
 - (void)volumeChangedExternally:(id)arg1;
 - (void)willBecomeActive;

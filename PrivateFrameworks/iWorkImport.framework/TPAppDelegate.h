@@ -3,8 +3,8 @@
  */
 
 @interface TPAppDelegate : TSABaseApplicationDelegate {
-    BOOL  _appDoneLaunching;
-    BOOL  _cachedBidiIsSupported;
+    bool  _appDoneLaunching;
+    bool  _cachedBidiIsSupported;
 }
 
 @property (nonatomic, readonly) NSArray *wordDocumentTypes;
@@ -14,6 +14,7 @@
 - (id)appChartPropertyOverrides;
 - (id)applicationName;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (id)bladerunnerContainerIdentifier;
 - (id)cloudKitContainerIdentifier;
 - (id)createCompatibilityDelegate;
 - (void)dealloc;
@@ -41,16 +42,18 @@
 - (id)stringForDocumentUpdatedByOwnerWithKeepDetails;
 - (id)stringForDocumentUpdatedTitle;
 - (id)stringForLearnMoreSharingURL;
+- (id)stringForOwnerPasswordOnConflictAlertMessage;
+- (id)stringForOwnerPasswordOnConflictAlertTitle;
 - (id)stringForRemoteVersionRestorationAlertMessage;
 - (id)stringForRemoteVersionRestorationWithUnsavedChangesAlertMessage;
 - (id)stringForUpdatingDocument;
-- (BOOL)supportsRTL;
-- (BOOL)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
+- (bool)supportsRTL;
+- (bool)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
-- (BOOL)textInspectorShowsMoreSubpane;
+- (bool)textInspectorShowsMoreSubpane;
 - (id)wordDocumentTypes;
 
 @end

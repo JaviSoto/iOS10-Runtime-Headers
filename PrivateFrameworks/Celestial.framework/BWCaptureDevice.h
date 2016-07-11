@@ -10,23 +10,21 @@
 @property (nonatomic, readonly) int position;
 @property (nonatomic, readonly) NSArray *supportedFormats;
 
-- (int)activeFormatIndex;
-- (void)captureStillImageBracketNow:(int)arg1 bracketSettings:(id)arg2;
-- (void)captureStillImageNow;
-- (void)captureStillImageWithFlashNow;
+- (long long)activeFormatIndex;
+- (int)captureStillImageNowWithSettings:(id)arg1;
 - (struct OpaqueCMClock { }*)clock;
 - (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1;
-- (BOOL)isStreaming;
 - (float)maximumFrameRate;
 - (float)minimumFrameRate;
 - (int)position;
-- (BOOL)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
-- (void)setActiveFormatIndex:(int)arg1;
+- (bool)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
+- (void)setActiveFormatIndex:(long long)arg1;
 - (void)setMaximumFrameRate:(float)arg1;
 - (void)setMinimumFrameRate:(float)arg1;
-- (BOOL)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
-- (BOOL)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
+- (bool)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
+- (id)stillImageCaptureSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg2 deliverOriginalImage:(bool)arg3 deliverSushiRaw:(bool)arg4 includePreBracketedEV0ForProcessing:(bool)arg5 clientBracketSettings:(id)arg6;
+- (bool)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (id)supportedFormats;
-- (BOOL)unregisterStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
+- (bool)unregisterStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 
 @end

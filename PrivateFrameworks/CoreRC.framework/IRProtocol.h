@@ -15,16 +15,17 @@
 @property (nonatomic, readonly) double repeatInterval;
 
 + (id)protocolWithID:(unsigned char)arg1 options:(unsigned char)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)protocolWithID:(unsigned char)arg1 options:(unsigned char)arg2 hasRepeats:(bool)arg3;
++ (bool)supportsSecureCoding;
 
 - (double)carrierFrequency;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned char)options;
 - (unsigned char)protocolID;
 - (double)repeatInterval;

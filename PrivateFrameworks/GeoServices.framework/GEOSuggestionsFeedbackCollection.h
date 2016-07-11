@@ -8,7 +8,7 @@
         unsigned int suggestionEntryIndex : 1; 
         unsigned int suggestionsEntryListIndex : 1; 
     }  _has;
-    struct { 
+    struct GEOSessionID { 
         unsigned long long _high; 
         unsigned long long _low; 
     }  _sessionID;
@@ -19,13 +19,13 @@
     int  _suggestionsEntryListIndex;
 }
 
-@property (nonatomic) BOOL hasSessionID;
-@property (nonatomic, readonly) BOOL hasSuggestionEntry;
-@property (nonatomic) BOOL hasSuggestionEntryIndex;
-@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
-@property (nonatomic, readonly) BOOL hasSuggestionMetadata;
-@property (nonatomic) BOOL hasSuggestionsEntryListIndex;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) bool hasSessionID;
+@property (nonatomic, readonly) bool hasSuggestionEntry;
+@property (nonatomic) bool hasSuggestionEntryIndex;
+@property (nonatomic, readonly) bool hasSuggestionEntryMetadata;
+@property (nonatomic, readonly) bool hasSuggestionMetadata;
+@property (nonatomic) bool hasSuggestionsEntryListIndex;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic, retain) GEOPDAutocompleteEntry *suggestionEntry;
 @property (nonatomic) int suggestionEntryIndex;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
@@ -37,21 +37,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSessionID;
-- (BOOL)hasSuggestionEntry;
-- (BOOL)hasSuggestionEntryIndex;
-- (BOOL)hasSuggestionEntryMetadata;
-- (BOOL)hasSuggestionMetadata;
-- (BOOL)hasSuggestionsEntryListIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSessionID;
+- (bool)hasSuggestionEntry;
+- (bool)hasSuggestionEntryIndex;
+- (bool)hasSuggestionEntryMetadata;
+- (bool)hasSuggestionMetadata;
+- (bool)hasSuggestionsEntryListIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
-- (void)setHasSessionID:(BOOL)arg1;
-- (void)setHasSuggestionEntryIndex:(BOOL)arg1;
-- (void)setHasSuggestionsEntryListIndex:(BOOL)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)readFrom:(id)arg1;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
+- (void)setHasSessionID:(bool)arg1;
+- (void)setHasSuggestionEntryIndex:(bool)arg1;
+- (void)setHasSuggestionsEntryListIndex:(bool)arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSuggestionEntry:(id)arg1;
 - (void)setSuggestionEntryIndex:(int)arg1;
 - (void)setSuggestionEntryMetadata:(id)arg1;

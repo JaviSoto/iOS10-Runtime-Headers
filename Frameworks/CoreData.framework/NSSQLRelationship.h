@@ -17,7 +17,7 @@
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)inverseRelationship;
-- (BOOL)isOrdered;
+- (bool)isOrdered;
 - (id)relationshipDescription;
 - (id)sourceEntity;
 

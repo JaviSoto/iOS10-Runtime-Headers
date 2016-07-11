@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>vCard.framework</TITLE>
+</HEAD>
+<BODY>
+<code>
+<pre>
+   ___          _   _             ___
+  | _ \_  _ _ _| |_(_)_ __  ___  | _ )_ _ _____ __ _____ ___ _ _
+  |   / || | ' \  _| | '  \/ -_) | _ \ '_/ _ \ V  V (_-// -_) '_|
+  |_|_\\_,_|_||_\__|_|_|_|_\___| |___/_| \___/\_/\_//__/\___|_|
+  
+ -------------------------------------------------------------------------------
+
+
+/PrivateFrameworks/vCard.framework
+66 classes
+
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCard30CardBuilder.h">CNVCard30CardBuilder.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardADRParser.h">CNVCardADRParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardActivityAlertEscapingSerializationStrategy.h">CNVCardActivityAlertEscapingSerializationStrategy.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardActivityAlertLineGenerator.h">CNVCardActivityAlertLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardActivityAlertQuotingSerializationStrategy.h">CNVCardActivityAlertQuotingSerializationStrategy.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardActivityAlertScanner.h">CNVCardActivityAlertScanner.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardActivityAlertSerialization.h">CNVCardActivityAlertSerialization.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardActivityAlertSerializer.h">CNVCardActivityAlertSerializer.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardAlternateDateComponentsLineGenerator.h">CNVCardAlternateDateComponentsLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardData.h">CNVCardData.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDataAnalyzer.h">CNVCardDataAnalyzer.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDataStorage.h">CNVCardDataStorage.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDateComponentsFormatter.h">CNVCardDateComponentsFormatter.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDateComponentsLineGenerator.h">CNVCardDateComponentsLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDateComponentsParser.h">CNVCardDateComponentsParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDateScanner.h">CNVCardDateScanner.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardDictionarySerialization.h">CNVCardDictionarySerialization.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardEmailLineGenerator.h">CNVCardEmailLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardEncoding.h">CNVCardEncoding.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardFilteredPerson.h">CNVCardFilteredPerson.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardInstantMessageParser.h">CNVCardInstantMessageParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardInstantMessagingLineGenerator.h">CNVCardInstantMessagingLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLegacyInstantMessagingLineGenerator.h">CNVCardLegacyInstantMessagingLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLexer.h">CNVCardLexer.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLine.h">CNVCardLine.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLine21SerializationStrategy.h">CNVCardLine21SerializationStrategy.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLine30SerializationStrategy.h">CNVCardLine30SerializationStrategy.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLineFactory.h">CNVCardLineFactory.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLineGenerator.h">CNVCardLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLineSerializationStrategy.h">CNVCardLineSerializationStrategy.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLineSerializationStrategyImpl.h">CNVCardLineSerializationStrategyImpl.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardLiteralLine.h">CNVCardLiteralLine.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardMutableNameComponents.h">CNVCardMutableNameComponents.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardNameComponentPostProcessor.h">CNVCardNameComponentPostProcessor.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardNameComponents.h">CNVCardNameComponents.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardNameSerialization.h">CNVCardNameSerialization.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardOptions.h">CNVCardOptions.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardPHOTOParser.h">CNVCardPHOTOParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParameter.h">CNVCardParameter.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParameterDecoder.h">CNVCardParameterDecoder.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParameterEncoder.h">CNVCardParameterEncoder.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParsedDictionaryResultBuilder.h">CNVCardParsedDictionaryResultBuilder.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParsedLine.h">CNVCardParsedLine.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParsedParameter.h">CNVCardParsedParameter.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParsedResultBuilderFactory.h">CNVCardParsedResultBuilderFactory.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardParser.h">CNVCardParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardPerson.h">CNVCardPerson.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardPhoneLineGenerator.h">CNVCardPhoneLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardProdIdString.h">CNVCardProdIdString.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardPropertyItem.h">CNVCardPropertyItem.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardReading.h">CNVCardReading.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardSelectorMap.h">CNVCardSelectorMap.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardSerializationStorage.h">CNVCardSerializationStorage.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardSocialProfileLineGenerator.h">CNVCardSocialProfileLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardStreetAddressLineGenerator.h">CNVCardStreetAddressLineGenerator.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardStringStorage.h">CNVCardStringStorage.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardURLParser.h">CNVCardURLParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardUnknownPropertyDescription.h">CNVCardUnknownPropertyDescription.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardUserDefaults.h">CNVCardUserDefaults.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardValueEncoder.h">CNVCardValueEncoder.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardVersionPlaceholderLine.h">CNVCardVersionPlaceholderLine.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardWriting.h">CNVCardWriting.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardXABPHOTOParser.h">CNVCardXABPHOTOParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardXACTIVITYALERTParser.h">CNVCardXACTIVITYALERTParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/CNVCardXSOCIALPROFILEParser.h">CNVCardXSOCIALPROFILEParser.h</A>
+<A HREF="/tree/PrivateFrameworks/vCard.framework/_CNVCardParsedResultBuilderBlockFactory.h">_CNVCardParsedResultBuilderBlockFactory.h</A>
+
+
+ -------------------------------------------------------------------------------
+
+ Source code: https://github.com/nst/RuntimeBrowser
+
+ Authors: Ezra Epstein (eepstein@prajna.com)
+          Nicolas Seriot (nicolas@seriot.ch)
+
+ Copyright (c) 2002 by Prajna IT Consulting.
+                       http://www.prajna.com
+               2015 by Nicolas Seriot
+                       http://www.seriot.ch
+
+ ========================================================================
+
+ THIS PROGRAM AND THIS CODE COME WITH ABSOLUTELY NO WARRANTY.
+ THIS CODE HAS BEEN PROVIDED "AS IS" AND THE RESPONSIBILITY
+ FOR ITS OPERATIONS IS 100% YOURS.
+
+ ========================================================================
+ 
+ RuntimeBrowser is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ RuntimeBrowser is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with RuntimeBrowser (in a file called "COPYING.txt"); if not,
+ write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+ Boston, MA  02111-1307  USA
+
+</pre>
+</code>
+</BODY>

@@ -5,9 +5,14 @@
 
 @required
 
+- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 didFinishInitialLoad:(bool)arg2;
+- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 executeCustomActivityProxyID:(NSNumber *)arg2;
+- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 fetchHostAppCustomActivitiesForURL:(NSURL *)arg2 title:(NSString *)arg3;
+- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 hostApplicationOpenURL:(NSURL *)arg2;
+- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 setSwipeGestureEnabled:(bool)arg2;
 - (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 viewServiceDidTerminateWithError:(NSError *)arg2;
-- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 willShowActivitySheetForURL:(NSURL *)arg2 title:(NSString *)arg3 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 willUpdateStatusBarStyle:(int)arg2;
+- (void)remoteViewController:(SFBrowserRemoteViewController *)arg1 willUpdateStatusBarStyle:(long long)arg2;
+- (void)remoteViewControllerDidLoadWebView:(SFBrowserRemoteViewController *)arg1;
 - (void)remoteViewControllerWillDismiss:(SFBrowserRemoteViewController *)arg1;
 
 @end

@@ -12,7 +12,7 @@
     AVCaptureMetadataOutput * _currentMetadataOutput;
     AVCaptureMovieFileOutput * _currentMovieFileOutput;
     CAMPanoramaOutput * _currentPanoramaOutput;
-    AVCaptureStillImageOutput2 * _currentStillImageOutput;
+    AVCapturePhotoOutput * _currentStillImageOutput;
     AVCaptureDevice * _currentVideoDevice;
     AVCaptureDeviceFormat * _currentVideoDeviceFormat;
     AVCaptureDeviceInput * _currentVideoDeviceInput;
@@ -31,8 +31,8 @@
 @property (nonatomic, readonly) CAMPanoramaConfiguration *currentPanoramaConfiguration;
 @property (nonatomic, retain) CAMPanoramaOutput *currentPanoramaOutput;
 @property (nonatomic, readonly) <AVCaptureFileOutputRecordingDelegate> *currentRecordingDelegate;
-@property (nonatomic, readonly) <AVCaptureStillImageOutput2CaptureDelegate> *currentStillImageDelegate;
-@property (nonatomic, retain) AVCaptureStillImageOutput2 *currentStillImageOutput;
+@property (nonatomic, readonly) <AVCapturePhotoCaptureDelegate> *currentStillImageDelegate;
+@property (nonatomic, retain) AVCapturePhotoOutput *currentStillImageOutput;
 @property (nonatomic, retain) AVCaptureDevice *currentVideoDevice;
 @property (nonatomic, retain) AVCaptureDeviceFormat *currentVideoDeviceFormat;
 @property (nonatomic, retain) AVCaptureDeviceInput *currentVideoDeviceInput;
@@ -41,6 +41,7 @@
 
 - (void).cxx_destruct;
 - (id)_captureEngine;
+- (id)_captureEngineDeviceForDevice:(long long)arg1;
 - (id)audioDeviceInput;
 - (void)clear;
 - (id)currentAudioDevice;
@@ -62,8 +63,9 @@
 - (id)currentVideoPreviewLayer;
 - (id)initWithCaptureEngine:(id)arg1;
 - (void)legacyStillImageRequest:(id)arg1 didCompleteCaptureWithResult:(id)arg2;
-- (id)metadataOutputForMode:(int)arg1;
-- (id)outputsForMode:(int)arg1;
+- (id)metadataOutputForMode:(long long)arg1;
+- (id)outputsForMode:(long long)arg1;
+- (id)primaryOutputForMode:(long long)arg1;
 - (void)registerLegacyStillImageCaptureRequest:(id)arg1;
 - (void)registerStillImageCaptureRequest:(id)arg1 withSettings:(id)arg2;
 - (void)registerVideoCaptureRequest:(id)arg1;
@@ -83,9 +85,6 @@
 - (void)setCurrentVideoPreviewLayer:(id)arg1;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
 - (void)stopPanoramaCapture;
-- (id)videoDeviceForDevice:(int)arg1;
-- (id)videoDeviceFormatForModeWithOptions:(struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })arg1 device:(int)arg2;
-- (id)videoDeviceInputForDevice:(int)arg1;
-- (id)videoDevicePresetForModeWithOptions:(struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })arg1 device:(int)arg2;
+- (id)videoDeviceForDevice:(long long)arg1;
 
 @end

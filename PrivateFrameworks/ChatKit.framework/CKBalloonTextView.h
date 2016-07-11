@@ -4,31 +4,26 @@
 
 @interface CKBalloonTextView : UITextView <NSLayoutManagerDelegate> {
     NSAttributedString * _attributedText;
-    float  _capOffsetFromBoundsTop;
-    float  _lastLineBaselineOffsetFromBoundsTop;
-    BOOL  _singleLine;
+    <CKBalloonTextViewInteractionDelegate> * _interactionDelegate;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;
-@property (nonatomic) float capOffsetFromBoundsTop;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float lastLineBaselineOffsetFromBoundsTop;
-@property (getter=isSingleLine, nonatomic) BOOL singleLine;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) <CKBalloonTextViewInteractionDelegate> *interactionDelegate;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (void)_interactionStartedFromPreviewItemController:(id)arg1;
+- (void)_interactionStoppedFromPreviewItemController:(id)arg1;
 - (id)attributedText;
-- (float)capOffsetFromBoundsTop;
-- (void)dealloc;
+- (id)description;
 - (void)didMoveToWindow;
-- (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
-- (BOOL)isSingleLine;
-- (float)lastLineBaselineOffsetFromBoundsTop;
+- (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)interactionDelegate;
 - (void)setAttributedText:(id)arg1;
-- (void)setCapOffsetFromBoundsTop:(float)arg1;
-- (void)setLastLineBaselineOffsetFromBoundsTop:(float)arg1;
-- (void)setSingleLine:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 isSingleLine:(BOOL*)arg3;
+- (void)setInteractionDelegate:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 isSingleLine:(bool*)arg3;
 
 @end

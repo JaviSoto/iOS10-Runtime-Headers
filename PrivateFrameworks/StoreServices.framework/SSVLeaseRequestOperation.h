@@ -10,6 +10,7 @@
     SSVPlaybackLeaseConfiguration * _configuration;
     id /* block */  _outputBlock;
     SSVPlaybackLeaseRequest * _request;
+    unsigned long long  _retryCount;
     SSURLBag * _urlBag;
 }
 
@@ -18,8 +19,9 @@
 @property (copy) id /* block */ outputBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_loadCertificateDataIfNecessary:(id*)arg1;
-- (BOOL)_resolveConfigurationAndURLReturningError:(id*)arg1;
+- (bool)_loadCertificateDataIfNecessary:(id*)arg1;
+- (bool)_resolveConfigurationAndURLReturningError:(id*)arg1;
+- (bool)_shouldRetryForError:(id)arg1;
 - (void)cancel;
 - (id)certificateURLBagKey;
 - (id)initWithLeaseRequest:(id)arg1 URLBag:(id)arg2;

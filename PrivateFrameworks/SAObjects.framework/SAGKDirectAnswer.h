@@ -5,9 +5,10 @@
 @interface SAGKDirectAnswer : AceObject <SAAceSerializable>
 
 @property (nonatomic, copy) NSString *answer;
+@property (nonatomic, copy) NSString *confidenceLevel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAGKSpeakableAnswer *speakableAnswer;
 @property (readonly) Class superclass;
 

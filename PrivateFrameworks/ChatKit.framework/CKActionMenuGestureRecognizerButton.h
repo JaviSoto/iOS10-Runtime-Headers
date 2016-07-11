@@ -16,8 +16,8 @@
 
 + (id)actionMenuGestureRecognizerButtonWithButton:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)button;
-- (void)dealloc;
 - (id)delegate;
 - (id)gestureDidBeginDate;
 - (void)gestureRecognized:(id)arg1;

@@ -3,28 +3,33 @@
  */
 
 @interface ICAttachmentImageLoadingOperation : NSOperation {
+    short  _attachmentType;
     NSCache * _cache;
     NSMutableArray * _completionHandlers;
+    NSManagedObjectID * _mediaObjectID;
     NSURL * _mediaURL;
-    NSString * _typeUTI;
 }
 
+@property (nonatomic) short attachmentType;
 @property (nonatomic, retain) NSCache *cache;
 @property (nonatomic, retain) NSMutableArray *completionHandlers;
+@property (nonatomic, retain) NSManagedObjectID *mediaObjectID;
 @property (nonatomic, retain) NSURL *mediaURL;
-@property (nonatomic, retain) NSString *typeUTI;
 
 - (void).cxx_destruct;
-- (void)addCompletionHandler:(id /* block */)arg1;
+- (id /* block */)addCompletionHandler:(id /* block */)arg1;
+- (short)attachmentType;
 - (id)cache;
 - (id)completionHandlers;
-- (id)initWithCache:(id)arg1 mediaURL:(id)arg2 typeUTI:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)initWithCache:(id)arg1 media:(id)arg2 attachmentType:(short)arg3 completionHandler:(id /* block */)arg4;
 - (void)main;
+- (id)mediaObjectID;
 - (id)mediaURL;
+- (void)removeCompletionHandler:(id /* block */)arg1 cancelIfNoneLeft:(bool)arg2;
+- (void)setAttachmentType:(short)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCompletionHandlers:(id)arg1;
+- (void)setMediaObjectID:(id)arg1;
 - (void)setMediaURL:(id)arg1;
-- (void)setTypeUTI:(id)arg1;
-- (id)typeUTI;
 
 @end

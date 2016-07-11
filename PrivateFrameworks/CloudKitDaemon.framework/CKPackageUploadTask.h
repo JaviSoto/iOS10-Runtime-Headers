@@ -22,19 +22,19 @@
 @property (nonatomic, readonly) CKPackage *package;
 @property (nonatomic, retain) CKDProgressTracker *progressTracker;
 @property (nonatomic, readonly) NSString *recordKey;
-@property (nonatomic, readonly) int storageGroupingPolicy;
-@property (nonatomic, readonly) int uploadRank;
+@property (nonatomic, readonly) long long storageGroupingPolicy;
+@property (nonatomic, readonly) long long uploadRank;
 
 - (void).cxx_destruct;
 - (id)MMCSManifestItem;
 - (id)MMCSRequestOptions;
 - (id)MMCSSectionItems;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)cancel;
 - (id)cancelTokens;
 - (id)error;
 - (id)group;
-- (id)initWithPackage:(id)arg1 trackProgress:(BOOL)arg2;
+- (id)initWithPackage:(id)arg1 trackProgress:(bool)arg2;
 - (id)package;
 - (id)progressTracker;
 - (id)recordKey;
@@ -45,7 +45,7 @@
 - (void)setMMCSRequestOptions:(id)arg1;
 - (void)setMMCSSectionItems:(id)arg1;
 - (void)setProgressTracker:(id)arg1;
-- (int)storageGroupingPolicy;
-- (int)uploadRank;
+- (long long)storageGroupingPolicy;
+- (long long)uploadRank;
 
 @end

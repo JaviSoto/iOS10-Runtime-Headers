@@ -16,7 +16,7 @@
 @property (nonatomic) double value;
 
 - (void).cxx_destruct;
-- (BOOL)_animateForInterval:(double)arg1;
+- (bool)_animateForInterval:(double)arg1;
 - (double)convergenceRate;
 - (id)initWithValue:(double)arg1 targetValue:(double)arg2 convergenceRate:(double)arg3 minimumDifference:(double)arg4;
 - (double)minimumDifference;

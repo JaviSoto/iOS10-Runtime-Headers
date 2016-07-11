@@ -5,7 +5,10 @@
 @interface _DKApplicationActivityMetadataKey : NSObject
 
 + (id)activityType;
++ (id)expirationDate;
 + (id)itemIdentifier;
++ (id)itemRelatedContentURL;
++ (id)itemRelatedUniqueIdentifier;
 + (id)title;
 
 @end

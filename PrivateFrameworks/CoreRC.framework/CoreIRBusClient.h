@@ -4,11 +4,12 @@
 
 @interface CoreIRBusClient : CoreIRBus
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)addDeviceWithType:(unsigned int)arg1 matching:(id)arg2 error:(id*)arg3;
-- (id)addDeviceWithType:(unsigned int)arg1 matching:(id)arg2 learningSession:(id)arg3 error:(id*)arg4;
+- (id)addDeviceWithType:(unsigned long long)arg1 matching:(id)arg2 error:(id*)arg3;
+- (id)addDeviceWithType:(unsigned long long)arg1 matching:(id)arg2 learningSession:(id)arg3 error:(id*)arg4;
 - (Class)classForCoder;
-- (BOOL)deleteDevice:(id)arg1 error:(id*)arg2;
+- (bool)deleteDevice:(id)arg1 error:(id*)arg2;
+- (bool)setPairState:(bool)arg1 forAppleRemote:(id)arg2 error:(id*)arg3;
 
 @end

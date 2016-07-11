@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityHorizontalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, RUTrackDownloadViewDelegate> {
+@interface MusicEntityHorizontalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, MusicEntityViewDownloadInformationObserving> {
     MPUHalfTintedTransportButton * _addButton;
-    RUTrackDownloadView * _buyButton;
+    UIImageView * _availableOfflineBadgeImageView;
+    UIButton * _checkmarkButton;
     UIButton * _contextualActionsButton;
     <MusicEntityHorizontalLockupViewDelegate> * _delegate;
     struct { 
@@ -14,23 +15,32 @@
         unsigned int didLayoutSubviews : 1; 
         unsigned int shouldLayoutAsEditing : 1; 
     }  _delegateRespondsToSelector;
+    struct MusicEntityDownloadInformation { 
+        long long downloadStatus; 
+        double downloadProgress; 
+    }  _downloadInformation;
     UIImageView * _explicitBadgeImageView;
-    MusicEntityViewHorizontalLockupContentDescriptor * _horizontalContentDescriptor;
-    BOOL  _isContainedWithinSplitViewPrimary;
-    float  _textContentLeftInset;
+    bool  _isAvailableOffline;
+    bool  _isContainedWithinSplitViewPrimary;
+    double  _textContentLeadingInset;
 }
 
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } artworkSize;
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (nonatomic, readonly) UIButton *contextualActionsButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityHorizontalLockupViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) struct MusicEntityDownloadInformation { long long x1; double x2; } downloadInformation;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) float textContentLeftInset;
+@property (nonatomic, readonly) double textContentLeadingInset;
 
-+ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
++ (double)defaultTextDescriptorHeightAdditionsForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3;
++ (double)maximumHeightForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3;
++ (double)maximumHeightForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3 artworkSize:(struct CGSize { double x1; double x2; })arg4;
++ (double)maximumHeightForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3 textDescriptorHeightAdditions:(double)arg4 artworkSize:(struct CGSize { double x1; double x2; })arg5;
 
 - (void).cxx_destruct;
 - (id)_addButton;
@@ -40,22 +50,22 @@
 - (void)_addButtonTouchUpInside:(id)arg1;
 - (void)_contentDescriptorDidChange:(id)arg1;
 - (void)_contextualActionsButtonTapped:(id)arg1;
-- (void)_entityDisabledDidChange;
 - (void)_handleArtworkViewTapped;
-- (void)_handlePlayButtonTappedWithAction:(unsigned int)arg1;
-- (BOOL)_shouldLayoutAsEditing;
-- (BOOL)_shouldShowPlayButton;
+- (void)_handlePlayButtonTappedWithAction:(unsigned long long)arg1;
+- (bool)_shouldLayoutAsEditing;
+- (bool)_shouldShowPlayButton;
+- (struct CGSize { double x1; double x2; })artworkSize;
 - (id)contentDescriptor;
 - (id)contextualActionsButton;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutMarginsDidChange;
+- (struct MusicEntityDownloadInformation { long long x1; double x2; })downloadInformation;
 - (void)layoutSubviews;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (float)textContentLeftInset;
-- (void)trackDownloadViewWillTransition:(id)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
+- (double)textContentLeadingInset;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

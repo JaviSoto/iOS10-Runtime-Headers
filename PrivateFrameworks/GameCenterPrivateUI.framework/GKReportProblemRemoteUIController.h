@@ -13,6 +13,7 @@
 + (id)controllerForProblemPlayer:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (id)bagKey;
+- (void)dealloc;
 - (id)fallbackURL;
 - (id)initWithProblemPlayer:(id)arg1;
 - (id)postBodyForInitialLoad;

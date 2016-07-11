@@ -9,8 +9,16 @@
 
 @property (nonatomic, readonly, retain) id metric;
 
++ (id)metricForDelayAckFromSecondaryDeviceWithSectionID:(id)arg1 publisherMatchID:(id)arg2 companionPublicationDate:(id)arg3 startTime:(id)arg4 connectionStatus:(unsigned long long)arg5 origConnectionStatus:(unsigned long long)arg6 timedOut:(bool)arg7;
++ (id)metricForDelayToSyncWithStartTime:(id)arg1 initial:(bool)arg2;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 isGizmoDate:(bool)arg6 startTime:(id)arg7;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 connectionStatus:(unsigned long long)arg7;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 connectionStatus:(unsigned long long)arg7 hasPublicationDate:(bool)arg8;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 startTime:(id)arg3;
+
 - (void).cxx_destruct;
-- (id)initWithMetricID:(unsigned long)arg1 class:(Class)arg2;
+- (id)initWithMetricID:(unsigned int)arg1 class:(Class)arg2;
 - (id)metric;
 - (void)submit;
 

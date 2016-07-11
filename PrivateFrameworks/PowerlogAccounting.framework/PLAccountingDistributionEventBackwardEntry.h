@@ -9,6 +9,5 @@
 + (void)load;
 
 - (id)initWithDistributionID:(id)arg1 withChildNodeNameToWeight:(id)arg2 withEndDate:(id)arg3;
-- (void)mergeWithEvent:(id)arg1;
 
 @end

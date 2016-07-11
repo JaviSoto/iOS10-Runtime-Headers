@@ -5,7 +5,7 @@
 
 @required
 
-- (NSString *)assertionIdentifier;
-- (void)setAssertionIdentifier:(NSString *)arg1;
+- (unsigned int)assertionIdentifier;
+- (void)setAssertionIdentifier:(unsigned int)arg1;
 
 @end

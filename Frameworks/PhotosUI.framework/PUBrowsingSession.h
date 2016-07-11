@@ -2,55 +2,54 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate, PUTilingViewLayoutDelegate> {
-    PUAudioSessionCategoryToken * __audioSessionCategoryToken;
+@interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate> {
     PUAssetActionManager * _actionManager;
-    BOOL  _active;
+    bool  _active;
     PUContentTileProvider * _contentTileProvider;
     PUAssetsDataSourceManager * _dataSourceManager;
     PULoadingStatusManager * _loadingStatusManager;
     PUMediaProvider * _mediaProvider;
+    PXPhotosDetailsContext * _photosDetailsContext;
     PUTileAnimator * _tileAnimator;
     PUBrowsingViewModel * _viewModel;
 }
 
-@property (setter=_setAudioSessionCategoryToken:, nonatomic, retain) PUAudioSessionCategoryToken *_audioSessionCategoryToken;
 @property (nonatomic, readonly) PUAssetActionManager *actionManager;
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, retain) PUContentTileProvider *contentTileProvider;
 @property (nonatomic, readonly) PUAssetsDataSourceManager *dataSourceManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PULoadingStatusManager *loadingStatusManager;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
+@property (nonatomic, readonly) PXPhotosDetailsContext *photosDetailsContext;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUTileAnimator *tileAnimator;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
 - (void).cxx_destruct;
-- (id)_audioSessionCategoryToken;
-- (void)_setAudioSessionCategoryToken:(id)arg1;
 - (id)actionManager;
 - (id)assetActionManagerCurrentAssetsDataSource:(id)arg1;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2;
+- (id)assetsDataSourceManagerInterestingAssetReferences:(id)arg1;
 - (void)configureTilingView:(id)arg1;
 - (id)contentTileProvider;
 - (id)dataSourceManager;
-- (void)dealloc;
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3;
-- (BOOL)isActive;
+- (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3 photosDetailsContext:(id)arg4;
+- (bool)isActive;
 - (id)loadingStatusManager;
 - (void)loadingStatusManager:(id)arg1 didUpdateLoadingStatus:(id)arg2 forItem:(id)arg3;
 - (id)mediaProvider;
-- (void)setActive:(BOOL)arg1;
+- (id)photosDetailsContext;
+- (void)setActive:(bool)arg1;
 - (void)setContentTileProvider:(id)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setTileAnimator:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)tileAnimator;
-- (void)tilingViewDidLayoutTileControllers:(id)arg1;
 - (id)viewModel;
 
 @end

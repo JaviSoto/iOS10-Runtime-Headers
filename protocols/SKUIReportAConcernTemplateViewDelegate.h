@@ -5,6 +5,8 @@
 
 @required
 
-- (void)didSelectConcernInReportAConcernTemplateView:(SKUIReportAConcernTemplateView *)arg1;
+- (double)navigationBarHeightForReportAConcernTemplateView:(SKUIReportAConcernTemplateView *)arg1;
+- (void)reportAConcernTemplateViewDidSelectConcern:(SKUIReportAConcernTemplateView *)arg1;
+- (double)tabBarHeightForReportAConcernTemplateView:(SKUIReportAConcernTemplateView *)arg1;
 
 @end

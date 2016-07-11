@@ -11,13 +11,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)setUseLocalProxy:(BOOL)arg1;
++ (void)_ib_disableServerConnection;
++ (void)setUseLocalProxy:(bool)arg1;
 + (id)sharedNetworkDefaults;
 
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (id)allKeys;
 - (void)dealloc;
 - (id)init;

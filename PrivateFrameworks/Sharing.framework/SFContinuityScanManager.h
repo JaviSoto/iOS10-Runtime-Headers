@@ -6,33 +6,38 @@
     <SFContinuityScannerProtocol><NSXPCProxyCreating> * _connectionProxy;
     NSMutableSet * _foundDevices;
     NSHashTable * _observers;
+    unsigned long long  _scanTypes;
 }
 
 @property (retain) <SFContinuityScannerProtocol><NSXPCProxyCreating> *connectionProxy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSMutableSet *foundDevices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSHashTable *observers;
+@property unsigned long long scanTypes;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
 
-- (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void).cxx_destruct;
+- (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)addObserver:(id)arg1;
 - (id)connectionProxy;
-- (void)dealloc;
 - (void)foundDeviceWithDevice:(id)arg1;
 - (id)foundDevices;
 - (id)init;
 - (void)lostDeviceWithDevice:(id)arg1;
 - (id)observers;
+- (void)pairedDevicesChanged:(id)arg1;
 - (void)receivedAdvertisement:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)scanForTypes:(unsigned long long)arg1;
+- (unsigned long long)scanTypes;
 - (void)setConnectionProxy:(id)arg1;
-- (void)setForceScanningEnabled:(BOOL)arg1;
 - (void)setFoundDevices:(id)arg1;
 - (void)setObservers:(id)arg1;
+- (void)setScanTypes:(unsigned long long)arg1;
 - (void)setupXPCConnection;
 - (void)xpcManagerConnectionInterrupted;
 

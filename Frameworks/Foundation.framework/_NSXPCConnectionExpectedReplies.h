@@ -12,7 +12,6 @@
 - (void)addReplyCompletionBlockOnQueue:(id)arg1 block:(id /* block */)arg2;
 - (void)dealloc;
 - (void)decrementOutstandingReplyCount;
-- (void)finalize;
 - (void)incrementOutstandingReplyCount;
 - (id)init;
 - (id)progressForSequence:(unsigned long long)arg1;

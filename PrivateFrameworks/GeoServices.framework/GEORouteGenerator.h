@@ -5,11 +5,11 @@
 @interface GEORouteGenerator : NSObject {
     NSObject<OS_dispatch_queue> * _queue;
     GEODirectionsRequest * _request;
-    GEODirectionsRouteResponse * _response;
+    GEODirectionsResponse * _response;
 }
 
 @property (nonatomic, readonly, retain) GEODirectionsRequest *request;
-@property (nonatomic, readonly, retain) GEODirectionsRouteResponse *response;
+@property (nonatomic, readonly, retain) GEODirectionsResponse *response;
 
 + (unsigned long long)routingSharedLibraryCodeVersion;
 + (unsigned long long)routingSubgraphDataVersion;

@@ -2,78 +2,90 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKSpriteNode : SKNode {
+@interface SKSpriteNode : SKNode <SKWarpable> {
     SKLightNode * _light;
-    BOOL  _shouldRepeatTexture;
-    struct SKCSpriteNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; unsigned int x22; unsigned int x23; unsigned int x24; id x25; id x26; void*x27; void*x28; void*x29; void*x30; void*x31; bool x32; void*x33; void*x34; int x35; void*x36; const void*x37; void*x38; void*x39; void*x40; } * _skcSpriteNode;
+    bool  _shouldRepeatTexture;
+    struct SKCSpriteNode { int (**x1)(); id x2; struct unordered_map<std::__1::basic_string<char>, SKAttributeValue *, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, SKAttributeValue *> > > { struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *> > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> { struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::hash<std::__1::basic_string<char> >, true> > { unsigned long long x_3_3_1; } x_1_2_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::equal_to<std::__1::basic_string<char> >, true> > { float x_4_3_1; } x_1_2_4; } x_3_1_1; } x3; id x4; struct SKCNode {} *x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_8_1_1; struct SKCNode {} **x_8_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_8_1_3; } x8; id x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node_base<SKCAction *, void *> {} *x_1_2_1; struct __list_node_base<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node_base<SKCAction *, void *> {} *x_1_2_1; struct __list_node_base<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; short x15; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x16; void*x17; const void*x18; double x19; void*x20; void*x21; void*x22; const void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; struct PKPath {} *x32; struct __shared_weak_count {} *x33; } * _skcSpriteNode;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
-@property (nonatomic) int blendMode;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } centerRect;
+@property (nonatomic) struct CGPoint { double x1; double x2; } anchorPoint;
+@property (nonatomic) long long blendMode;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } centerRect;
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) float colorBlendFactor;
+@property (nonatomic) double colorBlendFactor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int lightingBitMask;
 @property (nonatomic, retain) SKTexture *normalTexture;
-@property (nonatomic) struct CGSize { float x1; float x2; } repeatTextureSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } repeatTextureSize;
 @property (nonatomic, retain) SKShader *shader;
 @property (nonatomic) unsigned int shadowCastBitMask;
 @property (nonatomic) unsigned int shadowedBitMask;
-@property (nonatomic) BOOL shouldRepeatTexture;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) bool shouldRepeatTexture;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) long long subdivisionLevels;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) SKTexture *texture;
+@property (nonatomic, retain) SKWarpGeometry *warpGeometry;
 
-+ (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)spriteNodeWithImageNamed:(id)arg1;
-+ (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(BOOL)arg2;
++ (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(bool)arg2;
 + (id)spriteNodeWithTexture:(id)arg1;
 + (id)spriteNodeWithTexture:(id)arg1 normalMap:(id)arg2;
-+ (id)spriteNodeWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)spriteNodeWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
 - (void)_didMakeBackingNode;
-- (struct SKCNode { int (**x1)(); id x2; id x3; struct SKCNode {} x4; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_5_1_1; struct SKCNode {} **x_5_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_5_1_3; } x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; id x8; float x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node<SKCAction *, void *> {} *x_1_2_1; struct __list_node<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; int x15; bool x16; float x17; float x18; bool x19; bool x20; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_21_1_1[4]; } x21; }*)_makeBackingNode;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (int)blendMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })centerRect;
+- (struct SKCNode { int (**x1)(); id x2; struct unordered_map<std::__1::basic_string<char>, SKAttributeValue *, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, SKAttributeValue *> > > { struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *> > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> { struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::hash<std::__1::basic_string<char> >, true> > { unsigned long long x_3_3_1; } x_1_2_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::equal_to<std::__1::basic_string<char> >, true> > { float x_4_3_1; } x_1_2_4; } x_3_1_1; } x3; id x4; struct SKCNode {} *x5; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_6_1_1; struct SKCNode {} **x_6_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_6_1_3; } x6; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_7_1_1; struct SKCNode {} **x_7_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_7_1_3; } x7; struct vector<SKCNode *, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_8_1_1; struct SKCNode {} **x_8_1_2; struct __compressed_pair<SKCNode **, std::__1::allocator<SKCNode *> > { struct SKCNode {} **x_3_2_1; } x_8_1_3; } x8; id x9; bool x10; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node_base<SKCAction *, void *> {} *x_1_2_1; struct __list_node_base<SKCAction *, void *> {} *x_1_2_2; } x_11_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long long x_2_2_1; } x_11_1_2; } x11; struct list<SKCAction *, std::__1::allocator<SKCAction *> > { struct __list_node_base<SKCAction *, void *> { struct __list_node_base<SKCAction *, void *> {} *x_1_2_1; struct __list_node_base<SKCAction *, void *> {} *x_1_2_2; } x_12_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SKCAction *, void *> > > { unsigned long long x_2_2_1; } x_12_1_2; } x12; bool x13; id x14; short x15; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x16; void*x17; const void*x18; double x19; void*x20; void*x21; void*x22; const void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; struct PKPath {} *x32; struct __shared_weak_count {} *x33; }*)_makeBackingNode;
+- (bool)_pathFromTextureToPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void***)arg1 outSize:(unsigned long long*)arg2 accuracy:(float)arg3;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (long long)blendMode;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })centerRect;
 - (id)color;
-- (float)colorBlendFactor;
+- (double)colorBlendFactor;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)initWithImageNamed:(id)arg1;
 - (id)initWithTexture:(id)arg1;
-- (id)initWithTexture:(id)arg1 color:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
-- (BOOL)isEqualToNode:(id)arg1;
+- (id)initWithTexture:(id)arg1 color:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
+- (bool)isEqualToNode:(id)arg1;
 - (unsigned int)lightingBitMask;
 - (id)normalTexture;
-- (BOOL)repeatTexture;
-- (struct CGSize { float x1; float x2; })repeatTextureSize;
-- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBlendMode:(int)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCenterRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)repeatTexture;
+- (struct CGSize { double x1; double x2; })repeatTextureSize;
+- (void)scaleToSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBlendMode:(long long)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenterRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setColor:(id)arg1;
-- (void)setColorBlendFactor:(float)arg1;
+- (void)setColorBlendFactor:(double)arg1;
 - (void)setLightingBitMask:(unsigned int)arg1;
 - (void)setNormalTexture:(id)arg1;
-- (void)setRepeatTexture:(BOOL)arg1;
-- (void)setRepeatTextureSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setRepeatTexture:(bool)arg1;
+- (void)setRepeatTextureSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setShader:(id)arg1;
 - (void)setShadowCastBitMask:(unsigned int)arg1;
 - (void)setShadowedBitMask:(unsigned int)arg1;
-- (void)setShouldRepeatTexture:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShouldRepeatTexture:(bool)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSubdivisionLevels:(long long)arg1;
 - (void)setTexture:(id)arg1;
+- (void)setWarpGeometry:(id)arg1;
 - (id)shader;
 - (unsigned int)shadowCastBitMask;
 - (unsigned int)shadowedBitMask;
-- (BOOL)shouldRepeatTexture;
-- (struct CGSize { float x1; float x2; })size;
+- (bool)shouldRepeatTexture;
+- (struct CGSize { double x1; double x2; })size;
+- (long long)subdivisionLevels;
 - (id)texture;
+- (id)warpGeometry;
 
 @end

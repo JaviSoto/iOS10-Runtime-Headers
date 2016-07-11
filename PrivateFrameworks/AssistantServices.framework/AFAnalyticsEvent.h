@@ -3,29 +3,31 @@
  */
 
 @interface AFAnalyticsEvent : NSObject <NSCopying, NSSecureCoding> {
+    long long  _categoryType;
     NSDictionary * _context;
-    NSString * _name;
-    unsigned long long  _timestamp;
-    NSUUID * _uuid;
+    unsigned long long  _machAbsoluteTime;
+    long long  _type;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *context;
-@property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) unsigned long long timestamp;
-@property (nonatomic, readonly, copy) NSUUID *uuid;
+@property (nonatomic, readonly) long long categoryType;
+@property (nonatomic, readonly) NSDictionary *context;
+@property (nonatomic, readonly) unsigned long long machAbsoluteTime;
+@property (nonatomic, readonly) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (long long)categoryType;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUUID:(id)arg1 timestamp:(unsigned long long)arg2 name:(id)arg3 context:(id)arg4 contextNoCopy:(BOOL)arg5;
-- (id)name;
-- (unsigned long long)timestamp;
-- (id)uuid;
+- (id)initWithType:(long long)arg1 machAbsoluteTime:(unsigned long long)arg2 categoryType:(long long)arg3 context:(id)arg4;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)machAbsoluteTime;
+- (long long)type;
 
 @end

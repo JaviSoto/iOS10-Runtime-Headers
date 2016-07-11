@@ -3,24 +3,42 @@
  */
 
 @interface FigCaptureSinkConfiguration : NSObject <FigXPCCoding, NSCopying> {
-    BOOL  _performsFeature8675309;
+    int  _irisMovieAutoTrimMethod;
+    bool  _irisMovieCaptureEnabled;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _irisMovieDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _irisMovieVideoFrameDuration;
+    bool  _optimizesImagesForOfflineVideoStabilization;
+    bool  _quadraHighResStillImageCaptureEnabled;
     NSString * _sinkID;
     int  _sinkType;
-    BOOL  _stillImageFeature1Enabled;
-    BOOL  _videoDataDerivedFromPreview;
-    BOOL  _videoDataDiscardsLateVideoFrames;
+    bool  _videoDataDerivedFromPreview;
+    bool  _videoDataDiscardsLateVideoFrames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL feature0Enabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL performsFeature8675309;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) int irisMovieAutoTrimMethod;
+@property (nonatomic) bool irisMovieCaptureEnabled;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } irisMovieDuration;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } irisMovieVideoFrameDuration;
+@property (nonatomic) bool optimizesImagesForOfflineVideoStabilization;
+@property (nonatomic) bool quadraHighResStillImageCaptureEnabled;
 @property (nonatomic, copy) NSString *sinkID;
 @property (nonatomic) int sinkType;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL videoDataDerivedFromPreview;
-@property (nonatomic) BOOL videoDataDiscardsLateVideoFrames;
+@property (nonatomic) bool videoDataDerivedFromPreview;
+@property (nonatomic) bool videoDataDiscardsLateVideoFrames;
 
 + (void)initialize;
 + (int)sinkTypeForString:(id)arg1;
@@ -30,20 +48,28 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (BOOL)feature0Enabled;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)performsFeature8675309;
-- (void)setFeature0Enabled:(BOOL)arg1;
-- (void)setPerformsFeature8675309:(BOOL)arg1;
+- (int)irisMovieAutoTrimMethod;
+- (bool)irisMovieCaptureEnabled;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })irisMovieDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })irisMovieVideoFrameDuration;
+- (bool)isEqual:(id)arg1;
+- (bool)optimizesImagesForOfflineVideoStabilization;
+- (bool)quadraHighResStillImageCaptureEnabled;
+- (void)setIrisMovieAutoTrimMethod:(int)arg1;
+- (void)setIrisMovieCaptureEnabled:(bool)arg1;
+- (void)setIrisMovieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setIrisMovieVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setOptimizesImagesForOfflineVideoStabilization:(bool)arg1;
+- (void)setQuadraHighResStillImageCaptureEnabled:(bool)arg1;
 - (void)setSinkID:(id)arg1;
 - (void)setSinkType:(int)arg1;
-- (void)setVideoDataDerivedFromPreview:(BOOL)arg1;
-- (void)setVideoDataDiscardsLateVideoFrames:(BOOL)arg1;
+- (void)setVideoDataDerivedFromPreview:(bool)arg1;
+- (void)setVideoDataDiscardsLateVideoFrames:(bool)arg1;
 - (id)sinkID;
 - (int)sinkType;
-- (BOOL)videoDataDerivedFromPreview;
-- (BOOL)videoDataDiscardsLateVideoFrames;
+- (bool)videoDataDerivedFromPreview;
+- (bool)videoDataDiscardsLateVideoFrames;
 
 @end

@@ -45,6 +45,8 @@
 - (void)_showTimerAction:(id)arg1;
 - (id)_window;
 - (void)displayForCopyingFileAtURL:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)displayForDownloadingURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)displayForDownloadingURL:(id)arg1 copyToURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)displayWithTitle:(id)arg1 message:(id)arg2 progress:(id)arg3 buttonTitle:(id)arg4 dismissalHandler:(id /* block */)arg5;
 - (void)hideAfterMinimumUptimeWithDismissalHandler:(id /* block */)arg1;
 - (void)reconfigureWithTitle:(id)arg1 message:(id)arg2 progress:(id)arg3 buttonTitle:(id)arg4 dismissalHandler:(id /* block */)arg5;

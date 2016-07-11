@@ -9,10 +9,10 @@
 
 + (id)sharedUnlockManager;
 
+- (void).cxx_destruct;
 - (void)cancelStateRequestTimer;
-- (void)dealloc;
 - (void)disableUnlockWithDevice:(id)arg1;
-- (void)enableUnlockWithDevice:(id)arg1 fromKey:(BOOL)arg2 withPasscode:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)enableUnlockWithDevice:(id)arg1 fromKey:(bool)arg2 withPasscode:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)establishStashBagWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)timerWithBlock:(id /* block */)arg1;

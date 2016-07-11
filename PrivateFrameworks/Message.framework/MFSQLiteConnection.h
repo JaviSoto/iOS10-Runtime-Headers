@@ -10,10 +10,11 @@
     NSString * _path;
     MFWeakReferenceHolder * _poolHolder;
     struct __CFDictionary { } * _statementCache;
-    unsigned int  _transactionCount;
+    unsigned long long  _transactionCount;
     int  _transactionType;
 }
 
+@property (nonatomic, readonly) NSString *databaseName;
 @property (nonatomic, readonly) struct sqlite3 { }*db;
 @property (nonatomic) MFSQLiteConnectionPool *pool;
 
@@ -22,11 +23,12 @@
 - (int)beginTransactionWithType:(int)arg1;
 - (void)close;
 - (int)commitTransaction;
+- (id)databaseName;
 - (struct sqlite3 { }*)db;
 - (void)dealloc;
 - (void)flush;
 - (id)initWithPath:(id)arg1 databaseName:(id)arg2;
-- (BOOL)isOpen;
+- (bool)isOpen;
 - (int)open;
 - (id)pool;
 - (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1;

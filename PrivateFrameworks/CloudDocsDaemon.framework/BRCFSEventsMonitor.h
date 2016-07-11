@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCFSEventsMonitor : NSObject <BRCLowDiskDelegate, BRCModule> {
+@interface BRCFSEventsMonitor : NSObject <BRCModule, BRCSuspendable> {
     PQLConnection * _db;
     <BRCFSEventsDelegate> * _delegate;
     NSString * _devicePath;
-    BOOL  _drainEvents;
+    bool  _drainEvents;
     NSObject<OS_dispatch_source> * _historicalEventSource;
+    bool  _isCancelled;
+    NSString * _name;
     BRCFSEventsPersistedState * _persistedState;
     BRCFSEventsPersistedState * _rendezVous;
     int  _resetCount;
@@ -19,44 +21,47 @@
     struct __FSEventStream { } * _stream;
     NSObject<OS_dispatch_queue> * _streamQueue;
     int  _suspendCount;
-    BOOL  _volumeHasLowDiskSpace;
-    BOOL  _volumeIsCaseSensitive;
+    BRCVolume * _volume;
 }
 
 @property (setter=setDB:, nonatomic, retain) PQLConnection *db;
 @property (readonly, copy) NSString *debugDescription;
 @property <BRCFSEventsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isCancelled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCancelled;
 @property (nonatomic, readonly) BRCRelativePath *root;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL volumeIsCaseSensitive;
+@property (nonatomic, readonly) bool volumeIsCaseSensitive;
 
 - (void).cxx_destruct;
 - (void)_cancel;
+- (void)_close;
+- (void)_updatePersistedStateWithState:(id)arg1;
 - (void)cancel;
 - (void)close;
 - (id)db;
 - (void)dealloc;
 - (id)delegate;
+- (id)description;
 - (void)didProcessEventID:(unsigned long long)arg1;
-- (void)fseventAtPath:(id)arg1 withFlags:(unsigned long)arg2 andID:(unsigned long long)arg3 eventIndex:(unsigned int)arg4 eventCount:(unsigned int)arg5 initialScan:(BOOL)arg6;
+- (void)flushStream;
+- (void)fseventAtPath:(id)arg1 withFlags:(unsigned int)arg2 andID:(unsigned long long)arg3 eventIndex:(unsigned int)arg4 eventCount:(unsigned int)arg5 initialScan:(bool)arg6;
 - (id)initWithAccountSession:(id)arg1;
-- (BOOL)isCancelled;
-- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
-- (BOOL)openWithRootPath:(id)arg1 error:(id*)arg2;
+- (id)initWithAccountSession:(id)arg1 name:(id)arg2;
+- (bool)isCancelled;
+- (bool)openWithRoot:(id)arg1 resetStreamIfNeeded:(bool)arg2 volume:(id)arg3 error:(id*)arg4;
+- (bool)openWithRoot:(id)arg1 volume:(id)arg2 error:(id*)arg3;
 - (void)reset;
 - (void)resume;
 - (id)root;
 - (void)setDB:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsCancelled:(BOOL)arg1;
-- (BOOL)setUpRootAtPath:(id)arg1 error:(id*)arg2;
-- (BOOL)setUpStreamSynchronously:(BOOL)arg1 error:(id*)arg2;
+- (bool)setUpRoot:(id)arg1 resetStreamIfNeeded:(bool)arg2 volume:(id)arg3 error:(id*)arg4;
+- (bool)setUpStreamSynchronously:(bool)arg1 error:(id*)arg2;
 - (void)signalAfterCurrentFSEvent:(id)arg1;
 - (void)stopWatcher;
 - (void)suspend;
-- (BOOL)volumeIsCaseSensitive;
+- (bool)volumeIsCaseSensitive;
 
 @end

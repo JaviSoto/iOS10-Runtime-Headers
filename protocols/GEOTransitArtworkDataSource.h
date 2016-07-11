@@ -5,10 +5,12 @@
 
 @required
 
-- (int)artworkSourceType;
-- (int)artworkUseType;
-- (BOOL)hasRoutingIncidentBadge;
+- (NSString *)accessibilityText;
+- (long long)artworkSourceType;
+- (long long)artworkUseType;
+- (bool)hasRoutingIncidentBadge;
 - (<GEOTransitIconDataSource> *)iconDataSource;
+- (<GEOTransitShieldDataSource> *)iconFallbackShieldDataSource;
 - (<GEOTransitShieldDataSource> *)shieldDataSource;
 
 @end

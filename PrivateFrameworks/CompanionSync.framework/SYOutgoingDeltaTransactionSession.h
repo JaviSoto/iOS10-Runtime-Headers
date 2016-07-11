@@ -3,38 +3,43 @@
  */
 
 @interface SYOutgoingDeltaTransactionSession : SYSession {
-    unsigned long long  _activity;
-    BOOL  _canRestart;
-    BOOL  _canRollback;
-    BOOL  _cancelled;
-    int  _state;
+    bool  _canRestart;
+    bool  _canRollback;
+    bool  _cancelled;
+    _SYCountedSemaphore * _changeConcurrencySemaphore;
+    NSObject<OS_dispatch_queue> * _changeFetcherQueue;
+    NSObject<OS_os_activity> * _changeWaitActivity;
+    NSObject<OS_os_activity> * _sessionActivity;
+    long long  _state;
     NSObject<OS_dispatch_source> * _stateUpdateSource;
     _SYMessageTimerTable * _timers;
 }
 
 - (void).cxx_destruct;
 - (void)_fetchNextBatch;
-- (void)_handleError:(id)arg1;
 - (void)_installStateListener;
 - (void)_messageExpiredWithSeqno:(unsigned long long)arg1 identifier:(id)arg2;
 - (void)_notifySessionComplete;
+- (void)_peerProcessedMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)_processNextState;
-- (void)_sendSyncBatch:(id)arg1 nextState:(int)arg2;
+- (void)_sendSyncBatch:(id)arg1 nextState:(long long)arg2;
 - (void)_sentMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)_setMessageTimerForSeqno:(unsigned long long)arg1;
-- (void)_setStateQuietly:(int)arg1;
-- (BOOL)canRestart;
-- (BOOL)canRollback;
-- (void)cancel;
+- (void)_setStateQuietly:(long long)arg1;
+- (void)_setupChangeConcurrency;
+- (void)_waitForMessageWindow;
+- (bool)canRestart;
+- (bool)canRollback;
+- (void)cancelWithError:(id)arg1;
 - (id)initWithService:(id)arg1;
-- (BOOL)isResetSync;
-- (BOOL)isSending;
-- (unsigned int)protocolVersion;
-- (void)setCanRestart:(BOOL)arg1;
-- (void)setCanRollback:(BOOL)arg1;
-- (void)setState:(int)arg1;
+- (bool)isResetSync;
+- (bool)isSending;
+- (unsigned long long)protocolVersion;
+- (void)setCanRestart:(bool)arg1;
+- (void)setCanRollback:(bool)arg1;
+- (void)setState:(long long)arg1;
 - (void)start:(id /* block */)arg1;
-- (int)state;
-- (BOOL)wasCancelled;
+- (long long)state;
+- (bool)wasCancelled;
 
 @end

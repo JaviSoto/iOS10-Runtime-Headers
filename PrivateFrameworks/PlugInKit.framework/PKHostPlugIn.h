@@ -20,7 +20,7 @@
     NSArray * _sandboxExtensions;
     <PKCorePlugInProtocol> * _service;
     NSDictionary * _sourceForm;
-    unsigned int  _state;
+    unsigned long long  _state;
     <PKPlugIn> * _supersededBy;
     NSUUID * _supersedingUUID;
     unsigned int  _useCount;
@@ -41,15 +41,16 @@
 @property (readonly) NSUUID *effectiveUUID;
 @property (retain) NSBundle *embeddedBundle;
 @property (retain) id embeddedPrincipal;
+@property (readonly) NSDictionary *entitlements;
 @property (retain) NSDictionary *extensionState;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSString *identifier;
 @property (readonly) NSString *localizedContainingName;
 @property (readonly) NSString *localizedName;
 @property (readonly) NSString *localizedShortName;
 @property (retain) NSUUID *multipleInstanceUUID;
 @property (copy) id /* block */ notificationBlock;
-@property (readonly) BOOL onSystemVolume;
+@property (readonly) bool onSystemVolume;
 @property (readonly) NSDictionary *plugInDictionary;
 @property (retain) id plugInPrincipal;
 @property (retain) NSXPCConnection *pluginConnection;
@@ -58,14 +59,15 @@
 @property (retain) NSArray *sandboxExtensions;
 @property (retain) <PKCorePlugInProtocol> *service;
 @property (retain) NSDictionary *sourceForm;
-@property unsigned int state;
+@property (readonly) bool spent;
+@property unsigned long long state;
 @property (readonly) Class superclass;
 @property (retain) <PKPlugIn> *supersededBy;
 @property (retain) NSUUID *supersedingUUID;
 @property (readonly) NSDate *timestamp;
 @property (readonly) NSURL *url;
 @property unsigned int useCount;
-@property int userElection;
+@property long long userElection;
 @property (readonly) NSUUID *uuid;
 @property (readonly) NSString *version;
 
@@ -76,8 +78,8 @@
 - (bool)active;
 - (id)beganUsingAt;
 - (void)beginUsing:(id /* block */)arg1;
-- (void)changeState:(unsigned int)arg1;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)changeState:(unsigned long long)arg1;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (id)createInstanceWithUUID:(id)arg1;
 - (id)defaults;
 - (id)description;
@@ -117,23 +119,24 @@
 - (void)setSandboxExtensions:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setSourceForm:(id)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (void)setSupersededBy:(id)arg1;
 - (void)setSupersedingUUID:(id)arg1;
 - (void)setUseCount:(unsigned int)arg1;
-- (void)setUserElection:(int)arg1;
+- (void)setUserElection:(long long)arg1;
 - (void)set_replyQueue:(id)arg1;
 - (void)set_startQueue:(id)arg1;
 - (void)set_syncQueue:(id)arg1;
 - (id)sourceForm;
+- (bool)spent;
 - (void)startPlugIn:(id /* block */)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (id)supersededBy;
 - (id)supersedingUUID;
 - (void)suspend;
-- (void)unwind:(unsigned int)arg1 force:(BOOL)arg2;
-- (BOOL)useBundle:(id)arg1 error:(id*)arg2;
+- (void)unwind:(unsigned long long)arg1 force:(bool)arg2;
+- (bool)useBundle:(id)arg1 error:(id*)arg2;
 - (unsigned int)useCount;
-- (int)userElection;
+- (long long)userElection;
 
 @end

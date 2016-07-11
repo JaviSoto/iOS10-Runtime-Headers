@@ -3,29 +3,30 @@
  */
 
 @interface AXAlternativeVoices : NSObject {
-    NSSet * _supportedSiriLanguages;
     NSDictionary * _voiceClassesMap;
-    NSDictionary * _voiceNameMap;
+    NSMutableDictionary * _voiceNameMap;
 }
 
-@property (nonatomic, retain) NSSet *supportedSiriLanguages;
+@property (nonatomic, readonly) NSSet *supportedSiriLanguages;
 @property (nonatomic, retain) NSDictionary *voiceClassesMap;
-@property (nonatomic, retain) NSDictionary *voiceNameMap;
+@property (nonatomic, retain) NSMutableDictionary *voiceNameMap;
 
-+ (void)setInUnitTestMode:(BOOL)arg1;
++ (bool)inUnitTestMode;
++ (void)setInUnitTestMode:(bool)arg1;
 + (id)sharedInstance;
++ (bool)supportsAlex;
++ (bool)supportsSiri;
 
 - (id)_siriBaseIdentifierFromIdentifier:(id)arg1;
-- (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2;
-- (BOOL)_siriSupportsLanguage:(id)arg1;
+- (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2 quality:(long long)arg3;
+- (bool)_siriSupportsLanguage:(id)arg1;
 - (id)alternativeVoiceIdentifiersForLangauge:(id)arg1;
 - (void)dealloc;
-- (BOOL)isAlexAvailableForLanguage:(id)arg1;
-- (BOOL)isAlternativeVoice:(id)arg1;
-- (BOOL)isAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
-- (BOOL)isSiriVoiceIdentifier:(id)arg1;
+- (bool)isAlexAvailableForLanguage:(id)arg1;
+- (bool)isAlternativeVoice:(id)arg1;
+- (bool)isAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
+- (bool)isSiriVoiceIdentifier:(id)arg1;
 - (id)nameForVoiceIdentifier:(id)arg1;
-- (void)setSupportedSiriLanguages:(id)arg1;
 - (void)setVoiceClassesMap:(id)arg1;
 - (void)setVoiceNameMap:(id)arg1;
 - (id)supportedSiriLanguages;

@@ -6,10 +6,10 @@
     NSArray * _availableProducts;
 }
 
-@property (nonatomic, readonly) NSArray *availableProducts;
+@property (nonatomic, readonly, copy) NSArray *availableProducts;
 
+- (void).cxx_destruct;
 - (id)availableProducts;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 
 @end

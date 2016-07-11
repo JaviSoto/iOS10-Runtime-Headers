@@ -6,14 +6,15 @@
 
 @property (nonatomic, retain) MPMediaPlaylist *mixPlaylist;
 
-+ (BOOL)supportsStateRestoration;
++ (Class)playbackItemMetadataClass;
++ (bool)supportsStateRestoration;
 
 - (id)errorResolverForItem:(id)arg1;
 - (Class)itemClass;
 - (id)mixPlaylist;
 - (id)playbackInfoForIdentifier:(id)arg1;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
+- (long long)realRepeatType;
+- (long long)realShuffleType;
 - (void)setMixPlaylist:(id)arg1;
 
 @end

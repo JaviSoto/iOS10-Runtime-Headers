@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKAgent : GKComponent {
+@interface GKAgent : GKComponent <NSCoding> {
     GKBehavior * _behavior;
     <GKAgentDelegate> * _delegate;
-    struct SimpleVehicle { 
+    struct GKSimpleVehicle { 
         int (**_vptr$AbstractLocalSpace)(); 
         struct Vec3 { 
             float x; 
@@ -68,6 +68,7 @@
             float y; 
             float z; 
         } _smoothedAcceleration; 
+        bool m_rightHanded; 
     }  _vehicle;
 }
 
@@ -77,16 +78,19 @@
 @property (nonatomic) float maxAcceleration;
 @property (nonatomic) float maxSpeed;
 @property (nonatomic) float radius;
-@property (nonatomic, readonly) float speed;
+@property (nonatomic) float speed;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)behavior;
 - (id)delegate;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (float)mass;
 - (float)maxAcceleration;
 - (float)maxSpeed;
+- (void)position3;
 - (float)radius;
 - (void)setBehavior:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -94,7 +98,21 @@
 - (void)setMaxAcceleration:(float)arg1;
 - (void)setMaxSpeed:(float)arg1;
 - (void)setRadius:(float)arg1;
+- (void)setSpeed:(float)arg1;
 - (float)speed;
-- (struct SimpleVehicle { int (**x1)(); struct Vec3 { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct Vec3 { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct Vec3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct Vec3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; float x6; float x7; struct Vec3 { float x_8_1_1; float x_8_1_2; float x_8_1_3; } x8; struct Vec3 { float x_9_1_1; float x_9_1_2; float x_9_1_3; } x9; bool x10; int x11; float x12; float x13; float x14; float x15; float x16; float x17; struct Vec3 { float x_18_1_1; float x_18_1_2; float x_18_1_3; } x18; struct Vec3 { float x_19_1_1; float x_19_1_2; float x_19_1_3; } x19; struct Vec3 { float x_20_1_1; float x_20_1_2; float x_20_1_3; } x20; float x21; struct Vec3 { float x_22_1_1; float x_22_1_2; float x_22_1_3; } x22; }*)vehicle;
+- (void)steerForAlignment:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;
+- (void)steerForCohesion:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;
+- (void)steerForFlee;
+- (void)steerForIntercept:(id)arg1 maxPredictionTime:(double)arg2;
+- (void)steerForSeek;
+- (void)steerForSeparation:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;
+- (void)steerForTargetSpeed:(float)arg1;
+- (void)steerForWander:(double)arg1 speed:(float)arg2;
+- (void)steerToAvoidAgents:(id)arg1 timeBeforeCollisionToAvoid:(double)arg2;
+- (void)steerToAvoidObstacles:(id)arg1 timeBeforeCollisionToAvoid:(double)arg2;
+- (void)steerToFollowPath:(id)arg1 maxPredictionTime:(double)arg2 forward:(bool)arg3;
+- (void)steerToStayOnPath:(id)arg1 maxPredictionTime:(double)arg2;
+- (struct GKSimpleVehicle { int (**x1)(); struct Vec3 { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct Vec3 { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct Vec3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct Vec3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; float x6; float x7; struct Vec3 { float x_8_1_1; float x_8_1_2; float x_8_1_3; } x8; struct Vec3 { float x_9_1_1; float x_9_1_2; float x_9_1_3; } x9; bool x10; int x11; float x12; float x13; float x14; float x15; float x16; float x17; struct Vec3 { float x_18_1_1; float x_18_1_2; float x_18_1_3; } x18; struct Vec3 { float x_19_1_1; float x_19_1_2; float x_19_1_3; } x19; struct Vec3 { float x_20_1_1; float x_20_1_2; float x_20_1_3; } x20; float x21; struct Vec3 { float x_22_1_1; float x_22_1_2; float x_22_1_3; } x22; bool x23; }*)vehicle;
+- (void)velocity3;
 
 @end

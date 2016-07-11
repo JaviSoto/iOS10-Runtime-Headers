@@ -5,19 +5,27 @@
 
 @required
 
+- (UIViewController *)presentingViewControllerForWebViewController:(SFWebViewController *)arg1;
+- (void)webViewController:(SFWebViewController *)arg1 commitPreviewedViewController:(UIViewController *)arg2;
 - (WKWebView *)webViewController:(SFWebViewController *)arg1 createWebViewWithConfiguration:(WKWebViewConfiguration *)arg2 forNavigationAction:(WKNavigationAction *)arg3;
-- (void)webViewController:(void *)arg1 decidePolicyForNavigationAction:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: SFWebViewController *, WKNavigationAction *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)webViewController:(void *)arg1 decidePolicyForNavigationAction:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: SFWebViewController *, WKNavigationAction *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
 - (void)webViewController:(SFWebViewController *)arg1 didCommitNavigation:(WKNavigation *)arg2;
 - (void)webViewController:(SFWebViewController *)arg1 didFailNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3;
 - (void)webViewController:(SFWebViewController *)arg1 didFailProvisionalNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3;
 - (void)webViewController:(SFWebViewController *)arg1 didFinishNavigation:(WKNavigation *)arg2;
+- (void)webViewController:(void *)arg1 didReceiveAuthenticationChallenge:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: SFWebViewController *, NSURLAuthenticationChallenge *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, NSURLCredential *, void*
 - (void)webViewController:(SFWebViewController *)arg1 didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)arg2;
 - (void)webViewController:(SFWebViewController *)arg1 didStartProvisionalNavigation:(WKNavigation *)arg2;
-- (void)webViewController:(SFWebViewController *)arg1 setDownloadingFileType:(int)arg2;
+- (UIViewController *)webViewController:(SFWebViewController *)arg1 previewViewControllerForURL:(NSURL *)arg2 defaultActions:(NSArray *)arg3 elementInfo:(_WKActivatedElementInfo *)arg4;
+- (void)webViewController:(SFWebViewController *)arg1 setDownloadingFileType:(long long)arg2;
 - (void)webViewControllerDidChangeEstimatedProgress:(SFWebViewController *)arg1;
+- (void)webViewControllerDidChangeHasOnlySecureContent:(SFWebViewController *)arg1;
 - (void)webViewControllerDidChangeLoadingState:(SFWebViewController *)arg1;
 - (void)webViewControllerDidChangeURL:(SFWebViewController *)arg1;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(SFWebViewController *)arg1;
+- (void)webViewControllerWebProcessDidBecomeResponsive:(SFWebViewController *)arg1;
+- (void)webViewControllerWebProcessDidBecomeUnresponsive:(SFWebViewController *)arg1;
 - (void)webViewControllerWebProcessDidCrash:(SFWebViewController *)arg1;
+- (void)webViewControllerWillPresentJavaScriptDialog:(SFWebViewController *)arg1;
 
 @end

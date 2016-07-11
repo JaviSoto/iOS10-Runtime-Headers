@@ -3,23 +3,23 @@
  */
 
 @interface PHObjectChangeDetails : NSObject {
-    BOOL  _assetContentChanged;
+    bool  _assetContentChanged;
     PHObject * _objectAfterChanges;
     PHObject * _objectBeforeChanges;
 }
 
-@property (readonly) BOOL assetContentChanged;
+@property (readonly) bool assetContentChanged;
 @property (readonly) PHObject *objectAfterChanges;
 @property (readonly) PHObject *objectBeforeChanges;
-@property (readonly) BOOL objectWasDeleted;
+@property (readonly) bool objectWasDeleted;
 
 - (void).cxx_destruct;
 - (void)_calculateDiffs;
-- (BOOL)assetContentChanged;
+- (bool)assetContentChanged;
 - (id)description;
 - (id)initWithPHObject:(id)arg1;
 - (id)objectAfterChanges;
 - (id)objectBeforeChanges;
-- (BOOL)objectWasDeleted;
+- (bool)objectWasDeleted;
 
 @end

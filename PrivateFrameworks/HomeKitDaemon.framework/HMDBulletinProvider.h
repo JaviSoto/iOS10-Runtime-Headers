@@ -11,30 +11,30 @@
 @property (nonatomic, retain) NSMutableDictionary *bulletins;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic) BBDataProviderProxy *proxy;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
 - (id)bulletins;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
 - (void)configure:(id)arg1;
 - (void)configureHomeManager:(id)arg1;
-- (void)cullBulletinsToCount:(unsigned int)arg1;
+- (void)cullBulletinsToCount:(unsigned long long)arg1;
 - (id)defaultSectionInfo;
 - (id)defaultSubsectionInfos;
-- (id)displayNameForFilterID:(id)arg1;
 - (id)displayNameForSubsectionID:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)homeManager;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)insertBulletinWithTitle:(id)arg1 message:(id)arg2 recordID:(id)arg3;
-- (void)insertBulletinWithTitle:(id)arg1 message:(id)arg2 recordID:(id)arg3 context:(struct NSDictionary { Class x1; }*)arg4;
+- (void)insertBulletinWithTitle:(id)arg1 imageURL:(id)arg2 message:(id)arg3 recordID:(id)arg4;
+- (void)insertBulletinWithTitle:(id)arg1 imageURL:(id)arg2 message:(id)arg3 recordID:(id)arg4 bulletinContext:(struct NSDictionary { Class x1; }*)arg5 actionContext:(struct NSDictionary { Class x1; }*)arg6;
 - (id)proxy;
 - (void)reloadDefaultSectionInfo;
 - (void)removeBulletin:(id)arg1;
@@ -47,7 +47,7 @@
 - (void)setProxy:(id)arg1;
 - (id)sortDescriptors;
 - (id)sortedBulletinsByDate;
-- (BOOL)syncsBulletinDismissal;
+- (bool)syncsBulletinDismissal;
 - (void)updateBulletin:(id)arg1;
 
 @end

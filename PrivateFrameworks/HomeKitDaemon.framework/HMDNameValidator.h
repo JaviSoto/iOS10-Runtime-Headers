@@ -31,6 +31,7 @@
 - (void)setHomeManagerUUID:(id)arg1;
 - (void)setNamespaceList:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)validateName:(id)arg1;
 - (id)workQueue;
 
 @end

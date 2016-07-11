@@ -14,23 +14,28 @@
 @property (nonatomic, readonly, copy) NSArray *childBehaviors;
 @property (nonatomic, readonly) UIDynamicAnimator *dynamicAnimator;
 
-+ (BOOL)_isPrimitiveBehavior;
++ (bool)_isPrimitiveBehavior;
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)_addItem:(id)arg1;
 - (void)_associate;
 - (void)_changedParameterForBody:(id)arg1;
 - (id)_context;
+- (void)_detachAutolayoutFromItemIfNecessary:(id)arg1;
 - (void)_dissociate;
 - (id)_items;
 - (id)_itemsDescription;
-- (void)_reevaluate:(unsigned int)arg1;
+- (void)_reattachAutolayoutToItemIfNecessary:(id)arg1;
+- (void)_reevaluate:(unsigned long long)arg1;
+- (void)_removeItem:(id)arg1;
 - (void)_setContext:(id)arg1;
 - (void)_setItems:(id)arg1;
 - (void)_step;
+- (void)_updateAutolayoutEngagementForItemIfNecessary:(id)arg1 detach:(bool)arg2;
 - (id /* block */)action;
 - (void)addChildBehavior:(id)arg1;
-- (BOOL)allowsAnimatorToStop;
+- (bool)allowsAnimatorToStop;
 - (id)childBehaviors;
 - (id)description;
 - (id)dynamicAnimator;

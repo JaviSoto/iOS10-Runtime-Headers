@@ -18,9 +18,9 @@
 @property (nonatomic, copy) NSNumber *size;
 
 + (id)itemWithLocalURL:(id)arg1 passURL:(id)arg2 dictionary:(id)arg3 error:(id*)arg4;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocalURL:(id)arg1 passURL:(id)arg2 dictionary:(id)arg3 error:(id*)arg4;

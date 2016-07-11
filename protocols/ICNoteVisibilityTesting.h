@@ -5,8 +5,8 @@
 
 @required
 
-- (NSPredicate *)predicateForVisibleAttachments;
-- (NSPredicate *)predicateForVisibleNotes;
-- (BOOL)supportsVisibilityTestingType:(int)arg1;
+- (NSPredicate *)predicateForSearchableAttachments;
+- (NSPredicate *)predicateForSearchableNotes;
+- (bool)supportsVisibilityTestingType:(long long)arg1;
 
 @end

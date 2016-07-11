@@ -5,9 +5,10 @@
 @interface GEOTransitOptions : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _avoidedModes;
+    GEOFareOptions * _fareOptions;
     struct { 
         unsigned int prioritization : 1; 
     }  _has;
@@ -15,28 +16,37 @@
 }
 
 @property (nonatomic, readonly) int*avoidedModes;
-@property (nonatomic, readonly) unsigned int avoidedModesCount;
-@property (nonatomic) BOOL hasPrioritization;
+@property (nonatomic, readonly) unsigned long long avoidedModesCount;
+@property (nonatomic, retain) GEOFareOptions *fareOptions;
+@property (nonatomic, readonly) bool hasFareOptions;
+@property (nonatomic) bool hasPrioritization;
 @property (nonatomic) int prioritization;
 
+- (int)StringAsAvoidedModes:(id)arg1;
+- (int)StringAsPrioritization:(id)arg1;
 - (void)addAvoidedMode:(int)arg1;
-- (int)avoidedModeAtIndex:(unsigned int)arg1;
+- (int)avoidedModeAtIndex:(unsigned long long)arg1;
 - (int*)avoidedModes;
-- (unsigned int)avoidedModesCount;
+- (id)avoidedModesAsString:(int)arg1;
+- (unsigned long long)avoidedModesCount;
 - (void)clearAvoidedModes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPrioritization;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)fareOptions;
+- (bool)hasFareOptions;
+- (bool)hasPrioritization;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)prioritization;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAvoidedModes:(int*)arg1 count:(unsigned int)arg2;
-- (void)setHasPrioritization:(BOOL)arg1;
+- (id)prioritizationAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setAvoidedModes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setFareOptions:(id)arg1;
+- (void)setHasPrioritization:(bool)arg1;
 - (void)setPrioritization:(int)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -9,7 +9,7 @@
     struct { 
         unsigned int operatingHoursRange : 1; 
     }  _has;
-    struct { 
+    struct GEOPDTimeRange { 
         unsigned int _duration; 
         unsigned int _startTime; 
         struct { 
@@ -22,11 +22,12 @@
 @property (nonatomic, retain) GEOPDDeparturePredicate *departurePredicateCountdown;
 @property (nonatomic, retain) GEOPDDeparturePredicate *departurePredicateStamp;
 @property (nonatomic, retain) NSMutableArray *departureSequences;
-@property (nonatomic, readonly) BOOL hasDeparturePredicateCountdown;
-@property (nonatomic, readonly) BOOL hasDeparturePredicateStamp;
-@property (nonatomic) BOOL hasOperatingHoursRange;
-@property (nonatomic) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } operatingHoursRange;
+@property (nonatomic, readonly) bool hasDeparturePredicateCountdown;
+@property (nonatomic, readonly) bool hasDeparturePredicateStamp;
+@property (nonatomic) bool hasOperatingHoursRange;
+@property (nonatomic) struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } operatingHoursRange;
 
++ (Class)departureSequenceType;
 + (id)transitScheduleForPlaceData:(id)arg1;
 
 - (void)addDepartureSequence:(id)arg1;
@@ -36,24 +37,24 @@
 - (void)dealloc;
 - (id)departurePredicateCountdown;
 - (id)departurePredicateStamp;
-- (id)departureSequenceAtIndex:(unsigned int)arg1;
+- (id)departureSequenceAtIndex:(unsigned long long)arg1;
 - (id)departureSequences;
-- (unsigned int)departureSequencesCount;
+- (unsigned long long)departureSequencesCount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeparturePredicateCountdown;
-- (BOOL)hasDeparturePredicateStamp;
-- (BOOL)hasOperatingHoursRange;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeparturePredicateCountdown;
+- (bool)hasDeparturePredicateStamp;
+- (bool)hasOperatingHoursRange;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursRange;
-- (BOOL)readFrom:(id)arg1;
+- (struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursRange;
+- (bool)readFrom:(id)arg1;
 - (void)setDeparturePredicateCountdown:(id)arg1;
 - (void)setDeparturePredicateStamp:(id)arg1;
 - (void)setDepartureSequences:(id)arg1;
-- (void)setHasOperatingHoursRange:(BOOL)arg1;
-- (void)setOperatingHoursRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (void)setHasOperatingHoursRange:(bool)arg1;
+- (void)setOperatingHoursRange:(struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)writeTo:(id)arg1;
 
 @end

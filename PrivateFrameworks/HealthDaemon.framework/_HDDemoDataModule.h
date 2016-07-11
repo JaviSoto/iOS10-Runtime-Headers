@@ -14,7 +14,6 @@
 @property (nonatomic, readonly) double nextFireInterval;
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)delegate;
 - (void)handleDataObject:(id)arg1;
 - (id)initWithOperationQueue:(id)arg1;

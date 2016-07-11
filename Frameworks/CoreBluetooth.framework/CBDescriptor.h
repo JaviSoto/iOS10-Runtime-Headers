@@ -14,8 +14,8 @@
 @property (nonatomic, readonly) CBPeripheral *peripheral;
 @property (retain) id value;
 
+- (void).cxx_destruct;
 - (id)characteristic;
-- (void)dealloc;
 - (id)description;
 - (id)handle;
 - (id)handleValueUpdated:(id)arg1;

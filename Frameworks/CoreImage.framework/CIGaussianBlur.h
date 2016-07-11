@@ -19,7 +19,7 @@
 - (id)_CIGaussianBlur7;
 - (id)_CIGaussianReduce2;
 - (id)_CIGaussianReduce4;
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)inputImage;
 - (id)inputRadius;
 - (id)outputImage;

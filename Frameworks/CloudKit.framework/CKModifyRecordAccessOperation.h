@@ -23,12 +23,14 @@
 @property (nonatomic, retain) NSMutableArray *revokedRecordIDs;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)grantedRecordIDs;
+- (bool)hasCKOperationCallbacksSet;
 - (id)initWithRecordIDsToGrantAccess:(id)arg1 recordIDsToRevokeAccess:(id)arg2;
 - (void)performCKOperation;
 - (id /* block */)recordAccessCompletionBlock;

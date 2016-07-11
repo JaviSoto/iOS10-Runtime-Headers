@@ -8,6 +8,8 @@
 
 @property (nonatomic, retain) NSMutableArray *tileSets;
 
++ (Class)tileSetType;
+
 - (void)addTileSet:(id)arg1;
 - (void)clearTileSets;
 - (void)copyTo:(id)arg1;
@@ -15,14 +17,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTileSets:(id)arg1;
-- (id)tileSetAtIndex:(unsigned int)arg1;
+- (id)tileSetAtIndex:(unsigned long long)arg1;
 - (id)tileSets;
-- (unsigned int)tileSetsCount;
+- (unsigned long long)tileSetsCount;
 - (void)writeTo:(id)arg1;
 
 @end

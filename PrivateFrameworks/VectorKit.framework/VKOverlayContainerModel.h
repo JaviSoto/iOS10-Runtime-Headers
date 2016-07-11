@@ -4,9 +4,14 @@
 
 @interface VKOverlayContainerModel : VKMapTileModel <VKMapLayer, VKRouteContextObserver, VKRouteMatchedAnnotationPresentationObserver, VKStyleManagerObserver> {
     unsigned char  _applicationState;
-    struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; int x6; unsigned char x7; struct Box<unsigned int, 2> { struct Matrix<unsigned int, 2, 1> { unsigned int x_1_2_1[2]; } x_8_1_1; struct Matrix<unsigned int, 2, 1> { unsigned int x_2_2_1[2]; } x_8_1_2; } x8; } * _clearItem;
+    struct unique_ptr<md::RouteLineArrowSharedResources, std::__1::default_delete<md::RouteLineArrowSharedResources> > { 
+        struct __compressed_pair<md::RouteLineArrowSharedResources *, std::__1::default_delete<md::RouteLineArrowSharedResources> > { 
+            struct RouteLineArrowSharedResources {} *__first_; 
+        } __ptr_; 
+    }  _arrowSharedResources;
+    struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; unsigned int x6; } * _clearItem;
     <VKOverlayContainerDelegate> * _delegate;
-    BOOL  _isShowingRouteInStandardMode;
+    bool  _isShowingOuterHaloOnLabels;
     NSMutableArray * _overlayPainters;
     NSMutableSet * _overlaysToAdd;
     NSMapTable * _overlaysToPainters;
@@ -14,48 +19,44 @@
     NSMutableSet * _paintersToRemove;
     NSMutableSet * _persistentOverlays;
     NSMapTable * _persistentOverlaysToPainters;
-    struct { 
-        struct VKPoint { 
-            double x; 
-            double y; 
-            double z; 
-        } position; 
-        double course; 
-        BOOL onRoute; 
-    }  _puckPosition;
     VKRouteContext * _routeContext;
-    <VKOverlayContainerRouteDelegate> * _routeDelegate;
     <VKRouteMatchedAnnotationPresentation> * _routeLineSplitAnnotation;
-    BOOL  _shouldCheckForOcclusion;
-    BOOL  _shouldOccludeTraffic;
-    BOOL  _shouldShowTraffic;
+    struct unique_ptr<md::RouteLineSharedResources, std::__1::default_delete<md::RouteLineSharedResources> > { 
+        struct __compressed_pair<md::RouteLineSharedResources *, std::__1::default_delete<md::RouteLineSharedResources> > { 
+            struct RouteLineSharedResources {} *__first_; 
+        } __ptr_; 
+    }  _routeSharedResources;
+    bool  _shouldCheckForOcclusion;
+    bool  _shouldOccludeTraffic;
+    bool  _shouldShowTraffic;
     VKSkyModel * _skyModel;
-    struct shared_ptr<gss::StyleManager> { 
-        struct StyleManager {} *__ptr_; 
+    struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
+        struct StylesheetManager<gss::PropertyID> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _styleManager;
     NSMutableSet * _visibleOverlays;
 }
 
+@property (nonatomic, readonly) const struct RouteLineArrowSharedResources { struct RouteLineArrowSharedPipelineStates { struct shared_ptr<ggl::RouteLineArrow::BasePipelineState> { struct BasePipelineState {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_1_1_1; } x1; /* Warning: unhandled struct encoding: '{RouteLineArrowSharedRenderStates={unique_ptr<ggl::RenderState' */ struct x2; void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; union x20; void*x21; bool x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; BOOL x31; void*x32; out void*x33; void*x34; void*x35; void*x36; void*x37; const void*x38; void*x39; void*x40; short x41; void*x42; short x43; void*x44; void*x45; void*x46; double x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; int x55; void*x56; const void*x57; void*x58; void*x59; void*x60; void*x61; in void*x62; short x63; void*x64; int x65; void*x66; void*x67; void*x68; in void*x69; void*x70; void*x71; double x72; void*x73; void*x74; void*x75; long x76; void*x77; out void*x78; in void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; short x86; void*x87; void*x88; void*x89; double x90; void*x91; SEL x92; void*x93; SEL x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; SEL x102; void*x103; SEL x104; void*x105; long x106; void*x107; void*x108; void*x109; short x110; void*x111; short x112; void*x113; void*x114; void*x115; short x116; void*x117; void*x118; void*x119; double x120; void*x121; SEL x122; void*x123; SEL x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; SEL x132; void*x133; SEL x134; void*x135; short x136; void*x137; void*x138; void*x139; void*x140; void*x141; const void*x142; void*x143; void*x144; double x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; const void*x153; void*x154; void*x155; void*x156; void*x157; double x158; void*x159; SEL x160; void*x161; SEL x162; void*x163; unsigned long x164; void*x165; void*x166; void*x167; unsigned int x168/* : ? */; void*x169; void*x170; void*x171; long x172; void*x173; unsigned int x174; void*x175; BOOL x176; void*x177; out void*x178; in void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; struct x192; void*x193; void*x194; void*x195; void*x196; void*x197; in void*x198; short x199; void*x200; int x201; void*x202; void*x203; void*x204; in void*x205; void*x206; void*x207; double x208; void*x209; void*x210; void*x211; long x212; void*x213; out void*x214; in void*x215; void*x216; void*x217; void*x218; void*x219; long x220; void*x221; out void*x222; in void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; }*arrowSharedResources; /* unknown property attribute:  std::__1::default_delete<ggl::RenderState> >=^{RenderState}}}}{shared_ptr<ggl::Texture2D>=^{Texture2D}^{__shared_weak_count}}} */
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VKOverlayContainerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isInRealisticMode, nonatomic, readonly) BOOL inRealisticMode;
-@property (nonatomic, readonly) BOOL isShowingRouteInStandardMode;
+@property (readonly) unsigned long long hash;
+@property (getter=isInRealisticMode, nonatomic, readonly) bool inRealisticMode;
+@property (getter=isInTransitMode, nonatomic, readonly) bool inTransitMode;
+@property (nonatomic, readonly) bool isShowingOuterHaloOnLabels;
 @property (nonatomic, readonly) NSSet *persistentOverlays;
-@property (nonatomic, readonly) struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; } puckPosition;
 @property (nonatomic, retain) VKRouteContext *routeContext;
-@property (nonatomic) <VKOverlayContainerRouteDelegate> *routeDelegate;
 @property (nonatomic, retain) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
-@property (nonatomic) BOOL shouldCheckForOcclusion;
-@property (nonatomic) BOOL shouldOccludeTraffic;
-@property (nonatomic) BOOL shouldShowTraffic;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{RouteLineSharedResources={RouteLineSharedRenderStates={unique_ptr<ggl::RenderState' */ struct *routeSharedResources; /* unknown property attribute:  true> >=f}}}}} */
+@property (nonatomic) bool shouldCheckForOcclusion;
+@property (nonatomic) bool shouldOccludeTraffic;
+@property (nonatomic) bool shouldShowTraffic;
 @property (nonatomic, retain) VKSkyModel *skyModel;
-@property (nonatomic) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
+@property (nonatomic) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -63,39 +64,39 @@
 - (void)addPainterToRemove:(id)arg1;
 - (void)addPersistentOverlay:(id)arg1;
 - (void)annotationPresentationDidChangePresentationCoordinate:(id)arg1;
+- (const struct RouteLineArrowSharedResources { struct RouteLineArrowSharedPipelineStates { struct shared_ptr<ggl::RouteLineArrow::BasePipelineState> { struct BasePipelineState {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_1_1_1; } x1; struct RouteLineArrowSharedRenderStates { struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_1_2_1; } x_2_1_1; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_2_2_1; } x_2_1_2; } x2; struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x_3_1_1; struct __shared_weak_count {} *x_3_1_2; } x3; }*)arrowSharedResources;
 - (void)dealloc;
 - (id)delegate;
-- (void)didReceiveMemoryWarning:(BOOL)arg1;
-- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
-- (id)init;
-- (BOOL)isInRealisticMode;
-- (BOOL)isShowingRouteInStandardMode;
-- (void)layoutScene:(id)arg1 withContext:(id)arg2;
+- (void)didReceiveMemoryWarning:(bool)arg1;
+- (void)gglLayoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (id)initWithTarget:(id)arg1 sharedResources:(id)arg2;
+- (bool)isInRealisticMode;
+- (bool)isInTransitMode;
+- (bool)isShowingOuterHaloOnLabels;
+- (void)layoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
 - (unsigned long long)mapLayerPosition;
 - (id)persistentOverlays;
-- (struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; })puckPosition;
 - (void)removePersistentOverlay:(id)arg1;
 - (void)reset;
 - (id)routeContext;
 - (void)routeContextStateDidChange:(id)arg1;
-- (id)routeDelegate;
 - (id)routeLineSplitAnnotation;
+- (const struct RouteLineSharedResources { struct RouteLineSharedRenderStates { struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_1_2_1; } x_1_1_1; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_3_2_1; } x_1_1_3; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_4_2_1; } x_1_1_4; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_5_2_1; } x_1_1_5; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_6_2_1; } x_1_1_6; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_7_2_1; } x_1_1_7; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_8_2_1; } x_1_1_8; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_9_2_1; } x_1_1_9; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_10_2_1; } x_1_1_10; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_11_2_1; } x_1_1_11; } x1; struct RouteLineSharedPipelineStates { struct shared_ptr<ggl::RouteLine::BasePipelineState> { struct BasePipelineState {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_2_1_1; struct shared_ptr<ggl::PatternedRibbon::RoutePipelineState> { struct RoutePipelineState {} *x_2_2_1; struct __shared_weak_count {} *x_2_2_2; } x_2_1_2; struct shared_ptr<ggl::RouteLineAlphaReset::BasePipelineState> { struct BasePipelineState {} *x_3_2_1; struct __shared_weak_count {} *x_3_2_2; } x_2_1_3; struct shared_ptr<ggl::RouteLineTraffic::BasePipelineState> { struct BasePipelineState {} *x_4_2_1; struct __shared_weak_count {} *x_4_2_2; } x_2_1_4; } x2; struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D> > { struct __compressed_pair<ggl::Texture2D *, std::__1::default_delete<ggl::Texture2D> > { struct Texture2D {} *x_1_2_1; } x_3_1_1; } x3; struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D> > { struct __compressed_pair<ggl::Texture2D *, std::__1::default_delete<ggl::Texture2D> > { struct Texture2D {} *x_1_2_1; } x_4_1_1; } x4; struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D> > { struct __compressed_pair<ggl::Texture2D *, std::__1::default_delete<ggl::Texture2D> > { struct Texture2D {} *x_1_2_1; } x_5_1_1; } x5; struct AlphaAtlas {} *x6; struct DashTextureCache { struct unordered_map<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture>, md::DashTextureCache::KeyHasher, std::__1::equal_to<md::DashTextureCache::Key>, std::__1::allocator<std::__1::pair<const md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> > > > { struct __hash_table<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, std::__1::__unordered_map_hasher<md::DashTextureCache::Key, std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, md::DashTextureCache::KeyHasher, true>, std::__1::__unordered_map_equal<md::DashTextureCache::Key, std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, std::__1::equal_to<md::DashTextureCache::Key>, true>, std::__1::allocator<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> > > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> {} **x_1_5_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *> > { unsigned long long x_1_7_1; } x_2_6_1; } x_1_5_2; } x_1_4_1; } x_1_3_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> *> { struct __hash_node<std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<md::DashTextureCache::Key, std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, md::DashTextureCache::KeyHasher, true> > { unsigned long long x_3_4_1; } x_1_3_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<md::DashTextureCache::Key, std::__1::__hash_value_type<md::DashTextureCache::Key, std::__1::shared_ptr<md::DashTexture> >, std::__1::equal_to<md::DashTextureCache::Key>, true> > { float x_4_4_1; } x_1_3_4; } x_1_2_1; } x_7_1_1; } x7; }*)routeSharedResources;
 - (void)setApplicationState:(unsigned char)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRouteContext:(id)arg1;
-- (void)setRouteDelegate:(id)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
-- (void)setShouldCheckForOcclusion:(BOOL)arg1;
-- (void)setShouldOccludeTraffic:(BOOL)arg1;
-- (void)setShouldShowTraffic:(BOOL)arg1;
+- (void)setShouldCheckForOcclusion:(bool)arg1;
+- (void)setShouldOccludeTraffic:(bool)arg1;
+- (void)setShouldShowTraffic:(bool)arg1;
 - (void)setSkyModel:(id)arg1;
-- (void)setStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)shouldCheckForOcclusion;
-- (BOOL)shouldOccludeTraffic;
-- (BOOL)shouldShowTraffic;
+- (void)setStyleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (bool)shouldCheckForOcclusion;
+- (bool)shouldLayoutWithoutStyleManager;
+- (bool)shouldOccludeTraffic;
+- (bool)shouldShowTraffic;
 - (id)skyModel;
-- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
+- (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
-- (void)updatedMatchedSection:(struct fast_shared_ptr<vk::RouteLineSection> { struct _fast_shared_ptr_control {} *x1; })arg1 index:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg2;
 
 @end

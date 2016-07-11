@@ -2,24 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WelcomeKitUI.framework/WelcomeKitUI
  */
 
-@interface WLMigrationCompletedViewController : WLBuddyPaneViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface WLMigrationCompletedViewController : WLWelcomeGroupViewController {
     UIButton * _continueButton;
-    WLDataMigrationController * _migrationController;
+    id /* block */  _continueHandler;
+    UIButton * _continueView;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly, retain) WLDataMigrationController *migrationController;
-@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ continueHandler;
 
 - (void).cxx_destruct;
-- (void)continueTapped:(id)arg1;
-- (id)initWithDataMigrationController:(id)arg1;
+- (void)_continueTapped:(id)arg1;
+- (id /* block */)continueHandler;
 - (void)loadView;
-- (id)migrationController;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)setContinueHandler:(id /* block */)arg1;
 
 @end

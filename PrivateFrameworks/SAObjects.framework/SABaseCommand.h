@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SABaseCommand : AceObject <AFSessionObject, SAAceCommand, SAAceSerializable>
+@interface SABaseCommand : AceObject <SAAceCommand, SAAceSerializable, SiriCoreSessionObject>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
@@ -23,10 +23,13 @@
 - (void)setAceId:(id)arg1;
 - (void)setRefId:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)af_bufferingAllowedDuringActiveSession;
-- (void)af_logDiagnostics;
-- (id)serializedAceDataError:(id*)arg1;
+- (void)siriCore_addSendCompletion:(id /* block */)arg1;
+- (bool)siriCore_bufferingAllowedDuringActiveSession;
+- (void)siriCore_dispatchSendCompletionsWithResult:(long long)arg1 error:(id)arg2;
+- (void)siriCore_logDiagnostics;
+- (id)siriCore_serializedAceDataError:(id*)arg1;
+- (bool)siriCore_supportsSendCompletions;
 
 @end

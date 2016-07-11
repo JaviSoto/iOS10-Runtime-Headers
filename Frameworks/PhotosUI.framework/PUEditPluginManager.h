@@ -4,21 +4,22 @@
 
 @interface PUEditPluginManager : NSObject {
     NSArray * __plugins;
-    int  _mediaType;
+    unsigned long long  _mediaType;
 }
 
 @property (setter=_setPlugins:, nonatomic, copy) NSArray *_plugins;
-@property (readonly) int mediaType;
+@property (readonly) unsigned long long mediaType;
 
-+ (id)sharedManagerForMediaType:(int)arg1;
++ (id)sharedManagerForMediaType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
+- (id)_allowedPluginTypes;
 - (void)_discoveredAvailableExtensions:(id)arg1;
-- (id)_initWithMediaType:(int)arg1;
+- (id)_initWithMediaType:(unsigned long long)arg1;
 - (id)_plugins;
 - (void)_setPlugins:(id)arg1;
-- (BOOL)hasPlugins;
-- (int)mediaType;
+- (bool)hasPlugins;
+- (unsigned long long)mediaType;
 - (id)pluginActivities;
 - (void)rediscoverAvailablePlugins;
 

@@ -2,35 +2,23 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKPolygonObstacle : GKObstacle {
-    GKPolygonObstacle * _extrudedObstacle;
-    struct PolygonObstacle { 
-        int (**_vptr$Obstacle)(); 
-        struct vector<OpenSteer::Vec3, std::__1::allocator<OpenSteer::Vec3> > { 
-            struct Vec3 {} *__begin_; 
-            struct Vec3 {} *__end_; 
-            struct __compressed_pair<OpenSteer::Vec3 *, std::__1::allocator<OpenSteer::Vec3> > { 
-                struct Vec3 {} *__first_; 
-            } __end_cap_; 
-        } vertices; 
-    }  _obstacle;
-    GKPolygonObstacle * _sourceObstacle;
-    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _vertices;
+@interface GKPolygonObstacle : GKObstacle <NSCoding> {
+    struct GKCPolygonObstacle { int (**x1)(); struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {} x2; } * _cPolygonObstacle;
 }
 
-@property (nonatomic, readonly) unsigned int vertexCount;
+@property (nonatomic, readonly) unsigned long long vertexCount;
 
-+ (id)obstacleWithPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2;
++ (id)obstacleWithPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
+- (struct GKCPolygonObstacle { int (**x1)(); struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {} x2; }*)cPolygonObstacle;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2;
-- (BOOL)intersectsLinelineEnd;
-- (BOOL)intersectsLineFromto;
-- (BOOL)intersectsPoint;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2;
 - (struct Obstacle { int (**x1)(); }*)obstacle;
-- (void)vertexAtIndex:(unsigned int)arg1;
-- (unsigned int)vertexCount;
+- (void)setCPolygonObstacle:(struct GKCPolygonObstacle { int (**x1)(); struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {} x2; }*)arg1;
+- (void)vertexAtIndex:(unsigned long long)arg1;
+- (unsigned long long)vertexCount;
 
 @end

@@ -4,27 +4,33 @@
 
 @interface SAMPSetQueue : SADomainCommand
 
+@property (nonatomic, copy) NSString *airplayRouteUID;
 @property (nonatomic, copy) NSArray *filters;
 @property (nonatomic, retain) SAMPCollection *mediaItems;
-@property (nonatomic) BOOL shouldOverrideManuallyCuratedUpNext;
-@property (nonatomic) BOOL shouldShuffle;
+@property (nonatomic) bool shouldOverrideManuallyCuratedUpNext;
+@property (nonatomic) bool shouldShuffle;
 @property (nonatomic, copy) NSArray *sort;
+@property (nonatomic, copy) NSNumber *startPlaying;
 
 + (id)setQueue;
 + (id)setQueueWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)filters;
 - (id)groupIdentifier;
 - (id)mediaItems;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
+- (void)setAirplayRouteUID:(id)arg1;
 - (void)setFilters:(id)arg1;
 - (void)setMediaItems:(id)arg1;
-- (void)setShouldOverrideManuallyCuratedUpNext:(BOOL)arg1;
-- (void)setShouldShuffle:(BOOL)arg1;
+- (void)setShouldOverrideManuallyCuratedUpNext:(bool)arg1;
+- (void)setShouldShuffle:(bool)arg1;
 - (void)setSort:(id)arg1;
-- (BOOL)shouldOverrideManuallyCuratedUpNext;
-- (BOOL)shouldShuffle;
+- (void)setStartPlaying:(id)arg1;
+- (bool)shouldOverrideManuallyCuratedUpNext;
+- (bool)shouldShuffle;
 - (id)sort;
+- (id)startPlaying;
 
 @end

@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *parsedStoreItemsImportProperties;
-@property (nonatomic, readonly) unsigned int trackCount;
+@property (nonatomic, readonly) unsigned long long trackCount;
 @property (nonatomic, readonly) NSData *trackData;
 
 + (id)_allSongItemsFromCollectionLookupItem:(id)arg1;
@@ -19,7 +19,7 @@
 + (id)_artworkTokenForItemWithCollectionID:(unsigned long long)arg1 itemID:(unsigned long long)arg2;
 + (id)_artworkTokenFromLookupItem:(id)arg1;
 + (id)_artworkTokenFromStoreItem:(id)arg1;
-+ (unsigned long)_mediaTypeForStoreItemKind:(id)arg1;
++ (unsigned int)_mediaTypeForStoreItemKind:(id)arg1;
 + (double)_songDurationFromOffersArray:(id)arg1;
 
 - (void).cxx_destruct;
@@ -34,7 +34,7 @@
 - (id)initWithStoreItems:(id)arg1;
 - (id)initWithTrackData:(id)arg1;
 - (id)parsedStoreItemsImportProperties;
-- (unsigned int)trackCount;
+- (unsigned long long)trackCount;
 - (id)trackData;
 
 @end

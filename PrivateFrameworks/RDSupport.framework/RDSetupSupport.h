@@ -8,10 +8,10 @@
 + (id)disableNanoDaemons;
 + (void)enableLocationServicesForKnownApplications;
 + (id)enableNanoDaemons;
-+ (BOOL)hasIDSPairingRecords;
++ (bool)hasIDSPairingRecords;
 + (void)resetIDSPairingRecords;
 + (id)sharedDaemonXPCConnection;
 + (void)startIDSLocalSetup;
-+ (void)startIDSLocalSetupWithInterfaceName:(id)arg1 ipAddress:(id)arg2 forceKill:(BOOL)arg3;
++ (void)startIDSLocalSetupWithInterfaceName:(id)arg1 ipAddress:(id)arg2 forceKill:(bool)arg3;
 
 @end

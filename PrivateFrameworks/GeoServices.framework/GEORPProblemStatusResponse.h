@@ -10,10 +10,13 @@
     int  _statusCode;
 }
 
-@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) bool hasStatusCode;
 @property (nonatomic, retain) NSMutableArray *problemStatus;
 @property (nonatomic) int statusCode;
 
++ (Class)problemStatusType;
+
+- (int)StringAsStatusCode:(id)arg1;
 - (void)addProblemStatus:(id)arg1;
 - (void)clearProblemStatus;
 - (void)copyTo:(id)arg1;
@@ -21,18 +24,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problemStatus;
-- (id)problemStatusAtIndex:(unsigned int)arg1;
-- (unsigned int)problemStatusCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (id)problemStatusAtIndex:(unsigned long long)arg1;
+- (unsigned long long)problemStatusCount;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setProblemStatus:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
+- (id)statusCodeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

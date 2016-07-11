@@ -11,11 +11,12 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 transferGUID:(id)arg4;
+- (void).cxx_destruct;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 transferGUID:(id)arg5;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 transferGUID:(id)arg5 visibleAssociatedMessageChatItems:(id)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
-- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
+- (bool)isAttachmentContiguousWithChatItem:(id)arg1;
 - (id)transferGUID;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit

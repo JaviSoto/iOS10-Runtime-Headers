@@ -4,29 +4,29 @@
 
 @interface MusicAccountNavigationController : MusicNavigationController <MusicClientContextConsuming, MusicJSAccountNativeViewControllerDelegate, MusicJSNativeViewControllerFactory> {
     MusicClientContext * _clientContext;
-    BOOL  _registeredWithModalNavigationStackRegistry;
+    bool  _registeredWithModalNavigationStackRegistry;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)automaticallyInstallAccountBarButtonItem;
-+ (BOOL)automaticallyInstallSearchBarButtonItem;
++ (bool)automaticallyInstallAccountBarButtonItem;
++ (bool)automaticallyInstallSearchBarButtonItem;
 
 - (void).cxx_destruct;
-- (void)_setRegisteredWithModalNavigationStackRegistry:(BOOL)arg1;
+- (void)_setRegisteredWithModalNavigationStackRegistry:(bool)arg1;
 - (id)clientContext;
 - (void)jsAccountNativeViewController:(id)arg1 setAccountDocument:(id)arg2 options:(id)arg3;
 - (void)jsDidCloseAccountNativeViewController:(id)arg1;
 - (id)loadJSNativeViewControllerWithAppContext:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

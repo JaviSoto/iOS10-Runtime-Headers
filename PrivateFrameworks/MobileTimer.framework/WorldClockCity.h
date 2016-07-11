@@ -10,7 +10,6 @@
     NSString * _timeZone;
     NSString * _unlocalizedCountryName;
     NSString * _unlocalizedName;
-    City * _weatherCity;
 }
 
 @property (nonatomic, readonly) NSString *abbreviation;
@@ -24,13 +23,13 @@
 @property (nonatomic, readonly) NSString *timeZone;
 @property (nonatomic, readonly) NSString *unlocalizedCityName;
 @property (nonatomic, readonly) NSString *unlocalizedCountryName;
-@property (nonatomic, retain) City *weatherCity;
 
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
-+ (BOOL)isCachedLanguageStaleForProperties:(id)arg1;
-+ (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
-+ (BOOL)isWorldClockCityProperties:(id)arg1;
++ (bool)isCachedLanguageStaleForProperties:(id)arg1;
++ (bool)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
++ (bool)isWorldClockCityProperties:(id)arg1;
++ (id)unlocalizedExampleCity;
 
 - (void).cxx_destruct;
 - (id)alCity;
@@ -38,25 +37,21 @@
 - (id)countryCode;
 - (id)countryName;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)idUrl;
 - (id)initWithALCity:(id)arg1;
 - (id)initWithALCityIdentifier:(int)arg1;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)properties;
-- (void)setWeatherCity:(id)arg1;
 - (id)timeZone;
 - (id)unlocalizedCityName;
 - (id)unlocalizedCountryName;
-- (id)weatherCity;
 
 // Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
-- (id)_bundleWithAbbreviations;
-- (id)_filePathForAbbreviationsResource;
 - (id)abbreviation;
 
 @end

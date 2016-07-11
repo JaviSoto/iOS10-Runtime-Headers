@@ -4,18 +4,13 @@
 
 @interface UIAlertControllerVisualStyleAlertCar : UIAlertControllerVisualStyleAlert
 
-- (id)actionContentColorForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (id)backgroundView;
-- (id)backgroundViewForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (int)maximumNumberOfLinesInMessageLabel;
-- (int)maximumNumberOfLinesInTitleLabel;
-- (float)maximumWidth;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (long long)maximumNumberOfLinesInMessageLabel;
+- (long long)maximumNumberOfLinesInTitleLabel;
+- (double)maximumWidth;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (float)minimumActionHeight;
-- (id)preferredActionFont;
-- (id)regularActionFont;
+- (bool)placementAvoidsKeyboard;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
 

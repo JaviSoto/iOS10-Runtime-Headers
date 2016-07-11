@@ -3,14 +3,13 @@
  */
 
 @interface _HDAchievementInsertionJournalEntry : HDJournalEntry {
-    HKAchievement * _achievement;
+    _HKAchievement * _achievement;
 }
 
-@property (nonatomic, readonly) HKAchievement *achievement;
+@property (nonatomic, readonly) _HKAchievement *achievement;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
-+ (BOOL)supportsSecureCoding;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)achievement;

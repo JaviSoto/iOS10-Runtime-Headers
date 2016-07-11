@@ -3,6 +3,7 @@
  */
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
+    NSArray * availableVideoCodecs;
     NSMutableArray * connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
     NSArray * metadata;
     struct { 
@@ -11,10 +12,11 @@
         unsigned int flags; 
         long long epoch; 
     }  movieFragmentInterval;
-    BOOL  paused;
-    BOOL  recording;
+    bool  paused;
+    bool  recording;
     NSMutableArray * recordingDelegatesArray;
-    BOOL  sendLastVideoPreviewFrame;
+    bool  sendLastVideoPreviewFrame;
+    NSString * videoCodec;
     AVWeakReference * weakReference;
 }
 

@@ -5,12 +5,12 @@
 @interface _CNOnEmptyObservable : CNObservable {
     <CNObservable> * _nextObservable;
     <CNObservable> * _observable;
-    BOOL  _observableIsEmpty;
+    bool  _observableIsEmpty;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithObservable:(id)arg1 nextObservable:(id)arg2;
-- (BOOL)isObservableEmpty;
+- (bool)isObservableEmpty;
 - (void)observableDidSendResult;
 - (id)subscribe:(id)arg1;
 - (id)subscribeNextObservable:(id)arg1;

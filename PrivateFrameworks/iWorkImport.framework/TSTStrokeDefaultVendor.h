@@ -9,8 +9,8 @@
     unsigned int  _headerColumnSeparatorColumn;
     unsigned int  _headerRowSeparatorRow;
     unsigned int  _headerSideBorderColumn;
-    BOOL  _isValid;
-    TSTMasterLayout * _masterLayout;
+    <TSTTableInternalGeometryProviding> * _internalGeometryProvider;
+    bool  _isValid;
     <TSTTableStrokeProviding> * _strokeProvider;
     NSPointerArray * _strokeTypeToLayerMap;
     unsigned int  _topBorderRow;
@@ -22,8 +22,8 @@
 @property (nonatomic) unsigned int headerColumnSeparatorColumn;
 @property (nonatomic) unsigned int headerRowSeparatorRow;
 @property (nonatomic) unsigned int headerSideBorderColumn;
-@property (nonatomic) BOOL isValid;
-@property (nonatomic) TSTMasterLayout *masterLayout;
+@property (nonatomic) <TSTTableInternalGeometryProviding> *internalGeometryProvider;
+@property (nonatomic) bool isValid;
 @property (nonatomic) <TSTTableStrokeProviding> *strokeProvider;
 @property (nonatomic, retain) NSPointerArray *strokeTypeToLayerMap;
 @property (nonatomic) unsigned int topBorderRow;
@@ -35,10 +35,10 @@
 - (unsigned int)headerColumnSeparatorColumn;
 - (unsigned int)headerRowSeparatorRow;
 - (unsigned int)headerSideBorderColumn;
-- (id)initWithMasterLayout:(id)arg1;
+- (id)initWithStrokeProvider:(id)arg1 internalGeometryProvider:(id)arg2;
+- (id)internalGeometryProvider;
 - (void)invalidate;
-- (BOOL)isValid;
-- (id)masterLayout;
+- (bool)isValid;
 - (int)p_strokeTypeForColumn:(unsigned int)arg1;
 - (int)p_strokeTypeForRow:(unsigned int)arg1;
 - (void)p_updateStrokeLayer:(id)arg1 forColumnStrokeType:(int)arg2;
@@ -49,8 +49,8 @@
 - (void)setHeaderColumnSeparatorColumn:(unsigned int)arg1;
 - (void)setHeaderRowSeparatorRow:(unsigned int)arg1;
 - (void)setHeaderSideBorderColumn:(unsigned int)arg1;
-- (void)setIsValid:(BOOL)arg1;
-- (void)setMasterLayout:(id)arg1;
+- (void)setInternalGeometryProvider:(id)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setStrokeProvider:(id)arg1;
 - (void)setStrokeTypeToLayerMap:(id)arg1;
 - (void)setTopBorderRow:(unsigned int)arg1;
@@ -60,7 +60,7 @@
 - (id)strokeProvider;
 - (id)strokeTypeToLayerMap;
 - (unsigned int)topBorderRow;
-- (BOOL)validate;
-- (BOOL)validateGeometry;
+- (bool)validate;
+- (bool)validateGeometry;
 
 @end

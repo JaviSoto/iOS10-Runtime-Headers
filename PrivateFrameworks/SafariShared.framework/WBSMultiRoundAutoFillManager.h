@@ -3,22 +3,32 @@
  */
 
 @interface WBSMultiRoundAutoFillManager : NSObject {
-    unsigned int  _autoFillAttemptTrigger;
+    NSSet * _addressBookPropertiesThatCanBeFilled;
+    NSString * _addressSetLabelUsedDuringFirstAutoFillPass;
+    unsigned long long  _autoFillAttemptTrigger;
     NSMutableSet * _controlUniqueIDToBeIgnoredByFollowUpAutoFill;
     NSDictionary * _formMetadataFromPreviousAutoFillAttempt;
-    unsigned int  _numberOfFollowUpAutoFillAttempts;
+    unsigned long long  _numberOfFollowUpAutoFillAttempts;
     NSTimer * _timerForFollowUpAutoFill;
-    BOOL  _userDidInteractWithForm;
+    bool  _userDidInteractWithForm;
 }
+
+@property (nonatomic, copy) NSSet *addressBookPropertiesThatCanBeFilled;
+@property (nonatomic, copy) NSString *addressSetLabelUsedDuringFirstAutoFillPass;
 
 - (void).cxx_destruct;
 - (void)addControlUniqueIDIgnoredByFollowUpAutoFill:(id)arg1;
-- (unsigned int)currentAutoFillAttemptTrigger;
+- (void)addControlUniqueIDsIgnoredByFollowUpAutoFill:(id)arg1;
+- (id)addressBookPropertiesThatCanBeFilled;
+- (id)addressSetLabelUsedDuringFirstAutoFillPass;
+- (unsigned long long)currentAutoFillAttemptTrigger;
 - (void)dealloc;
 - (void)didEditFormText;
 - (void)dispatchFollowUpAutoFillOfFormWithMetdata:(id)arg1 autoFillBlock:(id /* block */)arg2;
 - (id)init;
-- (BOOL)shouldAttemptFollowUpAutoFillInFormWithMetadata:(id)arg1 requestType:(unsigned int)arg2;
-- (BOOL)shouldControlBeIgnoredByFollowUpAutoFill:(id)arg1;
+- (void)setAddressBookPropertiesThatCanBeFilled:(id)arg1;
+- (void)setAddressSetLabelUsedDuringFirstAutoFillPass:(id)arg1;
+- (bool)shouldAttemptFollowUpAutoFillInFormWithMetadata:(id)arg1 requestType:(unsigned long long)arg2;
+- (bool)shouldControlBeIgnoredByFollowUpAutoFill:(id)arg1;
 
 @end

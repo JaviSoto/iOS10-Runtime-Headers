@@ -38,17 +38,14 @@
 - (id)coreDuet;
 - (id)dictCoreDuetInfo;
 - (void)dumpPredictionStatsToFlatFiles;
-- (id)getAppRanking;
-- (unsigned int)getCountForCategory:(id)arg1;
+- (unsigned long long)getCountForCategory:(id)arg1;
 - (id)getLastSavedCategoryRankings;
 - (id)getRankedCategories;
 - (id)getRankedCategoriesAsDictionary;
-- (void)getRankedCategoriesForQuery:(id)arg1 meanScores:(id)arg2 maxScores:(id)arg3 standardDeviation:(id)arg4 serverCategoryRankOrder:(id)arg5 placements:(id)arg6 allowLocal:(bool)arg7 topCategories:(id*)arg8 bottomCategories:(id*)arg9;
 - (double)getTimeStampWhenLastLogged;
 - (id)getTopHitResultForQuery:(id)arg1 resultSet:(id)arg2;
-- (id)getTopHitsBasedOnCategoryOrder:(id)arg1 groupedResults:(id)arg2 CEPTopHitThreshold:(double)arg3 CEPProbabilityFactor:(double)arg4 topHitCountLimit:(int)arg5;
-- (unsigned int)getTotalResultsUsedCount;
-- (unsigned int)getTotalResultsUsedCountForDuet;
+- (unsigned long long)getTotalResultsUsedCount;
+- (unsigned long long)getTotalResultsUsedCountForDuet;
 - (id)initManager;
 - (id)mapPredictionEnginesToClasses;
 - (id)mapPredictionEnginesToCountFiles;
@@ -65,7 +62,7 @@
 - (void)setMapPredictionEnginesToCounts:(id)arg1;
 - (void)setMapPredictionEnginesToPredictedTopHit:(id)arg1;
 - (void)setTimeStampWhenLastLogged:(double)arg1;
-- (void)setTotalResultsUsedCount:(unsigned int)arg1;
+- (void)setTotalResultsUsedCount:(unsigned long long)arg1;
 - (void)trackQueryCountsForQuery:(id)arg1 resultSet:(id)arg2 staticModelTopHit:(id)arg3;
 - (void)updateCountsForUsedResult:(id)arg1;
 

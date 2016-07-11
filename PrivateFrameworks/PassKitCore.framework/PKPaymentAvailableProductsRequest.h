@@ -8,8 +8,8 @@
 
 @property (nonatomic, copy) NSString *type;
 
+- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
-- (void)dealloc;
 - (id)initWithType:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;

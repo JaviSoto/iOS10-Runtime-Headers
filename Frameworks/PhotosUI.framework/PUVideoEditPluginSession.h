@@ -5,7 +5,7 @@
 @interface PUVideoEditPluginSession : PUEditPluginSession
 
 - (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id /* block */)arg2;
-- (int)mediaType;
+- (unsigned long long)pluginManagerMediaType;
 - (id)videoDataSource;
 
 @end

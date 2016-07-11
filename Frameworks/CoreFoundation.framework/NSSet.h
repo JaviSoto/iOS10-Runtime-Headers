@@ -2,75 +2,75 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSSet : NSObject <HFPrettyDescription, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)newSetWithObjects:(const id*)arg1 count:(unsigned int)arg2;
++ (id)newSetWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 + (id)set;
 + (id)setWithArray:(id)arg1;
-+ (id)setWithArray:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-+ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
++ (id)setWithArray:(id)arg1 copyItems:(bool)arg2;
++ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
++ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 copyItems:(bool)arg3;
 + (id)setWithObject:(id)arg1;
 + (id)setWithObjects:(id)arg1;
-+ (id)setWithObjects:(const id*)arg1 count:(unsigned int)arg2;
++ (id)setWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 + (id)setWithOrderedSet:(id)arg1;
-+ (id)setWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-+ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
++ (id)setWithOrderedSet:(id)arg1 copyItems:(bool)arg2;
++ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
++ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 copyItems:(bool)arg3;
 + (id)setWithSet:(id)arg1;
-+ (id)setWithSet:(id)arg1 copyItems:(BOOL)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)setWithSet:(id)arg1 copyItems:(bool)arg2;
++ (bool)supportsSecureCoding;
 
 - (void)__applyValues:(int (*)arg1 context:(void*)arg2;
-- (BOOL)__getValue:(id*)arg1 forObj:(id)arg2;
-- (unsigned long)_cfTypeID;
+- (bool)__getValue:(id*)arg1 forObj:(id)arg2;
+- (unsigned long long)_cfTypeID;
 - (id)allObjects;
 - (id)anyObject;
-- (BOOL)containsObject:(id)arg1;
+- (bool)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)countForObject:(id)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (unsigned long long)countForObject:(id)arg1;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (void)getObjects:(id*)arg1;
-- (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)hash;
+- (void)getObjects:(id*)arg1 count:(unsigned long long)arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)hash;
 - (id)initWithArray:(id)arg1;
-- (id)initWithArray:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
+- (id)initWithArray:(id)arg1 copyItems:(bool)arg2;
+- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 copyItems:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;
 - (id)initWithObjects:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 - (id)initWithOrderedSet:(id)arg1;
-- (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
+- (id)initWithOrderedSet:(id)arg1 copyItems:(bool)arg2;
+- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 copyItems:(bool)arg3;
 - (id)initWithSet:(id)arg1;
-- (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
-- (BOOL)intersectsOrderedSet:(id)arg1;
-- (BOOL)intersectsSet:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSet:(id)arg1;
-- (BOOL)isNSSet__;
-- (BOOL)isSubsetOfOrderedSet:(id)arg1;
-- (BOOL)isSubsetOfSet:(id)arg1;
+- (id)initWithSet:(id)arg1 copyItems:(bool)arg2;
+- (bool)intersectsOrderedSet:(id)arg1;
+- (bool)intersectsSet:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSet:(id)arg1;
+- (bool)isNSSet__;
+- (bool)isSubsetOfOrderedSet:(id)arg1;
+- (bool)isSubsetOfSet:(id)arg1;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)member:(id)arg1;
@@ -78,14 +78,14 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (id)objectPassingTest:(id /* block */)arg1;
-- (id)objectWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)objectWithOptions:(unsigned long long)arg1 passingTest:(id /* block */)arg2;
 - (id)objectsPassingTest:(id /* block */)arg1;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)objectsWithOptions:(unsigned long long)arg1 passingTest:(id /* block */)arg2;
 - (id)setByAddingObject:(id)arg1;
 - (id)setByAddingObjectsFromArray:(id)arg1;
 - (id)setByAddingObjectsFromSet:(id)arg1;
 - (id)sortedArrayUsingComparator:(id /* block */)arg1;
-- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
+- (id)sortedArrayWithOptions:(unsigned long long)arg1 usingComparator:(id /* block */)arg2;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -101,7 +101,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_avgForKeyPath:(id)arg1;
 - (id)_countForKeyPath:(id)arg1;
@@ -111,7 +111,7 @@
 - (id)_maxForKeyPath:(id)arg1;
 - (id)_minForKeyPath:(id)arg1;
 - (id)_sumForKeyPath:(id)arg1;
-- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filteredSetUsingPredicate:(id)arg1;
@@ -131,10 +131,10 @@
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
+- (bool)bs_containsObjectPassingTest:(id /* block */)arg1;
 - (void)bs_each:(id /* block */)arg1;
 - (id)bs_filter:(id /* block */)arg1;
 - (id)bs_map:(id /* block */)arg1;
-- (id)bs_mapNoNulls:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
@@ -149,14 +149,22 @@
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
-- (BOOL)_cn_any:(id /* block */)arg1;
+- (bool)_cn_any:(id /* block */)arg1;
+- (id)_cn_firstObjectPassingTest:(id /* block */)arg1;
+- (id)_cn_indexBy:(id /* block */)arg1;
+- (id)_cn_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
 - (id)DACompactDescription;
 
+// Image: /System/Library/PrivateFrameworks/FriendKit.framework/FriendKit
+
+- (id)fkSanitizedDestinationSet;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
@@ -164,13 +172,28 @@
 - (id)_gkSetByRemovingObject:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (id)shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescription;
+
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)__imForEach:(id /* block */)arg1;
 - (id)__imSetByApplyingBlock:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
+- (id)mutableDeepCopy;
+
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
+- (bool)mf_any:(id /* block */)arg1;
+- (id)mf_anyPassingTest:(id /* block */)arg1;
+- (unsigned long long)mf_countObjectsPassingTest:(id /* block */)arg1;
 - (id)mf_filter:(id /* block */)arg1;
 - (id)mf_flatMap:(id /* block */)arg1;
 - (id)mf_flatten;
@@ -180,27 +203,51 @@
 
 - (id)npkComprehension:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
-- (BOOL)naui_any:(id /* block */)arg1;
-- (void)naui_each:(id /* block */)arg1;
-- (id)naui_filter:(id /* block */)arg1;
-- (id)naui_firstObjectPassingTest:(id /* block */)arg1;
-- (id)naui_map:(id /* block */)arg1;
++ (id)na_setWithSafeObject:(id)arg1;
+
+- (bool)na_any:(id /* block */)arg1;
+- (void)na_each:(id /* block */)arg1;
+- (id)na_filter:(id /* block */)arg1;
+- (id)na_firstObjectPassingTest:(id /* block */)arg1;
+- (id)na_map:(id /* block */)arg1;
+- (id)na_setByFlattening;
+- (id)na_setByIntersectingWithSet:(id)arg1;
+- (id)na_setByRemovingObjectsFromSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)fc_set:(id /* block */)arg1;
+
+- (id)fc_arrayByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_arrayOfObjectsPassingTest:(id /* block */)arg1;
+- (bool)fc_containsAnyObjectInArray:(id)arg1;
+- (bool)fc_containsObjectPassingTest:(id /* block */)arg1;
+- (id)fc_dictionaryOfSortedSetsWithKeyBlock:(id /* block */)arg1;
+- (id)fc_diffAgainstSet:(id)arg1;
+- (id)fc_firstObjectPassingTest:(id /* block */)arg1;
+- (id)fc_mutableSetByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_onlyObject;
+- (id)fc_setByIntersectingSet:(id)arg1;
+- (id)fc_setByMinusingSet:(id)arg1;
+- (id)fc_setByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_setByUnioningSet:(id)arg1;
+- (id)fc_setOfObjectsPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (BOOL)containsObjectPassingTest:(id /* block */)arg1;
+- (bool)containsObjectPassingTest:(id /* block */)arg1;
 - (id)objectPassingTest:(id /* block */)arg1;
 - (id)objectsOfClass:(Class)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
 + (id)tsu_intersectionOfSets:(id)arg1;
-+ (BOOL)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
++ (bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
 
-- (BOOL)tsu_containsObjectIdenticalTo:(id)arg1;
+- (bool)tsu_containsObjectIdenticalTo:(id)arg1;
 - (id)tsu_setByMappingObjectsUsingBlock:(id /* block */)arg1;
 - (id)tsu_sortedArray;
 
@@ -210,7 +257,10 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
-- (unsigned int)pl_countOfObjectsPassingTest:(id /* block */)arg1;
+- (id)_pl_filter:(id /* block */)arg1;
+- (id)_pl_firstObjectPassingTest:(id /* block */)arg1;
+- (id)_pl_map:(id /* block */)arg1;
+- (unsigned long long)pl_countOfObjectsPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
@@ -220,15 +270,34 @@
 
 - (id)safari_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+- (id)_swiftInitWithSet_NSSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
++ (id)intersectionOfSets:(id)arg1;
++ (bool)set:(id)arg1 isEqualToSet:(id)arg2;
+
+- (bool)containsObjectIdenticalTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
+
+- (id)setByIntersectingSet:(id)arg1;
+- (id)setByMinusingSet:(id)arg1;
+- (id)setByRemovingObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)tsu_intersectionOfSets:(id)arg1;
-+ (BOOL)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
++ (bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
 
-- (BOOL)tss_containsStyleOrVariationOfStyle:(id)arg1;
-- (BOOL)tss_hasVariations;
-- (BOOL)tsu_containsObjectIdenticalTo:(id)arg1;
+- (bool)tss_containsStyleOrVariationOfStyle:(id)arg1;
+- (bool)tss_hasVariations;
+- (bool)tsu_containsObjectIdenticalTo:(id)arg1;
+- (bool)tsu_isHomogeneousForClass:(Class)arg1;
+- (id)tsu_onlyObject;
 - (id)tsu_setByMappingObjectsUsingBlock:(id /* block */)arg1;
 - (id)tsu_sortedArray;
 

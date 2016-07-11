@@ -3,16 +3,17 @@
  */
 
 @interface KNAppDelegateBase : TSABaseApplicationDelegate {
-    BOOL  _cachedBidiIsSupported;
+    bool  _cachedBidiIsSupported;
 }
 
 @property (nonatomic, readonly) NSArray *powerPointDocumentTypes;
 
-- (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
+- (bool)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)appChartPropertyOverrides;
 - (void)applicationDidFinishLaunching;
 - (id)applicationName;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (id)bladerunnerContainerIdentifier;
 - (id)cloudKitContainerIdentifier;
 - (id)createCompatibilityDelegate;
 - (id)defaultHyperlinkURL;
@@ -22,8 +23,8 @@
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
-- (float)maximumAspectRatioForPreviewImage;
-- (float)mimimumAspectRatioForPreviewImage;
+- (double)maximumAspectRatioForPreviewImage;
+- (double)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentType;
 - (id)nativeSFFDocumentType;
 - (void)p_inputMethodsChanged:(id)arg1;
@@ -35,6 +36,7 @@
 - (void)registerClassTypeMappings;
 - (id)sharedAlertMessageWithUserName:(id)arg1;
 - (id)sharedReadOnlyAlertMessageWithUserName:(id)arg1;
+- (bool)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (id)stringForCloseDocument;
 - (id)stringForCollaboratorConflict;
 - (id)stringForCollaboratorConflictDetails;
@@ -45,11 +47,13 @@
 - (id)stringForDocumentUpdatedByOwnerWithKeepDetails;
 - (id)stringForDocumentUpdatedTitle;
 - (id)stringForLearnMoreSharingURL;
+- (id)stringForOwnerPasswordOnConflictAlertMessage;
+- (id)stringForOwnerPasswordOnConflictAlertTitle;
 - (id)stringForRemoteVersionRestorationAlertMessage;
 - (id)stringForRemoteVersionRestorationWithUnsavedChangesAlertMessage;
 - (id)stringForUpdatingDocument;
-- (BOOL)supportsRTL;
-- (BOOL)supportsShrinkTextToFit;
+- (bool)supportsRTL;
+- (bool)supportsShrinkTextToFit;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;

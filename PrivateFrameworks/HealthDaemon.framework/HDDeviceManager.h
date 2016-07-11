@@ -3,10 +3,10 @@
  */
 
 @interface HDDeviceManager : NSObject {
-    HDDaemon * _daemon;
     HDDatabaseValueCache * _deviceEntitiesByDevice;
     NSNumber * _deviceForNoneID;
     HDDatabaseValueCache * _devicesByPersistentID;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -24,8 +24,9 @@
 - (id)deviceEntityForNoDeviceWithError:(id*)arg1;
 - (id)deviceForPersistentID:(id)arg1 error:(id*)arg2;
 - (id)devicesByPersistentID;
+- (id)devicesWithProperty:(id)arg1 matchingValues:(id)arg2 error:(id*)arg3;
 - (id)init;
-- (id)initWithDaemon:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (void)setDeviceEntitiesByDevice:(id)arg1;
 - (void)setDevicesByPersistentID:(id)arg1;
 

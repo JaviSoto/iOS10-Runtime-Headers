@@ -5,11 +5,13 @@
 
 @required
 
-- (void)addCurrentPageToBookmarks;
+- (void)didFetchHostAppCustomActivities:(NSArray *)arg1;
 - (void)loadURL:(NSURL *)arg1;
 - (void)repostNotificationInViewService:(NSString *)arg1;
-- (void)setEntersReaderIfAvailable:(BOOL)arg1;
-- (void)setShowingLinkPreview:(BOOL)arg1;
+- (void)setConfiguration:(SFSafariViewControllerConfiguration *)arg1;
+- (void)setEntersReaderIfAvailable:(bool)arg1;
+- (void)setIsRunningTransitionAnimation:(bool)arg1;
+- (void)setShowingLinkPreview:(bool)arg1;
 - (void)setTintColor:(UIColor *)arg1;
 
 @end

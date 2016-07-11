@@ -3,52 +3,65 @@
  */
 
 @interface CKDBFileTransfer : NSObject <CKFileTransfer> {
+    NSDictionary * _attributionInfo;
     NSURL * _fileURL;
     NSString * _filename;
     NSString * _guid;
+    bool  _hideAttachment;
+    bool  _isSticker;
+    NSDictionary * _stickerUserInfo;
     NSDictionary * _transcoderUserInfo;
-    int  _transferState;
+    long long  _transferState;
 }
 
 @property (nonatomic, retain) IMMessage *IMMessage;
+@property (nonatomic, copy) NSDictionary *attributionInfo;
 @property (nonatomic, readonly) unsigned long long currentBytes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
-@property (getter=isDownloading, nonatomic, readonly) BOOL downloading;
+@property (getter=isDownloadable, nonatomic, readonly) bool downloadable;
+@property (getter=isDownloading, nonatomic, readonly) bool downloading;
 @property (nonatomic, readonly, copy) NSError *error;
-@property (getter=isFileDataReady, nonatomic, readonly) BOOL fileDataReady;
+@property (getter=isFileDataReady, nonatomic, readonly) bool fileDataReady;
 @property (nonatomic, readonly, copy) NSURL *fileURL;
-@property (getter=isFileURLFinalized, nonatomic, readonly) BOOL fileURLFinalized;
+@property (getter=isFileURLFinalized, nonatomic, readonly) bool fileURLFinalized;
 @property (nonatomic, copy) NSString *filename;
 @property (nonatomic, readonly, copy) NSString *guid;
-@property (readonly) unsigned int hash;
-@property (getter=isRestoring, nonatomic, readonly) BOOL restoring;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hideAttachment;
+@property (nonatomic, readonly) bool isSticker;
+@property (getter=isRestoring, nonatomic, readonly) bool restoring;
+@property (nonatomic, readonly, copy) NSDictionary *stickerUserInfo;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long totalBytes;
 @property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
-@property (nonatomic) int transferState;
+@property (nonatomic) long long transferState;
 
+- (void).cxx_destruct;
+- (id)attributionInfo;
 - (unsigned long long)currentBytes;
-- (void)dealloc;
 - (id)description;
 - (id)error;
 - (id)fileURL;
 - (id)filename;
 - (id)guid;
-- (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
+- (bool)hideAttachment;
+- (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2 attributionInfo:(id)arg3 hideAttachment:(bool)arg4;
 - (id)initWithTransferGUID:(id)arg1 imMessage:(id)arg2;
-- (BOOL)isDownloadable;
-- (BOOL)isDownloading;
-- (BOOL)isFileDataReady;
-- (BOOL)isFileURLFinalized;
-- (BOOL)isRestoring;
+- (bool)isDownloadable;
+- (bool)isDownloading;
+- (bool)isFileDataReady;
+- (bool)isFileURLFinalized;
+- (bool)isRestoring;
+- (bool)isSticker;
 - (void)mediaObjectAdded;
 - (void)mediaObjectRemoved;
+- (void)setAttributionInfo:(id)arg1;
 - (void)setFilename:(id)arg1;
-- (void)setTransferState:(int)arg1;
+- (void)setTransferState:(long long)arg1;
+- (id)stickerUserInfo;
 - (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
-- (int)transferState;
+- (long long)transferState;
 
 @end

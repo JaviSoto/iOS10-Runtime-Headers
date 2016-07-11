@@ -3,35 +3,39 @@
  */
 
 @interface SYIncomingFullSyncSession : SYSession {
-    unsigned long long  _activity;
-    int  _state;
+    NSObject<OS_os_activity> * _sessionActivity;
+    long long  _state;
     NSObject<OS_dispatch_source> * _stateUpdateSource;
-    BOOL  canRestart;
-    BOOL  canRollback;
+    bool  canRestart;
+    bool  canRollback;
 }
+
+@property (nonatomic, readonly) NSObject<OS_os_activity> *sessionActivity;
 
 - (void).cxx_destruct;
 - (void)_cancelSession;
 - (void)_continueProcessing;
 - (void)_handleBatchChunk:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleEndSync:(id)arg1 completion:(id /* block */)arg2;
-- (void)_handleError:(id)arg1;
 - (void)_installStateListener;
 - (void)_notifyErrorAndShutdown;
 - (void)_processNextState;
 - (void)_sendEndSessionResponse:(id)arg1;
 - (void)_sessionComplete;
 - (void)_sessionEnded;
-- (BOOL)canRestart;
-- (BOOL)canRollback;
+- (void)_setStateQuietly:(long long)arg1;
+- (bool)canRestart;
+- (bool)canRollback;
+- (void)cancelWithError:(id)arg1;
 - (id)initWithService:(id)arg1;
-- (BOOL)isResetSync;
-- (BOOL)isSending;
-- (unsigned int)protocolVersion;
-- (void)setCanRestart:(BOOL)arg1;
-- (void)setCanRollback:(BOOL)arg1;
-- (void)setState:(int)arg1;
+- (bool)isResetSync;
+- (bool)isSending;
+- (unsigned long long)protocolVersion;
+- (id)sessionActivity;
+- (void)setCanRestart:(bool)arg1;
+- (void)setCanRollback:(bool)arg1;
+- (void)setState:(long long)arg1;
 - (void)start:(id /* block */)arg1;
-- (int)state;
+- (long long)state;
 
 @end

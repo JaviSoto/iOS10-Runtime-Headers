@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
-    BOOL  _cancelled;
+@interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <GEOPBSessionRequesterDelegate> {
+    bool  _cancelled;
     GEORequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)batchReverseGeocoderURL;

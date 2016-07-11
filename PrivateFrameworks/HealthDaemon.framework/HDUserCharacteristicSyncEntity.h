@@ -4,10 +4,12 @@
 
 @interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity
 
-+ (int)category;
-+ (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
++ (long long)category;
++ (void)didReceiveKeysAndValuesWithProfile:(id)arg1;
 + (int)nanoSyncObjectType;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (bool)supportsSpeculativeNanoSyncChanges;
 + (id)syncEntityDependencies;
-+ (int)syncEntityType;
++ (long long)syncEntityType;
 
 @end

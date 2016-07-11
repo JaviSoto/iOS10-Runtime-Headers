@@ -7,6 +7,7 @@
     IMHandle * _senderHandle;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

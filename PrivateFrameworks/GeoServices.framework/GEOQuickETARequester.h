@@ -3,7 +3,7 @@
  */
 
 @interface GEOQuickETARequester : NSObject {
-    GEODirectionsRouteRequest * _directionsETARequest;
+    GEODirectionsRequest * _directionsETARequest;
     NSString * _loggingFacility;
     GEOQuickETARequest * _request;
     GEOETARequest * _simpleETARequest;
@@ -12,8 +12,8 @@
 @property (nonatomic, copy) NSString *loggingFacility;
 
 - (void)_calculateRoutingETAWithHandler:(id /* block */)arg1;
-- (void)_calculateSimpleETAFromAPI:(BOOL)arg1 WithHandler:(id /* block */)arg2;
-- (void)calculateETAFromAPI:(BOOL)arg1 WithResponseHandler:(id /* block */)arg2;
+- (void)_calculateSimpleETAFromAPI:(bool)arg1 WithHandler:(id /* block */)arg2;
+- (void)calculateETAFromAPI:(bool)arg1 WithResponseHandler:(id /* block */)arg2;
 - (void)calculateETAWithResponseHandler:(id /* block */)arg1;
 - (void)cancel;
 - (void)dealloc;

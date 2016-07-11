@@ -34,11 +34,11 @@
 - (id)friendServicePrivate;
 - (id)gameService;
 - (id)gameServicePrivate;
+- (id)gameSessionService;
+- (id)gameSessionServicePrivate;
 - (id)gameStatService;
 - (id)gameStatServicePrivate;
 - (id)initWithPlayer:(id)arg1;
-- (id)linkedAccountsService;
-- (id)linkedAccountsServicePrivate;
 - (id)localPlayer;
 - (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -3,18 +3,24 @@
  */
 
 @interface GEOPBTransitRoutingIncidentMessage : PBCodable <NSCopying> {
+    struct { 
+        unsigned int routingIncidentMessageIndex : 1; 
+    }  _has;
+    unsigned int  _routingIncidentMessageIndex;
     NSString * _routingMessage;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _transitIncidentIndexs;
 }
 
-@property (nonatomic, readonly) BOOL hasRoutingMessage;
+@property (nonatomic) bool hasRoutingIncidentMessageIndex;
+@property (nonatomic, readonly) bool hasRoutingMessage;
+@property (nonatomic) unsigned int routingIncidentMessageIndex;
 @property (nonatomic, retain) NSString *routingMessage;
 @property (nonatomic, readonly) unsigned int*transitIncidentIndexs;
-@property (nonatomic, readonly) unsigned int transitIncidentIndexsCount;
+@property (nonatomic, readonly) unsigned long long transitIncidentIndexsCount;
 
 - (void)addTransitIncidentIndex:(unsigned int)arg1;
 - (void)clearTransitIncidentIndexs;
@@ -23,17 +29,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRoutingMessage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRoutingIncidentMessageIndex;
+- (bool)hasRoutingMessage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)routingIncidentMessageIndex;
 - (id)routingMessage;
+- (void)setHasRoutingIncidentMessageIndex:(bool)arg1;
+- (void)setRoutingIncidentMessageIndex:(unsigned int)arg1;
 - (void)setRoutingMessage:(id)arg1;
-- (void)setTransitIncidentIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (unsigned int)transitIncidentIndexAtIndex:(unsigned int)arg1;
+- (void)setTransitIncidentIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (unsigned int)transitIncidentIndexAtIndex:(unsigned long long)arg1;
 - (unsigned int*)transitIncidentIndexs;
-- (unsigned int)transitIncidentIndexsCount;
+- (unsigned long long)transitIncidentIndexsCount;
 - (void)writeTo:(id)arg1;
 
 @end

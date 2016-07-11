@@ -6,19 +6,19 @@
     UIButton * _accessoryButton;
     NSArray * _accessoryButtonConstraints;
     id /* block */  _buttonAction;
-    int  _buttonType;
+    long long  _buttonType;
     NSString * _currentDisplayValue;
     UILabel * _displayValueLabel;
     NSArray * _displayValueLabelConstraints;
-    BOOL  _isSubMode;
+    bool  _isSubMode;
     NSString * _localizedModeName;
     UIImage * _modeIcon;
 }
 
 @property (nonatomic, copy) id /* block */ buttonAction;
-@property (nonatomic) int buttonType;
+@property (nonatomic) long long buttonType;
 @property (nonatomic, copy) NSString *currentDisplayValue;
-@property (nonatomic) BOOL isSubMode;
+@property (nonatomic) bool isSubMode;
 @property (nonatomic, copy) NSString *localizedModeName;
 @property (nonatomic, retain) UIImage *modeIcon;
 
@@ -29,17 +29,17 @@
 - (void)_updateButton;
 - (void)_updateDisplayValueLabel;
 - (id /* block */)buttonAction;
-- (int)buttonType;
+- (long long)buttonType;
 - (id)currentDisplayValue;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isSubMode;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isSubMode;
 - (id)localizedModeName;
 - (id)modeIcon;
 - (void)prepareForReuse;
 - (void)setButtonAction:(id /* block */)arg1;
-- (void)setButtonType:(int)arg1;
+- (void)setButtonType:(long long)arg1;
 - (void)setCurrentDisplayValue:(id)arg1;
-- (void)setIsSubMode:(BOOL)arg1;
+- (void)setIsSubMode:(bool)arg1;
 - (void)setLocalizedModeName:(id)arg1;
 - (void)setModeIcon:(id)arg1;
 

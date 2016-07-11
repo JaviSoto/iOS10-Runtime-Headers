@@ -4,11 +4,11 @@
 
 @interface MFMessageTransferSelection : NSObject {
     NSArray * _messages;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, copy) NSArray *messages;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 + (id)selectAllWithKnownMessages:(id)arg1;
 + (id)selectMessages:(id)arg1;
@@ -17,9 +17,9 @@
 - (id)debugDescription;
 - (void)enumerateSelectionsByStoreUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (id)initWithType:(int)arg1 messages:(id)arg2;
+- (id)initWithType:(long long)arg1 messages:(id)arg2;
 - (id)messages;
 - (void)setMessages:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

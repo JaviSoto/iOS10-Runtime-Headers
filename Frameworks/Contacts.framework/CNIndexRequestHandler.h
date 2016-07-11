@@ -2,13 +2,18 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNIndexRequestHandler : CSIndexExtensionRequestHandler {
+@interface CNIndexRequestHandler : NSObject <CSSearchableIndexDelegate> {
     void * _ab;
+    NSObject<OS_dispatch_queue> * _asyncQueue;
     CSSearchableIndex * _index;
     CNContactStore * _store;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CSSearchableIndex *index;
+@property (readonly) Class superclass;
 
 + (id)defaultSearchableItemsDomain;
 + (id)descriptorForRequiredKeysForSearchableItem;
@@ -17,7 +22,7 @@
 + (void)setSearchableItemsDomain:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)contactIdentifierFromPerson:(const void*)arg1;
+- (id)contactIdentifierFromPerson:(void*)arg1;
 - (void)dealloc;
 - (void)finishIndexingAllSearchableItemsIfNecessary;
 - (id)index;
@@ -26,6 +31,6 @@
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg2;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
 - (id)searchableItemForContactIdentifier:(id)arg1;
-- (id)searchableItemForPerson:(const void*)arg1;
+- (id)searchableItemForPerson:(void*)arg1;
 
 @end

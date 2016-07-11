@@ -2,37 +2,47 @@
    Image: /System/Library/PrivateFrameworks/WelcomeKitUI.framework/WelcomeKitUI
  */
 
-@interface WLWelcomeViewController : WLBuddyPaneViewController <UITableViewDataSource, UITableViewDelegate> {
-    UIButton * _continueButton;
-    UITableViewCell * _downloadTextCell;
-    BFFPaneHeaderView * _headerView;
-    UITableViewCell * _imageCell;
-    UITableViewCell * _introTextCell;
+@interface WLWelcomeViewController : UIViewController <WLSourceDevicesDelegate> {
+    WLMigrationCompletedViewController * _completedViewController;
+    id /* block */  _completionHandler;
+    bool  _dismissAfterTimeout;
+    WLIntroViewController * _introViewController;
+    WLWelcomeViewControllerMetrics * _metrics;
+    WLPairingViewController * _pairingViewController;
+    WLMigrationProgressViewController * _progressViewController;
+    WLSourceDevicesController * _sourceDevicesController;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ completionHandler;
 
 + (void)allowedToDisplay:(id /* block */)arg1;
 
 - (void).cxx_destruct;
-- (id)_downloadTextCell;
-- (id)_imageCell;
-- (id)_introTextCell;
-- (float)_textFontSize;
-- (float)heightForFooterInTableView:(id)arg1;
+- (void)_addGroupViewController:(id)arg1;
+- (void)_animateFromGroupViewController:(id)arg1 toGroupViewController:(id)arg2 completion:(id /* block */)arg3;
+- (void)_authenticationDidSucceed;
+- (void)_authenticationPeriodDidEnd;
+- (void)_completeWithSuccess:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForGroupView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForIncomingGroupViewBeforeAnimation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForOutgoingGroupViewAfterAnimation;
+- (void)_loadIntroGroupView;
+- (void)_migrationDidBegin;
+- (void)_progressViewControllerDidFinishWithSuccess:(bool)arg1;
+- (void)_removeGroupViewController:(id)arg1;
+- (void)_startConnectivity;
+- (void)_transitionToCompletedViewController;
+- (void)_transitionToPairingCodeViewControllerWithPairingCode:(id)arg1 wifiPSK:(id)arg2 ssid:(id)arg3;
+- (void)_transitionToProgressViewControllerWithSourceDevice:(id)arg1;
+- (void)_uiTestModeStartFakePairing;
+- (id /* block */)completionHandler;
 - (id)init;
 - (void)loadView;
-- (void)nextTapped:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (id)viewForFooterInTableView:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)sourceDevices:(id)arg1 didChangeWithDevices:(id)arg2;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)wifiAndDeviceDiscoveryDidGetInterrupted;
 
 @end

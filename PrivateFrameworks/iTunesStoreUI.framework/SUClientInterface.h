@@ -9,8 +9,8 @@
     UIColor * _darkKeyColor;
     <SUClientInterfaceDelegatePrivate> * _delegate;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _ignoresExpectedClientsProtocol;
-    BOOL  _inAskToBuyApprovalFlow;
+    bool  _ignoresExpectedClientsProtocol;
+    bool  _inAskToBuyApprovalFlow;
     UIColor * _lightKeyColor;
     NSString * _localStoragePath;
     SUPurchaseManager * _purchaseManager;
@@ -18,17 +18,17 @@
     NSMutableDictionary * _urlBagKeys;
     NSString * _userAgent;
     SUViewControllerFactory * _viewControllerFactory;
-    BOOL  _wasLaunchedFromLibrary;
-    BOOL  inAskToBuyApprovalFlow;
+    bool  _wasLaunchedFromLibrary;
+    bool  inAskToBuyApprovalFlow;
 }
 
-@property (getter=_ignoresExpectedClientsProtocol, setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;
+@property (getter=_ignoresExpectedClientsProtocol, setter=_setIgnoresExpectedClientsProtocol:) bool _ignoresExpectedClientsProtocol;
 @property (copy) SUUIAppearance *appearance;
 @property (nonatomic, copy) NSString *askToBuyApprovalPrompt;
 @property (copy) NSString *clientIdentifier;
 @property (nonatomic, copy) UIColor *darkKeyColor;
 @property (nonatomic) <SUClientInterfaceDelegate> *delegate;
-@property BOOL inAskToBuyApprovalFlow;
+@property bool inAskToBuyApprovalFlow;
 @property (nonatomic, copy) UIColor *lightKeyColor;
 @property (copy) NSString *localStoragePath;
 @property (nonatomic, readonly) SUPreviewOverlayViewController *previewOverlay;
@@ -37,33 +37,32 @@
 @property (nonatomic, readonly) SUTabBarController *tabBarController;
 @property (copy) NSString *userAgent;
 @property (retain) SUViewControllerFactory *viewControllerFactory;
-@property BOOL wasLaunchedFromLibrary;
+@property bool wasLaunchedFromLibrary;
 
 - (id)URLBagKeyForIdentifier:(id)arg1;
 - (void)_dismissModalViewControllerFromViewController:(id)arg1 withTransition:(int)arg2;
-- (void)_dismissViewControllerFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)_dismissViewControllerFromViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_dispatchOnPageResponseWithData:(id)arg1 response:(id)arg2;
 - (void)_dispatchXEvent:(id)arg1 withCompletionBlock:(id /* block */)arg2;
-- (void)_exitStoreWithReason:(int)arg1;
-- (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
-- (BOOL)_ignoresExpectedClientsProtocol;
-- (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(BOOL)arg2;
+- (void)_exitStoreWithReason:(long long)arg1;
+- (void)_hidePreviewOverlayAnimated:(bool)arg1;
+- (bool)_ignoresExpectedClientsProtocol;
+- (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(bool)arg2;
 - (id)_newScriptInterface;
-- (id)_newUIAlertView;
 - (void)_presentDialog:(id)arg1;
 - (void)_presentViewController:(id)arg1 fromViewController:(id)arg2 withTransition:(int)arg3;
 - (void)_returnToLibrary;
-- (void)_setIgnoresExpectedClientsProtocol:(BOOL)arg1;
-- (void)_setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
-- (void)_setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
-- (void)_showPreviewOverlayAnimated:(BOOL)arg1;
+- (void)_setIgnoresExpectedClientsProtocol:(bool)arg1;
+- (void)_setStatusBarHidden:(bool)arg1 withAnimation:(long long)arg2;
+- (void)_setStatusBarStyle:(long long)arg1 animated:(bool)arg2;
+- (void)_showPreviewOverlayAnimated:(bool)arg1;
 - (id)appearance;
 - (id)askToBuyApprovalPrompt;
 - (id)clientIdentifier;
 - (id)darkKeyColor;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)inAskToBuyApprovalFlow;
+- (bool)inAskToBuyApprovalFlow;
 - (id)init;
 - (id)lightKeyColor;
 - (id)localStoragePath;
@@ -75,7 +74,7 @@
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDarkKeyColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setInAskToBuyApprovalFlow:(BOOL)arg1;
+- (void)setInAskToBuyApprovalFlow:(bool)arg1;
 - (void)setLightKeyColor:(id)arg1;
 - (void)setLocalStoragePath:(id)arg1;
 - (void)setPurchaseManager:(id)arg1;
@@ -83,10 +82,10 @@
 - (void)setURLBagKey:(id)arg1 forIdentifier:(id)arg2;
 - (void)setUserAgent:(id)arg1;
 - (void)setViewControllerFactory:(id)arg1;
-- (void)setWasLaunchedFromLibrary:(BOOL)arg1;
+- (void)setWasLaunchedFromLibrary:(bool)arg1;
 - (id)tabBarController;
 - (id)userAgent;
 - (id)viewControllerFactory;
-- (BOOL)wasLaunchedFromLibrary;
+- (bool)wasLaunchedFromLibrary;
 
 @end

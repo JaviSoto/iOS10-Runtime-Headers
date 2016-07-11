@@ -8,7 +8,7 @@
     int  _locationAuthorized;
     NSHashTable * _locationCallbacks;
     CLLocationManager * _locationManager;
-    HMMessageDispatcher * _msgDispatcher;
+    HMFMessageDispatcher * _msgDispatcher;
     NSMapTable * _regionStateCallbacks;
 }
 
@@ -16,27 +16,31 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *handlerQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int locationAuthorized;
 @property (nonatomic, retain) NSHashTable *locationCallbacks;
 @property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSMapTable *regionStateCallbacks;
 @property (readonly) Class superclass;
 
 + (id)_getAlmanacWithLocation:(id)arg1;
++ (id)_getAlmanacWithLocation:(id)arg1 date:(id)arg2;
 + (id)findEvent:(id)arg1 withGeo:(id)arg2;
++ (id)nextSunriseTimeForLocation:(id)arg1 date:(id)arg2;
++ (id)nextSunsetTimeForLocation:(id)arg1 date:(id)arg2;
 + (id)sharedManager;
 + (id)sunriseTimeForLocation:(id)arg1;
 + (id)sunsetTimeForLocation:(id)arg1;
++ (void)timeZoneForCLLocationAsync:(id)arg1 withCompletion:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (void)_callDelegate:(id)arg1 withLocation:(id)arg2;
-- (void)_updateRegionState:(int)arg1 forRegion:(id)arg2;
+- (void)_updateRegionState:(long long)arg1 forRegion:(id)arg2;
 - (void)_updateWithLocation:(id)arg1;
 - (void)_updateWithLocationAutorizationStatus:(int)arg1;
 - (int)authStatus;
-- (void)beingConfigured:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)beingConfigured:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (void)deregisterForRegionUpdate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)extractLocationWithDelegate:(id)arg1;
@@ -46,7 +50,7 @@
 - (id)locationCallbacks;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(id)arg1 didDetermineState:(int)arg2 forRegion:(id)arg3;
+- (void)locationManager:(id)arg1 didDetermineState:(long long)arg2 forRegion:(id)arg3;
 - (void)locationManager:(id)arg1 didEnterRegion:(id)arg2;
 - (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;

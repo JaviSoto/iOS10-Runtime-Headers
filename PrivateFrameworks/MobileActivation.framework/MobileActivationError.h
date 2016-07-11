@@ -4,7 +4,6 @@
 
 @interface MobileActivationError : NSObject
 
-+ (id)getError:(int)arg1;
-+ (id)getErrorDescription:(int)arg1;
++ (id)errorWithString:(id)arg1 andFunctionLabel:(id)arg2 andLineNumber:(id)arg3 andErrorCode:(id)arg4 andUnderlyingError:(id)arg5;
 
 @end

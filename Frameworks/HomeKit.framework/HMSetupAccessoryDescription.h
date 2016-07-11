@@ -5,18 +5,22 @@
 @interface HMSetupAccessoryDescription : NSObject <NSCopying, NSSecureCoding> {
     NSString * _accessoryName;
     NSUUID * _accessoryUUID;
+    bool  _addAndSetupAccessories;
 }
 
 @property (nonatomic, readonly) NSString *accessoryName;
 @property (nonatomic, readonly) NSUUID *accessoryUUID;
+@property (nonatomic, readonly) bool addAndSetupAccessories;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessoryName;
 - (id)accessoryUUID;
+- (bool)addAndSetupAccessories;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initToSetupAccessories;
 - (id)initWithAccessoryUUID:(id)arg1 accessoryName:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 

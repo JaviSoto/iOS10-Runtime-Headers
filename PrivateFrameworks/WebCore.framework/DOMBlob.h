@@ -7,7 +7,6 @@
 @property (readonly) unsigned long long size;
 
 - (void)dealloc;
-- (void)finalize;
 - (unsigned long long)size;
 - (id)type;
 

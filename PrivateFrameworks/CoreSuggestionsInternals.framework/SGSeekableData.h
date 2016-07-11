@@ -5,20 +5,22 @@
 @interface SGSeekableData : NSObject <SGSeekable> {
     const void * _bytes;
     NSData * _data;
+    unsigned long long  _length;
     unsigned long long  _offsetInFile;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) unsigned long long offsetInFile;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (const void*)dataOfLength:(unsigned int)arg1;
+- (const void*)dataOfLength:(unsigned long long)arg1;
+- (id)init;
 - (id)initWithData:(id)arg1;
 - (id)initWithMemoryMappedPath:(id)arg1;
-- (id)initWithMemoryMappedURL:(id)arg1;
+- (id)initWithMemoryMappedPath:(id)arg1 error:(id*)arg2;
 - (unsigned long long)offsetInFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
 

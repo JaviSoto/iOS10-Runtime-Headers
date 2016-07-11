@@ -3,29 +3,25 @@
  */
 
 @interface SearchUITableLayoutInfo : NSObject {
+    NSArray * _columnAlignments;
     NSArray * _columnSpacing;
     NSArray * _columnWidths;
-    NSArray * _columnsWithEqualWidths;
-    int  _firstTrailingIndex;
-    NSArray * _internalAlignments;
+    long long  _firstTrailingIndex;
 }
 
+@property (retain) NSArray *columnAlignments;
 @property (retain) NSArray *columnSpacing;
 @property (retain) NSArray *columnWidths;
-@property (retain) NSArray *columnsWithEqualWidths;
-@property int firstTrailingIndex;
-@property (retain) NSArray *internalAlignments;
+@property long long firstTrailingIndex;
 
 - (void).cxx_destruct;
+- (id)columnAlignments;
 - (id)columnSpacing;
 - (id)columnWidths;
-- (id)columnsWithEqualWidths;
-- (int)firstTrailingIndex;
-- (id)internalAlignments;
+- (long long)firstTrailingIndex;
+- (void)setColumnAlignments:(id)arg1;
 - (void)setColumnSpacing:(id)arg1;
 - (void)setColumnWidths:(id)arg1;
-- (void)setColumnsWithEqualWidths:(id)arg1;
-- (void)setFirstTrailingIndex:(int)arg1;
-- (void)setInternalAlignments:(id)arg1;
+- (void)setFirstTrailingIndex:(long long)arg1;
 
 @end

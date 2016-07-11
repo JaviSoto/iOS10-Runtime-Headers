@@ -3,14 +3,27 @@
  */
 
 @interface _MKStackView : UIView {
+    bool  _bottomConstraintShouldBeGreaterThanOrEqual;
     NSArray * _stackConstraints;
+    <_MKStackViewDelegate> * _stackDelegate;
     NSArray * _stackedSubviews;
+    NSHashTable * _viewsNeedingWidthConstraints;
 }
 
+@property (nonatomic) bool bottomConstraintShouldBeGreaterThanOrEqual;
+@property (nonatomic) <_MKStackViewDelegate> *stackDelegate;
 @property (nonatomic, copy) NSArray *stackedSubviews;
 
 - (void).cxx_destruct;
+- (void)addSubview:(id)arg1;
+- (bool)bottomConstraintShouldBeGreaterThanOrEqual;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBottomConstraintShouldBeGreaterThanOrEqual:(bool)arg1;
+- (void)setStackDelegate:(id)arg1;
 - (void)setStackedSubviews:(id)arg1;
+- (void)setStackedSubviews:(id)arg1 animated:(bool)arg2;
+- (id)stackDelegate;
 - (id)stackedSubviews;
+- (void)updateConstraints;
 
 @end

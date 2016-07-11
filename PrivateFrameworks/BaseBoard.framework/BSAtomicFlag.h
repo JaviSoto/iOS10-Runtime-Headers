@@ -3,13 +3,13 @@
  */
 
 @interface BSAtomicFlag : NSObject {
-    int  _flag;
+    bool  _flag;
 }
 
 - (id)description;
-- (BOOL)getFlag;
+- (bool)getFlag;
 - (id)init;
-- (id)initWithFlag:(BOOL)arg1;
-- (BOOL)setFlag:(BOOL)arg1;
+- (id)initWithFlag:(bool)arg1;
+- (bool)setFlag:(bool)arg1;
 
 @end

@@ -3,22 +3,25 @@
  */
 
 @interface NEExtensionAppProxyProviderContext : NEExtensionTunnelProviderContext <NEExtensionAppProxyProviderHostProtocol, NEExtensionAppProxyProviderProtocol> {
+    unsigned int  _delegateInterfaceIndex;
     struct _NEFlowDirector { } * _director;
     NSObject<OS_dispatch_queue> * _flowQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property unsigned int delegateInterfaceIndex;
 @property (readonly, copy) NSString *description;
 @property struct _NEFlowDirector { }*director;
 @property (retain) NSObject<OS_dispatch_queue> *flowQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)completeSession;
+- (void)cancelWithError:(id)arg1;
+- (unsigned int)delegateInterfaceIndex;
 - (struct _NEFlowDirector { }*)director;
 - (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 pid:(int)arg2 uuid:(unsigned char)arg3 signingIdentifier:(struct __CFString { }*)arg4;
 - (void)flowDivertNewFlow:(struct _NEFlow { }*)arg1 completionHandler:(id /* block */)arg2;
@@ -26,11 +29,13 @@
 - (id)flowQueue;
 - (void)openFlowDivertControlSocketWithCompletionHandler:(id /* block */)arg1;
 - (void)setDelegateInterface:(unsigned int)arg1;
+- (void)setDelegateInterfaceIndex:(unsigned int)arg1;
 - (void)setDirector:(struct _NEFlowDirector { }*)arg1;
 - (void)setFlowQueue:(id)arg1;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
+- (void)setInitialFlowDivertControlSocket:(id)arg1 extraValidation:(bool)arg2;
 - (void)startWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)stopWithReason:(int)arg1;
-- (void)verifyAppWithPID:(int)arg1 uuid:(id)arg2 matchesAppRule:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)verifyAppWithPID:(long long)arg1 uuid:(id)arg2 matchesAppRule:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

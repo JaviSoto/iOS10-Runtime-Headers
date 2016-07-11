@@ -13,12 +13,12 @@
     UILabel * _geniusLegalLabel;
     UIButton * _geniusOptInButton;
     long long  _geniusTermsVersion;
-    BOOL  _hasUpdateGeniusCompletionBlock;
+    bool  _hasUpdateGeniusCompletionBlock;
     MPUIndeterminateProgressIndicatorView * _indeterminateProgressIndicator;
     NSURL * _learnMoreURL;
     MPUNotificationObserver * _preferredContentSizeDidChangeObserver;
     UIScrollView * _scrollView;
-    int  _state;
+    long long  _state;
     UILabel * _stepOneBulletLabel;
     UIImageView * _stepOneCompleteImageView;
     UILabel * _stepOneDescriptionLabel;
@@ -49,7 +49,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (readonly) Class superclass;
 
@@ -79,7 +79,7 @@
 - (void)_updateViewsForCurrentState;
 - (id)contentScrollView;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (id)init;
 - (id)scrollView;
 - (void)setScrollView:(id)arg1;
@@ -88,7 +88,7 @@
 - (void)termsViewControllerDidCancel:(id)arg1;
 - (void)termsViewControllerShouldDismiss:(id)arg1;
 - (void)updateViewConstraints;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

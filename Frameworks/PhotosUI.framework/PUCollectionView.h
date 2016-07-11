@@ -9,15 +9,15 @@
     NSIndexPath * _dragTargetIndexPath;
     UIView * _draggedView;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _draggedViewCenterOffset;
     <PUCollectionViewReorderDelegate> * _reorderDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <PUCollectionViewReorderDelegate> *reorderDelegate;
 @property (readonly) Class superclass;
 
@@ -29,8 +29,8 @@
 - (void)_updateDragUsingIndexPathUpdateBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)reloadData;

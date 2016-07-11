@@ -3,8 +3,8 @@
  */
 
 @interface NSCachingFetchRequest : NSFetchRequest {
-    NSHashTable * _cachingCoordinators;
-    BOOL  _hasCachedInfo;
+    struct __CFDictionary { } * _cachedInfo;
+    bool  _hasCachedInfo;
     id  _identifier;
     NSDictionary * _substitutionVariables;
 }
@@ -14,10 +14,11 @@
 
 + (id)_generateIdentifier;
 
+- (void)_cacheInfo:(id)arg1 forRequestor:(id)arg2;
+- (id)_cachedInfoForRequestor:(id)arg1;
 - (id)_copyForDirtyContext;
-- (BOOL)_hasRegisteredCachingCoordinator:(id)arg1;
 - (id)_identifier;
-- (void)_registerCachingCoordinator:(id)arg1;
+- (bool)_isCachingFetchRequest__;
 - (void)_sanityCheckVariables:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

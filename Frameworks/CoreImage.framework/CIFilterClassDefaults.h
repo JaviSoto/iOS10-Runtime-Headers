@@ -4,7 +4,6 @@
 
 @interface CIFilterClassDefaults : NSObject
 
-+ (id)_defaultsWithClass:(Class)arg1;
 + (id)classDefaultsForClass:(Class)arg1;
 
 @end

@@ -12,7 +12,7 @@
 @property (nonatomic) int minConsumedSequenceNumber;
 @property (nonatomic) int secondMinConsumedSequenceNumber;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)minConsumedClientIdentifier;
 - (int)minConsumedSequenceNumber;

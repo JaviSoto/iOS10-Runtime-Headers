@@ -5,6 +5,7 @@
 
 @optional
 
-- (void)secureElement:(NFSecureElement *)arg1 didChangeRestrictedMode:(BOOL)arg2;
+- (void)didReceiveFatalCommunicationError;
+- (void)secureElement:(NFSecureElement *)arg1 didChangeRestrictedMode:(bool)arg2;
 
 @end

@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)didReceiveFatalCommunicationError;
 - (void)remoteAdminCleanupProgress:(double)arg1;
 
 @end

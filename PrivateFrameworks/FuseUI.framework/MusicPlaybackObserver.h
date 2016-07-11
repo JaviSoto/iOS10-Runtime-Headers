@@ -4,6 +4,7 @@
 
 @interface MusicPlaybackObserver : NSObject {
     NSOperationQueue * _addOperationQueue;
+    MPMediaItemCollection * _lastIncrementedAlbum;
     MPMediaPlaylist * _lastIncrementedPlaylist;
     MusicLocalPlaybackEventDataSource * _localPlaybackEventDataSource;
     MPAVController * _player;
@@ -18,6 +19,8 @@
 - (void)_currentItemDidChange:(id)arg1;
 - (void)_currentItemWillChange:(id)arg1;
 - (id)_initWithPlayer:(id)arg1;
+- (void)_itemArtworkDidChangeNotification:(id)arg1;
+- (void)_itemTitlesDidChangeNotification:(id)arg1;
 - (void)_registerForPlayerNotifications:(id)arg1;
 - (void)_unregisterForPlayerNotifications:(id)arg1;
 - (void)dealloc;

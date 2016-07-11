@@ -2,50 +2,92 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUISearchHeader : UIView {
+@interface SPUISearchHeader : UIView <UITextFieldDelegate> {
+    UIView * _blurViewMask;
     UIButton * _cancelButton;
-    NSArray * _cancelButtonConstraints;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    }  _cancelMargins;
+    NSLayoutConstraint * _cancelButtonTrailingConstraint;
     <SPUISearchHeaderDelegate> * _delegate;
-    NSArray * _insetContainerConstraints;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    }  _margins;
-    UITextField * _searchField;
-    NSArray * _searchFieldConstraints;
-    UIButton * _voiceButton;
-    UIView * insetContainer;
+    _UILegibilitySettings * _legibilitySettings;
+    SPUITextField * _searchField;
+    NSLayoutConstraint * _searchFieldTrailingConstraint;
+    unsigned long long  _suggestionID;
+    UIView * _tintViewMask;
+    NSLayoutConstraint * _widthConstraint;
+    bool  _willClear;
 }
 
-@property (nonatomic) <SPUISearchHeaderDelegate> *delegate;
-@property (nonatomic, readonly, retain) UITextField *searchField;
+@property (retain) UIView *blurViewMask;
+@property (retain) UIButton *cancelButton;
+@property (retain) NSLayoutConstraint *cancelButtonTrailingConstraint;
+@property (nonatomic, readonly) NSString *currentQuery;
+@property (nonatomic, readonly) SPSearchQueryContext *currentQueryContext;
+@property (readonly, copy) NSString *debugDescription;
+@property <SPUISearchHeaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (retain) SPUITextField *searchField;
+@property (retain) NSLayoutConstraint *searchFieldTrailingConstraint;
+@property unsigned long long suggestionID;
+@property (readonly) Class superclass;
+@property (retain) UIView *tintViewMask;
+@property (retain) NSLayoutConstraint *widthConstraint;
+@property bool willClear;
 
-+ (id)barTintColor;
++ (bool)isJ99;
 
 - (void).cxx_destruct;
-- (void)_cancelButtonPressed;
+- (void)addInputMethodInformationToQueryContext:(id)arg1;
+- (id)blurViewMask;
+- (id)cancelButton;
+- (void)cancelButtonClicked:(id)arg1;
+- (bool)cancelButtonIsVisible;
+- (id)cancelButtonTrailingConstraint;
+- (void)clearSearchFieldWhyQuery:(unsigned long long)arg1 allowZKW:(bool)arg2;
+- (id)createNavBarMaskInView:(id)arg1;
+- (id)currentQuery;
+- (id)currentQueryContext;
 - (void)dealloc;
 - (id)delegate;
-- (void)handleDictationButtonPress:(id)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDictationAvailable;
-- (void)layoutSubviews;
+- (void)didMoveToSuperview;
+- (void)enableDictationIfRequired;
+- (void)focusSearchField;
+- (id)init;
+- (bool)isOnDarkBackground;
+- (id)legibilitySettings;
+- (void)linkWithKeyboardController:(id)arg1;
+- (id)nextResponder;
 - (id)searchField;
+- (id)searchFieldTrailingConstraint;
+- (void)searchForSuggestedQuery:(id)arg1;
+- (void)setBlurViewMask:(id)arg1;
+- (void)setCancelButton:(id)arg1;
+- (void)setCancelButtonTrailingConstraint:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsCapturing:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)updateLayoutOnOrientation;
-- (void)updateMicrophoneStatus;
-- (void)updatePlaceholder;
+- (void)setLegibilitySettings:(id)arg1;
+- (void)setSearchField:(id)arg1;
+- (void)setSearchFieldTrailingConstraint:(id)arg1;
+- (void)setSuggestionID:(unsigned long long)arg1;
+- (void)setTintViewMask:(id)arg1;
+- (void)setWidthConstraint:(id)arg1;
+- (void)setWillClear:(bool)arg1;
+- (void)showCancelButton:(bool)arg1 animated:(bool)arg2;
+- (unsigned long long)suggestionID;
+- (void)textDidChange:(id)arg1;
+- (void)textDidChange:(id)arg1 whyQuery:(unsigned long long)arg2 allowZKW:(bool)arg3;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (void)textInputModeChanged:(id)arg1;
+- (id)tintViewMask;
+- (double)topPadding;
+- (void)unfocusSearchField;
+- (void)updateBlurProgress:(double)arg1;
+- (void)updateColors;
+- (void)updateKeyboardSuggestions:(id)arg1;
+- (id)visualEffectView;
+- (id)widthConstraint;
+- (bool)willClear;
 
 @end

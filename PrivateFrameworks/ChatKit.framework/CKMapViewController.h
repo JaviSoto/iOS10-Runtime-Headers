@@ -13,13 +13,14 @@
 @property (nonatomic, retain) <MKAnnotation> *annotation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKLocalSearch *localSearch;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, retain) MKMapView *mapView;
 @property (nonatomic, retain) _MKPlaceViewController *mapViewController;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_toolbarItemPressed:(id)arg1;
 - (id)annotation;
 - (void)dealloc;
@@ -38,8 +39,8 @@
 - (void)setMapItem:(id)arg1;
 - (void)setMapView:(id)arg1;
 - (void)setMapViewController:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)wantsFullScreenLayout;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (bool)wantsFullScreenLayout;
 
 @end

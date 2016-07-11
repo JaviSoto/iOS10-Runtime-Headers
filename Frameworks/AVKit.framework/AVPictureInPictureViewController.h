@@ -5,8 +5,8 @@
 @interface AVPictureInPictureViewController : UIViewController <PGPictureInPictureViewController> {
     <AVPictureInPictureViewControllerDelegate> * _delegate;
     struct { 
-        unsigned int pictureInPictureViewControllerViewDidAppear : 1; 
-        unsigned int pictureInPictureViewControllerViewWillDisappear : 1; 
+        bool pictureInPictureViewControllerViewDidAppear; 
+        bool pictureInPictureViewControllerViewWillDisappear; 
     }  _delegateRespondsTo;
     AVPlayerController * _playerController;
 }
@@ -14,11 +14,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AVPictureInPictureViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) AVPlayerLayer *pictureInPictureLayer;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) AVPictureInPicturePlayerLayerView *pictureInPicturePlayerLayerView;
 @property (nonatomic, retain) AVPlayerController *playerController;
-@property (nonatomic, readonly) BOOL shouldShowAlternateActionButtonImage;
-@property (nonatomic, readonly) BOOL shouldShowLoadingIndicator;
+@property (nonatomic, readonly) bool shouldShowAlternateActionButtonImage;
+@property (nonatomic, readonly) bool shouldShowLoadingIndicator;
 @property (readonly) Class superclass;
 
 + (id)keyPathsForValuesAffectingShouldShowAlternateActionButtonImage;
@@ -29,14 +29,15 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didAnimatePictureInPictureStop;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)loadView;
-- (id)pictureInPictureLayer;
+- (id)initWithPictureInPicturePlayerLayerView:(id)arg1;
+- (id)pictureInPicturePlayerLayerView;
 - (id)playerController;
 - (void)setDelegate:(id)arg1;
 - (void)setPlayerController:(id)arg1;
-- (BOOL)shouldShowAlternateActionButtonImage;
-- (BOOL)shouldShowLoadingIndicator;
+- (bool)shouldShowAlternateActionButtonImage;
+- (bool)shouldShowLoadingIndicator;
 - (void)willAnimatePictureInPictureStart;
 
 @end

@@ -3,54 +3,53 @@
  */
 
 @interface MusicRemoteController : NSObject {
-    <MusicRemoteControllerDelegate> * _delegate;
-    BOOL  _hasPlayCatalogContentCapability;
-    BOOL  _isObservingAddToLibraryCommand;
-    BOOL  _isObservingBookmarkCommand;
-    BOOL  _isObservingDislikeCommand;
-    BOOL  _isObservingLikeCommand;
-    BOOL  _isObservingShuffleRepeatCommands;
+    bool  _hasPlayCatalogContentCapability;
+    bool  _isObservingAddToLibraryCommand;
+    bool  _isObservingBookmarkCommand;
+    bool  _isObservingDislikeCommand;
+    bool  _isObservingLikeCommand;
+    bool  _isObservingShuffleRepeatCommands;
     NSString * _lastReloadPlaybackContextID;
     MusicAVPlayer * _player;
 }
 
-@property (nonatomic) <MusicRemoteControllerDelegate> *delegate;
 @property (nonatomic, readonly) MusicAVPlayer *player;
 
 - (void).cxx_destruct;
-- (id)_addToLibraryActionForItem:(id)arg1;
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (void)_buyOffersDidChangeNotification:(id)arg1;
 - (void)_cloudLibraryEnabledDidChangeNotification:(id)arg1;
 - (id)_currentFeederContextID;
-- (int)_handleAddToLibraryCommand:(id)arg1;
-- (int)_handleAdvanceRepeatModeCommand:(id)arg1;
-- (int)_handleAdvanceShuffleModeCommand:(id)arg1;
-- (int)_handleBookmarkCommand:(id)arg1;
-- (int)_handleBuyTrackCommand:(id)arg1;
-- (int)_handleCancelDownloadCommand:(id)arg1;
-- (int)_handleChangePlaybackPositionCommand:(id)arg1;
-- (int)_handleChangePlaybackRateCommand:(id)arg1;
-- (int)_handleChangeRepeatModeCommand:(id)arg1;
-- (int)_handleChangeShuffleModeCommand:(id)arg1;
-- (int)_handleCreateRadioStationCommand:(id)arg1;
-- (int)_handleDislikeCommand:(id)arg1;
-- (int)_handleInsertIntoPlaybackQueue:(id)arg1;
-- (int)_handleLikeCommand:(id)arg1;
-- (int)_handleNextTrackCommand:(id)arg1;
-- (int)_handlePauseCommand:(id)arg1;
-- (int)_handlePlayCommand:(id)arg1;
-- (int)_handlePreviousTrackCommand:(id)arg1;
-- (int)_handleRatingCommand:(id)arg1;
-- (int)_handleSeekBackwardCommand:(id)arg1;
-- (int)_handleSeekForwardCommand:(id)arg1;
+- (void)_getLibraryAddAction:(id*)arg1 removeAction:(id*)arg2 forItem:(id)arg3;
+- (void)_handleAddItemToLibrary:(id)arg1 completionHandler:(id /* block */)arg2;
+- (long long)_handleAddNowPlayingItemToLibraryCommand:(id)arg1;
+- (long long)_handleAdvanceRepeatModeCommand:(id)arg1;
+- (long long)_handleAdvanceShuffleModeCommand:(id)arg1;
+- (long long)_handleBookmarkCommand:(id)arg1;
+- (long long)_handleBuyTrackCommand:(id)arg1;
+- (long long)_handleCancelDownloadCommand:(id)arg1;
+- (long long)_handleChangePlaybackPositionCommand:(id)arg1;
+- (long long)_handleChangePlaybackRateCommand:(id)arg1;
+- (long long)_handleChangeRepeatModeCommand:(id)arg1;
+- (long long)_handleChangeShuffleModeCommand:(id)arg1;
+- (long long)_handleCreateRadioStationCommand:(id)arg1;
+- (long long)_handleDislikeCommand:(id)arg1;
+- (void)_handleInsertIntoPlaybackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (long long)_handleLikeCommand:(id)arg1;
+- (long long)_handleNextTrackCommand:(id)arg1;
+- (long long)_handlePauseCommand:(id)arg1;
+- (long long)_handlePlayCommand:(id)arg1;
+- (long long)_handlePreviousTrackCommand:(id)arg1;
+- (long long)_handleRatingCommand:(id)arg1;
+- (long long)_handleSeekBackwardCommand:(id)arg1;
+- (long long)_handleSeekForwardCommand:(id)arg1;
 - (void)_handleSetPlaybackQueueCommand:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)_handleSkipBackwardCommand:(id)arg1;
-- (int)_handleSkipForwardCommand:(id)arg1;
-- (int)_handleSpecialSeekBackwardCommand:(id)arg1;
-- (int)_handleSpecialSeekForwardCommand:(id)arg1;
-- (int)_handleStopCommand:(id)arg1;
-- (int)_handleTogglePlayPauseCommand:(id)arg1;
+- (long long)_handleSkipBackwardCommand:(id)arg1;
+- (long long)_handleSkipForwardCommand:(id)arg1;
+- (long long)_handleSpecialSeekBackwardCommand:(id)arg1;
+- (long long)_handleSpecialSeekForwardCommand:(id)arg1;
+- (long long)_handleStopCommand:(id)arg1;
+- (long long)_handleTogglePlayPauseCommand:(id)arg1;
 - (void)_isBannedDidChangeNotification:(id)arg1;
 - (void)_isInWishListDidChangeNotification:(id)arg1;
 - (void)_likedStateDidChangeNotification:(id)arg1;
@@ -75,11 +74,9 @@
 - (void)beginRespondingToRemoteControlEvents;
 - (struct __CFArray { }*)copySupportedCommands;
 - (void)dealloc;
-- (id)delegate;
 - (id)init;
 - (id)initWithPlayer:(id)arg1;
 - (id)player;
-- (void)setDelegate:(id)arg1;
 - (void)stopRespondingToRemoteControlEvents;
 
 @end

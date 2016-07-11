@@ -8,7 +8,7 @@
     SKUIMediaSocialAuthor * _authorForActiveAccount;
     NSURL * _baseTagLookupURL;
     MSCLStoreItem * _item;
-    int  _maximumNumberOfAttachments;
+    long long  _maximumNumberOfAttachments;
     double  _maximumSoundBiteDuration;
     NSArray * _potentalAuthors;
     NSArray * _suggestedTags;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSArray *audioCategoryNames;
 @property (nonatomic, copy) SKUIMediaSocialAuthor *authorForActiveAccount;
 @property (nonatomic, copy) MSCLStoreItem *item;
-@property (nonatomic) int maximumNumberOfAttachments;
+@property (nonatomic) long long maximumNumberOfAttachments;
 @property (nonatomic) double maximumSoundBiteDuration;
 @property (nonatomic, copy) NSArray *potentalAuthors;
 @property (nonatomic, copy) NSArray *suggestedTags;
@@ -31,14 +31,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)item;
-- (int)maximumNumberOfAttachments;
+- (long long)maximumNumberOfAttachments;
 - (double)maximumSoundBiteDuration;
 - (id)potentalAuthors;
 - (void)setAllowedExternalServices:(id)arg1;
 - (void)setAudioCategoryNames:(id)arg1;
 - (void)setAuthorForActiveAccount:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setMaximumNumberOfAttachments:(int)arg1;
+- (void)setMaximumNumberOfAttachments:(long long)arg1;
 - (void)setMaximumSoundBiteDuration:(double)arg1;
 - (void)setPotentalAuthors:(id)arg1;
 - (void)setSuggestedTags:(id)arg1;

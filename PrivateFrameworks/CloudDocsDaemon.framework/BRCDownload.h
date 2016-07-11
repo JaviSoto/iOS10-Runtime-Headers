@@ -7,6 +7,7 @@
     NSString * _etag;
     BRCItemID * _itemID;
     BRCProgress * _progress;
+    bool  _progressPublished;
     CKRecord * _record;
     CKRecordID * _recordID;
     NSString * _stageID;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) int kind;
 @property (nonatomic, readonly) BRCProgress *progress;
+@property (nonatomic) bool progressPublished;
 @property (nonatomic, retain) CKRecord *record;
 @property (nonatomic, readonly) CKRecordID *recordID;
 @property (nonatomic, retain) CKRecord *secondaryRecord;
@@ -34,11 +36,13 @@
 - (id)itemID;
 - (int)kind;
 - (id)progress;
+- (bool)progressPublished;
 - (id)record;
 - (id)recordID;
 - (id)secondaryRecord;
 - (id)secondaryRecordID;
 - (void)setDoneSize:(unsigned long long)arg1;
+- (void)setProgressPublished:(bool)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setSecondaryRecord:(id)arg1;
 - (id)stageID;

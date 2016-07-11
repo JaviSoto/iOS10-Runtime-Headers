@@ -3,57 +3,61 @@
  */
 
 @interface MPMusicPlayerClientState : NSObject {
-    BOOL  _allowsBackgroundVideo;
+    bool  _allowsBackgroundVideo;
     int  _backgroundPlaybackAccess;
     MPMediaItem * _firstItem;
     MPMediaPlaylist * _geniusMixPlaylist;
-    BOOL  _hasAudioBackgroundMode;
+    bool  _hasAudioBackgroundMode;
     MPMediaQuery * _query;
     MPRadioStation * _radioStation;
-    int  _repeatMode;
-    BOOL  _seeking;
-    int  _shuffleMode;
-    BOOL  _useApplicationSpecificQueue;
-    BOOL  _videoPlaybackEnabled;
+    long long  _repeatMode;
+    bool  _seeking;
+    long long  _shuffleMode;
+    NSArray * _storeIDs;
+    bool  _useApplicationSpecificQueue;
+    bool  _videoPlaybackEnabled;
 }
 
-@property (nonatomic) BOOL allowsBackgroundVideo;
+@property (nonatomic) bool allowsBackgroundVideo;
 @property (nonatomic) int backgroundPlaybackAccess;
 @property (nonatomic, retain) MPMediaItem *firstItem;
 @property (nonatomic, retain) MPMediaPlaylist *geniusMixPlaylist;
-@property (nonatomic) BOOL hasAudioBackgroundMode;
+@property (nonatomic) bool hasAudioBackgroundMode;
 @property (nonatomic, retain) MPMediaQuery *query;
 @property (nonatomic, retain) MPRadioStation *radioStation;
-@property (nonatomic) int repeatMode;
-@property (nonatomic) BOOL seeking;
-@property (nonatomic) int shuffleMode;
-@property (nonatomic) BOOL useApplicationSpecificQueue;
-@property (nonatomic) BOOL videoPlaybackEnabled;
+@property (nonatomic) long long repeatMode;
+@property (nonatomic) bool seeking;
+@property (nonatomic) long long shuffleMode;
+@property (nonatomic, copy) NSArray *storeIDs;
+@property (nonatomic) bool useApplicationSpecificQueue;
+@property (nonatomic) bool videoPlaybackEnabled;
 
 - (void).cxx_destruct;
-- (BOOL)allowsBackgroundVideo;
+- (bool)allowsBackgroundVideo;
 - (int)backgroundPlaybackAccess;
 - (id)firstItem;
 - (id)geniusMixPlaylist;
-- (BOOL)hasAudioBackgroundMode;
+- (bool)hasAudioBackgroundMode;
 - (id)query;
 - (id)radioStation;
-- (int)repeatMode;
-- (BOOL)seeking;
-- (void)setAllowsBackgroundVideo:(BOOL)arg1;
+- (long long)repeatMode;
+- (bool)seeking;
+- (void)setAllowsBackgroundVideo:(bool)arg1;
 - (void)setBackgroundPlaybackAccess:(int)arg1;
 - (void)setFirstItem:(id)arg1;
 - (void)setGeniusMixPlaylist:(id)arg1;
-- (void)setHasAudioBackgroundMode:(BOOL)arg1;
+- (void)setHasAudioBackgroundMode:(bool)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRadioStation:(id)arg1;
-- (void)setRepeatMode:(int)arg1;
-- (void)setSeeking:(BOOL)arg1;
-- (void)setShuffleMode:(int)arg1;
-- (void)setUseApplicationSpecificQueue:(BOOL)arg1;
-- (void)setVideoPlaybackEnabled:(BOOL)arg1;
-- (int)shuffleMode;
-- (BOOL)useApplicationSpecificQueue;
-- (BOOL)videoPlaybackEnabled;
+- (void)setRepeatMode:(long long)arg1;
+- (void)setSeeking:(bool)arg1;
+- (void)setShuffleMode:(long long)arg1;
+- (void)setStoreIDs:(id)arg1;
+- (void)setUseApplicationSpecificQueue:(bool)arg1;
+- (void)setVideoPlaybackEnabled:(bool)arg1;
+- (long long)shuffleMode;
+- (id)storeIDs;
+- (bool)useApplicationSpecificQueue;
+- (bool)videoPlaybackEnabled;
 
 @end

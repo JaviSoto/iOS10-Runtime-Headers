@@ -4,8 +4,9 @@
 
 @interface PHSmartAlbum : PHAssetCollection
 
++ (id)fetchType;
 + (id)managedEntityName;
 
-- (BOOL)collectionHasFixedOrder;
+- (bool)collectionHasFixedOrder;
 
 @end

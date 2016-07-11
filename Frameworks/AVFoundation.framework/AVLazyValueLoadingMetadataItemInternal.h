@@ -9,7 +9,7 @@
     NSError * valueLoadingError;
     id /* block */  valueLoadingHandler;
     AVMetadataItemValueRequest * valueRequest;
-    int  valueStatus;
+    long long  valueStatus;
 }
 
 @end

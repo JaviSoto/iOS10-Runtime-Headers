@@ -5,7 +5,7 @@
 @interface SASportsTeam : SASportsEntity
 
 @property (nonatomic, copy) NSString *abbreviatedName;
-@property (nonatomic) BOOL alwaysUseAthleteFullName;
+@property (nonatomic) bool alwaysUseAthleteFullName;
 @property (nonatomic, copy) NSArray *athletes;
 @property (nonatomic, copy) NSString *awayLosses;
 @property (nonatomic, copy) NSString *awayOvertimeLosses;
@@ -34,6 +34,7 @@
 @property (nonatomic, copy) NSString *pointsFor;
 @property (nonatomic, copy) NSNumber *primaryColor;
 @property (nonatomic, copy) NSString *qualificationPosition;
+@property (nonatomic, copy) NSString *qualificationPositionSummary;
 @property (nonatomic, copy) NSArray *rankings;
 @property (nonatomic, copy) NSNumber *secondaryColor;
 @property (nonatomic, copy) NSArray *statistics;
@@ -51,7 +52,7 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)abbreviatedName;
-- (BOOL)alwaysUseAthleteFullName;
+- (bool)alwaysUseAthleteFullName;
 - (id)athletes;
 - (id)awayLosses;
 - (id)awayOvertimeLosses;
@@ -82,10 +83,11 @@
 - (id)pointsFor;
 - (id)primaryColor;
 - (id)qualificationPosition;
+- (id)qualificationPositionSummary;
 - (id)rankings;
 - (id)secondaryColor;
 - (void)setAbbreviatedName:(id)arg1;
-- (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
+- (void)setAlwaysUseAthleteFullName:(bool)arg1;
 - (void)setAthletes:(id)arg1;
 - (void)setAwayLosses:(id)arg1;
 - (void)setAwayOvertimeLosses:(id)arg1;
@@ -114,6 +116,7 @@
 - (void)setPointsFor:(id)arg1;
 - (void)setPrimaryColor:(id)arg1;
 - (void)setQualificationPosition:(id)arg1;
+- (void)setQualificationPositionSummary:(id)arg1;
 - (void)setRankings:(id)arg1;
 - (void)setSecondaryColor:(id)arg1;
 - (void)setStatistics:(id)arg1;

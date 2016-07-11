@@ -3,29 +3,37 @@
  */
 
 @interface FBDisplayLayoutTransition : NSObject {
-    unsigned int  _displayType;
-    int  _interfaceOrientation;
+    long long  _backlightLevel;
+    unsigned long long  _displayType;
+    long long  _interfaceOrientation;
     NSString * _name;
     NSString * _transitionReason;
+    bool  _transitioning;
 }
 
-@property (nonatomic, readonly) unsigned int displayType;
-@property (nonatomic) int interfaceOrientation;
+@property (nonatomic) long long backlightLevel;
+@property (nonatomic, readonly) unsigned long long displayType;
+@property (nonatomic) long long interfaceOrientation;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, copy) NSString *transitionReason;
+@property (getter=isTransitioning, nonatomic, readonly) bool transitioning;
 
-+ (void)flushLayoutForDisplayType:(unsigned int)arg1;
-+ (BOOL)isTransitioningForDisplayType:(unsigned int)arg1;
++ (void)flushLayoutForDisplayType:(unsigned long long)arg1;
++ (bool)isTransitioningForDisplayType:(unsigned long long)arg1;
++ (id)layoutForDisplayType:(unsigned long long)arg1;
 
+- (long long)backlightLevel;
 - (void)beginTransition;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)displayType;
+- (unsigned long long)displayType;
 - (void)endTransition;
-- (id)initWithDisplayType:(unsigned int)arg1 name:(id)arg2;
-- (int)interfaceOrientation;
+- (id)initWithDisplayType:(unsigned long long)arg1 name:(id)arg2;
+- (long long)interfaceOrientation;
+- (bool)isTransitioning;
 - (id)name;
-- (void)setInterfaceOrientation:(int)arg1;
+- (void)setBacklightLevel:(long long)arg1;
+- (void)setInterfaceOrientation:(long long)arg1;
 - (void)setTransitionReason:(id)arg1;
 - (id)transitionReason;
 

@@ -5,13 +5,14 @@
 
 @required
 
-- (BOOL)deviceInRestrictedMode;
-- (BOOL)deviceSupportsInAppPayments;
-- (<PKPassbookSettingsOptionsDelegate> *)optionsDelegate;
+- (bool)deviceInRestrictedMode;
+- (bool)deviceSupportsInAppPayments;
+- (<PKPaymentOptionsProtocol> *)optionsDelegate;
 - (<PKPassLibraryDataProvider> *)passLibraryDataProvider;
 - (<PKPaymentDataProvider> *)paymentDataProvider;
 - (NSString *)secureElementID;
+- (bool)secureElementIsProductionSigned;
 - (<PKPaymentSetupDelegate> *)setupDelegate;
-- (BOOL)showPassState;
+- (bool)showPassState;
 
 @end

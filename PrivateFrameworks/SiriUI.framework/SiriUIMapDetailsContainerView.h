@@ -3,22 +3,30 @@
  */
 
 @interface SiriUIMapDetailsContainerView : UIView {
-    BOOL  _autoCenteringDisabled;
+    bool  _autoCenteringDisabled;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _backgroundInsets;
     UIView * _detailsView;
     UIView * _mapView;
 }
 
-@property (nonatomic) BOOL autoCenteringDisabled;
+@property (nonatomic) bool autoCenteringDisabled;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } backgroundInsets;
 @property (nonatomic, retain) UIView *detailsView;
 @property (nonatomic, retain) UIView *mapView;
 
 - (void).cxx_destruct;
-- (float)_horizontalSpacing;
-- (BOOL)autoCenteringDisabled;
+- (bool)autoCenteringDisabled;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })backgroundInsets;
 - (id)detailsView;
 - (void)layoutSubviews;
 - (id)mapView;
-- (void)setAutoCenteringDisabled:(BOOL)arg1;
+- (void)setAutoCenteringDisabled:(bool)arg1;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDetailsView:(id)arg1;
 - (void)setMapView:(id)arg1;
 

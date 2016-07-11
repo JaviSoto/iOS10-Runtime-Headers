@@ -3,49 +3,49 @@
  */
 
 @interface PKPaymentMessage : NSObject <NSSecureCoding> {
-    BOOL  _allowDeepLink;
+    bool  _allowDeepLink;
     NSString * _content;
     NSDate * _expirationDate;
-    BOOL  _expiresOnNextTransaction;
-    BOOL  _hasAssociatedPaymentApplication;
+    bool  _expiresOnNextTransaction;
+    bool  _hasAssociatedPaymentApplication;
     NSString * _identifier;
     NSDate * _messageDate;
     NSString * _serviceIdentifier;
 }
 
-@property (nonatomic) BOOL allowDeepLink;
+@property (nonatomic) bool allowDeepLink;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSDate *expirationDate;
-@property (nonatomic) BOOL expiresOnNextTransaction;
-@property (nonatomic) BOOL hasAssociatedPaymentApplication;
+@property (nonatomic) bool expiresOnNextTransaction;
+@property (nonatomic) bool hasAssociatedPaymentApplication;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDate *messageDate;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 
 + (id)paymentMessageWithDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)allowDeepLink;
+- (void).cxx_destruct;
+- (bool)allowDeepLink;
 - (id)content;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (BOOL)expiresOnNextTransaction;
-- (BOOL)hasAssociatedPaymentApplication;
-- (unsigned int)hash;
+- (bool)expiresOnNextTransaction;
+- (bool)hasAssociatedPaymentApplication;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPaymentMessage:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPaymentMessage:(id)arg1;
 - (id)messageDate;
 - (id)serviceIdentifier;
-- (void)setAllowDeepLink:(BOOL)arg1;
+- (void)setAllowDeepLink:(bool)arg1;
 - (void)setContent:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
-- (void)setExpiresOnNextTransaction:(BOOL)arg1;
-- (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
+- (void)setExpiresOnNextTransaction:(bool)arg1;
+- (void)setHasAssociatedPaymentApplication:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDate:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;

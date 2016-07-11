@@ -4,69 +4,57 @@
 
 @interface PKPassDisplayProfile : PKDisplayProfile <NSCopying, NSSecureCoding> {
     PKColor * _backgroundColor;
-    NSData * _backgroundHash;
     PKColor * _foregroundColor;
-    NSData * _iconHash;
+    bool  _hasBackgroundImage;
+    bool  _hasStripImage;
     PKColor * _labelColor;
-    NSData * _logoHash;
-    int  _passStyle;
-    NSData * _paymentAssetsHash;
+    NSData * _manifestHash;
+    long long  _passStyle;
     PKColor * _stripColor;
-    NSData * _stripHash;
-    BOOL  _tallCode;
-    NSData * _thumbnailHash;
+    bool  _tallCode;
 }
 
 @property (nonatomic, retain) PKColor *backgroundColor;
-@property (nonatomic, retain) NSData *backgroundHash;
 @property (nonatomic, retain) PKColor *foregroundColor;
-@property (nonatomic, retain) NSData *iconHash;
+@property (nonatomic) bool hasBackgroundImage;
+@property (nonatomic) bool hasStripImage;
 @property (nonatomic, retain) PKColor *labelColor;
-@property (nonatomic, readonly) int layoutMode;
-@property (nonatomic, retain) NSData *logoHash;
-@property (nonatomic) int passStyle;
-@property (nonatomic, retain) NSData *paymentAssetsHash;
-@property (nonatomic, readonly) BOOL showsBackgroundImage;
-@property (nonatomic, readonly) BOOL showsStripImage;
+@property (nonatomic, readonly) long long layoutMode;
+@property (nonatomic, retain) NSData *manifestHash;
+@property (nonatomic) long long passStyle;
+@property (nonatomic, readonly) bool showsBackgroundImage;
+@property (nonatomic, readonly) bool showsStripImage;
 @property (nonatomic, retain) PKColor *stripColor;
-@property (nonatomic, retain) NSData *stripHash;
-@property (nonatomic) BOOL tallCode;
-@property (nonatomic, retain) NSData *thumbnailHash;
+@property (nonatomic) bool tallCode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)backgroundColor;
-- (id)backgroundHash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)foregroundColor;
-- (id)iconHash;
+- (bool)hasBackgroundImage;
+- (bool)hasStripImage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)labelColor;
-- (int)layoutMode;
-- (id)logoHash;
-- (int)passStyle;
-- (id)paymentAssetsHash;
+- (long long)layoutMode;
+- (id)manifestHash;
+- (long long)passStyle;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBackgroundHash:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
-- (void)setIconHash:(id)arg1;
+- (void)setHasBackgroundImage:(bool)arg1;
+- (void)setHasStripImage:(bool)arg1;
 - (void)setLabelColor:(id)arg1;
-- (void)setLogoHash:(id)arg1;
-- (void)setPassStyle:(int)arg1;
-- (void)setPaymentAssetsHash:(id)arg1;
+- (void)setManifestHash:(id)arg1;
+- (void)setPassStyle:(long long)arg1;
 - (void)setStripColor:(id)arg1;
-- (void)setStripHash:(id)arg1;
-- (void)setTallCode:(BOOL)arg1;
-- (void)setThumbnailHash:(id)arg1;
-- (BOOL)showsBackgroundImage;
-- (BOOL)showsStripImage;
+- (void)setTallCode:(bool)arg1;
+- (bool)showsBackgroundImage;
+- (bool)showsStripImage;
 - (id)stripColor;
-- (id)stripHash;
-- (BOOL)tallCode;
-- (id)thumbnailHash;
-- (int)type;
+- (bool)tallCode;
+- (long long)type;
 
 @end

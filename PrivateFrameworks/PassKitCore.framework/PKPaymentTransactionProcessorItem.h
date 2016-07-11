@@ -12,7 +12,7 @@
 @property (nonatomic, retain) PKPaymentApplication *paymentApplication;
 @property (nonatomic, retain) PKPaymentTransaction *paymentTransaction;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)passUniqueIdentifier;
 - (id)paymentApplication;
 - (id)paymentTransaction;

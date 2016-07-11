@@ -11,19 +11,19 @@
 @property (nonatomic, retain) NSMapTable *assertionsByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSXPCConnection *sbXPCConnection;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (void)_internalQueue_removeStatusBarStyleOverridesAssertionWithIdentifier:(id)arg1 invalidate:(BOOL)arg2;
+- (void).cxx_destruct;
+- (void)_internalQueue_removeStatusBarStyleOverridesAssertionWithIdentifier:(id)arg1 invalidate:(bool)arg2;
 - (void)_reactivateAssertions;
 - (void)_tearDownXPCConnection;
 - (void)addStatusBarStyleOverridesAssertion:(id)arg1 withHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (id)assertionsByIdentifier;
-- (void)dealloc;
 - (id)init;
 - (id)internalQueue;
 - (void)invalidateStatusBarStyleOverridesAssertionsWithIdentifiers:(id)arg1;

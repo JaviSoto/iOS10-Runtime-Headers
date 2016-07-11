@@ -5,54 +5,66 @@
 @interface HKWorkout : HKSample <HDCoding> {
     double  _duration;
     HKQuantity * _goal;
-    unsigned int  _goalType;
+    unsigned long long  _goalType;
+    bool  _isWatchWorkout;
+    HKQuantity * _totalBasalEnergyBurned;
     HKQuantity * _totalDistance;
     HKQuantity * _totalEnergyBurned;
-    unsigned int  _workoutActivityType;
+    unsigned long long  _workoutActivityType;
     NSArray * _workoutEvents;
 }
 
+@property (nonatomic) long long anchor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) double duration;
 @property (getter=_goal, setter=_setGoal:, nonatomic, retain) HKQuantity *goal;
-@property (getter=_goalType, setter=_setGoalType:, nonatomic) unsigned int goalType;
-@property (readonly) unsigned int hash;
+@property (getter=_goalType, setter=_setGoalType:, nonatomic) unsigned long long goalType;
+@property (readonly) unsigned long long hash;
+@property (getter=_isWatchWorkout, setter=_setIsWatchWorkout:, nonatomic) bool isWatchWorkout;
 @property (readonly) Class superclass;
+@property (getter=_totalBasalEnergyBurned, setter=_setTotalBasalEnergyBurned:, nonatomic, retain) HKQuantity *totalBasalEnergyBurned;
 @property (readonly) HKQuantity *totalDistance;
 @property (readonly) HKQuantity *totalEnergyBurned;
-@property (readonly) unsigned int workoutActivityType;
+@property (readonly) unsigned long long workoutActivityType;
 @property (readonly, copy) NSArray *workoutEvents;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_activityTypeMappings;
++ (id)_allWorkoutActivityTypes;
 + (id)_allWorkoutTypeNames;
-+ (BOOL)_isConcreteObjectClass;
-+ (id)_stringFromWorkoutActivityType:(unsigned int)arg1;
-+ (unsigned int)_workoutActivityTypeFromString:(id)arg1;
-+ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 device:(id)arg10 metadata:(id)arg11;
-+ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 device:(id)arg10 metadata:(id)arg11 config:(id /* block */)arg12;
-+ (id)_workoutWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 workoutType:(id)arg7 activityType:(unsigned int)arg8 workoutEvents:(id)arg9 duration:(double)arg10 totalEnergyBurned:(id)arg11 totalDistance:(id)arg12 goalType:(unsigned int)arg13 goal:(id)arg14;
-+ (BOOL)supportsSecureCoding;
-+ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
-+ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
-+ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
-+ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
-+ (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
++ (bool)_isConcreteObjectClass;
++ (id)_stringFromWorkoutActivityType:(unsigned long long)arg1;
++ (unsigned long long)_workoutActivityTypeFromString:(id)arg1;
++ (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned long long)arg9 goal:(id)arg10 device:(id)arg11 metadata:(id)arg12;
++ (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned long long)arg9 goal:(id)arg10 device:(id)arg11 metadata:(id)arg12 config:(id /* block */)arg13;
++ (bool)supportsSecureCoding;
++ (id)workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3;
++ (id)workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
++ (id)workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
++ (id)workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
++ (id)workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
 
 - (void).cxx_destruct;
+- (id)_deepCopy;
 - (void)_enumerateActiveTimePeriods:(id /* block */)arg1;
+- (void)_enumerateTimePeriodsWithBlock:(id /* block */)arg1;
 - (id)_goal;
 - (double)_goalInCanonicalUnit;
-- (unsigned int)_goalType;
+- (unsigned long long)_goalType;
+- (bool)_isWatchWorkout;
 - (void)_setDuration:(double)arg1;
 - (void)_setGoal:(id)arg1;
-- (void)_setGoalType:(unsigned int)arg1;
+- (void)_setGoalType:(unsigned long long)arg1;
+- (void)_setIsWatchWorkout:(bool)arg1;
+- (void)_setTotalBasalEnergyBurned:(id)arg1;
 - (void)_setTotalDistance:(id)arg1;
 - (void)_setTotalEnergyBurned:(id)arg1;
-- (void)_setWorkoutActivityType:(unsigned int)arg1;
+- (void)_setWorkoutActivityType:(unsigned long long)arg1;
 - (void)_setWorkoutEvents:(id)arg1;
+- (id)_totalBasalEnergyBurned;
+- (double)_totalBasalEnergyBurnedInCanonicalUnit;
 - (double)_totalDistanceInCanonicalUnit;
 - (double)_totalEnergyBurnedInCanonicalUnit;
 - (id)_validateConfiguration;
@@ -60,47 +72,58 @@
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
+- (long long)hk_integerValue;
 - (id)initWithCoder:(id)arg1;
 - (id)totalDistance;
 - (id)totalEnergyBurned;
-- (unsigned int)workoutActivityType;
+- (unsigned long long)workoutActivityType;
 - (id)workoutEvents;
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-+ (unsigned int)FU_associatedMetricForGoalType:(unsigned int)arg1;
-+ (BOOL)FU_isHeartRateSupportedForActivityType:(unsigned int)arg1 isIndoor:(BOOL)arg2;
-+ (BOOL)FU_shouldTrackPaceAsSpeedForActivityType:(unsigned int)arg1;
-+ (id)FU_supportedWorkoutMetricsForActivityType:(unsigned int)arg1 isIndoor:(BOOL)arg2;
-+ (BOOL)_isHeartRateSupportedInPowerSettingsForActivityType:(unsigned int)arg1;
-+ (BOOL)_isHeartRateSupportedInPrivacySettings;
++ (unsigned long long)FU_associatedMetricForGoalType:(unsigned long long)arg1;
++ (bool)FU_isHeartRateSupportedForActivityType:(unsigned long long)arg1 isIndoor:(bool)arg2;
++ (bool)FU_shouldTrackPaceWithOdometerForActivityType:(unsigned long long)arg1;
++ (id)FU_supportedGoalTypesForActivityType:(id)arg1;
++ (id)FU_supportedMetricsForActivityType:(id)arg1;
++ (bool)_isHeartRateSupportedInPowerSettingsForActivityType:(unsigned long long)arg1;
++ (bool)_isHeartRateSupportedInPrivacySettings;
 + (double)fiui_weightedAverageHeartRateWithSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 
+- (double)FU_averageTimePerLap;
 - (double)FU_completionFactor;
 - (id)FU_fitnessLocalizedGoalDescriptionWithValue:(id*)arg1;
-- (id)FU_localizedGoalDescription;
-- (id)FU_localizedKeyMetricCyclingStringWithUnitStyle:(int)arg1;
-- (id)FU_localizedKeyMetricDistanceStringWithUnitStyle:(int)arg1;
+- (id)FU_fitnessLocalizedGoalWithUnit:(id*)arg1;
+- (id)FU_fitnessLocalizedGoalWithValue:(id*)arg1;
+- (id)FU_localizedKeyMetricCyclingStringWithUnitStyle:(long long)arg1;
+- (id)FU_localizedKeyMetricDistanceStringWithUnitStyle:(long long)arg1;
 - (id)FU_localizedKeyMetricDurationString;
-- (id)FU_localizedKeyMetricEnergyBurnedStringWithUnitStyle:(int)arg1;
-- (id)FU_localizedKeyMetricStringWithUnitStyle:(int)arg1;
-- (id)FU_localizedOpenGoalKeyMetricStringWithUnitStyle:(int)arg1;
+- (id)FU_localizedKeyMetricEnergyBurnedStringWithUnitStyle:(long long)arg1;
+- (id)FU_localizedKeyMetricStringWithUnitStyle:(long long)arg1;
+- (id)FU_localizedOpenGoalKeyMetricStringWithUnitStyle:(long long)arg1;
 - (id)FU_localizedShareTextWithShareValue:(id)arg1;
-- (id)_localizedGoalDescriptionWithActivity:(id)arg1 formattedValue:(id*)arg2 useCustomMetrics:(BOOL)arg3;
-- (id)fiui_splitsFromDistanceSamples:(id)arg1 userPreferredUnit:(id)arg2;
+- (long long)FU_numberOfEventsOfType:(long long)arg1;
+- (id)FU_workoutLocalizedGoalValueWithUnitsWithFormattedValue:(id*)arg1;
+- (unsigned long long)_FU_effectiveGoalType;
+- (id)_FU_eventsOfType:(long long)arg1;
+- (bool)_FU_supportsDistanceMetricForGoalDisplay;
+- (id)_localizedGoalDescriptionWithActivity:(id)arg1 formattedValue:(id*)arg2;
+- (id)fiui_splitsFromDistanceSamples:(id)arg1 definedDistanceInMetersForOneSplit:(double)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (Class)hd_dataEntityClass;
 
-- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
+- (long long)anchor;
 - (id)codableRepresentationForSync;
 - (id)codableWorkoutEvents;
-- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
+- (bool)hd_insertRelatedDataWithProfile:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
+- (void)setAnchor:(long long)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
-- (int)hk_integerValue;
-- (id)hk_timePeriods;
+- (id)hkui_localizedActivityTypeName;
 
 @end

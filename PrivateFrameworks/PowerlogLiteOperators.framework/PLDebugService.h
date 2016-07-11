@@ -87,13 +87,19 @@
 - (void)stressCacheSmall;
 - (void)stressMidnightCalculation;
 - (void)stressMonotonicTimer;
+- (void)stressMonotonicTimer2;
+- (void)stressMonotonicTimer3;
 - (void)stressObjectForKey;
 - (void)stressPLEntry;
 - (void)stressSetObjectForKey;
+- (void)stressTaskingSubmission;
 - (void)stressTimer;
+- (void)testABM;
 - (void)testAllEntryKeyRequests;
 - (void)testArchive;
 - (void)testArray;
+- (void)testBlockingFlushCaches;
+- (void)testCompression;
 - (void)testDailyTasks;
 - (void)testEntryApplicationAgent;
 - (void)testEntryDelete;
@@ -135,7 +141,6 @@
 - (id)testPLAPICore_UpdateEntry:(id)arg1;
 - (id)testPLAPICore_WriteEntries:(id)arg1;
 - (id)testPLAPICore_WriteEntry:(id)arg1;
-- (void)testQMI;
 - (void)testUTF8;
 - (id)test_LogErr:(id)arg1 str:(id)arg2;
 - (id)test_LogPass:(id)arg1 str:(id)arg2;

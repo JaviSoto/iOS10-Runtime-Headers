@@ -6,10 +6,10 @@
     NSArray * _credentials;
 }
 
-@property (nonatomic, readonly) NSArray *credentials;
+@property (nonatomic, readonly, copy) NSArray *credentials;
 
+- (void).cxx_destruct;
 - (id)credentials;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 
 @end

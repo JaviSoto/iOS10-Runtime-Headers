@@ -16,7 +16,7 @@
 - (void)_handleMessage:(id)arg1;
 - (id)connection;
 - (id)delegate;
-- (BOOL)hasBoolEntitlement:(id)arg1;
+- (bool)hasBoolEntitlement:(id)arg1;
 - (id)initClientForMachService:(const char *)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)messageWithName:(const char *)arg1;

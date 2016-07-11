@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (void)dealloc;
+- (id)init;
 - (id)initWithURL:(id)arg1;
 
 @end

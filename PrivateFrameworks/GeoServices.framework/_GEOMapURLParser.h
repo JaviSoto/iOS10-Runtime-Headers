@@ -15,7 +15,10 @@
     NSString * _contentProviderID;
     NSString * _directionsDestinationAddressString;
     NSString * _directionsSourceAddressString;
-    BOOL  _exactPositionSpecified;
+    bool  _exactPositionSpecified;
+    long long  _favoritesType;
+    unsigned long long  _lineMUID;
+    NSString * _lineName;
     int  _mapType;
     double  _roll;
     double  _rotation;
@@ -40,6 +43,7 @@
         double latitudeDelta; 
         double longitudeDelta; 
     }  _span;
+    bool  _tester;
     double  _tilt;
     int  _trackingMode;
     int  _transportType;
@@ -57,7 +61,10 @@
 @property (readonly) NSString *contentProviderID;
 @property (readonly) NSString *directionsDestinationAddressString;
 @property (readonly) NSString *directionsSourceAddressString;
-@property (readonly) BOOL exactPositionSpecified;
+@property (readonly) bool exactPositionSpecified;
+@property (readonly) long long favoritesType;
+@property (readonly) unsigned long long lineMUID;
+@property (readonly, copy) NSString *lineName;
 @property (readonly) int mapType;
 @property (readonly) double roll;
 @property (readonly) double rotation;
@@ -67,13 +74,16 @@
 @property (readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } searchRegion;
 @property (readonly) unsigned long long searchUID;
 @property (readonly) struct { double x1; double x2; } span;
+@property (readonly) bool tester;
 @property (readonly) double tilt;
 @property (readonly) int trackingMode;
 @property (readonly) int transportType;
 @property (readonly) GEOUserSessionEntity *userSessionEntity;
 @property (readonly) float zoomLevel;
 
-+ (BOOL)isValidMapURL:(id)arg1;
++ (bool)isValidMapURL:(id)arg1;
++ (bool)isValidMapsCategoryURL:(id)arg1;
++ (bool)isValidMapsURLForAppendingSharedSessionID:(id)arg1;
 
 - (id)abAddressID;
 - (id)abRecordID;
@@ -85,10 +95,13 @@
 - (void)dealloc;
 - (id)directionsDestinationAddressString;
 - (id)directionsSourceAddressString;
-- (BOOL)exactPositionSpecified;
+- (bool)exactPositionSpecified;
+- (long long)favoritesType;
 - (id)initWithURL:(id)arg1;
+- (unsigned long long)lineMUID;
+- (id)lineName;
 - (int)mapType;
-- (BOOL)parseIncludingCustomParameters:(BOOL)arg1;
+- (bool)parseIncludingCustomParameters:(bool)arg1;
 - (double)roll;
 - (double)rotation;
 - (struct { double x1; double x2; })searchCoordinate;
@@ -97,6 +110,7 @@
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })searchRegion;
 - (unsigned long long)searchUID;
 - (struct { double x1; double x2; })span;
+- (bool)tester;
 - (double)tilt;
 - (int)trackingMode;
 - (int)transportType;

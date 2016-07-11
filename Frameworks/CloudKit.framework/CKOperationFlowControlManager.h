@@ -9,12 +9,12 @@
 @property (readonly) NSMutableDictionary *flowControlledOperationClasses;
 
 - (void).cxx_destruct;
+- (id)CKStatusReportArray;
 - (id)flowControlledOperationClasses;
 - (id)init;
-- (BOOL)isOperationLimited:(id)arg1;
+- (bool)isOperationLimited:(id)arg1;
 - (void)limitOperation:(id)arg1 retryAfter:(id)arg2;
 - (double)secondsUntilUnlimited:(id)arg1;
-- (id)statusReport;
 - (void)unlimitAllOperations;
 
 @end

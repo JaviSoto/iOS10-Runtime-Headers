@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NEIPC *ipc;
 @property (retain) NSObject<OS_dispatch_source> *ipcIdleTimer;
 @property (readonly) Class superclass;
@@ -18,8 +18,8 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)didSetReasserting:(BOOL)arg1;
-- (void)dispose;
+- (void)cancelWithError:(id)arg1;
+- (void)didSetReasserting:(bool)arg1;
 - (void)establishIPCWithCompletionHandler:(id /* block */)arg1;
 - (void)handleAppMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleIPCDetached;

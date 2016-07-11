@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTypingIndicatorLayer : CALayer {
+@interface CKTypingIndicatorLayer : CALayer <CKTypingIndicatorLayerProtocol> {
+    UIImage * _iconImage;
+    CALayer * _iconImageLayer;
     CALayer * _largeBubble;
     CALayer * _mediumBubble;
     CALayer * _smallBubble;
@@ -10,24 +12,37 @@
     CAReplicatorLayer * _thinkingDots;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, retain) CALayer *iconImageLayer;
 @property (nonatomic, retain) CALayer *largeBubble;
 @property (nonatomic, retain) CALayer *mediumBubble;
 @property (nonatomic, retain) CALayer *smallBubble;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CALayer *thinkingDot;
 @property (nonatomic, retain) CAReplicatorLayer *thinkingDots;
 
+- (void).cxx_destruct;
+- (void)_buildIconImage;
 - (void)_buildThinkingDots;
-- (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (id)_largeBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
-- (id)_mediumBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (id)_mediumBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
+- (id)_largeBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_largeBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
+- (id)_mediumBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_mediumBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
 - (void)_setup;
-- (id)_smallBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (id)_smallBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
-- (void)dealloc;
+- (id)_smallBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_smallBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
+- (void)_updateForImage;
+- (double)convertedCurrentMediaTime;
+- (id)iconImage;
+- (id)iconImageLayer;
 - (id)init;
 - (id)largeBubble;
 - (id)mediumBubble;
+- (void)setIconImage:(id)arg1;
+- (void)setIconImageLayer:(id)arg1;
 - (void)setLargeBubble:(id)arg1;
 - (void)setMediumBubble:(id)arg1;
 - (void)setSmallBubble:(id)arg1;

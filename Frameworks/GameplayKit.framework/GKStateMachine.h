@@ -12,9 +12,11 @@
 + (id)stateMachineWithStates:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canEnterState:(Class)arg1;
+- (id)_dotStringInstanceData;
+- (id)_instanceData;
+- (bool)canEnterState:(Class)arg1;
 - (id)currentState;
-- (BOOL)enterState:(Class)arg1;
+- (bool)enterState:(Class)arg1;
 - (void)forceEnterState:(Class)arg1;
 - (id)init;
 - (id)initWithStates:(id)arg1;

@@ -5,7 +5,6 @@
 @interface GLKSubmesh : NSObject {
     GLKMeshBuffer * _elementBuffer;
     int  _elementCount;
-    MDLMaterial * _material;
     GLKMesh * _mesh;
     unsigned int  _mode;
     NSString * _name;
@@ -14,7 +13,6 @@
 
 @property (nonatomic, readonly) GLKMeshBuffer *elementBuffer;
 @property (nonatomic, readonly) int elementCount;
-@property (nonatomic) MDLMaterial *material;
 @property (nonatomic, readonly) GLKMesh *mesh;
 @property (nonatomic, readonly) unsigned int mode;
 @property (nonatomic, readonly) NSString *name;
@@ -24,11 +22,9 @@
 - (id)elementBuffer;
 - (int)elementCount;
 - (id)initWithMesh:(id)arg1 submesh:(id)arg2 error:(id*)arg3;
-- (id)material;
 - (id)mesh;
 - (unsigned int)mode;
 - (id)name;
-- (void)setMaterial:(id)arg1;
 - (unsigned int)type;
 
 @end

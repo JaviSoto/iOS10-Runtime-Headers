@@ -4,10 +4,10 @@
 
 @interface CKRecordZone : NSObject <NSCopying, NSSecureCoding> {
     long long  _assetQuotaUsage;
-    unsigned int  _capabilities;
+    unsigned long long  _capabilities;
     NSData * _clientChangeToken;
     CKContainerID * _containerID;
-    NSData * _currentServerContinuationToken;
+    CKServerChangeToken * _currentServerChangeToken;
     int  _deviceCount;
     long long  _metadataQuotaUsage;
     NSString * _previousProtectionEtag;
@@ -17,10 +17,11 @@
 }
 
 @property (nonatomic) long long assetQuotaUsage;
-@property (nonatomic) unsigned int capabilities;
+@property (nonatomic) unsigned long long capabilities;
 @property (nonatomic, retain) NSData *clientChangeToken;
 @property (nonatomic, copy) CKContainerID *containerID;
-@property (nonatomic, retain) NSData *currentServerContinuationToken;
+@property (nonatomic, retain) CKServerChangeToken *currentServerChangeToken;
+@property (nonatomic, readonly) NSData *currentServerContinuationToken;
 @property (nonatomic) int deviceCount;
 @property (nonatomic) long long metadataQuotaUsage;
 @property (nonatomic, retain) NSString *previousProtectionEtag;
@@ -29,17 +30,19 @@
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (id)defaultRecordZone;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;
 - (id)CKPropertiesDescription;
-- (id)_initZoneWithIdentifier:(id)arg1 capabilities:(unsigned int)arg2;
+- (id)CKPropertiesToDescribe:(bool)arg1;
+- (id)_initZoneWithIdentifier:(id)arg1 capabilities:(unsigned long long)arg2;
 - (long long)assetQuotaUsage;
-- (unsigned int)capabilities;
+- (unsigned long long)capabilities;
 - (id)clientChangeToken;
 - (id)containerID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentServerChangeToken;
 - (id)currentServerContinuationToken;
 - (id)description;
 - (int)deviceCount;
@@ -52,10 +55,10 @@
 - (id)protectionData;
 - (id)protectionEtag;
 - (void)setAssetQuotaUsage:(long long)arg1;
-- (void)setCapabilities:(unsigned int)arg1;
+- (void)setCapabilities:(unsigned long long)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setContainerID:(id)arg1;
-- (void)setCurrentServerContinuationToken:(id)arg1;
+- (void)setCurrentServerChangeToken:(id)arg1;
 - (void)setDeviceCount:(int)arg1;
 - (void)setMetadataQuotaUsage:(long long)arg1;
 - (void)setPreviousProtectionEtag:(id)arg1;

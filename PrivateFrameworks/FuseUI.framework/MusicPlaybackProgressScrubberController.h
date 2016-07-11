@@ -10,12 +10,12 @@
     <MusicPlaybackProgressScrubbing> * _playbackProgressScrubber;
     <MusicPlaybackProgressScrubberDelegate> * _playbackProgressScrubberDelegate;
     MPAVController * _player;
-    int  _scrubbingTransactionCount;
+    long long  _scrubbingTransactionCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *localizedScrubSpeedText;
 @property (nonatomic) <MusicPlaybackProgressScrubbing> *playbackProgressScrubber;
 @property (nonatomic) <MusicPlaybackProgressScrubberDelegate> *playbackProgressScrubberDelegate;
@@ -27,21 +27,21 @@
 - (void)_createPeriodicTimeObserverIfNeeded;
 - (void)_currentItemDurationAvailableNotification:(id)arg1;
 - (void)_destroyPeriodicTimeObserverIfNeeded;
-- (void)_endScrubbingTransactionForFinalCleanup:(BOOL)arg1;
+- (void)_endScrubbingTransactionForFinalCleanup:(bool)arg1;
 - (void)_playerItemDidChangeNotification:(id)arg1;
 - (void)_playerRateDidChangeNotification:(id)arg1;
 - (void)_registerForNotificationsForCurrentItem:(id)arg1;
-- (void)_setCurrentItem:(id)arg1 force:(BOOL)arg2;
+- (void)_setCurrentItem:(id)arg1 force:(bool)arg2;
 - (void)_setCurrentTimeIfPossible:(double)arg1;
 - (void)_unregisterForNotificationsForCurrentItem:(id)arg1;
 - (void)_updateDurationForCurrentItem;
-- (void)_updateTimeValuesUsingItemTime:(BOOL)arg1 force:(BOOL)arg2;
+- (void)_updateTimeValuesUsingItemTime:(bool)arg1 force:(bool)arg2;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 playbackProgressScrubber:(id)arg2;
 - (id)localizedScrubSpeedText;
 - (id)playbackProgressScrubber;
 - (void)playbackProgressScrubber:(id)arg1 didChangeCurrentTime:(double)arg2;
-- (void)playbackProgressScrubber:(id)arg1 didChangeScrubSpeed:(int)arg2;
+- (void)playbackProgressScrubber:(id)arg1 didChangeScrubSpeed:(long long)arg2;
 - (id)playbackProgressScrubberDelegate;
 - (void)playbackProgressScrubberTrackingDidBegin:(id)arg1;
 - (void)playbackProgressScrubberTrackingDidEnd:(id)arg1;

@@ -7,19 +7,23 @@
 
 - (void)configureEntityValueContextOutput:(MusicEntityValueContext *)arg1 forIndexPath:(NSIndexPath *)arg2;
 - (void)configureEntityValueContextOutputForAnyIndexPath:(MusicEntityValueContext *)arg1;
-- (void)configureSectionEntityValueContextOutput:(MusicSectionEntityValueContext *)arg1 forIndex:(unsigned int)arg2;
+- (void)configureSectionEntityValueContextOutput:(MusicSectionEntityValueContext *)arg1 forIndex:(unsigned long long)arg2;
 - (<IKEntityValueProviding> *)entityValueProviderAtIndexPath:(NSIndexPath *)arg1;
-- (BOOL)hasEntities;
-- (SKUIIndexBarEntry *)indexBarEntryAtIndex:(unsigned int)arg1;
+- (bool)hasEntities;
+- (SKUIIndexBarEntry *)indexBarEntryAtIndex:(unsigned long long)arg1;
 - (NSIndexPath *)indexPathForEntityValueContext:(MusicEntityValueContext *)arg1;
-- (unsigned int)numberOfEntitiesInSection:(unsigned int)arg1;
-- (unsigned int)numberOfIndexBarEntries;
-- (unsigned int)numberOfSections;
-- (unsigned int)sectionForSectionIndexBarEntryAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfEntitiesInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfIndexBarEntries;
+- (unsigned long long)numberOfSections;
+- (unsigned long long)sectionForSectionIndexBarEntryAtIndex:(unsigned long long)arg1;
 
 @optional
 
-- (BOOL)hasEntitiesNotInLibrary;
-- (void)setEditing:(BOOL)arg1 returningInsertedSectionIndexSet:(id*)arg2 deletedSectionIndexSet:(id*)arg3;
+- (NSSet *)additionalPropertiesToFetchSynchronouslyForEntityValueContext:(MusicEntityValueContext *)arg1;
+- (bool)hasEntitiesNotInLibrary;
+- (bool)hasExplicitContent;
+- (bool)hasMultipleEntitiesIncludingStoreContent;
+- (MusicEntityProviderDownloadInformationController *)newDownloadInformationController;
+- (bool)setEditing:(bool)arg1;
 
 @end

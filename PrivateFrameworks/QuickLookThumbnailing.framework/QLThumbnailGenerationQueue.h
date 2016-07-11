@@ -4,13 +4,13 @@
 
 @interface QLThumbnailGenerationQueue : NSObject {
     NSOperationQueue * _queue;
-    NSMutableSet * _queuedURLs;
+    NSMutableDictionary * _queuedURLs;
 }
 
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (void)enqueueThumbnailGenerationIfNeededForDocumentAtURL:(id)arg1;
+- (void)enqueueThumbnailGenerationIfNeededForDocumentAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)noteThumbnailGenerationQueuedExternallyForDocumentAtURL:(id)arg1;
 

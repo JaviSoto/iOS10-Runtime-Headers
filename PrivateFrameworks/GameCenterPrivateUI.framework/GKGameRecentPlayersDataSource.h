@@ -14,6 +14,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)configureCollectionView:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)game;
 - (id)player;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;

@@ -5,29 +5,36 @@
 @interface MBAppManager : NSObject {
     NSMutableDictionary * _containersByID;
     MBSettingsContext * _settingsContext;
+    NSMutableDictionary * _systemDataContainersByID;
+    NSMutableDictionary * _systemSharedContainersByID;
 }
 
 + (id)appManager;
 + (id)appManagerWithSettingsContext:(id)arg1;
 
-- (id)_appsWithPlists:(id)arg1 error:(id*)arg2;
-- (id)_safeHarborsWithError:(id*)arg1;
+- (id)_copyAppsWithPlists:(id)arg1 error:(id*)arg2;
+- (id)_copySafeHarborsWithError:(id*)arg1;
+- (id)_copySystemContainersWithError:(id*)arg1;
+- (id)_copySystemContainersWithPlists:(id)arg1 error:(id*)arg2;
+- (id)_copyUserAppsWithError:(id*)arg1;
 - (id)_subdomainNamesForAppDomainNames:(id)arg1;
-- (id)_userAppsWithError:(id*)arg1;
 - (id)allApps;
 - (id)allContainers;
 - (id)allDisabledDomainNames;
 - (id)allRestrictedDomainNames;
+- (id)allSystemContainers;
 - (id)appWithIdentifier:(id)arg1;
 - (id)containerWithIdentifier:(id)arg1;
 - (id)createSafeHarborForContainer:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)initWithSettingsContext:(id)arg1;
-- (BOOL)isDomainNameEnabled:(id)arg1;
-- (BOOL)loadAppsWithSafeHarbors:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)moveAppDataToSafeHarborForContainer:(id)arg1 withError:(id*)arg2;
+- (bool)isDomainNameEnabled:(id)arg1;
+- (bool)loadAppsWithSafeHarbors:(bool)arg1 error:(id*)arg2;
+- (bool)moveAppDataToSafeHarborForContainer:(id)arg1 withError:(id*)arg2;
 - (void)removeAllDisabledDomainNames;
 - (void)removeOldSafeHarbors;
-- (void)setEnabled:(BOOL)arg1 forDomainName:(id)arg2;
+- (void)setEnabled:(bool)arg1 forDomainName:(id)arg2;
+- (id)systemDataContainerWithIdentifier:(id)arg1;
+- (id)systemSharedContainerWithIdentifier:(id)arg1;
 
 @end

@@ -4,43 +4,43 @@
 
 @interface SGRTCLogging : NSObject <NSCoding> {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     NSMutableArray * _loggedEvents;
+    long long  _loggedEventsCount;
     NSString * _path;
     NSTimer * _persistenceTimer;
     NSThread * _persistenceTimerThread;
     double  _storeCreationDate;
-    NSNumber * _version;
 }
 
-+ (BOOL)createEmptyFileAtPath:(id)arg1;
++ (bool)_createEmptyFileAtPath:(id)arg1;
 + (id)defaultLogger;
 + (id)inMemoryLogger;
 
 - (void).cxx_destruct;
+- (void)_logKeyValuesFromDictionary:(id)arg1;
+- (void)_persistLogs;
+- (void)_sendMessageToRTC:(id)arg1 category:(unsigned short)arg2 payload:(id)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateLoggedEvents:(id /* block */)arg1;
 - (id)getLoggingString;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFilename:(id)arg1;
 - (id)initWithInMemoryStore;
-- (void)logEventResponseWithTemplateShortName:(id)arg1 latencyInMs:(unsigned long long)arg2 emailDateReceived:(id)arg3;
-- (void)logExceptionFromTemplate:(id)arg1 errorMessage:(id)arg2 emailDateReceived:(id)arg3;
-- (void)logOutputIssueFromTemplate:(id)arg1;
+- (void)logEventResponseWithTemplateShortName:(id)arg1 latencyInMs:(unsigned long long)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
+- (void)logExceptionFromTemplate:(id)arg1 templateExceptionMessage:(id)arg2 emailDateReceived:(id)arg3 jsMessageLogs:(id)arg4 jsOutputLogs:(id)arg5;
+- (void)logOutputIssueFromTemplate:(id)arg1 latencyInMs:(unsigned long long)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
 - (id)loggedEvents;
+- (unsigned long long)loggedEventsCount;
 - (id)metricNameForShortName:(id)arg1;
-- (void)persistLogs;
-- (BOOL)resetLogs;
-- (BOOL)sendLogsUsingRTC;
-- (void)sendMessageToRTC:(id)arg1 category:(unsigned short)arg2 payload:(id)arg3;
+- (bool)resetLogs;
+- (void)sendRTCLogsWithCompletion:(id /* block */)arg1;
 - (id)shortNameForMetricNamed:(id)arg1;
 - (double)storeAge;
-- (BOOL)storeToDisk;
+- (bool)storeToDisk;
 - (void)updateAndScheduleDiskWrite;
-- (int)version;
 
 @end

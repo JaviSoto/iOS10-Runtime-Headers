@@ -3,32 +3,42 @@
  */
 
 @interface HMDOutgoingHomeInvitation : HMDHomeInvitation {
-    BOOL  _beingProcessed;
-    NSString * _inviteeControllerName;
     NSString * _inviteeDestinationAddress;
-    NSData * _inviteePublicKey;
+    NSUUID * _messageIdentifier;
+    NSArray * _operations;
+    bool  _responseReceived;
+    HMDUser * _user;
 }
 
-@property (getter=isBeingProcessed, nonatomic) BOOL beingProcessed;
-@property (nonatomic, copy) NSString *inviteeControllerName;
+@property (nonatomic, readonly) NSArray *accessoryInvitationsInformation;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, retain) NSString *inviteeDestinationAddress;
-@property (nonatomic, copy) NSData *inviteePublicKey;
-@property (nonatomic, readonly, copy) NSString *inviteeUserID;
+@property (nonatomic, readonly) NSUUID *messageIdentifier;
+@property (nonatomic, retain) NSArray *operations;
+@property (nonatomic) bool responseReceived;
+@property (nonatomic, readonly) HMDUser *user;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)accessoryInvitationsInformation;
+- (void)cancel;
+- (id)debugDescription;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInviteeUserID:(id)arg1 invitationState:(int)arg2 forHome:(id)arg3 expiryDate:(id)arg4;
-- (id)inviteeControllerName;
+- (id)initWithInvitee:(id)arg1 invitationState:(long long)arg2 forHome:(id)arg3 expiryDate:(id)arg4 messageIdentifier:(id)arg5;
+- (void)invitationRemovedDuringMerge;
 - (id)inviteeDestinationAddress;
-- (id)inviteePublicKey;
-- (id)inviteeUserID;
-- (BOOL)isBeingProcessed;
-- (void)setBeingProcessed:(BOOL)arg1;
-- (void)setInviteeControllerName:(id)arg1;
+- (bool)isComplete;
+- (bool)mergeWithInvitation:(id)arg1;
+- (id)messageIdentifier;
+- (id)operations;
+- (bool)responseReceived;
 - (void)setInviteeDestinationAddress:(id)arg1;
-- (void)setInviteePublicKey:(id)arg1;
+- (void)setOperations:(id)arg1;
+- (void)setResponseReceived:(bool)arg1;
+- (id)shortDescription;
+- (id)user;
 
 @end

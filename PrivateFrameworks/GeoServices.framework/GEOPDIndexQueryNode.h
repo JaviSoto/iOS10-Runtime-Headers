@@ -10,12 +10,15 @@
 }
 
 @property (nonatomic, retain) NSString *field;
-@property (nonatomic, readonly) BOOL hasField;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, readonly) bool hasField;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) NSMutableArray *operands;
 @property (nonatomic) int type;
 @property (nonatomic, retain) NSString *value;
 
++ (Class)operandType;
+
+- (int)StringAsType:(id)arg1;
 - (void)addOperand:(id)arg1;
 - (void)clearOperands;
 - (void)copyTo:(id)arg1;
@@ -24,20 +27,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)field;
-- (BOOL)hasField;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasField;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)operandAtIndex:(unsigned int)arg1;
+- (id)operandAtIndex:(unsigned long long)arg1;
 - (id)operands;
-- (unsigned int)operandsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)operandsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setOperands:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setValue:(id)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)value;
 - (void)writeTo:(id)arg1;
 

@@ -4,10 +4,14 @@
 
 @interface MCDSongsViewController : MCDTableViewController
 
-+ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
++ (id)actionCellConfigurationClassesForLocation:(unsigned long long)arg1;
 
 - (void)_limitedUIDidChange;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (void)_updateQuery;
+- (void)dealloc;
+- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

@@ -9,15 +9,17 @@
 @property (nonatomic, retain) CLRegion *region;
 @property (nonatomic, readonly, copy) CLRegion *uniqueRegion;
 
-+ (BOOL)supportsSecureCoding;
++ (id)locationEventWithDictionary:(id)arg1 error:(id*)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithRegion:(id)arg1;
 - (id)region;
 - (void)setRegion:(id)arg1;
-- (BOOL)setRegionIfValid:(id)arg1;
+- (bool)setRegionIfValid:(id)arg1;
 - (id)uniqueRegion;
 
 @end

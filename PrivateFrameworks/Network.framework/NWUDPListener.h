@@ -13,17 +13,17 @@
 
 @property id delegate;
 @property (retain) NWEndpoint *endpoint;
-@property (retain) NSError *error;
+@property (nonatomic, retain) NSError *error;
 @property (retain) NSObject<OS_nw_udp_listener> *internalListener;
-@property (retain) NWEndpoint *localEndpoint;
+@property (nonatomic, retain) NWEndpoint *localEndpoint;
 @property (retain) NWParameters *parameters;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)endpoint;
 - (id)error;
+- (void)handleConnectedSocket:(int)arg1;
 - (void)handleError:(int)arg1;
-- (void)handleNewSession:(id)arg1;
 - (id)initWithParameters:(id)arg1 delegate:(id)arg2;
 - (id)internalListener;
 - (id)localEndpoint;

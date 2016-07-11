@@ -5,35 +5,35 @@
 @interface VCPDCNFaceDetectedObject : NSObject <VCPDCNExternalDetectedObject> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  bounds;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  center;
-    int  objectType;
+    long long  objectType;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property struct CGPoint { float x1; float x2; } center;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property struct CGPoint { double x1; double x2; } center;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property int objectType;
+@property (readonly) unsigned long long hash;
+@property long long objectType;
 @property (readonly) Class superclass;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (struct CGPoint { float x1; float x2; })center;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGPoint { double x1; double x2; })center;
 - (id)initWithOptionsXloc:(float)arg1 yloc:(float)arg2 size:(float)arg3;
-- (int)objectType;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setObjectType:(int)arg1;
+- (long long)objectType;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setObjectType:(long long)arg1;
 
 @end

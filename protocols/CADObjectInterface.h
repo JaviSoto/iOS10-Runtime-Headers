@@ -16,7 +16,7 @@
 - (void)CADObject:(void *)arg1 getRelatedObjectsWithRelationName:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: struct { int x1; int x2; }, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSSet *, void*
 - (void)CADObject:(void *)arg1 getStringPropertyWithName:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: struct { int x1; int x2; }, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSString *, void*
 - (void)CADObject:(void *)arg1 setAttributes:(void *)arg2 andRelations:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 9: struct { int x1; int x2; }, NSDictionary *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADObjectExists:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: struct { int x1; int x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, void*
+- (void)CADObjectExists:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: struct { int x1; int x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, bool, void*
 - (void)CADObjectsExist:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
 
 @end

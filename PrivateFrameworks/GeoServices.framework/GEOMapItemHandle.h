@@ -11,25 +11,27 @@
 }
 
 @property (nonatomic) int handleType;
-@property (nonatomic) BOOL hasHandleType;
-@property (nonatomic, readonly) BOOL hasPlaceRefinementParameters;
+@property (nonatomic) bool hasHandleType;
+@property (nonatomic, readonly) bool hasPlaceRefinementParameters;
 @property (nonatomic, retain) GEOPDPlaceRefinementParameters *placeRefinementParameters;
 
+- (int)StringAsHandleType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)handleType;
-- (BOOL)hasHandleType;
-- (BOOL)hasPlaceRefinementParameters;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)handleTypeAsString:(int)arg1;
+- (bool)hasHandleType;
+- (bool)hasPlaceRefinementParameters;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeRefinementParameters;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setHandleType:(int)arg1;
-- (void)setHasHandleType:(BOOL)arg1;
+- (void)setHasHandleType:(bool)arg1;
 - (void)setPlaceRefinementParameters:(id)arg1;
 - (void)writeTo:(id)arg1;
 

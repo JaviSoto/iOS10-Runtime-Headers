@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
+@interface GEORPVoltaireProblemProvider : GEORPProblemProvider <GEOPBSessionRequesterDelegate> {
     id /* block */  _statusErrorHandler;
     id /* block */  _statusFinishedHandler;
     GEORequester * _statusRequester;
@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)cancelRequest;

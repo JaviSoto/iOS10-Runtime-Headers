@@ -3,14 +3,19 @@
  */
 
 @interface PKContactlessInterfaceSession : PKPaymentSession <NFLoyaltyAndPaymentSessionDelegate> {
+    NSArray * _activatedHostCards;
     PKPaymentApplication * _activatedPaymentApplication;
     PKPaymentPass * _activatedPaymentPass;
     NSArray * _activatedValueAddedServicePasses;
     unsigned char  _cardEmulationMode;
-    NSObject<OS_dispatch_queue> * _concurrentQueue;
     <PKContactlessInterfaceSessionDelegate> * _delegate;
-    BOOL  _fieldPresent;
-    unsigned int  _state;
+    bool  _fieldPresent;
+    PKFieldProperties * _fieldProperties;
+    bool  _fieldPropertiesLookupActive;
+    bool  _fieldPropertiesLookupProcessed;
+    unsigned long long  _fieldPropertiesLookupTechnology;
+    unsigned long long  _fieldPropertiesLookupValueAddedServiceMode;
+    unsigned long long  _state;
     unsigned long long  _transactionStartTime;
     NSArray * _valueAddedServiceTransactions;
 }
@@ -21,35 +26,44 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKContactlessInterfaceSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL fieldPresent;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int state;
+@property (nonatomic, readonly) PKFieldProperties *fieldProperties;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long state;
 @property (readonly) Class superclass;
 
 + (id)contactlessInterfaceSessionWithInternalSession:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_appletForPaymentApplication:(id)arg1;
 - (id)_appletWithIdentifier:(id)arg1;
+- (void)_beginFieldPropertiesLookupWithFieldTechnology:(unsigned long long)arg1 andValueAddedServiceMode:(unsigned long long)arg2;
+- (void)_endFieldPropertiesLookup;
 - (id)_filteredLoyaltyPassesFromVASTransactions:(id)arg1 activatedPasses:(id)arg2;
-- (BOOL)activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2 markAsDefault:(BOOL)arg3;
-- (BOOL)activateValueAddedServicePasses:(id)arg1;
+- (void)_processFieldPropertiesLookupWithMerchantIdentifiers:(id)arg1;
+- (bool)activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2;
+- (bool)activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2 markAsDefault:(bool)arg3;
+- (bool)activateValueAddedServicePassWhitelist:(id)arg1 greylist:(id)arg2;
 - (id)activatedPaymentApplication;
 - (id)activatedPaymentPass;
 - (id)activatedValueAddedServicePasses;
-- (BOOL)authorizeAndStartCardEmulationWithCredential:(id)arg1;
-- (void)dealloc;
+- (bool)authorizeAndStartCardEmulationWithCredential:(id)arg1 deferAuthorization:(bool)arg2;
 - (id)delegate;
-- (BOOL)fieldPresent;
+- (bool)fieldPresent;
+- (id)fieldProperties;
 - (id)initWithInternalSession:(id)arg1;
-- (void)loyaltyAndPaymentSession:(id)arg1 didDetectField:(BOOL)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didDetectField:(bool)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didDetectTechnology:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didEndTransaction:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didExpireTransactionForApplet:(id)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didFailDeferredAuthorization:(bool)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didSelectApplet:(id)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didSelectValueAddedService:(bool)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didStartTransaction:(id)arg2;
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
-- (BOOL)stopCardEmulation;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
+- (bool)stopCardEmulation;
 
 @end

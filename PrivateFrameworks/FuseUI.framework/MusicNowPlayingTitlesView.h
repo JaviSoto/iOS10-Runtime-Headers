@@ -2,54 +2,57 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicNowPlayingTitlesView : UIView {
+@interface MusicNowPlayingTitlesView : UIControl {
     NSArray * _attributedTexts;
-    BOOL  _clampLabels;
+    bool  _clampLabels;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     NSMutableArray * _labels;
-    BOOL  _marqueeEnabled;
+    bool  _marqueeEnabled;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _marqueeFadeEdgeInsets;
     NSMutableArray * _marqueeViews;
-    BOOL  _needsViewUpdate;
+    bool  _needsViewUpdate;
 }
 
 @property (nonatomic, copy) NSArray *attributedTexts;
-@property (nonatomic) BOOL clampLabels;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property (nonatomic, readonly) float firstBaselineOffsetFromTop;
-@property (getter=isMarqueeEnabled, nonatomic, readonly) BOOL marqueeEnabled;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marqueeFadeEdgeInsets;
+@property (nonatomic) bool clampLabels;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic, readonly) double firstBaselineOffsetFromTop;
+@property (getter=isMarqueeEnabled, nonatomic, readonly) bool marqueeEnabled;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marqueeFadeEdgeInsets;
 
 - (void).cxx_destruct;
 - (void)_applyMarqueeFade;
-- (float)_baselineOffsetForAttributedText:(id)arg1 returningFont:(out id*)arg2;
-- (void)_layoutLabel:(id)arg1 withMarqueeView:(id)arg2 previousLabelBaselineOffsetFromBottom:(float)arg3 previousMarqueeViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (double)_baselineOffsetForAttributedText:(id)arg1 returningFont:(out id*)arg2;
+- (void)_layoutLabel:(id)arg1 withMarqueeView:(id)arg2 previousLabelBaselineOffsetFromBottom:(double)arg3 previousMarqueeViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (void)_reloadVisualHighlightStateAnimated:(bool)arg1;
 - (void)_setupLabel:(inout id*)arg1 marqueeView:(inout id*)arg2 withAttributedText:(id)arg3;
 - (void)_updateViewsIfNeeded;
 - (id)attributedTexts;
-- (BOOL)clampLabels;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
-- (float)firstBaselineOffsetFromTop;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isMarqueeEnabled;
+- (bool)clampLabels;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (double)firstBaselineOffsetFromTop;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isMarqueeEnabled;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marqueeFadeEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marqueeFadeEdgeInsets;
 - (void)resetMarqueePosition;
 - (void)setAttributedTexts:(id)arg1;
-- (void)setClampLabels:(BOOL)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
-- (void)setMarqueeFadeEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setClampLabels:(bool)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setMarqueeEnabled:(bool)arg1 withOptions:(long long)arg2;
+- (void)setMarqueeFadeEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

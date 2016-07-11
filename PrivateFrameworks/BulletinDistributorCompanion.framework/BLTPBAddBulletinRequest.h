@@ -9,18 +9,22 @@
         unsigned int date : 1; 
         unsigned int updateType : 1; 
         unsigned int shouldPlayLightsAndSirens : 1; 
+        unsigned int trafficRestricted : 1; 
     }  _has;
-    BOOL  _shouldPlayLightsAndSirens;
+    bool  _shouldPlayLightsAndSirens;
+    bool  _trafficRestricted;
     unsigned int  _updateType;
 }
 
 @property (nonatomic, retain) BLTPBBulletin *bulletin;
 @property (nonatomic) double date;
-@property (nonatomic, readonly) BOOL hasBulletin;
-@property (nonatomic) BOOL hasDate;
-@property (nonatomic) BOOL hasShouldPlayLightsAndSirens;
-@property (nonatomic) BOOL hasUpdateType;
-@property (nonatomic) BOOL shouldPlayLightsAndSirens;
+@property (nonatomic, readonly) bool hasBulletin;
+@property (nonatomic) bool hasDate;
+@property (nonatomic) bool hasShouldPlayLightsAndSirens;
+@property (nonatomic) bool hasTrafficRestricted;
+@property (nonatomic) bool hasUpdateType;
+@property (nonatomic) bool shouldPlayLightsAndSirens;
+@property (nonatomic) bool trafficRestricted;
 @property (nonatomic) unsigned int updateType;
 
 - (void).cxx_destruct;
@@ -30,22 +34,26 @@
 - (double)date;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBulletin;
-- (BOOL)hasDate;
-- (BOOL)hasShouldPlayLightsAndSirens;
-- (BOOL)hasUpdateType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBulletin;
+- (bool)hasDate;
+- (bool)hasShouldPlayLightsAndSirens;
+- (bool)hasTrafficRestricted;
+- (bool)hasUpdateType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBulletin:(id)arg1;
 - (void)setDate:(double)arg1;
-- (void)setHasDate:(BOOL)arg1;
-- (void)setHasShouldPlayLightsAndSirens:(BOOL)arg1;
-- (void)setHasUpdateType:(BOOL)arg1;
-- (void)setShouldPlayLightsAndSirens:(BOOL)arg1;
+- (void)setHasDate:(bool)arg1;
+- (void)setHasShouldPlayLightsAndSirens:(bool)arg1;
+- (void)setHasTrafficRestricted:(bool)arg1;
+- (void)setHasUpdateType:(bool)arg1;
+- (void)setShouldPlayLightsAndSirens:(bool)arg1;
+- (void)setTrafficRestricted:(bool)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
-- (BOOL)shouldPlayLightsAndSirens;
+- (bool)shouldPlayLightsAndSirens;
+- (bool)trafficRestricted;
 - (unsigned int)updateType;
 - (void)writeTo:(id)arg1;
 

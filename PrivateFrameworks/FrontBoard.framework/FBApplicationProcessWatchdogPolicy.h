@@ -7,14 +7,14 @@
     int  _daNotificationToken;
     double  _deviceLaunchScale;
     double  _deviceResumeScale;
-    BOOL  _enableThirdPartyPre9;
+    bool  _enableThirdPartyPre9;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _watchdogPolicyExceptions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (double)_defaultFirstPartyAdditionalScale;
@@ -24,9 +24,9 @@
 + (id)defaultPolicy;
 
 - (void)_queue_reloadDefaultSettings;
-- (double)_queue_watchdogScalingFactorForAppInfo:(id)arg1 isResume:(BOOL)arg2;
+- (double)_queue_watchdogScalingFactorForAppInfo:(id)arg1 isResume:(bool)arg2;
 - (void)dealloc;
 - (id)init;
-- (double)watchdogIntervalForProcess:(id)arg1 eventContext:(struct { int x1; id x2; })arg2;
+- (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 
 @end

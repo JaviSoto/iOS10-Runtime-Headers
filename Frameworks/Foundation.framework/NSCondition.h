@@ -13,7 +13,6 @@
 - (void)broadcast;
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (id)init;
 - (void)lock;
 - (id)name;
@@ -21,6 +20,6 @@
 - (void)signal;
 - (void)unlock;
 - (void)wait;
-- (BOOL)waitUntilDate:(id)arg1;
+- (bool)waitUntilDate:(id)arg1;
 
 @end

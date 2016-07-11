@@ -3,20 +3,18 @@
  */
 
 @interface HKAnchoredObjectQuery : HKQuery {
-    NSNumber * _anchor;
+    HKQueryAnchor * _anchor;
     id /* block */  _completionHandler;
-    BOOL  _includeDeletedObjects;
-    BOOL  _initialHandlerCalled;
-    unsigned int  _limit;
-    BOOL  _shouldIgnoreAnchor;
+    bool  _includeDeletedObjects;
+    bool  _initialHandlerCalled;
+    unsigned long long  _limit;
     id /* block */  _updateHandler;
 }
 
-@property (nonatomic, retain) NSNumber *anchor;
+@property (nonatomic, retain) HKQueryAnchor *anchor;
 @property (nonatomic, readonly) id /* block */ completionHandler;
-@property (nonatomic) BOOL includeDeletedObjects;
-@property (nonatomic) unsigned int limit;
-@property (getter=_shouldIgnoreAnchor, setter=_setShouldIgnoreAnchor:, nonatomic) BOOL shouldIgnoreAnchor;
+@property (nonatomic) bool includeDeletedObjects;
+@property (nonatomic) unsigned long long limit;
 @property (nonatomic, copy) id /* block */ updateHandler;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
@@ -27,20 +25,18 @@
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (void)_setShouldIgnoreAnchor:(BOOL)arg1;
-- (BOOL)_shouldIgnoreAnchor;
 - (id)anchor;
 - (id /* block */)completionHandler;
 - (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
-- (BOOL)includeDeletedObjects;
-- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned int)arg3 limit:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
-- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(int)arg3 limit:(unsigned int)arg4 resultsHandler:(id /* block */)arg5;
-- (unsigned int)limit;
+- (bool)includeDeletedObjects;
+- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned long long)arg3 limit:(unsigned long long)arg4 completionHandler:(id /* block */)arg5;
+- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(id)arg3 limit:(unsigned long long)arg4 resultsHandler:(id /* block */)arg5;
+- (unsigned long long)limit;
 - (void)setAnchor:(id)arg1;
-- (void)setIncludeDeletedObjects:(BOOL)arg1;
-- (void)setLimit:(unsigned int)arg1;
+- (void)setIncludeDeletedObjects:(bool)arg1;
+- (void)setLimit:(unsigned long long)arg1;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (id /* block */)updateHandler;
 

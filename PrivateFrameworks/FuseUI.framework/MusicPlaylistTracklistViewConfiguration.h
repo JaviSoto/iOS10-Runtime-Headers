@@ -4,8 +4,11 @@
 
 @interface MusicPlaylistTracklistViewConfiguration : MusicProductTracklistTableViewConfiguration
 
-- (BOOL)canDeleteEntityValueContext:(id)arg1;
-- (BOOL)canMoveEntityValueContext:(id)arg1;
+- (void)_handleDeletionChangeRecord:(id)arg1;
+- (id)_loadTracklistTableViewDescriptor;
+- (void)applyEntityProviderChangeRecords:(id)arg1;
+- (bool)canDeleteEntityValueContext:(id)arg1;
+- (bool)canMoveEntityValueContext:(id)arg1;
 - (id)initWithEntityProvider:(id)arg1;
 
 @end

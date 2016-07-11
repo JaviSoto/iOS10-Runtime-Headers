@@ -3,21 +3,21 @@
  */
 
 @interface CAMHDRCommand : CAMCaptureCommand <NSCoding, NSCopying> {
-    int  __HDRMode;
-    BOOL  __shouldCaptureEV0;
+    long long  __HDRMode;
+    bool  __shouldCaptureOriginal;
 }
 
-@property (nonatomic, readonly) int _HDRMode;
-@property (nonatomic, readonly) BOOL _shouldCaptureEV0;
+@property (nonatomic, readonly) long long _HDRMode;
+@property (nonatomic, readonly) bool _shouldCaptureOriginal;
 
-- (int)_HDRMode;
-- (int)_captureHDRModeForHDRMode:(int)arg1;
-- (BOOL)_shouldCaptureEV0;
+- (long long)_HDRMode;
+- (long long)_captureHDRModeForHDRMode:(long long)arg1;
+- (bool)_shouldCaptureOriginal;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithHDRMode:(int)arg1;
-- (id)initWithHDRMode:(int)arg1 shouldCaptureEV0:(BOOL)arg2;
+- (id)initWithHDRMode:(long long)arg1;
+- (id)initWithHDRMode:(long long)arg1 shouldCaptureOriginal:(bool)arg2;
 
 @end

@@ -15,6 +15,7 @@
 + (id)parseFromURL:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)initWithMessageId:(id)arg1 sentAt:(id)arg2 opaqueKey:(id)arg3;
 - (id)messageId;
 - (id)opaqueKey;

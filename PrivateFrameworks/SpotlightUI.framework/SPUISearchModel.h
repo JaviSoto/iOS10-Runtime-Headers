@@ -2,51 +2,48 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUISearchModel : SPSearchAgent <PRSImageSource, SPDaemonQueryDelegate> {
+@interface SPUISearchModel : SPSearchAgent <SPDaemonQueryDelegate> {
     NSObject<OS_dispatch_semaphore> * _cacheResultLock;
+    _DECCachedConsumer * _cachedConsumer;
     CPLRUDictionary * _cachedResultImages;
-    NSDate * _clearSearchDate;
-    NSTimer * _clearSearchTimer;
+    NSArray * _deferredResults;
+    bool  _isDeferredQUeryComplete;
     NSOperationQueue * _loadOperationQueue;
     NSOperationQueue * _prefetchOperationQueue;
-    SPSearchResultSection * _savedMapsSection;
-    SPSearchResultSection * _savedZKWSection;
+    bool  _springBoardIsActive;
     NSOperation * _waitOperation;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property bool springBoardIsActive;
 @property (readonly) Class superclass;
 
++ (void)activate;
++ (void)deactivate;
++ (void)retrieveFirstTimeExperienceTextWithReply:(id /* block */)arg1;
++ (id)sharedFullZWKInstance;
++ (id)sharedGeneralInstance;
 + (id)sharedInstance;
++ (id)sharedPartialZKWInstance;
 
 - (void).cxx_destruct;
-- (void)_cacheImage:(id)arg1 forKey:(id)arg2;
-- (void)_clearSearchTimerFired;
 - (id)_customImageForPath:(id)arg1;
-- (BOOL)_getCachedImageForKey:(id)arg1 withCompletionBlock:(id /* block */)arg2;
-- (id)_imageForResult:(id)arg1 inSection:(id)arg2 withCompletionBlock:(id /* block */)arg3;
-- (id)_uniqueKeyForResult:(id)arg1 withSearchDomain:(unsigned int)arg2;
-- (void)_updateClearSearchTimerFireDate;
 - (void)activate;
-- (void)addCachedZKW:(BOOL)arg1;
-- (id)cachedImageForResult:(id)arg1 inSection:(id)arg2;
-- (void)cancelPrefetchingAndStartNewBatch;
-- (id)currentToken;
+- (void)cachedZKWAvailable:(bool)arg1;
+- (long long)contentFilters;
+- (id)createZKWSearchQuery;
 - (void)deactivate;
 - (void)dealloc;
-- (void)fetchCardDataForResult:(id)arg1 completion:(id /* block */)arg2;
-- (void)fetchImageForResult:(id)arg1 inSection:(id)arg2 withCompletionBlock:(id /* block */)arg3;
-- (void)getImageWithIdentifier:(id)arg1 block:(id /* block */)arg2;
+- (void)finishRanking:(id)arg1;
 - (void)handleOptionsForNewSections:(id)arg1;
-- (id)init;
-- (void)invalidate;
-- (BOOL)itemInLibrary:(id)arg1;
-- (id)operationFetchingImageForResult:(id)arg1 inSection:(id)arg2 withCompletionBlock:(id /* block */)arg3;
-- (BOOL)prefetchImageForResult:(id)arg1 inSection:(id)arg2;
-- (void)previewDeserializedSection:(id)arg1;
-- (void)resetClearSearchTimer;
-- (void)startClearSearchTimer;
+- (id)initForZKWLevel:(int)arg1;
+- (void)invalidateCurrentQuery;
+- (bool)isWideScreen;
+- (bool)itemInLibrary:(id)arg1;
+- (void)setSpringBoardIsActive:(bool)arg1;
+- (bool)springBoardIsActive;
+- (void)transferZKWResults:(id)arg1 wasSimilar:(bool)arg2;
 
 @end

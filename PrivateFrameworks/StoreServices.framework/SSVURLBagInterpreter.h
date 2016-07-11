@@ -16,6 +16,8 @@
 @property (nonatomic, readonly, copy) NSDictionary *mescalSignedActions;
 @property (nonatomic, readonly, copy) NSDictionary *mescalSignedRequests;
 @property (nonatomic, readonly, copy) NSDictionary *mescalSignedResponses;
+@property (nonatomic, readonly, copy) NSURL *pastisCertificateURL;
+@property (nonatomic, readonly, copy) NSURL *pastisKeyServerURL;
 @property (nonatomic, readonly, copy) NSString *storeFrontSuffix;
 
 - (void).cxx_destruct;
@@ -33,7 +35,9 @@
 - (id)mescalSignedActions;
 - (id)mescalSignedRequests;
 - (id)mescalSignedResponses;
-- (BOOL)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
+- (id)pastisCertificateURL;
+- (id)pastisKeyServerURL;
+- (bool)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
 - (id)storeFrontSuffix;
 - (id)valueForURLBagKey:(id)arg1;
 

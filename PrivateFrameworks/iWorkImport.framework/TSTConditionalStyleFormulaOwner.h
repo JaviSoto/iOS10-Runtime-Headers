@@ -12,24 +12,24 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)addFormulaForConditionalStyle:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)addFormulaForConditionalStyle:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
-- (void)changedConditionForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)checkConditionForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 withConditionalStyle:(id)arg2 withIndex:(unsigned int*)arg3;
+- (void)changedConditionForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (bool)checkConditionForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 withConditionalStyle:(id)arg2 withIndex:(unsigned long long*)arg3;
 - (void)dealloc;
 - (id)initWithTableInfo:(id)arg1;
 - (id)initWithTableInfo:(id)arg1 ownerID:(struct __CFUUID { }*)arg2;
 - (void)invalidateForCalculationEngine:(id)arg1;
 - (struct __CFUUID { }*)ownerID;
-- (struct { BOOL x1; BOOL x2; BOOL x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
+- (struct { bool x1; bool x2; bool x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
 - (int)registerWithCalculationEngine:(id)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
-- (void)removeFormulaAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)removeFormulasInRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)replaceFormulaForConditionalStyle:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)removeFormulaAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)removeFormulasInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)replaceFormulaForConditionalStyle:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)retainForCalculationEngine:(id)arg1;
 - (void)rewriteForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(id)arg3;
 - (void)setOwnerID:(struct __CFUUID { }*)arg1;

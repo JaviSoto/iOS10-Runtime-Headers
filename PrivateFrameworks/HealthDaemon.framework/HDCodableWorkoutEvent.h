@@ -7,14 +7,18 @@
     struct { 
         unsigned int date : 1; 
         unsigned int type : 1; 
+        unsigned int wStepStyle : 1; 
     }  _has;
     long long  _type;
+    long long  _wStepStyle;
 }
 
 @property (nonatomic) double date;
-@property (nonatomic) BOOL hasDate;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasDate;
+@property (nonatomic) bool hasType;
+@property (nonatomic) bool hasWStepStyle;
 @property (nonatomic) long long type;
+@property (nonatomic) long long wStepStyle;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,17 +26,21 @@
 - (id)decodedDate;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDate;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDate;
+- (bool)hasType;
+- (bool)hasWStepStyle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDate:(double)arg1;
-- (void)setHasDate:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasDate:(bool)arg1;
+- (void)setHasType:(bool)arg1;
+- (void)setHasWStepStyle:(bool)arg1;
 - (void)setType:(long long)arg1;
+- (void)setWStepStyle:(long long)arg1;
 - (long long)type;
+- (long long)wStepStyle;
 - (void)writeTo:(id)arg1;
 
 @end

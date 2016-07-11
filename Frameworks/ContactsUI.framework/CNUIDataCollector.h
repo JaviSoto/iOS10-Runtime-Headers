@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSString *appIdentifier;
 @property (nonatomic, retain) CNUIDataCollectorLogger *logger;
 
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 + (id)sharedCollector;
 
 - (void).cxx_destruct;
@@ -19,10 +19,12 @@
 - (id)init;
 - (void)logAddProperty:(id)arg1 contact:(id)arg2;
 - (void)logContactActionType:(id)arg1 attributes:(id)arg2;
-- (void)logGroupsShown:(int)arg1 totalGroups:(int)arg2;
+- (void)logGroupsShown:(long long)arg1 totalGroups:(long long)arg2;
 - (void)logIndexUsage;
 - (void)logPresentation;
 - (void)logRefreshUsage;
+- (void)logSearchResultSelectedSuggested:(bool)arg1;
+- (void)logSearchResultsFetchedSuggested:(bool)arg1;
 - (void)logSearchUsage;
 - (id)logger;
 - (void)setAppIdentifier:(id)arg1;

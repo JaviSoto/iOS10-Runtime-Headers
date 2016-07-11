@@ -19,13 +19,13 @@
 @property (nonatomic, copy) id /* block */ parsedTagBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_isAtEnd;
-- (BOOL)_parseCharacters;
-- (BOOL)_parseEntity;
-- (BOOL)_parseTag;
+- (bool)_isAtEnd;
+- (bool)_parseCharacters;
+- (bool)_parseEntity;
+- (bool)_parseTag;
 - (id)_scanner;
 - (id)_syntaxMarkerCharactersSet;
-- (BOOL)_tryScanningUsingBlock:(id /* block */)arg1;
+- (bool)_tryScanningUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (void)parse;

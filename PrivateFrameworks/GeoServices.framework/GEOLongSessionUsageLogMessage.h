@@ -3,30 +3,63 @@
  */
 
 @interface GEOLongSessionUsageLogMessage : PBCodable <NSCopying> {
+    GEOCacheHitLogMessage * _cacheHitLogMessage;
     struct { 
         unsigned int sessionId : 1; 
+        unsigned int timestamp : 1; 
     }  _has;
-    struct { 
+    GEOLogFrameworkMetricLogMessage * _logFrameworkMetricLogMessage;
+    GEONetworkUsageLogMessage * _networkUsageLogMessage;
+    NSString * _requestingAppIdentifier;
+    struct GEOSessionID { 
         unsigned long long _high; 
         unsigned long long _low; 
     }  _sessionId;
+    double  _timestamp;
 }
 
-@property (nonatomic) BOOL hasSessionId;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic, retain) GEOCacheHitLogMessage *cacheHitLogMessage;
+@property (nonatomic, readonly) bool hasCacheHitLogMessage;
+@property (nonatomic, readonly) bool hasLogFrameworkMetricLogMessage;
+@property (nonatomic, readonly) bool hasNetworkUsageLogMessage;
+@property (nonatomic, readonly) bool hasRequestingAppIdentifier;
+@property (nonatomic) bool hasSessionId;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, retain) GEOLogFrameworkMetricLogMessage *logFrameworkMetricLogMessage;
+@property (nonatomic, retain) GEONetworkUsageLogMessage *networkUsageLogMessage;
+@property (nonatomic, retain) NSString *requestingAppIdentifier;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic) double timestamp;
 
+- (id)cacheHitLogMessage;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSessionId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCacheHitLogMessage;
+- (bool)hasLogFrameworkMetricLogMessage;
+- (bool)hasNetworkUsageLogMessage;
+- (bool)hasRequestingAppIdentifier;
+- (bool)hasSessionId;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)logFrameworkMetricLogMessage;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionId;
-- (void)setHasSessionId:(BOOL)arg1;
-- (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)networkUsageLogMessage;
+- (bool)readFrom:(id)arg1;
+- (id)requestingAppIdentifier;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
+- (void)setCacheHitLogMessage:(id)arg1;
+- (void)setHasSessionId:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setLogFrameworkMetricLogMessage:(id)arg1;
+- (void)setNetworkUsageLogMessage:(id)arg1;
+- (void)setRequestingAppIdentifier:(id)arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

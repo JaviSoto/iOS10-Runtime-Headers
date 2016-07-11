@@ -2,11 +2,21 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLArchiveTableViewCell : UITableViewCell
+@interface QLArchiveTableViewCell : UITableViewCell {
+    long long  _loadingID;
+    QLItem * _previewItem;
+}
 
-- (float)indentationMargin;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+@property (nonatomic, retain) QLItem *previewItem;
+
+- (void).cxx_destruct;
+- (id)_cachedDescriptionForUTI:(id)arg1;
+- (id)_folderImage;
+- (double)indentationMargin;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
+- (id)previewItem;
+- (void)setPreviewItem:(id)arg1;
 
 @end

@@ -6,10 +6,13 @@
     int  _batterySaverModeToken;
 }
 
-+ (BOOL)isBatterySaverEnabled;
-+ (BOOL)isDemoModeEnabled;
-+ (BOOL)isLowEndHardware;
++ (bool)isBatterySaverEnabled;
++ (bool)isBetaBuild;
++ (bool)isDemoModeEnabled;
++ (bool)isInternalBuild;
++ (bool)isLowEndHardware;
 + (id)sharedInstance;
++ (bool)shouldIncludePredictionLogs;
 
 - (void)dealloc;
 - (id)init;

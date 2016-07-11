@@ -2,21 +2,18 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIImageProcessorInput : NSObject {
-    void * _priv;
-}
+@interface CIImageProcessorInput : CIImageProcessorInOut <CIImageProcessorInput>
 
-@property (nonatomic, readonly) unsigned long bytesPerRow;
+@property (nonatomic, readonly) const void*baseAddress;
+@property (nonatomic, readonly) unsigned long long bytesPerRow;
 @property (nonatomic, readonly) int format;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } region;
+@property (nonatomic, readonly) <MTLTexture> *metalTexture;
+@property (nonatomic, readonly) struct __CVBuffer { }*pixelBuffer;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } region;
 
-- (unsigned long)bytesPerRow;
+- (const void*)baseAddress;
 - (void)dealloc;
-- (int)format;
-- (const void*)getBaseAddress;
-- (id)initWithSurface:(struct __IOSurface { }*)arg1 texture:(struct Texture { union { unsigned int x_1_1_1; void *x_1_1_2; } x1; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 context:(struct Context { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; int x5; bool x6; bool x7; struct CGContext {} *x8; float x9; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct CGAffineTransform { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; float x_11_1_5; float x_11_1_6; } x11; struct TreeCacheElement { struct Hash { unsigned char x_1_2_1[20]; } x_12_1_1; struct Kernel {} *x_12_1_2; } x12[1024]; unsigned int x13; }*)arg4;
+- (id)initWithSurface:(struct __IOSurface { }*)arg1 texture:(struct Texture { union { unsigned int x_1_1_1; void *x_1_1_2; } x1; unsigned int x2; })arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 context:(struct Context { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; int x5; bool x6; bool x7; bool x8; struct CGContext {} *x9; float x10; bool x11; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_12_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_12_1_2; } x12; struct CGAffineTransform { double x_13_1_1; double x_13_1_2; double x_13_1_3; double x_13_1_4; double x_13_1_5; double x_13_1_6; } x13; int x14; unsigned long long x15; unsigned long long x16; int x17; bool x18; struct TreeCacheElement { struct Hash { unsigned char x_1_2_1[20]; } x_19_1_1; unsigned long long x_19_1_2; struct Kernel {} *x_19_1_3; } x19[1024]; unsigned long long x20; double x21; double x22; bool x23; id x24; }*)arg4;
 - (id)metalTexture;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })region;
-- (struct __IOSurface { }*)surface;
 
 @end

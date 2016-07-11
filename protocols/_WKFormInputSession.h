@@ -6,8 +6,17 @@
 @required
 
 - (NSString *)accessoryViewCustomButtonTitle;
-- (BOOL)isValid;
+- (bool)accessoryViewShouldNotShow;
+- (UIView *)customInputView;
+- (<_WKFocusedElementInfo> *)focusedElementInfo;
+- (bool)isValid;
 - (void)setAccessoryViewCustomButtonTitle:(NSString *)arg1;
+- (void)setAccessoryViewShouldNotShow:(bool)arg1;
+- (void)setCustomInputView:(UIView *)arg1;
+- (void)setSuggestions:(NSArray *)arg1;
+- (void)setTextContentType:(NSString *)arg1;
+- (NSArray *)suggestions;
+- (NSString *)textContentType;
 - (NSObject<NSSecureCoding> *)userObject;
 
 @end

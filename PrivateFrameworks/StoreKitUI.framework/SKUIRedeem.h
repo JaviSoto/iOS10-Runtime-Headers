@@ -6,9 +6,9 @@
     double  _ITunesPassLearnMoreAlertInterval;
     NSString * _balance;
     NSString * _credit;
-    SKUIArtworkList * _headerArtworkList;
+    <SKUIArtworkProviding> * _headerArtworkProvider;
     UIImage * _headerImage;
-    BOOL  _hideItemView;
+    bool  _hideItemView;
     NSString * _inAppPurchase;
     NSArray * _items;
     NSArray * _links;
@@ -21,9 +21,9 @@
 @property (nonatomic) double ITunesPassLearnMoreAlertInterval;
 @property (nonatomic, copy) NSString *balance;
 @property (nonatomic, copy) NSString *credit;
-@property (nonatomic, retain) SKUIArtworkList *headerArtworkList;
+@property (nonatomic, retain) <SKUIArtworkProviding> *headerArtworkProvider;
 @property (nonatomic, retain) UIImage *headerImage;
-@property (nonatomic) BOOL hideItemView;
+@property (nonatomic) bool hideItemView;
 @property (nonatomic, retain) NSString *inAppPurchase;
 @property (nonatomic, retain) NSArray *items;
 @property (nonatomic, retain) NSArray *links;
@@ -36,9 +36,9 @@
 - (double)ITunesPassLearnMoreAlertInterval;
 - (id)balance;
 - (id)credit;
-- (id)headerArtworkList;
+- (id)headerArtworkProvider;
 - (id)headerImage;
-- (BOOL)hideItemView;
+- (bool)hideItemView;
 - (id)inAppPurchase;
 - (id)init;
 - (id)items;
@@ -47,9 +47,9 @@
 - (id)redirectURL;
 - (void)setBalance:(id)arg1;
 - (void)setCredit:(id)arg1;
-- (void)setHeaderArtworkList:(id)arg1;
+- (void)setHeaderArtworkProvider:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
-- (void)setHideItemView:(BOOL)arg1;
+- (void)setHideItemView:(bool)arg1;
 - (void)setITunesPassLearnMoreAlertInterval:(double)arg1;
 - (void)setInAppPurchase:(id)arg1;
 - (void)setItems:(id)arg1;

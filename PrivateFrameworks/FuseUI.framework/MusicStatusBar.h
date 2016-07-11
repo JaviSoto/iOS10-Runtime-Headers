@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)_music_statusBarDelegate;
-- (void)requestStyle:(int)arg1 animationParameters:(id)arg2;
+- (void)requestStyle:(long long)arg1 animationParameters:(id)arg2;
 - (void)set_music_statusBarDelegate:(id)arg1;
 
 @end

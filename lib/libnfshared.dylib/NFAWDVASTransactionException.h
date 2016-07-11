@@ -4,13 +4,13 @@
 
 @interface NFAWDVASTransactionException : NSObject <NFAWDEventProtocol> {
     AWDNFCVASTransactionExceptionEvent * _metric;
-    unsigned int  swStatus;
-    unsigned int  type;
+    unsigned int  _swStatus;
+    unsigned int  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCVASTransactionExceptionEvent *metric;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int swStatus;
@@ -18,7 +18,7 @@
 
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
 - (void)setMetric:(id)arg1;

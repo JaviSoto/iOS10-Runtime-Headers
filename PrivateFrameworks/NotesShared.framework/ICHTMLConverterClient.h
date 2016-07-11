@@ -4,18 +4,24 @@
 
 @interface ICHTMLConverterClient : NSObject {
     NSXPCConnection * _connectionToService;
-    BOOL  _isConnectionAlive;
+    unsigned long long  _requestCount;
+    NSObject<OS_dispatch_queue> * _requestCountQueue;
 }
 
-@property (nonatomic) BOOL isConnectionAlive;
+@property (nonatomic) unsigned long long requestCount;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *requestCountQueue;
 
 + (id)sharedClient;
 
 - (void).cxx_destruct;
-- (void)attributedStringFromHTMLString:(id)arg1 timeoutDate:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)attributedStringFromHTMLString:(id)arg1 baseURL:(id)arg2 timeoutDate:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)dealloc;
-- (BOOL)isConnectionAlive;
+- (id)init;
+- (unsigned long long)requestCount;
+- (id)requestCountQueue;
 - (void)resumeConnectionIfNeeded;
-- (void)setIsConnectionAlive:(BOOL)arg1;
+- (void)setRequestCount:(unsigned long long)arg1;
+- (void)setRequestCountQueue:(id)arg1;
+- (void)suspendConnectionIfNeeded;
 
 @end

@@ -21,12 +21,14 @@
 @property (nonatomic, copy) NSArray *subscriptionsToSave;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)deletedSubscriptionIDs;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2;
 - (id /* block */)modifySubscriptionsCompletionBlock;

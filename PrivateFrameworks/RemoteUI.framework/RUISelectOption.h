@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSString *value;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)label;
 - (void)setLabel:(id)arg1;
 - (void)setValue:(id)arg1;

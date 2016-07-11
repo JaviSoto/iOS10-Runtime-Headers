@@ -8,12 +8,12 @@
     id /* block */  _onTap;
     FULabel * _realAssociatedScalingLabel;
     NSString * _stringValue;
-    BOOL  _uppercase;
+    bool  _uppercase;
 }
 
 @property (nonatomic) FULabel *associatedScalingLabel;
 @property (copy) id /* block */ onTap;
-@property (nonatomic) BOOL uppercase;
+@property (nonatomic) bool uppercase;
 
 - (void).cxx_destruct;
 - (id)_associatedScalingLabel;
@@ -27,7 +27,7 @@
 - (void)setAttributedText:(id)arg1;
 - (void)setOnTap:(id /* block */)arg1;
 - (void)setText:(id)arg1;
-- (void)setUppercase:(BOOL)arg1;
-- (BOOL)uppercase;
+- (void)setUppercase:(bool)arg1;
+- (bool)uppercase;
 
 @end

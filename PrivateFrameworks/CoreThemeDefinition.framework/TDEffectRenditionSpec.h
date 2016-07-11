@@ -4,11 +4,19 @@
 
 @interface TDEffectRenditionSpec : TDRenditionSpec
 
-@property (nonatomic, retain) NSSet *components;
+@property (nonatomic, readonly, retain) TDEffectComponent *CUIShapeEffectOutputOpacity;
+@property (nonatomic, readonly, retain) TDEffectComponent *CUIShapeEffectShapeOpacity;
+@property (nonatomic, retain) NSOrderedSet *components;
 @property (nonatomic, retain) NSNumber *effectScale;
 
-- (BOOL)canBePackedWithDocument:(id)arg1;
-- (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
++ (id)keyPathsForValuesAffectingCUIShapeEffectOutputOpacity;
++ (id)keyPathsForValuesAffectingCUIShapeEffectShapeOpacity;
+
+- (id)CUIShapeEffectOutputOpacity;
+- (id)CUIShapeEffectShapeOpacity;
+- (bool)canBePackedWithDocument:(id)arg1;
+- (id)componentOfType:(unsigned int)arg1;
+- (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (id)effectPreset;
 - (void)setComponentsFromEffectPreset:(id)arg1 withDocument:(id)arg2;
 

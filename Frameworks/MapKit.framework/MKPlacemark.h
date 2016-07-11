@@ -4,18 +4,18 @@
 
 @interface MKPlacemark : CLPlacemark <MKAnnotation>
 
-@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, readonly) NSString *countryCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
 
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)countryCode;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 addressDictionary:(id)arg2;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 addressDictionary:(id)arg2;
 - (id)thoroughfare;
 - (id)title;
 

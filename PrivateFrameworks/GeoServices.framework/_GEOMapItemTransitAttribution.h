@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOMapItemTransitAttribution : NSObject <GEOMapItemTransitAttribution> {
+@interface _GEOMapItemTransitAttribution : NSObject <GEOTransitAttribution> {
     GEOPDTransitAttribution * _transitAttribution;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (getter=_providerNames, nonatomic, readonly) NSArray *providerNames;
 @property (readonly) Class superclass;
 

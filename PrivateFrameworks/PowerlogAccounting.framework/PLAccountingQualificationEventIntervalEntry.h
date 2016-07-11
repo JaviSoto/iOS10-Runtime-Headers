@@ -10,6 +10,5 @@
 
 - (id)initWithQualificationID:(id)arg1 withChildNodeIDs:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (id)initWithQualificationID:(id)arg1 withChildNodeNames:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
-- (void)mergeWithEvent:(id)arg1;
 
 @end

@@ -6,8 +6,8 @@
     NSObject<OS_dispatch_queue> * _decoderQueue;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
+            long long __sig; 
+            BOOL __opaque[56]; 
         } __m_; 
     }  _lock;
     <GEOMapAccessRestrictions> * _mapAccessRestrictions;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *decoderQueue;
 @property (nonatomic) <GEOMapAccessRestrictions> *mapAccessRestrictions;
 
-+ (BOOL)decodingSupported;
++ (bool)decodingSupported;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

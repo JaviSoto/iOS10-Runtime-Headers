@@ -12,7 +12,7 @@
 @property (nonatomic, copy) id /* block */ subscriptionFetchedBlock;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionIDByRequestID;
 @property (nonatomic, retain) NSArray *subscriptionIDs;
-@property (nonatomic, retain) NSArray *subscriptions;
+@property (nonatomic, retain) NSMutableArray *subscriptions;
 
 - (void).cxx_destruct;
 - (id)initWithSubscriptionIDs:(id)arg1;

@@ -4,34 +4,40 @@
 
 @interface BWBracketSettings : NSObject {
     NSDictionary * _bracketedCaptureOverrides;
+    int  _bracketingMode;
     NSArray * _exposureValues;
-    BOOL  _lensStabilizationEnabledForClientBracket;
+    bool  _lensStabilizationEnabledForClientBracket;
     NSArray * _manualExposureBracketedCaptureParams;
     NSDictionary * _oisBracketedCaptureParams;
-    BOOL  _providePreBracketedEV0;
+    bool  _providePreBracketedEV0;
 }
 
+@property (nonatomic, readonly) int bracketFrameCount;
 @property (nonatomic, copy) NSDictionary *bracketedCaptureOverrides;
+@property (nonatomic, readonly) int bracketingMode;
 @property (nonatomic, copy) NSArray *exposureValues;
-@property (nonatomic) BOOL lensStabilizationEnabledForClientBracket;
+@property (nonatomic) bool lensStabilizationEnabledForClientBracket;
 @property (nonatomic, copy) NSArray *manualExposureBracketedCaptureParams;
 @property (nonatomic, copy) NSDictionary *oisBracketedCaptureParams;
-@property (nonatomic) BOOL providePreBracketedEV0;
+@property (nonatomic) bool providePreBracketedEV0;
 
-+ (id)bracketSettings;
++ (id)bracketSettingsForBracketingMode:(int)arg1;
 
+- (int)bracketFrameCount;
 - (id)bracketedCaptureOverrides;
+- (int)bracketingMode;
 - (void)dealloc;
 - (id)exposureValues;
-- (BOOL)lensStabilizationEnabledForClientBracket;
+- (id)initWithBracketingMode:(int)arg1;
+- (bool)lensStabilizationEnabledForClientBracket;
 - (id)manualExposureBracketedCaptureParams;
 - (id)oisBracketedCaptureParams;
-- (BOOL)providePreBracketedEV0;
+- (bool)providePreBracketedEV0;
 - (void)setBracketedCaptureOverrides:(id)arg1;
 - (void)setExposureValues:(id)arg1;
-- (void)setLensStabilizationEnabledForClientBracket:(BOOL)arg1;
+- (void)setLensStabilizationEnabledForClientBracket:(bool)arg1;
 - (void)setManualExposureBracketedCaptureParams:(id)arg1;
 - (void)setOisBracketedCaptureParams:(id)arg1;
-- (void)setProvidePreBracketedEV0:(BOOL)arg1;
+- (void)setProvidePreBracketedEV0:(bool)arg1;
 
 @end

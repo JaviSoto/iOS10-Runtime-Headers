@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVoltaireAddressCorrectionProvider : NSObject <PBRequesterDelegate> {
+@interface GEOVoltaireAddressCorrectionProvider : NSObject <GEOPBSessionRequesterDelegate> {
     id /* block */  _errorHandler;
     id /* block */  _initFinishedHandler;
     GEORequester * _requester;
@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEORequester *requester;
 @property (readonly) Class superclass;
 

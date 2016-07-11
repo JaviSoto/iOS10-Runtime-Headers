@@ -14,18 +14,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSceneLayerHostContainerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSArray *hostedLayers;
 @property (nonatomic, readonly, retain) FBScene *scene;
 @property (readonly) Class superclass;
 
 - (void)_adjustHostViewFrame:(id)arg1;
 - (id)_createHostViewForLayer:(id)arg1;
-- (id)_hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
 - (void)_noteHostingStatusChanged;
 - (void)_rebuildLayers;
 - (void)_scene:(id)arg1 didChangeLayoutWithAnimationSettings:(id)arg2;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)debugDescription;
@@ -33,11 +33,11 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (BOOL)hasContent;
+- (bool)hasContent;
 - (id)hostedLayers;
 - (id)init;
 - (id)initWithScene:(id)arg1;
-- (BOOL)isHosting;
+- (bool)isHosting;
 - (void)rebuildLayers;
 - (id)scene;
 - (void)setDataSource:(id)arg1;

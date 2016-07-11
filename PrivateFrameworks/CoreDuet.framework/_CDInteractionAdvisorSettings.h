@@ -3,7 +3,8 @@
  */
 
 @interface _CDInteractionAdvisorSettings : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _aggregateByIdentifier;
+    bool  _aggregateByIdentifier;
+    NSString * _callerBundleId;
     NSSet * _constrainAccounts;
     NSSet * _constrainBundleIds;
     NSSet * _constrainDirections;
@@ -11,24 +12,27 @@
     NSSet * _constrainIdentifiers;
     NSSet * _constrainKeywords;
     NSSet * _constrainLocationUUIDs;
+    long long  _constrainMaxRecipientCount;
     NSSet * _constrainMechanisms;
     NSSet * _constrainPersonIdType;
     NSSet * _constrainPersonIds;
     NSSet * _constrainRecipients;
     NSSet * _constrainSenders;
+    NSString * _consumerIdentifier;
     NSString * _contactPrefix;
     NSSet * _ignoreContactIdentifiers;
     NSSet * _ignoreInteractionUUIDs;
     NSDate * _interactionDate;
     NSString * _interactionLocationUUID;
     NSString * _interactionTitle;
-    BOOL  _requireOutgoingInteraction;
-    unsigned int  _resultLimit;
+    bool  _requireOutgoingInteraction;
+    unsigned long long  _resultLimit;
     NSSet * _seedIdentifiers;
-    BOOL  _useFuture;
+    bool  _useFuture;
 }
 
-@property BOOL aggregateByIdentifier;
+@property bool aggregateByIdentifier;
+@property (retain) NSString *callerBundleId;
 @property (retain) NSSet *constrainAccounts;
 @property (retain) NSSet *constrainBundleIds;
 @property (retain) NSSet *constrainDirections;
@@ -36,28 +40,31 @@
 @property (retain) NSSet *constrainIdentifiers;
 @property (retain) NSSet *constrainKeywords;
 @property (retain) NSSet *constrainLocationUUIDs;
+@property long long constrainMaxRecipientCount;
 @property (retain) NSSet *constrainMechanisms;
 @property (retain) NSSet *constrainPersonIdType;
 @property (retain) NSSet *constrainPersonIds;
 @property (retain) NSSet *constrainRecipients;
 @property (retain) NSSet *constrainSenders;
+@property (nonatomic, retain) NSString *consumerIdentifier;
 @property (retain) NSString *contactPrefix;
 @property (retain) NSSet *ignoreContactIdentifiers;
 @property (retain) NSSet *ignoreInteractionUUIDs;
 @property (retain) NSDate *interactionDate;
 @property (retain) NSString *interactionLocationUUID;
 @property (retain) NSString *interactionTitle;
-@property BOOL requireOutgoingInteraction;
-@property unsigned int resultLimit;
+@property bool requireOutgoingInteraction;
+@property unsigned long long resultLimit;
 @property (retain) NSSet *seedIdentifiers;
-@property BOOL useFuture;
+@property bool useFuture;
 
 + (id)extractContactIdentifiers:(id)arg1;
 + (id)interactionAdvisorSettingsDefault;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)aggregateByIdentifier;
+- (bool)aggregateByIdentifier;
+- (id)callerBundleId;
 - (id)constrainAccounts;
 - (id)constrainBundleIds;
 - (id)constrainDirections;
@@ -65,11 +72,14 @@
 - (id)constrainIdentifiers;
 - (id)constrainKeywords;
 - (id)constrainLocationUUIDs;
+- (long long)constrainMaxRecipientCount;
 - (id)constrainMechanisms;
 - (id)constrainPersonIdType;
 - (id)constrainPersonIds;
 - (id)constrainRecipients;
 - (id)constrainSenders;
+- (id)consumerIdentifier;
+- (id)contactPredicate;
 - (id)contactPrefix;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -82,10 +92,11 @@
 - (id)interactionLocationUUID;
 - (id)interactionPredicate;
 - (id)interactionTitle;
-- (BOOL)requireOutgoingInteraction;
-- (unsigned int)resultLimit;
+- (bool)requireOutgoingInteraction;
+- (unsigned long long)resultLimit;
 - (id)seedIdentifiers;
-- (void)setAggregateByIdentifier:(BOOL)arg1;
+- (void)setAggregateByIdentifier:(bool)arg1;
+- (void)setCallerBundleId:(id)arg1;
 - (void)setConstrainAccounts:(id)arg1;
 - (void)setConstrainBundleIds:(id)arg1;
 - (void)setConstrainDirections:(id)arg1;
@@ -93,21 +104,23 @@
 - (void)setConstrainIdentifiers:(id)arg1;
 - (void)setConstrainKeywords:(id)arg1;
 - (void)setConstrainLocationUUIDs:(id)arg1;
+- (void)setConstrainMaxRecipientCount:(long long)arg1;
 - (void)setConstrainMechanisms:(id)arg1;
 - (void)setConstrainPersonIdType:(id)arg1;
 - (void)setConstrainPersonIds:(id)arg1;
 - (void)setConstrainRecipients:(id)arg1;
 - (void)setConstrainSenders:(id)arg1;
+- (void)setConsumerIdentifier:(id)arg1;
 - (void)setContactPrefix:(id)arg1;
 - (void)setIgnoreContactIdentifiers:(id)arg1;
 - (void)setIgnoreInteractionUUIDs:(id)arg1;
 - (void)setInteractionDate:(id)arg1;
 - (void)setInteractionLocationUUID:(id)arg1;
 - (void)setInteractionTitle:(id)arg1;
-- (void)setRequireOutgoingInteraction:(BOOL)arg1;
-- (void)setResultLimit:(unsigned int)arg1;
+- (void)setRequireOutgoingInteraction:(bool)arg1;
+- (void)setResultLimit:(unsigned long long)arg1;
 - (void)setSeedIdentifiers:(id)arg1;
-- (void)setUseFuture:(BOOL)arg1;
-- (BOOL)useFuture;
+- (void)setUseFuture:(bool)arg1;
+- (bool)useFuture;
 
 @end

@@ -18,12 +18,12 @@
 @property (nonatomic) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
-- (id)_beginNonStreamablePassthroughWithRemainingBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)_beginNonStreamablePassthroughWithRemainingBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (void)_extractionEnteredPassThroughMode;
 - (void)_sendExtractionCompleteAtArchivePath:(id)arg1;
 - (void)_sendExtractionProgress:(double)arg1;
 - (void)_setErrorState;
-- (void)_supplyBytes:(const char *)arg1 length:(unsigned int)arg2 withReply:(id /* block */)arg3;
+- (void)_supplyBytes:(const char *)arg1 length:(unsigned long long)arg2 withReply:(id /* block */)arg3;
 - (void)dealloc;
 - (void)finishStreamWithReply:(id /* block */)arg1;
 - (id)inProcessDelegateQueue;

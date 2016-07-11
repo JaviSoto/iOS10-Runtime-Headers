@@ -10,10 +10,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)_attributionManifest;
+- (void)_loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)init;
 - (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;

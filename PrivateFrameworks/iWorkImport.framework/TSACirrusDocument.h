@@ -3,17 +3,17 @@
  */
 
 @interface TSACirrusDocument : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate> {
-    NSURL * _URL;
     TSPObjectContext * _context;
     NSString * _documentPasswordHint;
-    BOOL  _isClosed;
+    NSURL * _fileURL;
+    bool  _isClosed;
     TSUTemporaryDirectory * _tempDirForSupport;
 }
 
-@property (nonatomic, copy) NSURL *URL;
-@property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property (nonatomic, readonly) NSDictionary *additionalDocumentPropertiesForWrite;
+@property (nonatomic, readonly) NSDictionary *additionalDocumentSupportPropertiesForWrite;
+@property (nonatomic, readonly) bool areNewExternalReferencesToDataAllowed;
 @property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
-@property (nonatomic, readonly) TSKCollaborationState *collaborationState;
 @property (nonatomic, retain) TSPObjectContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSString *defaultDraftName;
@@ -22,17 +22,15 @@
 @property (nonatomic, readonly) NSString *documentPasswordHint;
 @property (nonatomic, readonly) TSADocumentRoot *documentRoot;
 @property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL ignoreDocumentSupport;
-@property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
-@property (nonatomic, readonly) BOOL isInCollaborationMode;
-@property (nonatomic, readonly) BOOL isInReadOnlyMode;
+@property (nonatomic, copy) NSURL *fileURL;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool ignoreDocumentSupport;
+@property (nonatomic, readonly) bool isDocumentSupportTemporary;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
-@property (nonatomic, readonly) BOOL skipDocumentUpgrade;
+@property (nonatomic, readonly) bool skipDocumentUpgrade;
 @property (readonly) Class superclass;
 
-- (id)URL;
 - (void)close;
 - (id)context;
 - (void)dealloc;
@@ -41,12 +39,13 @@
 - (id)documentPasswordHint;
 - (id)documentPasswordHintForWrite;
 - (id)documentRoot;
-- (id)initWithURL:(id)arg1 appDocumentResourcesURL:(id)arg2 appDocumentResourcesMetadataURL:(id)arg3 error:(id*)arg4 passphrase:(id)arg5;
+- (id)fileURL;
+- (id)initWithURL:(id)arg1 appDocumentResourcesURL:(id)arg2 appDocumentResourcesMetadataURL:(id)arg3 registry:(id)arg4 error:(id*)arg5 passphrase:(id)arg6;
 - (id)name;
 - (void)presentPersistenceError:(id)arg1;
 - (void)setContext:(id)arg1;
-- (void)setURL:(id)arg1;
-- (BOOL)skipDocumentUpgrade;
+- (void)setFileURL:(id)arg1;
+- (bool)skipDocumentUpgrade;
 - (id)supportDirectoryURL;
 
 @end

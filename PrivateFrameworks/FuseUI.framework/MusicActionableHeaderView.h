@@ -3,50 +3,51 @@
  */
 
 @interface MusicActionableHeaderView : UIView {
-    BOOL  _actionable;
+    bool  _actionable;
     struct { 
-        float titleBaselineOffsetFromBottom; 
-        float titleBaselineOffsetFromTop; 
+        double titleBaselineOffsetFromBottom; 
+        double titleBaselineOffsetFromTop; 
+        long long titleFontTextStyle; 
+        long long titleFontWeight; 
     }  _actionableHeaderMetrics;
     <MusicActionableHeaderViewDelegate> * _delegate;
-    BOOL  _enforceMinimumLayoutMargins;
     MPUFontDescriptor * _headerFontDescriptor;
     NSString * _headerTitle;
     UIColor * _headerTitleColor;
     MusicImageAccessoryButton * _imageAccessoryButton;
 }
 
-@property (getter=isActionable, nonatomic) BOOL actionable;
-@property (nonatomic) struct { float x1; float x2; } actionableHeaderMetrics;
+@property (getter=isActionable, nonatomic) bool actionable;
+@property (nonatomic) struct { double x1; double x2; long long x3; long long x4; } actionableHeaderMetrics;
 @property (nonatomic) <MusicActionableHeaderViewDelegate> *delegate;
-@property (nonatomic) BOOL enforceMinimumLayoutMargins;
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic, retain) UIColor *headerTitleColor;
 
-+ (struct { float x1; float x2; })defaultActionableHeaderMetrics;
-+ (float)heightForTraitCollection:(id)arg1;
-+ (float)heightForTraitCollection:(id)arg1 withActionableHeaderMetrics:(struct { float x1; float x2; })arg2;
++ (struct { double x1; double x2; long long x3; long long x4; })actionableHeaderMetricsForContainerViewController:(id)arg1;
++ (struct { double x1; double x2; long long x3; long long x4; })defaultActionableHeaderMetrics;
++ (double)heightForTraitCollection:(id)arg1;
++ (double)heightForTraitCollection:(id)arg1 withActionableHeaderMetrics:(struct { double x1; double x2; long long x3; long long x4; })arg2;
 
 - (void).cxx_destruct;
 - (void)_handleButtonTapped:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_headerTitleColorDidChange;
 - (void)_updateHeaderAttributedText;
-- (struct { float x1; float x2; })actionableHeaderMetrics;
+- (void)_updateHeaderFontDescriptor;
+- (struct { double x1; double x2; long long x3; long long x4; })actionableHeaderMetrics;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)enforceMinimumLayoutMargins;
 - (id)headerTitle;
 - (id)headerTitleColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isActionable;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isActionable;
 - (void)layoutSubviews;
-- (void)setActionable:(BOOL)arg1;
-- (void)setActionableHeaderMetrics:(struct { float x1; float x2; })arg1;
+- (void)music_inheritedLayoutInsetsDidChange;
+- (void)setActionable:(bool)arg1;
+- (void)setActionableHeaderMetrics:(struct { double x1; double x2; long long x3; long long x4; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEnforceMinimumLayoutMargins:(BOOL)arg1;
 - (void)setHeaderTitle:(id)arg1;
 - (void)setHeaderTitleColor:(id)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

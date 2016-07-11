@@ -6,60 +6,49 @@
     NSObject<NWNetworkAgent> * _networkAgent;
     Class  _networkAgentClass;
     NSObject<OS_dispatch_queue> * _queue;
-    NSObject<OS_dispatch_semaphore> * _readSemaphore;
     NSObject<OS_dispatch_source> * _readSource;
     NSUUID * _registeredUUID;
     int  _registrationSocket;
-    unsigned int  _responseError;
-    unsigned int  _responseMessageID;
-    unsigned int  _waitingMessageID;
 }
 
 @property (retain) NSObject<NWNetworkAgent> *networkAgent;
-@property (retain) Class networkAgentClass;
+@property Class networkAgentClass;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
-@property (retain) NSObject<OS_dispatch_semaphore> *readSemaphore;
 @property (retain) NSObject<OS_dispatch_source> *readSource;
-@property (getter=isRegistered, readonly) BOOL registered;
+@property (getter=isRegistered, nonatomic, readonly) bool registered;
 @property (retain) NSUUID *registeredUUID;
 @property int registrationSocket;
-@property unsigned int responseError;
-@property unsigned int responseMessageID;
-@property unsigned int waitingMessageID;
 
-+ (BOOL)addActiveAssertionToNetworkAgent:(id)arg1;
-+ (BOOL)removeActiveAssertionFromNetworkAgent:(id)arg1;
-+ (id)sharedAssertionRegistration;
++ (bool)addActiveAssertionToNetworkAgent:(id)arg1;
++ (int)newRegistrationFileDescriptor;
++ (bool)removeActiveAssertionFromNetworkAgent:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)addNetworkAgentToInterfaceNamed:(id)arg1;
+- (bool)addNetworkAgentToInterfaceNamed:(id)arg1;
+- (bool)assignNexusData:(id)arg1 toClient:(id)arg2;
+- (bool)createReadSourceWithRegistrationSocket:(int)arg1;
 - (void)dealloc;
+- (int)dupRegistrationFileDescriptor;
+- (void)handleMessageFromAgent;
 - (id)initWithNetworkAgentClass:(Class)arg1;
-- (BOOL)isRegistered;
+- (bool)isRegistered;
 - (id)networkAgent;
 - (Class)networkAgentClass;
 - (id)queue;
-- (id)readSemaphore;
 - (id)readSource;
-- (BOOL)registerNetworkAgent:(id)arg1;
+- (bool)registerNetworkAgent:(id)arg1;
+- (bool)registerNetworkAgent:(id)arg1 withFileDescriptor:(int)arg2;
 - (id)registeredUUID;
 - (int)registrationSocket;
-- (BOOL)removeNetworkAgentFromInterfaceNamed:(id)arg1;
-- (unsigned int)responseError;
-- (unsigned int)responseMessageID;
+- (bool)removeNetworkAgentFromInterfaceNamed:(id)arg1;
 - (void)setNetworkAgent:(id)arg1;
 - (void)setNetworkAgentClass:(Class)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setReadSemaphore:(id)arg1;
 - (void)setReadSource:(id)arg1;
+- (bool)setRegisteredNetworkAgent:(id)arg1 fileDescriptor:(int)arg2;
 - (void)setRegisteredUUID:(id)arg1;
 - (void)setRegistrationSocket:(int)arg1;
-- (void)setResponseError:(unsigned int)arg1;
-- (void)setResponseMessageID:(unsigned int)arg1;
-- (void)setWaitingMessageID:(unsigned int)arg1;
-- (BOOL)unregisterNetworkAgent;
-- (BOOL)updateNetworkAgent:(id)arg1;
-- (BOOL)waitForMessageResponse;
-- (unsigned int)waitingMessageID;
+- (bool)unregisterNetworkAgent;
+- (bool)updateNetworkAgent:(id)arg1;
 
 @end

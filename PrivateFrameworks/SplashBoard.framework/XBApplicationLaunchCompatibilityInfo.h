@@ -2,55 +2,52 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding> {
+@interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding, NSCoding> {
+    NSString * _bundleContainerPath;
     NSString * _bundleIdentifier;
     NSString * _bundlePath;
     XBLaunchInterface * _defaultInterface;
     NSArray * _launchInterfaces;
-    BOOL  _launchesOpaque;
+    bool  _launchesOpaque;
     NSString * _sandboxPath;
 }
 
-@property (nonatomic, readonly) BOOL allowsSavingLaunchImages;
+@property (nonatomic, readonly) bool allowsSavingLaunchImages;
+@property (nonatomic, copy) NSString *bundleContainerPath;
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *bundlePath;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) XBLaunchInterface *defaultLaunchInterface;
+@property (nonatomic, readonly, copy) XBLaunchInterface *defaultLaunchInterface;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *launchInterfaces;
-@property (nonatomic) BOOL launchesOpaque;
+@property (nonatomic) bool launchesOpaque;
 @property (nonatomic, copy) NSString *sandboxPath;
 @property (readonly) Class superclass;
 
-+ (id)_compatibilityInfoForBundleIdentifier:(id)arg1 creatingIfNecessaryWithBundle:(id)arg2 andSandboxPath:(id)arg3;
-+ (id)_snapshotPredicateForRequest:(id)arg1;
-+ (id)compatibilityInfoForBundleIdentifier:(id)arg1;
-+ (void)configureSnapshot:(id)arg1 forLaunchRequest:(id)arg2;
-+ (void)removeCompatibilityInfoForBundleIdentifier:(id)arg1;
++ (id)compatibilityInfoForAppInfo:(id)arg1;
 
-- (void)_generateLaunchImageForRequest:(id)arg1 remoteContextID:(unsigned int)arg2 snapshotProvider:(id /* block */)arg3 completion:(id /* block */)arg4;
-- (void)_writeOutChanges;
-- (void)addLaunchImageForRequest:(id)arg1 remoteContextID:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
-- (BOOL)allowsSavingLaunchImages;
+- (bool)allowsSavingLaunchImages;
+- (id)bundleContainerPath;
 - (id)bundleIdentifier;
 - (id)bundlePath;
-- (void)configureSnapshot:(id)arg1 withLaunchImageForRequest:(id)arg2 remoteContextID:(unsigned int)arg3 completion:(id /* block */)arg4;
 - (void)dealloc;
 - (id)defaultLaunchInterface;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)existingLaunchImageForRequest:(id)arg1;
 - (id)initWithBundle:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)launchInterfaceIdentifierForRequest:(id)arg1;
 - (id)launchInterfaceWithIdentifier:(id)arg1;
 - (id)launchInterfaces;
-- (BOOL)launchesOpaque;
+- (bool)launchesOpaque;
 - (id)sandboxPath;
+- (void)setBundleContainerPath:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundlePath:(id)arg1;
-- (void)setLaunchesOpaque:(BOOL)arg1;
+- (void)setLaunchesOpaque:(bool)arg1;
 - (void)setSandboxPath:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@
 - (id)identifier;
 - (id)key;
 - (id)keySpace;
+- (id)languageCode;
 - (id)locale;
 - (void)setDataType:(id)arg1;
 - (void)setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -35,8 +36,10 @@
 - (void)setKey:(id)arg1;
 - (void)setKeySpace:(id)arg1;
 - (void)setLocale:(id)arg1;
+- (void)setStartDate:(id)arg1;
 - (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setValue:(id)arg1;
+- (id)startDate;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 

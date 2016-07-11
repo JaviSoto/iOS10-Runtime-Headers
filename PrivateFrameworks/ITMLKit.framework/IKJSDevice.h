@@ -7,10 +7,12 @@
     id  _isNetworkTypeChangedToken;
 }
 
+@property (nonatomic, readonly) NSString *advertisingIdentifier;
 @property (nonatomic, readonly) NSString *appIdentifier;
 @property (nonatomic, readonly) NSString *appVersion;
 @property (nonatomic) <IKAppDeviceConfig> *deviceConfig;
-@property (nonatomic, readonly) BOOL isInRetailDemoMode;
+@property (nonatomic, readonly) bool isAdvertisingTrackingEnabled;
+@property (nonatomic, readonly) bool isInRetailDemoMode;
 @property (nonatomic, readonly) NSString *model;
 @property (nonatomic, readonly) NSNumber *pixelRatio;
 @property (nonatomic, readonly) NSString *productType;
@@ -22,13 +24,15 @@
 
 - (void).cxx_destruct;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
+- (id)advertisingIdentifier;
 - (id)appIdentifier;
 - (id)appVersion;
 - (id)capacity:(id)arg1;
 - (void)dealloc;
 - (id)deviceConfig;
 - (id)initWithAppContext:(id)arg1 deviceConfig:(id)arg2;
-- (BOOL)isInRetailDemoMode;
+- (bool)isAdvertisingTrackingEnabled;
+- (bool)isInRetailDemoMode;
 - (id)model;
 - (id)pixelRatio;
 - (id)productType;

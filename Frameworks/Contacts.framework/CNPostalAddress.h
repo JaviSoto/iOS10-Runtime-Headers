@@ -19,8 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *formattedAddress;
-@property (nonatomic, readonly) NSString *formattedAddressSingleLine;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic, copy) NSString *street;
@@ -30,7 +29,7 @@
 
 + (id)localizedStringForKey:(id)arg1;
 + (id)postalAddressWithDictionaryRepresentation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ISOCountryCode;
 - (id)city;
@@ -41,11 +40,11 @@
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedAddress;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPostalAddress:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid:(id*)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid:(id*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)postalCode;
 - (void)setCity:(id)arg1;
@@ -67,15 +66,22 @@
 + (id)postalAddressWithDictionary:(id)arg1;
 
 - (id)addressDictionary;
-- (id)formattedAddressSingleLine;
 - (id)keyboardSettingsForAddressPart:(id)arg1;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)_ABKeyFromCNKey:(id)arg1;
 + (id)_CNKeyFromABKey:(id)arg1;
 + (id)backwardsCompatiblePostalAddressDictionary:(id)arg1;
 
+- (id)_countryCodeForCountryName:(id)arg1;
 - (id)backwardsCompatibleDictionaryRepresentation;
+- (id)redactedPostalAddress;
+- (id)redactedStreetAddress;
+- (id)suggestedCountryCode;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
++ (id)siriintents_postalAddressFromAddressBookDictionaryAddress:(id)arg1;
 
 @end

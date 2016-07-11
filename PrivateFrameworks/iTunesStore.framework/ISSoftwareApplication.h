@@ -5,7 +5,7 @@
 @interface ISSoftwareApplication : NSObject <SSXPCCoding> {
     NSNumber * _accountDSID;
     NSString * _accountIdentifier;
-    BOOL  _beta;
+    bool  _beta;
     NSString * _bundleIdentifier;
     NSString * _bundleShortVersionString;
     NSString * _bundleVersion;
@@ -13,24 +13,25 @@
     SSItemContentRating * _contentRating;
     NSString * _deviceIdentifierForVendor;
     NSNumber * _familyAccountIdentifier;
-    BOOL  _hasMIDBasedSINF;
+    bool  _hasMIDBasedSINF;
     NSNumber * _itemIdentifier;
     NSString * _itemName;
-    BOOL  _missingRequiredSINF;
-    BOOL  _placeholder;
-    BOOL  _profileValidated;
+    bool  _missingRequiredSINF;
+    bool  _placeholder;
+    bool  _profileValidated;
     NSDate * _receiptExpirationDate;
+    unsigned long long  _removableStatus;
     NSString * _softwareType;
     NSNumber * _storeFrontIdentifier;
     NSString * _vendorName;
     NSNumber * _versionIdentifier;
     NSArray * _versionOrdering;
-    unsigned int  _vppStateFlags;
+    unsigned long long  _vppStateFlags;
 }
 
 @property (nonatomic, retain) NSNumber *accountDSID;
 @property (nonatomic, copy) NSString *accountIdentifier;
-@property (getter=isBeta, nonatomic) BOOL beta;
+@property (getter=isBeta, nonatomic) bool beta;
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *bundleShortVersionString;
 @property (nonatomic, copy) NSString *bundleVersion;
@@ -40,21 +41,22 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceIdentifierForVendor;
 @property (nonatomic, copy) NSNumber *familyAccountIdentifier;
-@property (nonatomic) BOOL hasMIDBasedSINF;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasMIDBasedSINF;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *itemIdentifier;
 @property (nonatomic, copy) NSString *itemName;
-@property (nonatomic) BOOL missingRequiredSINF;
-@property (getter=isPlaceholder, nonatomic) BOOL placeholder;
-@property (getter=isProfileValidated, nonatomic) BOOL profileValidated;
+@property (nonatomic) bool missingRequiredSINF;
+@property (getter=isPlaceholder, nonatomic) bool placeholder;
+@property (getter=isProfileValidated, nonatomic) bool profileValidated;
 @property (nonatomic, readonly) NSDate *receiptExpirationDate;
+@property (nonatomic, readonly) unsigned long long removableStatus;
 @property (nonatomic, copy) NSString *softwareType;
 @property (nonatomic, retain) NSNumber *storeFrontIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *vendorName;
 @property (nonatomic, retain) NSNumber *versionIdentifier;
 @property (nonatomic, copy) NSArray *versionOrdering;
-@property (nonatomic, readonly) unsigned int vppStateFlags;
+@property (nonatomic, readonly) unsigned long long vppStateFlags;
 
 - (id)ITunesMetadataDictionary;
 - (void)_loadMetadataFromContainer:(id)arg1;
@@ -70,21 +72,22 @@
 - (id)description;
 - (id)deviceIdentifierForVendor;
 - (id)familyAccountIdentifier;
-- (BOOL)hasMIDBasedSINF;
+- (bool)hasMIDBasedSINF;
 - (id)initWithLaunchServicesApplication:(id)arg1;
 - (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isBeta;
-- (BOOL)isPlaceholder;
-- (BOOL)isProfileValidated;
+- (bool)isBeta;
+- (bool)isPlaceholder;
+- (bool)isProfileValidated;
 - (id)itemIdentifier;
 - (id)itemName;
-- (BOOL)missingRequiredSINF;
+- (bool)missingRequiredSINF;
 - (id)receiptExpirationDate;
+- (unsigned long long)removableStatus;
 - (void)resetVPPStateFlags;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setBeta:(BOOL)arg1;
+- (void)setBeta:(bool)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleShortVersionString:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
@@ -92,12 +95,12 @@
 - (void)setContentRating:(id)arg1;
 - (void)setDeviceIdentifierForVendor:(id)arg1;
 - (void)setFamilyAccountIdentifier:(id)arg1;
-- (void)setHasMIDBasedSINF:(BOOL)arg1;
+- (void)setHasMIDBasedSINF:(bool)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemName:(id)arg1;
-- (void)setMissingRequiredSINF:(BOOL)arg1;
-- (void)setPlaceholder:(BOOL)arg1;
-- (void)setProfileValidated:(BOOL)arg1;
+- (void)setMissingRequiredSINF:(bool)arg1;
+- (void)setPlaceholder:(bool)arg1;
+- (void)setProfileValidated:(bool)arg1;
 - (void)setSoftwareType:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setVendorName:(id)arg1;
@@ -108,6 +111,6 @@
 - (id)vendorName;
 - (id)versionIdentifier;
 - (id)versionOrdering;
-- (unsigned int)vppStateFlags;
+- (unsigned long long)vppStateFlags;
 
 @end

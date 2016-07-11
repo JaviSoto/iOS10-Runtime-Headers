@@ -10,6 +10,7 @@
 @property (nonatomic, copy) NSString *host;
 @property (nonatomic) unsigned short port;
 
+- (void)dealloc;
 - (id)host;
 - (unsigned short)port;
 - (void)setHost:(id)arg1;

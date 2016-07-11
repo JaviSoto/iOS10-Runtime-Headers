@@ -11,7 +11,7 @@
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MusicViewControllerPresenter *presenter;
 @property (readonly) Class superclass;
 
@@ -27,8 +27,8 @@
 - (id)presenter;
 - (void)setClientContext:(id)arg1;
 - (void)setPresenter:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

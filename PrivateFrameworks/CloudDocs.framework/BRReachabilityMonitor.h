@@ -3,22 +3,23 @@
  */
 
 @interface BRReachabilityMonitor : NSObject {
-    BOOL  _isNetworkReachable;
+    bool  _isNetworkReachable;
     NSObject<OS_dispatch_queue> * _queue;
     NSHashTable * _reachabilityObservers;
     struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
-@property (nonatomic) BOOL isNetworkReachable;
+@property (nonatomic) bool isNetworkReachable;
 
 + (id)sharedReachabilityMonitor;
 
+- (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (BOOL)isNetworkReachable;
+- (bool)isNetworkReachable;
 - (void)removeObserver:(id)arg1;
-- (void)setIsNetworkReachable:(BOOL)arg1;
+- (void)setIsNetworkReachable:(bool)arg1;
 
 @end

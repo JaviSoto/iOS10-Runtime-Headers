@@ -4,11 +4,11 @@
 
 @interface BLTObjectCacheItem : NSObject {
     double  _lastAccessedDate;
-    NSObject * _object;
+    <NSSecureCoding> * _object;
 }
 
 @property (nonatomic, readonly) double lastAccessedDate;
-@property (nonatomic, readonly) NSObject *object;
+@property (nonatomic, readonly) <NSSecureCoding> *object;
 
 + (id)cacheItemWithObject:(id)arg1;
 

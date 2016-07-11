@@ -3,6 +3,7 @@
  */
 
 @interface CKDPRecordRetrieveChangesRequest : PBRequest <NSCopying> {
+    CKDPAssetsToDownload * _assetsToDownload;
     struct { 
         unsigned int maxChanges : 1; 
         unsigned int requestedChangeTypes : 1; 
@@ -14,11 +15,13 @@
     CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
-@property (nonatomic) BOOL hasMaxChanges;
-@property (nonatomic) BOOL hasRequestedChangeTypes;
-@property (nonatomic, readonly) BOOL hasRequestedFields;
-@property (nonatomic, readonly) BOOL hasSyncContinuationToken;
-@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;
+@property (nonatomic, readonly) bool hasAssetsToDownload;
+@property (nonatomic) bool hasMaxChanges;
+@property (nonatomic) bool hasRequestedChangeTypes;
+@property (nonatomic, readonly) bool hasRequestedFields;
+@property (nonatomic, readonly) bool hasSyncContinuationToken;
+@property (nonatomic, readonly) bool hasZoneIdentifier;
 @property (nonatomic) unsigned int maxChanges;
 @property (nonatomic) int requestedChangeTypes;
 @property (nonatomic, retain) CKDPRequestedFields *requestedFields;
@@ -28,26 +31,31 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsRequestedChangeTypes:(id)arg1;
+- (id)assetsToDownload;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxChanges;
-- (BOOL)hasRequestedChangeTypes;
-- (BOOL)hasRequestedFields;
-- (BOOL)hasSyncContinuationToken;
-- (BOOL)hasZoneIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAssetsToDownload;
+- (bool)hasMaxChanges;
+- (bool)hasRequestedChangeTypes;
+- (bool)hasRequestedFields;
+- (bool)hasSyncContinuationToken;
+- (bool)hasZoneIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxChanges;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (int)requestedChangeTypes;
+- (id)requestedChangeTypesAsString:(int)arg1;
 - (id)requestedFields;
 - (Class)responseClass;
-- (void)setHasMaxChanges:(BOOL)arg1;
-- (void)setHasRequestedChangeTypes:(BOOL)arg1;
+- (void)setAssetsToDownload:(id)arg1;
+- (void)setHasMaxChanges:(bool)arg1;
+- (void)setHasRequestedChangeTypes:(bool)arg1;
 - (void)setMaxChanges:(unsigned int)arg1;
 - (void)setRequestedChangeTypes:(int)arg1;
 - (void)setRequestedFields:(id)arg1;

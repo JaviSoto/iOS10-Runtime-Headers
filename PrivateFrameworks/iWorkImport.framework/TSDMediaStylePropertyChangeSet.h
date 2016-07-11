@@ -3,10 +3,10 @@
  */
 
 @interface TSDMediaStylePropertyChangeSet : TSSStylePropertyChangeSet {
-    BOOL  _definedOpacity;
-    BOOL  _definedReflection;
-    BOOL  _definedShadow;
-    BOOL  _definedStroke;
+    bool  _definedOpacity;
+    bool  _definedReflection;
+    bool  _definedShadow;
+    bool  _definedStroke;
     TSSSpecDouble * _opacity;
     TSDSpecReflection * _reflection;
     TSDSpecShadow * _shadow;

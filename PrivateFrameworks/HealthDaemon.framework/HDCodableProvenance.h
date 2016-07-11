@@ -6,20 +6,26 @@
     NSData * _deviceUUID;
     NSString * _originBuild;
     NSString * _originDevice;
+    NSString * _originProductType;
     NSData * _sourceUUID;
     NSString * _sourceVersion;
+    NSString * _timeZoneName;
 }
 
 @property (nonatomic, retain) NSData *deviceUUID;
-@property (nonatomic, readonly) BOOL hasDeviceUUID;
-@property (nonatomic, readonly) BOOL hasOriginBuild;
-@property (nonatomic, readonly) BOOL hasOriginDevice;
-@property (nonatomic, readonly) BOOL hasSourceUUID;
-@property (nonatomic, readonly) BOOL hasSourceVersion;
+@property (nonatomic, readonly) bool hasDeviceUUID;
+@property (nonatomic, readonly) bool hasOriginBuild;
+@property (nonatomic, readonly) bool hasOriginDevice;
+@property (nonatomic, readonly) bool hasOriginProductType;
+@property (nonatomic, readonly) bool hasSourceUUID;
+@property (nonatomic, readonly) bool hasSourceVersion;
+@property (nonatomic, readonly) bool hasTimeZoneName;
 @property (nonatomic, retain) NSString *originBuild;
 @property (nonatomic, retain) NSString *originDevice;
+@property (nonatomic, retain) NSString *originProductType;
 @property (nonatomic, retain) NSData *sourceUUID;
 @property (nonatomic, retain) NSString *sourceVersion;
+@property (nonatomic, retain) NSString *timeZoneName;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -29,24 +35,30 @@
 - (id)description;
 - (id)deviceUUID;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceUUID;
-- (BOOL)hasOriginBuild;
-- (BOOL)hasOriginDevice;
-- (BOOL)hasSourceUUID;
-- (BOOL)hasSourceVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceUUID;
+- (bool)hasOriginBuild;
+- (bool)hasOriginDevice;
+- (bool)hasOriginProductType;
+- (bool)hasSourceUUID;
+- (bool)hasSourceVersion;
+- (bool)hasTimeZoneName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)originBuild;
 - (id)originDevice;
-- (BOOL)readFrom:(id)arg1;
+- (id)originProductType;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceUUID:(id)arg1;
 - (void)setOriginBuild:(id)arg1;
 - (void)setOriginDevice:(id)arg1;
+- (void)setOriginProductType:(id)arg1;
 - (void)setSourceUUID:(id)arg1;
 - (void)setSourceVersion:(id)arg1;
+- (void)setTimeZoneName:(id)arg1;
 - (id)sourceUUID;
 - (id)sourceVersion;
+- (id)timeZoneName;
 - (void)writeTo:(id)arg1;
 
 @end

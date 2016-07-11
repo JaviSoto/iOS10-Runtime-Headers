@@ -8,7 +8,7 @@
 
 @property double duration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;

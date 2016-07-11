@@ -3,46 +3,47 @@
  */
 
 @interface _SFNavigationBarURLButton : UIButton <UIGestureRecognizerDelegate> {
-    float  _backgroundAlphaFactor;
+    double  _backgroundAlphaFactor;
     UIImage * _darkBackgroundImage;
     <_SFNavigationBarURLButtonDelegate> * _delegate;
     UIImage * _lightBackgroundImage;
     UIGestureRecognizer * _longPressGestureRecognizer;
     UIImageView * _overlayImageView;
-    BOOL  _showsDarkBackground;
+    bool  _showsDarkBackground;
     UIImageView * _tintImageView;
-    BOOL  _usesLightOverlayAndTintAlpha;
+    bool  _usesLightOverlayAndTintAlpha;
 }
 
-@property (nonatomic) float backgroundAlphaFactor;
+@property (nonatomic) double backgroundAlphaFactor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFNavigationBarURLButtonDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL showsDarkBackground;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showsDarkBackground;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesLightOverlayAndTintAlpha;
+@property (nonatomic) bool usesLightOverlayAndTintAlpha;
 
 - (void).cxx_destruct;
+- (void)_dismissMenu:(id)arg1;
 - (void)_handleLongPress:(id)arg1;
-- (void)_updateBackgroundImageAnimated:(BOOL)arg1;
-- (float)backgroundAlphaFactor;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)_updateBackgroundImageAnimated:(bool)arg1;
+- (double)backgroundAlphaFactor;
+- (bool)canBecomeFirstResponder;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)pasteAndNavigate:(id)arg1;
 - (id)pasteButtonTitle;
-- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setBackgroundAlphaFactor:(float)arg1;
+- (bool)pointMostlyInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setBackgroundAlphaFactor:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setShowsDarkBackground:(BOOL)arg1;
-- (void)setUsesLightOverlayAndTintAlpha:(BOOL)arg1;
-- (BOOL)showsDarkBackground;
-- (BOOL)usesLightOverlayAndTintAlpha;
+- (void)setHighlighted:(bool)arg1;
+- (void)setShowsDarkBackground:(bool)arg1;
+- (void)setUsesLightOverlayAndTintAlpha:(bool)arg1;
+- (bool)showsDarkBackground;
+- (bool)usesLightOverlayAndTintAlpha;
 
 @end

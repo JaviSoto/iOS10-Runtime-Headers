@@ -3,37 +3,38 @@
  */
 
 @interface MusicPlaybackProgressSliderView : UIView <MusicPlaybackProgressScrubberDelegate, MusicPlaybackProgressScrubbing> {
-    BOOL  _isTracking;
+    bool  _isTracking;
     NSObject<OS_dispatch_source> * _labelAdjustTimerSource;
-    BOOL  _needsUpdateTimeLabelText;
+    bool  _needsUpdateTimeLabelText;
     MusicPlaybackProgressSlider * _playbackProgressSlider;
-    BOOL  _preventsTimerStart;
+    bool  _preventsTimerStart;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _previousKnownSize;
     <MusicPlaybackProgressScrubberDelegate> * _scrubberDelegate;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _textLabelEdgeInsets;
+    MPUTimeFormatter * _timeFormatter;
     UILabel * _timePlayedLabel;
     UILabel * _timeRemainingLabel;
 }
 
-@property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;
-@property (nonatomic, readonly) int currentScrubSpeed;
+@property (getter=isAlwaysLive, nonatomic) bool alwaysLive;
+@property (nonatomic, readonly) long long currentScrubSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double effectiveCurrentTime;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) float rate;
 @property (nonatomic) <MusicPlaybackProgressScrubberDelegate> *scrubberDelegate;
-@property (getter=isScrubbingEnabled, nonatomic) BOOL scrubbingEnabled;
+@property (getter=isScrubbingEnabled, nonatomic) bool scrubbingEnabled;
 @property (readonly) Class superclass;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textLabelEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textLabelEdgeInsets;
 @property (nonatomic) double totalDuration;
 
 - (void).cxx_destruct;
@@ -42,31 +43,31 @@
 - (void)_cancelTimeLabelUpdateTimer;
 - (void)_reloadTimeLabelUpdateTimer;
 - (void)_setNeedsUpdateTimeLabelText;
-- (void)_setTracking:(BOOL)arg1;
-- (BOOL)_updateTimeLabelsText;
+- (void)_setTracking:(bool)arg1;
+- (bool)_updateTimeLabelsText;
 - (void)cancelScrubbing;
-- (int)currentScrubSpeed;
+- (long long)currentScrubSpeed;
 - (void)dealloc;
 - (double)effectiveCurrentTime;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAlwaysLive;
-- (BOOL)isScrubbingEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAlwaysLive;
+- (bool)isScrubbingEnabled;
 - (void)layoutSubviews;
 - (void)playbackProgressScrubber:(id)arg1 didChangeCurrentTime:(double)arg2;
-- (void)playbackProgressScrubber:(id)arg1 didChangeScrubSpeed:(int)arg2;
+- (void)playbackProgressScrubber:(id)arg1 didChangeScrubSpeed:(long long)arg2;
 - (void)playbackProgressScrubberTrackingDidBegin:(id)arg1;
 - (void)playbackProgressScrubberTrackingDidEnd:(id)arg1;
 - (float)rate;
 - (id)scrubberDelegate;
-- (void)setAlwaysLive:(BOOL)arg1;
+- (void)setAlwaysLive:(bool)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setRate:(float)arg1;
 - (void)setScrubberDelegate:(id)arg1;
-- (void)setScrubbingEnabled:(BOOL)arg1;
-- (void)setTextLabelEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setScrubbingEnabled:(bool)arg1;
+- (void)setTextLabelEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setTotalDuration:(double)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textLabelEdgeInsets;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textLabelEdgeInsets;
 - (double)totalDuration;
 
 @end

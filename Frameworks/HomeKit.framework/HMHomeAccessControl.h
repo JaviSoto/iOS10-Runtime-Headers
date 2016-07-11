@@ -3,12 +3,28 @@
  */
 
 @interface HMHomeAccessControl : NSObject {
-    BOOL  _administrator;
+    bool  _administrator;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    bool  _remoteAccessAllowed;
+    HMUser * _user;
 }
 
-@property (getter=isAdministrator, nonatomic, readonly) BOOL administrator;
+@property (getter=isAdministrator, nonatomic) bool administrator;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (getter=isRemoteAccessAllowed, nonatomic) bool remoteAccessAllowed;
+@property (nonatomic) HMUser *user;
 
-- (id)initWithAdministratorPrivilege:(BOOL)arg1;
-- (BOOL)isAdministrator;
+- (void).cxx_destruct;
+- (id)initWithUser:(id)arg1 administratorPrivilege:(bool)arg2 remoteAccess:(bool)arg3;
+- (bool)isAdministrator;
+- (bool)isRemoteAccessAllowed;
+- (id)propertyQueue;
+- (void)setAdministrator:(bool)arg1;
+- (void)setPropertyQueue:(id)arg1;
+- (void)setRemoteAccessAllowed:(bool)arg1;
+- (void)setUser:(id)arg1;
+- (void)updateAdministratorAccess:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateRemoteAccess:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (id)user;
 
 @end

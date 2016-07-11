@@ -5,13 +5,16 @@
 
 @required
 
-- (BOOL)shouldHideElapsedTimeView;
-- (BOOL)shouldHideFlashBadge;
-- (BOOL)shouldHideFlashButton;
-- (BOOL)shouldHideFlipButton;
-- (BOOL)shouldHideFocusAndExposureLockBadge;
-- (BOOL)shouldHideHDRBadge;
-- (BOOL)shouldHideHDRButton;
-- (BOOL)shouldHideTimerButton;
+- (bool)shouldHideElapsedTimeView;
+- (bool)shouldHideFlashBadge;
+- (bool)shouldHideFlashButton;
+- (bool)shouldHideFlipButton;
+- (bool)shouldHideFocusAndExposureLockBadge;
+- (bool)shouldHideHDRBadge;
+- (bool)shouldHideHDRButton;
+- (bool)shouldHideIrisButton;
+- (bool)shouldHideLivePhotoBadge;
+- (bool)shouldHideTimerButton;
+- (bool)shouldHideTopBar;
 
 @end

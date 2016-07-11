@@ -2,23 +2,39 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKKnowledgeStorage : NSObject {
-    NSObject<OS_dispatch_queue> * _defaultQueue;
+@interface _DKKnowledgeStorage : NSObject <_DKKnowledgeDeleting, _DKKnowledgeEventStreamDeleting, _DKKnowledgeQuerying, _DKKnowledgeSaving> {
+    NSObject<OS_dispatch_queue> * _defaultResponseQueue;
+    NSObject<OS_dispatch_queue> * _executionQueue;
     _DKCoreDataStorage * _storage;
 }
 
-+ (id)storeWithDirectory:(id)arg1 readOnly:(BOOL)arg2;
+@property (nonatomic, readonly) _DKCoreDataStorage *storage;
+
++ (id)storageWithDirectory:(id)arg1 readOnly:(bool)arg2;
++ (id)storeWithDirectory:(id)arg1 readOnly:(bool)arg2;
 
 - (void).cxx_destruct;
+- (void)closeStorage;
+- (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
+- (unsigned long long)deleteEventsMatchingPredicate:(id)arg1 limit:(unsigned long long)arg2;
+- (unsigned long long)deleteEventsStartingEarlierThanDate:(id)arg1 limit:(unsigned long long)arg2;
+- (bool)deleteObjects:(id)arg1 error:(id*)arg2;
 - (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
-- (unsigned int)deleteObjectsInEventStream:(id)arg1 ifNeededToLimitEventCount:(unsigned int)arg2 batchLimit:(unsigned int)arg3;
-- (unsigned int)deleteObjectsInEventStreams:(id)arg1 olderThanDate:(id)arg2 limit:(unsigned int)arg3;
-- (unsigned int)deleteObjectsOlderThanDate:(id)arg1 limit:(unsigned int)arg2;
-- (unsigned int)deleteOldObjectsIfNeededToLimitTotalNumber:(unsigned int)arg1 limit:(unsigned int)arg2;
-- (BOOL)deleteStorage;
-- (unsigned int)eventCount;
+- (unsigned long long)deleteObjectsInEventStream:(id)arg1 ifNeededToLimitEventCount:(unsigned long long)arg2 batchLimit:(unsigned long long)arg3;
+- (unsigned long long)deleteObjectsInEventStreams:(id)arg1 olderThanDate:(id)arg2 limit:(unsigned long long)arg3;
+- (unsigned long long)deleteObjectsOlderThanDate:(id)arg1 limit:(unsigned long long)arg2;
+- (unsigned long long)deleteOldObjectsIfNeededToLimitTotalNumber:(unsigned long long)arg1 limit:(unsigned long long)arg2;
+- (bool)deleteStorage;
+- (unsigned long long)eventCount;
+- (id)eventCountPerStreamName;
+- (id)executeQuery:(id)arg1 error:(id*)arg2;
 - (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
-- (id)initWithDirectory:(id)arg1 readOnly:(BOOL)arg2;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)handleNilArrayError:(id /* block */)arg1 queue:(id)arg2;
+- (id)initWithDirectory:(id)arg1 readOnly:(bool)arg2;
+- (id)removeBadObjects:(id)arg1;
+- (bool)saveObjects:(id)arg1 error:(id*)arg2;
 - (void)saveObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)storage;
 
 @end

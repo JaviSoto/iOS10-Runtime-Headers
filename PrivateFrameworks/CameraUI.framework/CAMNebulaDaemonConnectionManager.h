@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CAMNebulaDaemonConnectionManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (readonly) Class superclass;
 
@@ -42,10 +42,10 @@
 - (id)_targetsForSelector:(SEL)arg1;
 - (id)_tasksPerIdentifier;
 - (void)addTarget:(id)arg1 forProtocol:(id)arg2;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (id)delegate;
 - (id)description;
-- (void)forceStopTimelapseCaptureWithReasons:(int)arg1;
+- (void)forceStopTimelapseCaptureWithReasons:(long long)arg1;
 - (id)identifier;
 - (id)initWithConnection:(id)arg1 name:(id)arg2 identifier:(id)arg3 queue:(id)arg4 allowedProtocol:(id)arg5;
 - (void)setDelegate:(id)arg1;

@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDFlightAction : DDAction
+@interface DDFlightAction : DDAction {
+    UINavigationController * _navigationController;
+}
 
+- (void)adaptForPresentationInPopover:(bool)arg1;
 - (void)closePressed;
+- (void)dealloc;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (int)interactionType;
 - (id)localizedName;
+- (void)prepareViewControllerForActionController:(id)arg1;
 - (id)viewController;
 
 @end

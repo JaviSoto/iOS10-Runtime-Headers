@@ -14,7 +14,7 @@
 - (id)fetchPeopleReturningMatchInfos:(id*)arg1 error:(id*)arg2;
 - (id)fetchPeopleUsingNativeSortReturningMatchInfos:(id*)arg1 error:(id*)arg2;
 - (id)initWithAddressBook:(void*)arg1 fetchRequest:(id)arg2;
-- (BOOL)shouldSortInMemory;
+- (bool)shouldSortInMemory;
 - (id)sortPeople:(id)arg1;
 
 @end

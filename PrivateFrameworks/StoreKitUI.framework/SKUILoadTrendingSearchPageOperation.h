@@ -5,20 +5,18 @@
 @interface SKUILoadTrendingSearchPageOperation : NSOperation {
     SKUIClientContext * _clientContext;
     id /* block */  _outputBlock;
-    NSURL * _url;
+    NSURL * _pageURL;
 }
 
-@property (nonatomic, copy) NSURL *URL;
-@property (nonatomic, retain) SKUIClientContext *clientContext;
-@property (copy) id /* block */ outputBlock;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic, readonly, copy) id /* block */ outputBlock;
+@property (nonatomic, readonly) NSURL *pageURL;
 
 - (void).cxx_destruct;
-- (id)URL;
 - (id)clientContext;
+- (id)initWithClientContext:(id)arg1 pageURL:(id)arg2 outputBlock:(id /* block */)arg3;
 - (void)main;
 - (id /* block */)outputBlock;
-- (void)setClientContext:(id)arg1;
-- (void)setOutputBlock:(id /* block */)arg1;
-- (void)setURL:(id)arg1;
+- (id)pageURL;
 
 @end

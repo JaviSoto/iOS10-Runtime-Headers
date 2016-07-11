@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)encryptionInfo;
 - (id)filename;
+- (id)init;
 - (id)initWithFilename:(id)arg1 encryptionInfo:(id)arg2;
 
 @end

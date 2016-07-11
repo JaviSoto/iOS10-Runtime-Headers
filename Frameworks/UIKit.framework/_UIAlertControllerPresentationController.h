@@ -2,53 +2,78 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate> {
-    BOOL  __isCurrentContext;
-    BOOL  __shouldRespectNearestCurrentContextPresenter;
-    BOOL  _chromeHidden;
+@interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate, UIForcePresentationController> {
+    bool  __isCurrentContext;
+    bool  __shouldRespectNearestCurrentContextPresenter;
+    bool  _chromeHidden;
     UIView * _dimmingView;
-    BOOL  constraintsPrepared;
+    _UISystemSoundPlayer * _feedbackBehavior;
+    <_UIForcePresentationControllerDelegate> * _forcePresentationControllerDelegate;
+    UIGestureRecognizer * _panningGestureRecognizer;
+    id /* block */  _presentationPhaseCompletionBlock;
+    UIView * _revealContainerView;
+    bool  _sourceViewSnapshotAndScaleTransformSuppressed;
+    bool  constraintsPrepared;
     UIView * keyboardLayoutAlignmentAvailableSpaceView;
     _UIKeyboardLayoutAlignmentView * keyboardLayoutAlignmentView;
 }
 
-@property (getter=_isChromeHidden, setter=_setChromeHidden:, nonatomic) BOOL _chromeHidden;
+@property (getter=_isChromeHidden, setter=_setChromeHidden:, nonatomic) bool _chromeHidden;
 @property (readonly) UIView *_dimmingView;
-@property (setter=_setIsCurrentContext:) BOOL _isCurrentContext;
-@property (setter=_setShouldRespectNearestCurrentContextPresenter:) BOOL _shouldRespectNearestCurrentContextPresenter;
+@property (setter=_setIsCurrentContext:) bool _isCurrentContext;
+@property (nonatomic, readonly) UIView *_revealContainerView;
+@property (setter=_setShouldRespectNearestCurrentContextPresenter:) bool _shouldRespectNearestCurrentContextPresenter;
+@property (nonatomic) bool _sourceViewSnapshotAndScaleTransformSuppressed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UISystemSoundPlayer *feedbackBehavior;
+@property (nonatomic) <_UIForcePresentationControllerDelegate> *forcePresentationControllerDelegate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIGestureRecognizer *panningGestureRecognizer;
+@property (nonatomic, copy) id /* block */ presentationPhaseCompletionBlock;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_canCommitPresentation;
+- (bool)_canDismissPresentation;
 - (id)_dimmingView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
-- (BOOL)_isChromeHidden;
-- (BOOL)_isCurrentContext;
-- (void)_occludePresentingWindow:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
+- (bool)_isChromeHidden;
+- (bool)_isCurrentContext;
+- (bool)_keyboardShouldAnimateAlongsideForInteractiveTransitions;
 - (void)_prepareConstraintsIfNecessary;
 - (void)_prepareDimmingViewIfNecessary;
 - (id)_presentedAlertController;
 - (void)_presentedAlertControllerDidAdapt;
-- (BOOL)_preserveResponderAcrossWindows;
-- (void)_setChromeHidden:(BOOL)arg1;
-- (void)_setIsCurrentContext:(BOOL)arg1;
-- (void)_setShouldRespectNearestCurrentContextPresenter:(BOOL)arg1;
-- (BOOL)_shouldChangeStatusBarViewController;
-- (BOOL)_shouldRespectDefinesPresentationContext;
-- (BOOL)_shouldRespectNearestCurrentContextPresenter;
-- (void)_willRunTransitionForCurrentStateDeferred:(BOOL)arg1;
-- (int)adaptivePresentationStyle;
-- (int)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (bool)_preserveResponderAcrossWindows;
+- (id)_revealContainerView;
+- (void)_setChromeHidden:(bool)arg1;
+- (void)_setIsCurrentContext:(bool)arg1;
+- (void)_setShouldRespectNearestCurrentContextPresenter:(bool)arg1;
+- (bool)_shouldOccludeDuringPresentation;
+- (bool)_shouldRespectDefinesPresentationContext;
+- (bool)_shouldRespectNearestCurrentContextPresenter;
+- (bool)_sourceViewSnapshotAndScaleTransformSuppressed;
+- (void)_willRunTransitionForCurrentStateDeferred:(bool)arg1;
+- (long long)adaptivePresentationStyle;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (void)containerViewDidLayoutSubviews;
 - (void)containerViewWillLayoutSubviews;
-- (void)dismissalTransitionWillBegin;
+- (id)feedbackBehavior;
+- (id)forcePresentationControllerDelegate;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
-- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(int)arg2;
+- (id)panningGestureRecognizer;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
+- (id /* block */)presentationPhaseCompletionBlock;
 - (void)presentationTransitionWillBegin;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldPresentInFullscreen;
-- (BOOL)shouldRemovePresentersView;
+- (void)setFeedbackBehavior:(id)arg1;
+- (void)setForcePresentationControllerDelegate:(id)arg1;
+- (void)setPanningGestureRecognizer:(id)arg1;
+- (void)setPresentationPhaseCompletionBlock:(id /* block */)arg1;
+- (void)set_sourceViewSnapshotAndScaleTransformSuppressed:(bool)arg1;
+- (bool)shouldPresentInFullscreen;
+- (bool)shouldRemovePresentersView;
 
 @end

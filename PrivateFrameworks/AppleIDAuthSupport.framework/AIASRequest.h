@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleIDAuthSupport.framework/AppleIDAuthSupport
  */
 
-@interface AIASRequest : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
+@interface AIASRequest : NSObject <NSURLSessionDataDelegate> {
     NSMutableURLRequest * _URLRequest;
     struct __AppleIDAuthSupportData { } * _context;
     NSMutableData * _data;
     bool  _done;
     NSError * _error;
     NSObject<OS_dispatch_semaphore> * _sema;
-    struct __CFString { } * _serverOID;
     NSURLSession * _session;
     bool  _success;
     NSURLSessionDataTask * _task;
@@ -22,9 +21,8 @@
 @property (readonly, copy) NSString *description;
 @property bool done;
 @property (retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSObject<OS_dispatch_semaphore> *sema;
-@property struct __CFString { }*serverOID;
 @property (retain) NSURLSession *session;
 @property bool success;
 @property (readonly) Class superclass;
@@ -32,24 +30,19 @@
 
 - (void).cxx_destruct;
 - (id)URLRequest;
-- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
-- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
 - (struct __AppleIDAuthSupportData { }*)context;
 - (id)data;
 - (bool)done;
 - (id)error;
 - (id)initWithURL:(id)arg1 data:(struct __CFDictionary { }*)arg2 clientInfo:(id)arg3 proxiedClientInfo:(id)arg4 companionClientInfo:(id)arg5;
+- (void)resume;
 - (id)sema;
-- (struct __CFString { }*)serverOID;
 - (id)session;
 - (void)setContext:(struct __AppleIDAuthSupportData { }*)arg1;
 - (void)setData:(id)arg1;
 - (void)setDone:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setSema:(id)arg1;
-- (void)setServerOID:(struct __CFString { }*)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSuccess:(bool)arg1;
 - (void)setTask:(id)arg1;

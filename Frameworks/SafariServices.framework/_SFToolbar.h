@@ -4,28 +4,34 @@
 
 @interface _SFToolbar : UIToolbar {
     _UIBackdropView * _backgroundView;
-    BOOL  _hasDarkBackground;
-    BOOL  _hasLightButtonTint;
-    int  _placement;
+    bool  _hasDarkBackground;
+    bool  _hasLightButtonTint;
+    long long  _placement;
     UIView * _separator;
 }
 
-@property (nonatomic, readonly) float URLFieldHorizontalMargin;
-@property (nonatomic) BOOL backdropComputesColorSettings;
-@property (nonatomic) BOOL hasDarkBackground;
-@property (nonatomic, readonly) int placement;
-@property (nonatomic, readonly) int toolbarSize;
+@property (nonatomic, readonly) double URLFieldHorizontalMargin;
+@property (nonatomic) bool backdropComputesColorSettings;
+@property (nonatomic, copy) NSString *backdropGroupName;
+@property (nonatomic) bool hasDarkBackground;
+@property (nonatomic, readonly) long long placement;
+@property (nonatomic, readonly) long long toolbarSize;
+
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
-- (float)URLFieldHorizontalMargin;
-- (BOOL)backdropComputesColorSettings;
-- (BOOL)hasDarkBackground;
-- (id)initWithPlacement:(int)arg1;
+- (double)URLFieldHorizontalMargin;
+- (bool)backdropComputesColorSettings;
+- (id)backdropGroupName;
+- (bool)hasDarkBackground;
+- (id)initWithPlacement:(long long)arg1;
 - (void)layoutSubviews;
-- (int)placement;
-- (void)setBackdropComputesColorSettings:(BOOL)arg1;
-- (void)setHasDarkBackground:(BOOL)arg1;
-- (int)toolbarSize;
+- (long long)placement;
+- (void)setBackdropComputesColorSettings:(bool)arg1;
+- (void)setBackdropGroupName:(id)arg1;
+- (void)setHasDarkBackground:(bool)arg1;
+- (long long)toolbarSize;
+- (void)updateBackdropSettings:(id)arg1;
 - (void)updateTintColor;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface HDStatisticsQueryServer : HDQueryServer {
-    unsigned int  _mergeStrategy;
-    unsigned int  _statisticsOptions;
+    NSDateInterval * _dateInterval;
+    unsigned long long  _mergeStrategy;
+    unsigned long long  _statisticsOptions;
 }
 
-@property (nonatomic, readonly) unsigned int mergeStrategy;
-@property (nonatomic, readonly) unsigned int statisticsOptions;
+@property (nonatomic, readonly) unsigned long long mergeStrategy;
+@property (nonatomic, readonly) unsigned long long statisticsOptions;
 
-- (id)_quantityType;
-- (void)_queue_fetchAndDeliverStatistics;
+- (void).cxx_destruct;
+- (id)_queue_fetchStatisticsWithError:(id*)arg1;
 - (void)_queue_start;
-- (id)_statisticsForDataType:(id)arg1 restrictedSourceIdentifier:(id)arg2 filter:(id)arg3 error:(id*)arg4;
-- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 healthDaemon:(id)arg6;
-- (unsigned int)mergeStrategy;
-- (unsigned int)statisticsOptions;
+- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (unsigned long long)mergeStrategy;
+- (unsigned long long)statisticsOptions;
 
 @end

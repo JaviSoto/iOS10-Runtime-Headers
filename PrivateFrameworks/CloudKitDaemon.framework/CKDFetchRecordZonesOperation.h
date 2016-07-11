@@ -3,15 +3,15 @@
  */
 
 @interface CKDFetchRecordZonesOperation : CKDDatabaseOperation {
-    BOOL  _ignorePCSFailures;
-    BOOL  _isFetchAllRecordZonesOperation;
+    bool  _ignorePCSFailures;
+    bool  _isFetchAllRecordZonesOperation;
     id /* block */  _recordZoneFetchedProgressBlock;
     NSArray * _recordZoneIDs;
     NSObject<OS_dispatch_group> * _zoneFetchGroup;
 }
 
-@property (nonatomic) BOOL ignorePCSFailures;
-@property (nonatomic) BOOL isFetchAllRecordZonesOperation;
+@property (nonatomic) bool ignorePCSFailures;
+@property (nonatomic) bool isFetchAllRecordZonesOperation;
 @property (nonatomic, copy) id /* block */ recordZoneFetchedProgressBlock;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *zoneFetchGroup;
@@ -19,15 +19,17 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordZoneFetch:(id)arg1 zoneID:(id)arg2 responseCode:(id)arg3;
-- (unsigned long long)activityStart;
-- (BOOL)ignorePCSFailures;
+- (bool)_saveUpdatedZoneToServer:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 operation:(id)arg3 completion:(id /* block */)arg4;
+- (void)_updateZonePCSIfNeeded:(id)arg1 operation:(id)arg2 completion:(id /* block */)arg3;
+- (id)activityCreate;
+- (bool)ignorePCSFailures;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (BOOL)isFetchAllRecordZonesOperation;
+- (bool)isFetchAllRecordZonesOperation;
 - (void)main;
 - (id /* block */)recordZoneFetchedProgressBlock;
 - (id)recordZoneIDs;
-- (void)setIgnorePCSFailures:(BOOL)arg1;
-- (void)setIsFetchAllRecordZonesOperation:(BOOL)arg1;
+- (void)setIgnorePCSFailures:(bool)arg1;
+- (void)setIsFetchAllRecordZonesOperation:(bool)arg1;
 - (void)setRecordZoneFetchedProgressBlock:(id /* block */)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
 - (void)setZoneFetchGroup:(id)arg1;

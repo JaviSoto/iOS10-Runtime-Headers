@@ -11,10 +11,10 @@
 + (id)appPermissionGroupsFromContainerPrivacySettings:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)containerPrivacySettings;
 - (void)main;
 - (void)setContainerPrivacySettings:(id)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

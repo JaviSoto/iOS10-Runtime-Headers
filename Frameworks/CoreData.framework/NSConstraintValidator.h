@@ -3,7 +3,7 @@
  */
 
 @interface NSConstraintValidator : NSObject {
-    void ** _cachesByEntity;
+    id * _cachesByEntity;
     NSManagedObjectModel * _model;
 }
 

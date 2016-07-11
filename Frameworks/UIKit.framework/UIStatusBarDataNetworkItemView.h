@@ -4,8 +4,9 @@
 
 @interface UIStatusBarDataNetworkItemView : UIStatusBarItemView {
     int  _dataNetworkType;
-    BOOL  _enableRSSI;
-    BOOL  _showRSSI;
+    bool  _enableRSSI;
+    bool  _showRSSI;
+    bool  _wifiLinkWarning;
     int  _wifiStrengthBars;
     int  _wifiStrengthRaw;
 }
@@ -13,9 +14,9 @@
 - (id)_dataNetworkImage;
 - (id)_stringForRSSI;
 - (id)contentsImage;
-- (float)extraLeftPadding;
-- (float)maximumOverlap;
+- (double)extraLeftPadding;
+- (double)maximumOverlap;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

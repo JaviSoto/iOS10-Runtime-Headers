@@ -11,14 +11,14 @@
 + (void)_removeDeviceClient;
 + (void)_removeVictimizedDeviceClientWithClientID:(int)arg1;
 + (void)_setupDeviceCloseTimer;
-+ (BOOL)activeDeviceEquals:(struct OpaqueFigCaptureDevice { }*)arg1;
++ (bool)activeDeviceEquals:(struct OpaqueFigCaptureDevice { }*)arg1;
 + (struct OpaqueFigCaptureDevice { }*)copyDefaultVideoDeviceWithStealingBehavior:(int)arg1 forPID:(int)arg2 clientIDOut:(int*)arg3 withDeviceAvailabilityChangedHandler:(id /* block */)arg4;
-+ (struct OpaqueFigCaptureStream { }*)copyStreamWithPosition:(int)arg1 forDevice:(struct OpaqueFigCaptureDevice { }*)arg2;
++ (struct OpaqueFigCaptureStream { }*)copyStreamWithPosition:(int)arg1 deviceType:(int)arg2 forDevice:(struct OpaqueFigCaptureDevice { }*)arg3;
 + (void)initialize;
 + (void)invalidateVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1 forPID:(int)arg2;
 + (void)prewarmDefaultVideoDeviceForPID:(int)arg1;
-+ (void)takeBackVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1 forPID:(int)arg2 requestDeviceWhenAvailableAgain:(BOOL)arg3 informOtherClients:(BOOL)arg4;
++ (void)takeBackVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1 forPID:(int)arg2 requestDeviceWhenAvailableAgain:(bool)arg3 informOtherClients:(bool)arg4;
 + (void)unregisterCallbacksForClient:(int)arg1;
-+ (BOOL)videoCaptureDeviceFirmwareIsLoaded;
++ (bool)videoCaptureDeviceFirmwareIsLoaded;
 
 @end

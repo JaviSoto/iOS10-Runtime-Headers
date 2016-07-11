@@ -14,21 +14,23 @@
 @property (nonatomic, retain) NSMutableSet *connections;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *transientPaymentRequests;
 @property (nonatomic, retain) NSXPCListener *xpcListener;
 
 - (void).cxx_destruct;
+- (id)_bundleIDForXPCConnection:(id)arg1;
 - (void)_handleAppStateChangeWithStateDictionary:(id)arg1;
+- (void)_updateAppStateMonitor;
 - (id)appStateMonitor;
 - (void)connection:(id)arg1 hasNewTransientPassRequest:(id)arg2;
 - (void)connectionDied:(id)arg1;
 - (id)connections;
 - (void)handleNewConnection:(id)arg1;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (void)setAppStateMonitor:(id)arg1;
 - (void)setConnections:(id)arg1;

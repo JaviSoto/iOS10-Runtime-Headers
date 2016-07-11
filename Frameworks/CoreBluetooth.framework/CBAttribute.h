@@ -8,8 +8,8 @@
 
 @property (nonatomic, readonly) CBUUID *UUID;
 
+- (void).cxx_destruct;
 - (id)UUID;
-- (void)dealloc;
 - (id)initWithUUID:(id)arg1;
 
 @end

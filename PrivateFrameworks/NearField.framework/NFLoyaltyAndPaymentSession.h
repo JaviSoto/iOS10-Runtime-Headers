@@ -4,15 +4,16 @@
 
 @interface NFLoyaltyAndPaymentSession : NFSession <NFContactlessPaymentSessionDelegate, NFValueAddedServiceSessionDelegate> {
     NFWeakReference * _delegate;
-    BOOL  _didReceivePaymentStartCallback;
-    BOOL  _didReceiveVasStartCallback;
-    BOOL  _fieldPresent;
+    bool  _didReceivePaymentStartCallback;
+    bool  _didReceiveVasStartCallback;
+    bool  _emulationActive;
+    bool  _fieldPresent;
     NSError * _paymentError;
     NFContactlessPaymentSession * _paymentSession;
     NFTechnologyEvent * _technologyEvent;
     NFValueAddedServiceSession * _valueAddedServiceSession;
     NSError * _vasError;
-    BOOL  _vasTransactionInProgress;
+    bool  _vasTransactionInProgress;
 }
 
 @property (readonly) NFApplet *activeApplet;
@@ -20,17 +21,18 @@
 @property (readonly) NFApplet *defaultApplet;
 @property <NFLoyaltyAndPaymentSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_fireInitialFieldDetectEvent;
 - (id)activeApplet;
 - (id)allApplets;
 - (id)appletWithIdentifier:(id)arg1;
-- (void)contactlessPaymentSession:(id)arg1 didDetectField:(BOOL)arg2;
+- (void)contactlessPaymentSession:(id)arg1 didDetectField:(bool)arg2;
 - (void)contactlessPaymentSession:(id)arg1 didDetectTechnology:(id)arg2;
 - (void)contactlessPaymentSession:(id)arg1 didEndTransaction:(id)arg2;
 - (void)contactlessPaymentSession:(id)arg1 didExpireTransactionForApplet:(id)arg2;
+- (void)contactlessPaymentSession:(id)arg1 didFailDeferredAuthorization:(bool)arg2;
 - (void)contactlessPaymentSession:(id)arg1 didReceiveButtonPressForApplet:(id)arg2;
 - (void)contactlessPaymentSession:(id)arg1 didSelectApplet:(id)arg2;
 - (void)contactlessPaymentSession:(id)arg1 didStartTransaction:(id)arg2;
@@ -39,15 +41,18 @@
 - (id)defaultApplet;
 - (id)delegate;
 - (void)endSession;
-- (BOOL)setActivePaymentApplet:(id)arg1 makeDefault:(BOOL)arg2;
+- (void)endSessionWithCompletion:(id /* block */)arg1;
+- (bool)setActivePaymentApplet:(id)arg1;
+- (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setHostCards:(id)arg1;
+- (bool)setHostCards:(id)arg1;
 - (void)setPaymentSession:(id)arg1;
 - (void)setValueAddedServiceSession:(id)arg1;
-- (BOOL)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
-- (BOOL)stopCardEmulation;
+- (bool)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
+- (bool)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
+- (bool)stopCardEmulation;
 - (void)valueAddedServiceSession:(id)arg1 didError:(id)arg2;
 - (void)valueAddedServiceSession:(id)arg1 didPerformValueAddedServiceTransactions:(id)arg2;
-- (void)valueAddedServiceSession:(id)arg1 didSelectValueAddedService:(BOOL)arg2;
+- (void)valueAddedServiceSession:(id)arg1 didSelectValueAddedService:(bool)arg2;
 
 @end

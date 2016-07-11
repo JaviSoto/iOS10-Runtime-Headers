@@ -5,6 +5,7 @@
 @interface AVMetadataItemInternal : NSObject {
     NSString * commonKey;
     NSString * dataType;
+    NSDate * discoveryTimestamp;
     struct { 
         long long value; 
         int timescale; 
@@ -14,11 +15,13 @@
     NSString * extendedLanguageTag;
     NSDictionary * extras;
     NSString * identifier;
-    long  itemIndex;
+    long long  itemIndex;
     <NSObject><NSCopying> * key;
     NSString * keySpace;
+    NSString * languageCode;
     NSLocale * locale;
     struct OpaqueFigMetadataReader { } * reader;
+    NSDate * startDate;
     struct { 
         long long value; 
         int timescale; 

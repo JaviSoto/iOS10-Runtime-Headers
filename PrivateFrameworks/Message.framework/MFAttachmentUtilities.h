@@ -5,7 +5,6 @@
 @interface MFAttachmentUtilities : NSObject
 
 + (id)_temporaryDirectoryUniqueURL;
-+ (id)globalTemporaryDirectory;
 + (id)mimeTypeForFileName:(id)arg1;
 + (id)temporaryDirectory;
 + (id)temporaryFileURLWithExtension:(id)arg1;

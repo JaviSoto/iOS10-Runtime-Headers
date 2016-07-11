@@ -8,7 +8,6 @@
 }
 
 @property (nonatomic, readonly) NSArray *applicationTemplateVariants;
-@property (nonatomic, readonly) NSString *collaboratorPersonID;
 @property (nonatomic) TSADocumentRoot *documentRoot;
 @property (nonatomic, retain) <TSADownloadDelegate> *downloadDelegate;
 @property (nonatomic, readonly) NSArray *importableDocumentTypes;
@@ -24,36 +23,35 @@
 + (void)resetSharedConfigurations;
 + (id)sharedDelegate;
 
-- (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
+- (bool)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)applicationTemplateVariants;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
-- (unsigned int)collaboratorColorIndexForDocumentShareID:(id)arg1;
+- (unsigned long long)collaboratorColorIndexForDocumentShareID:(id)arg1;
 - (id)collaboratorName;
 - (id)collaboratorNameForDocumentShareID:(id)arg1;
-- (id)collaboratorPersonID;
-- (id)collaboratorPersonIDKey;
+- (id)collaboratorNameForDocumentShareID:(id)arg1 documentPreferences:(id)arg2;
+- (id)collaboratorPersonIDForDocumentShareID:(id)arg1;
 - (id)documentPreferenceKeyPrefix;
 - (id)documentRoot;
 - (Class)documentRootClass;
 - (id)downloadDelegate;
 - (id)existingNestedDocumentPathForPath:(id)arg1;
-- (BOOL)hasIWorkAuthorName;
-- (id)iCloudDocumentPreferenceKeyForDocumentShareID:(id)arg1 isMatchingKey:(BOOL*)arg2;
+- (bool)hasIWorkAuthorName;
+- (id)iCloudDocumentPreferenceKeyForDocumentShareID:(id)arg1 isMatchingKey:(bool*)arg2;
 - (id)iCloudPreferenceKeys;
 - (id)iCloudPreferencesForDocumentShareID:(id)arg1;
-- (unsigned int)iWorkAuthorColorIndex;
+- (unsigned long long)iWorkAuthorColorIndex;
 - (id)iWorkAuthorName;
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
-- (BOOL)isReadableDocumentType:(id)arg1;
-- (id)keyPathForICloudPreferenceKey:(id)arg1;
-- (float)maximumAspectRatioForPreviewImage;
-- (float)mimimumAspectRatioForPreviewImage;
+- (bool)isReadableDocumentType:(id)arg1;
+- (double)maximumAspectRatioForPreviewImage;
+- (double)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentExtension;
 - (id)nativeDocumentType;
 - (id)nativeSFFDocumentType;
-- (BOOL)openURL:(id)arg1;
+- (bool)openURL:(id)arg1;
 - (void)persistenceError:(id)arg1;
 - (id)readableDocumentTypes;
 - (void)registerDefaults;
@@ -61,10 +59,9 @@
 - (void)setDocumentRoot:(id)arg1;
 - (void)setDownloadDelegate:(id)arg1;
 - (void)setICloudPreferences:(id)arg1 forDocumentShareID:(id)arg2;
-- (void)setIWorkAuthorColorIndex:(unsigned int)arg1;
+- (void)setIWorkAuthorColorIndex:(unsigned long long)arg1;
 - (void)setIWorkAuthorName:(id)arg1;
-- (BOOL)shouldShowLogMenu;
-- (id)stringForICloudPreferenceKey:(id)arg1 defaultValueGenerator:(id /* block */)arg2;
+- (bool)shouldShowLogMenu;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentExtension;
 - (id)templateDocumentType;

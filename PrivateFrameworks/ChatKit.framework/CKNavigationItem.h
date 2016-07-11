@@ -8,6 +8,7 @@
 
 @property (nonatomic) UIScrollView *contentScrollView;
 
+- (void).cxx_destruct;
 - (id)contentScrollView;
 - (void)setContentScrollView:(id)arg1;
 

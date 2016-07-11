@@ -6,13 +6,15 @@
     NSArray * _desiredKeys;
     NSString * _minimumVersionETag;
     NSArray * _recordIDs;
+    bool  _shouldFetchAssetContent;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;
 @property (nonatomic, retain) NSString *minimumVersionETag;
 @property (nonatomic, retain) NSArray *recordIDs;
+@property (nonatomic) bool shouldFetchAssetContent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
@@ -23,5 +25,7 @@
 - (void)setDesiredKeys:(id)arg1;
 - (void)setMinimumVersionETag:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
+- (bool)shouldFetchAssetContent;
 
 @end

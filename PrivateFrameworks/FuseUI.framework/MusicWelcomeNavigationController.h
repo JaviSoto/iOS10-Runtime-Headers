@@ -5,8 +5,9 @@
 @interface MusicWelcomeNavigationController : MusicNavigationController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSWelcomeNativeViewControllerDelegate> {
     MusicClientContext * _clientContext;
     <MusicWelcomeNavigationControllerDisappearanceObserver> * _disappearanceObserver;
-    NSMutableArray * _queuedNativeViewEventTypes;
-    BOOL  _registeredWithModalNavigationStackRegistry;
+    long long  _presentationReason;
+    NSMutableArray * _queuedNativeViewEvents;
+    bool  _registeredWithModalNavigationStackRegistry;
     MusicWelcomePlaceholderView * _welcomePlaceholderView;
 }
 
@@ -14,16 +15,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <MusicWelcomeNavigationControllerDisappearanceObserver> *disappearanceObserver;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long presentationReason;
 @property (readonly) Class superclass;
 
-+ (BOOL)automaticallyInstallAccountBarButtonItem;
-+ (BOOL)automaticallyInstallSearchBarButtonItem;
++ (bool)automaticallyInstallAccountBarButtonItem;
++ (bool)automaticallyInstallSearchBarButtonItem;
 
 - (void).cxx_destruct;
-- (void)_dispatchNativeViewEventOfType:(int)arg1;
+- (void)_dispatchNativeViewEventOfType:(long long)arg1;
+- (void)_dispatchNativeViewEventOfType:(long long)arg1 withInfo:(id)arg2;
 - (void)_handleClientDidLoadNotification:(id)arg1;
-- (void)_setRegisteredWithModalNavigationStackRegistry:(BOOL)arg1;
+- (id)_loadEventExtraInfo;
+- (void)_setRegisteredWithModalNavigationStackRegistry:(bool)arg1;
 - (id)clientContext;
 - (void)dealloc;
 - (id)disappearanceObserver;
@@ -31,13 +35,15 @@
 - (void)jsDidCloseWelcomeNativeViewController:(id)arg1 withOptions:(id)arg2;
 - (void)jsWelcomeNativeViewController:(id)arg1 setWelcomeDocument:(id)arg2 options:(id)arg3;
 - (id)loadJSNativeViewControllerWithAppContext:(id)arg1;
+- (long long)presentationReason;
 - (void)setClientContext:(id)arg1;
 - (void)setDisappearanceObserver:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)setPresentationReason:(long long)arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -4,10 +4,8 @@
 
 @interface GEOPBTransitSystem : PBCodable <GEOTransitNamedItem, NSCopying> {
     GEOPBTransitArtwork * _artwork;
-    unsigned int  _brandIndex;
     struct { 
         unsigned int muid : 1; 
-        unsigned int brandIndex : 1; 
         unsigned int systemIndex : 1; 
     }  _has;
     unsigned long long  _muid;
@@ -18,17 +16,15 @@
 }
 
 @property (nonatomic, retain) GEOPBTransitArtwork *artwork;
-@property (nonatomic) unsigned int brandIndex;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasArtwork;
-@property (nonatomic) BOOL hasBrandIndex;
-@property (nonatomic) BOOL hasMuid;
-@property (nonatomic, readonly) BOOL hasNameDisplayString;
-@property (nonatomic, readonly) BOOL hasStyleAttributes;
-@property (nonatomic) BOOL hasSystemIndex;
-@property (nonatomic, readonly) BOOL hasWebsite;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasArtwork;
+@property (nonatomic) bool hasMuid;
+@property (nonatomic, readonly) bool hasNameDisplayString;
+@property (nonatomic, readonly) bool hasStyleAttributes;
+@property (nonatomic) bool hasSystemIndex;
+@property (nonatomic, readonly) bool hasWebsite;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
@@ -38,31 +34,27 @@
 
 - (id)artwork;
 - (id)bestName;
-- (unsigned int)brandIndex;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)geoTransitSystem;
-- (BOOL)hasArtwork;
-- (BOOL)hasBrandIndex;
-- (BOOL)hasMuid;
-- (BOOL)hasNameDisplayString;
-- (BOOL)hasStyleAttributes;
-- (BOOL)hasSystemIndex;
-- (BOOL)hasWebsite;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArtwork;
+- (bool)hasMuid;
+- (bool)hasNameDisplayString;
+- (bool)hasStyleAttributes;
+- (bool)hasSystemIndex;
+- (bool)hasWebsite;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
 - (id)nameDisplayString;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArtwork:(id)arg1;
-- (void)setBrandIndex:(unsigned int)arg1;
-- (void)setHasBrandIndex:(BOOL)arg1;
-- (void)setHasMuid:(BOOL)arg1;
-- (void)setHasSystemIndex:(BOOL)arg1;
+- (void)setHasMuid:(bool)arg1;
+- (void)setHasSystemIndex:(bool)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setNameDisplayString:(id)arg1;
 - (void)setStyleAttributes:(id)arg1;

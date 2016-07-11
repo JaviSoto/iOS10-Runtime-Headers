@@ -6,8 +6,6 @@
     MKMapItem * _destination;
     GEOComposedRoute * _geoComposedRoute;
     GEODirectionsResponse * _geoResponse;
-    struct CGImage { } * _incidentImage;
-    struct CGImage { } * _routeImage;
     GEORouteSet * _routeSet;
     NSArray * _routes;
     MKMapItem * _source;
@@ -15,7 +13,6 @@
 
 @property (nonatomic, readonly, retain) GEODirectionsResponse *_geoResponse;
 @property (nonatomic, readonly, retain) NSString *_incidentDescription;
-@property (nonatomic, readonly) struct CGImage { }*_incidentImage;
 @property (nonatomic, readonly, retain) NSURL *_mapsURL;
 @property (nonatomic, readonly) double _typicalTrafficRatio;
 @property (nonatomic, readonly) MKMapItem *destination;
@@ -30,13 +27,10 @@
 - (id)_completeRoutesFromRouteSet;
 - (id)_geoResponse;
 - (id)_incidentDescription;
-- (struct CGImage { }*)_incidentImage;
 - (id)_initWithGEORouteResponse:(id)arg1 routeRequest:(id)arg2 request:(id)arg3 origin:(id)arg4 destination:(id)arg5;
 - (id)_mapsURL;
 - (id)_route;
-- (struct CGImage { }*)_routeImage;
 - (double)_typicalTrafficRatio;
-- (void)dealloc;
 - (id)destination;
 - (id)geoComposedRoute;
 - (id)routeSet;

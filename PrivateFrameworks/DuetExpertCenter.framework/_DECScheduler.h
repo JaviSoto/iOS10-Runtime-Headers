@@ -4,16 +4,15 @@
 
 @interface _DECScheduler : NSObject {
     id /* block */  _block;
+    NSObject<OS_xpc_object> * _executionCriteria;
 }
 
 @property (nonatomic, copy) id /* block */ block;
 
-+ (id)_defaultExecutionCriteria;
-+ (id)sharedInstance;
-
 - (void).cxx_destruct;
 - (id /* block */)block;
-- (id)init;
+- (void)forceRun;
+- (id)initWithActivityIdentifier:(id)arg1 andExecutionCriteria:(id)arg2;
 - (void)setBlock:(id /* block */)arg1;
 
 @end

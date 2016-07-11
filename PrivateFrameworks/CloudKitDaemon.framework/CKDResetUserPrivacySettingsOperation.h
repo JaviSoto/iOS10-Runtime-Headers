@@ -4,8 +4,8 @@
 
 @interface CKDResetUserPrivacySettingsOperation : CKDOperation
 
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)main;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

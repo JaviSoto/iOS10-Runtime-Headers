@@ -5,12 +5,14 @@
 
 @required
 
-- (<SYChange> *)changeFromData:(NSData *)arg1 ofType:(int)arg2;
+- (<SYChange> *)changeFromData:(NSData *)arg1 ofType:(long long)arg2;
 - (NSData *)dataFromChange:(id <SYChange>)arg1;
 
 @optional
 
 - (<SYObject> *)SYObjectWithData:(NSData *)arg1;
 - (NSData *)dataWithSYObject:(id <SYObject>)arg1;
+- (<SYChange> *)decodeChangeData:(NSData *)arg1 fromProtocolVersion:(long long)arg2 ofType:(long long)arg3;
+- (NSData *)encodeSYChangeForBackwardCompatibility:(id <SYChange>)arg1 protocolVersion:(long long)arg2;
 
 @end

@@ -3,20 +3,27 @@
  */
 
 @interface VKLabelMarkerFeatureHandle : NSObject {
-    int  _featureIndex;
-    int  _featureType;
-    GEOFeatureStyleAttributes * _styleAttributes;
-    int  _tileStyle;
-    unsigned int  _tileVersion;
-    int  _tileX;
-    int  _tileY;
-    int  _tileZ;
+    struct LabelMarkerFeatureHandle { 
+        unsigned char featureType; 
+        long long featureIndex; 
+        struct VKTileKey { 
+            unsigned int z; 
+            int x; 
+            int y; 
+            unsigned int pointSize; 
+        } key; 
+        int tileStyle; 
+        unsigned int tileVersion; 
+        GEOFeatureStyleAttributes *styleAttributes; 
+    }  _actualHandle;
 }
 
+- (id).cxx_construct;
+- (const struct LabelMarkerFeatureHandle { unsigned char x1; long long x2; struct VKTileKey { unsigned int x_3_1_1; int x_3_1_2; int x_3_1_3; unsigned int x_3_1_4; } x3; int x4; unsigned int x5; id x6; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; union x25; void*x26; void*x27; void*x28; void*x29; void*x30; struct  struct shared_ptr<ggl::PipelineSetup> { {} x31; void*x32; char *x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; }*)actualHandle;
 - (void)dealloc;
-- (int)featureIndex;
+- (long long)featureIndex;
 - (int)featureType;
-- (id)initWithFeature:(struct { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned long long x7; BOOL x8; unsigned long long x9; float x10; unsigned long long x11; id x12; }*)arg1 featureType:(int)arg2;
+- (id)initWithLabelMarkerHandle:(const struct LabelMarkerFeatureHandle { unsigned char x1; long long x2; struct VKTileKey { unsigned int x_3_1_1; int x_3_1_2; int x_3_1_3; unsigned int x_3_1_4; } x3; int x4; unsigned int x5; id x6; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; union x25; void*x26; void*x27; void*x28; void*x29; void*x30; struct  struct shared_ptr<ggl::PipelineSetup> { {} x31; void*x32; char *x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; }*)arg1;
 - (id)styleAttributes;
 - (int)tileStyle;
 - (unsigned int)tileVersion;

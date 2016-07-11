@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMZone : NSObject <HMMessageReceiver, HMObjectMerge, NSSecureCoding> {
+@interface HMZone : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMThreadSafeMutableArrayCollection * _currentRooms;
     HMDelegateCaller * _delegateCaller;
     HMHome * _home;
-    HMMessageDispatcher * _msgDispatcher;
+    HMFMessageDispatcher * _msgDispatcher;
     NSString * _name;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSUUID * _uniqueIdentifier;
@@ -19,11 +19,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly, copy) NSArray *rooms;
@@ -31,7 +31,7 @@
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addRoom:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -40,7 +40,7 @@
 - (void)_handleRoomRemovedNotification:(id)arg1;
 - (void)_handleZoneRenamedNotification:(id)arg1;
 - (void)_invalidate;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_removeRoom:(id)arg1;
 - (void)_removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;

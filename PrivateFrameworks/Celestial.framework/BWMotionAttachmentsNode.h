@@ -9,11 +9,11 @@
 
 + (void)initialize;
 
-- (long)_setupSampleBufferProcessor;
+- (int)_setupSampleBufferProcessor;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
-- (id)initWithSensorIDDict:(id)arg1 moduleInfo:(id)arg2 requiredFormat:(id)arg3 motionAttachmentsMode:(int)arg4 motionAttachmentsSource:(int)arg5;
+- (id)initWithSensorIDDictionaryByPortType:(id)arg1 cameraModuleInfoByPortType:(id)arg2 activePortTypes:(id)arg3 requiredFormat:(id)arg4 motionAttachmentsMode:(int)arg5 motionAttachmentsSource:(int)arg6 motionCallbackThreadPriority:(unsigned int)arg7;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;

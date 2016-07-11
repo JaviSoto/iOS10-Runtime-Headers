@@ -8,6 +8,8 @@
 
 @property (nonatomic, readonly) NSURL *persistenceFileURL;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (void)commitEditedContents:(id)arg1 completion:(id /* block */)arg2;
 - (id)contentsFromData:(id)arg1;

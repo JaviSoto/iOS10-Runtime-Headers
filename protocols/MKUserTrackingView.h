@@ -5,13 +5,13 @@
 
 @required
 
-- (void)_setUserTrackingMode:(int)arg1 animated:(BOOL)arg2 fromTrackingButton:(BOOL)arg3;
-- (BOOL)canRotateForHeading;
-- (BOOL)hasUserLocation;
-- (int)userTrackingMode;
+- (void)_setUserTrackingMode:(long long)arg1 animated:(bool)arg2 fromTrackingButton:(bool)arg3;
+- (bool)canRotateForHeading;
+- (bool)hasUserLocation;
+- (long long)userTrackingMode;
 
 @optional
 
-- (BOOL)hasRenderedSomething;
+- (bool)hasRenderedSomething;
 
 @end

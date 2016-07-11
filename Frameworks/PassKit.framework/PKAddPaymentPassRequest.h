@@ -11,6 +11,7 @@
     NSString * _hostApplicationIdentifier;
     NSString * _hostApplicationVersion;
     NSString * _issuerIdentifier;
+    NSData * _nonce;
     NSData * _publicKeyHash;
     NSData * _wrappedKey;
 }
@@ -23,14 +24,16 @@
 @property (nonatomic, copy) NSString *hostApplicationIdentifier;
 @property (nonatomic, copy) NSString *hostApplicationVersion;
 @property (nonatomic, copy) NSString *issuerIdentifier;
+@property (nonatomic, copy) NSData *nonce;
 @property (nonatomic, copy) NSData *publicKeyHash;
 @property (nonatomic, copy) NSData *wrappedKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)FPInfo;
-- (BOOL)_hasRequiredFields:(BOOL)arg1;
-- (BOOL)_hasRequiredThirdPartyFields:(BOOL)arg1;
+- (bool)_hasRequiredFields:(bool)arg1;
+- (bool)_hasRequiredThirdPartyFields:(bool)arg1;
 - (id)activationData;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -42,6 +45,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)issuerIdentifier;
+- (id)nonce;
 - (id)publicKeyHash;
 - (void)setActivationData:(id)arg1;
 - (void)setEncryptedPassData:(id)arg1;
@@ -51,6 +55,7 @@
 - (void)setHostApplicationIdentifier:(id)arg1;
 - (void)setHostApplicationVersion:(id)arg1;
 - (void)setIssuerIdentifier:(id)arg1;
+- (void)setNonce:(id)arg1;
 - (void)setPublicKeyHash:(id)arg1;
 - (void)setWrappedKey:(id)arg1;
 - (id)wrappedKey;

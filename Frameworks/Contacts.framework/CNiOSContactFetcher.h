@@ -12,11 +12,12 @@
 + (id /* block */)linkedPeopleComparator;
 
 - (id)_abMatchMetadataToCNContactMatchInfoArray:(id)arg1;
-- (id)_peopleToContactsArray:(struct __CFArray { }*)arg1 abMatchInfo:(id)arg2;
+- (void)_batchLoadPropertiesForPeople:(id)arg1 keysToFetch:(id)arg2;
+- (id)_peopleToContactsArray:(id)arg1 abMatchInfo:(id)arg2 keysToFetch:(id)arg3;
 - (void)dealloc;
 - (id)executeFetchRequestWithProgressiveResults:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)fetchContactsReturningMatchInfos:(id*)arg1 error:(id*)arg2;
 - (id)initWithFetchRequest:(id)arg1 addressBook:(void*)arg2;
-- (id)unifyPeople:(id)arg1 abMatchInfos:(id)arg2 outCNMatchInfos:(id*)arg3;
+- (id)unifyPeople:(id)arg1 keysToFetch:(id)arg2 abMatchInfos:(id)arg3 outCNMatchInfos:(id*)arg4;
 
 @end

@@ -16,8 +16,8 @@
 
 - (void).cxx_destruct;
 - (id)_connection;
-- (void)_handleApplicationDidBecomeActive:(id)arg1;
-- (void)_handleApplicationWillResignActive:(id)arg1;
+- (void)_handleApplicationDidEnterBackground:(id)arg1;
+- (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (id)_heartbeatQueue;
 - (id)_heartbeatSource;
 - (id)_keepAliveQueue;

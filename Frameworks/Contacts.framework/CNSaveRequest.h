@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNSaveRequest : NSObject <CNObjectValidation> {
+@interface CNSaveRequest : NSObject <CNObjectValidation, NSSecureCoding> {
     NSMutableDictionary * _addedAccountContainersByIdentifier;
     NSMutableArray * _addedAccounts;
     NSMutableDictionary * _addedContactsByIdentifier;
@@ -10,18 +10,21 @@
     NSMutableDictionary * _addedGroupsByIdentifier;
     NSMutableDictionary * _addedMembersByGroupIdentifier;
     NSMutableDictionary * _addedSubgroupsByGroupIdentifier;
+    NSString * _clientIdentifier;
     NSMutableArray * _contactChangeRequests;
     NSMutableDictionary * _deletedContactsByIdentifier;
     NSMutableDictionary * _deletedContainersByIdentifier;
     NSMutableDictionary * _deletedGroupsByIdentifier;
     NSString * _meCardIdentifier;
     NSMutableDictionary * _movedContainersByIdentifier;
+    NSMutableDictionary * _parentRecordsByIdentifier;
     NSMutableDictionary * _removedMembersByGroupIdentifier;
     NSMutableDictionary * _removedSubgroupsByGroupIdentifier;
-    BOOL  _unsafeApplyChangesOnly;
-    NSMutableDictionary * _updatedContactsByIdentifier;
-    NSMutableDictionary * _updatedContainersByIdentifier;
-    NSMutableDictionary * _updatedGroupsByIdentifier;
+    NSString * _saveRequestIdentifier;
+    bool  _unsafeApplyChangesOnly;
+    NSMutableArray * _updatedContacts;
+    NSMutableArray * _updatedContainers;
+    NSMutableArray * _updatedGroups;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *addedAccountContainersByParentContainerIdentifier;
@@ -37,23 +40,28 @@
 @property (nonatomic, readonly, copy) NSArray *allContainers;
 @property (nonatomic, readonly, copy) NSArray *allGroupIdentifiers;
 @property (nonatomic, readonly, copy) NSArray *allGroups;
+@property (nonatomic, copy) NSString *clientIdentifier;
 @property (nonatomic, readonly, copy) NSArray *contactChangeRequests;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSArray *deletedContacts;
+@property (nonatomic, readonly, copy) NSDictionary *deletedContactsByIdentifier;
 @property (nonatomic, readonly, copy) NSArray *deletedContainers;
 @property (nonatomic, readonly, copy) NSArray *deletedGroups;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *meCardIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *movedContainersByParentContainerIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *removedMembersByGroupIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *removedSubgroupsByGroupIdentifier;
+@property (nonatomic, readonly, copy) NSString *saveRequestIdentifier;
 @property (nonatomic, readonly, copy) NSString *storeIdentifier;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL unsafeApplyChangesOnly;
+@property (nonatomic) bool unsafeApplyChangesOnly;
 @property (nonatomic, readonly, copy) NSArray *updatedContacts;
 @property (nonatomic, readonly, copy) NSArray *updatedContainers;
 @property (nonatomic, readonly, copy) NSArray *updatedGroups;
+
++ (bool)supportsSecureCoding;
 
 - (id)_dictionaryOfArraysFromDictionaryOfDictionaries:(id)arg1;
 - (void)_insertContact:(id)arg1 intoDictionary:(id)arg2 complementDictionary:(id)arg3;
@@ -75,41 +83,49 @@
 - (id)allAccountIdentifiers;
 - (id)allContactIdentifiers;
 - (id)allContacts;
-- (id)allContainerIdentifierStrings:(BOOL*)arg1;
-- (id)allContainerIdentifiers:(BOOL*)arg1;
+- (id)allContainerIdentifierStrings:(bool*)arg1;
+- (id)allContainerIdentifiers:(bool*)arg1;
 - (id)allContainers;
 - (id)allGroupIdentifiers;
 - (id)allGroups;
+- (id)clientIdentifier;
 - (id)contactChangeRequests;
 - (void)dealloc;
 - (void)deleteContact:(id)arg1;
 - (void)deleteContainer:(id)arg1;
 - (void)deleteGroup:(id)arg1;
 - (id)deletedContacts;
+- (id)deletedContactsByIdentifier;
 - (id)deletedContainers;
 - (id)deletedGroups;
+- (void)encodeWithCoder:(id)arg1;
 - (id)flattenedDictionaryForDictionaryOfTuples:(id)arg1;
 - (id)groupWithAddedMemberForGroupIdentifier:(id)arg1;
 - (id)groupWithAddedSubgroupForGroupIdentifier:(id)arg1;
 - (id)groupWithRemovedMemberForGroupIdentifier:(id)arg1;
 - (id)groupWithRemovedSubgroupForGroupIdentifier:(id)arg1;
 - (id)init;
-- (BOOL)isValid:(id*)arg1;
+- (id)initWithCoder:(id)arg1;
+- (bool)isValid:(id*)arg1;
 - (void)linkContact:(id)arg1 toContact:(id)arg2;
 - (id)meCardIdentifier;
 - (void)moveContainer:(id)arg1 toContainerWithIdentifier:(id)arg2;
 - (id)movedContainersByParentContainerIdentifier;
 - (void)preferLinkedContactForImage:(id)arg1 inUnifiedContact:(id)arg2;
 - (void)preferLinkedContactForName:(id)arg1 inUnifiedContact:(id)arg2;
+- (void)queueUpdatedObject:(id)arg1 intoArray:(id)arg2;
 - (void)removeMember:(id)arg1 fromGroup:(id)arg2;
 - (void)removeSubgroup:(id)arg1 fromGroup:(id)arg2;
 - (id)removedMembersByGroupIdentifier;
 - (id)removedSubgroupsByGroupIdentifier;
+- (id)saveRequestIdentifier;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setLinkIdentifier:(id)arg1 forContact:(id)arg2;
 - (void)setMeCardIdentifier:(id)arg1;
-- (void)setUnsafeApplyChangesOnly:(BOOL)arg1;
+- (void)setUnsafeApplyChangesOnly:(bool)arg1;
 - (id)storeIdentifier;
 - (void)unlinkContact:(id)arg1;
-- (BOOL)unsafeApplyChangesOnly;
+- (bool)unsafeApplyChangesOnly;
 - (void)updateContact:(id)arg1;
 - (void)updateContainer:(id)arg1;
 - (void)updateGroup:(id)arg1;

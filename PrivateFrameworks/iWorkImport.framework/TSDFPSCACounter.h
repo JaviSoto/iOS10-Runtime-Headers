@@ -3,19 +3,19 @@
  */
 
 @interface TSDFPSCACounter : TSDFPSCounter {
-    BOOL  _shouldRunTimer;
+    bool  _shouldRunTimer;
     unsigned int  mCAFrameCount;
-    unsigned int  mMaxFrameDelta;
+    unsigned long long  mMaxFrameDelta;
     NSTimer * mTimer;
 }
 
-@property (nonatomic) BOOL shouldRunTimer;
+@property (nonatomic) bool shouldRunTimer;
 
 - (id)init;
 - (void)p_updateFrameCount;
 - (void)reset;
-- (void)setShouldRunTimer:(BOOL)arg1;
-- (BOOL)shouldRunTimer;
+- (void)setShouldRunTimer:(bool)arg1;
+- (bool)shouldRunTimer;
 - (void)startLoggingFPS;
 - (void)stopLoggingFPS;
 

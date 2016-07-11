@@ -10,9 +10,19 @@
     unsigned int  _imageQueueHeight;
     unsigned int  _imageQueueSlot;
     unsigned int  _imageQueueWidth;
+    double  _lastDisplayTime;
+    double  _lastFramePTS;
+    unsigned long long  _numFramesReceived;
     struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;
-    BOOL  _syncedWithDisplay;
+    bool  _resetPreviewSynchronizerOnNextFrame;
+    unsigned long long * _sharedBufferIDs;
+    unsigned long long  _sharedSurfaceCount;
+    NSMutableArray * _sharedSurfaces;
+    bool  _surfaceRegistrationComplete;
+    struct OpaqueFigSimpleMutex { } * _surfaceRegistrationMutex;
+    int  _syncStrategy;
+    bool  _useGlobalIOSurfaces;
 }
 
 @property (nonatomic, readonly) struct _CAImageQueue { }*imageQueue;
@@ -21,21 +31,27 @@
 
 + (void)initialize;
 
+- (unsigned long long)_bufferIDForSurface:(struct __IOSurface { }*)arg1;
+- (void)_cleanupIOSurfaces;
+- (double)_displayTimeSyncedWithFramePTS:(double)arg1;
 - (void)_ensureImageQueue;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
-- (BOOL)hasNonLiveConfigurationChanges;
+- (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
+- (bool)hasNonLiveConfigurationChanges;
 - (struct _CAImageQueue { }*)imageQueue;
 - (unsigned int)imageQueueSlot;
-- (id)initWithHFRSupport:(unsigned char)arg1;
+- (id)initWithHFRSupport:(bool)arg1;
+- (void)inputConnectionWillBeEnabled;
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (id)previewTapDelegate;
+- (void)registerSurfacesFromSourcePool:(id)arg1;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setPreviewTapDelegate:(id)arg1;
-- (void)setSyncedWithDisplay:(BOOL)arg1;
-- (BOOL)syncedWithDisplay;
+- (void)setSyncStrategy:(int)arg1;
+- (int)syncStrategy;
 
 @end

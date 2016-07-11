@@ -31,7 +31,7 @@
             short mSubframes; 
             short mSubframeDivisor; 
             unsigned int mCounter; 
-            unsigned long mType; 
+            unsigned int mType; 
             unsigned int mFlags; 
             short mHours; 
             short mMinutes; 
@@ -42,38 +42,42 @@
         unsigned int mReserved; 
     }  _audioTimestamp;
     struct OpaqueAudioComponentInstance { } * _audioUnit;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    }  _detectionStart;
-    NSMutableArray * _detections;
+    int  _bufferedSamples;
     void * _inputBuffer;
-    int  _maxInputSamples;
     NSDictionary * _model;
+    NSMutableArray * _musicDetections;
+    int  _sampleBatchSize;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     }  _trackStart;
+    NSMutableArray * _utteranceDetections;
     bool  _voiceActivity;
+    NSMutableArray * _voiceDetections;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _voiceStart;
 }
 
 + (id)voiceDetector;
 
 - (void).cxx_destruct;
-- (int)adaptNumSamplesToProcess:(int)arg1;
-- (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
-- (id)analyzeAsset:(id)arg1;
+- (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 result:(id)arg3;
+- (int)analyzeAsset:(id)arg1 cancel:(id /* block */)arg2 results:(id*)arg3;
 - (id)audioFormatRequirements;
 - (void)dealloc;
+- (int)finalize:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
 - (id)init;
-- (long)initialize:(struct opaqueCMSampleBuffer { }*)arg1;
-- (long)initializeAudioUnit:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1;
-- (long)loadModel;
-- (long)processAudioSamples:(int)arg1;
-- (long)processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)initialize:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)initializeAudioUnit:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1;
+- (int)loadModel;
+- (int)processAudioSamples;
+- (int)processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)sampleBatchSize:(double)arg1;
 
 @end

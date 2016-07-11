@@ -8,7 +8,8 @@
     IKViewElementStyleComposer * styleComposer;
 }
 
-@property (nonatomic, readonly) unsigned long childElementCount;
+@property (nonatomic, readonly, copy) IKDOMNamedNodeMap *attributes;
+@property (nonatomic, readonly) unsigned long long childElementCount;
 @property (nonatomic, readonly) IKDOMHTMLCollection *children;
 @property (nonatomic, readonly, copy) NSString *elementName;
 @property (nonatomic, readonly) IKDOMElement *firstElementChild;
@@ -20,9 +21,10 @@
 @property (nonatomic, readonly, retain) NSString *tagName;
 
 - (void).cxx_destruct;
+- (id)_attributes;
 - (id)attributes;
 - (id)childElementByTagName:(id)arg1;
-- (unsigned long)childElementCount;
+- (unsigned long long)childElementCount;
 - (id)childElements;
 - (id)childElementsByTagName:(id)arg1;
 - (id)children;
@@ -30,12 +32,13 @@
 - (id)firstElementChild;
 - (id)getAttribute:(id)arg1;
 - (id)getElementsByTagName:(id)arg1;
-- (BOOL)hasAttribute:(id)arg1;
+- (bool)hasAttribute:(id)arg1;
+- (bool)hasAttributes;
 - (id)innerHTML;
 - (void)insertAdjacentHTML:(id)arg1 :(id)arg2;
 - (id)lastElementChild;
 - (id)nodeName;
-- (int)nodeType;
+- (long long)nodeType;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)outerHTML;
 - (id)parentStyleableElement;

@@ -9,11 +9,7 @@
 @property (nonatomic, readonly) NSArray *specifiers;
 
 - (void).cxx_destruct;
-- (id)appStore:(id)arg1;
-- (id)myApps:(id)arg1;
 - (void)reloadSpecifiers;
-- (void)setAppStore:(id)arg1 specifier:(id)arg2;
-- (void)setMyApps:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;
 
 @end

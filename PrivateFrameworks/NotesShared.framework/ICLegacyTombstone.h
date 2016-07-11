@@ -12,15 +12,14 @@
 + (void)addLegacyTombstoneForFolder:(id)arg1;
 + (void)addLegacyTombstoneForNote:(id)arg1;
 + (id)addLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2 account:(id)arg3;
-+ (id)allCloudObjects;
++ (id)allCloudObjectsInContext:(id)arg1;
 + (id)allLegacyTombstones;
-+ (id)existingCloudObjectForRecordID:(id)arg1;
-+ (BOOL)hasTombstonePrefix:(id)arg1;
-+ (id)legacyTombstoneWithIdentifier:(id)arg1;
-+ (id)legacyTombstonesMatchingPredicate:(id)arg1;
-+ (id)newCloudObjectForRecord:(id)arg1;
-+ (id)newLegacyTombstoneWithIdentifier:(id)arg1 type:(short)arg2;
-+ (id)recordType;
++ (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
++ (bool)hasTombstonePrefix:(id)arg1;
++ (id)legacyTombstoneWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)legacyTombstonesMatchingPredicate:(id)arg1 context:(id)arg2;
++ (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
++ (id)newLegacyTombstoneWithIdentifier:(id)arg1 type:(short)arg2 context:(id)arg3;
 + (void)removeLegacyTombstoneForFolder:(id)arg1;
 + (void)removeLegacyTombstoneForNote:(id)arg1;
 + (void)removeLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2;
@@ -28,13 +27,14 @@
 + (short)tombstoneTypeFromRecordName:(id)arg1;
 
 - (void)deleteFromLocalDatabase;
-- (BOOL)hasAllMandatoryFields;
-- (BOOL)isInICloudAccount;
-- (id)loggingDescriptionValues;
+- (bool)hasAllMandatoryFields;
+- (id)ic_loggingValues;
+- (bool)isInICloudAccount;
 - (void)mergeDataFromRecord:(id)arg1;
+- (id)newlyCreatedRecord;
 - (void)objectWasDeletedFromCloud;
 - (void)objectWasDeletedFromCloudByAnotherDevice;
-- (id)recordZoneID;
-- (id)threadUnsafeNewlyCreatedRecord;
+- (id)recordType;
+- (id)recordZoneName;
 
 @end

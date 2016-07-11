@@ -3,31 +3,36 @@
  */
 
 @interface CNContactFormatterSmartFetcher : CNSmartPropertyFetcher {
-    NSDictionary * _fallBackNameKeyByNameKey;
-    BOOL  _ignoresNickname;
-    BOOL  _ignoresOrganization;
-    NSSet * _mandatoryNameKeys;
+    NSDictionary * _fallBackNamePropertyByNameKey;
+    bool  _ignoresNickname;
+    bool  _ignoresOrganization;
+    NSSet * _mandatoryNameProperties;
 }
 
-@property (nonatomic, copy) NSDictionary *fallBackNameKeyByNameKey;
-@property (nonatomic) BOOL ignoresNickname;
-@property (nonatomic) BOOL ignoresOrganization;
-@property (nonatomic, copy) NSSet *mandatoryNameKeys;
+@property (nonatomic, copy) NSDictionary *fallBackNamePropertyByNameKey;
+@property (nonatomic) bool ignoresNickname;
+@property (nonatomic) bool ignoresOrganization;
+@property (nonatomic, copy) NSSet *mandatoryNameProperties;
+
++ (bool)supportsSecureCoding;
 
 - (void)_cn_executeGetterForRepresentedKeys:(id /* block */)arg1;
+- (id)_cn_requiredKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)fallBackNameKeyByNameKey;
-- (BOOL)ignoresNickname;
-- (BOOL)ignoresOrganization;
+- (id)fallBackNamePropertyByNameKey;
+- (unsigned long long)hash;
+- (bool)ignoresNickname;
+- (bool)ignoresOrganization;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)mandatoryNameKeys;
-- (void)setFallBackNameKeyByNameKey:(id)arg1;
-- (void)setIgnoresNickname:(BOOL)arg1;
-- (void)setIgnoresOrganization:(BOOL)arg1;
-- (void)setMandatoryNameKeys:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)mandatoryNameProperties;
+- (void)setFallBackNamePropertyByNameKey:(id)arg1;
+- (void)setIgnoresNickname:(bool)arg1;
+- (void)setIgnoresOrganization:(bool)arg1;
+- (void)setMandatoryNameProperties:(id)arg1;
 - (void)setupNameKeys;
 
 @end

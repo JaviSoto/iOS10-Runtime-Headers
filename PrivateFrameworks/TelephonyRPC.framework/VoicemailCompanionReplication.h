@@ -2,67 +2,76 @@
    Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
  */
 
-@interface VoicemailCompanionReplication : NSObject <PSYSyncCoordinatorDelegate, SYStoreDelegate> {
+@interface VoicemailCompanionReplication : NSObject <NPHVMSessionDelegate, PSYSyncCoordinatorDelegate, SYServiceDelegate> {
     NSObject<OS_dispatch_queue> * _companionSyncQueue;
     NSObject<OS_dispatch_queue> * _concurrentQueue;
     PSYSyncCoordinator * _coordinator;
-    BOOL  _didSuspendCompanionSyncQueue;
+    NSObject<OS_dispatch_semaphore> * _deltaSyncInProgress;
+    bool  _deltaSyncSuccessful;
+    bool  _didSuspendCompanionSyncQueue;
     NPSDomainAccessor * _domainAccessor;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _domainAccessorMutexLock;
-    NanoTelephonyIDSProxy * _proxy;
-    SYStore * _syncStore;
+    bool  _sigtermCalled;
+    bool  _syncRestrictionsAtStartup;
+    NSObject<OS_os_transaction> * _syncTransaction;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _syncTransactionMutex;
     NSMutableArray * _vmAfterSyncComplete;
+    PSYServiceSyncSession * _vmServiceSyncSession;
+    SYService * _vmSyncService;
+    NSObject<OS_dispatch_queue> * _vmSyncServiceQueue;
+    NPHVMSyncSessionManager * _vmSyncSessionManager;
+    VMVoicemailManager * _voicemailManager;
     NSObject<OS_dispatch_semaphore> * vmdIsReadySemaphore;
-    NSObject<OS_dispatch_semaphore> * waitForFirstSyncCompleteSemaphore;
+    NSObject<OS_dispatch_semaphore> * waitForFirstSyncRestrictionSemaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property bool sigtermCalled;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) SYStore *syncStore;
+@property (nonatomic, retain) SYService *vmSyncService;
 
 - (void).cxx_destruct;
-- (void)_deltaSync;
-- (void)_handleVoicemailDataAvailableNotification:(id)arg1;
-- (void)_handleVoicemailFlagsChanged:(id)arg1;
-- (void)_handleVoicemailServiceRecordsAdded:(id)arg1;
-- (void)_handleVoicemailStoreChanged:(id)arg1;
-- (void)_handleVoicemailStoreRemovedAllVoicemails:(id)arg1;
-- (void)_handleVoicemailStoreRemovedVoicemails:(id)arg1;
+- (void)_deltaSyncIsReunion:(bool)arg1;
+- (void)_enqueueAllVoicemailsAndLockSyncTransactionMutex;
+- (void)_handleVoicemailSubscriptionStateStatusChanged:(id)arg1;
+- (void)_handleVoicemailsChangedNotification:(id)arg1;
 - (void)_initializeDomainAccessor;
 - (void)_performAfterFirstDeviceUnlockAndSyncRestrictionNone:(id /* block */)arg1;
 - (void)_registerForNotifications;
-- (void)addToRemoteVoicemails:(id)arg1;
-- (id /* block */)beginSyncingAllObjectsForStore:(id)arg1;
 - (id)changeSetForRemoteVoicemails:(id)arg1 fromVMVoicemails:(id)arg2;
 - (void)dealloc;
-- (int)indexOfVoicemail:(id)arg1 inArray:(id)arg2;
-- (id)initWithIDSProxy:(id)arg1;
+- (void)handleSIGTERM;
+- (long long)indexOfVoicemail:(id)arg1 inArray:(id)arg2;
+- (id)init;
 - (id)listOfVoicemailsToSync;
-- (int)maxVoicemailCount;
-- (int)maxVoicemailTotalBytes;
+- (long long)maxVoicemailCount;
+- (long long)maxVoicemailTotalBytes;
 - (id)remoteVoicemails;
 - (void)removeFromRemoteVoicemails:(id)arg1;
+- (void)reportProgress:(double)arg1;
+- (void)service:(id)arg1 encounteredError:(id)arg2 context:(id)arg3;
+- (void)service:(id)arg1 sessionEnded:(id)arg2 error:(id)arg3;
+- (bool)service:(id)arg1 startSession:(id)arg2 error:(id*)arg3;
+- (void)serviceDidPairDevice:(id)arg1;
 - (void)setRemoteVoicemails:(id)arg1;
-- (void)setSyncStore:(id)arg1;
+- (void)setSigtermCalled:(bool)arg1;
+- (void)setVmSyncService:(id)arg1;
+- (bool)sigtermCalled;
+- (void)syncCoordinator:(id)arg1 beginSyncSession:(id)arg2;
+- (void)syncCoordinator:(id)arg1 didInvalidateSyncSession:(id)arg2;
 - (void)syncCoordinatorDidChangeSyncRestriction:(id)arg1;
-- (void)syncCoordinatorDidReceiveStartSyncCommand:(id)arg1;
-- (id)syncStore;
-- (void)syncStore:(id)arg1 encounteredErrorInFullSync:(id)arg2;
-- (void)syncStore:(id)arg1 objectAdded:(id)arg2;
-- (void)syncStore:(id)arg1 objectDeleted:(id)arg2;
-- (void)syncStore:(id)arg1 objectUpdated:(id)arg2;
-- (id)syncStoreAllObjects:(id)arg1;
-- (void)syncStoreAllObjectsDeleted:(id)arg1;
-- (id)syncStoreAtIndexes:(id)arg1;
-- (void)syncStoreDidCompleteFullSync:(id)arg1;
-- (void)syncStoreDidUpdate:(id)arg1;
-- (void)syncStoreEnqueuedAllFullSyncMessages:(id)arg1 context:(id)arg2;
-- (void)syncStoreWillUpdate:(id)arg1;
+- (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(id /* block */)arg3;
+- (void)syncSession:(id)arg1 didEndWithError:(id)arg2;
+- (bool)syncSession:(id)arg1 resetDataStoreWithError:(id*)arg2;
+- (id)vmSyncService;
 - (id)voicemailChangeSetFrom:(id)arg1;
 - (void)waitForVMDToBeUpAndRunning;
 

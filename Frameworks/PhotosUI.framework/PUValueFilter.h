@@ -9,6 +9,8 @@
 @property (nonatomic) double currentValue;
 
 - (double)currentValue;
+- (id)init;
+- (id)initWithValue:(double)arg1;
 - (double)outputValue;
 - (void)setCurrentValue:(double)arg1;
 - (void)setInputValue:(double)arg1;

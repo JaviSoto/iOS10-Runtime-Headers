@@ -6,7 +6,7 @@
     NSSet * _existingVisits;
     WBSCloudHistoryFetchResult * _fetchResult;
     WBSHistory * _history;
-    BOOL  _mergeStarted;
+    bool  _mergeStarted;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableSet * _redirectChainEarliestVisits;
     NSSet * _redirectChainSourceVisits;
@@ -25,6 +25,7 @@
 - (void)_mergeVisitsWithCompletion:(id /* block */)arg1;
 - (void)_removeDuplicateVisits;
 - (void)_replayAndAddTombstones;
+- (void)_updateClientVersions;
 - (id)initWithHistory:(id)arg1 fetchResult:(id)arg2;
 - (void)mergeWithCompletion:(id /* block */)arg1;
 

@@ -5,6 +5,11 @@
 
 @optional
 
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateResidentEnabledForThisDevice:(bool)arg2;
 - (void)homeManager:(HMHomeManager *)arg1 didUpdateStateForIncomingInvitations:(NSArray *)arg2;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateThisDeviceIsResidentCapable:(bool)arg2;
+- (void)homeManagerDidUpdateApplicationData:(HMHomeManager *)arg1;
+- (void)homeManagerDidUpdateCurrentHome:(HMHomeManager *)arg1;
+- (void)homeManagerDidUpdateDataSyncInProgress:(HMHomeManager *)arg1;
 
 @end

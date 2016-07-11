@@ -5,17 +5,19 @@
 @interface BRCSpotlightIndexBatch : NSObject {
     NSMutableOrderedSet * _deletedDocumentsIDs;
     CSSearchableIndex * _index;
+    NSString * _loggedInUserDisplayName;
     NSObject<OS_dispatch_queue> * _queue;
-    NSOperationQueue * _thumbnailQueue;
     NSMutableOrderedSet * _toIndexDocuments;
 }
 
 - (void).cxx_destruct;
-- (id)_searchableItemForDocument:(id)arg1 thumbnailCompletionGroup:(id)arg2;
-- (id)_searchableItemsForDocuments:(id)arg1 thumbnailCompletionGroup:(id)arg2;
+- (id)_authorDisplayNamesForDocument:(id)arg1;
+- (id)_searchableItemForDocument:(id)arg1;
+- (id)_searchableItemsForDocuments:(id)arg1;
 - (void)addDeletionOfDocID:(unsigned long long)arg1;
 - (void)addIndexOfDocument:(id)arg1;
-- (id)initWithIndex:(id)arg1 queue:(id)arg2;
+- (id)description;
+- (id)initWithIndex:(id)arg1 queue:(id)arg2 loggedInUserDisplayName:(id)arg3;
 - (void)prepareAndSendIndexBatchForIndexToken:(id)arg1 completion:(id /* block */)arg2;
 
 @end

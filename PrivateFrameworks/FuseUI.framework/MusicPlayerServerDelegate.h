@@ -3,21 +3,24 @@
  */
 
 @interface MusicPlayerServerDelegate : NSObject <MPMusicPlayerControllerServerDelegate> {
-    MusicAVPlayer * _applicationPlayer;
+    MPAVController * _applicationPlayer;
     MPMediaItem * _firstItem;
     MPNowPlayingObserver * _nowPlayingObserver;
-    int  _playbackShuffleMode;
+    long long  _playbackShuffleMode;
+    MPAVController * _player;
     id /* block */  _repeatChangeHandler;
     MPAVController * _repeatChangeHandlerPlayer;
-    int  _repeatMode;
+    long long  _repeatMode;
     id /* block */  _shuffleChangeHandler;
     MPAVController * _shuffleChangeHandlerPlayer;
-    int  _shuffleMode;
+    long long  _shuffleMode;
+    MPAVController * _systemPlayer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) MPAVController *player;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,23 +28,26 @@
 - (id)currentMediaQueryForMusicPlayerServer:(id)arg1;
 - (id)currentRadioStationForMusicPlayerServer:(id)arg1;
 - (void)dealloc;
-- (unsigned int)indexOfNowPlayingItemForMusicPlayerServer:(id)arg1;
+- (unsigned long long)indexOfNowPlayingItemForMusicPlayerServer:(id)arg1;
 - (id)init;
-- (BOOL)isNowPlayingItemFromGeniusMixForMusicPlayerServer:(id)arg1;
+- (id)initWithSystemPlayer:(id)arg1;
+- (bool)isNowPlayingItemFromGeniusMixForMusicPlayerServer:(id)arg1;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithGeniusMixPlaylist:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithQuery:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithRadioStation:(id)arg2;
+- (void)musicPlayerServer:(id)arg1 prepareQueueWithStoreIDs:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 registerForRepeatModeChangesWithChangeHandler:(id /* block */)arg2;
 - (void)musicPlayerServer:(id)arg1 registerForShuffleModeChangesWithChangeHandler:(id /* block */)arg2;
 - (void)musicPlayerServer:(id)arg1 setFirstItem:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setNowPlayingItem:(id)arg2;
-- (void)musicPlayerServer:(id)arg1 setPlaybackSpeed:(int)arg2;
-- (void)musicPlayerServer:(id)arg1 setShuffleMode:(int)arg2;
-- (void)musicPlayerServer:(id)arg1 setUserQueueModificationsDisabled:(BOOL)arg2;
+- (void)musicPlayerServer:(id)arg1 setPlaybackSpeed:(long long)arg2;
+- (void)musicPlayerServer:(id)arg1 setShuffleMode:(long long)arg2;
+- (void)musicPlayerServer:(id)arg1 setUserQueueModificationsDisabled:(bool)arg2;
 - (id)nowPlayingItemForMusicPlayerServer:(id)arg1;
-- (int)playbackSpeedForMusicPlayerServer:(id)arg1;
-- (id)playerForMusicPlayerServer:(id)arg1 usingApplicationSpecificQueue:(BOOL)arg2;
-- (unsigned int)unshuffledIndexOfNowPlayingItemForMusicPlayerServer:(id)arg1;
-- (BOOL)userQueueModificationsDisabledForMusicPlayerServer:(id)arg1;
+- (long long)playbackSpeedForMusicPlayerServer:(id)arg1;
+- (id)player;
+- (id)playerForMusicPlayerServer:(id)arg1 usingApplicationSpecificQueue:(bool)arg2;
+- (unsigned long long)unshuffledIndexOfNowPlayingItemForMusicPlayerServer:(id)arg1;
+- (bool)userQueueModificationsDisabledForMusicPlayerServer:(id)arg1;
 
 @end

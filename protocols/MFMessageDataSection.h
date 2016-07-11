@@ -5,9 +5,9 @@
 
 @required
 
-- (NSData *)data;
-- (BOOL)isComplete;
-- (BOOL)isPartial;
+- (MFDataHolder *)dataHolder;
+- (bool)isComplete;
+- (bool)isPartial;
 - (NSString *)partName;
 
 @end

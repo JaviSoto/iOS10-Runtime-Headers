@@ -4,8 +4,10 @@
 
 @interface PLWallpaperAsset : PLManagedAsset
 
+@property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) NSString *imageName;
 @property (nonatomic, retain) NSURL *imageURL;
+@property (nonatomic, readonly) UIImage *thumbnailImage;
 @property (nonatomic, retain) NSURL *thumbnailURL;
 @property (nonatomic, retain) NSDictionary *wallpaperOptions;
 
@@ -13,22 +15,22 @@
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withImageURL:(id)arg2 thumbnailURL:(id)arg3;
 
-- (id)_image;
-- (id)_thumbnailImage;
-- (BOOL)allowsWallpaperEditing;
+- (bool)allowsWallpaperEditing;
 - (void)awakeFromInsert;
+- (id)image;
 - (id)imageName;
 - (id)imageURL;
 - (id)imageWithFormat:(int)arg1;
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
-- (BOOL)isIncludedInMoments;
+- (bool)isIncludedInMoments;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (void)prepareForDeletion;
 - (void)setImageURL:(id)arg1;
 - (void)setThumbnailURL:(id)arg1;
 - (void)setURL:(id)arg1 forKey:(id)arg2;
 - (void)setWallpaperOptions:(id)arg1;
+- (id)thumbnailImage;
 - (id)thumbnailURL;
 - (id)urlForKey:(id)arg1;
 - (id)wallpaperFullScreenImage;

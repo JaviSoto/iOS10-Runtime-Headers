@@ -5,14 +5,15 @@
 @interface TUAudioSystemController : TUAudioController {
     NSObject<OS_dispatch_queue> * _downlinkMutedQueue;
     NSNumber * _isDownlinkMutedCached;
-    BOOL  _isRequestingDownlinkMuted;
-    BOOL  _isRequestingPickableRoutesForPhoneCall;
-    BOOL  _isRequestingPickableRoutesForPlayAndRecordRemoteVoice;
-    BOOL  _isRequestingPickableRoutesForPlayAndRecordVideo;
-    BOOL  _isRequestingPickableRoutesForPlayAndRecordVoice;
-    BOOL  _isRequestingPickableRoutesForTTY;
-    BOOL  _isRequestingTTY;
-    BOOL  _isRequestingUplinkMuted;
+    bool  _isRequestingDownlinkMuted;
+    bool  _isRequestingPickableRoutesForPhoneCall;
+    bool  _isRequestingPickableRoutesForPlayAndRecordRemoteVoice;
+    bool  _isRequestingPickableRoutesForPlayAndRecordVideo;
+    bool  _isRequestingPickableRoutesForPlayAndRecordVoice;
+    bool  _isRequestingPickableRoutesForTTY;
+    bool  _isRequestingPickableRoutesForVoicemail;
+    bool  _isRequestingTTY;
+    bool  _isRequestingUplinkMuted;
     NSNumber * _isTTYCached;
     NSNumber * _isUplinkMutedCached;
     unsigned long long  _lastDownlinkMutedRequestScheduleTime;
@@ -23,38 +24,48 @@
     unsigned long long  _lastTTYPickableRoutesScheduleTime;
     unsigned long long  _lastTTYRequestScheduleTime;
     unsigned long long  _lastUplinkMutedRequestScheduleTime;
+    unsigned long long  _lastVoicemailRoutesScheduleTime;
     NSArray * _pickableRoutesForPhoneCall;
     NSArray * _pickableRoutesForPlayAndRecordRemoteVoice;
     NSArray * _pickableRoutesForPlayAndRecordVideo;
     NSArray * _pickableRoutesForPlayAndRecordVoice;
     NSArray * _pickableRoutesForTTY;
+    NSArray * _pickableRoutesForVoicemail;
     NSObject<OS_dispatch_queue> * _pickableRoutesQueue;
     NSObject<OS_dispatch_queue> * _ttyQueue;
     NSObject<OS_dispatch_queue> * _uplinkMutedQueue;
 }
 
+@property (getter=isDownlinkMuted, nonatomic) bool downlinkMuted;
+@property (getter=isTTY, nonatomic, readonly) bool tty;
+@property (getter=isUplinkMuted, nonatomic) bool uplinkMuted;
+
 + (id)sharedAudioSystemController;
 + (id)sharedSystemController;
 
 - (void).cxx_destruct;
-- (void)_handleCallStatusChanged;
 - (void)_handleDownlinkMuteDidChangeNotification:(id)arg1;
+- (void)_handlePickableRoutesDidChangeNotification:(id)arg1;
+- (void)_handleServerConnectionDiedNotification:(id)arg1;
 - (void)_handleUplinkMuteDidChangeNotification:(id)arg1;
-- (void)_pickableRoutesDidChangeNotification:(id)arg1;
-- (id)_pickableRoutesForPhoneCallWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForPlayAndRecordRemoteVoiceWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForPlayAndRecordVideoWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForPlayAndRecordVoiceWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForTTYWithForceNewRequest:(BOOL)arg1;
+- (id)_pickableRoutesForPhoneCallWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForPlayAndRecordRemoteVoiceWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForPlayAndRecordVideoWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForPlayAndRecordVoiceWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForTTYWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForVoiceMailWithForceNewRequest:(bool)arg1;
+- (void)_updateCachedState;
 - (id)bestGuessPickableRoutesForAnyCall;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isDownlinkMuted;
-- (BOOL)isTTY;
-- (BOOL)isUplinkMuted;
+- (bool)isDownlinkMuted;
+- (bool)isTTY;
+- (bool)isUplinkMuted;
+- (id)pickableRouteWithUniqueIdentifier:(id)arg1;
 - (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
 - (id)pickableRoutesForTTY;
-- (BOOL)setDownlinkMuted:(BOOL)arg1;
-- (BOOL)setUplinkMuted:(BOOL)arg1;
+- (void)setDownlinkMuted:(bool)arg1;
+- (void)setUplinkMuted:(bool)arg1;
+- (bool)shouldSuppressCallUsingRoute:(id)arg1;
 
 @end

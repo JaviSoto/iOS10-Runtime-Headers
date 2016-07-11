@@ -3,37 +3,36 @@
  */
 
 @interface MusicNowPlayingPresentationController : UIPresentationController <MusicNowPlayingAtmosphericStatusBarDelegate> {
-    BOOL  _isPresented;
+    bool  _isPresented;
     UIView * _nowPlayingClippingView;
     MusicNowPlayingAtmosphericStatusBar * _nowPlayingStatusBar;
-    BOOL  _wantsAtmosphericStatusBar;
+    bool  _wantsAtmosphericStatusBar;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *nowPlayingClippingView;
 @property (nonatomic, retain) MusicNowPlayingAtmosphericStatusBar *nowPlayingStatusBar;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL wantsAtmosphericStatusBar;
+@property (nonatomic) bool wantsAtmosphericStatusBar;
 
 - (void).cxx_destruct;
 - (void)_attachStatusBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_currentStatusBarFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_currentStatusBarFrame;
 - (void)_restoreStatusBar;
-- (BOOL)_shouldChangeStatusBarViewController;
 - (void)_updateStatusBar;
-- (void)dismissalTransitionDidEnd:(BOOL)arg1;
+- (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)dismissalTransitionWillBegin;
 - (id)nowPlayingClippingView;
 - (id)nowPlayingStatusBar;
-- (void)presentationTransitionDidEnd:(BOOL)arg1;
+- (void)presentationTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionWillBegin;
 - (void)setNowPlayingClippingView:(id)arg1;
 - (void)setNowPlayingStatusBar:(id)arg1;
-- (void)setWantsAtmosphericStatusBar:(BOOL)arg1;
-- (BOOL)shouldRemovePresentersView;
-- (void)statusBar:(id)arg1 styleDidChange:(int)arg2;
-- (BOOL)wantsAtmosphericStatusBar;
+- (void)setWantsAtmosphericStatusBar:(bool)arg1;
+- (bool)shouldRemovePresentersView;
+- (void)statusBar:(id)arg1 styleDidChange:(long long)arg2;
+- (bool)wantsAtmosphericStatusBar;
 
 @end

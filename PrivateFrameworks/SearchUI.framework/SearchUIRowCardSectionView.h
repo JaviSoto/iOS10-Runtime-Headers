@@ -3,16 +3,17 @@
  */
 
 @interface SearchUIRowCardSectionView : SearchUICardSectionView {
-    BOOL  _showsLeftImage;
+    SearchUIImageView * _leftImageView;
 }
 
-@property (nonatomic, readonly) <SearchUIRowCardSection> *section;
-@property (nonatomic) BOOL showsLeftImage;
+@property (nonatomic, retain) SearchUIImageView *leftImageView;
+@property (nonatomic, readonly) SFRowCardSection *section;
 
-- (id)addContainerWithImage:(id)arg1 text:(id)arg2 formatter:(id)arg3 left:(BOOL)arg4;
+- (void).cxx_destruct;
+- (id)addContainerWithImage:(id)arg1 text:(id)arg2 formatter:(id)arg3 left:(bool)arg4;
 - (id)initWithCardSection:(id)arg1 controller:(id)arg2;
-- (float)separatorLeftInset;
-- (void)setShowsLeftImage:(BOOL)arg1;
-- (BOOL)showsLeftImage;
+- (id)leftImageView;
+- (double)separatorLeftInset;
+- (void)setLeftImageView:(id)arg1;
 
 @end

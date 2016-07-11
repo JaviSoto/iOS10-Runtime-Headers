@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDDiscreteCollectionCalculator : NSObject {
+@interface HDDiscreteCollectionCalculator : HDCollectionCalculator {
     struct map<long long, _HDDiscreteStats, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDDiscreteStats> > > { 
         struct __tree<std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, _HDDiscreteStats> > > { 
             struct __tree_node<std::__1::__value_type<long long, _HDDiscreteStats>, void *> {} *__begin_node_; 
@@ -12,7 +12,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::less<long long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _bySource;
@@ -20,24 +20,20 @@
         double avg; 
         double max; 
         double min; 
-        unsigned int count; 
+        unsigned long long count; 
     }  _currentStats;
-    BOOL  _detailBySource;
 }
-
-@property (nonatomic) BOOL detailBySource;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addCurrentValue:(double)arg1 sourceId:(long long)arg2;
-- (void)advanceBucket;
-- (int)dataCount;
+- (void)addValue:(double)arg1 startTime:(double)arg2 endTime:(double)arg3 sourceID:(long long)arg4;
+- (bool)advanceBucket;
+- (long long)dataCount;
 - (id)description;
-- (BOOL)detailBySource;
-- (void)getCurrentBucketStats:(struct { double x1; double x2; double x3; unsigned int x4; }*)arg1;
-- (BOOL)hasData;
-- (id)init;
-- (void)setDetailBySource:(BOOL)arg1;
+- (void)getCurrentBucketStats:(struct { double x1; double x2; double x3; unsigned long long x4; }*)arg1;
+- (bool)hasData;
+- (id)initWithBucketBoundaries:(id)arg1;
+- (id)sourceIDsForCurrentBucket;
 - (id)statsBySource;
 
 @end

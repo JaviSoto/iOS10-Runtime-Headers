@@ -11,5 +11,6 @@
 - (void)addDistributionEventPoint:(PLAccountingDistributionEventPointEntry *)arg1;
 - (void)didCreateChildEnergyEstimate:(PLAccountingEnergyEstimateEventEntry *)arg1 withParentEnergyEstimate:(PLAccountingEnergyEstimateEventEntry *)arg2;
 - (void)didDistributeEnergyEstimate:(PLAccountingEnergyEstimateEventEntry *)arg1;
+- (NSObject<OS_dispatch_queue> *)workQueue;
 
 @end

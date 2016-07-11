@@ -2,66 +2,72 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeInvitation : NSObject <NSSecureCoding> {
+@interface HMDHomeInvitation : NSObject <HMFTimerDelegate, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     id /* block */  _expirationHandler;
     HMDHome * _home;
     HMHomeInvitationData * _invitationData;
-    int  _invitationState;
+    long long  _invitationState;
     id /* block */  _resolutionHandler;
-    NSObject<OS_dispatch_source> * _timer;
-    NSObject<OS_dispatch_queue> * _timerQueue;
+    HMFTimer * _timer;
 }
 
+@property (getter=isAccepted, nonatomic, readonly) bool accepted;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
-@property (getter=isDeclined, nonatomic, readonly) BOOL declined;
-@property (nonatomic, readonly, copy) NSDate *endDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDeclined, nonatomic, readonly) bool declined;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, copy) id /* block */ expirationHandler;
-@property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, retain) HMHomeInvitationData *invitationData;
-@property (nonatomic) int invitationState;
-@property (getter=isPending, nonatomic, readonly) BOOL pending;
+@property (nonatomic) long long invitationState;
+@property (getter=isPending, nonatomic, readonly) bool pending;
 @property (nonatomic, copy) id /* block */ resolutionHandler;
 @property (nonatomic, readonly, copy) NSDate *startDate;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *timer;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *timerQueue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) HMFTimer *timer;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_clearTimer;
 - (void)_configureTimer;
+- (void)_resolve:(bool)arg1;
+- (void)accept;
 - (id)clientQueue;
+- (void)decline;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id /* block */)expirationHandler;
-- (void)expireTimer;
+- (void)expire;
 - (id)home;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1 invitationData:(id)arg2;
 - (id)initWithInvitationData:(id)arg1 forHome:(id)arg2;
 - (id)invitationData;
-- (int)invitationState;
-- (BOOL)isDeclined;
-- (BOOL)isExpired;
-- (BOOL)isPending;
+- (long long)invitationState;
+- (bool)isAccepted;
+- (bool)isDeclined;
+- (bool)isExpired;
+- (bool)isPending;
 - (id /* block */)resolutionHandler;
-- (void)resolveTimer:(BOOL)arg1;
 - (void)setClientQueue:(id)arg1;
+- (void)setEndDate:(id)arg1;
 - (void)setExpirationHandler:(id /* block */)arg1;
 - (void)setHome:(id)arg1;
 - (void)setInvitationData:(id)arg1;
-- (void)setInvitationState:(int)arg1;
+- (void)setInvitationState:(long long)arg1;
 - (void)setResolutionHandler:(id /* block */)arg1;
 - (void)setTimer:(id)arg1;
-- (void)setTimerQueue:(id)arg1;
 - (id)startDate;
 - (id)timer;
-- (id)timerQueue;
-- (void)updateInvitationState:(int)arg1;
-- (void)updateTimer:(unsigned int)arg1 clientQueue:(id)arg2;
+- (void)timerDidFire:(id)arg1;
+- (void)updateInvitationState:(long long)arg1;
+- (void)updateTimer:(unsigned long long)arg1 clientQueue:(id)arg2;
 
 @end

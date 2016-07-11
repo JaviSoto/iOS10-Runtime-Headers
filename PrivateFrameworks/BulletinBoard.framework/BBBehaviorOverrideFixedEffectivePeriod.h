@@ -11,16 +11,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double effectiveInterval;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic, copy) NSDate *startDate;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)containsDate:(id)arg1;
+- (void).cxx_destruct;
+- (bool)containsDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (double)effectiveInterval;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;

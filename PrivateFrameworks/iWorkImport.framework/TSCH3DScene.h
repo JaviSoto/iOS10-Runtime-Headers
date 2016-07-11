@@ -30,7 +30,7 @@
 - (struct ChartScenePropertyAccessor { id x1; })chartProperties;
 - (id)clone;
 - (void)copyPropertiesFromScene:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateForObject:(id)arg1;
@@ -41,7 +41,7 @@
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (id)enumeratorForType:(id)arg1;
 - (id)enumeratorMap;
-- (id)extractObjects:(BOOL)arg1 ofClasses:(id)arg2;
+- (id)extractObjects:(bool)arg1 ofClasses:(id)arg2;
 - (id)extractObjectsNotOfClass:(Class)arg1;
 - (id)extractObjectsNotOfClasses:(id)arg1;
 - (id)extractObjectsOfClass:(Class)arg1;
@@ -60,8 +60,8 @@
 - (id)propertiesForType:(id)arg1;
 - (id)propertiesMap;
 - (id)reallocateObjects;
-- (id)removeObjects:(BOOL)arg1 ofClasses:(id)arg2 addTo:(id)arg3;
-- (id)removeObjects:(BOOL)arg1 ofClasses:(id)arg2 into:(id)arg3;
+- (id)removeObjects:(bool)arg1 ofClasses:(id)arg2 addTo:(id)arg3;
+- (id)removeObjects:(bool)arg1 ofClasses:(id)arg2 into:(id)arg3;
 - (void)removeObjectsNotOfClass:(Class)arg1;
 - (void)removeObjectsOfClass:(Class)arg1;
 - (id)renderCache;
@@ -69,7 +69,7 @@
 - (void)resetEnumerator;
 - (void)resetObjects;
 - (void)resetProperties;
-- (id)returnRemoved:(BOOL)arg1 removeObjectsPassingTest:(id /* block */)arg2;
+- (id)returnRemoved:(bool)arg1 removeObjectsPassingTest:(id /* block */)arg2;
 - (void)setAccessor:(id)arg1;
 - (void)setAccessorFactory:(id)arg1;
 - (void)setCamera:(id)arg1;

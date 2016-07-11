@@ -6,9 +6,11 @@
 @required
 
 - (BWFigVideoCaptureDevice *)captureDevice;
+- (BWFigVideoCaptureStream *)captureStream;
 - (NSDictionary *)colorInfoForOutput:(BWNodeOutput *)arg1;
 - (BWNodeOutput *)detectedFacesOutput;
 - (BWNodeOutput *)stillImageOutput;
 - (BWNodeOutput *)videoCaptureOutput;
+- (void)willStop;
 
 @end

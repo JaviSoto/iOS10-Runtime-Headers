@@ -10,18 +10,18 @@
             struct dispatch_object_s {} *fObj; 
         } fObj; 
     }  _cuPolicyClientQueue;
-    unsigned int  _restrictedState;
+    unsigned long long  _restrictedState;
 }
 
 @property (copy) id /* block */ cellularDataRestrictionDidUpdateNotifier;
-@property (nonatomic, readonly) unsigned int restrictedState;
+@property (nonatomic, readonly) unsigned long long restrictedState;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id /* block */)cellularDataRestrictionDidUpdateNotifier;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)restrictedState;
+- (unsigned long long)restrictedState;
 - (void)setCellularDataRestrictionDidUpdateNotifier:(id /* block */)arg1;
 - (void)setCellularDataRestrictionStateFromPolicies:(void*)arg1;
 

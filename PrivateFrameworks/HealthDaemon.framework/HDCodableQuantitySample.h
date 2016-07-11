@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableQuantitySample : PBCodable <NSCopying> {
+@interface HDCodableQuantitySample : PBCodable <HDDecoding, NSCopying> {
     struct { 
         unsigned int valueInCanonicalUnit : 1; 
         unsigned int valueInOriginalUnit : 1; 
@@ -13,32 +13,37 @@
     double  _valueInOriginalUnit;
 }
 
-@property (nonatomic, readonly) BOOL hasOriginalUnitString;
-@property (nonatomic, readonly) BOOL hasSample;
-@property (nonatomic) BOOL hasValueInCanonicalUnit;
-@property (nonatomic) BOOL hasValueInOriginalUnit;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasOriginalUnitString;
+@property (nonatomic, readonly) bool hasSample;
+@property (nonatomic) bool hasValueInCanonicalUnit;
+@property (nonatomic) bool hasValueInOriginalUnit;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *originalUnitString;
 @property (nonatomic, retain) HDCodableSample *sample;
+@property (readonly) Class superclass;
 @property (nonatomic) double valueInCanonicalUnit;
 @property (nonatomic) double valueInOriginalUnit;
 
 - (void).cxx_destruct;
+- (bool)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOriginalUnitString;
-- (BOOL)hasSample;
-- (BOOL)hasValueInCanonicalUnit;
-- (BOOL)hasValueInOriginalUnit;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOriginalUnitString;
+- (bool)hasSample;
+- (bool)hasValueInCanonicalUnit;
+- (bool)hasValueInOriginalUnit;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)originalUnitString;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sample;
-- (void)setHasValueInCanonicalUnit:(BOOL)arg1;
-- (void)setHasValueInOriginalUnit:(BOOL)arg1;
+- (void)setHasValueInCanonicalUnit:(bool)arg1;
+- (void)setHasValueInOriginalUnit:(bool)arg1;
 - (void)setOriginalUnitString:(id)arg1;
 - (void)setSample:(id)arg1;
 - (void)setValueInCanonicalUnit:(double)arg1;

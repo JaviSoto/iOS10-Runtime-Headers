@@ -3,7 +3,10 @@
  */
 
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying> {
+    unsigned long long  _debugServerLatencyMs;
+    GEOETAServiceResponseSummary * _etaServiceSummary;
     struct { 
+        unsigned int debugServerLatencyMs : 1; 
         unsigned int status : 1; 
     }  _has;
     NSMutableArray * _routes;
@@ -11,34 +14,49 @@
     int  _status;
 }
 
-@property (nonatomic, readonly) BOOL hasSessionState;
-@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) unsigned long long debugServerLatencyMs;
+@property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
+@property (nonatomic) bool hasDebugServerLatencyMs;
+@property (nonatomic, readonly) bool hasEtaServiceSummary;
+@property (nonatomic, readonly) bool hasSessionState;
+@property (nonatomic) bool hasStatus;
 @property (nonatomic, retain) NSMutableArray *routes;
 @property (nonatomic, retain) NSData *sessionState;
 @property (nonatomic) int status;
 
++ (Class)routeType;
+
+- (int)StringAsStatus:(id)arg1;
 - (void)addRoute:(id)arg1;
 - (void)clearRoutes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned long long)debugServerLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSessionState;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)etaServiceSummary;
+- (bool)hasDebugServerLatencyMs;
+- (bool)hasEtaServiceSummary;
+- (bool)hasSessionState;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)routeAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)routeAtIndex:(unsigned long long)arg1;
 - (id)routes;
-- (unsigned int)routesCount;
+- (unsigned long long)routesCount;
 - (id)sessionState;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setDebugServerLatencyMs:(unsigned long long)arg1;
+- (void)setEtaServiceSummary:(id)arg1;
+- (void)setHasDebugServerLatencyMs:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)setSessionState:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

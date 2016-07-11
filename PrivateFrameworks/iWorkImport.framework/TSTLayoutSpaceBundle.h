@@ -23,14 +23,13 @@
 @property (nonatomic, retain) TSTLayoutSpace *space;
 
 - (void)dealloc;
-- (id)description;
-- (BOOL)enumerateFrozenLayoutSpacesUsingBlock:(id /* block */)arg1;
+- (bool)enumerateFrozenLayoutSpacesUsingBlock:(id /* block */)arg1;
 - (void)enumerateLayoutSpacesUsingBlock:(id /* block */)arg1;
-- (BOOL)enumerateRepeatLayoutSpacesUsingBlock:(id /* block */)arg1;
+- (bool)enumerateRepeatLayoutSpacesUsingBlock:(id /* block */)arg1;
 - (id)frozenHeaderColumnsSpace;
 - (id)frozenHeaderCornerSpace;
 - (id)frozenHeaderRowsSpace;
-- (id)getSpaceContainingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)getSpaceContainingCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)initWithLayout:(id)arg1;
 - (void)invalidateCoordinates;
 - (void)invalidateCoordinatesAfterColumn:(unsigned char)arg1;

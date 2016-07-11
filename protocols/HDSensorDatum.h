@@ -6,11 +6,11 @@
 @required
 
 - (NSDate *)endDate;
-- (int)recordID;
 - (NSDate *)startDate;
 
 @optional
 
+- (long long)recordID;
 - (NSUUID *)sourceId;
 
 @end

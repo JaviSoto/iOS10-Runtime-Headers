@@ -4,11 +4,18 @@
 
 @interface SAMPLoadQP : SADomainCommand
 
+@property (nonatomic, copy) NSString *airplayRouteUID;
+@property (nonatomic, copy) NSNumber *startPlaying;
+
 + (id)loadQP;
 + (id)loadQPWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
+- (void)setAirplayRouteUID:(id)arg1;
+- (void)setStartPlaying:(id)arg1;
+- (id)startPlaying;
 
 @end

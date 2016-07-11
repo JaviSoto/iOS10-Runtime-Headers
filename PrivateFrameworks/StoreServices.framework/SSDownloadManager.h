@@ -2,27 +2,32 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSDownloadManager : NSObject {
+@interface SSDownloadManager : NSObject <ASDJobManagerObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSArray * _activeDownloads;
-    BOOL  _activeDownloadsChanged;
+    bool  _activeDownloadsChanged;
     NSObject<OS_dispatch_queue> * _backgroundQueue;
     SSXPCConnection * _connection;
     NSArray * _downloads;
-    BOOL  _downloadsChanged;
-    BOOL  _isUsingNetwork;
+    bool  _downloadsChanged;
+    bool  _isUsingNetwork;
+    ASDJobManager * _jobManager;
     int  _launchNotificationToken;
     SSXPCConnection * _observerConnection;
     NSObject<OS_dispatch_queue> * _observerQueue;
-    struct __CFArray { } * _observers;
+    NSHashTable * _observers;
     SSDownloadManagerOptions * _options;
     NSMutableSet * _removedDownloads;
 }
 
 @property (readonly) NSArray *activeDownloads;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (readonly) NSArray *downloads;
+@property (readonly) unsigned long long hash;
 @property (readonly) SSDownloadManagerOptions *managerOptions;
-@property (getter=isUsingNetwork, readonly) BOOL usingNetwork;
+@property (readonly) Class superclass;
+@property (getter=isUsingNetwork, readonly) bool usingNetwork;
 
 + (id)EBookDownloadKinds;
 + (id)EBookDownloadManager;
@@ -40,36 +45,45 @@
 + (id)softwareDownloadKinds;
 + (id)softwareDownloadManager;
 
+- (void).cxx_destruct;
 - (id)_XPCConnection;
+- (void)_addAppstoredOptions;
+- (void)_checkDownloadsForDiversions:(id)arg1;
 - (void)_connectAfterDaemonLaunch;
 - (void)_connectAsObserver;
 - (id)_copyDownloadKindsUsingNetwork;
 - (id)_copyDownloads;
 - (id)_copyDownloadsForMessage:(long long)arg1 downloadIDs:(id)arg2;
+- (id)_downloadsForJobs:(id)arg1;
+- (id)_filterJobIDsFromDownloads:(inout id*)arg1;
+- (id)_filterJobsFromDownloads:(inout id*)arg1;
 - (void)_finishDownloads:(id)arg1;
 - (void)_handleDownloadKindsUsingNetworkChanged:(id)arg1;
 - (void)_handleDownloadStatesChanged:(id)arg1;
 - (void)_handleDownloadsChanged:(id)arg1;
 - (void)_handleDownloadsRemoved:(id)arg1;
 - (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
-- (void)_handleReply:(id)arg1 forDownloads:(id)arg2 message:(id)arg3 isRetry:(BOOL)arg4 block:(id /* block */)arg5;
+- (void)_handleReply:(id)arg1 forDownloads:(id)arg2 message:(id)arg3 isRetry:(bool)arg4 block:(id /* block */)arg5;
 - (id)_initSSDownloadManager;
 - (void)_insertDownloads:(id)arg1 before:(id)arg2 after:(id)arg3 completionBlock:(id /* block */)arg4;
+- (id)_jobManager;
 - (void)_loadDownloadKindsUsingNetwork;
 - (void)_moveDownload:(id)arg1 before:(id)arg2 after:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)_newOptionsDictionary;
 - (void)_pauseDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
-- (void)_pauseDownloads:(id)arg1 forced:(BOOL)arg2 completionBlock:(id /* block */)arg3;
+- (void)_pauseDownloads:(id)arg1 forced:(bool)arg2 completionBlock:(id /* block */)arg3;
 - (void)_reloadIsUsingNetworkWithDownloadKinds:(id)arg1;
 - (void)_sendDownloadsChanged:(id)arg1;
 - (void)_sendMessage:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_sendMessageToObservers:(SEL)arg1;
 - (void)_sendObserverConnection;
+- (void)_startJobManager;
+- (bool)_supportsSoftwareKind;
 - (void)_willFinishDownloads:(id)arg1;
 - (id)activeDownloads;
 - (void)addDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)addObserver:(id)arg1;
-- (BOOL)canCancelDownload:(id)arg1;
+- (bool)canCancelDownload:(id)arg1;
 - (void)cancelAllDownloadsWithCompletionBlock:(id /* block */)arg1;
 - (void)cancelDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
@@ -80,13 +94,17 @@
 - (id)initWithManagerOptions:(id)arg1;
 - (void)insertDownloads:(id)arg1 afterDownload:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)insertDownloads:(id)arg1 beforeDownload:(id)arg2 completionBlock:(id /* block */)arg3;
-- (BOOL)isUsingNetwork;
+- (bool)isUsingNetwork;
+- (void)jobManager:(id)arg1 changedJobs:(id)arg2;
+- (void)jobManager:(id)arg1 updatedProgressOfJobs:(id)arg2;
+- (void)jobManager:(id)arg1 updatedStateOfJobs:(id)arg2;
 - (id)managerOptions;
 - (void)moveDownload:(id)arg1 afterDownload:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)moveDownload:(id)arg1 beforeDownload:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)pauseDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)reloadFromServer;
 - (void)removeObserver:(id)arg1;
+- (void)restartDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)resumeDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setDownloads:(id)arg1 forKinds:(id)arg2 completionBlock:(id /* block */)arg3;

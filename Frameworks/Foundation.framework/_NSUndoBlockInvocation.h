@@ -7,7 +7,6 @@
 }
 
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithTarget:(id)arg1 handler:(id /* block */)arg2;
 - (void)invoke;
 

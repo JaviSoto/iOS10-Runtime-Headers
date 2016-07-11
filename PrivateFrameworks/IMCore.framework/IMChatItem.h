@@ -6,16 +6,18 @@
     IMItem * _item;
 }
 
-@property (nonatomic, readonly) BOOL canDelete;
+@property (nonatomic, readonly, retain) NSString *balloonBundleID;
+@property (nonatomic, readonly) bool canDelete;
 
+- (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1;
 - (id)_item;
 - (void)_setTimeAdded:(id)arg1;
 - (id)_timeAdded;
 - (id)_timeStale;
-- (BOOL)canDelete;
+- (id)balloonBundleID;
+- (bool)canDelete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 
 @end

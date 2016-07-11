@@ -3,33 +3,52 @@
  */
 
 @interface MPAVRoutingTableViewCell : UITableViewCell {
-    BOOL  _debugCell;
+    bool  _debugCell;
     <MPAVRoutingTableViewCellDelegate> * _delegate;
+    UIImageView * _iconImageView;
+    unsigned long long  _iconStyle;
     UILabel * _mirroringLabel;
     UIView * _mirroringSeparatorView;
+    unsigned long long  _mirroringStyle;
     UISwitch * _mirroringSwitch;
-    BOOL  _mirroringSwitchVisible;
+    bool  _mirroringSwitchVisible;
     MPAVRoute * _route;
+    UILabel * _routeNameLabel;
+    UILabel * _subtitleTextLabel;
 }
 
-@property (getter=isDebugCell, nonatomic) BOOL debugCell;
+@property (getter=isDebugCell, nonatomic) bool debugCell;
 @property (nonatomic) <MPAVRoutingTableViewCellDelegate> *delegate;
-@property (nonatomic) BOOL mirroringSwitchVisible;
+@property (nonatomic) unsigned long long iconStyle;
+@property (nonatomic) unsigned long long mirroringStyle;
+@property (nonatomic) bool mirroringSwitchVisible;
 @property (nonatomic, retain) MPAVRoute *route;
 
 - (void).cxx_destruct;
+- (void)_configureDetailLabel:(id)arg1;
 - (void)_configureLabel:(id)arg1;
+- (id)_currentDeviceRoutingIconImageName;
+- (id)_detailTextForRoute:(id)arg1;
+- (id)_iconImageForRoute:(id)arg1;
 - (void)_mirroringSwitchValueDidChange:(id)arg1;
-- (BOOL)_shouldShowMirroringAsEnabledForRoute:(id)arg1;
+- (id)_routingImageStyleName;
+- (bool)_shouldShowMirroringAsEnabledForRoute:(id)arg1;
+- (bool)_shouldShowSeparateBatteryPercentagesForBatteryLevel:(id)arg1;
 - (id)delegate;
-- (BOOL)isDebugCell;
+- (unsigned long long)iconStyle;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isDebugCell;
 - (void)layoutSubviews;
-- (BOOL)mirroringSwitchVisible;
+- (unsigned long long)mirroringStyle;
+- (bool)mirroringSwitchVisible;
 - (id)route;
-- (void)setDebugCell:(BOOL)arg1;
+- (void)setDebugCell:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMirroringSwitchVisible:(BOOL)arg1;
-- (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setIconStyle:(unsigned long long)arg1;
+- (void)setMirroringStyle:(unsigned long long)arg1;
+- (void)setMirroringSwitchVisible:(bool)arg1;
+- (void)setMirroringSwitchVisible:(bool)arg1 animated:(bool)arg2;
 - (void)setRoute:(id)arg1;
+- (void)tintColorDidChange;
 
 @end

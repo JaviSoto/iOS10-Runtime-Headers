@@ -12,6 +12,7 @@
     PKImage * _logoImage;
     PKImage * _networkLogoImage;
     PKImage * _stripImage;
+    PKImage * _thumbnailImage;
 }
 
 @property (nonatomic, retain) PKImage *backgroundImage;
@@ -23,25 +24,26 @@
 @property (nonatomic, retain) PKImage *logoImage;
 @property (nonatomic, retain) PKImage *networkLogoImage;
 @property (nonatomic, retain) PKImage *stripImage;
+@property (nonatomic, retain) PKImage *thumbnailImage;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
-+ (int)imageSetType;
-+ (BOOL)shouldCache;
-+ (BOOL)supportsSecureCoding;
++ (long long)imageSetType;
++ (bool)shouldCache;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)backgroundImage;
 - (id)bankLogoImage;
 - (id)cardBackgroundCombinedImage;
 - (id)cardBackgroundImage;
 - (id)cobrandLogoImage;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)footerImage;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)logoImage;
 - (id)networkLogoImage;
 - (void)preheatImages;
@@ -54,11 +56,13 @@
 - (void)setLogoImage:(id)arg1;
 - (void)setNetworkLogoImage:(id)arg1;
 - (void)setStripImage:(id)arg1;
+- (void)setThumbnailImage:(id)arg1;
 - (id)stripImage;
+- (id)thumbnailImage;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
 - (void)loadPDFArtFromBundle:(id)arg1;
-- (void)resizeWithScreenSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)resizeWithScreenSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

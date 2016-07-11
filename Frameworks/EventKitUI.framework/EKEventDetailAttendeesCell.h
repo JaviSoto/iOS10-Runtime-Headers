@@ -3,14 +3,23 @@
  */
 
 @interface EKEventDetailAttendeesCell : EKEventDetailCell {
-    EKEventDetailAttendeesListView * _attendeesListView;
+    UIView<EKEventDetailAttendeesList> * _attendeesListView;
+    bool  _useFaces;
+    UIViewController * _viewController;
 }
+
+@property bool useFaces;
+@property UIViewController *viewController;
 
 - (void).cxx_destruct;
 - (id)_attendeesListView;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2;
+- (void)layoutForWidth:(double)arg1 position:(int)arg2;
 - (void)setAttendees:(id)arg1;
-- (BOOL)update;
+- (void)setUseFaces:(bool)arg1;
+- (void)setViewController:(id)arg1;
+- (bool)update;
+- (bool)useFaces;
+- (id)viewController;
 
 @end

@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) <TUCallCapabilitiesXPCServer> *server;
 @property (nonatomic, retain) TUCallCapabilitiesState *state;
@@ -23,10 +23,12 @@
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
+- (void)_retrieveStateForInitialUpdate:(bool)arg1;
 - (void)_updateState:(id)arg1;
 - (void)cancelPinRequestFromPrimaryDevice;
 - (void)capabilityStateUpdated:(id)arg1;
 - (void)dealloc;
+- (void)endEmergencyCallbackMode;
 - (id)init;
 - (id)initWithServer:(id)arg1;
 - (void)invalidateAndRefreshThumperCallingProvisioningURL;
@@ -34,20 +36,20 @@
 - (void)invalidateXPCConnection;
 - (id)queue;
 - (void)requestPinFromPrimaryDevice;
-- (void)retrieveInitialState;
 - (id)server;
 - (id)serverWithErrorHandler:(id /* block */)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRelayCallingEnabled:(BOOL)arg1;
-- (void)setRelayCallingEnabled:(BOOL)arg1 forDeviceWithID:(id)arg2;
+- (void)setRelayCallingEnabled:(bool)arg1;
+- (void)setRelayCallingEnabled:(bool)arg1 forDeviceWithID:(id)arg2;
 - (void)setServer:(id)arg1;
 - (void)setState:(id)arg1;
 - (void)setStateSemaphore:(id)arg1;
-- (void)setThumperCallingAllowed:(BOOL)arg1 onSecondaryDeviceWithID:(id)arg2;
-- (void)setThumperCallingEnabled:(BOOL)arg1;
+- (void)setThumperCallingAllowed:(bool)arg1 onSecondaryDeviceWithID:(id)arg2;
+- (void)setThumperCallingAllowedOnDefaultPairedDevice:(bool)arg1;
+- (void)setThumperCallingEnabled:(bool)arg1;
 - (void)setToken:(int)arg1;
-- (void)setVoLTECallingEnabled:(BOOL)arg1;
-- (void)setWiFiCallingEnabled:(BOOL)arg1;
+- (void)setVoLTECallingEnabled:(bool)arg1;
+- (void)setWiFiCallingEnabled:(bool)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)state;
 - (id)stateSemaphore;

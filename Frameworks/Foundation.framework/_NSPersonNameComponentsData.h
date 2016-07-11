@@ -20,14 +20,13 @@
 @property (copy) NSString *nickname;
 @property (copy) NSPersonNameComponents *phoneticRepresentation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_freeIvars;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
-- (void)finalize;
 - (id)givenName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

@@ -2,8 +2,51 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUUIImageViewController : PLUIImageViewController
+@interface PUUIImageViewController : PLUIImageViewController <UIGestureRecognizerDelegate> {
+    NSURL * __assetURL;
+    int  __imageManagerVideoRequestID;
+    PUBrowsingIrisPlayer * __irisPlayer;
+    PHLivePhotoView * __livePhotoView;
+    NSString * __videoAssetURL;
+    PHAsset * _asset;
+    bool  _isIris;
+    bool  _wantsLivePhotoResult;
+    bool  _wantsVideoURLResult;
+}
 
-- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2;
+@property (setter=_setAssetURL:, nonatomic, retain) NSURL *_assetURL;
+@property (setter=_setImageManagerVideoRequestID:) int _imageManagerVideoRequestID;
+@property (nonatomic, retain) PUBrowsingIrisPlayer *_irisPlayer;
+@property (setter=_setLivePhotoView:, nonatomic, retain) PHLivePhotoView *_livePhotoView;
+@property (setter=_setVideoAssetURL:, nonatomic, retain) NSString *_videoAssetURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_assetURL;
+- (void)_fetchLivePhotoWithCompletion:(id /* block */)arg1;
+- (void)_fetchVideoWithCompletion:(id /* block */)arg1;
+- (void)_handleLivePhotoRequestResult:(id)arg1 info:(id)arg2;
+- (int)_imageManagerVideoRequestID;
+- (id)_irisPlayer;
+- (id)_livePhotoView;
+- (void)_loadLivePhoto;
+- (void)_setAssetURL:(id)arg1;
+- (void)_setImageManagerVideoRequestID:(int)arg1;
+- (void)_setLivePhotoView:(id)arg1;
+- (void)_setVideoAssetURL:(id)arg1;
+- (id)_videoAssetURL;
+- (void)cropOverlayWasOKed:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2 expectsLivePhoto:(bool)arg3;
+- (id)irisPlayerView:(id)arg1 delegateForGestureRecognizer:(id)arg2;
+- (id)irisPlayerViewViewHostingGestureRecognizers:(id)arg1;
+- (void)loadView;
+- (void)setIrisPlayer:(id)arg1;
+- (void)set_irisPlayer:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

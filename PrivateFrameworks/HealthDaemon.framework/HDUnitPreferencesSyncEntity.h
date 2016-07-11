@@ -4,10 +4,11 @@
 
 @interface HDUnitPreferencesSyncEntity : HDKeyValueSyncEntity
 
-+ (int)category;
-+ (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
++ (long long)category;
++ (void)didReceiveKeysAndValuesWithProfile:(id)arg1;
 + (int)nanoSyncObjectType;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (id)syncEntityDependencies;
-+ (int)syncEntityType;
++ (long long)syncEntityType;
 
 @end

@@ -11,5 +11,6 @@
 - (void)restoreFileFromRemoteMetadata:(NSDictionary *)arg1;
 - (void)updateFileFromURL:(NSURL *)arg1;
 - (void)updateUploadedFileFromRemoteMetadata:(NSDictionary *)arg1;
+- (void)updateUploadedFileToDropBox;
 
 @end

@@ -6,44 +6,51 @@
     NSArray * _attachments;
     NSDate * _date;
     NSString * _dateString;
-    BOOL  _isGroupMessage;
-    unsigned int  _messageDirection;
+    bool  _isGroupMessage;
+    unsigned long long  _messageDirection;
     NSString * _messageText;
-    unsigned int  _messageType;
+    unsigned long long  _messageType;
     NSData * _mimeData;
     NSMutableArray * _mimeParts;
     NSArray * _recipients;
-    NSString * _sender;
+    WLMessageParty * _sender;
     WLMessageSMILContext * _smilContext;
     NSString * _subject;
     WLSourceDeviceRecordSummary * _summary;
+    NSString * _threadID;
 }
 
 @property (nonatomic, readonly) NSArray *attachments;
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) NSString *dateString;
-@property (nonatomic, readonly) BOOL isGroupMessage;
-@property (nonatomic, readonly) unsigned int messageDirection;
+@property (nonatomic, readonly) bool isGroupMessage;
+@property (nonatomic, readonly) unsigned long long messageDirection;
 @property (nonatomic, readonly) NSString *messageText;
-@property (nonatomic, readonly) unsigned int messageType;
+@property (nonatomic, readonly) unsigned long long messageType;
 @property (nonatomic, readonly) NSData *mimeData;
 @property (nonatomic, readonly) NSArray *recipients;
-@property (nonatomic, readonly) NSString *sender;
+@property (nonatomic, readonly) WLMessageParty *sender;
 @property (nonatomic, readonly) NSString *subject;
+@property (nonatomic, readonly) NSString *threadID;
 
 + (id)_dateFormatterForMimeDateStrings;
 + (id)_fileNameForPart:(id)arg1 smilContext:(id)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })_populateMimeHeaders:(id)arg1 recipients:(id)arg2 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 ofString:(id)arg4;
-+ (id)messageDateFromMimeData:(id)arg1;
++ (struct _NSRange { unsigned long long x1; unsigned long long x2; })_populateMimeHeaders:(id)arg1 recipients:(id)arg2 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 ofString:(id)arg4 addCountryCodeToParties:(bool)arg5;
++ (bool)_shouldIgnoreMessageThreadID;
++ (void)addRecipients:(id)arg1 toMimeHeaders:(id)arg2;
++ (id)dateFromMimeHeaders:(id)arg1;
++ (id)mimeHeadersFromMimeData:(id)arg1;
++ (id)recipientsFromMimeHeaders:(id)arg1;
++ (id)senderFromMimeHeaders:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)attachments;
 - (id)date;
 - (id)dateString;
-- (BOOL)isGroupMessage;
-- (unsigned int)messageDirection;
+- (bool)isGroupMessage;
+- (unsigned long long)messageDirection;
 - (id)messageText;
-- (unsigned int)messageType;
+- (unsigned long long)messageType;
 - (id)mimeData;
 - (void)parseMIMEData:(id)arg1;
 - (void)progressiveMimeParser:(id)arg1 beganDataForMimePart:(id)arg2;
@@ -55,5 +62,6 @@
 - (void)setSummary:(id)arg1;
 - (id)subject;
 - (id)summary;
+- (id)threadID;
 
 @end

@@ -9,7 +9,7 @@
     NSString * _inputString;
     NSString * _inputUnit;
     NSNumber * _inputValue;
-    BOOL  _isCurrency;
+    bool  _isCurrency;
     NSString * _localizedInputValueAndUnit;
     NSString * _localizedOutputUnit;
     NSString * _localizedOutputValue;
@@ -18,28 +18,28 @@
     NSNumber * _outputValue;
 }
 
-@property (retain) NSArray *additionalResults;
-@property (retain) NSString *conversionType;
+@property (nonatomic, retain) NSArray *additionalResults;
+@property (nonatomic, retain) NSString *conversionType;
 @property float currencyUpdateTimeOut;
-@property (retain) NSString *inputString;
-@property (retain) NSString *inputUnit;
-@property (retain) NSNumber *inputValue;
-@property (readonly) BOOL isCurrency;
-@property (retain) NSString *localizedInputValueAndUnit;
-@property (retain) NSString *localizedOutputUnit;
-@property (retain) NSString *localizedOutputValue;
-@property (retain) NSString *localizedOutputValueAndUnit;
-@property (retain) NSString *outputUnit;
-@property (retain) NSNumber *outputValue;
+@property (nonatomic, retain) NSString *inputString;
+@property (nonatomic, retain) NSString *inputUnit;
+@property (nonatomic, retain) NSNumber *inputValue;
+@property (readonly) bool isCurrency;
+@property (nonatomic, retain) NSString *localizedInputValueAndUnit;
+@property (nonatomic, retain) NSString *localizedOutputUnit;
+@property (nonatomic, retain) NSString *localizedOutputValue;
+@property (nonatomic, retain) NSString *localizedOutputValueAndUnit;
+@property (nonatomic, retain) NSString *outputUnit;
+@property (nonatomic, retain) NSNumber *outputValue;
 
 + (id)currencyCacheLastRefreshDate;
-+ (BOOL)refreshCurrencyCache;
++ (bool)refreshCurrencyCache;
 
 - (double)_doubleWithoutUnrelevantDecimalsForNumber:(id)arg1;
 - (id)_localizedPluralizedStringsforNumber:(id)arg1 unit:(id)arg2;
 - (id)_normalizedUnitNamesForName:(id)arg1;
 - (id)_operateConversionForOutputUnit:(id)arg1;
-- (BOOL)_parseInputQuery;
+- (bool)_parseInputQuery;
 - (void)_performUnitPluralization;
 - (void)_standardizeInputAndOutputUnits;
 - (id)_unitInfoForNormalizedName:(id)arg1;
@@ -53,7 +53,7 @@
 - (id)inputString;
 - (id)inputUnit;
 - (id)inputValue;
-- (BOOL)isCurrency;
+- (bool)isCurrency;
 - (id)localizedInputValueAndUnit;
 - (id)localizedOutputUnit;
 - (id)localizedOutputValue;

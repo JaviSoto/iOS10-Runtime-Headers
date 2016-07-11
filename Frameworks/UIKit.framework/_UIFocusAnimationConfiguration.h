@@ -3,44 +3,60 @@
  */
 
 @interface _UIFocusAnimationConfiguration : NSObject <NSCopying> {
-    unsigned int  _animationOptions;
-    double  _baseDuration;
-    double  _delay;
-    float  _durationScaleFactorLowerBound;
-    float  _durationScaleFactorUpperBound;
+    unsigned long long  _animationOptions;
+    double  _focusingBaseDuration;
+    double  _focusingDelay;
+    double  _focusingDurationScaleFactorLowerBound;
+    double  _focusingDurationScaleFactorUpperBound;
     double  _minimumFocusDuration;
-    float  _normalizedDurationScaleFactor;
+    double  _unfocusingBackgroundFadeDurationPercentage;
+    double  _unfocusingBaseDuration;
+    double  _unfocusingDurationScaleFactorLowerBound;
+    double  _unfocusingDurationScaleFactorUpperBound;
+    double  _unfocusingRepositionBaseDuration;
 }
 
-@property (nonatomic) unsigned int animationOptions;
-@property (nonatomic) double baseDuration;
-@property (nonatomic) double delay;
-@property (nonatomic, readonly) double duration;
-@property (nonatomic, readonly) float durationScaleFactor;
-@property (nonatomic) float durationScaleFactorLowerBound;
-@property (nonatomic) float durationScaleFactorUpperBound;
+@property (nonatomic) unsigned long long animationOptions;
+@property (nonatomic) double focusingBaseDuration;
+@property (nonatomic) double focusingDelay;
+@property (nonatomic) double focusingDurationScaleFactorLowerBound;
+@property (nonatomic) double focusingDurationScaleFactorUpperBound;
 @property (nonatomic) double minimumFocusDuration;
-@property (nonatomic) float normalizedDurationScaleFactor;
+@property (nonatomic) double unfocusingBackgroundFadeDurationPercentage;
+@property (nonatomic) double unfocusingBaseDuration;
+@property (nonatomic) double unfocusingDurationScaleFactorLowerBound;
+@property (nonatomic) double unfocusingDurationScaleFactorUpperBound;
+@property (nonatomic) double unfocusingRepositionBaseDuration;
 
-+ (id)configuration;
++ (id)configurationWithStyle:(long long)arg1;
 
-- (unsigned int)animationOptions;
-- (double)baseDuration;
+- (double)_defaultVelocityBasedDurationScaleFactorForAnimationInContext:(id)arg1;
+- (double)_focusingVelocityBasedDurationScaleFactorForAnimationInContext:(id)arg1;
+- (double)_unfocusingRepositionVelocityBasedDurationScaleFactorForAnimationInContext:(id)arg1;
+- (double)_unfocusingVelocityBasedDurationScaleFactorForAnimationInContext:(id)arg1;
+- (unsigned long long)animationOptions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (double)delay;
-- (double)duration;
-- (float)durationScaleFactor;
-- (float)durationScaleFactorLowerBound;
-- (float)durationScaleFactorUpperBound;
+- (double)focusingBaseDuration;
+- (double)focusingDelay;
+- (double)focusingDurationScaleFactorLowerBound;
+- (double)focusingDurationScaleFactorUpperBound;
 - (id)init;
 - (double)minimumFocusDuration;
-- (float)normalizedDurationScaleFactor;
-- (void)setAnimationOptions:(unsigned int)arg1;
-- (void)setBaseDuration:(double)arg1;
-- (void)setDelay:(double)arg1;
-- (void)setDurationScaleFactorLowerBound:(float)arg1;
-- (void)setDurationScaleFactorUpperBound:(float)arg1;
+- (void)setAnimationOptions:(unsigned long long)arg1;
+- (void)setFocusingBaseDuration:(double)arg1;
+- (void)setFocusingDelay:(double)arg1;
+- (void)setFocusingDurationScaleFactorLowerBound:(double)arg1;
+- (void)setFocusingDurationScaleFactorUpperBound:(double)arg1;
 - (void)setMinimumFocusDuration:(double)arg1;
-- (void)setNormalizedDurationScaleFactor:(float)arg1;
+- (void)setUnfocusingBackgroundFadeDurationPercentage:(double)arg1;
+- (void)setUnfocusingBaseDuration:(double)arg1;
+- (void)setUnfocusingDurationScaleFactorLowerBound:(double)arg1;
+- (void)setUnfocusingDurationScaleFactorUpperBound:(double)arg1;
+- (void)setUnfocusingRepositionBaseDuration:(double)arg1;
+- (double)unfocusingBackgroundFadeDurationPercentage;
+- (double)unfocusingBaseDuration;
+- (double)unfocusingDurationScaleFactorLowerBound;
+- (double)unfocusingDurationScaleFactorUpperBound;
+- (double)unfocusingRepositionBaseDuration;
 
 @end

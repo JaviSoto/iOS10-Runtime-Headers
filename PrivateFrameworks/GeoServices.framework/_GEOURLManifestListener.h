@@ -10,7 +10,7 @@
 
 + (id)sharedListener;
 
-- (void)_finish:(BOOL)arg1;
+- (void)_finish:(bool)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)waitForManifestWithHandler:(id /* block */)arg1;

@@ -8,7 +8,7 @@
 
 @property unsigned long long identifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)identifier;

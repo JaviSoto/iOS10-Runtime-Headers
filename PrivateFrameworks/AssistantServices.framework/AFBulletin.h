@@ -3,40 +3,44 @@
  */
 
 @interface AFBulletin : NSObject <NSSecureCoding> {
-    BOOL  _allDay;
+    bool  _allDay;
     NSString * _bulletinID;
     NSDate * _date;
     NSString * _displayName;
     NSDate * _endDate;
+    NSArray * _intentIDs;
     NSString * _message;
     NSString * _modalAlertContentMessage;
-    BOOL  _read;
+    NSString * _publisherBulletinID;
+    bool  _read;
     NSDate * _recencyDate;
     NSString * _recordID;
     NSString * _sectionID;
-    int  _sectionSubtype;
+    long long  _sectionSubtype;
     NSString * _subtitle;
     NSString * _timeZone;
     NSString * _title;
 }
 
-@property (getter=isAllDay, nonatomic, readonly) BOOL allDay;
+@property (getter=isAllDay, nonatomic, readonly) bool allDay;
 @property (nonatomic, readonly, copy) NSString *bulletinID;
 @property (nonatomic, readonly, copy) NSDate *date;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly, copy) NSDate *endDate;
+@property (nonatomic, readonly, copy) NSArray *intentIDs;
 @property (nonatomic, readonly, copy) NSString *message;
 @property (nonatomic, readonly, copy) NSString *modalAlertContentMessage;
-@property (getter=isRead, nonatomic) BOOL read;
+@property (nonatomic, readonly, copy) NSString *publisherBulletinID;
+@property (getter=isRead, nonatomic) bool read;
 @property (nonatomic, readonly, copy) NSDate *recencyDate;
 @property (nonatomic, readonly, copy) NSString *recordID;
 @property (nonatomic, readonly, copy) NSString *sectionID;
-@property (nonatomic, readonly) int sectionSubtype;
+@property (nonatomic, readonly) long long sectionSubtype;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (nonatomic, readonly, copy) NSString *timeZone;
 @property (nonatomic, readonly, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bulletinID;
@@ -45,17 +49,19 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAllDay;
-- (BOOL)isRead;
+- (id)intentIDs;
+- (bool)isAllDay;
+- (bool)isRead;
 - (id)message;
 - (id)modalAlertContentMessage;
+- (id)publisherBulletinID;
 - (id)recencyDate;
 - (id)recordID;
 - (id)sectionID;
-- (int)sectionSubtype;
+- (long long)sectionSubtype;
 - (void)setBulletin:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setRead:(BOOL)arg1;
+- (void)setRead:(bool)arg1;
 - (id)subtitle;
 - (id)timeZone;
 - (id)title;

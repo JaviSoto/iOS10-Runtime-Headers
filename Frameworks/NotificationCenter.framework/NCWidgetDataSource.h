@@ -7,20 +7,23 @@
     NSString * _dataSourceIdentifier;
 }
 
+@property (getter=_concreteDataSource, setter=_setConcreteDataSource:, nonatomic, retain) _NCConcreteDataSource *concreteDataSource;
 @property (nonatomic, readonly) NSString *dataSourceIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *parentDataSourceIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *widgetIdentifiers;
 
+- (void).cxx_destruct;
+- (id)_concreteDataSource;
+- (void)_setConcreteDataSource:(id)arg1;
 - (void)addWidgetObserver:(id)arg1 completion:(id /* block */)arg2;
 - (id)dataSourceIdentifier;
-- (void)dealloc;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)parentDataSourceIdentifier;
 - (void)removeDatumWithIdentifier:(id)arg1;
 - (void)removeWidgetObserver:(id)arg1 completion:(id /* block */)arg2;

@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVoltaireDirectionsProvider : GEODirectionsProvider <PBRequesterDelegate> {
-    BOOL  _cancelled;
+@interface GEOVoltaireDirectionsProvider : GEODirectionsProvider <GEOPBSessionRequesterDelegate> {
+    bool  _cancelled;
     GEORequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEORequester *requester;
 @property (readonly) Class superclass;
 

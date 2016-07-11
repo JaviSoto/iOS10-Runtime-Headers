@@ -11,13 +11,17 @@
 @property (nonatomic, readonly, copy) NSString *contactIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+
++ (bool)supportsSecureCoding;
 
 - (id)contact;
 - (id)contactIdentifier;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1;
 

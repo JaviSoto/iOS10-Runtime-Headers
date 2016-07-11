@@ -4,24 +4,26 @@
 
 @interface CKTranscriptMessageCell : CKTranscriptCell {
     UIButton * _failureButton;
-    BOOL  _wantsContactImageLayout;
+    bool  _wantsContactImageLayout;
 }
 
-@property (nonatomic) BOOL failed;
+@property (nonatomic) bool failed;
 @property (nonatomic, retain) UIButton *failureButton;
-@property (nonatomic) BOOL wantsContactImageLayout;
+@property (nonatomic, readonly) bool failureButtonAdjustsContentAlignmentRect;
+@property (nonatomic) bool wantsContactImageLayout;
 
-+ (float)failureButtonWidthPlusSpacing;
++ (double)failureButtonWidthPlusSpacing;
 
+- (void).cxx_destruct;
 - (id)contactImageView;
-- (void)dealloc;
 - (id)description;
-- (BOOL)failed;
+- (bool)failed;
 - (id)failureButton;
+- (bool)failureButtonAdjustsContentAlignmentRect;
 - (void)layoutSubviewsForContents;
-- (void)setFailed:(BOOL)arg1;
+- (void)setFailed:(bool)arg1;
 - (void)setFailureButton:(id)arg1;
-- (void)setWantsContactImageLayout:(BOOL)arg1;
-- (BOOL)wantsContactImageLayout;
+- (void)setWantsContactImageLayout:(bool)arg1;
+- (bool)wantsContactImageLayout;
 
 @end

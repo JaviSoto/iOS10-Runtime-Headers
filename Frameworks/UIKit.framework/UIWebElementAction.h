@@ -14,9 +14,9 @@
 
 + (id)customElementActionWithTitle:(id)arg1 actionHandler:(id /* block */)arg2;
 + (id)standardElementActionWithType:(int)arg1;
-+ (id)standardElementActionWithType:(int)arg1 customTitle:(id)arg2;
++ (id)standardElementActionWithType:(int)arg1 customTitle:(id)arg2 context:(id)arg3;
 
-- (void)_runActionWithElement:(id)arg1 targetURL:(id)arg2 documentView:(id)arg3 interactionLocation:(struct CGPoint { float x1; float x2; })arg4;
+- (void)_runActionWithElement:(id)arg1 targetURL:(id)arg2 documentView:(id)arg3 interactionLocation:(struct CGPoint { double x1; double x2; })arg4;
 - (id)_title;
 - (void)dealloc;
 - (id /* block */)dismissalHandler;

@@ -7,10 +7,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *label;
 @property (readonly) Class superclass;
 
+- (id)commandBuffer;
 - (id)device;
 - (void)endEncoding;
 - (unsigned long long)globalTraceObjectID;

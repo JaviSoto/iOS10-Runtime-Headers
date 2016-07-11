@@ -6,13 +6,12 @@
     struct _NSZone { } * zoneForInstance;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (id)autorelease;
 - (void)dealloc;
-- (void)finalize;
 - (void)getValue:(void*)arg1;
 - (id)init;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
@@ -20,6 +19,6 @@
 - (const char *)objCType;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

@@ -7,16 +7,16 @@
     NSString * _method;
     NSString * _sessionConfigurationIdentifier;
     NSURL * _url;
-    unsigned int  _urlSessionTaskIdentifier;
+    unsigned long long  _urlSessionTaskIdentifier;
 }
 
 @property (nonatomic, retain) NSDictionary *headerDict;
 @property (nonatomic, retain) NSString *method;
 @property (nonatomic, retain) NSString *sessionConfigurationIdentifier;
 @property (nonatomic, retain) NSURL *url;
-@property (nonatomic) unsigned int urlSessionTaskIdentifier;
+@property (nonatomic) unsigned long long urlSessionTaskIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -28,8 +28,8 @@
 - (void)setMethod:(id)arg1;
 - (void)setSessionConfigurationIdentifier:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (void)setUrlSessionTaskIdentifier:(unsigned int)arg1;
+- (void)setUrlSessionTaskIdentifier:(unsigned long long)arg1;
 - (id)url;
-- (unsigned int)urlSessionTaskIdentifier;
+- (unsigned long long)urlSessionTaskIdentifier;
 
 @end

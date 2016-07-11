@@ -6,17 +6,23 @@
 @required
 
 - (double)aspectRatio;
+- (bool)canPlayPhotoIris;
 - (NSDate *)creationDate;
 - (double)duration;
-- (unsigned int)fullsizeDataFormat;
-- (unsigned int)isContentEqualTo:(id <PUDisplayAsset>)arg1;
-- (BOOL)isFavorite;
-- (BOOL)isTemporaryPlaceholder;
+- (unsigned long long)fullsizeDataFormat;
+- (bool)hasPhotoColorAdjustments;
+- (unsigned long long)isContentEqualTo:(id <PUDisplayAsset>)arg1;
+- (bool)isFavorite;
+- (bool)isPhotoIrisPlaceholder;
+- (bool)isTemporaryPlaceholder;
 - (NSString *)localizedGeoDescription;
-- (unsigned int)mediaType;
+- (CLLocation *)location;
+- (unsigned long long)mediaType;
 - (NSDate *)modificationDate;
-- (unsigned int)pixelHeight;
-- (unsigned int)pixelWidth;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
+- (unsigned long long)pixelHeight;
+- (unsigned long long)pixelWidth;
 - (NSString *)uuid;
 
 @end

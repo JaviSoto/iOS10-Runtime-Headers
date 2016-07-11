@@ -4,6 +4,7 @@
 
 @interface BRCURLToItemLookup : NSObject <NSSecureCoding> {
     BRCRelativePath * __relpath;
+    bool  _allowAppLibraryRoot;
     unsigned long long  _byIDDiffs;
     BRCLocalItem * _byIDLocalItem;
     BRCServerItem * _byIDServerItem;
@@ -27,6 +28,7 @@
         unsigned int value; 
     }  _hasFetched;
     BRCItemID * _parentItemID;
+    NSString * _parentPath;
     BRCRelativePath * _parentRelpath;
     BRCLocalItem * _reservedLocalItem;
     BRCServerItem * _reservedServerItem;
@@ -37,7 +39,6 @@
 @property (nonatomic, readonly) unsigned long long byIDDiffs;
 @property (nonatomic, readonly) BRCLocalItem *byIDLocalItem;
 @property (nonatomic, readonly) struct { id x1; id x2; unsigned long long x3; } byIDMatch;
-@property (nonatomic, readonly) BRCRelativePath *byIDRelpath;
 @property (nonatomic, readonly) BRCServerItem *byIDServerItem;
 @property (nonatomic, readonly) unsigned long long byPathDiffs;
 @property (nonatomic, readonly) BRCLocalItem *byPathLocalItem;
@@ -52,35 +53,32 @@
 @property (nonatomic, readonly) BRCServerItem *faultedServerItem;
 @property (nonatomic, readonly) NSString *filename;
 @property (nonatomic, readonly) BRCItemID *parentItemID;
+@property (nonatomic, readonly) NSString *parentPath;
 @property (nonatomic, readonly) BRCRelativePath *parentRelpath;
 @property (nonatomic, readonly) unsigned short pathType;
+@property (nonatomic, readonly) BRCRelativePath *relpath;
 @property (nonatomic, readonly) BRCLocalItem *reservedLocalItem;
 @property (nonatomic, readonly) struct { id x1; id x2; unsigned long long x3; } reservedMatch;
 @property (nonatomic, readonly) BRCServerItem *reservedServerItem;
 @property (nonatomic, readonly) NSURL *url;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_bounceBouncesHiddenByFault:(id)arg1;
-- (BOOL)_bouncePathMatch:(const struct { id x1; id x2; unsigned long long x3; }*)arg1 toApplyServerItem:(id)arg2;
-- (BOOL)_canUpdatePathMatch:(const struct { id x1; id x2; unsigned long long x3; }*)arg1 hasAdditionsToApply:(BOOL)arg2;
+- (bool)_bounceBouncesHiddenByFault:(id)arg1;
+- (bool)_canUpdatePathMatch:(const struct { id x1; id x2; unsigned long long x3; }*)arg1 hasAdditionsToApply:(bool)arg2;
 - (void)_clearNamespace:(unsigned char)arg1;
 - (void)_fetchFaultedPathMatch;
 - (void)_fetchIDMatch;
 - (void)_fetchPathMatch;
 - (void)_fetchRelPath;
 - (void)_fetchReservedPathMatch;
-- (id)_generateGentleBounceForPathMatch:(const struct { id x1; id x2; unsigned long long x3; }*)arg1 dirfd:(int)arg2;
-- (BOOL)_isPathMatchIdle:(const struct { id x1; id x2; unsigned long long x3; }*)arg1;
 - (void)_moveMissingItemAsideInNamespace:(unsigned char)arg1;
 - (struct { id x1; id x2; unsigned long long x3; })_pathMatchInNamespace:(unsigned char)arg1;
-- (id)_relpath;
-- (BOOL)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
+- (bool)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (unsigned long long)byIDDiffs;
 - (id)byIDLocalItem;
 - (struct { id x1; id x2; unsigned long long x3; })byIDMatch;
-- (id)byIDRelpath;
 - (id)byIDServerItem;
 - (unsigned long long)byPathDiffs;
 - (id)byPathLocalItem;
@@ -104,20 +102,24 @@
 - (id)filename;
 - (void)handleReservedPathMatchesIfNeeded;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 root:(id)arg2;
+- (id)initWithURL:(id)arg1 allowAppLibraryRoot:(bool)arg2 session:(id)arg3;
+- (id)initWithURL:(id)arg1 session:(id)arg2;
 - (void)markPathMatchLostIfLocationDoesntMatch:(struct { id x1; id x2; unsigned long long x3; }*)arg1;
 - (void)matchLookupItemsWithDisk;
 - (id)parentItemID;
+- (id)parentPath;
 - (id)parentRelpath;
 - (unsigned short)pathType;
 - (void)refreshByIDDiffs;
 - (void)refreshByPathDiffs;
 - (void)refreshFaultedDiffs;
+- (id)relpath;
 - (id)reservedLocalItem;
 - (struct { id x1; id x2; unsigned long long x3; })reservedMatch;
 - (id)reservedServerItem;
-- (BOOL)resolveParentAndKeepOpenMustExist:(BOOL)arg1 errcode:(int*)arg2;
-- (BOOL)tryToDeleteItemInNamespace:(unsigned char)arg1;
+- (bool)resolveAndKeepOpenWithError:(id*)arg1;
+- (bool)resolveParentAndKeepOpenMustExist:(bool)arg1 errcode:(int*)arg2;
+- (bool)tryToDeleteItemInNamespace:(unsigned char)arg1;
 - (void)tryToUpdateItemInNamespace:(unsigned char)arg1 withDstLookup:(id)arg2;
 - (id)url;
 

@@ -3,14 +3,17 @@
  */
 
 @interface TSSSpecSetInteger : TSSSpecInteger {
-    BOOL  _unset;
+    bool  _unset;
     int  _value;
 }
 
 - (id)apply:(id)arg1;
+- (id)description;
+- (unsigned long long)hash;
 - (id)initUnsetSpec;
 - (id)initWithCurrentProperty:(id)arg1;
-- (BOOL)isUnsetSpec;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnsetSpec;
 - (id)operationPropertyName;
 
 @end

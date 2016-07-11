@@ -5,6 +5,6 @@
 
 @required
 
-- (void)statusBar:(UIStatusBar *)arg1 styleDidChange:(int)arg2;
+- (void)statusBar:(UIStatusBar *)arg1 styleDidChange:(long long)arg2;
 
 @end

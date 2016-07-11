@@ -11,15 +11,15 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
+- (bool)_requiresValidSampleType;
 - (void)deliverDateRangeDictionary:(struct NSDictionary { Class x1; }*)arg1 forQuery:(id)arg2;
 - (id)initWithHandler:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
++ (bool)hd_requiresPrivateEntitlements;
 
 @end

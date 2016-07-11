@@ -3,20 +3,26 @@
  */
 
 @interface AVPlayerInternal : NSObject {
-    BOOL  allowsOutOfBandTextTrackRendering;
+    void * IAPDCallbackToken;
+    bool  IOwnTheFigPlayer;
+    NSString * _ancillaryPerformanceInformationForDisplay;
+    bool  allowsOutOfBandTextTrackRendering;
+    AVAudioSession * audioSession;
     AVAudioSessionMediaPlayerOnly * audioSessionMediaPlayerOnly;
-    BOOL  autoSwitchStreamVariants;
+    bool  autoSwitchStreamVariants;
+    bool  automaticallyWaitsToMinimizeStalling;
     NSHashTable * avPlayerLayers;
-    struct CGSize { 
-        float width; 
-        float height; 
-    }  cachedDisplaySize;
     NSDictionary * cachedFigMediaSelectionCriteriaProperty;
     NSMutableArray * closedCaptionLayers;
+    NSObject<OS_dispatch_queue> * configurationQueue;
     AVPlayerItem * currentItem;
-    <AVCallbackCancellation> * currentItemPreferredPixelBufferAttributesCallbackInvoker;
+    <AVCallbackCancellation><AVKVOIntrospection> * currentItemPreferredPixelBufferAttributesCallbackInvoker;
     NSObject<OS_dispatch_queue> * currentItemPropertyUpdateQueue;
-    <AVCallbackCancellation> * currentItemSuppressesVideoLayersCallbackInvoker;
+    <AVCallbackCancellation><AVKVOIntrospection> * currentItemSuppressesVideoLayersCallbackInvoker;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  dimensionsOfReservedVideoMemory;
     NSArray * displaysUsedForPlayback;
     NSError * error;
     NSArray * expectedAssetTypes;
@@ -25,31 +31,34 @@
     struct OpaqueCMClock { } * figMasterClock;
     struct OpaqueFigPlaybackItem { } * figPlaybackItemToIdentifyNextCurrentItem;
     struct OpaqueFigPlayer { } * figPlayer;
-    BOOL  hadAssociatedOnscreenPlayerLayerWhenSuspended;
-    BOOL  hostApplicationInForeground;
-    BOOL  iapdExtendedModeIsActive;
+    bool  hadAssociatedOnscreenPlayerLayerWhenSuspended;
+    bool  hostApplicationInForeground;
+    bool  iapdExtendedModeIsActive;
     NSMutableSet * items;
     NSArray * itemsInFigPlayQueue;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
     AVPlayerItem * lastItem;
     NSObject<OS_dispatch_queue> * layersQ;
-    BOOL  logPerformanceData;
-    BOOL  needsToCreateFigPlayer;
+    bool  logPerformanceData;
+    NSString * multichannelAudioStrategy;
+    bool  needsToCreateFigPlayer;
     int  nextPrerollIDToGenerate;
     AVOutputContext * outputContext;
     NSMutableDictionary * pendingFigPlayerProperties;
     int  pendingPrerollID;
     AVPixelBufferAttributeMediator * pixelBufferAttributeMediator;
-    BOOL  preparesItemsForPlaybackAsynchronously;
+    bool  preparesItemsForPlaybackAsynchronously;
     id /* block */  prerollCompletionHandler;
     struct OpaqueFigSimpleMutex { } * prerollIDMutex;
     AVPropertyStorage * propertyStorage;
     struct OpaqueCMTimebase { } * proxyTimebase;
-    BOOL  reevaluateBackgroundPlayback;
-    BOOL  shouldReduceResourceUsage;
+    NSArray * queueModifications;
+    bool  reevaluateBackgroundPlayback;
+    bool  shouldReduceResourceUsage;
     NSObject<OS_dispatch_queue> * stateDispatchQueue;
-    int  status;
+    long long  status;
     NSMutableArray * subtitleLayers;
+    bool  usesDedicatedNotificationQueueForMediaServices;
     NSDictionary * vibrationPattern;
     struct __CFDictionary { } * videoLayers;
     AVWeakReference * weakReference;

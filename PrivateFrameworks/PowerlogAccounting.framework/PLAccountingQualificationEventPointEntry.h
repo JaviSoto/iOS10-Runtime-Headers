@@ -9,6 +9,5 @@
 + (void)load;
 
 - (id)initWithQualificationID:(id)arg1 withChildNodeNames:(id)arg2 withStartDate:(id)arg3;
-- (void)mergeWithEvent:(id)arg1;
 
 @end

@@ -11,15 +11,16 @@
 + (int)assetVersion;
 + (void)asyncUpdateAssetMetadata;
 + (int)bestNotYetInstalledVersion;
-+ (id)bundledAssetsInfoPlistURL;
-+ (void)forEachInstance:(id /* block */)arg1;
++ (id)getBundledAssetsBundle;
 + (void)initialize;
 + (void)loadBundledAssetsIfNecessary;
++ (id)registerOnUpdate:(id /* block */)arg1;
 + (void)setBundledAssetsBundle:(id)arg1;
 + (void)triggerAssetUpdated;
 + (void)updateAssetMetadata;
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)initWithFileName:(id)arg1 fileExtension:(id)arg2 onUpdate:(id /* block */)arg3;
 - (id)path;
 

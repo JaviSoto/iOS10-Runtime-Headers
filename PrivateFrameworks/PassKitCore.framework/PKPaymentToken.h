@@ -7,30 +7,38 @@
     NSString * _paymentInstrumentName;
     PKPaymentMethod * _paymentMethod;
     NSString * _paymentNetwork;
+    NSString * _sessionIdentifier;
     NSString * _transactionIdentifier;
 }
 
 @property (nonatomic, copy) NSData *paymentData;
 @property (nonatomic, copy) NSString *paymentInstrumentName;
-@property (nonatomic, copy) PKPaymentMethod *paymentMethod;
+@property (nonatomic, retain) PKPaymentMethod *paymentMethod;
 @property (nonatomic, copy) NSString *paymentNetwork;
+@property (nonatomic, retain) NSString *sessionIdentifier;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
-+ (id)simulatedToken;
-+ (BOOL)supportsSecureCoding;
++ (id)paymentTokenWithProtobuf:(id)arg1;
++ (id)simulatedTokenForNetwork:(id)arg1;
++ (bool)supportsSecureCoding;
++ (long long)version;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)paymentData;
 - (id)paymentInstrumentName;
 - (id)paymentMethod;
 - (id)paymentNetwork;
+- (id)protobuf;
+- (id)sessionIdentifier;
 - (void)setPaymentData:(id)arg1;
 - (void)setPaymentInstrumentName:(id)arg1;
 - (void)setPaymentMethod:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
+- (void)setSessionIdentifier:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;
 

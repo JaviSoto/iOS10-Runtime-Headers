@@ -7,6 +7,7 @@
     struct { 
         unsigned int muid : 1; 
         unsigned int preferredMuid : 1; 
+        unsigned int updateVersion : 1; 
         unsigned int referenceFrame : 1; 
         unsigned int resultProviderId : 1; 
         unsigned int status : 1; 
@@ -16,24 +17,30 @@
     int  _referenceFrame;
     int  _resultProviderId;
     int  _status;
+    unsigned long long  _updateVersion;
 }
 
 @property (nonatomic, retain) NSMutableArray *components;
-@property (nonatomic) BOOL hasMuid;
-@property (nonatomic) BOOL hasPreferredMuid;
-@property (nonatomic) BOOL hasReferenceFrame;
-@property (nonatomic) BOOL hasResultProviderId;
-@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) bool hasMuid;
+@property (nonatomic) bool hasPreferredMuid;
+@property (nonatomic) bool hasReferenceFrame;
+@property (nonatomic) bool hasResultProviderId;
+@property (nonatomic) bool hasStatus;
+@property (nonatomic) bool hasUpdateVersion;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic) unsigned long long preferredMuid;
 @property (nonatomic) int referenceFrame;
 @property (nonatomic) int resultProviderId;
 @property (nonatomic) int status;
+@property (nonatomic) unsigned long long updateVersion;
 
 + (id)attributionForPlaceData:(id)arg1 type:(int)arg2;
++ (Class)componentType;
 + (id)failedPlaceData;
 + (id)failedPlaceDataForMuid:(unsigned long long)arg1;
 
+- (int)StringAsReferenceFrame:(id)arg1;
+- (int)StringAsStatus:(id)arg1;
 - (id)_cleanedPhoneNumberForPhoneNumberRepresentation:(id)arg1;
 - (id)_entityName;
 - (void)_removeETAComponents;
@@ -42,9 +49,9 @@
 - (id)businessURL;
 - (void)clearComponents;
 - (id)compactDebugDescription;
-- (id)componentAtIndex:(unsigned int)arg1;
+- (id)componentAtIndex:(unsigned long long)arg1;
 - (id)components;
-- (unsigned int)componentsCount;
+- (unsigned long long)componentsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithStrippedOptionalData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -53,37 +60,45 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)geoMapItem;
-- (BOOL)hasExpiredComponentsAsOf:(double)arg1;
-- (BOOL)hasMuid;
-- (BOOL)hasPreferredMuid;
-- (BOOL)hasReferenceFrame;
-- (BOOL)hasResultProviderId;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isCacheable;
-- (BOOL)isDisputed;
-- (BOOL)isEqual:(id)arg1;
+- (id)geoMapItemWithDetourInfo:(id)arg1;
+- (bool)hasExpiredComponentsAsOf:(double)arg1;
+- (bool)hasMuid;
+- (bool)hasPreferredMuid;
+- (bool)hasReferenceFrame;
+- (bool)hasResultProviderId;
+- (bool)hasStatus;
+- (bool)hasUpdateVersion;
+- (unsigned long long)hash;
+- (bool)isCacheable;
+- (bool)isDisputed;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
+- (bool)phoneNumberOptsOutOfAds:(id)arg1;
 - (id)phoneNumbers;
 - (unsigned long long)preferredMuid;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)referenceFrame;
+- (id)referenceFrameAsString:(int)arg1;
 - (int)resultProviderId;
 - (void)setComponents:(id)arg1;
 - (void)setFirstSeenTimestamp:(double)arg1;
-- (void)setHasMuid:(BOOL)arg1;
-- (void)setHasPreferredMuid:(BOOL)arg1;
-- (void)setHasReferenceFrame:(BOOL)arg1;
-- (void)setHasResultProviderId:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasMuid:(bool)arg1;
+- (void)setHasPreferredMuid:(bool)arg1;
+- (void)setHasReferenceFrame:(bool)arg1;
+- (void)setHasResultProviderId:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
+- (void)setHasUpdateVersion:(bool)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setPreferredMuid:(unsigned long long)arg1;
 - (void)setReferenceFrame:(int)arg1;
 - (void)setResultProviderId:(int)arg1;
 - (void)setStatus:(int)arg1;
+- (void)setUpdateVersion:(unsigned long long)arg1;
 - (id)spokenNameForLocale:(id)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
+- (unsigned long long)updateVersion;
 - (void)writeTo:(id)arg1;
 
 @end

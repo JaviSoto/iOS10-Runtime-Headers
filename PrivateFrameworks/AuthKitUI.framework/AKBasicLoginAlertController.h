@@ -15,14 +15,14 @@
     id /* block */  _ak_regenerateCodeAction;
     id /* block */  _ak_useIDAction;
     NSString * _ak_username;
-    int  _alertStyle;
+    long long  _alertStyle;
     id  _codeEntryObserver;
     <AKBasicLoginAlertControllerDelegate> * _delegate;
     NSString * _generatedCode;
 }
 
 @property (nonatomic, copy) id /* block */ ak_cancelAction;
-@property (nonatomic) int alertStyle;
+@property (nonatomic) long long alertStyle;
 @property (nonatomic, copy) id /* block */ authenticateAction;
 @property (nonatomic, copy) NSString *authenticateButtonTitle;
 @property (nonatomic, copy) id /* block */ codeEnteredAction;
@@ -33,7 +33,7 @@
 @property (nonatomic, copy) id /* block */ forgotIDAction;
 @property (nonatomic, copy) id /* block */ forgotPasswordAction;
 @property (nonatomic, copy) NSString *generatedCode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *reason;
 @property (nonatomic, copy) id /* block */ regenerateCodeAction;
@@ -44,7 +44,6 @@
 - (void).cxx_destruct;
 - (id)_interpolatedReasonString;
 - (void)_jiggleTheAlert;
-- (void)_setAlertViewsEnabled:(BOOL)arg1;
 - (void)_setupAuthenticateAndCancelButtons;
 - (void)_setupViewControllerForAlertStyle;
 - (void)_setupViewControllerForDefaultStyle;
@@ -53,27 +52,27 @@
 - (void)_setupViewControllerForSecondFactorEntryStyle;
 - (void)_setupViewControllerForUserOrCreateAppleIDStyle;
 - (void)_syncUsernameAndPasswordPropertiesWithTextFieldContent;
-- (void)_unhighlightAndWorkAroundUIAlertControllerBugs;
 - (id)_wrappedCancelAction;
 - (id /* block */)ak_cancelAction;
-- (int)alertStyle;
+- (long long)alertStyle;
 - (id /* block */)authenticateAction;
 - (id)authenticateButtonTitle;
+- (void)clearSecondFactorEntry;
 - (id /* block */)codeEnteredAction;
 - (id /* block */)createIDAction;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)disablesAutomaticKeyboardDismissal;
+- (bool)disablesAutomaticKeyboardDismissal;
 - (id /* block */)forgotIDAction;
 - (id /* block */)forgotPasswordAction;
 - (id)generatedCode;
-- (id)initWithAlertStyle:(int)arg1;
+- (id)initWithAlertStyle:(long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)password;
 - (id)reason;
 - (id /* block */)regenerateCodeAction;
 - (void)setAk_cancelAction:(id /* block */)arg1;
-- (void)setAlertStyle:(int)arg1;
+- (void)setAlertStyle:(long long)arg1;
 - (void)setAuthenticateAction:(id /* block */)arg1;
 - (void)setAuthenticateButtonTitle:(id)arg1;
 - (void)setCodeEnteredAction:(id /* block */)arg1;
@@ -89,11 +88,11 @@
 - (void)setUsername:(id)arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id /* block */)useIDAction;
 - (id)username;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

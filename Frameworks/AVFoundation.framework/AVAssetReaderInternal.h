@@ -5,10 +5,11 @@
 @interface AVAssetReaderInternal : NSObject {
     AVAsset * asset;
     NSError * error;
+    NSError * errorThatOccurredBeforeStartReading;
     struct OpaqueFigAssetReader { } * figAssetReader;
     NSMutableSet * outputFinishedCallbackInvokers;
     NSMutableArray * outputs;
-    int  status;
+    long long  status;
     NSObject<OS_dispatch_queue> * statusReadWriteQueue;
     struct { 
         struct { 

@@ -2,9 +2,14 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@interface FigCaptionLayer : CALayer {
+@interface FigCaptionLayer : FigBaseCALayer <CALayerDelegate> {
     FigCaptionLayerPrivate * _priv;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;

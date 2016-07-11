@@ -6,10 +6,11 @@
 @required
 
 - (struct CGColor { }*)CGColor;
-- (BOOL)isValid;
+- (bool)isValid;
 - (SEL)renderSelector;
-- (BOOL)renderUnder;
-- (void)setWeight:(float)arg1;
-- (float)weight;
+- (bool)renderUnder;
+- (void)setWeight:(double)arg1;
+- (bool)usesRGBColors;
+- (double)weight;
 
 @end

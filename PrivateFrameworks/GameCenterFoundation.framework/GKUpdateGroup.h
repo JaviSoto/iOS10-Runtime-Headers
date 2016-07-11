@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *notifiers;
 @property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
-@property (nonatomic, readonly) int updateCount;
+@property (nonatomic, readonly) long long updateCount;
 
 + (id)updateGroup;
 + (id)updateGroupForTargetQueue:(id)arg1;
@@ -32,6 +32,7 @@
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2;
 - (void)join:(id /* block */)arg1;
 - (void)joinAndApplyUpdates;
+- (void)joinApplyUpdatesAndDo:(id /* block */)arg1;
 - (id)lock;
 - (id)name;
 - (id)notifiers;
@@ -44,7 +45,7 @@
 - (void)setNotifiers:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (id)targetQueue;
-- (int)updateCount;
+- (long long)updateCount;
 - (void)wait;
 
 @end

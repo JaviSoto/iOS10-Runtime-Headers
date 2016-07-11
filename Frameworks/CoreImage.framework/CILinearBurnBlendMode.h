@@ -5,5 +5,6 @@
 @interface CILinearBurnBlendMode : CIBlendModeFilter
 
 + (id)_kernel;
++ (id)customAttributes;
 
 @end

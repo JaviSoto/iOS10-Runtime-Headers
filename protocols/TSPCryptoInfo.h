@@ -7,8 +7,8 @@
 
 - (NSArray *)blockInfos;
 - (SFUCryptoKey *)cryptoKey;
-- (unsigned long)decodedLength;
+- (unsigned long long)decodedLength;
 - (<TSPMutableCryptoInfo> *)mutableCryptoInfoCopy;
-- (unsigned long)preferredBlockSize;
+- (unsigned long long)preferredBlockSize;
 
 @end

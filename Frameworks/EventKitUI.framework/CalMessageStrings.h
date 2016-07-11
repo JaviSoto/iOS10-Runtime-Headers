@@ -3,16 +3,25 @@
  */
 
 @interface CalMessageStrings : NSObject {
-    NSIndexSet * _indexSetOfCommentStrings;
-    NSArray * _strings;
+    NSArray * _bodyStrings;
+    long long  _comments;
+    EKCalendarEventInvitationNotificationAttendee * _importantAttendee;
+    bool  _timeProposals;
+    NSArray * _titleStrings;
 }
 
-@property (nonatomic, readonly) NSIndexSet *indexSetOfCommentStrings;
-@property (nonatomic, readonly) NSArray *strings;
+@property (nonatomic, readonly) NSArray *bodyStrings;
+@property (nonatomic, readonly) long long comments;
+@property (nonatomic, readonly) EKCalendarEventInvitationNotificationAttendee *importantAttendee;
+@property (nonatomic, readonly) bool timeProposals;
+@property (nonatomic, readonly) NSArray *titleStrings;
 
 - (void).cxx_destruct;
-- (id)indexSetOfCommentStrings;
-- (id)initWithStrings:(id)arg1 indexSetOfCommentStrings:(id)arg2;
-- (id)strings;
+- (id)bodyStrings;
+- (long long)comments;
+- (id)importantAttendee;
+- (id)initWithTitles:(id)arg1 bodyStrings:(id)arg2 comments:(long long)arg3 timeProposals:(bool)arg4 importantAttendee:(id)arg5;
+- (bool)timeProposals;
+- (id)titleStrings;
 
 @end

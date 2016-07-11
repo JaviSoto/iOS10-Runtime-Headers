@@ -2,32 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCSpotlightIndexer : NSObject <BRCLifeCycle, BRCModule, CSSearchableIndexDelegate> {
+@interface BRCSpotlightIndexer : NSObject <BRCModule, CSSearchableIndexDelegate> {
+    unsigned long long  _clientState;
     BRCThrottle * _failureThrottle;
     NSObject<OS_dispatch_source> * _failureTimer;
     unsigned long long  _flushedNotifRank;
     CSSearchableIndex * _index;
-    BOOL  _isCancelled;
+    <BRCIndexingArbiter> * _indexingArbiter;
+    NSString * _loggedInUserDisplayName;
     unsigned long long  _minNotifRank;
-    struct br_pacer_t { } * _pacer;
-    BOOL  _pacerSuspended;
+    br_pacer * _pacer;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _readyForIndexing;
-    BOOL  _resumed;
+    bool  _readyForIndexing;
     BRCAccountSession * _session;
-    BOOL  _triedFetchingClientState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isCancelled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) <BRCIndexingArbiter> *indexingArbiter;
+@property (nonatomic, readonly) bool isCancelled;
 @property (readonly) Class superclass;
 
-+ (void)dropIndexForAllContainersWithCompletionBlock:(id /* block */)arg1;
++ (void)dropAllContainersIndexForSession:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
-- (void)_deleteAllItemsAndReindexWithPacerResume:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_deleteAllItemsAndReindexResumingIndexing:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_deleteAllRanks;
 - (id)_deletedDocIdResultSetWithMinNotifRank:(unsigned long long)arg1 maxNotifRank:(unsigned long long)arg2;
 - (void)_failedIndexing;
@@ -37,22 +37,20 @@
 - (void)_saveStateForNotifRank:(unsigned long long)arg1;
 - (void)_scheduleIndexing;
 - (void)_scheduleThrottledTask:(id /* block */)arg1 taskName:(const char *)arg2;
-- (BOOL)_shouldIndexAtURL:(id)arg1 forItem:(id)arg2;
-- (BOOL)_shouldIndexDocument:(id)arg1;
 - (void)_signalIndexing;
 - (void)cancel;
 - (void)close;
 - (void)dealloc;
 - (void)docID:(unsigned long long)arg1 wasDeletedForNotifRank:(unsigned long long)arg2;
-- (void)dropIndexForContainer:(id)arg1;
+- (void)dropIndexForClientZone:(id)arg1;
 - (void)garbageCollectSupersededRanks;
+- (id)indexingArbiter;
 - (id)initWithAccountSession:(id)arg1;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)maxNotifRankWasFlushed;
 - (void)resume;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg2;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
-- (void)setIsCancelled:(BOOL)arg1;
-- (void)suspend;
+- (void)setIndexingArbiter:(id)arg1;
 
 @end

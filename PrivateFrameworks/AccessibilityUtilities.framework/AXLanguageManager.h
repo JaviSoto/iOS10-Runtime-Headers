@@ -13,12 +13,14 @@
 @property (nonatomic, retain) NSCharacterSet *commonCharacters;
 @property (nonatomic) AXDialectMap *dialectForCurrentLocale;
 @property (nonatomic) AXDialectMap *dialectForSystemLanguage;
+@property (nonatomic, readonly) AXDialectMap *dialectForUserLocale;
 @property (nonatomic, retain) NSArray *langMaps;
 @property (nonatomic, readonly) NSString *systemLanguageID;
 @property (nonatomic, copy) NSLocale *userLocale;
 
 + (id)commonPunctuationCharacters;
 + (id)dialectForAlternativeVoiceIdentifier:(id)arg1;
++ (id)doNotTranslateWords;
 + (id)nameForAlternativeVoiceIdentifier:(id)arg1;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
 + (id)sharedInstance;
@@ -39,10 +41,12 @@
 - (id)dialectForCurrentLocale;
 - (id)dialectForLanguageID:(id)arg1;
 - (id)dialectForSystemLanguage;
+- (id)dialectForUserLocale;
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)init;
-- (BOOL)isCharacterCommon:(unsigned short)arg1;
+- (bool)isCharacterCommon:(unsigned short)arg1;
+- (bool)isStringComposedByCommonCharacters:(id)arg1;
 - (id)langMaps;
 - (void)setCommonCharacters:(id)arg1;
 - (void)setDialectForCurrentLocale:(id)arg1;

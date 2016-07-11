@@ -4,12 +4,13 @@
 
 @interface _UIBadgeTVVisualStyle : _UIBadgeVisualStyle
 
-- (float)edgePadding;
-- (float)fontSize;
-- (float)horizontalInset;
-- (float)maxWidth;
-- (float)singleBadgeWidth;
-- (BOOL)usesExternalImage;
-- (float)verticalInset;
+- (bool)allowsDrawingOutsideTabBar;
+- (double)edgePadding;
+- (double)fontSize;
+- (double)horizontalInset;
+- (double)maxWidth;
+- (double)singleBadgeWidth;
+- (bool)usesExternalImage;
+- (double)verticalInset;
 
 @end

@@ -9,6 +9,7 @@
 @property (nonatomic) int childNodeCount;
 @property (nonatomic, copy) NSArray *children;
 @property (nonatomic, retain) RWIProtocolDOMNode *contentDocument;
+@property (nonatomic, copy) NSString *contentSecurityPolicyHash;
 @property (nonatomic, copy) NSString *documentURL;
 @property (nonatomic, copy) NSString *frameId;
 @property (nonatomic, copy) NSString *internalSubset;
@@ -18,6 +19,8 @@
 @property (nonatomic, copy) NSString *nodeName;
 @property (nonatomic) int nodeType;
 @property (nonatomic, copy) NSString *nodeValue;
+@property (nonatomic, copy) NSArray *pseudoElements;
+@property (nonatomic) long long pseudoType;
 @property (nonatomic, copy) NSString *publicId;
 @property (nonatomic, copy) NSString *role;
 @property (nonatomic, copy) NSArray *shadowRoots;
@@ -31,6 +34,7 @@
 - (int)childNodeCount;
 - (id)children;
 - (id)contentDocument;
+- (id)contentSecurityPolicyHash;
 - (id)documentURL;
 - (id)frameId;
 - (id)initWithNodeId:(int)arg1 nodeType:(int)arg2 nodeName:(id)arg3 localName:(id)arg4 nodeValue:(id)arg5;
@@ -41,6 +45,8 @@
 - (id)nodeName;
 - (int)nodeType;
 - (id)nodeValue;
+- (id)pseudoElements;
+- (long long)pseudoType;
 - (id)publicId;
 - (id)role;
 - (void)setAttributes:(id)arg1;
@@ -48,6 +54,7 @@
 - (void)setChildNodeCount:(int)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setContentDocument:(id)arg1;
+- (void)setContentSecurityPolicyHash:(id)arg1;
 - (void)setDocumentURL:(id)arg1;
 - (void)setFrameId:(id)arg1;
 - (void)setInternalSubset:(id)arg1;
@@ -57,6 +64,8 @@
 - (void)setNodeName:(id)arg1;
 - (void)setNodeType:(int)arg1;
 - (void)setNodeValue:(id)arg1;
+- (void)setPseudoElements:(id)arg1;
+- (void)setPseudoType:(long long)arg1;
 - (void)setPublicId:(id)arg1;
 - (void)setRole:(id)arg1;
 - (void)setShadowRoots:(id)arg1;

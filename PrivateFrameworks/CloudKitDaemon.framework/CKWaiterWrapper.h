@@ -4,12 +4,12 @@
 
 @interface CKWaiterWrapper : NSObject {
     id /* block */  _completionHandler;
-    id  _waiter;
+    <CKDZoneGatekeeperWaiter> * _waiter;
     NSArray * _zoneIDs;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic, retain) id waiter;
+@property (nonatomic, retain) <CKDZoneGatekeeperWaiter> *waiter;
 @property (nonatomic, retain) NSArray *zoneIDs;
 
 - (void).cxx_destruct;

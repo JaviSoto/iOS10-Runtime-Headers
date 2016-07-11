@@ -4,12 +4,17 @@
 
 @interface PLFileUtilities : NSObject
 
-+ (BOOL)_moveItemAtURL:(id)arg1 toURL:(id)arg2 securely:(BOOL)arg3 error:(id*)arg4;
-+ (BOOL)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
++ (id)_mobileOwnerAttributes;
++ (bool)_moveItemAtURL:(id)arg1 toURL:(id)arg2 securely:(bool)arg3 error:(id*)arg4;
++ (bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id*)arg2;
++ (bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id*)arg2 usingFileManager:(id)arg3;
++ (bool)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
++ (bool)createDirectoryAtPath:(id)arg1 error:(id*)arg2;
++ (bool)createDirectoryAtPath:(id)arg1 error:(id*)arg2 usingFileManager:(id)arg3;
 + (id)fileManager;
-+ (BOOL)hasDiskSpaceToCopyFileAtURL:(id)arg1;
-+ (BOOL)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
-+ (BOOL)secureMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
-+ (BOOL)stripExtendedAttributesFromFileAtURL:(id)arg1 inDomain:(id)arg2 error:(id*)arg3;
++ (bool)hasDiskSpaceToCopyFileAtURL:(id)arg1;
++ (bool)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
++ (bool)secureMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
++ (bool)stripExtendedAttributesFromFileAtURL:(id)arg1 inDomain:(id)arg2 error:(id*)arg3;
 
 @end

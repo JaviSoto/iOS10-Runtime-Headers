@@ -12,8 +12,8 @@
 
 - (void).cxx_destruct;
 - (id)buyParameters;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setStoreAdamID:(long long)arg1;
 - (long long)storeAdamID;

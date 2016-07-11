@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableContactShadow : TSDContactShadow
+@interface TSDMutableContactShadow : TSDContactShadow <TSDMutableShadow>
 
-@property (nonatomic, copy) TSUColor *TSUColor;
-@property (nonatomic) struct CGColor { }*color;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) float height;
-@property (nonatomic) float offset;
-@property (nonatomic) float perspective;
-@property (nonatomic) float radius;
+@property (nonatomic) double height;
+@property (nonatomic) double perspective;
 
-- (void)setColor:(struct CGColor { }*)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setPerspective:(float)arg1;
-- (void)setRadius:(float)arg1;
-- (void)setTSUColor:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setAngle:(double)arg1;
+- (void)setColor:(id)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setPerspective:(double)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

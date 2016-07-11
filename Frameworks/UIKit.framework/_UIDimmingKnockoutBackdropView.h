@@ -2,30 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDimmingKnockoutBackdropView : UIView <UIAlertControllerBackgroundView> {
-    int  _style;
+@interface _UIDimmingKnockoutBackdropView : UIView <UIInterfaceActionVisualBackgroundDisplaying, UIInterfaceActionVisualGroupBackgroundDisplaying> {
+    double  _cornerRadius;
+    long long  _style;
     UIVisualEffectView * backdropView;
     UIView * dimmingKnockoutView;
 }
 
-@property float cornerRadius;
+@property (nonatomic) double cornerRadius;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property int style;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(int)arg1;
-- (id)_filterForBackdropStyle:(int)arg1;
-- (id)_visualEffectForStyle:(int)arg1;
-- (float)cornerRadius;
-- (id)initWithStyle:(int)arg1;
-- (void)setAlpha:(float)arg1;
-- (void)setCornerRadius:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPressed:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setStyle:(int)arg1;
-- (int)style;
+- (void)_configureViewsWithStyle:(long long)arg1;
+- (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(long long)arg1;
+- (id)_filterForBackdropStyle:(long long)arg1;
+- (id)_visualEffectForStyle:(long long)arg1;
+- (double)cornerRadius;
+- (id)initWithStyle:(long long)arg1;
+- (void)layoutSubviews;
+- (void)setAlpha:(double)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setPressed:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

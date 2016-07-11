@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) NSMutableArray *providerNames;
 
++ (Class)providerNameType;
 + (id)transitAttributionForPlaceData:(id)arg1;
 
 - (void)addProviderName:(id)arg1;
@@ -17,13 +18,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)providerNameAtIndex:(unsigned int)arg1;
+- (id)providerNameAtIndex:(unsigned long long)arg1;
 - (id)providerNames;
-- (unsigned int)providerNamesCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)providerNamesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setProviderNames:(id)arg1;
 - (void)writeTo:(id)arg1;
 

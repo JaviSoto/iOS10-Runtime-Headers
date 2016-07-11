@@ -16,7 +16,6 @@
 - (id)inputImage;
 - (id)inputScale;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputScale:(id)arg1;
 

@@ -3,39 +3,40 @@
  */
 
 @interface ICNotesCrossProcessChangeCoordinator : NSObject {
-    unsigned long long  _accountNotificationCounter;
-    BOOL  _asApplication;
+    bool  _asApplication;
     NSManagedObjectContext * _destinationContext;
-    unsigned long long  _notificationCounter;
     int  _notifyToken;
     NSPersistentStoreCoordinator * _sourceCoordinator;
 }
 
-@property (nonatomic) unsigned long long accountNotificationCounter;
-@property (nonatomic) BOOL asApplication;
+@property (nonatomic) bool asApplication;
 @property (nonatomic, retain) NSManagedObjectContext *destinationContext;
-@property (nonatomic) unsigned long long notificationCounter;
 @property (nonatomic) int notifyToken;
 @property (nonatomic, retain) NSPersistentStoreCoordinator *sourceCoordinator;
 
 - (void).cxx_destruct;
-- (unsigned long long)accountNotificationCounter;
-- (BOOL)asApplication;
+- (bool)asApplication;
 - (void)contextDidSave:(id)arg1;
+- (id)contextSaveUserInfoKeys;
 - (void)dealloc;
 - (id)destinationContext;
-- (id)initWithSourceCoordinator:(id)arg1 destinationContext:(id)arg2 asApplication:(BOOL)arg3;
-- (unsigned long long)notificationCounter;
+- (void)handleCrossProcessNotesDidChangeNotificationForceRefreshAllObjects:(bool)arg1;
+- (id)initWithSourceCoordinator:(id)arg1 destinationContext:(id)arg2 asApplication:(bool)arg3;
 - (int)notifyToken;
 - (void)postAccountDidChangeNotification;
+- (void)postCrossProcessNotificationName:(id)arg1 userInfo:(id)arg2;
+- (void)postNotesDidChangeNotification;
+- (void)postNotesPasswordStatusDidChangeNotification;
 - (void)registerForAccountNotifications;
+- (void)registerForContextDidSaveNotifications;
+- (void)registerForCrossProcessNotificationName:(id)arg1 block:(id /* block */)arg2;
 - (void)registerForNotesRefreshNotifications;
-- (void)setAccountNotificationCounter:(unsigned long long)arg1;
-- (void)setAsApplication:(BOOL)arg1;
+- (void)registerForPasswordStatusDidChangeNotifications;
+- (void)setAsApplication:(bool)arg1;
 - (void)setDestinationContext:(id)arg1;
-- (void)setNotificationCounter:(unsigned long long)arg1;
 - (void)setNotifyToken:(int)arg1;
 - (void)setSourceCoordinator:(id)arg1;
+- (bool)shouldMergeContextDidSaveChanges:(id)arg1;
 - (id)sourceCoordinator;
 
 @end

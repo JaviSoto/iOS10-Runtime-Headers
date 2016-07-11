@@ -5,30 +5,31 @@
 @interface GGLDisplayLink : NSObject {
     CADisplay * _display;
     CADisplayLink * _displayLink;
-    int  _frameInterval;
-    BOOL  _paused;
     SEL  _selector;
-    int  _skippedFrames;
-    id  _target;
+    /* Warning: unhandled struct encoding: '{_geo_weak_ptr<id>="_p"@}' */ struct _geo_weak_ptr<id> { 
+        id _p; 
+    }  _target;
 }
 
 @property (nonatomic, retain) CADisplay *display;
-@property (nonatomic) int frameInterval;
-@property (getter=isPaused, nonatomic) BOOL paused;
-@property (nonatomic, readonly) double timestamp;
+@property (nonatomic) long long frameRate;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic, readonly) double targetTimestamp;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)_displayLinkFired:(id)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)display;
-- (int)frameInterval;
+- (long long)frameRate;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (void)invalidate;
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (void)setDisplay:(id)arg1;
-- (void)setFrameInterval:(int)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (void)setFrameRate:(long long)arg1;
+- (void)setPaused:(bool)arg1;
 - (id)target;
-- (double)timestamp;
+- (double)targetTimestamp;
 
 @end

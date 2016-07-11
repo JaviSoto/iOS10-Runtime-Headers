@@ -12,7 +12,7 @@
 @property (nonatomic) int mode;
 @property (nonatomic) float volume;
 
-+ (BOOL)needsObjectUUID;
++ (bool)needsObjectUUID;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

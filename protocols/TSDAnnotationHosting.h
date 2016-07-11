@@ -8,10 +8,8 @@
 - (TSKAnnotationAuthor *)author;
 - (void)commentWillBeAddedToDocumentRoot;
 - (NSDate *)date;
-- (<TSKModel> *)hostingModel;
-- (BOOL)isEqual:(id)arg1;
+- (TSPObject *)hostingModel;
 - (void)setAuthor:(TSKAnnotationAuthor *)arg1;
-- (void)setHostingModel:(id <TSKModel>)arg1;
 
 @optional
 
@@ -20,6 +18,6 @@
 - (NSString *)changeTrackingTitleString;
 - (void)setStorage:(TSDCommentStorage *)arg1;
 - (TSDCommentStorage *)storage;
-- (BOOL)wantsAnnotationPopover;
+- (bool)wantsAnnotationPopover;
 
 @end

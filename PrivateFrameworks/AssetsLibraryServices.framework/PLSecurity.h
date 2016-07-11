@@ -4,11 +4,11 @@
 
 @interface PLSecurity : NSObject
 
-+ (BOOL)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
-+ (BOOL)connection:(id)arg1 hasEntitlement:(id)arg2;
-+ (BOOL)connectionIsEntitledForPhotoKit:(id)arg1;
-+ (BOOL)isEntitledForCloudSharingData;
-+ (BOOL)isEntitledForPhotoKit;
-+ (BOOL)secTask:(struct __SecTask { }*)arg1 hasEntitlement:(id)arg2;
++ (bool)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
++ (bool)connection:(id)arg1 hasEntitlement:(id)arg2;
++ (bool)connectionIsEntitledForPhotoKit:(id)arg1;
++ (bool)isEntitledForCloudSharingData;
++ (bool)isEntitledForPhotoKit;
++ (bool)secTask:(struct __SecTask { }*)arg1 hasEntitlement:(id)arg2;
 
 @end

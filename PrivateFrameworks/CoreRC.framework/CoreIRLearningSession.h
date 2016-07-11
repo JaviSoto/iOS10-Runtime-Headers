@@ -6,15 +6,15 @@
     <CoreIRLearningSessionBridgeDelegate> * _bridgeDelegate;
     <CoreIRLearningSessionDelegate> * _delegate;
     CoreIRDevice * _owningDevice;
-    unsigned int  _reason;
+    unsigned long long  _reason;
 }
 
 @property (nonatomic) <CoreIRLearningSessionBridgeDelegate> *bridgeDelegate;
 @property (nonatomic) <CoreIRLearningSessionDelegate> *delegate;
 @property (nonatomic) CoreIRDevice *owningDevice;
-@property (nonatomic, readonly) unsigned int reason;
+@property (nonatomic, readonly) unsigned long long reason;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)bridgeDelegate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,15 +22,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)endLearning;
 - (void)enumerateMappingWithBlock:(id /* block */)arg1;
-- (void)finishLearningCommand;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithReason:(unsigned int)arg1;
+- (id)initWithReason:(unsigned long long)arg1;
 - (id)owningDevice;
-- (unsigned int)reason;
+- (unsigned long long)reason;
 - (void)setBridgeDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOwningDevice:(id)arg1;
-- (BOOL)startLearningCommand:(unsigned int)arg1;
+- (bool)startLearningCommand:(unsigned long long)arg1;
 
 @end

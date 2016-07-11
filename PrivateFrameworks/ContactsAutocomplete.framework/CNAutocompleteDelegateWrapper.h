@@ -6,7 +6,7 @@
     CNCancelationToken * _cancelationToken;
     <CNAutocompleteFetchDelegate> * _delegate;
     CNAutocompleteFetchRequest * _fetchRequest;
-    unsigned int  _openNetworkActivityCalls;
+    unsigned long long  _openNetworkActivityCalls;
     CNAutocompleteQueryResponsePreparer * _responsePreparer;
     <CNScheduler> * _scheduler;
     CNAutocompleteUserSession * _userSession;
@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)responseScheduler;
@@ -24,7 +24,7 @@
 - (id)askDelegateToAdjustResults;
 - (void)autocompleteFetch:(id)arg1 didFailWithError:(id)arg2;
 - (void)autocompleteFetch:(id)arg1 didReceiveResults:(id)arg2;
-- (BOOL)autocompleteFetch:(id)arg1 shouldExpectSupplementalResultsForRequest:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)autocompleteFetch:(id)arg1 shouldExpectSupplementalResultsForRequest:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)autocompleteFetchDidBeginNetworkActivity:(id)arg1;
 - (void)autocompleteFetchDidEndNetworkActivity:(id)arg1;
 - (void)autocompleteFetchDidFinish:(id)arg1;
@@ -34,7 +34,7 @@
 - (void)queueDidEndNetworkActivityMessageForFetch:(id)arg1;
 - (void)queueMessageToDelegate:(id /* block */)arg1;
 - (void)queueUncancelableMessageToDelegate:(id /* block */)arg1;
-- (void)setPriorityResultsFuture:(id)arg1;
+- (void)setDuetResultsFuture:(id)arg1;
 - (id)sortResults;
 - (id)suppressResultsWithAddresses:(id)arg1;
 

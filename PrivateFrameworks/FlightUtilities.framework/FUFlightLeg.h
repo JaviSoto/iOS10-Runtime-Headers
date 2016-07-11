@@ -2,46 +2,56 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUFlightLeg : NSObject <NSCopying> {
-    float  _altitude;
+@interface FUFlightLeg : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _aircraftcode;
+    double  _altitude;
     FUFlightStep * _arrival;
     FUFlightStep * _departure;
-    float  _heading;
-    struct { 
+    double  _duration;
+    double  _heading;
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _location;
-    float  _speed;
-    int  _status;
+    double  _speed;
+    long long  _status;
 }
 
-@property float altitude;
+@property (retain) NSString *aircraftcode;
+@property double altitude;
 @property (retain) FUFlightStep *arrival;
 @property (retain) FUFlightStep *departure;
-@property (readonly) double duration;
-@property float heading;
-@property struct { double x1; double x2; } location;
-@property float speed;
-@property int status;
+@property double duration;
+@property double heading;
+@property struct CLLocationCoordinate2D { double x1; double x2; } location;
+@property double speed;
+@property long long status;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (float)altitude;
+- (id)aircraftcode;
+- (double)altitude;
 - (id)arrival;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)departure;
 - (id)description;
 - (double)duration;
-- (float)heading;
-- (BOOL)isEqual:(id)arg1;
-- (struct { double x1; double x2; })location;
-- (void)setAltitude:(float)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (double)heading;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (struct CLLocationCoordinate2D { double x1; double x2; })location;
+- (void)setAircraftcode:(id)arg1;
+- (void)setAltitude:(double)arg1;
 - (void)setArrival:(id)arg1;
 - (void)setDeparture:(id)arg1;
-- (void)setHeading:(float)arg1;
-- (void)setLocation:(struct { double x1; double x2; })arg1;
-- (void)setSpeed:(float)arg1;
-- (void)setStatus:(int)arg1;
-- (float)speed;
-- (int)status;
+- (void)setDuration:(double)arg1;
+- (void)setHeading:(double)arg1;
+- (void)setLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (void)setSpeed:(double)arg1;
+- (void)setStatus:(long long)arg1;
+- (double)speed;
+- (long long)status;
 
 @end

@@ -5,16 +5,16 @@
 
 @required
 
-- (BOOL)allowArtistActivity;
-- (BOOL)allowsErotica;
-- (BOOL)allowsExplicit;
-- (BOOL)appAnalyticsAllowed;
-- (BOOL)appInstallationAllowed;
-- (int)maxAppRank;
+- (bool)allowArtistActivity;
+- (bool)allowsErotica;
+- (bool)allowsExplicit;
+- (bool)appAnalyticsAllowed;
+- (bool)appInstallationAllowed;
+- (long long)maxAppRank;
 - (NSString *)maxAppRating;
-- (int)maxMovieRank;
+- (long long)maxMovieRank;
 - (NSString *)maxMovieRatingForCountry:(JSValue *)arg1;
-- (int)maxTVShowRank;
+- (long long)maxTVShowRank;
 - (NSString *)maxTVShowRatingForCountry:(JSValue *)arg1;
 
 @end

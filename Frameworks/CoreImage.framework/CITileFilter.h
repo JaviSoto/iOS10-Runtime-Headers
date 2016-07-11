@@ -16,6 +16,7 @@
 
 + (id)customAttributes;
 
+- (id)_croppedCenterPixelImage;
 - (id)_kernel;
 - (id)_kernel_name;
 - (id)_kernel_source;

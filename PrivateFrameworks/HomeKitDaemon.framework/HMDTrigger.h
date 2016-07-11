@@ -2,33 +2,39 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDTrigger : NSObject <HMMessageReceiver, NSSecureCoding> {
-    BOOL  _active;
+@interface HMDTrigger : NSObject <HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
+    bool  _active;
+    bool  _activeOnLocalDevice;
     NSMutableArray * _currentActionSets;
     HMDHome * _home;
     NSDate * _mostRecentFireDate;
-    HMMessageDispatcher * _msgDispatcher;
+    HMFMessageDispatcher * _msgDispatcher;
     NSString * _name;
+    HMDUser * _owner;
+    HMDDevice * _owningDevice;
     NSUUID * _uuid;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic) BOOL active;
+@property (nonatomic) bool active;
+@property (getter=isActiveOnLocalDevice, nonatomic) bool activeOnLocalDevice;
 @property (nonatomic, retain) NSMutableArray *currentActionSets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, copy) NSDate *mostRecentFireDate;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) HMDUser *owner;
+@property (nonatomic, retain) HMDDevice *owningDevice;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_executeActionSets;
@@ -36,38 +42,50 @@
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_handleUpdateActionSetRequest:(id)arg1;
 - (void)_registerForMessages;
-- (id)_updateActionSets:(id)arg1 add:(BOOL)arg2;
+- (id)_updateActionSet:(id)arg1 add:(bool)arg2;
+- (id)actionSetWithUUID:(id)arg1;
 - (id)actionSets;
-- (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)active;
+- (void)activate:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)activateOnLocalDevice;
+- (bool)active;
 - (void)checkForNoActions;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
-- (BOOL)containsAccessoryWithUUID:(id)arg1;
 - (id)currentActionSets;
 - (void)dealloc;
+- (id)description;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
+- (void)fixupForReplacementAccessory:(id)arg1;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (void)invalidate;
+- (bool)isActiveOnLocalDevice;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)mostRecentFireDate;
 - (id)msgDispatcher;
 - (id)name;
+- (id)owner;
+- (id)owningDevice;
 - (void)reEvaluate;
+- (void)removeAccessory:(id)arg1;
 - (void)removeActionSet:(id)arg1;
 - (void)sendTriggerFiredNotification:(id)arg1;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setActiveOnLocalDevice:(bool)arg1;
 - (void)setCurrentActionSets:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMostRecentFireDate:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setOwner:(id)arg1;
+- (void)setOwningDevice:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (BOOL)shouldEncodeLastFireDate:(id)arg1;
+- (bool)shouldEncodeLastFireDate:(id)arg1;
 - (void)triggerFired;
+- (unsigned long long)triggerType;
 - (id)uuid;
 - (id)workQueue;
 

@@ -60,6 +60,7 @@
 @property (nonatomic, readonly) NSString *registerDeviceURL;
 @property (nonatomic, readonly) NSString *registerURL;
 @property (nonatomic, readonly) NSString *rejectChildTransferURL;
+@property (nonatomic, readonly) NSString *repairCloudAccountUIURL;
 @property (nonatomic, readonly) NSString *secondaryAuthenticationURL;
 @property (nonatomic, readonly) NSString *sendCodeURL;
 @property (nonatomic, readonly) NSString *signInURL;
@@ -136,6 +137,7 @@
 - (id)registerDeviceURL;
 - (id)registerURL;
 - (id)rejectChildTransferURL;
+- (id)repairCloudAccountUIURL;
 - (id)secondaryAuthenticationURL;
 - (id)sendCodeURL;
 - (id)signInURL;

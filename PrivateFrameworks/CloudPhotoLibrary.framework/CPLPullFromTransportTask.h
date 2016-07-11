@@ -4,36 +4,47 @@
 
 @interface CPLPullFromTransportTask : CPLEngineSyncTask {
     NSString * _clientCacheIdentifier;
-    BOOL  _didGetSomeChanges;
+    Class  _currentQueryClass;
     <CPLEngineTransportDownloadBatchTask> * _downloadTask;
-    <CPLEngineTransportGetAssetCountsTask> * _getAssetCountsTask;
+    <CPLEngineTransportGetLibraryInfoTask> * _getLibraryInfoTask;
+    bool  _gotSomeChanges;
+    bool  _ignoreNewBatches;
     NSData * _initialSyncAnchor;
-    BOOL  _isPostPushPhase;
+    bool  _isPrePushPhase;
+    NSData * _lastKnownSyncAnchor;
+    <CPLEngineTransportQueryTask> * _queryTask;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _resetSyncAnchor;
-    BOOL  _shouldGetAssetCounts;
+    bool  _resetSyncAnchor;
+    unsigned long long  _rewindFeatureVersion;
+    NSData * _rewindSyncAnchor;
+    bool  _useCourtesyMingling;
+    CPLFeatureVersionHistory * _versionHistory;
 }
 
 @property (retain) <CPLPullFromTransportTaskDelegate> *delegate;
-@property (nonatomic, readonly) BOOL didGetSomeChanges;
-@property (nonatomic) BOOL isPostPushPhase;
-@property (nonatomic) BOOL shouldGetAssetCounts;
+@property (setter=setPrePushPhase:, nonatomic) bool isPrePushPhase;
 
 - (void).cxx_destruct;
-- (void)_finishTaskWithErrorAndCleanupIfNecessary:(id)arg1;
-- (void)_handleNewBatch:(id)arg1 newSyncAnchor:(id)arg2;
+- (void)_checkServerFeatureVersion:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)_checkStateBeforeContinuingInTransaction:(id)arg1;
+- (void)_extractAndMingleAssetsIfPossibleFromBatch:(id)arg1 inTransaction:(id)arg2;
+- (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(id)arg2;
+- (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(id)arg2 inTransaction:(id)arg3;
+- (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2;
+- (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2 inTransaction:(id)arg3;
 - (void)_launch;
-- (void)_launchPullTasks;
+- (void)_launchFetchChangesFromSyncAnchor:(id)arg1;
+- (void)_launchNextQueryTask;
+- (void)_launchPullTasksAndDisableQueries:(bool)arg1;
+- (void)_launchQueryForClass:(Class)arg1 cursor:(id)arg2;
+- (void)_updateLastFeatureVersionAndRelaunchFetchChangesFromSyncAnchor:(id)arg1;
 - (void)cancel;
-- (BOOL)didGetSomeChanges;
 - (id)initWithEngineLibrary:(id)arg1;
-- (BOOL)isPostPushPhase;
+- (bool)isPrePushPhase;
 - (void)launch;
 - (void)pause;
 - (void)resume;
-- (void)setIsPostPushPhase:(BOOL)arg1;
-- (void)setShouldGetAssetCounts:(BOOL)arg1;
-- (BOOL)shouldGetAssetCounts;
+- (void)setPrePushPhase:(bool)arg1;
 - (void)taskDidFinishWithError:(id)arg1;
 - (id)taskIdentifier;
 

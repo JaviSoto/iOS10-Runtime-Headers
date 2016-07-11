@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) NSMutableSet *nodes;
 @property (nonatomic, readonly) double range;
 
+- (void)dealloc;
 - (double)distance;
 - (id)initWithNodes:(id)arg1 inRange:(double)arg2;
 - (id)nodes;

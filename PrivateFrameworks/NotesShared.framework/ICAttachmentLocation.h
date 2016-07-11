@@ -2,12 +2,18 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICAttachmentLocation : ICLocation
+@interface ICAttachmentLocation : ICLocation <ICSearchIndexableTarget>
 
 @property (nonatomic, retain) ICAttachment *attachment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *formattedAddressWithoutAttachmentTitle;
-@property (nonatomic) BOOL placeUpdated;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool placeUpdated;
+@property (readonly) Class superclass;
 
+- (id)authorsExcludingCurrentUser;
 - (id)formattedAddressWithoutAttachmentTitle;
+- (id)targetSearchIndexable;
 
 @end

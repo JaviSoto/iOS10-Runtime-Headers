@@ -8,6 +8,7 @@
 
 @property (retain) NSString *localizedDisplayName;
 
+- (void)dealloc;
 - (id)localizedDisplayName;
 - (void)setLocalizedDisplayName:(id)arg1;
 

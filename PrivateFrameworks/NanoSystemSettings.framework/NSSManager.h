@@ -15,13 +15,16 @@
 + (void)displayAirplaneModeMirroringUserEducationAlert;
 + (void)displayAlertFailedRemoteAirplaneMode;
 + (void)displayAlertWithTitle:(id)arg1 titleColor:(id)arg2 body:(id)arg3 icon:(id)arg4;
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
-- (void)enableAirplaneMode:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)enableAirplaneMode:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (id)externalQueue;
 - (void)getAboutInfo:(id /* block */)arg1;
+- (void)getAccountsInfo:(id /* block */)arg1;
+- (void)getAccountsInfoForAccountType:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getLegalDocuments:(id /* block */)arg1;
 - (void)getLocalesInfo:(id /* block */)arg1;
 - (void)getProfileWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;

@@ -7,19 +7,22 @@
     <NSCopying> * _triggerValue;
 }
 
-@property (nonatomic, readonly) HMCharacteristic *characteristic;
+@property (nonatomic, retain) HMCharacteristic *characteristic;
 @property (nonatomic, copy) <NSCopying> *triggerValue;
 
-+ (BOOL)supportsSecureCoding;
++ (id)createWithDictionary:(id)arg1 home:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;
 - (void)_updateTriggerValue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)characteristic;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCharacteristic:(id)arg1 triggerValue:(id)arg2;
+- (id)initWithCharacteristic:(id)arg1 triggerValue:(id)arg2 allowWithoutNotification:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
+- (void)setCharacteristic:(id)arg1;
 - (void)setTriggerValue:(id)arg1;
 - (id)triggerValue;
 - (void)updateTriggerValue:(id)arg1 completionHandler:(id /* block */)arg2;

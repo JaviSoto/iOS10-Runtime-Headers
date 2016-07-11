@@ -6,11 +6,12 @@
     NSHTTPCookieStorageInternal * _internal;
 }
 
-@property unsigned int cookieAcceptPolicy;
+@property unsigned long long cookieAcceptPolicy;
 @property (readonly, copy) NSArray *cookies;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
++ (id)_csff:(id)arg1;
 + (id)_groupContainerCookieStorages;
 + (id)_groupContainerStoragesLock;
 + (void)_setSharedHTTPCookieStorage:(id)arg1;
@@ -21,11 +22,14 @@
 - (struct OpaqueCFHTTPCookieStorage { }*)_CFHTTPCookieStorage;
 - (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
 - (id)_cookiesForURL:(id)arg1 mainDocumentURL:(id)arg2;
+- (void)_getCookieStoragePartitionsCompletionHandler:(id /* block */)arg1;
+- (void)_getCookiesForPartition:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_getCookiesForURL:(id)arg1 mainDocumentURL:(id)arg2 partition:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
 - (void)_saveCookies;
-- (void)_setPrivateBrowsingEnabled:(BOOL)arg1;
-- (unsigned int)cookieAcceptPolicy;
+- (void)_setPrivateBrowsingEnabled:(bool)arg1;
+- (unsigned long long)cookieAcceptPolicy;
 - (id)cookieRequestHeaderFieldsForURL:(id)arg1;
 - (id)cookies;
 - (id)cookiesForURL:(id)arg1;
@@ -36,7 +40,7 @@
 - (id)init;
 - (void)removeCookiesSinceDate:(id)arg1;
 - (void)setCookie:(id)arg1;
-- (void)setCookieAcceptPolicy:(unsigned int)arg1;
+- (void)setCookieAcceptPolicy:(unsigned long long)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
 - (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;
 - (id)sortedCookiesUsingDescriptors:(id)arg1;

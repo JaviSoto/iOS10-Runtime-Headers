@@ -3,37 +3,39 @@
  */
 
 @interface UIPressesEvent : UIEvent {
-    BOOL  __isFromGameControllerStickControl;
     NSMutableSet * _allPresses;
+    NSHashTable * _terminalEventRegistrants;
     UIPress * _triggeringPhysicalButton;
 }
 
-@property (setter=_setIsFromGameControllerStickControl:, nonatomic) BOOL _isFromGameControllerStickControl;
 @property (nonatomic, retain) UIPress *_triggeringPhysicalButton;
+@property (nonatomic, readonly) NSSet *allPresses;
 
 - (void).cxx_destruct;
 - (void)_addGesturesForPress:(id)arg1;
-- (void)_addPhysicalButton:(id)arg1;
-- (id)_allPhysicalButtons;
+- (void)_addPress:(id)arg1 forDelayedDelivery:(bool)arg2;
 - (id)_allPresses;
+- (id)_cloneEvent;
+- (id)_directionalPressWithStrongestForce;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (id)_init;
-- (BOOL)_isFromGameControllerStickControl;
 - (id)_physicalButtonsForGestureRecognizer:(id)arg1;
-- (id)_physicalButtonsForGestureRecognizer:(id)arg1 withPhase:(int)arg2;
+- (id)_physicalButtonsForGestureRecognizer:(id)arg1 withPhase:(long long)arg2;
 - (id)_physicalButtonsForResponder:(id)arg1;
-- (id)_physicalButtonsForResponder:(id)arg1 withPhase:(int)arg2;
+- (id)_physicalButtonsForResponder:(id)arg1 withPhase:(long long)arg2;
+- (void)_registerForTerminalEvent:(id)arg1;
 - (void)_removePhysicalButton:(id)arg1;
 - (id)_respondersForWindow:(id)arg1;
-- (void)_setIsFromGameControllerStickControl:(BOOL)arg1;
+- (id)_terminalRegistrants;
 - (id)_triggeringPhysicalButton;
+- (void)_unregisterForTerminalEvent:(id)arg1;
 - (id)_windows;
 - (id)allPresses;
 - (id)description;
 - (id)physicalButtonsForWindow:(id)arg1;
 - (id)pressesForGestureRecognizer:(id)arg1;
 - (void)set_triggeringPhysicalButton:(id)arg1;
-- (int)subtype;
-- (int)type;
+- (long long)subtype;
+- (long long)type;
 
 @end

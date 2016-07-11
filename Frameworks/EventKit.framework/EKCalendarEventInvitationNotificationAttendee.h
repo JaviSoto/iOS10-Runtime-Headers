@@ -4,40 +4,52 @@
 
 @interface EKCalendarEventInvitationNotificationAttendee : NSObject <EKIdentityProtocol> {
     NSString * _comment;
-    BOOL  _commentChanged;
+    bool  _commentChanged;
     NSString * _emailAddress;
     NSString * _firstName;
+    bool  _isCurrentUser;
     NSString * _lastName;
     NSString * _name;
-    int  _participantStatus;
-    BOOL  _statusChanged;
+    long long  _participantStatus;
+    NSDate * _proposedStartDate;
+    bool  _proposedStartDateChanged;
+    bool  _proposedStartDateDeclined;
+    bool  _statusChanged;
     NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *comment;
-@property (nonatomic, readonly) BOOL commentChanged;
+@property (nonatomic, readonly) bool commentChanged;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *firstName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCurrentUser;
 @property (nonatomic, readonly) NSString *lastName;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) int participantStatus;
-@property (nonatomic, readonly) BOOL statusChanged;
+@property (nonatomic, readonly) long long participantStatus;
+@property (nonatomic, readonly) NSDate *proposedStartDate;
+@property (nonatomic, readonly) bool proposedStartDateChanged;
+@property (nonatomic, readonly) bool proposedStartDateDeclined;
+@property (nonatomic, readonly) bool statusChanged;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *url;
 
+- (void).cxx_destruct;
 - (id)comment;
-- (BOOL)commentChanged;
-- (void)dealloc;
+- (bool)commentChanged;
 - (id)emailAddress;
 - (id)firstName;
-- (id)initWithAttendee:(id)arg1;
+- (id)initWithParticipant:(id)arg1;
+- (bool)isCurrentUser;
 - (id)lastName;
 - (id)name;
-- (int)participantStatus;
-- (BOOL)statusChanged;
+- (long long)participantStatus;
+- (id)proposedStartDate;
+- (bool)proposedStartDateChanged;
+- (bool)proposedStartDateDeclined;
+- (bool)statusChanged;
 - (id)url;
 
 @end

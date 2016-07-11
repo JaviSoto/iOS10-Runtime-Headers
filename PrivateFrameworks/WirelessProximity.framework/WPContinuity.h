@@ -2,47 +2,76 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@interface WPContinuity : NSObject <XPCClientDelegate> {
-    int  _btBandwidthState;
-    XPCClient * _connection;
+@interface WPContinuity : WPClient {
+    long long  _btBandwidthState;
+    unsigned short  _currentDataSize;
+    NSMutableData * _currentReceivedData;
     <WPContinuityDelegate> * _delegate;
-    int  _state;
+    bool  _receivedFirstPacket;
 }
 
-@property int btBandwidthState;
-@property (nonatomic, retain) XPCClient *connection;
-@property (readonly, copy) NSString *debugDescription;
+@property long long btBandwidthState;
+@property (nonatomic) unsigned short currentDataSize;
+@property (nonatomic, retain) NSMutableData *currentReceivedData;
 @property (nonatomic) <WPContinuityDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property int state;
-@property (readonly) Class superclass;
+@property (nonatomic) bool receivedFirstPacket;
+
++ (unsigned char)clientTypeFromContinuityType:(long long)arg1;
++ (long long)continuityTypeFromClientType:(unsigned char)arg1;
 
 - (void).cxx_destruct;
-- (int)btBandwidthState;
+- (void)advertisingFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
+- (void)advertisingPendingOfType:(unsigned char)arg1;
+- (void)advertisingStartedOfType:(unsigned char)arg1;
+- (void)advertisingStoppedOfType:(unsigned char)arg1;
+- (void)bandwidthStateUpdated:(id)arg1;
+- (long long)btBandwidthState;
+- (void)central:(id)arg1 subscribed:(bool)arg2 toCharacteristic:(id)arg3 inService:(id)arg4;
+- (id)clientAsString;
 - (void)connectToPeer:(id)arg1;
-- (id)connection;
-- (void)connectionDied;
-- (void)connectionInterrupted;
-- (void)dealloc;
+- (void)connectedDevice:(id)arg1 withError:(id)arg2 shouldDiscover:(bool)arg3;
+- (unsigned short)currentDataSize;
+- (id)currentReceivedData;
 - (id)delegate;
+- (void)deviceDiscovered:(id)arg1;
 - (void)disconnectFromPeer:(id)arg1;
+- (void)disconnectedDevice:(id)arg1 withError:(id)arg2;
+- (void)discoveredCharacteristicsAndServices:(id)arg1 forPeripheral:(id)arg2;
+- (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;
+- (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (void)messageArrived:(id)arg1;
+- (void)invalidate;
+- (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (void)notifyClientOfReceivedData:(id)arg1 fromPeripheral:(id)arg2;
+- (void)peerTrackingAvailable;
+- (void)peerTrackingFull;
+- (void)populateClientGATT:(id /* block */)arg1;
+- (void)receivedData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4;
+- (bool)receivedFirstPacket;
+- (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
+- (void)scanningStartedOfType:(unsigned char)arg1;
+- (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)sendData:(id)arg1 toPeer:(id)arg2;
-- (void)setBtBandwidthState:(int)arg1;
-- (void)setConnection:(id)arg1;
+- (void)sentData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4 withError:(id)arg5;
+- (void)setBtBandwidthState:(long long)arg1;
+- (void)setCurrentDataSize:(unsigned short)arg1;
+- (void)setCurrentReceivedData:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)startAdvertisingOfType:(int)arg1 withData:(id)arg2;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3;
-- (void)startTrackingPeer:(id)arg1 forType:(int)arg2;
-- (int)state;
-- (void)stopAdvertisingOfType:(int)arg1;
-- (void)stopScanningForType:(int)arg1;
-- (void)stopTrackingPeer:(id)arg1 forType:(int)arg2;
-- (void)updateBluetoothBandwidthState:(int)arg1;
-- (void)updateState:(int)arg1;
+- (void)setReceivedFirstPacket:(bool)arg1;
+- (void)startAdvertisingOfType:(long long)arg1 withData:(id)arg2;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4 boostedScan:(bool)arg5;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3;
+- (void)startTrackingPeer:(id)arg1 forType:(long long)arg2;
+- (void)startedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (void)stateDidChange:(long long)arg1;
+- (void)stopAdvertisingOfType:(long long)arg1;
+- (void)stopScanningForType:(long long)arg1;
+- (void)stopTrackingPeer:(id)arg1 forType:(long long)arg2;
+- (void)stoppedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
+- (void)updateAdvertisingRequest:(id)arg1 withUpdate:(id /* block */)arg2;
+- (void)updateScanningRequest:(id)arg1 withUpdate:(id /* block */)arg2;
+- (void)updatedNotificationState:(bool)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 withPeripheral:(id)arg4;
 
 @end

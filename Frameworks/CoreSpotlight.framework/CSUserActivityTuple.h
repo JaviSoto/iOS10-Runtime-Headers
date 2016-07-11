@@ -10,15 +10,16 @@
 
 @property (retain) CSUserAction *action;
 @property (retain) CSSearchableItem *item;
-@property (readonly) NSString *protectionClass;
+@property (retain) NSString *protectionClass;
 
 - (void).cxx_destruct;
 - (id)action;
-- (id)initWithAction:(id)arg1 item:(id)arg2 protectionClass:(id)arg3;
+- (id)initWithAction:(id)arg1 item:(id)arg2;
 - (id)item;
 - (id)protectionClass;
 - (id)searchableItem;
 - (void)setAction:(id)arg1;
 - (void)setItem:(id)arg1;
+- (void)setProtectionClass:(id)arg1;
 
 @end

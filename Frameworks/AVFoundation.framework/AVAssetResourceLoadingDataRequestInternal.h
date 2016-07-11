@@ -3,11 +3,12 @@
  */
 
 @interface AVAssetResourceLoadingDataRequestInternal : NSObject {
-    BOOL  canSupplyIncrementalDataImmediately;
+    bool  canSupplyIncrementalDataImmediately;
     long long  currentOffset;
     NSObject<OS_dispatch_queue> * dataResponseQueue;
-    int  requestedLength;
+    long long  requestedLength;
     long long  requestedOffset;
+    bool  requestsAllDataToEndOfResource;
     AVWeakReference * weakReferenceToLoadingRequest;
 }
 

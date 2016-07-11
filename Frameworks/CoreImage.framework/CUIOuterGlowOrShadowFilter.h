@@ -31,7 +31,6 @@
 - (id)inputSize;
 - (id)inputSpread;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputColor:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputOffset:(id)arg1;

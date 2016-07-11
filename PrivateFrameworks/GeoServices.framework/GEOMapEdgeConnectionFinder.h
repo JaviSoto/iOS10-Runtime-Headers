@@ -14,7 +14,7 @@
     GEOMapTileFinder * _tileFinder;
 }
 
-- (void)_findConnections:(id /* block */)arg1 incoming:(BOOL)arg2;
+- (void)_findConnections:(id /* block */)arg1 incoming:(bool)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (void)findConnectionsIn:(id /* block */)arg1;

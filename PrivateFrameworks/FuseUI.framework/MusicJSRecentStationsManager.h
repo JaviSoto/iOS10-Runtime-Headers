@@ -4,7 +4,7 @@
 
 @interface MusicJSRecentStationsManager : IKJSObject <MusicJSRecentStationsManager> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _hasRefreshedStations;
+    bool  _hasRefreshedStations;
     RadioRecentStationsController * _recentStationsController;
 }
 

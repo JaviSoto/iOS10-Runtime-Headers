@@ -2,37 +2,50 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFDownloadController : NSObject <_WKDownloadDelegate> {
+@interface _SFDownloadController : NSObject <WBSFluidProgressStateSource, _WKDownloadDelegate> {
     <_SFDownloadControllerDelegate> * _delegate;
-    unsigned int  _downloadBackgroundTaskIdentifier;
+    unsigned long long  _downloadBackgroundTaskIdentifier;
     long long  _downloadBytesExpected;
-    unsigned int  _downloadBytesLoaded;
-    int  _downloadingFileType;
+    unsigned long long  _downloadBytesLoaded;
+    bool  _downloadHasFailed;
+    long long  _downloadingFileType;
     _WKDownload * _fileDownload;
     NSString * _fileDownloadPath;
     NSURL * _fileDownloadSourceURL;
+    WBSFluidProgressController * _fluidProgressController;
+    WBSFluidProgressState * _fluidProgressState;
+    double  _timeLastProgressNotificationWasSent;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFDownloadControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int downloadingFileType;
-@property (readonly) unsigned int hash;
+@property (nonatomic) long long downloadingFileType;
+@property (nonatomic, retain) WBSFluidProgressController *fluidProgressController;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginDownloadBackgroundTask:(id)arg1;
 - (void)_clearFileDownloadState;
-- (id)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 allowOverwrite:(BOOL*)arg3;
+- (id)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 allowOverwrite:(bool*)arg3;
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
 - (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
 - (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)_downloadDidFinish:(id)arg1;
 - (void)_downloadDidStart:(id)arg1;
 - (void)_endDownloadBackgroundTask;
+- (void)clearFluidProgressState;
+- (bool)createFluidProgressState;
 - (id)delegate;
-- (int)downloadingFileType;
+- (long long)downloadingFileType;
+- (double)estimatedProgress;
+- (id)expectedOrCurrentURL;
+- (id)fluidProgressController;
+- (bool)hasFailedURL;
+- (id)progressState;
 - (void)setDelegate:(id)arg1;
-- (void)setDownloadingFileType:(int)arg1;
+- (void)setDownloadingFileType:(long long)arg1;
+- (void)setFluidProgressController:(id)arg1;
 
 @end

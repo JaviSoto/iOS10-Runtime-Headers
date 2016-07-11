@@ -10,6 +10,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_clearDraftForConversation:(id)arg1;
 - (id)_draftForKey:(id)arg1;
 - (id)_pendingRecipients;
@@ -21,7 +22,7 @@
 - (id)draftForConversation:(id)arg1;
 - (id)draftForPendingConversationWithRecipients:(id*)arg1;
 - (void)flushCache;
-- (void)save:(BOOL)arg1;
+- (void)save:(bool)arg1;
 - (void)setDraft:(id)arg1 forConversation:(id)arg2;
 - (void)setDraftForPendingConversation:(id)arg1 withRecipients:(id)arg2;
 

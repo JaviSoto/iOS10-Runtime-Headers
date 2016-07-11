@@ -4,8 +4,8 @@
 
 @interface VCPImageFCRFaceDetector : VCPImageFaceDetector
 
-+ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformTopLeft;
++ (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformTopLeft;
 
-- (long)faceDetection:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 faces:(id)arg3 cancel:(id /* block */)arg4;
+- (int)faceDetection:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 faces:(id)arg3 cancel:(id /* block */)arg4;
 
 @end

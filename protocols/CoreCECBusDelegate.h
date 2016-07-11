@@ -6,6 +6,6 @@
 @optional
 
 - (void)cecBus:(CoreCECBus *)arg1 activeSourceHasChangedTo:(CoreCECDevice *)arg2 fromDevice:(CoreCECDevice *)arg3;
-- (void)cecBus:(CoreCECBus *)arg1 linkStateHasBeenUpdated:(BOOL)arg2;
+- (void)cecBus:(CoreCECBus *)arg1 linkStateHasBeenUpdated:(bool)arg2;
 
 @end

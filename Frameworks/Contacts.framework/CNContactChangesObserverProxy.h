@@ -4,13 +4,15 @@
 
 @interface CNContactChangesObserverProxy : NSObject {
     CNContact * _contactSnapshot;
-    NSSet * _keysToFetch;
+    NSArray * _keysToFetch;
     <CNContactChangesObserver> * _observer;
+    bool  _unify;
 }
 
 @property (nonatomic, retain) CNContact *contactSnapshot;
-@property (nonatomic, retain) NSSet *keysToFetch;
+@property (nonatomic, retain) NSArray *keysToFetch;
 @property (nonatomic) <CNContactChangesObserver> *observer;
+@property (nonatomic) bool unify;
 
 - (void).cxx_destruct;
 - (id)contactSnapshot;
@@ -19,5 +21,7 @@
 - (void)setContactSnapshot:(id)arg1;
 - (void)setKeysToFetch:(id)arg1;
 - (void)setObserver:(id)arg1;
+- (void)setUnify:(bool)arg1;
+- (bool)unify;
 
 @end

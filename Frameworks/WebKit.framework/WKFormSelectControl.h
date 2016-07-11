@@ -8,8 +8,6 @@
     }  _control;
 }
 
-+ (id)createPeripheralWithView:(id)arg1;
-
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)assistantView;

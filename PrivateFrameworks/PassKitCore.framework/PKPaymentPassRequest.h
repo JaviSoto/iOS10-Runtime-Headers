@@ -10,8 +10,8 @@
 @property (nonatomic, copy) NSString *passTypeID;
 @property (nonatomic, copy) NSString *serialNumber;
 
+- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
-- (void)dealloc;
 - (id)initWithPassTypeID:(id)arg1 serialNumber:(id)arg2;
 - (id)passTypeID;
 - (id)serialNumber;

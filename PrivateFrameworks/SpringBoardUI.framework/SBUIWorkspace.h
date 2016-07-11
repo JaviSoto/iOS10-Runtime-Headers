@@ -8,21 +8,21 @@
     FBSceneClientProviderInvalidationAction * _invalidationAction;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _scenes;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSSet *scenes;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_performSynchronouslyOnMainThread:(id /* block */)arg1;
 - (void)_queue_invalidate;
 - (void)beginTransaction;
 - (id)createSceneWithIdentifier:(id)arg1 initialClientSettings:(id)arg2;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

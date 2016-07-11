@@ -3,35 +3,35 @@
  */
 
 @interface MusicPlaybackProgressSlider : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing, MPUVibrantContentDisabling, MusicPlaybackProgressScrubbing> {
-    BOOL  _alwaysLive;
+    bool  _alwaysLive;
     double  _currentTime;
     double  _currentTimeSetTimeInterval;
     MPDetailScrubController * _detailScrubController;
-    BOOL  _displayScaleHasBeenSet;
+    bool  _displayScaleHasBeenSet;
     UIView * _knobView;
-    BOOL  _needsAnimationUpdate;
+    bool  _needsAnimationUpdate;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _previousKnownSize;
     float  _rate;
     <MusicPlaybackProgressScrubberDelegate> * _scrubberDelegate;
-    BOOL  _scrubbingEnabled;
+    bool  _scrubbingEnabled;
     UIImage * _thumbImage;
     double  _totalDuration;
-    BOOL  _tracking;
+    bool  _tracking;
 }
 
-@property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;
-@property (nonatomic, readonly) int currentScrubSpeed;
+@property (getter=isAlwaysLive, nonatomic) bool alwaysLive;
+@property (nonatomic, readonly) long long currentScrubSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double effectiveCurrentTime;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIView *knobView;
 @property (nonatomic) float rate;
 @property (nonatomic) <MusicPlaybackProgressScrubberDelegate> *scrubberDelegate;
-@property (getter=isScrubbingEnabled, nonatomic) BOOL scrubbingEnabled;
+@property (getter=isScrubbingEnabled, nonatomic) bool scrubbingEnabled;
 @property (readonly) Class superclass;
 @property (nonatomic) double totalDuration;
 
@@ -40,47 +40,47 @@
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_recursivelyRemoveAnimationsForAllSubviews;
 - (void)_recursivelyRemoveAnimationsForView:(id)arg1;
-- (BOOL)_setCurrentTime:(double)arg1;
+- (bool)_setCurrentTime:(double)arg1;
 - (void)_setNeedsAnimationUpdate;
 - (void)_setThumbAppearance;
 - (void)_setTrackAppearance;
-- (id)_trackImageWithAlpha:(float)arg1;
+- (id)_trackImageWithAlpha:(double)arg1;
 - (void)_updateAnimations;
-- (float)_valueForTime:(double)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (double)_valueForTime:(double)arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelScrubbing;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)createThumbView;
-- (int)currentScrubSpeed;
+- (long long)currentScrubSpeed;
 - (void)dealloc;
-- (void)detailScrubController:(id)arg1 didChangeScrubSpeed:(int)arg2;
+- (void)detailScrubController:(id)arg1 didChangeScrubSpeed:(long long)arg2;
 - (void)detailScrubController:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailScrubControllerDidBeginScrubbing:(id)arg1;
 - (void)detailScrubControllerDidEndScrubbing:(id)arg1;
 - (void)didMoveToWindow;
 - (double)effectiveCurrentTime;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAlwaysLive;
-- (BOOL)isScrubbingEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAlwaysLive;
+- (bool)isScrubbingEnabled;
 - (id)knobView;
 - (id)layersNotWantingVibrancy;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (float)rate;
 - (id)scrubberDelegate;
-- (void)setAlwaysLive:(BOOL)arg1;
+- (void)setAlwaysLive:(bool)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setRate:(float)arg1;
 - (void)setScrubberDelegate:(id)arg1;
-- (void)setScrubbingEnabled:(BOOL)arg1;
+- (void)setScrubbingEnabled:(bool)arg1;
 - (void)setTotalDuration:(double)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbHitRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbHitRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (void)tintColorDidChange;
 - (double)totalDuration;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

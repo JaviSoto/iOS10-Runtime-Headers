@@ -4,7 +4,10 @@
 
 @interface SKThreadSafeMutableArray : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
     NSMutableArray * _storage;
-    int  _storageLock;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _storageLock;
 }
 
 @property (readonly) NSArray *arrayRepresentation;

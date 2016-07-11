@@ -14,18 +14,17 @@
     NSArray * _sortDescriptors;
     NSString * _sortKey;
     NSDictionary * _subsectionDisplayNames;
-    BOOL  _syncsBulletinDismissal;
+    bool  _syncsBulletinDismissal;
     struct { 
         unsigned int pushDataProvider : 1; 
         unsigned int dataProviderDidLoad : 1; 
         unsigned int bulletinsWithRequestParameters : 1; 
         unsigned int bulletinsFilteredByDEPRECATED : 1; 
         unsigned int bulletinsFilteredByEnabledSectionsDEPRECATED : 1; 
-        unsigned int clearedInfoAndBulletinsForClearingAllBulletins : 1; 
         unsigned int clearedInfoForBulletins : 1; 
+        unsigned int clearedInfoAndBulletinsForClearingAllBulletins : 1; 
+        unsigned int clearedInfoAndBulletinsForClearingBulletinsByDate : 1; 
         unsigned int clearedInfoForBulletinsDEPRECATED : 1; 
-        unsigned int attachmentPNGDataForRecordID : 1; 
-        unsigned int attachmentAspectRatioForRecordID : 1; 
         unsigned int defaultSectionInfo : 1; 
         unsigned int defaultSubsectionInfos : 1; 
         unsigned int displayNameForSubsectionID : 1; 
@@ -40,7 +39,6 @@
         unsigned int handleBulletinActionResponse : 1; 
         unsigned int universalSectionIdentifier : 1; 
         unsigned int parentSectionIdentifier : 1; 
-        unsigned int primaryAttachmentDataForRecordID : 1; 
         unsigned int displayNameForFilterID : 1; 
     }  _traits;
     NSString * _universalSectionIdentifier;
@@ -57,21 +55,21 @@
 @property (nonatomic, copy) NSArray *sortDescriptors;
 @property (nonatomic, copy) NSString *sortKey;
 @property (nonatomic, copy) NSDictionary *subsectionDisplayNames;
-@property (nonatomic, readonly) BOOL syncsBulletinDismissal;
-@property (nonatomic, readonly) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; } traits;
+@property (nonatomic, readonly) bool syncsBulletinDismissal;
+@property (nonatomic, readonly) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; } traits;
 @property (nonatomic, copy) NSString *universalSectionIdentifier;
 
 + (id)identityForDataProvider:(id)arg1;
 + (id)identityForRemoteDataProvider:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)defaultSectionInfo;
 - (id)defaultSubsectionInfos;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filterDisplayNames;
-- (id)initForDataProvider:(id)arg1 forRemoteDataProvider:(BOOL)arg2;
+- (id)initForDataProvider:(id)arg1 forRemoteDataProvider:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)parentSectionIdentifier;
 - (id)sectionDisplayName;
@@ -93,8 +91,8 @@
 - (id)sortDescriptors;
 - (id)sortKey;
 - (id)subsectionDisplayNames;
-- (BOOL)syncsBulletinDismissal;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; })traits;
+- (bool)syncsBulletinDismissal;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; })traits;
 - (id)universalSectionIdentifier;
 
 @end

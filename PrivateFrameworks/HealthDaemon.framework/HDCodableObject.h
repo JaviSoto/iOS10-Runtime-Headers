@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableObject : PBCodable <NSCopying> {
+@interface HDCodableObject : PBCodable <HDDecoding, NSCopying> {
     double  _creationDate;
     struct { 
         unsigned int creationDate : 1; 
@@ -13,34 +13,37 @@
 }
 
 @property (nonatomic) double creationDate;
-@property (nonatomic) BOOL hasCreationDate;
-@property (nonatomic, readonly) BOOL hasMetadataDictionary;
-@property (nonatomic, readonly) BOOL hasSourceBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasUuid;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasCreationDate;
+@property (nonatomic, readonly) bool hasMetadataDictionary;
+@property (nonatomic, readonly) bool hasSourceBundleIdentifier;
+@property (nonatomic, readonly) bool hasUuid;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HDCodableMetadataDictionary *metadataDictionary;
 @property (nonatomic, retain) NSString *sourceBundleIdentifier;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *uuid;
 
 - (void).cxx_destruct;
+- (bool)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)creationDate;
-- (id)decodedCreationDate;
 - (id)decodedMetadata;
-- (id)decodedUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCreationDate;
-- (BOOL)hasMetadataDictionary;
-- (BOOL)hasSourceBundleIdentifier;
-- (BOOL)hasUuid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCreationDate;
+- (bool)hasMetadataDictionary;
+- (bool)hasSourceBundleIdentifier;
+- (bool)hasUuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadataDictionary;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCreationDate:(double)arg1;
-- (void)setHasCreationDate:(BOOL)arg1;
+- (void)setHasCreationDate:(bool)arg1;
 - (void)setMetadataDictionary:(id)arg1;
 - (void)setSourceBundleIdentifier:(id)arg1;
 - (void)setUuid:(id)arg1;

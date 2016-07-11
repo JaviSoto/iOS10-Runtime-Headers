@@ -14,6 +14,5 @@
 - (double)_timestamp;
 - (struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*)addrinfo;
 - (void)dealloc;
-- (void)finalize;
 
 @end

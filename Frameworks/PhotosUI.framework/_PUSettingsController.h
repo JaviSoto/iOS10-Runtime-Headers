@@ -9,8 +9,9 @@
 @property (nonatomic, copy) id /* block */ onViewDidDisappearBlock;
 
 - (void).cxx_destruct;
+- (void)callOnViewDidDisappearBlock;
 - (id /* block */)onViewDidDisappearBlock;
 - (void)setOnViewDidDisappearBlock:(id /* block */)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

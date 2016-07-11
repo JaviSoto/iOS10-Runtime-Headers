@@ -10,16 +10,21 @@
 
 - (void).cxx_destruct;
 - (id)_entityViewDescriptorForEntityProvider:(id)arg1;
+- (void)_handleDisplayValuesDidChangeNotification:(id)arg1;
 - (id)_providerListEntityProvider;
+- (void)_registerForRelevantNotificationsFromViewDescriptors;
 - (void)_setEntityProviderForEntityViewDescriptors:(id)arg1;
-- (BOOL)allowsSectionHeaderForSectionIndex:(unsigned int)arg1;
+- (void)_unregisterForRelevantNotificationsFromViewDescriptors;
+- (bool)allowsSectionHeaderForSectionIndex:(unsigned long long)arg1;
 - (id)contentDescriptorForIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)entityViewDescriptors;
 - (void)enumerateContentDescriptorsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSectionHeaderContentDescriptorsUsingBlock:(id /* block */)arg1;
+- (bool)includesShuffleAction;
 - (id)initWithEntityViewDescriptors:(id)arg1;
-- (id)sectionHeaderContentDescriptorForSectionIndex:(unsigned int)arg1;
+- (id)sectionHeaderContentDescriptorForSectionIndex:(unsigned long long)arg1;
 - (void)setEntityProvider:(id)arg1;
 - (void)setEntityViewDescriptors:(id)arg1;
 

@@ -3,31 +3,31 @@
  */
 
 @interface HDMigrationManager : NSObject <HDContentProtectionObserver, HDHealthDaemonReadyObserver> {
-    HDDaemon * _daemon;
-    BOOL  _needsProtectedDataMigration;
+    bool  _needsProtectedDataMigration;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic) HDDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL needsProtectedDataMigration;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool needsProtectedDataMigration;
+@property (nonatomic) HDProfile *profile;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_queue_performMigrationWithCompletion:(id /* block */)arg1;
-- (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
-- (id)daemon;
+- (void)contentProtectionStateChanged:(long long)arg1 previousState:(long long)arg2;
 - (void)daemonReady:(id)arg1;
 - (void)dealloc;
-- (id)initWithDaemon:(id)arg1;
-- (BOOL)needsProtectedDataMigration;
+- (id)initWithProfile:(id)arg1;
+- (bool)needsProtectedDataMigration;
 - (void)performMigrationWithCompletion:(id /* block */)arg1;
+- (id)profile;
 - (id)queue;
-- (void)setDaemon:(id)arg1;
-- (void)setNeedsProtectedDataMigration:(BOOL)arg1;
+- (void)setNeedsProtectedDataMigration:(bool)arg1;
+- (void)setProfile:(id)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

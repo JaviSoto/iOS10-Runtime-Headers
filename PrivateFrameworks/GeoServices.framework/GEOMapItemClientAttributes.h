@@ -4,12 +4,15 @@
 
 @interface GEOMapItemClientAttributes : PBCodable <NSCopying> {
     GEOMapItemAddressBookAttributes * _addressBookAttributes;
+    GEOMapItemCorrectedLocationAttributes * _correctedLocationAttributes;
     GEOMapItemRoutineAttributes * _routineAttributes;
 }
 
 @property (nonatomic, retain) GEOMapItemAddressBookAttributes *addressBookAttributes;
-@property (nonatomic, readonly) BOOL hasAddressBookAttributes;
-@property (nonatomic, readonly) BOOL hasRoutineAttributes;
+@property (nonatomic, retain) GEOMapItemCorrectedLocationAttributes *correctedLocationAttributes;
+@property (nonatomic, readonly) bool hasAddressBookAttributes;
+@property (nonatomic, readonly) bool hasCorrectedLocationAttributes;
+@property (nonatomic, readonly) bool hasRoutineAttributes;
 @property (nonatomic, retain) GEOMapItemRoutineAttributes *routineAttributes;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
@@ -17,22 +20,25 @@
 - (id)addressBookAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)correctedLocationAttributes;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressBookAttributes;
-- (BOOL)hasRoutineAttributes;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddressBookAttributes;
+- (bool)hasCorrectedLocationAttributes;
+- (bool)hasRoutineAttributes;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routineAttributes;
 - (void)setAddressBookAttributes:(id)arg1;
+- (void)setCorrectedLocationAttributes:(id)arg1;
 - (void)setRoutineAttributes:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
 
-- (id)initWithLOIType:(int)arg1 event:(id)arg2;
+- (id)initWithLOIType:(long long)arg1 event:(id)arg2;
 
 @end

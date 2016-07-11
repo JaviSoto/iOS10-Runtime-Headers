@@ -15,5 +15,6 @@
 - (void)restoreFileFromRemoteMetadata:(id)arg1;
 - (void)updateFileFromURL:(id)arg1;
 - (void)updateUploadedFileFromRemoteMetadata:(id)arg1;
+- (void)updateUploadedFileToDropBox;
 
 @end

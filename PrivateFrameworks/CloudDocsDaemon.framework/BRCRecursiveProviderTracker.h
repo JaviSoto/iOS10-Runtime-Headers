@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *key;
 
 - (void).cxx_destruct;
+- (void)completeWithError:(id)arg1;
 - (id /* block */)completionHandlerFor:(id)arg1;
 - (id)description;
 - (id)documentIDsEnumerator;

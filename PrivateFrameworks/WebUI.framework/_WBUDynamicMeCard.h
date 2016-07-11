@@ -4,18 +4,17 @@
 
 @interface _WBUDynamicMeCard : NSObject {
     NSMutableArray * _blocksPendingMeCard;
-    void * _me;
+    CNContact * _me;
 }
 
-+ (int)_ABPropertyIDForString:(id)arg1;
-+ (BOOL)isProxyProperty:(id)arg1;
++ (id)_contactObjectComponentForString:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addressBookChanged:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)me;
 - (void)performWhenReady:(id /* block */)arg1;
-- (id)valueForProperty:(id)arg1 isMultiValue:(BOOL*)arg2;
-- (id)valueForProxyProperty:(id)arg1;
+- (id)valueForProperty:(id)arg1 contact:(id)arg2;
 
 @end

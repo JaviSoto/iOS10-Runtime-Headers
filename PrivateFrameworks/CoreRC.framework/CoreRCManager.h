@@ -33,11 +33,11 @@
 - (void)notifyDelegateUpdateBus:(id)arg1;
 - (id)propertyForKey:(id)arg1 ofBus:(id)arg2 error:(id*)arg3;
 - (void)removeBus:(id)arg1;
-- (BOOL)sendCommand:(unsigned int)arg1 fromDevice:(id)arg2 toDevice:(id)arg3 withDuration:(unsigned int)arg4 error:(id*)arg5;
-- (BOOL)sendHIDEvent:(id)arg1 fromDevice:(id)arg2 toDevice:(id)arg3 error:(id*)arg4;
+- (bool)sendCommand:(unsigned long long)arg1 fromDevice:(id)arg2 toDevice:(id)arg3 withDuration:(unsigned long long)arg4 error:(id*)arg5;
+- (bool)sendHIDEvent:(id)arg1 fromDevice:(id)arg2 toDevice:(id)arg3 error:(id*)arg4;
 - (id)serialQueue;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setExtendedProperty:(id)arg1 forKey:(id)arg2 ofDevice:(id)arg3 error:(id*)arg4;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 error:(id*)arg4;
+- (bool)setExtendedProperty:(id)arg1 forKey:(id)arg2 ofDevice:(id)arg3 error:(id*)arg4;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 error:(id*)arg4;
 
 @end

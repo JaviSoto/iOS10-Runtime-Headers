@@ -5,27 +5,31 @@
 @interface AFAudioAnalyzer : NSObject <Endpointer> {
     struct OpaqueAudioComponentInstance { } * _audioUnitEPVAD2;
     double  _automaticEndpointingSuspensionEndTime;
-    BOOL  _communicatedEndpointDetection;
-    BOOL  _communicatedStartPointDetection;
+    bool  _communicatedEndpointDetection;
+    bool  _communicatedStartPointDetection;
     <AFAudioAnalyzerDelegate> * _delegate;
-    BOOL  _detectedEndpoint;
-    BOOL  _detectedStartPoint;
+    bool  _detectedOneShotEndpoint;
+    bool  _detectedOneShotStartpoint;
+    bool  _detectedRecurrentEndpoint;
+    bool  _detectedRecurrentStartpoint;
     double  _endWaitTime;
     int  _endpointMode;
     NSMutableData * _floatSampleBuffer;
-    unsigned long  _frameRate;
+    unsigned int  _frameRate;
     double  _interspeechWaitTime;
-    BOOL  _isConfigured;
-    double  _lastEndOfVoiceActivityTime;
+    bool  _isConfigured;
+    double  _lastOneShotEndpoint;
+    double  _lastOneShotStartpoint;
+    double  _lastRecurrentEndpoint;
+    double  _lastRecurrentStartpoint;
+    double  _minimumDurationForEndpointer;
     NSString * _modelDictPath;
     double  _previousSamplesSeen;
-    NSObject<OS_dispatch_queue> * _queue;
-    double  _safeStartWaitTime;
     double  _sampleRate;
     double  _samplesSeen;
-    BOOL  _saveSampleSeenInReset;
+    bool  _saveSampleSeenInReset;
     double  _startWaitTime;
-    int  _style;
+    long long  _style;
     NSDictionary * _topLevelParameterDict;
 }
 
@@ -35,18 +39,20 @@
 @property (readonly, copy) NSString *description;
 @property double endWaitTime;
 @property int endpointMode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property double interspeechWaitTime;
 @property (nonatomic, readonly) double lastEndOfVoiceActivityTime;
+@property (nonatomic, readonly) double lastStartOfVoiceActivityTime;
+@property (nonatomic) double minimumDurationForEndpointer;
 @property double startWaitTime;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_configureWithSampleRate:(double)arg1 andFrameRate:(unsigned long)arg2;
-- (void)_detectVoiceActivityInSamples:(float*)arg1 numSamples:(unsigned long)arg2;
+- (void)_configureWithSampleRate:(double)arg1 andFrameRate:(unsigned int)arg2;
+- (void)_detectVoiceActivityInSamples:(float*)arg1 numSamples:(unsigned int)arg2;
 - (double)automaticEndpointingSuspensionEndTime;
-- (BOOL)configureWithASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 andFrameRate:(unsigned long)arg2;
+- (bool)configureWithASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 andFrameRate:(unsigned int)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (double)endWaitTime;
@@ -55,19 +61,20 @@
 - (id)init;
 - (double)interspeechWaitTime;
 - (double)lastEndOfVoiceActivityTime;
+- (double)lastStartOfVoiceActivityTime;
+- (double)minimumDurationForEndpointer;
 - (void)preheat;
 - (void)reset;
-- (void)resume;
 - (void)saveSamplesSeenOnNextReset;
 - (void)setAutomaticEndpointingSuspensionEndTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndWaitTime:(double)arg1;
 - (void)setEndpointMode:(int)arg1;
 - (void)setInterspeechWaitTime:(double)arg1;
+- (void)setMinimumDurationForEndpointer:(double)arg1;
 - (void)setStartWaitTime:(double)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (double)startWaitTime;
-- (int)style;
-- (void)suspend;
+- (long long)style;
 
 @end

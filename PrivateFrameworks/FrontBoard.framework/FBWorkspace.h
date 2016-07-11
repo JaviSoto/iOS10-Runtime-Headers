@@ -5,11 +5,12 @@
 @interface FBWorkspace : NSObject <FBSceneClientProvider, FBWorkspaceServerDelegate> {
     NSObject<OS_dispatch_queue> * _callOutQueue;
     NSMapTable * _hostToClientMap;
-    BOOL  _invalidated;
+    bool  _invalidated;
+    NSMutableSet * _invalidatingScenes;
     FBSceneClientProviderInvalidationAction * _invalidationAction;
     NSObject<OS_dispatch_queue> * _queue;
     FBWorkspaceServer * _server;
-    BOOL  _willInvalidate;
+    bool  _willInvalidate;
     BSZeroingWeakReference * _zeroingWeakDelegate;
     BSZeroingWeakReference * _zeroingWeakProcess;
 }
@@ -18,18 +19,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBWorkspaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) FBProcess *process;
 @property (readonly) Class superclass;
 
-- (id)_newSceneWithHost:(id)arg1;
-- (id)_newWorkspaceServer;
+- (id)_createSceneClientWithIdentity:(id)arg1;
+- (void)_invalidateSceneClientWithIdentity:(id)arg1;
 - (id)_queue;
 - (void)_queue_enumerateScenes:(id /* block */)arg1;
 - (void)_queue_fireInvalidationAction;
 - (void)_queue_invalidateAllScenes;
+- (void)_queue_sceneDidInvalidate:(id)arg1;
 - (void)_queue_willInvalidateAllScenes;
+- (Class)_sceneClassForIdentity:(id)arg1;
 - (id)_server;
+- (Class)_serverClass;
 - (id)auditToken;
 - (void)beginTransaction;
 - (void)dealloc;
@@ -41,6 +45,7 @@
 - (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;
 - (void)sendActions:(id)arg1;
+- (void)server:(id)arg1 handleConnectEvent:(id)arg2;
 - (void)server:(id)arg1 handleCreateSceneRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)server:(id)arg1 handleDestroySceneRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;

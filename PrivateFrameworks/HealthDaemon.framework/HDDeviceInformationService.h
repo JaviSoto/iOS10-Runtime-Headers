@@ -4,30 +4,30 @@
 
 @interface HDDeviceInformationService : HDHealthService {
     NSMutableDictionary * _characteristics;
-    BOOL  _deviceInformationHasBeenLoaded;
+    bool  _deviceInformationHasBeenLoaded;
     NSMutableArray * _pendingDeviceInformationLoadedBlocks;
     NSMutableSet * _propertiesLeftToFetch;
-    HDHealthDevicePropertyManager * _propertyManager;
+    HDHealthServicePropertyManager * _propertyManager;
     NSMutableDictionary * _propertyValues;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *characteristics;
-@property (nonatomic) BOOL deviceInformationHasBeenLoaded;
+@property (nonatomic) bool deviceInformationHasBeenLoaded;
 @property (readonly) NSString *firmwareRevision;
 @property (readonly) NSString *hardwareRevision;
 @property (readonly) NSString *manufacturerName;
 @property (readonly) NSString *modelNumber;
 @property (nonatomic, retain) NSMutableArray *pendingDeviceInformationLoadedBlocks;
 @property (nonatomic, retain) NSMutableSet *propertiesLeftToFetch;
-@property (nonatomic) HDHealthDevicePropertyManager *propertyManager;
+@property (nonatomic) HDHealthServicePropertyManager *propertyManager;
 @property (nonatomic, retain) NSMutableDictionary *propertyValues;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) NSString *serialNumber;
 @property (readonly) NSString *softwareRevision;
 
 + (id)implementedProperties;
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
 - (void).cxx_destruct;
@@ -39,7 +39,7 @@
 - (void)_queue_setDeviceInformationHasBeenLoaded;
 - (void)_startDeviceInformationLoadingTimeoutTimer;
 - (id)characteristics;
-- (BOOL)deviceInformationHasBeenLoaded;
+- (bool)deviceInformationHasBeenLoaded;
 - (id)firmwareRevision;
 - (id)hardwareRevision;
 - (id)initWithDevicePropertyManager:(id)arg1 healthDaemon:(id)arg2 peripheral:(id)arg3;
@@ -56,7 +56,7 @@
 - (void)readProperty:(id)arg1;
 - (id)serialNumber;
 - (void)setCharacteristics:(id)arg1;
-- (void)setDeviceInformationHasBeenLoaded:(BOOL)arg1;
+- (void)setDeviceInformationHasBeenLoaded:(bool)arg1;
 - (void)setPendingDeviceInformationLoadedBlocks:(id)arg1;
 - (void)setPropertiesLeftToFetch:(id)arg1;
 - (void)setPropertyManager:(id)arg1;

@@ -3,48 +3,60 @@
  */
 
 @interface VKGlobeImageCanvas : VKImageCanvas <MDSnapshotMap> {
-    struct unique_ptr<vk::GlobeAdapter, std::__1::default_delete<vk::GlobeAdapter> > { 
-        struct __compressed_pair<vk::GlobeAdapter *, std::__1::default_delete<vk::GlobeAdapter> > { 
+    struct unique_ptr<md::GlobeAdapter, std::__1::default_delete<md::GlobeAdapter> > { 
+        struct __compressed_pair<md::GlobeAdapter *, std::__1::default_delete<md::GlobeAdapter> > { 
             struct GlobeAdapter {} *__first_; 
         } __ptr_; 
     }  _globeAdapter;
-    struct shared_ptr<vk::VKGlobeStylesheet> { 
+    struct shared_ptr<md::VKGlobeStylesheet> { 
         struct VKGlobeStylesheet {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _globeStyleSheet;
-    BOOL  _notifyFullyDrawn;
-    BOOL  _notifyFullyLoaded;
-    struct Viewer { int (**x1)(); } * _viewer;
+    struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_12_1_1; } x12; struct vector<altitude::TileBound, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_13_1_1; struct TileBound {} *x_13_1_2; struct __compressed_pair<altitude::TileBound *, std::__1::allocator<altitude::TileBound> > { struct TileBound {} *x_3_2_1; } x_13_1_3; } x13; struct vector<altitude::SimpleTileKey, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_14_1_1; struct SimpleTileKey {} *x_14_1_2; struct __compressed_pair<altitude::SimpleTileKey *, std::__1::allocator<altitude::SimpleTileKey> > { struct SimpleTileKey {} *x_3_2_1; } x_14_1_3; } x14; bool x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; struct VKClassicGlobeCanvas { } *x20; bool x21; bool x22; int x23; struct AnimationManager { struct AnimationTimer { struct AnimationReferenceTimer {} *x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_24_1_1; double x_24_1_2; struct vector<altitude::AnimationObjectHolder, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_2_1; struct AnimationObjectHolder {} *x_3_2_2; struct __compressed_pair<altitude::AnimationObjectHolder *, std::__1::allocator<altitude::AnimationObjectHolder> > { struct AnimationObjectHolder {} *x_3_3_1; } x_3_2_3; } x_24_1_3; } x24; struct Timer { double x_25_1_1; } x25; double x26; bool x27; double x28; double x29; double x30; struct FrameLatLon { double x_31_1_1; double x_31_1_2; double x_31_1_3; double x_31_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_31_1_5; } x31; struct C3mmRequestManager {} *x32; struct RenderableGroup {} *x33; unsigned int x34; double x35; bool x36; bool x37; struct LabelDataManagerPrivate {} *x38; bool x39; bool x40; bool x41; bool x42; struct RouteLineManager {} *x43; struct GlobeCleanupLoader {} *x44; struct CompleteGlobeTileSetCullingGraph {} *x45; struct CompleteGlobeTileSetLoader {} *x46; struct TileSetNode {} *x47; struct GlobeTileRenderManager {} *x48; struct CullingNode {} *x49; struct EarthAdjustedViewNode {} *x50; struct UserViewNode {} *x51; struct View {} *x52; struct BasicViewNode {} *x53; struct GlobeMainViewNode {} *x54; struct C3bRequestManager {} *x55; float x56; bool x57; struct shared_ptr<bool> { bool *x_58_1_1; struct __shared_weak_count {} *x_58_1_2; } x58; struct HeightRequestManager {} *x59; struct map<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d>, altitude::GlobeView::LessVector2i, std::__1::allocator<std::__1::pair<const gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true>, std::__1::allocator<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> > > > { struct __tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<gm::Matrix<int, 2, 1>, std::__1::__value_type<gm::Matrix<int, 2, 1>, std::__1::pair<bool, altitude::Position3d> >, altitude::GlobeView::LessVector2i, true> > { unsigned long long x_3_3_1; } x_1_2_3; } x_60_1_1; } x60; struct Mutex { void *x_61_1_1; } x61; struct shared_ptr<altitude::Stylesheet> { struct Stylesheet {} *x_62_1_1; struct __shared_weak_count {} *x_62_1_2; } x62; struct FlyoverTour {} *x63; bool x64; struct TriggerManager {} *x65; struct Viewport { int x_66_1_1; int x_66_1_2; int x_66_1_3; int x_66_1_4; } x66; struct AnimationReferenceTimer { double x_67_1_1; double x_67_1_2; double x_67_1_3; } x67; bool x68; struct set<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree<altitude::ManifestListener *, std::__1::less<altitude::ManifestListener *>, std::__1::allocator<altitude::ManifestListener *> > { struct __tree_node<altitude::ManifestListener *, void *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<altitude::ManifestListener *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::less<altitude::ManifestListener *> > { unsigned long long x_3_3_1; } x_1_2_3; } x_69_1_1; } x69; struct GeoServicesLoader {} *x70; struct ManifestManager {} *x71; struct GlobeDispatch {} *x72; } * _globeView;
+    bool  _notifyFullyDrawn;
+    bool  _notifyFullyLoaded;
+    struct _MDRenderTargetRef { 
+        <MDRenderTarget> *ptr; 
+    }  _renderTargetRef;
 }
 
+@property (nonatomic, retain) NSArray *customFeatureDataSources;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned char labelScaleFactor;
-@property (nonatomic) BOOL localizeLabels;
-@property (nonatomic) BOOL showsBuildings;
-@property (nonatomic) BOOL showsPointsOfInterest;
+@property (nonatomic) bool localizeLabels;
+@property (nonatomic) bool showsBuildings;
+@property (nonatomic) bool showsPointsOfInterest;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_updateCameraFromGlobe;
 - (void)_updateViewTransform;
 - (void)_updateViewport;
+- (void)addCustomFeatureDataSource:(id)arg1;
+- (void)cancelTileRequests;
+- (id)customFeatureDataSources;
 - (void)dealloc;
 - (void)didLayout;
 - (void)globeDidBecomeFullyDrawn;
 - (void)globeWillBecomeFullyDrawn;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5 renderer:(struct GLRenderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; bool x5; float x6; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_7_1_3; } x7; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_8_1_1; } x8; struct unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > { struct __compressed_pair<ggl::CommandBuffer *, std::__1::default_delete<ggl::CommandBuffer> > { struct CommandBuffer {} *x_1_2_1; } x_9_1_1; } x9; bool x10; id x11; struct RenderState {} x12; struct unique_ptr<ggl::OESContext, std::__1::default_delete<ggl::OESContext> > { struct __compressed_pair<ggl::OESContext *, std::__1::default_delete<ggl::OESContext> > { struct OESContext {} *x_1_2_1; } x_13_1_1; } x13; struct RenderTarget {} *x14; struct TransactionBuffer { struct deque<std::__1::shared_ptr<ggl::RenderTransaction>, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> > > { struct __split_buffer<std::__1::shared_ptr<ggl::RenderTransaction> *, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> *> > { struct shared_ptr<ggl::RenderTransaction> {} **x_1_3_1; struct shared_ptr<ggl::RenderTransaction> {} **x_1_3_2; struct shared_ptr<ggl::RenderTransaction> {} **x_1_3_3; struct __compressed_pair<std::__1::shared_ptr<ggl::RenderTransaction> **, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> *> > { struct shared_ptr<ggl::RenderTransaction> {} **x_4_4_1; } x_1_3_4; } x_1_2_1; unsigned int x_1_2_2; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> > > { unsigned long x_3_3_1; } x_1_2_3; } x_15_1_1; } x15; struct unique_ptr<ggl::PerformanceHUD, std::__1::default_delete<ggl::PerformanceHUD> > { struct __compressed_pair<ggl::PerformanceHUD *, std::__1::default_delete<ggl::PerformanceHUD> > { struct PerformanceHUD {} *x_1_2_1; } x_16_1_1; } x16; struct deque<std::__1::pair<unsigned long, void *>, std::__1::allocator<std::__1::pair<unsigned long, void *> > > { struct __split_buffer<std::__1::pair<unsigned long, void *> *, std::__1::allocator<std::__1::pair<unsigned long, void *> *> > { struct pair<unsigned long, void *> {} **x_1_2_1; struct pair<unsigned long, void *> {} **x_1_2_2; struct pair<unsigned long, void *> {} **x_1_2_3; struct __compressed_pair<std::__1::pair<unsigned long, void *> **, std::__1::allocator<std::__1::pair<unsigned long, void *> *> > { struct pair<unsigned long, void *> {} **x_4_3_1; } x_1_2_4; } x_17_1_1; unsigned int x_17_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::pair<unsigned long, void *> > > { unsigned long x_3_2_1; } x_17_1_3; } x17; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_18_1_1; struct BufferLoadItem {} *x_18_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_18_1_3; } x18; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_19_1_1; struct Texture2DLoadItem {} *x_19_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_19_1_3; } x19; unsigned int x20; }*)arg6 manifestConfiguration:(id)arg7;
-- (BOOL)isShowingNoDataPlaceholders;
+- (id)initWithTarget:(id)arg1 device:(struct Device { int x1; struct shared_ptr<ggl::Device> { struct Device {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct unique_ptr<md::SharedDeviceResources, std::__1::default_delete<md::SharedDeviceResources> > { struct __compressed_pair<md::SharedDeviceResources *, std::__1::default_delete<md::SharedDeviceResources> > { struct SharedDeviceResources {} *x_1_2_1; } x_3_1_1; } x3; }*)arg2 homeQueue:(id)arg3 renderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; bool x5; float x6; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_7_1_3; } x7; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_8_1_1; } x8; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_9_1_1; struct __shared_weak_count {} *x_9_1_2; } x9; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_10_1_1; } x10; struct Texture2D {} *x11; struct unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > { struct __compressed_pair<ggl::CommandBuffer *, std::__1::default_delete<ggl::CommandBuffer> > { struct CommandBuffer {} *x_1_2_1; } x_12_1_1; } x12; }*)arg4 manifestConfiguration:(id)arg5;
+- (bool)isShowingNoDataPlaceholders;
 - (unsigned char)labelScaleFactor;
-- (BOOL)localizeLabels;
+- (bool)localizeLabels;
+- (void)removeCustomFeatureDataSource:(id)arg1;
+- (void)removeRenderer;
+- (void)setCustomFeatureDataSources:(id)arg1;
 - (void)setLabelScaleFactor:(unsigned char)arg1;
-- (void)setLocalizeLabels:(BOOL)arg1;
-- (void)setMapType:(int)arg1;
-- (void)setShowsBuildings:(BOOL)arg1;
-- (void)setShowsPointsOfInterest:(BOOL)arg1;
-- (BOOL)showsBuildings;
-- (BOOL)showsPointsOfInterest;
+- (void)setLocalizeLabels:(bool)arg1;
+- (void)setMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg1;
+- (void)setMapType:(long long)arg1;
+- (void)setShowsBuildings:(bool)arg1;
+- (void)setShowsPointsOfInterest:(bool)arg1;
+- (bool)showsBuildings;
+- (bool)showsPointsOfInterest;
 - (void)update;
 
 @end

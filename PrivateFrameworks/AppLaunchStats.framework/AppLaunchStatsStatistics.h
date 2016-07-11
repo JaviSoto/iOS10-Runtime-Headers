@@ -4,7 +4,7 @@
 
 @interface AppLaunchStatsStatistics : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
     NSMutableDictionary * appStatistics;
-    BOOL  bypass;
+    bool  bypass;
     NSMutableArray * lastForegroundApps;
     NSMutableArray * lastPredictedApps;
     NSDate * lastTriggeredDate;
@@ -16,13 +16,13 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)admit:(id)arg1;
+- (bool)admit:(id)arg1;
 - (void)broughtToForeground:(id)arg1;
 - (id)copyStatisticsToDictionary;
 - (id)init:(id /* block */)arg1;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
-- (BOOL)pullPredicted:(unsigned short)arg1;
+- (bool)pullPredicted:(unsigned short)arg1;
 - (void)restore:(id)arg1;
 - (void)save:(id)arg1;
 - (void)saveContext:(id)arg1;

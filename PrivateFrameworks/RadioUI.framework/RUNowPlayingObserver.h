@@ -3,14 +3,14 @@
  */
 
 @interface RUNowPlayingObserver : MPNowPlayingObserver {
-    RURadioPlaybackCoordinator * _playbackCoordinator;
+    MPCRadioPlaybackCoordinator * _playbackCoordinator;
 }
 
 - (void).cxx_destruct;
 - (void)_buyOffersDidChangeNotification:(id)arg1;
 - (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_isInWishListDidChangeNotification:(id)arg1;
-- (BOOL)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
+- (bool)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1;

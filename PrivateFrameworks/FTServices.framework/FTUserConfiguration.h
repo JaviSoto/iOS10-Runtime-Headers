@@ -2,19 +2,29 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@interface FTUserConfiguration : NSObject
+@interface FTUserConfiguration : NSObject {
+    NSMutableDictionary * _cellularDataAvailableCache;
+    NSMutableDictionary * _wifiAllowedCache;
+}
 
-@property (nonatomic, readonly) BOOL _nonWifiFaceTimeEntitled;
-@property (nonatomic) BOOL allowAnyNetwork;
-@property (nonatomic) BOOL cellularFaceTimeEnabled;
+@property (nonatomic, readonly) bool _nonWifiFaceTimeEntitled;
+@property (nonatomic) bool allowAnyNetwork;
+@property (nonatomic) bool cellularFaceTimeEnabled;
 
 + (id)sharedInstance;
 
-- (BOOL)_adequateInternalOrCarrierInstall;
-- (BOOL)_nonWifiFaceTimeEntitled;
-- (BOOL)allowAnyNetwork;
-- (BOOL)cellularFaceTimeEnabled;
-- (void)setAllowAnyNetwork:(BOOL)arg1;
-- (void)setCellularFaceTimeEnabled:(BOOL)arg1;
+- (bool)_adequateInternalOrCarrierInstall;
+- (bool)_getCellularDataEnabledForBundleID:(id)arg1;
+- (bool)_getWifiDataAllowedForBundleID:(id)arg1;
+- (bool)_nonWifiFaceTimeEntitled;
+- (void)_setAppCellularDataEnabled:(bool)arg1;
+- (bool)allowAnyNetwork;
+- (bool)cellularDataEnabledForBundleId:(id)arg1;
+- (bool)cellularFaceTimeEnabled;
+- (void)dealloc;
+- (id)init;
+- (void)setAllowAnyNetwork:(bool)arg1;
+- (void)setCellularFaceTimeEnabled:(bool)arg1;
+- (bool)wifiAllowedForBundleId:(id)arg1;
 
 @end

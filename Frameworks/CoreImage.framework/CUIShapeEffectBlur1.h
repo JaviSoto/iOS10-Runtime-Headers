@@ -40,7 +40,6 @@
 - (id)inputShadowColorInner;
 - (id)inputShadowColorOuter;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputFill:(id)arg1;
 - (void)setInputGlowColorInner:(id)arg1;
 - (void)setInputGlowColorOuter:(id)arg1;

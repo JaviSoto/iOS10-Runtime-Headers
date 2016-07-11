@@ -3,13 +3,16 @@
  */
 
 @interface PKPaymentProvisioningResponse : PKPaymentWebServiceResponse {
+    NSArray * _moreInfoURLs;
     NSURL * _passURL;
 }
 
-@property (nonatomic, retain) NSURL *passURL;
+@property (nonatomic, readonly, copy) NSArray *moreInfoURLs;
+@property (nonatomic, copy) NSURL *passURL;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
+- (id)moreInfoURLs;
 - (id)passURL;
 - (void)setPassURL:(id)arg1;
 

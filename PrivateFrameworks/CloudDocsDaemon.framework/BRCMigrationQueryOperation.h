@@ -6,18 +6,22 @@
     CKQueryCursor * _continuationCursor;
     NSString * _migrationKey;
     NSMutableArray * _recordsWithShareID;
+    NSMutableArray * _shares;
 }
 
 + (id)allMigrationKeysOrdered;
 + (id)shareIDsMigrationKey;
++ (id)sharesMigrationKey;
 
 - (void).cxx_destruct;
 - (void)_performAfterQueryingForShareIDs:(id /* block */)arg1;
+- (void)_performAfterQueryingForShares:(id /* block */)arg1;
+- (void)_performQuery:(id)arg1 recordFetchedBlock:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)_saveShareIDsQueryResultsInDB:(id)arg1;
+- (void)_saveSharesQueryResultsInDB:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (BOOL)hasCaughtUp;
 - (id)initWithServerZone:(id)arg1 migrationKey:(id)arg2 continuationCursor:(id)arg3;
-- (BOOL)isConsistent;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

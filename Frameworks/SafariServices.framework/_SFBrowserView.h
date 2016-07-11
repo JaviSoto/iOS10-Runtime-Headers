@@ -3,63 +3,60 @@
  */
 
 @interface _SFBrowserView : UIView {
-    float  _bottomBarOffset;
+    double  _bottomBarOffset;
     UIView * _contentContainerView;
     _SFCrashBanner * _crashBanner;
-    float  _crashBannerOffset;
+    double  _crashBannerOffset;
     WKWebView * _currentWebView;
-    _SFLinkPreviewLoadingView * _loadingView;
     _SFNavigationBar * _navigationBar;
-    unsigned int  _navigationBarBehavior;
+    unsigned long long  _navigationBarBehavior;
     _SFLinkPreviewHeader * _previewHeader;
     UIView * _scrollToTopView;
-    BOOL  _shouldUseScrollToTopView;
-    BOOL  _showingLoadingView;
+    bool  _shouldUseScrollToTopView;
     _SFBrowserToolbar * _toolbar;
-    float  _topBarHeight;
+    double  _topBarHeight;
 }
 
-@property (nonatomic) float bottomBarOffset;
+@property (nonatomic) double bottomBarOffset;
 @property (nonatomic, readonly) UIView *contentContainerView;
 @property (nonatomic, retain) _SFCrashBanner *crashBanner;
-@property (nonatomic) float crashBannerOffset;
+@property (nonatomic) double crashBannerOffset;
 @property (nonatomic, readonly) WKWebView *currentWebView;
 @property (nonatomic, retain) _SFNavigationBar *navigationBar;
-@property (nonatomic) unsigned int navigationBarBehavior;
+@property (nonatomic) unsigned long long navigationBarBehavior;
+@property (nonatomic, readonly) double navigationBarOffset;
 @property (nonatomic, retain) _SFLinkPreviewHeader *previewHeader;
 @property (nonatomic, readonly) UIView *scrollToTopView;
-@property (nonatomic) BOOL shouldUseScrollToTopView;
-@property (getter=isShowingLoadingView, nonatomic) BOOL showingLoadingView;
+@property (nonatomic) bool shouldUseScrollToTopView;
 @property (nonatomic, retain) _SFBrowserToolbar *toolbar;
-@property (nonatomic) float topBarHeight;
+@property (nonatomic) double topBarHeight;
 
 - (void).cxx_destruct;
 - (void)addWebView:(id)arg1;
-- (float)bottomBarOffset;
+- (double)bottomBarOffset;
 - (id)contentContainerView;
 - (id)crashBanner;
-- (float)crashBannerOffset;
+- (double)crashBannerOffset;
 - (id)currentWebView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShowingLoadingView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)navigationBar;
-- (unsigned int)navigationBarBehavior;
+- (unsigned long long)navigationBarBehavior;
+- (double)navigationBarOffset;
 - (id)previewHeader;
 - (id)scrollToTopView;
-- (void)setBottomBarOffset:(float)arg1;
+- (void)setBottomBarOffset:(double)arg1;
 - (void)setCrashBanner:(id)arg1;
-- (void)setCrashBannerOffset:(float)arg1;
+- (void)setCrashBannerOffset:(double)arg1;
 - (void)setNavigationBar:(id)arg1;
-- (void)setNavigationBarBehavior:(unsigned int)arg1;
+- (void)setNavigationBarBehavior:(unsigned long long)arg1;
 - (void)setPreviewHeader:(id)arg1;
-- (void)setShouldUseScrollToTopView:(BOOL)arg1;
-- (void)setShowingLoadingView:(BOOL)arg1;
+- (void)setShouldUseScrollToTopView:(bool)arg1;
 - (void)setToolbar:(id)arg1;
-- (void)setTopBarHeight:(float)arg1;
-- (BOOL)shouldUseScrollToTopView;
+- (void)setTopBarHeight:(double)arg1;
+- (bool)shouldUseScrollToTopView;
 - (id)toolbar;
-- (float)topBarHeight;
+- (double)topBarHeight;
 - (void)updatePreviewHeader;
 
 @end

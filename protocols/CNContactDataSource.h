@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)canReload;
-- (CNContact *)completeContactFromContact:(CNContact *)arg1 fromMainStoreOnly:(BOOL)arg2 keysToFetch:(NSArray *)arg3;
+- (bool)canReload;
+- (CNContact *)completeContactFromContact:(CNContact *)arg1 fromMainStoreOnly:(bool)arg2 keysToFetch:(NSArray *)arg3;
 - (NSDictionary *)contactMatchInfos;
 - (NSArray *)contacts;
 - (<CNContactDataSourceDelegate> *)delegate;
@@ -23,14 +23,15 @@
 - (CNContactFilter *)effectiveFilter;
 - (CNContactFilter *)filter;
 - (void)invalidate;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (CNContact *)meContact;
+- (CNContact *)meContactWithKeysToFetch:(NSArray *)arg1;
 - (void)reload;
 - (void)reset;
 - (void)setContactFormatter:(CNContactFormatter *)arg1;
 - (void)setFilter:(CNContactFilter *)arg1;
-- (BOOL)setMeContact:(CNContact *)arg1 error:(id*)arg2;
-- (BOOL)shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
+- (bool)setMeContact:(CNContact *)arg1 error:(id*)arg2;
+- (bool)shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
 - (CNContactStore *)store;
 
 @end

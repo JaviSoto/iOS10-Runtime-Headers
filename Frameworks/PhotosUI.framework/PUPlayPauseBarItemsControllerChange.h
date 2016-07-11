@@ -3,22 +3,22 @@
  */
 
 @interface PUPlayPauseBarItemsControllerChange : NSObject {
-    BOOL  _currentPlaybackTimeDidChange;
-    BOOL  _playPauseStateDidChange;
-    BOOL  _playbackDurationDidChange;
+    bool  _currentPlaybackTimeDidChange;
+    bool  _playPauseStateDidChange;
+    bool  _playbackDurationDidChange;
 }
 
-@property (nonatomic) BOOL currentPlaybackTimeDidChange;
-@property (nonatomic, readonly) BOOL hasChanges;
-@property (nonatomic) BOOL playPauseStateDidChange;
-@property (nonatomic) BOOL playbackDurationDidChange;
+@property (setter=_setCurrentPlaybackTimeDidChange:, nonatomic) bool currentPlaybackTimeDidChange;
+@property (nonatomic, readonly) bool hasChanges;
+@property (setter=_setPlayPauseStateDidChange:, nonatomic) bool playPauseStateDidChange;
+@property (setter=_setPlaybackDurationDidChange:, nonatomic) bool playbackDurationDidChange;
 
-- (void)_setCurrentPlaybackTimeDidChange:(BOOL)arg1;
-- (void)_setPlayPauseStateDidChange:(BOOL)arg1;
-- (void)_setPlaybackDurationDidChange:(BOOL)arg1;
-- (BOOL)currentPlaybackTimeDidChange;
-- (BOOL)hasChanges;
-- (BOOL)playPauseStateDidChange;
-- (BOOL)playbackDurationDidChange;
+- (void)_setCurrentPlaybackTimeDidChange:(bool)arg1;
+- (void)_setPlayPauseStateDidChange:(bool)arg1;
+- (void)_setPlaybackDurationDidChange:(bool)arg1;
+- (bool)currentPlaybackTimeDidChange;
+- (bool)hasChanges;
+- (bool)playPauseStateDidChange;
+- (bool)playbackDurationDidChange;
 
 @end

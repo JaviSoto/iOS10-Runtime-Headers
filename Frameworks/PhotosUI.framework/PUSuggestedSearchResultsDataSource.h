@@ -8,23 +8,22 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSArray * _recentSearches;
     PSIDatabase * _searchIndex;
-    BOOL  _shouldReloadRecentSearchChanges;
+    bool  _shouldReloadRecentSearchChanges;
+    PUSuggestedSearchLastYear * _suggestedSearchLastYear;
     NSArray * _suggestedSearches;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUSuggestedSearchResultsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PSIDatabase *searchIndex;
 @property (readonly) Class superclass;
 
 + (void)_clearRecentSearches;
 + (id)_recentSearchObjects;
 + (id)_recentSearches;
-+ (id)_recentSiriSearchIntents;
-+ (BOOL)_saveRecentSearchWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;
-+ (BOOL)saveRecentSearchWithIntent:(id)arg1 andSiriSearchString:(id)arg2 displayTitle:(id)arg3 uuids:(id)arg4 albumUUID:(id)arg5;
++ (bool)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
 
 - (void).cxx_destruct;
 - (void)_reloadRecentSearches;
@@ -32,20 +31,20 @@
 - (void)clearRecentSearches;
 - (void)dealloc;
 - (id)delegate;
+- (void)ensureResultsForLastYearPhotoSearch;
 - (id)initWithSearchIndex:(id)arg1;
 - (void)mergePendingChanges;
-- (id)nonemptySuggestedSearchAtIndex:(unsigned int)arg1;
+- (id)nonemptySuggestedSearchAtIndex:(unsigned long long)arg1;
 - (id)nonemptySuggestedSearches;
-- (unsigned int)numberOfRecentSearches;
-- (unsigned int)numberOfSuggestedSearches;
-- (id)recentSearchAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfRecentSearches;
+- (unsigned long long)numberOfSuggestedSearches;
+- (id)recentSearchAtIndex:(unsigned long long)arg1;
 - (id)recentSearches;
-- (id)recentSiriSearchAtIndex:(unsigned int)arg1;
-- (void)saveRecentSearchWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;
+- (void)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
 - (id)searchIndex;
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;
-- (id)suggestedSearchAtIndex:(unsigned int)arg1;
+- (id)suggestedSearchAtIndex:(unsigned long long)arg1;
 - (void)suggestedSearchHasPendingChanges:(id)arg1;
 - (id)suggestedSearchIndex:(id)arg1;
 - (id)suggestedSearchPhotoLibrary:(id)arg1;

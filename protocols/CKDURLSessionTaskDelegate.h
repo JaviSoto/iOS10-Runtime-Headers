@@ -6,8 +6,8 @@
 @required
 
 - (void)URLSessionDataTask:(NSURLSessionDataTask *)arg1 didReceiveData:(NSData *)arg2;
-- (void)URLSessionDataTask:(void *)arg1 didReceiveResponse:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: NSURLSessionDataTask *, NSURLResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)URLSessionTask:(NSURLSessionTask *)arg1 conditionalRequirementsChanged:(BOOL)arg2;
+- (void)URLSessionDataTask:(void *)arg1 didReceiveResponse:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: NSURLSessionDataTask *, NSURLResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)URLSessionTask:(NSURLSessionTask *)arg1 conditionalRequirementsChanged:(bool)arg2;
 - (void)URLSessionTask:(NSURLSessionTask *)arg1 didCompleteWithError:(NSError *)arg2;
 - (void)URLSessionTask:(NSURLSessionTask *)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
 - (void)URLSessionTask:(void *)arg1 needNewBodyStream:(void *)arg2; // needs 2 arg types, found 7: NSURLSessionTask *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSInputStream *, void*
@@ -16,5 +16,6 @@
 - (void)URLSessionTaskIsWaitingForConnection:(NSURLSessionTask *)arg1;
 - (NSOperationQueue *)delegateQueue;
 - (NSString *)sectionID;
+- (NSObject<OS_voucher> *)voucher;
 
 @end

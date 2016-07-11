@@ -12,8 +12,8 @@
 
 - (void).cxx_destruct;
 - (void)_finishAndCleanupConfiguredTest;
-- (void)_registerChangeBlock:(id /* block */)arg1 forMode:(int)arg2 device:(int)arg3;
-- (void)didChangeToMode:(int)arg1 device:(int)arg2;
+- (void)_registerChangeBlock:(id /* block */)arg1 forMode:(long long)arg2 devicePosition:(long long)arg3;
+- (void)didChangeToMode:(long long)arg1 device:(long long)arg2;
 - (id)initWithTestName:(id)arg1;
 - (void)runConfiguredTest;
 - (void)setTestCleanupBlock:(id /* block */)arg1;

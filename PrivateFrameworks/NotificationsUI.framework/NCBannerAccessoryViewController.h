@@ -11,13 +11,13 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)_getPreferredContentSizeWithCompletion:(id /* block */)arg1;
 - (void)_setContext:(id)arg1;
 - (void)becomeSticky;
 - (id)context;
-- (void)dealloc;
 - (void)dismiss;
 - (void)setContext:(id)arg1;
-- (void)setSticky:(BOOL)arg1;
+- (void)setSticky:(bool)arg1;
 
 @end

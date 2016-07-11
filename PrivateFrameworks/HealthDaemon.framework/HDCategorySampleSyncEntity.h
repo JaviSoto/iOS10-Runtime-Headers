@@ -7,8 +7,6 @@
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
 + (int)nanoSyncObjectType;
-+ (id)sampleTypesByAgeInDaysForNanoSyncRestore;
-+ (int)syncEntityType;
-+ (unsigned int)syncObjectLimitForNanoSyncMessage;
++ (long long)syncEntityType;
 
 @end

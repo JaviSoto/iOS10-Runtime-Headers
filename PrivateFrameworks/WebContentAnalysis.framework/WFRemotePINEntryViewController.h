@@ -13,10 +13,16 @@
 
 - (void)dealloc;
 - (id)delegate;
+- (bool)isNumericPIN;
+- (bool)requiresKeyboard;
 - (void)setDelegate:(id)arg1;
 - (void)setPageTitle:(id)arg1;
 - (void)setURL:(id)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)simplePIN;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)userDidCancel;
 - (void)userEnteredCorrectPIN;
+- (void)viewDidLoad;
 
 @end

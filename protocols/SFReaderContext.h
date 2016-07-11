@@ -9,21 +9,22 @@
 - (void)clearAvailability;
 - (void)clearReaderWebView;
 - (void)clearUnusedReaderResourcesSoon;
+- (NSDictionary *)configuration;
 - (void)createArticleFinder;
-- (void)deactivateReaderNow:(unsigned int)arg1;
+- (void)deactivateReaderNow:(unsigned long long)arg1;
 - (void)decreaseReaderTextSize;
-- (BOOL)hasMultiplePages;
+- (WBSReaderFontManager *)fontManager;
 - (void)increaseReaderTextSize;
-- (NSDictionary *)initialConfiguration;
-- (BOOL)isLoadingNextPage;
-- (BOOL)isReaderAvailable;
+- (bool)isLoadingNextPage;
+- (bool)isReaderAvailable;
 - (void)loadNewArticle;
 - (NSURL *)readerURL;
 - (NSDictionary *)scrollPositionInformation;
 - (void)setReaderFont:(NSString *)arg1;
+- (void)setReaderLanguageTag:(NSString *)arg1;
 - (void)setReaderTheme:(NSString *)arg1;
 - (void)setReaderUserVisibleWidth:(double)arg1;
-- (BOOL)shouldCreateArticleFinder;
+- (bool)shouldCreateArticleFinder;
 - (void)stopLoadingNextPage;
 
 @end

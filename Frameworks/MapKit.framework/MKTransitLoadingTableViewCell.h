@@ -4,11 +4,12 @@
 
 @interface MKTransitLoadingTableViewCell : MKCustomSeparatorTableViewCell {
     UIActivityIndicatorView * _loadingIndicator;
+    _MKUILabel * _loadingLabel;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
 

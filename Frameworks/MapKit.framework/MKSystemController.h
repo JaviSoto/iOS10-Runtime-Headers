@@ -6,20 +6,26 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isDevicePluggedIn;
-- (BOOL)isHiDPI;
-- (BOOL)isInternalInstall;
-- (BOOL)isWifiEnabled;
-- (BOOL)openURL:(id)arg1;
-- (BOOL)openURL:(id)arg1 bundleIdentifier:(id)arg2;
-- (BOOL)overrideBlurStyle;
-- (BOOL)reduceMotionEnabled;
-- (BOOL)requiresRTT;
-- (float)screenScale;
-- (struct CGSize { float x1; float x2; })screenSize;
-- (BOOL)supports3DImagery;
-- (BOOL)supports3DMaps;
-- (BOOL)supportsPitchAPI;
+- (id)_defaultOpenURLOptions;
+- (bool)_openURLsOnBackgroundThread;
+- (bool)_shouldUseLaunchServices;
+- (bool)isDevicePluggedIn;
+- (bool)isHiDPI;
+- (bool)isInternalInstall;
+- (bool)isPhone6PlusOrLarger;
+- (bool)isWifiEnabled;
+- (bool)openURL:(id)arg1;
+- (void)openURL:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)overrideBlurStyle;
+- (bool)reduceMotionEnabled;
+- (bool)requiresRTT;
+- (double)screenScale;
+- (struct CGSize { double x1; double x2; })screenSize;
+- (bool)supports3DImagery;
+- (bool)supports3DMaps;
+- (bool)supportsAlwaysOnCompass;
+- (bool)supportsPitchAPI;
 - (int)userInterfaceIdiom;
 
 @end

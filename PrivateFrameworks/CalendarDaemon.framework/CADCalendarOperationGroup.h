@@ -4,9 +4,9 @@
 
 @interface CADCalendarOperationGroup : CADOperationGroup <CADCalendarInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
 - (void)CADCalendar:(struct { int x1; int x2; })arg1 hasEvents:(id /* block */)arg2;
 - (void)CADCalendar:(struct { int x1; int x2; })arg1 hasReminders:(id /* block */)arg2;

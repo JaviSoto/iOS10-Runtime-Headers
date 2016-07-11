@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSData *imageData;
 @property (nonatomic) double pixelHeight;
 @property (nonatomic) double pixelWidth;
@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSURL *resourceUrl;
 @property (nonatomic) double scaleFactor;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *urlFormatString;
 @property (nonatomic, copy) NSString *userAgent;
 
 + (id)imageResource;
@@ -36,7 +37,9 @@
 - (void)setPointWidth:(double)arg1;
 - (void)setResourceUrl:(id)arg1;
 - (void)setScaleFactor:(double)arg1;
+- (void)setUrlFormatString:(id)arg1;
 - (void)setUserAgent:(id)arg1;
+- (id)urlFormatString;
 - (id)userAgent;
 
 @end

@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUIAddViews : SABaseClientBoundCommand
+@interface SAUIAddViews : SABaseClientBoundCommand <SAAceCommandAuxiliaryAnalyticsContextVending>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *dialogPhase;
 @property (nonatomic, copy) NSString *displayTarget;
-@property (nonatomic) BOOL scrollToTop;
-@property (nonatomic) BOOL temporary;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SASendCommands *refreshCommand;
+@property (nonatomic) bool scrollToTop;
+@property (readonly) Class superclass;
+@property (nonatomic) bool temporary;
 @property (nonatomic, copy) NSArray *views;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
@@ -19,19 +24,25 @@
 - (id)displayTarget;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
-- (BOOL)scrollToTop;
+- (id)refreshCommand;
+- (bool)requiresResponse;
+- (bool)scrollToTop;
 - (void)setDialogPhase:(id)arg1;
 - (void)setDisplayTarget:(id)arg1;
-- (void)setScrollToTop:(BOOL)arg1;
-- (void)setTemporary:(BOOL)arg1;
+- (void)setRefreshCommand:(id)arg1;
+- (void)setScrollToTop:(bool)arg1;
+- (void)setTemporary:(bool)arg1;
 - (void)setViews:(id)arg1;
-- (BOOL)temporary;
+- (bool)temporary;
 - (id)views;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (id)af_dialogPhase;
+- (id)auxiliaryAnalyticsContext;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
-- (id)afui_dialogPhase;
+- (long long)_afui_usefulUserResultType;
 
 @end

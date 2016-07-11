@@ -10,9 +10,9 @@
 @property (nonatomic, retain) NSURL *passURL;
 @property (nonatomic, retain) NSDictionary *remoteAssetsByTaskIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

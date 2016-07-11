@@ -8,18 +8,11 @@
     NSString * _threadLocalStorageKey;
 }
 
-@property (setter=_setSerialQueue:, nonatomic) NSObject<OS_dispatch_queue> *_serialQueue;
-@property (setter=_setThreadLocalStorageKey:, nonatomic, copy) NSString *_threadLocalStorageKey;
-@property (nonatomic, copy) NSString *label;
+@property (nonatomic, readonly) NSString *label;
 
+- (void).cxx_destruct;
 - (void)_performSynchronousBlockInSerialQueue:(id /* block */)arg1;
-- (id)_serialQueue;
-- (void)_setLabel:(id)arg1;
-- (void)_setSerialQueue:(id)arg1;
-- (void)_setThreadLocalStorageKey:(id)arg1;
-- (id)_threadLocalStorageKey;
-- (void)dealloc;
-- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2;
+- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(bool)arg2;
 - (id)label;
 - (void)performAsynchronousBlock:(id /* block */)arg1;
 - (void)performSynchronousBlock:(id /* block */)arg1;

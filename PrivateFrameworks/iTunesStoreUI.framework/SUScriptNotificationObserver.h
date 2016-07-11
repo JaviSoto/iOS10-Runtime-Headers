@@ -23,6 +23,8 @@
 - (void)_purchaseRequestDidSucceedNotification:(id)arg1;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (void)_softwareMapChangedNotification:(id)arg1;
+- (void)_storeBagDidChangeNotification:(id)arg1;
+- (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)addEventReceiver:(id)arg1;
 - (void)dealloc;
 - (id)init;

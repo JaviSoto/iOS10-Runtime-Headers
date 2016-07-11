@@ -24,13 +24,20 @@
 }
 
 @property (readonly) int auditSessionIdentifier;
+@property (nonatomic, readonly, copy) NSString *cx_applicationIdentifier;
+@property (nonatomic, readonly) NSBundle *cx_bundle;
+@property (nonatomic, readonly, copy) NSSet *cx_capabilities;
+@property (nonatomic, readonly, copy) NSString *cx_developerTeamIdentifier;
+@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
+@property (nonatomic, readonly, copy) NSString *cx_processName;
 @property (readonly) unsigned int effectiveGroupIdentifier;
 @property (readonly) unsigned int effectiveUserIdentifier;
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
 @property (retain) NSXPCInterface *exportedInterface;
 @property (retain) id exportedObject;
+@property (nonatomic, readonly, copy) NSString *hk_appExtensionIdentifier;
 @property (nonatomic, readonly, copy) NSString *hk_bundleIdentifier;
-@property (nonatomic, readonly) BOOL hk_isAppExtension;
+@property (nonatomic, readonly) bool hk_isAppExtension;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
 @property (nonatomic, readonly) NSString *processBundleIdentifier;
@@ -53,13 +60,13 @@
 - (void)_cancelProgress:(unsigned long long)arg1;
 - (void)_decodeAndInvokeMessageWithData:(id)arg1;
 - (void)_decodeAndInvokeReplyBlockWithData:(id)arg1 sequence:(unsigned long long)arg2 replyInfo:(id)arg3;
-- (BOOL)_decodeCacheContainsClass:(Class)arg1;
+- (bool)_decodeCacheContainsClass:(Class)arg1;
 - (void)_decodeProgressMessageWithData:(id)arg1;
-- (BOOL)_encodeCacheContainsClass:(Class)arg1;
+- (bool)_encodeCacheContainsClass:(Class)arg1;
 - (id)_errorDescription;
 - (id)_exportTable;
 - (unsigned long long)_generationCount;
-- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned int)arg3;
+- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3;
 - (void)_killConnection:(int)arg1;
 - (void)_pauseProgress:(unsigned long long)arg1;
 - (id)_queue;
@@ -87,14 +94,13 @@
 - (id)endpoint;
 - (id)exportedInterface;
 - (id)exportedObject;
-- (void)finalize;
 - (id)init;
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
-- (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithMachServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithServiceName:(id)arg1;
-- (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
@@ -112,7 +118,7 @@
 - (void)setExportedObject:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)start;
@@ -122,21 +128,36 @@
 - (id)userInfo;
 - (id)valueForEntitlement:(id)arg1;
 
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
+- (id)cx_applicationIdentifier;
+- (id)cx_bundle;
+- (id)cx_capabilities;
+- (id)cx_developerTeamIdentifier;
+- (bool)cx_hasVoIPBackgroundMode;
+- (id)cx_processName;
+
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
+- (id)hk_appExtensionIdentifier;
 - (id)hk_bundleIdentifier;
-- (BOOL)hk_isAppExtension;
+- (bool)hk_isAppExtension;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
 - (id)_clientBundleID;
-- (BOOL)sl_clientHasEntitlement:(id)arg1;
+- (bool)sl_clientHasEntitlement:(id)arg1;
 - (id)sl_localizedClientName;
 
 // Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
 
 - (id)initCellularPlanDatabaseClient;
 - (id)initVinylTestClient;
+
+// Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
+
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1;
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1 errorHandler:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
@@ -145,5 +166,9 @@
 
 - (id)processBundleIdentifier;
 - (id)processName;
+
+// Image: /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
+
+- (bool)hasEntitlement:(id)arg1;
 
 @end

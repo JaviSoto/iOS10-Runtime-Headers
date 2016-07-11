@@ -3,36 +3,36 @@
  */
 
 @interface GEOLocationShifter : NSObject <GEOResourceManifestTileGroupObserver> {
-    BOOL  _isRequestingShiftFunction;
+    bool  _isRequestingShiftFunction;
     NSMutableArray * _locationsToShift;
     NSLock * _lock;
+    <_GEOLocationShifterProxy> * _proxy;
+    int  _resetPrivacyToken;
     NSCache * _shiftFunctionCache;
-    GEOLocationShiftFunctionRequest * _shiftRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL locationShiftEnabled;
-@property (nonatomic, retain) GEOLocationShiftFunctionRequest *shiftRequest;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool locationShiftEnabled;
 @property (readonly) Class superclass;
 
-+ (BOOL)isLocationShiftEnabled;
-+ (BOOL)isLocationShiftRequiredForCoordinate:(struct { double x1; double x2; })arg1;
++ (bool)isLocationShiftEnabled;
++ (bool)isLocationShiftRequiredForCoordinate:(struct { double x1; double x2; })arg1;
 + (unsigned int)locationShiftFunctionVersion;
++ (void)useLocalProxy;
 
 - (void)_countryProvidersDidChange:(id)arg1;
+- (void)_fetchShiftFunctionForCoordinate:(struct { double x1; double x2; })arg1 withCompletionHandler:(id /* block */)arg2 callbackQueue:(id)arg3;
 - (void)_requestNextShiftFunctionIfNecessary;
 - (void)_reset;
-- (BOOL)_shiftLocation:(id)arg1;
+- (bool)_shiftLocation:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)locationShiftEnabled;
+- (bool)locationShiftEnabled;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
-- (void)setShiftRequest:(id)arg1;
-- (BOOL)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
+- (bool)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id /* block */)arg3 mustGoToNetworkCallback:(id /* block */)arg4 errorHandler:(id /* block */)arg5 callbackQueue:(id)arg6;
-- (id)shiftRequest;
 
 @end

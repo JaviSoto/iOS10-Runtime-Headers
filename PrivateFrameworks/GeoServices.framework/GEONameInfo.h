@@ -17,13 +17,13 @@
     int  _signType;
 }
 
-@property (nonatomic, readonly) BOOL hasLocale;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic, readonly) BOOL hasPhoneticName;
-@property (nonatomic) BOOL hasPhoneticType;
-@property (nonatomic, readonly) BOOL hasShield;
-@property (nonatomic) BOOL hasShieldType;
-@property (nonatomic) BOOL hasSignType;
+@property (nonatomic, readonly) bool hasLocale;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic, readonly) bool hasPhoneticName;
+@property (nonatomic) bool hasPhoneticType;
+@property (nonatomic, readonly) bool hasShield;
+@property (nonatomic) bool hasShieldType;
+@property (nonatomic) bool hasSignType;
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *phoneticName;
@@ -32,29 +32,32 @@
 @property (nonatomic) int shieldType;
 @property (nonatomic) int signType;
 
+- (int)StringAsPhoneticType:(id)arg1;
+- (int)StringAsSignType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocale;
-- (BOOL)hasName;
-- (BOOL)hasPhoneticName;
-- (BOOL)hasPhoneticType;
-- (BOOL)hasShield;
-- (BOOL)hasShieldType;
-- (BOOL)hasSignType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocale;
+- (bool)hasName;
+- (bool)hasPhoneticName;
+- (bool)hasPhoneticType;
+- (bool)hasShield;
+- (bool)hasShieldType;
+- (bool)hasSignType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (id)phoneticName;
 - (int)phoneticType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPhoneticType:(BOOL)arg1;
-- (void)setHasShieldType:(BOOL)arg1;
-- (void)setHasSignType:(BOOL)arg1;
+- (id)phoneticTypeAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPhoneticType:(bool)arg1;
+- (void)setHasShieldType:(bool)arg1;
+- (void)setHasSignType:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneticName:(id)arg1;
@@ -65,6 +68,7 @@
 - (id)shield;
 - (int)shieldType;
 - (int)signType;
+- (id)signTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

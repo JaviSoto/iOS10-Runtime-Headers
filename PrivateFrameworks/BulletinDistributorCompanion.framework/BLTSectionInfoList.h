@@ -4,9 +4,12 @@
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
     <BLTSectionInfoListDelegate> * _delegate;
+    bool  _loaded;
+    bool  _loading;
+    NSMutableArray * _loadingCompletionHandlers;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     <BLTSectionInfoListProvider> * _overrideProvider;
     NSMutableDictionary * _sectionInfoListItemsBySectionID;
@@ -16,15 +19,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTSectionInfoListDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (getter=hasLoaded, nonatomic, readonly) bool loaded;
 @property (nonatomic, retain) <BLTSectionInfoListProvider> *overrideProvider;
 @property (nonatomic, retain) <BLTSectionInfoListProvider> *sectionInfoProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)effectiveSectionInfoForSectionID:(id)arg1;
+- (bool)hasLoaded;
 - (id)init;
 - (id)originalSettings;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;
@@ -33,7 +39,6 @@
 - (id)overrides;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (id)sectionIDs;
-- (id)sectionInfoForSectionID:(id)arg1;
 - (id)sectionInfoProvider;
 - (void)setDelegate:(id)arg1;
 - (void)setOverrideProvider:(id)arg1;

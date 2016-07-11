@@ -4,11 +4,14 @@
 
 @interface SGABContainer : NSObject {
     void * _ab;
-    BOOL  _isInUse;
-    unsigned int  _isInvalidated;
+    bool  _isInUse;
+    struct atomic_flag { 
+        bool _Value; 
+    }  _isValid;
     NSObject * _lifetimeObject;
 }
 
 - (void).cxx_destruct;
+- (id)init;
 
 @end

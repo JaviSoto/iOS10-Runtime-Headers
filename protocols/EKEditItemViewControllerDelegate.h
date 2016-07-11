@@ -6,11 +6,11 @@
 @required
 
 - (void)editItemViewController:(EKEditItemViewController *)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)editItemViewControllerShouldShowDetachAlert;
+- (bool)editItemViewControllerShouldShowDetachAlert;
 
 @optional
 
-- (BOOL)editItemViewControllerCommit:(EKEditItemViewController *)arg1;
-- (void)editItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
+- (bool)editItemViewControllerSave:(EKEditItemViewController *)arg1;
+- (void)editItemViewControllerWantsKeyboardPinned:(bool)arg1;
 
 @end

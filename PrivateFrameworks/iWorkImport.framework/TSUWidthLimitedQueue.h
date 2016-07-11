@@ -12,7 +12,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithLimit:(unsigned int)arg1;
+- (id)initWithLimit:(unsigned long long)arg1;
 - (void)performAsync:(id /* block */)arg1;
+- (void)performSync:(id /* block */)arg1;
 
 @end

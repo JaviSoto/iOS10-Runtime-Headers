@@ -10,9 +10,8 @@
 @property (nonatomic, copy) NSNumber *sourceID;
 @property (nonatomic, retain) NSSet *types;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
-+ (BOOL)supportsSecureCoding;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -10,6 +10,8 @@
 - (void)_addAccount:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)_authenticateAccount:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_deleteAccount:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_fetchAccountsWithCompletion:(id /* block */)arg1;
+- (void)_invalidateFetchedAccountsCacheWithCompletion:(id /* block */)arg1;
 - (id)_localAccountMatchingRemoteAccount:(id)arg1;
 - (void)_promptUserForAccountCredential:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)_removeAllAccountsWithCompletion:(id /* block */)arg1;

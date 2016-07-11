@@ -3,34 +3,65 @@
  */
 
 @interface GEOPDCategorySearchResult : PBCodable <NSCopying> {
+    GEOPDRelatedSearchSuggestion * _defaultRelatedSearchSuggestion;
     GEOMapRegion * _displayMapRegion;
     struct { 
         unsigned int isChainResultSet : 1; 
     }  _has;
-    BOOL  _isChainResultSet;
+    bool  _isChainResultSet;
+    NSMutableArray * _relatedSearchSuggestions;
+    NSMutableArray * _resultDetourInfos;
+    GEOPDSearchClientBehavior * _searchClientBehavior;
 }
 
+@property (nonatomic, retain) GEOPDRelatedSearchSuggestion *defaultRelatedSearchSuggestion;
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
-@property (nonatomic, readonly) BOOL hasDisplayMapRegion;
-@property (nonatomic) BOOL hasIsChainResultSet;
-@property (nonatomic) BOOL isChainResultSet;
+@property (nonatomic, readonly) bool hasDefaultRelatedSearchSuggestion;
+@property (nonatomic, readonly) bool hasDisplayMapRegion;
+@property (nonatomic) bool hasIsChainResultSet;
+@property (nonatomic, readonly) bool hasSearchClientBehavior;
+@property (nonatomic) bool isChainResultSet;
+@property (nonatomic, retain) NSMutableArray *relatedSearchSuggestions;
+@property (nonatomic, retain) NSMutableArray *resultDetourInfos;
+@property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
 
++ (Class)relatedSearchSuggestionType;
++ (Class)resultDetourInfoType;
+
+- (void)addRelatedSearchSuggestion:(id)arg1;
+- (void)addResultDetourInfo:(id)arg1;
+- (void)clearRelatedSearchSuggestions;
+- (void)clearResultDetourInfos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)defaultRelatedSearchSuggestion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayMapRegion;
-- (BOOL)hasDisplayMapRegion;
-- (BOOL)hasIsChainResultSet;
-- (unsigned int)hash;
-- (BOOL)isChainResultSet;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDefaultRelatedSearchSuggestion;
+- (bool)hasDisplayMapRegion;
+- (bool)hasIsChainResultSet;
+- (bool)hasSearchClientBehavior;
+- (unsigned long long)hash;
+- (bool)isChainResultSet;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)relatedSearchSuggestionAtIndex:(unsigned long long)arg1;
+- (id)relatedSearchSuggestions;
+- (unsigned long long)relatedSearchSuggestionsCount;
+- (id)resultDetourInfoAtIndex:(unsigned long long)arg1;
+- (id)resultDetourInfos;
+- (unsigned long long)resultDetourInfosCount;
+- (id)searchClientBehavior;
+- (void)setDefaultRelatedSearchSuggestion:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
-- (void)setHasIsChainResultSet:(BOOL)arg1;
-- (void)setIsChainResultSet:(BOOL)arg1;
+- (void)setHasIsChainResultSet:(bool)arg1;
+- (void)setIsChainResultSet:(bool)arg1;
+- (void)setRelatedSearchSuggestions:(id)arg1;
+- (void)setResultDetourInfos:(id)arg1;
+- (void)setSearchClientBehavior:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -16,6 +16,7 @@
 - (id)batteryBreakdownResponder;
 - (id)batteryBreakdownWithPayload:(id)arg1;
 - (id)dateAndBatteryLevelPointsInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
+- (void)incrementAggdKey;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)modelsResponder;

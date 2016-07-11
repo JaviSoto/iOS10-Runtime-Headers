@@ -5,15 +5,16 @@
 @interface WBSHistoryConnectionProxy : NSObject <WBSHistoryClientProtocol, WBSHistoryConnectionProtocol> {
     NSXPCConnection * _connection;
     NSObject<OS_dispatch_queue> * _connectionProxyQueue;
-    BOOL  _registeredForHistoryNotifications;
+    bool  _registeredForHistoryNotifications;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *connectionProxyQueue;
-@property (getter=isRegisteredForHistoryNotifications, nonatomic, readonly) BOOL registeredForHistoryNotifications;
+@property (getter=isRegisteredForHistoryNotifications, nonatomic, readonly) bool registeredForHistoryNotifications;
 
 - (void).cxx_destruct;
 - (id /* block */)_defaultProxyErrorHandlerWithSimpleReplyCompletionHandler:(id /* block */)arg1;
 - (void)_registerForHistoryNotifications;
+- (void)beginHistoryAccessSession:(id /* block */)arg1;
 - (void)beginURLCompletionSession:(id /* block */)arg1;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 endDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)clearHistoryWithCompletionHandler:(id /* block */)arg1;
@@ -23,12 +24,12 @@
 - (void)getVisitedLinksWithCompletionHandler:(id /* block */)arg1;
 - (void)groupVisitsIntoSessionsBetweenStartDate:(id)arg1 endDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
-- (BOOL)isRegisteredForHistoryNotifications;
+- (bool)isRegisteredForHistoryNotifications;
 - (void)killService;
 - (void)makePermanentAllTestDriveHistoryWithCompletionHandler:(id /* block */)arg1;
 - (void)processRemoteHistoryNotification:(id)arg1;
-- (void)recordRedirectFromVisitWithUUID:(id)arg1 destinationURL:(id)arg2 origin:(int)arg3 date:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)recordVisitToURL:(id)arg1 title:(id)arg2 wasHTTPNonGet:(BOOL)arg3 visitWasFailure:(BOOL)arg4 increaseVisitCount:(BOOL)arg5 origin:(int)arg6 completionHandler:(id /* block */)arg7;
+- (void)recordRedirectFromVisitWithUUID:(id)arg1 destinationURL:(id)arg2 origin:(long long)arg3 date:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)recordVisitToURL:(id)arg1 title:(id)arg2 wasHTTPNonGet:(bool)arg3 visitWasFailure:(bool)arg4 increaseVisitCount:(bool)arg5 origin:(long long)arg6 completionHandler:(id /* block */)arg7;
 - (void)registerForHistoryNotifications;
 - (void)removeAllTestDriveHistoryWithCompletionHandler:(id /* block */)arg1;
 - (void)removeItemsWithURLsInResponseToUserAction:(id)arg1 completionHandler:(id /* block */)arg2;

@@ -7,11 +7,11 @@
     NSMutableDictionary * _dismissalIDToFeeds;
 }
 
-@property (nonatomic, readonly, retain) NSMutableArray *dismissalDictionariesAndFeeds;
-@property (nonatomic, readonly, retain) NSMutableDictionary *dismissalIDToFeeds;
+@property (nonatomic, readonly) NSMutableArray *dismissalDictionariesAndFeeds;
+@property (nonatomic, readonly) NSMutableDictionary *dismissalIDToFeeds;
 
-- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned int)arg3;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned long long)arg3;
 - (id)description;
 - (id)dismissalDictionariesAndFeeds;
 - (id)dismissalIDToFeeds;

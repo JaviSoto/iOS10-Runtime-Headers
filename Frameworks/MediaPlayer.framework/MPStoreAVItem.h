@@ -3,95 +3,100 @@
  */
 
 @interface MPStoreAVItem : MPAVItem {
-    NSString * _aggregateDictionaryItemIdentifier;
-    unsigned int  _assetQuality;
-    BOOL  _hasEverPrioritizedPlayerItem;
-    BOOL  _hasPrioritizedPlayWhileDownloadSession;
-    BOOL  _hasPrioritizedStreamingDownloadSession;
-    BOOL  _hasValidAggregateDictionaryItemIdentifier;
-    BOOL  _hasValidAssetQuality;
-    BOOL  _isActivePlayerItem;
-    unsigned int  _options;
+    unsigned long long  _assetQuality;
+    bool  _didDeferLeaseStart;
+    bool  _hasEverPrioritizedPlayerItem;
+    bool  _hasPrioritizedPlayWhileDownloadSession;
+    bool  _hasPrioritizedStreamingDownloadSession;
+    bool  _hasValidAssetQuality;
+    bool  _isActivePlayerItem;
+    unsigned long long  _options;
     MPStorePlayWhileDownloadSession * _playWhileDownloadSession;
     MPMediaPlaybackItemMetadata * _playbackItemMetadata;
-    unsigned int  _preferredAssetQuality;
+    unsigned long long  _preferredAssetQuality;
+    unsigned long long  _streamType;
     MPStreamingDownloadSession * _streamingDownloadSession;
 }
 
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) MPMediaPlaybackItemMetadata *playbackItemMetadata;
+@property (nonatomic, readonly) unsigned long long streamType;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-+ (id)_assetURLForCachedLocalPlaybackAssetFilePathForPlaybackItemMetadata:(id)arg1 withMinimumAssetQuality:(unsigned int)arg2 assetOptions:(id)arg3 returningProtectionType:(unsigned int*)arg4 assetQuality:(unsigned int*)arg5 usesPurchaseBundle:(BOOL*)arg6;
-+ (unsigned int)_currentPreferredAssetQualityForPlaybackItemMetadata:(id)arg1;
++ (id)_assetURLForCachedLocalPlaybackAssetFilePathForPlaybackItemMetadata:(id)arg1 withMinimumAssetQuality:(unsigned long long)arg2 assetOptions:(id)arg3 returningProtectionType:(unsigned long long*)arg4 assetQuality:(unsigned long long*)arg5 usesPurchaseBundle:(bool*)arg6;
++ (unsigned long long)_currentPreferredAssetQualityForPlaybackItemMetadata:(id)arg1;
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
-+ (BOOL)isPlaybackItemMetadataStreamingForAssetCreation:(id)arg1 returningProtectionType:(unsigned int*)arg2;
-+ (BOOL)isPlaybackItemMetadataValidForAssetCreation:(id)arg1;
++ (bool)isPlaybackItemMetadataStreamingForAssetCreation:(id)arg1 returningProtectionType:(unsigned long long*)arg2;
++ (bool)isPlaybackItemMetadataValidForAssetCreation:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfo;
 - (id)_chapterTitleForTime:(double)arg1;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
-- (BOOL)_getAssetURL:(id*)arg1 playWhileDownloadSession:(id*)arg2 assetQuality:(unsigned int*)arg3 error:(id*)arg4 usingStoreDownload:(id)arg5 assetOptions:(id)arg6 shouldStartDownload:(BOOL)arg7;
-- (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
-- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
+- (bool)_getAssetURL:(id*)arg1 playWhileDownloadSession:(id*)arg2 assetQuality:(unsigned long long*)arg3 error:(id*)arg4 usingStoreDownload:(id)arg5 assetOptions:(id)arg6 shouldStartDownload:(bool)arg7;
+- (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
+- (void)_handleUpdatedLikedState:(long long)arg1 completion:(id /* block */)arg2;
 - (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (void)_mediaPlaybackItemMetadataDidChangeNotification:(id)arg1;
 - (void)_mediaPlaybackItemMetadataLikedStateDidChangeNotification:(id)arg1;
-- (id)_newTimeMarkersForChapterType:(int)arg1;
-- (int)_persistedLikedState;
+- (id)_newTimeMarkersForChapterType:(long long)arg1;
+- (long long)_persistedLikedState;
 - (void)_prioritizeDownloadSessionsIfNeeded;
-- (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(BOOL)arg2;
+- (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(bool)arg2;
 - (void)_willBecomeActivePlayerItem;
 - (void)_willResignActivePlayerItem;
-- (id)aggregateDictionaryItemIdentifier;
 - (id)album;
 - (id)albumArtist;
 - (long long)albumStoreID;
-- (unsigned int)albumTrackCount;
-- (unsigned int)albumTrackNumber;
-- (BOOL)allowsAirPlayFromCloud;
-- (BOOL)allowsEQ;
-- (BOOL)allowsExternalPlayback;
-- (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
+- (unsigned long long)albumTrackCount;
+- (unsigned long long)albumTrackNumber;
+- (bool)allowsAirPlayFromCloud;
+- (bool)allowsEQ;
+- (bool)allowsExternalPlayback;
+- (void)applyVolumeNormalizationWithSoundCheckEnabled:(bool)arg1;
 - (id)artist;
+- (long long)artistStoreID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkers;
-- (BOOL)canSeedGenius;
+- (bool)canSeedGenius;
 - (id)chapterTimeMarkers;
 - (id)composer;
 - (id)copyrightText;
-- (int)customAVEQPreset;
+- (long long)customAVEQPreset;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)discCount;
-- (unsigned int)discNumber;
+- (bool)didDeferLeaseStart;
+- (unsigned long long)discCount;
+- (unsigned long long)discNumber;
 - (id)displayableText;
 - (double)durationFromExternalMetadata;
 - (id)genre;
-- (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
-- (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
-- (id)initWithPlaybackItemMetadata:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isAssetURLValid;
-- (BOOL)isCloudItem;
-- (BOOL)isExplicitTrack;
-- (BOOL)isLikedStateEnabled;
-- (BOOL)isStreamable;
-- (BOOL)isStreamingLowQualityAsset;
-- (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
+- (bool)hasAlternatesForTypes:(unsigned long long)arg1;
+- (id)initWithPlaybackItemMetadata:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isAssetURLValid;
+- (bool)isCloudItem;
+- (bool)isExplicitTrack;
+- (bool)isLikedStateEnabled;
+- (bool)isStreamable;
+- (bool)isStreamingLowQualityAsset;
+- (bool)isSupportedDefaultPlaybackSpeed:(long long)arg1;
+- (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (id)mediaItem;
+- (id)modelObject;
+- (id)modelSong;
 - (void)notePlaybackFinishedByHittingEnd;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (unsigned long long)persistentID;
 - (double)playbackCheckpointCurrentTime;
 - (id)playbackItemMetadata;
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)reevaluateType;
 - (void)setAlternateAudioTrackID:(int)arg1;
+- (void)setAlternateAudioTrackLocale:(id)arg1;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)setPlaybackCheckpointCurrentTime:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
@@ -99,24 +104,29 @@
 - (void)setRating:(float)arg1;
 - (id)storeDownload;
 - (long long)storeItemInt64ID;
+- (long long)storePlaybackEndpointType;
 - (long long)storeSubscriptionAdamID;
-- (BOOL)supportsLikedState;
-- (BOOL)supportsRewindAndFastForward15Seconds;
+- (unsigned long long)streamType;
+- (bool)supportsLikedState;
+- (bool)supportsRewindAndFastForward15Seconds;
 - (id)titlesForTime:(double)arg1;
-- (unsigned int)type;
+- (long long)type;
 - (id)urlTimeMarkers;
-- (BOOL)useEmbeddedChapterData;
+- (bool)useEmbeddedChapterData;
 - (float)userRating;
-- (BOOL)usesSubscriptionLease;
+- (bool)usesSubscriptionLease;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)_registerCustomEntityValueHandlers;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)MPU_contentItemIdentifierCollection;
-- (long long)_mpuReporting_storeItemInt64ID;
-- (long long)_mpuReporting_storeItemInt64IDFromIdentifierCollection:(id)arg1;
-- (BOOL)mpuReporting_isValidReportingItem;
-- (unsigned int)mpuReporting_itemType;
-- (BOOL)mpuReporting_shouldReportPlayEventsToStore;
-- (id)mpuReporting_storeItemID;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (bool)mpcReporting_isValidReportingItem;
+- (bool)mpcReporting_shouldReportPlayEventsToStore;
 
 @end

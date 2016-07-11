@@ -3,28 +3,25 @@
  */
 
 @interface GEOLogMessageFactory : NSObject {
-    GEOAppConfig * _appConfig;
-    unsigned int  _debugLogMessageCount;
-    GEODeviceConfig * _deviceConfig;
+    NSLock * _carrierNameLock;
+    NSObject<OS_dispatch_queue> * _carrierNameQueue;
+    NSString * _carrierOperatorName;
+    NSLock * _coreTelephonyServerLock;
     NSLock * _lock;
-    unsigned int  _shortSessionUsageLogMessageCount;
+    struct __CTServerConnection { } * _telephonyServerConnection;
 }
 
-@property (nonatomic, readonly) GEOAppConfig *appConfig;
-@property (nonatomic, readonly) GEODeviceConfig *deviceConfig;
+@property (nonatomic, readonly) NSString *carrierOperatorName;
 
++ (bool)deviceHasRadio;
 + (id)sharedInstance;
 
-- (void)_populateAppAndDeviceConfigInLogMessage:(id)arg1;
-- (void)_populateAppAndDeviceStateInLogMessage:(id)arg1 withTraits:(id)arg2;
-- (void)_populateAppConfig;
-- (void)_populateDeviceConfig;
-- (BOOL)_shouldVendoutDeviceAndAppConfigForLogMessageType:(int)arg1 logMessageCount:(unsigned int)arg2;
-- (id)appConfig;
+- (int)_bucketValueForTimeDelta:(double)arg1;
+- (void)_connectToCoreTelephonyServer;
+- (id)_retrieveCarrierOperatorName;
+- (void)_updateCarrierOperatorName;
+- (id)carrierOperatorName;
 - (void)dealloc;
-- (id)deviceConfig;
 - (id)init;
-- (id)logMessageForDebugString:(id)arg1;
-- (id)logMessageForUserAction:(id)arg1 eventValue:(id)arg2 traits:(id)arg3 placeActionDetails:(id)arg4 routeDetails:(id)arg5 serverMetadata:(id)arg6;
 
 @end

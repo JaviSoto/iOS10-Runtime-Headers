@@ -6,7 +6,7 @@
     NSMutableArray * _MMCSItemsToUpload;
     NSArray * _assetsToUpload;
     CKDCancelTokenGroup * _cancelTokens;
-    unsigned int  _maxPackageUploadsPerBatch;
+    unsigned long long  _maxPackageUploadsPerBatch;
     NSMutableArray * _openedPackages;
     NSMutableArray * _packageManifests;
     NSObject<OS_dispatch_queue> * _queue;
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToUpload;
 @property (nonatomic, retain) NSArray *assetsToUpload;
 @property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
-@property (nonatomic) unsigned int maxPackageUploadsPerBatch;
+@property (nonatomic) unsigned long long maxPackageUploadsPerBatch;
 @property (nonatomic, retain) NSMutableArray *openedPackages;
 @property (nonatomic, retain) NSMutableArray *packageManifests;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSMapTable *uploadTasksByPackages;
 
 - (void).cxx_destruct;
+- (id)CKStatusReportLogGroups;
 - (id)MMCSItemsToUpload;
 - (void)_closeAllPackages;
 - (void)_closePackage:(id)arg1;
@@ -47,13 +48,13 @@
 - (void)_didUploadMMCSSectionItem:(id)arg1 task:(id)arg2 error:(id)arg3;
 - (void)_didUploadMMCSSectionItems:(id)arg1 task:(id)arg2 error:(id)arg3;
 - (void)_didUploadPackageWithTask:(id)arg1;
-- (BOOL)_fetchUploadTokens;
+- (bool)_fetchUploadTokens;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_openPackage:(id)arg1;
-- (BOOL)_planSectionsForPackage:(id)arg1 error:(id*)arg2;
-- (BOOL)_prepareForUpload;
+- (bool)_planSectionsForPackage:(id)arg1 error:(id*)arg2;
+- (bool)_prepareForUpload;
 - (void)_removePackageManifests;
-- (BOOL)_upload;
+- (bool)_upload;
 - (void)_uploadPackageSection:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uploadPackageSectionsWithEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uploadPackageSectionsWithPendingTasks:(id)arg1 uploadingTasks:(id)arg2 completedTasks:(id)arg3;
@@ -64,16 +65,16 @@
 - (void)finishWithError:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2 assetsToUpload:(id)arg3;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (unsigned int)maxPackageUploadsPerBatch;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (unsigned long long)maxPackageUploadsPerBatch;
+- (id)nameForState:(unsigned long long)arg1;
 - (id)openedPackages;
 - (id)packageManifests;
 - (id)queue;
 - (void)setAssetsToUpload:(id)arg1;
 - (void)setCancelTokens:(id)arg1;
 - (void)setMMCSItemsToUpload:(id)arg1;
-- (void)setMaxPackageUploadsPerBatch:(unsigned int)arg1;
+- (void)setMaxPackageUploadsPerBatch:(unsigned long long)arg1;
 - (void)setOpenedPackages:(id)arg1;
 - (void)setPackageManifests:(id)arg1;
 - (void)setQueue:(id)arg1;

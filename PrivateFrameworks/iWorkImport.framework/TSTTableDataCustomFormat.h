@@ -6,10 +6,13 @@
     TSUCustomFormat * mCustomFormat;
 }
 
+@property (nonatomic, readonly) TSUCustomFormat *customFormat;
+
+- (id)customFormat;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (id)initObjectWithCustomFormat:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initObjectWithCustomFormat:(id)arg1 refCount:(unsigned int)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

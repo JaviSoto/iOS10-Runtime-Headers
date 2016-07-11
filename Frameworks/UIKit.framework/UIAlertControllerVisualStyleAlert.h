@@ -4,25 +4,21 @@
 
 @interface UIAlertControllerVisualStyleAlert : UIAlertControllerVisualStyle
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 isInteractive:(BOOL)arg4 inContainerView:(id)arg5 descendantOfContainerView:(id)arg6 duration:(double)arg7 completionBlock:(id /* block */)arg8;
-- (float)backgroundCornerRadius;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (float)marginAboveMessageLabelFirstBaseline;
-- (float)marginAboveTitleLabelFirstBaseline;
-- (float)marginBelowLastLabelLastBaseline;
-- (float)marginBelowMessageLabelLastBaseline;
-- (float)marginBelowTitleLabelLastBaseline;
-- (float)maximumWidth;
+- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(bool)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(id /* block */)arg7;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (double)marginAboveMessageLabelFirstBaseline;
+- (double)marginAboveTitleLabelFirstBaseline;
+- (double)marginBelowLastLabelLastBaseline;
+- (double)marginBelowMessageLabelLastBaseline;
+- (double)marginBelowTitleLabelLastBaseline;
+- (double)maximumWidth;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (float)minimumActionHeight;
-- (int)permittedActionLayoutDirection;
-- (id)preferredActionFont;
-- (id)regularActionFont;
+- (long long)permittedActionLayoutDirection;
+- (bool)placementAvoidsKeyboard;
 - (id)textFieldContainingViewWithTextField:(id)arg1;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
-- (double)transitionDurationForPresentation:(BOOL)arg1 ofAlertController:(id)arg2;
+- (double)transitionDurationForPresentation:(bool)arg1 ofAlertController:(id)arg2;
 
 @end

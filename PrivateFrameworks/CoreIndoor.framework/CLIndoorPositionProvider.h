@@ -8,19 +8,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ServiceState *state;
 @property (readonly) Class superclass;
 
 + (int)locationType:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)changeOrSetVenues:(id)arg1 isChange:(bool)arg2;
+- (void)changeVenues:(id)arg1;
 - (id)endpointName;
 - (void)gpsEstimateAvailable:(id)arg1;
 - (void)gpsSignalQualityAvailable:(id)arg1;
 - (id)initWithApiKey:(id)arg1;
 - (id)initWithApiKey:(id)arg1 onServer:(id)arg2;
 - (id)initWithConnection:(id)arg1;
+- (void)outdoorLocationAvailable:(id)arg1;
 - (void)playbackDatarun:(id)arg1;
 - (id)remoteObjectProtocol;
 - (void)setApiKey:(id)arg1;
@@ -31,7 +34,7 @@
 - (void)startUpdatingLocation;
 - (id)state;
 - (void)stopUpdatingLocation;
-- (BOOL)withinQueueCanReinitializeRemoteState;
+- (bool)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;
 - (id)withinQueuePermanentShutdownReason;
 - (void)withinQueueReconnectInvalidatedConnectionFailed:(id)arg1;

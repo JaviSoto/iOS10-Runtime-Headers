@@ -9,17 +9,16 @@
 }
 
 @property (nonatomic, copy) NSString *passTypeIdentifier;
-@property (nonatomic, copy) PKPaymentPass *paymentPass;
+@property (nonatomic, readonly, copy) PKPaymentPass *paymentPass;
 @property (nonatomic, copy) NSString *serialNumber;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithPaymentPass:(id)arg1;
 - (id)passTypeIdentifier;
 - (id)paymentPass;
 - (id)serialNumber;
 - (void)setPassTypeIdentifier:(id)arg1;
-- (void)setPaymentPass:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
 
 @end

@@ -3,18 +3,14 @@
  */
 
 @interface MPSetPlaybackQueueCommand : MPRemoteCommand {
-    NSString * _prominentRadioStationName;
-    BOOL  _prominentRadioStationSupported;
+    NSMutableDictionary * _registeredSpecializedQueues;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
-
-@property (nonatomic, copy) NSString *prominentRadioStationName;
-@property (getter=isProminentRadioStationSupported, nonatomic) BOOL prominentRadioStationSupported;
 
 - (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;
-- (BOOL)isProminentRadioStationSupported;
-- (id)prominentRadioStationName;
-- (void)setProminentRadioStationName:(id)arg1;
-- (void)setProminentRadioStationSupported:(BOOL)arg1;
+- (id)initWithMediaRemoteCommandType:(unsigned int)arg1;
+- (void)registerSpecializedQueueIdentifier:(id)arg1 localizedName:(id)arg2 queueType:(long long)arg3 queueParameters:(id)arg4;
+- (void)unregisterSpecializedQueueIdentifier:(id)arg1;
 
 @end

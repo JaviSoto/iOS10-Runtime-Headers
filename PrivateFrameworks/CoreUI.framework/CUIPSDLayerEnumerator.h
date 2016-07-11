@@ -4,6 +4,7 @@
 
 @interface CUIPSDLayerEnumerator : NSEnumerator {
     unsigned int  _currentIndex;
+    bool  _isImageFile;
     CUIPSDLayerGroupRef * _layerGroup;
 }
 

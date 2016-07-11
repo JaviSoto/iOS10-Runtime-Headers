@@ -5,12 +5,12 @@
 @interface SUICFlamesView : UIView {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _activeFrame;
     float  _auraMaxSubdivisionLevel;
@@ -19,16 +19,21 @@
     unsigned int  _auraVertexCircles;
     FlameGroup * _currentFlameGroup;
     <SUICFlamesViewDelegate> * _delegate;
+    double  _dictationBlueColor;
+    UIColor * _dictationColor;
+    double  _dictationGreenColor;
+    double  _dictationRedColor;
     float  _dictationUnitSize;
     CADisplayLink * _displayLink;
     EAGLContext * _eaglContext;
     unsigned int  _elementArrayHandle;
     int  _fShadID;
+    int  _fidelity;
     NSMutableArray * _flameGroups;
     int  _flameProgramHandle;
     unsigned int  _framebufferHandle;
-    BOOL  _hasCustomActiveFrame;
-    BOOL  _isInitialized;
+    bool  _hasCustomActiveFrame;
+    bool  _isInitialized;
     SUICAudioLevelSmoother * _levelSmoother;
     float  _maxSubdivisionLevel;
     unsigned int  _maxVertexCircles;
@@ -39,10 +44,13 @@
     unsigned int  _numWaveIndices;
     UIImage * _overlayImage;
     UIImageView * _overlayImageView;
+    bool  _reduceFrameRate;
+    bool  _reduceMotionEnabled;
+    bool  _renderInBackground;
     unsigned int  _renderbufferHandle;
     UIScreen * _screen;
-    BOOL  _shadersAreCompiled;
-    BOOL  _showAura;
+    bool  _shadersAreCompiled;
+    bool  _showAura;
     double  _startTime;
     int  _state;
     int  _vShadID;
@@ -52,54 +60,69 @@
     int  _viewWidth;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } activeFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } activeFrame;
 @property (nonatomic) <SUICFlamesViewDelegate> *delegate;
+@property (nonatomic, retain) UIColor *dictationColor;
 @property (nonatomic) int mode;
 @property (nonatomic, retain) UIImage *overlayImage;
-@property (nonatomic) BOOL showAura;
+@property (nonatomic) bool reduceFrameRate;
+@property (nonatomic) bool renderInBackground;
+@property (nonatomic) bool showAura;
 @property (nonatomic) int state;
 
 + (Class)layerClass;
++ (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 fidelity:(int)arg3;
++ (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 fidelity:(int)arg3 prewarmInBackground:(bool)arg4;
 
 - (void).cxx_destruct;
 - (void)_cleanupGL;
 - (float)_currentMicPowerLevel;
-- (int)_generateIndicesForNumCircleShapes:(int)arg1 withMaxSubdivisionLevel:(float)arg2 startingWithNumSubdivisionLevel:(float)arg3 forIndices:(unsigned int**)arg4 atStartIndex:(int)arg5 withFill:(BOOL)arg6 withCullingForAura:(BOOL)arg7 forVertices:(struct { }*)arg8;
-- (BOOL)_initGL;
+- (int)_generateIndicesForNumCircleShapes:(int)arg1 withMaxSubdivisionLevel:(float)arg2 startingWithNumSubdivisionLevel:(float)arg3 forIndices:(unsigned int**)arg4 atStartIndex:(int)arg5 withFill:(bool)arg6 withCullingForAura:(bool)arg7 forVertices:(struct { }*)arg8;
+- (bool)_initGLAndSetupDisplayLink:(bool)arg1;
 - (unsigned int)_numVerticesPerCircle;
 - (void)_predeterminedVertexPositionForAuraWithPolarVertex;
-- (BOOL)_resizeFromLayer:(id)arg1;
+- (void)_prewarmShaders;
+- (void)_reduceMotionStatusChanged:(id)arg1;
+- (bool)_resizeFromLayer:(id)arg1;
 - (void)_setValuesForFidelity:(int)arg1;
 - (void)_setupDisplayLink;
-- (BOOL)_setupFramebuffer;
-- (BOOL)_setupShaders;
-- (BOOL)_setupVertexBuffer;
+- (bool)_setupFramebuffer;
+- (bool)_setupShaders;
+- (bool)_setupVertexBuffer;
 - (void)_tearDownDisplayLink;
 - (void)_updateCurveLayer:(id)arg1;
 - (void)_updateOrthoProjection;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })activeFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeFrame;
 - (void)dealloc;
 - (id)delegate;
+- (id)dictationColor;
 - (void)didMoveToSuperview;
-- (BOOL)inDictationMode;
-- (BOOL)inSiriMode;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 screen:(id)arg2 fidelity:(int)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 screenScale:(float)arg2 fidelity:(int)arg3;
+- (bool)inDictationMode;
+- (bool)inSiriMode;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 screen:(id)arg2 fidelity:(int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 screenScale:(double)arg2 fidelity:(int)arg3;
 - (void)layoutSubviews;
 - (int)mode;
 - (id)overlayImage;
 - (void)prewarmShadersForCurrentMode;
-- (void)resetAndReinitializeGL:(BOOL)arg1;
-- (void)setActiveFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)reduceFrameRate;
+- (bool)renderInBackground;
+- (void)resetAndReinitializeGL:(bool)arg1;
+- (void)setActiveFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setDictationColor:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOverlayImage:(id)arg1;
-- (void)setShowAura:(BOOL)arg1;
+- (void)setReduceFrameRate:(bool)arg1;
+- (void)setRenderInBackground:(bool)arg1;
+- (void)setShowAura:(bool)arg1;
 - (void)setState:(int)arg1;
-- (BOOL)showAura;
+- (bool)showAura;
 - (int)state;
+- (void)stopRenderingAndCleanupGL;
 
 @end

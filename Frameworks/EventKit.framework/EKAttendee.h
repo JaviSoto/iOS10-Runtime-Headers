@@ -4,37 +4,45 @@
 
 @interface EKAttendee : EKParticipant
 
-@property (nonatomic) BOOL commentChanged;
+@property (nonatomic) bool commentChanged;
 @property (nonatomic, readonly) NSDate *lastModifiedParticipationStatus;
-@property (nonatomic) int pendingStatus;
-@property (nonatomic) BOOL statusChanged;
+@property (nonatomic) long long participantRole;
+@property (nonatomic) long long participantStatus;
+@property (nonatomic) long long participantType;
+@property (nonatomic) long long pendingStatus;
+@property (nonatomic, readonly) NSDate *proposedStartDate;
+@property (nonatomic) bool proposedStartDateChanged;
+@property (nonatomic) bool statusChanged;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 
 - (id)_persistentAttendee;
-- (BOOL)commentChanged;
+- (bool)commentChanged;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
-- (BOOL)isCurrentUser;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCurrentUser;
+- (bool)isEqual:(id)arg1;
 - (id)lastModifiedParticipationStatus;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;
-- (int)participantRole;
-- (int)participantStatus;
-- (int)participantType;
-- (int)pendingStatus;
-- (void)setCommentChanged:(BOOL)arg1;
-- (void)setParticipantRole:(int)arg1;
-- (void)setParticipantStatus:(int)arg1;
-- (void)setParticipantType:(int)arg1;
-- (void)setPendingStatus:(int)arg1;
-- (void)setStatusChanged:(BOOL)arg1;
-- (BOOL)statusChanged;
+- (long long)participantRole;
+- (long long)participantStatus;
+- (long long)participantType;
+- (long long)pendingStatus;
+- (id)proposedStartDate;
+- (bool)proposedStartDateChanged;
+- (void)setCommentChanged:(bool)arg1;
+- (void)setParticipantRole:(long long)arg1;
+- (void)setParticipantStatus:(long long)arg1;
+- (void)setParticipantType:(long long)arg1;
+- (void)setPendingStatus:(long long)arg1;
+- (void)setProposedStartDateChanged:(bool)arg1;
+- (void)setStatusChanged:(bool)arg1;
+- (bool)statusChanged;
 
 @end

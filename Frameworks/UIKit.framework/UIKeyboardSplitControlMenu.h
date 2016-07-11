@@ -4,10 +4,10 @@
 
 @interface UIKeyboardSplitControlMenu : UIKeyboardMenuView {
     id /* block */  _finishSplitTransitionBlock;
-    NSMutableArray * m_menuOptions;
+    NSArray * _items;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  m_preferredSize;
 }
 
@@ -16,16 +16,18 @@
 + (id)activeInstance;
 + (id)sharedInstance;
 
+- (void)actionForItem:(id)arg1;
 - (void)dealloc;
-- (int)defaultSelectedIndex;
+- (unsigned long long)defaultSelectedIndex;
 - (void)didFinishSplitTransition;
-- (void)didSelectItemAtIndex:(int)arg1;
+- (void)didSelectItemAtIndex:(unsigned long long)arg1;
 - (id /* block */)finishSplitTransitionBlock;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)numberOfItems;
-- (struct CGSize { float x1; float x2; })preferredSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned long long)numberOfItems;
+- (struct CGSize { double x1; double x2; })preferredSize;
 - (void)setFinishSplitTransitionBlock:(id /* block */)arg1;
-- (void)setSplitAndUndocked:(BOOL)arg1;
-- (id)titleForItemAtIndex:(int)arg1;
+- (void)setSplitAndUndocked:(bool)arg1;
+- (id)titleForItemAtIndex:(unsigned long long)arg1;
+- (int)visibleItemForIndex:(unsigned long long)arg1;
 
 @end

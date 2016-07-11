@@ -4,20 +4,19 @@
 
 @interface SBWallpaperImage : UIImage {
     NSData * _data;
-    int  _variant;
 }
 
-@property (nonatomic, readonly, retain) NSData *data;
-@property (nonatomic, readonly) int variant;
+@property (nonatomic, readonly) NSData *data;
 
-+ (struct CGImage { }*)_newBlackWallpaperImage;
-+ (id)cachedWallpaperDataForVariant:(int)arg1;
-+ (void)preheatWallpaperDataForVariant:(int)arg1;
-
+- (void).cxx_destruct;
 - (id)data;
-- (void)dealloc;
-- (id)initWithVariant:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)variant;
+- (unsigned long long)hash;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 wallpaperData:(id)arg3;
+- (id)initWithFlatColor:(id)arg1;
+- (id)initWithFlatColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
+- (id)initWithImage:(id)arg1 wallpaperData:(id)arg2;
+- (id)initWithWallpaperData:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)preheatWallpaperData;
 
 @end

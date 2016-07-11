@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _CDPeopleSuggesterContext : NSObject {
+@interface _CDPeopleSuggesterContext : NSObject <NSCopying> {
+    NSString * _consumerIdentifier;
     NSString * _contactPrefix;
     NSDate * _date;
     NSString * _locationUUID;
@@ -10,6 +11,7 @@
     NSString * _title;
 }
 
+@property (retain) NSString *consumerIdentifier;
 @property (retain) NSString *contactPrefix;
 @property (retain) NSDate *date;
 @property (retain) NSString *locationUUID;
@@ -19,11 +21,14 @@
 + (id)currentContext;
 
 - (void).cxx_destruct;
+- (id)consumerIdentifier;
 - (id)contactPrefix;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)init;
 - (id)locationUUID;
 - (id)seedContactIdentifiers;
+- (void)setConsumerIdentifier:(id)arg1;
 - (void)setContactPrefix:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setLocationUUID:(id)arg1;

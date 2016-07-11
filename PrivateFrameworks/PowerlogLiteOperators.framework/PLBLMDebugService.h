@@ -26,6 +26,7 @@
 
 + (id)entryEventNoneDefinitionBLMDebug;
 + (id)entryEventNoneDefinitions;
++ (bool)isModelTriggerRun;
 + (void)load;
 
 - (void).cxx_destruct;

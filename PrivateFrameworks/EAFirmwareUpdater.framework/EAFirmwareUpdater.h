@@ -10,12 +10,12 @@
     NSObject<OS_dispatch_queue> * _eaNotificationDispatchQueue;
     NSString * _firmwareBundleFilename;
     NSURL * _firmwareBundleURL;
-    BOOL  _firmwareUpdateComplete;
+    bool  _firmwareUpdateComplete;
     unsigned int  _firmwareVersionMajor;
     unsigned int  _firmwareVersionMinor;
     unsigned int  _firmwareVersionRelease;
     iAUPServer * _iAUPServer;
-    BOOL  _isExpectingReconnect;
+    bool  _isExpectingReconnect;
     NSMutableData * _outputData;
     unsigned int  _productIDCode;
     id /* block */  _progressHandler;
@@ -34,7 +34,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *firmwareBundleFilename;
 @property (nonatomic, retain) NSURL *firmwareBundleURL;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int productIDCode;
 @property (nonatomic, retain) NSString *protocolString;
 @property (nonatomic, retain) iAUPServer *server;
@@ -55,7 +55,7 @@
 - (id)assetWithMaxVersion:(id)arg1;
 - (id)bootloaderProtocol;
 - (void)dealloc;
-- (BOOL)findAccessory;
+- (bool)findAccessory;
 - (id)firmwareBundleFilename;
 - (id)firmwareBundleURL;
 - (void)firmwareUpdateComplete:(id)arg1;
@@ -83,7 +83,7 @@
 - (void)setSession:(id)arg1;
 - (void)startReconnectTimer;
 - (void)stopReconnectTimer;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)supportedProtocolForAccessory:(id)arg1;
 - (void)updateComplete:(id)arg1;
 - (void)updateProgress:(double)arg1;

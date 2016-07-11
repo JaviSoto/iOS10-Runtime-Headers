@@ -4,44 +4,48 @@
 
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
     NSUUID * _UUID;
-    BOOL  _indoor;
+    bool  _indoor;
+    HKLocationSeriesSample * _locationSeriesSample;
     NSDictionary * _resumeDataByType;
-    BOOL  _shouldUseDeviceData;
+    bool  _shouldUseDeviceData;
     NSDate * _startDate;
-    unsigned int  _workoutActivityType;
+    unsigned long long  _workoutActivityType;
     NSArray * _workoutEvents;
-    int  _workoutState;
+    long long  _workoutState;
 }
 
 @property (nonatomic, retain) NSUUID *UUID;
-@property (getter=isIndoor, nonatomic) BOOL indoor;
+@property (getter=isIndoor, nonatomic) bool indoor;
+@property (nonatomic, retain) HKLocationSeriesSample *locationSeriesSample;
 @property (nonatomic, retain) NSDictionary *resumeDataByType;
-@property (nonatomic) BOOL shouldUseDeviceData;
+@property (nonatomic) bool shouldUseDeviceData;
 @property (nonatomic, retain) NSDate *startDate;
-@property (nonatomic) unsigned int workoutActivityType;
+@property (nonatomic) unsigned long long workoutActivityType;
 @property (nonatomic, retain) NSArray *workoutEvents;
-@property (nonatomic) int workoutState;
+@property (nonatomic) long long workoutState;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isIndoor;
+- (bool)isIndoor;
+- (id)locationSeriesSample;
 - (id)resumeDataByType;
-- (void)setIndoor:(BOOL)arg1;
+- (void)setIndoor:(bool)arg1;
+- (void)setLocationSeriesSample:(id)arg1;
 - (void)setResumeDataByType:(id)arg1;
-- (void)setShouldUseDeviceData:(BOOL)arg1;
+- (void)setShouldUseDeviceData:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setUUID:(id)arg1;
-- (void)setWorkoutActivityType:(unsigned int)arg1;
+- (void)setWorkoutActivityType:(unsigned long long)arg1;
 - (void)setWorkoutEvents:(id)arg1;
-- (void)setWorkoutState:(int)arg1;
-- (BOOL)shouldUseDeviceData;
+- (void)setWorkoutState:(long long)arg1;
+- (bool)shouldUseDeviceData;
 - (id)startDate;
-- (unsigned int)workoutActivityType;
+- (unsigned long long)workoutActivityType;
 - (id)workoutEvents;
-- (int)workoutState;
+- (long long)workoutState;
 
 @end

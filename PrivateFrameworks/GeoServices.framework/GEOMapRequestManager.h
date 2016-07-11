@@ -3,6 +3,7 @@
  */
 
 @interface GEOMapRequestManager : NSObject {
+    NSObject<OS_dispatch_queue> * _queue;
     NSMutableSet * _requests;
 }
 

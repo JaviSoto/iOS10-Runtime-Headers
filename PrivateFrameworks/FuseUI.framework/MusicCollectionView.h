@@ -4,17 +4,15 @@
 
 @interface MusicCollectionView : UICollectionView {
     UITraitCollection * _cachedTraitCollection;
-    BOOL  _shouldTreatContentOffsetChangesAsDeltas;
+    bool  _shouldTreatContentOffsetChangesAsDeltas;
 }
 
 @property (nonatomic) <MusicCollectionViewDelegate> *delegate;
-@property (nonatomic) BOOL shouldTreatContentOffsetChangesAsDeltas;
+@property (nonatomic) bool shouldTreatContentOffsetChangesAsDeltas;
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setShouldTreatContentOffsetChangesAsDeltas:(BOOL)arg1;
-- (BOOL)shouldTreatContentOffsetChangesAsDeltas;
+- (void)setShouldTreatContentOffsetChangesAsDeltas:(bool)arg1;
+- (bool)shouldTreatContentOffsetChangesAsDeltas;
 - (void)tintColorDidChange;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -2,36 +2,30 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumListViewControllerPhoneSpec : PUAlbumListViewControllerSpec
+@interface PUAlbumListViewControllerPhoneSpec : PUAlbumListViewControllerCommonPhoneSpec
 
+- (void)_getStackSize:(struct CGSize { double x1; double x2; }*)arg1 edgeInset:(double*)arg2 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)_nameOfAddSharedAlbumPlaceholderImage;
 - (id)_nameOfEmptyAlbumPlaceholderImage;
 - (id)_nameOfEmptySharedAlbumPlaceholderImage;
 - (id)_nameOfHiddenAlbumPlaceholderImage;
-- (int)albumDeletionConfirmationStyle;
-- (BOOL)allowsAlbumCountSubtitle;
-- (BOOL)canDisplaySearchActionInNavigationBar;
-- (int)cellContentViewLayout;
-- (struct CGSize { float x1; float x2; })cellSizeForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
+- (bool)canShowVirtualCollections;
+- (long long)cellContentViewLayout;
+- (struct CGSize { double x1; double x2; })cellSizeForStackSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)configureStackViewWithGridStyle:(id)arg1;
-- (id)emptyStackPhotoDecoration;
-- (id)feedViewControllerSpec;
-- (id)gridViewControllerSpec;
-- (int)imageContentMode;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)panoramaViewControllerSpec;
-- (struct CGSize { float x1; float x2; })photoSize;
-- (id)photosPickerViewControllerSpec;
-- (float)sectionFooterHeight;
-- (float)sectionHeaderHeight;
-- (BOOL)shouldUseTableView;
-- (BOOL)showsAlbumBadgeOnCellContentView;
-- (BOOL)showsAlbumBadgeOnStackView;
-- (struct UIOffset { float x1; float x2; })stackOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;
-- (struct UIOffset { float x1; float x2; })stackPerspectiveOffset;
-- (id)stackPhotoDecoration;
-- (struct CGSize { float x1; float x2; })stackSize;
-- (unsigned int)stackViewStyle;
+- (id)emptyAlbumPlaceholderImage;
+- (unsigned long long)folderStackViewStyle;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)sectionFooterHeight;
+- (double)sectionHeaderHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)shouldShowSectionHeaders;
+- (bool)shouldUseTableView;
+- (struct CGSize { double x1; double x2; })stackSize;
+- (struct CGSize { double x1; double x2; })stackSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)stackViewStyle;
 
 @end

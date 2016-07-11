@@ -3,28 +3,28 @@
  */
 
 @interface SKUIScreenshotDataConsumer : SKUIImageDataConsumer {
-    BOOL  _drawsBorder;
-    BOOL  _forcesPortrait;
+    bool  _drawsBorder;
+    bool  _forcesPortrait;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _screenshotSize;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } constraintSize;
-@property (nonatomic) BOOL drawsBorder;
-@property (nonatomic) BOOL forcesPortrait;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } constraintSize;
+@property (nonatomic) bool drawsBorder;
+@property (nonatomic) bool forcesPortrait;
 
 + (id)consumer;
-+ (id)consumerWithScreenshotSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)consumerWithScreenshotSize:(struct CGSize { double x1; double x2; })arg1;
 
-- (struct CGSize { float x1; float x2; })constraintSize;
-- (BOOL)drawsBorder;
-- (BOOL)forcesPortrait;
+- (struct CGSize { double x1; double x2; })constraintSize;
+- (bool)drawsBorder;
+- (bool)forcesPortrait;
 - (id)imageForColor:(id)arg1;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)imageForImage:(id)arg1;
-- (void)setDrawsBorder:(BOOL)arg1;
-- (void)setForcesPortrait:(BOOL)arg1;
+- (void)setDrawsBorder:(bool)arg1;
+- (void)setForcesPortrait:(bool)arg1;
 
 @end

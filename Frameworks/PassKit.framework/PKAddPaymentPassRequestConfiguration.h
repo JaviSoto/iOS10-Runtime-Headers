@@ -18,8 +18,9 @@
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountSuffix;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)cardholderName;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

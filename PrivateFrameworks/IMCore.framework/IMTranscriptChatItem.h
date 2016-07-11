@@ -10,28 +10,28 @@
 }
 
 @property (nonatomic, readonly) unsigned char attachmentContiguousType;
-@property (getter=isContiguous, nonatomic, readonly) BOOL contiguous;
+@property (getter=isContiguous, nonatomic, readonly) bool contiguous;
 @property (nonatomic, readonly) unsigned char contiguousType;
-@property (nonatomic, copy) NSString *guid;
+@property (setter=_setGUID:, nonatomic, copy) NSString *guid;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (BOOL)_isContiguousLoaded;
+- (void).cxx_destruct;
+- (bool)_isContiguousLoaded;
 - (void)_setAttachmentContiguousType:(unsigned char)arg1;
-- (void)_setContiguousLoaded:(BOOL)arg1;
+- (void)_setContiguousLoaded:(bool)arg1;
 - (void)_setContiguousType:(unsigned char)arg1;
 - (void)_setGUID:(id)arg1;
 - (unsigned char)attachmentContiguousType;
 - (unsigned char)contiguousType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)guid;
-- (unsigned int)hash;
-- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
-- (BOOL)isContiguous;
-- (BOOL)isContiguousWithChatItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isAttachmentContiguousWithChatItem:(id)arg1;
+- (bool)isContiguous;
+- (bool)isContiguousWithChatItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

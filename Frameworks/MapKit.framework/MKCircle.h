@@ -13,7 +13,7 @@
             double height; 
         } size; 
     }  _boundingMapRect;
-    struct { 
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _coordinate;
@@ -21,22 +21,22 @@
 }
 
 @property (nonatomic, readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
-@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double radius;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
 
-+ (id)circleWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
++ (id)circleWithCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 radius:(double)arg2;
 + (id)circleWithMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
-- (id)_initWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
+- (id)_initWithCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 radius:(double)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
-- (struct { double x1; double x2; })coordinate;
-- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
+- (bool)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)radius;
 
 @end

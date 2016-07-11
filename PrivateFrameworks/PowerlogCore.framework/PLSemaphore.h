@@ -11,7 +11,7 @@
 }
 
 @property (retain) NSMutableSet *interestedObjects;
-@property (readonly) BOOL isActive;
+@property (readonly) bool isActive;
 @property (retain) NSString *key;
 @property (retain) NSMutableSet *pendingDoneObjects;
 @property (retain) NSObject<OS_dispatch_semaphore> *semaphore;
@@ -23,7 +23,7 @@
 - (void)basicWaitWithBlock:(id /* block */)arg1;
 - (id)initWithKey:(id)arg1;
 - (id)interestedObjects;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)key;
 - (id)pendingDoneObjects;
 - (id)semaphore;

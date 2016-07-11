@@ -3,45 +3,54 @@
  */
 
 @interface WBSSiteMetadataManager : NSObject <WBSSiteMetadataProviderDelegate> {
+    NSCountedSet * _activeOperations;
     NSURL * _injectedBundleURL;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     NSOperationQueue * _operationQueue;
     WKProcessPool * _processPool;
     NSMutableDictionary * _requestsToRequestInfos;
     NSMutableArray * _siteMetadataProviders;
     NSMutableSet * _tokens;
-    NSMutableDictionary * _tokensToSubrequestProviders;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSURL *injectedBundleURL;
 @property (readonly) Class superclass;
+@property (getter=isSuspended, nonatomic) bool suspended;
 
 - (void).cxx_destruct;
-- (int)_highestRequestPriorityForRequest:(id)arg1;
+- (long long)_highestRequestPriorityForRequest:(id)arg1;
+- (void)_internalCancelRequestWithToken:(id)arg1;
+- (void)_internalSetPriority:(long long)arg1 ofRequestWithToken:(id)arg2;
+- (unsigned long long)_numberOfConcurrentRequests;
 - (id)_processPool;
 - (id)_providerForRequest:(id)arg1;
 - (void)_registerToken:(id)arg1 withProvider:(id)arg2;
 - (void)_reprioritizeOperationForRequest:(id)arg1;
-- (void)_reregisterRequest:(id)arg1 priority:(int)arg2 withProvider:(id)arg3;
+- (bool)_requestIsCancelledForToken:(id)arg1;
 - (void)_scheduleDelayedResponse:(id)arg1 forRequestToken:(id)arg2;
-- (void)_sendResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2;
+- (void)_sendRequiresDownloadResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2;
+- (void)_sendResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2 didReceiveNewData:(bool)arg3;
 - (void)_setUpOperationForRequest:(id)arg1 withSiteMetadataProvider:(id)arg2;
+- (void)_setUpOperationForRequest:(id)arg1 withSiteMetadataProvider:(id)arg2 processPool:(id)arg3;
+- (bool)_updateOperationForRequestIfPossible:(id)arg1;
 - (void)cancelRequestWithToken:(id)arg1;
 - (void)cancelRequestsWithTokens:(id)arg1;
 - (id)init;
 - (id)initWithInjectedBundleURL:(id)arg1;
 - (id)injectedBundleURL;
-- (id)registerOneTimeRequest:(id)arg1 priority:(int)arg2 responseHandler:(id /* block */)arg3;
-- (id)registerRequest:(id)arg1 priority:(int)arg2 responseHandler:(id /* block */)arg3;
+- (bool)isSuspended;
+- (id)registerOneTimeRequest:(id)arg1 priority:(long long)arg2 responseHandler:(id /* block */)arg3;
+- (id)registerRequest:(id)arg1 priority:(long long)arg2 responseHandler:(id /* block */)arg3;
 - (void)registerSiteMetadataProvider:(id)arg1;
-- (void)setPriority:(int)arg1 ofRequestWithToken:(id)arg2;
-- (void)setPriority:(int)arg1 ofRequestsWithTokens:(id)arg2;
+- (void)setPriority:(long long)arg1 ofRequestWithToken:(id)arg2;
+- (void)setPriority:(long long)arg1 ofRequestsWithTokens:(id)arg2;
+- (void)setSuspended:(bool)arg1;
 - (void)siteMetadataProvider:(id)arg1 cancelRequestsWithTokens:(id)arg2;
-- (void)siteMetadataProvider:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
-- (void)siteMetadataProvider:(id)arg1 didReceiveUpdateForRequest:(id)arg2;
-- (id)siteMetadataProvider:(id)arg1 registerOneTimeRequest:(id)arg2 priority:(int)arg3 responseHandler:(id /* block */)arg4;
-- (id)siteMetadataProvider:(id)arg1 registerRequest:(id)arg2 priority:(int)arg3 responseHandler:(id /* block */)arg4;
+- (void)siteMetadataProvider:(id)arg1 didReceiveResponse:(id)arg2 ofType:(long long)arg3 didReceiveNewData:(bool)arg4 forRequest:(id)arg5;
+- (id)siteMetadataProvider:(id)arg1 registerOneTimeRequest:(id)arg2 priority:(long long)arg3 responseHandler:(id /* block */)arg4;
+- (id)siteMetadataProvider:(id)arg1 registerRequest:(id)arg2 priority:(long long)arg3 responseHandler:(id /* block */)arg4;
 
 @end

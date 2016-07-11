@@ -3,17 +3,16 @@
  */
 
 @interface NFAWDTSMStart : NSObject <NFAWDEventProtocol> {
+    unsigned int  _memoryIndexTable;
+    unsigned int  _memoryPersistent;
+    unsigned int  _memoryTransientDeselect;
+    unsigned int  _memoryTransientReset;
     AWDNFCTSMStartEvent * _metric;
-    unsigned int  memoryIndexTable;
-    unsigned int  memoryPersistent;
-    unsigned int  memoryTransientDeselect;
-    unsigned int  memoryTransientReset;
-    NSString * url;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int memoryIndexTable;
 @property (nonatomic) unsigned int memoryPersistent;
 @property (nonatomic) unsigned int memoryTransientDeselect;
@@ -24,7 +23,7 @@
 
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (unsigned int)memoryIndexTable;
 - (unsigned int)memoryPersistent;

@@ -19,12 +19,15 @@
 - (void).cxx_destruct;
 - (void)addCpuEvent:(double)arg1 atTime:(id)arg2 withPid:(int)arg3 withAppState:(int)arg4;
 - (void)addEvent:(double)arg1 atTime:(id)arg2;
+- (void)addGpuEvent:(double)arg1 atTime:(id)arg2 withPid:(int)arg3 withAppState:(int)arg4;
 - (void)addLocationEvent:(double)arg1 atTime:(id)arg2 withPid:(int)arg3 withAppState:(int)arg4;
 - (void)addNetworkingEvent:(double)arg1 atTime:(id)arg2 withPid:(int)arg3 withAppState:(int)arg4 withQueryCount:(int)arg5;
 - (double)costAggregated;
 - (id)costReturnedTillDate;
+- (id)getApplicationCostUptoTime:(id)arg1 withPid:(int)arg2 withLastActiveStart:(id)arg3 withLastSuspendStart:(id)arg4 withAppState:(int)arg5;
 - (id)getCostUptoTime:(id)arg1;
 - (id)getCpuCostUptoTime:(id)arg1 withPid:(int)arg2 withLastActiveStart:(id)arg3 withLastSuspendStart:(id)arg4 withAppState:(int)arg5;
+- (id)getGpuCostUptoTime:(id)arg1 withPid:(int)arg2 withLastActiveStart:(id)arg3 withLastSuspendStart:(id)arg4 withAppState:(int)arg5;
 - (id)getLocationCostUptoTime:(id)arg1 withPid:(int)arg2 withLastActiveStart:(id)arg3 withLastSuspendStart:(id)arg4 withAppState:(int)arg5;
 - (id)getNetworkingCostUptoTime:(id)arg1 withPid:(int)arg2 withLastActiveStart:(id)arg3 withLastSuspendStart:(id)arg4 withAppState:(int)arg5 withQueryCount:(int)arg6;
 - (id)init;

@@ -2,26 +2,32 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSConstraintConflict : NSMergeConflict {
-    NSDictionary * _conflictedDBSnapshot;
-    NSManagedObject * _conflictedObject;
+@interface NSConstraintConflict : NSObject {
+    NSDictionary * _conflictedValues;
+    NSArray * _conflictingObjects;
+    NSArray * _conflictingSnapshots;
     NSArray * _constraint;
-    NSDictionary * _sourceSnapshot;
+    NSManagedObject * _databaseObject;
+    NSDictionary * _databaseSnapshot;
 }
 
-@property (readonly, retain) NSManagedObject *conflictedObject;
-@property (readonly, retain) NSDictionary *conflictedSnapshot;
-@property (readonly, retain) NSArray *conflictingConstraint;
-@property (readonly, retain) NSDictionary *sourceSnapshot;
+@property (readonly, retain) NSArray *conflictingObjects;
+@property (readonly, retain) NSArray *conflictingSnapshots;
+@property (readonly, retain) NSArray *constraint;
+@property (readonly, retain) NSDictionary *constraintValues;
+@property (readonly, retain) NSManagedObject *databaseObject;
+@property (readonly, retain) NSDictionary *databaseSnapshot;
 
-- (id)conflictedObject;
-- (id)conflictedSnapshot;
-- (id)conflictingConstraint;
+- (bool)_isDBConflict;
+- (id)conflictingObjects;
+- (id)conflictingSnapshots;
+- (id)constraint;
+- (id)constraintValues;
+- (id)databaseObject;
+- (id)databaseSnapshot;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSource:(id)arg1 constraint:(id)arg2 conflictedObject:(id)arg3 sourceSnapshot:(id)arg4 conflictedSnapshot:(id)arg5;
-- (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 snapshot1:(id)arg4 snapshot2:(id)arg5 snapshot3:(id)arg6;
-- (id)sourceSnapshot;
-- (BOOL)supportsSecureCoding;
+- (id)initWithConstraint:(id)arg1 databaseObject:(id)arg2 databaseSnapshot:(id)arg3 conflictingObjects:(id)arg4 conflictingSnapshots:(id)arg5;
+- (bool)supportsSecureCoding;
 
 @end

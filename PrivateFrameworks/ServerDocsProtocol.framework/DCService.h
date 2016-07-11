@@ -23,6 +23,7 @@
 - (id)_initWithURL:(id)arg1 keychainItemIdentifier:(id)arg2;
 - (id)description;
 - (id)keychainItemIdentifier;
+- (void)portNumberDidChange:(id)arg1;
 - (id)uniqueIdentifier;
 - (id)url;
 

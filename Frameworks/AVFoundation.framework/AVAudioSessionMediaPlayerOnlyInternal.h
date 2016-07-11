@@ -7,9 +7,10 @@
     NSString * category;
     <AVAudioSessionDelegateMediaPlayerOnly> * delegate;
     struct OpaqueFigPlayer { } * figPlayer;
-    BOOL  isActive;
-    BOOL  isAppAudioSession;
+    bool  isActive;
+    bool  isAppAudioSession;
     NSString * mode;
+    bool  usingLongFormAudio;
     AVWeakReference * weakReference;
 }
 

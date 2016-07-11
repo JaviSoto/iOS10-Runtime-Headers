@@ -7,20 +7,20 @@
     NSMutableDictionary * _countWarnings;
     NSDate * _lastCacheFlushDate;
     NSMutableDictionary * _lastEntryCache;
-    long  _lastEntryCacheSize;
+    long long  _lastEntryCacheSize;
     NSMutableDictionary * _stagingAggregateEntryCache;
     NSMutableDictionary * _stagingEntryCache;
-    long  _stagingEntryCacheSize;
+    long long  _stagingEntryCacheSize;
 }
 
 @property (retain) NSMutableDictionary *countSafetyDrop;
 @property (retain) NSMutableDictionary *countWarnings;
 @property (nonatomic, retain) NSDate *lastCacheFlushDate;
 @property (retain) NSMutableDictionary *lastEntryCache;
-@property long lastEntryCacheSize;
+@property long long lastEntryCacheSize;
 @property (retain) NSMutableDictionary *stagingAggregateEntryCache;
 @property (retain) NSMutableDictionary *stagingEntryCache;
-@property long stagingEntryCacheSize;
+@property long long stagingEntryCacheSize;
 
 + (id)sharedStorageCache;
 + (void)syncAndDispatchForEntryCache:(id)arg1 forEntryKey:(id)arg2 withBlock:(id /* block */)arg3;
@@ -50,7 +50,7 @@
 - (id)lastEntryCacheForEntryKey:(id)arg1;
 - (id)lastEntryCacheForEntryKey:(id)arg1 withSubEntryKey:(id)arg2;
 - (void)lastEntryCachePruneToDate:(id)arg1;
-- (long)lastEntryCacheSize;
+- (long long)lastEntryCacheSize;
 - (int)limitOfType:(id)arg1 forEntryKey:(id)arg2;
 - (void)logFullLastEntryCacheForEntryKey:(id)arg1;
 - (void)logSizeOfEntryCache:(id)arg1;
@@ -61,20 +61,20 @@
 - (void)setCountWarnings:(id)arg1;
 - (void)setLastCacheFlushDate:(id)arg1;
 - (void)setLastEntryCache:(id)arg1;
-- (void)setLastEntryCacheSize:(long)arg1;
+- (void)setLastEntryCacheSize:(long long)arg1;
 - (void)setNextEntryIDForEntryKey:(id)arg1 toEntryID:(long long)arg2;
 - (void)setStagingAggregateEntryCache:(id)arg1;
 - (void)setStagingEntryCache:(id)arg1;
-- (void)setStagingEntryCacheSize:(long)arg1;
+- (void)setStagingEntryCacheSize:(long long)arg1;
 - (id)stagingAggregateEntryCache;
 - (id)stagingEntryCache;
 - (id)stagingEntryCacheForEntryKey:(id)arg1;
-- (id)stagingEntryCacheForEntryKey:(id)arg1 withComparisons:(id)arg2 isSingleton:(BOOL)arg3;
+- (id)stagingEntryCacheForEntryKey:(id)arg1 withComparisons:(id)arg2 isSingleton:(bool)arg3;
 - (id)stagingEntryCacheForEntryKey:(id)arg1 withID:(long long)arg2;
 - (id)stagingEntryCacheForEntryKey:(id)arg1 withIDLessThan:(long long)arg2;
 - (id)stagingEntryCacheIDsForEntryKey:(id)arg1;
-- (long)stagingEntryCacheSize;
-- (long)stagingEntryCacheSizeForEntryKey:(id)arg1;
+- (long long)stagingEntryCacheSize;
+- (long long)stagingEntryCacheSizeForEntryKey:(id)arg1;
 - (void)updateStagingEntryCacheWithEntry:(id)arg1 withBlock:(id /* block */)arg2;
 
 @end

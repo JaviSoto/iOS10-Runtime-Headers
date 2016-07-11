@@ -5,8 +5,11 @@
 
 @required
 
-- (BOOL)canMakeSpotlightChanges;
-- (BOOL)canModifyCalendarDatabase;
-- (BOOL)canModifySuggestedEventCalendar;
+- (bool)canMakeSpotlightChanges;
+- (bool)canModifyCalendarDatabase;
+- (bool)canModifySuggestedEventCalendar;
+- (bool)canSetAutomaticLocationGeocodingAllowedValue;
+- (bool)hasContactsUIEntitlement;
+- (bool)testingAccessLevelGranted;
 
 @end

@@ -7,6 +7,7 @@
     NSDictionary * _appletsById;
     NFApplet * _defaultApplet;
     NFWeakReference * _delegate;
+    unsigned long long  _numActiveSEs;
 }
 
 @property (readonly) NFApplet *activeApplet;
@@ -14,7 +15,7 @@
 @property (readonly) NFApplet *defaultApplet;
 @property <NFContactlessPaymentSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)activeApplet;
@@ -23,20 +24,24 @@
 - (void)dealloc;
 - (id)defaultApplet;
 - (id)delegate;
-- (void)didDetectField:(BOOL)arg1;
+- (void)didDetectField:(bool)arg1;
 - (void)didDetectTechnology:(id)arg1;
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didFailDeferredAuthorization;
 - (void)didReceiveButtonPressForApplet:(id)arg1;
 - (void)didSelectApplet:(id)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
 - (void)endSession;
-- (BOOL)setActivePaymentApplet:(id)arg1 makeDefault:(BOOL)arg2 authorization:(id)arg3;
+- (void)endSessionWithCompletion:(id /* block */)arg1;
+- (bool)setActivePaymentApplet:(id)arg1 authorization:(id)arg2;
+- (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2 authorization:(id)arg3;
 - (void)setDelegate:(id)arg1;
-- (BOOL)startCardEmulationWithAuthorization:(id)arg1;
-- (BOOL)startHostCardEmulation;
-- (BOOL)stopCardEmulation;
+- (bool)startCardEmulationWithAuthorization:(id)arg1;
+- (bool)startDeferredCardEmulationWithAuthorization:(id)arg1;
+- (bool)startHostCardEmulation;
+- (bool)stopCardEmulation;
 
 @end

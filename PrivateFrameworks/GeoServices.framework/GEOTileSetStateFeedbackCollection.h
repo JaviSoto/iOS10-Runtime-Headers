@@ -14,7 +14,7 @@
     }  _has;
     double  _newCoverage;
     double  _oldCoverage;
-    struct { 
+    struct GEOSessionID { 
         unsigned long long _high; 
         unsigned long long _low; 
     }  _sessionID;
@@ -23,50 +23,52 @@
 }
 
 @property (nonatomic) double durationInOldState;
-@property (nonatomic) BOOL hasDurationInOldState;
-@property (nonatomic) BOOL hasNewCoverage;
-@property (nonatomic) BOOL hasOldCoverage;
-@property (nonatomic) BOOL hasSessionID;
-@property (nonatomic) BOOL hasSessionRelativeTimestamp;
-@property (nonatomic) BOOL hasTileSetStateType;
+@property (nonatomic) bool hasDurationInOldState;
+@property (nonatomic) bool hasNewCoverage;
+@property (nonatomic) bool hasOldCoverage;
+@property (nonatomic) bool hasSessionID;
+@property (nonatomic) bool hasSessionRelativeTimestamp;
+@property (nonatomic) bool hasTileSetStateType;
 @property (nonatomic) double newCoverage;
 @property (nonatomic) double oldCoverage;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic) int tileSetStateType;
 
+- (int)StringAsTileSetStateType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)durationInOldState;
-- (BOOL)hasDurationInOldState;
-- (BOOL)hasNewCoverage;
-- (BOOL)hasOldCoverage;
-- (BOOL)hasSessionID;
-- (BOOL)hasSessionRelativeTimestamp;
-- (BOOL)hasTileSetStateType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationInOldState;
+- (bool)hasNewCoverage;
+- (bool)hasOldCoverage;
+- (bool)hasSessionID;
+- (bool)hasSessionRelativeTimestamp;
+- (bool)hasTileSetStateType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (double)newCoverage;
 - (double)oldCoverage;
-- (BOOL)readFrom:(id)arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (bool)readFrom:(id)arg1;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setDurationInOldState:(double)arg1;
-- (void)setHasDurationInOldState:(BOOL)arg1;
-- (void)setHasNewCoverage:(BOOL)arg1;
-- (void)setHasOldCoverage:(BOOL)arg1;
-- (void)setHasSessionID:(BOOL)arg1;
-- (void)setHasSessionRelativeTimestamp:(BOOL)arg1;
-- (void)setHasTileSetStateType:(BOOL)arg1;
+- (void)setHasDurationInOldState:(bool)arg1;
+- (void)setHasNewCoverage:(bool)arg1;
+- (void)setHasOldCoverage:(bool)arg1;
+- (void)setHasSessionID:(bool)arg1;
+- (void)setHasSessionRelativeTimestamp:(bool)arg1;
+- (void)setHasTileSetStateType:(bool)arg1;
 - (void)setNewCoverage:(double)arg1;
 - (void)setOldCoverage:(double)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setTileSetStateType:(int)arg1;
 - (int)tileSetStateType;
+- (id)tileSetStateTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (id)applicationName;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (id)bladerunnerContainerIdentifier;
 - (id)cloudKitContainerIdentifier;
 - (void)configureSharedCode;
 - (id)createCompatibilityDelegate;
@@ -41,10 +42,12 @@
 - (id)stringForDocumentUpdatedByOwnerWithKeepDetails;
 - (id)stringForDocumentUpdatedTitle;
 - (id)stringForLearnMoreSharingURL;
+- (id)stringForOwnerPasswordOnConflictAlertMessage;
+- (id)stringForOwnerPasswordOnConflictAlertTitle;
 - (id)stringForRemoteVersionRestorationAlertMessage;
 - (id)stringForRemoteVersionRestorationWithUnsavedChangesAlertMessage;
 - (id)stringForUpdatingDocument;
-- (BOOL)supportsRTL;
+- (bool)supportsRTL;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;

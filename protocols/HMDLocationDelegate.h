@@ -6,6 +6,6 @@
 @optional
 
 - (void)didDetermineLocation:(CLLocation *)arg1;
-- (void)didDetermineState:(int)arg1 forRegion:(CLRegion *)arg2;
+- (void)didDetermineState:(long long)arg1 forRegion:(CLRegion *)arg2;
 
 @end

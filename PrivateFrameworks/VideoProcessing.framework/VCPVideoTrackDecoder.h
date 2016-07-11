@@ -11,6 +11,6 @@
 - (id)init;
 - (id)initWithTrack:(id)arg1;
 - (id)settings;
-- (int)status;
+- (long long)status;
 
 @end

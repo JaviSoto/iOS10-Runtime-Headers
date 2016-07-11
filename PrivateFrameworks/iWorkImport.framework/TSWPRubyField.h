@@ -10,11 +10,11 @@
 @property (nonatomic, readonly) int baseTextScript;
 @property (nonatomic, copy) NSString *rubyText;
 
-- (BOOL)allowsEditing;
+- (bool)allowsEditing;
 - (int)attributeArrayKind;
 - (id)baseText;
 - (int)baseTextScript;
-- (BOOL)canCopy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)canCopy:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

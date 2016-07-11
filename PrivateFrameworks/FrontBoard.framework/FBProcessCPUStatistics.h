@@ -3,7 +3,7 @@
  */
 
 @interface FBProcessCPUStatistics : NSObject {
-    BSMachPortSendRight * _taskNamePort;
+    BSMachPortTaskNameRight * _taskNameRight;
     struct FBProcessTimes { 
         double beginUserCPUElapsedTime; 
         double beginSystemCPUElapsedTime; 
@@ -22,7 +22,7 @@
 - (void)_hostwideUserElapsedCPUTime:(double*)arg1 systemElapsedCPUTime:(double*)arg2 idleElapsedCPUTime:(double*)arg3;
 - (void)dealloc;
 - (id)descriptionForCrashReport;
-- (id)initWithTaskNamePort:(id)arg1;
+- (id)initWithTaskNameRight:(id)arg1;
 - (double)totalElapsedIdleTime;
 - (double)totalElapsedSystemTime;
 - (double)totalElapsedTime;

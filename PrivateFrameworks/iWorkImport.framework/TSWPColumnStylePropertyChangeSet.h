@@ -5,15 +5,15 @@
 @interface TSWPColumnStylePropertyChangeSet : TSSStylePropertyChangeSet {
     TSWPSpecColumns * _columns;
     TSSSpecBool * _continuous;
-    BOOL  _definedColumns;
-    BOOL  _definedContinuous;
-    BOOL  _definedMargins;
-    BOOL  _definedMinHorizontalInset;
-    BOOL  _definedPadding;
-    BOOL  _definedShrinkToFit;
-    BOOL  _definedVerticalAlignment;
-    BOOL  _definedVerticalText;
-    BOOL  _definedWritingDirection;
+    bool  _definedColumns;
+    bool  _definedContinuous;
+    bool  _definedMargins;
+    bool  _definedMinHorizontalInset;
+    bool  _definedPadding;
+    bool  _definedShrinkToFit;
+    bool  _definedVerticalAlignment;
+    bool  _definedVerticalText;
+    bool  _definedWritingDirection;
     TSWPSpecPadding * _margins;
     TSSSpecDouble * _minHorizontalInset;
     TSWPSpecPadding * _padding;

@@ -6,7 +6,6 @@
 
 @property (nonatomic, retain) NSString *displayString;
 
-- (void)dealloc;
 - (id)displayString;
 - (void)setDisplayString:(id)arg1;
 

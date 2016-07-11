@@ -4,17 +4,23 @@
 
 @interface MCDTableViewController : MPUTableViewController {
     AVExternalDevice * _externalDevice;
-    BOOL  _limitedUI;
-    BOOL  _limiting;
+    bool  _limitedUI;
+    bool  _limiting;
+    MPMediaPredicate * _localPredicate;
     UIView * _nowPlayingButton;
-    BOOL  _shouldHideIndexTitles;
-    BOOL  _showMore;
+    bool  _shouldHideIndexTitles;
+    bool  _showMore;
     UIView * _snapshotView;
+    UIColor * _tintColor;
+    bool  _topLevel;
 }
 
-@property (nonatomic) BOOL limitedUI;
-@property (nonatomic) BOOL shouldHideIndexTitles;
-@property (nonatomic) BOOL showMore;
+@property (readonly) bool currentAppIsPlaying;
+@property (nonatomic) bool limitedUI;
+@property (nonatomic) bool shouldHideIndexTitles;
+@property (nonatomic) bool showMore;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic) bool topLevel;
 
 + (Class)_tableViewClass;
 
@@ -23,25 +29,36 @@
 - (void)_MCD_nowPlayingButtonAction:(id)arg1;
 - (void)_itemChanged:(id)arg1;
 - (void)_limitedUIDidChange;
-- (BOOL)_viewControllerWasSelected;
+- (void)_nowPlayingDidChangeNotification:(id)arg1;
+- (void)_updateNowPlayingVisibility;
+- (bool)_viewControllerWasSelected;
+- (bool)currentAppIsPlaying;
 - (void)dataSourceDidInvalidate;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (BOOL)limitedUI;
+- (bool)limitedUI;
 - (id)preferredFocusedItem;
 - (void)reloadData;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
-- (void)setLimitedUI:(BOOL)arg1;
-- (void)setShouldHideIndexTitles:(BOOL)arg1;
-- (void)setShowMore:(BOOL)arg1;
-- (BOOL)shouldHideIndexTitles;
-- (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
-- (BOOL)showMore;
-- (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)setLimitedUI:(bool)arg1;
+- (void)setShouldHideIndexTitles:(bool)arg1;
+- (void)setShowMore:(bool)arg1;
+- (void)setTintColor:(id)arg1;
+- (void)setTopLevel:(bool)arg1;
+- (bool)shouldHideIndexTitles;
+- (bool)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)showMore;
+- (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
+- (id)tintColor;
+- (bool)topLevel;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

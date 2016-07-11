@@ -7,6 +7,8 @@
 @property (nonatomic, copy) NSArray *actions;
 @property (nonatomic, retain) SAHAFilter *filter;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)command;
 + (id)commandWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -14,8 +16,12 @@
 - (id)encodedClassName;
 - (id)filter;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setActions:(id)arg1;
 - (void)setFilter:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

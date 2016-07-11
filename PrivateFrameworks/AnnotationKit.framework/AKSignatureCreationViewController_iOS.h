@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <AKSignatureCreationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (nonatomic, retain) AKSmoothPathView *pathView;
@@ -28,7 +28,6 @@
 - (void)_cancel:(id)arg1;
 - (void)_clear:(id)arg1;
 - (void)_done:(id)arg1;
-- (void)_showDebugMenu:(id)arg1;
 - (void)_validateButtons;
 - (id)baselineView;
 - (id)controller;
@@ -39,7 +38,8 @@
 - (void)loadView;
 - (id)navBar;
 - (id)pathView;
-- (int)positionForBar:(id)arg1;
+- (long long)positionForBar:(id)arg1;
+- (bool)prefersStatusBarHidden;
 - (void)setBaselineView:(id)arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)setPathView:(id)arg1;
 - (void)setSignatureView:(id)arg1;
 - (id)signatureView;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 
 @end

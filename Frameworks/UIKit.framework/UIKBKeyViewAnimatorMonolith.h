@@ -2,20 +2,29 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBKeyViewAnimatorMonolith : UIKBKeyViewAnimator {
+@interface UIKBKeyViewAnimatorMonolith : UIKBKeyViewAnimator <_UIFloatingContentViewDelegate> {
     NSMutableDictionary * _selectedKeyTimestamps;
     NSMutableDictionary * _transitionCompletions;
 }
 
-- (int)_transitionFromState:(int)arg1 toState:(int)arg2;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (long long)_transitionFromState:(int)arg1 toState:(int)arg2;
 - (void)addTransitionCompletion:(id /* block */)arg1 forKeyName:(id)arg2;
-- (void)animateFloatingKeyView:(id)arg1 toControlState:(unsigned int)arg2;
-- (unsigned int)controlStateForKeyState:(int)arg1;
+- (void)animateFloatingKeyView:(id)arg1 toControlState:(unsigned long long)arg2;
+- (unsigned long long)controlStateForKeyState:(int)arg1;
 - (void)dealloc;
+- (void)floatingContentView:(id)arg1 didFinishTransitioningToState:(unsigned long long)arg2;
+- (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (id)init;
 - (Class)keyViewClassForKey:(id)arg1 traits:(id)arg2;
 - (void)reset;
-- (BOOL)shouldTransitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3;
+- (bool)shouldAssertCurrentKeyState:(id)arg1;
+- (bool)shouldPurgeKeyViews;
+- (bool)shouldTransitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3;
 - (void)transitionFloatingKeyView:(id)arg1 toState:(int)arg2 completion:(id /* block */)arg3;
 - (void)transitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;
 - (void)transitionOutKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;

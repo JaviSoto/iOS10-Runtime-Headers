@@ -2,38 +2,55 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMEventTrigger : HMTrigger <NSSecureCoding> {
+@interface HMEventTrigger : HMTrigger <HFTriggerProtocol, NSSecureCoding> {
     HMThreadSafeMutableArrayCollection * _currentEvents;
     NSPredicate * _predicate;
+    NSArray * _recurrences;
 }
 
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentEvents;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *events;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSPredicate *predicate;
+@property (nonatomic, readonly, copy) NSArray *recurrences;
+@property (readonly) Class superclass;
 
-+ (id)_rewritePredicateForDaemon:(id)arg1;
-+ (BOOL)_validatePredicate:(id)arg1;
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (bool)__validateRecurrences:(id)arg1;
++ (id)_predicateForEvaluatingTriggerWithCharacteristic:(id)arg1 value:(id)arg2 valueFormatString:(id)arg3;
++ (id)_rewritePredicateForClient:(id)arg1 home:(id)arg2;
++ (id)_rewritePredicateForDaemon:(id)arg1 characteristicIsInvalid:(bool*)arg2;
++ (bool)_validatePredicate:(id)arg1;
++ (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (id)predicateForEvaluatingTriggerOccurringAfterDateWithComponents:(id)arg1;
 + (id)predicateForEvaluatingTriggerOccurringAfterSignificantEvent:(id)arg1 applyingOffset:(id)arg2;
 + (id)predicateForEvaluatingTriggerOccurringBeforeDateWithComponents:(id)arg1;
 + (id)predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:(id)arg1 applyingOffset:(id)arg2;
 + (id)predicateForEvaluatingTriggerOccurringOnDateWithComponents:(id)arg1;
 + (id)predicateForEvaluatingTriggerWithCharacteristic:(id)arg1 matchingValue:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)predicateForEvaluatingTriggerWithCharacteristic:(id)arg1 relatedBy:(unsigned long long)arg2 toValue:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
 - (void)_handleEventTriggerConditionNotification:(id)arg1;
-- (BOOL)_isPredicateValid;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (void)_handleEventTriggerRecurrencesNotification:(id)arg1;
+- (bool)_isPredicateValid;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_removeEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_retrieveLocationEvent:(id)arg1;
 - (id)_rewritePredicateForClient:(id)arg1;
+- (id)_rewritePredicateForMerge:(id)arg1 existingHome:(id)arg2 characteristicIsInvalid:(bool*)arg3;
 - (id)_serializeEvent:(id)arg1;
 - (id)_serializeForAdd;
+- (bool)_updateCharacterisiticReferenceInNewEvent:(id)arg1;
 - (void)_updatePredicate:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateRecurrences:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateRegion:(id)arg1 forLocationEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updateTriggerValue:(id)arg1 forCharacteristicEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)addEvent:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -41,14 +58,30 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)events;
 - (void)handleEventAddedNotification:(id)arg1;
-- (void)handleEventRemovedNotification:(id)arg1;
 - (void)handleEventUpdatedNotification:(id)arg1;
+- (void)handleEventsRemovedNotification:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 events:(id)arg2 predicate:(id)arg3;
+- (id)initWithName:(id)arg1 events:(id)arg2 recurrences:(id)arg3 predicate:(id)arg4;
 - (id)predicate;
+- (id)recurrences;
 - (void)removeEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCurrentEvents:(id)arg1;
 - (void)setPredicate:(id)arg1;
+- (void)setRecurrences:(id)arg1;
 - (void)updatePredicate:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateRecurrences:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)_hf_localizedStringOrNilIfNotFoundForKey:(id)arg1;
++ (id)_hf_naturalLanguageNameWithHome:(id)arg1 alarmCharacteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned long long)arg4;
++ (id)_hf_naturalLanguageNameWithHome:(id)arg1 nonAlarmCharacteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned long long)arg4;
++ (id)hf_naturalLanguageNameWithHome:(id)arg1 characteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned long long)arg4;
++ (id)hf_naturalLanguageNameWithHome:(id)arg1 region:(id)arg2 type:(unsigned long long)arg3;
++ (id)hf_triggerValueNaturalLanguageDescriptionWithCharacteristics:(id)arg1 triggerValue:(id)arg2;
+
+- (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)hf_triggerType;
 
 @end

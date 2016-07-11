@@ -10,7 +10,8 @@
 
 - (void).cxx_destruct;
 - (id)_legacyUnwindExecutorForTarget:(id)arg1;
-- (void)_perform:(id)arg1;
+- (id)_perform:(id)arg1;
+- (id)_performWithDestinationViewController:(id)arg1 sender:(id)arg2;
 - (id)action;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -4,29 +4,43 @@
 
 @interface VCPPhotoAnalyzer : NSObject {
     NSMutableDictionary * _analysis;
+    NSDictionary * _exif;
+    NSData * _featureData;
     struct __CVBuffer { } * _image;
     struct __CVBuffer { } * _imageLowRes;
-    BOOL  _requestFullImage;
-    unsigned int  _requestedAnalyses;
+    unsigned long long  _irisAnalyses;
+    AVAsset * _irisAsset;
+    float  _irisPhotoExposureSec;
+    float  _irisPhotoOffsetSec;
+    bool  _isPano;
+    unsigned long long  _phFaceFlags;
+    NSDictionary * _phFaceResults;
+    unsigned long long  _requestedAnalyses;
     NSMutableDictionary * _results;
-    int  _status;
+    long long  _status;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _transform;
 }
 
-@property (readonly) int status;
+@property (readonly) long long status;
+
++ (bool)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
++ (id)resourceForAnalysis:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)analyzeAsset:(id /* block */)arg1;
+- (int)analyzeImage:(unsigned long long*)arg1 performedAnalyses:(unsigned long long*)arg2 objectRect:(id)arg3 cancel:(id /* block */)arg4;
 - (void)dealloc;
-- (long)downscaleImage;
-- (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
-- (int)status;
+- (int)downscaleImage:(struct __CVBuffer { }*)arg1 scaledImage:(struct __CVBuffer {}**)arg2 majorDimension:(int)arg3;
+- (id)initWithImage:(id)arg1 exif:(id)arg2 irisMovie:(id)arg3 forAnalysisTypes:(unsigned long long)arg4;
+- (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
+- (id)rotateUIImageUpright:(id)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
+- (long long)status;
 
 @end

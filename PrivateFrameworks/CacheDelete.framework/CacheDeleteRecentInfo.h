@@ -2,22 +2,38 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-@interface CacheDeleteRecentInfo : NSObject <NSSecureCoding> {
+@interface CacheDeleteRecentInfo : CacheDeleteRecent <NSCopying, NSSecureCoding> {
+    NSNumber * _version;
     NSMutableDictionary * _volumes;
 }
 
+@property (nonatomic, retain) NSNumber *version;
 @property (nonatomic, retain) NSMutableDictionary *volumes;
 
 + (id)cacheDeleteRecentInfo:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyInvalidsForVolume:(id)arg1 atUrgency:(int)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)diagnosticsForService:(id)arg1 onVolume:(id)arg2 atUrgency:(int)arg3;
+- (id)diagnosticsForVolume:(id)arg1 atUrgency:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithVolumes:(id)arg1;
+- (void)invalidateForVolume:(id)arg1;
+- (void)log;
+- (id)lookupAmountForService:(id)arg1 onVolume:(id)arg2 atUrgency:(int)arg3;
+- (id)recentInfoForVolume:(id)arg1 atUrgency:(int)arg2;
+- (void)removeServiceInfo:(id)arg1;
+- (void)setVersion:(id)arg1;
 - (void)setVolumes:(id)arg1;
-- (int)validate:(double)arg1 threshold:(id)arg2;
+- (void)updateDiagnostics:(id)arg1 forService:(id)arg2 onVolume:(id)arg3 atUrgency:(int)arg4;
+- (void)updateDiagnostics:(id)arg1 forVolume:(id)arg2 atUrgency:(int)arg3;
+- (bool)updateServiceInfoAmount:(id)arg1 forService:(id)arg2 onVolume:(id)arg3 atUrgency:(int)arg4 pushed:(bool)arg5;
+- (bool)validateForVolume:(id)arg1 andService:(id)arg2 atUrgency:(int)arg3;
+- (id)version;
 - (id)volumes;
 
 @end

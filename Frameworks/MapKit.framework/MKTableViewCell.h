@@ -3,21 +3,22 @@
  */
 
 @interface MKTableViewCell : UITableViewCell {
-    BOOL  __mapkit_forceSeparatorFrameToCGRectZero;
-    int  __mapkit_separatorStyleOverride;
-    BOOL  __mapkit_separatorStyleOverrideEnabled;
+    bool  __mapkit_forceSeparatorFrameToCGRectZero;
+    long long  __mapkit_separatorStyleOverride;
+    bool  __mapkit_separatorStyleOverrideEnabled;
 }
 
-@property (nonatomic) BOOL _mapkit_forceSeparatorFrameToCGRectZero;
-@property (nonatomic) int _mapkit_separatorStyleOverride;
+@property (nonatomic) bool _mapkit_forceSeparatorFrameToCGRectZero;
+@property (nonatomic) long long _mapkit_separatorStyleOverride;
 
 - (void)_mapkit_disableSeparatorStyleOverride;
-- (BOOL)_mapkit_forceSeparatorFrameToCGRectZero;
-- (int)_mapkit_separatorStyleOverride;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (bool)_mapkit_forceSeparatorFrameToCGRectZero;
+- (long long)_mapkit_separatorStyleOverride;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
 - (void)prepareForReuse;
-- (void)setSeparatorStyle:(int)arg1;
-- (void)set_mapkit_forceSeparatorFrameToCGRectZero:(BOOL)arg1;
-- (void)set_mapkit_separatorStyleOverride:(int)arg1;
+- (void)setSemanticContentAttribute:(long long)arg1;
+- (void)setSeparatorStyle:(long long)arg1;
+- (void)set_mapkit_forceSeparatorFrameToCGRectZero:(bool)arg1;
+- (void)set_mapkit_separatorStyleOverride:(long long)arg1;
 
 @end

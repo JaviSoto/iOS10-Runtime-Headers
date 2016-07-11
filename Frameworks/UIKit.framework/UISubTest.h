@@ -4,8 +4,8 @@
 
 @interface UISubTest : NSObject {
     NSMutableArray * _fps;
-    BOOL  _showFps;
-    BOOL  _showTime;
+    bool  _showFps;
+    bool  _showTime;
     NSNumber * _startFrame;
     NSNumber * _startTime;
     NSString * _testName;

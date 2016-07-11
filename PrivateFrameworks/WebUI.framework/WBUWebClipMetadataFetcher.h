@@ -3,7 +3,7 @@
  */
 
 @interface WBUWebClipMetadataFetcher : NSObject {
-    BOOL  _fetchingCompleted;
+    bool  _fetchingCompleted;
     WBUInjectedJavaScriptController * _jsController;
     NSArray * _linkTags;
     NSDictionary * _metaTags;

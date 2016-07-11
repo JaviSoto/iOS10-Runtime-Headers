@@ -4,14 +4,16 @@
 
 @interface RadioStreamTrack : RadioTrack
 
+@property (getter=isITunesStream, nonatomic, readonly) bool ITunesStream;
 @property (nonatomic, readonly, retain) NSURL *certificateURL;
 @property (nonatomic, readonly, retain) NSURL *contentURL;
 @property (nonatomic, readonly, retain) NSURL *keyServerURL;
-@property (getter=isSkipable, nonatomic, readonly) BOOL skipable;
+@property (getter=isSkipable, nonatomic, readonly) bool skipable;
 
 - (id)certificateURL;
 - (id)contentURL;
-- (BOOL)isSkipable;
+- (bool)isITunesStream;
+- (bool)isSkipable;
 - (id)keyServerURL;
 
 @end

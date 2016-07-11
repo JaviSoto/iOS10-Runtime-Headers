@@ -4,10 +4,15 @@
 
 @interface SASmsSms : SADomainObject
 
+@property (nonatomic, retain) SAAppInfo *appInfo;
 @property (nonatomic, copy) NSURL *attachment;
+@property (nonatomic, copy) NSArray *attachments;
 @property (nonatomic, copy) NSString *chatIdentifier;
+@property (nonatomic, copy) NSDate *dateLastMessageReadInThread;
 @property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSString *groupName;
 @property (nonatomic, copy) NSString *groupNameId;
+@property (nonatomic) bool hasGroupName;
 @property (nonatomic, copy) NSNumber *isAudioMessage;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSArray *msgRecipients;
@@ -23,12 +28,17 @@
 + (id)sms;
 + (id)smsWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)appInfo;
 - (id)attachment;
+- (id)attachments;
 - (id)chatIdentifier;
+- (id)dateLastMessageReadInThread;
 - (id)dateSent;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)groupName;
 - (id)groupNameId;
+- (bool)hasGroupName;
 - (id)isAudioMessage;
 - (id)message;
 - (id)msgRecipients;
@@ -36,10 +46,15 @@
 - (id)outgoing;
 - (id)recipients;
 - (id)sender;
+- (void)setAppInfo:(id)arg1;
 - (void)setAttachment:(id)arg1;
+- (void)setAttachments:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
+- (void)setDateLastMessageReadInThread:(id)arg1;
 - (void)setDateSent:(id)arg1;
+- (void)setGroupName:(id)arg1;
 - (void)setGroupNameId:(id)arg1;
+- (void)setHasGroupName:(bool)arg1;
 - (void)setIsAudioMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMsgRecipients:(id)arg1;

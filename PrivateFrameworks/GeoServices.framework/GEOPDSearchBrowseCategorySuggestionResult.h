@@ -8,20 +8,22 @@
 
 @property (nonatomic, retain) NSMutableArray *categorys;
 
++ (Class)categoryType;
+
 - (void)addCategory:(id)arg1;
-- (id)categoryAtIndex:(unsigned int)arg1;
+- (id)categoryAtIndex:(unsigned long long)arg1;
 - (id)categorys;
-- (unsigned int)categorysCount;
+- (unsigned long long)categorysCount;
 - (void)clearCategorys;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCategorys:(id)arg1;
 - (void)writeTo:(id)arg1;
 

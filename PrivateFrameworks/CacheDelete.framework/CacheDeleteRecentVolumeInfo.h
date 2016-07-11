@@ -2,34 +2,51 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-@interface CacheDeleteRecentVolumeInfo : NSObject <NSSecureCoding> {
+@interface CacheDeleteRecentVolumeInfo : CacheDeleteRecent <NSCopying, NSSecureCoding> {
+    NSMutableDictionary * _diagnostics;
     NSNumber * _freespace;
     NSMutableDictionary * _services;
     NSDate * _timestamp;
     NSString * _volume;
 }
 
-@property (nonatomic, retain) NSNumber *freespace;
+@property (nonatomic, retain) NSMutableDictionary *diagnostics;
+@property (retain) NSNumber *freespace;
 @property (nonatomic, retain) NSMutableDictionary *services;
-@property (nonatomic, retain) NSDate *timestamp;
+@property (retain) NSDate *timestamp;
 @property (nonatomic, retain) NSString *volume;
 
-+ (id)cacheDeleteRecentVolumeInfo:(id)arg1 freespace:(id)arg2 timestamp:(id)arg3 volumeName:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)cacheDeleteRecentVolumeInfo:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyInvalidsAtUrgency:(int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)diagnostics;
+- (id)diagnosticsAtUrgency:(int)arg1;
+- (id)diagnosticsForService:(id)arg1 atUrgency:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)freespace;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithServices:(id)arg1 freespace:(id)arg2 timestamp:(id)arg3 volumeName:(id)arg4;
+- (id)initWithServices:(id)arg1 volumeName:(id)arg2;
+- (void)invalidate;
+- (void)log;
+- (id)lookupAmountForService:(id)arg1 atUrgency:(int)arg2;
+- (id)recentInfoAtUrgency:(int)arg1;
+- (void)removeServiceInfo:(id)arg1;
 - (id)services;
+- (void)setDiagnostics:(id)arg1;
 - (void)setFreespace:(id)arg1;
 - (void)setServices:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setVolume:(id)arg1;
 - (id)timestamp;
-- (int)validate:(double)arg1 threshold:(id)arg2;
+- (void)updateDiagnostics:(id)arg1 atUrgency:(int)arg2;
+- (void)updateDiagnostics:(id)arg1 forService:(id)arg2 atUrgency:(int)arg3;
+- (bool)updateServiceInfoAmount:(id)arg1 forService:(id)arg2 atUrgency:(int)arg3 pushed:(bool)arg4;
+- (bool)validate:(double)arg1;
+- (bool)validateServiceInfo:(id)arg1 atUrgency:(int)arg2;
 - (id)volume;
 
 @end

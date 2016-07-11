@@ -5,8 +5,7 @@
 
 @required
 
-- (void)finishWithResult:(id)arg1 error:(NSError *)arg2;
 - (void)main;
-- (BOOL)shouldRetryForError:(NSError *)arg1;
+- (bool)shouldRetryForError:(NSError *)arg1;
 
 @end

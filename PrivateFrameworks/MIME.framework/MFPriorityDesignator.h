@@ -7,6 +7,7 @@
 }
 
 + (id)currentDesignator;
++ (void)destroyCurrentDesignator;
 
 - (int)priority;
 - (void)setPriority:(int)arg1;

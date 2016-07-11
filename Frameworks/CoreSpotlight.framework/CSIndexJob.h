@@ -3,30 +3,39 @@
  */
 
 @interface CSIndexJob : NSObject <NSCopying, NSSecureCoding> {
+    NSArray * _bundleIDs;
+    NSArray * _excludedBundleIDs;
     NSArray * _identifiersToReindex;
-    int  _jobOptions;
-    int  _jobType;
+    long long  _jobOptions;
+    long long  _jobType;
 }
 
-@property (retain) NSArray *identifiersToReindex;
-@property int jobOptions;
-@property int jobType;
+@property (nonatomic, retain) NSArray *bundleIDs;
+@property (nonatomic, retain) NSArray *excludedBundleIDs;
+@property (nonatomic, retain) NSArray *identifiersToReindex;
+@property (nonatomic) long long jobOptions;
+@property (nonatomic) long long jobType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)bundleIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (id)excludedBundleIDs;
+- (unsigned long long)hash;
 - (id)identifiersToReindex;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithJobType:(int)arg1 jobOptions:(int)arg2 identifiersToReindex:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (int)jobOptions;
-- (int)jobType;
+- (id)initWithJobType:(long long)arg1;
+- (id)initWithJobType:(long long)arg1 jobOptions:(long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (long long)jobOptions;
+- (long long)jobType;
+- (void)setBundleIDs:(id)arg1;
+- (void)setExcludedBundleIDs:(id)arg1;
 - (void)setIdentifiersToReindex:(id)arg1;
-- (void)setJobOptions:(int)arg1;
-- (void)setJobType:(int)arg1;
+- (void)setJobOptions:(long long)arg1;
+- (void)setJobType:(long long)arg1;
 
 @end

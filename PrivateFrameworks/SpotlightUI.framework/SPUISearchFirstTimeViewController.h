@@ -2,19 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUISearchFirstTimeViewController : UIViewController <UITextViewDelegate> {
-    SPUISearchResultsActionManager * _actionManager;
+@interface SPUISearchFirstTimeViewController : SearchUIFirstTimeExperienceViewController {
+    bool  _hasBeenDisplayed;
 }
 
-@property SPUISearchResultsActionManager *actionManager;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@property bool hasBeenDisplayed;
 
-- (id)actionManager;
-- (id)initWithFTE:(id)arg1 learnMore:(id)arg2;
-- (void)setActionManager:(id)arg1;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
++ (bool)needsDisplay;
++ (void)updateViewCountToCount:(long long)arg1;
++ (long long)viewCount;
+
+- (void)dismissForever;
+- (bool)hasBeenDisplayed;
+- (id)initWithSupportedDomains:(unsigned long long)arg1 explanationText:(id)arg2 learnMoreText:(id)arg3 continueButtonTitle:(id)arg4;
+- (void)setHasBeenDisplayed:(bool)arg1;
+- (void)updateViewCount;
 
 @end

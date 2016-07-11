@@ -8,8 +8,8 @@
 
 - (void).cxx_destruct;
 - (id)contentsImage;
-- (float)extraRightPadding;
-- (int)textStyle;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)extraRightPadding;
+- (long long)textStyle;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

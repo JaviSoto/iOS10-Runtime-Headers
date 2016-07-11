@@ -15,10 +15,10 @@
     double  _score;
 }
 
-@property (nonatomic) BOOL hasMaxScore;
-@property (nonatomic) BOOL hasNumRatingsUsedForScore;
-@property (nonatomic) BOOL hasRatingType;
-@property (nonatomic) BOOL hasScore;
+@property (nonatomic) bool hasMaxScore;
+@property (nonatomic) bool hasNumRatingsUsedForScore;
+@property (nonatomic) bool hasRatingType;
+@property (nonatomic) bool hasScore;
 @property (nonatomic) double maxScore;
 @property (nonatomic) int numRatingsUsedForScore;
 @property (nonatomic) int ratingType;
@@ -26,26 +26,28 @@
 
 + (id)ratingForPlaceData:(id)arg1 type:(int)arg2;
 
+- (int)StringAsRatingType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxScore;
-- (BOOL)hasNumRatingsUsedForScore;
-- (BOOL)hasRatingType;
-- (BOOL)hasScore;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxScore;
+- (bool)hasNumRatingsUsedForScore;
+- (bool)hasRatingType;
+- (bool)hasScore;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (double)maxScore;
 - (void)mergeFrom:(id)arg1;
 - (int)numRatingsUsedForScore;
 - (int)ratingType;
-- (BOOL)readFrom:(id)arg1;
+- (id)ratingTypeAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)score;
-- (void)setHasMaxScore:(BOOL)arg1;
-- (void)setHasNumRatingsUsedForScore:(BOOL)arg1;
-- (void)setHasRatingType:(BOOL)arg1;
-- (void)setHasScore:(BOOL)arg1;
+- (void)setHasMaxScore:(bool)arg1;
+- (void)setHasNumRatingsUsedForScore:(bool)arg1;
+- (void)setHasRatingType:(bool)arg1;
+- (void)setHasScore:(bool)arg1;
 - (void)setMaxScore:(double)arg1;
 - (void)setNumRatingsUsedForScore:(int)arg1;
 - (void)setRatingType:(int)arg1;

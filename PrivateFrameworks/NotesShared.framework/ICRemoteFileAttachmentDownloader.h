@@ -10,15 +10,16 @@
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (nonatomic, retain) NSMutableDictionary *operationsByAttachmentIdentifier;
 
-+ (id)allUndownloadedLegacyAttachments;
++ (id)allUndownloadedLegacyAttachmentsInContext:(id)arg1;
 + (void)initializeDownloaderAfterDelayIfNecessary;
-+ (BOOL)needsToDownloadRemoteFileAttachments;
++ (bool)needsToDownloadRemoteFileAttachments;
 + (void)releaseSharedDownloaderIfPossible;
 + (id)sharedDownloader;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)downloadRemoteFileForAttachment:(id)arg1;
+- (void)downloadRemoteFileForAttachmentObjectID:(id)arg1;
 - (void)downloadUndownloadedLegacyAttachments;
 - (id)init;
 - (id)operationQueue;

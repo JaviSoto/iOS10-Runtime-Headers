@@ -5,20 +5,22 @@
 @interface UIDocumentPickerViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining> {
     _UIResilientRemoteViewContainerViewController * _childViewController;
     <UIDocumentPickerDelegate> * _delegate;
-    unsigned int  _documentPickerMode;
-    BOOL  _ignoreApplicationEntitlementForImport;
+    unsigned long long  _documentPickerMode;
+    bool  _ignoreApplicationEntitlementForImport;
     _UIRemoteViewService * _remoteViewService;
+    bool  _sourceIsManaged;
     NSMutableArray * _stitchingTokens;
     NSURL * _uploadURL;
     <UIDocumentPickerDelegate> * _weak_delegate;
 }
 
-@property (getter=_ignoreApplicationEntitlementForImport, setter=_setIgnoreApplicationEntitlementForImport:, nonatomic) BOOL _ignoreApplicationEntitlementForImport;
+@property (getter=_ignoreApplicationEntitlementForImport, setter=_setIgnoreApplicationEntitlementForImport:, nonatomic) bool _ignoreApplicationEntitlementForImport;
 @property (getter=_childViewController, setter=_setChildViewController:, nonatomic, retain) _UIResilientRemoteViewContainerViewController *childViewController;
 @property (nonatomic) <UIDocumentPickerDelegate> *delegate;
-@property (nonatomic) unsigned int documentPickerMode;
+@property (nonatomic) unsigned long long documentPickerMode;
 @property (getter=_remoteViewController, nonatomic, readonly, retain) _UIDocumentPickerRemoteViewController *remoteViewController;
 @property (nonatomic, retain) _UIRemoteViewService *remoteViewService;
+@property (getter=_sourceIsManaged, setter=_setSourceIsManaged:, nonatomic) bool sourceIsManaged;
 @property (nonatomic, retain) NSMutableArray *stitchingTokens;
 @property (nonatomic, copy) NSURL *uploadURL;
 
@@ -32,26 +34,28 @@
 - (void)_didSelectURL:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
-- (void)_displayLocationsMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_displayLocationsMenuFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_finishStitching;
-- (BOOL)_ignoreApplicationEntitlementForImport;
+- (bool)_ignoreApplicationEntitlementForImport;
 - (id)_initIgnoringApplicationEntitlementForImportOfTypes:(id)arg1;
-- (id)_initWithViewController:(id)arg1 inMode:(unsigned int)arg2 uploadURLOrNil:(id)arg3;
+- (id)_initWithViewController:(id)arg1 inMode:(unsigned long long)arg2 uploadURLOrNil:(id)arg3;
 - (void)_prepareForDeletionIfNecessary;
 - (id)_remoteViewController;
 - (void)_setChildViewController:(id)arg1;
-- (void)_setIgnoreApplicationEntitlementForImport:(BOOL)arg1;
+- (void)_setIgnoreApplicationEntitlementForImport:(bool)arg1;
+- (void)_setSourceIsManaged:(bool)arg1;
+- (bool)_sourceIsManaged;
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)documentPickerMode;
+- (unsigned long long)documentPickerMode;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDocumentTypes:(id)arg1 inMode:(unsigned int)arg2;
+- (id)initWithDocumentTypes:(id)arg1 inMode:(unsigned long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithURL:(id)arg1 inMode:(unsigned int)arg2;
+- (id)initWithURL:(id)arg1 inMode:(unsigned long long)arg2;
 - (id)remoteViewService;
 - (void)setDelegate:(id)arg1;
-- (void)setDocumentPickerMode:(unsigned int)arg1;
+- (void)setDocumentPickerMode:(unsigned long long)arg1;
 - (void)setRemoteViewService:(id)arg1;
 - (void)setStitchingTokens:(id)arg1;
 - (void)setUploadURL:(id)arg1;

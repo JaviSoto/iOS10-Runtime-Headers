@@ -10,9 +10,10 @@
     NSString * __outputFilePath;
     AVAssetExportSession * __trimExportSession;
     PFVideoAdjustments * __videoAdjustments;
-    PHAsset * __videoAsset;
+    <PUEditableAsset> * __videoAsset;
     PUVideoEditModel * __videoEditModel;
-    BOOL  _isExportInProgress;
+    PUMediaDestination * __videoMediaDestination;
+    bool  _isExportInProgress;
 }
 
 @property (setter=_setExportCompletionBlock:, nonatomic, copy) id /* block */ _exportCompletionBlock;
@@ -22,14 +23,15 @@
 @property (setter=_setOutputFilePath:, nonatomic, retain) NSString *_outputFilePath;
 @property (setter=_setTrimExportSession:, nonatomic, retain) AVAssetExportSession *_trimExportSession;
 @property (setter=_setVideoAdjustments:, nonatomic, retain) PFVideoAdjustments *_videoAdjustments;
-@property (nonatomic, readonly) PHAsset *_videoAsset;
+@property (nonatomic, readonly) <PUEditableAsset> *_videoAsset;
 @property (nonatomic, readonly) PUVideoEditModel *_videoEditModel;
+@property (nonatomic, readonly) PUMediaDestination *_videoMediaDestination;
 
-+ (BOOL)canTrimAssetInPlace:(id)arg1;
++ (bool)canTrimAssetInPlace:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_callProgressBlockWithProgress:(float)arg1 shouldDestroyBlock:(BOOL)arg2;
-- (void)_endSessionWithSuccess:(BOOL)arg1 duplicateAsset:(id)arg2;
+- (void)_callProgressBlockWithProgress:(float)arg1 shouldDestroyBlock:(bool)arg2;
+- (void)_endSessionWithSuccess:(bool)arg1 duplicateAsset:(id)arg2;
 - (id /* block */)_exportCompletionBlock;
 - (id /* block */)_exportProgressBlock;
 - (id)_exportProgressTimer;
@@ -52,8 +54,9 @@
 - (id)_videoAdjustments;
 - (id)_videoAsset;
 - (id)_videoEditModel;
+- (id)_videoMediaDestination;
 - (void)exportVideowithOptions:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
-- (id)initWithAsset:(id)arg1 videoEditModel:(id)arg2;
+- (id)initWithAsset:(id)arg1 mediaDestination:(id)arg2 editModel:(id)arg3;
 
 @end

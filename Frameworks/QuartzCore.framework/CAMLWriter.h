@@ -7,7 +7,7 @@
 }
 
 @property (retain) NSURL *baseURL;
-@property id delegate;
+@property <CAMLWriterDelegate> *delegate;
 
 + (id)writerWithData:(id)arg1;
 
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)encodeObject:(id)arg1;
-- (void)encodeObject:(id)arg1 conditionally:(BOOL)arg2;
+- (void)encodeObject:(id)arg1 conditionally:(bool)arg2;
 - (void)endElement;
 - (id)initWithData:(id)arg1;
 - (void)setBaseURL:(id)arg1;

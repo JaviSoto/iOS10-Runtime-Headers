@@ -6,8 +6,7 @@
 @required
 
 - (NSArray *)contents;
+- (bool)isDropBox;
 - (NSArray *)localItems;
-- (DCPermissions *)permissions;
-- (NSDictionary *)permissionsOffDisk;
 
 @end

@@ -5,9 +5,11 @@
 @interface TSWPFontCache : NSObject {
     NSMutableArray * _cachedAvailableMembers;
     NSString * _cachedMembersFamilyName;
+    NSArray * _cachedRecentFontNames;
     NSMutableDictionary * _familyDisplayNames;
     NSArray * _familyFonts;
     NSArray * _familyNames;
+    NSDictionary * _familyToFontLookup;
     TSULRUCache * _fontCache;
 }
 
@@ -18,15 +20,20 @@
 - (id)autorelease;
 - (id)availableMembersOfFontFamily:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct __CTFont { }*)createFontWithName:(id)arg1 size:(float)arg2;
+- (struct __CTFont { }*)createFontWithName:(id)arg1 size:(double)arg2;
 - (void)dealloc;
 - (id)displayNameForFontFamily:(id)arg1;
+- (id)fontFamilyToTSWPFontLookup;
+- (id)fontNameForFailyName:(id)arg1;
 - (id)init;
 - (void)p_FontWasDownloaded:(id)arg1;
 - (id)p_excludedFamilyNames;
+- (id)recentFontNames;
+- (id)recentFonts;
+- (bool)registerRecentFont:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (id)sortedFontFamilies;
 - (id)sortedFontFamilyEntriesForStylesheet:(id)arg1;
 

@@ -6,7 +6,7 @@
     id  _object;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithObject:(id)arg1;
 - (id)object;

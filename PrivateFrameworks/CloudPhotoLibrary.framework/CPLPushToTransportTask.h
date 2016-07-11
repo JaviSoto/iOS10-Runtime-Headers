@@ -3,14 +3,22 @@
  */
 
 @interface CPLPushToTransportTask : CPLEngineSyncTask {
+    CPLChangeBatch * _batchToCommit;
+    <CPLEngineTransportCheckRecordsExistenceTask> * _checkExistenceTask;
     NSString * _clientCacheIdentifier;
-    unsigned int  _countOfPushedBatches;
+    unsigned long long  _countOfPushedBatches;
     CPLEngineChangePipe * _currentPushQueue;
-    BOOL  _deferredCancel;
-    unsigned int  _lastReportedProgress;
+    bool  _deferredCancel;
+    bool  _generatingSomeDerivatives;
+    unsigned long long  _lastReportedProgress;
     NSObject<OS_dispatch_queue> * _lock;
+    NSMutableDictionary * _recordsToCheckForExistence;
+    NSMutableDictionary * _recordsWithForwardCompatibilityCheck;
+    NSDictionary * _recordsWithGeneratedResources;
+    NSMutableDictionary * _recordsWithSparseResources;
     NSArray * _resourcesForBackgroundUpload;
     NSArray * _staleOrUnavailableResources;
+    double  _startOfDerivativesGeneration;
     double  _startOfIteration;
     CPLChangeBatch * _uploadBatch;
     NSArray * _uploadResourceTasks;
@@ -20,16 +28,23 @@
 @property (retain) <CPLPushToTransportTaskDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)_detectUpdatesForFullRecordsWithNoChangeDataInBatch:(id)arg1;
-- (BOOL)_discardResourcesToUploadFromBatch:(id)arg1 error:(id*)arg2;
+- (void)_checkForRecordExistence;
+- (void)_deleteGeneratedResourcesAfterError:(id)arg1;
+- (void)_detectUpdatesNeedingExistenceCheck:(id)arg1;
+- (bool)_discardResourcesToUploadFromBatch:(id)arg1 error:(id*)arg2;
 - (void)_doOneIteration;
-- (BOOL)_markUploadedTasksDidFinishWithError:(id)arg1 error:(id*)arg2;
+- (void)_generateDerivativesForNextRecord:(id)arg1;
+- (void)_generateNeededDerivatives;
+- (bool)_markUploadedTasksDidFinishWithError:(id)arg1 error:(id*)arg2;
 - (void)_popNextBatchAndContinue;
-- (BOOL)_prepareResourcesToUploadInBatch:(id)arg1 error:(id*)arg2;
+- (bool)_prepareResourcesToUploadInBatch:(id)arg1 error:(id*)arg2;
 - (void)_prepareUploadBatchWithTransaction:(id)arg1 andStore:(id)arg2;
 - (void)_pushTaskDidFinishWithError:(id)arg1;
+- (void)_requireExistenceCheckForRecords:(id)arg1;
+- (void)_updateChangeProperties:(id)arg1 withBaseChange:(id)arg2 withCopyProperty:(id /* block */)arg3;
+- (void)_uploadBatch;
 - (void)cancel;
-- (void)cancel:(BOOL)arg1;
+- (void)cancel:(bool)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)launch;
 - (void)pause;

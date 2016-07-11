@@ -10,10 +10,15 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
 @property (readonly, copy) NSString *filePath;
-@property (readonly) unsigned int functionType;
-@property (readonly) unsigned int hash;
-@property (readonly) int lineNumber;
+@property (readonly) NSArray *functionConstants;
+@property (readonly) unsigned long long functionType;
+@property (readonly) unsigned long long hash;
+@property (copy) NSString *label;
+@property (readonly) long long lineNumber;
 @property (readonly) NSString *name;
+@property (readonly) long long patchControlPointCount;
+@property (readonly) unsigned long long patchType;
+@property (readonly) NSArray *stageInputAttributes;
 @property (readonly) Class superclass;
 @property (readonly) NSArray *vertexAttributes;
 
@@ -22,11 +27,18 @@
 - (void)dealloc;
 - (id)device;
 - (id)filePath;
-- (unsigned int)functionType;
-- (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+- (unsigned long long)functionConstantIndexByName:(id)arg1 type:(unsigned long long*)arg2;
+- (id)functionConstants;
+- (unsigned long long)functionType;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;
-- (int)lineNumber;
+- (id)initWithBaseObject:(id)arg1 strongParent:(id)arg2 functions:(id)arg3;
+- (id)label;
+- (long long)lineNumber;
 - (id)name;
+- (long long)patchControlPointCount;
+- (unsigned long long)patchType;
+- (void)setLabel:(id)arg1;
+- (id)stageInputAttributes;
 - (id)vertexAttributes;
 
 @end

@@ -3,22 +3,22 @@
  */
 
 @interface CAMFocusIndicatorRectView : UIImageView {
-    int  _size;
+    long long  _size;
 }
 
-@property (getter=isPulsing, nonatomic, readonly) BOOL pulsing;
-@property (nonatomic, readonly) int size;
+@property (getter=isPulsing, nonatomic, readonly) bool pulsing;
+@property (nonatomic, readonly) long long size;
 
 - (void)_commonCAMFocusIndicatorRectViewInitialization;
-- (id)_crosshairImageForSize:(int)arg1;
+- (id)_crosshairImageForSize:(long long)arg1;
 - (void)_generateImagePairFromCurrentTintColor;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
-- (id)initWithSize:(int)arg1;
-- (BOOL)isPulsing;
-- (int)size;
+- (id)initWithSize:(long long)arg1;
+- (bool)isPulsing;
+- (long long)size;
 - (void)startPulsing;
 - (void)stopPulsing;
 - (void)tintColorDidChange;

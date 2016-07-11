@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RMSDAAPControlSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) RMSService *service;
 @property (readonly) Class superclass;
 
@@ -34,13 +34,13 @@
 - (void)logout;
 - (void)pickAudioRoute:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)seekToPlaybackTime:(int)arg1 completionHandler:(id /* block */)arg2;
-- (void)sendNavigationCommand:(int)arg1;
-- (void)sendPlaybackCommand:(int)arg1 completionHandler:(id /* block */)arg2;
-- (void)sendTouchEndWithDirection:(int)arg1 repeatCount:(unsigned long)arg2;
-- (void)sendTouchMoveWithDirection:(int)arg1 repeatCount:(unsigned long)arg2;
+- (void)sendNavigationCommand:(long long)arg1;
+- (void)sendPlaybackCommand:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)sendTouchEndWithDirection:(long long)arg1 repeatCount:(unsigned int)arg2;
+- (void)sendTouchMoveWithDirection:(long long)arg1 repeatCount:(unsigned int)arg2;
 - (id)service;
 - (void)setDelegate:(id)arg1;
-- (void)setLikedState:(int)arg1 itemID:(unsigned long long)arg2 databaseID:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)setLikedState:(long long)arg1 itemID:(unsigned long long)arg2 databaseID:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)setVolume:(float)arg1 completionHandler:(id /* block */)arg2;
 
 @end

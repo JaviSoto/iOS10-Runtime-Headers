@@ -3,13 +3,13 @@
  */
 
 @interface _GEOSpotlightCategoryTicket : NSObject <GEOMapServiceCategoriesTicket> {
-    BOOL  _canceled;
+    bool  _canceled;
     GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;

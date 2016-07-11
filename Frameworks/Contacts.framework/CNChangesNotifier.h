@@ -10,12 +10,16 @@
 
 + (void)flushSharedNotifier;
 + (id)sharedNotifier;
++ (id)sharedNotifierWithNotificationWrapper:(id)arg1;
 
 - (void)dealloc;
-- (void)didChangeMeContactSuccessfully:(BOOL)arg1 fromContactStore:(id)arg2;
-- (void)didSaveChangesSuccessfully:(BOOL)arg1 fromContactStore:(id)arg2;
+- (void)didChangeMeContactSuccessfully:(bool)arg1 fromContactStore:(id)arg2 requestIdentifier:(id)arg3;
+- (void)didSaveChangesSuccessfully:(bool)arg1 fromContactStore:(id)arg2 requestIdentifier:(id)arg3;
+- (bool)forwardsSelfGeneratedDistributedSaveNotifications;
 - (id)init;
+- (id)initWithNotificationWrapper:(id)arg1;
 - (id)notifierProxy;
+- (void)setForwardsSelfGeneratedDistributedSaveNotifications:(bool)arg1;
 - (void)setNotifierProxy:(id)arg1;
 - (void)waitForCurrentTasksToFinish;
 - (void)willSaveChanges;

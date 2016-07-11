@@ -5,7 +5,7 @@
 @interface MusicNowPlayingLyricsTransitionController : NSObject <UIViewControllerAnimatedTransitioning> {
     MusicNowPlayingLyricsViewController * _lyricsViewController;
     MusicNowPlayingViewController * _nowPlayingViewController;
-    BOOL  _presenting;
+    bool  _presenting;
     id /* block */  _transitionEndBlock;
     id /* block */  _transitionFinishBlock;
     id /* block */  _transitionStartBlock;
@@ -13,15 +13,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPresenting, nonatomic) BOOL presenting;
+@property (readonly) unsigned long long hash;
+@property (getter=isPresenting, nonatomic) bool presenting;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_prepareTransitionForOverArtwork:(id)arg1;
 - (void)animateTransition:(id)arg1;
-- (BOOL)isPresenting;
-- (void)setPresenting:(BOOL)arg1;
+- (bool)isPresenting;
+- (void)setPresenting:(bool)arg1;
 - (double)transitionDuration:(id)arg1;
 
 @end

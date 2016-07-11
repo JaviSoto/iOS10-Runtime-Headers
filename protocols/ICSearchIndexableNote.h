@@ -5,11 +5,13 @@
 
 @required
 
-- (NSURL *)appURLForIndexerContext:(ICSearchIndexerContext *)arg1;
 - (NSString *)contentInfoText;
-- (NSNumber *)integerId;
+- (NSDate *)dateForCurrentSortType;
+- (bool)isPasswordProtected;
+- (bool)isSharedViaICloud;
 - (NSString *)noteAsPlainTextWithoutTitle;
 - (NSArray *)searchableContentKeyPaths;
 - (NSString *)title;
+- (NSString *)trimmedTitle;
 
 @end

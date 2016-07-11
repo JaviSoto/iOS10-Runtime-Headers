@@ -17,10 +17,10 @@
 - (NSData *)imageData;
 - (NSArray *)imageReferences;
 - (NSArray *)instantMessagingAddresses;
-- (BOOL)isCompany;
-- (BOOL)isMe;
+- (bool)isCompany;
+- (bool)isMe;
 - (NSString *)jobTitle;
-- (NSData *)jpegImageDataOfAllowableKinds:(NSArray *)arg1 maximumLength:(unsigned int)arg2 cropRects:(id*)arg3;
+- (NSData *)jpegImageDataOfAllowableKinds:(NSArray *)arg1 maximumLength:(unsigned long long)arg2 cropRects:(id*)arg3;
 - (NSDictionary *)largeImageCropRects;
 - (NSData *)largeImageData;
 - (NSData *)largeImageHashOfType:(NSString *)arg1;
@@ -38,7 +38,10 @@
 - (NSString *)phoneticFirstName;
 - (NSString *)phoneticLastName;
 - (NSString *)phoneticMiddleName;
+- (NSString *)phoneticOrganization;
 - (NSArray *)postalAddresses;
+- (NSString *)preferredApplePersonaIdentifier;
+- (NSString *)preferredLikenessSource;
 - (NSString *)pronunciationFirstName;
 - (NSString *)pronunciationLastName;
 - (NSArray *)relatedNames;

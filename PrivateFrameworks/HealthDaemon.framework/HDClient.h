@@ -3,38 +3,51 @@
  */
 
 @interface HDClient : NSObject {
+    NSUUID * _UUID;
     NSString * _applicationIdentifier;
     NSXPCConnection * _connection;
     NSMutableSet * _droppedEntitlements;
     _HKEntitlements * _entitlements;
-    BOOL  _isExtension;
+    NSString * _extensionIdentifier;
+    bool  _isExtension;
     NSString * _name;
     NSString * _sourceBundleIdentifier;
 }
 
+@property (readonly) NSUUID *UUID;
 @property (readonly) NSString *applicationIdentifier;
 @property (readonly) NSXPCConnection *connection;
 @property (nonatomic, retain) NSMutableSet *droppedEntitlements;
 @property (readonly) _HKEntitlements *entitlements;
-@property (readonly) BOOL isExtension;
+@property (readonly) NSString *extensionIdentifier;
+@property (readonly) bool isExtension;
 @property (readonly) NSString *name;
+@property (readonly) NSString *processBundleIdentifier;
 @property (readonly) int processIdentifier;
 @property (readonly) NSString *sourceBundleIdentifier;
 
++ (id)clientWithConnection:(id)arg1 error:(id*)arg2;
+
 - (void).cxx_destruct;
+- (id)UUID;
 - (id)_initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)applicationIdentifier;
+- (id)baseDataEntityEncodingOptions;
 - (id)connection;
 - (id)description;
 - (void)dropEntitlement:(id)arg1;
 - (id)droppedEntitlements;
 - (id)entitlements;
-- (BOOL)hasEntitlement:(id)arg1 withError:(id*)arg2;
-- (id)initWithConnection:(id)arg1;
+- (id)extensionIdentifier;
+- (id)filterWithQueryFilter:(id)arg1 profile:(id)arg2;
+- (bool)hasEntitlement:(id)arg1;
+- (bool)hasRequiredEntitlement:(id)arg1 error:(id*)arg2;
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)initWithEntitlements:(id)arg1;
-- (BOOL)isExtension;
+- (bool)isEqual:(id)arg1;
+- (bool)isExtension;
 - (id)name;
+- (id)processBundleIdentifier;
 - (int)processIdentifier;
 - (void)restoreEntitlement:(id)arg1;
 - (void)setDroppedEntitlements:(id)arg1;

@@ -5,8 +5,11 @@
 
 @required
 
-- (unsigned int)preferredDirectionsTypeForQuickRoute;
-- (BOOL)quickRouteShouldIncludeTransit;
-- (BOOL)quickRouteShouldOnlyUseAutomobile;
+- (bool)quickRouteShouldIncludeTransit;
+- (bool)quickRouteShouldOnlyUseAutomobile;
+
+@optional
+
+- (unsigned long long)preferredDirectionsTypeForQuickRoute;
 
 @end

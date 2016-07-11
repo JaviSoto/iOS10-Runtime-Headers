@@ -10,6 +10,7 @@
 + (id)_bookmarkFolderAtTitlePath:(id)arg1 withinRootFolder:(id)arg2;
 + (id)_createBookmarkFolderWithTitle:(id)arg1 UUID:(id)arg2;
 + (id)_createRootBookmarkFolder;
++ (id)contentType;
 
 - (void).cxx_destruct;
 - (id)contentType;

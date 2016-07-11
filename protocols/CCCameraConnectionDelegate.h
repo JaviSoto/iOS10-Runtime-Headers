@@ -5,22 +5,27 @@
 
 @required
 
-- (void)cameraConnection:(CCCameraConnection *)arg1 takePhotoWithCountdown:(unsigned int)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 takePhotoWithCountdown:(unsigned long long)arg2;
 
 @optional
 
-- (void)cameraConnection:(CCCameraConnection *)arg1 setFlashMode:(int)arg2;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (unsigned int)cameraConnection:(CCCameraConnection *)arg1 setMode:(unsigned int)arg2 interruptCapture:(BOOL)arg3;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setZoomAmount:(float)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setFlashMode:(long long)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setHDRMode:(long long)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setIrisMode:(long long)arg2;
+- (unsigned long long)cameraConnection:(CCCameraConnection *)arg1 setMode:(unsigned long long)arg2 interruptCapture:(bool)arg3;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setZoomAmount:(double)arg2;
+- (bool)cameraConnectionBeginBurstCapture:(CCCameraConnection *)arg1;
 - (void)cameraConnectionBeginVideo:(CCCameraConnection *)arg1;
 - (void)cameraConnectionCancelCountdown:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionEndBurstCapture:(CCCameraConnection *)arg1;
 - (void)cameraConnectionEndVideo:(CCCameraConnection *)arg1;
-- (int)cameraConnectionFlashMode:(CCCameraConnection *)arg1 flashSupported:(BOOL*)arg2;
-- (BOOL)cameraConnectionIsMirrored:(CCCameraConnection *)arg1;
-- (int)cameraConnectionOrientation:(CCCameraConnection *)arg1;
-- (unsigned int)cameraConnectionSupportedModes:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionFlashMode:(CCCameraConnection *)arg1 flashSupported:(bool*)arg2;
+- (long long)cameraConnectionHDRMode:(CCCameraConnection *)arg1 hdrSupported:(bool*)arg2;
+- (long long)cameraConnectionIrisMode:(CCCameraConnection *)arg1 irisSupported:(bool*)arg2;
+- (long long)cameraConnectionOrientation:(CCCameraConnection *)arg1;
+- (unsigned long long)cameraConnectionSupportedModes:(CCCameraConnection *)arg1;
 - (void)cameraConnectionToggleCameraDevice:(CCCameraConnection *)arg1;
-- (float)cameraConnectionZoomAmount:(CCCameraConnection *)arg1;
+- (double)cameraConnectionZoomAmount:(CCCameraConnection *)arg1;
 
 @end

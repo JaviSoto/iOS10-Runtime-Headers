@@ -16,37 +16,39 @@
 }
 
 @property (nonatomic, retain) NSString *activityType;
-@property (nonatomic, readonly) BOOL hasActivityType;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic) BOOL hasTimeDelta;
-@property (nonatomic) BOOL hasTimeEnded;
-@property (nonatomic) BOOL hasTimeStarted;
+@property (nonatomic, readonly) bool hasActivityType;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic) bool hasTimeDelta;
+@property (nonatomic) bool hasTimeEnded;
+@property (nonatomic) bool hasTimeStarted;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) double timeDelta;
 @property (nonatomic) double timeEnded;
 @property (nonatomic) double timeStarted;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (id)activityType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)description;
+- (id)detailedDescription;
 - (id)dictionaryRepresentation;
-- (BOOL)hasActivityType;
-- (BOOL)hasIdentifier;
-- (BOOL)hasTimeDelta;
-- (BOOL)hasTimeEnded;
-- (BOOL)hasTimeStarted;
-- (unsigned int)hash;
+- (bool)hasActivityType;
+- (bool)hasIdentifier;
+- (bool)hasTimeDelta;
+- (bool)hasTimeEnded;
+- (bool)hasTimeStarted;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setActivityType:(id)arg1;
-- (void)setHasTimeDelta:(BOOL)arg1;
-- (void)setHasTimeEnded:(BOOL)arg1;
-- (void)setHasTimeStarted:(BOOL)arg1;
+- (void)setHasTimeDelta:(bool)arg1;
+- (void)setHasTimeEnded:(bool)arg1;
+- (void)setHasTimeStarted:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTimeDelta:(double)arg1;
 - (void)setTimeEnded:(double)arg1;

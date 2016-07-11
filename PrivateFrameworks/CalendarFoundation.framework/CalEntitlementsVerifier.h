@@ -4,9 +4,10 @@
 
 @interface CalEntitlementsVerifier : NSObject
 
-+ (BOOL)currentProcessHasAllowSuggestionsEntitlement;
-+ (BOOL)currentProcessHasBooleanEntitlement:(id)arg1;
-+ (BOOL)currentProcessHasLocationdEffectiveBundleEntitlement;
-+ (BOOL)currentProcessHasWatchOSMutableDatabaseEntitlement;
++ (bool)currentProcessHasAllowSuggestionsEntitlement;
++ (bool)currentProcessHasBooleanEntitlement:(id)arg1;
++ (bool)currentProcessHasContactsUIEntitlement;
++ (bool)currentProcessHasLocationdEffectiveBundleEntitlement;
++ (bool)currentProcessHasWatchOSMutableDatabaseEntitlement;
 
 @end

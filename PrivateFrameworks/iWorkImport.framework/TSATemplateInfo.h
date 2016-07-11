@@ -10,8 +10,8 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly) NSURL *documentURL;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) BOOL isAvailable;
-@property (nonatomic, readonly) BOOL isUserTemplate;
+@property (nonatomic, readonly) bool isAvailable;
+@property (nonatomic, readonly) bool isUserTemplate;
 @property (nonatomic, readonly) NSBundle *localizationBundle;
 @property (nonatomic, readonly) UIImage *previewImage;
 @property (nonatomic, readonly) NSURL *previewImageURL;
@@ -21,8 +21,8 @@
 - (id)documentURL;
 - (id)identifier;
 - (id)initWithDisplayName:(id)arg1;
-- (BOOL)isAvailable;
-- (BOOL)isUserTemplate;
+- (bool)isAvailable;
+- (bool)isUserTemplate;
 - (id)localizationBundle;
 - (id)makeIdentifier;
 - (void)prepareForNewDocumentWithQueue:(id)arg1 completionHandler:(id /* block */)arg2;

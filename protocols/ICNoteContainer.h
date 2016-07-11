@@ -6,12 +6,16 @@
 @required
 
 - (NSString *)accountName;
-- (BOOL)noteIsVisible:(ICNote *)arg1;
+- (bool)canBeSharedViaICloud;
+- (bool)isDeleted;
+- (ICAccount *)noteContainerAccount;
+- (bool)noteIsVisible:(ICNote *)arg1;
 - (<ICNoteVisibilityTesting> *)noteVisibilityTestingForSearchingAccount;
-- (BOOL)supportsEditingNotes;
+- (NSPredicate *)predicateForVisibleNotes;
+- (bool)supportsEditingNotes;
 - (NSString *)titleForNavigationBar;
 - (NSString *)titleForTableViewCell;
 - (NSArray *)visibleNotes;
-- (unsigned int)visibleNotesCount;
+- (unsigned long long)visibleNotesCount;
 
 @end

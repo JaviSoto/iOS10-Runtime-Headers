@@ -5,6 +5,6 @@
 
 @required
 
-- (double)watchdogIntervalForProcess:(FBProcess *)arg1 eventContext:(struct { int x1; id x2; })arg2;
+- (FBSProcessWatchdogPolicy *)watchdogPolicyForProcess:(FBProcess *)arg1 eventContext:(FBProcessWatchdogEventContext *)arg2;
 
 @end

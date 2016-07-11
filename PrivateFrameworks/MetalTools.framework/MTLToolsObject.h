@@ -11,8 +11,6 @@
 
 @property (nonatomic, retain) id baseObject;
 @property (nonatomic) struct ILayerLockingPolicy { int (**x1)(); }*lockingPolicy;
-@property (nonatomic, readonly) MTLToolsObject *parent;
-@property (nonatomic, readonly) MTLToolsObject *strongParent;
 
 + (id)dispatchQueue;
 + (void)visitObjects:(id)arg1 withVisitor:(id)arg2;
@@ -29,7 +27,6 @@
 - (struct ILayerLockingPolicy { int (**x1)(); }*)lockingPolicy;
 - (id)originalObject;
 - (id)parent;
-- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setBaseObject:(id)arg1;
 - (void)setLockingPolicy:(struct ILayerLockingPolicy { int (**x1)(); }*)arg1;
 - (void)setOriginalObject:(id)arg1;

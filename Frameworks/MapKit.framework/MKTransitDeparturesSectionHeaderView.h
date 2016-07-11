@@ -2,21 +2,28 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitDeparturesSectionHeaderView : UIView {
+@interface MKTransitDeparturesSectionHeaderView : MKCustomSeparatorTableViewCell {
     NSLayoutConstraint * _bottomConstraint;
-    UILabel * _label;
+    MKButtonWithTargetArgument * _button;
+    _MKUILabel * _label;
     NSLayoutConstraint * _topConstraint;
+    unsigned long long  _type;
 }
 
+@property (nonatomic, readonly) MKButtonWithTargetArgument *button;
 @property (nonatomic, copy) NSString *text;
 
-+ (id)_font;
++ (id)_buttonFont:(unsigned long long)arg1;
++ (id)_font:(unsigned long long)arg1;
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (void)_updateConstraintValues;
+- (id)button;
 - (void)dealloc;
-- (id)init;
+- (id)initWithType:(unsigned long long)arg1;
+- (id)initWithType:(unsigned long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)tintColorDidChange;

@@ -3,27 +3,54 @@
  */
 
 @interface WKFormInputSession : NSObject <_WKFormInputSession> {
+    bool  _accessoryViewShouldNotShow;
     WKContentView * _contentView;
+    struct RetainPtr<UIView> { 
+        void *m_ptr; 
+    }  _customInputView;
+    struct RetainPtr<WKFocusedElementInfo> { 
+        void *m_ptr; 
+    }  _focusedElementInfo;
+    struct RetainPtr<NSArray<UITextSuggestion *> > { 
+        void *m_ptr; 
+    }  _suggestions;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
+    }  _textContentType;
     struct RetainPtr<NSObject<NSSecureCoding> > { 
         void *m_ptr; 
     }  _userObject;
 }
 
 @property (nonatomic, copy) NSString *accessoryViewCustomButtonTitle;
+@property (nonatomic) bool accessoryViewShouldNotShow;
+@property (nonatomic, retain) UIView *customInputView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) <_WKFocusedElementInfo> *focusedElementInfo;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *suggestions;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 @property (nonatomic, readonly) NSObject<NSSecureCoding> *userObject;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)accessoryViewCustomButtonTitle;
-- (id)initWithContentView:(id)arg1 userObject:(id)arg2;
+- (bool)accessoryViewShouldNotShow;
+- (id)customInputView;
+- (id)focusedElementInfo;
+- (id)initWithContentView:(id)arg1 focusedElementInfo:(id)arg2 userObject:(id)arg3;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setAccessoryViewCustomButtonTitle:(id)arg1;
+- (void)setAccessoryViewShouldNotShow:(bool)arg1;
+- (void)setCustomInputView:(id)arg1;
+- (void)setSuggestions:(id)arg1;
+- (void)setTextContentType:(id)arg1;
+- (id)suggestions;
+- (id)textContentType;
 - (id)userObject;
 
 @end

@@ -4,52 +4,75 @@
 
 @interface CKAttachmentItem : NSObject <QLPreviewItem> {
     NSURL * _appendedBundleURL;
+    NSDate * _createdDate;
     NSURL * _fileURL;
     NSString * _guid;
+    bool  _isIrisAsset;
+    bool  _isSticker;
     NSURL * _previewURL;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
+    NSString * _transferGUID;
 }
 
+@property (nonatomic, retain) NSDate *createdDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSURL *fileURL;
 @property (nonatomic, copy) NSString *guid;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isIrisAsset;
+@property (nonatomic) bool isSticker;
 @property (nonatomic, readonly) NSString *previewItemTitle;
 @property (nonatomic, readonly) NSURL *previewItemURL;
 @property (nonatomic, retain) NSURL *previewURL;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *transferGUID;
 
 + (id)UTITypes;
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 + (id)previewCache;
 + (id)previewSizingQueue;
-+ (unsigned int)pxWidth;
++ (unsigned long long)pxWidth;
 
+- (void).cxx_destruct;
 - (id)UTIType;
+- (id)_fileIcon;
+- (id)_getIrisBundleURL;
+- (id)_getTempIrisBundleLocation;
+- (id)_getTempIrisFolder;
 - (void)_removeAppendedBundle;
 - (void)_savePreview:(id)arg1;
 - (id)_savedPreviewFromURL:(id)arg1;
 - (id)cachedPreview;
+- (bool)canShareItem;
+- (id)createdDate;
 - (void)dealloc;
 - (id)description;
 - (id)fileURL;
 - (void)generatePreviewWithCompletion:(id /* block */)arg1;
+- (id)getIrisVideoPath;
 - (id)guid;
 - (id)imageData;
-- (id)initWithFileURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 guid:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithFileURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 transferGUID:(id)arg3 guid:(id)arg4 createdDate:(id)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isIrisAsset;
+- (bool)isSticker;
 - (id)pasteboardItem;
 - (id)previewItemURL;
 - (id)previewURL;
+- (void)setCreatedDate:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setGuid:(id)arg1;
+- (void)setIsIrisAsset:(bool)arg1;
+- (void)setIsSticker:(bool)arg1;
 - (void)setPreviewURL:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setTransferGUID:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (void)startDeferredSetup;
+- (id)transferGUID;
 
 @end

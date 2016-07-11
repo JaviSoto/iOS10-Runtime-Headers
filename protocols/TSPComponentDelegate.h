@@ -5,11 +5,12 @@
 
 @required
 
-- (void)cacheComponent:(TSPComponent *)arg1 isDiscardingContent:(BOOL)arg2;
+- (void)cacheComponent:(TSPComponent *)arg1 isDiscardingContent:(bool)arg2;
+- (TSPObjectContext *)context;
 - (void)didModifyFlushedComponent:(TSPComponent *)arg1 forObject:(TSPObject *)arg2;
-- (void)flushComponent:(TSPComponent *)arg1 isDiscardingContent:(BOOL)arg2;
-- (BOOL)isActive;
+- (void)flushComponent:(TSPComponent *)arg1 isDiscardingContent:(bool)arg2;
+- (bool)isActive;
 - (TSPObject *)objectForIdentifier:(long long)arg1;
-- (BOOL)shouldKeepAllCachedObjectsInMemory;
+- (bool)shouldKeepAllCachedObjectsInMemory;
 
 @end

@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
 - (id)init;
-- (id)initWithInputMediaType:(unsigned long)arg1;
+- (id)initWithInputMediaType:(unsigned int)arg1;
 - (id)nodeSubType;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (id /* block */)sampleBufferAvailableHandler;

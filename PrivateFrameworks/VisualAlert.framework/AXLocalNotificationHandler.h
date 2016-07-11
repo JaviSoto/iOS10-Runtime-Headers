@@ -15,5 +15,6 @@
 - (void)_startObservingWithObject:(id)arg1;
 - (void)_stopObserving;
 - (void)_stopObservingWithObject:(id)arg1;
+- (void)dealloc;
 
 @end

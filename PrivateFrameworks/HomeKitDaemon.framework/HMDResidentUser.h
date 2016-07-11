@@ -3,34 +3,28 @@
  */
 
 @interface HMDResidentUser : HMDUser {
-    BOOL  _primaryResidentDevice;
-    unsigned int  _residentConfigState;
-    NSString * _residentIdentifier;
-    NSString * _residentName;
+    unsigned long long  _configurationState;
+    NSString * _deviceIdentifier;
+    NSString * _displayName;
 }
 
-@property (getter=isPrimaryResidentDevice, nonatomic, readonly) BOOL primaryResidentDevice;
-@property (nonatomic) unsigned int residentConfigState;
-@property (nonatomic, retain) NSString *residentIdentifier;
-@property (nonatomic, retain) NSString *residentName;
+@property (nonatomic) unsigned long long configurationState;
+@property (nonatomic, readonly, copy) NSString *deviceIdentifier;
 
-+ (id)residentUserWithUser:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned long long)configurationState;
+- (bool)configureWithIDSDevice:(id)arg1;
+- (id)deviceIdentifier;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
+- (id)encodingRemoteDisplayName;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUserID:(id)arg1 residentName:(id)arg2 residentIdentifier:(id)arg3;
-- (id)initWithWithUser:(id)arg1;
-- (BOOL)isPrimaryResidentDevice;
-- (BOOL)mergeFromUser:(id)arg1;
-- (unsigned int)residentConfigState;
-- (id)residentIdentifier;
-- (id)residentName;
-- (void)setResidentConfigState:(unsigned int)arg1;
-- (void)setResidentIdentifier:(id)arg1;
-- (void)setResidentName:(id)arg1;
-- (id)xpcDisplayName;
+- (id)initWithUserID:(id)arg1 pairingIdentity:(id)arg2 displayName:(id)arg3 deviceIdentifier:(id)arg4 configurationState:(unsigned long long)arg5;
+- (bool)mergeFromUser:(id)arg1 dataVersion:(long long)arg2;
+- (void)setConfigurationState:(unsigned long long)arg1;
+- (void)setDeviceIdentifier:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 
 @end

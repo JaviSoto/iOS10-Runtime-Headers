@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) <TSKModel> *hostingModel;
-@property (nonatomic) TSDDrawableInfo *parent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) TSPObject *hostingModel;
+@property (nonatomic, retain) TSDDrawableInfo *parent;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
 
@@ -32,10 +32,8 @@
 - (id)description;
 - (id)hostingModel;
 - (id)initWithParent:(id)arg1 storage:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
 - (id)parent;
 - (void)setAuthor:(id)arg1;
-- (void)setHostingModel:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setStorage:(id)arg1;
 - (id)storage;

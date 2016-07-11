@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventDetailTitleCell : EKEventDetailCell {
+@interface EKEventDetailTitleCell : EKEventDetailCell <EKEventDetailPredictedLocationCellDelegate> {
     NSMutableArray * _dateTimeViews;
     NSObject<EKEventDetailTitleCellDelegate> * _delegate;
     UIButton * _editButton;
-    BOOL  _hasLocationStatus;
-    int  _locationStatus;
+    bool  _hasLocationStatus;
+    long long  _locationStatus;
     UIImage * _locationStatusImage;
     UIImageView * _locationStatusView;
     EKTextViewWithLabelTextMetrics * _locationView;
-    BOOL  _observingLocaleChanges;
+    bool  _observingLocaleChanges;
+    EKEventDetailPredictedLocationCell * _predictedLocationView;
     UILabel * _recurrenceView;
+    bool  _rejectionReasonCell;
     UILabel * _statusView;
     UILabel * _titleView;
     UILabel * _travelTimeView;
@@ -31,22 +33,28 @@
 + (id)_titleFont;
 
 - (void).cxx_destruct;
-- (id)_dateTimeViewForLine:(unsigned int)arg1;
+- (id)_dateTimeViewForLine:(unsigned long long)arg1;
 - (id)_editButton;
 - (id)_locationStatusView;
 - (id)_locationView;
+- (id)_predictedLocationView;
+- (void)_promptForSpanWithCompletionBlock:(id /* block */)arg1;
 - (id)_recurrenceView;
-- (void)_setDateTimeString:(id)arg1 line:(unsigned int)arg2;
+- (void)_saveEventWithSpan:(long long)arg1;
 - (id)_statusView;
 - (id)_titleView;
 - (id)_travelTimeView;
-- (BOOL)_useLargeFonts;
+- (bool)_useLargeFonts;
 - (void)dealloc;
 - (id)delegate;
 - (void)editButtonTapped;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (void)eventDetailPredictedLocationCellAcceptedPrediction:(id)arg1 disambiguatedLocation:(id)arg2;
+- (void)eventDetailPredictedLocationCellRejectedPrediction:(id)arg1;
+- (id)initAsRejectionReasonCellWithEvent:(id)arg1;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2 style:(long long)arg3;
+- (void)layoutForWidth:(double)arg1 position:(int)arg2;
 - (void)setColor:(id)arg1;
+- (void)setDateTimeString:(id)arg1 line:(unsigned long long)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
@@ -54,6 +62,6 @@
 - (void)setStatusString:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTravelTimeString:(id)arg1;
-- (BOOL)update;
+- (bool)update;
 
 @end

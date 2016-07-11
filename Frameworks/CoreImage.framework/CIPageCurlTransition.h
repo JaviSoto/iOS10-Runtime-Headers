@@ -15,6 +15,7 @@
 
 + (id)customAttributes;
 
+- (id)_CIPageCurlTransNoEmap;
 - (id)_CIPageCurlTransition;
 - (id)outputImage;
 

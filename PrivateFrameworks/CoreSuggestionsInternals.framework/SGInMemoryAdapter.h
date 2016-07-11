@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *events;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,5 +29,6 @@
 - (void)overwriteEvent:(id)arg1;
 - (void)rejectContact:(id)arg1;
 - (void)rejectEvent:(id)arg1;
+- (void)removeAllStoredPseudoContacts;
 
 @end

@@ -12,9 +12,9 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSDictionary *remoteAssets;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)deviceSpecificAsset;
-- (id)deviceSpecificAssetForScreenScale:(float)arg1 suffix:(id)arg2;
+- (id)deviceSpecificAssetForScreenScale:(double)arg1 suffix:(id)arg2;
 - (id)fileURL;
 - (id)initWithFileURL:(id)arg1 passURL:(id)arg2 error:(id*)arg3;
 - (id)name;

@@ -3,14 +3,14 @@
  */
 
 @interface PKPaymentSessionHandle : NSObject {
-    NSArray * _sessionHandles;
+    <NFSession> * _sessionHandle;
 }
 
 + (id)paymentSessionHandleWithInternalSessionHandle:(id)arg1;
-+ (id)paymentSessionHandleWithInternalSessionHandles:(id)arg1;
 
-- (void)dealloc;
-- (id)initWithInternalSessionHandles:(id)arg1;
+- (void).cxx_destruct;
+- (id)initWithInternalSessionHandle:(id)arg1;
 - (void)invalidateSession;
+- (bool)isFirstInQueue;
 
 @end

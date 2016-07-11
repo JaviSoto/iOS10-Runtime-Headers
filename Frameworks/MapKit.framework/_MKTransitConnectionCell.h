@@ -6,7 +6,7 @@
     UIButton * _button;
     <GEOTransitConnectionInfo> * _connectionInfo;
     <_MKTransitConnectionCellDelegate> * _delegate;
-    UILabel * _nameLabel;
+    _MKUILabel * _nameLabel;
     NSLayoutConstraint * _nameLabelToTopConstraint;
     MKTransitInfoLabelView * _transitInfoLabel;
     NSLayoutConstraint * _transitInfoToNameConstraint;

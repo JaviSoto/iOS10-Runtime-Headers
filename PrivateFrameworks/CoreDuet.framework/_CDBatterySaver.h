@@ -9,9 +9,10 @@
 + (id)batterySaver;
 
 - (void).cxx_destruct;
-- (int)getPowerMode;
+- (void)dealloc;
+- (long long)getPowerMode;
 - (id)init;
-- (int)setMode:(int)arg1;
-- (BOOL)setPowerMode:(int)arg1 error:(id*)arg2;
+- (long long)setMode:(long long)arg1;
+- (bool)setPowerMode:(long long)arg1 error:(id*)arg2;
 
 @end

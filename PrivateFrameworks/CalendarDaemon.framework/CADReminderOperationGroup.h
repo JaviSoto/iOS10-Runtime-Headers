@@ -4,9 +4,9 @@
 
 @interface CADReminderOperationGroup : CADOperationGroup <CADReminderInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
 - (void)CADDatabaseGetCountOfRemindersWithPredicate:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseGetDefaultCalendarForNewRemindersWithReply:(id /* block */)arg1;

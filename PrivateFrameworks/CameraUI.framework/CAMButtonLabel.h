@@ -4,44 +4,39 @@
 
 @interface CAMButtonLabel : UIView {
     UILabel * __label;
-    _UILegibilityView * __legibilityView;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
-    BOOL  _useLegibilityView;
+    NSString * _text;
+    bool  _wantsLegibilityShadow;
 }
 
 @property (nonatomic, readonly, retain) UILabel *_label;
-@property (nonatomic, readonly, retain) _UILegibilityView *_legibilityView;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
-@property (getter=isUsingLegibilityView, nonatomic) BOOL useLegibilityView;
+@property (nonatomic) bool wantsLegibilityShadow;
 
 - (void).cxx_destruct;
-- (void)_createLegibilityView;
 - (id)_label;
-- (id)_legibilityView;
 - (void)_updateAttributedText;
 - (void)_updateInternalContentSize;
-- (void)_updateViewAlphas;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (id)highlightedTextColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isUsingLegibilityView;
-- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setHighlightedTextColor:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setUseLegibilityView:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setWantsLegibilityShadow:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textColor;
 - (void)updateToContentSize:(id)arg1;
+- (bool)wantsLegibilityShadow;
 
 @end

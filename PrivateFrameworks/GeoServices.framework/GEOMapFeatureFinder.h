@@ -7,14 +7,14 @@
         double latitude; 
         double longitude; 
     }  _coordinate;
-    BOOL  _ignoreUnnamedFeatures;
+    bool  _ignoreUnnamedFeatures;
     id /* block */  _pointHandler;
     id /* block */  _polygonHandler;
     id /* block */  _roadHandler;
     GEOMapTileFinder * _tileFinder;
 }
 
-@property (nonatomic) BOOL ignoreUnnamedFeatures;
+@property (nonatomic) bool ignoreUnnamedFeatures;
 @property (nonatomic, readonly) GEOMapAccess *map;
 @property (nonatomic, copy) id /* block */ pointHandler;
 @property (nonatomic, copy) id /* block */ polygonHandler;
@@ -24,13 +24,13 @@
 - (void)cancel;
 - (void)dealloc;
 - (void)findFeatures:(id /* block */)arg1 pointHandler:(id /* block */)arg2 polygonHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)ignoreUnnamedFeatures;
+- (bool)ignoreUnnamedFeatures;
 - (id)initWithMap:(id)arg1 center:(struct { double x1; double x2; })arg2;
 - (id)map;
 - (id /* block */)pointHandler;
 - (id /* block */)polygonHandler;
 - (id /* block */)roadHandler;
-- (void)setIgnoreUnnamedFeatures:(BOOL)arg1;
+- (void)setIgnoreUnnamedFeatures:(bool)arg1;
 - (void)setPointHandler:(id /* block */)arg1;
 - (void)setPolygonHandler:(id /* block */)arg1;
 - (void)setRoadHandler:(id /* block */)arg1;

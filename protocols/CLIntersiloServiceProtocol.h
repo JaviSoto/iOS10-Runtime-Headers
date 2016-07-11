@@ -7,7 +7,7 @@
 
 + (void)becameFatallyBlocked:(NSMutableArray *)arg1;
 + (CLSilo *)getSilo;
-+ (BOOL)isSupported;
++ (bool)isSupported;
 + (void)performSyncOnSilo:(void *)arg1 invoker:(void *)arg2; // needs 2 arg types, found 6: CLSilo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 
 @optional

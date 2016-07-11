@@ -11,19 +11,21 @@
     IKViewElementStyleFactory * _styleFactory;
 }
 
-@property (getter=isSparse, nonatomic) BOOL sparse;
+@property (getter=isSparse, nonatomic) bool sparse;
 @property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
 
 + (Class)elementClassByTagName:(id)arg1;
-+ (unsigned int)elementTypeByTagName:(id)arg1;
-+ (id)elementsForDocumentElement:(id)arg1 sparse:(BOOL)arg2 styleFactory:(id*)arg3;
++ (unsigned long long)elementTypeByTagName:(id)arg1;
++ (id)elementsForDocumentElement:(id)arg1 sparse:(bool)arg2 styleFactory:(id*)arg3;
 + (void)initialize;
-+ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3;
++ (bool)isDependentByTagName:(id)arg1;
++ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3;
++ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3 dependent:(bool)arg4;
 
 - (void).cxx_destruct;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;
-- (BOOL)isSparse;
-- (void)setSparse:(BOOL)arg1;
+- (bool)isSparse;
+- (void)setSparse:(bool)arg1;
 - (void)setStyleFactory:(id)arg1;
 - (id)styleFactory;
 

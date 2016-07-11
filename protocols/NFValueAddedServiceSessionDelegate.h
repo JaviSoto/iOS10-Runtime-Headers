@@ -7,6 +7,6 @@
 
 - (void)valueAddedServiceSession:(NFValueAddedServiceSession *)arg1 didError:(NSError *)arg2;
 - (void)valueAddedServiceSession:(NFValueAddedServiceSession *)arg1 didPerformValueAddedServiceTransactions:(NSArray *)arg2;
-- (void)valueAddedServiceSession:(NFValueAddedServiceSession *)arg1 didSelectValueAddedService:(BOOL)arg2;
+- (void)valueAddedServiceSession:(NFValueAddedServiceSession *)arg1 didSelectValueAddedService:(bool)arg2;
 
 @end

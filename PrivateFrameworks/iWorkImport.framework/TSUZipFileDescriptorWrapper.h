@@ -17,7 +17,7 @@
 - (void)endAccess;
 - (int)fileDescriptor;
 - (id)init;
-- (id)initWithFileDescriptor:(int)arg1;
+- (id)initWithFileDescriptor:(int)arg1 queue:(id)arg2;
 - (id)readChannel;
 - (void)waitForAccessToEnd;
 

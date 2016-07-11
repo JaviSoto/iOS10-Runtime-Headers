@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SANoteSearchCompleted : SABaseCommand <SAServerBoundCommand> {
-    NSArray * _results;
-}
+@interface SANoteSearchCompleted : SABaseCommand <SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *notes;
 @property (nonatomic, copy) NSString *refId;
-@property (nonatomic, copy) NSArray *results;
 @property (readonly) Class superclass;
 
 + (id)searchCompleted;
@@ -21,8 +18,6 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)notes;
-- (id)results;
 - (void)setNotes:(id)arg1;
-- (void)setResults:(id)arg1;
 
 @end

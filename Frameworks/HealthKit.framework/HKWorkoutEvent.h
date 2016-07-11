@@ -4,38 +4,44 @@
 
 @interface HKWorkoutEvent : NSObject <HDCoding, NSSecureCoding> {
     NSDate * _date;
-    int  _type;
+    NSDictionary * _metadata;
+    long long  _type;
 }
 
 @property (readonly, copy) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (readonly, copy) NSDictionary *metadata;
 @property (readonly) Class superclass;
-@property (readonly) int type;
+@property (readonly) long long type;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_newWorkoutEventWithType:(int)arg1 date:(id)arg2;
-+ (id)_workoutEventWithType:(int)arg1 date:(id)arg2;
-+ (BOOL)supportsSecureCoding;
-+ (id)workoutEventWithType:(int)arg1 date:(id)arg2;
++ (id)_newWorkoutEventWithType:(long long)arg1 date:(id)arg2;
++ (id)_workoutEventWithInternalEvent:(id)arg1;
++ (id)_workoutEventWithType:(long long)arg1 date:(id)arg2;
++ (bool)supportsSecureCoding;
++ (id)workoutEventWithType:(long long)arg1 date:(id)arg2;
++ (id)workoutEventWithType:(long long)arg1 date:(id)arg2 metadata:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_assertPropertiesValid;
 - (id)_init;
 - (void)_setDate:(id)arg1;
-- (void)_setType:(int)arg1;
+- (void)_setMetadata:(id)arg1;
+- (void)_setType:(long long)arg1;
 - (id)_validateConfiguration;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)type;
+- (bool)isEqual:(id)arg1;
+- (id)metadata;
+- (long long)type;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

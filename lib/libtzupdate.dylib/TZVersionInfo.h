@@ -3,58 +3,46 @@
  */
 
 @interface TZVersionInfo : NSObject {
-    NSArray * _alertZones;
+    NSDictionary * _alertZones;
     NSString * _bundleVersion;
     NSArray * _changedFiles;
     NSURL * _diskLocation;
-    NSString * _icuChecksumBaseline;
-    NSString * _icuChecksumCurrent;
-    NSString * _icuNameBaseline;
-    NSString * _icuNameCurrent;
+    NSString * _icuTZSchemaVersion;
     NSNumber * _shouldAlertAll;
     NSString * _tzDataVersion;
 }
 
-@property (retain) NSArray *alertZones;
+@property (retain) NSDictionary *alertZones;
 @property (retain) NSString *bundleVersion;
 @property (retain) NSArray *changedFiles;
 @property (retain) NSURL *diskLocation;
-@property (retain) NSString *icuChecksumBaseline;
-@property (retain) NSString *icuChecksumCurrent;
-@property (retain) NSString *icuNameBaseline;
-@property (retain) NSString *icuNameCurrent;
+@property (retain) NSString *icuTZSchemaVersion;
 @property (retain) NSNumber *shouldAlertAll;
 @property (retain) NSString *tzDataVersion;
 @property (readonly) NSString *versionString;
 
 + (id)_tzDataVersionFromZoneinfoDirectory:(id)arg1 withError:(id*)arg2;
-+ (BOOL)_verifyVersionInfoDictionary:(id)arg1;
++ (bool)_verifyVersionInfoDictionary:(id)arg1;
 + (id)blankVersionInfo;
 + (id)versionInfoFromContainerDirectory:(id)arg1;
 + (id)versionInfoFromDefaultSystem;
-+ (id)versionInfoWithDictionary:(id)arg1 isPartial:(BOOL)arg2;
++ (id)versionInfoWithDictionary:(id)arg1 isPartial:(bool)arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithVersionInfoDictionary:(id)arg1 isPartial:(BOOL)arg2;
+- (id)_initWithVersionInfoDictionary:(id)arg1 isPartial:(bool)arg2;
 - (id)alertZones;
 - (id)bundleVersion;
 - (id)changedFiles;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)description;
 - (id)diskLocation;
-- (id)icuChecksumBaseline;
-- (id)icuChecksumCurrent;
-- (id)icuNameBaseline;
-- (id)icuNameCurrent;
-- (BOOL)isBlank;
+- (id)icuTZSchemaVersion;
+- (bool)isBlank;
 - (void)setAlertZones:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setChangedFiles:(id)arg1;
 - (void)setDiskLocation:(id)arg1;
-- (void)setIcuChecksumBaseline:(id)arg1;
-- (void)setIcuChecksumCurrent:(id)arg1;
-- (void)setIcuNameBaseline:(id)arg1;
-- (void)setIcuNameCurrent:(id)arg1;
+- (void)setIcuTZSchemaVersion:(id)arg1;
 - (void)setShouldAlertAll:(id)arg1;
 - (void)setTzDataVersion:(id)arg1;
 - (id)shouldAlertAll;

@@ -7,8 +7,9 @@
 }
 
 @property (nonatomic, readonly) long long currentOffset;
-@property (nonatomic, readonly) int requestedLength;
+@property (nonatomic, readonly) long long requestedLength;
 @property (nonatomic, readonly) long long requestedOffset;
+@property (nonatomic, readonly) bool requestsAllDataToEndOfResource;
 
 - (id)_loadingRequest;
 - (long long)currentOffset;
@@ -16,9 +17,10 @@
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(int)arg3 canSupplyIncrementalDataImmediately:(BOOL)arg4;
-- (int)requestedLength;
+- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(long long)arg3 requestsAllDataToEndOfResource:(bool)arg4 canSupplyIncrementalDataImmediately:(bool)arg5;
+- (long long)requestedLength;
 - (long long)requestedOffset;
+- (bool)requestsAllDataToEndOfResource;
 - (void)respondWithData:(id)arg1;
 
 @end

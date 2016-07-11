@@ -6,18 +6,18 @@
     CALayer * _baseDimmingLayer;
     CALayer * _baseLayer;
     CALayer * _innerCircleLayer;
-    struct UIImage { Class x1; } * _innerImageMask;
-    BOOL  _isShowingStaleColor;
-    BOOL  _rotateInnerImageToMatchCourse;
-    BOOL  _shouldInnerPulse;
+    UIImage * _innerImageMask;
+    bool  _isShowingStaleColor;
+    bool  _rotateInnerImageToMatchCourse;
+    bool  _shouldInnerPulse;
 }
 
 @property (nonatomic, retain) UIImage *innerImageMask;
-@property (nonatomic) BOOL rotateInnerImageToMatchCourse;
-@property (nonatomic) BOOL shouldInnerPulse;
+@property (nonatomic) bool rotateInnerImageToMatchCourse;
+@property (nonatomic) bool shouldInnerPulse;
 
-+ (float)baseDiameter;
-+ (float)innerDiameter;
++ (double)baseDiameter;
++ (double)innerDiameter;
 
 - (void).cxx_destruct;
 - (struct CGColor { }*)_accuracyFillColor;
@@ -30,9 +30,9 @@
 - (id)_pulseAnimation;
 - (id)_pulseLayer;
 - (void)_resetLayerToMatchAccuracyRing;
-- (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)_setMapRotationRadians:(float)arg1;
-- (void)_setMapType:(unsigned int)arg1;
+- (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; })arg1;
+- (void)_setMapRotationRadians:(double)arg1;
+- (void)_setMapType:(unsigned long long)arg1;
 - (void)_setPresentationCourse:(double)arg1;
 - (void)_setupLayers;
 - (void)_updateAccuracyColors;
@@ -46,12 +46,12 @@
 - (void)didMoveToWindow;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)innerImageMask;
-- (BOOL)rotateInnerImageToMatchCourse;
-- (void)setEffectsEnabled:(BOOL)arg1;
-- (void)setInnerImageMask:(struct UIImage { Class x1; }*)arg1;
-- (void)setRotateInnerImageToMatchCourse:(BOOL)arg1;
-- (void)setShouldInnerPulse:(BOOL)arg1;
-- (BOOL)shouldInnerPulse;
+- (bool)rotateInnerImageToMatchCourse;
+- (void)setEffectsEnabled:(bool)arg1;
+- (void)setInnerImageMask:(id)arg1;
+- (void)setRotateInnerImageToMatchCourse:(bool)arg1;
+- (void)setShouldInnerPulse:(bool)arg1;
+- (bool)shouldInnerPulse;
 - (void)tintColorDidChange;
 
 @end

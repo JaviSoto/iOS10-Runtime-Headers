@@ -8,8 +8,11 @@
     NSObject<OS_dispatch_queue> * _settingsQueue;
 }
 
-@property (nonatomic) int shouldDisablePETs;
-@property (nonatomic) int shouldFakeAuthSuccess;
+@property (nonatomic, copy) NSDate *lastCheckInAttemptDate;
+@property (nonatomic, copy) NSDate *lastCheckInSuccessDate;
+@property (nonatomic) long long shouldDisablePETs;
+@property (nonatomic) long long shouldDisablePiggybacking;
+@property (nonatomic) long long shouldFakeAuthSuccess;
 
 + (id)sharedConfiguration;
 
@@ -17,10 +20,16 @@
 - (id)configurationValueForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)lastCheckInAttemptDate;
+- (id)lastCheckInSuccessDate;
 - (void)setConfigurationValue:(id)arg1 forKey:(id)arg2;
-- (void)setShouldDisablePETs:(int)arg1;
-- (void)setShouldFakeAuthSuccess:(int)arg1;
-- (int)shouldDisablePETs;
-- (int)shouldFakeAuthSuccess;
+- (void)setLastCheckInAttemptDate:(id)arg1;
+- (void)setLastCheckInSuccessDate:(id)arg1;
+- (void)setShouldDisablePETs:(long long)arg1;
+- (void)setShouldDisablePiggybacking:(long long)arg1;
+- (void)setShouldFakeAuthSuccess:(long long)arg1;
+- (long long)shouldDisablePETs;
+- (long long)shouldDisablePiggybacking;
+- (long long)shouldFakeAuthSuccess;
 
 @end

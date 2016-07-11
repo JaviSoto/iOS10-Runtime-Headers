@@ -8,6 +8,8 @@
 
 @property (nonatomic, retain) NSMutableArray *uploadTokens;
 
++ (Class)uploadTokensType;
+
 - (void).cxx_destruct;
 - (void)addUploadTokens:(id)arg1;
 - (void)clearUploadTokens;
@@ -15,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setUploadTokens:(id)arg1;
 - (id)uploadTokens;
-- (id)uploadTokensAtIndex:(unsigned int)arg1;
-- (unsigned int)uploadTokensCount;
+- (id)uploadTokensAtIndex:(unsigned long long)arg1;
+- (unsigned long long)uploadTokensCount;
 - (void)writeTo:(id)arg1;
 
 @end

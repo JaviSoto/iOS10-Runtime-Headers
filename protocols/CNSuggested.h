@@ -5,7 +5,8 @@
 
 @required
 
-- (BOOL)isSuggested;
+- (bool)isSuggested;
+- (NSString *)suggestionFoundInBundleId;
 - (SGRecordId *)suggestionRecordId;
 
 @end

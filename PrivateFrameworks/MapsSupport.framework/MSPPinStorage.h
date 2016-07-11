@@ -17,11 +17,11 @@
 }
 
 @property (nonatomic, retain) MSPDroppedPin *droppedPin;
-@property (nonatomic, readonly) BOOL hasDroppedPin;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic) BOOL hasPosition;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasDroppedPin;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic) bool hasPosition;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) double position;
 @property (nonatomic) double timestamp;
@@ -29,32 +29,34 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)droppedPin;
-- (BOOL)hasDroppedPin;
-- (BOOL)hasIdentifier;
-- (BOOL)hasPosition;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (unsigned int)hash;
+- (bool)hasDroppedPin;
+- (bool)hasIdentifier;
+- (bool)hasPosition;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (double)position;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDroppedPin:(id)arg1;
-- (void)setHasPosition:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasPosition:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPosition:(double)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setType:(int)arg1;
 - (double)timestamp;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

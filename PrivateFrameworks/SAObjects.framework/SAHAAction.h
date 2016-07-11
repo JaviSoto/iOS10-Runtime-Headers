@@ -8,6 +8,8 @@
 @property (nonatomic, copy) NSString *attribute;
 @property (nonatomic, retain) SAHAAttributeValue *value;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)action;
 + (id)actionWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -19,5 +21,9 @@
 - (void)setAttribute:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

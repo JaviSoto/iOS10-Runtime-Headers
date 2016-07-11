@@ -5,17 +5,18 @@
 @interface EKDirectorySearchOperation : NSOperation {
     NSString * _accountID;
     NSError * _error;
-    BOOL  _isExecuting;
-    BOOL  _isFinished;
-    BOOL  _numberOfMatchesExceededLimit;
+    bool  _isExecuting;
+    bool  _isFinished;
+    bool  _numberOfMatchesExceededLimit;
     EKDirectorySearchQuery * _query;
     id /* block */  _resultsBlock;
     id  _searchID;
 }
 
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL numberOfMatchesExceededLimit;
+@property (nonatomic) bool numberOfMatchesExceededLimit;
 
+- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1;
 - (id)_processGroupsInResults:(id)arg1;
 - (id)_processLocationsInResults:(id)arg1;
@@ -24,17 +25,16 @@
 - (void)_processResults:(id)arg1;
 - (id)_recordTypes;
 - (void)cancel;
-- (void)dealloc;
 - (id)error;
 - (id)init;
 - (id)initWithSource:(id)arg1 query:(id)arg2 resultsBlock:(id /* block */)arg3;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
-- (BOOL)numberOfMatchesExceededLimit;
+- (bool)numberOfMatchesExceededLimit;
 - (void)setError:(id)arg1;
-- (void)setNumberOfMatchesExceededLimit:(BOOL)arg1;
+- (void)setNumberOfMatchesExceededLimit:(bool)arg1;
 - (void)start;
 
 @end

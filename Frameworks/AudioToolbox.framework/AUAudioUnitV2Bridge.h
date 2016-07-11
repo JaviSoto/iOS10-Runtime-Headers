@@ -10,6 +10,8 @@
     NSObject<OS_dispatch_queue> * _eventListenerQueue;
     AUV2BridgeBusArray * _inputBusses;
     AUV2BridgeBusArray * _outputBusses;
+    struct AUListenerBase { } * _parameterListener;
+    bool  _removingObserverWithContext;
     struct unique_ptr<AUAudioUnitV2Bridge_Renderer, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer> > { 
         struct __compressed_pair<AUAudioUnitV2Bridge_Renderer *, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer> > { 
             struct AUAudioUnitV2Bridge_Renderer {} *__first_; 
@@ -17,28 +19,31 @@
     }  _renderer;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long)_elementCount:(unsigned long)arg1;
-- (BOOL)_elementCountWritable:(unsigned long)arg1;
+- (void)_addOrRemoveParameterListeners:(bool)arg1;
+- (void)_createEventListenerQueue;
+- (unsigned int)_elementCount:(unsigned int)arg1;
+- (bool)_elementCountWritable:(unsigned int)arg1;
 - (void)_invalidateParameterTree;
-- (void)_rebuildBusses:(unsigned long)arg1;
-- (BOOL)_setElementCount:(unsigned long)arg1 count:(unsigned long)arg2 error:(id*)arg3;
-- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
-- (BOOL)allocateRenderResourcesAndReturnError:(id*)arg1;
+- (void)_rebuildBusses:(unsigned int)arg1;
+- (bool)_setElementCount:(unsigned int)arg1 count:(unsigned int)arg2 error:(id*)arg3;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
+- (bool)allocateRenderResourcesAndReturnError:(id*)arg1;
 - (id)channelCapabilities;
 - (void)dealloc;
 - (void)deallocateRenderResources;
-- (long)enableBus:(unsigned long)arg1 scope:(unsigned long)arg2 enable:(BOOL)arg3;
+- (int)enableBus:(unsigned int)arg1 scope:(unsigned int)arg2 enable:(bool)arg3;
 - (void)init2;
 - (id)initWithAudioUnit:(struct OpaqueAudioComponentInstance { }*)arg1 description:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2;
-- (id)initWithComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1 options:(unsigned long)arg2 error:(id*)arg3;
+- (id)initWithComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)inputBusses;
 - (id /* block */)internalRenderBlock;
 - (id)outputBusses;
 - (id)parameterTree;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)reset;
 

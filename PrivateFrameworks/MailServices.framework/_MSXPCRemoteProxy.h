@@ -8,14 +8,16 @@
     id /* block */  _errorHandler;
     struct __CFDictionary { } * _knownSelectors;
     NSXPCInterface * _remoteInterface;
-    int  _selectorLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _selectorLock;
 }
 
 @property (setter=___setNSXPCRemoteObjectProxy:, nonatomic, retain) id ___nsxpc_remoteObjectProxy;
 
 - (id)___nsxpc_remoteObjectProxy;
 - (void)___setNSXPCRemoteObjectProxy:(id)arg1;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithConnection:(id)arg1 interface:(id)arg2 errorHandler:(id /* block */)arg3;

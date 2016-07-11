@@ -3,24 +3,24 @@
  */
 
 @interface TSUASLLogCategoryController : NSObject {
-    BOOL  _allCategoriesEnabledOverride;
     NSMutableDictionary * _dictionary;
+    long long  _overrideAllCategories;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic) BOOL allCategoriesEnabledOverride;
+@property long long overrideAllCategories;
 
 + (id)sharedController;
 
 - (void).cxx_destruct;
-- (BOOL)allCategoriesEnabledOverride;
 - (id)categories;
 - (id)init;
-- (BOOL)isCategoryDefined:(id)arg1;
-- (BOOL)isCategoryEnabled:(id)arg1;
+- (bool)isCategoryDefined:(id)arg1;
+- (bool)isCategoryEnabled:(id)arg1;
+- (long long)overrideAllCategories;
 - (void)readFromDefaults;
 - (void)removeCategory:(id)arg1;
-- (void)setAllCategoriesEnabledOverride:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1 forCategory:(id)arg2;
+- (void)setEnabled:(bool)arg1 forCategory:(id)arg2;
+- (void)setOverrideAllCategories:(long long)arg1;
 
 @end

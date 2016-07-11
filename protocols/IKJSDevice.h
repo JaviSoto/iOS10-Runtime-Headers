@@ -5,10 +5,12 @@
 
 @required
 
+- (NSString *)advertisingIdentifier;
 - (NSString *)appIdentifier;
 - (NSString *)appVersion;
 - (NSNumber *)capacity:(NSString *)arg1;
-- (BOOL)isInRetailDemoMode;
+- (bool)isAdvertisingTrackingEnabled;
+- (bool)isInRetailDemoMode;
 - (NSString *)model;
 - (NSNumber *)pixelRatio;
 - (NSString *)productType;

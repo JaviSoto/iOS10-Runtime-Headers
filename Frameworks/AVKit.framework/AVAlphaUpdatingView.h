@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id /* block */)alphaUpdatingBlock;
-- (void)setAlpha:(float)arg1;
+- (void)setAlpha:(double)arg1;
 - (void)setAlphaUpdatingBlock:(id /* block */)arg1;
 
 @end

@@ -4,4 +4,6 @@
 
 @interface ICPDFTextAttachment : ICTextAttachment
 
+- (bool)supportsThumbnailView;
+
 @end

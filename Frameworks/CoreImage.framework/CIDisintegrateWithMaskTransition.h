@@ -23,6 +23,7 @@
 + (id)customAttributes;
 
 - (id)_kernel;
+- (id)_kernelG;
 - (id)inputImage;
 - (id)inputMaskImage;
 - (id)inputShadowDensity;

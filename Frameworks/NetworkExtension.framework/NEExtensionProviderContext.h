@@ -12,8 +12,7 @@
 @property (retain) NEConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) <NEExtensionProviderHostProtocol> *hostContext;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ stopCompletionHandler;
 @property (readonly) Class superclass;
 
@@ -25,9 +24,10 @@
 - (void)completeSession;
 - (id)configuration;
 - (id)description;
+- (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dispose;
 - (id)hostContext;
-- (int)neStopReasonToProviderStopReason:(int)arg1;
+- (long long)neStopReasonToProviderStopReason:(int)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2 deviceIdentifier:(id)arg3;

@@ -3,6 +3,7 @@
  */
 
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying> {
+    GEOPDAutocompleteParametersAddressOnly * _addressOnly;
     GEOPDAutocompleteParametersAllEntries * _allEntries;
     GEOPDAutocompleteParametersAllEntriesWithBrowse * _allEntriesWithBrowse;
     GEOPDAutocompleteParametersFullEntriesOnly * _fullEntries;
@@ -11,19 +12,26 @@
     }  _has;
     GEOPDAutocompleteParametersLocalitiesAndLandmarks * _localitiesAndLandmarks;
     int  _requestType;
+    GEOPDAutocompleteParametersSiriSearch * _siriSearch;
 }
 
+@property (nonatomic, retain) GEOPDAutocompleteParametersAddressOnly *addressOnly;
 @property (nonatomic, retain) GEOPDAutocompleteParametersAllEntries *allEntries;
 @property (nonatomic, retain) GEOPDAutocompleteParametersAllEntriesWithBrowse *allEntriesWithBrowse;
 @property (nonatomic, retain) GEOPDAutocompleteParametersFullEntriesOnly *fullEntries;
-@property (nonatomic, readonly) BOOL hasAllEntries;
-@property (nonatomic, readonly) BOOL hasAllEntriesWithBrowse;
-@property (nonatomic, readonly) BOOL hasFullEntries;
-@property (nonatomic, readonly) BOOL hasLocalitiesAndLandmarks;
-@property (nonatomic) BOOL hasRequestType;
+@property (nonatomic, readonly) bool hasAddressOnly;
+@property (nonatomic, readonly) bool hasAllEntries;
+@property (nonatomic, readonly) bool hasAllEntriesWithBrowse;
+@property (nonatomic, readonly) bool hasFullEntries;
+@property (nonatomic, readonly) bool hasLocalitiesAndLandmarks;
+@property (nonatomic) bool hasRequestType;
+@property (nonatomic, readonly) bool hasSiriSearch;
 @property (nonatomic, retain) GEOPDAutocompleteParametersLocalitiesAndLandmarks *localitiesAndLandmarks;
 @property (nonatomic) int requestType;
+@property (nonatomic, retain) GEOPDAutocompleteParametersSiriSearch *siriSearch;
 
+- (int)StringAsRequestType:(id)arg1;
+- (id)addressOnly;
 - (id)allEntries;
 - (id)allEntriesWithBrowse;
 - (void)copyTo:(id)arg1;
@@ -32,23 +40,29 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fullEntries;
-- (BOOL)hasAllEntries;
-- (BOOL)hasAllEntriesWithBrowse;
-- (BOOL)hasFullEntries;
-- (BOOL)hasLocalitiesAndLandmarks;
-- (BOOL)hasRequestType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddressOnly;
+- (bool)hasAllEntries;
+- (bool)hasAllEntriesWithBrowse;
+- (bool)hasFullEntries;
+- (bool)hasLocalitiesAndLandmarks;
+- (bool)hasRequestType;
+- (bool)hasSiriSearch;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)localitiesAndLandmarks;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)requestType;
+- (id)requestTypeAsString:(int)arg1;
+- (void)setAddressOnly:(id)arg1;
 - (void)setAllEntries:(id)arg1;
 - (void)setAllEntriesWithBrowse:(id)arg1;
 - (void)setFullEntries:(id)arg1;
-- (void)setHasRequestType:(BOOL)arg1;
+- (void)setHasRequestType:(bool)arg1;
 - (void)setLocalitiesAndLandmarks:(id)arg1;
 - (void)setRequestType:(int)arg1;
+- (void)setSiriSearch:(id)arg1;
+- (id)siriSearch;
 - (void)writeTo:(id)arg1;
 
 @end

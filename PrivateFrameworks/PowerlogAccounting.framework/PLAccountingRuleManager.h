@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSRegularExpression *regex;
 @property (nonatomic, retain) NSMutableDictionary *ruleIDToRule;
 
++ (id)decryptData:(id)arg1 withKey:(id)arg2;
 + (id)firstLineWithFile:(id)arg1;
 + (id)rulesEntryKey;
 + (id)rulesPath;
@@ -24,7 +25,7 @@
 - (id)ruleForRuleID:(id)arg1;
 - (id)ruleIDToRule;
 - (id)ruleWithString:(id)arg1 withEntryDate:(id)arg2;
-- (id)rulesFromFileWithForceLoad:(BOOL)arg1;
+- (id)rulesFromFileWithForceLoad:(bool)arg1;
 - (void)setRegex:(id)arg1;
 - (void)setRuleIDToRule:(id)arg1;
 

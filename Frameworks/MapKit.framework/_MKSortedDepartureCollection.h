@@ -4,8 +4,6 @@
 
 @interface _MKSortedDepartureCollection : NSObject {
     NSMutableSet * _groupedSequences;
-    NSMapTable * _indexForDeparture;
-    NSMapTable * _sequenceForDeparture;
     NSMutableArray * _sortedDepartures;
 }
 
@@ -14,12 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)groupedSequences;
-- (unsigned int)indexInSequenceForDeparture:(id)arg1;
-- (id)init;
-- (id)sequenceForDeparture:(id)arg1;
 - (void)setGroupedSequences:(id)arg1;
-- (void)setIndexInSequence:(unsigned int)arg1 forDeparture:(id)arg2;
-- (void)setSequence:(id)arg1 forDeparture:(id)arg2;
 - (void)setSortedDepartures:(id)arg1;
 - (id)sortedDepartures;
 

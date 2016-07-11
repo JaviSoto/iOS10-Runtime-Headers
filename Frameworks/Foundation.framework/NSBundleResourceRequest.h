@@ -13,7 +13,7 @@
 @property (readonly) NSBundle *bundle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property double loadingPriority;
 @property (readonly) NSProgress *progress;
 @property (readonly) Class superclass;
@@ -23,6 +23,7 @@
 + (id)_assetPackBundleForBundle:(id)arg1 withAssetPackID:(id)arg2;
 + (id)_connection;
 + (id)_extensionEndpoint;
++ (id)_extensionEndpointForMainBundleOfHostApplication:(id)arg1;
 + (id)_manifestWithBundle:(id)arg1 error:(id*)arg2;
 + (void)_setConnection:(id)arg1;
 

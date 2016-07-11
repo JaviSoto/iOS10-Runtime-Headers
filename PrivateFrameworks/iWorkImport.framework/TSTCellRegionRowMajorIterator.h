@@ -3,8 +3,8 @@
  */
 
 @interface TSTCellRegionRowMajorIterator : NSObject <TSTCellRegionIterating> {
-    struct TSUColumnRowRect { 
-        struct { 
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -14,21 +14,21 @@
             unsigned short numberOfRows; 
         } size; 
     }  mBoundingCellRange;
-    struct { 
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
     }  mCellID;
-    struct set<TSUColumnRowRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUColumnRowRect> > { 
-        struct __tree<TSUColumnRowRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUColumnRowRect> > { 
-            struct __tree_node<TSUColumnRowRect, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUColumnRowRect, void *> > > { 
+    struct set<TSUCellRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUCellRect> > { 
+        struct __tree<TSUCellRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUCellRect> > { 
+            struct __tree_node<TSUCellRect, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUCellRect, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, TSTCellRangeRowMajorLess> { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  mCellRangeSet;
@@ -36,13 +36,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })getNext;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })getNext;
 - (id)initWithCellRegion:(id)arg1;
 - (void)terminate;
 

@@ -3,9 +3,9 @@
  */
 
 @interface SFPersonCollectionViewCell : UICollectionViewCell {
-    int  _cellState;
+    long long  _cellState;
     SFCircleProgressView * _circleProgressView;
-    BOOL  _darkStyleOnLegacyApp;
+    bool  _darkStyleOnLegacyApp;
     NSObject<SFPersonCollectionViewCellDelegate> * _delegate;
     UIColor * _fadedSecondLabelColor;
     SFPersonImageView * _imageView;
@@ -15,14 +15,15 @@
     NSArray * _progressKeyPaths;
     id  _progressToken;
     UILabel * _secondLabel;
+    NSLayoutConstraint * _secondLabelFBConstraint;
     NSArray * _secondLabelVisibleConstraintsArray;
     NSString * _sessionID;
-    BOOL  _stateBeingRestored;
+    bool  _stateBeingRestored;
 }
 
-@property (nonatomic) int cellState;
+@property (nonatomic) long long cellState;
 @property (nonatomic, retain) SFCircleProgressView *circleProgressView;
-@property (nonatomic) BOOL darkStyleOnLegacyApp;
+@property (nonatomic) bool darkStyleOnLegacyApp;
 @property (nonatomic) NSObject<SFPersonCollectionViewCellDelegate> *delegate;
 @property (nonatomic, retain) UIColor *fadedSecondLabelColor;
 @property (nonatomic, retain) SFPersonImageView *imageView;
@@ -32,22 +33,23 @@
 @property (nonatomic, retain) NSArray *progressKeyPaths;
 @property (nonatomic, retain) id progressToken;
 @property (nonatomic, retain) UILabel *secondLabel;
+@property (nonatomic, retain) NSLayoutConstraint *secondLabelFBConstraint;
 @property (nonatomic, retain) NSArray *secondLabelVisibleConstraintsArray;
 @property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) BOOL stateBeingRestored;
+@property (nonatomic) bool stateBeingRestored;
 
 - (void).cxx_destruct;
 - (void)addObserverOfValuesForKeyPaths:(id)arg1 ofObject:(id)arg2;
-- (int)cellState;
+- (long long)cellState;
 - (id)circleProgressView;
-- (BOOL)darkStyleOnLegacyApp;
+- (bool)darkStyleOnLegacyApp;
 - (void)dealloc;
 - (id)delegate;
 - (id)fadedSecondLabelColor;
 - (void)handleKVOUpdateForPerson:(id)arg1 keyPath:(id)arg2;
 - (void)handleKVOUpdateForProgress:(id)arg1 keyPath:(id)arg2;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)nameLabel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -57,14 +59,15 @@
 - (id)progressKeyPaths;
 - (id)progressToken;
 - (void)removeObserverOfValuesForKeyPaths:(id)arg1 ofObject:(id)arg2;
-- (void)restoreCellStateFromFinalTransferState:(int)arg1;
+- (void)restoreCellStateFromFinalTransferState:(long long)arg1;
 - (id)secondLabel;
+- (id)secondLabelFBConstraint;
 - (id)secondLabelVisibleConstraintsArray;
 - (id)sessionID;
-- (void)setCellState:(int)arg1;
-- (void)setCellState:(int)arg1 animated:(BOOL)arg2;
+- (void)setCellState:(long long)arg1;
+- (void)setCellState:(long long)arg1 animated:(bool)arg2;
 - (void)setCircleProgressView:(id)arg1;
-- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
+- (void)setDarkStyleOnLegacyApp:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFadedSecondLabelColor:(id)arg1;
 - (void)setImageView:(id)arg1;
@@ -74,12 +77,13 @@
 - (void)setProgressKeyPaths:(id)arg1;
 - (void)setProgressToken:(id)arg1;
 - (void)setSecondLabel:(id)arg1;
-- (void)setSecondLabelText:(id)arg1 withTextColor:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)setSecondLabelFBConstraint:(id)arg1;
+- (void)setSecondLabelText:(id)arg1 withTextColor:(id)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)setSecondLabelVisibleConstraintsArray:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setSessionID:(id)arg1;
-- (void)setStateBeingRestored:(BOOL)arg1;
-- (BOOL)stateBeingRestored;
+- (void)setStateBeingRestored:(bool)arg1;
+- (bool)stateBeingRestored;
 - (void)triggerKVOForKeyPaths:(id)arg1 ofObject:(id)arg2;
 - (void)updateNameLabel;
 - (void)updatePersonIconView;

@@ -10,13 +10,15 @@
 - (void).cxx_destruct;
 - (void)closeDatabase;
 - (void)dealloc;
-- (long)executeDatabaseBlock:(id /* block */)arg1;
+- (int)executeDatabaseBlock:(id /* block */)arg1;
 - (id)init;
-- (long)openDatabase;
+- (bool)isAssetBlacklisted:(id)arg1 blacklistDate:(id*)arg2;
+- (int)openDatabase;
 - (id)queryAnalysisForAsset:(id)arg1;
+- (id)queryAnalysisForAsset:(id)arg1 withTypes:(id)arg2;
 - (id)queryAssetsAnalyzedSince:(id)arg1;
-- (id)queryFeatureVectorForAsset:(id)arg1;
-- (long)queryHeaderForAsset:(id)arg1 analysis:(id*)arg2 assetId:(long long*)arg3;
-- (long)queryResultsForAssetId:(long long)arg1 analysis:(id)arg2;
+- (int)queryHeaderForAsset:(id)arg1 analysis:(id*)arg2 assetId:(long long*)arg3;
+- (int)queryResultsForAssetId:(long long)arg1 analysis:(id)arg2;
+- (int)queryResultsForAssetId:(long long)arg1 withTypes:(id)arg2 analysis:(id)arg3;
 
 @end

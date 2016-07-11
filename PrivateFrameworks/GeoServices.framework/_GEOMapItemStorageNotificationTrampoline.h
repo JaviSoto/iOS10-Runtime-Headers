@@ -3,7 +3,7 @@
  */
 
 @interface _GEOMapItemStorageNotificationTrampoline : NSObject {
-    <GEOMapItemPrivate> * _mapItem;
+    <GEOMapItem> * _mapItem;
     <NSObject> * _notificationToken;
     GEOMapItemStorage * _storage;
 }

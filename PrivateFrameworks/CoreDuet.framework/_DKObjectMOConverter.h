@@ -3,16 +3,21 @@
  */
 
 @interface _DKObjectMOConverter : NSObject {
-    BOOL  _readMetadata;
+    bool  _deduplicateValues;
+    bool  _readMetadata;
 }
 
-@property BOOL readMetadata;
+@property bool deduplicateValues;
+@property bool readMetadata;
 
-- (BOOL)copyObject:(id)arg1 intoManagedObject:(id)arg2;
-- (id)createObjectFromManagedObject:(id)arg1;
+- (bool)copyObject:(id)arg1 intoManagedObject:(id)arg2;
+- (id)dataIntervalsFromManagedObjects:(id)arg1;
+- (bool)deduplicateValues;
 - (id)init;
 - (id)insertObject:(id)arg1 inManagedObjectContext:(id)arg2;
-- (BOOL)readMetadata;
-- (void)setReadMetadata:(BOOL)arg1;
+- (id)objectsFromManagedObjects:(id)arg1;
+- (bool)readMetadata;
+- (void)setDeduplicateValues:(bool)arg1;
+- (void)setReadMetadata:(bool)arg1;
 
 @end

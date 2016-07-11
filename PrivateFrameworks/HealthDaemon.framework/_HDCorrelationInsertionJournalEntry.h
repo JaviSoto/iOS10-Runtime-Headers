@@ -5,24 +5,23 @@
 @interface _HDCorrelationInsertionJournalEntry : HDJournalEntry {
     NSUUID * _correlationUUID;
     NSData * _objectUUIDsData;
-    int  _provenance;
+    long long  _provenance;
 }
 
 @property (nonatomic, readonly) NSUUID *correlationUUID;
 @property (nonatomic, readonly) NSData *objectUUIDsData;
-@property (nonatomic, readonly) int provenance;
+@property (nonatomic, readonly) long long provenance;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
-+ (BOOL)supportsSecureCoding;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)correlationUUID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCorrelationUUID:(id)arg1 objectUUIDsData:(id)arg2 provenance:(int)arg3;
+- (id)initWithCorrelationUUID:(id)arg1 objectUUIDsData:(id)arg2 provenance:(long long)arg3;
 - (id)objectUUIDsData;
-- (int)provenance;
+- (long long)provenance;
 
 @end

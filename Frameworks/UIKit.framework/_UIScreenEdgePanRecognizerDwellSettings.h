@@ -3,8 +3,6 @@
  */
 
 @interface _UIScreenEdgePanRecognizerDwellSettings : _UISettings {
-    double  _longPressFlatPermittedHorizontalMovement;
-    double  _longPressFlatPermittedVerticalMovement;
     double  _longPressPermittedHorizontalMovement;
     double  _longPressPermittedVerticalMovement;
     double  _longPressRequiredDuration;
@@ -12,8 +10,6 @@
     double  _longPressTipPermittedVerticalMovement;
 }
 
-@property (nonatomic) double longPressFlatPermittedHorizontalMovement;
-@property (nonatomic) double longPressFlatPermittedVerticalMovement;
 @property (nonatomic) double longPressPermittedHorizontalMovement;
 @property (nonatomic) double longPressPermittedVerticalMovement;
 @property (nonatomic) double longPressRequiredDuration;
@@ -22,16 +18,12 @@
 
 + (id)settingsControllerModule;
 
-- (double)longPressFlatPermittedHorizontalMovement;
-- (double)longPressFlatPermittedVerticalMovement;
 - (double)longPressPermittedHorizontalMovement;
 - (double)longPressPermittedVerticalMovement;
 - (double)longPressRequiredDuration;
 - (double)longPressTipPermittedHorizontalMovement;
 - (double)longPressTipPermittedVerticalMovement;
 - (void)setDefaultValues;
-- (void)setLongPressFlatPermittedHorizontalMovement:(double)arg1;
-- (void)setLongPressFlatPermittedVerticalMovement:(double)arg1;
 - (void)setLongPressPermittedHorizontalMovement:(double)arg1;
 - (void)setLongPressPermittedVerticalMovement:(double)arg1;
 - (void)setLongPressRequiredDuration:(double)arg1;

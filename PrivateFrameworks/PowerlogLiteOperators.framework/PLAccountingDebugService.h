@@ -23,6 +23,7 @@
 - (void)testCorrection3;
 - (void)testCorrection4;
 - (void)testCorrectionInMemory;
+- (void)testCurrentDistributionEventForward;
 - (void)testDistribution1;
 - (void)testDistribution2;
 - (void)testDistribution3;
@@ -30,20 +31,22 @@
 - (void)testDistribution5;
 - (id)testNames;
 - (void)testPerformance;
+- (void)testPowerEventIntervalOverlap;
 - (void)testQualification1;
 - (void)testQualification2;
+- (void)testQualification3;
 - (void)testReloadAfter1;
 - (void)testReloadAfter2;
 - (void)testReloadBefore1;
 - (void)testReloadBefore2;
 - (void)testShortDistributionEventDuration;
 - (void)testShortQualificationEventDuration;
-- (BOOL)verifyAggregateQualificationEnergyWithQualificationID:(int)arg1 withRootNodeID:(int)arg2 withNodeName:(id)arg3 withQualificationEnergy:(double)arg4 withDate:(id)arg5;
-- (BOOL)verifyAggregateRootNodeEnergyWithNodeName:(id)arg1 withRootNodeID:(int)arg2 withEnergy:(double)arg3 withDate:(id)arg4;
-- (BOOL)verifyLastDistributionEventWithDistributionID:(int)arg1 withNodeName:(id)arg2 withWeight:(double)arg3;
-- (BOOL)verifyLastPowerEventWithRootNodeID:(int)arg1 withPower:(double)arg2;
-- (BOOL)verifyLastQualificationEventWithQualificationID:(int)arg1 withNodeName:(id)arg2;
-- (BOOL)verifyTotalCorrectionEnergyWithNodeName:(id)arg1 withTotalCorrectionEnergy:(double)arg2 withRootNodeID:(int)arg3;
-- (BOOL)verifyTotalEnergyWithNodeName:(id)arg1 withTotalEnergy:(double)arg2 withRootNodeID:(int)arg3 withEpsilon:(double)arg4;
+- (bool)verifyAggregateQualificationEnergyWithQualificationID:(int)arg1 withRootNodeID:(int)arg2 withNodeName:(id)arg3 withQualificationEnergy:(double)arg4 withDate:(id)arg5;
+- (bool)verifyAggregateRootNodeEnergyWithNodeName:(id)arg1 withRootNodeID:(int)arg2 withEnergy:(double)arg3 withDate:(id)arg4;
+- (bool)verifyLastDistributionEventWithDistributionID:(int)arg1 withNodeName:(id)arg2 withWeight:(double)arg3;
+- (bool)verifyLastPowerEventWithRootNodeID:(int)arg1 withPower:(double)arg2;
+- (bool)verifyLastQualificationEventWithQualificationID:(int)arg1 withNodeName:(id)arg2;
+- (bool)verifyTotalCorrectionEnergyWithNodeName:(id)arg1 withTotalCorrectionEnergy:(double)arg2 withRootNodeID:(int)arg3;
+- (bool)verifyTotalEnergyWithNodeName:(id)arg1 withTotalEnergy:(double)arg2 withRootNodeID:(int)arg3 withEpsilon:(double)arg4;
 
 @end

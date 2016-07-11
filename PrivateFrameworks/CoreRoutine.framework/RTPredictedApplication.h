@@ -5,17 +5,20 @@
 @interface RTPredictedApplication : NSObject <NSCopying, NSSecureCoding> {
     RTApplication * _application;
     double  _confidence;
-    int  _reason;
+    NSUUID * _identifier;
+    long long  _reason;
     RTSource * _source;
 }
 
 @property (nonatomic, readonly) RTApplication *application;
 @property (nonatomic, readonly) double confidence;
-@property (nonatomic, readonly) int reason;
+@property (nonatomic, retain) NSUUID *identifier;
+@property (nonatomic, readonly) long long reason;
 @property (nonatomic, retain) RTSource *source;
 
-+ (id)reasonToString:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)allowedKeys;
++ (id)reasonToString:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)application;
@@ -23,9 +26,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithApplication:(id)arg1 reason:(int)arg2 confidence:(double)arg3 source:(id)arg4;
+- (id)identifier;
+- (id)initWithApplication:(id)arg1 reason:(long long)arg2 confidence:(double)arg3 source:(id)arg4 identifier:(id)arg5;
 - (id)initWithCoder:(id)arg1;
-- (int)reason;
+- (long long)reason;
+- (void)setIdentifier:(id)arg1;
 - (void)setSource:(id)arg1;
 - (id)source;
 

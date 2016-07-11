@@ -14,14 +14,18 @@
 + (id)verticalScrollingContainerWithViewController:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_handleContentScrollViewDidChangeNotification:(id)arg1;
+- (void)_registerForContentScrollViewDidChangeNotification;
+- (void)_unregisterForContentScrollViewDidChangeNotification;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (id)initWithViewController:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)view;
 - (id)viewController;
 

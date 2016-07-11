@@ -3,34 +3,32 @@
  */
 
 @interface PKSecureElementConsistencyData : NSObject {
-    unsigned int  _backoffLevel;
+    unsigned long long  _backoffLevel;
     NSDictionary * _cleanupActionsByAID;
     NSDictionary * _passStateByAID;
+    NSArray * _registeredRegions;
     NSDictionary * _secureElementAppletStateByAID;
-    NSDictionary * _secureElementCardStateByAID;
 }
 
-@property (nonatomic) unsigned int backoffLevel;
-@property (nonatomic, retain) NSDictionary *cleanupActionsByAID;
-@property (nonatomic, readonly) NSDictionary *dictionary;
-@property (nonatomic, retain) NSDictionary *passStateByAID;
-@property (nonatomic, retain) NSDictionary *secureElementAppletStateByAID;
-@property (nonatomic, retain) NSDictionary *secureElementCardStateByAID;
+@property (nonatomic) unsigned long long backoffLevel;
+@property (nonatomic, copy) NSDictionary *cleanupActionsByAID;
+@property (nonatomic, copy) NSDictionary *passStateByAID;
+@property (nonatomic, copy) NSArray *registeredRegions;
+@property (nonatomic, copy) NSDictionary *secureElementAppletStateByAID;
 
-+ (id)consistencyDataWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 cleanupActions:(id)arg3;
-+ (id)consistencyDataWithPaymentApplications:(id)arg1 secureElementCards:(id)arg2 cleanupActions:(id)arg3;
++ (id)consistencyDataWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 cleanupActions:(id)arg3 registeredRegions:(id)arg4;
 
-- (unsigned int)backoffLevel;
+- (void).cxx_destruct;
+- (unsigned long long)backoffLevel;
 - (id)cleanupActionsByAID;
-- (void)dealloc;
-- (id)dictionary;
+- (id)dictionaryRepresentation;
 - (id)passStateByAID;
+- (id)registeredRegions;
 - (id)secureElementAppletStateByAID;
-- (id)secureElementCardStateByAID;
-- (void)setBackoffLevel:(unsigned int)arg1;
+- (void)setBackoffLevel:(unsigned long long)arg1;
 - (void)setCleanupActionsByAID:(id)arg1;
 - (void)setPassStateByAID:(id)arg1;
+- (void)setRegisteredRegions:(id)arg1;
 - (void)setSecureElementAppletStateByAID:(id)arg1;
-- (void)setSecureElementCardStateByAID:(id)arg1;
 
 @end

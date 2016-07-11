@@ -3,24 +3,24 @@
  */
 
 @interface CoreIRButton : NSObject <NSCopying, NSSecureCoding> {
-    unsigned long  _usageID;
-    unsigned long  _usagePage;
+    unsigned int  _usageID;
+    unsigned int  _usagePage;
 }
 
-@property (nonatomic, readonly) unsigned long usageID;
-@property (nonatomic, readonly) unsigned long usagePage;
+@property (nonatomic, readonly) unsigned int usageID;
+@property (nonatomic, readonly) unsigned int usagePage;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUsagePage:(unsigned long)arg1 usageID:(unsigned long)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned long)usageID;
-- (unsigned long)usagePage;
+- (id)initWithUsagePage:(unsigned int)arg1 usageID:(unsigned int)arg2;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)usageID;
+- (unsigned int)usagePage;
 
 @end

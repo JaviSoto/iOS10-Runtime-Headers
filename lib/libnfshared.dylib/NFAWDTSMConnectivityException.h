@@ -3,21 +3,21 @@
  */
 
 @interface NFAWDTSMConnectivityException : NSObject <NFAWDEventProtocol> {
+    unsigned int  _errorCode;
     AWDNFCTSMConnectivityExceptionEvent * _metric;
-    unsigned int  errorCode;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int errorCode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCTSMConnectivityExceptionEvent *metric;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (unsigned int)errorCode;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
 - (void)setErrorCode:(unsigned int)arg1;

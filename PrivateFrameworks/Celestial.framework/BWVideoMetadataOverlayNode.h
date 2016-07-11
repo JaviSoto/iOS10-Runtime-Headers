@@ -4,14 +4,13 @@
 
 @interface BWVideoMetadataOverlayNode : BWNode {
     NSArray * _extraDebugMetadataKeys;
-    BOOL  _markPixelBufferCenter;
+    bool  _markPixelBufferCenter;
 }
 
 + (void)initialize;
 
-- (long)_drawOverlayLogs:(id)arg1 toPixelBuffer:(struct __CVBuffer { }*)arg2;
-- (id)_logStringFromClientKeyLogString:(id)arg1 fromMetadataDict:(id)arg2;
-- (long)_renderDebugVideoMetadataOverlayToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)_drawOverlayLogs:(id)arg1 toPixelBuffer:(struct __CVBuffer { }*)arg2;
+- (int)_renderDebugVideoMetadataOverlayToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)init;

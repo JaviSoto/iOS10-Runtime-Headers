@@ -3,45 +3,60 @@
  */
 
 @interface CAMStillImageCaptureResponse : CAMCaptureResponse <CAMTransientAssetConvertible> {
-    BOOL  _HDREV0;
     NSString * _burstIdentifier;
-    unsigned int  _burstRepresentedCount;
+    unsigned long long  _burstRepresentedCount;
     NSDate * _captureDate;
+    bool  _expectingPairedVideo;
     UIImage * _imageWellImage;
     NSDictionary * _metadata;
+    bool  _originalForHDR;
     NSString * _persistenceUUID;
 }
 
-@property (getter=isHDREV0, nonatomic, readonly) BOOL HDREV0;
 @property (nonatomic, readonly, copy) NSString *burstIdentifier;
-@property (nonatomic, readonly) unsigned int burstRepresentedCount;
+@property (nonatomic, readonly) unsigned long long burstRepresentedCount;
 @property (nonatomic, readonly) NSDate *captureDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property (readonly) unsigned int hash;
+@property (getter=isExpectingPairedVideo, nonatomic, readonly) bool expectingPairedVideo;
+@property (nonatomic, readonly) bool flashFired;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIImage *imageWellImage;
-@property (nonatomic, readonly) unsigned int mediaType;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } irisStillDisplayTime;
+@property (nonatomic, readonly) NSString *irisStillImageUUID;
+@property (nonatomic, readonly) NSURL *irisVideoPersistenceURL;
+@property (nonatomic, readonly) unsigned long long mediaType;
 @property (nonatomic, readonly, copy) NSDictionary *metadata;
-@property (nonatomic, readonly) unsigned int numberOfRepresentedAssets;
+@property (nonatomic, readonly) unsigned long long numberOfRepresentedAssets;
+@property (getter=isOriginal, nonatomic, readonly) bool original;
+@property (getter=isOriginalForHDR, nonatomic, readonly) bool originalForHDR;
 @property (nonatomic, readonly, copy) NSURL *persistenceURL;
 @property (nonatomic, readonly, copy) NSString *persistenceUUID;
 @property (nonatomic, readonly) UIImage *placeholderImage;
+@property (nonatomic, readonly) unsigned short sessionIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *stillImageMetadata;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uuid;
 
 - (void).cxx_destruct;
 - (id)burstIdentifier;
-- (unsigned int)burstRepresentedCount;
+- (unsigned long long)burstRepresentedCount;
 - (id)captureDate;
+- (id)description;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (bool)flashFired;
 - (id)imageWellImage;
-- (id)initWithUUID:(id)arg1 captureDate:(id)arg2 metadata:(id)arg3 burstIdentifier:(id)arg4 burstRepresentedCount:(unsigned int)arg5 imageWellImage:(id)arg6 HDREV0:(BOOL)arg7;
-- (BOOL)isHDREV0;
-- (unsigned int)mediaType;
+- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 captureDate:(id)arg3 metadata:(id)arg4 burstIdentifier:(id)arg5 burstRepresentedCount:(unsigned long long)arg6 imageWellImage:(id)arg7 originalForHDR:(bool)arg8 expectingPairedVideo:(bool)arg9;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })irisStillDisplayTime;
+- (id)irisStillImageUUID;
+- (id)irisVideoPersistenceURL;
+- (bool)isExpectingPairedVideo;
+- (bool)isOriginal;
+- (bool)isOriginalForHDR;
+- (unsigned long long)mediaType;
 - (id)metadata;
-- (unsigned int)numberOfRepresentedAssets;
+- (unsigned long long)numberOfRepresentedAssets;
 - (id)persistenceURL;
 - (id)persistenceUUID;
 - (id)placeholderImage;

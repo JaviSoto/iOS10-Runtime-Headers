@@ -6,24 +6,30 @@
     NSMutableDictionary * _activeFaces;
     int  _angle;
     NSMutableArray * _detections;
-    FCRFaceDetector * _faceDetector;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _timeLastProcess;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _transform;
 }
 
-+ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })flipTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (id)faceDetectorWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 cancel:(id /* block */)arg2;
 
 - (void).cxx_destruct;
-- (long)analyzeFrame:(struct __CVBuffer { }*)arg1 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 flags:(unsigned int*)arg4;
-- (long)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 complete:(BOOL*)arg2;
-- (id)initWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)resetTracking;
+- (int)analyzeFrame:(struct __CVBuffer { }*)arg1 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 flags:(unsigned long long*)arg4;
+- (int)detectFaces:(struct __CVBuffer { }*)arg1 faces:(id)arg2;
+- (int)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (id)init;
+- (float)minProcessTimeIntervalInSecs;
 - (id)results;
 
 @end

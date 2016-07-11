@@ -4,7 +4,7 @@
 
 @interface XBLaunchImageProviderClient : BSBaseXPCClient
 
-- (void)_sendMessageType:(int)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4;
+- (void)_sendMessageType:(long long)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(bool)arg4;
 - (void)flushContextForApplicationWithCompatibilityInfo:(id)arg1;
 - (id)init;
 - (id)initWithDefaultService;

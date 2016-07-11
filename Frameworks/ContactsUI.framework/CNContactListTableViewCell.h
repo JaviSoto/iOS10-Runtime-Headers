@@ -6,14 +6,14 @@
     CNContact * _contact;
     CNContactFormatter * _contactFormatter;
     CNContactMatchInfo * _contactMatchInfo;
-    BOOL  _isMeCard;
+    bool  _isMeCard;
     <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, retain) CNContactMatchInfo *contactMatchInfo;
-@property (nonatomic) BOOL isMeCard;
+@property (nonatomic) bool isMeCard;
 @property (nonatomic, readonly) <ABStyleProvider> *styleProvider;
 
 + (void)contentSizeCategoryDidChange:(id)arg1;
@@ -23,14 +23,14 @@
 - (id)contact;
 - (id)contactFormatter;
 - (id)contactMatchInfo;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isMeCard;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isMeCard;
 - (void)setContact:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
 - (void)setContactMatchInfo:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setIsMeCard:(BOOL)arg1;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setIsMeCard:(bool)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (id)styleProvider;
 
 @end

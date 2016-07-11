@@ -4,7 +4,7 @@
 
 @interface MMCSHTTPSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
     NSMutableDictionary * _contextsForTasks;
-    BOOL  _isBackground;
+    bool  _isBackground;
     NSOperationQueue * _operationQueue;
     NSString * _sessionConfigurationId;
     NSString * _sessionName;
@@ -15,8 +15,8 @@
 @property (nonatomic, retain) NSMutableDictionary *contextsForTasks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL isBackground;
+@property (readonly) unsigned long long hash;
+@property bool isBackground;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (nonatomic, retain) NSString *sessionConfigurationId;
 @property (nonatomic, retain) NSString *sessionName;
@@ -37,13 +37,13 @@
 - (id)description;
 - (id)initWithName:(id)arg1 sessionConfigurationId:(id)arg2 configuration:(id)arg3;
 - (void)invalidateAndCancel;
-- (BOOL)isBackground;
+- (bool)isBackground;
 - (id)mmcsHTTPContextForTask:(id)arg1 reason:(id)arg2;
 - (id)operationQueue;
 - (id)sessionConfigurationId;
 - (id)sessionName;
 - (void)setContextsForTasks:(id)arg1;
-- (void)setIsBackground:(BOOL)arg1;
+- (void)setIsBackground:(bool)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setSessionConfigurationId:(id)arg1;
 - (void)setSessionName:(id)arg1;

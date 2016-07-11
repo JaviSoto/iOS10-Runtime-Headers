@@ -3,47 +3,61 @@
  */
 
 @interface CKDSharePCSData : CKDPCSData {
-    int  _myParticipantPermission;
-    int  _myParticipantType;
+    struct _OpaquePCSShareProtection { } * _myParticipantPCS;
+    NSData * _myParticipantPCSData;
+    long long  _myParticipantPermission;
+    long long  _myParticipantType;
     struct _OpaquePCSShareProtection { } * _publicPCS;
     NSData * _publicPCSData;
     NSString * _publicPCSEtag;
-    int  _publicPermission;
+    long long  _publicPermission;
+    unsigned long long  _serviceType;
     NSString * _shareEtag;
-    CKShareID * _shareID;
+    CKRecordID * _shareID;
 }
 
-@property (nonatomic) int myParticipantPermission;
-@property (nonatomic) int myParticipantType;
+@property (nonatomic) struct _OpaquePCSShareProtection { }*invitedPCS;
+@property (nonatomic) struct _OpaquePCSShareProtection { }*myParticipantPCS;
+@property (nonatomic, copy) NSData *myParticipantPCSData;
+@property (nonatomic) long long myParticipantPermission;
+@property (nonatomic) long long myParticipantType;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*publicPCS;
 @property (nonatomic, copy) NSData *publicPCSData;
 @property (nonatomic, copy) NSString *publicPCSEtag;
-@property (nonatomic) int publicPermission;
+@property (nonatomic) long long publicPermission;
+@property (nonatomic) unsigned long long serviceType;
 @property (nonatomic, retain) NSString *shareEtag;
-@property (nonatomic, retain) CKShareID *shareID;
+@property (nonatomic, retain) CKRecordID *shareID;
 
 + (id)dataWithShareID:(id)arg1 pcsData:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (void)dealloc;
-- (BOOL)decryptPCSDataWithManager:(id)arg1 error:(id*)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithShareID:(id)arg1 pcsData:(id)arg2;
-- (int)myParticipantPermission;
-- (int)myParticipantType;
+- (struct _OpaquePCSShareProtection { }*)invitedPCS;
+- (struct _OpaquePCSShareProtection { }*)myParticipantPCS;
+- (id)myParticipantPCSData;
+- (long long)myParticipantPermission;
+- (long long)myParticipantType;
 - (struct _OpaquePCSShareProtection { }*)publicPCS;
 - (id)publicPCSData;
 - (id)publicPCSEtag;
-- (int)publicPermission;
-- (void)setMyParticipantPermission:(int)arg1;
-- (void)setMyParticipantType:(int)arg1;
+- (long long)publicPermission;
+- (unsigned long long)serviceType;
+- (void)setInvitedPCS:(struct _OpaquePCSShareProtection { }*)arg1;
+- (void)setMyParticipantPCS:(struct _OpaquePCSShareProtection { }*)arg1;
+- (void)setMyParticipantPCSData:(id)arg1;
+- (void)setMyParticipantPermission:(long long)arg1;
+- (void)setMyParticipantType:(long long)arg1;
 - (void)setPublicPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setPublicPCSData:(id)arg1;
 - (void)setPublicPCSEtag:(id)arg1;
-- (void)setPublicPermission:(int)arg1;
+- (void)setPublicPermission:(long long)arg1;
+- (void)setServiceType:(unsigned long long)arg1;
 - (void)setShareEtag:(id)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareEtag;

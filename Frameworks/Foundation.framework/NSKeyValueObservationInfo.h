@@ -3,21 +3,16 @@
  */
 
 @interface NSKeyValueObservationInfo : NSObject {
-    unsigned int  _cachedHash;
-    BOOL  _cachedIsShareable;
+    unsigned long long  _cachedHash;
+    bool  _cachedIsShareable;
     NSArray * _observances;
-    int  _retainCountMinusOne;
 }
 
-- (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (id)_copyByAddingObservance:(id)arg1;
+- (id)_initWithObservances:(id*)arg1 count:(unsigned long long)arg2 hashValue:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 
 @end

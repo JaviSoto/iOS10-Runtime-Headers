@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@interface ATStoreInfo : NSObject {
+@interface ATStoreInfo : NSObject <NSSecureCoding> {
     NSMutableDictionary * _assetDictionary;
     NSMutableDictionary * _downloadDictionary;
 }
@@ -19,10 +19,14 @@
 @property (nonatomic, retain) NSString *flavor;
 @property (nonatomic, retain) NSNumber *matchStatus;
 @property (nonatomic, retain) NSString *podcastEpisodeGUID;
+@property (nonatomic, retain) NSString *redownloadParams;
 @property (nonatomic, retain) NSNumber *redownloadStatus;
 @property (nonatomic, retain) NSNumber *sagaID;
 @property (nonatomic, retain) NSString *storefrontID;
+@property (nonatomic, retain) NSString *syncID;
 @property (nonatomic, retain) NSNumber *versionID;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)DSID;
@@ -34,10 +38,13 @@
 - (id)dimensions;
 - (id)downloadDictionary;
 - (id)drmFree;
+- (void)encodeWithCoder:(id)arg1;
 - (id)flavor;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)matchStatus;
 - (id)podcastEpisodeGUID;
+- (id)redownloadParams;
 - (id)redownloadStatus;
 - (id)sagaID;
 - (void)setAdamID:(id)arg1;
@@ -49,12 +56,15 @@
 - (void)setFlavor:(id)arg1;
 - (void)setMatchStatus:(id)arg1;
 - (void)setPodcastEpisodeGUID:(id)arg1;
+- (void)setRedownloadParams:(id)arg1;
 - (void)setRedownloadStatus:(id)arg1;
 - (void)setSagaID:(id)arg1;
 - (void)setStorefrontID:(id)arg1;
+- (void)setSyncID:(id)arg1;
 - (void)setVersionID:(id)arg1;
 - (void)setXID:(id)arg1;
 - (id)storefrontID;
+- (id)syncID;
 - (id)versionID;
 
 @end

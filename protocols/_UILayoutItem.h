@@ -10,10 +10,15 @@
 - (NSISVariable *)_minXVariable;
 - (NSISVariable *)_minYVariable;
 - (void*)_referenceView;
+- (NSMutableSet *)_uili_existingLayoutVariables;
+- (void)_uili_removeLayoutVariableObservations;
+- (void)_uili_stashLayoutVariableObservation:(NSObservation *)arg1;
 - (NSISVariable *)nsli_boundsHeightVariable;
 - (NSISVariable *)nsli_boundsWidthVariable;
+- (NSISVariable *)nsli_heightVariable;
 - (NSISVariable *)nsli_minXVariable;
 - (NSISVariable *)nsli_minYVariable;
+- (NSISVariable *)nsli_widthVariable;
 
 @optional
 

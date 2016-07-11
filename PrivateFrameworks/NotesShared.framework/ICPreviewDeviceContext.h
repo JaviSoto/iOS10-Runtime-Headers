@@ -16,9 +16,10 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)deviceInfoScalable:(BOOL)arg1;
+- (id)deviceInfoScalable:(bool)arg1;
 - (id)deviceScales;
 - (id)init;
+- (double)maxSizeOfPreviewDeviceInfoImage;
 - (id)nonScalableDeviceInfo;
 - (id)scalableDeviceInfo;
 - (void)screensChangedNotification:(id)arg1;

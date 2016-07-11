@@ -3,20 +3,20 @@
  */
 
 @interface SFPersonImageView : UIImageView {
-    BOOL  _darkStyle;
-    BOOL  _overlay;
+    bool  _darkStyle;
+    bool  _overlay;
 }
 
-@property (nonatomic) BOOL darkStyle;
-@property (nonatomic) BOOL overlay;
+@property (nonatomic) bool darkStyle;
+@property (nonatomic) bool overlay;
 
-- (BOOL)darkStyle;
+- (bool)darkStyle;
 - (id)initWithPersonImageView:(id)arg1;
-- (BOOL)overlay;
-- (void)setDarkStyle:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)layoutSubviews;
+- (bool)overlay;
+- (void)setDarkStyle:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)setOverlay:(BOOL)arg1;
+- (void)setOverlay:(bool)arg1;
 
 @end

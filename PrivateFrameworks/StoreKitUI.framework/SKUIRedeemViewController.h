@@ -3,11 +3,11 @@
  */
 
 @interface SKUIRedeemViewController : UINavigationController {
-    BOOL  _attempsAutomaticRedeem;
+    bool  _attempsAutomaticRedeem;
     BOOL  _cameraRedeemEnabled;
-    int  _category;
+    long long  _category;
     SKUIClientContext * _clientContext;
-    int  _initialBarStyle;
+    long long  _initialBarStyle;
     NSString * _initialCode;
     NSOperationQueue * _operationQueue;
     SKUIRedeemPreflightOperation * _preflightOperation;
@@ -15,8 +15,8 @@
     SKUIRedeemStepViewController * _rootViewController;
 }
 
-@property (nonatomic) BOOL attempsAutomaticRedeem;
-@property (nonatomic, readonly) int category;
+@property (nonatomic) bool attempsAutomaticRedeem;
+@property (nonatomic, readonly) long long category;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, copy) NSString *initialCode;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
@@ -28,20 +28,21 @@
 - (void)_loadRootViewController;
 - (id)_newRootViewController;
 - (void)_showRootViewController;
-- (BOOL)attempsAutomaticRedeem;
-- (int)category;
+- (bool)attempsAutomaticRedeem;
+- (long long)category;
 - (id)clientContext;
-- (id)initWithRedeemCategory:(int)arg1;
+- (id)initWithRedeemCategory:(long long)arg1;
 - (id)initialCode;
 - (id)operationQueue;
-- (void)redeemAgainAnimated:(BOOL)arg1;
-- (void)setAttempsAutomaticRedeem:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)redeemAgainAnimated:(bool)arg1;
+- (void)setAttempsAutomaticRedeem:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setInitialCode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

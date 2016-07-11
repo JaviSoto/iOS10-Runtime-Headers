@@ -4,6 +4,7 @@
 
 @interface _GEOCandidateRouteMatch : NSObject {
     double  _distanceFromRoute;
+    bool  _isGoodMatch;
     struct { 
         double latitude; 
         double longitude; 
@@ -13,28 +14,31 @@
         float offset; 
     }  _routeCoordinate;
     double  _score;
-    unsigned int  _stepIndex;
+    unsigned long long  _stepIndex;
 }
 
 @property (nonatomic) double distanceFromRoute;
+@property (nonatomic) bool isGoodMatch;
 @property (nonatomic) struct { double x1; double x2; } locationCoordinate;
 @property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeCoordinate;
 @property (nonatomic) double score;
-@property (nonatomic) unsigned int stepIndex;
+@property (nonatomic) unsigned long long stepIndex;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
 - (double)distanceFromRoute;
 - (id)initWithRoute:(id)arg1;
+- (bool)isGoodMatch;
 - (struct { double x1; double x2; })locationCoordinate;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeCoordinate;
 - (double)score;
 - (void)setDistanceFromRoute:(double)arg1;
+- (void)setIsGoodMatch:(bool)arg1;
 - (void)setLocationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setScore:(double)arg1;
-- (void)setStepIndex:(unsigned int)arg1;
-- (unsigned int)stepIndex;
+- (void)setStepIndex:(unsigned long long)arg1;
+- (unsigned long long)stepIndex;
 
 @end

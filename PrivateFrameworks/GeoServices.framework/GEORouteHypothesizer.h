@@ -3,44 +3,51 @@
  */
 
 @interface GEORouteHypothesizer : NSObject {
+    NSString * _activityIdentifier;
+    NSError * _currentError;
     GEORouteHypothesis * _currentHypothesis;
+    NSObject<OS_dispatch_source> * _delayDispatchTimer;
     GEOPlannedDestination * _plannedDestination;
-    unsigned int  _state;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    unsigned long long  _state;
+    bool  _unableToFindRouteForOriginalTransportType;
     id /* block */  _updateHandler;
+    NSUUID * _uuid;
+    bool  _wakeForDelay;
 }
 
+@property (nonatomic, readonly) NSError *currentError;
 @property (nonatomic, readonly) GEORouteHypothesis *currentHypothesis;
-@property (nonatomic) <GEORouteHypothesizerDelegate> *delegate;
-@property (nonatomic) unsigned int etaUpdateFrequency;
-@property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
 @property (nonatomic, readonly) GEOPlannedDestination *plannedDestination;
-@property (nonatomic, readonly) GEOComposedRoute *route;
-@property (nonatomic) unsigned int state;
-@property (nonatomic, readonly) NSDate *suggestedNextUpdateDate;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic, readonly) bool unableToFindRouteForOriginalTransportType;
+@property (nonatomic, readonly) double willBeginHypothesizingInterval;
+@property (nonatomic, readonly) double willEndHypothesizingInterval;
 
 + (id)hypothesizerForPlannedDestination:(id)arg1;
++ (bool)transitTTLSupportedInCurrentCountry;
 
-- (BOOL)_wontHypothesizeAgain;
+- (void)_delayStartingWithXpc;
+- (void)_delayStartingWithoutXpc;
+- (void)_performDelayedStartWithIdentifier:(const char *)arg1;
+- (bool)_wontHypothesizeAgain;
+- (id)currentError;
 - (id)currentHypothesis;
 - (void)dealloc;
-- (id)delegate;
 - (id)description;
-- (unsigned int)etaUpdateFrequency;
-- (id)feedback;
-- (id)initWithExistingRoute:(id)arg1 source:(id)arg2 destination:(id)arg3 etaUpdater:(id)arg4;
+- (void)didPostUINotification:(unsigned long long)arg1;
 - (id)initWithPlannedDestination:(id)arg1;
-- (id)initWithSource:(id)arg1 toDestination:(id)arg2 arrivalDate:(id)arg3 usualRouteData:(id)arg4;
-- (id)initWithSource:(id)arg1 toDestination:(id)arg2 departureDate:(id)arg3 usualRouteData:(id)arg4;
+- (void)onlyPerformLocalUpdates;
 - (id)plannedDestination;
-- (id)route;
-- (void)setDelegate:(id)arg1;
-- (void)setEtaUpdateFrequency:(unsigned int)arg1;
-- (void)setFeedback:(id)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)requestRefresh;
+- (void)setDoNotWakeForDelay;
+- (void)setState:(unsigned long long)arg1;
 - (void)startHypothesizingWithUpdateHandler:(id /* block */)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (void)stopHypothesizing;
-- (id)suggestedNextUpdateDate;
-- (void)updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
+- (bool)unableToFindRouteForOriginalTransportType;
+- (bool)wakeForDelay;
+- (double)willBeginHypothesizingInterval;
+- (double)willEndHypothesizingInterval;
 
 @end

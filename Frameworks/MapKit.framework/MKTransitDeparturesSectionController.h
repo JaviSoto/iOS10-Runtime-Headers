@@ -2,48 +2,33 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitDeparturesSectionController : NSObject {
-    NSDate * _departureCutoffDate;
+@interface MKTransitDeparturesSectionController : MKTransitSectionController {
+    bool  _departuresAreVehicleSpecific;
     NSString * _direction;
-    NSDate * _expiredHighFrequencyCutoffDate;
-    unsigned int  _filteredFlags;
-    BOOL  _limitNumCellsOnly;
-    NSSet * _linesToExclude;
-    MKMapItem * _mapItem;
-    BOOL  _needsBuildRows;
-    unsigned int  _numberOfRows;
-    MKTransitDeparturesPagingFilter * _pagingFilter;
+    bool  _needsFindDeparturesAreVehicleSpecific;
+    bool  _needsFindRowForServiceGap;
     NSArray * _sequences;
     NSMapTable * _sequencesToInclude;
-    <GEOTransitSystem> * _system;
+    NSDictionary * _serviceGapStrings;
 }
 
-@property (nonatomic, retain) NSDate *departureCutoffDate;
-@property (nonatomic, retain) NSDate *expiredHighFrequencyCutoffDate;
-@property (nonatomic, retain) NSSet *linesToExclude;
-@property (nonatomic, readonly) BOOL showOperatingHours;
-@property (nonatomic, retain) <GEOTransitSystem> *system;
+@property (nonatomic, readonly) bool departuresAreVehicleSpecific;
+@property (nonatomic, readonly) bool showOperatingHours;
 
 - (void).cxx_destruct;
 - (void)_buildRows;
-- (BOOL)_needsBuildRows;
+- (id)_descriptionForDepartureDate:(id)arg1 canIncludeDate:(bool)arg2;
+- (bool)_isDateLastDeparture:(id)arg1 withNextDepartureDate:(id)arg2 forSequence:(id)arg3;
+- (id)_nextLastDepartureDateForSequence:(id)arg1 afterDate:(id)arg2;
+- (void)_serviceGapDate:(out id*)arg1 string:(out id*)arg2 forSequence:(id)arg3 withDepartureIndex:(unsigned long long)arg4;
 - (void)_setNeedsBuildRows;
-- (id)departureCutoffDate;
-- (id)expiredHighFrequencyCutoffDate;
-- (BOOL)hasFilteredLines;
-- (BOOL)hasFilteredRows;
-- (void)incrementPagingFilter;
+- (bool)departuresAreVehicleSpecific;
 - (id)init;
-- (id)initWithMapItem:(id)arg1 system:(id)arg2 direction:(id)arg3 limitNumCellsOnly:(BOOL)arg4;
-- (id)linesToExclude;
-- (unsigned int)numberOfRows;
-- (id)sequenceForRow:(int)arg1 outDepartureIndex:(unsigned int*)arg2 outIsNewLine:(out BOOL*)arg3 outNextLineIsSame:(out BOOL*)arg4;
+- (id)initWithMapItem:(id)arg1 system:(id)arg2;
+- (id)initWithMapItem:(id)arg1 system:(id)arg2 direction:(id)arg3;
+- (id)sequenceForRow:(long long)arg1 outIsNewLine:(out bool*)arg2 outNextLineIsSame:(out bool*)arg3;
 - (id)sequences;
-- (void)setDepartureCutoffDate:(id)arg1;
-- (void)setExpiredHighFrequencyCutoffDate:(id)arg1;
-- (void)setLinesToExclude:(id)arg1;
-- (void)setSystem:(id)arg1;
-- (BOOL)showOperatingHours;
-- (id)system;
+- (id)serviceGapDescriptionForRow:(long long)arg1;
+- (bool)showOperatingHours;
 
 @end

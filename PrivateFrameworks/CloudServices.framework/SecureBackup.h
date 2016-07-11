@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)_CreateSecureBackupConnection:(id)arg1;
+- (void)_backOffDateWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_backupWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_cachePassphraseWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_cachePassphraseWithInfoAsync:(id)arg1 completionQueue:(id)arg2;
@@ -23,10 +24,13 @@
 - (void)_getAccountInfoWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_getCountrySMSCodesWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_recoverWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_setBackOffDateWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_startSMSChallengeWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_stashRecoveryDataWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uncachePassphraseWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uncachePassphraseWithInfoAsync:(id)arg1 completionQueue:(id)arg2;
 - (void)_updateMetadataWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)backOffDateWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)backupWithInfo:(id)arg1;
 - (void)backupWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)cachePassphraseWithInfo:(id)arg1;
@@ -46,11 +50,13 @@
 - (void)recoverWithInfo:(id)arg1 completionBlockWithResults:(id /* block */)arg2;
 - (id)recoverWithInfo:(id)arg1 results:(id*)arg2;
 - (id)replyQueue;
+- (void)setBackOffDateWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setReplyQueue:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)startSMSChallengeWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)startSMSChallengeWithInfo:(id)arg1 completionBlockWithResults:(id /* block */)arg2;
 - (id)startSMSChallengeWithInfo:(id)arg1 results:(id*)arg2;
+- (void)stashRecoveryDataWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)syncQueue;
 - (id)uncachePassphraseWithInfo:(id)arg1;
 - (void)uncachePassphraseWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;

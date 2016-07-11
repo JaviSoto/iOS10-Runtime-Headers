@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
+@interface KeychainSyncSMSVerificationController : PSKeychainSyncTextEntryController <UIAlertViewDelegate> {
     NSString * _countryCode;
     NSString * _dialingPrefix;
     UIButton * _footerButton;
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *dialingPrefix;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PSKeychainSyncManager *keychainSyncManager;
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (readonly) Class superclass;

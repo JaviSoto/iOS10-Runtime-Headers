@@ -4,22 +4,23 @@
 
 @interface CKQLPreviewController : QLPreviewController <QLPreviewControllerDataSource> {
     NSArray * _previewItems;
-    UIView * _sourceView;
 }
 
 @property (nonatomic, copy) NSArray *previewItems;
-@property (nonatomic) UIView *sourceView;
 
+- (void).cxx_destruct;
 - (id)currentPreviewItem;
-- (void)dealloc;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)init;
-- (int)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
+- (void)loadView;
+- (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
+- (long long)preferredStatusBarStyle;
+- (id)previewActions;
+- (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (id)previewItems;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItems:(id)arg1;
-- (void)setSourceView:(id)arg1;
-- (id)sourceView;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

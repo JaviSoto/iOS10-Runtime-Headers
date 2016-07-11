@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)allAssetIdentifiers;
 - (id)bestAssetIdentifier;
+- (id)description;
 - (id)goodAssetIdentifiers;
 - (id)identifier;
 - (id)init;

@@ -6,10 +6,15 @@
     TSTRichTextPayload * mPayload;
 }
 
+@property (nonatomic, readonly) TSTRichTextPayload *richTextPayload;
+@property (nonatomic, readonly) TSWPStorage *richTextStorage;
+
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (id)initObjectWithRichTextPayload:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initObjectWithRichTextPayload:(id)arg1 refCount:(unsigned int)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)richTextPayload;
+- (id)richTextStorage;
 
 @end

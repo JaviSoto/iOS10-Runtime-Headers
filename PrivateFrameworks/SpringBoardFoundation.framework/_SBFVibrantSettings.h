@@ -8,45 +8,45 @@
     UIColor * _highlightLimitingColor;
     _UILegibilitySettings * _legibilitySettings;
     UIColor * _referenceColor;
-    float  _referenceContrast;
+    double  _referenceContrast;
     UIColor * _shimmerColor;
-    int  _style;
+    long long  _style;
     UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIColor *chevronShimmerColor;
 @property (nonatomic, retain) UIColor *highlightColor;
 @property (nonatomic, retain) UIColor *highlightLimitingColor;
-@property (nonatomic, readonly, retain) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic, readonly, retain) UIColor *referenceColor;
-@property (nonatomic, readonly) float referenceContrast;
+@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly) UIColor *referenceColor;
+@property (nonatomic, readonly) double referenceContrast;
 @property (nonatomic, retain) UIColor *shimmerColor;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 @property (nonatomic, retain) UIColor *tintColor;
 
-+ (id)vibrantSettingsWithReferenceColor:(id)arg1 referenceContrast:(float)arg2 legibilitySettings:(id)arg3;
++ (id)vibrantSettingsWithReferenceColor:(id)arg1 referenceContrast:(double)arg2 legibilitySettings:(id)arg3;
 
-- (id)_computeSourceColorDodgeColorForDestinationColor:(id)arg1 producingLuminanceChange:(float)arg2;
-- (int)_style;
+- (void).cxx_destruct;
+- (id)_computeSourceColorDodgeColorForDestinationColor:(id)arg1 producingLuminanceChange:(double)arg2;
+- (long long)_style;
 - (id)chevronShimmerColor;
-- (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)highlightColor;
 - (id)highlightLimitingColor;
-- (id)highlightLimitingViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithReferenceColor:(id)arg1 referenceContrast:(float)arg2 legibilitySettings:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)highlightLimitingViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithReferenceColor:(id)arg1 referenceContrast:(double)arg2 legibilitySettings:(id)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)legibilitySettings;
 - (id)referenceColor;
-- (float)referenceContrast;
+- (double)referenceContrast;
 - (void)setChevronShimmerColor:(id)arg1;
 - (void)setHighlightColor:(id)arg1;
 - (void)setHighlightLimitingColor:(id)arg1;
 - (void)setShimmerColor:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)shimmerColor;
-- (int)style;
+- (long long)style;
 - (id)tintColor;
-- (id)tintViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)tintViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

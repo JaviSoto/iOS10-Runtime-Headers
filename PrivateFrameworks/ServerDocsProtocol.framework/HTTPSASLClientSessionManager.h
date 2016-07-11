@@ -13,9 +13,8 @@
 + (id)HTTPSASLClientSessionManagerForService:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)authenticateClientSessionWithError:(id*)arg1;
+- (bool)authenticateClientSessionWithError:(id*)arg1;
 - (id)clientSession;
-- (void)dealloc;
 - (void)defaultsDidChange:(id)arg1;
 - (id)initWithService:(id)arg1;
 - (void)restoreCachedCookieAndCertDataFromPreferences;

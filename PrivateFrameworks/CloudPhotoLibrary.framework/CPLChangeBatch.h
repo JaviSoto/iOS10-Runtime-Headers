@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLChangeBatch : NSObject <NSFastEnumeration, NSSecureCoding> {
+@interface CPLChangeBatch : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding> {
     NSMutableDictionary * _additionalRecords;
     NSMutableDictionary * _localResources;
     NSMutableArray * _records;
@@ -10,7 +10,7 @@
 
 @property (nonatomic, readonly) NSArray *records;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addAdditionalRecord:(id)arg1;
@@ -23,8 +23,9 @@
 - (void)addRecordsFromBatch:(id)arg1;
 - (id)additionalRecordWithIdentifier:(id)arg1;
 - (void)appendLocalResources:(id)arg1 forItemWithCloudIdentifier:(id)arg2;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (id)cplFullDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -33,10 +34,11 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecords:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)localResourceOfType:(unsigned int)arg1 forItemWithCloudIdentifier:(id)arg2;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)localResourceOfType:(unsigned long long)arg1 forItemWithCloudIdentifier:(id)arg2;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)records;
+- (void)removeRecordWithIdentifier:(id)arg1;
 - (void)sortBatch;
 - (id)summaryDescription;
 

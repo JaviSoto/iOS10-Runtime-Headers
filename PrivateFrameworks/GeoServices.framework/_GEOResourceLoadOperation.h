@@ -2,30 +2,35 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOResourceLoadOperation : NSObject <GEOResourceLoadOperation, NSURLConnectionDataDelegate> {
+@interface _GEOResourceLoadOperation : NSObject <GEOResourceLoadOperation, NSURLSessionDataDelegate> {
     NSData * _auditToken;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     id /* block */  _completionHandler;
-    NSURLConnection * _conn;
     NSMutableData * _data;
-    BOOL  _expectsPartialContent;
+    bool  _expectsPartialContent;
+    NSLock * _lock;
+    bool  _requiresWiFi;
+    NSURLSession * _session;
+    NSURLSessionTask * _task;
     NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool requiresWiFi;
 @property (readonly) Class superclass;
 
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)cancel;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (id)initWithResource:(id)arg1 existingPartialData:(id)arg2 auditToken:(id)arg3 baseURLString:(id)arg4;
+- (bool)requiresWiFi;
+- (void)setRequiresWiFi:(bool)arg1;
 - (void)startWithCompletionHandler:(id /* block */)arg1 callbackQueue:(id)arg2;
 
 @end

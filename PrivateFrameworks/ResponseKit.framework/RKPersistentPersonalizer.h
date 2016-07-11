@@ -3,54 +3,53 @@
  */
 
 @interface RKPersistentPersonalizer : NSObject {
+    <RKDisplayStringsProvider> * _displayStringsProvider;
     NSURL * _dynamicDataURL;
-    int  _initialResponseCount;
     NSString * _languageID;
+    NSLocale * _languageLocale;
     NSDate * _lastDynamicDataCreationCheckDate;
     NSDate * _lastObservedDynamicDataCreationDate;
     void * _model;
-    NSPredicate * _nonEmptyStringsPredicate;
     NSMutableDictionary * _synonyms;
 }
 
+@property (readonly) <RKDisplayStringsProvider> *displayStringsProvider;
 @property (retain) NSURL *dynamicDataURL;
-@property int initialResponseCount;
 @property (retain) NSString *languageID;
+@property (retain) NSLocale *languageLocale;
 @property (retain) NSDate *lastDynamicDataCreationCheckDate;
 @property (retain) NSDate *lastObservedDynamicDataCreationDate;
 @property (readonly) void*model;
-@property (retain) NSPredicate *nonEmptyStringsPredicate;
 @property (retain) NSMutableDictionary *synonyms;
 
++ (id)nonEmptyStringsPredicate;
 + (void)removeAllDynamicModelsInDirectory:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)addUserResponse:(id)arg1 category:(unsigned int)arg2 context:(id)arg3 effectiveDate:(id)arg4;
-- (void)addUserResponseIfPresentInSynonyms:(id)arg1 category:(unsigned int)arg2 context:(id)arg3 effectiveDate:(id)arg4;
 - (void*)createLanguageModel;
 - (void)dealloc;
+- (id)displayStringsProvider;
 - (id)dynamicDataCreationDate;
 - (id)dynamicDataURL;
 - (void)flushDynamicData;
-- (id)getTopKResponsesWithSynonyms:(unsigned int)arg1 rootResponse:(id)arg2 context:(id)arg3 numberOfResponses:(int)arg4;
-- (id)getTopKUserResponses:(unsigned int)arg1 context:(id)arg2 numberOfResponses:(int)arg3;
-- (void)incrementUsageCountForCategory:(id)arg1 withRootResponse:(id)arg2 response:(id)arg3 count:(int)arg4 effectiveDate:(id)arg5;
-- (id)initWithLanguageIdentifier:(id)arg1 andDynamicDataURL:(id)arg2;
-- (int)initialResponseCount;
+- (id)headwordsForSynonym:(id)arg1;
+- (id)headwordsForSynonymPrefix:(id)arg1;
+- (id)init;
+- (id)initWithLanguageIdentifier:(id)arg1 andDynamicDataURL:(id)arg2 displayStringsProvider:(id)arg3;
 - (void)initializeDynamicLanguageModel;
 - (id)languageID;
+- (id)languageLocale;
 - (id)lastDynamicDataCreationCheckDate;
 - (id)lastObservedDynamicDataCreationDate;
-- (void)matchResponseGreedilyWithSynonym:(id)arg1 category:(id)arg2;
 - (void*)model;
-- (id)nonEmptyStringsPredicate;
 - (void)setDynamicDataURL:(id)arg1;
-- (void)setInitialResponseCount:(int)arg1;
 - (void)setLanguageID:(id)arg1;
+- (void)setLanguageLocale:(id)arg1;
 - (void)setLastDynamicDataCreationCheckDate:(id)arg1;
 - (void)setLastObservedDynamicDataCreationDate:(id)arg1;
-- (void)setNonEmptyStringsPredicate:(id)arg1;
 - (void)setSynonyms:(id)arg1;
 - (id)synonyms;
+- (id)topSynonymsForSpeechAct:(id)arg1 headword:(id)arg2 recipientContext:(id)arg3 maxCount:(unsigned long long)arg4;
+- (void)trainSynonymForSpeechAct:(id)arg1 headword:(id)arg2 userResponse:(id)arg3 recipientContext:(id)arg4 weight:(unsigned long long)arg5 effectiveDate:(id)arg6;
 
 @end

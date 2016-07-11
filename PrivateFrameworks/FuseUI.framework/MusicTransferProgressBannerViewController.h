@@ -11,18 +11,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_bannerEvent:(id)arg1;
-- (void)_reloadBannerViewAnimated:(BOOL)arg1;
-- (int)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (void)_reloadBannerViewAnimated:(bool)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)dealloc;
 - (id)initWithTransferAggregator:(id)arg1;
 - (void)loadView;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(int)arg2;
+- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
 - (void)transferAggregatorDidChange:(id)arg1;
 - (void)transferProgressViewControllerWillDismiss:(id)arg1;
 

@@ -9,7 +9,8 @@
     NSURL * _url;
 }
 
-- (BOOL)_reopenWithError:(id*)arg1;
+- (void).cxx_destruct;
+- (bool)_reopenWithError:(id*)arg1;
 - (void)dealloc;
 - (void)enumerateEntriesWithHandler:(id /* block */)arg1;
 - (id)fileWrapper;

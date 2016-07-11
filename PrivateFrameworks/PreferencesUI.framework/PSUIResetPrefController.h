@@ -3,24 +3,24 @@
  */
 
 @interface PSUIResetPrefController : PSListController {
-    UIAlertView * _alert;
     int  _codesEntered;
     int  _codesNeeded;
     PSSpecifier * _currentSpecifier;
     PSSpecifier * _locationSpecifier;
-    int  _locationSpecifierIndex;
+    long long  _locationSpecifierIndex;
     NSString * _passcode;
-    BOOL  _requirePasscode;
-    BOOL  _requireRestrictionsCode;
-    BOOL  _returningFromPINSheetWithSuccess;
-    BOOL  _shouldEraseWithFMiP;
-    BOOL  _shouldTryEraseAgainWithFMiP;
+    bool  _requirePasscode;
+    bool  _requireRestrictionsCode;
+    bool  _returningFromPINSheetWithSuccess;
+    bool  _shouldEraseDataPlans;
+    bool  _shouldEraseWithFMiP;
+    bool  _shouldTryEraseAgainWithFMiP;
 }
 
 - (void).cxx_destruct;
+- (void)_disablePhoneLocatorAndErase;
 - (void)_eraseSettingsAndContent;
 - (void)_resetWithMode:(int)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)confirmEraseCellularSettings;
 - (void)confirmationSpecifierConfirmed:(id)arg1;
 - (void)dealloc;
@@ -39,11 +39,10 @@
 - (void)resetKeyboardDictionary:(id)arg1;
 - (void)resetNetworkSettings:(id)arg1;
 - (void)resetPrivacyWarnings:(id)arg1;
-- (BOOL)shouldShowRoamingErasePrompt;
 - (id)specifiers;
 - (void)subscriberOptions:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateLocationResetSpecifier;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

@@ -4,21 +4,31 @@
 
 @interface MCDNowPlayingButton : UIButton {
     CALayer * _focusColorLayer;
-    BOOL  _hidesLeftBorder;
-    CALayer * _leftBorder;
+    double  _height;
+    bool  _hidesLeadingBorder;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _layoutFrameSize;
+    CALayer * _leadingBorder;
 }
 
-@property (nonatomic) BOOL hidesLeftBorder;
+@property (nonatomic) double height;
+@property (nonatomic) bool hidesLeadingBorder;
 
-+ (id)buttonWithHeight:(float)arg1;
-+ (id)wrappingViewForButton:(id)arg1;
++ (id)buttonWithHeight:(double)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (void)focusedViewDidChange;
-- (BOOL)hidesLeftBorder;
+- (double)height;
+- (bool)hidesLeadingBorder;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setHidesLeftBorder:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHeight:(double)arg1;
+- (void)setHidesLeadingBorder:(bool)arg1;
 - (void)sizeToFit;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

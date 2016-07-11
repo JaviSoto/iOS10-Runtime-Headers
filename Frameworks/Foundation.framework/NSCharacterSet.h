@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSCharacterSet : NSObject <NSCoding, NSCopying, NSMutableCopying>
+@interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 
 @property (readonly, copy) NSData *bitmapRepresentation;
 @property (readonly, copy) NSCharacterSet *invertedSet;
@@ -20,7 +20,7 @@
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)characterSetWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
@@ -31,32 +31,47 @@
 + (id)newlineCharacterSet;
 + (id)nonBaseCharacterSet;
 + (id)punctuationCharacterSet;
++ (bool)supportsSecureCoding;
 + (id)symbolCharacterSet;
 + (id)uppercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
 - (id)_retainedBitmapRepresentation;
 - (id)bitmapRepresentation;
-- (BOOL)characterIsMember:(unsigned short)arg1;
+- (bool)characterIsMember:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (unsigned int)hash;
+- (bool)hasMemberInPlane:(unsigned char)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)invertedSet;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMutable;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (BOOL)longCharacterIsMember:(unsigned long)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isMutable;
+- (bool)isSupersetOfSet:(id)arg1;
+- (bool)longCharacterIsMember:(unsigned int)arg1;
 - (void)makeImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)equalCharacterSet;
++ (id)forwardSlashCharacterSet;
++ (id)percentCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/EmojiFoundation.framework/EmojiFoundation
+
++ (id)_emojiCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
++ (id)invalidCharactersForFileTransferName;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
@@ -67,6 +82,11 @@
 + (id)emojiCharacterSet;
 + (id)whitespaceNewlineAndSpecialCharacterSet;
 + (id)wordBreakCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
++ (id)phoneNumberSeparatorCharacterSet;
++ (id)phoneNumberSeparatorCharacterSet;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
@@ -88,5 +108,11 @@
 + (id)tswp_smartSingleQuotesCharacterSet;
 + (id)tswp_spaceCharacterSet;
 + (id)tswp_variationSelectorCharacterSet;
+
+// Image: /System/Library/TextInput/libTextInputCore.dylib
+
++ (id)pinyinInputCharacterSet;
++ (id)punctuationAndWhitespaceCharacterSet;
++ (id)sentenceDelimiterCharacterSet;
 
 @end

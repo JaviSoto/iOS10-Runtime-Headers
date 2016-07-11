@@ -10,6 +10,7 @@
 @property (nonatomic) <TKTonePickerTableViewLayoutMarginsObserver> *layoutMarginsObserver;
 @property (nonatomic) <TKTonePickerTableViewSeparatorObserver> *separatorObserver;
 
+- (void).cxx_destruct;
 - (void)_handleSeparatorColorDidChange;
 - (void)layoutMarginsDidChange;
 - (id)layoutMarginsObserver;

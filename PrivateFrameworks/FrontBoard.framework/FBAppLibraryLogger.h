@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBAppLibraryLogger : FBFileLogger
+@interface FBAppLibraryLogger : NSObject {
+    NSObject<OS_os_log> * _aggregateLog;
+}
 
-- (void)_setEnabled:(BOOL)arg1;
-- (void)_setLevel:(int)arg1;
-- (int)level;
-- (int)maxLogSize;
-- (id)name;
-- (BOOL)shouldEnableOnInternalBuilds;
++ (id)sharedInstance;
+
+- (id)init;
+- (void)logToAggregateInstallationLog:(unsigned long long)arg1 step:(unsigned long long)arg2 success:(bool)arg3 bundleID:(id)arg4 description:(id)arg5;
 
 @end

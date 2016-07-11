@@ -4,4 +4,18 @@
 
 @interface NSLayoutXAxisAnchor : NSLayoutAnchor
 
+- (long long)_directionAbstraction;
+- (bool)_validateOtherXAxisAnchorDirectionAbstraction:(long long)arg1;
+- (id)anchorByOffsettingWithConstant:(double)arg1;
+- (id)anchorByOffsettingWithDimension:(id)arg1;
+- (id)anchorByOffsettingWithDimension:(id)arg1 multiplier:(double)arg2 constant:(double)arg3;
+- (id)anchorWithOffsetToAnchor:(id)arg1;
+- (id)distanceTo:(id)arg1;
+- (bool)isCompatibleWithAnchor:(id)arg1;
+- (id)offsetBy:(double)arg1;
+- (id)offsetByDimension:(id)arg1;
+- (id)offsetByDimension:(id)arg1 times:(double)arg2 plus:(double)arg3;
+- (id)offsetTo:(id)arg1;
+- (bool)validateOtherAttribute:(long long)arg1;
+
 @end

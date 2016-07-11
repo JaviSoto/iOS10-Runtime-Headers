@@ -8,9 +8,8 @@
 
 @property (nonatomic, readonly) HKActivityCache *activityCache;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
-+ (BOOL)supportsSecureCoding;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activityCache;

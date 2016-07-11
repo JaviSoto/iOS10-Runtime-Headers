@@ -2,17 +2,30 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMyMusicViewController : SKUIScrollingSegmentedController <MusicClientContextConsuming, SKUITabBarItemRootViewController>
+@interface MusicMyMusicViewController : SKUIScrollingSegmentedController <MusicClientContextConsuming, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController> {
+    SKUIProxyScrollView * _proxyScrollView;
+    MusicLibraryTopBarController * _topBarController;
+}
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (void)_didChangeLibrary:(id)arg1;
+- (void)_updatePrompt;
+- (id)contentScrollView;
+- (void)dealloc;
 - (id)initWithTabBarItem:(id)arg1;
-- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)scrollViewDidChangeContentInset:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

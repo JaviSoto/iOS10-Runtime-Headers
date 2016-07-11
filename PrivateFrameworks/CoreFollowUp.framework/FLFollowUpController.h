@@ -2,23 +2,34 @@
    Image: /System/Library/PrivateFrameworks/CoreFollowUp.framework/CoreFollowUp
  */
 
-@interface FLFollowUpController : NSObject {
+@interface FLFollowUpController : NSObject <NSXPCListenerDelegate> {
     NSString * _clientIdentifier;
     NSXPCConnection * _conn;
     NSLock * _connLock;
     <FLFollowUpControllerDelegate> * _delegate;
+    NSXPCListener * _listener;
     NSString * _machServiceName;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FLFollowUpControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_didActivateHSA2LoginNotification:(id)arg1;
+- (void)_postHSA2LoginCode:(id)arg1 withNotification:(id)arg2 completion:(id /* block */)arg3;
 - (void)_postHSA2LoginNotification:(id)arg1 completion:(id /* block */)arg2;
+- (void)_postHSA2PasswordChangeForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)_postHSA2PasswordResetNotification:(id)arg1 completion:(id /* block */)arg2;
+- (void)_tearDownHSA2LoginNotificationWithPushMessageID:(id)arg1;
 - (void)clearPendingFollowUpItemsWithCompletion:(id /* block */)arg1;
+- (void)clearPendingFollowUpItemsWithUniqueIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (void)countOfPendingFollowUpItemsWithCompletion:(id /* block */)arg1;
 - (id)delegate;
 - (id)initWithClientIdentifier:(id)arg1 machServiceName:(id)arg2 delegate:(id)arg3;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)pendingFollowUpItemsWithCompletion:(id /* block */)arg1;
 - (void)postFollowUpItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;

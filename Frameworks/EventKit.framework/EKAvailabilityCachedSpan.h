@@ -10,8 +10,8 @@
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic, retain) EKAvailabilitySpan *span;
 
+- (void).cxx_destruct;
 - (id)creationDate;
-- (void)dealloc;
 - (id)description;
 - (void)setCreationDate:(id)arg1;
 - (void)setSpan:(id)arg1;

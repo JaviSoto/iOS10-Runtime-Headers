@@ -6,7 +6,6 @@
     NSArray * _calendars;
     NSDate * _endDate;
     NSSet * _restrictedCalendarRowIDs;
-    BOOL  _shouldLoadDefaultProperties;
     NSDate * _startDate;
     NSTimeZone * _timeZone;
     NSString * _title;
@@ -19,7 +18,7 @@
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)calendars;

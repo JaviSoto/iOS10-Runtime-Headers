@@ -6,12 +6,16 @@
     CalPreferences * _preferences;
 }
 
-@property (nonatomic) BOOL enableTravelAdvisoriesForAutomaticBehavior;
+@property (getter=get_enableTravelAdvisoriesForAutomaticBehavior, setter=set_enableTravelAdvisoriesForAutomaticBehavior:, nonatomic) bool enableTravelAdvisoriesForAutomaticBehavior;
+@property (getter=get_suggestEventLocations, setter=set_suggestEventLocations:, nonatomic) bool suggestEventLocations;
 
 + (id)shared;
 
-- (BOOL)enableTravelAdvisoriesForAutomaticBehavior;
+- (void).cxx_destruct;
+- (bool)get_enableTravelAdvisoriesForAutomaticBehavior;
+- (bool)get_suggestEventLocations;
 - (id)init;
-- (void)setEnableTravelAdvisoriesForAutomaticBehavior:(BOOL)arg1;
+- (void)set_enableTravelAdvisoriesForAutomaticBehavior:(bool)arg1;
+- (void)set_suggestEventLocations:(bool)arg1;
 
 @end

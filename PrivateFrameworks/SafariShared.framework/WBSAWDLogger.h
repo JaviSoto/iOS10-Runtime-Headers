@@ -12,12 +12,11 @@
 + (id)sharedLogger;
 
 - (void).cxx_destruct;
-- (void)_submitMetric:(id)arg1 withId:(unsigned int)arg2;
 - (id)awdServer;
 - (id)init;
-- (void)pageLoadCompleted:(unsigned int)arg1;
-- (void)pageLoadCompleted:(unsigned int)arg1 withConfigurationID:(unsigned int)arg2;
-- (void)pageLoadStarted:(unsigned int)arg1;
-- (void)pageLoadStarted:(unsigned int)arg1 withConfigurationID:(unsigned int)arg2;
+- (void)pageLoadCompleted:(unsigned long long)arg1;
+- (void)pageLoadCompleted:(unsigned long long)arg1 withConfigurationID:(unsigned long long)arg2;
+- (void)pageLoadStarted:(unsigned long long)arg1;
+- (void)pageLoadStarted:(unsigned long long)arg1 withConfigurationID:(unsigned long long)arg2;
 
 @end

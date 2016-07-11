@@ -4,7 +4,9 @@
 
 @interface PKPaymentSetupFieldBuiltInCardExpiration : PKPaymentSetupFieldDate
 
-- (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
-- (BOOL)isBuiltIn;
+- (id)_calendar;
+- (id)_locale;
+- (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
+- (bool)isBuiltIn;
 
 @end

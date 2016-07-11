@@ -7,10 +7,11 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *outputLogs;
 @property (nonatomic, copy) NSString *refId;
-@property (nonatomic) int status;
+@property (nonatomic, copy) NSString *results;
+@property (nonatomic) long long status;
 @property (readonly) Class superclass;
 
 + (id)abstractClientCommandCompleted;
@@ -19,8 +20,10 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)outputLogs;
+- (id)results;
 - (void)setOutputLogs:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setResults:(id)arg1;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

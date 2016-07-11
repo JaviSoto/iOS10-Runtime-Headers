@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityTracklistItemView : MusicEntityAbstractLockupView <MPUTextDrawingCacheInvalidationObserver, MusicEntityContentDescriptorViewConfiguring> {
+@interface MusicEntityTracklistItemView : MusicEntityAbstractLockupView <MPUTextDrawingCacheInvalidationObserver, MusicEntityContentDescriptorViewConfiguring, MusicEntityViewDownloadInformationObserving> {
+    bool  _alwaysApplyLeadingTextColumnWidth;
     UIButton * _contextualActionsButton;
     <MusicEntityTracklistItemViewDelegate> * _delegate;
     struct { 
@@ -10,59 +11,72 @@
         unsigned int didSelectPlayButton : 1; 
         unsigned int shouldLayoutAsEditing : 1; 
     }  _delegateRespondsToSelector;
-    MusicDownloadStatusSashView * _downloadStatusSashView;
+    struct MusicEntityDownloadInformation { 
+        long long downloadStatus; 
+        double downloadProgress; 
+    }  _downloadInformation;
+    MusicDownloadProgressButton * _downloadProgressButton;
     UIImageView * _explicitBadgeImageView;
     MPUNowPlayingIndicatorView * _indicatorView;
-    float  _leadingTextColumnWidth;
+    double  _leadingTextColumnWidth;
     UIImageView * _mediaTypeImageView;
+    MusicPopularityIndicatorView * _popularityIndicatorView;
     NSMapTable * _textDescriptorToTextDrawingView;
     NSMutableArray * _textDrawingViewReusePool;
     UIImageView * _trailingAccessoryImageView;
-    float  _trailingTextColumnWidth;
+    double  _trailingTextColumnWidth;
 }
 
+@property (nonatomic) bool alwaysApplyLeadingTextColumnWidth;
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (nonatomic, readonly) UIButton *contextualActionsButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityTracklistItemViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) struct MusicEntityDownloadInformation { long long x1; double x2; } downloadInformation;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float leadingTextColumnWidth;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double leadingTextColumnWidth;
 @property (readonly) Class superclass;
-@property (nonatomic) float trailingTextColumnWidth;
+@property (nonatomic) double trailingTextColumnWidth;
 
-+ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
++ (double)maximumHeightForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_allTextDescriptorsInTracklistItemContentDescriptor:(id)arg1;
+- (id)_backgroundColorForTracklistItemSubviews;
 - (void)_contentDescriptorDidChange:(id)arg1;
 - (void)_contentDescriptorDidInvalidateNotification:(id)arg1;
 - (void)_contextualActionsButtonTapped:(id)arg1;
 - (void)_entityDisabledDidChange;
 - (void)_handleArtworkViewTapped;
-- (void)_handlePlayButtonTappedWithAction:(unsigned int)arg1;
+- (void)_handlePlayButtonTappedWithAction:(unsigned long long)arg1;
 - (void)_playbackStatusDidChange:(id)arg1;
 - (void)_recycleTextDrawingViewForTextDescriptor:(id)arg1;
 - (void)_recycleTextViewsForTextDescriptors:(id)arg1;
-- (BOOL)_shouldEnableArtworkViewUserInteraction;
-- (BOOL)_shouldLayoutAsEditing;
-- (BOOL)_shouldShowPlayButton;
+- (bool)_shouldEnableArtworkViewUserInteraction;
+- (bool)_shouldLayoutAsEditing;
+- (bool)_shouldShowPlayButton;
 - (void)_updatePlaybackIndicator;
 - (id)_viewForTextDescriptor:(id)arg1;
+- (bool)alwaysApplyLeadingTextColumnWidth;
 - (id)contentDescriptor;
 - (id)contextualActionsButton;
 - (void)dealloc;
 - (id)delegate;
-- (void)layoutMarginsDidChange;
+- (struct MusicEntityDownloadInformation { long long x1; double x2; })downloadInformation;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)leadingTextColumnWidth;
+- (double)leadingTextColumnWidth;
+- (void)music_inheritedLayoutInsetsDidChange;
+- (void)setAlwaysApplyLeadingTextColumnWidth:(bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLeadingTextColumnWidth:(float)arg1;
-- (void)setTrailingTextColumnWidth:(float)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
+- (void)setLeadingTextColumnWidth:(double)arg1;
+- (void)setTrailingTextColumnWidth:(double)arg1;
 - (void)textDrawingCacheWasInvalidated:(id)arg1;
-- (float)trailingTextColumnWidth;
+- (double)trailingTextColumnWidth;
 
 @end

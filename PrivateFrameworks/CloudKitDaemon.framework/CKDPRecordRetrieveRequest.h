@@ -3,6 +3,7 @@
  */
 
 @interface CKDPRecordRetrieveRequest : PBRequest <NSCopying> {
+    CKDPAssetsToDownload * _assetsToDownload;
     NSString * _clientVersionETag;
     CKDPRecordRetrieveRequestRetrieveAssetURL * _getAssetURL;
     CKDPRecordIdentifier * _recordIdentifier;
@@ -10,13 +11,15 @@
     NSString * _versionETag;
 }
 
+@property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;
 @property (nonatomic, retain) NSString *clientVersionETag;
 @property (nonatomic, retain) CKDPRecordRetrieveRequestRetrieveAssetURL *getAssetURL;
-@property (nonatomic, readonly) BOOL hasClientVersionETag;
-@property (nonatomic, readonly) BOOL hasGetAssetURL;
-@property (nonatomic, readonly) BOOL hasRecordIdentifier;
-@property (nonatomic, readonly) BOOL hasRequestedFields;
-@property (nonatomic, readonly) BOOL hasVersionETag;
+@property (nonatomic, readonly) bool hasAssetsToDownload;
+@property (nonatomic, readonly) bool hasClientVersionETag;
+@property (nonatomic, readonly) bool hasGetAssetURL;
+@property (nonatomic, readonly) bool hasRecordIdentifier;
+@property (nonatomic, readonly) bool hasRequestedFields;
+@property (nonatomic, readonly) bool hasVersionETag;
 @property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
 @property (nonatomic, retain) CKDPRequestedFields *requestedFields;
 @property (nonatomic, retain) NSString *versionETag;
@@ -24,25 +27,28 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (id)assetsToDownload;
 - (id)clientVersionETag;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)getAssetURL;
-- (BOOL)hasClientVersionETag;
-- (BOOL)hasGetAssetURL;
-- (BOOL)hasRecordIdentifier;
-- (BOOL)hasRequestedFields;
-- (BOOL)hasVersionETag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAssetsToDownload;
+- (bool)hasClientVersionETag;
+- (bool)hasGetAssetURL;
+- (bool)hasRecordIdentifier;
+- (bool)hasRequestedFields;
+- (bool)hasVersionETag;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;
 - (Class)responseClass;
+- (void)setAssetsToDownload:(id)arg1;
 - (void)setClientVersionETag:(id)arg1;
 - (void)setGetAssetURL:(id)arg1;
 - (void)setRecordIdentifier:(id)arg1;

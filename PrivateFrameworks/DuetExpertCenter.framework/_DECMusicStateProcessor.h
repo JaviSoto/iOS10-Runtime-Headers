@@ -3,15 +3,15 @@
  */
 
 @interface _DECMusicStateProcessor : NSObject {
-    BOOL  _inCar;
+    bool  _inCar;
     _DECMusicContainer * _lastPlayed;
     _DECMusicContainer * _lastPlayedInCar;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic) BOOL inCar;
-@property (nonatomic, readonly) _DECMusicContainer *lastPlayed;
-@property (nonatomic, readonly) _DECMusicContainer *lastPlayedInCar;
+@property (nonatomic) bool inCar;
+@property (nonatomic, retain) _DECMusicContainer *lastPlayed;
+@property (nonatomic, retain) _DECMusicContainer *lastPlayedInCar;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)shared;
@@ -25,12 +25,16 @@
 - (void)_initStarkConnect;
 - (void)_initStarkDisconnect;
 - (void)_persist;
-- (BOOL)inCar;
+- (bool)inCar;
 - (id)init;
 - (id)lastPlayed;
 - (id)lastPlayedInCar;
+- (void)lastPlayedInCarWithHandler:(id /* block */)arg1;
+- (void)lastPlayedWithHandler:(id /* block */)arg1;
 - (id)queue;
-- (void)setInCar:(BOOL)arg1;
+- (void)setInCar:(bool)arg1;
+- (void)setLastPlayed:(id)arg1;
+- (void)setLastPlayedInCar:(id)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

@@ -9,22 +9,22 @@
     bool  _outputWasEnabled;
 }
 
-@property (getter=isInputEnabled, nonatomic) BOOL inputEnabled;
-@property (getter=isOutputEnabled, nonatomic) BOOL outputEnabled;
+@property (getter=isInputEnabled, nonatomic) bool inputEnabled;
+@property (getter=isOutputEnabled, nonatomic) bool outputEnabled;
 
 - (id /* block */)_inputHandler;
-- (BOOL)canPerformInput;
-- (BOOL)canPerformOutput;
+- (bool)canPerformInput;
+- (bool)canPerformOutput;
 - (void)dealloc;
-- (id)initWithComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1 options:(unsigned long)arg2 error:(id*)arg3;
-- (BOOL)isInputEnabled;
-- (BOOL)isOutputEnabled;
+- (id)initWithComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (bool)isInputEnabled;
+- (bool)isOutputEnabled;
 - (id /* block */)outputProvider;
-- (void)setInputEnabled:(BOOL)arg1;
+- (void)setInputEnabled:(bool)arg1;
 - (void)setInputHandler:(id /* block */)arg1;
-- (void)setOutputEnabled:(BOOL)arg1;
+- (void)setOutputEnabled:(bool)arg1;
 - (void)setOutputProvider:(id /* block */)arg1;
-- (BOOL)startHardwareAndReturnError:(id*)arg1;
+- (bool)startHardwareAndReturnError:(id*)arg1;
 - (void)stopHardware;
 
 @end

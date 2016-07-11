@@ -5,7 +5,6 @@
 @interface PHCoreImageManager : NSObject {
     NSObject<OS_dispatch_queue> * _CPLDownloadFireAndForgetRequestQueue;
     NSObject<OS_dispatch_queue> * _CPLDownloadUpdateIsolationQueue;
-    int  _CPLDownloadUpdateNotifyToken;
     NSMutableSet * _cloudDomainsWithPurgeScheduled;
     NSMutableSet * _domainsWithPurgeScheduled;
     PHConcurrentMapTable * _perDomainCloudPreheatItemMapTables;
@@ -18,7 +17,6 @@
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *CPLDownloadFireAndForgetRequestQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *CPLDownloadUpdateIsolationQueue;
-@property (nonatomic) int CPLDownloadUpdateNotifyToken;
 @property (nonatomic, retain) NSMutableSet *cloudDomainsWithPurgeScheduled;
 @property (nonatomic, retain) NSMutableSet *domainsWithPurgeScheduled;
 @property (nonatomic, retain) PHConcurrentMapTable *perDomainCloudPreheatItemMapTables;
@@ -28,57 +26,54 @@
 @property (nonatomic, retain) NSMapTable *requestLookupTable;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *requestLookupTableIsolationQueue;
 
-+ (struct CGSize { float x1; float x2; })_aspectedSizeWithSize:(struct CGSize { float x1; float x2; })arg1 maxDimension:(float)arg2;
-+ (int)_bestFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 options:(id)arg3 aspectRatio:(double)arg4 hasAdjustmentsHandler:(id /* block */)arg5 isTableFormat:(BOOL*)arg6 desiredImagePixelSize:(struct CGSize { float x1; float x2; }*)arg7;
++ (struct CGSize { double x1; double x2; })_aspectedSizeWithSize:(struct CGSize { double x1; double x2; })arg1 maxDimension:(double)arg2;
++ (void)_chooseFormatsForSize:(struct CGSize { double x1; double x2; })arg1 contentMode:(long long)arg2 srcAspectRatio:(double)arg3 options:(id)arg4 hasAdjustmentsHandler:(id /* block */)arg5 desiredImagePixelSize:(struct CGSize { double x1; double x2; }*)arg6 bestFormat:(id*)arg7 degradedFormat:(id*)arg8;
 + (id)_debugFilenameForAsset:(id)arg1;
++ (id)_degradedFormatWithPolicy:(long long)arg1 request:(id)arg2 hasAdjustmentsHandler:(id /* block */)arg3;
 + (id)_descriptionForDomain:(id)arg1;
 + (id)_dictionaryBySettingObject:(id)arg1 forKey:(id)arg2 inDictionary:(id)arg3;
-+ (int)_fallbackLargestFormatForRequestVersion:(int)arg1;
-+ (int)_fastestDegradedFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 options:(id)arg3 aspectRatio:(double)arg4 hasAdjustmentsHandler:(id /* block */)arg5 isTableFormat:(BOOL*)arg6;
-+ (BOOL)_formatIsLessThanFullscreen:(int)arg1;
-+ (BOOL)_isRetina;
-+ (struct CGImage { }*)_newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 contentMode:(int)arg4;
-+ (int)_pickDegradedFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 options:(id)arg3 aspectRatio:(double)arg4 hasAdjustmentsHandler:(id /* block */)arg5 isTableFormat:(BOOL*)arg6;
-+ (struct CGSize { float x1; float x2; })_sizeWithDimension:(float)arg1 aspectRatio:(double)arg2 preserveAspectRatio:(BOOL)arg3;
-+ (int)_standardDegradedFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 options:(id)arg3 aspectRatio:(double)arg4 hasAdjustmentsHandler:(id /* block */)arg5 isTableFormat:(BOOL*)arg6;
-+ (int)_wantedCloudPlaceholderKindForImageFormat:(int)arg1;
++ (id)_fastestDegradedFormatForRequest:(id)arg1 hasAdjustmentsHandler:(id /* block */)arg2;
++ (struct CGImage { }*)_newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 contentMode:(long long)arg4;
++ (long long)_plImageVersionFromPHImageRequestOptionsVersion:(long long)arg1;
++ (long long)_wantedCloudPlaceholderKindForImageFormat:(id)arg1;
 + (void)runBlockAsPrivilegedAsPhotosApp:(id /* block */)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)CPLDownloadFireAndForgetRequestQueue;
 - (id)CPLDownloadUpdateIsolationQueue;
-- (int)CPLDownloadUpdateNotifyToken;
-- (BOOL)_asyncFetchCloudSharedAnySizeImageAsNon5551BytesIfNecessaryWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg5 sync:(BOOL)arg6 completionHandler:(id /* block */)arg7;
-- (void)_asyncGenerateLiveRenderedImageWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 desiredImagePixelSize:(struct CGSize { float x1; float x2; })arg4 completionHandler:(id /* block */)arg5;
-- (void)_cancelAndFlushPreheatItemsForAssets:(id)arg1 CPLPrefetching:(BOOL)arg2 domain:(id)arg3 operation:(int)arg4 passingTestHandler:(id /* block */)arg5 didCancelHandler:(id /* block */)arg6;
-- (void)_cancelAndFlushPreheatWithAsset:(id)arg1 format:(int)arg2 CPLPrefetching:(BOOL)arg3 domain:(id)arg4 operation:(int)arg5 outPreheatItem:(id*)arg6 didCancelHandler:(id /* block */)arg7;
-- (void)_cancelAndFlushPreheatWithAsset:(id)arg1 preheatItem:(id)arg2 domain:(id)arg3 operation:(int)arg4 didCancelHandler:(id /* block */)arg5;
+- (bool)_asyncFetchCloudSharedAnySizeImageAsNon5551BytesIfNecessaryWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 sync:(bool)arg6 completionHandler:(id /* block */)arg7;
+- (void)_asyncGenerateLiveRenderedImageWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 desiredImagePixelSize:(struct CGSize { double x1; double x2; })arg4 completionHandler:(id /* block */)arg5;
+- (void)_cancelAndFlushPreheatItemsForAssets:(id)arg1 CPLPrefetching:(bool)arg2 domain:(id)arg3 operation:(long long)arg4 passingTestHandler:(id /* block */)arg5 didCancelHandler:(id /* block */)arg6;
+- (void)_cancelAndFlushPreheatWithAsset:(id)arg1 format:(int)arg2 CPLPrefetching:(bool)arg3 domain:(id)arg4 operation:(long long)arg5 outPreheatItem:(id*)arg6 didCancelHandler:(id /* block */)arg7;
+- (void)_cancelAndFlushPreheatWithAsset:(id)arg1 preheatItem:(id)arg2 domain:(id)arg3 operation:(long long)arg4 didCancelHandler:(id /* block */)arg5;
 - (void)_cancelAsynchronousRequestWithID:(int)arg1;
 - (void)_clearCPLDownloadWaitGroupForRequest:(id)arg1;
-- (BOOL)_deleteMissedPreheatItemForAsset:(id)arg1 format:(int)arg2 domain:(id)arg3;
+- (bool)_deleteMissedPreheatItemForAsset:(id)arg1 format:(int)arg2 domain:(id)arg3;
 - (id)_fastFetchAdjustmentDataWithRequest:(id)arg1;
-- (void)_fetchAdjustmentDataThruAssetsdAndCPLHandlerWithRequest:(id)arg1 networkAccessAllowed:(BOOL)arg2 trackCPLDownload:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (void)_fetchAnySizeImageAs5551BytesWithRequest:(id)arg1 format:(int)arg2 bestFormat:(int)arg3 sync:(BOOL)arg4 fireAndForgetCPLDownload:(BOOL)arg5 completionHandler:(id /* block */)arg6;
-- (void)_fetchAnySizeImageAsNon5551BytesPossiblyThruAssetsdAndCPLWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 wantsProperties:(BOOL)arg5 networkAccessAllowed:(BOOL)arg6 networkAccessForced:(BOOL)arg7 trackCPLDownload:(BOOL)arg8 sync:(BOOL)arg9 completionHandler:(id /* block */)arg10;
-- (void)_fetchAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg5 sync:(BOOL)arg6 fireAndForgetCPLDownload:(BOOL)arg7 completionHandler:(id /* block */)arg8;
-- (void)_fetchPreheatableAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 preheatItem:(id)arg5 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg6 sync:(BOOL)arg7 fireAndForgetCPLDownload:(BOOL)arg8 completionHandler:(id /* block */)arg9;
+- (void)_fetchAdjustmentDataThruAssetsdAndCPLHandlerWithRequest:(id)arg1 networkAccessAllowed:(bool)arg2 trackCPLDownload:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (void)_fetchAnySizeImageAsNon5551BytesPossiblyThruAssetsdAndCPLWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 wantsProperties:(bool)arg5 networkAccessAllowed:(bool)arg6 networkAccessForced:(bool)arg7 trackCPLDownload:(bool)arg8 sync:(bool)arg9 completionHandler:(id /* block */)arg10;
+- (void)_fetchAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 sync:(bool)arg6 fireAndForgetCPLDownload:(bool)arg7 completionHandler:(id /* block */)arg8;
+- (void)_fetchPreheatableAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 preheatItem:(id)arg5 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg6 sync:(bool)arg7 fireAndForgetCPLDownload:(bool)arg8 completionHandler:(id /* block */)arg9;
 - (void)_fireAndForgetCPLDownloadWithRequest:(id)arg1 format:(int)arg2;
+- (void)_handleSyncImageRequestForBRGA5551:(id)arg1;
 - (id)_highPriorityRequestWaitGroupWithDomain:(id)arg1;
-- (id)_originalPreheatlItemCreateTransientWithAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg2 options:(unsigned int)arg3 domain:(id)arg4;
-- (id)_preheatItemCreateIfNeededWithAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 options:(unsigned int)arg4 CPLPrefetching:(BOOL)arg5 outDidExist:(BOOL*)arg6 domain:(id)arg7;
-- (id)_preheatItemMapTableWithFormat:(int)arg1 CPLPrefetching:(BOOL)arg2 domain:(id)arg3 createIfNeeded:(BOOL)arg4;
+- (id)_originalPreheatlItemCreateTransientWithAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg2 options:(unsigned int)arg3 domain:(id)arg4;
+- (id)_preheatItemCreateIfNeededWithAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4 CPLPrefetching:(bool)arg5 outDidExist:(bool*)arg6 domain:(id)arg7;
+- (id)_preheatItemMapTableWithFormat:(int)arg1 CPLPrefetching:(bool)arg2 domain:(id)arg3 createIfNeeded:(bool)arg4;
 - (id)_preheatItemSourceWithFormat:(int)arg1;
-- (id)_preheatItemWithAsset:(id)arg1 format:(int)arg2 CPLPrefetching:(BOOL)arg3 domain:(id)arg4;
-- (void)_processImageRequest:(id)arg1 sync:(BOOL)arg2;
-- (BOOL)_recordMissedPreheatItemForAsset:(id)arg1 format:(int)arg2 domain:(id)arg3;
+- (id)_preheatItemWithAsset:(id)arg1 format:(int)arg2 CPLPrefetching:(bool)arg3 domain:(id)arg4;
+- (void)_processImageRequest:(id)arg1 sync:(bool)arg2;
+- (bool)_recordMissedPreheatItemForAsset:(id)arg1 format:(int)arg2 domain:(id)arg3;
 - (void)_registerRequest:(id)arg1;
 - (id)_resizeUIImage:(id)arg1 withRequest:(id)arg2;
-- (void)_schedulePurgeForCPLPrefetching:(BOOL)arg1 domain:(id)arg2 onMainQueue:(BOOL)arg3 didCancelHandler:(id /* block */)arg4;
+- (void)_schedulePurgeForCPLPrefetching:(bool)arg1 domain:(id)arg2 onMainQueue:(bool)arg3 didCancelHandler:(id /* block */)arg4;
 - (id)_setupCPLDownloadWaitGroupForRequest:(id)arg1 withTimeout:(unsigned long long)arg2;
 - (void)_unregisterRequest:(id)arg1;
 - (void)_updateCPLDownloadStatesOnConnectionLostNotification:(id)arg1;
-- (void)_updateCPLDownloadStatesOnStatusDidChangeNotification;
+- (void)_updateCPLDownloadStatesOnStatusDidChangeNotification:(id)arg1;
+- (void)asyncEnumeratePendingCPLDownloadRequestsWithBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (void)asyncEnumeratePendingRequestsWithBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudDomainsWithPurgeScheduled;
 - (void)dealloc;
 - (id)description;
@@ -92,7 +87,6 @@
 - (id)requestLookupTableIsolationQueue;
 - (void)setCPLDownloadFireAndForgetRequestQueue:(id)arg1;
 - (void)setCPLDownloadUpdateIsolationQueue:(id)arg1;
-- (void)setCPLDownloadUpdateNotifyToken:(int)arg1;
 - (void)setCloudDomainsWithPurgeScheduled:(id)arg1;
 - (void)setDomainsWithPurgeScheduled:(id)arg1;
 - (void)setPerDomainCloudPreheatItemMapTables:(id)arg1;
@@ -101,5 +95,6 @@
 - (void)setPerDomainPreheatItemMapTables:(id)arg1;
 - (void)setRequestLookupTable:(id)arg1;
 - (void)setRequestLookupTableIsolationQueue:(id)arg1;
+- (void)updateRequest:(id)arg1 withDownloadContext:(id)arg2;
 
 @end

@@ -2,45 +2,105 @@
    Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
  */
 
-@interface CDPDevice : NSObject <NSCopying> {
+@interface CDPDevice : NSObject <NSCopying, NSSecureCoding> {
+    NSNumber * _coolOffPeriod;
     NSString * _deviceColor;
     NSString * _enclosureColor;
-    BOOL  _hasNumericSecret;
+    bool  _hasNumericSecret;
+    bool  _hasRandomSecret;
+    bool  _isCurrentDevice;
+    bool  _isUsingMultipleiCSC;
     NSString * _localizedDescription;
     NSString * _localizedName;
+    NSString * _machineID;
     NSString * _model;
+    NSString * _modelClass;
+    NSString * _modelVersion;
     NSNumber * _numericSecretLength;
+    unsigned long long  _platform;
+    NSDate * _recordDate;
     NSString * _recordID;
+    unsigned long long  _recoveryStatus;
+    unsigned long long  _remainingAttempts;
+    NSString * _serialNumber;
 }
 
+@property (nonatomic, retain) NSNumber *coolOffPeriod;
 @property (nonatomic, copy) NSString *deviceColor;
 @property (nonatomic, copy) NSString *enclosureColor;
-@property (nonatomic) BOOL hasNumericSecret;
+@property (nonatomic) bool hasNumericSecret;
+@property (nonatomic) bool hasRandomSecret;
+@property (nonatomic) bool isCurrentDevice;
+@property (nonatomic) bool isUsingMultipleiCSC;
+@property (nonatomic, readonly) unsigned long long localSecretType;
 @property (nonatomic, copy) NSString *localizedDescription;
 @property (nonatomic, copy) NSString *localizedName;
+@property (nonatomic, copy) NSString *machineID;
 @property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *modelClass;
+@property (nonatomic, copy) NSString *modelVersion;
 @property (nonatomic, copy) NSNumber *numericSecretLength;
+@property (nonatomic) unsigned long long platform;
+@property (nonatomic, copy) NSDate *recordDate;
 @property (nonatomic, copy) NSString *recordID;
+@property (nonatomic) unsigned long long recoveryStatus;
+@property (nonatomic) unsigned long long remainingAttempts;
+@property (nonatomic, copy) NSString *serialNumber;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)coolOffPeriod;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceColor;
 - (id)enclosureColor;
-- (BOOL)hasNumericSecret;
-- (id)initWithSecureBackupRecordInfo:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasNumericSecret;
+- (bool)hasRandomSecret;
+- (id)initWithCoder:(id)arg1;
+- (bool)isCurrentDevice;
+- (bool)isUsingMultipleiCSC;
+- (unsigned long long)localSecretType;
 - (id)localizedDescription;
 - (id)localizedName;
+- (id)machineID;
 - (id)model;
+- (id)modelClass;
+- (id)modelVersion;
 - (id)numericSecretLength;
+- (unsigned long long)platform;
+- (id)recordDate;
 - (id)recordID;
+- (unsigned long long)recoveryStatus;
+- (unsigned long long)remainingAttempts;
+- (id)serialNumber;
+- (void)setCoolOffPeriod:(id)arg1;
 - (void)setDeviceColor:(id)arg1;
 - (void)setEnclosureColor:(id)arg1;
-- (void)setHasNumericSecret:(BOOL)arg1;
+- (void)setHasNumericSecret:(bool)arg1;
+- (void)setHasRandomSecret:(bool)arg1;
+- (void)setIsCurrentDevice:(bool)arg1;
+- (void)setIsUsingMultipleiCSC:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
+- (void)setMachineID:(id)arg1;
 - (void)setModel:(id)arg1;
+- (void)setModelClass:(id)arg1;
+- (void)setModelVersion:(id)arg1;
 - (void)setNumericSecretLength:(id)arg1;
+- (void)setPlatform:(unsigned long long)arg1;
+- (void)setRecordDate:(id)arg1;
 - (void)setRecordID:(id)arg1;
+- (void)setRecoveryStatus:(unsigned long long)arg1;
+- (void)setRemainingAttempts:(unsigned long long)arg1;
+- (void)setSerialNumber:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (id)initWithSecureBackupMetadataInfo:(id)arg1;
+- (id)initWithSecureBackupRecordInfo:(id)arg1;
 
 @end

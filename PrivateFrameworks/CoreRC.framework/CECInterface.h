@@ -5,40 +5,44 @@
 @interface CECInterface : CoreRCInterface {
     unsigned short  _addressMask;
     <CECInterfaceDelegate> * _delegate;
+    bool  _hibernating;
     struct CECFrame { 
         unsigned char blocks[16]; 
         unsigned int length : 5; 
         unsigned int reserved : 3; 
     }  _lastReceivedFrame;
-    BOOL  _promiscMode;
+    bool  _promiscMode;
 }
 
 @property (nonatomic, readonly) unsigned short addressMask;
 @property (nonatomic) <CECInterfaceDelegate> *delegate;
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) bool hibernating;
+@property (nonatomic, readonly) bool isValid;
 @property (nonatomic, readonly) struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; } lastReceivedFrame;
-@property (nonatomic, readonly) BOOL promiscMode;
+@property (nonatomic, readonly) bool promiscMode;
 @property (nonatomic, readonly) NSDictionary *properties;
 
 - (unsigned short)addressMask;
-- (BOOL)allocateCECAddress:(unsigned char*)arg1 forDeviceType:(unsigned char)arg2 error:(id*)arg3;
-- (BOOL)deallocateCECAddress:(unsigned char)arg1 error:(id*)arg2;
+- (bool)allocateCECAddress:(unsigned char*)arg1 forDeviceType:(unsigned char)arg2 error:(id*)arg3;
+- (bool)deallocateCECAddress:(unsigned char)arg1 error:(id*)arg2;
 - (id)delegate;
-- (BOOL)errorIsNack:(id)arg1;
-- (void)hibernationChanged:(BOOL)arg1;
+- (void)didChangeProperties;
+- (bool)errorIsNack:(id)arg1;
+- (bool)hibernating;
+- (void)hibernationChanged:(bool)arg1;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })lastReceivedFrame;
-- (BOOL)pingTo:(unsigned char)arg1 acknowledged:(BOOL*)arg2 error:(id*)arg3;
-- (BOOL)promiscMode;
+- (bool)pingTo:(unsigned char)arg1 acknowledged:(bool*)arg2 error:(id*)arg3;
+- (bool)promiscMode;
 - (id)properties;
 - (void)receivedFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg1;
-- (BOOL)sendFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg1 error:(id*)arg2;
-- (BOOL)sendFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg1 withRetryCount:(unsigned char)arg2 error:(id*)arg3;
-- (BOOL)sendMessage:(id)arg1 error:(id*)arg2;
-- (BOOL)sendMessage:(id)arg1 withRetryCount:(unsigned char)arg2 error:(id*)arg3;
-- (BOOL)setAddressMask:(unsigned short)arg1 error:(id*)arg2;
+- (bool)sendFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg1 error:(id*)arg2;
+- (bool)sendFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg1 withRetryCount:(unsigned char)arg2 error:(id*)arg3;
+- (bool)sendMessage:(id)arg1 error:(id*)arg2;
+- (bool)sendMessage:(id)arg1 withRetryCount:(unsigned char)arg2 error:(id*)arg3;
+- (bool)setAddressMask:(unsigned short)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setPromiscMode:(BOOL)arg1 error:(id*)arg2;
+- (bool)setPromiscMode:(bool)arg1 error:(id*)arg2;
 
 @end

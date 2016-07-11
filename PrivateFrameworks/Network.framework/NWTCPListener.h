@@ -19,6 +19,7 @@
 @property (retain) NWParameters *parameters;
 
 - (void).cxx_destruct;
+- (void)cancel;
 - (id)delegate;
 - (id)endpoint;
 - (id)error;

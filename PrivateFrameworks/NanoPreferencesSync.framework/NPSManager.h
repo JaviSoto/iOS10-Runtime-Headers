@@ -10,6 +10,8 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
@@ -18,7 +20,6 @@
 - (void)invalidate;
 - (void)setInternalQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
-- (void)synchronizeManagedConfigurationKind:(id)arg1 feature:(id)arg2;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 container:(id)arg3;

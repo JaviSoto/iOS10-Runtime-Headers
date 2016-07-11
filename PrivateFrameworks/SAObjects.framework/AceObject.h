@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface AceObject : NSObject <AceObject> {
+@interface AceObject : NSObject <AceObject, SiriCoreThunking> {
     NSString * _aceId;
     NSNumber * _deserializationDuration;
     NSMutableDictionary * _dict;
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableDictionary *dict;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *plistData;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
@@ -35,9 +35,10 @@
 + (id)dictionaryWithAceObjectDictionary:(id)arg1;
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
+- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(unsigned long long)arg3 withPrefixes:(id)arg4 hint:(id)arg5;
+- (id)_descriptionHint;
 - (void)_deserializeFromPlistData;
 - (id)_dict;
 - (id)_initWithMutableDictionary:(id)arg1;
@@ -53,14 +54,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodedClassName;
 - (id)forceEagerDeserialization;
+- (id)fullDescription;
 - (id)groupIdentifier;
-- (BOOL)hasArrayForPropertyForKey:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasArrayForPropertyForKey:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)plistData;
 - (id)properties;
@@ -74,8 +76,17 @@
 - (id)topLevelPropertyForKey:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (bool)af_isUserUtterance;
+- (bool)af_isUtterance;
+
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
+- (long long)_afui_usefulUserResultType;
+
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (void)siriCore_invokeThunk;
 
 @end

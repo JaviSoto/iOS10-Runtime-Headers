@@ -12,9 +12,9 @@
     NSObject<OS_xpc_object> * _conn;
     NSLock * _connLock;
     <GEOResourceManifestServerProxyDelegate> * _delegate;
-    BOOL  _isLoadingResources;
-    BOOL  _isUpdatingManifest;
-    unsigned int  _retryCount;
+    bool  _isLoadingResources;
+    bool  _isUpdatingManifest;
+    unsigned long long  _retryCount;
     NSObject<OS_dispatch_queue> * _serverQueue;
 }
 
@@ -22,21 +22,26 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GEOResourceManifestServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
 - (void)_setupConnection;
+- (void)activateResourceScale:(int)arg1;
+- (void)activateResourceScenario:(int)arg1;
 - (id)activeTileGroup;
 - (id)authToken;
 - (void)closeConnection;
 - (id)configuration;
+- (void)deactivateResourceScale:(int)arg1;
+- (void)deactivateResourceScenario:(int)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)forceUpdate:(id /* block */)arg1;
 - (void)getResourceManifestWithHandler:(id /* block */)arg1;
 - (id)initWithDelegate:(id)arg1 configuration:(id)arg2;
 - (void)openConnection;
+- (void)performOpportunisticResourceLoading;
 - (oneway void)resetActiveTileGroup;
 - (id)serverQueue;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;

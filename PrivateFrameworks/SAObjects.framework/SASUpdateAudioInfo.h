@@ -12,15 +12,18 @@
 @property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, copy) NSString *deviceModel;
 @property (nonatomic, copy) NSString *dspStatus;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *headsetAddress;
 @property (nonatomic, copy) NSString *headsetId;
 @property (nonatomic, copy) NSString *headsetName;
 @property (nonatomic, copy) NSNumber *noiseReductionLevel;
 @property (nonatomic, copy) NSString *origin;
+@property (nonatomic, copy) NSString *productId;
 @property (nonatomic, retain) SASRecordingInfo *recordingInfo;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
+@property (nonatomic) bool triggeredTwoShotBorealis;
+@property (nonatomic, copy) NSString *vendorId;
 
 + (id)updateAudioInfo;
 + (id)updateAudioInfoWithDictionary:(id)arg1 context:(id)arg2;
@@ -37,6 +40,7 @@
 - (id)headsetName;
 - (id)noiseReductionLevel;
 - (id)origin;
+- (id)productId;
 - (id)recordingInfo;
 - (void)setAudioSource:(id)arg1;
 - (void)setCodec:(int)arg1;
@@ -48,6 +52,11 @@
 - (void)setHeadsetName:(id)arg1;
 - (void)setNoiseReductionLevel:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (void)setProductId:(id)arg1;
 - (void)setRecordingInfo:(id)arg1;
+- (void)setTriggeredTwoShotBorealis:(bool)arg1;
+- (void)setVendorId:(id)arg1;
+- (bool)triggeredTwoShotBorealis;
+- (id)vendorId;
 
 @end

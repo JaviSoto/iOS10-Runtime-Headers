@@ -6,6 +6,8 @@
     EKEventStore * _eventStore;
 }
 
++ (id)contentType;
+
 - (void).cxx_destruct;
 - (void)_importDataRecord:(id)arg1 summary:(id)arg2;
 - (id)contentType;

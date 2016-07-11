@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMAccessoryCategory : NSObject <HMObjectMerge, NSSecureCoding> {
+@interface HMAccessoryCategory : NSObject <HMFDumpState, HMObjectMerge, NSSecureCoding> {
     NSString * _categoryType;
     NSString * _name;
 }
@@ -10,18 +10,19 @@
 @property (nonatomic, copy) NSString *categoryType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *localizedDescription;
 @property (nonatomic, copy) NSString *name;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)categoryType;
 - (id)description;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

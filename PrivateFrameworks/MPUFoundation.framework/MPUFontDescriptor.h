@@ -3,42 +3,99 @@
  */
 
 @interface MPUFontDescriptor : NSObject <NSCopying, NSMutableCopying> {
-    int  _leadingAdjustment;
-    int  _textStyle;
-    BOOL  _usesItalic;
-    BOOL  _wantsMonospaceNumbers;
-    int  _weight;
+    MPULayoutInterpolator * _customFontPointSizeLayoutInterpolator;
+    UIFont * _defaultFont;
+    struct { 
+        double ascender; 
+        bool isAscenderInitialized; 
+        double bodyLeading; 
+        bool isBodyLeadingInitialized; 
+        double capHeight; 
+        bool isCapHeightInitialized; 
+        double descender; 
+        bool isDescenderInitialized; 
+    }  _defaultFontMetrics;
+    long long  _leadingAdjustment;
+    UIFont * _preferredFont;
+    struct { 
+        double ascender; 
+        bool isAscenderInitialized; 
+        double bodyLeading; 
+        bool isBodyLeadingInitialized; 
+        double capHeight; 
+        bool isCapHeightInitialized; 
+        double descender; 
+        bool isDescenderInitialized; 
+    }  _preferredFontMetrics;
+    double  _systemFontSize;
+    long long  _textStyle;
+    bool  _usesItalic;
+    bool  _wantsMonospaceNumbers;
+    long long  _weight;
 }
 
-@property (nonatomic, readonly) int leadingAdjustment;
-@property (nonatomic, readonly) int textStyle;
-@property (nonatomic, readonly) BOOL usesItalic;
-@property (nonatomic, readonly) BOOL wantsMonospaceNumbers;
-@property (nonatomic, readonly) int weight;
+@property (nonatomic, readonly) UIFont *defaultFont;
+@property (nonatomic, readonly) long long leadingAdjustment;
+@property (nonatomic, readonly) UIFont *preferredFont;
+@property (nonatomic, readonly) double preferredFontAscender;
+@property (nonatomic, readonly) double preferredFontBodyLeading;
+@property (nonatomic, readonly) double preferredFontCapHeight;
+@property (nonatomic, readonly) double preferredFontDescender;
+@property (nonatomic, readonly) double systemFontSize;
+@property (nonatomic, readonly) long long textStyle;
+@property (nonatomic, readonly) bool usesItalic;
+@property (nonatomic, readonly) bool wantsMonospaceNumbers;
+@property (nonatomic, readonly) long long weight;
 
-+ (id)_adjustedNativeFontDescriptorWithBaseNativeFontDescriptor:(id)arg1 forCustomTextStyle:(int)arg2;
-+ (id)_baseNativeTextStyleForTextStyle:(int)arg1;
-+ (void)_getNativeFontDescriptorSymbolicTraits:(unsigned int*)arg1 nativeTextStyleAttribute:(id*)arg2 forWeight:(int)arg3;
-+ (unsigned int)_nativeFontDescriptorSymbolicTraitsForLeadingAdjustment:(int)arg1;
-+ (unsigned int)_nativeFontDescriptorSymbolicTraitsForUsingItalic:(BOOL)arg1;
-+ (id)fontDescriptorWithTextStyle:(int)arg1;
-+ (id)fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2;
-+ (id)fontDescriptorWithTextStyle:(int)arg1 weight:(int)arg2;
++ (id)_adjustedNativeFontDescriptorWithBaseNativeFontDescriptor:(id)arg1 forCustomTextStyle:(long long)arg2;
++ (id)_baseNativeTextStyleForTextStyle:(long long)arg1;
++ (id)_fontDescriptorWithTextStyle:(long long)arg1 leadingAdjustment:(long long)arg2 weight:(long long)arg3 systemFontSize:(double)arg4;
++ (id)_fontPointSizeLayoutInterpolatorForTextStyle:(long long)arg1;
++ (void)_getNativeFontDescriptorSymbolicTraits:(unsigned int*)arg1 nativeTextStyleAttribute:(id*)arg2 forWeight:(long long)arg3;
++ (double)_layoutInterpolatorReferenceMetricForContentSizeCategory:(id)arg1;
++ (unsigned int)_nativeFontDescriptorSymbolicTraitsForLeadingAdjustment:(long long)arg1;
++ (unsigned int)_nativeFontDescriptorSymbolicTraitsForUsingItalic:(bool)arg1;
++ (id)fontDescriptorWithSystemFontSize:(double)arg1;
++ (id)fontDescriptorWithSystemFontSize:(double)arg1 leadingAdjustment:(long long)arg2;
++ (id)fontDescriptorWithSystemFontSize:(double)arg1 leadingAdjustment:(long long)arg2 weight:(long long)arg3;
++ (id)fontDescriptorWithSystemFontSize:(double)arg1 weight:(long long)arg2;
++ (id)fontDescriptorWithTextStyle:(long long)arg1;
++ (id)fontDescriptorWithTextStyle:(long long)arg1 leadingAdjustment:(long long)arg2;
++ (id)fontDescriptorWithTextStyle:(long long)arg1 leadingAdjustment:(long long)arg2 weight:(long long)arg3;
++ (id)fontDescriptorWithTextStyle:(long long)arg1 weight:(long long)arg2;
++ (id)invalidationHandler;
 
+- (void).cxx_destruct;
+- (id)_defaultFontDescriptorForTextStyle:(long long)arg1;
+- (id)_fontPointSizeLayoutInterpolator;
 - (id)_fontWithBaseNativeFontDescriptorProvider:(id /* block */)arg1;
+- (void)_handleFontDescriptorDidInvalidateCachedFontsAndMetricsNotification:(id)arg1;
+- (void)_invalidateCachedFontsAndMetrics;
+- (id)_preferredFontDescriptorForTextStyle:(long long)arg1;
+- (void)_resetToDefaultValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)defaultFont;
+- (double)defaultFontAscender;
+- (double)defaultFontBodyLeading;
+- (double)defaultFontCapHeight;
+- (double)defaultFontDescender;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (int)leadingAdjustment;
+- (bool)isEqual:(id)arg1;
+- (long long)leadingAdjustment;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)preferredFont;
-- (float)scaledValueForValue:(float)arg1;
-- (int)textStyle;
-- (BOOL)usesItalic;
-- (BOOL)wantsMonospaceNumbers;
-- (int)weight;
+- (double)preferredFontAscender;
+- (double)preferredFontBodyLeading;
+- (double)preferredFontCapHeight;
+- (double)preferredFontDescender;
+- (double)scaledValueForValue:(double)arg1;
+- (double)systemFontSize;
+- (long long)textStyle;
+- (bool)usesItalic;
+- (bool)wantsMonospaceNumbers;
+- (long long)weight;
 
 @end

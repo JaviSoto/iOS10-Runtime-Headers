@@ -3,23 +3,17 @@
  */
 
 @interface CAMCaptureResponse : NSObject {
-    NSDictionary * __parameterStorage;
-    CAMCaptureRequest * _request;
-    int  _type;
+    unsigned short  _sessionIdentifier;
+    long long  _type;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *_parameterStorage;
-@property (nonatomic, copy) CAMCaptureRequest *request;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) unsigned short sessionIdentifier;
+@property (nonatomic, readonly) long long type;
 
-- (void).cxx_destruct;
-- (id)_parameterStorage;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (id)parameterForKey:(id)arg1;
+- (id)initWithType:(long long)arg1 captureSession:(unsigned short)arg2;
 - (void)releaseCachedImages;
-- (id)request;
-- (void)setRequest:(id)arg1;
-- (int)type;
+- (unsigned short)sessionIdentifier;
+- (long long)type;
 
 @end

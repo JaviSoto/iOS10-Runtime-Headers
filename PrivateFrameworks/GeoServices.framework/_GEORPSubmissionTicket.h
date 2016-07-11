@@ -3,22 +3,22 @@
  */
 
 @interface _GEORPSubmissionTicket : NSObject <GEOMapServiceProblemReportTicket> {
-    BOOL  _canceled;
+    bool  _canceled;
     NSString * _emailAddress;
-    <GEOMapItemPrivate> * _endPlace;
-    <GEOMapItemPrivate> * _place;
+    <GEOMapItem> * _endPlace;
+    <GEOMapItem> * _place;
     GEORPProblem * _problem;
     GEORPProblemRequest * _problemRequest;
     NSData * _pushToken;
     NSData * _resubmissionData;
-    <GEOMapItemPrivate> * _startPlace;
-    BOOL  _started;
+    <GEOMapItem> * _startPlace;
+    bool  _started;
     GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 

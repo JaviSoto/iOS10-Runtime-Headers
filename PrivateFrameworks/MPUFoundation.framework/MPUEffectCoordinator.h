@@ -5,7 +5,7 @@
 @interface MPUEffectCoordinator : NSObject {
     NSMutableArray * _applyBlocks;
     id /* block */  _completionHandler;
-    unsigned int  _pendingEffectsCount;
+    unsigned long long  _pendingEffectsCount;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

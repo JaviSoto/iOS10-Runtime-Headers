@@ -4,27 +4,29 @@
 
 @interface PUBadgeInfo : NSObject <NSCopying> {
     id /* block */  __numberOfPhotosProvider;
-    int  _numberOfPhotos;
-    int  _style;
+    long long  _numberOfPhotos;
+    long long  _style;
 }
 
 @property (setter=_setNumberOfPhotosProvider:, nonatomic, copy) id /* block */ _numberOfPhotosProvider;
-@property (nonatomic) int numberOfPhotos;
-@property (nonatomic) int style;
+@property (setter=_setNumberOfPhotos:, nonatomic) long long numberOfPhotos;
+@property (setter=_setStyle:, nonatomic) long long style;
 
-+ (id)badgeInfoWithBurstStyleNumberOfPhotos:(int)arg1;
++ (id)badgeInfoWithBurstStyleNumberOfPhotos:(long long)arg1;
 + (id)badgeInfoWithBurstStyleNumberOfPhotosProvider:(id /* block */)arg1;
++ (id)badgeInfoWithHDRPhotoIrisStyle;
 + (id)badgeInfoWithHDRStyle;
++ (id)badgeInfoWithPhotoIrisStyle;
 
 - (void).cxx_destruct;
 - (id /* block */)_numberOfPhotosProvider;
-- (void)_setNumberOfPhotos:(int)arg1;
+- (void)_setNumberOfPhotos:(long long)arg1;
 - (void)_setNumberOfPhotosProvider:(id /* block */)arg1;
-- (void)_setStyle:(int)arg1;
+- (void)_setStyle:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (int)numberOfPhotos;
-- (int)style;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (long long)numberOfPhotos;
+- (long long)style;
 
 @end

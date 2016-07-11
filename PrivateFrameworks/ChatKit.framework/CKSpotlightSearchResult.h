@@ -14,10 +14,10 @@
 @property (nonatomic, copy) NSString *messageGUID;
 @property (nonatomic, copy) NSString *summary;
 
+- (void).cxx_destruct;
 - (id)chatGUID;
-- (int)compare:(id)arg1;
-- (void)dealloc;
-- (id)initWithMessage:(id)arg1 chatGUID:(id)arg2;
+- (long long)compare:(id)arg1;
+- (id)initWithMessageGUID:(id)arg1 chatGUID:(id)arg2 messageTime:(id)arg3 summery:(id)arg4;
 - (id)messageDate;
 - (id)messageGUID;
 - (void)setChatGUID:(id)arg1;

@@ -6,7 +6,7 @@
     NSMutableArray * _enumeratorStack;
     id /* block */  _filter;
     <TSKModel> * _root;
-    BOOL  _stop;
+    bool  _stop;
 }
 
 @property (nonatomic, retain) NSMutableArray *enumeratorStack;

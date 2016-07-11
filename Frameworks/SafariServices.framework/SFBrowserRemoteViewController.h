@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFBrowserRemoveViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
@@ -18,11 +18,15 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)didFinishInitialLoad:(bool)arg1;
 - (void)didLoadWebView;
+- (void)executeCustomActivityProxyID:(id)arg1;
+- (void)fetchHostAppCustomActivitiesForURL:(id)arg1 title:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setRemoteSwipeGestureEnabled:(bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)willDismissServiceViewController;
-- (void)willShowActivitySheetForURL:(id)arg1 title:(id)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)willOpenURLInHostApplication:(id)arg1;
 - (void)willUpdateStatusBarStyle:(id)arg1;
 
 @end

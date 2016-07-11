@@ -36,7 +36,7 @@
     char * _rfEnhData;
     struct { unsigned int x1; unsigned int x2; unsigned int x3[3]; } * _rfEnhGSM;
     struct { unsigned char x1[4]; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6[4]; unsigned int x7[2][18]; unsigned int x8[12]; unsigned int x9[1][4]; unsigned int x10[3][8]; unsigned int x11[2][7]; unsigned int x12[2][6]; unsigned int x13[2][6]; unsigned int x14[5]; unsigned int x15[3]; unsigned long long x16[8]; } * _rfEnhLTE;
-    struct { unsigned short x1; unsigned int x2; unsigned int x3; unsigned char x4; unsigned short x5[4][6]; unsigned int x6[4][6]; } * _rfEnhOOS;
+    struct { unsigned short x1; unsigned short x2; unsigned int x3; unsigned int x4; unsigned short x5[4][6]; unsigned int x6[4][6]; } * _rfEnhOOS;
     struct { unsigned int x1; unsigned int x2; unsigned int x3[7]; unsigned int x4[3]; } * _rfEnhTDS;
     struct { unsigned int x1; unsigned int x2; unsigned int x3[2][3]; unsigned int x4[2][4]; unsigned int x5[2]; unsigned int x6[4]; unsigned int x7[4]; unsigned int x8[12]; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; } * _rfEnhWCDMA;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[4]; unsigned int x6[2][16]; unsigned int x7[12]; unsigned int x8[1][4]; unsigned int x9[6]; unsigned int x10[6]; } * _rfLTE;
@@ -76,7 +76,7 @@
 @property (nonatomic) char *rfEnhData;
 @property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3[3]; }*rfEnhGSM;
 @property (nonatomic) struct { unsigned char x1[4]; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6[4]; unsigned int x7[2][18]; unsigned int x8[12]; unsigned int x9[1][4]; unsigned int x10[3][8]; unsigned int x11[2][7]; unsigned int x12[2][6]; unsigned int x13[2][6]; unsigned int x14[5]; unsigned int x15[3]; unsigned long long x16[8]; }*rfEnhLTE;
-@property (nonatomic) struct { unsigned short x1; unsigned int x2; unsigned int x3; unsigned char x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*rfEnhOOS;
+@property (nonatomic) struct { unsigned short x1; unsigned short x2; unsigned int x3; unsigned int x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*rfEnhOOS;
 @property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3[7]; unsigned int x4[3]; }*rfEnhTDS;
 @property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3[2][3]; unsigned int x4[2][4]; unsigned int x5[2]; unsigned int x6[4]; unsigned int x7[4]; unsigned int x8[12]; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; }*rfEnhWCDMA;
 @property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[4]; unsigned int x6[2][16]; unsigned int x7[12]; unsigned int x8[1][4]; unsigned int x9[6]; unsigned int x10[6]; }*rfLTE;
@@ -139,7 +139,7 @@
 - (char *)rfEnhData;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3[3]; }*)rfEnhGSM;
 - (struct { unsigned char x1[4]; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6[4]; unsigned int x7[2][18]; unsigned int x8[12]; unsigned int x9[1][4]; unsigned int x10[3][8]; unsigned int x11[2][7]; unsigned int x12[2][6]; unsigned int x13[2][6]; unsigned int x14[5]; unsigned int x15[3]; unsigned long long x16[8]; }*)rfEnhLTE;
-- (struct { unsigned short x1; unsigned int x2; unsigned int x3; unsigned char x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*)rfEnhOOS;
+- (struct { unsigned short x1; unsigned short x2; unsigned int x3; unsigned int x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*)rfEnhOOS;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3[7]; unsigned int x4[3]; }*)rfEnhTDS;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3[2][3]; unsigned int x4[2][4]; unsigned int x5[2]; unsigned int x6[4]; unsigned int x7[4]; unsigned int x8[12]; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; }*)rfEnhWCDMA;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[4]; unsigned int x6[2][16]; unsigned int x7[12]; unsigned int x8[1][4]; unsigned int x9[6]; unsigned int x10[6]; }*)rfLTE;
@@ -177,7 +177,7 @@
 - (void)setRfEnhData:(char *)arg1;
 - (void)setRfEnhGSM:(struct { unsigned int x1; unsigned int x2; unsigned int x3[3]; }*)arg1;
 - (void)setRfEnhLTE:(struct { unsigned char x1[4]; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6[4]; unsigned int x7[2][18]; unsigned int x8[12]; unsigned int x9[1][4]; unsigned int x10[3][8]; unsigned int x11[2][7]; unsigned int x12[2][6]; unsigned int x13[2][6]; unsigned int x14[5]; unsigned int x15[3]; unsigned long long x16[8]; }*)arg1;
-- (void)setRfEnhOOS:(struct { unsigned short x1; unsigned int x2; unsigned int x3; unsigned char x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*)arg1;
+- (void)setRfEnhOOS:(struct { unsigned short x1; unsigned short x2; unsigned int x3; unsigned int x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*)arg1;
 - (void)setRfEnhTDS:(struct { unsigned int x1; unsigned int x2; unsigned int x3[7]; unsigned int x4[3]; }*)arg1;
 - (void)setRfEnhWCDMA:(struct { unsigned int x1; unsigned int x2; unsigned int x3[2][3]; unsigned int x4[2][4]; unsigned int x5[2]; unsigned int x6[4]; unsigned int x7[4]; unsigned int x8[12]; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; }*)arg1;
 - (void)setRfLTE:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[4]; unsigned int x6[2][16]; unsigned int x7[12]; unsigned int x8[1][4]; unsigned int x9[6]; unsigned int x10[6]; }*)arg1;

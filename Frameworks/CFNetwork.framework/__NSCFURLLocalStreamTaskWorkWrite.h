@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFURLLocalStreamTaskWorkWrite : __NSCFURLLocalStreamTaskWork {
-    unsigned int  _bytesToWrite;
+    unsigned long long  _bytesToWrite;
     id /* block */  _completion;
 }
 

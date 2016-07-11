@@ -34,7 +34,6 @@
 - (id)ambientOcclusion;
 - (id)ambientOcclusionScale;
 - (id)baseColor;
-- (void)bindShadowProperties;
 - (id)emission;
 - (id)init;
 - (id)interfaceIndexOfRefraction;

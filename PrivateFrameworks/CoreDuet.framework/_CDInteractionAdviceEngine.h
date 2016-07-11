@@ -5,13 +5,11 @@
 @interface _CDInteractionAdviceEngine : NSObject <_CDInteractionAdvising> {
     _CDQueryInteractionAdvisor * _queryAdvisor;
     _CDSocialInteractionAdvisor * _socialAdvisor;
-    _CDSpatioTemporalInteractionAdvisor * _spatioTemporalAdvisor;
     _CDInteractionStore * _store;
     _CDTemporalInteractionAdvisor * _temporalAdvisor;
 }
 
 @property (nonatomic, readonly) _CDSocialInteractionAdvisor *socialAdvisor;
-@property (nonatomic, readonly) _CDSpatioTemporalInteractionAdvisor *spatioTemporalAdvisor;
 @property (nonatomic, readonly) _CDTemporalInteractionAdvisor *temporalAdvisor;
 
 + (id)interactionAdviceEngineWithStore:(id)arg1;
@@ -25,7 +23,6 @@
 - (id)initWithStore:(id)arg1;
 - (id)rankCandidateContacts:(id)arg1 usingSettings:(id)arg2;
 - (id)socialAdvisor;
-- (id)spatioTemporalAdvisor;
 - (id)temporalAdvisor;
 - (void)tuneSocialAdvisorUsingSettings:(id)arg1 heartBeatHandler:(id)arg2;
 

@@ -4,7 +4,9 @@
 
 @interface CAMApplicationDelegate : UIResponder <UIApplicationDelegate> {
     CAMBurstController * _burstController;
+    CAMCameraRollController * _cameraRollController;
     CUCaptureController * _captureController;
+    CAMIrisVideoController * _irisVideoController;
     CAMKeepAliveController * _keepAliveController;
     CAMLocationController * _locationController;
     CAMMotionController * _motionController;
@@ -19,10 +21,12 @@
 }
 
 @property (nonatomic, readonly) CAMBurstController *burstController;
+@property (nonatomic, readonly) CAMCameraRollController *cameraRollController;
 @property (nonatomic, readonly) CUCaptureController *captureController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) CAMIrisVideoController *irisVideoController;
 @property (nonatomic, readonly) CAMKeepAliveController *keepAliveController;
 @property (nonatomic, readonly) CAMLocationController *locationController;
 @property (nonatomic, readonly) CAMMotionController *motionController;
@@ -37,15 +41,19 @@
 @property (nonatomic, retain) UIWindow *window;
 
 - (void).cxx_destruct;
-- (void)_createSubsystems;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (bool)_createSubsystemsWithLaunchOptions:(id)arg1;
+- (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
+- (void)application:(id)arg1 performActionForShortcutItem:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)burstController;
+- (id)cameraRollController;
 - (id)captureController;
+- (id)irisVideoController;
 - (id)keepAliveController;
 - (id)locationController;
 - (id)motionController;

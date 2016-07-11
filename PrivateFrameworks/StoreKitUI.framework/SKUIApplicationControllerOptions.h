@@ -3,22 +3,31 @@
  */
 
 @interface SKUIApplicationControllerOptions : NSObject <NSCopying, NSMutableCopying> {
-    BOOL  _requiresLocalBootstrapScript;
-    BOOL  _supportsFullApplicationReload;
-    int  _tabBarControllerStyle;
+    bool  _bootstrapScriptFallbackEnabled;
+    double  _bootstrapScriptFallbackMaximumAge;
+    double  _bootstrapScriptTimeoutInterval;
+    bool  _requiresLocalBootstrapScript;
+    bool  _supportsFullApplicationReload;
+    long long  _tabBarControllerStyle;
 }
 
-@property (nonatomic, readonly) BOOL requiresLocalBootstrapScript;
-@property (nonatomic, readonly) BOOL supportsFullApplicationReload;
-@property (nonatomic, readonly) int tabBarControllerStyle;
+@property (getter=isBootstrapScriptFallbackEnabled, nonatomic, readonly) bool bootstrapScriptFallbackEnabled;
+@property (nonatomic, readonly) double bootstrapScriptFallbackMaximumAge;
+@property (nonatomic, readonly) double bootstrapScriptTimeoutInterval;
+@property (nonatomic, readonly) bool requiresLocalBootstrapScript;
+@property (nonatomic, readonly) bool supportsFullApplicationReload;
+@property (nonatomic, readonly) long long tabBarControllerStyle;
 
+- (double)bootstrapScriptFallbackMaximumAge;
+- (double)bootstrapScriptTimeoutInterval;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBootstrapScriptFallbackEnabled;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)requiresLocalBootstrapScript;
-- (BOOL)supportsFullApplicationReload;
-- (int)tabBarControllerStyle;
+- (bool)requiresLocalBootstrapScript;
+- (bool)supportsFullApplicationReload;
+- (long long)tabBarControllerStyle;
 
 @end

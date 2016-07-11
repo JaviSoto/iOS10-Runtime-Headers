@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ANAccountNotifierDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,16 +24,18 @@
 - (void)_startNotificationCallbackListenerWithMachServiceName:(id)arg1;
 - (void)_stopNotificationCallbackListener;
 - (void)addNotification:(id)arg1;
+- (void)addSectionSubtypeWithDescriptor:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithCallbackMachService:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)notificationWasActivated:(id)arg1;
 - (void)notificationWasCleared:(id)arg1;
 - (void)notificationWasDismissed:(id)arg1;
 - (void)removeNotificationWithIdentifier:(id)arg1;
 - (void)removeNotificationsWithEventIdentifier:(id)arg1;
+- (void)removeSectionSubtypeWithDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

@@ -5,11 +5,12 @@
 
 @required
 
-- (BOOL)canShowCloudDownloadButtons;
-- (BOOL)canShowCloudMusic;
-- (BOOL)canShowCloudVideo;
-- (BOOL)hasProperNetworkConditionsToPlayMedia;
-- (BOOL)isCellularDataRestricted;
-- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
+- (bool)canShowCloudDownloadButtons;
+- (bool)canShowCloudMusic;
+- (bool)canShowCloudVideo;
+- (bool)hasProperNetworkConditionsToPlayMedia;
+- (bool)hasProperNetworkConditionsToShowCloudMedia;
+- (bool)isCellularDataRestricted;
+- (bool)shouldProhibitActionsForCurrentNetworkConditions;
 
 @end

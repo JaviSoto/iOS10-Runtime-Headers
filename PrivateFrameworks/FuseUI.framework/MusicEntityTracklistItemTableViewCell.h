@@ -2,37 +2,43 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate, MusicEntityViewPlaybackStatusObserving> {
-    float  _leadingTextColumnWidth;
+@interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate, MusicEntityViewDownloadInformationObserving, MusicEntityViewPlaybackStatusObserving> {
+    bool  _entityDisabled;
+    double  _leadingTextColumnWidth;
     MusicEntityTracklistItemView * _tracklistItemView;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEntityDisabled, nonatomic) bool entityDisabled;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float leadingTextColumnWidth;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double leadingTextColumnWidth;
 @property (readonly) Class superclass;
 
-+ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
++ (double)maximumHeightForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3;
 
 - (void).cxx_destruct;
+- (void)_setShouldHaveFullLengthBottomSeparator:(bool)arg1;
 - (id)contentDescriptor;
 - (void)dealloc;
 - (id)entityValueProvider;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutMarginsDidChange;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isEntityDisabled;
 - (void)layoutSubviews;
-- (float)leadingTextColumnWidth;
+- (double)leadingTextColumnWidth;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
-- (void)setEntityDisabled:(BOOL)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { long long x1; double x2; })arg1;
+- (void)setEntityDisabled:(bool)arg1;
 - (void)setEntityValueProvider:(id)arg1;
-- (void)setLeadingTextColumnWidth:(float)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setLeadingTextColumnWidth:(double)arg1;
 - (void)setPlaybackStatus:(id)arg1;
-- (void)tracklistItemView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)tracklistItemView:(id)arg1 didSelectPlayButtonAction:(unsigned long long)arg2;
 - (void)tracklistItemViewDidSelectContextualActionsButton:(id)arg1;
-- (BOOL)tracklistItemViewShouldLayoutAsEditing:(id)arg1;
+- (bool)tracklistItemViewShouldLayoutAsEditing:(id)arg1;
 
 @end

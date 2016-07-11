@@ -10,7 +10,9 @@
 @property (nonatomic, copy) NSArray *autoconvertedCandidatePointerValues;
 @property (nonatomic, copy) NSString *remainderCandidateString;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
+
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)autoconvertedCandidatePointerValues;
@@ -24,5 +26,9 @@
 - (id)remainderCandidateString;
 - (void)setAutoconvertedCandidatePointerValues:(id)arg1;
 - (void)setRemainderCandidateString:(id)arg1;
+
+// Image: /System/Library/TextInput/libTextInputCore.dylib
+
+- (id)initWithMecabraCandidate:(const void*)arg1 autoconvertedCandidates:(id)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface FigCaptureRecordingSettings : NSObject <NSCoding, NSCopying> {
+@interface FigCaptureRecordingSettings : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         long long value; 
         int timescale; 
@@ -22,6 +22,8 @@
 @property (nonatomic, copy) NSString *outputFileType;
 @property (nonatomic, copy) NSURL *outputURL;
 @property (nonatomic) long long settingsID;
+
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -4,6 +4,6 @@
 
 @interface MTLIOAccelComputeCommandEncoder : MTLIOAccelCommandEncoder
 
-- (id)initWithCommandBuffer:(id)arg1;
+- (unsigned long long)getType;
 
 @end

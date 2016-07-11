@@ -3,29 +3,31 @@
  */
 
 @interface CMKHDRButton : CMKExpandableMenuButton {
-    CMKButtonLabel * __headerLabel;
-    BOOL  _allowsAutomaticHDR;
+    UIImageView * __glyphView;
+    bool  _allowsAutomaticHDR;
 }
 
 @property (nonatomic) int HDRMode;
-@property (nonatomic, readonly) CMKButtonLabel *_headerLabel;
-@property (nonatomic) BOOL allowsAutomaticHDR;
+@property (nonatomic, readonly) UIImageView *_glyphView;
+@property (nonatomic) bool allowsAutomaticHDR;
 
 - (void).cxx_destruct;
 - (int)HDRMode;
 - (void)_commonCMKHDRButtonInitialization;
-- (id)_headerLabel;
-- (BOOL)allowsAutomaticHDR;
+- (id)_currentGlyphImage;
+- (id)_glyphView;
+- (void)_updateCurrentGlyphImage;
+- (bool)allowsAutomaticHDR;
 - (id)headerView;
 - (id)hiddenIndexesWhileCollapsed;
-- (int)indexForMode:(int)arg1;
-- (id)initWithExpansionOrientation:(int)arg1;
-- (int)modeForIndex:(int)arg1;
-- (int)numberOfMenuItems;
+- (long long)indexForMode:(int)arg1;
+- (id)initWithExpansionOrientation:(long long)arg1;
+- (int)modeForIndex:(long long)arg1;
+- (long long)numberOfMenuItems;
+- (void)prepareHeaderViewForExpanding:(bool)arg1;
 - (void)reloadData;
-- (void)setAllowsAutomaticHDR:(BOOL)arg1;
+- (void)setAllowsAutomaticHDR:(bool)arg1;
 - (void)setHDRMode:(int)arg1;
-- (id)titleForMenuItemAtIndex:(int)arg1;
-- (void)updateToContentSize:(id)arg1;
+- (id)titleForMenuItemAtIndex:(long long)arg1;
 
 @end

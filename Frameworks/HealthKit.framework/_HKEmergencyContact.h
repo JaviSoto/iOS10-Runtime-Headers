@@ -12,20 +12,20 @@
     NSString * _relationship;
 }
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *nameContactIdentifier;
-@property (nonatomic, retain) NSNumber *nameRecordID;
-@property (nonatomic, retain) NSString *phoneNumber;
-@property (nonatomic, retain) NSString *phoneNumberContactIdentifier;
-@property (nonatomic, retain) NSNumber *phoneNumberPropertyID;
-@property (nonatomic, retain) NSString *relationship;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *nameContactIdentifier;
+@property (nonatomic, copy) NSNumber *nameRecordID;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *phoneNumberContactIdentifier;
+@property (nonatomic, copy) NSNumber *phoneNumberPropertyID;
+@property (nonatomic, copy) NSString *relationship;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_migrateToAddressBook:(void*)arg1;
 - (void)_migrateToContactsWithAddressBook:(void*)arg1;
-- (void)_migrateToSchemaVersion:(int)arg1 withAddressBook:(void*)arg2;
+- (void)_migrateToSchemaVersion:(long long)arg1 withAddressBook:(void*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

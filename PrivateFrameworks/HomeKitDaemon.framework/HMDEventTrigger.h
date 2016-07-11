@@ -4,28 +4,29 @@
 
 @interface HMDEventTrigger : HMDTrigger <HMDLocationDelegate> {
     NSMutableArray * _characteristicEvents;
-    HMDCharacteristic * _characteristicForCondition;
-    id  _characteristicValueForCondition;
     NSPredicate * _evaluationCondition;
     NSMutableArray * _locationEvents;
+    NSArray * _recurrences;
 }
 
 @property (nonatomic, retain) NSMutableArray *characteristicEvents;
-@property (nonatomic) HMDCharacteristic *characteristicForCondition;
-@property (nonatomic, retain) id characteristicValueForCondition;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSPredicate *evaluationCondition;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *locationEvents;
+@property (nonatomic, readonly) NSArray *recurrences;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)__validateRecurrences:(id)arg1;
++ (id)rewriteNowAdjustedForHomeTimeZone:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_activateCharacteristicEvents:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)_activateLocationEvents:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)_compareEventValue:(id)arg1 withCharacteristic:(id)arg2;
+- (void)_activate:(bool)arg1 characteristicEvents:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_activateLocationEvents:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)_checkForNoEvents;
+- (bool)_compareEventValue:(id)arg1 withCharacteristic:(id)arg2;
 - (void)_evaluateFiringTrigger;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleAddEventToEventTrigger:(id)arg1;
@@ -35,35 +36,39 @@
 - (void)_handleRetrieveLocationEventForEventTrigger:(id)arg1;
 - (void)_handleUpdateEventForEventTrigger:(id)arg1;
 - (void)_handleUpdateEventTriggerCondition:(id)arg1;
-- (void)_reevaluateIfRelaunchRequired:(BOOL)arg1;
+- (void)_handleUpdateEventTriggerRecurrences:(id)arg1;
+- (void)_reevaluateIfRelaunchRequired:(bool)arg1;
 - (void)_registerForMessages;
-- (id)_rewritePredicate:(id)arg1;
+- (id)_rewritePredicate:(id)arg1 currentCharacteristicInPredicate:(id*)arg2 characteristicsToRead:(id)arg3;
 - (void)_saveChanges:(id)arg1;
 - (void)_sortEvents:(id)arg1;
-- (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (id)_updatePredicate:(id)arg1 currentCharacteristicInPredicate:(id*)arg2 conditionModified:(bool*)arg3 removedAccessory:(id)arg4;
+- (void)activate:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)activateOnLocalDevice;
 - (id)addDeltaToNow:(id)arg1;
-- (id)characteristic;
 - (id)characteristicEvents;
-- (id)characteristicForCondition;
-- (id)characteristicValue;
-- (id)characteristicValueForCondition;
+- (id)compareValueOfCharacteristic:(id)arg1 againstValue:(id)arg2 operatorType:(id)arg3;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (id)dateComponentsFromDate:(id)arg1;
 - (id)dateTodayMatchingComponents:(id)arg1;
-- (void)didDetermineState:(int)arg1 forRegion:(id)arg2;
+- (void)didDetermineState:(long long)arg1 forRegion:(id)arg2;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)evaluationCondition;
 - (void)executeTriggerAfterEvaluatingCondition:(id)arg1;
+- (void)fixupForReplacementAccessory:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 events:(id)arg2 evaluationCondition:(id)arg3;
+- (id)initWithName:(id)arg1 events:(id)arg2 recurrences:(id)arg3 evaluationCondition:(id)arg4;
 - (void)invalidate;
 - (id)locationEvents;
+- (id)recurrences;
+- (void)removeAccessory:(id)arg1;
 - (void)sendTriggerFiredNotification:(id)arg1;
 - (void)setCharacteristicEvents:(id)arg1;
-- (void)setCharacteristicForCondition:(id)arg1;
-- (void)setCharacteristicValueForCondition:(id)arg1;
 - (void)setLocationEvents:(id)arg1;
-- (BOOL)shouldEncodeLastFireDate:(id)arg1;
+- (bool)shouldEncodeLastFireDate:(id)arg1;
 - (id)sunrise;
 - (id)sunset;
+- (unsigned long long)triggerType;
 
 @end

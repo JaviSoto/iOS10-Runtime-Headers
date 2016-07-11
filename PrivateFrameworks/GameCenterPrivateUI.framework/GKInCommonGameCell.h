@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) GKGameRecord *localPlayerGameRecord;
 
+- (void)dealloc;
 - (void)didUpdateModel;
 - (id)leaderboardStringWithGameRecord:(id)arg1;
 - (id)localPlayerGameRecord;

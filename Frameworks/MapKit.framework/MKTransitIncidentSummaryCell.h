@@ -5,11 +5,11 @@
 @interface MKTransitIncidentSummaryCell : MKTableViewCell {
     UIImageView * _iconImageView;
     NSDate * _startDate;
-    UILabel * _startedLabel;
+    _MKUILabel * _startedLabel;
     NSLayoutConstraint * _startedToSummaryConstraint;
-    UILabel * _summaryLabel;
+    _MKUILabel * _summaryLabel;
     NSLayoutConstraint * _summaryToTitleConstraint;
-    UILabel * _titleLabel;
+    _MKUILabel * _titleLabel;
     NSLayoutConstraint * _titleToTopConstraint;
 }
 

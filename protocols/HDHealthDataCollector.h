@@ -8,8 +8,8 @@
 - (void)collectionStartedForType:(HKObjectType *)arg1 collectionInterval:(double)arg2;
 - (void)collectionStoppedForType:(HKObjectType *)arg1;
 - (NSString *)dataCollectorDiagnosticDescription;
-- (BOOL)disabled;
-- (void)setDisabled:(BOOL)arg1;
+- (bool)disabled;
+- (void)setDisabled:(bool)arg1;
 - (void)updateCollectionInterval:(double)arg1 forType:(HKObjectType *)arg2;
 - (void)updateHistoricalData;
 

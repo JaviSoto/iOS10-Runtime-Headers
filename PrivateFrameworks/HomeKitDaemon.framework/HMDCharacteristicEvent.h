@@ -5,20 +5,26 @@
 @interface HMDCharacteristicEvent : HMDEvent <NSSecureCoding> {
     HMDCharacteristic * _characteristic;
     id  _eventValue;
+    id  _previousValue;
 }
 
 @property (nonatomic, readonly) HMDCharacteristic *characteristic;
 @property (nonatomic, retain) id eventValue;
+@property (nonatomic, retain) id previousValue;
 
-+ (BOOL)supportsSecureCoding;
++ (id)characteristicEventWithDictionary:(id)arg1 home:(id)arg2 error:(id*)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)characteristic;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventValue;
 - (id)initWithCharacteristic:(id)arg1 eventValue:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 home:(id)arg2;
+- (id)previousValue;
+- (void)replaceCharacteristic:(id)arg1;
 - (void)setEventValue:(id)arg1;
+- (void)setPreviousValue:(id)arg1;
 
 @end

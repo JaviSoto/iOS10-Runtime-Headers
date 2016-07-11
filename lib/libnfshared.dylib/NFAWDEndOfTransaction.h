@@ -3,22 +3,17 @@
  */
 
 @interface NFAWDEndOfTransaction : NSObject <NFAWDEventProtocol> {
+    unsigned long long  _amount;
+    unsigned int  _command;
+    unsigned int  _currencyCode;
     unsigned long long  _iad;
+    unsigned int  _informative;
     AWDNFCHCIEndOfTransactionEvent * _metric;
-    NSData * aid;
-    unsigned long long  amount;
-    NSData * cdi;
-    unsigned int  command;
-    unsigned int  currencyCode;
-    unsigned int  informative;
-    NSData * maid;
-    NSData * mcii;
-    unsigned int  mobileCVMResult;
-    unsigned int  msc;
-    unsigned int  status;
-    NSData * transactionId;
-    unsigned int  transactionStatus;
-    unsigned int  version;
+    unsigned int  _mobileCVMResult;
+    unsigned int  _msc;
+    unsigned int  _status;
+    unsigned int  _transactionStatus;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) NSData *aid;
@@ -28,7 +23,7 @@
 @property (nonatomic) unsigned int currencyCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long iad;
 @property (nonatomic) unsigned int informative;
 @property (nonatomic, retain) NSData *maid;
@@ -49,7 +44,7 @@
 - (unsigned int)currencyCode;
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (unsigned long long)iad;
 - (unsigned int)informative;
 - (id)init;
@@ -77,7 +72,7 @@
 - (unsigned int)status;
 - (id)transactionId;
 - (unsigned int)transactionStatus;
-- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 - (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 - (unsigned int)version;
 

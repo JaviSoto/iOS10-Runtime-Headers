@@ -2,11 +2,22 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFPlaceholderMailDeliveryUI : MFOutgoingMessageDelivery
+@interface MFPlaceholderMailDeliveryUI : MFOutgoingMessageDelivery <MFMessageRewriterPlaceholderResolver> {
+    NSString * _contextID;
+    MFPlaceholderMessageRewriter * _rewriter;
+}
 
-- (id)deliverSynchronously;
-- (void)recreateMessageWithHTMLDocument:(id)arg1 plainDocument:(id)arg2 otherDocuments:(id)arg3 charSets:(id)arg4;
-- (void)regenerateMessageParts:(id)arg1 htmlBody:(id*)arg2 plainTextAlternative:(id*)arg3 otherHTMLAndAttachments:(id*)arg4 charsets:(id*)arg5;
-- (BOOL)updateMessageWithAttachmentsSynchronously;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (id)_attachmentsContextID;
+- (id)contentForContentID:(id)arg1;
+- (id)contentForPlaceholder:(id)arg1;
+- (id)contentForURL:(id)arg1;
+- (void)dealloc;
+- (id)deliverSynchronouslyWithCompletion:(id /* block */)arg1;
+- (id)initWithMessage:(id)arg1;
 
 @end

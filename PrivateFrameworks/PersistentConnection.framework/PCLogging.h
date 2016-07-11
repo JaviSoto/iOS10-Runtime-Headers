@@ -11,14 +11,14 @@
 + (id /* block */)_formatBlock;
 + (void)_printLoggingConfig;
 + (void)enableConsoleLoggingForLevel:(int)arg1;
-+ (void)enableFileLogging:(BOOL)arg1;
++ (void)enableFileLogging:(bool)arg1;
 + (void)enableLoggingForCustomHandler:(id /* block */)arg1;
 + (id)getMainBundleId;
 + (void)initialize;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3;
-+ (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3 arguments:(void*)arg4;
++ (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3 arguments:(char *)arg4;
 + (id)logFileDirectory;
 + (void)logKeepAliveInterval:(double)arg1 forServiceIdentifier:(id)arg2;
-+ (BOOL)loggingEnabledForLevel:(int)arg1;
++ (bool)loggingEnabledForLevel:(int)arg1;
 
 @end

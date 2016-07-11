@@ -9,7 +9,7 @@
     NSNumberFormatter * _numberFormatter;
     UIImage * _placeholderImage;
     SKUIResourceLoader * _resourceLoader;
-    BOOL  _showsDoneButton;
+    bool  _showsDoneButton;
     UITableView * _tableView;
     MusicTransferAggregator * _transferAggregator;
 }
@@ -17,8 +17,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicTransferProgressViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL showsDoneButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showsDoneButton;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (id)_cancelDownloadsButtonTitle;
 - (id)_cancelUploadsButtonTitle;
 - (void)_doneButtonAction:(id)arg1;
-- (void)_enumerateVisibleCellsForSectionIndex:(int)arg1 usingBlock:(id /* block */)arg2;
+- (void)_enumerateVisibleCellsForSectionIndex:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)_imageForDownload:(id)arg1;
 - (id)_imageForURL:(id)arg1;
 - (id)_imageForUpload:(id)arg1;
@@ -40,23 +40,23 @@
 - (id)delegate;
 - (id)initWithTransferAggregator:(id)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShowsDoneButton:(BOOL)arg1;
-- (BOOL)showsDoneButton;
+- (void)setShowsDoneButton:(bool)arg1;
+- (bool)showsDoneButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)transferAggregator:(id)arg1 downloadStatusChangedAtIndexes:(id)arg2;
 - (void)transferAggregator:(id)arg1 uploadStatusChangedAtIndexes:(id)arg2;
 - (void)transferAggregatorDownloadsDidChange:(id)arg1;
 - (void)transferAggregatorUploadsDidChange:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

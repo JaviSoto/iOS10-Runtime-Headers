@@ -17,9 +17,8 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (void)finalize;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
@@ -28,7 +27,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
 
-- (void)postNotificationNameOnMainThread:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(BOOL)arg4;
+- (void)postNotificationNameOnMainThread:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(bool)arg4;
 - (void)postNotificationNameOnMainThreadHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation

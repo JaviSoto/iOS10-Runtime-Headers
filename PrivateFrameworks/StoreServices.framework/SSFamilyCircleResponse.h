@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) SSFamilyCircle *familyCircle;
 
+- (void).cxx_destruct;
 - (id)familyCircle;
 - (void)setFamilyCircle:(id)arg1;
 

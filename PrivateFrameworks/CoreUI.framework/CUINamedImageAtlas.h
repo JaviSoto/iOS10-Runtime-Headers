@@ -11,15 +11,16 @@
 @property (nonatomic, readonly) struct CGImage { }*image;
 @property (nonatomic, readonly) NSArray *imageNames;
 @property (nonatomic, readonly) struct __CFArray { }*images;
-@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) double scale;
 
-- (id)_renditionForKey:(id)arg1 inThemeRef:(unsigned int)arg2;
+- (bool)_dimension1ExistsInKeyFormatForThemeRef:(unsigned long long)arg1;
+- (id)_renditionForKey:(id)arg1 inThemeRef:(unsigned long long)arg2;
 - (void)dealloc;
 - (struct CGImage { }*)image;
 - (id)imageNames;
 - (id)imageWithName:(id)arg1;
 - (struct __CFArray { }*)images;
-- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned int)arg3 withSourceThemeRef:(unsigned int)arg4;
-- (float)scale;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 withContents:(id)arg3 contentsFromCatalog:(id)arg4 fromTheme:(unsigned long long)arg5 withSourceThemeRef:(unsigned long long)arg6;
+- (double)scale;
 
 @end

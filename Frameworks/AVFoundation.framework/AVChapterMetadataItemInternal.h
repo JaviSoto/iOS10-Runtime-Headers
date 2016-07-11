@@ -4,8 +4,8 @@
 
 @interface AVChapterMetadataItemInternal : NSObject {
     NSString * chapterDataType;
-    long  chapterGroupIndex;
-    long  chapterIndex;
+    long long  chapterGroupIndex;
+    long long  chapterIndex;
     NSString * chapterType;
     NSMutableArray * completions;
     struct { 
@@ -14,8 +14,9 @@
         unsigned int flags; 
         long long epoch; 
     }  duration;
+    NSString * extendedLanguageTag;
     struct OpaqueFigAsset { } * figAsset;
-    NSLocale * locale;
+    NSString * languageCode;
     NSObject<OS_dispatch_queue> * readWriteQueue;
     struct { 
         long long value; 
@@ -24,8 +25,8 @@
         long long epoch; 
     }  time;
     <NSObject><NSCopying> * value;
-    long  valueErrorCode;
-    int  valueStatus;
+    int  valueErrorCode;
+    long long  valueStatus;
     AVWeakReference * weakReference;
 }
 

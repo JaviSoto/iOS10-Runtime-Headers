@@ -3,24 +3,24 @@
  */
 
 @interface SKUIItemOfferButtonState : NSObject {
-    BOOL  _hasImage;
-    BOOL  _highlighted;
-    int  _progressType;
-    BOOL  _showingConfirmation;
+    bool  _hasImage;
+    bool  _highlighted;
+    long long  _progressType;
+    bool  _showingConfirmation;
 }
 
-@property (nonatomic) BOOL hasImage;
-@property (nonatomic) BOOL highlighted;
-@property (nonatomic) int progressType;
-@property (nonatomic) BOOL showingConfirmation;
+@property (nonatomic) bool hasImage;
+@property (nonatomic) bool highlighted;
+@property (nonatomic) long long progressType;
+@property (nonatomic) bool showingConfirmation;
 
-- (BOOL)hasImage;
-- (BOOL)highlighted;
-- (int)progressType;
-- (void)setHasImage:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setProgressType:(int)arg1;
-- (void)setShowingConfirmation:(BOOL)arg1;
-- (BOOL)showingConfirmation;
+- (bool)hasImage;
+- (bool)highlighted;
+- (long long)progressType;
+- (void)setHasImage:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setProgressType:(long long)arg1;
+- (void)setShowingConfirmation:(bool)arg1;
+- (bool)showingConfirmation;
 
 @end

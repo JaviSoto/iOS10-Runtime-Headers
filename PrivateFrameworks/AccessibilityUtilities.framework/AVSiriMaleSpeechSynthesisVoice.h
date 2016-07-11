@@ -4,6 +4,6 @@
 
 @interface AVSiriMaleSpeechSynthesisVoice : AVSpeechSynthesisVoice <AXAlternativeSpeechSynthesisVoice>
 
-- (id)identifier;
+- (id)name;
 
 @end

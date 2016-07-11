@@ -7,8 +7,8 @@
     unsigned int  _basePlaylistContainerID;
     NSURL * _baseURL;
     NSURLSession * _connectionSession;
-    int  _connectionState;
-    int  _connectionType;
+    long long  _connectionState;
+    long long  _connectionType;
     unsigned int  _controlKey;
     unsigned int  _controlPort;
     unsigned int  _databaseID;
@@ -21,19 +21,19 @@
     unsigned int  _sessionID;
 }
 
-@property unsigned int basePlaylistContainerID;
+@property (nonatomic) unsigned int basePlaylistContainerID;
 @property (nonatomic, readonly) NSURL *baseURL;
-@property (nonatomic) int connectionState;
-@property (nonatomic, readonly) int connectionType;
-@property unsigned int controlKey;
-@property unsigned int controlPort;
-@property unsigned int databaseID;
-@property unsigned int databaseRevision;
+@property (nonatomic) long long connectionState;
+@property (nonatomic, readonly) long long connectionType;
+@property (nonatomic) unsigned int controlKey;
+@property (nonatomic) unsigned int controlPort;
+@property (nonatomic) unsigned int databaseID;
+@property (nonatomic) unsigned int databaseRevision;
 @property (retain) HSFairPlayInfo *fairPlayInfo;
 @property (copy) NSString *homeSharingGroupID;
-@property unsigned int interfaceID;
+@property (nonatomic) unsigned int interfaceID;
 @property (nonatomic) unsigned int promptID;
-@property unsigned int sessionID;
+@property (nonatomic) unsigned int sessionID;
 
 - (void).cxx_destruct;
 - (void)_continueFPSetupNegotiationWithData:(id)arg1 internalConnectionCompletionHandler:(id /* block */)arg2;
@@ -47,8 +47,8 @@
 - (id)baseURL;
 - (void)checkForDatabaseUpdatesWithCompletionHandler:(id /* block */)arg1;
 - (void)connectWithCompletionHandler:(id /* block */)arg1;
-- (int)connectionState;
-- (int)connectionType;
+- (long long)connectionState;
+- (long long)connectionType;
 - (unsigned int)controlKey;
 - (unsigned int)controlPort;
 - (unsigned int)databaseID;
@@ -58,14 +58,14 @@
 - (id)fairPlayInfo;
 - (id)homeSharingGroupID;
 - (id)initWithBaseURL:(id)arg1;
-- (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
+- (id)initWithBaseURL:(id)arg1 connectionType:(long long)arg2;
 - (unsigned int)interfaceID;
 - (id)newControlConnection;
 - (unsigned int)promptID;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (unsigned int)sessionID;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
-- (void)setConnectionState:(int)arg1;
+- (void)setConnectionState:(long long)arg1;
 - (void)setControlKey:(unsigned int)arg1;
 - (void)setControlPort:(unsigned int)arg1;
 - (void)setDatabaseID:(unsigned int)arg1;

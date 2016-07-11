@@ -16,11 +16,11 @@
 
 + (id)metadataWithData:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)applyToAlarm:(id)arg1;
 - (id)attach;
 - (id)attendee;
 - (id)dataRepresentation;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

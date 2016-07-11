@@ -3,42 +3,41 @@
  */
 
 @interface UIAlertControllerVisualStyleActionSheetInline : UIAlertControllerVisualStyleActionSheet {
-    _UIDimmingKnockoutBackdropView * _inlineBackgroundView;
+    bool  _actionsReversed;
+    UIView * _headerView;
     UIVisualEffectView * _revealEffectView;
+    _UIPreviewPresentationEffectView * _sourceViewSnapshot;
 }
 
-@property (nonatomic, retain) _UIDimmingKnockoutBackdropView *inlineBackgroundView;
+@property (nonatomic, retain) UIView *headerView;
 @property (nonatomic, retain) UIVisualEffectView *revealEffectView;
+@property (nonatomic, retain) _UIPreviewPresentationEffectView *sourceViewSnapshot;
+
++ (long long)interfaceActionPresentationStyle;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sourceRectForAlertController:(id)arg1 inContainerView:(id)arg2;
-- (float)_systemFontSize;
-- (id)actionContentColorForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (float)actionHorizontalContentMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 isInteractive:(BOOL)arg4 inContainerView:(id)arg5 descendantOfContainerView:(id)arg6 duration:(double)arg7 completionBlock:(id /* block */)arg8;
-- (void)animateAncillaryViewsForAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 isInteractive:(BOOL)arg4 inContainerView:(id)arg5 descendantOfContainerView:(id)arg6 duration:(double)arg7;
-- (float)backgroundCornerRadius;
-- (id)backgroundView;
-- (id)backgroundViewForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (double)_actionDescriptiveTextFontSize;
+- (bool)_shouldReverseActions;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sourceRectForAlertController:(id)arg1 inContainerView:(id)arg2;
+- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(bool)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(id /* block */)arg7;
+- (void)animateRevealOfAlertControllerView:(id)arg1 alertController:(id)arg2 inContainerView:(id)arg3 duration:(double)arg4 completionBlock:(id /* block */)arg5;
 - (id)dimmingViewForAlertController:(id)arg1;
-- (double)durationForTransition:(int)arg1;
-- (BOOL)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
-- (id)inlineBackgroundView;
-- (id)interactionProgressForTransitionOfType:(int)arg1 forAlertController:(id)arg2;
-- (float)minimumActionHeight;
-- (float)minimumWidth;
-- (int)permittedActionLayoutDirection;
+- (id)headerView;
+- (bool)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
+- (id)interactionProgressForTransitionOfType:(long long)arg1 forAlertController:(id)arg2;
+- (double)minimumWidth;
+- (long long)permittedActionLayoutDirection;
+- (bool)placementAvoidsKeyboard;
 - (void)positionAlertControllerView:(id)arg1 ofAlertController:(id)arg2 inAvailableSpaceView:(id)arg3;
-- (void)positionAncillaryViewsForAlertController:(id)arg1 withAlertControllerView:(id)arg2 inContainerView:(id)arg3;
-- (void)positionPresentationSourceRepresentationViewForAlertController:(id)arg1 withAlertControllerView:(id)arg2 inContainerView:(id)arg3;
-- (id)preferredActionFont;
-- (id)regularActionFont;
 - (id)revealEffectView;
-- (void)setInlineBackgroundView:(id)arg1;
+- (void)setHeaderView:(id)arg1;
 - (void)setRevealEffectView:(id)arg1;
-- (double)transitionDurationForPresentation:(BOOL)arg1 ofAlertController:(id)arg2;
-- (BOOL)transitionOfType:(int)arg1 shouldBeInteractiveForAlertController:(id)arg2;
+- (void)setSourceViewSnapshot:(id)arg1;
+- (bool)shouldOccludeDuringPresentation;
+- (bool)shouldPreserveRespondersAcrossWindows;
+- (id)sourceViewSnapshot;
+- (id)tintColorForAlertController:(id)arg1;
+- (double)transitionDurationForPresentation:(bool)arg1 ofAlertController:(id)arg2;
+- (bool)transitionOfType:(long long)arg1 shouldBeInteractiveForAlertController:(id)arg2;
 
 @end

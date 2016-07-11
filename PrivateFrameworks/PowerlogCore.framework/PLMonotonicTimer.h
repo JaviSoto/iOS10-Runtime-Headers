@@ -9,7 +9,6 @@
     NSDate * _monotonicFireDate;
     NSObject<OS_dispatch_queue> * _queue;
     PLEntryNotificationOperatorComposition * _wakeEntryNotification;
-    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (copy) id /* block */ block;
@@ -18,8 +17,9 @@
 @property (nonatomic, retain) NSDate *monotonicFireDate;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (retain) PLEntryNotificationOperatorComposition *wakeEntryNotification;
-@property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)debugInstance;
++ (id)debugScheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(id /* block */)arg4;
 + (id)scheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(id /* block */)arg4;
 
 - (void).cxx_destruct;
@@ -28,6 +28,7 @@
 - (id /* block */)block;
 - (void)cancel;
 - (id)canceledFireDates;
+- (void)dealloc;
 - (id)description;
 - (void)fire;
 - (id)initWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(id /* block */)arg4;
@@ -42,9 +43,7 @@
 - (void)setMonotonicFireDate:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setWakeEntryNotification:(id)arg1;
-- (void)setWorkQueue:(id)arg1;
 - (void)timerFiredForMonotonicFireDate:(id)arg1;
 - (id)wakeEntryNotification;
-- (id)workQueue;
 
 @end

@@ -10,9 +10,8 @@
 @property (nonatomic, readonly) HKObject *dataObject;
 @property (nonatomic, readonly) HDDataOriginProvenance *provenance;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
-+ (BOOL)supportsSecureCoding;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dataObject;

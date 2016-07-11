@@ -4,4 +4,9 @@
 
 @interface ICDrawingTextAttachment : ICTextAttachment
 
+- (id)attachmentFileWrapper;
+- (bool)requiresSpaceAfterAttachmentForPrinting;
+- (bool)supportsMultipleThumbnailsOnSameLine;
+- (bool)supportsThumbnailView;
+
 @end

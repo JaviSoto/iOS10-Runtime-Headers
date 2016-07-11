@@ -14,11 +14,11 @@
 @property (nonatomic) struct { unsigned int x1[8]; } auditToken;
 @property (nonatomic) unsigned int clientPort;
 @property (nonatomic) int key;
-@property (nonatomic, retain) NSDictionary *payload;
+@property (nonatomic, copy) NSDictionary *payload;
 @property (nonatomic, readonly) NSString *senderBundleId;
 
 + (id)archivedMessageFromData:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct { unsigned int x1[8]; })auditToken;
 - (unsigned int)clientPort;

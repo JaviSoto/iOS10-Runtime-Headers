@@ -3,20 +3,20 @@
  */
 
 @interface NBBackup : NSObject <NSSecureCoding> {
+    NSURL * _activeWatchFaceFileURL;
     NSNumber * _bcmWindowMaterial;
     NSNumber * _bottomEnclosureMaterial;
     NSString * _deviceColor;
     NSString * _deviceEnclosureColor;
-    BOOL  _diagnosticsOptInEnabled;
+    bool  _diagnosticsOptInEnabled;
     NSNumber * _fcmMaterial;
+    bool  _hasResolvedActiveWatchFaceFilePath;
     NSDate * _lastModificationDate;
-    BOOL  _locationOptInEnabled;
+    bool  _locationOptInEnabled;
     NSString * _marketingVersion;
-    NSString * _material;
-    NSString * _model;
     NSString * _name;
+    NSString * _productName;
     NSString * _productType;
-    BOOL  _siriOptInEnabled;
     NSNumber * _sizeInBytes;
     NSString * _systemBuildVersion;
     NSString * _systemVersion;
@@ -26,20 +26,20 @@
     NSString * _watchFaceColor;
 }
 
+@property (nonatomic, retain) NSURL *activeWatchFaceFileURL;
 @property (nonatomic, retain) NSNumber *bcmWindowMaterial;
 @property (nonatomic, retain) NSNumber *bottomEnclosureMaterial;
 @property (nonatomic, retain) NSString *deviceColor;
 @property (nonatomic, retain) NSString *deviceEnclosureColor;
-@property (getter=isDiagnosticsOptInEnabled, nonatomic) BOOL diagnosticsOptInEnabled;
+@property (getter=isDiagnosticsOptInEnabled, nonatomic) bool diagnosticsOptInEnabled;
 @property (nonatomic, retain) NSNumber *fcmMaterial;
+@property (nonatomic) bool hasResolvedActiveWatchFaceFilePath;
 @property (nonatomic, retain) NSDate *lastModificationDate;
-@property (getter=isLocationOptInEnabled, nonatomic) BOOL locationOptInEnabled;
+@property (getter=isLocationOptInEnabled, nonatomic) bool locationOptInEnabled;
 @property (nonatomic, retain) NSString *marketingVersion;
-@property (nonatomic, retain) NSString *material;
-@property (nonatomic, retain) NSString *model;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *productName;
 @property (nonatomic, retain) NSString *productType;
-@property (getter=isSiriOptInEnabled, nonatomic) BOOL siriOptInEnabled;
 @property (nonatomic, retain) NSNumber *sizeInBytes;
 @property (nonatomic, retain) NSString *systemBuildVersion;
 @property (nonatomic, retain) NSString *systemVersion;
@@ -48,9 +48,10 @@
 @property (nonatomic, retain) NSString *watchFace;
 @property (nonatomic, retain) NSString *watchFaceColor;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)activeWatchFaceFileURL;
 - (id)bcmWindowMaterial;
 - (id)bottomEnclosureMaterial;
 - (id)description;
@@ -58,30 +59,29 @@
 - (id)deviceEnclosureColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fcmMaterial;
+- (bool)hasResolvedActiveWatchFaceFilePath;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDiagnosticsOptInEnabled;
-- (BOOL)isLocationOptInEnabled;
-- (BOOL)isSiriOptInEnabled;
+- (bool)isDiagnosticsOptInEnabled;
+- (bool)isLocationOptInEnabled;
 - (id)lastModificationDate;
 - (id)marketingVersion;
-- (id)material;
-- (id)model;
 - (id)name;
+- (id)productName;
 - (id)productType;
+- (void)setActiveWatchFaceFileURL:(id)arg1;
 - (void)setBcmWindowMaterial:(id)arg1;
 - (void)setBottomEnclosureMaterial:(id)arg1;
 - (void)setDeviceColor:(id)arg1;
 - (void)setDeviceEnclosureColor:(id)arg1;
-- (void)setDiagnosticsOptInEnabled:(BOOL)arg1;
+- (void)setDiagnosticsOptInEnabled:(bool)arg1;
 - (void)setFcmMaterial:(id)arg1;
+- (void)setHasResolvedActiveWatchFaceFilePath:(bool)arg1;
 - (void)setLastModificationDate:(id)arg1;
-- (void)setLocationOptInEnabled:(BOOL)arg1;
+- (void)setLocationOptInEnabled:(bool)arg1;
 - (void)setMarketingVersion:(id)arg1;
-- (void)setMaterial:(id)arg1;
-- (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setProductName:(id)arg1;
 - (void)setProductType:(id)arg1;
-- (void)setSiriOptInEnabled:(BOOL)arg1;
 - (void)setSizeInBytes:(id)arg1;
 - (void)setSystemBuildVersion:(id)arg1;
 - (void)setSystemVersion:(id)arg1;

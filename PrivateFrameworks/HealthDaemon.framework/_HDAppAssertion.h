@@ -3,10 +3,12 @@
  */
 
 @interface _HDAppAssertion : NSObject {
+    HDAppAssertionManager * _assertionManager;
     NSString * _bundleIdentifier;
-    BOOL  _invalidated;
+    HDDaemon * _daemon;
+    bool  _invalidated;
     double  _lastLaunchAttempt;
-    int  _launchErrorCount;
+    long long  _launchErrorCount;
     NSMutableArray * _pendingDataTypeCodes;
     NSMutableDictionary * _pendingLaunchCompletions;
     NSMutableSet * _processAssertions;
@@ -14,10 +16,12 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
+@property (nonatomic) HDAppAssertionManager *assertionManager;
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
-@property (nonatomic) BOOL invalidated;
+@property (nonatomic) HDDaemon *daemon;
+@property (nonatomic) bool invalidated;
 @property (nonatomic, readonly) double lastLaunchAttempt;
-@property (nonatomic, readonly) int launchErrorCount;
+@property (nonatomic, readonly) long long launchErrorCount;
 @property (nonatomic, readonly) double nextLaunchAttempt;
 @property (nonatomic, readonly) NSMutableArray *pendingDataTypeCodes;
 @property (nonatomic, retain) NSMutableDictionary *pendingLaunchCompletions;
@@ -28,15 +32,17 @@
 - (void).cxx_destruct;
 - (void)_queue_acquireAssertionWithCompletion:(id /* block */)arg1;
 - (void)_queue_invalidate;
+- (id)assertionManager;
 - (id)bundleIdentifier;
-- (void)extendForDataType:(int)arg1 completion:(id /* block */)arg2;
-- (unsigned int)hash;
-- (id)initWithBundleIdentifier:(id)arg1 queue:(id)arg2;
-- (void)invalidateForDataType:(int)arg1;
-- (BOOL)invalidated;
-- (BOOL)isEqual:(id)arg1;
+- (id)daemon;
+- (void)extendForDataType:(long long)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)hash;
+- (id)initWithBundleIdentifier:(id)arg1 assertionManager:(id)arg2 daemon:(id)arg3 queue:(id)arg4;
+- (void)invalidateForDataType:(long long)arg1;
+- (bool)invalidated;
+- (bool)isEqual:(id)arg1;
 - (double)lastLaunchAttempt;
-- (int)launchErrorCount;
+- (long long)launchErrorCount;
 - (void)launchWithCompletion:(id /* block */)arg1;
 - (double)nextLaunchAttempt;
 - (id)pendingDataTypeCodes;
@@ -44,7 +50,9 @@
 - (id)processAssertions;
 - (id)processDeathSource;
 - (id)queue;
-- (void)setInvalidated:(BOOL)arg1;
+- (void)setAssertionManager:(id)arg1;
+- (void)setDaemon:(id)arg1;
+- (void)setInvalidated:(bool)arg1;
 - (void)setPendingLaunchCompletions:(id)arg1;
 - (void)setProcessAssertions:(id)arg1;
 - (void)setProcessDeathSource:(id)arg1;

@@ -2,8 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDOpenURLAction : DDAction
+@interface DDOpenURLAction : DDAction {
+    LSAppLink * _appLink;
+    bool  _appLinkInitDone;
+}
 
+- (id)appLink;
+- (id)companionAction;
+- (void)dealloc;
+- (id)localizedName;
 - (void)perform;
+- (bool)useAppLink;
 
 @end

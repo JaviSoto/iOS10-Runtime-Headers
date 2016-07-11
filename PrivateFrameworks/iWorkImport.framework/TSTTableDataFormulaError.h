@@ -6,10 +6,13 @@
     TSWPStorage * mFormulaError;
 }
 
+@property (nonatomic, readonly) TSWPStorage *formulaError;
+
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (id)initObjectWithFormulaError:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)formulaError;
+- (unsigned long long)hash;
+- (id)initObjectWithFormulaError:(id)arg1 refCount:(unsigned int)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

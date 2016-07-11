@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSMutableDictionary *zoneIDsByRequestID;
 
 - (void).cxx_destruct;
+- (bool)_shareID:(id)arg1 isEqualTo:(id)arg2;
 - (id)initWithShareIDs:(id)arg1;
 - (id)initWithZoneIDs:(id)arg1;
 - (int)operationType;

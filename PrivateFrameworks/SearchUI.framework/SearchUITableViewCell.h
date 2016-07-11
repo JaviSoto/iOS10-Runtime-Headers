@@ -3,35 +3,41 @@
  */
 
 @interface SearchUITableViewCell : UITableViewCell {
-    <SearchUIDelegate> * _delegate;
-    BOOL  _isExpandable;
+    <SearchUIFeedbackDelegatePrivate> * _delegate;
+    bool  _expanded;
+    unsigned long long  _style;
 }
 
-@property <SearchUIDelegate> *delegate;
-@property BOOL isExpandable;
+@property <SearchUIFeedbackDelegatePrivate> *delegate;
+@property (getter=isExpanded) bool expanded;
+@property unsigned long long style;
 
 + (Class)classForResult:(id)arg1;
-+ (id)reuseCharacteristicsIDForResult:(id)arg1;
-+ (id)reuseIdentifierForClass:(Class)arg1 result:(id)arg2;
++ (id)convertResultIfNecessary:(id)arg1;
++ (double)distanceToTopOfAppIconsForMultiResultCell;
++ (bool)resultIsSuggestedQuery:(id)arg1;
++ (id)reuseIdentifierForClass:(Class)arg1;
 + (id)reuseIdentifierForResult:(id)arg1;
 + (id)reuseIdentifierForResults:(id)arg1;
-+ (id)rowViewForResult:(id)arg1 style:(unsigned int)arg2;
++ (id)rowViewForResult:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 
 - (void).cxx_destruct;
-- (void)clearPurgeableMemory;
 - (id)delegate;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
-- (id)initWithResults:(id)arg1 style:(unsigned int)arg2;
-- (id)initWithStyle:(unsigned int)arg1;
-- (BOOL)isExpandable;
-- (int)numberOfVisibleResults;
-- (void)reset;
+- (id)initWithResult:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithResults:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (bool)isExpandable;
+- (bool)isExpanded;
+- (unsigned long long)numberOfVisibleResults;
 - (void)setDelegate:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
-- (void)setIsExpandable:(BOOL)arg1;
-- (BOOL)supportsRecycling;
+- (void)setExpanded:(bool)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (void)setStyle:(unsigned long long)arg1;
+- (bool)shouldHideBottomSeparator;
+- (unsigned long long)style;
+- (bool)supportsRecycling;
+- (void)updateExpanded:(bool)arg1;
 - (void)updateWithResult:(id)arg1;
 - (void)updateWithResults:(id)arg1;
-- (void)willMoveToSuperview:(id)arg1;
 
 @end

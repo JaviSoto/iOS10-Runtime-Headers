@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WebFilterEvaluator : NSObject <NSSecureCoding> {
+@interface WebFilterEvaluator : NSObject <NSSecureCoding, WFPINEntryViewControllerProtocol> {
     NSMutableData * _buffer;
-    unsigned int  _filterState;
+    id /* block */  _completion;
+    unsigned long long  _filterState;
     NSString * _pageTitle;
+    WFRemotePINEntryViewController * _remoteViewController;
     NSURL * _url;
 }
 
+@property (nonatomic, retain) WFRemotePINEntryViewController *remoteViewController;
+
 + (id)createWithResponse:(id)arg1;
-+ (BOOL)isManagedSession;
-+ (BOOL)supportsSecureCoding;
++ (bool)isManagedSession;
++ (bool)supportsSecureCoding;
 
 - (id)addData:(id)arg1;
 - (void)attemptUnblockWithCompletion:(id /* block */)arg1;
@@ -20,10 +24,14 @@
 - (void)dealloc;
 - (id)debugPageForPageWithData:(id)arg1 forURL:(id)arg2 debugString:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
-- (long)filterState;
+- (int)filterState;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResponse:(id)arg1;
+- (id)remoteViewController;
+- (void)setRemoteViewController:(id)arg1;
 - (void)unblockWithCompletion:(id /* block */)arg1;
-- (BOOL)wasBlocked;
+- (void)userDidCancel;
+- (void)userEnteredCorrectPIN;
+- (bool)wasBlocked;
 
 @end

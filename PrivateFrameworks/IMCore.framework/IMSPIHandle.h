@@ -3,22 +3,28 @@
  */
 
 @interface IMSPIHandle : NSObject {
+    int  _abIdentifier;
     NSString * _address;
-    NSString * _displayName;
-    NSString * _identifier;
+    IMPerson * _person;
 }
 
+@property int abIdentifier;
 @property (retain) NSString *address;
-@property (retain) NSString *displayName;
-@property (retain) NSString *identifier;
+@property (readonly) NSString *cnContactID;
+@property (readonly) NSString *displayName;
+@property (readonly) NSString *identifier;
+@property (retain) IMPerson *person;
 
+- (void).cxx_destruct;
+- (int)abIdentifier;
 - (id)address;
-- (void)dealloc;
+- (id)cnContactID;
 - (id)description;
 - (id)displayName;
 - (id)identifier;
+- (id)person;
+- (void)setAbIdentifier:(int)arg1;
 - (void)setAddress:(id)arg1;
-- (void)setDisplayName:(id)arg1;
-- (void)setIdentifier:(id)arg1;
+- (void)setPerson:(id)arg1;
 
 @end

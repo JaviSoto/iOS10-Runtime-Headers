@@ -19,9 +19,9 @@
 - (void)presentDrawable:(id <MTLDrawable>)arg1;
 - (void)presentDrawable:(id <MTLDrawable>)arg1 atTime:(double)arg2;
 - (<MTLRenderCommandEncoder> *)renderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1;
-- (BOOL)retainedReferences;
+- (bool)retainedReferences;
 - (void)setLabel:(NSString *)arg1;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
 

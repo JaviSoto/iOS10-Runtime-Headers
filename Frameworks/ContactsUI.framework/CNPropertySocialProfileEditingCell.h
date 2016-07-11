@@ -2,18 +2,14 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNPropertySocialProfileEditingCell : CNPropertySimpleEditingCell <CNPickerControllerDelegate> {
-    NSString * _previousValue;
-}
+@interface CNPropertySocialProfileEditingCell : CNPropertySimpleEditingCell <CNPickerControllerDelegate>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CNSocialProfile *profile;
 @property (readonly) Class superclass;
 
-- (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)labelButtonClicked:(id)arg1;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;

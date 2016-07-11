@@ -4,34 +4,39 @@
 
 @interface HAPRelayRequestMessage : NSObject {
     NSData * _body;
-    NSUUID * _identifier;
-    HAPBlockOperation * _operation;
-    unsigned char  _sequence;
+    HMFBlockOperation * _operation;
+    NSMutableSet * _requestIdentifiers;
     double  _timeout;
-    unsigned int  _type;
+    unsigned short  _transactionIdentifier;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSData *body;
-@property (getter=isEncrypted, nonatomic, readonly) BOOL encrypted;
-@property (nonatomic, copy) NSUUID *identifier;
-@property (nonatomic) HAPBlockOperation *operation;
-@property (nonatomic) unsigned char sequence;
+@property (getter=isEncrypted, nonatomic, readonly) bool encrypted;
+@property (getter=isFinished, nonatomic, readonly) bool finished;
+@property (nonatomic) HMFBlockOperation *operation;
+@property (nonatomic, readonly) NSSet *requestIdentifiers;
+@property (nonatomic, readonly) bool sent;
 @property (nonatomic, readonly) double timeout;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic) unsigned short transactionIdentifier;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
+- (void)addRequestIdentifier:(id)arg1;
 - (id)body;
-- (unsigned int)hash;
-- (id)identifier;
-- (id)initWithRequestData:(id)arg1 messageType:(unsigned int)arg2 timeout:(double)arg3;
-- (BOOL)isEncrypted;
-- (BOOL)isEqual:(id)arg1;
+- (id)debugDescription;
+- (id)description;
+- (id)initWithRequestData:(id)arg1 messageType:(unsigned long long)arg2 timeout:(double)arg3;
+- (bool)isEncrypted;
+- (bool)isFinished;
 - (id)operation;
-- (unsigned char)sequence;
-- (void)setIdentifier:(id)arg1;
+- (id)requestIdentifiers;
+- (bool)sent;
 - (void)setOperation:(id)arg1;
-- (void)setSequence:(unsigned char)arg1;
+- (void)setTransactionIdentifier:(unsigned short)arg1;
+- (id)shortDescription;
 - (double)timeout;
-- (unsigned int)type;
+- (unsigned short)transactionIdentifier;
+- (unsigned long long)type;
 
 @end

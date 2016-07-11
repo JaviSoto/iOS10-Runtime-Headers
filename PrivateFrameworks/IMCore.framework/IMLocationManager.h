@@ -16,10 +16,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSMutableArray *handlers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *locateStartTime;
 @property (nonatomic, retain) CLLocation *location;
-@property (nonatomic, readonly) BOOL locationAuthorizationDenied;
+@property (nonatomic, readonly) bool locationAuthorizationDenied;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) NSTimer *locationUpdateTimer;
 @property (readonly) Class superclass;
@@ -28,6 +28,7 @@
 + (id)locationShifter;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_fireCompletionHandlers;
 - (void)_locationManagerTimedOut;
 - (void)_locationUpdateTimerFired:(id)arg1;
@@ -37,7 +38,7 @@
 - (id)init;
 - (id)locateStartTime;
 - (id)location;
-- (BOOL)locationAuthorizationDenied;
+- (bool)locationAuthorizationDenied;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;

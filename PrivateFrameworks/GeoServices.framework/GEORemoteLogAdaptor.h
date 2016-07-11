@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORemoteLogAdaptor : GEOBaseLogAdaptor <PBRequesterDelegate> {
+@interface GEORemoteLogAdaptor : GEOBaseLogAdaptor <GEOPBSessionRequesterDelegate> {
     id /* block */  _backgroundTaskEnd;
     id /* block */  _backgroundTaskStart;
     NSString * _debugRequestName;
@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *debugRequestName;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSURL *remoteURL;
 @property (readonly) Class superclass;
 

@@ -5,10 +5,12 @@
 @interface AVURLAssetInternal : NSObject {
     NSURL * URL;
     AVAssetClientURLRequestHelper * URLRequestHelper;
-    BOOL  hasInstanceIdentifierMapping;
+    AVAssetCache * assetCache;
+    bool  hasInstanceIdentifierMapping;
     NSDictionary * initializationOptions;
     AVAssetInspectorLoader * loader;
-    long  makeOneResourceLoaderOnly;
+    long long  makeOneAssetDownloadCacheOnly;
+    long long  makeOneResourceLoaderOnly;
     AVAssetResourceLoader * resourceLoader;
     NSArray * tracks;
     NSObject<OS_dispatch_queue> * tracksAccessQueue;

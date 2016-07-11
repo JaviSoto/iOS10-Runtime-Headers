@@ -10,7 +10,7 @@
     CDAttribute * screenUnlockAttribute;
     NSDate * startDate;
     id /* block */  theCallback;
-    int  timeZoneSecondsFromGMT;
+    long long  timeZoneSecondsFromGMT;
     bool  usefulDate;
 }
 
@@ -18,7 +18,6 @@
 - (void)checkTimeZone;
 - (id)computeUserWakeupDate;
 - (void)generateFireDates;
-- (id)getScreenLockAttribute;
 - (id)init:(id)arg1 withRunLoop:(id)arg2 withCallback:(id /* block */)arg3;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
@@ -26,7 +25,5 @@
 - (void)restore:(id)arg1;
 - (void)save:(id)arg1;
 - (void)timerFired:(id)arg1;
-- (id)unlockTimesOverWindow:(id)arg1 atDate:(id)arg2;
-- (id)userWakeupFromInactivity;
 
 @end

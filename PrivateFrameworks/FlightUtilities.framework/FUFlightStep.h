@@ -2,37 +2,57 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUFlightStep : NSObject {
-    NSDate * _actualTime;
+@interface FUFlightStep : NSObject <NSSecureCoding> {
+    FUStepTime * _actualTime;
     FUAirport * _airport;
+    NSNumber * _delayFromSchedule;
+    FUStepTime * _estimatedTime;
     NSString * _gate;
-    NSDate * _scheduledTime;
+    long long  _legStatus;
+    FUStepTime * _plannedTime;
+    FUStepTime * _scheduledTime;
     NSString * _terminal;
-    NSTimeZone * _timeZone;
 }
 
-@property (retain) NSDate *actualTime;
+@property (retain) FUStepTime *actualTime;
 @property (retain) FUAirport *airport;
+@property (nonatomic, retain) NSNumber *delayFromSchedule;
+@property (retain) FUStepTime *estimatedTime;
 @property (retain) NSString *gate;
-@property (retain) NSDate *scheduledTime;
+@property long long legStatus;
+@property (retain) FUStepTime *plannedTime;
+@property (retain) FUStepTime *scheduledTime;
+@property (nonatomic, readonly) unsigned long long status;
 @property (retain) NSString *terminal;
-@property (retain) NSTimeZone *timeZone;
+@property (readonly) FUStepTime *time;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actualTime;
 - (id)airport;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)delayFromSchedule;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)estimatedTime;
 - (id)gate;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)legStatus;
+- (id)plannedTime;
 - (id)scheduledTime;
 - (void)setActualTime:(id)arg1;
 - (void)setAirport:(id)arg1;
+- (void)setDelayFromSchedule:(id)arg1;
+- (void)setEstimatedTime:(id)arg1;
 - (void)setGate:(id)arg1;
+- (void)setLegStatus:(long long)arg1;
+- (void)setPlannedTime:(id)arg1;
 - (void)setScheduledTime:(id)arg1;
 - (void)setTerminal:(id)arg1;
-- (void)setTimeZone:(id)arg1;
+- (unsigned long long)status;
 - (id)terminal;
-- (id)timeZone;
+- (id)time;
 
 @end

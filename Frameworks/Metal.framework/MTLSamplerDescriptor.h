@@ -2,23 +2,33 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLSamplerDescriptor : NSObject <NSCopying>
+@interface MTLSamplerDescriptor : NSObject <NSCopying> {
+    unsigned long long  _borderColor;
+    bool  _lodAverage;
+}
 
+@property (nonatomic) unsigned long long borderColor;
+@property (nonatomic) unsigned long long compareFunction;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic) bool lodAverage;
 @property (nonatomic) float lodMaxClamp;
 @property (nonatomic) float lodMinClamp;
-@property (nonatomic) unsigned int magFilter;
-@property (nonatomic) unsigned int maxAnisotropy;
-@property (nonatomic) unsigned int minFilter;
-@property (nonatomic) unsigned int mipFilter;
-@property (nonatomic) BOOL normalizedCoordinates;
-@property (nonatomic) unsigned int rAddressMode;
-@property (nonatomic) unsigned int sAddressMode;
-@property (nonatomic) unsigned int tAddressMode;
+@property (nonatomic) unsigned long long magFilter;
+@property (nonatomic) unsigned long long maxAnisotropy;
+@property (nonatomic) unsigned long long minFilter;
+@property (nonatomic) unsigned long long mipFilter;
+@property (nonatomic) bool normalizedCoordinates;
+@property (nonatomic) unsigned long long rAddressMode;
+@property (nonatomic) unsigned long long sAddressMode;
+@property (nonatomic) unsigned long long tAddressMode;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (unsigned long long)borderColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)lodAverage;
+- (void)setBorderColor:(unsigned long long)arg1;
+- (void)setLodAverage:(bool)arg1;
 
 @end

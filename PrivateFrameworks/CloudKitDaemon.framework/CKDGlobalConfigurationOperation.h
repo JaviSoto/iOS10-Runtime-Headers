@@ -11,12 +11,12 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *configurationFetchedGroup;
 
 - (void).cxx_destruct;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)configuration;
 - (id)configurationFetchedGroup;
 - (void)main;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfigurationFetchedGroup:(id)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

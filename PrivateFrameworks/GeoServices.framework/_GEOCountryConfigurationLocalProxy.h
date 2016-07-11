@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_GEOCountryConfigurationServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_determineCurrentCountryCode:(id /* block */)arg1;
